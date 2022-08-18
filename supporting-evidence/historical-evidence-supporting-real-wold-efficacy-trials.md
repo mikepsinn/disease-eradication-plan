@@ -12,7 +12,7 @@ There is compelling historical evidence suggesting that large scale efficacy-tri
 
 For over 99% of recorded human history, the average human life expectancy has been around 30 years.
 
-![historical life expectancy](../.gitbook/assets/life-expectancy-historical.jpg)
+![historical life expectancy](../assets/life-expectancy-historical.jpg)
 
 **1893 – The Advent of Safety and Efficacy Trials**
 

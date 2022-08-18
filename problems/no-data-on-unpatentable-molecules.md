@@ -10,7 +10,7 @@ dateCreated: 2022-07-22T19:03:54.146Z
 
 Under the current system of research, it costs [$41k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001) per subject in Phase III clinical trials. As a result, there is not a sufficient profit incentive for anyone to research the effects of any factor besides a molecule that can be patented.
 
-![how much we know](../.gitbook/assets/how-much-we-know (6).png)
+![how much we know](../assets/how-much-we-know (6).png)
 
 **Lack of Incentive to Discover the Full Range of Applications for Off-Patent Treatments**
 

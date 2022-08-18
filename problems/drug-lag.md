@@ -13,7 +13,7 @@ One unanticipated consequence of the 1968 amendment was that the new burden of p
 
 Following the 1962 increase in US regulations, one can see a divergence from Switzerland's growth in life expectancy, which did not introduce the same delays to availability.
 
-![US vs Swiss Life Expectancy](../.gitbook/assets/us-swiss-life-expectancy-5.png)
+![US vs Swiss Life Expectancy](../assets/us-swiss-life-expectancy-5.png)
 
 Perhaps it's a coincidence, but you can see an increase in drug approvals in the '80s. At the same time, the gap between Switzerland and the US gets smaller. Then US approvals go back down in the '90s, and the gap expands again.
 
