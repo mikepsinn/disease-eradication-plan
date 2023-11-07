@@ -2,7 +2,7 @@
 title: 🏷 Outcome Labels Plugin
 description: 
 published: true
-date: 2022-08-28T15:12:30.345Z
+date: 2023-11-07T06:20:20.507Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:23:05.142Z

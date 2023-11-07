@@ -2,10 +2,10 @@
 title: 📖Key Definitions
 description: Precise definitions of relevant terms used
 published: true
-date: 2022-07-26T02:40:33.718Z
+date: 2023-11-07T06:28:07.349Z
 tags: 
 editor: markdown
-dateCreated: 2022-07-22T19:05:03.787Z
+dateCreated: 2023-11-07T05:42:50.799Z
 ---
 
 Efficacy—the extent to which an intervention does more good than harm under ideal circumstances

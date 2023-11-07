@@ -1,8 +1,11 @@
 ---
-description: >-
-  If a drug is found to be effective for other diseases after the patent has
-  expired, no one has the financial incentive to get it approved for another
-  disease.
+title: off-patent-treatments
+description: If a drug is found to be effective for other diseases after the patent has expired, no one has the financial incentive to get it approved for another disease.
+published: true
+date: 2023-11-07T06:28:41.831Z
+tags: 
+editor: markdown
+dateCreated: 2023-11-07T05:45:56.438Z
 ---
 
 # 📃 No Incentive to Discover Benefits of Off-Patent Treatments

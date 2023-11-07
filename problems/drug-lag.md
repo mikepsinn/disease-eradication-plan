@@ -2,11 +2,12 @@
 title: ⏱ Deaths Due to US Regulatory "Drug Lag"
 description: A comparative analysis between countries suggests that delays in new interventions cost anywhere from 21,000 to 120, 000 US lives per decade.
 published: true
-date: 2022-07-29T02:11:03.058Z
-tags:
+date: 2023-11-07T06:28:21.039Z
+tags: 
 editor: markdown
-dateCreated: 2022-07-22T19:03:35.580Z
+dateCreated: 2023-11-07T05:45:33.263Z
 ---
+
 **Delayed Life-Saving Treatments**
 
 One unanticipated consequence of the 1968 amendment was that the new burden of proof made the process of drug development both more expensive and much longer. This was followed by increasing drug prices and a “drug lag”.

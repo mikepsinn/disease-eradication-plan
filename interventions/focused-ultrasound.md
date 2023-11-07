@@ -2,12 +2,11 @@
 title: Focused Ultrasound
 description: 
 published: true
-date: 2023-10-02T01:47:34.315Z
+date: 2023-11-07T06:27:31.205Z
 tags: interventions, depression, focused ultrasound
 editor: markdown
 dateCreated: 2023-10-02T01:37:27.297Z
 ---
-
 
 ## Completed studies on Focused Ultrasound for depression and their findings
 

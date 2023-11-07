@@ -2,7 +2,7 @@
 title: how-to-use-zenhub
 description: Zenhub enables more advanced project management of Github Issues through use of Epics and estimating difficulty of tasks.
 published: true
-date: 2022-08-31T12:51:29.001Z
+date: 2023-11-07T06:22:34.892Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:36:38.942Z

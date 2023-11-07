@@ -2,7 +2,7 @@
 title: Experimental Protocol for Crowdsourcing Longevity Research
 description: An experimental protocol for crowdsourcing longevity research for a random intervention and collecting outcome data to characterize the participant's overall health status using affordable and valuable collection methods
 published: true
-date: 2023-06-21T04:49:22.560Z
+date: 2023-11-07T06:27:19.472Z
 tags: longevity, experimental protocols
 editor: markdown
 dateCreated: 2023-06-21T04:49:22.560Z

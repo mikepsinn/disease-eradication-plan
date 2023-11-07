@@ -2,7 +2,7 @@
 title: 🔎 Predictor Search Engine Plugin
 description: 
 published: true
-date: 2022-08-28T15:11:47.523Z
+date: 2023-11-07T06:20:23.205Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:23:08.952Z

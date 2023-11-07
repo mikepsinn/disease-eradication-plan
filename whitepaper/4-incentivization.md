@@ -2,7 +2,7 @@
 title: Incentivization and Benefits to Stakeholders
 description: How to reward data sharing and open-source collaboration.
 published: true
-date: 2023-10-27T18:56:15.869Z
+date: 2023-11-07T06:21:26.429Z
 tags: dfda, benefits, incentivization
 editor: markdown
 dateCreated: 2022-07-27T21:26:21.871Z

@@ -2,7 +2,7 @@
 title: dFDA Governance Protocol
 description: By implementing a continuous improvement process and a Futarchical Voting mechanism, the dFDA aims to enhance the quality of drug approvals and health policies.
 published: true
-date: 2023-10-27T18:59:15.247Z
+date: 2023-11-07T06:28:01.211Z
 tags: dfda, governance, board of directors
 editor: markdown
 dateCreated: 2023-10-27T18:58:49.622Z

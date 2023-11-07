@@ -2,7 +2,7 @@
 title: dFDA Drug Approval Process and Regulatory Innovations
 description: Crowdsourcing drug approvals aims to harness the collective intelligence of a diverse and knowledgeable crowd, ensuring rigorous, transparent, and inclusive decision-making processes.
 published: true
-date: 2023-10-27T18:20:02.228Z
+date: 2023-11-07T06:27:52.091Z
 tags: dfda, regulation, drug approval, collective intelligence, crowdsourcing
 editor: markdown
 dateCreated: 2023-10-26T21:20:21.724Z

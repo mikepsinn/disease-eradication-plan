@@ -2,7 +2,7 @@
 title: style-guide
 description: How to contribute to the documentation.
 published: true
-date: 2022-08-29T16:26:37.033Z
+date: 2023-11-07T06:21:53.291Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:35:30.352Z

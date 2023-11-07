@@ -2,7 +2,7 @@
 title: Life Force Score
 description: Gamification to Incentivize Healthy Behaviour
 published: true
-date: 2023-10-26T21:36:53.402Z
+date: 2023-11-07T06:27:55.304Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-26T21:36:53.402Z

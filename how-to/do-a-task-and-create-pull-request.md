@@ -2,7 +2,7 @@
 title: do-a-task-and-create-pull-request
 description: 
 published: false
-date: 2022-08-31T15:37:32.927Z
+date: 2023-11-07T06:13:23.913Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T20:32:23.012Z

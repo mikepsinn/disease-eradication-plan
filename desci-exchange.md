@@ -2,7 +2,7 @@
 title: DeSci Exchange
 description: A Free Market for Accelerating Scientific Discovery
 published: true
-date: 2022-11-05T02:54:03.172Z
+date: 2023-11-07T06:26:42.956Z
 tags: projects, github
 editor: markdown
 dateCreated: 2022-11-05T02:49:24.504Z
