@@ -2,45 +2,17 @@
 title: 💡 CureDAO
 description: A global alliance to discover how millions of factors like foods, drugs, and supplements affect human health.
 published: true
-date: 2023-10-27T17:04:05.380Z
+date: 2023-11-07T07:32:15.154Z
 tags: curedao, litepaper, overview
 editor: markdown
 dateCreated: 2022-07-28T02:01:12.458Z
 ---
 
-**Question:** How can we have a massive explosion in health data and digital health technology and have no improvement in lifespan or reduction in costs?&#x20;
+# The dFDA Tech Stack
 
-![](/assets/data-growth-apps-life-expectancy-costs-charts.png)
+## 1. Personal FDA Nodes
 
-![chloe-can-you-not.gif](/assets/chloe-can-you-not.gif){.align-center}
-
-**Answer:** Gross inefficiency and data hoarding.&#x20;
-
-Over 350,000 digital health developers are ultimately trying to improve human health and wasting billions of dollars 💸 and billions of hours ⏳ building the same features. We have a market incentive structure that punishes open-source cooperation, and data sharing and 💰 rewards closed, proprietary, and wasteful duplication of effort.
-
-**Solution:** An open platform for clinical research that incentivizes cooperation and data sharing.
-
-CureDAO utilizes a new meritocratic economic system of Collaborationism that will transcend the incentivization failures and inefficiencies of previous economic models such as Communism and Capitalism.  The CureDAO incentive structure overcomes the traditional collaboration and data sharing barriers by encoding contributions through non-fungible tokens (NFTs). Using smart contracts, the platform will compensate all contributors of work, data, and IP with ongoing royalties.
-
-![How Collaborationism Makes Everyone Better Off](/assets/value-chain-diagram.png)
-
-Our hypothesis (and dream) is that this new system can accelerate the rate of clinical discovery 350,000 times 🚀️ and create a world where suffering is optional. 😃
-
-But we can't realize this dream without you!
-
-**👉** [**Join Us Right Now!**](https://curedao.org/join-us)
-
-Hmm. You're still here, so I guess you're not convinced. 😕 Then venture on, dear reader!
-
-# The WordPress of Health Data
-
-Our first project is a community-owned, open-source, no-code platform for health data aggregation and analysis.
-
-It will provide a basic foundational technology layer to remove barriers for physicians, researchers, clinicians, and developers of digital health applications.
-
-It consists of two primary components:
-
-## 1. The Core Open-Source Platform
+A safe for your digital twin that provides
 
 * Storage
 * Security
