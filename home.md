@@ -2,7 +2,7 @@
 title: 💡 The Decentralized FDA
 description: A global alliance to discover how millions of factors like foods, drugs, and supplements affect human health.
 published: true
-date: 2023-11-07T07:32:34.322Z
+date: 2023-11-07T07:33:10.931Z
 tags: curedao, litepaper, overview
 editor: markdown
 dateCreated: 2022-07-28T02:01:12.458Z
@@ -293,21 +293,3 @@ Accordingly, the organization is composed of three primary components.
 3. External Service Providers - Individuals or entities outside the DAO deemed necessary to carry out the Citizen Scientists' wishes.
 
 
-# Full Whitepaper
-
-1. [Introduction and Challenges](chttps://wiki.curedao.org/en/whitepaper/1-introduction-and-challenges)
-1. [Solution](https://wiki.curedao.org/en/whitepaper/02-solution)
-1. [Platform](https://wiki.curedao.org/en/whitepaper/3-platform)
-1. [Incentivization](https://wiki.curedao.org/en/whitepaper/4-incentivization)
-1. [Organization](https://wiki.curedao.org/en/whitepaper/5-organization)
-1. [Ecosystem](https://wiki.curedao.org/en/whitepaper/9-ecosystem)
-1. [Data Security](https://wiki.curedao.org/en/whitepaper/10-data-security)
-1. [Privacy](https://wiki.curedao.org/en/whitepaper/12-privacy)  
-
-### Oh, you're still here?
-
-Congratulations! You've won the chocolate factory! You did it! You did it! I knew you would! I just knew you would!
-
-**👉** [**Just click this link and CureDAO is all yours!**](https://curedao.org/join-us)
-
-This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
