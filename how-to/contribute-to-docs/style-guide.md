@@ -1,6 +1,6 @@
 ---
 title: style-guide
-description: How to contribute to the CureDAO documentation.
+description: How to contribute to the documentation.
 published: true
 date: 2022-08-29T16:26:37.033Z
 tags: 

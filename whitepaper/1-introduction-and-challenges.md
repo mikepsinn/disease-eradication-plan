@@ -146,16 +146,11 @@ If this code was freely shared, everyone could build on what everyone else had d
 
 The obstacle has been the free-rider problem. Software Developers that open source their code give their closed-source competitors an unfair advantage. This increases their likelihood of bankruptcy even higher than the 90% failure rate they already faced.
 
-#### How DAOs Overcomes the Free-Rider Problem
-
-1. Currently governments around the world are spending billions funding closed-source propriety health software. The Public Money Public Code initiative would require governments to recognize software as a [public good](https://en.wikipedia.org/wiki/Public\_good\_\(economics\)) and require that publicly-funded software be open source.
-2. By encoding contributions to the project with NFTs, we can guarantee ongoing compensation in the form of royalties.
-
 ### 1.2.2 Isolated Data Silos
 
 The best that isolated data on individual aspects of human health can do is tell us about the past. For example, dashboards telling us how many steps we got or how much sleep we got are known as “descriptive statistics”. However, by integrating all available data from individuals, similar populations, as well as existing clinical research findings and applying machine learning we may achieve “prescriptive” real-time decision support.
 
-To facilitate data sharing, the CureDAO will provide data providers with an onsite easily provisionable OAuth2 API server that will allow individuals to anonymously share their data with the global biobank.
+To facilitate data sharing, we will provide data providers with an onsite easily provisionable OAuth2 API server that will allow individuals to anonymously share their data with the global biobank.
 
 
 #### [Next Solution](2-solution.md) 👉
