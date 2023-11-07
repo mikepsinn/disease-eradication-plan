@@ -1,8 +1,8 @@
 ---
-title: 05. 🏨 Organization
+title: 05. 🏨 Organization 
 description: The DAO will utilize Laboratory working groups which use a scientific experimentation-based approach to effectively carrying out the will of its Citizen Scientist voting members.
 published: true
-date: 2023-11-07T06:21:29.200Z
+date: 2022-08-25T17:02:39.027Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:26:27.705Z

@@ -2,7 +2,7 @@
 title: Causal Inference Analysis
 description: A comprehensive guide to robust statistical analysis of treatment effects from challenging sparse, irregular time series data with missing values.
 published: true
-date: 2023-11-07T06:27:33.965Z
+date: 2023-10-02T04:41:41.031Z
 tags: causal inference, data analysis, treatment effects, time series
 editor: markdown
 dateCreated: 2023-10-02T04:38:36.182Z

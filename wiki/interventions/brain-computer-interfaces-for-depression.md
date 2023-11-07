@@ -2,7 +2,7 @@
 title: Brain Computer Interfaces For Depression
 description: Volume knobs for mood
 published: true
-date: 2023-11-07T06:27:16.211Z
+date: 2023-05-27T23:24:24.846Z
 tags: depression, brain computer interfaces
 editor: markdown
 dateCreated: 2023-05-27T23:24:24.846Z

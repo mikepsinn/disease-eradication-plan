@@ -2,7 +2,7 @@
 title: History of Medical Regulation and Clinical Research
 description: 
 published: true
-date: 2023-11-07T06:27:40.128Z
+date: 2023-10-26T19:37:36.565Z
 tags: dfda, fda
 editor: markdown
 dateCreated: 2023-10-26T19:37:36.565Z

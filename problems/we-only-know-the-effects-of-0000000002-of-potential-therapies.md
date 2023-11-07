@@ -2,10 +2,10 @@
 title: ❓ We Only Know The Effects of 0.000000002% of Potential Therapies
 description: There are as many untested compounds with drug-like properties as there are atoms in the solar system (166 billion).
 published: true
-date: 2023-11-07T06:28:59.942Z
+date: 2022-07-29T02:10:00.109Z
 tags: 
 editor: markdown
-dateCreated: 2023-11-07T05:46:16.577Z
+dateCreated: 2022-07-22T19:04:21.179Z
 ---
 
 We’re only 2 lifetimes from the use of the modern scientific method in medicine. Thus, it's only been applied for 0.0001% of human history. The more clinical research studies we read, the more we realize we don’t know. Nearly every study ends with the phrase "more research is needed". We know basically nothing at this point compared to what will eventually be known about the human body.

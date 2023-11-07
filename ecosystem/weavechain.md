@@ -2,7 +2,7 @@
 title: Weavechain
 description: Weavechain seamlessly integrates into your existing setup and gives your data  the power of Web3.
 published: true
-date: 2023-11-07T06:26:55.322Z
+date: 2023-05-22T22:04:58.375Z
 tags: data sharing, data security, 1st party analytics, data monetization, data lineage
 editor: markdown
 dateCreated: 2022-11-18T02:41:12.412Z

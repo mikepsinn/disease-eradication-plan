@@ -2,7 +2,7 @@
 title: food-databases
 description: Food and Nutrient Database for Dietary Studies (FNDDS)
 published: true
-date: 2023-11-07T06:20:38.092Z
+date: 2022-08-25T20:04:14.495Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:23:42.390Z

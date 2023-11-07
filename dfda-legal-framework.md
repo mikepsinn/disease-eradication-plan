@@ -2,7 +2,7 @@
 title: dFDA Legal Framework
 description: This article delves into potential legal structures for the dFDA and explores whether a formal legal entity is necessary for its operation.
 published: true
-date: 2023-11-07T06:27:46.004Z
+date: 2023-10-26T20:46:31.683Z
 tags: dfda, legal
 editor: markdown
 dateCreated: 2023-10-26T20:23:22.426Z

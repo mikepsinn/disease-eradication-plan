@@ -2,7 +2,7 @@
 title: DeSci DAO AI Agent Framework
 description: How to create a truly autonomous DAO that actually accelerates scientific progress
 published: true
-date: 2023-11-07T06:27:28.063Z
+date: 2023-07-23T19:59:32.942Z
 tags: dao, ai, automation, desci
 editor: markdown
 dateCreated: 2023-07-22T20:42:01.243Z

@@ -2,7 +2,7 @@
 title: Grandmatron
 description: Voice collection on cognitive performance and factors that could influence it.
 published: true
-date: 2023-11-07T06:27:25.091Z
+date: 2023-07-19T16:07:43.939Z
 tags: projects
 editor: markdown
 dateCreated: 2023-07-19T16:07:43.939Z

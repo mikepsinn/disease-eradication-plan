@@ -1,8 +1,8 @@
 ---
 title: 👨‍🤝‍👨 The Digital Twin Safe 🔒
-description: A little house for your digital twin. 🏡
+description: A little house for your digital twin. 🏡 
 published: true
-date: 2023-11-07T06:26:46.365Z
+date: 2023-06-08T19:52:34.654Z
 tags: projects, data sharing, data storage
 editor: markdown
 dateCreated: 2022-11-07T20:38:39.252Z

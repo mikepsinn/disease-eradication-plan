@@ -2,7 +2,7 @@
 title: medication-databases
 description: RxNorm and MeDRA
 published: true
-date: 2023-11-07T06:20:40.930Z
+date: 2022-08-25T20:04:51.436Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:23:47.640Z

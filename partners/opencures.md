@@ -2,7 +2,7 @@
 title: OpenCures
 description: 
 published: true
-date: 2023-11-07T06:19:56.001Z
+date: 2022-08-26T20:24:32.745Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:22:28.927Z

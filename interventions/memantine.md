@@ -2,7 +2,7 @@
 title: Memantine
 description: Memantine is a medication used to treat moderate to severe Alzheimer's disease. This article discusses its mechanism of action, effectiveness in treating various conditions, and comparisons to alternative treatments.
 published: true
-date: 2023-11-07T06:27:10.284Z
+date: 2023-05-03T05:19:05.308Z
 tags: interventions, nmda antagonists, depression, treatments, alzheimer's disease, nmda receptor antagonist, neurological disorders, glutamate, cognitive function, dementia, namenda, excitotoxicity, neuroprotection
 editor: markdown
 dateCreated: 2023-05-02T20:02:05.144Z

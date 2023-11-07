@@ -2,12 +2,11 @@
 title: Cost Savings from Decentralized Clinical Trials
 description: Decentralized Clinical Trials Can Achieve Net Financial Benefits of 5X to 14X, Due to Reduced Trial Timelines and Other Factors
 published: true
-date: 2023-11-07T06:29:06.094Z
+date: 2022-07-26T01:20:31.506Z
 tags: 
 editor: markdown
-dateCreated: 2023-11-07T05:46:42.638Z
+dateCreated: 2022-07-22T19:04:36.090Z
 ---
-
 # 🌎 Cost Savings from Decentralized Clinical Trials
 
 * **Net financial benefit:** In phase II studies, the typical DCT deployment for a clinical trial resulting in a one to three-month time savings yields a net benefit that is up to five times greater than the upfront investment required. In phase III studies, a similar time saving yields a net benefit that is up to [14 times greater](https://www.businesswire.com/news/home/20220113005740/en/New-Study-Decentralized-Clinical-Trials-Can-Achieve-Net-Financial-Benefits-of-5X-to-14X-Due-to-Reduced-Trial-Timelines-and-Other-Factors) than the upfront investment required.

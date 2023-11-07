@@ -2,10 +2,10 @@
 title: 🤒 Insufficient ROI to Discover Treatments for Rare Diseases
 description: In the case of rare diseases, increasing the cost of treatment development to over a billion makes it impossible to recover your investment from a small number of patients.
 published: true
-date: 2023-11-07T06:28:23.908Z
+date: 2022-08-18T07:59:09.359Z
 tags: 
 editor: markdown
-dateCreated: 2023-11-07T05:45:36.859Z
+dateCreated: 2022-07-22T19:03:45.469Z
 ---
 
 It costs over a billion dollars to develop a new treatment, largely due to regulatory burdens.

@@ -2,7 +2,7 @@
 title: how-to-execute
 description: A simple, repeatable formula for executing your most important priorities
 published: true
-date: 2023-11-07T06:22:32.527Z
+date: 2022-08-31T09:37:15.206Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:36:34.142Z

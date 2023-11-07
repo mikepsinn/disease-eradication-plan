@@ -1,11 +1,11 @@
 ---
-title: Greater Competitive Innovation and Fewer Monopolies
+title:  Greater Competitive Innovation and Fewer Monopolies
 description: High Cost of Development Favors Monopoly and Punishes Innovation
 published: true
-date: 2023-11-07T06:29:03.444Z
+date: 2022-07-26T01:18:02.707Z
 tags: 
 editor: markdown
-dateCreated: 2023-11-07T05:46:19.618Z
+dateCreated: 2022-07-22T19:04:40.588Z
 ---
 
 # 🧐 Greater Competitive Innovation and Fewer Monopolies

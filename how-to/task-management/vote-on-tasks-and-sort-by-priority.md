@@ -2,7 +2,7 @@
 title: vote-on-tasks-and-sort-by-priority
 description: 
 published: false
-date: 2023-11-07T06:22:44.196Z
+date: 2022-08-31T13:12:02.349Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:36:54.016Z

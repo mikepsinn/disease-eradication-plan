@@ -2,7 +2,7 @@
 title: vote-on-amendments-to-the-constitution
 description: How to democratically contribute to the CureDAO constitution.
 published: false
-date: 2023-11-07T06:21:56.312Z
+date: 2022-08-29T16:34:33.202Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:35:35.138Z

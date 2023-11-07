@@ -2,10 +2,10 @@
 title: References
 description: 
 published: true
-date: 2023-11-07T06:29:18.568Z
+date: 2022-07-26T01:14:19.159Z
 tags: 
 editor: markdown
-dateCreated: 2023-11-07T05:46:56.578Z
+dateCreated: 2022-07-22T19:04:25.725Z
 ---
 
 * [Google Spreadsheet of FDA Spending vs Life-Expectancy](https://docs.google.com/spreadsheets/d/e/2PACX-1vTBkVrOYLxloOIADLXA7-k5NBIGgQ\_dfFQ7BLUN0oaJPVQ\_NqdFdVUfhuPkVWgFZ9gfLrwPdjuG1sTn/pubhtml)

@@ -2,10 +2,10 @@
 title: 🧮 Bias Against Approving Effective Treatments
 description: Overcoming Cognitive Bias Against Acts of Commission
 published: true
-date: 2023-11-07T06:28:13.014Z
-tags: 
+date: 2022-07-28T03:57:38.074Z
+tags:
 editor: markdown
-dateCreated: 2023-11-07T05:45:23.836Z
+dateCreated: 2022-07-22T19:03:21.545Z
 ---
 
 Humans have a cognitive bias towards weighting harmful acts of commission to be worse than acts of omission, even if the act of omission causes greater harm. It's seen in the trolley problem, where people generally aren't willing to push a fat man in front of a train to save a family, even though more lives would be saved.

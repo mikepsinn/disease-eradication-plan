@@ -2,7 +2,7 @@
 title: 📑 Observational Studies
 description: We’ve collected over 10 million data points on symptom severity and influencing factors from over 10,000 people.
 published: true
-date: 2023-11-07T06:20:10.660Z
+date: 2023-05-22T02:23:04.246Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:22:53.120Z

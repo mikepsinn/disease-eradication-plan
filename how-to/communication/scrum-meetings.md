@@ -2,7 +2,7 @@
 title: scrum-meetings
 description: 
 published: true
-date: 2023-11-07T06:21:47.017Z
+date: 2022-08-27T17:44:03.635Z
 tags: 
 editor: markdown
 dateCreated: 2022-07-27T21:35:21.022Z

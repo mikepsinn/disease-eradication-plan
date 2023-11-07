@@ -2,10 +2,10 @@
 title: 🥫 No Data on Unpatentable Molecules
 description: We still know next to nothing about the long-term effects of 99.9% of the 4 pounds of over 7,000 different synthetic or natural chemicals you consume every day.
 published: true
-date: 2023-11-07T06:28:33.115Z
+date: 2022-07-31T16:48:00.375Z
 tags: 
 editor: markdown
-dateCreated: 2023-11-07T05:45:46.298Z
+dateCreated: 2022-07-22T19:03:54.146Z
 ---
 
 Under the current system of research, it costs [$41k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001) per subject in Phase III clinical trials. As a result, there is not a sufficient profit incentive for anyone to research the effects of any factor besides a molecule that can be patented.

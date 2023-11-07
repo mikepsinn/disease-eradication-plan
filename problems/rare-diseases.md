@@ -1,11 +1,8 @@
 ---
-title: rare-diseases
-description: In the case of rare diseases, increasing the cost of treatment development to over a billion makes it impossible to recover your investment from a small number of patients.
-published: true
-date: 2023-11-07T06:28:48.000Z
-tags: 
-editor: markdown
-dateCreated: 2023-11-07T05:46:03.224Z
+description: >-
+  In the case of rare diseases, increasing the cost of treatment development to
+  over a billion makes it impossible to recover your investment from a small
+  number of patients.
 ---
 
 # 🤒 Insufficient ROI to Discover Treatments for Rare Diseases
