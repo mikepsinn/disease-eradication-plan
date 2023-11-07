@@ -1,8 +1,8 @@
 ---
-title: 💡 CureDAO
+title: 💡 The Decentralized FDA
 description: A global alliance to discover how millions of factors like foods, drugs, and supplements affect human health.
 published: true
-date: 2023-11-07T07:32:15.154Z
+date: 2023-11-07T07:32:34.322Z
 tags: curedao, litepaper, overview
 editor: markdown
 dateCreated: 2022-07-28T02:01:12.458Z
