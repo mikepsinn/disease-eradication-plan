@@ -2,20 +2,10 @@
 title: 💡 The Decentralized FDA
 description: A global alliance to discover how millions of factors like foods, drugs, and supplements affect human health.
 published: true
-date: 2023-11-07T07:33:10.931Z
+date: 2024-01-30T18:41:24.401Z
 tags: curedao, litepaper, overview
 editor: markdown
-dateCreated: 2022-07-28T02:01:12.458Z
----
-
----
-title: The Decentralized FDA
-description: A platonic ideal for the regulation of food and drugs.
-published: true
-date: 2023-10-28T22:44:24.051Z
-tags: dfda, fda, regulation
-editor: markdown
-dateCreated: 2022-11-04T23:10:39.282Z
+dateCreated: 2023-11-24T22:24:09.275Z
 ---
 
 > This is a work in progress. Contributions are welcome! Just click the edit button in the lower right corner.  It's our goal to avoid any duplication of effort. So please include existing projects that would be interested in fulfilling any part of this global framework. 
