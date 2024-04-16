@@ -2,10 +2,10 @@
 title: 📘 Historical Evidence Supporting Real-World Efficacy Trials
 description: Large scale efficacy-trials based on real-world evidence have historically led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
 published: true
-date: 2022-07-29T03:34:32.694Z
+date: 2024-04-16T17:05:14.088Z
 tags: 
 editor: markdown
-dateCreated: 2022-07-22T19:05:12.716Z
+dateCreated: 2023-11-07T19:00:41.120Z
 ---
 
 There is compelling historical evidence suggesting that large scale efficacy-trials based on real-world evidence have ultimately led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
@@ -96,7 +96,8 @@ The placebo-controlled, randomized controlled trial helped researchers gauge the
 
 From 1890 to 1960, there was a linear 4-year increase in human lifespan every year. This amazingly linear growth rate had followed millennia with a flat human lifespan of around 28 years. Following this new 70% reduction in the pace of medical progress, the growth in human lifespan was immediately cut in half to an increase of 2 years per year.
 
-![Average Life Expectancy Over Time](../assets/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
+
+![fda-life-expectancy-growth-jama-chart-graph.png](/fda-life-expectancy-growth-jama-chart-graph.png)
 
 **Diminishing Returns?**
 
