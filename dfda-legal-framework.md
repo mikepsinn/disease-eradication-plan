@@ -1,11 +1,11 @@
 ---
 title: dFDA Legal Framework
-description: This article delves into potential legal structures for the dFDA and explores whether a formal legal entity is necessary for its operation.
+description: Potential legal structures for a dFDA
 published: true
-date: 2023-10-26T20:46:31.683Z
+date: 2024-07-28T02:48:33.169Z
 tags: dfda, legal
 editor: markdown
-dateCreated: 2023-10-26T20:23:22.426Z
+dateCreated: 2023-11-07T18:56:01.455Z
 ---
 
 # Legal Structures for the Decentralized FDA 
