@@ -2,7 +2,7 @@
 title: 💡 The Decentralized FDA
 description: A global alliance to discover how millions of factors like foods, drugs, and supplements affect human health.
 published: true
-date: 2024-07-28T16:44:19.599Z
+date: 2024-07-28T16:52:11.076Z
 tags: curedao, litepaper, overview
 editor: markdown
 dateCreated: 2023-11-24T22:24:09.275Z
@@ -21,8 +21,6 @@ Our goal is a 50X acceleration in clinical discovery by replicating this model f
 
 # Problems We're Trying To Solve
 
-The existing regulatory framework for drug approval presents several challenges, hindering the efficiency and effectiveness of pharmaceutical research and public health advancements:
-
 - **Slow and Expensive:** It takes over a decade and \$2.6 billion on average to bring a drug to market, with Phase III clinical trials costing around \$41k per subject.
 - **No Data on Unpatentable Molecules:** There is a significant lack of data on the long-term effects of the majority of synthetic or natural compounds, as there is insufficient incentive to research non-patentable molecules.
 - **Neglected Off-Patent Treatments:** There is a lack of financial incentive to approve drugs for additional conditions after their patent expires, leaving potential treatments for rare diseases unexplored.
@@ -37,39 +35,7 @@ To overcome these perverse incentives and biases, implementing a Decentralized A
 
 # **Ingredients of the dFDA**
 
-## 1. **Board of Directors**
-   - **Credibility:** Cultivate a board that embodies trust, expertise, and a stellar reputation in the health and tech industries.
-   - **Reach:** Leverage the network of the board to access a wealth of data, resources, and strategic partnerships.
-   - **Funding:** Explore innovative funding avenues, including health-focused prizes like the XPRIZE, grants, and private investments.
-   - **Proven Track Record:** Highlight and leverage previous successful initiatives led by board members to instill confidence in stakeholders.
-   - **Mission Alignment:** Ensure every board member is passionately aligned with the mission, understanding their role in this transformative journey.
-   - **Incentives:** Clearly articulate the value proposition for board members, showcasing the impact and personal/professional benefits of their involvement.
-
-## 2. dFDA Coordination Platform
-
-The primary initial goal a coordination platform to harness the collective capabilities of existing entities towards achieving the shared vision of accelerated clinical discovery and better health outcomes.
-
-The coordination platform should ideally provide:
-
-1. **Communication Channels**: Enable seamless communication among stakeholders, fostering a community of shared knowledge and goals.
-  
-2. **Resource Sharing Mechanisms**: Facilitate the sharing of data, technologies, expertise, and other resources among partners.
-  
-3. **Decentralized Collaborative Workspaces**: Provide tools and spaces for collaborative research, data analysis, and project development.
-  
-4. **Partnership Agreements**: Streamline the formation and management of partnerships, ensuring clarity on roles, responsibilities, and contributions.
-  
-5. **Project Management Tools**: Offer tools for planning, tracking, and managing collaborative projects, ensuring alignment and progress towards shared goals.
-  
-6. **Knowledge Repository**: Create a centralized or federated repository for collective knowledge, research findings, and best practices.
-  
-7. **Legal and Regulatory Guidance**: Provide guidance on navigating the legal and regulatory landscape for collaborative endeavors, ensuring compliance and mitigating risks.
-  
-8. **Impact Tracking**: Implement tools for monitoring, evaluation, and reporting on the impact and outcomes of collaborative projects.
-
-The coordination platform encapsulates a digital environment where stakeholders can come together to synergistically work towards the broader objectives of the dFDA initiative. Through this platform, the barriers to collaboration are minimized, and the pace of innovation and discovery is expected to accelerate, aligning with the overarching mission of maximizing human lifespan and minimizing net suffering.
-
-## 3. **Digital Twin Safes / PersonalFDA Nodes**
+## **Digital Twin Safes / PersonalFDA Nodes**
 
 A tool for self-sovereign storage of personal data that enables effortless data sharing with clinical safety and efficacy studies.
 
@@ -80,7 +46,7 @@ A tool for self-sovereign storage of personal data that enables effortless data 
    - **Federated Learning with Homomorphic Encryption:** Innovate in secure data analysis, allowing for meaningful insights without compromising data privacy.
    - [Data Gems NFTs](/data-gem-nfts) - Data sets can be encrypted and stored in a decentralized manner generating a Data Gem NFT that can be sold on data exchanges granting the possessor access to the data set.
 - [Digital Twin Skeleton Key NFT](/digital-twin-skeleton-key-nft) - This key gives you the ability to mint [Data Gem](/data-gem-nfts) Data Access NFTs using your imported data. 
-- [The Human File System Protocol SDK](/human-file-system) - A Simple API for Patient-Controlled Health Data Aggregation, Sharing, and Monetization.  Also standard protocol for personal data exchange between studies, apps and devices. 
+- [The Human File System Protocol SDK](/human-file-system) - A Simple API for Patient-Controlled Health Data Aggregation, Sharing, and Monetization.  Also standard protocol for personal data exchange between studies, apps, and devices. 
    
 **Potential Implementations, Components or Inspiration**
 - [Modified Gnosis Safe](/digital-twin-safe)
@@ -89,7 +55,7 @@ A tool for self-sovereign storage of personal data that enables effortless data 
 
 ![digital-twin-safe-screenshot-home](https://user-images.githubusercontent.com/2808553/200402565-72bc85a3-deb2-4f1a-a9b1-bde108e63d87.png)
 
-## 4. **dFDA Wiki**
+## **dFDA Wiki**
 
    - **Knowledge Base:** Inspiration could be taken from the Psychonaut Wiki. It's a modified version of MediaWiki with additional quantitative metadata storage regarding the pharmacokinetics of various substances.  This could be expanded to document the quantitative effects of every factor on specific health outcomes.
    - **Data Silos Directory:** Compile a comprehensive directory of existing data sources, facilitating integration with the Digital Twin Safe.
@@ -106,64 +72,6 @@ A tool for self-sovereign storage of personal data that enables effortless data 
 - [Journal of Citizen Science](https://studies.crowdsourcingcures.org/)
 
 ![outcome-labels-plugin.png](/assets/outcome-labels.PNG)
-
-# Roadmap
-
-## **Milestone 1: Establish Foundation**
-**Objective:** Lay down the groundwork for the Decentralized FDA, defining its scope, audience, and core values.
-
-**Tasks:**
-1. **Define Project Scope and Goals:** Clearly outline what the Decentralized FDA aims to achieve, its target audience, and its core mission.
-2. **Framing and Naming:** Develop a strong framing narrative and decide on a compelling name for the initiative.
-3. **Identify Target Audience:** List out the potential board members, disease advocacy organizations, and other key stakeholders.
-4. **Initial Stakeholder Engagement:** Begin outreach to potential board members and key stakeholders to introduce them to the project and gauge interest.
-
-
-## **Milestone 2: Building the Board of Directors**
-**Objective:** Assemble a diverse and influential Board of Directors to guide and support the initiative.
-
-**Tasks:**
-1. **Credibility and Reach:** Identify and onboard individuals with credibility, reach, and a passion for the project’s mission.
-2. **Funding Strategies:** Develop strategies for funding, exploring options like health-focused prizes, grants, and private investments.
-3. **Define Value Proposition for Board Members:** Clearly articulate what’s in it for them, outlining the impact and benefits of their involvement.
-
-## **Milestone 3: Collaborations and Partnerships**
-**Objective:** Identify and engage with entities already working in similar domains to foster collaboration and knowledge sharing.
-
-**Tasks:**
-1. **Research Potential Collaborators:** Identify entities, initiatives, and experts working on similar projects.
-2. **Initiate Outreach:** Reach out to potential collaborators to explore partnership opportunities.
-3. **Develop Collaborative Projects:** Work on joint initiatives, sharing knowledge and resources for mutual benefit.
-
-
-## **Milestone 4: Developing the Digital Twin Safe**
-**Objective:** Implement the Digital Twin Safe with Locally Runnable Nodes, ensuring a secure and efficient data environment.
-
-**Tasks:**
-1. **Data Import Mechanisms:** Develop tools and protocols for importing existing health data.
-2. **Implement Data Encryption:** Ensure robust encryption for data at rest and in transit.
-3. **Sync to Trusted Instances:** Establish secure and reliable data synchronization channels.
-4. **Federated Learning with Homomorphic Encryption:** Innovate in secure data analysis, allowing for insights without compromising privacy.
-
-
-## **Milestone 5: Creating the dFDA Wiki**
-**Objective:** Develop and launch the initial version of the Decentralized FDA, populated with initial data and research.
-
-**Tasks:**
-1. **Develop the Knowledge Base:** Utilize a modified version of the Psychonaut Wiki as a starting point.
-2. **Editing Authorization Mechanism:** Implement a secure and reliable editing authorization process.
-3. **AI-Powered Data Population:** Leverage AI to populate the wiki with initial data and research.
-4. **Compile Data Silos Directory:** Create a comprehensive directory of existing data sources for integration.
-
-
-## **Milestone 6: Continuous Improvement and Scaling**
-**Objective:** Continuously improve the Decentralized FDA, expanding its reach, content, and impact.
-
-**Tasks:**
-1. **Gather User Feedback:** Actively seek feedback from users and stakeholders to identify areas for improvement.
-2. **Implement Updates and Enhancements:** Regularly update the platform, adding new features and content based on user feedback and evolving needs.
-3. **Scale Operations:** Expand the reach of the Decentralized FDA, engaging with more stakeholders and increasing its impact over time.
-
 
 # Benefits
 
@@ -193,9 +101,6 @@ A tool for self-sovereign storage of personal data that enables effortless data 
 - Connect to the nation's largest ecosystem of health data
 - Hone risk adjustment factor calculations by linking claims to social determinant's data, to properly estimate the true
   cost of patient care
-  
-
-
 
 # The dFDA Tech Stack
 
@@ -312,13 +217,6 @@ If this data and innovation efforts were combined, this could increase the rate 
 
 The obstacle has been the free-rider problem. Software developers that open source their code give their closed-source competitors an unfair advantage, increasing their likelihood of bankruptcy.
 
-**How to Overcome the Free-Rider Problem**
-
-1. **Government Grants** - Currently, governments spend billions funding closed-source propriety health software. The Public Money, Public Code initiative requires governments to recognize software as a [public good](https://en.wikipedia.org/wiki/Public\_good\_\(economics\)) that is open source. This would lead to a massive influx in grant funding for open-source digital health projects.
-2. **Open-Source Royalty Compensation** - By encoding contributions to the project with NFTs, we can provide ongoing royalty payments to open-source contributors.
-3. **Licensing** - The project core framework will be open-source for any non-commercial purpose. However, we will utilize a [Fair-code](https://faircode.io) or [Fair Source](https://fair.io/?a) licensing model to generate revenue when used by for-profit entities. Licensing fees will be negotiated such that a fraction of the profits generated by the licensee's project use.
-4. **Managed Software-as-a-Service** - Digital health companies can save months of development time and tens of thousands of dollars using our platform instead of reinventing the wheel. A usage-based subscription platform for health application developers would start at $0.50/end-user per month.
-5. **For-Profit Plugins** - WordPress, the most widely used web framework globally, is open-source. Businesses earn revenue by creating for-profit plugins. They contribute to improvements of the open-source core WordPress platform because these improvements benefit their business directly.
 
 # 🏭 Platform
 
@@ -352,7 +250,7 @@ Create a basic foundational technology layer suitable for any digital health app
 * Algorithm and scores development (e.g., in-silico trials)
 * Niche health applications with specific requirements or custom integrations
 
-![CureDAO Platform](/assets/large-platform-diagram-no-colors.png)
+![Platform](/assets/large-platform-diagram-no-colors.png)
 
 The platform consists of two primary components:
 
@@ -402,19 +300,17 @@ Data Analysis Plugins will apply statistical and machine learning methods to the
 
 **Example Data Presentation Plugins**
 
-* [Outcome Labels](https://wiki.curedao.org/en/plugins/outcome-labels-plugin)
-* [Predictor Search Engines](https://wiki.curedao.org/en/plugins/predictor-search-engine-plugin)
-* [Root Cause Analysis Reports](https://wiki.curedao.org/en/plugins/root-cause-analysis-plugin)
-* [Observational Studies](https://wiki.curedao.org/en/plugins/observational-studies-plugin)
-* [Real-Time Decision Support Notifications](https://wiki.curedao.org/en/plugins/optomitron-real-time-notifications-plugin)
+* [Outcome Labels](/en/plugins/outcome-labels-plugin)
+* [Predictor Search Engines](/en/plugins/predictor-search-engine-plugin)
+* [Root Cause Analysis Reports](/en/plugins/root-cause-analysis-plugin)
+* [Observational Studies](/en/plugins/observational-studies-plugin)
+* [Real-Time Decision Support Notifications](/en/plugins/optomitron-real-time-notifications-plugin)
 
 # ❤ Benefits
 
-We use the DAO structure and NFT IP royalties to reward data sharing and open-source collaboration.
-
 ### Incentive Alignment
 
-This illustrates the flow of value between different stakeholders. Unlike traditional zero-sum games, CureDAO provides everyone with more value from participation than they have to put into it.
+This illustrates the flow of value between different stakeholders. Unlike traditional zero-sum games, we can provide everyone with more value from participation than they have to put into it.
 
 ![Value Flow Chain](/assets/value-chain-diagram.png)
 
@@ -423,7 +319,7 @@ This illustrates the flow of value between different stakeholders. Unlike tradit
 Incentives for Patients to share their de-identified data will include:
 
 1. Actionable ways to prevent and mitigate chronic illnesses.
-2. The ability to license and earn a share of income for the use of their data for research and development by pharmaceutical companies and other businesses. NFTs will be linked to the user's cryptographic wallet address. Using a smart contract, the user will receive an ongoing royalty share of the profits for any product developed using their data for research and development.
+2. The ability to license and earn a share of income for the use of their data for research and development by pharmaceutical companies and other businesses. 
 
 ## 2. For Businesses Housing Data Silos
 
@@ -457,29 +353,10 @@ Disease advocacy nonprofits will benefit from promoting studies to their members
 ## 7. For Contributors to the Development of the Platform
 
 1. Gitcoin bounties for specific tasks
-2. Encoding git commits with NFTs entitling the developer to ongoing royalties in proportion to their contributions.
+2. Entitling the developer to ongoing royalties in proportion to their contributions.
 3. Dework bounties for tasks
 4. Other benefits - depending on the involvement
 
-# 🏛 Organization
-
-CureDAO is a laboratory consisting of many experiments.
-
-It's a global laboratory where the 7 billion human "natural experiments" are conducted, revealing the effects of various factors on human health and happiness.
-
-It's an experiment to determine if a new model for clinical research using real-world data can more effectively reduce the global burden of chronic illness.
-
-It's an experiment to see if a new economic model called Collaborationism can reward the creation of open-source "public goods" and overcome the failures of Capitalism and Communism.
-
-It's an experiment to determine if a direct democracy can produce better results than traditional hierarchical command and control organizations.
-
-Given the unprecedented nature of such a project, each working group will constantly be experimenting with new ways to execute this mission. We recognize the importance of using real-world evidence to improve human health. Execution within the working groups should take the same data-driven approach to manage their area of the overall mission.
-
-Accordingly, the organization is composed of three primary components.
-
-1. Citizen Scientists - CureDAO is an open and permissionless organization. Anyone has the right to earn their Citizenship through the contribution of labor or resources. In exchange, the Citizen Scientist will receive CureDAO tokens granting full governance rights over the actions of DAO Lab Staff
-2. DAO Laboratories - Internal working groups that carry out the Citizen Scientists' wishes
-3. External Service Providers - Individuals or entities outside the DAO deemed necessary to carry out the Citizen Scientists' wishes.
 
 
 ## Conclusion
@@ -491,6 +368,5 @@ The dFDA could provide innovative tools, resources, and frameworks, the dFDA emp
 - [Regulatory Enhancements](/dfda-drug-approval-process) - The ideal framework for drug approvals aims to harness the **collective intelligence** of a diverse and knowledgeable crowd, ensuring rigorous, transparent, and inclusive decision-making processes and **algorithmic optimization of outcomes** using quantitative cost-benefit analysis of every intervention for each condition
 - [Support of Real World Evidence](/history-of-medical-regulation-and-clinical-research) - Large-scale efficacy trials based on real-world evidence, utilized before the pharmaceutical industry-driven randomized controlled trials mandated post-1962, were more effective in improving health outcomes, as evidenced by a consistent increase in human life expectancy during their implementation. 
 - [dFDA Legal Structure](/dfda-legal-framework) - In considering the optimal legal structure for the dFDA, it is crucial to evaluate the advantages, disadvantages, and suitability of various options to ensure that the organization can fulfill its mission effectively while remaining compliant with legal and regulatory requirements. 
-- [Life Force NFTs](/life-force-score-nft) - Gamification to Incentivize Healthy Behaviour with Life Force Score. NFTs with an avatar and Life Force Score metadata are updated daily based on performing healthy activities, such as having a good sleep schedule, hydrating, and exercising.
 - [DeSci Exchange](/desci-exchange) - A free market for personal data in the form of an embeddable SDK with a configurable transaction fee for the apps embedding it. 
 
