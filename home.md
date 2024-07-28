@@ -2,15 +2,11 @@
 title: 💡 The Decentralized FDA
 description: A global alliance to discover how millions of factors like foods, drugs, and supplements affect human health.
 published: true
-date: 2024-01-30T18:41:24.401Z
+date: 2024-07-28T16:44:19.599Z
 tags: curedao, litepaper, overview
 editor: markdown
 dateCreated: 2023-11-24T22:24:09.275Z
 ---
-
-> This is a work in progress. Contributions are welcome! Just click the edit button in the lower right corner.  It's our goal to avoid any duplication of effort. So please include existing projects that would be interested in fulfilling any part of this global framework. 
-{.is-warning}
-
 
 # Mandate
 Maximize average healthy human lifespan and minimize net suffering by quantifying the effects of every food, additive, supplement, and medical intervention.
@@ -19,20 +15,18 @@ Maximize average healthy human lifespan and minimize net suffering by quantifyin
 
 # Overview
 
-The Wikipedia model demonstrates the tremendous power of crowdsourcing and open collaboration. Despite Microsoft spending billions of dollars hiring thousands of expert PhDs to create Encarta, Wikipedia garnered over 50 times more content in just a few years - all from volunteers. Moreover, studies have shown Wikipedia's accuracy on scientific topics rivals leading encyclopedias. 
+The Wikipedia model demonstrates the power of crowdsourcing and open collaboration. Despite Microsoft spending billions of dollars hiring thousands of PhDs to create Encarta, Wikipedia generated over 50 times more content in just a few years with the same accuracy levels at a fraction of the cost. 
 
-The Decentralized FDA aims to produce a 50X acceleration in clinical discovery by replicating this model for clinical research. By crowdsourcing real-world data and observations from patients, clinicians, and researchers, the Decentralized FDA could enable orders of magnitude more insights and discovery than the current closed research system. 
+Our goal is a 50X acceleration in clinical discovery by replicating this model for clinical research. We can use real-world evidence from patients, clinicians, and researchers to enable orders of magnitude more insights and discovery. 
 
-Rather than a few expensive clinical trials conducted by pharmaceutical companies, the Decentralized FDA would facilitate a massive decentralized clinical trial encompassing millions of patients. This "Wikipedization" of evidence-based research can unlock lifesaving knowledge at a fraction of the cost and time of traditional methods. Just as Wikipedia democratized access to knowledge, the Decentralized FDA can democratize health research and empower people with actionable data to improve lives.
-
-# Problems We're Trying To Solve Here
+# Problems We're Trying To Solve
 
 The existing regulatory framework for drug approval presents several challenges, hindering the efficiency and effectiveness of pharmaceutical research and public health advancements:
 
-- **Prolonged Time and High Costs:** It takes over a decade and \$2.6 billion on average to bring a drug to market, with Phase III clinical trials costing around \$41k per subject.
-- **Limited Knowledge on Unpatentable Molecules:** There is a significant lack of data on the long-term effects of the majority of synthetic or natural compounds, as there is insufficient incentive to research non-patentable molecules.
-- **Inadequate Exploration of Off-Patent Treatments:** There is a lack of financial incentive to approve drugs for additional conditions after their patent expires, leaving potential treatments for rare diseases unexplored.
-- **Absence of Long-Term Outcome Data:** Due to financial constraints, long-term effects of drugs are often unknown.
+- **Slow and Expensive:** It takes over a decade and \$2.6 billion on average to bring a drug to market, with Phase III clinical trials costing around \$41k per subject.
+- **No Data on Unpatentable Molecules:** There is a significant lack of data on the long-term effects of the majority of synthetic or natural compounds, as there is insufficient incentive to research non-patentable molecules.
+- **Neglected Off-Patent Treatments:** There is a lack of financial incentive to approve drugs for additional conditions after their patent expires, leaving potential treatments for rare diseases unexplored.
+- **No Long-Term Outcome Data:** Due to financial constraints, long-term effects of drugs are often unknown.
 - **Publication Bias:** Negative results are frequently unreported, leading to redundant research efforts and wasted resources.
 - **Exclusion of Diverse Patient Populations:** Clinical trials often exclude a vast majority of the patient population, limiting the generalizability of findings.
 - **Vast Amount of Unresearched Combinations:** The immense number of possible molecule-disease combinations leaves 99.9999998% of potential knowledge undiscovered.
@@ -53,7 +47,7 @@ To overcome these perverse incentives and biases, implementing a Decentralized A
 
 ## 2. dFDA Coordination Platform
 
-The primary initial deliverable a coordination platform. This platform would act as the nexus for facilitating cooperation, communication, and collaborative actions among various stakeholders. It's designed to harness the collective capabilities of existing entities towards achieving the shared vision of accelerated clinical discovery and better health outcomes.
+The primary initial goal a coordination platform to harness the collective capabilities of existing entities towards achieving the shared vision of accelerated clinical discovery and better health outcomes.
 
 The coordination platform should ideally provide:
 
@@ -97,19 +91,17 @@ A tool for self-sovereign storage of personal data that enables effortless data 
 
 ## 4. **dFDA Wiki**
 
-   - **Knowledge Base:** Inspiration could be taken from the Psychonaut Wiki. It's a modified version of MediaWiki with additional quantitative metadata storage regarding the pharmacokintics of various substances.  This could be expanded to document the quantitative effects of every factor on specific health outcomes.
-   - **Editing Authorization:** Implement a robust authorization mechanism to maintain content integrity and trustworthiness.
-   - **AI-Powered Data Population:** Leverage AI to efficiently populate the wiki with initial research and data.
+   - **Knowledge Base:** Inspiration could be taken from the Psychonaut Wiki. It's a modified version of MediaWiki with additional quantitative metadata storage regarding the pharmacokinetics of various substances.  This could be expanded to document the quantitative effects of every factor on specific health outcomes.
    - **Data Silos Directory:** Compile a comprehensive directory of existing data sources, facilitating integration with the Digital Twin Safe.
    - **Reputation Scoring:** Develop a transparent and reliable reputation-weighted voting system for intervention approval.
    - **Comparative Policy Analysis** - Aggregate existing approval and certification data from existing national regulatory bodies
-   - **Food and Drug Outcome Labels** - Ultimately, the most useful output of a decentralized FDA would be **Outcomes Label** that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms. These are derived from real-world data (RWD) and subject to Futarchical-weighted review by the board members of the dFDA.
+   - **Food and Drug Outcome Labels** - Ultimately, the most useful output of a decentralized FDA would be **Outcomes Label** which lists the degree to which the product is likely to improve or worsen specific health outcomes or symptoms. These are derived from real-world data (RWD) and subject to Futarchical-weighted review by the board members of the dFDA.
    - **Publish Meta-Analyses** - Generate meta-analyses from all completed studies at ClinicalTrials.gov
-   - **Certification of Intervention Manufacturers/Sources** via a Decentralized Web of Trust derived from end-user data and reviews traced back though an NFT-tracked supply chain
+   - **Certification of Intervention Manufacturers/Sources** via a Decentralized Web of Trust derived from end-user data and reviews traced back through an NFT-tracked supply chain
    - **Intervention Ranking** - Elevate the most promising yet little/known or researched treatments
-   - **Decentralized Clinical Trials** - Not only would this increase knowledge but also access and availability of new and innovated treatments to those who need them urgently.
+   - **Decentralized Clinical Trials** - This would increase knowledge and access and availability of new and innovative treatments to those who need them urgently.
    
-**Potential Implementations, Components or Inspiration**
+**Related Projects**
 - [Psychonaut Wiki](https://psychonautwiki.org/wiki/Psychoactive_substance_index)
 - [Journal of Citizen Science](https://studies.crowdsourcingcures.org/)
 
@@ -496,9 +488,9 @@ The dFDA could provide innovative tools, resources, and frameworks, the dFDA emp
 
 # 📚 Resources
 - [dFDA Governance Protocol](/dfda-governance-protocol) - By implementing a continuous improvement process and a Futarchical Voting mechanism, the dFDA aims to enhance the quality of drug approvals and health policies. 
-- [Regulatory Enhancements](/dfda-drug-approval-process) - The ideal framework for drug approvals aims to harness the **collective intelligence** of a diverse and knowledgeable crowd, ensuring rigorous, transparent, and inclusive decision-making processes and **algorithmic optimization of outcomes** using quantititative cost benefit analysis of every intervention for each condition
-- [Support of Real World Evidence](/history-of-medical-regulation-and-clinical-research) - Large-scale efficacy trials based on real-world evidence, utilized prior to the pharmaceutical industry-driven randomized controlled trials mandated post-1962, were more effective in improving health outcomes, as evidenced by a consistent increase in human life expectancy during their implementation. 
+- [Regulatory Enhancements](/dfda-drug-approval-process) - The ideal framework for drug approvals aims to harness the **collective intelligence** of a diverse and knowledgeable crowd, ensuring rigorous, transparent, and inclusive decision-making processes and **algorithmic optimization of outcomes** using quantitative cost-benefit analysis of every intervention for each condition
+- [Support of Real World Evidence](/history-of-medical-regulation-and-clinical-research) - Large-scale efficacy trials based on real-world evidence, utilized before the pharmaceutical industry-driven randomized controlled trials mandated post-1962, were more effective in improving health outcomes, as evidenced by a consistent increase in human life expectancy during their implementation. 
 - [dFDA Legal Structure](/dfda-legal-framework) - In considering the optimal legal structure for the dFDA, it is crucial to evaluate the advantages, disadvantages, and suitability of various options to ensure that the organization can fulfill its mission effectively while remaining compliant with legal and regulatory requirements. 
-- [Life Force NFTs](/life-force-score-nft) - Gamification to Incentivize Healthy Behaviour with Life Force Score. NFT's with an avatar and Life Force Score metadata updated daily based on performing healthy activities, such as having a good sleep schedule, hydrating, and exercising.
+- [Life Force NFTs](/life-force-score-nft) - Gamification to Incentivize Healthy Behaviour with Life Force Score. NFTs with an avatar and Life Force Score metadata are updated daily based on performing healthy activities, such as having a good sleep schedule, hydrating, and exercising.
 - [DeSci Exchange](/desci-exchange) - A free market for personal data in the form of an embeddable SDK with a configurable transaction fee for the apps embedding it. 
 
