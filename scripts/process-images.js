@@ -357,33 +357,7 @@ async function processFiles() {
   }
 }
 
-// Create a backup of the file before processing
-function backupFile(filePath) {
-  const backupPath = `${filePath}.bak`;
-  fs.copyFileSync(filePath, backupPath);
-  return backupPath;
-}
-
-// Main execution with backup
-async function main() {
-  // Create backups of all files first
-  const files = await getAllFiles(process.cwd());
-  const backups = files.map(file => backupFile(file));
-  
-  try {
-    await processFiles();
-    // If successful, remove backups
-    backups.forEach(backup => fs.unlinkSync(backup));
-  } catch (error) {
-    console.error('Error during processing:', error);
-    // Restore from backups
-    backups.forEach((backup, index) => {
-      fs.copyFileSync(backup, files[index]);
-      fs.unlinkSync(backup);
-    });
-    console.log('Files restored from backups');
-  }
-}
-
-// Run the script
-main(); 
+// Simplify main execution to just run processFiles directly
+processFiles().catch(error => {
+  console.error('Error during processing:', error);
+}); 
