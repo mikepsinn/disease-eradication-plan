@@ -1,8 +1,8 @@
 ---
 title: 💡 The Decentralized FDA
-description: A global alliance to discover how millions of factors like foods, drugs, and supplements affect human health.
+description: Automating and decentralizing clinical research to quantify the effects of foods, drugs, and supplements affect human health.
 published: true
-date: 2024-07-28T16:52:11.076Z
+date: 2024-12-16T02:27:26.256Z
 tags: curedao, litepaper, overview
 editor: markdown
 dateCreated: 2023-11-24T22:24:09.275Z
