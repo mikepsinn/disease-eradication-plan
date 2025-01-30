@@ -1,0 +1,16 @@
+{
+  "name": "dfda-wiki-backup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/file-organizer.js",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.0.0",
+    "dotenv": "^16.0.3",
+    "mime-types": "^2.1.35",
+    "openai": "^4.0.0",
+    "simple-git": "^3.0.0"
+  },
+  "scripts": {
+    "organize": "node scripts/file-organizer.js"
+  }
+} 
