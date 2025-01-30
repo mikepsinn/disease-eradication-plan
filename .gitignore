@@ -1,3 +1,19 @@
+# Environment variables
+.env
+
+# Node modules
+node_modules/
+
+# Temporary files
+temp-repo/
+
+# Logs
+*.log
+
+# IDE specific files
+.vscode/
+.idea/
+
 # Node rules:
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
