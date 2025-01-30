@@ -14,7 +14,7 @@ const s3Client = new S3Client({
 });
 
 // Get configuration from environment variables
-const BUCKET_NAME = process.env.S3_BUCKET_NAME;
+const S3_AWS_BUCKET = process.env.S3_AWS_BUCKET;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4'; // Default to gpt-4 if not specified
 
 // Path for the image catalog
@@ -187,7 +187,7 @@ async function uploadToS3(filePath) {
     
     const key = `images/${fileName}`;
     const command = new PutObjectCommand({
-      Bucket: BUCKET_NAME,
+      Bucket: S3_AWS_BUCKET,
       Key: key,
       Body: fileContent,
       ContentType: mimeType,
@@ -195,7 +195,7 @@ async function uploadToS3(filePath) {
     });
 
     await s3Client.send(command);
-    const s3Url = `https://${BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
+    const s3Url = `https://${S3_AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
     
     // Update image catalog
     const catalog = loadImageCatalog();
@@ -241,7 +241,70 @@ function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// Main function to process files
+// Function to find image file in possible locations
+async function findImageFile(imagePath, sourceFilePath) {
+  // Normalize paths for cross-platform compatibility
+  imagePath = imagePath.replace(/^\//, ''); // Remove leading slash
+  const normalizedImagePath = path.normalize(imagePath);
+  
+  // List of possible locations to check
+  const possiblePaths = [
+    // Absolute path as is
+    imagePath,
+    // Relative to the markdown/html file
+    path.join(path.dirname(sourceFilePath), imagePath),
+    // Relative to workspace root
+    path.join(process.cwd(), imagePath),
+    // In assets directory
+    path.join(process.cwd(), 'assets', path.basename(imagePath)),
+    // Without leading assets/
+    path.join(process.cwd(), imagePath.replace(/^assets\//, '')),
+    // In root images directory
+    path.join(process.cwd(), 'images', path.basename(imagePath)),
+    // Try without any directory prefix
+    path.join(process.cwd(), path.basename(imagePath))
+  ];
+
+  // Try all possible paths
+  for (const tryPath of possiblePaths) {
+    if (fs.existsSync(tryPath)) {
+      return tryPath;
+    }
+  }
+
+  // If still not found, try searching recursively
+  const allFiles = await getAllFilesIncludingImages(process.cwd());
+  const matchingFile = allFiles.find(file => 
+    path.basename(file).toLowerCase() === path.basename(imagePath).toLowerCase()
+  );
+
+  return matchingFile || null;
+}
+
+// Modified getAllFiles to include image files
+async function getAllFilesIncludingImages(dir) {
+  const files = [];
+  const items = fs.readdirSync(dir);
+
+  for (const item of items) {
+    const fullPath = path.join(dir, item);
+    if (shouldIgnore(fullPath)) continue;
+
+    const stat = fs.statSync(fullPath);
+    if (stat.isDirectory()) {
+      files.push(...await getAllFilesIncludingImages(fullPath));
+    } else {
+      const ext = path.extname(fullPath).toLowerCase();
+      if (processExtensions.includes(ext) || imageExtensions.includes(ext)) {
+        files.push(fullPath);
+      }
+    }
+  }
+
+  return files;
+}
+
+// Modified processFiles function
 async function processFiles() {
   try {
     const files = await getAllFiles(process.cwd());
@@ -261,12 +324,12 @@ async function processFiles() {
       const s3Urls = [];
 
       for (const imagePath of imagePaths) {
-        const absoluteImagePath = path.isAbsolute(imagePath) 
-          ? imagePath 
-          : path.join(path.dirname(file), imagePath);
+        console.log(`Looking for image: ${imagePath}`);
+        const absoluteImagePath = await findImageFile(imagePath, file);
 
-        if (fs.existsSync(absoluteImagePath)) {
-          console.log(`Uploading ${imagePath} to S3...`);
+        if (absoluteImagePath) {
+          console.log(`✓ Found at: ${absoluteImagePath}`);
+          console.log(`Uploading to S3...`);
           const s3Url = await uploadToS3(absoluteImagePath);
           s3Urls.push(s3Url);
           
@@ -274,7 +337,8 @@ async function processFiles() {
             console.log(`✓ Uploaded successfully: ${s3Url}`);
           }
         } else {
-          console.log(`✗ Image not found: ${absoluteImagePath}`);
+          console.log(`✗ Image not found: ${imagePath}`);
+          console.log(`Tried looking in multiple locations. Please check if the file exists.`);
           s3Urls.push(null);
         }
       }

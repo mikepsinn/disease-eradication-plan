@@ -70,13 +70,13 @@ async function uploadToS3(imageBuffer, fileName) {
     const key = `images/${path.basename(fileName)}`;
     
     await s3Client.send(new PutObjectCommand({
-        Bucket: process.env.S3_BUCKET_NAME,
+        Bucket: process.env.S3_AWS_BUCKET,
         Key: key,
         Body: imageBuffer,
         ContentType: mimeType
     }));
     
-    return `https://${process.env.S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
+    return `https://${process.env.S3_AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
 }
 
 async function processMarkdownImages(content, basePath) {
