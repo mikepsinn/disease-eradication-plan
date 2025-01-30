@@ -17,6 +17,99 @@ const s3Client = new S3Client({
 const BUCKET_NAME = process.env.S3_BUCKET_NAME;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4'; // Default to gpt-4 if not specified
 
+// Path for the image catalog
+const IMAGE_CATALOG_PATH = 'docs/assets/image-catalog.json';
+
+// Load existing image catalog if it exists
+function loadImageCatalog() {
+  try {
+    if (fs.existsSync(IMAGE_CATALOG_PATH)) {
+      return JSON.parse(fs.readFileSync(IMAGE_CATALOG_PATH, 'utf8'));
+    }
+  } catch (error) {
+    console.error('Error loading image catalog:', error);
+  }
+  return {
+    lastUpdated: new Date().toISOString(),
+    totalImages: 0,
+    images: {}
+  };
+}
+
+// Save image catalog
+function saveImageCatalog(catalog) {
+  try {
+    // Ensure directory exists
+    const dir = path.dirname(IMAGE_CATALOG_PATH);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    
+    // Update metadata
+    catalog.lastUpdated = new Date().toISOString();
+    catalog.totalImages = Object.keys(catalog.images).length;
+    
+    // Save catalog
+    fs.writeFileSync(
+      IMAGE_CATALOG_PATH,
+      JSON.stringify(catalog, null, 2),
+      'utf8'
+    );
+    
+    // Create markdown version for easy viewing
+    const markdown = generateMarkdownCatalog(catalog);
+    fs.writeFileSync(
+      IMAGE_CATALOG_PATH.replace('.json', '.md'),
+      markdown,
+      'utf8'
+    );
+  } catch (error) {
+    console.error('Error saving image catalog:', error);
+  }
+}
+
+// Generate markdown version of the catalog
+function generateMarkdownCatalog(catalog) {
+  let markdown = `# Image Catalog\n\n`;
+  markdown += `Last Updated: ${catalog.lastUpdated}\n`;
+  markdown += `Total Images: ${catalog.totalImages}\n\n`;
+  
+  // Group images by type
+  const imagesByType = {};
+  Object.entries(catalog.images).forEach(([key, image]) => {
+    const type = image.mimeType.split('/')[1].toUpperCase();
+    if (!imagesByType[type]) {
+      imagesByType[type] = [];
+    }
+    imagesByType[type].push(image);
+  });
+  
+  // Generate sections for each type
+  Object.entries(imagesByType).forEach(([type, images]) => {
+    markdown += `## ${type} Images\n\n`;
+    images.forEach(image => {
+      markdown += `### ${image.fileName}\n`;
+      markdown += `![${image.fileName}](${image.s3Url})\n\n`;
+      markdown += `- **Original Path:** \`${image.originalPath}\`\n`;
+      markdown += `- **S3 URL:** ${image.s3Url}\n`;
+      markdown += `- **Size:** ${formatBytes(image.size)}\n`;
+      markdown += `- **MIME Type:** ${image.mimeType}\n`;
+      markdown += `- **Upload Date:** ${image.uploadDate}\n\n`;
+    });
+  });
+  
+  return markdown;
+}
+
+// Helper function to format bytes
+function formatBytes(bytes) {
+  if (bytes === 0) return '0 Bytes';
+  const k = 1024;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
 // Files and directories to ignore
 const ignoreList = [
   '.git',
@@ -85,14 +178,14 @@ function extractImagePaths(content) {
     .filter(path => !path.startsWith('data:')); // Filter out data URLs
 }
 
-// Function to upload file to S3
+// Modified uploadToS3 function to update catalog
 async function uploadToS3(filePath) {
   try {
     const fileContent = fs.readFileSync(filePath);
     const fileName = path.basename(filePath);
     const mimeType = mime.lookup(filePath) || 'application/octet-stream';
     
-    const key = `img/${fileName}`;
+    const key = `images/${fileName}`;
     const command = new PutObjectCommand({
       Bucket: BUCKET_NAME,
       Key: key,
@@ -102,7 +195,22 @@ async function uploadToS3(filePath) {
     });
 
     await s3Client.send(command);
-    return `https://${BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
+    const s3Url = `https://${BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
+    
+    // Update image catalog
+    const catalog = loadImageCatalog();
+    catalog.images[fileName] = {
+      fileName,
+      originalPath: filePath,
+      s3Url,
+      size: fileContent.length,
+      mimeType,
+      uploadDate: new Date().toISOString(),
+      key
+    };
+    saveImageCatalog(catalog);
+    
+    return s3Url;
   } catch (error) {
     console.error(`Error uploading ${filePath} to S3:`, error);
     return null;
