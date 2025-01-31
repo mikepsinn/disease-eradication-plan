@@ -4,23 +4,16 @@ const fs = require('fs');
 const path = require('path');
 const { ignoreList, shouldIgnore, getAllFiles } = require('./shared-utilities');
 const { analyzeFileLocation, validateAnalysis } = require('./file-path-analyzer');
-const LLMClient = require('./llm-client');
 
-// Get configuration from environment variables
-const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4';
-
-// Directory structure from config
-const { structure } = require('./config/structure');
-
-// Initialize LLM client
-const llmClient = new LLMClient(process.env.OPENAI_API_KEY, structure);
 
 async function processFile(filePath) {
   try {
+    if (shouldIgnore(filePath)) {
+      console.log(`Skipping ignored file: ${filePath}\n`);
+      return;
+    }
     const content = fs.readFileSync(filePath, 'utf8');
-    const analysis = await analyzeFileLocation(filePath, content, {
-      model: OPENAI_MODEL
-    });
+    const analysis = await analyzeFileLocation(filePath, content);
 
     validateAnalysis(analysis);
 

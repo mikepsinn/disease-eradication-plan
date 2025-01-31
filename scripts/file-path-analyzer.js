@@ -1,7 +1,7 @@
 const { structure } = require('./config/structure');
 const LLMClient = require('./llm-client');
 
-const llmClient = new LLMClient(process.env.OPENAI_API_KEY);
+const llmClient = new LLMClient();
 
 async function analyzeFileLocation(filePath, fileContent, options = {}) {
     return llmClient.analyzeLocation(filePath, fileContent, options);
