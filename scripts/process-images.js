@@ -20,6 +20,39 @@ const IMAGE_DIR = process.env.IMAGE_DIR || 'img';
 // Path for the image catalog
 const IMAGE_CATALOG_PATH = 'docs/assets/image-catalog.json';
 
+// Add this validation function near the top of the file
+function validateEnvironment() {
+  const requiredVars = [
+    'AWS_ACCESS_KEY_ID',
+    'AWS_SECRET_ACCESS_KEY',
+    'AWS_REGION',
+    'S3_AWS_BUCKET',
+    'S3_PUBLIC_URL'
+  ];
+
+  const missingVars = requiredVars.filter(varName => !process.env[varName]);
+
+  if (missingVars.length > 0) {
+    console.error('❌ Missing required environment variables:');
+    missingVars.forEach(varName => {
+      console.error(`  - ${varName}`);
+    });
+    console.error('\nPlease configure these in your .env file:');
+    console.error(`AWS_ACCESS_KEY_ID=your-access-key
+AWS_SECRET_ACCESS_KEY=your-secret-key
+AWS_REGION=us-east-1
+S3_AWS_BUCKET=your-bucket-name
+S3_PUBLIC_URL=https://your-public-url.com`);
+    process.exit(1);
+  }
+
+  // Validate S3_PUBLIC_URL format
+  if (!process.env.S3_PUBLIC_URL.startsWith('http')) {
+    console.error('❌ Invalid S3_PUBLIC_URL: Must be a valid URL starting with http:// or https://');
+    process.exit(1);
+  }
+}
+
 // Load existing image catalog if it exists
 function loadImageCatalog() {
   try {
@@ -200,7 +233,8 @@ async function uploadToS3(filePath) {
     });
 
     await s3Client.send(command);
-    const s3Url = `https://${S3_AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
+    const baseUrl = process.env.S3_PUBLIC_URL.replace(/\/$/, '');
+    const s3Url = `${baseUrl}/${key}`;
     
     // Update image catalog
     const catalog = loadImageCatalog();
@@ -306,6 +340,7 @@ async function getAllFilesIncludingImages(dir) {
 // Modified processFiles function
 async function processFiles() {
   try {
+    validateEnvironment();
     const files = await getAllFiles(process.cwd());
     console.log(`Found ${files.length} files to process`);
 
