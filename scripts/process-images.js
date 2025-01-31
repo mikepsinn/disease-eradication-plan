@@ -2,7 +2,7 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const mime = require('mime-types');
-const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
+const { S3Client, PutObjectCommand, ListObjectsV2Command } = require('@aws-sdk/client-s3');
 
 // Initialize S3 client
 const s3Client = new S3Client({
@@ -337,10 +337,63 @@ async function getAllFilesIncludingImages(dir) {
   return files;
 }
 
-// Modified processFiles function
+// Rename the sync function for clarity
+async function updateCatalogFromS3(catalog) {
+  try {
+    console.log('🔍 Checking S3 bucket for catalog updates...');
+    const command = new ListObjectsV2Command({
+      Bucket: S3_AWS_BUCKET,
+      Prefix: IMAGE_DIR + '/'
+    });
+
+    let isTruncated = true;
+    let continuationToken;
+    let s3Objects = [];
+
+    while (isTruncated) {
+      const response = await s3Client.send(command);
+      s3Objects = s3Objects.concat(response.Contents || []);
+      isTruncated = response.IsTruncated;
+      continuationToken = response.NextContinuationToken;
+    }
+
+    // Add missing images to catalog
+    let newEntries = 0;
+    s3Objects.forEach(s3Object => {
+      const fileName = path.basename(s3Object.Key);
+      if (!catalog.images[fileName]) {
+        catalog.images[fileName] = {
+          fileName,
+          originalPath: '(uploaded directly to S3)',
+          s3Url: `${process.env.S3_PUBLIC_URL}/${s3Object.Key}`,
+          size: s3Object.Size,
+          mimeType: mime.lookup(fileName) || 'application/octet-stream',
+          uploadDate: s3Object.LastModified.toISOString(),
+          key: s3Object.Key
+        };
+        newEntries++;
+        console.log(`✅ Added existing S3 file to catalog: ${fileName}`);
+      }
+    });
+
+    saveImageCatalog(catalog);
+    console.log(`✅ Added ${newEntries} existing S3 files to catalog`);
+  } catch (error) {
+    console.error('Error syncing with S3 bucket:', error);
+  }
+}
+
+// Update processFiles function to include sync
 async function processFiles() {
   try {
     validateEnvironment();
+    const catalog = loadImageCatalog();
+    
+    if (process.env.UPDATE_IMAGE_CATALOG_FROM_S3 !== 'false') {
+      console.log('\n🔄 Updating image catalog from S3 bucket...');
+      await updateCatalogFromS3(catalog);
+    }
+
     const files = await getAllFiles(process.cwd());
     console.log(`Found ${files.length} files to process`);
 
