@@ -16,7 +16,7 @@ Fully realizing the potential of the personalized preventative medicine of the f
 
 This illustrates the flow of value between different stakeholders. As opposed to traditional zero-sum games, we provide a way for each self-interested party to derive more value from participation than they have to put into it.
 
-![How Everyone is Better Off](</assets/value-chain-diagram.png>)
+![How Everyone is Better Off](https://static.crowdsourcingcures.org/img/value-chain-diagram.png)
 
 ### 1. Patients
 
@@ -41,7 +41,7 @@ On top of the incentives for businesses listed above, the following incentives w
 2. Massive free marketing exposure through company branded plugins in the Plugin Marketplace.
 3. Subscription or licensing agreements for usage of their plugins in the Plugin Marketplace.
 
-![Branded Plugins](</assets/plugin-marketplace.png>)
+![Branded Plugins](https://static.crowdsourcingcures.org/img/plugin-marketplace.png)
 
 ### 4. Disease Advocacy Non-Profit Organizations
 

@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2025-01-31T00:25:04.740Z",
-  "totalImages": 690,
+  "lastUpdated": "2025-01-31T00:32:16.905Z",
+  "totalImages": 691,
   "images": {
     "300px-Benefits-of-open-source-2.png": {
       "fileName": "300px-Benefits-of-open-source-2.png",
@@ -1619,7 +1619,7 @@
       "s3Url": "https://static.crowdsourcingcures.org/img/how-much-we-know.png",
       "size": 118780,
       "mimeType": "image/png",
-      "uploadDate": "2025-01-31T00:24:28.754Z",
+      "uploadDate": "2025-01-31T00:32:15.176Z",
       "key": "img/how-much-we-know.png"
     },
     "ic_shopping_cart.png": {
@@ -3059,7 +3059,7 @@
       "s3Url": "https://static.crowdsourcingcures.org/img/plugin-marketplace.png",
       "size": 335796,
       "mimeType": "image/png",
-      "uploadDate": "2025-01-31T00:24:40.266Z",
+      "uploadDate": "2025-01-31T00:32:16.905Z",
       "key": "img/plugin-marketplace.png"
     },
     "positron-city.jpg": {
@@ -5480,7 +5480,7 @@
       "s3Url": "https://static.crowdsourcingcures.org/img/value-chain-diagram.png",
       "size": 156103,
       "mimeType": "image/png",
-      "uploadDate": "2025-01-31T00:24:40.531Z",
+      "uploadDate": "2025-01-31T00:32:16.432Z",
       "key": "img/value-chain-diagram.png"
     },
     "activities.png": {
@@ -6211,6 +6211,15 @@
       "mimeType": "image/png",
       "uploadDate": "2025-01-16T21:13:45.000Z",
       "key": "img/why-we-should-determine-efficacy-through-open-trials.png"
+    },
+    "number-of-molecules-with-drug-like-properties.png": {
+      "fileName": "number-of-molecules-with-drug-like-properties.png",
+      "originalPath": "assets/number-of-molecules-with-drug-like-properties.png",
+      "s3Url": "https://static.crowdsourcingcures.org/img/number-of-molecules-with-drug-like-properties.png",
+      "size": 123669,
+      "mimeType": "image/png",
+      "uploadDate": "2025-01-31T00:32:15.418Z",
+      "key": "img/number-of-molecules-with-drug-like-properties.png"
     }
   }
 }

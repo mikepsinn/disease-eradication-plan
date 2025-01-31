@@ -1,7 +1,7 @@
 # Image Catalog
 
-Last Updated: 2025-01-31T00:25:04.740Z
-Total Images: 690
+Last Updated: 2025-01-31T00:32:16.905Z
+Total Images: 691
 
 ## PNG Images
 
@@ -1074,7 +1074,7 @@ Total Images: 690
 - **S3 URL:** https://static.crowdsourcingcures.org/img/how-much-we-know.png
 - **Size:** 116 KB
 - **MIME Type:** image/png
-- **Upload Date:** 2025-01-31T00:24:28.754Z
+- **Upload Date:** 2025-01-31T00:32:15.176Z
 
 ### ic_shopping_cart.png
 ![ic_shopping_cart.png](https://your-custom-domain.com/img/ic_shopping_cart.png)
@@ -1731,7 +1731,7 @@ Total Images: 690
 - **S3 URL:** https://static.crowdsourcingcures.org/img/plugin-marketplace.png
 - **Size:** 327.93 KB
 - **MIME Type:** image/png
-- **Upload Date:** 2025-01-31T00:24:40.266Z
+- **Upload Date:** 2025-01-31T00:32:16.905Z
 
 ### predictor-search-cards.PNG
 ![predictor-search-cards.PNG](https://static.crowdsourcingcures.org/img/predictor-search-cards.PNG)
@@ -3387,7 +3387,7 @@ Total Images: 690
 - **S3 URL:** https://static.crowdsourcingcures.org/img/value-chain-diagram.png
 - **Size:** 152.44 KB
 - **MIME Type:** image/png
-- **Upload Date:** 2025-01-31T00:24:40.531Z
+- **Upload Date:** 2025-01-31T00:32:16.432Z
 
 ### activities.png
 ![activities.png](https://your-custom-domain.com/img/variable_categories/activities.png)
@@ -3874,6 +3874,15 @@ Total Images: 690
 - **Size:** 77.96 KB
 - **MIME Type:** image/png
 - **Upload Date:** 2025-01-16T21:13:45.000Z
+
+### number-of-molecules-with-drug-like-properties.png
+![number-of-molecules-with-drug-like-properties.png](https://static.crowdsourcingcures.org/img/number-of-molecules-with-drug-like-properties.png)
+
+- **Original Path:** `assets/number-of-molecules-with-drug-like-properties.png`
+- **S3 URL:** https://static.crowdsourcingcures.org/img/number-of-molecules-with-drug-like-properties.png
+- **Size:** 120.77 KB
+- **MIME Type:** image/png
+- **Upload Date:** 2025-01-31T00:32:15.418Z
 
 ## JPEG Images
 

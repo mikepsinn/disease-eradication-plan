@@ -43,7 +43,7 @@ The platform consists of two primary components:
 * **Core Open-Source Platform** - The core platform is open-source and includes only universally necessary features. This primarily consists of user authentication, data owner access controls, data storage, data validation, and an API for storage and retrieval. The DAO will compensate contributors to the core platform.
 * **Plugin Framework** - Plugins are modules that provide additional functionality. This includes data import from specific sources, data mapping to various formats, data analysis, data visualization, notifications. These may be free or monetized by their creator or even be integrated into the core based on community voting.
 
-![framework diagram](</assets/plugin-marketplace.png>)
+![framework diagram](https://static.crowdsourcingcures.org/img/plugin-marketplace.png)
 
 ### 3.1 Core Components
 

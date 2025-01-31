@@ -193,22 +193,22 @@ async function getAllFiles(dir) {
 function extractImagePaths(content) {
   const images = new Set();
   
-  // Match markdown image syntax: ![alt](path)
-  const markdownRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
+  // Modified regex to handle angle brackets around paths
+  const markdownRegex = /!\[([^\]]*)\]\(\s*<?([^>\s]+)>?\s*\)/g;
   let match;
   while ((match = markdownRegex.exec(content)) !== null) {
-    images.add(match[2]);
+    images.add(match[2]); // Now using capture group for path inside brackets
   }
 
-  // Match HTML img tags: <img src="path" ...>
+  // Existing HTML img tag handling remains the same
   const htmlRegex = /<img[^>]+src=["']([^"']+)["']/g;
   while ((match = htmlRegex.exec(content)) !== null) {
     images.add(match[1]);
   }
 
   return Array.from(images)
-    .filter(path => !path.startsWith('http'))  // Filter out URLs
-    .filter(path => !path.startsWith('data:')); // Filter out data URLs
+    .filter(path => !path.startsWith('http'))
+    .filter(path => !path.startsWith('data:'));
 }
 
 // Modified uploadToS3 function to update catalog
@@ -263,13 +263,28 @@ function updateContent(content, imagePaths, s3Urls) {
   imagePaths.forEach((imagePath, index) => {
     if (!s3Urls[index]) return;
 
-    // Update markdown image syntax
-    const markdownRegex = new RegExp(`!\\[([^\\]]*)\\]\\(${escapeRegExp(imagePath)}\\)`, 'g');
-    updatedContent = updatedContent.replace(markdownRegex, `![$1](${s3Urls[index]})`);
+    const escapedPath = escapeRegExp(imagePath);
+    
+    // Updated regex to handle angle brackets and whitespace
+    const markdownRegex = new RegExp(
+      `!\\[([^\\]]*)\\]\\(\\s*<?${escapedPath}>?\\s*\\)`,
+      'g'
+    );
+    
+    updatedContent = updatedContent.replace(
+      markdownRegex,
+      `![$1](${s3Urls[index]})`
+    );
 
-    // Update HTML img tags
-    const htmlRegex = new RegExp(`<img([^>]+)src=["']${escapeRegExp(imagePath)}["']`, 'g');
-    updatedContent = updatedContent.replace(htmlRegex, `<img$1src="${s3Urls[index]}"`);
+    // HTML replacement remains the same
+    const htmlRegex = new RegExp(
+      `<img([^>]+)src=["']${escapedPath}["']`,
+      'g'
+    );
+    updatedContent = updatedContent.replace(
+      htmlRegex,
+      `<img$1src="${s3Urls[index]}"`
+    );
   });
 
   return updatedContent;
