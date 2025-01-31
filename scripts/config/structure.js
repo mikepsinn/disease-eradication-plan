@@ -26,7 +26,11 @@ module.exports = {
   analytics: [
     'models',
     'algorithms',
-    'validation'
+    'validation',
+    'predictive-models',
+    'bias-detection',
+    'real-time-monitoring',
+    'outcome-simulation'
   ],
   
   platform: [
@@ -112,14 +116,6 @@ module.exports = {
     'research-dao',
     'reproducible-research',
     'open-source-protocols'
-  ],
-  
-  'analytics': [
-    'predictive-models',
-    'algorithm-validation',
-    'bias-detection',
-    'real-time-monitoring',
-    'outcome-simulation'
   ],
   
   'security': [

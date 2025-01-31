@@ -3,12 +3,15 @@ const LLMClient = require('./llm-client');
 
 const llmClient = new LLMClient();
 
-// Add this directory structure validation map
-const validSubdirectories = {
-  'clinical-trials': new Set(['protocols', 'methodologies', 'validation', 'costs']),
-  'community': new Set(['governance', 'collaboration']),
-  // Add other categories as needed
-};
+// Replace static validSubdirectories with dynamic generation
+const validSubdirectories = Object.entries(structure).reduce((acc, [category, subdirs]) => {
+  if (Array.isArray(subdirs)) {
+    acc[category] = new Set(subdirs);
+  }
+  return acc;
+}, {});
+
+console.log('Generated valid subdirectories:', validSubdirectories);
 
 async function analyzeFileLocation(filePath, fileContent, options = {}) {
     const analysis = await llmClient.analyzeLocation(filePath, fileContent, options);
