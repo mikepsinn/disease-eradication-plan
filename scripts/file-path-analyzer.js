@@ -1,4 +1,4 @@
-const { structure } = require('./config/structure');
+const structure = require('./config/structure');
 const LLMClient = require('./llm-client');
 
 const llmClient = new LLMClient();

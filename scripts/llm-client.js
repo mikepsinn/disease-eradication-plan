@@ -1,5 +1,5 @@
 const { OpenAI } = require('openai');
-const { structure } = require('./config/structure');
+const structure = require('./config/structure');
 
 class LLMClient {
     constructor() {
@@ -8,6 +8,10 @@ class LLMClient {
             throw new Error('DASHSCOPE_API_KEY environment variable is not set');
         }
         
+        if (!structure || typeof structure !== 'object' || Object.keys(structure).length === 0) {
+            throw new Error('Repository structure configuration is invalid or empty');
+        }
+
         this.openai = new OpenAI({
             baseURL: 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1',
             apiKey
@@ -15,10 +19,21 @@ class LLMClient {
     }
 
     async analyzeLocation(filePath, content, options = {}) {
+        if (!filePath) {
+            throw new Error('File path is required');
+        }
+        if (!content) {
+            throw new Error('Content is required');
+        }
+
         const {
             maxContentLength = 1000,
             model = 'qwen-plus',
         } = options;
+
+        if (!model) {
+            throw new Error('Model name is required');
+        }
 
         const prompt = this.createAnalysisPrompt(filePath, content.substring(0, maxContentLength));
 
@@ -32,6 +47,10 @@ class LLMClient {
                 temperature: 0.3,
                 response_format: { type: "json_object" }
             });
+
+            if (!completion?.choices?.[0]?.message?.content) {
+                throw new Error('Invalid or empty response from AI service');
+            }
 
             return JSON.parse(completion.choices[0].message.content);
         } catch (error) {

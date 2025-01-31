@@ -37,8 +37,8 @@ async function processFile(filePath) {
 
 async function migrateContent(sourceDir) {
   try {
-    const files = await getAllFiles(sourceDir);
-    console.log(`Found ${files.length} files to process\n`);
+    const files = await getAllFiles(sourceDir, ['.md', '.html']);
+    console.log(`Found ${files.length} markdown/HTML files to process\n`);
     
     for (const file of files) {
       await processFile(file);
