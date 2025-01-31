@@ -15,7 +15,7 @@ const s3Client = new S3Client({
 
 // Get configuration from environment variables
 const S3_AWS_BUCKET = process.env.S3_AWS_BUCKET;
-const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4'; // Default to gpt-4 if not specified
+const IMAGE_DIR = process.env.IMAGE_DIR || 'img';
 
 // Path for the image catalog
 const IMAGE_CATALOG_PATH = 'docs/assets/image-catalog.json';
@@ -181,17 +181,22 @@ function extractImagePaths(content) {
 // Modified uploadToS3 function to update catalog
 async function uploadToS3(filePath) {
   try {
+    // Add existence check before processing
+    if (!fs.existsSync(filePath)) {
+      console.error(`File not found: ${filePath}`);
+      return null;
+    }
+
     const fileContent = fs.readFileSync(filePath);
     const fileName = path.basename(filePath);
     const mimeType = mime.lookup(filePath) || 'application/octet-stream';
     
-    const key = `images/${fileName}`;
+    const key = `${IMAGE_DIR}/${fileName}`;
     const command = new PutObjectCommand({
       Bucket: S3_AWS_BUCKET,
       Key: key,
       Body: fileContent,
-      ContentType: mimeType,
-      ACL: 'public-read'
+      ContentType: mimeType
     });
 
     await s3Client.send(command);
@@ -244,25 +249,19 @@ function escapeRegExp(string) {
 // Function to find image file in possible locations
 async function findImageFile(imagePath, sourceFilePath) {
   // Normalize paths for cross-platform compatibility
-  imagePath = imagePath.replace(/^\//, ''); // Remove leading slash
+  imagePath = imagePath.replace(/\\/g, '/') // Replace backslashes with forward slashes
+                      .replace(/^\//, ''); // Remove leading slash
   const normalizedImagePath = path.normalize(imagePath);
   
-  // List of possible locations to check
+  // List of possible locations to check (updated to use path.posix)
   const possiblePaths = [
-    // Absolute path as is
     imagePath,
-    // Relative to the markdown/html file
-    path.join(path.dirname(sourceFilePath), imagePath),
-    // Relative to workspace root
-    path.join(process.cwd(), imagePath),
-    // In assets directory
-    path.join(process.cwd(), 'assets', path.basename(imagePath)),
-    // Without leading assets/
-    path.join(process.cwd(), imagePath.replace(/^assets\//, '')),
-    // In root images directory
-    path.join(process.cwd(), 'images', path.basename(imagePath)),
-    // Try without any directory prefix
-    path.join(process.cwd(), path.basename(imagePath))
+    path.posix.join(path.dirname(sourceFilePath), imagePath),
+    path.posix.join(process.cwd(), imagePath),
+    path.posix.join(process.cwd(), 'assets', path.posix.basename(imagePath)),
+    path.posix.join(process.cwd(), imagePath.replace(/^assets\//, '')),
+    path.posix.join(process.cwd(), 'images', path.posix.basename(imagePath)),
+    path.posix.join(process.cwd(), path.posix.basename(imagePath))
   ];
 
   // Try all possible paths
@@ -327,7 +326,7 @@ async function processFiles() {
         console.log(`Looking for image: ${imagePath}`);
         const absoluteImagePath = await findImageFile(imagePath, file);
 
-        if (absoluteImagePath) {
+        if (absoluteImagePath && fs.existsSync(absoluteImagePath)) {
           console.log(`✓ Found at: ${absoluteImagePath}`);
           console.log(`Uploading to S3...`);
           const s3Url = await uploadToS3(absoluteImagePath);
