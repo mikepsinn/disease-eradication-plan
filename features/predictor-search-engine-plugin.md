@@ -21,36 +21,36 @@ The search engine is available in a variety of layout settings.
 
 [Example of Graph](https://studies.curedao.org/variables/Overall_Mood)
 
-![Network Graph Style](/assets/overall-mood-predictors-network-graph.png)
+![Network Graph Style](https://static.crowdsourcingcures.org/img/overall-mood-predictors-network-graph.png)
 
 ### Embeddable Cards
 
-![Cards](/assets/predictor-search-cards.PNG)
+![Cards](https://static.crowdsourcingcures.org/img/predictor-search-cards.PNG)
 
 ### Embeddable Simple List
 
-![Predictor Search Engine Plugin](/assets/predictor-search-no-background.PNG)
+![Predictor Search Engine Plugin](https://static.crowdsourcingcures.org/img/predictor-search-no-background.PNG)
 
 ### Study Cards in Ionic App
 
 [Study Cards in Ionic App Demo](https://web.quantimo.do/dev/src/ionic/src/index.html#/app/predictors/Overall%20Mood)
 
-![Study Cards in Ionic App](/assets/overall-mood-predictors.png)
+![Study Cards in Ionic App](https://static.crowdsourcingcures.org/img/overall-mood-predictors.png)
 
 ### Nutrition Facts Style
 
 [Nutrition Facts Style Demo](https://app.quantimo.do/variables/Overall%20Mood)
 
-![Nutrition Facts Style](/assets/mood-predictors-nutrition-facts-style.png)
+![Nutrition Facts Style](https://static.crowdsourcingcures.org/img/mood-predictors-nutrition-facts-style.png)
 
 ### Bar Chart Style
 
 [Bar Chart Demo](https://app.quantimo.do/variables/Overall%20Mood)
 
-![Bar Chart Style](/assets/mood-predictors-bar-chart.png)
+![Bar Chart Style](https://static.crowdsourcingcures.org/img/mood-predictors-bar-chart.png)
 
 ### Sankey Chart Style
 
 [Sankey Chart Demo](https://app.quantimo.do/variables/Overall%20Mood)
 
-![Sankey Chart Style](/assets/overall-mood-predictors-flow-sankey-chart.png)
+![Sankey Chart Style](https://static.crowdsourcingcures.org/img/overall-mood-predictors-flow-sankey-chart.png)

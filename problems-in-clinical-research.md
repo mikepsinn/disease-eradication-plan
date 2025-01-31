@@ -19,7 +19,7 @@ The high costs lead to:
 
 We still know next to nothing about the long-term effects of 99.9% of the 4 pounds of over [7,000](https://www.dailymail.co.uk/health/article-8757191/Are-additives-food-making-ill.html) different synthetic or natural compounds. This is because there's only sufficient incentive to research patentable molecules.
 
-![chemicals-in-our-diet.png](/assets/chemicals-in-our-diet.png)
+![chemicals-in-our-diet.png](https://static.crowdsourcingcures.org/img/chemicals-in-our-diet.png)
 
 ## **2. Lack of Incentive to Discover Every Application of Off-Patent Treatments**
 
@@ -43,7 +43,7 @@ The more research studies we read, the more we realize we don't know. Nearly eve
 
 If you multiply the [166 billion](https://www.nature.com/articles/549445a) molecules with drug-like properties by the [10,000](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) known diseases, that's 1,162,000,000,000,000 combinations. So far, we've studied [21,000 compounds](https://www.centerwatch.com/articles/12702-new-mit-study-puts-clinical-research-success-rate-at-14-percent). That means we only know 0.000000002% of the effects left to be discovered.
 
-![studied-molecules-chart-no-background.png](/assets/studied-molecules-chart-no-background.png)
+![studied-molecules-chart-no-background.png](https://static.crowdsourcingcures.org/img/studied-molecules-chart-no-background.png)
 
 ## **7. Bias Towards Rejecting Effective Treatments**
 
@@ -55,7 +55,7 @@ Medical researcher Dr. Henry I. Miller, MS, MD described his experience working 
 
 Here's a news story from the Non-Existent Times by No One Ever without a picture of all the people that die from lack of access to life-saving treatments that might have been.
 
-![non-existent-times.png](/assets/non-existent-times.png)
+![non-existent-times.png](https://static.crowdsourcingcures.org/img/non-existent-times.png)
 
 This means that it's only logical for regulators to reject drug applications by default. The personal risks of approving a drug with any newsworthy side effect far outweigh the personal risk of preventing access to life-saving treatment.
 

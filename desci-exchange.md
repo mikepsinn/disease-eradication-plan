@@ -8,18 +8,18 @@ editor: markdown
 dateCreated: 2022-11-05T02:49:24.504Z
 ---
 
-![desci-exchange-text-logo-wide-text-hands-background.png](/desci-exchange-text-logo-wide-text-hands-background.png)
+![desci-exchange-text-logo-wide-text-hands-background.png](https://static.crowdsourcingcures.org/img/desci-exchange-text-logo-wide-text-hands-background.png)
 
 ## How it works
-![desci-exchange-how-it-works.png](/desci-exchange-how-it-works.png)
+![desci-exchange-how-it-works.png](https://static.crowdsourcingcures.org/img/desci-exchange-how-it-works.png)
 
 ## Architecture Overview
 
-![desci-exchange-diagram.svg](/desci-exchange-diagram.svg)
+![desci-exchange-diagram.svg](https://static.crowdsourcingcures.org/img/desci-exchange-diagram.svg)
 
 # Digital Twin Skeleton Key NFT
 
-![digital-twin-nft.png](/digital-twin-nft.png)
+![digital-twin-nft.png](https://static.crowdsourcingcures.org/img/digital-twin-nft.png)
 
 Possession is checked when accessing your Digital Twin Safe.
 If you don't have the key, you're prompted to mint one.
@@ -40,7 +40,7 @@ games.
 
 # Data Gems
 
-![data-gems.png](/data-gems.png)
+![data-gems.png](https://static.crowdsourcingcures.org/img/data-gems.png)
 
 Data Gems bestow their holder with magical powers enabling them to transcend the physical world and see an aspect of its inter-dimensionally linked digital twin.
 

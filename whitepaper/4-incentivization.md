@@ -12,7 +12,7 @@ dateCreated: 2022-07-27T21:26:21.871Z
 
 Fully realizing the potential of the personalized preventative medicine of the future will require incentivizing cooperation between the following stakeholders:
 
-![incentive alignment](/assets/incentive-alignment.png)
+![incentive alignment](https://static.crowdsourcingcures.org/img/incentive-alignment.png)
 
 This illustrates the flow of value between different stakeholders. As opposed to traditional zero-sum games, we provide a way for each self-interested party to derive more value from participation than they have to put into it.
 

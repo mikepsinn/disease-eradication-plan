@@ -12,7 +12,7 @@ We’re only 2 lifetimes from the use of the modern scientific method in medicin
 
 There are over [7,000](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) known diseases afflicting humans.
 
-![](../assets/rare-diseases.jpg)
+![](https://static.crowdsourcingcures.org/img/rare-diseases.jpg)
 
 There are as many untested compounds with drug-like properties as there are [atoms in the solar system](https://www.nature.com/articles/549445a) (166 billion).
 

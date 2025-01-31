@@ -8,4 +8,4 @@ editor: markdown
 dateCreated: 2022-07-27T21:22:57.141Z
 ---
 
-![](/assets/open-cures-app-experiments.png)
+![](https://static.crowdsourcingcures.org/img/open-cures-app-experiments.png)

@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: 2022-07-27T21:23:05.142Z
 ---
 
-![outcome-labels-plugin.png](/assets/outcome-labels.PNG)
+![outcome-labels-plugin.png](https://static.crowdsourcingcures.org/img/outcome-labels.PNG)
 
 Currently, all foods carry nutrition labels such as this one:
 

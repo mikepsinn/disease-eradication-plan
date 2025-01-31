@@ -10,7 +10,7 @@ dateCreated: 2023-10-27T18:21:13.091Z
 
 
 
-![digital-twin-nft.png](/digital-twin-nft.png)
+![digital-twin-nft.png](https://static.crowdsourcingcures.org/img/digital-twin-nft.png)
 
 Possession is checked when accessing your Digital Twin Safe.
 If you don't have the key, you're prompted to mint one.

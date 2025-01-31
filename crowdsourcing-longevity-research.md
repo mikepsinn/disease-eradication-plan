@@ -37,7 +37,7 @@ Collect baseline data from all participants using the following methods:
 
 The use of any interventions, diet, and patient-reported outcomes can be done with [app.curedao.org](https://app.curedao.org/app/public) by [creating daily reminders](https://app.curedao.org/app/public/#/app/reminder-search) and [recording in the inbox](https://app.curedao.org/app/public/#/app/reminders-inbox) or with the web and mobile push notifications with action buttons.
 
-![collect-import-analyze-screenshot-ionic-qm.png](/collect-import-analyze-screenshot-ionic-qm.png)
+![collect-import-analyze-screenshot-ionic-qm.png](https://static.crowdsourcingcures.org/img/collect-import-analyze-screenshot-ionic-qm.png)
 
 **Spreadsheet Collection**
 
@@ -56,7 +56,7 @@ Recommended options for automated data collection include:
 
    * [Fitbit - Sense Advanced Health Smartwatch](https://www.google.com/shopping/product/6935775046411063045?rlz=1C1ONGR_enUS975US975&sxsrf=APwXEdcOmRB4T9mW21JcMon8mL8aSKMjuA:1687298300003&q=fitbit+sense+hrv+oxygen&biw=1920&bih=929&dpr=1&prds=eto:683732774729682177_0,pid:1130388499605091083,rsk:PC_11830074524050600509&sa=X&ved=0ahUKEwjS8ICZ7NL_AhU7jIkEHZe6A9gQ8wII_xE)
    
-![import-data.png](/import-data.png)
+![import-data.png](https://static.crowdsourcingcures.org/img/import-data.png)
 
 ## 4. **Intervention Period**
 Implement the assigned intervention for a predetermined period, such as 12 weeks. Encourage participants to track their progress as described in step 3.

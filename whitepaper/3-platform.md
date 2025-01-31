@@ -36,7 +36,7 @@ Create a basic foundational technology layer suitable for any digital health app
 * Algorithm and scores development (e.g. in-silico trials)
 * Niche health applications with specific requirements or custom integrations
 
-![framework diagram](/assets/layered-platform-architecture-diagram.png)
+![framework diagram](https://static.crowdsourcingcures.org/img/layered-platform-architecture-diagram.png)
 
 The platform consists of two primary components:
 
