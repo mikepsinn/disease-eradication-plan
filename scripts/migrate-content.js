@@ -12,14 +12,16 @@ async function processFile(filePath) {
       console.log(`Skipping ignored file: ${filePath}\n`);
       return;
     }
+    console.log(`\n=== Processing ${path.basename(filePath)} ===`);
+    
     const content = fs.readFileSync(filePath, 'utf8');
     const analysis = await analyzeFileLocation(filePath, content);
 
+    console.log('Pre-validation analysis:', JSON.stringify(analysis, null, 2));
     validateAnalysis(analysis);
 
     // Process the file based on analysis
     const { action, targetDirectory, confidence, reason } = analysis;
-    console.log(`Processing ${filePath}:`);
     console.log(`- Action: ${action}`);
     console.log(`- Target: ${targetDirectory}`);
     console.log(`- Confidence: ${confidence}`);
@@ -32,17 +34,29 @@ async function processFile(filePath) {
     }
   } catch (error) {
     console.error(`Error processing ${filePath}:`, error.message);
+    console.log('Current analysis state:', JSON.stringify(analysis || {}, null, 2));
   }
 }
 
 async function migrateContent(sourceDir) {
   try {
+    let processedCount = 0;
+    let successCount = 0;
+    let errorCount = 0;
+    
     const files = await getAllFiles(sourceDir, ['.md', '.html']);
     console.log(`Found ${files.length} markdown/HTML files to process\n`);
     
     for (const file of files) {
       await processFile(file);
+      processedCount++;
     }
+    
+    console.log('\nMigration Summary:');
+    console.log(`- Total files: ${files.length}`);
+    console.log(`- Processed: ${processedCount}`);
+    console.log(`- Successes: ${successCount}`);
+    console.log(`- Errors: ${errorCount}`);
   } catch (error) {
     console.error('Migration failed:', error.message);
     process.exit(1);

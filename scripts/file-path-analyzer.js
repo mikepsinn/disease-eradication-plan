@@ -9,12 +9,29 @@ async function analyzeFileLocation(filePath, fileContent, options = {}) {
 }
 
 function validateAnalysis(analysis) {
-    if (!['move', 'delete', 'skip', 'flag'].includes(analysis.action)) {
-        throw new Error('Invalid action in analysis response');
+    // Split and filter empty parts from target directory
+    const dirParts = analysis.targetDirectory.split('/').filter(p => p);
+    
+    if (dirParts.length === 0) {
+        throw new Error('Empty target directory path');
     }
 
-    if (!isValidPath(analysis.targetDirectory)) {
-        throw new Error(`Invalid target directory: ${analysis.targetDirectory}`);
+    // Check if the root category exists in structure
+    const rootCategory = dirParts[0];
+    if (!structure[rootCategory]) {
+        throw new Error(`Invalid root category: ${rootCategory}`);
+    }
+
+    // Check if subdirectories are allowed in the category
+    if (dirParts.length > 1) {
+        const subCategory = dirParts[1];
+        if (!structure[rootCategory].includes(subCategory)) {
+            throw new Error(`Invalid subdirectory ${subCategory} for category ${rootCategory}`);
+        }
+    }
+
+    if (!['move', 'delete', 'skip', 'flag'].includes(analysis.action)) {
+        throw new Error('Invalid action in analysis response');
     }
 
     if (analysis.priority < 1 || analysis.priority > 5) {
