@@ -45,6 +45,7 @@ async function processFile(filePath) {
   } catch (error) {
     console.error(`Error processing ${filePath}:`, error.message);
     console.log('Current analysis state:', JSON.stringify(analysis || {}, null, 2));
+    throw error;
   }
 }
 

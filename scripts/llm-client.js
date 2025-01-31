@@ -69,7 +69,7 @@ class LLMClient {
             "targetDirectory": "path/from/structure",
             "confidence": 1-5,
             "reason": "brief explanation",
-            "action": "move|delete|skip|flag",
+            "action": "move|delete|flag",
             "priority": 1-5
         }`;
     }
