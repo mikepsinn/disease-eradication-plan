@@ -1,23 +1,31 @@
+const fs = require('fs').promises;
+const path = require('path');
+const { shouldIgnore } = require('./shared-utilities');
 const { analyzeFileLocation } = require('./file-path-analyzer');
 
 async function getDirectoryTree(startPath) {
     const tree = [];
     
     async function buildTree(currentPath, relativePath = '') {
-        const items = await fs.readdir(currentPath, { withFileTypes: true });
-        
-        for (const item of items) {
-            if (shouldIgnore(item.name)) continue;
+        try {
+            const items = await fs.readdir(currentPath, { withFileTypes: true });
             
-            const fullPath = path.join(currentPath, item.name);
-            const relPath = path.join(relativePath, item.name);
-            
-            if (item.isDirectory()) {
-                tree.push(`📁 ${relPath}/`);
-                await buildTree(fullPath, relPath);
-            } else {
-                tree.push(`📄 ${relPath}`);
+            for (const item of items) {
+                if (shouldIgnore(item.name)) continue;
+                
+                const fullPath = path.join(currentPath, item.name);
+                const relPath = path.join(relativePath, item.name);
+                
+                if (item.isDirectory()) {
+                    tree.push(`📁 ${relPath}/`);
+                    await buildTree(fullPath, relPath);
+                } else {
+                    tree.push(`📄 ${relPath}`);
+                }
             }
+        } catch (error) {
+            console.error(`Error processing directory ${currentPath}:`, error);
+            throw error;
         }
     }
     
@@ -31,6 +39,8 @@ async function suggestFolderWithLLM(filePath, fileContent) {
     });
 }
 
-// In main(), replace directory creation with:
-// Initialize directory structure first
-createDirectoryStructure(__dirname, newStructure); 
+// Add proper exports
+module.exports = {
+    getDirectoryTree,
+    suggestFolderWithLLM
+}; 

@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const mime = require('mime-types');
 const { S3Client, PutObjectCommand, ListObjectsV2Command } = require('@aws-sdk/client-s3');
+const { newStructure, shouldIgnore, getAllFiles } = require('./shared-utilities');
 
 // Initialize S3 client
 const s3Client = new S3Client({
@@ -143,193 +144,13 @@ function formatBytes(bytes) {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
-// Files and directories to ignore
-const ignoreList = [
-  '.git',
-  'node_modules',
-  '.env',
-  'package.json',
-  'package-lock.json',
-  '.gitignore',
-  'scripts',
-  '.vscode',
-  '.idea'
-];
-
 // File extensions to process
 const processExtensions = ['.md', '.html', '.mdx'];
 
 // Image extensions to look for
 const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'];
 
-// Function to check if path should be ignored
-function shouldIgnore(filePath) {
-  return ignoreList.some(ignored => filePath.includes(ignored));
-}
-
 // Function to get all files recursively
-async function getAllFiles(dir) {
-  const files = [];
-  const items = fs.readdirSync(dir);
-
-  for (const item of items) {
-    const fullPath = path.join(dir, item);
-    if (shouldIgnore(fullPath)) continue;
-
-    const stat = fs.statSync(fullPath);
-    if (stat.isDirectory()) {
-      files.push(...await getAllFiles(fullPath));
-    } else {
-      if (processExtensions.includes(path.extname(fullPath).toLowerCase())) {
-        files.push(fullPath);
-      }
-    }
-  }
-
-  return files;
-}
-
-// Function to extract image paths from markdown/html content
-function extractImagePaths(content) {
-  const images = new Set();
-  
-  // Modified regex to handle angle brackets around paths
-  const markdownRegex = /!\[([^\]]*)\]\(\s*<?([^>\s]+)>?\s*\)/g;
-  let match;
-  while ((match = markdownRegex.exec(content)) !== null) {
-    images.add(match[2]); // Now using capture group for path inside brackets
-  }
-
-  // Existing HTML img tag handling remains the same
-  const htmlRegex = /<img[^>]+src=["']([^"']+)["']/g;
-  while ((match = htmlRegex.exec(content)) !== null) {
-    images.add(match[1]);
-  }
-
-  return Array.from(images)
-    .filter(path => !path.startsWith('http'))
-    .filter(path => !path.startsWith('data:'));
-}
-
-// Modified uploadToS3 function to update catalog
-async function uploadToS3(filePath) {
-  try {
-    // Add existence check before processing
-    if (!fs.existsSync(filePath)) {
-      console.error(`File not found: ${filePath}`);
-      return null;
-    }
-
-    const fileContent = fs.readFileSync(filePath);
-    const fileName = path.basename(filePath);
-    const mimeType = mime.lookup(filePath) || 'application/octet-stream';
-    
-    const key = `${IMAGE_DIR}/${fileName}`;
-    const command = new PutObjectCommand({
-      Bucket: S3_AWS_BUCKET,
-      Key: key,
-      Body: fileContent,
-      ContentType: mimeType
-    });
-
-    await s3Client.send(command);
-    const baseUrl = process.env.S3_PUBLIC_URL.replace(/\/$/, '');
-    const s3Url = `${baseUrl}/${key}`;
-    
-    // Update image catalog
-    const catalog = loadImageCatalog();
-    catalog.images[fileName] = {
-      fileName,
-      originalPath: filePath,
-      s3Url,
-      size: fileContent.length,
-      mimeType,
-      uploadDate: new Date().toISOString(),
-      key
-    };
-    saveImageCatalog(catalog);
-    
-    return s3Url;
-  } catch (error) {
-    console.error(`Error uploading ${filePath} to S3:`, error);
-    return null;
-  }
-}
-
-// Function to update file content with S3 URLs
-function updateContent(content, imagePaths, s3Urls) {
-  let updatedContent = content;
-  
-  imagePaths.forEach((imagePath, index) => {
-    if (!s3Urls[index]) return;
-
-    const escapedPath = escapeRegExp(imagePath);
-    
-    // Updated regex to handle angle brackets and whitespace
-    const markdownRegex = new RegExp(
-      `!\\[([^\\]]*)\\]\\(\\s*<?${escapedPath}>?\\s*\\)`,
-      'g'
-    );
-    
-    updatedContent = updatedContent.replace(
-      markdownRegex,
-      `![$1](${s3Urls[index]})`
-    );
-
-    // HTML replacement remains the same
-    const htmlRegex = new RegExp(
-      `<img([^>]+)src=["']${escapedPath}["']`,
-      'g'
-    );
-    updatedContent = updatedContent.replace(
-      htmlRegex,
-      `<img$1src="${s3Urls[index]}"`
-    );
-  });
-
-  return updatedContent;
-}
-
-// Helper function to escape special characters in regex
-function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-// Function to find image file in possible locations
-async function findImageFile(imagePath, sourceFilePath) {
-  // Normalize paths for cross-platform compatibility
-  imagePath = imagePath.replace(/\\/g, '/') // Replace backslashes with forward slashes
-                      .replace(/^\//, ''); // Remove leading slash
-  const normalizedImagePath = path.normalize(imagePath);
-  
-  // List of possible locations to check (updated to use path.posix)
-  const possiblePaths = [
-    imagePath,
-    path.posix.join(path.dirname(sourceFilePath), imagePath),
-    path.posix.join(process.cwd(), imagePath),
-    path.posix.join(process.cwd(), 'assets', path.posix.basename(imagePath)),
-    path.posix.join(process.cwd(), imagePath.replace(/^assets\//, '')),
-    path.posix.join(process.cwd(), 'images', path.posix.basename(imagePath)),
-    path.posix.join(process.cwd(), path.posix.basename(imagePath))
-  ];
-
-  // Try all possible paths
-  for (const tryPath of possiblePaths) {
-    if (fs.existsSync(tryPath)) {
-      return tryPath;
-    }
-  }
-
-  // If still not found, try searching recursively
-  const allFiles = await getAllFilesIncludingImages(process.cwd());
-  const matchingFile = allFiles.find(file => 
-    path.basename(file).toLowerCase() === path.basename(imagePath).toLowerCase()
-  );
-
-  return matchingFile || null;
-}
-
-// Modified getAllFiles to include image files
 async function getAllFilesIncludingImages(dir) {
   const files = [];
   const items = fs.readdirSync(dir);
