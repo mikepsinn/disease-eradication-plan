@@ -3,6 +3,13 @@ const LLMClient = require('./llm-client');
 
 const llmClient = new LLMClient();
 
+// Add this directory structure validation map
+const validSubdirectories = {
+  'clinical-trials': new Set(['protocols', 'methodologies', 'validation', 'costs']),
+  'community': new Set(['governance', 'collaboration']),
+  // Add other categories as needed
+};
+
 async function analyzeFileLocation(filePath, fileContent, options = {}) {
     const analysis = await llmClient.analyzeLocation(filePath, fileContent, options);
     return ensureFullPath(analysis);
@@ -36,6 +43,14 @@ function validateAnalysis(analysis) {
 
     if (analysis.priority < 1 || analysis.priority > 5) {
         throw new Error('Priority must be between 1-5');
+    }
+
+    if (analysis.action === 'move') {
+        const [category, subdir] = analysis.targetDirectory.split('/').filter(Boolean);
+        
+        if (!validSubdirectories[category]?.has(subdir)) {
+            throw new Error(`Invalid subdirectory ${subdir} for category ${category}`);
+        }
     }
 }
 
