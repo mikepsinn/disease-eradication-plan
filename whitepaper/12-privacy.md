@@ -10,7 +10,7 @@ dateCreated: 2022-07-27T21:25:37.264Z
 
 The Health Insurance Portability and Accountability Act of 1996 (“HIPAA”) protects the privacy of patients and sets forth guidelines on how this private health information can be shared.  Though the privacy of a patient must be protected, the legal right of a business to sell health information of patients has been upheld by the Supreme Court of the United States.
 
-![de-identification](/assets/privacy/deidentification.png)
+![de-identification](https://static.crowdsourcingcures.org/img/deidentification.png)
 
 # De-identification Methods
 

@@ -12,7 +12,7 @@ There is compelling historical evidence suggesting that large scale efficacy-tri
 
 For over 99% of recorded human history, the average human life expectancy has been around 30 years.
 
-![life-expectancy-historical.jpg](/assets/life-expectancy-historical.jpg)
+![life-expectancy-historical.jpg](https://static.crowdsourcingcures.org/img/life-expectancy-historical.jpg)
 
 **1893 - The Advent of Safety and Efficacy Trials**
 
@@ -32,7 +32,7 @@ These requirements evolved to what is now called the [Phase 1 Safety Trial](http
 
 This consistent four-year/year increase in life expectancy remained unchanged before and after the new safety regulations.
 
-![fda-safety-trials-life-expectancy.png](/assets/fda-safety-trials-life-expectancy.png)
+![fda-safety-trials-life-expectancy.png](https://static.crowdsourcingcures.org/img/fda-safety-trials-life-expectancy.png)
 
 This suggests that the regulations did not have a large-scale positive or negative impact on the development of life-saving interventions.
 
@@ -42,7 +42,7 @@ Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki
 
 Fortunately, the existing FDA safety regulations prevented any birth defects in the US. Despite the effectiveness of the existing US regulatory framework in protecting Americans, newspaper stories such as the one below created a strong public outcry for increased regulation.
 
-![thalidomide.jpg](/assets/thalidomide.jpg)
+![thalidomide.jpg](https://static.crowdsourcingcures.org/img/thalidomide.jpg)
 
 #### **1962 - New Efficacy Regulations Reduce the Amount and Quality of Efficacy Data Collected**
 
@@ -60,5 +60,5 @@ The 1962 regulations made these large real-world efficacy trials illegal. Ironic
 
 The new regulatory clampdown on approvals immediately reduced the production of new treatments by 70%.
 
-![](.gitbook/assets/new-treatments-per-year-2.png)
-![new-treatments-per-year-2.png](/assets/new-treatments-per-year-2.png)
+![](https://static.crowdsourcingcures.org/img/new-treatments-per-year-2.png)
+![new-treatments-per-year-2.png](https://static.crowdsourcingcures.org/img/new-treatments-per-year-2.png)

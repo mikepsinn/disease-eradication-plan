@@ -16,7 +16,7 @@ dateCreated: 2022-07-22T19:03:26.235Z
 
 &#x20;
 
-![clinicalresearch.io](../assets/cost-of-clinical-trials.png)
+![clinicalresearch.io](https://static.crowdsourcingcures.org/img/cost-of-clinical-trials.png)
 
 
 

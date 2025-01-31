@@ -12,23 +12,23 @@ Optimitron is an AI assistant that asks you about your symptoms and potential fa
 
 ### [Optomitron in Action](https://youtu.be/hd50A74o8YI)
 
-![inflammation worldwide](/assets/inflammation-worldwide.PNG)
+![inflammation worldwide](https://static.crowdsourcingcures.org/img/inflammation-worldwide.PNG)
 
 A half-billion are suffering from autoimmune diseases like Crone's disease, psoriasis, and Fibromyalgia. There’s also a great deal of mounting evidence that treatment-resistant depression and other mental illnesses are strongly related to immune dysregulation. What all these diseases have in common is that they can be exacerbated or improved by hundreds of factors in daily life.
 
-![inflammation factors](/assets/inflammation-factors.PNG)
+![inflammation factors](https://static.crowdsourcingcures.org/img/inflammation-factors.PNG)
 
 Probably the most significant is the 3 pounds of thousands of chemicals that we consume every day through our diets. Since the thousands of chemicals in our food have been GRAS or “Generally recognized as safe” by the FDA, there’s no incentive to do research.
 
-![](/assets/how-much-we-know.png)
+![](https://static.crowdsourcingcures.org/img/how-much-we-know.png)
 
 We've built a connector framework that imports data on diet, physical activity, sleep, social interaction, environmental factors, symptom severity, vital signs, and others.
 
-![optomitron diagram](/assets/optomitron-diagram.PNG)
+![optomitron diagram](https://static.crowdsourcingcures.org/img/optomitron-diagram.PNG)
 
 Then we apply pharmacokinetic predictive analysis that accounts for onset delays and durations of action. This enables her to obtain personalized effectiveness values (similar to recommended daily values) for treatments and reveal potential root causes of chronic conditions.
 
-![decision_support_notification_plugins.png](/decision_support_notification_plugins.png)
+![decision_support_notification_plugins.png](https://static.crowdsourcingcures.org/img/decision_support_notification_plugins.png)
 
 The accuracy of the results obtained from quasi-experimental techniques and observational data is highly dependent on the quantity and quality of the data. To maximize the amount of available data, we're currently in the process of creating a decentralized autonomous organization called CureDAO. Its mission is to create an open-source platform for crowd-sourced clinical research. It incentivizes collaboration and data sharing by competing entities by issuing non-fungible tokens to any contributor of intellectual property or data.
 

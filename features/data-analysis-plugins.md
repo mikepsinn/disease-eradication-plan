@@ -8,6 +8,6 @@ editor: markdown
 dateCreated: 2022-07-27T21:22:45.335Z
 ---
 
-![](/assets/data-analysis.PNG)
+![](https://static.crowdsourcingcures.org/img/data-analysis.PNG)
 
-![](/assets/discovery-scatterplots.PNG)
+![](https://static.crowdsourcingcures.org/img/discovery-scatterplots.PNG)

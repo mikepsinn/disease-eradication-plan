@@ -11,7 +11,7 @@ dateCreated: 2023-11-24T22:24:09.275Z
 # Mandate
 Maximize average healthy human lifespan and minimize net suffering by quantifying the effects of every food, additive, supplement, and medical intervention.
 
-![dfda-overview-purple.png](/dfda-overview-purple.png)
+![dfda-overview-purple.png](https://static.crowdsourcingcures.org/img/dfda-overview-purple.png)
 
 # Overview
 
@@ -71,7 +71,7 @@ A tool for self-sovereign storage of personal data that enables effortless data 
 - [Psychonaut Wiki](https://psychonautwiki.org/wiki/Psychoactive_substance_index)
 - [Journal of Citizen Science](https://studies.crowdsourcingcures.org/)
 
-![outcome-labels-plugin.png](/assets/outcome-labels.PNG)
+![outcome-labels-plugin.png](https://static.crowdsourcingcures.org/img/outcome-labels.PNG)
 
 # Benefits
 
@@ -123,7 +123,7 @@ A safe for your digital twin that provides
 * Data analysis
 * Personalized Health Dashboards
 
-![The Platform](/assets/simplified-platform-architecture-diagram.png)
+![The Platform](https://static.crowdsourcingcures.org/img/simplified-platform-architecture-diagram.png)
 
 Our novel incentive structure overcomes the traditional collaboration and data sharing barriers by encoding contributions through non-fungible tokens (NFTs). 
 Using smart contracts, the platform will compensate all contributors with royalties.
@@ -144,7 +144,7 @@ The solution is to use the oceans of real-world evidence to accelerate the disco
 The human body can be viewed as a black box with inputs (like diet, treatments, etc.) and outputs (like symptom severity). We're creating a mathematical model of human biology to determine the input factors and values that produce optimal health outcomes.
 
 
-![machine-learning-health-optimization.png](/machine-learning-health-optimization.png)
+![machine-learning-health-optimization.png](https://static.crowdsourcingcures.org/img/machine-learning-health-optimization.png)
 
 ## The Potential of the Oceans of Real-World Evidence
 
@@ -167,7 +167,7 @@ The high costs lead to:
 
 We still know next to nothing about the long-term effects of 99.9% of the 4 pounds of over [7,000](https://www.dailymail.co.uk/health/article-8757191/Are-additives-food-making-ill.html) different synthetic or natural compounds. This is because there's only sufficient incentive to research patentable molecules.
 
-![](/assets/chemicals-in-our-diet.png)
+![](https://static.crowdsourcingcures.org/img/chemicals-in-our-diet.png)
 
 **2. Lack of Incentive to Discover Every Application of Off-Patent Treatments**
 
@@ -191,7 +191,7 @@ The more research studies we read, the more we realize we don't know. Nearly eve
 
 If you multiply the [166 billion](https://www.nature.com/articles/549445a) molecules with drug-like properties by the [10,000](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) known diseases, that's 1,162,000,000,000,000 combinations. So far, we've studied [21,000 compounds](https://www.centerwatch.com/articles/12702-new-mit-study-puts-clinical-research-success-rate-at-14-percent). That means we only know 0.000000002% of the effects left to be discovered.
 
-![](/assets/studied-molecules-chart-no-background.png)
+![](https://static.crowdsourcingcures.org/img/studied-molecules-chart-no-background.png)
 
 # Why Digital Health Innovation Has Failed
 
@@ -199,21 +199,21 @@ If you multiply the [166 billion](https://www.nature.com/articles/549445a) molec
 
 Despite this massive growth in health data and innovation, we've seen increased costs and disease burden and decreased life expectancy.
 
-![](/assets/digital-health-has-failed-large.png)
+![](https://static.crowdsourcingcures.org/img/digital-health-has-failed-large.png)
 
 The reason is awful **incentives**. There are more than [350,000](https://www.emarketer.com/content/over-350k-digital-health-apps-flooding-market-here-s-how-apps-stand) health apps. 
 Each costs an average of [\$425,000](https://www.mobihealthnews.com/content/mobile-health-app-development-costs-425000-average-likely-continuing-rise) to develop. 
 Most have significant overlap in functionality, representing a cost of [$157,500,000,000](https://www.mobihealthnews.com/content/mobile-health-app-development-costs-425000-average-likely-continuing-rise) on duplication of effort.
 
-![](/assets/collaboration-is-punished.PNG)
+![](https://static.crowdsourcingcures.org/img/collaboration-is-punished.PNG)
 
 Isolated streams of health data can only tell us about the past. For example, dashboards filled with descriptive statistics such as our daily steps or sleep.
 
-![](/assets/thousands-of-dashboards.PNG)
+![](https://static.crowdsourcingcures.org/img/thousands-of-dashboards.PNG)
 
 If this data and innovation efforts were combined, this could increase the rate of progress by 350,000 times.
 
-![](/assets/vertical-innovation.PNG)
+![](https://static.crowdsourcingcures.org/img/vertical-innovation.PNG)
 
 The obstacle has been the free-rider problem. Software developers that open source their code give their closed-source competitors an unfair advantage, increasing their likelihood of bankruptcy.
 
@@ -250,7 +250,7 @@ Create a basic foundational technology layer suitable for any digital health app
 * Algorithm and scores development (e.g., in-silico trials)
 * Niche health applications with specific requirements or custom integrations
 
-![Platform](/assets/large-platform-diagram-no-colors.png)
+![Platform](https://static.crowdsourcingcures.org/img/large-platform-diagram-no-colors.png)
 
 The platform consists of two primary components:
 
@@ -285,7 +285,7 @@ Value stream management allows the exchange of data for tokens.
 * Electronic Health Record System Plugins
 * Clinical Trial Management Plugins
 
-![Branded Plugins](/assets/plugin-marketplace.png)
+![Branded Plugins](https://static.crowdsourcingcures.org/img/plugin-marketplace.png)
 
 **Data Analysis Plugins**
 
@@ -312,7 +312,7 @@ Data Analysis Plugins will apply statistical and machine learning methods to the
 
 This illustrates the flow of value between different stakeholders. Unlike traditional zero-sum games, we can provide everyone with more value from participation than they have to put into it.
 
-![Value Flow Chain](/assets/value-chain-diagram.png)
+![Value Flow Chain](https://static.crowdsourcingcures.org/img/value-chain-diagram.png)
 
 ## 1. For Patients
 

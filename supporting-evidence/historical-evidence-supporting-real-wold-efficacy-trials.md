@@ -12,7 +12,7 @@ There is compelling historical evidence suggesting that large scale efficacy-tri
 
 For over 99% of recorded human history, the average human life expectancy has been around 30 years.
 
-![historical life expectancy](../assets/life-expectancy-historical.jpg)
+![historical life expectancy](https://static.crowdsourcingcures.org/img/life-expectancy-historical.jpg)
 
 **1893 – The Advent of Safety and Efficacy Trials**
 
@@ -32,7 +32,7 @@ These requirements evolved to what is now called the [Phase 1 Safety Trial](http
 
 This consistent four-year/year increase in life expectancy remained unchanged before and after the new safety regulations.
 
-![Fda safety trials life expectancy](../assets/fda-safety-trials-life-expectancy.png)
+![Fda safety trials life expectancy](https://static.crowdsourcingcures.org/img/fda-safety-trials-life-expectancy.png)
 
 This suggests that the regulations did not have a large-scale positive or negative impact on the development of life-saving interventions.
 
@@ -42,7 +42,7 @@ Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki
 
 Fortunately, the existing FDA safety regulations prevented any birth defects in the US. Despite the effectiveness of the existing US regulatory framework in protecting Americans, newspaper stories such as the one below created a strong public outcry for increased regulation.
 
-![Thalidomide](../assets/thalidomide.jpg)
+![Thalidomide](https://static.crowdsourcingcures.org/img/thalidomide.jpg)
 
 #### 1962 – New **Efficacy Regulations Reduce the Amount and Quality of Efficacy Data Collected**
 
@@ -60,13 +60,13 @@ The 1962 regulations made these large real-world efficacy trials illegal. Ironic
 
 The new regulatory clampdown on approvals immediately reduced the production of new treatments by 70%.
 
-![](../assets/new-treatments-per-year-2.png)
+![](https://static.crowdsourcingcures.org/img/new-treatments-per-year-2.png)
 
 **Explosion in Costs**
 
 Since the abandonment of the former efficacy trial model, costs have exploded. Since 1962, the cost of bringing a new treatment to market has gone from [$74 million](https://publications.parliament.uk/pa/cm200405/cmselect/cmhealth/42/4207.htm) to over [$1 billion](https://publications.parliament.uk/pa/cm200405/cmselect/cmhealth/42/4207.htm) US dollars (2020 inflation-adjusted).
 
-![Cost to Get a New Drug to Market](../assets/cost-to-develop-a-new-drug.png)
+![Cost to Get a New Drug to Market](https://static.crowdsourcingcures.org/img/cost-to-develop-a-new-drug.png)
 
 {% content-ref url="../2-solution/greater-competitive-innovation-and-fewer-monopolies.md" %}
 [greater-competitive-innovation-and-fewer-monopolies.md](../2-solution/greater-competitive-innovation-and-fewer-monopolies.md)
@@ -97,13 +97,13 @@ The placebo-controlled, randomized controlled trial helped researchers gauge the
 From 1890 to 1960, there was a linear 4-year increase in human lifespan every year. This amazingly linear growth rate had followed millennia with a flat human lifespan of around 28 years. Following this new 70% reduction in the pace of medical progress, the growth in human lifespan was immediately cut in half to an increase of 2 years per year.
 
 
-![fda-life-expectancy-growth-jama-chart-graph.png](/fda-life-expectancy-growth-jama-chart-graph.png)
+![fda-life-expectancy-growth-jama-chart-graph.png](https://static.crowdsourcingcures.org/img/fda-life-expectancy-growth-jama-chart-graph.png)
 
 **Diminishing Returns?**
 
 One might say, “It seems more likely — or as likely — to me that drug development provides diminishing returns to life expectancy.” However, diminishing returns produce a slope of exponential decay. It may be partially responsible, but it’s not going to produce a sudden change in the linear slope of a curve as linear as life expectancy was before and after the 1962 regulations.
 
-![What diminishing returns would look like](../assets/diminishing-returns.png)
+![What diminishing returns would look like](https://static.crowdsourcingcures.org/img/diminishing-returns.png)
 
 **Correlation is Not Causation**
 

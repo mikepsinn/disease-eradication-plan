@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: 2023-10-26T21:36:53.402Z
 ---
 
-![digital-twin-nft.png](/digital-twin-nft.png)
+![digital-twin-nft.png](https://static.crowdsourcingcures.org/img/digital-twin-nft.png)
 
 The avatar image and Life Force Score metadata are updated daily based on their imported data performing healthy activities, such as having a good sleep schedule, hydrating, and exercising.
 

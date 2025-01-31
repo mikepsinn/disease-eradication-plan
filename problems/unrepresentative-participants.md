@@ -28,7 +28,7 @@ Furthermore, patient sample sizes are very small. The number of subjects per tri
 * [70](https://www.ncbi.nlm.nih.gov/books/NBK50886/) patients per depression trial
 * [100](https://www.ncbi.nlm.nih.gov/books/NBK50886/) per diabetes trial
 
-![wellbutrin small sample size](../assets/wellbutrin-effectiveness-small-sample-size.png)
+![wellbutrin small sample size](https://static.crowdsourcingcures.org/img/wellbutrin-effectiveness-small-sample-size.png)
 
 In the example in the graphic above, a drug is prescribed to millions of patients based on a study with only 36 subjects, where a representation of the general public is questionable.
 

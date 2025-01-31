@@ -18,7 +18,7 @@ In a DAO comprised of a large number of prominent experts, no individual could b
 
 Here's a news story from the Non-Existent Times by No One Ever without a picture of all the people that die from lack of access to life-saving treatments that might have been.
 
-![](../assets/non-existent-times.png)
+![](https://static.crowdsourcingcures.org/img/non-existent-times.png)
 
 This means that it's only logical for regulators to reject drug applications by default. The personal risks of approving a drug with any newsworthy side effect far outweigh the personal risk of preventing access to life-saving treatment.
 

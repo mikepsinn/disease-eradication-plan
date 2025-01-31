@@ -17,13 +17,13 @@ Additionally, [150,000](https://www.weforum.org/agenda/2020/05/how-many-people-d
 * [**FIFTY-ONE**](https://en.wikipedia.org/wiki/Casualties\_of\_the\_September\_11\_attacks) September 11th attacks every day
 * [**NINE**](https://en.wikipedia.org/wiki/Casualties\_of\_the\_September\_11\_attacks) Holocausts every year
 
-![deaths from disease](/assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
+![deaths from disease](https://static.crowdsourcingcures.org/img/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
 
 **Will throwing more money at the existing healthcare system save us?**
 
 Since 2014, healthcare spending per person has been [increasing faster than ever](https://fred.stlouisfed.org/series/HLTHSCPCHCSA) faster than ever before.
 
-![health spending](/assets/us-healthcare-expenditure-per-person.png)
+![health spending](https://static.crowdsourcingcures.org/img/us-healthcare-expenditure-per-person.png)
 
 Despite this additional spending, life expectancy has actually been \[declining]\(.. /assets/life-expectancy/life-expectancy-chart.png) since 2014.
 
@@ -38,7 +38,7 @@ There has been an explosion of recent technological advances in digital health i
 
 These innovations have produced a [50-fold](https://www.weforum.org/agenda/2015/10/who-should-own-our-health-data/) growth in the amount of data on every disease and every factor that could improve, exacerbate, or prevent it.
 
-![chart](/assets/growth-in-health-data-chart.png)
+![chart](https://static.crowdsourcingcures.org/img/growth-in-health-data-chart.png)
 
 This data exists in the form of:
 
@@ -52,7 +52,7 @@ This data exists in the form of:
 
 The digital health revolution started over a decade ago. It was promised to improve human health and reduce costs. Yet, all we've seen is increasing costs, increasing disease burden, and decreasing life expectancy.
 
-![cost and death](/assets/health-care-costs-and-life-expectancy.png)
+![cost and death](https://static.crowdsourcingcures.org/img/health-care-costs-and-life-expectancy.png)
 
 **Why haven't we seen a reduction in disease burden?**
 
@@ -66,7 +66,7 @@ So, this explosion in technology, data, and spending has produced no measurable 
 * The process takes over 10 years.
 * It costs [$36k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001) per subject in Phase III clinical trials.
 
-![clinical trial cost](/assets/cost-of-clinical-trials.png) [Source: clinicalresearch.io](https://www.clinicalresearch.io/blog/industry-trends/cost-of-clinical-trials-breakdown/)
+![clinical trial cost](https://static.crowdsourcingcures.org/img/cost-of-clinical-trials.png) [Source: clinicalresearch.io](https://www.clinicalresearch.io/blog/industry-trends/cost-of-clinical-trials-breakdown/)
 
 This high cost leads to the following problems:
 
@@ -120,7 +120,7 @@ Furthermore, patient sample sizes are very small. The number of subjects per tri
 * [70](https://www.ncbi.nlm.nih.gov/books/NBK50886/) patients per depression trial
 * [100](https://www.ncbi.nlm.nih.gov/books/NBK50886/) per diabetes trial
 
-![wellbutrin small sample size](/assets/wellbutrin-effectiveness-small-sample-size.png)
+![wellbutrin small sample size](https://static.crowdsourcingcures.org/img/wellbutrin-effectiveness-small-sample-size.png)
 
 In the example in graphic above a drug is prescribed to millions of patients based on a study with only 36 subjects, where a representation of the general public is questionable.
 
@@ -142,7 +142,7 @@ There are more than [350,000](https://www.emarketer.com/content/over-350k-digita
 
 If this code was freely shared, everyone could build on what everyone else had done. Theoretically, this could increase the rate of progress by 350,000 times.
 
-![closed source competition vs open source collaboration](/assets/closed-source-competition-vs-open-source-collaboration.sketch.png)
+![closed source competition vs open source collaboration](https://static.crowdsourcingcures.org/img/closed-source-competition-vs-open-source-collaboration.sketch.png)
 
 The obstacle has been the free-rider problem. Software Developers that open source their code give their closed-source competitors an unfair advantage. This increases their likelihood of bankruptcy even higher than the 90% failure rate they already faced.
 

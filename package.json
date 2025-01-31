@@ -11,6 +11,8 @@
     "simple-git": "^3.0.0"
   },
   "scripts": {
-    "organize": "node scripts/file-organizer.js"
+    "organize": "node scripts/file-organizer.js",
+    "migrate": "node scripts/migrate-content.js",
+    "process-images": "node scripts/process-images.js"
   }
 } 

@@ -8,12 +8,12 @@ editor: markdown
 dateCreated: 2022-07-27T21:22:48.973Z
 ---
 
-![](/assets/data-collection-plugins.PNG)
+![](https://static.crowdsourcingcures.org/img/data-collection-plugins.PNG)
 
 Data collection begins with self-tracking and initial data collection. This can be done using wearable sensors, third-party applications, and client applications.
 
 ![Diagram showing data collection ranging from human and public data
-sources ultimately ending up at the aggregation layer(30)](/assets/data-collection-flow-chart.png)
+sources ultimately ending up at the aggregation layer(30)](https://static.crowdsourcingcures.org/img/data-collection-flow-chart.png)
 Diagram showing data collection ranging from human and public data sources, ultimately ending up at the 30. Aggregation Layer.
 
 ### Data Types
@@ -44,5 +44,5 @@ The Automated Data Acquisition automatically pulls data from a number of data so
 - Visual Affect Data via Web-Cameras: By tracking hundreds of data points on the subjects’ faces, InSight can accurately capture emotional states.
 - Prescription Records: Microsoft HealthVault can automatically collect lab results, prescription history, and visit records from a growing list of labs, pharmacies, hospitals, and clinics.
 
-![spaces_alpb7mdybf0ce3vsyslf_uploads_git-blob-edb4adfe424234ff8866fd666bff043fd04c4d5a_integrations-screenshot.png](/spaces_alpb7mdybf0ce3vsyslf_uploads_git-blob-edb4adfe424234ff8866fd666bff043fd04c4d5a_integrations-screenshot.png)
+![spaces_alpb7mdybf0ce3vsyslf_uploads_git-blob-edb4adfe424234ff8866fd666bff043fd04c4d5a_integrations-screenshot.png](https://static.crowdsourcingcures.org/img/spaces_alpb7mdybf0ce3vsyslf_uploads_git-blob-edb4adfe424234ff8866fd666bff043fd04c4d5a_integrations-screenshot.png)
 Optomitron Data imports

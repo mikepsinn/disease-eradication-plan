@@ -10,7 +10,7 @@ dateCreated: 2024-11-19T05:27:19.851Z
 
 # RIGHT TO TRIAL ACT
 
-![right_to_trial_act_image.jpg](/right_to_trial_act_image.jpg)
+![right_to_trial_act_image.jpg](https://static.crowdsourcingcures.org/img/right_to_trial_act_image.jpg)
 
 ## SECTION 1. SHORT TITLE AND FINDINGS
 
