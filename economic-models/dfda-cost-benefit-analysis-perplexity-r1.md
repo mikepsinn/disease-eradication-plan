@@ -1,6 +1,6 @@
 ---
 title: dFDA Cost Benefit Analysis by Perplexity with Deepseek R1
-description: The analysis estimates that by investing $2.4B in a decentralized FDA infrastructure, the system could generate a net benefit of $52.1B over five years—yielding an impressive ROI of 21.7:1.
+description: Investing $2.4B in a decentralized FDA infrastructure could generate a net benefit of $52.1B over five years—yielding an ROI of 22:1.
 published: true
 date: 2025-02-02T05:32:50.199Z
 tags: economic-models
