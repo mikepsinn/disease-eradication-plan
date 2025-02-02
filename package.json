@@ -5,14 +5,16 @@
   "main": "scripts/file-organizer.js",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.0.0",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.4.7",
     "mime-types": "^2.1.35",
     "openai": "^4.0.0",
-    "simple-git": "^3.0.0"
+    "pg": "^8.13.1",
+    "simple-git": "^3.0.0",
+    "ssh2": "^1.16.0"
   },
   "scripts": {
     "organize": "node scripts/file-organizer.js",
     "migrate": "node scripts/migrate-content.js",
     "process-images": "node scripts/process-images.js"
   }
-} 
+}
