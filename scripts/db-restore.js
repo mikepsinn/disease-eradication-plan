@@ -188,13 +188,13 @@ async function main() {
     const env = {
       ...process.env,
       PGPASSWORD: RESTORE_DB_PASSWORD,
-      PGSSLMODE: 'require' // Equivalent to rejectUnauthorized: false
+      PGSSLMODE: 'prefer'  // Changed from 'require' to handle servers without SSL
     };
 
     // Cleanup commands
     const cleanupCommands = [
-      'DROP SCHEMA IF EXISTS public CASCADE;',
-      'CREATE SCHEMA public;',
+      //'DROP SCHEMA IF EXISTS public CASCADE;',
+      //'CREATE SCHEMA public;',
       `GRANT ALL ON SCHEMA public TO ${RESTORE_DB_USER};`,
       'GRANT ALL ON SCHEMA public TO public;'
     ].join(' ');
@@ -209,8 +209,16 @@ async function main() {
       '-c', cleanupCommands
     ];
 
-    const cleanupResult = spawnSync('psql', cleanupArgs, { stdio: 'inherit', env });
+    const cleanupResult = spawnSync('psql', cleanupArgs, { 
+      stdio: 'pipe',  // Changed from 'inherit' to capture output
+      env 
+    });
+    
+    // Add error output inspection
     if (cleanupResult.status !== 0) {
+      console.error('\nCleanup failed with error:');
+      console.error('STDOUT:', cleanupResult.stdout?.toString());
+      console.error('STDERR:', cleanupResult.stderr?.toString());
       throw new Error('Database cleanup failed');
     }
 
