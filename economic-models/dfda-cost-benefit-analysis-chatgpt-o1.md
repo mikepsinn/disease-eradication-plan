@@ -8,11 +8,11 @@ editor: markdown
 
 dateCreated: 2025-02-02T05:32:50.199Z
 
+---
+
 Below is a conceptual, high-level analysis of the costs, benefits, and return on investment (ROI) for transforming the U.S. Food and Drug Administration’s (FDA) current regulatory framework into a “global decentralized, autonomous FDA.” This future-state platform would continuously rank treatments using the entirety of clinical and real-world data (RWD), and would enable anyone—potentially over a billion people worldwide—to participate in large-scale, continuous, decentralized clinical trials. 
 
 Because this analysis deals with an innovative and unprecedented transformation, many assumptions must be clearly stated, and the data points are best understood as estimates or ranges. Nonetheless, this exercise provides a structured way to think about potential costs, savings, and impacts on medical progress.
-
----
 
 ## 1. Overview of the Proposed Transformation
 
@@ -530,13 +530,9 @@ In this rough example, even **partial adoption** in the early years delivers lar
 
 3. **Quality-Adjusted Life Years (QALYs)**  
    For a more health-economic model, incorporate a **health outcomes** dimension, e.g., QALYs gained from earlier availability of better therapies, or from broader real-world evidence that improves prescribing practices. This would create a cost–utility analysis with:
+   $$ \text{Net Monetary Benefit} = \lambda \times \Delta \text{QALYs} - \text{NPV}(\text{Costs}) $$
 
-   \[
-     \text{Net Monetary Benefit} 
-     = \lambda \times \Delta \text{QALYs} - \text{NPV}(\text{Costs}),
-   \]
-
-   where \(\lambda\) is the willingness-to-pay per QALY.  
+   where $\lambda$ is the willingness-to-pay per QALY.
 
 4. **Risk & Uncertainty**  
    - Real-world constraints (regulatory pushback, privacy laws) might reduce \(\alpha\).  

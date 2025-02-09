@@ -7,18 +7,29 @@ require('dotenv').config();
 
 // Define the frontmatter schema
 const FrontmatterSchema = z.object({
-  number: z.string().optional(),
-  textFollowingNumber: z.string().optional(),
-  description: z.string(),
-  emoji: z.string(),
-  featuredImage: z.string().optional(),
-  source: z.string().url().optional(),
-  title: z.string(),
-  published: z.boolean().default(true),
-  date: z.string().datetime().optional(),
-  tags: z.array(z.string()).default([]),
-  editor: z.string().default('markdown'),
-  dateCreated: z.string().datetime().optional(),
+  description: z.string()
+    .describe('A clear, concise description'),
+  emoji: z.string()
+    .describe('A single relevant emoji'),
+  title: z.string()
+    .describe('A descriptive title'),
+  published: z.boolean()
+    .default(true)
+    .describe('Whether the content is published, defaults to true'),
+  date: z.string()
+    .datetime()
+    .optional()
+    .describe('Current date in ISO format'),
+  tags: z.array(z.string())
+    .default([])
+    .describe('Array of relevant topic tags'),
+  editor: z.string()
+    .default('markdown')
+    .describe('Editor type, defaults to markdown'),
+  dateCreated: z.string()
+    .datetime()
+    .optional()
+    .describe('Creation date in ISO format'),
 });
 
 class FrontmatterGenerator {
@@ -29,19 +40,8 @@ class FrontmatterGenerator {
   async generateFrontmatter(content, filePath) {
     const systemPrompt = `You are a helpful assistant for analyzing markdown content and generating frontmatter metadata.
 Your task is to analyze the content and generate appropriate frontmatter fields.
-Always return a complete JSON object with ALL required fields:
-- description (required): A clear, concise description
-- emoji (required): A single relevant emoji
-- title (required): A descriptive title
-- number (optional): Any numerical value mentioned (with k/m/b suffix if applicable)
-- textFollowingNumber (optional): The context around the number
-- featuredImage (optional): Suggested image name if mentioned
-- source (optional): Any URL referenced as a source
-- tags (required): Array of relevant topic tags (default to empty array if none)
-- published (required): Boolean, default to true
-- editor (required): String, default to "markdown"
-- date (optional): Current date in ISO format
-- dateCreated (optional): Current date in ISO format
+Always return a complete JSON object with all required fields based on the content.
+Make sure to include all mandatory fields (title, description, emoji) and any optional fields that are relevant to the content.
 
 Example response format:
 {
