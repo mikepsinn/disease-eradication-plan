@@ -1,372 +1,552 @@
----
-title: 💡 The Decentralized FDA
-description: Automating and decentralizing clinical research to quantify the effects of foods, drugs, and supplements affect human health.
-published: true
-date: 2024-12-16T02:27:26.256Z
-tags: curedao, litepaper, overview
-editor: markdown
-dateCreated: 2023-11-24T22:24:09.275Z
----
+# Objective
 
-# Mandate
-Maximize average healthy human lifespan and minimize net suffering by quantifying the effects of every food, additive, supplement, and medical intervention.
+Disease eradication.
 
-![dfda-overview-purple.png](https://static.crowdsourcingcures.org/img/dfda-overview-purple.png)
+# How it works
 
-# Overview
+Upgrade all global health agencies to allow any patient to:
+1. Quantify the safety and effectiveness of all treatments based on the entiree
 
-The Wikipedia model demonstrates the power of crowdsourcing and open collaboration. Despite Microsoft spending billions of dollars hiring thousands of PhDs to create Encarta, Wikipedia generated over 50 times more content in just a few years with the same accuracy levels at a fraction of the cost. 
 
-Our goal is a 50X acceleration in clinical discovery by replicating this model for clinical research. We can use real-world evidence from patients, clinicians, and researchers to enable orders of magnitude more insights and discovery. 
+# We Can Eradicate Disease
 
-# Problems We're Trying To Solve
+🚀 by giving all patients the right to effortlessly participate in global decentralized clinical research 💊
 
-- **Slow and Expensive:** It takes over a decade and \$2.6 billion on average to bring a drug to market, with Phase III clinical trials costing around \$41k per subject.
-- **No Data on Unpatentable Molecules:** There is a significant lack of data on the long-term effects of the majority of synthetic or natural compounds, as there is insufficient incentive to research non-patentable molecules.
-- **Neglected Off-Patent Treatments:** There is a lack of financial incentive to approve drugs for additional conditions after their patent expires, leaving potential treatments for rare diseases unexplored.
-- **No Long-Term Outcome Data:** Due to financial constraints, long-term effects of drugs are often unknown.
-- **Publication Bias:** Negative results are frequently unreported, leading to redundant research efforts and wasted resources.
-- **Exclusion of Diverse Patient Populations:** Clinical trials often exclude a vast majority of the patient population, limiting the generalizability of findings.
-- **Vast Amount of Unresearched Combinations:** The immense number of possible molecule-disease combinations leaves 99.9999998% of potential knowledge undiscovered.
-- **Bias Towards Rejecting Effective Treatments:** Cognitive biases and personal risk aversion among regulators result in a tendency to reject potentially life-saving treatments.
+## Problems We Can Solve
 
-To overcome these perverse incentives and biases, implementing a Decentralized Autonomous Organization (DAO) regulatory body is proposed. This would distribute responsibility among a large group of experts, mitigating individual risk and bias, and fostering a more balanced, efficient, and innovative drug approval process. 👉 [Learn More](/problems-in-clinical-research)
+To have any hope of eradicating disease, we first need to solve the following problems:
 
+👥
 
-# **Ingredients of the dFDA**
+$41k
 
-## **Digital Twin Safes / PersonalFDA Nodes**
+cost per participant in traditional clinical trials
 
-A tool for self-sovereign storage of personal data that enables effortless data sharing with clinical safety and efficacy studies.
+💸
 
-**Features**
-   - **Data Import:** Create seamless mechanisms for importing existing health data while ensuring privacy and security. Import data from all your apps and wearables, so you can centrally own, control, and share all your digital exhaust.
-   - **Data Encryption:** Implement robust encryption protocols to safeguard sensitive health data.
-   - **Sync to Trusted Instances:** Establish secure channels for data synchronization, ensuring integrity and reliability.
-   - **Federated Learning with Homomorphic Encryption:** Innovate in secure data analysis, allowing for meaningful insights without compromising data privacy.
-   - [Data Gems NFTs](/data-gem-nfts) - Data sets can be encrypted and stored in a decentralized manner generating a Data Gem NFT that can be sold on data exchanges granting the possessor access to the data set.
-- [Digital Twin Skeleton Key NFT](/digital-twin-skeleton-key-nft) - This key gives you the ability to mint [Data Gem](/data-gem-nfts) Data Access NFTs using your imported data. 
-- [The Human File System Protocol SDK](/human-file-system) - A Simple API for Patient-Controlled Health Data Aggregation, Sharing, and Monetization.  Also standard protocol for personal data exchange between studies, apps, and devices. 
-   
-**Potential Implementations, Components or Inspiration**
-- [Modified Gnosis Safe](/digital-twin-safe)
-- [Weavechain](/ecosystem/weavechain)
-- [Crowdsourcing Cures App](https://app.crowdsourcingcures.org/app/public/#/app/intro)
+$1.6 Billion
 
-![digital-twin-safe-screenshot-home](https://user-images.githubusercontent.com/2808553/200402565-72bc85a3-deb2-4f1a-a9b1-bde108e63d87.png)
+cost to develop a new treatment falls on patients
 
-## **dFDA Wiki**
+☠️
 
-   - **Knowledge Base:** Inspiration could be taken from the Psychonaut Wiki. It's a modified version of MediaWiki with additional quantitative metadata storage regarding the pharmacokinetics of various substances.  This could be expanded to document the quantitative effects of every factor on specific health outcomes.
-   - **Data Silos Directory:** Compile a comprehensive directory of existing data sources, facilitating integration with the Digital Twin Safe.
-   - **Reputation Scoring:** Develop a transparent and reliable reputation-weighted voting system for intervention approval.
-   - **Comparative Policy Analysis** - Aggregate existing approval and certification data from existing national regulatory bodies
-   - **Food and Drug Outcome Labels** - Ultimately, the most useful output of a decentralized FDA would be **Outcomes Label** which lists the degree to which the product is likely to improve or worsen specific health outcomes or symptoms. These are derived from real-world data (RWD) and subject to Futarchical-weighted review by the board members of the dFDA.
-   - **Publish Meta-Analyses** - Generate meta-analyses from all completed studies at ClinicalTrials.gov
-   - **Certification of Intervention Manufacturers/Sources** via a Decentralized Web of Trust derived from end-user data and reviews traced back through an NFT-tracked supply chain
-   - **Intervention Ranking** - Elevate the most promising yet little/known or researched treatments
-   - **Decentralized Clinical Trials** - This would increase knowledge and access and availability of new and innovative treatments to those who need them urgently.
-   
-**Related Projects**
-- [Psychonaut Wiki](https://psychonautwiki.org/wiki/Psychoactive_substance_index)
-- [Journal of Citizen Science](https://studies.crowdsourcingcures.org/)
+120,000 Deaths/Decade
 
-![outcome-labels-plugin.png](https://static.crowdsourcingcures.org/img/outcome-labels.PNG)
+due to regulatory delays
 
-# Benefits
+🚫
 
-## For Individuals
+85%
 
-- eBay for health data - You can earn magic internet money by selling your data regarding symptoms, treatments, and
-  factors to pharmaceutical companies, insurance companies, and other data buyers
-- Control access and use of your data through fine-grained permissions
-- Continuously monitor and audit the data you provide to other organizations
+of patients are unable to participate in clinical trials
 
-## For Health Apps
+💊
 
-- Connected real-world data yields better insights for your users
-- Apps that embed the exchange in their app earn a 0.5% transaction fee for each data sale
-- Connect to third-party sources to enrich your data, or easily connect to a user's existing data
+95%
 
-## For Pharmaceutical Companies
+of diseases have NO FDA-approved treatments
 
-- Conduct long-term safety and effectiveness studies by linking their clinical trial data to medical claims and
-  electronic health record data
-- Refine models for finding rare disease patients by linking diagnostic lab, genomic, and imaging data
-- Discover new therapeutic candidates with connected data
+🤒
 
-## For Insurers
+17 years
 
-- Improve value-based care analytics and sharpen total cost of care estimates by linking to EHR and clinical data
-- Connect to the nation's largest ecosystem of health data
-- Hone risk adjustment factor calculations by linking claims to social determinant's data, to properly estimate the true
-  cost of patient care
+of suffering until a new treatment reaches patients
 
-# The dFDA Tech Stack
+⚛️
 
-## 1. Personal FDA Nodes
+166 billion
 
-A safe for your digital twin that provides
+potential treatments have not been tested
 
-* Storage
-* Security
-* Access Control
-* De-identified Data Sharing
-* API with Advanced Querying Capabilities
+🌍
 
-## 2. The 3rd Party Plugin Framework
+2 Billion
 
-* Data import from any source
-* Data Format Transformation
-* Data visualizations
-* Machine learning algorithms
-* Data analysis
-* Personalized Health Dashboards
+people are suffering from uncured diseases
 
-![The Platform](https://static.crowdsourcingcures.org/img/simplified-platform-architecture-diagram.png)
+🧫
 
-Our novel incentive structure overcomes the traditional collaboration and data sharing barriers by encoding contributions through non-fungible tokens (NFTs). 
-Using smart contracts, the platform will compensate all contributors with royalties.
+44 years
 
+since we last cured a disease
 
-# Problem: You and Everyone You Love Will Suffer and Die
+## The World We Can Create 🌍
 
-Over [2 billion](https://www.george-health.com/global-health-challenge/) people are suffering and [150,000](https://www.weforum.org/agenda/2020/05/how-many-people-die-each-day-covid-19-coronavirus/) people die every single day from preventable diseases. 
-For perspective, this is equivalent to:
+If we gave every patient the right to effortlessly participate in decentralized clinical trials, we could achieve:
 
-* [**FIFTY-ONE**](https://en.wikipedia.org/wiki/Casualties\_of\_the\_September\_11\_attacks) September 11th attacks every day
-* [**NINE**](https://www.haaretz.com/israel-news/6-million-where-is-the-figure-from-1.10570907) Holocausts every year
+🚀
 
-# 💡 Solution: A Collaborative Framework for Personalized, Precision Health
+20X
 
-The solution is to use the oceans of real-world evidence to accelerate the discovery of new cures and reveal hidden causes of disease.
+the rate of treatment discovery
 
-The human body can be viewed as a black box with inputs (like diet, treatments, etc.) and outputs (like symptom severity). We're creating a mathematical model of human biology to determine the input factors and values that produce optimal health outcomes.
+📉
 
+95%
 
-![machine-learning-health-optimization.png](https://static.crowdsourcingcures.org/img/machine-learning-health-optimization.png)
+lower costs of clinical trials and treatments
 
-## The Potential of the Oceans of Real-World Evidence
+🤑
 
-* **Discovering Hidden Causes of Illness** - Data mining and analysis to identify hidden factors in our daily life that are making us sicker
-* **Preventative medicine** - Predictive analytics and data analysis of genetic, lifestyle, and social circumstances to prevent disease
-* **Precision medicine** - Leveraging aggregate data to determine the precise treatments and dosages for your unique biology
-* **Accelerated Treatment Discovery** - Data-driven medical and pharmacological research to discover new treatments and medicines
-* **Reduction of adverse medication events** - Harnessing big data to spot medication errors and flag potential adverse reactions
-* **Cost reduction** - Driving better patient outcomes for long-term savings through prevention and avoidance of expensive and ineffective treatments
-* **Population health** - Identify health strategies based on demographic, geographic, and socioeconomic trends
+📈
 
-# Why Clinical Research Has Failed
+🌍
 
-It takes over [10 years and 2.6 billion dollars](https://www.semanticscholar.org/paper/Innovation-in-the-pharmaceutical-industry%3A-New-of-DiMasiGrabowski/3275f31c072ac11c6ca7a5260bd535720f07df41) to bring a drug to market (including failed attempts). 
-It costs [$41k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001) per subject in Phase III clinical trials.
+100%
 
-The high costs lead to:
+of patients can participate in trials
 
-**1. No Data on Unpatentable Molecules**
+⚡
 
-We still know next to nothing about the long-term effects of 99.9% of the 4 pounds of over [7,000](https://www.dailymail.co.uk/health/article-8757191/Are-additives-food-making-ill.html) different synthetic or natural compounds. This is because there's only sufficient incentive to research patentable molecules.
+2 Years
 
-![](https://static.crowdsourcingcures.org/img/chemicals-in-our-diet.png)
+instead of 17 years to get new treatments to patients
 
-**2. Lack of Incentive to Discover Every Application of Off-Patent Treatments**
+## How it Works: Upgrade FDA.gov 🚀
 
-Most of the known diseases (approximately 95%) are classified as rare diseases. Currently, a pharmaceutical company must predict particular conditions to treat before running a clinical trial. Suppose a drug is effective for other diseases after the patent expires. In that case, there isn't a financial incentive to get it approved for the different conditions.
+Use a small fraction of the FDA's $7 billion annual budget to upgrade FDA.gov to allow ANY patient ANYWHERE in the world to:
 
-**3. No Long-Term Outcome Data**
+### 1\. Enter Your Condition
 
-It's not financially feasible to collect a participant's data for years or decades. Thus, we don't know if the long-term effects of a drug are worse than the initial benefits.
+Simply input the condition that's making you miserable.
 
-**4. Negative Results Aren't Published**
+### 2\. View Ranked Treatments
 
-Pharmaceutical companies tend to only report "positive" results. That leads to other companies wasting money repeating research on the same dead ends.
+See a ranked list of the most save and effective treatments based on the entire universe of clinical and real-world data.
 
-**5. Trials Exclude a Vast Majority of The Population**
+### Joint Replacement Surgery
 
-One investigation found that only [14.5%](https://www.ncbi.nlm.nih.gov/pubmed/14628985) of patients with major depressive disorder fulfilled eligibility requirements for enrollment in an antidepressant trial. Furthermore, most patient sample sizes are very small and sometimes include only 20 people.
+Effectiveness
 
-**6. We Only Know 0.000000002% of What is Left to be Researched**
+88%
 
-The more research studies we read, the more we realize we don't know. Nearly every study ends with the phrase "more research is needed".
+Confidence
 
-If you multiply the [166 billion](https://www.nature.com/articles/549445a) molecules with drug-like properties by the [10,000](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) known diseases, that's 1,162,000,000,000,000 combinations. So far, we've studied [21,000 compounds](https://www.centerwatch.com/articles/12702-new-mit-study-puts-clinical-research-success-rate-at-14-percent). That means we only know 0.000000002% of the effects left to be discovered.
+LOW
 
-![](https://static.crowdsourcingcures.org/img/studied-molecules-chart-no-background.png)
+[Join Trial](https://www.dfda.earth/treatments/Joint%20replacement%20surgery)
 
-# Why Digital Health Innovation Has Failed
+### Low Dose Naltrexone (Ldn)
 
-## Duplication of Effort
+Effectiveness
 
-Despite this massive growth in health data and innovation, we've seen increased costs and disease burden and decreased life expectancy.
+86%
 
-![](https://static.crowdsourcingcures.org/img/digital-health-has-failed-large.png)
+Confidence
 
-The reason is awful **incentives**. There are more than [350,000](https://www.emarketer.com/content/over-350k-digital-health-apps-flooding-market-here-s-how-apps-stand) health apps. 
-Each costs an average of [\$425,000](https://www.mobihealthnews.com/content/mobile-health-app-development-costs-425000-average-likely-continuing-rise) to develop. 
-Most have significant overlap in functionality, representing a cost of [$157,500,000,000](https://www.mobihealthnews.com/content/mobile-health-app-development-costs-425000-average-likely-continuing-rise) on duplication of effort.
+LOW
 
-![](https://static.crowdsourcingcures.org/img/collaboration-is-punished.PNG)
+[Join Trial](https://www.dfda.earth/treatments/Low%20Dose%20Naltrexone%20\(LDN\))
 
-Isolated streams of health data can only tell us about the past. For example, dashboards filled with descriptive statistics such as our daily steps or sleep.
+### Prednisone
 
-![](https://static.crowdsourcingcures.org/img/thousands-of-dashboards.PNG)
+Effectiveness
 
-If this data and innovation efforts were combined, this could increase the rate of progress by 350,000 times.
+78%
 
-![](https://static.crowdsourcingcures.org/img/vertical-innovation.PNG)
+Confidence
 
-The obstacle has been the free-rider problem. Software developers that open source their code give their closed-source competitors an unfair advantage, increasing their likelihood of bankruptcy.
+HIGH
 
+[Join Trial](https://www.dfda.earth/treatments/Prednisone)
 
-# 🏭 Platform
+[See All Treatments](https://www.dfda.earth/conditions/Rheumatoid%20Arthritis)
 
-A global open-source platform and plugin framework will enable the transformation of data into clinical discoveries.
+### 3\. Join Clinical Trials from Home
 
-## Functional Scope
+Instantly enroll in decentralized trials for promising treatments that interest you.
 
-The functional scope of the platform includes:
+![](/_next/image?url=https%3A%2F%2Fstatic.crowdsourcingcures.org%2Fvideo%2Fautonomous-study-search.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
 
-* Aggregation
-* Managing
-* Processing
-* Storage
+### 4\. Get Treatment Delivered
 
-of health data from different sources.
+Get treatments delivered to your pharmacy or physician and schedule necessary lab tests automatically.
 
-## Primary goal
+![](/_next/image?url=https%3A%2F%2Fstatic.crowdsourcingcures.org%2Fvideo%2Fautonomous-cvs.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
 
-Create a basic foundational technology layer suitable for any digital health application that provides better interoperability, portability, availability, analysis, and data security.
+### 5\. Effortlessly Report Outcomes
 
-## Use Cases
+Report treatment effects easily through your preferred apps, EHR systems, or automated calls.
 
-* EHR Systems for healthcare providers
-* User-centered dashboards for personal health management
-* Data sharing with doctors, health coaches, or family members
-* Decentralized clinical trial platforms
-* Patient recruitment services for clinical trials
-* Citizen science platforms
-* Health data marketplaces
-* Open health databases for research
-* Algorithm and scores development (e.g., in-silico trials)
-* Niche health applications with specific requirements or custom integrations
+![](/_next/image?url=https%3A%2F%2Fstatic.crowdsourcingcures.org%2Fvideo%2Freminder-inbox.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
 
-![Platform](https://static.crowdsourcingcures.org/img/large-platform-diagram-no-colors.png)
+### 6\. Continuously Improve Rankings
 
-The platform consists of two primary components:
+Your data helps improve treatment rankings and benefits future patients globally.
 
-* **Core Open-Source Platform** - The core platform is open-source and includes only universally necessary features. This primarily consists of user authentication, data owner access controls, data storage, data validation, and an API for storage and retrieval.
-* **Plugin Framework** - Plugins will provide additional functionality like data import from specific sources, data mapping to various formats, data analysis, data visualization, notifications. These may be free or monetized by their creator.
+![](/_next/image?url=https%3A%2F%2Fstatic.crowdsourcingcures.org%2Fvideo%2Fblack-box-model-animation2.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
 
-## Core Components
+# Benefits of the Global Disease Eradication Act
 
-**Data Ingestion and Access API**
+## Look at all these great features giving patients the right to effortlessly particpate in decentralized clinical trials! 🚀
 
-The Unified Health application programming interface (API) includes an OpenAPI specification for receiving and sharing data with the core database. Software development kits (SDKs) will enable developers to implement easy automatic data access and sharing options in their applications.
+| Category | FDA v1 | FDA v2 |
+| --- | --- | --- |
+| 
+⏱️ Years Until Patients Can Access Treatment
 
-**Data Mapping and Validation**
+ | 17 years | ➡️ 2 years |
+|  |
+| 
 
-Data from files or API requests can be mapped from many different proprietary formats into a standard schema.
+💰 Cost of Clinical Trials
 
-**Data Ownership**
+ | $57M | ➡️ $2M |
+|  |
+| 
 
-Data should be owned by the individual who generated it. It should remain under their control throughout the entire data life-cycle from generation to deletion.
+👥 Percent of Patients Able to Join Trials
 
-**Data Compensation**
+ | 15% | ➡️ 100% |
+|  |
 
-Value stream management allows the exchange of data for tokens.
+### 💡 Key Benefits
 
-## Plugin Framework
+- Dramatically faster access to treatments
+- 96% reduction in research costs
+- Universal access to clinical trials
 
-3rd party plugins can interact with the core and provide additional functionality. They may be free or monetized by their creator. These include:
+# 👀Look at those savings! 🤑
 
-* Data Import Plugins
-* Data Visualization Plugins
-* Machine Learning Plugins
-* Electronic Health Record System Plugins
-* Clinical Trial Management Plugins
+## By decentralizing and automating clinical research, we could reduce the cost of new treatments by 95%!
 
-![Branded Plugins](https://static.crowdsourcingcures.org/img/plugin-marketplace.png)
+| Cost Item | Current Cost | New Cost | Savings |
+| --- | --- | --- | --- |
+| 
+💾 Data Management Costs
 
-**Data Analysis Plugins**
+$198,014 → $10,000
 
-Data Analysis Plugins will apply statistical and machine learning methods to the ocean of high-frequency longitudinal individual and population-level data. The resulting value will include:
+ | $198,014 | $10,000 | 94.9% |
+|  |
+| 
 
-* Personalized Effectiveness Quantification - Determination of the precise effectiveness of treatments for specific individuals
-* Root Cause Analyses - Revelation of hidden factors and root causes of diseases
-* Precision Medicine - Determination of the personalized optimal values or dosages based on biomarkers, phenotype, and demographics
-* Combinatorial Medicine - Discover relationships between variables or combinations of interventions
-* Optimal Daily Values - Determination of the personalized optimal dosages of nutrients or medications
-* Cost-Benefit Analysis of interventions by weighing clinical benefit against costs in terms of side effects and financial impact
+✅ Cost Per IRB Approvals
 
-**Example Data Presentation Plugins**
+$324,081 → $5,000
 
-* [Outcome Labels](/en/plugins/outcome-labels-plugin)
-* [Predictor Search Engines](/en/plugins/predictor-search-engine-plugin)
-* [Root Cause Analysis Reports](/en/plugins/root-cause-analysis-plugin)
-* [Observational Studies](/en/plugins/observational-studies-plugin)
-* [Real-Time Decision Support Notifications](/en/plugins/optomitron-real-time-notifications-plugin)
+ | $324,081 | $5,000 | 98.5% |
+|  |
+| 
 
-# ❤ Benefits
+📝 Cost of IRB Amendments
 
-### Incentive Alignment
+$6,347 → $0
 
-This illustrates the flow of value between different stakeholders. Unlike traditional zero-sum games, we can provide everyone with more value from participation than they have to put into it.
+ | $6,347 | $0 | 100.0% |
+|  |
+| 
 
-![Value Flow Chain](https://static.crowdsourcingcures.org/img/value-chain-diagram.png)
+🔍 SDV Costs
 
-## 1. For Patients
+$1,486,250 → $25,000
 
-Incentives for Patients to share their de-identified data will include:
+ | $1,486,250 | $25,000 | 98.3% |
+|  |
+| 
 
-1. Actionable ways to prevent and mitigate chronic illnesses.
-2. The ability to license and earn a share of income for the use of their data for research and development by pharmaceutical companies and other businesses. 
+🤝 Patient Recruitment Costs
 
-## 2. For Businesses Housing Data Silos
+$805,785 → $15,000
 
-Businesses housing data silos include health insurers, pharmacies, grocery delivery services, digital health apps, hospitals, etc. These will be incentivized to allow individuals to easily share their data via a well-documented OAuth2 API by:
+ | $805,785 | $15,000 | 98.1% |
+|  |
+| 
 
-1. A share of income for using their data for research and development.
-2. An on-site instance of the OAuth2 server to retrieve required data from their on-premise databases.
-3. Reduction in their employee healthcare costs (one of their most significant expenses)
+🎯 Patient Retention Costs
 
-## 4. For Digital Health Businesses
+$76,879 → $20,000
 
-1. Reduced costs of software development.
-2. Massive free marketing exposure through company branded plugins in the Plugin Marketplace.
-3. Revenue derived from their plugins in the Plugin Marketplace.
+ | $76,879 | $20,000 | 74.0% |
+|  |
+| 
 
-## 5. For Disease Advocacy Non-Profit Organizations
+👨‍⚕️ Nurse/Research Associate Costs
 
-Disease advocacy nonprofits will benefit from promoting studies to their members by:
+$2,379,605 → $150,000
 
-1. Furtherance of their mission to reduce the incidence of chronic illnesses.
-2. Member engagement more productive than the traditional charity walk.
+ | $2,379,605 | $150,000 | 93.7% |
+|  |
+| 
 
-## 6. For Government Health Agencies
+👩‍⚕️ Physician Costs
 
-1. A reduction in healthcare costs due to discovering new ways to prevent and mitigate chronic illnesses.
-2. Furtherance of their stated reason for existence to protect and promote the general welfare.
-3. Their duty to protect the rights of individuals' data. To fulfill this, they must require businesses in possession of it to give them the ability to access and share their data via a well-documented OAuth2 API
-4. Cost-savings from international cost-sharing by using global open-source software.
-5. Epidemiological discoveries on the effectiveness of different public health regulations between nations.
+$1,966,621 → $100,000
 
-## 7. For Contributors to the Development of the Platform
+ | $1,966,621 | $100,000 | 94.9% |
+|  |
+| 
 
-1. Gitcoin bounties for specific tasks
-2. Entitling the developer to ongoing royalties in proportion to their contributions.
-3. Dework bounties for tasks
-4. Other benefits - depending on the involvement
+🏥 Clinical Procedure Total
 
+$5,937,819 → $1,000,000
 
+ | $5,937,819 | $1,000,000 | 83.2% |
+|  |
+| 
 
-## Conclusion
+🧪 Laboratory Costs
 
-The dFDA could provide innovative tools, resources, and frameworks, the dFDA empowers Contract Research Organizations, Certifying Agencies, and Regulatory Agencies to perform their roles more effectively, accelerating safety and innovation.
+$2,325,922 → $500,000
 
-# 📚 Resources
-- [dFDA Governance Protocol](/dfda-governance-protocol) - By implementing a continuous improvement process and a Futarchical Voting mechanism, the dFDA aims to enhance the quality of drug approvals and health policies. 
-- [Regulatory Enhancements](/dfda-drug-approval-process) - The ideal framework for drug approvals aims to harness the **collective intelligence** of a diverse and knowledgeable crowd, ensuring rigorous, transparent, and inclusive decision-making processes and **algorithmic optimization of outcomes** using quantitative cost-benefit analysis of every intervention for each condition
-- [Support of Real World Evidence](/history-of-medical-regulation-and-clinical-research) - Large-scale efficacy trials based on real-world evidence, utilized before the pharmaceutical industry-driven randomized controlled trials mandated post-1962, were more effective in improving health outcomes, as evidenced by a consistent increase in human life expectancy during their implementation. 
-- [dFDA Legal Structure](/dfda-legal-framework) - In considering the optimal legal structure for the dFDA, it is crucial to evaluate the advantages, disadvantages, and suitability of various options to ensure that the organization can fulfill its mission effectively while remaining compliant with legal and regulatory requirements. 
-- [DeSci Exchange](/desci-exchange) - A free market for personal data in the form of an embeddable SDK with a configurable transaction fee for the apps embedding it. 
+ | $2,325,922 | $500,000 | 78.5% |
+|  |
+| 
 
+🏢 Site Recruitment Costs
+
+$849,158 → $0
+
+ | $849,158 | $0 | 100.0% |
+|  |
+| 
+
+🏗️ Site Retention Costs
+
+$4,461,322 → $0
+
+ | $4,461,322 | $0 | 100.0% |
+|  |
+| 
+
+👥 Administrative Staff Costs
+
+$7,229,968 → $100,000
+
+ | $7,229,968 | $100,000 | 98.6% |
+|  |
+| 
+
+📊 Site Monitoring Costs
+
+$4,456,717 → $0
+
+ | $4,456,717 | $0 | 100.0% |
+|  |
+| 
+
+🏢 Site Overhead
+
+$7,386,816 → $0
+
+ | $7,386,816 | $0 | 100.0% |
+|  |
+| 
+
+📎 All Other Costs
+
+$17,096,703 → $100,000
+
+ | $17,096,703 | $100,000 | 99.4% |
+|  |
+| TOTAL SAVINGS 🎉
+
+$56,988,007 → $2,025,000
+
+ | $56,988,007 | $2,025,000 | 95.7% |
+
+Cost analysis based on data from: ["Examination of Clinical Trial Costs and Barriers for Drug Development"](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0) by the U.S. Department of Health and Human Services, Office of the Assistant Secretary for Planning and Evaluation (ASPE).
+
+### 💡 Key Benefits
+
+- Automated processes reduce manual labor costs
+- AI-driven analysis improves efficiency and accuracy
+- Decentralized approach eliminates site-related expenses
+- Blockchain technology ensures data integrity
+
+Our cost reduction estimates are derived from the ASPE study's analysis of clinical trial costs across different therapeutic areas and phases, incorporating potential savings from electronic data capture, simplified protocols, and decentralized trial approaches.
+
+## Problems a Decentralized FDA Could Solve
+
+💰
+
+### Clinical Research is Expensive
+
+It costs $1.6 billion to bring a drug to market (including failed attempts) and trials currently cost over $36k per participant.
+
+⌛
+
+### Clinical Research is Slow
+
+It takes an average of 17 years for new treatments to reach patients.
+
+⏱
+
+### Deaths Due to US Regulatory Drug Lag
+
+Delays in new interventions cost anywhere from 21,000 to 120,000 US lives per decade.
+
+🚧
+
+### 90% of Willing Patients Do Not Participate in Clinical Trials
+
+A significant gap exists between the number of patients willing to participate in clinical trials and those who actually do. Studies indicate that while 68% of patients express interest in participating, only 9% report being invited to a clinical trial.
+
+🤪
+
+### Lack of Logical Reasoning Based on Quantitative Cost-Benefit Analysis in FDA Decisions
+
+FDA regulatory decisions often lack logical reasoning based on quantitative cost-benefit analysis.
+
+🙈
+
+### Negative Results are Never Published
+
+We waste billions of dollars repeating failed drug trials because companies only publish the positive results.
+
+📊
+
+### No Treatment Effectiveness Rankings
+
+Shockingly, the existing system does not give us a ranked list of the most safe and effective treatments for a given condition.
+
+🥫
+
+### No Data on Unpatentable Treatments
+
+We still know next to nothing about the long-term effects of 99.9% of the 4 pounds of over 7,000 different synthetic or natural chemicals you consume every day.
+
+🗓
+
+### No Long-Term Outcome Data
+
+Current trials often only last a few months, so we have no idea what the long-term positive or negative effects of a drug are!
+
+🤒
+
+### People With Rare Disease are Severely Punished
+
+It's impossible to recover a billion dollars of drug development from a small number of patients.
+
+🔮
+
+### Pre-Determining Clinical Endpoints Requires Psychic Powers
+
+Drug Developers to Have Psychic Powers Needed to Pre-Determine Very Specific Clinical Endpoints Before Collecting Data
+
+🥸
+
+### Trials Often Aren't Representative of Real Patients
+
+Clinical trials often exclude as much as 85% of patients so they don't tell us if the drug will work for the majority of patients.
+
+❓
+
+### We Know Next to Nothing
+
+There are thousands of diseases and trillions of compounds with drug-like properties, but we've only studied 0.000000002% of potential treatments so far.
+
+## See Effects of Foods🍟
+
+![](https://static.quantimo.do/img/variable_categories/foods.png)Folic Acid![](https://static.quantimo.do/img/variable_categories/foods.png)Coffee - Brewed From Grounds![](https://static.quantimo.do/img/variable_categories/vegetarian_food-96.png)Apples - Raw, With Skin![](https://static.quantimo.do/img/variable_categories/foods.png)Green Tea![](https://static.quantimo.do/img/variable_categories/foods.png)Bananas![](https://static.quantimo.do/img/fitness/png/energy-drink.png)Coffee![](https://static.quantimo.do/img/variable_categories/foods.png)Water![](https://static.quantimo.do/img/variable_categories/foods.png)Large Lemons![](https://static.quantimo.do/img/fitness/png/energy-drink.png)Coffee, Tea & Cocoa![](https://static.quantimo.do/img/variable_categories/vegetarian_food-96.png)Single-Serve Capsules & Pods
+
+## See Effects of Treatments💊
+
+![](https://static.quantimo.do/img/variable_categories/treatments.png)Adderall![](https://static.quantimo.do/img/variable_categories/treatments.png)Memantine![](https://static.quantimo.do/img/variable_categories/treatments.png)Wellbutrin![](https://static.quantimo.do/img/variable_categories/treatments.png)Melatonin![](https://static.quantimo.do/img/variable_categories/pill-96.png)Adderall![](https://static.quantimo.do/img/variable_categories/treatments.png)Curcumin 95 by Jarrow![](https://static.quantimo.do/img/variable_categories/treatments.png)Mallownation E-Cig Vape Juice![](https://static.quantimo.do/img/variable_categories/treatments.png)Life Extension Magnesium![](https://static.quantimo.do/img/variable_categories/pill-96.png)DMT Smoked![](https://static.quantimo.do/img/variable_categories/pill-96.png)Methyl Folate+ With L-5-MTHF + Methyl B12 by One Elevated
+
+## See Most Effective Treatments for your Condition
+
+![](https://static.quantimo.do/img/variable_categories/sad-96.png)Inflammatory Pain![](https://static.quantimo.do/img/variable_categories/symptoms.png)Psoriasis Severity![](https://static.quantimo.do/img/emoticon-set/png/angry.png)Back Pain![](https://static.quantimo.do/img/variable_categories/symptoms.png)Incidents of Flatulence![](https://static.quantimo.do/img/emoticon-set/png/sick-2.png)Headache Severity![](https://static.quantimo.do/img/variable_categories/sad-96.png)Tiredness / Fatigue![](https://static.quantimo.do/img/variable_categories/vegetarian_food-96.png)Hunger![](https://static.quantimo.do/img/variable_categories/symptoms.png)Steatorrhea![](https://static.quantimo.do/img/variable_categories/sad-96.png)Arthritic Pains![](https://static.quantimo.do/img/variable_categories/sad-96.png)Rheumetoid Arthritis
+
+## Join Clinical Trials 🔬
+
+Find and instantly join trials for the most promising treatments
+
+Find Trials
+
+Show Advanced Search Options
+
+### The Disease Eradication Act
+
+Help us give people suffering access to the most promising treatments
+
+![](/_next/image?url=https%3A%2F%2Fwiki.dfda.earth%2Fright_to_trial_act_image.jpg&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+### Your Personal FDAi Agent
+
+Help us give everyone a free superintelligent doctor
+
+### Your Digital Twin Safe
+
+Securely store and control your health data
+
+![](/_next/image?url=https%3A%2F%2Fuser-images.githubusercontent.com%2F2808553%2F180306571-ac9cc741-6f34-4059-a814-6f8a72ed8322.png&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+### Clinipedia
+
+The Wikipedia of Clinical Research
+
+![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fclinipedia-inflammatory-pain-small.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+### Outcome Labels
+
+See how treatments affect specific health outcomes
+
+![](/_next/image?url=https%3A%2F%2Fwiki.dfda.earth%2Fassets%2Foutcome-labels.PNG&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+### Why Decentralize the FDA?
+
+Learn about the historical context and need for decentralization
+
+![](/_next/image?url=https%3A%2F%2Fthinkbynumbers.org%2Fwp-content%2Fuploads%2F2021%2F03%2Fnews-story-headline-1-1024x563.png&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+## Automated Clinical Research
+
+### Automated Data Collection
+
+Import data from wearables and apps while leveraging AI-powered collection methods for comprehensive health insights.
+
+![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fimport.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+### Automated Analysis
+
+Advanced AI algorithms analyze your health data to identify patterns and potential root causes.
+
+![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Froot-cause-analysis-4x-small.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+### Real-Time Decision Support
+
+Get personalized insights and recommendations based on your real-time health data analysis.
+
+![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Freal-time-decision-support-notifications-personalized-app-image.png&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+## Citizen Science
+
+### Create Your Own Studies
+
+Anyone can create a study, become a prestigious scientist, get a link, and invite all their friends to join!
+
+![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fcreate-study.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+### Global Scale Studies
+
+Studies are published in a Wikipedia for clinical research based on everyone's data, listing the likely effects of every food and drug.
+
+![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fclinipedia-landing.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+### Mega-Studies
+
+Look up your condition and see how different foods, drugs and supplements tend to improve or worsen your condition.
+
+![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fclinipedia-inflammatory-pain-small.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+
+## Stay Up to Date!
+
+Join our newsletter to receive updates on clinical trials, research breakthroughs, and ways to get involved.
+
+We'll keep you informed about the latest developments in decentralized clinical research.
+
+Subscribe
+
+- [dFDA](https://www.dfda.earth/)
+- [Studies](https://studies.dfda.earth/)
+- [Digital Twin Safe](https://www.dfda.earth/safe/redirect)
+- [FDAi](https://fdai.earth/)
+- [Disease Eradication Act](https://www.dfda.earth/docs/disease-eradication-act)
+- [50/50 Health Savings Sharing Program](https://www.dfda.earth/docs/health-savings-sharing)
+- [Report Bug](https://github.com/decentralized-fda/decentralized-fda/issues/new?template=bug_report.yaml)
+- [Request Feature](https://github.com/decentralized-fda/decentralized-fda/issues/new?template=feature_request.yaml)
+- [GitHub](https://github.com/decentralized-fda/decentralized-fda)
+- [Docs](https://www.dfda.earth/docs)
+
+© 2023 dFDA - Accelerating discovery to minimize suffering in the universe! 🚀
