@@ -1,9 +1,9 @@
 ---
-title: dfda-cost-benefit-analysis-chatgpt-o1
-description: 
+title: dFDA Cost Benefit Analysis and Return on Inveestment
+description: The analysis indicates that a global, decentralized FDA platform could slash per-patient trial costs by up to 80× and generate roughly $45 billion in net annual savings, resulting in an ROI of approximately 9:1.
 published: true
-date: 2025-02-09T16:57:10.802Z
-tags: 
+date: 2025-02-09T16:58:25.534Z
+tags: economic-models
 editor: markdown
 dateCreated: 2025-02-02T07:33:37.361Z
 ---
