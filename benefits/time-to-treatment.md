@@ -1,11 +1,18 @@
 ---
 number: 2 Years
-textFollowingNumber: "instead of 17 years to get new treatments to patients"
-title: "17 years to 2 Year From Research to Treatment"
-description: "By streamlining the clinical trial process through automation and decentralization, we can reduce the time from initial research to patient availability from 17 years to just 2 years"
-emoji: "⚡"
-featuredImage: "treatment-time.jpg"
-source: "https://dfda.earth"
+textFollowingNumber: instead of 17 years to get new treatments to patients
+title: 17 years to 2 Year From Research to Treatment
+description: >-
+  By streamlining the clinical trial process through automation and
+  decentralization, we can reduce the time from initial research to patient
+  availability from 17 years to just 2 years
+emoji: ⚡
+featuredImage: treatment-time.jpg
+source: 'https://dfda.earth'
+published: true
+editor: markdown
+date: '2025-02-09T16:20:32.141Z'
+dateCreated: '2025-02-09T16:20:32.141Z'
 ---
 
 From initial research to clinical practice, new medical treatments take an average of [17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) to complete the development process and reach patients. 

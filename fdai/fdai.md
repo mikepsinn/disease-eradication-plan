@@ -1,3 +1,20 @@
+---
+description: >-
+  Exploration of automating clinical research and its potential cost savings
+  with automated data collection methods.
+emoji: "\U0001F916"
+title: 'Automating Clinical Research: Cost Savings and Data Collection'
+featuredImage: black-box-model-animation2.gif
+tags:
+  - automation
+  - clinical-research
+  - data-collection
+  - artificial-intelligence
+published: true
+editor: markdown
+date: '2025-02-09T16:34:48.009Z'
+dateCreated: '2025-02-09T16:34:48.009Z'
+---
 ## Imagine if we could automate clinical research!
 
 ![](https://static.crowdsourcingcures.org/video/black-box-model-animation2.gif)

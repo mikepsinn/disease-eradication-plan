@@ -1,3 +1,19 @@
+---
+description: >-
+  An overview of the quantitative data and formulas used by regulators to
+  categorize drugs as OTC, prescription-only, or scheduled.
+emoji: "\U0001F4CA"
+title: Quantitative Data for Drug Regulation
+tags:
+  - drug-regulation
+  - efficacy
+  - safety
+  - quantitative-data
+published: true
+editor: markdown
+date: '2025-02-09T16:34:33.103Z'
+dateCreated: '2025-02-09T16:34:33.103Z'
+---
 ### Quantitative Summary Data for Drug Regulation
 
 To decide if a drug should be over-the-counter (OTC), prescription-only, or scheduled by the DEA, regulators consider several quantitative data points. Below is a list of necessary data and formulas for determining the appropriate category for a drug.

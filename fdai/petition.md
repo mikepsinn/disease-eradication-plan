@@ -1,3 +1,19 @@
+---
+description: >-
+  A petition advocating for the creation of the FDAi system to revolutionize
+  healthcare using AI.
+emoji: "\U0001F3E5"
+title: Petition for the Establishment of the FDAi System
+tags:
+  - healthcare
+  - artificial-intelligence
+  - regulation
+  - policy
+published: true
+editor: markdown
+date: '2025-02-09T16:34:52.601Z'
+dateCreated: '2025-02-09T16:34:52.601Z'
+---
 # Petition for the Establishment of the FDAi System
 
 ### To the Esteemed Governments and Regulatory Bodies Around the World:

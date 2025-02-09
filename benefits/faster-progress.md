@@ -1,11 +1,18 @@
 ---
 number: 20X
-textFollowingNumber: "the rate of treatment discovery"
-title: "20X the Speed of Curing Diseases"
-description: "By reducing the cost of clinical trials by 95%, we can run 20 times more trials with the same resources, dramatically accelerating the discovery of new treatments and cures."
-emoji: "🚀"
-featuredImage: "cost-per-participant.jpg"
-source: "https://dfda.earth#cost-savings"
+textFollowingNumber: the rate of treatment discovery
+title: 20X the Speed of Curing Diseases
+description: >-
+  By reducing the cost of clinical trials by 95%, we can run 20 times more
+  trials with the same resources, dramatically accelerating the discovery of new
+  treatments and cures.
+emoji: "\U0001F680"
+featuredImage: cost-per-participant.jpg
+source: 'https://dfda.earth#cost-savings'
+published: true
+editor: markdown
+date: '2025-02-09T16:20:32.118Z'
+dateCreated: '2025-02-09T16:20:32.118Z'
 ---
 
 The dramatic cost reductions shown below would revolutionize medical research by allowing us to conduct 20 times more clinical trials with the same budget. This means we could test more promising treatments simultaneously, explore more treatment combinations, and investigate cures for rare diseases that were previously too expensive to study. With each trial costing just 4% of traditional methods, research institutions and companies could redirect their resources from administrative overhead to actual scientific discovery.

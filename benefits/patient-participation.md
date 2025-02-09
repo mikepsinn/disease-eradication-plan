@@ -1,11 +1,17 @@
 ---
 number: 100%
-textFollowingNumber: "of patients can participate in trials"
-title: "100% Patient Participation in Trials"
-description: "By removing traditional barriers and using decentralized trials, we can include the 100% of patients typically excluded from clinical research"
-emoji: "🌍"
-featuredImage: "patient-participation.jpg"
-source: "https://dfda.earth"
+textFollowingNumber: of patients can participate in trials
+title: 100% Patient Participation in Trials
+description: >-
+  By removing traditional barriers and using decentralized trials, we can
+  include the 100% of patients typically excluded from clinical research
+emoji: "\U0001F30D"
+featuredImage: patient-participation.jpg
+source: 'https://dfda.earth'
+published: true
+editor: markdown
+date: '2025-02-09T16:20:32.136Z'
+dateCreated: '2025-02-09T16:20:32.136Z'
 ---
 
 Traditional clinical trials exclude up to [85%](https://www.ncbi.nlm.nih.gov/pubmed/14628985) of willing participants due to strict eligibility criteria and geographical limitations. Our decentralized approach removes these barriers by:

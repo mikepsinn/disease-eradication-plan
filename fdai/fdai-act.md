@@ -1,3 +1,21 @@
+---
+description: >-
+  An Act to revolutionize healthcare through AI and data analysis, focusing on
+  personalized health optimization, accelerated clinical discovery, and global
+  health equity.
+emoji: "\U0001F3E5"
+title: The FDA Innovation through Data and AI Act (FDAi Act)
+tags:
+  - healthcare
+  - AI
+  - data-analysis
+  - regulation
+  - clinical-research
+published: true
+editor: markdown
+date: '2025-02-09T16:34:38.071Z'
+dateCreated: '2025-02-09T16:34:38.071Z'
+---
 # The FDA Innovation through Data and AI Act (FDAi Act)
 
 An Act to Revolutionize Healthcare Through the Deployment of the FDAi System, Ensuring Personalized Health Optimization, Accelerated Clinical Discovery, and Global Health Equity

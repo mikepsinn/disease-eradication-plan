@@ -1,8 +1,14 @@
 ---
 title: Lower Drug Prices
 description: >-
-  Below is a deeper quantitative analysis of how drastically cheaper trials and increased competition (including off-patent/unpatentable compounds) could push drug prices down.
-emoji: 🤑
+  Below is a deeper quantitative analysis of how drastically cheaper trials and
+  increased competition (including off-patent/unpatentable compounds) could push
+  drug prices down.
+emoji: "\U0001F911"
+published: true
+editor: markdown
+date: '2025-02-09T16:20:32.129Z'
+dateCreated: '2025-02-09T16:20:32.129Z'
 ---
 
 Below is a quantitative analysis of how drastically cheaper trials and increased competition (including off-patent/unpatentable compounds) could push drug prices down.

@@ -1,11 +1,15 @@
 ---
 number: 95%
-textFollowingNumber: "lower costs of clinical trials and treatments"
-title: "95% Lower Costs of Clinical Trials and Treatments"
-description: "By automating clinical trials and treatments, we can reduce costs by 95%"
-emoji: "📉"
-featuredImage: "cost-per-participant.jpg"
-source: "https://dfda.earth#cost-savings"
+textFollowingNumber: lower costs of clinical trials and treatments
+title: 95% Lower Costs of Clinical Trials and Treatments
+description: 'By automating clinical trials and treatments, we can reduce costs by 95%'
+emoji: "\U0001F4C9"
+featuredImage: cost-per-participant.jpg
+source: 'https://dfda.earth#cost-savings'
+published: true
+editor: markdown
+date: '2025-02-09T16:20:32.127Z'
+dateCreated: '2025-02-09T16:20:32.127Z'
 ---
 
 Traditional clinical trials cost an average of $41,413 per participant, making large-scale research prohibitively expensive. Our system reduces this to $1,500 per participant through:

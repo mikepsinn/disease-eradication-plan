@@ -1,9 +1,14 @@
 ---
 title: Overall Economic Benefits
 description: >-
-  Quantitative analysis of global economic benefits from decentralized clinical trials and automated FDA processes
-emoji: 📈
+  Quantitative analysis of global economic benefits from decentralized clinical
+  trials and automated FDA processes
+emoji: "\U0001F4C8"
 toc: true
+published: true
+editor: markdown
+date: '2025-02-09T16:20:32.132Z'
+dateCreated: '2025-02-09T16:20:32.132Z'
 ---
 
 **Key Sections**  
