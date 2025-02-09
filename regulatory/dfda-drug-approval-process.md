@@ -155,5 +155,4 @@ If the "Helpful Pool" is the majority, the proposal will be approved and impleme
 
 The ideal framework for crowdsourcing drug approvals leverages the collective intelligence of a diverse and knowledgeable crowd, ensuring a rigorous, transparent, and inclusive process. By incorporating comprehensive data management, transparent decision-making, and continuous learning mechanisms, this framework aims to enhance the efficiency and effectiveness of drug approvals, ultimately contributing to better health outcomes and trust in the approval process.
 
-
-👉[Learn more about the dFDA](/dfda)
+ 
