@@ -7,13 +7,14 @@ Additionally, [150,000](https://www.weforum.org/agenda/2020/05/how-many-people-d
 * [**FIFTY-ONE**](https://en.wikipedia.org/wiki/Casualties\_of\_the\_September\_11\_attacks) September 11th attacks every day
 * [**NINE**](https://en.wikipedia.org/wiki/Casualties\_of\_the\_September\_11\_attacks) Holocausts every year
 
-![deaths from disease](../img/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
+![deaths from disease](https://static.crowdsourcingcures.org/img/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
 
-**Will throwing more money at the existing healthcare system save us?**
+**Is throwing more money at the existing healthcare system the solution?**
 
 Since 2014, healthcare spending per person has been [increasing faster than ever](https://fred.stlouisfed.org/series/HLTHSCPCHCSA) before.
 
-![health spending](../img/us-healthcare-expenditure.svg)
+![health spending](https://static.crowdsourcingcures.org/img/us-healthcare-expenditure.svg)
+
 
 
 Despite this additional spending, life expectancy has actually been declining.
@@ -31,7 +32,7 @@ It costs [$41k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-
 * The process takes over 10 years.
 * It costs [$36k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001) per subject in Phase III clinical trials.
 
-![clinical trial cost](../img/cost-of-clinical-trials.png) [source: clinicalresearch.io](https://www.clinicalresearch.io/blog/industry-trends/cost-of-clinical-trials-breakdown/)
+![clinical trial cost](https://static.crowdsourcingcures.org/img/cost-of-clinical-trials.png) [source: clinicalresearch.io](https://www.clinicalresearch.io/blog/industry-trends/cost-of-clinical-trials-breakdown/)
 
 This high cost leads to the following problems:
 
@@ -41,7 +42,7 @@ We still know next to nothing about the long-term effects of 99.9% of the 4 poun
 
 Under the current system of research, it costs [$41k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001#:\~:text=The%20clinical%20trials%20cost%20a,and%20benchmarking%20clinical%20trial%20costs.) per subject in Phase III clinical trials. As a result, there is not a sufficient profit incentive for anyone to research the effects of any factor besides a molecule that can be patented.
 
-![how much we know](../img/how-much-we-know.png)
+![how much we know](https://static.crowdsourcingcures.org/img/how-much-we-know.png)
 
 **Lack of Incentive to Discover the Full Range of Applications for Off-Patent Treatments**
 
@@ -87,7 +88,7 @@ Furthermore, patient sample sizes are very small. The number of subjects per tri
 * [70](https://www.ncbi.nlm.nih.gov/books/NBK50886/) patients per depression trial
 * [100](https://www.ncbi.nlm.nih.gov/books/NBK50886/) per diabetes trial
 
-![wellbutrin small sample size](../img/wellbutrin-effectiveness-small-sample-size.png)
+![wellbutrin small sample size](https://static.crowdsourcingcures.org/img/wellbutrin-effectiveness-small-sample-size.png)
 
 In the example in graphic above a drug is prescribed to millions of patients based on a study with only 36 subjects, where a representation of the general public is questionable.
 
@@ -114,7 +115,7 @@ have a ton of overlap in functionality representing [$157,500,000,000](https://w
 If this code was freely shared, everyone could build on what everyone else had done.
 Theoretically, this could increase the rate of progress by 350,000 times.
 
-![closed source competition vs open source collaboration](../img/closed-source-competition-vs-open-source-collaboration.sketch.png)
+![closed source competition vs open source collaboration](https://static.crowdsourcingcures.org/img/closed-source-competition-vs-open-source-collaboration.sketch.png)
 
 The obstacle has been the free-rider problem. Software Developers that open source their code give their closed-source competitors an unfair advantage.  This increases their likelihood of bankruptcy even higher than the 90% failure rate they already faced.
 

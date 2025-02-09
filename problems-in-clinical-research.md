@@ -62,7 +62,7 @@ This means that it's only logical for regulators to reject drug applications by 
 **Types of Error in FDA Approval Decision**
 
 |                             | Drug Is Beneficial                                       | Drug Is Harmful                                                |
-| --------------------------- | -------------------------------------------------------- | -------------------------------------------------------------- |
+|-----------------------------|----------------------------------------------------------|----------------------------------------------------------------|
 | FDA Allows the Drug         | Correct Decision                                         | <p><br>Victims are identifiable and might appear on Oprah.</p> |
 | FDA Does Not Allow the Drug | <p>Victims are not identifiable or acknowledged.<br></p> | Correct Decision                                               |
 ### How a DAO Regulatory Body Could Overcome Perverse Incentives
