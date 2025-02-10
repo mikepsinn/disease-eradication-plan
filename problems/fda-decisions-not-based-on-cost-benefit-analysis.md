@@ -35,7 +35,7 @@ In updating our model, we have incorporated the following key parameters with 90
 - **Number of wasted doses (D):**  
   - **Base-case:** 1,450,000 doses  
   - **Range (90% CI):** 1,300,000 to 1,600,000 doses  
-  (This estimate is informed by stockpile data and expert estimates; see discussions in regulatory briefings.)
+  (This estimate is based on internal stockpile data, expert estimates, and discussions in regulatory briefings, and may not be verifiable through publicly available sources.)
 
 - **Cost per dose (C_d):**  
   - **Base-case:** \$3,000 per dose  
@@ -54,7 +54,7 @@ In updating our model, we have incorporated the following key parameters with 90
 - **QALY gain per administered mAb dose (Q):**  
   - **Base-case:** 0.05 QALY per dose  
   - **Range (90% CI):** 0.03 to 0.07 QALYs per dose  
-  (Supported by cost-effectiveness studies such as one published in the Journal of Korean Medical Science at https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8576440/)
+
 
 - **Lost QALYs:**  
   Calculated as D × Q  
@@ -79,17 +79,20 @@ In updating our model, we have incorporated the following key parameters with 90
 
 - **Assumed affected population (N_p):**  
   - **Base-case:** 290,000 patients (20% of 1.45M high-risk population)  
-  - **Range (90% CI):** 217,500 to 362,500 patients (15%-25% of stockpile)  
+  - **Range (90% CI):** 217,500 to 362,500 patients (15%-25% of stockpile)
+  (This assumption is based on expert judgment regarding the incidence of long-term cognitive impairments in high-risk populations and may not be directly verifiable through publicly available data.)
 
 - **Average IQ point loss per affected patient (ΔIQ):**  
   - **Base-case:** 6 IQ points  
-  - **Range (90% CI):** 3 to 9 IQ points  
+  - **Range (90% CI):** 3 to 9 IQ points
+  (This estimate is supported by studies on long-term cognitive effects of COVID-19; see: Long covid may cause cognitive decline of about six IQ points, study finds - https://www.unmc.edu/healthsecurity/transmission/2024/03/06/long-covid-may-cause-cognitive-decline-of-about-six-iq-points-study-finds/)
 
-- **Monetary value per IQ point (V_IQ):**  
+- **Monetary value per IQ point (V_IQ):**
   - **Base-case:** \$25,000 per IQ point  
   - **Range (90% CI):** \$20,000 to \$30,000 per IQ point
+  (This estimate is based on economic models that assign a monetary value to cognitive abilities and may vary depending on the assumptions used; see: Monetary Valuation of Children's Cognitive Outcomes in Economic - https://pmc.ncbi.nlm.nih.gov/articles/PMC8146900/)
 
-- **Productivity loss due to cognitive impairments:**  
+- **Productivity loss due to cognitive impairments:**
   Calculated as N_p × (ΔIQ × V_IQ)  
   - **Base-case:** 290,000 × (6 × \$25,000) = \$43.5 billion  
   - **Range:**  
