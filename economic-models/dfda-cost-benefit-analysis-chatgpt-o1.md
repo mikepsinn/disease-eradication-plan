@@ -8,17 +8,6 @@ editor: markdown
 dateCreated: 2025-02-02T07:33:37.361Z
 ---
 
----
-title: dFDA Cost Benefit Analysis by Perplexity with ChatGPT o1
-description: The analysis indicates that a global, decentralized FDA platform—requiring an upfront investment of about \$2–4 billion and \$1–12 billion annually—could slash per-patient trial costs by up to 80× and generate roughly \$45 billion in net annual savings, resulting in an ROI of approximately 9:1.
-published: true
-date: 2025-02-02T05:32:50.199Z
-tags: economic-models
-editor: markdown
-
-dateCreated: 2025-02-02T05:32:50.199Z
-
----
 
 Below is a conceptual, high-level analysis of the costs, benefits, and return on investment (ROI) for transforming the U.S. Food and Drug Administration's (FDA) current regulatory framework into a "global decentralized, autonomous FDA." This future-state platform would continuously rank treatments using the entirety of clinical and real-world data (RWD), and would enable anyone—potentially over a billion people worldwide—to participate in large-scale, continuous, decentralized clinical trials. 
 

@@ -1,5 +1,5 @@
 ---
-title: dFDA Cost Benefit Analysis by Perplexity with Gemini 2.0 Flash Thinking
+title: dFDA Cost Benefit Analysis
 description:  Investing approximately $11.95 billion over 10 years to transform FDA.gov into a global, decentralized, autonomous FDA could yield around $406 billion in benefits—an impressive ROI of roughly 3297% with a benefit-cost ratio of 34.
 published: true
 date: 2025-02-02T05:32:50.199Z
