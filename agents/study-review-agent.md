@@ -44,3 +44,11 @@
 
 - Accumulate and review existing placebo-controlled randomized experiments pertinent to the observed predictors and health outcomes.
 - Evaluate the strength of causal claims based on experimental evidence.
+
+## Safety Validation with LLM IRB
+
+- Implement a safety-validated fine-tuned large language model (LLM) to act as an Institutional Review Board (IRB).
+- Utilize the LLM IRB to evaluate study protocols for safety before proceeding with further review.
+- The LLM IRB will assess protocols based on established safety guidelines and ethical considerations.
+- Protocols will be submitted to the LLM IRB, which will provide a safety assessment, indicating whether the protocol is deemed safe or unsafe, and highlighting any potential safety concerns.
+- This safety validation step will be integrated into the beginning of the study review process to ensure that all studies are evaluated for safety before undergoing other forms of review.

@@ -1,22 +1,22 @@
 Here’s an estimated table of the number of lives that could potentially be saved annually if these drugs were made more accessible, based on available data and studies:
 
-| **Drug**                  | **Purpose**                                | **Estimated Lives Saved Annually** | **Source of Deaths Prevented**                              |
-|---------------------------|--------------------------------------------|------------------------------------|-----------------------------------------------------------|
-| **Naloxone (Narcan)**     | Reverses opioid overdoses                 | ~50,000                            | Opioid overdoses (over 100,000 annually in the U.S.)       |
-| **Low-Dose Aspirin**      | Prevents heart attacks and strokes        | ~10,000                            | Cardiovascular disease, especially secondary prevention    |
-| **Statins**               | Reduces cholesterol, prevents heart disease | ~25,000                            | Heart attacks and strokes in high-risk populations         |
-| **Oral Contraceptives**   | Prevents unintended pregnancies           | ~70,000                            | Maternal mortality globally due to unsafe abortions/pregnancy |
-| **Buprenorphine**         | Treats opioid use disorder                | ~30,000                            | Opioid overdoses through treatment accessibility           |
-| **Hydroxyurea**           | Treats sickle cell disease                | ~100,000                           | Complications from sickle cell disease, especially in Africa |
-| **Misoprostol**           | Prevents postpartum hemorrhage, manages miscarriages | ~75,000 (PubMed: reduces PPH deaths by 60-80%) | Maternal mortality globally                                |
-| **PrEP (e.g., Truvada)**  | Prevents HIV transmission                 | ~250,000                           | HIV/AIDS deaths globally                                   |
-| **Ivermectin (for parasites)** | Treats river blindness, scabies, etc.   | ~250,000 (WHO: prevents 200,000 deaths annually from river blindness alone) | Parasitic infections, especially in low-income regions     |
-| **Albuterol Inhalers**    | Treats asthma and COPD emergencies        | ~10,000                            | Preventable asthma/COPD deaths globally                    |
-| **Proton Pump Inhibitors**| Treats GERD, prevents esophageal cancer   | ~5,000                             | Esophageal cancer deaths from untreated GERD               |
-| **PEP (Antiretrovirals)** | Prevents HIV transmission after exposure  | ~5,000                             | Preventable HIV/AIDS deaths                                |
-| **Epinephrine (EpiPen)**  | Treats anaphylaxis                        | ~2,000                             | Preventable anaphylaxis deaths                             |
-| **Antibiotics (e.g., Azithromycin)** | Treats bacterial STIs, infections | ~10,000                            | Complications from untreated infections, including infertility |
-| **Ondansetron (Zofran)**  | Treats nausea in chemotherapy/pregnancy   | ~1,000                             | Deaths from dehydration/malnutrition in high-risk patients |
+| **Drug**                             | **Purpose**                                          | **Estimated Lives Saved Annually**                                          | **Source of Deaths Prevented**                                 |
+|--------------------------------------|------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------------|
+| **Naloxone (Narcan)**                | Reverses opioid overdoses                            | ~50,000                                                                     | Opioid overdoses (over 100,000 annually in the U.S.)           |
+| **Low-Dose Aspirin**                 | Prevents heart attacks and strokes                   | ~10,000                                                                     | Cardiovascular disease, especially secondary prevention        |
+| **Statins**                          | Reduces cholesterol, prevents heart disease          | ~25,000                                                                     | Heart attacks and strokes in high-risk populations             |
+| **Oral Contraceptives**              | Prevents unintended pregnancies                      | ~70,000                                                                     | Maternal mortality globally due to unsafe abortions/pregnancy  |
+| **Buprenorphine**                    | Treats opioid use disorder                           | ~30,000                                                                     | Opioid overdoses through treatment accessibility               |
+| **Hydroxyurea**                      | Treats sickle cell disease                           | ~100,000                                                                    | Complications from sickle cell disease, especially in Africa   |
+| **Misoprostol**                      | Prevents postpartum hemorrhage, manages miscarriages | ~75,000 (PubMed: reduces PPH deaths by 60-80%)                              | Maternal mortality globally                                    |
+| **PrEP (e.g., Truvada)**             | Prevents HIV transmission                            | ~250,000                                                                    | HIV/AIDS deaths globally                                       |
+| **Ivermectin (for parasites)**       | Treats river blindness, scabies, etc.                | ~250,000 (WHO: prevents 200,000 deaths annually from river blindness alone) | Parasitic infections, especially in low-income regions         |
+| **Albuterol Inhalers**               | Treats asthma and COPD emergencies                   | ~10,000                                                                     | Preventable asthma/COPD deaths globally                        |
+| **Proton Pump Inhibitors**           | Treats GERD, prevents esophageal cancer              | ~5,000                                                                      | Esophageal cancer deaths from untreated GERD                   |
+| **PEP (Antiretrovirals)**            | Prevents HIV transmission after exposure             | ~5,000                                                                      | Preventable HIV/AIDS deaths                                    |
+| **Epinephrine (EpiPen)**             | Treats anaphylaxis                                   | ~2,000                                                                      | Preventable anaphylaxis deaths                                 |
+| **Antibiotics (e.g., Azithromycin)** | Treats bacterial STIs, infections                    | ~10,000                                                                     | Complications from untreated infections, including infertility |
+| **Ondansetron (Zofran)**             | Treats nausea in chemotherapy/pregnancy              | ~1,000                                                                      | Deaths from dehydration/malnutrition in high-risk patients     |
 
 ---
 

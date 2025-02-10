@@ -51,7 +51,7 @@ Patients should be able to easily record any symptom severities, foods, treatmen
 
 Patients who prefer talking over messing around with apps should be able to talk to the FDAi. This would also allow passive inference of cognitive and emotional data.
 
-![](../img/frequency-analysis-300x225.gif)
+![](https://static.crowdsourcingcures.org/img/frequency-analysis-300x225.gif)
 
 ![](https://static.crowdsourcingcures.org/video/food-scan.gif)
 
