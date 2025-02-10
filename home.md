@@ -91,7 +91,7 @@ Report treatment effects easily through your preferred apps, EHR systems, or aut
 
 Your data helps improve treatment rankings and benefits future patients globally.
 
-![](/_next/image?url=https%3A%2F%2Fstatic.crowdsourcingcures.org%2Fvideo%2Fblack-box-model-animation2.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://static.crowdsourcingcures.org/video/black-box-model-animation2.gif)
 
 # Benefits of the Global Disease Eradication Act
 
@@ -222,7 +222,7 @@ Show Advanced Search Options
 
 Help us give people suffering access to the most promising treatments
 
-![](/_next/image?url=https%3A%2F%2Fwiki.dfda.earth%2Fright_to_trial_act_image.jpg&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://wiki.dfda.earth/right_to_trial_act_image.jpg)
 
 ### Your Personal FDAi Agent
 
@@ -232,25 +232,25 @@ Help us give everyone a free superintelligent doctor
 
 Securely store and control your health data
 
-![](/_next/image?url=https%3A%2F%2Fuser-images.githubusercontent.com%2F2808553%2F180306571-ac9cc741-6f34-4059-a814-6f8a72ed8322.png&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://user-images.githubusercontent.com/2808553/180306571-ac9cc741-6f34-4059-a814-6f8a72ed8322.png)
 
 ### Clinipedia
 
 The Wikipedia of Clinical Research
 
-![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fclinipedia-inflammatory-pain-small.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://fdai.earth/wp-content/uploads/2024/03/clinipedia-inflammatory-pain-small.gif)
 
 ### Outcome Labels
 
 See how treatments affect specific health outcomes
 
-![](/_next/image?url=https%3A%2F%2Fwiki.dfda.earth%2Fassets%2Foutcome-labels.PNG&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://wiki.dfda.earth/assets/outcome-labels.PNG)
 
 ### Why Decentralize the FDA?
 
 Learn about the historical context and need for decentralization
 
-![](/_next/image?url=https%3A%2F%2Fthinkbynumbers.org%2Fwp-content%2Fuploads%2F2021%2F03%2Fnews-story-headline-1-1024x563.png&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://thinkbynumbers.org/wp-content/uploads/2021/03/news-story-headline-1-1024x563.png)
 
 ## Automated Clinical Research
 
@@ -258,19 +258,19 @@ Learn about the historical context and need for decentralization
 
 Import data from wearables and apps while leveraging AI-powered collection methods for comprehensive health insights.
 
-![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fimport.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://fdai.earth/wp-content/uploads/2024/03/import.gif)
 
 ### Automated Analysis
 
 Advanced AI algorithms analyze your health data to identify patterns and potential root causes.
 
-![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Froot-cause-analysis-4x-small.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://fdai.earth/wp-content/uploads/2024/03/root-cause-analysis-4x-small.gif)
 
 ### Real-Time Decision Support
 
 Get personalized insights and recommendations based on your real-time health data analysis.
 
-![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Freal-time-decision-support-notifications-personalized-app-image.png&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://fdai.earth/wp-content/uploads/2024/03/real-time-decision-support-notifications-personalized-app-image.png)
 
 ## Citizen Science
 
@@ -278,19 +278,19 @@ Get personalized insights and recommendations based on your real-time health dat
 
 Anyone can create a study, become a prestigious scientist, get a link, and invite all their friends to join!
 
-![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fcreate-study.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://fdai.earth/wp-content/uploads/2024/03/create-study.gif)
 
 ### Global Scale Studies
 
 Studies are published in a Wikipedia for clinical research based on everyone's data, listing the likely effects of every food and drug.
 
-![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fclinipedia-landing.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://fdai.earth/wp-content/uploads/2024/03/clinipedia-landing.gif)
 
 ### Mega-Studies
 
 Look up your condition and see how different foods, drugs and supplements tend to improve or worsen your condition.
 
-![](/_next/image?url=https%3A%2F%2Ffdai.earth%2Fwp-content%2Fuploads%2F2024%2F03%2Fclinipedia-inflammatory-pain-small.gif&w=640&q=75&dpl=dpl_G132KGUmRbiJytnwrsqKLgcPQszY)
+![](https://fdai.earth/wp-content/uploads/2024/03/clinipedia-inflammatory-pain-small.gif)
 
 ## Stay Up to Date!
 
