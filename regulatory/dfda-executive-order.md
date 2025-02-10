@@ -32,16 +32,17 @@ Within 180 days, the Secretary of Health and Human Services (HHS) shall:
 (c) Collaborate with the [World Health Organization (WHO)](https://www.who.int/) to adopt global data-sharing standards (e.g., [HL7 FHIR](https://www.hl7.org/fhir/)).
  
 #### **3.2 Patient Access to Decentralized Clinical Trials**
-(a) **Right to Self-Experiment**: Patients may participate in DCTs for any treatment that has completed Phase I safety testing, at their own expense if necessary.
+(a) **Right to Trial**: Patients may participate in DCTs for any treatment that has completed Phase I safety testing, at their own expense if necessary.
 - Providers and trial sponsors may not be held liable for off-label use in DCTs (pursuant to 21 U.S.C. § 396).
 - [AI-Powered IRB](https://www.fda.gov/about-fda/cder-offices-and-divisions/institutional-review-boards-irbs-and-protection-human-subjects-clinical-trials) To expedite and enhance the safety review process, a safety-validated fine-tuned large language model (LLM) will act as the primary IRB for DCT protocols and approve all DCT protocols if they meet basic safety criteria (per [45 CFR § 46.109](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-46/subpart-A/section-46.109)).
-(b) **Crowdfunding and Direct Payments**: Patients may crowdfund or directly pay for experimental treatments without triggering FDA "marketing" restrictions ([21 CFR § 312.7](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312)).
+(b) **Streamlined Study Creation**: Drug manufacturers or researchers will have access to a simple online platform to propose and create studies, akin to a third-party vendor registration process on e-commerce platforms.
+- **Direct Intervention Delivery**: Upon a new participant joining a trial, the primary responsibility of the study creator will be the prompt and efficient delivery of the intervention directly to the participant, their pharmacy, or healthcare provider.
+(c) **Crowdfunding and Direct Payments**: Patients may crowdfund or directly pay for experimental treatments without triggering FDA "marketing" restrictions ([21 CFR § 312.7](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312)).
 
 #### **3.3 Elimination of Economic Barriers**
-(a) **Abolish Pharma User Fees**: The FDA shall cease collection of [Prescription Drug User Fee Act (PDUFA)](https://www.fda.gov/industry/fda-user-fee-programs/prescription-drug-user-fee-amendments) and [Generic Drug User Fee Act (GDUFA)](https://www.fda.gov/industry/fda-user-fee-programs/generic-drug-user-fee-amendments) fees. Funding gaps shall be offset by:
+(a) **Abolish Pharma User Fees**: The FDA shall cease collection of [Prescription Drug User Fee Act (PDUFA)](https://www.fda.gov/industry/fda-user-fee-programs/prescription-drug-user-fee-amendments) and [Generic Drug User Fee Act (GDUFA)](https://www.fda.gov/industry/fda-user-fee-programs/generic-drug-user-fee-amendments) fees as these are ultimately passed on to the patient in the form of higher costs for medicines. Funding gaps shall be offset by:
 - Reallocating 50% of savings from automated trial oversight to FDA operations.
 - Grants from the [National Institutes of Health (NIH)](https://www.nih.gov/) for high-priority public health tools (e.g., antibiotics, Alzheimer’s drugs).
-(b) **End Regulatory Monopolies**: The FDA shall no longer grant market exclusivity periods for new drugs ([21 U.S.C. § 355](https://www.law.cornell.edu/uscode/text/21/355)). Competition from generics, biosimilars, and repurposed therapies shall begin immediately upon approval.
 
 #### **3.4 Real-World Data Sharing Mandate**  
 (a) **Open Outcomes Platform**: The FDA shall create a secure portal for patients and providers to upload de-identified "before and after" health data (e.g., lab results, wearable device metrics, symptom diaries) for all food, drug, and supplement use.  
