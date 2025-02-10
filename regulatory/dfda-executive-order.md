@@ -25,7 +25,8 @@ The [Food and Drug Administration (FDA)](https://www.fda.gov/) must transition f
 Within 180 days, the Secretary of Health and Human Services (HHS) shall:
 (a) Develop and deploy the **dFDA platform**, integrating:
 - [Blockchain technology](https://aws.amazon.com/what-is/blockchain/) for immutable, transparent data sharing (e.g., [Hyperledger Fabric](https://www.lfdecentralizedtrust.org/projects/fabric)).
-- [Machine-learning models](https://www.databricks.com/glossary/machine-learning-models) trained on the "entire universe" of clinical and RWD, including international datasets ([EU EMA](https://www.ema.europa.eu/en/homepage), [Japan PMDA](https://www.pmda.go.jp/english/)).
+- **Open Source**: The dFDA platform will be developed as open-source software, with publicly accessible code repositories to foster transparency, community contributions, and independent audits.
+- [Machine-learning models](https://www.databricks.com/glossary/machine-learning-models) trained on the entire universe of clinical and RWD, including international datasets ([EU EMA](https://www.ema.europa.eu/en/homepage), [Japan PMDA](https://www.pmda.go.jp/english/)).
 - Automated adverse-event detection using [Natural Language Processing (NLP)](https://www.ibm.com/think/topics/natural-language-processing) of social media, EHRs, and pharmacy records.
 (b) Partner with the [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) to ensure algorithmic fairness, reproducibility, and compliance with [CFR Title 21](https://www.ecfr.gov/current/title-21).
 (c) Collaborate with the [World Health Organization (WHO)](https://www.who.int/) to adopt global data-sharing standards (e.g., [HL7 FHIR](https://www.hl7.org/fhir/)).
@@ -33,7 +34,7 @@ Within 180 days, the Secretary of Health and Human Services (HHS) shall:
 #### **3.2 Patient Access to Decentralized Clinical Trials**
 (a) **Right to Self-Experiment**: Patients may participate in DCTs for any treatment that has completed Phase I safety testing, at their own expense if necessary.
 - Providers and trial sponsors may not be held liable for off-label use in DCTs (pursuant to 21 U.S.C. § 396).
-- [Institutional Review Boards (IRBs)](https://www.fda.gov/about-fda/cder-offices-and-divisions/institutional-review-boards-irbs-and-protection-human-subjects-clinical-trials) shall approve all DCT protocols within 30 days if they meet basic safety criteria (per [45 CFR § 46.109](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-46/subpart-A/section-46.109)).
+- [AI-Powered IRB](https://www.fda.gov/about-fda/cder-offices-and-divisions/institutional-review-boards-irbs-and-protection-human-subjects-clinical-trials) To expedite and enhance the safety review process, a safety-validated fine-tuned large language model (LLM) will act as the primary IRB for DCT protocols and approve all DCT protocols if they meet basic safety criteria (per [45 CFR § 46.109](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-46/subpart-A/section-46.109)).
 (b) **Crowdfunding and Direct Payments**: Patients may crowdfund or directly pay for experimental treatments without triggering FDA "marketing" restrictions ([21 CFR § 312.7](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312)).
 
 #### **3.3 Elimination of Economic Barriers**
