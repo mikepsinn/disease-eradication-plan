@@ -1,6 +1,16 @@
-# Objective
+---
+title: 💡 The Decentralized FDA
+description: 80Xing medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials 💊
+published: true
+date: 2024-07-28T16:52:11.076Z
+tags: overview
+editor: markdown
+dateCreated: 2023-11-24T22:24:09.275Z
+---
 
-80X medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials 💊
+# Our Modest Proposal
+
+Upgrade FDA.gov to 80X medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials 💊
 
 ## Problems We Can Solve
 
@@ -115,26 +125,18 @@ Your data helps improve treatment rankings and benefits future patients globally
 
 Cost analysis based on data from: [Examination of Clinical Trial Costs and Barriers for Drug Development](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0) by the U.S. Department of Health and Human Services, Office of the Assistant Secretary for Planning and Evaluation (ASPE).
 
-### 💡 Key Benefits
+# Platform Architecture
 
-- Automated processes reduce manual labor costs
-- AI-driven analysis improves efficiency and accuracy
-- Decentralized approach eliminates site-related expenses
-- Blockchain technology ensures data integrity
+![](https://s3.us-east-1.amazonaws.com/static.crowdsourcingcures.org/img%2Fdfda-framework-diagram.png)
 
-Our cost reduction estimates are derived from the ASPE study's analysis of clinical trial costs across different therapeutic areas and phases, incorporating potential savings from electronic data capture, simplified protocols, and decentralized trial approaches.
 
-# The Disease Eradication Act
+## Check Out These Great Features! 👀
 
-[Show your support](https://www.dfda.earth/docs/disease-eradication-act) to give people suffering access to the most promising treatments
+See all the wonders we could enjoy with the passage of the Disease Eradication Act!
 
-![](https://wiki.dfda.earth/right_to_trial_act_image.jpg)
-
-# Your Personal FDAi Agent
+### Your Personal FDAi Agent
 
 Help us give everyone a free superintelligent doctor
-
-<iframe  title="YouTube video player" width="480" height="390" src="https://player.vimeo.com/video/930843979?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allowfullscreen></iframe>
 
 [<img alt="video thumbnail" class="ContentAreaBackground_module_img__5e37c38e ContentAreaBackground_module_loaded__5e37c38e" src="https://static.crowdsourcingcures.org/img/slides/fdai-splash.png">](https://player.vimeo.com/video/930843979?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479)
 
@@ -144,35 +146,21 @@ Securely store and control your health data
 
 ![](https://user-images.githubusercontent.com/2808553/180306571-ac9cc741-6f34-4059-a814-6f8a72ed8322.png)
 
-### Clinipedia
-
-The Wikipedia of Clinical Research
-
-![](https://fdai.earth/wp-content/uploads/2024/03/clinipedia-inflammatory-pain-small.gif)
-
 ### Outcome Labels
 
 See how treatments affect specific health outcomes
 
 ![](https://wiki.dfda.earth/assets/outcome-labels.PNG)
 
-### Why Decentralize the FDA?
-
-Learn about the historical context and need for decentralization
-
-![](https://thinkbynumbers.org/wp-content/uploads/2021/03/news-story-headline-1-1024x563.png)
-
-## Automated Clinical Research
-
 ### Automated Data Collection
 
-Import data from wearables and apps while leveraging AI-powered collection methods for comprehensive health insights.
+Import data from wearables and apps.
 
 ![](https://fdai.earth/wp-content/uploads/2024/03/import.gif)
 
 ### Automated Analysis
 
-Advanced AI algorithms analyze your health data to identify patterns and potential root causes.
+Analyze your health data to identify patterns and potential root causes of your condition.
 
 ![](https://fdai.earth/wp-content/uploads/2024/03/root-cause-analysis-4x-small.gif)
 
@@ -181,8 +169,6 @@ Advanced AI algorithms analyze your health data to identify patterns and potenti
 Get personalized insights and recommendations based on your real-time health data analysis.
 
 ![](https://fdai.earth/wp-content/uploads/2024/03/real-time-decision-support-notifications-personalized-app-image.png)
-
-## Citizen Science
 
 ### Create Your Own Studies
 
@@ -196,11 +182,17 @@ Studies are published in a Wikipedia for clinical research based on everyone's d
 
 ![](https://fdai.earth/wp-content/uploads/2024/03/clinipedia-landing.gif)
 
-### Mega-Studies
+### Mega-Studies on Specific Conditions
 
 Look up your condition and see how different foods, drugs and supplements tend to improve or worsen your condition.
 
 ![](https://fdai.earth/wp-content/uploads/2024/03/clinipedia-inflammatory-pain-small.gif)
+
+# The Disease Eradication Act
+
+[Show your support](https://www.dfda.earth/docs/disease-eradication-act) to give people suffering access to the most promising treatments
+
+![](https://wiki.dfda.earth/right_to_trial_act_image.jpg)
 
 ## Stay Up to Date!
 
@@ -212,13 +204,11 @@ We'll keep you informed about the latest developments in decentralized clinical 
 
 - [dFDA](https://www.dfda.earth/)
 - [Studies](https://studies.dfda.earth/)
-- [Digital Twin Safe](https://www.dfda.earth/safe/redirect)
+- [Digital Twin Safe](https://safe.dfda.eartht)
 - [FDAi](https://fdai.earth/)
 - [Disease Eradication Act](https://www.dfda.earth/docs/disease-eradication-act)
 - [50/50 Health Savings Sharing Program](https://www.dfda.earth/docs/health-savings-sharing)
 - [Report Bug](https://github.com/decentralized-fda/decentralized-fda/issues/new?template=bug_report.yaml)
 - [Request Feature](https://github.com/decentralized-fda/decentralized-fda/issues/new?template=feature_request.yaml)
 - [GitHub](https://github.com/decentralized-fda/decentralized-fda)
-- [Docs](https://www.dfda.earth/docs)
 
-© 2023 dFDA - Accelerating discovery to minimize suffering in the universe! 🚀
