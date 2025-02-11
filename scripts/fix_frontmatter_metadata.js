@@ -3,6 +3,7 @@ const path = require('path');
 const matter = require('gray-matter');
 const { z } = require('zod');
 const LLMClient = require('./llm-client');
+const ignore = require('ignore');
 require('dotenv').config();
 
 // Define the frontmatter schema
@@ -36,10 +37,15 @@ class FrontmatterGenerator {
   }
 
   async generateFrontmatter(content, filePath) {
-    const systemPrompt = `You are a helpful assistant for analyzing markdown content and generating frontmatter metadata.
+    const systemPrompt = `You are a helpful assistant for analyzing markdown content and generating frontmatter metadata
+    for a wiki for a decentralized FDA.
 Your task is to analyze the content and generate appropriate frontmatter fields.
 Always return a complete JSON object with all required fields based on the content.
-Make sure to include all mandatory fields (title, description, emoji) and any optional fields that are relevant to the content.
+Make sure to include all mandatory fields (title, description) and any optional fields that are relevant to the content.
+
+Please keep the title and description factual and concise like a wikipedia article. 
+Don't include any flowery adjectives.
+Try to use terms or phrases from the existing content if appropriate.
 
 Example response format:
 {
@@ -129,11 +135,28 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
 }
 
 async function findMarkdownFiles(dir) {
+  // Read .gitignore if it exists
+  let ig = ignore();
+  try {
+    const gitignore = await fs.readFile(path.join(dir, '.gitignore'), 'utf8');
+    ig = ignore().add(gitignore);
+  } catch (error) {
+    // No .gitignore found, continue with empty ignore rules
+  }
+
   const files = await fs.readdir(dir, { withFileTypes: true });
   let markdownFiles = [];
 
   for (const file of files) {
+    const relativePath = path.relative(dir, path.join(dir, file.name));
+    
+    // Skip if file/directory is ignored by .gitignore
+    if (ig.ignores(relativePath)) {
+      continue;
+    }
+
     const fullPath = path.join(dir, file.name);
+    
     if (file.isDirectory()) {
       markdownFiles = markdownFiles.concat(await findMarkdownFiles(fullPath));
     } else if (file.name.endsWith('.md')) {

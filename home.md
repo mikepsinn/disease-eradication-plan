@@ -54,37 +54,37 @@ With a small fraction of the FDA's $7 billion annual budget to upgrade FDA.gov, 
 
 Simply input the condition that's making you miserable.
 
-![image.png](https://static.crowdsourcingcures.org/enter-condition.png)
+<img src="https://static.crowdsourcingcures.org/enter-condition.png" alt="Enter condition" style="max-width: 600px;" />
 
 ### 2. View Ranked Treatments
 
 See a ranked list of the most safe and effective treatments based on the entire universe of clinical and real-world data.
 
-![](https://static.crowdsourcingcures.org/dfda/video/img/clinipedia-inflammatory-pain-small.gif)
+<img src="https://static.crowdsourcingcures.org/dfda/video/img/clinipedia-inflammatory-pain-small.gif" alt="View ranked treatments" style="max-width: 600px;" />
 
 ### 3. Join Clinical Trials from Home
 
 Instantly enroll in decentralized trials for promising treatments that interest you.
 
-![](https://static.crowdsourcingcures.org/video/autonomous-study-search.gif)
+<img src="https://static.crowdsourcingcures.org/video/autonomous-study-search.gif" alt="Join trials" style="max-width: 600px;" />
 
 ### 4. Get Treatment Delivered
 
 Get treatments delivered to your pharmacy or physician and schedule necessary lab tests automatically.
 
-![](https://static.crowdsourcingcures.org/video/autonomous-cvs.gif)
+<img src="https://static.crowdsourcingcures.org/video/autonomous-cvs.gif" alt="Get treatment" style="max-width: 600px;" />
 
 ### 5. Effortlessly Report Outcomes
 
 Report treatment effects easily through your preferred apps, EHR systems, or automated calls.
 
-![](https://static.crowdsourcingcures.org/video/reminder-inbox.gif)
+<img src="https://static.crowdsourcingcures.org/video/reminder-inbox.gif" alt="Report outcomes" style="max-width: 600px;" />
 
 ### 6. Continuously Improve Rankings
 
 Your data helps improve treatment rankings and benefits future patients globally.
 
-![](https://static.crowdsourcingcures.org/video/black-box-model-animation2.gif)
+<img src="https://static.crowdsourcingcures.org/video/black-box-model-animation2.gif" alt="Improve rankings" style="max-width: 600px;" />
 
 # Benefits of the Global Disease Eradication Act
 
@@ -127,7 +127,7 @@ Cost analysis based on data from: [Examination of Clinical Trial Costs and Barri
 
 # Platform Architecture
 
-![](https://s3.us-east-1.amazonaws.com/static.crowdsourcingcures.org/img%2Fdfda-framework-diagram.png)
+<img src="https://s3.us-east-1.amazonaws.com/static.crowdsourcingcures.org/img%2Fdfda-framework-diagram.png" alt="Platform architecture" style="max-width: 600px;" />
 
 
 ## Check Out These Great Features! 👀
@@ -144,55 +144,55 @@ Help us give everyone a free superintelligent doctor
 
 Securely store and control your health data
 
-![](https://user-images.githubusercontent.com/2808553/180306571-ac9cc741-6f34-4059-a814-6f8a72ed8322.png)
+<img src="https://user-images.githubusercontent.com/2808553/180306571-ac9cc741-6f34-4059-a814-6f8a72ed8322.png" alt="Digital Twin Safe" style="max-width: 600px;" />
 
 ### Outcome Labels
 
 See how treatments affect specific health outcomes
 
-![](https://wiki.dfda.earth/assets/outcome-labels.PNG)
+<img src="https://wiki.dfda.earth/assets/outcome-labels.PNG" alt="Outcome Labels" style="max-width: 600px;" />
 
 ### Automated Data Collection
 
 Import data from wearables and apps.
 
-![](https://fdai.earth/wp-content/uploads/2024/03/import.gif)
+<img src="https://fdai.earth/wp-content/uploads/2024/03/import.gif" alt="Automated Data Collection" style="max-width: 600px;" />
 
 ### Automated Analysis
 
 Analyze your health data to identify patterns and potential root causes of your condition.
 
-![](https://fdai.earth/wp-content/uploads/2024/03/root-cause-analysis-4x-small.gif)
+<img src="https://fdai.earth/wp-content/uploads/2024/03/root-cause-analysis-4x-small.gif" alt="Automated Analysis" style="max-width: 600px;" />
 
 ### Real-Time Decision Support
 
 Get personalized insights and recommendations based on your real-time health data analysis.
 
-![](https://fdai.earth/wp-content/uploads/2024/03/real-time-decision-support-notifications-personalized-app-image.png)
+<img src="https://fdai.earth/wp-content/uploads/2024/03/real-time-decision-support-notifications-personalized-app-image.png" alt="Real-Time Decision Support" style="max-width: 600px;" />
 
 ### Create Your Own Studies
 
 Anyone can create a study, become a prestigious scientist, get a link, and invite all their friends to join!
 
-![](https://fdai.earth/wp-content/uploads/2024/03/create-study.gif)
+<img src="https://fdai.earth/wp-content/uploads/2024/03/create-study.gif" alt="Create Studies" style="max-width: 600px;" />
 
 ### Global Scale Studies
 
 Studies are published in a Wikipedia for clinical research based on everyone's data, listing the likely effects of every food and drug.
 
-![](https://fdai.earth/wp-content/uploads/2024/03/clinipedia-landing.gif)
+<img src="https://fdai.earth/wp-content/uploads/2024/03/clinipedia-landing.gif" alt="Global Scale Studies" style="max-width: 600px;" />
 
 ### Mega-Studies on Specific Conditions
 
 Look up your condition and see how different foods, drugs and supplements tend to improve or worsen your condition.
 
-![](https://fdai.earth/wp-content/uploads/2024/03/clinipedia-inflammatory-pain-small.gif)
+<img src="https://fdai.earth/wp-content/uploads/2024/03/clinipedia-inflammatory-pain-small.gif" alt="Mega Studies" style="max-width: 600px;" />
 
 # The Disease Eradication Act
 
 [Show your support](https://www.dfda.earth/docs/disease-eradication-act) to give people suffering access to the most promising treatments
 
-![](https://wiki.dfda.earth/right_to_trial_act_image.jpg)
+<img src="https://wiki.dfda.earth/right_to_trial_act_image.jpg" alt="Disease Eradication Act" style="max-width: 600px;" />
 
 ## Stay Up to Date!
 
