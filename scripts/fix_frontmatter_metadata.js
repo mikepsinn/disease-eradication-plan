@@ -18,9 +18,9 @@ const FrontmatterSchema = z.object({
     .datetime()
     .optional()
     .describe('Current date in ISO format'),
-  tags: z.array(z.string())
-    .default([])
-    .describe('Array of relevant topic tags'),
+  tags: z.string()
+    .default('')
+    .describe('Comma-separated list of relevant topic tags'),
   editor: z.string()
     .default('markdown')
     .describe('Editor type, defaults to markdown'),
@@ -67,7 +67,7 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
         editor: result.editor || 'markdown',
         date: result.date || new Date().toISOString(),
         dateCreated: result.dateCreated || new Date().toISOString(),
-        tags: result.tags || []
+        tags: result.tags || ''
       };
     } catch (error) {
       throw new Error(`Failed to generate frontmatter: ${error.message}`);
@@ -101,6 +101,10 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
           editor: frontmatter.editor || 'markdown',
           date: (frontmatter.date instanceof Date ? frontmatter.date.toISOString() : frontmatter.date) || new Date().toISOString(),
           dateCreated: (frontmatter.dateCreated instanceof Date ? frontmatter.dateCreated.toISOString() : frontmatter.dateCreated) || new Date().toISOString(),
+          // Convert tags array to comma-separated string if it exists
+          tags: Array.isArray(frontmatter.tags) ? frontmatter.tags.join(', ') : 
+                Array.isArray(generatedFrontmatter.tags) ? generatedFrontmatter.tags.join(', ') : 
+                ''
         };
 
         const finalValidation = FrontmatterSchema.safeParse(updatedFrontmatter);
