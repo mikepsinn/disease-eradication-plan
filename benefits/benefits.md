@@ -1,3 +1,16 @@
+---
+description: >-
+  List of benefits provided by personalized medicine, including dietary
+  optimization, drug effectiveness quantification, and wellness factor
+  customization.
+emoji: "\U0001FA7A"
+title: Benefits of Personalized Medicine
+tags: 'personalized-medicine, health, wellness, dietary-intake, drug-effectiveness'
+published: true
+editor: markdown
+date: '2025-02-11T14:46:47.574Z'
+dateCreated: '2025-02-11T14:46:47.574Z'
+---
 # Example Benefits of Personalized Medicine
 
 - Automatically identify food sensitivities
