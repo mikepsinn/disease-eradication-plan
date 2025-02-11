@@ -7,11 +7,7 @@ emoji: "\U0001F480"
 title: 'Global Health Crisis: Chronic Diseases and Preventable Deaths'
 number: 150k
 textFollowingNumber: people die every day from possibly preventable degenerative diseases
-tags:
-  - global-health
-  - chronic-diseases
-  - preventable-deaths
-  - healthcare-spending
+tags: global-health, chronic-diseases, preventable-deaths, healthcare-spending
 published: true
 editor: markdown
 date: '2025-02-11T13:38:21.578Z'
