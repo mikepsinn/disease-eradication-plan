@@ -85,7 +85,14 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
     const { data: frontmatter, content: markdownContent } = matter(content);
 
     try {
-      const validationResult = FrontmatterSchema.safeParse(frontmatter);
+      // Convert any Date objects to ISO strings before validation
+      const normalizedFrontmatter = {
+        ...frontmatter,
+        date: frontmatter.date instanceof Date ? frontmatter.date.toISOString() : frontmatter.date,
+        dateCreated: frontmatter.dateCreated instanceof Date ? frontmatter.dateCreated.toISOString() : frontmatter.dateCreated
+      };
+
+      const validationResult = FrontmatterSchema.safeParse(normalizedFrontmatter);
 
       if (!validationResult.success) {
         console.log(`Invalid frontmatter:`, validationResult.error.errors);
@@ -200,8 +207,15 @@ async function validateMarkdownFiles(files) {
         });
         continue;
       }
+
+      // Convert any Date objects to ISO strings before validation
+      const normalizedFrontmatter = {
+        ...frontmatter,
+        date: frontmatter.date instanceof Date ? frontmatter.date.toISOString() : frontmatter.date,
+        dateCreated: frontmatter.dateCreated instanceof Date ? frontmatter.dateCreated.toISOString() : frontmatter.dateCreated
+      };
       
-      const validationResult = FrontmatterSchema.safeParse(frontmatter);
+      const validationResult = FrontmatterSchema.safeParse(normalizedFrontmatter);
       if (!validationResult.success) {
         invalidFiles.push({
           path: file,
