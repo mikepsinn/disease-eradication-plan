@@ -10,7 +10,7 @@ dateCreated: 2023-11-24T22:24:09.275Z
 
 # Our Modest Proposal
 
-Upgrade FDA.gov to 80X medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials 💊
+80X medical progress by upgrading fda.gov and giving all patients the right to effortlessly participate in global decentralized clinical trials 💊
 
 ## Problems We Can Solve
 
@@ -103,25 +103,25 @@ Your data helps improve treatment rankings and benefits future patients globally
 **By decentralizing and automating clinical research, we could reduce the cost of new treatments by 95%!**
 
 
-| Cost Item                                                 | Current Cost | New Cost   | Savings |
-|-----------------------------------------------------------|--------------|------------|---------|
-| 💾 Data Management Costs$198,014 → $10,000                | $198,014     | $10,000    | 94.9%   |
-| ✅ Cost Per IRB Approvals$324,081 → $5,000                 | $324,081     | $5,000     | 98.5%   |
-| 📝 Cost of IRB Amendments$6,347 → $0                      | $6,347       | $0         | 100.0%  |
-| 🔍 SDV Costs$1,486,250 → $25,000                          | $1,486,250   | $25,000    | 98.3%   |
-| 🤝 Patient Recruitment Costs$805,785 → $15,000            | $805,785     | $15,000    | 98.1%   |
-| 🎯 Patient Retention Costs$76,879 → $20,000               | $76,879      | $20,000    | 74.0%   |
-| 👨‍⚕️ Nurse/Research Associate Costs$2,379,605 → $150,000 | $2,379,605   | $150,000   | 93.7%   |
-| 👩‍⚕️ Physician Costs$1,966,621 → $100,000                | $1,966,621   | $100,000   | 94.9%   |
-| 🏥 Clinical Procedure Total$5,937,819 → $1,000,000        | $5,937,819   | $1,000,000 | 83.2%   |
-| 🧪 Laboratory Costs$2,325,922 → $500,000                  | $2,325,922   | $500,000   | 78.5%   |
-| 🏢 Site Recruitment Costs$849,158 → $0                    | $849,158     | $0         | 100.0%  |
-| 🏗️ Site Retention Costs$4,461,322 → $0                   | $4,461,322   | $0         | 100.0%  |
-| 👥 Administrative Staff Costs$7,229,968 → $100,000        | $7,229,968   | $100,000   | 98.6%   |
-| 📊 Site Monitoring Costs$4,456,717 → $0                   | $4,456,717   | $0         | 100.0%  |
-| 🏢 Site Overhead$7,386,816 → $0                           | $7,386,816   | $0         | 100.0%  |
-| 📎 All Other Costs$17,096,703 → $100,000                  | $17,096,703  | $100,000   | 99.4%   |
-| **TOTAL SAVINGS 🎉 $56,988,007 → $2,025,000**             | $56,988,007  | $2,025,000 | 95.7%   |
+| Cost Item                                    | Current Cost | New Cost   | Savings |
+|----------------------------------------------|--------------|------------|---------|
+| 💾 Data Management                           | $198,014     | $10,000    | 94.9%   |
+| ✅ Cost Per IRB Approvals                    | $324,081     | $5,000     | 98.5%   |
+| 📝 IRB Amendments                            | $6,347       | $0         | 100.0%  |
+| 🔍 SDV                                       | $1,486,250   | $25,000    | 98.3%   |
+| 🤝 Patient Recruitment                       | $805,785     | $15,000    | 98.1%   |
+| 🎯 Patient Retention                         | $76,879      | $20,000    | 74.0%   |
+| 👨‍⚕️ Nurse/Research Associate                | $2,379,605   | $150,000   | 93.7%   |
+| 👩‍⚕️ Physician                               | $1,966,621   | $100,000   | 94.9%   |
+| 🏥 Clinical Procedure Total                  | $5,937,819   | $1,000,000 | 83.2%   |
+| 🧪 Laboratory                                | $2,325,922   | $500,000   | 78.5%   |
+| 🏢 Site Recruitment                          | $849,158     | $0         | 100.0%  |
+| 🏗️ Site Retention                           | $4,461,322   | $0         | 100.0%  |
+| 👥 Administrative Staff                      | $7,229,968   | $100,000   | 98.6%   |
+| 📊 Site Monitoring                           | $4,456,717   | $0         | 100.0%  |
+| 🏢 Site Overhead                             | $7,386,816   | $0         | 100.0%  |
+| 📎 All Other                                 | $17,096,703  | $100,000   | 99.4%   |
+| **TOTAL SAVINGS 🎉**                         | $56,988,007  | $2,025,000 | 95.7%   |
 
 Cost analysis based on data from: [Examination of Clinical Trial Costs and Barriers for Drug Development](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0) by the U.S. Department of Health and Human Services, Office of the Assistant Secretary for Planning and Evaluation (ASPE).
 
