@@ -1,10 +1,8 @@
 ---
 description: >-
-  Exploration of the global health challenge caused by chronic diseases and
-  preventable deaths, questioning the effectiveness of increasing healthcare
-  spending.
+  You and Everyone You Love Will Suffer and Die.
 emoji: "\U0001F480"
-title: 'Global Health Crisis: Chronic Diseases and Preventable Deaths'
+title: 'Problems We Can Solve with a Decentralized FDA'
 number: 150k
 textFollowingNumber: people die every day from possibly preventable degenerative diseases
 tags: global-health, chronic-diseases, preventable-deaths, healthcare-spending
