@@ -1,0 +1,291 @@
+require('dotenv').config(); // Load environment variables from .env file
+
+console.log("NOTION_API_KEY:", process.env.NOTION_API_KEY);
+console.log("NOTION_DATABASE_ID:", process.env.NOTION_DATABASE_ID);
+
+const { Client } = require("@notionhq/client");
+const { UpdatePageParameters } = require("@notionhq/client/build/src/api-endpoints");
+const fs = require("fs");
+const path = require("path");
+const { simpleGit } = require('simple-git');
+const { promisify } = require("util");
+const ignore = require('ignore');
+const readFile = promisify(fs.readFile);
+const writeFile = promisify(fs.writeFile);
+
+interface MarkdownMetadata {
+  title: string;
+  description: string;
+  published: boolean;
+  date: string;
+  tags: string;
+  editor: string;
+  dateCreated: string;
+}
+
+const notion = new Client({ auth: process.env.NOTION_API_KEY });
+const databaseId = process.env.NOTION_DATABASE_ID;
+if(!databaseId) {
+    throw new Error("NOTION_DATABASE_ID is not set");
+}
+const git = simpleGit();
+
+async function syncMarkdownFilesToNotion() {
+    console.log("Starting syncMarkdownFilesToNotion");
+    const markdownFiles = await getMarkdownFiles("./");
+    console.log("Markdown files found:", markdownFiles);
+    const lastModifiedDates = await getGitLastModifiedDates(markdownFiles);
+
+    // 3.  Iterate through each markdown file
+    for (const filePath of markdownFiles) {
+        try{
+
+            // 4.  Extract metadata and content
+            const { metadata, content } = await extractMetadataAndContent(filePath);
+
+            // 5.  Get corresponding Notion page (if it exists)
+            const notionPage = await getNotionPageByTitle(metadata.title);
+
+            // 6.  Compare last modified dates
+            const fileLastModified = lastModifiedDates[filePath];
+
+            if (notionPage) {
+                // 7.  Notion Page exists
+                const notionLastEditedTime = new Date(notionPage.last_edited_time);
+
+                if (fileLastModified > notionLastEditedTime) {
+                    // 8.  File is newer, update Notion page
+                    console.log(`Updating Notion page for ${filePath}`);
+                    await updateNotionPage(notionPage.id, metadata, content);
+                } else if (fileLastModified < notionLastEditedTime) {
+                    // 9.  Notion page is newer, update file
+                    console.log(`Updating file ${filePath} from Notion`);
+                    await updateMarkdownFile(filePath, notionPage);
+                } else {
+                    console.log(`File ${filePath} and Notion page are in sync`);
+                }
+            } else {
+                // 10. Notion Page does not exist, create it
+                console.log(`Creating Notion page for ${filePath}`);
+                await createNotionPage(metadata, content);
+            }
+        } catch (error) {
+            console.error(`Error processing ${filePath}:`, error);
+        }
+    }
+}
+
+// Helper Functions
+
+// Get all markdown files
+async function getMarkdownFiles(dir: string): Promise<string[]> {
+    // Initialize ignore with .gitignore patterns
+    const ig = ignore();
+    try {
+        const gitignoreContent = await readFile('.gitignore', 'utf8');
+        ig.add(gitignoreContent);
+    } catch (error) {
+        console.log('No .gitignore file found, proceeding without ignore patterns');
+    }
+
+    async function getFiles(currentDir: string): Promise<string[]> {
+        const files = fs.readdirSync(currentDir, { withFileTypes: true });
+        let markdownFiles: string[] = [];
+
+        for (const file of files) {
+            const fullPath = path.join(currentDir, file.name);
+            // Get path relative to workspace root for gitignore checking
+            const relativePath = path.relative('.', fullPath);
+
+            // Skip if path is ignored by .gitignore
+            if (ig.ignores(relativePath)) {
+                continue;
+            }
+
+            if (file.isDirectory()) {
+                markdownFiles = markdownFiles.concat(await getFiles(fullPath));
+            } else if (file.name.endsWith(".md")) {
+                markdownFiles.push(fullPath);
+            }
+        }
+
+        return markdownFiles;
+    }
+
+    return getFiles(dir);
+}
+
+// Get last modified dates from Git
+async function getGitLastModifiedDates(filePaths: string[]): Promise<{ [key: string]: Date }> {
+  const lastModifiedDates: { [key: string]: Date } = {};
+
+    // Loop through all files
+  for (const filePath of filePaths) {
+    try {
+        // Get the last commit date
+      const log = await git.log({ file: filePath, maxCount: 1 });
+      if (log.latest) {
+        lastModifiedDates[filePath] = new Date(log.latest.date);
+      } else {
+          // No commit found, use file stat
+        lastModifiedDates[filePath] = new Date(fs.statSync(filePath).mtime);
+      }
+    } catch (error) {
+      console.error(`Error getting Git log for ${filePath}:`, error);
+      lastModifiedDates[filePath] = new Date(fs.statSync(filePath).mtime); // Fallback to file mtime
+    }
+  }
+  return lastModifiedDates;
+}
+
+// Extract metadata and content from markdown file
+async function extractMetadataAndContent(filePath: string): Promise<{ metadata: MarkdownMetadata; content: string }> {
+  const fileContent = await readFile(filePath, "utf-8");
+    // Regex to match metadata
+  const metadataRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+  const match = fileContent.match(metadataRegex);
+
+  if (!match) {
+    throw new Error(`Invalid markdown format for ${filePath}`);
+  }
+
+    // Parse metadata
+  const metadataLines = match[1].trim().split("\n");
+  const metadata: Partial<MarkdownMetadata> = {};
+  for (const line of metadataLines) {
+    const [key, value] = line.split(":").map((s: string) => s.trim());
+    if (key && value) {
+      metadata[key as keyof MarkdownMetadata] = value as never;  // Type assertion
+    }
+  }
+
+    // Get the content
+  const content = match[2].trim();
+  return { metadata: metadata as MarkdownMetadata, content };
+}
+
+// Get Notion page by title
+async function getNotionPageByTitle(title: string): Promise<any | null> {
+    try {
+        const response = await notion.databases.query({
+            database_id: databaseId as string,
+            filter: {
+                property: "title",
+                rich_text: {
+                    equals: title,
+                },
+            },
+        });
+        return response.results[0] || null;
+    } catch (error) {
+        console.error("Error in getNotionPageByTitle:", error);
+        return null;
+    }
+}
+
+// Update Notion page
+async function updateNotionPage(pageId: string, metadata: MarkdownMetadata, content: string) {
+    try {
+        const updateData = {
+            page_id: pageId,
+            properties: {
+                description: { rich_text: [{ text: { content: metadata.description } }] },
+                published: { checkbox: metadata.published },
+                date: { date: { start: metadata.date } },
+                tags: { rich_text: [{ text: { content: metadata.tags } }] },
+                editor: { rich_text: [{ text: { content: metadata.editor } }] },
+                dateCreated: { date: { start: metadata.dateCreated } },
+            }
+        };
+        await notion.pages.update(updateData);
+        
+        // Update content in a separate call
+        await notion.blocks.children.append({
+            block_id: pageId,
+            children: [
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [{ type: "text", text: { content } }]
+                    }
+                }
+            ]
+        });
+    } catch (error) {
+        console.error("Error in updateNotionPage:", error);
+    }
+}
+
+// Create Notion page
+async function createNotionPage(metadata: MarkdownMetadata, content: string) {
+    try {
+        if (!databaseId) throw new Error("Database ID is not set");
+        
+        await notion.pages.create({
+            parent: { database_id: databaseId },
+            properties: {
+                title: { title: [{ text: { content: metadata.title } }] },
+                description: { rich_text: [{ text: { content: metadata.description } }] },
+                published: { checkbox: metadata.published },
+                date: { date: { start: metadata.date } },
+                tags: { rich_text: [{ text: { content: metadata.tags } }] },
+                editor: { rich_text: [{ text: { content: metadata.editor } }] },
+                dateCreated: { date: { start: metadata.dateCreated } },
+            },
+            children: [
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [{ type: "text", text: { content } }]
+                    }
+                }
+            ]
+        });
+    } catch (error) {
+        console.error("Error in createNotionPage:", error);
+    }
+}
+
+// Update markdown file from Notion page
+async function updateMarkdownFile(filePath: string, notionPage: any) {
+    // Get properties
+    const props = notionPage.properties;
+    const title = props.title.title[0]?.plain_text || "";
+    const description = props.description.rich_text[0]?.plain_text || "";
+    const published = props.published.checkbox;
+    const date = props.date.date.start;
+    const tags = props.tags.rich_text[0]?.plain_text || "";
+    const editor = props.editor.rich_text[0]?.plain_text || "";
+    const dateCreated = props.dateCreated.date.start;
+
+    // Get content
+    const blocks = await notion.blocks.children.list({ block_id: notionPage.id });
+    let content = "";
+    for (const block of blocks.results) {
+        if ('type' in block && block.type === "paragraph" && 'paragraph' in block) {
+            const paragraph = block.paragraph as { rich_text: Array<{ plain_text: string }> };
+            content += paragraph.rich_text.map(rt => rt.plain_text).join("") + "\n";
+        }
+    }
+
+    // Construct new file content
+    const newFileContent = `---\n` +
+        `title: ${title}\n` +
+        `description: ${description}\n` +
+        `published: ${published}\n` +
+        `date: ${date}\n` +
+        `tags: ${tags}\n` +
+        `editor: ${editor}\n` +
+        `dateCreated: ${dateCreated}\n` +
+        `---\n\n` +
+        content;
+
+    // Write the file
+    await writeFile(filePath, newFileContent);
+}
+
+syncMarkdownFilesToNotion().catch((error) => {
+  console.error("Global error:", error);
+});
