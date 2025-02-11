@@ -3,6 +3,7 @@ const path = require('path');
 const matter = require('gray-matter');
 const { z } = require('zod');
 const LLMClient = require('./llm-client');
+const ignore = require('ignore');
 require('dotenv').config();
 
 // Define the frontmatter schema
@@ -36,10 +37,15 @@ class FrontmatterGenerator {
   }
 
   async generateFrontmatter(content, filePath) {
-    const systemPrompt = `You are a helpful assistant for analyzing markdown content and generating frontmatter metadata.
+    const systemPrompt = `You are a helpful assistant for analyzing markdown content and generating frontmatter metadata
+    for a wiki for a decentralized FDA.
 Your task is to analyze the content and generate appropriate frontmatter fields.
 Always return a complete JSON object with all required fields based on the content.
-Make sure to include all mandatory fields (title, description, emoji) and any optional fields that are relevant to the content.
+Make sure to include all mandatory fields (title, description) and any optional fields that are relevant to the content.
+
+Please keep the title and description factual and concise like a wikipedia article. 
+Don't include any flowery adjectives.
+Try to use terms or phrases from the existing content if appropriate.
 
 Example response format:
 {
@@ -79,7 +85,14 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
     const { data: frontmatter, content: markdownContent } = matter(content);
 
     try {
-      const validationResult = FrontmatterSchema.safeParse(frontmatter);
+      // Convert any Date objects to ISO strings before validation
+      const normalizedFrontmatter = {
+        ...frontmatter,
+        date: frontmatter.date instanceof Date ? frontmatter.date.toISOString() : frontmatter.date,
+        dateCreated: frontmatter.dateCreated instanceof Date ? frontmatter.dateCreated.toISOString() : frontmatter.dateCreated
+      };
+
+      const validationResult = FrontmatterSchema.safeParse(normalizedFrontmatter);
 
       if (!validationResult.success) {
         console.log(`Invalid frontmatter:`, validationResult.error.errors);
@@ -129,11 +142,28 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
 }
 
 async function findMarkdownFiles(dir) {
+  // Read .gitignore if it exists
+  let ig = ignore();
+  try {
+    const gitignore = await fs.readFile(path.join(dir, '.gitignore'), 'utf8');
+    ig = ignore().add(gitignore);
+  } catch (error) {
+    // No .gitignore found, continue with empty ignore rules
+  }
+
   const files = await fs.readdir(dir, { withFileTypes: true });
   let markdownFiles = [];
 
   for (const file of files) {
+    const relativePath = path.relative(dir, path.join(dir, file.name));
+    
+    // Skip if file/directory is ignored by .gitignore
+    if (ig.ignores(relativePath)) {
+      continue;
+    }
+
     const fullPath = path.join(dir, file.name);
+    
     if (file.isDirectory()) {
       markdownFiles = markdownFiles.concat(await findMarkdownFiles(fullPath));
     } else if (file.name.endsWith('.md')) {
@@ -142,6 +172,68 @@ async function findMarkdownFiles(dir) {
   }
 
   return markdownFiles;
+}
+
+async function validateMarkdownFiles(files) {
+  const invalidFiles = [];
+  
+  for (const file of files) {
+    try {
+      const content = await fs.readFile(file, 'utf8');
+      let frontmatter;
+      
+      try {
+        const parsed = matter(content);
+        frontmatter = parsed.data;
+      } catch (parseError) {
+        invalidFiles.push({
+          path: file,
+          errors: [{
+            message: `Invalid YAML frontmatter: ${parseError.message}`,
+            code: 'INVALID_YAML'
+          }]
+        });
+        continue;
+      }
+
+      // Skip files with no frontmatter
+      if (!frontmatter || Object.keys(frontmatter).length === 0) {
+        invalidFiles.push({
+          path: file,
+          errors: [{
+            message: 'No frontmatter found',
+            code: 'NO_FRONTMATTER'
+          }]
+        });
+        continue;
+      }
+
+      // Convert any Date objects to ISO strings before validation
+      const normalizedFrontmatter = {
+        ...frontmatter,
+        date: frontmatter.date instanceof Date ? frontmatter.date.toISOString() : frontmatter.date,
+        dateCreated: frontmatter.dateCreated instanceof Date ? frontmatter.dateCreated.toISOString() : frontmatter.dateCreated
+      };
+      
+      const validationResult = FrontmatterSchema.safeParse(normalizedFrontmatter);
+      if (!validationResult.success) {
+        invalidFiles.push({
+          path: file,
+          errors: validationResult.error.errors
+        });
+      }
+    } catch (error) {
+      invalidFiles.push({
+        path: file,
+        errors: [{
+          message: `Failed to read or process file: ${error.message}`,
+          code: 'FILE_ERROR'
+        }]
+      });
+    }
+  }
+  
+  return invalidFiles;
 }
 
 async function main() {
@@ -158,27 +250,36 @@ async function main() {
     
     console.log(`Found ${markdownFiles.length} markdown files`);
     
-    // Add a confirmation prompt
-    if (markdownFiles.length > 0) {
-      console.log('\nFiles to process:');
-      markdownFiles.forEach(file => console.log(`- ${path.relative(absoluteTargetDir, file)}`));
-      
-      // In non-test mode, wait for confirmation
-      if (process.env.NODE_ENV !== 'test') {
-        console.log('\nPress Ctrl+C to cancel or wait 5 seconds to continue...');
-        await new Promise(resolve => setTimeout(resolve, 5000));
-      }
+    // First validate all files
+    console.log('\nValidating frontmatter in all files...');
+    const invalidFiles = await validateMarkdownFiles(markdownFiles);
+    
+    if (invalidFiles.length === 0) {
+      console.log('✅ All files have valid frontmatter metadata');
+      return;
+    }
+    
+    console.log(`\n❌ Found ${invalidFiles.length} files with invalid frontmatter:`);
+    invalidFiles.forEach(file => {
+      console.log(`\n- ${path.relative(absoluteTargetDir, file.path)}`);
+      file.errors.forEach(error => console.log(`  - ${error.message}`));
+    });
+    
+    // In non-test mode, wait for confirmation
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('\nPress Ctrl+C to cancel or wait 5 seconds to continue processing invalid files...');
+      await new Promise(resolve => setTimeout(resolve, 5000));
     }
     
     let processed = 0;
     let updated = 0;
     
-    for (const file of markdownFiles) {
+    for (const file of invalidFiles) {
       processed++;
-      const relativePath = path.relative(absoluteTargetDir, file);
-      console.log(`\n[${processed}/${markdownFiles.length}] Processing ${relativePath}...`);
+      const relativePath = path.relative(absoluteTargetDir, file.path);
+      console.log(`\n[${processed}/${invalidFiles.length}] Processing ${relativePath}...`);
       
-      const result = await generator.processFile(file);
+      const result = await generator.processFile(file.path);
       if (result?.updated) {
         updated++;
       }
@@ -198,5 +299,6 @@ if (require.main === module) {
 module.exports = {
   FrontmatterSchema,
   FrontmatterGenerator,
-  findMarkdownFiles
+  findMarkdownFiles,
+  validateMarkdownFiles
 }; 
