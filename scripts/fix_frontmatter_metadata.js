@@ -7,12 +7,10 @@ require('dotenv').config();
 
 // Define the frontmatter schema
 const FrontmatterSchema = z.object({
-  description: z.string()
-    .describe('A clear, concise description'),
-  emoji: z.string()
-    .describe('A single relevant emoji'),
   title: z.string()
     .describe('A descriptive title'),
+  description: z.string()
+    .describe('A clear, concise description'),
   published: z.boolean()
     .default(true)
     .describe('Whether the content is published, defaults to true'),
@@ -48,8 +46,6 @@ Example response format:
   "description": "Analysis of clinical trial costs showing $41k per participant",
   "emoji": "💰",
   "title": "Clinical Trial Cost Analysis",
-  "number": "41k",
-  "textFollowingNumber": "cost per participant in clinical trials",
   "tags": ["clinical-trials", "costs", "research"],
   "published": true,
   "editor": "markdown"
@@ -96,12 +92,15 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
         }
 
         const updatedFrontmatter = {
-          ...frontmatter,
           ...generatedFrontmatter,
+          ...Object.fromEntries(
+            Object.entries(frontmatter)
+              .filter(([_, value]) => value !== undefined && value !== null && value !== '')
+          ),
           published: frontmatter.published ?? true,
           editor: frontmatter.editor || 'markdown',
-          date: frontmatter.date || new Date().toISOString(),
-          dateCreated: frontmatter.dateCreated || new Date().toISOString(),
+          date: (frontmatter.date instanceof Date ? frontmatter.date.toISOString() : frontmatter.date) || new Date().toISOString(),
+          dateCreated: (frontmatter.dateCreated instanceof Date ? frontmatter.dateCreated.toISOString() : frontmatter.dateCreated) || new Date().toISOString(),
         };
 
         const finalValidation = FrontmatterSchema.safeParse(updatedFrontmatter);

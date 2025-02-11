@@ -1,3 +1,22 @@
+---
+description: >-
+  Exploration of the global health challenge caused by chronic diseases and
+  preventable deaths, questioning the effectiveness of increasing healthcare
+  spending.
+emoji: "\U0001F480"
+title: 'Global Health Crisis: Chronic Diseases and Preventable Deaths'
+number: 150k
+textFollowingNumber: people die every day from possibly preventable degenerative diseases
+tags:
+  - global-health
+  - chronic-diseases
+  - preventable-deaths
+  - healthcare-spending
+published: true
+editor: markdown
+date: '2025-02-11T13:38:21.578Z'
+dateCreated: '2025-02-11T13:38:21.578Z'
+---
 # Problem: You and Everyone You Love Will Suffer and Die
 
 There are over [2 billion](https://www.george-health.com/global-health-challenge/) people suffering from chronic diseases.
