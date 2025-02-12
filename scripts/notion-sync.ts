@@ -58,6 +58,17 @@ if(!databaseId) {
 }
 const git = simpleGit();
 
+// Required database properties
+const REQUIRED_PROPERTIES = {
+  title: { type: 'title', name: 'title' },
+  description: { type: 'rich_text', name: 'description' },
+  published: { type: 'checkbox', name: 'published' },
+  date: { type: 'date', name: 'date' },
+  tags: { type: 'rich_text', name: 'tags' },
+  editor: { type: 'rich_text', name: 'editor' },
+  dateCreated: { type: 'date', name: 'dateCreated' }
+};
+
 async function syncMarkdownFilesToNotion() {
     console.log("Starting syncMarkdownFilesToNotion");
     const markdownFiles = await getMarkdownFiles("./");
@@ -235,38 +246,114 @@ async function getNotionPageByTitle(title: string): Promise<any | null> {
     }
 }
 
-// Update Notion page
-async function updateNotionPage(pageId: string, metadata: MarkdownMetadata, content: string) {
-    try {
-        const updateData = {
-            page_id: pageId,
-            properties: {
-                description: { rich_text: [{ text: { content: metadata.description } }] },
-                published: { checkbox: metadata.published },
-                date: { date: { start: metadata.date } },
-                tags: { rich_text: [{ text: { content: metadata.tags } }] },
-                editor: { rich_text: [{ text: { content: metadata.editor } }] },
-                dateCreated: { date: { start: metadata.dateCreated } },
-            }
-        };
-        await notion.pages.update(updateData);
-        
-        // Update content in a separate call
-        await notion.blocks.children.append({
-            block_id: pageId,
-            children: [
-                {
-                    object: "block",
-                    type: "paragraph",
-                    paragraph: {
-                        rich_text: [{ type: "text", text: { content } }]
-                    }
+// Convert markdown content to Notion blocks
+function markdownToBlocks(markdown: string): any[] {
+    const blocks: any[] = [];
+    const lines = markdown.split('\n');
+    let currentBlock: any = null;
+
+    for (let line of lines) {
+        // Handle headers
+        const headerMatch = line.match(/^(#{1,6})\s+(.+)$/);
+        if (headerMatch) {
+            const level = headerMatch[1].length;
+            const text = headerMatch[2];
+            blocks.push({
+                object: "block",
+                type: `heading_${level}`,
+                [`heading_${level}`]: {
+                    rich_text: [{ type: "text", text: { content: text } }]
                 }
-            ]
-        });
-    } catch (error) {
-        console.error("Error in updateNotionPage:", error);
+            });
+            continue;
+        }
+
+        // Handle code blocks
+        if (line.startsWith('```')) {
+            if (!currentBlock) {
+                currentBlock = {
+                    object: "block",
+                    type: "code",
+                    code: {
+                        language: line.slice(3) || "plain text",
+                        rich_text: [{ type: "text", text: { content: "" } }]
+                    }
+                };
+            } else {
+                blocks.push(currentBlock);
+                currentBlock = null;
+            }
+            continue;
+        }
+
+        // Add content to code block
+        if (currentBlock?.type === "code") {
+            currentBlock.code.rich_text[0].text.content += line + "\n";
+            continue;
+        }
+
+        // Handle bullet points
+        if (line.match(/^[\-\*]\s/)) {
+            blocks.push({
+                object: "block",
+                type: "bulleted_list_item",
+                bulleted_list_item: {
+                    rich_text: [{ 
+                        type: "text",
+                        text: { content: line.slice(2) }
+                    }]
+                }
+            });
+            continue;
+        }
+
+        // Handle numbered lists
+        const numberedListMatch = line.match(/^\d+\.\s+(.+)$/);
+        if (numberedListMatch) {
+            blocks.push({
+                object: "block",
+                type: "numbered_list_item",
+                numbered_list_item: {
+                    rich_text: [{ 
+                        type: "text",
+                        text: { content: numberedListMatch[1] }
+                    }]
+                }
+            });
+            continue;
+        }
+
+        // Handle blockquotes
+        if (line.startsWith('>')) {
+            blocks.push({
+                object: "block",
+                type: "quote",
+                quote: {
+                    rich_text: [{ 
+                        type: "text",
+                        text: { content: line.slice(1).trim() }
+                    }]
+                }
+            });
+            continue;
+        }
+
+        // Handle regular paragraphs (including blank lines)
+        if (line.trim() || blocks.length === 0 || blocks[blocks.length - 1].type !== "paragraph") {
+            blocks.push({
+                object: "block",
+                type: "paragraph",
+                paragraph: {
+                    rich_text: [{
+                        type: "text",
+                        text: { content: line }
+                    }]
+                }
+            });
+        }
     }
+
+    return blocks;
 }
 
 // Create Notion page
@@ -285,18 +372,42 @@ async function createNotionPage(metadata: MarkdownMetadata, content: string) {
                 editor: { rich_text: [{ text: { content: metadata.editor } }] },
                 dateCreated: { date: { start: metadata.dateCreated } },
             },
-            children: [
-                {
-                    object: "block",
-                    type: "paragraph",
-                    paragraph: {
-                        rich_text: [{ type: "text", text: { content } }]
-                    }
-                }
-            ]
+            children: markdownToBlocks(content)
         });
     } catch (error) {
         console.error("Error in createNotionPage:", error);
+    }
+}
+
+// Update Notion page
+async function updateNotionPage(pageId: string, metadata: MarkdownMetadata, content: string) {
+    try {
+        const updateData = {
+            page_id: pageId,
+            properties: {
+                description: { rich_text: [{ text: { content: metadata.description } }] },
+                published: { checkbox: metadata.published },
+                date: { date: { start: metadata.date } },
+                tags: { rich_text: [{ text: { content: metadata.tags } }] },
+                editor: { rich_text: [{ text: { content: metadata.editor } }] },
+                dateCreated: { date: { start: metadata.dateCreated } },
+            }
+        };
+        await notion.pages.update(updateData);
+        
+        // First delete existing content
+        const existingBlocks = await notion.blocks.children.list({ block_id: pageId });
+        for (const block of existingBlocks.results) {
+            await notion.blocks.delete({ block_id: block.id });
+        }
+
+        // Then add new content as blocks
+        await notion.blocks.children.append({
+            block_id: pageId,
+            children: markdownToBlocks(content)
+        });
+    } catch (error) {
+        console.error("Error in updateNotionPage:", error);
     }
 }
 
@@ -338,6 +449,49 @@ async function updateMarkdownFile(filePath: string, notionPage: any) {
     await writeFile(filePath, newFileContent);
 }
 
+// Ensure database has required properties
+async function ensureDatabaseProperties() {
+  try {
+    const database = await notion.databases.retrieve({ database_id: databaseId });
+    const existingProps = database.properties;
+    const updates: any = { properties: {} };
+    let needsUpdate = false;
+
+    // Check each required property
+    for (const [key, config] of Object.entries(REQUIRED_PROPERTIES)) {
+      if (!existingProps[key]) {
+        needsUpdate = true;
+        updates.properties[key] = {
+          name: config.name,
+          [config.type]: {}
+        };
+      }
+    }
+
+    // Update database if needed
+    if (needsUpdate) {
+      console.log('Adding missing properties to database...');
+      await notion.databases.update({
+        database_id: databaseId,
+        ...updates
+      });
+      console.log('Database properties updated successfully');
+    }
+  } catch (error) {
+    console.error('Error ensuring database properties:', error);
+    throw error;
+  }
+}
+
+// Only run sync if this is the main module
+if (require.main === module) {
+  ensureDatabaseProperties()
+    .then(() => syncMarkdownFilesToNotion())
+    .catch((error) => {
+      console.error("Global error:", error);
+    });
+}
+
 // Export functions for testing
 module.exports = {
   getMarkdownFiles,
@@ -345,12 +499,6 @@ module.exports = {
   getNotionPageByTitle,
   updateNotionPage,
   createNotionPage,
-  updateMarkdownFile
+  updateMarkdownFile,
+  ensureDatabaseProperties
 };
-
-// Only run sync if this is the main module
-if (require.main === module) {
-  syncMarkdownFilesToNotion().catch((error) => {
-    console.error("Global error:", error);
-  });
-}
