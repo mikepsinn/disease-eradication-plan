@@ -1,7 +1,14 @@
 ---
+description: >-
+  A framework for coordinating the efforts of the stakeholders in the FDAi
+  ecosystem.
+emoji: "\U0001F91D"
 title: FDAi Collaboration and Collective Intelligence Framework
-description: A framework for coordinating the efforts of the stakeholders in the FDAi ecosystem.
-tags: [dfda, collaborationism, collective intelligence, coordination]
+tags: 'dfda, collaborationism, collective intelligence, coordination'
+published: true
+editor: markdown
+date: '2025-02-12T16:53:06.390Z'
+dateCreated: '2025-02-12T16:53:06.390Z'
 ---
 
 > **Note:** This document is a work in progress. We welcome contributions and encourage the inclusion of existing projects that align with this framework's objectives.  Please [contact us](mailto:grants@crowdsourcingcures.org) if you'd like to implement any aspect of this framework.

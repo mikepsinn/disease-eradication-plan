@@ -1,3 +1,15 @@
+---
+description: >-
+  A directory for academic and medical researchers contributing to the FDAi
+  project, facilitating collaboration and resource sharing.
+emoji: "\U0001F4DA"
+title: Researchers Directory
+tags: 'researchers, FDAi, collaboration, resources'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:20.436Z'
+dateCreated: '2025-02-12T16:52:20.436Z'
+---
 # Researchers Directory
 
 Welcome to the Researchers Directory of the FDAi Community Directory. This space is dedicated to academic and medical researchers who are contributing their expertise and knowledge to the FDAi project. Here, you can find collaborations, share findings, and access resources that are pertinent to the research community within the FDAi ecosystem.

@@ -5,12 +5,7 @@ description: >-
   health equity.
 emoji: "\U0001F3E5"
 title: The FDA Innovation through Data and AI Act (FDAi Act)
-tags:
-  - healthcare
-  - AI
-  - data-analysis
-  - regulation
-  - clinical-research
+tags: 'healthcare, AI, data-analysis, regulation, clinical-research'
 published: true
 editor: markdown
 date: '2025-02-09T16:34:38.071Z'

@@ -1,3 +1,16 @@
+---
+description: >-
+  A framework for envisioning and implementing a world without disease,
+  including defining the ideal, creating a roadmap, seeking global consent, and
+  enacting legal reforms.
+emoji: "\U0001F30D"
+title: Framework for a World Without Disease
+tags: 'disease-eradication, global-health, policy, framework'
+published: true
+editor: markdown
+date: '2025-02-12T16:47:32.477Z'
+dateCreated: '2025-02-12T16:47:32.477Z'
+---
 Here’s a clearer, more intuitive framework:
 
 **Phase 1: Define the Ideal**  

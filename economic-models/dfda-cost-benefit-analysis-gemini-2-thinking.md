@@ -1,4 +1,17 @@
 ---
+description: >-
+  Investing $11.95 billion over 10 years to transform FDA.gov into a global
+  decentralized autonomous FDA could yield $406 billion in benefits with an ROI
+  of 3297% and a benefit-cost ratio of 34.
+emoji: "\U0001F4C8"
+title: dFDA Cost Benefit Analysis
+tags: 'economic-models, decentralized-fda, blockchain, ai, cost-benefit-analysis'
+published: true
+editor: markdown
+date: '2025-02-12T16:53:58.906Z'
+dateCreated: '2025-02-12T16:53:58.906Z'
+---
+---
 title: dFDA Cost Benefit Analysis
 description:  Investing approximately $11.95 billion over 10 years to transform FDA.gov into a global, decentralized, autonomous FDA could yield around $406 billion in benefits—an impressive ROI of roughly 3297% with a benefit-cost ratio of 34.
 published: true

@@ -1,3 +1,15 @@
+---
+description: >-
+  A plugin for conducting observational studies, which are used to collect data
+  and identify relationships between variables without intervention.
+emoji: "\U0001F4D1"
+title: Observational Studies Plugin
+tags: 'observational-studies, research-methods, data-collection, scientific-studies'
+published: true
+editor: markdown
+date: '2025-02-12T16:53:15.392Z'
+dateCreated: '2025-02-12T16:53:15.392Z'
+---
 # 📑 Observational Studies Plugin
 
 - [Overview](#overview)

@@ -1,3 +1,18 @@
+---
+description: >-
+  A legislative proposal to address issues in drug development and patient
+  rights, including regulatory delays, high costs, low trial enrollment, and
+  limited access to emerging therapies.
+emoji: "\U0001FA7A"
+title: Disease Eradication Act
+tags: >-
+  drug-development, regulatory-reform, patient-rights, clinical-trials,
+  health-policy
+published: true
+editor: markdown
+date: '2025-02-12T16:53:49.956Z'
+dateCreated: '2025-02-12T16:53:49.956Z'
+---
 # DISEASE ERADICATION ACT
 
 ## 1. PROBLEMS THIS ACT ADDRESSES

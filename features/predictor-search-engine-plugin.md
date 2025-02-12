@@ -1,11 +1,15 @@
 ---
-title: 🔎 Predictor Search Engine Plugin
-description: 
+description: >-
+  A search engine that uses aggregated user data to determine the most effective
+  products for health and wellness goals, offering personalized treatment
+  effectiveness rates and root cause likelihoods.
+emoji: "\U0001F50D"
+title: "\U0001F50E Predictor Search Engine Plugin"
+tags: 'health, wellness, data-aggregation, personalized-medicine, search-engine'
 published: true
-date: 2022-08-28T15:11:47.523Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:23:08.952Z
+date: '2022-08-28T15:11:47.523Z'
+dateCreated: '2022-07-27T21:23:08.952Z'
 ---
 
 Aggregated user data is used to determine the factors that most influence any given aspect of health, powering the QM Search Engine.

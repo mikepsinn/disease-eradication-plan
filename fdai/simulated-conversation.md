@@ -4,19 +4,13 @@ description: >-
   to dietary factors.
 emoji: "\U0001FA7A"
 title: FDAi Agent Analyzes Patient's Health Concerns
-number: '10'
-textFollowingNumber: days symptoms last after dietary exposure
-tags:
-  - health
-  - diet
-  - inflammation
-  - arthritis
-  - psoriasis
-  - depression
+tags: 'health, diet, inflammation, arthritis, psoriasis, depression'
 published: true
 editor: markdown
 date: '2025-02-09T16:35:09.090Z'
 dateCreated: '2025-02-09T16:35:09.090Z'
+number: '10'
+textFollowingNumber: days symptoms last after dietary exposure
 ---
 Interaction with the FDAi agent, focusing on its functionalities and addressing the patient's health concerns:
 

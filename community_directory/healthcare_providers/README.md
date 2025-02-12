@@ -1,3 +1,15 @@
+---
+description: >-
+  A directory for healthcare providers including hospitals, clinics, and health
+  apps involved in the FDAi project
+emoji: "\U0001F3E5"
+title: Healthcare Providers Directory
+tags: 'healthcare-providers, FDAi, community-directory, collaboration'
+published: true
+editor: markdown
+date: '2025-02-12T16:51:55.194Z'
+dateCreated: '2025-02-12T16:51:55.194Z'
+---
 # Healthcare Providers Directory
 
 Welcome to the Healthcare Providers directory of the FDAi Community Directory. This space is dedicated to hospitals, clinics, health apps, and other healthcare service providers who are integral to the implementation and success of the FDAi project.

@@ -1,11 +1,16 @@
 ---
+description: >-
+  Summary of completed studies on the use of focused ultrasound for treating
+  depression, including findings on safety and efficacy.
+emoji: "\U0001F9E0"
 title: Focused Ultrasound
-description: 
+tags: >-
+  focused-ultrasound, depression, MDD, OCD, treatment-resistant,
+  clinical-studies
 published: true
-date: 2023-10-02T01:47:34.315Z
-tags: interventions, depression, focused ultrasound
 editor: markdown
-dateCreated: 2023-10-02T01:37:27.297Z
+date: '2023-10-02T01:47:34.315Z'
+dateCreated: '2023-10-02T01:37:27.297Z'
 ---
 
 

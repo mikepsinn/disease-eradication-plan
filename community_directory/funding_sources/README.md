@@ -1,3 +1,16 @@
+---
+description: >-
+  A directory for funding sources interested in supporting initiatives within
+  the FDAi project, providing information on funding opportunities and
+  facilitating connections between funders and project teams.
+emoji: "\U0001F4B0"
+title: Funding Sources Directory
+tags: 'funding, FDAi, investors, philanthropy, grants'
+published: true
+editor: markdown
+date: '2025-02-12T16:51:51.033Z'
+dateCreated: '2025-02-12T16:51:51.033Z'
+---
 # Funding Sources Directory
 
 Welcome to the Funding Sources directory of the FDAi Community Directory. This space is dedicated to investors, grant agencies, philanthropic organizations, and any other entities interested in providing financial support for the initiatives within the FDAi project. Here, you can find information about ongoing projects in need of funding, learn about the impact of your contributions, and connect with project leaders.

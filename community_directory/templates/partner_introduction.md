@@ -1,3 +1,15 @@
+---
+description: >-
+  A template for partners to introduce themselves in the FDAi Community
+  Directory
+emoji: "\U0001F91D"
+title: Partner Introduction Template
+tags: 'community, partners, template, collaboration'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:29.661Z'
+dateCreated: '2025-02-12T16:52:29.661Z'
+---
 # Partner Introduction Template
 
 Welcome to the FDAi Community Directory! This template is designed to help partners introduce themselves to the community. By providing consistent and structured information about each partner, we can foster better collaboration and understanding across the FDAi ecosystem.

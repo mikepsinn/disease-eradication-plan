@@ -1,3 +1,15 @@
+---
+description: >-
+  Compilation of references and resources related to FDA spending, drug
+  approvals, economic data, and regulatory impact
+emoji: "\U0001F4DA"
+title: FDA References and Data Resources
+tags: 'fda, spending, drug-approvals, economic-data, regulation'
+published: true
+editor: markdown
+date: '2025-02-12T16:56:25.222Z'
+dateCreated: '2025-02-12T16:56:25.222Z'
+---
 # 📖 References
 
 * [Google Spreadsheet of FDA Spending vs Life-Expectancy](https://docs.google.com/spreadsheets/d/e/2PACX-1vTBkVrOYLxloOIADLXA7-k5NBIGgQ\_dfFQ7BLUN0oaJPVQ\_NqdFdVUfhuPkVWgFZ9gfLrwPdjuG1sTn/pubhtml)

@@ -1,3 +1,13 @@
+---
+description: A directory to facilitate collaboration among stakeholders in the FDAi project
+emoji: "\U0001F465"
+title: FDAi Community Directory
+tags: 'FDAi, community, collaboration, decentralized-health, regulatory-processes'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:13.974Z'
+dateCreated: '2025-02-12T16:52:13.974Z'
+---
 # FDAi Community Directory
 
 Welcome to the FDAi Community Directory! This repository is designed to facilitate collaboration and organization among various stakeholders involved in the FDAi project. Our goal is to create an open, transparent, and efficient ecosystem where partners from different sectors can come together to contribute to the advancement of decentralized health regulatory processes.

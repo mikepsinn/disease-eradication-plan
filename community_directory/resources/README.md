@@ -1,3 +1,15 @@
+---
+description: >-
+  Central hub for shared resources, guides, tools, documentation, coding
+  standards, and data handling protocols for the FDAi project
+emoji: "\U0001F4DA"
+title: Resources Directory for FDAi
+tags: 'FDAi, resources, guides, tools, documentation, coding-standards, data-handling'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:23.865Z'
+dateCreated: '2025-02-12T16:52:23.865Z'
+---
 # Resources Directory
 
 Welcome to the `/resources` directory of the FDAi Community Directory. This space is dedicated to providing shared resources, guides, tools, documentation, coding standards, and data handling protocols that are essential for the collaboration and development of the FDAi project.

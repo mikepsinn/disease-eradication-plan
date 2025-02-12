@@ -1,3 +1,15 @@
+---
+description: >-
+  Privacy and use policy for the dFDA, detailing data handling practices and
+  participant rights
+emoji: "\U0001F512"
+title: dFDA Privacy and Use Policy
+tags: 'privacy-policy, data-security, health-data, decentralized-fda'
+published: true
+editor: markdown
+date: '2025-02-12T16:55:17.945Z'
+dateCreated: '2025-02-12T16:55:17.945Z'
+---
 # The dFDA Privacy and Use Policy
 
 ## Your Data:

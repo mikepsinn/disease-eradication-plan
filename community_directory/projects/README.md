@@ -1,3 +1,15 @@
+---
+description: >-
+  A directory of projects within the FDAi initiative, providing descriptions,
+  requirements, and collaboration opportunities.
+emoji: "\U0001F4DA"
+title: FDAi Projects Directory
+tags: 'FDAi, projects, collaboration, community'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:10.998Z'
+dateCreated: '2025-02-12T16:52:10.998Z'
+---
 # Projects Directory
 
 Welcome to the Projects Directory of the FDAi Community Directory. This space is dedicated to housing specific project descriptions, requirements, and collaboration opportunities that are part of the FDAi initiative. Here, you can find detailed information about ongoing and upcoming projects, as well as how you can contribute to them.

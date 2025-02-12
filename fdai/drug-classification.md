@@ -4,11 +4,7 @@ description: >-
   categorize drugs as OTC, prescription-only, or scheduled.
 emoji: "\U0001F4CA"
 title: Quantitative Data for Drug Regulation
-tags:
-  - drug-regulation
-  - efficacy
-  - safety
-  - quantitative-data
+tags: 'drug-regulation, efficacy, safety, quantitative-data'
 published: true
 editor: markdown
 date: '2025-02-09T16:34:33.103Z'

@@ -1,3 +1,15 @@
+---
+description: >-
+  Legislation aiming to reform the FDA approval process by addressing delays,
+  accessibility issues, and high costs in drug development.
+emoji: "\U0001F3E5"
+title: Disease Eradication Act
+tags: 'FDA-reform, drug-development, clinical-trials, health-policy, legislation'
+published: true
+editor: markdown
+date: '2025-02-12T16:53:42.927Z'
+dateCreated: '2025-02-12T16:53:42.927Z'
+---
 # Disease Eradication Act
 
 ## Section 1. Short Title and Findings

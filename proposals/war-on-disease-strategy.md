@@ -1,3 +1,17 @@
+---
+description: >-
+  A high-level strategy for eradicating disease through restructured
+  institutional frameworks and financial incentives
+emoji: ⚔️
+title: High-Level Strategy for War on Disease
+tags: >-
+  disease-eradication, healthcare-reform, decentralized-FDA, clinical-trials,
+  policy
+published: true
+editor: markdown
+date: '2025-02-12T16:56:18.388Z'
+dateCreated: '2025-02-12T16:56:18.388Z'
+---
 # High Level Strategy for War on Disease
 
 1. Declaration of War

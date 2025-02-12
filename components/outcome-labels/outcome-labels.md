@@ -1,3 +1,15 @@
+---
+description: >-
+  Introduction to Outcome Labels, a new approach to food and product labeling
+  focusing on health outcomes and symptoms rather than micronutrients.
+emoji: "\U0001F3F7"
+title: Outcome Labels
+tags: 'health, nutrition, food-labels, chronic-disease, innovation'
+published: true
+editor: markdown
+date: '2025-02-12T16:53:22.107Z'
+dateCreated: '2025-02-12T16:53:22.107Z'
+---
 # 🏷 Outcome Labels
 
 ![outcome-labels-plugin.png](https://static.crowdsourcingcures.org/dfda/components/outcome-labels/outcome-labels.png)

@@ -4,18 +4,13 @@ description: >-
   health issues caused by untested chemicals and poor diets.
 emoji: "\U0001F52C"
 title: The Case for Personal FDAi Agents
-number: 1m
-textFollowingNumber: people commit suicide every year
-tags:
-  - health
-  - chronic-diseases
-  - chemicals
-  - microbiome
-  - clinical-trials
+tags: 'health, chronic-diseases, chemicals, microbiome, clinical-trials'
 published: true
 editor: markdown
 date: '2025-02-09T16:34:58.059Z'
 dateCreated: '2025-02-09T16:34:58.059Z'
+number: 1m
+textFollowingNumber: people commit suicide every year
 ---
 # Benefits of Personal FDAi Agents
 

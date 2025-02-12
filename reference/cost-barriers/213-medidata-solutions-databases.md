@@ -1,3 +1,15 @@
+---
+description: >-
+  Overview of Medidata Solutions databases used for clinical trial cost
+  analysis, including PICAS, CROCAS, and Insights.
+emoji: "\U0001F4CA"
+title: Medidata Solutions Databases for Clinical Trial Costs
+tags: 'clinical-trials, costs, databases, Medidata Solutions, PICAS, CROCAS, Insights'
+published: true
+editor: markdown
+date: '2025-02-12T16:56:39.403Z'
+dateCreated: '2025-02-12T16:56:39.403Z'
+---
 ### 2.1.3 Medidata Solutions Databases
 
 We used three proprietary databases on clinical trial costs, which are offered by Medidata Solutions, a global provider of cloud-based solutions for clinical research in life sciences, as part of the broad set of solutions available through the Medidata Clinical Cloud<sup>™</sup>:

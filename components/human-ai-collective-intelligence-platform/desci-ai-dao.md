@@ -1,7 +1,14 @@
 ---
+description: >-
+  How to create a truly autonomous DAO that actually accelerates scientific
+  progress
+emoji: "\U0001F91D"
 title: DeSci DAO AI Agent Framework
-description: How to create a truly autonomous DAO that actually accelerates scientific progress
-tags: [dao, ai, automation, desci]
+tags: 'dao, ai, automation, desci'
+published: true
+editor: markdown
+date: '2025-02-12T16:53:03.217Z'
+dateCreated: '2025-02-12T16:53:03.217Z'
 ---
 
 # Problem:

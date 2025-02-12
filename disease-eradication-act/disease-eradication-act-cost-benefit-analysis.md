@@ -1,3 +1,18 @@
+---
+description: >-
+  Quantitative analysis of the economic impacts of the Disease Eradication Act,
+  estimating up to $2.25 trillion in annual benefits with costs around $10
+  billion.
+emoji: "\U0001F4CA"
+title: Quantitative Cost-Benefit Analysis of the Disease Eradication Act
+tags: >-
+  disease-eradication-act, cost-benefit-analysis, healthcare-policy,
+  economic-impact
+published: true
+editor: markdown
+date: '2025-02-12T16:53:39.410Z'
+dateCreated: '2025-02-12T16:53:39.410Z'
+---
 # Quantitative Cost-Benefit Analysis of the Disease Eradication Act
 
 ## Executive Summary

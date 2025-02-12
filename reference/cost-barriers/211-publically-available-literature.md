@@ -1,3 +1,16 @@
+---
+description: >-
+  Overview of publically available literature used to define components of the
+  pharmaceutical decision-making process model, including sources like MIT and
+  CTTI.
+emoji: "\U0001F4DA"
+title: Publically Available Literature on Pharmaceutical Decision-Making
+tags: 'literature-review, pharmaceuticals, decision-making, MIT, CTTI'
+published: true
+editor: markdown
+date: '2025-02-12T16:56:32.278Z'
+dateCreated: '2025-02-12T16:56:32.278Z'
+---
 ### 2.1.1 Publically Available Literature
 
 Although the literature on the early stages of the pharmaceutical decision-making process is not extensive, there is some research that has characterized the process. We used this information to help define the components of the model. Some examples are the work performed at the Massachusetts Institute of Technology (MIT) Center for Biomedical Innovation and the Clinical Trials Transformation Initiative (CTTI), a public-private partnership organization hosted by Duke University.<sup>4</sup>

@@ -1,3 +1,15 @@
+---
+description: >-
+  A directory for patient advocacy groups and NGOs to share information,
+  resources, and collaborate within the FDAi Community Directory.
+emoji: "\U0001F91D"
+title: Patient Advocacy Directory
+tags: 'patient-advocacy, NGOs, FDAi, community-directory, collaboration'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:08.134Z'
+dateCreated: '2025-02-12T16:52:08.134Z'
+---
 # Patient Advocacy Directory
 
 Welcome to the Patient Advocacy directory of the FDAi Community Directory. This space is dedicated to patient advocacy groups, non-governmental organizations (NGOs), and other entities that represent the interests and rights of patients. Your contributions are vital to ensuring that the FDAi addresses the needs and concerns of patients effectively.

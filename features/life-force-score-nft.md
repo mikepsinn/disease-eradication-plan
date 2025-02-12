@@ -1,11 +1,12 @@
 ---
-title: Life Force Score
 description: Gamification to Incentivize Healthy Behaviour
+emoji: "\U0001F3AE"
+title: Life Force Score
+tags: 'digital-twins, nft, metaverse, health-data, gaming'
 published: true
-date: 2023-10-26T21:36:53.402Z
-tags: 
 editor: markdown
-dateCreated: 2023-10-26T21:36:53.402Z
+date: '2023-10-26T21:36:53.402Z'
+dateCreated: '2023-10-26T21:36:53.402Z'
 ---
 
 ![digital-twin-nft.png](https://static.crowdsourcingcures.org/img/digital-twin-nft.png)

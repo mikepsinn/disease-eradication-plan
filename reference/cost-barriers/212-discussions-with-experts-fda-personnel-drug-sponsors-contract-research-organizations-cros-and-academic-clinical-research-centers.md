@@ -1,3 +1,16 @@
+---
+description: >-
+  Details of discussions with experts, FDA personnel, drug sponsors, CROs, and
+  academic research centers to understand the decision process in drug
+  development.
+emoji: "\U0001F465"
+title: Discussions on Drug Development Decision Processes
+tags: 'drug-development, FDA, CROs, academic-research-centers, industry-experts'
+published: true
+editor: markdown
+date: '2025-02-12T16:56:35.812Z'
+dateCreated: '2025-02-12T16:56:35.812Z'
+---
 ### 2.1.2 Discussions with Experts, FDA Personnel, Drug Sponsors, Contract Research Organizations (CROs), and Academic Clinical Research Centers
 
 Some of the information needed to characterize the decision process of a drug sponsor came from semi-structured discussions with our team of experts and other industry experts, FDA personnel, drug sponsors, CROs, and primary clinical research centers, including University of Massachusetts, Johns Hopkins University, University of Michigan, and the Mayo Clinic.

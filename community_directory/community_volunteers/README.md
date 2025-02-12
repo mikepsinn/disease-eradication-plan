@@ -1,3 +1,15 @@
+---
+description: >-
+  A directory for community volunteers contributing to the FDAi project,
+  providing resources and guidance for involvement.
+emoji: "\U0001F91D"
+title: Community Volunteers Directory
+tags: 'volunteers, community, FDAi, contribution'
+published: true
+editor: markdown
+date: '2025-02-12T16:51:40.444Z'
+dateCreated: '2025-02-12T16:51:40.444Z'
+---
 # Community Volunteers Directory
 
 Welcome to the Community Volunteers section of the FDAi Community Directory! This space is dedicated to individual contributors and volunteers who are looking to get involved with the FDAi project. Your passion, skills, and dedication are invaluable to the success of our initiatives.
