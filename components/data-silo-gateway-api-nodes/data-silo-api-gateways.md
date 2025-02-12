@@ -1,3 +1,16 @@
+---
+description: >-
+  FDAi Gateway API Nodes enable data silos to allow individuals to export and
+  save their data locally in PersonalFDA Nodes with secure OAuth2-protected APIs
+  and personal access token management.
+emoji: ⚙️
+title: FDAi Gateway API Nodes
+tags: 'data-silo, api-gateway, fda, personal-data, oauth2, access-tokens'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:56.730Z'
+dateCreated: '2025-02-12T16:52:56.730Z'
+---
 ## Data Silo API Gateway Nodes
 
 ![dfda-gateway-api-node-silo.jpg](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)

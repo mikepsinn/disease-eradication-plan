@@ -1,3 +1,16 @@
+---
+description: >-
+  Directory for regulatory and legal partners involved in healthcare and
+  pharmaceuticals, focusing on sharing insights and collaborating on legal
+  frameworks for decentralized health technologies.
+emoji: "\U0001F4DA"
+title: Regulatory and Legal Partners Directory
+tags: 'regulatory, legal, healthcare, pharmaceuticals, decentralized-health, FDAi'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:17.592Z'
+dateCreated: '2025-02-12T16:52:17.592Z'
+---
 # Regulatory and Legal Partners Directory
 
 Welcome to the Regulatory and Legal Partners section of the FDAi Community Directory. This folder is dedicated to regulatory experts, legal advisors, and anyone involved in the legal and regulatory aspects of healthcare and pharmaceuticals. Here, we share insights, discuss regulatory frameworks, and collaborate on ensuring that the FDAi operates within legal boundaries while fostering innovation.

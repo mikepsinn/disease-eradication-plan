@@ -1,3 +1,16 @@
+---
+description: >-
+  A directory for partners involved in the FDAi project, providing a space for
+  organizations to introduce themselves, share their roles, and facilitate
+  collaboration.
+emoji: "\U0001F91D"
+title: Partners Directory
+tags: 'partners, collaboration, FDAi, community-directory'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:04.915Z'
+dateCreated: '2025-02-12T16:52:04.915Z'
+---
 # Partners Directory
 
 Welcome to the `/partners` directory of the FDAi Community Directory. This section serves as a central hub for all partner-related information, facilitating collaboration and communication among various stakeholders involved in the FDAi project.

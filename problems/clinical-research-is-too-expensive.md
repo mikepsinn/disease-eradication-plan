@@ -1,11 +1,12 @@
 ---
-title: 💰 Clinical Research is Too Expensive
 description: It costs $2.6 billion to bring a drug to market (including failed attempts).
+emoji: "\U0001F4B0"
+title: "\U0001F4B0 Clinical Research is Too Expensive"
+tags: 'clinical-research, costs, drug-development, phase-iii-trials'
 published: true
-date: 2022-07-28T03:58:50.155Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-22T19:03:26.235Z
+date: '2022-07-28T03:58:50.155Z'
+dateCreated: '2022-07-22T19:03:26.235Z'
 ---
 
 #### The Cost of Clinical Research

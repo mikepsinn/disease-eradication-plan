@@ -2,6 +2,13 @@
 description: >-
   The mandate of the dFDA is to promote human health and safety by determining
   the comprehensive positive and negative effects of all foods and drugs.
+emoji: "\U0001F48A"
+title: The Decentralized FDA
+tags: 'decentralized-fda, clinical-research, health, FAIR, monorepo'
+published: true
+editor: markdown
+date: '2025-02-12T16:56:21.927Z'
+dateCreated: '2025-02-12T16:56:21.927Z'
 layout:
   title:
     visible: true

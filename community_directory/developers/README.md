@@ -1,3 +1,15 @@
+---
+description: >-
+  A directory for developers, data scientists, and AI experts contributing to
+  the technical development of the FDAi project.
+emoji: "\U0001F4BB"
+title: Developers Directory
+tags: 'developers, software, data-science, AI, FDAi, community'
+published: true
+editor: markdown
+date: '2025-02-12T16:51:47.494Z'
+dateCreated: '2025-02-12T16:51:47.494Z'
+---
 # Developers Directory
 
 Welcome to the Developers Directory of the FDAi Community Directory. This space is dedicated to software developers, data scientists, AI experts, and anyone involved in the technical development and data analysis aspects of the FDAi project. Here, you can collaborate, share your expertise, and contribute to the development of tools and applications that support the FDAi's mission.

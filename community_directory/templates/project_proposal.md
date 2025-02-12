@@ -1,3 +1,15 @@
+---
+description: >-
+  A template for structuring project proposals for the FDAi Community Directory,
+  guiding contributors to provide detailed information about their initiatives.
+emoji: "\U0001F4CB"
+title: FDAi Project Proposal Template
+tags: 'fda-community, project-proposals, template, guidelines'
+published: true
+editor: markdown
+date: '2025-02-12T16:52:32.792Z'
+dateCreated: '2025-02-12T16:52:32.792Z'
+---
 # Project Proposal Template for the FDAi
 
 Thank you for your interest in proposing a project for the FDAi Community Directory. This template is designed to help you structure your proposal in a clear and consistent manner. Please fill out each section with as much detail as possible to ensure a thorough understanding of your project idea.

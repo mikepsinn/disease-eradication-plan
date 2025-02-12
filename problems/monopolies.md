@@ -1,10 +1,13 @@
 ---
-title: 🎩 Excessive Patent Monopolies
-description: The 1962 efficacy amendment made drugs more expensive by granting longer monopolies.
+description: >-
+  The 1962 efficacy amendment made drugs more expensive by granting longer
+  monopolies.
+emoji: "\U0001F916"
+title: "\U0001F3A9 Excessive Patent Monopolies"
+tags: 'content, tokens, efficiency'
 published: true
-date: 2022-07-29T01:55:49.553Z
-tags:
 editor: markdown
-dateCreated: 2022-07-22T19:03:40.532Z
+date: '2022-07-29T01:55:49.553Z'
+dateCreated: '2022-07-22T19:03:40.532Z'
 ---
 

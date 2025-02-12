@@ -1,11 +1,14 @@
 ---
-title: 🏷 Outcome Labels Plugin
-description: 
+description: >-
+  Proposal for replacing traditional nutrition labels with outcome labels to
+  better inform consumers about health impacts
+emoji: "\U0001F4CA"
+title: "\U0001F3F7 Outcome Labels Plugin"
+tags: 'nutrition, health-outcomes, food-labels, public-health'
 published: true
-date: 2022-08-28T15:12:30.345Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:23:05.142Z
+date: '2022-08-28T15:12:30.345Z'
+dateCreated: '2022-07-27T21:23:05.142Z'
 ---
 
 ![outcome-labels-plugin.png](https://static.crowdsourcingcures.org/img/outcome-labels.PNG)

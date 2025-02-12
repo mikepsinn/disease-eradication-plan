@@ -1,3 +1,16 @@
+---
+description: >-
+  An overview of the unnecessary suffering caused by current healthcare and
+  regulatory systems, highlighting specific examples of preventable pain and
+  disease.
+emoji: "\U0001F6AB"
+title: Creating a World Without Disease
+tags: 'healthcare, regulatory-systems, disease-prevention, FDA'
+published: true
+editor: markdown
+date: '2025-02-12T16:50:53.964Z'
+dateCreated: '2025-02-12T16:50:53.964Z'
+---
 # How to Create a World Without Disease
 
 ## Billions of Hours of Unnecessary Suffering

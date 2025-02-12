@@ -1,3 +1,17 @@
+---
+description: >-
+  Optimitron is an AI agent within PersonalFDA nodes that uses causal inference
+  to analyze health factors and provide personalized recommendations.
+emoji: "\U0001F916"
+title: Optimitron AI Agent
+tags: >-
+  ai-agent, causal-inference, personalized-health, data-analysis,
+  pharmacokinetics
+published: true
+editor: markdown
+date: '2025-02-12T16:53:18.950Z'
+dateCreated: '2025-02-12T16:53:18.950Z'
+---
 # Optimitron AI Agent
 
 Optimitron is an AI agent that lives in your PersonalFDA node that uses causal inference to estimate how various factors affect your health.

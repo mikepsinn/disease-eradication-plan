@@ -1,4 +1,18 @@
 ---
+description: >-
+  Transforming FDA.gov into a decentralized clinical trials platform is
+  projected to cost $26.3B over 10 years while delivering over $1T in benefits,
+  resulting in an NPV of $974B, an IRR of 127%, a ROI ratio of 37:1, and
+  breakeven by Year 3.
+emoji: "\U0001F4C8"
+title: dFDA Cost-Benefit Analysis
+tags: 'economic-models, decentralized-fda, clinical-trials, roi'
+published: true
+editor: markdown
+date: '2025-02-12T16:53:54.711Z'
+dateCreated: '2025-02-12T16:53:54.711Z'
+---
+---
 title: dFDA Cost Benefit Analysis
 description: Transforming FDA.gov into a decentralized clinical trials platform is projected to cost $26.3B over 10 years while delivering over $1T in benefits, resulting in an NPV of $974B, an IRR of 127%, a ROI ratio of 37:1, and breakeven by Year 3.
 published: true

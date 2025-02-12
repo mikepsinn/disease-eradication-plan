@@ -1,11 +1,14 @@
 ---
+description: >-
+  A comparative analysis between countries suggests that delays in new
+  interventions cost anywhere from 21,000 to 120, 000 US lives per decade.
+emoji: "\U0001F480"
 title: ⏱ Deaths Due to US Regulatory "Drug Lag"
-description: A comparative analysis between countries suggests that delays in new interventions cost anywhere from 21,000 to 120, 000 US lives per decade.
+tags: 'regulatory-delay, drug-lag, life-expectancy, FDA, Switzerland-US-comparison'
 published: true
-date: 2022-07-29T02:11:03.058Z
-tags:
 editor: markdown
-dateCreated: 2022-07-22T19:03:35.580Z
+date: '2022-07-29T02:11:03.058Z'
+dateCreated: '2022-07-22T19:03:35.580Z'
 ---
 **Delayed Life-Saving Treatments**
 

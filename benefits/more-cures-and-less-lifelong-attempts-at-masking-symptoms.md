@@ -2,6 +2,13 @@
 description: >-
   High Costs Punish Finding Cures Over Masking Symptoms Since Cures Are Far Less
   Profitable Than Lifetime Treatments
+emoji: "\U0001F4B0"
+title: Economic Incentives for Medical Cures vs Symptom Management
+tags: 'medical-economics, drug-development, cures, symptom-management, R&D'
+published: true
+editor: markdown
+date: '2025-02-12T15:33:40.236Z'
+dateCreated: '2025-02-12T15:33:40.236Z'
 ---
 
 # 🎭 More Cures and Less Lifelong Attempts at Masking Symptoms

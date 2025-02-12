@@ -1,3 +1,15 @@
+---
+description: >-
+  Guidelines for contributing to the FDAi Community Directory, including steps
+  for getting started and making contributions via pull requests.
+emoji: "\U0001F91D"
+title: Contributing to the FDAi Community Directory
+tags: 'FDAi, community-directory, contributing, open-source'
+published: true
+editor: markdown
+date: '2025-02-12T16:51:44.377Z'
+dateCreated: '2025-02-12T16:51:44.377Z'
+---
 # Contributing to the FDAi Community Directory
 
 Thank you for your interest in contributing to the FDAi Community Directory. This document provides guidelines for contributing to the FDAi project. By participating in this project, you agree to abide by its terms.

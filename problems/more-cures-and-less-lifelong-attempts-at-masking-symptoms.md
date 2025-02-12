@@ -1,11 +1,14 @@
 ---
-title: 🎭 Cures are Unprofitable
-description: High Costs Punish Finding Cures Over Masking Symptoms Since Cures Are Far Less Profitable Than Lifetime Treatments
+description: >-
+  High Costs Punish Finding Cures Over Masking Symptoms Since Cures Are Far Less
+  Profitable Than Lifetime Treatments
+emoji: "\U0001F4C8"
+title: "\U0001F3AD Cures are Unprofitable"
+tags: 'drug-development, economics, medical-progress, R&D, treatment-costs'
 published: true
-date: 2022-07-29T01:53:44.586Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-22T19:04:49.913Z
+date: '2022-07-29T01:53:44.586Z'
+dateCreated: '2022-07-22T19:04:49.913Z'
 ---
 
 If the new treatment is a permanent cure for the disease, replacing a lifetime of refills with a one-time purchase would be economically disastrous for the drug developer. With a lifetime prescription, a company can recover its costs over time. Depending on the number of people with the disease, one-time cures would require a massive upfront payment to recover development costs.

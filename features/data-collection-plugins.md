@@ -1,11 +1,14 @@
 ---
-title: 📲 Data Collection Plugins
-description: Data collection can be done using wearable sensors, third-party applications, and client applications.
+description: >-
+  Data collection can be done using wearable sensors, third-party applications,
+  and client applications.
+emoji: "\U0001F4CA"
+title: "\U0001F4F2 Data Collection Plugins"
+tags: 'data-collection, clinical-research, omics-data, imaging-data, wearable-sensors'
 published: true
-date: 2022-08-28T15:16:12.088Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:22:48.973Z
+date: '2022-08-28T15:16:12.088Z'
+dateCreated: '2022-07-27T21:22:48.973Z'
 ---
 
 ![](https://static.crowdsourcingcures.org/img/data-collection-plugins.PNG)

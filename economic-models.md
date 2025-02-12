@@ -1,4 +1,16 @@
 ---
+description: >-
+  Various analyses illustrating the benefits of a global system for automating
+  decentralized clinical trials
+emoji: "\U0001F4CA"
+title: Economic Models and Cost-Benefit Analyses of Decentralized FDA
+tags: 'economic-models, cost-benefit-analysis, decentralized-clinical-trials, FDA'
+published: true
+editor: markdown
+date: '2025-02-12T16:54:02.221Z'
+dateCreated: '2025-02-12T16:54:02.221Z'
+---
+---
 title: Economic Models of the Costs and Benefits of a Global Decentralized Autonomous Algorithmic FDA
 description: Various analyses illustrating the benefits of a global system for automating decentralized clinical trials
 published: true

@@ -1,3 +1,18 @@
+---
+description: >-
+  A directory for industry stakeholders including pharmaceutical companies,
+  insurance companies, biotech firms, and medical device manufacturers
+  contributing to the FDAi project.
+emoji: "\U0001F465"
+title: Industry Stakeholders Directory
+tags: >-
+  fda-community, stakeholders, pharmaceuticals, biotech, medical-devices,
+  insurance, decentralized-fda
+published: true
+editor: markdown
+date: '2025-02-12T16:51:58.855Z'
+dateCreated: '2025-02-12T16:51:58.855Z'
+---
 # Industry Stakeholders Directory
 
 Welcome to the Industry Stakeholders Directory of the FDAi Community Directory. This section is dedicated to pharmaceutical companies, insurance companies, biotech firms, medical device manufacturers, and other key players in the healthcare industry. Your expertise, resources, and insights are invaluable to the success of the FDAi project.

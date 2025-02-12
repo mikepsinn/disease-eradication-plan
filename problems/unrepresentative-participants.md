@@ -1,11 +1,16 @@
 ---
+description: >-
+  Phase III clinical trials are often designed to exclude a vast majority of the
+  population of interest.
+emoji: "\U0001F465"
 title: Trials Often Aren't Representative of Real Patients
-description: Phase III clinical trials are often designed to exclude a vast majority of the population of interest.
+tags: >-
+  clinical-trials, external-validity, generalizability, mental-health,
+  eligibility-criteria
 published: true
-date: 2022-07-29T02:10:38.403Z
-tags:
 editor: markdown
-dateCreated: 2022-07-22T19:04:16.586Z
+date: '2022-07-29T02:10:38.403Z'
+dateCreated: '2022-07-22T19:04:16.586Z'
 ---
 
 External validity is the extent to which the results can be generalized to a population of interest. The population of interest is usually defined as the people the intervention is intended to help.

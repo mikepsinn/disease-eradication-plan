@@ -1,8 +1,14 @@
 ---
+description: >-
+  How to quantify treatment effects from challenging sparse, irregular time
+  series data with missing values.
+emoji: "\U0001F4C8"
 title: Causal Inference and Optimal Daily Value Determination
-description: How to quantify treatment effects from challenging sparse, irregular time series data with missing values.
+tags: 'causal inference, data analysis, treatment effects, time series'
 published: true
-tags: [causal inference, data analysis, treatment effects, time series]
+editor: markdown
+date: '2025-02-12T16:52:43.098Z'
+dateCreated: '2025-02-12T16:52:43.098Z'
 ---
 
 # 📈 Data Analysis

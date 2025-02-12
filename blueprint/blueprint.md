@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of the preventable suffering caused by systemic issues in healthcare
+  and drug development
+emoji: "\U0001FA7A"
+title: Creating a World Without Disease
+tags: 'healthcare, drug-development, regulatory-system, disease-prevention'
+published: true
+editor: markdown
+date: '2025-02-12T16:51:17.425Z'
+dateCreated: '2025-02-12T16:51:17.425Z'
+---
 # How to Create to a World Without Disease
 
 ## The Preventable Suffering Billions Live In

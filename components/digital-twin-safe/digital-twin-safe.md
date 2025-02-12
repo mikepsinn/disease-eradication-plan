@@ -1,7 +1,12 @@
 ---
-title: 👨‍🤝‍👨 The Digital Twin Safe 🔒
-description: A little house for your digital twin. 🏡 
-tags: [projects, data sharing, data storage]
+description: "A little house for your digital twin. \U0001F3E1"
+emoji: "\U0001F512"
+title: "\U0001F468‍\U0001F91D‍\U0001F468 The Digital Twin Safe \U0001F512"
+tags: 'projects, data sharing, data storage'
+published: true
+editor: markdown
+date: '2025-02-12T16:53:00.239Z'
+dateCreated: '2025-02-12T16:53:00.239Z'
 ---
 
 ![human-file-system-banner-logo](https://user-images.githubusercontent.com/2808553/180306571-ac9cc741-6f34-4059-a814-6f8a72ed8322.png)

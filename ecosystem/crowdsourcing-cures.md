@@ -1,11 +1,15 @@
 ---
+description: >-
+  Exploration of the societal and financial costs of neurological disorders and
+  mental illnesses, emphasizing the potential benefits of redirecting wasted
+  resources towards solving global issues.
+emoji: "\U0001F9E0"
 title: Crowdsourcing Cures
-description: 
+tags: 'neurological-disorders, mental-health, societal-costs, resource-allocation'
 published: true
-date: 2022-08-26T19:04:23.080Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:22:24.826Z
+date: '2022-08-26T19:04:23.080Z'
+dateCreated: '2022-07-27T21:22:24.826Z'
 ---
 
 More than a billion minds are currently debilitated by a neurological disorder or mental illness.

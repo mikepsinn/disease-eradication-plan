@@ -1,3 +1,18 @@
+---
+description: >-
+  Legislation proposing reforms to clinical trial regulations by granting
+  patients the right to participate in decentralized trials and improving access
+  to treatments.
+emoji: "\U0001F4DA"
+title: Right to Trial Act of 2024
+tags: >-
+  clinical-trials, regulatory-reform, patient-access, decentralized-trials,
+  healthcare-legislation
+published: true
+editor: markdown
+date: '2025-02-12T16:56:11.751Z'
+dateCreated: '2025-02-12T16:56:11.751Z'
+---
 # RIGHT TO TRIAL ACT OF 2024
 
 ## SECTION 1\. SHORT TITLE AND FINDINGS
