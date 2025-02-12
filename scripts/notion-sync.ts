@@ -251,18 +251,119 @@ function markdownToBlocks(markdown: string): any[] {
     const blocks: any[] = [];
     const lines = markdown.split('\n');
     let currentBlock: any = null;
+    let tableHeaders: string[] = [];
+    let tableRows: string[][] = [];
 
-    for (let line of lines) {
+    function parseInlineMarkdown(text: string) {
+        // Handle inline code
+        text = text.replace(/`([^`]+)`/g, (_, code) => {
+            return code;
+        });
+
+        // Handle bold
+        text = text.replace(/\*\*(.+?)\*\*/g, (_, content) => {
+            return content;
+        });
+
+        // Handle italic
+        text = text.replace(/\*(.+?)\*/g, (_, content) => {
+            return content;
+        });
+
+        // Handle links
+        text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, title, url) => {
+            return title;
+        });
+
+        return text;
+    }
+
+    function createRichText(text: string, annotations = {}) {
+        return {
+            type: "text",
+            text: { content: text },
+            annotations: {
+                bold: text.match(/\*\*(.+?)\*\*/g) !== null,
+                italic: text.match(/\*(.+?)\*/g) !== null,
+                code: text.match(/`([^`]+)`/g) !== null,
+                ...annotations
+            }
+        };
+    }
+
+    function flushTable() {
+        if (tableHeaders.length > 0) {
+            blocks.push({
+                object: "block",
+                type: "table",
+                table: {
+                    table_width: tableHeaders.length,
+                    has_column_header: true,
+                    has_row_header: false,
+                    children: [
+                        {
+                            type: "table_row",
+                            table_row: {
+                                cells: tableHeaders.map(header => [createRichText(header)])
+                            }
+                        },
+                        ...tableRows.map(row => ({
+                            type: "table_row",
+                            table_row: {
+                                cells: row.map(cell => [createRichText(cell)])
+                            }
+                        }))
+                    ]
+                }
+            });
+            tableHeaders = [];
+            tableRows = [];
+        }
+    }
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+
+        // Handle horizontal rules
+        if (line.match(/^[\-\*_]{3,}$/)) {
+            blocks.push({
+                object: "block",
+                type: "divider",
+                divider: {}
+            });
+            continue;
+        }
+
+        // Handle tables
+        const tableRow = line.trim().match(/^\|(.+)\|$/);
+        if (tableRow) {
+            const cells = tableRow[1].split('|').map(cell => cell.trim());
+            
+            if (tableHeaders.length === 0) {
+                tableHeaders = cells;
+                // Skip the separator line
+                i++;
+            } else {
+                tableRows.push(cells);
+            }
+            continue;
+        }
+
+        // Flush table if we're no longer in a table
+        if (tableHeaders.length > 0 && !line.includes('|')) {
+            flushTable();
+        }
+
         // Handle headers
         const headerMatch = line.match(/^(#{1,6})\s+(.+)$/);
         if (headerMatch) {
             const level = headerMatch[1].length;
-            const text = headerMatch[2];
+            const text = parseInlineMarkdown(headerMatch[2]);
             blocks.push({
                 object: "block",
                 type: `heading_${level}`,
                 [`heading_${level}`]: {
-                    rich_text: [{ type: "text", text: { content: text } }]
+                    rich_text: [createRichText(text)]
                 }
             });
             continue;
@@ -275,7 +376,7 @@ function markdownToBlocks(markdown: string): any[] {
                     object: "block",
                     type: "code",
                     code: {
-                        language: line.slice(3) || "plain text",
+                        language: line.slice(3).toLowerCase() || "plain text",
                         rich_text: [{ type: "text", text: { content: "" } }]
                     }
                 };
@@ -292,16 +393,31 @@ function markdownToBlocks(markdown: string): any[] {
             continue;
         }
 
+        // Handle images
+        const imageMatch = line.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+        if (imageMatch) {
+            blocks.push({
+                object: "block",
+                type: "image",
+                image: {
+                    type: "external",
+                    external: {
+                        url: imageMatch[2]
+                    },
+                    caption: imageMatch[1] ? [{ type: "text", text: { content: imageMatch[1] } }] : []
+                }
+            });
+            continue;
+        }
+
         // Handle bullet points
         if (line.match(/^[\-\*]\s/)) {
+            const text = parseInlineMarkdown(line.slice(2));
             blocks.push({
                 object: "block",
                 type: "bulleted_list_item",
                 bulleted_list_item: {
-                    rich_text: [{ 
-                        type: "text",
-                        text: { content: line.slice(2) }
-                    }]
+                    rich_text: [createRichText(text)]
                 }
             });
             continue;
@@ -310,14 +426,12 @@ function markdownToBlocks(markdown: string): any[] {
         // Handle numbered lists
         const numberedListMatch = line.match(/^\d+\.\s+(.+)$/);
         if (numberedListMatch) {
+            const text = parseInlineMarkdown(numberedListMatch[1]);
             blocks.push({
                 object: "block",
                 type: "numbered_list_item",
                 numbered_list_item: {
-                    rich_text: [{ 
-                        type: "text",
-                        text: { content: numberedListMatch[1] }
-                    }]
+                    rich_text: [createRichText(text)]
                 }
             });
             continue;
@@ -325,14 +439,12 @@ function markdownToBlocks(markdown: string): any[] {
 
         // Handle blockquotes
         if (line.startsWith('>')) {
+            const text = parseInlineMarkdown(line.slice(1).trim());
             blocks.push({
                 object: "block",
                 type: "quote",
                 quote: {
-                    rich_text: [{ 
-                        type: "text",
-                        text: { content: line.slice(1).trim() }
-                    }]
+                    rich_text: [createRichText(text)]
                 }
             });
             continue;
@@ -340,18 +452,19 @@ function markdownToBlocks(markdown: string): any[] {
 
         // Handle regular paragraphs (including blank lines)
         if (line.trim() || blocks.length === 0 || blocks[blocks.length - 1].type !== "paragraph") {
+            const text = parseInlineMarkdown(line);
             blocks.push({
                 object: "block",
                 type: "paragraph",
                 paragraph: {
-                    rich_text: [{
-                        type: "text",
-                        text: { content: line }
-                    }]
+                    rich_text: [createRichText(text)]
                 }
             });
         }
     }
+
+    // Flush any remaining table
+    flushTable();
 
     return blocks;
 }
