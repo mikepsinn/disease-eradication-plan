@@ -1,11 +1,12 @@
 ---
+description: 'International Classification of Diseases, 10th revision (ICD-10)'
+emoji: "\U0001FA7A"
 title: diseases
-description: International Classification of Diseases, 10th revision (ICD-10)
+tags: 'diseases, classification, ICD-10, government'
 published: true
-date: 2022-08-25T19:59:14.867Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:23:37.304Z
+date: '2022-08-25T19:59:14.867Z'
+dateCreated: '2022-07-27T21:23:37.304Z'
 ---
 
 # 🤮 Diseases

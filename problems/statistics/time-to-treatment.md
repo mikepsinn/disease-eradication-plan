@@ -1,27 +1,31 @@
 ---
-number: 17 years
-textFollowingNumber: "of suffering until a new treatment reaches patients"
-title: "17 Years of Suffering Until a New Treatment Reaches Patients"
-description: "On average, it takes 17 years for medical research to translate into clinical practice and reach patients"
-emoji: "🤒"
-featuredImage: "years-of-suffering.jpg"
+title: Time To Treatment
+description: 
+published: false
+date: 2025-02-12
+tags: 
+editor: 
+dateCreated: 2025-02-12
 ---
 
-From initial research to clinical practice, new medical treatments take an average of [17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) to complete the development process and reach patients. This lengthy timeline is due to several critical bottlenecks in traditional clinical trials:
-
-* Patient recruitment challenges
-* Geographic limitations requiring travel to specific trial sites
-* Bureaucratic overhead and complex regulatory requirements
-* Inefficient manual data collection processes
-
-## Impact on Patient Lives
-
-This extensive timeline means:
-* Patients endure nearly two decades of waiting for potentially life-saving treatments
-* Many patients may not survive long enough to benefit from new treatments
-* Medical progress is severely bottlenecked by process inefficiencies
-
-Sources:
-- [NIH - PMC Article on Research Translation](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/)
-- [Nature - Drug Development Timeline Analysis](https://www.nature.com/articles/d41586-023-03172-6)
-- [BioStock - The Four Phases of Drug Development](https://www.biostock.se/en/2023/01/drug-development-the-four-phases/)
+---
+number: 2 Years
+textFollowingNumber: instead of 17 years to get new treatments to patients
+title: 17 years to 2 Year From Research to Treatment
+description: >-
+  By streamlining the clinical trial process through automation and
+  decentralization, we can reduce the time from initial research to patient
+  availability from 17 years to just 2 years
+emoji: ⚡
+featuredImage: treatment-time.jpg
+source: 'https://dfda.earth'
+published: true
+editor: markdown
+date: '2025-02-09T16:20:32.141Z'
+dateCreated: '2025-02-09T16:20:32.141Z'
+---
+From initial research to clinical practice, new medical treatments take an average of 17 years to complete the development process and reach patients. 
+Phase 1 clinical trials are used to determine the safety and effects of a new drug. These take 1-2 years.
+At this point, it should be possible for patients to join a trials for the treatments with the most promise.
+Through automation of administrative tasks, AI-assisted protocol development, and decentralized trial management, we can dramatically compress this timeline.
+This acceleration means potentially life-saving treatments reach patients faster while maintaining rigorous safety standards through automated monitoring and real-time data analysis.

@@ -1,3 +1,16 @@
+---
+description: >-
+  Discussion of barriers faced by drug sponsors when using academic institutions
+  as clinical trial sites, including bureaucratic processes and lengthy
+  timelines.
+emoji: "\U0001F4DA"
+title: Barriers at Academic Institutions for Clinical Trials
+tags: 'clinical-trials, academic-institutions, bureaucracy, drug-sponsors'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:34.398Z'
+dateCreated: '2025-02-12T20:27:34.398Z'
+---
 ### 4.8 Barriers at Academic Institutions
 
 There are cases in which drug sponsors might find it appealing or necessary to use academic institutions as trial sites. For instance, sponsors might seek to employ key opinion leaders who are affiliated with a particular institution, or they may be studying a very specialized disease area for which patients can only be found in sufficient numbers at certain universities, medical schools, or other academic sites. Despite these benefits, many aspects of academic institutions are not conducive to efficient and successful clinical research.

@@ -1,3 +1,15 @@
+---
+description: >-
+  Exploration of how the RECOVERY trial reduced clinical research costs and a
+  proposal for scaling its approach with a decentralized platform
+emoji: "\U0001F52C"
+title: Scaling RECOVERY Trial Efficiency with Decentralized Platforms
+tags: 'clinical-trials, decentralized-platforms, cost-efficiency, RECOVERY-trial'
+published: true
+editor: markdown
+date: '2025-02-12T20:29:43.625Z'
+dateCreated: '2025-02-12T20:29:43.625Z'
+---
 Okay, here's an article exploring how the RECOVERY trial reduced clinical research costs and how a global decentralized platform could scale that approach, with inline markdown hyperlinks:
 
 **Revolutionizing Clinical Trials: Scaling RECOVERY's Efficiency with a Global Decentralized Platform**

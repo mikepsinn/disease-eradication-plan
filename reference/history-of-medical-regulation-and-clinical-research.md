@@ -1,11 +1,15 @@
 ---
+description: >-
+  Historical analysis of efficacy trials and their impact on health outcomes
+  compared to modern pharmaceutical trials
+emoji: "\U0001F4DA"
 title: History of Medical Regulation and Clinical Research
-description: 
+tags: 'clinical-trials, history, real-world-evidence, health-outcomes'
 published: true
-date: 2023-10-26T19:37:36.565Z
-tags: dfda, fda
 editor: markdown
-dateCreated: 2023-10-26T19:37:36.565Z
+image: 'https://static.crowdsourcingcures.org/img/life-expectancy-historical.jpg'
+date: '2023-10-26T19:37:36.565Z'
+dateCreated: '2023-10-26T19:37:36.565Z'
 ---
 
 There is compelling historical evidence suggesting that large scale efficacy-trials based on real-world evidence have ultimately led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.

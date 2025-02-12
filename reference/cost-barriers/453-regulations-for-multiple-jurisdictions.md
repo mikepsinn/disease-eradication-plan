@@ -1,3 +1,16 @@
+---
+description: >-
+  Overview of the complexities and challenges in complying with regulations for
+  clinical trials across multiple jurisdictions, including federal, state,
+  local, and international requirements.
+emoji: "\U0001F30D"
+title: Regulations for Multi-Jurisdiction Clinical Trials
+tags: 'clinical-trials, regulations, compliance, international, EU'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:00.722Z'
+dateCreated: '2025-02-12T20:27:00.722Z'
+---
 ### 4.5.3 Regulations for Multiple Jurisdictions
 
 In addition to the federal regulations listed above, there are also state and local regulations to comply with, and the requirements may be different for each location in multi-site trials. Companies conducting trials at sites in the European Union (EU) (or other countries) are also regulated by the European Commission/EU Clinical Trials Directive (or other national regulatory authorities) (Kramer, Smith, & Califf, 2012), which may have varying guidance and regulations. The abundance of regulations at various levels and the lack of harmonization among these add a great deal of complexity to the process of conducting clinical trials (Kramer & Schulman, 2011). In interviews, sponsors listed the following areas as being particularly problematic: reporting of results, format for applications, guidance on endpoints, registration requirements, guidelines for clinical programs, biosimilars legislation, and adverse events reporting. For example, the United States and Europe differ as to who bears responsibility for ascertaining the cause of unexpected serious adverse events (SAEs). Under the new U.S. regulation, the drug sponsor is responsible for determining causality; in Europe, either the sponsor or the investigator may do so (as stated in the ICH guidelines) (Kramer, Smith, & Califf, 2012; Sherman, Woodcock, Norden, Grandinetti, & Temple, 2011).

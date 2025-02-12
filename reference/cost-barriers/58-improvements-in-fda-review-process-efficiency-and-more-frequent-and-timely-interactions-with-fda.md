@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of FDA review process efficiency and the impact of advisory committee
+  meetings on approval times
+emoji: ⏳
+title: FDA Review Process Efficiency and Advisory Committee Impact
+tags: 'fda-review-process, advisory-committee, approval-times, clinical-trials'
+published: true
+editor: markdown
+date: '2025-02-12T20:28:03.619Z'
+dateCreated: '2025-02-12T20:28:03.619Z'
+---
 ### 5.8 Improvements in FDA Review Process Efficiency and More Frequent and Timely Interactions with FDA
 
 This approach is somewhat difficult to quantify due to the highly variable results it is likely to have across review divisions and trials. For example, as one recent paper points out, there are considerable differences among review divisions in the length the NDA review and approval process, and to some extent, these differences are driven by differences in workload and staff resources across the various divisions (Milne & Kaitin, 2012). The same paper shows the impact of holding an advisory committee (AC) meeting on new molecular entity (NME) approval times to be ambiguous; in some review divisions, meetings are associated with shorter average review times, whereas in other divisions, they are actually associated with prolonged review times relative to cases where no meeting was held.

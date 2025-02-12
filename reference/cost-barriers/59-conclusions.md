@@ -1,3 +1,16 @@
+---
+description: >-
+  Evaluation of barrier mitigation strategies and their impacts on drug
+  development costs and returns, with a focus on priority review vouchers and
+  FDA review efficiency.
+emoji: "\U0001F4CA"
+title: Barrier Mitigation Strategies in Drug Development
+tags: 'drug-development, barrier-mitigation, FDA, priority-review-vouchers, costs'
+published: true
+editor: markdown
+date: '2025-02-12T20:28:07.055Z'
+dateCreated: '2025-02-12T20:28:07.055Z'
+---
 ### 5.9 Conclusions
 
 In considering the conclusions that may be drawn based on our evaluation of barrier mitigation strategies, it is important to recognize that establishing clear links between barriers and specific model parameters and their ex-post magnitudes requires extensive research, and our analysis was constrained by the limited availability of this type of information in the literature. Nevertheless, our results can help to inform the discussion surrounding possible barrier mitigation strategies and their relative impacts on drug development costs and returns. Our results are summarized in Table 10 below.

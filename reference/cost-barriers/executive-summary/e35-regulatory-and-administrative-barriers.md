@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of regulatory and administrative barriers in clinical research,
+  including IRB approval, informed consent, and patient privacy under HIPAA.
+emoji: "\U0001F512"
+title: Regulatory and Administrative Barriers in Clinical Research
+tags: 'regulations, clinical-research, irb, informed-consent, hipaa'
+published: true
+editor: markdown
+date: '2025-02-12T20:28:34.291Z'
+dateCreated: '2025-02-12T20:28:34.291Z'
+---
 ### E.3.5 Regulatory and Administrative Barriers
 
 - U.S. regulations pertaining to clinical research could benefit from revisions. They were written at a time when the clinical trials enterprise was smaller and before multicenter trials became common.

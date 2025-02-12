@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of clinical trial costs by phase using weighted mean and standard
+  deviation
+emoji: "\U0001F4CA"
+title: Clinical Trial Costs by Phase
+tags: 'clinical-trials, cost-analysis, phases, weighted-mean, standard-deviation'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:27.757Z'
+dateCreated: '2025-02-12T20:26:27.757Z'
+---
 ### 3.2 Costs by Trial Phase
 
 To compare average costs by phase across all therapeutic areas, we computed a weighted mean cost, ![Xij](https://aspe.hhs.gov/sites/default/files/private/images-reports/examination-clinical-trial-costs-and-barriers-drug-development/xij.png), and its weighted standard deviation, _s<sub>ij</sub>_ , , for each cost component, _i_, and clinical trial phase, _j_, where the weights are the total number of contracts (i.e., sum of investigator and contractor contracts contributing to the PICAS<sup>®</sup> and CROCAS<sup>® </sup> datasets<sup>11</sup>) such that

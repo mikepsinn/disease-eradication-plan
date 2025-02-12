@@ -1,11 +1,16 @@
 ---
+description: >-
+  An overview of the reference databases integrated by the Unified Health API to
+  accelerate clinical research, including nutritional supplements, units of
+  measurement, medications, symptoms and diseases, biomarkers, clinical trials,
+  and medical codes.
+emoji: "\U0001F4D6"
 title: README
-description: 
+tags: 'health-data, clinical-research, databases, unified-api, medical-codes'
 published: true
-date: 2022-08-25T19:46:02.884Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:23:26.498Z
+date: '2022-08-25T19:46:02.884Z'
+dateCreated: '2022-07-27T21:23:26.498Z'
 ---
 
 # 📖 Reference Databases

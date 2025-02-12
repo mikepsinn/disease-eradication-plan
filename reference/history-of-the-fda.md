@@ -1,3 +1,15 @@
+---
+description: >-
+  Historical evidence indicating that crowdsourcing clinical research can lead
+  to better health outcomes compared to traditional pharmaceutical trials
+emoji: "\U0001F4CA"
+title: Historical Evidence for Crowdsourced Clinical Research
+tags: 'clinical-research, history, real-world-evidence, health-outcomes'
+published: true
+editor: markdown
+date: '2025-02-12T20:29:01.423Z'
+dateCreated: '2025-02-12T20:29:01.423Z'
+---
 **Historical Evidence Suggesting That Crowdsourcing Clinical Research Works**
 
 There is compelling historical evidence suggesting that large scale efficacy-trials based on real-world evidence have ultimately led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.

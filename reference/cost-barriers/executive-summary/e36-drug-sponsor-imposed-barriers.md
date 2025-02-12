@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of drug sponsor-imposed barriers in clinical trials, including risk
+  aversion, enrollment restrictions, and complex protocols.
+emoji: "\U0001F6AB"
+title: Drug Sponsor-Imposed Barriers in Clinical Trials
+tags: 'clinical-trials, drug-sponsors, barriers, enrollment, protocols'
+published: true
+editor: markdown
+date: '2025-02-12T20:28:37.613Z'
+dateCreated: '2025-02-12T20:28:37.613Z'
+---
 ### E.3.6 Drug Sponsor-Imposed Barriers
 
 - Excessive risk-aversion leads to unnecessary steps being taken.

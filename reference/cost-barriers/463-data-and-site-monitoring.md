@@ -1,3 +1,17 @@
+---
+description: >-
+  Analysis of data and site monitoring costs in clinical trials, focusing on the
+  impact of source data verification practices.
+emoji: "\U0001F50D"
+title: Data and Site Monitoring Costs in Clinical Trials
+tags: >-
+  clinical-trials, data-monitoring, costs, source-data-verification,
+  FDA-regulations
+published: true
+editor: markdown
+date: '2025-02-12T20:27:23.388Z'
+dateCreated: '2025-02-12T20:27:23.388Z'
+---
 ### 4.6.3 Data and Site Monitoring
 
 Data and site monitoring costs are another key barrier that is largely self-imposed by sponsors. In general, industry-sponsored trials are monitored by individuals who visit sites at intervals defined by their company standard operating procedure (SOP) or study-specific monitoring plan. The pharmaceutical industry estimates that monitoring can account for 15 to 30 percent of total trial costs (Davis, Nolan, Woodcock, & Estabrook, 1999). It is common practice in the industry to conduct site visits frequently (every 4-8 weeks), and source data verification (SDV)—the process of ensuring that the reported trial data are complete and consistent with study subject source records—consumes quite a bit of time during these visits (Usher, 2010; Tantsyura, et al., 2010).

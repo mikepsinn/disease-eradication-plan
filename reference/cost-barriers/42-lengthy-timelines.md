@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of the lengthy timelines involved in clinical trials and drug
+  development, including increases in development and regulatory cycle times.
+emoji: ⏳
+title: Lengthy Timelines in Clinical Trials and Drug Development
+tags: 'clinical-trials, drug-development, regulatory-process, timelines'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:40.234Z'
+dateCreated: '2025-02-12T20:26:40.234Z'
+---
 ### 4.2 Lengthy Timelines
 
 Closely related to the cost of clinical trials is the length of time it takes to complete them, which has also increased in recent years. Between 2000 and 2005, pharmaceutical companies experienced a three percent median increase in development cycle times and a nearly 11 percent increase in regulatory cycle times (Getz K. A., 2006). Though the most recent data released by FDA in the fiscal year (FY) 2011 Prescription Drug User Fee Act (PDUFA) Performance Report indicate that median times to approval for priority and standard applications have decreased by a few months since FY 2008 (U.S. Food and Drug Administration, 2012), <sup>12</sup> the drug development process as a whole is still lengthy. DiMasi, Hansen, & Grabowski (2003) calculated that the average length of time from the start of clinical testing to marketing is 90.3 months (7.5 years), and the entire process, from discovery to registration with the FDA, takes 10 to 15 years for a typical drug (English, Lebovitz, & Giffin, 2010).

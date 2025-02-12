@@ -1,3 +1,15 @@
+---
+description: >-
+  Implementation plan for a privacy-preserving system to aggregate treatment
+  reviews and rank treatments by effectiveness.
+emoji: "\U0001F512"
+title: 'dFDA Implementation Plan: Privacy-Preserving Treatment Review Aggregation'
+tags: 'dfda, privacy, treatment-reviews, aggregation, implementation-plan'
+published: true
+editor: markdown
+date: '2025-02-12T20:29:46.904Z'
+dateCreated: '2025-02-12T20:29:46.904Z'
+---
 # dFDA Implementation Plan: Privacy-Preserving Treatment Review Aggregation
 
 ## Overview

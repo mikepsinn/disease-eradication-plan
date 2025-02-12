@@ -1,11 +1,16 @@
 ---
+description: >-
+  Decentralized Clinical Trials Can Achieve Net Financial Benefits of 5X to 14X,
+  Due to Reduced Trial Timelines and Other Factors
+emoji: "\U0001F30D"
 title: Cost Savings from Decentralized Clinical Trials
-description: Decentralized Clinical Trials Can Achieve Net Financial Benefits of 5X to 14X, Due to Reduced Trial Timelines and Other Factors
+tags: >-
+  decentralized-clinical-trials, cost-savings, financial-benefits,
+  trial-timelines
 published: true
-date: 2022-07-26T01:20:31.506Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-22T19:04:36.090Z
+date: '2022-07-26T01:20:31.506Z'
+dateCreated: '2022-07-22T19:04:36.090Z'
 ---
 # 🌎 Cost Savings from Decentralized Clinical Trials
 

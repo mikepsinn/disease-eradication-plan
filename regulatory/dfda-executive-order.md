@@ -1,3 +1,15 @@
+---
+description: >-
+  Proposal to transform the FDA into a decentralized, patient-centric platform
+  to accelerate medical innovation and expand access to treatments.
+emoji: "\U0001F680"
+title: Decentralized FDA Transformation Proposal
+tags: 'FDA, decentralization, medical-innovation, patient-centric, clinical-trials'
+published: true
+editor: markdown
+date: '2025-02-12T20:29:30.544Z'
+dateCreated: '2025-02-12T20:29:30.544Z'
+---
 **TRANSFORMING THE FDA INTO A DECENTRALIZED, PATIENT-CENTRIC PLATFORM TO ACCELERATE MEDICAL INNOVATION AND EXPAND ACCESS TO SAFE, EFFECTIVE TREATMENTS**  
 
 *It is hereby ordered as follows:*  

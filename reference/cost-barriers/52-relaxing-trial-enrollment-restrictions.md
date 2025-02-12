@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of relaxing trial enrollment restrictions to improve patient
+  recruitment and reduce clinical trial barriers
+emoji: "\U0001F465"
+title: Relaxing Trial Enrollment Restrictions
+tags: 'clinical-trials, patient-recruitment, enrollment-rates, eligibility-criteria'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:44.286Z'
+dateCreated: '2025-02-12T20:27:44.286Z'
+---
 ### 5.2 Relaxing Trial Enrollment Restrictions
 
 This approach involves encouraging drug sponsors to relax the strict trial enrollment restrictions in the interests of facilitating the patient recruitment process, which, as explained in Section 4.6 above, is a significant barrier to beginning and completing clinical trials. To quantify the impact of this strategy, we used data reported in a 2008 article by Kenneth Getz, which found that “\[e\]nrollment rates for volunteers who met the rising number of protocol eligibility criteria dropped from 75 percent to 59 percent between the 1999–2002 and 2003–2006 time periods \[...\]. Patient enrollment cycle times increased for protocols conducted in the latter time period” (Getz K. A., 2008).

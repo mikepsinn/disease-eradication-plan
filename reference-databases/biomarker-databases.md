@@ -1,11 +1,12 @@
 ---
-title: biomarker-databases
 description: Logical Observation Identifiers Names and Codes
+emoji: "\U0001FA78"
+title: biomarker-databases
+tags: 'biomarkers, LOINC, laboratory-tests, health-information, databases'
 published: true
-date: 2022-08-25T19:53:52.826Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:23:32.004Z
+date: '2022-08-25T19:53:52.826Z'
+dateCreated: '2022-07-27T21:23:32.004Z'
 ---
 
 # 🩸 Biomarker Databases

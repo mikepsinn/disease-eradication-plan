@@ -1,3 +1,15 @@
+---
+description: >-
+  Exploration of how Electronic Data Capture (EDC) can reduce clinical trial
+  durations and costs
+emoji: "\U0001F4F1"
+title: Wider Use of EDC in Clinical Trials
+tags: 'edc, clinical-trials, technology, cost-efficiency'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:53.757Z'
+dateCreated: '2025-02-12T20:27:53.757Z'
+---
 ### 5.5 Wider Use of Mobile Technologies Such as Electronic Data Capture (edc)
 
 Electronic data capture (EDC), described in Section 4.6.3 above, can streamline the patient screening and recruitment processes and allow for central statistical monitoring (Kramer & Schulman, 2011). While is it likely that adoption of EDC would impact many aspects of clinical trials, including site monitoring timelines and costs; site management and project management timelines; and data collection, management, and analysis costs, we only found information in the literature pertaining to the impact of EDC use on study duration and total costs. A 2010 paper reported that use of EDC resulted in a 30 percent decline in study duration (Neuer, Warnock, & Slezinger, 2010). Another study reported that use of EDC reduced total trial costs by 9.8 percent (Eisenstein, et al., 2008); however, we chose to model this approach using impacts on itemized parameters in order to allow for greater flexibility.
