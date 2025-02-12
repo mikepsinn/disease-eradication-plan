@@ -110,10 +110,10 @@ async function getMarkdownFiles(dir: string): Promise<string[]> {
     // Initialize ignore with .gitignore patterns
     const ig = ignore();
     try {
-        const gitignoreContent = await readFile('.gitignore', 'utf8');
+        const gitignoreContent = await readFile(path.join(dir, '.gitignore'), 'utf8');
         ig.add(gitignoreContent);
     } catch (error) {
-        console.log('No .gitignore file found, proceeding without ignore patterns');
+        console.log('No .gitignore file found in', dir);
     }
 
     async function getFiles(currentDir: string): Promise<string[]> {
@@ -122,11 +122,12 @@ async function getMarkdownFiles(dir: string): Promise<string[]> {
 
         for (const file of files) {
             const fullPath = path.join(currentDir, file.name);
-            // Get path relative to workspace root for gitignore checking
-            const relativePath = path.relative('.', fullPath);
+            // Get path relative to the current directory for gitignore checking
+            const relativePath = path.relative(dir, fullPath);
 
             // Skip if path is ignored by .gitignore
             if (ig.ignores(relativePath)) {
+                console.log('Ignoring file:', relativePath);
                 continue;
             }
 
@@ -201,7 +202,12 @@ async function extractMetadataAndContent(filePath: string): Promise<{ metadata: 
   for (const line of metadataLines) {
     const [key, value] = line.split(":").map((s: string) => s.trim());
     if (key && value) {
-      metadata[key as keyof MarkdownMetadata] = value as never;  // Type assertion
+      // Convert specific fields to their proper types
+      if (key === 'published') {
+        metadata[key] = value.toLowerCase() === 'true';
+      } else {
+        metadata[key as keyof MarkdownMetadata] = value as never;
+      }
     }
   }
 
@@ -332,6 +338,19 @@ async function updateMarkdownFile(filePath: string, notionPage: any) {
     await writeFile(filePath, newFileContent);
 }
 
-syncMarkdownFilesToNotion().catch((error) => {
-  console.error("Global error:", error);
-});
+// Export functions for testing
+module.exports = {
+  getMarkdownFiles,
+  extractMetadataAndContent,
+  getNotionPageByTitle,
+  updateNotionPage,
+  createNotionPage,
+  updateMarkdownFile
+};
+
+// Only run sync if this is the main module
+if (require.main === module) {
+  syncMarkdownFilesToNotion().catch((error) => {
+    console.error("Global error:", error);
+  });
+}
