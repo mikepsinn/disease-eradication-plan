@@ -1,4 +1,3 @@
-const fs = require('fs').promises;
 const path = require('path');
 const { validateMarkdownFiles, findMarkdownFiles } = require('./fix_frontmatter_metadata');
 

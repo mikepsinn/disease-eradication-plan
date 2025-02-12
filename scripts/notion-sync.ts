@@ -1,3 +1,31 @@
+/**
+ * Notion-Markdown Sync Script
+ * 
+ * This script syncs markdown files with a Notion database.
+ * 
+ * Setup Instructions:
+ * 1. Get your Notion API key:
+ *    - Go to https://www.notion.so/my-integrations
+ *    - Click "New integration"
+ *    - Give it a name (e.g. "Markdown Sync")
+ *    - Copy the "Internal Integration Token"
+ * 
+ * 2. Get your Notion Database ID:
+ *    - Open your Notion database in browser
+ *    - The ID is in the URL: https://notion.so/{workspace}/{database_id}?v={view_id}
+ *    - Copy the database_id part
+ * 
+ * 3. Share your database with the integration:
+ *    - Open your database in Notion
+ *    - Click "Share" in top right
+ *    - Click "Add connections"
+ *    - Select your integration
+ * 
+ * 4. Create a .env file with:
+ *    NOTION_API_KEY=your_api_key_here
+ *    NOTION_DATABASE_ID=your_database_id_here
+ */
+
 require('dotenv').config(); // Load environment variables from .env file
 
 console.log("NOTION_API_KEY:", process.env.NOTION_API_KEY);
@@ -141,15 +169,33 @@ async function getGitLastModifiedDates(filePaths: string[]): Promise<{ [key: str
 // Extract metadata and content from markdown file
 async function extractMetadataAndContent(filePath: string): Promise<{ metadata: MarkdownMetadata; content: string }> {
   const fileContent = await readFile(filePath, "utf-8");
-    // Regex to match metadata
+  // Regex to match metadata
   const metadataRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
   const match = fileContent.match(metadataRegex);
 
   if (!match) {
-    throw new Error(`Invalid markdown format for ${filePath}`);
+    // If no frontmatter found, create default metadata from filename
+    console.log(`No frontmatter found in ${filePath}, creating default metadata`);
+    const fileName = path.basename(filePath, '.md');
+    const title = fileName.split('-').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+    
+    return {
+      metadata: {
+        title,
+        description: "",
+        published: false,
+        date: new Date().toISOString().split('T')[0],
+        tags: "",
+        editor: "",
+        dateCreated: new Date().toISOString().split('T')[0]
+      },
+      content: fileContent.trim()
+    };
   }
 
-    // Parse metadata
+  // Parse metadata
   const metadataLines = match[1].trim().split("\n");
   const metadata: Partial<MarkdownMetadata> = {};
   for (const line of metadataLines) {
@@ -159,7 +205,7 @@ async function extractMetadataAndContent(filePath: string): Promise<{ metadata: 
     }
   }
 
-    // Get the content
+  // Get the content
   const content = match[2].trim();
   return { metadata: metadata as MarkdownMetadata, content };
 }
