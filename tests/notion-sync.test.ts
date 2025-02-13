@@ -4,6 +4,7 @@ import { promisify } from 'util';
 import { Client } from "@notionhq/client";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import dotenv from 'dotenv';
+const { simpleGit } = require('simple-git');
 
 dotenv.config();
 
@@ -146,6 +147,17 @@ This document has no frontmatter.`;
       // Ensure database has required properties
       const { ensureDatabaseProperties } = require('../scripts/notion-sync');
       await ensureDatabaseProperties();
+
+      // Initialize Git repo in test directory
+      const git = simpleGit();
+      try {
+        await git.cwd(testDir);
+        await git.init();
+        await git.add('.');
+        await git.commit('Initial commit');
+      } catch (error) {
+        console.warn('Error initializing Git repo:', error);
+      }
     });
 
     it('should create a new page in Notion from markdown', async () => {
@@ -216,5 +228,139 @@ This document has no frontmatter.`;
       // Cleanup
       await unlink(testFilePath);
     });
+
+    it('should perform full directory sync with Notion', async () => {
+      const { syncMarkdownFilesToNotion } = require('../scripts/notion-sync');
+      
+      // Create additional test files with various content types
+      const complexMdPath = path.join(testDir, 'complex.md');
+      const complexContent = `---
+title: Complex Test Document
+description: A test document with various markdown features
+published: true
+date: 2024-03-20
+tags: test, markdown, complex
+editor: jest
+dateCreated: 2024-03-20
+---
+
+# Heading 1
+## Heading 2
+### Heading 3
+
+Regular paragraph with **bold** and *italic* text.
+
+- Bullet point 1
+- Bullet point 2
+  - Nested bullet point
+
+1. Numbered item 1
+2. Numbered item 2
+
+\`\`\`javascript
+const code = 'block';
+console.log(code);
+\`\`\`
+
+> Blockquote text
+
+| Column 1 | Column 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+
+![Image Alt](https://example.com/image.jpg)
+
+[Link Text](https://example.com)
+
+---`;
+
+      // Create a simple markdown file
+      const simpleMdPath = path.join(testDir, 'simple.md');
+      const simpleContent = `---
+title: Simple Test Document
+description: A simple test document
+published: true
+date: 2024-03-20
+tags: test, simple
+editor: jest
+dateCreated: 2024-03-20
+---
+
+# Simple Content
+
+Just a simple test document.`;
+
+      await writeFile(complexMdPath, complexContent);
+      await writeFile(simpleMdPath, simpleContent);
+
+      // Add and commit the new files
+      const git = simpleGit(testDir);
+      try {
+        await git.add('.');
+        await git.commit('Add test files');
+      } catch (error) {
+        console.warn('Error committing test files:', error);
+      }
+
+      // Run the full sync with a longer timeout
+      await syncMarkdownFilesToNotion();
+
+      // Verify all files were synced to Notion
+      const response = await notion.databases.query({
+        database_id: NOTION_DATABASE_ID,
+        filter: {
+          or: [
+            {
+              property: "title",
+              rich_text: {
+                equals: "Complex Test Document"
+              }
+            },
+            {
+              property: "title",
+              rich_text: {
+                equals: "Simple Test Document"
+              }
+            }
+          ]
+        }
+      });
+
+      // Should find both test documents
+      expect(response.results.length).toBe(2);
+
+      // Verify complex document content
+      const complexPage = response.results.find(page => {
+        const title = (page as PageObjectResponse).properties.title as { title: Array<{ plain_text: string }> };
+        return title.title[0].plain_text === "Complex Test Document";
+      });
+      expect(complexPage).toBeDefined();
+
+      if (!complexPage) {
+        throw new Error('Complex test document not found in Notion');
+      }
+
+      // Get and verify the blocks of the complex page
+      const blocks = await notion.blocks.children.list({ block_id: complexPage.id });
+      const blockTypes = blocks.results.map(block => {
+        if ('type' in block) {
+          return block.type;
+        }
+        return null;
+      }).filter(type => type !== null);
+
+      // Verify all block types are present
+      expect(blockTypes).toContain('heading_1');
+      expect(blockTypes).toContain('heading_2');
+      expect(blockTypes).toContain('heading_3');
+      expect(blockTypes).toContain('bulleted_list_item');
+      expect(blockTypes).toContain('numbered_list_item');
+      expect(blockTypes).toContain('code');
+      expect(blockTypes).toContain('quote');
+      expect(blockTypes).toContain('table');
+      expect(blockTypes).toContain('image');
+      expect(blockTypes).toContain('paragraph');
+      expect(blockTypes).toContain('divider');
+    }, 60000); // Increase timeout to 60 seconds
   });
 }); 

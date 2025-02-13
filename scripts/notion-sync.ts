@@ -181,9 +181,11 @@ async function getGitLastModifiedDates(filePaths: string[]): Promise<{ [key: str
 // Extract metadata and content from markdown file
 async function extractMetadataAndContent(filePath: string): Promise<{ metadata: MarkdownMetadata; content: string }> {
   const fileContent = await readFile(filePath, "utf-8");
+  // Remove any duplicate frontmatter sections
+  const cleanedContent = fileContent.replace(/^---\n[\s\S]*?\n---\n[\s\S]*?\n---\n/, '---\n');
   // Regex to match metadata
   const metadataRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
-  const match = fileContent.match(metadataRegex);
+  const match = cleanedContent.match(metadataRegex);
 
   if (!match) {
     // If no frontmatter found, create default metadata from filename
@@ -203,7 +205,7 @@ async function extractMetadataAndContent(filePath: string): Promise<{ metadata: 
         editor: "",
         dateCreated: new Date().toISOString().split('T')[0]
       },
-      content: fileContent.trim()
+      content: cleanedContent.trim()
     };
   }
 
@@ -469,24 +471,56 @@ function markdownToBlocks(markdown: string): any[] {
     return blocks;
 }
 
+// Helper function to ensure valid ISO 8601 date
+function formatDate(dateStr: string): string {
+    try {
+        // Try to parse the date
+        const date = new Date(dateStr);
+        if (isNaN(date.getTime())) {
+            // If invalid, return today's date
+            return new Date().toISOString().split('T')[0];
+        }
+        // Return YYYY-MM-DD format
+        return date.toISOString().split('T')[0];
+    } catch {
+        // On error, return today's date
+        return new Date().toISOString().split('T')[0];
+    }
+}
+
 // Create Notion page
 async function createNotionPage(metadata: MarkdownMetadata, content: string) {
     try {
         if (!databaseId) throw new Error("Database ID is not set");
         
-        await notion.pages.create({
+        // Create the page first
+        const page = await notion.pages.create({
             parent: { database_id: databaseId },
             properties: {
                 title: { title: [{ text: { content: metadata.title } }] },
                 description: { rich_text: [{ text: { content: metadata.description } }] },
                 published: { checkbox: metadata.published },
-                date: { date: { start: metadata.date } },
+                date: { date: { start: formatDate(metadata.date) } },
                 tags: { rich_text: [{ text: { content: metadata.tags } }] },
                 editor: { rich_text: [{ text: { content: metadata.editor } }] },
-                dateCreated: { date: { start: metadata.dateCreated } },
+                dateCreated: { date: { start: formatDate(metadata.dateCreated) } },
             },
-            children: markdownToBlocks(content)
+            children: [] // Create page without content first
         });
+
+        // Convert markdown to Notion blocks
+        const blocks = markdownToBlocks(content);
+
+        // Then add content in chunks of 100 blocks
+        for (let i = 0; i < blocks.length; i += 100) {
+            const chunk = blocks.slice(i, i + 100);
+            await notion.blocks.children.append({
+                block_id: page.id,
+                children: chunk
+            });
+        }
+
+        return page;
     } catch (error) {
         console.error("Error in createNotionPage:", error);
     }
@@ -500,10 +534,10 @@ async function updateNotionPage(pageId: string, metadata: MarkdownMetadata, cont
             properties: {
                 description: { rich_text: [{ text: { content: metadata.description } }] },
                 published: { checkbox: metadata.published },
-                date: { date: { start: metadata.date } },
+                date: { date: { start: formatDate(metadata.date) } },
                 tags: { rich_text: [{ text: { content: metadata.tags } }] },
                 editor: { rich_text: [{ text: { content: metadata.editor } }] },
-                dateCreated: { date: { start: metadata.dateCreated } },
+                dateCreated: { date: { start: formatDate(metadata.dateCreated) } },
             }
         };
         await notion.pages.update(updateData);
@@ -514,11 +548,17 @@ async function updateNotionPage(pageId: string, metadata: MarkdownMetadata, cont
             await notion.blocks.delete({ block_id: block.id });
         }
 
-        // Then add new content as blocks
-        await notion.blocks.children.append({
-            block_id: pageId,
-            children: markdownToBlocks(content)
-        });
+        // Convert markdown to Notion blocks
+        const blocks = markdownToBlocks(content);
+
+        // Then add new content in chunks of 100 blocks
+        for (let i = 0; i < blocks.length; i += 100) {
+            const chunk = blocks.slice(i, i + 100);
+            await notion.blocks.children.append({
+                block_id: pageId,
+                children: chunk
+            });
+        }
     } catch (error) {
         console.error("Error in updateNotionPage:", error);
     }
@@ -613,5 +653,6 @@ module.exports = {
   updateNotionPage,
   createNotionPage,
   updateMarkdownFile,
-  ensureDatabaseProperties
+  ensureDatabaseProperties,
+  syncMarkdownFilesToNotion
 };
