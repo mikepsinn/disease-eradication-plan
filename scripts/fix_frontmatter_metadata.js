@@ -4,6 +4,7 @@ const matter = require('gray-matter');
 const { z } = require('zod');
 const LLMClient = require('./llm-client');
 const ignore = require('ignore');
+const yaml = require('js-yaml');
 require('dotenv').config();
 
 // Define the frontmatter schema
@@ -82,7 +83,7 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
 
   async processFile(filePath) {
     const content = await fs.readFile(filePath, 'utf8');
-    const { data: frontmatter, content: markdownContent } = matter(content);
+    const { data: frontmatter, content: markdownContent, isEmpty } = matter(content);
 
     try {
       // Convert any Date objects to ISO strings before validation
@@ -95,47 +96,84 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
       const validationResult = FrontmatterSchema.safeParse(normalizedFrontmatter);
 
       if (!validationResult.success) {
-        console.log(`Invalid frontmatter:`, validationResult.error.errors);
+        console.log(`\n❌ Invalid frontmatter in file: ${filePath}`);
+        console.log('Current frontmatter:');
+        console.log(JSON.stringify(normalizedFrontmatter, null, 2));
+        console.log('\nValidation errors:');
+        validationResult.error.issues.forEach(issue => {
+          console.log(`  - Field: ${issue.path.join('.')} - ${issue.message}`);
+        });
 
-        const generatedFrontmatter = await this.generateFrontmatter(markdownContent, filePath);
+        // Only generate frontmatter if it's missing or empty, or if tags are empty
+        const shouldGenerateMetadata = isEmpty || 
+          Object.keys(frontmatter).length === 0 || 
+          !frontmatter.tags || 
+          frontmatter.tags === '' || 
+          (Array.isArray(frontmatter.tags) && frontmatter.tags.length === 0);
+
+        const generatedFrontmatter = shouldGenerateMetadata ? 
+          await this.generateFrontmatter(markdownContent, filePath) :
+          {};
         
-        if (!generatedFrontmatter) {
-          console.error('Failed to generate frontmatter metadata');
-          return { updated: false, error: new Error('Failed to generate frontmatter metadata') };
+        if (!generatedFrontmatter && shouldGenerateMetadata) {
+          const error = new Error('Failed to generate frontmatter metadata');
+          error.context = { filePath, frontmatter: normalizedFrontmatter };
+          return { updated: false, error };
         }
 
         const updatedFrontmatter = {
           ...generatedFrontmatter,
           ...Object.fromEntries(
             Object.entries(frontmatter)
-              .filter(([_, value]) => value !== undefined && value !== null && value !== '')
+              .filter(([key, value]) => {
+                // Special handling for tags - don't keep empty tags
+                if (key === 'tags') {
+                  return value !== undefined && value !== null && value !== '' && 
+                         !(Array.isArray(value) && value.length === 0);
+                }
+                return value !== undefined && value !== null && value !== '';
+              })
           ),
           published: frontmatter.published ?? true,
           editor: frontmatter.editor || 'markdown',
           date: (frontmatter.date instanceof Date ? frontmatter.date.toISOString() : frontmatter.date) || new Date().toISOString(),
           dateCreated: (frontmatter.dateCreated instanceof Date ? frontmatter.dateCreated.toISOString() : frontmatter.dateCreated) || new Date().toISOString(),
-          // Convert tags array to comma-separated string if it exists
-          tags: Array.isArray(frontmatter.tags) ? frontmatter.tags.join(', ') : 
-                Array.isArray(generatedFrontmatter.tags) ? generatedFrontmatter.tags.join(', ') : 
-                ''
+          // Use generated tags if existing tags are empty
+          tags: (Array.isArray(frontmatter.tags) && frontmatter.tags.length > 0) ? frontmatter.tags.join(', ') :
+                (frontmatter.tags && frontmatter.tags !== '') ? frontmatter.tags :
+                Array.isArray(generatedFrontmatter.tags) ? generatedFrontmatter.tags.join(', ') :
+                generatedFrontmatter.tags || ''
         };
 
         const finalValidation = FrontmatterSchema.safeParse(updatedFrontmatter);
         if (finalValidation.success) {
-          const updatedContent = matter.stringify(markdownContent, updatedFrontmatter);
+          // Preserve the original content exactly as it was, with emoji support
+          const updatedContent = matter.stringify(markdownContent.trim(), updatedFrontmatter, {
+            engines: {
+              yaml: {
+                stringify: (obj) => require('js-yaml').dump(obj, { lineWidth: -1 })
+              }
+            }
+          });
           await fs.writeFile(filePath, updatedContent);
-          console.log(`✅ Updated frontmatter`);
+          console.log(`✅ Updated frontmatter only`);
           return { updated: true };
         } else {
-          console.error(`❌ Failed to fix frontmatter:`, finalValidation.error);
-          return { updated: false, error: finalValidation.error };
+          const error = new Error('Failed to fix frontmatter validation issues');
+          error.issues = finalValidation.error.issues;
+          error.context = { 
+            filePath,
+            originalFrontmatter: normalizedFrontmatter,
+            updatedFrontmatter
+          };
+          return { updated: false, error };
         }
       } else {
         console.log(`✅ Valid frontmatter`);
         return { updated: false };
       }
     } catch (error) {
-      console.error(`Error processing file:`, error);
+      error.context = { filePath, frontmatter };
       return { updated: false, error };
     }
   }
@@ -261,8 +299,18 @@ async function main() {
     
     console.log(`\n❌ Found ${invalidFiles.length} files with invalid frontmatter:`);
     invalidFiles.forEach(file => {
-      console.log(`\n- ${path.relative(absoluteTargetDir, file.path)}`);
-      file.errors.forEach(error => console.log(`  - ${error.message}`));
+      const relativePath = path.relative(absoluteTargetDir, file.path);
+      console.log(`\n📄 ${relativePath}`);
+      console.log('  Errors:');
+      file.errors.forEach(error => {
+        if (error.code === 'INVALID_YAML') {
+          console.log(`  ❌ ${error.message}`);
+        } else {
+          console.log(`  ❌ Field: ${error.path?.join('.')} - ${error.message}`);
+        }
+      });
+      // Print file URL for easy clicking in VSCode
+      console.log(`  📎 File URL: file://${path.resolve(absoluteTargetDir, file.path)}`);
     });
     
     // In non-test mode, wait for confirmation
@@ -273,21 +321,52 @@ async function main() {
     
     let processed = 0;
     let updated = 0;
+    let errors = [];
     
     for (const file of invalidFiles) {
       processed++;
       const relativePath = path.relative(absoluteTargetDir, file.path);
       console.log(`\n[${processed}/${invalidFiles.length}] Processing ${relativePath}...`);
       
-      const result = await generator.processFile(file.path);
-      if (result?.updated) {
-        updated++;
+      try {
+        const result = await generator.processFile(file.path);
+        if (result?.updated) {
+          updated++;
+        }
+        if (result?.error) {
+          errors.push({
+            file: relativePath,
+            error: result.error,
+            fileUrl: `file://${path.resolve(absoluteTargetDir, file.path)}`
+          });
+        }
+      } catch (error) {
+        errors.push({
+          file: relativePath,
+          error,
+          fileUrl: `file://${path.resolve(absoluteTargetDir, file.path)}`
+        });
       }
+    }
+    
+    if (errors.length > 0) {
+      console.error('\n❌ Errors occurred while processing files:');
+      errors.forEach(({ file, error, fileUrl }) => {
+        console.error(`\n📄 ${file}`);
+        console.error(`  Error: ${error.message}`);
+        if (error.issues) {
+          error.issues.forEach(issue => {
+            console.error(`  - Field: ${issue.path?.join('.')} - ${issue.message}`);
+          });
+        }
+        console.error(`  📎 File URL: ${fileUrl}`);
+      });
+      process.exit(1);
     }
     
     console.log(`\n✅ Completed! Processed ${processed} files, updated ${updated} files.`);
   } catch (error) {
-    console.error('Error:', error);
+    console.error('\n❌ Fatal error:', error);
     process.exit(1);
   }
 }
