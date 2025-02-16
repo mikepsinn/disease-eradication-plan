@@ -1,13 +1,12 @@
 ---
 title: 15. 📖 References
-description: 
+description: Compilation of sources discussing healthcare expenditures, big data in healthcare, and innovative treatments for chronic diseases.
 published: true
-date: 2022-09-03T17:15:04.147Z
-tags: 
+date: '2022-09-03T17:15:04.147Z'
+tags: healthcare, big-data, expenditures, chronic-diseases, personalized-medicine
 editor: markdown
-dateCreated: 2022-07-27T21:25:59.145Z
+dateCreated: '2022-07-27T21:25:59.145Z'
 ---
-
 ## Sources
 
 1. [Infographic: How Big Data Will Unlock the Potential of Healthcare (visualcapitalist.com)](https://www.visualcapitalist.com/big-data-healthcare/)

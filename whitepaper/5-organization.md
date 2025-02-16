@@ -1,13 +1,12 @@
 ---
-title: 05. 🏨 Organization 
+title: 05. 🏨 Organization
 description: The DAO will utilize Laboratory working groups which use a scientific experimentation-based approach to effectively carrying out the will of its Citizen Scientist voting members.
 published: true
-date: 2022-08-25T17:02:39.027Z
-tags: 
+date: '2022-08-25T17:02:39.027Z'
+tags: clinical-research, real-world-data, collaborationism, open-source, public-goods, democracy, health
 editor: markdown
-dateCreated: 2022-07-27T21:26:27.705Z
+dateCreated: '2022-07-27T21:26:27.705Z'
 ---
-
 CureDAO is a global laboratory where the 7 billion human “natural experiments” revealing the effects of various factors on human health and happiness are conducted.
 
 It’s an experiment to determine if a new model for clinical research using real-world data can more effectively reduce the global burden of chronic illness.
@@ -50,4 +49,3 @@ The initial Laboratories will be created to carry out the following primary func
 * Dev Lab - Implements the platform back end and user interface
 * Public Relations Lab - Promotes DAO’s presence in the public discourse.
 * Data Lab - Integrates data from various sources and formats. Conducts research on data science and machine learning.
-

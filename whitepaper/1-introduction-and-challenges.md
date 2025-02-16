@@ -1,13 +1,12 @@
 ---
 title: 01. ☠ Introduction and Challenges
-description: 
+description: Billions suffer from chronic diseases and preventable deaths occur daily, yet healthcare spending continues to rise without addressing root causes.
 published: true
-date: 2022-08-25T16:59:33.729Z
-tags: 
+date: '2022-08-25T16:59:33.729Z'
+tags: healthcare-reform, chronic-diseases, preventable-deaths, healthcare-costs
 editor: markdown
-dateCreated: 2022-07-27T21:25:42.505Z
+dateCreated: '2022-07-27T21:25:42.505Z'
 ---
-
 ## The Problem: You and Everyone You Love Will Suffer and Die
 
 There are over [2 billion](https://www.george-health.com/global-health-challenge/) people suffering from chronic diseases.
@@ -154,5 +153,3 @@ To facilitate data sharing, we will provide data providers with an onsite easily
 
 
 #### [Next Solution](2-solution.md) 👉
-
-

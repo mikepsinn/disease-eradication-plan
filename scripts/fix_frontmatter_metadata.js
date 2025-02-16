@@ -37,35 +37,60 @@ class FrontmatterGenerator {
     this.llmClient = llmClient;
   }
 
+  getSchemaDescriptions() {
+    const shape = FrontmatterSchema.shape;
+    return Object.entries(shape).map(([key, field]) => {
+      const description = field.description;
+      const isRequired = !field.isOptional();
+      return `${key}${isRequired ? ' (required)' : ' (optional)'}: ${description}`;
+    }).join('\n');
+  }
+
   async generateFrontmatter(content) {
-    const systemPrompt = `You are a helpful assistant for analyzing markdown content and generating frontmatter metadata
-    for a wiki for a decentralized FDA.
-Your task is to analyze the content and generate appropriate frontmatter fields.
-Always return a complete JSON object with all required fields based on the content.
-Make sure to include all mandatory fields (title, description) and any optional fields that are relevant to the content.
+    const schemaDescriptions = this.getSchemaDescriptions();
+    const systemPrompt = `You are a helpful assistant for analyzing markdown content and generating frontmatter metadata for a wiki for a decentralized FDA.
 
-Please keep the title and description factual and concise like a wikipedia article. 
-Don't include any flowery adjectives.
-Try to use terms or phrases from the existing content if appropriate.
+Your task is to analyze the content and generate appropriate frontmatter fields according to these specifications.
+You must return a valid JSON object with the following fields:
 
-Example response format:
+${schemaDescriptions}
+
+Example JSON response format:
 {
-  "description": "Current clinical trials costs $41k per participant",
-  "emoji": "💰",
   "title": "Clinical Trial Cost Analysis",
-  "tags": ["clinical-trials", "costs", "research"],
+  "description": "Current clinical trials costs $41k per participant",
   "published": true,
-  "editor": "markdown"
+  "date": "2024-03-20T10:00:00Z",
+  "tags": "clinical-trials, costs, research",
+  "editor": "markdown",
+  "dateCreated": "2024-03-20T10:00:00Z"
 }`;
 
-    const userContent = `Given this markdown content, generate appropriate frontmatter metadata:
+    const userContent = `Given this markdown content, generate appropriate frontmatter metadata as a JSON object:
 
 Content:
-${content.substring(0, 1000)}  // Limit content length for token efficiency`;
+${content.substring(0, 1000)}`;  // Limit content length for token efficiency
 
     try {
       const response = await this.llmClient.complete(systemPrompt, userContent);
-      const result = JSON.parse(response);
+      
+      if (!response) {
+        throw new Error('Empty response from AI');
+      }
+
+      let result;
+      try {
+        result = JSON.parse(response);
+      } catch (parseError) {
+        throw new Error(`Invalid JSON response: ${parseError.message}\nReceived: ${response}`);
+      }
+
+      // Validate required fields
+      const requiredFields = ['title', 'description'];
+      const missingFields = requiredFields.filter(field => !result[field]);
+      if (missingFields.length > 0) {
+        throw new Error(`Missing required fields: ${missingFields.join(', ')}`);
+      }
 
       // Ensure required fields are present
       return {
@@ -77,7 +102,12 @@ ${content.substring(0, 1000)}  // Limit content length for token efficiency`;
         tags: result.tags || ''
       };
     } catch (error) {
-      throw new Error(`Failed to generate frontmatter: ${error.message}`);
+      console.error(`\nError details for file processing:`);
+      console.error(`- Original error: ${error.message}`);
+      if (error.cause) {
+        console.error(`- Cause: ${error.cause}`);
+      }
+      process.exit(1); // Stop execution on error
     }
   }
 

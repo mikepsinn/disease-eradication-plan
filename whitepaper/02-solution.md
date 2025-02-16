@@ -1,13 +1,12 @@
 ---
 title: 02. 💡 Solution
-description: 
+description: Leveraging real-world evidence for diagnostics, preventative medicine, precision care, medical research, reducing adverse events, cost reduction, and population health.
 published: true
-date: 2023-02-06T03:06:43.199Z
-tags: 
+date: '2023-02-06T03:06:43.199Z'
+tags: real-world-evidence, diagnostics, preventative-medicine, precision-medicine, medical-research, cost-reduction, population-health
 editor: markdown
-dateCreated: 2022-07-30T05:24:03.077Z
+dateCreated: '2022-07-30T05:24:03.077Z'
 ---
-
 The solution is to use the oceans of real-world evidence to discover new cures.
 
 ## The Potential of Real-World Evidence-Based Studies
@@ -162,4 +161,3 @@ used to publish 90,000 studies on the effects of various treatments and food ing
 ![journal of citizen science](https://static.crowdsourcingcures.org/img/journal-of-citizen-science.png)
 
 ### [Next 3. Platform](03-platform.md) 👉
-
