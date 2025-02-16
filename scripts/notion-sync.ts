@@ -28,7 +28,6 @@
 
 require('dotenv').config(); // Load environment variables from .env file
 
-console.log("NOTION_API_KEY:", process.env.NOTION_API_KEY);
 console.log("NOTION_DATABASE_ID:", process.env.NOTION_DATABASE_ID);
 
 const { Client } = require("@notionhq/client");
@@ -209,24 +208,29 @@ async function extractMetadataAndContent(filePath: string): Promise<{ metadata: 
     };
   }
 
-  // Parse metadata
-  const metadataLines = match[1].trim().split("\n");
-  const metadata: Partial<MarkdownMetadata> = {};
-  for (const line of metadataLines) {
-    const [key, value] = line.split(":").map((s: string) => s.trim());
-    if (key && value) {
-      // Convert specific fields to their proper types
-      if (key === 'published') {
-        metadata[key] = value.toLowerCase() === 'true';
-      } else {
-        metadata[key as keyof MarkdownMetadata] = value as never;
-      }
-    }
-  }
+  // Parse metadata using YAML parser
+  const yaml = require('js-yaml');
+  try {
+    const metadata = yaml.load(match[1]) as MarkdownMetadata;
+    
+    // Ensure required fields exist with proper types
+    const processedMetadata: MarkdownMetadata = {
+      title: String(metadata.title || ''),
+      description: String(metadata.description || ''),
+      published: Boolean(metadata.published),
+      date: metadata.date ? new Date(metadata.date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
+      tags: Array.isArray(metadata.tags) ? metadata.tags.join(',') : String(metadata.tags || ''),
+      editor: String(metadata.editor || ''),
+      dateCreated: metadata.dateCreated ? new Date(metadata.dateCreated).toISOString().split('T')[0] : new Date().toISOString().split('T')[0]
+    };
 
-  // Get the content
-  const content = match[2].trim();
-  return { metadata: metadata as MarkdownMetadata, content };
+    // Get the content without frontmatter
+    const content = match[2].trim();
+    return { metadata: processedMetadata, content };
+  } catch (error) {
+    console.error(`Error parsing frontmatter for ${filePath}:`, error);
+    throw error;
+  }
 }
 
 // Get Notion page by title
@@ -398,17 +402,41 @@ function markdownToBlocks(markdown: string): any[] {
         // Handle images
         const imageMatch = line.match(/!\[([^\]]*)\]\(([^)]+)\)/);
         if (imageMatch) {
-            blocks.push({
-                object: "block",
-                type: "image",
-                image: {
-                    type: "external",
-                    external: {
-                        url: imageMatch[2]
-                    },
-                    caption: imageMatch[1] ? [{ type: "text", text: { content: imageMatch[1] } }] : []
+            try {
+                const url = imageMatch[2];
+                // Only create image block if URL is valid
+                if (url.startsWith('http://') || url.startsWith('https://')) {
+                    blocks.push({
+                        object: "block",
+                        type: "image",
+                        image: {
+                            type: "external",
+                            external: {
+                                url: url
+                            },
+                            caption: imageMatch[1] ? [{ type: "text", text: { content: imageMatch[1] } }] : []
+                        }
+                    });
+                } else {
+                    // If URL is invalid, create a paragraph with the image markdown
+                    blocks.push({
+                        object: "block",
+                        type: "paragraph",
+                        paragraph: {
+                            rich_text: [createRichText(line)]
+                        }
+                    });
                 }
-            });
+            } catch (error) {
+                // If there's any error with the URL, create a paragraph instead
+                blocks.push({
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [createRichText(line)]
+                    }
+                });
+            }
             continue;
         }
 
