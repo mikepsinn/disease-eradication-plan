@@ -10,9 +10,9 @@ require('dotenv').config();
 // Define the frontmatter schema
 const FrontmatterSchema = z.object({
   title: z.string()
-    .describe('A descriptive title'),
+    .describe('A descriptive title for the content'),
   description: z.string()
-    .describe('A clear, concise description'),
+    .describe('The main points of the content compressed into a single sentence'),
   published: z.boolean()
     .default(true)
     .describe('Whether the content is published, defaults to true'),
@@ -37,7 +37,7 @@ class FrontmatterGenerator {
     this.llmClient = llmClient;
   }
 
-  async generateFrontmatter(content, filePath) {
+  async generateFrontmatter(content) {
     const systemPrompt = `You are a helpful assistant for analyzing markdown content and generating frontmatter metadata
     for a wiki for a decentralized FDA.
 Your task is to analyze the content and generate appropriate frontmatter fields.
@@ -50,7 +50,7 @@ Try to use terms or phrases from the existing content if appropriate.
 
 Example response format:
 {
-  "description": "Analysis of clinical trial costs showing $41k per participant",
+  "description": "Current clinical trials costs $41k per participant",
   "emoji": "💰",
   "title": "Clinical Trial Cost Analysis",
   "tags": ["clinical-trials", "costs", "research"],
