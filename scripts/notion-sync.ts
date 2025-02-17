@@ -50,6 +50,12 @@ interface MarkdownMetadata {
   dateCreated: string;
 }
 
+interface NotionBlock {
+    object: string;
+    type: string;
+    [key: string]: any;
+}
+
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 if(!databaseId) {
@@ -180,8 +186,10 @@ async function getGitLastModifiedDates(filePaths: string[]): Promise<{ [key: str
 // Extract metadata and content from markdown file
 async function extractMetadataAndContent(filePath: string): Promise<{ metadata: MarkdownMetadata; content: string }> {
   const fileContent = await readFile(filePath, "utf-8");
+  // Normalize line endings and remove BOM if present
+  const normalizedContent = fileContent.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
   // Remove any duplicate frontmatter sections
-  const cleanedContent = fileContent.replace(/^---\n[\s\S]*?\n---\n[\s\S]*?\n---\n/, '---\n');
+  const cleanedContent = normalizedContent.replace(/^---\n[\s\S]*?\n---\n[\s\S]*?\n---\n/, '---\n');
   // Regex to match metadata
   const metadataRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
   const match = cleanedContent.match(metadataRegex);
@@ -212,10 +220,12 @@ async function extractMetadataAndContent(filePath: string): Promise<{ metadata: 
   const yaml = require('js-yaml');
   try {
     const metadata = yaml.load(match[1]) as MarkdownMetadata;
+    console.log('Raw YAML metadata:', match[1]);
+    console.log('Parsed metadata:', metadata);
     
     // Ensure required fields exist with proper types
     const processedMetadata: MarkdownMetadata = {
-      title: String(metadata.title || ''),
+      title: String(metadata.title || '').replace(/^['"]|['"]$/g, ''), // Remove quotes
       description: String(metadata.description || ''),
       published: Boolean(metadata.published),
       date: metadata.date ? new Date(metadata.date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
@@ -300,7 +310,6 @@ function markdownToBlocks(markdown: string): any[] {
     function flushTable() {
         if (tableHeaders.length > 0) {
             blocks.push({
-                object: "block",
                 type: "table",
                 table: {
                     table_width: tableHeaders.length,
@@ -333,7 +342,6 @@ function markdownToBlocks(markdown: string): any[] {
         // Handle horizontal rules
         if (line.match(/^[\-\*_]{3,}$/)) {
             blocks.push({
-                object: "block",
                 type: "divider",
                 divider: {}
             });
@@ -366,7 +374,6 @@ function markdownToBlocks(markdown: string): any[] {
             const level = headerMatch[1].length;
             const text = parseInlineMarkdown(headerMatch[2]);
             blocks.push({
-                object: "block",
                 type: `heading_${level}`,
                 [`heading_${level}`]: {
                     rich_text: [createRichText(text)]
@@ -379,7 +386,6 @@ function markdownToBlocks(markdown: string): any[] {
         if (line.startsWith('```')) {
             if (!currentBlock) {
                 currentBlock = {
-                    object: "block",
                     type: "code",
                     code: {
                         language: line.slice(3).toLowerCase() || "plain text",
@@ -404,30 +410,34 @@ function markdownToBlocks(markdown: string): any[] {
         if (imageMatch) {
             try {
                 const url = imageMatch[2];
+                console.log('Found image with URL:', url);
                 // Only create image block if URL is valid
                 if (url.startsWith('http://') || url.startsWith('https://')) {
-                    blocks.push({
+                    const imageBlock = {
                         object: "block",
                         type: "image",
+                        has_children: false,
                         image: {
                             type: "external",
                             external: {
                                 url: url
-                            },
-                            caption: imageMatch[1] ? [{ type: "text", text: { content: imageMatch[1] } }] : []
+                            }
                         }
-                    });
-                } else {
-                    // If URL is invalid, create a paragraph with the image markdown
-                    blocks.push({
-                        object: "block",
-                        type: "paragraph",
-                        paragraph: {
-                            rich_text: [createRichText(line)]
-                        }
-                    });
+                    };
+                    console.log('Created image block:', JSON.stringify(imageBlock, null, 2));
+                    blocks.push(imageBlock);
+                    continue;
                 }
+                console.log('Invalid URL, creating paragraph instead');
+                blocks.push({
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [createRichText(line)]
+                    }
+                });
             } catch (error) {
+                console.log('Error creating image block:', error);
                 // If there's any error with the URL, create a paragraph instead
                 blocks.push({
                     object: "block",
@@ -444,7 +454,6 @@ function markdownToBlocks(markdown: string): any[] {
         if (line.match(/^[\-\*]\s/)) {
             const text = parseInlineMarkdown(line.slice(2));
             blocks.push({
-                object: "block",
                 type: "bulleted_list_item",
                 bulleted_list_item: {
                     rich_text: [createRichText(text)]
@@ -458,7 +467,6 @@ function markdownToBlocks(markdown: string): any[] {
         if (numberedListMatch) {
             const text = parseInlineMarkdown(numberedListMatch[1]);
             blocks.push({
-                object: "block",
                 type: "numbered_list_item",
                 numbered_list_item: {
                     rich_text: [createRichText(text)]
@@ -471,7 +479,6 @@ function markdownToBlocks(markdown: string): any[] {
         if (line.startsWith('>')) {
             const text = parseInlineMarkdown(line.slice(1).trim());
             blocks.push({
-                object: "block",
                 type: "quote",
                 quote: {
                     rich_text: [createRichText(text)]
@@ -484,7 +491,6 @@ function markdownToBlocks(markdown: string): any[] {
         if (line.trim() || blocks.length === 0 || blocks[blocks.length - 1].type !== "paragraph") {
             const text = parseInlineMarkdown(line);
             blocks.push({
-                object: "block",
                 type: "paragraph",
                 paragraph: {
                     rich_text: [createRichText(text)]
@@ -496,7 +502,87 @@ function markdownToBlocks(markdown: string): any[] {
     // Flush any remaining table
     flushTable();
 
-    return blocks;
+    // Ensure all blocks have a type field
+    return blocks.map(block => {
+        if (!block?.type) {
+            // Default to paragraph if no type is set
+            return {
+                object: "block",
+                type: "paragraph",
+                paragraph: {
+                    rich_text: [createRichText("")]
+                }
+            } as NotionBlock;
+        }
+        
+        // Create a base block with all required properties
+        const validBlock: NotionBlock = {
+            object: "block",
+            type: block.type,
+            has_children: false
+        };
+        
+        // Add the specific block content
+        switch (block.type) {
+            case 'paragraph':
+            case 'quote':
+            case 'bulleted_list_item':
+            case 'numbered_list_item':
+                validBlock[block.type] = {
+                    rich_text: block[block.type]?.rich_text || [createRichText("")]
+                };
+                break;
+            case 'heading_1':
+            case 'heading_2':
+            case 'heading_3':
+                validBlock[block.type] = {
+                    rich_text: block[block.type]?.rich_text || [createRichText("")]
+                };
+                break;
+            case 'code':
+                validBlock[block.type] = {
+                    rich_text: block[block.type]?.rich_text || [createRichText("")],
+                    language: block[block.type]?.language || "plain text"
+                };
+                break;
+            case 'image':
+                if (block.image?.type === 'external' && block.image?.external?.url) {
+                    validBlock.image = block.image;
+                    validBlock.type = 'image';
+                    validBlock.object = 'block';
+                    validBlock.has_children = false;
+                    return validBlock;
+                }
+                // If image block is invalid, return null to filter it out
+                return null;
+            case 'divider':
+                validBlock[block.type] = {};
+                break;
+            default:
+                // Convert unknown block types to paragraph
+                validBlock.type = "paragraph";
+                validBlock.paragraph = {
+                    rich_text: [createRichText("")]
+                };
+        }
+        
+        return validBlock;
+    }).filter((block): block is NotionBlock => {
+        // Filter out any blocks that don't have valid type and properties
+        if (!block) {
+            return false;
+        }
+        
+        switch (block.type) {
+            case 'divider':
+                return true;
+            case 'image':
+                console.log('Validating image block:', JSON.stringify(block, null, 2));
+                return block.type === 'image' && block.image?.type === 'external' && block.image?.external?.url;
+            default:
+                return block[block.type]?.rich_text && Array.isArray(block[block.type]?.rich_text);
+        }
+    });
 }
 
 // Helper function to ensure valid ISO 8601 date

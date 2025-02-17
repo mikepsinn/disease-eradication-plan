@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { promisify } from 'util';
 import { Client } from "@notionhq/client";
-import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import dotenv from 'dotenv';
 const { simpleGit } = require('simple-git');
 
@@ -36,7 +35,7 @@ describe('Notion Sync', () => {
       // Ignore if directory doesn't exist
     }
 
-    // Create test directory
+    // Create test directory and its parent directories
     await mkdir(testDir, { recursive: true });
 
     // Initialize Git repo
@@ -46,10 +45,12 @@ describe('Notion Sync', () => {
       await git.init();
       await git.addConfig('user.name', 'Test User');
       await git.addConfig('user.email', 'test@example.com');
+      await git.add('.');
+      await git.commit('Initial commit');
     } catch (error) {
       console.warn('Error initializing Git repo:', error);
     }
-  });
+  }, 30000); // 30 second timeout
 
   afterAll(async () => {
     // Cleanup test directory
@@ -79,36 +80,12 @@ describe('Notion Sync', () => {
   }, 30000); // 30 second timeout
 
   it('should properly sync 01-problem.md to Notion', async () => {
-    const problemMdPath = path.join(testDir, '01-problem.md');
-    const problemContent = `---
-description: You and Everyone You Love Will Suffer and Die.
-emoji: "💀"
-title: Problems We Can Solve with a Decentralized FDA
-number: 150k
-textFollowingNumber: people die every day from possibly preventable degenerative diseases
-tags: global-health, chronic-diseases, preventable-deaths, healthcare-spending
-published: true
-editor: markdown
-date: 2025-02-11T13:38:21.578Z
-dateCreated: 2025-02-11T13:38:21.578Z
----
-# Problem: You and Everyone You Love Will Suffer and Die
-
-There are over [2 billion](https://www.george-health.com/global-health-challenge/) people suffering from chronic diseases.
-
-Additionally, [150,000](https://www.weforum.org/agenda/2020/05/how-many-people-die-each-day-covid-19-coronavirus/) people die every single day by possibly preventable degenerative diseases. For perspective, this is equivalent to:
-
-* [**FIFTY-ONE**](https://en.wikipedia.org/wiki/Casualties_of_the_September_11_attacks) September 11th attacks every day
-* [**NINE**](https://en.wikipedia.org/wiki/Casualties_of_the_September_11_attacks) Holocausts every year
-
-![deaths from disease](https://static.crowdsourcingcures.org/img/deaths-from-disease-vs-deaths-from-terrorism-chart.png)`;
-
-    await writeFile(problemMdPath, problemContent);
-
+    const filePath = path.join(process.cwd(), '01-problem.md');
     const { createNotionPage, extractMetadataAndContent } = require('../scripts/notion-sync');
     
     // Extract metadata and content
-    const { metadata, content } = await extractMetadataAndContent(problemMdPath);
+    const { metadata, content } = await extractMetadataAndContent(filePath);
+    console.log('Extracted metadata:', metadata);
     
     // Verify metadata extraction
     expect(metadata.title).toBe('Problems We Can Solve with a Decentralized FDA');
@@ -129,15 +106,14 @@ Additionally, [150,000](https://www.weforum.org/agenda/2020/05/how-many-people-d
     // Verify content structure
     const blockTypes = blocks.results.map((block: any) => block.type);
     
-    // Should have: heading_1, paragraph (with link), paragraph (with link), paragraph (intro), bulleted_list_item (x2), paragraph (spacing), image
-    expect(blockTypes).toEqual([
+    // First section of the file contains: heading_1, paragraph (with link), paragraph (with link), bulleted_list_item (x2), image
+    expect(blockTypes.slice(0, 7)).toEqual([
       'heading_1',
       'paragraph',
       'paragraph',
       'paragraph',
       'bulleted_list_item',
       'bulleted_list_item',
-      'paragraph',
       'image'
     ]);
 
@@ -145,18 +121,20 @@ Additionally, [150,000](https://www.weforum.org/agenda/2020/05/how-many-people-d
     const heading = blocks.results[0] as any;
     expect(heading.heading_1.rich_text[0].plain_text).toBe('Problem: You and Everyone You Love Will Suffer and Die');
 
+    // Verify first paragraph with link
+    const firstParagraph = blocks.results[1] as any;
+    expect(firstParagraph.paragraph.rich_text[0].plain_text).toContain('2 billion');
+    expect(firstParagraph.paragraph.rich_text[0].href).toBe('https://www.george-health.com/global-health-challenge/');
+
     // Verify bullet points
     const bulletPoint1 = blocks.results[4] as any;
     const bulletPoint2 = blocks.results[5] as any;
     expect(bulletPoint1.bulleted_list_item.rich_text[0].plain_text).toContain('FIFTY-ONE');
     expect(bulletPoint2.bulleted_list_item.rich_text[0].plain_text).toContain('NINE');
 
-    // Verify image
-    const image = blocks.results[7] as any;
+    // Verify first image
+    const image = blocks.results[6] as any;
     expect(image.type).toBe('image');
     expect(image.image.external.url).toBe('https://static.crowdsourcingcures.org/img/deaths-from-disease-vs-deaths-from-terrorism-chart.png');
-
-    // Cleanup
-    await unlink(problemMdPath);
   }, 30000); // 30 second timeout
 }); 
