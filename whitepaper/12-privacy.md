@@ -1,13 +1,12 @@
 ---
 title: 12. 🎭 Privacy
-description: 
+description: Overview of HIPAA regulations, patient privacy protection, and the Safe Harbor Method for de-identifying personal health information.
 published: true
-date: 2022-09-03T16:59:13.128Z
-tags: 
+date: '2022-09-03T16:59:13.128Z'
+tags: hipaa, data-de-identification, patient-privacy, healthcare-regulations
 editor: markdown
-dateCreated: 2022-07-27T21:25:37.264Z
+dateCreated: '2022-07-27T21:25:37.264Z'
 ---
-
 The Health Insurance Portability and Accountability Act of 1996 (“HIPAA”) protects the privacy of patients and sets forth guidelines on how this private health information can be shared.  Though the privacy of a patient must be protected, the legal right of a business to sell health information of patients has been upheld by the Supreme Court of the United States.
 
 ![de-identification](https://static.crowdsourcingcures.org/img/deidentification.png)

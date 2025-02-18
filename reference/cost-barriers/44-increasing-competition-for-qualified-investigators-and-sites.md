@@ -1,3 +1,16 @@
+---
+description: >-
+  Analysis of the competition for qualified investigators and clinical trial
+  sites, highlighting the challenges faced by sponsors in securing top
+  researchers.
+emoji: "\U0001F465"
+title: Competition for Qualified Investigators and Sites
+tags: 'clinical-trials, investigators, sites, competition, sponsors'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:46.891Z'
+dateCreated: '2025-02-12T20:26:46.891Z'
+---
 ### 4.4 Increasing Competition for Qualified Investigators and Sites
 
 In addition to patient recruitment, difficulty finding investigators and sites was one of the issues most frequently raised by industry representatives in discussions with ERG. According to some, the problem is not a lack of researchers overall but rather a lack of _highly qualified_ researchers who are consistently able to enroll high-quality patients in sufficient numbers. As a result, sponsors compete with each other for these top investigators, creating the impression that there is a shortage even though less well-qualified investigators might be available.

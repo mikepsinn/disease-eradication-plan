@@ -1,3 +1,16 @@
+---
+description: >-
+  Discussion of barriers related to globalization in clinical research,
+  including the shift of trial sites overseas and declining U.S.-based
+  investigations.
+emoji: "\U0001F30D"
+title: Globalization Barriers in Clinical Research
+tags: 'clinical-research, globalization, FDA-regulated, trial-sites, United-States'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:37.826Z'
+dateCreated: '2025-02-12T20:27:37.826Z'
+---
 ### 4.9 Barriers Related to the Globalization of Clinical Research
 
 Another significant barrier to conducting clinical trials in the United States is competition from sites in other countries; indeed, the clinical research footprint is shifting overseas. The number of active, FDA-regulated investigators based outside the United States has grown by 15 percent each year since 2002, while the number of U.S.-based investigators has fallen by 5.5 percent annually (Getz K. A., 2007). A recent study of industry-sponsored Phase 3 clinical trials for the 20 largest U.S.-based pharmaceutical companies found that approximately one third of the trials are being conducted entirely outside the United States and that over half of all study sites are located in other countries. The number of non-U.S. countries being used as trial sites more than doubled between 1995 and 2005, while the proportion of trials conducted in the United States and Western Europe decreased (Glickman, et al., 2009).

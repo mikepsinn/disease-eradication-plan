@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of cost savings from reducing source data verification in clinical
+  trials
+emoji: "\U0001F4CA"
+title: Reduced Source Data Verification in Clinical Trials
+tags: 'clinical-trials, source-data-verification, cost-savings, risk-based-approach'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:50.715Z'
+dateCreated: '2025-02-12T20:27:50.715Z'
+---
 ### 5.4 Reduced Source Data Verification (sdv)
 
 As discussed in Section 4.6.3 above, many sponsors continue to perform 100 percent source data verification (SDV) in spite of the fact that it is not required by FDA and evidence suggesting that it is not efficient. Thus, the central idea behind this alternative is to encourage industry to reconsider this practice and instead adopt more efficient risk-based approaches.

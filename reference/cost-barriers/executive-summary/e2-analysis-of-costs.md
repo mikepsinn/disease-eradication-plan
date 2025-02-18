@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of clinical trial costs by therapeutic area and phase using data from
+  Medidata Solutions
+emoji: "\U0001F4CA"
+title: Clinical Trial Cost Analysis by Therapeutic Area and Phase
+tags: 'clinical-trials, cost-analysis, therapeutic-areas, phases'
+published: true
+editor: markdown
+date: '2025-02-12T20:28:13.700Z'
+dateCreated: '2025-02-12T20:28:13.700Z'
+---
 ### E.2 Analysis of Costs
 
 The model uses detailed cost information made available by Medidata Solutions, a global provider of cloud-based solutions for clinical research in life sciences. The cost information is specific to the U.S. and presented by therapeutic area and clinical trial phase. Key findings with respect to costs include the following:

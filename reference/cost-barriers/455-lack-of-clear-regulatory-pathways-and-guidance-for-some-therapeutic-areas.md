@@ -1,3 +1,15 @@
+---
+description: >-
+  Discussion on the lack of clear regulatory pathways and guidance for certain
+  therapeutic areas, impacting FDA communication and expectations.
+emoji: ⚠️
+title: Lack of Clear Regulatory Pathways for Some Therapeutic Areas
+tags: 'regulatory-pathways, fda-guidance, therapeutic-areas, clinical-research'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:07.107Z'
+dateCreated: '2025-02-12T20:27:07.107Z'
+---
 ### 4.5.5 Lack of Clear Regulatory Pathways and Guidance for Some Therapeutic Areas
 
 Sometimes, not having a clear idea of what FDA requires is the fault of companies, who might avoid meeting with FDA early in the process, perhaps out of fear of hearing bad news that must then be shared with their investors. However, industry representatives assert that, in many cases, much of the responsibility for failed communication and unclear expectations rests with FDA.

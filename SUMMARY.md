@@ -1,3 +1,13 @@
+---
+description: Table of contents for a decentralized FDA wiki, highlighting problems with the current model and potential solutions
+emoji: 📖
+title: Decentralized FDA Wiki Table of Contents
+tags: decentralized-fda, clinical-trials, regulatory-reform, healthcare
+published: true
+editor: markdown
+date: '2025-02-16T18:12:18.982Z'
+dateCreated: '2025-02-16T18:12:18.982Z'
+---
 # Table of contents
 
 * [💊 The Decentralized FDA](README.md)

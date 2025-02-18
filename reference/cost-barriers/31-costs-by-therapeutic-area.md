@@ -1,3 +1,13 @@
+---
+description: Analysis of clinical trial costs across different therapeutic areas and phases
+emoji: "\U0001F4CA"
+title: Clinical Trial Costs by Therapeutic Area
+tags: 'clinical-trials, costs, therapeutic-areas, phases'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:24.787Z'
+dateCreated: '2025-02-12T20:26:24.787Z'
+---
 ### 3.1 Costs by Therapeutic Area
 
 Table 1 presents the total costs for each of the therapeutic areas included in our model by clinical trial phase (assuming one trial per phase and not inclusive of failures). From the table, immunomodulation per-study costs ($6.6 million) are the highest in Phase 1 with costs of studies in ophthalmology ($5.3 million) and respiratory system ($5.2 million) ranking second and third, respectively. In Phase 2, hematology trial costs ($19.6 million) rank first, followed by pain and anesthesia ($17.0 million) and immunomodulation ($16.0 million). The most costly Phase 3 studies are in pain and anesthesia ($52.9 million) with studies in ophthalmology ($30.7 million) and cardiovascular ($25.2) area ranking second and third, respectively. In Phase 4, respiratory system trial costs ($72.9 million) rank first, followed by oncology ($38.9 million) and pain and anesthesia ($32.1 million) study costs. Overall, the therapeutic area with the highest clinical research burden across all phases is respiratory system ($115.3 million) followed by pain and anesthesia ($105.4 million) and oncology ($78.6 million) trials (see Figure 3). On the other hand, trials in central nervous system, dermatology, and genitourinary system tend to cost the least overall.

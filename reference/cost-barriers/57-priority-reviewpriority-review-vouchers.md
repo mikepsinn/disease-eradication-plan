@@ -1,3 +1,15 @@
+---
+description: >-
+  Explanation of Priority Review Vouchers as a policy option to incentivize
+  development of treatments for neglected diseases
+emoji: "\U0001F4DD"
+title: Priority Review Vouchers
+tags: 'policy, neglected-diseases, fda, incentives, clinical-trials'
+published: true
+editor: markdown
+date: '2025-02-12T20:28:00.521Z'
+dateCreated: '2025-02-12T20:28:00.521Z'
+---
 ### 5.7 Priority REVIEW/PRIORITY Review Vouchers
 
 The basis for this policy option comes from a paper by Ridley, Grabowski, & Moe published in _Health Affairs_ in 2006. The authors propose that developers of treatments for neglected diseases receive a “priority review voucher” to incentivize production of these therapies. If a treatment meets certain criteria, the developers would be awarded a transferable voucher that entitles the holder to priority FDA review for another drug (or perhaps multiple drugs) and other possible incentives (Ridley, Grabowski, & Moe, 2006).

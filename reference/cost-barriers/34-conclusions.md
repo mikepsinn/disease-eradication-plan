@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of the key drivers of costs in clinical trials across different
+  therapeutic areas and phases, highlighting specific high-cost areas.
+emoji: "\U0001F4CA"
+title: Key Drivers of Clinical Trial Costs by Therapeutic Area and Phase
+tags: 'clinical-trials, cost-analysis, therapeutic-areas, phases'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:34.037Z'
+dateCreated: '2025-02-12T20:26:34.037Z'
+---
 ### 3.4 Conclusions
 
 Our study suggests that therapeutic area as well as number and types of clinical procedures involved are the key drivers of costs in Phase 1 through Phase 4 studies. The therapeutic areas with the highest per-study costs in Phase 1 is immunomodulation ($6.6 million), in Phase 2 is hematology ($19.6 million), in Phase 3 is pain and anesthesia ($52.9 million), and in Phase 4 is respiratory system ($72.9 million). Figure 5 presents an overview of the different types of costs constituting each phase and their magnitudes. The denoted error bars represent one standard deviation below and above the mean value.

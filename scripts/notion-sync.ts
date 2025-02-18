@@ -28,7 +28,6 @@
 
 require('dotenv').config(); // Load environment variables from .env file
 
-console.log("NOTION_API_KEY:", process.env.NOTION_API_KEY);
 console.log("NOTION_DATABASE_ID:", process.env.NOTION_DATABASE_ID);
 
 const { Client } = require("@notionhq/client");
@@ -49,6 +48,12 @@ interface MarkdownMetadata {
   tags: string;
   editor: string;
   dateCreated: string;
+}
+
+interface NotionBlock {
+    object: string;
+    type: string;
+    [key: string]: any;
 }
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
@@ -181,9 +186,13 @@ async function getGitLastModifiedDates(filePaths: string[]): Promise<{ [key: str
 // Extract metadata and content from markdown file
 async function extractMetadataAndContent(filePath: string): Promise<{ metadata: MarkdownMetadata; content: string }> {
   const fileContent = await readFile(filePath, "utf-8");
+  // Normalize line endings and remove BOM if present
+  const normalizedContent = fileContent.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
+  // Remove any duplicate frontmatter sections
+  const cleanedContent = normalizedContent.replace(/^---\n[\s\S]*?\n---\n[\s\S]*?\n---\n/, '---\n');
   // Regex to match metadata
   const metadataRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
-  const match = fileContent.match(metadataRegex);
+  const match = cleanedContent.match(metadataRegex);
 
   if (!match) {
     // If no frontmatter found, create default metadata from filename
@@ -203,28 +212,35 @@ async function extractMetadataAndContent(filePath: string): Promise<{ metadata: 
         editor: "",
         dateCreated: new Date().toISOString().split('T')[0]
       },
-      content: fileContent.trim()
+      content: cleanedContent.trim()
     };
   }
 
-  // Parse metadata
-  const metadataLines = match[1].trim().split("\n");
-  const metadata: Partial<MarkdownMetadata> = {};
-  for (const line of metadataLines) {
-    const [key, value] = line.split(":").map((s: string) => s.trim());
-    if (key && value) {
-      // Convert specific fields to their proper types
-      if (key === 'published') {
-        metadata[key] = value.toLowerCase() === 'true';
-      } else {
-        metadata[key as keyof MarkdownMetadata] = value as never;
-      }
-    }
-  }
+  // Parse metadata using YAML parser
+  const yaml = require('js-yaml');
+  try {
+    const metadata = yaml.load(match[1]) as MarkdownMetadata;
+    console.log('Raw YAML metadata:', match[1]);
+    console.log('Parsed metadata:', metadata);
+    
+    // Ensure required fields exist with proper types
+    const processedMetadata: MarkdownMetadata = {
+      title: String(metadata.title || '').replace(/^['"]|['"]$/g, ''), // Remove quotes
+      description: String(metadata.description || ''),
+      published: Boolean(metadata.published),
+      date: metadata.date ? new Date(metadata.date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
+      tags: Array.isArray(metadata.tags) ? metadata.tags.join(',') : String(metadata.tags || ''),
+      editor: String(metadata.editor || ''),
+      dateCreated: metadata.dateCreated ? new Date(metadata.dateCreated).toISOString().split('T')[0] : new Date().toISOString().split('T')[0]
+    };
 
-  // Get the content
-  const content = match[2].trim();
-  return { metadata: metadata as MarkdownMetadata, content };
+    // Get the content without frontmatter
+    const content = match[2].trim();
+    return { metadata: processedMetadata, content };
+  } catch (error) {
+    console.error(`Error parsing frontmatter for ${filePath}:`, error);
+    throw error;
+  }
 }
 
 // Get Notion page by title
@@ -251,18 +267,116 @@ function markdownToBlocks(markdown: string): any[] {
     const blocks: any[] = [];
     const lines = markdown.split('\n');
     let currentBlock: any = null;
+    let tableHeaders: string[] = [];
+    let tableRows: string[][] = [];
 
-    for (let line of lines) {
+    function parseInlineMarkdown(text: string) {
+        // Handle inline code
+        text = text.replace(/`([^`]+)`/g, (_, code) => {
+            return code;
+        });
+
+        // Handle bold
+        text = text.replace(/\*\*(.+?)\*\*/g, (_, content) => {
+            return content;
+        });
+
+        // Handle italic
+        text = text.replace(/\*(.+?)\*/g, (_, content) => {
+            return content;
+        });
+
+        // Handle links
+        text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, title, url) => {
+            return title;
+        });
+
+        return text;
+    }
+
+    function createRichText(text: string, annotations = {}) {
+        return {
+            type: "text",
+            text: { content: text },
+            annotations: {
+                bold: text.match(/\*\*(.+?)\*\*/g) !== null,
+                italic: text.match(/\*(.+?)\*/g) !== null,
+                code: text.match(/`([^`]+)`/g) !== null,
+                ...annotations
+            }
+        };
+    }
+
+    function flushTable() {
+        if (tableHeaders.length > 0) {
+            blocks.push({
+                type: "table",
+                table: {
+                    table_width: tableHeaders.length,
+                    has_column_header: true,
+                    has_row_header: false,
+                    children: [
+                        {
+                            type: "table_row",
+                            table_row: {
+                                cells: tableHeaders.map(header => [createRichText(header)])
+                            }
+                        },
+                        ...tableRows.map(row => ({
+                            type: "table_row",
+                            table_row: {
+                                cells: row.map(cell => [createRichText(cell)])
+                            }
+                        }))
+                    ]
+                }
+            });
+            tableHeaders = [];
+            tableRows = [];
+        }
+    }
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+
+        // Handle horizontal rules
+        if (line.match(/^[\-\*_]{3,}$/)) {
+            blocks.push({
+                type: "divider",
+                divider: {}
+            });
+            continue;
+        }
+
+        // Handle tables
+        const tableRow = line.trim().match(/^\|(.+)\|$/);
+        if (tableRow) {
+            const cells = tableRow[1].split('|').map(cell => cell.trim());
+            
+            if (tableHeaders.length === 0) {
+                tableHeaders = cells;
+                // Skip the separator line
+                i++;
+            } else {
+                tableRows.push(cells);
+            }
+            continue;
+        }
+
+        // Flush table if we're no longer in a table
+        if (tableHeaders.length > 0 && !line.includes('|')) {
+            flushTable();
+        }
+
         // Handle headers
         const headerMatch = line.match(/^(#{1,6})\s+(.+)$/);
         if (headerMatch) {
             const level = headerMatch[1].length;
-            const text = headerMatch[2];
+            const text = parseInlineMarkdown(headerMatch[2]);
             blocks.push({
-                object: "block",
                 type: `heading_${level}`,
                 [`heading_${level}`]: {
-                    rich_text: [{ type: "text", text: { content: text } }]
+                    rich_text: [createRichText(text)]
                 }
             });
             continue;
@@ -272,10 +386,9 @@ function markdownToBlocks(markdown: string): any[] {
         if (line.startsWith('```')) {
             if (!currentBlock) {
                 currentBlock = {
-                    object: "block",
                     type: "code",
                     code: {
-                        language: line.slice(3) || "plain text",
+                        language: line.slice(3).toLowerCase() || "plain text",
                         rich_text: [{ type: "text", text: { content: "" } }]
                     }
                 };
@@ -292,16 +405,58 @@ function markdownToBlocks(markdown: string): any[] {
             continue;
         }
 
+        // Handle images
+        const imageMatch = line.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+        if (imageMatch) {
+            try {
+                const url = imageMatch[2];
+                console.log('Found image with URL:', url);
+                // Only create image block if URL is valid
+                if (url.startsWith('http://') || url.startsWith('https://')) {
+                    const imageBlock = {
+                        object: "block",
+                        type: "image",
+                        has_children: false,
+                        image: {
+                            type: "external",
+                            external: {
+                                url: url
+                            }
+                        }
+                    };
+                    console.log('Created image block:', JSON.stringify(imageBlock, null, 2));
+                    blocks.push(imageBlock);
+                    continue;
+                }
+                console.log('Invalid URL, creating paragraph instead');
+                blocks.push({
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [createRichText(line)]
+                    }
+                });
+            } catch (error) {
+                console.log('Error creating image block:', error);
+                // If there's any error with the URL, create a paragraph instead
+                blocks.push({
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [createRichText(line)]
+                    }
+                });
+            }
+            continue;
+        }
+
         // Handle bullet points
         if (line.match(/^[\-\*]\s/)) {
+            const text = parseInlineMarkdown(line.slice(2));
             blocks.push({
-                object: "block",
                 type: "bulleted_list_item",
                 bulleted_list_item: {
-                    rich_text: [{ 
-                        type: "text",
-                        text: { content: line.slice(2) }
-                    }]
+                    rich_text: [createRichText(text)]
                 }
             });
             continue;
@@ -310,14 +465,11 @@ function markdownToBlocks(markdown: string): any[] {
         // Handle numbered lists
         const numberedListMatch = line.match(/^\d+\.\s+(.+)$/);
         if (numberedListMatch) {
+            const text = parseInlineMarkdown(numberedListMatch[1]);
             blocks.push({
-                object: "block",
                 type: "numbered_list_item",
                 numbered_list_item: {
-                    rich_text: [{ 
-                        type: "text",
-                        text: { content: numberedListMatch[1] }
-                    }]
+                    rich_text: [createRichText(text)]
                 }
             });
             continue;
@@ -325,14 +477,11 @@ function markdownToBlocks(markdown: string): any[] {
 
         // Handle blockquotes
         if (line.startsWith('>')) {
+            const text = parseInlineMarkdown(line.slice(1).trim());
             blocks.push({
-                object: "block",
                 type: "quote",
                 quote: {
-                    rich_text: [{ 
-                        type: "text",
-                        text: { content: line.slice(1).trim() }
-                    }]
+                    rich_text: [createRichText(text)]
                 }
             });
             continue;
@@ -340,20 +489,117 @@ function markdownToBlocks(markdown: string): any[] {
 
         // Handle regular paragraphs (including blank lines)
         if (line.trim() || blocks.length === 0 || blocks[blocks.length - 1].type !== "paragraph") {
+            const text = parseInlineMarkdown(line);
             blocks.push({
-                object: "block",
                 type: "paragraph",
                 paragraph: {
-                    rich_text: [{
-                        type: "text",
-                        text: { content: line }
-                    }]
+                    rich_text: [createRichText(text)]
                 }
             });
         }
     }
 
-    return blocks;
+    // Flush any remaining table
+    flushTable();
+
+    // Ensure all blocks have a type field
+    return blocks.map(block => {
+        if (!block?.type) {
+            // Default to paragraph if no type is set
+            return {
+                object: "block",
+                type: "paragraph",
+                paragraph: {
+                    rich_text: [createRichText("")]
+                }
+            } as NotionBlock;
+        }
+        
+        // Create a base block with all required properties
+        const validBlock: NotionBlock = {
+            object: "block",
+            type: block.type,
+            has_children: false
+        };
+        
+        // Add the specific block content
+        switch (block.type) {
+            case 'paragraph':
+            case 'quote':
+            case 'bulleted_list_item':
+            case 'numbered_list_item':
+                validBlock[block.type] = {
+                    rich_text: block[block.type]?.rich_text || [createRichText("")]
+                };
+                break;
+            case 'heading_1':
+            case 'heading_2':
+            case 'heading_3':
+                validBlock[block.type] = {
+                    rich_text: block[block.type]?.rich_text || [createRichText("")]
+                };
+                break;
+            case 'code':
+                validBlock[block.type] = {
+                    rich_text: block[block.type]?.rich_text || [createRichText("")],
+                    language: block[block.type]?.language || "plain text"
+                };
+                break;
+            case 'image':
+                if (block.image?.type === 'external' && block.image?.external?.url) {
+                    validBlock.image = block.image;
+                    validBlock.type = 'image';
+                    validBlock.object = 'block';
+                    validBlock.has_children = false;
+                    return validBlock;
+                }
+                // If image block is invalid, return null to filter it out
+                return null;
+            case 'divider':
+                validBlock[block.type] = {};
+                break;
+            default:
+                // Convert unknown block types to paragraph
+                validBlock.type = "paragraph";
+                validBlock.paragraph = {
+                    rich_text: [createRichText("")]
+                };
+        }
+        
+        return validBlock;
+    }).filter((block): block is NotionBlock => {
+        // Filter out any blocks that don't have valid type and properties
+        if (!block) {
+            return false;
+        }
+        
+        switch (block.type) {
+            case 'divider':
+                return true;
+            case 'image':
+                console.log('Validating image block:', JSON.stringify(block, null, 2));
+                return block.type === 'image' && block.image?.type === 'external' && block.image?.external?.url;
+            default:
+                return block[block.type]?.rich_text && Array.isArray(block[block.type]?.rich_text);
+        }
+    });
+}
+
+// Helper function to ensure valid ISO 8601 date
+function formatDate(dateStr: string): string {
+    try {
+        // Try to parse the date
+        const date = new Date(dateStr);
+        if (isNaN(date.getTime())) {
+            // If invalid, return today's date
+            return new Date().toISOString().split('T')[0];
+        }
+        // Return YYYY-MM-DD format
+        return date.toISOString().split('T')[0];
+    } catch {
+        // On error, return today's date
+        return new Date().toISOString().split('T')[0];
+    }
 }
 
 // Create Notion page
@@ -361,19 +607,34 @@ async function createNotionPage(metadata: MarkdownMetadata, content: string) {
     try {
         if (!databaseId) throw new Error("Database ID is not set");
         
-        await notion.pages.create({
+        // Create the page first
+        const page = await notion.pages.create({
             parent: { database_id: databaseId },
             properties: {
                 title: { title: [{ text: { content: metadata.title } }] },
                 description: { rich_text: [{ text: { content: metadata.description } }] },
                 published: { checkbox: metadata.published },
-                date: { date: { start: metadata.date } },
+                date: { date: { start: formatDate(metadata.date) } },
                 tags: { rich_text: [{ text: { content: metadata.tags } }] },
                 editor: { rich_text: [{ text: { content: metadata.editor } }] },
-                dateCreated: { date: { start: metadata.dateCreated } },
+                dateCreated: { date: { start: formatDate(metadata.dateCreated) } },
             },
-            children: markdownToBlocks(content)
+            children: [] // Create page without content first
         });
+
+        // Convert markdown to Notion blocks
+        const blocks = markdownToBlocks(content);
+
+        // Then add content in chunks of 100 blocks
+        for (let i = 0; i < blocks.length; i += 100) {
+            const chunk = blocks.slice(i, i + 100);
+            await notion.blocks.children.append({
+                block_id: page.id,
+                children: chunk
+            });
+        }
+
+        return page;
     } catch (error) {
         console.error("Error in createNotionPage:", error);
     }
@@ -387,10 +648,10 @@ async function updateNotionPage(pageId: string, metadata: MarkdownMetadata, cont
             properties: {
                 description: { rich_text: [{ text: { content: metadata.description } }] },
                 published: { checkbox: metadata.published },
-                date: { date: { start: metadata.date } },
+                date: { date: { start: formatDate(metadata.date) } },
                 tags: { rich_text: [{ text: { content: metadata.tags } }] },
                 editor: { rich_text: [{ text: { content: metadata.editor } }] },
-                dateCreated: { date: { start: metadata.dateCreated } },
+                dateCreated: { date: { start: formatDate(metadata.dateCreated) } },
             }
         };
         await notion.pages.update(updateData);
@@ -401,11 +662,17 @@ async function updateNotionPage(pageId: string, metadata: MarkdownMetadata, cont
             await notion.blocks.delete({ block_id: block.id });
         }
 
-        // Then add new content as blocks
-        await notion.blocks.children.append({
-            block_id: pageId,
-            children: markdownToBlocks(content)
-        });
+        // Convert markdown to Notion blocks
+        const blocks = markdownToBlocks(content);
+
+        // Then add new content in chunks of 100 blocks
+        for (let i = 0; i < blocks.length; i += 100) {
+            const chunk = blocks.slice(i, i + 100);
+            await notion.blocks.children.append({
+                block_id: pageId,
+                children: chunk
+            });
+        }
     } catch (error) {
         console.error("Error in updateNotionPage:", error);
     }
@@ -500,5 +767,6 @@ module.exports = {
   updateNotionPage,
   createNotionPage,
   updateMarkdownFile,
-  ensureDatabaseProperties
+  ensureDatabaseProperties,
+  syncMarkdownFilesToNotion
 };

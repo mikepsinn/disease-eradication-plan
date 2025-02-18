@@ -1,11 +1,12 @@
 ---
-title: food-databases
 description: Food and Nutrient Database for Dietary Studies (FNDDS)
+emoji: "\U0001F951"
+title: food-databases
+tags: 'food-databases, nutrition, USDA, FoodData-Central, FNDDS'
 published: true
-date: 2022-08-25T20:04:14.495Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:23:42.390Z
+date: '2022-08-25T20:04:14.495Z'
+dateCreated: '2022-07-27T21:23:42.390Z'
 ---
 
 # 🥑 Food Databases

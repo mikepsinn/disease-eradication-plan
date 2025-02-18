@@ -1,11 +1,14 @@
 ---
+description: >-
+  Compilation of resources and data related to FDA spending, approvals, economic
+  indicators, and historical analysis
+emoji: "\U0001F4CA"
 title: References
-description: 
+tags: 'fda, spending, approvals, economic-indicators, historical-data'
 published: true
-date: 2022-07-26T01:14:19.159Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-22T19:04:25.725Z
+date: '2022-07-26T01:14:19.159Z'
+dateCreated: '2022-07-22T19:04:25.725Z'
 ---
 
 * [Google Spreadsheet of FDA Spending vs Life-Expectancy](https://docs.google.com/spreadsheets/d/e/2PACX-1vTBkVrOYLxloOIADLXA7-k5NBIGgQ\_dfFQ7BLUN0oaJPVQ\_NqdFdVUfhuPkVWgFZ9gfLrwPdjuG1sTn/pubhtml)

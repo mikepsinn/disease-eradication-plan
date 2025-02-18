@@ -1,3 +1,17 @@
+---
+description: >-
+  Exploration of lower-cost facilities and at-home testing as methods to reduce
+  clinical trial expenses and improve participant retention.
+emoji: "\U0001F3E0"
+title: Lower-cost Facilities and At-home Testing in Clinical Trials
+tags: >-
+  clinical-trials, cost-reduction, at-home-testing, web-based-trials,
+  participant-retention
+published: true
+editor: markdown
+date: '2025-02-12T20:27:57.233Z'
+dateCreated: '2025-02-12T20:27:57.233Z'
+---
 ### 5.6 Wider Use of Lower-cost Facilities AND/OR At-home Testing
 
 This approach was suggested in the course of our interviews with drug sponsors. If FDA can successfully encourage sponsors to utilize lower-cost facilities (such as local clinics and pharmacies) for data collection purposes whenever possible, the need for costly infrastructure and overhead can be reduced. Furthermore, sponsors could conduct follow-up visits beyond the initial trial period at local centers to minimize travel and time costs for participants and thereby possibly improve retention. A related option is conducting web-based trials, in which patients can participate from home using computers and smartphones rather than traveling to trial sites. Pfizer has attempted this “clinical trial in a box” idea, recruiting patients through Internet advertisements and providing a website that explains the trial and allows online enrollment. All necessary materials (including the blinded study drug and a mobile app for electronic patient-reported outcomes, or PROs) are sent to participants at home (Silverman, 2011).

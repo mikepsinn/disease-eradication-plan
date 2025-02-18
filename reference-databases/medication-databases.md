@@ -1,11 +1,12 @@
 ---
-title: medication-databases
 description: RxNorm and MeDRA
+emoji: "\U0001F48A"
+title: medication-databases
+tags: 'databases, RxNorm, MedDRA, drugs, regulatory'
 published: true
-date: 2022-08-25T20:04:51.436Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:23:47.640Z
+date: '2022-08-25T20:04:51.436Z'
+dateCreated: '2022-07-27T21:23:47.640Z'
 ---
 
 # 💊 Medication Databases

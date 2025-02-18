@@ -1,3 +1,15 @@
+---
+description: >-
+  Detailed breakdown of clinical trial costs by cost component across
+  therapeutic areas and trial phases
+emoji: "\U0001F4CA"
+title: Clinical Trial Costs by Cost Component
+tags: 'clinical-trials, cost-analysis, therapeutic-areas, trial-phases'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:30.722Z'
+dateCreated: '2025-02-12T20:26:30.722Z'
+---
 ### 3.3 Costs by Cost Component
 
 Table 2 presents clinical trial costs by cost component across all therapeutic areas by trial phase. Similar to our evaluation of costs by trial phase discussed in Section 3, when averaging costs across therapeutic areas, we weighted the data by the number of contracts available by therapeutic area. Excluding the _All Other Costs_ and _Site Overhead_ cost components as these are extrapolated numbers, in Phase 1, _Clinical Procedure Costs_ ($476,000) are the highest, followed by _SDV costs_ ($326,000) and _Central Laboratory Costs_ ($252,000). In Phase 2, expenditures that contribute the most to overall costs in descending order include _Clinical Procedure Costs_ ($1.5 million), _Administrative Staff Costs_ ($1.3 million), _Site Retention Costs_ ($1.1 million), _Site Monitoring Costs_ ($1.1 million), _Central Laboratory Costs_ ($804,000), and RN/CRA Costs ($441,000). Even though they are still sizable and higher in absolute terms than those in Phase 1, SDV Costs only constitute three percent (= $406,038 ÷ $13.35 million) of total per-study Phase 2 costs whereas in Phase 1 their share of total per-study costs is around nine percent (= $326,437 ÷ $3.80 million). Similar to Phase 2, _Clinical Procedure Costs_ ($2.3 million), _Administrative Staff Costs_ ($2.3 million), _Site Retention Costs_ ($1.3 million), _Site Monitoring Costs_ ($1.6 million), _Central Laboratory Costs_ ($849,000), and _RN/CRA Costs_ ($940,000) contribute the most to overall per-study Phase 3 costs. In Phase 4, _Administrative Staff Costs_ ($3.3 million) rank the highest, followed by _Site Retention Costs_ ($1.8 million), and _Clinical Procedure Costs_ ($1.7 million). While not insignificant in dollar terms, _Patient Recruitment_ Costs only account for 1.7 to 2.7 percent of overall costs across different clinical trial phases.

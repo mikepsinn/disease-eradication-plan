@@ -1,11 +1,12 @@
 ---
-title: supplement-databases
 description: Dietary Supplement Ingredients
+emoji: "\U0001F48A"
+title: supplement-databases
+tags: 'supplements, databases, DSLD, DSID, nutrient-intake, data'
 published: true
-date: 2022-08-25T21:50:07.113Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-27T21:23:53.126Z
+date: '2022-08-25T21:50:07.113Z'
+dateCreated: '2022-07-27T21:23:53.126Z'
 ---
 
 # 💊 Supplement Databases

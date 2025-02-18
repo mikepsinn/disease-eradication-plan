@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of the high financial costs associated with conducting clinical
+  research and drug development
+emoji: "\U0001F4B0"
+title: High Financial Cost of Clinical Research and Drug Development
+tags: 'clinical-research, drug-development, costs, financial-barriers'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:37.027Z'
+dateCreated: '2025-02-12T20:26:37.027Z'
+---
 ### 4.1 High Financial Cost
 
 The largest barrier to conducting clinical research—and the one into which most other barriers feed—is the high cost. Studies estimate that it now costs somewhere between $161 million and $2 billion to bring a new drug to market (DiMasi, Hansen, & Grabowski, 2003; Adams & Brantner, 2006; Morgan, Grootendorst, Lexchin, Cunningham, & Greyson, 2011). One particularly well-known and often-cited paper by DiMasi, Hansen, & Grabowski (2003) arrives at a total pre-approval cost estimate of $802 million in 2000 dollars to develop a single drug (inflated to 2012 dollars, this estimate is $1.07 billion) (DiMasi, Hansen, & Grabowski, 2003; U.S. Bureau of Labor Statistics, 2012). More recent estimates of drug development costs are around $1.3 billion to $1.7 billion (Collier, 2009). It is important to note that the DiMasi, Hansen, & Grabowski (2003) estimate and many others in the literature represent fully capitalized costs and are inclusive of failures.

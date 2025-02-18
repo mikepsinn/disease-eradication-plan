@@ -1,11 +1,14 @@
 ---
-title: 🔮 Futarchy-Based Efficacy Trials
-description: How deFDA governance tokens, the primary store of value in the deFDA ecosystem, are created, distributed, and used.
+description: >-
+  How deFDA governance tokens, the primary store of value in the deFDA
+  ecosystem, are created, distributed, and used.
+emoji: "\U0001FA7A"
+title: "\U0001F52E Futarchy-Based Efficacy Trials"
+tags: 'defda, nft, reputation-tokens, medical-experts, interventions'
 published: true
-date: 2022-07-26T02:39:53.878Z
-tags: 
 editor: markdown
-dateCreated: 2022-07-22T19:04:54.626Z
+date: '2022-07-26T02:39:53.878Z'
+dateCreated: '2022-07-22T19:04:54.626Z'
 ---
 
 Medical experts will receive soul-bound non-transferable deFDA Credential NFTs (FDA-CRED) will be issued to all members of the American Medical Association (AMA) and other international bodies which verify medical credentialing.

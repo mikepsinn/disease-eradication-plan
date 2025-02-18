@@ -1,3 +1,16 @@
+---
+description: >-
+  Details on the parameters required for a clinical trial cost/decision-making
+  model, including phase durations, success probabilities, expected revenues,
+  and discount rates.
+emoji: ⚙️
+title: Model Parameters for Clinical Trial Cost Analysis
+tags: 'clinical-trials, model-parameters, cost-analysis, pharmaceutical-research'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:21.923Z'
+dateCreated: '2025-02-12T20:26:21.923Z'
+---
 ### 2.4 Model Parameters
 
 The clinical trial cost/decision-making model described above requires numerous data points, including phase durations, success probabilities, expected revenues, and a discount rate, as well as a full range of itemized costs associated with clinical trials, broken down by phase and therapeutic area. The model uses a real annual discount rate of 15 percent based on input from interviews conducted with drug sponsors as default, and we were able to obtain some of the other data needed from the available clinical research literature. Phase durations were one such parameter. Though they are not differentiated by therapeutic area, DiMasi, Hansen, & Grabowski (2003) provide mean phase lengths of 21.6 months (1.8 years) for Phase 1, 25.7 months (2.1 years) for Phase 2, and 30.5 months (2.5 years) for Phase 3. The NDA/BLA review time, as we are defining it,<sup>6</sup> includes the time from first submission of an NDA/BLA to regulatory marketing approval, and comes from DiMasi, Grabowski, & Vernon (2004). Trial phase times generally do not reflect differences between therapeutic areas; however, therapeutic-area-specific NDA/BLA review times were available and used for a select list of therapeutic areas.

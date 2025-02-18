@@ -1,3 +1,17 @@
+---
+description: >-
+  Automation scripts for repository management including AI-powered file
+  organization and content migration
+emoji: "\U0001F4C1"
+title: Scripts Directory for Repository Management
+tags: >-
+  repository-management, automation, ai-powered, file-organization,
+  content-migration
+published: true
+editor: markdown
+date: '2025-02-12T20:29:36.760Z'
+dateCreated: '2025-02-12T20:29:36.760Z'
+---
 # 📁 Scripts Directory
 
 Repository management automation scripts with AI-powered file organization.

@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of drug sponsor-imposed barriers in clinical research, focusing on
+  risk aversion and its impact on costs and delays.
+emoji: "\U0001F6AB"
+title: Drug Sponsor-imposed Barriers in Clinical Research
+tags: 'clinical-research, drug-sponsors, risk-aversion, costs, delays'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:13.712Z'
+dateCreated: '2025-02-12T20:27:13.712Z'
+---
 ### 4.6 Drug Sponsor-imposed Barriers
 
 Drug sponsors face a number of barriers to conducting clinical research that are outside their control. However, there are also a number of barriers that drug sponsors voluntarily impose upon themselves, adding further cost and delay to the process unnecessarily. While some of these avoidable costs and delays are incurred as a result of insufficient early planning or inefficiencies in company practices, the majority of them stem from a desire to avoid failure at all costs (Kramer & Schulman, 2011).

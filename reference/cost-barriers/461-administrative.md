@@ -1,3 +1,17 @@
+---
+description: >-
+  Analysis of administrative inefficiencies in drug companies, focusing on
+  contract negotiation and internal review processes impacting clinical trials.
+emoji: "\U0001F4DD"
+title: Administrative Inefficiencies in Drug Development
+tags: >-
+  drug-development, clinical-trials, administrative-processes, contracts,
+  internal-review
+published: true
+editor: markdown
+date: '2025-02-12T20:27:17.038Z'
+dateCreated: '2025-02-12T20:27:17.038Z'
+---
 ### 4.6.1 Administrative
 
 Contract negotiation and internal review are two major administrative areas where drug companies suffer from inefficiencies of their own creation. The IOM and the National Cancer Institute (NCI) have tried to generate standard contract terms so that the trickiest parts of contracts between sponsors and contractors and clinical sites would not need to be renegotiated from scratch every time; however, these have gone largely unused by drug companies. Contract negotiation delays can be exacerbated when pharmaceutical companies outsource the execution of standard contracts to subcontractors, who cannot make decisions without approval (Kramer, Smith, & Califf, 2012; Institute of Medicine Forum on Drug Discovery, Development, and Translation, Undated).

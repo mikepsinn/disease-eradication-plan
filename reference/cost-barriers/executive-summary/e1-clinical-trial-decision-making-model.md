@@ -1,3 +1,18 @@
+---
+description: >-
+  A stylized decision tree model for drug sponsors formulating clinical trials,
+  focusing on revenue maximization and incorporating therapeutic area, market
+  size, clinical stage costs, and success probabilities.
+emoji: "\U0001F4CA"
+title: Clinical Trial Decision-making Model
+tags: >-
+  clinical-trials, decision-making, drug-development, revenue-modeling,
+  cost-analysis
+published: true
+editor: markdown
+date: '2025-02-12T20:28:10.650Z'
+dateCreated: '2025-02-12T20:28:10.650Z'
+---
 ### E.1 Clinical Trial Decision-making Model
 
 Using data from a variety of sources, we model the decision-making process for a drug sponsor as a stylized decision tree that looks at the process for formulating a clinical trial from the point of view of an expected-revenue-maximizing sponsor in the face of uncertainty (or risk). The simplified clinical decision-making model incorporates the following considerations:

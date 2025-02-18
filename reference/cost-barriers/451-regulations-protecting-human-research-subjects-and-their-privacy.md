@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of the challenges in ethical review processes for human research,
+  focusing on IRB responsibilities and multisite trial approvals
+emoji: "\U0001F50D"
+title: Regulations Protecting Human Research Subjects and Privacy
+tags: 'IRB, regulations, human-research, ethics, multisite-trials'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:53.574Z'
+dateCreated: '2025-02-12T20:26:53.574Z'
+---
 ### 4.5.1 Regulations Protecting Human Research Subjects and Their Privacy
 
 **_Ethical / Institutional Review Board Approval (21 Code of Federal Regulations (CFR) 56)_**

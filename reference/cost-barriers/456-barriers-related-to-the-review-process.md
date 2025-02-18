@@ -1,3 +1,15 @@
+---
+description: >-
+  Analysis of barriers related to the FDA's review process, including resource
+  constraints and concerns about reviewer authority.
+emoji: "\U0001F4DD"
+title: Barriers in the FDA Review Process
+tags: 'fda, review-process, regulatory-barriers, resource-constraints'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:10.229Z'
+dateCreated: '2025-02-12T20:27:10.229Z'
+---
 ### 4.5.6 Barriers Related to the Review Process
 
 The expert consultants and drug company and CRO representatives interviewed acknowledged the difficulty of FDA’s position, as the Agency faces conflicting pressures from Congress and industry and must balance the need for scientific evidence with the need for timely access to the new drug. Most respondents commented that FDA is consistently understaffed and underfunded, and the resources it does have at its disposal are stretched too thin.

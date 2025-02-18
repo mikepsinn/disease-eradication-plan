@@ -1,3 +1,16 @@
+---
+description: >-
+  Exploration of how Electronic Health Records (EHR) enhance clinical trial
+  recruitment through systems like Clinical Trial Alerts, improving referral and
+  enrollment rates.
+emoji: "\U0001F4CB"
+title: Use of Electronic Health Records in Clinical Trials
+tags: 'electronic-health-records, clinical-trials, recruitment, trial-costs'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:41.239Z'
+dateCreated: '2025-02-12T20:27:41.239Z'
+---
 ### 5.1 Use of Electronic Health Records (ehr)
 
 In the context of clinical research, electronic health records (EHR) can help physicians to quickly locate patients that meet the inclusion/exclusion criteria for participation in trials and thereby make it easier for them to generate referrals and enrollments. For example, one EHR-based approach that has been utilized is a clinical trial alert (CTA) system, which is designed to notify physicians of ongoing trials and their patients’ potential eligibility (if patients’ EHRs indicate that they meet selected trial criteria). One study found that the CTA intervention at The Cleveland Clinic in Cleveland, Ohio, contributed to a 10-fold increase in physicians’ referral rate and a doubling of their enrollment rate (Embi, et al., 2005).

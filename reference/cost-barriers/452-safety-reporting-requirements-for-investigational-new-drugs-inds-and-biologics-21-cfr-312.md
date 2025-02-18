@@ -1,3 +1,15 @@
+---
+description: >-
+  Safety reporting requirements for Investigational New Drugs (INDs) and
+  biologics as per 21 CFR 312, including definitions of adverse events.
+emoji: ⚠️
+title: Safety Reporting Requirements for INDs and Biologics
+tags: 'ind, biologics, adverse-events, safety-reporting, fda-regulations'
+published: true
+editor: markdown
+date: '2025-02-12T20:26:57.327Z'
+dateCreated: '2025-02-12T20:26:57.328Z'
+---
 ### 4.5.2 Safety Reporting Requirements for Investigational New Drugs (INDs) and Biologics (21 CFR 312)
 
 In the course of clinical investigations conducted under investigational new drug (IND) applications, information regarding adverse events must be communicated among investigators, sponsors, IRBs, and FDA in safety reports. There are a number of terms that are used to categorize adverse events and thereby determine which must be reported. The most up-to-date definitions of these terms from 21 CFR 312.32(a) are provided below:

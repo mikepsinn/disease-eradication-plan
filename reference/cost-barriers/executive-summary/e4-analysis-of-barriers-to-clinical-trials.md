@@ -1,3 +1,16 @@
+---
+description: >-
+  Analysis of barriers to clinical trials and strategies for mitigation,
+  including use of EHR, simplified protocols, reduced SDV, mobile technologies,
+  lower-cost facilities, Priority Review vouchers, and FDA process improvements.
+emoji: "\U0001F4CA"
+title: Barriers to Clinical Trials and Mitigation Strategies
+tags: 'clinical-trials, barriers, FDA, policy, cost-efficiency'
+published: true
+editor: markdown
+date: '2025-02-12T20:28:50.817Z'
+dateCreated: '2025-02-12T20:28:50.817Z'
+---
 ### E.4 Analysis of Barriers to Clinical Trials
 
 In selecting barriers to analyze in the context of the clinical trial decision-making model developed, we considered whether each proposed strategy could be alleviated by policies, whether the appropriate policies could be implemented or encouraged by FDA, and whether there was evidence in the literature that could be used to quantify the potential impacts of those policies on clinical trial costs. Based on these criteria, the following barrier mitigation strategies were selected for analysis in this study:

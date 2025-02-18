@@ -1,3 +1,16 @@
+---
+description: >-
+  Strategy to reduce clinical trial costs by simplifying protocols and
+  minimizing avoidable amendments, potentially cutting data collection costs by
+  22.5%.
+emoji: "\U0001F4CB"
+title: Simplified Clinical Trial Protocols and Reduced Amendments
+tags: 'clinical-trials, cost-reduction, protocol-efficiency, data-collection'
+published: true
+editor: markdown
+date: '2025-02-12T20:27:47.657Z'
+dateCreated: '2025-02-12T20:27:47.657Z'
+---
 ### 5.3 Simplified Clinical Trial Protocols and Reduced Amendments
 
 This strategy is meant to address the costs associated with collection of unnecessary data and implementing avoidable protocol amendments. Eliminating these inefficiencies has the potential to reduce the magnitude of several cost parameters represented in our model. As described in Section 4.6.2 above, drug sponsors estimate that approximately 15 to 30 percent of all clinical data collected is never used in New Drug Application (NDA) submissions, according to a 2010 article by Kenneth Getz of Tufts CSDD (Getz K. A., 2010b). Therefore, to model the data collection savings that would result from streamlining trial protocols, we reduced data collection, management and analysis costs (per study) by 22.5 percent in all phases (the midpoint of 15 and 30 percent).
