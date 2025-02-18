@@ -1,12 +1,13 @@
 ---
-title: 03. 🏭 Platform
+title: 🏭 Platform
 description: A detailed description of the core open-source platform and plugin framework that will enable the transformation of data into clinical discoveries.
 published: true
-date: '2022-08-25T17:01:05.967Z'
-tags: digital-health, health-data, interoperability, clinical-trials, decentralization, ehr-systems
+date: 2025-02-18T05:14:54.240Z
+tags: clinical-trials, health-data, decentralization, digital-health, interoperability, ehr-systems
 editor: markdown
-dateCreated: '2022-07-27T21:26:16.256Z'
+dateCreated: 2023-11-07T19:01:19.907Z
 ---
+
 ### Functional Scope
 
 The functional scope of the platform includes:
