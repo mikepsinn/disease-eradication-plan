@@ -23,7 +23,7 @@ The search engine is available in a variety of layout settings.
 
 ### Network Graph Style
 
-[Example of Graph](https://studies.curedao.org/variables/Overall_Mood)
+[Example of Graph](https://studies.dfda.earth/variables/Overall_Mood)
 
 ![Network Graph Style](https://static.crowdsourcingcures.org/img/overall-mood-predictors-network-graph.png)
 

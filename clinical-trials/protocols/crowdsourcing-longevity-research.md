@@ -65,7 +65,7 @@ Implement the assigned intervention for a predetermined period, such as 12 weeks
 Analyze the collected data to determine the impact of the intervention on the participant's overall health status. Compare the pre- and post-intervention data within each group and between the intervention and control groups.  This is typicially done on an ongoing basis and should be discoverable by selecting a predictor and outcome on the [study creation page](https://app.curedao.org/app/public/#/app/study-creation).
 
 ## 6. **Outcome Reporting**
-Share the study results with the participants and the wider biohacker community. Encourage discussions and further research to refine the intervention and improve its effectiveness in promoting longevity. Aggregate analysis of results can be auto-generated and published in the [Journal of Citizen Science](https://studies.curedao.org/variables).
+Share the study results with the participants and the wider biohacker community. Encourage discussions and further research to refine the intervention and improve its effectiveness in promoting longevity. Aggregate analysis of results can be auto-generated and published in the [Journal of Citizen Science](https://studies.dfda.earth/variables).
 
 ## 7. **Data Sharing**
 Share the collected data and findings with the broader aging research community. This will facilitate collaboration and accelerate scientific progress in the field of longevity research.  Data can either be exported on the [settings page](https://app.curedao.org/app/public/#/app/settings) or in the Variable Settings page so that individuals can share it.

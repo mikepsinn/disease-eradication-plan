@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import MarkdownIt from 'markdown-it';
 import { compareTwoStrings } from 'string-similarity';
+import ignore from 'ignore';
 
 interface DuplicateResult {
     file1: string;
@@ -16,24 +17,49 @@ const SIMILARITY_THRESHOLD = 0.8; // Adjust this value (0-1) to control sensitiv
 const CHUNK_SIZE = 500; // Number of characters to compare at a time
 
 async function findDuplicateContent(directory: string): Promise<DuplicateResult[]> {
-    // Find all markdown files
-    const files = await glob('**/*.md', { 
+    // Load .gitignore patterns
+    console.log('📋 Loading .gitignore patterns...');
+    const ig = ignore();
+    try {
+        const gitignoreContent = fs.readFileSync(path.join(directory, '.gitignore'), 'utf-8');
+        ig.add(gitignoreContent);
+    } catch (error) {
+        console.log('⚠️  No .gitignore found, proceeding without it');
+    }
+
+    console.log('🔍 Scanning for markdown files...');
+    const allFiles = await glob('**/*.md', { 
         ignore: ['node_modules/**', 'dist/**'],
         cwd: directory 
     });
 
+    // Filter files using .gitignore rules
+    const files = allFiles.filter(file => !ig.ignores(file));
+    console.log(`📑 Found ${files.length} markdown files (${allFiles.length - files.length} ignored)\n`);
+
     const md = new MarkdownIt();
     const results: DuplicateResult[] = [];
 
-    // Read and process each file
-    const fileContents = files.map(file => ({
-        path: file,
-        content: fs.readFileSync(path.join(directory, file), 'utf-8')
-    }));
+    console.log('📖 Reading file contents...');
+    const fileContents = files.map(file => {
+        process.stdout.write(`  Reading ${file}...\r`);
+        return {
+            path: file,
+            content: fs.readFileSync(path.join(directory, file), 'utf-8')
+        };
+    });
+    console.log('\n✅ Finished reading files\n');
+
+    const totalComparisons = (fileContents.length * (fileContents.length - 1)) / 2;
+    let comparisonsDone = 0;
 
     // Compare files pairwise
     for (let i = 0; i < fileContents.length; i++) {
         for (let j = i + 1; j < fileContents.length; j++) {
+            comparisonsDone++;
+            const progress = ((comparisonsDone / totalComparisons) * 100).toFixed(1);
+            process.stdout.write(`🔄 Comparing files: ${progress}% (${comparisonsDone}/${totalComparisons})\r`);
+
             const file1 = fileContents[i];
             const file2 = fileContents[j];
 
@@ -62,6 +88,7 @@ async function findDuplicateContent(directory: string): Promise<DuplicateResult[
             }
         }
     }
+    console.log('\n✅ Finished comparing files\n');
 
     return results;
 }
