@@ -1,22 +1,22 @@
 ---
-description: A directory to facilitate collaboration among stakeholders in the FDAi project
+description: A directory to facilitate collaboration among stakeholders in the project
 emoji: "\U0001F465"
-title: FDAi Community Directory
-tags: 'FDAi, community, collaboration, decentralized-health, regulatory-processes'
+title: Community Directory
+tags: 'dFDA, community, collaboration, decentralized-health, regulatory-processes'
 published: true
 editor: markdown
 date: '2025-02-12T16:52:13.974Z'
 dateCreated: '2025-02-12T16:52:13.974Z'
 ---
-# FDAi Community Directory
+# Community Directory
 
-Welcome to the FDAi Community Directory! This repository is designed to facilitate collaboration and organization among various stakeholders involved in the FDAi project. Our goal is to create an open, transparent, and efficient ecosystem where partners from different sectors can come together to contribute to the advancement of decentralized health regulatory processes.
+Welcome to the Community Directory! This repository is designed to facilitate collaboration and organization among various stakeholders involved in the project. Our goal is to create an open, transparent, and efficient ecosystem where partners from different sectors can come together to contribute to the advancement of decentralized health regulatory processes.
 
 ## How to Navigate the Directory
 
 The directory is structured into several high-level folders, each catering to different partner groups and aspects of the project. Here's a brief overview of what you can find in each:
 
-- `/partners`: Contains information pertinent to all partners involved in the FDAi.
+- `/partners`: Contains information pertinent to all partners involved in the dFDA.
 - `/researchers`: Dedicated to academic and medical researchers contributing to the project.
 - `/healthcare_providers`: For hospitals, clinics, and health apps to share and access relevant information.
 - `/developers`: A space for software developers, data scientists, and AI experts to collaborate.
@@ -31,7 +31,7 @@ The directory is structured into several high-level folders, each catering to di
 
 Each main folder contains a `README.md` file that describes the purpose of the folder and provides instructions on how to add or modify content.
 
-## Contributing to the FDAi
+## Contributing to the dFDA
 
 We encourage contributions from all partners. To maintain a high standard of quality and organization, please follow these steps:
 
@@ -57,6 +57,6 @@ We believe in the power of community. Engage with other partners through discuss
 - **Privacy and Security**: Exercise caution with personal or sensitive information. Refer to our guidelines for what should and shouldn't be shared.
 - **Regular Updates**: The community directory is regularly updated to ensure relevance and usefulness. Partners are encouraged to update their pages as needed.
 
-Thank you for being a part of the FDAi initiative. Together, we can revolutionize the way health regulatory processes are managed and executed.
+Thank you for being a part of the dFDA initiative. Together, we can revolutionize the way health regulatory processes are managed and executed.
 
 Let's build a healthier future, one contribution at a time.

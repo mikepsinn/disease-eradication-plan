@@ -1,11 +1,11 @@
 ---
 description: >-
-  A directory for partners involved in the FDAi project, providing a space for
+  A directory for partners involved in the project, providing a space for
   organizations to introduce themselves, share their roles, and facilitate
   collaboration.
 emoji: "\U0001F91D"
 title: Partners Directory
-tags: 'partners, collaboration, FDAi, community-directory'
+tags: 'partners, collaboration, community-directory'
 published: true
 editor: markdown
 date: '2025-02-12T16:52:04.915Z'
@@ -13,13 +13,13 @@ dateCreated: '2025-02-12T16:52:04.915Z'
 ---
 # Partners Directory
 
-Welcome to the `/partners` directory of the FDAi Community Directory. This section serves as a central hub for all partner-related information, facilitating collaboration and communication among various stakeholders involved in the FDAi project.
+Welcome to the `/partners` directory of the Community Directory. This section serves as a central hub for all partner-related information, facilitating collaboration and communication among various stakeholders involved in the project.
 
 ## Purpose of the Partners Directory
 
 The purpose of this directory is to provide a space where partners can:
 
-- Introduce their organization and their role in the FDAi project.
+- Introduce their organization and their role in the project.
 - Share their interests and how they wish to contribute to the project.
 - Find contact information and engagement details for other partners.
 
@@ -28,7 +28,7 @@ The purpose of this directory is to provide a space where partners can:
 To ensure effective collaboration and organization, we encourage each partner to create a Markdown page within this directory. The page should include:
 
 - An introduction to the partner or organization.
-- A description of their role and interest in the FDAi project.
+- A description of their role and interest in the project.
 - Preferred contact information or instructions on how they wish to be engaged.
 
 ### Adding or Modifying Content
@@ -55,7 +55,7 @@ As this directory grows, a table of contents will be maintained here to provide 
 
 ## Additional Information
 
-For any questions or assistance, please refer to the `CONTRIBUTING.md` file or use the GitHub issue tracker to reach out to the FDAi community.
+For any questions or assistance, please refer to the `CONTRIBUTING.md` file or use the GitHub issue tracker to reach out to the Community.
 
-Thank you for being a part of the FDAi initiative. Your collaboration is vital to the success of this project.
+Thank you for being a part of the dFDA initiative. Your collaboration is vital to the success of this project.
 

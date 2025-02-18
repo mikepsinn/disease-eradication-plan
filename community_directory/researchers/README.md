@@ -1,10 +1,10 @@
 ---
 description: >-
-  A directory for academic and medical researchers contributing to the FDAi
+  A directory for academic and medical researchers contributing to the dFDA
   project, facilitating collaboration and resource sharing.
 emoji: "\U0001F4DA"
 title: Researchers Directory
-tags: 'researchers, FDAi, collaboration, resources'
+tags: 'researchers, collaboration, resources'
 published: true
 editor: markdown
 date: '2025-02-12T16:52:20.436Z'
@@ -12,14 +12,14 @@ dateCreated: '2025-02-12T16:52:20.436Z'
 ---
 # Researchers Directory
 
-Welcome to the Researchers Directory of the FDAi Community Directory. This space is dedicated to academic and medical researchers who are contributing their expertise and knowledge to the FDAi project. Here, you can find collaborations, share findings, and access resources that are pertinent to the research community within the FDAi ecosystem.
+Welcome to the Researchers Directory of the Community Directory. This space is dedicated to academic and medical researchers who are contributing their expertise and knowledge to the project. Here, you can find collaborations, share findings, and access resources that are pertinent to the research community within the dFDA ecosystem.
 
 ## Purpose of this Folder
 
 The purpose of this folder is to:
 - Serve as a central hub for researchers to find and share information.
-- Facilitate collaboration between researchers and other stakeholders in the FDAi project.
-- Provide a repository of research materials, publications, and data sets that can be used to support the FDAi's objectives.
+- Facilitate collaboration between researchers and other stakeholders in the project.
+- Provide a repository of research materials, publications, and data sets that can be used to support the dFDA's objectives.
 
 ## How to Add or Modify Content
 
@@ -40,20 +40,20 @@ As this directory grows, a table of contents will be maintained here to help you
 
 ## Getting Involved
 
-If you are a researcher interested in contributing to the FDAi, please create a Markdown page in this folder with the following information:
+If you are a researcher interested in contributing to the dFDA, please create a Markdown page in this folder with the following information:
 - An introduction of yourself and your research focus.
-- Your role and interest in the FDAi project.
+- Your role and interest in the project.
 - Contact information or how you wish to be engaged.
 
 Please use the `templates/partner_introduction.md` as a guide for creating your page.
 
 ## Resources for Researchers
 
-This section will contain links to resources such as research tools, data analysis software, and guidelines for best practices in medical and academic research within the context of the FDAi.
+This section will contain links to resources such as research tools, data analysis software, and guidelines for best practices in medical and academic research within the context of the dFDA.
 
 ## Contact
 
 For any questions or to seek assistance, please use the GitHub issue tracker to reach out to the community or contact the repository maintainers directly.
 
-Thank you for your contributions and for being an integral part of the FDAi's mission to revolutionize health regulatory processes through decentralization.
+Thank you for your contributions and for being an integral part of the dFDA's mission to revolutionize health regulatory processes through decentralization.
 

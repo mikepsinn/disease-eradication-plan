@@ -1,10 +1,10 @@
 ---
 description: >-
-  A directory for community volunteers contributing to the FDAi project,
+  A directory for community volunteers contributing to the project,
   providing resources and guidance for involvement.
 emoji: "\U0001F91D"
 title: Community Volunteers Directory
-tags: 'volunteers, community, FDAi, contribution'
+tags: 'volunteers, community, contribution'
 published: true
 editor: markdown
 date: '2025-02-12T16:51:40.444Z'
@@ -12,12 +12,12 @@ dateCreated: '2025-02-12T16:51:40.444Z'
 ---
 # Community Volunteers Directory
 
-Welcome to the Community Volunteers section of the FDAi Community Directory! This space is dedicated to individual contributors and volunteers who are looking to get involved with the FDAi project. Your passion, skills, and dedication are invaluable to the success of our initiatives.
+Welcome to the Community Volunteers section of the Community Directory! This space is dedicated to individual contributors and volunteers who are looking to get involved with the project. Your passion, skills, and dedication are invaluable to the success of our initiatives.
 
 ## Purpose of This Folder
 
 The purpose of this folder is to provide a centralized location where community volunteers can:
-- Find information on how to contribute to the FDAi project.
+- Find information on how to contribute to the project.
 - Share their own expertise and resources.
 - Connect with other volunteers and project teams.
 
@@ -25,7 +25,7 @@ The purpose of this folder is to provide a centralized location where community 
 
 If you're interested in contributing as a community volunteer, here's how you can get started:
 
-1. Read the main `README.md` file in the root directory to understand the overall structure and goals of the FDAi project.
+1. Read the main `README.md` file in the root directory to understand the overall structure and goals of the project.
 2. Check out the `CONTRIBUTING.md` file for detailed instructions on how to make contributions.
 3. Explore the subfolders and `README.md` files of other partner groups to see where your skills and interests align.
 
@@ -38,14 +38,14 @@ To add or modify content in this directory:
 3. Add your Markdown page or modify existing content within this folder.
 4. Submit a pull request with a clear description of your changes or additions.
 
-Please ensure that your contributions are clear, concise, and relevant to the FDAi project. For any substantial changes or new proposals, consider opening an issue first to discuss your ideas with the community.
+Please ensure that your contributions are clear, concise, and relevant to the project. For any substantial changes or new proposals, consider opening an issue first to discuss your ideas with the community.
 
 ## Markdown Pages
 
 We encourage each volunteer to create a Markdown page in this folder with the following information:
 
 - A brief introduction of yourself and your professional background.
-- Your role and interest in the FDAi project.
+- Your role and interest in the project.
 - How you wish to contribute and areas of expertise you can offer.
 - Contact information or preferred method of communication.
 

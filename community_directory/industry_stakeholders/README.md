@@ -2,7 +2,7 @@
 description: >-
   A directory for industry stakeholders including pharmaceutical companies,
   insurance companies, biotech firms, and medical device manufacturers
-  contributing to the FDAi project.
+  contributing to the project.
 emoji: "\U0001F465"
 title: Industry Stakeholders Directory
 tags: >-
@@ -15,23 +15,23 @@ dateCreated: '2025-02-12T16:51:58.855Z'
 ---
 # Industry Stakeholders Directory
 
-Welcome to the Industry Stakeholders Directory of the FDAi Community Directory. This section is dedicated to pharmaceutical companies, insurance companies, biotech firms, medical device manufacturers, and other key players in the healthcare industry. Your expertise, resources, and insights are invaluable to the success of the FDAi project.
+Welcome to the Industry Stakeholders Directory of the Community Directory. This section is dedicated to pharmaceutical companies, insurance companies, biotech firms, medical device manufacturers, and other key players in the healthcare industry. Your expertise, resources, and insights are invaluable to the success of the project.
 
 ## Purpose of this Folder
 
-The purpose of this folder is to provide a centralized location where industry stakeholders can share their contributions, find relevant information, and collaborate with other partners in the FDAi ecosystem. This includes but is not limited to:
+The purpose of this folder is to provide a centralized location where industry stakeholders can share their contributions, find relevant information, and collaborate with other partners in the dFDA ecosystem. This includes but is not limited to:
 
 - Sharing industry-specific research and development updates.
 - Providing insights into regulatory compliance from an industry perspective.
 - Discussing challenges and opportunities in adopting decentralized FDA processes.
-- Collaborating on projects that align with industry interests and the goals of the FDAi.
+- Collaborating on projects that align with industry interests and the goals of the dFDA.
 
 ## How to Get Involved
 
-To get involved and contribute to the FDAi project as an industry stakeholder:
+To get involved and contribute to the project as an industry stakeholder:
 
-1. Review the main `README.md` and `CONTRIBUTING.md` files to understand the overall structure and contribution guidelines of the FDAi Community Directory.
-2. Create a Markdown page within this folder to introduce your organization, detailing your role, interests, and how you wish to contribute to the FDAi project.
+1. Review the main `README.md` and `CONTRIBUTING.md` files to understand the overall structure and contribution guidelines of the Community Directory.
+2. Create a Markdown page within this folder to introduce your organization, detailing your role, interests, and how you wish to contribute to the project.
 3. Use the provided templates in the `/templates` folder to standardize your submissions, such as project proposals or partnership introductions.
 4. Engage with other partners through pull requests and the issue tracker to propose new ideas, request collaborations, or offer assistance.
 
@@ -52,5 +52,5 @@ For any questions or to seek further assistance, please refer to the contact inf
 
 As this folder grows, a table of contents will be maintained here to provide easy navigation to various contributions and information within the Industry Stakeholders Directory.
 
-Thank you for your participation and contribution to the FDAi project. Together, we can shape the future of decentralized health regulatory processes.
+Thank you for your participation and contribution to the project. Together, we can shape the future of decentralized health regulatory processes.
 

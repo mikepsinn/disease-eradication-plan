@@ -36,7 +36,12 @@
     "migrate": "node scripts/migrate-content.js",
     "process-images": "node scripts/process-images.js",
     "test": "jest",
-    "gdocs-sync": "ts-node scripts/gdocs-sync.ts"
+    "gdocs-sync": "ts-node scripts/gdocs-sync.ts",
+    "find-duplicates": "ts-node scripts/find-duplicate-filenames.ts",
+    "find-duplicates:delete": "ts-node scripts/find-duplicate-filenames.ts --delete",
+    "find-duplicates:content": "ts-node scripts/find-duplicates.ts",
+    "find-orphaned-pages": "ts-node scripts/find-orphaned-pages.js",
+    "find-orphaned-pages:delete": "ts-node scripts/find-orphaned-pages.js --delete"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

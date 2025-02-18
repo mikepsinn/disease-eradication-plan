@@ -1,6 +1,6 @@
 ---
 description: >-
-  A template for partners to introduce themselves in the FDAi Community
+  A template for partners to introduce themselves in the Community
   Directory
 emoji: "\U0001F91D"
 title: Partner Introduction Template
@@ -12,7 +12,7 @@ dateCreated: '2025-02-12T16:52:29.661Z'
 ---
 # Partner Introduction Template
 
-Welcome to the FDAi Community Directory! This template is designed to help partners introduce themselves to the community. By providing consistent and structured information about each partner, we can foster better collaboration and understanding across the FDAi ecosystem.
+Welcome to the Community Directory! This template is designed to help partners introduce themselves to the community. By providing consistent and structured information about each partner, we can foster better collaboration and understanding across the dFDA ecosystem.
 
 Please copy this template into your respective folder (e.g., `/researchers`, `/healthcare_providers`, etc.), fill it out with your information, and submit it as a Markdown file. If you're not familiar with Markdown, you can find a quick guide [here](https://www.markdownguide.org/basic-syntax/).
 
@@ -26,19 +26,19 @@ Please copy this template into your respective folder (e.g., `/researchers`, `/h
 
 ## About
 
-Provide a brief description of your organization or individual background, your mission, and the work you do. Include any relevant achievements or projects that highlight your experience in the field related to the FDAi.
+Provide a brief description of your organization or individual background, your mission, and the work you do. Include any relevant achievements or projects that highlight your experience in the field related to the dFDA.
 
-## Role and Interest in the FDAi Project
+## Role and Interest in the project
 
-Describe your role and interest in the FDAi project. What are your goals, and how do you see yourself contributing to the project? What expertise or resources can you bring to the community?
+Describe your role and interest in the project. What are your goals, and how do you see yourself contributing to the project? What expertise or resources can you bring to the community?
 
 ## Areas of Expertise
 
-List your areas of expertise and any specific skills or knowledge that you can contribute to the FDAi project.
+List your areas of expertise and any specific skills or knowledge that you can contribute to the project.
 
 ## Collaboration Opportunities
 
-Mention any specific areas within the FDAi project where you seek collaboration or can offer support. This could include research, development, regulatory guidance, legal advice, patient advocacy, etc.
+Mention any specific areas within the project where you seek collaboration or can offer support. This could include research, development, regulatory guidance, legal advice, patient advocacy, etc.
 
 ## Contact Information
 
@@ -53,9 +53,9 @@ Mention any specific areas within the FDAi project where you seek collaboration 
 
 Provide instructions or preferences on how other partners can engage with you. This could include meeting schedules, preferred communication channels, or any other collaboration protocols you have in place.
 
-By submitting this introduction, you help build a more connected and informed FDAi community. We look forward to your valuable contributions!
+By submitting this introduction, you help build a more connected and informed Community. We look forward to your valuable contributions!
 
 ---
 
-*Note: Please ensure that you do not share any sensitive or confidential information in this document. Refer to the FDAi Community Directory's privacy and security guidelines for more information.*
+*Note: Please ensure that you do not share any sensitive or confidential information in this document. Refer to the Community Directory's privacy and security guidelines for more information.*
 

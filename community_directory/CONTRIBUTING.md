@@ -1,23 +1,23 @@
 ---
 description: >-
-  Guidelines for contributing to the FDAi Community Directory, including steps
+  Guidelines for contributing to the Community Directory, including steps
   for getting started and making contributions via pull requests.
 emoji: "\U0001F91D"
-title: Contributing to the FDAi Community Directory
-tags: 'FDAi, community-directory, contributing, open-source'
+title: Contributing to the Community Directory
+tags: 'dFDA, community-directory, contributing, open-source'
 published: true
 editor: markdown
 date: '2025-02-12T16:51:44.377Z'
 dateCreated: '2025-02-12T16:51:44.377Z'
 ---
-# Contributing to the FDAi Community Directory
+# Contributing to the Community Directory
 
-Thank you for your interest in contributing to the FDAi Community Directory. This document provides guidelines for contributing to the FDAi project. By participating in this project, you agree to abide by its terms.
+Thank you for your interest in contributing to the Community Directory. This document provides guidelines for contributing to the project. By participating in this project, you agree to abide by its terms.
 
 ## How to Contribute
 
 ### Getting Started
-1. Familiarize yourself with the FDAi Community Directory by reading the main `README.md`.
+1. Familiarize yourself with the Community Directory by reading the main `README.md`.
 2. Decide where your contribution fits in the directory structure.
 
 ### Making Contributions
@@ -55,7 +55,7 @@ Thank you for your interest in contributing to the FDAi Community Directory. Thi
 - Regularly check your pull requests and issues for any feedback or required changes.
 
 ## Contact Information
-- For general inquiries or assistance, please reach out to the FDAi project maintainers at [contact@email.com].
+- For general inquiries or assistance, please reach out to the project maintainers at [contact@email.com].
 - For specific collaboration requests, use the contact information provided on the partner's Markdown page in the respective folder.
 
 ## Additional Guidelines
@@ -63,5 +63,5 @@ Thank you for your interest in contributing to the FDAi Community Directory. Thi
 - Do not include any proprietary, confidential, or sensitive information in your contributions.
 - Encourage community engagement by participating in discussions and sharing your expertise.
 
-By following these guidelines, you help to maintain the quality and integrity of the FDAi Community Directory. We look forward to your valuable contributions and thank you for helping to advance the goals of the FDAi.
+By following these guidelines, you help to maintain the quality and integrity of the Community Directory. We look forward to your valuable contributions and thank you for helping to advance the goals of the dFDA.
 

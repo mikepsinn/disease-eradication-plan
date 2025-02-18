@@ -127,7 +127,10 @@ Cost analysis based on data from: [Examination of Clinical Trial Costs and Barri
 
 # Platform Architecture
 
-<img src="https://s3.us-east-1.amazonaws.com/static.crowdsourcingcures.org/img%2Fdfda-framework-diagram.png" alt="Platform architecture" style="max-width: 600px; width: 100%;" />
+
+<img src="https://s3.us-east-1.amazonaws.com/static.crowdsourcingcures.org/img%2Fdfda-framework-diagram.png" alt="Platform architecture" style="max-width: 800px; width: 100%; margin-top: 10px;" />
+
+[Learn more about the platform architecture](03-platform.md)
 
 
 ## Check Out These Great Features! 👀
