@@ -21,7 +21,7 @@ But how useful is it to the average person to know the amount of Riboflavin in s
 
 Telling the average person the amount of riboflavin in something isn’t going to achieve this. This is evidenced by the fact that these labels have existed for decades and during this time, we’ve only seen increases in most diseases they were intended to reduce.
 
-We have created a new and improved **Outcomes Label** that instead lists the degree to which the product is likely to improve or worsen specific health outcomes or symptoms. We currently have generated Outcome Labels for thousands of foods, drugs, and nutritional supplements that can be found in our [studies](studies.curedao.org). These labels are derived from the analysis of 10 million data points anonymously donated by over 10,000 study participants via our [app](app.curedao.org).
+We have created a new and improved **Outcomes Label** that instead lists the degree to which the product is likely to improve or worsen specific health outcomes or symptoms. We currently have generated Outcome Labels for thousands of foods, drugs, and nutritional supplements that can be found in our [studies](studies.dfda.earth). These labels are derived from the analysis of 10 million data points anonymously donated by over 10,000 study participants via our [app](app.curedao.org).
 
 ![](https://crowdsourcingcures.org/wp-content/uploads/2021/05/nutrition-facts-vs-outcome-labels-melatonin-1024x592.png)
 
