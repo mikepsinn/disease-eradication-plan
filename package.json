@@ -10,14 +10,17 @@
     "@ai-sdk/provider": "^1.0.0",
     "@ai-sdk/xai": "^1.0.0",
     "@aws-sdk/client-s3": "^3.0.0",
+    "@googleapis/docs": "^3.3.0",
     "@notionhq/client": "^2.2.15",
     "@types/events": "^3.0.3",
     "ai": "^3.0.0",
     "dotenv": "^16.4.7",
     "exa-js": "^1.0.0",
+    "googleapis": "^144.0.0",
     "gray-matter": "^4.0.3",
     "ignore": "^7.0.3",
     "js-yaml": "^4.1.0",
+    "markdown-it": "^14.1.0",
     "mime-types": "^2.1.35",
     "openai": "^4.0.0",
     "pg": "^8.13.1",
@@ -29,7 +32,8 @@
     "organize": "node scripts/file-organizer.js",
     "migrate": "node scripts/migrate-content.js",
     "process-images": "node scripts/process-images.js",
-    "test": "jest"
+    "test": "jest",
+    "gdocs-sync": "ts-node scripts/gdocs-sync.ts"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
