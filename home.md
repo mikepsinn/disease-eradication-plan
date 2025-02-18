@@ -2,17 +2,17 @@
 title: 💡 The Decentralized FDA
 description: 80Xing medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials 💊
 published: true
-date: 2024-07-28T16:52:11.076Z
+date: 2025-02-18T05:07:09.542Z
 tags: overview
 editor: markdown
 dateCreated: 2023-11-24T22:24:09.275Z
 ---
 
-# Our Modest Proposal
+# Objective: Total Disease Eradication
 
-80X medical progress by upgrading fda.gov and giving all patients the right to effortlessly participate in global decentralized clinical trials 💊
+🚀An 80X acceleration in medical progress by upgrading fda.gov and giving all patients the right to effortlessly participate in global automated decentralized clinical trials.
 
-## Problems We Can Solve
+## Horrible Problems We Can Solve
 
 👥 [$41k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001) cost per participant in traditional clinical trials
 
