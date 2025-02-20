@@ -25,14 +25,14 @@ Understanding the economic value of new therapies is essential for evaluating th
 
 The value of a new therapy can be assessed through market performance and societal benefits:
 
-- **Market Valuation:** Research estimates the average value of a successful new drug at **[$1.62 billion](https://arxiv.org/abs/2212.07384?utm_source=chatgpt.com)**.
-- **Development Costs:** Drug development costs range from **[$314 million to $4.46 billion](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562?utm_source=chatgpt.com)** depending on therapeutic area and clinical complexity.
+- **Market Valuation:** Research estimates the average value of a successful new drug at **[$1.62 billion](https://arxiv.org/abs/2212.07384)**.
+- **Development Costs:** Drug development costs range from **[$314 million to $4.46 billion](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562)** depending on therapeutic area and clinical complexity.
 
 ---
 
 ### **Annual Value Based on Average Approvals**
 
-- **FDA Approvals:** The **[FDA](https://www.nature.com/articles/d41573-025-00001-5?utm_source=chatgpt.com)** approves around **50 new drugs annually**.
+- **FDA Approvals:** The **[FDA](https://www.nature.com/articles/d41573-025-00001-5)** approves around **50 new drugs annually**.
 - **Total Annual Value:** Multiplying **50 approvals** by **$1.62 billion** yields an estimated **$81 billion** in economic value per year.
 
 ---
@@ -58,6 +58,6 @@ Accelerating medical progress by 80X could generate **$6.48 trillion annually**,
 
 ### **Sources**
 
-1. [Economic Valuation of New Drug Approvals - arXiv](https://arxiv.org/abs/2212.07384?utm_source=chatgpt.com)
-2. [Drug Development Cost Analysis - JAMA Network](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562?utm_source=chatgpt.com)
-3. [FDA Drug Approvals - Nature Reviews Drug Discovery](https://www.nature.com/articles/d41573-025-00001-5?utm_source=chatgpt.com)
+1. [Economic Valuation of New Drug Approvals - arXiv](https://arxiv.org/abs/2212.07384)
+2. [Drug Development Cost Analysis - JAMA Network](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562)
+3. [FDA Drug Approvals - Nature Reviews Drug Discovery](https://www.nature.com/articles/d41573-025-00001-5)
