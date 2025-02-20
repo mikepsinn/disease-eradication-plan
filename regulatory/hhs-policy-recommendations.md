@@ -10,9 +10,9 @@ dateCreated: '2025-02-20T05:43:31.435Z'
 
 This proposal recommends that the Department of Health and Human Services (HHS) sponsor an **FDA-X Prize** to incentivize the creation of an **open-source, decentralized FDA (dFDA)** platform. This platform would enable **perpetual, patient-driven clinical trials** accessible to anyone globally, eliminating inefficiencies in the current phased trial system. The proposal outlines strategies for **redirecting NIH research funding**, **leveraging existing HHS authorities**, and **adopting outcome-based funding models** to maximize trial participation without requiring new legislation. Additionally, it proposes the **strategic reallocation of portions of Medicare and Medicaid funding** under existing statutory provisions to support broader access to decentralized trials.
 
-A critical component of this proposal is to **clarify the potential for drug companies to set a per-participant price** when creating trials on the dFDA platform. Under existing **FDA regulations ([21 CFR 312.8](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/section-312.8))**, companies may charge for investigational drugs to recover direct costs, including employee salaries, without generating profit. This means that **drug companies could legally charge the NIH a per-participant price** covering all operational expenses—such as manufacturing, distribution, and employee compensation—**without requiring pre-approval**, provided they do not exceed cost-recovery limits. This structure would enable companies to sustain clinical trial operations while maintaining compliance with regulatory standards, promoting a scalable and sustainable ecosystem for perpetual trials.
+A critical component of this proposal is to **clarify the potential for drug companies to set a per-participant price** when creating trials on the dFDA platform. Under existing **FDA regulations ([21 CFR 312.8](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/section-312.8))**, companies may charge for investigational drugs to recover direct costs, including employee salaries. This means that **drug companies could legally charge the NIH a per-participant price** covering all operational expenses—such as manufacturing, distribution, and employee compensation—**without requiring pre-approval**, provided they do not exceed cost-recovery limits. This structure would enable companies to sustain clinical trial operations while maintaining compliance with regulatory standards, promoting a scalable and sustainable ecosystem for perpetual trials.
 
-Moreover, **existing Medicare and Medicaid policies** already permit reimbursement for routine patient costs in qualifying clinical trials. By aligning the dFDA platform's operational structure with these statutory frameworks, **drug companies could expand access to experimental treatments** without profit margins, leveraging government funding mechanisms to cover essential costs. This approach ensures that trial sponsors can sustainably conduct large-scale studies while maintaining affordability and regulatory compliance.
+Moreover, **existing Medicare and Medicaid policies** already permit reimbursement for routine patient costs in qualifying clinical trials. By aligning the dFDA platform's operational structure with these statutory frameworks, **drug companies could expand access to experimental treatments**, leveraging government funding mechanisms to cover essential costs. This approach ensures that trial sponsors can sustainably conduct large-scale studies while maintaining affordability and regulatory compliance.
 
 ---
 
@@ -112,10 +112,6 @@ Below is a comprehensive list of statutes, executive actions, and related preced
      
 10. **Trump Administration’s Department of Government Efficiency**  
     - *Precedent:* the Department of Government Efficiency highlights an executive focus on streamlining operations, reducing waste, and embracing digital transformation in regulatory agencies such as the FDA.
-
-Together, these statutes and precedents not only support the idea of modernizing the FDA through digital and decentralized trial models but also provide a legal and policy framework that allows such transformative changes to occur without the need for new legislative enactments.
-
-**Why Previous Closed-Source, Bureaucratic Efforts Have Fallen Short and How an Open-Source, X Prize Model Could Finally Unlock Radically Efficient Decentralized Clinical Research**
 
 ---
 
