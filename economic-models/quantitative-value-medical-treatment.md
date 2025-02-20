@@ -1,3 +1,12 @@
+---
+title: Quantifying the Value of Medical Treatments to Humanity
+description: Evaluating medical treatments using Quality-Adjusted Life Years (QALYs) to measure both quantity and quality of life improvements.
+published: true
+date: '2025-02-20T05:43:21.814Z'
+tags: medical-treatments, QALYs, healthcare-economics, quantitative-analysis
+editor: markdown
+dateCreated: '2025-02-20T05:43:21.814Z'
+---
 # Quantifying the Value of Medical Treatments to Humanity
 
 Evaluating the benefit of a new medical treatment to humanity requires a quantitative approach that goes beyond simple efficacy metrics.  One widely accepted method for this is the use of **Quality-Adjusted Life Years (QALYs)**. QALYs provide a standardized measure that combines both the **quantity** and **quality** of life gained from a medical intervention.
