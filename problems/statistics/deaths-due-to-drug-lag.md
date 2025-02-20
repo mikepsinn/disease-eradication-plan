@@ -7,7 +7,7 @@ emoji: "☠️"
 featuredImage: "https://static.crowdsourcingcures.org/dfda/assets/us-swiss-life-expectancy-drug-approvals.png"
 ---
 
-FDA delays in approving new drugs and treatments that are already available in other countries result in up to 120,000 preventable deaths per decade in the United States. This "drug lag" occurs when life-saving medications are available to patients in other countries years before US patients can access them.
+FDA delays in approving new drugs and treatments that are already available in other countries result in up to [120,000 preventable deaths per decade](https://www.fdareview.org/features/references/#gieringer85) in the United States. This "drug lag" occurs when life-saving medications are available to patients in other countries years before US patients can access them.
 
 ## Impact
 

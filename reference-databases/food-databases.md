@@ -27,9 +27,9 @@ All of these datasets—including:
 
 Contains nutrient data for 9k general non-branded foods.
 
-USDA's [Food and Nutrient Database for Dietary Studies (FNDDS)](https://data.nal.usda.gov/dataset/food-and-nutrient-database-dietary-studies-fndds) is a database, which is used to convert food and beverages consumed in What We Eat In America (WWEIA), National Health and Nutrition Examination Survey (NHANES) into gram amounts and to determine their nutrient values. Because FNDDS is used to generate the nutrient intake data files for WWEIA, NHANES, it is not required to estimate nutrient intakes from the survey. 
-FNDDS is made available for researchers using WWEIA, NHANES to review the nutrient profiles for specific foods and beverages as well as their associated portions and recipes. 
-Such detailed information makes it possible for researchers to conduct enhanced analysis of dietary intakes. 
+USDA's [Food and Nutrient Database for Dietary Studies (FNDDS)](https://data.nal.usda.gov/dataset/food-and-nutrient-database-dietary-studies-fndds) is a database, which is used to convert food and beverages consumed in What We Eat In America (WWEIA), National Health and Nutrition Examination Survey (NHANES) into gram amounts and to determine their nutrient values. Because FNDDS is used to generate the nutrient intake data files for WWEIA, NHANES, it is not required to estimate nutrient intakes from the survey.
+FNDDS is made available for researchers using WWEIA, NHANES to review the nutrient profiles for specific foods and beverages as well as their associated portions and recipes.
+Such detailed information makes it possible for researchers to conduct enhanced analysis of dietary intakes.
 FNDDS can also be used in other dietary studies to code foods/beverages and amounts eaten and to calculate the amounts of nutrients/food components in those items.
 
 ### USDA Branded Food Products Database (BFPD)
