@@ -1,4 +1,23 @@
-# Proposal for HHS to Sponsor an FDA-X Prize for an Open-Source Decentralized FDA Enabling Perpetual Trials
+# How to Open a Floodgate of New Therapies for Free with 0 Legislative Changes
+
+---
+**TLDR**  
+
+| **Metric** | **Current System** | **Proposed dFDA System** | **Source** |
+|------------|--------------------|--------------------------|------------|
+| Annual trial capacity (NIH-funded) | ~1.2M participants ($51B ÷ $41k/patient) | **61M+ participants** ($30.6B redirected ÷ $500/patient) | [1,3] |
+| Per-patient trial cost | $41,413 (median) | **$500** (RECOVERY Trial model) | [1,2] |
+| Time-to-patient access | 10-15 years | <2 years via perpetual trials | – |
+| Potential longevity participants | Limited by disease classification | **Unlimited** (patient-driven endpoints) | – |
+| Regulatory compliance path | N/A | **21 CFR 312.8** enables immediate cost recovery | [8] |
+
+**Key Numbers**  
+1. **83x cost efficiency** - Treat 61M vs 1.2M patients with same funds  
+2. **$2T annual savings** from accelerated development ([JAMA](https://pmc.ncbi.nlm.nih.gov/articles/PMC7295430/))  
+3. **0 legislative changes** - Uses existing:  
+   - FDA cost-recovery rules ([21 CFR 312.8](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/section-312.8))  
+   - Medicare/Medicaid trial coverage ([CMS Policy](https://www.cms.gov/medicare/coverage/approved-facilities-trials-registries/clinical-policies))  
+4. **100M+ additional participants** through Medicare/Medicaid integration  
 
 ---
 
@@ -8,7 +27,7 @@ This proposal recommends that the Department of Health and Human Services (HHS) 
 
 A critical component of this proposal is to **clarify the potential for drug companies to set a per-participant price** when creating trials on the dFDA platform. Under existing **FDA regulations (21 CFR 312.8)**, companies may charge for investigational drugs to recover direct costs, including employee salaries, without generating profit. This means that **drug companies could legally charge the NIH a per-participant price** covering all operational expenses—such as manufacturing, distribution, and employee compensation—**without requiring pre-approval**, provided they do not exceed cost-recovery limits. This structure would enable companies to sustain clinical trial operations while maintaining compliance with regulatory standards, promoting a scalable and sustainable ecosystem for perpetual trials.
 
-Moreover, **existing Medicare and Medicaid policies** already permit reimbursement for routine patient costs in qualifying clinical trials. By aligning the dFDA platform’s operational structure with these statutory frameworks, **drug companies could expand access to experimental treatments** without profit margins, leveraging government funding mechanisms to cover essential costs. This approach ensures that trial sponsors can sustainably conduct large-scale studies while maintaining affordability and regulatory compliance.
+Moreover, **existing Medicare and Medicaid policies** already permit reimbursement for routine patient costs in qualifying clinical trials. By aligning the dFDA platform's operational structure with these statutory frameworks, **drug companies could expand access to experimental treatments** without profit margins, leveraging government funding mechanisms to cover essential costs. This approach ensures that trial sponsors can sustainably conduct large-scale studies while maintaining affordability and regulatory compliance.
 
 ---
 
@@ -37,7 +56,7 @@ Given the size of the Medicare and Medicaid budgets and existing statutory permi
 
 # Potential Participant Capacity with Proposed Funding
 
-Given the **$30.6 billion** annual allocation for perpetual and adaptive trial execution and referencing the **Oxford RECOVERY Trial’s per-patient cost of \~$500** ([RECOVERY Trial Cost](https://sph.nus.edu.sg/wp-content/uploads/2022/09/Meeting-Summary-RECOVERY-Trial.pdf?utm_source=chatgpt.com)), the proposed funding could support:
+Given the **$30.6 billion** annual allocation for perpetual and adaptive trial execution and referencing the **Oxford RECOVERY Trial's per-patient cost of \~$500** ([RECOVERY Trial Cost](https://sph.nus.edu.sg/wp-content/uploads/2022/09/Meeting-Summary-RECOVERY-Trial.pdf?utm_source=chatgpt.com)), the proposed funding could support:
 
 - **Over 61 million participants annually** (**$30.6B ÷ $500 per participant**).
 
