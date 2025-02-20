@@ -1,3 +1,12 @@
+---
+title: Economic Value of Accelerating Medical Progress Through New Therapies
+description: Estimates the economic value of new therapies, including their market valuation and potential impact when accelerating medical progress by 80X.
+published: true
+date: '2025-02-20T05:43:26.476Z'
+tags: medical-progress, economic-value, new-therapies, drug-development
+editor: markdown
+dateCreated: '2025-02-20T05:43:26.477Z'
+---
 **Estimating the Economic Value of Accelerating Medical Progress Through New Therapies**
 
 ---
@@ -52,4 +61,3 @@ Accelerating medical progress by 80X could generate **$6.48 trillion annually**,
 1. [Economic Valuation of New Drug Approvals - arXiv](https://arxiv.org/abs/2212.07384?utm_source=chatgpt.com)
 2. [Drug Development Cost Analysis - JAMA Network](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562?utm_source=chatgpt.com)
 3. [FDA Drug Approvals - Nature Reviews Drug Discovery](https://www.nature.com/articles/d41573-025-00001-5?utm_source=chatgpt.com)
-
