@@ -45,7 +45,8 @@
     "tree": "node scripts/generate-tree.js",
     "tree:md": "node scripts/generate-tree.js --markdown",
     "tree:save": "node scripts/generate-tree.js --output=tree.txt",
-    "tree:md:save": "node scripts/generate-tree.js --markdown --output=markdown-tree.txt"
+    "tree:md:save": "node scripts/generate-tree.js --markdown --output=markdown-tree.txt",
+    "fix-frontmatter": "node scripts/fix_frontmatter_metadata.js"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
