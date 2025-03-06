@@ -2,13 +2,13 @@
 title: 💡 The Decentralized FDA
 description: 80Xing medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials 💊
 published: true
-date: 2025-02-18T05:07:09.542Z
+date: 2025-03-06T22:55:07.316Z
 tags: overview
 editor: markdown
 dateCreated: 2023-11-24T22:24:09.275Z
 ---
 
-# Objective: Total Disease Eradication
+# Objective: Disease Eradication
 
 🚀An 80X acceleration in medical progress by upgrading fda.gov and giving all patients the right to effortlessly participate in global automated decentralized clinical trials.
 
@@ -18,19 +18,19 @@ dateCreated: 2023-11-24T22:24:09.275Z
 
 💸 [$1.6 Billion](https://jamanetwork.com/journals/jama/fullarticle/2762311) cost to develop a new treatment falls on patients
 
-☠️ [120,000 Deaths/Decade](ttps://www.fdareview.org/features/references/#gieringer85) due to regulatory delays
+☠️ [21,000 to 120,000 People](https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/1985/5/cj5n1-10.pdf) more people are being murdered each decade by simple inefficiency in our regulatory processes
 
-🚫 [85% of patients](https://www.ncbi.nlm.nih.gov/pubmed/14628985) are unable to participate in clinical trials
+🚫 [85% of patients](https://www.ncbi.nlm.nih.gov/pubmed/14628985) are not allowed to participate in clinical trials
 
-💊 [95% of diseases](ttps://ncats.nih.gov/sites/default/files/NCATS_RareDiseasesFactSheet.pdf) have **NO** FDA-approved treatments
+💊 [95% of diseases](https://ncats.nih.gov/sites/default/files/NCATS_RareDiseasesFactSheet.pdf) have **NO** FDA-approved treatments
 
-🤒 [17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) of suffering until a new treatment reaches patients
+🤒 [17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) of suffering is endured from discovery of a new treatment until it reaches patients
 
 ⚛️ [166 billion](https://www.nature.com/articles/549445a) potential treatments have not been tested
 
 🌍 [2 Billion](https://www.george-health.com/global-health-challenge/) people are suffering from uncured diseases
 
-🧫 [44 years](https://www.who.int/health-topics/smallpox) since we last cured a disease
+🧫 It's been [44 years](https://www.who.int/health-topics/smallpox) since we last cured a disease
 
 🙈 **Negative Results are Never Published** so we waste billions of dollars repeating failed drug trials.
 
@@ -127,10 +127,7 @@ Cost analysis based on data from: [Examination of Clinical Trial Costs and Barri
 
 # Platform Architecture
 
-
-<img src="https://s3.us-east-1.amazonaws.com/static.crowdsourcingcures.org/img%2Fdfda-framework-diagram.png" alt="Platform architecture" style="max-width: 800px; width: 100%; margin-top: 10px;" />
-
-[Learn more about the platform architecture](03-platform.md)
+<img src="https://s3.us-east-1.amazonaws.com/static.crowdsourcingcures.org/img%2Fdfda-framework-diagram.png" alt="Platform architecture" style="max-width: 600px; width: 100%;" />
 
 
 ## Check Out These Great Features! 👀
