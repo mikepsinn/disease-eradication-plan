@@ -24,10 +24,21 @@ The [Food and Drug Administration (FDA)](https://www.fda.gov/) must transition f
 
 ---
 
+### **Section 1A. The Problem**
+The current medical research system is failing billions of patients worldwide:
+
+- **2 billion people** suffer from **thousands of diseases**, yet **95% lack FDA-approved treatments**.
+- Despite **$60B/year in research funding**, clinical trials remain **slow, expensive, and scarce**.
+- **NIH RECOVER ($1.6B) and All of Us ($4B) completed 0 trials** over multiple years.
+- **60% of patients** are willing to join trials, yet **less than 5% are ever offered the chance**.
+- No **global database** exists to rank treatment effectiveness using clinical and real-world evidence.
+
+---
+
 ### **Section 2. Definitions**
 (a) **"Decentralized Autonomous FDA (dFDA)"**: A blockchain-secured, AI-driven platform that continuously analyzes anonymized [real-world data (RWD)](https://www.fda.gov/science-research/science-and-research-special-topics/real-world-evidence) from global clinical trials, electronic health records, and patient-reported outcomes to rank treatments by safety and efficacy.
 (b) **"Decentralized Clinical Trials (DCTs)"**: [Trials conducted via telemedicine, wearable sensors, and direct-to-patient supply chains, with no physical trial sites.](https://www.fda.gov/drugs/cder-conversations/evolving-role-decentralized-clinical-trials-and-digital-health-technologies)
-(c) **"N-of-1 analysis"**: [A personalized assessment of an individual’s response to a treatment, calculated by comparing their baseline health data to post-intervention outcomes.](https://en.wikipedia.org/wiki/N_of_1_trial)
+(c) **"N-of-1 analysis"**: [A personalized assessment of an individual's response to a treatment, calculated by comparing their baseline health data to post-intervention outcomes.](https://en.wikipedia.org/wiki/N_of_1_trial)
 
 ---
 
@@ -40,6 +51,11 @@ Within 180 days, the Secretary of Health and Human Services (HHS) shall:
 - **Open Source**: The dFDA platform will be developed as open-source software, with publicly accessible code repositories to foster transparency, community contributions, and independent audits.
 - [Machine-learning models](https://www.databricks.com/glossary/machine-learning-models) trained on the entire universe of clinical and RWD, including international datasets ([EU EMA](https://www.ema.europa.eu/en/homepage), [Japan PMDA](https://www.pmda.go.jp/english/)).
 - Automated adverse-event detection using [Natural Language Processing (NLP)](https://www.ibm.com/think/topics/natural-language-processing) of social media, EHRs, and pharmacy records.
+- **Transform fda.gov into an "Amazon for Decentralized Trials"** where anyone can effortlessly create or join a study, modeled after successful platforms like the [Oxford RECOVERY trial](https://www.recoverytrial.net/).
+- Implement **standardized, automated protocols** to reduce setup time and costs.
+- Create a system where patients enter their condition and receive a **ranked list of the most effective treatments** based on comprehensive clinical and real-world data.
+- Provide every patient with a personal [FDAi AI agent](https://fdai.earth) that can call them to collect data about food and drug intake, analyze time-series data using causal inference, and create n-of-1 studies to be aggregated in the global database.
+
 (b) Partner with the [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) to ensure algorithmic fairness, reproducibility, and compliance with [CFR Title 21](https://www.ecfr.gov/current/title-21).
 (c) Collaborate with the [World Health Organization (WHO)](https://www.who.int/) to adopt global data-sharing standards (e.g., [HL7 FHIR](https://www.hl7.org/fhir/)).
  
@@ -50,16 +66,18 @@ Within 180 days, the Secretary of Health and Human Services (HHS) shall:
 (b) **Streamlined Study Creation**: Drug manufacturers or researchers will have access to a simple online platform to propose and create studies, akin to a third-party vendor registration process on e-commerce platforms.
 - **Direct Intervention Delivery**: Upon a new participant joining a trial, the primary responsibility of the study creator will be the prompt and efficient delivery of the intervention directly to the participant, their pharmacy, or healthcare provider.
 (c) **Crowdfunding and Direct Payments**: Patients may crowdfund or directly pay for experimental treatments without triggering FDA "marketing" restrictions ([21 CFR § 312.7](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312)).
+(d) **Cost-Effective Trial Model**: Based on the [Oxford RECOVERY trial](https://www.recoverytrial.net/) which tested **18 treatments for just $3M**—about **$500 per subject, 80x cheaper than traditional trials**—by integrating into **EHRs** and using **simple online data entry**. With adequate funding, this model could test **hundreds of thousands of treatments**, dramatically accelerating drug discovery.
 
 #### **3.3 Elimination of Economic Barriers**
 (a) **Abolish Pharma User Fees**: The FDA shall cease collection of [Prescription Drug User Fee Act (PDUFA)](https://www.fda.gov/industry/fda-user-fee-programs/prescription-drug-user-fee-amendments) and [Generic Drug User Fee Act (GDUFA)](https://www.fda.gov/industry/fda-user-fee-programs/generic-drug-user-fee-amendments) fees as these are ultimately passed on to the patient in the form of higher costs for medicines. Funding gaps shall be offset by:
 - Reallocating 50% of savings from automated trial oversight to FDA operations.
-- Grants from the [National Institutes of Health (NIH)](https://www.nih.gov/) for high-priority public health tools (e.g., antibiotics, Alzheimer’s drugs).
+- Grants from the [National Institutes of Health (NIH)](https://www.nih.gov/) for high-priority public health tools (e.g., antibiotics, Alzheimer's drugs).
 
 #### **3.4 Real-World Data Sharing Mandate**  
 (a) **Open Outcomes Platform**: The FDA shall create a secure portal for patients and providers to upload de-identified "before and after" health data (e.g., lab results, wearable device metrics, symptom diaries) for all food, drug, and supplement use.  
 - Data contributors retain ownership and may revoke access at any time ([GDPR](https://gdpr-info.eu/) compliance required).
 - The dFDA shall analyze this data in real time to update treatment rankings.
+- **Global, real-time data sharing** will empower patients, researchers, and policymakers with unprecedented access to outcomes information.
 (b) **N-of-1 Analysis**: For every patient, the dFDA shall automatically generate:
 - A personalized dashboard showing their response to interventions (e.g., "Drug X reduced your migraine frequency by 42%").  
 - Aggregated N-of-1 results to calculate population-level effect sizes (e.g., "Drug X works for 68% of female patients aged 30–50").  
@@ -82,6 +100,11 @@ Within 180 days, the Secretary of Health and Human Services (HHS) shall:
 - Sunset all legacy review processes for DCTs and RWD-based approvals.
 - Launch a public API for third-party developers to build dFDA-compliant apps.
 (c) The [Federal Trade Commission (FTC)](https://www.ftc.gov/) shall enforce penalties against entities that withhold or manipulate treatment outcome data ([15 U.S.C. § 45](https://www.law.cornell.edu/uscode/text/15/45)).
+(d) **FDA X-Prize Program**: 
+- **Launch an FDA X-Prize** to fund the development of components for the **decentralized, automated clinical trial platform**.
+- Allocate $100 million in prizes for breakthrough innovations in decentralized trial automation, patient recruitment, and real-world data integration.
+- Prizes have proven effective where bureaucratic procurement has failed, creating competitive incentives for rapid innovation.
+- The open-source model will allow anyone—individuals, organizations, or governments—to improve and integrate with the platform, overcoming the stagnation typical of closed-source projects.
 
 ---
 
@@ -98,6 +121,6 @@ Within 180 days, the Secretary of Health and Human Services (HHS) shall:
 - [**21st Century Cures Act § 3022**](https://www.congress.gov/bill/114th-congress/house-bill/34): Mandates use of RWD and patient-reported outcomes in regulatory decisions.
 - [**Executive Order 13944 (2020)**](https://trumpwhitehouse.archives.gov/presidential-actions/executive-order-ensuring-essential-medicines-medical-countermeasures-critical-inputs-made-united-states/): Precedent for prioritizing access to life-saving therapies.
 
-**Precedent**: Estonia’s blockchain-based health system ([X-Road](https://e-estonia.com/solutions/x-road-interoperability-services/x-road/)) and the UK’s [[Decentralized Trials & Research Alliance](https://www.dtra.org/)] demonstrate feasibility.
+**Precedent**: Estonia's blockchain-based health system ([X-Road](https://e-estonia.com/solutions/x-road-interoperability-services/x-road/)) and the UK's [[Decentralized Trials & Research Alliance](https://www.dtra.org/)] demonstrate feasibility.
 
 **Expected Outcome**: A 10x increase in treatment approvals (30→300/year) and 90% cost reduction in drug development within 5 years.
