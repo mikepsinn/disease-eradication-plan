@@ -1,11 +1,11 @@
 ---
-title: How to Open a Floodgate of New Therapies for Free with Zero Legislative Changes
+title: HHS Policy Recommendations for Disease Eradication
 description: Proposes a decentralized FDA system that increases trial capacity, reduces costs, and accelerates patient access without legislative changes.
 published: true
-date: '2025-02-20T05:43:31.435Z'
-tags: decentralized-FDA, clinical-trials, cost-efficiency, regulatory-compliance, healthcare-innovation
+date: 2025-03-07T00:26:10.239Z
+tags: clinical-trials, decentralized-fda, healthcare-innovation, regulatory-compliance, cost-efficiency
 editor: markdown
-dateCreated: '2025-02-20T05:43:31.435Z'
+dateCreated: 2025-02-20T05:44:49.624Z
 ---
 
 This proposal recommends that the Department of Health and Human Services (HHS) sponsor an **FDA-X Prize** to incentivize the creation of an **open-source, decentralized FDA (dFDA)** platform. This platform would enable **perpetual, patient-driven clinical trials** accessible to anyone globally, eliminating inefficiencies in the current phased trial system. The proposal outlines strategies for **redirecting NIH research funding**, **leveraging existing HHS authorities**, and **adopting outcome-based funding models** to maximize trial participation without requiring new legislation. Additionally, it proposes the **strategic reallocation of portions of Medicare and Medicaid funding** under existing statutory provisions to support broader access to decentralized trials.
