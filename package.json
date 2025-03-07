@@ -46,6 +46,8 @@
     "tree:md": "node scripts/generate-tree.js --markdown",
     "tree:save": "node scripts/generate-tree.js --output=tree.txt",
     "tree:md:save": "node scripts/generate-tree.js --markdown --output=markdown-tree.txt",
+    "tree:metadata": "ts-node scripts/generate-tree-with-metadata.ts",
+    "tree:metadata:md": "ts-node scripts/generate-tree-with-metadata.ts --markdown",
     "fix-frontmatter": "node scripts/fix_frontmatter_metadata.js"
   },
   "devDependencies": {
