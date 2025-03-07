@@ -6,14 +6,17 @@ import matter from 'gray-matter';
 interface TreeNode {
     name: string;
     type: 'file' | 'directory';
-    path: string; // Only relative path
+    path: string;
     metadata?: Record<string, any>;
     children: TreeNode[];
 }
 
 function normalizePath(filePath: string): string {
-    // Convert Windows backslashes to forward slashes and ensure no trailing slash
     return filePath.replace(/\\/g, '/').replace(/\/$/, '');
+}
+
+function isDocumentationFile(filename: string): boolean {
+    return filename.endsWith('.md') || filename.endsWith('.html');
 }
 
 function extractFrontmatter(filePath: string): Record<string, any> | undefined {
@@ -29,7 +32,30 @@ function extractFrontmatter(filePath: string): Record<string, any> | undefined {
     return undefined;
 }
 
-function hasMatchingFiles(dir: string, ig: ignore.Ignore, markdownOnly: boolean): boolean {
+function generateMarkdownTree(node: TreeNode, level = 0): string {
+    const indent = '  '.repeat(level);
+    let output = '';
+
+    if (level === 0) {
+        output += '# Documentation Structure\n\n';
+    }
+
+    if (node.type === 'directory') {
+        if (level > 0) {
+            output += `${indent}- 📁 **${node.name}/**\n`;
+        }
+        node.children.forEach(child => {
+            output += generateMarkdownTree(child, level + 1);
+        });
+    } else {
+        const title = node.metadata?.title || node.name.replace(/\.(md|html)$/, '');
+        output += `${indent}- [${title}](${node.path})\n`;
+    }
+
+    return output;
+}
+
+function hasMatchingFiles(dir: string, ig: ignore.Ignore): boolean {
     try {
         const files = fs.readdirSync(dir);
         
@@ -44,10 +70,10 @@ function hasMatchingFiles(dir: string, ig: ignore.Ignore, markdownOnly: boolean)
             const stats = fs.statSync(fullPath);
             
             if (stats.isDirectory()) {
-                if (hasMatchingFiles(fullPath, ig, markdownOnly)) {
+                if (hasMatchingFiles(fullPath, ig)) {
                     return true;
                 }
-            } else if (!markdownOnly || file.endsWith('.md')) {
+            } else if (isDocumentationFile(file)) {
                 return true;
             }
         }
@@ -58,7 +84,7 @@ function hasMatchingFiles(dir: string, ig: ignore.Ignore, markdownOnly: boolean)
     return false;
 }
 
-function generateTreeWithMetadata(dir: string, ig: ignore.Ignore, markdownOnly = false): TreeNode {
+function generateTreeWithMetadata(dir: string, ig: ignore.Ignore): TreeNode {
     const baseName = path.basename(dir);
     const relativePath = path.relative(process.cwd(), dir);
     
@@ -85,13 +111,21 @@ function generateTreeWithMetadata(dir: string, ig: ignore.Ignore, markdownOnly =
             const isDirectory = stats.isDirectory();
             
             if (isDirectory) {
-                return hasMatchingFiles(fullPath, ig, markdownOnly);
+                return hasMatchingFiles(fullPath, ig);
             }
             
-            return !markdownOnly || file.endsWith('.md');
+            return isDocumentationFile(file);
         });
 
-        validFiles.sort();
+        // Sort directories first, then files
+        validFiles.sort((a, b) => {
+            const aStats = fs.statSync(path.join(dir, a));
+            const bStats = fs.statSync(path.join(dir, b));
+            
+            if (aStats.isDirectory() && !bStats.isDirectory()) return -1;
+            if (!aStats.isDirectory() && bStats.isDirectory()) return 1;
+            return a.localeCompare(b);
+        });
 
         for (const file of validFiles) {
             const fullPath = path.join(dir, file);
@@ -99,7 +133,7 @@ function generateTreeWithMetadata(dir: string, ig: ignore.Ignore, markdownOnly =
             const stats = fs.statSync(fullPath);
             
             if (stats.isDirectory()) {
-                const childTree = generateTreeWithMetadata(fullPath, ig, markdownOnly);
+                const childTree = generateTreeWithMetadata(fullPath, ig);
                 if (childTree.children.length > 0) {
                     tree.children.push(childTree);
                 }
@@ -125,8 +159,9 @@ function generateTreeWithMetadata(dir: string, ig: ignore.Ignore, markdownOnly =
 function main() {
     // Parse command line arguments
     const args = process.argv.slice(2);
-    const markdownOnly = args.includes('--markdown');
-    const outputFile = args.find(arg => arg.startsWith('--output='))?.split('=')[1] || 'tree-config.ts';
+    const generateMarkdown = args.includes('--tree-md');
+    const outputFile = args.find(arg => arg.startsWith('--output='))?.split('=')[1] || 
+        (generateMarkdown ? 'TREE.md' : 'tree-config.ts');
     
     // Read .gitignore if it exists
     let ig = ignore();
@@ -137,10 +172,28 @@ function main() {
         console.log('No .gitignore found, proceeding without ignore rules');
     }
     
-    const tree = generateTreeWithMetadata(process.cwd(), ig, markdownOnly);
+    // Add common development directories/files to ignore
+    ig.add([
+        'node_modules',
+        '.git',
+        'dist',
+        'build',
+        'coverage',
+        '.env*',
+        '*.log',
+        '.DS_Store'
+    ]);
     
-    // Generate TypeScript configuration
-    const tsConfig = `// Auto-generated tree configuration with metadata
+    const tree = generateTreeWithMetadata(process.cwd(), ig);
+
+    if (generateMarkdown) {
+        // Generate markdown tree
+        const markdownContent = generateMarkdownTree(tree);
+        fs.writeFileSync(outputFile, markdownContent);
+        console.log(`Markdown tree has been saved to ${outputFile}`);
+    } else {
+        // Generate TypeScript configuration
+        const tsConfig = `// Auto-generated tree configuration with metadata
 export const treeConfig = ${JSON.stringify(tree, null, 2)} as const;
 
 // Type definition for the tree structure
@@ -152,9 +205,9 @@ export type TreeNode = {
     children: TreeNode[];
 };
 `;
-
-    fs.writeFileSync(outputFile, tsConfig);
-    console.log(`Tree structure with metadata has been saved to ${outputFile}`);
+        fs.writeFileSync(outputFile, tsConfig);
+        console.log(`Tree structure with metadata has been saved to ${outputFile}`);
+    }
 }
 
 if (require.main === module) {
