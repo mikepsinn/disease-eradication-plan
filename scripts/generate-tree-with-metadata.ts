@@ -2,12 +2,22 @@ import * as fs from 'fs';
 import * as path from 'path';
 import ignore from 'ignore';
 import matter from 'gray-matter';
+import { evaluateArticle, ArticleAssessment } from './article-evaluator';
+
+// Declare the global function type
+declare function mcp__chat_completion(params: {
+    messages: Array<{role: string, content: string}>;
+    model?: string;
+    format?: 'text' | 'markdown' | 'json';
+    temperature?: number;
+}): Promise<string>;
 
 interface TreeNode {
     name: string;
     type: 'file' | 'directory';
     path: string;
     metadata?: Record<string, any>;
+    assessment?: ArticleAssessment;
     children: TreeNode[];
 }
 
@@ -84,7 +94,7 @@ function hasMatchingFiles(dir: string, ig: ignore.Ignore): boolean {
     return false;
 }
 
-function generateTreeWithMetadata(dir: string, ig: ignore.Ignore): TreeNode {
+async function generateTreeWithMetadata(dir: string, ig: ignore.Ignore): Promise<TreeNode> {
     const baseName = path.basename(dir);
     const relativePath = path.relative(process.cwd(), dir);
     
@@ -98,7 +108,6 @@ function generateTreeWithMetadata(dir: string, ig: ignore.Ignore): TreeNode {
     try {
         const files = fs.readdirSync(dir);
         
-        // Filter and sort files
         const validFiles = files.filter(file => {
             const fullPath = path.join(dir, file);
             const relativePath = path.relative(process.cwd(), fullPath);
@@ -117,7 +126,6 @@ function generateTreeWithMetadata(dir: string, ig: ignore.Ignore): TreeNode {
             return isDocumentationFile(file);
         });
 
-        // Sort directories first, then files
         validFiles.sort((a, b) => {
             const aStats = fs.statSync(path.join(dir, a));
             const bStats = fs.statSync(path.join(dir, b));
@@ -133,18 +141,22 @@ function generateTreeWithMetadata(dir: string, ig: ignore.Ignore): TreeNode {
             const stats = fs.statSync(fullPath);
             
             if (stats.isDirectory()) {
-                const childTree = generateTreeWithMetadata(fullPath, ig);
+                const childTree = await generateTreeWithMetadata(fullPath, ig);
                 if (childTree.children.length > 0) {
                     tree.children.push(childTree);
                 }
             } else {
                 const metadata = extractFrontmatter(fullPath);
+                const content = fs.readFileSync(fullPath, 'utf8');
+                const assessment = await evaluateArticle(content, fileRelativePath);
+                
                 const fileNode: TreeNode = {
                     name: file,
                     type: 'file',
                     path: normalizePath(fileRelativePath),
                     children: [],
-                    ...(metadata && { metadata })
+                    ...(metadata && { metadata }),
+                    assessment
                 };
                 tree.children.push(fileNode);
             }
@@ -156,7 +168,7 @@ function generateTreeWithMetadata(dir: string, ig: ignore.Ignore): TreeNode {
     return tree;
 }
 
-function main() {
+async function main() {
     // Parse command line arguments
     const args = process.argv.slice(2);
     const generateMarkdown = args.includes('--tree-md');
@@ -184,7 +196,7 @@ function main() {
         '.DS_Store'
     ]);
     
-    const tree = generateTreeWithMetadata(process.cwd(), ig);
+    const tree = await generateTreeWithMetadata(process.cwd(), ig);
 
     if (generateMarkdown) {
         // Generate markdown tree
@@ -202,7 +214,18 @@ export type TreeNode = {
     type: 'file' | 'directory';
     path: string; // Relative path with forward slashes
     metadata?: Record<string, any>;
+    assessment?: ArticleAssessment;
     children: TreeNode[];
+};
+
+export type ArticleAssessment = {
+    qualityScore: number; // 0-100
+    improvements: string[];
+    recommendations: {
+        shouldDelete: boolean;
+        shouldRename?: string;
+        priority: number; // 1-5
+    };
 };
 `;
         fs.writeFileSync(outputFile, tsConfig);
@@ -211,7 +234,10 @@ export type TreeNode = {
 }
 
 if (require.main === module) {
-    main();
+    main().catch(error => {
+        console.error('Error:', error);
+        process.exit(1);
+    });
 }
 
-export { generateTreeWithMetadata, TreeNode }; 
+export { generateTreeWithMetadata, TreeNode, ArticleAssessment }; 
