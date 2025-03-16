@@ -23,9 +23,8 @@ The traditional model of clinical trials is often criticized for its high cost a
 | Total Patients Enrolled | 49,000+ | [RECOVERY Trial Website](https://www.recoverytrial.net/) |
 | Participating Hospitals | 186 | [RECOVERY Trial Website](https://www.recoverytrial.net/) |
 | Total Trial Cost | £2.1M (~$2.7M) | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/) |
-| Cost per Patient | ~£43 (~$55) | Calculated (£2.1M ÷ 49,000 patients) |
+| Cost per Patient | ~$500 | [Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs) |
 | Traditional Trial Cost per Patient | ~$41,000 | [NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/) |
-| UK Government Research Investment | £20M | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/) |
 | Treatments Evaluated | 12 | [RECOVERY Results](https://www.recoverytrial.net/results) |
 | Cost per Intervention | ~£175,000 (~$223,000) | Calculated (£2.1M ÷ 12 treatments) |
 | Proven Effective Treatments | 4 | [Nuffield Department of Population Health](https://www.ndph.ox.ac.uk/news/recovery-trial-celebrates-two-year-anniversary-of-life-saving-dexamethasone-result) |
