@@ -6,6 +6,7 @@ date: 2025-02-18T05:14:54.240Z
 tags: clinical-trials, health-data, decentralization, digital-health, interoperability, ehr-systems
 editor: markdown
 dateCreated: 2023-11-07T19:01:19.907Z
+fontawesomeIcon: fa-layer-group
 ---
 
 ### Functional Scope
@@ -53,7 +54,7 @@ In theory, any kind of human-generated data which can be ingested and used for d
 
 The challenge is to acquire, extract, transform, and normalize the countless unstandardized data export file formats and data structures and load them into a standardized structure that can be easily analyzed.
 
-Proposed is the development of an application programming interface (API) and OpenAPI specification for receiving and sharing data with the core database. Software development kits (SDK’s) made available for 3rd party applications allow the interaction with the API. SDK’s will enable developers to implement easy automatic sharing options in their applications.
+Proposed is the development of an application programming interface (API) and OpenAPI specification for receiving and sharing data with the core database. Software development kits (SDK's) made available for 3rd party applications allow the interaction with the API. SDK's will enable developers to implement easy automatic sharing options in their applications.
 
 Separate plugins will enable spreadsheet upload/import and scheduled imports from existing third-party APIs. The API connector framework will allow the ongoing regular import of user data after a single user authorization.
 
