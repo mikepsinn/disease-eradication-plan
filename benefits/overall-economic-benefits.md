@@ -9,6 +9,9 @@ published: true
 editor: markdown
 date: '2025-02-09T16:20:32.132Z'
 dateCreated: '2025-02-09T16:20:32.132Z'
+tags: >-
+  decentralized-clinical-trials, cost-savings, financial-benefits,
+  trial-timelines
 ---
 
 **Key Sections**  
@@ -20,12 +23,6 @@ dateCreated: '2025-02-09T16:20:32.132Z'
 [6. Niche Therapies](#6-more-therapies-for-smaller-markets)  
 [7. Summary Table](#7-annual-benefits-summary)  
 [8. References](#8-references)
----
-title: Overall Economic Benefits
-description: >-
-  This model estimates the global economic benefits of a decentralized, automated FDA trial platform.
-emoji: 📈
----
 
 Below is a consolidated, quantitative analysis of global benefits from a universal shift to:
 
