@@ -1,8 +1,8 @@
 ---
-title: Case Study of Maximizing Trial Efficiency with Decentralized Pragmatic Trials
+title: Maximizing Trial Efficiency with Decentralized Pragmatic Trials
 description: Exploration of how the RECOVERY trial reduced clinical research costs and a proposal for scaling its approach with a decentralized platform
 published: true
-date: 2025-03-16T21:27:17.191Z
+date: 2025-03-20T11:18:28.849Z
 tags: clinical-trials, cost-efficiency, decentralized-platforms, recovery-trial
 editor: markdown
 dateCreated: 2025-02-24T00:36:51.173Z
