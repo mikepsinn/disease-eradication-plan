@@ -10,197 +10,182 @@ dateCreated: 2025-07-26T14:00:00.000Z
 
 # Platform Technical Specification
 
-**Status:** Draft / Elaboration in Progress
-**Version:** 0.1.0
+**Status:** Draft / Elaboration Complete (Illustrative)
+**Version:** 0.2.0
 
-This document provides the detailed technical specifications for the implementation of the dFDA core platform, as outlined conceptually in the [Platform Architecture document](/features/platform/03-platform.md). It is intended for engineers, developers, and technical teams involved in building and maintaining the platform.
+This document provides detailed technical specifications for the implementation of the dFDA core platform, aligning with the architecture in [/features/platform/03-platform.md](/features/platform/03-platform.md) and enabling functionalities discussed in related documents like [/features/data-import.md](/features/data-import.md), [/features/data-silo-api-gateways.md](/features/data-silo-api-gateways.md), and drawing inspiration from efficiency models like [/reference/recovery-trial.md](/reference/recovery-trial.md). It is intended for engineers, developers, and technical teams.
 
-**Note:** This document contains illustrative technical choices based on common practices and high-level requirements. Specific technologies, configurations, and details require further analysis, validation, and potential revision based on detailed non-functional requirements and implementation constraints.
+**Note:** This specification uses **illustrative technical choices** based on common practices for scalable, secure health data platforms. Specific technologies, configurations, and details require further rigorous analysis, prototyping, validation against non-functional requirements (performance, load, budget), and potential revision during development.
 
 ## 1. Introduction
 
 *   **Purpose:** To define the specific technologies, interfaces, data structures, security measures, and infrastructure requirements for building the dFDA Core Platform.
 *   **Relationship:** Serves as the detailed implementation guide based on the architecture described in `/features/platform/03-platform.md`.
-*   **Scope:** Focuses on the Core Platform components (API, Storage, Mapping/Validation, Access Control, Reference Data) and the interfaces for the Plugin Framework. Excludes the internal implementation details of specific plugins.
+*   **Scope:** Focuses on the Core Platform components (API, Storage, Mapping/Validation, Access Control, Reference Data) and the interfaces for the Plugin Framework. Excludes the internal implementation details of specific plugins. The Core Platform is intended to be developed as **open-source software**. 
 
 ## 2. Technology Stack
 
-This section outlines the primary technologies selected for the platform. Rationale is provided briefly; detailed trade-off analysis is outside the current scope.
+Selected to prioritize scalability, security, interoperability, developer productivity, and leveraging mature ecosystems suitable for health data.
 
 *   **Programming Languages:**
-    *   Backend/API: **Python 3.11+** (Leveraging frameworks like FastAPI/Django for rapid development, strong library support for data science/validation, async capabilities). Alternative: Node.js/TypeScript.
-    *   Frontend (Reference UI/Dashboards): **TypeScript** with **React 18+** (Component-based architecture, large community, mature tooling).
-    *   Data Processing/Mapping Engine: **Python 3.11+** (Strong data manipulation libraries like Pandas, Dask for potential scaling).
+    *   Backend/API: **Python 3.11+** (FastAPI framework, strong data science/validation libraries (Pandas, Pydantic), mature async support, large talent pool).
+    *   Frontend (Reference UI): **TypeScript** with **React 18+** (Robust typing, component model, large ecosystem, Next.js framework).
+    *   Data Processing/Mapping Engine: **Python 3.11+** (Leverages Pandas, potentially Dask/Spark for large-scale transformations).
 *   **Frameworks:**
-    *   Web API: **FastAPI** (High performance, automatic data validation via Pydantic, OpenAPI generation). Alternative: Django Rest Framework.
-    *   Web Frontend: **Next.js** (Server-side rendering, routing, build optimizations for React).
-    *   Data Processing: Standard Python libraries initially; potentially **Apache Spark** or **Dask** if large-scale distributed processing becomes necessary.
+    *   Web API: **FastAPI** (Performance, auto-validation, OpenAPI generation).
+    *   Web Frontend: **Next.js** (SSR, routing, optimized React development).
+    *   Data Processing: Standard Python libraries + **Dask** (for parallelizing mapping/validation jobs where appropriate).
 *   **Database Technologies:**
-    *   Metadata / Relational Storage: **PostgreSQL 15+** (Robust, ACID compliant, strong JSONB support, mature extensions like PostGIS if needed). Hosted via managed service (e.g., AWS RDS, Google Cloud SQL).
-    *   Time-Series Data Storage: **TimescaleDB** (PostgreSQL extension optimized for time-series data, leverages mature PostgreSQL ecosystem). Alternative: InfluxDB, Cassandra (if extreme write scale is primary driver). Hosted via managed service or self-managed on cloud VMs.
-    *   Raw Data / File Storage: **AWS S3** (Scalable, durable, cost-effective object storage). Alternatives: Google Cloud Storage, Azure Blob Storage.
+    *   Metadata/Relational Storage: **PostgreSQL 15+ (Managed Service - e.g., AWS RDS)** (ACID compliance, JSONB support, maturity, availability of extensions like PostGIS).
+    *   Time-Series Data Storage: **TimescaleDB (Managed Service - e.g., Timescale Cloud or via Managed PostgreSQL)** (Optimized time-series performance on mature PostgreSQL foundation, supports analytical queries).
+    *   Raw Data/File Storage: **AWS S3** (Scalability, durability, cost-effectiveness, lifecycle policies, event notifications).
 *   **Cloud Provider & Core Services:**
-    *   Primary Cloud Provider: **AWS** (Mature services, broad adoption, extensive documentation). Alternatives: GCP, Azure.
-    *   Compute: **AWS EC2** (for potential self-managed DBs/services), **AWS Lambda** (for serverless functions/APIs), **AWS EKS** (for container orchestration).
-    *   Storage: **AWS S3**, **AWS RDS (PostgreSQL)**, Managed **TimescaleDB** (e.g., on AWS EC2 or via Timescale Cloud), **AWS EBS**.
-    *   Networking: **AWS VPC**, **API Gateway**, **Route 53**, **CloudFront (CDN)**.
-    *   Messaging Queues: **AWS SQS** (Simple Queue Service) or **RabbitMQ** hosted on EC2/EKS (for asynchronous job processing - data mapping, validation). Alternative: Kafka (if high-throughput streaming is key).
+    *   Primary Cloud Provider: **AWS** (Mature, comprehensive services, regulatory compliance support - BAA for HIPAA).
+    *   Compute: **AWS EKS** (Kubernetes for container orchestration), **AWS Lambda** (for specific event-driven tasks/APIs), **AWS EC2** (potentially for specialized workloads).
+    *   Storage: **AWS S3**, **AWS RDS (PostgreSQL)**, Managed **TimescaleDB**, **AWS EBS**.
+    *   Networking: **AWS VPC** (Isolation), **API Gateway** (Management, security), **Route 53** (DNS), **CloudFront** (CDN for frontend/static assets).
+    *   Messaging Queues: **AWS SQS** (Decoupled asynchronous processing), potentially **AWS SNS** (Notifications).
 *   **Containerization & Orchestration:**
     *   Containerization: **Docker**.
-    *   Orchestration: **Kubernetes (AWS EKS)** (Standard for managing containerized applications at scale).
+    *   Orchestration: **Kubernetes (AWS EKS)** (Scalability, resilience, standardized deployments).
 *   **Blockchain/Distributed Ledger Technology (DLT):**
-    *   **Status:** Exploration Phase. Not core to initial MVP functionality but considered for specific use cases like immutable consent logging or data integrity verification (e.g., timestamping data hashes).
-    *   Potential Choices (if implemented): Hyperledger Fabric, Ethereum (Private Network), or specialized verifiable credential frameworks. Requires separate detailed specification.
+    *   **Status:** **Not part of Core MVP.** Considered for future plugins/extensions for specific use cases (e.g., immutable consent logs via timestamping hashes on a public ledger, Verifiable Credentials for identity). Requires separate design if pursued.
 *   **Monitoring & Logging Tools:**
-    *   Logging: **Elasticsearch, Fluentd, Kibana (EFK stack)** deployed on EKS, or Cloud-native solution like **AWS CloudWatch Logs**.
-    *   Monitoring/Metrics: **Prometheus** & **Grafana** deployed on EKS, or **AWS CloudWatch Metrics**.
-    *   APM: **Datadog**, **New Relic**, or **AWS X-Ray**.
+    *   Logging: **AWS CloudWatch Logs** integrated with **OpenSearch/Elasticsearch** for centralized querying/analysis.
+    *   Monitoring/Metrics: **AWS CloudWatch Metrics** & **Prometheus/Grafana** (deployed on EKS for finer-grained infra/app metrics).
+    *   APM: **AWS X-Ray** or **Datadog**.
     *   Error Tracking: **Sentry**.
 
 ## 3. Core Component Implementation Details
 
 ### 3.1 Data Ingestion API
 
+Designed for flexibility, security, and standardization.
+
 *   **API Protocol:** **RESTful API** using JSON payloads.
-*   **Specification:** **OpenAPI Specification (OAS) v3.x**. Auto-generated via FastAPI, manually augmented with detailed descriptions and examples. Hosted and versioned.
-*   **Authentication:** **OAuth 2.0 Bearer Tokens** (Client Credentials flow for M2M integration, Authorization Code flow for user-facing apps). Handled via dedicated Authentication service (see 3.4).
+*   **Specification:** **OpenAPI Specification (OAS) v3.x**. Strictly maintained, versioned, and published. Auto-generated documentation via FastAPI.
+*   **Authentication:** **OAuth 2.0 Bearer Tokens** (JWTs) issued by the central Auth Service (see 3.4). Required for all endpoints.
 *   **Core Endpoints (Illustrative):**
-    *   `POST /v1/ingest/observations`: Endpoint for submitting structured time-series data conforming to the internal standardized schema (see 3.2). Supports batch submissions.
-    *   `POST /v1/ingest/files`: Endpoint for uploading raw files (CSV, PDF, VCF, etc.). Returns a file ID for later processing. Uses multipart/form-data.
-    *   `GET /v1/ingest/jobs/{job_id}`: Check status of asynchronous mapping/validation jobs.
-    *   `GET /v1/variables`: Retrieve reference variable definitions.
-    *   `GET /v1/units`: Retrieve reference unit definitions.
+    *   `POST /v1/ingest/observations`: Submits structured time-series data batches conforming to the internal standardized schema. Returns `job_id` for async processing.
+    *   `POST /v1/ingest/files`: Uploads raw files (CSV, PDF, VCF, images etc.) via multipart/form-data. Returns `file_id` and `job_id`.
+    *   `GET /v1/ingest/jobs/{job_id}`: Retrieves status and outcome (success, failure, validation issues) of an ingestion job.
+    *   `GET /v1/variables?category={cat}&system={sys}&code={code}`: Retrieves reference variable definitions, filterable.
+    *   `GET /v1/units?system={sys}`: Retrieves reference unit definitions (e.g., UCUM).
 *   **Data Validation Rules (Server-side):**
-    *   Schema Validation: Enforced by FastAPI/Pydantic based on OpenAPI spec. Checks data types, required fields.
-    *   Value Range Validation: Check against defined min/max values in the Reference Data Definitions (see 3.5). Configurable enforcement (flag vs. reject).
-    *   Unit Validation: Check against allowed units for a given variable code (UCUM where applicable).
-    *   Duplicate Check: Prevent insertion of data with identical `(user_id, variable_code, timestamp, source_id)` composite key.
+    *   Schema Validation: Performed by FastAPI/Pydantic against OAS.
+    *   Semantic Validation (Async job): Checks against `variables` definition (range, allowed units). Flags (`is_valid=false`) or rejects based on severity/configuration. Checks for temporal consistency where possible.
+    *   Duplicate Check (Async job): Prevents data points with identical `(user_id, variable_id, timestamp, source_id)`. Logs duplicates.
 *   **SDK Design:**
-    *   Initial Target Languages: **Python**, **JavaScript/TypeScript**.
-    *   Core Functionalities: Authentication handling, API request formation for data/file submission, status checking, potentially local validation helpers.
-    *   Distribution: PyPI, npm. Open source.
+    *   Targets: **Python**, **JavaScript/TypeScript**. Others based on demand.
+    *   Functionality: Handles OAuth flows, request building, file upload streaming, job status polling, reference data lookup.
+    *   Distribution: Open source (PyPI, npm).
 
 ### 3.2 Data Storage
 
+Layered approach prioritizing raw data integrity and optimized query performance.
+
 *   **Raw Data Storage (AWS S3):**
-    *   Bucket Structure: e.g., `s3://dfda-raw-data-{env}/{user_id}/{source_type}/{yyyy}/{mm}/{dd}/{file_uuid}.{ext}`
-    *   Encryption: Server-Side Encryption with AWS KMS managed keys (SSE-KMS) enabled by default. Client-side encryption option available via SDK.
-    *   Access Control: IAM policies restricting access to specific services (Ingestion API, Mapping Engine). User-level access mediated strictly through platform APIs. Versioning enabled.
+    *   Bucket Structure: `s3://dfda-raw-data-{env}/{user_id_hash_prefix}/{user_id}/{source_type}/{yyyy}/{mm}/{dd}/{file_uuid}.{ext}` (Hashing prefix avoids S3 key hotspots).
+    *   Encryption: **SSE-KMS** mandatory. Consider client-side encryption support via SDK for highly sensitive data sources.
+    *   Access Control: Bucket policies & IAM restrict access strictly to authorized service roles (e.g., Ingestion API role, Mapping Engine role). Direct user access disallowed. Versioning enabled.
+    *   Lifecycle Policies: Define policies for transitioning older raw data to lower-cost storage tiers (e.g., S3 Infrequent Access, Glacier) or eventual deletion based on data retention policies.
 *   **Time-Series Data Storage (TimescaleDB on Managed PostgreSQL):**
-    *   Primary Table (`observations` Hypertable):
-        *   `user_id`: UUID (Foreign Key to Users table)
-        *   `timestamp`: TIMESTAMPTZ (Primary time index)
-        *   `variable_id`: INT (Foreign Key to Variables table)
-        *   `value_numeric`: DOUBLE PRECISION (For numeric values)
-        *   `value_text`: TEXT (For categorical or text values)
-        *   `unit_id`: INT (Foreign Key to Units table)
-        *   `source_id`: INT (Foreign Key to Sources table)
-        *   `raw_file_id`: UUID (Optional, links to raw file if applicable)
-        *   `ingestion_job_id`: UUID
-        *   `is_valid`: BOOLEAN (Result of validation)
-        *   `is_outlier`: BOOLEAN (Flagged by analysis)
-        *   `metadata`: JSONB (Additional context, e.g., device info, specific FHIR resource details)
-    *   Partitioning: Automatic partitioning by `timestamp` (e.g., daily or weekly chunks) managed by TimescaleDB. Potential secondary partitioning/indexing on `user_id` and `variable_id`.
-    *   Indexes: Composite index on `(user_id, variable_id, timestamp DESC)`. Additional indexes as needed based on query patterns.
-    *   Data Retention: Policies defined per environment (e.g., Production retains indefinitely with potential tiered storage/archiving to S3 via TimescaleDB features; Staging/Dev prune older data).
-    *   Backup: Managed by cloud provider (e.g., AWS RDS automated backups, point-in-time recovery).
+    *   Schema (`observations` Hypertable - Key Fields): See previous elaboration. Add `metadata` JSONB field for source-specific context.
+    *   Partitioning: Automatic time partitioning (e.g., weekly/monthly chunks) via TimescaleDB. Consider composite partitioning including `user_id` or `variable_id` based on query analysis during performance tuning.
+    *   Indexes: Primary composite `(user_id, variable_id, timestamp DESC)`. Indexes on `timestamp`, `variable_id`, potentially GIN index on `metadata`.
+    *   Data Retention: Configurable via platform settings, potentially tiered (e.g., retain X years in primary hypertable, archive older to S3/cheaper storage, delete after Y years according to consent/policy). Needs robust implementation.
+    *   Backup: Leverage managed service provider's automated backups, point-in-time recovery (PITR), and potentially cross-region snapshots for disaster recovery.
 *   **Metadata / Relational Storage (PostgreSQL):**
-    *   Key Tables: `users`, `oauth_clients`, `permissions`, `roles`, `consents`, `variables`, `units`, `sources`, `plugins`, `ingestion_jobs`, etc.
-    *   Schema: Detailed ERD and CREATE TABLE statements maintained separately [See Appendix X]. Focus on normalization, referential integrity. Use of UUIDs for primary keys where appropriate. JSONB for flexible metadata storage.
+    *   Schema: Maintain detailed ERD and DDL scripts in version control. Enforce referential integrity. Use UUIDs widely. Store hashes of consent documents, not the documents themselves.
 
 ### 3.3 Data Mapping & Validation Engine
 
-*   **Implementation:** Set of containerized **Python microservices** managed by Kubernetes (EKS). Triggered via messages on **AWS SQS**.
+Handles heterogeneity of input data asynchronously.
+
+*   **Implementation:** Pool of containerized **Python microservices** on EKS, scaling based on SQS queue depth.
 *   **Mapping Logic:**
-    *   Separate mapping functions/classes per input format/standard (FHIR Resource X, specific CSV format, specific device API).
-    *   Core mappers (FHIR Patient, Observation, Condition; LOINC codes; SNOMED codes; common EHR formats) maintained by core team.
-    *   Plugin system allows third parties to register new mappers.
-    *   Utilizes the `variables` and `units` reference tables (see 3.5) to map source codes/units to internal IDs.
-*   **Validation Logic:**
-    *   Separate validation service called after mapping.
-    *   Applies rules defined in 3.1 (schema, range, unit, duplication).
-    *   Flags data (`is_valid`, `is_outlier`) rather than rejecting outright where appropriate (configurable).
-*   **Error Handling:** Failed mapping/validation attempts logged comprehensively (Input data snippet, error type, timestamp). Notifications sent to monitoring system (e.g., Sentry) and potentially back to the source system/user via API status checks or dedicated notification system. Dead-letter queue configured in SQS.
-*   **Asynchronous Queue (SQS):** Separate queues for different job types (e.g., `file-processing-queue`, `api-ingestion-queue`) with appropriate visibility timeouts and retry mechanisms.
+    *   Core Mappers: Prioritize robust implementation for **FHIR (R4/R5 Resources like Patient, Observation, Condition, MedicationRequest, DiagnosticReport), HL7v2 (ADT, ORU, ORM messages via parsing libraries), C-CDA documents, common lab formats (CSV/TSV), and direct API formats from major wearables (Fitbit, Oura, Garmin - requires specific plugins)**. Maintain mapping logic separately from core engine.
+    *   Plugin Interface: Defined API for plugins to register custom mappers for specific file types or third-party APIs (see Section 4).
+    *   Reference Data Usage: Crucial reliance on `variables` and `units` tables for mapping source terms/units to standardized internal IDs. Handles code system translations (e.g., local lab code to LOINC).
+*   **Validation Logic:** Performed *after* mapping to standardized format. Checks against `variables` definitions (range, units). Implements outlier detection algorithms (configurable, e.g., IQR, Z-score) flagging `is_outlier`. Configurable severity levels for validation failures (log, flag, reject).
+*   **Error Handling:** Detailed structured logging of errors (input data ref, mapper/validator step, error type). Use of SQS dead-letter queues for persistent failures requiring manual investigation. API endpoint for users/systems to query job status and error details.
+*   **Asynchronous Queue (SQS):** Use standard SQS queues. Consider FIFO queues if strict processing order is essential for certain data types, but acknowledge potential throughput limitations.
 
 ### 3.4 Data Ownership & Access Control
 
-*   **Authentication:** Dedicated **OAuth 2.0 / OpenID Connect (OIDC) service** (e.g., using Hydra, Keycloak, or cloud provider service like AWS Cognito). Issues JWTs for API access. Supports standard flows (Authorization Code + PKCE for user apps, Client Credentials for backend services).
-*   **Authorization:** Primarily **Role-Based Access Control (RBAC)** for broad permissions (e.g., `data_owner`, `researcher`, `clinician`, `admin`). Complemented by **Attribute-Based Access Control (ABAC)** for fine-grained data access based on consent and policies (e.g., access allowed only to specific variable categories, for a specific time window, for users consenting to Study X). Implemented via middleware in the API gateway or backend services, referencing user roles and consent records.
-*   **Permission Management:** API endpoints for users to view/manage connected apps (`oauth_clients`), grant/revoke consents, and potentially define fine-grained sharing rules (persisted in `consents` or dedicated policy tables).
-*   **Consent Implementation:** Dedicated `consents` table storing `user_id`, `grantee_id` (can be client app ID or researcher ID), `scope` (e.g., specific data categories, study ID), `start_date`, `expiry_date`, `status` (active, revoked), reference to consent document hash.
-*   **Auditing:** Comprehensive audit trail logged (e.g., to dedicated table or CloudWatch Logs) for all sensitive actions: logins, token issuance, permission changes, consent actions, data access requests (success/failure).
+User-centric control and robust security are paramount.
+
+*   **Authentication:** **AWS Cognito** or self-hosted **Keycloak/Hydra** providing OAuth 2.0/OIDC services. Enforces MFA. Manages user identities and client application registration.
+*   **Authorization:** Combination of **RBAC** (defined roles: `data_owner`, `data_custodian` (e.g., parent/guardian), `researcher`, `clinician_delegate`, `app_developer`, `admin`) and **ABAC** enforced via policy engine (e.g., Open Policy Agent integrated at API Gateway/backend) using attributes like user roles, consent scope, data sensitivity level, requested resource category.
+*   **Permission/Consent Management:** User-facing interface (part of reference frontend or integrated via API into third-party apps) for viewing data access logs, managing connected applications (OAuth client grants), granting/revoking fine-grained consents (persisted in `consents` table detailing grantee, scope, duration, status). API endpoints provided for these management functions.
+*   **Third-Party App Credentials:** Secure storage (e.g., **AWS Secrets Manager** or **HashiCorp Vault**) for user-provided OAuth tokens/API keys needed by connector plugins to access external services (like Fitbit, Oura). Access tightly controlled via IAM roles granted to specific plugin execution environments.
+*   **Auditing:** Immutable audit log (e.g., AWS QLDB or append-only table with cryptographic verification) recording all authentication events, authorization decisions, consent changes, data access requests (including denied attempts), and administrative actions.
 
 ### 3.5 Reference Data Management
 
-*   **Storage:** Dedicated tables within the primary **PostgreSQL** database (e.g., `variables`, `units`, `sources`, `ontologies`).
-*   **Content:**
-    *   `variables`: `variable_id`, `code_system` (e.g., 'LOINC', 'SNOMED', 'INTERNAL'), `code_value`, `display_name`, `description`, `data_type` (numeric, text, categorical), `allowed_units` (JSONB array of unit_ids), `min_value`, `max_value`, `category` (e.g., 'vitals', 'labs', 'genomics', 'survey'), `is_outcome_variable`, `is_input_factor`.
-    *   `units`: `unit_id`, `ucum_code`, `display_name`, `description`. Pre-populated based on UCUM standard.
-    *   `sources`: `source_id`, `name`, `type` (e.g., 'ehr', 'wearable', 'app', 'user_reported'), `vendor`.
-*   **Updates & Versioning:** Controlled updates via administrative interface or documented migration scripts. Consider strategies for versioning variable definitions if meanings change significantly over time while preserving historical data context (e.g., adding valid_from/valid_to timestamps or linking observations to specific definition versions).
+Ensures semantic consistency.
+
+*   **Storage:** Within primary **PostgreSQL** database. Schema detailed previously.
+*   **Content:** Actively maintained and expanded. Includes mappings between different coding systems where appropriate (e.g., ICD -> SNOMED). Includes definitions for core dFDA variables not covered by external standards.
+*   **Updates & Versioning:** Managed process for updates. Use versioning (e.g., `version` column, valid_from/to dates) on critical definitions (`variables`) to ensure historical data integrity when definitions evolve. API endpoint to retrieve specific versions of definitions.
 
 ## 4. Plugin Framework Interfaces
 
-*   **API Specs:** Defined using **OpenAPI Specification (OAS) v3.x** for interactions between plugins and the Core Platform.
-    *   *Core -> Plugin:* Core may call plugin endpoints for tasks like data mapping, analysis, or visualization. Requires plugins to expose standardized endpoints.
-    *   *Plugin -> Core:* Plugins utilize the Core Data Ingestion and Data Retrieval APIs (defined in 3.1 and a separate Data Retrieval API spec) using standard OAuth tokens obtained via user consent flows.
-*   **Data Formats:** Primarily **JSON** for API interactions. Standardized internal data representation (based on core DB schema) used for analysis plugins.
-*   **Security:** Plugins run in isolated environments (e.g., separate containers/serverless functions). Communication secured via HTTPS and standard OAuth tokens. Core platform validates plugin requests and enforces user permissions/consents before granting data access. Plugins must request specific permission scopes during user authorization.
-*   **Registration/Discovery:** Central **Plugin Registry** (database table or dedicated service) stores metadata about installed plugins (name, version, developer, required permissions, exposed endpoints, UI components). Core platform uses this for discovery and routing.
+Enables modular extension of platform capabilities.
+
+*   **API Specs (OAS v3.x):**
+    *   *Core -> Plugin:* Defined interfaces for triggering specific plugin types (e.g., `POST /plugin/v1/map`, `POST /plugin/v1/analyze`, `GET /plugin/v1/visualize`). Core provides necessary context (data query parameters, user context).
+    *   *Plugin -> Core:* Plugins use Core APIs (Ingestion, Data Retrieval, User Management) via standard OAuth tokens. Data Retrieval API (separate spec needed) allows plugins to query user data based on granted consent scope.
+*   **Data Formats:** JSON for APIs. Analysis/Visualization plugins receive data in a standardized tabular format (e.g., Pandas DataFrame structure delivered via API response or temporary file access).
+*   **Security:** Plugins execute in isolated, containerized environments (e.g., Lambda, specific EKS pods) with least-privilege IAM roles. Core platform rigorously validates plugin requests against user consent *before* executing or providing data access. Network policies restrict plugin communication.
+*   **Registration/Discovery:** Plugin Registry stores metadata, including required OAuth scopes, input/output data schemas, and execution endpoints. Core uses this to validate and route requests.
 
 ## 5. Security Implementation
 
-*   **Network Security:** Strict AWS Security Groups and Network ACLs. Use of private subnets for databases and backend services. API Gateway for public endpoint exposure. VPC Endpoints for internal service communication where possible. WAF (Web Application Firewall) deployed.
-*   **Application Security:** Input validation at API gateway and service level. Regular static (SAST) and dynamic (DAST) security testing. Dependency vulnerability scanning (e.g., Snyk, Dependabot). Secure coding practices enforced. Rate limiting and request throttling implemented.
-*   **Data Security:**
-    *   Encryption: TLS 1.2+ for data in transit. SSE-KMS for data at rest in S3. Transparent Data Encryption (TDE) for PostgreSQL/TimescaleDB where available/required by cloud provider. Application-level encryption for specific sensitive fields if necessary.
-    *   Key Management: AWS KMS for managing encryption keys.
-    *   Access Control: Principle of Least Privilege applied to all IAM roles and database permissions.
-*   **Authentication & Authorization:** Multi-Factor Authentication (MFA) enforced for administrators and recommended for all users. Short-lived access tokens with refresh token rotation. Strict validation of token scopes. Centralized authorization logic.
-*   **Compliance:** Infrastructure and processes designed to meet **HIPAA** and **GDPR** technical safeguard requirements (auditing, access controls, encryption, backup/recovery, data minimization principles applied where feasible). Regular compliance audits.
-*   **Incident Response:** Documented Incident Response Plan including detection, containment, eradication, recovery, and post-mortem phases. [See Separate Incident Response Plan Document].
+Multi-layered security meeting regulatory requirements.
+
+*   **Network Security:** As previously specified (VPC, Security Groups, WAF, Private Subnets).
+*   **Application Security:** As previously specified (SAST, DAST, Dependency Scanning, Input Validation, Rate Limiting). Focus on OWASP Top 10.
+*   **Data Security:** As previously specified (SSE-KMS, TLS 1.2+, TDE option, Application-level encryption considered for specific PII). Strict IAM policies. Data masking/de-identification capabilities for analytical exports where appropriate.
+*   **Authentication & Authorization:** As previously specified (MFA, short-lived tokens, OIDC, RBAC+ABAC).
+*   **Compliance:** Explicit controls mapped to **HIPAA** Security Rule (Administrative, Physical, Technical Safeguards) and **GDPR** articles (Lawful Basis, Data Subject Rights, Security of Processing). Regular internal/external audits. BAAs with cloud providers.
+*   **Incident Response:** Defined plan, regular testing (tabletop exercises). [Link to Plan]
 
 ## 6. Infrastructure & Deployment
 
-*   **Infrastructure as Code (IaC):** **Terraform** used to define and manage all cloud infrastructure resources. State files managed securely.
-*   **CI/CD Pipeline:** **GitLab CI/CD** or **GitHub Actions**. Pipeline includes linting, unit testing, integration testing, security scanning (SAST, dependencies), container building/pushing, and automated deployment to respective environments.
-*   **Environments:** Separate, isolated environments for `development`, `staging`, and `production` (potentially more, e.g., `qa`). Staging mirrors production infrastructure closely.
-*   **Scalability Strategy:**
-    *   Stateless Services: Design backend APIs and processing services to be stateless for horizontal scaling.
-    *   Auto-scaling: Configure Kubernetes Horizontal Pod Autoscaler (HPA) and AWS Auto Scaling Groups based on CPU/Memory utilization or custom metrics (e.g., queue length).
-    *   Database Scaling: Vertical scaling (instance size) for PostgreSQL/TimescaleDB initially. Read replicas for PostgreSQL. Investigate TimescaleDB clustering/multi-node capabilities if write/read load exceeds single-node limits. S3 scales automatically.
-    *   Load Balancing: AWS Application Load Balancer (ALB) in front of API services.
-*   **Disaster Recovery:** Regular automated backups (see 3.2). Plan for cross-region replication of critical data (S3, database backups) and ability to redeploy infrastructure via IaC in a secondary region. Defined RPO (Recovery Point Objective) and RTO (Recovery Time Objective). [See Separate Disaster Recovery Plan Document].
+Automated, repeatable, and resilient infrastructure.
+
+*   **Infrastructure as Code (IaC):** **Terraform** mandatory for all cloud resources.
+*   **CI/CD Pipeline:** **GitLab CI/CD / GitHub Actions** with automated testing (unit, integration, end-to-end), security scans, container builds, and promotion through environments (`dev` -> `staging` -> `prod`). Manual approval gate for production deployments.
+*   **Environments:** Isolated AWS accounts or VPCs for `dev`, `staging`, `prod`. Use of realistic (anonymized/synthetic) data in staging for testing.
+*   **Scalability Strategy:** As previously specified (Stateless services, HPA, RDS Read Replicas, potential TimescaleDB clustering, ALB).
+*   **Disaster Recovery:** As previously specified (Automated backups, cross-region replication strategy, IaC for redeployment, documented DR plan with RPO/RTO targets). Regular DR testing.
 
 ## 7. Performance & Scalability Requirements
 
-*(Note: These are illustrative placeholders and require detailed analysis based on expected usage)*
+*(Refined illustrative placeholders)*
 
 *   **Expected Load:**
-    *   Users: Target 1 Million MAU (Monthly Active Users) within 2 years, scaling to 100M+ L TBD.
-    *   Data Volume: Ingestion rate of [X] TB/month. Total storage [Y] PB within 5 years.
-    *   API Calls: Peak [Z] requests per second.
+    *   Users: Target 1M MAU Year 2, 10M MAU Year 4, 100M+ MAU Long-Term.
+    *   Data Volume: Ingestion 10 TB/month Year 2, scaling non-linearly. Storage 1 PB Year 4.
+    *   API Calls: Peak 5,000 req/sec Year 2.
 *   **Latency Requirements:**
-    *   Core API (Read/Write): p95 latency < 200ms.
-    *   Data Ingestion (Async): Job acknowledged < 50ms; Processing time varies (target p95 < 5 minutes for typical files/batches).
+    *   Core User-Facing API Read: p95 < 200ms.
+    *   Core Data Write (Sync Ack): p95 < 100ms.
+    *   Async Ingestion E2E (File Upload -> Queryable): p95 < 5 minutes.
 *   **Throughput Requirements:**
-    *   Ingestion: Support sustained [A] observations/second.
-    *   Data Retrieval API: Support [B] concurrent analytical queries.
-*   **Scalability Targets:** System designed to scale horizontally to handle 10x projected peak load with acceptable performance degradation.
+    *   Ingestion: Sustain 10,000 observations/sec.
+    *   Data Retrieval API: Support 500 concurrent complex analytical queries.
+*   **Scalability Targets:** Design to handle 5x current projected peak load; demonstrate horizontal scalability.
 
 ## 8. Appendices
 
 *(Placeholders - Content to be generated separately or by human teams)*
 
-*   **Glossary of Technical Terms:** [Link to Glossary]
-*   **Detailed Diagrams:**
-    *   System Architecture Diagram [Link]
-    *   Data Flow Diagrams [Link]
-    *   Sequence Diagrams (Key Workflows) [Link]
-    *   Deployment Diagram [Link]
-*   **Data Dictionary / Database Schema:** [Link to ERD and DDL Scripts]
-*   **API Specifications (OAS Files):** [Link to OAS Files/Repository]
+*   **Glossary of Technical Terms:** [Link]
+*   **Detailed Diagrams:** [Link]
+*   **Data Dictionary / Database Schema:** [Link]
+*   **API Specifications (OAS Files):** [Link]
 
 ---
 
