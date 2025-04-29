@@ -1,3 +1,14 @@
+---
+title: FDA Import Regulations Streamlining
+description: Recommendations for streamlining FDA import regulations to facilitate decentralized clinical trials
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, import-regulations, dct, fda
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-shipping-fast
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

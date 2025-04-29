@@ -1,3 +1,14 @@
+---
+title: Food Labeling Harmonization
+description: Recommendations for harmonizing 21 CFR Part 101 food labeling requirements with dFDA platform capabilities
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, food-labeling, harmonization, fda
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-utensils
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name
