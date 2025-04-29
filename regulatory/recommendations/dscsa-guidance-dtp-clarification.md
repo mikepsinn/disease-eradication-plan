@@ -1,3 +1,14 @@
+---
+title: DSCSA Guidance DTP Clarification
+description: Clarification of DSCSA guidance for direct-to-patient distribution in dFDA trials
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, dscsa, supply-chain, direct-to-patient
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-truck
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

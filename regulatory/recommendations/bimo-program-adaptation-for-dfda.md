@@ -1,3 +1,14 @@
+---
+title: BIMO Program Adaptation
+description: Recommendations for adapting FDA's Bioresearch Monitoring Program for dFDA platform oversight
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, bimo, monitoring, compliance
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-eye
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

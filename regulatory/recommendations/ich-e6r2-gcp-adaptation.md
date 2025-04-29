@@ -1,3 +1,14 @@
+---
+title: ICH E6(R2) GCP Adaptation
+description: Recommendations for adapting ICH E6(R2) Good Clinical Practice guidelines for dFDA platform trials
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, gcp, ich, clinical-trials
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-check-circle
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

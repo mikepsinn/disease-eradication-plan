@@ -1,3 +1,14 @@
+---
+title: Low-Risk Device SaaS Exemption
+description: Proposals for exempting low-risk software-as-a-service medical devices from certain requirements
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, medical-devices, saas, software
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-cloud
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

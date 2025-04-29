@@ -1,3 +1,14 @@
+---
+title: International Harmonization MRA Platforms
+description: Framework for harmonizing international mutual recognition agreements with dFDA platform capabilities
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, international-harmonization, mra, global-cooperation
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-globe-americas
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

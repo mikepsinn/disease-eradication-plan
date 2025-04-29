@@ -1,3 +1,14 @@
+---
+title: Combination Product Review Integration
+description: Framework for integrating combination product review processes with dFDA platform capabilities
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, combination-products, review-process, integration
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-puzzle-piece
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

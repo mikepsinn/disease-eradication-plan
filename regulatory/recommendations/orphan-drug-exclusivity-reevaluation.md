@@ -1,3 +1,14 @@
+---
+title: Orphan Drug Exclusivity Reevaluation
+description: Proposals for reevaluating orphan drug exclusivity in the context of dFDA platform trials
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, orphan-drugs, exclusivity, rare-diseases
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-microscope
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

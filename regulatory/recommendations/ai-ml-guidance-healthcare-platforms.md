@@ -1,3 +1,14 @@
+---
+title: AI/ML Guidance for Healthcare Platforms
+description: Recommendations for AI/ML implementation guidance in healthcare platforms including dFDA
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, artificial-intelligence, machine-learning, healthcare
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-brain
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

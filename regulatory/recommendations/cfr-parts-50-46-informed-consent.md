@@ -1,3 +1,14 @@
+---
+title: Informed Consent Modernization
+description: Framework for modernizing informed consent requirements under 21 CFR Parts 50/46 for dFDA platform
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, informed-consent, human-subjects, ethics
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-signature
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

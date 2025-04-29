@@ -1,3 +1,14 @@
+---
+title: Record Retention Integration
+description: Framework for integrating record retention requirements with dFDA platform capabilities
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, record-retention, compliance, documentation
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-archive
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name
