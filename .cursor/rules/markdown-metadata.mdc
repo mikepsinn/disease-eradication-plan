@@ -1,0 +1,28 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Markdown File Metadata Standard
+
+All Markdown files (`.md`) in this workspace should begin with a YAML frontmatter block enclosed in `---`. This block contains standard metadata fields.
+
+**Standard Fields:**
+
+*   `title`: (String) The main title of the page.
+*   `description`: (String) A brief summary of the page content.
+*   `published`: (Boolean) `true` or `false` indicating if the page is live.
+*   `date`: (String) The last updated date in ISO 8601 format (e.g., `YYYY-MM-DDTHH:mm:ss.sssZ`).
+*   `tags`: (String) A comma-separated list of relevant keywords (kebab-case).
+*   `editor`: (String) Should typically be `markdown`.
+*   `dateCreated`: (String) The original creation date in ISO 8601 format.
+*   `fontawesomeIcon`: (String, Optional) A Font Awesome icon class (e.g., `fa-layer-group`) if applicable.
+
+Adherence to this structure ensures consistency across the wiki.
+
+**Examples:**
+
+Refer to the metadata blocks in the following files:
+*   [home.md](mdc:home.md)
+*   [features/03-platform.md](mdc:features/03-platform.md)
+

@@ -1,3 +1,14 @@
+---
+title: State Law DCT Harmonization
+description: Advocacy strategy for harmonizing state laws to facilitate decentralized clinical trials and dFDA implementation
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, state-law, dct, harmonization, advocacy
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-balance-scale
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

@@ -1,3 +1,14 @@
+---
+title: ClinicalTrials.gov Reporting Reform
+description: Recommendations for modernizing 42 CFR Part 11 reporting requirements for integration with dFDA platform
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, clinicaltrials-gov, reporting, transparency
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-chart-line
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name

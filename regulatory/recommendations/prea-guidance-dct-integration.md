@@ -1,3 +1,14 @@
+---
+title: PREA Guidance DCT Integration
+description: Framework for integrating Pediatric Research Equity Act requirements with decentralized clinical trials
+published: true
+date: 2024-03-19T12:00:00.000Z
+tags: regulatory, recommendations, prea, pediatric-research, dct
+editor: markdown
+dateCreated: 2024-03-19T12:00:00.000Z
+fontawesomeIcon: fa-child
+---
+
 # Help DOGE Improve Regulations to Accelerate BioMedical Innovation
 
 ### First Name
