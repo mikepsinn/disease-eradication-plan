@@ -2,7 +2,7 @@
 title: Maximizing Trial Efficiency with Decentralized Pragmatic Trials
 description: How the Oxford RECOVERY pragmatic trial reduced the cost of clinical research by 80X
 published: true
-date: 2025-05-07T10:42:54.742Z
+date: 2025-05-07T10:43:00.032Z
 tags: clinical-trials, cost-efficiency, decentralized-platforms, recovery-trial
 editor: markdown
 dateCreated: 2025-02-24T00:36:51.173Z
