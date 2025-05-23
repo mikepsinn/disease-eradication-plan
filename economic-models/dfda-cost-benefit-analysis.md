@@ -1,13 +1,12 @@
 ---
-title: dFDA Cost Benefit Analysis and Return on Inveestment
+title: dFDA Cost Benefit Analysis and Return on Investment
 description: The analysis indicates that a global, decentralized FDA platform could slash per-patient trial costs by up to 80× and generate roughly $45 billion in net annual savings, resulting in an ROI of approximately 9:1.
 published: true
-date: 2025-02-09T16:58:25.534Z
+date: 2025-05-08T00:23:25.085Z
 tags: economic-models
 editor: markdown
-dateCreated: 2025-02-02T07:33:37.361Z
+dateCreated: 2025-04-29T01:07:30.411Z
 ---
-
 
 Below is a conceptual, high-level analysis of the costs, benefits, and return on investment (ROI) for transforming the U.S. Food and Drug Administration's (FDA) current regulatory framework into a "global decentralized, autonomous FDA." This future-state platform would continuously rank treatments using the entirety of clinical and real-world data (RWD), and would enable anyone—potentially over a billion people worldwide—to participate in large-scale, continuous, decentralized clinical trials. 
 
