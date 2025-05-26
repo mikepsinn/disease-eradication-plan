@@ -38,7 +38,7 @@ Today's healthcare system is broken because:
 This Act:
 
 * ✅ **Guarantees** every person's right to try any treatment that passes basic safety testing
-* 💻 **Creates** a free, open platform eliminating billions in trial costs
+* 💻 **Upgrades and open-sources FDA.gov as "FDA.gov v2"**, eliminating billions in trial costs by providing free, public, next-generation infrastructure
 * 🏆 **Rewards** companies for developing actual cures and prevention
 * 🚪 **Removes** barriers blocking access to effective treatments
 * 📈 **Measures and rewards** real-world results through comprehensive data collection
@@ -58,7 +58,7 @@ This Act will:
 
 ### 2.1 🛡️ Transforming Safety and Efficacy Testing
 
-A free public decentralized trial platform will:
+A free, open-source, public FDA.gov v2 platform will:
 
 * 🔄 Replace traditional Phase 1-4 trials with continuous real-world evidence collection
 * 📡 Enable efficient safety testing through remote monitoring and rapid signal detection
@@ -68,7 +68,7 @@ A free public decentralized trial platform will:
 
 ### 2.2 🌍 Universal Participation
 
-The platform enables:
+The FDA.gov v2 platform enables:
 
 * 👥 **Broader testing** with diverse participants
 * 🏠 **Any patient** to participate from home or remotely
@@ -99,7 +99,7 @@ The FDAi continuously:
 
 Any patient can:
 
-* 📱 **Access the dFDA platform** showing ranked treatments for their condition
+* 📱 **Access FDA.gov v2** showing ranked treatments for their condition
 * 🔍 **See real-world success rates** from other patients with similar conditions
 * ✅ **Try treatments sequentially** from most to least promising
 * 🏡 **Participate from home** through telemedicine and remote monitoring
@@ -109,7 +109,7 @@ Any patient can:
 
 The system:
 
-* 💻 **Automates enrollment** in decentralized trials
+* 💻 **Automates enrollment** in open-source, decentralized trials via FDA.gov v2
 * 🏃 **Starts immediately** after basic safety verification
 * 📈 **Updates rankings daily** based on patient outcomes
 * 🤝 **Connects patients directly** to treatment providers
@@ -128,7 +128,7 @@ Every patient outcome:
 
 ### 4.1 💸 Replacing Expensive Systems
 
-A decentralized trial platform will:
+FDA.gov v2, as an open-source, public platform, will:
 
 * 🗃️ **Handle all trial data collection**
 * 📈 **Track real-world outcomes**
@@ -140,7 +140,7 @@ A decentralized trial platform will:
 
 ### 4.2 🏷️ Eliminating Unnecessary Costs
 
-The platform eliminates expenses for:
+FDA.gov v2 eliminates expenses for:
 
 * 💾 **Trial software and systems**
 * 📱 **Patient monitoring tools**
@@ -151,7 +151,7 @@ The platform eliminates expenses for:
 
 ### 4.3 📈 Better Data, Better Decisions
 
-The platform automatically:
+FDA.gov v2 automatically:
 
 * 🧩 **Matches similar patients**
 * 🏆 **Identifies optimal treatments** based on real-world outcomes
@@ -165,14 +165,14 @@ The platform automatically:
 Anyone can:
 
 * 📚 **Access aggregated and anonymized trial data**
-* 🛠️ **Build new analysis tools** to integrate with the platform
+* 🛠️ **Build new analysis tools** to integrate with FDA.gov v2
 * 📱 **Create patient apps**
 * 🛠️ **Improve the platform**
 * ➕ **Add new features**
 
 ### 4.5 🌍 Global Collaboration
 
-The platform supports:
+FDA.gov v2 supports:
 
 * 🌐 **Recognition of international safety data**
 * 📝 **Harmonized global reporting standards**
@@ -228,52 +228,6 @@ The platform supports:
     * 🏆 True price competition
     * 🌐 Global price parity
     * 🚫 Prevention of price gouging
-
-### 5.2 🩺 Healthcare Savings Sharing Program
-
-#### Win-Win: Manufacturers and Society Split Healthcare Savings 50/50
-
-##### Example: Age-Related Disease Prevention 🧬
-
-- **Average lifetime healthcare costs:** $1.2M per person 📊
-- **~80% of costs are from age-related diseases:** $960k 👴
-- **Treatment reduces lifetime costs by:** $750k per person 📉
-- **At $10k per treatment, 1 million people can afford it** 👥
-- **Total lifetime savings:** $750 billion 💰
-    - **Society keeps:** $375 billion in savings 🏥
-    - **Manufacturer receives:** $375 billion in rewards 🎯
-- **Additional savings from increased productivity and reduced care needs** 📈
-
-#### Massive Economic Benefits 📊
-
-- **Government healthcare costs cut in half** 📉
-- **Patients save thousands on treatment costs** 💰
-- **Insurance premiums drop dramatically** ⬇️
-- **Taxpayers save trillions long-term** 💎
-- **Healthcare becomes sustainably affordable** 🌟
-
-### This creates a virtuous cycle:
-
-- **Lower prices → More patients can afford treatment** 💫
-- **More patients → Higher total savings generated** 📈
-- **Higher savings → Bigger rewards for manufacturers** 🎯
-- **Bigger rewards → More investment in cures** 🚀
-- **More cures → Even more healthcare savings** 💰
-
-#### Eligible Treatments Include:
-
-- **Age reversal therapies** 🧬
-- **Gene therapies** 🧬
-- **Disease prevention treatments** 🛡️
-- **Regenerative medicine** 🔄
-- **Longevity treatments** ⏳
-
-#### Implementation:
-
-- **The Decentralized FDA tracks long-term health outcomes** 📊
-- **Transparent savings calculations** 🧮
-- **Independent verification of results** ✅
-- **Automated payment distribution** 💸
 
 ## 🌟 SECTION 6. BENEFITS OVER CURRENT SYSTEM
 
