@@ -1,16 +1,12 @@
 ---
-title: "Referral Rewards for 80X Faster Medical Progress"
-description: >-
-  How a viral referral-rewards system can mobilize 3.5% of the population to vote for the FDA Upgrade and Right to Trial Act, replicating the 80X efficiency of the Oxford RECOVERY trial and transforming clinical research costs.
-emoji: "\U0001F4B0"
-tags: 'strategy, clinical-trials, cost-efficiency, referral-rewards, FDA-upgrade, right-to-trial'
+title: Referral Rewards and 3.5% Rule
+description: How a viral referral-rewards system can mobilize 3.5% of the population to vote for the FDA Upgrade and Right to Trial Act, replicating the 80X efficiency of the Oxford RECOVERY trial and transforming clinical research costs.
 published: true
+date: 2025-05-27T21:56:53.681Z
+tags: clinical-trials, cost-efficiency, strategy, referral-rewards, fda-upgrade, right-to-trial
 editor: markdown
-date: '2025-05-10T12:00:00.000Z'
-dateCreated: '2025-05-10T12:00:00.000Z'
+dateCreated: 2025-05-27T21:54:01.437Z
 ---
-
-# 🚀 Referral Rewards: Mobilizing 3.5% for the FDA Upgrade & Right to Trial Act
 
 ## Why 3.5%? The Tipping Point for Systemic Change
 
