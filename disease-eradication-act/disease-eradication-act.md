@@ -306,9 +306,25 @@ The Secretary, in consultation with the Director of the National Institutes of H
 (b) **User Fees**: The Secretary may establish a fair and transparent system of user fees for commercial entities utilizing the advanced services of the FDA.gov v2 Platform for product development, provided that such fees do not impede academic research, non-profit initiatives, or patient access to information and trial participation.
 (c) **Public-Private Partnerships**: The Secretary may explore public-private partnerships for specific technological enhancements or operational aspects of the Platform, provided such partnerships align with the public health mission and open-source principles of this Act.
 
-### 6.3 Support for Patient Participation Costs
+### 6.3 Universal Participation Subsidy
 
-The Secretary, through the NIH and other relevant agencies, shall establish programs to subsidize or cover reasonable costs associated with patient participation in clinical trials conducted via the FDA.gov v2 Platform, particularly for patients with financial hardships or those participating in trials of significant public health importance with limited commercial sponsorship. This may include costs related to travel (if necessary), diagnostics, or supportive care directly related to trial participation.
+(a) The Secretary, through the NIH and other relevant agencies, shall establish and maintain an algorithmic system to determine and apply universal discounts or subsidies to the cost of participation in clinical trials conducted via the FDA.gov v2 Platform.
+
+(b) The level of subsidy shall be determined by an algorithm that incorporates, at a minimum:
+    (1) The projected public health value of the intervention (e.g., potential to reduce disease burden, improve quality of life, or generate healthcare cost savings);
+    (2) The incremental value of each participant's data to the evidence base and trial objectives (e.g., statistical power, diversity, or addressing underrepresented populations);
+    (3) Patient financial need, as determined by standardized criteria (e.g., income, insurance status, or other relevant factors).
+
+(c) The algorithm and its parameters shall be published, subject to public comment, and updated at least annually to reflect advances in evidence, policy priorities, and stakeholder feedback.
+
+(d) Example factors to be considered in the algorithm include, but are not limited to:
+    - Disease prevalence and severity;
+    - Expected impact of the intervention on morbidity, mortality, and healthcare costs;
+    - The number and diversity of participants needed to achieve robust results;
+    - The marginal value of additional data for regulatory or clinical decision-making;
+    - Socioeconomic barriers to participation.
+
+(e) The Secretary shall ensure that the subsidy system is transparent, equitable, and designed to maximize both patient access and the societal value of clinical research.
 
 ## SECTION 7. REGULATORY HARMONIZATION AND GLOBAL COLLABORATION
 
