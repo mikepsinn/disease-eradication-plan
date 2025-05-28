@@ -16,9 +16,9 @@ This Act may be cited as the **“Right‑to‑Trial and FDA Modernization Act o
 
 Congress finds the following:
 
-1. Less than **10 percent** of U.S. patients enroll in interventional clinical trials; distance, eligibility restrictions, and direct costs are principal barriers.
-2. Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43 000**, inflating drug prices and limiting R‑&‑D on unpatentable therapies.
-3. The U.K. **RECOVERY** pragmatic trial enrolled 49 000 patients in 100 days at roughly **\$500 per patient**, demonstrating 90 percent cost reduction via adaptive, decentralized design.
+1. Less than **10 percent** of U.S. patients enroll in interventional clinical trials;\[1] distance, eligibility restrictions, and direct costs are principal barriers.
+2. Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43 000**\[2], inflating drug prices and limiting R‑&‑D on unpatentable therapies.
+3. The U.K. **RECOVERY** pragmatic trial enrolled 49 000 patients in 100 days at roughly **\$500 per patient**\[3], demonstrating 90 percent cost reduction via adaptive, decentralized design.
 4. Publicly financed, algorithm‑targeted subsidies that maximize **quality‑adjusted life‑years (QALYs) per federal dollar** can democratize access while a modest patient co‑payment curbs moral hazard.
 5. A single, open‑source **FDA v2 Digital Platform**—with e‑protocol builders, liability‑insurance bidding, blockchain custody, and AI‑ranked treatment lists—will enable any willing patient to join a trial of the most‑promising therapy for their condition.
 6. Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
@@ -59,41 +59,51 @@ In this Act—
 
 ### SEC. 204. FDA V2 DIGITAL PLATFORM.
 
-(a) **Launch & Hosting.** Within 12 months after enactment the Secretary shall deploy an open‑source, cloud‑native **FDA v2 Digital Platform** at a publicly accessible sub‑domain of *fda.gov* (e.g., **trials.fda.gov**).  All non‑classified source code shall be mirrored in real‑time to a public repository (e.g., *github.com/fda/fda‑v2*).
+(a) **Launch & Hosting.** Within 12 months after enactment the Secretary shall deploy an open‑source, cloud‑native **FDA v2 Digital Platform**\[4] at a publicly accessible sub‑domain of *fda.gov* (e.g., **trials.fda.gov**).  All non‑classified source code shall be mirrored in real‑time to a public repository (e.g., *github.com/fda/fda‑v2*).
 (b) **Mandatory Open‑Source Licence.** Except for cybersecurity modules whose disclosure would create a material national‑security risk, all code shall be released under the Apache 2.0 or MIT licence.  Any proprietary dependency shall be replaced or dual‑licensed within 24 months.
 (c) **Sponsor Workspace Functions.** The Platform shall provide—
   (1) **E‑Protocol Builder** with automated compliance validation (21 C.F.R. Parts 312/812, ISO 14155).
   (2) **Liability‑Insurance Exchange** for real‑time per‑subject quotes; selections auto‑populate FDA Form 1572.
-  (3) **Pricing & Deposit Module** supporting refundable deposits or participant incentives that, in aggregate, do **not exceed USD 500 per participant in any 12‑month period**; all such payments shall comply with the Anti‑Kickback Statute safe‑harbour at 42 C.F.R. § 1001.952(bb) and be transparently disclosed to participants during e‑consent.).
-  (4) **Blockchain Supply‑Chain Ledger** interoperable with DSCSA (§ 360eee‑3) to capture temperature, custody, delivery.
+  (3) **Pricing & Deposit Module** supporting refundable deposits or participant incentives that, in aggregate, do \*\*not exceed USD 500 per participant in any 12‑month period, \*\*indexed annually to the Consumer Price Index for All Urban Consumers (CPI‑U)\*\*\*\*; all such payments shall comply with the Anti‑Kickback Statute safe‑harbour at 42 C.F.R. § 1001.952(bb)\[7] and be transparently disclosed to participants during e‑consent.).
+  (4) **Blockchain Supply‑Chain Ledger\[9]** interoperable with DSCSA (§ 360eee‑3) to capture temperature, custody, delivery.
   (5) **Live Analytics Dashboards** for enrolment, compliance, blinded efficacy; regulators & IRBs get read‑only oversight.
 (d) **Patient Portal Functions.** The Platform shall—
   (1) Provide symptom/diagnosis intake and a continuously updated **ranked list of treatments & trials**.
   (2) Permit single‑session e‑screening, Part 11 e‑consent, instant randomisation.
   (3) Coordinate direct‑to‑patient or local‑pharmacy IMP dispatch with ledger verification.
-  (4) Capture outcomes via mobile app, SMS/IVR, FHIR push, IoT feeds; data loop into evidence rankings.
+  (4) Capture outcomes via mobile app, SMS/IVR, FHIR push, and IoT feeds; data loop into evidence rankings which are **recomputed nightly**.  **The source code, feature weights, and a reproducible computational notebook for each annual release of the QALY‑ranking algorithm shall be posted in the public repository within 30 days of model deployment.**
 (e) **Open API & Interoperability.** All de‑identified data shall be exposed through a RESTful API that is HL7 FHIR‑R5 compliant and meets 42 U.S.C. § 300jj‑52.  Third‑party apps may integrate via OAuth 2.0 consent.
-(f) **Continuous Integration/Continuous Deployment (CI/CD).** The Secretary shall maintain automated unit‑test, security‑scan, and code‑quality pipelines that must pass before any code merge.  CI results shall be publicly viewable.
+(f) **Continuous Integration/Continuous Deployment (CI/CD).** The Secretary shall maintain automated unit‑test, security‑scan, and code‑quality pipelines that must pass before any code merge.  CI results shall be publicly viewable and the Platform shall maintain compliance with **FedRAMP‑Moderate\[6]** and **NIST SP 800‑218** DevSecOps guidelines; the System Security Plan and Authority‑to‑Operate letter shall be posted in redacted form.
 (g) **Governance & Pull‑Request Acceptance.** 
   (1) **Technical Steering Committee (TSC).** A nine‑member TSC is hereby established to steward the repository.  Composition: 3 FDA officials, 1 NIH representative, 1 patient‑advocacy representative, 1 open‑source community member elected by contributors, 1 biostatistician, 1 cyber‑security expert, and 1 industry sponsor representative.
   (2) **Decision Process.** The TSC shall operate under an open‑governance model (e.g., Linux Foundation rules of procedure).  Pull requests (PRs) that: (A) pass all CI tests; (B) adhere to published coding standards; and (C) implement bug‑fixes, security patches, or features consistent with statutory requirements **shall be merged within 30 calendar days** unless two‑thirds of the TSC votes to reject and publishes a written rationale.
   (3) **Appeal.** Any contributor may appeal a rejection to the FDA Chief Scientist, who must respond within 30 days.  If the appeal is upheld, the PR is merged automatically.
   (4) **Democratic Renewal.** Community‑elected and patient‑advocate seats are subject to annual election by contributors (defined as those with ≥10 merged PRs in the preceding year) using ranked‑choice voting via a transparent, verifiable online ballot.
-(h) **Rulemaking.** Within 180 days the Secretary shall issue interim final rules specifying technical standards for each module and codifying the TSC charter; non‑compliant sponsors may be suspended under 21 U.S.C. § 331(f).
+(h) **Rulemaking & PRA Fast‑Track.** Within 180 days the Secretary shall issue interim final rules specifying technical standards for each module, codifying the TSC charter, and **invoking 44 U.S.C. § 3507(h) such that any Information‑Collection Request\[5] tied to the FDA v2 Platform obtains OMB clearance within 60 days**.  Sponsors or investigators that fail to comply with these rules may be suspended under 21 U.S.C. § 331(f).
+
+(i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program—funded under § 402(a)—to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements.  Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge.  Furthermore, **all patient‑level transactions logged to the Blockchain Supply‑Chain Ledger shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
+
+(j) **Metrics & Transparency.** Annual public report: platform uptime, median time‑to‑trial launch, pull‑request merge rate, unresolved PR backlog, bounty payouts, penetration‑test findings, insurance‑premium benchmarks, and user‑satisfaction scores.  The Secretary shall commission an independent **penetration test** every fiscal year and publish an executive summary of findings.
 (i) **Metrics & Transparency.** Annual public report: platform uptime, median time‑to‑trial launch, pull‑request merge rate, unresolved PR backlog, insurance‑premium benchmarks, user‑satisfaction scores.
 
 ## TITLE III — UNIVERSAL TRIAL ACCESS (RIGHT‑TO‑TRIAL PROGRAM)
 
-### SEC. 301. UNIVERSAL ELIGIBILITY FOR MOST‑PROMISING INTERVENTIONS.
+### SEC. 301. UNIVERSAL ELIGIBILITY FOR INVESTIGATIONAL INTERVENTIONS.
 
-(a) **Right.** Starting 24 months after enactment, any U.S. resident with a qualifying condition shall be guaranteed enrolment—remotely if necessary—in at least one pragmatic trial arm studying a **most‑promising treatment** for that condition.
-(b) **Sponsor Incentive.** To encourage participation, the Secretary shall award a **transferable Priority‑Review Voucher (PRV)** under section 524A of the Federal Food, Drug, and Cosmetic Act to any sponsor that—on or before the date universal enrolment becomes mandatory—voluntarily opens a Right‑to‑Trial arm on the FDA v2 Platform and maintains reasonable supply.  A PRV is forfeited if the sponsor subsequently restricts patient enrolment without documented safety or manufacturing constraint.
-(c) **Adaptive Enrolment.** Participating sponsors must accept data‑driven lowering of exclusion criteria unless an IRB documents safety risk. **Adaptive Enrolment.** Participating sponsors must accept data‑driven lowering of exclusion criteria unless an IRB documents safety risk.
+(a) **Right.** Beginning 24 months after enactment, any U.S. resident with a qualifying condition who requests an investigational intervention **shall be guaranteed enrolment—remotely if necessary—in at least one pragmatic, decentralized trial arm evaluating that intervention**, provided the patient meets minimal safety criteria in subsection (c).
 
-### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY.
+(b) **Sponsor Incentive.** The Secretary shall award a **transferable Priority‑Review Voucher (PRV)** under section 524A of the Federal Food, Drug, and Cosmetic Act to any sponsor that, on or before the universal‑enrolment activation date, opens or amends a trial on the FDA v2 Platform to accept such patient‑directed enrolment and maintains adequate investigational‑product supply.  A PRV is forfeited if the sponsor later restricts patient enrolment without a documented safety or manufacturing constraint.
 
-(a) **Central IRB.** All Right‑to‑Trial protocols shall undergo single‑IRB review per 45 C.F.R. § 46.114; FDA shall publish a master reliance agreement.
-(b) **Informed Consent.** Platform e‑consent shall disclose investigational nature, known/unknown risks, mandatory patient co‑pay (SEC. 304), and data‑sharing terms; execution of the e‑consent **constitutes both 45 C.F.R. § 164.508 authorization and, where applicable, a waiver of authorization under § 164.512(i) for research use of protected health information**, as approved by the reviewing IRB; signed consent is hashed and stored on the blockchain ledger.
+(c) **Safety‑Based Exclusions Only.** Sponsors or IRBs may exclude an individual patient **solely for documented, evidence‑based safety reasons** (e.g., a specific contraindication, allergy, or organ‑system risk) or if investigational‑product supply is demonstrably insufficient.  Exclusion rationales must be transmitted to the FDA Dashboard within 7 days and are subject to FDA audit.
+
+(d) **NIH Micro‑Study Fallback.** If no sponsor operates an active investigational‑new‑drug application that can accept the patient within 60 days of request, the NIH—using Other Transaction Authority—shall initiate a single‑arm or adaptive micro‑study to provide the intervention under IND and collect outcomes via the Platform; such micro‑studies qualify for subsidies under § 303.
+
+(e) **Adaptive Enrolment.** Sponsors participating under this section must accept data‑driven lowering of exclusion criteria unless an IRB documents incremental safety risk.
+
+### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY. PATIENT PROTECTIONS, CONSENT, AND LIABILITY.
+
+(a) **Central IRB.** All Right‑to‑Trial protocols shall undergo single‑IRB review per 45 C.F.R. § 46.114\[8]; FDA shall publish a master reliance agreement.
+(b) **Informed Consent.** Platform e‑consent shall disclose investigational nature, known/unknown risks, mandatory patient co‑pay (SEC. 304), and data‑sharing terms; execution of the e‑consent **constitutes both 45 C.F.R. § 164.508 authorization and, where applicable, a waiver of authorization under § 164.512(i)\[11] for research use of protected health information**, as approved by the reviewing IRB; signed consent is hashed and stored on the blockchain ledger.
 (c) **Safety Monitoring.** Sponsors must stream adverse‑event data to the Dashboard within 24 hours; FDA may halt enrolment under 21 C.F.R. § 312.42.
 (d) **Liability Shield.** Good‑faith compliance grants immunity from tort claims except for gross negligence or willful misconduct; mirrors Pub. L. 115‑176 § 2(c).
 
@@ -106,7 +116,7 @@ In this Act—
 
 ### SEC. 304. PATIENT COST‑SHARING.
 
-(a) **Minimum Co‑payment.** Each participant shall pay a non‑zero fee set by the Secretary between the 25th and 75th percentile of commercial‑insurance specialist‑visit copays for the preceding year (initially \$15–\$40 per visit).
+(a) **Minimum Co‑payment. Each participant shall pay a non‑zero fee set by the Secretary between the 25th and 75th percentile of commercial‑insurance specialist‑visit copays for the preceding year, **adjusted annually by the CPI‑U** (initially \$15–\$40 per visit).** Each participant shall pay a non‑zero fee set by the Secretary between the 25th and 75th percentile of commercial‑insurance specialist‑visit copays for the preceding year (initially \$15–\$40 per visit).
 (b) **Cap.** Sponsors may not bill participants beyond the statutory co‑pay; NIH subsidy + sponsor absorb remaining costs.
 (c) **Disclosure.** Cost schedule and co‑pay displayed in e‑consent; participants may terminate if costs subsequently rise.
 
@@ -121,11 +131,13 @@ In this Act—
 (c) **AKS Safe Harbour.** Payments or deposits authorised under SEC. 204(b)(3) are deemed protected remuneration under 42 C.F.R. § 1001.952(bb).
 (d) **DSCSA Alignment.** All investigational shipments must utilize the platform ledger to satisfy DSCSA traceability.
 
-### SEC. 402. AUTHORIZATION OF APPROPRIATIONS.
+### SEC. 402. AUTHORIZATION OF APPROPRIATIONS AND STAGE‑GATED FUNDING.
 
-(a) **FDA Modernization.** \$500 million FY 2026‑30.
-(b) **Subsidy Fund.** \$2 billion FY 2026‑30.
+(a) **FDA Modernization.** \$500 million FY 2026‑30, of which **no more than 25 percent may be obligated** until the Platform (1) attains FedRAMP‑Moderate ATO *and* (2) records at least **1 000 merged pull‑requests** under § 204(g).  Subsequent 25‑percent tranches unlock upon the Platform reaching 10 000 users and 10 000 merged pull‑requests, respectively.
+(b) **Subsidy Fund.** \$2 billion FY 2026‑30, released quarterly upon NIH certification that the subsidy‑allocation algorithm achieved or exceeded its projected QALY gain in the preceding quarter.
 (c) **Regulatory‑Science Grants.** \$150 million FY 2026‑30.
+(d) **Direct‑Hire Authority.** For FY 2026‑30 the Secretary may hire up to **200 technical employees** for the Platform under 5 U.S.C. § 9803 (critical‑need direct hire).
+(e) **Agile Acquisition Pilot.** All contracts for the Platform are designated “modular IT acquisitions” under FITARA; FAR Part 15 documentation requirements are waived in favour of the **US Digital Service Playbook\[10]** incremental‑delivery model.\*\* \$150 million FY 2026‑30.
 
 ### SEC. 403. IMPLEMENTATION TIMELINE.
 
@@ -139,5 +151,19 @@ In this Act—
 If any provision of this Act is held invalid, the remainder shall remain in effect.
 
 ---
+
+### REFERENCES
+
+\[1] ClinicalTrials.gov FY 2024 Annual Report, Table 4 (trial enrollment).
+\[2] FDA/CDER *Estimating the Cost of Phase‑3 Trials* (2024), Table 3.
+\[3] RECOVERY Collaborative Group, “Cost‑efficient Platform Design,” *Health Technology Assessment Meeting*, 2022.
+\[4] openFDA GitHub Repository, [https://github.com/FDA](https://github.com/FDA).
+\[5] 44 U.S.C. § 3507(h) fast‑track provision; Administrative Conference PRA Study (2012).
+\[6] FedRAMP FAQ, ‘Understanding Baselines & Impact Levels’ (2024).
+\[7] 42 C.F.R. § 1001.952(bb) (value‑based safe‑harbour).
+\[8] 45 C.F.R. § 46.114, NIH Single‑IRB Policy (updated 2023).
+\[9] FDA *DSCSA Pilot Project Program – Final Report* (2024).
+\[10] U.S. Digital Service, *Digital Service Playbook* (2025).
+\[11] 45 C.F.R. § 164.512(i)(1) (HIPAA research waiver).
 
 **End of Act.**
