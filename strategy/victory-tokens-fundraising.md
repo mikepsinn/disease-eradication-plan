@@ -1,16 +1,12 @@
 ---
-title: "$VICTORY Tokens: Modern Fundraising for Medical Progress"
-description: >-
-  How $VICTORY tokens can fund the viral referral-rewards system to mobilize 3.5% of the population for the FDA Upgrade & Right to Trial Act, replicating the WWII war bond model for the digital age.
-emoji: "🏅"
-tags: 'strategy, fundraising, referral-rewards, FDA-upgrade, right-to-trial, war-bonds, crypto, medical-progress'
+title: $VICTORY Bonds to Fund the War On Disease Referendum
+description: How $VICTORY tokens can fund the viral referral-rewards system to mobilize 3.5% of the population for the FDA Upgrade & Right to Trial Act, replicating the WWII war bond model for the digital age.
 published: true
+date: 2025-05-27T22:43:32.442Z
+tags: medical-progress, strategy, referral-rewards, fda-upgrade, right-to-trial, fundraising, war-bonds, crypto
 editor: markdown
-date: '2025-07-10T12:00:00.000Z'
-dateCreated: '2025-07-10T12:00:00.000Z'
+dateCreated: 2025-05-27T22:42:33.062Z
 ---
-
-# 🏅 $VICTORY Tokens: Modern Fundraising for Medical Progress
 
 ## Why $VICTORY Tokens?
 - Inspired by WWII war bonds, $VICTORY tokens are a digital, transparent way to fund the movement for 80X faster medical progress.
