@@ -3,7 +3,7 @@ title: Referral Rewards and 3.5% Rule
 description: How a viral referral-rewards system can mobilize 3.5% of the population to vote for the FDA Upgrade and Right to Trial Act, replicating the 80X efficiency of the Oxford RECOVERY trial and transforming clinical research costs.
 published: true
 date: 2025-05-27T21:56:53.681Z
-tags: clinical-trials, cost-efficiency, strategy, referral-rewards, fda-upgrade, right-to-trial
+tags: crypto, clinical-trials, cost-efficiency, fda-upgrade, fundraising, medical-progress, referral-rewards, right-to-trial, strategy, war-bonds
 editor: markdown
 dateCreated: 2025-05-27T21:54:01.437Z
 ---
@@ -16,9 +16,9 @@ Research shows that when just **3.5% of a population** actively participates in 
 
 | Threshold                        | Historical analogue                                                                       | Why it matters                                           |
 | -------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| **100 k** verifiable supporters  | UK Parliament e-petition rule (prompts a floor debate) ([UK petition 100k rule](https://petition.parliament.uk/help?utm_source=chatgpt.com))      | A concrete, fast first benchmark.                        |
-| **≈ 4 M** public comments        | FCC net-neutrality fight (2014–15) ([Net-neutrality 4M comments - White House](https://obamawhitehouse.archives.gov/net-neutrality?utm_source=chatgpt.com), [Net-neutrality 4M comments - FCC](https://apps.fcc.gov/edocs_public/attachmatch/fcc-15-24a1.pdf?utm_source=chatgpt.com)) | Volume + mapping to districts swayed a federal agency.   |
-| **3.5 % of population (≈ 12 M)** | Chenoweth "3.5 % rule" dataset (1905-2006) ([Chenoweth 3.5% rule](https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world?utm_source=chatgpt.com))                         | Historically, campaigns at this level have never failed. |
+| **100 k** verifiable supporters  | UK Parliament e-petition rule (prompts a floor debate) ([UK petition 100k rule](https://petition.parliament.uk/help))      | A concrete, fast first benchmark.                        |
+| **≈ 4 M** public comments        | FCC net-neutrality fight (2014–15) ([Net-neutrality 4M comments - White House](https://obamawhitehouse.archives.gov/net-neutrality), [Net-neutrality 4M comments - FCC](https://apps.fcc.gov/edocs_public/attachmatch/fcc-15-24a1.pdf)) | Volume + mapping to districts swayed a federal agency.   |
+| **3.5 % of population (≈ 12 M)** | Chenoweth "3.5 % rule" dataset (1905-2006) ([Chenoweth 3.5% rule](https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world))                         | Historically, campaigns at this level have never failed. |
 
 ## The 80X Efficiency Benchmark: Oxford RECOVERY Trial
 
@@ -32,9 +32,9 @@ The [Oxford RECOVERY trial](https://www.recoverytrial.net/) demonstrated that de
 
 | Data point                                                                        | Source                                                   |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| 87 % of Americans say clinical-trial participation should be part of regular care | ([Research!America survey 87 %](https://www.researchamerica.org/press-releases-statements/large-majority-of-americans-say-consideration-of-clinical-trial-participation-should-be-a-part-of-regular-health-care/?utm_source=chatgpt.com))                               |
-| >80 % approval when longevity is framed as "health improvement"                   | ([Health-span framing study 2024](https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2827753/garmany_2024_oi_241395_1733259944.03263.pdf?utm_source=chatgpt.com)) |
-| 38 + states now have Right-to-Try laws; a **federal** RTT was signed 30 May 2018  | ([State & federal Right-to-Try laws - Wikipedia](https://en.wikipedia.org/wiki/Right-to-try_law?utm_source=chatgpt.com), [State & federal Right-to-Try laws - PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC7416898/?utm_source=chatgpt.com))       |
+| 87 % of Americans say clinical-trial participation should be part of regular care | ([Research!America survey 87 %](https://www.researchamerica.org/press-releases-statements/large-majority-of-americans-say-consideration-of-clinical-trial-participation-should-be-a-part-of-regular-health-care/))                               |
+| >80 % approval when longevity is framed as "health improvement"                   | ([Health-span framing study 2024](https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2827753/garmany_2024_oi_241395_1733259944.03263.pdf)) |
+| 38 + states now have Right-to-Try laws; a **federal** RTT was signed 30 May 2018  | ([State & federal Right-to-Try laws - Wikipedia](https://en.wikipedia.org/wiki/Right-to-try_law), [State & federal Right-to-Try laws - PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC7416898/))       |
 
 > **Take-away:** sentiment is not the bottleneck; the missing piece is a legal & logistical path to let patients *act* on that sentiment.
 
@@ -57,13 +57,13 @@ A well-designed referral-rewards system can:
 
 **Benchmarks:**
 - **EveryLibrary – "Fight for the First" 2023–24:** Email-verified petition/pledge to local officials. Reported cost ≈ **$0.56 per verified action** (derived from $250–$1,000 ad spend per local drive producing 90,000 actions across ~100 drives). ([Source: EveryLibrary About](https://www.everylibrary.org/about-everylibrary))
-- **EveryLibrary Facebook/email drives (internal recap):** Library-funding calls & petitions reported at "A few **pennies per action**". ([Source: EveryLibrary cost-per-action ("few pennies")](https://pcsweeney.com/tag/library-activism/?utm_source=chatgpt.com))
+- **EveryLibrary Facebook/email drives (internal recap):** Library-funding calls & petitions reported at "A few **pennies per action**". ([Source: EveryLibrary cost-per-action ("few pennies")](https://pcsweeney.com/tag/library-activism/))
 - **Change.org Promoted Petitions:** Uses a Cost Per Mille (CPM) or cost-per-impression model.
   - "$100 invested by promotions, a petition will be featured to 2,000 people" (equates to $0.05 per impression or $50 CPM). ([Source: Change.org Help](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition))
   - "$8 will result in the petition ads being displayed to 100 people" (equates to $0.08 per impression or $80 CPM). ([Source: Change.org FAQ](https://www.change.org/l/us/chipping-in-explained))
-  - Based on typical signature-conversion rates quoted in user analyses, the **effective cost is estimated at $0.20–$0.40 per added signature**. ([Sources: The Guardian](https://www.theguardian.com/world/2013/jan/15/avaaz-online-campaigning-reinvent-politics), [Change.org Promoted Petitions Instructions](https://www.change.org/l/hi/promoted-petitions-instructions), [Change.org promoted petition math](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition?utm_source=chatgpt.com))
+  - Based on typical signature-conversion rates quoted in user analyses, the **effective cost is estimated at $0.20–$0.40 per added signature**. ([Sources: The Guardian](https://www.theguardian.com/world/2013/jan/15/avaaz-online-campaigning-reinvent-politics), [Change.org Promoted Petitions Instructions](https://www.change.org/l/hi/promoted-petitions-instructions), [Change.org promoted petition math](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition))
   *Note: The effective cost per action (e.g., signature) is variable and depends on the petition's conversion rate from impression to signature.*
-- **Avaaz global pledge campaigns:** Email-verified signatures reported at **≈ $0.32 per action** (Avaaz finance FAQ). ([Source: Avaaz finance page (≈ \$0.32 CPA)](https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/?utm_source=chatgpt.com))
+- **Avaaz global pledge campaigns:** Email-verified signatures reported at **≈ $0.32 per action** (Avaaz finance FAQ). ([Source: Avaaz finance page (≈ \$0.32 CPA)](https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/))
 - [GiveDirectly 2021](https://www.givedirectly.org/): $0.48 per verified crypto match
 - **Cost to Obtain Survey Responses (Platform Cost):** Survey platforms like Pollfish indicate costs to businesses starting at ~$0.95 per survey completion, which is the platform's charge for acquiring a response, not a direct referral payout. ([Pollfish](https://www.pollfish.com/pricing/survey-calculator/))
 - **Voter Turnout Referrals (Political Campaign Specific):** Some political campaigns or get-out-the-vote initiatives have offered referrers around $10 per successful referral for getting someone to vote in an official election. ([TurnoutTeam.com](https://turnoutteam.com/))
@@ -101,6 +101,28 @@ A well-designed referral-rewards system can:
 | Viral best-case      | $25k       | $15k     | $10k   | $50k    | $0.25  |
 
 ---
+
+## $VICTORY Tokens: Funding the Referral Rewards System
+
+### Why $VICTORY Tokens?
+- Inspired by WWII war bonds, $VICTORY tokens are a digital, transparent way to fund the movement for 80X faster medical progress.
+- Purpose: Directly finance this viral referral-rewards system to mobilize 3.5% of the population for the [FDA Upgrade & Right to Trial Act](../disease-eradication-act/disease-eradication-act.md).
+- Goal: Unlock the same scale of transformation as the Oxford RECOVERY trial, which achieved an [80X efficiency gain](https://www.recoverytrial.net/) in clinical research.
+
+### How It Works
+- **Purchase $VICTORY tokens** to fund verified votes and actions in support of the Act.
+- **Each token** directly funds a specific number of verified votes (target: <$1 per vote, with potential for $0.20–$0.30 in viral scenarios—see the "Benchmarks" section above).
+- **All transactions** are transparently tracked on-chain, with a public dashboard showing progress toward the 3.5% tipping point ([BBC Future](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)).
+
+### Incentives for Supporters
+- **Share in future healthcare savings** or referral jackpots, aligning incentives with campaign success.
+- **Governance rights**: Token holders may help steer campaign direction and reward distribution.
+- **Recognition**: Top contributors featured on leaderboards and in campaign updates.
+
+### Transparency & Accountability
+- **Open, auditable records** of all token sales and reward distributions.
+- **Real-time impact dashboard**: See how many votes/actions your support has funded.
+- **Economic model**: "Every $1,000 in $VICTORY tokens funds 1,000+ verified votes, unlocking $X in healthcare savings and Y lives improved."
 
 ## Concrete Path to Mobilization
 
@@ -197,17 +219,17 @@ So when you propose a pledge/ referral system that can gather tens of thousands�
 - [UK Parliament - E-petitions information](https://www.parliament.uk/get-involved/sign-a-petition/e-petitions/)
 - [Harvard Gazette - Nonviolent resistance proves potent weapon (Chenoweth)](https://news.harvard.edu/gazette/story/2019/02/why-nonviolent-resistance-beats-violent-force-in-effecting-social-political-change/)
 - [ICNC - The Success of Nonviolent Civil Resistance (Chenoweth)](https://www.nonviolent-conflict.org/resource/success-nonviolent-civil-resistance/)
-- [Research!America survey 87 %](https://www.researchamerica.org/press-releases-statements/large-majority-of-americans-say-consideration-of-clinical-trial-participation-should-be-a-part-of-regular-health-care/?utm_source=chatgpt.com)
-- [Health-span framing study 2024](https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2827753/garmany_2024_oi_241395_1733259944.03263.pdf?utm_source=chatgpt.com)
-- [State & federal Right-to-Try laws - Wikipedia](https://en.wikipedia.org/wiki/Right-to-try_law?utm_source=chatgpt.com)
-- [State & federal Right-to-Try laws - PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC7416898/?utm_source=chatgpt.com)
-- [UK petition 100k rule](https://petition.parliament.uk/help?utm_source=chatgpt.com)
-- [Net-neutrality 4M comments - White House](https://obamawhitehouse.archives.gov/net-neutrality?utm_source=chatgpt.com)
-- [Net-neutrality 4M comments - FCC](https://apps.fcc.gov/edocs_public/attachmatch/fcc-15-24a1.pdf?utm_source=chatgpt.com)
-- [Chenoweth 3.5% rule](https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world?utm_source=chatgpt.com)
-- [EveryLibrary cost-per-action ("few pennies")](https://pcsweeney.com/tag/library-activism/?utm_source=chatgpt.com)
-- [Avaaz finance page (≈ \$0.32 CPA)](https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/?utm_source=chatgpt.com)
-- [Change.org promoted petition math](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition?utm_source=chatgpt.com)
+- [Research!America survey 87 %](https://www.researchamerica.org/press-releases-statements/large-majority-of-americans-say-consideration-of-clinical-trial-participation-should-be-a-part-of-regular-health-care/)
+- [Health-span framing study 2024](https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2827753/garmany_2024_oi_241395_1733259944.03263.pdf)
+- [State & federal Right-to-Try laws - Wikipedia](https://en.wikipedia.org/wiki/Right-to-try_law)
+- [State & federal Right-to-Try laws - PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC7416898/)
+- [UK petition 100k rule](https://petition.parliament.uk/help)
+- [Net-neutrality 4M comments - White House](https://obamawhitehouse.archives.gov/net-neutrality)
+- [Net-neutrality 4M comments - FCC](https://apps.fcc.gov/edocs_public/attachmatch/fcc-15-24a1.pdf)
+- [Chenoweth 3.5% rule](https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world)
+- [EveryLibrary cost-per-action ("few pennies")](https://pcsweeney.com/tag/library-activism/)
+- [Avaaz finance page (≈ \$0.32 CPA)](https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/)
+- [Change.org promoted petition math](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition)
 
 ---
 
