@@ -296,7 +296,7 @@ If any provision of this Act or its application is held invalid, the remainder o
 
 A detailed, quantitative cost-benefit and return-on-investment (ROI) analysis for the dFDA platform and the Right-to-Trial & FDA Upgrade Act is available in the [dFDA Cost Benefit Analysis and Return on Investment](../economic-models/dfda-cost-benefit-analysis.md) file.
 
-**Key finding:** The analysis indicates that a global, decentralized FDA platform could slash per-patient trial costs by up to 80× and generate roughly $45 billion in net annual savings, resulting in an ROI of approximately 9:1. For full methodology, assumptions, and detailed breakdowns, see the linked file.
+**Key finding:** The analysis indicates that a global, decentralized FDA platform could [slash per-patient trial costs by up to 80×](../economic-models/dfda-cost-benefit-analysis.md#42-decentralized-trial-costs-modeled-on-oxford-recovery) and [generate roughly $45 billion in net annual savings](../economic-models/dfda-cost-benefit-analysis.md#43-overall-savings), resulting in an [ROI of approximately 9:1](../economic-models/dfda-cost-benefit-analysis.md#5-roi-analysis). For full methodology, assumptions, and detailed breakdowns, see the linked file.
 
 ---
 
