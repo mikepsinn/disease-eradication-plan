@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
 // Shared ignore list across multiple scripts
-const ignoreList = [
+const ignoreList: string[] = [
   '.git',
   'node_modules',
   '.env',
@@ -15,13 +15,13 @@ const ignoreList = [
 ];
 
 // Universal file filtering
-function shouldIgnore(filePath) {
+function shouldIgnore(filePath: string): boolean {
   return ignoreList.some(ignored => filePath.includes(ignored));
 }
 
 // Standardized directory crawler
-async function getAllFiles(dir, extensions = []) {
-  const files = [];
+async function getAllFiles(dir: string, extensions: string[] = []): Promise<string[]> {
+  const files: string[] = [];
   const items = fs.readdirSync(dir);
 
   for (const item of items) {
@@ -39,7 +39,7 @@ async function getAllFiles(dir, extensions = []) {
   return files;
 }
 
-module.exports = {
+export {
   ignoreList,
   shouldIgnore,
   getAllFiles
