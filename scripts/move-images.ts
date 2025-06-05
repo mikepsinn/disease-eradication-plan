@@ -1,11 +1,18 @@
-const fs = require('fs');
-const path = require('path');
-const { getAllFiles } = require('./shared-utilities');
+import * as fs from 'fs';
+import * as path from 'path';
+import { getAllFiles } from './shared-utilities';
 
 const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.PNG', '.JPG', '.JPEG', '.GIF', '.SVG', '.WEBP'];
 const TARGET_DIR = 'assets/images';
 
-async function moveImages() {
+interface MoveResult {
+  from: string;
+  to: string;
+  success: boolean;
+  error?: string;
+}
+
+async function moveImages(): Promise<void> {
   try {
     // Create target directory if it doesn't exist
     const targetDir = path.join(process.cwd(), TARGET_DIR);
@@ -27,13 +34,13 @@ async function moveImages() {
     }
 
     // Track file moves for updating references later
-    const moves = [];
+    const moves: MoveResult[] = [];
 
     // Move each file
     for (const file of filesToMove) {
       const fileName = path.basename(file);
       const targetPath = path.join(targetDir, fileName);
-      
+
       // Handle filename conflicts
       let finalTargetPath = targetPath;
       let counter = 1;
@@ -53,7 +60,7 @@ async function moveImages() {
           success: true
         });
         console.log(`✓ Moved ${file} to ${finalTargetPath}`);
-      } catch (error) {
+      } catch (error: any) {
         console.error(`✗ Failed to move ${file}:`, error.message);
         moves.push({
           from: file,
@@ -67,7 +74,7 @@ async function moveImages() {
     // Update references in markdown and HTML files
     console.log('\nUpdating references in files...');
     const docsFiles = await getAllFiles(process.cwd(), ['.md', '.html']);
-    
+
     for (const file of docsFiles) {
       let content = fs.readFileSync(file, 'utf8');
       let contentChanged = false;
@@ -115,7 +122,7 @@ async function moveImages() {
 }
 
 // Helper function to escape special characters in regex
-function escapeRegExp(string) {
+function escapeRegExp(string: string): string {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 

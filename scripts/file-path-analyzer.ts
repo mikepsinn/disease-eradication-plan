@@ -1,24 +1,32 @@
-const structure = require('./config/structure');
-const LLMClient = require('./llm-client');
+import structure from './config/structure';
+import LLMClient from './llm-client';
 
 const llmClient = new LLMClient();
 
 // Replace static validSubdirectories with dynamic generation
-const validSubdirectories = Object.entries(structure).reduce((acc, [category, subdirs]) => {
+type ValidSubdirectories = Record<string, Set<string>>;
+const validSubdirectories: ValidSubdirectories = Object.entries(structure).reduce((acc, [category, subdirs]) => {
   if (Array.isArray(subdirs)) {
     acc[category] = new Set(subdirs);
   }
   return acc;
-}, {});
+}, {} as ValidSubdirectories);
 
 console.log('Generated valid subdirectories:', validSubdirectories);
 
-async function analyzeFileLocation(filePath, fileContent, options = {}) {
+interface Analysis {
+  targetDirectory: string;
+  action: 'move' | 'delete' | 'skip' | 'flag';
+  priority: number;
+  [key: string]: any;
+}
+
+async function analyzeFileLocation(filePath: string, fileContent: string, options: Record<string, any> = {}): Promise<Analysis> {
     const analysis = await llmClient.analyzeLocation(filePath, fileContent, options);
     return ensureFullPath(analysis);
 }
 
-function validateAnalysis(analysis) {
+function validateAnalysis(analysis: Analysis): void {
     // Split and filter empty parts from target directory
     const dirParts = analysis.targetDirectory.split('/').filter(p => p);
     
@@ -28,14 +36,14 @@ function validateAnalysis(analysis) {
 
     // Check if the root category exists in structure
     const rootCategory = dirParts[0];
-    if (!structure[rootCategory]) {
+    if (!(rootCategory in structure)) {
         throw new Error(`Invalid root category: ${rootCategory}`);
     }
 
     // Check if subdirectories are allowed in the category
     if (dirParts.length > 1) {
         const subCategory = dirParts[1];
-        if (!structure[rootCategory].includes(subCategory)) {
+        if (!Array.isArray(structure[rootCategory]) || !structure[rootCategory].includes(subCategory)) {
             throw new Error(`Invalid subdirectory ${subCategory} for category ${rootCategory}`);
         }
     }
@@ -50,14 +58,13 @@ function validateAnalysis(analysis) {
 
     if (analysis.action === 'move') {
         const [category, subdir] = analysis.targetDirectory.split('/').filter(Boolean);
-        
         if (!validSubdirectories[category]?.has(subdir)) {
             throw new Error(`Invalid subdirectory ${subdir} for category ${category}`);
         }
     }
 }
 
-function isValidPath(suggestedPath) {
+function isValidPath(suggestedPath: string): boolean {
     // Ensure path starts from root
     if (!suggestedPath.startsWith('/')) {
         return false;
@@ -85,7 +92,7 @@ function isValidPath(suggestedPath) {
     return true;
 }
 
-function ensureFullPath(analysis) {
+function ensureFullPath(analysis: Analysis): Analysis {
     if (!analysis.targetDirectory) {
         throw new Error('Target directory is required');
     }
@@ -98,7 +105,7 @@ function ensureFullPath(analysis) {
     return analysis;
 }
 
-module.exports = {
+export {
     analyzeFileLocation,
     validateAnalysis,
     isValidPath

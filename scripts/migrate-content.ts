@@ -1,14 +1,18 @@
-require('dotenv').config();
+import 'dotenv/config';
+import * as fs from 'fs';
+import * as path from 'path';
+import { ignoreList, shouldIgnore, getAllFiles } from './shared-utilities';
+import { analyzeFileLocation, validateAnalysis } from './file-path-analyzer';
+import { updateReferences } from './reference-updater';
 
-const fs = require('fs');
-const path = require('path');
-const { ignoreList, shouldIgnore, getAllFiles } = require('./shared-utilities');
-const { analyzeFileLocation, validateAnalysis } = require('./file-path-analyzer');
-const { updateReferences } = require('./reference-updater');
+interface MovedFile {
+  originalPath: string;
+  newPath: string;
+  fileName: string;
+}
 
-
-async function processFile(filePath) {
-  let analysis; // Declare analysis outside try block
+async function processFile(filePath: string): Promise<MovedFile | undefined> {
+  let analysis: any; // Use any for compatibility with dynamic analysis structure
   try {
     if (shouldIgnore(filePath)) {
       console.log(`Skipping ignored file: ${filePath}\n`);
@@ -35,21 +39,21 @@ async function processFile(filePath) {
       fs.renameSync(filePath, targetPath);
       
       // Track moved files for reference updating
-      const movedFile = {
+      const movedFile: MovedFile = {
         originalPath: filePath,
         newPath: targetPath,
         fileName: path.basename(filePath)
       };
       return movedFile;
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Error processing ${filePath}:`, error.message);
     console.log('Current analysis state:', JSON.stringify(analysis || {}, null, 2));
     throw error;
   }
 }
 
-async function migrateContent(sourceDir) {
+async function migrateContent(sourceDir: string): Promise<void> {
   try {
     let processedCount = 0;
     let successCount = 0;
@@ -58,7 +62,7 @@ async function migrateContent(sourceDir) {
     const files = await getAllFiles(sourceDir, ['.md', '.html']);
     console.log(`Found ${files.length} markdown/HTML files to process\n`);
     
-    const movedFiles = [];
+    const movedFiles: MovedFile[] = [];
     
     for (const file of files) {
       const result = await processFile(file);
@@ -78,7 +82,7 @@ async function migrateContent(sourceDir) {
     console.log(`- Processed: ${processedCount}`);
     console.log(`- Successes: ${successCount}`);
     console.log(`- Errors: ${errorCount}`);
-  } catch (error) {
+  } catch (error: any) {
     console.error('Migration failed:', error.message);
     process.exit(1);
   }
@@ -90,7 +94,7 @@ if (require.main === module) {
   migrateContent(sourceDir);
 }
 
-module.exports = {
+export {
   migrateContent,
   processFile
-};
+}; 

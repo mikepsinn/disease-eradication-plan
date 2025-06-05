@@ -1,7 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
-async function updateReferences(movedFiles, allFiles) {
+interface MovedFile {
+  originalPath: string;
+  newPath: string;
+  fileName: string;
+}
+
+async function updateReferences(movedFiles: MovedFile[], allFiles: string[]): Promise<void> {
   for (const movedFile of movedFiles) {
     const originalFileName = path.basename(movedFile.originalPath);
     
@@ -26,4 +32,4 @@ async function updateReferences(movedFiles, allFiles) {
   }
 }
 
-module.exports = { updateReferences }; 
+export { updateReferences }; 

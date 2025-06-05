@@ -1,14 +1,11 @@
-// JavaScript
-// deleteEmptyFolders.js
-
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
 /**
  * Recursively delete empty folders starting from a given directory.
- * @param {string} dirPath - Path to the directory to check.
+ * @param dirPath - Path to the directory to check.
  */
-function deleteEmptyFolders(dirPath) {
+function deleteEmptyFolders(dirPath: string): void {
   // Check if the directory exists
   if (!fs.existsSync(dirPath)) {
     console.log(`Directory not found: ${dirPath}`);
@@ -40,5 +37,7 @@ function deleteEmptyFolders(dirPath) {
 }
 
 // Example usage:
-// Replace "../path/to/directory" with the actual path of the folder you want to scan
-deleteEmptyFolders(".");
+// Replace '.' with the actual path of the folder you want to scan
+// or use process.argv[2] for a command-line argument
+const targetDir = process.argv[2] || '.';
+deleteEmptyFolders(targetDir); 

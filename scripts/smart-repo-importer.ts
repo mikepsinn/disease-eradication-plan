@@ -1,12 +1,12 @@
-const fs = require('fs').promises;
-const path = require('path');
-const { shouldIgnore } = require('./shared-utilities');
-const { analyzeFileLocation } = require('./file-path-analyzer');
+import * as fs from 'fs/promises';
+import * as path from 'path';
+import { shouldIgnore } from './shared-utilities';
+import { analyzeFileLocation } from './file-path-analyzer';
 
-async function getDirectoryTree(startPath) {
-    const tree = [];
+async function getDirectoryTree(startPath: string): Promise<string> {
+    const tree: string[] = [];
     
-    async function buildTree(currentPath, relativePath = '') {
+    async function buildTree(currentPath: string, relativePath = ''): Promise<void> {
         try {
             const items = await fs.readdir(currentPath, { withFileTypes: true });
             
@@ -33,14 +33,13 @@ async function getDirectoryTree(startPath) {
     return tree.join('\n');
 }
 
-async function suggestFolderWithLLM(filePath, fileContent) {
+async function suggestFolderWithLLM(filePath: string, fileContent: string): Promise<any> {
     return analyzeFileLocation(filePath, fileContent, {
         maxContentLength: 500
     });
 }
 
-// Add proper exports
-module.exports = {
+export {
     getDirectoryTree,
     suggestFolderWithLLM
 }; 
