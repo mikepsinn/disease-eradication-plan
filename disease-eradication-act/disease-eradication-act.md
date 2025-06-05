@@ -29,9 +29,10 @@ Congress finds the following:
 1. Less than **10 percent** of U.S. patients enroll in interventional clinical trials;\[1] distance, eligibility restrictions, and direct costs are principal barriers.
 2. Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43,000**\[2], inflating drug prices and limiting R‑&‑D on unpatentable therapies.
 3. The U.K. **RECOVERY** pragmatic trial enrolled 49,000 patients in 100 days at roughly **\$500 per patient**\[3], demonstrating 90 percent cost reduction via adaptive, decentralized design.
-4. Publicly financed, algorithm‑targeted subsidies that maximize **quality‑adjusted life‑years (QALYs) per federal dollar** can democratize access while a modest patient co‑payment curbs moral hazard.
+4. Publicly financed, algorithm-targeted discounts on patient-borne trial participation costs, aimed at maximizing **quality‑adjusted life‑years (QALYs) per federal dollar**, can enhance access to trials, with patients covering the net costs of their participation.
 5. A single, open‑source **FDA.gov v2 Decentralized Trial Platform**—with e‑protocol builders, liability‑insurance bidding, blockchain custody, and AI‑ranked treatment lists—will enable any willing patient to join a trial of the most‑promising therapy for their condition.
-6. Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
+6. A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
+7. Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
 
 ### SEC. 103. DEFINITIONS.
 
@@ -74,7 +75,7 @@ In this Act—
 (c) **Sponsor Workspace Functions.** The Platform shall provide—
  (1) **E‑Protocol Builder** with automated compliance validation (21 CFR Parts 312/812, ISO 14155).
  (2) **Liability‑Insurance Exchange** for real‑time per‑subject quotes; selections auto‑populate FDA Form 1572.
- (3) **Pricing & Deposit Module** supporting refundable deposits or participant incentives that, in aggregate, do \*\*not exceed USD 500 per participant in any 12‑month period, \*\*indexed annually to the Consumer Price Index for All Urban Consumers (CPI‑U)\*\*\*\*; all such payments shall comply with the Anti‑Kickback Statute safe‑harbour at 42 CFR § 1001.952(bb)\[7] and be transparently disclosed to participants during e‑consent.).
+ (3) **Trial Cost, Discount, and Deposit Module** facilitating: (A) the transparent calculation and disclosure of estimated patient-specific trial participation costs as provided by the trial sponsor; (B) the application of any applicable NIH-funded participation discounts (pursuant to SEC. 303); (C) the management of the net financial contribution required from the participant (as per SEC. 304(b)); and (D) the collection, holding, and refund of a patient data provision deposit (as per SEC. 304(e)). All cost components, applicable discounts, the final net cost to the participant, and details of the data provision deposit shall be clearly itemized and presented to the participant during the e-consent process (as per SEC. 302(b) and SEC. 304).
  (4) **Blockchain Supply‑Chain Ledger\[9]** interoperable with DSCSA (§ 360eee‑3) to capture temperature, custody, delivery.
  (5) **Live Analytics Dashboards** for enrolment, compliance, blinded efficacy; regulators & IRBs get read‑only oversight.
 (d) **Patient Portal Functions.** The Platform shall—
@@ -111,25 +112,38 @@ In this Act—
 
 (e) **Adaptive Enrolment.** Sponsors participating under this section must accept data‑driven lowering of exclusion criteria unless an IRB documents incremental safety risk.
 
-### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY. PATIENT PROTECTIONS, CONSENT, AND LIABILITY.
+### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY.
 
 (a) **Central IRB.** All Right‑to‑Trial protocols shall undergo single‑IRB review per 45 CFR § 46.114\[8]; FDA shall publish a master reliance agreement.
-(b) **Informed Consent.** Platform e‑consent shall disclose investigational nature, known/unknown risks, mandatory patient co‑pay (SEC. 304), and data‑sharing terms; execution of the e‑consent **constitutes both 45 CFR § 164.508 authorization and, where applicable, a waiver of authorization under § 164.512(i)\[11] for research use of protected health information**, as approved by the reviewing IRB; signed consent is hashed and stored on the blockchain ledger.
+(b) **Informed Consent.** Platform e-consent shall disclose the investigational nature of the trial, all known and potential risks, the full details of patient financial responsibilities including the net cost contribution and the refundable data provision deposit (as detailed in SEC. 304), and all data-sharing terms. Execution of the e-consent constitutes both 45 CFR § 164.508 authorization and, where applicable, a waiver of authorization under § 164.512(i)\[11] for research use of protected health information, as approved by the reviewing IRB. Signed consent shall be hashed and stored on the blockchain ledger.
 (c) **Safety Monitoring.** Sponsors must stream adverse‑event data to the Dashboard within 24 hours; FDA may halt enrolment under 21 CFR § 312.42.
 (d) **Liability Shield.** Good‑faith compliance grants immunity from tort claims except for gross negligence or willful misconduct; mirrors Pub. L. 115‑176 § 2(c).
 
-### SEC. 303. NIH PARTICIPATION SUBSIDIES.
+### SEC. 303. NIH TRIAL PARTICIPATION COST DISCOUNTS.
 
-(a) **Fund.** A revolving Clinical‑Trial Participation Subsidy Fund is established; authorized to receive \$2 billion FY 2026–30.
-(b) **Allocation Algorithm.** NIH shall develop, publish, and annually recompute an open optimisation model for the allocation of subsidies. This model shall aim to maximize public health value, primarily assessed by **(1) projected quality-adjusted life-years (QALYs) gained per dollar of subsidy, (2) the potential for significant healthcare system cost savings, and (3) the marginal scientific value of the research, including the value of reducing uncertainty for interventions with limited existing evidence but high potential impact.** The algorithm shall be designed to dynamically incorporate new evidence on treatment efficacy, safety, and cost-effectiveness as it is generated through the FDA v2 Platform.
-(c) **Payments.** NIH pays sponsors per enrolled participant up to the algorithmic cap; sponsors certify costs and submit outcomes.
-(d) **Audit.** GAO shall audit fund disbursements biennially; claw‑back for mis‑certified costs.
+(a) **Fund.** A revolving Clinical Trial Patient Cost Discount Fund is hereby established within the Treasury, authorized to receive \$2 billion for each of fiscal years 2026 through 2030.
 
-### SEC. 304. PATIENT COST‑SHARING.
+(b) **Discount Allocation Algorithm.** The NIH Director shall develop, publish, and annually recompute a transparent, open-source optimisation model for the allocation of discounts from the Fund. This model shall determine the percentage or amount of discount applicable to patient-borne costs for participation in specific trials available on the FDA v2 Platform. The primary objectives for discount allocation shall be: (1) maximizing projected quality-adjusted life-years (QALYs) gained per dollar of discount provided; (2) the potential for significant healthcare system cost savings attributable to the research; and (3) the marginal scientific value of the research, including its potential to reduce uncertainty for interventions with limited existing evidence but high potential impact. The algorithm shall dynamically incorporate new evidence on treatment efficacy, safety, and cost-effectiveness generated through the FDA v2 Platform.
 
-(a) **Minimum Co‑payment. Each participant shall pay a non‑zero fee set by the Secretary between the 25th and 75th percentile of commercial‑insurance specialist‑visit copays for the preceding year, **adjusted annually by the CPI‑U** (initially \$15–\$40 per visit).** Each participant shall pay a non‑zero fee set by the Secretary between the 25th and 75th percentile of commercial‑insurance specialist‑visit copays for the preceding year (initially \$15–\$40 per visit).
-(b) **Cap.** Sponsors may not bill participants beyond the statutory co‑pay; NIH subsidy + sponsor absorb remaining costs.
-(c) **Disclosure.** Cost schedule and co‑pay displayed in e‑consent; participants may terminate if costs subsequently rise.
+(c) **Application of Discounts.** Upon a patient's enrolment in a trial via the FDA v2 Platform, the NIH shall authorize the application of the algorithmically determined discount to the patient's share of trial participation costs, as itemized by the sponsor and displayed on the Platform (per SEC. 204(c)(3) and SEC. 304). The Fund shall cover the discounted portion of such costs. Sponsors shall certify the full, itemized costs of participation and submit all required trial outcome data for continued eligibility to have their trials included in the discount program.
+
+(d) **Audit.** The Comptroller General of the United States shall audit the allocation and application of discounts from the Fund biennially and report findings to Congress. The Secretary may recoup any funds associated with discounts applied to mis-certified costs or for trials not meeting data submission requirements.
+
+### SEC. 304. PATIENT COST CONTRIBUTION FOR TRIAL PARTICIPATION.
+
+(a) **Determination and Disclosure of Participation Costs.** Prior to a patient consenting to a trial, the sponsoring entity shall determine and provide to the FDA v2 Decentralized Trial Platform a comprehensive, itemized estimate of all direct costs associated with that specific patient's anticipated participation in the trial. This shall include, but not be limited to, costs of investigational product, necessary medical procedures, diagnostic tests, monitoring, and data management directly attributable to the research participant. These estimated costs, alongside the NIH-funded discount applicable under SEC. 303, and the final net cost to the patient, shall be transparently displayed to the potential participant via the Platform's Trial Cost and Discount Module (SEC. 204(c)(3)) and detailed in the e-consent form (SEC. 302(b)). This transparent disclosure of itemized costs on a centralized platform is intended to encourage competitive and efficient pricing by sponsoring entities.
+
+(b) **Patient Net Cost Contribution.** Each participant shall be responsible for contributing the net cost of their trial participation, calculated as the estimated total direct cost of participation (as determined in subsection (a) of this section) minus the NIH-funded discount (as determined and applied under SEC. 303). The Platform shall facilitate the management of this net cost contribution.
+
+(c) **Prohibition on Additional Charges.** Sponsors or investigating sites may not bill or charge a participant for any costs related to their trial participation beyond the final net cost contribution calculated and disclosed through the FDA v2 Platform as per subsections (a) and (b) of this section. Participants shall retain the right to terminate their participation in the trial at any time, subject to standard clinical and ethical procedures; financial obligations will be prorated based on the extent of participation and disclosed costs.
+
+(d) **Financial Hardship Considerations.** The Secretary, in consultation with NIH, may establish guidelines or auxiliary programs to address financial hardship for patients for whom the net cost contribution, even after applicable discounts, remains a significant barrier to accessing trials deemed of high public health value or for conditions with limited alternative treatments. Such guidelines shall not obligate sponsors to cover these costs unless through separate, voluntary programs.
+
+(e) **Refundable Data Provision Deposit.**
+    (1) To incentivize the complete and timely submission of all data required by the trial protocol, each participant shall provide a refundable data provision deposit. The amount of such deposit shall be established by the Secretary through rulemaking, considering factors such as trial duration, data complexity, and the need to avoid undue financial burden on participants.
+    (2) The deposit shall be collected by the FDA v2 Platform's Trial Cost, Discount, and Deposit Module (as per SEC. 204(c)(3)) at the time of e-consent.
+    (3) The full deposit shall be refunded to the participant via the Platform upon certification by the trial sponsor or a designated Platform administrator that the participant has provided all protocol-required data within the specified timeframes.
+    (4) Conditions for partial refund or forfeiture of the deposit due to incomplete or untimely data submission shall be detailed in the e-consent form (SEC. 302(b)) and established by the Secretary through rulemaking. Forfeited deposits may be directed to the Clinical Trial Patient Cost Discount Fund (SEC. 303) or used to offset costs incurred by data remediation efforts.
 
 ---
 
@@ -139,8 +153,7 @@ In this Act—
 
 (a) **Expanded Access.** This Act supplements 21 CFR § 312 Subpart I; data from Right‑to‑Trial may fulfill post‑marketing study obligations.
 (b) **State Laws.** No State or political subdivision may regulate the practice of tele‑medicine, pharmacy licensure, or shipment of investigational products in a manner that prevents implementation of this Act. Specifically, a licensed prescriber participating under an FDA‑approved protocol shall be deemed licensed in all States for the limited purpose of providing investigational treatment under this Act, and pharmacies dispensing or shipping such products pursuant to the blockchain supply‑chain ledger are exempt from conflicting State prohibitions.
-(c) **AKS Safe Harbour.** Payments or deposits authorised under SEC. 204(b)(3) are deemed protected remuneration under 42 CFR § 1001.952(bb).
-(d) **DSCSA Alignment.** All investigational shipments must utilize the platform ledger to satisfy DSCSA traceability.
+(c) **DSCSA Alignment.** All investigational shipments must utilize the platform ledger to satisfy DSCSA traceability.
 
 ### SEC. 402. AUTHORIZATION OF APPROPRIATIONS AND STAGE‑GATED FUNDING.
 
