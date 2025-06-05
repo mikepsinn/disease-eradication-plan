@@ -1,6 +1,16 @@
-const { OpenAI } = require('openai');
+import { OpenAI } from 'openai';
+import { ChatCompletionMessageParam, ChatCompletionCreateParamsBase } from 'openai/resources/chat/completions';
+
+// Define an interface for the options parameter in the complete method
+interface CompletionOptions {
+    model?: string;
+    temperature?: number;
+    responseFormat?: ChatCompletionCreateParamsBase['response_format'];
+}
 
 class LLMClient {
+    private openai: OpenAI;
+
     constructor() {
         const apiKey = process.env.DASHSCOPE_API_KEY;
         if (!apiKey) {
@@ -13,20 +23,22 @@ class LLMClient {
         });
     }
 
-    async complete(systemPrompt, userContent, options = {}) {
+    async complete(systemPrompt: string, userContent: string, options: CompletionOptions = {}): Promise<string> {
         const {
             model = 'qwen-plus',
             temperature = 0.3,
             responseFormat = { type: "json_object" }
         } = options;
 
+        const messages: ChatCompletionMessageParam[] = [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: userContent }
+        ];
+
         try {
             const completion = await this.openai.chat.completions.create({
                 model,
-                messages: [
-                    { role: "system", content: systemPrompt },
-                    { role: "user", content: userContent }
-                ],
+                messages,
                 temperature,
                 response_format: responseFormat
             });
@@ -36,10 +48,11 @@ class LLMClient {
             }
 
             return completion.choices[0].message.content;
-        } catch (error) {
+        } catch (error: any) {
+            // Catch any error and re-throw with a more descriptive message
             throw new Error(`AI completion failed: ${error.message}`);
         }
     }
 }
 
-module.exports = LLMClient; 
+export default LLMClient; 

@@ -1,25 +1,31 @@
-require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
-const mime = require('mime-types');
-const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
-const { getAllFiles } = require('./shared-utilities');
+import 'dotenv/config';
+import * as fs from 'fs';
+import * as path from 'path';
+import mime from 'mime-types';
+import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { getAllFiles } from './shared-utilities';
 
 // Initialize S3 client
 const s3Client = new S3Client({
   region: process.env.AWS_REGION,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID || '',
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || '',
   }
 });
 
 // Get configuration from environment variables
-const S3_AWS_BUCKET = process.env.S3_AWS_BUCKET;
+const S3_AWS_BUCKET = process.env.S3_AWS_BUCKET || '';
 const IMAGE_DIR = process.env.IMAGE_DIR || 'img';
 const IMAGE_CATALOG_PATH = 'docs/assets/image-catalog.json';
 
-function validateEnvironment() {
+interface ImageCatalog {
+  lastUpdated: string;
+  totalImages: number;
+  images: Record<string, any>;
+}
+
+function validateEnvironment(): void {
   const requiredVars = ['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'AWS_REGION', 'S3_AWS_BUCKET', 'S3_PUBLIC_URL'];
   const missingVars = requiredVars.filter(varName => !process.env[varName]);
 
@@ -28,15 +34,15 @@ function validateEnvironment() {
     process.exit(1);
   }
 
-  if (!process.env.S3_PUBLIC_URL.startsWith('http')) {
+  if (!process.env.S3_PUBLIC_URL || !process.env.S3_PUBLIC_URL.startsWith('http')) {
     console.error('❌ Invalid S3_PUBLIC_URL: Must be a valid URL starting with http:// or https://');
     process.exit(1);
   }
 }
 
-function loadImageCatalog() {
+function loadImageCatalog(): ImageCatalog {
   try {
-    return fs.existsSync(IMAGE_CATALOG_PATH) 
+    return fs.existsSync(IMAGE_CATALOG_PATH)
       ? JSON.parse(fs.readFileSync(IMAGE_CATALOG_PATH, 'utf8'))
       : { lastUpdated: new Date().toISOString(), totalImages: 0, images: {} };
   } catch (error) {
@@ -45,29 +51,29 @@ function loadImageCatalog() {
   }
 }
 
-function saveImageCatalog(catalog) {
+function saveImageCatalog(catalog: ImageCatalog): void {
   try {
     const dir = path.dirname(IMAGE_CATALOG_PATH);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
-    
+
     catalog.lastUpdated = new Date().toISOString();
     catalog.totalImages = Object.keys(catalog.images).length;
-    
+
     fs.writeFileSync(IMAGE_CATALOG_PATH, JSON.stringify(catalog, null, 2), 'utf8');
   } catch (error) {
     console.error('Error saving image catalog:', error);
   }
 }
 
-function extractImagePaths(content) {
-  const paths = new Set();
+function extractImagePaths(content: string): string[] {
+  const paths = new Set<string>();
   const patterns = [
     { regex: /!\[.*?\]\((.*?)\)/g, group: 1 },  // Markdown
     { regex: /<img[^>]+src=["']([^"']+)["']/g, group: 1 }  // HTML
   ];
-  
+
   patterns.forEach(({ regex, group }) => {
     let match;
     while ((match = regex.exec(content)) !== null) {
@@ -76,11 +82,11 @@ function extractImagePaths(content) {
       }
     }
   });
-  
+
   return Array.from(paths);
 }
 
-async function findImageFile(imagePath, sourceFile) {
+async function findImageFile(imagePath: string, sourceFile: string): Promise<string | null> {
   const possiblePaths = [
     imagePath,
     path.join(path.dirname(sourceFile), imagePath),
@@ -88,7 +94,7 @@ async function findImageFile(imagePath, sourceFile) {
     path.join(process.cwd(), 'img', path.basename(imagePath)),
     path.join(process.cwd(), 'assets', path.basename(imagePath))
   ];
-  
+
   for (const testPath of possiblePaths) {
     if (fs.existsSync(testPath)) {
       return testPath;
@@ -97,21 +103,21 @@ async function findImageFile(imagePath, sourceFile) {
   return null;
 }
 
-async function uploadToS3(filePath) {
+async function uploadToS3(filePath: string): Promise<string | null> {
   try {
     const fileContent = fs.readFileSync(filePath);
     const fileName = path.basename(filePath);
     const key = `${IMAGE_DIR}/${fileName}`;
-    
+
     await s3Client.send(new PutObjectCommand({
       Bucket: S3_AWS_BUCKET,
       Key: key,
       Body: fileContent,
       ContentType: mime.lookup(filePath) || 'application/octet-stream'
     }));
-    
+
     const s3Url = `${process.env.S3_PUBLIC_URL}/${key}`;
-    
+
     // Update catalog
     const catalog = loadImageCatalog();
     catalog.images[fileName] = {
@@ -124,7 +130,7 @@ async function uploadToS3(filePath) {
       key
     };
     saveImageCatalog(catalog);
-    
+
     return s3Url;
   } catch (error) {
     console.error(`Error uploading ${filePath} to S3:`, error);
@@ -132,22 +138,22 @@ async function uploadToS3(filePath) {
   }
 }
 
-function updateContent(content, localPaths, s3Urls) {
+function updateContent(content: string, localPaths: string[], s3Urls: (string | null)[]): string {
   return localPaths.reduce((updatedContent, localPath, index) => {
     if (!s3Urls[index]) return updatedContent;
-    
+
     const escapedPath = localPath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const patterns = [
       { regex: `!\\[([^\\]]*)\\]\\(${escapedPath}\\)`, replace: `![$1](${s3Urls[index]})` },  // Markdown
       { regex: `<img([^>]*)src=["']${escapedPath}["']([^>]*)>`, replace: `<img$1src="${s3Urls[index]}"$2>` }  // HTML
     ];
-    
-    return patterns.reduce((content, { regex, replace }) => 
+
+    return patterns.reduce((content, { regex, replace }) =>
       content.replace(new RegExp(regex, 'g'), replace), updatedContent);
   }, content);
 }
 
-async function processFiles() {
+async function processFiles(): Promise<void> {
   try {
     validateEnvironment();
     const files = await getAllFiles(process.cwd(), ['.md', '.html']);  // Only process markdown and html files
@@ -167,7 +173,7 @@ async function processFiles() {
       const s3Urls = await Promise.all(imagePaths.map(async imagePath => {
         console.log(`Looking for image: ${imagePath}`);
         const absoluteImagePath = await findImageFile(imagePath, file);
-        
+
         if (absoluteImagePath && fs.existsSync(absoluteImagePath)) {
           console.log(`✓ Found at: ${absoluteImagePath}`);
           const s3Url = await uploadToS3(absoluteImagePath);

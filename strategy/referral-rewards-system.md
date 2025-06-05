@@ -8,6 +8,12 @@ editor: markdown
 dateCreated: 2025-05-27T21:54:01.437Z
 ---
 
+
+graph TD
+    A["Large-Scale Measurable Public Support<br>(e.g., Net Neutrality comments, UK petitions, 3.5% rule)"] --> B["Creates Trigger for Action<br>(e.g., Formal responses, Parliamentary debates, Sustained pressure)"]
+    B --> C["Leads to Concrete Policy Outcome<br>(e.g., FCC rules, Legislation informed, Regime/Policy change)"]
+
+
 ## Why 3.5%? The Tipping Point for Systemic Change
 
 Research shows that when just **3.5% of a population** actively participates in a movement, systemic change becomes highly likely ([source](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)). For the FDA Upgrade and Right to Trial Act, this means mobilizing roughly **12 million Americans** to vote or take action—enough to force policy transformation and unlock global decentralized clinical trials.

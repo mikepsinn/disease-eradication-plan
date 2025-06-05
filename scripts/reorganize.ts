@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const { newStructure } = require('./config/structure');
+import * as fs from 'fs';
+import * as path from 'path';
+import { newStructure } from './config/structure';
 
-function createDirectoryStructure(basePath, structure) {
+function createDirectoryStructure(basePath: string, structure: Record<string, any>): void {
   Object.keys(structure).forEach(dir => {
     const dirPath = path.join(basePath, dir);
     if (!fs.existsSync(dirPath)) {
@@ -16,7 +16,7 @@ function createDirectoryStructure(basePath, structure) {
 }
 
 // Create README files for each directory
-function createReadme(dirPath, description) {
+function createReadme(dirPath: string, description: string): void {
   const readmePath = path.join(dirPath, 'README.md');
   if (!fs.existsSync(readmePath)) {
     fs.writeFileSync(readmePath, `# ${path.basename(dirPath)}\n\n${description}\n`);

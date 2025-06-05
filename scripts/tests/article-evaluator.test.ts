@@ -1,4 +1,4 @@
-import { evaluateArticle } from './article-evaluator';
+import { evaluateArticle } from '../article-evaluator';
 
 const sampleContent = `# Decentralized Clinical Trials
 
