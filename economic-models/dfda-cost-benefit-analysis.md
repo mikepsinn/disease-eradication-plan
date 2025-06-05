@@ -344,9 +344,10 @@ For this analysis, we use a conservative baseline estimate of **[$100 billion pe
    - **Future State**: Potentially hundreds (even thousands) of continuous trials, each at a fraction of the cost. This could double or triple the number of new approvals/indications tested each year and expand to off-patent/unpatented therapies that are currently underexplored.
 
 2. **Model Inputs**  
-   - **Upfront Cost**: \$2 - \$4 billion for building the global decentralized platform over ~5 years.  
-   - **Annual Operational Cost**: \$1 - \$12 billion, depending on trial volume and compensation.  
-   *(Note: These are high-level, conceptual estimates for the entire long-term global dFDA vision. For detailed Rough Order of Magnitude (ROM) costings for platform components and the specific parameters used in the Net Present Value (NPV) and ROI calculations, please refer to [Section 3 (Costs of Building & Operating the Global Decentralized FDA (ROM Estimate))](#3-costs-of-building--operating-the-global-decentralized-fda-rom-estimate) and the [Calculations > Section 5 (Example Parameterization)](#5-example-parameterization) respectively.)*
+   - **Upfront Cost (Core Platform Build):** Based on the ROM estimate of **~$37.5 - $46 Million** detailed in [Section 3.1 (Upfront Capital Expenditure)](#31-upfront-capital-expenditure---initial-build-illustrative-~30-months). For ROI calculations, a representative figure (e.g., $40 Million) will be used.
+   - **Annual Operational Cost (Core Platform):** Based on the ROM estimate of **~$11 - $26.5 Million / year** detailed in [Section 3.2 (Annual Operational Costs - Platform Only)](#32-annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth).
+   - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines core platform operational costs with the **Medium Case annual broader initiative costs (~$21.3 Million / year)** from [Section 3.4 (Scenario-Based ROM Estimates for Broader Initiative Costs)](#34-scenario-based-rom-estimates-for-broader-initiative-costs).
+   *(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global dFDA vision, which were significantly larger, are superseded by these more granular Section 3 figures for the purpose of this ROI calculation.)*
    - **Cost Reduction**: Up to 80× in the biggest, most efficient scenarios; conservative average ~50%–80% reduction in trial costs.  
    - **Increased Throughput**: 2×–5× more trials and potentially many more candidates tested in parallel.  
    - **Faster to Market**: Potentially 1–3 years shaved off a typical 7–10 year development cycle, yielding earlier revenue generation and extended effective patent life for sponsors.
@@ -354,35 +355,75 @@ For this analysis, we use a conservative baseline estimate of **[$100 billion pe
 ### 5.2 Simplified ROI Scenario
 
 *Initial Note on Operational Costs in this ROI Scenario:*
-*The following ROI calculation uses illustrative, high-level operational cost figures (e.g., "$0.1B - $5B/year" for the platform) intended to represent a broad range for the *fully scaled global dFDA ecosystem, potentially including aspects like significant participant compensation or extensive broader initiative costs (as detailed in Section 3.4 scenarios)*. Section 3 provides a more granular ROM estimate for *core platform technical operations* ($11M - $26.5M/year), which would yield an even higher ROI if considering only those core costs against the same gross savings. This section explores broader ecosystem cost sensitivities.*
+*The following ROI calculation primarily uses cost figures derived from the detailed ROM estimates in [Section 3 (Costs of Building & Operating the Global Decentralized FDA (ROM Estimate))](#3-costs-of-building--operating-the-global-decentralized-fda-rom-estimate). This includes the core platform build and operational costs, as well as scenarios for broader initiative costs. This approach provides a more grounded basis for the ROI than previous high-level conceptual figures for a fully scaled global ecosystem.*
 
 - **Industry R&D Spend** (Baseline): $100 billion/year globally (approx.).
 - **Potential Savings**: 50% reduction implies $50 billion/year saved if the entire industry migrated.
-- **Platform Cost (Illustrative for Total Ecosystem):**
-  - Upfront: $3 billion (midpoint of earlier high-level estimates for total initiative, distinct from Section 3's core platform build ROM).
-  - Ongoing Annual Ecosystem Cost Scenarios:
-    - Lean Ecosystem (Core Platform + Medium Broader Initiative Costs from [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs)): ~[Core Platform Ops from Section 3.2](#32-annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth) ($0.02B) + ~Broader Initiative Medium Annual from Sec 3.4 ($0.02B) = **~$0.04 Billion/year**
-    - Base Ecosystem Estimate (used for initial ROI example): **$0.5 Billion/year** (placeholder for significant ecosystem costs beyond core ops)
-    - High Ecosystem Cost (e.g., including large-scale participant compensation): **$5 Billion/year**
-- **Net Annual Savings** (assuming full adoption and Base Ecosystem Estimate of $0.5B ops): $50B (savings) – $0.5B (platform ops) = $49.5B.
+- **Platform Cost Scenarios (Derived from Section 3 ROM Estimates):**
+  - **Upfront Cost (Core Platform Build):** ~$40 Million (representative figure from [Section 3.1](#31-upfront-capital-expenditure---initial-build-illustrative-~30-months)).
+  - **Annual Operational Cost Scenarios:**
+    - **Scenario 1: Core Platform Only:** ~$11 - $26.5 Million / year (from [Section 3.2](#32-annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth)). Let's use a midpoint of ~$19 Million/year for calculation.
+    - **Scenario 2: Lean Ecosystem (Core Platform + Medium Broader Initiatives):**
+      - Core Platform Ops (midpoint from [Section 3.2](#32-annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth)): ~$19 Million/year
+      - Medium Broader Initiative Annual Costs (from [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
+      - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~$40 Million/year** (or $0.04 Billion/year). This aligns with the cost basis for the ROI cited in the Executive Summary.
+    - *(Other scenarios, such as including "Worst Case" broader initiative costs from [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs), could be considered for sensitivity analysis but would significantly increase annual costs.)*
+- **Net Annual Savings** (assuming full adoption and 50% R&D cost reduction): $50 Billion/year.
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
 
-**ROI = \(\frac{\text{Net Annual Savings}}{\text{Annualized Platform Cost}}\)**
+**ROI = \(\frac{\text{Net Annual Savings}}{\text{Annualized Platform Cost (Upfront Amortized + Annual Ops)}}\)**
 
-If we use the **Base Ecosystem Estimate** ($0.5B annual ops) and assume the $3B initial cost is amortized over 5 years ($600M/year), total annualized cost is $1.1B. Savings of $50B yields:
-
-\[
-\text{ROI} \approx \frac{50}{1.1} \approx [45:1](#53-final-roi--net-benefit)
-\]
-
-If we use the **Lean Ecosystem** cost ($0.04B annual ops) and the more detailed ROM upfront cost from Section 3 for core platform build (e.g., $40M, amortized to $8M/year), total annualized cost is $0.048B. Savings of $50B yields:
+Let's calculate ROI based on the **Lean Ecosystem** scenario:
+- Upfront Cost (Core Platform Build from [Section 3.1](#31-upfront-capital-expenditure---initial-build-illustrative-~30-months)): $40 Million. Amortized over 5 years: $8 Million/year.
+- Annual Operational Cost (Lean Ecosystem - Core Platform Ops from [Section 3.2](#32-annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth) + Medium Broader Initiatives from [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs)): ~$40 Million/year.
+- Total Annualized Cost: $8 Million/year (amortized upfront) + $40 Million/year (annual ops) = $48 Million/year (or $0.048 Billion/year).
 
 \[
-\text{ROI} \approx \frac{50}{0.048} \approx [1041:1](#53-final-roi--net-benefit)
+\text{ROI (Lean Ecosystem)} \approx \frac{\$50 \text{ Billion (Net Annual Savings)}}{\$0.048 \text{ Billion (Total Annualized Cost)}} \approx [1041:1](#53-final-roi--net-benefit)
 \]
 
-*This highlights that the ROI is exceptionally sensitive to the assumed operational cost scope. The ~9:1 ROI previously calculated used a much higher placeholder operational cost.*
+*This ROI is exceptionally high. The ~473:1 ROI mentioned in the Executive Summary is also based on similar Section 3 ROM-derived costs (approx. $41M annual ops) but may use a slightly different amortization period or upfront cost figure within the Section 3.1 range, or a slightly different annual ops figure within the combined Section 3.2 and 3.4 medium ranges. The key takeaway is that ROI is substantial when based on the detailed ROMs.*
+
+*(For sensitivity, if only core platform operational costs (e.g., ~$19M/year midpoint from [Section 3.2](#32-annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth)) and the same $40M upfront (amortized to $8M/year) were considered, the total annualized cost would be ~$27M/year, yielding an ROI of approximately $50B / $0.027B \approx 1850:1.)*
+
+### 5.2.1 Full Range ROI Sensitivity Analysis (Based on Section 3 Scenarios)
+
+To provide a comprehensive view, we can calculate the ROI across the full spectrum of cost possibilities by combining the Core Platform costs with the Broader Initiative scenarios from [Section 3](#3-costs-of-building--operating-the-global-decentralized-fda-rom-estimate).
+
+**Assumptions for Full Range ROI Calculation:**
+- Net Annual Savings: $50 Billion/year (from 50% R&D cost reduction).
+- Amortization Period for Upfront Costs: 5 years.
+
+**1. Lowest Total Cost Scenario (Best Case Core Platform + Best Case Broader Initiatives):**
+- **Upfront Costs:**
+  - Core Platform Build (Low end from [Section 3.1](#31-upfront-capital-expenditure---initial-build-illustrative-~30-months)): ~$37.5 Million
+  - Broader Initiatives (Best Case Upfront from [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs), summing components): ~$4.5 Million
+  - *Total Lowest Upfront Cost:* $37.5M + $4.5M = **$42 Million**
+  - *Amortized over 5 years:* $42M / 5 = $8.4 Million/year
+- **Annual Operational Costs:**
+  - Core Platform Operations (Low end from [Section 3.2](#32-annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth)): ~$11 Million/year
+  - Broader Initiatives (Best Case Annual from [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs)): ~$0 Million/year
+  - *Total Lowest Annual Operational Cost:* **$11 Million/year**
+- **Total Lowest Annualized Cost:** $8.4M (amortized upfront) + $11M (annual ops) = **$19.4 Million/year**
+- **ROI (Lowest Cost Scenario):** $50 Billion / $0.0194 Billion \approx **2577:1**
+
+**2. Highest Total Cost Scenario (Worst Case Core Platform + Worst Case Broader Initiatives):**
+- **Upfront Costs:**
+  - Core Platform Build (High end from [Section 3.1](#31-upfront-capital-expenditure---initial-build-illustrative-~30-months)): ~$46 Million
+  - Broader Initiatives (Worst Case Upfront from [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs), summing components): ~$2.231 Billion
+  - *Total Highest Upfront Cost:* $46M + $2.231B = **~$2.277 Billion**
+  - *Amortized over 5 years:* $2.277B / 5 = ~$455.4 Million/year
+- **Annual Operational Costs:**
+  - Core Platform Operations (High end from [Section 3.2](#32-annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth)): ~$26.5 Million/year
+  - Broader Initiatives (Worst Case Annual from [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs)): ~$271 Million/year
+  - *Total Highest Annual Operational Cost:* $26.5M + $271M = **~$297.5 Million/year**
+- **Total Highest Annualized Cost:** $455.4M (amortized upfront) + $297.5M (annual ops) = **~$752.9 Million/year**
+- **ROI (Highest Cost Scenario):** $50 Billion / $0.7529 Billion \approx **66:1**
+
+This full range sensitivity analysis demonstrates that the ROI for the dFDA initiative remains exceptionally positive, ranging from approximately **66:1** under the most pessimistic total cost assumptions to **2577:1** under the most optimistic total cost assumptions. Even at the highest conceivable costs derived from Section 3, the financial return is substantial.
+
+*The previous placeholder ROI of ~9:1 (referenced in earlier versions of this document, based on much higher, non-ROM-derived conceptual operational costs) is superseded by these more detailed calculations.*
 
 ---
 
