@@ -1,3 +1,13 @@
+---
+title: Comparative Analysis of Potential Act Titles
+description: Semi-quantitative and qualitative analysis of potential legislative titles for the Disease Eradication Act and related FDA reform bills.
+published: true
+date: 2025-06-05T18:27:48.4506492-05:00
+tags: legislation, naming, analysis
+editor: markdown
+dateCreated: 2025-06-05T18:27:48.4506492-05:00
+---
+
 # Comparative Analysis of Potential Act Titles
 
 This document analyzes several potential titles for the proposed legislation aimed at reforming the FDA and the medical research and development process. The goal is to select a title that is accurate, strategic, and most likely to garner broad support for passage and implementation.
