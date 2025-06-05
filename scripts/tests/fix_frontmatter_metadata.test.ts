@@ -2,8 +2,8 @@ import * as path from 'path';
 import * as fs from 'fs'.promises;
 import matter from 'gray-matter';
 // Assuming these are now in TypeScript files
-import { FrontmatterGenerator, validateMarkdownFiles, findMarkdownFiles } from './fix_frontmatter_metadata';
-import LLMClient from './llm-client';
+import { FrontmatterGenerator, validateMarkdownFiles, findMarkdownFiles } from '../fix_frontmatter_metadata';
+import LLMClient from '../llm-client';
 
 describe('validateMarkdownFiles', () => {
   it('should not include causal-inference-analysis.md in invalid files', async () => {
