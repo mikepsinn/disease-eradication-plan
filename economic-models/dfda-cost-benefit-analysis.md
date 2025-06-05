@@ -61,7 +61,7 @@ For clarity, the following assumptions are made in this analysis:
    - Robust data security and privacy technologies are in place to comply with international regulations (HIPAA, GDPR, etc.).
 
 2. **Cost Reductions**  
-   - Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of \$15,000 - \$40,000 per patient in traditional Phase III trials to roughly \$500 - \$1,000 per patient.  
+   - Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of \$15,000 - \$40,000 per patient in traditional Phase III trials to roughly [**\$500 - \$1,000 per patient**](#41a-gross-rd-savings-from-dfda-implementation).  
    - Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
 
 3. **Technical Feasibility**  
@@ -241,14 +241,14 @@ This revised, bottom-up ROM highlights that while the core *technology platform*
 
 ### 4.2 Decentralized Trial Costs (Modeled on Oxford RECOVERY)
 
-- **Oxford RECOVERY**: Achieved ~\$500 per patient. Key strategies included:
+- **Oxford RECOVERY**: Achieved [**~\$500 per patient**](#41a-gross-rd-savings-from-dfda-implementation). Key strategies included:
   1. Embedding trial protocols within routine hospital care.  
   2. Minimizing overhead by leveraging existing staff/resources and electronic data capture.  
   3. Focused, pragmatic trial designs.
 
 - **Extrapolation to New System**:  
   - A well-integrated global platform could approach \$500 - \$1,000 per patient in many cases, especially for pragmatic or observational designs.  
-  - **80×** cost reduction cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark.
+  - [**80× cost reduction**](#41a-gross-rd-savings-from-dfda-implementation) cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark.
 
 ### 4.3 Overall Savings
 
@@ -298,7 +298,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 - Faster approvals and access to effective treatments can save lives and improve quality of life.
 - **Value of a Statistical Life (VSL):** U.S. agencies use ~$10M per life saved ([DOT 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)).
-- **QALY Framework:** Standard willingness-to-pay is $100,000–$150,000 per QALY gained ([ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/)).
+- **QALY Framework:** Standard willingness-to-pay is [**$100,000–$150,000 per QALY gained**](#92c-qaly-valuation-and-thresholds-willingness-to-pay) ([ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/)).
 - **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × $150,000 = $1.5B. If 10,000 lives are saved, benefit = 10,000 × $10M = $100B.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
 - **References:**
@@ -309,7 +309,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials alone was estimated to be in the range of **USD 60-80 billion in 2024, and projected to exceed USD 100 billion by the early 2030s** ([Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)). A significant portion of this expenditure is addressable by the efficiencies dFDA aims to introduce. If dFDA can capture even a fraction of this market by demonstrating superior efficiency and data quality, its economic impact will be substantial.
 
-For this analysis, we use a conservative baseline estimate of **$100 billion per year in global clinical trial spending that is potentially addressable by dFDA** through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
+For this analysis, we use a conservative baseline estimate of **[$100 billion per year in global clinical trial spending that is potentially addressable by dFDA](#5-example-parameterization)** through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
 
 #### A. Gross R&D Savings from dFDA Implementation
 
@@ -320,7 +320,7 @@ For this analysis, we use a conservative baseline estimate of **$100 billion per
     *   *Note on R&D Savings Estimates*: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), the average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. Rogers et al. (2022) in their systematic review noted that there is currently "insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost" on a generalized basis. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
 *   **Range Used in Sensitivity Analysis**:
     *   Conservative: 30% (saving $30B annually from a $100B addressable spend)
-    *   Base Case: 50% (saving $50B annually)
+    *   Base Case: [**50% (saving $50B annually)**](#5-example-parameterization)
     *   Optimistic: 70% (saving $70B annually)
     *   Transformative (RECOVERY Trial-like): 95% (saving $95B annually)
 
@@ -373,13 +373,13 @@ From a purely financial perspective, if the industry can move to such a platform
 If we use the **Base Ecosystem Estimate** ($0.5B annual ops) and assume the $3B initial cost is amortized over 5 years ($600M/year), total annualized cost is $1.1B. Savings of $50B yields:
 
 \[
-\text{ROI} \approx \frac{50}{1.1} \approx 45:1
+\text{ROI} \approx \frac{50}{1.1} \approx [45:1](#53-final-roi--net-benefit)
 \]
 
 If we use the **Lean Ecosystem** cost ($0.04B annual ops) and the more detailed ROM upfront cost from Section 3 for core platform build (e.g., $40M, amortized to $8M/year), total annualized cost is $0.048B. Savings of $50B yields:
 
 \[
-\text{ROI} \approx \frac{50}{0.048} \approx 1041:1
+\text{ROI} \approx \frac{50}{0.048} \approx [1041:1](#53-final-roi--net-benefit)
 \]
 
 *This highlights that the ROI is exceptionally sensitive to the assumed operational cost scope. The ~9:1 ROI previously calculated used a much higher placeholder operational cost.*
