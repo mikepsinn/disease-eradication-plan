@@ -948,8 +948,4 @@ The National Institutes of Health (NIH) and other government agencies invest bil
 
 These figures underscore the substantial financial benefits that could accrue to government entities through the successful implementation of the dFDA, complementing the broader societal health and economic benefits detailed elsewhere in this analysis. The fiscal prudence of investing in dFDA is strongly supported by these projections.
 
-## 5. Return on Investment (ROI) and Net Present Value (NPV) Analysis
-
-This section provides a simplified Return on Investment (ROI) and a conceptual Net Present Value (NPV) discussion for the dFDA initiative. Given the transformative and long-term nature of the project, a full, detailed NPV would require more granular year-by-year cash flow projections over several decades, which are beyond the scope of this initial cost-benefit analysis. However, we can establish a strong directional case.
-
 ---
