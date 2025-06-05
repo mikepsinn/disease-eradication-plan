@@ -236,6 +236,40 @@ This revised, bottom-up ROM highlights that while the core *technology platform*
 3. **Regulatory Savings**  
    - A single integrated platform with automated data audits cuts bureaucratic duplication across multiple countries, drastically lowering compliance costs.
 
+### 4.4 Drug Price Reductions from Global Competition and Importation
+
+**U.S.-Specific**
+
+- U.S. prescription drug prices are 50–90% higher than in peer countries.
+- Allowing importation and global competition could conservatively reduce U.S. drug spending by 20–50% for affected drugs.
+- **Example Calculation:** U.S. annual prescription drug spending is ~$360B. If 50% of the market is affected and prices drop by 25%, annual savings = $360B × 0.5 × 0.25 = $45B.
+- **References:**
+  - Sarnak, D. O., et al. (2017). [Paying for Prescription Drugs Around the World: Why Is the U.S. an Outlier?](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
+  - Kesselheim, A. S., et al. (2016). [The high cost of prescription drugs in the United States.](https://jamanetwork.com/journals/jama/fullarticle/2545691)
+
+### 4.5 Prevention Savings from Increased Preventive Care
+
+**U.S.-Specific**
+
+- Chronic diseases account for ~90% of U.S. healthcare spending (~$3.7T/year).
+- Preventive care is underfunded (5% of spend); every $1 spent on prevention saves ~$3 ([Trust for America's Health](https://www.tfah.org/report-details/a-healthier-america-2013/)).
+- Doubling effective preventive spending could yield hundreds of billions in annual savings.
+- **Example Calculation:** If preventive spending increases by $205B and each $1 saves $3, additional savings = $205B × 3 = $615B/year.
+- **References:**
+  - Trust for America's Health. (2013). [A Healthier America: Savings from Prevention.](https://www.tfah.org/report-details/a-healthier-america-2013/)
+  - CMS National Health Expenditure Data ([link](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet))
+
+### 4.6 Economic Value of Earlier Access to Treatments (VSL/QALY)
+
+- Faster approvals and access to effective treatments can save lives and improve quality of life.
+- **Value of a Statistical Life (VSL):** U.S. agencies use ~$10M per life saved ([DOT 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)).
+- **QALY Framework:** Standard willingness-to-pay is $100,000–$150,000 per QALY gained ([ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/)).
+- **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × $150,000 = $1.5B. If 10,000 lives are saved, benefit = 10,000 × $10M = $100B.
+- These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
+- **References:**
+  - U.S. Department of Transportation. (2021). [Guidance on Treatment of the Economic Value of a Statistical Life.](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
+  - ICER. [Value Assessment Framework.](https://icer.org/our-approach/methods-process/value-assessment-framework/)
+
 ---
 
 ## 5. ROI Analysis

@@ -28,7 +28,7 @@ development costs, and a focus on expensive treatments. The Disease Eradication 
 * **Rewarding cures and prevention:** Incentivizes the development of affordable, effective treatments.
 * **Removing access barriers:** Streamlines the process and makes treatments readily available.
 * **Utilizing real-world evidence:**  Continuously analyzes treatment outcomes to optimize care.
-* **Employing AI-powered analysis:**  Provides continuous monitoring and optimization of treatments.
+* **Employing AI-powered analysis (FDAi):**  Provides continuous monitoring and optimization of treatments.
 
 ## 🌐 SECTION 2. The Decentralized Trial Platform
 
@@ -38,11 +38,9 @@ continuous real-world evidence collection. Key features include:
 * **Universal Participation:**  Any patient can participate from anywhere, using telemedicine and mobile apps.
 * **Automated Outcome Tracking:**  The system automatically tracks safety and effectiveness, generating better evidence
   faster.
-* **AI-Powered Analysis:**  FDAi continuously analyzes data, identifies optimal treatments, and provides early warnings
+* **AI-Powered Analysis (FDAi):**  FDAi continuously analyzes data, identifies optimal treatments, and provides early warnings
   of safety issues.
 * **Open Source and Global:**  The platform is open-source, enabling global collaboration and continuous improvement.
-
-
 
 ## 🌟 SECTION 4. Benefits Over the Current System
 

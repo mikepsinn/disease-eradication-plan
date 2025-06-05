@@ -13,7 +13,14 @@ editor: markdown
 date: '2025-02-12T16:53:39.410Z'
 dateCreated: '2025-02-12T16:53:39.410Z'
 ---
-# Quantitative Cost-Benefit Analysis of the Disease Eradication Act
+---
+# This analysis has been superseded
+
+**Note:** For the most up-to-date, rigorous, and unified cost-benefit analysis of the dFDA platform and related legislative proposals, see [dFDA Cost Benefit Analysis and ROI](../economic-models/dfda-cost-benefit-analysis.md).
+
+The content below is retained for historical reference only and is no longer maintained.
+
+
 
 ## Executive Summary
 
