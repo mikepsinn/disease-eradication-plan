@@ -525,13 +525,13 @@ Beyond the direct economic benefits, the secondary and tertiary effects on medic
 All figures in this document are estimates based on publicly available information, industry benchmarks, and simplifying assumptions. Real-world costs, savings, and ROI will vary greatly depending on the scope of implementation, the speed of adoption, regulatory cooperation, and numerous other factors. Nonetheless, this high-level exercise illustrates the substantial potential gains from a global, decentralized, continuously learning clinical trial and regulatory ecosystem.
 
 
-# Calculations
+## Calculations
 
 Below is an illustrative framework with more formal equations and a simplified but "rigorous" model to analyze the cost–benefit dynamics and ROI of upgrading the FDA (and analogous global regulators) into a decentralized, continuously learning platform. Many real-world complexities (e.g., drug-specific risk profiles, variable regulatory timelines across countries) would require further refinement, but these equations give a starting point for a more quantitative analysis.
 
 ---
 
-# 1. Definitions & Parameters
+## 1. Definitions & Parameters
 
 We define the following parameters to capture costs, savings, timelines, and scaling/adoption:
 
@@ -587,7 +587,7 @@ We define the following parameters to capture costs, savings, timelines, and sca
 
 ---
 
-# 2. Total Cost of the Decentralized Platform Over $T$ Years
+## 2. Total Cost of the Decentralized Platform Over $T$ Years
 
 We sum the upfront cost $C_{0}$ and the net present value (NPV) of ongoing operational costs $C_{\text{op}}(t)$ from $t = 1$ to $t = T$:
 
@@ -599,7 +599,7 @@ $$
 
 ---
 
-# 3. Total Savings Over $T$ Years
+## 3. Total Savings Over $T$ Years
 
 Using our adoption model $p(t)$ and fraction of R&D spend $\alpha$ that is saved, the annual savings is $S(t) = p(t)\alpha R_{d}$. Over $T$ years, the total NPV of these savings is:
 
@@ -617,7 +617,7 @@ where $k$ is the steepness of adoption and $t_{0}$ is the midpoint.
 
 ---
 
-# 4. Return on Investment (ROI)
+## 4. Return on Investment (ROI)
 
 We define ROI as the ratio of the **NPV of total savings** to the **NPV of total costs**:
 
@@ -639,7 +639,7 @@ If $\text{Net Benefit} > 0$, the program yields a positive return in present-val
 
 ---
 
-# 5. Example Parameterization
+## 5. Example Parameterization
 
 For a concrete (though simplified) scenario, assume:
 
@@ -799,7 +799,7 @@ In this rough example, even **partial adoption** in the early years delivers lar
 
 ---
 
-# 6. Other Extensions & Considerations
+## 6. Other Extensions & Considerations
 
 1. **Time-to-Market Acceleration**  
    One can add a parameter $\Delta t$ for the number of years of early market entry. Earlier entry can yield extra revenue or extend effective patent life. A simplified approach might add a term for the "additional value" of each year gained:
