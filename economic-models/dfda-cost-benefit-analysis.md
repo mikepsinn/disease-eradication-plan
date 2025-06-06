@@ -61,7 +61,7 @@ For clarity, the following assumptions are made in this analysis:
    - Robust data security and privacy technologies are in place to comply with international regulations (HIPAA, GDPR, etc.).
 
 2. **Cost Reductions**  
-   - Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of [\$15,000 - \$40,000 per patient](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287) in traditional Phase III trials to roughly [**\$500 - \$1,000 per patient**](#42-decentralized-trial-costs-modeled-on-oxford-recovery) ([RECOVERY Trial](https://www.recoverytrial.net/)).  
+   - Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of [\$40,000 - \$120,000 per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) to roughly [**\$500 - \$1,000 per patient**](#42-decentralized-trial-costs-modeled-on-oxford-recovery) ([RECOVERY Trial](https://www.recoverytrial.net/)).  
    - Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
 
 3. **Technical Feasibility**  
@@ -273,7 +273,7 @@ This section quantifies the potential societal benefits of the dFDA platform, fo
   - Phase I: \$2 - \$5 million/trial (smaller scale).  
   - Phase II: \$10 - \$50 million/trial (depending on disease area).  
   - Phase III: \$100 - \$500 million/trial (large patient populations).  
-- **Per-Patient Phase III Costs**: Often \$15,000 - \$40,000+ per patient (site fees, overhead, staff, monitoring, data management).
+- **Per-Patient Phase III Costs**: Often [\$40,000 - \$120,000+ per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) (site fees, overhead, staff, monitoring, data management).
 
 ### 4.2 Decentralized Trial Costs (Modeled on Oxford RECOVERY)
 
@@ -284,7 +284,7 @@ This section quantifies the potential societal benefits of the dFDA platform, fo
 
 - **Extrapolation to New System**:  
   - A well-integrated global platform could approach \$500 - \$1,000 per patient in many cases, especially for pragmatic or observational designs.  
-  - [**80× cost reduction**](#41a-gross-rd-savings-from-dfda-implementation) cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark.
+  - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark.
 
 ### 4.3 Overall Savings
 
@@ -1080,8 +1080,8 @@ While the figures are presented as daily point estimates for clarity, they repre
   — [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)
 
 - **$500 per patient (RECOVERY trial)**
-  > "The cost per patient in the RECOVERY trial was approximately $500, compared to $15,000–$40,000+ per patient in traditional Phase III trials."  
-  — [dfda.earth/recovery-trial-costs](https://dfda.earth/recovery-trial-costs) (citing Manhattan Institute and NCBI)
+  > "The cost per patient in the RECOVERY trial was approximately $500, compared to [$40,000–$120,000+ per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials."  
+  — [dfda.earth/recovery-trial-costs](https://dfda.earth/recovery-trial-costs) (citing Manhattan Institute and NCBI), [ProRelix Research](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/), [Power](https://www.withpower.com/guides/clinical-trial-cost-per-patient)
 
 - **$360B U.S. drug spend**
   > "U.S. annual prescription drug spending is ~$360B."  
