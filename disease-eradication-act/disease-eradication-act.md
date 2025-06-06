@@ -102,7 +102,7 @@ In this Act—
 
 ### SEC. 301. UNIVERSAL ELIGIBILITY FOR INVESTIGATIONAL INTERVENTIONS.
 
-(a) **Right.** Beginning 24 months after enactment, any U.S. resident with a qualifying condition who requests an investigational intervention **shall be guaranteed enrolment—remotely if necessary—in at least one pragmatic, decentralized trial arm evaluating that intervention**, provided the patient meets minimal safety criteria in subsection (c).
+(a) **Right.** Beginning 24 months after enactment, any U.S. resident who requests an investigational intervention shall be guaranteed enrolment—remotely if necessary—in at least one pragmatic, decentralized trial arm evaluating that intervention, subject to the safety-based exclusions specified in subsection (c).
 
 (b) **Sponsor Incentive.** The Secretary shall award a **transferable Priority‑Review Voucher (PRV)** under section 524A of the Federal Food, Drug, and Cosmetic Act to any sponsor that, on or before the universal‑enrolment activation date, opens or amends a trial on the FDA v2 Platform to accept such patient‑directed enrolment and maintains adequate investigational‑product supply. A PRV is forfeited if the sponsor later restricts patient enrolment without a documented safety or manufacturing constraint.
 
@@ -115,7 +115,11 @@ In this Act—
 ### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY.
 
 (a) **Central IRB.** All Right‑to‑Trial protocols shall undergo single‑IRB review per 45 CFR § 46.114\[8]; FDA shall publish a master reliance agreement.
-(b) **Informed Consent.** Platform e-consent shall disclose the investigational nature of the trial, all known and potential risks, the full details of patient financial responsibilities including the net cost contribution and the refundable data provision deposit (as detailed in SEC. 304), and all data-sharing terms. Execution of the e-consent constitutes both 45 CFR § 164.508 authorization and, where applicable, a waiver of authorization under § 164.512(i)\[11] for research use of protected health information, as approved by the reviewing IRB. Signed consent shall be hashed and stored on the blockchain ledger.
+(b) **Informed Consent and Comprehension Verification.**
+    (1) Platform e-consent shall clearly disclose, in an accessible format, the investigational nature of the trial, all known and potential risks including their likelihood based on available data (with particular emphasis on the most serious risks), the full details of patient financial responsibilities including the net cost contribution and the refundable data provision deposit (as detailed in SEC. 304), potential benefits, alternative treatments, and all data-sharing terms.
+    (2) To verify genuine understanding of the disclosed information, particularly concerning the most serious risks and their likelihood, successful completion of the e-consent process shall require the patient to pass an automated, interactive comprehension quiz administered through the FDA.gov v2 Platform. This quiz shall be based directly on the information disclosed pursuant to paragraph (1) of this subsection.
+    (3) The Secretary, through rulemaking within 12 months of enactment, shall establish standards for the development, content, validation, and administration of such comprehension quizzes, including criteria for successful completion and procedures for patients who do not initially pass. These standards shall ensure quizzes are fair, accessible, and effectively assess understanding of critical information.
+    (4) Execution of the e-consent, following successful completion of the comprehension quiz, constitutes both 45 CFR § 164.508 authorization and, where applicable, a waiver of authorization under § 164.512(i)\[11] for research use of protected health information, as approved by the reviewing IRB. A record of successful quiz completion and the signed consent shall be hashed and stored on the blockchain ledger.
 (c) **Safety Monitoring.** Sponsors must stream adverse‑event data to the Dashboard within 24 hours; FDA may halt enrolment under 21 CFR § 312.42.
 (d) **Liability Shield.** Good‑faith compliance grants immunity from tort claims except for gross negligence or willful misconduct; mirrors Pub. L. 115‑176 § 2(c).
 
