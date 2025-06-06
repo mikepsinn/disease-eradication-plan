@@ -997,8 +997,6 @@ A significant portion of healthcare costs borne by the government is for treatin
     *   A 5% reduction could yield over **$43.75 billion annually**.
     *   These are illustrative and actual savings would depend on the specific breakthroughs achieved and their population-level impact. The QALY gains discussed in Section 9.2.B (e.g., from earlier cancer drug access and improved screening) indirectly support the potential for such cost reductions.
 
-**C. Enhanced Value and Efficiency from Government-Funded Research (e.g., NIH)**
-
 ### 4.6 Enhanced Market Competition and Reduced Drug Shortages
 
 The dFDA platform's ability to facilitate faster, cheaper, and more predictable clinical trials can significantly lower barriers to entry for new drug developers, including smaller biotechs and academic research institutions. This increased competition can:
