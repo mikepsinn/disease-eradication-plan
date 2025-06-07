@@ -31,19 +31,19 @@ Below is a conceptual, high-level analysis of the costs, benefits, and return on
 
 Because this analysis deals with an innovative and unprecedented transformation, many assumptions must be clearly stated, and the data points are best understood as estimates or ranges. Nonetheless, this exercise provides a structured way to think about potential costs, savings, and impacts on medical progress.
 
-## 1. Overview of the Proposed Transformation
+## Overview of the Proposed Transformation
 
-### 1.1 Vision
+### Vision
 - A global, autonomous regulatory network (not confined to a single government entity) that continuously collects data from real-world use and decentralized clinical trials.
 - An open data architecture that aggregates anonymized health data from billions of people, covering foods, drugs, devices, supplements, and other interventions.
 - Treatment rankings, continuously updated based on observational and randomized data, personalized by patient characteristics (e.g., genomics, comorbidities).
 
-### 1.2 Key Capabilities
+### Key Capabilities
 - **Massive Decentralized Trials**: Patients anywhere can opt in to trials comparing multiple treatments, with automated randomization, data collection (via electronic health records, wearables, apps), and analytics.
 - **Real-Time Surveillance**: Continuous data ingestion about side effects, efficacy, interactions with other drugs/foods, and long-term outcomes.
 - **Reduced Administrative Overhead**: Blockchain or similar decentralized infrastructure for consent management, compensation, and data integrity could replace large swaths of current paperwork, monitoring, and site management costs.
 
-### 1.3 Potential Impact on the Status Quo
+### Potential Impact on the Status Quo
 - **Speed of Trials**: Reduced overhead and automated data capture can compress timelines.  
 - **Cost of Trials**: Leveraging existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on the Oxford RECOVERY trial success).  
 - **Scale & Scope**: Potential for testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.  
@@ -51,22 +51,22 @@ Because this analysis deals with an innovative and unprecedented transformation,
 
 ---
 
-## 2. Assumptions
+## Assumptions
 
-### 2.1 Participation & Data Infrastructure
+### Participation & Data Infrastructure
 - At least 1 billion people worldwide opt in to share health data in anonymized form.  
 - Medical records and wearable data are interoperable and standardized sufficiently to be aggregated globally.  
 - Robust data security and privacy technologies are in place to comply with international regulations (HIPAA, GDPR, etc.).
 
-### 2.2 Cost Reductions
+### Cost Reductions
 - Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of [\$40,000 - \$120,000 per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) to roughly [**\$500 - \$1,000 per patient**](#decentralized-trial-costs-modeled-on-oxford-recovery) ([RECOVERY Trial](https://www.recoverytrial.net/)).  
 - Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
 
-### 2.3 Technical Feasibility
+### Technical Feasibility
 - The necessary digital infrastructure (electronic health records, secure data exchange protocols, machine learning analytics, etc.) is assumed to be widely adopted.  
 - Some advanced technologies (e.g., blockchain, federated learning) achieve maturity to ensure data integrity and patient privacy.
 
-### 2.4 Funding & Governance
+### Funding & Governance
 - Start-up costs may be shared by governments, philanthropic organizations, and industry.  
 - Ongoing operational costs are partially offset by reduced labor needs for conventional site-based trials and by subscription or service models from industry sponsors using the platform.
 
@@ -74,7 +74,7 @@ These assumptions set a stage where the platform can indeed function at scale, b
 
 ---
 
-## 3. Costs of Building & Operating the Global Decentralized FDA (ROM Estimate)
+## Costs of Building & Operating the Global Decentralized FDA (ROM Estimate)
 
 > **Section Summary**
 >
@@ -89,7 +89,7 @@ These assumptions set a stage where the platform can indeed function at scale, b
 This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on the components outlined in the [Platform Technical Specification](../features/platform/platform-technical-specification.md).
 
 
-### 3.1 Upfront (Capital) Expenditure - Initial Build (Illustrative ~30 Months)
+### Upfront (Capital) Expenditure - Initial Build (Illustrative ~30 Months)
 
 1.  **Core Engineering & Development Effort:**
     *   *Basis:* ~75 FTEs * 2.5 years * $200k/FTE/year
@@ -120,7 +120,7 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
 *The \$2-4B figure likely represents the total investment needed for the *entire global initiative* over many years, whereas this ROM focuses on the initial Core Platform software build.*
 
-### 3.2 Annual Operational Costs (Illustrative - At Target Scale of ~5M MAU / 50TB Ingest/Month)
+### Annual Operational Costs (Illustrative - At Target Scale of ~5M MAU / 50TB Ingest/Month)
 
 1.  **Cloud Infrastructure Costs (AWS):**
     *   *Components:* EKS cluster, RDS/TimescaleDB hosting, S3 storage & requests, SQS messaging, API Gateway usage, Data Transfer (egress), CloudWatch logging/monitoring.
@@ -157,7 +157,7 @@ Large-scale figures sometimes discussed for "participant support" or "subsidies"
 
 *This estimate also excludes costs associated with running the **DAO governance structure** itself and the cost of developing and maintaining the **plugin ecosystem** (though some plugin development could be incentivized via platform-specific bounties as per the Act).*
 
-### 3.3 Enhanced ROM Estimates with Technical Requirements & Cost Optimization
+### Enhanced ROM Estimates with Technical Requirements & Cost Optimization
 
 **Disclaimer:** This subsection presents ROM estimates that incorporate the full technical requirements from the "Right to Trial & FDA Upgrade Act" while leveraging cost-saving strategies. The estimates assume successful implementation of open-source development, bounty programs, and AI automation to minimize costs.
 
@@ -208,7 +208,7 @@ Large-scale figures sometimes discussed for "participant support" or "subsidies"
 **Total Estimated Development (Upfront):** [6.7M USD](#enhanced-rom-estimates-with-technical-requirements--cost-optimization)  
 **Total Estimated Annual Operations:** [2.1M USD](#enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
-### 3.4 Cost Optimization Strategies & Risk Mitigation
+### Cost Optimization Strategies & Risk Mitigation
 
 **Bounty Program Implementation:**
 - [$1M annual budget](#cost-optimization-strategies--risk-mitigation) for security bounties and feature development
@@ -236,7 +236,7 @@ Large-scale figures sometimes discussed for "participant support" or "subsidies"
 
 *Note: These optimized ROM estimates reflect a strategic approach leveraging open-source, community engagement, and AI to deliver the comprehensive dFDA platform capabilities mandated by the Act in a cost-effective manner. The success of this model hinges on robust community participation and effective management of bounty and prize programs.*
 
-### 3.5 Scenario-Based ROM Estimates for Broader Initiative Costs
+### Scenario-Based ROM Estimates for Broader Initiative Costs
 
 This table presents point estimates for each scenario, with the overall range of possibilities captured by comparing the Best, Medium, and Worst Case columns.
 
@@ -262,11 +262,11 @@ This revised, bottom-up ROM highlights that while the core *technology platform*
 
 ---
 
-## 4. Benefit Analysis: Quantifying the Savings
+## Benefit Analysis: Quantifying the Savings
 
 This section quantifies the potential societal benefits of the dFDA platform, focusing primarily on R&D cost savings and health outcome improvements.
 
-### 4.1 Market Size & Potential Impact: What are we optimizing?
+### Market Size & Potential Impact: What are we optimizing?
 
 The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials alone was estimated to be in the range of **USD 60-80 billion in 2024, and projected to exceed USD 100 billion by the early 2030s** ([Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)). A significant portion of this expenditure is addressable by the efficiencies dFDA aims to introduce. If dFDA can capture even a fraction of this market by demonstrating superior efficiency and data quality, its economic impact will be substantial.
 
@@ -279,7 +279,7 @@ For this analysis, we use a conservative baseline estimate of **[$100 billion pe
   - Phase III: \$100 - \$500 million/trial (large patient populations).  
 - **Per-Patient Phase III Costs**: Often [\$40,000 - \$120,000+ per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) (site fees, overhead, staff, monitoring, data management).
 
-### 4.2 Decentralized Trial Costs (Modeled on Oxford RECOVERY)
+### Decentralized Trial Costs (Modeled on Oxford RECOVERY)
 
 - **Oxford RECOVERY**: Achieved [**~\$500 per patient**](#gross-rd-savings-from-dfda-implementation). Key strategies included:
   1. Embedding trial protocols within routine hospital care.  
@@ -290,7 +290,7 @@ For this analysis, we use a conservative baseline estimate of **[$100 billion pe
   - A well-integrated global platform could approach \$500 - \$1,000 per patient in many cases, especially for pragmatic or observational designs.  
   - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark.
 
-### 4.3 Overall Savings
+### Overall Savings
 
 1. **By Reducing Per-Patient Costs**  
    - If a trial with 5,000 participants costs \$500 - \$1,000/patient, total cost is \$2.5 - \$5 million, versus \$75 - \$200 million under traditional models.  
@@ -309,7 +309,7 @@ For this analysis, we use a conservative baseline estimate of **[$100 billion pe
 5.  **Increased Competition Among Sponsors Leading to Lower Submitted Trial Costs**
     *   The transparent nature of the dFDA platform, coupled with mechanisms like NIH discount allocations based on value (QALYs per dollar as described in the "Right to Trial & FDA Upgrade Act"), is expected to create a competitive environment. Sponsors will be incentivized to submit the most efficient trial designs and leanest operational costs to the platform to attract NIH support and patient participation, further driving down the overall R&D expenditure beyond just the technical efficiencies of decentralized trials themselves.
 
-### 4.4 Drug Price Reductions from Global Competition and Importation
+### Drug Price Reductions from Global Competition and Importation
 
 **U.S.-Specific**
 
@@ -322,7 +322,7 @@ For this analysis, we use a conservative baseline estimate of **[$100 billion pe
 
 Beyond direct importation effects, the fundamental efficiencies introduced by the dFDA platform—drastically reduced R&D costs and accelerated development timelines—are anticipated to further enhance overall market competition for medicines. By lowering the barriers to entry for bringing novel therapies, as well as generics and biosimilars, to market, the dFDA can foster a richer landscape of therapeutic alternatives. A greater number of competing products for similar indications is a well-established economic driver for lower final drug prices, benefiting payors and patients alike. While quantifying this specific effect on end-user drug prices is complex and multifactorial, the structural changes proposed by the dFDA strongly support a trend towards increased affordability through enhanced market competition.
 
-### 4.5 Prevention Savings from Increased Preventive Care
+### Prevention Savings from Increased Preventive Care
 
 **U.S.-Specific**
 
@@ -334,7 +334,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
   - Trust for America's Health. (2013). [A Healthier America: Savings from Prevention.](https://www.tfah.org/report-details/a-healthier-america-2013/)
   - CMS National Health Expenditure Data ([link](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet))
 
-### 4.6 Economic Value of Earlier Access to Treatments (VSL/QALY)
+### Economic Value of Earlier Access to Treatments (VSL/QALY)
 
 - Faster approvals and access to effective treatments can save lives and improve quality of life.
 - **Value of a Statistical Life (VSL):** U.S. agencies use ~$10M per life saved ([DOT 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)).
@@ -370,9 +370,9 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 ---
 
-## 5. ROI Analysis
+## ROI Analysis
 
-### 5.1 Methodology
+### Methodology
 
 1. **Compare Baseline to Future State**:  
    - **Baseline**: 30–40 new drugs approved annually in the U.S., each costing \$1 - \$2.5 billion on average for full development and approval. Total R&D spending (industry-wide) is on the order of \$90 - \$100+ billion per year globally.  
@@ -387,7 +387,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
    - **Increased Throughput**: 2×–5× more trials and potentially many more candidates tested in parallel.  
    - **Faster to Market**: Potentially 1–3 years shaved off a typical 7–10 year development cycle, yielding earlier revenue generation and extended effective patent life for sponsors.
 
-### 5.2 Simplified ROI Scenario
+### Simplified ROI Scenario
 
 *Initial Note on Operational Costs in this ROI Scenario:*
 *The following ROI calculation primarily uses cost figures derived from the detailed ROM estimates in [Costs of Building & Operating the Global Decentralized FDA (ROM Estimate)](#costs-of-building--operating-the-global-decentralized-fda-rom-estimate). This includes the core platform build and operational costs, as well as scenarios for broader initiative costs. This approach provides a more grounded basis for the ROI than previous high-level conceptual figures for a fully scaled global ecosystem.*
@@ -416,7 +416,7 @@ Let's calculate ROI based on the **Lean Ecosystem** scenario:
 
 *This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework). The NPV analysis provides the final estimated ROI of approximately **463:1**, which is the figure cited throughout this document.*
 
-### 5.2.1 Full Range ROI Sensitivity Analysis (Based on Section 3 Scenarios)
+### Full Range ROI Sensitivity Analysis (Based on Section 3 Scenarios)
 
 To provide a comprehensive view, we can calculate the ROI across the full spectrum of cost possibilities by combining the Core Platform costs with the Broader Initiative scenarios from [Costs of Building & Operating the Global Decentralized FDA](#costs-of-building--operating-the-global-decentralized-fda-rom-estimate).
 
@@ -456,7 +456,7 @@ This full range sensitivity analysis demonstrates that the ROI for the dFDA init
 
 ---
 
-## 6. Broader Impacts on Medical Progress
+## Broader Impacts on Medical Progress
 
 1. **Acceleration of Approvals**  
    - With continuous, real-time data, new drugs, devices, and off-label uses could gain near-immediate or conditional approvals once efficacy thresholds are met.  
@@ -484,7 +484,7 @@ This full range sensitivity analysis demonstrates that the ROI for the dFDA init
 
 ---
 
-## 7. Data Sources & Methodological Notes
+## Data Sources & Methodological Notes
 
 1. **Cost of Current Drug Development**:  
    - Tufts Center for the Study of Drug Development often cited for \$1.0 - \$2.6 billion/drug.  
@@ -505,7 +505,7 @@ This full range sensitivity analysis demonstrates that the ROI for the dFDA init
 
 ---
 
-## 8. Conclusion
+## Conclusion
 
 Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of [**~$37.5 - $46 Million**](#upfront-capital-expenditure---initial-build-illustrative-30-months), plus ongoing operational costs. However, given that the pharmaceutical industry collectively spends around [$100 billion per year on R&D](#market-size--potential-impact-what-are-we-optimizing) and that a large share of those expenses go to clinical trials, even a [50% reduction in trial costs](#gross-rd-savings-from-dfda-implementation)—combined with faster product launches—would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi--net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios)**) once adopted at scale.
 
@@ -521,13 +521,13 @@ All figures in this document are estimates based on publicly available informati
 
 This appendix provides the detailed models and data used in the cost-benefit analysis.
 
-### A.1 Calculation Framework
+### Calculation Framework
 
 Below is an illustrative framework with more formal equations and a simplified but "rigorous" model to analyze the cost–benefit dynamics and ROI of upgrading the FDA (and analogous global regulators) into a decentralized, continuously learning platform. Many real-world complexities (e.g., drug-specific risk profiles, variable regulatory timelines across countries) would require further refinement, but these equations give a starting point for a more quantitative analysis.
 
 ---
 
-#### A.1.1 Definitions & Parameters
+#### Definitions & Parameters
 
 We define the following parameters to capture costs, savings, timelines, and scaling/adoption:
 
@@ -583,7 +583,7 @@ We define the following parameters to capture costs, savings, timelines, and sca
 
 ---
 
-#### A.1.2 NPV of Costs
+#### NPV of Costs
 
 We sum the upfront cost $C_{0}$ and the net present value (NPV) of ongoing operational costs $C_{\text{op}}(t)$ from $t = 1$ to $t = T$:
 
@@ -595,7 +595,7 @@ $$
 
 ---
 
-#### A.1.3 NPV of Savings
+#### NPV of Savings
 
 Using our adoption model $p(t)$ and fraction of R&D spend $\alpha$ that is saved, the annual savings is $S(t) = p(t)\alpha R_{d}$. Over $T$ years, the total NPV of these savings is:
 
@@ -613,7 +613,7 @@ where $k$ is the steepness of adoption and $t_{0}$ is the midpoint.
 
 ---
 
-#### A.1.4 ROI
+#### ROI
 
 We define ROI as the ratio of the **NPV of total savings** to the **NPV of total costs**:
 
@@ -635,7 +635,7 @@ If $\text{Net Benefit} > 0$, the program yields a positive return in present-val
 
 ---
 
-#### A.1.5 Example Parameterization
+#### Example Parameterization
 
 For a concrete (though simplified) scenario, assume:
 
@@ -675,7 +675,7 @@ For a concrete (though simplified) scenario, assume:
      T = 10 \text{ years}
    $$
 
-##### A.1.5.1 NPV of Costs
+##### NPV of Costs
 
 $$
   \text{NPV}(\text{Costs})
@@ -718,7 +718,7 @@ $$
   = 0.53845 \text{ (billion USD)}
 $$
 
-##### A.1.5.2 NPV of Savings
+##### NPV of Savings
 
 $$
   S(t) = p(t)\alpha R_d
@@ -774,7 +774,7 @@ $$
   = 249.53 \text{ (billion USD)}
 $$
 
-##### A.1.5.3 Final ROI & Net Benefit
+##### Final ROI & Net Benefit
 
 $$
   \text{ROI}
@@ -793,7 +793,7 @@ In this rough example, even **partial adoption** in the early years delivers lar
 
 ---
 
-#### A.1.6 Other Extensions & Considerations
+#### Other Extensions & Considerations
 
 1. **Time-to-Market Acceleration**  
    One can add a parameter $\Delta t$ for the number of years of early market entry. Earlier entry can yield extra revenue or extend effective patent life. A simplified approach might add a term for the "additional value" of each year gained:
@@ -826,9 +826,9 @@ Even so, the core takeaway remains: **If the platform is widely adopted and per-
 
 ---
 
-### A.2 Cost-Utility (ICER/QALY) and Sensitivity Analysis
+### Cost-Utility (ICER/QALY) and Sensitivity Analysis
 
-#### A.2.1 Introduction: Why QALY and ICER?
+#### Introduction: Why QALY and ICER?
 
 To meet the standards of government and health technology assessment (HTA) bodies such as ICER, we present a cost-utility analysis using the **incremental cost-effectiveness ratio (ICER)** and **quality-adjusted life years (QALYs)**. This approach is the US and global standard for evaluating the value of health interventions ([ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)).
 
@@ -846,7 +846,7 @@ To meet the standards of government and health technology assessment (HTA) bodie
 
 - **US Willingness-to-Pay Threshold**: Typically $100,000–$150,000 per QALY for interventions that *add* costs ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)). Dominant interventions are favorable regardless of this threshold.
 
-#### A.2.2 Parameterization: Overall dFDA Platform Impact
+#### Parameterization: Overall dFDA Platform Impact
 The dFDA platform's primary economic impact comes from significantly reducing R&D costs, particularly in clinical trials. Its health impact (QALYs) stems from accelerating drug development, enabling better prevention, and improving access.
 
 *Note on Estimates (Reiteration from Section 3):
@@ -890,7 +890,7 @@ The dFDA platform's primary economic impact comes from significantly reducing R&
 
 **(Net Incremental Cost will be calculated in the table based on these operational cost scenarios and the $50B gross R&D savings for the 50% reduction case).**
 
-#### A.2.3 Sensitivity Analysis: Overall dFDA Platform Cost-Effectiveness
+#### Sensitivity Analysis: Overall dFDA Platform Cost-Effectiveness
 
 This table analyzes the ICER for the dFDA platform by varying key assumptions. Global Clinical Trial Spending Addressable by dFDA is assumed at $100B/year (leading to $50B gross savings in the 50% reduction scenario) unless otherwise specified.
 
@@ -908,7 +908,7 @@ This table analyzes the ICER for the dFDA platform by varying key assumptions. G
 
 *Note: Negative ICER values indicate that the dFDA platform is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core Platform Ops" is per Section 3.2 ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation.*
 
-#### A.2.4 Discussion: Policy Implications
+#### Discussion: Policy Implications
 
 The analysis robustly demonstrates that the **dFDA platform is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the core platform's technical operational costs.**
 
@@ -919,7 +919,7 @@ The analysis robustly demonstrates that the **dFDA platform is not merely cost-e
 
 *(Optional: A note could be added here that specific programs *built upon* the dFDA platform, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
 
-#### A.2.5 Sources
+#### Sources
 
 - "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around the world for more than 30 years." ([ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/))
 - "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $150,000 per QALY and per evLYG." ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf))
@@ -929,11 +929,11 @@ The analysis robustly demonstrates that the **dFDA platform is not merely cost-e
 
 ---
 
-### A.3 Daily Opportunity Cost of Inaction
+### Daily Opportunity Cost of Inaction
 
 This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA platform. By translating the annualized benefits identified in this analysis into a daily metric, we can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.
 
-#### A.3.1 Base Case: Daily Lost QALYs and Financial Savings
+#### Base Case: Daily Lost QALYs and Financial Savings
 
 The calculations below are based on the central ("base case") estimates established in the preceding sections of this analysis.
 
@@ -951,7 +951,7 @@ The calculations below are based on the central ("base case") estimates establis
     \frac{\$50,000,000,000}{365\ \text{days}} \approx \mathbf{\$137\ \text{million lost per day}}
     $$
 
-#### A.3.2 Sensitivity Analysis of Daily Opportunity Costs
+#### Sensitivity Analysis of Daily Opportunity Costs
 
 The daily costs of inaction are highly sensitive to the underlying assumptions about R&D cost reduction and QALY gains. The following table explores this uncertainty by showing the daily opportunity cost across a range of scenarios, from conservative to transformative.
 
@@ -962,7 +962,7 @@ The daily costs of inaction are highly sensitive to the underlying assumptions a
 | **Optimistic**                           |           70%            |     $70 Billion      |       450,000       |      **$192 Million**      |         **1,233**          | Assumes high efficiency and significant improvements in health outcomes.  |
 | **Transformative (RECOVERY Trial-like)** |         **95%**          |   **$95 Billion**    |     **600,000**     |      **$260 Million**      |         **1,644**          | Reflects exceptional, RECOVERY-like efficiency and broad health benefits. |
 
-#### A.3.3 Discussion of Uncertainty and Key Variables
+#### Discussion of Uncertainty and Key Variables
 
 While the figures are presented as daily point estimates for clarity, they represent the steady-state potential loss once the dFDA platform is fully adopted. The actual daily loss on any given day depends on several key variables that introduce uncertainty:
 
@@ -973,7 +973,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 **Conclusion:** Despite these uncertainties, the analysis consistently shows that the daily opportunity cost of inaction is substantial across all plausible scenarios. Every day that the current inefficient, slow, and expensive paradigm for clinical research is maintained, society forgoes hundreds of quality-adjusted life-years and tens to hundreds of millions of dollars in value. This provides a powerful, daily reminder of the urgency and immense potential of the dFDA initiative.
 
 
-### A.4 Source Quotes for Key Parameters
+### Source Quotes for Key Parameters
 
 - **$100 billion global annual clinical trial expenditure**
   > "The global clinical trials market size was valued at USD 60.94 billion in 2024. The market is projected to grow from USD 64.94 billion in 2025 to USD 104.41 billion by 2032..."  
@@ -1028,3 +1028,4 @@ While the figures are presented as daily point estimates for clarity, they repre
   — [ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)
 
 ---
+
