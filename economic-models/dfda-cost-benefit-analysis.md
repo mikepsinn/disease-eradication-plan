@@ -171,41 +171,41 @@ Large-scale figures sometimes discussed for "participant support" or "subsidies"
 **ROM Estimates by Technical Component:**
 
 1. **Blockchain Supply-Chain Ledger**
-   * *Components:* Zero-knowledge proof implementation, DSCSA integration, IoT device integration
-   * *Cost Reduction:* Open-source blockchain frameworks, community bounties for core components
-   * **Estimated ROM:** [$2M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) upfront / [$0.5M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) annual maintenance
+   - Components: Zero-knowledge proof implementation, DSCSA integration, IoT device integration
+   - Cost Reduction: Open-source blockchain frameworks, community bounties for core components
+   - **Estimated ROM:** [$2M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.5M annual maintenance](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 2. **Patient Portal & Treatment Ranking System**
-   * *Components:* Real-time ranking algorithm, outcome labels, mobile/SMS/IoT interfaces
-   * *Cost Reduction:* Open-source frontend frameworks, community-developed plugins
-   * **Estimated ROM:** [$1.5M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) upfront / [$0.3M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) annual maintenance
+  - Components: Real-time ranking algorithm, outcome labels, mobile/SMS/IoT interfaces
+  - Cost Reduction: Open-source frontend frameworks, community-developed plugins
+  - **Estimated ROM:** [$1.5M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.3M annual maintenance](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 3. **Interoperability & API Infrastructure**
-   * *Components:* FHIR-R5 server, EHR integration adapters, OAuth 2.0 implementation
-   * *Cost Reduction:* Existing open-source healthcare APIs, community-contributed adapters
-   * **Estimated ROM:** [$1M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) upfront / [$0.2M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) annual maintenance
+  - Components: FHIR-R5 server, EHR integration adapters, OAuth 2.0 implementation
+  - Cost Reduction: Existing open-source healthcare APIs, community-contributed adapters
+  - **Estimated ROM:** [$1M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.2M annual maintenance](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 4. **Security & Compliance**
-   * *Components:* FedRAMP-Moderate compliance, annual pen testing, security monitoring
-   * *Cost Reduction:* Bug bounty program, automated security scanning
-   * **Estimated ROM:** [$0.5M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) upfront / [$0.5M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) annual
+  - Components: FedRAMP-Moderate compliance, annual pen testing, security monitoring
+  - Cost Reduction: Bug bounty program, automated security scanning
+  - **Estimated ROM:** [$0.5M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.5M annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 5. **AI/ML Capabilities**
-   * *Components:* Protocol validation, patient-trial matching, safety signal detection
-   * *Cost Reduction:* Open-source ML models, transfer learning, community datasets
-   * **Estimated ROM:** [$1M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) upfront / [$0.3M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) annual
+  - Components: Protocol validation, patient-trial matching, safety signal detection
+  - Cost Reduction: Open-source ML models, transfer learning, community datasets
+  - **Estimated ROM:** [$1M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.3M annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 6. **Developer & Community Infrastructure**
-   * *Components:* Documentation, SDKs, CI/CD pipelines, community support
-   * *Cost Reduction:* Automated documentation generation, community moderation
-   * **Estimated ROM:** [$0.5M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) upfront / [$0.2M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) annual
+  - Components: Documentation, SDKs, CI/CD pipelines, community support
+  - Cost Reduction: Automated documentation generation, community moderation
+  - **Estimated ROM:** [$0.5M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.2M annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 7. **Governance & Transparency**
-   * *Components:* Technical Steering Committee operations, public metrics dashboards
-   * *Cost Reduction:* Automated reporting, community governance tools
-   * **Estimated ROM:** [$0.2M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) upfront / [$0.1M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) annual
+  - Components: Technical Steering Committee operations, public metrics dashboards
+  - Cost Reduction: Automated reporting, community governance tools
+  - **Estimated ROM:** [$0.2M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.1M annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
-**Total Estimated Development (Upfront):** [$6.7M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
+**Total Estimated Development (Upfront):** [$6.7M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)  
 **Total Estimated Annual Operations:** [$2.1M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 ### 3.4 Cost Optimization Strategies & Risk Mitigation
@@ -692,8 +692,6 @@ $$
   \text{NPV}(\text{Costs})
   = 0.26975
   + \sum_{t=1}^{10} \frac{0.04005}{(1 + 0.08)^t}
-  \approx 0.26975
-    + 0.04005 \cdot \left[ \frac{1 - (1+0.08)^{-10}}{0.08} \right]
 $$
 
 A standard annuity formula:
