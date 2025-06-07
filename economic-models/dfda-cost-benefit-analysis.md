@@ -1,6 +1,6 @@
 ---
 title: dFDA Cost Benefit Analysis and Return on Investment
-description: The analysis indicates that a global, decentralized FDA platform could slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver an ROI of approximately 463:1 based on Net Present Value analysis.
+description: How to slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver an ROI of approximately 463:1.
 published: true
 date: 2025-05-08T00:23:25.085Z
 tags: economic-models
