@@ -76,6 +76,16 @@ These assumptions set a stage where the platform can indeed function at scale, b
 
 ## 3. Costs of Building & Operating the Global Decentralized FDA (ROM Estimate)
 
+> **Section 3 Summary**
+>
+> - **Upfront core platform build:** $37.5–$46 million ([see 3.1](#31-upfront-capital-expenditure---initial-build-illustrative-30-months))
+> - **Annual core platform operations:** $11–$27 million ([see 3.2](#32-annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth))
+> - **Broader initiative (medium scenario):** $228 million upfront, $21.3 million annual ([see 3.5](#35-scenario-based-rom-estimates-for-broader-initiative-costs))
+> - **Best case total initiative:** ~$4.5M upfront, near $0 annual
+> - **Worst case total initiative:** ~$2.2B+ upfront, $271M+ annual
+>
+> **Key Takeaway:** The core technology platform is achievable for tens of millions, but full global rollout and integration could require hundreds of millions to billions depending on scope and execution. See detailed breakdowns below.
+
 This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on the components outlined in the [Platform Technical Specification](../features/platform/platform-technical-specification.md).
 
 ### 3.1 Upfront (Capital) Expenditure - Initial Build (Illustrative ~30 Months)
@@ -650,7 +660,7 @@ For a concrete (though simplified) scenario, assume:
    $$
      C_0 = 0.26975 \text{ billion USD}
    $$
-   *(This represents an estimated cost for initial core platform build (see [Section 3.1](#31-upfront-capital-expenditure---initial-build-illustrative-~30-months)), foundational broader initiative setup, and early legal/regulatory framework alignment (see medium case upfront costs in [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs)), consistent with multi-year funding such as in the ["Right to Trial & FDA Upgrade Act"](../disease-eradication-act/disease-eradication-act.md) for the FDA v2 platform. This combined figure is distinct from the core platform build ROM alone and serves as an illustrative figure for this NPV example that is lower than the previous $3B placeholder.)*
+   *(This represents an estimated cost for initial core platform build (see [Section 3.1](#31-upfront-capital-expenditure---initial-build-illustrative-30-months)), foundational broader initiative setup, and early legal/regulatory framework alignment (see medium case upfront costs in [Section 3.4](#34-scenario-based-rom-estimates-for-broader-initiative-costs)), consistent with multi-year funding such as in the ["Right to Trial & FDA Upgrade Act"](../disease-eradication-act/disease-eradication-act.md) for the FDA v2 platform. This combined figure is distinct from the core platform build ROM alone and serves as an illustrative figure for this NPV example that is lower than the previous $3B placeholder.)*
 
 2. **Annual Operating Costs** ($C_{\text{op}}(t)$):  
    $$
