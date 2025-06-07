@@ -33,44 +33,42 @@ Because this analysis deals with an innovative and unprecedented transformation,
 
 ## 1. Overview of the Proposed Transformation
 
-1. **Vision**  
-   - A global, autonomous regulatory network (not confined to a single government entity) that continuously collects data from real-world use and decentralized clinical trials.
-   - An open data architecture that aggregates anonymized health data from billions of people, covering foods, drugs, devices, supplements, and other interventions.
-   - Treatment rankings, continuously updated based on observational and randomized data, personalized by patient characteristics (e.g., genomics, comorbidities).
+### 1.1 Vision
+- A global, autonomous regulatory network (not confined to a single government entity) that continuously collects data from real-world use and decentralized clinical trials.
+- An open data architecture that aggregates anonymized health data from billions of people, covering foods, drugs, devices, supplements, and other interventions.
+- Treatment rankings, continuously updated based on observational and randomized data, personalized by patient characteristics (e.g., genomics, comorbidities).
 
-2. **Key Capabilities**  
-   - **Massive Decentralized Trials**: Patients anywhere can opt in to trials comparing multiple treatments, with automated randomization, data collection (via electronic health records, wearables, apps), and analytics.
-   - **Real-Time Surveillance**: Continuous data ingestion about side effects, efficacy, interactions with other drugs/foods, and long-term outcomes.
-   - **Reduced Administrative Overhead**: Blockchain or similar decentralized infrastructure for consent management, compensation, and data integrity could replace large swaths of current paperwork, monitoring, and site management costs.
+### 1.2 Key Capabilities
+- **Massive Decentralized Trials**: Patients anywhere can opt in to trials comparing multiple treatments, with automated randomization, data collection (via electronic health records, wearables, apps), and analytics.
+- **Real-Time Surveillance**: Continuous data ingestion about side effects, efficacy, interactions with other drugs/foods, and long-term outcomes.
+- **Reduced Administrative Overhead**: Blockchain or similar decentralized infrastructure for consent management, compensation, and data integrity could replace large swaths of current paperwork, monitoring, and site management costs.
 
-3. **Potential Impact on the Status Quo**  
-   - **Speed of Trials**: Reduced overhead and automated data capture can compress timelines.  
-   - **Cost of Trials**: Leveraging existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on the Oxford RECOVERY trial success).  
-   - **Scale & Scope**: Potential for testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.  
-   - **Innovation Incentives**: Lower R&D costs can increase profitability and encourage more entrants/innovation in the life sciences.
+### 1.3 Potential Impact on the Status Quo
+- **Speed of Trials**: Reduced overhead and automated data capture can compress timelines.  
+- **Cost of Trials**: Leveraging existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on the Oxford RECOVERY trial success).  
+- **Scale & Scope**: Potential for testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.  
+- **Innovation Incentives**: Lower R&D costs can increase profitability and encourage more entrants/innovation in the life sciences.
 
 ---
 
 ## 2. Assumptions
 
-For clarity, the following assumptions are made in this analysis:
+### 2.1 Participation & Data Infrastructure
+- At least 1 billion people worldwide opt in to share health data in anonymized form.  
+- Medical records and wearable data are interoperable and standardized sufficiently to be aggregated globally.  
+- Robust data security and privacy technologies are in place to comply with international regulations (HIPAA, GDPR, etc.).
 
-1. **Participation & Data Infrastructure**  
-   - At least 1 billion people worldwide opt in to share health data in anonymized form.  
-   - Medical records and wearable data are interoperable and standardized sufficiently to be aggregated globally.  
-   - Robust data security and privacy technologies are in place to comply with international regulations (HIPAA, GDPR, etc.).
+### 2.2 Cost Reductions
+- Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of [\$40,000 - \$120,000 per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) to roughly [**\$500 - \$1,000 per patient**](#42-decentralized-trial-costs-modeled-on-oxford-recovery) ([RECOVERY Trial](https://www.recoverytrial.net/)).  
+- Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
 
-2. **Cost Reductions**  
-   - Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of [\$40,000 - \$120,000 per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) to roughly [**\$500 - \$1,000 per patient**](#42-decentralized-trial-costs-modeled-on-oxford-recovery) ([RECOVERY Trial](https://www.recoverytrial.net/)).  
-   - Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
+### 2.3 Technical Feasibility
+- The necessary digital infrastructure (electronic health records, secure data exchange protocols, machine learning analytics, etc.) is assumed to be widely adopted.  
+- Some advanced technologies (e.g., blockchain, federated learning) achieve maturity to ensure data integrity and patient privacy.
 
-3. **Technical Feasibility**  
-   - The necessary digital infrastructure (electronic health records, secure data exchange protocols, machine learning analytics, etc.) is assumed to be widely adopted.  
-   - Some advanced technologies (e.g., blockchain, federated learning) achieve maturity to ensure data integrity and patient privacy.
-
-4. **Funding & Governance**  
-   - Start-up costs may be shared by governments, philanthropic organizations, and industry.  
-   - Ongoing operational costs are partially offset by reduced labor needs for conventional site-based trials and by subscription or service models from industry sponsors using the platform.
+### 2.4 Funding & Governance
+- Start-up costs may be shared by governments, philanthropic organizations, and industry.  
+- Ongoing operational costs are partially offset by reduced labor needs for conventional site-based trials and by subscription or service models from industry sponsors using the platform.
 
 These assumptions set a stage where the platform can indeed function at scale, but this remains a forward-looking scenario.
 
@@ -78,8 +76,13 @@ These assumptions set a stage where the platform can indeed function at scale, b
 
 ## 3. Costs of Building & Operating the Global Decentralized FDA (ROM Estimate)
 
-This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on the components outlined in the [Platform Technical Specification](../features/platform/platform-technical-specification.md). It replaces the previous high-level estimates with a more component-aligned breakdown.
+This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on the components outlined in the [Platform Technical Specification](../features/platform/platform-technical-specification.md).
 
+### 3.1 Upfront (Capital) Expenditure - Initial Build (Illustrative ~30 Months)
+
+#### 3.1.1 Core Engineering & Development Effort
+*   *Basis:* ~75 FTEs * 2.5 years * $200k/FTE/year
+*   *Activities:* Detailed design, core platform development (API, storage, mapping/validation, auth), reference frontend, initial plugin interfaces, testing, documentation, initial deployment.
 **Disclaimer:** These figures are **highly speculative** and based on significant assumptions regarding scale, effort, and cloud usage. Actual costs could vary substantially based on detailed requirements, specific implementation choices, and project execution.
 
 **Core Assumptions for this ROM Estimate:**
