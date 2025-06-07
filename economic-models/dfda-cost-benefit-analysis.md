@@ -15,12 +15,12 @@ dateCreated: 2025-04-29T01:07:30.411Z
 **The dFDA Solution:** This analysis outlines the economic and health benefits of transforming the current regulatory framework into a global, decentralized, autonomous FDA (dFDA) platform. Leveraging real-world data and enabling massive, continuous, and highly efficient decentralized clinical trials, this vision is supported by foundational legislation like the ["Right to Trial & FDA Upgrade Act"](../disease-eradication-act/disease-eradication-act.md), which proposes an "FDA v2 Platform" as a key implementation step.
 
 **Transformative Benefits:**
-*   **Dramatic Cost Reductions:** The dFDA model projects average R&D clinical trial cost savings of [**50%**](#gross-rd-savings-from-dfda-implementation), with exceptionally efficient designs (akin to the UK's [RECOVERY trial](https://dfda.earth/recovery-trial-costs)) potentially achieving up to [**95% reduction**](#gross-rd-savings-from-dfda-implementation). This translates to **[tens of billions of dollars in annual savings](#roi-analysis)** from the estimated [**$100 billion global annual clinical trial expenditure**](https://www.fortunebusinessinsights.com/clinical-trials-market-106930) ([source 2](https://www.gminsights.com/industry-analysis/clinical-trials-market), [see Market Size & Potential Impact](#market-size--potential-impact-what-are-we-optimizing)).
+*   **Dramatic Cost Reductions:** The dFDA model projects average R&D clinical trial cost savings of [**50%**](#gross-r&d-savings-from-dfda-implementation), with exceptionally efficient designs (akin to the UK's [RECOVERY trial](https://dfda.earth/recovery-trial-costs)) potentially achieving up to [**95% reduction**](#gross-r&d-savings-from-dfda-implementation). This translates to **[tens of billions of dollars in annual savings](#roi-analysis)** from the estimated [**$100 billion global annual clinical trial expenditure**](https://www.fortunebusinessinsights.com/clinical-trials-market-106930) ([source 2](https://www.gminsights.com/industry-analysis/clinical-trials-market), [see Market Size & Potential Impact](#market-size--potential-impact-what-are-we-optimizing)).
 *   **Accelerated Innovation & Access:** Faster, cheaper trials allow for a vastly increased volume and diversity of tested therapies, including those for rare diseases and unpatentable treatments, significantly speeding up the delivery of new medicines to patients.
 *   **Improved Health Outcomes:** The dFDA is projected to generate a baseline of **[300,000 Quality-Adjusted Life Years (QALYs) annually](#parameterization-overall-dfda-platform-impact)** ([NBER, Glied & Lleras-Muney](https://www.nber.org/papers/w9705), [NBER, Philipson et al.](https://www.nber.org/papers/w31792), [see Appendix A.2.2](#parameterization-overall-dfda-platform-impact)) through faster drug access, enhanced preventative care enabled by real-world data, and more personalized medicine.
 
 **Exceptional Economic Value:**
-*   **Return on Investment (ROI):** The dFDA platform demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#scenario-based-rom-estimates-for-broader-initiative-costs) including medium broader initiative costs) against [**$50 billion in annual R&D savings**](#gross-rd-savings-from-dfda-implementation) ([**50% reduction scenario**](#gross-rd-savings-from-dfda-implementation), [Fortune Business Insights](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [see Market Size & Potential Impact](#market-size--potential-impact-what-are-we-optimizing)), the NPV analysis yields ROI estimates ranging from **66:1** to **2,577:1** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios)), with a central estimate of approximately [**463:1**](#final-roi--net-benefit) over 10 years. This high ratio reflects the platform's significant leverage: a relatively modest investment in a global software infrastructure that generates vast savings across the entire pharmaceutical R&D industry.
+*   **Return on Investment (ROI):** The dFDA platform demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#scenario-based-rom-estimates-for-broader-initiative-costs) including medium broader initiative costs) against [**$50 billion in annual R&D savings**](#gross-r&d-savings-from-dfda-implementation) ([**50% reduction scenario**](#gross-r&d-savings-from-dfda-implementation), [Fortune Business Insights](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [see Market Size & Potential Impact](#market-size--potential-impact-what-are-we-optimizing)), the NPV analysis yields ROI estimates ranging from **66:1** to **2,577:1** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios)), with a central estimate of approximately [**463:1**](#final-roi--net-benefit) over 10 years. This high ratio reflects the platform's significant leverage: a relatively modest investment in a global software infrastructure that generates vast savings across the entire pharmaceutical R&D industry.
 *   **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves substantial costs and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-$166,533 per QALY gained**](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness), [ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/), [see Appendix A.2.3](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)) for core platform operations plus medium broader initiative costs), far exceeding standard government value thresholds ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)).
 
 **Conclusion:** The dFDA initiative represents a paradigm shift with the potential for profound societal and economic benefits. Its ability to drastically lower costs, accelerate medical innovation, and improve public health makes a compelling case for its implementation, supported by legislative frameworks such as the "Right to Trial & FDA Upgrade Act."
@@ -78,15 +78,15 @@ These assumptions set a stage where the platform can indeed function at scale, b
 
 > **Section Summary**
 >
-> - **Upfront core platform build:** $37.5–$46 million ([see Upfront (Capital) Expenditure](#upfront-capital-expenditure---initial-build-illustrative-30-months))
-> - **Annual core platform operations:** $11–$27 million ([see Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth))
+> - **Upfront core platform build:** $37.5–$46 million ([see Upfront (Capital) Expenditure](#upfront-capital-expenditure---initial-build-illustrative-~30-months))
+> - **Annual core platform operations:** $11–$27 million ([see Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau-/-50tb-ingest/month))
 > - **Broader initiative (medium scenario):** $228 million upfront, $21.3 million annual ([see Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs))
 > - **Best case total initiative:** ~$4.5M upfront, near $0 annual
 > - **Worst case total initiative:** ~$2.2B+ upfront, $271M+ annual
 >
 > **Key Takeaway:** The core technology platform is achievable for tens of millions, but full global rollout and integration could require hundreds of millions to billions depending on scope and execution. See detailed breakdowns below.
 
-This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on the components outlined in the [Platform Technical Specification](../features/platform/platform-technical-specification.md).
+This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on the components outlined in the [Platform Technical Specification](features/platform-technical-specification.md).
 
 
 ### Upfront (Capital) Expenditure - Initial Build (Illustrative ~30 Months)
@@ -94,22 +94,22 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 1.  **Core Engineering & Development Effort:**
     *   *Basis:* ~75 FTEs * 2.5 years * $200k/FTE/year
     *   *Activities:* Detailed design, core platform development (API, storage, mapping/validation, auth), reference frontend, initial plugin interfaces, testing, documentation, initial deployment.
-    *   **Estimated ROM:** [$35 - $40 Million](#upfront-capital-expenditure---initial-build-illustrative-30-months)
+    *   **Estimated ROM:** [$35 - $40 Million](#upfront-capital-expenditure---initial-build-illustrative-~30-months)
 
 2.  **Infrastructure Setup & Initial Cloud Costs:**
     *   *Activities:* Establishing cloud accounts, VPCs, Kubernetes cluster (EKS) setup, database provisioning (RDS/TimescaleDB), S3 buckets, CI/CD pipeline setup, initial IaC development (Terraform).
     *   *Costs:* Includes initial compute/storage during development/testing, potential small upfront reservations.
-    *   **Estimated ROM:** [$1 - $3 Million](#upfront-capital-expenditure---initial-build-illustrative-30-months)
+    *   **Estimated ROM:** [$1 - $3 Million](#upfront-capital-expenditure---initial-build-illustrative-~30-months)
 
 3.  **Software Licenses & Tooling (Initial):**
     *   *Examples:* Potential costs for monitoring tools (Datadog), security scanners (Snyk), specialized libraries, collaboration tools if not already covered.
-    *   **Estimated ROM:** [$0.5 - $1 Million](#upfront-capital-expenditure---initial-build-illustrative-30-months)
+    *   **Estimated ROM:** [$0.5 - $1 Million](#upfront-capital-expenditure---initial-build-illustrative-~30-months)
 
 4.  **Compliance, Legal & Security (Initial Setup):**
     *   *Activities:* Initial HIPAA/GDPR compliance assessment, policy development, security architecture review, legal consultation for data sharing frameworks.
-    *   **Estimated ROM:** [$1 - $2 Million](#upfront-capital-expenditure---initial-build-illustrative-30-months)
+    *   **Estimated ROM:** [$1 - $2 Million](#upfront-capital-expenditure---initial-build-illustrative-~30-months)
 
-> **Total Estimated Upfront Cost (ROM): [$37.5 - $46 Million](#upfront-capital-expenditure---initial-build-illustrative-30-months)**
+> **Total Estimated Upfront Cost (ROM): [$37.5 - $46 Million](#upfront-capital-expenditure---initial-build-illustrative-~30-months)**
 
 *Note: This ROM estimate focuses **only on the Core Platform build effort and associated setup**, assuming an initial MVP/scaling phase over ~2.5 years. It **explicitly excludes** the potentially massive costs associated with:*
 *   *Global EHR/Data Source Integration Effort:* Building/buying connectors for *thousands* of systems.
@@ -281,7 +281,7 @@ For this analysis, we use a conservative baseline estimate of **[$100 billion pe
 
 ### Decentralized Trial Costs (Modeled on Oxford RECOVERY)
 
-- **Oxford RECOVERY**: Achieved [**~\$500 per patient**](#gross-rd-savings-from-dfda-implementation). Key strategies included:
+- **Oxford RECOVERY**: Achieved [**~\$500 per patient**](#gross-r&d-savings-from-dfda-implementation). Key strategies included:
   1. Embedding trial protocols within routine hospital care.  
   2. Minimizing overhead by leveraging existing staff/resources and electronic data capture.  
   3. Focused, pragmatic trial designs.
@@ -338,7 +338,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 - Faster approvals and access to effective treatments can save lives and improve quality of life.
 - **Value of a Statistical Life (VSL):** U.S. agencies use ~$10M per life saved ([DOT 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)).
-- **QALY Framework:** Standard willingness-to-pay is [**$100,000–$150,000 per QALY gained**](#qaly-valuation-and-thresholds-willingness-to-pay) ([ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/)).
+- **QALY Framework:** Standard willingness-to-pay is [**$100,000–$150,000 per QALY gained**](#c-qaly-valuation-and-thresholds-willingness-to-pay) ([ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/)).
 - **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × $150,000 = $1.5B. If 10,000 lives are saved, benefit = 10,000 × $10M = $100B.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
 - **References:**
@@ -351,7 +351,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 *   **Parameter**: Percentage reduction in addressable clinical trial costs due to dFDA.
 *   **Source/Rationale**:
     *   Decentralized Clinical Trials (DCTs), a core component of dFDA, have demonstrated potential for significant cost reductions (20-50% or more) through reduced site management, travel, and streamlined data collection ([Rogers et al., 2022](https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf); [Nature, 2024](https://www.nature.com/articles/s41746-024-01214-5)).
-    *   The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials ([recovery-trial](../reference/recovery-trial), citing Manhattan Institute and NCBI).
+    *   The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials ([RECOVERY trial](reference/recovery-trial.md), citing Manhattan Institute and NCBI).
     *   *Note on R&D Savings Estimates*: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), the average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. Rogers et al. (2022) in their systematic review noted that there is currently "insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost" on a generalized basis. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
 *   **Range Used in Sensitivity Analysis**:
     *   Conservative: 30% (saving $30B annually from a $100B addressable spend)
@@ -380,7 +380,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 2. **Model Inputs**  
    - **Upfront Cost (Core Platform Build):** Based on the ROM estimate of **~$37.5 - $46 Million** detailed in [Upfront (Capital) Expenditure](#upfront-capital-expenditure---initial-build-illustrative-~30-months). For ROI calculations, a representative figure (e.g., $40 Million) will be used.
-   - **Annual Operational Cost (Core Platform):** Based on the ROM estimate of **~$11 - $26.5 Million / year** detailed in [Annual Operational Costs (Platform Only)](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth).
+   - **Annual Operational Cost (Core Platform):** Based on the ROM estimate of **~$11 - $26.5 Million / year** detailed in [Annual Operational Costs (Platform Only)](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau-/-50tb-ingest/month).
    - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines core platform operational costs with the **Medium Case annual broader initiative costs (~$21.3 Million / year)** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
    *(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global dFDA vision, which were significantly larger, are superseded by these more granular Section 3 figures for the purpose of this ROI calculation.)*
    - **Cost Reduction**: Up to 80× in the biggest, most efficient scenarios; conservative average ~50%–80% reduction in trial costs.  
@@ -397,9 +397,9 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 - **Platform Cost Scenarios (Derived from ROM Estimates):**
   - **Upfront Cost (Core Platform Build):** ~$40 Million (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure---initial-build-illustrative-~30-months)).
   - **Annual Operational Cost Scenarios:**
-    - **Scenario 1: Core Platform Only:** ~$11 - $26.5 Million / year (from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth)). Let's use a midpoint of ~$19 Million/year for calculation.
+    - **Scenario 1: Core Platform Only:** ~$11 - $26.5 Million / year (from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau-/-50tb-ingest/month)). Let's use a midpoint of ~$19 Million/year for calculation.
     - **Scenario 2: Lean Ecosystem (Core Platform + Medium Broader Initiatives):**
-      - Core Platform Ops (midpoint from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth)): ~$19 Million/year
+      - Core Platform Ops (midpoint from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau-/-50tb-ingest/month)): ~$19 Million/year
       - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
       - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~$40 Million/year** (or $0.04 Billion/year). This aligns with the cost basis for the ROI cited in the Executive Summary.
     - *(Other scenarios, such as including "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), could be considered for sensitivity analysis but would significantly increase annual costs.)*
@@ -411,7 +411,7 @@ From a purely financial perspective, if the industry can move to such a platform
 
 Let's calculate ROI based on the **Lean Ecosystem** scenario:
 - Upfront Cost (Core Platform Build from [Upfront (Capital) Expenditure](#upfront-capital-expenditure---initial-build-illustrative-~30-months)): $40 Million. Amortized over 5 years: $8 Million/year.
-- Annual Operational Cost (Lean Ecosystem - Core Platform Ops from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth) + Medium Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$40 Million/year.
+- Annual Operational Cost (Lean Ecosystem - Core Platform Ops from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau-/-50tb-ingest/month) + Medium Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$40 Million/year.
 - Total Annualized Cost: $8M (amortized upfront) + $40M (annual ops) = $48 Million/year (or $0.048 Billion/year).
 
 *This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework). The NPV analysis provides the final estimated ROI of approximately **463:1**, which is the figure cited throughout this document.*
@@ -431,7 +431,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
   - *Total Lowest Upfront Cost:* $37.5M + $4.5M = **$42 Million**
   - *Amortized over 5 years:* $42M / 5 = $8.4 Million/year
 - **Annual Operational Costs:**
-  - Core Platform Operations (Low end from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth)): ~$11 Million/year
+  - Core Platform Operations (Low end from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau-/-50tb-ingest/month)): ~$11 Million/year
   - Broader Initiatives (Best Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$0 Million/year
   - *Total Lowest Annual Operational Cost:* **$11 Million/year**
 - **Total Lowest Annualized Cost:** $8.4M (amortized upfront) + $11M (annual ops) = **$19.4 Million/year**
@@ -444,7 +444,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
   - *Total Highest Upfront Cost:* $46M + $2.231B = **~$2.277 Billion**
   - *Amortized over 5 years:* $2.277B / 5 = ~$455.4 Million/year
 - **Annual Operational Costs:**
-  - Core Platform Operations (High end from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth)): ~$26.5 Million/year
+  - Core Platform Operations (High end from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau-/-50tb-ingest/month)): ~$26.5 Million/year
   - Broader Initiatives (Worst Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$271 Million/year
   - *Total Highest Annual Operational Cost:* $26.5M + $271M = **~$297.5 Million/year**
 - **Total Highest Annualized Cost:** $455.4M (amortized upfront) + $297.5M (annual ops) = **~$752.9 Million/year**
@@ -507,7 +507,7 @@ This full range sensitivity analysis demonstrates that the ROI for the dFDA init
 
 ## Conclusion
 
-Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of [**~$37.5 - $46 Million**](#upfront-capital-expenditure---initial-build-illustrative-30-months), plus ongoing operational costs. However, given that the pharmaceutical industry collectively spends around [$100 billion per year on R&D](#market-size--potential-impact-what-are-we-optimizing) and that a large share of those expenses go to clinical trials, even a [50% reduction in trial costs](#gross-rd-savings-from-dfda-implementation)—combined with faster product launches—would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi--net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios)**) once adopted at scale.
+Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of [**~$37.5 - $46 Million**](#upfront-capital-expenditure---initial-build-illustrative-~30-months), plus ongoing operational costs. However, given that the pharmaceutical industry collectively spends around [$100 billion per year on R&D](#market-size--potential-impact-what-are-we-optimizing) and that a large share of those expenses go to clinical trials, even a [50% reduction in trial costs](#gross-r&d-savings-from-dfda-implementation)—combined with faster product launches—would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi--net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios)**) once adopted at scale.
 
 Beyond the direct economic benefits, the secondary and tertiary effects on medical progress could be transformative. More drugs, nutraceuticals, and personalized therapies could be tested and refined rapidly; real-time data would continuously update treatment rankings; and off-label or unpatentable treatments—often neglected today—could receive the same rigorous evaluation as blockbuster drugs. If combined with robust privacy controls and global regulatory collaboration, such a platform could usher in a new era of evidence-based, personalized healthcare that benefits patients around the world, drives innovation, and lowers long-term healthcare costs.
 
@@ -643,13 +643,13 @@ For a concrete (though simplified) scenario, assume:
     $$
       C_0 = 0.26975 \text{ billion USD}
     $$
-    *(This represents an estimated cost for initial core platform build (see [Upfront (Capital) Expenditure](#upfront-capital-expenditure---initial-build-illustrative-30-months)), foundational broader initiative setup, and early legal/regulatory framework alignment (see medium case upfront costs in [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)), consistent with multi-year funding such as in the ["Right to Trial & FDA Upgrade Act"](../disease-eradication-act/disease-eradication-act.md) for the FDA v2 platform. This combined figure is distinct from the core platform build ROM alone and serves as an illustrative figure for this NPV example that is lower than the previous $3B placeholder.)*
+    *(This represents an estimated cost for initial core platform build (see [Upfront (Capital) Expenditure](#upfront-capital-expenditure---initial-build-illustrative-~30-months)), foundational broader initiative setup, and early legal/regulatory framework alignment (see medium case upfront costs in [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)), consistent with multi-year funding such as in the ["Right to Trial & FDA Upgrade Act"](../disease-eradication-act/disease-eradication-act.md) for the FDA v2 platform. This combined figure is distinct from the core platform build ROM alone and serves as an illustrative figure for this NPV example that is lower than the previous $3B placeholder.)*
 
 2.  **Annual Operating Costs** ($C_{\text{op}}(t)$):
     $$
       C_{\text{op}}(t) = 0.04005 \text{ billion USD (constant)}
     $$
-    *(This figure is also explicitly derived from the ROM estimates. It represents the sum of the midpoint of the Annual Core Platform Operations from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau--50tb-ingestmonth) (~$18.75M) and the Medium Case annual costs for Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs) (~$21.3M). This excludes large-scale, direct participant compensation programs which would be funded separately, as discussed in Annual Operational Costs.)*
+    *(This figure is also explicitly derived from the ROM estimates. It represents the sum of the midpoint of the Annual Core Platform Operations from [Annual Operational Costs](#annual-operational-costs-illustrative---at-target-scale-of-~5m-mau-/-50tb-ingest/month) (~$18.75M) and the Medium Case annual costs for Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs) (~$21.3M). This excludes large-scale, direct participant compensation programs which would be funded separately, as discussed in Annual Operational Costs.)*
 
 3. **Annual Global R&D Spend** ($R_d$):  
    $$
@@ -983,7 +983,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 - **$500 per patient (RECOVERY trial)**
   > "The cost per patient in the RECOVERY trial was approximately $500, compared to [$40,000–$120,000+ per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials."  
-  — [dfda.earth/recovery-trial-costs](https://dfda.earth/recovery-trial-costs) (citing Manhattan Institute and NCBI), [ProRelix Research](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/), [Power](https://www.withpower.com/guides/clinical-trial-cost-per-patient)
+  — [RECOVERY Trial Wiki](https://wiki.dfda.earth/en/reference/recovery-trial) (citing Manhattan Institute and NCBI), [ProRelix Research](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/), [Power](https://www.withpower.com/guides/clinical-trial-cost-per-patient)
 
 - **$360B U.S. drug spend**
   > "U.S. annual prescription drug spending is ~$360B."  
@@ -1013,7 +1013,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 - **RECOVERY trial cost reduction**
   > "The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials."  
-  — [dfda.earth/recovery-trial-costs](https://dfda.earth/recovery-trial-costs)
+  — [RECOVERY Trial Wiki](https://wiki.dfda.earth/en/reference/recovery-trial)
 
 - **Prevention savings calculation**
   > "If preventive spending increases by $205B and each $1 saves $3, additional savings = $205B × 3 = $615B/year."  
