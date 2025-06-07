@@ -29,14 +29,23 @@ async function validateLink(link: string, sourceFile: string, allHeadings: Set<s
     if (link.startsWith('http://') || link.startsWith('https://')) {
       // External URL
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000); // 5-second timeout
+      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15-second timeout
       
+      const headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      };
+
       try {
-        const response = await fetch(link, { signal: controller.signal, method: 'HEAD' });
+        const response = await fetch(link, { signal: controller.signal, headers, method: 'HEAD' });
         if (!response.ok) {
           // Try a GET if HEAD fails
-          const getResponse = await fetch(link, { signal: controller.signal });
+          const getResponse = await fetch(link, { signal: controller.signal, headers });
           if (!getResponse.ok) {
+            if (getResponse.status === 403) {
+              // Known issue with sites that block scripts. Treat as a warning, not a hard error.
+              console.warn(`- Link returned status 403 (Forbidden): ${link}. This may be due to bot protection. Please verify manually.`);
+              return null; // Return null to not count it as a broken link
+            }
             return `Broken external link: ${link} (Status: ${getResponse.status})`;
           }
         }
