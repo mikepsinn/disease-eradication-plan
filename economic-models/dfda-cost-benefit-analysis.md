@@ -407,7 +407,9 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
 
-**ROI = \(\frac{\text{Net Annual Savings}}{\text{Annualized Platform Cost (Upfront Amortized + Annual Ops)}}\)**
+$$
+\text{ROI} = \frac{\text{Net Annual Savings}}{\text{Annualized Platform Cost (Upfront Amortized + Annual Ops)}}
+$$
 
 Let's calculate ROI based on the **Lean Ecosystem** scenario:
 - Upfront Cost (Core Platform Build from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): $40 Million. Amortized over 5 years: $8 Million/year.
