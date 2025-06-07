@@ -146,6 +146,20 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
 > **Total Estimated Annual Operations (Platform Only, ROM): \$11 - \$26.5 Million / year**
 
+#### Marginal Cost Analysis per User
+
+The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the platform, which aims to support hundreds of millions or billions of users. At this initial scale, we can analyze the cost on a per-user basis.
+
+-   **Average Cost Range Per User (at 5M MAU):**
+    -   Based on the total annual operational cost range of **$11M - $26.5M**, the average cost per user is:
+    $$
+    \frac{\$11,000,000 \text{ to } \$26,500,000}{5,000,000 \text{ users}} = \mathbf{\$2.20 \text{ to } \$5.30 \text{ per user per year}}
+    $$
+-   **Marginal Cost Per Additional User:**
+    -   As a large-scale software platform, the dFDA system has high fixed costs (infrastructure, core engineering) but very low variable costs. Therefore, the **marginal cost** of supporting one additional user is expected to be a small fraction of the average cost, likely **pennies per year**. This cost will decrease further as the platform achieves greater economies of scale, making the system exceptionally efficient at supporting a global user base.
+
+*(Note: The underlying cloud infrastructure cost ($5M-$15M/year) is a top-down ROM estimate. A more granular, bottom-up analysis based on projected per-user storage, data transfer, and compute would provide further support for these figures and is a key area for future refinement of this model.)*
+
 *Note on Participant Financial Contributions and NIH Cost Discounts (Alignment with "Right to Trial & FDA Upgrade Act"):
 This core platform operational cost estimate **focuses on the technology infrastructure and does not include the direct financial transactions related to individual trial participation.** The "Right to Trial & FDA Upgrade Act" (specifically SEC. 303 and SEC. 304) outlines a model where:
     1.  **Sponsor-Determined Participation Costs:** Sponsors itemize the direct costs of a patient's participation in a trial (SEC. 304(a)).
