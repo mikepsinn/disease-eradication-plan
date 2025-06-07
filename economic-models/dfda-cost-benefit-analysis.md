@@ -833,15 +833,15 @@ Even so, the core takeaway remains: **If the platform is widely adopted and per-
 To meet the standards of government and health technology assessment (HTA) bodies such as ICER, we present a cost-utility analysis using the **incremental cost-effectiveness ratio (ICER)** and **quality-adjusted life years (QALYs)**. This approach is the US and global standard for evaluating the value of health interventions ([ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)).
 
 - **QALY**: One year of life in perfect health. Gains are calculated as:
-  \[
+  $$
   \text{QALYs Gained} = (Q_1 \times T_1) - (Q_0 \times T_0)
-  \]
+  $$
   Where $Q_0$/$Q_1$ = quality of life (0-1) before/after, $T_0$/$T_1$ = years of life before/after.
 
 - **ICER**: The cost per QALY gained:
-  \[
+  $$
   \text{ICER} = \frac{\text{Incremental Cost}}{\text{Incremental QALYs}} = \frac{\text{Cost}_{\text{new}} - \text{Cost}_{\text{old}}}{\text{QALYs}_{\text{new}} - \text{QALYs}_{\text{old}}}
-  \]
+  $$
   If an intervention saves money (negative incremental cost) and improves health (positive QALY gain), the ICER will be negative, indicating a **dominant** (cost-saving) intervention.
 
 - **US Willingness-to-Pay Threshold**: Typically $100,000–$150,000 per QALY for interventions that *add* costs ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)). Dominant interventions are favorable regardless of this threshold.
