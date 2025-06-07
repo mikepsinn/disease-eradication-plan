@@ -2,7 +2,7 @@
 title: dFDA Cost Benefit Analysis and Return on Investment
 description: How to slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver an ROI of approximately 463:1.
 published: true
-date: 2025-05-08T00:23:25.085Z
+date: 2025-06-07T21:26:58.054Z
 tags: economic-models
 editor: markdown
 dateCreated: 2025-04-29T01:07:30.411Z
@@ -20,7 +20,7 @@ dateCreated: 2025-04-29T01:07:30.411Z
 *   **Improved Health Outcomes:** The dFDA is projected to generate a baseline of **[300,000 Quality-Adjusted Life Years (QALYs) annually](#a22-parameterization-overall-dfda-platform-impact)** ([NBER, Glied & Lleras-Muney](https://www.nber.org/papers/w9705), [NBER, Philipson et al.](https://www.nber.org/papers/w31792), [see Appendix A.2.2](#a22-parameterization-overall-dfda-platform-impact)) through faster drug access, enhanced preventative care enabled by real-world data, and more personalized medicine.
 
 **Exceptional Economic Value:**
-*   **Return on Investment (ROI):** The dFDA platform demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [**~$40 million/year**](#35-scenario-based-rom-estimates-for-broader-initiative-costs) including medium broader initiative costs) against [**$50 billion in annual R&D savings**](#a-gross-rd-savings-from-dfda-implementation) ([**50% reduction scenario**](#a-gross-rd-savings-from-dfda-implementation), [Fortune Business Insights](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [see Section 4.1](#41-market-size--potential-impact-what-are-we-optimizing)), the NPV analysis yields an ROI of approximately [**463:1**](#a153-final-roi--net-benefit) over 10 years.
+*   **Return on Investment (ROI):** The dFDA platform demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD/year](#35-scenario-based-rom-estimates-for-broader-initiative-costs) including medium broader initiative costs) against [**$50 billion in annual R&D savings**](#a-gross-rd-savings-from-dfda-implementation) ([**50% reduction scenario**](#a-gross-rd-savings-from-dfda-implementation), [Fortune Business Insights](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [see Section 4.1](#41-market-size--potential-impact-what-are-we-optimizing)), the NPV analysis yields an ROI of approximately [**463:1**](#a153-final-roi--net-benefit) over 10 years.
 *   **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves substantial costs and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-$166,533 per QALY gained**](#a23-sensitivity-analysis-overall-dfda-platform-cost-effectiveness), [ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/), [see Appendix A.2.3](#a23-sensitivity-analysis-overall-dfda-platform-cost-effectiveness)) for core platform operations plus medium broader initiative costs), far exceeding standard government value thresholds ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)).
 
 **Conclusion:** The dFDA initiative represents a paradigm shift with the potential for profound societal and economic benefits. Its ability to drastically lower costs, accelerate medical innovation, and improve public health makes a compelling case for its implementation, supported by legislative frameworks such as the "Right to Trial & FDA Upgrade Act."
