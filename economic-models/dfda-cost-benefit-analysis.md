@@ -2,7 +2,7 @@
 title: dFDA Cost Benefit Analysis and Return on Investment
 description: How to slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver an ROI of approximately 463:1.
 published: true
-date: 2025-05-08T00:23:25.085Z
+date: 2025-06-07T21:26:58.054Z
 tags: economic-models
 editor: markdown
 dateCreated: 2025-04-29T01:07:30.411Z
