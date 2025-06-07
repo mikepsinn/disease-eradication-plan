@@ -26,6 +26,7 @@
     "ignore": "^7.0.3",
     "js-yaml": "^4.1.0",
     "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
     "mime-types": "^2.1.35",
     "openai": "^4.0.0",
     "pg": "^8.13.1",
@@ -53,10 +54,13 @@
     "tree:metadata:md": "ts-node scripts/generate-tree-with-metadata.ts --markdown",
     "tree:metadata:tree": "ts-node scripts/generate-tree-with-metadata.ts --tree-md",
     "fix-frontmatter": "node scripts/fix_frontmatter_metadata.js",
+    "validate-links": "ts-node scripts/validate-links.ts",
     "ts-node": "ts-node"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
+    "@types/markdown-it": "^14.1.2",
+    "@types/markdown-it-anchor": "^4.0.4",
     "@types/node": "^22.13.10",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
