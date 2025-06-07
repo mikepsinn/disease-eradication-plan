@@ -20,7 +20,7 @@ dateCreated: 2025-04-29T01:07:30.411Z
 *   **Improved Health Outcomes:** The dFDA is projected to generate a baseline of **[300,000 Quality-Adjusted Life Years (QALYs) annually](#a22-parameterization-overall-dfda-platform-impact)** ([NBER, Glied & Lleras-Muney](https://www.nber.org/papers/w9705), [NBER, Philipson et al.](https://www.nber.org/papers/w31792), [see Appendix A.2.2](#a22-parameterization-overall-dfda-platform-impact)) through faster drug access, enhanced preventative care enabled by real-world data, and more personalized medicine.
 
 **Exceptional Economic Value:**
-*   **Return on Investment (ROI):** The dFDA platform demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD/year](#35-scenario-based-rom-estimates-for-broader-initiative-costs) including medium broader initiative costs) against [**$50 billion in annual R&D savings**](#a-gross-rd-savings-from-dfda-implementation) ([**50% reduction scenario**](#a-gross-rd-savings-from-dfda-implementation), [Fortune Business Insights](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [see Section 4.1](#41-market-size--potential-impact-what-are-we-optimizing)), the NPV analysis yields an ROI of approximately [**463:1**](#a153-final-roi--net-benefit) over 10 years.
+*   **Return on Investment (ROI):** The dFDA platform demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#35-scenario-based-rom-estimates-for-broader-initiative-costs) including medium broader initiative costs) against [**$50 billion in annual R&D savings**](#a-gross-rd-savings-from-dfda-implementation) ([**50% reduction scenario**](#a-gross-rd-savings-from-dfda-implementation), [Fortune Business Insights](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [see Section 4.1](#41-market-size--potential-impact-what-are-we-optimizing)), the NPV analysis yields an ROI of approximately [**463:1**](#a153-final-roi--net-benefit) over 10 years.
 *   **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves substantial costs and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-$166,533 per QALY gained**](#a23-sensitivity-analysis-overall-dfda-platform-cost-effectiveness), [ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/), [see Appendix A.2.3](#a23-sensitivity-analysis-overall-dfda-platform-cost-effectiveness)) for core platform operations plus medium broader initiative costs), far exceeding standard government value thresholds ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)).
 
 **Conclusion:** The dFDA initiative represents a paradigm shift with the potential for profound societal and economic benefits. Its ability to drastically lower costs, accelerate medical innovation, and improve public health makes a compelling case for its implementation, supported by legislative frameworks such as the "Right to Trial & FDA Upgrade Act."
@@ -173,40 +173,40 @@ Large-scale figures sometimes discussed for "participant support" or "subsidies"
 1. **Blockchain Supply-Chain Ledger**
    - Components: Zero-knowledge proof implementation, DSCSA integration, IoT device integration
    - Cost Reduction: Open-source blockchain frameworks, community bounties for core components
-   - **Estimated ROM:** [$2M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.5M annual maintenance](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
+   - **Estimated ROM:** [2M USD upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [0.5M USD annual maintenance](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 2. **Patient Portal & Treatment Ranking System**
   - Components: Real-time ranking algorithm, outcome labels, mobile/SMS/IoT interfaces
   - Cost Reduction: Open-source frontend frameworks, community-developed plugins
-  - **Estimated ROM:** [$1.5M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.3M annual maintenance](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
+  - **Estimated ROM:** [1.5M USD upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [0.3M USD annual maintenance](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 3. **Interoperability & API Infrastructure**
   - Components: FHIR-R5 server, EHR integration adapters, OAuth 2.0 implementation
   - Cost Reduction: Existing open-source healthcare APIs, community-contributed adapters
-  - **Estimated ROM:** [$1M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.2M annual maintenance](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
+  - **Estimated ROM:** [1M USD upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [0.2M USD annual maintenance](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 4. **Security & Compliance**
   - Components: FedRAMP-Moderate compliance, annual pen testing, security monitoring
   - Cost Reduction: Bug bounty program, automated security scanning
-  - **Estimated ROM:** [$0.5M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.5M annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
+  - **Estimated ROM:** [0.5M USD upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [0.5M USD annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 5. **AI/ML Capabilities**
   - Components: Protocol validation, patient-trial matching, safety signal detection
   - Cost Reduction: Open-source ML models, transfer learning, community datasets
-  - **Estimated ROM:** [$1M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.3M annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
+  - **Estimated ROM:** [1M USD upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [0.3M USD annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 6. **Developer & Community Infrastructure**
   - Components: Documentation, SDKs, CI/CD pipelines, community support
   - Cost Reduction: Automated documentation generation, community moderation
-  - **Estimated ROM:** [$0.5M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.2M annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
+  - **Estimated ROM:** [0.5M USD upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [0.2M USD annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 7. **Governance & Transparency**
   - Components: Technical Steering Committee operations, public metrics dashboards
   - Cost Reduction: Automated reporting, community governance tools
-  - **Estimated ROM:** [$0.2M upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [$0.1M annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
+  - **Estimated ROM:** [0.2M USD upfront](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization) / [0.1M USD annual](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
-**Total Estimated Development (Upfront):** [$6.7M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)  
-**Total Estimated Annual Operations:** [$2.1M](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
+**Total Estimated Development (Upfront):** [6.7M USD](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)  
+**Total Estimated Annual Operations:** [2.1M USD](#33-enhanced-rom-estimates-with-technical-requirements--cost-optimization)
 
 ### 3.4 Cost Optimization Strategies & Risk Mitigation
 
@@ -351,7 +351,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 *   **Parameter**: Percentage reduction in addressable clinical trial costs due to dFDA.
 *   **Source/Rationale**:
     *   Decentralized Clinical Trials (DCTs), a core component of dFDA, have demonstrated potential for significant cost reductions (20-50% or more) through reduced site management, travel, and streamlined data collection ([Rogers et al., 2022](https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf); [Nature, 2024](https://www.nature.com/articles/s41746-024-01214-5)).
-    *   The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials ([dfda.earth/recovery-trial-costs](https://dfda.earth/recovery-trial-costs), citing Manhattan Institute and NCBI).
+    *   The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials ([recovery-trial](../reference/recovery-trial), citing Manhattan Institute and NCBI).
     *   *Note on R&D Savings Estimates*: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), the average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. Rogers et al. (2022) in their systematic review noted that there is currently "insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost" on a generalized basis. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
 *   **Range Used in Sensitivity Analysis**:
     *   Conservative: 30% (saving $30B annually from a $100B addressable spend)
