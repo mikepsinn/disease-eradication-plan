@@ -111,12 +111,12 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
 > **Total Estimated Upfront Cost (ROM): [$37.5 - $46 Million](#31-upfront-capital-expenditure---initial-build-illustrative-30-months)**
 
-*Note: This ROM estimate is significantly lower than the previous conceptual \$2-4 Billion figure. This is primarily because this revised estimate focuses **only on the Core Platform build effort and associated setup**, assuming an initial MVP/scaling phase over ~2.5 years. It **explicitly excludes** the potentially massive costs associated with:*
-*   *Global EHR/Data Source Integration Effort:* Building/buying connectors for *thousands* of systems (previously estimated at \$0.5-1B alone).
+*Note: This ROM estimate focuses **only on the Core Platform build effort and associated setup**, assuming an initial MVP/scaling phase over ~2.5 years. It **explicitly excludes** the potentially massive costs associated with:*
+*   *Global EHR/Data Source Integration Effort:* Building/buying connectors for *thousands* of systems.
 *   *Large-Scale Plugin Development:* Cost of developing the vast ecosystem of data importers, analysis tools, and visualization plugins.
-*   *International Legal/Regulatory Harmonization:* Major diplomatic and legal efforts (previously estimated at \$100-300M).
+*   *International Legal/Regulatory Harmonization:* Major diplomatic and legal efforts.
 *   *Global Rollout & Marketing:* Costs associated with driving adoption worldwide.
-*   *Massive-Scale Hardware/Infrastructure:* Costs beyond the initial target scale (e.g., supporting 100M+ users).
+*   *Massive-Scale Hardware/Infrastructure:* Costs beyond the initial target scale (e.g., supporting 100M+ users).*
 
 *The \$2-4B figure likely represents the total investment needed for the *entire global initiative* over many years, whereas this ROM focuses on the initial Core Platform software build.*
 
