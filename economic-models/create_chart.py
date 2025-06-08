@@ -5,7 +5,7 @@ import numpy as np
 # Upper bound for "10,000+" is set to 20,000 for visualization, will be noted in text.
 # For single-point estimates, lower and upper are the same.
 interventions = [
-    ("dFDA Platform", 5000, 15000),
+    ("dFDA Platform", 3750, 15000), # Lower from conservative QALYs / annual cost, upper from optimistic
     ("Smallpox Eradication", 10000, 20000), # Upper bound is indicative
     ("Public Health (Water, Vax, etc.)", 1000, 10000),
     ("Hypertension Screening", 200, 2000),

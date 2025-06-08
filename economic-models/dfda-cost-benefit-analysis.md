@@ -154,7 +154,7 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the platform, which aims to support hundreds of millions or billions of users. At this initial scale, we can analyze the cost on a per-user basis.
 
 -   **Average Cost Range Per User (at 5M MAU):**
-    -   Based on the total annual operational cost range of **$11M - $26.5M**, the average cost per user is:
+    -   Based on the total annual operational cost range of **[$11M - $26.5M](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)**, the average cost per user is:
     $$
     \frac{\$11,000,000 \text{ to } \$26,500,000}{5,000,000 \text{ users}} = \mathbf{\$2.20 \text{ to } \$5.30 \text{ per user per year}}
     $$
@@ -355,7 +355,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 - Faster approvals and access to effective treatments can save lives and improve quality of life.
 - **Value of a Statistical Life (VSL):** U.S. agencies use ~$10M per life saved ([DOT 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)).
-- **QALY Framework:** Standard willingness-to-pay is [**$100,000–$150,000 per QALY gained**](#parameterization:-overall-dfda-platform-impact) ([ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/)).
+- **QALY Framework:** Standard willingness-to-pay is [**$100,000–$150,000 per QALY gained**](#parameterization-overall-dfda-platform-impact) ([ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/)).
 - **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × $150,000 = $1.5B. If 10,000 lives are saved, benefit = 10,000 × $10M = $100B.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
 - **References:**
@@ -422,12 +422,12 @@ The return on investment for the dFDA platform is exceptionally high due to its 
       - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
       - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~$40 Million/year** (or $0.04 Billion/year). This aligns with the cost basis for the ROI cited in the Executive Summary.
     - *(Other scenarios, such as including "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), could be considered for sensitivity analysis but would significantly increase annual costs.)*
-- **Net Annual Savings** (assuming full adoption and 50% R&D cost reduction): $50 Billion/year.
+- **Net Annual Savings** (assuming full adoption and [50% R&D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): $50 Billion/year.
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
 
 $$
-\text{ROI} = \frac{\text{Net Annual Savings}}{\text{Annualized Platform Cost (Upfront Amortized + Annual Ops)}}
+\text{ROI} = \frac{\text{Net Annual Savings}}{\text{Annualized Platform Cost}}
 $$
 
 Let's calculate ROI based on the **Lean Ecosystem** scenario:
@@ -870,14 +870,6 @@ To meet the standards of government and health technology assessment (HTA) bodie
 
 #### Parameterization: Overall dFDA Platform Impact
 The dFDA platform's primary economic impact comes from significantly reducing R&D costs, particularly in clinical trials. Its health impact (QALYs) stems from accelerating drug development, enabling better prevention, and improving access.
-
-*Note on Estimates (Reiteration from Section 3):
-- **Core Platform Operational Costs (ROM from Sec. 3.2): $11M - $26.5M / year.** This covers the technical operation of the dFDA software platform itself (cloud, maintenance, core engineering, basic support) at a target scale of ~5M MAU.
-- **Broader Initiative Annual Costs (ROM from Sec. 3.4, Medium Case): ~$21.3M / year.** This includes global data integration, plugin ecosystem development/maintenance, legal/regulatory harmonization, global rollout, and DAO governance, beyond core platform tech.
-- **Participant Compensation (Explicitly Excluded from above ROMs): Potentially $1B - $10B+ / year** if, for example, 100 million active participants were compensated at $10-$100/year.
-- The sensitivity analysis below (Table 9.3) will use a "Core Platform Op. Cost" based on the $11M-$26.5M range. Scenarios with higher "Platform Op. Cost" figures (e.g., $100M, $1B, $5B) are intended to represent the **Total Ecosystem Cost**, implicitly including varying levels of broader initiative costs and/or participant compensation.*
-
-*Note on R&D Savings (Reiteration from Section 3): R&D savings can vary widely; exceptional cases like the UK's RECOVERY trial demonstrate potential for cost reductions far exceeding typical optimistic scenarios (e.g., ~80X or >95% cost reduction per patient [[RECOVERY Trial Cost Efficiency](https://wiki.dfda.earth/en/reference/recovery-trial)]).*
 
 **A. Net Incremental Cost of dFDA Platform (Annual):**
 - Calculated as: `(Platform Operational Costs) - (Gross R and D Savings from dFDA)`
