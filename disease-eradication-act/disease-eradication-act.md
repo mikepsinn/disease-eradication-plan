@@ -1,6 +1,6 @@
 ---
 description: >-
-  The Right to Trial & FDA Upgrade Act aims to radically modernize medical research and treatment access through an open-source FDA.gov v2 platform, empowering patients with the right to participate in decentralized clinical trials and access transparent outcome data.
+  An Act aims to radically modernize medical research and treatment access through an open-source FDA.gov v2 platform, empowering patients with the right to participate in decentralized clinical trials.
 emoji: "🚀"
 title: Right to Trial & FDA Upgrade Act
 tags: 'healthcare-reform, clinical-trials, drug-development, fda-upgrade, right-to-trial, patient-rights, open-data, policy, regulatory'
