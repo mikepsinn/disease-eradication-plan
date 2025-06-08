@@ -79,11 +79,11 @@ These assumptions set a stage where the platform can indeed function at scale, b
 
 > **Section Summary**
 >
-> - **Upfront core platform build:** $37.5–$46 million ([see Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months))
-> - **Annual core platform operations:** $11–$27 million ([see Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month))
-> - **Broader initiative (medium scenario):** $228 million upfront, $21.3 million annual ([see Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs))
-> - **Best case total initiative:** [~$4.5M upfront, near $0 annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
-> - **Worst case total initiative:** [~$2.2B+ upfront, $271M+ annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
+> - **Upfront core platform build:** \$37.5–\$46 million ([see Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months))
+> - **Annual core platform operations:** \$11–\$27 million ([see Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month))
+> - **Broader initiative (medium scenario):** \$228 million upfront, \$21.3 million annual ([see Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs))
+> - **Best case total initiative:** [~\$4.5M upfront, near \$0 annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
+> - **Worst case total initiative:** [~\$2.2B+ upfront, \$271M+ annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
 >
 > **Key Takeaway:** The core technology platform is achievable for tens of millions, but full global rollout and integration could require hundreds of millions to billions depending on scope and execution. See detailed breakdowns below.
 
@@ -93,24 +93,24 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 ### Upfront (Capital) Expenditure Initial Build Illustrative 30 Months
 
 1.  **Core Engineering & Development Effort:**
-    *   *Basis:* ~75 FTEs * 2.5 years * $200k/FTE/year
+    *   *Basis:* ~75 FTEs * 2.5 years * \$200k/FTE/year
     *   *Activities:* Detailed design, core platform development (API, storage, mapping/validation, auth), reference frontend, initial plugin interfaces, testing, documentation, initial deployment.
-    *   **Estimated ROM:** [$35 - $40 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+    *   **Estimated ROM:** [\$35 - \$40 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
 
 2.  **Infrastructure Setup & Initial Cloud Costs:**
     *   *Activities:* Establishing cloud accounts, VPCs, Kubernetes cluster (EKS) setup, database provisioning (RDS/TimescaleDB), S3 buckets, CI/CD pipeline setup, initial IaC development (Terraform).
     *   *Costs:* Includes initial compute/storage during development/testing, potential small upfront reservations.
-    *   **Estimated ROM:** [$1 - $3 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+    *   **Estimated ROM:** [\$1 - \$3 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
 
 3.  **Software Licenses & Tooling (Initial):**
     *   *Examples:* Potential costs for monitoring tools (Datadog), security scanners (Snyk), specialized libraries, collaboration tools if not already covered.
-    *   **Estimated ROM:** [$0.5 - $1 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+    *   **Estimated ROM:** [\$0.5 - \$1 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
 
 4.  **Compliance, Legal & Security (Initial Setup):**
     *   *Activities:* Initial HIPAA/GDPR compliance assessment, policy development, security architecture review, legal consultation for data sharing frameworks.
-    *   **Estimated ROM:** [$1 - $2 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+    *   **Estimated ROM:** [\$1 - \$2 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
 
-> **Total Estimated Upfront Cost (ROM): [$37.5 - $46 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
+> **Total Estimated Upfront Cost (ROM): [\$37.5 - \$46 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
 
 *Note: This ROM estimate focuses **only on the Core Platform build effort and associated setup**, assuming an initial MVP/scaling phase over ~2.5 years. It **explicitly excludes** the potentially massive costs associated with:*
 *   *Global EHR/Data Source Integration Effort:* Building/buying connectors for *thousands* of systems.
@@ -130,7 +130,7 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
 2.  **Ongoing Engineering, Maintenance & Operations:**
     *   *Team Size:* Assume ~20 FTEs (SREs, DevOps, Core Maintainers, Security).
-    *   *Basis:* 20 FTEs * $200k/FTE/year
+    *   *Basis:* 20 FTEs * \$200k/FTE/year
     *   **Estimated ROM:** \$4 - \$6 Million / year
 
 3.  **Software Licenses & Tooling (Ongoing):**
@@ -152,7 +152,7 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the platform, which aims to support hundreds of millions or billions of users. At this initial scale, we can analyze the cost on a per-user basis.
 
 -   **Average Cost Range Per User (at 5M MAU):**
-    -   Based on the total annual operational cost range of **$11M - $26.5M**, the average cost per user is:
+    -   Based on the total annual operational cost range of **\$11M - \$26.5M**, the average cost per user is:
     $$
     \frac{\$11,000,000 \text{ to } \$26,500,000}{5,000,000 \text{ users}} = \mathbf{\$2.20 \text{ to } \$5.30 \text{ per user per year}}
     $$
