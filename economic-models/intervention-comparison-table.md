@@ -20,7 +20,7 @@ This article compares the dFDA platform to other historically high-ROI and high-
 | Hypertension Screening & Treatment   | 2:1 to 10:1                   | $500–$1,600                 | 200–2,000            | [PMC5217841](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5217841/)                                         |
 | Statins for High-Risk Patients       | 2:1 to 5:1                    | £280–£8,530              | 50–200               | [The Lancet](https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(24)00053-X/fulltext)                                             |
 | Polypill for Primary Prevention (High-Risk) | 2:1 to 10:1               | up to £18,811 per QALY      | 50-200               | [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182625) |
-| Generic Drug Substitution            | 2:1 to 10:1                   | Dominant (cost-saving)      | 100–1,000            | [FDA](https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/generic-drugs)      |
+| Generic Drug Substitution            | 2:1 to 10:1                   | Dominant (cost-saving)      | 100–1,000            | [FDA](https://www.fda.gov/drugs/generic-drugs/generic-drug-facts)      |
 
 **Key:**
 - **ROI**: Return on investment; dollars saved or value created per $1 spent.
@@ -59,6 +59,9 @@ This article compares the dFDA platform to other historically high-ROI and high-
 
 ### Polypill for Primary Prevention (High-Risk)
 > "A polypill strategy was potentially cost-effective compared to other strategies for most sub-groups ranging from dominance to up to £18,811 per QALY depending on patient sub-group." - [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182625)
+
+### Generic Drug Substitution
+> "According to the IMS Health Institute, generic drugs saved the U.S. health care system $1.67 trillion from 2007 to 2016." - [FDA](https://www.fda.gov/drugs/generic-drugs/generic-drug-facts)
 
 ## Conclusion
 
