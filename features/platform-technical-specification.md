@@ -13,20 +13,21 @@ dateCreated: 2025-07-26T14:00:00.000Z
 **Status:** Draft / Elaboration Complete (Illustrative)
 **Version:** 0.2.0
 
-This document provides detailed technical specifications for the implementation of the dFDA core platform, aligning with the architecture in [/features/platform/03-platform.md](/features/platform/03-platform.md) and enabling functionalities discussed in related documents like [/features/data-import.md](/features/data-import.md), [/features/data-silo-api-gateways.md](/features/data-silo-api-gateways.md), and drawing inspiration from efficiency models like [/reference/recovery-trial.md](/reference/recovery-trial.md). It is intended for engineers, developers, and technical teams.
+This document provides detailed technical specifications for the implementation of the core platform, aligning with the architecture in [/features/platform/03-platform.md](/features/platform/03-platform.md) and enabling functionalities discussed in related documents like [/features/data-import.md](/features/data-import.md), [/features/data-silo-api-gateways.md](/features/data-silo-api-gateways.md), and drawing inspiration from efficiency models like [/reference/recovery-trial.md](/reference/recovery-trial.md). It is intended for engineers, developers, and technical teams.
 
 **Note:** This specification uses **illustrative technical choices** based on common practices for scalable, secure health data platforms. Specific technologies, configurations, and details require further rigorous analysis, prototyping, validation against non-functional requirements (performance, load, budget), and potential revision during development.
 
 ## 1. Introduction
 
-*   **Purpose:** To define the specific technologies, interfaces, data structures, security measures, and infrastructure requirements for building the dFDA Core Platform.
+*   **Purpose:** To define the specific technologies, interfaces, data structures, security measures, and infrastructure requirements for building the global health protocol initiated by the United States.
 *   **Relationship:** Serves as the detailed implementation guide based on the architecture described in `/features/platform/03-platform.md`.
-*   **Scope:** Focuses on the Core Platform components (API, Storage, Mapping/Validation, Access Control, Reference Data) and the interfaces for the Plugin Framework. Excludes the internal implementation details of specific plugins. The Core Platform is intended to be developed as **open-source software**. 
+*   **Scope:** The Platform is designed to function as a global public utility and **Backend-as-a-Service (BaaS)**. This specification focuses on the core backend components (API, Storage, Mapping/Validation, Access Control) and the interfaces for a plugin framework. It excludes the internal implementation details of specific plugins or third-party applications built upon the platform. All core software developed shall be open-source.
 
 ## 2. Technology Stack
 
 Selected to prioritize scalability, security, interoperability, developer productivity, and leveraging mature ecosystems suitable for health data.
 
+*   **Open Source License:** All code developed for the platform shall be released under the **GNU General Public License v3.0**, as mandated by `SEC. 204(b)` of the governing Act.
 *   **Programming Languages:**
     *   Backend/API: **Python 3.11+** (FastAPI framework, strong data science/validation libraries (Pandas, Pydantic), mature async support, large talent pool).
     *   Frontend (Reference UI): **TypeScript** with **React 18+** (Robust typing, component model, large ecosystem, Next.js framework). Must support internationalization (i18n) for multi-language accessibility as mandated by `SEC. 204(l)`.
@@ -133,7 +134,17 @@ This section outlines the components necessary to execute trials, particularly a
     *   **Description:** A module to coordinate the dispatch and delivery of investigational products to patients or clinical sites.
     *   **Technical Considerations:** Requires secure APIs to integrate with third-party pharmacy, specialty courier, and laboratory systems. Must be able to trigger shipments and track delivery status, linking this information to the Blockchain Supply-Chain Ledger.
 
-### 3.4 Data Storage
+### 3.4 Data Ownership & Access Control
+
+User-centric control and robust security are paramount, designed to be managed by users and auditable by the community and governing bodies.
+
+*   **Authentication:** **AWS Cognito** or self-hosted **Keycloak/Hydra** providing OAuth 2.0/OIDC services. Enforces MFA. Manages user identities and client application registration.
+*   **Authorization:** Combination of **RBAC** (defined roles: `data_owner`, `data_custodian` (e.g., parent/guardian), `researcher`, `clinician_delegate`, `app_developer`, `admin`) and **ABAC** enforced via a policy engine (e.g., Open Policy Agent integrated at the API Gateway/backend). Policies use attributes like user roles, consent scope, data sensitivity level, and requested resource category to make dynamic authorization decisions.
+*   **Permission/Consent Management:** A core module providing user-facing interfaces (via the reference portal and APIs for third-party apps) for viewing data access logs, managing connected applications, and granting/revoking fine-grained consents. Consents are persisted in a dedicated database table detailing grantee, scope, duration, and status, with hashes of consent transactions logged to the immutable ledger.
+*   **Third-Party App Credentials:** Secure, encrypted storage (e.g., **AWS Secrets Manager** or **HashiCorp Vault**) for user-provided OAuth tokens/API keys needed by connector plugins to access external services (like Fitbit, Oura). Access is tightly controlled via IAM roles granted only to the specific plugin execution environments authorized by the user.
+*   **Auditing:** An immutable audit log (e.g., AWS QLDB or an append-only table with cryptographic verification) shall record all authentication events, authorization decisions, consent changes, data access requests (including denied attempts), and administrative actions. This log provides the transparency necessary for oversight by the TSC and the global community.
+
+### 3.5 Data Storage
 
 Layered approach prioritizing raw data integrity and optimized query performance.
 
@@ -152,7 +163,7 @@ Layered approach prioritizing raw data integrity and optimized query performance
 *   **Metadata / Relational Storage (PostgreSQL):**
     *   Schema: Maintain detailed ERD and DDL scripts in version control. Enforce referential integrity. Use UUIDs widely. Store hashes of consent documents, not the documents themselves.
 
-### 3.5 Data Mapping & Validation Engine
+### 3.6 Data Mapping & Validation Engine
 
 Handles heterogeneity of input data asynchronously.
 
