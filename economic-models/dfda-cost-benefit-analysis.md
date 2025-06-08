@@ -2,7 +2,7 @@
 title: dFDA Cost Benefit Analysis and Return on Investment
 description: How to slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver an ROI of approximately 463:1.
 published: true
-date: 2025-06-08T01:27:46.401Z
+date: 2025-06-08T20:11:19.719Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-29T01:07:30.411Z
@@ -62,7 +62,7 @@ Because this analysis deals with an innovative and unprecedented transformation,
 ### Cost Reductions
 
 #### Decentralized trial costs modeled on Oxford RECOVERY
-- Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of [$40,000 - $120,000 per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) to roughly [**$500 - $1,000 per patient**](#decentralized-trial-costs-modeled-on-oxford-recovery) ([RECOVERY Trial](https://www.recoverytrial.net/)).  
+- Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of [\$40,000 - \$120,000 per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) to roughly [**$500 - $1,000 per patient**](#decentralized-trial-costs-modeled-on-oxford-recovery) ([RECOVERY Trial](https://www.recoverytrial.net/)).  
 - Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
 
 ### Technical Feasibility
