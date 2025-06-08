@@ -182,8 +182,10 @@ async function validateMarkdownFile(filePath: string) {
 
 async function main() {
   const args = process.argv.slice(2);
-  const filePath = args[0];
-  
+  let filePath = args[0];
+
+  if(!filePath) {filePath = 'economic-models/dfda-cost-benefit-analysis.md';}
+
   if (!filePath) {
     console.error('Please provide a file path to validate.');
     console.error('Usage: ts-node scripts/validate-links.ts <path/to/file.md>');
