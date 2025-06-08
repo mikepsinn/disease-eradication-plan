@@ -294,7 +294,7 @@ For this analysis, we use a conservative baseline estimate of **[$100 billion pe
   - Phase I: \$2 - \$5 million/trial (smaller scale).  
   - Phase II: \$10 - \$50 million/trial (depending on disease area).  
   - Phase III: \$100 - \$500 million/trial (large patient populations).  
-- **Per-Patient Phase III Costs**: Often [\$40,000 - \$120,000+ per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) (site fees, overhead, staff, monitoring, data management).
+- **Per-Patient Phase III Costs**: Often [$40,000 - $120,000+ per patient](#market-size-and-impact) (site fees, overhead, staff, monitoring, data management).
 
 ### Decentralized Trial Costs Modeled on Oxford RECOVERY
 
@@ -305,7 +305,7 @@ For this analysis, we use a conservative baseline estimate of **[$100 billion pe
 
 - **Extrapolation to New System**:  
   - A well-integrated global platform could approach \$500 - \$1,000 per patient in many cases, especially for pragmatic or observational designs.  
-  - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark, derived by comparing per-patient costs of [\$500-\$1,000](#decentralized-trial-costs-modeled-on-oxford-recovery) against traditional costs of [\$40,000 - \$120,000+](#per-patient-phase-iii-costs).
+  - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark, derived by comparing per-patient costs of [\$500-\$1,000](#decentralized-trial-costs-modeled-on-oxford-recovery) against traditional costs of [\$40,000 - \$120,000+](#market-size-and-impact).
 
 ### Overall Savings
 
@@ -445,7 +445,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
 - Net Annual Savings: $50 Billion/year (from 50% R&D cost reduction).
 - Amortization Period for Upfront Costs: 5 years.
 
-**1. Lowest Total Cost Scenario (Best Case Core Platform + Best Case Broader Initiatives):**
+#### 1. Lowest Total Cost Scenario (Best Case Core Platform + Best Case Broader Initiatives)
 - **Upfront Costs:**
   - Core Platform Build (Low end from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): ~$37.5 Million
   - Broader Initiatives (Best Case Upfront from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$4.5 Million
@@ -458,7 +458,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
 - **Total Lowest Annualized Cost:** $8.4M (amortized upfront) + $11M (annual ops) = **$19.4 Million/year**
 - **ROI (Lowest Cost Scenario):** $50 Billion / $0.0194 Billion \approx **2577:1**
 
-**2. Highest Total Cost Scenario (Worst Case Core Platform + Worst Case Broader Initiatives):**
+#### 2. Highest Total Cost Scenario (Worst Case Core Platform + Worst Case Broader Initiatives)
 - **Upfront Costs:**
   - Core Platform Build (High end from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): ~$46 Million
   - Broader Initiatives (Worst Case Upfront from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$2.231 Billion
@@ -471,7 +471,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
 - **Total Highest Annualized Cost:** $455.4M (amortized upfront) + $297.5M (annual ops) = **~$752.9 Million/year**
 - **ROI (Highest Cost Scenario):** $50 Billion / $0.7529 Billion \approx **66:1**
 
-This full range sensitivity analysis demonstrates that the ROI for the dFDA initiative remains exceptionally positive, ranging from approximately **[66:1](#highest-total-cost-scenario-worst-case-core-platform--worst-case-broader-initiatives)** under the most pessimistic total cost assumptions to **[2577:1](#lowest-total-cost-scenario-best-case-core-platform--best-case-broader-initiatives)** under the most optimistic total cost assumptions. Even at the highest conceivable costs derived from Section 3, the financial return is substantial.
+This full range sensitivity analysis demonstrates that the ROI for the dFDA initiative remains exceptionally positive. Even at the highest conceivable costs derived from Section 3, the financial return is substantial.
 
 
 
