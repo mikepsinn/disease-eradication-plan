@@ -30,6 +30,8 @@ Congress finds the following:
 6.  A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
 7.  Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
 8.  A primary objective of this Act is to achieve a minimum **80X reduction** in the per-patient cost of food and drug trials through the implementation of the dFDA Platform, enabling the comprehensive quantification of all effects of all foods and drugs.
+9.  A key goal is to empower any individual or entity, not just traditional research institutions, to design and conduct valid scientific trials easily and affordably.
+10. By transforming fda.gov into an open, decentralized platform, the United States can create a global public good that accelerates medical progress for all of humanity.
 
 ### SEC. 103. DEFINITIONS.
 
@@ -41,6 +43,7 @@ In this Act—
 4.  **Pragmatic decentralized trial** means a clinical study integrated into routine care, allowing remote or local data capture, minimal exclusions, and broad patient demographics.
 5.  **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
 6.  **FDA.gov v2 Decentralized Trial Platform (the "Platform")** means the decentralized, open-source, algorithmic, and automated trial platform established on the fda.gov domain as described in this Act, designed to operate without central control by any single entity and to ensure data integrity, transparency, and resilience.
+7.  **Trial Creator** means any individual, institution, or entity that designs, initiates, and manages a trial on the Platform.
 
 ---
 
@@ -69,8 +72,8 @@ In this Act—
 
 (a) **Launch & Hosting.** Within 12 months after enactment, the Secretary shall deploy an open-source, cloud-native **FDA.gov v2 Decentralized Trial Platform**\[4] as a comprehensive upgrade to the **fda.gov** domain itself. All source code shall be mirrored in real-time to a public repository (e.g., *github.com/fda/fda-v2*).
 (b) **Mandatory Open‑Source Licence.** All code shall be released under the GNU General Public License v3.0. Any proprietary dependency shall be replaced or dual‑licensed within 24 months.
-(c) **Sponsor Workspace Functions.** The Platform shall provide—
- (1) **E‑Protocol Builder** with automated compliance validation (21 CFR Parts 312/812, ISO 14155).
+(c) **Trial Creator Workspace Functions.** The Platform shall provide—
+ (1) **E‑Protocol Builder** with templates and automated compliance validation (21 CFR Parts 312/812, ISO 14155) designed to enable any Trial Creator, regardless of prior regulatory expertise, to design and launch a study.
  (2) **Liability‑Insurance Exchange** for real‑time per‑subject quotes; selections auto‑populate FDA Form 1572.
  (3) **Trial Cost, Discount, and Deposit Module** facilitating: (A) the transparent calculation and disclosure of estimated patient-specific trial participation costs as provided by the trial sponsor; (B) the application of any applicable NIH-funded participation discounts (pursuant to SEC. 303); (C) the management of the net financial contribution required from the participant (as per SEC. 304(b)); and (D) the collection, holding, and refund of a patient data provision deposit (as per SEC. 304(e)). All cost components, applicable discounts, the final net cost to the participant, and details of the data provision deposit shall be clearly itemized and presented to the participant during the e-consent process (as per SEC. 302(b) and SEC. 304).
  (4) **Blockchain Supply‑Chain Ledger\[9]** interoperable with DSCSA (§ 360eee‑3) to capture temperature, custody, delivery.
