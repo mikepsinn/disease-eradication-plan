@@ -4,6 +4,65 @@ import matter from 'gray-matter';
 import markdownit from 'markdown-it';
 import anchor from 'markdown-it-anchor';
 
+async function fixAmpersands(filePath: string): Promise<void> {
+  console.log(`Fixing ampersands in ${filePath}...`);
+  const workspaceRoot = path.resolve(__dirname, '..');
+  const fullPath = path.join(workspaceRoot, filePath);
+
+  if (!fs.existsSync(fullPath)) {
+    console.error(`File not found for fixing: ${fullPath}`);
+    return;
+  }
+
+  let content = await fs.promises.readFile(fullPath, 'utf-8');
+  const originalContent = content;
+
+  // 1. Fix headings
+  content = content.split('\n').map(line => {
+    if (line.trim().startsWith('#')) {
+      return line.replace(/ & /g, ' and ').replace(/R&D/g, 'R and D');
+    }
+    return line;
+  }).join('\n');
+
+  // 2. Fix link text and corresponding anchor slugs
+  content = content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
+    let newText = text;
+    let newUrl = url;
+    let textChanged = false;
+    let urlChanged = false;
+
+    // Fix link text for consistency
+    if (newText.includes(' & ') || newText.includes('R&D')) {
+        newText = newText.replace(/ & /g, ' and ').replace(/R&D/g, 'R and D');
+        textChanged = true;
+    }
+
+    // Fix link anchor slug if it's an internal link
+    if (newUrl.startsWith('#')) {
+        if (newUrl.includes('-&-')) {
+            newUrl = newUrl.replace(/-&-/g, '-and-');
+            urlChanged = true;
+        }
+        if (newUrl.includes('r&d')) {
+            newUrl = newUrl.replace(/r&d/g, 'r-and-d');
+            urlChanged = true;
+        }
+    }
+    
+    if (textChanged || urlChanged) {
+        return `[${newText}](${newUrl})`;
+    }
+    
+    return match;
+  });
+
+  if (content !== originalContent) {
+    console.log('Found and fixed ampersands. Overwriting file.');
+    await fs.promises.writeFile(fullPath, content, 'utf-8');
+  }
+}
+
 async function getHeadings(filePath: string): Promise<string[]> {
   const content = await fs.promises.readFile(filePath, 'utf-8');
   const { content: markdownContent } = matter(content);
@@ -131,6 +190,7 @@ async function main() {
     process.exit(1);
   }
   
+  await fixAmpersands(filePath);
   await validateMarkdownFile(filePath);
 }
 
