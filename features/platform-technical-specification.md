@@ -11,11 +11,11 @@ dateCreated: 2025-07-26T14:00:00.000Z
 # Platform Technical Specification
 
 **Status:** Draft / Elaboration Complete (Illustrative)
-**Version:** 0.2.0
+**Version:** 0.3.0
 
 This document provides detailed technical specifications for the implementation of the core platform, aligning with the architecture in [/features/platform/03-platform.md](/features/platform/03-platform.md) and enabling functionalities discussed in related documents like [/features/data-import.md](/features/data-import.md), [/features/data-silo-api-gateways.md](/features/data-silo-api-gateways.md), and drawing inspiration from efficiency models like [/reference/recovery-trial.md](/reference/recovery-trial.md). It is intended for engineers, developers, and technical teams.
 
-**Note:** This specification uses **illustrative technical choices** based on common practices for scalable, secure health data platforms. Specific technologies, configurations, and details require further rigorous analysis, prototyping, validation against non-functional requirements (performance, load, budget), and potential revision during development.
+**Note on Implementation Strategy:** The primary implementation strategy is to **fund and integrate existing, best-in-class open-source solutions** through a public prize and grant program, rather than building the entire platform from the ground up. The specific technologies listed in this document are therefore **illustrative candidates** that meet the architectural requirements. They serve as a reference blueprint for evaluating potential open-source projects for integration.
 
 ## 1. Introduction
 
@@ -41,7 +41,7 @@ Selected to prioritize scalability, security, interoperability, developer produc
     *   Time-Series Data Storage: **TimescaleDB (Managed Service - e.g., Timescale Cloud or via Managed PostgreSQL)** (Optimized time-series performance on mature PostgreSQL foundation, supports analytical queries).
     *   Raw Data/File Storage: **AWS S3** (Scalability, durability, cost-effectiveness, lifecycle policies, event notifications).
 *   **Cloud Provider & Core Services:**
-    *   Primary Cloud Provider: **AWS** (Mature, comprehensive services, regulatory compliance support - BAA for HIPAA).
+    *   Primary Cloud Provider: **AWS** (Mature, comprehensive services, regulatory compliance support - BAA for HIPAA). While AWS is the initial target for the reference implementation, the architecture should strive for **cloud-agnosticism** where possible by relying on standardized, container-based deployments to mitigate vendor lock-in and facilitate adoption by international partners using other cloud providers.
     *   Compute: **AWS EKS** (Kubernetes for container orchestration), **AWS Lambda** (for specific event-driven tasks/APIs), **AWS EC2** (potentially for specialized workloads).
     *   Storage: **AWS S3**, **AWS RDS (PostgreSQL)**, Managed **TimescaleDB**, **AWS EBS**.
     *   Networking: **AWS VPC** (Isolation), **API Gateway** (Management, security), **Route 53** (DNS), **CloudFront** (CDN for frontend/static assets).
@@ -53,9 +53,9 @@ Selected to prioritize scalability, security, interoperability, developer produc
     *   **Status:** **Core Component.** Required to fulfill mandates in the governing Act (`SEC. 204(c)(4)`, `SEC. 204(i)`).
     *   **Use Cases:** 
         *   **Supply-Chain Integrity:** An immutable ledger, interoperable with DSCSA, for tracking investigational products from manufacturer to patient.
-        *   **Privacy-Preserving Audit:** Patient-level transactions (e.g., data access, consent) shall be represented as **zero-knowledge proofs** (e.g., zk-SNARKs) on the ledger, allowing verification without revealing protected health information.
+        *   **Privacy-Preserving Audit:** Patient-level transactions (e.g., data access, consent) shall be represented as **zero-knowledge proofs** on the ledger, allowing verification without revealing protected health information.
         *   **Consent Management:** Hashing consent forms and permissions to the ledger for an immutable, timestamped record of user intent.
-    *   **Implementation:** To be detailed in a separate design document. Will require selection of a suitable L1/L2 protocol, development of smart contracts, and integration with the core platform's API and identity services.
+    *   **Implementation:** To be integrated via a prize program. The platform will integrate with a suitable public L1/L2 protocol. Candidate ecosystems include **Polygon (PoS/zkEVM)**, **Starknet**, or other EVM-compatible chains with robust ZKP support. To maximize trust, preference will be given to ZKP schemes with transparent, non-trusted setups (e.g., **STARKs**).
 *   **Monitoring & Logging Tools:**
     *   Logging: **AWS CloudWatch Logs** integrated with **OpenSearch/Elasticsearch** for centralized querying/analysis.
     *   Monitoring/Metrics: **AWS CloudWatch Metrics** & **Prometheus/Grafana** (deployed on EKS for finer-grained infra/app metrics).
@@ -138,7 +138,9 @@ This section outlines the components necessary to execute trials, particularly a
 
 User-centric control and robust security are paramount, designed to be managed by users and auditable by the community and governing bodies.
 
-*   **Authentication:** **AWS Cognito** or self-hosted **Keycloak/Hydra** providing OAuth 2.0/OIDC services. Enforces MFA. Manages user identities and client application registration.
+*   **Identity and Authentication:**
+    *   **Authentication Service:** **AWS Cognito** or self-hosted **Keycloak/Hydra** providing OAuth 2.0/OIDC services. Enforces MFA.
+    *   **Decentralized Identity:** The platform will support a self-sovereign identity model based on W3C standards for **Decentralized Identifiers (DIDs)** and **Verifiable Credentials (VCs)**. This allows patients to control their identity and share specific, verified claims (e.g., proof of diagnosis) without revealing underlying data. Candidate frameworks for integration include **Hyperledger Aries/Indy** and **SpruceID's DIDKit**.
 *   **Authorization:** Combination of **RBAC** (defined roles: `data_owner`, `data_custodian` (e.g., parent/guardian), `researcher`, `clinician_delegate`, `app_developer`, `admin`) and **ABAC** enforced via a policy engine (e.g., Open Policy Agent integrated at the API Gateway/backend). Policies use attributes like user roles, consent scope, data sensitivity level, and requested resource category to make dynamic authorization decisions.
 *   **Permission/Consent Management:** A core module providing user-facing interfaces (via the reference portal and APIs for third-party apps) for viewing data access logs, managing connected applications, and granting/revoking fine-grained consents. Consents are persisted in a dedicated database table detailing grantee, scope, duration, and status, with hashes of consent transactions logged to the immutable ledger.
 *   **Third-Party App Credentials:** Secure, encrypted storage (e.g., **AWS Secrets Manager** or **HashiCorp Vault**) for user-provided OAuth tokens/API keys needed by connector plugins to access external services (like Fitbit, Oura). Access is tightly controlled via IAM roles granted only to the specific plugin execution environments authorized by the user.
@@ -169,9 +171,10 @@ Handles heterogeneity of input data asynchronously.
 
 *   **Implementation:** Pool of containerized **Python microservices** on EKS, scaling based on SQS queue depth.
 *   **Mapping Logic:**
-    *   Core Mappers: Prioritize robust implementation for **FHIR (R4/R5 Resources like Patient, Observation, Condition, MedicationRequest, DiagnosticReport), HL7v2 (ADT, ORU, ORM messages via parsing libraries), C-CDA documents, common lab formats (CSV/TSV), and direct API formats from major wearables (Fitbit, Oura, Garmin - requires specific plugins)**. Maintain mapping logic separately from core engine.
-    *   Plugin Interface: Defined API for plugins to register custom mappers for specific file types or third-party APIs (see Section 4).
-    *   Reference Data Usage: Crucial reliance on `variables` and `units` tables for mapping source terms/units to standardized internal IDs. Handles code system translations (e.g., local lab code to LOINC).
+    *   **Core Standards:** The platform will standardize on the **HL7 FHIR (R4/R5)** standard for clinical data and the **OMOP Common Data Model** for observational research.
+    *   **Core Mappers:** The reference implementation will leverage established open-source tools like **HAPI FHIR** (for FHIR data processing) and the **OHDSI tool stack** (for OMOP-based analytics). Prizes will be offered to extend these with robust mappers for **HL7v2, C-CDA, and major wearable APIs (Fitbit, Oura, Garmin)**.
+    *   **Plugin Interface:** Defined API for plugins to register custom mappers for specific file types or third-party APIs (see Section 4).
+    *   **Reference Data Usage:** Crucial reliance on `variables` and `units` tables for mapping source terms/units to standardized internal IDs. Handles code system translations (e.g., local lab code to LOINC).
 *   **Validation Logic:** Performed *after* mapping to standardized format. Checks against `variables` definitions (range, units). Implements outlier detection algorithms (configurable, e.g., IQR, Z-score) flagging `is_outlier`. Configurable severity levels for validation failures (log, flag, reject).
 *   **Error Handling:** Detailed structured logging of errors (input data ref, mapper/validator step, error type). Use of SQS dead-letter queues for persistent failures requiring manual investigation. API endpoint for users/systems to query job status and error details.
 *   **Asynchronous Queue (SQS):** Use standard SQS queues. Consider FIFO queues if strict processing order is essential for certain data types, but acknowledge potential throughput limitations.
@@ -224,7 +227,7 @@ This section specifies the systems required to fulfill the unique governance and
 *   **Public Bounty Program (`SEC. 204(i)`)**
     *   **Status:** Design Required.
     *   **Description:** A system to manage the public bounty program for code contributions and vulnerability disclosures.
-    *   **Technical Considerations:** Requires integration with repository issue trackers, a payment system, and an automated verification component (potentially leveraging the AI Governance reviewer) to validate submissions and trigger payouts.
+    *   **Technical Considerations:** The long-term goal for the bounty and governance programs is to migrate their operations to a **Decentralized Autonomous Organization (DAO)** structure to ensure transparent, community-driven control. Frameworks like **Aragon** are candidates for this implementation.
 
 ## 7. Security Implementation
 
