@@ -1,0 +1,125 @@
+openapi: 3.0.3
+info:
+  title: FDA.gov v2 - Plugin Interface API
+  description: |-
+    API defining the interfaces that the Core Platform uses to interact with external plugins.
+    This allows for a modular and extensible system where third parties can add functionality.
+    The Core Platform calls these endpoints on registered plugins.
+  version: 1.0.0
+servers:
+  - url: https://plugins.example-vendor.com/
+    description: Example URL for a deployed plugin. The actual URL is stored in the Plugin Registry.
+tags:
+  - name: Mapping
+    description: Endpoints for data mapping plugins.
+  - name: Analysis
+    description: Endpoints for data analysis plugins.
+paths:
+  /v1/map:
+    post:
+      tags:
+        - Mapping
+      summary: Execute a data mapping job
+      description: |-
+        The Core Platform calls this endpoint on a registered data mapping plugin 
+        to transform a raw file into the standardized observation format.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MappingRequest'
+      responses:
+        '200':
+          description: OK. The mapping was successful.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MappingResponse'
+        '400':
+          description: Bad Request. The input data is invalid or cannot be processed.
+        '500':
+          description: Internal Server Error. The plugin failed to process the data.
+
+  /v1/analyze:
+    post:
+      tags:
+        - Analysis
+      summary: Execute an analysis job
+      description: |-
+        The Core Platform calls this endpoint on a registered analysis plugin,
+        providing a set of data and requesting a specific analysis to be performed.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnalysisRequest'
+      responses:
+        '200':
+          description: OK. The analysis was successful.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisResponse'
+        '400':
+          description: Bad Request. Invalid input for the analysis.
+        '500':
+          description: Internal Server Error. The plugin failed to perform the analysis.
+
+components:
+  schemas:
+    MappingRequest:
+      type: object
+      properties:
+        raw_file_url:
+          type: string
+          format: uri
+          description: A pre-signed URL to access the raw data file from secure storage.
+        user_context:
+          type: object
+          description: Information about the user whose data is being processed.
+
+    MappingResponse:
+      type: object
+      properties:
+        observations:
+          type: array
+          items:
+            type: object
+            properties:
+              timestamp:
+                type: string
+                format: date-time
+              variable_name:
+                type: string
+              value:
+                type: number
+              unit:
+                type: string
+
+    AnalysisRequest:
+      type: object
+      properties:
+        analysis_type:
+          type: string
+          description: The specific type of analysis to run (e.g., "correlation", "group_comparison").
+        data:
+          type: array
+          items:
+            type: object
+          description: The dataset for the plugin to analyze.
+        parameters:
+          type: object
+          description: Additional parameters needed for the analysis.
+
+    AnalysisResponse:
+      type: object
+      properties:
+        summary:
+          type: string
+          description: A textual summary of the analysis results.
+        results:
+          type: object
+          description: The structured results of the analysis (e.g., charts, tables).
+        
