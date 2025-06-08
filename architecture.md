@@ -44,7 +44,13 @@ The primary goal is to establish a **global health protocol** by creating a foun
 The project consists of two primary components:
 
 *   **Core Open-Source Platform:** This is the initial **reference implementation** of the global health protocol. It is open-source and includes only universally necessary features, such as user authentication, data owner access controls, data storage, data validation, and a standardized API. The DAO will compensate contributors to this core platform.
-*   **Plugin Framework:** Plugins are modules that provide additional functionality that connects to the core platform. This includes data import from specific sources, data mapping to various formats, data analysis, and data visualization. These may be free or monetized by their creator, or integrated into the core based on community voting.
+*   **Plugin Framework:** While the Core Platform provides the foundational infrastructure, it is designed to be extended through plugins. This allows a competitive ecosystem of third-party developers to build additional functionality.
+
+While the plugin framework allows for limitless extension, the governing Act mandates that the platform must, at a minimum, provide the following core applications and services:
+
+*   **Trial Creator Workspace:** Tools for designing, funding, and launching decentralized clinical trials.
+*   **Patient Portal & Public Knowledge Base:** A reference implementation for patients to manage their data and a public-facing portal ("Clinipedia") to access research findings and ranked treatment options.
+*   **Oversight & Governance Systems:** Applications to facilitate ethical review (IRB/DERB), AI-augmented code governance, and public bounty programs.
 
 ![framework diagram](https://static.crowdsourcingcures.org/img/plugin-marketplace.png)
 

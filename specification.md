@@ -121,7 +121,7 @@ This section outlines the components necessary to execute trials, particularly a
 *   **E-Consent and Comprehension Verification (`SEC. 302(b)`)**
     *   **Status:** Design Required.
     *   **Description:** A module to manage the electronic informed consent process.
-    *   **Technical Considerations:** Must provide a version-controlled, auditable e-consent workflow. Crucially, it must include an interactive, configurable comprehension quiz that patients must pass before being able to sign the consent form, as mandated by the Act. The record of successful quiz completion must be immutably logged.
+    *   **Technical Considerations:** Must provide a version-controlled, auditable e-consent workflow. Crucially, as mandated by the Act, it **must include an interactive, configurable comprehension quiz** that patients must pass before being able to sign the consent form. The record of successful quiz completion and the signed consent form must be immutably logged.
 
 *   **Clinical Site Integration (eSource/EDC Module)**
     *   **Status:** Design Required.
@@ -205,7 +205,7 @@ This section specifies the key applications that will be built on top of the cor
 *   **Public Knowledge Base ("Clinipedia") (`SEC. 204(d)(6)`)**
     *   **Status:** Design Required.
     *   **Description:** A public-facing web application that serves as the primary interface to the platform's synthesized findings. It will present the ranked lists of treatments and standardized "Outcome Labels" for any given condition.
-    *   **Technical Considerations:** Requires a robust data-querying backend, a sophisticated but intuitive user interface for exploring complex health data, and high-availability architecture.
+    *   **Technical Considerations:** Requires a robust data-querying backend, a sophisticated but intuitive user interface for exploring complex health data, and high-availability architecture. As mandated by `SEC. 204(d)(5)`, the **source code, feature weights, and a reproducible computational notebook for each version of the QALY-ranking algorithm** must be published and linked from this portal.
 
 *   **Live Analytics Dashboards (`SEC. 204(c)(5)`)**
     *   **Status:** Design Required.
@@ -216,6 +216,18 @@ This section specifies the key applications that will be built on top of the cor
     *   **Status:** Design Required.
     *   **Description:** A secure portal for members of Institutional Review Boards (IRBs) and Decentralized Ethical Review Boards (DERBs) to review trial protocols, monitor ongoing trials, and manage their oversight responsibilities.
     *   **Technical Considerations:** Requires document management features, secure communication channels, and role-based access to specific trial data relevant to their oversight function.
+
+*   **Interoperability with National Systems (`SEC. 204(m)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A dedicated layer to ensure the platform can securely and efficiently exchange data with other key national health initiatives.
+    *   **Technical Considerations:** Requires the development of specific API connectors and data mapping modules for systems including the **FDA's Sentinel Initiative**, the **NIH's *All of Us* Research Program**, and **CDC surveillance systems**. Must implement privacy-preserving linkage techniques and adhere to the specific data standards of each partner system.
+
+*   **Regulatory Transparency & Modeling Platform (`SEC. 406`)**
+    *   **Status:** Design Required.
+    *   **Description:** An application suite to host public justification reports for FDA regulatory actions and to develop the advanced modeling capabilities required to generate them.
+    *   **Technical Considerations:**
+        *   **Reporting Portal:** A public-facing application for publishing, searching, and commenting on regulatory action reports.
+        *   **Modeling Workbench:** A secure, AI-driven environment for conducting the **comprehensive, quantitative health and economic impact analyses** mandated by the Act. This system must be designed to be run by advanced autonomous AI agents with human oversight and have its models and outputs be fully auditable and open-source.
 
 ## 6. Governance and Automation Systems
 
