@@ -22,24 +22,23 @@ This Act may be cited as the **"Right‑to‑Trial and FDA Upgrade Act of 2025."
 
 Congress finds the following:
 
-1. Less than **10 percent** of U.S. patients enroll in interventional clinical trials;\[1] distance, eligibility restrictions, and direct costs are principal barriers.
-2. Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43,000**\[2], inflating drug prices and limiting R‑&‑D on unpatentable therapies.
-3. The U.K. **RECOVERY** pragmatic trial enrolled 49,000 patients in 100 days at roughly **\$500 per patient**\[3], demonstrating 90 percent cost reduction via adaptive, decentralized design.
-4. Publicly financed, algorithm-targeted discounts on patient-borne trial participation costs, aimed at maximizing **quality‑adjusted life‑years (QALYs) per federal dollar**, can enhance access to trials, with patients covering the net costs of their participation.
-5. A single, open‑source **FDA.gov v2 Decentralized Trial Platform**—with e‑protocol builders, liability‑insurance bidding, blockchain custody, and AI‑ranked treatment lists—will enable any willing patient to join a trial of the most‑promising therapy for their condition.
-6. A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
-7. Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
+1.  Less than **10 percent** of U.S. patients enroll in interventional clinical trials;\[1] distance, eligibility restrictions, and direct costs are principal barriers.
+2.  Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43,000**\[2], inflating drug prices and limiting R‑&‑D on unpatentable therapies.
+3.  The U.K. **RECOVERY** pragmatic trial enrolled 49,000 patients in 100 days at roughly **\$500 per patient**\[3], demonstrating 90 percent cost reduction via adaptive, decentralized design.
+4.  Publicly financed, algorithm-targeted discounts on patient-borne trial participation costs, aimed at maximizing **quality‑adjusted life‑years (QALYs) per federal dollar**, can enhance access to trials, with patients covering the net costs of their participation.
+5.  A single, open‑source **FDA.gov v2 Decentralized Trial Platform**—with e‑protocol builders, liability‑insurance bidding, blockchain custody, and AI‑ranked treatment lists—will enable any willing patient to join a trial of the most‑promising therapy for their condition.
+6.  A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
+7.  Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
 
 ### SEC. 103. DEFINITIONS.
 
 In this Act—
 
-1. **Secretary** means the Secretary of Health and Human Services.
-2. **FDA** means the Food and Drug Administration.
-3. **NIH** means the National Institutes of Health.
-4. **Pragmatic decentralized trial** means a clinical study integrated into routine care, allowing remote or local data capture, minimal exclusions, and broad patient demographics.
-5. **Most‑promising treatment** means an intervention that—(A) ranks within the top decile of projected QALY gain for a condition under SEC. 204(g)(3) or (B) holds Breakthrough Therapy or RMAT designation under section 506 of the Federal Food, Drug, and Cosmetic Act.
-6. **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
+1.  **Secretary** means the Secretary of Health and Human Services.
+2.  **FDA** means the Food and Drug Administration.
+3.  **NIH** means the National Institutes of Health.
+4.  **Pragmatic decentralized trial** means a clinical study integrated into routine care, allowing remote or local data capture, minimal exclusions, and broad patient demographics.
+5.  **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
 
 ---
 
@@ -81,18 +80,22 @@ In this Act—
  (4) Capture outcomes via mobile app, SMS/IVR, FHIR push, and IoT feeds; data loop into evidence rankings which are **recomputed nightly**. **The source code, feature weights, and a reproducible computational notebook for each annual release of the QALY‑ranking algorithm shall be posted in the public repository within 30 days of model deployment.**
 (e) **Open API & Interoperability.** All de‑identified data shall be exposed through a RESTful API that is HL7 FHIR‑R5 compliant and meets 42 U.S.C. § 300jj‑52. Third‑party apps may integrate via OAuth 2.0 consent.
 (f) **Continuous Integration/Continuous Deployment (CI/CD).** The Secretary shall maintain automated unit‑test, security‑scan, and code‑quality pipelines that must pass before any code merge. CI results shall be publicly viewable and the Platform shall maintain compliance with **FedRAMP‑Moderate\[6]** and **NIST SP 800‑218** DevSecOps guidelines; the System Security Plan and Authority‑to‑Operate letter shall be posted in redacted form.
-(g) **Governance & Pull‑Request Acceptance.**
- (1) **Technical Steering Committee (TSC).** A nine‑member TSC is hereby established to steward the repository. Composition: 3 FDA officials, 1 NIH representative, 1 patient‑advocacy representative, 1 open‑source community member elected by contributors, 1 biostatistician, 1 cyber‑security expert, and 1 industry sponsor representative.
- (2) **Decision Process.** The TSC shall operate under an open‑governance model (e.g., Linux Foundation rules of procedure). Pull requests (PRs) that: (A) pass all CI tests; (B) adhere to published coding standards; and (C) implement bug‑fixes, security patches, or features consistent with statutory requirements **shall be merged within 30 calendar days** unless two‑thirds of the TSC votes to reject and publishes a written rationale.
- (3) **Appeal.** Any contributor may appeal a rejection to the FDA Chief Scientist, who must respond within 30 days. If the appeal is upheld, the PR is merged automatically.
- (4) **Democratic Renewal.** Community‑elected and patient‑advocate seats are subject to annual election by contributors (defined as those with ≥10 merged PRs in the preceding year) using ranked‑choice voting via a transparent, verifiable online ballot.
+(g) **AI-Augmented Governance & Pull‑Request Acceptance.**
+ (1) **AI-Assisted Review.** All pull requests (PRs) submitted to the public repository shall undergo an automated, comprehensive review by one or more designated AI Governance and Security Review systems. These systems shall be open-source and trained to perform deep code analysis, identify potential vulnerabilities, assess compliance with architectural standards, and model the risk of economic exploits.
+ (2) **Risk-Based Triage.** The AI Reviewer shall assign each PR a risk score (e.g., "Low," "Medium," "High," "Critical"). This score determines the review and merge process:
+     (A) **Low-Risk PRs:** Shall be merged automatically within 72 hours if they pass all CI tests, unless a TSC member manually flags it for review.
+     (B) **Medium-Risk PRs:** Shall be automatically paused and require an explicit simple majority approval vote from the TSC for merger.
+     (C) **High-Risk or Critical-Risk PRs:** Shall be automatically rejected and may not be merged without a two-thirds supermajority vote from the TSC to override the AI's finding, accompanied by a published justification.
+ (3) **Technical Steering Committee (TSC).** A nine‑member TSC is hereby established to oversee the repository, adjudicate flagged PRs, and manage the AI Governance Reviewers. Composition: 3 FDA officials, 1 NIH representative, 1 patient‑advocacy representative, 1 open‑source AI/ML security expert elected by contributors, 1 biostatistician, 1 cyber‑security expert, and 1 industry sponsor representative.
+ (4) **Appeal and Manual Override.** Any contributor may appeal an AI rejection or TSC decision to the FDA Chief Scientist, who must respond within 30 days. The TSC retains the authority to manually re-classify any PR with a two-thirds vote.
+ (5) **Democratic Renewal.** The community-elected AI/ML security expert and patient-advocate seats are subject to annual election by contributors (defined as those with ≥5 merged PRs in the preceding year) using ranked‑choice voting via a transparent, verifiable online ballot.
 (h) **Rulemaking & PRA Fast‑Track.** Within 180 days the Secretary shall issue interim final rules specifying technical standards for each module, **standards for the content, format, and regular updating of Outcome Labels mandated under subsection (d)(1) of this section,** codifying the TSC charter, and **invoking 44 U.S.C. § 3507(h) such that any Information‑Collection Request[5] tied to the FDA v2 Platform obtains OMB clearance within 60 days.** Sponsors or investigators that fail to comply with these rules may be suspended under 21 U.S.C. § 331(f).
 
-(i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program—funded under § 402(a)—to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements. Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge. Furthermore, **all patient‑level transactions logged to the Blockchain Supply‑Chain Ledger shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
+(i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program—funded under § 402(a)—to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements. **The AI Governance and Security Reviewer shall be used to automatically verify vulnerability submissions, score their severity, and recommend payment amounts to expedite the bounty process.** Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge. Furthermore, **all patient‑level transactions logged to the Blockchain Supply‑Chain Ledger shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
 
 (j) **Metrics & Transparency.** Annual public report: platform uptime, median time‑to‑trial launch, pull‑request merge rate, unresolved PR backlog, bounty payouts, penetration‑test findings, insurance‑premium benchmarks, and user‑satisfaction scores.  The Secretary shall commission an independent **penetration test** every fiscal year and publish an executive summary of findings.
 
-(k) **Platform Intelligence and Automation.** The Platform shall leverage artificial intelligence and machine learning capabilities to enhance its functionalities, including but not limited to: (1) assisting sponsors with automated protocol validation checks during e-protocol building; (2) improving the precision of matching patients to suitable trials based on their comprehensive health data; (3) augmenting the analysis of aggregated, de-identified data for early safety signal detection and pharmacovigilance; and (4) supporting regulatory staff with tools for efficient data review where appropriate. All such AI/ML systems shall be developed with robust validation, transparency in function, and operate under human oversight, particularly for critical decision support.
+(k) **Platform Intelligence and Automation.** The Platform shall leverage artificial intelligence and machine learning capabilities to enhance its functionalities, including but not limited to: (1) assisting sponsors with automated protocol validation checks during e-protocol building; (2) improving the precision of matching patients to suitable trials based on their comprehensive health data; (3) augmenting the analysis of aggregated, de-identified data for early safety signal detection and pharmacovigilance; (4) **powering the AI Governance and Security Reviewer for automated code review, vulnerability detection, and pull-request adjudication as specified in subsection (g);** and (5) supporting regulatory staff with tools for efficient data review where appropriate. All such AI/ML systems shall be developed with robust validation, transparency in function, and operate under human oversight, particularly for critical decision support.
 
 ## TITLE III — UNIVERSAL TRIAL ACCESS (RIGHT‑TO‑TRIAL PROGRAM)
 
@@ -165,10 +168,10 @@ In this Act—
 
 ### SEC. 403. IMPLEMENTATION TIMELINE.
 
-* **180 days:** Interim rules; beta e‑protocol builder; transparency website live.
-* **12 months:** FDA v2 Platform MVP; insurance exchange; blockchain ledger operational.
-* **24 months:** Universal enrolment guarantee active; subsidies flowing.
-* **36 months:** First GAO report to Congress.
+*   **180 days:** Interim rules; beta e‑protocol builder; transparency website live.
+*   **12 months:** FDA v2 Platform MVP; insurance exchange; blockchain ledger operational.
+*   **24 months:** Universal enrolment guarantee active; subsidies flowing.
+*   **36 months:** First GAO report to Congress.
 
 ### SEC. 404. SEVERABILITY.
 
@@ -191,7 +194,7 @@ If any provision of this Act is held invalid, the remainder shall remain in effe
     (4) **Standards for Comprehensive Impact Analysis:** Each analysis conducted under this subsection (e) shall:
         (A) Be supported by dedicated resources, including a prespecified minimum percentage of the annual budget of the National Institutes of Health, to ensure its capacity, independence, and timeliness.
         (B) Be based on a systematic review of all available global evidence, incorporate rigorous quantitative uncertainty characterization, and calculate projected individual and population-level health outcomes (including, but not limited to, quality-adjusted life-years (QALYs) gained or lost) and economic consequences (including, but not limited to, Incremental Cost-Effectiveness Ratios (ICERs) and direct and indirect costs to patients, the healthcare system, and society). Sensitivity analyses shall be conducted for all key assumptions.
-        (C) Be developed and conducted using advanced analytical tools, including artificial intelligence and machine learning systems where appropriate. All software, algorithms, data inputs, and models developed or utilized for these analyses shall be released under an open-source licence approved by the Open Source Initiative, published on the FDA.gov v2 Decentralized Trial Platform, and subject to mechanisms that facilitate public inspection, contribution, and collaborative improvement, consistent with the governance principles outlined in SEC. 204(g);
+        (C) Be developed and executed primarily by advanced autonomous AI systems to ensure speed, consistency, and comprehensiveness. The role of human personnel shall be focused on oversight, final review, and the adjudication of complex edge cases flagged by the AI. All software, algorithms, data inputs, and models developed or utilized for these analyses shall be released under an open-source licence approved by the Open Source Initiative, published on the FDA.gov v2 Decentralized Trial Platform, and subject to mechanisms that facilitate public inspection, contribution, and collaborative improvement, consistent with the AI-augmented governance principles outlined in SEC. 204(g);
         (D) Be made publicly available in its entirety, including all underlying data, assumptions, and models, on the FDA.gov v2 Decentralized Trial Platform in a user-friendly and accessible format.
     (5) **Independent Oversight and Audit:** An independent office within the Department of Health and Human Services, separate from the Food and Drug Administration, shall be established or designated to oversee the methodologies, execution, and audit of analyses conducted under this subsection (e) to ensure objectivity and scientific integrity.
     (6) **Public Petition for Analysis:** Any member of the public may petition the Secretary for a comprehensive impact analysis of any specific FDA regulatory instrument not yet analyzed or not recently updated. The Secretary shall respond to such petitions within 120 days, either by initiating the analysis or by publishing a detailed justification for denial, which shall itself be subject to review by the independent office established under paragraph (e)(5).
@@ -213,4 +216,4 @@ If any provision of this Act is held invalid, the remainder shall remain in effe
 \[10] U.S. Digital Service, *Digital Service Playbook* (2025).
 \[11] 45 CFR § 164.512(i)(1) (HIPAA research waiver).
 
-**End of Act.**
+**End of Act.** 
