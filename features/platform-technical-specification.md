@@ -49,7 +49,12 @@ Selected to prioritize scalability, security, interoperability, developer produc
     *   Containerization: **Docker**.
     *   Orchestration: **Kubernetes (AWS EKS)** (Scalability, resilience, standardized deployments).
 *   **Blockchain/Distributed Ledger Technology (DLT):**
-    *   **Status:** **Not part of Core MVP.** Considered for future plugins/extensions for specific use cases (e.g., immutable consent logs via timestamping hashes on a public ledger, Verifiable Credentials for identity). Requires separate design if pursued.
+    *   **Status:** **Core Component.** Required to fulfill mandates in the governing Act (`SEC. 204(c)(4)`, `SEC. 204(i)`).
+    *   **Use Cases:** 
+        *   **Supply-Chain Integrity:** An immutable ledger, interoperable with DSCSA, for tracking investigational products from manufacturer to patient.
+        *   **Privacy-Preserving Audit:** Patient-level transactions (e.g., data access, consent) shall be represented as **zero-knowledge proofs** (e.g., zk-SNARKs) on the ledger, allowing verification without revealing protected health information.
+        *   **Consent Management:** Hashing consent forms and permissions to the ledger for an immutable, timestamped record of user intent.
+    *   **Implementation:** To be detailed in a separate design document. Will require selection of a suitable L1/L2 protocol, development of smart contracts, and integration with the core platform's API and identity services.
 *   **Monitoring & Logging Tools:**
     *   Logging: **AWS CloudWatch Logs** integrated with **OpenSearch/Elasticsearch** for centralized querying/analysis.
     *   Monitoring/Metrics: **AWS CloudWatch Metrics** & **Prometheus/Grafana** (deployed on EKS for finer-grained infra/app metrics).
@@ -80,7 +85,26 @@ Designed for flexibility, security, and standardization.
     *   Functionality: Handles OAuth flows, request building, file upload streaming, job status polling, reference data lookup.
     *   Distribution: Open source (PyPI, npm).
 
-### 3.2 Data Storage
+### 3.2 Trial Creator Workspace
+
+This section details the backend services required to power the Trial Creator Workspace mandated by the Act.
+
+*   **E-Protocol Builder (`SEC. 204(c)(1)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A system to allow trial creators to design, validate, and register study protocols.
+    *   **Technical Considerations:** Requires dedicated data models for protocol structure (phases, arms, eligibility criteria), a rules engine for automated compliance validation against 21 CFR Parts 312/812 and ISO 14155, and versioning capabilities. Will expose endpoints for creating and managing protocols.
+
+*   **Liability-Insurance Exchange (`SEC. 204(c)(2)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A module to integrate with third-party insurance underwriters to provide real-time quotes for trial liability.
+    *   **Technical Considerations:** Requires secure APIs for partner integration, data models for quotes and policies, and integration with the E-Protocol Builder.
+
+*   **Trial Cost, Discount, and Deposit Module (`SEC. 204(c)(3)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A financial module to manage patient-specific trial costs, application of NIH-funded discounts, and the collection/refund of data provision deposits.
+    *   **Technical Considerations:** Requires a secure financial transaction ledger, integration with external payment gateways, and a rules engine for applying discounts. Must be highly auditable.
+
+### 3.3 Data Storage
 
 Layered approach prioritizing raw data integrity and optimized query performance.
 
@@ -89,6 +113,7 @@ Layered approach prioritizing raw data integrity and optimized query performance
     *   Encryption: **SSE-KMS** mandatory. Consider client-side encryption support via SDK for highly sensitive data sources.
     *   Access Control: Bucket policies & IAM restrict access strictly to authorized service roles (e.g., Ingestion API role, Mapping Engine role). Direct user access disallowed. Versioning enabled.
     *   Lifecycle Policies: Define policies for transitioning older raw data to lower-cost storage tiers (e.g., S3 Infrequent Access, Glacier) or eventual deletion based on data retention policies.
+    *   Backup: Leverage managed service provider's automated backups, point-in-time recovery (PITR), and potentially cross-region snapshots for disaster recovery.
 *   **Time-Series Data Storage (TimescaleDB on Managed PostgreSQL):**
     *   Schema (`observations` Hypertable - Key Fields): See previous elaboration. Add `metadata` JSONB field for source-specific context.
     *   Partitioning: Automatic time partitioning (e.g., weekly/monthly chunks) via TimescaleDB. Consider composite partitioning including `user_id` or `variable_id` based on query analysis during performance tuning.
@@ -98,7 +123,7 @@ Layered approach prioritizing raw data integrity and optimized query performance
 *   **Metadata / Relational Storage (PostgreSQL):**
     *   Schema: Maintain detailed ERD and DDL scripts in version control. Enforce referential integrity. Use UUIDs widely. Store hashes of consent documents, not the documents themselves.
 
-### 3.3 Data Mapping & Validation Engine
+### 3.4 Data Mapping & Validation Engine
 
 Handles heterogeneity of input data asynchronously.
 
@@ -110,24 +135,12 @@ Handles heterogeneity of input data asynchronously.
 *   **Validation Logic:** Performed *after* mapping to standardized format. Checks against `variables` definitions (range, units). Implements outlier detection algorithms (configurable, e.g., IQR, Z-score) flagging `is_outlier`. Configurable severity levels for validation failures (log, flag, reject).
 *   **Error Handling:** Detailed structured logging of errors (input data ref, mapper/validator step, error type). Use of SQS dead-letter queues for persistent failures requiring manual investigation. API endpoint for users/systems to query job status and error details.
 *   **Asynchronous Queue (SQS):** Use standard SQS queues. Consider FIFO queues if strict processing order is essential for certain data types, but acknowledge potential throughput limitations.
-
-### 3.4 Data Ownership & Access Control
-
-User-centric control and robust security are paramount.
-
-*   **Authentication:** **AWS Cognito** or self-hosted **Keycloak/Hydra** providing OAuth 2.0/OIDC services. Enforces MFA. Manages user identities and client application registration.
-*   **Authorization:** Combination of **RBAC** (defined roles: `data_owner`, `data_custodian` (e.g., parent/guardian), `researcher`, `clinician_delegate`, `app_developer`, `admin`) and **ABAC** enforced via policy engine (e.g., Open Policy Agent integrated at API Gateway/backend) using attributes like user roles, consent scope, data sensitivity level, requested resource category.
-*   **Permission/Consent Management:** User-facing interface (part of reference frontend or integrated via API into third-party apps) for viewing data access logs, managing connected applications (OAuth client grants), granting/revoking fine-grained consents (persisted in `consents` table detailing grantee, scope, duration, status). API endpoints provided for these management functions.
-*   **Third-Party App Credentials:** Secure storage (e.g., **AWS Secrets Manager** or **HashiCorp Vault**) for user-provided OAuth tokens/API keys needed by connector plugins to access external services (like Fitbit, Oura). Access tightly controlled via IAM roles granted to specific plugin execution environments.
-*   **Auditing:** Immutable audit log (e.g., AWS QLDB or append-only table with cryptographic verification) recording all authentication events, authorization decisions, consent changes, data access requests (including denied attempts), and administrative actions.
-
-### 3.5 Reference Data Management
-
-Ensures semantic consistency.
-
-*   **Storage:** Within primary **PostgreSQL** database. Schema detailed previously.
-*   **Content:** Actively maintained and expanded. Includes mappings between different coding systems where appropriate (e.g., ICD -> SNOMED). Includes definitions for core dFDA variables not covered by external standards.
-*   **Updates & Versioning:** Managed process for updates. Use versioning (e.g., `version` column, valid_from/to dates) on critical definitions (`variables`) to ensure historical data integrity when definitions evolve. API endpoint to retrieve specific versions of definitions.
+*   **API Specs (OAS v3.x):**
+    *   *Core -> Plugin:* Defined interfaces for triggering specific plugin types (e.g., `POST /plugin/v1/map`, `POST /plugin/v1/analyze`, `GET /plugin/v1/visualize`). Core provides necessary context (data query parameters, user context).
+    *   *Plugin -> Core:* Plugins use Core APIs (Ingestion, Data Retrieval, User Management) via standard OAuth tokens. Data Retrieval API (separate spec needed) allows plugins to query user data based on granted consent scope.
+*   **Data Formats:** JSON for APIs. Analysis/Visualization plugins receive data in a standardized tabular format (e.g., Pandas DataFrame structure delivered via API response or temporary file access).
+*   **Security:** Plugins execute in isolated, containerized environments (e.g., Lambda, specific EKS pods) with least-privilege IAM roles. Core platform rigorously validates plugin requests against user consent *before* executing or providing data access. Network policies restrict plugin communication.
+*   **Registration/Discovery:** Plugin Registry stores metadata, including required OAuth scopes, input/output data schemas, and execution endpoints. Core uses this to validate and route requests.
 
 ## 4. Plugin Framework Interfaces
 
@@ -140,7 +153,21 @@ Enables modular extension of platform capabilities.
 *   **Security:** Plugins execute in isolated, containerized environments (e.g., Lambda, specific EKS pods) with least-privilege IAM roles. Core platform rigorously validates plugin requests against user consent *before* executing or providing data access. Network policies restrict plugin communication.
 *   **Registration/Discovery:** Plugin Registry stores metadata, including required OAuth scopes, input/output data schemas, and execution endpoints. Core uses this to validate and route requests.
 
-## 5. Security Implementation
+## 5. Governance and Automation Systems
+
+This section specifies the systems required to fulfill the unique governance and automation mandates of the Act.
+
+*   **AI-Augmented Governance (`SEC. 204(g)`)**
+    *   **Status:** Design Required.
+    *   **Description:** An AI-driven system to analyze pull requests to the platform's public source code repository, assign risk scores, and automate the merge/rejection process based on TSC-defined rules.
+    *   **Technical Considerations:** Requires integration with repository webhooks (e.g., GitHub Actions), development or integration of a code-analysis AI model, and a rules engine to manage the triage and voting logic for the TSC.
+
+*   **Public Bounty Program (`SEC. 204(i)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A system to manage the public bounty program for code contributions and vulnerability disclosures.
+    *   **Technical Considerations:** Requires integration with repository issue trackers, a payment system, and an automated verification component (potentially leveraging the AI Governance reviewer) to validate submissions and trigger payouts.
+
+## 6. Security Implementation
 
 Multi-layered security meeting regulatory requirements.
 
@@ -151,7 +178,7 @@ Multi-layered security meeting regulatory requirements.
 *   **Compliance:** Explicit controls mapped to **HIPAA** Security Rule (Administrative, Physical, Technical Safeguards) and **GDPR** articles (Lawful Basis, Data Subject Rights, Security of Processing). Regular internal/external audits. BAAs with cloud providers.
 *   **Incident Response:** Defined plan, regular testing (tabletop exercises). [Link to Plan]
 
-## 6. Infrastructure & Deployment
+## 7. Infrastructure & Deployment
 
 Automated, repeatable, and resilient infrastructure.
 
@@ -161,7 +188,7 @@ Automated, repeatable, and resilient infrastructure.
 *   **Scalability Strategy:** As previously specified (Stateless services, HPA, RDS Read Replicas, potential TimescaleDB clustering, ALB).
 *   **Disaster Recovery:** As previously specified (Automated backups, cross-region replication strategy, IaC for redeployment, documented DR plan with RPO/RTO targets). Regular DR testing.
 
-## 7. Performance & Scalability Requirements
+## 8. Performance & Scalability Requirements
 
 *(Refined illustrative placeholders)*
 
@@ -178,7 +205,7 @@ Automated, repeatable, and resilient infrastructure.
     *   Data Retrieval API: Support 500 concurrent complex analytical queries.
 *   **Scalability Targets:** Design to handle 5x current projected peak load; demonstrate horizontal scalability.
 
-## 8. Appendices
+## 9. Appendices
 
 *(Placeholders - Content to be generated separately or by human teams)*
 
