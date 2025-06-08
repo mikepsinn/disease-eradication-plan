@@ -92,7 +92,7 @@ This section details the backend services required to power the Trial Creator Wo
 *   **E-Protocol Builder (`SEC. 204(c)(1)`)**
     *   **Status:** Design Required.
     *   **Description:** A system to allow trial creators to design, validate, and register study protocols.
-    *   **Technical Considerations:** Requires dedicated data models for protocol structure (phases, arms, eligibility criteria), a rules engine for automated compliance validation against 21 CFR Parts 312/812 and ISO 14155, and versioning capabilities. Will expose endpoints for creating and managing protocols.
+    *   **Technical Considerations:** Requires dedicated data models for protocol structure (phases, arms, eligibility criteria), a rules engine for automated compliance validation against 21 CFR Parts 312/812 and ISO 14155, and versioning capabilities. Will expose endpoints for creating and managing protocols. To encourage pragmatic and efficient trials, it should also include features like pre-built templates based on the RECOVERY trial, libraries of core outcome sets (COS) for common diseases, and tools to estimate the data collection burden of a given protocol.
 
 *   **Liability-Insurance Exchange (`SEC. 204(c)(2)`)**
     *   **Status:** Design Required.
@@ -104,7 +104,24 @@ This section details the backend services required to power the Trial Creator Wo
     *   **Description:** A financial module to manage patient-specific trial costs, application of NIH-funded discounts, and the collection/refund of data provision deposits.
     *   **Technical Considerations:** Requires a secure financial transaction ledger, integration with external payment gateways, and a rules engine for applying discounts. Must be highly auditable.
 
-### 3.3 Data Storage
+### 3.3 Trial Execution and Clinical Site Integration
+
+This section outlines the components necessary to execute trials, particularly adaptive and pragmatic trials, and to integrate seamlessly with clinical workflows, as exemplified by the RECOVERY trial.
+
+*   **Adaptive Trial Engine**
+    *   **Status:** Design Required.
+    *   **Description:** A core service responsible for managing the operational logic of adaptive trials. This is critical for efficiency, allowing trials to change based on interim data.
+    *   **Technical Considerations:** Must support various designs (e.g., platform trials, basket trials, response-adaptive randomization). Will include a rules engine to implement protocol-defined adaptation logic (e.g., dropping a treatment arm for futility, adjusting randomization ratios). Requires a secure interface for Data and Safety Monitoring Boards (DSMBs) to review interim analyses.
+
+*   **Clinical Site Integration (eSource/EDC Module)**
+    *   **Status:** Design Required.
+    *   **Description:** A module to facilitate streamlined data capture directly from clinical sites, minimizing the burden on hospital staff.
+    *   **Technical Considerations:**
+        *   **EHR Integration:** Must provide robust tools for bi-directional EHR integration (e.g., using HL7 FHIR APIs) to automate the capture of pre-defined clinical outcomes from existing records (eSource).
+        *   **Electronic Case Report Forms (eCRF):** Must offer a simple, web-based eCRF interface for clinicians to manually enter the minimal data required by pragmatic protocols, for sites where direct EHR integration is not feasible.
+        *   **Workflow Support:** Should integrate with clinical workflows, for example, by providing notifications within the EHR for eligible patients or automating lab test orders required by a protocol.
+
+### 3.4 Data Storage
 
 Layered approach prioritizing raw data integrity and optimized query performance.
 
@@ -123,7 +140,7 @@ Layered approach prioritizing raw data integrity and optimized query performance
 *   **Metadata / Relational Storage (PostgreSQL):**
     *   Schema: Maintain detailed ERD and DDL scripts in version control. Enforce referential integrity. Use UUIDs widely. Store hashes of consent documents, not the documents themselves.
 
-### 3.4 Data Mapping & Validation Engine
+### 3.5 Data Mapping & Validation Engine
 
 Handles heterogeneity of input data asynchronously.
 
