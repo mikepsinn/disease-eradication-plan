@@ -29,6 +29,7 @@ Congress finds the following:
 5.  A single, open‑source **FDA.gov v2 Decentralized Trial Platform**—with e‑protocol builders, liability‑insurance bidding, blockchain custody, and AI‑ranked treatment lists—will enable any willing patient to join a trial of the most‑promising therapy for their condition.
 6.  A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
 7.  Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
+8.  A primary objective of this Act is to achieve a minimum **80X reduction** in the per-patient cost of food and drug trials through the implementation of the dFDA Platform, enabling the comprehensive quantification of all effects of all foods and drugs.
 
 ### SEC. 103. DEFINITIONS.
 
@@ -97,6 +98,14 @@ In this Act—
 
 (k) **Platform Intelligence and Automation.** The Platform shall leverage artificial intelligence and machine learning capabilities to enhance its functionalities, including but not limited to: (1) assisting sponsors with automated protocol validation checks during e-protocol building; (2) improving the precision of matching patients to suitable trials based on their comprehensive health data; (3) augmenting the analysis of aggregated, de-identified data for early safety signal detection and pharmacovigilance; (4) **powering the AI Governance and Security Reviewer for automated code review, vulnerability detection, and pull-request adjudication as specified in subsection (g);** and (5) supporting regulatory staff with tools for efficient data review where appropriate. All such AI/ML systems shall be developed with robust validation, transparency in function, and operate under human oversight, particularly for critical decision support.
 
+### SEC. 205. FDA-X PRIZE.
+
+(a) **Establishment.** To accelerate the development of the FDA.gov v2 Platform, the Secretary is authorized to establish an "FDA-X Prize" competition, with a prize purse to be determined by the Secretary, awarded to the entity that first develops and demonstrates a platform meeting the core requirements outlined in Section 204.
+
+(b) **Alternative Development Path.** The Secretary may use the prize competition as the primary mechanism for developing the platform. In such a case, the timelines and responsibilities outlined in Section 204(a) shall be adjusted to reflect a successful prize outcome.
+
+(c) **Integration.** If the prize is awarded for a platform that meets a substantial subset of requirements, the Secretary shall ensure its integration with any components developed or procured under Section 204.
+
 ## TITLE III — UNIVERSAL TRIAL ACCESS (RIGHT‑TO‑TRIAL PROGRAM)
 
 ### SEC. 301. UNIVERSAL ELIGIBILITY FOR INVESTIGATIONAL INTERVENTIONS.
@@ -113,7 +122,7 @@ In this Act—
 
 ### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY.
 
-(a) **Central IRB.** All Right‑to‑Trial protocols shall undergo single‑IRB review per 45 CFR § 46.114\[8]; FDA shall publish a master reliance agreement.
+(a) **Ethical Oversight.** All Right‑to‑Trial protocols shall undergo review by a qualified Institutional Review Board (IRB). To foster innovation and efficiency, the FDA.gov v2 Platform shall support both review by a single central IRB (per 45 CFR § 46.114[8]) and by qualified **Decentralized Ethical Review Boards (DERBs)**. The Secretary shall, through rulemaking, establish standards for the qualification, operation, and oversight of DERBs on the platform.
 (b) **Informed Consent and Comprehension Verification.**
     (1) Platform e-consent shall clearly disclose, in an accessible format, the investigational nature of the trial, all known and potential risks including their likelihood based on available data (with particular emphasis on the most serious risks), the full details of patient financial responsibilities including the net cost contribution and the refundable data provision deposit (as detailed in SEC. 304), potential benefits, alternative treatments, and all data-sharing terms.
     (2) To verify genuine understanding of the disclosed information, particularly concerning the most serious risks and their likelihood, successful completion of the e-consent process shall require the patient to pass an automated, interactive comprehension quiz administered through the FDA.gov v2 Platform. This quiz shall be based directly on the information disclosed pursuant to paragraph (1) of this subsection.
