@@ -26,7 +26,7 @@ Congress finds the following:
 2.  Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43,000**\[2], inflating drug prices and limiting R‑&‑D on unpatentable therapies.
 3.  The U.K. **RECOVERY** pragmatic trial enrolled 49,000 patients in 100 days at roughly **\$500 per patient**\[3], demonstrating 90 percent cost reduction via adaptive, decentralized design.
 4.  Publicly financed, algorithm-targeted discounts on patient-borne trial participation costs, aimed at maximizing **quality‑adjusted life‑years (QALYs) per federal dollar**, can enhance access to trials, with patients covering the net costs of their participation.
-5.  A single, open‑source **FDA.gov v2 Decentralized Trial Platform**—with e‑protocol builders, liability‑insurance bidding, blockchain custody, and AI‑ranked treatment lists—will enable any willing patient to join a trial of the most‑promising therapy for their condition.
+5.  A single, open‑source **FDA.gov v2 Decentralized Trial Platform**—with e‑protocol builders, liability‑insurance bidding, blockchain custody, and AI‑ranked treatment lists—will empower individuals to participate in the scientific process and enable any willing patient to join a trial of the most‑promising therapy for their condition.
 6.  A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
 7.  Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
 8.  A primary objective of this Act is to achieve a minimum **80X reduction** in the per-patient cost of food and drug trials through the implementation of the dFDA Platform, enabling the comprehensive quantification of all effects of all foods and drugs.
@@ -40,6 +40,7 @@ In this Act—
 3.  **NIH** means the National Institutes of Health.
 4.  **Pragmatic decentralized trial** means a clinical study integrated into routine care, allowing remote or local data capture, minimal exclusions, and broad patient demographics.
 5.  **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
+6.  **FDA.gov v2 Decentralized Trial Platform (the "Platform")** means the decentralized, open-source, algorithmic, and automated trial platform established on the fda.gov domain as described in this Act, designed to operate without central control by any single entity and to ensure data integrity, transparency, and resilience.
 
 ---
 
