@@ -30,8 +30,8 @@ Congress finds the following:
 6.  A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
 7.  Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
 8.  A primary objective of this Act is to achieve a minimum **80X reduction** in the per-patient cost of food and drug trials through the implementation of the dFDA Platform, enabling the comprehensive quantification of all effects of all foods and drugs.
-9.  A key goal is to empower any individual or entity, not just traditional research institutions, to design and conduct valid scientific trials easily and affordably.
-10. By transforming fda.gov into an open, decentralized platform, the United States can create a global public good that accelerates medical progress for all of humanity.
+9.  The Platform is intended to serve not only the FDA but as shared, open-source public infrastructure for all federal, state, and international health authorities, fostering a globally harmonized ecosystem for evidence generation and public health.
+10. This Act affirms the fundamental right of every person to access and participate in scientific research relevant to their health. By empowering individuals as both participants and trial creators, the United States can transform its regulatory infrastructure into a global public good, accelerating medical progress for all.
 
 ### SEC. 103. DEFINITIONS.
 
@@ -44,6 +44,9 @@ In this Act—
 5.  **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
 6.  **FDA.gov v2 Decentralized Trial Platform (the "Platform")** means the decentralized, open-source, algorithmic, and automated trial platform established on the fda.gov domain as described in this Act, designed to operate without central control by any single entity and to ensure data integrity, transparency, and resilience.
 7.  **Trial Creator** means any individual, institution, or entity that designs, initiates, and manages a trial on the Platform.
+(b) **State Laws.** No State or political subdivision may regulate the practice of tele‑medicine, pharmacy licensure, or shipment of investigational products in a manner that prevents implementation of this Act. Specifically, a licensed prescriber participating under an FDA‑approved protocol shall be deemed licensed in all States for the limited purpose of providing investigational treatment under this Act, and pharmacies dispensing or shipping such products pursuant to the blockchain supply‑chain ledger are exempt from conflicting State prohibitions.
+(c) **DSCSA Alignment.** All investigational shipments must utilize the platform ledger to satisfy DSCSA traceability.
+(d) **Shared Public Health Infrastructure.** The Platform shall be designed and maintained as extensible infrastructure available for use by all federal, state, and international health agencies. The Secretary shall establish a process to facilitate the adoption of the Platform by other agencies for their own regulatory, research, and public health surveillance purposes, thereby creating a shared, globally harmonized ecosystem for evidence generation.
 
 ---
 
@@ -75,7 +78,7 @@ In this Act—
 (c) **Trial Creator Workspace Functions.** The Platform shall provide—
  (1) **E‑Protocol Builder** with templates and automated compliance validation (21 CFR Parts 312/812, ISO 14155) designed to enable any Trial Creator, regardless of prior regulatory expertise, to design and launch a study.
  (2) **Liability‑Insurance Exchange** for real‑time per‑subject quotes; selections auto‑populate FDA Form 1572.
- (3) **Trial Cost, Discount, and Deposit Module** facilitating: (A) the transparent calculation and disclosure of estimated patient-specific trial participation costs as provided by the trial sponsor; (B) the application of any applicable NIH-funded participation discounts (pursuant to SEC. 303); (C) the management of the net financial contribution required from the participant (as per SEC. 304(b)); and (D) the collection, holding, and refund of a patient data provision deposit (as per SEC. 304(e)). All cost components, applicable discounts, the final net cost to the participant, and details of the data provision deposit shall be clearly itemized and presented to the participant during the e-consent process (as per SEC. 302(b) and SEC. 304).
+ (3) **Trial Cost, Discount, and Deposit Module** facilitating: (A) the transparent calculation and disclosure of estimated patient-specific trial participation costs as provided by the trial sponsor; (B) the application of any applicable NIH-funded participation discounts (pursuant to SEC. 303); (C) the management of the net financial contribution required from the participant (as per SEC. 304(b)); and (D) the collection, holding, and refund of a patient data provision deposit (as per SEC. 304). All cost components, applicable discounts, the final net cost to the participant, and details of the data provision deposit shall be clearly itemized and presented to the participant during the e-consent process (as per SEC. 302(b) and SEC. 304).
  (4) **Blockchain Supply‑Chain Ledger\[9]** interoperable with DSCSA (§ 360eee‑3) to capture temperature, custody, delivery.
  (5) **Live Analytics Dashboards** for enrolment, compliance, blinded efficacy; regulators & IRBs get read‑only oversight.
 (d) **Patient Portal Functions.** The Platform shall—
@@ -173,6 +176,7 @@ In this Act—
 (a) **Expanded Access.** This Act supplements 21 CFR § 312 Subpart I; data from Right‑to‑Trial may fulfill post‑marketing study obligations.
 (b) **State Laws.** No State or political subdivision may regulate the practice of tele‑medicine, pharmacy licensure, or shipment of investigational products in a manner that prevents implementation of this Act. Specifically, a licensed prescriber participating under an FDA‑approved protocol shall be deemed licensed in all States for the limited purpose of providing investigational treatment under this Act, and pharmacies dispensing or shipping such products pursuant to the blockchain supply‑chain ledger are exempt from conflicting State prohibitions.
 (c) **DSCSA Alignment.** All investigational shipments must utilize the platform ledger to satisfy DSCSA traceability.
+(d) **Shared Public Health Infrastructure.** The Platform shall be designed and maintained as extensible infrastructure available for use by all federal, state, and international health agencies. The Secretary shall establish a process to facilitate the adoption of the Platform by other agencies for their own regulatory, research, and public health surveillance purposes, thereby creating a shared, globally harmonized ecosystem for evidence generation.
 
 ### SEC. 402. AUTHORIZATION OF APPROPRIATIONS AND STAGE‑GATED FUNDING.
 
