@@ -12,13 +12,20 @@ dateCreated: 2025-05-27T21:53:11.658Z
 
 ---
 
-## TITLE I — SHORT TITLE; FINDINGS; DEFINITIONS
+## TITLE I — SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
 
 ### SEC. 101. SHORT TITLE.
 
 This Act may be cited as the **"Right‑to‑Trial and FDA Upgrade Act of 2025."**
 
-### SEC. 102. FINDINGS.
+### SEC. 102. PURPOSE.
+
+The purpose of this Act is to radically accelerate medical progress by:
+(1) Establishing a right for all patients to participate in decentralized clinical trials for any condition.
+(2) Creating a decentralized, global, open-source platform to dramatically reduce the cost and time of medical research.
+(3) Generating a continuously updated, publicly accessible knowledge base that ranks the most safe and effective treatments for any condition on a personalized basis—drawing from the entire universe of clinical and real-world evidence—and presents this information through standardized "Outcome Labels."
+
+### SEC. 103. FINDINGS.
 
 Congress finds the following:
 
@@ -38,7 +45,7 @@ Congress finds the following:
 10. The Platform is intended to serve not only the FDA but as shared, open-source public infrastructure for all federal, state, and international health authorities, fostering a globally harmonized ecosystem for evidence generation and public health.
 11. This Act affirms the fundamental right of every person to access and participate in scientific research relevant to their health. By empowering individuals as both participants and trial creators, the United States can transform its regulatory infrastructure into a global public good, accelerating medical progress for all.
 
-### SEC. 103. DEFINITIONS.
+### SEC. 104. DEFINITIONS.
 
 In this Act—
 
