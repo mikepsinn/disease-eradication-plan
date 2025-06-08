@@ -17,14 +17,14 @@ This article compares the dFDA platform to other historically high-ROI and high-
 | Childhood Vaccination (US)           | 10:1 to 16:1                  | Dominant (cost-saving)      | 1,000–10,000         | [CDC](https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm), [Vaxopedia](https://vaxopedia.org/2017/10/01/what-are-the-benefits-of-vaccines/)                                |
 | Clean Water & Sanitation (LMICs)     | 4:1 to 21:1                   | Dominant/very cost-effective| 1,000–10,000         | [UN News](https://news.un.org/en/story/2014/11/484032), [WaterAid](https://www.wateraid.org/us/media/economic-report-unlock-trillions-of-dollars-with-clean-water-decent-toilets-and-hygiene)             |
 | Tobacco Control (taxes, bans)        | 20:1 to 1,057:1                 | Dominant/very cost-effective| 1,000–10,000         | [UNDP](https://www.undp.org/asia-pacific/blog/how-raising-tobacco-taxes-can-save-lives-and-cut-poverty-across-asia-pacific-0)                                  |
-| Hypertension Screening & Treatment   | 2:1 to 10:1                   | $500–$1,600                 | 200–2,000            | [PMC5217841](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5217841/)                                         |
-| Statins for High-Risk Patients       | 2:1 to 5:1                    | £280–£8,530              | 50–200               | [The Lancet](https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(24)00053-X/fulltext)                                             |
-| Polypill for Primary Prevention (High-Risk) | 2:1 to 10:1               | up to £18,811 per QALY      | 50-200               | [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182625) |
-| Generic Drug Substitution            | 2:1 to 10:1                   | Dominant (cost-saving)      | 100–1,000            | [FDA](https://www.fda.gov/drugs/generic-drugs/generic-drug-facts)      |
+| Hypertension Screening & Treatment   | Varies / Cost-Saving          | $500–$1,600                 | 200–2,000            | [PMC5217841](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5217841/)                                         |
+| Statins for High-Risk Patients       | Varies / Cost-Saving          | £280–£8,530              | 50–200               | [The Lancet](https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(24)00053-X/fulltext)                                             |
+| Polypill for Primary Prevention (High-Risk) | Varies / Cost-Saving      | up to £18,811 per QALY      | 50-200               | [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182625) |
+| Generic Drug Substitution            | Highly Cost-Saving            | Dominant (cost-saving)      | 100–1,000            | [FDA](https://www.fda.gov/drugs/generic-drugs/generic-drug-facts)      |
 
 **Key:**
 - **ROI**: Return on investment; dollars saved or value created per $1 spent.
-- **Cost per QALY Gained (ICER)**: Lower is better; "Dominant" means saves money and improves health.
+- **Cost per QALY Gained (ICER)**: Lower is better; "Dominant" means saves money and improves health. Values may be in USD ($) or GBP (£).
 - **QALYs Gained per $1M**: Rough estimate, varies by context and population.
 
 ## Sources
@@ -34,8 +34,6 @@ This article compares the dFDA platform to other historically high-ROI and high-
 ## Quotes
 
 ### Smallpox Eradication
-> "Although the effort has reduced worldwide incidence of the disease by 99.9 percent, the program continues today, having now expended more than $18 billion toward the effort." - [CSIS](https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation)
-
 > "Adding up, the benefit–cost ratio for the entire world would have been about (($350 + $1070) ÷ 0.03)/$298 ≈ 159 : 1. These are huge numbers." - [PMC3720047](https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/)
 
 ### Childhood Vaccination (US)
