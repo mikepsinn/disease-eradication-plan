@@ -66,8 +66,8 @@ In this Act—
 
 ### SEC. 204. FDA.gov v2 Decentralized Trial Platform.
 
-(a) **Launch & Hosting.** Within 12 months after enactment the Secretary shall deploy an open‑source, cloud‑native **FDA.gov v2 Decentralized Trial Platform**\[4] at a publicly accessible sub‑domain of *fda.gov* (e.g., **trials.fda.gov**). All non‑classified source code shall be mirrored in real‑time to a public repository (e.g., *github.com/fda/fda‑v2*).
-(b) **Mandatory Open‑Source Licence.** Except for cybersecurity modules whose disclosure would create a material national‑security risk, all code shall be released under the Apache 2.0 or MIT licence. Any proprietary dependency shall be replaced or dual‑licensed within 24 months.
+(a) **Launch & Hosting.** Within 12 months after enactment, the Secretary shall deploy an open-source, cloud-native **FDA.gov v2 Decentralized Trial Platform**\[4] as a comprehensive upgrade to the **fda.gov** domain itself. All source code shall be mirrored in real-time to a public repository (e.g., *github.com/fda/fda-v2*).
+(b) **Mandatory Open‑Source Licence.** All code shall be released under the GNU General Public License v3.0. Any proprietary dependency shall be replaced or dual‑licensed within 24 months.
 (c) **Sponsor Workspace Functions.** The Platform shall provide—
  (1) **E‑Protocol Builder** with automated compliance validation (21 CFR Parts 312/812, ISO 14155).
  (2) **Liability‑Insurance Exchange** for real‑time per‑subject quotes; selections auto‑populate FDA Form 1572.
