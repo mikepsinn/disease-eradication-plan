@@ -261,7 +261,7 @@ Multi-layered security meeting regulatory requirements.
 *   **Data Security:** As previously specified (SSE-KMS, TLS 1.2+, TDE option, Application-level encryption considered for specific PII). Strict IAM policies. Data masking/de-identification capabilities for analytical exports where appropriate.
 *   **Authentication & Authorization:** As previously specified (MFA, short-lived tokens, OIDC, RBAC+ABAC).
 *   **Compliance:** Explicit controls mapped to **HIPAA** Security Rule (Administrative, Physical, Technical Safeguards) and **GDPR** articles (Lawful Basis, Data Subject Rights, Security of Processing). Regular internal/external audits. BAAs with cloud providers.
-*   **Incident Response:** Defined plan, regular testing (tabletop exercises). [Link to Plan]
+*   **Incident Response:** Defined plan, regular testing (tabletop exercises). [Link to Plan](./docs/security/incident-response-plan.md)
 
 ## 8. Infrastructure & Deployment
 
@@ -279,10 +279,10 @@ Automated, repeatable, and resilient infrastructure.
 
 *(Placeholders - Content to be generated separately or by human teams)*
 
-*   **Glossary of Technical Terms:** [Link]
-*   **Detailed Diagrams:** [Link]
-*   **Data Dictionary / Database Schema:** [Link]
-*   **API Specifications (OAS Files):** [Link]
+*   **Glossary of Technical Terms:** [Link](./docs/glossary.md)
+*   **Detailed Diagrams:** [Link](./docs/diagrams/README.md)
+*   **Data Dictionary / Database Schema:** [Link](./docs/data-dictionary.md)
+*   **API Specifications (OAS Files):** [Link](./docs/api/README.md)
 
 ---
 
