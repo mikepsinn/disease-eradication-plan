@@ -251,7 +251,9 @@ Tasks of data visualization plugins:
 
 #### 3.2.3 Application Programming Interface (API) Connector Plugins
 
-Many applications and service providers offer a direct exchange of structured health data through an API, which upon user authentication allow access to automated and scheduled exports of the generated data.
+Many applications and service providers offer a direct exchange of structured health data through an API, which upon user authentication allow access to automated and scheduled exports of the generated data. The platform's API Connector plugins are designed to facilitate this, making it easy for users to connect their accounts from various data silos (health apps, labs, hospitals) and import their information.
+
+The platform is explicitly designed as a Backend-as-a-Service (BaaS) to empower a competitive ecosystem of third-party tools. A primary architectural goal is to support the creation of **local-first, self-sovereign applications**—sometimes described as "Digital Twins," "Personal Data Safes," or "Personal Nodes"—that allow users to store and analyze their data on their own devices, sharing only what they choose with the central platform.
 
 So far the proprietary silo developments have produced many different data formats, which could be replaced with the data standard proposed within this project. Until the success of a common language for all types of health data and between all stakeholders, many API connecting plugins are necessary for this interoperability.
 

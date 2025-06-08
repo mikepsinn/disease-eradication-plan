@@ -80,6 +80,9 @@ Designed for flexibility, security, and standardization.
     *   `GET /v1/ingest/jobs/{job_id}`: Retrieves status and outcome (success, failure, validation issues) of an ingestion job.
     *   `GET /v1/variables?category={cat}&system={sys}&code={code}`: Retrieves reference variable definitions, filterable.
     *   `GET /v1/units?system={sys}`: Retrieves reference unit definitions (e.g., UCUM).
+*   **Developer Portal and Access Tokens:**
+    *   To foster a vibrant ecosystem, a comprehensive **Developer Portal** shall be provided. It will include OpenAPI-generated documentation, tutorials, SDKs, and a registration portal for third-party applications.
+    *   The platform's Access Control module shall support user-generated **Personal Access Tokens**. Users must be able to create, label (e.g., "My Analysis Script"), monitor usage of, and revoke these tokens through their data portal.
 *   **Data Validation Rules (Server-side):**
     *   Schema Validation: Performed by FastAPI/Pydantic against OAS.
     *   Semantic Validation (Async job): Checks against `variables` definition (range, allowed units). Flags (`is_valid=false`) or rejects based on severity/configuration. Checks for temporal consistency where possible.
@@ -205,7 +208,13 @@ This section specifies the key applications that will be built on top of the cor
 *   **Public Knowledge Base ("Clinipedia") (`SEC. 204(d)(6)`)**
     *   **Status:** Design Required.
     *   **Description:** A public-facing web application that serves as the primary interface to the platform's synthesized findings. It will present the ranked lists of treatments and standardized "Outcome Labels" for any given condition.
-    *   **Technical Considerations:** Requires a robust data-querying backend, a sophisticated but intuitive user interface for exploring complex health data, and high-availability architecture. As mandated by `SEC. 204(d)(5)`, the **source code, feature weights, and a reproducible computational notebook for each version of the QALY-ranking algorithm** must be published and linked from this portal.
+    *   **Technical Considerations:** 
+        *   Requires a robust data-querying backend, a sophisticated but intuitive user interface for exploring complex health data, and high-availability architecture.
+        *   As mandated by `SEC. 204(d)(5)`, the **source code, feature weights, and a reproducible computational notebook for each version of the QALY-ranking algorithm** must be published and linked from this portal.
+        *   The implementation should draw inspiration from projects like the **Psychonaut Wiki**, potentially using a modified **MediaWiki** backend capable of storing and querying quantitative metadata alongside prose.
+        *   The system shall include functionality to **automatically generate and publish meta-analyses** based on the aggregated results of trials conducted on the platform and data imported from external registries like `ClinicalTrials.gov`.
+        *   Autonomous **AI agents shall be utilized to continuously scan, aggregate, and summarize new research** from public sources to help populate and update the knowledge base.
+        *   A **content governance model** (e.g., a reputation-weighted voting system) must be developed to ensure the integrity and trustworthiness of the user- and AI-generated information, separate from the code governance of the TSC.
 
 *   **Live Analytics Dashboards (`SEC. 204(c)(5)`)**
     *   **Status:** Design Required.
