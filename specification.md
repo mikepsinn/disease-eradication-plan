@@ -13,6 +13,8 @@ dateCreated: 2025-07-26T14:00:00.000Z
 **Status:** Draft / Elaboration Complete (Illustrative)
 **Version:** 0.3.0
 
+> **Document Purpose:** This document provides detailed technical specifications for implementation. It is the engineering counterpart to the high-level conceptual overview found in the **[Platform Architecture document](./architecture.md)**.
+
 This document provides detailed technical specifications for the implementation of the core platform, aligning with the architecture in [/features/platform/03-platform.md](/features/platform/03-platform.md) and enabling functionalities discussed in related documents like [/features/data-import.md](/features/data-import.md), [/features/data-silo-api-gateways.md](/features/data-silo-api-gateways.md), and drawing inspiration from efficiency models like [/reference/recovery-trial.md](/reference/recovery-trial.md). It is intended for engineers, developers, and technical teams.
 
 **Note on Implementation Strategy:** The primary implementation strategy is to **fund and integrate existing, best-in-class open-source solutions** through a public prize and grant program, rather than building the entire platform from the ground up. The specific technologies listed in this document are therefore **illustrative candidates** that meet the architectural requirements. They serve as a reference blueprint for evaluating potential open-source projects for integration.
@@ -20,7 +22,7 @@ This document provides detailed technical specifications for the implementation 
 ## 1. Introduction
 
 *   **Purpose:** To define the specific technologies, interfaces, data structures, security measures, and infrastructure requirements for building the global health protocol initiated by the United States.
-*   **Relationship:** Serves as the detailed implementation guide based on the architecture described in `/features/platform/03-platform.md`.
+*   **Relationship:** Serves as the detailed implementation guide based on the architecture described in `docs/architecture.md`.
 *   **Scope:** The Platform is designed to function as a global public utility and **Backend-as-a-Service (BaaS)**, serving as the **reference implementation** of the global health protocol. This specification focuses on the core backend components (API, Storage, Mapping/Validation, Access Control) and the interfaces for a plugin framework. It excludes the internal implementation details of specific plugins or third-party applications built upon the platform. All core software developed shall be open-source.
 
 ## 2. Technology Stack
