@@ -9,6 +9,8 @@ dateCreated: 2023-11-07T19:01:19.907Z
 fontawesomeIcon: fa-layer-group
 ---
 
+> **Document Purpose:** This document describes the high-level architecture and conceptual framework of the platform. It explains the "what" and "why" behind the system's design. For detailed engineering choices, specific technologies, and API specifications, please refer to the **[Platform Technical Specification](./platform-technical-specification.md)**.
+
 ### Functional Scope
 
 The functional scope of the platform includes:
