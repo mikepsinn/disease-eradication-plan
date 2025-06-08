@@ -1,3 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
 ### DFDA Wiki Assistant Instructions ###
 
 # Project Overview
@@ -39,7 +44,7 @@
 - Always search the web and hyperlink to the source of information
 - Be concise
 - Speak plainly
-- Use clear formatting including bullet points, numbered lists, tables, **bold**, *italics*, and [hyperlinks](https://example.com)
+- Use clear formatting including bullet points, numbered lists, tables, **bold**, *italics*, and [hyperlinks](mdc:https:/example.com)
 - DO NOT USE SALESY PROMOTIONAL LANGUAGE
 - Use quantitative facts to support your points wherever possible
 
