@@ -12,34 +12,53 @@ dateCreated: 2025-05-27T21:53:11.658Z
 
 ---
 
-## TITLE I — SHORT TITLE; FINDINGS; DEFINITIONS
+## TITLE I — SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
 
 ### SEC. 101. SHORT TITLE.
 
 This Act may be cited as the **"Right‑to‑Trial and FDA Upgrade Act of 2025."**
 
-### SEC. 102. FINDINGS.
+### SEC. 102. PURPOSE.
+
+The purpose of this Act is to radically accelerate medical progress by:
+(1) Establishing a right for all patients to participate in decentralized clinical trials for any condition.
+(2) Creating a decentralized, global, open-source platform to dramatically reduce the cost and time of medical research.
+(3) Generating a continuously updated, publicly accessible knowledge base that ranks the most safe and effective treatments for any condition on a personalized basis—drawing from the entire universe of clinical and real-world evidence—and presents this information through standardized "Outcome Labels."
+
+### SEC. 103. FINDINGS.
 
 Congress finds the following:
 
-1. Less than **10 percent** of U.S. patients enroll in interventional clinical trials;\[1] distance, eligibility restrictions, and direct costs are principal barriers.
-2. Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43,000**\[2], inflating drug prices and limiting R‑&‑D on unpatentable therapies.
-3. The U.K. **RECOVERY** pragmatic trial enrolled 49,000 patients in 100 days at roughly **\$500 per patient**\[3], demonstrating 90 percent cost reduction via adaptive, decentralized design.
-4. Publicly financed, algorithm-targeted discounts on patient-borne trial participation costs, aimed at maximizing **quality‑adjusted life‑years (QALYs) per federal dollar**, can enhance access to trials, with patients covering the net costs of their participation.
-5. A single, open‑source **FDA.gov v2 Decentralized Trial Platform**—with e‑protocol builders, liability‑insurance bidding, blockchain custody, and AI‑ranked treatment lists—will enable any willing patient to join a trial of the most‑promising therapy for their condition.
-6. A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
-7. Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
+1.  New, effective treatments take an average of **17 years** to transition from scientific discovery to clinical practice, a delay during which millions of patients suffer without access to potential cures.
+2.  The current clinical trial paradigm is profoundly inefficient and exclusionary.
+    (A) Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43,000**\[2], inflating drug prices and limiting R‑&‑D on unpatentable therapies.
+    (B) Up to **85 percent of patients** are excluded from participating in pivotal trials, limiting the generalizability of findings to real-world patient populations.
+    (C) The failure to publish negative results leads to redundant research, while rigid trial designs that cannot adapt to incoming data stifle innovation.
+    (D) The short duration of most trials results in a critical lack of data on the long-term safety and efficacy of interventions.
+3.  As a consequence of these systemic failures, an estimated **95 percent of rare diseases lack a single FDA-approved treatment**, and effective therapies for common conditions remain undiscovered or inaccessible.
+4.  The U.K. **RECOVERY** pragmatic trial enrolled 49,000 patients in 100 days at roughly **\$500 per patient**\[3], demonstrating that a decentralized, adaptive model can reduce the non-biologic operational costs of clinical research by over **90 percent** through automation of data management, monitoring, and administrative functions.
+5.  The strategic application of artificial intelligence in healthcare has the potential to yield substantial economic benefits, with studies indicating that AI could reduce national healthcare spending by 5 to 10 percent annually by optimizing diagnostics, personalizing treatments, and improving the efficiency of health-related research and development.
+6.  Publicly financed, algorithm-targeted discounts on patient-borne trial participation costs, aimed at maximizing **quality‑adjusted life‑years (QALYs) per federal dollar**, can enhance access to trials, with patients covering the net costs of their participation.
+7.  The establishment of a global health data protocol, analogous to the foundational protocols of the internet, is necessary to securely connect disparate data silos and accelerate medical research worldwide. The **FDA.gov v2 Decentralized Trial Platform** is intended to be the United States' initial contribution to this protocol—a public utility providing the secure, open-source backend for a new generation of health innovation. It will create a foundational global public good by enabling research on all promising therapies, especially those without significant commercial potential that are underserved by private-sector research.
+8.  A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
+9.  Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
+10. The Platform is intended to serve not only the FDA but as shared, open-source public infrastructure for all federal, state, and international health authorities, fostering a globally harmonized ecosystem for evidence generation and public health.
+11. This Act affirms the fundamental right of every person to access and participate in scientific research relevant to their health. By empowering individuals as both participants and trial creators, the United States can transform its regulatory infrastructure into a global public good, accelerating medical progress for all.
 
-### SEC. 103. DEFINITIONS.
+### SEC. 104. DEFINITIONS.
 
 In this Act—
 
-1. **Secretary** means the Secretary of Health and Human Services.
-2. **FDA** means the Food and Drug Administration.
-3. **NIH** means the National Institutes of Health.
-4. **Pragmatic decentralized trial** means a clinical study integrated into routine care, allowing remote or local data capture, minimal exclusions, and broad patient demographics.
-5. **Most‑promising treatment** means an intervention that—(A) ranks within the top decile of projected QALY gain for a condition under SEC. 204(g)(3) or (B) holds Breakthrough Therapy or RMAT designation under section 506 of the Federal Food, Drug, and Cosmetic Act.
-6. **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
+1.  **Secretary** means the Secretary of Health and Human Services.
+2.  **FDA** means the Food and Drug Administration.
+3.  **NIH** means the National Institutes of Health.
+4.  **Pragmatic decentralized trial** means a clinical study integrated into routine care, allowing remote or local data capture, minimal exclusions, and broad patient demographics.
+5.  **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
+6.  **FDA.gov v2 Decentralized Trial Platform (the "Platform")** means the decentralized global health protocol initiated by the United States and established on the fda.gov domain to serve as a secure, open-source backend, providing core services for data exchange, trial management, and evidence generation. It is designed to function as a global public utility and Backend-as-a-Service (BaaS), intended for eventual governance by a global consortium of stakeholders.
+7.  **Trial Creator** means any individual, institution, or entity that designs, initiates, and manages a trial on the Platform.
+(b) **State Laws.** No State or political subdivision may regulate the practice of tele‑medicine, pharmacy licensure, or shipment of investigational products in a manner that prevents implementation of this Act. Specifically, a licensed prescriber participating under an FDA‑approved protocol shall be deemed licensed in all States for the limited purpose of providing investigational treatment under this Act, and pharmacies dispensing or shipping such products pursuant to the blockchain supply‑chain ledger are exempt from conflicting State prohibitions.
+(c) **DSCSA Alignment.** All investigational shipments must utilize the platform ledger to satisfy DSCSA traceability.
+(d) **Shared Public Health Infrastructure.** The Platform shall be designed and maintained as extensible infrastructure available for use by all federal, state, and international health agencies. The Secretary shall establish a process to facilitate the adoption of the Platform by other agencies for their own regulatory, research, and public health surveillance purposes, thereby creating a shared, globally harmonized ecosystem for evidence generation.
 
 ---
 
@@ -66,33 +85,51 @@ In this Act—
 
 ### SEC. 204. FDA.gov v2 Decentralized Trial Platform.
 
-(a) **Launch & Hosting.** Within 12 months after enactment the Secretary shall deploy an open‑source, cloud‑native **FDA.gov v2 Decentralized Trial Platform**\[4] at a publicly accessible sub‑domain of *fda.gov* (e.g., **trials.fda.gov**). All non‑classified source code shall be mirrored in real‑time to a public repository (e.g., *github.com/fda/fda‑v2*).
-(b) **Mandatory Open‑Source Licence.** Except for cybersecurity modules whose disclosure would create a material national‑security risk, all code shall be released under the Apache 2.0 or MIT licence. Any proprietary dependency shall be replaced or dual‑licensed within 24 months.
-(c) **Sponsor Workspace Functions.** The Platform shall provide—
- (1) **E‑Protocol Builder** with automated compliance validation (21 CFR Parts 312/812, ISO 14155).
+(a) **Launch & Hosting.** Within 12 months after enactment, the Secretary shall deploy an open-source, cloud-native **FDA.gov v2 Decentralized Trial Platform**\[4] as a comprehensive upgrade to the **fda.gov** domain itself. All source code shall be mirrored in real-time to a public repository (e.g., *github.com/fda/fda-v2*).
+(b) **Mandatory Open‑Source Licence.** All code shall be released under the GNU General Public License v3.0. Any proprietary dependency shall be replaced or dual‑licensed within 24 months.
+(c) **Trial Creator Workspace Functions.** The Platform shall provide—
+ (1) **E‑Protocol Builder** with templates and automated compliance validation (21 CFR Parts 312/812, ISO 14155) designed to enable any Trial Creator, regardless of prior regulatory expertise, to design and launch a study.
  (2) **Liability‑Insurance Exchange** for real‑time per‑subject quotes; selections auto‑populate FDA Form 1572.
- (3) **Trial Cost, Discount, and Deposit Module** facilitating: (A) the transparent calculation and disclosure of estimated patient-specific trial participation costs as provided by the trial sponsor; (B) the application of any applicable NIH-funded participation discounts (pursuant to SEC. 303); (C) the management of the net financial contribution required from the participant (as per SEC. 304(b)); and (D) the collection, holding, and refund of a patient data provision deposit (as per SEC. 304(e)). All cost components, applicable discounts, the final net cost to the participant, and details of the data provision deposit shall be clearly itemized and presented to the participant during the e-consent process (as per SEC. 302(b) and SEC. 304).
+ (3) **Trial Cost, Discount, and Deposit Module** facilitating: (A) the transparent calculation and disclosure of estimated patient-specific trial participation costs as provided by the trial sponsor; (B) the application of any applicable NIH-funded participation discounts (pursuant to SEC. 303); (C) the management of the net financial contribution required from the participant (as per SEC. 304(b)); and (D) the collection, holding, and refund of a patient data provision deposit (as per SEC. 304). All cost components, applicable discounts, the final net cost to the participant, and details of the data provision deposit shall be clearly itemized and presented to the participant during the e-consent process (as per SEC. 302(b) and SEC. 304).
  (4) **Blockchain Supply‑Chain Ledger\[9]** interoperable with DSCSA (§ 360eee‑3) to capture temperature, custody, delivery.
  (5) **Live Analytics Dashboards** for enrolment, compliance, blinded efficacy; regulators & IRBs get read‑only oversight.
-(d) **Patient Portal Functions.** The Platform shall—
- (1) Provide symptom/diagnosis intake and a continuously updated **ranked list of treatments & trials, alongside standardized "Outcome Labels" detailing quantified benefits, risks, and evidence quality for each intervention;**
- (2) Permit single‑session e‑screening, Part 11 e‑consent, instant randomisation.
- (3) Coordinate direct‑to‑patient or local‑pharmacy IMP dispatch with ledger verification.
- (4) Capture outcomes via mobile app, SMS/IVR, FHIR push, and IoT feeds; data loop into evidence rankings which are **recomputed nightly**. **The source code, feature weights, and a reproducible computational notebook for each annual release of the QALY‑ranking algorithm shall be posted in the public repository within 30 days of model deployment.**
-(e) **Open API & Interoperability.** All de‑identified data shall be exposed through a RESTful API that is HL7 FHIR‑R5 compliant and meets 42 U.S.C. § 300jj‑52. Third‑party apps may integrate via OAuth 2.0 consent.
+(d) **Core Backend Services and Reference Portal.** The Platform's primary function is to provide core backend services accessible via its open API. To ensure baseline access for all citizens and to serve as a model for third-party developers, the Platform shall host a public-facing Patient Data Portal as a reference implementation. This framework shall:
+ (1) **Provide a Reference Health Analysis Tool.** The portal will allow users to connect their data to a secure reference agent that integrates and analyzes their comprehensive health information to generate a **ranked list of treatments & trials**, presented alongside standardized "Outcome Labels."
+ (2) **Enable User-Initiated Data Contribution.** The Platform shall provide standardized tools (including APIs and SDKs) that empower individuals to securely contribute their health data from diverse sources. All data sharing shall be explicitly initiated and authorized by the user.
+ (3) Provide reference interfaces for single‑session e‑screening, Part 11 e‑consent, and instant randomisation for matched trials through the portal.
+ (4) Coordinate direct‑to‑patient or local‑pharmacy IMP dispatch with ledger verification.
+ (5) Capture outcomes via mobile app, SMS/IVR, FHIR push, and IoT feeds; data loop into evidence rankings which are **recomputed nightly**. **The source code, feature weights, and a reproducible computational notebook for each annual release of the QALY‑ranking algorithm shall be posted in the public repository within 30 days of model deployment.**
+ (6) Contribute to and draw from a **Publicly Accessible Knowledge Base** (dubbed "Clinipedia") of all quantified food and drug effects, continuously updated with new data and analysis from the Platform. This knowledge base, including all underlying data, analytical models, and evidence rankings, shall be made easily searchable and accessible to all, serving as a global public good.
+(e) **Open API as the Primary Deliverable.** The Platform shall function as a Backend-as-a-Service (BaaS) for the national health technology ecosystem. Its primary deliverable is the secure, versioned, and documented open API. All de‑identified data shall be exposed through this RESTful API that is HL7 FHIR‑R5 compliant and meets 42 U.S.C. § 300jj‑52. The Platform is explicitly intended *not* to compete with consumer-facing applications but to provide the secure, interoperable rails upon which a competitive ecosystem of third-party tools and services can be built.
 (f) **Continuous Integration/Continuous Deployment (CI/CD).** The Secretary shall maintain automated unit‑test, security‑scan, and code‑quality pipelines that must pass before any code merge. CI results shall be publicly viewable and the Platform shall maintain compliance with **FedRAMP‑Moderate\[6]** and **NIST SP 800‑218** DevSecOps guidelines; the System Security Plan and Authority‑to‑Operate letter shall be posted in redacted form.
-(g) **Governance & Pull‑Request Acceptance.**
- (1) **Technical Steering Committee (TSC).** A nine‑member TSC is hereby established to steward the repository. Composition: 3 FDA officials, 1 NIH representative, 1 patient‑advocacy representative, 1 open‑source community member elected by contributors, 1 biostatistician, 1 cyber‑security expert, and 1 industry sponsor representative.
- (2) **Decision Process.** The TSC shall operate under an open‑governance model (e.g., Linux Foundation rules of procedure). Pull requests (PRs) that: (A) pass all CI tests; (B) adhere to published coding standards; and (C) implement bug‑fixes, security patches, or features consistent with statutory requirements **shall be merged within 30 calendar days** unless two‑thirds of the TSC votes to reject and publishes a written rationale.
- (3) **Appeal.** Any contributor may appeal a rejection to the FDA Chief Scientist, who must respond within 30 days. If the appeal is upheld, the PR is merged automatically.
- (4) **Democratic Renewal.** Community‑elected and patient‑advocate seats are subject to annual election by contributors (defined as those with ≥10 merged PRs in the preceding year) using ranked‑choice voting via a transparent, verifiable online ballot.
+(g) **AI-Augmented Governance & Pull‑Request Acceptance.**
+ (1) **AI-Assisted Review.** All pull requests (PRs) submitted to the public repository shall undergo an automated, comprehensive review by one or more designated AI Governance and Security Review systems. These systems shall be open-source and trained to perform deep code analysis, identify potential vulnerabilities, assess compliance with architectural standards, and model the risk of economic exploits.
+ (2) **Risk-Based Triage.** The AI Reviewer shall assign each PR a risk score (e.g., "Low," "Medium," "High," "Critical"). This score determines the review and merge process:
+     (A) **Low-Risk PRs:** Shall be merged automatically within 72 hours if they pass all CI tests, unless a TSC member manually flags it for review.
+     (B) **Medium-Risk PRs:** Shall be automatically paused and require an explicit simple majority approval vote from the TSC for merger.
+     (C) **High-Risk or Critical-Risk PRs:** Shall be automatically rejected and may not be merged without a two-thirds supermajority vote from the TSC to override the AI's finding, accompanied by a published justification.
+ (3) **Technical Steering Committee (TSC).** A nine‑member TSC is hereby established to oversee the repository, adjudicate flagged PRs, and manage the AI Governance Reviewers. The TSC is mandated to continuously pursue the automation and decentralization of its own functions, with the long-term goal of migrating governance decisions to a secure, on-chain, community-ratified process. Composition: 2 FDA officials, 1 NIH representative, 1 representative from a peer international regulator (e.g., EMA, PMDA), 1 patient‑advocacy representative, 1 open‑source AI/ML security expert elected by contributors, 1 biostatistician, 1 cyber‑security expert, and 1 industry sponsor representative. The Secretary shall pursue agreements to add representatives from at least two other international health authorities or bodies within 24 months.
+ (4) **Appeal and Manual Override.** Any contributor may appeal an AI rejection or TSC decision to the FDA Chief Scientist, who must respond within 30 days. The TSC retains the authority to manually re-classify any PR with a two-thirds vote.
+ (5) **Democratic Renewal.** The community-elected AI/ML security expert and patient-advocate seats are subject to annual election by contributors (defined as those with ≥5 merged PRs in the preceding year) using ranked‑choice voting via a transparent, verifiable online ballot.
 (h) **Rulemaking & PRA Fast‑Track.** Within 180 days the Secretary shall issue interim final rules specifying technical standards for each module, **standards for the content, format, and regular updating of Outcome Labels mandated under subsection (d)(1) of this section,** codifying the TSC charter, and **invoking 44 U.S.C. § 3507(h) such that any Information‑Collection Request[5] tied to the FDA v2 Platform obtains OMB clearance within 60 days.** Sponsors or investigators that fail to comply with these rules may be suspended under 21 U.S.C. § 331(f).
 
-(i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program—funded under § 402(a)—to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements. Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge. Furthermore, **all patient‑level transactions logged to the Blockchain Supply‑Chain Ledger shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
+(i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program—funded under § 402(a)—to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements. **The AI Governance and Security Reviewer shall be used to automatically verify vulnerability submissions, score their severity, and recommend payment amounts to expedite the bounty process.** Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge. Furthermore, **all patient‑level transactions logged to the Blockchain Supply‑Chain Ledger shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
 
 (j) **Metrics & Transparency.** Annual public report: platform uptime, median time‑to‑trial launch, pull‑request merge rate, unresolved PR backlog, bounty payouts, penetration‑test findings, insurance‑premium benchmarks, and user‑satisfaction scores.  The Secretary shall commission an independent **penetration test** every fiscal year and publish an executive summary of findings.
 
-(k) **Platform Intelligence and Automation.** The Platform shall leverage artificial intelligence and machine learning capabilities to enhance its functionalities, including but not limited to: (1) assisting sponsors with automated protocol validation checks during e-protocol building; (2) improving the precision of matching patients to suitable trials based on their comprehensive health data; (3) augmenting the analysis of aggregated, de-identified data for early safety signal detection and pharmacovigilance; and (4) supporting regulatory staff with tools for efficient data review where appropriate. All such AI/ML systems shall be developed with robust validation, transparency in function, and operate under human oversight, particularly for critical decision support.
+(k) **Platform Intelligence and Automation.** The Platform shall leverage artificial intelligence and machine learning capabilities to enhance its functionalities, including but not limited to: (1) assisting sponsors with automated protocol validation checks during e-protocol building; (2) improving the precision of matching patients to suitable trials based on their comprehensive health data; (3) augmenting the analysis of aggregated, de-identified data for early safety signal detection and pharmacovigilance; (4) **powering the AI Governance and Security Reviewer for automated code review, vulnerability detection, and pull-request adjudication as specified in subsection (g);** and (5) supporting regulatory staff with tools for efficient data review where appropriate. All such AI/ML systems shall be developed with robust validation, transparency in function, and operate under human oversight, particularly for critical decision support.
+
+(l) **Global Accessibility.** To facilitate global participation and data collection, the Platform's user interfaces for patients and trial creators shall be made accessible in multiple languages.
+
+(m) **Interoperability with National Health Data Systems.** The Platform shall be designed to complement and enhance existing government health initiatives. The Secretary shall establish data sharing and interoperability frameworks to connect the Platform with key national health programs, including but not limited to: the FDA's Sentinel Initiative and Global Substance Registry System (GSRS); the National Institutes of Health's *All of Us* Research Program; the National Health and Nutrition Examination Survey (NHANES); and the Centers for Disease Control and Prevention's public health surveillance systems. This integration shall leverage the Platform's AI capabilities to analyze data across systems, enhancing national safety monitoring, research, and public health response capabilities while adhering to strict privacy-preserving protocols.
+
+### SEC. 205. FDA-X PRIZE.
+
+(a) **Establishment.** To accelerate the development of the FDA.gov v2 Platform, the Secretary is authorized to establish an "FDA-X Prize" competition, with a prize purse to be determined by the Secretary, awarded to the entity that first develops and demonstrates a platform meeting the core requirements outlined in Section 204 and which demonstrates the capacity to achieve at least an **80X reduction** in per-patient trial costs compared to traditional methodologies.
+
+(b) **Alternative Development Path.** The Secretary may use the prize competition as the primary mechanism for developing the platform. In such a case, the timelines and responsibilities outlined in Section 204(a) shall be adjusted to reflect a successful prize outcome.
+
+(c) **Integration.** If the prize is awarded for a platform that meets a substantial subset of requirements, the Secretary shall ensure its integration with any components developed or procured under Section 204.
 
 ## TITLE III — UNIVERSAL TRIAL ACCESS (RIGHT‑TO‑TRIAL PROGRAM)
 
@@ -110,7 +147,7 @@ In this Act—
 
 ### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY.
 
-(a) **Central IRB.** All Right‑to‑Trial protocols shall undergo single‑IRB review per 45 CFR § 46.114\[8]; FDA shall publish a master reliance agreement.
+(a) **Ethical Oversight.** All Right‑to‑Trial protocols shall undergo review by a qualified Institutional Review Board (IRB). To foster innovation and efficiency, the FDA.gov v2 Platform shall support both review by a single central IRB (per 45 CFR § 46.114[8]) and by qualified **Decentralized Ethical Review Boards (DERBs)**. The Secretary shall, through rulemaking, establish standards for the qualification, operation, and oversight of DERBs on the platform.
 (b) **Informed Consent and Comprehension Verification.**
     (1) Platform e-consent shall clearly disclose, in an accessible format, the investigational nature of the trial, all known and potential risks including their likelihood based on available data (with particular emphasis on the most serious risks), the full details of patient financial responsibilities including the net cost contribution and the refundable data provision deposit (as detailed in SEC. 304), potential benefits, alternative treatments, and all data-sharing terms.
     (2) To verify genuine understanding of the disclosed information, particularly concerning the most serious risks and their likelihood, successful completion of the e-consent process shall require the patient to pass an automated, interactive comprehension quiz administered through the FDA.gov v2 Platform. This quiz shall be based directly on the information disclosed pursuant to paragraph (1) of this subsection.
@@ -154,6 +191,7 @@ In this Act—
 (a) **Expanded Access.** This Act supplements 21 CFR § 312 Subpart I; data from Right‑to‑Trial may fulfill post‑marketing study obligations.
 (b) **State Laws.** No State or political subdivision may regulate the practice of tele‑medicine, pharmacy licensure, or shipment of investigational products in a manner that prevents implementation of this Act. Specifically, a licensed prescriber participating under an FDA‑approved protocol shall be deemed licensed in all States for the limited purpose of providing investigational treatment under this Act, and pharmacies dispensing or shipping such products pursuant to the blockchain supply‑chain ledger are exempt from conflicting State prohibitions.
 (c) **DSCSA Alignment.** All investigational shipments must utilize the platform ledger to satisfy DSCSA traceability.
+(d) **Shared Public Health Infrastructure.** The Platform shall be designed and maintained as extensible infrastructure available for use by all federal, state, and international health agencies. The Secretary shall establish a process to facilitate the adoption of the Platform by other agencies for their own regulatory, research, and public health surveillance purposes, thereby creating a shared, globally harmonized ecosystem for evidence generation.
 
 ### SEC. 402. AUTHORIZATION OF APPROPRIATIONS AND STAGE‑GATED FUNDING.
 
@@ -165,16 +203,22 @@ In this Act—
 
 ### SEC. 403. IMPLEMENTATION TIMELINE.
 
-* **180 days:** Interim rules; beta e‑protocol builder; transparency website live.
-* **12 months:** FDA v2 Platform MVP; insurance exchange; blockchain ledger operational.
-* **24 months:** Universal enrolment guarantee active; subsidies flowing.
-* **36 months:** First GAO report to Congress.
+*   **180 days:** Interim rules; beta e‑protocol builder; transparency website live.
+*   **12 months:** FDA v2 Platform MVP; insurance exchange; blockchain ledger operational.
+*   **24 months:** Universal enrolment guarantee active; subsidies flowing.
+*   **36 months:** First GAO report to Congress.
 
-### SEC. 404. SEVERABILITY.
+### SEC. 404. STRATEGY FOR GLOBAL GOVERNANCE AND DECENTRALIZATION.
+
+(a) **Objective.** The Secretary, in coordination with the Secretary of State, shall develop and execute a strategy to transition the governance of the Platform from the United States government to an independent, international multi-stakeholder body.
+(b) **Report to Congress.** Within 18 months of enactment, the Secretary shall submit a report to Congress outlining this strategy, including: (1) proposed frameworks for a new international governance body; (2) a timeline for transitioning technical and administrative oversight; and (3) a plan for ensuring the long-term sustainability and neutrality of the protocol, including research into and pathways toward cryptographically-secured, on-chain governance models that reduce reliance on a central administrative body.
+(c) **Continued Support.** The United States shall continue to provide technical and financial support for the Platform during a transition period of no less than 5 years after an international governance body is established.
+
+### SEC. 405. SEVERABILITY.
 
 If any provision of this Act is held invalid, the remainder shall remain in effect.
 
-### SEC. 405. TRANSPARENCY IN REGULATORY ACTIONS LIMITING TREATMENT ACCESS.
+### SEC. 406. TRANSPARENCY IN REGULATORY ACTIONS LIMITING TREATMENT ACCESS.
 
 (a) **Public Justification Reports Required.** For any regulatory action taken by the Secretary that denies, restricts, or withdraws patient access to any potential treatment, the Secretary shall, within 60 days of such action, publish a comprehensive report. This report shall be publicly available on the FDA.gov v2 Decentralized Trial Platform.
 
@@ -191,7 +235,7 @@ If any provision of this Act is held invalid, the remainder shall remain in effe
     (4) **Standards for Comprehensive Impact Analysis:** Each analysis conducted under this subsection (e) shall:
         (A) Be supported by dedicated resources, including a prespecified minimum percentage of the annual budget of the National Institutes of Health, to ensure its capacity, independence, and timeliness.
         (B) Be based on a systematic review of all available global evidence, incorporate rigorous quantitative uncertainty characterization, and calculate projected individual and population-level health outcomes (including, but not limited to, quality-adjusted life-years (QALYs) gained or lost) and economic consequences (including, but not limited to, Incremental Cost-Effectiveness Ratios (ICERs) and direct and indirect costs to patients, the healthcare system, and society). Sensitivity analyses shall be conducted for all key assumptions.
-        (C) Be developed and conducted using advanced analytical tools, including artificial intelligence and machine learning systems where appropriate. All software, algorithms, data inputs, and models developed or utilized for these analyses shall be released under an open-source licence approved by the Open Source Initiative, published on the FDA.gov v2 Decentralized Trial Platform, and subject to mechanisms that facilitate public inspection, contribution, and collaborative improvement, consistent with the governance principles outlined in SEC. 204(g);
+        (C) Be developed and executed primarily by advanced autonomous AI systems to ensure speed, consistency, and comprehensiveness. The role of human personnel shall be focused on oversight, final review, and the adjudication of complex edge cases flagged by the AI. All software, algorithms, data inputs, and models developed or utilized for these analyses shall be released under an open-source licence approved by the Open Source Initiative, published on the FDA.gov v2 Decentralized Trial Platform, and subject to mechanisms that facilitate public inspection, contribution, and collaborative improvement, consistent with the AI-augmented governance principles outlined in SEC. 204(g);
         (D) Be made publicly available in its entirety, including all underlying data, assumptions, and models, on the FDA.gov v2 Decentralized Trial Platform in a user-friendly and accessible format.
     (5) **Independent Oversight and Audit:** An independent office within the Department of Health and Human Services, separate from the Food and Drug Administration, shall be established or designated to oversee the methodologies, execution, and audit of analyses conducted under this subsection (e) to ensure objectivity and scientific integrity.
     (6) **Public Petition for Analysis:** Any member of the public may petition the Secretary for a comprehensive impact analysis of any specific FDA regulatory instrument not yet analyzed or not recently updated. The Secretary shall respond to such petitions within 120 days, either by initiating the analysis or by publishing a detailed justification for denial, which shall itself be subject to review by the independent office established under paragraph (e)(5).
@@ -213,4 +257,4 @@ If any provision of this Act is held invalid, the remainder shall remain in effe
 \[10] U.S. Digital Service, *Digital Service Playbook* (2025).
 \[11] 45 CFR § 164.512(i)(1) (HIPAA research waiver).
 
-**End of Act.**
+**End of Act.** 

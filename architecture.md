@@ -9,6 +9,8 @@ dateCreated: 2023-11-07T19:01:19.907Z
 fontawesomeIcon: fa-layer-group
 ---
 
+> **Document Purpose:** This document describes the high-level architecture and conceptual framework of the platform. It explains the "what" and "why" behind the system's design. For detailed engineering choices, specific technologies, and API specifications, please refer to the **[Platform Technical Specification](./specification.md)**.
+
 ### Functional Scope
 
 The functional scope of the platform includes:
@@ -22,7 +24,7 @@ of health data from different sources.
 
 ### Primary goal
 
-Create a basic foundational technology layer suitable for any digital health application providing better interoperability, portability, availability, analysis, security of the data.
+The primary goal is to establish a **global health protocol** by creating a foundational technology layer (the Platform) suitable for any digital health application, providing better interoperability, portability, availability, and security of health data.
 
 ### Use Cases
 
@@ -39,10 +41,16 @@ Create a basic foundational technology layer suitable for any digital health app
 
 ![framework diagram](https://static.crowdsourcingcures.org/img/layered-platform-architecture-diagram.png)
 
-The platform consists of two primary components:
+The project consists of two primary components:
 
-* **Core Open-Source Platform** - The core platform is open-source and includes only universally necessary features. This primarily consists of user authentication, data owner access controls, data storage, data validation, and an API for storage and retrieval. The DAO will compensate contributors to the core platform.
-* **Plugin Framework** - Plugins are modules that provide additional functionality. This includes data import from specific sources, data mapping to various formats, data analysis, data visualization, notifications. These may be free or monetized by their creator or even be integrated into the core based on community voting.
+*   **Core Open-Source Platform:** This is the initial **reference implementation** of the global health protocol. It is open-source and includes only universally necessary features, such as user authentication, data owner access controls, data storage, data validation, and a standardized API. The DAO will compensate contributors to this core platform.
+*   **Plugin Framework:** While the Core Platform provides the foundational infrastructure, it is designed to be extended through plugins. This allows a competitive ecosystem of third-party developers to build additional functionality.
+
+While the plugin framework allows for limitless extension, the governing Act mandates that the platform must, at a minimum, provide the following core applications and services:
+
+*   **Trial Creator Workspace:** Tools for designing, funding, and launching decentralized clinical trials.
+*   **Patient Portal & Public Knowledge Base:** A reference implementation for patients to manage their data and a public-facing portal ("Clinipedia") to access research findings and ranked treatment options.
+*   **Oversight & Governance Systems:** Applications to facilitate ethical review (IRB/DERB), AI-augmented code governance, and public bounty programs.
 
 ![framework diagram](https://static.crowdsourcingcures.org/img/plugin-marketplace.png)
 
@@ -243,7 +251,9 @@ Tasks of data visualization plugins:
 
 #### 3.2.3 Application Programming Interface (API) Connector Plugins
 
-Many applications and service providers offer a direct exchange of structured health data through an API, which upon user authentication allow access to automated and scheduled exports of the generated data.
+Many applications and service providers offer a direct exchange of structured health data through an API, which upon user authentication allow access to automated and scheduled exports of the generated data. The platform's API Connector plugins are designed to facilitate this, making it easy for users to connect their accounts from various data silos (health apps, labs, hospitals) and import their information.
+
+The platform is explicitly designed as a Backend-as-a-Service (BaaS) to empower a competitive ecosystem of third-party tools. A primary architectural goal is to support the creation of **local-first, self-sovereign applications**—sometimes described as "Digital Twins," "Personal Data Safes," or "Personal Nodes"—that allow users to store and analyze their data on their own devices, sharing only what they choose with the central platform.
 
 So far the proprietary silo developments have produced many different data formats, which could be replaced with the data standard proposed within this project. Until the success of a common language for all types of health data and between all stakeholders, many API connecting plugins are necessary for this interoperability.
 
