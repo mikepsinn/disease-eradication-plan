@@ -1,7 +1,7 @@
 # Architectural Diagrams
 
 **Status:** DRAFT
-**Version:** 0.1
+**Version:** 0.2
 
 This directory contains visual diagrams, such as C4 models, sequence diagrams, and infrastructure diagrams, that illustrate the architecture of the platform.
 
@@ -41,6 +41,73 @@ C4Context
     UpdateElementStyle(creator, $bgColor="lightgrey", $fontColor="black", $borderColor="black")
     UpdateElementStyle(regulator, $bgColor="lightgrey", $fontColor="black", $borderColor="black")
     UpdateElementStyle(dfda_platform, $bgColor="blue", $fontColor="white", $borderColor="blue")
+```
+
+## C4 Container Diagram
+
+This diagram zooms into the FDA.gov v2 Platform to show its main logical containers (applications, services, and data stores).
+
+```mermaid
+C4Container
+    title Container diagram for FDA.gov v2 Platform
+
+    Person(patient, "Patient / Trial Participant", "Uses the reference portal to manage data and view findings.")
+    Person(creator, "Trial Creator / Researcher", "Uses the reference portal to design and manage trials.")
+    System_Ext(ehr, "EHR / Data Silos", "External data sources.")
+    System_Ext(github, "Public Code Repository", "Hosts the platform's source code.")
+
+    System_Boundary(platform_boundary, "FDA.gov v2 Platform (Live System)") {
+        
+        Container(portal, "Reference Web Portal", "TypeScript, Next.js", "Provides the user interface for patients, trial creators, and the public (Clinipedia).")
+        Container(api_gateway, "API Gateway", "e.g., AWS API Gateway", "Routes all incoming API requests, handles authentication, rate limiting.")
+        
+        System_Boundary(api_services, "Backend API Services") {
+            Container(ingestion_api, "Ingestion API", "Python, FastAPI", "Handles submission of new observations and files.")
+            Container(query_api, "Query API", "Python, FastAPI", "Provides interfaces to retrieve data.")
+            Container(user_api, "User & Consent API", "Python, FastAPI", "Manages user profiles and consent records.")
+        }
+        
+        System_Boundary(processing_services, "Asynchronous Processing") {
+            Container(worker, "Mapping & Validation Engine", "Python, Dask/Celery", "A pool of workers that asynchronously process, map, and validate ingested data.")
+            Container(queue, "Message Queue", "e.g., AWS SQS", "Decouples the Ingestion API from the processing workers.")
+        }
+        
+        System_Boundary(storage_services, "Data Storage") {
+            ContainerDb(metadata_db, "Metadata Database", "PostgreSQL", "Stores user profiles, trial info, consent records, variable definitions.")
+            ContainerDb(timeseries_db, "Time-Series Database", "TimescaleDB", "Stores all validated health observations.")
+            ContainerDb(file_store, "File Storage", "e.g., AWS S3", "Stores raw, unprocessed uploaded files.")
+        }
+
+        Rel(patient, portal, "Uses", "HTTPS")
+        Rel(creator, portal, "Uses", "HTTPS")
+        Rel(portal, api_gateway, "Makes API calls to", "HTTPS/JSON")
+
+        Rel(api_gateway, ingestion_api, "Routes to")
+        Rel(api_gateway, query_api, "Routes to")
+        Rel(api_gateway, user_api, "Routes to")
+        
+        Rel(ingestion_api, queue, "Puts jobs in")
+        Rel(ingestion_api, file_store, "Writes to")
+        Rel(worker, queue, "Pulls jobs from")
+
+        Rel(worker, metadata_db, "Reads variable definitions from")
+        Rel(worker, timeseries_db, "Writes validated data to")
+        Rel(worker, file_store, "Reads from")
+
+        Rel(query_api, metadata_db, "Reads from")
+        Rel(query_api, timeseries_db, "Reads from")
+
+        Rel(user_api, metadata_db, "Reads/Writes to")
+    }
+
+    Rel(ingestion_api, ehr, "Fetches data from (via plugins)", "HTTPS/API")
+    Rel_R(api_gateway, github, "Receives webhooks from (for CI/CD)", "HTTPS")
+    
+    UpdateElementStyle(portal, $bgColor="lightblue")
+    UpdateElementStyle(api_gateway, $bgColor="lightgrey")
+    UpdateElementStyle(api_services, $text="Backend API Services")
+    UpdateElementStyle(processing_services, $text="Asynchronous Processing")
+    UpdateElementStyle(storage_services, $text="Data Storage")
 ```
 
 ## Other Diagrams
