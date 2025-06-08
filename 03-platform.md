@@ -24,7 +24,7 @@ of health data from different sources.
 
 ### Primary goal
 
-Create a basic foundational technology layer suitable for any digital health application providing better interoperability, portability, availability, analysis, security of the data.
+The primary goal is to establish a **global health protocol** by creating a foundational technology layer (the Platform) suitable for any digital health application, providing better interoperability, portability, availability, and security of health data.
 
 ### Use Cases
 
@@ -41,10 +41,10 @@ Create a basic foundational technology layer suitable for any digital health app
 
 ![framework diagram](https://static.crowdsourcingcures.org/img/layered-platform-architecture-diagram.png)
 
-The platform consists of two primary components:
+The project consists of two primary components:
 
-* **Core Open-Source Platform** - The core platform is open-source and includes only universally necessary features. This primarily consists of user authentication, data owner access controls, data storage, data validation, and an API for storage and retrieval. The DAO will compensate contributors to the core platform.
-* **Plugin Framework** - Plugins are modules that provide additional functionality. This includes data import from specific sources, data mapping to various formats, data analysis, data visualization, notifications. These may be free or monetized by their creator or even be integrated into the core based on community voting.
+*   **Core Open-Source Platform:** This is the initial **reference implementation** of the global health protocol. It is open-source and includes only universally necessary features, such as user authentication, data owner access controls, data storage, data validation, and a standardized API. The DAO will compensate contributors to this core platform.
+*   **Plugin Framework:** Plugins are modules that provide additional functionality that connects to the core platform. This includes data import from specific sources, data mapping to various formats, data analysis, and data visualization. These may be free or monetized by their creator, or integrated into the core based on community voting.
 
 ![framework diagram](https://static.crowdsourcingcures.org/img/plugin-marketplace.png)
 

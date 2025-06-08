@@ -21,7 +21,7 @@ This document provides detailed technical specifications for the implementation 
 
 *   **Purpose:** To define the specific technologies, interfaces, data structures, security measures, and infrastructure requirements for building the global health protocol initiated by the United States.
 *   **Relationship:** Serves as the detailed implementation guide based on the architecture described in `/features/platform/03-platform.md`.
-*   **Scope:** The Platform is designed to function as a global public utility and **Backend-as-a-Service (BaaS)**. This specification focuses on the core backend components (API, Storage, Mapping/Validation, Access Control) and the interfaces for a plugin framework. It excludes the internal implementation details of specific plugins or third-party applications built upon the platform. All core software developed shall be open-source.
+*   **Scope:** The Platform is designed to function as a global public utility and **Backend-as-a-Service (BaaS)**, serving as the **reference implementation** of the global health protocol. This specification focuses on the core backend components (API, Storage, Mapping/Validation, Access Control) and the interfaces for a plugin framework. It excludes the internal implementation details of specific plugins or third-party applications built upon the platform. All core software developed shall be open-source.
 
 ## 2. Technology Stack
 
