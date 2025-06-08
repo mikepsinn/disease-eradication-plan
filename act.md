@@ -98,9 +98,11 @@ In this Act—
 
 (k) **Platform Intelligence and Automation.** The Platform shall leverage artificial intelligence and machine learning capabilities to enhance its functionalities, including but not limited to: (1) assisting sponsors with automated protocol validation checks during e-protocol building; (2) improving the precision of matching patients to suitable trials based on their comprehensive health data; (3) augmenting the analysis of aggregated, de-identified data for early safety signal detection and pharmacovigilance; (4) **powering the AI Governance and Security Reviewer for automated code review, vulnerability detection, and pull-request adjudication as specified in subsection (g);** and (5) supporting regulatory staff with tools for efficient data review where appropriate. All such AI/ML systems shall be developed with robust validation, transparency in function, and operate under human oversight, particularly for critical decision support.
 
+(l) **Global Accessibility.** To facilitate global participation and data collection, the Platform's user interfaces for patients and trial creators shall be made accessible in multiple languages.
+
 ### SEC. 205. FDA-X PRIZE.
 
-(a) **Establishment.** To accelerate the development of the FDA.gov v2 Platform, the Secretary is authorized to establish an "FDA-X Prize" competition, with a prize purse to be determined by the Secretary, awarded to the entity that first develops and demonstrates a platform meeting the core requirements outlined in Section 204.
+(a) **Establishment.** To accelerate the development of the FDA.gov v2 Platform, the Secretary is authorized to establish an "FDA-X Prize" competition, with a prize purse to be determined by the Secretary, awarded to the entity that first develops and demonstrates a platform meeting the core requirements outlined in Section 204 and which demonstrates the capacity to achieve at least an **80X reduction** in per-patient trial costs compared to traditional methodologies.
 
 (b) **Alternative Development Path.** The Secretary may use the prize competition as the primary mechanism for developing the platform. In such a case, the timelines and responsibilities outlined in Section 204(a) shall be adjusted to reflect a successful prize outcome.
 
