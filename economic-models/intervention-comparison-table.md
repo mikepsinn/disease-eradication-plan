@@ -8,6 +8,10 @@ date: 2024-06-09
 
 This article compares the dFDA platform to other historically high-ROI and high-QALY-per-dollar health interventions. The table below summarizes the best available data for each intervention, including return on investment (ROI), cost per QALY gained (ICER), and estimated QALYs gained per $1 million spent. This provides context for the scale and efficiency of dFDA relative to foundational public health measures.
 
+![QALY Comparison Chart](./qaly-comparison-chart.png)
+
+*Note: The bar represents the mid-point of the uncertainty range, and the error bars indicate the lower and upper bounds of the estimate. For "Smallpox Eradication," the upper bound is illustrative of its high, open-ended impact.*
+
 ## Comparison Table
 
 | Intervention                        | Estimated ROI (Return per $1) | Cost per QALY Gained (ICER) | QALYs Gained per $1M | Notes & Sources                                                                                  |
