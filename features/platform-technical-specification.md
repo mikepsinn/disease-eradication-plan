@@ -29,7 +29,7 @@ Selected to prioritize scalability, security, interoperability, developer produc
 
 *   **Programming Languages:**
     *   Backend/API: **Python 3.11+** (FastAPI framework, strong data science/validation libraries (Pandas, Pydantic), mature async support, large talent pool).
-    *   Frontend (Reference UI): **TypeScript** with **React 18+** (Robust typing, component model, large ecosystem, Next.js framework).
+    *   Frontend (Reference UI): **TypeScript** with **React 18+** (Robust typing, component model, large ecosystem, Next.js framework). Must support internationalization (i18n) for multi-language accessibility as mandated by `SEC. 204(l)`.
     *   Data Processing/Mapping Engine: **Python 3.11+** (Leverages Pandas, potentially Dask/Spark for large-scale transformations).
 *   **Frameworks:**
     *   Web API: **FastAPI** (Performance, auto-validation, OpenAPI generation).
@@ -60,6 +60,7 @@ Selected to prioritize scalability, security, interoperability, developer produc
     *   Monitoring/Metrics: **AWS CloudWatch Metrics** & **Prometheus/Grafana** (deployed on EKS for finer-grained infra/app metrics).
     *   APM: **AWS X-Ray** or **Datadog**.
     *   Error Tracking: **Sentry**.
+    *   **Automated Reporting (`SEC. 204(j)`):** The monitoring stack must be designed to support the automated generation of the annual public transparency report. This requires persistent storage of key metrics and a reporting service to query and publish the data.
 
 ## 3. Core Component Implementation Details
 
@@ -84,6 +85,7 @@ Designed for flexibility, security, and standardization.
     *   Targets: **Python**, **JavaScript/TypeScript**. Others based on demand.
     *   Functionality: Handles OAuth flows, request building, file upload streaming, job status polling, reference data lookup.
     *   Distribution: Open source (PyPI, npm).
+*   **Registration/Discovery:** Plugin Registry stores metadata, including required OAuth scopes, input/output data schemas, and execution endpoints. Core uses this to validate and route requests.
 
 ### 3.2 Trial Creator Workspace
 
@@ -113,6 +115,11 @@ This section outlines the components necessary to execute trials, particularly a
     *   **Description:** A core service responsible for managing the operational logic of adaptive trials. This is critical for efficiency, allowing trials to change based on interim data.
     *   **Technical Considerations:** Must support various designs (e.g., platform trials, basket trials, response-adaptive randomization). Will include a rules engine to implement protocol-defined adaptation logic (e.g., dropping a treatment arm for futility, adjusting randomization ratios). Requires a secure interface for Data and Safety Monitoring Boards (DSMBs) to review interim analyses.
 
+*   **E-Consent and Comprehension Verification (`SEC. 302(b)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A module to manage the electronic informed consent process.
+    *   **Technical Considerations:** Must provide a version-controlled, auditable e-consent workflow. Crucially, it must include an interactive, configurable comprehension quiz that patients must pass before being able to sign the consent form, as mandated by the Act. The record of successful quiz completion must be immutably logged.
+
 *   **Clinical Site Integration (eSource/EDC Module)**
     *   **Status:** Design Required.
     *   **Description:** A module to facilitate streamlined data capture directly from clinical sites, minimizing the burden on hospital staff.
@@ -120,6 +127,11 @@ This section outlines the components necessary to execute trials, particularly a
         *   **EHR Integration:** Must provide robust tools for bi-directional EHR integration (e.g., using HL7 FHIR APIs) to automate the capture of pre-defined clinical outcomes from existing records (eSource).
         *   **Electronic Case Report Forms (eCRF):** Must offer a simple, web-based eCRF interface for clinicians to manually enter the minimal data required by pragmatic protocols, for sites where direct EHR integration is not feasible.
         *   **Workflow Support:** Should integrate with clinical workflows, for example, by providing notifications within the EHR for eligible patients or automating lab test orders required by a protocol.
+
+*   **Investigational Product (IP) Logistics Integration (`SEC. 204(d)(4)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A module to coordinate the dispatch and delivery of investigational products to patients or clinical sites.
+    *   **Technical Considerations:** Requires secure APIs to integrate with third-party pharmacy, specialty courier, and laboratory systems. Must be able to trigger shipments and track delivery status, linking this information to the Blockchain Supply-Chain Ledger.
 
 ### 3.4 Data Storage
 
@@ -170,7 +182,26 @@ Enables modular extension of platform capabilities.
 *   **Security:** Plugins execute in isolated, containerized environments (e.g., Lambda, specific EKS pods) with least-privilege IAM roles. Core platform rigorously validates plugin requests against user consent *before* executing or providing data access. Network policies restrict plugin communication.
 *   **Registration/Discovery:** Plugin Registry stores metadata, including required OAuth scopes, input/output data schemas, and execution endpoints. Core uses this to validate and route requests.
 
-## 5. Governance and Automation Systems
+## 5. Public-Facing and Oversight Applications
+
+This section specifies the key applications that will be built on top of the core backend infrastructure to serve end-users, researchers, and regulators.
+
+*   **Public Knowledge Base ("Clinipedia") (`SEC. 204(d)(6)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A public-facing web application that serves as the primary interface to the platform's synthesized findings. It will present the ranked lists of treatments and standardized "Outcome Labels" for any given condition.
+    *   **Technical Considerations:** Requires a robust data-querying backend, a sophisticated but intuitive user interface for exploring complex health data, and high-availability architecture.
+
+*   **Live Analytics Dashboards (`SEC. 204(c)(5)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A suite of secure, role-based dashboards for trial sponsors, regulators, and IRBs to monitor trial enrollment, compliance, and blinded efficacy metrics in real-time.
+    *   **Technical Considerations:** Requires a real-time data pipeline from the core database, configurable visualizations, and strict access controls to ensure data segregation and appropriate blinding.
+
+*   **Ethical Oversight (IRB/DERB) Portal (`SEC. 302(a)`)**
+    *   **Status:** Design Required.
+    *   **Description:** A secure portal for members of Institutional Review Boards (IRBs) and Decentralized Ethical Review Boards (DERBs) to review trial protocols, monitor ongoing trials, and manage their oversight responsibilities.
+    *   **Technical Considerations:** Requires document management features, secure communication channels, and role-based access to specific trial data relevant to their oversight function.
+
+## 6. Governance and Automation Systems
 
 This section specifies the systems required to fulfill the unique governance and automation mandates of the Act.
 
@@ -184,7 +215,7 @@ This section specifies the systems required to fulfill the unique governance and
     *   **Description:** A system to manage the public bounty program for code contributions and vulnerability disclosures.
     *   **Technical Considerations:** Requires integration with repository issue trackers, a payment system, and an automated verification component (potentially leveraging the AI Governance reviewer) to validate submissions and trigger payouts.
 
-## 6. Security Implementation
+## 7. Security Implementation
 
 Multi-layered security meeting regulatory requirements.
 
@@ -195,7 +226,7 @@ Multi-layered security meeting regulatory requirements.
 *   **Compliance:** Explicit controls mapped to **HIPAA** Security Rule (Administrative, Physical, Technical Safeguards) and **GDPR** articles (Lawful Basis, Data Subject Rights, Security of Processing). Regular internal/external audits. BAAs with cloud providers.
 *   **Incident Response:** Defined plan, regular testing (tabletop exercises). [Link to Plan]
 
-## 7. Infrastructure & Deployment
+## 8. Infrastructure & Deployment
 
 Automated, repeatable, and resilient infrastructure.
 
@@ -204,22 +235,7 @@ Automated, repeatable, and resilient infrastructure.
 *   **Environments:** Isolated AWS accounts or VPCs for `dev`, `staging`, `prod`. Use of realistic (anonymized/synthetic) data in staging for testing.
 *   **Scalability Strategy:** As previously specified (Stateless services, HPA, RDS Read Replicas, potential TimescaleDB clustering, ALB).
 *   **Disaster Recovery:** As previously specified (Automated backups, cross-region replication strategy, IaC for redeployment, documented DR plan with RPO/RTO targets). Regular DR testing.
-
-## 8. Performance & Scalability Requirements
-
-*(Refined illustrative placeholders)*
-
-*   **Expected Load:**
-    *   Users: Target 1M MAU Year 2, 10M MAU Year 4, 100M+ MAU Long-Term.
-    *   Data Volume: Ingestion 10 TB/month Year 2, scaling non-linearly. Storage 1 PB Year 4.
-    *   API Calls: Peak 5,000 req/sec Year 2.
-*   **Latency Requirements:**
-    *   Core User-Facing API Read: p95 < 200ms.
-    *   Core Data Write (Sync Ack): p95 < 100ms.
-    *   Async Ingestion E2E (File Upload -> Queryable): p95 < 5 minutes.
-*   **Throughput Requirements:**
-    *   Ingestion: Sustain 10,000 observations/sec.
-    *   Data Retrieval API: Support 500 concurrent complex analytical queries.
+*   **Data Retrieval API:** Support 500 concurrent complex analytical queries.
 *   **Scalability Targets:** Design to handle 5x current projected peak load; demonstrate horizontal scalability.
 
 ## 9. Appendices
