@@ -17,12 +17,12 @@ dateCreated: 2025-04-29T01:07:30.411Z
 **Transformative Benefits:**
 *   **Dramatic Cost Reductions:** The dFDA model projects average R&D clinical trial cost savings of [**50%**](#gross-r-and-d-savings-from-dfda-implementation), with exceptionally efficient designs (akin to the UK's [RECOVERY trial](https://wiki.dfda.earth/en/reference/recovery-trial), which achieved up to [**80-100x+ cost reduction**](#decentralized-trial-costs-modeled-on-oxford-recovery)) potentially achieving up to [**95% reduction**](#gross-r-and-d-savings-from-dfda-implementation). This translates to **[tens of billions of dollars in annual savings](#roi-analysis)** from the estimated [**\$100 billion global annual clinical trial expenditure**](https://www.fortunebusinessinsights.com/clinical-trials-market-106930) ([source 2](https://www.gminsights.com/industry-analysis/clinical-trials-market), [see Market Size and Impact](#market-size-and-impact)).
 *   **Accelerated Innovation & Access:** Faster, cheaper trials allow for a vastly increased volume and diversity of tested therapies, including those for rare diseases and unpatentable treatments, significantly speeding up the delivery of new medicines to patients.
-*   **Improved Health Outcomes:** The dFDA is projected to generate a baseline of **[330,000 Quality-Adjusted Life Years (QALYs) annually](#parameterization:-overall-dfda-platform-impact)** ([NBER, Glied and Lleras-Muney](https://www.nber.org/papers/w9705), [NBER, Philipson et al.](https://www.nber.org/papers/w31792), [see Appendix A.2.2](#parameterization:-overall-dfda-platform-impact)) through faster drug access, enhanced preventative care enabled by real-world data, and more personalized medicine.
+*   **Improved Health Outcomes:** The dFDA is projected to generate a baseline of **[840,000 Quality-Adjusted Life Years (QALYs) annually](#parameterization-overall-dfda-platform-impact)** ([NBER, Glied and Lleras-Muney](https://www.nber.org/papers/w9705), [NBER, Philipson et al.](https://www.nber.org/papers/w31792), [see Appendix A.2.2](#parameterization-overall-dfda-platform-impact)) through faster drug access, enabling cures for rare diseases, enhanced preventative care enabled by real-world data, and more personalized medicine.
 
 **Exceptional Economic Value:**
 *   **Return on Investment (ROI):** The dFDA platform demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**\$50 billion in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [Fortune Business Insights](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios)), with a central estimate of approximately [**463:1**](#final-roi-and-net-benefit) over 10 years. This high ratio reflects the platform's significant leverage: a relatively modest investment in a global software infrastructure that generates vast savings across the entire pharmaceutical R&D industry.
-*   **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves substantial costs and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$151,394 per QALY gained**](#sensitivity-analysis:-overall-dfda-platform-cost-effectiveness), [ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/), [see Appendix A.2.3](#sensitivity-analysis:-overall-dfda-platform-cost-effectiveness)) for core platform operations plus medium broader initiative costs), far exceeding standard government value thresholds ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)).
-*   **Daily Opportunity Cost of Inaction:** Each day the current paradigm is maintained represents a societal opportunity cost of approximately [**\$137 million** in forgone economic efficiencies and **904** in lost Quality-Adjusted Life Years (QALYs)](#daily-opportunity-cost-of-inaction).
+*   **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves substantial costs and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$59,501 per QALY gained**](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness), [ICER](https://icer.org/our-approach/methods-process/value-assessment-framework/), [see Appendix A.2.3](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)) for core platform operations plus medium broader initiative costs), far exceeding standard government value thresholds ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)).
+*   **Daily Opportunity Cost of Inaction:** Each day the current paradigm is maintained represents a societal opportunity cost of approximately [**\$137 million** in forgone economic efficiencies and **2,301** in lost Quality-Adjusted Life Years (QALYs)](#daily-opportunity-cost-of-inaction).
 
 **Conclusion:** The dFDA initiative represents a paradigm shift with the potential for profound societal and economic benefits. Its ability to drastically lower costs, accelerate medical innovation, and improve public health makes a compelling case for its implementation, supported by legislative frameworks such as the "Right to Trial & FDA Upgrade Act."
 
@@ -910,15 +910,15 @@ This table analyzes the ICER for the dFDA platform by varying key assumptions. G
 
 | Scenario                                             | R&D Trial Cost Reduction | Platform Op. Cost (Annual) | Net Incremental Cost (Annual) | Aggregate QALYs Gained (Annual) | ICER (Cost per QALY Gained) | Classification | Source/Note |
 |------------------------------------------------------|--------------------------|-----------------------------|-------------------------------|---------------------------------|-----------------------------|----------------|-------------|
-| **Base Case: Core Platform Ops Only**                | **50%** ($50B Savings)   | **$0.01875B ($18.75M)**      | **-$49.981B**                 | **330,000**                     | **-$151,458**               | **Dominant**   | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint |
-| Core Platform + Medium Broader Initiative            | 50% ($50B Savings)       | $0.04005B ($40.05M)          | -$49.96B                      | 330,000                         | -$151,394                   | Dominant       | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
-| Total Ecosystem (Low-Medium Cost)                    | 50% ($50B Savings)       | $0.5B ($500M)               | -$49.5B                       | 330,000                         | -$150,000                   | Dominant       | Illustrative total ecosystem cost |
-| Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50% ($50B Savings)       | $5B                         | -$45B                         | 330,000                         | -$136,364                   | Dominant       | Illustrative high total ecosystem cost (as prior base) |
-| Conservative R&D Savings (30%, $30B Savings)         | 30% ($30B Savings)       | $0.5B ($500M)               | -$29.5B                       | 250,000                         | -$118,000                   | Dominant       | Using Low-Med Ecosystem Cost |
-| Optimistic R&D Savings (70%, $70B Savings)           | 70% ($70B Savings)       | $0.5B ($500M)               | -$69.5B                       | 350,000                         | -$198,571                   | Dominant       | Using Low-Med Ecosystem Cost |
-| Lower Aggregate QALYs Gained                         | 50% ($50B Savings)       | $0.5B ($500M)               | -$49.5B                       | 200,000                         | -$247,500                   | Dominant       | Using Low-Med Ecosystem Cost |
-| **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ($95B Savings)   | **$0.5B ($500M)**           | **-$94.5B**                   | **400,000**                     | **-$236,250**               | **Dominant**   | Using Low-Med Ecosystem Cost, RECOVERY-inspired savings |
-| Platform Breaks Even (R&D Savings = Ops Cost)        | e.g., 0.5% ($0.5B Savings) | $0.5B ($500M)               | $0                            | 200,000                         | $0                          | Dominant (Cost-Neutral, Health Gaining) | Using Low-Med Ecosystem Cost |
+| **Base Case: Core Platform Ops Only**                | **50%** ($50B Savings)   | **$0.01875B ($18.75M)**      | **-$49.981B**                 | **840,000**                     | **-$59,501**                | **Dominant**   | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. QALYs from [new base model](#appendix-detailed-qaly-calculation-model). |
+| Core Platform + Medium Broader Initiative            | 50% ($50B Savings)       | $0.04005B ($40.05M)          | -$49.96B                      | 840,000                         | -$59,476                    | Dominant       | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
+| Total Ecosystem (Low-Medium Cost)                    | 50% ($50B Savings)       | $0.5B ($500M)               | -$49.5B                       | 840,000                         | -$58,929                    | Dominant       | Illustrative total ecosystem cost. |
+| Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50% ($50B Savings)       | $5B                         | -$45B                         | 840,000                         | -$53,571                    | Dominant       | Illustrative high total ecosystem cost (as prior base). |
+| Conservative R&D Savings (30%, $30B Savings)         | 30% ($30B Savings)       | $0.5B ($500M)               | -$29.5B                       | 190,000                         | -$155,263                   | Dominant       | Using Low-Med Ecosystem Cost & [Conservative QALYs](#summary-of-total-annual-qaly-gains). |
+| Optimistic R&D Savings (70%, $70B Savings)           | 70% ($70B Savings)       | $0.5B ($500M)               | -$69.5B                       | 3,650,000                       | -$19,041                    | Dominant       | Using Low-Med Ecosystem Cost & [Optimistic QALYs](#summary-of-total-annual-qaly-gains). |
+| Lower Aggregate QALYs Gained                         | 50% ($50B Savings)       | $0.5B ($500M)               | -$49.5B                       | 190,000                         | -$260,526                   | Dominant       | Using Low-Med Ecosystem Cost & [Conservative QALYs](#summary-of-total-annual-qaly-gains). |
+| **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ($95B Savings)   | **$0.5B ($500M)**           | **-$94.5B**                   | **3,650,000**                   | **-$25,890**                | **Dominant**   | Using Low-Med Ecosystem Cost & [Optimistic QALYs](#summary-of-total-annual-qaly-gains). |
+| Platform Breaks Even (R&D Savings = Ops Cost)        | e.g., 0.5% ($0.5B Savings) | $0.5B ($500M)               | $0                            | 840,000                         | $0                          | Dominant (Cost-Neutral, Health Gaining) | Using Low-Med Ecosystem Cost & Base QALYs. |
 
 *Note: Negative ICER values indicate that the dFDA platform is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core Platform Ops" is per the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation.*
 
@@ -926,10 +926,10 @@ This table analyzes the ICER for the dFDA platform by varying key assumptions. G
 
 The analysis robustly demonstrates that the **dFDA platform is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the core platform's technical operational costs.**
 
--   **Massive Cost Savings & Extremely Favorable Core ICER**: The core dFDA platform (with operational costs of ~$20M-$41M/year as per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM) generates tens of billions in net annual R and D savings. This results in extremely negative ICERs (e.g., ~-$151,458 per QALY), indicating exceptional value.
--   **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), the dFDA initiative remains dominant and highly cost-saving, with strongly negative ICERs (e.g., -$136,364 to -$236,250 per QALY in various scenarios).
+-   **Massive Cost Savings & Extremely Favorable Core ICER**: The core dFDA platform (with operational costs of ~$20M-$41M/year as per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM) generates tens of billions in net annual R and D savings. This results in extremely negative ICERs (e.g., ~-$59,501 per QALY), indicating exceptional value.
+-   **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), the dFDA initiative remains dominant and highly cost-saving, with strongly negative ICERs (e.g., -$25,890 to -$260,526 per QALY in various scenarios).
 
-**Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~$20M-$41M per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM), leading to ICERs around -$151,458 per QALY. Even when considering broader illustrative total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields substantial net monetary savings (e.g., -$45B to -$94.5B annually in various scenarios) while simultaneously generating hundreds of thousands of QALYs each year. The actual cost per QALY gained remains strongly negative across all these scopes, making it an exceptionally high-value proposition.**
+**Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~$20M-$41M per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM), leading to ICERs around -$59,476 per QALY. Even when considering broader illustrative total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields substantial net monetary savings (e.g., -$45B to -$94.5B annually in various scenarios) while simultaneously generating hundreds of thousands to millions of QALYs each year. The actual cost per QALY gained remains strongly negative across all these scopes, making it an exceptionally high-value proposition.**
 
 *(Optional: A note could be added here that specific programs *built upon* the dFDA platform, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
 
@@ -952,10 +952,10 @@ This section quantifies the daily societal cost of maintaining the status quo, f
 The calculations below are based on the central ("base case") estimates established in the preceding sections of this analysis.
 
 *   **Daily QALYs Lost:**
-    *   The analysis ([Parameterizing QALY Gains](#parameterization:-overall-dfda-platform-impact)) projects a baseline of **[330,000 Quality-Adjusted Life Years (QALYs) gained per year](#parameterization:-overall-dfda-platform-impact)** from the dFDA's impact on accelerating drug access, improving preventative care, and enabling personalized medicine.
+    *   The analysis ([Parameterizing QALY Gains](#parameterization:-overall-dfda-platform-impact)) projects a baseline of **[840,000 Quality-Adjusted Life Years (QALYs) gained per year](#parameterization:-overall-dfda-platform-impact)** from the dFDA's impact on accelerating drug access, improving preventative care, and enabling personalized medicine.
     *   The daily opportunity cost in lost health is therefore:
     $$
-    \frac{330,000\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{904\ \text{QALYs lost per day}}
+    \frac{840,000\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{2,301\ \text{QALYs lost per day}}
     $$
 
 *   **Daily Financial Value Lost:**
@@ -971,10 +971,10 @@ The daily costs of inaction are highly sensitive to the underlying assumptions a
 
 | Scenario                                 | R&D Trial Cost Reduction | Annual Gross Savings | Annual QALYs Gained | Daily Money Lost (Approx.) | Daily QALYs Lost (Approx.) | Note                                                                      |
 |:-----------------------------------------|:------------------------:|:--------------------:|:-------------------:|:--------------------------:|:--------------------------:|:--------------------------------------------------------------------------|
-| **Conservative**                         |           30%            |     \$30 Billion      |       150,000       |      **\$82 Million**       |          **411**           | Assumes lower efficiency gains and moderate health impact.                |
-| **Base Case**                            |         **50%**          |   **\$50 Billion**    |     **330,000**     |      **\$137 Million**      |          **904**           | **The central estimate used in this analysis.**                           |
-| **Optimistic**                           |           70%            |     \$70 Billion      |       600,000       |      **\$192 Million**      |         **1,644**          | Assumes high efficiency and significant improvements in health outcomes.  |
-| **Transformative (RECOVERY Trial-like)** |         **95%**          |   **\$95 Billion**    |     **600,000**     |      **\$260 Million**      |         **1,644**          | Reflects exceptional, RECOVERY-like efficiency and broad health benefits. |
+| **Conservative**                         |           30%            |     \$30 Billion      |       190,000       |      **\$82 Million**       |          **521**           | Assumes lower efficiency gains and moderate health impact, using [new conservative QALY model](#summary-of-total-annual-qaly-gains). |
+| **Base Case**                            |         **50%**          |   **\$50 Billion**    |     **840,000**     |      **\$137 Million**      |         **2,301**          | **The central estimate used in this analysis, based on the [revised QALY model](#summary-of-total-annual-qaly-gains).** |
+| **Optimistic**                           |           70%            |     \$70 Billion      |      3,650,000      |      **\$192 Million**      |         **10,000**         | Assumes high efficiency and significant improvements in health outcomes, using [new optimistic QALY model](#summary-of-total-annual-qaly-gains). |
+| **Transformative (RECOVERY Trial-like)** |         **95%**          |   **\$95 Billion**    |     **3,650,000**   |      **\$260 Million**      |         **10,000**         | Reflects exceptional, RECOVERY-like efficiency and broad health benefits, using [new optimistic QALY model](#summary-of-total-annual-qaly-gains). |
 
 #### Discussion of Uncertainty and Key Variables
 
@@ -1019,7 +1019,10 @@ While the figures are presented as daily point estimates for clarity, they repre
   > "The Institute for Clinical and Economic Review (ICER) often uses a benchmark range of $100,000 to $150,000 per QALY."  
   — [ICER Value Assessment Framework](https://icer.org/our-approach/methods-process/value-assessment-framework/)
 
-- **330,000 QALYs gained/year**
+- **840,000 QALYs gained/year**
+  > The dFDA platform is projected to generate 840,000 QALYs per year in its base case scenario. This is a composite metric derived from a detailed model in the appendix, which sums the impacts of (A) accelerating existing drug development, (B) improving preventative care with real-world evidence, and (C) enabling new therapies for previously untreatable rare diseases. The model is based on inputs from sources including the NBER, CDC, and GAO.
+  > — [See this document's Appendix: Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)
+- **Glied, S., and Lleras-Muney, A. (2003) - 84,000 life-years**
   > "A one-year lag in the diffusion of new cancer drugs in the US (during 1986-1996) led to an estimated loss of 84,000 life-years."  
   — [Glied, S., and Lleras-Muney, A. (2003). Health Inequality, Education and Medical Innovation. NBER Working Paper No. 9705](https://www.nber.org/papers/w9705)
   > "Existing USPSTF-recommended cancer screenings have already saved 12.2–16.2 million life-years, with potential for 15.5–21.3 million life-years at perfect adherence."  
@@ -1094,9 +1097,9 @@ This stream models the benefit of accelerating the approval of new drugs that wo
     $$
 
 *   **Scenario Values:**
-    *   **Conservative:** 15 drugs/year $\times$ 1 year acceleration $\times$ 5,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**75,000 QALYs**</a>
-    *   **Base:** 20 drugs/year $\times$ 1.5 years acceleration $\times$ 6,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**180,000 QALYs**</a>
-    *   **Optimistic:** 25 drugs/year $\times$ 2 years acceleration $\times$ 7,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**350,000 QALYs**</a>
+    *   **Conservative:** 15 drugs/year $\times$ 1 year acceleration $\times$ 6,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**90,000 QALYs**</a>
+    *   **Base:** 20 drugs/year $\times$ 1.5 years acceleration $\times$ 8,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**240,000 QALYs**</a>
+    *   **Optimistic:** 25 drugs/year $\times$ 2 years acceleration $\times$ 10,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**500,000 QALYs**</a>
 
 #### B. QALYs from Improved Prevention & Real-World Evidence (RWE)
 
@@ -1124,25 +1127,29 @@ This stream models the benefit of using the dFDA's vast data to optimize prevent
 
 #### C. QALYs from Expanded Scope (New Therapies)
 
-This stream models the benefit of enabling trials for therapies that are currently neglected due to high cost (e.g., rare diseases, unpatentable treatments, novel nutraceuticals).
+This stream models the benefit of enabling trials for therapies that are currently neglected due to high cost (e.g., rare diseases, unpatentable treatments, novel nutraceuticals). The model is based on the number of new therapies, the average patient population per therapy, and the QALY gain per patient.
 
 *   **Parameters:**
-    *   $N_{\text{new\_therapies}}$: Number of entirely new, effective therapies enabled per year for untreated rare diseases.
-        *   **Rationale:** There is a vast unmet need in the rare disease space. Lowering trial costs via the dFDA platform would catalzye research and development for this underserved population.
-        *   **Source:** Multiple government and patient advocacy sources highlight the treatment gap. There are an estimated [7,000 to 10,000 known rare diseases](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10290406/).
-        *   **Quote:** "But only about 5% of the nearly 10,000 identified rare diseases have Food and Drug Administration-approved treatments." — [U.S. Government Accountability Office (GAO), Nov 2024](https://www.gao.gov/products/gao-25-106774)
-    *   $\text{QALYs}_{\text{per\_therapy}}$: Average total QALY impact of one of these new therapies.
-        *   **Rationale:** A new therapy for a previously untreatable condition can have a profound impact on patients' lives, resulting in significant QALY gains.
+    *   $N_{\text{new\_therapies}}$: Number of entirely new, effective therapies enabled per year for untreated conditions.
+        *   **Rationale:** There is a vast unmet need in the rare disease space, with an estimated [7,000 to 10,000 known rare diseases](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10290406/) and treatments for only about 5%. Lowering trial costs via the dFDA platform would catalyze R&D for this underserved population.
+        *   **Source:** U.S. Government Accountability Office (GAO).
+        *   **Quote:** "But only about 5% of the nearly 10,000 identified rare diseases have Food and Drug Administration-approved treatments." — [GAO, Nov 2024](https://www.gao.gov/products/gao-25-106774)
+    *   $P_{\text{therapy}}$: Average number of patients benefiting from a new rare disease therapy.
+        *   **Rationale:** While "rare" in the US means affecting fewer than 200,000 people, the median prevalence is much lower. This estimate uses a conservative figure for the addressable population for a new, breakthrough therapy.
+        *   **Source:** Analysis of Orphanet data suggests a median prevalence of 1-5 per 100,000 people. ([Orphanet Journal of Rare Diseases](https://ojrd.biomedcentral.com/articles/10.1186/s13023-019-1048-8))
+    *   $\text{QALYs}_{\text{patient}}$: Average QALY gain per patient receiving a transformative therapy.
+        *   **Rationale:** A new therapy for a previously untreatable, life-threatening condition can have a profound impact, corresponding to many years of high-quality life.
+        *   **Source:** Therapies for diseases like spinal muscular atrophy or certain inherited retinal diseases can be considered near-curative, generating dozens of QALYs per patient over a lifetime.
 
 *   **Formula:** 
     $$
-    \text{QALYs}_C = N_{\text{new\_therapies}} \times \text{QALYs}_{\text{per\_therapy}}
+    \text{QALYs}_C = N_{\text{new\_therapies}} \times P_{\text{therapy}} \times \text{QALYs}_{\text{patient}}
     $$
 
 *   **Scenario Values:**
-    *   **Conservative:** 5 new therapies/year $\times$ 5,000 QALYs/therapy = <a href="#summary-of-total-annual-qaly-gains">**25,000 QALYs**</a>
-    *   **Base:** 10 new therapies/year $\times$ 2,000 QALYs/therapy = <a href="#summary-of-total-annual-qaly-gains">**20,000 QALYs**</a>
-    *   **Optimistic:** 20 new therapies/year $\times$ 5,000 QALYs/therapy = <a href="#summary-of-total-annual-qaly-gains">**100,000 QALYs**</a>
+    *   **Conservative:** 5 new therapies/year $\times$ 2,000 patients/therapy $\times$ 5 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**50,000 QALYs**</a>
+    *   **Base:** 10 new therapies/year $\times$ 5,000 patients/therapy $\times$ 10 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**500,000 QALYs**</a>
+    *   **Optimistic:** 20 new therapies/year $\times$ 10,000 patients/therapy $\times$ 15 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**3,000,000 QALYs**</a>
 
 #### Summary of Total Annual QALY Gains
 
@@ -1150,10 +1157,10 @@ This table summarizes the component calculations and derives the total QALY rang
 
 | QALY Benefit Stream | Conservative Scenario | Base Scenario | Optimistic Scenario |
 |:----------------------|:---------------------:|:-------------:|:-------------------:|
-| A. [Faster Drug Access](#a-qalys-from-faster-drug-access) | [75,000](#a-qalys-from-faster-drug-access) | [180,000](#a-qalys-from-faster-drug-access) | [350,000](#a-qalys-from-faster-drug-access) |
-| B. [Improved Prevention/RWE](#b-qalys-from-improved-prevention-real-world-evidence-rwe) | [50,000](#b-qalys-from-improved-prevention-real-world-evidence-rwe) | [100,000](#b-qalys-from-improved-prevention-real-world-evidence-rwe) | [150,000](#b-qalys-from-improved-prevention-real-world-evidence-rwe) |
-| C. [Expanded Scope](#c-qalys-from-expanded-scope-new-therapies) | [25,000](#c-qalys-from-expanded-scope-new-therapies) | [50,000](#c-qalys-from-expanded-scope-new-therapies) | [100,000](#c-qalys-from-expanded-scope-new-therapies) |
-| **Total Annual QALYs**| <a href="#parameterization-overall-dfda-platform-impact">**150,000**</a> | <a href="#parameterization-overall-dfda-platform-impact">**330,000**</a> | <a href="#parameterization-overall-dfda-platform-impact">**600,000**</a> |
+| A. [Faster Drug Access](#a-qalys-from-faster-drug-access) | [90,000](#a-qalys-from-faster-drug-access) | [240,000](#a-qalys-from-faster-drug-access) | [500,000](#a-qalys-from-faster-drug-access) |
+| B. [Improved Prevention/RWE](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [50,000](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [100,000](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [150,000](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) |
+| C. [Expanded Scope](#c-qalys-from-expanded-scope-new-therapies) | [50,000](#c-qalys-from-expanded-scope-new-therapies) | [500,000](#c-qalys-from-expanded-scope-new-therapies) | [3,000,000](#c-qalys-from-expanded-scope-new-therapies) |
+| **Total Annual QALYs**| <a href="#parameterization-overall-dfda-platform-impact">**190,000**</a> | <a href="#parameterization-overall-dfda-platform-impact">**840,000**</a> | <a href="#parameterization-overall-dfda-platform-impact">**3,650,000**</a> |
 
 
 
