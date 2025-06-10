@@ -1,13 +1,15 @@
 ---
-slug: lobbying
-name: Understanding the Return on Investment in Lobbying within the Defense Sector
+title: Understanding the Return on Investment in Lobbying within the Defense Sector
+description: Explore the significant expenditures and considerable gains of defense companies in lobbying efforts to influence government policies and secure contracts.
+published: true
+date: 2024-06-09T00:00:00.000Z
+tags: lobbying, defense-sector, roi, military-spending, government-contracts
+dateCreated: 2024-06-09T00:00:00.000Z
+editor: markdown
+fontawesomeIcon: fa-handshake
 featuredImage: /globalSolutions/1-percent-treaty/lobbying.jpg
 author:
   name: The Office of the President
-description: >-
-  Explore the significant expenditures and considerable gains of defense
-  companies in lobbying efforts to influence government policies and secure
-  contracts.
 ogImage:
   url: lobbying.png
 absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\lobbying.md'

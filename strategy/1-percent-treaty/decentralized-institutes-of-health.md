@@ -1,10 +1,13 @@
 ---
-slug: decentralized-institutes-of-health
-name: The Decentralized Institutes of Health
+title: The Decentralized Institutes of Health
+description: Radically accelerating medical research and funding by harnessing the power of decentralized science, collective intelligence, and blockchain technology.
+published: true
+date: 2024-06-09T00:00:00.000Z
+tags: decentralized-health, dih, blockchain, ai, medical-research, 1-percent-treaty
+dateCreated: 2024-06-09T00:00:00.000Z
+editor: markdown
+fontawesomeIcon: fa-hospital
 featuredImage: /globalSolutions/1-percent-treaty/decentralized-institutes-of-health.jpg
-description: >-
-  Radically Accelerating Medical Research and Funding by Harnessing the Power of
-  Decentralized Science, Collective Intelligence, and Blockchain Technology.
 ogImage:
   url: /globalSolutions/1-percent-treaty/decentralized-institutes-of-health.png
 absFilePath: >-

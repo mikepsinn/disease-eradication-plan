@@ -1,11 +1,14 @@
 ---
-slug: faq
-name: Frequently Asked Questions
-featuredImage: /globalSolutions/1-percent-treaty/faq.jpg
+title: Frequently Asked Questions
+description: Discover how a small reduction in military budgets can lead to significant advancements in health research, global cooperation, and security.
+published: true
+date: 2024-06-09T00:00:00.000Z
+tags: faq, 1-percent-treaty, military-spending, health-research, global-cooperation
+dateCreated: 2024-06-09T00:00:00.000Z
+editor: markdown
+fontawesomeIcon: fa-question-circle
 author: null
-description: >-
-  Discover how a small reduction in military budgets can lead to significant
-  advancements in health research, global cooperation, and security.
+featuredImage: /globalSolutions/1-percent-treaty/faq.jpg
 ogImage:
   url: faq.png
 absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\faq.md'

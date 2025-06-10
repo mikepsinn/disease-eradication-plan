@@ -1,15 +1,15 @@
 ---
-slug: how-much-it-will-cost-to-make-it-happen
-name: >-
-  Optimizing Costs: Strategies to Gather 80 Million Signatures for a Global
-  Initiative
+title: Optimizing Costs: Strategies to Gather 80 Million Signatures for a Global Initiative
+description: Analyzing the potential cost range per signature and total estimated costs for different strategies to achieve a goal of 80 million signatures for the LOGICAL Treaty.
+published: true
+date: 2024-06-09T00:00:00.000Z
+tags: cost-analysis, signatures, global-initiative, 1-percent-treaty, fundraising, outreach
+dateCreated: 2024-06-09T00:00:00.000Z
+editor: markdown
+fontawesomeIcon: fa-calculator
 featuredImage: /globalSolutions/1-percent-treaty/how-much-it-will-cost-to-make-it-happen.jpg
 author:
   name: The Office of the President
-description: >-
-  Analyzing the potential cost range per signature and total estimated costs for
-  different strategies to achieve a goal of 80 million signatures for the
-  LOGICAL Treaty.
 ogImage:
   url: how-much-it-will-cost-to-make-it-happen.png
 absFilePath: >-

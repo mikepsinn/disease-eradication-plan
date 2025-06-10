@@ -1,13 +1,15 @@
 ---
-slug: cost-of-war
-name: The Annual Cost of War
-featuredImage: /globalSolutions/1-percent-treaty/cost-of-war.jpg
+title: The Annual Cost of War
+description: Global military spending, its direct and indirect costs, and the per capita lifetime impact.
+published: true
+date: 2024-06-09T00:00:00.000Z
+tags: cost-of-war, military-spending, global-economics, peace-dividend, per-capita-cost
+dateCreated: 2024-06-09T00:00:00.000Z
+editor: markdown
+fontawesomeIcon: fa-bomb
 author:
   name: The Wishonian Bureau of Economic Research
-description: >-
-  Global military spending nearly doubled from $1.1 trillion in 2000 to $1.9
-  trillion in 2020 (in 2020 inflation-adjusted dollars). This is an average
-  increase of $3.9% or $42 billion a year.
+featuredImage: /globalSolutions/1-percent-treaty/cost-of-war.jpg
 ogImage:
   url: /military-spending-scenarios-chart.png
 absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\cost-of-war.md'

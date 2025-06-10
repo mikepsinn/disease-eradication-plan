@@ -1,13 +1,15 @@
 ---
-slug: logical-proof
-name: "Logical Proof: The Case for the Global 1% Treaty"
-date: Include publication date
+title: Logical Proof: The Case for the Global 1% Treaty
+description: Exploring the logical reasoning behind reallocating 1% of military spending to medical research through international cooperation and decentralized funding.
+published: true
+date: 2024-06-09T00:00:00.000Z
+tags: logical-proof, 1-percent-treaty, military-spending, medical-research, decentralized-funding, lobbying
+dateCreated: 2024-06-09T00:00:00.000Z
+editor: markdown
+fontawesomeIcon: fa-balance-scale
 featuredImage: /globalSolutions/1-percent-treaty/logical-proof.jpg
 author:
   name: The Office of the President
-description: >-
-  Exploring the logical reasoning behind reallocating 1% of military spending to
-  medical research through international cooperation and decentralized funding.
 ogImage:
   url: logical-proof.png
 absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\logical-proof.md'

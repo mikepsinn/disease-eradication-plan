@@ -1,13 +1,16 @@
 ---
-slug: existential-risk
-name: The Dangers of Excessive Military Spending and the AI Arms Race
+title: The Dangers of Excessive Military Spending and the AI Arms Race
+description: Exploring the implications of current military expenditures on global security and the looming threats posed by the AI arms race.
+published: true
+date: 2024-06-09T00:00:00.000Z
+tags: existential-risk, military-spending, ai-arms-race, global-security, nuclear-weapons
+dateCreated: 2024-06-09T00:00:00.000Z
+editor: markdown
+fontawesomeIcon: fa-skull-crossbones
 featuredImage: /globalSolutions/1-percent-treaty/existential-risk.jpg
 author:
   name: Wishonian Department of Defense
   picture: false
-description: >-
-  Exploring the implications of current military expenditures on global security
-  and the looming threats posed by the AI arms race.
 ogImage:
   url: military-spending-scenarios-chart.png
 absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\existential-risk.md'
