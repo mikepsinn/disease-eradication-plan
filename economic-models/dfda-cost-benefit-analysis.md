@@ -355,7 +355,7 @@ For this analysis, we use a conservative baseline estimate of **[\$100 billion p
 * **Example Calculation:** U.S. annual prescription drug spending is [~\$360B](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet). If 50% of the market is affected and prices drop by 25%, annual savings = \$360B × 0.5 × 0.25 = **\$45B**.
 * **References:**
   * Sarnak, D. O., et al. (2017). [Paying for Prescription Drugs Around the World: Why Is the U.S. an Outlier?](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
-  * Kesselheim, A. S., et al. (2016). [The high cost of prescription drugs in the United States.](https://jamanetwork.com/journals/jama/fullarticle/2545691)
+  * Kesselheim, A. S., et al. (2016). [The high cost of prescription drugs in the United States.](https://jamanetwork.com/journals/jama/article-abstract/2545691)
 
 Beyond direct importation effects, the fundamental efficiencies introduced by the dFDA platform—drastically reduced R&D costs and accelerated development timelines—are anticipated to further enhance overall market competition for medicines. By lowering the barriers to entry for bringing novel therapies, as well as generics and biosimilars, to market, the dFDA can foster a richer landscape of therapeutic alternatives. A greater number of competing products for similar indications is a well-established economic driver for lower final drug prices, benefiting payors and patients alike. While quantifying this specific effect on end-user drug prices is complex and multifactorial, the structural changes proposed by the dFDA strongly support a trend towards increased affordability through enhanced market competition.
 
@@ -1045,7 +1045,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 * **840,000 QALYs gained/year**
   > The dFDA platform is projected to generate 840,000 QALYs per year in its base case scenario. This is a composite metric derived from a detailed model in the appendix, which sums the impacts of (A) accelerating existing drug development, (B) improving preventative care with real-world evidence, and (C) enabling new therapies for previously untreatable rare diseases. The model is based on inputs from sources including the NBER, CDC, and GAO.
-  > — [See this document's Appendix: Detailed QALY Calculation Model](#appendix:-detailed-qaly-calculation-model)
+  > — [See this document's Appendix Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)
 * **Glied, S., and Lleras-Muney, A. (2003) - 84,000 life-years**
   > "A one-year lag in the diffusion of new cancer drugs in the US (during 1986-1996) led to an estimated loss of 84,000 life-years."  
   — [Glied, S., and Lleras-Muney, A. (2003). Health Inequality, Education and Medical Innovation. NBER Working Paper No. 9705](https://www.nber.org/papers/w9705)
@@ -1116,7 +1116,7 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 | **dFDA Platform (Lean Ecosystem)** | **~\$40 Million / year** | **1x (Baseline)** | [This analysis](#simplified-roi-scenario) |
 | **Cancer Moonshot Initiative** | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years) | **~6.4x** | [21st Century Cures Act](https://www.cancer.gov/about-nci/budget) |
 | **NIH "All of Us" Research Program** | **[~\$500 Million / year](https://www.nih.gov/about-nih/what-we-do/budget/appropriations)** (FY23 Approx. Budget) | **~12.5x** | [NIH Funding Data](https://www.nih.gov/about-nih/what-we-do/budget/appropriations) |
-| **HealthCare.gov (Initial Build)** | **[~\$1.7 - \$2.1 Billion](https://www.gao.gov/products/gao-14-694t)** (Total Upfront Cost) | **~42x - 52x** (of one year's dFDA cost) | [GAO Reports / Public Reporting](https://www.gao.gov/products/gao-14-694t) |
+| **HealthCare.gov (Initial Build)** | **[~\$1.7 - \$2.1 Billion](https://www.gao.gov/assets/gao-07-49.pdf)** (Total Upfront Cost) | **~42x - 52x** (of one year's dFDA cost) | [GAO Reports / Public Reporting](https://www.gao.gov/assets/gao-07-49.pdf) |
 | **National Cancer Institute (NCI)** | **[~\$7.2 Billion / year](https://www.cancer.gov/about-nci/budget)** (FY25 Budget) | **~180x** | [NCI Budget Data](https://www.cancer.gov/about-nci/budget) |
 
 **Key Takeaway:** The estimated annual cost of the dFDA initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from [dFDA annual cost](#simplified-roi-scenario) and [NCI budget](#comparison-to-other-major-public-investments)). This comparison underscores that the dFDA platform is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
