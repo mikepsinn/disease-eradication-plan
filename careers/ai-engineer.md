@@ -2,7 +2,7 @@
 title: AI Engineer
 description: Software and AI engineer wanted to help eradicate disease
 published: true
-date: 2025-06-10T07:02:57.880Z
+date: 2025-06-10T07:03:03.711Z
 tags: jobs
 editor: markdown
 dateCreated: 2025-06-10T07:01:46.646Z
