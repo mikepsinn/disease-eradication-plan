@@ -32,9 +32,13 @@ paths:
         - in: query
           name: variable_ids
           schema:
-            type: string
+            type: array
+            items:
+              type: string
+          style: form
+          explode: false
           required: true
-          description: A comma-separated list of variable IDs to retrieve.
+          description: A comma-separated list of variable IDs to retrieve (e.g., variable_ids=abc,def,ghi).
         - in: query
           name: start_date
           schema:
