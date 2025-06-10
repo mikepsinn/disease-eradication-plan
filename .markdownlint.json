@@ -5,5 +5,8 @@
   "MD033": false,
   "MD036": false,
   "MD012": false,
-  "MD007": false
+  "MD007": false,
+  "ignore": [
+    "node_modules"
+  ]
 } 
