@@ -890,7 +890,7 @@ To meet the standards of government and health technology assessment (HTA) bodie
 
 * **US Willingness-to-Pay Threshold**: Typically $100,000–$150,000 per QALY for interventions that *add* costs ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)). Dominant interventions are favorable regardless of this threshold.
 
-#### Parameterization: Overall dFDA Platform Impact
+#### Parameterization Overall dFDA Platform Impact
 
 The dFDA platform's primary economic impact comes from significantly reducing R&D costs, particularly in clinical trials. Its health impact (QALYs) stems from accelerating drug development, enabling better prevention, and improving access.
 
@@ -928,7 +928,7 @@ The dFDA platform's primary economic impact comes from significantly reducing R&
 
 **(Net Incremental Cost will be calculated in the table based on these operational cost scenarios and the $50B gross R and D savings for the 50% reduction case).**
 
-#### Sensitivity Analysis: Overall dFDA Platform Cost-Effectiveness
+#### Sensitivity Analysis Overall dFDA Platform Cost-Effectiveness
 
 This table analyzes the ICER for the dFDA platform by varying key assumptions. Global Clinical Trial Spending Addressable by dFDA is assumed at $100B/year (leading to $50B gross savings in the 50% reduction scenario) unless otherwise specified.
 
