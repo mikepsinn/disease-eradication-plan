@@ -10,7 +10,7 @@ import numpy as np
 # QALYs per $1M = 1,000,000 / ICER
 # Dominant or cost-saving interventions are given high illustrative values.
 interventions = [
-    ("dFDA Platform", 4744, 194667),
+    ("Decentralized FDA", 4744, 194667),
     ("Smallpox Eradication", 10000, 100000), # Illustrative high range for dominant intervention
     ("Childhood Vaccinations", 22, 10000), # From dominant (high value) to ~$45k/QALY (1M/45k=22)
     ("Clean Water Programs", 100, 1000), # $1k-$10k/QALY -> 1M/10k=100, 1M/1k=1000
