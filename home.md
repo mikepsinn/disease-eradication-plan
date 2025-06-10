@@ -194,7 +194,7 @@ Look up your condition and see how different foods, drugs and supplements tend t
 
 <img src="https://wiki.dfda.earth/right_to_trial_act_image.jpg" alt="Disease Eradication Act" style="max-width: 600px; width: 100%;" />
 
-## Stay Up to Date!
+## Stay Up to Date
 
 Join our newsletter to receive updates on clinical trials, research breakthroughs, and ways to get involved.
 

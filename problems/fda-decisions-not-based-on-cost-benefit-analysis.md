@@ -20,6 +20,7 @@ https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-
 This analysis is conducted from a societal perspective so that both direct medical costs (e.g., the cost of wasted mAb doses) and indirect costs (e.g., lost productivity due to long-term cognitive impairments) are included.
 
 **Time Horizon and Discounting:**  
+
 - **Acute impacts:** A 1-year horizon is used to capture immediate effects (hospitalizations, ICU admissions, and mortality).  
 - **Long-term impacts:** A lifetime horizon is employed to account for the future loss of QALYs and long-term productivity losses.  
 - **Discount rate:** Both costs and health outcomes are discounted at 3% per year.
@@ -115,6 +116,7 @@ We now aggregate the three major components:
    \$13.05 billion to \$97.88 billion (base-case: \$43.50 billion)
 
 **Total Estimated Economic Impact:**  
+
 - **Base-case estimate:**  
   \$4.35B + \$7.25B + \$43.50B ≈ \$55.10 billion
 - **Range (90% CI):**  
@@ -128,6 +130,7 @@ Thus, our updated analysis suggests that the total economic impact attributable 
 ## 5. Sensitivity and Scenario Analyses
 
 A series of one-way sensitivity analyses shows that our results are most sensitive to the following parameters:
+
 - **Number of wasted doses and cost per dose:** Variations directly alter the direct cost loss component.
 - **QALY gain per dose and WTP per QALY:** These largely drive the monetized health loss estimates.
 - **Assumptions regarding the incidence of long-term cognitive impairments and their valuation:** Small changes in the affected population or IQ point valuation can substantially shift productivity loss estimates.
@@ -156,6 +159,7 @@ Probabilistic sensitivity analyses (using Monte Carlo simulation techniques) wou
 | **Total Economic Impact** | Sum of above components                              | ~\$55.1 billion        | ~\$19.2 billion – ~\$117.5 billion |
 
 ### Graphical Representations
+
 - **Sensitivity Tornado Diagrams:**  
   Graphs showing how variations in each key parameter (waste volume, cost per dose, QALY gain, WTP, and productivity parameters) affect the overall economic impact.
 - **Scenario Analysis Charts:**  
@@ -166,11 +170,13 @@ Probabilistic sensitivity analyses (using Monte Carlo simulation techniques) wou
 ## 7. Discussion and Policy Implications
 
 ### Interpretation
+
 Our analysis indicates that the FDA's revocation of EUAs for COVID-19 mAb therapies may have imposed substantial economic costs. In the base-case scenario, approximately \$55.10 billion in total economic losses can be attributed to this decision. However, due to uncertainty in the underlying parameters, our 90% confidence interval spans from roughly \$19.23 billion to \$117.48 billion.
 
 Key uncertainties include the exact number of wasted doses, the negotiated price per dose, and the precise health benefit (in QALYs) conferred per mAb dose if administered. The valuation of long-term productivity losses from cognitive impairments is also a major driver. These findings underscore the need for regulatory decision-making that carefully weighs not only immediate safety and efficacy data (often from in vitro studies) but also long-term clinical outcomes and economic impacts.
 
 ### Policy Recommendations
+
 - **Enhance Data Collection:**  
   Invest in real-world evidence systems to monitor both short-term and long-term outcomes (e.g., QALYs and cognitive function) so that future regulatory decisions can be more data-driven.
 - **Incorporate Robust Economic Evaluations:**  
@@ -186,11 +192,11 @@ Key uncertainties include the exact number of wasted doses, the negotiated price
 
 - FDA EUA Revocation Announcement:  
   https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-revokes-emergency-use-authorization-monoclonal-antibody-bamlanivimab  
- 
+
 
 - Cost-Effectiveness Study (Journal of Korean Medical Science):  
   https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8576440/  
- 
+
 
 - NPR on Cognitive Outcomes and Productivity Loss:  
   https://www.npr.org/sections/health-shots/2022/11/20/1137892932/  

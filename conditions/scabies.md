@@ -25,16 +25,18 @@ dateCreated: 2025-01-22T08:07:28.742Z
 ## Detailed Analysis
 
 ### 1. Permethrin 5% Cream
+
 - **Efficacy**: [Studies show](https://www.sciencedirect.com/science/article/pii/S0190962219300714) cure rates of 89-95%, making it one of the most effective treatments
 - **Safety**: Excellent safety profile with minimal side effects
-- **Advantages**: 
+- **Advantages**:
   - First-line treatment in many countries
   - Safe for use in pregnant women and children
-- **Disadvantages**: 
+- **Disadvantages**:
   - Requires full-body application
   - Some resistance reported in certain regions
 
 ### 2. Oral Ivermectin
+
 - **Efficacy**: [Clinical trials demonstrate](https://pubmed.ncbi.nlm.nih.gov/22385121/) comparable efficacy to permethrin
 - **Safety**: Generally well-tolerated but more systemic effects than topical treatments
 - **Advantages**:
@@ -45,6 +47,7 @@ dateCreated: 2025-01-22T08:07:28.742Z
   - May require multiple doses
 
 ### 3. Tenutex
+
 - **Efficacy**: [Research indicates](https://pmc.ncbi.nlm.nih.gov/articles/PMC7981678/) effectiveness particularly in cases resistant to permethrin
 - **Safety**: Good safety profile with moderate skin irritation risk
 - **Advantages**:
@@ -55,6 +58,7 @@ dateCreated: 2025-01-22T08:07:28.742Z
   - Limited availability in some regions
 
 ### 4. Disulfiram
+
 - **Efficacy**: [Limited studies show](https://www.mdpi.com/2079-6382/12/3/524) moderate effectiveness
 - **Safety**: Requires careful monitoring due to potential side effects
 - **Advantages**:
@@ -103,21 +107,26 @@ Treatment selection should be individualized based on factors including local re
 ## Sources and Citations
 
 ### Permethrin (89-95% cure rate)
+>
 > "A network meta-analysis of 52 trials including 9917 patients indicated that permethrin (the reference treatment) had a significantly higher cure rate than other treatments... with cure rates ranging from 89-95% in controlled trials."
 Source: [Journal of the American Academy of Dermatology](https://www.sciencedirect.com/science/article/pii/S0190962219300714)
 
 ### Oral Ivermectin (85-95% cure rate)
+>
 > "Treatment of scabies with oral ivermectin showed cure rates between 85-95%, comparable to topical permethrin in efficacy."
 Source: [PubMed - Clinical Trial Comparison](https://pubmed.ncbi.nlm.nih.gov/22385121/)
 
 ### Tenutex (100% cure rate in resistant cases)
+>
 > "Eleven patients who had failed treatment with topical 5% permethrin were cured using Tenutex®" - Study showed 100% effectiveness in this small sample (n=11) of permethrin-resistant cases.
 Source: [PMC Article on Resistant Cases](https://pmc.ncbi.nlm.nih.gov/articles/PMC7981678/)
 
 ### Disulfiram
+>
 > "Animal studies and well-controlled clinical trials are needed to assess its safety and efficacy for non-alcohol-related indications."
 Source: [PMC Article on Disulfiram](https://pmc.ncbi.nlm.nih.gov/articles/PMC10044060/)
 
 ### Benzyl Benzoate (70-75% cure rate)
+>
 > "Benzyl benzoate showed cure rates of 70-75% in comparative studies, offering a cost-effective alternative in resource-limited settings."
 Source: [Annals of Parasitology](https://annals-parasitology.eu/archive_2001_2022/2013-59-1_31.pdf)

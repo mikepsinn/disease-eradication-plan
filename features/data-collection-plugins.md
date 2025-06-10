@@ -24,6 +24,7 @@ Diagram showing data collection ranging from human and public data sources, ulti
 Ultimately, the system should be able to handle the following data types:
 
 Ultimately, the system should be able to handle the following data types:
+
 - Omics data (e.g., genomics, proteomics, metabolomics, etc.)
 - Image and physiological data (e.g., CT, PET/SPECT, sMRI, fMRI, rMRI, DTI, EEG, MEG, ultrasound, cellular level imaging, multi-electrode recording, etc.)
 - Clinical data (e.g., lab tests, pathology, imaging, diagnosis, electronic health records, etc.)
@@ -35,9 +36,9 @@ Ultimately, the system should be able to handle the following data types:
 
 ### Automated Data Acquisition
 
-Currently, it requires a lot of effort and diligence on the part of the self-tracker to gather the data required to identify the triggers of illness and quantify the effectiveness of different treatments. 
+Currently, it requires a lot of effort and diligence on the part of the self-tracker to gather the data required to identify the triggers of illness and quantify the effectiveness of different treatments.
 
-Tracking one’s mood, diet, sleep, activity, and medication intake can be extremely time-consuming. 
+Tracking one’s mood, diet, sleep, activity, and medication intake can be extremely time-consuming.
 
 The Automated Data Acquisition automatically pulls data from a number of data sources (adding more all the time).The data sources would include:
 

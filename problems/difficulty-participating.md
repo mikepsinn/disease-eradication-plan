@@ -31,4 +31,4 @@ Implementing a global automated decentralized clinical trial platform and databa
 
 - **Flexible Participation**: Remote data collection allows patients to participate without the constraints of location, reducing geographical and financial barriers.
 
-By leveraging such a platform, we can bridge the gap between patient willingness and actual participation, making clinical trials more inclusive and efficient. 
+By leveraging such a platform, we can bridge the gap between patient willingness and actual participation, making clinical trials more inclusive and efficient.

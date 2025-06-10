@@ -18,6 +18,7 @@ The FDA approved [55 drugs in 2023](https://www.fda.gov/drugs/novel-drug-approva
 - The rest just suffer ☹️
 
 ## Sources
+
 - [GAO Report on Drug Development](https://www.gao.gov/products/gao-25-106774)
 - [FDA Information on Disease](https://www.fda.gov/patients/rare-diseases-fda)
 

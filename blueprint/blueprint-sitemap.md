@@ -19,6 +19,7 @@ dateCreated: '2025-02-12T16:50:24.919Z'
 
 **Intro Text (Brief):**  
 Current healthcare systems treat diseases instead of eradicating them. We spend billions on drugs that mask symptoms. We wait decades for effective treatments. We rely on outdated approval processes. It doesn’t have to be this way. This initiative proposes a simple plan:
+
 1. Define what a disease-free world looks like.
 2. Create a roadmap to achieve it.
 3. Let the world vote.
@@ -26,6 +27,7 @@ Current healthcare systems treat diseases instead of eradicating them. We spend 
 5. Implement a system that ends unnecessary suffering.
 
 **Call to Action:**
+
 - Learn the plan.
 - Get involved.
 - Help push the world toward a future without preventable disease.
@@ -54,6 +56,7 @@ It’s not a mystery why we fail. The incentives are backward. The system needs 
 
 **Content:**  
 Imagine a world where:
+
 - Each disease has a known, data-driven set of treatments ranked by real effectiveness.
 - Prevention is the norm. Young people grow old without suffering chronic conditions that once seemed inevitable.
 - If a treatment cures a disease, it’s celebrated and rewarded. Healthcare no longer profits from keeping people sick.
@@ -68,6 +71,7 @@ This Blueprint describes what such a world looks like. It sets the target before
 **Page Goal:** Show how to get from today’s reality to the blueprint’s vision.
 
 **Content:**
+
 1. **Data Infrastructure:** Create a global, decentralized FDA (dFDA) that ranks treatments by real-world effectiveness and costs.
 2. **Patient Participation:** Let patients easily join trials, report outcomes, and improve the ranking system.
 3. **Reward Prevention and Cures:** Introduce a 50/50 savings split. When a cure saves billions, half the savings go to society, half to the cure’s creators. This makes cures profitable and encourages investment.
@@ -97,6 +101,7 @@ If the majority supports the plan, we move to legal implementation.
 **Page Goal:** Outline the key provisions of the legislation that locks in the system.
 
 **Content:**
+
 - **Creation of the dFDA:** A global, algorithmic system to analyze all treatment data and rank options.
 - **Patient Rights:** Immediate access to top-ranked treatments and the ability to share outcome data easily.
 - **50/50 Savings Sharing:** If a new therapy cures or prevents a costly disease, half of the saved costs return to society, half to its creators.
@@ -112,6 +117,7 @@ This Act turns the vision into enforceable rules.
 **Page Goal:** Detail the dFDA’s function and importance.
 
 **Content:**
+
 - **Data Collection:** Patients, clinics, researchers submit time-series data on treatments and outcomes.
 - **Algorithmic Ranking:** Automated analysis identifies which treatments yield the best quality-adjusted life years (QALYs) improvements.
 - **Continuous Improvement:** As more data pours in, rankings update. Treatments improve, bad options fade.
@@ -126,6 +132,7 @@ The dFDA replaces guesswork with evidence, making healthcare decisions data-driv
 **Page Goal:** Show how incentives align to produce cures.
 
 **Content:**
+
 - **Current Issue:** Drug makers often profit from long-term patient dependence.
 - **New Model:** When a treatment slashes costs, it generates savings. Society reclaims half, and innovators get the other half.
 - **Result:** Innovators focus on cures, not just symptom management. Governments and payers see reduced costs, fueling more support for the system.
@@ -158,6 +165,7 @@ This corrects the misaligned incentives that kept diseases profitable.
 **Page Goal:** Encourage visitors to help.
 
 **Content:**
+
 - **For Patients:** Sign up to share outcomes (once the system is live), advocate for the roadmap, demand better data access.
 - **For Researchers and Developers:** Contribute tools, analytics methods, and improved algorithms.
 - **For Employers, Insurers, Governments:** Provide initial funding, test pilot projects, adopt policies aligning with prevention.
@@ -172,6 +180,7 @@ Participation doesn’t require heroics—just share the information, talk to le
 **Page Goal:** Offer data sources, research papers, and policy briefs.
 
 **Content:**
+
 - Links to research on cost of chronic diseases.
 - Analyses of how incentive shifts reduce long-term healthcare spending.
 - Whitepapers outlining the technical specs of the dFDA.
@@ -184,6 +193,7 @@ Participation doesn’t require heroics—just share the information, talk to le
 **Page Goal:** Direct guidance for legislators and regulators.
 
 **Content:**
+
 - **Policy Briefs:** Clear summaries of the Act’s components.
 - **Cost-Benefit Analysis:** Show projected savings and political advantages of supporting a system that voters globally approve.
 - **Implementation Steps:** Legal language templates, guidance on integrating local healthcare laws, and timelines for rolling out the dFDA.
@@ -195,6 +205,7 @@ Participation doesn’t require heroics—just share the information, talk to le
 **Page Goal:** Practical info for doctors, nurses, and clinics.
 
 **Content:**
+
 - How to access the dFDA rankings.
 - How to submit patient outcomes data easily.
 - Understanding new incentives: why cures are now encouraged, not just treatments.
@@ -207,6 +218,7 @@ Participation doesn’t require heroics—just share the information, talk to le
 **Page Goal:** Technical details and open-source collaboration info.
 
 **Content:**
+
 - API documentation for submitting data.
 - Algorithms explained: ranking methods, metrics used (QALYs, cost-effectiveness).
 - Open-source repositories, code samples, contribution guidelines.
@@ -218,6 +230,7 @@ Participation doesn’t require heroics—just share the information, talk to le
 **Page Goal:** Provide a way to reach out and disclaimers.
 
 **Content:**
+
 - Contact form or email address for inquiries.
 - Disclaimer that this is a proposed framework, not yet enacted law.
 - Privacy policy and data use statements.

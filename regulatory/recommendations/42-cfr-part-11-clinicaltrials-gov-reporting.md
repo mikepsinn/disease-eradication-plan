@@ -29,12 +29,13 @@ fontawesomeIcon: fa-chart-line
 
 This regulation aims to increase the public availability of information about clinical trials. It requires responsible parties to register applicable clinical trials and submit summary results information to the ClinicalTrials.gov data bank, promoting transparency and allowing researchers and the public to access trial information.
 
-### Tell me what it actually does (i.e. what are the its impact, intentional or unintentional - details and numbers are helpful here even if estimates). If both good and bad impacts exist, address both.
+### Tell me what it actually does (i.e. what are the its impact, intentional or unintentional - details and numbers are helpful here even if estimates). If both good and bad impacts exist, address both
 
 While promoting transparency, the regulation creates distinct administrative processes that can be duplicative when modern trial platforms are used:
-*   **Administrative Burden:** Requires separate data entry and management processes specifically for ClinicalTrials.gov, duplicating effort already expended in managing the trial within internal or platform systems.
-*   **Timelines:** Reporting deadlines can be challenging to meet, requiring dedicated resources.
-*   **Lack of Integration:** The system is often not well-integrated with primary trial management platforms, requiring manual data transfer or re-entry, increasing the risk of errors and consuming staff time.
+
+* **Administrative Burden:** Requires separate data entry and management processes specifically for ClinicalTrials.gov, duplicating effort already expended in managing the trial within internal or platform systems.
+* **Timelines:** Reporting deadlines can be challenging to meet, requiring dedicated resources.
+* **Lack of Integration:** The system is often not well-integrated with primary trial management platforms, requiring manual data transfer or re-entry, increasing the risk of errors and consuming staff time.
 
 ### Should it be rescinded, and if so, why? (remember, if something has some good impact, it may be hard to rescind without a replacement, so modifying may be the better course)
 
@@ -43,8 +44,9 @@ No, the goal of public trial registration and results reporting is valuable for 
 ### Should it be modified and if so, how?
 
 Yes, significantly modified to recognize platform capabilities:
-*   **Repeal Duplicative Submissions:** Repeal the regulation mandating submission *specifically to ClinicalTrials.gov* for trials conducted on certified dFDA platforms that provide a publicly accessible interface containing all required registration and results information (protocol, status, results, etc.) in a standardized format.
-*   **Mandate API Integration (Alternative):** As an alternative or interim step, mandate and standardize API integration for automated registration and results submission directly from certified trial platforms to ClinicalTrials.gov, eliminating manual data entry.
-*   **Streamline Data Entry:** Simplify data entry processes and requirements within the existing system.
-*   **Realistic Timelines:** Ensure reporting timelines are realistic and achievable.
-*   **Expand Metadata:** Consider expanding required data fields to include platform-specific metadata if necessary for enhanced transparency and analysis of platform-based trials. 
+
+* **Repeal Duplicative Submissions:** Repeal the regulation mandating submission *specifically to ClinicalTrials.gov* for trials conducted on certified dFDA platforms that provide a publicly accessible interface containing all required registration and results information (protocol, status, results, etc.) in a standardized format.
+* **Mandate API Integration (Alternative):** As an alternative or interim step, mandate and standardize API integration for automated registration and results submission directly from certified trial platforms to ClinicalTrials.gov, eliminating manual data entry.
+* **Streamline Data Entry:** Simplify data entry processes and requirements within the existing system.
+* **Realistic Timelines:** Ensure reporting timelines are realistic and achievable.
+* **Expand Metadata:** Consider expanding required data fields to include platform-specific metadata if necessary for enhanced transparency and analysis of platform-based trials.

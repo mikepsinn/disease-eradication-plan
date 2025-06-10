@@ -23,11 +23,13 @@ Pelizaeus-Merzbacher Disease (PMD) is a rare genetic disorder affecting the cent
 ---
 
 **Key Effectiveness Metrics:**
+
 - ION356 extended mouse lifespan by [35% versus controls](https://www.pmdfoundation.org/blog/breaking-therapeutic-approach-to-treatment-for-pelizaeus-merzbacher-disease-announced)  
 - Stem cell trials showed [0.8mm³/year new myelin growth](https://www.pmdfoundation.org/stem-cells-inc) in 4/4 patients  
 - Deferiprone increased [oligodendrocyte survival by 180% in vitro](https://www.ucsf.edu/news/2019/10/415546/stem-cell-studies-offer-hope-childhood-neurological-condition)
 
 **Trial Status (as of March 2025):**
+
 - [ION356 ORBIT study](https://clinicaltrials.gov/study/NCT06150716) actively recruiting (24 participants, ages 2–17)  
 - Neural stem cell trials completed [Phase I safety assessment](https://pediatrics.ucsf.edu/pmd-clinical-trial)  
 - [3 new PMD trials](https://www.pmdfoundation.org) expected to launch by Q4 2025 per PMD Foundation forecasts

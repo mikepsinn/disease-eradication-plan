@@ -13,6 +13,7 @@ date: '2022-08-26T20:24:32.745Z'
 dateCreated: '2022-07-27T21:22:28.927Z'
 ---
 
-## **Mission:** 
+## **Mission:**
+
 **Taking the responsibility for speeding up the intervention development cycle by engaging the people with advanced personal health management and connecting them to research**
 

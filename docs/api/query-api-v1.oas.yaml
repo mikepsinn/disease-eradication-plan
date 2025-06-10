@@ -1,0 +1,168 @@
+openapi: 3.0.3
+info:
+  title: FDA.gov v2 - Data Retrieval API
+  description: |-
+    API for querying and retrieving health data from the FDA.gov v2 Platform.
+    All endpoints require OAuth 2.0 authentication with appropriate scopes.
+  version: 1.0.0
+servers:
+  - url: https://api.fda-v2.gov/
+tags:
+  - name: Querying
+    description: Endpoints for retrieving data.
+paths:
+  /v1/query/observations:
+    get:
+      tags:
+        - Querying
+      summary: Query observations
+      description: |-
+        Retrieves a time-series of observations based on specified filters.
+        Results are paginated.
+      security:
+        - oAuth2AuthCode: [data:read]
+      parameters:
+        - in: query
+          name: user_id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: The ID of the user whose data is being requested.
+        - in: query
+          name: variable_ids
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: false
+          required: true
+          description: A comma-separated list of variable IDs to retrieve (e.g., variable_ids=abc,def,ghi).
+        - in: query
+          name: start_date
+          schema:
+            type: string
+            format: date-time
+          required: true
+          description: The start of the time range (ISO 8601).
+        - in: query
+          name: end_date
+          schema:
+            type: string
+            format: date-time
+          required: true
+          description: The end of the time range (ISO 8601).
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 100
+          description: The maximum number of observations to return.
+        - in: query
+          name: offset
+          schema:
+            type: integer
+            default: 0
+          description: The offset for pagination.
+      responses:
+        '200':
+          description: OK. A list of observations matching the query.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObservationQueryResult'
+        '400':
+          description: Bad Request. Invalid or missing query parameters.
+        '401':
+          description: Unauthorized. Invalid or missing authentication token.
+        '403':
+          description: Forbidden. The token does not have the required scope or permission to access the requested data.
+
+  /v1/query/variables:
+    get:
+      tags:
+        - Querying
+      summary: List available variables
+      description: Retrieves a list of all measurable variables defined in the system.
+      security:
+        - oAuth2AuthCode: [data:read]
+      parameters:
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: A search term to filter variables by name or category.
+      responses:
+        '200':
+          description: OK. A list of variable definitions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VariableDefinition'
+        '401':
+          description: Unauthorized.
+
+components:
+  schemas:
+    Observation:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        variable_id:
+          type: string
+          format: uuid
+        value:
+          type: number
+          format: float
+        unit:
+          type: string
+          description: UCUM code for the unit.
+
+    ObservationQueryResult:
+      type: object
+      properties:
+        query_parameters:
+          type: object
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Observation'
+        pagination:
+          type: object
+          properties:
+            total:
+              type: integer
+            limit:
+              type: integer
+            offset:
+              type: integer
+
+    VariableDefinition:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        category:
+          type: string
+        description:
+          type: string
+        default_unit:
+          type: string
+
+  securitySchemes:
+    oAuth2AuthCode:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.fda-v2.gov/oauth2/auth
+          tokenUrl: https://auth.fda-v2.gov/oauth2/token
+          scopes:
+            data:read: Grants read access to data. 

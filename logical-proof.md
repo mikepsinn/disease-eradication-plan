@@ -25,6 +25,7 @@ Here is a formal quantitative logical proof regarding whether disease advocacy n
 | Actual treatments tested annually | ~2,000 |
 
 Despite decades of funding and billions of dollars spent by the NIH/FDA:
+
 - No comprehensive global database of clinical data exists
 - No centralized repository of treatment effectiveness across conditions
 - No accessible platform for sharing real-world evidence with regulators
@@ -55,11 +56,13 @@ Despite decades of funding and billions of dollars spent by the NIH/FDA:
 ## Quantitative Analysis
 
 ### Development Phase (Years 0-3)
+
 - **Total Cost**: $500 million
 
 ### Adoption Phase (Years 4-8)
 
 As adoption increases over time, we would expect:
+
 - **Traditional trials**: Decreasing volume and increasing costs per trial
 - **FDA.gov v2 trials**: Increasing volume at significantly lower cost per trial
 - **Total impact**: Progressive cost savings and higher trial volumes
@@ -67,6 +70,7 @@ As adoption increases over time, we would expect:
 ## Impact Summary
 
 ### Trial Volume
+
 - **Traditional System**: Limited growth in trial numbers
 - **FDA.gov v2**: Substantial increase in affordable trials
 - **Total**: Significant expansion of medical research capacity
@@ -94,6 +98,7 @@ The analysis demonstrates compelling evidence for prioritizing FDA.gov v2:
 4. **Health Impact**: Potential treatments for thousands of currently neglected diseases
 
 **Critical Opportunity Cost**: Every year we delay implementing a decentralized FDA system means:
+
 - 358,000 potential treatments remain untested
 - Millions continue suffering from treatable conditions
 - Billions in healthcare costs that could be avoided

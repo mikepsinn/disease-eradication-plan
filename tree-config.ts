@@ -970,7 +970,7 @@ export const treeConfig = {
         {
           "name": "disease-eradication-act.md",
           "type": "file",
-          "path": "disease-eradication-act/disease-eradication-act.md",
+          "path": "act.md",
           "children": [],
           "metadata": {
             "description": "The Disease Eradication Act aims to address systemic issues in healthcare, including bureaucratic delays, high drug development costs, limited clinical trial access, and focus on expensive treatments.",

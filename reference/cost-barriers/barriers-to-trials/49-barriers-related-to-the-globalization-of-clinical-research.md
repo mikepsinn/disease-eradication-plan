@@ -52,46 +52,47 @@ Our estimates of the impacts of each approach are based on data available in the
 
 | Barrier Mitigation Measures | Approach to Modeling | Notes/Sources |
 | --- | --- | --- |
-| Encourage more widespread use of electronic health records (EHR) for clinical research purposes | 
+| Encourage more widespread use of electronic health records (EHR) for clinical research purposes |
+
 - **_Patient Recruitment Costs (per patient)_**: Reduced by 35.9%
 - **_Number of Patients (per site):_** Reduced by 12.3%
 
  | Notes: Adoption rate of 16% in 2009 has been used to adjust the percentages/effects reported in the literature. Source: U.S. Department of Health & Human Services, 2012; Deloitte, 2009. |
-| Encourage sponsors to carefully consider their trial enrollment restrictions | 
+| Encourage sponsors to carefully consider their trial enrollment restrictions |
 
 - _**Patient Recruitment Costs (per patient):**_ Reduced by 21.3%
 
  | Source: Getz, 2008. |
-| Encourage sponsors to simplify clinical trial protocols and plan carefully to avoid costly amendments, whenever possible; ensure that they have a clear understanding of what is required by FDA and what is superfluous | 
+| Encourage sponsors to simplify clinical trial protocols and plan carefully to avoid costly amendments, whenever possible; ensure that they have a clear understanding of what is required by FDA and what is superfluous |
 
 - **_Data Collection, Management and Analysis Costs (per study):_** Reduced by 22.5%
 - **_Number of IRB Amendments (per study):_** Reduced by 33%
 - **_Clinical Procedure Total (per patient):_** Reduced by 22.3%
 
  | Source: Tufts, 2012; Getz, 2010b; Getz, 2008. |
-| Engage sponsors in discussions on the topic of data and site monitoring to ensure that they are aware of the FDA guidance stating that 100% source data verification is not required | 
+| Engage sponsors in discussions on the topic of data and site monitoring to ensure that they are aware of the FDA guidance stating that 100% source data verification is not required |
 
 - **_SDV Cost (per data field):_** Reduced by 11.6% and 14.3% in Phases 2 and 3, respectively, for cardiology, and 16.7% and 23.5%, respectively, for oncology. For other therapeutic areas, simple averages (14.2% and 18.9%) are used. SDV costs will not be reduced for Phases 1 and 4. Using 100% SDV rates from Medidata, we adjust these impacts depending on how prevalent 100% SDV is by phase and therapeutic area.
 
  | Notes: Adoption rates by phase and therapeutic area used to adjust effects. Sources: Tantsyura, et al., 2010; Medidata |
-| Encourage sponsors to make wider use of mobile technologies, centrally available data to evaluate site performance, electronic data capture (EDC), and other efficiency-improving options | 
+| Encourage sponsors to make wider use of mobile technologies, centrally available data to evaluate site performance, electronic data capture (EDC), and other efficiency-improving options |
 
 - _**Phase Time (in years):**_ Reduced by 17.6% in Phases 1, 2, 3, and 4.
 - _**Number of Site Management Months, Number of Project Management Months, Number of Site Monitoring Days:**_ Reduced by the same percentage as Phase Time (in years)
 
  | Notes: Adoption rate of 50% in 2007-2008 has been used to adjust the percentages/effects reported in the literature. Source: Neuer, Warnock, & Slezinger, 2010. |
-| Encourage sponsors to utilize lower-cost facilities (such as local clinics and pharmacies) or athome testing for data collection purposes whenever possible | 
+| Encourage sponsors to utilize lower-cost facilities (such as local clinics and pharmacies) or athome testing for data collection purposes whenever possible |
 
 - _**Phase Time (in years):**_ Portion of trial time attributed to enrollment (assumed to be one year each for Phases 1, 2, and 3) reduced by 67%
 - **_Number of Site Management Months, Number of Project Management Months, Number of Site Monitoring Days:_** Reduced by the same percentage as Phase Time (in years)
 
  | Source: Shapiro, 2008; Marks & Power, 2002. |
-| Grant developers of treatments for neglected diseases a “priority review voucher” | 
+| Grant developers of treatments for neglected diseases a “priority review voucher” |
 
 - **_Phase Time (in years):_** Review phase reduced to 0.5 years (6 months)
 
  | Source: Ridley, Grabowski, & Moe, 2006. |
-| Conduct internal reviews of efficiency within the FDA and make improvements where possible (also engage in more frequent and timely interactions with industry) | 
+| Conduct internal reviews of efficiency within the FDA and make improvements where possible (also engage in more frequent and timely interactions with industry) |
 
 - **_Phase Time (in years):_** Review phase reduced to 0.833 years (10 months)
 

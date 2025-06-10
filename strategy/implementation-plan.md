@@ -13,18 +13,22 @@ dateCreated: '2025-02-12T20:29:46.904Z'
 # dFDA Implementation Plan: Privacy-Preserving Treatment Review Aggregation
 
 ## Overview
+
 This document outlines the implementation plan for creating a privacy-preserving system that aggregates treatment reviews from client apps to rank treatments by effectiveness.
 
 ## 1. Standardized Identifiers & Sources
 
 ### 1.1 Decentralized Identifier System
+
 - [ ] Implement content-addressable identifiers (e.g., using IPFS CIDs or similar)
 - [ ] Create canonical naming system for treatments, conditions, and symptoms
 - [ ] Version control for identifier changes and updates
 - [ ] Mapping system between different naming conventions (e.g., ICD-10, SNOMED CT)
 
 ### 1.2 Treatment Source Tracking
+
 - [ ] Source metadata schema:
+
 ```typescript
 interface TreatmentSource {
   id: string;                    // Unique source identifier
@@ -48,6 +52,7 @@ interface TreatmentSource {
 ```
 
 ### 1.3 Identifier Registry
+
 - [ ] Public registry of all known identifiers
 - [ ] Bidirectional mapping between common medical vocabularies
 - [ ] API endpoints for identifier resolution
@@ -55,6 +60,7 @@ interface TreatmentSource {
 - [ ] Verification process for identifier accuracy
 
 ### 1.4 Source Verification System
+
 - [ ] Source verification criteria
 - [ ] Quality assessment metrics
 - [ ] Community feedback mechanism
@@ -64,8 +70,10 @@ interface TreatmentSource {
 ## 2. Privacy & Identity
 
 ### 2.1 Zero-Knowledge Identity System
+
 - [ ] Implement zero-knowledge proof system for user identity verification
 - [ ] Create privacy-preserving user fingerprinting:
+
 ```typescript
 interface AnonymousUserProof {
   // Proof that the user is human (e.g., using zk-SNARK)
@@ -110,6 +118,7 @@ interface TreatmentSubmissionProof {
 ```
 
 ### 2.2 Deduplication System
+
 - [ ] Implement privacy-preserving data deduplication:
   - Use deterministic anonymous IDs to identify same user across apps
   - Maintain Merkle tree of all submissions per user
@@ -122,6 +131,7 @@ interface TreatmentSubmissionProof {
   - Ensure regulatory compliance
 
 ### 2.3 Privacy-Preserving Analytics
+
 - [ ] Implement secure aggregation protocols:
   - Use homomorphic encryption for aggregate calculations
   - Ensure k-anonymity in all reported statistics
@@ -132,6 +142,7 @@ interface TreatmentSubmissionProof {
   - Support federated learning for treatment effectiveness models
 
 ### 2.4 User Rights & Control
+
 - [ ] Implement user data management:
   - Allow users to prove ownership of their submissions
   - Enable users to update or remove their data using zero-knowledge proofs
@@ -144,6 +155,7 @@ interface TreatmentSubmissionProof {
 ## 1. API Infrastructure
 
 ### 1.1 Client App Registration System
+
 - [ ] OAuth2 authentication system for client apps
 - [ ] Client app registration portal
   - Application name
@@ -154,6 +166,7 @@ interface TreatmentSubmissionProof {
 - [ ] Rate limiting implementation
 
 ### 1.2 Data Ingestion API
+
 - [ ] Treatment data endpoint (`/api/v1/treatments/aggregate`)
   - Validation for required fields
   - Data format verification
@@ -164,6 +177,7 @@ interface TreatmentSubmissionProof {
 - [ ] Data validation endpoints
 
 ### 1.3 Required Data Format
+
 ```typescript
 interface AggregatedTreatmentData {
   // Required fields
@@ -248,18 +262,21 @@ interface AggregatedTreatmentData {
 ## 2. Data Processing Pipeline
 
 ### 2.1 Data Validation
+
 - [ ] Input validation system
 - [ ] Data quality checks
 - [ ] Outlier detection
 - [ ] Consistency verification
 
 ### 2.2 Aggregation System
+
 - [ ] Real-time aggregation pipeline
 - [ ] Historical data management
 - [ ] Data normalization
 - [ ] Statistical analysis tools
 
 ### 2.3 Treatment Ranking Algorithm
+
 - [ ] Effectiveness score calculation
   - Treatment success rates
   - Side effect severity weighting
@@ -271,18 +288,21 @@ interface AggregatedTreatmentData {
 ## 3. Website Features
 
 ### 3.1 Treatment Rankings Display
+
 - [ ] Sortable treatment lists
 - [ ] Filtering capabilities
 - [ ] Search functionality
 - [ ] Condition-specific views
 
 ### 3.2 Data Visualization
+
 - [ ] Treatment comparison charts
 - [ ] Success rate visualizations
 - [ ] Side effect frequency graphs
 - [ ] Cost comparison tools
 
 ### 3.3 Developer Resources
+
 - [ ] API documentation
 - [ ] SDK downloads
 - [ ] Integration guides
@@ -292,6 +312,7 @@ interface AggregatedTreatmentData {
 ## 4. Privacy & Security
 
 ### 4.1 Security Measures
+
 - [ ] End-to-end encryption
 - [ ] Rate limiting
 - [ ] API key rotation
@@ -299,6 +320,7 @@ interface AggregatedTreatmentData {
 - [ ] Security monitoring
 
 ### 4.2 Privacy Protection
+
 - [ ] Minimum threshold for displaying aggregated data
 - [ ] Rounding of statistics
 - [ ] No individual data storage
@@ -307,18 +329,21 @@ interface AggregatedTreatmentData {
 ## 5. Documentation
 
 ### 5.1 API Documentation
+
 - [ ] OpenAPI/Swagger documentation
 - [ ] Authentication guides
 - [ ] Rate limiting details
 - [ ] Error code reference
 
 ### 5.2 Integration Guides
+
 - [ ] Client app integration guide
 - [ ] Data format specifications
 - [ ] Best practices
 - [ ] Example implementations
 
 ### 5.3 Privacy Documentation
+
 - [ ] Data handling policies
 - [ ] Privacy protection measures
 - [ ] Compliance requirements
@@ -327,12 +352,14 @@ interface AggregatedTreatmentData {
 ## 6. Testing & Validation
 
 ### 6.1 API Testing
+
 - [ ] Unit tests
 - [ ] Integration tests
 - [ ] Load testing
 - [ ] Security testing
 
 ### 6.2 Data Quality
+
 - [ ] Validation tests
 - [ ] Edge case handling
 - [ ] Error recovery
@@ -341,18 +368,21 @@ interface AggregatedTreatmentData {
 ## 7. Monitoring & Maintenance
 
 ### 7.1 System Monitoring
+
 - [ ] API performance monitoring
 - [ ] Error tracking
 - [ ] Usage statistics
 - [ ] Security monitoring
 
 ### 7.2 Data Quality Monitoring
+
 - [ ] Data validation metrics
 - [ ] Aggregation accuracy
 - [ ] Ranking algorithm performance
 - [ ] Client app compliance
 
 ## Next Steps
+
 1. Set up basic API infrastructure
 2. Implement client registration system
 3. Create data ingestion endpoints
@@ -360,4 +390,4 @@ interface AggregatedTreatmentData {
 5. Build ranking algorithm
 6. Create visualization components
 7. Write documentation
-8. Deploy monitoring systems 
+8. Deploy monitoring systems

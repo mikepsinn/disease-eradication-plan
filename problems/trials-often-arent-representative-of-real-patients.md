@@ -43,5 +43,5 @@ Furthermore, self-trackers represent a massive pool of potential subjects, dwarf
 Tracking any variable in isolation is nearly useless in that it cannot provide the causal which can be derived from combining data streams. Hence, this 30 million user cohort is a small fraction of the total possible [stratifiable](https://en.wikipedia.org/wiki/Stratified\_sampling) base.
 
 Sources:
-- [Exclusion Criteria](https://www.ncbi.nlm.nih.gov/pubmed/14628985)
-- [Sample Size](https://www.ncbi.nlm.nih.gov/books/NBK50886/)
+* [Exclusion Criteria](https://www.ncbi.nlm.nih.gov/pubmed/14628985)
+* [Sample Size](https://www.ncbi.nlm.nih.gov/books/NBK50886/)

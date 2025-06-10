@@ -1,0 +1,152 @@
+openapi: 3.0.3
+info:
+  title: FDA.gov v2 - User Management API
+  description: |-
+    API for managing users, authentication, and consent on the FDA.gov v2 Platform.
+    This API handles user profiles and their consent settings for trials and data sharing.
+  version: 1.0.0
+servers:
+  - url: https://api.fda-v2.gov/
+tags:
+  - name: Users
+    description: Endpoints for managing the current user's profile.
+  - name: Consent
+    description: Endpoints for managing data sharing and trial participation consent.
+paths:
+  /v1/users/me:
+    get:
+      tags:
+        - Users
+      summary: Get current user profile
+      description: Retrieves the profile for the currently authenticated user.
+      security:
+        - oAuth2AuthCode: [profile:read]
+      responses:
+        '200':
+          description: OK. The user's profile information.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+        '401':
+          description: Unauthorized.
+
+  /v1/consent/trials:
+    post:
+      tags:
+        - Consent
+      summary: Grant consent for a trial
+      description: |-
+        Allows a user to grant consent to participate in a specific clinical trial.
+        This action is logged immutably.
+      security:
+        - oAuth2AuthCode: [consent:write]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                trial_id:
+                  type: string
+                  format: uuid
+                document_hash:
+                  type: string
+                  description: Hash of the signed consent document.
+                quiz_passed:
+                  type: boolean
+      responses:
+        '201':
+          description: Created. Consent has been recorded.
+        '400':
+          description: Bad Request. Invalid input.
+        '401':
+          description: Unauthorized.
+
+  /v1/consent/trials/{trial_id}:
+    delete:
+      tags:
+        - Consent
+      summary: Revoke consent for a trial
+      description: |-
+        Allows a user to revoke their consent for a specific clinical trial.
+        This action is logged immutably.
+      security:
+        - oAuth2AuthCode: [consent:write]
+      parameters:
+        - in: path
+          name: trial_id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: The ID of the trial to revoke consent for.
+      responses:
+        '204':
+          description: No Content. Consent has been revoked.
+        '401':
+          description: Unauthorized.
+
+  /v1/consent/list:
+    get:
+      tags:
+        - Consent
+      summary: List all consents
+      description: Retrieves a list of all consent records for the current user.
+      security:
+        - oAuth2AuthCode: [consent:read]
+      responses:
+        '200':
+          description: OK. A list of consent records.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConsentRecord'
+        '401':
+          description: Unauthorized.
+
+components:
+  schemas:
+    UserProfile:
+      type: object
+      properties:
+        user_id:
+          type: string
+          format: uuid
+        did:
+          type: string
+          description: The user's Decentralized Identifier.
+        created_at:
+          type: string
+          format: date-time
+
+    ConsentRecord:
+      type: object
+      properties:
+        trial_id:
+          type: string
+          format: uuid
+        granted_at:
+          type: string
+          format: date-time
+        revoked_at:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [active, revoked]
+
+  securitySchemes:
+    oAuth2AuthCode:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.fda-v2.gov/oauth2/auth
+          tokenUrl: https://auth.fda-v2.gov/oauth2/token
+          scopes:
+            profile:read: Grants read access to user profile.
+            consent:read: Grants read access to consent records.
+            consent:write: Grants write access to consent records. 

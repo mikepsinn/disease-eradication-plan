@@ -197,7 +197,7 @@ Ensuring that the benefits of decreased access (if restricted) always exceed the
 
 ### Example Calculation
 
-#### Benefits of Restriction:
+#### Benefits of Restriction
 
 - **RAE:** Reduction in adverse events saves $10 million annually.
 - **DDAR:** Decrease in dependence and abuse rates saves $5 million annually.
@@ -207,7 +207,7 @@ Ensuring that the benefits of decreased access (if restricted) always exceed the
 \text{Total Benefits} = 10 + 5 + 3 = 18 \ \text{million dollars}
 \]
 
-#### Costs of Restriction:
+#### Costs of Restriction
 
 - **LAC:** Loss of accessibility and convenience costs $4 million annually.
 - **IHCC:** Increased health care costs due to unmet needs cost $6 million annually.
@@ -221,7 +221,7 @@ Ensuring that the benefits of decreased access (if restricted) always exceed the
 \text{Net Benefit (NB)} = 18 - 12 = 6 \ \text{million dollars}
 \]
 
-#### Monetary Valuation:
+#### Monetary Valuation
 
 - **CSFAE:** Cost savings from fewer adverse events: $10 million
 - **EBRAA:** Economic benefits of reduced addiction and abuse: $5 million
@@ -264,19 +264,19 @@ Since both NB and MNB are positive, the benefits of restricting access to the dr
 
 ## Over-the-Counter (OTC) Determination
 
-OTC Score = (ER _ 0.3) + ((100 - AER) _ 0.2) + ((100 - SAER) _ 0.2) + ((10 - DII) _ 10 _ 0.1) + (SAS _ 10 \* 0.2)
+OTC Score = (ER _0.3) + ((100 - AER)_ 0.2) + ((100 - SAER) _0.2) + ((10 - DII)_ 10 _0.1) + (SAS_ 10 \* 0.2)
 
 If OTC Score ≥ 80, consider for OTC status
 
 ## Prescription-Only Determination
 
-Prescription Score = (ER _ 0.25) + (AER _ 0.15) + (SAER _ 0.2) + (DII _ 5 _ 0.1) + ((10 - SAS) _ 10 \* 0.3)
+Prescription Score = (ER _0.25) + (AER_ 0.15) + (SAER _0.2) + (DII_ 5 _0.1) + ((10 - SAS)_ 10 \* 0.3)
 
 If Prescription Score ≥ 60, consider for prescription-only status
 
 ## DEA Scheduling Determination
 
-Scheduling Score = (APS _ 0.3) + (WSI _ 10 _ 0.2) + (ORF _ 10 _ 0.2) + (MP _ 0.2) + ((10 - TI) _ 10 _ 0.1)
+Scheduling Score = (APS _0.3) + (WSI_ 10 _0.2) + (ORF_ 10 _0.2) + (MP_ 0.2) + ((10 - TI) _10_ 0.1)
 
 DEA Schedule based on Scheduling Score:
 
@@ -289,7 +289,7 @@ DEA Schedule based on Scheduling Score:
 
 ## Access Restriction Benefit Analysis
 
-Access Restriction Benefit Score (ARBS) = (100 - ABR) _ 0.6 + (100 - SCI) _ 0.4
+Access Restriction Benefit Score (ARBS) = (100 - ABR) _0.6 + (100 - SCI)_ 0.4
 
 If ARBS > 50, the benefits of restriction may outweigh the costs
 If ARBS ≤ 50, the costs of restriction may outweigh the benefits
@@ -297,7 +297,7 @@ If ARBS ≤ 50, the costs of restriction may outweigh the benefits
 ## Integrated Classification Decision
 
 Final Classification Score (FCS) =
-(OTC Score _ 0.3) + (Prescription Score _ 0.3) + (Scheduling Score _ 0.2) + (ARBS _ 0.2)
+(OTC Score _0.3) + (Prescription Score_ 0.3) + (Scheduling Score _0.2) + (ARBS_ 0.2)
 
 Classification guide based on FCS:
 

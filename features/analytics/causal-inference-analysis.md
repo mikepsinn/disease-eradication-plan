@@ -31,7 +31,7 @@ Before statistical analysis can begin, the data must be preprocessed:
 
 - **Resample** the time series to a regular interval if needed while preserving original timestamps. This allows handling missing data. For example, resample to 1 measurement per day.
 - **Do not** do interpolation or forward fill to estimate missing values. This introduces incorrect data. Simply exclude those time periods from analysis.
-- **Filter out** any irrelevant variances like daily/weekly cycles. For example, detrend the data. 
+- **Filter out** any irrelevant variances like daily/weekly cycles. For example, detrend the data.
 
 Proper preprocessing sets up the data for robust analysis.
 
@@ -40,6 +40,7 @@ Proper preprocessing sets up the data for robust analysis.
 With cleaned data, a rigorous methodology can determine treatment effects:
 
 ### Segment Data
+
 First, split the data into three segments:
 
 - **Pre-treatment** - Period before treatment began
@@ -69,7 +70,7 @@ To analyze **cumulative** effects, build regression models between the outcome v
 
 ### Overall Effect Determination
 
-Combine the acute and cumulative insights to determine the overall effect direction and statistical significance. 
+Combine the acute and cumulative insights to determine the overall effect direction and statistical significance.
 
 For example, acute worsening but long-term cumulative improvement would imply an initial side effect but long-term benefits. Lack of statistical significance would imply no effect.
 
