@@ -1115,7 +1115,7 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 |:---------------------|:---------------------------------------|:-------------------------------|:--------------|
 | **dFDA Platform (Lean Ecosystem)** | **~\$40 Million / year** | **1x (Baseline)** | [This analysis](#simplified-roi-scenario) |
 | **Cancer Moonshot Initiative** | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years) | **~6.4x** | [21st Century Cures Act](https://www.cancer.gov/about-nci/budget) |
-| **NIH "All of Us" Research Program** | **[~\$500 Million / year](https://www.nih.gov/about-nih/what-we-do/budget/appropriations)** (FY23 Approx. Budget) | **~12.5x** | [NIH Funding Data](https://www.nih.gov/about-nih/what-we-do/budget/appropriations) |
+| **NIH "All of Us" Research Program** | **[~\$500 Million / year](https://www.nih.gov/about-nih/what-we-do/budget) (FY23 Approx. Budget) | **~12.5x** | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget) |
 | **HealthCare.gov (Initial Build)** | **[~\$1.7 - \$2.1 Billion](https://www.gao.gov/assets/gao-07-49.pdf)** (Total Upfront Cost) | **~42x - 52x** (of one year's dFDA cost) | [GAO Reports / Public Reporting](https://www.gao.gov/assets/gao-07-49.pdf) |
 | **National Cancer Institute (NCI)** | **[~\$7.2 Billion / year](https://www.cancer.gov/about-nci/budget)** (FY25 Budget) | **~180x** | [NCI Budget Data](https://www.cancer.gov/about-nci/budget) |
 
@@ -1135,7 +1135,7 @@ This stream models the benefit of accelerating the approval of new drugs that wo
     * $N_{\text{drugs}}$: Number of new drugs approved annually whose development is accelerated.
         * **Rationale:** The FDA approves a significant number of new drugs each year, and the dFDA platform is expected to accelerate the development of a meaningful fraction of these.
         * **Source:** The FDA consistently approves a substantial number of novel therapies. For example, in 2023, the Center for Drug Evaluation and Research (CDER) approved 55 novel drugs.
-        * **Quote:** "[In 2023], the Center for Drug Evaluation and Research (CDER) approved 55 novel drugs, either as new molecular entities (NMEs) under New Drug Applications (NDAs) or as new therapeutic biologics under Biologics License Applications (BLAs)." — [Friends of Cancer Research](https://www.focr.org/news/breaking-down-fdas-2023-drug-and-biological-approvals)
+        * **Quote:** "[In 2023], the Center for Drug Evaluation and Research (CDER) approved 55 novel drugs, either as new molecular entities (NMEs) under New Drug Applications (NDAs) or as new therapeutic biologics under Biologics License Applications (BLAs)." — [Friends of Cancer Research](https://www.focr.org/)
     * $T_{\text{accel}}$: Average years of acceleration per drug.
         * **Rationale:** The dFDA model, inspired by hyper-efficient trials like the [RECOVERY trial](./../reference/recovery-trial.md), can drastically cut development timelines from years to months.
         * **Source:** The [RECOVERY trial](./../reference/recovery-trial.md) demonstrated unprecedented speed in generating clinical results.
