@@ -10,7 +10,7 @@ dateCreated: 2024-06-09T00:00:00.000Z
 
 # Individual ROI on Getting Friends to Sign the Treaty
 
-$1,258,412 for 5 Hours of Your Time
+$1,258,412 for 5 Hours of Your Time (see [1% Treaty](1-percent-treaty.md))
 
 Historical examples show that petitions with support from over **1% of the population** have a high likelihood of being adopted.
 

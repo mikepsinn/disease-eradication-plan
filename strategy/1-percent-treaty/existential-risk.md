@@ -14,7 +14,7 @@ If you simply consider one part of military spending, nuclear weapons, we alread
 
 Even if you believe some level of military spending is warranted, we certainly don't need to be able to exterminate the human race more than once.
 
-Yet, we keep increasing military spending by $42 billion dollars a year.
+Yet, we keep increasing military spending by $42 billion dollars a year (see [cost of war](cost-of-war.md)).
 
 ![military-spending-scenarios-chart.png](military-spending-scenarios-chart.png)
 
@@ -36,7 +36,7 @@ Based on the assumption that between 100 and 1,000 warheads could cause catastro
 
 ## The Existential Threat of the AI Arms Race
 
-In an era where artificial intelligence (AI) advancements hold the potential to redefine warfare, humanity faces an unprecedented existential challenge. The prospect of an AI arms race, with nations vying for supremacy in military AI technologies, poses threats far beyond traditional conflicts, edging us closer to potential catastrophe. The 1% Treaty, proposing that countries allocate just 1% of their military budgets towards AI safety and ethical research, stands as a crucial initiative to counteract these dangers, fostering a collaborative global approach to prevent AI-induced human extinction.
+In an era where artificial intelligence (AI) advancements hold the potential to redefine warfare, humanity faces an unprecedented existential challenge. The prospect of an AI arms race, with nations vying for supremacy in military AI technologies, poses threats far beyond traditional conflicts, edging us closer to potential catastrophe. The 1% Treaty, proposing that countries allocate just 1% of their military budgets towards AI safety and ethical research, stands as a crucial initiative to counteract these dangers (see [1% Treaty](1-percent-treaty.md)), fostering a collaborative global approach to prevent AI-induced human extinction.
 
 The AI arms race carries inherent risks that are distinct and potentially more perilous than any technological competition humanity has faced:
 
@@ -47,4 +47,4 @@ The AI arms race carries inherent risks that are distinct and potentially more p
 
 ## The 1% Treaty's Role in Mitigating Risks
 
-The risks associated with the AI arms race necessitate immediate and unified action to prevent a drift towards catastrophe. The 1% Treaty offers a pragmatic approach to demilitarization, aiming to repurpose a fraction of the world's military expenditures towards ensuring AI benefits humanity rather than leading to its demise. By addressing the multifaceted threats of an AI arms race and fostering an environment of cooperation and safety, the treaty paves the way for a future where technological advancements are synonymous with global security and prosperity. In the face of AI's dual-use nature, the choice to embrace demilitarization and collaborative governance is not just strategic—it's essential for our survival.
+The risks associated with the AI arms race necessitate immediate and unified action to prevent a drift towards catastrophe. The 1% Treaty offers a pragmatic approach to demilitarization, aiming to repurpose a fraction of the world's military expenditures towards ensuring AI benefits humanity rather than leading to its demise (see [1% Treaty](1-percent-treaty.md)). By addressing the multifaceted threats of an AI arms race and fostering an environment of cooperation and safety, the treaty paves the way for a future where technological advancements are synonymous with global security and prosperity. In the face of AI's dual-use nature, the choice to embrace demilitarization and collaborative governance is not just strategic—it's essential for our survival.

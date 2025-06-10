@@ -36,3 +36,5 @@ Applying this formula:
 
 - **Lower Estimate**: With a lobbying cost of $200 million and benefits of $800 billion from contracts, the ROI calculates to approximately 399,900%.
 - **Higher Estimate**: With a lobbying cost of $300 million and benefits of $1 trillion, the ROI is approximately 333,233.33%.
+
+For how lobbying ROI relates to the 1% Treaty plan, see the [logical proof](logical-proof.md).

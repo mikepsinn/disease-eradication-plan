@@ -10,7 +10,7 @@ dateCreated: 2024-06-09T00:00:00.000Z
 
 ## Cumulative Savings from Decreased Annual Cost of War
 
-Given the initial annual cost of war is approximately $7,238.25 billion, we explore the scenario where this cost decreases by 1% every year for 80 years. This decrease reflects potential efficiencies, peacekeeping successes, and the reallocation of resources towards more productive and peaceful endeavors. Here's how the calculations unfold:
+Given the initial annual cost of war (see [cost of war](cost-of-war.md)) is approximately $7,238.25 billion, we explore the scenario where this cost decreases by 1% every year for 80 years. This decrease reflects potential efficiencies, peacekeeping successes, and the reallocation of resources towards more productive and peaceful endeavors. Here's how the calculations unfold:
 
 ## Assumptions for Cumulative Reduced War Costs Calculation:
 
@@ -35,3 +35,5 @@ Given the initial annual cost of war is approximately $7,238.25 billion, we expl
 - **Per Capita Savings:** $22,969.68 per person
 
 By reducing the annual cost of war by a modest 1% annually over the course of 80 years, the global community could save $179 trillion, translating to almost $23,000 in savings per person.
+
+For the treaty that proposes this reallocation, see the [1% Treaty](1-percent-treaty.md).

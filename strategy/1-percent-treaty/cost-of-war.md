@@ -14,7 +14,7 @@ Global military spending nearly doubled from $1.1 trillion in 2000 to $1.9 trill
 
 ![military-spending-scenarios-chart.png](military-spending-scenarios-chart.png)
 
-This is 100X more than funding to cure any disease:
+This is 100X more than funding to cure any disease (see [cost of disease](cost-of-disease.md)).
 
 ![](spending-on-war-vs-cures-bar-chart.png)
 
@@ -63,3 +63,5 @@ The comprehensive annual cost of war, factoring in both direct and indirect cost
 
 1. [https://watson.brown.edu/costsofwar/costs](https://watson.brown.edu/costsofwar/costs)
 2. [https://www.carnegie.org/our-work/article/costs-war/](https://www.carnegie.org/our-work/article/costs-war/)
+
+For the treaty that proposes redirecting a portion of this spending, see the [1% Treaty](1-percent-treaty.md).

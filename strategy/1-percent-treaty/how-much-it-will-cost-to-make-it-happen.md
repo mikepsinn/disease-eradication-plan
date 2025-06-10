@@ -10,7 +10,7 @@ dateCreated: 2024-06-09T00:00:00.000Z
 
 # How Much Will It Cost to Make It Happen?
 
-Here's the potential range of cost per signature for various strategies to gather 80 million signatures for a global initiative like the LOGICAL Treaty. Then, we'll calculate the total estimated cost for achieving this goal through each method.
+Here's the potential range of cost per signature for various strategies to gather 80 million signatures for a global initiative like the [1% Treaty](1-percent-treaty.md). Then, we'll calculate the total estimated cost for achieving this goal through each method.
 
 ### 1. Traditional Advertising
 
@@ -88,3 +88,5 @@ Given the base and enhanced approaches:
 ### Conclusion:
 
 Using a combination of strategies can potentially keep the cost at the lower end of the spectrum while maximizing reach and engagement. The key to this approach is leveraging the strengths of each strategy while managing costs effectively, particularly by using the crypto token sale to fund more expensive efforts like targeted advertising and influencer partnerships. This holistic strategy could significantly reduce the overall cost per signature while still achieving the ambitious goal of 80 million signatures.
+
+For more on the DAO and implementation roadmap, see the [strategy](strategy.md).
