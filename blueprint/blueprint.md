@@ -61,7 +61,7 @@ The destination is a world without disease, achievable through three foundationa
 - Ranked lists of effective treatments
 - Global data sharing network
 
-### B. Right to Trial Act
+### B. Right to Trial Initiative
 
 - Universal clinical trial access
 - Elimination of regulatory barriers

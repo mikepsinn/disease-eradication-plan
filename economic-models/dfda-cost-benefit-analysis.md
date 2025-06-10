@@ -10,11 +10,11 @@ dateCreated: 2025-04-29T01:07:30.411Z
 
 ## TL;DR
 
-* **Saves ~$50 Billion Annually**: Reduces global clinical trial costs (~$100B/year market) by a baseline of **50%**, with up to **95%** savings in optimal scenarios.
-* **463:1 Return on Investment**: A modest annual operational cost of ~$40M generates ~$50B in industry-wide savings, yielding an NPV of ~$249B over 10 years.
-* **Generates 840,000 Life-Years Annually**: The platform is projected to produce a baseline of [**840,000 Quality-Adjusted Life Years (QALYs)**](#appendix-detailed-qaly-calculation-model) each year through faster drug access, new therapies, and better prevention.
-* **Dominant Health Intervention**: With an ICER of **-$59,501 per QALY**, the dFDA is a dominant intervention—it both saves money and improves health.
-* **$137M+ Daily Cost of Inaction**: Each day without the dFDA represents a societal opportunity cost of ~$137M in economic waste and ~2,301 lost QALYs.
+* **Saves ~[$50 Billion Annually](#gross-r-and-d-savings-from-dfda-implementation)**: Reduces global clinical trial costs (~[$100B/year market](#market-size-and-impact)) by a baseline of **[50%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
+* **[463:1 Return on Investment](#final-roi-and-net-benefit)**: A modest annual operational cost of ~[$40M](#simplified-roi-scenario) generates ~$50B in industry-wide savings, yielding an NPV of ~[$249B over 10 years](#final-roi-and-net-benefit).
+* **[Generates 840,000 Life-Years Annually](#appendix-detailed-qaly-calculation-model)**: The platform is projected to produce a baseline of [**840,000 Quality-Adjusted Life Years (QALYs)**](#appendix-detailed-qaly-calculation-model) each year through faster drug access, new therapies, and better prevention.
+* **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: With an ICER of **-[$59,501 per QALY](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**, the dFDA is a dominant intervention—it both saves money and improves health.
+* **[$137M+ Daily Cost of Inaction](#daily-opportunity-cost-of-inaction)**: Each day without the dFDA represents a societal opportunity cost of ~$137M in economic waste and ~2,301 lost QALYs.
 
 ## Executive Summary
 

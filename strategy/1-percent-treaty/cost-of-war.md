@@ -4,15 +4,8 @@ description: Global military spending, its direct and indirect costs, and the pe
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: cost-of-war, military-spending, global-economics, peace-dividend, per-capita-cost
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-bomb
-author:
-  name: The Wishonian Bureau of Economic Research
-featuredImage: /globalSolutions/1-percent-treaty/cost-of-war.jpg
-ogImage:
-  url: /military-spending-scenarios-chart.png
-absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\cost-of-war.md'
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 ## Direct Military Spending
@@ -21,7 +14,7 @@ Global military spending nearly doubled from $1.1 trillion in 2000 to $1.9 trill
 
 ![military-spending-scenarios-chart.png](military-spending-scenarios-chart.png)
 
-This is 100X more than funding to cure any disease:
+This is 100X more than funding to cure any disease (see [cost of disease](cost-of-disease.md)).
 
 ![](spending-on-war-vs-cures-bar-chart.png)
 
@@ -70,3 +63,5 @@ The comprehensive annual cost of war, factoring in both direct and indirect cost
 
 1. [https://watson.brown.edu/costsofwar/costs](https://watson.brown.edu/costsofwar/costs)
 2. [https://www.carnegie.org/our-work/article/costs-war/](https://www.carnegie.org/our-work/article/costs-war/)
+
+For the treaty that proposes redirecting a portion of this spending, see the [1% Treaty](1-percent-treaty.md).

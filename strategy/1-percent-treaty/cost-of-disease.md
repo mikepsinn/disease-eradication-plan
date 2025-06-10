@@ -4,16 +4,11 @@ description: Disease costs the world trillions through healthcare costs, indirec
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: cost-of-disease, global-health, economic-burden, yll, daly, health-economics
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-dollar-sign
-featuredImage: /globalSolutions/1-percent-treaty/cost-of-disease.jpg
-ogImage:
-  url: /cost-of-disease.png
-absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\cost-of-disease.md'
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
-The **$244 trillion** annual total global cost of disease encompasses direct healthcare costs, indirect economic losses, and the $100k valuation of a Year of Life Lost (YLL) and a $100k valuation Disability-Adjusted Life Year (DALYs).
+The **$244 trillion** annual total global cost of disease (see [cost of war](cost-of-war.md) for comparison) encompasses direct healthcare costs, indirect economic losses, and the $100k valuation of a Year of Life Lost (YLL) and a $100k valuation Disability-Adjusted Life Year (DALYs).
 
 ## Direct Healthcare Costs
 

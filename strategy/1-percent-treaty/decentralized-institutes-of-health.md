@@ -4,14 +4,8 @@ description: Radically accelerating medical research and funding by harnessing t
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: decentralized-health, dih, blockchain, ai, medical-research, 1-percent-treaty
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-hospital
-featuredImage: /globalSolutions/1-percent-treaty/decentralized-institutes-of-health.jpg
-ogImage:
-  url: /globalSolutions/1-percent-treaty/decentralized-institutes-of-health.png
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\decentralized-institutes-of-health.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 The Decentralized Institutes of Health (DIH) is a global initiative that aims to revolutionize healthcare research and funding by harnessing the power of decentralized science, collective intelligence, and blockchain technology. Our mission is to create a transnational, democratically governed, and trustless repository that enables governments worldwide to redirect resources from funding war to finding cures for diseases. By signing the 1% Treaty, governments pledge to allocate just 1% of their military spending to the DIH, unlocking billions of dollars for life-saving research.
@@ -26,7 +20,7 @@ This imbalance in priorities has led to a global health crisis, with millions of
 
 # The 1% Treaty
 
-The [1% Treaty](globalSolutions/1-percent-treaty/1-percent-treaty.mdercent-treaty/1-percent-treaty.md) is an agreement that enables governments to join the DIH and contribute to its mission. By signing the treaty, governments pledge to allocate 1% of their military spending to the DIH democratic crowdfunding platform. This small but significant contribution has the potential to generate billions of dollars for medical research, accelerating the development of life-saving treatments and cures.
+The [1% Treaty](1-percent-treaty.md) is an agreement that enables governments to join the DIH and contribute to its mission. By signing the treaty, governments pledge to allocate 1% of their military spending to the DIH democratic crowdfunding platform. This small but significant contribution has the potential to generate billions of dollars for medical research, accelerating the development of life-saving treatments and cures.
 
 # Unique Value Proposition
 
@@ -42,7 +36,7 @@ The [1% Treaty](globalSolutions/1-percent-treaty/1-percent-treaty.mdercent-treat
 
 # How It Works
 
-1. Governments sign the [1% Treaty](globalSolutions/1-percent-treaty/1-percent-treaty.mdercent-treaty/1-percent-treaty.md)
+1. Governments sign the [1% Treaty](1-percent-treaty.md)
    pledging to allocate 1% of their military spending to the DIH's decentralized, trustless repository.
 
 2. Researchers and scientists submit their project proposals to the DIH platform.

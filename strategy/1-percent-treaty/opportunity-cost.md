@@ -4,20 +4,13 @@ description: Exploring the implications of reallocating $2 trillion from global 
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: opportunity-cost, military-spending, health-research, global-economics, public-health
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-exchange-alt
-featuredImage: /globalSolutions/1-percent-treaty/opportunity-cost.jpg
-author:
-  name: The Office of the President
-ogImage:
-  url: opportunity-cost.png
-absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\opportunity-cost.md'
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 ### Opportunity Cost of Military Spending
 
-Humanity currently spends $2 trillion on militarism annually. Reallocating this $2 trillion to health research and treatment could employ approximately 25 million individuals at an average salary of $80,000. This workforce could comprise researchers, physicians, nurses, and support staff, dramatically expanding global capacity to address health crises, develop treatments, and improve public health outcomes.
+Humanity currently spends $2 trillion on militarism annually (see [cost of war](cost-of-war.md)). Reallocating this $2 trillion to health research and treatment could employ approximately 25 million individuals at an average salary of $80,000. This workforce could comprise researchers, physicians, nurses, and support staff, dramatically expanding global capacity to address health crises, develop treatments, and improve public health outcomes.
 
 #### Envisioning Optimal Allocation
 
@@ -33,3 +26,5 @@ The reallocation could yield measurable benefits:
 
 - **Accelerated Medical Breakthroughs**: Enhanced funding for medical research could shorten the timeline for critical breakthroughs in treatment and prevention, potentially saving millions of lives.
 - **Economic Impact**: Healthier populations contribute more effectively to economies, reducing healthcare costs and increasing productivity.
+
+For the treaty that proposes this reallocation, see the [1% Treaty](1-percent-treaty.md).

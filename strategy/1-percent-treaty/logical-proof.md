@@ -4,15 +4,8 @@ description: Exploring the logical reasoning behind reallocating 1% of military 
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: logical-proof, 1-percent-treaty, military-spending, medical-research, decentralized-funding, lobbying
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-balance-scale
-featuredImage: /globalSolutions/1-percent-treaty/logical-proof.jpg
-author:
-  name: The Office of the President
-ogImage:
-  url: logical-proof.png
-absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\logical-proof.md'
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 # Logical Proof
@@ -30,22 +23,22 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 ## Premises:
 
 1. The world has finite resources.
-2. Resources spent on war are 20 times greater than resources spent on medical research.[^1]
+2. Resources spent on war are 20 times greater than resources spent on medical research. (See [cost of war](cost-of-war.md) and [cost of disease](cost-of-disease.md).)
 3. AI technology developed for warfare could lead to catastrophic outcomes like a Skynet scenario.[^2]
 4. People generally prefer resources to be used for medical research over warfare.[^3]
 5. No individual country can unilaterally reallocate war resources to medical research without risking attack from other countries.
-6. Defense companies globally spend between $200 million and $300 million annually on lobbying efforts.[^4]
+6. Defense companies globally spend between $200 million and $300 million annually on lobbying efforts. (See [lobbying ROI](lobbying.md).)
 7. Military contractors globally receive between $800 billion to $1 trillion annually from government contracts.[^5]
 8. The world currently has 13,000 nuclear weapons, enough to cause between 13 and 130 "extinction-level events" when accounting for nuclear winter effects.[^6]
 9. Lobbyists are motivated by financial incentives and will work for the highest bidder.[^7]
 
 ## Propositions:
 
-1. An international treaty where all countries allocate 1% of military budgets to medical research would maintain the balance of power while increasing resources for medical research.
+1. An international treaty where all countries allocate 1% of military budgets to medical research would maintain the balance of power while increasing resources for medical research. (See [1% Treaty details](1-percent-treaty.md).)
 2. Reducing military budgets by 1% and allocating that to medical research would increase net national security by reducing the risk of AI-driven catastrophe.
 3. Using a decentralized crowdfunding platform, such as a blockchain-based system, to allocate medical research funds would be more transparent, efficient, and resistant to corruption compared to centralized government allocation.[^8]
 4. Robust auditing and verification mechanisms, such as satellite monitoring and on-site inspections, can ensure countries comply with the treaty.[^9]
-5. Implementing the 1% Treaty could yield $1.2 million in benefits per capita globally over 80 years.[^10]
+5. Implementing the 1% Treaty could yield $1.2 million in benefits per capita globally over 80 years. (See [value of automating research](value-of-automating-research.md).)
 6. Creating a DAO to crowdfund $40M, spend $20M on lobbying and $20M on marketing for petition signatures from 1% of the population could get the 1% Treaty adopted.
 7. If the plan succeeds, the DAO would get $20B/year, enough to repay initial contributors with 0.5% of first year funds.
 8. The DAO could attempt to outbid defense contractors to hire their best lobbyists, potentially reducing their lobbying capacity by 50% and increasing the DAO's lobbying power by 100%.[^11]
@@ -100,7 +93,7 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 
 ## Conclusion:
 
-The 1% Treaty, which reallocates a portion of military spending to medical research in a stable, decentralized, and verifiable way, would reduce catastrophic risks, increase resources for beneficial research, and yield significant humanitarian benefits. Given the exorbitant destructive capacity of current nuclear arsenals, safely reducing military budgets through agreements like the 1% Treaty is a reasonable goal.
+The 1% Treaty, which reallocates a portion of military spending to medical research in a stable, decentralized, and verifiable way, would reduce catastrophic risks, increase resources for beneficial research, and yield significant humanitarian benefits. (See [strategy roadmap](strategy.md).) Given the exorbitant destructive capacity of current nuclear arsenals, safely reducing military budgets through agreements like the 1% Treaty is a reasonable goal.
 
 The plan to create a DAO, crowdfund $40 million, and lobby for the international 1% Treaty is logically sound and feasible based on the proven effectiveness of lobbying and the potential for crowdfunding. By outbidding defense contractors for their top lobbyists, the DAO could potentially reduce their lobbying capacity by 50% and increase its own by 100%, gaining a significant lobbying advantage. To attract the necessary funding to out-lobby the military-industrial complex, the DAO must offer annual returns greater than 10%, exceeding alternative investments like the S&P 500.
 

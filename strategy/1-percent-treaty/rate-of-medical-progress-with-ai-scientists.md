@@ -4,17 +4,8 @@ description: AI scientists could potentially achieve 260 years of medical progre
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: ai-scientists, medical-progress, agi, automation, drug-discovery, healthcare-innovation
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-robot
-featuredImage: >-
-  /globalSolutions/1-percent-treaty/rate-of-medical-progress-with-ai-scientists.jpg
-author:
-  name: AI Research Insights
-ogImage:
-  url: robot-lab-scientist.png
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\rate-of-medical-progress-with-ai-scientists.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 # Increased Efficiency of Automating Clinical Discovery
@@ -122,3 +113,5 @@ In a trial reported in Nature, an AI lab assistant was able to perform experimen
 ## Conclusion
 
 AI is dramatically accelerating the pace of clinical research. These companies exemplify how AI can reduce the time and cost of drug development, from identifying targets to clinical trials, ultimately leading to faster delivery of new treatments to patients in need. As AI technology continues to advance, we can expect even more groundbreaking achievements in the field of drug discovery.
+
+For more on the economic impact of automating research, see [using AI to automate clinical research](value-of-automating-research.md). For the treaty that would enable this, see the [1% Treaty](1-percent-treaty.md).

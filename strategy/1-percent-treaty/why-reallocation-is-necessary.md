@@ -4,16 +4,8 @@ description: Simply increasing spending on medical research while simultaneously
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: reallocation, public-goods, military-spending, health-research, opportunity-cost
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-random
-featuredImage: /globalSolutions/1-percent-treaty/why-reallocation-is-necessary.jpg
-author:
-  name: The Office of the President
-ogImage:
-  url: why-reallocation-is-necessary.png
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\why-reallocation-is-necessary.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 ### Military Spending vs. Health Research: A Brain Drain
@@ -32,7 +24,7 @@ Imagine you're passionate about helping people live longer, so you start a nonpr
 
 So, how do we make the pie bigger instead of just slicing it thinner? The answer lies in looking at where a huge chunk of our collective budget goes: military spending.
 
-- **Shifting Resources**: By [reallocating even a small fraction](globalSolutions/1-percent-treaty/1-percent-treaty.md1-percent-treaty/1-percent-treaty.md) of the money spent on the military to health research, we can significantly increase the funds available for medical breakthroughs.
+- **Shifting Resources**: By [reallocating even a small fraction](1-percent-treaty.md) of the money spent on the military to health research, we can significantly increase the funds available for medical breakthroughs.
 - **From Destructive to Constructive**: Military budgets are massive globally. This spending is at the expense of constructive areas like health research. By shifting some of those funds, we're moving from investing in means of destruction to investing in life-saving research.
 
 ### Conclusion: A Choice Between Futures
