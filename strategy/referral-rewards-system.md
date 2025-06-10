@@ -112,7 +112,7 @@ A well-designed referral-rewards system can:
 
 ### Why $VICTORY Tokens?
 - Inspired by WWII war bonds, $VICTORY tokens are a digital, transparent way to fund the movement for 80X faster medical progress.
-- Purpose: Directly finance this viral referral-rewards system to mobilize 3.5% of the population for the [FDA Upgrade & Right to Trial Act](../disease-eradication-act/disease-eradication-act.md).
+- Purpose: Directly finance this viral referral-rewards system to mobilize 3.5% of the population for the [FDA Upgrade & Right to Trial Act](../act.md).
 - Goal: Unlock the same scale of transformation as the Oxford RECOVERY trial, which achieved an [80X efficiency gain](https://www.recoverytrial.net/) in clinical research.
 
 ### How It Works
