@@ -113,3 +113,5 @@ In a trial reported in Nature, an AI lab assistant was able to perform experimen
 ## Conclusion
 
 AI is dramatically accelerating the pace of clinical research. These companies exemplify how AI can reduce the time and cost of drug development, from identifying targets to clinical trials, ultimately leading to faster delivery of new treatments to patients in need. As AI technology continues to advance, we can expect even more groundbreaking achievements in the field of drug discovery.
+
+For more on the economic impact of automating research, see [using AI to automate clinical research](value-of-automating-research.md). For the treaty that would enable this, see the [1% Treaty](1-percent-treaty.md).
