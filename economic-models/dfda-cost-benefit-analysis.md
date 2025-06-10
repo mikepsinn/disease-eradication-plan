@@ -99,7 +99,7 @@ These assumptions set a stage where the platform can indeed function at scale, b
 >
 > **Key Takeaway:** The core technology platform is achievable for tens of millions, but full global rollout and integration could require hundreds of millions to billions depending on scope and execution. See detailed breakdowns below.
 
-This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on the components outlined in the <!-- [Platform Technical Specification](../features/platform-technical-specification.md) -->.
+This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on the components outlined in the <!-- [Platform Technical Specification](../specification.md) -->.
 
 
 ### Upfront (Capital) Expenditure Initial Build Illustrative 30 Months
