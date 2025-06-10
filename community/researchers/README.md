@@ -17,6 +17,7 @@ Welcome to the Researchers Directory of the Community Directory. This space is d
 ## Purpose of this Folder
 
 The purpose of this folder is to:
+
 - Serve as a central hub for researchers to find and share information.
 - Facilitate collaboration between researchers and other stakeholders in the project.
 - Provide a repository of research materials, publications, and data sets that can be used to support the dFDA's objectives.
@@ -24,6 +25,7 @@ The purpose of this folder is to:
 ## How to Add or Modify Content
 
 To add or modify content in this directory:
+
 1. Read the `CONTRIBUTING.md` file in the root of the repository to understand the contribution process.
 2. Fork the repository to your own GitHub account.
 3. Add your content or make your modifications within the appropriate subfolder or Markdown file.
@@ -41,6 +43,7 @@ As this directory grows, a table of contents will be maintained here to help you
 ## Getting Involved
 
 If you are a researcher interested in contributing to the dFDA, please create a Markdown page in this folder with the following information:
+
 - An introduction of yourself and your research focus.
 - Your role and interest in the project.
 - Contact information or how you wish to be engaged.

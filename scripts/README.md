@@ -19,17 +19,20 @@ Repository management automation scripts with AI-powered file organization.
 ## Key Scripts
 
 ### [`reorganize.js`](reorganize.js)
+
 - Creates standardized directory structure
 - Generates foundational READMEs
 - Enforces consistent taxonomy across docs
 
-### [`migrate-content.js`](migrate-content.js) 
+### [`migrate-content.js`](migrate-content.js)
+
 - AI-powered content migration engine
 - Analyzes file locations using GPT-4
 - Validates moves against directory structure
 - Batch processes entire repository
 
 ### [`file-path-analyzer.js`](file-path-analyzer.js)
+
 - AI classification module
 - Returns JSON analysis with:
   - Target directory suggestions
@@ -38,12 +41,14 @@ Repository management automation scripts with AI-powered file organization.
   - Recommended actions (move/delete/flag)
 
 ### [`smart-repo-importer.js`](smart-repo-importer.js)
+
 - Repository ingestion system
 - Automatic directory tree generation
 - AI-assisted file placement
 - Legacy content integration
 
 ### [`process-images.js`](process-images.js)
+
 - Automated image pipeline:
   1. S3 bucket synchronization
   2. Markdown URL rewriting
@@ -64,11 +69,13 @@ This script creates a backup of a PostgreSQL database through an SSH tunnel. The
 ## Installation
 
 1. Install the required dependencies:
+
 ```bash
 npm install dotenv ssh2
 ```
 
 2. Copy `.env.example` to `.env` and fill in your configuration:
+
 ```bash
 cp .env.example .env
 ```
@@ -78,11 +85,13 @@ cp .env.example .env
 ## Usage
 
 Run the backup script:
+
 ```bash
 node scripts/db-backup.js
 ```
 
 The script will:
+
 1. Create an SSH tunnel to the remote server
 2. Execute pg_dump through the tunnel
 3. Save the backup file in the `backups` directory with a timestamp
@@ -90,6 +99,7 @@ The script will:
 ## Backup File Format
 
 Backups are saved in the following format:
+
 ```
 backup-{database_name}-{timestamp}.sql
 ```

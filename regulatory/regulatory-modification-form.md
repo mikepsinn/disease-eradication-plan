@@ -24,7 +24,7 @@ Required
 
 Required
 
-### Tell me what it actually does (i.e. what are the its impact, intentional or unintentional - details and numbers are helpful here even if estimates). If both good and bad impacts exist, address both.
+### Tell me what it actually does (i.e. what are the its impact, intentional or unintentional - details and numbers are helpful here even if estimates). If both good and bad impacts exist, address both
 
 \*
 

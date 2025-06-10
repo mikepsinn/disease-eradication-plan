@@ -14,48 +14,48 @@ dateCreated: 2025-05-27T21:53:11.658Z
 
 ## TITLE I — SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
 
-### SEC. 101. SHORT TITLE.
+### SEC. 101. SHORT TITLE
 
 This Act may be cited as the **"Right‑to‑Trial and FDA Upgrade Act of 2025."**
 
-### SEC. 102. PURPOSE.
+### SEC. 102. PURPOSE
 
 The purpose of this Act is to radically accelerate medical progress by:
 (1) Establishing a right for all patients to participate in decentralized clinical trials for any condition.
 (2) Creating a decentralized, global, open-source platform to dramatically reduce the cost and time of medical research.
 (3) Generating a continuously updated, publicly accessible knowledge base that ranks the most safe and effective treatments for any condition on a personalized basis—drawing from the entire universe of clinical and real-world evidence—and presents this information through standardized "Outcome Labels."
 
-### SEC. 103. FINDINGS.
+### SEC. 103. FINDINGS
 
 Congress finds the following:
 
-1.  New, effective treatments take an average of **17 years** to transition from scientific discovery to clinical practice, a delay during which millions of patients suffer without access to potential cures.
-2.  The current clinical trial paradigm is profoundly inefficient and exclusionary.
+1. New, effective treatments take an average of **17 years** to transition from scientific discovery to clinical practice, a delay during which millions of patients suffer without access to potential cures.
+2. The current clinical trial paradigm is profoundly inefficient and exclusionary.
     (A) Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43,000**\[2], inflating drug prices and limiting R‑&‑D on unpatentable therapies.
     (B) Up to **85 percent of patients** are excluded from participating in pivotal trials, limiting the generalizability of findings to real-world patient populations.
     (C) The failure to publish negative results leads to redundant research, while rigid trial designs that cannot adapt to incoming data stifle innovation.
     (D) The short duration of most trials results in a critical lack of data on the long-term safety and efficacy of interventions.
-3.  As a consequence of these systemic failures, an estimated **95 percent of rare diseases lack a single FDA-approved treatment**, and effective therapies for common conditions remain undiscovered or inaccessible.
-4.  The U.K. **RECOVERY** pragmatic trial enrolled 49,000 patients in 100 days at roughly **\$500 per patient**\[3], demonstrating that a decentralized, adaptive model can reduce the non-biologic operational costs of clinical research by over **90 percent** through automation of data management, monitoring, and administrative functions.
-5.  The strategic application of artificial intelligence in healthcare has the potential to yield substantial economic benefits, with studies indicating that AI could reduce national healthcare spending by 5 to 10 percent annually by optimizing diagnostics, personalizing treatments, and improving the efficiency of health-related research and development.
-6.  Publicly financed, algorithm-targeted discounts on patient-borne trial participation costs, aimed at maximizing **quality‑adjusted life‑years (QALYs) per federal dollar**, can enhance access to trials, with patients covering the net costs of their participation.
-7.  The establishment of a global health data protocol, analogous to the foundational protocols of the internet, is necessary to securely connect disparate data silos and accelerate medical research worldwide. The **FDA.gov v2 Decentralized Trial Platform** is intended to be the United States' initial contribution to this protocol—a public utility providing the secure, open-source backend for a new generation of health innovation. It will create a foundational global public good by enabling research on all promising therapies, especially those without significant commercial potential that are underserved by private-sector research.
-8.  A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
-9.  Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
+3. As a consequence of these systemic failures, an estimated **95 percent of rare diseases lack a single FDA-approved treatment**, and effective therapies for common conditions remain undiscovered or inaccessible.
+4. The U.K. **RECOVERY** pragmatic trial enrolled 49,000 patients in 100 days at roughly **\$500 per patient**\[3], demonstrating that a decentralized, adaptive model can reduce the non-biologic operational costs of clinical research by over **90 percent** through automation of data management, monitoring, and administrative functions.
+5. The strategic application of artificial intelligence in healthcare has the potential to yield substantial economic benefits, with studies indicating that AI could reduce national healthcare spending by 5 to 10 percent annually by optimizing diagnostics, personalizing treatments, and improving the efficiency of health-related research and development.
+6. Publicly financed, algorithm-targeted discounts on patient-borne trial participation costs, aimed at maximizing **quality‑adjusted life‑years (QALYs) per federal dollar**, can enhance access to trials, with patients covering the net costs of their participation.
+7. The establishment of a global health data protocol, analogous to the foundational protocols of the internet, is necessary to securely connect disparate data silos and accelerate medical research worldwide. The **FDA.gov v2 Decentralized Trial Platform** is intended to be the United States' initial contribution to this protocol—a public utility providing the secure, open-source backend for a new generation of health innovation. It will create a foundational global public good by enabling research on all promising therapies, especially those without significant commercial potential that are underserved by private-sector research.
+8. A transparent, open-access platform for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Trial Platform, is anticipated to foster a competitive environment among trial sponsors, further incentivizing the adoption of cost-efficient methodologies and transparent pricing for trial operations.
+9. Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods will accelerate safe cures.
 10. The Platform is intended to serve not only the FDA but as shared, open-source public infrastructure for all federal, state, and international health authorities, fostering a globally harmonized ecosystem for evidence generation and public health.
 11. This Act affirms the fundamental right of every person to access and participate in scientific research relevant to their health. By empowering individuals as both participants and trial creators, the United States can transform its regulatory infrastructure into a global public good, accelerating medical progress for all.
 
-### SEC. 104. DEFINITIONS.
+### SEC. 104. DEFINITIONS
 
 In this Act—
 
-1.  **Secretary** means the Secretary of Health and Human Services.
-2.  **FDA** means the Food and Drug Administration.
-3.  **NIH** means the National Institutes of Health.
-4.  **Pragmatic decentralized trial** means a clinical study integrated into routine care, allowing remote or local data capture, minimal exclusions, and broad patient demographics.
-5.  **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
-6.  **FDA.gov v2 Decentralized Trial Platform (the "Platform")** means the decentralized global health protocol initiated by the United States and established on the fda.gov domain to serve as a secure, open-source backend, providing core services for data exchange, trial management, and evidence generation. It is designed to function as a global public utility and Backend-as-a-Service (BaaS), intended for eventual governance by a global consortium of stakeholders.
-7.  **Trial Creator** means any individual, institution, or entity that designs, initiates, and manages a trial on the Platform.
+1. **Secretary** means the Secretary of Health and Human Services.
+2. **FDA** means the Food and Drug Administration.
+3. **NIH** means the National Institutes of Health.
+4. **Pragmatic decentralized trial** means a clinical study integrated into routine care, allowing remote or local data capture, minimal exclusions, and broad patient demographics.
+5. **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
+6. **FDA.gov v2 Decentralized Trial Platform (the "Platform")** means the decentralized global health protocol initiated by the United States and established on the fda.gov domain to serve as a secure, open-source backend, providing core services for data exchange, trial management, and evidence generation. It is designed to function as a global public utility and Backend-as-a-Service (BaaS), intended for eventual governance by a global consortium of stakeholders.
+7. **Trial Creator** means any individual, institution, or entity that designs, initiates, and manages a trial on the Platform.
 (b) **State Laws.** No State or political subdivision may regulate the practice of tele‑medicine, pharmacy licensure, or shipment of investigational products in a manner that prevents implementation of this Act. Specifically, a licensed prescriber participating under an FDA‑approved protocol shall be deemed licensed in all States for the limited purpose of providing investigational treatment under this Act, and pharmacies dispensing or shipping such products pursuant to the blockchain supply‑chain ledger are exempt from conflicting State prohibitions.
 (c) **DSCSA Alignment.** All investigational shipments must utilize the platform ledger to satisfy DSCSA traceability.
 (d) **Shared Public Health Infrastructure.** The Platform shall be designed and maintained as extensible infrastructure available for use by all federal, state, and international health agencies. The Secretary shall establish a process to facilitate the adoption of the Platform by other agencies for their own regulatory, research, and public health surveillance purposes, thereby creating a shared, globally harmonized ecosystem for evidence generation.
@@ -64,26 +64,26 @@ In this Act—
 
 ## TITLE II — FDA Upgrade AND CLINICAL‑TRIAL INNOVATION
 
-### SEC. 201. ACCELERATED ADOPTION OF ALTERNATIVE PRECLINICAL TEST METHODS.
+### SEC. 201. ACCELERATED ADOPTION OF ALTERNATIVE PRECLINICAL TEST METHODS
 
 (a) **Rulemaking.** Not later than 180 days after enactment, the Secretary, acting through the Commissioner of Food and Drugs, shall issue final regulations amending 21 CFR Parts 312 and 600 to permit non‑animal New‑Approach Methodologies (NAMs)—including organ‑on‑chip systems, validated in‑silico toxicology, and high‑throughput cell assays—as acceptable primary evidence of safety where scientifically justified.
 (b) **Qualification pathway.** The regulations shall establish a transparent qualification pathway; once a NAM is qualified for a defined context of use, FDA reviewers shall accept data from that method without requiring parallel animal studies.
 (c) **Annual report.** The Commissioner shall publish an annual public report enumerating qualified NAMs, sponsor submissions using NAMs, and areas still requiring animal use with timelines to develop alternatives.
 
-### SEC. 202. GUIDANCE ON DECENTRALISED, ADAPTIVE, AND REAL‑WORLD‑EVIDENCE TRIALS.
+### SEC. 202. GUIDANCE ON DECENTRALISED, ADAPTIVE, AND REAL‑WORLD‑EVIDENCE TRIALS
 
 (a) **Decentralised Trials Guidance.** Within 1 year the Secretary shall issue final guidance recognising remote visits, tele‑investigator oversight, direct‑to‑patient IMP shipment, and e‑consent—as compliant with 21 CFR Parts 50, 54, and 312.
 (b) **Adaptive Designs.** Guidance shall allow response‑adaptive randomisation, Bayesian interim analyses, seamless phase 2/3 designs, and platform/master‑protocol structures, provided pre‑specified statistical control of type‑I error.
 (c) **Real‑World Evidence.** Within 18 months the Secretary shall publish a framework specifying how real‑world data (EHRs, claims, device feeds) integrated via the FDA v2 Platform may support new indications, post‑marketing commitments, or safety label changes.
 (d) **Training.** FDA shall establish continuing‑education modules to train reviewers in decentralized‑trial oversight, Bayesian statistics, and RWE analytics.
 
-### SEC. 203. PATIENT‑FOCUSED DRUG DEVELOPMENT AND GLOBAL COLLABORATION.
+### SEC. 203. PATIENT‑FOCUSED DRUG DEVELOPMENT AND GLOBAL COLLABORATION
 
 (a) **Patient Experience Integration.** FDA shall revise Patient‑Focused Drug Development guidance to require that every pivotal trial protocol include at least one patient‑reported outcome or patient‑preference study relevant to benefit–risk assessment.
 (b) **Global Work‑sharing.** The Secretary may enter into work‑sharing arrangements with peer regulators (EMA, PMDA, Health Canada) for concurrent review of applications utilising FDA v2 Platform data.
 (c) **Data Standards Convergence.** The Secretary shall align FDA data standards with HL7 FHIR Release 5, CDISC SDTM v4, and SNOMED‑CT 2025 edition to ensure cross‑border data utility.
 
-### SEC. 204. FDA.gov v2 Decentralized Trial Platform.
+### SEC. 204. FDA.gov v2 Decentralized Trial Platform
 
 (a) **Launch & Hosting.** Within 12 months after enactment, the Secretary shall deploy an open-source, cloud-native **FDA.gov v2 Decentralized Trial Platform**\[4] as a comprehensive upgrade to the **fda.gov** domain itself. All source code shall be mirrored in real-time to a public repository (e.g., *github.com/fda/fda-v2*).
 (b) **Mandatory Open‑Source Licence.** All code shall be released under the GNU General Public License v3.0. Any proprietary dependency shall be replaced or dual‑licensed within 24 months.
@@ -123,7 +123,7 @@ In this Act—
 
 (m) **Interoperability with National Health Data Systems.** The Platform shall be designed to complement and enhance existing government health initiatives. The Secretary shall establish data sharing and interoperability frameworks to connect the Platform with key national health programs, including but not limited to: the FDA's Sentinel Initiative and Global Substance Registry System (GSRS); the National Institutes of Health's *All of Us* Research Program; the National Health and Nutrition Examination Survey (NHANES); and the Centers for Disease Control and Prevention's public health surveillance systems. This integration shall leverage the Platform's AI capabilities to analyze data across systems, enhancing national safety monitoring, research, and public health response capabilities while adhering to strict privacy-preserving protocols.
 
-### SEC. 205. FDA-X PRIZE.
+### SEC. 205. FDA-X PRIZE
 
 (a) **Establishment.** To accelerate the development of the FDA.gov v2 Platform, the Secretary is authorized to establish an "FDA-X Prize" competition, with a prize purse to be determined by the Secretary, awarded to the entity that first develops and demonstrates a platform meeting the core requirements outlined in Section 204 and which demonstrates the capacity to achieve at least an **80X reduction** in per-patient trial costs compared to traditional methodologies.
 
@@ -133,7 +133,7 @@ In this Act—
 
 ## TITLE III — UNIVERSAL TRIAL ACCESS (RIGHT‑TO‑TRIAL PROGRAM)
 
-### SEC. 301. UNIVERSAL ELIGIBILITY FOR INVESTIGATIONAL INTERVENTIONS.
+### SEC. 301. UNIVERSAL ELIGIBILITY FOR INVESTIGATIONAL INTERVENTIONS
 
 (a) **Right.** Beginning 24 months after enactment, any U.S. resident who requests an investigational intervention shall be guaranteed enrolment—remotely if necessary—in at least one pragmatic, decentralized trial arm evaluating that intervention, subject to the safety-based exclusions specified in subsection (c).
 
@@ -145,7 +145,7 @@ In this Act—
 
 (e) **Adaptive Enrolment.** Sponsors participating under this section must accept data‑driven lowering of exclusion criteria unless an IRB documents incremental safety risk.
 
-### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY.
+### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY
 
 (a) **Ethical Oversight.** All Right‑to‑Trial protocols shall undergo review by a qualified Institutional Review Board (IRB). To foster innovation and efficiency, the FDA.gov v2 Platform shall support both review by a single central IRB (per 45 CFR § 46.114[8]) and by qualified **Decentralized Ethical Review Boards (DERBs)**. The Secretary shall, through rulemaking, establish standards for the qualification, operation, and oversight of DERBs on the platform.
 (b) **Informed Consent and Comprehension Verification.**
@@ -156,7 +156,7 @@ In this Act—
 (c) **Safety Monitoring.** Sponsors must stream adverse‑event data to the Dashboard within 24 hours; FDA may halt enrolment under 21 CFR § 312.42.
 (d) **Liability Shield.** Good‑faith compliance grants immunity from tort claims except for gross negligence or willful misconduct; mirrors Pub. L. 115‑176 § 2(c).
 
-### SEC. 303. NIH TRIAL PARTICIPATION COST DISCOUNTS.
+### SEC. 303. NIH TRIAL PARTICIPATION COST DISCOUNTS
 
 (a) **Fund.** A revolving Clinical Trial Patient Cost Discount Fund is hereby established within the Treasury, authorized to receive \$2 billion for each of fiscal years 2026 through 2030.
 
@@ -166,7 +166,7 @@ In this Act—
 
 (d) **Audit.** The Comptroller General of the United States shall audit the allocation and application of discounts from the Fund biennially and report findings to Congress. The Secretary may recoup any funds associated with discounts applied to mis-certified costs or for trials not meeting data submission requirements.
 
-### SEC. 304. PATIENT COST CONTRIBUTION FOR TRIAL PARTICIPATION.
+### SEC. 304. PATIENT COST CONTRIBUTION FOR TRIAL PARTICIPATION
 
 (a) **Determination and Disclosure of Participation Costs.** Prior to a patient consenting to a trial, the sponsoring entity shall determine and provide to the FDA v2 Decentralized Trial Platform a comprehensive, itemized estimate of all direct costs associated with that specific patient's anticipated participation in the trial. This shall include, but not be limited to, costs of investigational product, necessary medical procedures, diagnostic tests, monitoring, and data management directly attributable to the research participant. These estimated costs, alongside the NIH-funded discount applicable under SEC. 303, and the final net cost to the patient, shall be transparently displayed to the potential participant via the Platform's Trial Cost and Discount Module (SEC. 204(c)(3)) and detailed in the e-consent form (SEC. 302(b)). This transparent disclosure of itemized costs on a centralized platform is intended to encourage competitive and efficient pricing by sponsoring entities.
 
@@ -186,14 +186,14 @@ In this Act—
 
 ## TITLE IV — GENERAL PROVISIONS
 
-### SEC. 401. COORDINATION WITH EXISTING LAW.
+### SEC. 401. COORDINATION WITH EXISTING LAW
 
 (a) **Expanded Access.** This Act supplements 21 CFR § 312 Subpart I; data from Right‑to‑Trial may fulfill post‑marketing study obligations.
 (b) **State Laws.** No State or political subdivision may regulate the practice of tele‑medicine, pharmacy licensure, or shipment of investigational products in a manner that prevents implementation of this Act. Specifically, a licensed prescriber participating under an FDA‑approved protocol shall be deemed licensed in all States for the limited purpose of providing investigational treatment under this Act, and pharmacies dispensing or shipping such products pursuant to the blockchain supply‑chain ledger are exempt from conflicting State prohibitions.
 (c) **DSCSA Alignment.** All investigational shipments must utilize the platform ledger to satisfy DSCSA traceability.
 (d) **Shared Public Health Infrastructure.** The Platform shall be designed and maintained as extensible infrastructure available for use by all federal, state, and international health agencies. The Secretary shall establish a process to facilitate the adoption of the Platform by other agencies for their own regulatory, research, and public health surveillance purposes, thereby creating a shared, globally harmonized ecosystem for evidence generation.
 
-### SEC. 402. AUTHORIZATION OF APPROPRIATIONS AND STAGE‑GATED FUNDING.
+### SEC. 402. AUTHORIZATION OF APPROPRIATIONS AND STAGE‑GATED FUNDING
 
 (a) **FDA Upgrade.** \$500 million FY 2026‑30, of which **no more than 25 percent may be obligated** until the Platform (1) attains FedRAMP‑Moderate ATO *and* (2) records at least **1,000 merged pull‑requests** under § 204(g). Subsequent 25‑percent tranches unlock upon the Platform reaching 10,000 users and 10,000 merged pull‑requests, respectively.
 (b) **Subsidy Fund.** \$2 billion FY 2026‑30, released quarterly upon NIH certification that the subsidy‑allocation algorithm achieved or exceeded its projected QALY gain in the preceding quarter.
@@ -201,24 +201,24 @@ In this Act—
 (d) **Direct‑Hire Authority.** For FY 2026‑30 the Secretary may hire up to **200 technical employees** for the Platform under 5 U.S.C. § 9803 (critical‑need direct hire).
 (e) **Agile Acquisition Pilot.** All contracts for the Platform are designated "modular IT acquisitions" under FITARA; FAR Part 15 documentation requirements are waived in favour of the **US Digital Service Playbook\[10]** incremental‑delivery model.\*\* \$150 million FY 2026‑30.
 
-### SEC. 403. IMPLEMENTATION TIMELINE.
+### SEC. 403. IMPLEMENTATION TIMELINE
 
-*   **180 days:** Interim rules; beta e‑protocol builder; transparency website live.
-*   **12 months:** FDA v2 Platform MVP; insurance exchange; blockchain ledger operational.
-*   **24 months:** Universal enrolment guarantee active; subsidies flowing.
-*   **36 months:** First GAO report to Congress.
+* **180 days:** Interim rules; beta e‑protocol builder; transparency website live.
+* **12 months:** FDA v2 Platform MVP; insurance exchange; blockchain ledger operational.
+* **24 months:** Universal enrolment guarantee active; subsidies flowing.
+* **36 months:** First GAO report to Congress.
 
-### SEC. 404. STRATEGY FOR GLOBAL GOVERNANCE AND DECENTRALIZATION.
+### SEC. 404. STRATEGY FOR GLOBAL GOVERNANCE AND DECENTRALIZATION
 
 (a) **Objective.** The Secretary, in coordination with the Secretary of State, shall develop and execute a strategy to transition the governance of the Platform from the United States government to an independent, international multi-stakeholder body.
 (b) **Report to Congress.** Within 18 months of enactment, the Secretary shall submit a report to Congress outlining this strategy, including: (1) proposed frameworks for a new international governance body; (2) a timeline for transitioning technical and administrative oversight; and (3) a plan for ensuring the long-term sustainability and neutrality of the protocol, including research into and pathways toward cryptographically-secured, on-chain governance models that reduce reliance on a central administrative body.
 (c) **Continued Support.** The United States shall continue to provide technical and financial support for the Platform during a transition period of no less than 5 years after an international governance body is established.
 
-### SEC. 405. SEVERABILITY.
+### SEC. 405. SEVERABILITY
 
 If any provision of this Act is held invalid, the remainder shall remain in effect.
 
-### SEC. 406. TRANSPARENCY IN REGULATORY ACTIONS LIMITING TREATMENT ACCESS.
+### SEC. 406. TRANSPARENCY IN REGULATORY ACTIONS LIMITING TREATMENT ACCESS
 
 (a) **Public Justification Reports Required.** For any regulatory action taken by the Secretary that denies, restricts, or withdraws patient access to any potential treatment, the Secretary shall, within 60 days of such action, publish a comprehensive report. This report shall be publicly available on the FDA.gov v2 Decentralized Trial Platform.
 
@@ -257,4 +257,4 @@ If any provision of this Act is held invalid, the remainder shall remain in effe
 \[10] U.S. Digital Service, *Digital Service Playbook* (2025).
 \[11] 45 CFR § 164.512(i)(1) (HIPAA research waiver).
 
-**End of Act.** 
+**End of Act.**

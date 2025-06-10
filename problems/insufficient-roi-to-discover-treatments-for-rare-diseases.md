@@ -20,5 +20,5 @@ Victims of rare diseases suffer the greatest harm from this, as it's not economi
 
 So out of desperation, many have created communities on Discord severs and Reddit, where they conduct underground self-experimentation.
 
-Regardless of the wisdom of this approach, this experimentation is going to continue. Hence, the dFDA should promote harm reduction strategies, provide protocols, and collect this data. 
+Regardless of the wisdom of this approach, this experimentation is going to continue. Hence, the dFDA should promote harm reduction strategies, provide protocols, and collect this data.
 

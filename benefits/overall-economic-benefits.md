@@ -76,13 +76,13 @@ All figures have wide confidence intervals (CIs). These estimates are not exact 
 **QALY Estimate (Baseline)**
 
 \[
-\text{QALYs per therapy} 
-= 200{,}000 \times 20\% \times 7 
+\text{QALYs per therapy}
+= 200{,}000 \times 20\% \times 7
 = 280{,}000.
 \]
 
 \[
-\text{For 50 therapies} 
+\text{For 50 therapies}
 = 14{,}000{,}000 \text{ QALYs}.
 \]
 
@@ -165,6 +165,7 @@ Applying a 20% multiplier to the QALYs above yields ~16.8 million QALYs (baselin
 - ~50% of brand spending sees a ~40% price drop. That’s \$280B in cuts. Possibly \$200–\$300B total.
 
 **Aggressive Scenario**:
+
 - Nearly all brand spending (say \$1T) sees a 50%+ cut over time, yielding \$500B+.
 
 ---

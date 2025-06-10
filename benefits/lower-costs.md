@@ -20,7 +20,7 @@ Traditional clinical trials cost an average of $41,413 per participant, making l
 - Reduced administrative overhead
 - Integration with existing healthcare infrastructure
 
-This 95% cost reduction means research institutions can run larger trials with more diverse participants, leading to more robust and representative results. 
+This 95% cost reduction means research institutions can run larger trials with more diverse participants, leading to more robust and representative results.
 
 | Cost Category | Current Cost | New Cost | Reduction | Explanation |
 |--------------|------------:|----------:|----------:|-------------|

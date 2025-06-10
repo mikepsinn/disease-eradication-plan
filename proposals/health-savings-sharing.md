@@ -275,17 +275,17 @@ the profit-sharing percentage or combining efforts across multiple conditions.
 
 ### **Specific Changes to Traditional Requirements**
 
-#### **1. No Single Disease Endpoint**:
+#### **1. No Single Disease Endpoint**
 
 - Preventative and longevity therapies are rewarded based on **multi-condition savings** rather than curing or
   preventing one specific disease.
 
-#### **2. Long-Term Real-World Data Collection**:
+#### **2. Long-Term Real-World Data Collection**
 
 - The system relies on **anonymized, decentralized data** to measure healthcare cost reductions over decades, making it
   feasible to track the impact of longevity therapies.
 
-#### **3. Incentivizing Early Adoption**:
+#### **3. Incentivizing Early Adoption**
 
 - Manufacturers are incentivized to make therapies widely available early, as larger populations and longer treatment
   durations maximize savings-sharing rewards.

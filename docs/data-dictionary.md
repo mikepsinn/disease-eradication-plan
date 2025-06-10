@@ -100,4 +100,4 @@ Contains information about each clinical trial managed on the platform.
 | `created_at`| `TIMESTAMPTZ`| Timestamp of trial creation. |
 
 ---
-*This is a simplified representation. The full schema will be maintained here as it is developed.* 
+*This is a simplified representation. The full schema will be maintained here as it is developed.*

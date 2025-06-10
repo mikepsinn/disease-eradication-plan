@@ -24,7 +24,7 @@ Cerebrolysin is a mixture of neuropeptides derived from pig brain tissue. It has
 
 Based on current available data and conservative estimates, we project the following annual impact if Cerebrolysin were to become widely available:
 
-1. **Stroke Recovery**: 
+1. **Stroke Recovery**:
    - Estimated patients treated: 50,000
    - Potential QALY gain: 5,000 (0.1 QALY per patient)
 
@@ -37,6 +37,7 @@ Based on current available data and conservative estimates, we project the follo
    - Potential QALY gain: 4,000 (0.2 QALY per patient)
 
 **Total Estimated Annual Impact**:
+
 - QALY gain: 10,500
 - DALY reduction: Approximately 10,500
 
@@ -69,6 +70,7 @@ To refine these estimates and better understand Cerebrolysin's potential, we cal
 4. Patient-reported outcome studies
 
 ## Sources
+
  - https://cosmicnootropic.com/products/cerebrolysin/
 
 ## Conclusion

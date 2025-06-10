@@ -33,6 +33,7 @@ Here’s an estimated table of the number of lives that could potentially be sav
 ---
 
 ### **Notes on Estimates:**
+
 1. **Naloxone**: Data is based on the U.S. opioid epidemic; global figures may be higher.
 2. **Oral Contraceptives**: Maternal mortality figures are global, with most deaths occurring in low- and middle-income countries.
 3. **PrEP and PEP**: Estimates are based on the reduction of HIV/AIDS transmission in high-risk populations.
@@ -45,7 +46,8 @@ Here’s an estimated table of the number of lives that could potentially be sav
 This table highlights the profound public health impact that could result from removing barriers to access for these drugs.
 
 ### **Additional Sources:**
-1. **Naloxone Estimates**: 
+
+1. **Naloxone Estimates**:
    - Lancet study on naloxone need across fentanyl, heroin, and prescription opioids (https://www.thelancet.com/article/S2468-2667(21)00304-2/fulltext)
    - CDC report on opioid overdose prevention programs providing naloxone (https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6423a2.htm)
 

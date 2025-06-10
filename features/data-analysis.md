@@ -51,6 +51,7 @@ Proper preprocessing sets up the data for robust analysis.
 With cleaned data, a rigorous methodology can determine treatment effects:
 
 ### Segment Data
+
 First, split the data into three segments:
 
 - **Pre-treatment** - Period before treatment began
@@ -93,41 +94,51 @@ To determine the **optimal dosage**, incrementally adjust the daily dosage amoun
 Absolutely, given your constraints and requirements, here's a refined methodology:
 
 1. **Data Preprocessing**:
+
   - **Handling Missingness**: Exclude rows or time periods with missing data. This ensures the analysis is grounded in actual observations.
   - **Standardization**: For treatments with larger scales, standardize values to have a mean of 0 and a standard deviation of 1. This will make regression coefficients more interpretable, representing changes in symptom severity per standard deviation change in treatment.
 
 2. **Lagged Regression Analysis**:
+
   - Evaluate if treatment on previous days affects today's outcome, given the discrete nature of treatment.
   - Examine up to a certain number of lags (e.g., 30 days) to determine potential onset delay and duration.
   - Coefficients represent the change in symptom severity due to a one unit or one standard deviation change in treatment, depending on whether standardization was applied. P-values indicate significance.
 
 3. **Reverse Causality Check**:
+
   - Assess if symptom severity on previous days predicts treatment intake. This helps in understanding potential feedback mechanisms.
 
 4. **Cross-UserVariableRelationship Analysis**:
+
   - Analyze the correlation between treatment and symptom severity across various lags.
   - This aids in understanding potential onset delays and durations of effect.
 
 5. **Granger Causality Tests**:
+
   - Test if past values of treatment provide information about future values of symptom severity and vice-versa.
   - This test can help in determining the direction of influence.
 
 6. **Moving Window Analysis** (for cumulative effects):
+
   - Create aggregated variables representing the sum or average treatment intake over windows (e.g., 7 days, 14 days) leading up to each observation.
   - Use these in regression models to assess if cumulative intake over time affects symptom severity.
 
 7. **Optimal Dosage Analysis**:
+
   - Group data by discrete dosage levels.
   - Calculate the mean symptom severity for each group.
   - The dosage associated with the lowest mean symptom severity suggests the optimal intake level.
 
 8. **Control for Confounders** (if data is available):
+
   - If data on potential confounding variables is available, incorporate them in the regression models. This helps in isolating the unique effect of the treatment.
 
 9. **Model Diagnostics**:
+
   - After regression, check residuals for normality, autocorrelation, and other potential issues to validate the model.
 
 10. **Interpretation**:
+
   - Consistency in findings across multiple analyses strengthens the case for a relationship.
   - While no single test confirms causality, evidence from multiple methods can offer a compelling case.
 

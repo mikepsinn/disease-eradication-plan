@@ -15,9 +15,10 @@ dateCreated: '2025-02-12T16:52:56.730Z'
 
 ![dfda-gateway-api-node-silo.jpg](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
 
-FDAi Gateway API Nodes make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](../../home.md#2-personalfda-nodes). 
+FDAi Gateway API Nodes make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](../../home.md#2-personalfda-nodes).
 
 ### Requirements
+
    - **OAuth2 Protected API:** Provides a secure, OAuth2-protected API for people to easily access their data.
    - **Personal Access Token Management** - Individuals should be able to create labeled access tokens that they can use to access their data.  They should be able to label their access tokens and monitor the usage of each token.  They should also be able to revoke access tokens at any time and set an expiration date.
    - **Developer Portal:** Developer portal for data silos to easily register and manage their 3rd party application, so they can allow users to share data with their application.

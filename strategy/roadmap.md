@@ -251,7 +251,7 @@ Below is an **absurdly comprehensive, highly-detailed, hierarchical to-do list**
 
 ## **RECOMMENDED ORGANIZATIONS & PEOPLE**
 
-- **Philanthropy & Funding**: 
+- **Philanthropy & Funding**:
   - Gates Foundation, Chan Zuckerberg Initiative, Open Philanthropy, Wellcome Trust  
 - **Policy & Lobbying**:
   - Major lobbying firms (Brownstein Hyatt, Akin Gump)  

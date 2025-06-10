@@ -11,7 +11,7 @@ editor: markdown
 date: '2025-02-12T16:52:46.729Z'
 dateCreated: '2025-02-12T16:52:46.729Z'
 ---
-# 📲 Data Collection 
+# 📲 Data Collection
 
 ![](https://static.crowdsourcingcures.org/dfda/components/data-collection/data-collection.png)
 

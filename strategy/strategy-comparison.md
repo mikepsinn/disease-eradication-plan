@@ -23,6 +23,7 @@ Below is an **Exhaustive Strategy Comparison Document** designed for **organizat
 **Goal**: To establish a **global system** that ranks treatment effectiveness (clinical + real-world data) and enables **instant patient enrollment** in decentralized trials—supported by **guaranteed patient rights** to join any trial and import treatments from other jurisdictions.
 
 **Key Principle**:  
+
 - **Technical feasibility** is less of a barrier—existing companies can quickly adapt or expand platforms.  
 - The **primary challenge** is reforming the **regulatory and legal frameworks** to:  
   - Allow broad trial participation (beyond local or national boundaries).  
@@ -56,6 +57,7 @@ Below is an **Exhaustive Strategy Comparison Document** designed for **organizat
 Below are **four primary strategies**, each incorporating the **new awareness** that technical implementation can proceed quickly once legal hurdles are addressed.
 
 ### **A. Interstate Compact Approach**  
+
 States form a shared “Cure Zone” compact, adopting uniform rules for decentralized trials and granting broad patient rights (including importation).
 
 - **Technical Feasibility**:  
@@ -79,6 +81,7 @@ States form a shared “Cure Zone” compact, adopting uniform rules for decentr
 ---
 
 ### **B. Federal Law Approach**  
+
 Enact a **national law** mandating decentralized trial access and guaranteeing patient rights (participation, importation, data portability).
 
 - **Technical Feasibility**:  
@@ -104,6 +107,7 @@ Enact a **national law** mandating decentralized trial access and guaranteeing p
 ---
 
 ### **C. Philanthropist-Funded Development**  
+
 A philanthropic entity (or consortium) directly funds the **design and deployment** of a global trial platform and advocates for necessary legal reforms in parallel.
 
 - **Technical Feasibility**:  
@@ -128,6 +132,7 @@ A philanthropic entity (or consortium) directly funds the **design and deploymen
 ---
 
 ### **D. Prize Model**  
+
 Offer a **significant cash prize** (e.g., \$200–300M) to incentivize the creation or adaptation of a decentralized trial platform with guaranteed patient rights features.
 
 - **Technical Feasibility**:  

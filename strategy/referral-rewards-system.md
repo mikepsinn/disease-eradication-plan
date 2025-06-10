@@ -49,11 +49,13 @@ The [Oxford RECOVERY trial](https://www.recoverytrial.net/) demonstrated that de
 ## How Referral Rewards Drive Viral Participation
 
 A well-designed referral-rewards system can:
+
 - **Drop verified-vote costs below $1** (and as low as $0.20–$0.30 in viral scenarios)
 - Mobilize millions through organic, peer-driven sharing
 - Incentivize both direct action and network growth
 
 ### Cost Breakdown (per verified vote)
+
 | Component         | Conservative | Aggressive (Viral) | Notes                                 |
 |------------------|--------------|--------------------|---------------------------------------|
 | Direct Rewards   | $0.50–$0.75  | $0.30–$0.50        | Cash, merch, or crypto                |
@@ -62,6 +64,7 @@ A well-designed referral-rewards system can:
 | **Total**        | **$1.50–$2** | **$0.45–$0.65**    | Can drop to $0.20–$0.30 in best case  |
 
 **Benchmarks:**
+
 - **EveryLibrary – "Fight for the First" 2023–24:** Email-verified petition/pledge to local officials. Reported cost ≈ **$0.56 per verified action** (derived from $250–$1,000 ad spend per local drive producing 90,000 actions across ~100 drives). ([Source: EveryLibrary About](https://www.everylibrary.org/about-everylibrary))
 - **EveryLibrary Facebook/email drives (internal recap):** Library-funding calls & petitions reported at "A few **pennies per action**". ([Source: EveryLibrary cost-per-action ("few pennies")](https://pcsweeney.com/tag/library-activism/))
 - **Change.org Promoted Petitions:** Uses a Cost Per Mille (CPM) or cost-per-impression model.
@@ -100,6 +103,7 @@ A well-designed referral-rewards system can:
 ---
 
 ## Cost Scenarios for 200,000 Verified Votes
+
 | Scenario             | Reward Pool | Paid Ads | Ops    | Total   | $/vote |
 |----------------------|------------|----------|--------|---------|--------|
 | Baseline (roadmap)   | $25k       | $150k    | $25k   | $200k   | $1.00  |
@@ -111,21 +115,25 @@ A well-designed referral-rewards system can:
 ## $VICTORY Tokens: Funding the Referral Rewards System
 
 ### Why $VICTORY Tokens?
+
 - Inspired by WWII war bonds, $VICTORY tokens are a digital, transparent way to fund the movement for 80X faster medical progress.
 - Purpose: Directly finance this viral referral-rewards system to mobilize 3.5% of the population for the [FDA Upgrade & Right to Trial Act](../act.md).
 - Goal: Unlock the same scale of transformation as the Oxford RECOVERY trial, which achieved an [80X efficiency gain](https://www.recoverytrial.net/) in clinical research.
 
 ### How It Works
+
 - **Purchase $VICTORY tokens** to fund verified votes and actions in support of the Act.
 - **Each token** directly funds a specific number of verified votes (target: <$1 per vote, with potential for $0.20–$0.30 in viral scenarios—see the "Benchmarks" section above).
 - **All transactions** are transparently tracked on-chain, with a public dashboard showing progress toward the 3.5% tipping point ([BBC Future](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)).
 
 ### Incentives for Supporters
+
 - **Share in future healthcare savings** or referral jackpots, aligning incentives with campaign success.
 - **Governance rights**: Token holders may help steer campaign direction and reward distribution.
 - **Recognition**: Top contributors featured on leaderboards and in campaign updates.
 
 ### Transparency & Accountability
+
 - **Open, auditable records** of all token sales and reward distributions.
 - **Real-time impact dashboard**: See how many votes/actions your support has funded.
 - **Economic model**: "Every $1,000 in $VICTORY tokens funds 1,000+ verified votes, unlocking $X in healthcare savings and Y lives improved."
@@ -206,6 +214,7 @@ So when you propose a pledge/ referral system that can gather tens of thousands�
 ---
 
 ## Key References
+
 - [Oxford RECOVERY Trial: 80X Cost Reduction](https://www.recoverytrial.net/)
 - [Pragmatic vs. Explanatory Trials: Cost Comparison](reference/pragmatic-trials.md)
 - [3.5% Rule for Social Change](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)

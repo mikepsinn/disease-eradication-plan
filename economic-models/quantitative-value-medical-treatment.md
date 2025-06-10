@@ -24,17 +24,18 @@ The basic formula for calculating QALYs gained from a treatment is:
 To be more precise, if we consider a treatment that extends life and improves quality of life, we can calculate the QALYs gained as follows:
 
 Let:
--  \( Q_0 \) be the baseline quality of life (a value between 0 and 1) without the treatment.
--  \( Q_1 \) be the quality of life with the treatment (a value between 0 and 1).
--  \( T_0 \) be the life expectancy without the treatment.
--  \( T_1 \) be the life expectancy with the treatment.
+
+- \( Q_0 \) be the baseline quality of life (a value between 0 and 1) without the treatment.
+- \( Q_1 \) be the quality of life with the treatment (a value between 0 and 1).
+- \( T_0 \) be the life expectancy without the treatment.
+- \( T_1 \) be the life expectancy with the treatment.
 
 The QALYs without treatment would be approximately \( Q_0 \times T_0 \).
 The QALYs with treatment would be approximately \( Q_1 \times T_1 \).
 
 Therefore, the **QALYs Gained** from the treatment is:
 
-**QALYs Gained =  \( (Q_1 \times T_1) - (Q_0 \times T_0) \) **
+**QALYs Gained =  \( (Q_1 \times T_1) - (Q_0 \times T_0) \)**
 
 In practice, quality of life (\(Q\)) is often assessed using questionnaires and scales that quantify different aspects of health, such as mobility, self-care, usual activities, pain/discomfort, and anxiety/depression. These assessments are then converted into a utility score between 0 and 1.
 

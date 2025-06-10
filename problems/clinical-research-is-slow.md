@@ -4,7 +4,7 @@ description: It takes an average of 17 years for new treatments to reach patient
 emoji: ⌛
 ---
 
-# ⌛ Clinical Research is Slow!
+# ⌛ Clinical Research is Slow
 
 It takes an average of [17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) for medical research to translate into clinical practice and reach patients. This delay represents a critical failure in our healthcare system, leaving patients waiting for potentially life-saving treatments while researchers struggle with inefficient trial processes.
 

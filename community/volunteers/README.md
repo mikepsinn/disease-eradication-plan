@@ -17,6 +17,7 @@ Welcome to the Community Volunteers section of the Community Directory! This spa
 ## Purpose of This Folder
 
 The purpose of this folder is to provide a centralized location where community volunteers can:
+
 - Find information on how to contribute to the project.
 - Share their own expertise and resources.
 - Connect with other volunteers and project teams.
