@@ -4,15 +4,8 @@ description: Exploring the implications of reallocating $2 trillion from global 
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: opportunity-cost, military-spending, health-research, global-economics, public-health
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-exchange-alt
-featuredImage: /globalSolutions/1-percent-treaty/opportunity-cost.jpg
-author:
-  name: The Office of the President
-ogImage:
-  url: opportunity-cost.png
-absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\opportunity-cost.md'
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 ### Opportunity Cost of Military Spending

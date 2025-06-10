@@ -4,14 +4,8 @@ description: Radically accelerating medical research and funding by harnessing t
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: decentralized-health, dih, blockchain, ai, medical-research, 1-percent-treaty
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-hospital
-featuredImage: /globalSolutions/1-percent-treaty/decentralized-institutes-of-health.jpg
-ogImage:
-  url: /globalSolutions/1-percent-treaty/decentralized-institutes-of-health.png
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\decentralized-institutes-of-health.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 The Decentralized Institutes of Health (DIH) is a global initiative that aims to revolutionize healthcare research and funding by harnessing the power of decentralized science, collective intelligence, and blockchain technology. Our mission is to create a transnational, democratically governed, and trustless repository that enables governments worldwide to redirect resources from funding war to finding cures for diseases. By signing the 1% Treaty, governments pledge to allocate just 1% of their military spending to the DIH, unlocking billions of dollars for life-saving research.

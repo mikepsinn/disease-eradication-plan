@@ -4,15 +4,8 @@ description: Explore the significant expenditures and considerable gains of defe
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: lobbying, defense-sector, roi, military-spending, government-contracts
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-handshake
-featuredImage: /globalSolutions/1-percent-treaty/lobbying.jpg
-author:
-  name: The Office of the President
-ogImage:
-  url: lobbying.png
-absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\lobbying.md'
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 # Return on Investment in Lobbying

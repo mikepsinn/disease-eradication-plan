@@ -4,16 +4,8 @@ description: Investment in artificial intelligence to accelerate clinical resear
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: ai, automation, clinical-research, drug-development, cost-benefit, 1-percent-treaty
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-microscope
-featuredImage: /globalSolutions/1-percent-treaty/value-of-automating-research.jpg
-author:
-  name: The Office of the President
-ogImage:
-  url: /globalSolutions/1-percent-treaty/value-of-automating-research.png
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\value-of-automating-research.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 # The Using AI to Automate Clinical Research and Drug Development

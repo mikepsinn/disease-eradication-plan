@@ -4,15 +4,8 @@ description: A global accord to redirect 1% of military spending to discovering 
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: 1-percent-treaty, military-spending, healthcare-innovation, global-cooperation, ai-research, cost-benefit, treaty, decentralized-health
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-globe
-featuredImage: /globalSolutions/1-percent-treaty/1-percent-treaty.jpg
-author:
-  name: The Department of Peace
-ogImage:
-  url: /globalSolutions/1-percent-treaty/1-percent-treaty.png
-absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\1-percent-treaty.md'
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 ## Facts:

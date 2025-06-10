@@ -4,15 +4,8 @@ description: Discover how investing just 5 hours of your time can lead to signif
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: individual-roi, 1-percent-treaty, petition, outreach, time-investment
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-user-friends
-featuredImage: /globalSolutions/1-percent-treaty/individual-roi.jpg
-author:
-  name: The Office of the President
-ogImage:
-  url: individual-roi.png
-absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\individual-roi.md'
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 # Individual ROI on Getting Friends to Sign the Treaty

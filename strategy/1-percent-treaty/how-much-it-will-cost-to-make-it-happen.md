@@ -4,16 +4,8 @@ description: Analyzing the potential cost range per signature and total estimate
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: cost-analysis, signatures, global-initiative, 1-percent-treaty, fundraising, outreach
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-calculator
-featuredImage: /globalSolutions/1-percent-treaty/how-much-it-will-cost-to-make-it-happen.jpg
-author:
-  name: The Office of the President
-ogImage:
-  url: how-much-it-will-cost-to-make-it-happen.png
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\how-much-it-will-cost-to-make-it-happen.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 # How Much Will It Cost to Make It Happen?

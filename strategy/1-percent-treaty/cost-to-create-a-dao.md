@@ -4,13 +4,8 @@ description: Estimated costs for creating a DAO to fund the 1% Treaty Initiative
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: dao, cost-estimate, decentralized-health, 1-percent-treaty, fundraising, web3
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-coins
-featuredImage: /globalSolutions/1-percent-treaty/cost-to-create-a-dao.jpg
-ogImage: null
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\cost-to-create-a-dao.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 To estimate the cost of creating a DAO like [ConstitutionDAO](https://juicebox.money/p/constitutiondao)

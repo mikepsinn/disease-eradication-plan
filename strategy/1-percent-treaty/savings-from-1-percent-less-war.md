@@ -4,9 +4,8 @@ description: Explore the potential savings from reducing the annual cost of war 
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: savings, cost-of-war, peace-dividend, 1-percent-treaty, global-economics
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-piggy-bank
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 ## Cumulative Savings from Decreased Annual Cost of War

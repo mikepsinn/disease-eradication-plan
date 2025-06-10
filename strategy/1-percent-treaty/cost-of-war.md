@@ -4,15 +4,8 @@ description: Global military spending, its direct and indirect costs, and the pe
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: cost-of-war, military-spending, global-economics, peace-dividend, per-capita-cost
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-bomb
-author:
-  name: The Wishonian Bureau of Economic Research
-featuredImage: /globalSolutions/1-percent-treaty/cost-of-war.jpg
-ogImage:
-  url: /military-spending-scenarios-chart.png
-absFilePath: 'C:\code\wishonia\public\globalSolutions\1-percent-treaty\cost-of-war.md'
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 ## Direct Military Spending

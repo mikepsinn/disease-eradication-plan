@@ -4,16 +4,8 @@ description: Simply increasing spending on medical research while simultaneously
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: reallocation, public-goods, military-spending, health-research, opportunity-cost
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-random
-featuredImage: /globalSolutions/1-percent-treaty/why-reallocation-is-necessary.jpg
-author:
-  name: The Office of the President
-ogImage:
-  url: why-reallocation-is-necessary.png
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\why-reallocation-is-necessary.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 ### Military Spending vs. Health Research: A Brain Drain

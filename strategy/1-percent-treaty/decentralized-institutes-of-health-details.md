@@ -4,15 +4,8 @@ description: Exploring the transformative potential of Decentralized Institutes 
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: decentralized-health, dih, blockchain, ai, medical-research, quadratic-funding, product-requirements
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-network-wired
-featuredImage: >-
-  /globalSolutions/1-percent-treaty/decentralized-institutes-of-health-details.jpg
-ogImage:
-  url: /globalSolutions/1-percent-treaty/decentralized-institutes-of-health.png
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\decentralized-institutes-of-health-details.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 # The Decentralized Institutes of Health

@@ -4,17 +4,8 @@ description: AI scientists could potentially achieve 260 years of medical progre
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: ai-scientists, medical-progress, agi, automation, drug-discovery, healthcare-innovation
-dateCreated: 2024-06-09T00:00:00.000Z
 editor: markdown
-fontawesomeIcon: fa-robot
-featuredImage: >-
-  /globalSolutions/1-percent-treaty/rate-of-medical-progress-with-ai-scientists.jpg
-author:
-  name: AI Research Insights
-ogImage:
-  url: robot-lab-scientist.png
-absFilePath: >-
-  C:\code\wishonia\public\globalSolutions\1-percent-treaty\rate-of-medical-progress-with-ai-scientists.md
+dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 # Increased Efficiency of Automating Clinical Discovery
