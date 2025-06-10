@@ -1,14 +1,12 @@
 ---
-title: AI Engineer
+title: AI Engineer - Patient Rights Advocacy & Civic Engagement Platform
 description: Software and AI engineer wanted to help eradicate disease
 published: true
-date: 2025-06-10T07:03:03.711Z
+date: 2025-06-10T20:18:00.632Z
 tags: jobs
 editor: markdown
 dateCreated: 2025-06-10T07:01:46.646Z
 ---
-
-# AI Engineer - Patient Rights Advocacy & Civic Engagement Platform
 
 ## About the Mission
 Help accelerate medical progress by 80X through patient rights advocacy and civic engagement technology. We're building AI-powered platforms to educate patients about clinical trial access and empower them to advocate for healthcare policy reform.
@@ -17,14 +15,7 @@ Help accelerate medical progress by 80X through patient rights advocacy and civi
 
 **Our Solution:** Educational platform demonstrating decentralized clinical trials + civic engagement tools helping patients advocate for "Right to Trial" policies.
 
-## What You'll Build
-
-### Decentralized FDA Demonstration Platform (dFDA.earth)
-- Enhance existing platform showing how decentralized clinical trials would work
-- Build AI-powered treatment effectiveness rankings based on real-world data
-- Create patient matching systems for optimal trial participation
-- Demonstrate 80X cost reduction potential ($41k → $500 per patient)
-- Show policymakers and funders the actual vision in action
+## What You'll Work On
 
 ### AI Grant Application Engine
 - Automated grant research and application generation
