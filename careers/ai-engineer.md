@@ -2,7 +2,7 @@
 title: AI Engineer
 description: Software and AI engineer wanted to help eradicate disease
 published: true
-date: 2025-06-10T07:01:46.646Z
+date: 2025-06-10T07:02:57.880Z
 tags: jobs
 editor: markdown
 dateCreated: 2025-06-10T07:01:46.646Z
@@ -26,7 +26,6 @@ Help accelerate medical progress by 80X through patient rights advocacy and civi
 
 - Focus areas: Patient advocacy, civic tech, democracy, health policy
 
-- Expected outcome: $500k-$2M in funding within 12 months
 
 ### Patient Advocacy Automation Platform
 
@@ -88,7 +87,7 @@ Send resume + cover letter explaining:
 
 3. Examples of systems you've built that scaled human efforts
 
-**Contact:** [Your email]
+**Contact:** jobs@dfda.earth
 
 ---
 
