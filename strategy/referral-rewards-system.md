@@ -1,6 +1,6 @@
 ---
 title: Referral Rewards and 3.5% Rule
-description: How a viral referral-rewards system can mobilize 3.5% of the population to vote for the FDA Upgrade and Right to Trial Act, replicating the 80X efficiency of the Oxford RECOVERY trial and transforming clinical research costs.
+description: How a viral referral-rewards system can mobilize 3.5% of the population to vote for the FDA Upgrade and Right to Trial Initiative, replicating the 80X efficiency of the Oxford RECOVERY trial and transforming clinical research costs.
 published: true
 date: 2025-05-27T21:56:53.681Z
 tags: crypto, clinical-trials, cost-efficiency, fda-upgrade, fundraising, medical-progress, referral-rewards, right-to-trial, strategy, war-bonds
@@ -16,7 +16,7 @@ graph TD
 
 ## Why 3.5%? The Tipping Point for Systemic Change
 
-Research shows that when just **3.5% of a population** actively participates in a movement, systemic change becomes highly likely ([source](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)). For the FDA Upgrade and Right to Trial Act, this means mobilizing roughly **12 million Americans** to vote or take action—enough to force policy transformation and unlock global decentralized clinical trials.
+Research shows that when just **3.5% of a population** actively participates in a movement, systemic change becomes highly likely ([source](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)). For the FDA Upgrade and Right to Trial Initiative, this means mobilizing roughly **12 million Americans** to vote or take action—enough to force policy transformation and unlock global decentralized clinical trials.
 
 > The "3.5% rule" is based on research by political scientist Erica Chenoweth, who analyzed hundreds of nonviolent movements and found that those engaging at least 3.5% of the population have never failed to achieve serious political change. This threshold is now widely cited as the tipping point for successful social movements ([BBC Future](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), [Chenoweth & Stephan, 2011](https://www.jstor.org/stable/j.ctt7s7wm)).
 
@@ -30,7 +30,7 @@ Research shows that when just **3.5% of a population** actively participates in 
 
 The [Oxford RECOVERY trial](https://www.recoverytrial.net/) demonstrated that decentralized, pragmatic trials can reduce per-patient costs from **$41,000** to **$500**—an **80X efficiency gain** ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs), [NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)). This model saved over **1 million lives** globally by rapidly identifying effective COVID-19 treatments ([UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)).
 
-> **Goal:** Replicate this 80X efficiency for all medical research by passing the FDA Upgrade and Right to Trial Act—using viral referral rewards to reach the 3.5% tipping point.
+> **Goal:** Replicate this 80X efficiency for all medical research by passing the FDA Upgrade and Right to Trial Initiative—using viral referral rewards to reach the 3.5% tipping point.
 
 ---
 
@@ -117,7 +117,7 @@ A well-designed referral-rewards system can:
 ### Why $VICTORY Tokens?
 
 - Inspired by WWII war bonds, $VICTORY tokens are a digital, transparent way to fund the movement for 80X faster medical progress.
-- Purpose: Directly finance this viral referral-rewards system to mobilize 3.5% of the population for the [FDA Upgrade & Right to Trial Act](../act.md).
+- Purpose: Directly finance this viral referral-rewards system to mobilize 3.5% of the population for the [FDA Upgrade & Right to Trial Initiative](../act.md).
 - Goal: Unlock the same scale of transformation as the Oxford RECOVERY trial, which achieved an [80X efficiency gain](https://www.recoverytrial.net/) in clinical research.
 
 ### How It Works
@@ -176,7 +176,7 @@ A well-designed referral-rewards system can:
 ## Why This Matters: Quantitative Impact
 
 - **Replicating RECOVERY's 80X efficiency** would allow the U.S. to run 80 times more trials for the same budget ([reference](reference/recovery-trial.md)).
-- Mobilizing 3.5% of the population with referral rewards can create the political will to pass the FDA Upgrade and Right to Trial Act, unlocking these savings for all diseases.
+- Mobilizing 3.5% of the population with referral rewards can create the political will to pass the FDA Upgrade and Right to Trial Initiative, unlocking these savings for all diseases.
 - **Potential: Save millions of lives, cut drug development costs by 95%, and accelerate cures for rare and common diseases alike.**
 
 ---

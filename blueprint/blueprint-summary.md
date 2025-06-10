@@ -97,7 +97,7 @@ Three essential components to transform healthcare:
 - Global data sharing network
 - Algorithmic cost benefit analysis to determine the number of Quality Adjusted Life Years (QALYs) a treatment is worth
 
-### 2. Right to Trial Act
+### 2. Right to Trial Initiative
 
 - Universal clinical trial access
 - Elimination of barriers to trial participation
