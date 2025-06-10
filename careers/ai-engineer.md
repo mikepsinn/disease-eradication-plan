@@ -51,16 +51,17 @@ Help accelerate medical progress by 80X through patient rights advocacy and civi
 - **Growth potential:** Lead engineering team as platform scales
 - **Impact:** Help millions of patients access life-saving treatments faster
 
-## 501(c)(3) Compliance Note
-This role focuses on patient education, civic engagement, and advocacy platform development. All activities support educational and charitable purposes around patient rights awareness.
 
 ## Application
-Send resume + cover letter explaining:
-1. Your experience with AI automation
-2. Why patient rights advocacy matters to you  
-3. Examples of systems you've built that scaled human efforts
+Send the following to jobs@dfda.earth:
 
-**Contact:** jobs@dfda.earth
+1. **GitHub (or other code hosting) profile link**
+2. **Links to your best open-source projects or code samples** (with a brief description of your role/contribution)
+3. Resume
+4. Cover letter explaining:
+    - Your experience with AI automation
+    - Why patient rights advocacy matters to you
+    - Examples of systems you've built that scaled human efforts
 
 ---
 *We're an equal opportunity employer committed to diversity and inclusion in healthcare advocacy.*
