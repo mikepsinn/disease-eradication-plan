@@ -1163,7 +1163,7 @@ This stream models the benefit of using the dFDA's vast data to optimize prevent
     * $P_{\text{impacted}}$: Number of patients benefiting from new preventative guidelines or RWE-driven treatment changes.
         * **Rationale:** Chronic diseases affect a vast portion of the population, and even small improvements in prevention or treatment optimization, scaled across millions of people, can generate substantial health gains.
         * **Source:** The CDC notes the immense scale of chronic disease in the United States.
-        * **Quote:** "Six in ten adults in the US have a chronic disease." — [CDC, National Center for Chronic Disease Prevention and Health Promotion](https://www.cdc.gov/chronicdisease/data-research/facts-stats/index.html)
+        * **Quote:** "Six in ten adults in the US have a chronic disease." — [CDC, About Chronic Diseases](https://www.cdc.gov/chronic-disease/about/index.html)
     * $\text{QALYs}_{\text{per\_patient}}$: Average small QALY gain per impacted patient from better-targeted prevention or treatment.
         * **Rationale:** While the per-person gain from preventative measures may be small in a single year, they are well-established. The value comes from applying these small gains to a very large population.
         * **Source:** Health economic literature provides many examples of modest but important QALY gains from preventative care.
@@ -1190,7 +1190,7 @@ This stream models the benefit of enabling trials for therapies that are current
         * **Quote:** "But only about 5% of the nearly 10,000 identified rare diseases have Food and Drug Administration-approved treatments." — [GAO, Nov 2024](https://www.gao.gov/products/gao-25-106774)
     * $P_{\text{therapy}}$: Average number of patients benefiting from a new rare disease therapy.
         * **Rationale:** While "rare" in the US means affecting fewer than 200,000 people, the median prevalence is much lower. This estimate uses a conservative figure for the addressable population for a new, breakthrough therapy.
-        * **Source:** Analysis of Orphanet data suggests a median prevalence of 1-5 per 100,000 people. ([Orphanet Journal of Rare Diseases](https://ojrd.biomedcentral.com/articles/10.1186/s13023-019-1048-8))
+        * **Source:** Analysis of Orphanet data suggests a median prevalence of 1-5 per 100,000 people. ([Orphanet Journal of Rare Diseases](https://ojrd.biomedcentral.com/articles/10.1186/s13023-020-01442-4))
     * $\text{QALYs}_{\text{patient}}$: Average QALY gain per patient receiving a transformative therapy.
         * **Rationale:** A new therapy for a previously untreatable, life-threatening condition can have a profound impact, corresponding to many years of high-quality life.
         * **Source:** Therapies for diseases like spinal muscular atrophy or certain inherited retinal diseases can be considered near-curative, generating dozens of QALYs per patient over a lifetime.
