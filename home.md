@@ -204,7 +204,7 @@ We'll keep you informed about the latest developments in decentralized clinical 
 
 - [dFDA](https://www.dfda.earth/)
 - [Studies](https://studies.dfda.earth/)
-- [Digital Twin Safe](https://safe.dfda.eartht)
+- [Digital Twin Safe](https://safe.dfda.earth)
 - [FDAi](https://fdai.earth/)
 - [Disease Eradication Act](https://www.dfda.earth/docs/disease-eradication-act)
 - [50/50 Health Savings Sharing Program](https://www.dfda.earth/docs/health-savings-sharing)
