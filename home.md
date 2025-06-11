@@ -238,8 +238,8 @@ We'll keep you informed about the latest developments in decentralized clinical 
     >
     > -- <cite>[Deloitte via Fierce Biotech (2024)](https://www.fiercebiotech.com/biotech/drug-development-cost-pharma-22b-asset-2024-plus-how-glp-1s-impact-roi-deloitte)</cite>
 
-3.  **Claim:** 21,000 to 120,000 more people are being dying each decade due to suboptimal regulatory processes.
-
+3.  **Claim:** 21,000 to 120,000 more people die each decade due to suboptimal regulatory processes.
+    > "The annual number of lives lost in the United States because of the drug lag is in the same range as the number of lives lost annually in automobile accidents. The low estimate is 21,000 lives lost per decade, about one-fifth the number of people killed in automobile accidents during the same period. The high estimate is 210,000 lives lost per decade, about double the number of people killed in automobile accidents."
     >
     > -- <cite>[The CATO Journal, Vol. 5, No. 1 (Spring/Summer 1985)](https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/1985/5/cj5n1-10.pdf)</cite>
 
