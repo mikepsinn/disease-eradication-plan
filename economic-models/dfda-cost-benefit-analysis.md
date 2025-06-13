@@ -124,15 +124,15 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
 > **Total Estimated Upfront Cost (ROM): [\$37.5 - \$46 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
 
-*Note: This ROM estimate focuses **only on the Core Platform build effort and associated setup**, assuming an initial MVP/scaling phase over ~2.5 years. It **explicitly excludes** the potentially massive costs associated with:*
+*Note: This ROM estimate focuses **only on the Core Platform build effort and associated setup**. It represents the foundational first step. The full vision of the ["Right to Trial and FDA Upgrade Act"](../act.md) requires significant additional investment in broader initiatives to achieve its goals of global integration, legal harmonization, and massive scale. These crucial, follow-on costs are estimated separately in the [Scenario Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs) section below and include:*
 
-* *Global EHR/Data Source Integration Effort:* Building/buying connectors for *thousands* of systems.
-* *Large-Scale Plugin Development:* Cost of developing the vast ecosystem of data importers, analysis tools, and visualization plugins.
-* *International Legal/Regulatory Harmonization:* Major diplomatic and legal efforts.
-* *Global Rollout & Marketing:* Costs associated with driving adoption worldwide.
-* *Massive-Scale Hardware/Infrastructure:* Costs beyond the initial target scale (e.g., supporting 100M+ users).*
+*   *Global EHR/Data Source Integration Effort:* Building/buying connectors for *thousands* of systems worldwide.
+*   *Large-Scale Plugin Development:* Funding the ecosystem of data importers, analysis tools, and visualization plugins.
+*   *International Legal/Regulatory Harmonization:* Major diplomatic and legal efforts to create a global standard.
+*   *Global Rollout & Adoption:* Costs associated with driving adoption and providing training worldwide.
+*   *Massive-Scale Infrastructure:* Scaling hardware and cloud resources beyond initial targets to support millions of users as mandated by the Act.
 
-*The \$2-4B figure likely represents the total investment needed for the *entire global initiative* over many years, whereas this ROM focuses on the initial Core Platform software build.*
+The following sections provide ROM estimates for both the ongoing operational costs of the core platform and for these essential broader initiatives.
 
 ### Top-Down Analogous Cost Estimation (Market Comparables)
 
