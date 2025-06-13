@@ -294,12 +294,12 @@ This table presents point estimates for each scenario, with the overall range of
 
 | Component                         | Best Case (Upfront / Annual) | Medium Case (Upfront / Annual) | Worst Case (Upfront / Annual) | Key Assumptions & Variables Driving Range                                     |
 | :-------------------------------- | :------------------------- | :--------------------------- | :-------------------------- | :---------------------------------------------------------------------------- |
-| **Global Data Integration**       | \$2M / ~\$0                  | \$125M / \$10M               | \$1.5B / \$150M             | Success of AI/automation, standards adoption, #systems, vendor cooperation.     |
-| **Plugin Ecosystem Dev/Maint.**   | \$1M (Prizes) / ~\$0       | \$30M (Prizes+Core) / \$5M | \$300M (Major Funding) / \$60M | Open-source community success, need for direct funding/core team effort.        |
-| **Legal/Regulatory Harmonization**| \$1.5M / ~\$0               | \$60M / \$3M                | \$300M / \$30M               | Effectiveness of AI legal tools, political will, complexity of global law.        |
-| **Global Rollout & Adoption**     | ~\$0 / ~\$0                  | \$12M / \$3M                | \$125M / \$30M               | Need for training/support beyond platform status, user interface complexity.        |
-| **DAO Governance Operations**     | ~\$0 / ~\$0                  | ~\$1M / \$0.3M               | ~\$6M / \$1M                  | Automation level, need for audits, grants, core support staff.                      |
-| **--- TOTAL ---**                 | **~\$4.5M / ~\$0**            | **~\$228M / ~\$21.3M**         | **~\$2.23B+ / ~\$271M+**       | Represents total initiative cost excluding core platform build/ops.                 |
+| **Global Data Integration**       | $2M / ~$0                  | $125M / $10M               | $1.5B / $150M             | Success of AI/automation, standards adoption, #systems, vendor cooperation.     |
+| **Bounty & Prize Program (Act SEC. 204(i))**   | $1M (Prizes) / ~$0       | $15M (Bounties) / $2M | $50M (Major Bounties) / $10M | Success of organic ecosystem growth vs. need to incentivize critical plugin/tool development via bounties. |
+| **Legal/Regulatory Harmonization**| $1.5M / ~$0               | $60M / $3M                | $300M / $30M               | Effectiveness of AI legal tools, political will, complexity of global law.        |
+| **Global Rollout & Adoption**     | ~$0 / ~$0                  | $12M / $3M                | $125M / $30M               | Need for training/support beyond platform status, user interface complexity.        |
+| **DAO Governance Operations**     | ~$0 / ~$0                  | ~$1M / $0.3M               | ~$6M / $1M                  | Automation level, need for audits, grants, core support staff.                      |
+| **--- TOTAL ---**                 | **~$4.5M / ~$0**            | **~$213M / ~$18.3M**         | **~$1.98B+ / ~$221M+**       | Represents total initiative cost excluding core platform build/ops.                 |
 
 **Interpretation:**
 Even when pursuing efficient strategies, the potential cost for the full dFDA initiative (beyond the core platform) varies dramatically based on real-world execution challenges. The Medium Case suggests upfront costs in the low hundreds of millions and annual costs in the low tens of millions, while the Worst Case pushes towards multi-billion dollar upfront figures and annual costs in the hundreds of millions, dominated by integration, plugin funding, and legal costs if automation and community efforts fall short.
