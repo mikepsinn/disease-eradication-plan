@@ -18,7 +18,7 @@ dateCreated: 2023-11-24T22:24:09.275Z
 
 💸 [~\$2.2 Billion cost to develop][2] a new treatment falls on patients
 
-☠️ [21,000 to 120,000 People][3] more people are dying each decade due to suboptimal regulatory processes
+☠️ [21,000 to 120,000 People][3] more people die each decade due to suboptimal regulatory processes
 
 🚫 [85% of patients are not allowed to participate][4] in clinical trials
 
@@ -36,7 +36,7 @@ dateCreated: 2023-11-24T22:24:09.275Z
 
 📊 **No Treatment Effectiveness Rankings** - The existing system does not give us a ranked list of the most safe and effective treatments for a given condition.
 
-🥫 **No Data on Unpatentable Substances** - We still know next to nothing about the long-term effects of [99.9% of the 4 pounds of over 7,000 different synthetic or natural chemicals][11] you consume every day.
+🥫 **No Data on Unpatentable Substances** - We still know next to nothing about the long-term effects of the [cocktail of over 330 chemical additives][11] we consume.
 
 🗓️ **No Long-Term Outcome Data** - Current trials often only last a few months, so we have no idea what the long-term positive or negative effects of a drug are!
 
@@ -265,6 +265,7 @@ We'll keep you informed about the latest developments in decentralized clinical 
 
 8.  **Claim:** 2 Billion people are suffering from uncured diseases.
 
+    > "Incidence of acute sequelae were predominantly infectious diseases and short-term injuries, with over 2 billion cases of upper respiratory infections and diarrhoeal disease episodes in 2013..."
     >
     > -- <cite>[The Lancet, Vol. 386, No. 9995](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)60692-4/abstract)</cite>
 
@@ -278,8 +279,9 @@ We'll keep you informed about the latest developments in decentralized clinical 
     >
     > -- <cite>[Nature - Half of US clinical trials go unpublished](https://www.nature.com/articles/nature.2013.14286)</cite>
 
-11. **Claim:** We still know next to nothing about the long-term effects of 99.9% of the 4 pounds of over 7,000 different synthetic or natural chemicals you consume every day.
+11. **Claim:** We still know next to nothing about the long-term effects of the cocktail of over 330 chemical additives we consume.
 
+    > "The cocktail effect of all these additives has also never been investigated. They may generate a health effect that doesn't happen when the additives are used individually."
     >
     > -- <cite>[Are the additives in our food making us ill?](https://www.dailymail.co.uk/health/article-8757191/Are-additives-food-making-ill.html)</cite>
 
