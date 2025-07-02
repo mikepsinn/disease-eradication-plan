@@ -158,17 +158,35 @@ Now, let's look at the same concept from a different angle. This section asks yo
 
 ---
 
-**(For implementation, a list of discretionary budget items would be randomly paired for each user. Potential categories include):**
-*   Military and Defense
-*   Medical Research (e.g., NIH, CDC)
-*   Education
-*   Veterans' Benefits
-*   Infrastructure (Transportation, Roads, Bridges)
-*   Environmental Protection & Clean Energy
-*   International Affairs and Foreign Aid
-*   Science and Technology (e.g., NASA, NSF)
+**Potential Programs for Comparison:**
+
+*   National Institutes of Health (NIH)
+*   National Science Foundation (NSF)
+*   Department of Defense
+*   Department of Education
+*   Department of Energy
+*   Environmental Protection Agency (EPA)
+*   National Aeronautics and Space Administration (NASA)
+*   Department of Transportation
+*   Department of Homeland Security
+*   Department of State (includes foreign aid)
+*   Department of Veterans Affairs
 *   Justice and Law Enforcement
 *   Housing and Urban Development
 *   Food and Agriculture
+*   A direct cash payment to every American citizen
 
-Thank you for your participation. 
+---
+
+## Section 6: The "How": Government Programs vs. Direct Citizen Funding
+
+The final question is about the best way to use public funds to solve problems. Please allocate $100 between the two approaches below.
+
+*   **Fund Government Programs:** The government uses tax dollars to fund federal agencies and specific programs designed to solve national problems.
+*   **Fund Citizens Directly:** The government distributes tax dollars equally to all citizens, who can then use the money to address their own needs, donate to charities they support, or fund solutions directly.
+
+Please slide to indicate your preferred allocation for how to spend public money.
+
+**Government Programs** `$`<input type="text" value="50" size="3"> <input type="range" min="0" max="100" value="50"> `$`<input type="text" value="50" size="3"> **Direct to Citizens**
+
+Thank you for your participation.
