@@ -23,9 +23,9 @@ If you had $100 in tax dollars to allocate, how would you distribute it between 
   (Total must add up to $100)
 
 **Q2: International Cooperation in Funding Research**
-Imagine the U.S. was considering redirecting a portion of its military budget to a global fund for medical research, the [Decentralized Institutes of Health (DIH)](../strategy/1-percent-treaty/decentralized-institutes-of-health.md).
+Imagine the U.S. was considering joining a global treaty to redirect 1% of military spending towards accelerating medical research through a global treasury called the [Decentralized Institutes of Health (DIH)](../strategy/1-percent-treaty/decentralized-institutes-of-health.md).
 
-**(A)** If **all other major nations** also agreed to contribute a similar percentage of their military budgets, what percentage of the U.S. military budget would you support reallocating to this fund?
+**(A)** If **all other major nations** also agreed to contribute a similar percentage of their military budgets, what percentage of the U.S. military budget would you support reallocating?
 - 0%
 - 1%
 - 2-5%
@@ -43,11 +43,48 @@ Imagine the U.S. was considering redirecting a portion of its military budget to
 
 ---
 
-## Section 2: The Right to Trial & FDA Upgrade Act
+## Section 2: Funding the Campaign for Reform
+
+The success of this initiative depends on mobilizing millions of Americans. As detailed in the [Referral Rewards System strategy](strategy/referral-rewards-system.md), a significant campaign fund is needed to secure the necessary public support to pass this legislation. Please consider the following ways you could help fund this movement.
+
+**Q3: Investing in `$VICTORY` Bonds**
+To fund this effort, the [DIH Treasury](../strategy/1-percent-treaty/decentralized-institutes-of-health.md) plans to issue **`$VICTORY` Bonds** for the war on disease. Citizens could buy these bonds to fund medical research and the advocacy campaign. Bondholders would be repaid over time by nations that sign the 1% Treaty. Would you be interested in purchasing such a bond?
+- Yes, I would definitely be interested in purchasing one.
+- Yes, I might be interested, depending on the financial terms.
+- No, I am not interested in a bond, but I might donate.
+- Unsure.
+
+**Q4: Direct Donation**
+Thinking of it as a traditional donation, how much would you be willing to contribute to the campaign fund to secure the votes needed to pass this Act?
+- \$0
+- \$10 - \$24
+- \$25 - \$99
+- \$100 - \$499
+- \$500 or more
+
+**Q5: Donation with a Money-Back Guarantee (Assurance Contract)**
+Now, imagine your donation comes with a money-back guarantee. If the campaign does *not* reach its minimum funding goal (e.g., \$500,000), your contribution would be fully refunded. Under this condition, how much would you be willing to contribute?
+- \$0
+- \$10 - \$24
+- \$25 - \$99
+- \$100 - \$499
+- \$500 or more
+
+**Q6: Investment for a Return**
+Finally, imagine your contribution was an *investment* that could provide a financial return. If the campaign succeeds, investors would be repaid their principal plus a share of future funds. If you could earn a return on your contribution, how much would you consider investing?
+- \$0
+- \$100 - \$499
+- \$500 - \$999
+- \$1,000 - \$4,999
+- \$5,000 or more
+
+---
+
+## Section 3: The Right to Trial & FDA Upgrade Act
 
 The proposed [Right to Trial & FDA Upgrade Act](act.md) aims to accelerate medical progress by creating a decentralized, open-source platform to make clinical trials faster, cheaper, and accessible to all patients.
 
-**Q3: Support for the Act**
+**Q7: Support for the Act**
 Based on its goals, to what extent do you support or oppose the passage of the "Right to Trial & FDA Upgrade Act"?
 - Strongly Support
 - Support
@@ -55,7 +92,7 @@ Based on its goals, to what extent do you support or oppose the passage of the "
 - Oppose
 - Strongly Oppose
 
-**Q3b: What is the primary reason for your answer? (Select one)**
+**Q7b: What is the primary reason for your answer? (Select one)**
 - The potential to save lives by accelerating research.
 - The potential to lower healthcare costs.
 - The principle of giving patients more options and control.
@@ -64,7 +101,7 @@ Based on its goals, to what extent do you support or oppose the passage of the "
 - I have concerns about data privacy and the security of personal health information.
 - I am unsure / I don't have a strong reason.
 
-**Q4: Patient Access to Trials**
+**Q8: Patient Access to Trials**
 Currently, up to 85% of patients are excluded from clinical trials. The Act would give all patients the right to participate in trials for their condition. How important is it to you that patient access to clinical trials is expanded?
 - Very Important
 - Somewhat Important
@@ -72,7 +109,7 @@ Currently, up to 85% of patients are excluded from clinical trials. The Act woul
 - Not Very Important
 - Not at all Important
 
-**Q5: Data and Transparency**
+**Q9: Data and Transparency**
 A key feature of the proposed system is making all trial data and research findings publicly available to accelerate innovation. How much do you agree or disagree with the principle that research funded by taxpayer dollars should be open-source?
 - Strongly Agree
 - Agree
@@ -82,9 +119,9 @@ A key feature of the proposed system is making all trial data and research findi
 
 ---
 
-## Section 3: The Future of Medical Research
+## Section 4: The Future of Medical Research
 
-**Q6: Trust in a New System**
+**Q10: Trust in a New System**
 The proposed platform would use AI to analyze data and transparently rank the effectiveness of treatments. Assuming strong security and privacy protections, how much would you trust a system like this compared to the current system?
 - Trust it a lot more
 - Trust it somewhat more
@@ -92,20 +129,20 @@ The proposed platform would use AI to analyze data and transparently rank the ef
 - Trust it somewhat less
 - Trust it a lot less
 
-**Q7: Perceived Risk**
+**Q11: Perceived Risk**
 The current drug approval process is slow, and an estimated 21,000 to 120,000 people die each decade waiting for new treatments. A faster, more open system could save lives but might also carry new risks. Which do you consider the greater risk?
 - The risk of letting people suffer and die from treatable diseases due to slow regulatory approval.
 - The risk of approving a new treatment that might have unknown side effects.
 - They are about equal.
 
-**Q8: The Economic Cost of Delay**
+**Q12: The Economic Cost of Delay**
 Medical discoveries made today may not become available to patients for over 15 years, costing the economy billions in lost productivity and treatment expenses. How urgent of a problem do you believe this "time lag" is for the U.S. economy?
 - Extremely Urgent
 - Very Urgent
 - Somewhat Urgent
 - Not Urgent
 
-**Q9: Perceived Healthcare Savings**
+**Q13: Perceived Healthcare Savings**
 By making clinical trials faster and more efficient, experts believe a new system could significantly reduce the \$4 trillion the U.S. spends on healthcare each year. How much impact do you believe this reform could have on national healthcare costs?
 - A very large positive impact (significant savings)
 - A moderate positive impact
@@ -113,7 +150,7 @@ By making clinical trials faster and more efficient, experts believe a new syste
 - No real impact
 - Unsure
 
-**Q10: Personal Participation**
+**Q14: Personal Participation**
 If you or a loved one had a serious condition, and a decentralized trial for a promising new treatment was available through a platform like the one described, how likely would you be to participate?
 - Very Likely
 - Somewhat Likely
@@ -123,7 +160,7 @@ If you or a loved one had a serious condition, and a decentralized trial for a p
 
 ---
 
-## Section 4: Crowdsourcing National Priorities (Wishocracy)
+## Section 5: Crowdsourcing National Priorities (Wishocracy)
 
 The final question uses a method called **Randomized Aggregated Pairwise Preference Allocation**. This is designed to build a federal discretionary budget that accurately reflects the public's priorities for the problems we should solve as a nation.
 
