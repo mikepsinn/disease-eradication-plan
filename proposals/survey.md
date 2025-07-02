@@ -45,7 +45,9 @@ Imagine the U.S. was considering joining a global treaty to redirect 1% of milit
 
 ## Section 2: Funding the Campaign for Reform
 
-The success of this initiative depends on mobilizing millions of Americans. As detailed in the [Referral Rewards System strategy](strategy/referral-rewards-system.md), a significant campaign fund is needed to secure the necessary public support to pass this legislation. Please consider the following ways you could help fund this movement.
+The success of this initiative depends on mobilizing millions of Americans. As detailed in the [Referral Rewards System strategy](strategy/referral-rewards-system.md), political scientists have found that once 3.5% of the population actively supports a cause, it has never failed to bring about major policy change. Our goal is to raise a **\$5 million campaign fund** to mobilize the 12 million Americans needed to pass this legislation.
+
+Please consider the following ways you could help fund this movement.
 
 **Q3: Investing in `$VICTORY` Bonds**
 To fund this effort, the [DIH Treasury](../strategy/1-percent-treaty/decentralized-institutes-of-health.md) plans to issue **`$VICTORY` Bonds** for the war on disease. Citizens could buy these bonds to fund medical research and the advocacy campaign. Bondholders would be repaid over time by nations that sign the 1% Treaty. Would you be interested in purchasing such a bond?
@@ -55,28 +57,25 @@ To fund this effort, the [DIH Treasury](../strategy/1-percent-treaty/decentraliz
 - Unsure.
 
 **Q4: Direct Donation**
-Thinking of it as a traditional donation, how much would you be willing to contribute to the campaign fund to secure the votes needed to pass this Act?
-- \$0
-- \$10 - \$24
-- \$25 - \$99
-- \$100 - \$499
-- \$500 or more
+Thinking of it as a traditional donation to the **\$5 million campaign fund**, how much would you be willing to contribute?
+- \$10
+- \$25
+- \$100
+- Other: \$\_\_\_\_\_\_\_
 
 **Q5: Donation with a Money-Back Guarantee (Assurance Contract)**
-Now, imagine your donation comes with a money-back guarantee. If the campaign does *not* reach its minimum funding goal (e.g., \$500,000), your contribution would be fully refunded. Under this condition, how much would you be willing to contribute?
-- \$0
-- \$10 - \$24
-- \$25 - \$99
-- \$100 - \$499
-- \$500 or more
+Now, imagine that donation came with a money-back guarantee. If the campaign does *not* reach its **\$5 million funding goal**, your contribution would be fully refunded. Under this "all-or-nothing" condition, how much would you be willing to contribute?
+- \$10
+- \$25
+- \$100
+- Other: \$\_\_\_\_\_\_\_
 
 **Q6: Investment for a Return**
-Finally, imagine your contribution was an *investment* that could provide a financial return. If the campaign succeeds, investors would be repaid their principal plus a share of future funds. If you could earn a return on your contribution, how much would you consider investing?
-- \$0
-- \$100 - \$499
-- \$500 - \$999
-- \$1,000 - \$4,999
-- \$5,000 or more
+Finally, imagine your contribution to the **\$5 million fund** was an *investment* that could provide a financial return. If the campaign succeeds, investors would be repaid their principal plus a share of future funds. How much would you consider investing?
+- \$100
+- \$500
+- \$1,000
+- Other: \$\_\_\_\_\_\_\_
 
 ---
 
