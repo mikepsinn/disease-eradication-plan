@@ -55,6 +55,15 @@ Based on its goals, to what extent do you support or oppose the passage of the "
 - Oppose
 - Strongly Oppose
 
+**Q3b: What is the primary reason for your answer? (Select one)**
+- The potential to save lives by accelerating research.
+- The potential to lower healthcare costs.
+- The principle of giving patients more options and control.
+- My general distrust of the current pharmaceutical and regulatory system.
+- I have concerns about the safety and oversight of a new system.
+- I have concerns about data privacy and the security of personal health information.
+- I am unsure / I don't have a strong reason.
+
 **Q4: Patient Access to Trials**
 Currently, up to 85% of patients are excluded from clinical trials. The Act would give all patients the right to participate in trials for their condition. How important is it to you that patient access to clinical trials is expanded?
 - Very Important
@@ -89,7 +98,22 @@ The current drug approval process is slow, and an estimated 21,000 to 120,000 pe
 - The risk of approving a new treatment that might have unknown side effects.
 - They are about equal.
 
-**Q8: Personal Participation**
+**Q8: The Economic Cost of Delay**
+Medical discoveries made today may not become available to patients for over 15 years, costing the economy billions in lost productivity and treatment expenses. How urgent of a problem do you believe this "time lag" is for the U.S. economy?
+- Extremely Urgent
+- Very Urgent
+- Somewhat Urgent
+- Not Urgent
+
+**Q9: Perceived Healthcare Savings**
+By making clinical trials faster and more efficient, experts believe a new system could significantly reduce the \$4 trillion the U.S. spends on healthcare each year. How much impact do you believe this reform could have on national healthcare costs?
+- A very large positive impact (significant savings)
+- A moderate positive impact
+- A small positive impact
+- No real impact
+- Unsure
+
+**Q10: Personal Participation**
 If you or a loved one had a serious condition, and a decentralized trial for a promising new treatment was available through a platform like the one described, how likely would you be to participate?
 - Very Likely
 - Somewhat Likely
@@ -190,3 +214,56 @@ Please slide to indicate your preferred allocation for how to spend public money
 **Government Programs** `$`<input type="text" value="50" size="3"> <input type="range" min="0" max="100" value="50"> `$`<input type="text" value="50" size="3"> **Direct to Citizens**
 
 Thank you for your participation.
+
+---
+
+## Section 7: About You (Optional)
+
+This final section is optional, but your answers will help us better understand how different groups of people view these issues. All information is anonymous unless you consent to be contacted below.
+
+**Contact Information**
+
+If you are willing to be contacted by our team for follow-up discussions or to participate in future initiatives, please provide your information below.
+
+- **Full Name:** <input type="text" size="30">
+- **Email Address:** <input type="text" size="30">
+- **Phone Number (with country code):** <input type="text" size="20">
+
+[ ] **I consent to be contacted** by the dFDA initiative team to discuss my responses or for future participation. I understand that my contact information will be kept confidential and used only for this purpose.
+
+---
+
+**Demographics**
+
+**What is your country of residence?**
+<input type="text" size="20">
+
+**What is your Postal Code / Zip Code?**
+<input type="text" size="10">
+
+**What is your age range?**
+- 18-29
+- 30-44
+- 45-64
+- 65+
+
+**How would you describe your political outlook?**
+- Liberal / Left-leaning
+- Centrist
+- Conservative / Right-leaning
+- Libertarian
+- Other
+- Prefer not to say
+
+**What is the highest level of education you have completed?**
+- High school or less
+- Some college or Associate's degree
+- Bachelor's degree
+- Graduate or professional degree
+
+**What is your approximate annual household income (in your local currency)?**
+- Less than 50,000
+- 50,000 - 99,999
+- 100,000 - 199,999
+- 200,000 or more
+- Prefer not to say
