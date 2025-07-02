@@ -10,7 +10,7 @@ dateCreated: 2024-06-10T00:00:00.000Z
 
 # Public Opinion Survey: Reforming Medical Research
 
-This survey is designed to measure public support for a legislative initiative to significantly upgrade the national medical research and drug approval system, making it faster, cheaper, and more effective. Your anonymous responses will help demonstrate public demand for reform to legislators.
+This survey is designed to measure public support for a global initiative to significantly upgrade medical research and treatment approval systems, making them faster, cheaper, and more effective. Your anonymous responses will help demonstrate public demand for reform to policymakers worldwide.
 
 ---
 
@@ -23,9 +23,9 @@ If you had $100 in tax dollars to allocate, how would you distribute it between 
   (Total must add up to $100)
 
 **Q2: International Cooperation in Funding Research**
-Imagine the U.S. was considering joining a global treaty to redirect 1% of military spending towards accelerating medical research through a global treasury called the [Decentralized Institutes of Health (DIH)](../strategy/1-percent-treaty/decentralized-institutes-of-health.md).
+Imagine your country was considering joining a global treaty to redirect 1% of military spending towards accelerating medical research through a global treasury called the [Decentralized Institutes of Health (DIH)](../strategy/1-percent-treaty/decentralized-institutes-of-health.md).
 
-**(A)** If **all other major nations** also agreed to contribute a similar percentage of their military budgets, what percentage of the U.S. military budget would you support reallocating?
+**(A)** If **all other major nations** also agreed to contribute a similar percentage of their military budgets, what percentage of your country's military budget would you support reallocating?
 - 0%
 - 1%
 - 2-5%
@@ -33,7 +33,7 @@ Imagine the U.S. was considering joining a global treaty to redirect 1% of milit
 - More than 10%
 - Unsure
 
-**(B)** Now, imagine the U.S. was considering this **unilaterally** (acting alone), and no other countries had agreed to contribute. What percentage of the U.S. military budget would you support reallocating in this case?
+**(B)** Now, imagine your country was considering this **unilaterally** (acting alone), and no other countries had agreed to contribute. What percentage of your country's military budget would you support reallocating in this case?
 - 0%
 - 1%
 - 2-5%
@@ -45,10 +45,10 @@ Imagine the U.S. was considering joining a global treaty to redirect 1% of milit
 
 ## Section 2: Funding the Initiative for Reform
 
-The following questions ask about your potential willingness to financially support this effort. Our goal is to raise a **$5 million advocacy fund** to mobilize the 12 million Americans needed to pass this legislation.
+The following questions ask about your potential willingness to financially support this global effort. The total cost will be far greater than $5 million, but we are starting with an initial fundraising goal of **$5 million**. This pilot fund will be used to build public awareness and mobilize the required 3.5% of the population in our first target country, proving the model for global expansion.
 
 **Q3: Investing in `$VICTORY` Bonds**
-To fund this effort, the [DIH Treasury](../strategy/1-percent-treaty/decentralized-institutes-of-health.md) plans to issue **`$VICTORY` Bonds** for the war on disease. Citizens could buy these bonds to fund medical research and the advocacy campaign. Bondholders would be repaid over time by nations that sign the 1% Treaty. Would you be interested in purchasing such a bond?
+To fund this effort, the [DIH Treasury](../strategy/1-percent-treaty/decentralized-institutes-of-health.md) plans to issue **`$VICTORY` Bonds** for the war on disease. Citizens could buy these bonds to fund medical research and the advocacy effort. Bondholders would be repaid over time by nations that sign the 1% Treaty. Would you be interested in purchasing such a bond?
 - Yes, definitely
 - Yes, probably
 - No, I am not interested in a bond, but I might donate.
@@ -80,12 +80,12 @@ Finally, imagine your contribution to the **$5 million fund** was an *investment
 
 ---
 
-## Section 3: The Right to Trial & FDA Upgrade Act
+## Section 3: Principles for Research Reform
 
-The proposed [Right to Trial & FDA Upgrade Act](act.md) aims to accelerate medical progress by creating a decentralized, open-source platform to make clinical trials faster, cheaper, and accessible to all patients.
+The following questions are about the core principles of this initiative, which aims to accelerate medical progress by creating a decentralized, open-source platform to make clinical trials faster, cheaper, and accessible to all patients.
 
-**Q7: Support for the Act**
-Based on its goals, to what extent do you support or oppose the passage of the "Right to Trial & FDA Upgrade Act"?
+**Q7: Support for the Principles**
+Based on these goals, to what extent do you support or oppose creating a new system based on these principles?
 - Strongly Support
 - Support
 - Neutral
@@ -102,7 +102,7 @@ Based on its goals, to what extent do you support or oppose the passage of the "
 - I am unsure / I don't have a strong reason.
 
 **Q8: Patient Access to Trials**
-Currently, up to 85% of patients are excluded from clinical trials. The Act would give all patients the right to participate in trials for their condition. How important is it to you that patient access to clinical trials is expanded?
+Currently, up to 85% of patients are excluded from clinical trials. This new system would give all patients the right to participate in trials for their condition. How important is it to you that patient access to clinical trials is expanded?
 - Very Important
 - Somewhat Important
 - Neutral
@@ -136,14 +136,14 @@ The current drug approval process is slow, and an estimated 21,000 to 120,000 pe
 - They are about equal.
 
 **Q12: The Economic Cost of Delay**
-Medical discoveries made today may not become available to patients for over 15 years, costing the economy billions in lost productivity and treatment expenses. How urgent of a problem do you believe this "time lag" is for the U.S. economy?
+Medical discoveries made today may not become available to patients for over 15 years, costing the global economy trillions in lost productivity and treatment expenses. How urgent of a problem do you believe this "time lag" is for your country's economy?
 - Extremely Urgent
 - Very Urgent
 - Somewhat Urgent
 - Not Urgent
 
 **Q13: Perceived Healthcare Savings**
-By making clinical trials faster and more efficient, experts believe a new system could significantly reduce the \$4 trillion the U.S. spends on healthcare each year. How much impact do you believe this reform could have on national healthcare costs?
+By making clinical trials faster and more efficient, experts believe a new system could significantly reduce the trillions spent on healthcare globally each year. How much impact do you believe this reform could have on national and global healthcare costs?
 - A very large positive impact (significant savings)
 - A moderate positive impact
 - A small positive impact
@@ -160,17 +160,17 @@ If you or a loved one had a serious condition, and a decentralized trial for a p
 
 ---
 
-## Section 5: Crowdsourcing National Priorities (Wishocracy)
+## Section 5: Crowdsourcing Global Priorities (Wishocracy)
 
-The final question uses a method called **Randomized Aggregated Pairwise Preference Allocation**. This is designed to build a federal discretionary budget that accurately reflects the public's priorities for the problems we should solve as a nation.
+The final question uses a method called **Randomized Aggregated Pairwise Preference Allocation**. This is designed to build a discretionary budget that accurately reflects the public's priorities for the problems we should solve as a global community.
 
-**How it works:** You will be shown a series of random pairs of major national problems. For each pair, please use the slider to allocate $100 between the two problem areas based on which you believe is more important to solve. By aggregating thousands of these individual choices, we can construct a full "budget" that shows how the American people would prioritize spending to solve these key issues.
+**How it works:** You will be shown a series of random pairs of major global problems. For each pair, please use the slider to allocate $100 between the two problem areas based on which you believe is more important to solve. By aggregating thousands of these individual choices, we can construct a full "budget" that shows how people worldwide would prioritize spending to solve these key issues.
 
 **Example Prompt:**
 
 > **Pair 1 of 15**
 >
-> You are allocating $100 to solve two national problems:
+> You are allocating $100 to solve two global problems:
 >
 > *   **Finding cures for diseases like Cancer & Alzheimer's**
 > *   **Exploring space and advancing our understanding of the universe**
@@ -181,8 +181,8 @@ The final question uses a method called **Randomized Aggregated Pairwise Prefere
 
 ---
 
-**(For implementation, a list of national problems would be randomly paired for each user. Potential problems to solve include):**
-*   **National Security:** Maintaining a strong military for national defense.
+**(For implementation, a list of global problems would be randomly paired for each user. Potential problems to solve include):**
+*   **Peace and Security:** Promoting international stability and preventing conflict.
 *   **Medical Cures:** Finding cures and better treatments for diseases like cancer, Alzheimer's, and heart disease.
 *   **Education:** Improving K-12 schools and making college more affordable.
 *   **Veterans' Care:** Providing healthcare, housing, and benefits for military veterans.
@@ -200,7 +200,7 @@ The final question uses a method called **Randomized Aggregated Pairwise Prefere
 
 ## Section 5: Crowdsourced Budget Allocation (By Program)
 
-Now, let's look at the same concept from a different angle. This section asks you to allocate funds between specific federal programs or departments. This helps us understand public priorities when framed by how the government is currently structured.
+Now, let's look at the same concept from a different angle. This section asks you to allocate funds between specific public programs or departments. This helps us understand public priorities when framed by how governments are currently structured. The following list uses U.S. agencies as examples, but the concept applies to similar public bodies in any country.
 
 **How it works:** You will again be shown a series of random pairs. For each pair, please use the slider to allocate $100 between the two programs based on which you believe is more important to fund.
 
@@ -235,7 +235,7 @@ Now, let's look at the same concept from a different angle. This section asks yo
 *   Justice and Law Enforcement
 *   Housing and Urban Development
 *   Food and Agriculture
-*   A direct cash payment to every American citizen
+*   A direct cash payment to every citizen in your country
 
 ---
 
@@ -275,7 +275,7 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 **What is your country of residence?**
 <input type="text" size="20">
 
-**What is your Postal Code / Zip Code?**
+**What is your Postal / Zip Code?**
 <input type="text" size="10">
 
 **What is your age range?**
