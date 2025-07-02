@@ -51,8 +51,10 @@ This phase turns insight into action.
     - Equip the dFDA team with consistent, effective talking points.
 - **Outputs:**
     - A **Core Messaging Guide** with official positioning statements and narrative pillars.
-    - A/B tested **Content Campaigns** (e.g., articles, social media posts, videos).
-    - An internal **Communications Toolkit** for the team.
+    - A/B tested ad-copy performance on social media platforms.
+- Conversion rates from landing pages.
+- Engagement metrics (likes, shares, comments) from **Content Initiatives** (e.g., articles, social media posts, videos).
+- Performance of referral rewards (e.g., K-factor > 1, cost-per-acquisition < $0.50).
 
 ## 3. Value Estimation Framework
 

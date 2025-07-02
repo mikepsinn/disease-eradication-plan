@@ -22,9 +22,9 @@ Research shows that when just **3.5% of a population** actively participates in 
 
 | Threshold                        | Historical analogue                                                                       | Why it matters                                           |
 | -------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| **100 k** verifiable supporters  | UK Parliament e-petition rule (prompts a floor debate) ([UK petition 100k rule](https://petition.parliament.uk/help))      | A concrete, fast first benchmark for national campaigns.                        |
+| **100 k** verifiable supporters  | UK Parliament e-petition rule (prompts a floor debate) ([UK petition 100k rule](https://petition.parliament.uk/help))      | A concrete, fast first benchmark for national advocacy efforts.                        |
 | **≈ 4 M** public comments        | U.S. FCC net-neutrality fight (2014–15) ([Net-neutrality 4M comments - White House](https://obamawhitehouse.archives.gov/net-neutrality), [Net-neutrality 4M comments - FCC](https://apps.fcc.gov/edocs_public/attachmatch/fcc-15-24a1.pdf)) | Volume + mapping to districts can sway a federal agency.   |
-| **3.5 % of population (Global)** | Chenoweth "3.5 % rule" dataset (1905-2006) ([Chenoweth 3.5% rule](https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world))                         | Historically, campaigns at this level have never failed. |
+| **3.5 % of population (Global)** | Chenoweth "3.5 % rule" dataset (1905-2006) ([Chenoweth 3.5% rule](https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world))                         | Historically, non-violent movements at this level have never failed. |
 
 ## The 80X Efficiency Benchmark: Oxford RECOVERY Trial
 
@@ -74,10 +74,10 @@ A well-designed referral-rewards system can:
   - "$8 will result in the petition ads being displayed to 100 people" (equates to $0.08 per impression or $80 CPM). ([Source: Change.org FAQ](https://www.change.org/l/us/chipping-in-explained))
   - Based on typical signature-conversion rates quoted in user analyses, the **effective cost is estimated at $0.20–$0.40 per added signature**. ([Sources: The Guardian](https://www.theguardian.com/world/2013/jan/15/avaaz-online-campaigning-reinvent-politics), [Change.org Promoted Petitions Instructions](https://www.change.org/l/hi/promoted-petitions-instructions), [Change.org promoted petition math](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition))
   *Note: The effective cost per action (e.g., signature) is variable and depends on the petition's conversion rate from impression to signature.*
-- **Avaaz global pledge campaigns:** Email-verified signatures reported at **≈ $0.32 per action** (Avaaz finance FAQ). ([Source: Avaaz finance page (≈ \$0.32 CPA)](https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/))
+- **Avaaz global pledge initiatives:** Email-verified signatures reported at **≈ $0.32 per action** (Avaaz finance FAQ). ([Source: Avaaz finance page (≈ \$0.32 CPA)](https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/))
 - [GiveDirectly 2021](https://www.givedirectly.org/): $0.48 per verified crypto match
 - **Cost to Obtain Survey Responses (Platform Cost):** Survey platforms like Pollfish indicate costs to businesses starting at ~$0.95 per survey completion, which is the platform's charge for acquiring a response, not a direct referral payout. ([Pollfish](https://www.pollfish.com/pricing/survey-calculator/))
-- **Voter Turnout Referrals (Political Campaign Specific):** Some political campaigns or get-out-the-vote initiatives have offered referrers around $10 per successful referral for getting someone to vote in an official election. ([TurnoutTeam.com](https://turnoutteam.com/))
+- **Voter Turnout Referrals (Get-Out-the-Vote Initiative Specific):** Some get-out-the-vote initiatives have offered referrers around $10 per successful referral for getting someone to vote in an official election. ([TurnoutTeam.com](https://turnoutteam.com/))
 - **U.S. Ballot Initiative Field Collection (2024 Average):** *Wet-ink* legal signatures (a much higher bar). Reported cost: **$14.87 per signature**. ([Source: Ballotpedia 2024](https://ballotpedia.org/Ballot_measure_signature_costs%2C_2024))
 - **General Referral Incentive Sizing:** Referral rewards are often determined based on the expected value or Customer Acquisition Cost (CAC) of the referred individual. A common approach is to offer a fraction of this value back to the referrer and/or the new user. ([Andrew Chen - How to Design a Referral Program](https://andrewchen.com/how-to-design-a-referral-program/))
 
@@ -130,9 +130,9 @@ A well-designed referral-rewards system can:
 
 ### Incentives for Supporters
 
-- **Share in future healthcare savings** or referral jackpots, aligning incentives with campaign success.
-- **Governance rights**: Token holders may help steer campaign direction and reward distribution.
-- **Recognition**: Top contributors featured on leaderboards and in campaign updates.
+- **Share in future healthcare savings** or referral jackpots, aligning incentives with the initiative's success.
+- **Governance rights**: Token holders may help steer the initiative's direction and reward distribution.
+- **Recognition**: Top contributors featured on leaderboards and in updates.
 
 ### Transparency & Accountability
 
@@ -152,9 +152,9 @@ A well-designed referral-rewards system can:
 
 ---
 
-## Addressing Political Friction (U.S. Example)
+## Addressing Political Friction (U.S. Case Study)
 
-*The risks and mitigation strategies below are specific to the United States campaign and serve as a template for analysis in other target countries.*
+*The risks and mitigation strategies below are specific to the United States effort and serve as a template for analysis in other target countries.*
 
 | Risk                                  | Mitigation                                                                  |
 | ------------------------------------- | --------------------------------------------------------------------------- |
@@ -164,7 +164,7 @@ A well-designed referral-rewards system can:
 
 ---
 
-## Bottom-Line Feasibility Analysis (Initial U.S. Campaign)
+## Bottom-Line Feasibility Analysis (Initial U.S. Initiative)
 
 | Factor                    | Feasible?                          | Evidence                              |
 | ------------------------- | ---------------------------------- | ------------------------------------- |
@@ -173,7 +173,7 @@ A well-designed referral-rewards system can:
 | Legislative path          | ✅ (e.g., 2027 UFA or RTT-2.0)            | historical use of must-pass riders    |
 | Execution risk            | ⚠️ needs milestones & single owner | see digital CPA cases                 |
 
-**Conclusion:** With disciplined list-building (≤ \$0.50 CPA) and a suitable "must-pass" legislative vehicle in each target country, this initiative is realistically winnable on a global scale. The immediate next step is building the pledge engine and proving the model in a pilot region.
+**Conclusion:** With disciplined list-building (≤ \$0.50 CPA) and a suitable "must-pass" legislative vehicle in each target country, this public education effort is realistically winnable on a global scale. The immediate next step is building the pledge engine and proving the model in a pilot region.
 
 ---
 
@@ -193,7 +193,7 @@ Below are three well-documented cases where **large-scale, measurable public sup
 | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
 | **U.S. Net Neutrality (2014-15)**               | *≈ 4 million public comments* to the FCC + 100 000-signature White-House petition                                 | FCC and White House both had to issue formal responses; President Obama publicly urged Title II reclassification | FCC adopted **strong Title II net-neutrality rules** in Feb 2015                                                               | ([time.com][1], [washingtonpost.com][2])              |
 | **UK Parliament e-petitions**                   | Any petition that hits **100 000 signatures** is "almost always" scheduled for a floor debate                     | Reaching the threshold forces the Petitions Committee to respond and usually sets a debate date                  | Examples include debates on meningitis vaccines, Brexit preparations, and highway code changes that later informed legislation | ([petition.parliament.uk][3], [parliament.uk][4])     |
-| **Non-violent movements 1900-2006 (Chenoweth)** | When \~**3.5 % of a population** participates actively, campaigns have **never failed** in the historical dataset | Sustained mass participation (boycotts, strikes, demonstrations)                                                 | Regime change or major policy concessions in >50 cases (e.g., Philippines 1986, Serbia 2000)                                   | ([news.harvard.edu][5], [nonviolent-conflict.org][6]) |
+| **Non-violent movements 1900-2006 (Chenoweth)** | When \~**3.5 % of a population** participates actively, such movements have **never failed** in the historical dataset | Sustained mass participation (boycotts, strikes, demonstrations)                                                 | Regime change or major policy concessions in >50 cases (e.g., Philippines 1986, Serbia 2000)                                   | ([news.harvard.edu][5], [nonviolent-conflict.org][6]) |
 
 [1]: https://time.com/3834489/comcast-cable-loses-another-battle/
 [2]: https://www.washingtonpost.com/news/the-switch/wp/2014/02/18/white-house-says-it-backs-fcc-in-efforts-to-protect-network-neutrality/
@@ -225,7 +225,7 @@ So when you propose a pledge/ referral system that can gather tens of thousands�
 - [EveryLibrary About](https://www.everylibrary.org/about-everylibrary)
 - [Change.org - What does it mean to promote a petition?](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition)
 - [Change.org - FAQ: Promoted Petitions](https://www.change.org/l/us/chipping-in-explained)
-- [The Guardian - Avaaz: can online campaigning reinvent politics?](https://www.theguardian.com/world/2013/jan/15/avaaz-online-campaigning-reinvent-politics)
+- [The Guardian - Avaaz: can online public interest efforts reinvent politics?](https://www.theguardian.com/world/2013/jan/15/avaaz-online-campaigning-reinvent-politics)
 - [Change.org Promoted Petitions Instructions](https://www.change.org/l/hi/promoted-petitions-instructions)
 - [GiveDirectly 2021 Cost Benchmark](https://www.givedirectly.org/)
 - [Pollfish - Survey Response Cost Example](https://www.pollfish.com/pricing/survey-calculator/)

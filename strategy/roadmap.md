@@ -60,7 +60,7 @@ Below is an **absurdly comprehensive, highly-detailed, hierarchical to-do list**
        - **Firms**: Hogan Lovells, Covington & Burling, Sidley Austin (healthcare practice)
 
    3.2. **Assess Feasibility of Interstate Compact**  
-       - **Tasks**: Analyze legal steps needed for states to form “Cure Zones.”  
+       - **Tasks**: Analyze legal steps needed for states to form "Cure Zones."  
        - **Time**: 2–3 months  
        - **Cost**: \$50k–100k (legal consultation, policy analysis)  
        - **Personnel**: Policy experts at National Conference of State Legislatures (NCSL)
@@ -93,7 +93,7 @@ Below is an **absurdly comprehensive, highly-detailed, hierarchical to-do list**
        - **Time**: 4–6 months  
        - **Cost**: \$10M–20M  
        - **Personnel**: 50–80 software engineers, data scientists, UI/UX specialists  
-       - **Organizations**: Contract with existing trial company’s dev team + additional staff
+       - **Organizations**: Contract with existing trial company's dev team + additional staff
 
    1.3. **Run Real-World Pilot Trials**  
        - **Tasks**: Recruit patients (focus on one or two disease areas: oncology or rare diseases), gather outcomes data, ensure compliance.  
@@ -113,7 +113,7 @@ Below is an **absurdly comprehensive, highly-detailed, hierarchical to-do list**
        - **Time**: 3–5 months  
        - **Cost**: \$2M–5M for data acquisition, computational overhead  
    2.3. **Prototype Global Policy Negotiation**  
-       - **Tasks**: Test AI agent’s ability to draft policy proposals, identify shared interests among stakeholders, propose compromise language.  
+       - **Tasks**: Test AI agent's ability to draft policy proposals, identify shared interests among stakeholders, propose compromise language.  
        - **Time**: 2–4 months  
        - **Cost**: \$1M–2M for pilot testing, feedback loops with actual stakeholders  
 
@@ -132,37 +132,34 @@ Below is an **absurdly comprehensive, highly-detailed, hierarchical to-do list**
 
 ## **PHASE 2: POLICY ACCELERATION & SCALE (18–36 months)**
 
-1. **Federal Law Advocacy**  
-   1.1. **Lobbying Campaign**  
-       - **Tasks**: Educate Congress, build bipartisan support, draft legislative text expanding Right to Try & enabling decentralized trials.  
-       - **Time**: 6–12 months  
-       - **Cost**: \$50M–80M  
-       - **Organizations**: Major lobbying firms (Brownstein Hyatt, Akin Gump), patient advocacy coalitions (American Cancer Society, etc.)
+1. **Public Awareness and Signature Collection**
+    -   **Description**: Execute a multi-channel strategy to gather signatures from **1% of the global population**.
+    -   **Tasks**: National public awareness initiatives, social media, influencer endorsements emphasizing patient empowerment.
+    -   **Success Metrics**:
+        -   80 million+ signatures collected.
+        -   Sustained media presence.
 
-   1.2. **Public Awareness Push**  
-       - **Tasks**: National ad campaigns, social media, influencer endorsements emphasizing patient empowerment.  
-       - **Time**: 6–12 months (overlapping with lobbying)  
-       - **Cost**: \$20M–40M  
-       - **Recommended Partners**: PR agencies like Edelman, Ogilvy
+2. **Lobbying Effort**
+    -   **Description**: Engage professional firms and build grassroots support to advocate for the **1% Treaty** with key governments, starting with the U.S.
 
-2. **AI Agent Integration with Policy-Making**  
-   2.1. **Beta-Test AI with Regulators**  
+3. **AI Agent Integration with Policy-Making**  
+   3.1. **Beta-Test AI with Regulators**  
        - **Tasks**: Deploy AI agent in limited scenarios with FDA, EMA, TGA for streamlined rulemaking.  
        - **Time**: 4–6 months  
        - **Cost**: \$2M–5M  
        - **Personnel**: AI specialists, government liaisons  
-   2.2. **Global Coordination**  
+   3.2. **Global Coordination**  
        - **Tasks**: Extend AI agent to negotiate cross-border data-sharing and reciprocal approvals with EMA, TGA, PMDA.  
        - **Time**: 6–12 months  
        - **Cost**: \$10M–20M (travel, legal harmonization, pilot cooperation)  
 
-3. **Expansion of Pilot Trials & Infrastructure**  
-   3.1. **Scaling the Decentralized Platform**  
+4. **Expansion of Pilot Trials & Infrastructure**  
+   4.1. **Scaling the Decentralized Platform**  
        - **Tasks**: Integrate additional disease areas (cardiology, neurology), ramp up patient recruitment.  
        - **Time**: Ongoing throughout Phase 2  
        - **Cost**: \$50M–100M  
        - **Partners**: Hospitals, academic research centers worldwide  
-   3.2. **Validate Economic & Clinical Impact**  
+   4.2. **Validate Economic & Clinical Impact**  
        - **Tasks**: Gather cost-effectiveness data, health outcomes, patient satisfaction metrics to bolster legislative arguments.  
        - **Time**: 6–12 months of data analysis  
        - **Cost**: \$5M–10M  

@@ -10,7 +10,7 @@ dateCreated: 2024-06-10T00:00:00.000Z
 
 # Public Opinion Survey: Reforming Medical Research
 
-This survey is designed to gather public opinion on modernizing the medical research system. The data will be used to inform legislators about public priorities regarding healthcare innovation, patient access to treatments, and federal funding.
+This survey is designed to measure public support for a legislative initiative to significantly upgrade the national medical research and drug approval system, making it faster, cheaper, and more effective. Your anonymous responses will help demonstrate public demand for reform to legislators.
 
 ---
 
@@ -43,39 +43,40 @@ Imagine the U.S. was considering joining a global treaty to redirect 1% of milit
 
 ---
 
-## Section 2: Funding the Campaign for Reform
+## Section 2: Funding the Initiative for Reform
 
-The success of this initiative depends on mobilizing millions of Americans. As detailed in the [Referral Rewards System strategy](strategy/referral-rewards-system.md), political scientists have found that once 3.5% of the population actively supports a cause, it has never failed to bring about major policy change. Our goal is to raise a **\$5 million campaign fund** to mobilize the 12 million Americans needed to pass this legislation.
-
-Please consider the following ways you could help fund this movement.
+The following questions ask about your potential willingness to financially support this effort. Our goal is to raise a **$5 million advocacy fund** to mobilize the 12 million Americans needed to pass this legislation.
 
 **Q3: Investing in `$VICTORY` Bonds**
 To fund this effort, the [DIH Treasury](../strategy/1-percent-treaty/decentralized-institutes-of-health.md) plans to issue **`$VICTORY` Bonds** for the war on disease. Citizens could buy these bonds to fund medical research and the advocacy campaign. Bondholders would be repaid over time by nations that sign the 1% Treaty. Would you be interested in purchasing such a bond?
-- Yes, I would definitely be interested in purchasing one.
-- Yes, I might be interested, depending on the financial terms.
+- Yes, definitely
+- Yes, probably
 - No, I am not interested in a bond, but I might donate.
-- Unsure.
+- Unsure / Need more information
 
 **Q4: Direct Donation**
-Thinking of it as a traditional donation to the **\$5 million campaign fund**, how much would you be willing to contribute?
-- \$10
-- \$25
-- \$100
-- Other: \$\_\_\_\_\_\_\_
+Thinking of it as a traditional donation to the **$5 million advocacy fund**, how much would you be willing to contribute?
+- $5
+- $25
+- $100
+- $500
+- Other (please specify)
 
 **Q5: Donation with a Money-Back Guarantee (Assurance Contract)**
-Now, imagine that donation came with a money-back guarantee. If the campaign does *not* reach its **\$5 million funding goal**, your contribution would be fully refunded. Under this "all-or-nothing" condition, how much would you be willing to contribute?
-- \$10
-- \$25
-- \$100
-- Other: \$\_\_\_\_\_\_\_
+Now, imagine that donation came with a money-back guarantee. If the initiative does *not* reach its **$5 million funding goal**, your contribution would be fully refunded. Under this "all-or-nothing" condition, how much would you be willing to contribute?
+- $5
+- $25
+- $100
+- $500
+- Other (please specify)
 
 **Q6: Investment for a Return**
-Finally, imagine your contribution to the **\$5 million fund** was an *investment* that could provide a financial return. If the campaign succeeds, investors would be repaid their principal plus a share of future funds. How much would you consider investing?
-- \$100
-- \$500
-- \$1,000
-- Other: \$\_\_\_\_\_\_\_
+Finally, imagine your contribution to the **$5 million fund** was an *investment* that could provide a financial return. If the effort succeeds, investors would be repaid their principal plus a share of future funds. How much would you consider investing?
+- $5
+- $25
+- $100
+- $500
+- Other (please specify)
 
 ---
 
