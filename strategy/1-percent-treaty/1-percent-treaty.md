@@ -2,10 +2,10 @@
 title: The 1% Treaty
 description: A global accord to redirect 1% of military spending to discovering new treatments and cures for chronic diseases.
 published: true
-date: 2024-06-09T00:00:00.000Z
-tags: 1-percent-treaty, military-spending, healthcare-innovation, global-cooperation, ai-research, cost-benefit, treaty, decentralized-health
+date: 2025-07-02T05:38:42.781Z
+tags: healthcare-innovation, decentralized-health, ai-research, global-cooperation, 1-percent-treaty, military-spending, cost-benefit, treaty
 editor: markdown
-dateCreated: 2024-06-09T00:00:00.000Z
+dateCreated: 2025-06-10T19:10:29.965Z
 ---
 
 ## Facts:
@@ -59,7 +59,7 @@ By redirecting just 1% of war spending each year to using AI to automate clinica
 
 The total combined per capita net benefit of redirecting 1% of military spending to healthcare innovation over 80 years would be [$1,258,412](value-of-automating-research.md).
 
-This is calculated by adding the [$22,969](savings-from-1-percent-less-war.md) savings from decreased annual cost of war to the [$1,235,443](value-of-automating-research.md) benefit of reducing the burden of chronic disease.
+This is calculated by adding the [\$22,969](savings-from-1-percent-less-war.md) savings from decreased annual cost of war to the [$1,235,443](value-of-automating-research.md) benefit of reducing the burden of chronic disease.
 
 # $1,258,412 for 5 Hours of Your Time
 
