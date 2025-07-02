@@ -122,7 +122,7 @@ Your data helps improve treatment rankings and benefits future patients globally
 
 Cost analysis based on data from: [Examination of Clinical Trial Costs and Barriers for Drug Development][13] by the U.S. Department of Health and Human Services, Office of the Assistant Secretary for Planning and Evaluation (ASPE).
 
-To further reduce patient costs, initiatives like the [Decentralized Institutes of Health](strategy/1-percent-treaty/decentralized-institutes-of-health.md) propose novel funding models to subsidize trial participation.
+To further reduce patient costs, new financial models like the [Decentralized Institutes of Health](strategy/1-percent-treaty/decentralized-institutes-of-health.md) are being proposed to fund trial participation through innovative means.
 
 # Platform Architecture
 
