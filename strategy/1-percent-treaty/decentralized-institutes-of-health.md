@@ -34,6 +34,8 @@ The [1% Treaty](1-percent-treaty.md) is an agreement that enables governments to
 
 5. **Catalyzing Medical Breakthroughs**: By pooling resources from governments, organizations, and individuals worldwide, the DIH accelerates the development of life-saving treatments and cures that might otherwise remain underfunded.
 
+6. **Subsidizing Patient Trial Costs**: A primary function of the DIH is to subsidize participation costs for patients in dFDA trials. This removes financial barriers and crowdsources the allocation process, directing funds to trials with the greatest patient demand.
+
 # How It Works
 
 1. Governments sign the [1% Treaty](1-percent-treaty.md)
@@ -43,9 +45,11 @@ The [1% Treaty](1-percent-treaty.md) is an agreement that enables governments to
 
 3. Participants are randomly presented with pairs of projects and asked to select the one they believe is most deserving of funding.
 
-4. The DIH aggregates participant preferences using advanced algorithms to determine the optimal allocation of funds.
+4. The DIH aggregates participant preferences to determine funding allocation. A primary use of these funds is to **subsidize patient participation costs in dFDA trials.**
 
-5. Funded projects are required to share their findings and results openly, contributing to a global knowledge base accessible to all.
+5. This crowdsourced allocation ensures that funding is directed towards trials with the highest patient demand, accelerating research that matters most to the public.
+
+6. Funded projects are required to share their findings and results openly, contributing to a global knowledge base accessible to all.
 
 # Global Impact
 

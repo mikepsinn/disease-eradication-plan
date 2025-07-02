@@ -352,6 +352,7 @@ For this analysis, we use a conservative baseline estimate of **[\$100 billion p
 2. **Volume of Trials & Speed**  
    * Faster, cheaper trials allow more drug candidates, off-label uses, nutraceuticals, and personalized dosing strategies to be tested.  
    * Shorter development cycles reduce carrying costs and risk, further increasing ROI for sponsors.
+   * Crowdsourced funding mechanisms, like those proposed by the [Decentralized Institutes of Health (DIH)](../strategy/1-percent-treaty/decentralized-institutes-of-health.md), can further reduce patient costs and direct resources to trials with the highest public demand.
 
 3. **Regulatory Savings**  
    * A single integrated platform with automated data audits cuts bureaucratic duplication across multiple countries, drastically lowering compliance costs.
