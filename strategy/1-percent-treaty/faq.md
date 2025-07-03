@@ -38,25 +38,13 @@ In fact,
 the national security of everyone would be _**increased**_ because all their enemies would have 1% less bombs,
 biological weapons, etc. to destroy them with.
 
-## Q: How can we be sure the research funding will be spent effectively?
+## Q: How can we ensure the funds are used effectively?
 
-The proposal's [decentralized, crowdsourced approach](decentralized-institutes-of-health.md) is designed to maximize impact.
-By transparently allowing scientists, institutions, and the public to propose and vote on projects, it taps into collective wisdom and promotes accountability.
-Rigorous reporting on outcomes will also allow continuous improvement and ensure that funds flow to the most promising work.
-While no system is perfect, this approach offers significant advantages over centralized, opaque allocation processes vulnerable to special interests.
+The proposal's [innovative funding model](decentralized-institutes-of-health.md) is designed to maximize impact. Subsidies for patient participation are algorithmically allocated to trials with the highest expected value to society, ensuring resources flow to the most promising research. For other functions, like infrastructure development, a Decentralized Autonomous Organization (DAO) provides transparent, community-aligned governance.
 
 ## Q: Is it really possible to get a global treaty ratified in today's polarized geopolitical climate?
 
-Admittedly, securing a global agreement is a daunting challenge.
-
-However, the COVID-19 pandemic has created a unique window of opportunity by highlighting our shared vulnerability and the importance of scientific cooperation.
-
-With enough grassroots momentum and smart diplomacy,
-leaders may find the political will to come together around this common cause.
-The key is presenting the treaty not as an ideological stance,
-but as an apolitical, practical solution that benefits everyone.
-
-By starting with an achievable 1% target and demonstrating clear gains, we can build trust for more ambitious cooperation over time. For more on implementation, see the [DAO strategy roadmap](strategy.md).
+It's a significant challenge, but not impossible. The key is that the treaty is designed to be **geopolitically neutral**. Since every nation reduces its military spending by the same percentage, the relative balance of power remains unchanged. No nation loses its strategic advantage.
 
 ## Q: Don't we already spend a lot on medical research?
 

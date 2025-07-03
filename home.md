@@ -122,6 +122,8 @@ Your data helps improve treatment rankings and benefits future patients globally
 
 Cost analysis based on data from: [Examination of Clinical Trial Costs and Barriers for Drug Development][13] by the U.S. Department of Health and Human Services, Office of the Assistant Secretary for Planning and Evaluation (ASPE).
 
+To further reduce patient costs, new financial models like the [Decentralized Institutes of Health](strategy/1-percent-treaty/decentralized-institutes-of-health.md) are being proposed to fund trial participation through innovative means.
+
 # Platform Architecture
 
 <img src="https://s3.us-east-1.amazonaws.com/static.crowdsourcingcures.org/img%2Fdfda-framework-diagram.png" alt="Platform architecture" style="max-width: 600px; width: 100%;" />
