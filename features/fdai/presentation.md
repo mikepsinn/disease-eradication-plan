@@ -14,7 +14,7 @@ textFollowingNumber: people commit suicide every year
 ---
 # Benefits of Personal FDAi Agents
 
-Nearly a million people commit suicide every year. Around two billion people suffer from chronic diseases like fibromyalgia, depression, multiple sclerosis, chronic fatigue syndrome, and more. 
+Nearly a million people commit suicide every year. Around two billion people suffer from chronic diseases like fibromyalgia, depression, multiple sclerosis, chronic fatigue syndrome, and more.
 
 Much of this suffering can be tied to poor diets and exposure to thousands of untested chemicals that disrupt the microbiome, causing downstream health effects like mental illness, neuroinflammation, dementia, and more. There's evidence that since the 1990s, when glyphosate usage has correlated perfectly with an increase in the hospital discharge records for many of these chronic conditions. Glyphosate, originally patented as an antibiotic, kills beneficial gut bacteria, allowing harmful bacteria to thrive.  However, there are hundreds other common additives that could be producing similar effects.  Shockingly, we simply have almost no long term data on any of them.
 

@@ -29,8 +29,9 @@ The Clinipedia wiki contains the aggregate of all available data on the effects 
    - **Certification of Intervention Manufacturers/Sources** via a Decentralized Web of Trust derived from end-user data and reviews traced back using an NFT-tracked supply chain
    - **Intervention Ranking** - Elevate the most promising yet little/known or researched treatments
    - **Decentralized Clinical Trial Coordination and Protocols** - Not only would this increase knowledge but also access and availability of new and innovated treatments to those who need them urgently.
-   
+
 **Potential Implementations, Components or Inspiration**
+
 - [Psychonaut Wiki](https://psychonautwiki.org/wiki/Psychoactive_substance_index) - A modified version of MediaWiki with additional quantitative metadata storage regarding the pharmacokinetics of various substances.
 - [Journal of Citizen Science](https://studies.crowdsourcingcures.org/) - Published outcome labels based on analysis of real-world data (RWD) from the [Crowdsourcing Cures](https://crowdsourcingcures.org/).
 

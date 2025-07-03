@@ -34,6 +34,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 ## Cost Analysis
 
 ### Traditional Explanatory Trials
+
 - Average phase costs ([source](https://www.sofpromed.com/how-much-does-a-clinical-trial-cost)):
   - Phase 1: $4 million
   - Phase 2: $13 million
@@ -43,6 +44,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
   - Average across areas: $41,117
 
 ### Pragmatic Trials (RECOVERY Example)
+
 - [Cost savings of 68-78% compared to traditional trials](https://pmc.ncbi.nlm.nih.gov/articles/PMC10826145/)
 - Utilized existing healthcare infrastructure
 - Minimal additional staff costs
@@ -52,6 +54,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 ## Speed and Efficiency
 
 ### RECOVERY Trial Metrics
+
 - [9 days: Concept to first patient enrollment](https://www.recoverytrial.net/news/low-cost-dexamethasone-reduces-death-by-up-to-one-third-in-hospitalised-patients-with-severe-respiratory-complications-of-covid-19)
 - [10 weeks: First life-saving treatment identified](https://www.ox.ac.uk/news/features/recovery-trial-two-years)
 - [3 hours: Results to policy implementation](https://www.ox.ac.uk/news/features/recovery-trial-two-years)
@@ -61,6 +64,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 - [4 effective COVID-19 treatments identified](https://www.ox.ac.uk/news/features/recovery-trial-two-years)
 
 ### Traditional Trial Metrics
+
 - Average time from phase 1 to approval: [7.2 years](https://www.bio.org/sites/default/files/legacy/bioorg/docs/Clinical%20Development%20Success%20Rates%202006-2015%20-%20BIO,%20Biomedtracker,%20Amplion%202016.pdf)
 - [80% of trials fail to meet enrollment timelines](https://www.clinicaltrialsarena.com/marketdata/featureclinical-trial-patient-recruitment/)
 - [Up to 50% of research sites enroll one or no patients](https://www.clinicaltrialsarena.com/marketdata/featureclinical-trial-patient-recruitment/)
@@ -68,6 +72,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 ## Clinical Impact
 
 ### RECOVERY Trial
+
 - [Dexamethasone findings](https://www.recoverytrial.net/news/low-cost-dexamethasone-reduces-death-by-up-to-one-third-in-hospitalised-patients-with-severe-respiratory-complications-of-covid-19):
   - 35% reduction in mortality for ventilated patients
   - [Estimated 1 million lives saved globally](https://www.recoverytrial.net/news/recovery-trial-one-year-on)
@@ -75,6 +80,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 - Real-world effectiveness immediately apparent
 
 ### Traditional Trials
+
 - [14% success rate from phase 1 to approval](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6092479/)
 - Average 7 years from discovery to clinical practice
 - Limited real-world applicability due to strict inclusion criteria

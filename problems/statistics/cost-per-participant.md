@@ -8,3 +8,5 @@ featuredImage: "cost-per-participant.jpg"
 source: "https://clinicalresearch.io/blog/running-a-study/cost-of-clinical-trials-breakdown/"
 ---
 The average cost per participant in a clinical trial is $41,413, according to a [study published in PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC7295430/). You can see a breakdown of clinical trial costs in this [detailed cost breakdown analysis](https://clinicalresearch.io/blog/running-a-study/cost-of-clinical-trials-breakdown/).
+
+This high cost creates significant barriers to medical research. Initiatives like the [Decentralized Institutes of Health (DIH)](../../../strategy/1-percent-treaty/decentralized-institutes-of-health.md) aim to address this by establishing new financial frameworks to subsidize patient costs and accelerate research.

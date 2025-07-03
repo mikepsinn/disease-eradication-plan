@@ -22,8 +22,9 @@ Traditional clinical trials exclude up to [85%](https://www.ncbi.nlm.nih.gov/pub
 - Allowing participation while maintaining regular treatment regimens
 - Reducing the burden of in-person visits
 
-This increased inclusivity means trial results better represent real-world patients, leading to more accurate and applicable treatment data. 
+This increased inclusivity means trial results better represent real-world patients, leading to more accurate and applicable treatment data.
 
 Sources:
+
 - [Exclusion Criteria](https://www.ncbi.nlm.nih.gov/pubmed/14628985)
 

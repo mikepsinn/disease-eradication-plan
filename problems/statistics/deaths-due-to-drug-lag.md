@@ -16,5 +16,5 @@ FDA delays in approving new drugs and treatments that are already available in o
 * Affects treatments for cancer, heart disease, and other serious conditions
 
 ## Sources
-- [FDA Review - Drug Lag Analysis](https://www.fdareview.org/features/references/#gieringer85)
-- [Tufts Center for the Study of Drug Development](http://csdd.tufts.edu/databases) 
+* [FDA Review - Drug Lag Analysis](https://www.fdareview.org/features/references/#gieringer85)
+* [Tufts Center for the Study of Drug Development](http://csdd.tufts.edu/databases)

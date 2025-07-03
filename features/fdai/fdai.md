@@ -11,11 +11,11 @@ date: '2025-02-09T16:34:48.009Z'
 dateCreated: '2025-02-09T16:34:48.009Z'
 featuredImage: black-box-model-animation2.gif
 ---
-## Imagine if we could automate clinical research!
+## Imagine if we could automate clinical research
 
 ![](https://static.crowdsourcingcures.org/video/black-box-model-animation2.gif)
 
-## The cost savings from automating clinical research could make the next part of that chart look like this:
+## The cost savings from automating clinical research could make the next part of that chart look like this
 
 ![](/img/cost-clinical-research-with-automation-pointer-1024x740.jpg)
 
@@ -99,7 +99,7 @@ One example of causal inference involves applying forward and reverse lagging of
 
 # Cumulative Effects
 
-###### The FDAi should also compare the outcome over various durations following the exposure to see if there is a long-term cumulative effect or if it's just a short-term acute effect. Acute effects are probably obvious already. This analysis suggests that the mood benefits of regular exercise may continue to accumulate after at least a month of above-average exercise.
+###### The FDAi should also compare the outcome over various durations following the exposure to see if there is a long-term cumulative effect or if it's just a short-term acute effect. Acute effects are probably obvious already. This analysis suggests that the mood benefits of regular exercise may continue to accumulate after at least a month of above-average exercise
 
 ![](../../img/duration-of-action-1024x1024.jpg)
 
@@ -113,7 +113,7 @@ This data will then make it possible to provide real time decision support to te
 
 # Participation
 
-### through automated:
+### through automated
 
 ![](https://static.crowdsourcingcures.org/video/autonomous-study-search.gif)
 

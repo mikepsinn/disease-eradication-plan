@@ -20,11 +20,11 @@ This document outlines how mechanisms similar to those used for DOGE could be ap
 
 The DOGE initiative demonstrated the use of executive power to:
 
-1.  **Establish New Structures via Executive Order:** DOGE was formally created by [Executive Order 14158](https://www.whitehouse.gov/presidential-actions/2025/01/establishing-and-implementing-the-presidents-department-of-government-efficiency/) on January 20, 2025, not through new legislation.
-2.  **Repurpose Existing Agencies:** The order renamed and restructured the existing United States Digital Service (USDS) into the "United States DOGE Service," forming the core operational unit.
-3.  **Mandate Agency-Wide Changes:** Subsequent EOs directed sweeping actions across agencies concerning spending, personnel, and regulation, such as the [Workforce Optimization Initiative (E.O. 14210)](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-workforce-optimization-initiative/) and the [Cost Efficiency Initiative (E.O. 14222)](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-cost-efficiency-initiative/).
-4.  **Leverage Technology and Centralized Oversight:** DOGE emphasized creating centralized technological systems for monitoring and control, embedding "DOGE Teams" within agencies.
-5.  **Influence Funding and Priorities:** Executive directives led to actions like freezing or terminating research grants at agencies like the [NSF](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia) and [NIH](https://www.nature.com/articles/d41586-025-00703-1), aligning spending with administration priorities (e.g., anti-DEI) without new laws specifically mandating those cuts.
+1. **Establish New Structures via Executive Order:** DOGE was formally created by [Executive Order 14158](https://www.whitehouse.gov/presidential-actions/2025/01/establishing-and-implementing-the-presidents-department-of-government-efficiency/) on January 20, 2025, not through new legislation.
+2. **Repurpose Existing Agencies:** The order renamed and restructured the existing United States Digital Service (USDS) into the "United States DOGE Service," forming the core operational unit.
+3. **Mandate Agency-Wide Changes:** Subsequent EOs directed sweeping actions across agencies concerning spending, personnel, and regulation, such as the [Workforce Optimization Initiative (E.O. 14210)](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-workforce-optimization-initiative/) and the [Cost Efficiency Initiative (E.O. 14222)](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-cost-efficiency-initiative/).
+4. **Leverage Technology and Centralized Oversight:** DOGE emphasized creating centralized technological systems for monitoring and control, embedding "DOGE Teams" within agencies.
+5. **Influence Funding and Priorities:** Executive directives led to actions like freezing or terminating research grants at agencies like the [NSF](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia) and [NIH](https://www.nature.com/articles/d41586-025-00703-1), aligning spending with administration priorities (e.g., anti-DEI) without new laws specifically mandating those cuts.
 
 A comprehensive overview of DOGE, its structure, actions, and the controversies it faced can be found on its [Wikipedia page](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency).
 
@@ -32,32 +32,32 @@ A comprehensive overview of DOGE, its structure, actions, and the controversies 
 
 A similar strategy could be employed to initiate the dFDA:
 
-1.  **Establishment via Executive Order:**
-    *   An EO could formally establish the "Decentralized FDA Initiative" or a "Center for Regulatory Innovation" within HHS or the Executive Office of the President.
-    *   This EO would define the dFDA's mission, scope (initially perhaps focusing on specific disease areas or intervention types), and mandate cooperation from relevant agencies (FDA, NIH, CMS, ONC).
+1. **Establishment via Executive Order:**
+    * An EO could formally establish the "Decentralized FDA Initiative" or a "Center for Regulatory Innovation" within HHS or the Executive Office of the President.
+    * This EO would define the dFDA's mission, scope (initially perhaps focusing on specific disease areas or intervention types), and mandate cooperation from relevant agencies (FDA, NIH, CMS, ONC).
 
-2.  **Repurposing Existing Infrastructure & Expertise:**
-    *   Instead of creating a new agency from scratch, the EO could designate an existing entity or component within HHS (e.g., parts of FDA's digital health center, ONC, or leveraging infrastructure/teams from the *All of Us* Research Program) as the core dFDA platform operator, potentially renaming it.
-    *   This leverages existing budgets, personnel slots, and infrastructure, mirroring the USDS transformation into the U.S. DOGE Service.
+2. **Repurposing Existing Infrastructure & Expertise:**
+    * Instead of creating a new agency from scratch, the EO could designate an existing entity or component within HHS (e.g., parts of FDA's digital health center, ONC, or leveraging infrastructure/teams from the *All of Us* Research Program) as the core dFDA platform operator, potentially renaming it.
+    * This leverages existing budgets, personnel slots, and infrastructure, mirroring the USDS transformation into the U.S. DOGE Service.
 
-3.  **Mandating Digital Platform Development & Standards:**
-    *   Given the dFDA's nature as a tech platform, the EO would direct the designated entity to build and operate the decentralized clinical trial infrastructure.
-    *   It could mandate the adoption of specific data standards (like FHIR), interoperability protocols, and security requirements across participating agencies and trial sponsors, similar to how DOGE EOs mandated specific technological systems for financial oversight.
+3. **Mandating Digital Platform Development & Standards:**
+    * Given the dFDA's nature as a tech platform, the EO would direct the designated entity to build and operate the decentralized clinical trial infrastructure.
+    * It could mandate the adoption of specific data standards (like FHIR), interoperability protocols, and security requirements across participating agencies and trial sponsors, similar to how DOGE EOs mandated specific technological systems for financial oversight.
 
-4.  **Centralized Coordination & Oversight:**
-    *   Establish a small "dFDA Coordination Office" via the EO, responsible for driving implementation.
-    *   Mandate the creation of embedded "dFDA Liaison Teams" within FDA, NIH, and CMS, tasked with aligning agency actions with the dFDA initiative and reporting back, mirroring the DOGE Team structure.
+4. **Centralized Coordination & Oversight:**
+    * Establish a small "dFDA Coordination Office" via the EO, responsible for driving implementation.
+    * Mandate the creation of embedded "dFDA Liaison Teams" within FDA, NIH, and CMS, tasked with aligning agency actions with the dFDA initiative and reporting back, mirroring the DOGE Team structure.
 
-5.  **Accelerating Regulatory Adaptation via Executive Action:**
-    *   The EO could direct the FDA and HHS to prioritize and expedite rulemaking and guidance development to implement the regulatory modifications identified in `regulatory/regulations-to-modify-or-rescind.md`.
-    *   This uses existing agency authority, spurred by executive direction, rather than waiting for Congress to pass specific laws for each regulatory change.
+5. **Accelerating Regulatory Adaptation via Executive Action:**
+    * The EO could direct the FDA and HHS to prioritize and expedite rulemaking and guidance development to implement the regulatory modifications identified in `regulatory/regulations-to-modify-or-rescind.md`.
+    * This uses existing agency authority, spurred by executive direction, rather than waiting for Congress to pass specific laws for each regulatory change.
 
-6.  **Influencing Funding & Reimbursement:**
-    *   **NIH Prioritization:** Direct NIH (potentially via the Office of the Director [~\$2.3B FY24 budget, incl. Common Fund] or Common Fund [~\$684M FY24 budget]) to prioritize grant applications utilizing the dFDA platform, focusing on decentralized trial methodologies, or developing relevant technologies. (See precedents of executive influence on [NIH grant terminations](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)).
-    *   **ARPA-H Direction:** Direct the Advanced Research Projects Agency for Health (ARPA-H [\$1.5B FY24 budget]), with its flexible funding for high-impact projects, to issue solicitations specifically for dFDA core technologies.
-    *   **FDA Resource Alignment:** Push FDA to prioritize existing IT/data modernization funds (part of FDA's overall budget, e.g., significant portion of the requested +\$105M for modernization in FY24) and Sentinel Initiative resources towards building infrastructure compatible with dFDA.
-    *   **CMS Innovation Models:** Direct the Center for Medicare & Medicaid Innovation (CMMI [approx. \$10B available per decade]), with its authority and funding, to test payment models supporting dFDA trial participation and validated interventions.
-    *   **Limited Reallocation:** Explore *limited* reallocation or re-prioritization of existing, congressionally appropriated discretionary funds within agencies towards dFDA platform development and pilot trials, acknowledging this is politically and legally complex and likely insufficient for full-scale development.
+6. **Influencing Funding & Reimbursement:**
+    * **NIH Prioritization:** Direct NIH (potentially via the Office of the Director [~\$2.3B FY24 budget, incl. Common Fund] or Common Fund [~\$684M FY24 budget]) to prioritize grant applications utilizing the dFDA platform, focusing on decentralized trial methodologies, or developing relevant technologies. (See precedents of executive influence on [NIH grant terminations](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)).
+    * **ARPA-H Direction:** Direct the Advanced Research Projects Agency for Health (ARPA-H [\$1.5B FY24 budget]), with its flexible funding for high-impact projects, to issue solicitations specifically for dFDA core technologies.
+    * **FDA Resource Alignment:** Push FDA to prioritize existing IT/data modernization funds (part of FDA's overall budget, e.g., significant portion of the requested +\$105M for modernization in FY24) and Sentinel Initiative resources towards building infrastructure compatible with dFDA.
+    * **CMS Innovation Models:** Direct the Center for Medicare & Medicaid Innovation (CMMI [approx. \$10B available per decade]), with its authority and funding, to test payment models supporting dFDA trial participation and validated interventions.
+    * **Limited Reallocation:** Explore *limited* reallocation or re-prioritization of existing, congressionally appropriated discretionary funds within agencies towards dFDA platform development and pilot trials, acknowledging this is politically and legally complex and likely insufficient for full-scale development.
 
     **Summary of Potential Funding Sources (Annualized Estimates):**
 
@@ -101,23 +101,23 @@ While the dFDA platform requires dedicated funding for its creation and operatio
 
 The table highlights that a substantial portion of NIH's budget (~\$39.6 Billion across these selected ICs) is allocated to Institutes whose mandates inherently involve funding or supporting clinical trials to find treatments for specific diseases or conditions.
 
--   **The dFDA offers a Method, Not a New Goal:** The dFDA platform represents a potentially revolutionary *method* for achieving the existing, congressionally mandated goals of these Institutes – finding effective treatments – but doing so faster, cheaper, and at a larger scale.
--   **Efficiency Argument:** Instead of funding numerous traditional, site-based clinical trials costing tens of thousands per patient, these ICs could potentially achieve their clinical evaluation objectives more efficiently by funding trials run *on* the dFDA platform at a fraction of the cost (~\$500-\$1000 per patient).
--   **Targetable Spending:** While not all ~\$39.6B is spent *solely* on clinical trials (basic science is also funded), a significant fraction (conservatively estimated earlier at \$10-15B+ annually across NIH) *is* directed towards clinical evaluation. It is *this* portion of spending whose purpose could be directly and more efficiently fulfilled by leveraging the dFDA.
--   **Synergy:** This approach allows ICs to continue focusing on their specific disease areas (cancer, infectious disease, aging, etc.) while utilizing a shared, efficient, cutting-edge platform for the clinical trial phase, maximizing the impact of their appropriated funds.
+* **The dFDA offers a Method, Not a New Goal:** The dFDA platform represents a potentially revolutionary *method* for achieving the existing, congressionally mandated goals of these Institutes – finding effective treatments – but doing so faster, cheaper, and at a larger scale.
+* **Efficiency Argument:** Instead of funding numerous traditional, site-based clinical trials costing tens of thousands per patient, these ICs could potentially achieve their clinical evaluation objectives more efficiently by funding trials run *on* the dFDA platform at a fraction of the cost (~\$500-\$1000 per patient).
+* **Targetable Spending:** While not all ~\$39.6B is spent *solely* on clinical trials (basic science is also funded), a significant fraction (conservatively estimated earlier at \$10-15B+ annually across NIH) *is* directed towards clinical evaluation. It is *this* portion of spending whose purpose could be directly and more efficiently fulfilled by leveraging the dFDA.
+* **Synergy:** This approach allows ICs to continue focusing on their specific disease areas (cancer, infectious disease, aging, etc.) while utilizing a shared, efficient, cutting-edge platform for the clinical trial phase, maximizing the impact of their appropriated funds.
 
 Therefore, while direct *reallocation* of funds between appropriations accounts via executive order is problematic, there is a strong argument that the executive branch could direct NIH to *fulfill its existing mandates* for clinical evaluation by prioritizing the use of the more efficient dFDA platform, thereby achieving congressional goals more effectively with the allocated funds.
 
-7.  **Personnel & Expertise:**
-    *   Prioritize hiring or detailing personnel with platform development, data science, cybersecurity, and decentralized trial expertise to the lead dFDA entity and liaison teams.
+7. **Personnel & Expertise:**
+    * Prioritize hiring or detailing personnel with platform development, data science, cybersecurity, and decentralized trial expertise to the lead dFDA entity and liaison teams.
 
 ## Anticipated Challenges
 
 This executive action pathway faces significant hurdles:
 
-*   **Funding:** Building and operating the full dFDA initiative requires substantial funding. While the core technology platform's upfront cost is estimated at ~$38-46M, the broader initiative components (integration, plugins, legal, etc.) add significant costs depending on execution success. Total upfront costs for the full initiative could range from ~$50M (best case) to ~$274M (medium case) or even **over \$2.2 Billion** (worst case), with ongoing operational costs scaling accordingly (see [dFDA Cost Benefit Analysis](/economic-models/dfda-cost-benefit-analysis.md#3-costs-of-building--operating-the-global-decentralized-fda) Sections 3.1-3.4 for details). Funding the medium or worst-case scenarios significantly exceeds amounts typically addressable by executive reallocation alone. Dedicated congressional appropriations would almost certainly be necessary for full-scale operation.
-*   **Statutory Authority:** While regulatory *modifications* can often occur under existing law, creating a fundamentally new pathway for intervention approval that *competes* with or bypasses traditional FDA routes might be argued to require new statutory authority from Congress.
-*   **Legal Challenges:** As seen with DOGE ([Wikipedia overview](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency#Legal_status)), this approach would likely face lawsuits questioning the scope of executive authority, the repurposing of funds, potential Appointments Clause violations for key personnel, and procedural challenges under the Administrative Procedure Act.
+* **Funding:** Building and operating the full dFDA initiative requires substantial funding. While the core technology platform's upfront cost is estimated at ~$38-46M, the broader initiative components (integration, plugins, legal, etc.) add significant costs depending on execution success. Total upfront costs for the full initiative could range from ~$50M (best case) to ~$274M (medium case) or even **over \$2.2 Billion** (worst case), with ongoing operational costs scaling accordingly (see [dFDA Cost Benefit Analysis](/economic-models/dfda-cost-benefit-analysis.md#3-costs-of-building--operating-the-global-decentralized-fda) Sections 3.1-3.4 for details). Funding the medium or worst-case scenarios significantly exceeds amounts typically addressable by executive reallocation alone. Dedicated congressional appropriations would almost certainly be necessary for full-scale operation.
+* **Statutory Authority:** While regulatory *modifications* can often occur under existing law, creating a fundamentally new pathway for intervention approval that *competes* with or bypasses traditional FDA routes might be argued to require new statutory authority from Congress.
+* **Legal Challenges:** As seen with DOGE ([Wikipedia overview](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency#Legal_status)), this approach would likely face lawsuits questioning the scope of executive authority, the repurposing of funds, potential Appointments Clause violations for key personnel, and procedural challenges under the Administrative Procedure Act.
 
 ## Conclusion
 
@@ -127,22 +127,22 @@ While requiring congressional action for full funding and unambiguous legal auth
 
 ## Sources Referenced in this Document
 
-*   **DOGE Executive Orders & Information:**
-    *   [EO 14158: Establishing and Implementing the President's "Department of Government Efficiency"](https://www.whitehouse.gov/presidential-actions/2025/01/establishing-and-implementing-the-presidents-department-of-government-efficiency/)
-    *   [EO 14210: Implementing The President's "Department of Government Efficiency" Workforce Optimization Initiative](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-workforce-optimization-initiative/)
-    *   [EO 14222: Implementing the President's "Department of Government Efficiency" Cost Efficiency Initiative](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-cost-efficiency-initiative/)
-    *   [Wikipedia: Department of Government Efficiency](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency)
-*   **Grant Freezes/Terminations:**
-    *   [NPR: NSF freezes payments in response to Trump's executive actions on DEI](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia)
-    *   [Nature: Exclusive: NIH to terminate hundreds of active research grants](https://www.nature.com/articles/d41586-025-00703-1)
-    *   [STAT News: NIH abruptly terminates millions in research grants, defying court orders](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)
-*   **Potential Funding Sources/Authorities:**
-    *   [NIH Common Fund Overview](https://commonfund.nih.gov/overview)
-    *   [NIH Office of the Director (OD) Budget Information](https://officeofbudget.od.nih.gov/br.html)
-    *   [ARPA-H Website](https://arpa-h.gov/)
-    *   [FDA Budget Summary FY2024](https://www.fda.gov/media/165930/download)
-    *   [FDA Data Modernization Action Plan](https://www.fda.gov/about-fda/reports/data-modernization-action-plan)
-    *   [FDA: 21st Century Cures Act Overview](https://www.fda.gov/regulatory-information/selected-amendments-fdc-act/21st-century-cures-act)
-    *   [CMS Innovation Center (CMMI) Overview](https://www.cms.gov/priorities/innovation/about)
-*   **dFDA Cost Estimates:**
-    *   [dFDA Cost Benefit Analysis (Wiki)](/economic-models/dfda-cost-benefit-analysis.md#3-costs-of-building--operating-the-global-decentralized-fda) 
+* **DOGE Executive Orders & Information:**
+    * [EO 14158: Establishing and Implementing the President's "Department of Government Efficiency"](https://www.whitehouse.gov/presidential-actions/2025/01/establishing-and-implementing-the-presidents-department-of-government-efficiency/)
+    * [EO 14210: Implementing The President's "Department of Government Efficiency" Workforce Optimization Initiative](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-workforce-optimization-initiative/)
+    * [EO 14222: Implementing the President's "Department of Government Efficiency" Cost Efficiency Initiative](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-cost-efficiency-initiative/)
+    * [Wikipedia: Department of Government Efficiency](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency)
+* **Grant Freezes/Terminations:**
+    * [NPR: NSF freezes payments in response to Trump's executive actions on DEI](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia)
+    * [Nature: Exclusive: NIH to terminate hundreds of active research grants](https://www.nature.com/articles/d41586-025-00703-1)
+    * [STAT News: NIH abruptly terminates millions in research grants, defying court orders](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)
+* **Potential Funding Sources/Authorities:**
+    * [NIH Common Fund Overview](https://commonfund.nih.gov/overview)
+    * [NIH Office of the Director (OD) Budget Information](https://officeofbudget.od.nih.gov/br.html)
+    * [ARPA-H Website](https://arpa-h.gov/)
+    * [FDA Budget Summary FY2024](https://www.fda.gov/media/165930/download)
+    * [FDA Data Modernization Action Plan](https://www.fda.gov/about-fda/reports/data-modernization-action-plan)
+    * [FDA: 21st Century Cures Act Overview](https://www.fda.gov/regulatory-information/selected-amendments-fdc-act/21st-century-cures-act)
+    * [CMS Innovation Center (CMMI) Overview](https://www.cms.gov/priorities/innovation/about)
+* **dFDA Cost Estimates:**
+    * [dFDA Cost Benefit Analysis (Wiki)](/economic-models/dfda-cost-benefit-analysis.md#3-costs-of-building--operating-the-global-decentralized-fda)

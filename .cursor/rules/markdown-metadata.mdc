@@ -1,7 +1,7 @@
 ---
 description: 
 globs: 
-alwaysApply: false
+alwaysApply: true
 ---
 # Markdown File Metadata Standard
 
@@ -10,7 +10,7 @@ All Markdown files (`.md`) in this workspace should begin with a YAML frontmatte
 **Standard Fields:**
 
 *   `title`: (String) The main title of the page.
-*   `description`: (String) A brief summary of the page content.
+*   `description`: (String) A brief summary of the page content under 250 characters.
 *   `published`: (Boolean) `true` or `false` indicating if the page is live.
 *   `date`: (String) The last updated date in ISO 8601 format (e.g., `YYYY-MM-DDTHH:mm:ss.sssZ`).
 *   `tags`: (String) A comma-separated list of relevant keywords (kebab-case).

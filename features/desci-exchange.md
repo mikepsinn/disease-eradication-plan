@@ -11,6 +11,7 @@ dateCreated: 2022-11-05T02:49:24.504Z
 ![desci-exchange-text-logo-wide-text-hands-background.png](https://static.crowdsourcingcures.org/img/desci-exchange-text-logo-wide-text-hands-background.png)
 
 ## How it works
+
 ![desci-exchange-how-it-works.png](https://static.crowdsourcingcures.org/img/desci-exchange-how-it-works.png)
 
 ## Architecture Overview
@@ -81,4 +82,5 @@ They can be mined by the data owner and can be given or sold to other Analog Twi
   cost of patient care
 
 # Links
+
  - https://github.com/curedao/desci-exchange

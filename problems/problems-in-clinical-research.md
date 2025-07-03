@@ -9,6 +9,7 @@ dateCreated: 2023-10-26T19:50:44.089Z
 ---
 
 # Problems We Seek To Address
+
 **Problems that Could be Solved with a New Regulatory Framework**
 
 It takes over [10 years and \$2.6 billion](https://www.semanticscholar.org/paper/Innovation-in-the-pharmaceutical-industry%3A-New-of-DiMasiGrabowski/3275f31c072ac11c6ca7a5260bd535720f07df41) to bring a drug to market (including failed attempts). It costs [$41k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001) per subject in Phase III clinical trials.
@@ -65,6 +66,7 @@ This means that it's only logical for regulators to reject drug applications by 
 |-----------------------------|----------------------------------------------------------|----------------------------------------------------------------|
 | FDA Allows the Drug         | Correct Decision                                         | <p><br>Victims are identifiable and might appear on Oprah.</p> |
 | FDA Does Not Allow the Drug | <p>Victims are not identifiable or acknowledged.<br></p> | Correct Decision                                               |
+
 ### How a DAO Regulatory Body Could Overcome Perverse Incentives
 
 **Overcoming Cognitive Bias Against Acts of Commission**

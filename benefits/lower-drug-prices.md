@@ -53,11 +53,12 @@ Below is a quantitative analysis of how drastically cheaper trials and increased
 Below is one simple way to capture the impact:
 
 \[
-\text{New Drug Price} 
+\text{New Drug Price}
 = \text{Old Price} \times \bigl( \alpha \times \frac{\text{Remaining Development Cost}}{\text{Original Development Cost}} + \beta \times \frac{1}{\text{Competition Factor}} \bigr).
 \]
 
 Where:  
+
 - **Old Price** is the typical launch price under today’s cost structure.  
 - **Remaining Development Cost** is after the 95% cut in Phase II/III.  
 - **Competition Factor** accounts for the number of new competing therapies.  

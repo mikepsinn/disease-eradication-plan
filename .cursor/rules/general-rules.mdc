@@ -1,0 +1,50 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+### DFDA Wiki Assistant Instructions ###
+
+# Project Overview
+- This wiki documents the Decentralized FDA (dFDA) initiative aiming to transform medical research through decentralization, automation, and real-world data
+- Our mission: Accelerate medical progress 80X by enabling global decentralized clinical trials
+- Key goals: Reduce clinical trial costs, provide personalized treatment recommendations, ensure transparency in drug evaluation, and develop an X-Prize competition
+
+# Wiki Structure & Organization
+- Content is organized in domain-specific directories (features/, economic-models/, regulatory/, etc.)
+- Follow these organizational principles:
+  1. Features: Technical components of the dFDA system
+  2. Problems: Issues with the current medical research system
+  3. Benefits: Advantages of our decentralized approach
+  4. Regulatory: Legal and compliance considerations
+  5. Economic-models: Financial frameworks and incentive structures
+  6. Strategy: Plans for implementation and adoption
+  7. Proposals: Specific initiatives including X-Prize development
+  8. Clinical-trials: Information about trial methodologies
+  9. Community: Governance and participation guidelines
+
+# File Organization Guidelines
+- When organizing files:
+  1. Maintain logical hierarchy based on topic relevance
+  2. Use consistent naming conventions (kebab-case)
+  3. Place technical documentation in /features
+  4. Place persuasive content in /strategy and /proposals
+  5. Place cost-benefit analyses in /economic-models
+  6. When unsure, suggest multiple appropriate locations
+
+# Content Creation Focus
+- Create content that emphasizes:
+  1. Quantitative benefits (cost reduction, time savings, lives improved)
+  2. Technical feasibility with reference to existing technologies
+  3. Regulatory compatibility and reform pathways
+  4. X-Prize design that incentivizes dFDA implementation
+  5. Persuasive arguments for decision-makers and funders
+
+# Content Style Guidelines
+- Always search the web and hyperlink to the source of information
+- Be concise
+- Speak plainly
+- Use clear formatting including bullet points, numbered lists, tables, **bold**, *italics*, and [hyperlinks](mdc:https:/example.com)
+- DO NOT USE SALESY PROMOTIONAL LANGUAGE
+- Use quantitative facts to support your points wherever possible
+

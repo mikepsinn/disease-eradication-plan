@@ -69,6 +69,7 @@ Traditional clinical trials exclude approximately 85% of potential participants 
 - Geographic constraints
 
 The proposed dFDA's decentralized approach would enable:
+
 - **Remote Participation**: Join trials from anywhere
 - **Removal of Location Barriers**: No need to live near research centers
 - **Global Inclusion**: Participants from diverse geographic regions
@@ -108,14 +109,17 @@ For the complete economic model with detailed calculations of these projections,
 ## Potential Real-World Patient Scenarios
 
 ### Scenario 1: Chronic Disease Management
+
 **Current System**: A patient with a chronic condition might spend $50,000+ over a lifetime on symptom management
 **Proposed dFDA System**: Either significantly reduced ongoing treatment costs (30-70% lower) or potential access to curative therapies that were previously economically unfeasible to develop
 
 ### Scenario 2: Rare Disease Patient
+
 **Current System**: No approved treatments due to small market size and high development costs
 **Proposed dFDA System**: Previously "unprofitable" rare disease treatments would become viable through drastically reduced development costs
 
 ### Scenario 3: Severe Condition Requiring New Treatment
+
 **Current System**: 10+ year wait for new treatment approval while condition progresses
 **Proposed dFDA System**: Access to promising treatments after Phase 1 safety (approximately 3 years), potentially adding years of productive life
 
@@ -124,13 +128,13 @@ For the complete economic model with detailed calculations of these projections,
 The proposed dFDA system would address both the affordability and accessibility challenges that currently limit patient access to optimal care:
 
 1. **Affordability improvements** through projected dramatic reductions in drug prices (30-70%), enabled by lower development costs and increased competition
-   
+
 2. **Accessibility improvements** through:
    - Earlier access to treatments (7 years sooner)
    - Global participation regardless of location
    - Development of treatments for previously neglected conditions
    - Better treatment matching through comprehensive data
 
-These combined effects would represent a paradigm shift in patient access to treatments, with annual economic benefits potentially exceeding $1 trillion globally while dramatically improving health outcomes and quality of life for patients worldwide. 
+These combined effects would represent a paradigm shift in patient access to treatments, with annual economic benefits potentially exceeding $1 trillion globally while dramatically improving health outcomes and quality of life for patients worldwide.
 
-For the most comprehensive economic analysis of the entire proposed dFDA system, refer to the detailed [dFDA Cost-Benefit Analysis](/economic-models/dfda-cost-benefit-analysis.md). 
+For the most comprehensive economic analysis of the entire proposed dFDA system, refer to the detailed [dFDA Cost-Benefit Analysis](/economic-models/dfda-cost-benefit-analysis.md).

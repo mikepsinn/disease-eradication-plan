@@ -17,6 +17,7 @@ Welcome to the Patient Advocacy directory of the Community Directory. This space
 ## Purpose of This Folder
 
 The purpose of this folder is to:
+
 - Serve as a central hub for patient advocacy groups and NGOs to share information and resources.
 - Facilitate collaboration between patient advocates and other stakeholders in the dFDA.
 - Provide a platform for discussing patient-centric issues and solutions within the regulatory framework.
@@ -24,14 +25,17 @@ The purpose of this folder is to:
 ## How to Get Involved
 
 To get involved and contribute to this directory:
+
 1. Review the main `README.md` file in the root directory to understand the overall structure and goals of the Community Directory.
 2. Familiarize yourself with the `CONTRIBUTING.md` guidelines to ensure a smooth contribution process.
 
 ### Adding Content
+
 1. Create a Markdown page within this folder to introduce your organization and outline your role and interests in the project.
 2. Include contact information or preferred methods of engagement so that other partners can reach out for collaboration.
 
 ### Modifying Content
+
 1. If you need to update information on an existing page, use pull requests to submit your changes for review.
 2. Ensure that any modifications align with the goals of the dFDA and benefit the patient advocacy community.
 
@@ -44,6 +48,7 @@ To get involved and contribute to this directory:
 ## Templates
 
 For standardizing submissions, please use the following templates located in the `/templates` directory:
+
 - `partner_introduction.md`: Template for introducing new patient advocacy partners to the community.
 - `project_proposal.md`: Template for proposing new projects or initiatives that require collaboration.
 

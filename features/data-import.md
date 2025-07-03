@@ -37,4 +37,5 @@ The Connector Framework imports and normalizes data on all quantifiable aspects 
 ![integrations-screenshot.png](https://static.crowdsourcingcures.org/dfda/components/data-import/integrations-screenshot.png)
 
 ## Related Code
+
 - [Connectors](https://github.com/FDA-AI/FDAi/tree/develop/apps/dfda-1/app/DataSources/Connectors)

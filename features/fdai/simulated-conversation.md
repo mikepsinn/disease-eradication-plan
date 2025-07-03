@@ -29,6 +29,7 @@ Interaction with the FDAi agent, focusing on its functionalities and addressing 
 **Patient**: That makes sense. What can I do about it?
 
 **FDAi Agent**: Here are some personalized recommendations:
+
 - **Reduce Gluten and Lectin Intake**: Eliminating gluten and reducing lectin-rich foods could lower your symptom severity by about 3 points on a 10-point scale.
 - **Incorporate Anti-inflammatory Foods**: As a vegetarian, you can benefit from more omega-3-rich foods like flaxseeds and chia seeds, which could improve mood and reduce symptom severity by 2 points.
 - **Supplement Wisely**: A vitamin D supplement, given your vegetarian diet, could improve mood by 20% and reduce inflammation, potentially decreasing symptom severity by another 2 points.
