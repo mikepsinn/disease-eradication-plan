@@ -117,6 +117,28 @@ A key feature of the proposed system is making all trial data and research findi
 - Disagree
 - Strongly Disagree
 
+
+## Section 3: The People's Budget (Wishocracy by Program)
+
+This section asks you to act as a policymaker. We will show you a series of randomly chosen pairs of government programs. For each pair, please allocate **$100** between them using the slider, according to your priorities. Your responses will help create a "People's Budget" to illustrate how public priorities may differ from current government spending.
+
+**Instructions:**
+For each pair presented, move the slider to distribute $100.
+_Example: Program A: <-----X-----> Program B ($70 to A, $30 to B)_
+
+**Program List for Pairwise Comparison:**
+-   **dFDA (Decentralized FDA):** Funding for faster, cheaper clinical trials.
+-   **DIH (Decentralized Institutes of Health):** A global treasury to fund medical research and patient access.
+-   **Department of Defense:** Funding for the military.
+-   **Department of Health & Human Services:** Funding for NIH, CDC, and public health programs.
+-   **Department of Education:** Funding for public schools and universities.
+-   **F-35 Fighter Jet Program:** A specific, high-cost military hardware project.
+-   **Fossil Fuel Subsidies:** Government financial support for oil, gas, and coal industries.
+-   **Enforcing Marijuana Prohibition:** Police and prison costs for non-violent marijuana offenses.
+-   **Deportation of Non-Violent Immigrants:** Funding for a program of mass deportations.
+-   **Enforcement for Violent Crime:** Funding for police, courts, and prisons to address violent crime. _Only ~45% of violent crimes are solved each year in the U.S._
+-   **Enforcement for Property Crime:** Funding for police, courts, and prisons to address theft, burglary, arson, etc. _Only ~14% of property crimes are solved each year in the U.S._
+
 ---
 
 ## Section 4: The Future of Medical Research
