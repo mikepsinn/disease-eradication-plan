@@ -118,9 +118,9 @@ A key feature of the proposed system is making all trial data and research findi
 - Strongly Disagree
 
 
-## Section 3: The People's Budget (Wishocracy by Program)
+## Section 3: Wishocracy - Public Budget Priorities
 
-This section asks you to act as a policymaker. We will show you a series of randomly chosen pairs of government programs. For each pair, please allocate **$100** between them using the slider, according to your priorities. Your responses will help create a "People's Budget" to illustrate how public priorities may differ from current government spending.
+This section introduces **"Wishocracy"** - a new approach to understanding public priorities through pairwise budget allocation. You'll act as a policymaker, allocating **$100** between pairs of government programs to reveal how public preferences differ from current spending patterns.
 
 **Instructions:**
 For each pair presented, move the slider to distribute $100.
@@ -182,9 +182,9 @@ If you or a loved one had a serious condition, and a decentralized trial for a p
 
 ---
 
-## Section 5: Crowdsourcing Global Priorities (Wishocracy)
+## Section 5: Wishocracy - Global Priorities
 
-The final question uses a method called **Randomized Aggregated Pairwise Preference Allocation**. This is designed to build a discretionary budget that accurately reflects the public's priorities for the problems we should solve as a global community.
+This section uses **Wishocracy** methodology (Randomized Aggregated Pairwise Preference Allocation) to build a discretionary budget that accurately reflects the public's priorities for the problems we should solve as a global community.
 
 **How it works:** You will be shown a series of random pairs of major global problems. For each pair, please use the slider to allocate $100 between the two problem areas based on which you believe is more important to solve. By aggregating thousands of these individual choices, we can construct a full "budget" that shows how people worldwide would prioritize spending to solve these key issues.
 
