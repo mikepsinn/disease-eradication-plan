@@ -117,7 +117,7 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 - **Email Address:** <input type="text" size="30">
 - **Phone Number (with country code):** <input type="text" size="20">
 
-[ ] **I consent to be contacted** by the dFDA initiative team to discuss my responses or for future participation. I understand that my contact information will be kept confidential and used only for this purpose.
+[ ] **I consent to be contacted** by to discuss my responses or for future participation. I understand that my contact information will be kept confidential and used only for this purpose.
 
 **Demographics**
 
