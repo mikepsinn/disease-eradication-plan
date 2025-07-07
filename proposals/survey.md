@@ -10,7 +10,7 @@ dateCreated: 2024-06-10T00:00:00.000Z
 
 # Global Survey on Human Values
 
-The current medical research system is slow and expensive. New treatments take an average of **17 years** to reach patients, and **95% of rare diseases have no approved treatment**. This survey is designed to measure public support for a global initiative to upgrade this system, making it faster, cheaper, and more effective. Your anonymous responses will help demonstrate public demand for reform to policymakers worldwide.
+The current medical research system is slow and expensive. New treatments take an average of **17 years** to reach patients, and **95% of rare diseases have no approved treatment**. This survey is designed to measure public support for a global initiative to upgrade this system, making it faster, cheaper, and more effective. Your anonymous responses will help demonstrate public demand for reform worldwide.
 
 ---
 
@@ -158,9 +158,9 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 
 **Thank you for your participation!**
 
-**Help Us Build Support for Medical Research Reform**
+**Help Us Create a World Without Suffering**
 
-Your responses help demonstrate public demand for faster, more accessible medical research. To make this initiative successful, we need to reach policymakers with evidence of broad public support.
+Your responses help demonstrate public demand for faster, more accessible medical research. To make this initiative successful, we need evidence of broad public support.
 
 **Share This Survey & Earn Rewards**
 
@@ -176,10 +176,10 @@ Share your unique referral link below. For every person who completes the survey
 **Make a Direct Donation**
 
 If you'd like to support our advocacy efforts directly, your donation will help fund:
-- Legislative outreach to policymakers
+- Education and outreach to policymakers
 - Public awareness campaigns
-- Technical development of the dFDA platform
-- Research and analysis to support our policy proposals
+- Technical development of the Decentralized FDA and Decentralized Institutes of Health
+- Research and analysis to support our policy proposals and initiatives
 
 **Your Impact:** Every $1,000 donated funds 1,000+ verified survey responses, helping us reach the 3.5% tipping point needed for systemic change. Research shows that when 3.5% of a population actively supports a cause, it has never failed to achieve major societal advancement.
 
