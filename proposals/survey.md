@@ -1,14 +1,14 @@
 ---
-title: Public Opinion Survey on Medical Research Reform
-description: A survey to gauge public support for the dFDA initiative, the 1% Treaty, and modernizing clinical trials.
+title: Global Survey on Human Values
+description: A comprehensive survey to understand global priorities and values, measuring public support for redirecting resources from military spending to health innovation and modernizing medical research systems.
 published: true
 date: 2024-06-10T00:00:00.000Z
-tags: survey, public-opinion, legislative-advocacy, dfda, 1-percent-treaty
+tags: survey, global-values, human-priorities, public-opinion, medical-research, 1-percent-treaty
 editor: markdown
 dateCreated: 2024-06-10T00:00:00.000Z
 ---
 
-# Public Opinion Survey: Reforming Medical Research
+# Global Survey on Human Values
 
 The current medical research system is slow and expensive. New treatments take an average of **17 years** to reach patients, and **95% of rare diseases have no approved treatment**. This survey is designed to measure public support for a global initiative to upgrade this system, making it faster, cheaper, and more effective. Your anonymous responses will help demonstrate public demand for reform to policymakers worldwide.
 
