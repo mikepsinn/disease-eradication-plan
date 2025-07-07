@@ -62,9 +62,13 @@ This section asks for your opinion on specific upgrades to agencies like the FDA
 
 ---
 
-### Part 4: Detailed Spending Priorities (Pairwise Comparison)
+### Part 4: Detailed Spending Priorities
 
-This section uses a method we call **"Wishocracy"** to understand priorities in more detail. You will be shown several pairs of public spending areas. For each pair, please allocate \$100 between them based on which you feel is more important.
+The human brain can't accurately rank dozens of spending priorities at once. This section uses a method called **"Wishocracy"** to solve that problem. It breaks the complex choice of a national budget down into a series of simple, head-to-head comparisons.
+
+By aggregating thousands of these individual choices, we can build a full budget that shows what public spending would look like if it actually reflected the values of the voters.
+
+You will be shown several pairs of public spending areas. For each pair, please allocate \$100 between them based on which you feel is more important.
 
 **(Note: In the live survey, these pairs would be presented one at a time and randomized.)**
 
