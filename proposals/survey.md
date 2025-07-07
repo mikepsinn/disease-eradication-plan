@@ -159,6 +159,29 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 
 **Thank you for your participation!**
 
-If you found this survey valuable and would like to support the dFDA initiative, please consider making a donation to help fund our advocacy efforts. Every contribution helps us build support for faster, more accessible medical research.
+**Help Us Build Support for Medical Research Reform**
+
+Your responses help demonstrate public demand for faster, more accessible medical research. To make this initiative successful, we need to reach policymakers with evidence of broad public support.
+
+**Share This Survey & Earn Rewards**
+
+Share your unique referral link below. For every person who completes the survey using your link, you'll earn points that can be redeemed for:
+- Direct cash payments
+- Donation matching to medical research charities
+- Subsidized participation in decentralized clinical trials
+
+**Your Referral Link:** `https://dfda.earth/survey?ref=YOUR_UNIQUE_CODE`
+
+**Share via:** [Email] [Twitter] [Facebook] [LinkedIn] [Copy Link]
+
+**Make a Direct Donation**
+
+If you'd like to support our advocacy efforts directly, your donation will help fund:
+- Legislative outreach to policymakers
+- Public awareness campaigns
+- Technical development of the dFDA platform
+- Research and analysis to support our policy proposals
 
 **[Donate Now]** *(Link to donation page)*
+
+*Every contribution, whether through sharing or donating, helps accelerate medical progress for everyone.*
