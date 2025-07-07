@@ -48,17 +48,7 @@ This new model is made possible by dramatic cost reductions. Evidence from succe
 **Q7: Support for the Principles**
 Based on these goals, to what extent do you support or oppose creating a new system based on these principles?
 
-**Q8: Trust in a New System**
-
-**Q9: Data and Transparency**
-A key feature of the proposed system is making all trial data and research findings publicly available to accelerate innovation. How much do you agree or disagree with the principle that research funded by taxpayer dollars should be open-source?
-- Strongly Agree
-- Agree
-- Neutral
-- Disagree
-- Strongly Disagree
-
-**Q10: Personal Participation**
+**Q8: Personal Participation**
 If you or a loved one had a serious condition, and a decentralized trial for a promising new treatment was available through a platform like the one described, how likely would you be to participate?
 - Very Likely
 - Somewhat Likely
