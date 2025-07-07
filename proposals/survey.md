@@ -169,7 +169,7 @@ Share your unique referral link below. For every person who completes the survey
 - Donation matching to medical research charities
 - Subsidized participation in decentralized clinical trials
 
-**Your Referral Link:** `https://dfda.earth/survey?ref=YOUR_UNIQUE_CODE`
+**Your Referral Link:** `https://example.com/survey?ref=YOUR_UNIQUE_CODE`
 
 **Share via:** [Email] [Twitter] [Facebook] [LinkedIn] [Copy Link]
 
@@ -180,6 +180,10 @@ If you'd like to support our advocacy efforts directly, your donation will help 
 - Public awareness campaigns
 - Technical development of the dFDA platform
 - Research and analysis to support our policy proposals
+
+**Your Impact:** Every $1,000 donated funds 1,000+ verified survey responses, helping us reach the 3.5% tipping point needed for systemic change. Research shows that when 3.5% of a population actively supports a cause, it has never failed to achieve major societal advancement.
+
+**Transparency:** All donations are tracked transparently, with real-time dashboards showing progress toward our goals. We target costs of $0.20-$0.50 per verified response through viral referral systems.
 
 **[Donate Now]** *(Link to donation page)*
 
