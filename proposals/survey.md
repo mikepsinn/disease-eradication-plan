@@ -1,23 +1,20 @@
 ---
-title: "Survey: Reforming Medical Research & Funding"
-description: "A survey to measure public support for the 1% Treaty and a proposal to fundamentally upgrade the medical research and drug approval system."
-published: false
-date: 2024-07-18T17:00:00.000Z
-tags: 1-percent-treaty, dfda, medical-research, public-opinion, legislative-advocacy
+title: Public Opinion Survey on Medical Research Reform
+description: A survey to gauge public support for the dFDA initiative, the 1% Treaty, and modernizing clinical trials.
+published: true
+date: 2024-06-10T00:00:00.000Z
+tags: survey, public-opinion, legislative-advocacy, dfda, 1-percent-treaty
 editor: markdown
-dateCreated: 2024-07-18T17:00:00.000Z
+dateCreated: 2024-06-10T00:00:00.000Z
 ---
 
-# Survey: Reforming Medical Research & Funding
+# Public Opinion Survey: Reforming Medical Research
 
-## Introduction
-
-This survey gathers public opinion on two major proposals designed to address critical flaws in our medical research system. Currently, it takes an average of **17 years** for a new treatment to reach patients, and **95% of rare diseases have no approved therapy**. Your anonymous responses will help measure public demand for the following reforms.
-
-1.  **The 1% Treaty:** A plan for all nations to redirect 1% of military spending to accelerate medical innovation.
-2.  **The Right to Trial & FDA Upgrade Initiatives:** Proposals to give patients the right to join clinical trials and to modernize health agencies, making new treatments safe, effective, and rapidly accessible.
+The current medical research system is slow and expensive. New treatments take an average of **17 years** to reach patients, and **95% of rare diseases have no approved treatment**. This survey is designed to measure public support for a global initiative to upgrade this system, making it faster, cheaper, and more effective. Your anonymous responses will help demonstrate public demand for reform to policymakers worldwide.
 
 ---
+
+## Section 1: Priorities and Funding
 
 ### Part 1: The 1% Treaty
 
@@ -28,89 +25,140 @@ The "1% Treaty" proposes that all signatory nations redirect 1% of their annual 
   - [ ] Oppose
   - [ ] Unsure / Need more information
 
----
-
 ### Part 2: Core Funding Priorities
 
 **2. Imagine you are given \$100 representing public funds. How would you allocate it between the following two areas?** (The total must add up to \$100).
 
-- **Military / National Defense:** \$______
+- **Military / War:** \$______
 - **A Decentralized Institutes of Health (to fund efficient medical trials):** \$______
 
 ---
 
-### Part 3: Upgrading Our Medical System
+## Section 2: Principles for Research Reform
 
-Real-world examples, like the UK's RECOVERY trial, have demonstrated that it is possible to run clinical trials for a fraction of the standard cost (roughly \$500 per patient vs. \$43,000). The following questions ask your opinion on specific upgrades to our own system, inspired by these proven successes.
+The following questions are about the core principles of this initiative. The central proposal is to upgrade our medical research infrastructure with an **open-source, decentralized platform**, as outlined in the ["Right to Trial and FDA Upgrade Act"](../act.md).
 
-This section asks for your opinion on specific upgrades to agencies like the FDA.
+This "FDA.gov v2" platform would work like this:
+1.  Any patient could see a ranked list of the most effective treatments for their condition, based on all available global data.
+2.  Any patient would have the **right to participate** in a clinical trial from home.
+3.  All trial data would be made public to accelerate new discoveries.
 
-**3. Should agencies like the FDA be required to publicly rank the most effective treatments for diseases based on *all* available clinical and real-world evidence?**
-  - [ ] Yes
-  - [ ] No
-  - [ ] Unsure
+This new model is made possible by dramatic cost reductions. Evidence from successful, large-scale studies like the UK's [RECOVERY trial](../reference/recovery-trial.md) shows this approach can cut per-patient trial costs by over **95%** (from ~$43,000 down to ~$500), enabling more research for more people.
 
-**4. Currently, it's estimated that up to 85% of patients are excluded from participating in clinical trials. Should all patients have the right to easily participate in decentralized, pragmatic clinical trials for promising treatments for their condition?**
-  - [ ] Yes
-  - [ ] No
-  - [ ] Unsure
+**Q7: Support for the Principles**
+Based on these goals, to what extent do you support or oppose creating a new system based on these principles?
 
-**5. Should public funds be used to subsidize a patient's participation in a trial, with the subsidy size based on the expected public value of the data their participation would generate?**
-  - [ ] Yes
-  - [ ] No
-  - [ ] Unsure
+**Q8: Trust in a New System**
 
----
+**Q9: Data and Transparency**
+A key feature of the proposed system is making all trial data and research findings publicly available to accelerate innovation. How much do you agree or disagree with the principle that research funded by taxpayer dollars should be open-source?
+- Strongly Agree
+- Agree
+- Neutral
+- Disagree
+- Strongly Disagree
 
-### Part 4: Detailed Spending Priorities
-
-The human brain can't accurately rank dozens of spending priorities at once. This section uses a method called **"Wishocracy"** to solve that problem. It breaks the complex choice of a national budget down into a series of simple, head-to-head comparisons.
-
-By aggregating thousands of these individual choices, we can build a full budget that shows what public spending would look like if it actually reflected the values of the voters.
-
-You will be shown several pairs of public spending areas. For each pair, please allocate \$100 between them based on which you feel is more important.
-
-**(Note: In the live survey, these pairs would be presented one at a time and randomized.)**
-
-**Example Pair:**
--   **National Institutes of Health (NIH):** \$______
--   **Department of Defense:** \$______
-
-**List of Areas for Comparison:**
--   Scientific & Medical Research
--   National Defense
--   Healthcare
--   Education
--   Infrastructure
--   Environmental Protection
--   Justice System & Public Safety
--   Social Security & Pensions
--   International Aid
+**Q10: Personal Participation**
+If you or a loved one had a serious condition, and a decentralized trial for a promising new treatment was available through a platform like the one described, how likely would you be to participate?
+- Very Likely
+- Somewhat Likely
+- Unsure
+- Somewhat Unlikely
+- Very Unlikely
 
 ---
 
-### Part 5: About You
+## Section 3: Wishocracy - Setting Public Priorities
 
-This anonymous data helps us understand the context of your responses.
+This section uses a method called **"Wishocracy"** to understand your priorities. You will be shown a series of randomly chosen pairs of public spending areas. For each pair, please allocate **$100** between them based on what you believe is more important.
 
-- **Age Range:**
-  - [ ] 18-24
-  - [ ] 25-34
-  - [ ] 35-44
-  - [ ] 45-54
-  - [ ] 55-64
-  - [ ] 65+
+This helps illustrate how public priorities may differ from current government spending.
 
-- **Highest Level of Education:**
-  - [ ] High School or equivalent
-  - [ ] Some College / Associate's Degree
-  - [ ] Bachelor's Degree
-  - [ ] Master's Degree or higher
+**Part A: Domestic Program Funding**
 
-- **Political Affiliation (Optional):**
-  - [ ] Leaning Left / Liberal
-  - [ ] Centrist
-  - [ ] Leaning Right / Conservative
-  - [ ] Libertarian
-  - [ ] Other
-  - [ ] Prefer not to say
+For each pair of U.S. federal programs, allocate $100 based on your priorities.
+
+*   **List of Programs for Comparison:**
+    *   Military / War
+    *   Healthcare (e.g., NIH, CDC, Medicare/Medicaid)
+    *   Scientific & Medical Research
+    *   Education
+    *   Infrastructure (e.g., roads, bridges, energy grid)
+    *   Social Security & Retirement Benefits
+    *   Environmental Protection
+    *   Justice System & Law Enforcement
+    *   International Aid & Diplomacy
+    *   Direct Payments to Citizens (Universal Basic Income)
+
+**Part B: Global Challenge Priorities**
+
+Now, allocate $100 for each pair of major global challenges.
+
+*   **List of Challenges for Comparison:**
+    *   Curing Diseases (e.g., Cancer, Alzheimer's)
+    *   Preventing Future Pandemics
+    *   Combating Climate Change
+    *   Reducing Global Poverty
+    *   Promoting Peace & Preventing Conflict
+    *   Advancing Scientific Discovery & Space Exploration
+    *   Improving Global Education
+    *   Protecting Biodiversity & Ecosystems
+
+---
+
+## Section 4: About You (Optional)
+
+This final section is optional, but your answers will help us better understand how different groups of people view these issues. All information is anonymous unless you consent to be contacted below.
+
+**Contact Information**
+
+If you are willing to be contacted by our team for follow-up discussions or to participate in future initiatives, please provide your information below.
+
+- **Full Name:** <input type="text" size="30">
+- **Email Address:** <input type="text" size="30">
+- **Phone Number (with country code):** <input type="text" size="20">
+
+[ ] **I consent to be contacted** by the dFDA initiative team to discuss my responses or for future participation. I understand that my contact information will be kept confidential and used only for this purpose.
+
+**Demographics**
+
+**What is your country of residence?**
+<input type="text" size="20">
+
+**What is your Postal / Zip Code?**
+<input type="text" size="10">
+
+**What is your age range?**
+- 18-29
+- 30-44
+- 45-64
+- 65+
+
+**How would you describe your political outlook?**
+- Liberal / Left-leaning
+- Centrist
+- Conservative / Right-leaning
+- Libertarian
+- Other
+- Prefer not to say
+
+**What is the highest level of education you have completed?**
+- High school or less
+- Some college or Associate's degree
+- Bachelor's degree
+- Graduate or professional degree
+
+**What is your approximate annual household income (in your local currency)?**
+- Less than 50,000
+- 50,000 - 99,999
+- 100,000 - 199,999
+- 200,000 or more
+- Prefer not to say
+
+---
+
+**Thank you for your participation!**
+
+If you found this survey valuable and would like to support the dFDA initiative, please consider making a donation to help fund our advocacy efforts. Every contribution helps us build support for faster, more accessible medical research.
+
+**[Donate Now]** *(Link to donation page)*
