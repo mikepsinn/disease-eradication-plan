@@ -147,7 +147,7 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 - Bachelor's degree
 - Graduate or professional degree
 
-**What is your approximate annual household income (in your local currency)?**
+**What is your approximate annual household income (in USD)?**
 - Less than 50,000
 - 50,000 - 99,999
 - 100,000 - 199,999
