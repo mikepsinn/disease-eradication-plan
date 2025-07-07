@@ -94,6 +94,15 @@ Now, allocate $100 for each pair of major global challenges.
     *   Improving Global Education
     *   Protecting Biodiversity & Ecosystems
 
+
+**Q9: Support for A System That Aligned Public Spending With Your Values**
+Would you support the adoption of a system such as Wishocracy that allowed your values to influence the allocation of public resources in accordance with your priorities?
+- Strongly Support
+- Support
+- Neutral
+- Oppose
+- Strongly Oppose
+
 ---
 
 ## Section 4: About You (Optional)
