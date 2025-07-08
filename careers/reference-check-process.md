@@ -1,16 +1,16 @@
 ---
-title: Reference Check Process for the Founding AI Architect
-description: A guide for conducting effective reference checks for the Founding AI Architect of the War on Disease, including an email template and a structured form.
+title: Reference Check Process for the Supreme Allied Commander
+description: A guide for conducting final reference checks for the Supreme Allied Commander, War on Disease role, including a bespoke email and form template.
 published: true
 date: 2025-01-01T00:00:00.000Z
-tags: hiring, workflow, recruitment, references, War-on-Disease, ai-engineer
+tags: hiring, workflow, recruitment, references, leadership
 editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---
 
-# Reference Check Process: Founding AI Architect
+# Reference Check Process: Supreme Allied Commander
 
-This document outlines the process and templates for conducting reference checks for high-potential candidates for the **Founding AI Architect** role. This is a critical final step before extending an offer.
+This document outlines the final verification step before extending an offer for the **Supreme Allied Commander, War on Disease** role. This check should only be conducted with the single finalist who has successfully completed the Mutual Due Diligence process.
 
 ## The Process
 
@@ -23,15 +23,15 @@ This document outlines the process and templates for conducting reference checks
 
 ## Email Template to Reference
 
-**Subject:** Reference for [Candidate Name] for a Founding AI Architect Role
+**Subject:** Confidential Reference for [Candidate Name] - Leadership Role
 
 **Body:**
 
 Dear [Reference Name],
 
-My name is [Your Name], representing the War on Disease initiative.
+My name is [Your Name].
 
-[Candidate Name] is in the final stages of our selection process for a founding leadership role: the **Founding AI Architect of the War on Disease**. We were deeply impressed during our conversations and would be grateful for your perspective on their work and character.
+[Candidate Name] is the final candidate for a unique, mission-critical leadership role: **Supreme Allied Commander, War on Disease**. Their mandate is to build and lead a technology-driven global movement.
 
 To make this as easy as possible, we have prepared a short digital form that should take no more than 5-10 minutes to complete. Your honest feedback is critical to this decision.
 

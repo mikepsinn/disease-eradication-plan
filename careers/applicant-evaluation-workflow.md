@@ -1,16 +1,16 @@
 ---
-title: n8n Workflow for Evaluating the Founding AI Architect
-description: A detailed outline of the n8n workflow for parsing, evaluating, and ranking applications for the Founding AI Architect of the War on Disease.
+title: n8n Workflow for Evaluating Supreme Allied Commander Applicants
+description: A detailed outline of the n8n workflow for parsing, evaluating, and ranking applications for the Supreme Allied Commander, War on Disease.
 published: true
 date: 2025-01-01T00:00:00.000Z
-tags: hiring, workflow, n8n, automation, ai, recruitment, War-on-Disease
+tags: hiring, workflow, n8n, automation, ai, recruitment, leadership
 editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---
 
-# n8n Workflow: Evaluating the Founding AI Architect
+# n8n Workflow: Evaluating Supreme Allied Commander Applicants
 
-This document outlines the design for an n8n workflow to automate the evaluation of candidates applying for the **Founding AI Architect** role. The goal is to create an efficient, objective screening process that surfaces candidates with both world-class AI/automation skills and the full-stack engineering prowess to build the required systems.
+This document outlines the design for an n8n workflow to automate the evaluation of candidates applying for the **Supreme Allied Commander, War on Disease** role. The goal is to create an efficient, objective screening process that surfaces candidates with both world-class AI/automation skills and the full-stack engineering prowess to build the required systems.
 
 ## Workflow Diagram
 
