@@ -1,27 +1,29 @@
 ---
-title: Application for Founding AI Architect, War on Disease
-description: An application for the founding AI-executor role in the War on Disease, designed to gather evidence of world-class AI/automation skills and mission alignment.
+title: Application for Supreme Allied Commander of the War on Disease
+description: An application for a high-stakes command role in the War on Disease, seeking a leader for a hazardous mission with a doubtful safe return of the initial investment.
 published: true
 date: 2025-01-01T00:00:00.000Z
-tags: careers, job-application, ai-engineer, founding-engineer, War-on-Disease
+tags: careers, command, leadership, ai-engineer, War-on-Disease, high-risk
 editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---
 
-# Application: Founding AI Architect, War on Disease
+# Application: Supreme Allied Commander of the War on Disease
 
-Thank you for your interest in leading the technical offensive for the War on Disease. We are seeking a founding AI Architect to be the first "boots on the ground," personally building the army of AI agents required to win this war. This application is designed to gather concrete evidence of your skills.
+**Men and women wanted for a hazardous journey. Minimal funding, bitter opposition, long months of intense effort, constant danger. Safe return doubtful. Honour and recognition in case of success.**
 
-Your first mission, should you be chosen, is to build the automated systems to **mobilize 3.5% of the global population** via our global survey and **generate a self-sustaining income stream** to fund the war effort.
+We are looking for the founding **Supreme Allied Commander, War on Disease**. This is not a job posting. It is a call to arms.
 
-This is a hands-on-keyboard, AI-executor role. Only candidates with world-class engineering ability will be considered.
+The mission, should you choose to accept it, is to personally architect and build an army of AI agents to achieve a singular, near-impossible objective: mobilize 3.5% of the global population and create a self-sustaining financial engine to fund a perpetual war on human suffering.
+
+This is a hands-on command role. Only those with world-class engineering ability, a tolerance for extreme ambiguity, and unwavering resilience should apply.
 
 ## Section 1: Personal Information
 
-- **Full Name:** <input type="text" size="30"> *
-- **Email Address:** <input type="text" size="30"> *
-- **Country of Residence:** <input type="text" size="20"> *
-- **LinkedIn Profile or Personal Website (if applicable):** <input type="text" size="30">
+*   **Full Name:** <input type="text" size="30"> *
+*   **Email Address:** <input type="text" size="30"> *
+*   **Country of Residence:** <input type="text" size="20"> *
+*   **LinkedIn Profile or Personal Website (if applicable):** <input type="text" size="30">
 
 [ ] **I consent to be contacted** by representatives of the War on Disease initiative to discuss my application.
 
@@ -29,13 +31,13 @@ This is a hands-on-keyboard, AI-executor role. Only candidates with world-class 
 
 **1. Rank the following technical areas from your strongest (1) to your weakest (5).** *
 - AI Workflows / Agent Development: [  ]
-- Data Engineering & Analysis: [  ]
-- Web App Development (Full-Stack): [  ]
+- Web App Development (Full-Stack, React): [  ]
 - API Design & Development: [  ]
+- Data Engineering & Analysis: [  ]
 - Blockchain / Smart Contract Development: [  ]
 
-**2. For each area below, provide a link to the single best project or code sample that demonstrates your skill, and write one sentence explaining *why* it's a strong example.** *
-*(Note: Link to a specific GitHub repo, pull request, or live URL.)*
+**2. For each area below, provide a link to the project, repo, or evidence that best demonstrates your skill, and write one sentence explaining *why* it's a strong example.** *
+*(Note: Be concise. The work should speak for itself.)*
 
 - **AI Workflows / Agent Development:**
   - **Evidence Link:** <input type="text" size="50">
@@ -86,8 +88,8 @@ This is a hands-on-keyboard, AI-executor role. Only candidates with world-class 
 
 ## Submission
 
-**Thank you for applying.** We will review your application and contact you if your skills and experience align with the demands of this mission. Fields marked with * are required.
+**Acknowledge the stakes and submit your application.** Fields marked with * are required.
 
-**[Submit Application]** *(Link to submission portal)*
+**[I Understand the Risks & Wish to Proceed]** *(Link to submission portal)*
 
-*Every contribution helps us accelerate medical progress and build a healthier, longer future for everyone.* 
+*Victory in this war will not be measured in days or months, but in lives saved and futures restored.* 

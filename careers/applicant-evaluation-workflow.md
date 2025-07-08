@@ -10,28 +10,31 @@ dateCreated: 2024-07-31T00:00:00.000Z
 
 # n8n Workflow: Evaluating the Founding AI Architect
 
-This document outlines the design for an n8n workflow to automate the evaluation of candidates applying for the **Founding AI Architect** role. The goal is to create an efficient, objective screening process that surfaces candidates with world-class AI/automation skills and the strategic mindset to lead this mission.
+This document outlines the design for an n8n workflow to automate the evaluation of candidates applying for the **Founding AI Architect** role. The goal is to create an efficient, objective screening process that surfaces candidates with both world-class AI/automation skills and the full-stack engineering prowess to build the required systems.
 
 ## Workflow Diagram
 
 ```mermaid
-graph TD
+graph TD;
     A[Trigger: New Application Webhook] --> B{Validate & Parse Form};
     B --> C{Initial Triage};
     C --> D{Disqualify?};
     D -- Yes --> E[End];
     D -- No --> F[Parallel AI Evaluation];
     F --> G[GitHub Profile Analysis];
-    F --> H[AI & Automation Skill Analysis];
-    F --> I[Supporting Skills Analysis];
-    F --> J[Strategic Philosophy Analysis];
+    F --> H[AI & Agent Skill Analysis];
+    F --> I[Web & API Skill Analysis];
+    F --> J[Data & Blockchain Skill Analysis];
+    F --> K[Strategic Philosophy Analysis];
     
     subgraph "Evidence Verification"
         H
         I
+        J
+        K
     end
 
-    G & H & I & J --> N{Aggregate Scores};
+    G & H & I & J & K --> N{Aggregate Scores};
     N --> O{Calculate Weighted Final Score};
     O --> P[Save to Database/Sheet];
     P --> Q[Generate Summary for Top Candidates];
@@ -62,35 +65,41 @@ The core of the workflow, using an LLM to run multiple specialized evaluations.
 
 - **A. GitHub Profile Analysis:**
     - **Input:** GitHub profile URL.
-    - **Prompt:** "Analyze this GitHub profile. Score from 0-10 on demonstrated mastery of AI, automation, and complex systems. Look for: 1) Originality and depth in AI-related repos. 2) High-quality contributions to relevant open-source projects (e.g., AI frameworks, data tools). 3) Code quality and architectural thinking. Return JSON with `githubScore` and justification."
+    - **Prompt:** "Analyze this GitHub profile. Score from 0-10 on demonstrated mastery of complex systems. Look for: 1) Originality and depth in repositories. 2) High-quality contributions to relevant open-source projects. 3) Code quality, architectural thinking, and diversity of technologies used. Return JSON with `githubScore` and justification."
 
-- **B. AI & Automation Skill Analysis:**
-    - **Input:** The evidence link and justification sentence for the "AI Workflows / Agent Development" and "Data Engineering & Analysis" skills.
-    - **Prompt:** "Analyze the candidate's two core skill submissions (AI and Data Engineering). Based on the evidence and justification, score their `coreAISkill` from 0-10, focusing on architectural complexity, novelty, and relevance to building autonomous agent systems. Return JSON with the score and justification."
+- **B. AI & Agent Skill Analysis:**
+    - **Input:** Evidence link for "AI Workflows / Agent Development".
+    - **Prompt:** "Analyze the candidate's project. Score their `aiSkill` from 0-10, focusing on architectural complexity, novelty, and relevance to building autonomous agent systems. Return JSON with the score and justification."
 
-- **C. Supporting Skills Analysis:**
-    - **Input:** Evidence links and justifications for Web App, API, and Blockchain skills.
-    - **Prompt:** "Briefly assess the candidate's three supporting skill submissions. Provide a single `supportSkillScore` from 0-10, representing their generalist capabilities and ability to build the full-stack systems needed to support the core AI. Return JSON with the score and a one-sentence summary."
+- **C. Web & API Skill Analysis:**
+    - **Input:** Evidence links for "Web App Development" and "API Design & Development".
+    - **Prompt:** "Analyze the candidate's two projects. Provide a single `webApiSkill` score from 0-10, representing their ability to build robust, modern, full-stack applications. Look for best practices in UI (React), API design, and overall architecture. Return JSON with the score and a one-sentence summary."
 
-- **D. Strategic Philosophy Analysis:**
+- **D. Data & Blockchain Skill Analysis:**
+    - **Input:** Evidence links for "Data Engineering & Analysis" and "Blockchain / Smart Contract Development".
+    - **Prompt:** "Analyze the candidate's two projects. Provide a single `dataBlockchainSkill` score from 0-10, representing their ability to work with data pipelines and decentralized technologies. Return JSON with the score and a one-sentence summary."
+
+- **E. Strategic Philosophy Analysis:**
     - **Input:** Text responses for the "AI philosophy" and "technical strategy" questions.
-    - **Prompt:** "Analyze the candidate's strategic responses. Score `philosophyAlignment` from 0-10 based on the clarity and depth of their architectural philosophy. Score `strategyScore` from 0-10 based on the creativity, feasibility, and detail of their proposed technical plan for the 3.5% mission. Return JSON with both scores and justifications."
+    - **Prompt:** "Analyze the candidate's strategic responses. Score `strategyScore` from 0-10 based on the creativity, feasibility, and detail of their proposed technical plan for the 3.5% mission. Return JSON with the score and justification."
 
 ### 5. Aggregate & Calculate Final Score
 - **Tool:** n8n Set Node or Code Node.
 - **Action:**
     - Gathers all scores.
-    - Calculates a final weighted score, heavily biased towards core AI skills.
+    - Calculates a final weighted score, balanced across key areas.
     - **Weighting:**
-        - **Core AI Skill (40%):** `coreAISkill * 4`
-        - **GitHub Score (30%):** `githubScore * 3`
-        - **Strategic Philosophy (20%):** `((philosophyAlignment + strategyScore) / 2) * 2`
-        - **Supporting Skills (10%):** `supportSkillScore * 1`
+        - **AI & Agent Skill (30%):** `aiSkill * 3`
+        - **Web & API Skill (30%):** `webApiSkill * 3`
+        - **Data & Blockchain Skill (20%):** `dataBlockchainSkill * 2`
+        - **GitHub Score (10%):** `githubScore * 1`
+        - **Strategic Philosophy (10%):** `strategyScore * 1`
     - **Final Score = Weighted Sum (out of 100).**
 
 ### 6. Output & Human Review
 - **Tool:** Google Sheets/Airtable/Postgres Node, Email/Slack Node.
 - **Action:**
     - Saves all data and scores to a central database.
-    - For candidates scoring above a threshold (e.g., > 80), a summary is generated.
-    - Sends a notification to the "Hiring Command" with a link to the ranked list of candidates for human review. 
+    - For candidates scoring above a threshold (e.g., > 75), a summary is generated for review.
+    - Sends a notification to the "Hiring Command" with a link to the ranked list of candidates for human review.
+    - **Guideline:** The Hiring Command should manually review any candidate who scores a 9 or 10 in the `aiSkill` or `webApiSkill` categories, regardless of their final weighted score. A genius in a key area may be more valuable than a candidate who is simply good in all areas. 
