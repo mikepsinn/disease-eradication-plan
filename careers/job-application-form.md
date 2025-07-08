@@ -1,16 +1,20 @@
 ---
-title: Job Application Form for Software Engineering Generalist
-description: A standardized application form for generalist software engineering roles, designed to gather high-fidelity, evidence-based signals for predicting job performance.
+title: Application for Founding AI Architect, War on Disease
+description: An application for the founding AI-executor role in the War on Disease, designed to gather evidence of world-class AI/automation skills and mission alignment.
 published: true
-date: 2024-07-31T00:00:00.000Z
-tags: careers, job-application, software-engineer, generalist, evidence-based-hiring
+date: 2025-01-01T00:00:00.000Z
+tags: careers, job-application, ai-engineer, founding-engineer, War-on-Disease
 editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---
 
-# Job Application Form for Software Engineering Generalist
+# Application: Founding AI Architect, War on Disease
 
-Thank you for your interest in contributing to the advancement of medical and longevity research. We are seeking versatile Software Engineering Generalists to help build the innovative systems of the future. This application is designed to gather concrete evidence of your skills, dedication, and ethos. Please provide concise, evidence-based answers.
+Thank you for your interest in leading the technical offensive for the War on Disease. We are seeking a founding AI Architect to be the first "boots on the ground," personally building the army of AI agents required to win this war. This application is designed to gather concrete evidence of your skills.
+
+Your first mission, should you be chosen, is to build the automated systems to **mobilize 3.5% of the global population** via our global survey and **generate a self-sustaining income stream** to fund the war effort.
+
+This is a hands-on-keyboard, AI-executor role. Only candidates with world-class engineering ability will be considered.
 
 ## Section 1: Personal Information
 
@@ -19,33 +23,21 @@ Thank you for your interest in contributing to the advancement of medical and lo
 - **Country of Residence:** <input type="text" size="20"> *
 - **LinkedIn Profile or Personal Website (if applicable):** <input type="text" size="30">
 
-[ ] **I consent to be contacted** by representatives of organizations focused on medical and longevity research to discuss my application. I understand that my contact information will be kept confidential and used only for this purpose.
+[ ] **I consent to be contacted** by representatives of the War on Disease initiative to discuss my application.
 
 ## Section 2: Technical Evidence & Skill Profile
 
 **1. Rank the following technical areas from your strongest (1) to your weakest (5).** *
-- Web App Development: [  ]
-- API Design & Development: [  ]
 - AI Workflows / Agent Development: [  ]
-- Blockchain / Smart Contract Development: [  ]
 - Data Engineering & Analysis: [  ]
+- Web App Development (Full-Stack): [  ]
+- API Design & Development: [  ]
+- Blockchain / Smart Contract Development: [  ]
 
 **2. For each area below, provide a link to the single best project or code sample that demonstrates your skill, and write one sentence explaining *why* it's a strong example.** *
-*(Note: Live URLs are preferred for web apps, otherwise link to a specific GitHub repo or pull request.)*
-
-- **Web App Development (Frontend/Backend):**
-  - **Evidence Link:** <input type="text" size="50">
-  - **Justification:** <input type="text" size="80">
-
-- **API Design & Development:**
-  - **Evidence Link:** <input type="text" size="50">
-  - **Justification:** <input type="text" size="80">
+*(Note: Link to a specific GitHub repo, pull request, or live URL.)*
 
 - **AI Workflows / Agent Development:**
-  - **Evidence Link:** <input type="text" size="50">
-  - **Justification:** <input type="text" size="80">
-
-- **Blockchain / Smart Contract Development:**
   - **Evidence Link:** <input type="text" size="50">
   - **Justification:** <input type="text" size="80">
 
@@ -53,39 +45,48 @@ Thank you for your interest in contributing to the advancement of medical and lo
   - **Evidence Link:** <input type="text" size="50">
   - **Justification:** <input type="text" size="80">
 
-**3. Provide a link to your primary GitHub profile. This is required to see your overall contribution history.** *
+- **Web App Development (Full-Stack):**
+  - **Evidence Link:** <input type="text" size="50">
+  - **Justification:** <input type="text" size="80">
+
+- **API Design & Development:**
+  - **Evidence Link:** <input type="text" size="50">
+  - **Justification:** <input type="text" size="80">
+
+- **Blockchain / Smart Contract Development:**
+  - **Evidence Link:** <input type="text" size="50">
+  - **Justification:** <input type="text" size="80">
+
+**3. Provide a link to your primary GitHub profile. This is required.** *
 <input type="text" size="30">
 
-**4. Provide a link to your Stack Overflow or other technical community profile (if active).**
-<input type="text" size="30">
+## Section 3: Strategic & Technical Philosophy
 
-## Section 3: Mission, Ethos & Innovation
-
-**5. Describe your philosophy on open-source development. How have you demonstrated commitment to a project or community over the long term (at least 1+ year)?** (Max 150 words) *
+**4. Describe your philosophy on building and deploying autonomous AI systems. How do you approach architecture, testing, and ensuring alignment in complex agentic workflows?** (Max 200 words) *
 <textarea rows="7" cols="50"></textarea>
 
-**6. Propose one innovative technical idea that could significantly advance medical or longevity research. How does this align with a core value you are passionate about (e.g., patient access, data transparency)?** Structure your answer with bullet points: `Idea`, `Value`, `Impact`. (Max 150 words) *
+**5. Propose a high-level technical strategy for the first battle: building an AI engine to drive millions of survey submissions and convert participants to donors. What would be the core components of your system?** (Max 200 words) *
 <textarea rows="7" cols="50"></textarea>
 
-## Section 4: Additional Accomplishments (Optional)
+## Section 4: Accomplishments (Optional)
 
-**7. List any hackathons you've participated in. Please include the event name, project, any awards won, and a link if available.**
+**6. List any hackathons you've participated in, especially those related to AI, data, or growth. Please include the event name, project, any awards won, and a link if available.**
 <textarea rows="5" cols="50"></textarea>
 
-**8. List up to two other projects or accomplishments you are proud of. This is your chance to showcase skills or passions not covered above.**
+**7. List up to two other technical accomplishments you are proud of that demonstrate your ability to build world-class systems.**
 <textarea rows="5" cols="50"></textarea>
 
 ## Section 5: Availability
 
-**9. What is your availability to start? Are you seeking a full-time, part-time, or volunteer position?** *
+**8. This is a full-time mission. What is your availability to start?** *
 <input type="text" size="30">
 
-**10. Are there any additional details or qualifications you'd like us to know about?** (Max 100 words)
+**9. Are there any additional details or qualifications you'd like us to know about?** (Max 100 words)
 <textarea rows="5" cols="50"></textarea>
 
 ## Submission
 
-**Thank you for applying!** Your responses will help us build a network of talent dedicated to transforming medical and longevity research. We will review your application and contact you if there is a potential fit with participating organizations. Fields marked with * are required.
+**Thank you for applying.** We will review your application and contact you if your skills and experience align with the demands of this mission. Fields marked with * are required.
 
 **[Submit Application]** *(Link to submission portal)*
 
