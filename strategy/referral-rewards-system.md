@@ -8,10 +8,11 @@ editor: markdown
 dateCreated: 2025-05-27T21:54:01.437Z
 ---
 
-
+```mermaid
 graph TD
     A["Large-Scale Measurable Public Support<br>(e.g., Net Neutrality comments, UK petitions, 3.5% rule)"] --> B["Creates Trigger for Action<br>(e.g., Formal responses, Parliamentary debates, Sustained pressure)"]
     B --> C["Leads to Concrete Policy Outcome<br>(e.g., FCC rules, Legislation informed, Regime/Policy change)"]
+```
 
 
 ## Why 3.5%? The Tipping Point for Systemic Change
