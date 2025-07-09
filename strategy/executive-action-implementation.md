@@ -1,3 +1,13 @@
+---
+title: Strategy Enabling dFDA via Executive Order (DOGE Model)
+description: Outlines a strategy for establishing the dFDA initiative using executive actions, drawing parallels to the Department of Government Efficiency (DOGE) model, while acknowledging funding and legal challenges.
+published: true
+date: 2025-03-10T00:00:00.000Z
+tags: executive-action, dfda-implementation, doge-model, hhs, nih, funding, regulatory-strategy, executive-order
+editor: markdown
+dateCreated: 2025-03-08T00:00:00.000Z
+---
+
 # Strategy: Enabling dFDA via Executive Action (DOGE Model)
 
 ## Introduction

@@ -1,0 +1,385 @@
+{
+  "id": "dfda-public-opinion-2024",
+  "title": "Public Opinion Survey: Reforming Medical Research",
+  "description": "A survey to gauge public support for the dFDA initiative, the 1% Treaty, and modernizing clinical trials.",
+  "version": "1.0",
+  "estimatedTime": "15-20 minutes",
+  "sections": [
+    {
+      "id": "priorities-funding",
+      "title": "Priorities and Funding",
+      "description": "This section asks about your budget priorities and support for international cooperation in funding research.",
+      "orderIndex": 1,
+      "questions": [
+        {
+          "id": "budget-allocation",
+          "type": "pairwise",
+          "text": "If you had $100 in tax dollars to allocate, how would you distribute it between the following two areas?",
+          "items": [
+            {"id": "military", "label": "Military Defense"},
+            {"id": "medical", "label": "Medical Research"}
+          ],
+          "validation": {
+            "total": 100,
+            "message": "Total must add up to $100"
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "international-cooperation-multilateral",
+          "type": "multiple_choice",
+          "text": "If **all other major nations** also agreed to contribute a similar percentage of their military budgets, what percentage of your country's military budget would you support reallocating?",
+          "options": [
+            {"id": "0", "label": "0%"},
+            {"id": "1", "label": "1%"},
+            {"id": "2-5", "label": "2-5%"},
+            {"id": "6-10", "label": "6-10%"},
+            {"id": "10+", "label": "More than 10%"},
+            {"id": "unsure", "label": "Unsure"}
+          ],
+          "orderIndex": 2
+        },
+        {
+          "id": "international-cooperation-unilateral",
+          "type": "multiple_choice",
+          "text": "Now, imagine your country was considering this **unilaterally** (acting alone), and no other countries had agreed to contribute. What percentage of your country's military budget would you support reallocating in this case?",
+          "options": [
+            {"id": "0", "label": "0%"},
+            {"id": "1", "label": "1%"},
+            {"id": "2-5", "label": "2-5%"},
+            {"id": "6-10", "label": "6-10%"},
+            {"id": "10+", "label": "More than 10%"},
+            {"id": "unsure", "label": "Unsure"}
+          ],
+          "orderIndex": 3
+        }
+      ]
+    },
+    {
+      "id": "funding-initiative",
+      "title": "Funding the Initiative for Reform",
+      "description": "The following questions ask about your potential willingness to financially support this global effort.",
+      "orderIndex": 2,
+      "questions": [
+        {
+          "id": "victory-bonds",
+          "type": "multiple_choice",
+          "text": "To fund this effort, the DIH Treasury plans to issue **$VICTORY Bonds** for the war on disease. Citizens could buy these bonds to fund medical research and the advocacy effort. Bondholders would be repaid over time by nations that sign the 1% Treaty. Would you be interested in purchasing such a bond?",
+          "options": [
+            {"id": "yes-definitely", "label": "Yes, definitely"},
+            {"id": "yes-probably", "label": "Yes, probably"},
+            {"id": "no-bond-donate", "label": "No, I am not interested in a bond, but I might donate."},
+            {"id": "unsure", "label": "Unsure / Need more information"}
+          ],
+          "orderIndex": 1
+        },
+        {
+          "id": "direct-donation",
+          "type": "multiple_choice",
+          "text": "Thinking of it as a traditional donation to the **$5 million advocacy fund**, how much would you be willing to contribute?",
+          "options": [
+            {"id": "5", "label": "$5"},
+            {"id": "25", "label": "$25"},
+            {"id": "100", "label": "$100"},
+            {"id": "500", "label": "$500"},
+            {"id": "other", "label": "Other (please specify)"}
+          ],
+          "orderIndex": 2
+        },
+        {
+          "id": "assurance-contract",
+          "type": "multiple_choice",
+          "text": "Now, imagine that donation came with a money-back guarantee. If the initiative does *not* reach its **$5 million funding goal**, your contribution would be fully refunded. Under this \"all-or-nothing\" condition, how much would you be willing to contribute?",
+          "options": [
+            {"id": "5", "label": "$5"},
+            {"id": "25", "label": "$25"},
+            {"id": "100", "label": "$100"},
+            {"id": "500", "label": "$500"},
+            {"id": "other", "label": "Other (please specify)"}
+          ],
+          "orderIndex": 3
+        },
+        {
+          "id": "investment-return",
+          "type": "multiple_choice",
+          "text": "Finally, imagine your contribution to the **$5 million fund** was an *investment* that could provide a financial return. If the effort succeeds, investors would be repaid their principal plus a share of future funds. How much would you consider investing?",
+          "options": [
+            {"id": "5", "label": "$5"},
+            {"id": "25", "label": "$25"},
+            {"id": "100", "label": "$100"},
+            {"id": "500", "label": "$500"},
+            {"id": "other", "label": "Other (please specify)"}
+          ],
+          "orderIndex": 4
+        }
+      ]
+    },
+    {
+      "id": "research-reform-principles",
+      "title": "Principles for Research Reform",
+      "description": "The following questions are about the core principles of this initiative, which aims to accelerate medical progress by making efficacy trials (Phase 2+) more accessible to patients while maintaining safety standards.",
+      "orderIndex": 3,
+      "questions": [
+        {
+          "id": "support-principles",
+          "type": "multiple_choice",
+          "text": "Based on these goals, to what extent do you support or oppose creating a new system based on these principles?",
+          "options": [
+            {"id": "strongly-support", "label": "Strongly Support"},
+            {"id": "support", "label": "Support"},
+            {"id": "neutral", "label": "Neutral"},
+            {"id": "oppose", "label": "Oppose"},
+            {"id": "strongly-oppose", "label": "Strongly Oppose"}
+          ],
+          "orderIndex": 1
+        },
+        {
+          "id": "support-reason",
+          "type": "multiple_choice",
+          "text": "What is the primary reason for your answer?",
+          "options": [
+            {"id": "save-lives", "label": "The potential to save lives by accelerating research."},
+            {"id": "lower-costs", "label": "The potential to lower healthcare costs."},
+            {"id": "patient-control", "label": "The principle of giving patients more options and control."},
+            {"id": "distrust-system", "label": "My general distrust of the current pharmaceutical and regulatory system."},
+            {"id": "safety-concerns", "label": "I have concerns about the safety and oversight of a new system."},
+            {"id": "privacy-concerns", "label": "I have concerns about data privacy and the security of personal health information."},
+            {"id": "unsure", "label": "I am unsure / I don't have a strong reason."}
+          ],
+          "orderIndex": 2
+        },
+        {
+          "id": "patient-access",
+          "type": "multiple_choice",
+          "text": "Currently, up to 85% of patients are excluded from efficacy trials (Phase 2+). This new system would give all patients the right to participate in efficacy trials for their condition after safety has been established. How important is it to you that patient access to efficacy trials is expanded?",
+          "options": [
+            {"id": "very-important", "label": "Very Important"},
+            {"id": "somewhat-important", "label": "Somewhat Important"},
+            {"id": "neutral", "label": "Neutral"},
+            {"id": "not-very-important", "label": "Not Very Important"},
+            {"id": "not-important", "label": "Not at all Important"}
+          ],
+          "orderIndex": 3
+        },
+        {
+          "id": "data-transparency",
+          "type": "multiple_choice",
+          "text": "A key feature of the proposed system is making all trial data and research findings publicly available to accelerate innovation. How much do you agree or disagree with the principle that research funded by taxpayer dollars should be open-source?",
+          "options": [
+            {"id": "strongly-agree", "label": "Strongly Agree"},
+            {"id": "agree", "label": "Agree"},
+            {"id": "neutral", "label": "Neutral"},
+            {"id": "disagree", "label": "Disagree"},
+            {"id": "strongly-disagree", "label": "Strongly Disagree"}
+          ],
+          "orderIndex": 4
+        }
+      ]
+    },
+    {
+      "id": "peoples-budget",
+      "title": "Wishocracy: Public Budget Priorities",
+      "description": "This section introduces 'Wishocracy' - a new approach to understanding public priorities. You'll act as a policymaker, allocating $100 between pairs of government programs to reveal how public preferences differ from current spending.",
+      "orderIndex": 4,
+      "questions": [
+        {
+          "id": "budget-pairwise-1",
+          "type": "pairwise",
+          "text": "You are allocating $100 between two areas:",
+          "items": [
+            {"id": "dfda", "label": "dFDA (Decentralized FDA): Funding for faster, cheaper clinical trials."},
+            {"id": "dih", "label": "DIH (Decentralized Institutes of Health): A global treasury to fund medical research and patient access."}
+          ],
+          "validation": {
+            "total": 100,
+            "message": "Total must add up to $100"
+          },
+          "orderIndex": 1,
+          "randomize": true
+        },
+        {
+          "id": "budget-pairwise-2",
+          "type": "pairwise",
+          "text": "You are allocating $100 between two areas:",
+          "items": [
+            {"id": "defense", "label": "Department of Defense: Funding for the military."},
+            {"id": "health", "label": "Department of Health & Human Services: Funding for NIH, CDC, and public health programs."}
+          ],
+          "validation": {
+            "total": 100,
+            "message": "Total must add up to $100"
+          },
+          "orderIndex": 2,
+          "randomize": true
+        },
+        {
+          "id": "budget-pairwise-3",
+          "type": "pairwise",
+          "text": "You are allocating $100 between two areas:",
+          "items": [
+            {"id": "education", "label": "Department of Education: Funding for public schools and universities."},
+            {"id": "f35", "label": "F-35 Fighter Jet Program: A specific, high-cost military hardware project."}
+          ],
+          "validation": {
+            "total": 100,
+            "message": "Total must add up to $100"
+          },
+          "orderIndex": 3,
+          "randomize": true
+        }
+      ]
+    },
+    {
+      "id": "future-medical-research",
+      "title": "The Future of Medical Research",
+      "description": "Questions about trust in new systems and the economic impact of medical research reform.",
+      "orderIndex": 5,
+      "questions": [
+        {
+          "id": "trust-new-system",
+          "type": "multiple_choice",
+          "text": "The proposed platform would use AI to analyze data and transparently rank the effectiveness of treatments. Assuming strong security and privacy protections, how much would you trust a system like this compared to the current system?",
+          "options": [
+            {"id": "trust-lot-more", "label": "Trust it a lot more"},
+            {"id": "trust-somewhat-more", "label": "Trust it somewhat more"},
+            {"id": "trust-same", "label": "Trust it about the same"},
+            {"id": "trust-somewhat-less", "label": "Trust it somewhat less"},
+            {"id": "trust-lot-less", "label": "Trust it a lot less"}
+          ],
+          "orderIndex": 1
+        },
+        {
+          "id": "perceived-risk",
+          "type": "multiple_choice",
+          "text": "The current drug approval process is slow, and an estimated 21,000 to 120,000 people die each decade waiting for new treatments. A faster system that makes efficacy trials (Phase 2+) more accessible could save lives but might also carry new risks. Which do you consider the greater risk?",
+          "options": [
+            {"id": "risk-delay", "label": "The risk of letting people suffer and die from treatable diseases due to slow regulatory approval."},
+            {"id": "risk-efficacy-uncertainty", "label": "The risk of treatments being available before we fully understand their effectiveness in real-world conditions."},
+            {"id": "risk-equal", "label": "They are about equal."}
+          ],
+          "orderIndex": 2
+        },
+        {
+          "id": "economic-cost-delay",
+          "type": "multiple_choice",
+          "text": "Medical discoveries made today may not become available to patients for over 15 years, costing the global economy trillions in lost productivity and treatment expenses. How urgent of a problem do you believe this \"time lag\" is for your country's economy?",
+          "options": [
+            {"id": "extremely-urgent", "label": "Extremely Urgent"},
+            {"id": "very-urgent", "label": "Very Urgent"},
+            {"id": "somewhat-urgent", "label": "Somewhat Urgent"},
+            {"id": "not-urgent", "label": "Not Urgent"}
+          ],
+          "orderIndex": 3
+        },
+        {
+          "id": "healthcare-savings",
+          "type": "multiple_choice",
+          "text": "By making clinical trials faster and more efficient, experts believe a new system could significantly reduce the trillions spent on healthcare globally each year. How much impact do you believe this reform could have on national and global healthcare costs?",
+          "options": [
+            {"id": "very-large-impact", "label": "A very large positive impact (significant savings)"},
+            {"id": "moderate-impact", "label": "A moderate positive impact"},
+            {"id": "small-impact", "label": "A small positive impact"},
+            {"id": "no-impact", "label": "No real impact"},
+            {"id": "unsure", "label": "Unsure"}
+          ],
+          "orderIndex": 4
+        },
+        {
+          "id": "personal-participation",
+          "type": "multiple_choice",
+          "text": "If you or a loved one had a serious condition, and an efficacy trial for a promising new treatment was available through a platform like the one described (after safety has been established), how likely would you be to participate?",
+          "options": [
+            {"id": "very-likely", "label": "Very Likely"},
+            {"id": "somewhat-likely", "label": "Somewhat Likely"},
+            {"id": "unsure", "label": "Unsure"},
+            {"id": "somewhat-unlikely", "label": "Somewhat Unlikely"},
+            {"id": "very-unlikely", "label": "Very Unlikely"}
+          ],
+          "orderIndex": 5
+        }
+      ]
+    },
+    {
+      "id": "demographics",
+      "title": "About You (Optional)",
+      "description": "This final section is optional, but your answers will help us better understand how different groups of people view these issues.",
+      "orderIndex": 6,
+      "isRequired": false,
+      "questions": [
+        {
+          "id": "country",
+          "type": "text",
+          "text": "What is your country of residence?",
+          "placeholder": "e.g., United States, Canada, United Kingdom",
+          "orderIndex": 1
+        },
+        {
+          "id": "zip-code",
+          "type": "text",
+          "text": "What is your Postal / Zip Code?",
+          "placeholder": "e.g., 12345",
+          "orderIndex": 2
+        },
+        {
+          "id": "age-range",
+          "type": "multiple_choice",
+          "text": "What is your age range?",
+          "options": [
+            {"id": "18-29", "label": "18-29"},
+            {"id": "30-44", "label": "30-44"},
+            {"id": "45-64", "label": "45-64"},
+            {"id": "65+", "label": "65+"}
+          ],
+          "orderIndex": 3
+        },
+        {
+          "id": "political-outlook",
+          "type": "multiple_choice",
+          "text": "How would you describe your political outlook?",
+          "options": [
+            {"id": "liberal", "label": "Liberal / Left-leaning"},
+            {"id": "centrist", "label": "Centrist"},
+            {"id": "conservative", "label": "Conservative / Right-leaning"},
+            {"id": "libertarian", "label": "Libertarian"},
+            {"id": "other", "label": "Other"},
+            {"id": "prefer-not-say", "label": "Prefer not to say"}
+          ],
+          "orderIndex": 4
+        },
+        {
+          "id": "education",
+          "type": "multiple_choice",
+          "text": "What is the highest level of education you have completed?",
+          "options": [
+            {"id": "high-school", "label": "High school or less"},
+            {"id": "some-college", "label": "Some college or Associate's degree"},
+            {"id": "bachelors", "label": "Bachelor's degree"},
+            {"id": "graduate", "label": "Graduate or professional degree"}
+          ],
+          "orderIndex": 5
+        },
+        {
+          "id": "income",
+          "type": "multiple_choice",
+          "text": "What is your approximate annual household income (in your local currency)?",
+          "options": [
+            {"id": "under-50k", "label": "Less than 50,000"},
+            {"id": "50k-100k", "label": "50,000 - 99,999"},
+            {"id": "100k-200k", "label": "100,000 - 199,999"},
+            {"id": "200k+", "label": "200,000 or more"},
+            {"id": "prefer-not-say", "label": "Prefer not to say"}
+          ],
+          "orderIndex": 6
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "tags": ["survey", "public-opinion", "legislative-advocacy", "dfda", "1-percent-treaty"],
+    "targetAudience": "General public interested in medical research reform",
+    "estimatedCompletionRate": 0.85,
+    "dataRetention": "Indefinite for research purposes",
+    "privacyPolicy": "https://dfda.earth/privacy",
+    "contactEmail": "survey@dfda.earth"
+  }
+} 
