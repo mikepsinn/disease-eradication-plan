@@ -10,11 +10,11 @@ dateCreated: 2024-07-31T00:00:00.000Z
 
 # Application: Supreme Allied Commander of the War on Disease
 
-**Men and women wanted for a hazardous journey. Minimal funding, bitter opposition, long months of intense effort, constant danger. Safe return doubtful. Honour and recognition in case of success.**
+**Men wanted for hazardous journey. Low wages, bitter cold, long hours of complete darkness. Safe return doubtful. Honour and recognition in event of success..**
 
-We are looking for the founding **Supreme Allied Commander, War on Disease**. This is not a job posting. It is a call to arms.
+We are looking for the founding **Supreme Allied Commander, War on Disease**. 
 
-The mission, should you choose to accept it, is to personally architect and build an army of AI agents to achieve a singular, near-impossible objective: mobilize 3.5% of the global population and create a self-sustaining financial engine to fund a perpetual war on human suffering.
+The mission is to architect and build an army of AI agents to achieve a singular, near-impossible objective: mobilize 3.5% of the global population and create a self-sustaining financial engine to fund a perpetual war on human suffering.
 
 This is a hands-on command role. Only those with world-class engineering ability, a tolerance for extreme ambiguity, and unwavering resilience should apply.
 
