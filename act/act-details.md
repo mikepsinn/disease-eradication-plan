@@ -1,13 +1,11 @@
 ---
-description: >-
-  Comprehensive details, legislative text, conceptual background, summary, and cost-benefit analysis for the Right‑to‑Trial and FDA Upgrade Act of 2025.
-emoji: "📚"
-title: Right‑to‑Trial and FDA Upgrade Act of 2025 - Comprehensive Details
-tags: 'healthcare-reform, clinical-trials, drug-development, fda-upgrade, right-to-trial, patient-rights, open-data, policy, regulatory, legislative-text, cost-benefit-analysis, summary, fda-v2, fdai'
+title: Right‑to‑Trial and FDA Upgrade Act of 2025 - Details
+description: Details, legislative text,  background, and cost-benefit analysis
 published: true
+date: 2025-07-14T03:09:03.289Z
+tags: cost-benefit-analysis, clinical-trials, drug-development, policy, healthcare-reform, fdai, regulatory, patient-rights, fda-upgrade, right-to-trial, open-data, legislative-text, summary, fda-v2
 editor: markdown
-date: '2024-07-30T10:00:00.000Z' # Placeholder: Update with current date
-dateCreated: '2024-07-30T10:00:00.000Z' # Placeholder: Update with current date
+dateCreated: 2025-01-31T03:44:57.939Z
 ---
 
 # 📚 Right‑to‑Trial and FDA Upgrade Act of 2025 - Comprehensive Details
