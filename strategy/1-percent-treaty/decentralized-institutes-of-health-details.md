@@ -26,15 +26,15 @@ DIH operates through a network of Decentralized Autonomous Organizations (DAOs) 
 
 ### Expanded Organizational Structure
 
-The DIH is expanding into a comprehensive ecosystem that mirrors the NIH structure while offering decentralized governance, prestigious titles, and community-specific focus areas. This expansion serves as a strategic recruitment tool for the 1% Treaty referendum effort.
+The DIH is expanding into a comprehensive ecosystem that mirrors the NIH structure while offering decentralized governance, titles, and community-specific focus areas. This expansion serves as a strategic recruitment tool for the 1% Treaty referendum effort.
 
-For the complete organizational structure, including all sub-agencies, prestigious titles, and implementation roadmap, see [DIH Organizational Structure](dih-organizational-structure.md).
+For the complete organizational structure, including all sub-agencies, earned, criteria-based recognition, and implementation roadmap, see [DIH Organizational Structure](dih-organizational-structure.md).
 
 ### Core Functionalities
 
 DIH approach to healthcare research and development:
 
-- **Democratic Funding via Gitcoin Grants Stack**: This model dramatically shifts funding allocation towards projects with strong community backing.
+- **Programmatic Funding via Gitcoin Grants Stack**: Quadratic funding with sybil-resistant identity, on-chain rules, and automatic disbursement.
 - **FDAi Integration**: By automating clinical research processes, the FDAi significantly enhances personalized healthcare, making cutting-edge research and treatment options more accessible.
 
 ### Technology
@@ -49,7 +49,7 @@ DIH's technological infrastructure would incorporate:
 Key components and collaborations within DIH include:
 
 - **BioDAOs & LLMs**: These entities leverage AI and tokenized models for drug development and personalized care.
-- **Reputation Systems & DIDs**: Enhancing the research community's trust and collaboration through platforms like 0xHolonym.
+- **Reputation Systems & DIDs**: Enhancing trust via verifiable credentials and attestations; machine-checked COI disclosures.
 
 ### Strategy
 
@@ -88,19 +88,18 @@ Decentralized Institutes of Health (DIH) Platform
 
      2.4 Community Governance
 
-   - Funders, stakeholders, and experts participate in platform governance through a DAO
-   - Governance decisions include funding priorities, platform upgrades, and dispute resolution
-   - Voting power is proportional to contributions, reputation scores, and expertise
+   - Credentialed, timeboxed signaling; on-chain executors apply rules automatically
+   - Emergency DAO fallback for narrowly scoped overrides with public justification and automatic sunset
+   - Influence derives from verifiable credentials, past performance, and stake where applicable
 
      2.5 Reputation System
 
-   - Researchers, funders, and reviewers have reputation scores based on their platform activity and external validation
-   - Reputation scores influence voting power, project visibility, and funding eligibility
+   - Researchers, funders, and reviewers present verifiable credentials and attestations; fraud triggers slashing/blacklisting
+   - Credentials influence visibility and eligibility; human discretion minimized
 
      2.6 Project Management
 
-   - Funded projects are managed through a decentralized project management system with milestone tracking and reporting
-   - Funds are released in tranches based on milestone completion, regulatory compliance, and community approval
+   - Projects post machine-readable milestones; evidence oracles attest completion; contracts auto-release/claw back funds
 
      2.7 Intellectual Property Management
 
@@ -109,8 +108,8 @@ Decentralized Institutes of Health (DIH) Platform
 
      2.8 Scientific Review and Validation
 
-   - A decentralized peer review system ensures the scientific merit and validity of proposed projects
-   - Expert committees oversee specific research areas and provide guidance on funding priorities
+   - A decentralized peer review system uses credential-gated, blinded reviewers selected by algorithm; no standing committees
+   - Funding priorities are proposed by AI triage agents with transparent criteria and citations
    - Collaboration with established scientific institutions and journals helps validate and disseminate research findings
 
      2.9 Funding Diversification
@@ -135,9 +134,9 @@ Decentralized Institutes of Health (DIH) Platform
 
      2.13 Monitoring and Evaluation
 
-   - A comprehensive monitoring and evaluation framework assesses the impact and effectiveness of funded projects
-   - Key performance indicators (KPIs) are defined and tracked to measure progress towards the platform's goals
-   - Regular reporting and auditing processes ensure transparency and accountability
+   - A comprehensive monitoring framework computes KPIs from on-chain events and data oracles
+   - KPIs are defined and tracked via public dashboards and immutable logs
+   - Audits are bounty-funded and reproducible; no manual reporting requirements
 
 ## How the National Institutes of Health Works
 

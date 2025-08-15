@@ -21,85 +21,66 @@ Below is an **absurdly comprehensive, highly-detailed, hierarchical to-do list**
 
 ## **PHASE 0: FOUNDATIONAL PLANNING (0–6 months)**
 
-1. **Establish Steering Committee**  
-   1.1. **Form Core Leadership Team**  
-       - **Tasks**: Identify 5–10 individuals representing legal, medical, regulatory, tech, and patient advocacy backgrounds.  
-       - **Time**: 1–2 months  
-       - **Cost**: Minimal (travel, administrative) ≈ \$50k–100k  
-       - **Suggested Orgs/People**:  
-         - Former FDA officials (e.g., Scott Gottlieb, if available in a consulting capacity)  
-         - Patient advocacy leaders (e.g., representatives from the Global Genes, American Cancer Society)  
-         - Tech entrepreneurs or philanthropic leads (e.g., from Gates Foundation)
+1. **Ship Minimal Governance + Automation**  
+   1.1. **Stand up Contracts and Oracles**  
+       - **Tasks**: Deploy minimal treasury, QF, bounties, subsidies; evidence/identity/safety oracle MVPs.  
+       - **Time**: 4–8 weeks  
+       - **Cost**: $50k–150k (audit + infra)  
+       - **Personnel**: 3–5 smart contract + 1–2 data engineers
 
-   1.2. **Define Mission & Scope**  
-       - **Tasks**: Draft official mission statement, success metrics, timelines, and budgets.  
-       - **Time**: 2–4 weeks  
-       - **Cost**: \$10k–30k (mostly for workshops, drafting)  
-       - **Personnel**: Steering committee + administrative support
+   1.2. **Autogenerate Mission Metrics**  
+       - **Tasks**: Encode KPIs; compute OKRs from events/data; publish public dashboards.  
+       - **Time**: 2–3 weeks  
+       - **Cost**: $5k–10k  
+       - **Personnel**: 1 data eng, 1 product
 
 2. **Secure Initial Funding Commitments**  
    2.1. **Pitch to Philanthropists / Foundations**  
        - **Tasks**: Prepare pitch decks, ROI arguments, and philanthropic impact statements.  
        - **Time**: 2–3 months  
-       - **Cost**: \$20k–50k (travel, materials)  
+       - **Cost**: $20k–50k (travel, materials)  
        - **Potential Funders**:  
          - Gates Foundation, Chan Zuckerberg Initiative, Open Philanthropy, Wellcome Trust
 
    2.2. **Engage High-Net-Worth Individuals**  
-       - **Tasks**: Host private dinners or summits with wealthy donors.  
-       - **Time**: 1–2 months (overlapping with 2.1)  
-       - **Cost**: \$10k–30k for event hosting and follow-ups  
+       - **Tasks**: Host focused briefings with performance dashboards and live contract demos.  
+       - **Time**: 1–2 months (overlap)  
+       - **Cost**: $10k–30k  
        - **Potential Individuals**:  
-         - Elon Musk (for technology synergy), Bill Gates, Mark Zuckerberg, etc.
+         - Elon Musk, Bill Gates, Mark Zuckerberg, etc.
 
-3. **Initial Legal & Regulatory Research**  
-   3.1. **Map Current Regulations**  
-       - **Tasks**: Catalog major U.S. (FDA, state laws), EU (EMA, GDPR), and other jurisdictions. Identify import/export barriers.  
-       - **Time**: 3–4 months  
-       - **Cost**: \$100k–200k for a specialized research firm or law firm  
-       - **Firms**: Hogan Lovells, Covington & Burling, Sidley Austin (healthcare practice)
-
-   3.2. **Assess Feasibility of Interstate Compact**  
-       - **Tasks**: Analyze legal steps needed for states to form "Cure Zones."  
-       - **Time**: 2–3 months  
-       - **Cost**: \$50k–100k (legal consultation, policy analysis)  
-       - **Personnel**: Policy experts at National Conference of State Legislatures (NCSL)
-
-4. **Tech & AI Architecture Blueprint**  
-   4.1. **Evaluate Existing Decentralized Trial Platforms**  
-       - **Tasks**: Deep-dive into solutions from Science 37, Medable, Curebase, THREAD, etc.  
+3. **Tech & AI Architecture Blueprint**  
+   3.1. **Evaluate Existing Decentralized Trial Components**  
+       - **Tasks**: Compare open-source modules and DCT APIs; prefer bounty integration over vendor lock-in.  
        - **Time**: 1–2 months  
-       - **Cost**: \$20k–40k (technical consultancy)  
-   4.2. **Draft AI Coordination Agent Specs**  
-       - **Tasks**: Outline system requirements for multi-stakeholder negotiation (large language model fine-tuning, global datasets, privacy compliance).  
+       - **Cost**: $20k–40k  
+   3.2. **Draft AI Agent Specs**  
+       - **Tasks**: Design trial design/monitoring/fraud/triage agents with audit logs and safety hooks.  
        - **Time**: 2–3 months  
-       - **Cost**: \$50k–100k (AI consultants, data architects)  
-       - **Possible Partners**:  
-         - OpenAI (via specialized partnership), Anthropic, Microsoft AI research labs  
+       - **Cost**: $50k–100k
 
 ---
 
 ## **PHASE 1: RAPID PILOT IMPLEMENTATIONS (6–18 months)**
 
-1. **Launch Philanthropist-Funded Platform Pilot**  
-   1.1. **Select Decentralized Trial Company as Lead Partner**  
-       - **Tasks**: RFP process among existing platforms to choose best partner(s).  
-       - **Time**: 2–3 months  
-       - **Cost**: \$25k–50k for RFP management  
-       - **Potential Partners**: Science 37, Medable, Curebase
+1. **Launch Bounty-Driven Pilot**  
+   1.1. **Open Bounties Instead of RFPs**  
+       - **Tasks**: Publish specs and acceptance tests; pay on merge/deploy.  
+       - **Time**: 2–4 weeks  
+       - **Cost**: $100k–300k for milestone bounties  
+       - **Potential Contributors**: Existing DCT platforms and open-source teams
 
    1.2. **Build/Customize Platform for Pilot**  
-       - **Tasks**: Integrate advanced eConsent, real-time data capture, multi-language support.  
+       - **Tasks**: Integrate eConsent, real-time data capture, and safety pause; instrument evidence oracle outputs.  
        - **Time**: 4–6 months  
-       - **Cost**: \$10M–20M  
-       - **Personnel**: 50–80 software engineers, data scientists, UI/UX specialists  
-       - **Organizations**: Contract with existing trial company's dev team + additional staff
+       - **Cost**: $2M–5M  
+       - **Personnel**: 20–40 engineers and data scientists
 
    1.3. **Run Real-World Pilot Trials**  
-       - **Tasks**: Recruit patients (focus on one or two disease areas: oncology or rare diseases), gather outcomes data, ensure compliance.  
-       - **Time**: 6–12 months (overlaps with platform customization)  
-       - **Cost**: \$5M–10M for patient recruitment, IRB oversight, data management  
-       - **Potential Sites**: Hospitals in states with progressive telehealth laws (e.g., California, Massachusetts)
+       - **Tasks**: Recruit patients, gather outcomes, ensure safety via automated incident scoring.  
+       - **Time**: 6–12 months (overlaps)  
+       - **Cost**: $2M–5M  
+       - **Sites**: Remote-first; partner clinics as needed
 
 2. **AI Coordination Agent MVP**  
    2.1. **Assemble AI Dev Team**  
