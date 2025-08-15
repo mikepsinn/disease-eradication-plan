@@ -125,7 +125,7 @@ A well-designed referral-rewards system can:
 
 ### How It Works
 
-- **Purchase $VICTORY tokens** to fund verified votes and actions in support of the Act.
+- **Purchase \$VICTORY tokens** to fund verified votes and actions in support of the Act. Tokenomics and compliance considerations are detailed in [\$VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md).
 - **Each token** directly funds a specific number of verified votes (target: <$1 per vote, with potential for $0.20–$0.30 in viral scenarios—see the "Benchmarks" section above).
 - **All transactions** are transparently tracked on-chain, with a public dashboard showing progress toward the 3.5% tipping point ([BBC Future](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)).
 

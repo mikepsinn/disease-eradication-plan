@@ -37,7 +37,7 @@ Beyond patient subsidies, the DIH Treasury is responsible for the growth and mai
 
 ## Funding Model: $VICTORY Bonds for the War on Disease
 
-To raise its initial and ongoing capital, the DIH will issue **`$VICTORY` Bonds**, an instrument modeled directly on the War Bonds of World War II.
+To raise its initial and ongoing capital, the DIH will issue **`$VICTORY` Bonds**, an instrument modeled directly on the War Bonds of World War II. See tokenomics details in [\$VICTORY Instruments](./victory-bonds-tokenomics.md).
 
 Just as citizens once invested in their nation's victory in wartime, they can now invest directly in the victory over humanity's oldest enemies: cancer, Alzheimer's, heart disease, and thousands of other afflictions. Selling these bonds allows the DIH to raise a substantial treasury upfront, enabling it to immediately begin funding subsidies and development without waiting for treaty contributions to accumulate.
 
@@ -53,4 +53,4 @@ This creates a virtuous cycle:
 
 ## Governance: A Decentralized Autonomous Organization (DAO)
 
-While the subsidy allocation is algorithmic, the governance of the DIH Treasury's other functions—such as prioritizing infrastructure projects, setting prize terms, and approving bounty payouts—is managed by a Decentralized Autonomous Organization (DAO). Stakeholders in the dFDA ecosystem, potentially including `$VICTORY` Bond holders, can participate in governance decisions, ensuring the Treasury remains aligned with the community's interests and priorities.
+While the subsidy allocation is algorithmic, the governance of the DIH Treasury's other functions—such as prioritizing infrastructure projects, setting prize terms, and approving bounty payouts—is managed by a Decentralized Autonomous Organization (DAO). Stakeholders in the dFDA ecosystem, potentially including `\$VICTORY` Bond holders, can participate in governance decisions, ensuring the Treasury remains aligned with the community's interests and priorities. For custody and controls, see [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md).
