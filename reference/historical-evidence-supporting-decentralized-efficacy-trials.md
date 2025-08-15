@@ -1,22 +1,14 @@
 ---
-description: >-
-  Large scale efficacy-trials based on real-world evidence have historically led
-  to better health outcomes than current pharmaceutical industry-driven
-  randomized controlled trials.
-emoji: "\U0001F4D8"
 title: Historical Evidence for Decentralized Efficacy Trials
-tags: >-
-  historical-evidence, decentralized-trials, real-world-evidence,
-  health-outcomes, clinical-trials
+description: Large scale efficacy-trials based on real-world evidence have historically led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
 published: true
+date: 2025-08-01T21:50:13.908Z
+tags: clinical-trials, real-world-evidence, health-outcomes, decentralized-trials, historical-evidence
 editor: markdown
-date: '2025-02-12T20:28:54.306Z'
-dateCreated: '2025-02-12T20:28:54.306Z'
+dateCreated: 2025-02-18T04:39:38.486Z
 ---
 
-# 📘 Historical Evidence Supporting Decentralized Efficacy Trials
-
-There is compelling historical evidence suggesting that large scale efficacy-trials based on real-world evidence have ultimately led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
+Large scale efficacy-trials based on real-world evidence have ultimately led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
 
 For over 99% of recorded human history, the average human life expectancy has been around 30 years.
 
