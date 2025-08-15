@@ -24,6 +24,12 @@ DIH operates through a network of Decentralized Autonomous Organizations (DAOs) 
 - **Patient Advocacy DAOs**: These entities align research and healthcare priorities with patient needs and perspectives.
 - **FDAi**: An AI agent designed for everyone that automates, aggregates, and analyzes data, publishes results, offers real-time decision support, and facilitates clinical trial participation across therapeutic areas.
 
+### Expanded Organizational Structure
+
+The DIH is expanding into a comprehensive ecosystem that mirrors the NIH structure while offering decentralized governance, prestigious titles, and community-specific focus areas. This expansion serves as a strategic recruitment tool for the 1% Treaty referendum effort.
+
+For the complete organizational structure, including all sub-agencies, prestigious titles, and implementation roadmap, see [DIH Organizational Structure](dih-organizational-structure.md).
+
 ### Core Functionalities
 
 DIH approach to healthcare research and development:

@@ -20,6 +20,7 @@ dateCreated: '2025-02-12T16:56:18.388Z'
 3. Draft Disease Eradication Act
    1. including global decentralized FDA open-source interoperable automated clinical trial platform with treatment outcome rankings
    2. Decentralized Institutes of Health to manage rewards described
+   3. Expanded DIH organizational structure with sub-agencies mirroring NIH institutes for community alignment and prestigious title incentives
 4. Issue $WAR bonds to raise money
    1. buyers receive 50% of healthcare savings resulting from adoption)
    2. Include economic savings model with confidence intervals estimating ROI
