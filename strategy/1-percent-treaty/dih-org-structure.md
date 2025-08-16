@@ -83,7 +83,7 @@ Appointments are transparent, criteria-based, and revocable; all appointees sign
 - Tokenless-first governance (reputation/credentials), merge-to-earn bounties, public proposals with on-chain execution
 - Interop standards: HL7 FHIR/OMOP, DID/VC, EIP-712, IPFS/Arweave
 
-See `architecture/dih-onchain-architecture.md` for technical details.
+See [DIH On-Chain and AI Architecture](../../architecture/dih-onchain-architecture.md) for technical details and [Incentives Layer](../incentives-layer.md) for social/economic incentives.
 
 
 
