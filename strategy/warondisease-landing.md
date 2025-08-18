@@ -16,7 +16,7 @@ dateCreated: '2025-08-15T00:00:00.000Z'
 
 ## The Simple Truth
 
-Every year, humanity spends **[\$2.72 trillion](mdc:https:/www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** preparing for war and **\$120 billion** curing disease.
+Every year, humanity spends **[\$2.72 trillion](https:/www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** preparing for war and **\$120 billion** curing disease.
 
 We have chosen to fund death over life by a ratio of 20 to 1.
 
@@ -28,7 +28,7 @@ This is not strategy. This is insanity.
 
 **Step 1:** Pay people \$0.20 for each person who votes on a global referendum via their link.
 
-**Step 2:** When we hit [3.5% of humanity](mdc:https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), we have proof the world wants this.
+**Step 2:** When we hit [3.5% of humanity](https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), we have proof the world wants this.
 
 **Step 3:** Build a legal political engine: independent‑expenditure committees (Super PACs and international equivalents) that pledge massive support for candidates who vote with their district’s referendum result—and fund challengers against those who defy it (no coordination).
 
@@ -53,13 +53,13 @@ This is not strategy. This is insanity.
 ## Why 1% Less Military = More Security
 
 **Modern weapons make everyone less safe:**
-- Nuclear weapons: [1% fewer = ~134 fewer nukes worldwide](mdc:https:/fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
+- Nuclear weapons: [1% fewer = ~134 fewer nukes worldwide](https:/fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
 - AI weapons systems: Reduce global AI arms race escalation  
 - Cyber warfare tools: Less proliferation of attack capabilities
 
 **Real security threats are health-based:**
 - Pandemics kill more people than wars
-- Antibiotic resistance could kill [10M/year by 2050](mdc:https:/amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
+- Antibiotic resistance could kill [10M/year by 2050](https:/amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
 - Mental health crises destabilize societies more than foreign armies
 
 **1% reallocation = stronger nations:**
@@ -82,8 +82,8 @@ Good intentions cannot compete with gold.
 We will not defeat money with morals. We will defeat bad money with better money.
 
 **Their system rewards death:**
-- Defense contractors: [\$10 billion contracts](mdc:https:/www.statista.com/statistics/262742/countries-with-the-highest-military-spending/)
-- Politicians: [\$100+ million in lobbying annually](mdc:https:/watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
+- Defense contractors: [\$10 billion contracts](https:/www.statista.com/statistics/262742/countries-with-the-highest-military-spending/)
+- Politicians: [\$100+ million in lobbying annually](https:/watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
 - Result: More weapons, less security
 
 **Our system rewards life:**
@@ -107,7 +107,7 @@ We choose to make saving lives more profitable than taking them.
 
 **Our counter-offer to politicians (legal and effective):**
 - Independent expenditures for campaigns: Massive ad buys and ground game support for candidates who vote with their district’s verified referendum tally; equivalent spending against those who defy it (no coordination).
-- Voter coalition: The [3.5%](mdc:https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate provides electoral cover.
+- Voter coalition: The [3.5%](https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate provides electoral cover.
 - No relative military disadvantage: Everyone moves 1% together.
 
 **The math:** We outbid defense contractors on expected electoral value while delivering massive health benefits to constituents.
@@ -123,7 +123,7 @@ We choose to make saving lives more profitable than taking them.
 
 ## Legal Compliance (jurisdiction‑specific)
 
-- **United States:** Use independent‑expenditure committees (Super PACs). No coordination with campaigns; comply with FEC reporting and disclaimer rules; respect the foreign‑national ban (funds and decision‑making must be from U.S. persons for U.S. elections) [FEC guidance](mdc:https:/www.fec.gov/updates/foreign-nationals/).
+- **United States:** Use independent‑expenditure committees (Super PACs). No coordination with campaigns; comply with FEC reporting and disclaimer rules; respect the foreign‑national ban (funds and decision‑making must be from U.S. persons for U.S. elections) [FEC guidance](https:/www.fec.gov/updates/foreign-nationals/).
 - **EU/UK/Canada/Japan and others:** Use lawful local equivalents (third‑party campaigners, non‑party campaigners, PACs). Separate, jurisdiction‑specific entities; local counsel review; segregated banking and governance.
 - **No quid‑pro‑quo contracts:** No smart‑contract triggers tied to legislative votes. Rewards are independent expenditures based on public, verified district will.
 
@@ -176,11 +176,11 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 
 ## The Math
 
-**[3.5% of humanity](mdc:https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) = ~280 million people**
+**[3.5% of humanity](https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) = ~280 million people**
 
 **\$0.20 × 280 million = \$56 million** to create overwhelming public mandate
 
-**\$56 million vs [\$27 billion/year](mdc:https:/www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** = 480X return on initial referendum investment
+**\$56 million vs [\$27 billion/year](https:/www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** = 480X return on initial referendum investment
 
 **Result:** Every health institution gets 2-5X more funding. Forever.
 
@@ -200,23 +200,23 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 
 * **Global military spending (\$2.72T, 2024)**
   > "In 2024, world military expenditure reached \$2.718 trillion, marking a 9.4% increase from the previous year."
-  > — SIPRI, 2025, [Trends in World Military Expenditure 2024](mdc:https:/www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)
+  > — SIPRI, 2025, [Trends in World Military Expenditure 2024](https:/www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)
 
 * **Previous global military spending (\$2.44T, 2023)**
   > "World military expenditure rose by 6.8 per cent in real terms in 2023, to reach \$2443 billion."
-  > — SIPRI, 2024, [press release](mdc:https:/www.sipri.org/media/press-release/2024/world-military-expenditure-reaches-record-high-2023)
+  > — SIPRI, 2024, [press release](https:/www.sipri.org/media/press-release/2024/world-military-expenditure-reaches-record-high-2023)
 
 * **3.5% participation tipping point**
   > "The research found that nonviolent campaigns were twice as likely to succeed as violent ones, and once 3.5% of the population were involved, they were always successful."
-  > — BBC Future, 2019, ['The 3.5% rule'](mdc:https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)
+  > — BBC Future, 2019, ['The 3.5% rule'](https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)
 
 * **3.5% rule academic source**
   > "Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed."
-  > — Wikipedia, [3.5% rule](mdc:https:/en.wikipedia.org/wiki/3.5%25_rule)
+  > — Wikipedia, [3.5% rule](https:/en.wikipedia.org/wiki/3.5%25_rule)
 
 * **Antimicrobial resistance deaths projection**
   > "By 2050, 10 million lives a year and a cumulative \$100 trillion of economic output are at risk due to the rise of drug-resistant infections if we do not find proactive solutions now to slow down the rise of drug resistance."
-  > — Review on Antimicrobial Resistance, 2016, [Final Report](mdc:https:/amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
+  > — Review on Antimicrobial Resistance, 2016, [Final Report](https:/amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
 
 * **Defense industry lobbying spending**
   > "During the first three quarters of 2022, the defense sector spent approximately \$101 million on lobbying activities."
