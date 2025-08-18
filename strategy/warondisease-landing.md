@@ -8,21 +8,19 @@ editor: markdown
 dateCreated: '2025-08-15T00:00:00.000Z'
 ---
 
-# War gets 20X more funding than curing disease.
+# A species that spends twenty times more on weapons than cures has lost its mind.
 
-# This is stupid.
-
-# Let's fix it by paying people to vote for the obvious solution.
+# The time has come to fix this madness.
 
 ---
 
-## The Problem
+## The Simple Truth
 
-Humanity spends **\$2.44 trillion** on military vs **\$120 billion** on medical research.
+Every year, humanity spends **\$2.44 trillion** preparing for war and **\$120 billion** curing disease.
 
-Military contractors get concentrated benefits. Health gets diffuse costs.
+We have chosen to fund death over life by a ratio of 20 to 1.
 
-Result: We fund destruction 20X more than cures.
+This is not strategy. This is insanity.
 
 ---
 
@@ -40,15 +38,15 @@ Result: We fund destruction 20X more than cures.
 
 ## Why This Works
 
-**You get paid:** \$0.20 per referendum voter you refer. Scale that up.
+**Human nature unchanged:** People respond to incentives. We make the right choice profitable.
 
-**Every health institution gets more money:** NIH, Harvard Medical, Pfizer, patient advocacy groups - everyone gets 2-5X their current funding.
+**Power follows money:** When healing pays better than killing, power shifts to healers.
 
-**Politicians get rewarded:** Vote for the treaty, get paid. Massive public support makes it safe.
+**Safety in numbers:** All nations move 1% together. No one gains advantage. No one loses ground.
 
-**Military balance preserved:** Everyone moves 1% together. No country falls behind.
+**Proof before action:** The referendum shows the world's will before any nation commits.
 
-**No new bureaucracy:** Fund existing institutions through transparent, democratic allocation.
+**Existing institutions win:** Universities, hospitals, research centers—all receive more funding than ever before.
 
 ---
 
@@ -71,27 +69,29 @@ Result: We fund destruction 20X more than cures.
 
 ---
 
-## A Bribe to Save the World
+## Why Good Intentions Have Failed
 
-Let's be honest. Altruism hasn't worked. For thousands of years, we've talked about peace while funding war. Why? Because the system bribes us to do it.
+For centuries, we have known war brings suffering. Yet we fund it anyway.
 
-- A defense contractor gets a **\$10 billion** contract (a bribe).
-- They spend **\$10 million** lobbying politicians to secure it (a bribe).
-- The world gets more weapons. We get less safe.
+Why? Because those who profit from war pay handsomely for the privilege. Defense contractors earn billions. Politicians receive generous donations. The cycle continues.
 
-We are not going to beat this system by asking nicely. We are going to beat it by creating a **bigger, better, and more profitable bribe.**
+Good intentions cannot compete with gold.
 
-**Our Bribe:**
+## Our Answer
 
-1. **For You:** We pay you to spread the word and vote.
-2. **For Politicians:** We give them massive public service grants for voting YES.
-3. **For Institutions:** We give them 2-5X more funding than they've ever seen.
+We will not defeat money with morals. We will defeat bad money with better money.
 
-Is it a bribe? Yes. It's a system designed to financially reward everyone for choosing health and life over militarism and death.
+**Their system rewards death:**
+- Defense contractors: \$10 billion contracts
+- Politicians: \$10 million in lobbying
+- Result: More weapons, less security
 
-The choice is not between a "clean" system and our "bribe." The choice is between their bribe that kills us and our bribe that saves us.
+**Our system rewards life:**
+- Citizens: Paid for each referendum vote they generate  
+- Politicians: Rewarded for voting to heal their people
+- Institutions: Double or triple their research funding
 
-**We choose our bribe.**
+We choose to make saving lives more profitable than taking them.
 
 ---
 
