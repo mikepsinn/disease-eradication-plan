@@ -30,7 +30,7 @@ This is not strategy. This is insanity.
 
 **Step 2:** When we hit [3.5% of humanity](mdc:https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), we have proof the world wants this.
 
-**Step 3:** Create a trustless treasury that pays retroactive rewards to politicians who vote for their country to join the 1% Treaty.
+**Step 3:** Build a legal political engine: independent‑expenditure committees (Super PACs and international equivalents) that pledge massive support for candidates who vote with their district’s referendum result—and fund challengers against those who defy it (no coordination).
 
 **Step 4:** The treasury funds EVERYONE in health - universities, pharma, nonprofits, government agencies - through democratically controlled funding pools.
 
@@ -88,7 +88,7 @@ We will not defeat money with morals. We will defeat bad money with better money
 
 **Our system rewards life:**
 - Citizens: Paid for each referendum vote they generate  
-- Politicians: Rewarded for voting to heal their people
+- Politicians: Backed with independent expenditures when they vote with their district’s referendum result
 - Institutions: Double or triple their research funding
 
 We choose to make saving lives more profitable than taking them.
@@ -102,15 +102,15 @@ We choose to make saving lives more profitable than taking them.
 - **Return: \$1,813 per \$1 spent on lobbying**
 
 **What we're asking politicians to redirect:**
-- 1% of \$2.72T = **\$27 billion annually** in military contracts
-- Defense contractors would spend ~**\$15 million in lobbying** to defend that revenue
+- 1% of $2.72T = **$27 billion annually** in military contracts
+- Defense contractors would spend ~**$15 million in lobbying** to defend that revenue
 
-**Our counter-offer to politicians:**
-- **\$50 million in public health infrastructure grants** to participating nations
-- **3.5% public mandate** makes it politically safe to support
-- **No relative military disadvantage** (everyone moves 1% together)
+**Our counter-offer to politicians (legal and effective):**
+- Independent expenditures for campaigns: Massive ad buys and ground game support for candidates who vote with their district’s verified referendum tally; equivalent spending against those who defy it (no coordination).
+- Voter coalition: The [3.5%](mdc:https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate provides electoral cover.
+- No relative military disadvantage: Everyone moves 1% together.
 
-**The math:** We outbid defense contractors 3:1 while delivering massive health benefits to constituents.
+**The math:** We outbid defense contractors on expected electoral value while delivering massive health benefits to constituents.
 
 ---
 
