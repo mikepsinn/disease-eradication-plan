@@ -42,7 +42,7 @@ This is not strategy. This is insanity.
 
 **Power follows money:** When healing pays better than killing, power shifts to healers.
 
-**Safety in numbers:** All nations move 1% together. No one gains advantage. No one loses ground.
+**Safety in numbers:** All nations move 1% together. No one gains advantage or loses ground. National security increases via 1% fewer nuclear weapons and a slower autonomous‑weapons arms race.
 
 **Proof before action:** The referendum shows the world's will before any nation commits.
 
@@ -88,7 +88,9 @@ We will not defeat money with morals. We will defeat bad money with better money
 
 **Our system rewards life:**
 - Citizens: Paid for each referendum vote they generate  
+- Organizations: Partner referral rewards for verified votes via your org’s link; tiered jackpots and leaderboards for coalitions
 - Politicians: Backed with independent expenditures when they vote with their district’s referendum result
+- Stronger national security: 1% fewer nukes and slower AI‑weapons escalation; deterrence preserved because everyone moves 1% together
 - Institutions: Double or triple their research funding
 
 We choose to make saving lives more profitable than taking them.
@@ -108,7 +110,7 @@ We choose to make saving lives more profitable than taking them.
 **Our counter-offer to politicians (legal and effective):**
 - Independent expenditures for campaigns: Massive ad buys and ground game support for candidates who vote with their district’s verified referendum tally; equivalent spending against those who defy it (no coordination).
 - Voter coalition: The [3.5%](https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate provides electoral cover.
-- No relative military disadvantage: Everyone moves 1% together.
+- National security increases: 1% fewer nuclear weapons and slower AI‑weapons escalation; deterrence preserved because everyone moves 1% together.
 
 **The math:** We outbid defense contractors on expected electoral value while delivering massive health benefits to constituents.
 
@@ -153,6 +155,7 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 ## Start Earning Now
 
 **[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn \$0.20 per person who votes via your link.
+**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org’s link; pooled jackpots for coalitions.
 
 **[Buy \$VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
 
