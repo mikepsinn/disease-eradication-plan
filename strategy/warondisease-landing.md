@@ -50,6 +50,27 @@ Result: We fund destruction 20X more than cures.
 
 **No new bureaucracy:** Fund existing institutions through transparent, democratic allocation.
 
+---
+
+## Why 1% Less Military = More Security
+
+**Modern weapons make everyone less safe:**
+- Nuclear weapons: 1% fewer = 240 fewer nukes worldwide
+- AI weapons systems: Reduce global AI arms race escalation  
+- Cyber warfare tools: Less proliferation of attack capabilities
+
+**Real security threats are health-based:**
+- Pandemics kill more people than wars
+- Antibiotic resistance could kill 10M/year by 2050
+- Mental health crises destabilize societies more than foreign armies
+
+**1% reallocation = stronger nations:**
+- Healthier populations are more productive
+- Medical breakthroughs boost economic competitiveness
+- Reduced healthcare costs free up MORE budget for defense if needed
+
+---
+
 ## How We Beat Concentrated Interests
 
 **The military-industrial complex wins because:**
