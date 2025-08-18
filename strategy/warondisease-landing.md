@@ -95,6 +95,25 @@ We choose to make saving lives more profitable than taking them.
 
 ---
 
+## The Political Economics
+
+**Defense contractors' lobbying ROI:**
+- [\$1.1 billion lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022) (2001-2021) → [\$2.02 trillion contracts](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
+- **Return: \$1,813 per \$1 spent on lobbying**
+
+**What we're asking politicians to redirect:**
+- 1% of \$2.72T = **\$27 billion annually** in military contracts
+- Defense contractors would spend ~**\$15 million in lobbying** to defend that revenue
+
+**Our counter-offer to politicians:**
+- **\$50 million in public health infrastructure grants** to participating nations
+- **3.5% public mandate** makes it politically safe to support
+- **No relative military disadvantage** (everyone moves 1% together)
+
+**The math:** We outbid defense contractors 3:1 while delivering massive health benefits to constituents.
+
+---
+
 ## The Treasury Model
 
 **[\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
