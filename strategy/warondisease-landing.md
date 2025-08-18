@@ -83,7 +83,7 @@ We will not defeat money with morals. We will defeat bad money with better money
 
 **Their system rewards death:**
 - Defense contractors: [\$10 billion contracts](mdc:https:/www.statista.com/statistics/262742/countries-with-the-highest-military-spending/)
-- Politicians: [\$100+ million in lobbying annually](https:/watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
+- Politicians: [\$100+ million in lobbying annually](mdc:https:/watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
 - Result: More weapons, less security
 
 **Our system rewards life:**
@@ -102,8 +102,8 @@ We choose to make saving lives more profitable than taking them.
 - **Return: \$1,813 per \$1 spent on lobbying**
 
 **What we're asking politicians to redirect:**
-- 1% of $2.72T = **$27 billion annually** in military contracts
-- Defense contractors would spend ~**$15 million in lobbying** to defend that revenue
+- 1% of \$2.72T = **\$27 billion annually** in military contracts
+- Defense contractors would spend ~**\$15 million in lobbying** to defend that revenue
 
 **Our counter-offer to politicians (legal and effective):**
 - Independent expenditures for campaigns: Massive ad buys and ground game support for candidates who vote with their district’s verified referendum tally; equivalent spending against those who defy it (no coordination).
@@ -111,6 +111,21 @@ We choose to make saving lives more profitable than taking them.
 - No relative military disadvantage: Everyone moves 1% together.
 
 **The math:** We outbid defense contractors on expected electoral value while delivering massive health benefits to constituents.
+
+---
+
+## Referendums vs Independent Expenditures
+
+- **Referendums (where binding and timely):** Highest legitimacy; durable mandate; use when national or state mechanisms exist and timelines are practical.
+- **Advisory signals (where no referendum):** Run scientifically credible polling or representative citizen assemblies; publish verified tallies per district.
+- **Independent expenditures:** Fastest lever to translate district will into votes; pledge support for lawmakers who vote with their district’s verified result (and oppose those who defy it), with strict no‑coordination.
+- **Hybrid playbook:** Use the global referendum for umbrella mandate; use country/district signals to direct lawful independent expenditures.
+
+## Legal Compliance (jurisdiction‑specific)
+
+- **United States:** Use independent‑expenditure committees (Super PACs). No coordination with campaigns; comply with FEC reporting and disclaimer rules; respect the foreign‑national ban (funds and decision‑making must be from U.S. persons for U.S. elections) [FEC guidance](mdc:https:/www.fec.gov/updates/foreign-nationals/).
+- **EU/UK/Canada/Japan and others:** Use lawful local equivalents (third‑party campaigners, non‑party campaigners, PACs). Separate, jurisdiction‑specific entities; local counsel review; segregated banking and governance.
+- **No quid‑pro‑quo contracts:** No smart‑contract triggers tied to legislative votes. Rewards are independent expenditures based on public, verified district will.
 
 ---
 
