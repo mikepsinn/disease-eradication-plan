@@ -88,7 +88,7 @@ We will not defeat money with morals. We will defeat bad money with better money
 
 **Our system rewards life:**
 - Citizens: Paid for each referendum vote they generate  
-- Organizations: Partner referral rewards for verified votes via your org’s link; tiered jackpots and leaderboards for coalitions
+- Organizations: Partner referral rewards for verified votes via your org’s link; tiered bonus pools and leaderboards for coalitions
 - Politicians: Backed with independent expenditures when they vote with their district’s referendum result
 - Stronger national security: 1% fewer nukes and slower AI‑weapons escalation; deterrence preserved because everyone moves 1% together
 - Institutions: Double or triple their research funding
@@ -154,10 +154,10 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 
 ## Start Earning Now
 
-**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn \$0.20 per person who votes via your link.
-**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org’s link; pooled jackpots for coalitions.
+**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn $0.20 per person who votes via your link.
+**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org’s link; pooled bonus funds for coalitions.
 
-**[Buy \$VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
+**[Buy $VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
 
 **[Calculate your institution's allocation](./1-percent-treaty/institutional-funding-calculator.md)** → See how much your university/company/nonprofit would receive.
 
