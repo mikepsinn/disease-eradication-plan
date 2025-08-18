@@ -71,17 +71,27 @@ Result: We fund destruction 20X more than cures.
 
 ---
 
-## How We Beat Concentrated Interests
+## A Bribe to Save the World
 
-**The military-industrial complex wins because:**
-- Defense contractors get massive, concentrated profits
-- Health benefits are diffuse across everyone
-- Politicians get lobbied by the concentrated side
+Let's be honest. Altruism hasn't worked. For thousands of years, we've talked about peace while funding war. Why? Because the system bribes us to do it.
 
-**We flip this by:**
-- Making health funding MORE profitable than weapons
-- Paying everyone who helps (referendum voters, politicians, institutions)
-- Creating a bigger coalition than military contractors
+- A defense contractor gets a **\$10 billion** contract (a bribe).
+- They spend **\$10 million** lobbying politicians to secure it (a bribe).
+- The world gets more weapons. We get less safe.
+
+We are not going to beat this system by asking nicely. We are going to beat it by creating a **bigger, better, and more profitable bribe.**
+
+**Our Bribe:**
+
+1. **For You:** We pay you to spread the word and vote.
+2. **For Politicians:** We give them massive public service grants for voting YES.
+3. **For Institutions:** We give them 2-5X more funding than they've ever seen.
+
+Is it a bribe? Yes. It's a system designed to financially reward everyone for choosing health and life over militarism and death.
+
+The choice is not between a "clean" system and our "bribe." The choice is between their bribe that kills us and our bribe that saves us.
+
+**We choose our bribe.**
 
 ---
 
