@@ -8,50 +8,74 @@ editor: markdown
 dateCreated: '2025-08-15T00:00:00.000Z'
 ---
 
-# War is stupid.
+# War gets 20X more funding than curing disease.
 
-# Diseases suck.
+# This is stupid.
 
-# Humanity spends 20X more on war and militarism than trying to cure all diseases combined.
-
-# Therefore it is logical for all nations of the world to enter a treaty to redirect 1% of military spending to radically accelerate medical progress.
+# Let's fix it by paying people to vote for the obvious solution.
 
 ---
 
-## The Numbers
+## The Problem
 
-Global military spending in 2023: **\$2.44 trillion** [source](mdc:https:/www.sipri.org/media/press-release/2024/world-military-expenditure-reaches-record-high-2023)
+Humanity spends **\$2.44 trillion** on military vs **\$120 billion** on medical research.
 
-1% redirected to health: **\$24 billion per year**
+Military contractors get concentrated benefits. Health gets diffuse costs.
+
+Result: We fund destruction 20X more than cures.
 
 ---
 
 ## The Solution
 
-Open software. Clear rules. Pay people to join studies. Publish results fast.
+**Step 1:** Pay people \$0.20 for each person who votes on a global referendum via their link.
 
-Everything runs on public ledgers with AI helpers—not a new bureaucracy.
+**Step 2:** When we hit 3.5% of humanity, we have proof the world wants this.
 
-## How It Fits Together
+**Step 3:** Create a trustless treasury that pays retroactive rewards to politicians who vote for their country to join the 1% Treaty.
 
-- [The 1% Treaty](./1-percent-treaty/1-percent-treaty.md)
-  - Countries move 1% together, so the military balance stays the same. Money shifts from weapons to medical research.
-- [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md)
-  - A shared treasury that pays patients, funds prizes, and builds common tools. Rules are automated by default; people step in only for emergencies with strict time limits. See [Treasury Architecture](../features/treasury/dih-treasury-architecture.md).
-- dFDA — the autonomous trials platform
-  - AI and smart contracts run decentralized trials and collect real‑world evidence. See [On-Chain and AI Architecture](../architecture/dih-onchain-architecture.md) and [Roadmap](./roadmap.md).
-- [Org structure](./1-percent-treaty/dih-org-structure.md)
-  - Topic-focused institutes (Aging, Cancer, etc.) and shared services (Data, Safety, AI) run like APIs/contracts and earn credibility by performance.
-- [Incentives Layer](./incentives-layer.md)
-  - Referrals, credentials, impact certificates (Hypercerts), bounties/prizes, ambassador pools, leaderboards.
-- [\$VICTORY Bonds/Tokens](./1-percent-treaty/victory-bonds-tokenomics.md)
-  - Kickstart funding now; repay using treaty inflows and verified savings.
+**Step 4:** The treasury funds EVERYONE in health - universities, pharma, nonprofits, government agencies - through democratically controlled sub-DAOs.
 
-## Why Reallocate 1% (instead of “spend more on health”)?
+---
 
-- Moving the same small share (1%) together keeps the balance of power. No one falls behind; everyone benefits from less disease.
-- This moves real people and factories—not just paper budgets—toward health work.
-- We avoid a new bureaucracy. Clear code + public data + verifiable oracles make decisions, with human overrides only for emergencies.
+## Why This Works
+
+**You get paid:** \$0.20 per referendum voter you refer. Scale that up.
+
+**Every health institution gets more money:** NIH, Harvard Medical, Pfizer, patient advocacy groups - everyone gets 2-5X their current funding.
+
+**Politicians get rewarded:** Vote for the treaty, get paid. Massive public support makes it safe.
+
+**Military balance preserved:** Everyone moves 1% together. No country falls behind.
+
+**No new bureaucracy:** Fund existing institutions through transparent, democratic allocation.
+
+## How We Beat Concentrated Interests
+
+**The military-industrial complex wins because:**
+- Defense contractors get massive, concentrated profits
+- Health benefits are diffuse across everyone
+- Politicians get lobbied by the concentrated side
+
+**We flip this by:**
+- Making health funding MORE profitable than weapons
+- Paying everyone who helps (referendum voters, politicians, institutions)
+- Creating a bigger coalition than military contractors
+
+---
+
+## The Treasury Model
+
+**[\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
+
+**[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** Democratic treasury that funds sub-DAOs for each health area.
+
+**Sub-DAOs fund existing institutions:** 
+- Decentralized Institute of Mental Health → funds universities, pharma, nonprofits working on depression, anxiety, etc.
+- Decentralized Institute of Cancer Research → funds MD Anderson, pharmaceutical companies, patient advocacy groups
+- Decentralized Institute of Aging → funds longevity research at every institution
+
+**Everyone gets more money. No one gets displaced.**
 
 ## Costs of War vs Disease (Context)
 
@@ -61,26 +85,51 @@ Everything runs on public ledgers with AI helpers—not a new bureaucracy.
 
 See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI.
 
-## What You Can Do Now
+## Start Earning Now
 
-- [Sign the global referendum](./referendum/global-referendum-implementation.md) and get counted in a verifiable tally.
-- [Get your referral link](./referral-rewards-system.md) to help reach the [3.5% tipping point](mdc:https:/www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) with jackpots and leaderboards.
-- [Fund the war on disease](./1-percent-treaty/victory-bonds-tokenomics.md) via \$VICTORY instruments.
-- [Build and earn](./open-ecosystem-and-bounty-model.md) with bounties, prizes, and merge-to-earn.
-- [Join or found an institute](./1-percent-treaty/institute-charter-template.md) under the DIH umbrella.
+**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn \$0.20 per person who votes via your link.
 
-## Guarantees and Guardrails
+**[Buy \$VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
 
-- Automated-by-default execution with public rules; emergency-only DAO overrides with strict sunsets.
-- Verifiable oracles for evidence, safety, identity/COI, and savings; immutable logs replace reports.
-- Safety circuit-breakers and clawbacks; transparent audits funded by bounties.
+**[Calculate your institution's allocation](./1-percent-treaty/institutional-funding-calculator.md)** → See how much your university/company/nonprofit would receive.
+
+**[Join the coalition](./coalition-building.md)** → Help coordinate health institutions to support the treaty.
+
+---
+
+## For Institutions
+
+**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work.
+
+**Universities:** Massive increase in research grants across all health departments.
+
+**Patient advocacy groups:** Direct funding for your cause areas.
+
+**Government health agencies:** Expanded budgets without fighting for appropriations.
+
+**Contact us:** [institutions@warondisease.org](mailto:institutions@warondisease.org) to calculate your potential funding increase.
+
+## The Math
+
+**3.5% of humanity = ~280 million people**
+
+**\$0.20 × 280 million = \$56 million** to create overwhelming public mandate
+
+**\$56 million vs \$24 billion/year** = 430X return on initial referendum investment
+
+**Result:** Every health institution gets 2-5X more funding. Forever.
+
+---
 
 ## Learn More
 
-- Strategy overview: [High-Level Strategy for War on Disease](./war-on-disease-strategy.md)
-- Architecture: [DIH On-Chain and AI Architecture](../architecture/dih-onchain-architecture.md)
-- Incentives: [Incentives Layer](./incentives-layer.md)
-- Org chart: [DIH Org Structure](./1-percent-treaty/dih-org-structure.md)
+**Strategy:** [How we beat concentrated interests](./war-on-disease-strategy.md)
+
+**Treasury:** [DIH funding model](./1-percent-treaty/decentralized-institutes-of-health.md)  
+
+**Coalition:** [Institution partnership framework](./coalition-building.md)
+
+**Treaty:** [Full 1% Treaty text](./1-percent-treaty/1-percent-treaty.md)
 
 ### Source Quotes for Key Parameters
 
