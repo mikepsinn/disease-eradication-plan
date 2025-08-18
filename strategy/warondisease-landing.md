@@ -8,16 +8,34 @@ editor: markdown
 dateCreated: '2025-08-15T00:00:00.000Z'
 ---
 
-## The Mission
+# War is stupid.
 
-Take 1% of the world’s military budgets and use it to cure disease. In 2023, global military spending was about \$2.44 trillion [source](mdc:https:/www.sipri.org/media/press-release/2024/world-military-expenditure-reaches-record-high-2023). 1% of that is roughly \$24 billion per year redirected to health.
+# Diseases suck.
 
-We’ll use open software and clear rules to pay people to join studies and to publish results fast. Everything runs on public ledgers with AI helpers—not a new bureaucracy.
+# Humanity spends 20X more on war and militarism than trying to cure all diseases combined.
+
+# Therefore it is logical for all nations of the world to enter a treaty to redirect 1% of military spending to radically accelerate medical progress.
+
+---
+
+## The Numbers
+
+Global military spending in 2023: **\$2.44 trillion** [source](mdc:https:/www.sipri.org/media/press-release/2024/world-military-expenditure-reaches-record-high-2023)
+
+1% redirected to health: **\$24 billion per year**
+
+---
+
+## The Solution
+
+Open software. Clear rules. Pay people to join studies. Publish results fast.
+
+Everything runs on public ledgers with AI helpers—not a new bureaucracy.
 
 ## How It Fits Together
 
 - [The 1% Treaty](./1-percent-treaty/1-percent-treaty.md)
-  - Countries move 1% together, so the military balance stays the same. Money shifts from weapons to cures.
+  - Countries move 1% together, so the military balance stays the same. Money shifts from weapons to medical research.
 - [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md)
   - A shared treasury that pays patients, funds prizes, and builds common tools. Rules are automated by default; people step in only for emergencies with strict time limits. See [Treasury Architecture](../features/treasury/dih-treasury-architecture.md).
 - dFDA — the autonomous trials platform
@@ -31,7 +49,7 @@ We’ll use open software and clear rules to pay people to join studies and to p
 
 ## Why Reallocate 1% (instead of “spend more on health”)?
 
-- Moving the same small share (1%) together keeps the balance of power. No one falls behind; everyone gains cures.
+- Moving the same small share (1%) together keeps the balance of power. No one falls behind; everyone benefits from less disease.
 - This moves real people and factories—not just paper budgets—toward health work.
 - We avoid a new bureaucracy. Clear code + public data + verifiable oracles make decisions, with human overrides only for emergencies.
 
