@@ -24,15 +24,13 @@ Every year, the disparity gets worse.
 
 We haven't cured a single disease for nearly 50 years.
 
-In the past, gluttony and violence were necessary for survival. But in a world with nuclear weapons and autonomous AI weapons systems, these traits will likely lead to our extinction.
+In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is acutally the RESULT of violent conflict.
 
-Humanity has 2 paths:
-1. Keep acting like violent dumbase monkeys until we extinct ourselves
+So humanity has 2 paths:
+1. Keep acting like violent dumbass monkeys until we extinct ourselves with a Terminator Skynet or nuclear catastrophe
 2. Bribe the hell out of everyone to act like a rational proper species for once
 
 Which do you want?
-
-At this point, if humanity wants to have any hope of avoiding a Terminator Skynet or nuclear catastrophe, it looks like our only choice is to bribe the hell out of everyone to work together to behave like a rational species instead of a bunch of violent, gluttonous primates that evolved in an environment of scarcity that no longer exists.
 
 
 ---
