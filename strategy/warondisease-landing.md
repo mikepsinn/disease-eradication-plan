@@ -16,17 +16,16 @@ dateCreated: '2025-08-15T00:00:00.000Z'
 
 ## The Simple Truth
 
-People like Jesus realized this fact millennia ago (and most people agree with him).  However, nothing has worked to stop it. 
+Governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases.
+
+People like Jesus realized that loving people should be preferable to murdering them millennia ago (and most people agree with him).  However, nothing has worked to stop this grotesque misallocation of resources. 
 
 Every year, the disparity between spending on death and destruction vs curing diseases gets worse and worse. 
-
-Governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases.
 
 We haven't cured a single disease for nearly 50 years.
 
 At this point, if humanity wants to have any hope of avoiding a Terminator Skynet or nuclear catastrophe, it looks like our only choice is to bribe the hell out of everyone to work together to behave like a rational species instead of a bunch of violent, gluttonous primates that evolved in an environment of scarcity that no longer exists.
 
-This is not strategy. This is insanity.
 
 ---
 
