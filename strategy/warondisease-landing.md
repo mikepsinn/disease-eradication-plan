@@ -20,9 +20,9 @@ Governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sip
 
 People like Jesus realized that loving people is preferable to murdering them millennia ago. However, despite general agreement on this point, absolutely nothing has worked to counter this continual grotesque misallocation of resources.
 
-Every year, the disparity gets worse.
+Every year, the disparity gets worse and worse.
 
-We haven't cured a single disease for nearly 50 years.
+We literally haven't cured a single disease damn disease for nearly 50 years.
 
 In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is acutally the RESULT of violent conflict.
 
