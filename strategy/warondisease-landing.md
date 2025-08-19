@@ -26,6 +26,8 @@ We haven't cured a single disease for nearly 50 years.
 
 In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is acutally the RESULT of violent conflict.
 
+Another notable difference, is that we're currently spending billions on autonomous AI weapons systems and have enough nuclear weapons to kill all of humanity at least 13 times and then shake the rubble.
+
 So humanity has 2 paths:
 1. Keep acting like violent dumbass monkeys until we extinct ourselves with a Terminator Skynet or nuclear catastrophe
 2. Bribe the hell out of everyone to act like a rational proper species for once
