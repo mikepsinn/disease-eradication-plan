@@ -22,9 +22,9 @@ People like Jesus realized that loving people is preferable to murdering them mi
 
 Every year, the disparity gets worse and worse.
 
-We literally haven't cured a single disease damn disease for nearly 50 years.
+We literally haven't cured a single damn disease for nearly 50 years.
 
-In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is acutally the RESULT of violent conflict.
+In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is actually the RESULT of violent conflict.
 
 Another notable difference, is that we're currently spending billions on autonomous AI weapons systems and have enough nuclear weapons to kill all of humanity at least 13 times and then shake the rubble.
 
@@ -55,7 +55,7 @@ Which do you want?
 
 **Power follows money:** When healing pays better than killing, power shifts to healers.
 
-**Safety in numbers:** All nations move 1% together. No one gains advantage or loses ground. National security increases via 1% fewer nuclear weapons and a slower autonomous‑weapons arms race.
+**Safety in numbers:** All nations move 1% together. No one gains advantage or loses ground.
 
 **Proof before action:** The referendum shows the world's will before any nation commits.
 
@@ -106,7 +106,7 @@ We will not defeat money with morals. We will defeat bad money with better money
 - Citizens: Paid for each referendum vote they generate  
 - Organizations: Partner referral rewards for verified votes via your org’s link; tiered bonus pools and leaderboards for coalitions
 - Politicians: Backed with independent expenditures when they vote with their district’s referendum result
-- Stronger national security: 1% fewer nukes and slower AI‑weapons escalation; deterrence preserved because everyone moves 1% together
+
 - Institutions: Double or triple their research funding
 
 We choose to make saving lives more profitable than taking them.
@@ -126,7 +126,7 @@ We choose to make saving lives more profitable than taking them.
 **Our counter-offer to politicians (legal and effective):**
 - Independent expenditures for campaigns: Massive ad buys and ground game support for candidates who vote with their district’s verified referendum tally; equivalent spending against those who defy it (no coordination).
 - Voter coalition: The [3.5%](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate provides electoral cover.
-- National security increases: 1% fewer nuclear weapons and slower AI‑weapons escalation; deterrence preserved because everyone moves 1% together.
+
 
 **The math:** We outbid defense contractors on expected electoral value while delivering massive health benefits to constituents.
 
