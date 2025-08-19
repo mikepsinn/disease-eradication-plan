@@ -16,7 +16,9 @@ dateCreated: '2025-08-15T00:00:00.000Z'
 
 ## The Simple Truth
 
-Every year, governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military. By comparison, the largest public medical research budget — the U.S. NIH — was **[$47.08 billion in FY 2024](https://www.sts.org/blog/closer-look-federal-funding-key-medical-programs-fy-2024)**.
+Every year, governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on public medical research.
+
+We have chosen to fund death over life by a ratio of ~40 to 1.
 
 This is not strategy. This is insanity.
 
@@ -224,6 +226,10 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
   > — Watson Institute, Brown University, 2022, [Defense Sector Lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
   > "Defense industry lobbying totaled \~\$127 million in 2024."
   > — OpenSecrets, 2024, [Defense industry lobbying totals](https://www.opensecrets.org/federal-lobbying/industries/summary?cycle=2024&id=D)
+
+* **Global government medical research spending (\$67.5B, 2023–2024)**
+  > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
+  > — DFDA Wiki, 2025, [Global Government Medical Research Spending](../reference/global-government-medical-research-spending.md)
 
 * **NIH public medical research budget (\$47.08B, FY 2024)**
   > "In FY 2024, NIH received a total of \$47.08 billion — an increase of \$300 million from FY 2023."
