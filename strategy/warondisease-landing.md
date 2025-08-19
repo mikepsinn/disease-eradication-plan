@@ -18,18 +18,26 @@ dateCreated: '2025-08-15T00:00:00.000Z'
 
 Governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases.
 
-People like Jesus realized that loving people should be preferable to murdering them millennia ago (and most people agree with him).  However, nothing has worked to stop this grotesque misallocation of resources. 
+People like Jesus realized that loving people should be preferable to murdering them millennia ago (and most people agree with him). However, nothing has worked to stop this grotesque misallocation of resources.
 
-Every year, the disparity between spending on death and destruction vs curing diseases gets worse and worse. 
+Every year, the disparity gets worse.
 
 We haven't cured a single disease for nearly 50 years.
+
+In the past, gluttony and violence were necessary for survival. But in a world with nuclear weapons and autonomous AI weapons systems, these traits will likely lead to our extinction.
+
+Humanity has 2 paths:
+1. Keep acting like violent dumbase monkeys until we extinct ourselves
+2. Bribe the hell out of everyone to act like a rational proper species for once
+
+Which do you want?
 
 At this point, if humanity wants to have any hope of avoiding a Terminator Skynet or nuclear catastrophe, it looks like our only choice is to bribe the hell out of everyone to work together to behave like a rational species instead of a bunch of violent, gluttonous primates that evolved in an environment of scarcity that no longer exists.
 
 
 ---
 
-## The Solution
+## Here's How We Fix It:
 
 **Step 1:** Pay people \$0.20 for each person who votes on a global referendum via their link.
 
@@ -76,9 +84,12 @@ At this point, if humanity wants to have any hope of avoiding a Terminator Skyne
 
 ## Why Good Intentions Have Failed
 
-For centuries, we have known war brings suffering. Yet we fund it anyway.
+For centuries, we've known war brings suffering. Yet we fund it anyway.
 
-Why? Because those who profit from war pay handsomely for the privilege. Defense contractors earn billions. Politicians receive generous donations. The cycle continues.
+Why?
+- Defense contractors earn billions
+- Politicians receive generous donations  
+- The cycle continues
 
 Good intentions cannot compete with gold.
 
