@@ -8,15 +8,19 @@ editor: markdown
 dateCreated: '2025-08-15T00:00:00.000Z'
 ---
 
-# Governments spend 40X more on pointless war, the military, death and destruction than finding cures to all diseases combined.
+# War is fucking stupid. Diseases suck.
+
+# But governments spend 40X more on militarism than finding cures for diseases.
 
 ---
 
 ## The Simple Truth
 
-Every year, governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on public medical research.
+People like Jesus realized this fact millennia ago, and most people agree, but nothing has worked to stop it. Every year, the disparity between spending on death and destruction vs curing diseases gets worse and worse. We haven't cured a single disease for nearly 50 years.
 
-We have chosen to fund death over life by a ratio of ~40 to 1.
+Governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases.
+
+At this point, if humanity wants to have any hope of avoiding a Terminator Skynet or nuclear catastrophe, it looks like our only choice is to bribe the hell out of everyone to work together to behave like a rational species instead of a bunch of violent, gluttonous primates that evolved in an environment of scarcity that no longer exists.
 
 This is not strategy. This is insanity.
 
