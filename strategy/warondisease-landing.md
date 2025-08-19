@@ -18,7 +18,7 @@ dateCreated: '2025-08-15T00:00:00.000Z'
 
 Governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases.
 
-People like Jesus realized that loving people should be preferable to murdering them millennia ago (and most people agree with him). However, nothing has worked to stop this grotesque misallocation of resources.
+People like Jesus realized that loving people is preferable to murdering them millennia ago. However, despite general agreement on this point, absolutely nothing has worked to counter this continual grotesque misallocation of resources.
 
 Every year, the disparity gets worse.
 
