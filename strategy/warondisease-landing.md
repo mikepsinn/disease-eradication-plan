@@ -8,9 +8,7 @@ editor: markdown
 dateCreated: '2025-08-15T00:00:00.000Z'
 ---
 
-# A species that spends twenty times more on weapons than cures has lost its mind.
-
-# The time has come to fix this madness.
+# Governments spend 40X more on pointless war, the military, death and destruction than finding cures to all diseases combined.
 
 ---
 
@@ -58,9 +56,9 @@ This is not strategy. This is insanity.
 - Cyber warfare tools: Less proliferation of attack capabilities
 
 **Real security threats are health-based:**
-- Pandemics kill more people than wars
+- [Pandemics kill more people than wars](https://ourworldindata.org/covid-deaths) (COVID-19: 7M+ deaths vs. annual conflict deaths ~100K)
 - Antibiotic resistance could kill [10M/year by 2050](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
-- Mental health crises destabilize societies more than foreign armies
+- [Mental health crises destabilize societies](https://www.who.int/news-room/fact-sheets/detail/mental-disorders) more than foreign armies
 
 **1% reallocation = stronger nations:**
 - Healthier populations are more productive
@@ -131,6 +129,50 @@ We choose to make saving lives more profitable than taking them.
 
 ---
 
+## Risks and Mitigations
+
+**Cheating/Holdouts:** Start with coalitions of willing nations; create competitive pressure and trade incentives for laggards.
+
+**Capture/Corruption:** Transparent, algorithmic allocation based on verifiable health outcomes; independent audits funded by bounties.
+
+**Legal Challenges:** Multi-jurisdiction compliance from Day 1; constitutional scholars on advisory board; structured as treaty obligations, not domestic mandates.
+
+**Timeline Risk:** Phased approach with clear gates; early wins in smaller countries build momentum for major powers.
+
+---
+
+## Implementation Roadmap
+
+**Phase 1 (Months 1-12):** Build global referendum platform; secure initial \$250M financing tranche; launch in 5 pilot countries.
+
+**Phase 2 (Months 12-24):** Achieve 3.5% global participation; begin independent expenditures in priority elections; first binding referendum votes.
+
+**Phase 3 (Months 24-36):** Secure first national treaty commitments; establish DIH treasury operations; begin institutional funding.
+
+**Phase 4 (Months 36-48):** Scale to major powers (US, EU, China); achieve \$27B+ annual inflows; full operational deployment.
+
+**Phase 5 (Years 4-5):** Evaluate expansion beyond 1%; measure health outcomes; consider additional global challenges.
+
+**Key Gates:** 100M referendum participants → first \$500M independent expenditure cycle → first treaty ratification → first \$1B disbursement.
+
+---
+
+## Financing Structure (For Investors)
+
+**Total Capital Need:** \$1.2-2.5B over 36 months, deployable in tranches tied to achievement gates.
+
+**Victory Notes (Senior, 60% of capital):** 6-9% coupon post-treaty commitments; secured by assigned government receivables; 3-5 year tenor.
+
+**Mezzanine (30% of capital):** 12-16% target IRR; step-up coupons on delays; performance kickers tied to verified savings.
+
+**First-Loss/Guarantee (10% of capital):** Philanthropic/PRI capital at 0-5% to de-risk senior tranches; absorbs political/execution risk.
+
+**Phase 1 Requirement:** \$250-400M for global platform, pilot countries, and first electoral cycles. Senior/mezz investors enter at higher yields (10-20%) until binding government commitments de-risk the structure.
+
+**Repayment Source:** Assigned 1% military budget redirections from participating governments; estimated \$27B+ annual once operational.
+
+---
+
 ## The Treasury Model
 
 **[\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
@@ -177,15 +219,17 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 
 **Contact us:** [institutions@warondisease.org](mailto:institutions@warondisease.org) to calculate your potential funding increase.
 
-## The Math
+## Conservative ROI Analysis
 
-**[3.5% of humanity](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) = ~280 million people**
+**Global referendum + mandate building:** \$100-150M over 18 months.
 
-**\$0.20 × 280 million = \$56 million** to create overwhelming public mandate
+**Independent expenditures (priority countries):** \$800M-1.5B over 24 months.
 
-**\$56 million vs [\$27 billion/year](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** = 480X return on initial referendum investment
+**Annual treaty inflows (1% of \$2.72T):** \$27B+ starting Year 3.
 
-**Result:** Every health institution gets 2-5X more funding. Forever.
+**Break-even timeline:** 18-36 months post-first treaty ratification.
+
+**Risk-adjusted IRR for senior capital:** 8-12% assuming 70% probability of success in 5+ major countries.
 
 ---
 
@@ -230,6 +274,14 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 * **Global government medical research spending (\$67.5B, 2023–2024)**
   > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
   > — DFDA Wiki, 2025, [Global Government Medical Research Spending](../reference/global-government-medical-research-spending.md)
+
+* **Pandemic vs. war deaths comparison**
+  > "COVID-19 deaths: 7,010,681 confirmed deaths" vs. annual conflict deaths typically under 100,000.
+  > — Our World in Data, 2024, [COVID-19 Deaths](https://ourworldindata.org/covid-deaths)
+
+* **Mental health global burden**
+  > "Mental health conditions affect 1 in 4 people globally at some point in their lives, representing 30% of the global burden of disease."
+  > — World Health Organization, 2022, [Mental Health Fact Sheet](https://www.who.int/news-room/fact-sheets/detail/mental-disorders)
 
 * **NIH public medical research budget (\$47.08B, FY 2024)**
   > "In FY 2024, NIH received a total of \$47.08 billion — an increase of \$300 million from FY 2023."
