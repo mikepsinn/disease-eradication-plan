@@ -59,7 +59,7 @@ Which do you want?
 
 The strategic risk of non-compliance by some nations is minimal. Global military spending is already highly asymmetric; a 1% budget shift does not materially alter the balance of power.
 
-For context, the proposed $10 billion U.S. contribution represents less than 0.2% of the $6.5 trillion in unsupported accounting adjustments required by the U.S. Army in a single year. The proposed redirection is an order of magnitude smaller than the documented financial discrepancies within the existing system.
+The Pentagon cannot account for **[$2.5 trillion in assets](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures)**. The U.S. contribution to this plan is **$10 billion per year**. We are asking to redirect an amount equal to **0.4%** of the money they have already lost.
 
 **Proof before action:** The referendum shows the world's will before any nation commits.
 
