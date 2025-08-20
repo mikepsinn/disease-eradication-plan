@@ -67,6 +67,26 @@ The Pentagon cannot account for **[$2.5 trillion in assets](https://thecommunema
 
 ---
 
+## Why This Approach?
+
+**1. "Why not just rely on philanthropy?"**
+
+Relying on donations would force us to compete with the very ecosystem we aim to support. Philanthropy is a finite, zero-sum game. A massive fundraising campaign for the DIH would inevitably cannibalize the existing pool of donations, effectively stealing funds from the thousands of vital health charities already doing critical work. This would harm the cause, not help it.
+
+Our goal is not to reshuffle a small pot of charitable giving. It is to tap into the multi-trillion dollar firehose of government spending.
+
+Furthermore, philanthropy treats the symptoms of a broken system. It doesn't change the underlying political-economic incentives that perpetuate the problem. We are not just trying to fund more research; we are trying to permanently shift the global allocation of capital and talent from destruction to creation. Only a systemic reallocation can achieve that.
+
+**2. "Why redirect military spending? Why not just increase the health budget?"**
+
+This is not about nominal dollar figures; it is about the **real allocation of a finite pie of resources**. The world's top scientists, engineers, and manufacturing capacity are a limited resource. What matters is not the absolute dollar amount spent on health, but the *percentage* of our collective talent and capital dedicated to it, as this is the true surrogate for resource allocation.
+
+If we simply "increase health spending" by 10% through new appropriations, but the central bank also expands the money supply and the military budget grows by 10%, **no real resources have been shifted**. It's an inflationary wash. The same scientists and factories will continue to build weapons because that's where the larger share of the economic pie remains.
+
+A **direct, treaty-bound reallocation** is the only mechanism that forces a true shift of these finite resources. By cutting 1% from military budgets, we are not just moving dollars; we are freeing up the physicists, data scientists, and supply chains that were serving the military-industrial complex and making them available to cure Alzheimer's. This is how you change the game.
+
+---
+
 ## Why 1% Less Military = More Security
 
 **Modern weapons make everyone less safe:**
@@ -83,6 +103,16 @@ The Pentagon cannot account for **[$2.5 trillion in assets](https://thecommunema
 - Healthier populations are more productive
 - Medical breakthroughs boost economic competitiveness
 - Reduced healthcare costs free up MORE budget for defense if needed
+
+### The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
+
+Even if the Decentralized Institutes of Health were a completely inefficient failure and dumped every single dollar into the ocean, the world would *still* be better off.
+
+Why?
+
+Because we would still have **1% fewer nuclear weapons**. We would still have a **1% slower AI arms race**. We would still have a **1% reduction in the global capacity for organized violence.**
+
+The worst possible outcome of this plan—total waste—is still a net gain for global security. The best possible outcome is that we also cure cancer.
 
 ---
 
