@@ -243,6 +243,37 @@ With regard to difficulty and complexity, it doesn't matter. The alternative is 
 
 **The Math:** We're asking for \$2.5B to redirect \$27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
 
+## Activation Energy Sequence: Who We Bribe First
+
+**Phase 1: Seed Investors (\$250-400M Initial Investment)**
+- **Who:** Wealthy individuals, funds, crypto whales
+- **Bribe:** 
+  - Dynamic interest rates: 8-12% base + success multipliers
+  - \$VICTORY governance tokens controlling \$27B annual DIH treasury
+  - If we achieve fossil fuel industry's >100X lobbying ROI, investors get a cut
+- **Why they bite:** Control over \$27B/year health treasury through governance tokens = massive ongoing influence + returns that dwarf any alternative investment
+
+**Phase 2: \$VICTORY Token Buyers (\$100-200M Referendum Funding)**
+- **Who:** Crypto investors, health advocates, institutions
+- **Bribe:**
+  - \$VICTORY tokens that govern DIH DAO decisions on \$27B annually
+  - Vote on patient subsidies (popular causes = higher token demand)
+  - Vote on grants/contracts (direct funds to their preferred projects)
+  - Token appreciation as treasury grows from \$0 → \$27B
+- **Why they bite:** Early governance control of the world's largest decentralized health funding mechanism
+
+**Phase 3: Citizens (\$56M for 280M Referendum Votes)**
+- **Who:** Global population (targeting 3.5% = 280M people)
+- **Bribe:** \$0.20 per referendum vote (funded by \$VICTORY token sales)
+- **Why they bite:** Easy money + moral satisfaction + they want better healthcare
+
+**Phase 4: Politicians (\$800M-1.5B Independent Expenditures)**
+- **Who:** Key legislators in target countries
+- **Bribe:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
+- **Why they bite:** 280M verified voters + overwhelming campaign funding vs. defense contractors' \$15M lobbying budget
+
+**The Compounding Effect:** Each phase funds the next. Seed investors control governance of \$27B treasury. Token buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
+
 ---
 
 ## Referendums vs Independent Expenditures
