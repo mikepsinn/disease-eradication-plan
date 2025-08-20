@@ -187,6 +187,26 @@ With regard to difficulty and complexity, it doesn't matter. The alternative is 
 
 *   **Reality:** The complexity is the moat. Building a trustless, global-scale system for political action is difficult, but it is no more difficult than building the autonomous weapons systems currently being funded. The difference is that our platform is designed to build consensus and unlock human potential, not to create more efficient ways to kill.
 
+**5. "This is politically impossible - you can't just redirect military budgets by referendum"**
+
+*   **Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The \$7T fossil fuel subsidy proof-of-concept shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
+
+**6. "You're assuming governments will honor treaty commitments when they don't honor existing ones"**
+
+*   **Reality:** Existing treaties fail because they lack enforcement mechanisms. Our system creates financial enforcement through global capital markets - a nation that defaults faces immediate economic consequences far greater than the 1% redirection. The "full faith and credit" of global investors is more reliable than international courts that have no real power.
+
+**7. "The 3.5% rule applies to civil resistance movements, not global online referendums"**
+
+*   **Reality:** The 3.5% rule demonstrates that mass participation creates political legitimacy. Online participation translates to real political pressure when it's verifiable, permanent, and tied to electoral consequences. A cryptographically secure list of 280 million verified supporters becomes a political entity that candidates must respect or face electoral consequences.
+
+**8. "Independent expenditures don't work against entrenched incumbents with deep pockets"**
+
+*   **Reality:** Independent expenditures work when they're massive and targeted. We're not competing dollar-for-dollar with defense contractors - we're creating a system where supporting the treaty becomes the politically safer choice than opposing it. When 3.5% of humanity has voted for this, opposing it becomes electoral suicide.
+
+**9. "You're competing with defense contractors who have decades of relationships and influence"**
+
+*   **Reality:** Defense contractors have influence because they deliver votes and money. We're creating a system that delivers more votes and more money to politicians who support the treaty. The relationships follow the power - when healing becomes more profitable than killing, the political class will adapt. We're not fighting the existing system; we're making it work for us.
+
 ---
 
 ## Referendums vs Independent Expenditures
