@@ -280,11 +280,11 @@ With regard to difficulty and complexity, it doesn't matter. The alternative is 
 
 **Our Multi-Layered Defense:**
 
-**1. Distributed Security Architecture**
-- 6-of-11 global multisig distributed across 4+ regions, maximum 2 signers per entity
-- Mandatory 24-72h timelocks for large transfers above policy thresholds
-- Daily/weekly spending caps per vault with autonomous micro-spend for low-risk bounties
-- Quarterly key rotation with slashing/expulsion for inactivity or policy breaches
+**1. True Decentralized Control (Proven at Scale)**
+- Every \$VICTORY token holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
+- No human signers = no kidnapping, corruption, or coercion targets
+- Smart contracts automatically execute community decisions after 24-72h timelocks
+- Battle-tested approach managing billions in existing DAOs
 
 **2. AI-Powered Fraud Detection**
 - Fraud Agent: real-time anomaly detection, duplication monitoring, collusion identification, sybil detection
@@ -306,16 +306,22 @@ With regard to difficulty and complexity, it doesn't matter. The alternative is 
 
 **Beyond Health: A Template for Uncorruptible Governance**
 
-This isn't just about protecting health funding - it's an experiment in building the next generation of radically more efficient, transparent, and corruption-resistant public institutions. If we can successfully manage \$27B annually with full transparency, automated fraud detection, and algorithmic allocation based on measurable outcomes, we create a template that can be applied to:
+This isn't just about protecting health funding - it's an experiment in building the next generation of radically more efficient, transparent, and corruption-resistant public institutions. Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that \$27B can be managed with:
 
-- Education systems (funding based on learning outcomes, not political connections)
-- Infrastructure projects (algorithmic allocation based on public benefit metrics)
-- Environmental protection (outcome-based funding for measurable climate impact)
-- Social services (transparent, efficient distribution based on need and effectiveness)
+- **Zero human targets** for violence, kidnapping, or corruption
+- **True community control** through direct token holder governance
+- **Complete transparency** with all decisions and executions on-chain
+- **Automated efficiency** eliminating bureaucratic waste and political favoritism
 
-**The Vision:** Replace the corrupt, inefficient bureaucracies of the 20th century with transparent, automated, outcome-driven institutions that actually serve the public interest. The DIH treasury becomes the prototype for a new era of public governance - one that uses cryptographic guarantees instead of trust, algorithmic fairness instead of political favoritism, and measurable outcomes instead of good intentions.
+**Applications Beyond Health:**
+- **Education systems**: Community-controlled funding based on learning outcomes
+- **Infrastructure projects**: Algorithmic allocation based on measurable public benefit
+- **Environmental protection**: Outcome-based funding for verified climate impact
+- **Social services**: Transparent, efficient distribution based on demonstrated need and effectiveness
 
-This experiment could usher in a new era of peace, prosperity, and abundance by proving that large-scale public goods can be managed with radical transparency and efficiency.
+**The Vision:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually serve the public interest. The DIH treasury becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
+
+This experiment could usher in a new era of peace, prosperity, and abundance by proving that large-scale public goods can be managed through true decentralization without any centralized control points.
 
 ---
 
