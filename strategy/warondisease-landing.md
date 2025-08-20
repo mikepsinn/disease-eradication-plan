@@ -274,6 +274,49 @@ With regard to difficulty and complexity, it doesn't matter. The alternative is 
 
 **The Compounding Effect:** Each phase funds the next. Seed investors control governance of \$27B treasury. Token buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
 
+## Security & Anti-Corruption: Building Uncorruptible Institutions
+
+**The Challenge:** A \$27B treasury is a massive target for hackers, fraudsters, and corrupt actors. Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks.
+
+**Our Multi-Layered Defense:**
+
+**1. Distributed Security Architecture**
+- 6-of-11 global multisig distributed across 4+ regions, maximum 2 signers per entity
+- Mandatory 24-72h timelocks for large transfers above policy thresholds
+- Daily/weekly spending caps per vault with autonomous micro-spend for low-risk bounties
+- Quarterly key rotation with slashing/expulsion for inactivity or policy breaches
+
+**2. AI-Powered Fraud Detection**
+- Fraud Agent: real-time anomaly detection, duplication monitoring, collusion identification, sybil detection
+- Safety Oracle: incident severity scoring with automatic payout holds for affected interventions
+- Manual review queue for flagged actions with whistleblower bounty rewards
+- Identity Oracle: verifies affiliations and conflicts, prevents unauthorized access
+
+**3. Complete Transparency & Auditability**
+- All treasury addresses published with real-time public dashboards
+- Immutable transaction logs with standardized disbursement tags
+- Annual smart contract audits and semiannual operational audits with published reports
+- Hash-committed invoices and budgets for full accountability
+
+**4. Recovery & Response Mechanisms**
+- Clawbacks for data falsification or trial misconduct
+- Emergency pause capabilities triggered by incident signals
+- Progressive unpause policies tied to remediation completion
+- Guardian modules for pausing non-critical functions under defined conditions
+
+**Beyond Health: A Template for Uncorruptible Governance**
+
+This isn't just about protecting health funding - it's an experiment in building the next generation of radically more efficient, transparent, and corruption-resistant public institutions. If we can successfully manage \$27B annually with full transparency, automated fraud detection, and algorithmic allocation based on measurable outcomes, we create a template that can be applied to:
+
+- Education systems (funding based on learning outcomes, not political connections)
+- Infrastructure projects (algorithmic allocation based on public benefit metrics)
+- Environmental protection (outcome-based funding for measurable climate impact)
+- Social services (transparent, efficient distribution based on need and effectiveness)
+
+**The Vision:** Replace the corrupt, inefficient bureaucracies of the 20th century with transparent, automated, outcome-driven institutions that actually serve the public interest. The DIH treasury becomes the prototype for a new era of public governance - one that uses cryptographic guarantees instead of trust, algorithmic fairness instead of political favoritism, and measurable outcomes instead of good intentions.
+
+This experiment could usher in a new era of peace, prosperity, and abundance by proving that large-scale public goods can be managed with radical transparency and efficiency.
+
 ---
 
 ## Referendums vs Independent Expenditures
