@@ -24,6 +24,8 @@ Every year, the disparity gets worse and worse.
 
 We literally haven't cured a single damn disease for nearly 50 years.
 
+**The current system is actively getting worse:** Recent budget proposals globally continue the grotesque misallocation - military spending increases while health research budgets are slashed. This isn't a partisan issue or limited to any single country; it's a systemic global failure that spans nations and political parties. The pattern is clear: more weapons, less health research, more death.
+
 In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is actually the RESULT of violent conflict.
 
 Another notable difference, is that we're currently spending billions on autonomous AI weapons systems and have enough nuclear weapons to kill all of humanity at least 13 times and then shake the rubble.
@@ -128,6 +130,8 @@ Why?
 
 The scale of this financial mismanagement provides perspective. The value of these unaccounted-for assets is equivalent to 37 years of global medical research funding. The proposed 1% redirection is insignificant compared to the sums already being lost to systemic waste and a lack of basic accountability.
 
+**The current system is actively cutting health research:** Recent budget proposals globally continue cutting health research while increasing military spending. This is the grotesque misallocation in real-time - we're not just failing to fund cures, we're actively defunding them to buy more weapons. The pattern spans administrations, parties, and nations worldwide.
+
 ## Our Answer
 
 We will not defeat money with morals. We will defeat bad money with better money.
@@ -173,7 +177,7 @@ With regard to difficulty and complexity, it doesn't matter. The alternative is 
 
 **1. "This sounds like a cynical, illegal bribe. You'll have no soul."**
 
-*   **Reality:** The old system of "legal" lobbying is just a slow, inefficient bribe that produces war and disease. The new system is a transparent, efficient bribe that produces peace and health. In a world where political leaders successfully fund campaigns with their own crypto tokens, the line between a "donation" and an "investment in a political outcome" has already been erased. We are simply applying that new reality to a goal that benefits all of humanity. Our soul is in the outcome: saving millions of lives.
+*   **Reality:** The old system of "legal" lobbying is just a slow, inefficient bribe that produces war and disease. The new system is a transparent, efficient bribe that produces peace and health. In a world where political leaders successfully fund campaigns with their own crypto tokens and sell access to exclusive events, the line between a "donation" and an "investment in a political outcome" has already been erased. We are simply applying that new reality to a goal that benefits all of humanity. Our soul is in the outcome: saving millions of lives.
 
 **2. "A global referendum is not a real protest. It's a flawed analogy."**
 
@@ -389,5 +393,7 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 * **NIH public medical research budget (\$47.08B, FY 2024)**
   > "In FY 2024, NIH received a total of \$47.08 billion — an increase of \$300 million from FY 2023."
   > — Society of Thoracic Surgeons (summarizing FY 2024 appropriations), 2024, [Closer look at federal funding for key medical programs](https://www.sts.org/blog/closer-look-federal-funding-key-medical-programs-fy-2024)
+
+
 
 
