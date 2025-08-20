@@ -211,6 +211,18 @@ With regard to difficulty and complexity, it doesn't matter. The alternative is 
 
 *   **Reality:** Defense contractors have influence because they deliver votes and money. We're creating a system that delivers more votes and more money to politicians who support the treaty. The relationships follow the power - when healing becomes more profitable than killing, the political class will adapt. We're not fighting the existing system; we're making it work for us.
 
+**10. "How do you prevent waste and ensure the money actually helps patients?"**
+
+*   **Reality:** The decentralized FDA uses [decentralized pragmatic trials that cost $500 per patient vs. $41,000 traditional trials](../reference/recovery-trial.md) - an 80X efficiency improvement proven by the Oxford RECOVERY trial. Compare this to the NIH RECOVER initiative: $1.6B budget, $53,333 per patient, zero completed trials in 4 years. With the same $1.6B budget, the dFDA could run 2,800 trials enrolling 2.8 million patients vs. NIH's zero completed trials.
+
+**11. "How does this help patients vs. just funding more bureaucracy?"**
+
+*   **Reality:** The decentralized FDA puts money directly into patients' hands through algorithmic subsidy allocation that maximizes QALYs gained per dollar, disease burden, and patient financial need. Unlike traditional NIH grants that fund institutions based on political connections, this ensures trials happen where the health impact is highest. Patients get subsidized access to cutting-edge treatments while contributing to research that benefits everyone.
+
+**12. "What's the proof this works better than current NIH funding?"**
+
+*   **Reality:** The Oxford RECOVERY trial saved over 1 million lives globally at $500 per patient. The NIH RECOVER initiative spent $53,333 per patient and completed zero trials in 4 years. The dFDA's algorithmic subsidy allocation would have funded 3,200 RECOVERY-style trials with the same budget that NIH used to complete zero trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
+
 ---
 
 ## Referendums vs Independent Expenditures
