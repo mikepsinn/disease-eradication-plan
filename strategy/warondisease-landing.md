@@ -57,6 +57,10 @@ Which do you want?
 
 **Safety in numbers:** All nations move 1% together. No one gains advantage or loses ground.
 
+The strategic risk of non-compliance by some nations is minimal. Global military spending is already highly asymmetric; a 1% budget shift does not materially alter the balance of power.
+
+For context, the proposed $10 billion U.S. contribution represents less than 0.2% of the $6.5 trillion in unsupported accounting adjustments required by the U.S. Army in a single year. The proposed redirection is an order of magnitude smaller than the documented financial discrepancies within the existing system.
+
 **Proof before action:** The referendum shows the world's will before any nation commits.
 
 **Existing institutions win:** Universities, hospitals, research centers—all receive more funding than ever before.
@@ -90,8 +94,9 @@ Why?
 - Defense contractors earn billions
 - Politicians receive generous donations  
 - The cycle continues
+- The Pentagon [literally lost \$2.5 trillion](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures) and can't explain where it went
 
-Good intentions cannot compete with gold.
+The scale of this financial mismanagement provides perspective. The value of these unaccounted-for assets is equivalent to 37 years of global medical research funding. The proposed 1% redirection is insignificant compared to the sums already being lost to systemic waste and a lack of basic accountability.
 
 ## Our Answer
 
@@ -300,6 +305,14 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 * **Mental health global burden**
   > "Mental health conditions affect 1 in 4 people globally at some point in their lives, representing 30% of the global burden of disease."
   > — World Health Organization, 2022, [Mental Health Fact Sheet](https://www.who.int/news-room/fact-sheets/detail/mental-disorders)
+
+* **Pentagon audit failures (\$2.46T unaccounted)**
+  > "In the most recent audit, the Department of Defense (DoD) could not account for approximately 60% of its \$4.1 trillion in assets, amounting to \$2.46 trillion unaccounted for."
+  > — The Commune, 2024, [Pentagon Misplaced \$2.46 Trillion](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures)
+
+* **Pentagon unsupported accounting adjustments (\$6.5T, single year, US Army)**
+  > "In 2015, the Department of Defense's Inspector General reported that the Army could not adequately support \$6.5 trillion in year-end adjustments, indicating severe accounting discrepancies."
+  > — Accounting Magazine, 2016, [Audit: Pentagon Cannot Account for \$6.5 Trillion Dollars](https://accmag.com/audit-pentagon-cannot-account-for-6-5-trillion-dollars-is-taxpayer-money/)
 
 * **NIH public medical research budget (\$47.08B, FY 2024)**
   > "In FY 2024, NIH received a total of \$47.08 billion — an increase of \$300 million from FY 2023."
