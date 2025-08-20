@@ -225,6 +225,26 @@ With regard to difficulty and complexity, it doesn't matter. The alternative is 
 
 ---
 
+## Investment Required vs. Returns
+
+**Total Implementation Cost:** \$1.2-2.5B over 36 months
+
+**What This Buys:**
+- Global referendum platform (\$56M for 280M signatures at \$0.20 each)
+- Independent expenditures in priority elections (\$800M-1.5B)
+- Platform development and pilot programs (\$250-400M Phase 1)
+- Legal compliance and treaty framework (\$100-200M)
+
+**Annual Returns Once Operational:** \$27B+ per year from 1% military budget redirections
+
+**ROI Timeline:** 18-36 months after first treaty ratification
+
+**Break-even Analysis:** Even if only 5 major countries participate (US, EU, UK, Japan, Canada), that's \$8.5B annually vs. \$2.5B total investment = 3.4X return in year one alone.
+
+**The Math:** We're asking for \$2.5B to redirect \$27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
+
+---
+
 ## Referendums vs Independent Expenditures
 
 - **Referendums (where binding and timely):** Highest legitimacy; durable mandate; use when national or state mechanisms exist and timelines are practical.
