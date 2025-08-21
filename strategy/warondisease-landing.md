@@ -16,7 +16,7 @@ dateCreated: '2025-08-15T00:00:00.000Z'
 
 ## The Simple Truth
 
-Governments spend **[$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases.
+Governments spend **[\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases.
 
 People like Jesus realized that loving people is preferable to murdering them millennia ago. However, despite general agreement on this point, absolutely nothing has worked to counter this continual grotesque misallocation of resources.
 
@@ -61,7 +61,7 @@ Which do you want?
 
 The strategic risk of non-compliance by some nations is minimal. Global military spending is already highly asymmetric; a 1% budget shift does not materially alter the balance of power.
 
-The Pentagon cannot account for **[$2.5 trillion in assets](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures)**. The U.S. contribution to this plan is **$10 billion per year**. We are asking to redirect an amount equal to **0.4%** of the money they have already lost.
+The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures)**. The U.S. contribution to this plan is **\$10 billion per year**. We are asking to redirect an amount equal to **0.4%** of the money they have already lost.
 
 **Proof before action:** The referendum shows the world's will before any nation commits.
 
@@ -104,7 +104,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 **1% reallocation = stronger nations:**
 - Healthier populations are more productive
 - Medical breakthroughs boost economic competitiveness
-- Reduced healthcare costs free up MORE budget for military if needed
+- Reduced healthcare costs free up MORE budget for military spending if needed
 
 ### The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
 
@@ -137,8 +137,8 @@ The scale of this financial mismanagement provides perspective. The value of the
 We will not defeat money with morals. We will defeat bad money with better money.
 
 **Their system rewards death:**
-- Military contractors: [$10 billion contracts](https://www.statista.com/statistics/262742/countries-with-the-highest-military-spending/)
-- Politicians: [$100+ million in lobbying annually](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
+- Military contractors: [\$10 billion contracts](https://www.statista.com/statistics/262742/countries-with-the-highest-military-spending/)
+- Politicians: [\$100+ million in lobbying annually](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
 - Result: More weapons, less security
 
 **Our system rewards life:**
@@ -155,7 +155,7 @@ We choose to make saving lives more profitable than taking them.
 ## The Political Economics
 
 **Military contractors' lobbying ROI:**
-- [$1.1 billion lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022) (2001-2021) → [$2.02 trillion contracts](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
+- [\$1.1 billion lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022) (2001-2021) → [\$2.02 trillion contracts](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
 - **Return: \$1,813 per \$1 spent on lobbying**
 
 **What we're asking politicians to redirect:**
