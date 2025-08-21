@@ -99,7 +99,12 @@ A well-designed referral-rewards system can:
 3. **Partner Newsletters > Paid Ads**
    - Ready-to-send HTML for disease foundations, patient forums, Reddit, etc.
    - A single 100k-subscriber list at 5% conversion = 5,000 votes for almost no incremental cash
-4. **Track K-Factor (Viral Coefficient) Weekly**
+4. **Creative Viral Marketing**: See [Viral Marketing Tactics](./viral-marketing-tactics.md) for detailed implementation of:
+   - QR code t-shirts and wearable marketing
+   - Social media challenges and meme campaigns
+   - Community building and local activation
+   - Event marketing and content strategies
+5. **Track K-Factor (Viral Coefficient) Weekly**
    - K > 0.8: Cut ad spend
    - K < 0.5: Top up jackpot or test new creatives
 
