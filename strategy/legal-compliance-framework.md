@@ -73,11 +73,25 @@ The 1% Treaty initiative faces three critical legal challenges: **foreign nation
 - **Functional Use:** Tokens required for governance participation and referendum rewards
 - **Decentralized Network:** No central entity controlling token value
 
-**Regulatory Exemptions Strategy:**
-- **Regulation S:** Offshore offerings to non-US persons outside US markets
-- **Regulation D Rule 506(c):** Accredited investors only with general solicitation
-- **Regulation A+:** Up to \$75M offering with SEC review and disclosure requirements
-- **State-by-State Blue Sky:** Compliance with state securities laws where needed
+**Fundraising Strategy: A Two-Phase Approach for Speed and Compliance**
+Our fundraising model is designed to be both agile and legally robust, separating the high-risk seed phase from a broader public offering. This strategy directly contrasts with the legally and ethically questionable "pay-to-play" token models (e.g., the `$TRUMP` coin scandal of 2025), which have led to calls for new legislation like the "End Crypto Corruption Act." Our approach uses established, transparent SEC frameworks.
+
+**Phase 1: Initial Seed Capital via Private Placement (Reg D & Reg S)**
+The initial, high-risk "activation energy" will be raised via a concurrent private placement.
+
+1.  **Regulation D (Reg D) for U.S. Accredited Investors:**
+    *   **Purpose:** To quickly raise foundational capital from sophisticated U.S. investors (VCs, funds, high-net-worth individuals) who understand the political and execution risks.
+
+2.  **Regulation S (Reg S) for Non-U.S. Investors:**
+    *   **Purpose:** To extend our fundraising to the global community of investors outside the United States.
+
+**Phase 2: Public Participation via Regulation A+**
+Once key milestones are achieved and the project is significantly de-risked (e.g., successful pilot referendums, a functional platform), we will open the investment to the general public, including unaccredited investors.
+
+*   **Mechanism: Regulation A+ Offering:** This "mini-IPO" framework allows us to raise up to **\$75 million per year** from the public through an SEC-reviewed and qualified process.
+*   **Purpose:** To democratize access to the investment, build a broad base of supporters, and achieve our goal of a truly decentralized, community-owned initiative in a fully compliant manner.
+
+This two-phase approach ensures we have the speed to start, while creating a transparent, legitimate, and inclusive path for public participation in the long term. All offerings will be conducted via a detailed **Private Placement Memorandum (PPM)** for Phase 1 and a formal **Offering Circular** for Phase 2, both prepared by top-tier securities counsel.
 
 **Legal Structure:**
 - **Offshore Foundation:** Singapore or Swiss foundation issuing tokens
