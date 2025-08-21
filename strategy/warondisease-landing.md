@@ -22,7 +22,7 @@ People like Jesus realized that loving people is preferable to murdering them mi
 
 Every year, the disparity gets worse and worse.
 
-We literally haven't cured a single damn disease for nearly 50 years.
+We haven't cured a single disease for nearly 50 years!
 
 **The current system is actively getting worse:** Recent budget proposals globally continue the grotesque misallocation - military spending increases while health research budgets are slashed. This isn't a partisan issue or limited to any single country; it's a systemic global failure that spans nations and political parties. The pattern is clear: more weapons, less health research, more death.
 
@@ -40,6 +40,8 @@ Which do you want?
 ---
 
 ## Here's How We Fix It:
+
+- **Core Goal: Make curing people more profitable than killing them.** 
 
 **Step 1:** Pay people \$0.20 for each person who votes on a global referendum via their link.
 
