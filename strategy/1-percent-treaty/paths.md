@@ -43,11 +43,11 @@ Against this backdrop, the LOGICAL Treaty proposes a radical but necessary redir
 
 ### Implementation through Decentralized Institutes of Health (DIH)
 
-1. **Global Collaboration**: Nations commit to investing in health over warfare, contributing to a shared fund managed by DIH.
+1. **Global Collaboration**: Nations commit to investing in curing diseases over killing, contributing to a shared fund managed by DIH.
 2. **AI for Good**: Leveraging AI's potential to revolutionize medical research, from data analysis to clinical trials, focusing on solving health crises rather than creating conflict.
 3. **Democratic Funding**: Ensuring the fair distribution of resources through community-driven decision-making, prioritizing projects with global health impact.
 4. **Open Innovation**: Sharing research findings openly, fostering a culture of collaboration and rapid advancement in health sciences.
-5. **Sustainable Peace**: By investing in health research, nations also invest in the stability and well-being of their citizens, contributing to a more peaceful world.
+5. **Sustainable Peace**: By investing in curing diseases, nations also invest in the stability and well-being of their citizens, contributing to a more peaceful world.
 
 ### Conclusion: Choosing Our Future
 

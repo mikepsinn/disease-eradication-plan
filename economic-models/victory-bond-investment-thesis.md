@@ -12,7 +12,7 @@ dateCreated: '2025-01-20T00:00:00.000Z'
 
 ## 1. Executive Summary
 
-The global economy is grotesquely misaligned, allocating **\$2.72 trillion** annually to military spending while just **\$67.5 billion** is directed toward medical research—a 40:1 disparity. This has created a market where investing in destruction is perceived as more profitable and stable than investing in health. This document provides the quantitative thesis for a strategic, one-time investment of **\$1.2–\$2.5 billion** to permanently flip this incentive structure.
+The global economy is grotesquely misaligned, allocating **\$2.72 trillion** annually to military spending while just **\$67.5 billion** is directed toward medical research—a 40:1 disparity. This has created a market where investing in destruction is perceived as more profitable and stable than investing in curing diseases. This document provides the quantitative thesis for a strategic, one-time investment of **\$1.2–\$2.5 billion** to permanently flip this incentive structure.
 
 The goal is to redirect a **\$27+ billion annual revenue stream** from military budgets to a democratically controlled health treasury. The investment vehicle, **\$VICTORY Bonds**, is designed to offer a risk-adjusted expected value superior to holding shares in top military contractors like Lockheed Martin (\$LMT) or Raytheon (\$RTX). We will use dynamic risk modeling, including Metaculus-style prediction markets, to transparently price risk and adjust returns, ensuring market-beating performance for investors who finance this historic reallocation of global capital.
 
