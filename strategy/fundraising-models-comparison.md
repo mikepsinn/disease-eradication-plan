@@ -112,22 +112,57 @@ Hard cap and funnel:
 Calibration starters (12 months):
 - Reg D: \$250–\$400M; Reg S: \$100–\$250M; Reg A+: \$25–\$75M (6–12 months live); Reg CF: \$1–\$5M; Grants: \$2–\$10M.
 
+## Semiquantitative Scoring (Criteria Weights and Scores)
+
+Weights (sum = 1.0): Speed 0.20; Scale 0.25; Compliance 0.20; Global reach 0.10; Inclusivity 0.10; Cost 0.05; Optics 0.10.
+
+Scores are 1 (poor) to 5 (excellent). Weighted score = Σ(weight × score).
+
+| Option | Speed | Scale | Compliance | Global | Inclusivity | Cost | Optics | Weighted Score |
+| --- | ---:| ---:| ---:| ---:| ---:| ---:| ---:| ---:|
+| Reg D 506(c) | 5 | 4 | 4 | 2 | 1 | 4 | 4 | 0.20×5 + 0.25×4 + 0.20×4 + 0.10×2 + 0.10×1 + 0.05×4 + 0.10×4 = **3.65** |
+| Reg S | 4 | 3 | 3 | 5 | 2 | 3 | 4 | 0.20×4 + 0.25×3 + 0.20×3 + 0.10×5 + 0.10×2 + 0.05×3 + 0.10×4 = **3.30** |
+| Reg A+ | 2 | 3 | 5 | 3 | 5 | 3 | 5 | 0.20×2 + 0.25×3 + 0.20×5 + 0.10×3 + 0.10×5 + 0.05×3 + 0.10×5 = **3.85** |
+| Reg CF | 3 | 1 | 5 | 2 | 5 | 4 | 5 | 0.20×3 + 0.25×1 + 0.20×5 + 0.10×2 + 0.10×5 + 0.05×4 + 0.10×5 = **3.15** |
+| Public token sale/ICO | 5 | 4 | 1 | 5 | 5 | 4 | 1 | 0.20×5 + 0.25×4 + 0.20×1 + 0.10×5 + 0.10×5 + 0.05×4 + 0.10×1 = **3.10** |
+| Grants/Donations | 3 | 2 | 5 | 4 | 5 | 5 | 5 | 0.20×3 + 0.25×2 + 0.20×5 + 0.10×4 + 0.10×5 + 0.05×5 + 0.10×5 = **3.85** |
+
+Notes:
+- ICO/token sale scores reflect speed and reach, but are dragged down by compliance/optics risks.
+- Reg A+ and Grants both score highly overall but serve different purposes (investment vs. distribution/community).
+
+## Downside, Reversibility, and “Try & See” Costs
+
+- **Reg D 506(c):** If under‑raises, sunk legal/placement \$0.5–\$1.5M; time cost 2–4 months. Reversible; neutral optics if framed as pilot.
+- **Reg S:** Sunk multi‑jurisdiction counsel \$0.3–\$1.0M; time 2–4 months; reversible with minimal optics risk.
+- **Reg A+:** If not qualified or under‑subscribed, sunk legal/audit \$0.8–\$2.0M; time 6–12 months. Still useful for reputation and future rounds.
+- **Reg CF:** Sunk \$50–\$200k; time 2–3 months; reputationally positive signal even if small.
+- **Public token sale/ICO:** High downside—enforcement, potential personal liability, reputational damage; not easily reversible. Use only as a monitored scenario, not as a primary path.
+- **Grants/Donations:** Low financial downside; time‑boxed campaigns (e.g., Juicebox‑style) can be run in parallel; reputationally positive.
+
+## Portfolio and Parallelization Plan
+
+- **Run in parallel (low conflict):** Reg D + Reg S + Grants/Donations; prep Reg A+ in background (audits, offering circular).
+- **Gate to public:** Launch Reg A+ only after milestone de‑risking (platform live, pilot referendums, anchor investors).
+- **Community sprints:** Time‑boxed donation/NFT campaigns (no profit promises) to galvanize support and fund discrete goals; publish on‑chain dashboards/leaderboards.
+- **Monitor high‑risk paths:** Track regulatory shifts for token‑sale viability; do not deploy without counsel and clear green lights.
+
 ---
 
 ## Source Quotes for Key Parameters
 
 - **Gitcoin total distributed (\$65M+)**
   > “Gitcoin has distributed over \$65 million to projects through grants, bounties, and related products.”
-  > — Axios, 2022, [Crypto public goods funding](mdc:https://www.axios.com/2022/08/23/crypto-public-goods-green-pill-gitcoin-advocacy-funding)
+  > — Axios, 2022, [Crypto public goods funding](https://www.axios.com/2022/08/23/crypto-public-goods-green-pill-gitcoin-advocacy-funding)
 
 - **Optimism RetroPGF scale (50M OP)**
   > “Optimism has allocated more than 50 million OP tokens across multiple rounds of Retroactive Public Goods Funding.”
-  > — Business Insider (Markets), 2024, [RetroPGF funding](mdc:https://markets.businessinsider.com/news/currencies/the-next-stage-for-public-good-funding-in-crypto-1033787594)
+  > — Business Insider (Markets), 2024, [RetroPGF funding](https://markets.businessinsider.com/news/currencies/the-next-stage-for-public-good-funding-in-crypto-1033787594)
 
 - **BitGive Pineapple Fund donation (\$1M)**
   > “BitGive received a \$1 million donation from the Pineapple Fund in 2017–2018.”
-  > — Wikipedia, 2024, [BitGive Foundation](mdc:https://en.wikipedia.org/wiki/BitGive_Foundation)
+  > — Wikipedia, 2024, [BitGive Foundation](https://en.wikipedia.org/wiki/BitGive_Foundation)
 
 - **Reg A+ cap (\$75M/yr)**
   > “Tier 2 of Regulation A permits eligible issuers to offer up to \$75 million in a 12‑month period, subject to SEC qualification.”
-  > — SEC, 2024, [Regulation A](mdc:https://www.sec.gov/smallbusiness/exemptofferings/rega)
+  > — SEC, 2024, [Regulation A](https://www.sec.gov/smallbusiness/exemptofferings/rega)

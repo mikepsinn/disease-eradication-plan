@@ -45,9 +45,9 @@ dateCreated: 2025-08-12T00:00:00.000Z
 - U.S. securities analysis should assume the **Howey** test may apply to bond-like or return-bearing instruments.
   - Reference: SEC v. W.J. Howey Co., 328 U.S. 293 (1946).
 - Potential exemptions: **Reg CF**, **Reg A**, **Reg S** (offshore) depending on offer scope and investor base.
-  - [SEC: Regulation Crowdfunding](mdc:https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
-  - [SEC: Regulation A overview](mdc:https://www.sec.gov/smallbusiness/exemptofferings/rega)
-  - [SEC: Regulation S resources](mdc:https://www.sec.gov/rules-regulations/1998/02/offshore-offers-sales-regulation-s-effective-date-60-days-after-publication-federal-register)
+  - [SEC: Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
+  - [SEC: Regulation A overview](https://www.sec.gov/smallbusiness/exemptofferings/rega)
+  - [SEC: Regulation S resources](https://www.sec.gov/rules-regulations/1998/02/offshore-offers-sales-regulation-s-effective-date-60-days-after-publication-federal-register)
 - KYC/AML: Mandatory for purchasers under most pathways.
 - Jurisdictional strategy: staggered launches; geoblocking as required.
 
@@ -65,14 +65,14 @@ dateCreated: 2025-08-12T00:00:00.000Z
 
 * **SEC Regulation Crowdfunding**
   > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."  
-  > — U.S. SEC, [sec.gov](mdc:https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
+  > — U.S. SEC, [sec.gov](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
 
 * **Regulation A overview**
   > "Regulation A provides an exemption from the registration requirements... for offerings of securities up to \$75 million in a 12-month period, subject to eligibility, disclosure, and reporting requirements."  
-  > — U.S. SEC, [sec.gov](mdc:https://www.sec.gov/smallbusiness/exemptofferings/rega)
+  > — U.S. SEC, [sec.gov](https://www.sec.gov/smallbusiness/exemptofferings/rega)
 
 * **Regulation S (offshore)**
   > "The amendments are designed to stop abusive practices in connection with offerings of equity securities purportedly made in reliance on Regulation S."  
-  > — U.S. SEC, [sec.gov](mdc:https://www.sec.gov/rules-regulations/1998/02/offshore-offers-sales-regulation-s-effective-date-60-days-after-publication-federal-register)
+  > — U.S. SEC, [sec.gov](https://www.sec.gov/rules-regulations/1998/02/offshore-offers-sales-regulation-s-effective-date-60-days-after-publication-federal-register)
 
 

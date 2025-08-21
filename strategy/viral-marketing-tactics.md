@@ -162,8 +162,8 @@ Creative marketing tactics to amplify the referral rewards system and achieve vi
 
 * **Viral Marketing Effectiveness**
   > "Viral marketing campaigns can achieve 3-10x higher engagement rates compared to traditional advertising, with referral programs showing particularly strong viral coefficients."
-  > — [Viral Marketing Research, 2024](mdc:https://example.com/viral-marketing-study)
+  > — [Viral Marketing Research, 2024](https://example.com/viral-marketing-study)
 
 * **QR Code Marketing ROI**
   > "QR code campaigns show 40-60% higher conversion rates when integrated with referral incentives, with wearable items generating 2-3x more scans than static displays."
-  > — [Digital Marketing Analytics Report, 2024](mdc:https://example.com/qr-marketing-study)
+  > — [Digital Marketing Analytics Report, 2024](https://example.com/qr-marketing-study)

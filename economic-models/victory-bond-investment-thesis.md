@@ -18,7 +18,7 @@ The goal is to redirect a **\$27+ billion annual revenue stream** from military 
 
 ## 2. The Market Failure: Profitability of Killing vs. Curing
 
-A rational investor allocates capital where returns are highest. Over the last five years, major military contractors have delivered average annual returns of **[~8%](mdc:https://watson.brown.edu/costsofwar/papers/2025/MilitaryContractors)**, while leading healthcare companies have yielded returns of **[~12%](mdc:https://www.forbes.com/sites/investor/2023/12/28/healthcare-stocks-poised-for-a-rebound-in-2024/)**. Despite healthcare's superior returns, the perceived stability and scale of military contracts creates a market that overwhelmingly incentivizes investment in militarism. Our thesis is not to compete within this broken system, but to execute a hostile takeover of its revenue stream.
+A rational investor allocates capital where returns are highest. Over the last five years, major military contractors have delivered average annual returns of **[~8%](https://watson.brown.edu/costsofwar/papers/2025/MilitaryContractors)**, while leading healthcare companies have yielded returns of **[~12%](https://www.forbes.com/sites/investor/2023/12/28/healthcare-stocks-poised-for-a-rebound-in-2024/)**. Despite healthcare's superior returns, the perceived stability and scale of military contracts creates a market that overwhelmingly incentivizes investment in militarism. Our thesis is not to compete within this broken system, but to execute a hostile takeover of its revenue stream.
 
 | Metric                        | **Military Contractors (The "Killing" Market)**                                | **Medical Research & Healthcare (The "Curing" Market)**                               |
 | ----------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
@@ -36,9 +36,9 @@ While public military stocks offer stable `~8-12%` annual returns, the relevant 
 
 | Investment Vehicle                       | Type                | Notable Returns                               | Source                                                                                              |
 | ---------------------------------------- | ------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| **Spectrum VIII-A Program**              | Private Equity      | **98.91% Net IRR** (2017 Vintage)               | [Alternatives Investor](mdc:https://alternativesinvestor.com/top-performing-private-equity-funds-2016-2019) |
-| **Francisco Partners Agility, L.P.**     | Private Equity      | **92.59% Net IRR** (2016 Vintage)               | [Alternatives Investor](mdc:https://alternativesinvestor.com/top-performing-private-equity-funds-2016-2019) |
-| **Renaissance Technologies (Medallion)** | Hedge Fund          | **~39% Net Annualized** (1988–2021)             | [Traders' Log](mdc:https://www.traderslog.com/top-hedge-funds)                                           |
+| **Spectrum VIII-A Program**              | Private Equity      | **98.91% Net IRR** (2017 Vintage)               | [Alternatives Investor](https://alternativesinvestor.com/top-performing-private-equity-funds-2016-2019) |
+| **Francisco Partners Agility, L.P.**     | Private Equity      | **92.59% Net IRR** (2016 Vintage)               | [Alternatives Investor](https://alternativesinvestor.com/top-performing-private-equity-funds-2016-2019) |
+| **Renaissance Technologies (Medallion)** | Hedge Fund          | **~39% Net Annualized** (1988–2021)             | [Traders' Log](https://www.traderslog.com/top-hedge-funds)                                           |
 | **Northrop Grumman (\$NOC)**             | Military Contractor | **~12% Annualized** (10-Year)                 | Market Data                                                                                         |
 | **Lockheed Martin (\$LMT)**              | Military Contractor | **~10% Annualized** (10-Year)                 | Market Data                                                                                         |
 

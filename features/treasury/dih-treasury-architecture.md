@@ -51,7 +51,7 @@ The Decentralized Institutes of Health (DIH) operates a global treasury to subsi
 
 - **Proposal lifecycle**: On-chain proposals referencing signed, hash-committed budgets and vendor terms. Quorum and approval thresholds defined in the DAO constitution.
 - **Module separation**: Upgrades gated by higher quorum; no emergency upgrade authority without two-tier approvals and time delay.
-- **Moving beyond coin-voting**: Explore identity- and contribution-weighted voting to mitigate plutocracy risks ([Buterin, 2021](mdc:https://vitalik.ca/general/2021/08/16/voting3.html)).
+- **Moving beyond coin-voting**: Explore identity- and contribution-weighted voting to mitigate plutocracy risks ([Buterin, 2021](https://vitalik.ca/general/2021/08/16/voting3.html)).
 
 ## Auditing and Transparency
 
@@ -71,7 +71,7 @@ The Decentralized Institutes of Health (DIH) operates a global treasury to subsi
 
 ## Key External Benchmarks
 
-- **Global military expenditure**: \$2.443 trillion (2023) and \$2.718 trillion (2024), per [SIPRI](mdc:https://www.sipri.org/media/press-release/2024/global-military-spending-surges-amid-war-rising-tensions-and-insecurity) and [SIPRI 2025 press release](mdc:https://www.sipri.org/media/press-release/2025/unprecedented-rise-global-military-expenditure-european-and-middle-east-spending-surges).
+- **Global military expenditure**: \$2.443 trillion (2023) and \$2.718 trillion (2024), per [SIPRI](https://www.sipri.org/media/press-release/2024/global-military-spending-surges-amid-war-rising-tensions-and-insecurity) and [SIPRI 2025 press release](https://www.sipri.org/media/press-release/2025/unprecedented-rise-global-military-expenditure-european-and-middle-east-spending-surges).
 
 ---
 
@@ -79,22 +79,22 @@ The Decentralized Institutes of Health (DIH) operates a global treasury to subsi
 
 * **SIPRI global military expenditure (2023)**
   > "Total global military expenditure reached \$2443 billion in 2023, an increase of 6.8 per cent in real terms from 2022."  
-  > — SIPRI, Apr 2024, [Press release](mdc:https://www.sipri.org/media/press-release/2024/global-military-spending-surges-amid-war-rising-tensions-and-insecurity)
+  > — SIPRI, Apr 2024, [Press release](https://www.sipri.org/media/press-release/2024/global-military-spending-surges-amid-war-rising-tensions-and-insecurity)
 
 * **SIPRI global military expenditure (2024)**
   > "World military expenditure reached \$2718 billion in 2024, an increase of 9.4 per cent in real terms from 2023..."  
-  > — SIPRI, Apr 2025, [Press release](mdc:https://www.sipri.org/media/press-release/2025/unprecedented-rise-global-military-expenditure-european-and-middle-east-spending-surges)
+  > — SIPRI, Apr 2025, [Press release](https://www.sipri.org/media/press-release/2025/unprecedented-rise-global-military-expenditure-european-and-middle-east-spending-surges)
 
 * **Gnosis Safe**
   > "Safe is a smart account infrastructure enabling secure and flexible management of digital assets on Ethereum and EVM-compatible networks."  
-  > — Safe Docs, [docs.safe.global](mdc:https://docs.safe.global/)
+  > — Safe Docs, [docs.safe.global](https://docs.safe.global/)
 
 * **FROST threshold signatures**
   > "FROST is a flexible round-optimal Schnorr threshold signature scheme, designed for practical deployment with support for key refresh and signer aggregation."  
-  > — IETF CFRG Draft, [datatracker.ietf.org](mdc:https://datatracker.ietf.org/doc/draft-irtf-cfrg-frost/)
+  > — IETF CFRG Draft, [datatracker.ietf.org](https://datatracker.ietf.org/doc/draft-irtf-cfrg-frost/)
 
 * **Beyond coin voting**
   > "We need to move beyond coin voting as it exists in its present form."  
-  > — Vitalik Buterin, 2021, [vitalik.ca](mdc:https://vitalik.ca/general/2021/08/16/voting3.html)
+  > — Vitalik Buterin, 2021, [vitalik.ca](https://vitalik.ca/general/2021/08/16/voting3.html)
 
 
