@@ -132,8 +132,8 @@ The core objection to the 1% Treaty is the classic collective action problem: **
 
 ### **Independent Monitoring**
 - **Satellite Verification:** Monitor military facility construction and weapons deployment
-- **Economic Intelligence:** Track defense contractor revenues and employment
-- **Procurement Analysis:** Monitor government defense spending through public contracts
+- **Economic Intelligence:** Track military contractor revenues and employment
+- **Procurement Analysis:** Monitor government military spending through public contracts
 
 ### **Transparent Reporting**
 - **Annual Compliance Index:** Public ranking of all countries by compliance level

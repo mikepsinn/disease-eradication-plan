@@ -150,7 +150,7 @@ GET /api/surveys/:surveyId/analytics/demographics - Get demographic breakdown
           "type": "pairwise",
           "text": "If you had $100 in tax dollars to allocate...",
           "items": [
-            {"id": "military", "label": "Military Defense"},
+            {"id": "military", "label": "Military Spending"},
             {"id": "medical", "label": "Medical Research"}
           ]
         },

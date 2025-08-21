@@ -27,7 +27,7 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 3. AI technology developed for warfare could lead to catastrophic outcomes like a Skynet scenario.[^2]
 4. People generally prefer resources to be used for medical research over warfare.[^3]
 5. No individual country can unilaterally reallocate war resources to medical research without risking attack from other countries.
-6. Defense companies globally spend between $200 million and $300 million annually on lobbying efforts. (See [lobbying ROI](lobbying.md).)
+6. Military contractors globally spend between $200 million and $300 million annually on lobbying efforts. (See [lobbying ROI](lobbying.md).)
 7. Military contractors globally receive between $800 billion to $1 trillion annually from government contracts.[^5]
 8. The world currently has 13,000 nuclear weapons, enough to cause between 13 and 130 "extinction-level events" when accounting for nuclear winter effects.[^6]
 9. Lobbyists are motivated by financial incentives and will work for the highest bidder.[^7]
@@ -41,14 +41,14 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 5. Implementing the 1% Treaty could yield $1.2 million in benefits per capita globally over 80 years. (See [value of automating research](value-of-automating-research.md).)
 6. Creating a DAO to crowdfund $40M, spend $20M on lobbying and $20M on marketing for petition signatures from 1% of the population could get the 1% Treaty adopted.
 7. If the plan succeeds, the DAO would get $20B/year, enough to repay initial contributors with 0.5% of first year funds.
-8. The DAO could attempt to outbid defense contractors to hire their best lobbyists, potentially reducing their lobbying capacity by 50% and increasing the DAO's lobbying power by 100%.[^11]
+8. The DAO could attempt to outbid military contractors to hire their best lobbyists, potentially reducing their lobbying capacity by 50% and increasing the DAO's lobbying power by 100%.[^11]
 9. To ensure sufficient funding to out-lobby the military-industrial complex, contributors must be compensated at a rate of at least 10% annually, which is higher than the average return of the S&P 500.[^12]
 
 ## Counterarguments:
 
 1. Global coordination on the 1% Treaty may be challenging due to differing national interests and priorities. However, the potential benefits of the Treaty, such as reduced catastrophic risks and increased medical research, provide a strong incentive for countries to cooperate.
 2. Some countries may attempt to cheat on the agreement by not fully reallocating 1% of their military budgets. However, the proposed auditing and verification mechanisms, such as satellite monitoring and on-site inspections, would help detect and deter cheating.
-3. The military-industrial complex may oppose the 1% Treaty due to the potential loss of funding. However, by outbidding defense contractors for their top lobbyists, the DAO can gain a lobbying advantage and counteract their opposition.
+3. The military-industrial complex may oppose the 1% Treaty due to the potential loss of funding. However, by outbidding military contractors for their top lobbyists, the DAO can gain a lobbying advantage and counteract their opposition.
 
 ## Proof:
 
@@ -74,7 +74,7 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 20. Medical research reduces death and suffering. (Axiom 3)
 21. The 1% Treaty increases medical research. (From 5)
 22. Therefore, the 1% Treaty reduces death and suffering. (From 19, 20, 21)
-23. Defense companies' lobbying ROI ranges from 333,233% to 399,900%. (From Premises 6, 7)
+23. Military contractors' lobbying ROI ranges from 333,233% to 399,900%. (From Premises 6, 7)
 24. Therefore, $20M in lobbying could secure $20B/year for the DAO based on typical lobbying returns. (From 23, Proposition 6)
 25. 1% of the population signing a petition has historically been sufficient for legislative adoption. (Premise 8)
 26. $20M in marketing could get 1% to sign based on typical customer acquisition costs. (Premise 8, Proposition 6)
@@ -84,9 +84,9 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 30. If the plan succeeds, the DAO would get $20B/year, far exceeding initial costs. (Proposition 7)
 31. Therefore, initial contributors could be compensated if needed. (From 30)
 32. Lobbyists are motivated by financial incentives and will work for the highest bidder. (Premise 9)
-33. The DAO could attempt to outbid defense contractors to hire their best lobbyists. (From 32, Proposition 8)
-34. Hiring defense contractors' lobbyists could reduce their lobbying capacity by 50% and increase the DAO's by 100%. (Proposition 8)
-35. Therefore, the DAO could gain a significant lobbying advantage over defense contractors. (From 33, 34)
+33. The DAO could attempt to outbid military contractors to hire their best lobbyists. (From 32, Proposition 8)
+34. Hiring military contractors' lobbyists could reduce their lobbying capacity by 50% and increase the DAO's by 100%. (Proposition 8)
+35. Therefore, the DAO could gain a significant lobbying advantage over military contractors. (From 33, 34)
 36. Contributors must be compensated at a rate greater than 10% annually to exceed returns from alternative investments like the S&P 500. (Proposition 9)
 37. Sufficient compensation will ensure funding to out-lobby the military-industrial complex. (From 36)
 38. Therefore, the DAO must offer returns greater than 10% to attract necessary funding. (From 37)
@@ -95,7 +95,7 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 
 The 1% Treaty, which reallocates a portion of military spending to medical research in a stable, decentralized, and verifiable way, would reduce catastrophic risks, increase resources for beneficial research, and yield significant humanitarian benefits. (See [strategy roadmap](strategy.md).) Given the exorbitant destructive capacity of current nuclear arsenals, safely reducing military budgets through agreements like the 1% Treaty is a reasonable goal.
 
-The plan to create a DAO, crowdfund $40 million, and lobby for the international 1% Treaty is logically sound and feasible based on the proven effectiveness of lobbying and the potential for crowdfunding. By outbidding defense contractors for their top lobbyists, the DAO could potentially reduce their lobbying capacity by 50% and increase its own by 100%, gaining a significant lobbying advantage. To attract the necessary funding to out-lobby the military-industrial complex, the DAO must offer annual returns greater than 10%, exceeding alternative investments like the S&P 500.
+The plan to create a DAO, crowdfund $40 million, and lobby for the international 1% Treaty is logically sound and feasible based on the proven effectiveness of lobbying and the potential for crowdfunding. By outbidding military contractors for their top lobbyists, the DAO could potentially reduce their lobbying capacity by 50% and increase its own by 100%, gaining a significant lobbying advantage. To attract the necessary funding to out-lobby the military-industrial complex, the DAO must offer annual returns greater than 10%, exceeding alternative investments like the S&P 500.
 
 Although implementing the 1% Treaty may face challenges such as global coordination difficulties and potential cheating by countries, the proposed auditing and verification mechanisms, along with the significant potential benefits, provide strong incentives for cooperation and compliance.
 
@@ -121,6 +121,6 @@ The Treaty would maintain geopolitical stability while massively increasing medi
 
 [^10]: Ord, T. (2020). The Precipice: Existential Risk and the Future of Humanity. Hachette Books.
 
-[^11]: Estimation based on the current lobbying expenditure and capacity of defense contractors.
+[^11]: Estimation based on the current lobbying expenditure and capacity of military contractors.
 
 [^12]: S&P Dow Jones Indices. (2021). S&P 500. https://www.spglobal.com/spdji/en/indices/equity/sp-500/
