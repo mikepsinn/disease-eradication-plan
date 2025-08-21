@@ -120,10 +120,33 @@ The ultimate test for a sophisticated investor is whether this opportunity provi
 - `EV = (Probability of Success * Upside) + (Probability of Failure * Downside)`
 - `EV (Bond Yield Only) = (0.70 * $14,000,000) + (0.30 * $0) = $9,800,000`
 
+### The Master Equation for Outperformance
+
+To be the world's best investment, the Risk-Adjusted Expected Value (`EV_victory`) must exceed the benchmark (`EV_benchmark`).
+
+The formula is:
+\[ (P_{\text{success}} \times V_{\text{upside}}) + (P_{\text{failure}} \times V_{\text{downside}}) > V_{\text{initial}} \times (1 + R_{\text{benchmark}}) \]
+
+**1. Calculate the Benchmark's Expected Value:**
+An investor putting \$10M into the Medallion Fund expects a value of:
+\[ EV_{\text{benchmark}} = \$10,000,000 \times (1 + 0.39) = \mathbf{\$13,900,000} \]
+
+**2. Solve for the Required Upside Value (`V_upside`):**
+Using our 70% success probability, we must deliver an upside value greater than the benchmark's EV:
+\[ (0.70 \times V_{\text{upside}}) + (0.30 \times \$0) > \$13,900,000 \]
+\[ V_{\text{upside}} > \frac{\$13,900,000}{0.70} \]
+\[ V_{\text{upside}} > \mathbf{\$19,857,143} \]
+
+**3. Calculate the Required ROI:**
+This means the net profit in a success scenario must be \$9,857,143. The required ROI is therefore:
+\[ \text{ROI}_{\text{needed}} = \left( \frac{\$19,857,143 - \$10,000,000}{\$10,000,000} \right) \times 100 = \mathbf{98.57\%} \]
+
+This calculation proves that to be statistically superior to the world's best fund, our success scenario must deliver a return of nearly 100%. A simple bond yield cannot achieve this.
+
 **Making it Competitive: The Governance Token Alpha**
 The bond yield alone does not beat the Medallion benchmark. The critical factor is the **governance power over the \$27B annual treasury**. This is the ultimate source of alpha for our investors.
 
-Unlike any other fund, our investors are buying control of a perpetual, multi-billion-dollar capital allocation engine. The financial value of this governance—to direct research, fund companies, and shape the future of global health—is an uncapped upside with no equivalent in traditional finance.
+Unlike any other fund, our investors are buying control of a perpetual, multi-billion-dollar capital allocation engine. The financial value of this governance—to direct research, fund companies, and shape the future of global health—is an uncapped upside with no equivalent in traditional finance. It is this "Governance Token Alpha" that is designed to deliver the **~99%+ ROI** required for outperformance.
 
 **Our Target:** We will structure the tranches of \$VICTORY bonds and their associated governance token allocations to ensure that the total risk-adjusted expected value for early investors is **at least 1% higher** than the Medallion Fund's 39% net annualized return. This is the core financial promise of the project.
 
