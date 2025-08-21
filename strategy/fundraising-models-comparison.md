@@ -44,12 +44,17 @@ We compare viable fundraising models against the Decentralized Institutes of Hea
 - **Pros:** Inclusive; good for community alignment.
 - **Cons:** Insufficient scale for our activation energy; heavy admin per dollar raised.
 
-### 5) Public token sale/ICO (utility or governance token)
-- **Fit:** Historically fast, but high enforcement and reputational risk; conflicts with election and securities constraints.
-- **Pros:** Potential for rapid global participation.
-- **Cons:** High likelihood of securities characterization; enforcement risk; volatile secondary markets; negative optics amid “pay‑to‑play” scrutiny.
+### 5) Public token sale / ICO / Fair launch (Gnosis Auction, LBP)
+- **Fit:** Token distribution through public sale or auction mechanisms (e.g., Gnosis Auction batched Dutch auctions; Balancer Liquidity Bootstrapping Pools).
+- **Pros:** Potential for rapid global participation; transparent price discovery in auctions; mitigates sniping/whale dominance vs. fixed‑price ICOs.
+- **Cons:** High likelihood of securities characterization; election‑law/optics risk; secondary‑market volatility; requires mature utility case to justify listing.
 
-### 6) Grant/Donation platforms (Gitcoin Grants, Optimism RetroPGF, foundation donations)
+### 6) Juicebox DAO campaign (ConstitutionDAO‑style)
+- **Fit:** Time‑boxed, on‑chain treasury raise via Juicebox with NFT receipts/perks; mainly donation‑based (no profit promises).
+- **Pros:** Very fast setup; strong memetic energy; public transparency; low legal risk if structured as pure donations with no ROI claims.
+- **Cons:** Donation caps; operational limits; not sized for \$1B+ activation energy; requires strict firewalling from U.S. election work.
+
+### 7) Grant/Donation platforms (Gitcoin Grants, Optimism RetroPGF, foundation donations)
 - **Fit:** Excellent for distributing funds to public goods; historically raised tens of millions, not billions.
 - **Pros:** Strong alignment with public goods ethos; transparent; community‑driven.
 - **Cons:** Not sized for \$1B+ activation energy; donation‑driven rather than return‑driven capital.
@@ -98,19 +103,29 @@ Hard cap and funnel:
 - Raise_RegCF = min(\$5,000,000, months_live × T × CTR × signup × KYC_pass × invest_rate × avg_ticket)
 - Benchmarks: avg_ticket \$100–\$500; portal throughput constrains T.
 
-### 5) Grants/Donations (Gitcoin/RetroPGF/Foundation)
+### 5) Juicebox DAO campaign
+
+- Raise_Juicebox = campaign_days × daily_uniques × conv_rate × avg_donation × match_multiplier
+- Benchmarks: ConstitutionDAO \$60M in weeks; but donation‑only; set conv_rate 0.2–1.0%, avg_donation \$50–\$500.
+
+### 6) Public token sale / Auction (Gnosis Auction, LBP)
+
+- Raise_Auction = min(demand_curve_at_clearing_price, compliance_haircut × ops_cap)
+- Notes: model with pre‑registration soft commits; apply large haircuts for securities/election‑law risk until counsel greenlights.
+
+### 7) Grants/Donations (Gitcoin/RetroPGF/Foundation)
 
 - Raise_Grants = Σ_rounds (expected_midpoint × match_multiplier)
 - Precedents: Gitcoin \$0.5–\$5M/round; RetroPGF 5–50M token‑equivalent over cycles; foundation gifts \$0.1–\$5M typical, rare 7–8 figures.
 
-### 6) Portfolio, Scenarios, and EV
+### 8) Portfolio, Scenarios, and EV
 
-- Total_Base = RegD_base + RegS_base + min(\$75M, RegA_base) + min(\$5M, RegCF_base) + Grants_base
+- Total_Base = RegD_base + RegS_base + min(\$75M, RegA_base) + min(\$5M, RegCF_base) + Juicebox_base + Auction_base + Grants_base
 - EV_Total = Σ_channels Σ_scenarios [amount_channel,scenario × prob_channel,scenario]
 - Policy/timeline adjustments: EV_adj = EV_Total × (1 − r_time) × (1 − r_policy)
 
 Calibration starters (12 months):
-- Reg D: \$250–\$400M; Reg S: \$100–\$250M; Reg A+: \$25–\$75M (6–12 months live); Reg CF: \$1–\$5M; Grants: \$2–\$10M.
+- Reg D: \$250–\$400M; Reg S: \$100–\$250M; Reg A+: \$25–\$75M (6–12 months live); Reg CF: \$1–\$5M; Juicebox: \$2–\$20M sprint; Auction (if ever used): monitor only until compliance greenlight; Grants: \$2–\$10M.
 
 ## Semiquantitative Scoring (Criteria Weights and Scores)
 
@@ -124,12 +139,13 @@ Scores are 1 (poor) to 5 (excellent). Weighted score = Σ(weight × score).
 | Reg S | 4 | 3 | 3 | 5 | 2 | 3 | 4 | 0.20×4 + 0.25×3 + 0.20×3 + 0.10×5 + 0.10×2 + 0.05×3 + 0.10×4 = **3.30** |
 | Reg A+ | 2 | 3 | 5 | 3 | 5 | 3 | 5 | 0.20×2 + 0.25×3 + 0.20×5 + 0.10×3 + 0.10×5 + 0.05×3 + 0.10×5 = **3.85** |
 | Reg CF | 3 | 1 | 5 | 2 | 5 | 4 | 5 | 0.20×3 + 0.25×1 + 0.20×5 + 0.10×2 + 0.10×5 + 0.05×4 + 0.10×5 = **3.15** |
-| Public token sale/ICO | 5 | 4 | 1 | 5 | 5 | 4 | 1 | 0.20×5 + 0.25×4 + 0.20×1 + 0.10×5 + 0.10×5 + 0.05×4 + 0.10×1 = **3.10** |
+| Public token sale/ICO/Auction (Gnosis/LBP) | 5 | 4 | 1 | 5 | 5 | 4 | 2 | 0.20×5 + 0.25×4 + 0.20×1 + 0.10×5 + 0.10×5 + 0.05×4 + 0.10×2 = **3.25** |
+| Juicebox DAO campaign | 5 | 2 | 4 | 4 | 5 | 5 | 4 | 0.20×5 + 0.25×2 + 0.20×4 + 0.10×4 + 0.10×5 + 0.05×5 + 0.10×4 = **3.95** |
 | Grants/Donations | 3 | 2 | 5 | 4 | 5 | 5 | 5 | 0.20×3 + 0.25×2 + 0.20×5 + 0.10×4 + 0.10×5 + 0.05×5 + 0.10×5 = **3.85** |
 
 Notes:
-- ICO/token sale scores reflect speed and reach, but are dragged down by compliance/optics risks.
-- Reg A+ and Grants both score highly overall but serve different purposes (investment vs. distribution/community).
+- Auction mechanisms improve fairness vs. fixed‑price ICOs but do not eliminate securities/optics risks without mature utility and counsel sign‑off.
+- Juicebox scores high on speed/inclusivity/optics for donation‑only sprints; not a substitute for institutional activation capital.
 
 ## Downside, Reversibility, and “Try & See” Costs
 
@@ -137,15 +153,16 @@ Notes:
 - **Reg S:** Sunk multi‑jurisdiction counsel \$0.3–\$1.0M; time 2–4 months; reversible with minimal optics risk.
 - **Reg A+:** If not qualified or under‑subscribed, sunk legal/audit \$0.8–\$2.0M; time 6–12 months. Still useful for reputation and future rounds.
 - **Reg CF:** Sunk \$50–\$200k; time 2–3 months; reputationally positive signal even if small.
-- **Public token sale/ICO:** High downside—enforcement, potential personal liability, reputational damage; not easily reversible. Use only as a monitored scenario, not as a primary path.
-- **Grants/Donations:** Low financial downside; time‑boxed campaigns (e.g., Juicebox‑style) can be run in parallel; reputationally positive.
+- **Public token sale/ICO/Auction:** High downside—enforcement, potential personal liability, reputational damage; not easily reversible. Use only as a monitored scenario with counsel.
+- **Juicebox DAO campaign:** Low financial downside; time‑boxed; reputationally positive if donation‑only with clear use‑of‑funds; firewall U.S. election operations.
+- **Grants/Donations:** Low financial downside; time‑boxed campaigns can be run in parallel; reputationally positive.
 
 ## Portfolio and Parallelization Plan
 
-- **Run in parallel (low conflict):** Reg D + Reg S + Grants/Donations; prep Reg A+ in background (audits, offering circular).
+- **Run in parallel (low conflict):** Reg D + Reg S + Grants/Donations + Juicebox campaign; prep Reg A+ in background (audits, offering circular).
 - **Gate to public:** Launch Reg A+ only after milestone de‑risking (platform live, pilot referendums, anchor investors).
 - **Community sprints:** Time‑boxed donation/NFT campaigns (no profit promises) to galvanize support and fund discrete goals; publish on‑chain dashboards/leaderboards.
-- **Monitor high‑risk paths:** Track regulatory shifts for token‑sale viability; do not deploy without counsel and clear green lights.
+- **Monitor high‑risk paths:** Track regulatory shifts for token‑sale/auction viability; do not deploy without counsel and clear green lights.
 
 ---
 
@@ -153,16 +170,16 @@ Notes:
 
 - **Gitcoin total distributed (\$65M+)**
   > “Gitcoin has distributed over \$65 million to projects through grants, bounties, and related products.”
-  > — Axios, 2022, [Crypto public goods funding](https://www.axios.com/2022/08/23/crypto-public-goods-green-pill-gitcoin-advocacy-funding)
+  > — Axios, 2022, [Crypto public goods funding](mdc:https://www.axios.com/2022/08/23/crypto-public-goods-green-pill-gitcoin-advocacy-funding)
 
 - **Optimism RetroPGF scale (50M OP)**
   > “Optimism has allocated more than 50 million OP tokens across multiple rounds of Retroactive Public Goods Funding.”
-  > — Business Insider (Markets), 2024, [RetroPGF funding](https://markets.businessinsider.com/news/currencies/the-next-stage-for-public-good-funding-in-crypto-1033787594)
+  > — Business Insider (Markets), 2024, [RetroPGF funding](mdc:https://markets.businessinsider.com/news/currencies/the-next-stage-for-public-good-funding-in-crypto-1033787594)
 
 - **BitGive Pineapple Fund donation (\$1M)**
   > “BitGive received a \$1 million donation from the Pineapple Fund in 2017–2018.”
-  > — Wikipedia, 2024, [BitGive Foundation](https://en.wikipedia.org/wiki/BitGive_Foundation)
+  > — Wikipedia, 2024, [BitGive Foundation](mdc:https://en.wikipedia.org/wiki/BitGive_Foundation)
 
 - **Reg A+ cap (\$75M/yr)**
   > “Tier 2 of Regulation A permits eligible issuers to offer up to \$75 million in a 12‑month period, subject to SEC qualification.”
-  > — SEC, 2024, [Regulation A](https://www.sec.gov/smallbusiness/exemptofferings/rega)
+  > — SEC, 2024, [Regulation A](mdc:https://www.sec.gov/smallbusiness/exemptofferings/rega)
