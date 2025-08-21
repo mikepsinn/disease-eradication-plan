@@ -74,7 +74,7 @@ The 1% Treaty initiative faces three critical legal challenges: **foreign nation
 - **Decentralized Network:** No central entity controlling token value
 
 **Fundraising Strategy: A Two-Phase Approach for Speed and Compliance**
-Our fundraising model is designed to be both agile and legally robust, separating the high-risk seed phase from a broader public offering. This strategy directly contrasts with the legally and ethically questionable "pay-to-play" token models (e.g., the `$TRUMP` coin scandal of 2025), which have led to calls for new legislation like the "End Crypto Corruption Act." Our approach uses established, transparent SEC frameworks.
+Our fundraising model is designed to be both agile and legally robust, separating the high-risk seed phase from a broader public offering.
 
 **Phase 1: Initial Seed Capital via Private Placement (Reg D & Reg S)**
 The initial, high-risk "activation energy" will be raised via a concurrent private placement.
