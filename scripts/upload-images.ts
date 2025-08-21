@@ -17,7 +17,7 @@ const s3Client = new S3Client({
 // Get configuration from environment variables
 const S3_AWS_BUCKET = process.env.S3_AWS_BUCKET || '';
 const IMAGE_DIR = process.env.IMAGE_DIR || 'img';
-const IMAGE_CATALOG_PATH = 'docs/assets/image-catalog.json';
+const IMAGE_CATALOG_PATH = 'assets/image-catalog.json';
 
 interface ImageCatalog {
   lastUpdated: string;

@@ -43,10 +43,10 @@ When in doubt, place the doc where its primary decision‑maker would look (lega
 ## Linking & anchors
 
 - Use page‑relative markdown links (./, ../), not repo‑root or backticked paths
-- Examples (from a file in `docs/`):
-  - Same folder: `[Crypto Intake SOP](./crypto-intake-sop.md)`
-  - Parent folder: `[Legal Compliance Framework](../strategy/legal-compliance-framework.md)`
-  - Sibling domain: `[Fundraising Models Comparison](../strategy/fundraising-models-comparison.md)`
+- Examples (from a file in `strategy/`):
+  - Same folder: `[Fundraising Models Comparison](./fundraising-models-comparison.md)`
+  - Parent folder: `[Legal Compliance Framework](../regulatory/legal-compliance-framework.md)`
+  - Sibling domain: `[Victory Bond Investment Thesis](../economic-models/victory-bond-investment-thesis.md)`
 - Link to sections with `#heading-slug` anchors when helpful
 
 ## Sourcing & citations (for quantified claims)
@@ -75,7 +75,7 @@ When in doubt, place the doc where its primary decision‑maker would look (lega
 
 ## Migration note (deprecating docs/)
 
-- The current `docs/` folder is legacy. New files should follow the map above. Existing files in `docs/` should be moved to `strategy/`, `regulatory/`, or `operations/` during routine edits, with page‑relative links updated.
+The `docs/` folder has been deprecated and removed. New files should follow the map above. All previous contents of `docs/` have been moved to their appropriate locations in `strategy/`, `regulatory/`, `operations/`, `reference/`, `architecture/`, and `features/`.
 
 ## Pull request checklist
 
