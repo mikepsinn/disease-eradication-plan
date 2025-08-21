@@ -16,8 +16,8 @@
           "type": "pairwise",
           "text": "If you had $100 in tax dollars to allocate, how would you distribute it between the following two areas?",
           "items": [
-            {"id": "military", "label": "Military Defense"},
-            {"id": "medical", "label": "Medical Research"}
+            {"id": "military", "label": "Military Spending"},
+            {"id": "healthcare", "label": "Healthcare Research"}
           ],
           "validation": {
             "total": 100,
@@ -202,7 +202,7 @@
           "type": "pairwise",
           "text": "You are allocating $100 between two areas:",
           "items": [
-            {"id": "defense", "label": "Department of Defense: Funding for the military."},
+            {"id": "defense", "label": "The Pentagon: Funding for the military."},
             {"id": "health", "label": "Department of Health & Human Services: Funding for NIH, CDC, and public health programs."}
           ],
           "validation": {

@@ -51,6 +51,12 @@ This creates a virtuous cycle:
 3.  Nations, seeing the immense benefit, sign the 1% Treaty.
 4.  Treaty contributions flow back to the DIH Treasury, repaying the original bondholders.
 
-## Governance: A Decentralized Autonomous Organization (DAO)
+## Governance: Automated-by-default, DAO as emergency override
 
-While the subsidy allocation is algorithmic, the governance of the DIH Treasury's other functions—such as prioritizing infrastructure projects, setting prize terms, and approving bounty payouts—is managed by a Decentralized Autonomous Organization (DAO). Stakeholders in the dFDA ecosystem, potentially including `\$VICTORY` Bond holders, can participate in governance decisions, ensuring the Treasury remains aligned with the community's interests and priorities. For custody and controls, see [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md).
+Subsidy allocation and most treasury functions execute via smart contracts with verifiable inputs (oracles) and transparent rules. Stakeholders participate through credentialed, timeboxed signaling; on-chain executors apply changes automatically. A narrowly scoped, time-limited DAO acts as an emergency override with public justification and automatic sunset. For custody and controls, see [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md).
+
+## Organizational Structure
+
+The DIH is expanding into a comprehensive ecosystem that mirrors the NIH structure while offering decentralized governance,  titles, and community-specific focus areas. This expansion serves as a strategic recruitment tool for the 1% Treaty referendum effort.
+
+For the complete organizational structure, including all sub-agencies,  titles, and implementation roadmap, see [DIH Organizational Structure](dih-organizational-structure.md).

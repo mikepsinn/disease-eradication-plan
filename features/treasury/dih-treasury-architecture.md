@@ -15,11 +15,11 @@ The Decentralized Institutes of Health (DIH) operates a global treasury to subsi
 
 ## Design Goals
 
-- **Security first**: Defense-in-depth across keys, approvals, and execution.
-- **Geographic and institutional diversity**: Signers distributed across jurisdictions and sectors.
-- **Minimize single points of failure**: Multiple clients, infra, and operational providers.
+- **True decentralization from day one**: No human signers controlling treasury operations.
+- **Eliminate human targets**: No individuals who can be kidnapped, threatened, or corrupted.
+- **Proven at scale**: Use battle-tested models from MakerDAO, Uniswap, and Aave managing billions.
 - **Transparency by default**: On-chain policies, open reporting, real-time dashboards.
-- **Progressive decentralization**: Clear milestones to reduce admin key powers over time.
+- **Community sovereignty**: Every \$VICTORY token holder has direct control over treasury decisions.
 
 ## Chain and Asset Strategy
 
@@ -27,24 +27,25 @@ The Decentralized Institutes of Health (DIH) operates a global treasury to subsi
 - **Stable unit-of-account**: Diversified basket of reputable, fully-backed stablecoins and short-duration treasuries via tokenized T-bills; explicit counterparty risk limits.
 - **Segregated wallets**: Distinct vaults for operating budget, subsidies, bounties, and reserves.
 
-## Custody: Multi-Sig and Threshold Signatures
+## Decentralized Treasury Control: Proven DAO Model
 
-- **Primary control**: A battle-tested multi-signature safe with configurable modules and spending limits (e.g., Gnosis Safe).
-  - Documentation: [Gnosis Safe](mdc:https://docs.safe.global/)
-- **Threshold signing (advanced)**: Adopt a standard threshold signature scheme (e.g., FROST) for key ceremonies where appropriate.
-  - Reference: [IETF CFRG draft: FROST](mdc:https://datatracker.ietf.org/doc/draft-irtf-cfrg-frost/)
+- **Primary control**: \$VICTORY token holder governance with automated smart contract execution (following MakerDAO/Uniswap model).
+- **No human signers**: Treasury operations controlled directly by community votes, eliminating kidnapping/corruption targets.
+- **Governance infrastructure**: Gnosis Safe modules or similar that execute based on verified on-chain voting results.
 
-### Signer Set and Policies
+### Token Holder Governance
 
-- **n-of-m policy**: Start with 6-of-11; minimum 1 signer per region across at least 4 regions; maximum 2 signers per entity.
-- **Rotation**: Quarterly key rotation window; slashing/expulsion policy for inactivity or policy breaches.
-- **Conflict-of-interest disclosures**: Public registry for all signers.
+- **Voting weight**: Proportional to \$VICTORY token holdings with quadratic voting options to prevent whale dominance.
+- **Proposal system**: Any token holder can propose spending, with minimum token threshold to prevent spam.
+- **Execution**: Smart contracts automatically execute approved proposals after timelock period.
+- **Emergency governance**: Higher threshold (67%+ of circulating tokens) required for emergency actions.
 
 ### Safeguards
 
-- **Timelocks**: Mandatory 24–72h delay for large transfers above policy thresholds.
-- **Guardians**: Independent guardian module to pause non-critical modules under narrowly defined conditions.
-- **Spending limits**: Daily/weekly caps per vault; autonomous micro-spend module for low-risk bounties.
+- **Timelocks**: Mandatory 24–72h delay for large transfers above policy thresholds (no human intervention required).
+- **Automated circuit breakers**: Smart contract modules that pause operations based on anomaly detection.
+- **Spending limits**: Daily/weekly caps per vault enforced by smart contracts; autonomous micro-spend module for low-risk bounties.
+- **Token holder override**: Emergency pause/unpause controlled by supermajority token vote, not individuals.
 
 ## Governance Interfaces
 

@@ -141,7 +141,7 @@ The FDAi should then analyze and anonymize the data and publish the results for 
 
 ## Citizen Science
 
-Anyone should be able to create a study, become a prestigious scientist, get a link, and invite all their friends to join!
+Anyone should be able to create a study, earn recognition for scientific contributions, get a link, and invite all their friends to join!
 
 [Create Study](https://safe.fdai.earth/app/public/#/app/study-creation)
 
