@@ -51,9 +51,11 @@ This document serves as the content and creative brief. The aesthetic should be 
 
 ---
 
-# War is fucking stupid. Diseases suck.
+# Part 1: The Unacceptable Reality
 
-# But governments spend 40X more on militarism than finding cures for diseases.
+## War is fucking stupid. Diseases suck.
+
+## But governments spend 40X more on militarism than finding cures for diseases.
 
 ---
 
@@ -82,84 +84,13 @@ Which do you want?
 
 ---
 
-## Here's How We Fix It:
+## Costs of War vs Disease (Context)
 
-- **Core Goal: Make curing people more profitable than killing them.** 
+![Global Military Spending](./1-percent-treaty/global-military-spending-chart.png)
 
-**Step 1:** Pay people \$0.20 for each person who votes on a global referendum via their link.
+![Military vs Medical Research Spending](./1-percent-treaty/war-military-spending-vs-medical-research-bar-chart.svg)
 
-**Step 2:** When we hit [3.5% of humanity](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), we have proof the world wants this.
-
-**Step 3:** Build a legal political engine: independent‑expenditure committees (Super PACs and international equivalents) that pledge massive support for candidates who vote with their district’s referendum result—and fund challengers against those who defy it (no coordination).
-
-**Step 4:** The treasury funds EVERYONE in health - universities, pharma, nonprofits, government agencies - through democratically controlled funding pools.
-
----
-
-## Why This Works
-
-**Human nature unchanged:** People respond to incentives. We make the right choice profitable.
-
-**Power follows money:** When healing pays better than killing, power shifts to healers.
-
-**Safety in numbers:** All nations move 1% together. No one gains advantage or loses ground.
-
-The strategic risk of non-compliance by some nations is minimal. Global military spending is already highly asymmetric; a 1% budget shift does not materially alter the balance of power.
-
-The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures)**. The U.S. contribution to this plan is **\$10 billion per year**. We are asking to redirect an amount equal to **0.4%** of the money they have already lost.
-
-**Proof before action:** The referendum shows the world's will before any nation commits.
-
-**Existing institutions win:** Universities, hospitals, research centers—all receive more funding than ever before.
-
----
-
-## Why This Approach?
-
-**1. "Why not just rely on philanthropy?"**
-
-Relying on donations would force us to compete with the very ecosystem we aim to support. Philanthropy is a finite, zero-sum game. A massive fundraising campaign for the DIH would inevitably cannibalize the existing pool of donations, effectively stealing funds from the thousands of vital health charities already doing critical work. This would harm the cause, not help it.
-
-Our goal is not to reshuffle a small pot of charitable giving. It is to tap into the multi-trillion dollar firehose of government spending.
-
-Furthermore, philanthropy treats the symptoms of a broken system. It doesn't change the underlying political-economic incentives that perpetuate the problem. We are not just trying to fund more research; we are trying to permanently shift the global allocation of capital and talent from destruction to creation. Only a systemic reallocation can achieve that.
-
-**2. "Why redirect military spending? Why not just increase the health budget?"**
-
-This is not about nominal dollar figures; it is about the **real allocation of a finite pie of resources**. The world's top scientists, engineers, and manufacturing capacity are a limited resource. What matters is not the absolute dollar amount spent on health, but the *percentage* of our collective talent and capital dedicated to it, as this is the true surrogate for resource allocation.
-
-If we simply "increase health spending" by 10% through new appropriations, but the central bank also expands the money supply and the military budget grows by 10%, **no real resources have been shifted**. It's an inflationary wash. The same scientists and factories will continue to build weapons because that's where the larger share of the economic pie remains.
-
-A **direct, treaty-bound reallocation** is the only mechanism that forces a true shift of these finite resources. By cutting 1% from military budgets, we are not just moving dollars; we are freeing up the physicists, data scientists, and supply chains that were serving the military-industrial complex and making them available to cure Alzheimer's. This is how you change the game.
-
----
-
-## Why 1% Less Military = More Security
-
-**Modern weapons make everyone less safe:**
-- Nuclear weapons: [1% fewer = ~120 fewer nukes worldwide](https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
-- AI weapons systems: Reduce global AI arms race escalation  
-- Cyber warfare tools: Less proliferation of attack capabilities
-
-**Real security threats are health-based:**
-- [Pandemics kill more people than wars](https://ourworldindata.org/covid-deaths) (COVID-19: 7M+ deaths vs. annual conflict deaths ~100K)
-- Antibiotic resistance could kill [10M/year by 2050](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
-- [Mental health crises destabilize societies](https://www.who.int/news-room/fact-sheets/detail/mental-disorders) more than foreign armies
-
-**1% reallocation = stronger nations:**
-- Healthier populations are more productive
-- Medical breakthroughs boost economic competitiveness
-- Reduced healthcare costs free up MORE budget for military spending if needed
-
-### The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
-
-Even if the Decentralized Institutes of Health were a completely inefficient failure and dumped every single dollar into the ocean, the world would *still* be better off.
-
-Why?
-
-Because we would still have **1% fewer nuclear weapons**. We would still have a **1% slower AI arms race**. We would still have a **1% reduction in the global capacity for organized violence.**
-
-The worst possible outcome of this plan—total waste—is still a net gain for global security. The best possible outcome is that we also cure cancer.
+See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI.
 
 ---
 
@@ -197,96 +128,21 @@ We choose to make saving lives more profitable than taking them.
 
 ---
 
-## The Political Economics
+# Part 2: The Engine of Change
 
-**Military contractors' lobbying ROI:**
-- [\$1.1 billion lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022) (2001-2021) → [\$2.02 trillion contracts](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
-- **Return: \$1,813 per \$1 spent on lobbying**
+## Here's How We Fix It:
 
-**What we're asking politicians to redirect:**
-- 1% of \$2.72T = **\$27 billion annually** in military contracts
-- Military contractors would spend ~**\$15 million in lobbying** to defend that revenue
+- **Core Goal: Make curing people more profitable than killing them.** 
 
-**Our counter-offer to politicians (legal and effective):**
-- Independent expenditures for campaigns: Massive ad buys and ground game support for candidates who vote with their district’s verified referendum tally; equivalent spending against those who defy it (no coordination).
-- Voter coalition: The [3.5%](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate provides electoral cover.
+**Step 1:** Pay people \$0.20 for each person who votes on a global referendum via their link.
 
+**Step 2:** When we hit [3.5% of humanity](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), we have proof the world wants this.
 
-**The math:** We outbid military contractors on expected electoral value while delivering massive health benefits to constituents.
+**Step 3:** Build a legal political engine: independent‑expenditure committees (Super PACs and international equivalents) that pledge massive support for candidates who vote with their district’s referendum result—and fund challengers against those who defy it (no coordination).
+
+**Step 4:** The treasury funds EVERYONE in health - universities, pharma, nonprofits, government agencies - through democratically controlled funding pools.
 
 ---
-
-## Why This Isn't Completely Insane
-
-With regard to difficulty and complexity, it doesn't matter. The alternative is death, disease, and possible human extinction. We already have a proof of concept that shows this works in a fossil fuel industry that receives \$7T in subsidies every year.
-
-**1. "This sounds like a cynical, illegal bribe. You'll have no soul."**
-
-*   **Reality:** The current system of "legal" lobbying is a slow, inefficient bribe that produces war, disease, and existential risks like nuclear apocalypse or Skynet. Our transparent incentives produce peace, health, and human flourishing. In a world where leaders fund campaigns with crypto and sell access, we're applying market realities to save lives. The consequentialist math is clear: continued misallocation leads to preventable deaths, destruction, and possible extinction. Our "soul" is in the outcome: preventing that fate by making healing more profitable than killing.
-
-**2. "A global referendum is not a real protest. It's a flawed analogy."**
-
-*   **Reality:** A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy"; it is the largest, most powerful political mandate in human history. It is a direct threat to the power of traditional media and captured political parties. It is a political entity in its own right, capable of swinging elections and forcing change. Clicks on a screen are the new boots on the ground.
-
-**3. "A government's promise to pay is unenforceable. This is a fantasy."**
-
-*   **Reality:** Legal enforceability is a relic of a court-based system. Financial enforceability is what matters now. In a world of global capital markets, a sovereign nation defaulting on a treaty obligation backed by the world's most powerful investors is unthinkable. The financial cost of being blacklisted would be far greater than the 1% redirection. The "full faith and credit" of the global elite is a stronger guarantee than any court ruling.
-
-**4. "This is too operationally complex to build."**
-
-*   **Reality:** The complexity is the moat. Building a trustless, global-scale system for political action is difficult, but it is no more difficult than building the autonomous weapons systems currently being funded. The difference is that our platform is designed to build consensus and unlock human potential, not to create more efficient ways to kill.
-
-**5. "This is politically impossible - you can't just redirect military budgets by referendum"**
-
-*   **Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The \$7T fossil fuel subsidy proof-of-concept shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
-
-**6. "You're assuming governments will honor treaty commitments when they don't honor existing ones"**
-
-*   **Reality:** Existing treaties fail because they lack enforcement mechanisms. Our system creates financial enforcement through global capital markets - a nation that defaults faces immediate economic consequences far greater than the 1% redirection. The "full faith and credit" of global investors is more reliable than international courts that have no real power.
-
-**7. "The 3.5% rule applies to civil resistance movements, not global online referendums"**
-
-*   **Reality:** The 3.5% rule demonstrates that mass participation creates political legitimacy. Online participation translates to real political pressure when it's verifiable, permanent, and tied to electoral consequences. A cryptographically secure list of 280 million verified supporters becomes a political entity that candidates must respect or face electoral consequences.
-
-**8. "Independent expenditures don't work against entrenched incumbents with deep pockets"**
-
-*   **Reality:** Independent expenditures work when they're massive and targeted. We're not competing dollar-for-dollar with military contractors - we're creating a system where supporting the treaty becomes the politically safer choice than opposing it. When 3.5% of humanity has voted for this, opposing it becomes electoral suicide.
-
-**9. "You're competing with military contractors who have decades of relationships and influence"**
-
-*   **Reality:** Military contractors have influence because they deliver votes and money. We're creating a system that delivers more votes and more money to politicians who support the treaty. The relationships follow the power - when healing becomes more profitable than killing, the political class will adapt. We're not fighting the existing system; we're making it work for us.
-
-**10. "How do you prevent waste and ensure the money actually helps patients?"**
-
-*   **Reality:** The decentralized FDA uses [decentralized pragmatic trials that cost $500 per patient vs. $41,000 traditional trials](../reference/recovery-trial.md) - an 80X efficiency improvement proven by the Oxford RECOVERY trial. Compare this to the NIH RECOVER initiative: $1.6B budget, $53,333 per patient, zero completed trials in 4 years. With the same $1.6B budget, the dFDA could run 2,800 trials enrolling 2.8 million patients vs. NIH's zero completed trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
-
-**11. "How does this help patients vs. just funding more bureaucracy?"**
-
-*   **Reality:** The decentralized FDA puts money directly into patients' hands through algorithmic subsidy allocation that maximizes QALYs gained per dollar, disease burden, and patient financial need. Unlike traditional NIH grants that fund institutions based on political connections, this ensures trials happen where the health impact is highest. Patients get subsidized access to cutting-edge treatments while contributing to research that benefits everyone.
-
-**12. "What's the proof this works better than current NIH funding?"**
-
-*   **Reality:** The Oxford RECOVERY trial saved over 1 million lives globally at $500 per patient. The NIH RECOVER initiative spent $53,333 per patient and completed zero trials in 4 years. The dFDA's algorithmic subsidy allocation would have funded 3,200 RECOVERY-style trials with the same budget that NIH used to complete zero trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
-
----
-
-## Investment Required vs. Returns
-
-**Total Implementation Cost:** \$1.2-2.5B over 36 months
-
-**What This Buys:**
-- Global referendum platform (\$56M for 280M signatures at \$0.20 each)
-- Independent expenditures in priority elections (\$800M-1.5B)
-- Platform development and pilot programs (\$250-400M Phase 1)
-- Legal compliance and treaty framework (\$100-200M)
-
-**Annual Returns Once Operational:** \$27B+ per year from 1% military budget redirections
-
-**ROI Timeline:** 18-36 months after first treaty ratification
-
-**Break-even Analysis:** Even if only 5 major countries participate (US, EU, UK, Japan, Canada), that's \$8.5B annually vs. \$2.5B total investment = 3.4X return in year one alone.
-
-**The Math:** We're asking for \$2.5B to redirect \$27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
 
 ## Activation Energy Sequence: Who We Bribe First
 
@@ -318,6 +174,23 @@ With regard to difficulty and complexity, it doesn't matter. The alternative is 
 - **Why they bite:** 280M verified voters + overwhelming campaign funding vs. military contractors' \$15M lobbying budget
 
 **The Compounding Effect:** Each phase funds the next. Seed investors control governance of \$27B treasury. Token buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
+
+---
+
+## The Treasury Model
+
+**[\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
+
+**[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** Democratic treasury that funds specialized programs for each health area.
+
+**Specialized programs fund existing institutions:** 
+- Decentralized Institute of Mental Health → funds universities, pharma, nonprofits working on depression, anxiety, etc.
+- Decentralized Institute of Cancer Research → funds MD Anderson, pharmaceutical companies, patient advocacy groups
+- Decentralized Institute of Aging → funds longevity research at every institution
+
+**Everyone gets more money. No one gets displaced.**
+
+---
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
 
@@ -370,6 +243,45 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ---
 
+# Part 3: The Strategic Blueprint
+
+## Why This Works
+
+**Human nature unchanged:** People respond to incentives. We make the right choice profitable.
+
+**Power follows money:** When curing people pays better than killing them, power shifts to healers.
+
+**Safety in numbers:** All nations move 1% together. No one gains advantage or loses ground.
+
+The strategic risk of non-compliance by some nations is minimal. Global military spending is already highly asymmetric; a 1% budget shift does not materially alter the balance of power.
+
+The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures)**. The U.S. contribution to this plan is **\$10 billion per year**. We are asking to redirect an amount equal to **0.4%** of the money they have already lost.
+
+**Proof before action:** The referendum shows the world's will before any nation commits.
+
+**Existing institutions win:** Universities, hospitals, research centers—all receive more funding than ever before.
+
+---
+
+## The Political Economics
+
+**Military contractors' lobbying ROI:**
+- [\$1.1 billion lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022) (2001-2021) → [\$2.02 trillion contracts](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
+- **Return: \$1,813 per \$1 spent on lobbying**
+
+**What we're asking politicians to redirect:**
+- 1% of \$2.72T = **\$27 billion annually** in military contracts
+- Military contractors would spend ~**\$15 million in lobbying** to defend that revenue
+
+**Our counter-offer to politicians (legal and effective):**
+- Independent expenditures for campaigns: Massive ad buys and ground game support for candidates who vote with their district’s verified referendum tally; equivalent spending against those who defy it (no coordination).
+- Voter coalition: The [3.5%](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate provides electoral cover.
+
+
+**The math:** We outbid military contractors on expected electoral value while delivering massive health benefits to constituents.
+
+---
+
 ## Referendums vs Independent Expenditures
 
 - **Referendums (where binding and timely):** Highest legitimacy; durable mandate; use when national or state mechanisms exist and timelines are practical.
@@ -384,6 +296,157 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 - **No quid‑pro‑quo contracts:** No smart‑contract triggers tied to legislative votes. Rewards are independent expenditures based on public, verified district will.
 
 ---
+
+## Implementation Roadmap
+
+**Phase 1 (Months 1-12):** Build global referendum platform; secure initial \$250M financing tranche; launch in 5 pilot countries.
+
+**Phase 2 (Months 12-24):** Achieve 3.5% global participation; begin independent expenditures in priority elections; first binding referendum votes.
+
+**Phase 3 (Months 24-36):** Secure first national treaty commitments; establish DIH treasury operations; begin institutional funding.
+
+**Phase 4 (Months 36-48):** Scale to major powers (US, EU, China); achieve \$27B+ annual inflows; full operational deployment.
+
+**Phase 5 (Years 4-5):** Evaluate expansion beyond 1%; measure health outcomes; consider additional global challenges.
+
+**Key Gates:** 100M referendum participants → first \$500M independent expenditure cycle → first treaty ratification → first \$1B disbursement.
+
+---
+
+## Investment Required vs. Returns
+
+**Total Implementation Cost:** \$1.2-2.5B over 36 months
+
+**What This Buys:**
+- Global referendum platform (\$56M for 280M signatures at \$0.20 each)
+- Independent expenditures in priority elections (\$800M-1.5B)
+- Platform development and pilot programs (\$250-400M Phase 1)
+- Legal compliance and treaty framework (\$100-200M)
+
+**Annual Returns Once Operational:** \$27B+ per year from 1% military budget redirections
+
+**ROI Timeline:** 18-36 months after first treaty ratification
+
+**Break-even Analysis:** Even if only 5 major countries participate (US, EU, UK, Japan, Canada), that's \$8.5B annually vs. \$2.5B total investment = 3.4X return in year one alone.
+
+**The Math:** We're asking for \$2.5B to redirect \$27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
+
+---
+
+## Financing Structure (For Investors)
+
+**Total Capital Need:** \$1.2-2.5B over 36 months, deployable in tranches tied to achievement gates.
+
+**Victory Notes (Senior, 60% of capital):** 6-9% coupon post-treaty commitments; secured by assigned government receivables; 3-5 year tenor.
+
+**Mezzanine (30% of capital):** 12-16% target IRR; step-up coupons on delays; performance kickers tied to verified savings.
+
+**First-Loss/Guarantee (10% of capital):** Philanthropic/PRI capital at 0-5% to de-risk senior tranches; absorbs political/execution risk.
+
+**Phase 1 Requirement:** \$250-400M for global platform, pilot countries, and first electoral cycles. Senior/mezz investors enter at higher yields (10-20%) until binding government commitments de-risk the structure.
+
+**Repayment Source:** Assigned 1% military budget redirections from participating governments; estimated \$27B+ annual once operational.
+
+---
+
+## Why 1% Less Military = More Security
+
+**Modern weapons make everyone less safe:**
+- Nuclear weapons: [1% fewer = ~120 fewer nukes worldwide](https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
+- AI weapons systems: Reduce global AI arms race escalation  
+- Cyber warfare tools: Less proliferation of attack capabilities
+
+**Real security threats are health-based:**
+- [Pandemics kill more people than wars](https://ourworldindata.org/covid-deaths) (COVID-19: 7M+ deaths vs. annual conflict deaths ~100K)
+- Antibiotic resistance could kill [10M/year by 2050](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
+- [Mental health crises destabilize societies](https://www.who.int/news-room/fact-sheets/detail/mental-disorders) more than foreign armies
+
+**1% reallocation = stronger nations:**
+- Healthier populations are more productive
+- Medical breakthroughs boost economic competitiveness
+- Reduced healthcare costs free up MORE budget for military spending if needed
+
+### The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
+
+Even if the Decentralized Institutes of Health were a completely inefficient failure and dumped every single dollar into the ocean, the world would *still* be better off.
+
+Why?
+
+Because we would still have **1% fewer nuclear weapons**. We would still have a **1% slower AI arms race**. We would still have a **1% reduction in the global capacity for organized violence.**
+
+The worst possible outcome of this plan—total waste—is still a net gain for global security. The best possible outcome is that we also cure cancer.
+
+---
+
+# Part 4: Objections & Rebuttals
+
+## Why This Approach?
+
+**1. "Why not just rely on philanthropy?"**
+
+Relying on donations would force us to compete with the very ecosystem we aim to support. Philanthropy is a finite, zero-sum game. A massive fundraising campaign for the DIH would inevitably cannibalize the existing pool of donations, effectively stealing funds from the thousands of vital health charities already doing critical work. This would harm the cause, not help it.
+
+Our goal is not to reshuffle a small pot of charitable giving. It is to tap into the multi-trillion dollar firehose of government spending.
+
+Furthermore, philanthropy treats the symptoms of a broken system. It doesn't change the underlying political-economic incentives that perpetuate the problem. We are not just trying to fund more research; we are trying to permanently shift the global allocation of capital and talent from destruction to creation. Only a systemic reallocation can achieve that.
+
+**2. "Why redirect military spending? Why not just increase the health budget?"**
+
+This is not about nominal dollar figures; it is about the **real allocation of a finite pie of resources**. The world's top scientists, engineers, and manufacturing capacity are a limited resource. What matters is not the absolute dollar amount spent on health, but the *percentage* of our collective talent and capital dedicated to it, as this is the true surrogate for resource allocation.
+
+If we simply "increase health spending" by 10% through new appropriations, but the central bank also expands the money supply and the military budget grows by 10%, **no real resources have been shifted**. It's an inflationary wash. The same scientists and factories will continue to build weapons because that's where the larger share of the economic pie remains.
+
+A **direct, treaty-bound reallocation** is the only mechanism that forces a true shift of these finite resources. By cutting 1% from military budgets, we are not just moving dollars; we are freeing up the physicists, data scientists, and supply chains that were serving the military-industrial complex and making them available to cure Alzheimer's. This is how you change the game.
+
+## Why This Isn't Completely Insane
+
+**1. "This sounds like a cynical, illegal bribe. You'll have no soul."**
+
+*   **Reality:** The current system of "legal" lobbying is a slow, inefficient bribe that produces war, disease, and existential risks like nuclear apocalypse or Skynet. Our transparent incentives produce peace, health, and human flourishing. In a world where leaders fund campaigns with crypto and sell access, we're applying market realities to save lives. The consequentialist math is clear: continued misallocation leads to preventable deaths, destruction, and possible extinction. Our "soul" is in the outcome: preventing that fate by making healing more profitable than killing.
+
+**2. "A global referendum is not a real protest. It's a flawed analogy."**
+
+*   **Reality:** A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy"; it is the largest, most powerful political mandate in human history. It is a direct threat to the power of traditional media and captured political parties. It is a political entity in its own right, capable of swinging elections and forcing change. Clicks on a screen are the new boots on the ground.
+
+**3. "A government's promise to pay is unenforceable. This is a fantasy."**
+
+*   **Reality:** Legal enforceability is a relic of a court-based system. Financial enforceability is what matters now. In a world of global capital markets, a sovereign nation defaulting on a treaty obligation backed by the world's most powerful investors is unthinkable. The financial cost of being blacklisted would be far greater than the 1% redirection. The "full faith and credit" of the global elite is a stronger guarantee than any court ruling.
+
+**4. "This is too operationally complex to build."**
+
+*   **Reality:** The complexity is the moat. Building a trustless, global-scale system for political action is difficult, but it is no more difficult than building the autonomous weapons systems currently being funded. The difference is that our platform is designed to build consensus and unlock human potential, not to create more efficient ways to kill.
+
+**5. "This is politically impossible - you can't just redirect military budgets by referendum"**
+
+*   **Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The \$7T fossil fuel subsidy proof-of-concept shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
+
+**6. "You're assuming governments will honor treaty commitments when they don't honor existing ones"**
+
+*   **Reality:** Existing treaties fail because they lack enforcement mechanisms. Our system creates financial enforcement through global capital markets - a nation that defaults faces immediate economic consequences far greater than the 1% redirection. The "full faith and credit" of global investors is more reliable than international courts that have no real power.
+
+**7. "The 3.5% rule applies to civil resistance movements, not global online referendums"**
+
+*   **Reality:** The 3.5% rule demonstrates that mass participation creates political legitimacy. Online participation translates to real political pressure when it's verifiable, permanent, and tied to electoral consequences. A cryptographically secure list of 280 million verified supporters becomes a political entity that candidates must respect or face electoral consequences.
+
+**8. "Independent expenditures don't work against entrenched incumbents with deep pockets"**
+
+*   **Reality:** Independent expenditures work when they're massive and targeted. We're not competing dollar-for-dollar with military contractors - we're creating a system where supporting the treaty becomes the politically safer choice than opposing it. When 3.5% of humanity has voted for this, opposing it becomes electoral suicide.
+
+**9. "You're competing with military contractors who have decades of relationships and influence"**
+
+*   **Reality:** Military contractors have influence because they deliver votes and money. We're creating a system that delivers more votes and more money to politicians who support the treaty. The relationships follow the power - when healing becomes more profitable than killing, the political class will adapt. We're not fighting the existing system; we're making it work for us.
+
+**10. "How do you prevent waste and ensure the money actually helps patients?"**
+
+*   **Reality:** The decentralized FDA uses [decentralized pragmatic trials that cost $500 per patient vs. $41,000 traditional trials](../reference/recovery-trial.md) - an 80X efficiency improvement proven by the Oxford RECOVERY trial. Compare this to the NIH RECOVER initiative: $1.6B budget, $53,333 per patient, zero completed trials in 4 years. With the same $1.6B budget, the dFDA could run 2,800 trials enrolling 2.8 million patients vs. NIH's zero completed trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
+
+**11. "How does this help patients vs. just funding more bureaucracy?"**
+
+*   **Reality:** The decentralized FDA puts money directly into patients' hands through algorithmic subsidy allocation that maximizes QALYs gained per dollar, disease burden, and patient financial need. Unlike traditional NIH grants that fund institutions based on political connections, this ensures trials happen where the health impact is highest. Patients get subsidized access to cutting-edge treatments while contributing to research that benefits everyone.
+
+**12. "What's the proof this works better than current NIH funding?"**
+
+*   **Reality:** The Oxford RECOVERY trial saved over 1 million lives globally at $500 per patient. The NIH RECOVER initiative spent $53,333 per patient and completed zero trials in 4 years. The dFDA's algorithmic subsidy allocation would have funded 3,200 RECOVERY-style trials with the same budget that NIH used to complete zero trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
 
 ## Critical Objections Addressed
 
@@ -467,18 +530,6 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 **Mitigation:** Independent ethics board; all decisions on-chain for accountability.
 
----
-
-## Why These Solutions Work
-
-**Political Reality:** These aren't theoretical problems—they're the exact objections that sophisticated investors, policymakers, and critics raise. By addressing them head-on with concrete solutions, we remove the main barriers to serious consideration.
-
-**Precedent Exists:** Every component has been proven at scale elsewhere. We're combining existing solutions, not inventing new ones.
-
-**Investment Protection:** The \$50-100M invested in solving these challenges protects the entire \$1.2-2.5B investment and makes success achievable.
-
----
-
 ## Risks and Mitigations
 
 **Cheating/Holdouts:** Start with coalitions of willing nations; create competitive pressure and trade incentives for laggards.
@@ -491,58 +542,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ---
 
-## Implementation Roadmap
-
-**Phase 1 (Months 1-12):** Build global referendum platform; secure initial \$250M financing tranche; launch in 5 pilot countries.
-
-**Phase 2 (Months 12-24):** Achieve 3.5% global participation; begin independent expenditures in priority elections; first binding referendum votes.
-
-**Phase 3 (Months 24-36):** Secure first national treaty commitments; establish DIH treasury operations; begin institutional funding.
-
-**Phase 4 (Months 36-48):** Scale to major powers (US, EU, China); achieve \$27B+ annual inflows; full operational deployment.
-
-**Phase 5 (Years 4-5):** Evaluate expansion beyond 1%; measure health outcomes; consider additional global challenges.
-
-**Key Gates:** 100M referendum participants → first \$500M independent expenditure cycle → first treaty ratification → first \$1B disbursement.
-
----
-
-## Financing Structure (For Investors)
-
-**Total Capital Need:** \$1.2-2.5B over 36 months, deployable in tranches tied to achievement gates.
-
-**Victory Notes (Senior, 60% of capital):** 6-9% coupon post-treaty commitments; secured by assigned government receivables; 3-5 year tenor.
-
-**Mezzanine (30% of capital):** 12-16% target IRR; step-up coupons on delays; performance kickers tied to verified savings.
-
-**First-Loss/Guarantee (10% of capital):** Philanthropic/PRI capital at 0-5% to de-risk senior tranches; absorbs political/execution risk.
-
-**Phase 1 Requirement:** \$250-400M for global platform, pilot countries, and first electoral cycles. Senior/mezz investors enter at higher yields (10-20%) until binding government commitments de-risk the structure.
-
-**Repayment Source:** Assigned 1% military budget redirections from participating governments; estimated \$27B+ annual once operational.
-
----
-
-## The Treasury Model
-
-**[\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
-
-**[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** Democratic treasury that funds specialized programs for each health area.
-
-**Specialized programs fund existing institutions:** 
-- Decentralized Institute of Mental Health → funds universities, pharma, nonprofits working on depression, anxiety, etc.
-- Decentralized Institute of Cancer Research → funds MD Anderson, pharmaceutical companies, patient advocacy groups
-- Decentralized Institute of Aging → funds longevity research at every institution
-
-**Everyone gets more money. No one gets displaced.**
-
-## Costs of War vs Disease (Context)
-
-![Global Military Spending](./1-percent-treaty/global-military-spending-chart.png)
-
-![Military vs Medical Research Spending](./1-percent-treaty/war-military-spending-vs-medical-research-bar-chart.svg)
-
-See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI.
+# Part 5: The Call to Action & Proof
 
 ## Start Earning Now
 
@@ -568,18 +568,6 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 **Government health agencies:** Expanded budgets without fighting for appropriations.
 
 **Contact us:** [institutions@warondisease.org](mailto:institutions@warondisease.org) to calculate your potential funding increase.
-
-## Conservative ROI Analysis
-
-**Global referendum + mandate building:** \$100-150M over 18 months.
-
-**Independent expenditures (priority countries):** \$800M-1.5B over 24 months.
-
-**Annual treaty inflows (1% of \$2.72T):** \$27B+ starting Year 3.
-
-**Break-even timeline:** 18-36 months post-first treaty ratification.
-
-**Risk-adjusted IRR for senior capital:** 8-12% assuming 70% probability of success in 5+ major countries.
 
 ---
 
