@@ -444,8 +444,11 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
     1.  **You Make More Money:** Your fiduciary duty is to maximize shareholder value. Our financial models show that redirecting capital to \$VICTORY bonds will generate more wealth than building systems that create existential risk.
     2.  **You Get Better Security:** A healthier, more stable world is a safer world. Redirecting 1% from overkill capacity to pandemic prevention provides more real security than another nuclear submarine.
     3.  **You Protect Your Family:** Contractors are humans. Their families get sick. They can profit from a system that fuels destruction, or they can profit *even more* by funding cures that might one day save their loved ones.
+    4.  **Repurpose Your Lobbyists:** Instead of us hiring new lobbyists, we "bribe" you with superior returns to get your existing lobbyists to push for the treaty. Your networks become our accelerators, turning opposition into advocacy overnight.
 
     By making our system more profitable, we give every rational actor a clear financial incentive to support the treaty. We defeat "bad money" not by destroying it, but by offering it a better deal.
+
+    For a detailed analysis of why co-opting contractors is superior to adversarial tactics, see [Co-Opting Defense Contractors](./co-opting-defense-contractors.md).
 
 **10. "How do you prevent waste and ensure the money actually helps patients?"**
 

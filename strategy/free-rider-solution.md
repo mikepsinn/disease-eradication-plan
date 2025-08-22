@@ -183,3 +183,13 @@ The core objection to the 1% Treaty is the classic collective action problem: **
 * **Trade agreement economic impact**
   > "USMCA supports approximately \$1.7 trillion in trade annually between the three countries."
   > — Office of the US Trade Representative, 2023, [USMCA Benefits](https://ustr.gov/trade-agreements/free-trade-agreements/united-states-mexico-canada-agreement)
+
+**Our Approach: Incentives Over Punishment**
+Instead of punitive measures, we focus on overwhelming positive incentives:
+- **Direct Funding Rewards:** Institutions in compliant countries get priority access to \$27B annual treasury—double or triple their current research budgets.
+- **Political Incentives:** Massive independent expenditures for politicians who support the treaty, making it electoral suicide to oppose.
+- **Economic Multipliers:** Compliant nations get preferential trade terms, technology transfers, and investment flows that far exceed the 1% military cut.
+
+**Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (already enough for 13-130 extinction events[^nuclear]) and AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk.
+
+**Bottom Line:** Free-riding isn't viable when compliance pays better, and the stakes are human survival. For detailed mechanisms, see [Free Rider Solution](./free-rider-solution.md).

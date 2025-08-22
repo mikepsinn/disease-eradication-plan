@@ -39,7 +39,7 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 3. Using a decentralized crowdfunding platform, such as a blockchain-based system, to allocate medical research funds would be more transparent, efficient, and resistant to corruption compared to centralized government allocation.[^8]
 4. Robust auditing and verification mechanisms, such as satellite monitoring and on-site inspections, can ensure countries comply with the treaty.[^9]
 5. Implementing the 1% Treaty could yield $1.2 million in benefits per capita globally over 80 years. (See [value of automating research](value-of-automating-research.md).)
-6. Creating a DAO to crowdfund $40M, spend $20M on lobbying and $20M on marketing for petition signatures from 1% of the population could get the 1% Treaty adopted.
+6. Creating a DAO to crowdfund $40 million, and lobby for the international 1% Treaty is logically sound and feasible based on the proven effectiveness of lobbying and the potential for crowdfunding.
 7. If the plan succeeds, the DAO would get $20B/year, enough to repay initial contributors with 0.5% of first year funds.
 8. The DAO could attempt to outbid military contractors to hire their best lobbyists, potentially reducing their lobbying capacity by 50% and increasing the DAO's lobbying power by 100%.[^11]
 9. To ensure sufficient funding to out-lobby the military-industrial complex, contributors must be compensated at a rate of at least 10% annually, which is higher than the average return of the S&P 500.[^12]
@@ -48,48 +48,6 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 
 1. Global coordination on the 1% Treaty may be challenging due to differing national interests and priorities. However, the potential benefits of the Treaty, such as reduced catastrophic risks and increased medical research, provide a strong incentive for countries to cooperate.
 2. Some countries may attempt to cheat on the agreement by not fully reallocating 1% of their military budgets. However, the proposed auditing and verification mechanisms, such as satellite monitoring and on-site inspections, would help detect and deter cheating.
-3. The military-industrial complex may oppose the 1% Treaty due to the potential loss of funding. However, by outbidding military contractors for their top lobbyists, the DAO can gain a lobbying advantage and counteract their opposition.
-
-## Proof:
-
-1. Resources spent on war cannot be spent on medical research. (Axiom 4)
-2. Resources spent on war are 20 times the resources spent on medical research. (Premise 2)
-3. Therefore, reallocating some resources from war to medical research would increase resources for medical research. (From 1 and 2)
-4. An international treaty for all countries to reallocate resources maintains the balance of power. (Proposition 1)
-5. Therefore, an international 1% treaty would increase resources for medical research while maintaining geopolitical stability. (From 3 and 4)
-6. AI weapons could lead to catastrophic Skynet-like scenarios. (Premise 3)
-7. Reducing AI weapons development reduces catastrophic risk. (From 6)
-8. The 1% treaty reduces resources for weapons, including AI weapons. (From Proposition 1)
-9. Therefore, the 1% treaty reduces catastrophic AI risk, increasing net security. (From 7 and 8, Proposition 2)
-10. Current nuclear arsenals can cause up to 130 extinction events. (Premise 8)
-11. Even if some military spending is warranted, we don't need the ability to exterminate humanity more than once. (From 10)
-12. Therefore, safely reducing military budgets, such as through the 1% Treaty, is reasonable. (From 11)
-13. Decentralized crowdfunding through a blockchain-based platform is more transparent, efficient, and resistant to corruption than centralized allocation. (Proposition 3)
-14. Therefore, decentralized crowdfunding for the 1% medical research fund is optimal. (From 5 and 13)
-15. Auditing and verification mechanisms, such as satellite monitoring and on-site inspections, ensure compliance. (Proposition 4)
-16. Therefore, the 1% Treaty is executable in a verifiable way. (From 5 and 15)
-17. The 1% Treaty could yield $1.2 million per person in global benefits. (Proposition 5)
-18. Therefore, the 1% Treaty provides significant net benefits to humanity. (From 17)
-19. Reducing death and suffering is a worthy goal. (Axiom 1)
-20. Medical research reduces death and suffering. (Axiom 3)
-21. The 1% Treaty increases medical research. (From 5)
-22. Therefore, the 1% Treaty reduces death and suffering. (From 19, 20, 21)
-23. Military contractors' lobbying ROI ranges from 333,233% to 399,900%. (From Premises 6, 7)
-24. Therefore, $20M in lobbying could secure $20B/year for the DAO based on typical lobbying returns. (From 23, Proposition 6)
-25. 1% of the population signing a petition has historically been sufficient for legislative adoption. (Premise 8)
-26. $20M in marketing could get 1% to sign based on typical customer acquisition costs. (Premise 8, Proposition 6)
-27. Therefore, $40M should be sufficient to get the 1% Treaty adopted. (From 24, 25, 26)
-28. The DAO crowdfunding model has proven capable of quickly raising tens of millions. (Proposition 6)
-29. Therefore, crowdfunding $40M for the plan is feasible. (From 28)
-30. If the plan succeeds, the DAO would get $20B/year, far exceeding initial costs. (Proposition 7)
-31. Therefore, initial contributors could be compensated if needed. (From 30)
-32. Lobbyists are motivated by financial incentives and will work for the highest bidder. (Premise 9)
-33. The DAO could attempt to outbid military contractors to hire their best lobbyists. (From 32, Proposition 8)
-34. Hiring military contractors' lobbyists could reduce their lobbying capacity by 50% and increase the DAO's by 100%. (Proposition 8)
-35. Therefore, the DAO could gain a significant lobbying advantage over military contractors. (From 33, 34)
-36. Contributors must be compensated at a rate greater than 10% annually to exceed returns from alternative investments like the S&P 500. (Proposition 9)
-37. Sufficient compensation will ensure funding to out-lobby the military-industrial complex. (From 36)
-38. Therefore, the DAO must offer returns greater than 10% to attract necessary funding. (From 37)
 
 ## Conclusion:
 

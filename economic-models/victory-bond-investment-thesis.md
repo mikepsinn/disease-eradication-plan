@@ -226,6 +226,11 @@ Philanthropic funds can achieve extraordinary impact multiplication through $VIC
   > "Top charities like AMF provide ~10X return in lives saved per dollar compared to cash transfers."
   > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/research/intervention-reports/bednets)
 
+### Targeting Defense Contractors as Investors
+$VICTORY Bonds are uniquely positioned to target defense contractors as primary investors. By offering superior risk-adjusted returns (as modeled above), we incentivize them to repurpose their lobbying networks to support the 1% Treaty—turning potential adversaries into allies.
+
+We have 85-90% confidence this co-opting approach is superior to adversarial strategies, based on game theory and precedents. For full analysis, see [Co-Opting Defense Contractors](../co-opting-defense-contractors.md).
+
 ---
 
 ## Source Quotes for Key Parameters

@@ -40,3 +40,6 @@ Firms like **Covington & Burling**, **Akin Gump**, and **Brownstein Hyatt Farber
 ## Conclusion
 
 The military lobbying industry is a prime example of how targeted financial investments can yield disproportionately large returns. For a relatively small investment of a few hundred million dollars annually, the entire industry secures close to a trillion dollars in government contracts. This dynamic provides a clear model for how a well-funded and strategically executed lobbying campaign by a DAO could effectively influence policy and achieve its objectives.
+
+## Co-Opting vs. Building Our Own Lobbying
+Instead of competing directly with this machine, our strategy is to co-opt it by aligning contractors' interests with ours via superior investment returns (e.g., $VICTORY bonds). This turns opposition into advocacy. For a detailed analysis of why this is superior to adversarial tactics, see [Co-Opting Defense Contractors](../co-opting-defense-contractors.md).
