@@ -208,6 +208,16 @@ For full details on protections, see [\$VICTORY Instruments Tokenomics](../strat
   > "Policy-influenced investments can yield high ROIs when backed by public mandates."
   > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
 
+### Appeal to Philanthropic Investors
+Philanthropic funds can achieve extraordinary impact multiplication through $VICTORY Bonds, leveraging advocacy to redirect public budgets at scales far beyond direct grants.
+- **Quantitative Leverage**: A $1M investment could unlock $1B in health funding via treaty inflows, offering 1,000X impact—compared to ~10X for high-impact charities like malaria prevention.
+- **Alignment with Effective Altruism**: This mirrors EA principles of high-ROI interventions, potentially saving more lives per dollar than traditional aid (e.g., equivalent to funding 10,000+ years of research).
+- **Risk-Adjusted Giving**: Metaculus pricing allows donors to target high-probability tranches, with governance rights ensuring funds align with impact goals.
+
+* **GiveWell Impact Multipliers**
+  > "Top charities like AMF provide ~10X return in lives saved per dollar compared to cash transfers."
+  > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/research/intervention-reports/bednets)
+
 ---
 
 ## Source Quotes for Key Parameters
