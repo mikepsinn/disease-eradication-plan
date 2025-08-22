@@ -24,6 +24,42 @@ Quick links:
 - Funding: [VICTORY Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)
 - Reform: [Impact Securities Act (Draft)](./../regulatory/impact-securities-reform.md)
 
+---
+
+## PRELUDE: POLICY & FINANCING ACTIVATION (Parallel Track)
+
+Run these tracks in parallel with technical build to unlock capital and legitimacy for the 1% Treaty → DIH → dFDA sequence.
+
+1. Impact Securities Reform (model law)
+   - Tasks: Build coalition; secure sponsors; file the [Impact Securities Act (Draft)](./../regulatory/impact-securities-reform.md); public comment; hearing kit; press kit.
+   - Outcome: Universal exemption conditioned on live on‑chain disclosures; no pre‑filing; outcome‑linked marketing safe harbor; token safe harbor; anti‑fraud only.
+
+2. Interim Fundraising (before reform)
+   - Structure: Reg D / Reg S raises using a simplified “high‑yield impact loan + performance bonuses” framing; philanthropic first‑loss.
+   - Docs: [Financing Structure](./warondisease-landing.md#financing-structure-for-investors), [VICTORY Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md), [Investment Thesis](./../economic-models/victory-bond-investment-thesis.md#how-we-talk-about-returns-standardized-language).
+   - Ops: Stand up on‑chain disclosures (proof‑of‑reserves, covenant checks, coverage ratio dashboards) now to ease migration post‑reform.
+
+3. Global Referendum Scaling
+   - Goal: 3.5% participation with referral rewards; fraud controls per [Verification & Fraud Prevention](./verification-and-fraud-prevention.md).
+   - Budget: \$56M for 280M verified votes (\$0.20 each) per [landing](./warondisease-landing.md#activation-energy-sequence-who-we-bribe-first).
+
+4. Independent Expenditures Engine (jurisdictional)
+   - Tasks: Set up independent‑expenditure entities; strict non‑coordination; firewall US vs non‑US; legal review per [Legal Compliance](./legal-compliance-framework.md).
+   - Use: Target priority elections; tie spend to verified district mandates.
+
+5. Treaty Campaign & Negotiation
+   - Targets: US/EU first; publish pledge tracker; use referendum mandate + IE leverage; publish fiscal impact memos.
+   - Metric: First national treaty commitments within 24–36 months.
+
+6. DIH Vaults & Modules
+   - Tasks: Implement [DIH treasury](./../features/treasury/dih-treasury-architecture.md) modules (grants, QF, subsidies, bounties); publish policies; seed pilot programs.
+   - Controls: On‑chain proofs, incident response, governance timelocks.
+
+7. Investor Disclosures & Marketing (standardized)
+   - Key Facts box; outcome‑linked target language; benchmark citations; live dashboards; risk section mirroring [thesis](./../economic-models/victory-bond-investment-thesis.md#10-assessing-realism-risks-repayment-timeline-and-contingencies).
+
+---
+
 Below is an **absurdly comprehensive, highly-detailed, hierarchical to-do list** for launching a global decentralized trial system with **AI coordination**, robust **patient rights** (trial participation, importation), and **universal data-sharing standards**. The goal is to move as **quickly and cheaply** as possible, though some tasks inevitably require large investments. Time and cost estimates are **approximate** and can vary widely based on execution, political climate, and scope. Recommended organizations and experts are **illustrative** suggestions based on known capabilities.
 
 ---
