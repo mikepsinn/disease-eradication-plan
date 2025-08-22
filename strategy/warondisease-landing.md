@@ -436,11 +436,16 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **9. "You're competing with military contractors who have decades of relationships and influence"**
 
-*   **Reality:** Military contractors have influence because they deliver votes and money. We're creating a system that delivers more votes and more money to politicians who support the treaty. The relationships follow the power - when healing becomes more profitable than killing, the political class will adapt. We're not fighting the existing system; we're making it work for us.
+*   **Reality: We reframe the conflict from a zero-sum battle to a positive-sum bargain.** We are not asking the military-industrial complex to fight us; we are inviting them to profit with us. The core of their business is not war, but shareholder return. The entire thesis for [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) is engineered to offer risk-adjusted returns mathematically superior to their current investments. We can approach military contractors, their investors, and lobbyists with a simple proposition:
+    1.  **You Make More Money:** Your fiduciary duty is to maximize shareholder value. Our financial models show that redirecting capital to \$VICTORY bonds will generate more wealth than building systems that create existential risk.
+    2.  **You Get Better Security:** A healthier, more stable world is a safer world. Redirecting 1% from overkill capacity to pandemic prevention provides more real security than another nuclear submarine.
+    3.  **You Protect Your Family:** Contractors are humans. Their families get sick. They can profit from a system that fuels destruction, or they can profit *even more* by funding cures that might one day save their loved ones.
+
+    By making our system more profitable, we give every rational actor a clear financial incentive to support the treaty. We defeat "bad money" not by destroying it, but by offering it a better deal.
 
 **10. "How do you prevent waste and ensure the money actually helps patients?"**
 
-*   **Reality:** The decentralized FDA uses [decentralized pragmatic trials that cost $500 per patient vs. $41,000 traditional trials](../reference/recovery-trial.md) - an 80X efficiency improvement proven by the Oxford RECOVERY trial. Compare this to the NIH RECOVER initiative: $1.6B budget, $53,333 per patient, zero completed trials in 4 years. With the same $1.6B budget, the dFDA could run 2,800 trials enrolling 2.8 million patients vs. NIH's zero completed trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
+*   **Reality:** The decentralized FDA uses [decentralized pragmatic trials that cost \$500 per patient vs. \$41,000 traditional trials](../reference/recovery-trial.md) - an 80X efficiency improvement proven by the Oxford RECOVERY trial. Compare this to the NIH RECOVER initiative: \$1.6B budget, \$53,333 per patient, zero completed trials in 4 years. With the same \$1.6B budget, the dFDA could run 2,800 trials enrolling 2.8 million patients vs. NIH's zero completed trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
 
 **11. "How does this help patients vs. just funding more bureaucracy?"**
 
