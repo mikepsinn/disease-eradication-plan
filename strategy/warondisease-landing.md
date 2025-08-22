@@ -149,10 +149,10 @@ We choose to make saving lives more profitable than taking them.
 **Phase 1: Seed Investors (\$250-400M Initial Investment)**
 - **Who:** Wealthy individuals, funds, crypto whales
 - **Bribe:** 
-  - Dynamic interest rates: 8-12% base + success multipliers
-  - \$VICTORY governance tokens controlling \$27B annual DIH treasury
-  - If we achieve fossil fuel industry's >100X lobbying ROI, investors get a cut
-- **Why they bite:** Control over \$27B/year health treasury through governance tokens = massive ongoing influence + returns that dwarf any alternative investment
+  - **Targeting >100x Return:** Contingent on treaty success, we are targeting a historic 100x+ return over 10 years, backed by our [Peace Dividend model](../economic-models/peace-dividend-value-capture.md).
+  - **\$VICTORY governance tokens** controlling the \$27B annual DIH treasury.
+  - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](../economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
+- **Why they bite:** The potential for a historic, de-risked return, plus governance over the world's largest health treasury.
 
 **Phase 2: \$VICTORY Token Buyers (\$100-200M Referendum Funding)**
 - **Who:** Crypto investors, health advocates, institutions
