@@ -170,16 +170,16 @@ Notes:
 
 - **Gitcoin total distributed (\$65M+)**
   > “Gitcoin has distributed over \$65 million to projects through grants, bounties, and related products.”
-  > — Axios, 2022, [Crypto public goods funding](mdc:https://www.axios.com/2022/08/23/crypto-public-goods-green-pill-gitcoin-advocacy-funding)
+  > — Axios, 2022, [Crypto public goods funding](https://www.axios.com/2022/08/23/crypto-public-goods-green-pill-gitcoin-advocacy-funding)
 
 - **Optimism RetroPGF scale (50M OP)**
   > “Optimism has allocated more than 50 million OP tokens across multiple rounds of Retroactive Public Goods Funding.”
-  > — Business Insider (Markets), 2024, [RetroPGF funding](mdc:https://markets.businessinsider.com/news/currencies/the-next-stage-for-public-good-funding-in-crypto-1033787594)
+  > — Business Insider (Markets), 2024, [RetroPGF funding](https://markets.businessinsider.com/news/currencies/the-next-stage-for-public-good-funding-in-crypto-1033787594)
 
 - **BitGive Pineapple Fund donation (\$1M)**
   > “BitGive received a \$1 million donation from the Pineapple Fund in 2017–2018.”
-  > — Wikipedia, 2024, [BitGive Foundation](mdc:https://en.wikipedia.org/wiki/BitGive_Foundation)
+  > — Wikipedia, 2024, [BitGive Foundation](https://en.wikipedia.org/wiki/BitGive_Foundation)
 
 - **Reg A+ cap (\$75M/yr)**
   > “Tier 2 of Regulation A permits eligible issuers to offer up to \$75 million in a 12‑month period, subject to SEC qualification.”
-  > — SEC, 2024, [Regulation A](mdc:https://www.sec.gov/smallbusiness/exemptofferings/rega)
+  > — SEC, 2024, [Regulation A](https://www.sec.gov/smallbusiness/exemptofferings/rega)
