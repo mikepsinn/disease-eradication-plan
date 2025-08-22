@@ -576,6 +576,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 **Critical Solutions:** Address the main objections that could kill this proposal:
 - [Free Rider Problem Solution](./free-rider-solution.md) - Economic enforcement mechanisms
 - [Legal Compliance Framework](./legal-compliance-framework.md) - Election and securities law compliance  
+- [Impact Securities and Digital Public Goods Financing Act (Draft)](../regulatory/impact-securities-reform.md) - Model law to enable compliant, low‑friction financing via on‑chain reporting and impact securities  
 - [Verification & Fraud Prevention](./verification-and-fraud-prevention.md) - Scale verification for 280M people
 
 **Strategy:** [How we beat concentrated interests](./war-on-disease-strategy.md)

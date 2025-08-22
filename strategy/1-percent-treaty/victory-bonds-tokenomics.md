@@ -51,6 +51,7 @@ dateCreated: 2025-08-12T00:00:00.000Z
   - [SEC: Regulation S resources](https://www.sec.gov/rules-regulations/1998/02/offshore-offers-sales-regulation-s-effective-date-60-days-after-publication-federal-register)
 - KYC/AML: Mandatory for purchasers under most pathways.
 - Jurisdictional strategy: staggered launches; geoblocking as required.
+- - See also: [Impact Securities and Digital Public Goods Financing Act (Draft)](../../regulatory/impact-securities-reform.md) for proposed reforms enabling on‑chain reporting safe harbors and broader investor access.
 
 ## Referral Funding Linkage
 

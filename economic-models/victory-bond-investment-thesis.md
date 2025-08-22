@@ -170,6 +170,14 @@ We adapt this model for positive impact: $VICTORY Bonds fund a reallocation of 1
 
 By leveraging policy influence for societal benefit, $VICTORY Bonds are structured to offer returns superior to alternative investments in high-ROI sectors.
 
+### How We Talk About Returns (Standardized Language)
+Under the proposed Impact Securities framework, we present return objectives as targets, not guarantees:
+- **Objective:** Target risk‑adjusted returns competitive with leading alternatives.
+- **Payout Source:** Capped share of verified treaty inflows and/or measured savings, disclosed ex‑ante.
+- **Transparency:** Real‑time on‑chain disclosures of coverage ratios, covenants, and use of proceeds.
+- **Risks:** Political adoption, execution, and timing risks may reduce or eliminate payouts.
+For compliance details, see [Impact Securities and Digital Public Goods Financing Act (Draft)](../regulatory/impact-securities-reform.md#section-4a-marketing--disclosures-safe-harbor-plain-english-outcome-linked).
+
 ### Source Quotes for Key Parameters
 
 * **Fossil Fuel Lobbying ROI**
