@@ -24,7 +24,7 @@ Our approach is built on three pillars:
 Investor psychology requires a simple, powerful message. The underlying financial mechanics require efficiency. We achieve both.
 
 -   **Public-Facing Target (The "Hook"):** For marketing and high-level communications, we will lead with a simple, audacious, and mathematically defensible target:
-    > **"We are targeting a >100x return over 10 years, contingent on the successful ratification of the 1% Treaty."**
+    > **"We are targeting a 10x return over 10 years, contingent on the successful ratification of the 1% Treaty."**
 
     This message is designed to be memorable, signal the massive scale of the opportunity, and is credibly backed by our [Peace Dividend Value Capture Model](./peace-dividend-value-capture.md).
 
