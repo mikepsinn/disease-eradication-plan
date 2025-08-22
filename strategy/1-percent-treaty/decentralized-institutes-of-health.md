@@ -55,6 +55,9 @@ This creates a virtuous cycle:
 
 Subsidy allocation and most treasury functions execute via smart contracts with verifiable inputs (oracles) and transparent rules. Stakeholders participate through credentialed, timeboxed signaling; on-chain executors apply changes automatically. A narrowly scoped, time-limited DAO acts as an emergency override with public justification and automatic sunset. For custody and controls, see [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md).
 
+## Risks and Realism
+The DIH model's success relies on treaty adoption and inflows. For a full discussion of risks, repayment, and contingencies, see [Victory Bond Investment Thesis](../../economic-models/victory-bond-investment-thesis.md#10-assessing-realism-risks-repayment-timeline-and-contingencies).
+
 ## Organizational Structure
 
 The DIH is expanding into a comprehensive ecosystem that mirrors the NIH structure while offering decentralized governance,  titles, and community-specific focus areas. This expansion serves as a strategic recruitment tool for the 1% Treaty referendum effort.

@@ -39,6 +39,7 @@ dateCreated: 2025-08-12T00:00:00.000Z
 - On-chain escrow accounts; monthly proofs of reserves and liabilities.
 - Public dashboards showing: inflows, coupon accruals, coverage ratio, and runway.
 - Independent audits and covenant checks; breach → automated pause and governance review.
+- For a detailed assessment of risks, repayment timelines, and contingencies, see [Victory Bond Investment Thesis](../../economic-models/victory-bond-investment-thesis.md#10-assessing-realism-risks-repayment-timeline-and-contingencies).
 
 ## Compliance Considerations (Non-legal summary)
 
