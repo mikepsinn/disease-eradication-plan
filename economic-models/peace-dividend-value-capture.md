@@ -76,3 +76,27 @@ The Peace Dividend model demonstrates that the 1% Treaty is not a zero-sum trans
 2.  **Achieve Unprecedented Social Impact:** By enabling the distribution of over \$16 trillion in annual benefits to the global population.
 
 This makes it one of the most highly leveraged and impactful investment opportunities in human history.
+
+## 6. Modeling High-ROI Scenarios: The Power of Asymmetric Value Creation
+
+The economic model is uniquely robust due to the immense asymmetry between the investor value pool (the **\$27B treasury**) and the societal value pool (the **\$16.5T peace dividend**). The societal pool is over 600 times larger, allowing for unprecedented investor returns while still delivering the vast majority of value to the public.
+
+### Example: A 1,000x Return Scenario
+
+To illustrate this, let's model a hypothetical scenario where `$VICTORY` instruments deliver a **1,000x return** to the initial investors who provided the activation energy—a return that would be the highest in financial history for an investment of this scale.
+
+-   **Total Activation Energy Investment:** \$2.5 billion
+-   **Required Payout for 1,000x Return:** `\$2.5B * 1,000 =` **\$2.5 trillion**
+
+Even with this historic payout, the distribution of the annual peace dividend remains profoundly beneficial for society:
+
+-   **Total Annual Peace Dividend:** \$16.5 trillion
+-   **Value Captured by Investors:** \$2.5 trillion
+-   **Value Remaining for Society:** `\$16.5T - \$2.5T =` **\$14 trillion**
+
+#### Distribution of Value in a 1,000x ROI Scenario:
+
+-   **Investors' Share:** `(\$2.5T / \$16.5T) * 100 =` **~15.2%**
+-   **Society's Share:** `(\$14T / \$16.5T) * 100 =` **~84.8%**
+
+This demonstrates that even in an extreme success scenario for investors, nearly 85% of the value unlocked in a single year still benefits the global population. This unique feature allows us to attract the world's most ambitious capital by offering a deal that is too good to refuse on both financial and ethical grounds.
