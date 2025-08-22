@@ -382,6 +382,12 @@ Because we would still have **1% fewer nuclear weapons**. We would still have a 
 
 The worst possible outcome of this plan—total waste—is still a net gain for global security. The best possible outcome is that we also cure cancer.
 
+### The Peace Dividend: Capturing Latent Value for Token Holders and Society
+
+The global cost of violence is [\$16.5 trillion annually](#global-violence-costs), or about [\$169,230 per person](#per-capita-lifetime) over a lifetime. By redirecting just 1% from war to peace via the treaty, we unlock massive latent value—a "peace dividend" that boosts productivity, health, and prosperity. 
+
+$VICTORY token holders capture a fair share as rewards for their investment (e.g., via superior returns and governance over the $27B treasury), while the vast majority of this value (estimated at 99.84%+) flows to society as lower costs, longer lives, and economic growth. It's not zero-sum—everyone wins. For a detailed breakdown of this model, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
+
 ---
 
 # Part 4: Objections & Rebuttals
@@ -625,6 +631,16 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 * **Antimicrobial resistance deaths projection**
   > "By 2050, 10 million lives a year and a cumulative \$100 trillion of economic output are at risk due to the rise of drug-resistant infections if we do not find proactive solutions now to slow down the rise of drug resistance."
   > — Review on Antimicrobial Resistance, 2016, [Final Report](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
+
+<a id="global-violence-costs"></a>
+* **Global Cost of Violence**
+  > "The economic impact of violence on the global economy in 2021 was $16.5 trillion, equivalent to 10.9% of global GDP, or $2,117 per person."
+  > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/resources/global-peace-index-2022/)
+
+<a id="per-capita-lifetime"></a>
+* **Per Capita Lifetime Cost**
+  > "Assuming a global population of 7.8 billion and an average lifespan of 80 years, the per capita lifetime cost of violence is approximately $169,230."
+  > — Derived from Global Peace Index data, internal calculation, 2024.
 
 * **Defense industry lobbying spending**
   > "During the first three quarters of 2022, the defense sector spent approximately \$101 million on lobbying activities."

@@ -178,6 +178,9 @@ Under the proposed Impact Securities framework, we present return objectives as 
 - **Risks:** Political adoption, execution, and timing risks may reduce or eliminate payouts.
 For compliance details, see [Impact Securities and Digital Public Goods Financing Act (Draft)](../regulatory/impact-securities-reform.md#section-4a-marketing--disclosures-safe-harbor-plain-english-outcome-linked).
 
+### The Peace Dividend: The Ultimate Source of Value
+The financial returns for $VICTORY instruments are sourced from the $27B annual treasury. However, the ultimate economic underpinning of this investment is the **$16.5 trillion annual Peace Dividend** unlocked by the treaty. This represents the total value reclaimed from conflict, with over 99% flowing to global society. For a detailed breakdown of this value capture model, see [The Peace Dividend: Value Capture & Distribution Model](./peace-dividend-value-capture.md).
+
 ### Source Quotes for Key Parameters
 
 * **Fossil Fuel Lobbying ROI**
