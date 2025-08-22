@@ -14,7 +14,7 @@ This wiki is the source of truth. These guidelines define where new content belo
 
 ## Core Placement Map (what goes where)
 
-- `features/` — Product and technical components of the dFDA system (UIs, APIs, analytics, plugins, treasury infra)
+- `features/` — Product and technical components of the dFDA system (UIs, APIs, analytics, plugins, treasury infra). The primary technical roadmap for the dFDA platform itself should be at the root of this folder (e.g., `features/dfda-roadmap.md`), while roadmaps for specific sub-features can be nested.
 - `problems/` — Issues in the current medical research system (e.g., cost, speed, bias), with evidence
 - `benefits/` — Advantages of the dFDA approach (cost/time/QALY gains, access), with quantified claims
 - `regulatory/` — Legal and compliance analysis, recommendations, and policy proposals
