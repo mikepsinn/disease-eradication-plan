@@ -10,6 +10,8 @@ dateCreated: 2024-06-09T00:00:00.000Z
 
 # Roadmap
 
+For the end‑to‑end plan, see the [Canonical Roadmap — 1% Treaty → DIH → dFDA](../roadmap.md).
+
 So, roughly the process would be:
 👉 $1M to initially create the DAO
 👉 $40M from token crowdfunding

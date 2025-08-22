@@ -4,7 +4,7 @@ description: >-
   with AI coordination, focusing on patient rights and universal data-sharing
   standards.
 emoji: ⚙️
-title: Roadmap to a Global Autonomous Decentralized FDA
+title: Canonical Roadmap — 1% Treaty → DIH → dFDA
 tags: >-
   decentralized-fda, clinical-trials, ai-coordination, patient-rights,
   data-sharing-standards
@@ -13,7 +13,16 @@ editor: markdown
 date: '2025-02-12T20:29:53.772Z'
 dateCreated: '2025-02-12T20:29:53.772Z'
 ---
-# Roadmap to a Global Autonomous Decentralized FDA
+# Canonical Roadmap — 1% Treaty → DIH → dFDA
+
+The primary objective is global adoption of the [1% Treaty](./1-percent-treaty/1-percent-treaty.md), creation and funding of the [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md), and sustained financing for the most efficient forms of medical research (primarily subsidizing patient participation in high value and high efficiency decentralized clinical trials). Financing is coordinated via [VICTORY Instruments Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md), with investor rationale in the [Investment Thesis](./../economic-models/victory-bond-investment-thesis.md) and proposed regulatory reform in the [Impact Securities Act (Draft)](./../regulatory/impact-securities-reform.md).
+
+Quick links:
+- Strategy overview: [War on Disease Landing](./warondisease-landing.md)
+- Treaty text: [1% Treaty](./1-percent-treaty/1-percent-treaty.md)
+- Treasury: [DIH Architecture](./../features/treasury/dih-treasury-architecture.md)
+- Funding: [VICTORY Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)
+- Reform: [Impact Securities Act (Draft)](./../regulatory/impact-securities-reform.md)
 
 Below is an **absurdly comprehensive, highly-detailed, hierarchical to-do list** for launching a global decentralized trial system with **AI coordination**, robust **patient rights** (trial participation, importation), and **universal data-sharing standards**. The goal is to move as **quickly and cheaply** as possible, though some tasks inevitably require large investments. Time and cost estimates are **approximate** and can vary widely based on execution, political climate, and scope. Recommended organizations and experts are **illustrative** suggestions based on known capabilities.
 
@@ -46,8 +55,6 @@ Below is an **absurdly comprehensive, highly-detailed, hierarchical to-do list**
        - **Tasks**: Host focused briefings with performance dashboards and live contract demos.  
        - **Time**: 1–2 months (overlap)  
        - **Cost**: $10k–30k  
-       - **Potential Individuals**:  
-         - Elon Musk, Bill Gates, Mark Zuckerberg, etc.
 
 3. **Tech & AI Architecture Blueprint**  
    3.1. **Evaluate Existing Decentralized Trial Components**  

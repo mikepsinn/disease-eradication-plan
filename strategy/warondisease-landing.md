@@ -299,6 +299,8 @@ The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunem
 
 ## Implementation Roadmap
 
+See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./roadmap.md).
+
 **Phase 1 (Months 1-12):** Build global referendum platform; secure initial \$250M financing tranche; launch in 5 pilot countries.
 
 **Phase 2 (Months 12-24):** Achieve 3.5% global participation; begin independent expenditures in priority elections; first binding referendum votes.
