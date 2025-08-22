@@ -170,8 +170,11 @@ We choose to make saving lives more profitable than taking them.
 
 **Phase 4: Politicians (\$800M-1.5B Independent Expenditures)**
 - **Who:** Key legislators in target countries
-- **Bribe:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors. This legal "bribery" aligns incentives with human survival—far better than the alternative of unchecked arms races leading to extinction.
-- **Why they bite:** 280M verified voters + overwhelming campaign funding vs. military contractors' \$15M lobbying budget
+- **Bribe:** 
+  - **Personal Wealth Creation:** Early access to [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) with superior returns designed to outperform defense stocks and traditional political corruption
+  - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
+  - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
+- **Why they bite:** Personal wealth growth + 280M verified voters + overwhelming campaign funding vs. military contractors' modest donations and \$15M lobbying budget
 
 **The Compounding Effect:** Each phase funds the next. Seed investors control governance of \$27B treasury. Token buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
 
@@ -263,22 +266,23 @@ The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunem
 
 ---
 
-## The Political Economics
+## The Personal Wealth Economics
 
-**Military contractors' lobbying ROI:**
+**Military contractors' personal enrichment model:**
 - [\$1.1 billion lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022) (2001-2021) → [\$2.02 trillion contracts](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
 - **Return: \$1,813 per \$1 spent on lobbying**
+- Politicians get modest campaign donations and revolving door jobs
 
 **What we're asking politicians to redirect:**
 - 1% of \$2.72T = **\$27 billion annually** in military contracts
 - Military contractors would spend ~**\$15 million in lobbying** to defend that revenue
 
-**Our counter-offer to politicians (legal and effective):**
-- Independent expenditures for campaigns: Massive ad buys and ground game support for candidates who vote with their district’s verified referendum tally; equivalent spending against those who defy it (no coordination).
-- Voter coalition: The [3.5%](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate provides electoral cover.
+**Our superior offer to politicians (legal and more profitable):**
+- **Personal Investment Opportunity:** Politicians and their families can directly invest in [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks. When your personal portfolio grows faster by supporting the treaty, the choice is obvious.
+- **Campaign Support:** Independent expenditures providing massive ad buys and ground game support for treaty supporters; equivalent opposition funding for defectors (no coordination).
+- **Electoral Insurance:** The [3.5%](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate makes supporting the treaty the safer political choice.
 
-
-**The math:** We outbid military contractors on expected electoral value while delivering massive health benefits to constituents.
+**The math:** We offer politicians more personal wealth than military contractors ever could, PLUS better campaign support, PLUS the moral high ground of saving lives. It's not even close.
 
 ---
 
@@ -567,15 +571,17 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ## For Institutions
 
-**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work.
+**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) and profit while their companies benefit.
 
-**Universities:** Massive increase in research grants across all health departments.
+**Universities:** Massive increase in research grants across all health departments. **Plus:** Administrators and board members can personally invest and profit from the system that funds their institutions.
 
-**Patient advocacy groups:** Direct funding for your cause areas.
+**Patient advocacy groups:** Direct funding for your cause areas. **Plus:** Leadership can personally invest in the treasury that funds their missions.
 
-**Government health agencies:** Expanded budgets without fighting for appropriations.
+**Government health agencies:** Expanded budgets without fighting for appropriations. **Plus:** Officials can personally invest in the system that boosts their agency's funding.
 
-**Contact us:** [institutions@warondisease.org](mailto:institutions@warondisease.org) to calculate your potential funding increase.
+**The Double Win:** Your institution gets more money AND you personally profit from its success. It's not just institutional benefit—it's personal wealth creation aligned with your professional mission.
+
+**Contact us:** [institutions@warondisease.org](mailto:institutions@warondisease.org) to calculate your potential funding increase and personal investment opportunities.
 
 ---
 
