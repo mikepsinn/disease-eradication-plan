@@ -464,13 +464,14 @@ The three objections that could kill this proposal have detailed solutions:
 **Why This Objection is Overstated:**
 - The US already can't account for **\$2.5 trillion** in assets—more than 250 times the \$10 billion annual US contribution to this plan. Redirecting 1% is trivial compared to existing waste.[^pentagon-audit]
 - Other nations' military spending is relatively small (US represents ~40% of global total). Even if holdouts don't comply, they won't catch up to US capabilities.[^military-spending]
-- Everyone has a price: We use massive legal incentives (campaign support, research funding, economic benefits) to make compliance more profitable than defection.
+- Everyone has a price: We use massive legal incentives targeting personal financial gain to make compliance more profitable than defection.
 
-**Our Approach: Incentives Over Punishment**
-Instead of punitive measures, we focus on overwhelming positive incentives:
-- **Direct Funding Rewards:** Institutions in compliant countries get priority access to \$27B annual treasury—double or triple their current research budgets.
-- **Political Incentives:** Massive independent expenditures for politicians who support the treaty, making it electoral suicide to oppose.
-- **Economic Multipliers:** Compliant nations get preferential trade terms, technology transfers, and investment flows that far exceed the 1% military cut.
+**Our Approach: Personal Financial Alignment Over Institutional Punishment**
+Leaders are humans driven by personal financial self-interest, not abstract geopolitical strategy. We apply the same strategy we use with military contractors:
+- **Personal Investment Opportunity:** Leaders and their families can invest in [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to offer mathematically superior returns to alternative investments. When your personal wealth grows faster by supporting the treaty than opposing it, the choice is obvious.
+- **Direct Financial Stakes:** We offer leaders opportunities to profit directly from the \$27B annual treasury through legally compliant investment vehicles, giving them personal skin in the game.
+- **Family Security:** Leaders' families get diseases too. They can profit from a system that perpetuates risk, or profit *even more* from one that funds cures for conditions that might affect their loved ones.
+- **Political Insurance:** Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice—opposing it becomes electoral and financial suicide.
 
 **Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (already enough for 13-130 extinction events[^nuclear]) and AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk.
 
