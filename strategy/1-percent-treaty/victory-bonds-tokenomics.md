@@ -39,7 +39,26 @@ dateCreated: 2025-08-12T00:00:00.000Z
 - On-chain escrow accounts; monthly proofs of reserves and liabilities.
 - Public dashboards showing: inflows, coupon accruals, coverage ratio, and runway.
 - Independent audits and covenant checks; breach → automated pause and governance review.
-- For a detailed assessment of risks, repayment timelines, and contingencies, see [Victory Bond Investment Thesis](../../economic-models/victory-bond-investment-thesis.md#10-assessing-realism-risks-repayment-timeline-and-contingencies).
+
+## Investor Payout Mechanisms ("The Exit")
+
+Investors realize their returns through two primary, transparent mechanisms, depending on the instrument they hold. These are designed to be simple, predictable, and backed by the full financial power of the DIH treasury.
+
+### 1. For `$VICTORY` Bond Holders (Debt-like Instruments)
+
+This mechanism is designed for predictable, steady returns, analogous to a traditional government bond.
+-   **Mechanism:** Direct Annual Payouts.
+-   **How it Works:** The DIH treasury receives **\$27+ billion** in annual revenue from the 1% Treaty. A contractually obligated portion of this income is used to make direct, annual cash payments to bondholders. These payments cover both interest (yield) and a portion of the principal until the bond matures.
+-   **The Result:** A reliable, passive income stream for the duration of the term, with the full principal and profit returned by the end.
+
+### 2. For `$VICTORY` Token Holders (Governance Instruments)
+
+This mechanism is designed for high-growth returns, driven by the increasing value of governing the DIH. It is analogous to owning equity in a high-growth company.
+-   **Mechanism:** Value accrual, realized via treasury buybacks or secondary market sales.
+-   **How it Works:**
+    1.  **Treasury Buybacks:** The DIH DAO can vote to use a portion of its massive annual surplus (e.g., a percentage of the **\$19.77B+** annual net income) to buy back `$VICTORY` tokens from the market. This provides a constant source of liquidity for investors who wish to sell and creates sustained buying pressure, driving up the token's value.
+    2.  **Secondary Market Sales:** As the world's most powerful governance token, `$VICTORY` tokens will be highly sought after and traded on regulated, liquid secondary markets. An investor can sell their tokens at any time at the prevailing market price, just like selling shares of a company.
+-   **The Result:** Investors can realize their gains by selling their appreciating asset, either back to the treasury or to other market participants who want to acquire governance power.
 
 ## Compliance Considerations (Non-legal summary)
 
