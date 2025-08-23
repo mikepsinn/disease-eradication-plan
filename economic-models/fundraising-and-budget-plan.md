@@ -16,6 +16,8 @@ This document provides a comprehensive breakdown of the total capital required t
 
 The capital raised is not for ongoing operations; it is a one-time "activation energy" required to overcome the political inertia of the current system. This investment is designed to unlock a perpetual, multi-generational funding stream of **$27+ billion annually** for global health.
 
+**Note on Diligence Documents:** This document provides the high-level strategic budget. A detailed, bottom-up operational budget and a description of our full, spreadsheet-based financial model are available in our [Operational Budget & Financial Model Documentation](./operational-budget-and-financial-model.md).
+
 The budget is structured around a 36-month timeline and is divided into four primary operational categories.
 
 ## 2. Total Fundraising Requirement: $1.2B - $2.5B
@@ -37,44 +39,48 @@ The raise will be conducted in tranches, with each tranche tied to the achieveme
     *   **Goal:** To ensure treaty ratification in all major powers (US, EU, China) and fully capitalize the DIH treasury for its first year of operation.
     *   **Milestone:** Full operational deployment and the first $1B disbursement.
 
-## 3. Detailed Budget Breakdown
+## 3. Phased Operational Budget & Justification
 
-The following table provides a line-item breakdown of the total estimated costs. A detailed justification for each category follows.
+The budget is not a monolithic block but is designed to be deployed in phases, directly corresponding to our fundraising tranches. This ensures that capital is used efficiently and that spending scales only with the achievement of verifiable milestones.
 
-| Category                      | Lower Bound Estimate | Upper Bound Estimate | % of Total (Upper) | Pay-for-Success Model? |
-| :---------------------------- | :------------------- | :------------------- | :----------------- | :--------------------- |
-| 1. Independent Expenditures   | $800M                | $1.5B                | 60%                | ✅ (Prizes & Bounties)  |
-| 2. Strategic Incentive Alignment | $100M                | $200M                | 8%                 | ✅ (Contingency Fees)   |
-| 3. Platform & Tech Development| $250M                | $400M                | 16%                | ✅ (Holdbacks & Bonuses) |
-| 4. Legal & Treaty Framework   | $100M                | $200M                | 8%                 | ✅ (Contingency Fees)   |
-| 5. Referendum Payouts         | $5M                  | $10M                 | <1%                | ✅ (Inherently PoS)     |
-| 6. Operations & Contingency   | $44M                 | $344M                | 14%                | ❌ (Core Costs)         |
-| **Total**                     | **$1.2B**              | **$2.5B**              | **100%**           |                        |
+---
 
-### Budget Justification & "Pay for Success" Implementation
+### Phase 1: Seed ($250M - $400M)
 
-The budget is designed to support a **hybrid strategy**, combining a grassroots, citizen-led referendum with a sophisticated, top-down plan to co-opt the existing military-industrial complex (MIC). This dual approach allows us to build undeniable public support while simultaneously removing our most powerful opposition. See our full analysis at [Co-Opting Defense Contractors](../strategy/co-opting-defense-contractors.md).
+This initial phase is designed to build the core infrastructure and prove the model in a limited number of high-impact pilot regions.
 
-#### 1. Independent Expenditures (Grassroots Campaign)
-*   **Justification:** This budget funds the public-facing, citizen-led campaign. It is our primary tool for demonstrating overwhelming public will, which creates the political cover necessary for leaders to support the treaty. It includes advertising, polling, and get-out-the-vote operations for the global referendum.
-*   **Pay-for-Success Model:** This will be structured with **prizes and bounties** and **performance-based contracts** for campaign and media firms.
+| Category                      | Lower Bound | Upper Bound | Justification & Pay-for-Success Model |
+| :---------------------------- | :---------- | :---------- | :------------------------------------ |
+| **Operations (Core Team)**    | $10M        | $15M        | **Justification:** Salaries for a lean founding team (15-20 people).<br>**Pay-for-Success:** Team will receive modest cash salaries + large, vested `$VICTORY` token grants, aligning their success with the mission's. |
+| **Platform & Tech MVP**       | $50M        | $75M        | **Justification:** Engineering and security costs for the referendum platform MVP.<br>**Pay-for-Success:** Contractor fees paid with a 50% cash / 50% vested token split, plus performance bonuses. |
+| **Legal & Framework (Pilots)**| $40M        | $60M        | **Justification:** Retainers for top-tier law firms in 3-5 pilot countries.<br>**Pay-for-Success:** Engagements structured with massive "success fees" paid in `$VICTORY` bonds upon treaty ratification. |
+| **Pilot Independent Expenditure** | $100M       | $150M       | **Justification:** Fund targeted campaigns in 1-2 key electoral districts to prove the model.<br>**Pay-for-Success:** Structured as a competitive prize for the firm that delivers the best results (e.g., polling shift). |
+| **Referendum Points System**  | $5M         | $10M        | **Justification:** Infrastructure for the non-financial points system.<br>**Pay-for-Success:** Inherently pay-for-success as value is contingent. |
+| **Contingency**               | $45M        | $90M        | **Justification:** A necessary buffer for a high-uncertainty political startup. |
 
-#### 2. Strategic Incentive Alignment (Co-Opting the MIC)
-*   **Justification:** This is the budget for our co-opting strategy. It is cheaper and more effective to "buy" the support of the existing lobbying infrastructure than to fight it. This capital will be used to structure superior investment opportunities (e.g., via `$VICTORY` Bonds) and performance-based grants for defense contractors, their investors, and their lobbyists, contingent on their support for the treaty.
-*   **Pay-for-Success Model:** The entire category is inherently pay-for-success. Payouts are structured as targeted financial incentives that are only realized upon treaty ratification.
+---
 
-#### 3. Platform & Tech Development
-*   **Justification:** This covers the engineering and infrastructure costs for the global voting and treasury platform.
-*   **Pay-for-Success Model:** We will utilize **holdback and bonus structures** for development partners, with payouts contingent on the platform achieving specific performance milestones.
+### Phase 2: Series A ($500M - $1B)
 
-#### 4. Legal & Treaty Framework
-*   **Justification:** This requires retaining elite law and lobbying firms to navigate the complexities of international law. A portion of this budget is also allocated to providing the legal architecture for the strategic incentive contracts.
-*   **Pay-for-Success Model:** Engagements will be structured on a **contingency fee model**, with massive success fees paid upon treaty ratification.
+With the model proven, this phase scales the operation to all G7 nations and aims to achieve the 3.5% global participation threshold.
 
-#### 5. Referendum Payouts (Points-based)
-*   **Justification:** This budget no longer reflects a direct cash payout per vote. Instead, it covers the minimal operational and infrastructure costs required to run a global "Proof-of-Vote" points system. The primary incentive for voters is a large grant of non-transferable points, which become convertible to valuable `$VICTORY` governance tokens *after* the treaty is successfully ratified. This transforms a major cash expense into a contingent token liability, dramatically improving capital efficiency.
-*   **Pay-for-Success Model:** This is the ultimate "pay for success" model. The value is only delivered to participants after the mission is fully accomplished.
+| Category                      | Lower Bound | Upper Bound | Justification & Pay-for-Success Model |
+| :---------------------------- | :---------- | :---------- | :------------------------------------ |
+| **Scaled Independent Expenditures** | $300M       | $600M       | **Justification:** Expand political campaigns to all G7 nations.<br>**Pay-for-Success:** Introduce a **Competitive Prize Ecosystem**: the first 3 groups to secure ratification in a G7 nation win massive prizes ($100M, $50M, $25M), creating a competitive market for success. |
+| **Strategic Incentive Alignment** | $50M        | $100M       | **Justification:** Capital to structure superior investment deals to co-opt key players in the MIC.<br>**Pay-for-Success:** The entire budget is for performance-based incentives. |
+| **Platform Scale-Up**         | $100M       | $150M       | **Justification:** Scale platform to handle 300M+ users.<br>**Pay-for-Success:** Continued use of holdbacks and performance bonuses. |
+| **Global Legal Expansion**    | $40M        | $80M        | **Justification:** Expand legal operations to all target nations.<br>**Pay-for-Success:** Continued use of success-fee-based retainers. |
+| **Contingency**               | $10M        | $70M        | **Justification:** Operational buffer for scaled global campaign. |
 
-#### 6. Operations & Contingency
-*   **Justification:** This covers the core operational staff and provides a necessary contingency fund for this highly complex global campaign.
-*   **Pay-for-Success Model:** These are fixed costs that are difficult to tie directly to success metrics.
+---
+
+### Phase 3: Growth Round ($500M - $1.1B)
+
+This final phase is the all-out push to ensure treaty ratification in the remaining major powers and to fully capitalize the DIH treasury.
+
+| Category                      | Lower Bound | Upper Bound | Justification & Pay-for-Success Model |
+| :---------------------------- | :---------- | :---------- | :------------------------------------ |
+| **Global Saturation Campaigns** | $300M       | $750M       | **Justification:** Overwhelming political and media pressure in final holdout nations.<br>**Pay-for-Success:** Continued use of the competitive prize model. |
+| **MIC Co-Opting (Final Tranche)**| $50M        | $100M       | **Justification:** Final strategic incentives to secure key corporate and political endorsements.<br>**Pay-for-Success:** Entirely success-based. |
+| **Treasury & Governance Launch**| $100M       | $150M       | **Justification:** Final preparations for DIH treasury launch, including security audits and insurance.<br>**Pay-for-Success:** Developer bonuses tied to flawless first $1B disbursement. |
+| **Contingency**               | $50M        | $100M       | **Justification:** Final buffer for the most critical phase of the campaign. |
