@@ -44,17 +44,21 @@ Our strategy is a deliberate synthesis of historical lessons, combining models t
 ### Step 4: Create a New, More Efficient Institution
 *   **The Precedent (Success):** **The Global Fund to Fight AIDS, Tuberculosis and Malaria** proved that the world can create new, multi-billion-dollar global health institutions when the existing ones are insufficient.
 *   **Our Action:** Upon treaty ratification, the redirected funds will flow into the **Decentraled Institutes of Health (DIH)**, a transparent, democratically controlled, and radically more efficient institution for funding global health research and patient care.
-    *   **The 80X Efficiency Engine:** The DIH will not simply fund the existing, broken research model. It will exclusively support **decentralized, pragmatic trials** modeled on precedents like the Oxford RECOVERY trial, which reduced per-patient costs from **$41,000 to $500**—an **80X efficiency gain**. This radical efficiency is what ensures the redirected funds will have a transformative impact on global health.
+    *   **The 80X Efficiency Engine:** The DIH will not simply fund the existing, broken research model. It will exclusively support a **decentralized FDA (dFDA)** platform that enables hyper-efficient pragmatic trials. This model, based on precedents like the Oxford RECOVERY trial, reduces per-patient costs from **$41,000 to as low as $500**—an **80X efficiency gain**. This radical efficiency is not just a theoretical improvement; it unlocks staggering value:
+        *   **463:1 Return on Investment:** The platform is projected to save the global R&D industry **~$50 billion annually** on a modest operational cost, making it a profoundly valuable infrastructure investment.
+        *   **840,000+ Life-Years Annually:** The combination of faster drug access, better prevention, and new therapies for neglected diseases is projected to generate over 840,000 Quality-Adjusted Life Years (QALYs) each year.
+        *   **A Dominant Health Intervention:** The dFDA is a rare "dominant" intervention—it simultaneously saves vast sums of money *and* improves health outcomes.
+    *   This radical efficiency is what ensures the redirected funds will have a transformative impact on global health. For a full breakdown, see the [dFDA Cost Benefit Analysis](../economic-models/dfda-cost-benefit-analysis.md).
 
 ## 4. The Economic Engine: Capturing the First Peace Dividend
 
 The financial power of this model is built on a simple principle: capturing the first, tangible portion of the massive economic value unlocked by reducing global conflict.
 
 *   **The Inefficiency:** The world suffers from a **$16.5 trillion annual "Cost of Violence,"** a massive economic burden that represents the single largest pool of misallocated capital on the planet.
-*   **The Intervention:** The 1% Treaty is a strategic intervention designed to begin reclaiming this value. It redirects **$27 billion annually** from military spending to health.
-*   **The Realized Dividend:** This **$27 billion annual cash flow** is the first *realized* portion of the Peace Dividend. This is the tangible, predictable revenue stream that provides the fundamental backing for our financial instruments.
+*   **The Captured Dividend:** The **$27 billion annual cash flow** we redirect. This is the tangible revenue stream that provides the fundamental backing for our financial instruments.
+*   **The Societal Dividend:** By reducing global conflict drivers by 1%, the intervention unlocks a far greater economic prize for the world. A 1% reduction of the $16.5T Cost of Violence equates to **$165 billion in annual economic value** returned to society through increased stability, productivity, and growth.
 
-`$VICTORY` Bonds are designed to be secured by this real cash flow, allowing our partners and investors to share in the value they help create. The existence of the larger $16.5T prize is what signals the immense long-term upside potential, making the governance rights conferred by `$VICTORY` tokens exceptionally valuable. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
+Our model captures the first $27B to unlock the full $165B for everyone. This vast societal return is what makes the mission so compelling and the governance rights conferred by `$VICTORY` tokens exceptionally valuable. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
 
 ## 5. Mitigating Risk: Learning from Financial Failures
 

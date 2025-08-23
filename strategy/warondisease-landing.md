@@ -186,14 +186,18 @@ We choose to make saving lives more profitable than taking them.
 
 **[\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
 
-**[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** Democratic treasury that funds specialized programs for each health area.
+**[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** A democratic treasury that funds a radically more efficient research ecosystem. The DIH doesn't just fund the old, broken system—it funds a **decentralized FDA (dFDA) platform** with proven, transformative results:
+
+-   **80X Greater Efficiency:** The dFDA model cuts per-patient trial costs from $41,000 to as low as $500, an 80X efficiency gain proven by models like the Oxford RECOVERY trial.
+-   **\$50 Billion in Annual Savings:** By making research cheaper and faster, the dFDA is projected to save the global R&D industry ~$50 billion annually.
+-   **840,000+ Life-Years Gained Per Year:** The platform is projected to generate over 840,000 Quality-Adjusted Life Years annually through faster drug access and new therapies.
 
 **Specialized programs fund existing institutions:** 
 - Decentralized Institute of Mental Health → funds universities, pharma, nonprofits working on depression, anxiety, etc.
 - Decentralized Institute of Cancer Research → funds MD Anderson, pharmaceutical companies, patient advocacy groups
 - Decentralized Institute of Aging → funds longevity research at every institution
 
-**Everyone gets more money. No one gets displaced.**
+**Everyone gets more money, powered by a system that actually works. No one gets displaced.**
 
 ---
 
@@ -382,11 +386,14 @@ Because we would still have **1% fewer nuclear weapons**. We would still have a 
 
 The worst possible outcome of this plan—total waste—is still a net gain for global security. The best possible outcome is that we also cure cancer.
 
-### The Peace Dividend: Capturing Latent Value for Token Holders and Society
+### The Peace Dividend: The Economic Engine of Victory
 
-The global cost of violence is [\$16.5 trillion annually](#global-violence-costs), or about [\$169,230 per person](#per-capita-lifetime) over a lifetime. By redirecting just 1% from war to peace via the treaty, we unlock massive latent value—a "peace dividend" where just 1% of that dividend is worth **$165 billion per year.** This vast economic surplus boosts productivity, health, and prosperity. 
+The financial power of this model comes from capturing the first, tangible portion of the **$16.5 trillion annual "Cost of Violence"**—the single largest pool of misallocated capital on the planet.
 
-$VICTORY token holders capture a fair share as rewards for their investment (e.g., via superior returns and governance over the $27B treasury), while the vast majority of this value (estimated at 99.84%+) flows to society as lower costs, longer lives, and economic growth. It's not zero-sum—everyone wins. For a detailed breakdown of this model, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
+*   **The Captured Dividend:** We redirect **$27 billion annually** from military spending to health. This tangible cash flow is the *captured* portion of the Peace Dividend that directly backs our financial instruments.
+*   **The Societal Dividend:** By reducing global conflict drivers by 1%, our intervention unlocks a much larger prize for the world. A 1% reduction of the $16.5T Cost of Violence equates to **$165 billion in annual economic value** returned to society through increased stability and productivity.
+
+We capture the first $27B to unlock the full $165B for everyone. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
 
 ---
 
