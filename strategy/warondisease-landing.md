@@ -115,14 +115,14 @@ The scale of this financial mismanagement provides perspective. The value of the
 
 ## Our Answer
 
-We will not defeat money with morals. We will make curing people more profitable than killing them.
+We will not change minds with morals. We will make curing people more profitable than killing them.
 
-**Their system rewards death:**
+**Current incentives reward weapons over cures:**
 - Military contractors: [\$10 billion contracts](#statista-mil-spending)
 - Politicians: [\$100+ million in lobbying annually](#lobbying-100m)
 - Result: More weapons, less security
 
-**Our system rewards life:**
+**We offer better returns:**
 - Citizens: Paid for each referendum vote they generate  
 - Organizations: Partner referral rewards for verified votes via your org’s link; tiered bonus pools and leaderboards for coalitions
 - Politicians: Backed with independent expenditures when they vote with their district’s referendum result
@@ -133,7 +133,7 @@ We choose to make curing people more profitable than killing them.
 
 ---
 
-# Part 2: The Engine of Change
+# Part 2: How It Works
 
 ## Here's How We Fix It:
 
