@@ -66,19 +66,12 @@ This document serves as the content and creative brief. The aesthetic should be 
 
 ## The Simple Truth
 
-Governments spend **[\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases.
+Governments spend **[\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases. That's a **40X disparity**.
 
-People like Jesus realized that loving people is preferable to murdering them millennia ago. However, despite general agreement on this point, absolutely nothing has worked to counter this continual grotesque misallocation of resources.
+The Pentagon alone [can't account for \$2.5 trillion](#pentagon-unaccounted-2-5t) in assets—250 times larger than what we're asking them to redirect.
 
-Every year, the disparity gets worse and worse.
-
-We haven't cured a single disease in [over 50 years](#smallpox-eradicated).
-
-**The current system is actively getting worse:** Recent budget proposals globally continue the grotesque misallocation. This isn't a partisan issue or limited to any single country; it's a systemic global failure that spans nations and political parties.
-
+We haven't cured a single disease in [over 50 years](#smallpox-eradicated). Meanwhile, we have [enough nuclear bombs to kill all of humanity twice](#nuke-winter-150tg).
 In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is actually the RESULT of violent conflict.
-
-Another notable difference, is that we're currently spending trillions while we already have [enough nuclear bombs to kill all of humanity twice and shake the rubble](#nuke-winter-150tg).
 
 So humanity has 2 paths:
 1. Keep acting like violent dumbass monkeys until we extinct ourselves with a Terminator Skynet or nuclear catastrophe
