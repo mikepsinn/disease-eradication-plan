@@ -10,6 +10,8 @@ dateCreated: '2025-02-12T16:56:18.388Z'
 
 # The War on Disease: A Strategy Engineered from History
 
+> Note: For the current plan and execution sequence, see the canonical documents: [War on Disease — Landing](./warondisease-landing.md) and [Canonical Roadmap — 1% Treaty → DIH → dFDA](./roadmap.md).
+
 ## 1. The Unacceptable Reality: A Grotesque Misallocation
 
 Humanity allocates **$2.72 trillion** annually to military spending and just **$67.5 billion** to medical research—a 40:1 disparity. For centuries, moral arguments, peace movements, and protests have failed to make a meaningful impact on this grotesque misallocation of our collective resources.

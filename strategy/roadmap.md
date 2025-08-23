@@ -18,9 +18,9 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 
 **Goal:** Prepare the plan, establish the infrastructure, and reform the laws to make the mission possible.
 
-1.  **Package the Plan:** Finalize core documents ([Investment Thesis](../economic-models/victory-bond-investment-thesis.md), [Landing Page](./warondisease-landing.md)) to create a compelling, data-driven case for donors, investors, and policymakers.
-2.  **Establish Legal & On-Chain Infrastructure:** Deploy the initial secure, transparent on-chain treasury ([DIH Treasury Architecture](../features/treasury/dih-treasury-architecture.md)) and establish legal entities to accept funds compliantly.
-3.  **Achieve Regulatory Reform:** Advocate for and pass the [Impact Securities Reform Act](../regulatory/impact-securities-reform.md) to enable low-friction, transparent financing for the main capital raise.
+- [ ] **Package the Plan:** Finalize core documents ([Investment Thesis](../economic-models/victory-bond-investment-thesis.md), [Landing Page](./warondisease-landing.md)) to create a compelling, data-driven case for donors, investors, and policymakers.
+- [ ] **Establish Legal & On-Chain Infrastructure:** Deploy the initial secure, transparent on-chain treasury ([DIH Treasury Architecture](../features/treasury/dih-treasury-architecture.md)) and establish legal entities to accept funds compliantly.
+- [ ] **Achieve Regulatory Reform:** Advocate for and pass the [Impact Securities Reform Act](../regulatory/impact-securities-reform.md) to enable low-friction, transparent financing for the main capital raise.
 
 ---
 
@@ -28,9 +28,9 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 
 **Goal:** Raise the necessary capital and generate an undeniable global political mandate.
 
-4.  **Launch the Primary Capital Raise:** Sell [$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md) under the new impact securities framework, targeting a \$1.2-2.5B raise to fund the global campaign.
-5.  **Execute the Global Referendum:** Launch the campaign to secure 3.5% global participation (280M+ votes) for the 1% Treaty, creating the political mandate ([Global Referendum Implementation](./referendum/global-referendum-implementation.md)).
-6.  **Secure Treaty Adoption:** Leverage the referendum mandate and a well-funded independent expenditure engine to achieve legal adoption of the 1% Treaty in key nations.
+- [ ] **Launch the Primary Capital Raise:** Sell [\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md) under the new impact securities framework, targeting a \$1.2-2.5B raise to fund the global campaign.
+- [ ] **Execute the Global Referendum:** Launch the campaign to secure 3.5% global participation (280M+ votes) for the 1% Treaty, creating the political mandate ([Global Referendum Implementation](./referendum/global-referendum-implementation.md)).
+- [ ] **Secure Treaty Adoption:** Leverage the referendum mandate and a well-funded independent expenditure engine to achieve legal adoption of the 1% Treaty in key nations.
 
 ---
 
@@ -38,6 +38,6 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 
 **Goal:** Receive the treaty funds, deliver on promises to investors, and execute the mission.
 
-7.  **Activate the DIH Treasury:** Begin receiving the 1% revenue stream (\$27B+ annually) from signatory nations.
-8.  **Deliver Superior Returns to Investors:** Repay `$VICTORY Bond` holders with a return engineered to be superior to alternative investments, fulfilling the core financial promise.
-9.  **Fund Global Public Goods:** Deploy treasury funds to high-impact initiatives, with the primary focus on subsidizing patient participation in efficient, decentralized clinical trials via the **[dFDA Platform Technical Roadmap](../features/dfda-roadmap.md)**.
+- [ ] **Activate the DIH Treasury:** Begin receiving the 1% revenue stream (\$27B+ annually) from signatory nations.
+- [ ] **Deliver Superior Returns to Investors:** Repay `\$VICTORY Bond` holders with a return engineered to be superior to alternative investments, fulfilling the core financial promise.
+- [ ] **Fund Global Public Goods:** Deploy treasury funds to high-impact initiatives, with the primary focus on subsidizing patient participation in efficient, decentralized clinical trials via the **[dFDA Platform Technical Roadmap](../features/dfda-roadmap.md)**.

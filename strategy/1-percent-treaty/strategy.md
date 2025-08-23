@@ -1,7 +1,7 @@
 ---
 title: Roadmap for Creating a Decentralized Autonomous Organization (DAO)
 description: Explore the detailed roadmap for establishing a DAO, including crowdfunding strategies, lobbying efforts, and post-launch activities.
-published: true
+published: false
 date: 2024-06-09T00:00:00.000Z
 tags: roadmap, dao, 1-percent-treaty, crowdfunding, lobbying, project-management
 editor: markdown
@@ -9,6 +9,8 @@ dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
 # Roadmap
+
+> Note: The canonical high-level plan is maintained here: [Canonical Roadmap — 1% Treaty → DIH → dFDA](../roadmap.md). This page is an older, DAO-focused roadmap retained for historical context and tactical details.
 
 For the end‑to‑end plan, see the [Canonical Roadmap — 1% Treaty → DIH → dFDA](../roadmap.md).
 
