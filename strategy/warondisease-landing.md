@@ -72,13 +72,13 @@ People like Jesus realized that loving people is preferable to murdering them mi
 
 Every year, the disparity gets worse and worse.
 
-We haven't eradicated a human disease since [smallpox in 1980](#smallpox-eradicated).
+We haven't cured a single disease in [over 50 years](#smallpox-eradicated).
 
-**The current system is actively getting worse:** Recent budget proposals globally continue the grotesque misallocation - military spending increases while health research budgets are slashed. This isn't a partisan issue or limited to any single country; it's a systemic global failure that spans nations and political parties. The pattern is clear: more weapons, less health research, more death.
+**The current system is actively getting worse:** Recent budget proposals globally continue the grotesque misallocation. This isn't a partisan issue or limited to any single country; it's a systemic global failure that spans nations and political parties.
 
 In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is actually the RESULT of violent conflict.
 
-Another notable difference, is that we're currently spending billions on autonomous AI weapons systems and the world still has ~[13,000 nuclear warheads](#world-warheads)—[enough for at least one civilization‑ending nuclear winter](#nuke-winter-150tg).
+Another notable difference, is that we're currently spending trillions while we already have [enough nuclear bombs to kill all of humanity twice and shake the rubble](#nuke-winter-150tg).
 
 So humanity has 2 paths:
 1. Keep acting like violent dumbass monkeys until we extinct ourselves with a Terminator Skynet or nuclear catastrophe
@@ -546,11 +546,11 @@ Leaders are humans driven by personal financial self-interest, not abstract geop
 - **Multi-jurisdiction strategy:** Separate legal entities and counsel in each country
 - **Technical firewalls:** No shared systems, staff, or communication between entities
 
-**Bottom Line:** Legal compliance is achievable through conservative structures and top-tier legal counsel.
+**Bottom Line:** Conservative structures with top lawyers solve this.
 
 ### 3. **Verification at Scale: "280M people can't be verified reliably"**
 
-**The Challenge:** Preventing sybil attacks and fraud across 280 million global participants.
+**The Challenge:** Stop fake votes across 280 million people.
 
 **Our Solution:** [Multi-layered verification](./verification-and-fraud-prevention.md) with AI monitoring:
 - **Government ID integration:** Connect with national e-ID systems (Estonia, India, EU)
