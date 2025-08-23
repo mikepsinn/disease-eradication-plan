@@ -62,36 +62,33 @@ The 1% Treaty initiative faces three critical legal challenges: **foreign nation
 ### **The Legal Problem**
 
 - **Howey Test:** Investment of money + common enterprise + expectation of profits + from efforts of others = security
-- **\$VICTORY Tokens:** Risk of being classified as unregistered securities if they promise returns
-- **SEC Enforcement:** Heavy penalties for unregistered securities offerings
+- **\$VICTORY Tokens: Risk of being classified as unregistered securities if they promise returns
+- **SEC Enforcement: Heavy penalties for unregistered securities offerings
 
-### **Compliance Solution: Utility Token Structure**
+### **Compliance Solution: A Two-Phase "Points-then-Conversion" Model**
 
-**Token Design (Avoid Securities Classification):**
-- **Pure Utility:** Tokens only provide voting rights and platform access
-- **No Profit Promises:** Explicitly disclaim any expectation of financial returns  
-- **Functional Use:** Tokens required for governance participation and referendum rewards
-- **Decentralized Network:** No central entity controlling token value
+Our compliance strategy is designed to achieve our goal of mass participation while navigating global securities laws, leveraging the SEC's more innovation-friendly guidance as of August 2025. It separates the initial, non-financial airdrop from the subsequent distribution of valuable governance tokens.
 
-**Fundraising Strategy: A Two-Phase Approach for Speed and Compliance**
-Our fundraising model is designed to be both agile and legally robust, separating the high-risk seed phase from a broader public offering.
+**Phase 1: `$VOTE` Points Airdrop (Pre-Treaty)**
 
-**Phase 1: Initial Seed Capital via Private Placement (Reg D & Reg S)**
-The initial, high-risk "activation energy" will be raised via a concurrent private placement.
+This phase focuses on mass distribution of a non-security utility token.
 
-1.  **Regulation D (Reg D) for U.S. Accredited Investors:**
-    *   **Purpose:** To quickly raise foundational capital from sophisticated U.S. investors (VCs, funds, high-net-worth individuals) who understand the political and execution risks.
+*   **Token Design (Not a Security):**
+    *   **No Financial Value:** `$VOTE` points are explicitly defined as having no financial value and are non-transferable.
+    *   **Pure Utility:** Their sole purpose is to serve as a cryptographically verifiable receipt of participation and a badge of honor.
+    *   **No "Investment of Money":** Points are earned through an action (voting), not purchased.
+    *   **Legal Rationale:** This structure is designed to fail the Howey Test. As a non-tradable token with no promised expectation of profit, it has a very strong argument for not being a security, aligning with the SEC's more favorable stance on non-financial, utility-focused airdrops.
 
-2.  **Regulation S (Reg S) for Non-U.S. Investors:**
-    *   **Purpose:** To extend our fundraising to the global community of investors outside the United States.
+**Phase 2: `$VICTORY` Token Conversion (Post-Treaty)**
 
-**Phase 2: Public Participation via Regulation A+**
-Once key milestones are achieved and the project is significantly de-risked (e.g., successful pilot referendums, a functional platform), we will open the investment to the general public, including unaccredited investors.
+This phase occurs only *after* the 1% Treaty is successfully ratified and the DIH Treasury is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
-*   **Mechanism: Regulation A+ Offering:** This "mini-IPO" framework allows us to raise up to **\$75 million per year** from the public through an SEC-reviewed and qualified process.
-*   **Purpose:** To democratize access to the investment, build a broad base of supporters, and achieve our goal of a truly decentralized, community-owned initiative in a fully compliant manner.
+*   **Mechanism: Voluntary, Opt-In Conversion:** Holders of `$VOTE` points will have the option to convert their points into real `$VICTORY` governance tokens through a dedicated, compliant portal.
+*   **Legal Rationale & Safe Harbor:** This conversion event will be structured to fall within the SEC's "safe harbor" provisions for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The `$VICTORY` token's function is now primarily for utility—governing the active, funded DIH treasury—which strengthens the case for a more favorable regulatory treatment.
 
-This two-phase approach ensures we have the speed to start, while creating a transparent, legitimate, and inclusive path for public participation in the long term. All offerings will be conducted via a detailed **Private Placement Memorandum (PPM)** for Phase 1 and a formal **Offering Circular** for Phase 2, both prepared by top-tier securities counsel.
+**Fundraising from Accredited Investors (Reg D / Reg S)**
+
+The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for `$VICTORY` bonds and tokens, conducted in full compliance with Regulation D (for U.S. accredited investors) and Regulation S (for non-U.S. investors). This ensures our core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
 
 **Legal Structure:**
 - **Offshore Foundation:** Singapore or Swiss foundation issuing tokens
