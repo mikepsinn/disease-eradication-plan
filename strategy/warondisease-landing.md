@@ -72,13 +72,13 @@ People like Jesus realized that loving people is preferable to murdering them mi
 
 Every year, the disparity gets worse and worse.
 
-We haven't cured a single disease for nearly [50 years](https://www.who.int/health-topics/smallpox).
+We haven't eradicated a human disease since [smallpox in 1980](#smallpox-eradicated).
 
 **The current system is actively getting worse:** Recent budget proposals globally continue the grotesque misallocation - military spending increases while health research budgets are slashed. This isn't a partisan issue or limited to any single country; it's a systemic global failure that spans nations and political parties. The pattern is clear: more weapons, less health research, more death.
 
 In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is actually the RESULT of violent conflict.
 
-Another notable difference, is that we're currently spending billions on autonomous AI weapons systems and have enough nuclear weapons to kill all of humanity at least two times and then shake the rubble.  We have a system so absurd that feels the need to fund not just one, but  2 human extinctions.
+Another notable difference, is that we're currently spending billions on autonomous AI weapons systems and the world still has ~[13,000 nuclear warheads](#world-warheads)—[enough for at least one civilization‑ending nuclear winter](#nuke-winter-150tg).
 
 So humanity has 2 paths:
 1. Keep acting like violent dumbass monkeys until we extinct ourselves with a Terminator Skynet or nuclear catastrophe
@@ -107,7 +107,7 @@ Why?
 - Military contractors earn billions
 - Politicians receive generous donations  
 - The cycle continues
-- The Pentagon [literally lost \$2.5 trillion](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures) and can't explain where it went
+- The Pentagon [literally lost \$2.5 trillion](#pentagon-unaccounted-2-5t) and can't explain where it went
 
 The scale of this financial mismanagement provides perspective. The value of these unaccounted-for assets is equivalent to 37 years of global medical research funding. The proposed 1% redirection is insignificant compared to the sums already being lost to systemic waste and a lack of basic accountability.
 
@@ -118,8 +118,8 @@ The scale of this financial mismanagement provides perspective. The value of the
 We will not defeat money with morals. We will make curing people more profitable than killing them.
 
 **Their system rewards death:**
-- Military contractors: [\$10 billion contracts](https://www.statista.com/statistics/262742/countries-with-the-highest-military-spending/)
-- Politicians: [\$100+ million in lobbying annually](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
+- Military contractors: [\$10 billion contracts](#statista-mil-spending)
+- Politicians: [\$100+ million in lobbying annually](#lobbying-100m)
 - Result: More weapons, less security
 
 **Our system rewards life:**
@@ -141,7 +141,7 @@ We choose to make curing people more profitable than killing them.
 
 **Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **`$VOTE` points**, a digital receipt of their participation.
 
-**Step 2:** When we hit [3.5% of humanity](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), we have proof the world wants this.
+**Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
 **Step 3:** After the treaty is ratified, `$VOTE` points become convertible to `$VICTORY` governance tokens, giving every participant true ownership and control over the **$27B+ annual health treasury.**
 
@@ -193,7 +193,7 @@ We choose to make curing people more profitable than killing them.
 
 **[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](../problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) platform** with proven results:
 
--   **[80X Greater Efficiency](../reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [\$41,000](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/) to as low as [\$500](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs), an 80X efficiency gain proven by models like the [Oxford RECOVERY trial](../reference/recovery-trial.md).
+-   **[80X Greater Efficiency](../reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [\$41,000](#trial-cost-41k) to as low as [\$500](#recovery-cost-500), an 80X efficiency gain proven by models like the [Oxford RECOVERY trial](../reference/recovery-trial.md).
 -   **[\$50 Billion in Annual Savings](../economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA is projected to save the global R&D industry ~\$50 billion annually.
 -   **[840,000+ Extra Years of Healthy Life](../economic-models/dfda-cost-benefit-analysis.md):** The platform is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies.
 
@@ -295,7 +295,7 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 The strategic risk of non-compliance by some nations is minimal. Global military spending is already highly asymmetric; a 1% budget shift does not materially alter the balance of power.
 
-The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures)**. The U.S. contribution to this plan is **\$10 billion per year**. We are asking to redirect an amount equal to **0.4%** of the money they have already lost.
+The Pentagon cannot account for **[\$2.5 trillion in assets](#pentagon-unaccounted-2-5t)**. The U.S. contribution to this plan is **\$10 billion per year**. We are asking to redirect an amount equal to **0.4%** of the money they have already lost.
 
 **Proof before action:** The referendum shows the world's will before any nation commits.
 
@@ -305,16 +305,16 @@ The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunem
 
 ### Historical Precedents (Why this playbook wins)
 
-- Decentralized coalitions can create binding law: the International Campaign to Ban Landmines led to the 1997 Ottawa Treaty (see [ICBL](https://www.icbl.org/en-gb/the-treaty/treaty.aspx)).
-- Mobilizing private capital for public missions works: [World War II war bonds](https://www.treasurydirect.gov/auctions/wwii-war-bonds/) financed national efforts at scale.
-- New global health institutions can marshal billions effectively: the [Global Fund to Fight AIDS, Tuberculosis and Malaria](https://www.theglobalfund.org/en/overview/) proves rapid, coordinated international funding is achievable.
+- Decentralized coalitions can create binding law: the International Campaign to Ban Landmines led to the 1997 Ottawa Treaty (see [ICBL](#icbl-ottawa-treaty)).
+- Mobilizing private capital for public missions works: [World War II war bonds](#wwii-war-bonds) financed national efforts at scale.
+- New global health institutions can marshal billions effectively: the [Global Fund to Fight AIDS, Tuberculosis and Malaria](#global-fund) proves rapid, coordinated international funding is achievable.
 
 ---
 
 ## The Personal Wealth Economics
 
 **Military contractors' personal enrichment model:**
-- [\$1.1 billion lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022) (2001-2021) → [\$2.02 trillion contracts](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
+- [\$1.1 billion lobbying](#lobbying-1-1b) (2001-2021) → [\$2.02 trillion contracts](#contracts-2-02t)
 - **Return: \$1,813 per \$1 spent on lobbying**
 - Politicians get modest campaign donations and revolving door jobs
 
@@ -325,7 +325,7 @@ The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunem
 **Our superior offer to politicians (legal and more profitable):**
 - **Personal Investment Opportunity:** Politicians and their families can directly invest in [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks. When your personal portfolio grows faster by supporting the treaty, the choice is obvious.
 - **Campaign Support:** Independent expenditures providing massive ad buys and ground game support for treaty supporters; equivalent opposition funding for defectors (no coordination).
-- **Electoral Insurance:** The [3.5%](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) public mandate makes supporting the treaty the safer political choice.
+- **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the safer political choice.
 
 **The math:** We offer politicians more personal wealth than military contractors ever could, PLUS better campaign support, PLUS the moral high ground of saving lives. It's not even close.
 
@@ -340,7 +340,7 @@ The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunem
 
 ## Legal Compliance (jurisdiction‑specific)
 
-- **United States:** Use independent‑expenditure committees (Super PACs). No coordination with campaigns; comply with FEC reporting and disclaimer rules; respect the foreign‑national ban (funds and decision‑making must be from U.S. persons for U.S. elections) [FEC guidance](https://www.fec.gov/updates/foreign-nationals/).
+- **United States:** Use independent‑expenditure committees (Super PACs). No coordination with campaigns; comply with FEC reporting and disclaimer rules; respect the foreign‑national ban (funds and decision‑making must be from U.S. persons for U.S. elections) [FEC guidance](#fec-foreign-nationals).
 - **EU/UK/Canada/Japan and others:** Use lawful local equivalents (third‑party campaigners, non‑party campaigners, PACs). Separate, jurisdiction‑specific entities; local counsel review; segregated banking and governance.
 - **No quid‑pro‑quo contracts:** No smart‑contract triggers tied to legislative votes. Rewards are independent expenditures based on public, verified district will.
 
@@ -401,14 +401,14 @@ This simple model ensures that even in conservative scenarios, the DIH remains m
 ## Why 1% Less Military = More Security
 
 **Modern weapons make everyone less safe:**
-- Nuclear weapons: [1% fewer = ~120 fewer nukes worldwide](https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
+- Nuclear weapons: [1% fewer = ~120 fewer nukes worldwide](#world-warheads)
 - AI weapons systems: Reduce global AI arms race escalation  
 - Cyber warfare tools: Less proliferation of attack capabilities
 
 **Real security threats are health-based:**
-- [Pandemics kill more people than wars](https://ourworldindata.org/covid-deaths) (COVID-19: 7M+ deaths vs. annual conflict deaths ~100K)
-- Antibiotic resistance could kill [10M/year by 2050](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
-- [Mental health crises destabilize societies](https://www.who.int/news-room/fact-sheets/detail/mental-disorders) more than foreign armies
+- [Pandemics kill more people than wars](#pandemics-vs-wars) (COVID-19: 7M+ deaths vs. annual conflict deaths ~100K)
+- Antibiotic resistance could kill [10M/year by 2050](#amr-10m-2050)
+- [Mental health crises destabilize societies](#mental-health-burden) more than foreign armies
 
 **1% reallocation = stronger nations:**
 - Healthier populations are more productive
@@ -484,7 +484,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **7. "The 3.5% rule applies to civil resistance movements, not global online referendums"**
 
-*   **Reality:** The 3.5% rule demonstrates that mass participation creates political legitimacy. Online participation translates to real political pressure when it's verifiable, permanent, and tied to electoral consequences. A cryptographically secure list of 280 million verified supporters becomes a political entity that candidates must respect or face electoral consequences.
+*   **Reality:** The [3.5% rule](#3-5-rule) demonstrates that mass participation creates political legitimacy. Online participation translates to real political pressure when it's verifiable, permanent, and tied to electoral consequences. A cryptographically secure list of 280 million verified supporters becomes a political entity that candidates must respect or face electoral consequences.
 
 **8. "Independent expenditures don't work against entrenched incumbents with deep pockets"**
 
@@ -532,7 +532,7 @@ Leaders are humans driven by personal financial self-interest, not abstract geop
 - **Family Security:** Leaders' families get diseases too. They can profit from a system that perpetuates risk, or profit *even more* from one that funds cures for conditions that might affect their loved ones.
 - **Political Insurance:** Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice—opposing it becomes electoral and financial suicide.
 
-**Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (enough to produce ~150 Tg of stratospheric soot in a U.S.–Russia exchange—modeled to cause global famine and >5 billion deaths [Nature Food, 2022](https://www.nature.com/articles/s43016-022-00573-0); [FAS](https://fas.org/publication/nuclear-war-nuclear-winter-and-human-extinction/)) and an AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk.
+**Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (enough to produce ~150 Tg of stratospheric soot in a U.S.–Russia exchange—modeled to cause global famine and >5 billion deaths[^nuke-winter-150tg]) and an AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk.
 
 **Bottom Line:** Free-riding isn't viable when compliance pays better, and the stakes are human survival. For detailed mechanisms, see [Free Rider Solution](./free-rider-solution.md).
 
@@ -562,7 +562,7 @@ Leaders are humans driven by personal financial self-interest, not abstract geop
 
 ### 4. **"Isn't this just illegal bribery of leaders?"**
 
-**Direct Answer:** No—we're transparent about using overwhelming legal incentives to align leaders' interests with global health, because the alternative is continued arms races leading to potential human extinction via nuclear winter (a U.S.–Russia exchange is modeled to loft ~150 Tg soot and cause global famine with >5 billion deaths [Nature Food, 2022](https://www.nature.com/articles/s43016-022-00573-0)) or AI catastrophe. If "straight-up" rewards are needed for specific leaders, we structure them as performance-based diplomatic grants or economic development packages tied to verifiable treaty compliance—fully compliant with anti-corruption laws like the FCPA.
+**Direct Answer:** No—we're transparent about using overwhelming legal incentives to align leaders' interests with global health, because the alternative is continued arms races leading to potential human extinction via nuclear winter (a U.S.–Russia exchange is modeled to loft ~150 Tg soot and cause global famine with >5 billion deaths[^nuke-winter-150tg]) or AI catastrophe. If "straight-up" rewards are needed for specific leaders, we structure them as performance-based diplomatic grants or economic development packages tied to verifiable treaty compliance—fully compliant with anti-corruption laws like the FCPA.
 
 **Why This Works Legally and Ethically:**
 - **Legal Framework:** All incentives flow through independent entities with no quid-pro-quo; modeled on existing diplomatic aid packages (e.g., US provides $3.8B annual aid to Israel tied to security cooperation[^us-aid]).
@@ -587,7 +587,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ### 7. **Geopolitical Risk: "What if major powers sabotage it?"**
 
-**Response:** Start with democratic alliances (US/EU covering 55% of spending[^sipri]), using economic incentives to pull in others—holdouts like Russia (<10% share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification. Alternative: Unchecked geopolitics risks nuclear winter (US–Russia exchange scenarios modeled at ~150 Tg soot leading to >5B famine deaths [Nature Food, 2022](https://www.nature.com/articles/s43016-022-00573-0))—this reduces that by 1% globally even with partial adoption.
+**Response:** Start with democratic alliances (US/EU covering 55% of spending[^sipri]), using economic incentives to pull in others—holdouts like Russia (<10% share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification. Alternative: Unchecked geopolitics risks nuclear winter (US–Russia exchange scenarios modeled at ~150 Tg soot leading to >5B famine deaths[^nuke-winter-150tg])—this reduces that by 1% globally even with partial adoption.
 
 **Mitigation:** Multi-layered security (AI fraud detection, diplomatic backchannels); focus on mutual benefits over confrontation.
 
@@ -659,6 +659,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ### Source Quotes for Key Parameters
 
+<a id="sipri-2024-spending"></a>
 * **Global military spending (\$2.72T, 2024)**
   > "In 2024, world military expenditure reached \$2.718 trillion, marking a 9.4% increase from the previous year."
   > — SIPRI, 2025, [Trends in World Military Expenditure 2024](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)
@@ -667,6 +668,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
   > "World military expenditure rose by 6.8 per cent in real terms in 2023, to reach \$2443 billion."
   > — SIPRI, 2024, [press release](https://www.sipri.org/media/press-release/2024/world-military-expenditure-reaches-record-high-2023)
 
+<a id="3-5-rule"></a>
 * **3.5% participation tipping point**
   > "The research found that nonviolent campaigns were twice as likely to succeed as violent ones, and once 3.5% of the population were involved, they were always successful."
   > — BBC Future, 2019, ['The 3.5% rule'](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)
@@ -675,6 +677,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
   > "Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed."
   > — Wikipedia, [3.5% rule](https://en.wikipedia.org/wiki/3.5%25_rule)
 
+<a id="amr-10m-2050"></a>
 * **Antimicrobial resistance deaths projection**
   > "By 2050, 10 million lives a year and a cumulative \$100 trillion of economic output are at risk due to the rise of drug-resistant infections if we do not find proactive solutions now to slow down the rise of drug resistance."
   > — Review on Antimicrobial Resistance, 2016, [Final Report](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
@@ -689,6 +692,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
   > "Assuming a global population of 7.8 billion and an average lifespan of 80 years, the per capita lifetime cost of violence is approximately $169,230."
   > — Derived from Global Peace Index data, internal calculation, 2024.
 
+<a id="lobbying-100m"></a>
 * **Defense industry lobbying spending**
   > "During the first three quarters of 2022, the defense sector spent approximately \$101 million on lobbying activities."
   > — Watson Institute, Brown University, 2022, [Defense Sector Lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
@@ -699,14 +703,17 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
   > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
   > — DFDA Wiki, 2025, [Global Government Medical Research Spending](../reference/global-government-medical-research-spending.md)
 
+<a id="pandemics-vs-wars"></a>
 * **Pandemic vs. war deaths comparison**
   > "COVID-19 deaths: 7,010,681 confirmed deaths" vs. annual conflict deaths typically under 100,000.
   > — Our World in Data, 2024, [COVID-19 Deaths](https://ourworldindata.org/covid-deaths)
 
+<a id="mental-health-burden"></a>
 * **Mental health global burden**
   > "Mental health conditions affect 1 in 4 people globally at some point in their lives, representing 30% of the global burden of disease."
   > — World Health Organization, 2022, [Mental Health Fact Sheet](https://www.who.int/news-room/fact-sheets/detail/mental-disorders)
 
+<a id="pentagon-unaccounted-2-5t"></a>
 * **Pentagon audit failures (\$2.46T unaccounted)**
   > "In the most recent audit, the Department of Defense (DoD) could not account for approximately 60% of its \$4.1 trillion in assets, amounting to \$2.46 trillion unaccounted for."
   > — The Commune, 2024, [Pentagon Misplaced \$2.46 Trillion](https://thecommunemag.com/the-pentagon-misplaced-2-46-trillion-an-in-depth-look-at-the-financial-audit-failures)
@@ -719,6 +726,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
   > "In FY 2024, NIH received a total of \$47.08 billion — an increase of \$300 million from FY 2023."
   > — Society of Thoracic Surgeons (summarizing FY 2024 appropriations), 2024, [Closer look at federal funding for key medical programs](https://www.sts.org/blog/closer-look-federal-funding-key-medical-programs-fy-2024)
 
+<a id="us-mil-spending-share"></a>
 * **US military spending share**
   > "The United States accounts for approximately 40% of global military expenditure."
   > — SIPRI, 2024, [Military Expenditure Database](https://www.sipri.org/databases/milex)
@@ -727,6 +735,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
   > "Global nuclear arsenal of ~13,000 warheads could trigger 13-130 nuclear winter scenarios."
   > — Based on Robock & Toon, 2010, Scientific American.
 
+<a id="us-aid-israel"></a>
 * **US foreign aid example**
   > "The U.S. provides approximately $3.8 billion in annual military aid to Israel as part of long-term security cooperation agreements."
   > — Council on Foreign Relations, 2023, [US Aid to Israel](https://www.cfr.org/backgrounder/what-know-about-us-military-aid-israel)
@@ -735,13 +744,78 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
   > "Break-even in 18-36 months with 3.4X return even in partial success."
   > — Internal modeling based on SIPRI data, 2024.
 
+<a id="makerdao-scale"></a>
 * **MakerDAO scale**
   > "MakerDAO manages over $5 billion in assets through decentralized governance."
   > — MakerDAO, 2024, [Official Site](https://makerdao.com).
 
+<a id="lobbying-total"></a>
 * **Military lobbying**
   > "Military industry lobbying totaled ~$127 million in 2024."
   > — OpenSecrets, 2024, [Defense Lobbying](https://www.opensecrets.org/federal-lobbying/industries/summary?cycle=2024&id=D).
+
+<a id="smallpox-eradicated"></a>
+* **Smallpox Eradicated**
+  > "Following a successful global eradication campaign, the World Health Assembly officially declared the world free of smallpox in 1980."
+  > — WHO, [Smallpox Overview](https://www.who.int/health-topics/smallpox)
+
+<a id="world-warheads"></a>
+* **World Nuclear Forces**
+  > "As of early 2024, we estimate that the world’s nine nuclear-armed states possess a combined total of approximately 12,100 nuclear warheads."
+  > — Federation of American Scientists, 2024, [Status of World Nuclear Forces](https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
+
+<a id="nuke-winter-150tg"></a>
+* **Nuclear Winter Famine**
+  > "We estimate that a nuclear war between the United States and Russia would produce 150 Tg of soot and lead to ~5 billion people dying at the end of year 2."
+  > — Xia et al., Nature Food, 2022, [Global food insecurity and famine from nuclear war soot injection](https://www.nature.com/articles/s43016-022-00573-0)
+
+<a id="trial-cost-41k"></a>
+* **Traditional Trial Cost per Patient**
+  > "The median cost of a pivotal trial was estimated to be \$19 million... the median cost per patient was \$41,413."
+  > — Moore, T. J., Zhang, H., Anderson, G., & Alexander, G. C. (2020). Estimated Costs of Pivotal Trials for Novel Therapeutic Agents Approved by the US Food and Drug Administration, 2015-2017. *JAMA Internal Medicine*. [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)
+
+<a id="recovery-cost-500"></a>
+* **RECOVERY Trial Cost per Patient**
+  > "The RECOVERY trial, for example, cost only about $500 per patient... By contrast, the median per-patient cost of a pivotal trial for a new therapeutic is around \$41,000."
+  > — Oren Cass, Manhattan Institute, 2023, [Slow, Costly Clinical Trials Drag Down Biomedical Breakthroughs](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)
+
+<a id="icbl-ottawa-treaty"></a>
+* **International Campaign to Ban Landmines (ICBL)**
+  > "The Convention on the Prohibition of the Use, Stockpiling, Production and Transfer of Anti-Personnel Mines and on their Destruction, also known as the Ottawa Treaty, was adopted in 1997."
+  > — ICBL, [The Treaty](https://www.icbl.org/en-gb/the-treaty/treaty.aspx)
+
+<a id="wwii-war-bonds"></a>
+* **WWII War Bonds**
+  > "From 1941 to 1945, the United States government issued War Bonds to finance military operations. Over 85 million Americans purchased bonds totaling more than \$185 billion."
+  > — U.S. Treasury, [WWII War Bonds](https://www.treasurydirect.gov/auctions/wwii-war-bonds/)
+
+<a id="global-fund"></a>
+* **The Global Fund**
+  > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world’s most affected countries."
+  > — The Global Fund, [Overview](https://www.theglobalfund.org/en/overview/)
+
+<a id="lobbying-1-1b"></a>
+* **Defense Lobbying (2001-2021)**
+  > "Over the past two decades, the top five defense contractors have spent \$1.1 billion on lobbying..."
+  > — Brown University, Watson Institute for International and Public Affairs, 2022. [Link](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
+
+<a id="contracts-2-02t"></a>
+* **Defense Contracts (2001-2021)**
+  > "The top five defense firms received \$2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan."
+  > — Responsible Statecraft, 2021, [Top defense firms see \$2T return on \$1B investment in Afghan war](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
+
+<a id="fec-foreign-nationals"></a>
+* **FEC Foreign Nationals Guidance**
+  > "The Federal Election Campaign Act (FECA) prohibits any foreign national from contributing, donating or spending funds in connection with any federal, state or local election in the United States, either directly or indirectly."
+  > — Federal Election Commission, [Foreign Nationals](https://www.fec.gov/updates/foreign-nationals/)
+
+[^pentagon-audit]: See [Pentagon audit failures](#pentagon-unaccounted-2-5t)
+[^military-spending]: See [US military spending share](#us-mil-spending-share)
+[^nuke-winter-150tg]: See [Nuclear Winter Famine](#nuke-winter-150tg)
+[^us-aid]: See [US foreign aid example](#us-aid-israel)
+[^makerdao]: See [MakerDAO scale](#makerdao-scale)
+[^lobbying]: See [Defense industry lobbying spending](#lobbying-100m)
+[^recovery-trial]: See [RECOVERY Trial Cost per Patient](#recovery-cost-500) and [Traditional Trial Cost per Patient](#trial-cost-41k)
 
 
 
