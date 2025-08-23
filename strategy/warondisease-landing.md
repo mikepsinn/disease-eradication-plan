@@ -191,11 +191,11 @@ We choose to make curing people more profitable than killing them.
 
 **[\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
 
-**[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** A democratic treasury that funds a radically more efficient research ecosystem. The DIH doesn't just fund the old, broken system—it funds a **decentralized FDA (dFDA) platform** with proven, transformative results:
+**[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](../problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) platform** with proven results:
 
--   **80X Greater Efficiency:** The dFDA model cuts per-patient trial costs from $41,000 to as low as $500, an 80X efficiency gain proven by models like the Oxford RECOVERY trial.
--   **\$50 Billion in Annual Savings:** By making research cheaper and faster, the dFDA is projected to save the global R&D industry ~$50 billion annually.
--   **840,000+ Life-Years Gained Per Year:** The platform is projected to generate over 840,000 Quality-Adjusted Life Years annually through faster drug access and new therapies.
+-   **[80X Greater Efficiency](../reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [\$41,000](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/) to as low as [\$500](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs), an 80X efficiency gain proven by models like the [Oxford RECOVERY trial](../reference/recovery-trial.md).
+-   **[\$50 Billion in Annual Savings](../economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA is projected to save the global R&D industry ~\$50 billion annually.
+-   **[840,000+ Extra Years of Healthy Life](../economic-models/dfda-cost-benefit-analysis.md):** The platform is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies.
 
 **Specialized programs fund existing institutions:** 
 - Decentralized Institute of Mental Health → funds universities, pharma, nonprofits working on depression, anxiety, etc.
@@ -283,7 +283,7 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ---
 
-# Part 3: The Strategic Blueprint
+# Part 3: The Plan
 
 ## Why This Works
 
@@ -394,7 +394,7 @@ Our financing is not based on complex, opaque structures. It is governed by two 
 
 The model is designed to **front-load investor returns**, paying out the target amount (~$7.23B per year in the full success scenario) as quickly as treaty inflows allow. The 40% CAGR represents the total 10-year return, while the large year-one payout reflects our strategy of rapidly de-risking the investment for our partners.
 
-This simple, robust model ensures that even in conservative scenarios, the DIH remains massively well-funded while providing world-class returns. For a complete breakdown, see our [Dynamic Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
+This simple model ensures that even in conservative scenarios, the DIH remains massively well-funded while providing returns that beat the best hedge funds. For a complete breakdown, see our [Dynamic Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
 
 ---
 
@@ -508,7 +508,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **11. "How does this help patients vs. just funding more bureaucracy?"**
 
-*   **Reality:** The decentralized FDA puts money directly into patients' hands through algorithmic subsidy allocation that maximizes QALYs gained per dollar, disease burden, and patient financial need. Unlike traditional NIH grants that fund institutions based on political connections, this ensures trials happen where the health impact is highest. Patients get subsidized access to cutting-edge treatments while contributing to research that benefits everyone.
+*   **Reality:** The decentralized FDA puts money directly into patients' hands through algorithmic subsidy allocation that maximizes lives saved per dollar, disease burden, and patient financial need. Unlike traditional NIH grants that fund institutions based on political connections, this ensures trials happen where the health impact is highest. Patients get subsidized access to new treatments while contributing to research that benefits everyone.
 
 **12. "What's the proof this works better than current NIH funding?"**
 
@@ -643,7 +643,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ## Learn More
 
-**Critical Solutions:** Address the main objections that could kill this proposal:
+**Key Solutions:** Address the main objections that could kill this proposal:
 - [Free Rider Problem Solution](./free-rider-solution.md) - Economic enforcement mechanisms
 - [Legal Compliance Framework](./legal-compliance-framework.md) - Election and securities law compliance  
 - [Impact Securities and Digital Public Goods Financing Act (Draft)](../regulatory/impact-securities-reform.md) - Model law to enable compliant, low‑friction financing via on‑chain reporting and impact securities  
