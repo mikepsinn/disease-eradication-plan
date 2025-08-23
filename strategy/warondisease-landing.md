@@ -94,19 +94,11 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 
 ## Why Good Intentions Have Failed
 
-For centuries, we've known war brings suffering. Yet we fund it anyway.
+For centuries, we've known war brings suffering. Yet we fund it anyway. Why?
 
-Why?
-- Military contractors earn billions
-- Politicians receive generous donations  
-- The cycle continues
-- The Pentagon [literally lost \$2.5 trillion](#pentagon-unaccounted-2-5t) and can't explain where it went
+Military contractors earn billions. Politicians receive generous donations. The cycle continues.
 
-The scale of this financial mismanagement provides perspective. The value of these unaccounted-for assets is equivalent to 37 years of global medical research funding. The proposed 1% redirection is insignificant compared to the sums already being lost to systemic waste and a lack of basic accountability.
-
-**The current system is actively cutting health research:** Recent budget proposals globally continue cutting health research while increasing military spending. This is the grotesque misallocation in real-time - we're not just failing to fund cures, we're actively defunding them to buy more weapons. The pattern spans administrations, parties, and nations worldwide.
-
-## Our Answer
+## Our Answer: Legal Bribery for Peace
 
 We will not change minds with morals. We will make curing people more profitable than killing them.
 
