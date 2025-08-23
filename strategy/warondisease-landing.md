@@ -323,7 +323,7 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 
 **Total Implementation Cost:** \$1.2-2.5B over 36 months
 
-**What This Buys:**
+**What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](../economic-models/fundraising-and-budget-plan.md).
 - Global referendum platform (\$56M for 280M signatures at \$0.20 each)
 - Independent expenditures in priority elections (\$800M-1.5B)
 - Platform development and pilot programs (\$250-400M Phase 1)

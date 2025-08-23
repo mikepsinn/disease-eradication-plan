@@ -181,6 +181,9 @@ Repayment is tied to 1% Treaty inflows rather than fixed dates, as detailed in [
 - **Partial Success Example**: With 5 countries participating, $8.5B annual inflows enable 3.4X return on a $2.5B investment in Year 1 post-ratification.
 
 ### Key Risks and Mitigations
+
+While the risks of this venture are significant, they are fundamentally different from those of a traditional startup. We have engineered several specific mechanisms to mitigate them. For a complete comparative analysis, see the full [Investor Risk Analysis](./investor-risk-analysis.md).
+
 - **Political Adoption Risk**: Treaty ratification depends on global referendum success (target: 3.5% of population, ~280M votes). Mitigation: Dynamic pricing via Metaculus markets adjusts yields (e.g., higher for early tranches if probability <70%); fallback to philanthropic funding.
 - **Execution and Regulatory Risk**: Building the DIH Treasury involves compliance across jurisdictions. Mitigation: Staggered launches with Reg CF/A/S exemptions, on-chain audits, and automated covenant checks (as in tokenomics).
 - **Financial Risk**: If inflows delay, principal could be at risk. Mitigation: Seniority waterfalls, optional reinsurance, and first-loss capital absorb initial losses; public dashboards track coverage ratios.
