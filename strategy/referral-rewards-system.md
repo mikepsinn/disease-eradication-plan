@@ -1,19 +1,36 @@
 ---
-title: Referral Rewards and 3.5% Rule
-description: How a viral referral-rewards system can mobilize 3.5% of the global population to pass legislation that replicates the 80X efficiency of the Oxford RECOVERY trial and transforms clinical research costs.
-published: true
-date: 2025-05-27T21:56:53.681Z
-tags: crypto, clinical-trials, cost-efficiency, fda-upgrade, fundraising, medical-progress, referral-rewards, right-to-trial, strategy, war-bonds
-editor: markdown
-dateCreated: 2025-05-27T21:54:01.437Z
+title: War on Disease Tiered Incentive & Referral System
+description: >-
+  This document outlines the incentive mechanisms designed to drive global
+  participation in the 1% Treaty referendum, structured in tiers to maximize
+  both mass-scale adoption and high-value contributions.
+emoji: 🚀
 ---
 
-```mermaid
-graph TD
-    A["Large-Scale Measurable Public Support<br>(e.g., Net Neutrality comments, UK petitions, 3.5% rule)"] --> B["Creates Trigger for Action<br>(e.g., Formal responses, Parliamentary debates, Sustained pressure)"]
-    B --> C["Leads to Concrete Policy Outcome<br>(e.g., FCC rules, Legislation informed, Regime/Policy change)"]
-```
+# War on Disease: Tiered Incentive & Referral System
 
+This document outlines the incentive mechanisms designed to drive global participation in the 1% Treaty referendum. The system is structured in tiers to maximize both mass-scale adoption and high-value contributions, using a hybrid of non-financial points and valuable governance tokens.
+
+## Tier 1: Mass Participation (`$VOTE` Points)
+
+The goal of this tier is to achieve maximum global scale (3.5% of humanity) with minimal friction and legal risk.
+
+-   **Mechanism:** For every verified vote on the global referendum, the participant and the referrer receive a grant of non-transferable **`$VOTE` points.**
+-   **The Incentive:** `$VOTE` points serve as a digital receipt and a proof of participation. Their primary value comes from the promise that they will become **convertible to `$VICTORY` governance tokens *after* the 1% Treaty is successfully ratified.** This transforms a simple vote into a meaningful stake in the future of the DIH.
+-   **Why it Works:** This "Points-then-Conversion" model allows us to sidestep the immense legal and operational complexity of a direct airdrop of a security token to 280 million people, while still providing a powerful, motivating incentive for mass participation.
+
+## Tier 2: Power Users & Organizers (`$VICTORY` Token Grants)
+
+The goal of this tier is to attract and reward the high-value contributors who will build the movement.
+
+-   **Mechanism:** Large, direct grants of **`$VICTORY` tokens/bonds** will be awarded to key contributors through targeted prize campaigns, grant programs, and performance-based partnerships.
+-   **Target Audience:**
+    *   **Organizers:** Community leaders who drive millions of referendum votes.
+    *   **Developers:** Individuals and teams who build valuable tools on top of our platform.
+    *   **Strategic Partners:** Institutions, lobbying firms, and campaign teams whose work directly leads to treaty ratification.
+-   **Why it Works:** For this smaller, more sophisticated group of contributors, we can afford to run a legally compliant distribution process for `$VICTORY` instruments. This gives our most valuable partners a direct, immediate, and powerful stake in the outcome, transforming them from contractors into owners.
+
+---
 
 ## Why 3.5%? The Tipping Point for Systemic Change
 
@@ -259,3 +276,31 @@ So when you propose a pledge/ referral system that can gather tens of thousands�
 ---
 
 **With a disciplined referral-reward loop—and the right partner lists—we can comfortably beat $1 per verified vote and may reach sub-$0.30 territory. This is the lever to unlock 80X faster medical progress for everyone.**
+
+---
+
+## Economic Model & Tokenomics Integration
+
+-   **`$VOTE` Points:** These are non-transferable and have no initial monetary value. Their supply is uncapped and minted on demand for each verified vote.
+-   **`$VICTORY` Conversion:** Upon treaty ratification, a pre-defined pool of the total `$VICTORY` supply will be allocated to the conversion contract. The conversion rate (e.g., 1 `$VOTE` = 1 `$VICTORY`) will be fixed and transparent from day one.
+-   **Tier 2 Grants:** `$VICTORY` tokens for Tier 2 rewards will be allocated from a separate "Ecosystem & Community Growth" fund, as detailed in the main tokenomics document.
+
+This system ensures that the incentives are aligned with the legal framework and the long-term economic health of the DIH.
+
+---
+
+## Benchmarks & Cost Analysis (DEPRECATED)
+
+**NOTE:** The following cost-per-acquisition (CPA) analysis is based on the previous fiat-based model. It is retained for historical context but is no longer the primary model. The new model dramatically reduces upfront cash costs, shifting the expense to a contingent token liability.
+
+-   **Goal:** Drop verified-vote costs below $1 (and as low as $0.20–$0.30 in viral scenarios)
+-   **Key Insight:** Direct cash incentives are expensive and have diminishing returns at scale. A tiered, ownership-based model provides a more powerful and sustainable incentive.
+
+| Channel                     | CPA (Direct) | CPA (Optimized)    | Notes                                         |
+| :-------------------------- | :----------- | :----------------- | :-------------------------------------------- |
+| **Paid Ads (e.g., FB/Google)**  | \$3–\$5    | \$1.00–\$1.50      | High initial cost, scales predictably        |
+| **Promoted Petitions**          | \$2–\$4    | \$0.75–\$1.25      | Leverages existing platforms (e.g., Change.org) |
+| **Referral / Affiliate Payouts**| \$1–\$3    | \$0.50–\$0.75      | Lower fraud, higher engagement                |
+| **Total**                   | **$1.50–$2** | **$0.45–$0.65**    | Can drop to $0.20–$0.30 in best case          |
+
+### Data-Driven Benchmarks

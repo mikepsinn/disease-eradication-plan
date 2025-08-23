@@ -47,7 +47,7 @@ The following table provides a line-item breakdown of the total estimated costs.
 | 2. Strategic Incentive Alignment | $100M                | $200M                | 8%                 | ✅ (Contingency Fees)   |
 | 3. Platform & Tech Development| $250M                | $400M                | 16%                | ✅ (Holdbacks & Bonuses) |
 | 4. Legal & Treaty Framework   | $100M                | $200M                | 8%                 | ✅ (Contingency Fees)   |
-| 5. Referendum Payouts         | $56M                 | $56M                 | 2%                 | ✅ (Inherently PoS)     |
+| 5. Referendum Payouts         | $5M                  | $10M                 | <1%                | ✅ (Inherently PoS)     |
 | 6. Operations & Contingency   | $44M                 | $344M                | 14%                | ❌ (Core Costs)         |
 | **Total**                     | **$1.2B**              | **$2.5B**              | **100%**           |                        |
 
@@ -71,9 +71,9 @@ The budget is designed to support a **hybrid strategy**, combining a grassroots,
 *   **Justification:** This requires retaining elite law and lobbying firms to navigate the complexities of international law. A portion of this budget is also allocated to providing the legal architecture for the strategic incentive contracts.
 *   **Pay-for-Success Model:** Engagements will be structured on a **contingency fee model**, with massive success fees paid upon treaty ratification.
 
-#### 5. Referendum Payouts
-*   **Justification:** The direct cost of incentivizing global participation to reach the 280 million (3.5%) target.
-*   **Pay-for-Success Model:** This is inherently a "pay for success" model.
+#### 5. Referendum Payouts (Points-based)
+*   **Justification:** This budget no longer reflects a direct cash payout per vote. Instead, it covers the minimal operational and infrastructure costs required to run a global "Proof-of-Vote" points system. The primary incentive for voters is a large grant of non-transferable points, which become convertible to valuable `$VICTORY` governance tokens *after* the treaty is successfully ratified. This transforms a major cash expense into a contingent token liability, dramatically improving capital efficiency.
+*   **Pay-for-Success Model:** This is the ultimate "pay for success" model. The value is only delivered to participants after the mission is fully accomplished.
 
 #### 6. Operations & Contingency
 *   **Justification:** This covers the core operational staff and provides a necessary contingency fund for this highly complex global campaign.

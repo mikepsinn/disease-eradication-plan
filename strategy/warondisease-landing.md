@@ -132,15 +132,17 @@ We choose to make saving lives more profitable than taking them.
 
 ## Here's How We Fix It:
 
-- **Core Goal: Make curing people more profitable than killing them.** 
+**The Goal: Make curing people more profitable than killing them.** 
 
-**Step 1:** Pay people \$0.20 for each person who votes on a global referendum via their link.
+**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **`$VOTE` points**, a digital receipt of their participation.
 
 **Step 2:** When we hit [3.5% of humanity](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), we have proof the world wants this.
 
-**Step 3:** Build a legal political engine: independent‑expenditure committees (Super PACs and international equivalents) that pledge massive support for candidates who vote with their district’s referendum result—and fund challengers against those who defy it (no coordination).
+**Step 3:** After the treaty is ratified, `$VOTE` points become convertible to `$VICTORY` governance tokens, giving every participant true ownership and control over the **$27B+ annual health treasury.**
 
-**Step 4:** The treasury funds EVERYONE in health - universities, pharma, nonprofits, government agencies - through democratically controlled funding pools.
+**Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district’s referendum result—and fund challengers against those who defy it.
+
+**Step 5:** The treasury funds EVERYONE in health - universities, pharma, nonprofits, government agencies - through democratically controlled funding pools.
 
 ---
 
@@ -163,10 +165,10 @@ We choose to make saving lives more profitable than taking them.
   - Token appreciation as treasury grows from \$0 → \$27B
 - **Why they bite:** Early governance control of the world's largest decentralized health funding mechanism
 
-**Phase 3: Citizens (\$56M for 280M Referendum Votes)**
+**Phase 3: Citizens (Global Population)**
 - **Who:** Global population (targeting 3.5% = 280M people)
-- **Bribe:** \$0.20 per referendum vote (funded by \$VICTORY token sales)
-- **Why they bite:** Easy money + moral satisfaction + they want better healthcare
+- **Bribe:** A large grant of **`$VOTE` points** for each referendum vote. These non-transferable points act as a verifiable receipt of participation and become convertible to valuable **`$VICTORY` governance tokens** after the 1% Treaty is successfully ratified.
+- **Why they bite:** They get a direct, meaningful, and potentially very valuable stake in the future of global health. It transforms them from simple voters into owners of the new system.
 
 **Phase 4: Politicians (\$800M-1.5B Independent Expenditures)**
 - **Who:** Key legislators in target countries
@@ -324,10 +326,11 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 **Total Implementation Cost:** \$1.2-2.5B over 36 months
 
 **What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](../economic-models/fundraising-and-budget-plan.md).
-- Global referendum platform (\$56M for 280M signatures at \$0.20 each)
-- Independent expenditures in priority elections (\$800M-1.5B)
-- Platform development and pilot programs (\$250-400M Phase 1)
-- Legal compliance and treaty framework (\$100-200M)
+- Global referendum "Proof-of-Vote" points platform (~$5-10M)
+- Independent expenditures in priority elections (~$800M-1.5B)
+- Strategic incentive alignment to co-opt the MIC (~$100-200M)
+- Platform development and pilot programs (~$250-400M)
+- Legal compliance and treaty framework (~$100-200M)
 
 **Annual Returns Once Operational:** \$27B+ per year from 1% military budget redirections
 
@@ -564,8 +567,9 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ## Start Earning Now
 
-**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn \$0.20 per person who votes via your link.
-**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org’s link; pooled bonus funds for coalitions.
+**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn `$VOTE` points for each person who votes via your link. After the treaty passes, your points become convertible to `$VICTORY` tokens.
+
+**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org’s link; pooled bonus funds for coalitions, all paid in `$VOTE` points.
 
 **[Buy \$VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
 
