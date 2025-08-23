@@ -24,9 +24,9 @@ Our approach is built on three pillars:
 Investor psychology requires a simple, powerful message. The underlying financial mechanics require efficiency. We achieve both.
 
 -   **Public-Facing Target (The "Hook"):** For marketing and high-level communications, we will lead with a simple, audacious, and mathematically defensible target:
-    > **"We are targeting a 10x return over 10 years, contingent on the successful ratification of the 1% Treaty."**
+    > **"We are targeting returns superior to the world's most elite hedge funds (~40% annualized), which projects to a ~28x return over 10 years. Our financial model is governed by a simple principle: investor payouts never exceed 50% of our income, guaranteeing our mission is always protected."**
 
-    This message is designed to be memorable, signal the massive scale of the opportunity, and is credibly backed by our [Peace Dividend Value Capture Model](./peace-dividend-value-capture.md).
+    This message is designed to be memorable, signal the massive scale of the opportunity, and is credibly backed by our [Investment Thesis](./victory-bond-investment-thesis.md) and [Dynamic Cash Flow Model](./dih-treasury-cash-flow-model.md).
 
 -   **Backend Mechanism (The "Engine"):** For financial structuring and sales to sophisticated investors, we will use efficient market mechanisms like **Dutch Auctions** for public funding tranches. This allows the market to perform price discovery, ensuring we secure capital at the lowest possible cost (i.e., the lowest acceptable ROI for investors), thus maximizing the funds left for the DIH treasury.
 

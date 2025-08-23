@@ -149,10 +149,10 @@ We choose to make saving lives more profitable than taking them.
 **Phase 1: Seed Investors (\$250-400M Initial Investment)**
 - **Who:** Wealthy individuals, funds, crypto whales
 - **Bribe:** 
-  - **Targeting a 10x Return Over 10 Years:** Contingent on treaty success, we are targeting a historic 10x return (~26% CAGR), backed by our [Peace Dividend model](../economic-models/peace-dividend-value-capture.md).
+  - **Targeting a ~28x Return (~40% CAGR):** Our goal is to deliver the world's best risk-adjusted return. Payouts are governed by clear principles: a 40% CAGR target, capped at 50% of annual income to guarantee our mission. See our [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
   - **\$VICTORY governance tokens** controlling the \$27B annual DIH treasury.
   - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](../economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
-- **Why they bite:** The potential for a historic, de-risked return, plus governance over the world's largest health treasury.
+- **Why they bite:** The potential for a historic, de-risked, and transparently-governed return, plus control over a massive global health treasury.
 
 **Phase 2: \$VICTORY Token Buyers (\$100-200M Referendum Funding)**
 - **Who:** Crypto investors, health advocates, institutions

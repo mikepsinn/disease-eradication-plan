@@ -24,12 +24,20 @@ Our thesis is not to be merely competitive, but to be mathematically superior.
 
 ## 3. How We Engineer a Superior Return (>39% CAGR)
 
-Achieving a return that beats the Medallion Fund is possible due to two unique features of our model that are unavailable in any traditional financial market:
+Our ability to deliver a return superior to the Medallion Fund is built on a transparent, principled payout model, backed by our unique structural advantages.
+
+**The Two Core Principles:**
+1.  **The Target Return Principle (The "Ceiling"):** We target a maximum payout that delivers a **~40% compound annual growth rate (CAGR)** (~28x over 10 years) to our early investors.
+2.  **The Mission Guarantee Principle (The "Floor"):** To protect our ultimate goal, annual investor payouts will **never exceed 50% of the DIH's total annual income.**
+
+These rules ensure a fair balance between rewarding investors and fulfilling our mission, as detailed in our [Dynamic Cash Flow Model](./dih-treasury-cash-flow-model.md).
+
+**Our Unique Advantages:**
 
 **A. Unprecedented Financial Leverage:**
 -   **The Input:** A one-time investment of **\$2.5 billion**.
 -   **The Output:** Control over a **\$27 billion annual, perpetual revenue stream**.
--   **The Leverage Ratio:** **10.8x**. This level of leverage—securing an annual revenue stream more than ten times the size of the initial investment—is structurally impossible in conventional markets and provides the raw financial power to generate historic returns.
+-   **The Leverage Ratio:** **10.8x**. This provides the raw financial power to generate historic returns.
 
 **B. "Governance Alpha": The Uncapped Multiplier**
 Beyond cash returns, `$VICTORY` instruments grant investors governance rights over the **\$27 billion annual DIH treasury**. This is a unique source of value, "Governance Alpha," that has no equivalent. The economic value of this control—the ability to:
@@ -40,11 +48,9 @@ Beyond cash returns, `$VICTORY` instruments grant investors governance rights ov
 
 ## 4. The Mathematical Path to Outperformance
 
-Our `dih-treasury-cash-flow-model.md` demonstrates that a simple 10x return (~26% CAGR) is easily sustainable. To reach and exceed ~39% CAGR, the model incorporates performance-based kickers tied to the speed and scale of treaty adoption.
+Our [Dynamic Cash Flow Model](./dih-treasury-cash-flow-model.md) shows how these principles work in practice. Even in a conservative partial success scenario (e.g., \$13B annual income), the model is designed to deliver world-class returns (~26x over 10 years).
 
-For example, if the treaty is adopted by nations representing >80% of military spending within 5 years, a performance bonus could increase the total payout from \$25B (10x) to **\$50B (20x)**. A 20x return over 10 years is a **~35% CAGR** from the cash yield alone, before factoring in the value of Governance Alpha.
-
-By combining massive financial leverage with the unique value of Governance Alpha, we can structure an offering that provides a risk-adjusted expected value demonstrably superior to any other investment in the world.
+In a full success scenario (\$27B annual income), we can comfortably deliver on our target of **~40% CAGR (~28x over 10 years)**. This is achieved by combining the base cash yield with performance-based kickers and the immense underlying value of Governance Alpha. By combining these unique advantages, we can structure an offering that provides a risk-adjusted expected value demonstrably superior to any other investment in the world.
 
 ### Long-Term Value Accrual: The Growing Treasury
 The financial models in this document are based on the initial, conservative figure of a \$27 billion annual treasury. However, the long-term vision is to incrementally increase this redirection percentage over time. This means the DIH treasury is designed to grow, making governance rights (`$VICTORY` tokens) an asset with the potential for multi-generational value appreciation. For a detailed explanation of this long-term strategy, see [The Endgame: A Multi-Generational Strategy to Phase Out War](../strategy/the-endgame-phasing-out-war.md).
