@@ -6,6 +6,11 @@ date: 2024-06-09T00:00:00.000Z
 tags: roadmap, dao, 1-percent-treaty, crowdfunding, lobbying, project-management
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
+topic_id: dao-roadmap-legacy
+canonical: false
+status: archived
+domains: [treaty]
+doc_type: strategy
 ---
 
 # Roadmap
