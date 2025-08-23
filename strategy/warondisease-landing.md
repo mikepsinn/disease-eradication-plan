@@ -72,13 +72,13 @@ People like Jesus realized that loving people is preferable to murdering them mi
 
 Every year, the disparity gets worse and worse.
 
-We haven't cured a single disease for nearly 50 years!
+We haven't cured a single disease for nearly [50 years](https://www.who.int/health-topics/smallpox).
 
 **The current system is actively getting worse:** Recent budget proposals globally continue the grotesque misallocation - military spending increases while health research budgets are slashed. This isn't a partisan issue or limited to any single country; it's a systemic global failure that spans nations and political parties. The pattern is clear: more weapons, less health research, more death.
 
 In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is actually the RESULT of violent conflict.
 
-Another notable difference, is that we're currently spending billions on autonomous AI weapons systems and have enough nuclear weapons to kill all of humanity at least 13 times and then shake the rubble.
+Another notable difference, is that we're currently spending billions on autonomous AI weapons systems and have enough nuclear weapons to kill all of humanity at least two times and then shake the rubble.  We have a system so absurd that feels the need to fund not just one, but  2 human extinctions.
 
 So humanity has 2 paths:
 1. Keep acting like violent dumbass monkeys until we extinct ourselves with a Terminator Skynet or nuclear catastrophe
@@ -207,11 +207,11 @@ We choose to make curing people more profitable than killing them.
 ```mermaid
 graph TD;
     subgraph "The DIH Value Flywheel (Annual Flow)";
-        A[/"$27B Annual Captured<br/>Peace Dividend"/];
+        A[/"\$27B Annual Captured<br/>Peace Dividend"/];
         
         subgraph "Treasury Allocation";
-            A -->|"Up to 50%"| B["$7.2B/yr<br/>Investor Payouts"];
-            A -->|"Min. 50%"| C["$19.8B/yr<br/>DIH Mission Investment"];
+            A -->|"Up to 50%"| B["\$7.2B/yr<br/>Investor Payouts"]; 
+            A -->|"Min. 50%"| C["\$19.8B/yr<br/>DIH Mission Investment"]; 
         end
 
         subgraph "dFDA Value Multiplication Engine";
@@ -220,11 +220,11 @@ graph TD;
         end
         
         subgraph "Societal Returns";
-            E --> F["$50B+ Annual<br/>R&D Savings"];
-            E --> G["840,000+<br/>QALYs Gained Annually"];
+            E --> F["\$50B+ Annual<br/>R&D Savings"]; 
+            E --> G["840,000+<br/>Extra Years of Healthy Life Annually"]; 
         end
 
-        B --> X["World-Class Investor Returns"];
+        B --> X["Returns that beat the best hedge funds"]; 
         F --> Y["Global Economic Growth"];
         G --> Z["Massively Improved<br/>Public Health"];
     end
@@ -532,7 +532,7 @@ Leaders are humans driven by personal financial self-interest, not abstract geop
 - **Family Security:** Leaders' families get diseases too. They can profit from a system that perpetuates risk, or profit *even more* from one that funds cures for conditions that might affect their loved ones.
 - **Political Insurance:** Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice—opposing it becomes electoral and financial suicide.
 
-**Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (already enough for 13-130 extinction events[^nuclear]) and AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk.
+**Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (enough to produce ~150 Tg of stratospheric soot in a U.S.–Russia exchange—modeled to cause global famine and >5 billion deaths [Nature Food, 2022](https://www.nature.com/articles/s43016-022-00573-0); [FAS](https://fas.org/publication/nuclear-war-nuclear-winter-and-human-extinction/)) and an AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk.
 
 **Bottom Line:** Free-riding isn't viable when compliance pays better, and the stakes are human survival. For detailed mechanisms, see [Free Rider Solution](./free-rider-solution.md).
 
@@ -562,7 +562,7 @@ Leaders are humans driven by personal financial self-interest, not abstract geop
 
 ### 4. **"Isn't this just illegal bribery of leaders?"**
 
-**Direct Answer:** No—we're transparent about using overwhelming legal incentives to align leaders' interests with global health, because the alternative is continued arms races leading to potential human extinction via nuclear winter (13-130 events possible with current arsenals[^nuclear]) or AI catastrophe. If "straight-up" rewards are needed for specific leaders, we structure them as performance-based diplomatic grants or economic development packages tied to verifiable treaty compliance—fully compliant with anti-corruption laws like the FCPA.
+**Direct Answer:** No—we're transparent about using overwhelming legal incentives to align leaders' interests with global health, because the alternative is continued arms races leading to potential human extinction via nuclear winter (a U.S.–Russia exchange is modeled to loft ~150 Tg soot and cause global famine with >5 billion deaths [Nature Food, 2022](https://www.nature.com/articles/s43016-022-00573-0)) or AI catastrophe. If "straight-up" rewards are needed for specific leaders, we structure them as performance-based diplomatic grants or economic development packages tied to verifiable treaty compliance—fully compliant with anti-corruption laws like the FCPA.
 
 **Why This Works Legally and Ethically:**
 - **Legal Framework:** All incentives flow through independent entities with no quid-pro-quo; modeled on existing diplomatic aid packages (e.g., US provides $3.8B annual aid to Israel tied to security cooperation[^us-aid]).
@@ -587,7 +587,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ### 7. **Geopolitical Risk: "What if major powers sabotage it?"**
 
-**Response:** Start with democratic alliances (US/EU covering 55% of spending[^sipri]), using economic incentives to pull in others—holdouts like Russia (<10% share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification. Alternative: Unchecked geopolitics risks nuclear winter (13-130 events[^nuclear])—this reduces that by 1% globally even with partial adoption.
+**Response:** Start with democratic alliances (US/EU covering 55% of spending[^sipri]), using economic incentives to pull in others—holdouts like Russia (<10% share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification. Alternative: Unchecked geopolitics risks nuclear winter (US–Russia exchange scenarios modeled at ~150 Tg soot leading to >5B famine deaths [Nature Food, 2022](https://www.nature.com/articles/s43016-022-00573-0))—this reduces that by 1% globally even with partial adoption.
 
 **Mitigation:** Multi-layered security (AI fraud detection, diplomatic backchannels); focus on mutual benefits over confrontation.
 
