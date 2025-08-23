@@ -384,7 +384,7 @@ The worst possible outcome of this plan—total waste—is still a net gain for 
 
 ### The Peace Dividend: Capturing Latent Value for Token Holders and Society
 
-The global cost of violence is [\$16.5 trillion annually](#global-violence-costs), or about [\$169,230 per person](#per-capita-lifetime) over a lifetime. By redirecting just 1% from war to peace via the treaty, we unlock massive latent value—a "peace dividend" that boosts productivity, health, and prosperity. 
+The global cost of violence is [\$16.5 trillion annually](#global-violence-costs), or about [\$169,230 per person](#per-capita-lifetime) over a lifetime. By redirecting just 1% from war to peace via the treaty, we unlock massive latent value—a "peace dividend" where just 1% of that dividend is worth **$165 billion per year.** This vast economic surplus boosts productivity, health, and prosperity. 
 
 $VICTORY token holders capture a fair share as rewards for their investment (e.g., via superior returns and governance over the $27B treasury), while the vast majority of this value (estimated at 99.84%+) flows to society as lower costs, longer lives, and economic growth. It's not zero-sum—everyone wins. For a detailed breakdown of this model, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
 

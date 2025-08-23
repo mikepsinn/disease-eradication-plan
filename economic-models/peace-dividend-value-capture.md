@@ -31,6 +31,8 @@ The "Peace Dividend" is the total economic value reclaimed by reducing global co
     -   Increased economic productivity (higher GDP growth, reallocated human capital).
     -   Improved health and social outcomes.
 
+-   **A Note on Scale:** Just 1% of this annual **$16.5 trillion** dividend is **$165 billion**—a sum more than six times larger than the entire $27B treasury we aim to create. This immense underlying value is what makes the financial model for `$VICTORY` instruments so robust.
+
 ## 3. The Activation Energy: Investment Required
 
 To unlock this multi-trillion-dollar dividend, a significant but comparatively small upfront investment is required. This "activation energy" is estimated at **\$1.2–\$2.5 billion** over 36 months.
