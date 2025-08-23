@@ -603,7 +603,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 - [Impact Securities and Digital Public Goods Financing Act (Draft)](../regulatory/impact-securities-reform.md) - Model law to enable compliant, low‑friction financing via on‑chain reporting and impact securities  
 - [Verification & Fraud Prevention](./verification-and-fraud-prevention.md) - Scale verification for 280M people
 
-**Strategy:** [How we beat concentrated interests](./war-on-disease-strategy.md)
+**Strategy:** [The War on Disease: A New Strategy for a New Era](./war-on-disease-strategy.md)
 
 **Treasury:** [DIH funding model](./1-percent-treaty/decentralized-institutes-of-health.md)  
 
