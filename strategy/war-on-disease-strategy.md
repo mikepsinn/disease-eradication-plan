@@ -1,7 +1,7 @@
 ---
 title: 'The War on Disease: A New Strategy for a New Era'
 description: 'A comprehensive strategy for eradicating disease by redirecting global military spending, engineered from the lessons of historical social and financial movements.'
-published: true
+published: false
 date: '2025-08-22T00:00:00.000Z'
 tags: strategy, history, activism, social-change, game-theory, public-choice
 editor: markdown
@@ -27,7 +27,7 @@ The core problem is that the system is not broken; it is working perfectly for t
 
 The single most important lesson comes from the failure of past movements like the **Nuclear Disarmament ("Freeze") Movement** of the 1980s. Despite massive global support, it failed because it relied on moral persuasion against an entrenched military-industrial complex with billions of dollars at stake.
 
-**Our strategy is engineered to correct this fundamental flaw.** We will not defeat bad money with morals; we will defeat bad money with *better money*. Our core thesis is to make peace and healing more profitable for the powerful than conflict and destruction.
+**Our strategy is engineered to correct this fundamental flaw.** We will not defeat bad money with morals; we will make curing people more profitable than killing them. Our core thesis is to make peace and healing more profitable for the powerful than conflict and destruction.
 
 This is not a traditional activist movement. It is a **financially-powered political arbitrage play** to redirect a massive, pre-existing cash flow.
 

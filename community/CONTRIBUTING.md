@@ -87,6 +87,14 @@ When two files overlap:
 - Escape dollar signs in Markdown (write \$VICTORY, \$27B).
 - Follow the Sourcing and Citation Standard: every quantitative claim must link to a source.
 
+## Voice & messaging guidelines
+
+- Use direct, powerful language over euphemisms.
+- Core framing: "Make curing more profitable than killing" / "Bribe our way to a better world"
+- Alternative framings: "Make peace more profitable than war" / "Capture the peace dividend" / "Bribe the shit out of everyone to act like a proper species"
+- Avoid weak corporate speak; prefer honest, visceral language that matches the stakes.
+- Quantify everything; moral arguments need data backing.
+
 ## Contributor workflow (PR checklist)
 
 - Confirm frontmatter includes topic_id, canonical, status, domains, doc_type

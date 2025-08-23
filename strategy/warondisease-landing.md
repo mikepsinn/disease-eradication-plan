@@ -115,7 +115,7 @@ The scale of this financial mismanagement provides perspective. The value of the
 
 ## Our Answer
 
-We will not defeat money with morals. We will defeat bad money with better money.
+We will not defeat money with morals. We will make curing people more profitable than killing them.
 
 **Their system rewards death:**
 - Military contractors: [\$10 billion contracts](https://www.statista.com/statistics/262742/countries-with-the-highest-military-spending/)
@@ -129,7 +129,7 @@ We will not defeat money with morals. We will defeat bad money with better money
 
 - Institutions: Double or triple their research funding
 
-We choose to make saving lives more profitable than taking them.
+We choose to make curing people more profitable than killing them.
 
 ---
 
@@ -300,6 +300,14 @@ The Pentagon cannot account for **[\$2.5 trillion in assets](https://thecommunem
 **Proof before action:** The referendum shows the world's will before any nation commits.
 
 **Existing institutions win:** Universities, hospitals, research centers—all receive more funding than ever before.
+
+---
+
+### Historical Precedents (Why this playbook wins)
+
+- Decentralized coalitions can create binding law: the International Campaign to Ban Landmines led to the 1997 Ottawa Treaty (see [ICBL](https://www.icbl.org/en-gb/the-treaty/treaty.aspx)).
+- Mobilizing private capital for public missions works: [World War II war bonds](https://www.treasurydirect.gov/auctions/wwii-war-bonds/) financed national efforts at scale.
+- New global health institutions can marshal billions effectively: the [Global Fund to Fight AIDS, Tuberculosis and Malaria](https://www.theglobalfund.org/en/overview/) proves rapid, coordinated international funding is achievable.
 
 ---
 
@@ -490,7 +498,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
     3.  **You Protect Your Family:** Contractors are humans. Their families get sick. They can profit from a system that fuels destruction, or they can profit *even more* by funding cures that might one day save their loved ones.
     4.  **Repurpose Your Lobbyists:** Instead of us hiring new lobbyists, we "bribe" you with superior returns to get your existing lobbyists to push for the treaty. Your networks become our accelerators, turning opposition into advocacy overnight.
 
-    By making our system more profitable, we give every rational actor a clear financial incentive to support the treaty. We defeat "bad money" not by destroying it, but by offering it a better deal.
+    By making peace and health more profitable, we give every rational actor a clear financial incentive to support the treaty. We bribe our way to a better world.
 
     For a detailed analysis of why co-opting contractors is superior to adversarial tactics, see [Co-Opting Defense Contractors](./co-opting-defense-contractors.md).
 
