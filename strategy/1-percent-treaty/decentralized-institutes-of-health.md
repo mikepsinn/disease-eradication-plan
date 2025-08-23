@@ -6,6 +6,11 @@ date: 2024-06-12T00:00:00.000Z
 tags: dih, treasury, victory-bonds, patient-subsidies, dao, 1-percent-treaty, dfda
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
+topic_id: dih-overview
+canonical: true
+status: active
+domains: [dih]
+doc_type: strategy
 ---
 
 # The Decentralized Institutes of Health: A Treasury for the War on Disease

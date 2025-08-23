@@ -6,6 +6,11 @@ date: 2025-08-12T00:00:00.000Z
 tags: referendum, governance, identity, verifiability, privacy, security
 editor: markdown
 dateCreated: 2025-08-12T00:00:00.000Z
+topic_id: referendum-implementation
+canonical: true
+status: active
+domains: [treaty]
+doc_type: spec
 ---
 
 ## Objective

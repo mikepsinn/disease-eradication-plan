@@ -7,6 +7,11 @@ tags: dih, treasury, multisig, threshold-signatures, governance, security, trans
 editor: markdown
 dateCreated: 2025-08-12T00:00:00.000Z
 fontawesomeIcon: fa-vault
+topic_id: dih-treasury-architecture
+canonical: true
+status: active
+domains: [dih]
+doc_type: spec
 ---
 
 ## Purpose

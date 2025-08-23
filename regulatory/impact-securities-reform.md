@@ -6,6 +6,11 @@ date: '2025-08-22T00:00:00.000Z'
 tags: impact-securities, digital-assets, reg-reform, on-chain-reporting, capital-formation, public-goods
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
+topic_id: impact-securities-reform
+canonical: true
+status: active
+domains: [treaty, dih]
+doc_type: regulatory
 ---
 
 ## Section 1. Purpose

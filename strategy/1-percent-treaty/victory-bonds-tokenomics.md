@@ -6,6 +6,11 @@ date: 2025-08-12T00:00:00.000Z
 tags: victory-bonds, tokenomics, treasury, fundraising, securities-compliance, roi
 editor: markdown
 dateCreated: 2025-08-12T00:00:00.000Z
+topic_id: victory-instruments-tokenomics
+canonical: true
+status: active
+domains: [dih]
+doc_type: model
 ---
 
 ## Overview

@@ -6,6 +6,11 @@ date: '2025-08-22T00:00:00.000Z'
 tags: dfda, technical-roadmap, product-development, ai-agents, decentralized-trials
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
+topic_id: dfda-technical-roadmap
+canonical: true
+status: active
+domains: [dfda]
+doc_type: spec
 ---
 
 # dFDA Platform Technical Roadmap

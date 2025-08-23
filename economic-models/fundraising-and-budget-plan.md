@@ -6,6 +6,11 @@ date: '2025-08-22T00:00:00.000Z'
 tags: fundraising, budget, financial-planning, strategy, investor-relations
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
+topic_id: fundraising-budget-plan
+canonical: true
+status: active
+domains: [dih, treaty]
+doc_type: model
 ---
 
 # Fundraising & Budget Plan: The Activation Energy
