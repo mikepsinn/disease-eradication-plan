@@ -149,7 +149,7 @@ We choose to make saving lives more profitable than taking them.
 **Phase 1: Seed Investors (\$250-400M Initial Investment)**
 - **Who:** Wealthy individuals, funds, crypto whales
 - **Bribe:** 
-  - **Targeting a ~28x Return (~40% CAGR):** Our goal is to deliver the world's best risk-adjusted return. Payouts are governed by clear principles: a 40% CAGR target, capped at 50% of annual income to guarantee our mission. See our [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
+  - **Targeting a >40% CAGR (~28x Return):** Our financial model is engineered to deliver a risk-adjusted return superior to the world's most elite investment funds (e.g., Renaissance Medallion Fund's ~39% CAGR). Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
   - **\$VICTORY governance tokens** controlling the \$27B annual DIH treasury.
   - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](../economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
 - **Why they bite:** The potential for a historic, de-risked, and transparently-governed return, plus control over a massive global health treasury.
@@ -333,25 +333,22 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 
 **ROI Timeline:** 18-36 months after first treaty ratification
 
-**Break-even Analysis:** Even if only 5 major countries participate (US, EU, UK, Japan, Canada), that's \$8.5B annually vs. \$2.5B total investment = 3.4X return in year one alone.
+**Break-even Analysis:** Even in a conservative partial success scenario where only the **US, EU, & UK** participate (generating **\$13B annually**), the system generates a **cash payout of \$6.5B (2.6X the initial \$2.5B investment)** in the first year of operation alone.
 
 **The Math:** We're asking for \$2.5B to redirect \$27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
 
 ---
 
-## Financing Structure (For Investors)
+## Financing Structure: Principled, Transparent, and Fair
 
-**Total Capital Need:** \$1.2-2.5B over 36 months, deployable in tranches tied to achievement gates.
+Our financing is not based on complex, opaque structures. It is governed by two core, transparent principles that ensure a fair balance between rewarding investors and fulfilling our mission.
 
-**Victory Notes (Senior, 60% of capital):** 6-9% coupon post-treaty commitments; secured by assigned government receivables; 3-5 year tenor.
+1.  **The Target Return Principle (The "Ceiling"):** We aim to deliver the world's best risk-adjusted return, targeting a **~40% compound annual growth rate (CAGR)** (~28x over 10 years) for our early investors.
+2.  **The Mission Guarantee Principle (The "Floor"):** To protect our ultimate goal, annual investor payouts will **never exceed 50% of the DIH's total annual income.**
 
-**Mezzanine (30% of capital):** 12-16% target IRR; step-up coupons on delays; performance kickers tied to verified savings.
+The model is designed to **front-load investor returns**, paying out the target amount (~$7.23B per year in the full success scenario) as quickly as treaty inflows allow. The 40% CAGR represents the total 10-year return, while the large year-one payout reflects our strategy of rapidly de-risking the investment for our partners.
 
-**First-Loss/Guarantee (10% of capital):** Philanthropic/PRI capital at 0-5% to de-risk senior tranches; absorbs political/execution risk.
-
-**Phase 1 Requirement:** \$250-400M for global platform, pilot countries, and first electoral cycles. Senior/mezz investors enter at higher yields (10-20%) until binding government commitments de-risk the structure.
-
-**Repayment Source:** Assigned 1% military budget redirections from participating governments; estimated \$27B+ annual once operational.
+This simple, robust model ensures that even in conservative scenarios, the DIH remains massively well-funded while providing world-class returns. For a complete breakdown, see our [Dynamic Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
 
 ---
 
@@ -529,7 +526,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ### 5. **Financial Risk: "What if this fails? Where's my return?"**
 
-**Response:** We've structured financing with tranched investments, first-loss philanthropic capital absorbing initial risks, and risk-adjusted IRRs of 8-12% for senior investors assuming 70% success probability in major countries. Even in failure, partial progress (e.g., 5-country adoption) yields 3.4X ROI in year one from $8.5B inflows vs. $2.5B total investment.[^roi-analysis] Consequentialist view: The upside is $27B annual treasury control; downside is better than status quo waste (e.g., Pentagon's $2.5T losses).
+**Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model targets a **~40% CAGR (~28x return)** for early investors, benchmarked against elite funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital. The consequentialist view: the upside is $27B annual treasury control; the downside is better than the status quo of waste (e.g., Pentagon's $2.5T losses).
 
 **Mitigation:** Clear milestone gates for funding release; diversified repayment from multiple government commitments.
 
