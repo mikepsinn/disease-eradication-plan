@@ -199,6 +199,32 @@ We choose to make saving lives more profitable than taking them.
 
 **Everyone gets more money, powered by a system that actually works. No one gets displaced.**
 
+```mermaid
+graph TD;
+    subgraph "The DIH Value Flywheel (Annual Flow)";
+        A[/"$27B Annual Captured<br/>Peace Dividend"/];
+        
+        subgraph "Treasury Allocation";
+            A -->|"Up to 50%"| B["$7.2B/yr<br/>Investor Payouts"];
+            A -->|"Min. 50%"| C["$19.8B/yr<br/>DIH Mission Investment"];
+        end
+
+        subgraph "dFDA Value Multiplication Engine";
+            C --> D["Invested in dFDA Platform<br/>& Efficient Research"];
+            D ==> E{"463:1 ROI"};
+        end
+        
+        subgraph "Societal Returns";
+            E --> F["$50B+ Annual<br/>R&D Savings"];
+            E --> G["840,000+<br/>QALYs Gained Annually"];
+        end
+
+        B --> X["World-Class Investor Returns"];
+        F --> Y["Global Economic Growth"];
+        G --> Z["Massively Improved<br/>Public Health"];
+    end
+```
+
 ---
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
