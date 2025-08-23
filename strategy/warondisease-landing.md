@@ -512,7 +512,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **12. "What's the proof this works better than current NIH funding?"**
 
-*   **Reality:** The Oxford RECOVERY trial saved over 1 million lives globally at $500 per patient. The NIH RECOVER initiative spent $53,333 per patient and completed zero trials in 4 years. The dFDA's algorithmic subsidy allocation would have funded 3,200 RECOVERY-style trials with the same budget that NIH used to complete zero trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
+*   **Reality:** The Oxford RECOVERY trial saved over 1 million lives globally at $500 per patient. The NIH RECOVER initiative spent $1.6 BILLION and completed ZERO trials in 4 years. The dFDA's algorithmic subsidy allocation would have funded 3,200 RECOVERY-style trials with the same budget that NIH used to complete zero trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
 
 ## Critical Objections Addressed
 
