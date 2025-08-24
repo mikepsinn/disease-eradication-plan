@@ -46,3 +46,50 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 - [ ] **Activate the DIH Treasury:** Begin receiving the 1% revenue stream (\$27B+ annually) from signatory nations.
 - [ ] **Deliver Superior Returns to Investors:** Repay `\$VICTORY Bond` holders with a return engineered to be superior to alternative investments, fulfilling the core financial promise.
 - [ ] **Fund Global Public Goods:** Deploy treasury funds to high-impact initiatives, with the primary focus on subsidizing patient participation in efficient, decentralized clinical trials via the **[dFDA Platform Technical Roadmap](../features/dfda-roadmap.md)**.
+
+## Open TODOs & Next Steps
+
+- [ ] Quick Review & Polish: Final lint/check on updated files (e.g., warondisease-landing.md, referral-rewards-system.md)
+- [ ] Expand Credibility: Add "Too Good to Be True?" sections to [1% Treaty](./1-percent-treaty/1-percent-treaty.md) and [DIH Overview](./1-percent-treaty/decentralized-institutes-of-health.md)
+- [ ] Flesh Out Referendum: Detail implementation in [Global Referendum Implementation](./referendum/global-referendum-implementation.md)
+- [ ] Audit Economic Models: Check for outdated fiat-first language in [Fundraising Strategy](../economic-models/fundraising-strategy.md) and update to points-first model
+- [ ] Brainstorm Marketing: Create edgy, direct copy for social (e.g., Pentagon waste memes) in a new marketing/ folder
+- [ ] Build & Launch Website: Implement the spec from [War on Disease Landing](./warondisease-landing.md) as the public-facing site, including visuals and CTAs. Tie to referendum and tokenomics docs.
+- [ ] Develop Peace Dividend Calculator: Build interactive widget showing personal/country-level value capture, integrated into landing page.
+- [ ] Set Up Marketing Folder: Create marketing/ directory with brainstorm doc for edgy social copy (e.g., Pentagon waste memes).
+
+## Workstreams & Role Ownership (Core Team)
+
+- Program Lead (Roadmap Owner): overall delivery across phases; owns this roadmap
+- Design Lead (Art Direction & Visual System): implements [War on Disease Landing](./warondisease-landing.md)
+- Engineering Lead (Site & App): website, referral engine, calculators, analytics; integrates canonical docs
+- On‑Chain/Treasury Lead: implements [DIH Treasury Architecture](../features/treasury/dih-treasury-architecture.md) and custody/controls
+- Legal/Policy Lead: drives [Legal Compliance Framework](./legal-compliance-framework.md) and [Impact Securities Reform Act](../regulatory/impact-securities-reform.md)
+- Capital Markets Lead: structures/sells [\$VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md) and [Investment Thesis](../economic-models/victory-bond-investment-thesis.md)
+- Growth Lead (Referrals & Partnerships): executes [Referral Rewards System](./referral-rewards-system.md) and [Incentives Layer](./incentives-layer.md)
+- dFDA Research Lead: coordinates platform trials and evidence (see **dFDA Platform** docs) and ties to treasury subsidies
+
+Org chart reference:
+- See [DIH Organizational Structure](./1-percent-treaty/dih-org-structure.md) and [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md)
+
+## High‑Resolution Breakdown (Phase 1 Deliverables)
+
+- [ ] Landing & Credibility
+  - [ ] Build & launch public site per [Landing](./warondisease-landing.md)
+  - [ ] Add “Too Good to Be True” evidence blocks to key pages ([1% Treaty](./1-percent-treaty/1-percent-treaty.md), [DIH Overview](./1-percent-treaty/decentralized-institutes-of-health.md))
+  - [ ] Peace Dividend calculator widget using [Value Capture Model](../economic-models/peace-dividend-value-capture.md)
+- [ ] Referral Engine & Incentives
+  - [ ] Implement points‑first `$VOTE` referral system (anti‑fraud tiers) per [Referral Rewards](./referral-rewards-system.md)
+  - [ ] Leaderboard awards (prestigious framing) per [Incentives Layer](./incentives-layer.md)
+- [ ] Legal & Entities
+  - [ ] Stand up compliant entities and technical firewalls per [Legal Compliance](./legal-compliance-framework.md)
+  - [ ] Draft/advance [Impact Securities Reform](../regulatory/impact-securities-reform.md)
+- [ ] Treasury & On‑Chain
+  - [ ] Stand up core treasury vaults and dashboards per [DIH Treasury Architecture](../features/treasury/dih-treasury-architecture.md)
+  - [ ] Publish transparency policies (addresses, proofs, audits cadence)
+- [ ] Capital Program
+  - [ ] Finalize [\$VICTORY Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md) & [Investment Thesis](../economic-models/victory-bond-investment-thesis.md)
+  - [ ] Data room + initial commitments pipeline
+- [ ] Research & Trials
+  - [ ] Define initial trial templates, outcome measures, and subsidy rules (link to dFDA docs)
+  - [ ] Identify first trial partners; publish collaboration MOUs
