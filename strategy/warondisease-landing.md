@@ -538,6 +538,26 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 *   **Reality:** The Oxford RECOVERY trial saved over 1 million lives globally at $500 per patient. The NIH RECOVER initiative spent $1.6 BILLION and completed ZERO trials in 4 years. The dFDA's algorithmic subsidy allocation would have funded 3,200 RECOVERY-style trials with the same budget that NIH used to complete zero trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
 
+**13. "What about the millions of jobs in the defense industry? This is a threat to their livelihoods."**
+
+*   **Reality:** This is not about eliminating jobs; it's about transitioning talent to a more productive, higher-growth industry. The same brilliant engineers building guidance systems can build next-generation medical imaging devices. The same logistics experts managing global supply chains for military hardware can manage supply chains for delivering trial medications. Our economic models project that a fully funded DIH and dFDA ecosystem will create *more* high-paying, high-skill jobs in biotechnology, data science, and healthcare logistics than the 1% redirection would displace. This is a net job creator, transitioning our most valuable human capital from a 20th-century industry of destruction to a 21st-century industry of creation and healing.
+
+**14. "This plan feels anti-military and disrespectful to the soldiers who protect us."**
+
+*   **Reality:** This initiative deeply respects the service and sacrifice of individual soldiers. Our criticism is not aimed at them, but at a political and budgetary system that has failed them. It fails them by spending trillions on wasteful programs while neglecting the very real threats that kill more of our citizens than any foreign army—including pandemics, mental health crises, and chronic diseases that affect soldiers and their families at high rates. This is about retooling our national security to protect our citizens from the threats they are most likely to face.
+
+**15. "Aren't blockchains environmentally disastrous? How can you save humanity while boiling the oceans?"**
+
+*   **Reality:** This is a valid concern based on early blockchain technology. However, the DIH will be built on modern, energy-efficient **Proof-of-Stake (PoS)** consensus mechanisms, which consume over 99.9% less energy than their Proof-of-Work predecessors. Our commitment to global health is holistic and includes planetary health; our technical architecture will reflect this.
+
+**16. "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"**
+
+*   **Reality:** It is crucial to separate the underlying technology—secure, transparent, and auditable ledgers—from the speculative frenzy that has given 'crypto' a bad name. We are not creating a speculative meme coin. We are using battle-tested, open-source financial plumbing (similar to that securing billions in projects like MakerDAO) for a single purpose: to create a transparent, corruption-resistant, and democratically governed public utility. The value of `$VICTORY` is not based on hype, but on its claim on a real-world, legally-mandated treasury funded by the world's largest economies.
+
+**17. "What stops a few billionaires from buying up all the tokens and seizing the treasury?"**
+
+*   **Reality:** This is a critical design challenge for any decentralized system. To prevent plutocratic capture, the DIH governance model will incorporate proven mechanisms for equitable voting. This includes **quadratic voting**, where the cost of each additional vote increases, making it prohibitively expensive for any single entity to dominate. We may also implement identity-based systems that grant voting power based on reputation and participation, not just capital. The goal is a system governed by its active stakeholders, not just its wealthiest ones.
+
 ## Critical Objections Addressed
 
 The three objections that could kill this proposal have detailed solutions:
