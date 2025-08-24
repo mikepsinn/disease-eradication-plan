@@ -123,7 +123,7 @@ Fair skepticism. Here's why the math actually works:
 - **This is value capture from waste reduction, not digital asset speculation**
 
 **5. Military Contractors Will Switch for Better Returns**
-- Current lobbying: [$127 million for $2 trillion contracts](#lobbying-total)—ROI of 1,813%
+- Return: [$1,813 per $1 spent on lobbying](#lobbying-roi-calc)
 - Our offer: Direct investment in bonds with >40% CAGR + governance of $27B treasury
 - **When the math favors peace, rational actors choose peace**
 
@@ -500,7 +500,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **5. "This is politically impossible - you can't just redirect military budgets by referendum"**
 
-*   **Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The \$7T fossil fuel subsidy proof-of-concept shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
+*   **Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The [\$7T fossil fuel subsidy proof-of-concept](#fossil-fuel-subsidies) shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
 
 **6. "You're assuming governments will honor treaty commitments when they don't honor existing ones"**
 
@@ -860,6 +860,26 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 [^makerdao]: See [MakerDAO scale](#makerdao-scale)
 [^lobbying]: See [Defense industry lobbying spending](#lobbying-100m)
 [^recovery-trial]: See [RECOVERY Trial Cost per Patient](#recovery-cost-500) and [Traditional Trial Cost per Patient](#trial-cost-41k)
+
+<a id="net-neutrality-comments"></a>
+* **Net Neutrality Comments (nearly 4M, 2014-2015)**
+  > "The nearly 4 million comments submitted to the Federal Communications Commission about its proposed net neutrality rules shattered the agency’s previous record..."
+  > — Pew Research Center, 2014, [FCC’s net neutrality comment period ends with a bang](https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/)
+
+<a id="top-contractor-revenue"></a>
+* **Top Defense Contractor Revenue (Lockheed Martin, $68.59B, FY23)**
+  > "The top U.S. defense contractor by total value of contracts awarded by the Department of Defense in fiscal year 2023 was Lockheed Martin, with contracts valued at $68.59 billion."
+  > — Forecast International, 2024, [Top 10 US Defense Contractors Based on FY23 DoD Prime Contracts](https://www.forecastinternational.com/news_body.cfm?news_id=1433)
+
+<a id="fossil-fuel-subsidies"></a>
+* **Fossil Fuel Subsidies ($7T, 2022)**
+  > "Fossil fuel subsidies surged to a record $7 trillion last year as governments supported consumers and businesses during the global spike in energy prices caused by Russia’s invasion of Ukraine and the economic recovery from the pandemic."
+  > — IMF, 2023, [Fossil Fuel Subsidies Surged to Record $7 Trillion](https://www.imf.org/en/Blogs/Articles/2023/08/24/fossil-fuel-subsidies-surged-to-record-7-trillion)
+
+<a id="lobbying-roi-calc"></a>
+* **Lobbying ROI Calculation ($1,813 per $1)**
+  > "The top five defense firms received $2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan... Over the past two decades, the top five defense contractors have spent $1.1 billion on lobbying... That calculates to an ROI of $1,813 for every dollar spent."
+  > — ExecutiveBiz, 2021, [Top 5 Defense Firms See $2T Return on $1B Investment in Afghan War](https://www.executivebiz.com/2021/09/top-5-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
 
 
 
