@@ -19,13 +19,53 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 
 ---
 
-## Phase 1: Foundation & Legal Framework (Months 1-12)
+## Phase 0: Bootstrap & Founding Team (Months 0-3)
 
-**Goal:** Prepare the plan, establish the infrastructure, and reform the laws to make the mission possible.
+**Goal:** Solve the "chicken-and-egg" problem. Secure enough pre-seed capital to hire a core team and establish the legal and financial groundwork for the main capital raise. This phase is executed by the initial founder.
 
-- [ ] **Package the Plan:** Finalize core documents ([Investment Thesis](../economic-models/victory-bond-investment-thesis.md), [Landing Page](./warondisease-landing.md)) to create a compelling, data-driven case for donors, investors, and policymakers.
-- [ ] **Establish Legal & On-Chain Infrastructure:** Deploy the initial secure, transparent on-chain treasury ([DIH Treasury Architecture](../features/treasury/dih-treasury-architecture.md)) and establish legal entities to accept funds compliantly.
-- [ ] **Achieve Regulatory Reform:** Advocate for and pass the [Impact Securities Reform Act](../regulatory/impact-securities-reform.md) to enable low-friction, transparent financing for the main capital raise.
+| Task | Owner | Dependencies | Timeline | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Refine Minimum Viable Pitch** | Founder | *(None)* | 1 Week | `In Progress` |
+| *Create a concise deck summarizing the problem, solution, and the specific "ask" for this pre-seed round.* | | | | |
+| **2. Identify Pre-Seed Investors** | Founder | Pitch Deck | 2 Weeks | `Not Started` |
+| *Build a target list of mission-aligned angel investors, impact funds, or philanthropists.* | | | | |
+| **3. Secure Pre-Seed Funding ($250k-$750k)** | Founder | Investor List | 8-12 Weeks | `Not Started` |
+| *The specific goal of this raise is to fund legal setup and the salaries for 2-3 core hires for 12 months.* | | | | |
+| **4. Recruit Founding Team** | Founder | Funding Secured | Ongoing | `Not Started` |
+| *Prioritize the single most critical hire: a General Counsel (contract/part-time) or a versatile co-founder.* | | | | |
+
+---
+
+## Phase 1: Infrastructure & Mobilization Prep (Months 4-12)
+
+**Goal:** With a core team and seed funding in place, build the full legal, financial, and technical infrastructure required for the global campaign.
+
+This plan breaks down the key deliverables for the Foundation phase into a concrete, actionable to-do list.
+
+| Task | Owner | Dependencies | Timeline | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Stream 1: Finalize Core Strategy & Narrative** | | | | |
+| Final review & sign-off on `warondisease-landing.md` | Program Lead | *(None)* | 3 Days | `Done` |
+| Add "Too Good to Be True?" sections to key docs | Program Lead | `warondisease-landing.md` | 1 Week | `Not Started` |
+| Flesh out Referendum Implementation details | Legal/Policy Lead | `warondisease-landing.md` | 2 Weeks | `Not Started` |
+| Audit & update economic models for points-first approach | Capital Markets Lead | `warondisease-landing.md` | 2 Weeks | `Not Started` |
+| **Stream 2: Team Recruitment & Onboarding** | | | | |
+| Draft Job Descriptions for key leads (Design, Eng, Growth) | Program Lead | `roadmap.md` | 1 Week | `Done` |
+| Begin recruitment outreach for Design & Engineering Leads | Program Lead | Job Descriptions | 4 Weeks | `Not Started` |
+| Onboard core team leads | Program Lead | *(Hires Made)* | 1 Week | `Not Started` |
+| **Stream 3: Website & Public Presence** | | | | |
+| Create wireframes & final visual design for landing page | Design Lead | `warondisease-landing.md` | 2 Weeks | `Not Started` |
+| Develop and launch public-facing website | Engineering Lead | Visual Design | 3 Weeks | `Not Started` |
+| Develop & integrate Peace Dividend calculator | Engineering Lead | Economic Models | 2 Weeks | `Not Started` |
+| Develop & launch points-based referral engine | Engineering Lead, Growth Lead | Website Launched | 4 Weeks | `Not Started` |
+| **Stream 4: Marketing & Communications** | | | | |
+| Create `marketing/` directory & initial content brief | Growth Lead | `warondisease-landing.md` | 2 Days | `Not Started` |
+| Develop initial social media campaign assets (e.g., memes) | Growth Lead, Design Lead | Content Brief | 1 Week | `Not Started` |
+| **Stream 5: Legal & Financial Infrastructure** | | | | |
+| Establish legal entities for fundraising | Legal/Policy Lead | *(None)* | 4 Weeks | `Not Started` |
+| Draft initial version of Impact Securities Reform Act | Legal/Policy Lead | *(None)* | 6 Weeks | `Not Started` |
+| Stand up core treasury vaults & dashboards | On-Chain/Treasury Lead | `DIH Treasury Architecture` | 3 Weeks | `Not Started` |
+| Finalize tokenomics & investment thesis documents | Capital Markets Lead | Economic Models | 2 Weeks | `Not Started` |
 
 ---
 
@@ -46,53 +86,6 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 - [ ] **Activate the DIH Treasury:** Begin receiving the 1% revenue stream (\$27B+ annually) from signatory nations.
 - [ ] **Deliver Superior Returns to Investors:** Repay `\$VICTORY Bond` holders with a return engineered to be superior to alternative investments, fulfilling the core financial promise.
 - [ ] **Fund Global Public Goods:** Deploy treasury funds to high-impact initiatives, with the primary focus on subsidizing patient participation in efficient, decentralized clinical trials via the **[dFDA Platform Technical Roadmap](../features/dfda-roadmap.md)**.
-
-## Open TODOs & Next Steps
-
-- [ ] Quick Review & Polish: Final lint/check on updated files (e.g., warondisease-landing.md, referral-rewards-system.md)
-- [ ] Expand Credibility: Add "Too Good to Be True?" sections to [1% Treaty](./1-percent-treaty/1-percent-treaty.md) and [DIH Overview](./1-percent-treaty/decentralized-institutes-of-health.md)
-- [ ] Flesh Out Referendum: Detail implementation in [Global Referendum Implementation](./referendum/global-referendum-implementation.md)
-- [ ] Audit Economic Models: Check for outdated fiat-first language in [Fundraising Strategy](../economic-models/fundraising-strategy.md) and update to points-first model
-- [ ] Brainstorm Marketing: Create edgy, direct copy for social (e.g., Pentagon waste memes) in a new marketing/ folder
-- [ ] Build & Launch Website: Implement the spec from [War on Disease Landing](./warondisease-landing.md) as the public-facing site, including visuals and CTAs. Tie to referendum and tokenomics docs.
-- [ ] Develop Peace Dividend Calculator: Build interactive widget showing personal/country-level value capture, integrated into landing page.
-- [ ] Set Up Marketing Folder: Create marketing/ directory with brainstorm doc for edgy social copy (e.g., Pentagon waste memes).
-
-## Workstreams & Role Ownership (Core Team)
-
-- Program Lead (Roadmap Owner): overall delivery across phases; owns this roadmap
-- Design Lead (Art Direction & Visual System): implements [War on Disease Landing](./warondisease-landing.md)
-- Engineering Lead (Site & App): website, referral engine, calculators, analytics; integrates canonical docs
-- On‑Chain/Treasury Lead: implements [DIH Treasury Architecture](../features/treasury/dih-treasury-architecture.md) and custody/controls
-- Legal/Policy Lead: drives [Legal Compliance Framework](./legal-compliance-framework.md) and [Impact Securities Reform Act](../regulatory/impact-securities-reform.md)
-- Capital Markets Lead: structures/sells [\$VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md) and [Investment Thesis](../economic-models/victory-bond-investment-thesis.md)
-- Growth Lead (Referrals & Partnerships): executes [Referral Rewards System](./referral-rewards-system.md) and [Incentives Layer](./incentives-layer.md)
-- dFDA Research Lead: coordinates platform trials and evidence (see **dFDA Platform** docs) and ties to treasury subsidies
-
-Org chart reference:
-- See [DIH Organizational Structure](./1-percent-treaty/dih-org-structure.md) and [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md)
-
-## High‑Resolution Breakdown (Phase 1 Deliverables)
-
-- [ ] Landing & Credibility
-  - [ ] Build & launch public site per [Landing](./warondisease-landing.md)
-  - [ ] Add “Too Good to Be True” evidence blocks to key pages ([1% Treaty](./1-percent-treaty/1-percent-treaty.md), [DIH Overview](./1-percent-treaty/decentralized-institutes-of-health.md))
-  - [ ] Peace Dividend calculator widget using [Value Capture Model](../economic-models/peace-dividend-value-capture.md)
-- [ ] Referral Engine & Incentives
-  - [ ] Implement points‑first `$VOTE` referral system (anti‑fraud tiers) per [Referral Rewards](./referral-rewards-system.md)
-  - [ ] Leaderboard awards (prestigious framing) per [Incentives Layer](./incentives-layer.md)
-- [ ] Legal & Entities
-  - [ ] Stand up compliant entities and technical firewalls per [Legal Compliance](./legal-compliance-framework.md)
-  - [ ] Draft/advance [Impact Securities Reform](../regulatory/impact-securities-reform.md)
-- [ ] Treasury & On‑Chain
-  - [ ] Stand up core treasury vaults and dashboards per [DIH Treasury Architecture](../features/treasury/dih-treasury-architecture.md)
-  - [ ] Publish transparency policies (addresses, proofs, audits cadence)
-- [ ] Capital Program
-  - [ ] Finalize [\$VICTORY Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md) & [Investment Thesis](../economic-models/victory-bond-investment-thesis.md)
-  - [ ] Data room + initial commitments pipeline
-- [ ] Research & Trials
-  - [ ] Define initial trial templates, outcome measures, and subsidy rules (link to dFDA docs)
-  - [ ] Identify first trial partners; publish collaboration MOUs
 
 ---
 
