@@ -93,3 +93,7 @@ Org chart reference:
 - [ ] Research & Trials
   - [ ] Define initial trial templates, outcome measures, and subsidy rules (link to dFDA docs)
   - [ ] Identify first trial partners; publish collaboration MOUs
+
+---
+
+See also: [Operations Process Index](../operations/process-index.md) for the run‑book view of each repeatable process (owner, WIG, lead/lag checks) and when it runs by phase.
