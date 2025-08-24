@@ -25,14 +25,16 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 
 | Task | Owner | Dependencies | Timeline | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **1. Refine Minimum Viable Pitch** | Founder | *(None)* | 1 Week | `In Progress` |
-| *Create a concise deck summarizing the problem, solution, and the specific "ask" for this pre-seed round.* | | | | |
-| **2. Identify Pre-Seed Investors** | Founder | Pitch Deck | 2 Weeks | `Not Started` |
-| *Build a target list of mission-aligned angel investors, impact funds, or philanthropists.* | | | | |
-| **3. Secure Pre-Seed Funding ($250k-$750k)** | Founder | Investor List | 8-12 Weeks | `Not Started` |
-| *The specific goal of this raise is to fund legal setup and the salaries for 2-3 core hires for 12 months.* | | | | |
-| **4. Recruit Founding Team** | Founder | Funding Secured | Ongoing | `Not Started` |
-| *Prioritize the single most critical hire: a General Counsel (contract/part-time) or a versatile co-founder.* | | | | |
+| **Stream 1: Pitch & Pre-Seed Funding** | | | | |
+| Draft core pitch deck summarizing the "ask" | Founder | *(None)* | 1 Week | `In Progress` |
+| Build target list of angel & pre-seed investors | Founder | Pitch Deck | 1 Week | `Not Started` |
+| Begin investor outreach & hold pitch meetings | Founder | Investor List | 8 Weeks | `Not Started` |
+| Secure pre-seed funding ($250k-$750k) | Founder | Pitch Meetings | 4 Weeks | `Not Started` |
+| **Stream 2: Founding Team Recruitment** | | | | |
+| Draft Job Description: General Counsel (Contract/Part-Time) | Founder | *(None)* | 2 Days | `Not Started` |
+| Draft Job Description: Co-founder / Head of Operations | Founder | *(None)* | 2 Days | `Not Started` |
+| Begin recruitment for General Counsel | Founder | Funding Secured | Ongoing | `Not Started` |
+| Begin recruitment for Co-founder / Head of Operations | Founder | Funding Secured | Ongoing | `Not Started` |
 
 ---
 
@@ -40,32 +42,27 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 
 **Goal:** With a core team and seed funding in place, build the full legal, financial, and technical infrastructure required for the global campaign.
 
-This plan breaks down the key deliverables for the Foundation phase into a concrete, actionable to-do list.
-
 | Task | Owner | Dependencies | Timeline | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Stream 1: Finalize Core Strategy & Narrative** | | | | |
-| Final review & sign-off on `warondisease-landing.md` | Program Lead | *(None)* | 3 Days | `Done` |
+| **Stream 1: Strategy & Narrative** | | | | |
+| Final review & sign-off on `warondisease-landing.md` | Program Lead | *(None)* | | `Done` |
 | Add "Too Good to Be True?" sections to key docs | Program Lead | `warondisease-landing.md` | 1 Week | `Not Started` |
-| Flesh out Referendum Implementation details | Legal/Policy Lead | `warondisease-landing.md` | 2 Weeks | `Not Started` |
-| Audit & update economic models for points-first approach | Capital Markets Lead | `warondisease-landing.md` | 2 Weeks | `Not Started` |
-| **Stream 2: Team Recruitment & Onboarding** | | | | |
-| Draft Job Descriptions for key leads (Design, Eng, Growth) | Program Lead | `roadmap.md` | 1 Week | `Done` |
-| Begin recruitment outreach for Design & Engineering Leads | Program Lead | Job Descriptions | 4 Weeks | `Not Started` |
-| Onboard core team leads | Program Lead | *(Hires Made)* | 1 Week | `Not Started` |
+| **Stream 2: Team Expansion** | | | | |
+| Draft Job Descriptions for Leads | Program Lead | | | `Done` |
+| Begin recruitment outreach for Design Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
+| Begin recruitment outreach for Engineering Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
+| Begin recruitment outreach for Growth Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
 | **Stream 3: Website & Public Presence** | | | | |
-| Create wireframes & final visual design for landing page | Design Lead | `warondisease-landing.md` | 2 Weeks | `Not Started` |
-| Develop and launch public-facing website | Engineering Lead | Visual Design | 3 Weeks | `Not Started` |
-| Develop & integrate Peace Dividend calculator | Engineering Lead | Economic Models | 2 Weeks | `Not Started` |
-| Develop & launch points-based referral engine | Engineering Lead, Growth Lead | Website Launched | 4 Weeks | `Not Started` |
-| **Stream 4: Marketing & Communications** | | | | |
-| Create `marketing/` directory & initial content brief | Growth Lead | `warondisease-landing.md` | 2 Days | `Not Started` |
-| Develop initial social media campaign assets (e.g., memes) | Growth Lead, Design Lead | Content Brief | 1 Week | `Not Started` |
-| **Stream 5: Legal & Financial Infrastructure** | | | | |
-| Establish legal entities for fundraising | Legal/Policy Lead | *(None)* | 4 Weeks | `Not Started` |
-| Draft initial version of Impact Securities Reform Act | Legal/Policy Lead | *(None)* | 6 Weeks | `Not Started` |
-| Stand up core treasury vaults & dashboards | On-Chain/Treasury Lead | `DIH Treasury Architecture` | 3 Weeks | `Not Started` |
-| Finalize tokenomics & investment thesis documents | Capital Markets Lead | Economic Models | 2 Weeks | `Not Started` |
+| Create wireframes & final visual design | Design Lead | `warondisease-landing.md` | 2 Weeks | `Not Started` |
+| Develop website frontend | Engineering Lead | Visual Design | 3 Weeks | `Not Started` |
+| Develop referral engine backend | Engineering Lead | | 4 Weeks | `Not Started` |
+| Develop Peace Dividend calculator | Engineering Lead | | 2 Weeks | `Not Started` |
+| Deploy public website V1 | Engineering Lead | Frontend/Backend Dev | 1 Week | `Not Started` |
+| **Stream 4: Legal & Financial Infrastructure** | | | | |
+| Select jurisdiction & file for legal entity incorporation | Legal/Policy Lead | | 2 Weeks | `Not Started` |
+| Draft initial version of Impact Securities Reform Act | Legal/Policy Lead | | 6 Weeks | `Not Started` |
+| Stand up core treasury vaults & dashboards | On-Chain/Treasury Lead | | 3 Weeks | `Not Started` |
+| Finalize tokenomics & investment thesis documents | Capital Markets Lead | | 2 Weeks | `Not Started` |
 
 ---
 
