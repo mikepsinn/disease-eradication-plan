@@ -27,8 +27,9 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 | :--- | :--- | :--- | :--- | :--- |
 | **Stream 1: Pitch & Pre-Seed Funding** | | | | |
 | Draft core pitch deck summarizing the "ask" | Founder | *(None)* | 1 Week | `In Progress` |
+| Build & deploy landing page (v1) | Founder | Pitch Deck | 1-2 Weeks | `Not Started` |
 | Build target list of angel & pre-seed investors | Founder | Pitch Deck | 1 Week | `Not Started` |
-| Begin investor outreach & hold pitch meetings | Founder | Investor List | 8 Weeks | `Not Started` |
+| Begin investor outreach & hold pitch meetings | Founder | Landing Page Live | 8 Weeks | `Not Started` |
 | Secure pre-seed funding ($250k-$750k) | Founder | Pitch Meetings | 4 Weeks | `Not Started` |
 | **Stream 2: Founding Team Recruitment** | | | | |
 | Draft Job Description: General Counsel (Contract/Part-Time) | Founder | *(None)* | 2 Days | `Not Started` |
