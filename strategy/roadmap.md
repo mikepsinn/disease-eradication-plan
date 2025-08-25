@@ -26,9 +26,9 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 | Task | Owner | Dependencies | Timeline | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Stream 1: Pitch & Pre-Seed Funding** | | | | |
-| Draft core pitch deck summarizing the "ask" | Founder | *(None)* | 1 Week | `In Progress` |
-| Finalize Pre-Seed SAFT terms | Founder | Pitch Deck | 3 Days | `Not Started` |
-| Approve & Adopt [Team Incentive Policy](./team-incentives.md) | Founder | Pitch Deck | 1 Day | `Not Started` |
+| Draft core pitch deck summarizing the "ask" | Founder | [Landing Page Content](./warondisease-landing.md) | 1 Week | `Done` |
+| Finalize [Pre-Seed SAFT terms](../economic-models/pre-seed-terms.md) | Founder | Pitch Deck | 3 Days | `Done` |
+| Approve & Adopt [Team Incentive Policy](./team-incentives.md) | Founder | Pitch Deck | 1 Day | `Done` |
 | Build & deploy landing page (v1) | Founder | Pitch Deck | 1-2 Weeks | `Not Started` |
 | Build target list of angel & pre-seed investors | Founder | Pitch Deck | 1 Week | `Not Started` |
 | Begin investor outreach & hold pitch meetings | Founder | Landing Page Live | 8 Weeks | `Not Started` |
