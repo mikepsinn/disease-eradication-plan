@@ -1,9 +1,9 @@
 ---
-title: "Algorithmic Contribution & Incentive Policy"
-description: "Defines a dynamic, performance-based system for team and contributor rewards, moving beyond traditional equity models to align incentives with mission success."
+title: "Dynamic Expected Value Incentive Policy"
+description: "Defines a sophisticated, real-time, risk-adjusted compensation model based on Expected Value (EV) calculations, using prediction markets to dynamically price risk."
 published: false
 date: '2025-08-24T00:00:00.000Z'
-tags: ["incentives", "tokenomics", "team", "algorithmic", "contribution-mining"]
+tags: ["incentives", "tokenomics", "team", "algorithmic", "expected-value", "prediction-markets"]
 editor: markdown
 dateCreated: '2025-08-24T00:00:00.000Z'
 topic_id: team-incentives
@@ -13,71 +13,70 @@ domains: ["dih"]
 doc_type: policy
 ---
 
-# Algorithmic Contribution & Incentive Policy
+# Dynamic Expected Value (EV) Incentive Policy
 
-This document outlines a novel incentive structure for the founding team, core contributors, and key advisors of the War on Disease initiative. It moves beyond conventional, arbitrary fixed-percentage allocations and time-based vesting to a dynamic system that rewards verifiable, high-impact work and early-stage risk.
+This document outlines a novel incentive structure for the War on Disease initiative. It moves beyond both conventional time-based vesting and static risk multipliers to a dynamic system that uses market-based predictions to algorithmically price risk and reward contribution. This is designed to be a fair, transparent, and powerful system appropriate for a new form of public institution.
 
-## 1. Core Principles
+## 1. The Core Principle: Expected Value Compensation
 
-Our incentive structure is a direct reflection of our mission to build a new type of public institution.
-- **Earned, Not Granted:** Ownership is earned by creating verifiable value, not granted in opaque, upfront allocations.
-- **Risk-Adjusted Rewards:** The system explicitly and mathematically rewards those who take the greatest risk by contributing during the earliest, most uncertain phases of the project.
-- **Algorithmic Transparency:** The formula for calculating contributions is open, transparent, and applies to all contributors, including the founder.
-- **Mission Alignment:** The structure is designed to relentlessly focus all contributors on the project's critical path milestones.
+The goal is to ensure the **Expected Value (EV)** of a contributor's at-risk compensation is always equal to the real value of the labor they are putting at risk.
 
-## 2. The "Contribution Points" Model
+The formula is: **`Expected Value = Probability of Success * Final Payout`**
 
-Instead of allocating a fixed percentage of the network, we value all work done using a transparent formula. The output of this formula is **Contribution Points**.
+This means that if a contributor performs work when the perceived chance of success is low, their potential payout upon success must be proportionally high to compensate them for the enormous risk they are taking.
 
-**`Contribution Points = (Hours Worked) x (Role-Based Rate) x (Risk Multiplier)`**
+## 2. The Model: How It Works
 
-- **Hours Worked:** All core contributors will use a transparent, auditable system to log hours worked on project-critical tasks.
-- **Role-Based Rate:** Each role has a fair, pre-agreed market hourly rate to value their labor (e.g., Senior Engineer: $150/hr, General Counsel: $300/hr, etc.).
-- **Risk Multiplier:** This is the most critical component for rewarding risk. The multiplier decreases as the project de-risks itself by completing phases.
+### Step 1: Valuing At-Risk Contribution
+We use the "Salary + At-Risk Contribution" model to solve the "people need to eat" problem and value the work being put at risk.
 
-| Project Phase | Risk Multiplier | Rationale |
-| :--- | :--- | :--- |
-| **Phase 0 (Bootstrap)** | **10x** | Highest risk; no funding, no team, concept stage. |
-| **Phase 1 (Infrastructure)** | **5x** | High risk; pre-product, pre-main-raise. |
-| **Phase 2 (Mobilization)** | **2x** | Medium risk; campaign execution, political risk. |
-| **Phase 3 (Execution)** | **1x** | Lower risk; treasury is funded, focus is on execution. |
+- **Determine Market Rate:** Each role has a fair market salary (e.g., Senior Engineer: $200,000/year).
+- **Pay a Base Cash Salary:** A portion of the market rate (e.g., 60%, or $120,000) is paid in cash/stablecoin.
+- **Calculate At-Risk Contribution:** The remainder is the "at-risk" portion. (e.g., $200k - $120k = **$80,000**). This is the value the contributor is investing in the project.
 
-## 3. The Team Allocation Pool & Distribution
-
-The **20% "Founding Team & Advisors" pool** is not a pre-allocation, but a **budget** from which Contribution Points are paid out.
-
-- **Distribution Mechanism:** At the Token Generation Event (TGE), the total Contribution Points of all contributors are summed up. Each contributor receives a pro-rata share of the 20% team allocation pool based on their percentage of the total points.
-- **Example:**
-  - The Founder has earned 1,000,000 Contribution Points.
-  - The General Counsel has earned 500,000 Contribution Points.
-  - The total points earned by all contributors is 10,000,000.
-  - The Founder would receive: `(1,000,000 / 10,000,000) * 20% = 10%` of the team pool, or 2% of the total token supply.
-  - The General Counsel would receive: `(500,000 / 10,000,000) * 20% = 5%` of the team pool, or 1% of the total token supply.
-
-## 4. Cash vs. At-Risk Compensation
-
-To provide stability for core contributors while solving for the "people need to eat" problem, we will use a hybrid compensation model.
-
-1.  **Determine Market Rate:** For each role, we establish a fair market salary (e.g., Senior Engineer: $200,000/year).
-2.  **Offer a Base Cash Salary:** The project will offer a livable cash salary, paid in fiat or stablecoin. This will be a percentage of the market rate (e.g., 60%), ensuring we can attract top talent while conserving capital.
-    - *Example:* For a $200k market rate, the cash salary is **$120,000/year**.
-3.  **Value the "At-Risk" Contribution:** The remaining portion of the salary is the contributor's "at-risk" investment of their labor into the project.
-    - *Example:* `$200,000 (Market) - $120,000 (Cash) = $80,000 (At-Risk Portion)`
-4.  **Reward the Risk:** This "at-risk" portion is what gets valued and multiplied by the **Contribution Points** formula. This model ensures that contributors are compensated for their risk and are powerfully aligned with the project's success.
-
-For key roles, we can offer flexibility on this "slider," allowing a candidate to choose between a higher cash salary for fewer Contribution Points, or a lower cash salary for a greater share of the potential upside.
-
-## 5. The Role of Prediction Markets: A Public Risk Oracle
-
-To provide a transparent, real-time measure of the project's perceived risk, we will sponsor a prediction market on a platform like Polymarket or Metaculus.
+### Step 2: Using a Prediction Market as a Risk Oracle
+We will use a live prediction market (e.g., on Polymarket or Metaculus) to provide a real-time, decentralized measure of the project's probability of success.
 
 - **The Market:** "Will the 1% Treaty be ratified by at least one G7 nation by 2030?"
-- **The Purpose:** The market's live probability (e.g., "3.5%") will serve as the project's single most important public Key Performance Indicator (KPI).
-- **Important Clarification:** This probability is **not** a direct input into the compensation formula. Its purpose is to provide an objective, external signal of the project's progress and risk level. This helps contributors gauge the risk of their at-risk compensation and holds leadership accountable for increasing the probability of success.
+- **The Output:** The market's live probability is our `P(success)`. For example, `P(success) = 2%`.
 
-## 6. Advantages of this Model
+### Step 3: Granting "Success Grants" with a Commitment Bonus
+For every dollar of at-risk work a contributor performs, they are awarded a corresponding amount of **Success Grants**. To optimally align incentives and conserve the project's cash runway, we apply a **Commitment Bonus** to the at-risk portion, making it mathematically superior to taking cash.
 
-- **Fair & Objective:** Directly rewards verifiable work and risk.
-- **Avoids "Sleaze":** Moves completely away from the arbitrary nature of startup equity negotiations.
-- **Incentivizes Early Contribution:** The multiplier heavily rewards those who join when the risk is highest.
-- **Flexible & Scalable:** Easily accommodates new contributors (full-time, part-time, contract) without needing to re-negotiate equity splits.
+The formula to calculate the grant is:
+
+**`Success Grants ($) = (At-Risk Contribution $) x (1 + Commitment Bonus) / P(success)`**
+
+- **Commitment Bonus:** A fixed **15%** bonus that rewards contributors for forgoing cash compensation in favor of at-risk tokens.
+- **Example:**
+  - Our engineer performs their $80,000 of at-risk work when `P(success)` is 2%.
+  - The value of their contribution is boosted by the bonus: `$80,000 * 1.15 = $92,000`.
+  - `Success Grants = $92,000 / 0.02 = $4,600,000`
+  - They have now earned a claim on **$4.6 million** worth of value, which has a higher expected value ($92k) than the cash they gave up ($80k).
+
+## 3. Tokenomics: Connecting Grants to Tokens
+
+To make the Success Grants meaningful, they must map to a share of the network.
+
+- **Success Valuation:** We define a target valuation for the project at the time of the main capital raise (Phase 2). For modeling purposes, we set this at **$5 Billion**.
+- **Team Allocation Pool Value:** The 20% team allocation pool is therefore worth **$1 Billion** upon success (`$5B * 0.20`).
+- **Calculating Ownership:** A contributor's ownership of the team pool is their share of the total value.
+  - *Example:* The engineer's $4.6M in Success Grants represents `$4,600,000 / $1,000,000,000 = 0.46%` of the team's token pool.
+
+At the Token Generation Event, their accumulated Success Grants are converted into a corresponding number of `$VICTORY` tokens.
+
+## 4. Post-Distribution Incentives: Governance Staking
+
+To ensure long-term alignment after tokens are distributed, we will implement a **Governance Staking** model.
+
+- **Purpose:** To encourage active, long-term participation in the ecosystem's governance over short-term speculation.
+- **Mechanism:**
+  1.  **Governance Power:** Only `$VICTORY` tokens that are "staked" (locked in a smart contract) can be used to vote on DIH funding proposals.
+  2.  **Staking Yield:** To reward this commitment, stakers will receive a pro-rata share of a portion of the DIH's annual income, providing a sustainable yield for those who actively govern the treasury.
+
+## 5. Advantages of this Model
+
+- **Mathematically Fair:** It is the most precise method to reward risk. It algorithmically gives the highest rewards to the earliest, most courageous contributors.
+- **Radically Transparent:** All inputs to the formula (market rates, hours, prediction market odds) are transparent and auditable.
+- **Market-Driven:** It removes subjective decisions about what a "Risk Multiplier" should be and replaces it with a live, market-driven price of risk.
+- **Optimally Aligned:** The Commitment Bonus and Staking Yield create powerful, rational incentives for contributors to prioritize the long-term success of the project at every step.
