@@ -61,6 +61,7 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 | Develop referral engine backend | Engineering Lead | | 4 Weeks | `Not Started` |
 | Develop Peace Dividend calculator | Engineering Lead | | 2 Weeks | `Not Started` |
 | Deploy public website V1 | Engineering Lead | Frontend/Backend Dev | 1 Week | `Not Started` |
+| Launch v1 of the Bounty Program | Program Lead | [Bounty Model Doc](./open-ecosystem-and-bounty-model.md) | 1 Week | `Not Started` |
 | **Stream 4: Legal & Financial Infrastructure** | | | | |
 | Select jurisdiction & file for legal entity incorporation | Legal/Policy Lead | | 2 Weeks | `Not Started` |
 | Draft initial version of Impact Securities Reform Act | Legal/Policy Lead | | 6 Weeks | `Not Started` |

@@ -31,7 +31,7 @@ This model works because it aligns incentives. Commercial developers can build b
 
 ## 3. The Role of Bounties and Prizes (Act SEC. 204(i))
 
-While an open ecosystem is largely self-sustaining, a targeted incentive program is crucial for guiding growth and filling critical gaps. The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program** for this purpose. This is not a grants program to fund entire projects; it is a surgical tool to pay for specific, verifiable outcomes.
+While an open ecosystem is largely self-sustaining, a targeted incentive program is crucial for guiding growth and filling critical gaps. The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program** for this purpose. This is not a grants program to fund entire projects; it is a surgical tool to pay for specific, verifiable outcomes. This stands in contrast to the core team's compensation, which is handled by the [Dynamic Expected Value Incentive Policy](./team-incentives.md).
 
 Bounties and prizes will be used for:
 
@@ -54,9 +54,9 @@ The cost estimates for this lean, bounty-driven approach are realistic for sever
 
 For this strategy to succeed, the following conditions must be met:
 
-*   **Critical Mass:** The platform must attract a large enough base of users (patients, researchers, clinicians) and developers to create the network effects that fuel organic growth.
+*   **Critical Mass:** The platform must attract a large enough base of users (patients, researchers, clinicians) and developers to create the network effects that fuel organic growth. The initial user growth will be driven by the [Referral Rewards System](./referral-rewards-system.md).
 *   **API Quality and Documentation:** The platform's APIs must be robust, reliable, and exceptionally well-documented. A world-class developer experience is non-negotiable.
 *   **Transparent Governance:** The process for awarding bounties and managing community contributions must be transparent, fair, and responsive, as outlined in the governance model of the Act (SEC. 204(g)).
-*   **Clear Core Roadmap:** The core platform team must maintain and communicate a clear vision and roadmap, so the community knows where the "rails" are going and can build accordingly.
+*   **Clear Core Roadmap:** The core platform team must maintain and communicate a clear vision and roadmap, as detailed in the [Canonical Roadmap](./roadmap.md), so the community knows where the "rails" are going and can build accordingly.
 
 By focusing on these success factors, the dFDA platform can foster a thriving global ecosystem that delivers unparalleled medical innovation at a fraction of the cost of a centralized, top-down approach. 

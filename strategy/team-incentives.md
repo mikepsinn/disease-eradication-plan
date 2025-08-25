@@ -15,7 +15,7 @@ doc_type: policy
 
 # Dynamic Expected Value (EV) Incentive Policy
 
-This document outlines a novel incentive structure for the War on Disease initiative. It moves beyond both conventional time-based vesting and static risk multipliers to a dynamic system that uses market-based predictions to algorithmically price risk and reward contribution. This is designed to be a fair, transparent, and powerful system appropriate for a new form of public institution.
+This document outlines a novel incentive structure for the founding team, core contributors, and key advisors of the War on Disease initiative. It moves beyond both conventional time-based vesting and static risk multipliers to a dynamic system that rewards verifiable, high-impact work and early-stage risk. This policy for the core team is distinct from the program for external or task-based contributions, which is detailed in the [Open Ecosystem and Bounty Model](./open-ecosystem-and-bounty-model.md).
 
 ## 1. The Core Principle: Expected Value Compensation
 

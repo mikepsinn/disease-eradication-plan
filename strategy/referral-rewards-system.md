@@ -9,7 +9,7 @@ emoji: 🚀
 
 # War on Disease: Tiered Incentive & Referral System
 
-This document outlines the incentive mechanisms designed to drive global participation in the 1% Treaty referendum. The system is structured in tiers to maximize both mass-scale adoption and high-value contributions, using a hybrid of non-financial points and valuable governance tokens.
+This document specifies the design for a tiered, multi-level referral and incentive system to drive participation in the 1% Treaty global referendum. The goal is to create a powerful, self-propagating engine for growth that is resistant to fraud and aligns incentives across individuals, organizations, and coalitions. While this system focuses on incentivizing *participation*, our strategy for incentivizing *skilled contributions* is detailed in the [Open Ecosystem and Bounty Model](./open-ecosystem-and-bounty-model.md).
 
 ## Tier 1: Mass Participation (`$VOTE` Points)
 
