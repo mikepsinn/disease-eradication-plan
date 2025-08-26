@@ -76,10 +76,10 @@ We haven't cured a single disease in [over 50 years](#smallpox-eradicated). Mean
 In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is actually the RESULT of violent conflict.
 
 So humanity has 2 paths:
-1. Keep acting like violent dumbass monkeys until we extinct ourselves with a Terminator Skynet or nuclear catastrophe
-2. Bribe the hell out of everyone to act like a rational proper species for once
+1. Continue on a path of escalating conflict, risking self-inflicted extinction.
+2. Engineer a new system that aligns our vast resources with our collective survival and well-being.
 
-Which do you want?
+Pick one.
 
 
 ---
