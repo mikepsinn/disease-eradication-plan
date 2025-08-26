@@ -178,7 +178,7 @@ We choose to make curing people more profitable than killing them.
 ## Activation Energy Sequence: Who We Bribe First
 
 **Phase 1: Seed Investors (\$250-400M Initial Investment)**
-- **Who:** Wealthy individuals, funds, crypto whales
+- **Who:** Wealthy individuals, funds, Anchor Investors
 - **Bribe:** 
   - **Targeting a >40% CAGR (~28x Return):** Our financial model is engineered to deliver a risk-adjusted return superior to the world's most elite investment funds (e.g., Renaissance Medallion Fund's ~39% CAGR). Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
   - **\$VICTORY governance tokens** controlling the \$27B annual DIH treasury.
@@ -186,7 +186,7 @@ We choose to make curing people more profitable than killing them.
 - **Why they bite:** The potential for a historic, de-risked, and transparently-governed return, plus control over a massive global health treasury.
 
 **Phase 2: \$VICTORY Token Buyers (\$100-200M Referendum Funding)**
-- **Who:** Crypto investors, health advocates, institutions
+- **Who:** Early Backers, health advocates, institutions
 - **Bribe:**
   - \$VICTORY tokens representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
   - Governance control over \$27B annually in captured value from military budget redirection
