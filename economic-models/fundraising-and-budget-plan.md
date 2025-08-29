@@ -15,7 +15,7 @@ doc_type: model
 
 # Fundraising & Budget Plan: The Activation Energy
 
-This document provides a comprehensive breakdown of the total capital required to successfully implement the 1% Treaty and establish the Decentralized Institutes of Health (DIH). The figures presented here are the basis for our **$1.2B - $2.5B total fundraising goal**.
+This document provides a comprehensive breakdown of the total capital required to successfully implement the 1% Treaty and establish the Decentralized Institutes of Health (DIH). It is a supporting document for the overall strategy described in the [War on Disease Landing Page](../strategy/warondisease-landing.md). The figures presented here are the basis for our **$1.2B - $2.5B total fundraising goal**.
 
 ## 1. Executive Summary: The "Activation Energy"
 

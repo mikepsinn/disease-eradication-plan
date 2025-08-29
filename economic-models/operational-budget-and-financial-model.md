@@ -18,7 +18,7 @@ This document provides the detailed, bottom-up justification for the figures pre
 
 ## 1. Founding Team & Hiring Plan
 
-A plan is only as good as the team executing it. Our strategy is to maintain a lean, world-class core team and supplement with contractors and prize-based competition.
+A plan is only as good as the team executing it. Our strategy is to maintain a lean, world-class core team and supplement with contractors and prize-based competition. For a detailed breakdown of the phase-based hiring roadmap and role descriptions, see the full [**Hiring Plan & Team Roadmap**](../careers/hiring-plan.md).
 
 *   **Founding Team:** The core team will consist of 15-20 individuals with deep expertise in large-scale software engineering, international law, political campaigning, and crypto-economics. (Detailed bios are available in the investor data room).
 *   **Hiring Roadmap:**
