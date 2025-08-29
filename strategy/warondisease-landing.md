@@ -625,7 +625,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ### 6. **Execution Risk: "Can your team actually build this?"**
 
-**Response:** Our core team includes veterans from scaling global platforms (e.g., similar to MakerDAO managing $5B+ assets[^makerdao]) and political campaigns with $1B+ expenditures. We've allocated $250-400M for Phase 1 development with proven partners. If we fail, it's no worse than current inaction leading to AI arms race extinction risks— but success prototypes uncorruptible governance for all public goods.
+**Response:** Our execution model is designed to maximize strategic focus and leverage elite global talent. We are not building a large, traditional organization. Instead, we are assembling a small, world-class **"activation team"** of strategic leaders (see our [Hiring Plan](../careers/hiring-plan.md)) whose sole function is to direct capital and manage a network of top-tier execution partners. This allows us to remain lean and focused, outsourcing tactical work like software development and media production to the best specialized firms in the world. We've allocated $250-400M for Phase 1 development with these proven partners. This model—a lean strategic core coordinating elite external teams—is the most capital-efficient and effective way to solve a problem of this scale.
 
 **Mitigation:** Advisory board of constitutional scholars, DAO experts, and former officials; phased rollout with pilot countries.
 
