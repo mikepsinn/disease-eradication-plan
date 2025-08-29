@@ -2237,9 +2237,34 @@ export const treeConfig = {
           "name": "dfda-act.md",
           "type": "file",
           "path": "proposals/dfda-act.md",
-          "children": [],
+          "title": "💡 The Decentralized FDA",
+          "children": [
+            {
+              "path": "economic-models/blueprint-gas.md",
+              "title": "Blueprint for a World Without Disease"
+            },
+            {
+              "path": "architecture/blueprint-high-level.md",
+              "title": "Framework for a World Without Disease"
+            },
+            {
+              "path": "architecture/blueprint-sitemap.md",
+              "title": "Blueprint for a World Without Disease"
+            },
+            {
+              "path": "strategy/blueprint-strategy.md",
+              "title": "Strategy for a World Without Disease"
+            },
+            {
+              "path": "strategy/blueprint-summary.md",
+              "title": "Creating a World Without Disease"
+            },
+            {
+              "path": "architecture/blueprint.md",
+              "title": "Creating a World Without Disease"
+            }
+          ],
           "metadata": {
-            "title": "💡 The Decentralized FDA",
             "description": "80Xing medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials 💊",
             "published": true,
             "date": "2024-07-28T16:52:11.076Z",

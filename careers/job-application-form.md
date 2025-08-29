@@ -21,7 +21,7 @@ This is a hands-on command role. Only those with world-class engineering ability
 
 ## About the dFDA Initiative
 
-The Decentralized FDA (dFDA) initiative aims to accelerate medical progress by 80x through decentralized, automated clinical trials using real-world data. Key goals include reducing trial costs by 50-70% (from an average of \$2.6 billion per drug), providing personalized treatment recommendations, and ensuring transparency in drug evaluation [Source: Tufts Center for the Study of Drug Development, 2016](mdc:https://csdd.tufts.edu/csddnews/2016/3/10/march-10-2016-tufts-csdd-assessment-of-cost-to-develop-and-win-marketing-approval-for-a-new-drug-now-published). This role involves leading efforts to mobilize 3.5% of the global population for participation and funding.
+The Decentralized FDA (dFDA) initiative aims to accelerate medical progress by 80x through decentralized, automated clinical trials using real-world data. Key goals include reducing trial costs by 50-70% (from an average of \$2.6 billion per drug), providing personalized treatment recommendations, and ensuring transparency in drug evaluation [Source: Tufts Center for the Study of Drug Development, 2016](https://csdd.tufts.edu/csddnews/2016/3/10/march-10-2016-tufts-csdd-assessment-of-cost-to-develop-and-win-marketing-approval-for-a-new-drug-now-published). This role involves leading efforts to mobilize 3.5% of the global population for participation and funding.
 
 ## Key Responsibilities
 
@@ -47,7 +47,7 @@ The Decentralized FDA (dFDA) initiative aims to accelerate medical progress by 8
 
 ## Compensation and Benefits
 
-Competitive salary range of \$80,000-\$120,000 annually, based on experience and aligned with nonprofit med-tech roles (average \$100,000) [Source: Payscale Med-Tech Salary Report, 2023](mdc:https://www.payscale.com/research/US/Industry=Medical_Devices/Salary). Benefits include remote work options, professional development stipends, and health coverage. The role offers opportunities for high impact, with potential to save lives through accelerated research (e.g., reducing drug approval time from 10-15 years to 2-3 years).
+Competitive salary range of \$80,000-\$120,000 annually, based on experience and aligned with nonprofit med-tech roles (average \$100,000) [Source: Payscale Med-Tech Salary Report, 2023](https://www.payscale.com/research/US/Industry=Medical_Devices/Salary). Benefits include remote work options, professional development stipends, and health coverage. The role offers opportunities for high impact, with potential to save lives through accelerated research (e.g., reducing drug approval time from 10-15 years to 2-3 years).
 
 ## Section 1: Personal Information
 
@@ -129,8 +129,8 @@ Submit your application via the form below. Required fields are marked with *. A
 
 * **Trial Cost Reduction**
   > "The average cost to develop a new drug is \$2.6 billion, but decentralized models could reduce this by 50-70% through real-world data efficiency."
-  — [Tufts Center for the Study of Drug Development, 2016](mdc:https://csdd.tufts.edu/csddnews/2016/3/10/march-10-2016-tufts-csdd-assessment-of-cost-to-develop-and-win-marketing-approval-for-a-new-drug-now-published)
+  — [Tufts Center for the Study of Drug Development, 2016](https://csdd.tufts.edu/csddnews/2016/3/10/march-10-2016-tufts-csdd-assessment-of-cost-to-develop-and-win-marketing-approval-for-a-new-drug-now-published)
 
 * **Salary Range**
   > "Average salary for med-tech project leads is \$100,000, with ranges from \$80,000 to \$120,000 depending on experience."
-  — [Payscale Med-Tech Salary Report, 2023](mdc:https://www.payscale.com/research/US/Industry=Medical_Devices/Salary) 
+  — [Payscale Med-Tech Salary Report, 2023](https://www.payscale.com/research/US/Industry=Medical_Devices/Salary) 

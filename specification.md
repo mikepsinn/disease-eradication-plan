@@ -22,7 +22,7 @@ This document provides detailed technical specifications for the implementation 
 ## 1. Introduction
 
 * **Purpose:** To define the specific technologies, interfaces, data structures, security measures, and infrastructure requirements for building the global health protocol initiated by the United States.
-* **Relationship:** Serves as the detailed implementation guide based on the architecture described in `docs/architecture.md`.
+* **Relationship:** Serves as the detailed implementation guide based on the architecture described in `architecture.md`.
 * **Scope:** The Platform is designed to function as a global public utility and **Backend-as-a-Service (BaaS)**, serving as the **reference implementation** of the global health protocol. This specification focuses on the core backend components (API, Storage, Mapping/Validation, Access Control) and the interfaces for a plugin framework. It excludes the internal implementation details of specific plugins or third-party applications built upon the platform. All core software developed shall be open-source.
 
 ## 2. Technology Stack
@@ -261,7 +261,7 @@ Multi-layered security meeting regulatory requirements.
 * **Data Security:** As previously specified (SSE-KMS, TLS 1.2+, TDE option, Application-level encryption considered for specific PII). Strict IAM policies. Data masking/de-identification capabilities for analytical exports where appropriate.
 * **Authentication & Authorization:** As previously specified (MFA, short-lived tokens, OIDC, RBAC+ABAC).
 * **Compliance:** Explicit controls mapped to **HIPAA** Security Rule (Administrative, Physical, Technical Safeguards) and **GDPR** articles (Lawful Basis, Data Subject Rights, Security of Processing). Regular internal/external audits. BAAs with cloud providers.
-* **Incident Response:** Defined plan, regular testing (tabletop exercises). [Link to Plan](./docs/security/incident-response-plan.md)
+* **Incident Response:** Defined plan, regular testing (tabletop exercises). [Link to Plan](../operations/security/incident-response-plan.md)
 
 ## 8. Infrastructure & Deployment
 
@@ -279,10 +279,10 @@ Automated, repeatable, and resilient infrastructure.
 
 *(Placeholders - Content to be generated separately or by human teams)*
 
-* **Glossary of Technical Terms:** [Link](./docs/glossary.md)
-* **Detailed Diagrams:** [Link](./docs/diagrams/README.md)
-* **Data Dictionary / Database Schema:** [Link](./docs/data-dictionary.md)
-* **API Specifications (OAS Files):** [Link](./docs/api/README.md)
+* **Glossary of Technical Terms:** [Link](../reference/glossary.md)
+* **Detailed Diagrams:** [Link](../architecture/diagrams/README.md)
+* **Data Dictionary / Database Schema:** [Link](../reference/data-dictionary.md)
+* **API Specifications (OAS Files):** [Link](../features/api/README.md)
 
 ---
 

@@ -6,6 +6,11 @@ date: 2025-07-02T05:38:42.781Z
 tags: healthcare-innovation, decentralized-health, ai-research, global-cooperation, 1-percent-treaty, military-spending, cost-benefit, treaty
 editor: markdown
 dateCreated: 2025-06-10T19:10:29.965Z
+topic_id: treaty-text
+canonical: true
+status: active
+domains: [treaty]
+doc_type: strategy
 ---
 
 ## Facts:

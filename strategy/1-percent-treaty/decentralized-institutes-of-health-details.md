@@ -6,9 +6,16 @@ date: 2024-06-09T00:00:00.000Z
 tags: decentralized-health, dih, blockchain, ai, medical-research, quadratic-funding, product-requirements
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
+topic_id: dih-overview
+canonical: false
+status: archived
+domains: [dih]
+doc_type: strategy
 ---
 
 # The Decentralized Institutes of Health
+
+> Note: For the concise overview, see the canonical page: [The Decentralized Institutes of Health](./decentralized-institutes-of-health.md). This page provides extended details and PRD content.
 
 Through decentralized science (DeSci), artificial intelligence (AI),
 and leveraging the Gitcoin Grants Stack,
@@ -28,7 +35,7 @@ DIH operates through a network of Decentralized Autonomous Organizations (DAOs) 
 
 The DIH is expanding into a comprehensive ecosystem that mirrors the NIH structure while offering decentralized governance, titles, and community-specific focus areas. This expansion serves as a strategic recruitment tool for the 1% Treaty referendum effort.
 
-For the complete organizational structure, including all sub-agencies, earned, criteria-based recognition, and implementation roadmap, see [DIH Organizational Structure](dih-organizational-structure.md).
+For the complete organizational structure, including all sub-agencies, earned, criteria-based recognition, and implementation roadmap, see [DIH Organizational Structure](dih-org-structure.md).
 
 ### Core Functionalities
 

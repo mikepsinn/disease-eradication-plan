@@ -6,6 +6,11 @@ date: 2024-06-12T00:00:00.000Z
 tags: dih, treasury, victory-bonds, patient-subsidies, dao, 1-percent-treaty, dfda
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
+topic_id: dih-overview
+canonical: true
+status: active
+domains: [dih]
+doc_type: strategy
 ---
 
 # The Decentralized Institutes of Health: A Treasury for the War on Disease
@@ -54,6 +59,9 @@ This creates a virtuous cycle:
 ## Governance: Automated-by-default, DAO as emergency override
 
 Subsidy allocation and most treasury functions execute via smart contracts with verifiable inputs (oracles) and transparent rules. Stakeholders participate through credentialed, timeboxed signaling; on-chain executors apply changes automatically. A narrowly scoped, time-limited DAO acts as an emergency override with public justification and automatic sunset. For custody and controls, see [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md).
+
+## Risks and Realism
+The DIH model's success relies on treaty adoption and inflows. For a full discussion of risks, repayment, and contingencies, see [Victory Bond Investment Thesis](../../economic-models/victory-bond-investment-thesis.md#10-assessing-realism-risks-repayment-timeline-and-contingencies).
 
 ## Organizational Structure
 

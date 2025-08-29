@@ -6,6 +6,11 @@ date: 2025-08-12T00:00:00.000Z
 tags: referendum, governance, identity, verifiability, privacy, security
 editor: markdown
 dateCreated: 2025-08-12T00:00:00.000Z
+topic_id: referendum-implementation
+canonical: true
+status: active
+domains: [treaty]
+doc_type: spec
 ---
 
 ## Objective
@@ -58,10 +63,10 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 * **Helios (end-to-end verifiable voting)**
   > "Helios is an open-audit voting system… voters can verify that their vote is included and correctly tallied."  
-  > — Adida et al., Helios, [heliosvoting.org](mdc:https://heliosvoting.org/)
+  > — Adida et al., Helios, [heliosvoting.org](https://heliosvoting.org/)
 
 * **Estonia internet voting lessons**
   > "Estonia's i-voting system has operated nationwide since 2005… offering insights into scaling digital identity and remote voting with continuous security reviews."  
-  > — Academic and official analyses, e.g., [e-estonia.com](mdc:https://e-estonia.com/solutions/e-governance/i-voting/)
+  > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/i-voting/)
 
 
