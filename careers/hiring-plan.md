@@ -10,7 +10,14 @@ dateCreated: '2025-08-22T00:00:00.000Z'
 
 # Hiring Plan & Team Roadmap
 
-This document provides a detailed breakdown of the team structure and hiring roadmap, justifying the headcount figures presented in the [Operational Budget & Financial Model](../economic-models/operational-budget-and-financial-model.md).
+## The Philosophy: A Lean Activation Team
+This document outlines the structure of the temporary "activation team"—the small, core group of strategic leaders required to bootstrap the DIH. Our goal is not to build a large, permanent organization. It is to assemble an elite team whose sole function is to build a self-sustaining protocol and then make themselves obsolete.
+
+To achieve this, we distinguish between core strategic functions and tactical execution:
+-   **Core Functions (Internal Team):** Strategy, leadership, political maneuvering, legal architecture, and product vision are handled by the small, core team. This is the permanent brain trust.
+-   **Tactical Execution (Outsourced):** Functions like software development, specialized quantitative analysis, and media production will be outsourced to world-class agencies and contractors. This provides flexibility and access to elite talent without building a large, permanent bureaucracy.
+
+This document provides a detailed breakdown of the team structure and hiring roadmap, justifying the headcount figures presented in the [Operational Budget & Financial Model](../economic-models/operational-budget-and-financial-model.md). Our structure is a hybrid model informed by a detailed analysis of successful precedents, including The Global Fund, the ICBL, and MakerDAO. For a full breakdown, see [**Organizational Precedents & Staffing Models**](../reference/organizational-precedents.md).
 
 Our strategy is to build a lean, world-class core team for direct execution and to aggressively leverage contractors, prize-based competitions, and partner organizations to scale our impact without a large, bureaucratic overhead.
 

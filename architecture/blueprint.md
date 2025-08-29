@@ -62,3 +62,13 @@ This strategy details the creation of the **Decentralized Institutes of Health (
 **[➡️ Learn How We Will Win: The War on Disease Strategy](../strategy/warondisease-landing.md)**
 
 By integrating this bold implementation strategy with our foundational blueprint, we create a complete, actionable plan to move from a world of preventable suffering to a future free from disease.
+
+### Phase 5: Build the Engine (The DIH Treasury)
+The treaty provides the fuel. The Decentralized Institutes of Health (DIH) is the engine. Governed by the community, it will fund the world's most promising health research with unprecedented transparency and efficiency, making the vision of the blueprint a sustainable, ever-improving reality.
+
+### The Endgame: A Self-Sustaining Protocol
+The ultimate goal of this blueprint is to create a system that no longer requires a core team to operate. The five phases are designed to build and bootstrap a self-sustaining public utility that runs on two core engines:
+1.  **Automated Economic Incentives:** A protocol, like MakerDAO, that aligns the financial self-interest of all participants with the public good.
+2.  **Intrinsic Human Motivation:** A global community, like Wikipedia's, that is intrinsically motivated to contribute to and govern a shared resource for humanity.
+
+The core team described in the [Hiring Plan](../careers/hiring-plan.md) is the temporary scaffolding required to build this institution. Their mission is to architect the protocol, win the initial political battles, and catalyze the community. Once the DIH is fully operational and governed by its token holders, the scaffolding is removed. The team's ultimate measure of success is making itself obsolete.
