@@ -28,7 +28,7 @@ Keep files within one of these top‑level folders (no deep trees). Use cross‑
 
 ## Frontmatter requirements
 
-All Markdown files start with YAML frontmatter. Standard fields remain mandatory: title, description, published, date, tags, editor, dateCreated. Add these governance fields:
+All Markdown files start with YAML frontmatter. Standard fields remain mandatory: title, description (under 140 characters), published, date, tags, editor, dateCreated. Add these governance fields:
 
 - topic_id: stable identifier for the topic (e.g., dfda-technical-roadmap)
 - canonical: true | false (exactly one canonical per topic_id)
