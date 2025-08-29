@@ -29,7 +29,7 @@ This model demonstrates how these two principles interact under different levels
 
 **Model Assumptions:**
 -   **Total Activation Energy Raised:** \$2.5 billion.
--   **Target Investor Payout (for ~40% CAGR):** `\$2.5B * 28.9 =` ~$72.25 billion over 10 years, or **~$7.23 billion per year**.
+-   **Target Investor Payout (for ~40% CAGR):** `$2.5B * 28.9 =` ~\$72.25 billion over 10 years, or **~\$7.23 billion per year**.
 
 ---
 
@@ -38,7 +38,7 @@ This model demonstrates how these two principles interact under different levels
 **Assumption:** The 1% Treaty is adopted globally, generating **\$27 billion** in annual income.
 
 -   **Annual Investor Payout:** The DIH can comfortably pay the target **\$7.23 billion** per year. This is only **26.8%** of the annual income, well below the 50% cap.
--   **Annual DIH Mission Funds:** `\$27B - \$7.23B =` **\$19.77 billion**.
+-   **Annual DIH Mission Funds:** `$27B - $7.23B =` **\$19.77 billion**.
 
 **10-Year Cash Flow Table (Full Success)**
 
