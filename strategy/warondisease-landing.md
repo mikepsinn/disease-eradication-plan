@@ -619,7 +619,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ### 5. **Financial Risk: "What if this fails? Where's my return?"**
 
-**Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model targets a **~40% CAGR (~28x return)** for early investors, benchmarked against elite funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital. The consequentialist view: the upside is $27B annual treasury control; the downside is better than the status quo of waste (e.g., Pentagon's $2.5T losses).
+**Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, benchmarked against elite funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
 
 **Mitigation:** Clear milestone gates for funding release; diversified repayment from multiple government commitments.
 
@@ -880,6 +880,26 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 * **Lobbying ROI Calculation ($1,813 per $1)**
   > "The top five defense firms received $2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan... Over the past two decades, the top five defense contractors have spent $1.1 billion on lobbying... That calculates to an ROI of $1,813 for every dollar spent."
   > — ExecutiveBiz, 2021, [Top 5 Defense Firms See $2T Return on $1B Investment in Afghan War](https://www.executivebiz.com/2021/09/top-5-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
+
+<a id="note-on-language"></a>
+### 9. **"Your language is cynical. 'Bribe,' 'co-opt'—it sounds like you're just building a better corruption engine."**
+*   **Reality:** We use this language deliberately because it is honest. The current system of political change runs on a slow, opaque, and inefficient form of bribery called lobbying. It is a system that funnels trillions toward destruction while claiming moral high ground. We choose to be brutally transparent about the reality that money moves power. Our "bribe" is not a backroom deal; it is an open, auditable, and transparently-governed incentive system designed to produce peace and health. We believe that confronting the uncomfortable truth of how the world actually works is the only way to build a system that is genuinely better.
+
+### 10. **"Why use tokens and a DAO? This sounds like a solution in search of a problem."**
+*   **Reality:** These tools are not a gimmick; they are the only way to solve the three core challenges of building a trusted global institution:
+    1.  **Global, Low-Friction Payments:** How do you grant a verifiable stake to 280 million people across 100+ countries? Traditional banking makes this impossible. A token (`$VICTORY`) on a modern blockchain is the only technology that can do this efficiently and at scale. The `$` prefix is a technical convention, not a signal of speculation.
+    2.  **Corruption-Resistant Governance:** How do you manage a $27B treasury without it being captured by corrupt insiders? A DAO, governed by auditable smart contracts and controlled by millions of token holders, removes the human targets for corruption that plague traditional institutions.
+    3.  **Radical Transparency:** Every transaction and decision is on a public ledger. This isn't a promise of transparency; it's a structural guarantee. We use this technology not because it's trendy, but because it is the necessary plumbing for creating a truly uncorruptible public utility.
+
+### 11. **Financial Risk: "What if this fails? Where's my return?"**
+*   **Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, benchmarked against elite funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
+
+**Mitigation:** Clear milestone gates for funding release; diversified repayment from multiple government commitments.
+
+### 12. **Execution Risk: "Can your team actually build this?"**
+*   **Response:** Our execution model is designed to maximize strategic focus and leverage elite global talent. We are not building a large, traditional organization. Instead, we are assembling a small, world-class **"activation team"** of strategic leaders (see our [Hiring Plan](../careers/hiring-plan.md)) whose sole function is to direct capital and manage a network of top-tier execution partners. This allows us to remain lean and focused, outsourcing tactical work like software development and media production to the best specialized firms in the world. We've allocated $250-400M for Phase 1 development with these proven partners. This model—a lean strategic core coordinating elite external teams—is the most capital-efficient and effective way to solve a problem of this scale.
+
+**Mitigation:** Advisory board of constitutional scholars, DAO experts, and former officials; phased rollout with pilot countries.
 
 
 
