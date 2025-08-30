@@ -131,43 +131,70 @@ Fair skepticism. Here's why the math actually works:
 
 ---
 
+# Part 2: A Rational Solution
+
 ## Why Good Intentions Have Failed
 
 For centuries, we've known war brings suffering. Yet we fund it anyway. Why?
 
-Military contractors earn billions. Politicians receive generous donations. The cycle continues.
+Military contractors earn billions. Politicians receive generous donations. The cycle continues. Moral arguments have never been enough to overcome financial incentives.
 
 ## Our Answer: Legal Bribery for Peace
 
 We will not change minds with morals. We will make curing people more profitable than killing them.
 
-**Current incentives reward weapons over cures:**
-- Military contractors: [\$10 billion contracts](#statista-mil-spending)
-- Politicians: [\$100+ million in lobbying annually](#lobbying-100m)
-- Result: More weapons, less security
+The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will bribe our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
 
-**We offer better returns:**
-- Citizens: Paid in `VOTE` points for each referendum vote they generate (convertible to VICTORY bonds post‑treaty per [Legal Compliance Framework](./legal-compliance-framework.md))  
-- Organizations: Partner referral rewards for verified votes via your org's link; tiered bonus pools and leaderboards for coalitions
-- Politicians: Backed with independent expenditures when they vote with their district's referendum result
+```mermaid
+graph TD;
+    subgraph "The Legal Bribery Engine (Annual Capital Flow)";
+        A["\$27B Annual Treasury<br/>(1% Military Redirection)"];
 
-- Institutions: Double or triple their research funding
+        subgraph "Strategic Allocation";
+            A --> B["<b>Investors & Bond Holders</b><br/>(~_ \$7.2B/yr Payouts)<br/><i>The Incentive: World-class, de-risked returns</i>"];
+            A --> C["<b>Political Action Fund</b><br/>(~_ \$1.5B/yr Independent Expenditures)<br/><i>The Incentive: Overwhelming, targeted campaign support</i>"];
+            A --> D["<b>Citizens (VOTE Points)</b><br/>(Funded by bond sales)<br/><i>The Incentive: A direct stake in the Peace Dividend</i>"];
+            A --> E["<b>Decentralized Institutes of Health (DIH)</b><br/>(~\$19.8B/yr Mission Investment)<br/><i>The Engine: Funding cures 80x more efficiently</i>"];
+        end
 
-We choose to make curing people more profitable than killing them.
+        subgraph "Outcomes";
+            B --> F["Co-opted Financial Elite"];
+            C --> G["Aligned Political Leaders"];
+            D --> H["Mass Public Mandate (3.5%)"];
+            E --> I["Accelerated Cures & Global Health"];
+        end
+    end
+```
+
+## The Financial Engine: Redirecting Waste, Not Raising Taxes
+
+This model does not require new money. It is an arbitrage on inefficiency.
+
+-   **The Source is Waste:** The Pentagon [literally cannot account for \$2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets. Our ask of the U.S. is \$10 billion annually—an amount equal to just **0.4%** of what they've already lost. This isn't about finding new money; it's about redirecting a rounding error from unaccounted waste into productive use.
+-   **The Engine is Proven Efficiency:** The decentralized clinical trial model we fund is **80X cheaper** than the status quo, a fact proven by the Oxford RECOVERY trial which saved over 1 million lives at a cost of [\$500 per patient versus the traditional \$41,000](#recovery-cost-500).
+-   **The Value is Real Economics:** The [$16.5 trillion annual cost of violence](#global-violence-costs) is the largest pool of misallocated capital on the planet. We capture less than 0.2% of that waste and redirect it, creating \$27B in annual cash flow for investors and society. This is value capture from waste reduction, not digital asset speculation.
+
+## The Political Engine: An Unignorable Mandate
+
+The strategy is backed by proven mechanisms for political mobilization at scale.
+
+-   **The 3.5% Tipping Point:** Nonviolent movements have [never failed to achieve their goals](#3-5-rule) once they achieve active participation from 3.5% of the population. Our referendum is designed to achieve this, creating the largest, most powerful political mandate in human history.
+-   **Historical Precedent:** The playbook is not new. World War II was financed with [\$185 billion in war bonds](#wwii-war-bonds) sold to 85 million Americans. Net neutrality was won by [4 million public comments](#net-neutrality-comments) that forced policy change. The mechanisms work.
+-   **Rational Actor Incentives:** When the math favors peace, rational actors choose peace. Military contractors' current model yields [\$1,813 per \$1 spent on lobbying](#lobbying-roi-calc). We offer a direct investment in bonds with a >40% CAGR, plus governance over the \$27B treasury. The choice is clear.
 
 ---
 
-# Part 2: How It Works
+# Part 3: The Mechanism
 
 ## Here's How We Fix It:
 
 **The Goal: Make curing people more profitable than killing them.** 
 
-**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **`VOTE` points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./legal-compliance-framework.md)).
+**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./legal-compliance-framework.md)).
 
 **Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, `VOTE` points become convertible to VICTORY bonds—your earned ownership and governance stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)).
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—your earned ownership and governance stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)).
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 
@@ -179,35 +206,31 @@ We choose to make curing people more profitable than killing them.
 
 **Phase 1: Seed Investors (\$250-400M Initial Investment)**
 - **Who:** Wealthy individuals, funds, Anchor Investors
-- **Bribe:** 
+- **The Bribe:** 
   - **Targeting a >40% CAGR (~28x Return):** Our financial model is engineered to deliver a risk-adjusted return superior to the world's most elite investment funds (e.g., Renaissance Medallion Fund's ~39% CAGR). Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
   - **VICTORY bonds** that grant governance control over the \$27B annual DIH treasury.
   - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](../economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
-- **Why they bite:** The potential for a historic, de-risked, and transparently-governed return, plus control over a massive global health treasury.
 
 **Phase 2: VICTORY Bond Buyers (\$100-200M Referendum Funding)**
 - **Who:** Early Backers, health advocates, institutions
-- **Bribe:**
+- **The Bribe:**
   - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
   - Governance control over \$27B annually in captured value from military budget redirection
   - Voting rights on patient subsidies and research funding allocation
   - Bond value backed by actual treasury growth from treaty implementation (\$0 → \$27B)
-- **Why they bite:** Early ownership stake in humanity's largest value-creation event—capturing the peace dividend through systematic military-to-health reallocation
 
 **Phase 3: Citizens (Global Population)**
 - **Who:** Global population (targeting 3.5% = 280M people)
-- **Bribe:** A large grant of **`VOTE` points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
-- **Why they bite:** They earn a direct, meaningful stake in the economic value they help create for humanity. It transforms them from simple voters into owners of the wealth they generate by ending the military-industrial waste.
+- **The Bribe:** A large grant of **VOTE points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
 
 **Phase 4: Politicians (\$800M-1.5B Independent Expenditures)**
 - **Who:** Key legislators in target countries
-- **Bribe:** 
+- **The Bribe:** 
   - **Personal Wealth Creation:** Early access to [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) with superior returns designed to outperform defense stocks and traditional political corruption
   - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
   - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
-- **Why they bite:** Personal wealth growth + 280M verified voters + overwhelming campaign funding vs. military contractors' modest donations and \$15M lobbying budget
 
-**The Compounding Effect:** Each phase funds the next. Seed investors control governance of \$27B treasury. Token buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
+**The Compounding Effect:** Each phase funds the next. Seed investors control governance of \$27B treasury. Bond buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
 
 ---
 
@@ -307,7 +330,7 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ---
 
-# Part 3: The Plan
+# Part 4: The Plan
 
 ## Why This Works
 
@@ -460,7 +483,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ---
 
-# Part 4: Objections & Rebuttals
+# Part 5: Objections & Rebuttals
 
 ## Why This Approach?
 
@@ -653,11 +676,11 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ---
 
-# Part 5: The Call to Action & Proof
+# Part 6: The Call to Action
 
 ## Become a Stakeholder
 
-**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn `VOTE` points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
+**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn VOTE points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
 
 **[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Mobilize your organization to earn rewards for verified votes. Access pooled bonus funds for building coalitions.
 
