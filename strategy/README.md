@@ -16,5 +16,5 @@ dateCreated: '2025-08-23T00:00:00.000Z'
 - [The 1% Treaty (Full Text)](./1-percent-treaty/1-percent-treaty.md)
 - [Global Referendum Implementation](./referendum/global-referendum-implementation.md)
 - [The Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md)
-- [VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)
+- [VICTORY Bonds — Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md)
 

@@ -148,7 +148,7 @@ A well-designed referral-rewards system can:
 
 ### How It Works
 
-- **Purchase VICTORY bonds** to fund verified votes and actions in support of the Act. Tokenomics and compliance considerations are detailed in [VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md).
+- **Purchase VICTORY bonds** to fund verified votes and actions in support of the Act. Incentive Mechanics and compliance considerations are detailed in [VICTORY Bonds — Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md).
 - **Each token** directly funds a specific number of verified votes (target: <$1 per vote, with potential for $0.20–$0.30 in viral scenarios—see the "Benchmarks" section above).
 - **All transactions** are transparently tracked on-chain, with a public dashboard showing progress toward the 3.5% tipping point ([BBC Future](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)).
 
@@ -280,7 +280,7 @@ So when you propose a pledge/ referral system that can gather tens of thousands�
 
 ---
 
-## Economic Model & Tokenomics Integration
+## Economic Model & Incentive Mechanics Integration
 
 -   **VOTE Points:** These represent your verifiable claim to a share of the economic value you help create by building the political mandate for military budget redirection. They are non-transferable pre-treaty and minted to reflect your contribution to unlocking the [$16.5 trillion peace dividend](../economic-models/peace-dividend-value-capture.md).
 -   **VICTORY Conversion:** Upon treaty ratification, your earned VOTE points convert to VICTORY governance tokens representing actual ownership of the $27B annual treasury created by your advocacy work. The conversion rate will be fixed and transparent from day one, reflecting the real value you helped create.

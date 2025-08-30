@@ -30,7 +30,7 @@ doc_type: strategy
 
 ## 3. Financing Architecture
 
-- Instruments and cash flows: [VICTORY Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md) and [Fundraising & Budget Plan](../economic-models/fundraising-and-budget-plan.md).
+- Instruments and cash flows: [VICTORY Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md) and [Fundraising & Budget Plan](../economic-models/fundraising-and-budget-plan.md).
 - Legal pathway and reforms: [Impact Securities Reform (Draft)](../regulatory/impact-securities-reform.md).
 
 ## 4. Treasury Governance & Security
@@ -60,7 +60,7 @@ doc_type: strategy
 
 ## 9. Impact & Returns
 
-- Investor returns framing and guardrails: [VICTORY Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md#investor-payout-mechanisms-the-exit).
+- Investor returns framing and guardrails: [VICTORY Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md#investor-payout-mechanisms-the-exit).
 - Societal ROI and 80X efficiency: [Landing: DIH Value Flywheel](./warondisease-landing.md#the-treasury-model).
 
 ## 10. Calls to Action

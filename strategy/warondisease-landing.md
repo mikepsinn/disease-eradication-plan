@@ -194,7 +194,7 @@ The strategy is backed by proven mechanisms for political mobilization at scale.
 
 **Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—your earned ownership and governance stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)).
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—your earned ownership and governance stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md)).
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 

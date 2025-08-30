@@ -174,7 +174,7 @@ The financial returns for VICTORY instruments are sourced from the $27B annual t
 While the VICTORY Bonds model draws on historical precedents like World War II War Bonds and proven lobbying ROI dynamics, its success involves significant uncertainties. This section provides a balanced view, including phased repayment and risk mitigations.
 
 ### Repayment Timeline
-Repayment is tied to 1% Treaty inflows rather than fixed dates, as detailed in [VICTORY Instruments Tokenomics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md):
+Repayment is tied to 1% Treaty inflows rather than fixed dates, as detailed in [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md):
 - **Short-Term (Years 1-2)**: Initial coupons (2–6% floating) paid from reserves, philanthropic inflows, or early program cash flows.
 - **Medium-Term (Years 3-5)**: Amortization begins 18–36 months after first major treaty ratification, with annual inflows of $27B+ covering principal and yields.
 - **Long-Term (5-10 Years)**: Full maturity, plus ongoing value from governance tokens over the perpetual DIH Treasury (see [Decentralized Institutes of Health](../strategy/1-percent-treaty/decentralized-institutes-of-health.md)).
@@ -190,7 +190,7 @@ While the risks of this venture are significant, they are fundamentally differen
 - **Fundraising Risk (Collective Action Problem):** Early investors may hesitate, fearing the project won't reach its funding goal. **Mitigation:** We will use **Assurance Contracts** built on smart contracts. All initial funds will be held in a transparent escrow and automatically returned to investors if the funding target is not met by a specific deadline. This completely eliminates the risk of a failed raise for our backers. For details, see our [Fundraising Strategy](./fundraising-strategy.md).
 - **Overall Probability**: Metaculus forecasts will provide real-time estimates; historical analogs (e.g., war bonds raised $185B adjusted) suggest feasibility, but failure rate could be 30%+ without momentum.
 
-For full details on protections, see [VICTORY Instruments Tokenomics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
+For full details on protections, see [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
 
 ### Source Quotes for Key Parameters
 * **War Bonds Historical Raise**

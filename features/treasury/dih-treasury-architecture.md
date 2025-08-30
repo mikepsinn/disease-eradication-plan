@@ -69,10 +69,10 @@ The Decentralized Institutes of Health (DIH) operates a global treasury to subsi
 - **Runbooks**: Public emergency procedures for key compromise, oracle failure, or exploit.
 - **Compensation fund**: Capped reserve for remediation with predefined governance path.
 
-## Relationship to the 1% Treaty and VICTORY Instruments
+## Relationship to the 1% Treaty and VICTORY Bonds
 
 - **Funding path**: Initial capitalization via VICTORY bond/token issuance; long-term repayment and sustainability via 1% Treaty contributions.
-- **Cross-references**: See [Victory Bonds Tokenomics](../../strategy/1-percent-treaty/victory-bonds-tokenomics.md) and [The 1% Treaty](../../strategy/1-percent-treaty/1-percent-treaty.md).
+- **Cross-references**: See [Victory Bonds Incentive Mechanics](../../strategy/1-percent-treaty/victory-bonds-tokenomics.md) and [The 1% Treaty](../../strategy/1-percent-treaty/1-percent-treaty.md).
 
 ## Key External Benchmarks
 

@@ -43,7 +43,7 @@ editor: markdown
 - Ambassador performance pools
   - Regional/institute matching pools unlocked by meeting verified KPIs (pledges, enrollments, outcomes); default payouts in VOTE points representing earned ownership of [peace dividend value](../economic-models/peace-dividend-value-capture.md) created through successful advocacy
 
-> Canonical references: [Legal Compliance Framework](./legal-compliance-framework.md), [VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md), [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md)
+> Canonical references: [Legal Compliance Framework](./legal-compliance-framework.md), [VICTORY Bonds — Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md), [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md)
   - Transparent formulas; funds flow programmatically
 
 ## On-chain and oracle wiring
@@ -76,7 +76,7 @@ editor: markdown
 - [Open ecosystem and bounty model](./open-ecosystem-and-bounty-model.md)
 - [DIH On-Chain and AI Architecture](../architecture/dih-onchain-architecture.md)
 - [DIH Treasury Architecture](../features/treasury/dih-treasury-architecture.md)
-- [VICTORY Instruments — Bonds and Tokens Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)
+- [VICTORY Bonds — Bonds and Tokens Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md)
 - [DIH Org Structure](./1-percent-treaty/dih-org-structure.md)
 
 

@@ -69,7 +69,7 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
 
 ---
 
-## Commentary: Relation to dFDA/DIH and VICTORY Instruments
+## Commentary: Relation to dFDA/DIH and VICTORY Bonds
 
 - This Act enables compliant financing for [VICTORY instruments](../strategy/1-percent-treaty/victory-bonds-tokenomics.md) and the [DIH Treasury](../features/treasury/dih-treasury-architecture.md) by:
   - Lowering offering frictions for impact‑linked bonds/tokens.

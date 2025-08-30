@@ -28,7 +28,7 @@ Help raise the money we need. Make products investors can trust. Report the numb
 - Product design, investor updates, buyback proposals, public dashboards
 
 ## Interfaces
-- Works with Legal, Treasury, Growth, and DIH Governance. See [Tokenomics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md) and [Investment Thesis](../economic-models/victory-bond-investment-thesis.md).
+- Works with Legal, Treasury, Growth, and DIH Governance. See [Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md) and [Investment Thesis](../economic-models/victory-bond-investment-thesis.md).
 
 ## 90‑Day Plan
 - Week 2: Finalize term sheets and data room; build target list

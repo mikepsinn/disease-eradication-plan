@@ -34,7 +34,7 @@ dateCreated: 2025-08-22
 - WIG: Close \$1.2–\$2.5B legally and on time.
 - Lead (weekly): investor meetings; data room views; weekly report sent.
 - Lag (quarter): capital closed vs. target; cost of capital trend; buybacks executed.
-- Docs: [VICTORY Tokenomics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md), [Investment Thesis](../economic-models/victory-bond-investment-thesis.md), [Crypto Intake SOP](./crypto-intake-sop.md)
+- Docs: [VICTORY Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md), [Investment Thesis](../economic-models/victory-bond-investment-thesis.md), [Crypto Intake SOP](./crypto-intake-sop.md)
 
 ## Treasury & On‑Chain (Owner: On‑Chain/Treasury Lead)
 - Phase(s): Stand up in Phase 1; full operations in Phase 3

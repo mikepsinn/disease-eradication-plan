@@ -54,7 +54,7 @@ The formula to calculate the grant is:
   - `Success Grants = $92,000 / 0.02 = $4,600,000`
   - They have now earned a claim on **$4.6 million** worth of value, which has a higher expected value ($92k) than the cash they gave up ($80k).
 
-## 3. Tokenomics: Connecting Grants to Tokens
+## 3. Incentive Mechanics: Connecting Grants to Tokens
 
 To make the Success Grants meaningful, they must map to a share of the network.
 

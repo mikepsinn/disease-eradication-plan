@@ -37,5 +37,5 @@ dateCreated: '2025-01-20T00:00:00.000Z'
 
 ## References
 - Legal framework: [Legal Compliance Framework](../strategy/legal-compliance-framework.md)
-- Tokenomics: [Victory Bonds Tokenomics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md)
+- Incentive Mechanics: [Victory Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md)
 - Fundraising models: [Fundraising Models Comparison](../strategy/fundraising-models-comparison.md)

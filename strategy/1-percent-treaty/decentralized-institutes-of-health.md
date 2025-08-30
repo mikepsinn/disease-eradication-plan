@@ -42,7 +42,7 @@ Beyond patient subsidies, the DIH Treasury is responsible for the growth and mai
 
 ## Funding Model: VICTORY Bonds for the War on Disease
 
-To raise its initial and ongoing capital, the DIH will issue **VICTORY Bonds**, an instrument modeled directly on the War Bonds of World War II. See tokenomics details in [VICTORY Instruments](./victory-bonds-tokenomics.md).
+To raise its initial and ongoing capital, the DIH will issue **VICTORY Bonds**, an instrument modeled directly on the War Bonds of World War II. See tokenomics details in [VICTORY Bonds](./victory-bonds-tokenomics.md).
 
 Just as citizens once invested in their nation's victory in wartime, they can now invest directly in the victory over humanity's oldest enemies: cancer, Alzheimer's, heart disease, and thousands of other afflictions. Selling these bonds allows the DIH to raise a substantial treasury upfront, enabling it to immediately begin funding subsidies and development without waiting for treaty contributions to accumulate.
 

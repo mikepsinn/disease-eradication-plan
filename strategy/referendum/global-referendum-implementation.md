@@ -54,7 +54,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## Cross-References
 
-- [Victory Bonds Tokenomics](../1-percent-treaty/victory-bonds-tokenomics.md)
+- [Victory Bonds Incentive Mechanics](../1-percent-treaty/victory-bonds-tokenomics.md)
 - [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md)
 
 ---

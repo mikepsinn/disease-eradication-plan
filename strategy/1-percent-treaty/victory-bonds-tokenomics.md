@@ -1,5 +1,5 @@
 ---
-title: VICTORY Instruments — Bonds and Tokens Tokenomics
+title: VICTORY Bonds — Bonds and Tokens Incentive Mechanics
 description: Economic design for VICTORY bonds/tokens used to bootstrap the DIH Treasury and repay contributors via 1% Treaty inflows.
 published: true
 date: 2025-08-12T00:00:00.000Z
