@@ -34,7 +34,7 @@ graph TD
     DIH -. cross-cutting .-> AI["AI & Methods (Trial Automation)"]
     %% New cross-cutting units per landing page updates
     DIH -. cross-cutting .-> SecAudit["Security & Audit Office<br/>(On-chain risk, Safety Oracle, fraud/identity, incident response)"]
-    DIH -. cross-cutting .-> CapMkts["Capital Markets & Investor Relations<br/>(\$VICTORY bonds/tokens, buybacks, reporting)"]
+    DIH -. cross-cutting .-> CapMkts["Capital Markets & Investor Relations<br/>(VICTORY bonds/tokens, buybacks, reporting)"]
     DIH -. cross-cutting .-> Growth["Growth & Referral Engine<br/>(\$VOTE points, leaderboards, K-factor analytics, partners)"]
     DIH -. cross-cutting .-> Peace["Peace Dividend Analytics & Dashboards<br/>(value capture measurement, calculators, proofs)"]
 
@@ -96,7 +96,7 @@ Appointments are transparent, criteria-based, and revocable; all appointees sign
 
 ## Decentralization and automation blueprint
 
-- On-chain treasury modules for grants, quadratic funding, patient subsidies, outcome bounties, and $VICTORY bonds
+- On-chain treasury modules for grants, quadratic funding, patient subsidies, outcome bounties, and VICTORY bonds
 - Verifiable oracles for evidence, safety, identity/COI, and healthcare-savings estimates
 - AI agents for trial design, monitoring, fraud detection, and funding triage
 - Tokenless-first governance (reputation/credentials), merge-to-earn bounties, public proposals with on-chain execution

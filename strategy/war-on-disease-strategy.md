@@ -41,7 +41,7 @@ Our strategy is a deliberate synthesis of historical lessons, combining models t
 
 ### Step 2: Fund the Movement with a Public Financial Instrument
 *   **The Precedent (Success):** **World War II War Bonds** proved that you can mobilize massive private capital for a public cause by masterfully blending moral purpose with financial self-interest.
-*   **Our Action:** We will issue **`$VICTORY` instruments** (`$VICTORY` Bonds and Tokens) to finance the entire operation. This allows anyone on Earth to invest directly in the success of the mission, transforming them from passive supporters into active owners.
+*   **Our Action:** We will issue **VICTORY instruments** (VICTORY Bonds and Tokens) to finance the entire operation. This allows anyone on Earth to invest directly in the success of the mission, transforming them from passive supporters into active owners.
 
 ### Step 3: Co-Opt the Opposition with Superior Financial Incentives
 *   **The Precedent (Failure):** The Nuclear Freeze movement.
@@ -65,13 +65,13 @@ The financial power of this model is built on a simple principle: capturing the 
 *   **The Captured Dividend:** The **$27 billion annual cash flow** we redirect. This is the tangible revenue stream that provides the fundamental backing for our financial instruments.
 *   **The Societal Dividend:** By reducing global conflict drivers by 1%, the intervention unlocks a far greater economic prize for the world. A 1% reduction of the $16.5T Cost of Violence equates to **$165 billion in annual economic value** returned to society through increased stability, productivity, and growth.
 
-Our model captures the first $27B to unlock the full $165B for everyone. This vast societal return is what makes the mission so compelling and the governance rights conferred by `$VICTORY` tokens exceptionally valuable. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
+Our model captures the first $27B to unlock the full $165B for everyone. This vast societal return is what makes the mission so compelling and the governance rights conferred by VICTORY tokens exceptionally valuable. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
 
 ## 5. Mitigating Risk: Learning from Financial Failures
 
 Our investment terms are engineered to avoid the catastrophic failures of the past.
 *   **The Precedent (Failure):** The **South Sea Bubble** (1720) warns against speculative hype.
-*   **Our Safeguard:** The value and payouts of `$VICTORY` instruments are **explicitly and contractually tied to a real-world outcome:** the successful ratification of the treaty and the flow of real funds.
+*   **Our Safeguard:** The value and payouts of VICTORY instruments are **explicitly and contractually tied to a real-world outcome:** the successful ratification of the treaty and the flow of real funds.
 *   **The Precedent (Failure):** **Long-Term Capital Management (LTCM)** warns against underestimating systemic "black swan" risk.
 *   **Our Safeguard:** We have engineered robust risk mitigation, including an **Assurance Contract** (funds returned if fundraising fails) and **first-loss philanthropic capital** to protect investors. See our [Investor Risk Analysis](../economic-models/investor-risk-analysis.md) for details.
 

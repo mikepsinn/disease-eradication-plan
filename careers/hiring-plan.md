@@ -22,7 +22,7 @@ This document provides a detailed breakdown of the team structure and hiring roa
 Our strategy is to build a lean, world-class core team for direct execution and to aggressively leverage contractors, prize-based competitions, and partner organizations to scale our impact without a large, bureaucratic overhead.
 
 ## Compensation Philosophy
-All core team members will receive modest, market-rate cash salaries combined with large, vested grants of `$VICTORY` tokens. This approach preserves cash for high-leverage political and technical spending while deeply aligning the team's long-term financial success with the success of the mission.
+All core team members will receive modest, market-rate cash salaries combined with large, vested grants of VICTORY tokens. This approach preserves cash for high-leverage political and technical spending while deeply aligning the team's long-term financial success with the success of the mission.
 
 ---
 
@@ -56,7 +56,7 @@ This initial phase focuses on establishing the leadership, legal, and technical 
 *   **Senior Frontend Engineer:** Builds the user-facing interfaces for the platform.
 
 **Finance & Economics (4 Roles)**
-*   **[Capital Markets Lead](./capital-markets-lead.md):** Structures all fundraising instruments, including the `$VICTORY` bond offerings.
+*   **[Capital Markets Lead](./capital-markets-lead.md):** Structures all fundraising instruments, including the VICTORY bond offerings.
 *   **[Peace Dividend Analytics Lead](./peace-dividend-analytics-lead.md):** Owns the economic models that quantify the value of the peace dividend.
 *   **Quantitative Analyst (x2):** Supports the capital markets and analytics leads.
 

@@ -16,19 +16,19 @@ This document specifies the design for a tiered, multi-level referral and incent
 The goal of this tier is to achieve maximum global scale (3.5% of humanity) with minimal friction and legal risk.
 
 -   **Mechanism:** For every verified vote on the global referendum, the participant and the referrer receive a grant of non-transferable **`$VOTE` points.**
--   **The Incentive:** `$VOTE` points serve as your verifiable claim to real economic value you help create. Their value is backed by your contribution to unlocking the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) through military budget redirection. After the 1% Treaty is ratified, they become **convertible to `$VICTORY` governance tokens** representing your earned ownership stake in the captured value. This transforms a simple vote into ownership of the wealth you generate for humanity.
+-   **The Incentive:** `$VOTE` points serve as your verifiable claim to real economic value you help create. Their value is backed by your contribution to unlocking the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) through military budget redirection. After the 1% Treaty is ratified, they become **convertible to VICTORY governance tokens** representing your earned ownership stake in the captured value. This transforms a simple vote into ownership of the wealth you generate for humanity.
 -   **Why it Works:** This "Points-then-Conversion" model allows us to sidestep the immense legal and operational complexity of a direct airdrop of a security token to 280 million people, while still providing a powerful, motivating incentive for mass participation.
 
-## Tier 2: Power Users & Organizers (`$VICTORY` Token Grants)
+## Tier 2: Power Users & Organizers (VICTORY Token Grants)
 
 The goal of this tier is to attract and reward the high-value contributors who will build the movement.
 
--   **Mechanism:** Large, direct grants of **`$VICTORY` tokens/bonds** will be awarded to key contributors through targeted prize campaigns, grant programs, and performance-based partnerships. These represent earned ownership stakes in the real economic value created by successful military-to-health budget redirection.
+-   **Mechanism:** Large, direct grants of **VICTORY tokens/bonds** will be awarded to key contributors through targeted prize campaigns, grant programs, and performance-based partnerships. These represent earned ownership stakes in the real economic value created by successful military-to-health budget redirection.
 -   **Target Audience:**
     *   **Organizers:** Community leaders who drive millions of referendum votes.
     *   **Developers:** Individuals and teams who build valuable tools on top of our platform.
     *   **Strategic Partners:** Institutions, lobbying firms, and campaign teams whose work directly leads to treaty ratification.
--   **Why it Works:** For this smaller, more sophisticated group of contributors, we can afford to run a legally compliant distribution process for `$VICTORY` instruments. This gives our most valuable partners a direct, immediate, and powerful stake in the outcome, transforming them from contractors into owners.
+-   **Why it Works:** For this smaller, more sophisticated group of contributors, we can afford to run a legally compliant distribution process for VICTORY instruments. This gives our most valuable partners a direct, immediate, and powerful stake in the outcome, transforming them from contractors into owners.
 
 ---
 
@@ -137,18 +137,18 @@ A well-designed referral-rewards system can:
 
 ---
 
-## $VICTORY Tokens: Funding the Referral Rewards System
+## VICTORY Tokens: Funding the Referral Rewards System
 
-### Why $VICTORY Tokens?
+### Why VICTORY Tokens?
 
-- Inspired by WWII war bonds, $VICTORY tokens represent earned ownership of real economic value created by capturing the [peace dividend](../economic-models/peace-dividend-value-capture.md).
+- Inspired by WWII war bonds, VICTORY tokens represent earned ownership of real economic value created by capturing the [peace dividend](../economic-models/peace-dividend-value-capture.md).
 - Purpose: Directly finance this viral referral-rewards system to mobilize 3.5% of the population, creating the political mandate needed to redirect $27B annually from military destruction to health creation.
 - Value Backing: Each token represents a fractional ownership claim on the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by systematic military budget redirection—real economic value, not speculative assets.
 - Goal: Unlock the same scale of transformation as the Oxford RECOVERY trial, which achieved an [80X efficiency gain](https://www.recoverytrial.net/) in clinical research.
 
 ### How It Works
 
-- **Purchase \$VICTORY tokens** to fund verified votes and actions in support of the Act. Tokenomics and compliance considerations are detailed in [\$VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md).
+- **Purchase VICTORY tokens** to fund verified votes and actions in support of the Act. Tokenomics and compliance considerations are detailed in [VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md).
 - **Each token** directly funds a specific number of verified votes (target: <$1 per vote, with potential for $0.20–$0.30 in viral scenarios—see the "Benchmarks" section above).
 - **All transactions** are transparently tracked on-chain, with a public dashboard showing progress toward the 3.5% tipping point ([BBC Future](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world)).
 
@@ -162,7 +162,7 @@ A well-designed referral-rewards system can:
 
 - **Open, auditable records** of all token sales and reward distributions.
 - **Real-time impact dashboard**: See how many votes/actions your support has funded.
-- **Economic model**: "Every $1,000 in $VICTORY tokens funds 1,000+ verified votes, unlocking $X in healthcare savings and Y lives improved."
+- **Economic model**: "Every $1,000 in VICTORY tokens funds 1,000+ verified votes, unlocking $X in healthcare savings and Y lives improved."
 
 ## Concrete Path to Mobilization (Global Template)
 
@@ -283,8 +283,8 @@ So when you propose a pledge/ referral system that can gather tens of thousands�
 ## Economic Model & Tokenomics Integration
 
 -   **`$VOTE` Points:** These represent your verifiable claim to a share of the economic value you help create by building the political mandate for military budget redirection. They are non-transferable pre-treaty and minted to reflect your contribution to unlocking the [$16.5 trillion peace dividend](../economic-models/peace-dividend-value-capture.md).
--   **`$VICTORY` Conversion:** Upon treaty ratification, your earned `$VOTE` points convert to `$VICTORY` governance tokens representing actual ownership of the $27B annual treasury created by your advocacy work. The conversion rate will be fixed and transparent from day one, reflecting the real value you helped create.
--   **Tier 2 Grants:** `$VICTORY` tokens for high-impact contributors represent earned ownership stakes in the captured peace dividend value, allocated from the "Ecosystem & Community Growth" fund based on measurable contributions to treaty success.
+-   **VICTORY Conversion:** Upon treaty ratification, your earned `$VOTE` points convert to VICTORY governance tokens representing actual ownership of the $27B annual treasury created by your advocacy work. The conversion rate will be fixed and transparent from day one, reflecting the real value you helped create.
+-   **Tier 2 Grants:** VICTORY tokens for high-impact contributors represent earned ownership stakes in the captured peace dividend value, allocated from the "Ecosystem & Community Growth" fund based on measurable contributions to treaty success.
 
 This system ensures participants earn real ownership of the economic value they create, not speculative digital assets with no intrinsic backing.
 

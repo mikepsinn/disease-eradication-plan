@@ -12,7 +12,7 @@ dateCreated: '2025-01-15T00:00:00.000Z'
 
 ## Overview
 
-The 1% Treaty initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for \$VICTORY tokens**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
+The 1% Treaty initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for VICTORY tokens**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
 
 ## Challenge 1: Foreign National Election Funding
 
@@ -62,7 +62,7 @@ The 1% Treaty initiative faces three critical legal challenges: **foreign nation
 ### **The Legal Problem**
 
 - **Howey Test:** Investment of money + common enterprise + expectation of profits + from efforts of others = security
-- **\$VICTORY Tokens: Risk of being classified as unregistered securities if they promise returns
+- **VICTORY Tokens: Risk of being classified as unregistered securities if they promise returns
 - **SEC Enforcement: Heavy penalties for unregistered securities offerings
 
 ### **Compliance Solution: A Two-Phase "Points-then-Conversion" Model**
@@ -79,16 +79,16 @@ This phase focuses on mass distribution of a non-security utility token.
     *   **No "Investment of Money":** Points are earned through an action (voting), not purchased.
     *   **Legal Rationale:** This structure is designed to fail the Howey Test. As a non-tradable token with no promised expectation of profit, it has a very strong argument for not being a security, aligning with the SEC's more favorable stance on non-financial, utility-focused airdrops.
 
-**Phase 2: `$VICTORY` Token Conversion (Post-Treaty)**
+**Phase 2: VICTORY Token Conversion (Post-Treaty)**
 
 This phase occurs only *after* the 1% Treaty is successfully ratified and the DIH Treasury is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
-*   **Mechanism: Voluntary, Opt-In Conversion:** Holders of `$VOTE` points will have the option to convert their points into real `$VICTORY` governance tokens through a dedicated, compliant portal.
-*   **Legal Rationale & Safe Harbor:** This conversion event will be structured to fall within the SEC's "safe harbor" provisions for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The `$VICTORY` token's function is now primarily for utility—governing the active, funded DIH treasury—which strengthens the case for a more favorable regulatory treatment.
+*   **Mechanism: Voluntary, Opt-In Conversion:** Holders of `$VOTE` points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
+*   **Legal Rationale & Safe Harbor:** This conversion event will be structured to fall within the SEC's "safe harbor" provisions for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY token's function is now primarily for utility—governing the active, funded DIH treasury—which strengthens the case for a more favorable regulatory treatment.
 
 **Fundraising from Accredited Investors (Reg D / Reg S)**
 
-The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for `$VICTORY` bonds and tokens, conducted in full compliance with Regulation D (for U.S. accredited investors) and Regulation S (for non-U.S. investors). This ensures our core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
+The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for VICTORY bonds and tokens, conducted in full compliance with Regulation D (for U.S. accredited investors) and Regulation S (for non-U.S. investors). This ensures our core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
 
 **Legal Structure:**
 - **Offshore Foundation:** Singapore or Swiss foundation issuing tokens
@@ -174,7 +174,7 @@ Swiss Foundation (Treaty Coordination)
 
 ### **Phase 2: Regulatory Approval (Months 6-12)**
 - File necessary registrations with election authorities
-- Submit \$VICTORY token structure for regulatory review
+- Submit VICTORY token structure for regulatory review
 - Obtain no-action letters where possible
 - Establish ongoing compliance monitoring
 
@@ -202,7 +202,7 @@ Swiss Foundation (Treaty Coordination)
 
 ### **Compliance Indicators**
 - Zero election law violations or regulatory enforcement actions
-- Successful securities law exemption for \$VICTORY tokens
+- Successful securities law exemption for VICTORY tokens
 - Full regulatory approval in all target jurisdictions
 - Independent legal audit confirms ongoing compliance
 

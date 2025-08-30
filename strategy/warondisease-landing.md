@@ -1,6 +1,6 @@
 ---
 title: War on Disease — Eradicating Disease by Redirecting 1%
-description: A simple plan to redirect 1% of global military spending into decentralized clinical trials (dFDA) funded by the Decentralized Institutes of Health (DIH), with referral rewards and VICTORY instruments to mobilize the world.
+description: A plan to end war and disease by making peace more profitable than conflict through a system of transparent, legal bribes.
 published: true
 date: '2025-08-15T00:00:00.000Z'
 tags: war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds
@@ -147,7 +147,7 @@ We will not change minds with morals. We will make curing people more profitable
 - Result: More weapons, less security
 
 **We offer better returns:**
-- Citizens: Paid in `VOTE` points for each referendum vote they generate (convertible to `VICTORY` post‑treaty per [Legal Compliance Framework](./legal-compliance-framework.md))  
+- Citizens: Paid in `VOTE` points for each referendum vote they generate (convertible to VICTORY bonds post‑treaty per [Legal Compliance Framework](./legal-compliance-framework.md))  
 - Organizations: Partner referral rewards for verified votes via your org's link; tiered bonus pools and leaderboards for coalitions
 - Politicians: Backed with independent expenditures when they vote with their district's referendum result
 
@@ -167,7 +167,7 @@ We choose to make curing people more profitable than killing them.
 
 **Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, `VOTE` points become convertible to `VICTORY` governance tokens—your earned ownership stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)).
+**Step 3:** After the treaty is ratified, `VOTE` points become convertible to VICTORY bonds—your earned ownership and governance stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)).
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 
@@ -181,22 +181,22 @@ We choose to make curing people more profitable than killing them.
 - **Who:** Wealthy individuals, funds, Anchor Investors
 - **Bribe:** 
   - **Targeting a >40% CAGR (~28x Return):** Our financial model is engineered to deliver a risk-adjusted return superior to the world's most elite investment funds (e.g., Renaissance Medallion Fund's ~39% CAGR). Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
-  - **VICTORY governance tokens** controlling the \$27B annual DIH treasury.
+  - **VICTORY bonds** that grant governance control over the \$27B annual DIH treasury.
   - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](../economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
 - **Why they bite:** The potential for a historic, de-risked, and transparently-governed return, plus control over a massive global health treasury.
 
-**Phase 2: VICTORY Token Buyers (\$100-200M Referendum Funding)**
+**Phase 2: VICTORY Bond Buyers (\$100-200M Referendum Funding)**
 - **Who:** Early Backers, health advocates, institutions
 - **Bribe:**
-  - VICTORY tokens representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
+  - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
   - Governance control over \$27B annually in captured value from military budget redirection
-  - Vote on patient subsidies and research funding allocation
-  - Token value backed by actual treasury growth from treaty implementation (\$0 → \$27B)
+  - Voting rights on patient subsidies and research funding allocation
+  - Bond value backed by actual treasury growth from treaty implementation (\$0 → \$27B)
 - **Why they bite:** Early ownership stake in humanity's largest value-creation event—capturing the peace dividend through systematic military-to-health reallocation
 
 **Phase 3: Citizens (Global Population)**
 - **Who:** Global population (targeting 3.5% = 280M people)
-- **Bribe:** A large grant of **`VOTE` points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **`VICTORY` governance tokens** after the 1% Treaty is ratified.
+- **Bribe:** A large grant of **`VOTE` points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
 - **Why they bite:** They earn a direct, meaningful stake in the economic value they help create for humanity. It transforms them from simple voters into owners of the wealth they generate by ending the military-industrial waste.
 
 **Phase 4: Politicians (\$800M-1.5B Independent Expenditures)**
@@ -263,7 +263,7 @@ graph TD;
 **Our Multi-Layered Defense:**
 
 **1. True Decentralized Control (Proven at Scale)**
-- Every VICTORY token holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
+- Every VICTORY bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
 - No human signers = no kidnapping, corruption, or coercion targets
 - Smart contracts automatically execute community decisions after 24-72h timelocks
 - Battle-tested approach managing billions in existing DAOs
@@ -552,9 +552,9 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **16. "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"**
 
-*   **Reality:** It is crucial to separate the underlying technology—secure, transparent, and auditable ledgers—from the speculative frenzy that has given 'crypto' a bad name. We are not creating a speculative meme coin. We are using battle-tested, open-source financial plumbing (similar to that securing billions in projects like MakerDAO) for a single purpose: to create a transparent, corruption-resistant, and democratically governed public utility. The value of `VICTORY` is not based on hype, but on its claim on a real-world, legally-mandated treasury funded by the world's largest economies.
+*   **Reality:** It is crucial to separate the underlying technology—secure, transparent, and auditable ledgers—from the speculative frenzy that has given 'crypto' a bad name. We are not creating a speculative meme coin. We are using battle-tested, open-source financial plumbing (similar to that securing billions in projects like MakerDAO) for a single purpose: to create a transparent, corruption-resistant, and democratically governed public utility. The value of VICTORY bonds is not based on hype, but on its claim on a real-world, legally-mandated treasury funded by the world's largest economies.
 
-**17. "What stops a few billionaires from buying up all the tokens and seizing the treasury?"**
+**17. "What stops a few billionaires from buying up all the bonds and seizing the treasury?"**
 
 *   **Reality:** This is a critical design challenge for any decentralized system. To prevent plutocratic capture, the DIH governance model will incorporate proven mechanisms for equitable voting. This includes **quadratic voting**, where the cost of each additional vote increases, making it prohibitively expensive for any single entity to dominate. We may also implement identity-based systems that grant voting power based on reputation and participation, not just capital. The goal is a system governed by its active stakeholders, not just its wealthiest ones.
 
@@ -582,7 +582,7 @@ Leaders are humans driven by personal financial self-interest, not abstract geop
 
 ### 2. **Legal Compliance: "This violates election and securities law"**
 
-**The Challenge:** Foreign nationals funding US elections is illegal; VICTORY tokens risk securities violations.
+**The Challenge:** Foreign nationals funding US elections is illegal; VICTORY bonds risk securities violations.
 
 **Our Solution:** [Strict legal segregation](./legal-compliance-framework.md) with expert oversight:
 - **Complete entity separation:** Zero coordination between US and international operations
@@ -655,11 +655,11 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 # Part 5: The Call to Action & Proof
 
-## Start Earning Now
+## Become a Stakeholder
 
-**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn `VOTE` points for each person who votes via your link. After the treaty passes, your points become convertible to `VICTORY` tokens.
+**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn `VOTE` points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
 
-**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org's link; pooled bonus funds for coalitions, all paid in `VOTE` points.
+**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Mobilize your organization to earn rewards for verified votes. Access pooled bonus funds for building coalitions.
 
 **[Buy VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
 
@@ -679,7 +679,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 **Government health agencies:** Expanded budgets without fighting for appropriations. **Plus:** Officials can personally invest in the system that boosts their agency's funding.
 
-**The Double Win:** Your institution gets more money AND you personally profit from its success. It's not just institutional benefit—it's personal wealth creation aligned with your professional mission.
+**A Dual Mandate:** Align your institution's mission with personal wealth creation. Your organization gets more funding while you profit from its success—a direct incentive to do good, better.
 
 **Contact us:** [institutions@warondisease.org](mailto:institutions@warondisease.org) to calculate your potential funding increase and personal investment opportunities.
 
@@ -887,8 +887,8 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ### 10. **"Why use tokens and a DAO? This sounds like a solution in search of a problem."**
 *   **Reality:** These tools are not a gimmick; they are the necessary plumbing for solving the core challenges of building a trusted global institution:
-    1.  **Global, Low-Friction Value Distribution:** How do you grant a verifiable stake to 280 million people across 100+ countries? Traditional banking makes this impossible. Digital tokens (`VICTORY`) on a modern, efficient blockchain are the only way to do this at scale.
-    2.  **Corruption-Resistant Governance:** How do you manage a \$27B treasury without it being captured by corrupt insiders? A Decentralized Autonomous Organization (DAO), governed by auditable smart contracts and controlled by millions of token holders, removes the human targets for corruption that plague traditional institutions.
+    1.  **Global, Low-Friction Value Distribution:** How do you grant a verifiable stake to 280 million people across 100+ countries? Traditional banking makes this impossible. VICTORY bonds, recorded on a modern, efficient blockchain, are the only way to do this at scale.
+    2.  **Corruption-Resistant Governance:** How do you manage a \$27B treasury without it being captured by corrupt insiders? A Decentralized Autonomous Organization (DAO), governed by auditable smart contracts and controlled by millions of bond holders, removes the human targets for corruption that plague traditional institutions.
     3.  **Radical Transparency:** Every transaction and decision is on a public ledger. This isn't a promise of transparency; it's a structural guarantee. We use this technology not because it's trendy, but because it is the only way to create a truly uncorruptible public utility.
 
 ### 11. **Financial Risk: "What if this fails? Where's my return?"**

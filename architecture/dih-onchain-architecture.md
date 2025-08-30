@@ -25,7 +25,7 @@ graph TD
     QF[Quadratic Funding Rounds]
     Bounties[Outcome Bounties/Prizes]
     Subsidies[Patient Subsidy Module]
-    Savings["$VICTORY Bonds & Savings-Sharing"]
+    Savings["VICTORY Bonds & Savings-Sharing"]
     Registry[Identity & Attestation Registry]
     Pause[Safety Pause/Kill-switch]
   end
@@ -52,7 +52,7 @@ graph TD
 - Quadratic Funding: round factory, matching pool rules, sybil-resistance hooks (Passport/Proof-of-Humanity pluggable)
 - Outcome Bounties/Prizes: milestone contracts linked to evidence oracle; partial payouts; dispute window
 - Patient Subsidies: per-participant vouchers; eligibility rules; post-trial reconciliation
-- $VICTORY Bonds & Savings-Sharing: bond issuance; vesting tied to measured savings; slippage caps; redemption windows
+- VICTORY Bonds & Savings-Sharing: bond issuance; vesting tied to measured savings; slippage caps; redemption windows
 - Identity & Attestations: DID/VC registry; EIP-712 signed reports; role-bound credentials (Chair, Fellow, Ambassador)
 - Safety Pause: circuit-breaker triggered by incident signals; progressive unpause policy tied to remediation
 

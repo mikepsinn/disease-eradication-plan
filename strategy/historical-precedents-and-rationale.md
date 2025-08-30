@@ -24,7 +24,7 @@ These examples demonstrate that the core mechanics of our strategy are achievabl
 ### 2. World War II War Bonds
 
 *   **The Precedent:** Debt securities issued by governments to finance the war effort, sold directly to the public. The U.S. alone raised over \$185 billion (equivalent to trillions today).
-*   **The Lesson:** This validates the core concept of `$VICTORY` Bonds. It is the premier historical example of **mobilizing massive private capital for a public cause using a financial instrument.** The campaign masterfully blended moral incentives (patriotism) with financial self-interest (the bonds paid interest). We are applying this proven model to a different kind of "war."
+*   **The Lesson:** This validates the core concept of VICTORY Bonds. It is the premier historical example of **mobilizing massive private capital for a public cause using a financial instrument.** The campaign masterfully blended moral incentives (patriotism) with financial self-interest (the bonds paid interest). We are applying this proven model to a different kind of "war."
 
 ### 3. The Global Fund to Fight AIDS, Tuberculosis and Malaria
 
@@ -65,7 +65,7 @@ To design optimal investment terms, we must also look at historical analogues fo
 
 1.  **Michael Milken & High-Yield ("Junk") Bonds**
     *   **The Precedent:** In the 1980s, Drexel Burnham Lambert pioneered the use of high-yield bonds to finance leveraged buyouts (LBOs) and other ventures the establishment considered too risky, raising billions.
-    *   **The Lesson for Our Terms:** This is the strongest precedent for the core structure of `$VICTORY` Bonds. It proves that **to attract capital for high-risk ventures, you must offer a correspondingly high, contractually obligated return.** Our front-loaded payout model, promising a massive year-one cash flow, is a direct application of this principle. It is the "high-yield" premium necessary to compensate for the immense political risk.
+    *   **The Lesson for Our Terms:** This is the strongest precedent for the core structure of VICTORY Bonds. It proves that **to attract capital for high-risk ventures, you must offer a correspondingly high, contractually obligated return.** Our front-loaded payout model, promising a massive year-one cash flow, is a direct application of this principle. It is the "high-yield" premium necessary to compensate for the immense political risk.
 
 2.  **George Soros & The Quantum Fund (Betting on Political Arbitrage)**
     *   **The Precedent:** In 1992, Soros's fund risked over $10 billion on a successful bet that the UK would be forced to leave the European Exchange Rate Mechanism (ERM), a binary political/economic event.
@@ -81,4 +81,4 @@ To design optimal investment terms, we must also look at historical analogues fo
 
 2.  **The South Sea Bubble (1720)**
     *   **The Precedent:** A classic speculative mania where the stock price of the South Sea Company soared based on a compelling story (a monopoly on trade) that was completely disconnected from its actual (and negligible) profits.
-    *   **The Lesson for Our Terms:** This warns against the dangers of pure speculation. The value of our `$VICTORY` instruments cannot be based on hype alone. It teaches us that **payouts must be explicitly and contractually tied to real-world, verifiable outcomes**—namely, the ratification of the 1% Treaty and the subsequent flow of real government funds into the DIH treasury. This grounds the project in tangible value, not just a narrative.
+    *   **The Lesson for Our Terms:** This warns against the dangers of pure speculation. The value of our VICTORY instruments cannot be based on hype alone. It teaches us that **payouts must be explicitly and contractually tied to real-world, verifiable outcomes**—namely, the ratification of the 1% Treaty and the subsequent flow of real government funds into the DIH treasury. This grounds the project in tangible value, not just a narrative.

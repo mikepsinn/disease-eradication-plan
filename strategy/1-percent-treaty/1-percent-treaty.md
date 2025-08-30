@@ -37,12 +37,12 @@ Here is the logical proof that signing this accord is the most rational thing yo
 
 1. Every participating nation will pledge **1% of its annual military budget** to the [Decentralized Institutes of Health (DIH)](decentralized-institutes-of-health.md) treasury. This creates a sustainable revenue stream to repay bondholders who fund the war on disease and to continuously finance the dFDA ecosystem. Treasury custody and controls are specified in the [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md).
 2. The **DIH will use its treasury to subsidize patient participation** in dFDA trials, fund infrastructure development, and offer bounties and prizes for medical innovation. The allocation of subsidies is determined by an algorithm that prioritizes research with the highest expected value to society.
-3. The DIH treasury is initially funded by selling **`$VICTORY` Bonds** to the public, allowing research and subsidies to begin immediately. The contributions from nations via the 1% Treaty are then used to repay these bonds over time. See [\$VICTORY Instruments — Tokenomics](./victory-bonds-tokenomics.md).
+3. The DIH treasury is initially funded by selling **VICTORY Bonds** to the public, allowing research and subsidies to begin immediately. The contributions from nations via the 1% Treaty are then used to repay these bonds over time. See [VICTORY Instruments — Tokenomics](./victory-bonds-tokenomics.md).
 4. The governance of the treasury for functions like prize and bounty allocation is managed through a **Decentralized Autonomous Organization (DAO)**, ensuring community alignment and transparency.
 5. All research findings and data generated through the dFDA platform, which is supported by the DIH, will be made openly available in real-time to the global scientific community, **accelerating progress** and enabling rapid translation of discoveries into new medicines and improved clinical practices worldwide.
 6. Participating nations and research institutions will collaborate continuously through a state-of-the-art online platform, sharing knowledge, best practices, and resources to **maximize the impact of every research dollar** and speed the deployment of new health solutions to patients everywhere.
 
-By combining the power of AI, innovative financial instruments like `$VICTORY` Bonds, and global cooperation, we can transform the fight against chronic disease. The resulting breakthroughs will improve health, extend lives, boost economies, and benefit every nation on Earth.
+By combining the power of AI, innovative financial instruments like VICTORY Bonds, and global cooperation, we can transform the fight against chronic disease. The resulting breakthroughs will improve health, extend lives, boost economies, and benefit every nation on Earth.
 
 # Cost of War
 

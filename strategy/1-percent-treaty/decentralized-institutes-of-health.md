@@ -1,6 +1,6 @@
 ---
 title: The Decentralized Institutes of Health
-description: A global treasury to fund the dFDA ecosystem, subsidize patient trial participation, and accelerate the war on disease through innovative financial instruments like $VICTORY Bonds.
+description: A global treasury to fund the dFDA ecosystem, subsidize patient trial participation, and accelerate the war on disease through innovative financial instruments like VICTORY Bonds.
 published: true
 date: 2024-06-12T00:00:00.000Z
 tags: dih, treasury, victory-bonds, patient-subsidies, dao, 1-percent-treaty, dfda
@@ -40,18 +40,18 @@ Beyond patient subsidies, the DIH Treasury is responsible for the growth and mai
 *   **Development Bounties:** Posting and paying out bounties for specific feature enhancements, bug fixes, and security improvements to the dFDA Platform's open-source codebase.
 *   **Infrastructure Maintenance:** Ensuring the long-term sustainability, security, and scalability of the dFDA Platform as a global public good.
 
-## Funding Model: $VICTORY Bonds for the War on Disease
+## Funding Model: VICTORY Bonds for the War on Disease
 
-To raise its initial and ongoing capital, the DIH will issue **`$VICTORY` Bonds**, an instrument modeled directly on the War Bonds of World War II. See tokenomics details in [\$VICTORY Instruments](./victory-bonds-tokenomics.md).
+To raise its initial and ongoing capital, the DIH will issue **VICTORY Bonds**, an instrument modeled directly on the War Bonds of World War II. See tokenomics details in [VICTORY Instruments](./victory-bonds-tokenomics.md).
 
 Just as citizens once invested in their nation's victory in wartime, they can now invest directly in the victory over humanity's oldest enemies: cancer, Alzheimer's, heart disease, and thousands of other afflictions. Selling these bonds allows the DIH to raise a substantial treasury upfront, enabling it to immediately begin funding subsidies and development without waiting for treaty contributions to accumulate.
 
 ## Repayment & Sustainability: The 1% Treaty
 
-The financial model is made sustainable through the **[1% Treaty](1-percent-treaty.md)**. The capital contributions made by signatory nations who pledge 1% of their military budgets are used to repay the `$VICTORY` Bond holders over time, with interest.
+The financial model is made sustainable through the **[1% Treaty](1-percent-treaty.md)**. The capital contributions made by signatory nations who pledge 1% of their military budgets are used to repay the VICTORY Bond holders over time, with interest.
 
 This creates a virtuous cycle:
-1.  Citizens and institutions buy `$VICTORY` Bonds, funding the war on disease.
+1.  Citizens and institutions buy VICTORY Bonds, funding the war on disease.
 2.  The DIH uses this capital to fund trials and development, producing cures and better health outcomes.
 3.  Nations, seeing the immense benefit, sign the 1% Treaty.
 4.  Treaty contributions flow back to the DIH Treasury, repaying the original bondholders.

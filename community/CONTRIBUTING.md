@@ -84,7 +84,7 @@ When two files overlap:
 
 - Kebab‑case filenames, topic‑first: dfda-platform-technical-roadmap.md
 - Use relative links (./, ../). Link to headings when helpful.
-- Escape dollar signs in Markdown (write \$VICTORY, \$27B).
+- Escape dollar signs in Markdown (write VICTORY, \$27B).
 - Follow the Sourcing and Citation Standard: every quantitative claim must link to a source.
 
 ## Voice & messaging guidelines

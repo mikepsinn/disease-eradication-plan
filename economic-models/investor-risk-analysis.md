@@ -1,5 +1,5 @@
 ---
-title: 'Investor Risk Analysis: $VICTORY Bonds vs. Traditional Venture Capital'
+title: 'Investor Risk Analysis: VICTORY Bonds vs. Traditional Venture Capital'
 description: 'A comprehensive analysis of the unique risk profile of the 1% Treaty initiative, comparing its political arbitrage model to the market-risk model of venture capital and detailing the engineered mechanisms designed to mitigate key risks.'
 published: true
 date: '2025-08-22T00:00:00.000Z'
@@ -24,7 +24,7 @@ The most critical distinction is the source of risk.
 
 This table provides a direct comparison of the risk profiles.
 
-| Risk Factor         | Standard VC Investment                                   | Our Project (`$VICTORY` Bonds)                                   |
+| Risk Factor         | Standard VC Investment                                   | Our Project (VICTORY Bonds)                                   |
 | :------------------ | :------------------------------------------------------- | :-------------------------------------------------------------- |
 | **Market Risk**     | **VERY HIGH** (Primary reason for failure)               | **VERY LOW** (The $2.72T "market" already exists)                |
 | **Competition Risk**| **HIGH** (Must out-compete incumbents and other startups)  | **LOW** (Strategy is to co-opt competitors, not fight them)      |

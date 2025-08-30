@@ -25,7 +25,7 @@ A plan is only as good as the team executing it. Our strategy is to maintain a l
     *   **Phase 1 (Seed):** Core leadership is in place. Key hires include a General Counsel, a Head of Platform Engineering, and a Head of Political Strategy. Total headcount: ~20.
     *   **Phase 2 (Series A):** Scale the team to support global operations. Key hires include Regional Campaign Directors (North America, Europe, Asia) and a Head of Security. Total headcount: ~50.
     *   **Phase 3 (Growth):** Full operational staff to manage the DIH treasury and global compliance. Key hires include a Chief Financial Officer and a Chief Compliance Officer. Total headcount: ~75-100.
-*   **Compensation Philosophy:** All core team members will receive modest, market-rate cash salaries combined with large, vested grants of `$VICTORY` tokens. This aligns incentives and preserves cash.
+*   **Compensation Philosophy:** All core team members will receive modest, market-rate cash salaries combined with large, vested grants of VICTORY tokens. This aligns incentives and preserves cash.
 
 ---
 
