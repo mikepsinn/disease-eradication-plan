@@ -24,7 +24,7 @@ The Decentralized Institutes of Health (DIH) operates a global treasury to subsi
 - **Eliminate human targets**: No individuals who can be kidnapped, threatened, or corrupted.
 - **Proven at scale**: Use battle-tested models from MakerDAO, Uniswap, and Aave managing billions.
 - **Transparency by default**: On-chain policies, open reporting, real-time dashboards.
-- **Community sovereignty**: Every VICTORY token holder has direct control over treasury decisions.
+- **Community sovereignty**: Every VICTORY bond holder has direct control over treasury decisions.
 
 ## Chain and Asset Strategy
 
@@ -34,13 +34,13 @@ The Decentralized Institutes of Health (DIH) operates a global treasury to subsi
 
 ## Decentralized Treasury Control: Proven DAO Model
 
-- **Primary control**: VICTORY token holder governance with automated smart contract execution (following MakerDAO/Uniswap model).
+- **Primary control**: VICTORY bond holder governance with automated smart contract execution (following MakerDAO/Uniswap model).
 - **No human signers**: Treasury operations controlled directly by community votes, eliminating kidnapping/corruption targets.
 - **Governance infrastructure**: Gnosis Safe modules or similar that execute based on verified on-chain voting results.
 
 ### Token Holder Governance
 
-- **Voting weight**: Proportional to VICTORY token holdings with quadratic voting options to prevent whale dominance.
+- **Voting weight**: Proportional to VICTORY bond holdings with quadratic voting options to prevent whale dominance.
 - **Proposal system**: Any token holder can propose spending, with minimum token threshold to prevent spam.
 - **Execution**: Smart contracts automatically execute approved proposals after timelock period.
 - **Emergency governance**: Higher threshold (67%+ of circulating tokens) required for emergency actions.

@@ -22,7 +22,7 @@ This document provides a detailed breakdown of the team structure and hiring roa
 Our strategy is to build a lean, world-class core team for direct execution and to aggressively leverage contractors, prize-based competitions, and partner organizations to scale our impact without a large, bureaucratic overhead.
 
 ## Compensation Philosophy
-All core team members will receive modest, market-rate cash salaries combined with large, vested grants of VICTORY tokens. This approach preserves cash for high-leverage political and technical spending while deeply aligning the team's long-term financial success with the success of the mission.
+All core team members will receive modest, market-rate cash salaries combined with large, vested grants of VICTORY bonds. This approach preserves cash for high-leverage political and technical spending while deeply aligning the team's long-term financial success with the success of the mission.
 
 ---
 

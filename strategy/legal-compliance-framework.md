@@ -12,7 +12,7 @@ dateCreated: '2025-01-15T00:00:00.000Z'
 
 ## Overview
 
-The 1% Treaty initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for VICTORY tokens**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
+The 1% Treaty initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for VICTORY bonds**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
 
 ## Challenge 1: Foreign National Election Funding
 
@@ -84,7 +84,7 @@ This phase focuses on mass distribution of a non-security utility token.
 This phase occurs only *after* the 1% Treaty is successfully ratified and the DIH Treasury is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
 *   **Mechanism: Voluntary, Opt-In Conversion:** Holders of `$VOTE` points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
-*   **Legal Rationale & Safe Harbor:** This conversion event will be structured to fall within the SEC's "safe harbor" provisions for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY token's function is now primarily for utility—governing the active, funded DIH treasury—which strengthens the case for a more favorable regulatory treatment.
+*   **Legal Rationale & Safe Harbor:** This conversion event will be structured to fall within the SEC's "safe harbor" provisions for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY bond's function is now primarily for utility—governing the active, funded DIH treasury—which strengthens the case for a more favorable regulatory treatment.
 
 **Fundraising from Accredited Investors (Reg D / Reg S)**
 
@@ -174,7 +174,7 @@ Swiss Foundation (Treaty Coordination)
 
 ### **Phase 2: Regulatory Approval (Months 6-12)**
 - File necessary registrations with election authorities
-- Submit VICTORY token structure for regulatory review
+- Submit VICTORY bond structure for regulatory review
 - Obtain no-action letters where possible
 - Establish ongoing compliance monitoring
 
@@ -202,7 +202,7 @@ Swiss Foundation (Treaty Coordination)
 
 ### **Compliance Indicators**
 - Zero election law violations or regulatory enforcement actions
-- Successful securities law exemption for VICTORY tokens
+- Successful securities law exemption for VICTORY bonds
 - Full regulatory approval in all target jurisdictions
 - Independent legal audit confirms ongoing compliance
 

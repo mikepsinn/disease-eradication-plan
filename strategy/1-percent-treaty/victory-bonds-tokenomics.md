@@ -61,8 +61,8 @@ This mechanism is designed for predictable, steady returns, analogous to a tradi
 This mechanism is designed for high-growth returns, driven by the increasing value of governing the DIH. It is analogous to owning equity in a high-growth company.
 -   **Mechanism:** Value accrual, realized via treasury buybacks or secondary market sales.
 -   **How it Works:**
-    1.  **Treasury Buybacks:** The DIH DAO can vote to use a portion of its massive annual surplus (e.g., a percentage of the **\$19.77B+** annual net income) to buy back VICTORY tokens from the market. This provides a constant source of liquidity for investors who wish to sell and creates sustained buying pressure, driving up the token's value.
-    2.  **Secondary Market Sales:** As the world's most powerful governance token, VICTORY tokens will be highly sought after and traded on regulated, liquid secondary markets. An investor can sell their tokens at any time at the prevailing market price, just like selling shares of a company.
+    1.  **Treasury Buybacks:** The DIH DAO can vote to use a portion of its massive annual surplus (e.g., a percentage of the **\$19.77B+** annual net income) to buy back VICTORY bonds from the market. This provides a constant source of liquidity for investors who wish to sell and creates sustained buying pressure, driving up the token's value.
+    2.  **Secondary Market Sales:** As the world's most powerful governance token, VICTORY bonds will be highly sought after and traded on regulated, liquid secondary markets. An investor can sell their tokens at any time at the prevailing market price, just like selling shares of a company.
 -   **The Result:** Investors can realize their gains by selling their appreciating asset, either back to the treasury or to other market participants who want to acquire governance power.
 
 ## Compliance Considerations (Non-legal summary)
@@ -79,7 +79,7 @@ This mechanism is designed for high-growth returns, driven by the increasing val
 
 ## Referral Funding Linkage
 
-- VICTORY tokens can fund verifiable actions in the [Referral Rewards System](../referral-rewards-system.md) with anti-fraud rules and public ledgers.
+- VICTORY bonds can fund verifiable actions in the [Referral Rewards System](../referral-rewards-system.md) with anti-fraud rules and public ledgers.
 
 ## Relationship to DIH Treasury
 

@@ -53,7 +53,7 @@ Our [Dynamic Cash Flow Model](./dih-treasury-cash-flow-model.md) shows how these
 In a full success scenario (\$27B annual income), we can comfortably deliver on our target of **~40% CAGR (~28x over 10 years)**. This is achieved by combining the base cash yield with performance-based kickers and the immense underlying value of Governance Alpha. By combining these unique advantages, we can structure an offering that provides a risk-adjusted expected value demonstrably superior to any other investment in the world.
 
 ### Long-Term Value Accrual: The Growing Treasury
-The financial models in this document are based on the initial, conservative figure of a \$27 billion annual treasury. However, the long-term vision is to incrementally increase this redirection percentage over time. This means the DIH treasury is designed to grow, making governance rights (VICTORY tokens) an asset with the potential for multi-generational value appreciation. For a detailed explanation of this long-term strategy, see [The Endgame: A Multi-Generational Strategy to Phase Out War](../strategy/the-endgame-phasing-out-war.md).
+The financial models in this document are based on the initial, conservative figure of a \$27 billion annual treasury. However, the long-term vision is to incrementally increase this redirection percentage over time. This means the DIH treasury is designed to grow, making governance rights (VICTORY bonds) an asset with the potential for multi-generational value appreciation. For a detailed explanation of this long-term strategy, see [The Endgame: A Multi-Generational Strategy to Phase Out War](../strategy/the-endgame-phasing-out-war.md).
 
 ## 5. Dynamic Risk Modeling & The Metaculus Framework
 

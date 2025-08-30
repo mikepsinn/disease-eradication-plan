@@ -65,7 +65,7 @@ The financial power of this model is built on a simple principle: capturing the 
 *   **The Captured Dividend:** The **$27 billion annual cash flow** we redirect. This is the tangible revenue stream that provides the fundamental backing for our financial instruments.
 *   **The Societal Dividend:** By reducing global conflict drivers by 1%, the intervention unlocks a far greater economic prize for the world. A 1% reduction of the $16.5T Cost of Violence equates to **$165 billion in annual economic value** returned to society through increased stability, productivity, and growth.
 
-Our model captures the first $27B to unlock the full $165B for everyone. This vast societal return is what makes the mission so compelling and the governance rights conferred by VICTORY tokens exceptionally valuable. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
+Our model captures the first $27B to unlock the full $165B for everyone. This vast societal return is what makes the mission so compelling and the governance rights conferred by VICTORY bonds exceptionally valuable. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
 
 ## 5. Mitigating Risk: Learning from Financial Failures
 

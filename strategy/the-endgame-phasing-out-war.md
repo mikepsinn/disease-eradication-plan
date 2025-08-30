@@ -34,6 +34,6 @@ This strategy is not based on a utopian hope for a change in human nature, but o
 
 ## 4. Implications for VICTORY Token Holders
 
-This long-term vision is the ultimate source of value for VICTORY token holders. The initial investment thesis is based on governance over a \$27 billion annual treasury. However, the true value is governance over a treasury that is designed to **grow perpetually**.
+This long-term vision is the ultimate source of value for VICTORY bond holders. The initial investment thesis is based on governance over a \$27 billion annual treasury. However, the true value is governance over a treasury that is designed to **grow perpetually**.
 
 An investment in VICTORY is an investment in a system designed to systematically capture the peace dividend, making it an asset with a potential for multi-generational value appreciation unlike any other in financial history.

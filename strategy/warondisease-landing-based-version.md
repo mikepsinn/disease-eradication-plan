@@ -188,7 +188,7 @@ We choose to make curing people more profitable than killing them.
 **Phase 2: VICTORY Token Buyers (\$100-200M Referendum Funding)**
 - **Who:** Crypto investors, health advocates, institutions
 - **Bribe:**
-  - VICTORY tokens representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
+  - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
   - Governance control over \$27B annually in captured value from military budget redirection
   - Vote on patient subsidies and research funding allocation
   - Token value backed by actual treasury growth from treaty implementation (\$0 → \$27B)
@@ -263,7 +263,7 @@ graph TD;
 **Our Multi-Layered Defense:**
 
 **1. True Decentralized Control (Proven at Scale)**
-- Every VICTORY token holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
+- Every VICTORY bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
 - No human signers = no kidnapping, corruption, or coercion targets
 - Smart contracts automatically execute community decisions after 24-72h timelocks
 - Battle-tested approach managing billions in existing DAOs
@@ -582,7 +582,7 @@ Leaders are humans driven by personal financial self-interest, not abstract geop
 
 ### 2. **Legal Compliance: "This violates election and securities law"**
 
-**The Challenge:** Foreign nationals funding US elections is illegal; VICTORY tokens risk securities violations.
+**The Challenge:** Foreign nationals funding US elections is illegal; VICTORY bonds risk securities violations.
 
 **Our Solution:** [Strict legal segregation](./legal-compliance-framework.md) with expert oversight:
 - **Complete entity separation:** Zero coordination between US and international operations
@@ -657,7 +657,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ## Start Earning Now
 
-**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn `$VOTE` points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY tokens.
+**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn `$VOTE` points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
 
 **[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org’s link; pooled bonus funds for coalitions, all paid in `$VOTE` points.
 
