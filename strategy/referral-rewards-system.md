@@ -11,12 +11,12 @@ emoji: ðŸš€
 
 This document specifies the design for a tiered, multi-level referral and incentive system to drive participation in the 1% Treaty global referendum. The goal is to create a powerful, self-propagating engine for growth that is resistant to fraud and aligns incentives across individuals, organizations, and coalitions. While this system focuses on incentivizing *participation*, our strategy for incentivizing *skilled contributions* is detailed in the [Open Ecosystem and Bounty Model](./open-ecosystem-and-bounty-model.md).
 
-## Tier 1: Mass Participation (`$VOTE` Points)
+## Tier 1: Mass Participation (VOTE Points)
 
 The goal of this tier is to achieve maximum global scale (3.5% of humanity) with minimal friction and legal risk.
 
--   **Mechanism:** For every verified vote on the global referendum, the participant and the referrer receive a grant of non-transferable **`$VOTE` points.**
--   **The Incentive:** `$VOTE` points serve as your verifiable claim to real economic value you help create. Their value is backed by your contribution to unlocking the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) through military budget redirection. After the 1% Treaty is ratified, they become **convertible to VICTORY governance tokens** representing your earned ownership stake in the captured value. This transforms a simple vote into ownership of the wealth you generate for humanity.
+-   **Mechanism:** For every verified vote on the global referendum, the participant and the referrer receive a grant of non-transferable **VOTE points.**
+-   **The Incentive:** VOTE points serve as your verifiable claim to real economic value you help create. Their value is backed by your contribution to unlocking the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) through military budget redirection. After the 1% Treaty is ratified, they become **convertible to VICTORY governance tokens** representing your earned ownership stake in the captured value. This transforms a simple vote into ownership of the wealth you generate for humanity.
 -   **Why it Works:** This "Points-then-Conversion" model allows us to sidestep the immense legal and operational complexity of a direct airdrop of a security token to 280 million people, while still providing a powerful, motivating incentive for mass participation.
 
 ## Tier 2: Power Users & Organizers (VICTORY Token Grants)
@@ -106,8 +106,8 @@ A well-designed referral-rewards system can:
 ## Practical Steps to Achieve Viral Scale
 
 1. **Performance Awards + Leaderboards**
-   - Weekly leaderboard awards for top contributors (denominated in `\$VOTE` points)
-   - Randomized recognition awards for verified referrers (in `\$VOTE` points)
+   - Weekly leaderboard awards for top contributors (denominated in VOTE points)
+   - Randomized recognition awards for verified referrers (in VOTE points)
    - Keeps marginal cost per new vote near zero after pool is funded
 2. **Lower-Touch Verification (Early Phases)**
    - Email + phone OTP for initial onboarding
@@ -282,8 +282,8 @@ So when you propose a pledge/ referral system that can gather tens of thousandsâ
 
 ## Economic Model & Tokenomics Integration
 
--   **`$VOTE` Points:** These represent your verifiable claim to a share of the economic value you help create by building the political mandate for military budget redirection. They are non-transferable pre-treaty and minted to reflect your contribution to unlocking the [$16.5 trillion peace dividend](../economic-models/peace-dividend-value-capture.md).
--   **VICTORY Conversion:** Upon treaty ratification, your earned `$VOTE` points convert to VICTORY governance tokens representing actual ownership of the $27B annual treasury created by your advocacy work. The conversion rate will be fixed and transparent from day one, reflecting the real value you helped create.
+-   **VOTE Points:** These represent your verifiable claim to a share of the economic value you help create by building the political mandate for military budget redirection. They are non-transferable pre-treaty and minted to reflect your contribution to unlocking the [$16.5 trillion peace dividend](../economic-models/peace-dividend-value-capture.md).
+-   **VICTORY Conversion:** Upon treaty ratification, your earned VOTE points convert to VICTORY governance tokens representing actual ownership of the $27B annual treasury created by your advocacy work. The conversion rate will be fixed and transparent from day one, reflecting the real value you helped create.
 -   **Tier 2 Grants:** VICTORY bonds for high-impact contributors represent earned ownership stakes in the captured peace dividend value, allocated from the "Ecosystem & Community Growth" fund based on measurable contributions to treaty success.
 
 This system ensures participants earn real ownership of the economic value they create, not speculative digital assets with no intrinsic backing.

@@ -16,7 +16,7 @@ editor: markdown
 ## Components
 
 - Referral engine
-  - Performance awards + weekly leaderboards for top referrers (default denomination: `\$VOTE` points representing earned shares of [peace dividend value](../economic-models/peace-dividend-value-capture.md) pre‑treaty; cash-only pilots must follow [Legal Compliance Framework](./legal-compliance-framework.md))
+  - Performance awards + weekly leaderboards for top referrers (default denomination: VOTE points representing earned shares of [peace dividend value](../economic-models/peace-dividend-value-capture.md) pre‑treaty; cash-only pilots must follow [Legal Compliance Framework](./legal-compliance-framework.md))
   - Optional tree revenue-share with hard caps and anti-fraud rules (sharing real value creation stakes)
   - Verification tiers: email/phone → device fingerprint → eID as jurisdiction requires
   - KPIs: CPA, K-factor, verified-pledge velocity
@@ -28,7 +28,7 @@ editor: markdown
   - Slashing/blacklisting for fraud or COI violations
 
 - Bounties, prizes, and merge-to-earn
-  - Outcome bounties for evidence-producing milestones (pre‑treaty payouts in `\$VOTE` points representing earned shares of [peace dividend value](../economic-models/peace-dividend-value-capture.md); post‑treaty governed by VICTORY DAO per [DIH](./1-percent-treaty/decentralized-institutes-of-health.md))
+  - Outcome bounties for evidence-producing milestones (pre‑treaty payouts in VOTE points representing earned shares of [peace dividend value](../economic-models/peace-dividend-value-capture.md); post‑treaty governed by VICTORY DAO per [DIH](./1-percent-treaty/decentralized-institutes-of-health.md))
   - Security/bug bounties; feature bounties with pay-on-merge (earning real value creation stakes)
   - Major prizes for critical platform capabilities that unlock the $16.5T annual peace dividend
 
@@ -41,7 +41,7 @@ editor: markdown
   - Recognition is earned, criteria-based, revocable; public directory with COI
 
 - Ambassador performance pools
-  - Regional/institute matching pools unlocked by meeting verified KPIs (pledges, enrollments, outcomes); default payouts in `\$VOTE` points representing earned ownership of [peace dividend value](../economic-models/peace-dividend-value-capture.md) created through successful advocacy
+  - Regional/institute matching pools unlocked by meeting verified KPIs (pledges, enrollments, outcomes); default payouts in VOTE points representing earned ownership of [peace dividend value](../economic-models/peace-dividend-value-capture.md) created through successful advocacy
 
 > Canonical references: [Legal Compliance Framework](./legal-compliance-framework.md), [VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md), [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md)
   - Transparent formulas; funds flow programmatically

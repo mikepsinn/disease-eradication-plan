@@ -147,7 +147,7 @@ We will not change minds with morals. We will make curing people more profitable
 - Result: More weapons, less security
 
 **We offer better returns:**
-- Citizens: Paid in `\$VOTE` points for each referendum vote they generate (convertible to VICTORY post‑treaty per [Legal Compliance Framework](./legal-compliance-framework.md))  
+- Citizens: Paid in VOTE points for each referendum vote they generate (convertible to VICTORY post‑treaty per [Legal Compliance Framework](./legal-compliance-framework.md))  
 - Organizations: Partner referral rewards for verified votes via your org’s link; tiered bonus pools and leaderboards for coalitions
 - Politicians: Backed with independent expenditures when they vote with their district’s referendum result
 
@@ -163,11 +163,11 @@ We choose to make curing people more profitable than killing them.
 
 **The Goal: Make curing people more profitable than killing them.** 
 
-**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **`$VOTE` points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./legal-compliance-framework.md)).
+**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./legal-compliance-framework.md)).
 
 **Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, `$VOTE` points become convertible to VICTORY governance tokens—your earned ownership stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)).
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY governance tokens—your earned ownership stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)).
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district’s referendum result—and fund challengers against those who defy it.
 
@@ -196,7 +196,7 @@ We choose to make curing people more profitable than killing them.
 
 **Phase 3: Citizens (Global Population)**
 - **Who:** Global population (targeting 3.5% = 280M people)
-- **Bribe:** A large grant of **`$VOTE` points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY governance tokens** after the 1% Treaty is ratified.
+- **Bribe:** A large grant of **VOTE points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY governance tokens** after the 1% Treaty is ratified.
 - **Why they bite:** They earn a direct, meaningful stake in the economic value they help create for humanity. It transforms them from simple voters into owners of the wealth they generate by ending the military-industrial waste.
 
 **Phase 4: Politicians (\$800M-1.5B Independent Expenditures)**
@@ -657,9 +657,9 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ## Start Earning Now
 
-**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn `$VOTE` points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
+**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn VOTE points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
 
-**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org’s link; pooled bonus funds for coalitions, all paid in `$VOTE` points.
+**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org’s link; pooled bonus funds for coalitions, all paid in VOTE points.
 
 **[Buy VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
 

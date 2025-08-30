@@ -69,12 +69,12 @@ The 1% Treaty initiative faces three critical legal challenges: **foreign nation
 
 Our compliance strategy is designed to achieve our goal of mass participation while navigating global securities laws, leveraging the SEC's more innovation-friendly guidance as of August 2025. It separates the initial, non-financial airdrop from the subsequent distribution of valuable governance tokens.
 
-**Phase 1: `$VOTE` Points Airdrop (Pre-Treaty)**
+**Phase 1: VOTE Points Airdrop (Pre-Treaty)**
 
 This phase focuses on mass distribution of a non-security utility token.
 
 *   **Token Design (Not a Security):**
-    *   **No Financial Value:** `$VOTE` points are explicitly defined as having no financial value and are non-transferable.
+    *   **No Financial Value:** VOTE points are explicitly defined as having no financial value and are non-transferable.
     *   **Pure Utility:** Their sole purpose is to serve as a cryptographically verifiable receipt of participation and a badge of honor.
     *   **No "Investment of Money":** Points are earned through an action (voting), not purchased.
     *   **Legal Rationale:** This structure is designed to fail the Howey Test. As a non-tradable token with no promised expectation of profit, it has a very strong argument for not being a security, aligning with the SEC's more favorable stance on non-financial, utility-focused airdrops.
@@ -83,7 +83,7 @@ This phase focuses on mass distribution of a non-security utility token.
 
 This phase occurs only *after* the 1% Treaty is successfully ratified and the DIH Treasury is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
-*   **Mechanism: Voluntary, Opt-In Conversion:** Holders of `$VOTE` points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
+*   **Mechanism: Voluntary, Opt-In Conversion:** Holders of VOTE points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
 *   **Legal Rationale & Safe Harbor:** This conversion event will be structured to fall within the SEC's "safe harbor" provisions for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY bond's function is now primarily for utility—governing the active, funded DIH treasury—which strengthens the case for a more favorable regulatory treatment.
 
 **Fundraising from Accredited Investors (Reg D / Reg S)**
