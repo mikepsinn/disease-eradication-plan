@@ -1,6 +1,6 @@
 ---
 title: War on Disease — Eradicating Disease by Redirecting 1%
-description: A simple plan to redirect 1% of global military spending into decentralized clinical trials (dFDA) funded by the Decentralized Institutes of Health (DIH), with referral rewards and \$VICTORY instruments to mobilize the world.
+description: A simple plan to redirect 1% of global military spending into decentralized clinical trials (dFDA) funded by the Decentralized Institutes of Health (DIH), with referral rewards and VICTORY instruments to mobilize the world.
 published: true
 date: '2025-08-15T00:00:00.000Z'
 tags: war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds
@@ -52,7 +52,7 @@ This document serves as the content and creative brief. The aesthetic should be 
 
 5.  **Call to Action (CTA) Sections**
     -   **Content:** "Start Earning Now" and "For Institutions."
-    -   **Visuals:** Buttons and interactive elements should be styled to look like official seals or the ornate corners of a bond certificate. The text on buttons ("Get Your Referendum Link," "Invest in \$VICTORY") should reinforce the transactional and high-value nature of the actions.
+    -   **Visuals:** Buttons and interactive elements should be styled to look like official seals or the ornate corners of a bond certificate. The text on buttons ("Get Your Referendum Link," "Invest in VICTORY") should reinforce the transactional and high-value nature of the actions.
 
 ---
 
@@ -147,9 +147,9 @@ We will not change minds with morals. We will make curing people more profitable
 - Result: More weapons, less security
 
 **We offer better returns:**
-- Citizens: Paid in `\$VOTE` points for each referendum vote they generate (convertible to `\$VICTORY` post‑treaty per [Legal Compliance Framework](./legal-compliance-framework.md))  
-- Organizations: Partner referral rewards for verified votes via your org’s link; tiered bonus pools and leaderboards for coalitions
-- Politicians: Backed with independent expenditures when they vote with their district’s referendum result
+- Citizens: Paid in `VOTE` points for each referendum vote they generate (convertible to `VICTORY` post‑treaty per [Legal Compliance Framework](./legal-compliance-framework.md))  
+- Organizations: Partner referral rewards for verified votes via your org's link; tiered bonus pools and leaderboards for coalitions
+- Politicians: Backed with independent expenditures when they vote with their district's referendum result
 
 - Institutions: Double or triple their research funding
 
@@ -163,13 +163,13 @@ We choose to make curing people more profitable than killing them.
 
 **The Goal: Make curing people more profitable than killing them.** 
 
-**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **`$VOTE` points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./legal-compliance-framework.md)).
+**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **`VOTE` points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./legal-compliance-framework.md)).
 
 **Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, `$VOTE` points become convertible to `$VICTORY` governance tokens—your earned ownership stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [\$VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)).
+**Step 3:** After the treaty is ratified, `VOTE` points become convertible to `VICTORY` governance tokens—your earned ownership stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Instruments — Tokenomics](./1-percent-treaty/victory-bonds-tokenomics.md)).
 
-**Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district’s referendum result—and fund challengers against those who defy it.
+**Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 
 **Step 5:** The treasury funds EVERYONE in health - universities, pharma, nonprofits, government agencies - through democratically controlled funding pools.
 
@@ -181,14 +181,14 @@ We choose to make curing people more profitable than killing them.
 - **Who:** Wealthy individuals, funds, Anchor Investors
 - **Bribe:** 
   - **Targeting a >40% CAGR (~28x Return):** Our financial model is engineered to deliver a risk-adjusted return superior to the world's most elite investment funds (e.g., Renaissance Medallion Fund's ~39% CAGR). Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
-  - **\$VICTORY governance tokens** controlling the \$27B annual DIH treasury.
+  - **VICTORY governance tokens** controlling the \$27B annual DIH treasury.
   - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](../economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
 - **Why they bite:** The potential for a historic, de-risked, and transparently-governed return, plus control over a massive global health treasury.
 
-**Phase 2: \$VICTORY Token Buyers (\$100-200M Referendum Funding)**
+**Phase 2: VICTORY Token Buyers (\$100-200M Referendum Funding)**
 - **Who:** Early Backers, health advocates, institutions
 - **Bribe:**
-  - \$VICTORY tokens representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
+  - VICTORY tokens representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
   - Governance control over \$27B annually in captured value from military budget redirection
   - Vote on patient subsidies and research funding allocation
   - Token value backed by actual treasury growth from treaty implementation (\$0 → \$27B)
@@ -196,13 +196,13 @@ We choose to make curing people more profitable than killing them.
 
 **Phase 3: Citizens (Global Population)**
 - **Who:** Global population (targeting 3.5% = 280M people)
-- **Bribe:** A large grant of **`$VOTE` points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **`$VICTORY` governance tokens** after the 1% Treaty is ratified.
+- **Bribe:** A large grant of **`VOTE` points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **`VICTORY` governance tokens** after the 1% Treaty is ratified.
 - **Why they bite:** They earn a direct, meaningful stake in the economic value they help create for humanity. It transforms them from simple voters into owners of the wealth they generate by ending the military-industrial waste.
 
 **Phase 4: Politicians (\$800M-1.5B Independent Expenditures)**
 - **Who:** Key legislators in target countries
 - **Bribe:** 
-  - **Personal Wealth Creation:** Early access to [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) with superior returns designed to outperform defense stocks and traditional political corruption
+  - **Personal Wealth Creation:** Early access to [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) with superior returns designed to outperform defense stocks and traditional political corruption
   - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
   - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
 - **Why they bite:** Personal wealth growth + 280M verified voters + overwhelming campaign funding vs. military contractors' modest donations and \$15M lobbying budget
@@ -213,7 +213,7 @@ We choose to make curing people more profitable than killing them.
 
 ## The Treasury Model
 
-**[\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
+**[VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
 
 **[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](../problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) platform** with proven results:
 
@@ -263,7 +263,7 @@ graph TD;
 **Our Multi-Layered Defense:**
 
 **1. True Decentralized Control (Proven at Scale)**
-- Every \$VICTORY token holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
+- Every VICTORY token holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
 - No human signers = no kidnapping, corruption, or coercion targets
 - Smart contracts automatically execute community decisions after 24-72h timelocks
 - Battle-tested approach managing billions in existing DAOs
@@ -347,7 +347,7 @@ The Pentagon cannot account for **[\$2.5 trillion in assets](#pentagon-unaccount
 - Military contractors would spend ~**\$15 million in lobbying** to defend that revenue
 
 **Our superior offer to politicians (legal and more profitable):**
-- **Personal Investment Opportunity:** Politicians and their families can directly invest in [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks. When your personal portfolio grows faster by supporting the treaty, the choice is obvious.
+- **Personal Investment Opportunity:** Politicians and their families can directly invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks. When your personal portfolio grows faster by supporting the treaty, the choice is obvious.
 - **Campaign Support:** Independent expenditures providing massive ad buys and ground game support for treaty supporters; equivalent opposition funding for defectors (no coordination).
 - **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the safer political choice.
 
@@ -359,7 +359,7 @@ The Pentagon cannot account for **[\$2.5 trillion in assets](#pentagon-unaccount
 
 - **Referendums (where binding and timely):** Highest legitimacy; durable mandate; use when national or state mechanisms exist and timelines are practical.
 - **Advisory signals (where no referendum):** Run scientifically credible polling or representative citizen assemblies; publish verified tallies per district.
-- **Independent expenditures:** Fastest lever to translate district will into votes; pledge support for lawmakers who vote with their district’s verified result (and oppose those who defy it), with strict no‑coordination.
+- **Independent expenditures:** Fastest lever to translate district will into votes; pledge support for lawmakers who vote with their district's verified result (and oppose those who defy it), with strict no‑coordination.
 - **Hybrid playbook:** Use the global referendum for umbrella mandate; use country/district signals to direct lawful independent expenditures.
 
 ## Legal Compliance (jurisdiction‑specific)
@@ -516,8 +516,8 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **9. "You're competing with military contractors who have decades of relationships and influence"**
 
-*   **Reality: We reframe the conflict from a zero-sum battle to a positive-sum bargain.** We are not asking the military-industrial complex to fight us; we are inviting them to profit with us. The core of their business is not war, but shareholder return. The entire thesis for [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) is engineered to offer risk-adjusted returns mathematically superior to their current investments. We can approach military contractors, their investors, and lobbyists with a simple proposition:
-    1.  **You Make More Money:** Your fiduciary duty is to maximize shareholder value. Our financial models show that redirecting capital to \$VICTORY bonds will generate more wealth than building systems that create existential risk.
+*   **Reality: We reframe the conflict from a zero-sum battle to a positive-sum bargain.** We are not asking the military-industrial complex to fight us; we are inviting them to profit with us. The core of their business is not war, but shareholder return. The entire thesis for [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) is engineered to offer risk-adjusted returns mathematically superior to their current investments. We can approach military contractors, their investors, and lobbyists with a simple proposition:
+    1.  **You Make More Money:** Your fiduciary duty is to maximize shareholder value. Our financial models show that redirecting capital to VICTORY bonds will generate more wealth than building systems that create existential risk.
     2.  **You Get Better Security:** A healthier, more stable world is a safer world. Redirecting 1% from overkill capacity to pandemic prevention provides more real security than another nuclear submarine.
     3.  **You Protect Your Family:** Contractors are humans. Their families get sick. They can profit from a system that fuels destruction, or they can profit *even more* by funding cures that might one day save their loved ones.
     4.  **Repurpose Your Lobbyists:** Instead of us hiring new lobbyists, we "bribe" you with superior returns to get your existing lobbyists to push for the treaty. Your networks become our accelerators, turning opposition into advocacy overnight.
@@ -552,7 +552,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **16. "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"**
 
-*   **Reality:** It is crucial to separate the underlying technology—secure, transparent, and auditable ledgers—from the speculative frenzy that has given 'crypto' a bad name. We are not creating a speculative meme coin. We are using battle-tested, open-source financial plumbing (similar to that securing billions in projects like MakerDAO) for a single purpose: to create a transparent, corruption-resistant, and democratically governed public utility. The value of `$VICTORY` is not based on hype, but on its claim on a real-world, legally-mandated treasury funded by the world's largest economies.
+*   **Reality:** It is crucial to separate the underlying technology—secure, transparent, and auditable ledgers—from the speculative frenzy that has given 'crypto' a bad name. We are not creating a speculative meme coin. We are using battle-tested, open-source financial plumbing (similar to that securing billions in projects like MakerDAO) for a single purpose: to create a transparent, corruption-resistant, and democratically governed public utility. The value of `VICTORY` is not based on hype, but on its claim on a real-world, legally-mandated treasury funded by the world's largest economies.
 
 **17. "What stops a few billionaires from buying up all the tokens and seizing the treasury?"**
 
@@ -571,7 +571,7 @@ The three objections that could kill this proposal have detailed solutions:
 
 **Our Approach: Personal Financial Alignment Over Institutional Punishment**
 Leaders are humans driven by personal financial self-interest, not abstract geopolitical strategy. We apply the same strategy we use with military contractors:
-- **Personal Investment Opportunity:** Leaders and their families can invest in [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to offer mathematically superior returns to alternative investments. When your personal wealth grows faster by supporting the treaty than opposing it, the choice is obvious.
+- **Personal Investment Opportunity:** Leaders and their families can invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to offer mathematically superior returns to alternative investments. When your personal wealth grows faster by supporting the treaty than opposing it, the choice is obvious.
 - **Direct Financial Stakes:** We offer leaders opportunities to profit directly from the \$27B annual treasury through legally compliant investment vehicles, giving them personal skin in the game.
 - **Family Security:** Leaders' families get diseases too. They can profit from a system that perpetuates risk, or profit *even more* from one that funds cures for conditions that might affect their loved ones.
 - **Political Insurance:** Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice—opposing it becomes electoral and financial suicide.
@@ -582,7 +582,7 @@ Leaders are humans driven by personal financial self-interest, not abstract geop
 
 ### 2. **Legal Compliance: "This violates election and securities law"**
 
-**The Challenge:** Foreign nationals funding US elections is illegal; \$VICTORY tokens risk securities violations.
+**The Challenge:** Foreign nationals funding US elections is illegal; VICTORY tokens risk securities violations.
 
 **Our Solution:** [Strict legal segregation](./legal-compliance-framework.md) with expert oversight:
 - **Complete entity separation:** Zero coordination between US and international operations
@@ -657,11 +657,11 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ## Start Earning Now
 
-**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn `$VOTE` points for each person who votes via your link. After the treaty passes, your points become convertible to `$VICTORY` tokens.
+**[Get your referendum link](./referendum/global-referendum-implementation.md)** → Earn `VOTE` points for each person who votes via your link. After the treaty passes, your points become convertible to `VICTORY` tokens.
 
-**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org’s link; pooled bonus funds for coalitions, all paid in `$VOTE` points.
+**[Request an organization link](./referendum/global-referendum-implementation.md#organization-links)** → Earn referral rewards for votes via your org's link; pooled bonus funds for coalitions, all paid in `VOTE` points.
 
-**[Buy \$VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
+**[Buy VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
 
 **[Calculate your institution's allocation](./1-percent-treaty/institutional-funding-calculator.md)** → See how much your university/company/nonprofit would receive.
 
@@ -671,7 +671,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 ## For Institutions
 
-**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [\$VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) and profit while their companies benefit.
+**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) and profit while their companies benefit.
 
 **Universities:** Massive increase in research grants across all health departments. **Plus:** Administrators and board members can personally invest and profit from the system that funds their institutions.
 
@@ -805,7 +805,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 <a id="world-warheads"></a>
 * **World Nuclear Forces**
-  > "As of early 2024, we estimate that the world’s nine nuclear-armed states possess a combined total of approximately 12,100 nuclear warheads."
+  > "As of early 2024, we estimate that the world's nine nuclear-armed states possess a combined total of approximately 12,100 nuclear warheads."
   > — Federation of American Scientists, 2024, [Status of World Nuclear Forces](https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
 
 <a id="nuke-winter-150tg"></a>
@@ -835,7 +835,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 <a id="global-fund"></a>
 * **The Global Fund**
-  > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world’s most affected countries."
+  > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
   > — The Global Fund, [Overview](https://www.theglobalfund.org/en/overview/)
 
 <a id="lobbying-1-1b"></a>
@@ -863,8 +863,8 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 <a id="net-neutrality-comments"></a>
 * **Net Neutrality Comments (nearly 4M, 2014-2015)**
-  > "The nearly 4 million comments submitted to the Federal Communications Commission about its proposed net neutrality rules shattered the agency’s previous record..."
-  > — Pew Research Center, 2014, [FCC’s net neutrality comment period ends with a bang](https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/)
+  > "The nearly 4 million comments submitted to the Federal Communications Commission about its proposed net neutrality rules shattered the agency's previous record..."
+  > — Pew Research Center, 2014, [FCC's net neutrality comment period ends with a bang](https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/)
 
 <a id="top-contractor-revenue"></a>
 * **Top Defense Contractor Revenue (Lockheed Martin, $68.59B, FY23)**
@@ -873,7 +873,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 <a id="fossil-fuel-subsidies"></a>
 * **Fossil Fuel Subsidies ($7T, 2022)**
-  > "Fossil fuel subsidies surged to a record $7 trillion last year as governments supported consumers and businesses during the global spike in energy prices caused by Russia’s invasion of Ukraine and the economic recovery from the pandemic."
+  > "Fossil fuel subsidies surged to a record $7 trillion last year as governments supported consumers and businesses during the global spike in energy prices caused by Russia's invasion of Ukraine and the economic recovery from the pandemic."
   > — IMF, 2023, [Fossil Fuel Subsidies Surged to Record $7 Trillion](https://www.imf.org/en/Blogs/Articles/2023/08/24/fossil-fuel-subsidies-surged-to-record-7-trillion)
 
 <a id="lobbying-roi-calc"></a>
@@ -886,10 +886,10 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 *   **Reality:** We use this language deliberately because it is honest. The current system of political change runs on a slow, opaque, and inefficient form of bribery called lobbying. It is a system that funnels trillions toward destruction while claiming moral high ground. We choose to be brutally transparent about the reality that money moves power. Our "bribe" is not a backroom deal; it is an open, auditable, and transparently-governed incentive system designed to produce peace and health. We believe that confronting the uncomfortable truth of how the world actually works is the only way to build a system that is genuinely better.
 
 ### 10. **"Why use tokens and a DAO? This sounds like a solution in search of a problem."**
-*   **Reality:** These tools are not a gimmick; they are the only way to solve the three core challenges of building a trusted global institution:
-    1.  **Global, Low-Friction Payments:** How do you grant a verifiable stake to 280 million people across 100+ countries? Traditional banking makes this impossible. A token (`$VICTORY`) on a modern blockchain is the only technology that can do this efficiently and at scale. The `$` prefix is a technical convention, not a signal of speculation.
-    2.  **Corruption-Resistant Governance:** How do you manage a $27B treasury without it being captured by corrupt insiders? A DAO, governed by auditable smart contracts and controlled by millions of token holders, removes the human targets for corruption that plague traditional institutions.
-    3.  **Radical Transparency:** Every transaction and decision is on a public ledger. This isn't a promise of transparency; it's a structural guarantee. We use this technology not because it's trendy, but because it is the necessary plumbing for creating a truly uncorruptible public utility.
+*   **Reality:** These tools are not a gimmick; they are the necessary plumbing for solving the core challenges of building a trusted global institution:
+    1.  **Global, Low-Friction Value Distribution:** How do you grant a verifiable stake to 280 million people across 100+ countries? Traditional banking makes this impossible. Digital tokens (`VICTORY`) on a modern, efficient blockchain are the only way to do this at scale.
+    2.  **Corruption-Resistant Governance:** How do you manage a \$27B treasury without it being captured by corrupt insiders? A Decentralized Autonomous Organization (DAO), governed by auditable smart contracts and controlled by millions of token holders, removes the human targets for corruption that plague traditional institutions.
+    3.  **Radical Transparency:** Every transaction and decision is on a public ledger. This isn't a promise of transparency; it's a structural guarantee. We use this technology not because it's trendy, but because it is the only way to create a truly uncorruptible public utility.
 
 ### 11. **Financial Risk: "What if this fails? Where's my return?"**
 *   **Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, benchmarked against elite funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
