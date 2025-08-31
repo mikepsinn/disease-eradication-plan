@@ -109,7 +109,7 @@ Governments spend **[\$2.72 trillion](https://www.sipri.org/publications/2025/si
 
 The Pentagon alone [can't account for \$2.5 trillion](#pentagon-unaccounted-2-5t) in assets—250 times larger than what we're asking them to redirect. **They lose more money by accident than we need to cure cancer.**
 
-We haven't cured a single disease in [over 50 years](#smallpox-eradicated). Meanwhile, we have [enough nuclear bombs to kill all of humanity twice](#nuke-winter-150tg).
+We haven't eradicated a single disease in [over 50 years](#smallpox-eradicated). Meanwhile, we have [enough nuclear bombs to kill all of humanity twice](#nuke-winter-150tg).
 In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is actually the RESULT of violent conflict.
 
 So humanity has 2 paths:
