@@ -138,7 +138,7 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 Fair skepticism. Here's why the math actually works:
 
 **1. We're Not Asking for New Money—We're Redirecting Waste**
-- The Pentagon [literally cannot account for $2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets
+- The Pentagon [cannot account for $2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets
 - Our ask: $10B annually from the US (0.4% of their unaccounted waste)
 - This isn't "find new money"—it's "stop losing the money you already have"
 
@@ -207,7 +207,7 @@ graph TD;
 
 This model does not require new money. It is an arbitrage on inefficiency.
 
--   **The Source is Waste:** The Pentagon [literally cannot account for \$2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets. Our ask of the U.S. is \$10 billion annually—an amount equal to just **0.4%** of what they've already lost. This isn't about finding new money; it's about redirecting a rounding error from unaccounted waste into productive use.
+-   **The Source is Waste:** The Pentagon [cannot account for \$2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets. Our ask of the U.S. is \$10 billion annually—an amount equal to just **0.4%** of what they've already lost. This isn't about finding new money; it's about redirecting a rounding error from unaccounted waste into productive use.
 -   **The Engine is Proven Efficiency:** The decentralized clinical trial model we fund is **80X cheaper** than the status quo, a fact proven by the Oxford RECOVERY trial which saved over 1 million lives at a cost of [\$500 per patient versus the traditional \$41,000](#recovery-cost-500).
 -   **The Value is Real Economics:** The [$16.5 trillion annual cost of violence](#global-violence-costs) is the largest pool of misallocated capital on the planet. We capture less than 0.2% of that waste and redirect it, creating \$27B in annual cash flow for investors and society. This is value capture from waste reduction, not digital asset speculation.
 
@@ -943,7 +943,7 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 
 <a id="note-on-language"></a>
 ### 9. **"Your language is cynical. 'Bribe,' 'co-opt'—it sounds like you're just building a better corruption engine."**
-*   **Reality:** We use this language deliberately because it is honest. The current system of political change runs on a slow, opaque, and inefficient form of bribery called lobbying. It is a system that funnels trillions toward destruction while claiming moral high ground. We choose to be brutally transparent about the reality that money moves power. Our "bribe" is not a backroom deal; it is an open, auditable, and transparently-governed incentive system designed to produce peace and health. We believe that confronting the uncomfortable truth of how the world actually works is the only way to build a system that is genuinely better.
+*   **Reality:** We use this language deliberately because it is honest. The current system of political change runs on a slow, opaque, and inefficient form of bribery called lobbying. It is a system that funnels trillions toward destruction while claiming moral high ground. We choose to be brutally transparent about the reality that money moves power. Our "bribe" is not a backroom deal; it is an open, auditable, and transparently-govervened incentive system designed to produce peace and health. We believe that confronting the uncomfortable truth of how the world actually works is the only way to build a system that is genuinely better.
 
 ### 10. **"Why use tokens and a DAO? This sounds like a solution in search of a problem."**
 *   **Reality:** These tools are not a gimmick; they are the necessary plumbing for solving the core challenges of building a trusted global institution:
