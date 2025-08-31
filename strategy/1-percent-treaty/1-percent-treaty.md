@@ -46,30 +46,30 @@ By combining the power of AI, innovative financial instruments like VICTORY Bond
 
 # Cost of War
 
-The direct and indirect costs of war come out to [$74,259](globalSolutions/1-percent-treaty/cost-of-war.mds/1-percent-treaty/cost-of-war.md) per person over an 80-year lifespan.
+The direct and indirect costs of war come out to [$74,259](../../reference/costs-of-war.md) per person over an 80-year lifespan.
 
 # Cumulative Savings from Decreased Annual Cost of War
 
-Reducing spending on war by 1% annually would reduce the per-person costs by [$22,969](savings-from-1-percent-less-war.md) over an 80-year lifespan.
+Reducing spending on war by 1% annually would reduce the per-person costs by [$22,969](./savings-from-1-percent-less-war.md) over an 80-year lifespan.
 
 # Cost of Disease
 
-The [**$244 trillion**](globalSolutions/1-percent-treaty/cost-of-disease.mdpercent-treaty/cost-of-disease.md) total global annual cost of disease is a comprehensive measure that encompasses direct healthcare costs, indirect economic losses, and the $100k valuation of a Year of Life Lost (YLL) and a $100k valuation Disability-Adjusted Life Year (DALYs).
+The [**$244 trillion**](./cost-of-disease.md) total global annual cost of disease is a comprehensive measure that encompasses direct healthcare costs, indirect economic losses, and the $100k valuation of a Year of Life Lost (YLL) and a $100k valuation Disability-Adjusted Life Year (DALYs).
 
 # Redirecting 1% of Military Spending to Healthcare Innovation
 
-By redirecting just 1% of war spending each year to using AI to automate clinical research and personalized, preventive, precision medicine over 80 years, we would save lives, reduce disability, and significantly impact the global economy. The monetary benefit of this shift would be approximately [$1,235,443](value-of-automating-research.md) per person over 80 years.
+By redirecting just 1% of war spending each year to using AI to automate clinical research and personalized, preventive, precision medicine over 80 years, we would save lives, reduce disability, and significantly impact the global economy. The monetary benefit of this shift would be approximately [$1,235,443](./value-of-automating-research.md) per person over 80 years.
 
 # Total Net Benefit of Less War and More Cures
 
-The total combined per capita net benefit of redirecting 1% of military spending to healthcare innovation over 80 years would be [$1,258,412](value-of-automating-research.md).
+The total combined per capita net benefit of redirecting 1% of military spending to healthcare innovation over 80 years would be [$1,258,412](./value-of-automating-research.md).
 
-This is calculated by adding the [\$22,969](savings-from-1-percent-less-war.md) savings from decreased annual cost of war to the [$1,235,443](value-of-automating-research.md) benefit of reducing the burden of chronic disease.
+This is calculated by adding the [$22,969](./savings-from-1-percent-less-war.md) savings from decreased annual cost of war to the [$1,235,443](./value-of-automating-research.md) benefit of reducing the burden of chronic disease.
 
 # $1,258,412 for 5 Hours of Your Time
 
-Historical examples show that petitions with support from over **1% of the population** have a high likelihood of being adopted.
+Historical examples show that movements with active support from over **3.5% of the population** have never failed to lead to systemic change.
 
 So all you have to do is convince a small fraction of your friends to sign this treaty and convince them to convince a small fraction of their friends to sign this treaty and so on.
 
-Given the average number of friends (150) and the estimated time per friend (2 minutes), an average person would need to invest approximately [5 hours](individual-roi.md) to individually reach out to all 150 of their friends via personal messages or emails about the treaty.
+Given the average number of friends (150) and the estimated time per friend (2 minutes), an average person would need to invest approximately [5 hours](./individual-roi.md) to individually reach out to all 150 of their friends via personal messages or emails about the treaty.
