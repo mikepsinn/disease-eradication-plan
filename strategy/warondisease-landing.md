@@ -556,7 +556,11 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **4. "This is too operationally complex to build."**
 
-*   **Reality:** The complexity is the moat. Building a trustless, global-scale system for political action is difficult, but it is no more difficult than building the autonomous weapons systems currently being funded. The difference is that our protocol is designed to build consensus and unlock human potential, not to create more efficient ways to kill.
+*   **Reality:** The core components of this system are not theoretical; they are based on battle-tested technologies that already secure billions of dollars in value. The global financial system has already built the necessary tools:
+    *   **Decentralized Governance:** DAOs like [MakerDAO](#makerdao-scale) and Uniswap already manage billions of dollars through transparent, on-chain voting, proving that large-scale, corruption-resistant treasuries are not just possible, but are already in operation.
+    *   **Global Value Transfer:** The technical challenge of granting a verifiable stake to millions of people globally is solved. We are using existing, open-source financial plumbing, not inventing it from scratch.
+    
+    The complexity is a necessary feature for creating a trustless, global-scale public utility that is immune to capture by any single government or corporation. We are assembling proven components into a new configuration to solve a social and political problem, not an unsolved technical one.
 
 **5. "This is politically impossible - you can't just redirect military budgets by referendum"**
 
