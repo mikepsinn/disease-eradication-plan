@@ -15,16 +15,16 @@ doc_type: strategy
 
 ## Art Direction & Visual Concept
 
-This document serves as the content and creative brief. The aesthetic should be minimalistic, authoritative, and reminiscent of high-value financial documents like currency or bond certificates. The goal is to visually communicate that this is a serious, systematic financial and political re-engineering, not just a moral plea.
+This document serves as the content and creative brief. The aesthetic should be minimalistic, authoritative, and reminiscent of high-value modern financial documents, like a Swiss Franc note or a minimalist bond certificate. The goal is to visually communicate that this is a serious, systematic financial and political re-engineering, not just a moral plea.
 
 ### Overall Aesthetic
--   **Palette:** A stark, monochromatic scheme using "banknote green," black, and a creamy, off-white background similar to currency paper.
+-   **Palette:** The primary palette should be a stark, high-contrast black and off-white, similar to a minimalist newspaper or official document. The **"banknote green"** should be used sparingly as a powerful accent color for key figures, links, interactive elements, and data visualizations—not as a background wash.
 -   **Typography:**
-    -   **Headlines:** Large, high-contrast serif fonts (e.g., Bodoni, or a modern equivalent of engraving typefaces found on currency).
-    -   **Body Text:** A clean, highly readable sans-serif.
--   **Layout:** Generous use of whitespace. Content should be centered or in clean, single columns to feel deliberate and uncluttered.
--   **Graphics & Illustrations:** All graphical elements should follow an engraving or etching style. Data visualizations must be clean, powerful, and minimalistic.
--   **Decorative Elements:** Subtle guilloché patterns (the intricate, lathe-work lines on banknotes) can be used as borders, section dividers, or background watermarks to reinforce the financial aesthetic.
+    -   **Headlines:** Large, modern, high-contrast serif fonts (e.g., Bodoni, or a modern equivalent of engraving typefaces found on currency).
+    -   **Body Text:** An extremely clean, highly readable sans-serif.
+-   **Layout:** Generous use of whitespace is critical. Content should be centered or in clean, single columns to feel deliberate, uncluttered, and authoritative.
+-   **Graphics & Illustrations:** All graphical elements should follow an engraving or etching style, but with a modern, clean execution. Data visualizations must be powerful and minimalistic.
+-   **Decorative Elements:** Subtle guilloché patterns (the intricate, lathe-work lines on banknotes) can be used as borders, section dividers, or background watermarks to reinforce the financial aesthetic, but they must be understated and clean, not ornate.
 
 ### Visual Storyboard
 
@@ -53,6 +53,43 @@ This document serves as the content and creative brief. The aesthetic should be 
 5.  **Call to Action (CTA) Sections**
     -   **Content:** "Start Earning Now" and "For Institutions."
     -   **Visuals:** Buttons and interactive elements should be styled to look like official seals or the ornate corners of a bond certificate. The text on buttons ("Get Your Referendum Link," "Invest in VICTORY") should reinforce the transactional and high-value nature of the actions.
+
+### From Static Page to Interactive Experience
+
+To be truly transcendent, this landing page must be more than a beautifully styled document—it must be an interactive and personal experience. The developer should use a modern animation library (e.g., Framer Motion, GSAP) to achieve a cinematic, high-value feel reminiscent of Apple or Stripe's product pages.
+
+#### 1. "Scrollytelling" Narrative Flow
+
+The page should not be a simple, continuous scroll. It should be a "scrollytelling" narrative where each major scroll event reveals the next part of the argument in a controlled, impactful way.
+
+-   **Example Flow:**
+    -   The user lands on the hero text, which is the only element visible.
+    -   On scroll, the hero text fades or elegantly animates out as the shocking "Military vs. Medical" bar chart animates in.
+    -   On the next scroll, the chart transitions out, and the "How We Fix It" Sankey diagram animates in, with capital visibly *flowing* from the source to the destinations.
+
+#### 2. Interactivity & Micro-animations
+
+Every element should feel alive and responsive, reinforcing the theme of a premium, meticulously crafted financial instrument.
+
+-   **Hero Text Animation:** The opening lines should not just appear. They should animate as if being engraved or stamped onto the page with a heavy, deliberate, and satisfying motion.
+-   **Interactive Data Visualizations:**
+    -   On hover, the massive **"Military Spending"** bar should subtly pulse. A tooltip could appear breaking down the top 5 national spenders.
+    -   On hover over the tiny **"Medical Research"** sliver, a tooltip must appear with the text: *"This is not a mistake."*
+-   **Animated Decorative Elements:** The subtle guilloché patterns used as borders or watermarks should not be static. They should slowly and intricately draw themselves as the user scrolls, adding a layer of sophisticated craftsmanship to the experience.
+
+#### 3. The Personal Peace Dividend Calculator
+
+To make the abstract numbers feel concrete and personal, a new interactive module should be introduced after the initial problem/solution sections.
+
+-   **Concept:** A simple, elegant input field styled to look like it belongs on a formal bond certificate.
+-   **Interaction:**
+    1.  The user is prompted: "See What the 1% Treaty Means for Your Country."
+    2.  The user selects their country from a dropdown menu.
+    3.  The module instantly calculates and displays three key figures in an animated sequence:
+        -   "Your country's annual 1% contribution: **\$X billion**"
+        -   "This could fund **Y additional cancer trials** every year."
+        -   "Your personal share of the unlocked global economic value: **\$Z annually**."
+-   **Impact:** This module is critical. It transforms the user from a passive reader into an active participant and a direct stakeholder in the plan. It connects the massive global vision directly to their national context and personal economic benefit.
 
 ---
 
