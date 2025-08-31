@@ -275,11 +275,11 @@ The strategy is backed by proven mechanisms for political mobilization at scale.
 
 **[VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
 
-**[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](../problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) platform** with proven results:
+**[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](../problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) protocol** with proven results:
 
 -   **[80X Greater Efficiency](../reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [\$41,000](#trial-cost-41k) to as low as [\$500](#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](../reference/recovery-trial.md), which saved over 1 million lives globally.
--   **[\$50 Billion in Annual Savings](../economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA is projected to save the global R&D industry ~\$50 billion annually—**based on actual performance data, not projections**.
--   **[840,000+ Extra Years of Healthy Life](../economic-models/dfda-cost-benefit-analysis.md):** The platform is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**scaling proven results, not theoretical models**.
+-   **[\$50 Billion in Annual Savings](../economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA protocol is projected to save the global R&D industry ~\$50 billion annually—**based on actual performance data, not projections**.
+-   **[840,000+ Extra Years of Healthy Life](../economic-models/dfda-cost-benefit-analysis.md):** The protocol is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**scaling proven results, not theoretical models**.
 
 **Specialized programs fund existing institutions:** 
 - Decentralized Institute of Mental Health → funds universities, pharma, nonprofits working on depression, anxiety, etc.
@@ -299,7 +299,7 @@ graph TD;
         end
 
         subgraph "dFDA Value Multiplication Engine";
-            C --> D["Invested in dFDA Platform<br/>& Efficient Research"];
+            C --> D["Invested in dFDA Protocol<br/>& Efficient Research"];
             D ==> E{"463:1 ROI"};
         end
         
@@ -556,7 +556,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **4. "This is too operationally complex to build."**
 
-*   **Reality:** The complexity is the moat. Building a trustless, global-scale system for political action is difficult, but it is no more difficult than building the autonomous weapons systems currently being funded. The difference is that our platform is designed to build consensus and unlock human potential, not to create more efficient ways to kill.
+*   **Reality:** The complexity is the moat. Building a trustless, global-scale system for political action is difficult, but it is no more difficult than building the autonomous weapons systems currently being funded. The difference is that our protocol is designed to build consensus and unlock human potential, not to create more efficient ways to kill.
 
 **5. "This is politically impossible - you can't just redirect military budgets by referendum"**
 
