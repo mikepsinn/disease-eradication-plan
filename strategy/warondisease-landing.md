@@ -13,9 +13,56 @@ domains: [cross]
 doc_type: strategy
 ---
 
-## War is stupid. Diseases suck.
 
-## But governments spend 40X more on militarism than finding cures for diseases.
+# The Plan in 60 Seconds
+
+Humanity spends [\$2.72 trillion](#sipri-2024-spending) per year on war, the military, death, and destruction.
+
+Humanity spends 40X less ([\$67.5 billion](../reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
+
+What if there were a way to:
+*   End disease
+*   Increase national security
+*   Get filthy rich
+...simultaneously?
+
+**The Plan:** (legally) bribe the shit out of humanity to get it to act like a proper species for once.
+
+**More specifically:** Bribe the military industrial complex to use their lobbying apparatus to get every nation in the world to ratify a "[1% Treaty](./1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md) that subsidizes patient participation in "pragmatic clinical trials" [80X more efficient](../reference/recovery-trial.md) than standard trials.
+
+**How it works:** Make peace more profitable than war.
+
+Getting the 1% Treaty passed will require:
+*   A global referendum showing support from at least [3.5% of the population](#3-5-rule) of each nation.
+*   Extensive lobbying (using the existing military-industrial complex political apparatus).
+
+This effort will likely cost between [\$1 billion and \$2.5 billion](../economic-models/fundraising-and-budget-plan.md).
+
+### Q: How do we get \$2 billion and persuade the military industrial complex to help?
+
+**A: Create the most profitable investment vehicle in the world.**
+
+Currently, the Medallion Fund is widely recognized as the best-performing investment with a ~39% compound annual growth rate.
+
+We create a Victory Fund to finance the War on Disease by selling **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** just like the US did to finance WW2.
+
+One key difference is that our bonds are designed to return a **~40% CAGR**, making it the best investment opportunity in the world. That's a ~29X return over 10 years!
+
+The military industrial complex is composed of humans that are not evil, they just like money. So we sell and/or strategically give **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
+
+### Q: How is it possible to achieve a 40% CAGR?
+
+Say we sell \$1B worth of victory bonds. This means we need to pay buyers back \$29B over 10 years.
+
+If the treaty passes, the DIH treasury would receive 1% of current military spending, \$27B/year. That's \$270B over 10 years. Therefore, paying back bondholders with this enormous return would only require about 10% of the 10 years income leaving 90% for hyper efficient decentralized trials.
+
+### The Steps
+1.  Create a nonprofit entity for the [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md).
+2.  Create a Single Purpose Vehicle to issue the [VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md).
+3.  The DIH accepts donations to hire a full-time staff to run the global referendum and educate the world about the [1% Treaty](./1-percent-treaty/1-percent-treaty.md) and VICTORY bonds.
+4.  Raise [\$1-\$2.5B by selling VICTORY bonds](../economic-models/fundraising-and-budget-plan.md).
+5.  Fund referendums, conduct global ratification campaigns, etc.
+
 
 ---
 
