@@ -18,10 +18,10 @@ Our long-term vision is to create a world where the economic incentives for coop
 
 ## 2. The Mechanism: Incremental, Ratcheting Reallocation
 
-Once the DIH treasury and the `$VICTORY` Bond ecosystem are proven to be efficient, transparent, and effective at deploying capital, we will begin the process of incrementally increasing the redirection percentage.
+Once the DIH treasury and the VICTORY Bond ecosystem are proven to be efficient, transparent, and effective at deploying capital, we will begin the process of incrementally increasing the redirection percentage.
 
 -   **The Process:** Every 5-10 years, a new global referendum will be initiated to increase the redirection by a small, politically palatable amount (e.g., an additional 0.5% or 1%).
--   **The Ratchet Effect:** Each successful increase will further expand the DIH treasury, which in turn provides more funding for health, creates more value for `$VICTORY` holders, and builds a larger coalition of stakeholders (universities, companies, patient groups) who will advocate for the *next* increase. This creates a self-reinforcing flywheel for peace.
+-   **The Ratchet Effect:** Each successful increase will further expand the DIH treasury, which in turn provides more funding for health, creates more value for VICTORY holders, and builds a larger coalition of stakeholders (universities, companies, patient groups) who will advocate for the *next* increase. This creates a self-reinforcing flywheel for peace.
 -   **The Goal:** Over a period of 100-200 years, we can systematically and voluntarily redirect the vast majority of resources currently spent on military endeavors towards solving humanity's greatest challenges: disease, aging, poverty, and climate change.
 
 ## 3. The Economic Inevitability
@@ -32,8 +32,8 @@ This strategy is not based on a utopian hope for a change in human nature, but o
 -   The world's largest investors will see that the greatest returns are found in curing disease, not in building weapons.
 -   Nations will find that true security and global influence come not from their capacity for destruction, but from their contributions to human flourishing.
 
-## 4. Implications for `$VICTORY` Token Holders
+## 4. Implications for VICTORY Token Holders
 
-This long-term vision is the ultimate source of value for `$VICTORY` token holders. The initial investment thesis is based on governance over a \$27 billion annual treasury. However, the true value is governance over a treasury that is designed to **grow perpetually**.
+This long-term vision is the ultimate source of value for VICTORY bond holders. The initial investment thesis is based on governance over a \$27 billion annual treasury. However, the true value is governance over a treasury that is designed to **grow perpetually**.
 
-An investment in `$VICTORY` is an investment in a system designed to systematically capture the peace dividend, making it an asset with a potential for multi-generational value appreciation unlike any other in financial history.
+An investment in VICTORY is an investment in a system designed to systematically capture the peace dividend, making it an asset with a potential for multi-generational value appreciation unlike any other in financial history.

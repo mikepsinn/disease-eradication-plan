@@ -40,7 +40,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## Incentives and Referrals
 
-- **Rewards**: Funded via `\$VICTORY` tokens with strict anti-fraud and per-cap caps; public ledger of reward disbursements.
+- **Rewards**: Funded via VICTORY bonds with strict anti-fraud and per-cap caps; public ledger of reward disbursements.
 - **Education-first**: Reward structured learning paths before voting to reduce low-information participation.
 
 ## Legal Positioning
@@ -54,7 +54,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## Cross-References
 
-- [Victory Bonds Tokenomics](../1-percent-treaty/victory-bonds-tokenomics.md)
+- [Victory Bonds Incentive Mechanics](../1-percent-treaty/victory-bonds-tokenomics.md)
 - [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md)
 
 ---

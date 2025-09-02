@@ -1,5 +1,5 @@
 ---
-title: '$VICTORY Bonds: The Investment Thesis for Curing Disease'
+title: 'VICTORY Bonds: The Investment Thesis for Curing Disease'
 description: A quantitative analysis of the investment required to make curing disease more profitable than war, detailing the risk, return, and competitive benchmark against the military-industrial complex and elite hedge funds.
 published: true
 date: '2025-01-20T00:00:00.000Z'
@@ -14,7 +14,7 @@ dateCreated: '2025-01-20T00:00:00.000Z'
 
 The global economy is grotesquely misaligned, allocating **\$2.72 trillion** annually to military spending while just **\$67.5 billion** is directed toward medical research—a 40:1 disparity. This document provides the quantitative thesis for a strategic investment of **\$1.2–\$2.5 billion** to permanently flip this incentive structure.
 
-The goal is to redirect a **\$27+ billion annual revenue stream** from military budgets to a democratically controlled health treasury. The investment vehicle, **`$VICTORY` Bonds**, is engineered to offer a risk-adjusted expected value superior to the world's most elite investment funds. We are specifically targeting a return that outperforms the historical net returns of **Renaissance Technologies' Medallion Fund (~39% annualized)**, making this the most compelling investment opportunity in the world.
+The goal is to redirect a **\$27+ billion annual revenue stream** from military budgets to a democratically controlled health treasury. The investment vehicle, **VICTORY Bonds**, is engineered to offer a risk-adjusted expected value superior to the world's most elite investment funds. We are specifically targeting a return that outperforms the historical net returns of **Renaissance Technologies' Medallion Fund (~39% annualized)**, making this the most compelling investment opportunity in the world.
 
 ## 2. The Market Failure & Our Competitive Benchmark
 
@@ -40,7 +40,7 @@ These rules ensure a fair balance between rewarding investors and fulfilling our
 -   **The Leverage Ratio:** **10.8x**. This provides the raw financial power to generate historic returns.
 
 **B. "Governance Alpha": The Uncapped Multiplier**
-Beyond cash returns, `$VICTORY` instruments grant investors governance rights over the **\$27 billion annual DIH treasury**. This is a unique source of value, "Governance Alpha," that has no equivalent. The economic value of this control—the ability to:
+Beyond cash returns, VICTORY instruments grant investors governance rights over the **\$27 billion annual DIH treasury**. This is a unique source of value, "Governance Alpha," that has no equivalent. The economic value of this control—the ability to:
 -   Direct funding towards specific diseases and research areas.
 -   Launch multi-million dollar prize challenges.
 -   Incubate and fund new biotech and health-tech companies from the treasury.
@@ -53,7 +53,7 @@ Our [Dynamic Cash Flow Model](./dih-treasury-cash-flow-model.md) shows how these
 In a full success scenario (\$27B annual income), we can comfortably deliver on our target of **~40% CAGR (~28x over 10 years)**. This is achieved by combining the base cash yield with performance-based kickers and the immense underlying value of Governance Alpha. By combining these unique advantages, we can structure an offering that provides a risk-adjusted expected value demonstrably superior to any other investment in the world.
 
 ### Long-Term Value Accrual: The Growing Treasury
-The financial models in this document are based on the initial, conservative figure of a \$27 billion annual treasury. However, the long-term vision is to incrementally increase this redirection percentage over time. This means the DIH treasury is designed to grow, making governance rights (`$VICTORY` tokens) an asset with the potential for multi-generational value appreciation. For a detailed explanation of this long-term strategy, see [The Endgame: A Multi-Generational Strategy to Phase Out War](../strategy/the-endgame-phasing-out-war.md).
+The financial models in this document are based on the initial, conservative figure of a \$27 billion annual treasury. However, the long-term vision is to incrementally increase this redirection percentage over time. This means the DIH treasury is designed to grow, making governance rights (VICTORY bonds) an asset with the potential for multi-generational value appreciation. For a detailed explanation of this long-term strategy, see [The Endgame: A Multi-Generational Strategy to Phase Out War](../strategy/the-endgame-phasing-out-war.md).
 
 ## 5. Dynamic Risk Modeling & The Metaculus Framework
 
@@ -65,7 +65,7 @@ A primary objection from sophisticated investors is the difficulty of quantifyin
     - "Will the 1% Treaty be ratified by the US & EU before Q4 2028?"
     - "What will be the total redirected annual funding for the DIH Treasury by January 1, 2030?"
     - "Will the global referendum reach 100 million verified signatures by Q2 2026?"
-3.  **Use Data to Price Risk:** The real-time probabilities from this market will be used as a public, transparent measure of risk. This data will directly influence the returns offered on different tranches of \$VICTORY Bonds.
+3.  **Use Data to Price Risk:** The real-time probabilities from this market will be used as a public, transparent measure of risk. This data will directly influence the returns offered on different tranches of VICTORY Bonds.
 
 **Example Application:**
 - If the market probability of hitting the \$27B target is 60%, the yield on a junior tranche of bonds might be adjusted upwards to compensate for the 40% risk of failure.
@@ -73,12 +73,12 @@ A primary objection from sophisticated investors is the difficulty of quantifyin
 
 This turns unquantifiable political risk into a transparent, tradable metric, allowing investors to price their capital allocation accurately.
 
-## 6. Competitive Benchmark: \$VICTORY Bonds vs. The Medallion Fund
+## 6. Competitive Benchmark: VICTORY Bonds vs. The Medallion Fund
 
 The ultimate test for a sophisticated investor is whether this opportunity provides a better risk-adjusted return than the most legendary quantitative hedge fund in history.
 
 **The Benchmark:**
-- Let's compare the expected value of a **\$10 million** investment in \$VICTORY Bonds versus an equivalent (hypothetical) investment in Renaissance Technologies' Medallion Fund.
+- Let's compare the expected value of a **\$10 million** investment in VICTORY Bonds versus an equivalent (hypothetical) investment in Renaissance Technologies' Medallion Fund.
 - We will use the Medallion Fund's famed **39% net annualized return** as our benchmark.
 
 **Renaissance Medallion Fund (Hypothetical Investment):**
@@ -87,7 +87,7 @@ The ultimate test for a sophisticated investor is whether this opportunity provi
 - **Risk:** Extremely low (historically)
 - **Expected Value (Year 1):** ~\$13.9 million
 
-**\$VICTORY Bond Investment (Early, High-Risk Tranche):**
+**VICTORY Bond Investment (Early, High-Risk Tranche):**
 - **Investment:** \$10M
 - **Base Return + Success Multipliers:** Designed to yield **>40%** in an upside scenario.
 - **Probability of Success (from Metaculus):** Let's assume a conservative **70%**.
@@ -126,13 +126,13 @@ The bond yield alone does not beat the Medallion benchmark. The critical factor 
 
 Unlike any other fund, our investors are buying control of a perpetual, multi-billion-dollar capital allocation engine. The financial value of this governance—to direct research, fund companies, and shape the future of global health—is an uncapped upside with no equivalent in traditional finance. It is this "Governance Token Alpha" that is designed to deliver the **~99%+ ROI** required for outperformance.
 
-**Our Target:** We will structure the tranches of \$VICTORY bonds and their associated governance token allocations to ensure that the total risk-adjusted expected value for early investors is **at least 1% higher** than the Medallion Fund's 39% net annualized return. This is the core financial promise of the project.
+**Our Target:** We will structure the tranches of VICTORY bonds and their associated governance token allocations to ensure that the total risk-adjusted expected value for early investors is **at least 1% higher** than the Medallion Fund's 39% net annualized return. This is the core financial promise of the project.
 
-**Conclusion:** By structuring returns with success multipliers and the unprecedented value of treasury governance, the risk-adjusted expected value of an early investment in \$VICTORY Bonds is designed to be mathematically superior to the returns of even the most elite hedge funds.
+**Conclusion:** By structuring returns with success multipliers and the unprecedented value of treasury governance, the risk-adjusted expected value of an early investment in VICTORY Bonds is designed to be mathematically superior to the returns of even the most elite hedge funds.
 
 ## 7. Engineered for Superior Returns: Leveraging High-ROI Lobbying Dynamics
 
-$VICTORY Bonds are designed to deliver risk-adjusted returns superior to alternative investments by harnessing the extraordinary ROI dynamics of lobbying seen in fossil fuel and military industries—while redirecting them toward positive health outcomes.
+VICTORY Bonds are designed to deliver risk-adjusted returns superior to alternative investments by harnessing the extraordinary ROI dynamics of lobbying seen in fossil fuel and military industries—while redirecting them toward positive health outcomes.
 
 ### Benchmark: Exceptional ROI in Policy-Influenced Sectors
 - Fossil fuel lobbying generates average returns of **[800%](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)**, with companies like ExxonMobil spending $27 million on lobbying in 2020 to secure $220 million in benefits.
@@ -140,13 +140,13 @@ $VICTORY Bonds are designed to deliver risk-adjusted returns superior to alterna
 
 These returns arise from influencing policy to capture public funds, creating stable revenue streams backed by government budgets.
 
-### How $VICTORY Bonds Achieve Superior Returns
-We adapt this model for positive impact: $VICTORY Bonds fund a reallocation of 1% of global military spending ($27+ billion annually) to health via the 1% Treaty. This enables:
+### How VICTORY Bonds Achieve Superior Returns
+We adapt this model for positive impact: VICTORY Bonds fund a reallocation of 1% of global military spending ($27+ billion annually) to health via the 1% Treaty. This enables:
 - **High Leverage on Advocacy**: A $1 investment could yield $100–$1,000+ in treasury inflows, exceeding traditional benchmarks through global scale and democratic support.
 - **Dynamic Risk Pricing**: Metaculus predictions allow us to adjust bond terms, targeting EV at least 1% above elite funds (e.g., 99%+ ROI in success scenarios).
 - **Governance Value**: Bondholders access control over a perpetual $27B treasury, providing ongoing value beyond fixed yields—surpassing one-off contract gains.
 
-By leveraging policy influence for societal benefit, $VICTORY Bonds are structured to offer returns superior to alternative investments in high-ROI sectors.
+By leveraging policy influence for societal benefit, VICTORY Bonds are structured to offer returns superior to alternative investments in high-ROI sectors.
 
 ### How We Talk About Returns (Standardized Language)
 Under the proposed Impact Securities framework, we present return objectives as targets, not guarantees:
@@ -157,7 +157,7 @@ Under the proposed Impact Securities framework, we present return objectives as 
 For compliance details, see [Impact Securities and Digital Public Goods Financing Act (Draft)](../regulatory/impact-securities-reform.md#section-4a-marketing--disclosures-safe-harbor-plain-english-outcome-linked).
 
 ### The Peace Dividend: The Ultimate Source of Value
-The financial returns for $VICTORY instruments are sourced from the $27B annual treasury. However, the ultimate economic underpinning of this investment is the **$16.5 trillion annual Peace Dividend** unlocked by the treaty. This represents the total value reclaimed from conflict, with over 99% flowing to global society. For a detailed breakdown of this value capture model, see [The Peace Dividend: Value Capture & Distribution Model](./peace-dividend-value-capture.md).
+The financial returns for VICTORY instruments are sourced from the $27B annual treasury. However, the ultimate economic underpinning of this investment is the **$16.5 trillion annual Peace Dividend** unlocked by the treaty. This represents the total value reclaimed from conflict, with over 99% flowing to global society. For a detailed breakdown of this value capture model, see [The Peace Dividend: Value Capture & Distribution Model](./peace-dividend-value-capture.md).
 
 ### Source Quotes for Key Parameters
 
@@ -171,10 +171,10 @@ The financial returns for $VICTORY instruments are sourced from the $27B annual 
 
 ## 8. Assessing Realism: Risks, Repayment Timeline, and Contingencies
 
-While the $VICTORY Bonds model draws on historical precedents like World War II War Bonds and proven lobbying ROI dynamics, its success involves significant uncertainties. This section provides a balanced view, including phased repayment and risk mitigations.
+While the VICTORY Bonds model draws on historical precedents like World War II War Bonds and proven lobbying ROI dynamics, its success involves significant uncertainties. This section provides a balanced view, including phased repayment and risk mitigations.
 
 ### Repayment Timeline
-Repayment is tied to 1% Treaty inflows rather than fixed dates, as detailed in [\$VICTORY Instruments Tokenomics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md):
+Repayment is tied to 1% Treaty inflows rather than fixed dates, as detailed in [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md):
 - **Short-Term (Years 1-2)**: Initial coupons (2–6% floating) paid from reserves, philanthropic inflows, or early program cash flows.
 - **Medium-Term (Years 3-5)**: Amortization begins 18–36 months after first major treaty ratification, with annual inflows of $27B+ covering principal and yields.
 - **Long-Term (5-10 Years)**: Full maturity, plus ongoing value from governance tokens over the perpetual DIH Treasury (see [Decentralized Institutes of Health](../strategy/1-percent-treaty/decentralized-institutes-of-health.md)).
@@ -190,7 +190,7 @@ While the risks of this venture are significant, they are fundamentally differen
 - **Fundraising Risk (Collective Action Problem):** Early investors may hesitate, fearing the project won't reach its funding goal. **Mitigation:** We will use **Assurance Contracts** built on smart contracts. All initial funds will be held in a transparent escrow and automatically returned to investors if the funding target is not met by a specific deadline. This completely eliminates the risk of a failed raise for our backers. For details, see our [Fundraising Strategy](./fundraising-strategy.md).
 - **Overall Probability**: Metaculus forecasts will provide real-time estimates; historical analogs (e.g., war bonds raised $185B adjusted) suggest feasibility, but failure rate could be 30%+ without momentum.
 
-For full details on protections, see [\$VICTORY Instruments Tokenomics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
+For full details on protections, see [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
 
 ### Source Quotes for Key Parameters
 * **War Bonds Historical Raise**
@@ -202,7 +202,7 @@ For full details on protections, see [\$VICTORY Instruments Tokenomics](../strat
   > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
 
 ### Appeal to Philanthropic Investors
-Philanthropic funds can achieve extraordinary impact multiplication through $VICTORY Bonds, leveraging advocacy to redirect public budgets at scales far beyond direct grants.
+Philanthropic funds can achieve extraordinary impact multiplication through VICTORY Bonds, leveraging advocacy to redirect public budgets at scales far beyond direct grants.
 - **Quantitative Leverage**: A $1M investment could unlock $1B in health funding via treaty inflows, offering 1,000X impact—compared to ~10X for high-impact charities like malaria prevention.
 - **Alignment with Effective Altruism**: This mirrors EA principles of high-ROI interventions, potentially saving more lives per dollar than traditional aid (e.g., equivalent to funding 10,000+ years of research).
 - **Risk-Adjusted Giving**: Metaculus pricing allows donors to target high-probability tranches, with governance rights ensuring funds align with impact goals.
@@ -212,7 +212,7 @@ Philanthropic funds can achieve extraordinary impact multiplication through $VIC
   > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/research/intervention-reports/bednets)
 
 ### Targeting Defense Contractors as Investors
-$VICTORY Bonds are uniquely positioned to target defense contractors as primary investors. By offering superior risk-adjusted returns (as modeled above), we incentivize them to repurpose their lobbying networks to support the 1% Treaty—turning potential adversaries into allies.
+VICTORY Bonds are uniquely positioned to target defense contractors as primary investors. By offering superior risk-adjusted returns (as modeled above), we incentivize them to repurpose their lobbying networks to support the 1% Treaty—turning potential adversaries into allies.
 
 We have 85-90% confidence this co-opting approach is superior to adversarial strategies, based on game theory and precedents. For full analysis, see [Co-Opting Defense Contractors](../co-opting-defense-contractors.md).
 

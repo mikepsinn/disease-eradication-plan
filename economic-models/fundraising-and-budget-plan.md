@@ -15,7 +15,7 @@ doc_type: model
 
 # Fundraising & Budget Plan: The Activation Energy
 
-This document provides a comprehensive breakdown of the total capital required to successfully implement the 1% Treaty and establish the Decentralized Institutes of Health (DIH). The figures presented here are the basis for our **$1.2B - $2.5B total fundraising goal**.
+This document provides a comprehensive breakdown of the total capital required to successfully implement the 1% Treaty and establish the Decentralized Institutes of Health (DIH). It is a supporting document for the overall strategy described in the [War on Disease Landing Page](../strategy/warondisease-landing.md). The figures presented here are the basis for our **$1.2B - $2.5B total fundraising goal**.
 
 ## 1. Executive Summary: The "Activation Energy"
 
@@ -56,9 +56,9 @@ This initial phase is designed to build the core infrastructure and prove the mo
 
 | Category                      | Lower Bound | Upper Bound | Justification & Pay-for-Success Model |
 | :---------------------------- | :---------- | :---------- | :------------------------------------ |
-| **Operations (Core Team)**    | $10M        | $15M        | **Justification:** Salaries for a lean founding team (15-20 people).<br>**Pay-for-Success:** Team will receive modest cash salaries + large, vested `$VICTORY` token grants, aligning their success with the mission's. |
+| **Operations (Core Team)**    | $10M        | $15M        | **Justification:** Salaries for a lean founding team (15-20 people).<br>**Pay-for-Success:** Team will receive modest cash salaries + large, vested VICTORY bond grants, aligning their success with the mission's. |
 | **Platform & Tech MVP**       | $50M        | $75M        | **Justification:** Engineering and security costs for the referendum platform MVP.<br>**Pay-for-Success:** Contractor fees paid with a 50% cash / 50% vested token split, plus performance bonuses. |
-| **Legal & Framework (Pilots)**| $40M        | $60M        | **Justification:** Retainers for top-tier law firms in 3-5 pilot countries.<br>**Pay-for-Success:** Engagements structured with massive "success fees" paid in `$VICTORY` bonds upon treaty ratification. |
+| **Legal & Framework (Pilots)**| $40M        | $60M        | **Justification:** Retainers for top-tier law firms in 3-5 pilot countries.<br>**Pay-for-Success:** Engagements structured with massive "success fees" paid in VICTORY bonds upon treaty ratification. |
 | **Pilot Independent Expenditure** | $100M       | $150M       | **Justification:** Fund targeted campaigns in 1-2 key electoral districts to prove the model.<br>**Pay-for-Success:** Structured as a competitive prize for the firm that delivers the best results (e.g., polling shift). |
 | **Referendum Points System**  | $5M         | $10M        | **Justification:** Infrastructure for the non-financial points system.<br>**Pay-for-Success:** Inherently pay-for-success as value is contingent. |
 | **Contingency**               | $45M        | $90M        | **Justification:** A necessary buffer for a high-uncertainty political startup. |

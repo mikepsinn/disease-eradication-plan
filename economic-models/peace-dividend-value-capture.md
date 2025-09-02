@@ -1,6 +1,6 @@
 ---
 title: 'The Peace Dividend: Value Capture & Distribution Model'
-description: A quantitative analysis of how a ~$2.5B investment unlocks a $16.5T annual peace dividend, and how that value is distributed between $VICTORY token holders and society.
+description: A quantitative analysis of how a ~$2.5B investment unlocks a $16.5T annual peace dividend, and how that value is distributed between VICTORY bond holders and society.
 published: true
 date: '2025-01-22T00:00:00.000Z'
 tags: peace-dividend, value-capture, investment-thesis, victory-bonds, economic-modeling
@@ -15,10 +15,10 @@ dateCreated: '2025-01-22T00:00:00.000Z'
 This document provides the economic model for the "Peace Dividend"—the value unlocked by the successful implementation of the 1% Treaty. A one-time "activation energy" investment of **\$1.2–\$2.5 billion** is projected to unlock **\$16.5 trillion** in annual global economic value currently lost to violence and conflict.
 
 This model quantifies how that value is distributed:
-1.  **`$VICTORY` Bond & Token Holders** are rewarded from the **\$27+ billion** annual treasury created by the 1% military budget redirection. This represents their direct financial return.
+1.  **VICTORY Bond & Token Holders** are rewarded from the **\$27+ billion** annual treasury created by the 1% military budget redirection. This represents their direct financial return.
 2.  **Global Society** receives the remaining **~99.84%** of the peace dividend through reduced costs, increased productivity, and improved health outcomes.
 
-This demonstrates that `$VICTORY` instruments are a high-leverage investment in human prosperity, offering both superior financial returns and one of the highest social ROIs achievable.
+This demonstrates that VICTORY instruments are a high-leverage investment in human prosperity, offering both superior financial returns and one of the highest social ROIs achievable.
 
 ## 2. Quantifying the Annual Peace Dividend
 
@@ -31,7 +31,7 @@ The "Peace Dividend" is the total economic value reclaimed by reducing global co
     -   Increased economic productivity (higher GDP growth, reallocated human capital).
     -   Improved health and social outcomes.
 
--   **A Note on Scale:** Just 1% of this annual **$16.5 trillion** dividend is **$165 billion**—a sum more than six times larger than the entire $27B treasury we aim to create. This immense underlying value is what makes the financial model for `$VICTORY` instruments so robust.
+-   **A Note on Scale:** Just 1% of this annual **$16.5 trillion** dividend is **$165 billion**—a sum more than six times larger than the entire $27B treasury we aim to create. This immense underlying value is what makes the financial model for VICTORY instruments so robust.
 
 ## 3. The Activation Energy: Investment Required
 
@@ -47,11 +47,11 @@ This investment is allocated as follows:
 
 The core of this model is the clear and transparent distribution of the unlocked value.
 
-#### A. Value Captured by `$VICTORY` Holders (The Financial Return)
+#### A. Value Captured by VICTORY Holders (The Financial Return)
 
 Investors who provide the activation energy are rewarded directly from the **\$27+ billion annual treasury** created by the 1% military budget redirection. This is their primary mechanism for financial return.
 
--   **Repayment of Principal & Interest:** For debt-like instruments (`$VICTORY` Bonds).
+-   **Repayment of Principal & Interest:** For debt-like instruments (VICTORY Bonds).
 -   **Governance Value & Token Appreciation:** For utility/governance tokens, whose value is derived from their control over the perpetual \$27B annual treasury.
 
 This captured value is the engine that makes the entire initiative possible, by providing a compelling, market-beating return that attracts the necessary upfront capital.
@@ -66,14 +66,14 @@ The vast majority of the peace dividend flows directly to the public.
     -   Value to Society: **\$16,473,000,000,000**
 
 -   **Distribution Ratio:**
-    -   `$VICTORY` Holders Capture: `($27B / $16.5T) * 100 =` **~0.16%**
+    -   VICTORY Holders Capture: `($27B / $16.5T) * 100 =` **~0.16%**
     -   Society Receives: **~99.84%**
 
 This means for every **\$1** of value captured by investors, over **\$600** in value is returned to the global community.
 
 ## 5. Conclusion: A High-Leverage Investment in Humanity
 
-The Peace Dividend model demonstrates that the 1% Treaty is not a zero-sum transfer of wealth, but a positive-sum value creation event. `$VICTORY` instruments offer a unique opportunity to:
+The Peace Dividend model demonstrates that the 1% Treaty is not a zero-sum transfer of wealth, but a positive-sum value creation event. VICTORY instruments offer a unique opportunity to:
 1.  **Generate Superior Financial Returns:** By capturing a small but significant slice (\$27B) of a newly unlocked value stream.
 2.  **Achieve Unprecedented Social Impact:** By enabling the distribution of over \$16 trillion in annual benefits to the global population.
 
@@ -85,7 +85,7 @@ The economic model is uniquely robust due to the immense asymmetry between the i
 
 ### Example: A 1,000x Return Scenario
 
-To illustrate this, let's model a hypothetical scenario where `$VICTORY` instruments deliver a **1,000x return** to the initial investors who provided the activation energy—a return that would be the highest in financial history for an investment of this scale.
+To illustrate this, let's model a hypothetical scenario where VICTORY instruments deliver a **1,000x return** to the initial investors who provided the activation energy—a return that would be the highest in financial history for an investment of this scale.
 
 -   **Total Activation Energy Investment:** \$2.5 billion
 -   **Required Payout for 1,000x Return:** `\$2.5B * 1,000 =` **\$2.5 trillion**

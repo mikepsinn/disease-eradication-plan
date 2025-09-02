@@ -74,7 +74,7 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 
 **Goal:** Raise the necessary capital and generate an undeniable global political mandate.
 
-- [ ] **Launch the Primary Capital Raise:** Sell [\$VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md) under the new impact securities framework, targeting a \$1.2-2.5B raise to fund the global campaign.
+- [ ] **Launch the Primary Capital Raise:** Sell [VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md) under the new impact securities framework, targeting a \$1.2-2.5B raise to fund the global campaign.
 - [ ] **Execute the Global Referendum:** Launch the campaign to secure 3.5% global participation (280M+ votes) for the 1% Treaty, creating the political mandate ([Global Referendum Implementation](./referendum/global-referendum-implementation.md)).
 - [ ] **Secure Treaty Adoption:** Leverage the referendum mandate and a well-funded independent expenditure engine to achieve legal adoption of the 1% Treaty in key nations.
 
@@ -85,7 +85,7 @@ This document outlines the high-level, multi-year strategy to achieve the 1% Tre
 **Goal:** Receive the treaty funds, deliver on promises to investors, and execute the mission.
 
 - [ ] **Activate the DIH Treasury:** Begin receiving the 1% revenue stream (\$27B+ annually) from signatory nations.
-- [ ] **Deliver Superior Returns to Investors:** Repay `\$VICTORY Bond` holders with a return engineered to be superior to alternative investments, fulfilling the core financial promise.
+- [ ] **Deliver Superior Returns to Investors:** Repay `VICTORY Bond` holders with a return engineered to be superior to alternative investments, fulfilling the core financial promise.
 - [ ] **Fund Global Public Goods:** Deploy treasury funds to high-impact initiatives, with the primary focus on subsidizing patient participation in efficient, decentralized clinical trials via the **[dFDA Platform Technical Roadmap](../features/dfda-roadmap.md)**.
 
 ---

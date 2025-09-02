@@ -17,8 +17,8 @@ doc_type: strategy
 
 1. **2 billion people suffer** from chronic diseases including cancer, diabetes, heart disease, autoimmune disorders, and many others. This causes immense human anguish as well as crippling economic costs.
 2. **Medical research** to find cures for these diseases remains far **too slow** to meet the desperate needs of patients.
-3. **Artificial intelligence** can radically accelerate the clinical research process by automating analysis of medical data, identifying promising drug targets, optimizing clinical trial designs, and more.
-4. A global collaborative effort to deploy AI to automate clinical research, coordinated and governed by the people, could produce revolutionary breakthroughs against chronic diseases and **alleviate the suffering of billions of people.**
+3. **Advanced data analysis and automation** can radically accelerate the clinical research process by automating analysis of medical data, identifying promising drug targets, optimizing clinical trial designs, and more.
+4. A global collaborative effort to automate clinical research, coordinated and governed by the people, could produce revolutionary breakthroughs against chronic diseases and **alleviate the suffering of billions of people.**
 
 ## Logical Proof:
 
@@ -36,40 +36,40 @@ Here is the logical proof that signing this accord is the most rational thing yo
 ## How it Works:
 
 1. Every participating nation will pledge **1% of its annual military budget** to the [Decentralized Institutes of Health (DIH)](decentralized-institutes-of-health.md) treasury. This creates a sustainable revenue stream to repay bondholders who fund the war on disease and to continuously finance the dFDA ecosystem. Treasury custody and controls are specified in the [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md).
-2. The **DIH will use its treasury to subsidize patient participation** in dFDA trials, fund infrastructure development, and offer bounties and prizes for medical innovation. The allocation of subsidies is determined by an algorithm that prioritizes research with the highest expected value to society.
-3. The DIH treasury is initially funded by selling **`$VICTORY` Bonds** to the public, allowing research and subsidies to begin immediately. The contributions from nations via the 1% Treaty are then used to repay these bonds over time. See [\$VICTORY Instruments — Tokenomics](./victory-bonds-tokenomics.md).
+2. The **DIH will use its treasury to subsidize patient participation** in dFDA trials that are **80X more efficient** than traditional models, a benchmark already proven by the [Oxford RECOVERY trial](../../reference/recovery-trial.md). The fund will also support infrastructure development and offer bounties for medical innovation, with allocation determined by an algorithm that prioritizes research with the highest expected value to society.
+3. The DIH treasury is initially funded by selling **VICTORY Bonds** to the public, allowing research and subsidies to begin immediately. The contributions from nations via the 1% Treaty are then used to repay these bonds over time. See [VICTORY Bonds — Incentive Mechanics](./victory-bonds-tokenomics.md).
 4. The governance of the treasury for functions like prize and bounty allocation is managed through a **Decentralized Autonomous Organization (DAO)**, ensuring community alignment and transparency.
-5. All research findings and data generated through the dFDA platform, which is supported by the DIH, will be made openly available in real-time to the global scientific community, **accelerating progress** and enabling rapid translation of discoveries into new medicines and improved clinical practices worldwide.
+5. All research findings and data generated through the dFDA protocol, which is supported by the DIH, will be made openly available in real-time to the global scientific community, **accelerating progress** and enabling rapid translation of discoveries into new medicines and improved clinical practices worldwide.
 6. Participating nations and research institutions will collaborate continuously through a state-of-the-art online platform, sharing knowledge, best practices, and resources to **maximize the impact of every research dollar** and speed the deployment of new health solutions to patients everywhere.
 
-By combining the power of AI, innovative financial instruments like `$VICTORY` Bonds, and global cooperation, we can transform the fight against chronic disease. The resulting breakthroughs will improve health, extend lives, boost economies, and benefit every nation on Earth.
+By combining innovative financial instruments like VICTORY Bonds and global cooperation, we can transform the fight against chronic disease. The resulting breakthroughs will improve health, extend lives, boost economies, and benefit every nation on Earth.
 
 # Cost of War
 
-The direct and indirect costs of war come out to [$74,259](globalSolutions/1-percent-treaty/cost-of-war.mds/1-percent-treaty/cost-of-war.md) per person over an 80-year lifespan.
+The direct and indirect costs of war come out to [$74,259](../../reference/costs-of-war.md) per person over an 80-year lifespan.
 
 # Cumulative Savings from Decreased Annual Cost of War
 
-Reducing spending on war by 1% annually would reduce the per-person costs by [$22,969](savings-from-1-percent-less-war.md) over an 80-year lifespan.
+Reducing spending on war by 1% annually would reduce the per-person costs by [$22,969](./savings-from-1-percent-less-war.md) over an 80-year lifespan.
 
 # Cost of Disease
 
-The [**$244 trillion**](globalSolutions/1-percent-treaty/cost-of-disease.mdpercent-treaty/cost-of-disease.md) total global annual cost of disease is a comprehensive measure that encompasses direct healthcare costs, indirect economic losses, and the $100k valuation of a Year of Life Lost (YLL) and a $100k valuation Disability-Adjusted Life Year (DALYs).
+The [**$244 trillion**](./cost-of-disease.md) total global annual cost of disease is a comprehensive measure that encompasses direct healthcare costs, indirect economic losses, and the $100k valuation of a Year of Life Lost (YLL) and a $100k valuation Disability-Adjusted Life Year (DALYs).
 
 # Redirecting 1% of Military Spending to Healthcare Innovation
 
-By redirecting just 1% of war spending each year to using AI to automate clinical research and personalized, preventive, precision medicine over 80 years, we would save lives, reduce disability, and significantly impact the global economy. The monetary benefit of this shift would be approximately [$1,235,443](value-of-automating-research.md) per person over 80 years.
+By redirecting just 1% of war spending each year to accelerate clinical research through data-driven and decentralized methods over 80 years, we would save lives, reduce disability, and significantly impact the global economy. The monetary benefit of this shift would be approximately [$1,235,443](./value-of-automating-research.md) per person over 80 years.
 
 # Total Net Benefit of Less War and More Cures
 
-The total combined per capita net benefit of redirecting 1% of military spending to healthcare innovation over 80 years would be [$1,258,412](value-of-automating-research.md).
+The total combined per capita net benefit of redirecting 1% of military spending to healthcare innovation over 80 years would be [$1,258,412](./value-of-automating-research.md).
 
-This is calculated by adding the [\$22,969](savings-from-1-percent-less-war.md) savings from decreased annual cost of war to the [$1,235,443](value-of-automating-research.md) benefit of reducing the burden of chronic disease.
+This is calculated by adding the [$22,969](./savings-from-1-percent-less-war.md) savings from decreased annual cost of war to the [$1,235,443](./value-of-automating-research.md) benefit of reducing the burden of chronic disease.
 
 # $1,258,412 for 5 Hours of Your Time
 
-Historical examples show that petitions with support from over **1% of the population** have a high likelihood of being adopted.
+Historical examples show that movements with active support from over **3.5% of the population** have never failed to lead to systemic change.
 
 So all you have to do is convince a small fraction of your friends to sign this treaty and convince them to convince a small fraction of their friends to sign this treaty and so on.
 
-Given the average number of friends (150) and the estimated time per friend (2 minutes), an average person would need to invest approximately [5 hours](individual-roi.md) to individually reach out to all 150 of their friends via personal messages or emails about the treaty.
+Given the average number of friends (150) and the estimated time per friend (2 minutes), an average person would need to invest approximately [5 hours](./individual-roi.md) to individually reach out to all 150 of their friends via personal messages or emails about the treaty.

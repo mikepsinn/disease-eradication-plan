@@ -1,5 +1,5 @@
 ---
-title: Growth & Referrals Lead — $VOTE Points, Partners, and Growth
+title: Growth & Referrals Lead — VOTE Points, Partners, and Growth
 description: Help more people vote by running referrals, leaderboards, and partner lists.
 published: true
 date: 2025-08-22

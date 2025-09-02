@@ -11,7 +11,7 @@ dateCreated: '2025-01-20T00:00:00.000Z'
 ## Scope
 
 This SOP governs intake of cryptocurrency for:
-- Investments in $VICTORY bonds via Reg D (U.S. accredited) and Reg S (non‑U.S.) offerings
+- Investments in VICTORY bonds via Reg D (U.S. accredited) and Reg S (non‑U.S.) offerings
 - No‑strings donations (non‑investment) to support eligible activities
 
 See also: [Legal Compliance Framework](../strategy/legal-compliance-framework.md), [Fundraising Models Comparison](../strategy/fundraising-models-comparison.md).
@@ -36,7 +36,7 @@ See also: [Legal Compliance Framework](../strategy/legal-compliance-framework.md
 - Create on‑chain and off‑chain receipts; reconcile FX rates and timestamps
 
 5) Issuance and Records
-- Issue $VICTORY bond allocation and any governance allocations per terms (subject to transfer restrictions/lockups)
+- Issue VICTORY bond allocation and any governance allocations per terms (subject to transfer restrictions/lockups)
 - Record restrictions (Reg D: restricted; Reg S: distribution compliance) in cap table/registry
 
 6) Post‑Closing Controls

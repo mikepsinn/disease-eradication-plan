@@ -119,7 +119,7 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 
 I'm reaching out because of your work building [Specific Protocol/Company]. The governance mechanisms you've pioneered in [Protocol] demonstrate exactly the kind of thinking needed for our next project.
 
-We're building the world's largest decentralized health treasury ($27B annually) using proven DAO models from MakerDAO/Uniswap. Early $VICTORY token holders will govern allocation of this treasury across global health research.
+We're building the world's largest decentralized health treasury ($27B annually) using proven DAO models from MakerDAO/Uniswap. Early VICTORY bond holders will govern allocation of this treasury across global health research.
 
 This isn't just an investment - it's a chance to direct more capital than the NIH budget toward curing diseases through 80X more efficient decentralized trials.
 
@@ -172,7 +172,7 @@ The first governance round is $250-400M from mission-aligned institutions. Would
 
 ### Option 1: SAFT (Simple Agreement for Future Tokens)
 - **Best for:** Crypto whales who understand token mechanics
-- **Structure:** Pre-sale of $VICTORY tokens at discount
+- **Structure:** Pre-sale of VICTORY bonds at discount
 - **Timeline:** 2-4 weeks to close
 - **Minimum:** $5M investment
 

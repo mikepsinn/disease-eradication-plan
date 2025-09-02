@@ -54,7 +54,7 @@ The formula to calculate the grant is:
   - `Success Grants = $92,000 / 0.02 = $4,600,000`
   - They have now earned a claim on **$4.6 million** worth of value, which has a higher expected value ($92k) than the cash they gave up ($80k).
 
-## 3. Tokenomics: Connecting Grants to Tokens
+## 3. Incentive Mechanics: Connecting Grants to Tokens
 
 To make the Success Grants meaningful, they must map to a share of the network.
 
@@ -63,7 +63,7 @@ To make the Success Grants meaningful, they must map to a share of the network.
 - **Calculating Ownership:** A contributor's ownership of the team pool is their share of the total value.
   - *Example:* The engineer's $4.6M in Success Grants represents `$4,600,000 / $1,000,000,000 = 0.46%` of the team's token pool.
 
-At the Token Generation Event, their accumulated Success Grants are converted into a corresponding number of `$VICTORY` tokens.
+At the Token Generation Event, their accumulated Success Grants are converted into a corresponding number of VICTORY bonds.
 
 ## 4. Post-Distribution Incentives: Governance Staking
 
@@ -71,7 +71,7 @@ To ensure long-term alignment after tokens are distributed, we will implement a 
 
 - **Purpose:** To encourage active, long-term participation in the ecosystem's governance over short-term speculation.
 - **Mechanism:**
-  1.  **Governance Power:** Only `$VICTORY` tokens that are "staked" (locked in a smart contract) can be used to vote on DIH funding proposals.
+  1.  **Governance Power:** Only VICTORY bonds that are "staked" (locked in a smart contract) can be used to vote on DIH funding proposals.
   2.  **Staking Yield:** To reward this commitment, stakers will receive a pro-rata share of a portion of the DIH's annual income, providing a sustainable yield for those who actively govern the treasury.
 
 ## 5. Advantages of this Model

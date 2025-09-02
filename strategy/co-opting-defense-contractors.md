@@ -1,6 +1,6 @@
 ---
 title: Co-Opting Defense Contractors - Strategic Analysis
-description: Detailed rationale and confidence assessment for aligning defense contractors' interests via $VICTORY bonds instead of adversarial tactics.
+description: Detailed rationale and confidence assessment for aligning defense contractors' interests via VICTORY bonds instead of adversarial tactics.
 published: true
 date: '2025-08-15T00:00:00.000Z'
 tags: strategy, lobbying, incentives, victory-bonds
@@ -11,7 +11,7 @@ dateCreated: '2025-08-15T00:00:00.000Z'
 # Co-Opting Defense Contractors: Why It's Superior to Adversarial Strategies
 
 ## Overall Confidence
-We have high confidence (85-90%) that co-opting defense contractor lobbying efforts through aligned incentives (like superior returns via $VICTORY bonds) is a superior strategy—both initially and long-term—compared to funding purely adversarial efforts (e.g., outbidding them for lobbyists or running opposition campaigns). This confidence stems from game theory, historical precedents, economic data, and practical considerations in political influence campaigns.
+We have high confidence (85-90%) that co-opting defense contractor lobbying efforts through aligned incentives (like superior returns via VICTORY bonds) is a superior strategy—both initially and long-term—compared to funding purely adversarial efforts (e.g., outbidding them for lobbyists or running opposition campaigns). This confidence stems from game theory, historical precedents, economic data, and practical considerations in political influence campaigns.
 
 ## Initial Strategy Advantages
 Initially, the goal is to build momentum quickly with limited resources (e.g., the $800M–$1.5B independent expenditures budget). Co-opting turns a massive obstacle into an accelerator.
@@ -23,7 +23,7 @@ Initially, the goal is to build momentum quickly with limited resources (e.g., t
 ## Long-Term Strategy Advantages
 Long-term success requires sustainable systemic change. Co-opting creates enduring alliances.
 
-- **Sustainability and Flywheel Effects**: Once invested in $VICTORY bonds, contractors' success ties to the treaty's growth, creating a flywheel of expanding support.
+- **Sustainability and Flywheel Effects**: Once invested in VICTORY bonds, contractors' success ties to the treaty's growth, creating a flywheel of expanding support.
 - **Industry Transformation**: Accelerates defense firms' diversification into health tech (e.g., Lockheed's health IT division).
 - **Evidence**: Auto industry's EV pivot (e.g., GM lobbying for subsidies) shows incentive alignment works. Principal-agent theory indicates it reduces costs by 50-70% vs. adversarial monitoring.
 

@@ -18,14 +18,14 @@ This document provides the detailed, bottom-up justification for the figures pre
 
 ## 1. Founding Team & Hiring Plan
 
-A plan is only as good as the team executing it. Our strategy is to maintain a lean, world-class core team and supplement with contractors and prize-based competition.
+A plan is only as good as the team executing it. Our strategy is to maintain a lean, world-class core team and supplement with contractors and prize-based competition. For a detailed breakdown of the phase-based hiring roadmap and role descriptions, see the full [**Hiring Plan & Team Roadmap**](../careers/hiring-plan.md).
 
 *   **Founding Team:** The core team will consist of 15-20 individuals with deep expertise in large-scale software engineering, international law, political campaigning, and crypto-economics. (Detailed bios are available in the investor data room).
 *   **Hiring Roadmap:**
     *   **Phase 1 (Seed):** Core leadership is in place. Key hires include a General Counsel, a Head of Platform Engineering, and a Head of Political Strategy. Total headcount: ~20.
     *   **Phase 2 (Series A):** Scale the team to support global operations. Key hires include Regional Campaign Directors (North America, Europe, Asia) and a Head of Security. Total headcount: ~50.
     *   **Phase 3 (Growth):** Full operational staff to manage the DIH treasury and global compliance. Key hires include a Chief Financial Officer and a Chief Compliance Officer. Total headcount: ~75-100.
-*   **Compensation Philosophy:** All core team members will receive modest, market-rate cash salaries combined with large, vested grants of `$VICTORY` tokens. This aligns incentives and preserves cash.
+*   **Compensation Philosophy:** All core team members will receive modest, market-rate cash salaries combined with large, vested grants of VICTORY bonds. This aligns incentives and preserves cash.
 
 ---
 
