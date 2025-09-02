@@ -13,97 +13,13 @@ domains: [cross]
 doc_type: strategy
 ---
 
-## Art Direction & Visual Concept
-
-This document serves as the content and creative brief. The aesthetic should be minimalistic, authoritative, and reminiscent of high-value modern financial documents, like a Swiss Franc note or a minimalist bond certificate. The goal is to visually communicate that this is a serious, systematic financial and political re-engineering, not just a moral plea.
-
-### Overall Aesthetic
--   **Palette:** The primary palette should be a stark, high-contrast black and off-white, similar to a minimalist newspaper or official document. The **"banknote green"** should be used sparingly as a powerful accent color for key figures, links, interactive elements, and data visualizations—not as a background wash.
--   **Typography:**
-    -   **Headlines:** Large, modern, high-contrast serif fonts (e.g., Bodoni, or a modern equivalent of engraving typefaces found on currency).
-    -   **Body Text:** An extremely clean, highly readable sans-serif.
--   **Layout:** Generous use of whitespace is critical. Content should be centered or in clean, single columns to feel deliberate, uncluttered, and authoritative.
--   **Graphics & Illustrations:** All graphical elements should follow an engraving or etching style, but with a modern, clean execution. Data visualizations must be powerful and minimalistic.
--   **Decorative Elements:** Subtle guilloché patterns (the intricate, lathe-work lines on banknotes) can be used as borders, section dividers, or background watermarks to reinforce the financial aesthetic, but they must be understated and clean, not ornate.
-
-### Visual Storyboard
-
-1.  **Hero Section (Above the Fold)**
-    -   **Content:** "War is fucking stupid. Diseases suck. But governments spend 40X more on militarism than finding cures for diseases."
-    -   **Visuals:** Purely typographic. The text should be set in a massive font size, centered on the screen against the off-white paper background. The immediate impression is one of brutal, undeniable honesty. No images.
-
-2.  **The Core Problem Data Visualization**
-    -   **Content:** The section comparing the \$2.72 trillion in military spending to the \$67.5 billion in medical research spending.
-    -   **Visuals:** A single, powerful data visualization. A massive horizontal bar chart is ideal.
-        -   **Bar 1 (Military Spending):** A long, banknote-green bar stretching nearly the full width of the screen. Labeled: **MILITARY & WAR SPENDING: \$2,718,000,000,000**.
-        -   **Bar 2 (Medical Research):** A tiny, almost invisible sliver of a bar directly below it. Labeled: **MEDICAL RESEARCH SPENDING: \$67,500,000,000**.
-    -   The visual contrast should be so extreme that it feels shocking and absurd, instantly communicating the scale of the misallocation without needing complex charts.
-
-3.  **The Solution Value Flow Visualization**
-    -   **Content:** The "Here's How We Fix It" and "Why This Works" sections.
-    -   **Visuals:** A clean **Sankey diagram** to illustrate the flow of capital. This visualizes the "legal bribery" as a systematic financial plan.
-        -   **Source Node (Left):** A large box labeled "**1% Global Military Budget Redirection: \$27 Billion/Year Treasury**".
-        -   **Flows (Center):** Thick, engraved-style lines representing the capital allocation.
-        -   **Destination Nodes (Right):** Clearly labeled boxes showing the distribution (e.g., `\$56M -> Referendum Voters`, `\$1.5B -> Political Action Fund`, `\$25.4B -> Decentralized Institutes of Health`).
-
-4.  **Detailed Sections (Objections, Q&A)**
-    -   **Content:** The detailed explanatory and argumentative sections.
-    -   **Visuals:** These sections should be purely typographic to convey seriousness and authority. Use a clean, two-column layout where appropriate. Small, iconic illustrations in the engraving style can be used as section dividers (e.g., a stylized scale of justice for the legal section, a key for the objections section). The feel should be akin to a prospectus or a formal whitepaper.
-
-5.  **Call to Action (CTA) Sections**
-    -   **Content:** "Start Earning Now" and "For Institutions."
-    -   **Visuals:** Buttons and interactive elements should be styled to look like official seals or the ornate corners of a bond certificate. The text on buttons ("Get Your Referendum Link," "Invest in VICTORY") should reinforce the transactional and high-value nature of the actions.
-
-### From Static Page to Interactive Experience
-
-To be truly transcendent, this landing page must be more than a beautifully styled document—it must be an interactive and personal experience. The developer should use a modern animation library (e.g., Framer Motion, GSAP) to achieve a cinematic, high-value feel reminiscent of Apple or Stripe's product pages.
-
-#### 1. "Scrollytelling" Narrative Flow
-
-The page should not be a simple, continuous scroll. It should be a "scrollytelling" narrative where each major scroll event reveals the next part of the argument in a controlled, impactful way.
-
--   **Example Flow:**
-    -   The user lands on the hero text, which is the only element visible.
-    -   On scroll, the hero text fades or elegantly animates out as the shocking "Military vs. Medical" bar chart animates in.
-    -   On the next scroll, the chart transitions out, and the "How We Fix It" Sankey diagram animates in, with capital visibly *flowing* from the source to the destinations.
-
-#### 2. Interactivity & Micro-animations
-
-Every element should feel alive and responsive, reinforcing the theme of a premium, meticulously crafted financial instrument.
-
--   **Hero Text Animation:** The opening lines should not just appear. They should animate as if being engraved or stamped onto the page with a heavy, deliberate, and satisfying motion.
--   **Interactive Data Visualizations:**
-    -   On hover, the massive **"Military Spending"** bar should subtly pulse. A tooltip could appear breaking down the top 5 national spenders.
-    -   On hover over the tiny **"Medical Research"** sliver, a tooltip must appear with the text: *"This is not a mistake."*
--   **Animated Decorative Elements:** The subtle guilloché patterns used as borders or watermarks should not be static. They should slowly and intricately draw themselves as the user scrolls, adding a layer of sophisticated craftsmanship to the experience.
-
-#### 3. The Personal Peace Dividend Calculator
-
-To make the abstract numbers feel concrete and personal, a new interactive module should be introduced after the initial problem/solution sections.
-
--   **Concept:** A simple, elegant input field styled to look like it belongs on a formal bond certificate.
--   **Interaction:**
-    1.  The user is prompted: "See What the 1% Treaty Means for Your Country."
-    2.  The user selects their country from a dropdown menu.
-    3.  The module instantly calculates and displays three key figures in an animated sequence:
-        -   "Your country's annual 1% contribution: **\$X billion**"
-        -   "This could fund **Y additional cancer trials** every year."
-        -   "Your personal share of the unlocked global economic value: **\$Z annually**."
--   **Impact:** This module is critical. It transforms the user from a passive reader into an active participant and a direct stakeholder in the plan. It connects the massive global vision directly to their national context and personal economic benefit.
-
----
-
-# Part 1: The Unacceptable Reality
-
-## War is fucking stupid. Diseases suck.
+## War is stupid. Diseases suck.
 
 ## But governments spend 40X more on militarism than finding cures for diseases.
 
-## The Pentagon loses more money by accident than humanity spends on curing cancer.
-
 ---
 
-## The Simple Truth
+## FACTS
 
 Governments spend **[\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases. That's a **40X disparity**.
 
