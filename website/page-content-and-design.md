@@ -216,6 +216,31 @@ This document outlines the content and design specifications for the "War on Dis
 
 ---
 
+## Objections & Rebuttals
+
+**Content:**
+- Section ID: `objections`
+- Title: "WHY THIS ISN'T COMPLETELY INSANE"
+- A series of 4-5 key objections, presented as an accordion or interactive Q&A.
+    - **"OBJECTION 1: THIS IS POLITICALLY IMPOSSIBLE."**
+        - **REALITY:** "We're not asking for unilateral disarmament. We're asking all nations to move 1% together, maintaining relative power. When 3.5% of humanity has voted for this, opposing it becomes electoral suicide."
+    - **"OBJECTION 2: GOVERNMENTS WILL NEVER HONOR THE TREATY."**
+        - **REALITY:** "We make it more profitable for leaders to comply than to defect. **1. Personal Wealth:** Leaders and their families can invest in VICTORY Bonds, tying their personal fortunes to the treaty's success. **2. Political Survival:** Our independent expenditure fund provides overwhelming support to politicians who honor the treaty—and funds challengers against those who defy the public mandate."
+    - **"OBJECTION 3: THIS IS JUST A CYNICAL, ILLEGAL BRIBE."**
+        - **REALITY:** "The current system of lobbying is a slow, inefficient bribe that produces war. Our 'bribe' is an open, auditable, and transparent incentive system designed to produce peace and health. We're brutally honest about how power works."
+    - **"OBJECTION 4: A 280M PERSON REFERENDUM IS UNVERIFIABLE."**
+        - **REALITY:** "We use a multi-layered approach: government e-ID integration, biometric liveness detection, and AI fraud monitoring. The tech to verify millions of users globally already exists and is in use."
+
+**Design:**
+- Default background with a black bottom border.
+- Title is centered, `text-6xl`, bold, serif, uppercase, with a black bottom border.
+- Each objection is a clickable bar with a `+` icon.
+- When clicked, the bar expands to reveal the "REALITY" text.
+- The "OBJECTION" text is bold, uppercase, and serif.
+- The "REALITY" text is in a clean, readable serif font.
+
+---
+
 ## Footer
 
 **Content:**
