@@ -122,7 +122,7 @@ Fair skepticism. Here's why the math actually works:
 - We capture 0.16% of this—investors get $27B, society gets $16.473T
 - **This is value capture from waste reduction, not digital asset speculation**
 
-**5. Military Contractors Will Switch for Better Returns**
+**5. Military Contractors Like Money More than War**
 - Return: [$1,813 per $1 spent on lobbying](#lobbying-roi-calc)
 - Our offer: Direct investment in bonds with >40% CAGR + governance of $27B treasury
 - **When the math favors peace, rational actors choose peace**
@@ -543,7 +543,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **9. "You're competing with military contractors who have decades of relationships and influence"**
 
-*   **Reality: We reframe the conflict from a zero-sum battle to a positive-sum bargain.** We are not asking the military-industrial complex to fight us; we are inviting them to profit with us. The core of their business is not war, but shareholder return. The entire thesis for [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) is engineered to offer risk-adjusted returns mathematically superior to their current investments. We can approach military contractors, their investors, and lobbyists with a simple proposition:
+*   **Reality: We don't compete with them. We co-opt them.** Our entire thesis is engineered to offer them a better deal, turning today's **War Contractors** into tomorrow's **Peace Contractors**. We go to them with a simple, fiduciary proposition: you will make more money saving lives than you will ending them.
     1.  **You Make More Money:** Your fiduciary duty is to maximize shareholder value. Our financial models show that redirecting capital to VICTORY bonds will generate more wealth than building systems that create existential risk.
     2.  **You Get Better Security:** A healthier, more stable world is a safer world. Redirecting 1% from overkill capacity to pandemic prevention provides more real security than another nuclear submarine.
     3.  **You Protect Your Family:** Contractors are humans. Their families get sick. They can profit from a system that fuels destruction, or they can profit *even more* by funding cures that might one day save their loved ones.
