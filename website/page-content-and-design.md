@@ -163,6 +163,27 @@ This document outlines the content and design specifications for the "War on Dis
 
 ---
 
+## A Better Funding Model for Your Nonprofit
+
+**Content:**
+- Title: "A BETTER FUNDING MODEL FOR YOUR NONPROFIT"
+- Subtitle: "Stop competing for grants. Start earning a stake in the solution."
+- Description: "We offer partner organizations a unique referral link. For every referendum vote you generate, your organization earns **VOTE points**, convertible to high-yield **VICTORY bonds** upon treaty ratification. This isn't a donation; it's a sustainable funding model."
+- Three impact boxes:
+    - "DRIVE REFERENDUM VOTES using your existing network."
+    - "EARN VICTORY BONDS for every verified supporter."
+    - "CREATE A PERMANENT ENDOWMENT from the returns."
+- Button: "BECOME A PARTNER" (links to the "Best Idea in the World" page)
+
+**Design:**
+- Default background section with black bottom border.
+- Title and subtitle centered, large, bold, serif, uppercase fonts.
+- The description is a large paragraph, centered.
+- The three impact boxes are in a row (stack on mobile), each with a 4px black border and padding, containing bold, uppercase text.
+- The call-to-action button is large, with a black background and white text, inverting on hover.
+
+---
+
 ## The Implementation Plan
 
 **Content:**
