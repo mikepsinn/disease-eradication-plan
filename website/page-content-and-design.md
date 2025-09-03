@@ -47,9 +47,10 @@ This document outlines the content and design specifications for the "War on Dis
 **Content:**
 - Title: "THE HUMAN COST"
 - Statistics Boxes:
-    - "7+ MILLION Deaths from COVID-19 pandemic"
-    - "10 MILLION Annual deaths projected from antibiotic resistance by 2050"
+    - "63 MILLION Deaths annually from preventable diseases"
+    - "100,000 Deaths annually from armed conflicts"
     - "5+ BILLION Potential deaths from nuclear winter scenario"
+    - "$74,259 What war costs YOU personally over your lifetime"
 - Large Figure Box: "0 Diseases eradicated in 50+ years"
 
 **Design:**
