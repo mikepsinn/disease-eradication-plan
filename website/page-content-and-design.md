@@ -211,6 +211,23 @@ This document outlines the content and design specifications for the "War on Dis
 
 ---
 
+## Uncorruptible by Design
+
+**Content:**
+- Title: "UNCORRUPTIBLE BY DESIGN"
+- Subtitle: "A \$27B treasury is a massive target. Our multi-layered defense makes it the most transparent and secure public fund in history."
+- Three core features:
+    - **NO HUMAN SIGNERS:** "The treasury is controlled by millions of VICTORY bond holders via on-chain voting. There are no single points of failure and no individuals to corrupt or coerce."
+    - **AI-POWERED FRAUD DETECTION:** "A real-time AI 'Fraud Agent' monitors all transactions for anomalies, collusion, and suspicious activity, with the power to automatically freeze payouts."
+    - **RADICAL TRANSPARENCY:** "Every dollar in and out is tracked on a public, immutable ledger. All budgets and reports are auditable by anyone, anytime."
+
+**Design:**
+- A section with a black background and white text to convey seriousness and security.
+- A centered, large, bold, serif, uppercase title.
+- The three features displayed in a row (stacking on mobile), each in a box with a 4px white border and a bold, uppercase title.
+
+---
+
 ## End War. Cure Disease. Get Paid.
 
 **Content:**
