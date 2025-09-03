@@ -42,48 +42,63 @@ This document outlines the content and design specifications for the "War on Dis
 ---
 
 
-## Problem Statement
+## The Human Cost
 
 **Content:**
-- Title: "THE PROBLEM"
+- Title: "THE HUMAN COST"
 - Statistics Boxes:
-    - "$2.7 TRILLION Spent annually on military, war, and destruction"
-    - "$0.06 TRILLION Spent annually on discovering cures for all diseases combined"
-    - "That's 40X less on saving lives than ending them."
-- Large Figure Box: "40X More spent on war than cures"
+    - "7+ MILLION Deaths from COVID-19 pandemic"
+    - "10 MILLION Annual deaths projected from antibiotic resistance by 2050"
+    - "5+ BILLION Potential deaths from nuclear winter scenario"
+- Large Figure Box: "0 Diseases eradicated in 50+ years"
 
 **Design:**
 - A section with a black background and white text.
 - Layout is a 2-column grid on medium screens.
 - **Left Column:**
-    - The title "THE PROBLEM" is `text-6xl`, bold, serif, uppercase, with a white bottom border.
+    - The title "THE HUMAN COST" is `text-6xl`, bold, serif, uppercase, with a white bottom border.
     - Below the title, there are three boxes, each with a 4px white border and padding.
 - **Right Column:**
     - A single large box with a 4px white border and very large padding (`p-16`).
-    - It contains "40X" in a massive font size (`text-9xl`), bold, and serif.
+    - It contains "0" in a massive font size (`text-9xl`), bold, and serif.
     - The descriptive text below is uppercase.
 
 
 ---
 
-## Spending Comparison Chart Section
+## The Transition
 
 **Content:**
-- Title: "THE SPENDING DISPARITY"
+- Title: "IT DOESN'T HAVE TO BE THIS WAY"
+- Text: "The suffering, the waste, the preventable deaths—none of this is inevitable. There's a simple, systemic reason why we live in a world of pandemics and nuclear threats instead of cures and security."
+
+**Design:**
+- A smaller transition section with default background and centered text.
+- The title is `text-4xl md:text-5xl`, bold, serif, uppercase, centered.
+- The text is `text-xl md:text-2xl`, serif, centered, with `max-w-4xl` and large bottom margin.
+
+---
+
+## The Root Cause
+
+**Content:**
+- Title: "THE ROOT CAUSE"
+- Subtitle: "Here's why we have pandemics instead of cures:"
 - Chart: A bar chart comparing "MILITARY & WAR" ($2.7T) vs. "MEDICAL RESEARCH" ($0.06T).
 - Comparison Cards:
     - MILITARY & WAR: $2.7T, PER YEAR ON DESTRUCTION
     - MEDICAL RESEARCH: $0.06T, PER YEAR ON CURES
-- Summary Banner: "45X MORE SPENT ON WAR THAN CURES"
+- Summary Banner: "40X MORE SPENT ON WAR THAN CURES"
 
 **Design:**
 - White background section with a black bottom border.
 - The title is large (`text-4xl md:text-6xl`), bold, serif, uppercase, centered, with a black bottom border.
+- The subtitle is `text-2xl`, serif, centered, with bottom margin.
 - The main content is inside a container with a 4px black border and large padding.
 - **Bar Chart:**
     - The bars are vertical.
     - "MILITARY & WAR" bar is black and takes up 100% of the chart height.
-    - "MEDICAL RESEARCH" bar is white with a black border and takes up 2.2% of the height, visually representing the disparity.
+    - "MEDICAL RESEARCH" bar is white with a black border and takes up 2.5% of the height, visually representing the disparity.
     - Below each bar, there's a title and the amount in bold serif font.
 - **Comparison Cards:**
     - Displayed in a 2-column grid on medium screens and up.
