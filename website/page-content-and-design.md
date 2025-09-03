@@ -41,6 +41,31 @@ This document outlines the content and design specifications for the "War on Dis
 
 ---
 
+
+## Problem Statement
+
+**Content:**
+- Title: "THE PROBLEM"
+- Statistics Boxes:
+    - "$2.7 TRILLION Spent annually on military, war, and destruction"
+    - "$0.06 TRILLION Spent annually on discovering cures for all diseases combined"
+    - "That's 40X less on saving lives than ending them."
+- Large Figure Box: "40X More spent on war than cures"
+
+**Design:**
+- A section with a black background and white text.
+- Layout is a 2-column grid on medium screens.
+- **Left Column:**
+    - The title "THE PROBLEM" is `text-6xl`, bold, serif, uppercase, with a white bottom border.
+    - Below the title, there are three boxes, each with a 4px white border and padding.
+- **Right Column:**
+    - A single large box with a 4px white border and very large padding (`p-16`).
+    - It contains "40X" in a massive font size (`text-9xl`), bold, and serif.
+    - The descriptive text below is uppercase.
+
+
+---
+
 ## Spending Comparison Chart Section
 
 **Content:**
@@ -69,28 +94,6 @@ This document outlines the content and design specifications for the "War on Dis
     - A full-width box with a 4px black border, black background, white text, and large padding.
     - The text is `text-2xl md:text-4xl`, bold, serif, and uppercase.
 
----
-
-## Problem Statement
-
-**Content:**
-- Title: "THE PROBLEM"
-- Statistics Boxes:
-    - "$2.7 TRILLION Spent annually on military, war, and destruction"
-    - "$0.06 TRILLION Spent annually on discovering cures for all diseases combined"
-    - "That's 40X less on saving lives than ending them."
-- Large Figure Box: "40X More spent on war than cures"
-
-**Design:**
-- A section with a black background and white text.
-- Layout is a 2-column grid on medium screens.
-- **Left Column:**
-    - The title "THE PROBLEM" is `text-6xl`, bold, serif, uppercase, with a white bottom border.
-    - Below the title, there are three boxes, each with a 4px white border and padding.
-- **Right Column:**
-    - A single large box with a 4px white border and very large padding (`p-16`).
-    - It contains "40X" in a massive font size (`text-9xl`), bold, and serif.
-    - The descriptive text below is uppercase.
 
 ---
 
