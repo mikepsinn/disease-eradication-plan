@@ -151,6 +151,7 @@ This document outlines the content and design specifications for the "War on Dis
     - "Make peace more profitable than war..."
     - "Strategically distribute Victory bonds..."
     - "The military-industrial complex isn't evil—they just like money. So let's give them the best returns on Earth."
+    - "Peace Profiteering"
 
 **Design:**
 - Black background section with white text.
@@ -200,10 +201,6 @@ This document outlines the content and design specifications for the "War on Dis
         - Fund referendums in every nation
         - Conduct global ratification campaigns
         - Educate the world about the 1% Treaty
-- Final Call to Action Box:
-    - "Estimated campaign cost: $1-2.5 billion"
-    - "Potential annual research funding: $27 billion"
-    - Button: "JOIN THE WAR ON DISEASE"
 
 **Design:**
 - Default background with a black bottom border.
@@ -211,8 +208,23 @@ This document outlines the content and design specifications for the "War on Dis
 - Each of the three steps is in a large box with a 4px black border and padding.
 - The step titles (`STEP 1`, etc.) are `text-4xl`, bold, serif, uppercase.
 - List items within each step are `text-xl` serif, prefixed with a small black square acting as a bullet point.
-- The final CTA box is at the bottom, centered, with a black background, white text, 4px black border, and large padding.
-- The button inside inverts the colors: white background, black text, and a white border.
+
+---
+
+## End War. Cure Disease. Get Paid.
+
+**Content:**
+- Title: "END WAR. CURE DISEASE. GET PAID."
+- A series of distinct call-to-action boxes, targeting different user types:
+    - **FOR INDIVIDUALS:** "Spread the word. Get your referendum link and earn VOTE points for every supporter you bring in." -> Button: "GET YOUR REFERRAL LINK"
+    - **FOR ORGANIZATIONS:** "Mobilize your network. Earn a stake in the \$27B treasury for your institution." -> Button: "PARTNER WITH US"
+    - **FOR INVESTORS:** "Fund the mission. Get a 40% CAGR and help cure disease." -> Button: "INVEST IN VICTORY"
+
+**Design:**
+- A high-contrast section with a black background and white text to make it stand out.
+- A centered, large, bold, serif, uppercase title.
+- The three calls to action are displayed in a row (stacking on mobile), each within a box that has a 4px white border.
+- Each box contains a clear, concise description of the action and a distinctly styled button that inverts colors on hover.
 
 ---
 

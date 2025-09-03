@@ -141,7 +141,7 @@ Military contractors earn billions. Politicians receive generous donations. The 
 
 ## Our Answer: Legal Bribery for Peace
 
-We will not change minds with morals. We will make curing people more profitable than killing them.
+We will not change minds with morals. We will make curing people more profitable than killing them. We call this **Peace Profiteering**.
 
 The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will bribe our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
 
