@@ -148,13 +148,13 @@ The core of the plan is a transparent, legally-compliant system of incentives th
 ```mermaid
 graph TD;
     subgraph "The Legal Bribery Engine (Annual Capital Flow)";
-        A["\$27B Annual Treasury<br/>(1% Military Redirection)"];
+        A["$27B Annual Treasury<br/>(1% Military Redirection)"];
 
         subgraph "Strategic Allocation";
-            A --> B["<b>Investors & Bond Holders</b><br/>(~_ \$7.2B/yr Payouts)<br/><i>The Incentive: World-class, de-risked returns</i>"];
-            A --> C["<b>Political Action Fund</b><br/>(~_ \$1.5B/yr Independent Expenditures)<br/><i>The Incentive: Overwhelming, targeted campaign support</i>"];
+            A --> B["<b>Investors & Bond Holders</b><br/>(~_ $7.2B/yr Payouts)<br/><i>The Incentive: World-class, de-risked returns</i>"];
+            A --> C["<b>Political Action Fund</b><br/>(~_ $1.5B/yr Independent Expenditures)<br/><i>The Incentive: Overwhelming, targeted campaign support</i>"];
             A --> D["<b>Citizens (VOTE Points)</b><br/>(Funded by bond sales)<br/><i>The Incentive: A direct stake in the Peace Dividend</i>"];
-            A --> E["<b>Decentralized Institutes of Health (DIH)</b><br/>(~\$19.8B/yr Mission Investment)<br/><i>The Engine: Funding cures 80x more efficiently</i>"];
+            A --> E["<b>Decentralized Institutes of Health (DIH)</b><br/>(~$19.8B/yr Mission Investment)<br/><i>The Engine: Funding cures 80x more efficiently</i>"];
         end
 
         subgraph "Outcomes";
@@ -254,11 +254,11 @@ The strategy is backed by proven mechanisms for political mobilization at scale.
 ```mermaid
 graph TD;
     subgraph "The DIH Value Flywheel (Annual Flow)";
-        A[/"\$27B Annual Captured<br/>Peace Dividend"/];
+        A[/"$27B Annual Captured<br/>Peace Dividend"/];
         
         subgraph "Treasury Allocation";
-            A -->|"Up to 50%"| B["\$7.2B/yr<br/>Investor Payouts"]; 
-            A -->|"Min. 50%"| C["\$19.8B/yr<br/>DIH Mission Investment"]; 
+            A -->|"Up to 50%"| B["$7.2B/yr<br/>Investor Payouts"]; 
+            A -->|"Min. 50%"| C["$19.8B/yr<br/>DIH Mission Investment"]; 
         end
 
         subgraph "dFDA Value Multiplication Engine";
@@ -267,7 +267,7 @@ graph TD;
         end
         
         subgraph "Societal Returns";
-            E --> F["\$50B+ Annual<br/>R&D Savings"]; 
+            E --> F["$50B+ Annual<br/>R&D Savings"]; 
             E --> G["840,000+<br/>Extra Years of Healthy Life Annually"]; 
         end
 
@@ -285,29 +285,29 @@ graph TD;
 
 **Our Multi-Layered Defense:**
 
-**1. True Decentralized Control (Proven at Scale)**
-- Every VICTORY bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
-- No human signers = no kidnapping, corruption, or coercion targets
-- Smart contracts automatically execute community decisions after 24-72h timelocks
-- Battle-tested approach managing billions in existing DAOs
+1.  **True Decentralized Control (Proven at Scale)**
+    - Every VICTORY bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
+    - No human signers = no kidnapping, corruption, or coercion targets
+    - Smart contracts automatically execute community decisions after 24-72h timelocks
+    - Battle-tested approach managing billions in existing DAOs
 
-**2. AI-Powered Fraud Detection**
-- Fraud Agent: real-time anomaly detection, duplication monitoring, collusion identification, sybil detection
-- Safety Oracle: incident severity scoring with automatic payout holds for affected interventions
-- Manual review queue for flagged actions with whistleblower bounty rewards
-- Identity Oracle: verifies affiliations and conflicts, prevents unauthorized access
+2.  **AI-Powered Fraud Detection**
+    - Fraud Agent: real-time anomaly detection, duplication monitoring, collusion identification, sybil detection
+    - Safety Oracle: incident severity scoring with automatic payout holds for affected interventions
+    - Manual review queue for flagged actions with whistleblower bounty rewards
+    - Identity Oracle: verifies affiliations and conflicts, prevents unauthorized access
 
-**3. Complete Transparency & Auditability**
-- All treasury addresses published with real-time public dashboards
-- Immutable transaction logs with standardized disbursement tags
-- Annual smart contract audits and semiannual operational audits with published reports
-- Hash-committed invoices and budgets for full accountability
+3.  **Complete Transparency & Auditability**
+    - All treasury addresses published with real-time public dashboards
+    - Immutable transaction logs with standardized disbursement tags
+    - Annual smart contract audits and semiannual operational audits with published reports
+    - Hash-committed invoices and budgets for full accountability
 
-**4. Recovery & Response Mechanisms**
-- Clawbacks for data falsification or trial misconduct
-- Emergency pause capabilities triggered by incident signals
-- Progressive unpause policies tied to remediation completion
-- Guardian modules for pausing non-critical functions under defined conditions
+4.  **Recovery & Response Mechanisms**
+    - Clawbacks for data falsification or trial misconduct
+    - Emergency pause capabilities triggered by incident signals
+    - Progressive unpause policies tied to remediation completion
+    - Guardian modules for pausing non-critical functions under defined conditions
 
 **Beyond Health: A Template for Uncorruptible Governance**
 
@@ -927,6 +927,71 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 *   **Response:** Our execution model is designed to maximize strategic focus and leverage elite global talent. We are not building a large, traditional organization. Instead, we are assembling a small, world-class **"activation team"** of strategic leaders (see our [Hiring Plan](../careers/hiring-plan.md)) whose sole function is to direct capital and manage a network of top-tier execution partners. This allows us to remain lean and focused, outsourcing tactical work like software development and media production to the best specialized firms in the world. We've allocated $250-400M for Phase 1 development with these proven partners. This model—a lean strategic core coordinating elite external teams—is the most capital-efficient and effective way to solve a problem of this scale.
 
 **Mitigation:** Advisory board of constitutional scholars, DAO experts, and former officials; phased rollout with pilot countries.
+
+---
+
+## Calculate Your Return on Curing Disease
+
+To make the abstract numbers feel concrete and personal, a new interactive module should be introduced after the initial problem/solution sections.
+
+-   **Concept:** A simple, elegant input field styled to look like it belongs on a formal bond certificate.
+-   **Interaction:**
+    1.  The user is prompted: "If you invested this amount in VICTORY bonds..." with an input slider or field (e.g., pre-populated with $10,000).
+    2.  The module instantly calculates and displays two key figures in an animated sequence:
+        -   **YOUR FINANCIAL RETURN:** "Your projected 10-year return would be **\$290,000** (a 29X return)."
+        -   **YOUR MISSION IMPACT:** "Your \$10,000 investment could fully fund **20 patient-months** in a decentralized clinical trial, directly accelerating the search for a cure."
+-   **Impact:** This module is critical. It transforms the user from a passive reader into an active participant. It connects the user's personal financial gain directly to the mission's impact, which is the entire point of the project.
+
+---
+
+# Part 1: The New Narrative
+
+Humanity spends [\$2.72 trillion](#sipri-2024-spending) per year on war, the military, death, and destruction.
+
+Humanity spends 40X less ([\$67.5 billion](../reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
+
+What if there were a way to:
+*   End disease
+*   Increase national security
+*   Get filthy rich
+...simultaneously?
+
+**The Plan:** (legally) bribe the shit out of humanity to get it to act like a proper species for once.
+
+**More specifically:** Bribe the military industrial complex to use their lobbying apparatus to get every nation in the world to ratify a "[1% Treaty](./1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md) that subsidizes patient participation in "pragmatic clinical trials" [80X more efficient](../reference/recovery-trial.md) than standard trials.
+
+**How it works:** Make peace more profitable than war.
+
+Getting the 1% Treaty passed will require:
+*   A global referendum showing support from at least [3.5% of the population](#3-5-rule) of each nation.
+*   Extensive lobbying (using the existing military-industrial complex political apparatus).
+
+This effort will likely cost between [\$1 billion and \$2.5 billion](../economic-models/fundraising-and-budget-plan.md).
+
+### Q: How do we get \$2 billion and persuade the military industrial complex to help?
+
+**A: Create the most profitable investment vehicle in the world.**
+
+Currently, the Medallion Fund is widely recognized as the best-performing investment with a ~39% compound annual growth rate.
+
+We create a Victory Fund to finance the War on Disease by selling **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** just like the US did to finance WW2.
+
+One key difference is that our bonds are designed to return a **~40% CAGR**, making it the best investment opportunity in the world. That's a ~29X return over 10 years!
+
+The military industrial complex is composed of humans that are not evil, they just like money. So we sell and/or strategically give **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
+
+### Q: How is it possible to achieve a 40% CAGR?
+
+Say we sell \$1B worth of victory bonds. This means we need to pay buyers back \$29B over 10 years.
+
+If the treaty passes, the DIH treasury would receive 1% of current military spending, \$27B/year. That's \$270B over 10 years. Therefore, paying back bondholders with this enormous return would only require about 10% of the 10 years income leaving 90% for hyper efficient decentralized trials.
+
+### The Steps
+1.  Create a nonprofit entity for the [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md).
+2.  Create a Single Purpose Vehicle to issue the [VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md).
+3.  The DIH accepts donations to hire a full-time staff to run the global referendum and educate the world about the [1% Treaty](./1-percent-treaty/1-percent-treaty.md) and VICTORY bonds.
+4.  Raise [\$1-\$2.5B by selling VICTORY bonds](../economic-models/fundraising-and-budget-plan.md).
+5.  Fund referendums, conduct global ratification campaigns, etc.
 
 
 
