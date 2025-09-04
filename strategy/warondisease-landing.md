@@ -622,35 +622,27 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 *   **Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (enough to produce ~150 Tg of stratospheric soot in a U.S.–Russia exchange—modeled to cause global famine and >5 billion deaths) and an AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk. **Bottom Line:** Free-riding isn't viable when compliance pays better, and the stakes are human survival. For detailed mechanisms, see [Free Rider Solution](./free-rider-solution.md).
 
+**21. "This violates election and securities law" (Legal Compliance)**
+
+*   **The Challenge:** Foreign nationals funding US elections is illegal; VICTORY bonds risk securities violations.
+
+*   **Our Solution:** [Strict legal segregation](./legal-compliance-framework.md) with expert oversight: **Complete entity separation** (Zero coordination between US and international operations), **Securities compliance** (Utility token structure with proper exemptions - Reg S, Reg A+), **Multi-jurisdiction strategy** (Separate legal entities and counsel in each country), and **Technical firewalls** (No shared systems, staff, or communication between entities).
+
+*   **Bottom Line:** Conservative structures with top lawyers solve this.
+
+**22. "280M people can't be verified reliably" (Verification at Scale)**
+
+*   **The Challenge:** Stop fake votes across 280 million people.
+
+*   **Our Solution:** [Multi-layered verification](./verification-and-fraud-prevention.md) with AI monitoring: **Government ID integration** (Connect with national e-ID systems - Estonia, India, EU), **Biometric verification** (Liveness detection and proof-of-uniqueness partnerships), **AI fraud detection** (Real-time anomaly detection and behavioral analysis), and **Cryptographic verification** (End-to-end verifiable voting with zero-knowledge proofs).
+
+*   **Bottom Line:** We use proven technologies that already verify millions of users globally.
+
 ## Critical Objections Addressed
 
 Additional critical objections that could kill this proposal have detailed solutions:
 
-### 1. **Legal Compliance: "This violates election and securities law"**
-
-**The Challenge:** Foreign nationals funding US elections is illegal; VICTORY bonds risk securities violations.
-
-**Our Solution:** [Strict legal segregation](./legal-compliance-framework.md) with expert oversight:
-- **Complete entity separation:** Zero coordination between US and international operations
-- **Securities compliance:** Utility token structure with proper exemptions (Reg S, Reg A+)
-- **Multi-jurisdiction strategy:** Separate legal entities and counsel in each country
-- **Technical firewalls:** No shared systems, staff, or communication between entities
-
-**Bottom Line:** Conservative structures with top lawyers solve this.
-
-### 3. **Verification at Scale: "280M people can't be verified reliably"**
-
-**The Challenge:** Stop fake votes across 280 million people.
-
-**Our Solution:** [Multi-layered verification](./verification-and-fraud-prevention.md) with AI monitoring:
-- **Government ID integration:** Connect with national e-ID systems (Estonia, India, EU)
-- **Biometric verification:** Liveness detection and proof-of-uniqueness partnerships
-- **AI fraud detection:** Real-time anomaly detection and behavioral analysis
-- **Cryptographic verification:** End-to-end verifiable voting with zero-knowledge proofs
-
-**Bottom Line:** We use proven technologies that already verify millions of users globally.
-
-### 4. **"Isn't this just illegal bribery of leaders?"**
+### 1. **"Isn't this just illegal bribery of leaders?"**
 
 **Direct Answer:** No—we're transparent about using overwhelming legal incentives to align leaders' interests with global health, because the alternative is continued arms races leading to potential human extinction via nuclear winter (a U.S.–Russia exchange is modeled to loft ~150 Tg soot and cause global famine with >5 billion deaths[^nuke-winter-150tg]) or AI catastrophe. If "straight-up" rewards are needed for specific leaders, we structure them as performance-based diplomatic grants or economic development packages tied to verifiable treaty compliance—fully compliant with anti-corruption laws like the FCPA.
 
