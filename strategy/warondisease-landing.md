@@ -614,29 +614,19 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 *   **Reality:** This is not about nominal dollar figures; it is about the **real allocation of a finite pie of resources**. The world's top scientists, engineers, and manufacturing capacity are a limited resource. What matters is not the absolute dollar amount spent on health, but the *percentage* of our collective talent and capital dedicated to it, as this is the true surrogate for resource allocation. If we simply "increase health spending" by 10% through new appropriations, but the central bank also expands the money supply and the military budget grows by 10%, **no real resources have been shifted**. It's an inflationary wash. The same scientists and factories will continue to build weapons because that's where the larger share of the economic pie remains. A **direct, treaty-bound reallocation** is the only mechanism that forces a true shift of these finite resources. By cutting 1% from military budgets, we are not just moving dollars; we are freeing up the physicists, data scientists, and supply chains that were serving the military-industrial complex and making them available to cure Alzheimer's. This is how you change the game.
 
+**20. "Why cut military if others won't?" (Free Rider Problem)**
+
+*   **Why This Objection is Overstated:** The US already can't account for **$2.5 trillion** in assets—more than 250 times the $10 billion annual US contribution to this plan. Redirecting 1% is trivial compared to existing waste. Other nations' military spending is relatively small (US represents ~40% of global total). Even if holdouts don't comply, they won't catch up to US capabilities. Everyone has a price: We use massive legal incentives targeting personal financial gain to make compliance more profitable than defection.
+
+*   **Our Approach: Personal Financial Alignment Over Institutional Punishment:** Leaders are humans driven by personal financial self-interest, not abstract geopolitical strategy. We apply the same strategy we use with military contractors: **Personal Investment Opportunity** (Leaders and their families can invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to offer mathematically superior returns to alternative investments), **Direct Financial Stakes** (We offer leaders opportunities to profit directly from the $27B annual treasury through legally compliant investment vehicles), **Family Security** (Leaders' families get diseases too—they can profit from a system that perpetuates risk, or profit *even more* from one that funds cures), and **Political Insurance** (Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice).
+
+*   **Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (enough to produce ~150 Tg of stratospheric soot in a U.S.–Russia exchange—modeled to cause global famine and >5 billion deaths) and an AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk. **Bottom Line:** Free-riding isn't viable when compliance pays better, and the stakes are human survival. For detailed mechanisms, see [Free Rider Solution](./free-rider-solution.md).
+
 ## Critical Objections Addressed
 
-The three objections that could kill this proposal have detailed solutions:
+Additional critical objections that could kill this proposal have detailed solutions:
 
-### 1. **Free Rider Problem: "Why cut military if others won't?"**
-
-**Why This Objection is Overstated:**
-- The US already can't account for **\$2.5 trillion** in assets—more than 250 times the \$10 billion annual US contribution to this plan. Redirecting 1% is trivial compared to existing waste.[^pentagon-audit]
-- Other nations' military spending is relatively small (US represents ~40% of global total). Even if holdouts don't comply, they won't catch up to US capabilities.[^military-spending]
-- Everyone has a price: We use massive legal incentives targeting personal financial gain to make compliance more profitable than defection.
-
-**Our Approach: Personal Financial Alignment Over Institutional Punishment**
-Leaders are humans driven by personal financial self-interest, not abstract geopolitical strategy. We apply the same strategy we use with military contractors:
-- **Personal Investment Opportunity:** Leaders and their families can invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to offer mathematically superior returns to alternative investments. When your personal wealth grows faster by supporting the treaty than opposing it, the choice is obvious.
-- **Direct Financial Stakes:** We offer leaders opportunities to profit directly from the \$27B annual treasury through legally compliant investment vehicles, giving them personal skin in the game.
-- **Family Security:** Leaders' families get diseases too. They can profit from a system that perpetuates risk, or profit *even more* from one that funds cures for conditions that might affect their loved ones.
-- **Political Insurance:** Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice—opposing it becomes electoral and financial suicide.
-
-**Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (enough to produce ~150 Tg of stratospheric soot in a U.S.–Russia exchange—modeled to cause global famine and >5 billion deaths[^nuke-winter-150tg]) and an AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk.
-
-**Bottom Line:** Free-riding isn't viable when compliance pays better, and the stakes are human survival. For detailed mechanisms, see [Free Rider Solution](./free-rider-solution.md).
-
-### 2. **Legal Compliance: "This violates election and securities law"**
+### 1. **Legal Compliance: "This violates election and securities law"**
 
 **The Challenge:** Foreign nationals funding US elections is illegal; VICTORY bonds risk securities violations.
 
