@@ -172,6 +172,51 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 
 ---
 
+# III. THE SOLUTION (Simple & Clear)
+
+## Our Answer: Legal Bribery for Peace
+
+We will not change minds with morals. We will make curing people more profitable than killing them. We call this **Peace Profiteering**.
+
+The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will bribe our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
+
+```mermaid
+graph TD;
+    subgraph "The Legal Bribery Engine (Annual Capital Flow)";
+        A["$27B Annual Treasury<br/>(1% Military Redirection)"];
+
+        subgraph "Strategic Allocation";
+            A --> B["<b>Investors & Bond Holders</b><br/>(~_ $7.2B/yr Payouts)<br/><i>The Incentive: World-class, de-risked returns</i>"];
+            A --> C["<b>Political Action Fund</b><br/>(~_ $1.5B/yr Independent Expenditures)<br/><i>The Incentive: Overwhelming, targeted campaign support</i>"];
+            A --> D["<b>Citizens (VOTE Points)</b><br/>(Funded by bond sales)<br/><i>The Incentive: A direct stake in the Peace Dividend</i>"];
+            A --> E["<b>Decentralized Institutes of Health (DIH)</b><br/>(~$19.8B/yr Mission Investment)<br/><i>The Engine: Funding cures 80x more efficiently</i>"];
+        end
+
+        subgraph "Outcomes";
+            B --> F["Co-opted Financial Elite"];
+            C --> G["Aligned Political Leaders"];
+            D --> H["Mass Public Mandate (3.5%)"];
+            E --> I["Accelerated Cures & Global Health"];
+        end
+    end
+```
+
+## How We Fix It: The 5-Step Plan
+
+**The Goal: Make curing people more profitable than killing them.**
+
+**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./legal-compliance-framework.md)).
+
+**Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
+
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—your earned ownership and governance stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md)).
+
+**Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
+
+**Step 5:** The treasury funds EVERYONE in health - universities, pharma, nonprofits, government agencies - through democratically controlled funding pools.
+
+---
+
 ## Why This Actually Works
 
 **"A $2.5B investment to capture $27B annually? Come on."**
@@ -207,55 +252,7 @@ Fair skepticism. Here's why the math actually works:
 
 ---
 
-# Part 2: A Rational Solution
 
-## Our Answer: Legal Bribery for Peace
-
-We will not change minds with morals. We will make curing people more profitable than killing them. We call this **Peace Profiteering**.
-
-The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will bribe our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
-
-```mermaid
-graph TD;
-    subgraph "The Legal Bribery Engine (Annual Capital Flow)";
-        A["$27B Annual Treasury<br/>(1% Military Redirection)"];
-
-        subgraph "Strategic Allocation";
-            A --> B["<b>Investors & Bond Holders</b><br/>(~_ $7.2B/yr Payouts)<br/><i>The Incentive: World-class, de-risked returns</i>"];
-            A --> C["<b>Political Action Fund</b><br/>(~_ $1.5B/yr Independent Expenditures)<br/><i>The Incentive: Overwhelming, targeted campaign support</i>"];
-            A --> D["<b>Citizens (VOTE Points)</b><br/>(Funded by bond sales)<br/><i>The Incentive: A direct stake in the Peace Dividend</i>"];
-            A --> E["<b>Decentralized Institutes of Health (DIH)</b><br/>(~$19.8B/yr Mission Investment)<br/><i>The Engine: Funding cures 80x more efficiently</i>"];
-        end
-
-        subgraph "Outcomes";
-            B --> F["Co-opted Financial Elite"];
-            C --> G["Aligned Political Leaders"];
-            D --> H["Mass Public Mandate (3.5%)"];
-            E --> I["Accelerated Cures & Global Health"];
-        end
-    end
-```
-
-
----
-
-# Part 3: The Mechanism
-
-## Here's How We Fix It:
-
-**The Goal: Make curing people more profitable than killing them.** 
-
-**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./legal-compliance-framework.md)).
-
-**Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
-
-**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—your earned ownership and governance stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md)).
-
-**Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
-
-**Step 5:** The treasury funds EVERYONE in health - universities, pharma, nonprofits, government agencies - through democratically controlled funding pools.
-
----
 
 ## Activation Energy Sequence: Who We Bribe First
 
