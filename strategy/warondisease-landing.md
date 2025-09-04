@@ -13,6 +13,72 @@ domains: [cross]
 doc_type: strategy
 ---
 
+# Optimal Landing Page Structure: War on Disease
+
+## I. HOOK & VALUE PROPOSITION (Hero Section)
+   - Visual impact: "What if you could eradicate disease, end war, and get filthy rich simultaneously?"
+   - Core thesis: Make curing people more profitable than killing them
+   - Key stat: $2.72T military vs $67.5B medical research (40X disparity)
+
+## II. THE PROBLEM (Establish Stakes)
+   - Concrete costs of current misallocation
+   - Pentagon waste examples ($2.5T unaccounted)
+   - Health threats vs military threats (pandemics kill more than wars)
+   - The insanity of nuclear overkill while diseases ravage families
+
+## III. THE SOLUTION (Simple & Clear)
+   - The 1% Treaty: redirect 1% military → health
+   - Decentralized Institutes of Health (DIH) treasury model
+   - 80X more efficient trials (RECOVERY vs NIH RECOVER example)
+   - Global referendum → treaty → funding
+
+## IV. THE FINANCIAL ENGINE (Why This Works)
+   - VICTORY bonds: 40% CAGR investment vehicle
+   - Peace dividend capture: $27B annual treasury
+   - Mathematical proof: $1B investment → $29B return from $270B income
+   - Financing structure and return principles
+
+## V. THE BRIBERY STRATEGY (How Everyone Wins)
+   - Phase 1: Seed Investors (>40% CAGR returns)
+   - Phase 2: VICTORY Bond Buyers (governance + returns)
+   - Phase 3: Citizens (VOTE points for referendum participation)
+   - Phase 4: Politicians (campaign support + personal wealth)
+   - Phase 5: Military Contractors (co-opt, don't fight)
+
+## VI. PROOF & PRECEDENTS (Why This Isn't Insane)
+   - Historical examples: WWII war bonds, 3.5% rule, landmine treaty
+   - Proven technology: DAO governance, decentralized trials
+   - Conservative assumptions and risk mitigation
+   - Partial success scenarios still profitable
+
+## VII. OBJECTIONS & RESPONSES (Address Skepticism)
+   - **Consolidated section** covering major objections:
+     - Free rider problem
+     - Legal compliance
+     - Scale verification
+     - Execution risk
+     - Political feasibility
+   - Each with clear, factual rebuttals
+
+## VIII. SECURITY & GOVERNANCE (Building Trust)
+   - Anti-corruption mechanisms
+   - Transparency and auditability
+   - DAO governance model
+   - Multi-layered fraud detection
+
+## IX. CALL TO ACTION (Clear Next Steps)
+   - Personal investment calculator
+   - Referendum participation links
+   - Institution partnership opportunities
+   - Contact information for different stakeholder types
+
+## X. APPENDIX (Supporting Details)
+   - Implementation roadmap summary
+   - Key parameter sources
+   - Links to detailed technical docs
+
+---
+
 # The War on Disease Landing Page
 
 _**Design Note:** The hero section should be visually dynamic._
@@ -105,38 +171,36 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 
 ---
 
-## This Sounds Too Good to Be True. Here's Why It's Not.
+## Why This Actually Works
 
 **"A $2.5B investment to capture $27B annually? Come on."**
 
 Fair skepticism. Here's why the math actually works:
 
-**1. We're Not Asking for New Money—We're Redirecting Waste**
-- The Pentagon [cannot account for $2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets
-- Our ask: $10B annually from the US (0.4% of their unaccounted waste)
+**1. We're Redirecting Waste, Not Raising New Money**
+- The Pentagon [cannot account for $2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets—our US ask is 0.4% of their unaccounted waste
 - This isn't "find new money"—it's "stop losing the money you already have"
+- Global military waste is the largest pool of misallocated capital on the planet
 
-**2. The Efficiency Gains Are Already Proven**
-- Oxford RECOVERY trial: [$500 per patient vs. $41,000 traditional](#recovery-cost-500)—80X cheaper
-- Result: [Saved over 1 million lives globally](../reference/recovery-trial.md) by identifying effective COVID treatments
+**2. The 80X Efficiency Gain Is Already Proven**
+- Oxford RECOVERY trial: [$500 per patient vs. $41,000 traditional](#recovery-cost-500)—saved over 1 million lives globally
 - NIH RECOVER: [$1.6 billion, zero completed trials in 4 years](../reference/recovery-trial.md)
-- **This isn't theoretical. It already happened.**
+- **This isn't theoretical. The efficiency gain already happened and saved millions.**
 
-**3. Political Mobilization at Scale Works**
+**3. Mass Political Mobilization Works**
 - [3.5% mobilization has never failed](#3-5-rule) in recorded history (Chenoweth, Harvard)
-- Net neutrality: 4 million comments forced FCC policy change in 2015
 - War bonds: [$185 billion raised from 85 million Americans](#wwii-war-bonds) during WWII
-- **Precedent exists. The mechanisms work.**
+- Our referendum creates the largest political mandate in human history—when 280 million people vote for something, politicians listen
 
-**4. The Peace Dividend Is Real Economics, Not Crypto Speculation**
-- [$16.5 trillion annual cost of violence](#global-violence-costs) (Institute for Economics & Peace)
-- We capture 0.16% of this—investors get $27B, society gets $16.473T
-- **This is value capture from waste reduction, not digital asset speculation**
+**4. Financial Enforcement Is Stronger Than Legal Enforcement**
+- [$16.5 trillion annual cost of violence](#global-violence-costs)—we capture 0.16% of this waste
+- Nations that default face immediate economic consequences far greater than the 1% redirection
+- Global capital markets provide stronger enforcement than international courts
 
-**5. Military Contractors Like Money More than War**
-- Return: [$1,813 per $1 spent on lobbying](#lobbying-roi-calc)
-- Our offer: Direct investment in bonds with >40% CAGR + governance of $27B treasury
-- **When the math favors peace, rational actors choose peace**
+**5. We Co-opt Rather Than Compete**
+- Military contractors' current ROI: [$1,813 per $1 spent on lobbying](#lobbying-roi-calc)
+- Our offer: >40% CAGR bonds + governance of $27B treasury + personal wealth creation
+- **When peace pays better than war, rational actors choose peace**
 
 **The Bottom Line:** We're not creating money out of thin air. We're redirecting money that's already being wasted into a system that produces 80X better results with mathematical precision.
 
@@ -177,21 +241,6 @@ graph TD;
     end
 ```
 
-## The Financial Engine: Redirecting Waste, Not Raising Taxes
-
-This model does not require new money. It is an arbitrage on inefficiency.
-
--   **The Source is Waste:** The Pentagon [cannot account for \$2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets. Our ask of the U.S. is \$10 billion annually—an amount equal to just **0.4%** of what they've already lost. This isn't about finding new money; it's about redirecting a rounding error from unaccounted waste into productive use.
--   **The Engine is Proven Efficiency:** The decentralized clinical trial model we fund is **80X cheaper** than the status quo, a fact proven by the Oxford RECOVERY trial which saved over 1 million lives at a cost of [\$500 per patient versus the traditional \$41,000](#recovery-cost-500).
--   **The Value is Real Economics:** The [$16.5 trillion annual cost of violence](#global-violence-costs) is the largest pool of misallocated capital on the planet. We capture less than 0.2% of that waste and redirect it, creating \$27B in annual cash flow for investors and society. This is value capture from waste reduction, not digital asset speculation.
-
-## The Political Engine: An Unignorable Mandate
-
-The strategy is backed by proven mechanisms for political mobilization at scale.
-
--   **The 3.5% Tipping Point:** Nonviolent movements have [never failed to achieve their goals](#3-5-rule) once they achieve active participation from 3.5% of the population. Our referendum is designed to achieve this, creating the largest, most powerful political mandate in human history.
--   **Historical Precedent:** The playbook is not new. World War II was financed with [\$185 billion in war bonds](#wwii-war-bonds) sold to 85 million Americans. Net neutrality was won by [4 million public comments](#net-neutrality-comments) that forced policy change. The mechanisms work.
--   **Rational Actor Incentives:** When the math favors peace, rational actors choose peace. Military contractors' current model yields [\$1,813 per \$1 spent on lobbying](#lobbying-roi-calc). We offer a direct investment in bonds with a >40% CAGR, plus governance over the \$27B treasury. The choice is clear.
 
 ---
 
@@ -369,23 +418,31 @@ The Pentagon cannot account for **[\$2.5 trillion in assets](#pentagon-unaccount
 
 ---
 
-## The Personal Wealth Economics
+## How We Co-opt the Military-Industrial Complex
 
-**Military contractors' personal enrichment model:**
+**The Core Strategy: We don't compete with them. We co-opt them.**
+
+Our entire thesis is engineered to offer military contractors and politicians a better deal, turning today's **War Contractors** into tomorrow's **Peace Contractors**.
+
+**Current Military Contractor Economics:**
 - [\$1.1 billion lobbying](#lobbying-1-1b) (2001-2021) → [\$2.02 trillion contracts](#contracts-2-02t)
 - **Return: \$1,813 per \$1 spent on lobbying**
 - Politicians get modest campaign donations and revolving door jobs
 
-**What we're asking politicians to redirect:**
-- 1% of \$2.72T = **\$27 billion annually** in military contracts
-- Military contractors would spend ~**\$15 million in lobbying** to defend that revenue
+**Our Superior Offer to Military Contractors:**
+1. **You Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats your current defense contract ROI
+2. **You Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk
+3. **You Protect Your Family:** Your families get diseases too—profit from funding cures rather than weapons
+4. **Repurpose Your Lobbyists:** Instead of hiring new lobbyists, we "bribe" you with superior returns to get your existing lobbying apparatus to push for the treaty
 
-**Our superior offer to politicians (legal and more profitable):**
-- **Personal Investment Opportunity:** Politicians and their families can directly invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks. When your personal portfolio grows faster by supporting the treaty, the choice is obvious.
-- **Campaign Support:** Independent expenditures providing massive ad buys and ground game support for treaty supporters; equivalent opposition funding for defectors (no coordination).
-- **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the safer political choice.
+**Our Superior Offer to Politicians:**
+- **Personal Investment Opportunity:** You and your families can directly invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks
+- **Campaign Dominance:** Massive independent expenditure support for treaty supporters; equivalent opposition funding for defectors (no coordination)
+- **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the politically safer choice
 
-**The math:** We offer politicians more personal wealth than military contractors ever could, PLUS better campaign support, PLUS the moral high ground of saving lives. It's not even close.
+**The Math:** We offer everyone more personal wealth than the current system, PLUS better campaign support, PLUS the moral high ground of saving lives, PLUS reduced existential risk. When the math favors peace, rational actors choose peace.
+
+**Bottom Line:** By making peace and health more profitable than war and disease, we give every rational actor a clear financial incentive to support the treaty. We bribe our way to a better world.
 
 ---
 
@@ -526,15 +583,11 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **3. "A government's promise to pay is unenforceable. This is a fantasy."**
 
-*   **Reality:** Legal enforceability is a relic of a court-based system. Financial enforceability is what matters now. In a world of global capital markets, a sovereign nation defaulting on a treaty obligation backed by the world's most powerful investors is unthinkable. The financial cost of being blacklisted would be far greater than the 1% redirection. The "full faith and credit" of the global elite is a stronger guarantee than any court ruling.
+*   **Reality:** See [Why This Actually Works](#why-this-actually-works) → Financial enforcement through global capital markets is stronger than legal enforcement. Nations that default face economic consequences far greater than the 1% redirection.
 
 **4. "This is too operationally complex to build."**
 
-*   **Reality:** The core components of this system are not theoretical; they are based on battle-tested technologies that already secure billions of dollars in value. The global financial system has already built the necessary tools:
-    *   **Decentralized Governance:** DAOs like [MakerDAO](#makerdao-scale) and Uniswap already manage billions of dollars through transparent, on-chain voting, proving that large-scale, corruption-resistant treasuries are not just possible, but are already in operation.
-    *   **Global Value Transfer:** The technical challenge of granting a verifiable stake to millions of people globally is solved. We are using existing, open-source financial plumbing, not inventing it from scratch.
-    
-    The complexity is a necessary feature for creating a trustless, global-scale public utility that is immune to capture by any single government or corporation. We are assembling proven components into a new configuration to solve a social and political problem, not an unsolved technical one.
+*   **Reality:** We're assembling proven components, not inventing new technology. DAOs like [MakerDAO](#makerdao-scale) already manage billions securely. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for detailed implementation.
 
 **5. "This is politically impossible - you can't just redirect military budgets by referendum"**
 
@@ -542,11 +595,11 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **6. "You're assuming governments will honor treaty commitments when they don't honor existing ones"**
 
-*   **Reality:** Existing treaties fail because they lack enforcement mechanisms. Our system creates financial enforcement through global capital markets - a nation that defaults faces immediate economic consequences far greater than the 1% redirection. The "full faith and credit" of global investors is more reliable than international courts that have no real power.
+*   **Reality:** See [Why This Actually Works](#why-this-actually-works) → Our system creates financial enforcement that existing treaties lack. Global capital markets provide stronger enforcement than international courts.
 
 **7. "The 3.5% rule applies to civil resistance movements, not global online referendums"**
 
-*   **Reality:** The [3.5% rule](#3-5-rule) demonstrates that mass participation creates political legitimacy. Online participation translates to real political pressure when it's verifiable, permanent, and tied to electoral consequences. A cryptographically secure list of 280 million verified supporters becomes a political entity that candidates must respect or face electoral consequences.
+*   **Reality:** See [Why This Actually Works](#why-this-actually-works) → Mass participation creates political legitimacy regardless of format. 280 million verified supporters create an unignorable political mandate with electoral consequences.
 
 **8. "Independent expenditures don't work against entrenched incumbents with deep pockets"**
 
@@ -554,15 +607,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **9. "You're competing with military contractors who have decades of relationships and influence"**
 
-*   **Reality: We don't compete with them. We co-opt them.** Our entire thesis is engineered to offer them a better deal, turning today's **War Contractors** into tomorrow's **Peace Contractors**. We go to them with a simple, fiduciary proposition: you will make more money saving lives than you will ending them.
-    1.  **You Make More Money:** Your fiduciary duty is to maximize shareholder value. Our financial models show that redirecting capital to VICTORY bonds will generate more wealth than building systems that create existential risk.
-    2.  **You Get Better Security:** A healthier, more stable world is a safer world. Redirecting 1% from overkill capacity to pandemic prevention provides more real security than another nuclear submarine.
-    3.  **You Protect Your Family:** Contractors are humans. Their families get sick. They can profit from a system that fuels destruction, or they can profit *even more* by funding cures that might one day save their loved ones.
-    4.  **Repurpose Your Lobbyists:** Instead of us hiring new lobbyists, we "bribe" you with superior returns to get your existing lobbyists to push for the treaty. Your networks become our accelerators, turning opposition into advocacy overnight.
-
-    By making peace and health more profitable, we give every rational actor a clear financial incentive to support the treaty. We bribe our way to a better world.
-
-    For a detailed analysis of why co-opting contractors is superior to adversarial tactics, see [Co-Opting Defense Contractors](./co-opting-defense-contractors.md).
+*   **Reality:** See [How We Co-opt the Military-Industrial Complex](#how-we-co-opt-the-military-industrial-complex) above. We don't compete—we offer superior returns and co-opt their existing networks. For detailed analysis, see [Co-Opting Defense Contractors](./co-opting-defense-contractors.md).
 
 **10. "How do you prevent waste and ensure the money actually helps patients?"**
 
@@ -590,7 +635,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 **16. "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"**
 
-*   **Reality:** It is crucial to separate the underlying technology—secure, transparent, and auditable ledgers—from the speculative frenzy that has given 'crypto' a bad name. We are not creating a speculative meme coin. We are using battle-tested, open-source financial plumbing (similar to that securing billions in projects like MakerDAO) for a single purpose: to create a transparent, corruption-resistant, and democratically governed public utility. The value of VICTORY bonds is not based on hype, but on its claim on a real-world, legally-mandated treasury funded by the world's largest economies.
+*   **Reality:** We're not creating speculative assets—we're using battle-tested financial infrastructure for transparency and corruption resistance. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for our proven approach using technologies that already secure billions.
 
 **17. "What stops a few billionaires from buying up all the bonds and seizing the treasury?"**
 
@@ -924,17 +969,9 @@ This isn't hidden bribery; it's rational incentive design to make peace profitab
 *   **Reality:** We use this language deliberately because it is honest. The current system of political change runs on a slow, opaque, and inefficient form of bribery called lobbying. It is a system that funnels trillions toward destruction while claiming moral high ground. We choose to be brutally transparent about the reality that money moves power. Our "bribe" is not a backroom deal; it is an open, auditable, and transparently-govervened incentive system designed to produce peace and health. We believe that confronting the uncomfortable truth of how the world actually works is the only way to build a system that is genuinely better.
 
 ### 10. **"Why use tokens and a DAO? This sounds like a solution in search of a problem."**
-*   **Reality:** These tools are not a gimmick; they are the necessary plumbing for solving the core challenges of building a trusted global institution:
-    1.  **Global, Low-Friction Value Distribution:** How do you grant a verifiable stake to 280 million people across 100+ countries? Traditional banking makes this impossible. VICTORY bonds, recorded on a modern, efficient blockchain, are the only way to do this at scale.
-    2.  **Corruption-Resistant Governance:** How do you manage a \$27B treasury without it being captured by corrupt insiders? A Decentralized Autonomous Organization (DAO), governed by auditable smart contracts and controlled by millions of bond holders, removes the human targets for corruption that plague traditional institutions.
-    3.  **Radical Transparency:** Every transaction and decision is on a public ledger. This isn't a promise of transparency; it's a structural guarantee. We use this technology not because it's trendy, but because it is the only way to create a truly uncorruptible public utility.
+*   **Reality:** These are the only tools that solve the core challenges: global value distribution to 280M people, corruption-resistant governance of a \$27B treasury, and structural transparency guarantees. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for detailed technical approach.
 
-### 11. **Financial Risk: "What if this fails? Where's my return?"**
-*   **Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, benchmarked against elite funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
-
-**Mitigation:** Clear milestone gates for funding release; diversified repayment from multiple government commitments.
-
-### 12. **Execution Risk: "Can your team actually build this?"**
+### 11. **Execution Risk: "Can your team actually build this?"**
 *   **Response:** Our execution model is designed to maximize strategic focus and leverage elite global talent. We are not building a large, traditional organization. Instead, we are assembling a small, world-class **"activation team"** of strategic leaders (see our [Hiring Plan](../careers/hiring-plan.md)) whose sole function is to direct capital and manage a network of top-tier execution partners. This allows us to remain lean and focused, outsourcing tactical work like software development and media production to the best specialized firms in the world. We've allocated $250-400M for Phase 1 development with these proven partners. This model—a lean strategic core coordinating elite external teams—is the most capital-efficient and effective way to solve a problem of this scale.
 
 **Mitigation:** Advisory board of constitutional scholars, DAO experts, and former officials; phased rollout with pilot countries.
@@ -953,56 +990,6 @@ To make the abstract numbers feel concrete and personal, a new interactive modul
         -   **YOUR MISSION IMPACT:** "Your \$10,000 investment could fully fund **20 patient-months** in a decentralized clinical trial, directly accelerating the search for a cure."
 -   **Impact:** This module is critical. It transforms the user from a passive reader into an active participant. It connects the user's personal financial gain directly to the mission's impact, which is the entire point of the project.
 
----
-
-# Part 1: The New Narrative
-
-Humanity spends [\$2.72 trillion](#sipri-2024-spending) per year on war, the military, death, and destruction.
-
-Humanity spends 40X less ([\$67.5 billion](../reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
-
-What if there were a way to:
-*   End disease
-*   Increase national security
-*   Get filthy rich
-...simultaneously?
-
-**The Plan:** (legally) bribe the shit out of humanity to get it to act like a proper species for once.
-
-**More specifically:** Bribe the military industrial complex to use their lobbying apparatus to get every nation in the world to ratify a "[1% Treaty](./1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md) that subsidizes patient participation in "pragmatic clinical trials" [80X more efficient](../reference/recovery-trial.md) than standard trials.
-
-**How it works:** Make peace more profitable than war.
-
-Getting the 1% Treaty passed will require:
-*   A global referendum showing support from at least [3.5% of the population](#3-5-rule) of each nation.
-*   Extensive lobbying (using the existing military-industrial complex political apparatus).
-
-This effort will likely cost between [\$1 billion and \$2.5 billion](../economic-models/fundraising-and-budget-plan.md).
-
-### Q: How do we get \$2 billion and persuade the military industrial complex to help?
-
-**A: Create the most profitable investment vehicle in the world.**
-
-Currently, the Medallion Fund is widely recognized as the best-performing investment with a ~39% compound annual growth rate.
-
-We create a Victory Fund to finance the War on Disease by selling **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** just like the US did to finance WW2.
-
-One key difference is that our bonds are designed to return a **~40% CAGR**, making it the best investment opportunity in the world. That's a ~29X return over 10 years!
-
-The military industrial complex is composed of humans that are not evil, they just like money. So we sell and/or strategically give **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
-
-### Q: How is it possible to achieve a 40% CAGR?
-
-Say we sell \$1B worth of victory bonds. This means we need to pay buyers back \$29B over 10 years.
-
-If the treaty passes, the DIH treasury would receive 1% of current military spending, \$27B/year. That's \$270B over 10 years. Therefore, paying back bondholders with this enormous return would only require about 10% of the 10 years income leaving 90% for hyper efficient decentralized trials.
-
-### The Steps
-1.  Create a nonprofit entity for the [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md).
-2.  Create a Single Purpose Vehicle to issue the [VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md).
-3.  The DIH accepts donations to hire a full-time staff to run the global referendum and educate the world about the [1% Treaty](./1-percent-treaty/1-percent-treaty.md) and VICTORY bonds.
-4.  Raise [\$1-\$2.5B by selling VICTORY bonds](../economic-models/fundraising-and-budget-plan.md).
-5.  Fund referendums, conduct global ratification campaigns, etc.
 
 
 
