@@ -392,23 +392,6 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 # Part 4: The Plan
 
-## Why This Works
-
-**Human nature unchanged:** People respond to incentives. We make the right choice profitable.
-
-**Power follows money:** When curing people pays better than killing them, power shifts to healers.
-
-**Safety in numbers:** All nations move 1% together. No one gains advantage or loses ground.
-
-The strategic risk of non-compliance by some nations is minimal. Global military spending is already highly asymmetric; a 1% budget shift does not materially alter the balance of power.
-
-The Pentagon cannot account for **[\$2.5 trillion in assets](#pentagon-unaccounted-2-5t)**. The U.S. contribution to this plan is **\$10 billion per year**. We are asking to redirect an amount equal to **0.4%** of the money they have already lost.
-
-**Proof before action:** The referendum shows the world's will before any nation commits.
-
-**Existing institutions win:** Universities, hospitals, research centers—all receive more funding than ever before.
-
----
 
 ### Historical Precedents (Why this playbook wins)
 
