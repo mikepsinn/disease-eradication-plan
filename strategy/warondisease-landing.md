@@ -140,32 +140,33 @@ If the treaty passes, the DIH treasury would receive 1% of current military spen
 4.  Raise [\$1-\$2.5B by selling VICTORY bonds](../economic-models/fundraising-and-budget-plan.md).
 5.  Fund referendums, conduct global ratification campaigns, etc.
 
-
 ---
 
-## FACTS
+# II. THE PROBLEM (Establish Stakes)
+
+## The Grotesque Misallocation of Human Resources
 
 Governments spend **[\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](../reference/global-government-medical-research-spending.md)** on finding cures for diseases. That's a **40X disparity**.
 
 The Pentagon alone [can't account for \$2.5 trillion](#pentagon-unaccounted-2-5t) in assets—250 times larger than what we're asking them to redirect. **They lose more money by accident than we need to cure cancer.**
 
 We haven't eradicated a single disease in [over 50 years](#smallpox-eradicated). Meanwhile, we have [enough nuclear bombs to kill all of humanity twice](#nuke-winter-150tg).
-In our evolutionary past, a world with scarce resources, violence was necessary for survival. But today we live in a world with enough food for everyone.  In fact, nearly all starvation today is actually the RESULT of violent conflict.
+
+In our evolutionary past, when resources were scarce, violence was necessary for survival. But today we live in a world with enough food for everyone. In fact, nearly all starvation today is actually the RESULT of violent conflict.
+
+## Why Good Intentions Have Failed
+
+For centuries, we've known war brings suffering. Yet we fund it anyway. Why?
+
+Military contractors earn billions. Politicians receive generous donations. The cycle continues. **Moral arguments have never been enough to overcome financial incentives.**
+
+## The Existential Choice
 
 So humanity has 2 paths:
 1. Continue on a path of escalating conflict, risking self-inflicted extinction.
 2. Engineer a new system that aligns our vast resources with our collective survival and well-being.
 
 Pick one.
-
-
----
-
-## Costs of War vs Disease (Context)
-
-<!-- ![Global Military Spending](./1-percent-treaty/global-military-spending-chart.png) -->
-
-<!-- ![Military vs Medical Research Spending](./1-percent-treaty/war-military-spending-vs-medical-research-bar-chart.svg) -->
 
 See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](../reference/costs-of-war.md).
 
@@ -207,12 +208,6 @@ Fair skepticism. Here's why the math actually works:
 ---
 
 # Part 2: A Rational Solution
-
-## Why Good Intentions Have Failed
-
-For centuries, we've known war brings suffering. Yet we fund it anyway. Why?
-
-Military contractors earn billions. Politicians receive generous donations. The cycle continues. Moral arguments have never been enough to overcome financial incentives.
 
 ## Our Answer: Legal Bribery for Peace
 
