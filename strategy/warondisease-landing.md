@@ -86,9 +86,9 @@ Pick one.
 
 ## Costs of War vs Disease (Context)
 
-![Global Military Spending](./1-percent-treaty/global-military-spending-chart.png)
+<!-- ![Global Military Spending](./1-percent-treaty/global-military-spending-chart.png) -->
 
-![Military vs Medical Research Spending](./1-percent-treaty/war-military-spending-vs-medical-research-bar-chart.svg)
+<!-- ![Military vs Medical Research Spending](./1-percent-treaty/war-military-spending-vs-medical-research-bar-chart.svg) -->
 
 See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](../reference/costs-of-war.md).
 
