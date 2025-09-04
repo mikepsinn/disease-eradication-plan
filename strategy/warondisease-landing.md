@@ -202,6 +202,16 @@ graph TD;
 
 ---
 
+## Ready to Join?
+
+The full plan is detailed below. But if you're already convinced, here's how you can get involved now:
+
+* **Invest in the Solution:** [Buy VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md) to fund the mission and target a >40% CAGR.
+* **Show Your Support:** [Sign the Global Referendum](#) to help build the 3.5% mandate.
+* **Partner with Us:** [Contact our institutions team](#) to see how your organization can benefit.
+
+---
+
 # IV. THE FINANCIAL ENGINE (Why This Works)
 
 ## VICTORY Bonds: Bootstrap Funding Model
