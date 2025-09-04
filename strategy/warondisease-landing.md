@@ -13,24 +13,35 @@ domains: [cross]
 doc_type: strategy
 ---
 
+# The War on Disease Landing Page
 
-# The Plan in 60 Seconds
+_**Design Note:** The hero section should be visually dynamic._
+- _What if you could (in small text)_
+- _(List in big text):_
+    - _Eradicate disease_
+    - _End war_
+    - _Get filthy rich_
+- _simultaneously? (in small text)_
 
-Humanity spends [\$2.72 trillion](#sipri-2024-spending) per year on war, the military, death, and destruction.
+---
 
-Humanity spends 40X less ([\$67.5 billion](../reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
+War is incredibly stupid. It costs humanity over [$16.5 trillion/year](#global-violence-costs) in lost productivity, healthcare costs, property damage, environmental destruction, and other related expenses.
 
-What if there were a way to:
-*   End disease
-*   Increase national security
-*   Get filthy rich
-...simultaneously?
+Yet, we spend [$2.72 trillion](#sipri-2024-spending) per year on this idiocy.
 
-**The Plan:** (legally) bribe the shit out of humanity to get it to act like a proper species for once.
+All the while, death and disease are slowly destroying the lives of you and everyone you love. Yet we spend 40X less ([$67.5 billion](../reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
 
-**More specifically:** Bribe the military industrial complex to use their lobbying apparatus to get every nation in the world to ratify a "[1% Treaty](./1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md) that subsidizes patient participation in "pragmatic clinical trials" [80X more efficient](../reference/recovery-trial.md) than standard trials.
+Therefore, the **BEST IDEA IN THE WORLD** is for humanity to stop wasting its scarce resources on ever-increasing its capacity for self-destruction and instead use those resources to help the billions of people suffering from disease.
 
-**How it works:** Make peace more profitable than war.
+However, as this makes far too much sense for governments to ever implement, the **SECOND BEST IDEA IN THE WORLD** is for humanity to redirect just 1% of the $2.7 trillion currently allocated to death and destruction to curing diseases.
+
+### But how do we do it?
+
+**The Plan:** bribe the shit out of literally everyone (legally) to get every nation in the world to ratify a "[1% Treaty](./1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md) that subsidizes patient participation in "pragmatic clinical trials" [80X more efficient](../reference/recovery-trial.md) than standard trials.
+
+**How it works:** Make curing disease more profitable than war.
+
+For every $1 the military-industrial complex spends on lobbying politicians, it receives over [$1,813 in government contracts](#lobbying-roi-calc). So why couldn't a **Peace-Industrial Complex** do the same thing?
 
 Getting the 1% Treaty passed will require:
 *   A global referendum showing support from at least [3.5% of the population](#3-5-rule) of each nation.
