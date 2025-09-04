@@ -119,26 +119,11 @@ This effort will likely cost between [\$1 billion and \$2.5 billion](../economic
 
 **A: Create the most profitable investment vehicle in the world.**
 
-Currently, the Medallion Fund is widely recognized as the best-performing investment with a ~39% compound annual growth rate.
+We create a Victory Fund to finance the War on Disease by selling **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** just like the US did to finance WW2—except our bonds are designed to deliver world-class returns while funding the cure for disease.
 
-We create a Victory Fund to finance the War on Disease by selling **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** just like the US did to finance WW2.
+The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
 
-One key difference is that our bonds are designed to return a **~40% CAGR**, making it the best investment opportunity in the world. That's a ~29X return over 10 years!
-
-The military industrial complex is composed of humans that are not evil, they just like money. So we sell and/or strategically give **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
-
-### Q: How is it possible to achieve a 40% CAGR?
-
-Say we sell \$1B worth of victory bonds. This means we need to pay buyers back \$29B over 10 years.
-
-If the treaty passes, the DIH treasury would receive 1% of current military spending, \$27B/year. That's \$270B over 10 years. Therefore, paying back bondholders with this enormous return would only require about 10% of the 10 years income leaving 90% for hyper efficient decentralized trials.
-
-### The Steps
-1.  Create a nonprofit entity for the [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md).
-2.  Create a Single Purpose Vehicle to issue the [VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md).
-3.  The DIH accepts donations to hire a full-time staff to run the global referendum and educate the world about the [1% Treaty](./1-percent-treaty/1-percent-treaty.md) and VICTORY bonds.
-4.  Raise [\$1-\$2.5B by selling VICTORY bonds](../economic-models/fundraising-and-budget-plan.md).
-5.  Fund referendums, conduct global ratification campaigns, etc.
+**The result:** Everyone gets richer by funding cures instead of destruction.
 
 ---
 
@@ -217,84 +202,26 @@ graph TD;
 
 ---
 
-## Why This Actually Works
+# IV. THE FINANCIAL ENGINE (Why This Works)
 
-**"A $2.5B investment to capture $27B annually? Come on."**
-
-Fair skepticism. Here's why the math actually works:
-
-**1. We're Redirecting Waste, Not Raising New Money**
-- The Pentagon [cannot account for $2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets—our US ask is 0.4% of their unaccounted waste
-- This isn't "find new money"—it's "stop losing the money you already have"
-- Global military waste is the largest pool of misallocated capital on the planet
-
-**2. The 80X Efficiency Gain Is Already Proven**
-- Oxford RECOVERY trial: [$500 per patient vs. $41,000 traditional](#recovery-cost-500)—saved over 1 million lives globally
-- NIH RECOVER: [$1.6 billion, zero completed trials in 4 years](../reference/recovery-trial.md)
-- **This isn't theoretical. The efficiency gain already happened and saved millions.**
-
-**3. Mass Political Mobilization Works**
-- [3.5% mobilization has never failed](#3-5-rule) in recorded history (Chenoweth, Harvard)
-- War bonds: [$185 billion raised from 85 million Americans](#wwii-war-bonds) during WWII
-- Our referendum creates the largest political mandate in human history—when 280 million people vote for something, politicians listen
-
-**4. Financial Enforcement Is Stronger Than Legal Enforcement**
-- [$16.5 trillion annual cost of violence](#global-violence-costs)—we capture 0.16% of this waste
-- Nations that default face immediate economic consequences far greater than the 1% redirection
-- Global capital markets provide stronger enforcement than international courts
-
-**5. We Co-opt Rather Than Compete**
-- Military contractors' current ROI: [$1,813 per $1 spent on lobbying](#lobbying-roi-calc)
-- Our offer: >40% CAGR bonds + governance of $27B treasury + personal wealth creation
-- **When peace pays better than war, rational actors choose peace**
-
-**The Bottom Line:** We're not creating money out of thin air. We're redirecting money that's already being wasted into a system that produces 80X better results with mathematical precision.
-
----
-
-
-
-## Activation Energy Sequence: Who We Bribe First
-
-**Phase 1: Seed Investors (\$250-400M Initial Investment)**
-- **Who:** Wealthy individuals, funds, Anchor Investors
-- **The Bribe:** 
-  - **Targeting a >40% CAGR (~28x Return):** Our financial model is engineered to deliver a risk-adjusted return superior to the world's most elite investment funds (e.g., Renaissance Medallion Fund's ~39% CAGR). Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
-  - **VICTORY bonds** that grant governance control over the \$27B annual DIH treasury.
-  - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](../economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
-
-**Phase 2: VICTORY Bond Buyers (\$100-200M Referendum Funding)**
-- **Who:** Early Backers, health advocates, institutions
-- **The Bribe:**
-  - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
-  - Governance control over \$27B annually in captured value from military budget redirection
-  - Voting rights on patient subsidies and research funding allocation
-  - Bond value backed by actual treasury growth from treaty implementation (\$0 → \$27B)
-
-**Phase 3: Citizens (Global Population)**
-- **Who:** Global population (targeting 3.5% = 280M people)
-- **The Bribe:** A large grant of **VOTE points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
-
-**Phase 4: Politicians (\$800M-1.5B Independent Expenditures)**
-- **Who:** Key legislators in target countries
-- **The Bribe:** 
-  - **Personal Wealth Creation:** Early access to [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) with superior returns designed to outperform defense stocks and traditional political corruption
-  - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
-  - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
-
-**The Compounding Effect:** Each phase funds the next. Seed investors control governance of \$27B treasury. Bond buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
-
----
-
-## The Treasury Model
+## VICTORY Bonds: Bootstrap Funding Model
 
 **[VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
 
+Our financing is governed by two core, transparent principles that ensure a fair balance between rewarding investors and fulfilling our mission:
+
+1. **The Target Return Principle (The "Ceiling"):** We aim to deliver the world's best risk-adjusted return, targeting a **~40% compound annual growth rate (CAGR)** (~28x over 10 years) for our early investors.
+2. **The Mission Guarantee Principle (The "Floor"):** To protect our ultimate goal, annual investor payouts will **never exceed 50% of the DIH's total annual income.**
+
+The model is designed to **front-load investor returns**, paying out the target amount (~$7.23B per year in the full success scenario) as quickly as treaty inflows allow. The 40% CAGR represents the total 10-year return, while the large year-one payout reflects our strategy of rapidly de-risking the investment for our partners.
+
+## The DIH Treasury: 80X More Efficient Research
+
 **[Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](../problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) protocol** with proven results:
 
--   **[80X Greater Efficiency](../reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [\$41,000](#trial-cost-41k) to as low as [\$500](#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](../reference/recovery-trial.md), which saved over 1 million lives globally.
--   **[\$50 Billion in Annual Savings](../economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA protocol is projected to save the global R&D industry ~\$50 billion annually—**based on actual performance data, not projections**.
--   **[840,000+ Extra Years of Healthy Life](../economic-models/dfda-cost-benefit-analysis.md):** The protocol is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**scaling proven results, not theoretical models**.
+- **[80X Greater Efficiency](../reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [$41,000](#trial-cost-41k) to as low as [$500](#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](../reference/recovery-trial.md), which saved over 1 million lives globally.
+- **[$50 Billion in Annual Savings](../economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA protocol is projected to save the global R&D industry ~$50 billion annually—**based on actual performance data, not projections**.
+- **[840,000+ Extra Years of Healthy Life](../economic-models/dfda-cost-benefit-analysis.md):** The protocol is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**scaling proven results, not theoretical models**.
 
 **Specialized programs fund existing institutions:** 
 - Decentralized Institute of Mental Health → funds universities, pharma, nonprofits working on depression, anxiety, etc.
@@ -329,7 +256,174 @@ graph TD;
     end
 ```
 
+## Investment Required vs. Returns
+
+**Total Implementation Cost:** $1.2-2.5B over 36 months
+
+**What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](../economic-models/fundraising-and-budget-plan.md).
+- Global referendum "Proof-of-Vote" points platform (~$5-10M)
+- Independent expenditures in priority elections (~$800M-1.5B)
+- Strategic incentive alignment to co-opt the MIC (~$100-200M)
+- Platform development and pilot programs (~$250-400M)
+- Legal compliance and treaty framework (~$100-200M)
+
+**Annual Returns Once Operational:** $27B+ per year from 1% military budget redirections
+
+**ROI Timeline:** 18-36 months after first treaty ratification
+
+**Break-even Analysis:** Even in a conservative partial success scenario where only the **US, EU, & UK** participate (generating **$13B annually**), the system generates a **cash payout of $6.5B (2.6X the initial $2.5B investment)** in the first year of operation alone.
+
+**The Math:** We're asking for $2.5B to redirect $27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
+
+This simple model ensures that even in conservative scenarios, the DIH remains massively well-funded while providing returns that beat the best hedge funds. For a complete breakdown, see our [Dynamic Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
+
 ---
+
+# V. THE BRIBERY STRATEGY (How Everyone Wins)
+
+## The Core Strategy: Co-opt, Don't Compete
+
+**We don't compete with the military-industrial complex. We co-opt them.**
+
+Our entire thesis is engineered to offer military contractors and politicians a better deal, turning today's **War Contractors** into tomorrow's **Peace Contractors**.
+
+**Current Military Contractor Economics:**
+- [$1.1 billion lobbying](#lobbying-1-1b) (2001-2021) → [$2.02 trillion contracts](#contracts-2-02t)
+- **Return: $1,813 per $1 spent on lobbying**
+- Politicians get modest campaign donations and revolving door jobs
+
+## Activation Energy Sequence: Who We Bribe First
+
+**Phase 1: Seed Investors ($250-400M Initial Investment)**
+- **Who:** Wealthy individuals, funds, Anchor Investors
+- **The Bribe:** 
+  - **Targeting a >40% CAGR (~28x Return):** Our financial model is engineered to deliver a risk-adjusted return superior to the world's most elite investment funds (e.g., Renaissance Medallion Fund's ~39% CAGR). Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
+  - **VICTORY bonds** that grant governance control over the $27B annual DIH treasury.
+  - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](../economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
+
+**Phase 2: VICTORY Bond Buyers ($100-200M Referendum Funding)**
+- **Who:** Early Backers, health advocates, institutions
+- **The Bribe:**
+  - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
+  - Governance control over $27B annually in captured value from military budget redirection
+  - Voting rights on patient subsidies and research funding allocation
+  - Bond value backed by actual treasury growth from treaty implementation ($0 → $27B)
+
+**Phase 3: Citizens (Global Population)**
+- **Who:** Global population (targeting 3.5% = 280M people)
+- **The Bribe:** A large grant of **VOTE points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
+
+**Phase 4: Politicians ($800M-1.5B Independent Expenditures)**
+- **Who:** Key legislators in target countries
+- **The Bribe:** 
+  - **Personal Wealth Creation:** Early access to [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) with superior returns designed to outperform defense stocks and traditional political corruption
+  - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
+  - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
+
+## Superior Offers to Key Stakeholders
+
+**Our Superior Offer to Military Contractors:**
+1. **You Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats your current defense contract ROI
+2. **You Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk
+3. **You Protect Your Family:** Your families get diseases too—profit from funding cures rather than weapons
+4. **Repurpose Your Lobbyists:** Instead of hiring new lobbyists, we "bribe" you with superior returns to get your existing lobbying apparatus to push for the treaty
+
+**Our Superior Offer to Politicians:**
+- **Personal Investment Opportunity:** You and your families can directly invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks
+- **Campaign Dominance:** Massive independent expenditure support for treaty supporters; equivalent opposition funding for defectors (no coordination)
+- **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the politically safer choice
+
+**The Compounding Effect:** Each phase funds the next. Seed investors control governance of $27B treasury. Bond buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
+
+**The Math:** We offer everyone more personal wealth than the current system, PLUS better campaign support, PLUS the moral high ground of saving lives, PLUS reduced existential risk. When the math favors peace, rational actors choose peace.
+
+**Bottom Line:** By making peace and health more profitable than war and disease, we give every rational actor a clear financial incentive to support the treaty. We bribe our way to a better world.
+
+---
+
+# VI. PROOF & PRECEDENTS (Why This Isn't Insane)
+
+## Why This Actually Works
+
+**"A $2.5B investment to capture $27B annually? Come on."**
+
+Fair skepticism. Here's why the math actually works:
+
+**1. We're Redirecting Waste, Not Raising New Money**
+- The Pentagon [cannot account for $2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets—our US ask is 0.4% of their unaccounted waste
+- This isn't "find new money"—it's "stop losing the money you already have"
+- Global military waste is the largest pool of misallocated capital on the planet
+
+**2. The 80X Efficiency Gain Is Already Proven**
+- Oxford RECOVERY trial: [$500 per patient vs. $41,000 traditional](#recovery-cost-500)—saved over 1 million lives globally
+- NIH RECOVER: [$1.6 billion, zero completed trials in 4 years](../reference/recovery-trial.md)
+- **This isn't theoretical. The efficiency gain already happened and saved millions.**
+
+**3. Mass Political Mobilization Works**
+- [3.5% mobilization has never failed](#3-5-rule) in recorded history (Chenoweth, Harvard)
+- War bonds: [$185 billion raised from 85 million Americans](#wwii-war-bonds) during WWII
+- Our referendum creates the largest political mandate in human history—when 280 million people vote for something, politicians listen
+
+**4. Financial Enforcement Is Stronger Than Legal Enforcement**
+- [$16.5 trillion annual cost of violence](#global-violence-costs)—we capture 0.16% of this waste
+- Nations that default face immediate economic consequences far greater than the 1% redirection
+- Global capital markets provide stronger enforcement than international courts
+
+**5. We Co-opt Rather Than Compete**
+- Military contractors' current ROI: [$1,813 per $1 spent on lobbying](#lobbying-roi-calc)
+- Our offer: >40% CAGR bonds + governance of $27B treasury + personal wealth creation
+- **When peace pays better than war, rational actors choose peace**
+
+**The Bottom Line:** We're not creating money out of thin air. We're redirecting money that's already being wasted into a system that produces 80X better results with mathematical precision.
+
+## Historical Precedents (Why This Playbook Wins)
+
+- Decentralized coalitions can create binding law: the International Campaign to Ban Landmines led to the 1997 Ottawa Treaty (see [ICBL](#icbl-ottawa-treaty)).
+- Mobilizing private capital for public missions works: [World War II war bonds](#wwii-war-bonds) financed national efforts at scale.
+- New global health institutions can marshal billions effectively: the [Global Fund to Fight AIDS, Tuberculosis and Malaria](#global-fund) proves rapid, coordinated international funding is achievable.
+
+## Why 1% Less Military = More Security
+
+**Modern weapons make everyone less safe:**
+- Nuclear weapons: [1% fewer = ~120 fewer nukes worldwide](#world-warheads)
+- AI weapons systems: Reduce global AI arms race escalation  
+- Cyber warfare tools: Less proliferation of attack capabilities
+
+**Real security threats are health-based:**
+- [Pandemics kill more people than wars](#pandemics-vs-wars) (COVID-19: 7M+ deaths vs. annual conflict deaths ~100K)
+- Antibiotic resistance could kill [10M/year by 2050](#amr-10m-2050)
+- [Mental health crises destabilize societies](#mental-health-burden) more than foreign armies
+
+**1% reallocation = stronger nations:**
+- Healthier populations are more productive
+- Medical breakthroughs boost economic competitiveness
+- Reduced healthcare costs free up MORE budget for military spending if needed
+
+### The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
+
+Even if the Decentralized Institutes of Health were a completely inefficient failure and dumped every single dollar into the ocean, the world would *still* be better off.
+
+Why?
+
+Because we would still have **1% fewer nuclear weapons**. We would still have a **1% slower AI arms race**. We would still have a **1% reduction in the global capacity for organized violence.**
+
+The worst possible outcome of this plan—total waste—is still a net gain for global security. The best possible outcome is that we also cure cancer.
+
+### The Peace Dividend: The Economic Engine of Victory
+
+The financial power of this model comes from capturing the first, tangible portion of the **$16.5 trillion annual "Cost of Violence"**—the single largest pool of misallocated capital on the planet.
+
+- **The Captured Dividend:** We redirect **$27 billion annually** from military spending to health. This tangible cash flow is the *captured* portion of the Peace Dividend that directly backs our financial instruments.
+- **The Societal Dividend:** By reducing global conflict drivers by 1%, our intervention unlocks a much larger prize for the world. A 1% reduction of the $16.5T Cost of Violence equates to **$165 billion in annual economic value** returned to society through increased stability and productivity.
+
+We capture the first $27B to unlock the full $165B for everyone. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
+
+---
+
+
+
+
+
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
 
@@ -393,33 +487,6 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ---
 
-## How We Co-opt the Military-Industrial Complex
-
-**The Core Strategy: We don't compete with them. We co-opt them.**
-
-Our entire thesis is engineered to offer military contractors and politicians a better deal, turning today's **War Contractors** into tomorrow's **Peace Contractors**.
-
-**Current Military Contractor Economics:**
-- [\$1.1 billion lobbying](#lobbying-1-1b) (2001-2021) → [\$2.02 trillion contracts](#contracts-2-02t)
-- **Return: \$1,813 per \$1 spent on lobbying**
-- Politicians get modest campaign donations and revolving door jobs
-
-**Our Superior Offer to Military Contractors:**
-1. **You Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats your current defense contract ROI
-2. **You Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk
-3. **You Protect Your Family:** Your families get diseases too—profit from funding cures rather than weapons
-4. **Repurpose Your Lobbyists:** Instead of hiring new lobbyists, we "bribe" you with superior returns to get your existing lobbying apparatus to push for the treaty
-
-**Our Superior Offer to Politicians:**
-- **Personal Investment Opportunity:** You and your families can directly invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks
-- **Campaign Dominance:** Massive independent expenditure support for treaty supporters; equivalent opposition funding for defectors (no coordination)
-- **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the politically safer choice
-
-**The Math:** We offer everyone more personal wealth than the current system, PLUS better campaign support, PLUS the moral high ground of saving lives, PLUS reduced existential risk. When the math favors peace, rational actors choose peace.
-
-**Bottom Line:** By making peace and health more profitable than war and disease, we give every rational actor a clear financial incentive to support the treaty. We bribe our way to a better world.
-
----
 
 ## Referendums vs Independent Expenditures
 
@@ -454,77 +521,8 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 
 ---
 
-## Investment Required vs. Returns
 
-**Total Implementation Cost:** \$1.2-2.5B over 36 months
 
-**What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](../economic-models/fundraising-and-budget-plan.md).
-- Global referendum "Proof-of-Vote" points platform (~$5-10M)
-- Independent expenditures in priority elections (~$800M-1.5B)
-- Strategic incentive alignment to co-opt the MIC (~$100-200M)
-- Platform development and pilot programs (~$250-400M)
-- Legal compliance and treaty framework (~$100-200M)
-
-**Annual Returns Once Operational:** \$27B+ per year from 1% military budget redirections
-
-**ROI Timeline:** 18-36 months after first treaty ratification
-
-**Break-even Analysis:** Even in a conservative partial success scenario where only the **US, EU, & UK** participate (generating **\$13B annually**), the system generates a **cash payout of \$6.5B (2.6X the initial \$2.5B investment)** in the first year of operation alone.
-
-**The Math:** We're asking for \$2.5B to redirect \$27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
-
----
-
-## Financing Structure: Principled, Transparent, and Fair
-
-Our financing is not based on complex, opaque structures. It is governed by two core, transparent principles that ensure a fair balance between rewarding investors and fulfilling our mission.
-
-1.  **The Target Return Principle (The "Ceiling"):** We aim to deliver the world's best risk-adjusted return, targeting a **~40% compound annual growth rate (CAGR)** (~28x over 10 years) for our early investors.
-2.  **The Mission Guarantee Principle (The "Floor"):** To protect our ultimate goal, annual investor payouts will **never exceed 50% of the DIH's total annual income.**
-
-The model is designed to **front-load investor returns**, paying out the target amount (~$7.23B per year in the full success scenario) as quickly as treaty inflows allow. The 40% CAGR represents the total 10-year return, while the large year-one payout reflects our strategy of rapidly de-risking the investment for our partners.
-
-This simple model ensures that even in conservative scenarios, the DIH remains massively well-funded while providing returns that beat the best hedge funds. For a complete breakdown, see our [Dynamic Cash Flow Model](../economic-models/dih-treasury-cash-flow-model.md).
-
----
-
-## Why 1% Less Military = More Security
-
-**Modern weapons make everyone less safe:**
-- Nuclear weapons: [1% fewer = ~120 fewer nukes worldwide](#world-warheads)
-- AI weapons systems: Reduce global AI arms race escalation  
-- Cyber warfare tools: Less proliferation of attack capabilities
-
-**Real security threats are health-based:**
-- [Pandemics kill more people than wars](#pandemics-vs-wars) (COVID-19: 7M+ deaths vs. annual conflict deaths ~100K)
-- Antibiotic resistance could kill [10M/year by 2050](#amr-10m-2050)
-- [Mental health crises destabilize societies](#mental-health-burden) more than foreign armies
-
-**1% reallocation = stronger nations:**
-- Healthier populations are more productive
-- Medical breakthroughs boost economic competitiveness
-- Reduced healthcare costs free up MORE budget for military spending if needed
-
-### The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
-
-Even if the Decentralized Institutes of Health were a completely inefficient failure and dumped every single dollar into the ocean, the world would *still* be better off.
-
-Why?
-
-Because we would still have **1% fewer nuclear weapons**. We would still have a **1% slower AI arms race**. We would still have a **1% reduction in the global capacity for organized violence.**
-
-The worst possible outcome of this plan—total waste—is still a net gain for global security. The best possible outcome is that we also cure cancer.
-
-### The Peace Dividend: The Economic Engine of Victory
-
-The financial power of this model comes from capturing the first, tangible portion of the **$16.5 trillion annual "Cost of Violence"**—the single largest pool of misallocated capital on the planet.
-
-*   **The Captured Dividend:** We redirect **$27 billion annually** from military spending to health. This tangible cash flow is the *captured* portion of the Peace Dividend that directly backs our financial instruments.
-*   **The Societal Dividend:** By reducing global conflict drivers by 1%, our intervention unlocks a much larger prize for the world. A 1% reduction of the $16.5T Cost of Violence equates to **$165 billion in annual economic value** returned to society through increased stability and productivity.
-
-We capture the first $27B to unlock the full $165B for everyone. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
-
----
 
 # Part 5: Objections & Rebuttals
 
