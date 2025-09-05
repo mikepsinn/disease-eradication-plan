@@ -103,7 +103,7 @@ However, as this makes far too much sense for governments to ever implement, the
 
 ### But how do we do it?
 
-**The Plan:** bribe the shit out of literally everyone (legally) to get every nation in the world to ratify a "[1% Treaty](./1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md) that subsidizes patient participation in "pragmatic clinical trials" [80X more efficient](../reference/recovery-trial.md) than standard trials.
+**The Plan:** legally bribe the shit out of literally everyone to get every nation in the world to ratify a "[1% Treaty](./1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md) that subsidizes patient participation in "pragmatic clinical trials" [80X more efficient](../reference/recovery-trial.md) than standard trials.
 
 **How it works:** Make curing disease more profitable than war.
 
@@ -163,7 +163,7 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 
 We will not change minds with morals. We will make curing people more profitable than killing them. We call this **Peace Profiteering**.
 
-The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will bribe* our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
+The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will legally bribe our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
 
 ```mermaid
 graph TD;
@@ -273,7 +273,7 @@ graph TD;
 **What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](../economic-models/fundraising-and-budget-plan.md).
 - Global referendum "Proof-of-Vote" points platform (~$5-10M)
 - Independent expenditures in priority elections (~$800M-1.5B)
-- Targeted bribes* to co-opt the MIC (~$100-200M)
+- Targeted legal bribes to co-opt the MIC (~$100-200M)
 - Platform development and pilot programs (~$250-400M)
 - Legal compliance and treaty framework (~$100-200M)
 
@@ -302,7 +302,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 - **Return: $1,813 per $1 spent on lobbying**
 - Politicians get modest campaign donations and revolving door jobs
 
-## Activation Energy Sequence: Who We Bribe First
+## Activation Energy Sequence: Who We (legally) Bribe First
 
 **Phase 1: Seed Investors ($250-400M Initial Investment)**
 - **Who:** Wealthy individuals, funds, Anchor Investors
@@ -336,18 +336,19 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 1. **You Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats your current defense contract ROI
 2. **You Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk
 3. **You Protect Your Family:** Your families get diseases too—profit from funding cures rather than weapons
-4. **Repurpose Your Lobbyists:** Instead of hiring new lobbyists, we bribe* you with superior returns to get your existing lobbying apparatus to push for the treaty
+4. **Repurpose Your Lobbyists:** Instead of hiring new lobbyists, we legally bribe you with superior returns to get your existing lobbying apparatus to push for the treaty
 
 **Our Superior Offer to Politicians:**
 - **Personal Investment Opportunity:** You and your families can directly invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks
 - **Campaign Dominance:** Massive independent expenditure support for treaty supporters; equivalent opposition funding for defectors (no coordination)
 - **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the politically safer choice
+- **Political Insurance:** A new, highly popular policy platform that lets politicians claim credit for curing diseases and extending lifespans
 
 **The Compounding Effect:** Each phase funds the next. Seed investors control governance of $27B treasury. Bond buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
 
 **The Math:** We offer everyone more personal wealth than the current system, PLUS better campaign support, PLUS the moral high ground of saving lives, PLUS reduced existential risk. When the math favors peace, rational actors choose peace.
 
-**Bottom Line:** By making peace and health more profitable than war and disease, we give every rational actor a clear financial incentive to support the treaty. We bribe* our way to a better world.
+**Bottom Line:** By making peace and health more profitable than war and disease, we give every rational actor a clear financial incentive to support the treaty. We legally bribe our way to a better world.
 
 ---
 
@@ -434,7 +435,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ## Why This Isn't Completely Insane
 
-**1. "This sounds like a cynical, illegal bribe. You'll have no soul."**
+**1. "This sounds like an illegal bribe."**
 
 *   **Reality:** The current system of "legal" lobbying is a slow, inefficient bribe that produces war, disease, and existential risks like nuclear apocalypse or Skynet. Our transparent incentives produce peace, health, and human flourishing. In a world where leaders fund campaigns with crypto and sell access, we're applying market realities to save lives. The consequentialist math is clear: continued misallocation leads to preventable deaths, destruction, and possible extinction. Our "soul" is in the outcome: preventing that fate by making healing more profitable than killing.
 
@@ -712,7 +713,7 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 
 ### Source Quotes for Key Parameters
 
-\* Throughout this document, “bribe/bribes” means legal incentives: independent expenditures (no coordination), compliant securities (e.g., Reg S/Reg A+ where applicable), and performance‑based diplomatic or economic packages structured to comply with anti‑corruption laws (e.g., FCPA). See Legal Compliance (jurisdiction‑specific) above for details.
+\* Throughout this document, bribe means legal incentives: independent expenditures (no coordination), compliant securities (e.g., Reg S/Reg A+ where applicable), and performance‑based diplomatic or economic packages structured to comply with anti‑corruption laws (e.g., FCPA). See Legal Compliance (jurisdiction‑specific) above for details.
 
 <a id="sipri-2024-spending"></a>
 * **Global military spending (\$2.72T, 2024)**
