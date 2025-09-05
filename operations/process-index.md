@@ -15,6 +15,12 @@ dateCreated: 2025-08-22
 
 ---
 
+## Operational Plans
+
+- **[Phase 0 & 1 - Bootstrap & Foundation](./phase-0-bootstrap-plan.md):** The detailed, task-level plan for the initial pre-seed and foundation phases of the project.
+
+---
+
 ## Growth & Referrals (Owner: Growth & Referrals Lead)
 - Phase(s): Starts in Phase 1 (setup); runs in Phase 2 (scale) and Phase 3 (ongoing)
 - WIG: Hit verified vote targets in each country.

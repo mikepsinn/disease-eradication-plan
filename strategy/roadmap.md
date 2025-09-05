@@ -17,59 +17,39 @@ doc_type: strategy
 
 This document outlines the high-level, multi-year strategy to achieve the 1% Treaty. It presents a logical sequence of major phases, from initial planning to global impact. Each step is a massive undertaking with its own detailed implementation plan, which is linked accordingly.
 
----
-
-## Phase 0: Bootstrap & Founding Team (Months 0-3)
-
-**Goal:** Solve the "chicken-and-egg" problem. Secure enough pre-seed capital to hire a core team and establish the legal and financial groundwork for the main capital raise. This phase is executed by the initial founder.
-
-| Task | Owner | Dependencies | Timeline | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Stream 1: Pitch & Pre-Seed Funding** | | | | |
-| Draft core pitch deck summarizing the "ask" | Founder | [Landing Page Content](./warondisease-landing.md) | 1 Week | `Done` |
-| Finalize [Pre-Seed SAFT terms](../economic-models/pre-seed-terms.md) | Founder | Pitch Deck | 3 Days | `Done` |
-| Approve & Adopt [Team Incentive Policy](./team-incentives.md) | Founder | Pitch Deck | 1 Day | `Done` |
-| Build & deploy landing page (v1) | Founder | Pitch Deck | 1-2 Weeks | `Not Started` |
-| Build target list of angel & pre-seed investors | Founder | Pitch Deck | 1 Week | `Not Started` |
-| Begin investor outreach & hold pitch meetings | Founder | Landing Page Live | 8 Weeks | `Not Started` |
-| Secure pre-seed funding ($250k-$750k) | Founder | Pitch Meetings | 4 Weeks | `Not Started` |
-| **Stream 2: Founding Team Recruitment** | | | | |
-| Draft Job Description: General Counsel (Contract/Part-Time) | Founder | *(None)* | 2 Days | `Not Started` |
-| Draft Job Description: Co-founder / Head of Operations | Founder | *(None)* | 2 Days | `Not Started` |
-| Begin recruitment for General Counsel | Founder | Funding Secured | Ongoing | `Not Started` |
-| Begin recruitment for Co-founder / Head of Operations | Founder | Funding Secured | Ongoing | `Not Started` |
+See [Pre-Seed Strategy: The First 90 Days](./pre-seed-strategy.md) for the detailed operational plan for Phase 0.
 
 ---
 
-## Phase 1: Infrastructure & Mobilization Prep (Months 4-12)
+<a id="phase-0"></a>
+## Phase 0: Pre-Seed & Foundation (Months 0-3)
+
+**Goal:** Establish the core legal and financial structure and hire the "activation team" required to execute the main capital raise and global campaign. This phase bridges the gap from concept to an investable, operational entity.
+
+*   **Key Activities:**
+    *   **Legal:** Incorporate the two-entity structure: a for-profit management company (SPV) and a non-profit foundation. Secure initial legal opinions on securities and election law frameworks.
+    *   **Fundraising:** Raise a **$1M-$3M pre-seed round** into the SPV to fund salaries, legal, and initial operations for 12-18 months.
+    *   **Hiring:** Recruit the three core leads for the activation team (employees of the SPV):
+        *   Capital Markets Lead
+        *   Elections & IE Compliance Lead
+        *   Growth & Referrals Lead
+    *   **Strategy:** Finalize the data room, financial models, and pitch materials for the larger seed round.
+
+---
+
+<a id="phase-1"></a>
+## Phase 1: Foundation & Legal Framework (Months 1-12)
 
 **Goal:** With a core team and seed funding in place, build the full legal, financial, and technical infrastructure required for the global campaign.
 
-| Task | Owner | Dependencies | Timeline | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Stream 1: Strategy & Narrative** | | | | |
-| Final review & sign-off on `warondisease-landing.md` | Program Lead | *(None)* | | `Done` |
-| Add "Too Good to Be True?" sections to key docs | Program Lead | `warondisease-landing.md` | 1 Week | `Not Started` |
-| **Stream 2: Team Expansion** | | | | |
-| Draft Job Descriptions for Leads | Program Lead | | | `Done` |
-| Begin recruitment outreach for Design Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
-| Begin recruitment outreach for Engineering Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
-| Begin recruitment outreach for Growth Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
-| **Stream 3: Website & Public Presence** | | | | |
-| Create wireframes & final visual design | Design Lead | `warondisease-landing.md` | 2 Weeks | `Not Started` |
-| Develop website frontend | Engineering Lead | Visual Design | 3 Weeks | `Not Started` |
-| Develop referral engine backend | Engineering Lead | | 4 Weeks | `Not Started` |
-| Develop Peace Dividend calculator | Engineering Lead | | 2 Weeks | `Not Started` |
-| Deploy public website V1 | Engineering Lead | Frontend/Backend Dev | 1 Week | `Not Started` |
-| Launch v1 of the Bounty Program | Program Lead | [Bounty Model Doc](./open-ecosystem-and-bounty-model.md) | 1 Week | `Not Started` |
-| **Stream 4: Legal & Financial Infrastructure** | | | | |
-| Select jurisdiction & file for legal entity incorporation | Legal/Policy Lead | | 2 Weeks | `Not Started` |
-| Draft initial version of Impact Securities Reform Act | Legal/Policy Lead | | 6 Weeks | `Not Started` |
-| Stand up core treasury vaults & dashboards | On-Chain/Treasury Lead | | 3 Weeks | `Not Started` |
-| Finalize tokenomics & investment thesis documents | Capital Markets Lead | | 2 Weeks | `Not Started` |
+*   **Key Activities:**
+    *   **Team Expansion:** Recruit leads for Design, Engineering, and Policy.
+    *   **Platform Development:** Build and deploy V1 of the global referendum platform, referral engine, and calculators.
+    *   **Legal & Financial Infrastructure:** Select jurisdictions, formalize treasury management, finalize tokenomics, and begin drafting model legislation like the [Impact Securities Reform Act](../regulatory/impact-securities-reform.md).
 
 ---
 
+<a id="phase-2"></a>
 ## Phase 2: Capital & Political Mobilization (Months 12-36)
 
 **Goal:** Raise the necessary capital and generate an undeniable global political mandate.
