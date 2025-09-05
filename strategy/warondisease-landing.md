@@ -333,13 +333,13 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 ## Superior Offers to Key Stakeholders
 
 **Our Superior Offer to Military Contractors:**
-1. **You Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats your current defense contract ROI
-2. **You Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk
-3. **You Protect Your Family:** Your families get diseases too—profit from funding cures rather than weapons
-4. **Repurpose Your Lobbyists:** Instead of hiring new lobbyists, we legally bribe you with superior returns to get your existing lobbying apparatus to push for the treaty
+1. **They Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats all alternative investment options
+2. **They Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk
+3. **They Protect Their Families:** Their families get diseases too. Hence, they'd be better off profiting from funding cures rather than bombs
+4. **Repurpose Their Lobbyists:** Instead of hiring new lobbyists, we legally bribe them with superior returns to get their existing lobbying apparatus to push for the treaty
 
 **Our Superior Offer to Politicians:**
-- **Personal Investment Opportunity:** You and your families can directly invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks
+- **Personal Investment Opportunity:** Politicians and their families can directly invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks
 - **Campaign Dominance:** Massive independent expenditure support for treaty supporters; equivalent opposition funding for defectors (no coordination)
 - **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the politically safer choice
 - **Political Insurance:** A new, highly popular policy platform that lets politicians claim credit for curing diseases and extending lifespans
