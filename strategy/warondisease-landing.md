@@ -27,7 +27,7 @@ doc_type: strategy
    - The insanity of nuclear overkill while diseases ravage families
 
 ## III. THE SOLUTION (Simple & Clear)
-   - The 1% Treaty: redirect 1% military → health
+   - The 1% Treaty: redirect 1% of military → health
    - Decentralized Institutes of Health (DIH) treasury model
    - 80X more efficient trials (RECOVERY vs NIH RECOVER example)
    - Global referendum → treaty → funding
@@ -429,25 +429,6 @@ The financial power of this model comes from capturing the first, tangible porti
 We capture the first $27B to unlock the full $165B for everyone. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](../economic-models/peace-dividend-value-capture.md).
 
 ---
-
-
-
-
-
-
-### Historical Precedents (Why this playbook wins)
-
-- Decentralized coalitions can create binding law: the International Campaign to Ban Landmines led to the 1997 Ottawa Treaty (see [ICBL](#icbl-ottawa-treaty)).
-- Mobilizing private capital for public missions works: [World War II war bonds](#wwii-war-bonds) financed national efforts at scale.
-- New global health institutions can marshal billions effectively: the [Global Fund to Fight AIDS, Tuberculosis and Malaria](#global-fund) proves rapid, coordinated international funding is achievable.
-
----
-
-
-
-
-
-
 
 # VII. OBJECTIONS & RESPONSES (Address Skepticism)
 
@@ -938,6 +919,8 @@ To make the abstract numbers feel concrete and personal, a new interactive modul
         -   **YOUR FINANCIAL RETURN:** "Your projected 10-year return would be **\$290,000** (a 29X return)."
         -   **YOUR MISSION IMPACT:** "Your \$10,000 investment could fully fund **20 patient-months** in a decentralized clinical trial, directly accelerating the search for a cure."
 -   **Impact:** This module is critical. It transforms the user from a passive reader into an active participant. It connects the user's personal financial gain directly to the mission's impact, which is the entire point of the project.
+
+---
 
 
 
