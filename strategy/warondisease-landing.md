@@ -15,7 +15,7 @@ doc_type: strategy
 
 # Optimal Landing Page Structure: War on Disease
 
-## I. HOOK & VALUE PROPOSITION (Hero Section)
+## I. HOOK & CORE PITCH (Hero Section)
    - Visual impact: "What if you could eradicate disease, end war, and get filthy rich simultaneously?"
    - Core thesis: Make curing people more profitable than killing them
    - Key stat: $2.72T military vs $67.5B medical research (40X disparity)
@@ -163,7 +163,7 @@ See [1% Treaty](./1-percent-treaty/1-percent-treaty.md) for quantified savings a
 
 We will not change minds with morals. We will make curing people more profitable than killing them. We call this **Peace Profiteering**.
 
-The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will bribe our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
+The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will bribe* our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
 
 ```mermaid
 graph TD;
@@ -273,7 +273,7 @@ graph TD;
 **What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](../economic-models/fundraising-and-budget-plan.md).
 - Global referendum "Proof-of-Vote" points platform (~$5-10M)
 - Independent expenditures in priority elections (~$800M-1.5B)
-- Strategic incentive alignment to co-opt the MIC (~$100-200M)
+- Targeted bribes* to co-opt the MIC (~$100-200M)
 - Platform development and pilot programs (~$250-400M)
 - Legal compliance and treaty framework (~$100-200M)
 
@@ -313,7 +313,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 
 **Phase 2: VICTORY Bond Buyers ($100-200M Referendum Funding)**
 - **Who:** Early Backers, health advocates, institutions
-- **The Bribe:**
+- **The Bribe*:**
   - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](../economic-models/peace-dividend-value-capture.md)
   - Governance control over $27B annually in captured value from military budget redirection
   - Voting rights on patient subsidies and research funding allocation
@@ -325,7 +325,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 
 **Phase 4: Politicians ($800M-1.5B Independent Expenditures)**
 - **Who:** Key legislators in target countries
-- **The Bribe:** 
+- **The Bribe*:** 
   - **Personal Wealth Creation:** Early access to [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) with superior returns designed to outperform defense stocks and traditional political corruption
   - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
   - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
@@ -336,7 +336,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 1. **You Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats your current defense contract ROI
 2. **You Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk
 3. **You Protect Your Family:** Your families get diseases too—profit from funding cures rather than weapons
-4. **Repurpose Your Lobbyists:** Instead of hiring new lobbyists, we "bribe" you with superior returns to get your existing lobbying apparatus to push for the treaty
+4. **Repurpose Your Lobbyists:** Instead of hiring new lobbyists, we bribe* you with superior returns to get your existing lobbying apparatus to push for the treaty
 
 **Our Superior Offer to Politicians:**
 - **Personal Investment Opportunity:** You and your families can directly invest in [VICTORY Bonds](../economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks
@@ -347,7 +347,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 
 **The Math:** We offer everyone more personal wealth than the current system, PLUS better campaign support, PLUS the moral high ground of saving lives, PLUS reduced existential risk. When the math favors peace, rational actors choose peace.
 
-**Bottom Line:** By making peace and health more profitable than war and disease, we give every rational actor a clear financial incentive to support the treaty. We bribe our way to a better world.
+**Bottom Line:** By making peace and health more profitable than war and disease, we give every rational actor a clear financial incentive to support the treaty. We bribe* our way to a better world.
 
 ---
 
@@ -476,7 +476,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 **11. "How does this help patients vs. just funding more bureaucracy?"**
 
-*   **Reality:** The decentralized FDA puts money directly into patients' hands through algorithmic subsidy allocation that maximizes lives saved per dollar, disease burden, and patient financial need. Unlike traditional NIH grants that fund institutions based on political connections, this ensures trials happen where the health impact is highest. Patients get subsidized access to new treatments while contributing to research that benefits everyone.
+*   **Reality:** The decentralized FDA puts money directly into patients' hands through algorithmic subsidy allocation that prioritizes lives saved per dollar, disease burden, and patient financial need. Unlike traditional NIH grants that fund institutions based on political connections, this ensures trials happen where the health impact is highest. Patients get subsidized access to new treatments while contributing to research that benefits everyone.
 
 **12. "What about the millions of jobs in the defense industry? This is a threat to their livelihoods."**
 
@@ -488,7 +488,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 **14. "Aren't blockchains environmentally disastrous? How can you save humanity while boiling the oceans?"**
 
-*   **Reality:** This is a valid concern based on early blockchain technology. However, the DIH will be built on modern, energy-efficient **Proof-of-Stake (PoS)** consensus mechanisms, which consume over 99.9% less energy than their Proof-of-Work predecessors. Our commitment to global health is holistic and includes planetary health; our technical architecture will reflect this.
+*   **Reality:** This is a valid concern based on early blockchain technology. However, the DIH will be built on modern, energy-efficient **Proof-of-Stake (PoS)** consensus mechanisms, which consume over 99.9% less energy than their Proof-of-Work predecessors. Our commitment to global health includes planetary health; our technical architecture will reflect this.
 
 **15. "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"**
 
@@ -546,7 +546,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 **24. "Can your team actually build this?" (Execution Risk)**
 
-*   **Response:** Our execution model is designed to maximize strategic focus and leverage elite global talent. We are not building a large, traditional organization. Instead, we are assembling a small, world-class **"activation team"** of strategic leaders (see our [Hiring Plan](../careers/hiring-plan.md)) whose sole function is to direct capital and manage a network of top-tier execution partners. This allows us to remain lean and focused, outsourcing tactical work like software development and media production to the best specialized firms in the world. We've allocated $250-400M for Phase 1 development with these proven partners. This model—a lean strategic core coordinating elite external teams—is the most capital-efficient and effective way to solve a problem of this scale.
+*   **Response:** Our execution model focuses on strategic priorities and uses elite global talent. We are not building a large, traditional organization. Instead, we are assembling a small, world-class **"activation team"** of strategic leaders (see our [Hiring Plan](../careers/hiring-plan.md)) whose sole function is to direct capital and manage a network of top-tier execution partners. This allows us to remain lean and focused, outsourcing tactical work like software development and media production to the best specialized firms in the world. We've allocated $250-400M for Phase 1 development with these proven partners. This model—a lean strategic core coordinating elite external teams—is the most capital-efficient and effective way to solve a problem of this scale.
 
 *   **Mitigation:** Advisory board of constitutional scholars, DAO experts, and former officials; phased rollout with pilot countries.
 
@@ -711,6 +711,8 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 ---
 
 ### Source Quotes for Key Parameters
+
+\* Throughout this document, “bribe/bribes” means legal incentives: independent expenditures (no coordination), compliant securities (e.g., Reg S/Reg A+ where applicable), and performance‑based diplomatic or economic packages structured to comply with anti‑corruption laws (e.g., FCPA). See Legal Compliance (jurisdiction‑specific) above for details.
 
 <a id="sipri-2024-spending"></a>
 * **Global military spending (\$2.72T, 2024)**
