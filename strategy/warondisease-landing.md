@@ -723,7 +723,7 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 
 ## Risks and Mitigations
 
-**Cheating/Holdouts:** Start with coalitions of willing nations; create competitive pressure and trade incentives for laggards.
+**Cheating/Holdouts:** Start with coalitions of willing nations; use massive personal financial incentives targeting individual leaders in holdout nations - campaign support, personal investment opportunities in VICTORY bonds, and targeted independent expenditures against treaty opponents.
 
 **Capture/Corruption:** Transparent, algorithmic allocation based on verifiable health outcomes; independent audits funded by bounties.
 
