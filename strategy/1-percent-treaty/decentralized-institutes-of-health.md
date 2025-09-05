@@ -60,6 +60,37 @@ This creates a virtuous cycle:
 
 Subsidy allocation and most treasury functions execute via smart contracts with verifiable inputs (oracles) and transparent rules. Stakeholders participate through credentialed, timeboxed signaling; on-chain executors apply changes automatically. A narrowly scoped, time-limited DAO acts as an emergency override with public justification and automatic sunset. For custody and controls, see [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md).
 
+## DIH Governance and Value Flow: A Coalition of Coalitions
+
+The DIH is not a monolithic entity; it is a "coalition of coalitions" designed to empower communities of researchers, patients, and non-profit advocates with direct control over funding for their specific domains.
+
+### Structure: Sub-Institutes as Specialized DAOs
+
+The DIH is composed of a main treasury DAO and numerous specialized, subordinate DAOs, or "sub-Institutes."
+
+*   **Decentralized Institute of Mental Health (DIMH)**
+*   **Decentralized Institute on Aging (DIA)**
+*   **Decentralized Institute of Cancer Research (DICR)**
+*   etc.
+
+Each sub-Institute is a fully-fledged DAO with its own governance token, budget, and mandate.
+
+### The Value Flow
+
+1.  **1% Treaty Ratified:** The **$27B+ annual revenue stream** flows into the main DIH Treasury.
+2.  **Top-Level Allocation:** The main DIH DAO—governed primarily by **VICTORY Bond** holders—votes on the top-level budget allocation. For example, it might allocate $3B to the DIMH, $4B to the DIA, etc., based on metrics like disease burden and tractability.
+3.  **Sub-Institute Governance:** The allocated budget (e.g., $3B) is transferred to the sub-Institute's treasury (e.g., the DIMH). **This is where the non-profit coalition takes power.** The governance of each sub-Institute is granted to the stakeholders of that domain—primarily the non-profit partners who helped pass the 1% Treaty.
+4.  **Community-Led Funding:** The members of the sub-Institute (e.g., mental health non-profits, research clinics, patient advocates) vote on how their multi-billion dollar budget is spent on research grants, patient subsidies, and clinical trials.
+
+### The Incentive Alignment: Apes Together Strong
+
+This structure is the ultimate incentive for non-profits to make passing the 1% Treaty their temporary primary mission.
+
+*   **The Old Way (Ape Weak):** Compete with hundreds of other non-profits for a small piece of a finite philanthropic pie.
+*   **The New Way (Apes Strong):** Cooperate to unlock a multi-billion dollar annual treasury for your specific domain, and in doing so, earn a permanent, powerful governance stake in that treasury.
+
+The message is simple: **Stop applying for grants and become the grant-makers.** By joining the coalition, non-profits are not just supporting a cause; they are earning their seat at the table to govern the future of health funding in their field.
+
 ## Risks and Realism
 The DIH model's success relies on treaty adoption and inflows. For a full discussion of risks, repayment, and contingencies, see [Victory Bond Investment Thesis](../../economic-models/victory-bond-investment-thesis.md#10-assessing-realism-risks-repayment-timeline-and-contingencies).
 
