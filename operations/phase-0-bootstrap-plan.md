@@ -19,20 +19,26 @@ This document provides the detailed, granular task list for the initial phases o
 
 ## Wiki Restructuring To-Do
 
-This section tracks the high-level tasks for the current wiki refactoring project.
+This section tracks the high-level tasks for the current wiki refactoring project. This process is broken down into phases to ensure a methodical and organized restructuring.
 
+**Phase A: Foundational Setup & Renaming**
 - [ ] **User Action**: Rename the local repository directory from `dfda-wiki` to `1-percent-treaty`.
-- [ ] **User Action**: register the GitHub organizations, ensuring each (except the main one) has a signpost `README` pointing back to `1-percent-treaty`:
-    - `1-percent-treaty` (The new main hub)
-    - `1-percent-treaty-fund` (Critical)
-    - `decentralized-institutes-of-health` (Critical)
-    - `war-on-disease` (Now a defensive registration)
-- [ ] **Task**: Perform a repository-wide search-and-replace for `VICTORY Fund` -> `1% Treaty Fund` and `VICTORY Bonds` -> `1% Treaty Bonds`.
-- [ ] **Task**: Re-brand `README.md` and `home.md` to focus on "The 1% Treaty" as the primary brand and "War on Disease" as the mission.
-- [ ] **Task**: Create `dfda-framework/` directory.
-- [ ] **Task**: Migrate dFDA-specific content into the new directory.
-- [ ] **Task**: Update all internal links to reflect the new file locations.
-- [ ] **Task**: Final polish of `README.md` and `home.md`.
+- [ ] **User Action**: Defensively register the required GitHub organizations as previously listed.
+- [ ] **Task**: Perform the repository-wide search-and-replace for `VICTORY Fund` -> `1% Treaty Fund`.
+
+**Phase B: Architectural Planning**
+- [ ] **Task**: Create a new root-level `index.md` to serve as the master sitemap/table of contents for the entire wiki. This will define the target information architecture.
+- [ ] **Task**: Identify and list all dFDA-specific files that are candidates for migration.
+
+**Phase C: Content Restructuring & Re-branding**
+- [ ] **Task**: Re-brand the main `README.md` and `home.md` to establish "The 1% Treaty" as the primary brand.
+- [ ] **Task**: Create the new `dfda-protocol/` directory.
+- [ ] **Task**: Move the identified dFDA-specific files into the `dfda-protocol/` directory.
+
+**Phase D: Link Audit & Final Polish**
+- [ ] **Task**: Perform a repository-wide audit to identify and fix all broken internal links resulting from the file migration.
+- [ ] **Task**: Update the master `index.md` sitemap with the final, correct file paths.
+- [ ] **Task**: Perform a final polish of `README.md` and `home.md`.
 
 ---
 
