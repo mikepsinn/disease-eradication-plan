@@ -11,6 +11,26 @@ For the initial phases of the project (Phase 0 and 1), the canonical source for 
 
 All active to-do lists and task-level items should be maintained in that file. This keeps the high-level strategy documents, like the [Canonical Roadmap](mdc:strategy/roadmap.md), clean and focused on strategic goals rather than tactical execution.
 
+## Agent Responsibilities
+
+The AI assistant should proactively maintain the to-do list in the primary file. This includes:
+- Adding new tasks as they are defined in the conversation.
+- Marking tasks as complete as they are finished.
+- Updating the list to reflect any changes in strategy or priority without needing to be explicitly prompted.
+
+## Deliverable Organization
+
+All deliverables and documents produced for a task should be stored in the top-level directory that best matches their function (e.g., `strategy/`, `economic-models/`, `brand/`, `regulatory/`). Source code for technical deliverables should reside in separate, dedicated repositories and not in this strategic wiki.
+
+When a task is completed, the operational plan should be updated to include a direct link to the final deliverable.
+
+**Example:**
+
+| Task | Owner | ... | Status |
+| :--- | :--- | :--- | :--- |
+| Draft core pitch deck summarizing the "ask" | Founder | ... | `Done` - [Link to Deliverable](../strategy/pitch-deck.md)|
+
+
 ## Long-Term Recommendation
 
 While using a Markdown file is suitable for the bootstrap phase, the recommended long-term solution for managing a project of this scale is to use **GitHub Projects**. This provides a more robust and scalable workflow with features like Kanban boards, issue tracking, and pull request integration.
