@@ -17,6 +17,7 @@ The AI assistant should proactively maintain the to-do list in the primary file.
 - Adding new tasks as they are defined in the conversation.
 - Marking tasks as complete as they are finished.
 - Updating the list to reflect any changes in strategy or priority without needing to be explicitly prompted.
+- When creating or referencing tasks that involve a specific deliverable file, the agent must first search the workspace to verify if the file exists. If the file exists, the agent must include a valid markdown link to it in the task description.
 
 ## Deliverable Organization
 

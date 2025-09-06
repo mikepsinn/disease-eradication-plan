@@ -17,7 +17,9 @@ dateCreated: 2025-08-22
 
 ## Operational Plans
 
-- **[Phase 0 & 1 - Bootstrap & Foundation](./phase-0-bootstrap-plan.md):** The detailed, task-level plan for the initial pre-seed and foundation phases of the project.
+- **[Wiki Restructuring Plan](./wiki-restructuring-plan.md):** The detailed project plan for the comprehensive refactoring and re-branding of the 1% Treaty Wiki.
+- **[Phase 0 - Bootstrap & Foundation](./phase-0-plan.md):** The detailed, task-level plan for the initial pre-seed and foundation phase.
+- **[Phase 1 - Foundation & Legal Framework](./phase-1-plan.md):** The detailed, task-level plan for building the project's foundational infrastructure.
 
 ---
 

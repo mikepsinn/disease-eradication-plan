@@ -17,7 +17,7 @@ doc_type: strategy
 
 This document outlines the high-level, multi-year strategy to achieve the 1% Treaty. It presents a logical sequence of major phases, from initial planning to global impact. Each step is a massive undertaking with its own detailed implementation plan, which is linked accordingly.
 
-See [Pre-Seed Strategy: The First 90 Days](./pre-seed-strategy.md) for the detailed operational plan for Phase 0.
+See the [Operations Process Index](../operations/process-index.md) for links to the detailed, task-level plans for each project phase.
 
 ---
 
