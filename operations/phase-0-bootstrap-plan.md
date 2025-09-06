@@ -21,12 +21,18 @@ This document provides the detailed, granular task list for the initial phases o
 
 This section tracks the high-level tasks for the current wiki refactoring project.
 
-- [ ] **User Action**: Rename the GitHub repository from `dfda-wiki` to `war-on-disease`.
-- [ ] **Phase 1**: Re-brand the repository's "front door" (`README.md` and `home.md`).
-- [ ] **Phase 2**: Create `dfda-framework/` directory.
-- [ ] **Phase 3**: Migrate dFDA-specific content.
-- [ ] **Phase 4**: Update internal links.
-- [ ] **Phase 5**: Final polish of `README.md` and `home.md`.
+- [ ] **User Action**: Rename the local repository directory from `dfda-wiki` to `1-percent-treaty`.
+- [ ] **User Action**: register the GitHub organizations, ensuring each (except the main one) has a signpost `README` pointing back to `1-percent-treaty`:
+    - `1-percent-treaty` (The new main hub)
+    - `1-percent-treaty-fund` (Critical)
+    - `decentralized-institutes-of-health` (Critical)
+    - `war-on-disease` (Now a defensive registration)
+- [ ] **Task**: Perform a repository-wide search-and-replace for `VICTORY Fund` -> `1% Treaty Fund` and `VICTORY Bonds` -> `1% Treaty Bonds`.
+- [ ] **Task**: Re-brand `README.md` and `home.md` to focus on "The 1% Treaty" as the primary brand and "War on Disease" as the mission.
+- [ ] **Task**: Create `dfda-framework/` directory.
+- [ ] **Task**: Migrate dFDA-specific content into the new directory.
+- [ ] **Task**: Update all internal links to reflect the new file locations.
+- [ ] **Task**: Final polish of `README.md` and `home.md`.
 
 ---
 
@@ -67,7 +73,8 @@ This section tracks the high-level tasks for the current wiki refactoring projec
 | Begin recruitment outreach for Engineering Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
 | Begin recruitment outreach for Policy Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
 | **Stream 3: Website & Public Presence** | | | | |
-| Create wireframes & final visual design | Design Lead | `warondisease-landing.md` | 2 Weeks | `Not Started` |
+| Develop core brand assets (logo, style guide, messaging framework) | Design Lead | Strategy & Narrative | 2 Weeks | `Not Started` |
+| Create wireframes & final visual design | Design Lead | `warondisease-landing.md`, Brand Assets | 2 Weeks | `Not Started` |
 | Develop website frontend | Engineering Lead | Visual Design | 3 Weeks | `Not Started` |
 | Develop referral engine backend | Engineering Lead | | 4 Weeks | `Not Started` |
 | Develop Peace Dividend calculator | Engineering Lead | | 2 Weeks | `Not Started` |
