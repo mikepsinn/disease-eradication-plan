@@ -1,0 +1,16 @@
+---
+description: "Guidelines for where to store to-do lists and track operational tasks in Markdown."
+---
+# Project Management Guidelines
+
+## To-Do List and Task Tracking
+
+For the initial phases of the project (Phase 0 and 1), the canonical source for tracking granular tasks and to-do lists is the operational plan.
+
+- **Primary File:** [operations/phase-0-bootstrap-plan.md](mdc:operations/phase-0-bootstrap-plan.md)
+
+All active to-do lists and task-level items should be maintained in that file. This keeps the high-level strategy documents, like the [Canonical Roadmap](mdc:strategy/roadmap.md), clean and focused on strategic goals rather than tactical execution.
+
+## Long-Term Recommendation
+
+While using a Markdown file is suitable for the bootstrap phase, the recommended long-term solution for managing a project of this scale is to use **GitHub Projects**. This provides a more robust and scalable workflow with features like Kanban boards, issue tracking, and pull request integration.

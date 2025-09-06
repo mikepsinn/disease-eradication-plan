@@ -17,6 +17,17 @@ doc_type: ops
 
 This document provides the detailed, granular task list for the initial phases of the project, as outlined in the [Canonical Roadmap](../strategy/roadmap.md). This serves as the tactical execution plan for the strategic goals of Phase 0 and Phase 1.
 
+## Wiki Restructuring To-Do
+
+This section tracks the high-level tasks for the current wiki refactoring project.
+
+- [ ] **User Action**: Rename the GitHub repository from `dfda-wiki` to `war-on-disease`.
+- [ ] **Phase 1**: Re-brand the repository's "front door" (`README.md` and `home.md`).
+- [ ] **Phase 2**: Create `dfda-framework/` directory.
+- [ ] **Phase 3**: Migrate dFDA-specific content.
+- [ ] **Phase 4**: Update internal links.
+- [ ] **Phase 5**: Final polish of `README.md` and `home.md`.
+
 ---
 
 ## Phase 0: Pre-Seed & Foundation (Months 0-3)
