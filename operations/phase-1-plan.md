@@ -48,3 +48,8 @@ This document provides the detailed, granular task list for Phase 1 of the proje
 | Develop operational playbook for non-profit partner management | Growth Lead | [Incentive Strategy](../community/nonprofit-partnership-incentives.md), [Partnership Playbook](./nonprofit-partnership-playbook.md) | 2 Weeks | `Not Started` |
 | Draft technical requirements & roadmap for referendum platform | Engineering Lead | Policy Lead Hired | 4 Weeks | `Not Started` |
 | Create detailed operational plan for Phase 2 of the main roadmap | Program Lead | Phase 1 Nearing Completion | 3 Weeks | `Not Started` |
+| Create `contributor-onboarding.md` guide | Program Lead | [Process Index](./process-index.md) | 1 Week | `Not Started` |
+| Design `contributor-incentive-program.md` | Program Lead | [Tokenomics](../economic-models/1-percent-treaty-bond-thesis.md) | 2 Weeks | `Not Started` |
+
+---
+*Note: The task "Approve & Adopt Team Incentive Policy" requires the creation of a `team-incentives.md` document in the `strategy` directory.*
