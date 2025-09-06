@@ -32,8 +32,9 @@ This section tracks the high-level tasks for the current wiki refactoring projec
 
 **Phase C: Content Restructuring & Re-branding**
 - [ ] **Task**: Re-brand the main `README.md` and `home.md` to establish "The 1% Treaty" as the primary brand.
+- [ ] **Task**: Audit and refactor all dFDA-related content (identified in Phase B) to align with the "protocol as a standard" strategy, removing all references to it being a "platform" or "product".
 - [ ] **Task**: Create the new `dfda-protocol/` directory.
-- [ ] **Task**: Move the identified dFDA-specific files into the `dfda-protocol/` directory.
+- [ ] **Task**: Move the now-refactored dFDA-specific files into the `dfda-protocol/` directory.
 
 **Phase D: Link Audit & Final Polish**
 - [ ] **Task**: Perform a repository-wide audit to identify and fix all broken internal links resulting from the file migration.
