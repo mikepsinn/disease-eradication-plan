@@ -43,8 +43,8 @@ This document provides the detailed, granular task list for Phase 1 of the proje
 | Finalize tokenomics & investment thesis documents | Capital Markets Lead | [Investment Thesis](../economic-models/victory-bond-investment-thesis.md) | 2 Weeks | `Not Started` |
 | **Stream 5: Operational Scaling & Future Planning** | | | | |
 | Develop comprehensive `hiring-plan.md` | Program Lead | Core Leads Hired | 2 Weeks | `Not Started` |
-| Establish `process-index.md` & process documentation framework | Program Lead | *(None)* | 1 Week | `Not Started` |
+| Establish `process-index.md` & process documentation framework | Program Lead | [Process Index](./process-index.md) | 1 Week | `Not Started` |
 | Select & implement CRM for investor & partner relations | Capital Markets Lead | Funding Secured | 2 Weeks | `Not Started` |
-| Develop operational playbook for non-profit partner onboarding | Growth Lead | [Incentive Strategy](../community/nonprofit-partnership-incentives.md) | 2 Weeks | `Not Started` |
+| Develop operational playbook for non-profit partner management | Growth Lead | [Incentive Strategy](../community/nonprofit-partnership-incentives.md), [Partnership Playbook](./nonprofit-partnership-playbook.md) | 2 Weeks | `Not Started` |
 | Draft technical requirements & roadmap for referendum platform | Engineering Lead | Policy Lead Hired | 4 Weeks | `Not Started` |
 | Create detailed operational plan for Phase 2 of the main roadmap | Program Lead | Phase 1 Nearing Completion | 3 Weeks | `Not Started` |
