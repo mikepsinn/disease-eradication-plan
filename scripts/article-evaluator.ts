@@ -67,9 +67,6 @@ const providers: Record<AvailableModel, () => any> = {
   'sonar-medium-chat': () => perplexity('sonar-medium-chat'),
   'sonar-large-chat': () => perplexity('sonar-large-chat'),
   // Google Gemini models
-  'gemini-2.0-flash-exp': () => google('models/gemini-1.5-flash-latest'),
-  'gemini-1.5-flash': () => google('models/gemini-1.5-flash-latest'),
-  'gemini-1.5-pro': () => google('models/gemini-1.5-pro-latest'),
   'gemini-2.5-flash': () => google('models/gemini-1.5-flash-latest'),
   // DeepSeek models
   'deepseek-chat': () => deepseek('deepseek-chat'),
