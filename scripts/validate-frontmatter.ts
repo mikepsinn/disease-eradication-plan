@@ -3,6 +3,7 @@ import * as path from 'path';
 import matter from 'gray-matter';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import * as yaml from 'js-yaml';
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', 'operations'];
@@ -59,7 +60,12 @@ ${content}`;
             }
 
         } catch (e: any) {
-            console.error(`❌ [Invalid YAML] ${filePath}: ${e.message}`);
+            // Provide more detailed error logging for YAML parsing issues
+            if (e.name === 'YAMLException') {
+                console.error(`❌ [Invalid YAML] ${filePath}: ${e.reason} at line ${e.mark.line}, column ${e.mark.column}`);
+            } else {
+                console.error(`❌ [Error] ${filePath}: ${e.message}`);
+            }
             errorCount++;
         }
     }
@@ -72,17 +78,21 @@ ${content}`;
     }
 }
 
-const argv = yargs(hideBin(process.argv))
-    .option('fix', {
-        alias: 'f',
-        type: 'boolean',
-        description: 'Automatically fix common frontmatter errors.',
-        default: false,
-    })
-    .help()
-    .argv;
+async function main() {
+    const argv = await yargs(hideBin(process.argv))
+        .option('fix', {
+            alias: 'f',
+            type: 'boolean',
+            description: 'Automatically fix common frontmatter errors.',
+            default: false,
+        })
+        .help()
+        .argv;
 
-validateFrontmatter(argv.fix).catch(error => {
+    await validateFrontmatter(argv.fix);
+}
+
+main().catch(error => {
     console.error('Script failed:', error);
     process.exit(1);
 });
