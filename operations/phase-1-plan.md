@@ -29,6 +29,7 @@ This document provides the detailed, granular task list for Phase 1 of the proje
 | Begin recruitment outreach for Engineering Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
 | Begin recruitment outreach for Policy Lead | Program Lead | JDs | 4 Weeks | `Not Started` |
 | **Stream 3: Website & Public Presence** | | | | |
+| Create new `website` repository in the GitHub organization | Engineering Lead | *(None)* | 1 Day | `Not Started` |
 | Develop core brand assets (logo, style guide, messaging framework) | Design Lead | Strategy & Narrative | 2 Weeks | `Not Started` |
 | Create wireframes & final visual design | Design Lead | `warondisease-landing.md`, Brand Assets | 2 Weeks | `Not Started` |
 | Develop website frontend | Engineering Lead | Visual Design | 3 Weeks | `Not Started` |
@@ -50,6 +51,9 @@ This document provides the detailed, granular task list for Phase 1 of the proje
 | Create detailed operational plan for Phase 2 of the main roadmap | Program Lead | Phase 1 Nearing Completion | 3 Weeks | `Not Started` |
 | Create `contributor-onboarding.md` guide | Program Lead | [Process Index](./process-index.md) | 1 Week | `Not Started` |
 | Design `contributor-incentive-program.md` | Program Lead | [Tokenomics](../economic-models/1-percent-treaty-bond-thesis.md) | 2 Weeks | `Not Started` |
+| Create `stakeholder-directory.md` to track all project contributors | Program Lead | *(None)* | 1 Week | `Not Started` |
+| Design `contribution-ledger.md` and the process for tracking work | Program Lead | [Incentive Program](./contributor-incentive-program.md) | 1 Week | `Not Started` |
+| Integrate all community documents (Onboarding, Directory, Ledger) | Program Lead | All Community Docs | 1 Day | `Not Started` |
 
 ---
 *Note: The task "Approve & Adopt Team Incentive Policy" requires the creation of a `team-incentives.md` document in the `strategy` directory.*

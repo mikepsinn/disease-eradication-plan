@@ -13,8 +13,9 @@ dateCreated: '2025-08-22T00:00:00.000Z'
 This section tracks the high-level tasks for the current wiki refactoring project. This process is broken down into phases to ensure a methodical and organized restructuring.
 
 **Phase A: Foundational Setup & Renaming**
-- [ ] **User Action**: Rename the local repository directory from `dfda-wiki` to `1-percent-treaty`.
-- [ ] **User Action**: Defensively register the required GitHub organizations as previously listed.
+- [ ] **User Action**: Create the `decentralized-institutes-of-health` GitHub organization.
+- [ ] **User Action**: Create the main repository as `decentralized-institutes-of-health` within the organization.
+- [ ] **User Action**: Defensively register the other required GitHub organizations (including `1-percent-treaty`).
 - [ ] **Task**: Perform the repository-wide search-and-replace for `VICTORY Fund` -> `1% Treaty Fund`.
 
 **Phase B: Architectural Planning**
@@ -22,7 +23,7 @@ This section tracks the high-level tasks for the current wiki refactoring projec
 - [ ] **Task**: Identify and list all dFDA-specific files that are candidates for migration.
 
 **Phase C: Content Restructuring & Re-branding**
-- [ ] **Task**: Re-brand the main `README.md` and `home.md` to establish "The 1% Treaty" as the primary brand.
+- [ ] **Task**: Re-brand the main `README.md` and `home.md` to establish the "Decentralized Institutes of Health" as the primary brand and "The 1% Treaty" as its flagship initiative.
 - [ ] **Task**: Audit and refactor all dFDA-related content (identified in Phase B) to align with the "protocol as a standard" strategy, removing all references to it being a "platform" or "product".
 - [ ] **Task**: Create the new `dfda-protocol/` directory.
 - [ ] **Task**: Move the now-refactored dFDA-specific files into the `dfda-protocol/` directory.
