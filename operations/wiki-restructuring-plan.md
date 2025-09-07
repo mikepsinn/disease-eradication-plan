@@ -19,7 +19,7 @@ This section tracks the high-level tasks for the current wiki refactoring projec
 - [x] **Task**: Perform the repository-wide search-and-replace for `VICTORY Fund` -> `1% Treaty Fund`, leaving the name `VICTORY Bonds` unchanged.
 
 **Phase B: Architectural Planning**
-- [ ] **Task**: Create a new root-level `index.md` to serve as the master sitemap/table of contents for the entire wiki. This will define the target information architecture.
+- [x] **Task**: Create a new root-level `index.md` to serve as the master sitemap/table of contents for the entire wiki. This will define the target information architecture.
 - [ ] **Task**: Identify and list all dFDA-specific files that are candidates for migration.
 
 **Phase C: Content Restructuring & Re-branding**
