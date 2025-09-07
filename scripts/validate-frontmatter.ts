@@ -69,7 +69,10 @@ async function validateFrontmatter(fix: boolean) {
                 }
 
                 if (needsRewrite) {
-                    const newContent = matter.stringify(content, data, { flowLevel: 1 });
+                    const newContent = matter.stringify(content, data, {
+                        language: 'yaml',
+                        flowLevel: 1
+                    } as any);
                     await fs.promises.writeFile(filePath, newContent, 'utf-8');
                     console.log(`✅ [Fixed] ${reasons.join(', ')} in ${filePath}`);
                     fileContent = newContent; // Use updated content for validation
