@@ -188,7 +188,7 @@ graph TD;
 
 ## How We Fix It: The 5-Step Plan
 
-**The Goal: Make curing people more profitable than killing them.**
+**The Goal: Make curing people more profitable than killing them.** 
 
 **Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./legal-compliance-framework.md)).
 
