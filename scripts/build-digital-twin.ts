@@ -5,9 +5,9 @@ import simpleGit from 'simple-git';
 import matter from 'gray-matter';
 
 const ROOT_DIR = path.resolve(__dirname, '..');
-const OUTPUT_FILE = path.join(ROOT_DIR, 'operations', 'content-manifest.yml');
+const IGNORED_DIRS = ['node_modules', '.git', 'assets', '.github', '.cursor-cache'];
 const CACHE_FILE = path.join(ROOT_DIR, '.article-cache.json');
-const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', 'operations', '.article-cache.json'];
+const OUTPUT_FILE = path.join(ROOT_DIR, 'operations', 'digital-twin.yml');
 
 interface CacheEntry {
     assessment: {
@@ -33,7 +33,7 @@ async function findMarkdownFiles(dir: string): Promise<string[]> {
     const entries = await fs.promises.readdir(dir, { withFileTypes: true });
     for (const entry of entries) {
         const fullPath = path.join(dir, entry.name);
-        if (IGNORE_PATTERNS.some(p => fullPath.includes(path.sep + p))) continue;
+        if (IGNORED_DIRS.some(p => fullPath.includes(path.sep + p))) continue;
         if (entry.isDirectory()) {
             mdFiles = mdFiles.concat(await findMarkdownFiles(fullPath));
         } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdc'))) {
