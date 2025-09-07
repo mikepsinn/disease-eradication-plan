@@ -17,7 +17,7 @@ This wiki documents the "War on Disease," a mission to make curing people more p
 
 - **Primary Framing:** "Make curing people more profitable than killing them." / "Bribe our way to a better world."
 - **Secondary Framing:** "Make peace more profitable than war." / "Capture the peace dividend."
-- **Be Concise, Direct, and Edgy:** Use short sentences, simple words, and powerful language. Do not state the obvious.
+- **Be Concise and Direct:** Use short sentences, simple words, and powerful language. Do not state the obvious.
 - **Speak Plainly:** Avoid weak corporate euphemisms and "AI slop." Write like a human.
 - **Quantify Everything:** Moral arguments are weak without data. All claims must be backed by numbers and citations.
 
