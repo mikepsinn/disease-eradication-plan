@@ -25,8 +25,8 @@ This section tracks the high-level tasks for the current wiki refactoring projec
 
 **Phase B: Architectural Planning & Scripting**
 - [x] **Task**: Create an `scripts/generate_manifest.py` script that generates a `refactor-manifest.md` file listing all files and directories.
-- [ ] **Task**: Run the inventory script and collaboratively curate the `refactor-manifest.md` to define the action for each file (MOVE, DELETE, KEEP).
-- [ ] **Task**: Create an `execute-refactor.py` script that reads the manifest and performs the file operations. This script MUST include a "dry run" mode.
+- [x] **Task**: Run the inventory script and collaboratively curate the `refactor-manifest.md` to define the action for each file (MOVE, DELETE, KEEP).
+- [x] **Task**: Create an `execute-refactor.py` script that reads the manifest and performs the file operations. This script MUST include a "dry run" mode.
 
 **Phase C: Execution & Re-branding**
 - [ ] **Task**: Perform a final review of the manifest and the script's "dry run" output.
@@ -35,6 +35,8 @@ This section tracks the high-level tasks for the current wiki refactoring projec
 - [ ] **Task**: Audit and refactor all dFDA-related content (now in `dFDA-protocol/`) to align with the "protocol as a standard" strategy.
 
 **Phase D: Link Audit & Final Polish**
-- [ ] **Task**: Perform a repository-wide audit to identify and fix all broken internal links resulting from the migration.
+- [ ] **Task**: Create a `scripts/fix_internal_links.py` script that reads the refactor manifest to map old paths to new paths.
+- [ ] **Task**: Run the link-fixing script to automatically update all internal Markdown links across the entire repository.
+- [ ] **Task**: Manually audit a sample of heavily-linked files to verify the script's accuracy.
 - [ ] **Task**: Update the master `index.md` sitemap with the final, correct file paths.
 - [ ] **Task**: Perform a final polish of `README.md` and `home.md`.

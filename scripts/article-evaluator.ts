@@ -80,7 +80,7 @@ Rate the content's quality and provide specific improvements needed.`;
 
 export async function evaluateArticle(content: string, filePath: string): Promise<ArticleAssessment> {
   try {
-    const modelName = env.OPENAI_MODEL;
+    const modelName = env.AI_MODEL;
     const provider = providers[modelName];
     
     if (!provider) {
