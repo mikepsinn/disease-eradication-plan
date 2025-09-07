@@ -19,7 +19,7 @@ This section tracks the high-level tasks for the current wiki refactoring projec
 - [x] **Task**: Perform the repository-wide search-and-replace for `VICTORY Fund` -> `1% Treaty Fund`, leaving the name `VICTORY Bonds` unchanged.
 
 **Phase B: Architectural Planning & Scripting**
-- [ ] **Task**: Create an `inventory.js` script that generates a `refactor-manifest.md` file listing all files and directories.
+- [x] **Task**: Create an `scripts/generate-manifest.ts` script that generates a `refactor-manifest.md` file listing all files and directories.
 - [ ] **Task**: Run the inventory script and collaboratively curate the `refactor-manifest.md` to define the action for each file (MOVE, DELETE, KEEP).
 - [ ] **Task**: Create an `execute-refactor.js` script that reads the manifest and performs the file operations. This script MUST include a "dry run" mode.
 
