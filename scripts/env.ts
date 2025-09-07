@@ -18,6 +18,7 @@ export const availableModels = [
   'sonar-medium-chat',
   'sonar-large-chat',
   // Google Gemini models
+  'gemini-2.5-pro',
   'gemini-2.5-flash',
   // DeepSeek models
   'deepseek-chat',
