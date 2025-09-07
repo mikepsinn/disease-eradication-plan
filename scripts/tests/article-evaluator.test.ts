@@ -42,7 +42,17 @@ async function runTest() {
     if (result.recommendations.shouldRename) {
       console.log('- Rename to:', result.recommendations.shouldRename);
     }
+    if (result.recommendations.shouldMoveTo) {
+        console.log('- Move to:', result.recommendations.shouldMoveTo);
+    }
     console.log('- Priority:', result.recommendations.priority);
+
+    if (result.todos && result.todos.length > 0) {
+        console.log('\nActionable TODOs:');
+        result.todos.forEach((todo, i) => {
+            console.log(`${i + 1}. ${todo}`);
+        });
+    }
 
   } catch (error) {
     console.error('Test failed:', error);

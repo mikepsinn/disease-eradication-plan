@@ -10,7 +10,6 @@
     "@ai-sdk/openai": "^2.0.24",
     "@ai-sdk/perplexity": "^2.0.8",
     "@ai-sdk/provider": "^1.0.0",
-    "@ai-sdk/react": "^1.1.21",
     "@ai-sdk/xai": "^1.0.0",
     "@aws-sdk/client-s3": "^3.0.0",
     "@googleapis/docs": "^3.3.0",
@@ -59,6 +58,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
+    "@types/js-yaml": "^4.0.9",
     "@types/markdown-it": "^14.1.2",
     "@types/markdown-it-anchor": "^4.0.4",
     "@types/node": "^22.15.30",

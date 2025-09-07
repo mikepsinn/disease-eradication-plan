@@ -11,6 +11,7 @@ import * as path from 'path';
 import * as crypto from 'crypto';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import * as yaml from 'js-yaml';
 
 // Define the schema for article assessment
 const ArticleAssessmentSchema = z.object({
@@ -47,6 +48,7 @@ type ArticleCache = {
   [filePath: string]: {
     hash: string;
     assessment: ArticleAssessment;
+    timestamp: number;
   };
 };
 
@@ -272,7 +274,7 @@ async function main() {
                 
                 if (assessment) {
                     const hash = calculateHash(content);
-                    cache[filePath] = { hash, assessment }; // Update cache
+                    cache[filePath] = { hash, assessment, timestamp: Date.now() }; // Update cache
                     manifestLines.push(formatAction(filePath, assessment));
                     
                     const todos = assessment.todos;
@@ -297,6 +299,18 @@ async function main() {
     
     writeCache(cache); // Save the updated cache
     console.log("Cache updated.");
+
+    // Generate human-readable YAML report from the final cache state
+    const reportData: { [filePath: string]: Omit<ArticleCache[string], 'hash'> } = {};
+    for (const filePath in cache) {
+        const { hash, ...rest } = cache[filePath];
+        reportData[filePath] = rest;
+    }
+    const yamlReport = yaml.dump(reportData);
+    const reportPath = path.join(ROOT_DIR, 'operations', 'wiki-health-report.yml');
+    await fs.promises.writeFile(reportPath, yamlReport);
+    console.log(`Human-readable wiki health report created at: ${reportPath}`);
+
 
     const sortedActions = manifestLines.slice(1).sort();
     const finalManifest = manifestLines[0] + sortedActions.join('\n');
