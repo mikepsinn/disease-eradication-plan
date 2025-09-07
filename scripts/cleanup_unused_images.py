@@ -1,30 +1,41 @@
 import os
 import argparse
+import re
 
 # Define common image extensions
 IMAGE_EXTENSIONS = {'.png', '.jpg', '.jpeg', '.gif', '.svg', '.bmp', '.tiff', '.webp', '.drawio'}
 
 def find_all_files(directory, extensions):
-    """Finds all files in a directory with the given extensions."""
+    """Finds all files in a directory with the given extensions, handling errors."""
     found_files = []
     for root, _, files in os.walk(directory):
         for file in files:
-            if any(file.lower().endswith(ext) for ext in extensions):
-                found_files.append(os.path.join(root, file))
+            try:
+                if any(file.lower().endswith(ext) for ext in extensions):
+                    found_files.append(os.path.join(root, file))
+            except Exception as e:
+                print(f"Error processing file {file} in {root}: {e}")
     return found_files
 
-def search_for_references(directory, filenames):
-    """Searches for filenames in all Markdown files in a directory."""
+def search_for_references(directory, filenames_to_check):
+    """Searches for explicit Markdown or HTML references to filenames."""
     referenced_files = set()
     markdown_files = find_all_files(directory, {'.md'})
     
+    # Create a regex that looks for any of the filenames in a Markdown link or HTML src attribute
+    # This is more precise than a simple string check.
+    # We escape special characters in filenames just in case.
+    escaped_filenames = [re.escape(fn) for fn in filenames_to_check]
+    pattern = re.compile(r'(\(|src=")([^)]*?)(' + '|'.join(escaped_filenames) + r')')
+
     for md_file in markdown_files:
         try:
-            with open(md_file, 'r', encoding='utf-8') as f:
+            with open(md_file, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
-                for filename in filenames:
-                    if filename in content:
-                        referenced_files.add(filename)
+                matches = pattern.finditer(content)
+                for match in matches:
+                    # The third group in our regex is the matched filename
+                    referenced_files.add(match.group(3))
         except Exception as e:
             print(f"Could not read file {md_file}: {e}")
             
@@ -72,6 +83,7 @@ def main():
     else:
         print("\n--- DELETING FILES ---")
         deleted_count = 0
+        error_count = 0
         for image_path in image_files:
             if os.path.basename(image_path) in unreferenced_filenames:
                 try:
@@ -80,7 +92,8 @@ def main():
                     deleted_count += 1
                 except Exception as e:
                     print(f"  - Error deleting {os.path.basename(image_path)}: {e}")
-        print(f"\nSuccessfully deleted {deleted_count} files.")
+                    error_count += 1
+        print(f"\nSuccessfully deleted {deleted_count} files. Encountered {error_count} errors.")
 
 if __name__ == "__main__":
     main()
