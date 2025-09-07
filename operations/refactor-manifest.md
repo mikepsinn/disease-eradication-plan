@@ -10,7 +10,7 @@ Valid actions are: **KEEP**, **MOVE**, **RENAME**, **DELETE**.
 
 **Instructions:**
 1.  Change `KEEP` to the desired action.
-2.  For `MOVE`, provide the destination path after the source path (e.g., `MOVE ./old/path.md ./dFDA-protocol/new/path.md`).
+2.  For `MOVE`, provide the destination path after the source path (e.g., `MOVE ./old/path.md ./dfda-protocol/new/path.md`).
 3.  For `RENAME`, provide the new name after the old name (e.g., `RENAME ./old-name.md ./new-name.md`).
 4.  Leave as `KEEP` for files that should not be touched.
 5.  Change to `DELETE` for files that should be removed.
@@ -33,7 +33,7 @@ Valid actions are: **KEEP**, **MOVE**, **RENAME**, **DELETE**.
 - [ ] KEEP ./.obsidian/hotkeys.json
 - [ ] DELETE ./.voters.yml
 - [ ] DELETE ./.voting.yml
-- [ ] DELETE ./FILE-ORGANIZATION.md
+- [ ] RENAME ./FILE-ORGANIZATION.md ./reference/information-architecture.md
 - [ ] KEEP ./LICENSE
 - [ ] KEEP ./README.md
 - [ ] DELETE ./act.md
@@ -126,7 +126,7 @@ Valid actions are: **KEEP**, **MOVE**, **RENAME**, **DELETE**.
 - [ ] KEEP ./assets/what-we-do-not-know.png
 - [ ] DELETE ./assets/what-your-insurance-company-knows-medical-record.psd
 - [ ] KEEP ./assets/why-research-is-failing.png
-- [ ] MOVE ./benefits/ ./dFDA-protocol/benefits-of-decentralized-trials/
+- [ ] MOVE ./benefits/ ./dfda-protocol/benefits-of-decentralized-trials/
 - [ ] KEEP ./browserconfig.xml
 - [ ] MOVE ./careers/ ./operations/hiring/
 - [ ] KEEP ./community/
@@ -155,25 +155,25 @@ Valid actions are: **KEEP**, **MOVE**, **RENAME**, **DELETE**.
 - [ ] MOVE ./dfda-wide-text-logo-transparent-4-light-background.svg ./brand/
 - [ ] MOVE ./dfda-wide-text-logo-white-background.png ./brand/
 - [ ] KEEP ./economic-models/
-- [ ] MOVE ./economic-models/benefits-of-over-the-counter-classification.md ./dFDA-protocol/economic-models/
-- [ ] MOVE ./economic-models/cost-benefit-analysis-for-drug-classification.md ./dFDA-protocol/economic-models/
+- [ ] MOVE ./economic-models/benefits-of-over-the-counter-classification.md ./dfda-protocol/economic-models/
+- [ ] MOVE ./economic-models/cost-benefit-analysis-for-drug-classification.md ./dfda-protocol/economic-models/
 - [ ] DELETE ./economic-models/create_chart.py
-- [ ] MOVE ./economic-models/dfda-cost-benefit-analysis.md ./dFDA-protocol/economic-models/
+- [ ] MOVE ./economic-models/dfda-cost-benefit-analysis.md ./dfda-protocol/economic-models/
 - [ ] KEEP ./economic-models/dih-treasury-cash-flow-model.md
 - [ ] KEEP ./economic-models/financial-model-placeholder.csv
 - [ ] KEEP ./economic-models/fundraising-and-budget-plan.md
 - [ ] KEEP ./economic-models/fundraising-strategy.md
-- [ ] MOVE ./economic-models/intervention-comparison-table.md ./dFDA-protocol/economic-models/
+- [ ] MOVE ./economic-models/intervention-comparison-table.md ./dfda-protocol/economic-models/
 - [ ] KEEP ./economic-models/investor-risk-analysis.md
 - [ ] KEEP ./economic-models/nih-grant-efficiency-analysis.md
 - [ ] KEEP ./economic-models/operational-budget-and-financial-model.md
 - [ ] KEEP ./economic-models/peace-dividend-value-capture.md
 - [ ] KEEP ./economic-models/pre-seed-terms.md
 - [ ] KEEP ./economic-models/qaly-comparison-chart.png
-- [ ] MOVE ./economic-models/quantitative-value-medical-treatment.md ./dFDA-protocol/economic-models/
+- [ ] MOVE ./economic-models/quantitative-value-medical-treatment.md ./dfda-protocol/economic-models/
 - [ ] RENAME ./economic-models/victory-bond-investment-thesis.md ./economic-models/1-percent-treaty-bond-thesis.md
 - [ ] KEEP ./favicon.ico
-- [ ] MOVE ./features/ ./dFDA-protocol/features/
+- [ ] MOVE ./features/ ./dfda-protocol/features/
 - [ ] KEEP ./home.md
 - [ ] KEEP ./index.md
 - [ ] KEEP ./legal/
@@ -192,7 +192,7 @@ Valid actions are: **KEEP**, **MOVE**, **RENAME**, **DELETE**.
 - [ ] KEEP ./operations/security/incident-response-plan.md
 - [ ] KEEP ./operations/wiki-restructuring-plan.md
 - [ ] DELETE ./problem.md
-- [ ] MOVE ./problems/ ./dFDA-protocol/problems/
+- [ ] MOVE ./problems/ ./dfda-protocol/problems/
 - [ ] DELETE ./project-layout.md
 - [ ] KEEP ./proposals/
 - [ ] MOVE ./proposals/dfda-act.md ./regulatory/dfda-act/
@@ -201,12 +201,12 @@ Valid actions are: **KEEP**, **MOVE**, **RENAME**, **DELETE**.
 - [ ] MOVE ./proposals/survey-implementation-plan.md ./operations/surveys/
 - [ ] MOVE ./proposals/survey.md ./operations/surveys/
 - [ ] DELETE ./proposals/use-github-for-task-management.md
-- [ ] MOVE ./reference-databases/ ./dFDA-protocol/reference-databases/
-- [ ] MOVE ./reference/ ./dFDA-protocol/reference/
-- [ ] MOVE ./regulatory/ ./dFDA-protocol/regulatory/
+- [ ] MOVE ./reference-databases/ ./dfda-protocol/reference-databases/
+- [ ] MOVE ./reference/ ./dfda-protocol/reference/
+- [ ] MOVE ./regulatory/ ./dfda-protocol/regulatory/
 - [ ] KEEP ./site.webmanifest
 - [ ] DELETE ./solution.md
-- [ ] RENAME ./specification.md ./dFDA-protocol/SPECIFICATION.md
+- [ ] RENAME ./specification.md ./dfda-protocol/SPECIFICATION.md
 - [ ] KEEP ./strategy/
 - [ ] KEEP ./strategy/1-percent-treaty/
 - [ ] MOVE ./strategy/1-percent-treaty/1-percent-treaty.jpg ./brand/
@@ -277,7 +277,7 @@ Valid actions are: **KEEP**, **MOVE**, **RENAME**, **DELETE**.
 - [ ] KEEP ./strategy/co-opting-defense-contractors.md
 - [ ] KEEP ./strategy/community-governance-framework.md
 - [ ] KEEP ./strategy/dex-listing-policy.md
-- [ ] MOVE ./strategy/dfda-collaboration-framework.md ./dFDA-protocol/collaboration-framework.md
+- [ ] MOVE ./strategy/dfda-collaboration-framework.md ./dfda-protocol/collaboration-framework.md
 - [ ] KEEP ./strategy/executive-action-implementation.md
 - [ ] KEEP ./strategy/free-rider-solution.md
 - [ ] KEEP ./strategy/fundraising-models-comparison.md
