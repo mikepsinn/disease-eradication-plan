@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from 'zod/v3';
 import { streamObject } from 'ai';
 import { createOpenAI } from '@ai-sdk/openai';
 import { createAnthropic } from '@ai-sdk/anthropic';
@@ -88,7 +88,7 @@ export async function evaluateArticle(content: string, filePath: string): Promis
       throw new Error(`Unsupported model: ${modelName}`);
     }
 
-    const result = await streamObject({
+    const result = streamObject({
       model: provider(),
       schema: ArticleAssessmentSchema,
       system: SYSTEM_PROMPT,

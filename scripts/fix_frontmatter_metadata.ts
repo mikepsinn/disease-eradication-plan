@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as fspromises from 'fs/promises';
 import * as path from 'path';
 import matter from 'gray-matter';
-import { z, ZodObject, ZodRawShape, ZodTypeAny } from 'zod';
+import { z, ZodObject, ZodRawShape, ZodTypeAny } from 'zod/v3';
 // Assuming LLMClient is converted to TS as well
 import LLMClient from './llm-client';
 import ignore, { Ignore } from 'ignore';
