@@ -1,9 +1,9 @@
 ---
 title: File Organization Guidelines for the dFDA Wiki
-description: Where new pages belong, naming and linking conventions, and how to keep the wiki coherent at scale.
+description: 'Where new pages belong, naming and linking conventions, and how to keep the wiki coherent at scale.'
 published: true
 date: '2025-01-20T00:00:00.000Z'
-tags: authoring, style, structure, file-placement, naming, links
+tags: [authoring, style, structure, file-placement, naming, links]
 editor: markdown
 dateCreated: '2025-01-20T00:00:00.000Z'
 ---

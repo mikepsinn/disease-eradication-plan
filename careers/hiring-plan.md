@@ -1,9 +1,9 @@
 ---
 title: Hiring Plan & Team Roadmap
-description: A detailed, phase-based hiring plan outlining the core team structure and scaling strategy required to execute the 1% Treaty and launch the DIH.
+description: 'A detailed, phase-based hiring plan outlining the core team structure and scaling strategy required to execute the 1% Treaty and launch the DIH.'
 published: true
 date: '2025-08-22T00:00:00.000Z'
-tags: hiring, careers, team, operations, scaling
+tags: [hiring, careers, team, operations, scaling]
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
 ---

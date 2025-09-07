@@ -1,13 +1,8 @@
 ---
-description: >-
-  Ageless Partners LLC is a research company focused on developing machine
-  learning and AI innovations for analyzing complex datasets to reverse aging
-  and advance anti-aging medical science.
+description: Ageless Partners LLC is a research company focused on developing machine learning and AI innovations for analyzing complex datasets to reverse aging and advance anti-aging medical science.
 emoji: evity
 title: ageless-partners
-tags: >-
-  anti-aging, machine-learning, artificial-intelligence, personalized-medicine,
-  healthcare, research
+tags: [anti-aging, machine-learning, artificial-intelligence, personalized-medicine, healthcare, research]
 published: true
 editor: markdown
 date: '2022-09-01T10:52:19.940Z'

@@ -1,11 +1,8 @@
 ---
-description: >-
-  Analysis of barriers to clinical trials and strategies for mitigation,
-  including use of EHR, simplified protocols, reduced SDV, mobile technologies,
-  lower-cost facilities, Priority Review vouchers, and FDA process improvements.
+description: 'Analysis of barriers to clinical trials and strategies for mitigation, including use of EHR, simplified protocols, reduced SDV, mobile technologies, lower-cost facilities, Priority Review vouchers, and FDA process improvements.'
 emoji: "\U0001F4CA"
 title: Barriers to Clinical Trials and Mitigation Strategies
-tags: 'clinical-trials, barriers, FDA, policy, cost-efficiency'
+tags: [clinical-trials, barriers, FDA, policy, cost-efficiency]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:50.817Z'

@@ -1,11 +1,8 @@
 ---
-description: >-
-  PersonalFDA Nodes are applications that run on personal devices to store and
-  analyze health data using a Digital Twin Safe and an AI agent called
-  Optimitron.
+description: PersonalFDA Nodes are applications that run on personal devices to store and analyze health data using a Digital Twin Safe and an AI agent called Optimitron.
 emoji: "\U0001F916"
 title: PersonalFDA Nodes
-tags: 'personal-health, data-analysis, AI-agent, Digital-Twin-Safe, Optimitron'
+tags: [personal-health, data-analysis, AI-agent, Digital-Twin-Safe, Optimitron]
 published: true
 editor: markdown
 date: '2025-02-12T16:53:25.518Z'

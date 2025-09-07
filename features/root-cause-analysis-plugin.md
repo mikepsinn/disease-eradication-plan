@@ -1,10 +1,8 @@
 ---
-description: >-
-  Reports are intended to help you and your physician to gain insight into the
-  root causes and effective solutions to help you minimize your symptoms.
+description: Reports are intended to help you and your physician to gain insight into the root causes and effective solutions to help you minimize your symptoms.
 emoji: " 自动生成的报告 \U0001F4CA"
 title: "\U0001F955 Root Cause Analysis Plugin"
-tags: 'root-cause-analysis, health, symptoms, CuroBot'
+tags: [root-cause-analysis, health, symptoms, CuroBot]
 published: true
 editor: markdown
 date: '2022-08-28T15:10:37.898Z'

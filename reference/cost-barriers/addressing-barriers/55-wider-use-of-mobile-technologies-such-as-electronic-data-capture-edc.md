@@ -1,10 +1,8 @@
 ---
-description: >-
-  Exploration of how Electronic Data Capture (EDC) can reduce clinical trial
-  durations and costs
+description: Exploration of how Electronic Data Capture (EDC) can reduce clinical trial durations and costs
 emoji: "\U0001F4F1"
 title: Wider Use of EDC in Clinical Trials
-tags: 'edc, clinical-trials, technology, cost-efficiency'
+tags: [edc, clinical-trials, technology, cost-efficiency]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:53.757Z'

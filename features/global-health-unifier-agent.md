@@ -1,13 +1,8 @@
 ---
-description: >-
-  A global health agent that accelerates medical progress through the Disease
-  Eradication Act by coordinating decentralized clinical trials and automating
-  research validation.
+description: A global health agent that accelerates medical progress through the Disease Eradication Act by coordinating decentralized clinical trials and automating research validation.
 emoji: "\U0001F30D"
 title: Global Health Unifier Agent
-tags: >-
-  global-health, clinical-trials, research-automation, decentralized-research,
-  medical-progress
+tags: [global-health, clinical-trials, research-automation, decentralized-research, medical-progress]
 published: true
 editor: markdown
 date: '2025-02-11T14:20:26.909Z'

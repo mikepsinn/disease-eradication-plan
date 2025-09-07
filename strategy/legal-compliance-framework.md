@@ -1,9 +1,9 @@
 ---
 title: Legal Compliance Framework
-description: Comprehensive legal compliance strategy for foreign election funding restrictions, securities law compliance, and international coordination.
+description: 'Comprehensive legal compliance strategy for foreign election funding restrictions, securities law compliance, and international coordination.'
 published: true
 date: '2025-01-15T00:00:00.000Z'
-tags: legal-compliance, election-law, securities-law, international-law, regulatory
+tags: [legal-compliance, election-law, securities-law, international-law, regulatory]
 editor: markdown
 dateCreated: '2025-01-15T00:00:00.000Z'
 ---

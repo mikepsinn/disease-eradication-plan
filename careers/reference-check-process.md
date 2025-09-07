@@ -1,9 +1,9 @@
 ---
 title: Reference Check Process for the Supreme Allied Commander
-description: A guide for conducting final reference checks for the Supreme Allied Commander, War on Disease role, including a bespoke email and form template.
+description: 'A guide for conducting final reference checks for the Supreme Allied Commander, War on Disease role, including a bespoke email and form template.'
 published: true
 date: 2025-01-01T00:00:00.000Z
-tags: hiring, workflow, recruitment, references, leadership
+tags: [hiring, workflow, recruitment, references, leadership]
 editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---

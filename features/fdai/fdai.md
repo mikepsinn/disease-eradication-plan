@@ -1,10 +1,8 @@
 ---
-description: >-
-  Exploration of automating clinical research and its potential cost savings
-  with automated data collection methods.
+description: Exploration of automating clinical research and its potential cost savings with automated data collection methods.
 emoji: "\U0001F916"
-title: 'Automating Clinical Research: Cost Savings and Data Collection'
-tags: 'automation, clinical-research, data-collection, artificial-intelligence'
+title: '"Automating Clinical Research: Cost Savings and Data Collection"'
+tags: [automation, clinical-research, data-collection, artificial-intelligence]
 published: true
 editor: markdown
 date: '2025-02-09T16:34:48.009Z'

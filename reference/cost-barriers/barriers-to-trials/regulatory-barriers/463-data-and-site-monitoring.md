@@ -1,12 +1,8 @@
 ---
-description: >-
-  Analysis of data and site monitoring costs in clinical trials, focusing on the
-  impact of source data verification practices.
+description: 'Analysis of data and site monitoring costs in clinical trials, focusing on the impact of source data verification practices.'
 emoji: "\U0001F50D"
 title: Data and Site Monitoring Costs in Clinical Trials
-tags: >-
-  clinical-trials, data-monitoring, costs, source-data-verification,
-  FDA-regulations
+tags: [clinical-trials, data-monitoring, costs, source-data-verification, FDA-regulations]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:23.388Z'

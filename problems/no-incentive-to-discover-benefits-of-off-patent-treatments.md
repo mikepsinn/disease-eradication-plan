@@ -1,11 +1,8 @@
 ---
-description: >-
-  If a drug is found to be effective for other diseases after the patent has
-  expired, no one has the financial incentive to get it approved for another
-  disease.
+description: 'If a drug is found to be effective for other diseases after the patent has expired, no one has the financial incentive to get it approved for another disease.'
 emoji: "\U0001FA7A"
 title: "\U0001F4C3 No Incentive to Discover Benefits of Off-Patent Treatments"
-tags: 'orphan-diseases, drug-approval, pharmaceuticals, clinical-trials'
+tags: [orphan-diseases, drug-approval, pharmaceuticals, clinical-trials]
 published: true
 editor: markdown
 date: '2022-08-18T08:00:43.662Z'

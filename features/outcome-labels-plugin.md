@@ -1,10 +1,8 @@
 ---
-description: >-
-  Proposal for replacing traditional nutrition labels with outcome labels to
-  better inform consumers about health impacts
+description: Proposal for replacing traditional nutrition labels with outcome labels to better inform consumers about health impacts
 emoji: "\U0001F4CA"
 title: "\U0001F3F7 Outcome Labels Plugin"
-tags: 'nutrition, health-outcomes, food-labels, public-health'
+tags: [nutrition, health-outcomes, food-labels, public-health]
 published: true
 editor: markdown
 date: '2022-08-28T15:12:30.345Z'

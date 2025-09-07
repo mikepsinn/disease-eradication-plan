@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of inflammation-mediated depression and related symptoms, with
-  dietary adjustment recommendations for a vegetarian patient.
+description: 'Analysis of inflammation-mediated depression and related symptoms, with dietary adjustment recommendations for a vegetarian patient.'
 emoji: "\U0001F331"
 title: Inflammation-Mediated Depression and Dietary Adjustments
-tags: 'inflammation, depression, dietary-adjustments, vegetarian, health'
+tags: [inflammation, depression, dietary-adjustments, vegetarian, health]
 published: true
 editor: markdown
 date: '2025-02-09T16:35:03.599Z'

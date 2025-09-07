@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of relaxing trial enrollment restrictions to improve patient
-  recruitment and reduce clinical trial barriers
+description: Analysis of relaxing trial enrollment restrictions to improve patient recruitment and reduce clinical trial barriers
 emoji: "\U0001F465"
 title: Relaxing Trial Enrollment Restrictions
-tags: 'clinical-trials, patient-recruitment, enrollment-rates, eligibility-criteria'
+tags: [clinical-trials, patient-recruitment, enrollment-rates, eligibility-criteria]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:44.286Z'

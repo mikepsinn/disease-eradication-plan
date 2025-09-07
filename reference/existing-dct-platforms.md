@@ -3,7 +3,7 @@ title: Existing Decentralized Clinical Trial (DCT) Platforms & Vendors
 description: A list of companies and platforms involved in providing decentralized clinical trial solutions and services.
 published: true
 date: 2025-07-26T12:00:00.000Z
-tags: reference, clinical-trials, decentralized
+tags: [reference, clinical-trials, decentralized]
 editor: markdown
 dateCreated: 2025-07-26T12:00:00.000Z
 ---

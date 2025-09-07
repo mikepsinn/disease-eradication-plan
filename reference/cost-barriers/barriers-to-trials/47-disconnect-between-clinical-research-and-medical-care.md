@@ -1,11 +1,8 @@
 ---
-description: >-
-  Analysis of the disconnect between clinical research and medical care,
-  highlighting issues such as lack of community physician involvement, shortages
-  of investigators and patients, high costs, and lengthy timelines.
+description: 'Analysis of the disconnect between clinical research and medical care, highlighting issues such as lack of community physician involvement, shortages of investigators and patients, high costs, and lengthy timelines.'
 emoji: "\U0001F52C"
 title: Disconnect Between Clinical Research and Medical Care
-tags: 'clinical-research, medical-care, physicians, health-systems, barriers'
+tags: [clinical-research, medical-care, physicians, health-systems, barriers]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:31.009Z'

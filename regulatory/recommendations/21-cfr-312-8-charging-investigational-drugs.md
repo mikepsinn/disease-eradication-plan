@@ -3,7 +3,7 @@ title: Investigational Drug Charging Reform
 description: Proposals for modernizing 21 CFR 312.8 regulations on charging for investigational drugs in dFDA trials
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, investigational-drugs, clinical-trials, charging
+tags: [regulatory, recommendations, investigational-drugs, clinical-trials, charging]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-dollar-sign

@@ -1,11 +1,8 @@
 ---
-description: >-
-  Analysis of the challenges in increasing competition for qualified
-  investigators and clinical trial sites, including shortages, attrition rates,
-  and difficulties for new sites.
+description: 'Analysis of the challenges in increasing competition for qualified investigators and clinical trial sites, including shortages, attrition rates, and difficulties for new sites.'
 emoji: "\U0001F469‍\U0001F52C"
 title: Increasing Competition for Qualified Investigators and Sites
-tags: 'clinical-trials, investigators, sites, shortages, competition'
+tags: [clinical-trials, investigators, sites, shortages, competition]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:30.927Z'

@@ -1,11 +1,8 @@
 ---
-description: >-
-  Analysis of the high financial costs associated with bringing a new drug to
-  market, ranging from $161 million to $2 billion, and the impact of shifting
-  research focus towards chronic diseases.
+description: 'Analysis of the high financial costs associated with bringing a new drug to market, ranging from $161 million to $2 billion, and the impact of shifting research focus towards chronic diseases.'
 emoji: "\U0001F4C8"
 title: High Financial Costs in Drug Development
-tags: 'drug-development, costs, chronic-diseases, pharmaceutical-industry'
+tags: [drug-development, costs, chronic-diseases, pharmaceutical-industry]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:21.024Z'

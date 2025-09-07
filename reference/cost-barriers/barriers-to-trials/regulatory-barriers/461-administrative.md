@@ -1,12 +1,8 @@
 ---
-description: >-
-  Analysis of administrative inefficiencies in drug companies, focusing on
-  contract negotiation and internal review processes impacting clinical trials.
+description: 'Analysis of administrative inefficiencies in drug companies, focusing on contract negotiation and internal review processes impacting clinical trials.'
 emoji: "\U0001F4DD"
 title: Administrative Inefficiencies in Drug Development
-tags: >-
-  drug-development, clinical-trials, administrative-processes, contracts,
-  internal-review
+tags: [drug-development, clinical-trials, administrative-processes, contracts, internal-review]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:17.038Z'

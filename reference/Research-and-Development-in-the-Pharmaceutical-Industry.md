@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of pharmaceutical industry's research and development spending and
-  its outcomes, including the increase in new drug approvals.
+description: 'Analysis of pharmaceutical industry''s research and development spending and its outcomes, including the increase in new drug approvals.'
 emoji: "\U0001F52C"
 title: Pharmaceutical R&D Spending and Outcomes
-tags: 'pharmaceuticals, R&D, drug-development, industry-analysis'
+tags: [pharmaceuticals, R&D, drug-development, industry-analysis]
 published: true
 editor: markdown
 date: '2025-02-12T20:29:04.546Z'

@@ -1,9 +1,9 @@
 ---
-title: "Multi-Entity Strategy for Legal Compliance and Mission Execution"
-description: "Outlines the recommended legal structure using separate entities (501(c)(3), 501(c)(4), and a for-profit/foundation) to legally manage donations, investments, and political advocacy."
+title: Multi-Entity Strategy for Legal Compliance and Mission Execution
+description: 'Outlines the recommended legal structure using separate entities (501(c)(3), 501(c)(4), and a for-profit/foundation) to legally manage donations, investments, and political advocacy.'
 published: true
 date: '2025-08-23T00:00:00.000Z'
-tags: legal, strategy, 501c3, 501c4, compliance, investment, advocacy
+tags: [legal, strategy, 501c3, 501c4, compliance, investment, advocacy]
 editor: markdown
 dateCreated: '2025-08-23T00:00:00.000Z'
 topic_id: multi-entity-strategy

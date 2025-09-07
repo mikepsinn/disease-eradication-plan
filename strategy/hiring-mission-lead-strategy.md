@@ -1,9 +1,9 @@
 ---
-title: "Operation Wartime General: A Strategy for Recruiting the Supreme Allied Commander, War on Disease"
-description: A strategic plan for sourcing, vetting, and funding a CEO/CTO-profile leader to build and command an army of AI agents in the War on Disease.
+title: '"Operation Wartime General: A Strategy for Recruiting the Supreme Allied Commander, War on Disease"'
+description: 'A strategic plan for sourcing, vetting, and funding a CEO/CTO-profile leader to build and command an army of AI agents in the War on Disease.'
 published: true
 date: 2025-01-01T00:00:00.000Z
-tags: strategy, hiring, recruitment, leadership, ai, automation, War-on-Disease
+tags: [strategy, hiring, recruitment, leadership, ai, automation, War-on-Disease]
 editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---

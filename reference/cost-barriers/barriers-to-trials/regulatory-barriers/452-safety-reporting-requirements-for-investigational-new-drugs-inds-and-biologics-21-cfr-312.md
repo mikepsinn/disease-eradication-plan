@@ -1,10 +1,8 @@
 ---
-description: >-
-  Safety reporting requirements for Investigational New Drugs (INDs) and
-  biologics as per 21 CFR 312, including definitions of adverse events.
+description: 'Safety reporting requirements for Investigational New Drugs (INDs) and biologics as per 21 CFR 312, including definitions of adverse events.'
 emoji: ⚠️
 title: Safety Reporting Requirements for INDs and Biologics
-tags: 'ind, biologics, adverse-events, safety-reporting, fda-regulations'
+tags: [ind, biologics, adverse-events, safety-reporting, fda-regulations]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:57.327Z'

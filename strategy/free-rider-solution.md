@@ -3,7 +3,7 @@ title: Free Rider Problem Solution
 description: Concrete mechanisms to ensure simultaneous compliance with the 1% Treaty and prevent defection by individual nations.
 published: true
 date: '2025-01-15T00:00:00.000Z'
-tags: free-rider, collective-action, treaty-enforcement, compliance, game-theory
+tags: [free-rider, collective-action, treaty-enforcement, compliance, game-theory]
 editor: markdown
 dateCreated: '2025-01-15T00:00:00.000Z'
 ---

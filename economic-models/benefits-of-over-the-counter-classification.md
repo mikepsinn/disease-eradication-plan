@@ -1,9 +1,9 @@
 ---
 title: Economic Impact of Prescription-Only Classification for Safe Drugs
-description: Many safe medications remain prescription-only, imposing unnecessary costs and barriers on patients despite potential savings of $146 billion annually through over-the-counter alternatives.
+description: 'Many safe medications remain prescription-only, imposing unnecessary costs and barriers on patients despite potential savings of $146 billion annually through over-the-counter alternatives.'
 published: true
 date: '2025-02-27T07:36:31.836Z'
-tags: healthcare-policy, prescription-drugs, over-the-counter, economic-impact, healthcare-costs
+tags: [healthcare-policy, prescription-drugs, over-the-counter, economic-impact, healthcare-costs]
 editor: markdown
 dateCreated: '2025-02-27T07:36:31.836Z'
 ---

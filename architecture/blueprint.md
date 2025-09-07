@@ -1,9 +1,8 @@
 ---
-description: >-
-  A comprehensive blueprint for creating a world without disease, outlining the vision, a five-phase implementation plan, and the strategic shift toward incentivizing cures.
-emoji: "🗺️"
+description: 'A comprehensive blueprint for creating a world without disease, outlining the vision, a five-phase implementation plan, and the strategic shift toward incentivizing cures.'
+emoji: "\U0001F5FA️"
 title: The Blueprint for a World Without Disease
-tags: 'healthcare-reform, disease-prevention, global-health, decentralized-fda, strategy, roadmap'
+tags: [healthcare-reform, disease-prevention, global-health, decentralized-fda, strategy, roadmap]
 published: true
 editor: markdown
 date: '2025-08-16T00:00:00.000Z'

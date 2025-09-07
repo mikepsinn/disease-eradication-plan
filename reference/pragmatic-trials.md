@@ -1,9 +1,9 @@
 ---
-title: 'Pragmatic vs Explanatory Trials: A Quantitative Analysis'
-description: A comparison of pragmatic and explanatory trials focusing on cost, time, and real-world applicability.
+title: '"Pragmatic vs Explanatory Trials: A Quantitative Analysis"'
+description: 'A comparison of pragmatic and explanatory trials focusing on cost, time, and real-world applicability.'
 published: true
 date: '2025-02-27T07:36:34.941Z'
-tags: clinical-trials, research-methodology, healthcare-innovation, trial-design
+tags: [clinical-trials, research-methodology, healthcare-innovation, trial-design]
 editor: markdown
 dateCreated: '2025-02-27T07:36:34.941Z'
 ---

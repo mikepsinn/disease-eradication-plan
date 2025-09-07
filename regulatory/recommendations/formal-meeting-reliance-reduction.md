@@ -3,7 +3,7 @@ title: Formal Meeting Reliance Reduction
 description: Proposals for reducing reliance on formal FDA meetings through dFDA platform capabilities
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, meetings, communication, fda
+tags: [regulatory, recommendations, meetings, communication, fda]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-handshake

@@ -1,10 +1,8 @@
 ---
-description: >-
-  A directory for healthcare providers including hospitals, clinics, and health
-  apps involved in the project
+description: 'A directory for healthcare providers including hospitals, clinics, and health apps involved in the project'
 emoji: "\U0001F3E5"
 title: Healthcare Providers Directory
-tags: 'healthcare-providers, community-directory, collaboration'
+tags: [healthcare-providers, community-directory, collaboration]
 published: true
 editor: markdown
 date: '2025-02-12T16:51:55.194Z'

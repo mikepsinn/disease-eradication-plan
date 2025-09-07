@@ -3,7 +3,7 @@ title: HIPAA Privacy Rule Platform Adaptation
 description: Recommendations for adapting HIPAA Privacy Rule requirements for dFDA platform implementation
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, hipaa, privacy, data-protection
+tags: [regulatory, recommendations, hipaa, privacy, data-protection]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-user-shield

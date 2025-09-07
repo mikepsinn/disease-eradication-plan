@@ -1,9 +1,9 @@
 ---
 title: Problems in Clinical Research
-description: The existing regulatory framework for drug approval presents several challenges, hindering the efficiency and effectiveness of pharmaceutical research and public health.
+description: 'The existing regulatory framework for drug approval presents several challenges, hindering the efficiency and effectiveness of pharmaceutical research and public health.'
 published: true
 date: 2023-10-26T19:50:44.089Z
-tags: dfda, fda, problems, clinical research
+tags: [dfda, fda, problems, clinical, research]
 editor: markdown
 dateCreated: 2023-10-26T19:50:44.089Z
 ---

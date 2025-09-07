@@ -1,9 +1,9 @@
 ---
 title: DIH On-Chain and AI Architecture
-description: Modular blueprint to replace centralized bureaucracy with AI agents and smart contracts across treasury, trials, and evidence-to-funding automation.
+description: 'Modular blueprint to replace centralized bureaucracy with AI agents and smart contracts across treasury, trials, and evidence-to-funding automation.'
 published: true
 date: '2025-08-15T00:00:00.000Z'
-tags: architecture, smart-contracts, ai, governance, oracle, dfda, dih
+tags: [architecture, smart-contracts, ai, governance, oracle, dfda, dih]
 editor: markdown
 ---
 

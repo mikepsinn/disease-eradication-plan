@@ -1,10 +1,8 @@
 ---
-description: >-
-  When billions of dollars in losses or gains are riding on the results of a
-  study, this will almost inevitably influence the results.
+description: 'When billions of dollars in losses or gains are riding on the results of a study, this will almost inevitably influence the results.'
 emoji: "\U0001F4CA"
 title: "\U0001F3AD Conflicts of Interest Industry-Controlled Research"
-tags: 'clinical-trials, conflict-of-interest, pharmaceuticals, beverage-studies'
+tags: [clinical-trials, conflict-of-interest, pharmaceuticals, beverage-studies]
 published: true
 editor: markdown
 date: '2022-07-29T01:56:32.735Z'

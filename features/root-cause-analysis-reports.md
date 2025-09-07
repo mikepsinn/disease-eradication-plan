@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of the failures in current clinical research systems leading to high
-  costs and lack of data on non-patentable factors affecting chronic conditions
+description: Analysis of the failures in current clinical research systems leading to high costs and lack of data on non-patentable factors affecting chronic conditions
 emoji: "\U0001F50D"
 title: Root Cause Analysis Reports
-tags: 'clinical-research, autoimmune-diseases, mental-health, costs, data-gaps'
+tags: [clinical-research, autoimmune-diseases, mental-health, costs, data-gaps]
 published: true
 editor: markdown
 date: '2025-02-12T16:53:32.075Z'

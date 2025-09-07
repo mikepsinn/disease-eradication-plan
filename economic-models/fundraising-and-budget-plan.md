@@ -1,9 +1,9 @@
 ---
-title: 'Fundraising & Budget Plan: The $2.5B Activation Energy'
+title: '"Fundraising & Budget Plan: The $2.5B Activation Energy"'
 description: 'A detailed breakdown of the total capital required to activate the 1% Treaty, including a multi-phase fundraising strategy and a line-item budget for political, technical, legal, and public-facing operations.'
 published: true
 date: '2025-08-22T00:00:00.000Z'
-tags: fundraising, budget, financial-planning, strategy, investor-relations
+tags: [fundraising, budget, financial-planning, strategy, investor-relations]
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
 topic_id: fundraising-budget-plan

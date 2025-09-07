@@ -2,10 +2,10 @@
 title: Peace Dividend Analytics Lead — Value Capture & Public Dashboards
 description: Show the money we save. Keep the calculators and methods clear and public.
 published: true
-date: 2025-08-22
-tags: careers, analytics, economics, public-dashboards
+date: 2025-08-22T00:00:00.000Z
+tags: [careers, analytics, economics, public-dashboards]
 editor: markdown
-dateCreated: 2025-08-22
+dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
 ## Mission & Scope

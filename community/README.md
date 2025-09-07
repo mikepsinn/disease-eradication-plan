@@ -2,7 +2,7 @@
 description: A directory to facilitate collaboration among stakeholders in the project
 emoji: "\U0001F465"
 title: Community Directory
-tags: 'dFDA, community, collaboration, decentralized-health, regulatory-processes'
+tags: [dFDA, community, collaboration, decentralized-health, regulatory-processes]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:13.974Z'

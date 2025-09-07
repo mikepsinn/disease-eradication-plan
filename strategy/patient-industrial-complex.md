@@ -1,10 +1,8 @@
 ---
-description: >-
-  A token-based system to incentivize actions that support the Disease
-  Eradication Act and reduce patient suffering
+description: A token-based system to incentivize actions that support the Disease Eradication Act and reduce patient suffering
 emoji: "\U0001F3DB️"
 title: Patient Industrial Complex Advocacy System
-tags: 'patient-industrial-complex, tokens, advocacy, disease-eradication-act'
+tags: [patient-industrial-complex, tokens, advocacy, disease-eradication-act]
 published: true
 editor: markdown
 date: '2025-02-12T20:29:50.146Z'

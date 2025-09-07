@@ -1,11 +1,8 @@
 ---
-description: >-
-  Analysis of the challenges in recruiting and retaining participants for
-  clinical trials, including factors like study size and competition among
-  drugs.
+description: 'Analysis of the challenges in recruiting and retaining participants for clinical trials, including factors like study size and competition among drugs.'
 emoji: "\U0001F465"
 title: Difficulties in Recruiting and Retaining Clinical Trial Participants
-tags: 'clinical-trials, patient-recruitment, barriers, pharmaceuticals, biotechnology'
+tags: [clinical-trials, patient-recruitment, barriers, pharmaceuticals, biotechnology]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:43.708Z'

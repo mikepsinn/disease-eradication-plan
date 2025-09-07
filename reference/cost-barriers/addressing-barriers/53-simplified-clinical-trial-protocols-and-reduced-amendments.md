@@ -1,11 +1,8 @@
 ---
-description: >-
-  Strategy to reduce clinical trial costs by simplifying protocols and
-  minimizing avoidable amendments, potentially cutting data collection costs by
-  22.5%.
+description: 'Strategy to reduce clinical trial costs by simplifying protocols and minimizing avoidable amendments, potentially cutting data collection costs by 22.5%.'
 emoji: "\U0001F4CB"
 title: Simplified Clinical Trial Protocols and Reduced Amendments
-tags: 'clinical-trials, cost-reduction, protocol-efficiency, data-collection'
+tags: [clinical-trials, cost-reduction, protocol-efficiency, data-collection]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:47.657Z'

@@ -1,10 +1,8 @@
 ---
-description: >-
-  Framework for importing and normalizing data from various health and
-  productivity applications and devices
+description: Framework for importing and normalizing data from various health and productivity applications and devices
 emoji: "\U0001F578"
 title: Data Import Framework
-tags: 'data-import, connectors, health-data, productivity, normalization'
+tags: [data-import, connectors, health-data, productivity, normalization]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:52.985Z'

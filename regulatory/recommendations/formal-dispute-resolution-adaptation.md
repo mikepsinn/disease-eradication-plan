@@ -3,7 +3,7 @@ title: Formal Dispute Resolution Adaptation
 description: Framework for adapting formal dispute resolution processes for dFDA platform decisions
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, dispute-resolution, appeals, fda
+tags: [regulatory, recommendations, dispute-resolution, appeals, fda]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-gavel

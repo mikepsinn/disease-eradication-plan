@@ -1,10 +1,8 @@
 ---
-description: >-
-  A program aiming to reduce healthcare costs by incentivizing cures and
-  preventative therapies for chronic diseases.
+description: A program aiming to reduce healthcare costs by incentivizing cures and preventative therapies for chronic diseases.
 emoji: "\U0001F31F"
 title: 50/50 Health Savings Sharing Program
-tags: 'healthcare, cost-reduction, cures, preventative-therapies, chronic-diseases'
+tags: [healthcare, cost-reduction, cures, preventative-therapies, chronic-diseases]
 published: true
 editor: markdown
 date: '2025-02-12T16:56:08.061Z'

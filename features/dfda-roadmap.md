@@ -1,9 +1,9 @@
 ---
 title: dFDA Platform Technical Roadmap
-description: A detailed, phased technical roadmap for engineering the decentralized FDA (dFDA) platform, its AI agents, and pilot trial infrastructure.
+description: 'A detailed, phased technical roadmap for engineering the decentralized FDA (dFDA) platform, its AI agents, and pilot trial infrastructure.'
 published: true
 date: '2025-08-22T00:00:00.000Z'
-tags: dfda, technical-roadmap, product-development, ai-agents, decentralized-trials
+tags: [dfda, technical-roadmap, product-development, ai-agents, decentralized-trials]
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
 topic_id: dfda-technical-roadmap

@@ -3,7 +3,7 @@ title: PRO Instrument Validation Streamlining
 description: Recommendations for streamlining patient-reported outcome instrument validation in dFDA context
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, pro, validation, patient-outcomes
+tags: [regulatory, recommendations, pro, validation, patient-outcomes]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-clipboard-check

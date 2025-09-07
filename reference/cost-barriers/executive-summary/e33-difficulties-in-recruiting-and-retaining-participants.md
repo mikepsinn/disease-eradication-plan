@@ -1,11 +1,8 @@
 ---
-description: >-
-  Discussion of challenges in recruiting and retaining participants for clinical
-  trials, including competition for limited patient pools and site selection
-  based on investigator location.
+description: 'Discussion of challenges in recruiting and retaining participants for clinical trials, including competition for limited patient pools and site selection based on investigator location.'
 emoji: "\U0001F465"
 title: Difficulties in Recruiting and Retaining Clinical Trial Participants
-tags: 'clinical-trials, recruitment, patient-participation, rare-diseases'
+tags: [clinical-trials, recruitment, patient-participation, rare-diseases]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:27.527Z'

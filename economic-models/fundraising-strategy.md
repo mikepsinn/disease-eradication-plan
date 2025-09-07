@@ -1,9 +1,9 @@
 ---
 title: Fundraising Strategy - Simple Targets & Market-Driven Mechanics
-description: Details our hybrid strategy for raising capital, combining simple, ambitious ROI targets for marketing with efficient market-driven pricing and de-risked assurance contracts.
+description: 'Details our hybrid strategy for raising capital, combining simple, ambitious ROI targets for marketing with efficient market-driven pricing and de-risked assurance contracts.'
 published: true
 date: '2025-01-23T00:00:00.000Z'
-tags: fundraising, victory-bonds, assurance-contract, dutch-auction, investment-strategy
+tags: [fundraising, victory-bonds, assurance-contract, dutch-auction, investment-strategy]
 editor: markdown
 dateCreated: '2025-01-23T00:00:00.000Z'
 ---

@@ -1,9 +1,9 @@
 ---
-title: 'Investor Risk Analysis: VICTORY Bonds vs. Traditional Venture Capital'
+title: '"Investor Risk Analysis: VICTORY Bonds vs. Traditional Venture Capital"'
 description: 'A comprehensive analysis of the unique risk profile of the 1% Treaty initiative, comparing its political arbitrage model to the market-risk model of venture capital and detailing the engineered mechanisms designed to mitigate key risks.'
 published: true
 date: '2025-08-22T00:00:00.000Z'
-tags: risk-analysis, investment-thesis, venture-capital, political-arbitrage, assurance-contracts, metaculus
+tags: [risk-analysis, investment-thesis, venture-capital, political-arbitrage, assurance-contracts, metaculus]
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
 ---

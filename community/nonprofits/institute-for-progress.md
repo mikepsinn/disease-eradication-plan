@@ -1,9 +1,9 @@
 ---
-title: 🚀 Institute for Progress (IFP)
+title: "\U0001F680 Institute for Progress (IFP)"
 description: A technology policy think tank focused on accelerating scientific and technological progress
 published: true
 date: 2025-05-28T22:16:00.000Z
-tags: nonprofit, policy, technology, innovation, clinical-trials
+tags: [nonprofit, policy, technology, innovation, clinical-trials]
 editor: markdown
 dateCreated: 2025-05-28T22:16:00.000Z
 ---

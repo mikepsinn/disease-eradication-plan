@@ -1,11 +1,8 @@
 ---
-description: >-
-  Explanation of using GitHub issues for task management with benefits like
-  universal searchability, prioritization, expertise filtering, and
-  notifications.
+description: 'Explanation of using GitHub issues for task management with benefits like universal searchability, prioritization, expertise filtering, and notifications.'
 emoji: "\U0001F4CB"
 title: use-github-for-task-management
-tags: 'github, task-management, project-management, crowdsourcing, searchability'
+tags: [github, task-management, project-management, crowdsourcing, searchability]
 published: false
 editor: markdown
 date: '2022-08-25T20:09:14.553Z'

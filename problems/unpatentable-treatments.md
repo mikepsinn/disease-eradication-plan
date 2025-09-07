@@ -1,13 +1,8 @@
 ---
-description: >-
-  We still know next to nothing about the long-term effects of 99.9% of the 4
-  pounds of over 7,000 different synthetic or natural chemicals you consume
-  every day.
+description: 'We still know next to nothing about the long-term effects of 99.9% of the 4 pounds of over 7,000 different synthetic or natural chemicals you consume every day.'
 emoji: "\U0001F96B"
 title: No Data on Unpatentable Molecules
-tags: >-
-  clinical-trials, unpatentable-molecules, off-patent-treatments,
-  orphan-diseases, pharmaceutical-research
+tags: [clinical-trials, unpatentable-molecules, off-patent-treatments, orphan-diseases, pharmaceutical-research]
 published: true
 editor: markdown
 date: '2025-02-12T16:55:54.489Z'

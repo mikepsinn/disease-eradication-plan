@@ -1,11 +1,8 @@
 ---
-description: >-
-  The Human File System Protocol SDK is a suite of interoperable software
-  libraries, meticulously designed to facilitate the creation of user-access
-  controlled digital twins on the blockchain.
+description: 'The Human File System Protocol SDK is a suite of interoperable software libraries, meticulously designed to facilitate the creation of user-access controlled digital twins on the blockchain.'
 emoji: "\U0001F512"
 title: Human File System
-tags: 'data-aggregation, data sharing, data storage'
+tags: [data-aggregation, data, sharing, data, storage]
 published: true
 editor: markdown
 date: '2025-02-12T16:53:09.454Z'

@@ -1,10 +1,8 @@
 ---
-description: >-
-  There are as many untested compounds with drug-like properties as there are
-  atoms in the solar system (166 billion).
+description: There are as many untested compounds with drug-like properties as there are atoms in the solar system (166 billion).
 emoji: "\U0001F52C"
 title: ❓ We Only Know The Effects of 0.000000002% of Potential Therapies
-tags: 'medical-research, diseases, drug-compounds, scientific-method'
+tags: [medical-research, diseases, drug-compounds, scientific-method]
 published: true
 editor: markdown
 date: '2022-07-29T02:10:00.109Z'

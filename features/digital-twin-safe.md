@@ -1,9 +1,9 @@
 ---
-title: 👨‍🤝‍👨 The Digital Twin Safe 🔒
-description: A little house for your digital twin. 🏡 
+title: "\U0001F468‍\U0001F91D‍\U0001F468 The Digital Twin Safe \U0001F512"
+description: "A little house for your digital twin. \U0001F3E1"
 published: true
 date: 2023-06-08T19:52:34.654Z
-tags: projects, data sharing, data storage
+tags: [projects, data, sharing, data, storage]
 editor: markdown
 dateCreated: 2022-11-07T20:38:39.252Z
 ---

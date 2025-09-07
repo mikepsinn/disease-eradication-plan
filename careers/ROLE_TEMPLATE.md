@@ -1,11 +1,11 @@
 ---
-title: {Role Title}
-description: {One-line purpose and scope}
-published: true
-date: {YYYY-MM-DD}
-tags: careers, roles
+title: "Capital Markets & Treasury Management Lead"
+description: "We are seeking a Capital Markets & Treasury Management Lead to develop and execute our fundraising strategy, manage treasury operations, and ensure the financial health of the VICTORY Fund and the broader Decentralized Institutes of Health (DIH) ecosystem."
+published: false
+date: 2025-08-22T00:00:00.000Z
+tags: [job, capital-markets, treasury, finance, fundraising]
 editor: markdown
-dateCreated: {YYYY-MM-DD}
+dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
 ## Mission & Scope

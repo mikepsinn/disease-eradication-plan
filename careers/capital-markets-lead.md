@@ -2,10 +2,10 @@
 title: Capital Markets & Investor Relations Lead — VICTORY
 description: Set up and sell VICTORY bonds/tokens. Share clear reports. Run buybacks.
 published: true
-date: 2025-08-22
-tags: careers, capital-markets, investor-relations, tokenomics, treasury
+date: 2025-08-22T00:00:00.000Z
+tags: [careers, capital-markets, investor-relations, tokenomics, treasury]
 editor: markdown
-dateCreated: 2025-08-22
+dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
 ## Mission & Scope

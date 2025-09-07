@@ -1,9 +1,9 @@
 ---
 title: The Annual Cost of War
-description: Global military spending, its direct and indirect costs, and the per capita lifetime impact.
+description: 'Global military spending, its direct and indirect costs, and the per capita lifetime impact.'
 published: true
 date: 2024-06-09T00:00:00.000Z
-tags: cost-of-war, military-spending, global-economics, peace-dividend, per-capita-cost
+tags: [cost-of-war, military-spending, global-economics, peace-dividend, per-capita-cost]
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---

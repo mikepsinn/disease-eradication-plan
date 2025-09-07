@@ -1,10 +1,8 @@
 ---
-description: >-
-  An open-source project with details on its repository, license, features,
-  contribution guidelines, donation information, and contact details.
+description: 'An open-source project with details on its repository, license, features, contribution guidelines, donation information, and contact details.'
 emoji: "\U0001F31F"
 title: Open-Source Project Overview
-tags: 'open-source, github, contribution, donation, project-management'
+tags: [open-source, github, contribution, donation, project-management]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:27.046Z'

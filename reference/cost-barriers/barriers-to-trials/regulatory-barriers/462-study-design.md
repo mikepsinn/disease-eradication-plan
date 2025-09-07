@@ -1,10 +1,8 @@
 ---
-description: >-
-  Discussion on enrollment restrictions in clinical trials and their impact on
-  participant recruitment and trial completion rates.
+description: Discussion on enrollment restrictions in clinical trials and their impact on participant recruitment and trial completion rates.
 emoji: "\U0001F465"
 title: Enrollment Restrictions in Clinical Trials
-tags: 'clinical-trials, enrollment, eligibility-criteria, recruitment'
+tags: [clinical-trials, enrollment, eligibility-criteria, recruitment]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:20.093Z'

@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of regulatory and administrative barriers in clinical research,
-  including their origins and impact on the clinical trials process.
+description: 'Analysis of regulatory and administrative barriers in clinical research, including their origins and impact on the clinical trials process.'
 emoji: ⚠️
 title: Regulatory and Administrative Barriers in Clinical Research
-tags: 'regulations, clinical-research, administrative-barriers, safety'
+tags: [regulations, clinical-research, administrative-barriers, safety]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:50.097Z'

@@ -1,9 +1,9 @@
 ---
-title: 💊 Every Cure
+title: "\U0001F48A Every Cure"
 description: A nonprofit organization focused on drug repurposing to find new treatments for diseases
 published: true
 date: 2025-05-28T22:24:00.000Z
-tags: nonprofit, drug-repurposing, medical-research, healthcare-innovation
+tags: [nonprofit, drug-repurposing, medical-research, healthcare-innovation]
 editor: markdown
 dateCreated: 2025-05-28T22:24:00.000Z
 ---

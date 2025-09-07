@@ -1,10 +1,8 @@
 ---
-description: >-
-  If no new drugs had been launched after 1981, the number of years of life lost
-  would have been 2.16 times higher.
+description: 'If no new drugs had been launched after 1981, the number of years of life lost would have been 2.16 times higher.'
 emoji: "\U0001F52C"
 title: "\U0001F4C8 Impact of Innovative Medicines on Life Expectancy"
-tags: 'pharmaceuticals, innovation, mortality, cancer, healthcare'
+tags: [pharmaceuticals, innovation, mortality, cancer, healthcare]
 published: true
 editor: markdown
 date: '2022-07-29T03:35:13.588Z'

@@ -1,10 +1,8 @@
 ---
-description: >-
-  Overview of top-level pages for the dFDA wiki, including Home, About, Get
-  Involved, and Treatments & Rankings sections.
+description: 'Overview of top-level pages for the dFDA wiki, including Home, About, Get Involved, and Treatments & Rankings sections.'
 emoji: "\U0001F4DA"
 title: dFDA Top-Level Pages
-tags: 'dfda, wiki-structure, decentralized-fda, treatments, rankings'
+tags: [dfda, wiki-structure, decentralized-fda, treatments, rankings]
 published: true
 editor: markdown
 date: '2025-02-12T16:53:35.481Z'

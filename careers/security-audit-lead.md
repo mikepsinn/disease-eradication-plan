@@ -2,10 +2,10 @@
 title: Security & Audit Lead — DIH Treasury and dFDA Platform
 description: Keep money and systems safe. Watch for attacks. Run fast response and audits.
 published: true
-date: 2025-08-22
-tags: careers, security, blockchain, audits, dao, risk
+date: 2025-08-22T00:00:00.000Z
+tags: [careers, security, blockchain, audits, dao, risk]
 editor: markdown
-dateCreated: 2025-08-22
+dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
 ## Mission & Scope

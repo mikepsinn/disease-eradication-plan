@@ -1,8 +1,7 @@
 ---
-description: >-
+description: ''
 title: Efficiency of NIH Research Funding vs. an Automated Decentralized Trial Platform
-tags: >-
-  decentralized-trials, real-world-evidence, clinical-trials
+tags: [decentralized-trials, real-world-evidence, clinical-trials]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:54.306Z'

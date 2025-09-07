@@ -3,7 +3,7 @@ title: How Nonprofits Can Support the 1% Treaty Without Lobbying
 description: Practical ways nonprofits can advocate for the 1% Treaty without triggering lobbying restrictions or tracking lobbying expenditures.
 published: true
 date: 2024-06-09T00:00:00.000Z
-tags: nonprofit-advocacy, 1-percent-treaty, public-policy, education, irs-guidance
+tags: [nonprofit-advocacy, 1-percent-treaty, public-policy, education, irs-guidance]
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 fontawesomeIcon: fa-hands-helping

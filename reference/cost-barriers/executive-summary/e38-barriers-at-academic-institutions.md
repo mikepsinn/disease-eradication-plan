@@ -1,13 +1,8 @@
 ---
-description: >-
-  Analysis of barriers faced by academic institutions in conducting clinical
-  trials, including regulatory extremes and low prioritization of clinical
-  research.
+description: 'Analysis of barriers faced by academic institutions in conducting clinical trials, including regulatory extremes and low prioritization of clinical research.'
 emoji: "\U0001F4DA"
 title: Barriers to Clinical Trials at Academic Institutions
-tags: >-
-  clinical-trials, academic-institutions, regulatory-barriers,
-  research-prioritization
+tags: [clinical-trials, academic-institutions, regulatory-barriers, research-prioritization]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:43.984Z'

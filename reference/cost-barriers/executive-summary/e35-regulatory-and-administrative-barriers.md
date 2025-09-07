@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of regulatory and administrative barriers in clinical research,
-  including IRB approval, informed consent, and patient privacy under HIPAA.
+description: 'Analysis of regulatory and administrative barriers in clinical research, including IRB approval, informed consent, and patient privacy under HIPAA.'
 emoji: "\U0001F512"
 title: Regulatory and Administrative Barriers in Clinical Research
-tags: 'regulations, clinical-research, irb, informed-consent, hipaa'
+tags: [regulations, clinical-research, irb, informed-consent, hipaa]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:34.291Z'

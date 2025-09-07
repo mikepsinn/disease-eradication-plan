@@ -1,9 +1,9 @@
 ---
-title: Retail Access Playbook — Including Public Investors
-description: Practical routes for unaccredited/retail participation: Reg A+, Reg CF, and international portals, with timelines, materials, and parallelization guidance.
+title: '"Playbook for Unaccredited/Retail Participation: Reg A+, Reg CF, and International Equivalents"'
+description: 'A strategic playbook outlining the legal pathways and operational steps for enabling unaccredited and retail investors to participate in the 1% Treaty initiative through regulated frameworks like Regulation A+, Regulation Crowdfunding, and their international counterparts.'
 published: true
 date: '2025-01-20T00:00:00.000Z'
-tags: retail, reg-a-plus, reg-cf, crowdfunding, international, compliance
+tags: [retail, reg-a-plus, reg-cf, crowdfunding, international, compliance]
 editor: markdown
 dateCreated: '2025-01-20T00:00:00.000Z'
 ---

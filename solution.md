@@ -1,12 +1,8 @@
 ---
-description: >-
-  How we reduce suffering using a decentralized autonomous organization as a
-  vehicle to use the oceans of real-world evidence to discover new cures.
+description: How we reduce suffering using a decentralized autonomous organization as a vehicle to use the oceans of real-world evidence to discover new cures.
 emoji: "\U0001F3AF"
 title: Personalized Precision Medicine Framework
-tags: >-
-  precision-medicine, insilico-models, machine-learning, genomics,
-  transcriptomics, proteomics, metabolomics, microbiomics, phenotype
+tags: [precision-medicine, insilico-models, machine-learning, genomics, transcriptomics, proteomics, metabolomics, microbiomics, phenotype]
 published: true
 editor: markdown
 date: '2025-02-11T14:02:49.420Z'

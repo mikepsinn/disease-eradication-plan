@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of how prescription-to-OTC switches impact drug prices and
-  accessibility, with examples like Zyrtec showing significant price reductions.
+description: 'Analysis of how prescription-to-OTC switches impact drug prices and accessibility, with examples like Zyrtec showing significant price reductions.'
 emoji: "\U0001F48A"
 title: Rx-to-OTC Switch Impact on Drug Prices and Access
-tags: 'drug-prices, otc-switch, accessibility, pharmaceuticals'
+tags: [drug-prices, otc-switch, accessibility, pharmaceuticals]
 published: true
 editor: markdown
 date: '2025-02-12T20:29:40.191Z'

@@ -1,12 +1,8 @@
 ---
-description: >-
-  Exploration of lower-cost facilities and at-home testing as methods to reduce
-  clinical trial expenses and improve participant retention.
+description: Exploration of lower-cost facilities and at-home testing as methods to reduce clinical trial expenses and improve participant retention.
 emoji: "\U0001F3E0"
 title: Lower-cost Facilities and At-home Testing in Clinical Trials
-tags: >-
-  clinical-trials, cost-reduction, at-home-testing, web-based-trials,
-  participant-retention
+tags: [clinical-trials, cost-reduction, at-home-testing, web-based-trials, participant-retention]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:57.233Z'

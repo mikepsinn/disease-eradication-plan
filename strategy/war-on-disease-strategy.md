@@ -1,9 +1,9 @@
 ---
-title: 'The War on Disease: A New Strategy for a New Era'
+title: '"The War on Disease: A New Strategy for a New Era"'
 description: 'A comprehensive strategy for eradicating disease by redirecting global military spending, engineered from the lessons of historical social and financial movements.'
 published: false
 date: '2025-08-22T00:00:00.000Z'
-tags: strategy, history, activism, social-change, game-theory, public-choice
+tags: [strategy, history, activism, social-change, game-theory, public-choice]
 editor: markdown
 dateCreated: '2025-02-12T16:56:18.388Z'
 topic_id: war-on-disease-strategy

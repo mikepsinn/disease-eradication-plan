@@ -1,11 +1,8 @@
 ---
-description: >-
-  Discussion on the reporting of Serious Adverse Events (SAEs) for
-  Investigational New Drugs and Biologics under 21 CFR 312, including historical
-  context and regulatory changes.
+description: 'Discussion on the reporting of Serious Adverse Events (SAEs) for Investigational New Drugs and Biologics under 21 CFR 312, including historical context and regulatory changes.'
 emoji: ⚠️
 title: Serious Adverse Events Reporting for INDs
-tags: 'adverse-events, regulatory-compliance, drug-development, biologics, INDs'
+tags: [adverse-events, regulatory-compliance, drug-development, biologics, INDs]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:27.377Z'

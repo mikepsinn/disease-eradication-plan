@@ -2,10 +2,10 @@
 title: Elections & IE Compliance Lead — US & International
 description: Set up and run separate election operations by country. Keep clean walls and clear reports.
 published: true
-date: 2025-08-22
-tags: careers, elections, compliance, pac, legal, policy
+date: 2025-08-22T00:00:00.000Z
+tags: [careers, elections, compliance, pac, legal, policy]
 editor: markdown
-dateCreated: 2025-08-22
+dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
 ## Mission & Scope

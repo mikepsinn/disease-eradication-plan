@@ -1,10 +1,8 @@
 ---
-description: >-
-  An autonomous FDAi agent's role in collecting symptom data, analyzing food and
-  drug effects, optimizing diet and supplements, and exploring clinical trials.
+description: 'An autonomous FDAi agent''s role in collecting symptom data, analyzing food and drug effects, optimizing diet and supplements, and exploring clinical trials.'
 emoji: "\U0001F916"
 title: Autonomous FDAi Agent for Health Optimization
-tags: 'health-tech, data-collection, clinical-trials, nutrition, symptom-analysis'
+tags: [health-tech, data-collection, clinical-trials, nutrition, symptom-analysis]
 published: true
 editor: markdown
 date: '2025-02-09T16:34:42.986Z'

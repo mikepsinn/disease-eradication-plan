@@ -1,9 +1,9 @@
 ---
-title: "How to Contribute"
-description: "The single source of truth for all contribution guidelines, style guides, and project standards for the Decentralized Institutes of Health (DIH) wiki."
+title: How to Contribute
+description: 'The single source of truth for all contribution guidelines, style guides, and project standards for the Decentralized Institutes of Health (DIH) wiki.'
 published: true
 date: '2025-09-07T00:00:00.000Z'
-tags: contributing, guidelines, standards, open-source
+tags: [contributing, guidelines, standards, open-source]
 editor: markdown
 dateCreated: '2025-02-12T16:51:44.377Z'
 ---

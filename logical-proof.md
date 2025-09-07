@@ -1,9 +1,9 @@
 ---
-title: A Logical Proof That We Should Immediately Create A Decentralized FDA 
+title: A Logical Proof That We Should Immediately Create A Decentralized FDA
 description: Why we should drop everything and decentralize the FDA first
 published: true
 date: 2024-12-22T20:52:45.977Z
-tags: dfda, logical-proof
+tags: [dfda, logical-proof]
 editor: markdown
 dateCreated: 2024-12-22T20:52:45.977Z
 ---

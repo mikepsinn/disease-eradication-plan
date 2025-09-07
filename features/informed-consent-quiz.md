@@ -1,9 +1,9 @@
 ---
 title: Informed Consent Comprehension Quiz
-description: Overview and technical specification of the dFDA platform's informed consent comprehension quiz, supporting regulatory and ethical requirements for participant understanding.
+description: 'Overview and technical specification of the dFDA platform''s informed consent comprehension quiz, supporting regulatory and ethical requirements for participant understanding.'
 published: true
 date: 2024-06-09T00:00:00.000Z
-tags: features
+tags: [features]
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---

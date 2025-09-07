@@ -2,7 +2,7 @@
 description: Gamification to Incentivize Healthy Behaviour
 emoji: "\U0001F3AE"
 title: Life Force Score
-tags: 'digital-twins, nft, metaverse, health-data, gaming'
+tags: [digital-twins, nft, metaverse, health-data, gaming]
 published: true
 editor: markdown
 date: '2023-10-26T21:36:53.402Z'

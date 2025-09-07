@@ -1,12 +1,8 @@
 ---
-description: >-
-  Executive summary of the Disease Eradication Act, focusing on patient rights,
-  decentralized trials, and reducing costs in drug development.
+description: 'Executive summary of the Disease Eradication Act, focusing on patient rights, decentralized trials, and reducing costs in drug development.'
 emoji: "\U0001F496"
-title: 'Disease Eradication Act: Executive Summary'
-tags: >-
-  decentralized-trials, patient-rights, drug-development, cost-reduction,
-  FDA-reform
+title: '"Disease Eradication Act: Executive Summary"'
+tags: [decentralized-trials, patient-rights, drug-development, cost-reduction, FDA-reform]
 published: true
 editor: markdown
 date: '2025-02-12T16:53:46.416Z'

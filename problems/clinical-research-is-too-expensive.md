@@ -2,7 +2,7 @@
 description: It costs $2.6 billion to bring a drug to market (including failed attempts).
 emoji: "\U0001F4B0"
 title: "\U0001F4B0 Clinical Research is Too Expensive"
-tags: 'clinical-research, costs, drug-development, phase-iii-trials'
+tags: [clinical-research, costs, drug-development, phase-iii-trials]
 published: true
 editor: markdown
 date: '2022-07-28T03:58:50.155Z'

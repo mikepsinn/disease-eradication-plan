@@ -2,7 +2,7 @@
 description: Analysis of clinical trial costs across different therapeutic areas and phases
 emoji: "\U0001F4CA"
 title: Clinical Trial Costs by Therapeutic Area
-tags: 'clinical-trials, costs, therapeutic-areas, phases'
+tags: [clinical-trials, costs, therapeutic-areas, phases]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:24.787Z'

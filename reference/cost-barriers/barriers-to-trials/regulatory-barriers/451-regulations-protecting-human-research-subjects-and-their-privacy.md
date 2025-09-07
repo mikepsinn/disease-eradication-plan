@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of the challenges in ethical review processes for human research,
-  focusing on IRB responsibilities and multisite trial approvals
+description: 'Analysis of the challenges in ethical review processes for human research, focusing on IRB responsibilities and multisite trial approvals'
 emoji: "\U0001F50D"
 title: Regulations Protecting Human Research Subjects and Privacy
-tags: 'IRB, regulations, human-research, ethics, multisite-trials'
+tags: [IRB, regulations, human-research, ethics, multisite-trials]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:53.574Z'

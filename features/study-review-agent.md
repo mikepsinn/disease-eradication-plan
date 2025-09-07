@@ -1,12 +1,8 @@
 ---
-description: >-
-  A review agent responsible for analyzing study plausibility, validating data
-  quality, and conducting temporality analysis in research studies.
+description: 'A review agent responsible for analyzing study plausibility, validating data quality, and conducting temporality analysis in research studies.'
 emoji: "\U0001F50D"
 title: Study Review Agent
-tags: >-
-  study-review, data-validation, plausibility, temporality-analysis,
-  research-methodology
+tags: [study-review, data-validation, plausibility, temporality-analysis, research-methodology]
 published: true
 editor: markdown
 date: '2025-02-11T14:23:44.900Z'

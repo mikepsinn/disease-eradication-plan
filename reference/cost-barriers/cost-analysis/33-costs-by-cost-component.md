@@ -1,10 +1,8 @@
 ---
-description: >-
-  Detailed breakdown of clinical trial costs by cost component across
-  therapeutic areas and trial phases
+description: Detailed breakdown of clinical trial costs by cost component across therapeutic areas and trial phases
 emoji: "\U0001F4CA"
 title: Clinical Trial Costs by Cost Component
-tags: 'clinical-trials, cost-analysis, therapeutic-areas, trial-phases'
+tags: [clinical-trials, cost-analysis, therapeutic-areas, trial-phases]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:30.722Z'

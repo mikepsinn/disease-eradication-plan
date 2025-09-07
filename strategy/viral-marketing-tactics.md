@@ -3,7 +3,7 @@ title: Viral Marketing Tactics for Referral Rewards
 description: Creative marketing strategies to drive viral adoption of the referral rewards system and reach the 3.5% tipping point.
 published: true
 date: 2025-01-27T00:00:00.000Z
-tags: viral-marketing, referral-rewards, growth-hacking, community-building, cost-effective-marketing
+tags: [viral-marketing, referral-rewards, growth-hacking, community-building, cost-effective-marketing]
 editor: markdown
 dateCreated: 2025-01-27T00:00:00.000Z
 ---

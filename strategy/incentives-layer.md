@@ -1,9 +1,9 @@
 ---
 title: Incentives Layer for DIH/dFDA
-description: Social and economic incentive mechanisms that drive growth, engagement, and funding for the 1% Treaty and decentralized trials, wired to on-chain modules, credentials, and public dashboards.
+description: 'Social and economic incentive mechanisms that drive growth, engagement, and funding for the 1% Treaty and decentralized trials, wired to on-chain modules, credentials, and public dashboards.'
 published: true
 date: '2025-08-15T00:00:00.000Z'
-tags: incentives, referrals, bounties, hypercerts, credentials, leaderboards, dfda, dih
+tags: [incentives, referrals, bounties, hypercerts, credentials, leaderboards, dfda, dih]
 editor: markdown
 ---
 

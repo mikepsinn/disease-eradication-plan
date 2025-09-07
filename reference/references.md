@@ -1,10 +1,8 @@
 ---
-description: >-
-  Compilation of resources and data related to FDA spending, approvals, economic
-  indicators, and historical analysis
+description: 'Compilation of resources and data related to FDA spending, approvals, economic indicators, and historical analysis'
 emoji: "\U0001F4CA"
 title: References
-tags: 'fda, spending, approvals, economic-indicators, historical-data'
+tags: [fda, spending, approvals, economic-indicators, historical-data]
 published: true
 editor: markdown
 date: '2022-07-26T01:14:19.159Z'

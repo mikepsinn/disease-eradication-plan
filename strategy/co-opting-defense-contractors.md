@@ -3,7 +3,7 @@ title: Co-Opting Defense Contractors - Strategic Analysis
 description: Detailed rationale and confidence assessment for aligning defense contractors' interests via VICTORY bonds instead of adversarial tactics.
 published: true
 date: '2025-08-15T00:00:00.000Z'
-tags: strategy, lobbying, incentives, victory-bonds
+tags: [strategy, lobbying, incentives, victory-bonds]
 editor: markdown
 dateCreated: '2025-08-15T00:00:00.000Z'
 ---

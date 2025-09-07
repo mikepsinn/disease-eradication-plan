@@ -1,9 +1,9 @@
 ---
-title: 💊 Free to Choose Medicine / Tomorrow's Cures Today
+title: "\U0001F48A Free to Choose Medicine / Tomorrow's Cures Today"
 description: Advocacy group promoting patient access to experimental treatments through a parallel track system
 published: true
 date: 2025-05-28T22:20:00.000Z
-tags: nonprofit, right-to-try, patient-access, experimental-treatments
+tags: [nonprofit, right-to-try, patient-access, experimental-treatments]
 editor: markdown
 dateCreated: 2025-05-28T22:20:00.000Z
 ---

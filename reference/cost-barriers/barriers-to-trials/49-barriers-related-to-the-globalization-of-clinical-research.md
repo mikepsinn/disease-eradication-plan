@@ -1,11 +1,8 @@
 ---
-description: >-
-  Discussion of barriers related to globalization in clinical research,
-  including the shift of trial sites overseas and declining U.S.-based
-  investigations.
+description: 'Discussion of barriers related to globalization in clinical research, including the shift of trial sites overseas and declining U.S.-based investigations.'
 emoji: "\U0001F30D"
 title: Globalization Barriers in Clinical Research
-tags: 'clinical-research, globalization, FDA-regulated, trial-sites, United-States'
+tags: [clinical-research, globalization, FDA-regulated, trial-sites, United-States]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:37.826Z'

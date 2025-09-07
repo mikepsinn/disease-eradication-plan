@@ -1,10 +1,8 @@
 ---
-description: >-
-  A petition advocating for the creation of the FDAi system to revolutionize
-  healthcare using AI.
+description: A petition advocating for the creation of the FDAi system to revolutionize healthcare using AI.
 emoji: "\U0001F3E5"
 title: Petition for the Establishment of the FDAi System
-tags: 'healthcare, artificial-intelligence, regulation, policy'
+tags: [healthcare, artificial-intelligence, regulation, policy]
 published: true
 editor: markdown
 date: '2025-02-09T16:34:52.601Z'

@@ -1,10 +1,8 @@
 ---
-description: >-
-  A directory for developers, data scientists, and AI experts contributing to
-  the technical development of the project.
+description: 'A directory for developers, data scientists, and AI experts contributing to the technical development of the project.'
 emoji: "\U0001F4BB"
 title: Developers Directory
-tags: 'developers, software, data-science, AI, community'
+tags: [developers, software, data-science, AI, community]
 published: true
 editor: markdown
 date: '2025-02-12T16:51:47.494Z'

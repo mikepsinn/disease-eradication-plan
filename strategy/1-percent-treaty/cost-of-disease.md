@@ -1,9 +1,9 @@
 ---
 title: Global Cost Of Disease
-description: Disease costs the world trillions through healthcare costs, indirect economic losses, and the valuation of YLL and DALYs.
+description: 'Disease costs the world trillions through healthcare costs, indirect economic losses, and the valuation of YLL and DALYs.'
 published: true
 date: 2024-06-09T00:00:00.000Z
-tags: cost-of-disease, global-health, economic-burden, yll, daly, health-economics
+tags: [cost-of-disease, global-health, economic-burden, yll, daly, health-economics]
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---

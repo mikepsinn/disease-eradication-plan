@@ -1,11 +1,8 @@
 ---
-description: >-
-  A directory for partners involved in the project, providing a space for
-  organizations to introduce themselves, share their roles, and facilitate
-  collaboration.
+description: 'A directory for partners involved in the project, providing a space for organizations to introduce themselves, share their roles, and facilitate collaboration.'
 emoji: "\U0001F91D"
 title: Partners Directory
-tags: 'partners, collaboration, community-directory'
+tags: [partners, collaboration, community-directory]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:04.915Z'

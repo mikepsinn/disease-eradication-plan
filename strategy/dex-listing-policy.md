@@ -1,9 +1,9 @@
 ---
 title: DEX Listing and Token Liquidity Policy
-description: Preconditions, approvals, and monitoring for any decentralized exchange (DEX) listing of governance tokens to ensure compliance and minimize speculation risk.
+description: 'Preconditions, approvals, and monitoring for any decentralized exchange (DEX) listing of governance tokens to ensure compliance and minimize speculation risk.'
 published: true
 date: '2025-01-20T00:00:00.000Z'
-tags: dex, liquidity, token, governance, compliance, policy
+tags: [dex, liquidity, token, governance, compliance, policy]
 editor: markdown
 dateCreated: '2025-01-20T00:00:00.000Z'
 ---

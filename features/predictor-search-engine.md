@@ -1,10 +1,8 @@
 ---
-description: >-
-  A search engine plugin that uses aggregated user data to identify factors
-  influencing health, offering personalized effectiveness rates of treatments.
+description: 'A search engine plugin that uses aggregated user data to identify factors influencing health, offering personalized effectiveness rates of treatments.'
 emoji: "\U0001F50D"
 title: Predictor Search Engine Plugin
-tags: 'health, wellness, search-engine, personalized-medicine, data-aggregation'
+tags: [health, wellness, search-engine, personalized-medicine, data-aggregation]
 published: true
 editor: markdown
 date: '2025-02-12T16:53:28.700Z'

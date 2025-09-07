@@ -3,7 +3,7 @@ title: SaMD Guidance Platform Adaptation
 description: Framework for adapting Software as Medical Device guidance for dFDA platform integration
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, samd, software, medical-devices
+tags: [regulatory, recommendations, samd, software, medical-devices]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-laptop-medical

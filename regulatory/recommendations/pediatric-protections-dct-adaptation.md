@@ -3,7 +3,7 @@ title: Pediatric Protections DCT Adaptation
 description: Recommendations for adapting pediatric protection requirements for decentralized clinical trials
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, pediatric, dct, patient-protection
+tags: [regulatory, recommendations, pediatric, dct, patient-protection]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-child

@@ -3,7 +3,7 @@ title: Canonical Documents Index
 description: Single source of truth for canonical pages by topic.
 published: true
 date: '2025-08-23T00:00:00.000Z'
-tags: canonicals, index, navigation
+tags: [canonicals, index, navigation]
 editor: markdown
 dateCreated: '2025-08-23T00:00:00.000Z'
 ---

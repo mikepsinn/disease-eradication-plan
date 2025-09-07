@@ -1,10 +1,8 @@
 ---
-description: >-
-  Table estimating the number of lives that could be saved annually by
-  increasing accessibility to certain drugs
+description: Table estimating the number of lives that could be saved annually by increasing accessibility to certain drugs
 emoji: "\U0001FA7A"
 title: Estimated Lives Saved by Increased Drug Accessibility
-tags: 'public-health, drugs, lives-saved, accessibility'
+tags: [public-health, drugs, lives-saved, accessibility]
 published: true
 editor: markdown
 date: '2025-02-12T16:55:14.923Z'

@@ -3,7 +3,7 @@ title: Device Risk Determination Platform
 description: Framework for incorporating dFDA platform capabilities into medical device risk determinations
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, medical-devices, risk-assessment, classification
+tags: [regulatory, recommendations, medical-devices, risk-assessment, classification]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-microchip

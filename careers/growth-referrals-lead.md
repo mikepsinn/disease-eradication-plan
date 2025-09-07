@@ -1,11 +1,11 @@
 ---
-title: Growth & Referrals Lead — VOTE Points, Partners, and Growth
-description: Help more people vote by running referrals, leaderboards, and partner lists.
+title: 'Growth & Referrals Lead — VOTE Points, Partners, and Growth'
+description: 'Help more people vote by running referrals, leaderboards, and partner lists.'
 published: true
-date: 2025-08-22
-tags: careers, growth, referrals, marketing, analytics
+date: 2025-08-22T00:00:00.000Z
+tags: [careers, growth, referrals, marketing, analytics]
 editor: markdown
-dateCreated: 2025-08-22
+dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
 ## Mission & Scope

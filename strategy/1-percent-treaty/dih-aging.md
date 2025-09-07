@@ -3,7 +3,7 @@ title: DIH–Aging (Decentralized Institute on Aging)
 description: Draft charter and program plan to align aging-focused communities and institutions behind the 1% Treaty referendum and the dFDA evidence engine.
 published: true
 date: '2025-08-15T00:00:00.000Z'
-tags: aging, longevity, dih, governance, referendum
+tags: [aging, longevity, dih, governance, referendum]
 editor: markdown
 ---
 

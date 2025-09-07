@@ -1,9 +1,9 @@
 ---
 title: dFDA Mission Lead Application
-description: Application form for the role of Mission Lead in the Decentralized FDA initiative, focused on leading decentralized clinical trials and global mobilization.
+description: 'Application form for the role of Mission Lead in the Decentralized FDA initiative, focused on leading decentralized clinical trials and global mobilization.'
 published: true
 date: 2025-01-01T00:00:00.000Z
-tags: careers, leadership, decentralized-fda, clinical-trials, strategy
+tags: [careers, leadership, decentralized-fda, clinical-trials, strategy]
 editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 fontawesomeIcon: fa-user-tie

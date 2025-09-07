@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of clinical trial costs by therapeutic area and phase using data from
-  Medidata Solutions
+description: Analysis of clinical trial costs by therapeutic area and phase using data from Medidata Solutions
 emoji: "\U0001F4CA"
 title: Clinical Trial Cost Analysis by Therapeutic Area and Phase
-tags: 'clinical-trials, cost-analysis, therapeutic-areas, phases'
+tags: [clinical-trials, cost-analysis, therapeutic-areas, phases]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:13.700Z'

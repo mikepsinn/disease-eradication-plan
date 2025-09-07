@@ -3,7 +3,7 @@ title: Product Liability dFDA Clarification
 description: Framework for clarifying product liability considerations in dFDA platform context
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, product-liability, legal, risk-management
+tags: [regulatory, recommendations, product-liability, legal, risk-management]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-balance-scale

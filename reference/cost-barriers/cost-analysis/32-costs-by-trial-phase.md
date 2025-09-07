@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of clinical trial costs by phase using weighted mean and standard
-  deviation
+description: Analysis of clinical trial costs by phase using weighted mean and standard deviation
 emoji: "\U0001F4CA"
 title: Clinical Trial Costs by Phase
-tags: 'clinical-trials, cost-analysis, phases, weighted-mean, standard-deviation'
+tags: [clinical-trials, cost-analysis, phases, weighted-mean, standard-deviation]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:27.757Z'

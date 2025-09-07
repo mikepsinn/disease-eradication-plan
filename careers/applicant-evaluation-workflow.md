@@ -1,9 +1,9 @@
 ---
 title: n8n Workflow for Evaluating Supreme Allied Commander Applicants
-description: A detailed outline of the n8n workflow for parsing, evaluating, and ranking applications for the Supreme Allied Commander, War on Disease.
+description: 'A detailed outline of the n8n workflow for parsing, evaluating, and ranking applications for the Supreme Allied Commander, War on Disease.'
 published: true
 date: 2025-01-01T00:00:00.000Z
-tags: hiring, workflow, n8n, automation, ai, recruitment, leadership
+tags: [hiring, workflow, n8n, automation, ai, recruitment, leadership]
 editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---

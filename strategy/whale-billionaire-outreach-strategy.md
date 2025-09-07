@@ -1,9 +1,9 @@
 ---
 title: Whale & Billionaire Outreach Strategy
-description: Targeted strategy for raising $1-2.5B from high-net-worth individuals, crypto whales, and major foundations in 6-12 months
+description: 'Targeted strategy for raising $1-2.5B from high-net-worth individuals, crypto whales, and major foundations in 6-12 months'
 published: true
 date: '2025-01-15T00:00:00.000Z'
-tags: fundraising, whales, billionaires, institutional-investors, major-donors
+tags: [fundraising, whales, billionaires, institutional-investors, major-donors]
 editor: markdown
 dateCreated: '2025-01-15T00:00:00.000Z'
 ---

@@ -1,11 +1,10 @@
 ---
-description: >-
-  You and Everyone You Love Will Suffer and Die.
+description: You and Everyone You Love Will Suffer and Die.
 emoji: "\U0001F480"
-title: 'Problems We Can Solve with a Decentralized FDA'
+title: Problems We Can Solve with a Decentralized FDA
 number: 150k
 textFollowingNumber: people die every day from possibly preventable degenerative diseases
-tags: global-health, chronic-diseases, preventable-deaths, healthcare-spending
+tags: [global-health, chronic-diseases, preventable-deaths, healthcare-spending]
 published: true
 editor: markdown
 date: '2025-02-11T13:38:21.578Z'

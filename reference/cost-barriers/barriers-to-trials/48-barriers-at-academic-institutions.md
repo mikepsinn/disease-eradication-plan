@@ -1,11 +1,8 @@
 ---
-description: >-
-  Discussion of barriers faced by drug sponsors when using academic institutions
-  as clinical trial sites, including bureaucratic processes and lengthy
-  timelines.
+description: 'Discussion of barriers faced by drug sponsors when using academic institutions as clinical trial sites, including bureaucratic processes and lengthy timelines.'
 emoji: "\U0001F4DA"
 title: Barriers at Academic Institutions for Clinical Trials
-tags: 'clinical-trials, academic-institutions, bureaucracy, drug-sponsors'
+tags: [clinical-trials, academic-institutions, bureaucracy, drug-sponsors]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:34.398Z'

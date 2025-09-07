@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of FDA review process efficiency and the impact of advisory committee
-  meetings on approval times
+description: Analysis of FDA review process efficiency and the impact of advisory committee meetings on approval times
 emoji: ⏳
 title: FDA Review Process Efficiency and Advisory Committee Impact
-tags: 'fda-review-process, advisory-committee, approval-times, clinical-trials'
+tags: [fda-review-process, advisory-committee, approval-times, clinical-trials]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:03.619Z'

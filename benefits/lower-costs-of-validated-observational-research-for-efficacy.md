@@ -1,13 +1,8 @@
 ---
-description: >-
-  Observational real-world evidence-based studies have several advantages over
-  randomized, controlled trials, including lower cost, increased speed of
-  research, and a broader range of patients.
+description: 'Observational real-world evidence-based studies have several advantages over randomized, controlled trials, including lower cost, increased speed of research, and a broader range of patients.'
 emoji: "\U0001F440"
 title: Lower Costs of Validated Observational Research for Efficacy
-tags: >-
-  observational-research, cost-effectiveness, real-world-evidence,
-  meta-analyses, clinical-studies
+tags: [observational-research, cost-effectiveness, real-world-evidence, meta-analyses, clinical-studies]
 published: true
 editor: markdown
 date: '2025-02-12T15:32:45.179Z'

@@ -1,11 +1,8 @@
 ---
-description: >-
-  A directory for funding sources interested in supporting initiatives within
-  the project, providing information on funding opportunities and
-  facilitating connections between funders and project teams.
+description: 'A directory for funding sources interested in supporting initiatives within the project, providing information on funding opportunities and facilitating connections between funders and project teams.'
 emoji: "\U0001F4B0"
 title: Funding Sources Directory
-tags: 'funding, investors, philanthropy, grants'
+tags: [funding, investors, philanthropy, grants]
 published: true
 editor: markdown
 date: '2025-02-12T16:51:51.033Z'

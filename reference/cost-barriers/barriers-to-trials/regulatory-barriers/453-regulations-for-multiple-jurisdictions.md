@@ -1,11 +1,8 @@
 ---
-description: >-
-  Overview of the complexities and challenges in complying with regulations for
-  clinical trials across multiple jurisdictions, including federal, state,
-  local, and international requirements.
+description: 'Overview of the complexities and challenges in complying with regulations for clinical trials across multiple jurisdictions, including federal, state, local, and international requirements.'
 emoji: "\U0001F30D"
 title: Regulations for Multi-Jurisdiction Clinical Trials
-tags: 'clinical-trials, regulations, compliance, international, EU'
+tags: [clinical-trials, regulations, compliance, international, EU]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:00.722Z'

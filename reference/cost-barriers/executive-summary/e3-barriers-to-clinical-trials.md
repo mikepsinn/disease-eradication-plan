@@ -1,12 +1,8 @@
 ---
-description: >-
-  Key obstacles to conducting clinical trials in the United States including
-  high costs, lengthy time frames, recruitment challenges, workforce issues,
-  sponsor-imposed barriers, regulatory hurdles, and globalization-related
-  issues.
+description: 'Key obstacles to conducting clinical trials in the United States including high costs, lengthy time frames, recruitment challenges, workforce issues, sponsor-imposed barriers, regulatory hurdles, and globalization-related issues.'
 emoji: "\U0001F6A7"
 title: Barriers to Clinical Trials in the United States
-tags: 'clinical-trials, barriers, regulatory, recruitment, costs'
+tags: [clinical-trials, barriers, regulatory, recruitment, costs]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:17.363Z'

@@ -3,7 +3,7 @@ title: Platform Certification Third-Party Roles
 description: Framework for incorporating third-party certification bodies in dFDA platform validation
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, certification, third-party, validation
+tags: [regulatory, recommendations, certification, third-party, validation]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-certificate

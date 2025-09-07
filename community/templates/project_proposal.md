@@ -1,10 +1,8 @@
 ---
-description: >-
-  A template for structuring project proposals for the Community Directory,
-  guiding contributors to provide detailed information about their initiatives.
+description: 'A template for structuring project proposals for the Community Directory, guiding contributors to provide detailed information about their initiatives.'
 emoji: "\U0001F4CB"
 title: project Proposal Template
-tags: 'fda-community, project-proposals, template, guidelines'
+tags: [fda-community, project-proposals, template, guidelines]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:32.792Z'

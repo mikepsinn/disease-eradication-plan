@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of the risk-averse regulatory climate at the FDA and its impact on
-  drug development
+description: Analysis of the risk-averse regulatory climate at the FDA and its impact on drug development
 emoji: "\U0001F512"
 title: FDA's Conservative Regulatory Climate
-tags: 'fda, regulatory-climate, drug-development, risk-benefit-analysis'
+tags: [fda, regulatory-climate, drug-development, risk-benefit-analysis]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:03.699Z'

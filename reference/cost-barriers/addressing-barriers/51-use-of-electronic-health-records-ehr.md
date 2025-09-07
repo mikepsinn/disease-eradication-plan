@@ -1,11 +1,8 @@
 ---
-description: >-
-  Exploration of how Electronic Health Records (EHR) enhance clinical trial
-  recruitment through systems like Clinical Trial Alerts, improving referral and
-  enrollment rates.
+description: 'Exploration of how Electronic Health Records (EHR) enhance clinical trial recruitment through systems like Clinical Trial Alerts, improving referral and enrollment rates.'
 emoji: "\U0001F4CB"
 title: Use of Electronic Health Records in Clinical Trials
-tags: 'electronic-health-records, clinical-trials, recruitment, trial-costs'
+tags: [electronic-health-records, clinical-trials, recruitment, trial-costs]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:41.239Z'

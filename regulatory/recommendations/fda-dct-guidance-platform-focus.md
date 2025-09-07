@@ -3,7 +3,7 @@ title: FDA DCT Guidance Platform Focus
 description: Framework for focusing FDA decentralized clinical trial guidance on platform capabilities
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, dct, clinical-trials, platforms
+tags: [regulatory, recommendations, dct, clinical-trials, platforms]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-laptop-house

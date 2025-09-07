@@ -1,12 +1,8 @@
 ---
-description: >-
-  Phase III clinical trials are often designed to exclude a vast majority of the
-  population of interest.
+description: Phase III clinical trials are often designed to exclude a vast majority of the population of interest.
 emoji: "\U0001F465"
 title: Trials Often Aren't Representative of Real Patients
-tags: >-
-  clinical-trials, external-validity, generalizability, mental-health,
-  eligibility-criteria
+tags: [clinical-trials, external-validity, generalizability, mental-health, eligibility-criteria]
 published: true
 editor: markdown
 date: '2022-07-29T02:10:38.403Z'

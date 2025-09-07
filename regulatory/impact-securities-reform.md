@@ -1,9 +1,9 @@
 ---
 title: Impact Securities and Digital Public Goods Financing Act (Draft)
-description: Draft model law to enable high‑impact public‑good financing via "impact securities," expanded investor access, and on‑chain reporting safe harbors.
+description: 'Draft model law to enable high‑impact public‑good financing via "impact securities," expanded investor access, and on‑chain reporting safe harbors.'
 published: true
 date: '2025-08-22T00:00:00.000Z'
-tags: impact-securities, digital-assets, reg-reform, on-chain-reporting, capital-formation, public-goods
+tags: [impact-securities, digital-assets, reg-reform, on-chain-reporting, capital-formation, public-goods]
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
 topic_id: impact-securities-reform

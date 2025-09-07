@@ -1,10 +1,8 @@
 ---
-description: >-
-  A directory for academic and medical researchers contributing to the dFDA
-  project, facilitating collaboration and resource sharing.
+description: 'A directory for academic and medical researchers contributing to the dFDA project, facilitating collaboration and resource sharing.'
 emoji: "\U0001F4DA"
 title: Researchers Directory
-tags: 'researchers, collaboration, resources'
+tags: [researchers, collaboration, resources]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:20.436Z'

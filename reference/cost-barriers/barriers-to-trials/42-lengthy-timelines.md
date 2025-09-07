@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of the lengthy timelines involved in clinical trials and drug
-  development, including increases in development and regulatory cycle times.
+description: 'Analysis of the lengthy timelines involved in clinical trials and drug development, including increases in development and regulatory cycle times.'
 emoji: ⏳
 title: Lengthy Timelines in Clinical Trials and Drug Development
-tags: 'clinical-trials, drug-development, regulatory-process, timelines'
+tags: [clinical-trials, drug-development, regulatory-process, timelines]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:40.234Z'

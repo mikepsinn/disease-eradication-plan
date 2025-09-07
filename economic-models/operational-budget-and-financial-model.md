@@ -1,9 +1,9 @@
 ---
-title: 'Operational Budget & Financial Model Documentation'
+title: Operational Budget & Financial Model Documentation
 description: 'A detailed, bottom-up justification for the project budget, including a phase-based operational plan, team and hiring roadmap, and a description of the full financial model.'
 published: true
 date: '2025-08-22T00:00:00.000Z'
-tags: budget, financial-model, operations, hiring-plan, investor-diligence
+tags: [budget, financial-model, operations, hiring-plan, investor-diligence]
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
 ---

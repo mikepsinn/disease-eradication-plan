@@ -1,12 +1,8 @@
 ---
-description: >-
-  An exhaustive strategy comparison document for creating a global autonomous
-  decentralized FDA, addressing regulatory, legal, and policy barriers.
+description: 'An exhaustive strategy comparison document for creating a global autonomous decentralized FDA, addressing regulatory, legal, and policy barriers.'
 emoji: "\U0001F310"
 title: Strategies for Global Autonomous Decentralized FDA
-tags: >-
-  decentralized-fda, global-system, regulatory-barriers, legal-frameworks,
-  patient-rights
+tags: [decentralized-fda, global-system, regulatory-barriers, legal-frameworks, patient-rights]
 published: true
 editor: markdown
 date: '2025-02-12T20:29:57.164Z'

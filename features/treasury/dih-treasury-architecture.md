@@ -1,9 +1,9 @@
 ---
 title: DIH Treasury Architecture
-description: Technical and governance architecture for the Decentralized Institutes of Health (DIH) Treasury, targeting Bitcoin-level decentralization via multi-sig and threshold signatures.
+description: 'Technical and governance architecture for the Decentralized Institutes of Health (DIH) Treasury, targeting Bitcoin-level decentralization via multi-sig and threshold signatures.'
 published: true
 date: 2025-08-12T00:00:00.000Z
-tags: dih, treasury, multisig, threshold-signatures, governance, security, transparency
+tags: [dih, treasury, multisig, threshold-signatures, governance, security, transparency]
 editor: markdown
 dateCreated: 2025-08-12T00:00:00.000Z
 fontawesomeIcon: fa-vault

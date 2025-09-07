@@ -3,7 +3,7 @@ title: Platform Technical Specification
 description: Detailed engineering specifications for the dFDA core platform implementation.
 published: false
 date: 2025-07-26T14:00:00.000Z
-tags: features, platform, specification, engineering
+tags: [features, platform, specification, engineering]
 editor: markdown
 dateCreated: 2025-07-26T14:00:00.000Z
 ---

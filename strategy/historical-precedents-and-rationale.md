@@ -1,9 +1,9 @@
 ---
-title: 'Historical Precedents & Strategic Rationale'
+title: Historical Precedents & Strategic Rationale
 description: 'An analysis of historical movements that informed the design of the 1% Treaty, synthesizing lessons from both successful and unsuccessful campaigns to create a pragmatic, financially-powered strategy for change.'
 published: true
 date: '2025-08-22T00:00:00.000Z'
-tags: strategy, history, activism, social-change, game-theory, public-choice
+tags: [strategy, history, activism, social-change, game-theory, public-choice]
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
 ---

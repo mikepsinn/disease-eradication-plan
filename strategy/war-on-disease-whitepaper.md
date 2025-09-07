@@ -1,9 +1,9 @@
 ---
 title: War on Disease — Whitepaper (Outline)
-description: Investor-grade outline linking to canonical sections for the War on Disease initiative (1% Treaty → DIH → dFDA), structured to support a $1B+ raise.
+description: 'Investor-grade outline linking to canonical sections for the War on Disease initiative (1% Treaty → DIH → dFDA), structured to support a $1B+ raise.'
 published: true
 date: '2025-08-23T00:00:00.000Z'
-tags: whitepaper, investment, strategy, roadmap, dih, dfda, treaty
+tags: [whitepaper, investment, strategy, roadmap, dih, dfda, treaty]
 editor: markdown
 dateCreated: '2025-08-23T00:00:00.000Z'
 topic_id: war-on-disease-whitepaper

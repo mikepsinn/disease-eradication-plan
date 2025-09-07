@@ -1,12 +1,8 @@
 ---
-description: >-
-  An operational model developed in Microsoft Excel for clinical trial cost
-  scenario analysis with a guided user interface in Visual Basic.
+description: An operational model developed in Microsoft Excel for clinical trial cost scenario analysis with a guided user interface in Visual Basic.
 emoji: "\U0001F4CA"
 title: Operational Model for Clinical Trial Cost Analysis
-tags: >-
-  clinical-trials, cost-analysis, operational-model, microsoft-excel,
-  visual-basic
+tags: [clinical-trials, cost-analysis, operational-model, microsoft-excel, visual-basic]
 published: true
 editor: markdown
 date: '2025-02-12T16:56:46.027Z'

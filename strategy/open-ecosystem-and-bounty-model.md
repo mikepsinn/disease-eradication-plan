@@ -1,9 +1,9 @@
 ---
-title: "Strategy: Open Ecosystem and Bounty Model"
-description: "The dFDA platform's strategy for fostering a sustainable, innovative ecosystem through open APIs and targeted bounties, rather than direct funding—emulating proven open-source successes."
+title: '"Strategy: Open Ecosystem and Bounty Model"'
+description: 'The dFDA platform''s strategy for fostering a sustainable, innovative ecosystem through open APIs and targeted bounties, rather than direct funding—emulating proven open-source successes.'
 published: true
 date: 2025-06-08T22:00:00.000Z
-tags: strategy, ecosystem, open-source, bounties, platform-economics, ai-development
+tags: [strategy, ecosystem, open-source, bounties, platform-economics, ai-development]
 editor: markdown
 dateCreated: 2025-06-08T22:00:00.000Z
 ---

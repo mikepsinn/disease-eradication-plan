@@ -1,9 +1,9 @@
 ---
-title: 'The Peace Dividend: Value Capture & Distribution Model'
-description: A quantitative analysis of how a ~$2.5B investment unlocks a $16.5T annual peace dividend, and how that value is distributed between VICTORY bond holders and society.
+title: '"The Peace Dividend: Value Capture & Distribution Model"'
+description: 'A quantitative analysis of how a ~$2.5B investment unlocks a $16.5T annual peace dividend, and how that value is distributed between VICTORY bond holders and society.'
 published: true
 date: '2025-01-22T00:00:00.000Z'
-tags: peace-dividend, value-capture, investment-thesis, victory-bonds, economic-modeling
+tags: [peace-dividend, value-capture, investment-thesis, victory-bonds, economic-modeling]
 editor: markdown
 dateCreated: '2025-01-22T00:00:00.000Z'
 ---

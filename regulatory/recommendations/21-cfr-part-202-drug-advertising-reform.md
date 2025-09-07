@@ -3,7 +3,7 @@ title: Drug Advertising Reform
 description: Proposals for modernizing 21 CFR Part 202 drug advertising regulations in the context of dFDA data transparency
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, drug-advertising, transparency, fda
+tags: [regulatory, recommendations, drug-advertising, transparency, fda]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-ad

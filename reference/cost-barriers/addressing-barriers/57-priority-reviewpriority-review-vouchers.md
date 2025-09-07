@@ -1,10 +1,8 @@
 ---
-description: >-
-  Explanation of Priority Review Vouchers as a policy option to incentivize
-  development of treatments for neglected diseases
+description: Explanation of Priority Review Vouchers as a policy option to incentivize development of treatments for neglected diseases
 emoji: "\U0001F4DD"
 title: Priority Review Vouchers
-tags: 'policy, neglected-diseases, fda, incentives, clinical-trials'
+tags: [policy, neglected-diseases, fda, incentives, clinical-trials]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:00.521Z'

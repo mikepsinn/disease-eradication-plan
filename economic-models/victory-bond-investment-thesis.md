@@ -1,9 +1,9 @@
 ---
-title: 'VICTORY Bonds: The Investment Thesis for Curing Disease'
-description: A quantitative analysis of the investment required to make curing disease more profitable than war, detailing the risk, return, and competitive benchmark against the military-industrial complex and elite hedge funds.
+title: '"VICTORY Bonds: The Investment Thesis for Curing Disease"'
+description: 'A quantitative analysis of the investment required to make curing disease more profitable than war, detailing the risk, return, and competitive benchmark against the military-industrial complex and elite hedge funds.'
 published: true
 date: '2025-01-20T00:00:00.000Z'
-tags: investment-thesis, victory-bonds, impact-investing, quantitative-finance, risk-modeling, metaculus
+tags: [investment-thesis, victory-bonds, impact-investing, quantitative-finance, risk-modeling, metaculus]
 editor: markdown
 dateCreated: '2025-01-20T00:00:00.000Z'
 ---

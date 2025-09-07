@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of drug sponsor-imposed barriers in clinical research, focusing on
-  risk aversion and its impact on costs and delays.
+description: 'Analysis of drug sponsor-imposed barriers in clinical research, focusing on risk aversion and its impact on costs and delays.'
 emoji: "\U0001F6AB"
 title: Drug Sponsor-imposed Barriers in Clinical Research
-tags: 'clinical-research, drug-sponsors, risk-aversion, costs, delays'
+tags: [clinical-research, drug-sponsors, risk-aversion, costs, delays]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:13.712Z'

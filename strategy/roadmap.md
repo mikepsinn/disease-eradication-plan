@@ -1,9 +1,9 @@
 ---
-title: "Canonical Roadmap: From Plan to Global Impact"
-description: "The high-level, multi-year strategy to achieve the 1% Treaty, fund the DIH, and execute the mission, from initial planning to global impact."
+title: '"Canonical Roadmap: From Plan to Global Impact"'
+description: 'The high-level, multi-year strategy to achieve the 1% Treaty, fund the DIH, and execute the mission, from initial planning to global impact.'
 published: true
 date: '2025-08-22T00:00:00.000Z'
-tags: strategy, roadmap, 1-percent-treaty, dih, dfda, financing, policy
+tags: [strategy, roadmap, 1-percent-treaty, dih, dfda, financing, policy]
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
 topic_id: canonical-roadmap

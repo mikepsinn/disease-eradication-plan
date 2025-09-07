@@ -1,11 +1,8 @@
 ---
-description: >-
-  Details on the parameters required for a clinical trial cost/decision-making
-  model, including phase durations, success probabilities, expected revenues,
-  and discount rates.
+description: 'Details on the parameters required for a clinical trial cost/decision-making model, including phase durations, success probabilities, expected revenues, and discount rates.'
 emoji: ⚙️
 title: Model Parameters for Clinical Trial Cost Analysis
-tags: 'clinical-trials, model-parameters, cost-analysis, pharmaceutical-research'
+tags: [clinical-trials, model-parameters, cost-analysis, pharmaceutical-research]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:21.923Z'

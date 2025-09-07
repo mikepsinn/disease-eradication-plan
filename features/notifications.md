@@ -1,11 +1,8 @@
 ---
-description: >-
-  Web and mobile push notifications with action buttons for recording treatments
-  and symptoms without opening the app, available on Android, iOS, and desktop
-  browsers.
+description: 'Web and mobile push notifications with action buttons for recording treatments and symptoms without opening the app, available on Android, iOS, and desktop browsers.'
 emoji: "\U0001F4F1"
 title: Notifications with Action Buttons
-tags: 'notifications, action-buttons, data-collection, mobile, web'
+tags: [notifications, action-buttons, data-collection, mobile, web]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:50.084Z'

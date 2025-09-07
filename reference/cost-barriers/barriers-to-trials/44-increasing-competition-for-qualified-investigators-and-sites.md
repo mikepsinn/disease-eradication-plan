@@ -1,11 +1,8 @@
 ---
-description: >-
-  Analysis of the competition for qualified investigators and clinical trial
-  sites, highlighting the challenges faced by sponsors in securing top
-  researchers.
+description: 'Analysis of the competition for qualified investigators and clinical trial sites, highlighting the challenges faced by sponsors in securing top researchers.'
 emoji: "\U0001F465"
 title: Competition for Qualified Investigators and Sites
-tags: 'clinical-trials, investigators, sites, competition, sponsors'
+tags: [clinical-trials, investigators, sites, competition, sponsors]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:46.891Z'

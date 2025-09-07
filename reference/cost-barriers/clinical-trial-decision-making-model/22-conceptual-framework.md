@@ -1,10 +1,8 @@
 ---
-description: >-
-  Conceptual framework for modeling clinical trial decision-making using a
-  decision tree approach from the perspective of a revenue-maximizing sponsor.
+description: Conceptual framework for modeling clinical trial decision-making using a decision tree approach from the perspective of a revenue-maximizing sponsor.
 emoji: "\U0001F4CA"
 title: Conceptual Framework for Clinical Trial Decision-Making
-tags: 'clinical-trials, decision-making, modeling, sponsors, risk'
+tags: [clinical-trials, decision-making, modeling, sponsors, risk]
 published: true
 editor: markdown
 date: '2025-02-12T16:56:42.726Z'

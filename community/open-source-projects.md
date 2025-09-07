@@ -1,10 +1,8 @@
 ---
-description: >-
-  A list of open-source projects aimed at accelerating clinical discovery
-  relevant to the dFDA's mission.
+description: A list of open-source projects aimed at accelerating clinical discovery relevant to the dFDA's mission.
 emoji: "\U0001F4BB"
 title: Open Source Projects for Clinical Discovery
-tags: 'open-source, clinical-discovery, projects'
+tags: [open-source, clinical-discovery, projects]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:01.808Z'

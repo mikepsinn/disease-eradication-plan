@@ -1,10 +1,8 @@
 ---
-description: >-
-  A template for partners to introduce themselves in the Community
-  Directory
+description: A template for partners to introduce themselves in the Community Directory
 emoji: "\U0001F91D"
 title: Partner Introduction Template
-tags: 'community, partners, template, collaboration'
+tags: [community, partners, template, collaboration]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:29.661Z'

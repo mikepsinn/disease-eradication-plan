@@ -1,10 +1,8 @@
 ---
-description: >-
-  A directory for community volunteers contributing to the project,
-  providing resources and guidance for involvement.
+description: 'A directory for community volunteers contributing to the project, providing resources and guidance for involvement.'
 emoji: "\U0001F91D"
 title: Community Volunteers Directory
-tags: 'volunteers, community, contribution'
+tags: [volunteers, community, contribution]
 published: true
 editor: markdown
 date: '2025-02-12T16:51:40.444Z'

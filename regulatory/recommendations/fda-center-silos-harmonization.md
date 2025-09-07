@@ -3,7 +3,7 @@ title: FDA Center Silos Harmonization
 description: Recommendations for breaking down silos between FDA centers to enable unified dFDA implementation
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, fda-centers, harmonization, organizational-reform
+tags: [regulatory, recommendations, fda-centers, harmonization, organizational-reform]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-building

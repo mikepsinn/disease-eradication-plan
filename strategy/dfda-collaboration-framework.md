@@ -1,13 +1,8 @@
 ---
-description: >-
-  A coordination framework for facilitating cooperation, communication, and
-  collaborative actions among stakeholders in clinical discovery and health
-  outcomes.
+description: 'A coordination framework for facilitating cooperation, communication, and collaborative actions among stakeholders in clinical discovery and health outcomes.'
 emoji: "\U0001F91D"
 title: dFDA Collaboration Framework
-tags: >-
-  coordination-framework, clinical-discovery, stakeholder-collaboration,
-  health-outcomes
+tags: [coordination-framework, clinical-discovery, stakeholder-collaboration, health-outcomes]
 published: true
 editor: markdown
 date: '2023-10-28T22:44:51.813Z'

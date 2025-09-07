@@ -3,7 +3,7 @@ title: RWD/RWE Guidance Enhancement
 description: Proposals for enhancing FDA guidance on real-world data and evidence in the dFDA ecosystem
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, rwd, rwe, real-world-evidence, fda-guidance
+tags: [regulatory, recommendations, rwd, rwe, real-world-evidence, fda-guidance]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-database

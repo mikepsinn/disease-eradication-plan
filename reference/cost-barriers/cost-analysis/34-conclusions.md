@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of the key drivers of costs in clinical trials across different
-  therapeutic areas and phases, highlighting specific high-cost areas.
+description: 'Analysis of the key drivers of costs in clinical trials across different therapeutic areas and phases, highlighting specific high-cost areas.'
 emoji: "\U0001F4CA"
 title: Key Drivers of Clinical Trial Costs by Therapeutic Area and Phase
-tags: 'clinical-trials, cost-analysis, therapeutic-areas, phases'
+tags: [clinical-trials, cost-analysis, therapeutic-areas, phases]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:34.037Z'

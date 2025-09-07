@@ -1,9 +1,9 @@
 ---
-title: 🏭 Platform
+title: "\U0001F3ED Platform"
 description: A detailed description of the core open-source platform and plugin framework that will enable the transformation of data into clinical discoveries.
 published: true
 date: 2025-02-18T05:14:54.240Z
-tags: clinical-trials, health-data, decentralization, digital-health, interoperability, ehr-systems
+tags: [clinical-trials, health-data, decentralization, digital-health, interoperability, ehr-systems]
 editor: markdown
 dateCreated: 2023-11-07T19:01:19.907Z
 fontawesomeIcon: fa-layer-group

@@ -1,11 +1,8 @@
 ---
-description: >-
-  Evaluation of barrier mitigation strategies and their impacts on drug
-  development costs and returns, with a focus on priority review vouchers and
-  FDA review efficiency.
+description: 'Evaluation of barrier mitigation strategies and their impacts on drug development costs and returns, with a focus on priority review vouchers and FDA review efficiency.'
 emoji: "\U0001F4CA"
 title: Barrier Mitigation Strategies in Drug Development
-tags: 'drug-development, barrier-mitigation, FDA, priority-review-vouchers, costs'
+tags: [drug-development, barrier-mitigation, FDA, priority-review-vouchers, costs]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:07.055Z'

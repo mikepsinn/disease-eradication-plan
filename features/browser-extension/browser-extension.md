@@ -1,10 +1,8 @@
 ---
-description: >-
-  A browser extension that allows users to track their mood, symptoms, or
-  desired outcomes quickly through a popup interface.
+description: 'A browser extension that allows users to track their mood, symptoms, or desired outcomes quickly through a popup interface.'
 emoji: "\U0001F4BB"
 title: Browser Extension for Tracking Outcomes
-tags: 'browser-extension, tracking, mood, symptoms, open-source, development'
+tags: [browser-extension, tracking, mood, symptoms, open-source, development]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:36.010Z'

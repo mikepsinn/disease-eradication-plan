@@ -3,7 +3,7 @@ title: Understanding the Return on Investment in Lobbying within the Military In
 description: Explore the significant expenditures and considerable gains of military contractors in lobbying efforts to influence government policies and secure contracts.
 published: true
 date: 2024-06-09T00:00:00.000Z
-tags: lobbying, defense-sector, roi, military-spending, government-contracts
+tags: [lobbying, defense-sector, roi, military-spending, government-contracts]
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---

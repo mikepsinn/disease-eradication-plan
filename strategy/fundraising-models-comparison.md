@@ -1,9 +1,9 @@
 ---
 title: Fundraising Models Comparison — Selecting the Best Path for DIH
-description: Comparison of fundraising options (Reg D/Reg S, Reg A+, Reg CF, token sales, grants) against our goals, with precedents and a clear recommendation.
+description: 'Comparison of fundraising options (Reg D/Reg S, Reg A+, Reg CF, token sales, grants) against our goals, with precedents and a clear recommendation.'
 published: true
 date: '2025-01-20T00:00:00.000Z'
-tags: fundraising-models, capital-raising, reg-d, reg-s, reg-a-plus, grants, public-goods, crypto, strategy
+tags: [fundraising-models, capital-raising, reg-d, reg-s, reg-a-plus, grants, public-goods, crypto, strategy]
 editor: markdown
 dateCreated: '2025-01-20T00:00:00.000Z'
 ---

@@ -1,9 +1,9 @@
 ---
 title: Verification and Fraud Prevention
-description: Comprehensive framework for identity verification, sybil resistance, and fraud prevention in the global referendum and treasury operations.
+description: 'Comprehensive framework for identity verification, sybil resistance, and fraud prevention in the global referendum and treasury operations.'
 published: true
 date: '2025-01-15T00:00:00.000Z'
-tags: verification, fraud-prevention, sybil-resistance, identity, security, referendum
+tags: [verification, fraud-prevention, sybil-resistance, identity, security, referendum]
 editor: markdown
 dateCreated: '2025-01-15T00:00:00.000Z'
 ---

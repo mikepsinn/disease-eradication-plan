@@ -1,9 +1,9 @@
 ---
-title: 💡 The Decentralized FDA
-description: 80Xing medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials 💊
+title: "\U0001F4A1 The Decentralized FDA"
+description: "80Xing medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials \U0001F48A"
 published: true
 date: 2024-07-28T16:52:11.076Z
-tags: overview
+tags: [overview]
 editor: markdown
 dateCreated: 2023-11-24T22:24:09.275Z
 ---

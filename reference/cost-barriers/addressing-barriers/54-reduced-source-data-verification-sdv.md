@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of cost savings from reducing source data verification in clinical
-  trials
+description: Analysis of cost savings from reducing source data verification in clinical trials
 emoji: "\U0001F4CA"
 title: Reduced Source Data Verification in Clinical Trials
-tags: 'clinical-trials, source-data-verification, cost-savings, risk-based-approach'
+tags: [clinical-trials, source-data-verification, cost-savings, risk-based-approach]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:50.715Z'

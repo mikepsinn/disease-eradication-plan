@@ -1,9 +1,9 @@
 ---
 title: Petition to Support the FDA.gov Upgrade Act
-description: By upgrading FDA.gov to automate the pragmatic trial approach of the Oxford Recovery Trial, Transforming the system has the potential for an **80X acceleration in medical progress** reducing the cost of medical research from $48k/patient to $500/patient.
+description: 'By upgrading FDA.gov to automate the pragmatic trial approach of the Oxford Recovery Trial, Transforming the system has the potential for an **80X acceleration in medical progress** reducing the cost of medical research from $48k/patient to $500/patient.'
 published: true
 date: 2025-05-23T06:21:26.088Z
-tags: fda, petition, right-to-trial-act
+tags: [fda, petition, right-to-trial-act]
 editor: markdown
 dateCreated: 2025-05-23T06:21:26.088Z
 ---

@@ -1,9 +1,9 @@
 ---
-title: 🔍 AllTrials
-description: A campaign for transparency in clinical trials, ensuring all trial results are reported
+title: "\U0001F50D AllTrials"
+description: 'A campaign for transparency in clinical trials, ensuring all trial results are reported'
 published: true
 date: 2025-05-28T22:21:00.000Z
-tags: nonprofit, clinical-trials, transparency, research-integrity
+tags: [nonprofit, clinical-trials, transparency, research-integrity]
 editor: markdown
 dateCreated: 2025-05-28T22:21:00.000Z
 ---

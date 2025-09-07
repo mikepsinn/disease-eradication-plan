@@ -1,10 +1,8 @@
 ---
-description: >-
-  Compilation of references and resources related to FDA spending, drug
-  approvals, economic data, and regulatory impact
+description: 'Compilation of references and resources related to FDA spending, drug approvals, economic data, and regulatory impact'
 emoji: "\U0001F4DA"
 title: FDA References and Data Resources
-tags: 'fda, spending, drug-approvals, economic-data, regulation'
+tags: [fda, spending, drug-approvals, economic-data, regulation]
 published: true
 editor: markdown
 date: '2025-02-12T16:56:25.222Z'

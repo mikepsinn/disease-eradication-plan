@@ -1,9 +1,9 @@
 ---
-title: 'The Endgame: A Multi-Generational Strategy to Phase Out War'
+title: '"The Endgame: A Multi-Generational Strategy to Phase Out War"'
 description: Outlines the long-term vision of progressively increasing the military-to-health budget redirection from 1% to eventually make organized violence economically obsolete.
 published: true
 date: '2025-02-01T00:00:00.000Z'
-tags: strategy, endgame, peace, long-term-vision, victory-bonds
+tags: [strategy, endgame, peace, long-term-vision, victory-bonds]
 editor: markdown
 dateCreated: '2025-02-01T00:00:00.000Z'
 ---

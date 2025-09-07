@@ -1,9 +1,9 @@
 ---
 title: Pre-Seed Strategy & Foundation
-description: Outlines the initial steps, legal structure, pre-seed fundraising, and core team hiring required to launch the War on Disease initiative.
+description: 'Outlines the initial steps, legal structure, pre-seed fundraising, and core team hiring required to launch the War on Disease initiative.'
 published: true
 date: '2025-08-15T00:00:00.000Z'
-tags: pre-seed, fundraising, strategy, legal, hiring
+tags: [pre-seed, fundraising, strategy, legal, hiring]
 editor: markdown
 dateCreated: '2025-08-15T00:00:00.000Z'
 topic_id: pre-seed-strategy

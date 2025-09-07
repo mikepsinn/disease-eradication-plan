@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of barriers related to the FDA's review process, including resource
-  constraints and concerns about reviewer authority.
+description: 'Analysis of barriers related to the FDA''s review process, including resource constraints and concerns about reviewer authority.'
 emoji: "\U0001F4DD"
 title: Barriers in the FDA Review Process
-tags: 'fda, review-process, regulatory-barriers, resource-constraints'
+tags: [fda, review-process, regulatory-barriers, resource-constraints]
 published: true
 editor: markdown
 date: '2025-02-12T20:27:10.229Z'

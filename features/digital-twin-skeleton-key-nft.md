@@ -3,7 +3,7 @@ title: Digital Twin Skeleton Key NFT
 description: Data sets can be encrypted and stored in a decentralized manner generating a Data Gem NFT that can be sold on data exchanges granting the possessor access to the data set.
 published: true
 date: 2023-10-27T18:25:24.971Z
-tags: nft, digital twin safe, data access controls
+tags: [nft, digital, twin, safe, data, access, controls]
 editor: markdown
 dateCreated: 2023-10-27T18:21:13.091Z
 ---

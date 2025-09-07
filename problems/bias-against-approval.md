@@ -2,7 +2,7 @@
 description: Overcoming Cognitive Bias Against Acts of Commission
 emoji: "\U0001F9E0"
 title: "\U0001F9EE Bias Against Approving Effective Treatments"
-tags: 'cognitive-bias, FDA, regulation, decision-making'
+tags: [cognitive-bias, FDA, regulation, decision-making]
 published: true
 editor: markdown
 date: '2022-07-28T03:57:38.074Z'

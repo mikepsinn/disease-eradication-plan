@@ -1,11 +1,8 @@
 ---
-description: >-
-  Overview of data collection methods and data types including wearable sensors,
-  third-party applications, and various data categories such as omics, clinical,
-  and multiscale data.
+description: 'Overview of data collection methods and data types including wearable sensors, third-party applications, and various data categories such as omics, clinical, and multiscale data.'
 emoji: "\U0001F4F2"
 title: Data Collection Methods and Types
-tags: 'data-collection, wearable-sensors, omics-data, clinical-data, multiscale-data'
+tags: [data-collection, wearable-sensors, omics-data, clinical-data, multiscale-data]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:46.729Z'

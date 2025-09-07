@@ -1,10 +1,8 @@
 ---
-description: >-
-  Discussion of barriers related to globalization of clinical research,
-  including ethical, scientific, and logistical challenges.
+description: 'Discussion of barriers related to globalization of clinical research, including ethical, scientific, and logistical challenges.'
 emoji: "\U0001F30D"
 title: Barriers in Global Clinical Research
-tags: 'clinical-research, globalization, barriers, multicenter-trials'
+tags: [clinical-research, globalization, barriers, multicenter-trials]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:47.065Z'

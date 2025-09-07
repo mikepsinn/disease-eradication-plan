@@ -1,10 +1,8 @@
 ---
-description: >-
-  A directory for patient advocacy groups and NGOs to share information,
-  resources, and collaborate within the Community Directory.
+description: 'A directory for patient advocacy groups and NGOs to share information, resources, and collaborate within the Community Directory.'
 emoji: "\U0001F91D"
 title: Patient Advocacy Directory
-tags: 'patient-advocacy, NGOs, community-directory, collaboration'
+tags: [patient-advocacy, NGOs, community-directory, collaboration]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:08.134Z'

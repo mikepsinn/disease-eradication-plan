@@ -3,7 +3,7 @@ title: Why Reallocation From Public Bads to Public Goods Is Better Than Just Inc
 description: Simply increasing spending on medical research while simultaneously increasing military spending does not actually increase the number of brains and resources available for research.
 published: true
 date: 2024-06-09T00:00:00.000Z
-tags: reallocation, public-goods, military-spending, health-research, opportunity-cost
+tags: [reallocation, public-goods, military-spending, health-research, opportunity-cost]
 editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---

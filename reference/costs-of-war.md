@@ -1,9 +1,9 @@
 ---
 title: Quantified Costs of War - Direct and Indirect
-description: A data-driven breakdown of the economic, human, and societal costs of war and military spending.
+description: 'A data-driven breakdown of the economic, human, and societal costs of war and military spending.'
 published: true
 date: '2025-08-15T00:00:00.000Z'
-tags: costs-of-war, military-spending, economic-analysis
+tags: [costs-of-war, military-spending, economic-analysis]
 editor: markdown
 dateCreated: '2025-08-15T00:00:00.000Z'
 ---

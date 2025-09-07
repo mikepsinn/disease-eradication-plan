@@ -3,7 +3,7 @@ title: Advisory Committee Reliance Reduction
 description: Proposals for reducing reliance on advisory committees in the context of dFDA platform data
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, advisory-committees, decision-making, fda
+tags: [regulatory, recommendations, advisory-committees, decision-making, fda]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-users

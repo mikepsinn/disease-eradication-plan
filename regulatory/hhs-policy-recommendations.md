@@ -1,9 +1,9 @@
 ---
 title: HHS Policy Recommendations for Disease Eradication
-description: Proposes a decentralized FDA system that increases trial capacity, reduces costs, and accelerates patient access without legislative changes.
+description: 'Proposes a decentralized FDA system that increases trial capacity, reduces costs, and accelerates patient access without legislative changes.'
 published: true
 date: 2025-03-07T00:26:10.239Z
-tags: clinical-trials, decentralized-fda, healthcare-innovation, regulatory-compliance, cost-efficiency
+tags: [clinical-trials, decentralized-fda, healthcare-innovation, regulatory-compliance, cost-efficiency]
 editor: markdown
 dateCreated: 2025-02-20T05:44:49.624Z
 ---

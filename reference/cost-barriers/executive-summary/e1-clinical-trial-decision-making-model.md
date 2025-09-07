@@ -1,13 +1,8 @@
 ---
-description: >-
-  A stylized decision tree model for drug sponsors formulating clinical trials,
-  focusing on revenue maximization and incorporating therapeutic area, market
-  size, clinical stage costs, and success probabilities.
+description: 'A stylized decision tree model for drug sponsors formulating clinical trials, focusing on revenue maximization and incorporating therapeutic area, market size, clinical stage costs, and success probabilities.'
 emoji: "\U0001F4CA"
 title: Clinical Trial Decision-making Model
-tags: >-
-  clinical-trials, decision-making, drug-development, revenue-modeling,
-  cost-analysis
+tags: [clinical-trials, decision-making, drug-development, revenue-modeling, cost-analysis]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:10.650Z'

@@ -1,10 +1,8 @@
 ---
-description: >-
-  Historical analysis of efficacy trials and their impact on health outcomes
-  compared to modern pharmaceutical trials
+description: Historical analysis of efficacy trials and their impact on health outcomes compared to modern pharmaceutical trials
 emoji: "\U0001F4DA"
 title: History of Medical Regulation and Clinical Research
-tags: 'clinical-trials, history, real-world-evidence, health-outcomes'
+tags: [clinical-trials, history, real-world-evidence, health-outcomes]
 published: true
 editor: markdown
 image: 'https://static.crowdsourcingcures.org/img/life-expectancy-historical.jpg'

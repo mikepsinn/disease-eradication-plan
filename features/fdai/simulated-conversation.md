@@ -1,10 +1,8 @@
 ---
-description: >-
-  Discussion between a patient and the FDAi agent about health concerns linked
-  to dietary factors.
+description: Discussion between a patient and the FDAi agent about health concerns linked to dietary factors.
 emoji: "\U0001FA7A"
 title: FDAi Agent Analyzes Patient's Health Concerns
-tags: 'health, diet, inflammation, arthritis, psoriasis, depression'
+tags: [health, diet, inflammation, arthritis, psoriasis, depression]
 published: true
 editor: markdown
 date: '2025-02-09T16:35:09.090Z'

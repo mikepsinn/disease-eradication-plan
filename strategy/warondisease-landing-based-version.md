@@ -1,9 +1,9 @@
 ---
 title: War on Disease — End Mass Disease by Redirecting 1%
-description: A simple plan to redirect 1% of global military spending into decentralized clinical trials (dFDA) funded by the Decentralized Institutes of Health (DIH), with referral rewards and VICTORY instruments to mobilize the world.
+description: 'A simple plan to redirect 1% of global military spending into decentralized clinical trials (dFDA) funded by the Decentralized Institutes of Health (DIH), with referral rewards and VICTORY instruments to mobilize the world.'
 published: true
 date: '2025-08-15T00:00:00.000Z'
-tags: war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds
+tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds]
 editor: markdown
 dateCreated: '2025-08-15T00:00:00.000Z'
 topic_id: war-on-disease-landing

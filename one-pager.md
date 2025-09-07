@@ -1,13 +1,8 @@
 ---
-description: >-
-  A proposal for a decentralized autonomous FDA (dFDA) aiming to reduce clinical
-  trial costs, provide personalized treatment recommendations, and ensure
-  comprehensive transparency in drug evaluation.
+description: 'A proposal for a decentralized autonomous FDA (dFDA) aiming to reduce clinical trial costs, provide personalized treatment recommendations, and ensure comprehensive transparency in drug evaluation.'
 emoji: "\U0001F310"
 title: Decentralized Autonomous FDA (dFDA) Proposal
-tags: >-
-  decentralized-fda, clinical-research, cost-reduction, personalized-medicine,
-  transparency
+tags: [decentralized-fda, clinical-research, cost-reduction, personalized-medicine, transparency]
 published: true
 editor: markdown
 date: '2025-02-12T16:55:11.895Z'

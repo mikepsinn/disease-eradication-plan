@@ -1,12 +1,8 @@
 ---
-description: >-
-  A comprehensive wiki aggregating all data on the effects of foods, drugs,
-  supplements, and medical interventions on human health
+description: 'A comprehensive wiki aggregating all data on the effects of foods, drugs, supplements, and medical interventions on human health'
 emoji: "\U0001F4DA"
-title: 'Clinipedia: The Wikipedia of Clinical Research'
-tags: >-
-  clinical-research, data-aggregation, knowledge-base, ai-research,
-  health-outcomes
+title: '"Clinipedia: The Wikipedia of Clinical Research"'
+tags: [clinical-research, data-aggregation, knowledge-base, ai-research, health-outcomes]
 published: true
 editor: markdown
 date: '2025-02-12T16:52:39.500Z'

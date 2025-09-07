@@ -1,11 +1,8 @@
 ---
-description: >-
-  Overview of data sources used in constructing an operational model of clinical
-  trial decision-making, including literature, expert interviews, FDA hearings,
-  and Medidata Solutions databases.
+description: 'Overview of data sources used in constructing an operational model of clinical trial decision-making, including literature, expert interviews, FDA hearings, and Medidata Solutions databases.'
 emoji: "\U0001F4DA"
 title: Data Sources for Clinical Trial Decision-Making Model
-tags: 'clinical-trials, data-sources, FDA, research-methodology, Medidata-Solutions'
+tags: [clinical-trials, data-sources, FDA, research-methodology, Medidata-Solutions]
 published: true
 editor: markdown
 date: '2025-02-12T16:56:28.848Z'

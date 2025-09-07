@@ -1,10 +1,8 @@
 ---
-description: >-
-  Exploration of the potential benefits of personal FDAi agents in addressing
-  health issues caused by untested chemicals and poor diets.
+description: Exploration of the potential benefits of personal FDAi agents in addressing health issues caused by untested chemicals and poor diets.
 emoji: "\U0001F52C"
 title: The Case for Personal FDAi Agents
-tags: 'health, chronic-diseases, chemicals, microbiome, clinical-trials'
+tags: [health, chronic-diseases, chemicals, microbiome, clinical-trials]
 published: true
 editor: markdown
 date: '2025-02-09T16:34:58.059Z'

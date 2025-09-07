@@ -3,7 +3,7 @@ title: Remote Platform Facility Inspections
 description: Framework for conducting remote facility inspections through dFDA platform capabilities
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, inspections, remote-monitoring, facilities
+tags: [regulatory, recommendations, inspections, remote-monitoring, facilities]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-video

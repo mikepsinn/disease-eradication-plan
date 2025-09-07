@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of lengthy timelines in clinical trials and their impact on costs and
-  revenues
+description: Analysis of lengthy timelines in clinical trials and their impact on costs and revenues
 emoji: ⏳
 title: Lengthy Timelines in Clinical Trials
-tags: 'clinical-trials, timelines, costs, efficiency, revenues'
+tags: [clinical-trials, timelines, costs, efficiency, revenues]
 published: true
 editor: markdown
 date: '2025-02-12T20:28:23.997Z'

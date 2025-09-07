@@ -1,9 +1,9 @@
 ---
 title: Dynamic Drug Labeling Reform
-description: Recommendations for modernizing 21 CFR Part 201 to enable dynamic, data-driven drug labeling in the dFDA ecosystem
+description: 'Recommendations for modernizing 21 CFR Part 201 to enable dynamic, data-driven drug labeling in the dFDA ecosystem'
 published: true
 date: 2024-03-19T12:00:00.000Z
-tags: regulatory, recommendations, drug-labeling, fda, dynamic-labeling, real-world-data
+tags: [regulatory, recommendations, drug-labeling, fda, dynamic-labeling, real-world-data]
 editor: markdown
 dateCreated: 2024-03-19T12:00:00.000Z
 fontawesomeIcon: fa-tag

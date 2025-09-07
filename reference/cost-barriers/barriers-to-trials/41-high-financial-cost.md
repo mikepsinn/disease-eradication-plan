@@ -1,10 +1,8 @@
 ---
-description: >-
-  Analysis of the high financial costs associated with conducting clinical
-  research and drug development
+description: Analysis of the high financial costs associated with conducting clinical research and drug development
 emoji: "\U0001F4B0"
 title: High Financial Cost of Clinical Research and Drug Development
-tags: 'clinical-research, drug-development, costs, financial-barriers'
+tags: [clinical-research, drug-development, costs, financial-barriers]
 published: true
 editor: markdown
 date: '2025-02-12T20:26:37.027Z'

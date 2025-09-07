@@ -1,11 +1,8 @@
 ---
-description: >-
-  Following this new 70% reduction in the pace of medical progress, the growth
-  in human lifespan was immediately cut in half to an increase of 2 years per
-  decade.
+description: 'Following this new 70% reduction in the pace of medical progress, the growth in human lifespan was immediately cut in half to an increase of 2 years per decade.'
 emoji: "\U0001F4C8"
 title: ☠ Slowed Growth in Life Expectancy
-tags: 'life-expectancy, medical-progress, diminishing-returns, regulations'
+tags: [life-expectancy, medical-progress, diminishing-returns, regulations]
 published: true
 editor: markdown
 date: '2022-07-31T17:06:24.891Z'
