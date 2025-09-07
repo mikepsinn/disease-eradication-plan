@@ -33,5 +33,5 @@ export const env = {
   PERPLEXITY_API_KEY: process.env.PERPLEXITY_API_KEY,
   GOOGLE_GENERATIVE_AI_API_KEY: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
   DEEPSEEK_API_KEY: process.env.DEEPSEEK_API_KEY,
-  AI_MODEL: (process.env.AI_MODEL || 'gemini-1.5-pro') as AvailableModel
+  AI_MODEL: (process.env.AI_MODEL) as AvailableModel
 }; 

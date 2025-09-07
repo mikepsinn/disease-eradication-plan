@@ -13,6 +13,11 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import * as yaml from 'js-yaml';
 
+// --- Environment Validation ---
+if (!env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    throw new Error('FATAL: GOOGLE_GENERATIVE_AI_API_KEY is not set in the environment. The script cannot continue without it.');
+}
+
 // Define the schema for article assessment
 const ArticleAssessmentSchema = z.object({
   qualityScore: z.number()
@@ -97,10 +102,9 @@ const providers: Record<AvailableModel, () => any> = {
   'sonar-small-chat': () => perplexity('sonar-small-chat'),
   'sonar-medium-chat': () => perplexity('sonar-medium-chat'),
   'sonar-large-chat': () => perplexity('sonar-large-chat'),
-  // Google Gemini models
-  'gemini-1.5-flash': () => google('models/gemini-1.5-flash-latest'),
-  'gemini-1.5-pro': () => google('models/gemini-1.5-pro-latest'),
-  'gemini-2.5-flash': () => google('models/gemini-1.5-flash-latest'), // Corrected to a valid, available model endpoint
+  // Google Gemini models - Using stable, known endpoints for diagnostics
+  'gemini-2.5-flash': () => google('models/gemini-flash-latest'),
+  'gemini-2.5-pro': () => google('models/gemini-pro-latest'),
   // DeepSeek models
   'deepseek-chat': () => deepseek('deepseek-chat'),
   'deepseek-reasoner': () => deepseek('deepseek-reasoner')
@@ -327,5 +331,8 @@ async function main() {
 
 // Make the script executable
 if (require.main === module) {
-    main().catch(console.error);
+    main().catch(error => {
+        console.error('Script failed with an unhandled error:', error);
+        process.exit(1);
+    });
 } 

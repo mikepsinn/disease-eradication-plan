@@ -1,4 +1,10 @@
 import { evaluateArticle } from '../article-evaluator';
+import { env } from '../env';
+
+// --- Environment Validation ---
+if (!env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    throw new Error('FATAL: GOOGLE_GENERATIVE_AI_API_KEY is not set in the environment. The test cannot run without it.');
+}
 
 const sampleContent = `# Decentralized Clinical Trials
 

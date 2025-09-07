@@ -63,7 +63,7 @@ async function runTests() {
     'gpt': process.env.OPENAI_API_KEY,
     'claude': process.env.ANTHROPIC_API_KEY,
     'sonar': process.env.PERPLEXITY_API_KEY,
-    'gemini': process.env.GOOGLE_API_KEY,
+    'gemini': process.env.GOOGLE_GENERATIVE_AI_API_KEY,
     'deepseek': process.env.DEEPSEEK_API_KEY
   };
 

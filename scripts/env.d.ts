@@ -23,7 +23,7 @@ declare module './env' {
     OPENAI_API_KEY?: string;
     ANTHROPIC_API_KEY?: string;
     PERPLEXITY_API_KEY?: string;
-    GOOGLE_API_KEY?: string;
+    GOOGLE_GENERATIVE_AI_API_KEY?: string;
     DEEPSEEK_API_KEY?: string;
     OPENAI_MODEL: AvailableModel;
   };
