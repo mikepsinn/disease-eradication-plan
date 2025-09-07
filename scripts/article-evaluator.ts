@@ -76,7 +76,7 @@ const providers: Record<AvailableModel, () => any> = {
   'deepseek-reasoner': () => deepseek('deepseek-reasoner')
 };
 
-const rulePath = path.join(__dirname, '..', '.cursor', 'rules', 'project-management-guidelines.mdc');
+const rulePath = path.join(__dirname, '..', 'CONTRIBUTING.md');
 const SYSTEM_PROMPT = fs.readFileSync(rulePath, 'utf-8');
 
 export async function evaluateArticle(content: string, filePath: string): Promise<ArticleAssessment> {
