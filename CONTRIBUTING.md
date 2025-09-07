@@ -44,24 +44,21 @@ This wiki documents the "War on Disease," a mission to make curing people more p
 
 ### 2. Frontmatter Requirements
 
-All Markdown files **MUST** begin with a YAML frontmatter block.
+All Markdown files **MUST** begin with a YAML frontmatter block. Our frontmatter is designed for compatibility with [Wiki.js](https://js.wiki/). Please adhere to the following structure:
 
 ```yaml
-topic_id: stable-identifier-for-topic
-canonical: true | false
-status: draft | active | deprecated | archived
-domains: [treaty | dih | dfda | cross]
-doc_type: strategy | spec | regulatory | model | ops | reference
-aliases: [./old-path.md] # when moving/renaming
+---
+title: "A Clear and Descriptive Title for the Page"
+description: "A brief, one-sentence summary of the page's content. Used in search results."
+published: true # Set to 'false' for drafts
+date: 'YYYY-MM-DDTHH:MM:SS.sssZ' # The publication or last significant update date
+tags: [keyword1, keyword2] # A list of relevant tags/keywords
+editor: markdown # Should always be markdown
+dateCreated: 'YYYY-MM-DDTHH:MM:SS.sssZ' # The date the file was first created
+---
 ```
 
-### 3. Canonical Content Rules
-
-- **One canonical file per `topic_id`**. All others must set `canonical: false`.
-- **Link to the Canonical:** Non-canonical files must have a hatnote at the top: `For the current version, see [Canonical Title](./relative/path.md).`
-- **Use Summary Style:** Overviews should link to main articles, not duplicate them.
-
-### 4. Sourcing and Citation Standard (CRITICAL)
+### 3. Sourcing and Citation Standard (CRITICAL)
 
 **MANDATORY**: ALL factual claims, statistics, and figures **MUST** be cited with hyperlinks to authoritative sources using the anchor-based method described below.
 
