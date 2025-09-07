@@ -29,10 +29,54 @@ async function validateFrontmatter(fix: boolean) {
     let errorCount = 0;
 
     for (const filePath of allFiles) {
-        const fileContent = await fs.promises.readFile(filePath, 'utf-8');
+        let fileContent = await fs.promises.readFile(filePath, 'utf-8');
         
         try {
-            const { data: frontmatter, content } = matter(fileContent);
+            if (fix) {
+                let needsRewrite = false;
+                const reasons: string[] = [];
+
+                const { data, content, matter: rawFrontmatter } = matter(fileContent);
+
+                // Fix 1: Quote titles with colons if they aren't already quoted
+                if (data.title && typeof data.title === 'string' && data.title.includes(':')) {
+                    const isQuoted = (data.title.startsWith('"') && data.title.endsWith('"')) || (data.title.startsWith("'") && data.title.endsWith("'"));
+                    if (!isQuoted) {
+                        data.title = `"${data.title}"`;
+                        needsRewrite = true;
+                        reasons.push('Quoted title with colon');
+                    }
+                }
+
+                // Fix 2: Standardize tags format
+                if (data.tags) {
+                    let tagsModified = false;
+                    if (typeof data.tags === 'string') {
+                        // Handles tags: >- ... format by splitting into an array
+                        data.tags = data.tags.split(/[, \n]+/).filter(Boolean).map(t => t.trim());
+                        tagsModified = true;
+                    }
+
+                    if (Array.isArray(data.tags)) {
+                        // Check raw string to see if it's block-style `tags:\n  - item`
+                        const rawFrontmatterLine = rawFrontmatter.split('\n').find(line => line.trim().startsWith('tags:'));
+                        // If it's not a single line array (flow style), it needs fixing.
+                        if (tagsModified || (rawFrontmatterLine && !rawFrontmatterLine.includes('['))) {
+                            needsRewrite = true;
+                            reasons.push(tagsModified ? 'Converted string tags to array' : 'Formatted tags to single-line');
+                        }
+                    }
+                }
+
+                if (needsRewrite) {
+                    const newContent = matter.stringify(content, data, { flowLevel: 1 });
+                    await fs.promises.writeFile(filePath, newContent, 'utf-8');
+                    console.log(`✅ [Fixed] ${reasons.join(', ')} in ${filePath}`);
+                    fileContent = newContent; // Use updated content for validation
+                }
+            }
+
+            const { data: frontmatter } = matter(fileContent);
 
             // Rule 1: Must have a title
             if (!frontmatter.title) {
@@ -50,15 +94,6 @@ async function validateFrontmatter(fix: boolean) {
                 errorCount++;
             }
 
-            // Auto-fix: Quote titles with colons
-            if (fix && frontmatter.title && frontmatter.title.includes(':') && !frontmatter.title.startsWith('"')) {
-                const newContent = `---
-${yaml.dump({ ...frontmatter, title: `"${frontmatter.title}"` })}---
-${content}`;
-                await fs.promises.writeFile(filePath, newContent);
-                console.log(`✅ [Fixed Title] Quoted title in ${filePath}`);
-            }
-
         } catch (e: any) {
             // Provide more detailed error logging for YAML parsing issues
             if (e.name === 'YAMLException') {
@@ -71,7 +106,7 @@ ${content}`;
     }
 
     if (errorCount === 0) {
-        console.log('\n✅ All files passed frontmatter validation!');
+        console.log('✅ All frontmatter is valid!');
     } else {
         console.log(`\nFound ${errorCount} errors in frontmatter.`);
         process.exit(1);

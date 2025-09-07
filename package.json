@@ -44,7 +44,6 @@
     "validate-links": "ts-node scripts/validate-links.ts",
     "ts-node": "ts-node",
     "lint:md": "markdownlint '**/*.md'",
-    "lint:yaml": "yamllint operations/*.yml",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
     "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix"
   },
