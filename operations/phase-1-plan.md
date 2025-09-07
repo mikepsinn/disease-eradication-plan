@@ -54,7 +54,7 @@ This document provides the detailed, granular task list for Phase 1 of the proje
 | Create `stakeholder-directory.md` to track all project contributors | Program Lead | *(None)* | 1 Week | `Not Started` |
 | Design `contribution-ledger.md` and the process for tracking work | Program Lead | [Incentive Program](./contributor-incentive-program.md) | 1 Week | `Not Started` |
 | Integrate all community documents (Onboarding, Directory, Ledger) | Program Lead | All Community Docs | 1 Day | `Not Started` |
-| Integrate and expand the `article-evaluator.ts` script into a continuous, AI-driven wiki maintenance workflow. | Engineering Lead | Phase 1 Nearing Completion | 3 Weeks | `Not Started` |
+| Refactor `article-evaluator.ts` to dynamically load its system prompt from the `.cursor/rules/` directory, making it the canonical source for AI-driven wiki maintenance. | Engineering Lead | Phase 1 Nearing Completion | 3 Weeks | `Not Started` |
 | Create `1-percent-treaty/website` repository for the Next.js public-facing site. | Engineering Lead | *(None)* | 1 Day | `Not Started` |
 
 ## Stream 6: Long-Term Strategic Planning

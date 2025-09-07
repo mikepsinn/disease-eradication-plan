@@ -59,3 +59,12 @@ When a task is completed, the operational plan should be updated to include a di
 ## Long-Term Recommendation
 
 While using Markdown files is suitable for the bootstrap phase, the recommended long-term solution is to use **GitHub Projects** for more robust and scalable task management.
+
+## Task Generation
+
+When analyzing a file, if you identify specific, actionable improvements that cannot be resolved by a simple MOVE or RENAME, you should generate TODO comments.
+
+- **Format:** All TODOs must be formatted as HTML comments: `<!-- TODO: [description] -->`
+- **Actionable:** Each TODO should describe a concrete task (e.g., "add citations for statistics in the introduction," "rewrite this section to be more concise," "add a Mermaid diagram illustrating this flow").
+- **Placement:** These TODOs will be appended to the end of the file by the orchestrating script. Do not suggest inline placements.
+- **Goal:** The purpose is to create a distributed, machine-readable task list that can be aggregated and actioned by future AI agents or human contributors.
