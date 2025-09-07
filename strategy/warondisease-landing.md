@@ -119,7 +119,7 @@ This effort will likely cost between [\$1 billion and \$2.5 billion](../economic
 
 **A: Create the most profitable investment vehicle in the world.**
 
-We create a Victory Fund to finance the War on Disease by selling **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** just like the US did to finance WW2—except our bonds are designed to deliver world-class returns while funding the cure for disease.
+We create a **1% Treaty Fund** to finance the War on Disease by selling **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** just like the US did to finance WW2—except our bonds are designed to deliver world-class returns while funding the cure for disease.
 
 The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
 

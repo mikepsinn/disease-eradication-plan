@@ -15,8 +15,8 @@ This section tracks the high-level tasks for the current wiki refactoring projec
 **Phase A: Foundational Setup & Renaming**
 - [ ] **User Action**: Create the `decentralized-institutes-of-health` GitHub organization.
 - [ ] **User Action**: Create the main repository as `decentralized-institutes-of-health` within the organization.
-- [ ] **User Action**: Defensively register the other required GitHub organizations (including `1-percent-treaty`).
-- [ ] **Task**: Perform the repository-wide search-and-replace for `VICTORY Fund` -> `1% Treaty Fund`.
+- [x] **User Action**: Defensively register the other required GitHub organizations (including `1-percent-treaty`).
+- [x] **Task**: Perform the repository-wide search-and-replace for `VICTORY Fund` -> `1% Treaty Fund`, leaving the name `VICTORY Bonds` unchanged.
 
 **Phase B: Architectural Planning**
 - [ ] **Task**: Create a new root-level `index.md` to serve as the master sitemap/table of contents for the entire wiki. This will define the target information architecture.
