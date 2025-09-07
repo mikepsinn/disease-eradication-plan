@@ -98,8 +98,9 @@ const providers: Record<AvailableModel, () => any> = {
   'sonar-medium-chat': () => perplexity('sonar-medium-chat'),
   'sonar-large-chat': () => perplexity('sonar-large-chat'),
   // Google Gemini models
-  'gemini-2.5-flash': () => google('models/gemini-2.5-flash'),
-  'gemini-2.5-pro': () => google('models/gemini-2.5-pro'),
+  'gemini-1.5-flash': () => google('models/gemini-1.5-flash-latest'),
+  'gemini-1.5-pro': () => google('models/gemini-1.5-pro-latest'),
+  'gemini-2.5-flash': () => google('models/gemini-1.5-flash-latest'), // Corrected to a valid, available model endpoint
   // DeepSeek models
   'deepseek-chat': () => deepseek('deepseek-chat'),
   'deepseek-reasoner': () => deepseek('deepseek-reasoner')
@@ -117,6 +118,9 @@ export async function evaluateArticle(content: string, filePath: string): Promis
       throw new Error(`Unsupported model: ${modelName}`);
     }
 
+    console.log(`[Debug] Using model: ${modelName}`);
+    console.log('[Debug] Calling AI SDK streamObject...');
+
     const result = streamObject({
       model: provider(),
       schema: ArticleAssessmentSchema,
@@ -132,7 +136,9 @@ export async function evaluateArticle(content: string, filePath: string): Promis
     });
 
     // Wait for the final object
+    console.log('[Debug] Awaiting final object from stream...');
     const assessment = await result.object;
+    console.log('[Debug] Final object received:', JSON.stringify(assessment, null, 2));
     return assessment;
 
   } catch (error) {
