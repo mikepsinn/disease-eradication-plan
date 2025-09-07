@@ -49,7 +49,7 @@ All Markdown files **MUST** begin with a YAML frontmatter block. Our frontmatter
 ```yaml
 ---
 title: "A Clear and Descriptive Title for the Page"
-description: "A brief, one-sentence summary of the page's content. Used in search results."
+description: "A brief, one-sentence summary of the page's content. Used in search results. (Max 140 characters)"
 published: true # Set to 'false' for drafts
 date: 'YYYY-MM-DDTHH:MM:SS.sssZ' # The publication or last significant update date
 tags: [keyword1, keyword2] # A list of relevant tags/keywords
