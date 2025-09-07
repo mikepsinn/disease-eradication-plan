@@ -1,4 +1,4 @@
-import { z } from 'zod/v3';
+import { z } from 'zod';
 import { streamObject } from 'ai';
 import { createOpenAI } from '@ai-sdk/openai';
 import { createAnthropic } from '@ai-sdk/anthropic';
@@ -8,6 +8,9 @@ import { deepseek } from '@ai-sdk/deepseek';
 import { env, AvailableModel } from './env';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as crypto from 'crypto';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 // Define the schema for article assessment
 const ArticleAssessmentSchema = z.object({
@@ -38,6 +41,32 @@ const ArticleAssessmentSchema = z.object({
 
 export type ArticleAssessment = z.infer<typeof ArticleAssessmentSchema>;
 
+// --- Caching Logic ---
+const CACHE_FILE = path.join(__dirname, '..', '.article-cache.json');
+type ArticleCache = {
+  [filePath: string]: {
+    hash: string;
+    assessment: ArticleAssessment;
+  };
+};
+
+function readCache(): ArticleCache {
+  if (fs.existsSync(CACHE_FILE)) {
+    const data = fs.readFileSync(CACHE_FILE, 'utf-8');
+    return JSON.parse(data);
+  }
+  return {};
+}
+
+function writeCache(cache: ArticleCache) {
+  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2));
+}
+
+function calculateHash(content: string): string {
+  return crypto.createHash('sha256').update(content).digest('hex');
+}
+
+
 // Initialize providers
 const openai = createOpenAI({
   apiKey: env.OPENAI_API_KEY || ''
@@ -67,7 +96,8 @@ const providers: Record<AvailableModel, () => any> = {
   'sonar-medium-chat': () => perplexity('sonar-medium-chat'),
   'sonar-large-chat': () => perplexity('sonar-large-chat'),
   // Google Gemini models
-  'gemini-2.5-flash': () => google('models/gemini-1.5-flash-latest'),
+  'gemini-2.5-flash': () => google('models/gemini-2.5-flash'),
+  'gemini-2.5-pro': () => google('models/gemini-2.5-pro'),
   // DeepSeek models
   'deepseek-chat': () => deepseek('deepseek-chat'),
   'deepseek-reasoner': () => deepseek('deepseek-reasoner')
@@ -120,7 +150,7 @@ export async function evaluateArticle(content: string, filePath: string): Promis
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const OUTPUT_FILE = path.join(ROOT_DIR, 'operations', 'refactor-manifest.ai.md');
-const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', 'operations'];
+const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', 'operations', '.article-cache.json'];
 
 async function findMarkdownFiles(dir: string): Promise<string[]> {
     let mdFiles: string[] = [];
@@ -179,30 +209,71 @@ Valid actions are: **KEEP**, **MOVE**, **RENAME**, **DELETE**.
 }
 
 async function main() {
+    const argv = await yargs(hideBin(process.argv))
+        .option('limit', {
+            alias: 'l',
+            type: 'number',
+            description: 'Limit the number of new or modified files to analyze',
+            default: -1, // -1 means no limit
+        })
+        .help()
+        .argv;
+
     console.log('Starting AI-powered refactor analysis...');
-    const markdownFiles = await findMarkdownFiles(ROOT_DIR);
-    console.log(`Found ${markdownFiles.length} Markdown files to analyze.`);
     
+    const cache = readCache();
+    const allMarkdownFiles = await findMarkdownFiles(ROOT_DIR);
+    
+    let filesToProcess: { filePath: string; content: string }[] = [];
     let manifestLines = [getManifestHeader()];
+    let processedCount = 0;
+
+    // First pass: identify changed files and populate manifest from cache for unchanged files
+    for (const filePath of allMarkdownFiles) {
+        try {
+            const content = await fs.promises.readFile(filePath, 'utf-8');
+            if (!content.trim()) {
+                console.log(`Skipping empty file: ${path.relative(ROOT_DIR, filePath)}`);
+                continue;
+            }
+            const hash = calculateHash(content);
+            const cached = cache[filePath];
+
+            if (cached && cached.hash === hash) {
+                // File is unchanged, use cached assessment for manifest
+                manifestLines.push(formatAction(filePath, cached.assessment));
+            } else {
+                // File is new or modified, add to processing queue
+                filesToProcess.push({ filePath, content });
+            }
+        } catch (error) {
+            console.error(`Error reading file ${filePath}:`, error);
+        }
+    }
     
+    console.log(`Found ${allMarkdownFiles.length} total markdown files.`);
+    console.log(`${filesToProcess.length} files are new or have been modified and require analysis.`);
+
+    const limit = argv.limit > -1 ? argv.limit : filesToProcess.length;
+    if(argv.limit > -1) {
+        console.log(`Processing up to ${limit} files due to --limit flag.`);
+    }
+
+    const filesForThisRun = filesToProcess.slice(0, limit);
+
     const concurrencyLimit = 5;
     const promises = [];
 
-    for (const filePath of markdownFiles) {
+    for (const { filePath, content } of filesForThisRun) {
         const promise = (async () => {
             try {
-                const content = await fs.promises.readFile(filePath, 'utf-8');
-                if (!content.trim()) {
-                    console.log(`Skipping empty file: ${path.relative(ROOT_DIR, filePath)}`);
-                    return;
-                }
-
                 console.log(`Evaluating: ${path.relative(ROOT_DIR, filePath)}`);
                 const assessment = await evaluateArticle(content, filePath);
                 
                 if (assessment) {
-                    const actionLine = formatAction(filePath, assessment);
-                    manifestLines.push(actionLine);
+                    const hash = calculateHash(content);
+                    cache[filePath] = { hash, assessment }; // Update cache
+                    manifestLines.push(formatAction(filePath, assessment));
                     
                     const todos = assessment.todos;
                     if (todos && Array.isArray(todos) && todos.length > 0) {
@@ -223,6 +294,9 @@ async function main() {
     }
 
     await Promise.all(promises);
+    
+    writeCache(cache); // Save the updated cache
+    console.log("Cache updated.");
 
     const sortedActions = manifestLines.slice(1).sort();
     const finalManifest = manifestLines[0] + sortedActions.join('\n');
