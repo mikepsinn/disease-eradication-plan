@@ -1,5 +1,5 @@
 import { z } from 'zod/v3';
-import { streamObject } from 'ai';
+import { generateObject } from 'ai';
 import { createOpenAI } from '@ai-sdk/openai';
 import { createAnthropic } from '@ai-sdk/anthropic';
 import { createPerplexity } from '@ai-sdk/perplexity';
@@ -96,15 +96,15 @@ const providers: Record<AvailableModel, () => any> = {
   // Anthropic models
   'claude-3-opus': () => anthropic('claude-3-opus'),
   'claude-3-sonnet': () => anthropic('claude-3-sonnet'),
-  'anthropic/claude-3-opus': () => anthropic('claude-3-opus'),
-  'anthropic/claude-3-sonnet': () => anthropic('claude-3-sonnet'),
+  'anthropic/claude-3-opus': () => anthropic('anthropic/claude-3-opus'),
+  'anthropic/claude-3-sonnet': () => anthropic('anthropic/claude-3-sonnet'),
   // Perplexity models
   'sonar-small-chat': () => perplexity('sonar-small-chat'),
   'sonar-medium-chat': () => perplexity('sonar-medium-chat'),
   'sonar-large-chat': () => perplexity('sonar-large-chat'),
-  // Google Gemini models - Using stable, known endpoints for diagnostics
-  'gemini-2.5-flash': () => google('models/gemini-flash-latest'),
-  'gemini-2.5-pro': () => google('models/gemini-pro-latest'),
+  // Google Gemini models
+  'gemini-2.5-flash': () => google('gemini-2.5-flash'),
+  'gemini-2.5-pro': () => google('gemini-2.5-pro'),
   // DeepSeek models
   'deepseek-chat': () => deepseek('deepseek-chat'),
   'deepseek-reasoner': () => deepseek('deepseek-reasoner')
@@ -123,26 +123,15 @@ export async function evaluateArticle(content: string, filePath: string): Promis
     }
 
     console.log(`[Debug] Using model: ${modelName}`);
-    console.log('[Debug] Calling AI SDK streamObject...');
 
-    const result = streamObject({
+    const { object: assessment } = await generateObject({
       model: provider(),
       schema: ArticleAssessmentSchema,
       system: SYSTEM_PROMPT,
       prompt: `Analyze this content from the file at the following path: ${filePath}:\n\n---\n\n${content}`,
-      onFinish({ object, error, usage }) {
-        if (error) {
-          console.error(`Error evaluating ${filePath}:`, error);
-        } else {
-          console.log(`Evaluated ${filePath} (${usage?.totalTokens} tokens used)`);
-        }
-      }
     });
-
-    // Wait for the final object
-    console.log('[Debug] Awaiting final object from stream...');
-    const assessment = await result.object;
-    console.log('[Debug] Final object received:', JSON.stringify(assessment, null, 2));
+    
+    console.log(`[Debug] Evaluation complete for ${filePath}`);
     return assessment;
 
   } catch (error) {
@@ -225,8 +214,8 @@ async function main() {
         .option('limit', {
             alias: 'l',
             type: 'number',
-            description: 'Limit the number of new or modified files to analyze',
-            default: -1, // -1 means no limit
+            description: 'Limit the number of new or modified files to analyze. Use -1 for no limit.',
+            default: 5,
         })
         .help()
         .argv;
