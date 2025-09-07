@@ -20,11 +20,11 @@ This section tracks the high-level tasks for the current wiki refactoring projec
 
 **Phase A.5: Pre-Refactoring Cleanup**
 - [x] **Task**: Create a `scripts/cleanup_unused_images.py` script to find and optionally delete unreferenced image files. The script MUST include a "dry run" mode.
-- [ ] **Task**: Run the script in "dry run" mode to generate a list of orphaned images.
-- [ ] **Task**: Review the list of orphaned images and execute the script in "delete" mode.
+- [x] **Task**: Run the script in "dry run" mode to generate a list of orphaned images.
+- [x] **Task**: Review the list of orphaned images and execute the script in "delete" mode.
 
 **Phase B: Architectural Planning & Scripting**
-- [ ] **Task**: Create an `scripts/generate_manifest.py` script that generates a `refactor-manifest.md` file listing all files and directories.
+- [x] **Task**: Create an `scripts/generate_manifest.py` script that generates a `refactor-manifest.md` file listing all files and directories.
 - [ ] **Task**: Run the inventory script and collaboratively curate the `refactor-manifest.md` to define the action for each file (MOVE, DELETE, KEEP).
 - [ ] **Task**: Create an `execute-refactor.py` script that reads the manifest and performs the file operations. This script MUST include a "dry run" mode.
 
