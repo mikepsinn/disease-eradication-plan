@@ -26,7 +26,7 @@ However, as this makes far too much sense for governments to ever implement, the
 
 ### But how do we do it?
 
-**The Plan:** legally bribe the shit out of literally everyone to get every nation in the world to ratify a "[1% Treaty](./strategy/1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./strategy/1-percent-treaty/decentralized-institutes-of-health.md) that subsidizes patient participation in "pragmatic clinical trials" [80X more efficient](./reference/recovery-trial.md) than standard trials.
+**The Plan:** legally bribe the shit out of literally everyone to get every nation in the world to ratify a "[1% Treaty](./strategy/1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./strategy/1-percent-treaty/decentralized-institutes-of-health.md) where funding is decided by patient choice and need by subsidizing their participation in "pragmatic clinical trials" that are [80X more efficient](./reference/recovery-trial.md) than standard trials.
 
 **How it works:** Make curing disease more profitable than war.
 
@@ -300,8 +300,8 @@ Fair skepticism. Here's why the math actually works:
 
 **4. Financial Enforcement Is Stronger Than Legal Enforcement**
 - [$16.5 trillion annual cost of violence](#global-violence-costs)—we capture 0.16% of this waste
-- Nations that default face immediate economic consequences far greater than the 1% redirection
-- Global capital markets provide stronger enforcement than international courts
+- Leaders of nations that default face immediate political consequences. Our enforcement mechanism is not international law, but overwhelming, targeted campaign support for compliant leaders and against defectors.
+- This political and financial alignment provides stronger enforcement than any international court.
 
 **5. We Co-opt Rather Than Compete**
 - Military contractors' current ROI: [$1,813 per $1 spent on lobbying](#lobbying-roi-calc)
@@ -368,7 +368,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 **3. "A government's promise to pay is unenforceable. This is a fantasy."**
 
-*   **Reality:** See [Why This Actually Works](#why-this-actually-works) → Financial enforcement through global capital markets is stronger than legal enforcement. Nations that default face economic consequences far greater than the 1% redirection.
+*   **Reality:** See [Why This Actually Works](#why-this-actually-works) → Financial enforcement is not based on courts, but on creating direct political and financial consequences for individual lobbyists and leaders who defy the mandate from their citizens.
 
 **4. "This is too operationally complex to build."**
 
@@ -400,7 +400,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 **11. "How does this help patients vs. just funding more bureaucracy?"**
 
-*   **Reality:** The decentralized FDA puts money directly into patients' hands through algorithmic subsidy allocation that prioritizes lives saved per dollar, disease burden, and patient financial need. Unlike traditional NIH grants that fund institutions based on political connections, this ensures trials happen where the health impact is highest. Patients get subsidized access to new treatments while contributing to research that benefits everyone.
+*   **Reality:** The dFDA flips the funding model on its head. Instead of grants going to institutions, the money follows the patient. Funding is allocated as direct subsidies for patients to enroll in eligible clinical trials. While a transparent algorithm helps prioritize trials based on metrics like disease burden, **patients make the final decision.** Researchers and institutions only get paid when patients choose to join their study. This creates a competitive marketplace where the best, most impactful research attracts funding directly from the people it aims to help.
 
 **12. "What about the millions of jobs in the defense industry? This is a threat to their livelihoods."**
 
@@ -488,7 +488,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ---
 
-# VIII. SECURITY & GOVERNANCE (Building Trust)
+# VIII. SECURITY & GOVERNANCE
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
 
