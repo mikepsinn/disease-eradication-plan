@@ -50,7 +50,7 @@ The military industrial complex is composed of humans that are not evil, they ju
 
 ---
 
-# II. THE PROBLEM (Establish Stakes)
+# II. THE PROBLEM 
 
 ## The Grotesque Misallocation of Human Resources
 
