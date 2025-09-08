@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "scripts/file-organizer.js",
+  "type": "module",
   "dependencies": {
     "@ai-sdk/anthropic": "^2.0.12",
     "@ai-sdk/deepseek": "^1.0.15",
     "@ai-sdk/google": "^2.0.12",
-    "@ai-sdk/openai": "^2.0.24",
+    "@ai-sdk/openai": "^2.0.25",
     "@ai-sdk/perplexity": "^2.0.8",
     "@ai-sdk/provider": "^1.0.0",
     "@ai-sdk/xai": "^1.0.0",
@@ -16,6 +17,9 @@
     "@notionhq/client": "^2.2.15",
     "@types/events": "^3.0.3",
     "@types/string-similarity": "^4.0.2",
+    "@voltagent/cli": "^0.1.10",
+    "@voltagent/core": "^0.1.86",
+    "@voltagent/vercel-ai": "^1.0.0",
     "ai": "^5.0.34",
     "dotenv": "^16.4.7",
     "dotenv-cli": "^10.0.0",
@@ -31,7 +35,8 @@
     "simple-git": "^3.28.0",
     "ssh2": "^1.16.0",
     "string-similarity": "^4.0.4",
-    "yargs": "^18.0.0"
+    "yargs": "^18.0.0",
+    "zod": "^3.25.76"
   },
   "scripts": {
     "organize": "node scripts/file-organizer.js",
@@ -49,7 +54,8 @@
     "agent:build-twin": "ts-node scripts/build-digital-twin.ts",
     "agent:exec": "ts-node scripts/executive-function.ts",
     "agent:apply": "ts-node scripts/apply-initiatives.ts --execute",
-    "wiki:clean-images": "ts-node scripts/cleanup-unused-images.ts --delete"
+    "wiki:clean-images": "ts-node scripts/cleanup-unused-images.ts --delete",
+    "agent:dev": "tsx watch --env-file=.env agent/src/index.ts"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
@@ -69,6 +75,7 @@
     "markdownlint-cli": "^0.39.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
     "typescript": "^5.8.3"
   },
   "jest": {
