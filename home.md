@@ -354,7 +354,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ---
 
-# VII. OBJECTIONS & RESPONSES (Address Skepticism)
+# VII. OBJECTIONS & RESPONSES
 
 ## Why This Isn't Completely Insane
 
