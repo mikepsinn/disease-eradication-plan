@@ -26,7 +26,7 @@ Your core workflow is as follows:
 4.  When the task is complete, update the issue's frontmatter to set its state to 'closed' and add a 'closed_at' timestamp.
 5.  Report your status. If you have no open issues, state that you are standing by.`,
     llm: new VercelLLM(),
-    model: google('models/gemini-1.5-flash'),
+    model: google('models/gemini-2.5-flash'),
     // 3. Dynamically load the tools from the MCP server
     tools: await fileTools.getTools(),
   });
