@@ -39,6 +39,8 @@
     "agent:apply": "ts-node scripts/apply-initiatives.ts --execute",
     "wiki:clean-images": "ts-node scripts/cleanup-unused-images.ts --delete",
     "start": "tsx --env-file=.env agent/src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "workflow:run": "tsx --env-file=.env scripts/run-maintenance.ts",
     "agent": "npm start"
   },
   "devDependencies": {
