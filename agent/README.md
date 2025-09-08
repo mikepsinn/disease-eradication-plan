@@ -4,37 +4,37 @@ This directory contains the source code and documentation for the `ExecutiveDire
 
 ## Overview
 
-The agent's primary role is to act as an autonomous repository maintainer. Instead of performing large, one-time cleanup operations, it functions like a tireless gardener, continuously tending to the repository one file at a time. This ensures the long-term health and consistency of the knowledge base as it grows.
+The agent's primary role is to act as an autonomous repository maintainer. It uses a hybrid approach that combines a global understanding of the repository with a continuous, incremental workflow. This allows it to make intelligent, context-aware decisions while working on one file at a time, ensuring the long-term health and consistency of the knowledge base.
 
 ## Core Workflow
 
-The agent operates on an incremental, continuous loop. It seeks out files that have been modified more recently than they have been reviewed, analyzes them for issues, takes action, and then records its review before starting the cycle again.
+The agent first builds a comprehensive index of the entire repository to use as its "map." Then, it enters a continuous loop where it finds files that need attention, analyzes them using the full repository context, takes action, and records its review before starting the cycle again.
 
 ```mermaid
 graph TD
-    A[Start] --> B{Find Next File to Review};
-    B -->|File Found| C[Analyze Single File];
-    B -->|No Files Found| H[Wait / Stand By];
-    C --> D{Todos for Agent?};
-    D -->|Yes| E[Execute Agent Tasks<br/>(edit, move, delete)];
-    D -->|No| F{Todos for Human?};
-    E --> F;
-    F -->|Yes| G[Create Issue for Human];
-    F -->|No| I[Update Review Timestamp];
-    G --> I;
-    I --> B;
+    A[Start] --> B{Generate/Load<br/>Repository Index};
+    B --> C{Find Next File to Review};
+    C -->|File Found| D[Analyze Single File<br/>(using Index)];
+    C -->|No Files Found| I[Wait / Stand By];
+    D --> E{Todos for Agent?};
+    E -->|Yes| F[Execute Agent Tasks<br/>(edit, move, delete)];
+    E -->|No| G{Todos for Human?};
+    F --> G;
+    G -->|Yes| H[Create Issue for Human];
+    G -->|No| J[Update Review Timestamp];
+    H --> J;
+    J --> C;
 ```
 
 ## Tool Manifest
 
 The agent is equipped with a suite of custom tools to perform its duties:
 
--   **`findNextFileToReview()`**: Scans the repository to find the next file where the Git modification date is more recent than its `lastReviewed` frontmatter timestamp.
--   **`analyzeSingleFile(filePath)`**: Performs a deep analysis of a single file based on the standards defined in `CONTRIBUTING.md`. It checks for broken links, missing frontmatter, style violations, etc., and returns a list of recommended actions.
--   **`updateReviewTimestamp(filePath)`**: Edits the YAML frontmatter of a file to add or update the `lastReviewed` timestamp to the current date. This marks the file as "clean" until its next modification.
--   **`readFile(path)`**: Reads the content of a file.
--   **`writeFile(path, content)`**: Writes content to a file.
--   **`listFiles(path)`**: Lists all files in a directory.
+-   **`generateRepositoryIndex()`**: Scans every markdown file in the repository to build a comprehensive JSON index of all titles, descriptions, paths, and tags. This index serves as the agent's working memory and context map.
+-   **`findNextFileToReview(repositoryIndex)`**: Uses the repository index to find the next file where the Git modification date is more recent than its `lastReviewed` frontmatter timestamp.
+-   **`analyzeSingleFile(filePath, repositoryIndex)`**: Performs a deep, context-aware analysis of a single file. By leveraging the full repository index, it can accurately detect redundancies, validate all internal links, and verify the file's location within the information architecture.
+-   **`updateReviewTimestamp(filePath)`**: Edits the YAML frontmatter of a file to add or update the `lastReviewed` timestamp to the current date.
+-   **Filesystem Tools (`readFile`, `writeFile`, `listFiles`)**: Basic tools for interacting with the file system.
 
 ## How to Run
 
