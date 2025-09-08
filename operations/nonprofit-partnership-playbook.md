@@ -30,7 +30,10 @@ This is the initial meeting to inspire the partner and align them with the core 
 
 1.  **Acknowledge the Shared Problem (The "Weak Stick"):** Start by identifying the common enemy: the fragmented, scarcity-based, competitive grant system. Explain that this is *why* progress is slow. It's spread so thinly that it guarantees competition, not collaboration. It forces a fight for scraps while the unified, multi-trillion-dollar military-industrial complex lobbies as a single bloc.
 
-2.  **Introduce the Systemic Solution (Enlarging the Pie):** Frame The 1% Treaty as the mechanism to stop fighting over a small, shrinking pie and instead work together to bake a much larger one. This is not about getting a slightly bigger slice; it is about creating a treasury that can **increase the entire sector's collective annual revenue by over 60%.**
+2.  **Introduce the Systemic Solution (Enlarging the Pie):** Frame The 1% Treaty as the mechanism to stop fighting over a small, shrinking pie and instead work together to bake a much larger one. This solution has three layers:
+    *   **A Bigger Pie (The Prize):** Create a new, permanent \$27B+ annual treasury, increasing the entire sector's revenue by over 60%.
+    *   **Your Slice of the Pie (The Incentive):** Earn a permanent, proportional governance stake in that future treasury. Your share is determined by your verified contributions to the coalition's success via a transparent **["contribute-to-earn"](../community/nonprofit-partnership-incentives.md)** model. As an immediate benefit, you also retain 10% of all donations you raise for unrestricted use.
+    *   **A Better Pie (The Platform):** Build a shared, open-source operational backend for all coalition partners. This eliminates duplicated administrative work and ensures more funding goes directly to research, not overhead.
     > *"We have all been fighting for scraps from a tiny pie. The 1% Treaty is the plan to stop fighting over crumbs and work together to bake a new, much larger one—a permanent, \$27B+ annual treasury for our shared cause. This is our collective path from being grant-seekers to grant-makers."*
 
 3.  **Define the Immediate Barrier:** Clearly state the immediate, mission-critical priority that stands in the way of launching the main campaign.
