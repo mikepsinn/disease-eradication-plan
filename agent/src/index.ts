@@ -1,10 +1,11 @@
-import { VoltAgent, Agent, MCPConfiguration } from '@voltagent/core';
+import { VoltAgent, Agent, Tool } from '@voltagent/core';
 import { VercelAIProvider as VercelLLM } from '@voltagent/vercel-ai';
 import { google } from '@ai-sdk/google';
 import { repositoryAnalyzerTool } from './tools/repository-analyzer';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { readFileTool, writeFileTool, listFilesTool } from './tools/filesystem';
+import { z } from 'zod';
 
 // Use an async IIFE to handle top-level await
 async function createAgent() {
@@ -34,16 +35,12 @@ Your core workflow is as follows:
       readFileTool,
       writeFileTool,
       listFilesTool,
-      {
+      new Tool({
         name: 'updateRepositoryHealthReport',
         description: 'Updates the repository health report with the latest analysis results',
-        parameters: {
-          type: 'object',
-          properties: {
-            reportContent: { type: 'string', description: 'The content to add to the report' },
-          },
-          required: ['reportContent'],
-        },
+        parameters: z.object({
+          reportContent: z.string().describe('The content to add to the report'),
+        }),
         execute: async ({ reportContent }) => {
           try {
             const reportPath = path.join(process.cwd(), 'operations', 'repository-health-report.md');
@@ -56,18 +53,17 @@ Your core workflow is as follows:
             
             await fs.writeFile(reportPath, fileContent, 'utf-8');
             return { success: true, message: 'Repository health report updated successfully.' };
-          } catch (error) {
+          } catch (error: any) {
             console.error('Error updating repository health report:', error);
             return { success: false, message: `Error updating report: ${error.message}` };
           }
         },
-      },
+      }),
     ],
   });
 
   // 4. Define the main VoltAgent application
   return new VoltAgent({
-    name: 'DIH-Agent',
     agents: {
       executiveDirector,
     },

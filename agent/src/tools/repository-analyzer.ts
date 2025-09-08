@@ -65,7 +65,7 @@ async function parseContributingStandards(): Promise<ContributingStandards> {
   };
 }
 
-async function analyzeRepository(): Promise<string> {
+export async function analyzeRepository(): Promise<string> {
   const git = simpleGit();
   const projectRoot = process.cwd();
   const files = await glob('**/*.md', {

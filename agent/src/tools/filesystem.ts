@@ -12,7 +12,7 @@ export const readFileTool = new Tool({
     try {
       const content = await fs.readFile(path, 'utf-8');
       return content;
-    } catch (error) {
+    } catch (error: any) {
       return `Error reading file: ${error.message}`;
     }
   },
@@ -29,7 +29,7 @@ export const writeFileTool = new Tool({
     try {
       await fs.writeFile(path, content, 'utf-8');
       return `File written successfully to ${path}.`;
-    } catch (error) {
+    } catch (error: any) {
       return `Error writing file: ${error.message}`;
     }
   },
@@ -45,7 +45,7 @@ export const listFilesTool = new Tool({
     try {
       const files = await fs.readdir(path);
       return files.join('\n');
-    } catch (error) {
+    } catch (error: any) {
       return `Error listing files: ${error.message}`;
     }
   },
