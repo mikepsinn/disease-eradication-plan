@@ -58,29 +58,26 @@ async function parseContributingStandards(): Promise<ContributingStandards> {
 // --- Tool Implementations ---
 
 async function findNextFileToReview({ repositoryIndex }: { repositoryIndex: RepositoryIndex }): Promise<string> {
-  const git = simpleGit();
+  console.log('[Finder] Searching for the next file to review...');
   const files = Object.keys(repositoryIndex);
 
   for (const file of files) {
-    try {
-      const content = await fs.readFile(file, 'utf-8');
-      const { data } = matter(content);
-      const log = await git.log({ file, maxCount: 1 });
-      
-      const lastModified = log.latest?.date ? new Date(log.latest.date) : new Date(0);
-      const lastReviewed = data.lastReviewed ? new Date(data.lastReviewed) : new Date(0);
+    const fileData = repositoryIndex[file];
+    const lastModified = new Date(fileData.lastModified);
+    const lastReviewed = new Date(fileData.lastReviewed);
 
-      if (lastModified > lastReviewed) {
-        return `File to review: ${file}`;
-      }
-    } catch (error) {
-      continue;
+    if (lastModified > lastReviewed) {
+      console.log(`[Finder] Found file to review: ${file}`);
+      return file;
     }
   }
+
+  console.log('[Finder] No files need reviewing at this time.');
   return 'No files need reviewing.';
 }
 
 async function analyzeSingleFile({ filePath, repositoryIndex }: { filePath: string, repositoryIndex: RepositoryIndex }): Promise<FileAnalysisResult> {
+  console.log(`[Analyzer] Analyzing file: ${filePath}`);
   const recommendations: string[] = [];
   
   // Example of context-aware analysis:
@@ -90,11 +87,13 @@ async function analyzeSingleFile({ filePath, repositoryIndex }: { filePath: stri
     for (const otherFile in repositoryIndex) {
       if (otherFile !== filePath && repositoryIndex[otherFile].title === currentTitle) {
         recommendations.push(`REVIEW: Potential duplicate of '${otherFile}' (same title).`);
+        break; // Only flag once
       }
     }
   }
   
   // ... other analysis logic (link checking, etc.) would go here ...
+  console.log(`[Analyzer] Found ${recommendations.length} potential issues for ${filePath}.`);
 
   return { filePath, recommendations };
 }
@@ -121,7 +120,7 @@ export const findNextFileTool = new Tool({
   name: 'findNextFileToReview',
   description: 'Finds the next markdown file that needs to be reviewed by comparing its git modification date and `lastReviewed` frontmatter.',
   parameters: z.object({
-    repositoryIndex: z.any().describe('The repository index object.'),
+    repositoryIndex: z.any().describe('The JSON repository index, including lastModified and lastReviewed dates.'),
   }),
   execute: findNextFileToReview,
 });
@@ -131,7 +130,7 @@ export const analyzeFileTool = new Tool({
   description: 'Analyzes a single markdown file for issues using the full repository index for context.',
   parameters: z.object({
     filePath: z.string().describe('The path to the file to analyze.'),
-    repositoryIndex: z.any().describe('The repository index object.'),
+    repositoryIndex: z.any().describe('The JSON repository index for providing context.'),
   }),
   execute: analyzeSingleFile,
 });
