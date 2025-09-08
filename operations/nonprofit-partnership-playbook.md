@@ -3,7 +3,7 @@ title: "Playbook: Non-Profit Partnership"
 description: "The strategic playbook for building a coalition of non-profit partners to help ratify The 1% Treaty."
 published: true
 date: '2025-08-22T00:00:00.000Z'
-tags: operations, playbook, nonprofits, coalition, strategy
+tags: [operations, playbook, nonprofits, coalition, strategy]
 editor: markdown
 dateCreated: '2025-08-22T00:00:00.000Z'
 ---
@@ -28,10 +28,10 @@ This is the initial meeting to inspire the partner and align them with the core 
 
 **Agenda:**
 
-1.  **Acknowledge the Shared Problem:** Start by identifying the common enemy: the scarcity-based, competitive grant system that forces non-profits to spend more time fundraising than executing their mission.
+1.  **Acknowledge the Shared Problem (The "Weak Stick"):** Start by identifying the common enemy: the fragmented, scarcity-based, competitive grant system. Explain that this is *why* progress is slow. Globally, governments spend just **$67.5 billion** on medical research for all diseases combined. Disease-specific non-profits are forced to compete against each other for a tiny sliver of this pie, while the unified, multi-trillion-dollar military-industrial complex lobbies as a single bloc. One stick is easy to break.
 
-2.  **Introduce the Systemic Solution:** Frame The 1% Treaty as the mechanism to break that system and create a permanent, abundance-based treasury that will fund all of our collective missions in perpetuity.
-    > *"We have all been fighting for scraps in a broken system. The 1% Treaty is the plan to break that system and create a permanent, \$27B+ annual treasury for our shared cause. This is our collective path from being grant-seekers to grant-makers."*
+2.  **Introduce the Systemic Solution (The "Strong Bundle of Sticks"):** Frame The 1% Treaty as the mechanism to unite all health advocacy groups into a single, powerful coalition. This is not about getting a slightly bigger grant; it is about fundamentally changing the balance of power by **increasing the entire global medical research budget by nearly 40% overnight.**
+    > *"We have all been fighting for scraps in a broken system. The 1% Treaty is the plan to unite us all, break that system, and create a permanent, \$27B+ annual treasury for our shared cause—effectively increasing the global research budget by 40%. This is our collective path from being grant-seekers to grant-makers."*
 
 3.  **Define the Immediate Barrier:** Clearly state the immediate, mission-critical priority that stands in the way of launching the main campaign.
     > *"The single biggest obstacle to getting the seed funding we need to launch this campaign is the professional quality of our core strategic documents. We need to look like a billion-dollar operation before we can ask for billion-dollar checks. This is our immediate, collective priority."*

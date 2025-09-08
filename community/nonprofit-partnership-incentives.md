@@ -57,6 +57,20 @@ Our model is designed to empower our coalition partners to become the governors 
 *   **The Prize:** Governance of these powerful, well-funded sub-DAOs will be granted to the coalition of non-profit partners who made the 1% Treaty a reality.
 *   **The Result:** By joining our coalition, you are not just helping to unlock a new pool of funding; you are earning a permanent and powerful governance stake in it. The choice is clear: continue competing for small, finite grants, or cooperate to collectively govern a multi-billion dollar annual treasury dedicated to your mission.
 
+## Earning a Stake: Tracking Contributions for Treasury Allocation
+
+To ensure fairness and reward meaningful contributions, we will implement a transparent system to track the value each partner brings to the coalition. A partner's governance stake and proportional share of their sub-Institute's treasury will be influenced by their verified contributions during the treaty ratification campaign.
+
+Key performance indicators will include:
+
+1.  **Direct Fundraising:** The total amount of funding a partner raises for the campaign through their unique referral links.
+2.  **Referendum Mobilization:** The number of verified referendum votes a partner drives through their network.
+3.  **In-Kind Contributions:** The value of non-monetary contributions, such as staff time, access to resources, or strategic support, will be formally assessed and credited.
+
+This "contribute-to-earn" model ensures that the most dedicated and effective partners are rewarded with the greatest influence in the new, abundance-based system they helped create.
+
+---
+
 This is the endgame. We are offering our partners the opportunity to stop being grant applicants and become the grant-makers.
 
 ## Conclusion: From Partners to Stakeholders
