@@ -1,9 +1,9 @@
 {
   "mcpServers": {
-    "voltagent": {
-      "name": "voltagent",
+    "dih-filesystem": {
+      "name": "DIH Filesystem",
       "command": "npx",
-      "args": ["-y", "@voltagent/docs-mcp"]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
     }
   }
 }
