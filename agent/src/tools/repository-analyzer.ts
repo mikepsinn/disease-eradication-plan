@@ -31,6 +31,7 @@ interface ContributingStandards {
 }
 
 async function parseContributingStandards(): Promise<ContributingStandards> {
+  console.log('[Analyzer] Parsing standards from CONTRIBUTING.md...');
   const projectRoot = process.cwd();
   const contributingPath = path.join(projectRoot, 'CONTRIBUTING.md');
   const content = await fs.readFile(contributingPath, 'utf-8');
@@ -58,6 +59,7 @@ async function parseContributingStandards(): Promise<ContributingStandards> {
     'backtickUsage': /`[^`]+`/,
   };
   
+  console.log('[Analyzer] Successfully parsed standards.');
   return {
     frontmatterRequirements,
     contentStandards,
@@ -66,12 +68,16 @@ async function parseContributingStandards(): Promise<ContributingStandards> {
 }
 
 export async function analyzeRepository(): Promise<string> {
+  console.log('[Analyzer] Starting repository analysis...');
   const git = simpleGit();
   const projectRoot = process.cwd();
+  
+  console.log('[Analyzer] Finding all markdown files...');
   const files = await glob('**/*.md', {
-    ignore: ['node_modules/**', '**/README.md'],
+    ignore: ['node_modules/**', '**/README.md', 'CONTRIBUTING.md'],
     cwd: projectRoot,
   });
+  console.log(`[Analyzer] Found ${files.length} markdown files to analyze.`);
   
   // Parse contributing standards
   const standards = await parseContributingStandards();
@@ -83,10 +89,12 @@ export async function analyzeRepository(): Promise<string> {
     const milestonesContent = await fs.readFile(milestonesPath, 'utf-8');
     milestones = yaml.load(milestonesContent) as any[] || [];
   } catch (error) {
-    console.warn('Could not load milestones:', error);
+    console.warn('[Analyzer] Could not load milestones:', error);
   }
 
+  console.log('[Analyzer] Analyzing files...');
   const analysisPromises = files.map(async (file): Promise<FileAnalysis | null> => {
+    console.log(` -> Analyzing: ${file}`);
     try {
       const filePath = path.join(projectRoot, file);
       const content = await fs.readFile(filePath, 'utf-8');
@@ -159,6 +167,7 @@ export async function analyzeRepository(): Promise<string> {
         recommendedTodos.push(`REVIEW: File not updated in over 6 months`);
       }
       
+      console.log(`    - Found ${recommendedTodos.length} potential issues for ${file}`);
       return {
         filePath: file,
         title: data.title || 'No Title',
@@ -171,13 +180,14 @@ export async function analyzeRepository(): Promise<string> {
         date: data.date,
         dateCreated: data.dateCreated
       };
-    } catch (error) {
-      console.error(`Error analyzing file ${file}:`, error);
+    } catch (error: any) {
+      console.error(`[Analyzer] Error analyzing file ${file}:`, error.message);
       return null;
     }
   });
 
   const results = (await Promise.all(analysisPromises)).filter(Boolean) as FileAnalysis[];
+  console.log('[Analyzer] All files analyzed.');
 
   // Sort results by number of recommendations (most issues first)
   results.sort((a, b) => b.recommendedTodos.length - a.recommendedTodos.length);
@@ -205,10 +215,11 @@ export async function analyzeRepository(): Promise<string> {
 - **Total Files Analyzed:** ${totalFiles}
 - **Files with Issues:** ${filesWithIssues} (${Math.round(filesWithIssues/totalFiles*100)}%)
 - **Total Issues Found:** ${totalIssues}
-- **Analysis Date:** ${new Date().toISOString().split('T')[0]}
+- **Analysis Date:** <!-- DATE_PLACEHOLDER -->
 
 `;
   
+  console.log('[Analyzer] Repository analysis report generated.');
   return summary + table;
 }
 
