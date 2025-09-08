@@ -1,0 +1,23 @@
+- number: 1
+  title: "Phase 0: Pre-Seed & Foundation"
+  description: "Establish the core legal and financial structure and hire the 'activation team' required to execute the main capital raise and global campaign."
+  state: "open"
+  due_on: '2025-11-22T00:00:00.000Z' # Estimated based on Months 0-3 from roadmap
+
+- number: 2
+  title: "Phase 1: Foundation & Legal Framework"
+  description: "With a core team and seed funding in place, build the full legal, financial, and technical infrastructure required for the global campaign."
+  state: "open"
+  due_on: '2026-08-22T00:00:00.000Z' # Estimated based on Months 1-12 from roadmap
+
+- number: 3
+  title: "Phase 2: Capital & Political Mobilization"
+  description: "Raise the necessary capital and generate an undeniable global political mandate."
+  state: "open"
+  due_on: '2028-08-22T00:00:00.000Z' # Estimated based on Months 12-36 from roadmap
+
+- number: 4
+  title: "Phase 3: Execution & Impact"
+  description: "Receive the treaty funds, deliver on promises to investors, and execute the mission."
+  state: "open"
+  due_on: '2030-08-22T00:00:00.000Z' # Estimated based on Years 3-5+ from roadmap

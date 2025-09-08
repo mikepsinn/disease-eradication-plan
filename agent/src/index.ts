@@ -2,52 +2,51 @@ import { Agent } from '@voltagent/core';
 import { listFiles } from './tools/list-files';
 import { readFile } from './tools/read-file';
 import { writeFile } from './tools/write-file';
-
-// Define the persona and capabilities of our agent
-const executiveDirectorPrompt = `You are the Executive Director of the Decentralized Institutes of Health (DIH).
-Your role is to manage the DIH wiki, oversee project management, and coordinate human efforts.
-You are diligent, autonomous, and focused on maintaining the integrity and progress of the DIH initiative.
-You operate by interacting with the file system and a defined set of tools.`;
+import { webSearch } from './tools/web-search';
+import { parseYaml } from './tools/parse-yaml';
+import { writeYaml } from './tools/write-yaml';
+import * as yaml from 'js-yaml';
+import * as matter from 'gray-matter';
 
 // Define the main agent
 export const agent = new Agent({
   id: 'dih-executive-director',
   name: 'DIH Executive Director',
-  // The system prompt sets the agent's persona and high-level instructions.
-  system: executiveDirectorPrompt,
-  // The prompt function is the entry point for the agent's work cycle.
-  // It will receive context and is expected to return a response.
-  prompt: async function* (context) {
-    // Find the last message from the user in the conversation history.
-    const userMessage = context.messages.findLast((m) => m.role === 'user');
-
-    // If there's no user message, we can't proceed.
+  // The system prompt is defined by the initial messages in the context.
+  // We will add the persona as the first system message.
+  prompt: async function* (context: any) {
+    // Standard agent startup logic
+    const userMessage = context.messages.findLast((m: any) => m.role === 'user');
     if (!userMessage) {
       yield 'I am ready to receive tasks, but I did not receive a user message.';
       return;
     }
 
-    // 1. Read the planning document.
-    const readmeContent = await readFile({
-      filePath: 'agent/README.md',
-    });
+    // 1. Find the next available task
+    const issueFiles = await listFiles({ directory: 'operations/issues' });
+    let nextTask: { number: number; title: string; [key: string]: any } | null = null;
 
-    // 2. Identify the next task and create the updated content.
-    // This is a simple string replacement for demonstration purposes.
-    // Future iterations will use more robust parsing logic.
-    const updatedReadmeContent = readmeContent.replace(
-      '-   [ ] Implement `readFile` and `editFile` tools.',
-      '-   [x] Implement `readFile` and `editFile` tools.'
-    );
+    for (const fileName of issueFiles) {
+      const fileContent = await readFile({
+        filePath: `operations/issues/${fileName}`,
+      });
+      const { data: frontmatter } = matter(fileContent);
 
-    // 3. Autonomously update the planning document.
-    await writeFile({
-      filePath: 'agent/README.md',
-      content: updatedReadmeContent,
-    });
+      if (
+        frontmatter.state === 'open' &&
+        frontmatter.assignees?.includes('agent')
+      ) {
+        nextTask = { number: frontmatter.number, title: frontmatter.title, ...frontmatter };
+        break; // Found our task
+      }
+    }
 
-    // 4. Respond with a confirmation of the autonomous action.
-    yield `I have received the task: "${userMessage.content}". I have read my planning document, identified that my next task was to implement file system tools, and have now autonomously updated the roadmap to mark this task as complete.`;
+    // 2. Report on the next task
+    if (nextTask) {
+      yield `I have received your message. My next assigned task is #${nextTask.number}: "${nextTask.title}". I will begin working on it.`;
+    } else {
+      yield `I have received your message. I have no open tasks assigned to me.`;
+    }
   },
   server: {
     port: 8181,
@@ -55,5 +54,5 @@ export const agent = new Agent({
       mcp: true,
     },
   },
-  tools: [listFiles, readFile, writeFile],
+  tools: [listFiles, readFile, writeFile, webSearch, parseYaml, writeYaml],
 });

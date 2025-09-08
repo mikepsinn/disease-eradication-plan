@@ -21,12 +21,20 @@ This wiki documents the "War on Disease," a mission to make curing people more p
 - **Speak Plainly:** Avoid weak corporate euphemisms and "AI slop." Write like a human.
 - **Quantify Everything:** Moral arguments are weak without data. All claims must be backed by numbers and citations.
 
+## How We Track Work
+
+Our project management is fully contained within this repository to ensure transparency and version control. We use a three-tiered system to track our progress from high-level vision to granular tasks:
+
+1.  **[Canonical Roadmap](../strategy/roadmap.md):** This is our high-level, multi-year strategic plan. It defines the major phases of the project.
+2.  **[Milestones](../operations/milestones.yml):** Each phase of the roadmap is broken down into a machine-readable milestone in this file. Milestones represent major blocks of work.
+3.  **[Issues](../operations/issues.yml):** This file contains all the granular tasks, feature requests, and bug reports for the project. Each issue is assigned to a milestone, linking our day-to-day work directly to our strategic goals.
+
 ## Contributor Workflow
 
-1.  **Find an Issue or Propose a Change:** Start by looking at our existing [issues](https://github.com/decentralized-institutes-of-health/decentralized-institutes-of-health/issues) or proposing a new change by creating one. For major reorganizations, open a short RFC in the PR description.
+1.  **Find or Propose a Task:** Start by reviewing the project's official issues in the [`operations/issues/`](./operations/issues/) directory. To propose a new task, create a new markdown file in that directory with the next available issue number.
 2.  **Fork & Branch:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `feat/add-dih-treasury-model` or `fix/correct-roadmap-dates`).
 3.  **Make Your Changes:** As you work, please adhere to all standards in this document.
-4.  **Submit a Pull Request:** Use the [pull request template](../.github/pull_request_template.md) to submit your changes. Ensure your PR description is clear and links to the relevant issue.
+4.  **Submit a Pull Request:** Use the [pull request template](../.github/pull_request_template.md) to submit your changes. Ensure your PR description is clear and links to the relevant issue number.
 
 ## Content and Style Standards
 
