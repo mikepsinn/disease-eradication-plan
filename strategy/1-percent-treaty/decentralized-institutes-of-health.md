@@ -32,6 +32,18 @@ Subsidies are not allocated uniformly; they are **proportional to the expected v
 
 This model ensures that funding flows to the research that society needs most.
 
+## Shared Operational Infrastructure: Eliminating Wasteful Duplication
+
+Beyond funding, the DIH will provide a core benefit to the entire non-profit coalition by creating a shared, open-source operational backend. Currently, every non-profit wastes a significant portion of its budget on redundant administrative systems: separate accounting, fundraising, project management, and IT infrastructure.
+
+The DIH will build and maintain a suite of decentralized project management and operational tools. Coalition partners can adopt this shared infrastructure, enabling:
+
+1.  **Cost-Sharing:** Drastically reduce overhead by sharing the costs of essential software and services.
+2.  **Increased Transparency:** A unified system will make it easier to see who is funding what, preventing redundant research efforts.
+3.  **Collaborative Ecosystem:** Foster genuine collaboration by providing a common platform for partners to manage joint initiatives.
+
+By eliminating duplicated effort, we ensure that a much higher percentage of funding goes directly to research and patient care, not to administrative waste.
+
 ## Funding the dFDA Ecosystem
 
 Beyond patient subsidies, the DIH Treasury is responsible for the growth and maintenance of the entire dFDA ecosystem. It achieves this through a DAO-governed funding model for:

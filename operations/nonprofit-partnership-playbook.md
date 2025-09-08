@@ -28,10 +28,10 @@ This is the initial meeting to inspire the partner and align them with the core 
 
 **Agenda:**
 
-1.  **Acknowledge the Shared Problem (The "Weak Stick"):** Start by identifying the common enemy: the fragmented, scarcity-based, competitive grant system. Explain that this is *why* progress is slow. Globally, governments spend just **$67.5 billion** on medical research for all diseases combined. Disease-specific non-profits are forced to compete against each other for a tiny sliver of this pie, while the unified, multi-trillion-dollar military-industrial complex lobbies as a single bloc. One stick is easy to break.
+1.  **Acknowledge the Shared Problem (The "Weak Stick"):** Start by identifying the common enemy: the fragmented, scarcity-based, competitive grant system. Explain that this is *why* progress is slow. It's spread so thinly that it guarantees competition, not collaboration. It forces a fight for scraps while the unified, multi-trillion-dollar military-industrial complex lobbies as a single bloc.
 
-2.  **Introduce the Systemic Solution (The "Strong Bundle of Sticks"):** Frame The 1% Treaty as the mechanism to unite all health advocacy groups into a single, powerful coalition. This is not about getting a slightly bigger grant; it is about fundamentally changing the balance of power by **increasing the entire global medical research budget by nearly 40% overnight.**
-    > *"We have all been fighting for scraps in a broken system. The 1% Treaty is the plan to unite us all, break that system, and create a permanent, \$27B+ annual treasury for our shared cause—effectively increasing the global research budget by 40%. This is our collective path from being grant-seekers to grant-makers."*
+2.  **Introduce the Systemic Solution (Enlarging the Pie):** Frame The 1% Treaty as the mechanism to stop fighting over a small, shrinking pie and instead work together to bake a much larger one. This is not about getting a slightly bigger slice; it is about creating a treasury that can **increase the entire sector's collective annual revenue by over 60%.**
+    > *"We have all been fighting for scraps from a tiny pie. The 1% Treaty is the plan to stop fighting over crumbs and work together to bake a new, much larger one—a permanent, \$27B+ annual treasury for our shared cause. This is our collective path from being grant-seekers to grant-makers."*
 
 3.  **Define the Immediate Barrier:** Clearly state the immediate, mission-critical priority that stands in the way of launching the main campaign.
     > *"The single biggest obstacle to getting the seed funding we need to launch this campaign is the professional quality of our core strategic documents. We need to look like a billion-dollar operation before we can ask for billion-dollar checks. This is our immediate, collective priority."*
@@ -53,3 +53,17 @@ Treat the partnership as a formal project with clear ownership and accountabilit
 -   **Assign Leads:** Based on the partner's skills and capacity, collaboratively assign a "Project Lead" for the joint effort.
 -   **Establish a Cadence:** Set up a regular, brief check-in (e.g., weekly 30 minutes) to track progress against the plan.
 -   **Maintain a Professional Frame:** Consistently reinforce that this is a professional collaboration between strategic partners, not an informal volunteer effort. This respects everyone's time and ensures a high-quality outcome.
+
+---
+
+## Source Quotes
+
+<a id="us-nonprofit-revenue"></a>
+* **U.S. Disease-Focused Non-Profit Revenue (\$44B+ Annually)**
+  > "There are 22,599 disease-focused nonprofit organizations in the United States. Combined, these disease-focused nonprofits generate \$44.3 billion in revenue each year."
+  > — Cause IQ, [Directory of Disease-Focused Nonprofits](https://www.causeiq.com/directory/disease-focused-nonprofits-list/)
+
+<a id="global-gov-med-research-spending"></a>
+* **Global government medical research spending (\$67.5B, 2023–2024)**
+  > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
+  > — DFDA Wiki, 2025, [Global Government Medical Research Spending](../reference/global-government-medical-research-spending.md)
