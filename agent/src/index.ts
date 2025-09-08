@@ -5,8 +5,10 @@ import { writeFile } from './tools/write-file';
 import { webSearch } from './tools/web-search';
 import { parseYaml } from './tools/parse-yaml';
 import { writeYaml } from './tools/write-yaml';
+import { generateProjectStatusReport } from './tools/generate-project-status-report';
 import * as yaml from 'js-yaml';
 import * as matter from 'gray-matter';
+import slugify from 'slugify';
 
 // Define the main agent
 export const agent = new Agent({
@@ -26,7 +28,7 @@ export const agent = new Agent({
     const issueFiles = await listFiles({ directory: 'operations/issues' });
     let nextTask: { number: number; title: string; [key: string]: any } | null = null;
 
-    for (const fileName of issueFiles) {
+    for (const fileName of issueFiles.sort()) {
       const fileContent = await readFile({
         filePath: `operations/issues/${fileName}`,
       });
@@ -36,7 +38,9 @@ export const agent = new Agent({
         frontmatter.state === 'open' &&
         frontmatter.assignees?.includes('agent')
       ) {
-        nextTask = { number: frontmatter.number, title: frontmatter.title, ...frontmatter };
+        // Extract number from filename, e.g., "45-..." -> 45
+        const issueNumber = parseInt(fileName.split('-')[0], 10);
+        nextTask = { number: issueNumber, title: frontmatter.title, ...frontmatter };
         break; // Found our task
       }
     }
@@ -54,5 +58,13 @@ export const agent = new Agent({
       mcp: true,
     },
   },
-  tools: [listFiles, readFile, writeFile, webSearch, parseYaml, writeYaml],
+  tools: [
+    listFiles,
+    readFile,
+    writeFile,
+    webSearch,
+    parseYaml,
+    writeYaml,
+    generateProjectStatusReport,
+  ],
 });

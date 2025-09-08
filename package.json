@@ -33,6 +33,7 @@
     "openai": "^4.0.0",
     "pg": "^8.13.1",
     "simple-git": "^3.28.0",
+    "slugify": "^1.6.6",
     "ssh2": "^1.16.0",
     "string-similarity": "^4.0.4",
     "yargs": "^18.0.0",

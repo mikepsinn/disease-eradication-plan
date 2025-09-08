@@ -21,24 +21,43 @@ This wiki documents the "War on Disease," a mission to make curing people more p
 - **Speak Plainly:** Avoid weak corporate euphemisms and "AI slop." Write like a human.
 - **Quantify Everything:** Moral arguments are weak without data. All claims must be backed by numbers and citations.
 
+## Who This Project is For
+
+This is a knowledge base and project management hub, not a traditional software project. We welcome contributions from a wide range of experts, including:
+
+-   Researchers & Academics
+-   Policy Experts
+-   Writers & Communicators
+-   Economists & Financial Modelers
+-   Project Managers
+
+While the project is managed in a Git repository, no coding knowledge is required to contribute.
+
 ## How We Track Work
 
 Our project management is fully contained within this repository to ensure transparency and version control. We use a three-tiered system to track our progress from high-level vision to granular tasks:
 
 1.  **[Canonical Roadmap](../strategy/roadmap.md):** This is our high-level, multi-year strategic plan. It defines the major phases of the project.
 2.  **[Milestones](../operations/milestones.yml):** Each phase of the roadmap is broken down into a machine-readable milestone in this file. Milestones represent major blocks of work.
-3.  **[Issues](../operations/issues.yml):** This file contains all the granular tasks, feature requests, and bug reports for the project. Each issue is assigned to a milestone, linking our day-to-day work directly to our strategic goals.
+3.  **[Issues](../operations/issues/):** This directory contains all the granular tasks, feature requests, and bug reports for the project, with each issue in its own file. Each issue is assigned to a milestone, linking our day-to-day work directly to our strategic goals.
 
 ## Contributor Workflow
 
-1.  **Find or Propose a Task:** Start by reviewing the project's official issues in the [`operations/issues/`](./operations/issues/) directory. To propose a new task, create a new markdown file in that directory with the next available issue number.
-2.  **Fork & Branch:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `feat/add-dih-treasury-model` or `fix/correct-roadmap-dates`).
+1.  **Find or Propose a Task:** Start by reviewing the project's official issues in the [`operations/issues/`](./operations/issues/) directory. To propose a new task, create a new markdown file in that directory, following the naming convention described below.
+2.  **Suggest an Edit (Propose a Change):** This project uses a standard Git workflow to manage changes.
+    *   **For Git Users:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `update-treasury-model` or `correct-roadmap-dates`).
+    *   **For Non-Technical Users:** You can edit files directly through the GitHub web interface, which will handle the process of creating a fork and proposing a change for you.
 3.  **Make Your Changes:** As you work, please adhere to all standards in this document.
-4.  **Submit a Pull Request:** Use the [pull request template](../.github/pull_request_template.md) to submit your changes. Ensure your PR description is clear and links to the relevant issue number.
+4.  **Submit Your Change for Review:** Propose your changes by opening a "Pull Request." This is the mechanism for submitting your edits for review and discussion before they are merged into the main project. Ensure your description is clear and links to the relevant issue number.
 
 ## Content and Style Standards
 
-### 1. Information Architecture (What Goes Where)
+### 1. Issue Naming and Linking
+
+- **Filename Convention:** Issue files **MUST** be named using the pattern: `{number}-{slugified-title}.md`. For example, an issue with number `42` and title "Fix the login button" would be named `42-fix-the-login-button.md`.
+- **Mandatory Hyperlinks:** All references to other files, directories, or issues within an issue's body **MUST** be hyperlinked using relative markdown links.
+
+### 2. Information Architecture (What Goes Where)
 
 - **Strategy:** Treaty/DIH strategy, playbooks, roadmaps -> `strategy/`
 - **Features:** dFDA platform specs, technical roadmaps, treasury architecture -> `features/`
