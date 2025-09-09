@@ -63,7 +63,26 @@ This repository is structured as a book. The root directory contains the "Chapte
 
 3. **Place new content in the appropriate appendix.** Only modify root-level chapters to summarize and link to new detailed content in the appendices.
 
-### 2. Frontmatter Requirements
+### 2. Actionable TODOs
+
+To maintain a clean and actionable list of improvements, we use a specific format for `TODO` comments. These comments flag content that needs citations, stylistic rewrites, clarification, or visual aids.
+
+**Placement Rules:**
+
+- Place `TODO`s in the most relevant location **inside the body of the text**.
+- If a `TODO` applies to the entire document (e.g., "Merge this file with another"), place it at the **very bottom of the file**.
+- **NEVER** place `TODO` comments at the top of a file or within the frontmatter block.
+
+**Formatting:**
+
+Use machine-readable comments so they can be easily aggregated into a project-wide "content debt" list.
+
+- `<!-- TODO: Add citation for this claim. -->`
+- `<!-- TODO: Rewrite this section to match project writing style. -->`
+- `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
+- `<!-- TODO: Expand this section to include X. -->`
+
+### 3. Frontmatter Requirements
 
 All Markdown files **MUST** begin with a YAML frontmatter block. Our frontmatter is designed for compatibility with [Wiki.js](https://js.wiki/). Please adhere to the following structure:
 
@@ -79,7 +98,7 @@ dateCreated: 'YYYY-MM-DDTHH:MM:SS.sssZ' # The date the file was first created
 ---
 ```
 
-### 3. Sourcing and Citation Standard (CRITICAL)
+### 4. Sourcing and Citation Standard (CRITICAL)
 
 **MANDATORY**: ALL factual claims, statistics, and figures **MUST** be cited with hyperlinks to authoritative sources using the anchor-based method described below.
 
@@ -98,13 +117,13 @@ dateCreated: 'YYYY-MM-DDTHH:MM:SS.sssZ' # The date the file was first created
 
 This pattern is mandatory to prevent link rot, provide immediate context, and keep readers on-page.
 
-### 4. Technical Standards
+### 5. Technical Standards
 
 - **Tooling and Server-Side Code:** Any new tooling or server-side components for the project (e.g., MCP servers, automation scripts) **MUST** be written in TypeScript.
 - **Dependencies:** Use `npm` for package management. All projects must include a `package.json` file with clearly defined dependencies.
 - **Execution:** To avoid committing compiled code, run TypeScript files directly using a runtime like `ts-node` or `tsx`. Compiled JavaScript files (`.js`) are disallowed in the repository and should be added to the project's `.gitignore` file.
 
-### 5. Naming, Linking, and Formatting
+### 6. Naming, Linking, and Formatting
 
 - **Filenames:** Use kebab-case and be descriptive (e.g., `dih-treasury-cash-flow-model.md`).
 - **Internal Links:** Use standard, relative Markdown links (`./`, `../`). Do not use backticks or bare paths for links.

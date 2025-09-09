@@ -273,20 +273,39 @@ These machine-readable TODOs create an actionable list of content debt to be add
 - ✅ `historical-evidence-supporting-decentralized-efficacy-trials.md` → **MOVED & RENAMED** to `reference/historical-evidence-decentralized-trials.md` (Quality: Good, Fixed 5 broken links)
 - 🗑️ `historical-evidence-supporting-real-wold-efficacy-trials.md` → **DELETED** (Redundant duplicate)
 - 🗑️ `history-of-medical-regulation-and-clinical-research.md` → **DELETED** (Redundant duplicate)
+- ✅ `impact-of-innovative-medicines-on-life-expectancy.md` → **MOVED** to `reference/impact-of-innovative-medicines-on-life-expectancy.md` (Quality: High, No TODOs needed)
+- ✅ `nih-recover-initiative.md` → **MOVED & RENAMED** to `reference/nih-funding-efficiency-analysis.md` (Quality: High, Added description)
+- ✅ `organizational-precedents.md` → **MOVED** to `reference/organizational-precedents.md` (Quality: High, Fixed 1 broken link)
+- ✅ `otc-drugs.md` → **MOVED & RENAMED** to `reference/lives-saved-by-drug-accessibility.md` (Quality: High, No TODOs needed)
+- ✅ `pragmatic-trials.md` → **MOVED & RENAMED** to `reference/pragmatic-vs-explanatory-trials.md` (Quality: High, No TODOs needed)
+- ✅ `recovery-trial.md` → **MOVED & RENAMED** to `reference/recovery-trial-case-study.md` (Quality: High, Added TODO to merge with redundant content)
+- ✅ `references.md` → **DELETED** (Obsolete link dump, superseded by organized `reference/` appendix)
+- ✅ `Research-and-Development-in-the-Pharmaceutical-Industry.md` → **MOVED & RENAMED** to `reference/pharmaceutical-industry-randd-analysis.md` (Quality: High, No TODOs needed)
+- ✅ `value-of-new-treatment.md` → **MOVED & RENAMED** to `economics/economic-value-of-accelerated-treatments.md` (Quality: High, No TODOs needed)
 
 **Files to Process:**
-- `impact-of-innovative-medicines-on-life-expectancy.md`
-- `nih-recover-initiative.md`
-- `organizational-precedents.md`
-- `otc-drugs.md`
-- `pragmatic-trials.md`
-- `recovery-trial.md`
-- `references.md`
-- `Research-and-Development-in-the-Pharmaceutical-Industry.md`
-- `value-of-new-treatment.md`
+- None.
 
-**Summary:** 9/18 files processed (50% complete)
+**Summary:** 18/18 files processed (100% complete)
 
 **Next Directory:** `archive/regulatory/`
 
-**Goal:** Process all archived content systematically with zero ambiguity about decisions.
+---
+
+### `archive/regulatory/`
+
+**Files to Process:**
+- `ai-driven-regulatory-analysis.md`
+- `dfda-executive-order.md`
+- `hhs-policy-recommendations.md`
+- `impact-securities-reform.md`
+- `petition.md`
+- `regulations-to-modify-or-rescind.md`
+
+**Summary:** 0/6 files processed (0% complete)
+
+**Next Directory:** `archive/scripts-old/`
+
+---
+
+### `archive/scripts-old/`
