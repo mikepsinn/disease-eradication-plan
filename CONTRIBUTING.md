@@ -1,73 +1,53 @@
 ---
 title: How to Contribute
-description: 'The single source of truth for all contribution guidelines, style guides, and project standards for the Decentralized Institutes of Health (DIH) wiki.'
+description: 'The single source of truth for all contribution guidelines, style guides, and project standards for the Decentralized Institutes of Health (DIH) knowledge base.'
 published: true
-date: '2025-09-07T00:00:00.000Z'
-tags: [contributing, guidelines, standards, open-source]
+date: '2025-09-09T00:00:00.000Z'
+tags: [contributing, guidelines, standards, book, knowledge-base]
 editor: markdown
-dateCreated: '2025-02-12T16:51:44.377Z'
+dateCreated: '2025-09-09T00:00:00.000Z'
 ---
-# How to Contribute to the DIH Wiki
+# How to Contribute to the DIH Knowledge Base
 
-Thank you for your interest in contributing. This document defines repo‑wide contribution rules, structure, and workflows. By participating in this project, you agree to abide by the terms outlined here and in our [**Code of Conduct**](./CODE_OF_CONDUCT.md).
+Thank you for your interest in contributing. This document defines the contribution rules, structure, and workflows for this knowledge base. By participating, you agree to abide by the terms outlined here.
 
 ## Core Principles
 
-This wiki documents the "War on Disease," a mission to make curing people more profitable than killing them. Our communication style is a deliberate departure from standard corporate and non-profit communication. It is designed to be memorable, persuasive, and cut through the noise.
+This repository documents the "War on Disease," a mission to make curing people more profitable than killing them. It is structured as a book that can be read from start to finish. Our communication style is designed to be memorable, persuasive, and cut through the noise.
 
 - **Primary Framing:** "Make curing people more profitable than killing them." / "Bribe our way to a better world."
 - **Secondary Framing:** "Make peace more profitable than war." / "Capture the peace dividend."
-- **Be Concise and Direct:** Use short sentences, simple words, and powerful language. Do not state the obvious.
-- **Speak Plainly:** Avoid weak corporate euphemisms and "AI slop." Write like a human.
-- **Quantify Everything:** Moral arguments are weak without data. All claims must be backed by numbers and citations.
-
-## Who This Project is For
-
-This is a knowledge base and project management hub, not a traditional software project. We welcome contributions from a wide range of experts, including:
-
--   Researchers & Academics
--   Policy Experts
--   Writers & Communicators
--   Economists & Financial Modelers
--   Project Managers
-
-While the project is managed in a Git repository, no coding knowledge is required to contribute.
-
-## How We Track Work
-
-Our project management is fully contained within this repository to ensure transparency and version control. We use a three-tiered system to track our progress from high-level vision to granular tasks:
-
-1.  **[Canonical Roadmap](../strategy/roadmap.md):** This is our high-level, multi-year strategic plan. It defines the major phases of the project.
-2.  **[Milestones](../operations/milestones.yml):** Each phase of the roadmap is broken down into a machine-readable milestone in this file. Milestones represent major blocks of work.
-3.  **[Issues](../operations/issues/):** This directory contains all the granular tasks, feature requests, and bug reports for the project, with each issue in its own file. Each issue is assigned to a milestone, linking our day-to-day work directly to our strategic goals.
+- **Be Concise and Direct:** Use short sentences, simple words, and powerful language.
+- **Speak Plainly:** Avoid weak corporate euphemisms. Write like a human.
+- **Quantify Everything:** All claims must be backed by data and citations.
 
 ## Contributor Workflow
 
-1.  **Find or Propose a Task:** Start by reviewing the project's official issues in the [`operations/issues/`](./operations/issues/) directory. To propose a new task, create a new markdown file in that directory, following the naming convention described below.
-2.  **Suggest an Edit (Propose a Change):** This project uses a standard Git workflow to manage changes.
-    *   **For Git Users:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `update-treasury-model` or `correct-roadmap-dates`).
+The plan *is* the repository. Our goal is to create a single source of truth that is so clear it can be read like a book.
+
+1.  **Identify an Area for Improvement:** Find a "chapter" (a file in the root directory like `problem.md`) or an "appendix" (a file in a subdirectory) that is incomplete, unclear, or could be improved. The highest-priority areas are outlined in the main `roadmap.md`.
+2.  **Suggest an Edit (Propose a Change):** This project uses a standard Git workflow.
+    *   **For Git Users:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `update-financial-model` or `clarify-legal-framework`).
     *   **For Non-Technical Users:** You can edit files directly through the GitHub web interface, which will handle the process of creating a fork and proposing a change for you.
-3.  **Make Your Changes:** As you work, please adhere to all standards in this document.
-4.  **Submit Your Change for Review:** Propose your changes by opening a "Pull Request." This is the mechanism for submitting your edits for review and discussion before they are merged into the main project. Ensure your description is clear and links to the relevant issue number.
+3.  **Make Your Changes:** As you work, please adhere to all standards in this document. Your goal is to add clarity, detail, and evidence to the "book."
+4.  **Submit Your Change for Review:** Propose your changes by opening a "Pull Request." Ensure your description is clear and explains how your change improves the overall narrative.
 
 ## Content and Style Standards
 
-### 1. Issue Naming and Linking
+### 1. Information Architecture: The "Book & Appendices" Model
 
-- **Filename Convention:** Issue files **MUST** be named using the pattern: `{number}-{slugified-title}.md`. For example, an issue with number `42` and title "Fix the login button" would be named `42-fix-the-login-button.md`.
-- **Mandatory Hyperlinks:** All references to other files, directories, or issues within an issue's body **MUST** be hyperlinked using relative markdown links.
+This repository is structured as a book. The root directory contains the "Chapters," which tell the core narrative. The subdirectories are the "Appendices," which provide the detailed evidence, models, and plans.
 
-### 2. Information Architecture (What Goes Where)
+**The Golden Rule:** If a topic is an "Epic" that needs more than one file, it gets a main summary file (`epic.md`) and a corresponding directory (`epic/`) for the details. This pattern applies at all levels.
 
-- **Strategy:** Treaty/DIH strategy, playbooks, roadmaps -> `strategy/`
-- **Features:** dFDA platform specs, technical roadmaps, treasury architecture -> `features/`
-- **Economic Models:** Fundraising, tokenomics, ROI models -> `economic-models/`
-- **Regulatory:** Legal analysis, compliance, model acts -> `regulatory/`
-- **Reference:** Citations, datasets, appendices -> `reference/`
-- **Operations:** SOPs, security, processes -> `operations/`
-- **Community:** Partners, templates, outreach -> `community/`
+- **Root Chapters:** `problem.md`, `solution.md`, `economics.md`, `strategy.md`, etc. These are narrative summaries that should be kept concise and link to the appendices for details.
+- **`economics/`:** The appendix for all financial models, ROI calculations, and investment theses.
+- **`strategy/`:** The appendix for all external-facing execution plans (e.g., how we win the referendum).
+- **`legal/`:** The appendix for all binding rules, compliance frameworks, and governance models.
+- **`operations/`:** The appendix for all internal-facing processes for running the organization (e.g., hiring, SOPs).
+- **`reference/`:** The appendix for all supporting data, studies, and third-party evidence.
 
-**Rule:** Do not create deep folder trees. Keep files within one of these top-level folders and use cross-links for content that spans domains.
+**Rule:** Place new content in the appropriate appendix. Only modify root-level chapters to summarize and link to new detailed content in the appendices.
 
 ### 2. Frontmatter Requirements
 
@@ -120,5 +100,5 @@ This pattern is mandatory to prevent link rot, provide immediate context, and ke
 ## Automation and CI
 
 - **Link Checker:** Pull requests with dead internal links will fail.
-- **Frontmatter Validator:** Pull requests will fail if required frontmatter fields are missing or if multiple canonicals exist for the same `topic_id`.
+- **Frontmatter Validator:** Pull requests will fail if required frontmatter fields are missing.
 
