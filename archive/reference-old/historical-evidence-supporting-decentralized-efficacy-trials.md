@@ -68,17 +68,6 @@ Since the abandonment of the former efficacy trial model, costs have exploded. S
 
 ![Cost to Get a New Drug to Market](https://static.crowdsourcingcures.org/dfda/assets/cost-to-develop-a-new-drug.png)
 
-[greater-competitive-innovation-and-fewer-monopolies.md](greater-competitive-innovation-and-fewer-monopolies.md)
-
-[more-cures-and-less-lifelong-attempts-at-masking-symptoms.md](more-cures-and-less-lifelong-attempts-at-masking-symptoms.md)
-
-
-[people-with-rare-disease-are-severely-punished.md](problems/people-with-rare-disease-are-severely-punished.md)
-
-
-[deaths-due-to-us-regulatory-drug-lag.md](problems/deaths-due-to-us-regulatory-drug-lag.md)
-
-
 **Increase in Patent Monopoly**
 
 Industry agitation surrounding the “drug lag” finally led to the modification of the drug patenting system in the Drug Price Competition and Patent Term Restoration Act of 1984. This further extended the life of drug patents. Thus, Kefauver's amendments ultimately made drugs more expensive by granting longer monopolies.

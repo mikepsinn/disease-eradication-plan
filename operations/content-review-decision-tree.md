@@ -269,12 +269,12 @@ These machine-readable TODOs create an actionable list of content debt to be add
 - ✅ `costs-of-war.md` → **MOVED** to `reference/costs-of-war.md` (Quality: High, No TODOs needed)
 - ✅ `data-storage-costs.md` → **MOVED** to `reference/data-storage-costs.md` (Quality: Good, No TODOs needed)
 - ✅ `existing-dct-platforms.md` → **MOVED** to `reference/existing-dct-platforms.md` (Quality: High, No TODOs needed)
+- ✅ `global-government-medical-research-spending.md` → **MOVED** to `reference/global-government-medical-research-spending.md` (Quality: High, No TODOs needed)
+- ✅ `historical-evidence-supporting-decentralized-efficacy-trials.md` → **MOVED & RENAMED** to `reference/historical-evidence-decentralized-trials.md` (Quality: Good, Fixed 5 broken links)
+- 🗑️ `historical-evidence-supporting-real-wold-efficacy-trials.md` → **DELETED** (Redundant duplicate)
+- 🗑️ `history-of-medical-regulation-and-clinical-research.md` → **DELETED** (Redundant duplicate)
 
 **Files to Process:**
-- `global-government-medical-research-spending.md`
-- `historical-evidence-supporting-decentralized-efficacy-trials.md`
-- `historical-evidence-supporting-real-wold-efficacy-trials.md`
-- `history-of-medical-regulation-and-clinical-research.md`
 - `impact-of-innovative-medicines-on-life-expectancy.md`
 - `nih-recover-initiative.md`
 - `organizational-precedents.md`
@@ -285,7 +285,7 @@ These machine-readable TODOs create an actionable list of content debt to be add
 - `Research-and-Development-in-the-Pharmaceutical-Industry.md`
 - `value-of-new-treatment.md`
 
-**Summary:** 5/18 files processed (28% complete)
+**Summary:** 9/18 files processed (50% complete)
 
 **Next Directory:** `archive/regulatory/`
 
