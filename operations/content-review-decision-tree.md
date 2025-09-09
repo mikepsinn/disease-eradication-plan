@@ -95,34 +95,40 @@ Following README.md's narrative flow for maximum readability:
 
 **economics/** - Financial Models & Analysis
 ```
-├── victory-bonds-investment-thesis.md       (Core investment case)
+├── investment-thesis.md                     (Core investment case - unique concept)
 ├── peace-dividend-value-capture.md          (Economic engine explanation)  
-├── fundraising-and-budget-plan.md           (The $2.5B activation energy)
-├── dih-treasury-cash-flow-model.md          (10-year financial projections)
 ├── dfda-cost-benefit-analysis.md            (80X efficiency ROI analysis)
 ├── investor-risk-analysis.md                (Risk mitigation vs. traditional VC)
-├── pre-seed-terms.md                        (SAFT structure)
-├── operational-budget-and-financial-model.md (Bottom-up budget justification)
+├── operational-budget-model.md              (Bottom-up budget justification)
 ├── intervention-comparison-table.md         (Health intervention value analysis)
-└── quantitative-value-medical-treatment.md  (QALY calculations)
+├── quantitative-value-medical-treatment.md  (QALY calculations)
+├── dih-treasury-cash-flow-model.md          (10-year financial projections)
+└── fundraising/                             (Epic folder for fundraising details)
+    ├── fundraising-plan.md                  (The overview file)
+    ├── fundraising-budget-breakdown.md      (The $2.5B line-item budget)
+    ├── fundraising-strategy.md              (Market-driven mechanics & assurance contracts)
+    ├── fundraising-pre-seed-terms.md        (SAFT structure)
+    └── fundraising-whale-outreach.md        (High-net-worth targeting strategy)
 ```
 
 **strategy/** - Execution Plans & Political Strategy  
 ```
 ├── 1-percent-treaty.md                      (Full treaty text & explanation)
-├── decentralized-institutes-of-health.md    (DIH structure & operation)
+├── dih-model.md                             (DIH structure & operation)
 ├── co-opting-defense-contractors.md         (KEY: How we flip the MIC)
-├── referral-rewards-system.md               (Viral growth mechanics)
-├── legal-compliance-framework.md            (Multi-jurisdiction compliance)
-├── verification-and-fraud-prevention.md     (280M person verification)
+├── coalition-building.md                    (Partner recruitment & management)
 ├── free-rider-solution.md                   (Preventing treaty defection)
-├── whale-billionaire-outreach-strategy.md   (High-net-worth targeting)
-├── global-referendum-implementation.md      (3.5% mobilization mechanics)
 ├── executive-action-implementation.md       (DOGE model approach)
 ├── war-on-disease-strategy.md               (Comprehensive strategy overview)
 ├── historical-precedents-and-rationale.md   (Why this playbook wins)
 ├── messaging-value-estimation.md            (Sentiment analysis framework)
-└── highest-leverage-advocacy.md             (Why every org should focus here)
+├── highest-leverage-advocacy.md             (Why every org should focus here)
+└── global-referendum/                       (Epic folder for referendum details)
+    ├── global-referendum-plan.md            (The overview file)
+    ├── global-referendum-implementation.md  (3.5% mobilization mechanics)
+    ├── global-referendum-incentives.md      (Referral rewards & VOTE points)
+    ├── global-referendum-verification.md    (280M person verification & fraud prevention)
+    └── global-referendum-legal-compliance.md (Multi-jurisdiction compliance)
 ```
 
 **legal/** - Compliance & Governance

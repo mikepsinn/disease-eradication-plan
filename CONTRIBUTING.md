@@ -47,7 +47,18 @@ This repository is structured as a book. The root directory contains the "Chapte
 - **`operations/`:** The appendix for all internal-facing processes for running the organization (e.g., hiring, SOPs).
 - **`reference/`:** The appendix for all supporting data, studies, and third-party evidence.
 
-**Rule:** Place new content in the appropriate appendix. Only modify root-level chapters to summarize and link to new detailed content in the appendices.
+**Rules for Maintainable Structure:**
+
+1. **Single Responsibility Principle:** One file should do one job and do it well. If a file covers multiple distinct topics, it must be split. When in doubt, split files rather than merge them.
+
+2. **Globally Unique Filenames:** Every filename in the repository must be unique and descriptive. Add context prefixes only when the base filename could realistically exist in multiple directories:
+   - ❌ Bad: `economics/fundraising/strategy.md` (too generic)
+   - ✅ Good: `economics/fundraising/fundraising-strategy.md` (context needed)
+   - ✅ Also Good: `strategy/1-percent-treaty.md` (inherently unique concept)
+   
+   This ensures every file can be unambiguously referenced with `@filename` while keeping names as simple as possible.
+
+3. **Place new content in the appropriate appendix.** Only modify root-level chapters to summarize and link to new detailed content in the appendices.
 
 ### 2. Frontmatter Requirements
 
