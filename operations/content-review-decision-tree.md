@@ -33,6 +33,22 @@ Content Mapping:
 
 ## Step-by-Step Process
 
+### The "Book" Mental Model: Chapters, Sections, and The Appendix
+
+To eliminate ambiguity, use this powerful heuristic for every file:
+
+> **Ask: "Is this part of the main story, or is it a footnote/tangent?"**
+
+- **Chapters (Root Files like `economics.md`):** These are the main chapters of the book. They provide the high-level narrative and summarize the core arguments. They should be readable from start to finish.
+
+- **Sections (Files in Subdirectories like `economics/`):** These are the sections and subsections that form the substance of a chapter. `economics/investment-thesis.md` is effectively "Section 3.1" of the "Economics" chapter. This is our core, first-party intellectual property.
+
+- **The Appendix (`reference/` Directory):** This is the **one true appendix** of the book. It is for material that is supplementary to the main argument, not part of it. It's the home for external evidence, raw data, third-party studies, or deep-dive content that would interrupt the narrative flow of a chapter.
+
+**Example Application:**
+- Our analysis of NIH inefficiency (`nih-grant-efficiency-analysis.md`) is a core part of our economic argument. It belongs in the `economics/` directory as a *section* of the Economics chapter.
+- A raw data file *from* the NIH or a third-party study we cite would belong in the Appendix (`reference/`).
+
 ### 1. Pre-Screening Questions
 
 For **EVERY** archived file, ask:
@@ -228,10 +244,10 @@ For each archived file:
   - → `fundraising-budget-breakdown.md` (moved & renamed)
   - → `fundraising-plan.md` (new overview created)
 - ✅ `fundraising-strategy.md` → **MOVED** to `economics/fundraising/fundraising-strategy.md`
+- ✅ `intervention-comparison-table.md` → **MOVED** to `economics/intervention-comparison-table.md`
+- ✅ `investor-risk-analysis.md` → **MOVED** to `economics/investor-risk-analysis.md`
 
 **Remaining in `archive/economic-models/`:**
-- `intervention-comparison-table.md`
-- `investor-risk-analysis.md` 
 - `nih-grant-efficiency-analysis.md`
 - `operational-budget-and-financial-model.md`
 - `peace-dividend-value-capture.md`
@@ -240,6 +256,4 @@ For each archived file:
 - `quantitative-value-medical-treatment.md`
 - `victory-bond-investment-thesis.md`
 
-**Summary:** 5/14 files processed (35% complete)
-
-**Goal:** Process all archived content systematically with zero ambiguity about decisions.
+**Summary:** 7/14 files processed (50% complete)
