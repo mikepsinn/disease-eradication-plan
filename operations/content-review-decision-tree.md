@@ -210,13 +210,36 @@ For each archived file:
 8. `archive/features/` → Likely dFDA implementation details
 9. Individual files like `archive/act.md`, `archive/dfda.md`
 
-## Outcome Tracking
+## Process Rules
 
-Keep a simple log:
-- **📁 Files Reviewed:** X/Y
-- **🗑️ Deleted:** Count  
-- **📂 Moved:** Count
-- **🔄 Merged:** Count
-- **⏭️ Deferred:** Count
+**Golden Rules for Each File:**
+1. **Always use PowerShell `Move-Item`** (not copy) - this automatically deletes the source
+2. **When splitting files:** Move the original, then create additional files as needed
+3. **When merging files:** Append content to target, then delete source
+4. **Document each decision** in the tracking log below
+
+## Progress Tracking
+
+**Files Processed from `archive/economic-models/`:**
+- ✅ `create_chart.py` → **DELETED** (one-off analysis script)
+- ✅ `dfda-cost-benefit-analysis.md` → **MOVED** to `economics/dfda-cost-benefit-analysis.md`
+- ✅ `dih-treasury-cash-flow-model.md` → **MOVED** to `economics/dih-treasury-cash-flow-model.md`
+- ✅ `fundraising-and-budget-plan.md` → **SPLIT** into `economics/fundraising/` epic:
+  - → `fundraising-budget-breakdown.md` (moved & renamed)
+  - → `fundraising-plan.md` (new overview created)
+- ✅ `fundraising-strategy.md` → **MOVED** to `economics/fundraising/fundraising-strategy.md`
+
+**Remaining in `archive/economic-models/`:**
+- `intervention-comparison-table.md`
+- `investor-risk-analysis.md` 
+- `nih-grant-efficiency-analysis.md`
+- `operational-budget-and-financial-model.md`
+- `peace-dividend-value-capture.md`
+- `pre-seed-terms.md`
+- `qaly-comparison-chart.png`
+- `quantitative-value-medical-treatment.md`
+- `victory-bond-investment-thesis.md`
+
+**Summary:** 5/14 files processed (35% complete)
 
 **Goal:** Process all archived content systematically with zero ambiguity about decisions.
