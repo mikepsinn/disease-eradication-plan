@@ -1,21 +1,42 @@
-# Wiki Refactoring Plan
+# DIH Wiki Refactoring Plan
+*Unified plan to restructure the repository into a comprehensive, narrative-driven knowledge base*
 
-## 1. Objective
+## Objective
 
-To restructure the project's wiki into a comprehensive, logical, and narrative-driven knowledge base. The goal is to improve discoverability, clarify the project's vision, and provide a contributor-friendly structure that aligns with the mission outlined in `README.md`.
+Transform the repository from a collection of documents into a well-organized knowledge base that:
+- Presents the core DIH narrative clearly at the root level
+- Improves discoverability and contributor experience
+- Completes the rebrand from "1% Treaty Wiki" to "Decentralized Institutes of Health"
+- Maintains all valuable content while removing redundancy
 
-## 2. Final Information Architecture
+## Current Status
 
-The final structure is designed to present the core narrative of the project at the root of the repository, with detailed supporting documents organized into thematic subdirectories.
+**Completed Foundation Work:**
+- ✅ Created GitHub organization and main repository
+- ✅ Performed initial search-and-replace for branding updates
+- ✅ Generated content inventory (154 markdown files catalogued)
+- ✅ Created cleanup scripts for orphaned images
+
+**Remaining Work:**
+- 🔄 Execute the file reorganization
+- 🔄 Fix internal links
+- 🔄 Update root-level narrative files
+- 🔄 Clean up redundant planning documents
+
+## Target Structure
+
+The final structure presents the core narrative at the root, with supporting details organized thematically:
 
 ```
 /
-├── introduction.md
-├── problem.md
-├── solution.md
-├── strategy.md
-├── economics.md
-├── governance.md
+├── introduction.md          # High-level blueprint and vision
+├── problem.md              # Problems we're solving
+├── solution.md             # Our three-part solution (1% Treaty → DIH → dFDA)
+├── strategy.md             # How we execute the plan
+├── economics.md            # Financial engine and tokenomics
+├── governance.md           # DAO structure and operations
+├── roadmap.md              # Canonical timeline
+├── FAQ.md                  # Common questions
 |
 ├── problem/
 │   ├── cost-of-war.md
@@ -64,107 +85,15 @@ The final structure is designed to present the core narrative of the project at 
 └── roadmap.md
 ```
 
-## 3. Step-by-Step Execution Plan
+## Execution Plan
 
-This is a multi-step process that uses a series of purpose-built scripts to automate the refactoring.
+This refactoring uses three automated scripts to safely reorganize the repository:
 
----
+### Step 1: Create the Refactor Manifest ⚠️ **MANUAL STEP**
 
-### Step 1: Generate Content Inventory
+Create `operations/refactor-manifest.json` - the single source of truth for all file operations. Every file must have an action: `move`, `delete`, `keep`, or `create`.
 
-First, create an inventory of all existing markdown files to aid in decision-making.
-
-**A. Create `scripts/generate-inventory.ts`:**
-This script scans the repository and creates `operations/refactoring_inventory.md` with a table of all markdown files, their titles, and descriptions.
-
-```typescript
-import fs from 'fs/promises';
-import path from 'path';
-import matter from 'gray-matter';
-
-const workspaceRoot = process.cwd();
-const outputFilePath = path.join(workspaceRoot, 'operations', 'refactoring_inventory.md');
-const ignoreDirs = ['node_modules', '.git', '.vscode', '.idea', 'mcp_server'];
-
-async function getAllMarkdownFiles(dir: string): Promise<string[]> {
-  let files = await fs.readdir(dir, { withFileTypes: true });
-  let markdownFiles: string[] = [];
-  for (const file of files) {
-    const fullPath = path.join(dir, file.name);
-    if (file.isDirectory()) {
-      if (!ignoreDirs.includes(file.name)) {
-        markdownFiles = markdownFiles.concat(await getAllMarkdownFiles(fullPath));
-      }
-    } else if (file.name.endsWith('.md')) {
-      markdownFiles.push(fullPath);
-    }
-  }
-  return markdownFiles;
-}
-
-interface FileInventory {
-  path: string;
-  title: string;
-  description: string;
-}
-
-async function generateInventory() {
-  console.log(`Starting inventory generation within: ${workspaceRoot}`);
-  const allFiles = await getAllMarkdownFiles(workspaceRoot);
-  const inventory: FileInventory[] = [];
-
-  for (const filePath of allFiles) {
-    try {
-      const fileContent = await fs.readFile(filePath, 'utf8');
-      if (!fileContent.trim()) {
-        console.log(`Skipping empty file: ${filePath}`);
-        continue;
-      }
-      const { data } = matter(fileContent);
-
-      const relativePath = path.relative(workspaceRoot, filePath).replace(/\\/g, '/');
-      const description = data.description ? String(data.description) : 'No Description';
-
-      inventory.push({
-        path: relativePath,
-        title: data.title || 'No Title',
-        description: description,
-      });
-    } catch (error: any) {
-      console.error(`Error processing file ${filePath}: ${error.message}`);
-    }
-  }
-
-  inventory.sort((a, b) => a.path.localeCompare(b.path));
-
-  let markdownContent = '# Wiki Content Inventory\n\n';
-  markdownContent += '| File Path | Title | Description |\n';
-  markdownContent += '|---|---|---|\n';
-
-  inventory.forEach(item => {
-    const descriptionText = item.description || '';
-    markdownContent += `| ${item.path} | ${item.title} | ${descriptionText.replace(/\r?\n|\r/g, ' ')} |\n`;
-  });
-
-  await fs.writeFile(outputFilePath, markdownContent);
-  console.log(`Inventory successfully generated at: ${outputFilePath}`);
-}
-
-generateInventory().catch(console.error);
-```
-
-**B. Run the script:**
-```bash
-npx tsx scripts/generate-inventory.ts
-```
-
----
-
-### Step 2: Create the Refactor Manifest
-
-Create `operations/refactor-manifest.json`. This file is the single source of truth for the refactor. Every file must be accounted for with a `move`, `delete`, `keep`, or `create` action. The `reason` property is critical for transparency.
-
-**Example `refactor-manifest.json` structure:**
+**Example structure:**
 ```json
 {
   "files": [
@@ -172,28 +101,35 @@ Create `operations/refactor-manifest.json`. This file is the single source of tr
       "old_path": "architecture/blueprint.md",
       "new_path": "introduction.md",
       "action": "move",
-      "reason": "This document is the high-level introduction to the project and now serves as the root entry point for the 'Introduction' concept."
+      "reason": "Serves as the high-level introduction to the project"
     },
     {
-      "new_path": "strategy/fundraising.md",
-      "action": "create",
-      "reason": "Stub file for the fundraising overview, a missing document in our ideal structure."
-    },
-    {
-      "action": "delete",
       "old_path": "operations/wiki-restructuring-plan.md",
-      "reason": "This plan is now obsolete and superseded by the manifest itself."
+      "action": "delete",
+      "reason": "Redundant with unified wiki-refactoring-plan.md"
+    },
+    {
+      "new_path": "FAQ.md",
+      "action": "create", 
+      "reason": "Missing FAQ file for common questions"
     }
   ]
 }
 ```
 
----
+### Step 2: Generate Content Inventory (Optional)
+
+If you need to review all existing content before creating the manifest:
+
+```bash
+npx tsx scripts/generate-inventory.ts
+```
+
+*Note: Content inventory already exists at `operations/refactoring_inventory.md`*
 
 ### Step 3: Execute the Refactor
 
-**A. Create `scripts/execute-refactor.ts`:**
-This script reads the manifest and performs the file operations.
+**Create `scripts/execute-refactor.ts`:**
 
 ```typescript
 import fs from 'fs/promises';
@@ -261,22 +197,18 @@ async function executeRefactor() {
 executeRefactor().catch(console.error);
 ```
 
-**B. Run the script:**
-First, always perform a dry run to verify the changes.
+**Run the script:**
 ```bash
+# Always dry run first
 npx tsx scripts/execute-refactor.ts --dry-run
-```
-Once satisfied, run it for real.
-```bash
+
+# Then execute for real
 npx tsx scripts/execute-refactor.ts
 ```
 
----
-
 ### Step 4: Fix Internal Links
 
-**A. Create `scripts/fix-internal-links.ts`:**
-This script reads the manifest and repairs all broken markdown links.
+**Create `scripts/fix-internal-links.ts`:**
 
 ```typescript
 import fs from 'fs/promises';
@@ -371,92 +303,39 @@ async function fixInternalLinks() {
 fixInternalLinks().catch(console.error);
 ```
 
-**B. Run the script:**
-Again, start with a dry run.
+**Run the script:**
 ```bash
+# Dry run first
 npx tsx scripts/fix-internal-links.ts --dry-run
-```
-Then run it for real.
-```bash
+
+# Then execute
 npx tsx scripts/fix-internal-links.ts
 ```
 
----
+### Step 5: Update Key Files
 
-### Step 5: Final Polish
+After reorganization, manually update these files to reflect the new structure:
 
-The final step is to manually update key documents to reflect the new structure.
+1. **`CONTRIBUTING.md`** - Update the "Information Architecture" section
+2. **`index.md`** - Create the master sitemap pointing to new locations
+3. **`README.md`** - Ensure it aligns with the new structure
 
-**A. Update `CONTRIBUTING.md`:**
-Replace the "Information Architecture" section with the following:
+### Step 6: Cleanup Redundant Files
 
-```markdown
-### 2. Information Architecture (What Goes Where)
+Remove these redundant planning documents after successful refactoring:
+- `operations/wiki-restructuring-plan.md` (superseded by this unified plan)
+- Related issue files that are now covered by this plan:
+  - `operations/issues/12-audit-and-refactor-dfda-content.md`
+  - `operations/issues/13-create-internal-link-fixing-script.md` 
+  - `operations/issues/14-run-link-fixing-script-and-audit-links.md`
+  - `operations/issues/15-update-master-sitemap-and-final-polish.md`
+  - `operations/issues/50-refactor-wiki.md`
 
-This repository is structured as a comprehensive knowledge base. The core narrative of the project is laid out in a series of top-level markdown files in the root directory. Each of these files serves as an entry point and overview for a major concept. Detailed supporting documents are organized into corresponding subdirectories.
+## Next Steps
 
-- **`introduction.md`**: High-level overview, blueprint, and whitepaper for the project.
-- **`problem.md`**: The core problem the DIH aims to solve. Detailed analyses are in `problem/`.
-- **`solution.md`**: The proposed solution. Detailed breakdowns of the components (1% Treaty, DIH, dFDA) are in `solution/`.
-- **`strategy.md`**: The plan to achieve the solution. Details on fundraising, legal, and political strategy are in `strategy/`.
-- **`economics.md`**: The financial engine. Details on tokenomics, value capture, and incentives are in `economics/`.
-- **`governance.md`**: The DAO and governance model. Details on structure and fraud prevention are in `governance/`.
-- **`roadmap.md`**: The canonical project roadmap.
-- **`FAQ.md`**: Frequently Asked Questions.
+1. ⚠️ **Create the refactor manifest** (`operations/refactor-manifest.json`)
+2. 🔧 **Run the three automation scripts** (with dry runs first)
+3. ✏️ **Update key navigation files** (index.md, CONTRIBUTING.md)  
+4. 🗑️ **Clean up redundant planning documents**
 
-**Content Directories:**
-
-- **`reference/`**: External citations, data, and source materials.
-- **`community/`**: Information for community members, partners, and collaborators.
-- **`operations/`**: Internal processes, hiring information, and operational playbooks.
-- **`scripts/`**: Automation scripts for repository maintenance.
-- **`assets/`**: Images, diagrams, and other binary assets.
-
-**Rule:** Keep the root directory clean and focused on the main narrative. New supporting documents should be placed within the appropriate subdirectory.
-```
-
-**B. Update `index.md`:**
-Replace the entire content of `index.md` with the following:
-
-```markdown
----
-title: Decentralized Institutes of Health - Master Index & Sitemap
-description: 'The master table of contents and sitemap for the DIH knowledge base, the central repository for the strategy and operational plans for The 1% Treaty.'
-published: true
-date: '2025-08-23T00:00:00.000Z'
-tags: [index, sitemap, toc, strategy]
-editor: markdown
-dateCreated: '2025-08-22T00:00:00.000Z'
----
-
-# Master Index & Sitemap
-
-This document serves as the master table of contents for the Decentralized Institutes of Health (DIH) knowledge base.
-
-## The Core Narrative
-
-The story of the DIH is best understood by reading these documents in order.
-
-- **[Introduction](./introduction.md):** The high-level vision and blueprint for the entire project.
-- **[The Problem](./problem.md):** A detailed analysis of the core problems we aim to solve, from the costs of war to the inefficiencies of medical research.
-- **[The Solution](./solution.md):** A comprehensive overview of our proposed solution, built on a "Peace Profiteering" engine.
-- **[The Strategy](./strategy.md):** The plan to achieve the solution, covering political, legal, and fundraising strategies.
-- **[The Economics](./economics.md):** The financial engine that makes the project viable, including tokenomics and value-capture models.
-- **[The Governance](./governance.md):** The decentralized model for managing the DIH treasury and ensuring transparency.
-- **[Roadmap](./roadmap.md):** The canonical, multi-year plan for the project.
-- **[FAQ](./FAQ.md):** Answers to frequently asked questions.
-
-## Detailed Content Hubs
-
-For deeper dives into specific topics, please see the main overview file for each section.
-
--   **[Community](./community/community-overview.md):** For partners, contributors, and those looking to get involved.
--   **[Operations](./operations/operations-overview.md):** Internal processes, hiring plans, and operational playbooks.
--   **[Reference](./reference/reference-index.md):** The library of external citations, studies, and source data.
-```
-
----
-
-### Step 6: Cleanup
-
-After the refactor is complete and verified, the scripts (`generate-inventory.ts`, `execute-refactor.ts`, `fix-internal-links.ts`) and the manifest (`refactor-manifest.json`) can be deleted.
+*This unified plan replaces both `wiki-restructuring-plan.md` and the scattered issue-based tasks, providing one clear path to completion.*
