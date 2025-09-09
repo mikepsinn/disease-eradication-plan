@@ -25,93 +25,103 @@ Transform the repository from a collection of documents into a well-organized kn
 
 ## Target Structure
 
-The final structure presents the core narrative at the root, with supporting details organized thematically:
+**Ultra-flat structure designed for zero ambiguity about where content belongs:**
 
 ```
 /
-├── introduction.md          # High-level blueprint and vision
-├── problem.md              # Problems we're solving
-├── solution.md             # Our three-part solution (1% Treaty → DIH → dFDA)
-├── strategy.md             # How we execute the plan
-├── economics.md            # Financial engine and tokenomics
-├── governance.md           # DAO structure and operations
-├── roadmap.md              # Canonical timeline
-├── FAQ.md                  # Common questions
+├── README.md                    # Main pitch deck (already perfect - the core narrative)
+├── problem.md                   # Why this matters (expanded analysis from README)
+├── solution.md                  # The 1% Treaty → DIH → dFDA flow
+├── economics.md                 # Financial models, ROI, and investment thesis
+├── strategy.md                  # How we execute this plan (political, operational)  
+├── legal.md                     # Compliance frameworks and structure
+├── operations.md                # Team, hiring, and processes
+├── FAQ.md                       # Common objections and responses
+├── roadmap.md                   # Timeline and milestones
 |
-├── problem/
-│   ├── cost-of-war.md
-│   ├── cost-of-disease.md
-│   └── opportunity-cost.md
-├── solution/
-│   ├── 1-percent-treaty/
-│   │   ├── 1-percent-treaty.md
-│   │   └── national-security-argument.md
-│   ├── decentralized-institutes-of-health/
-│   │   ├── dih-overview.md
-│   │   ├── treasury-architecture.md
-│   │   └── institute-on-aging.md
-│   └── dfda-protocol/
-│       ├── dfda-protocol-overview.md
-│       ├── implementation-plan.md
-│       └── right-to-trial-act.md
-├── strategy/
-│   ├── fundraising/
-│   │   ├── fundraising-overview.md
-│   │   └── budget-plan.md
-│   ├── legal-and-compliance/
-│   │   ├── legal-compliance-overview.md
-│   │   └── multi-entity-strategy.md
-│   └── political/
-│       ├── political-overview.md
-│       └── co-opting-the-mic.md
-├── economics/
+├── economics/                   # All financial models and analysis
 │   ├── victory-bonds-tokenomics.md
 │   ├── peace-dividend-value-capture.md
-│   └── referral-rewards-system.md
-├── governance/
-│   ├── organizational-structure.md
-│   └── verification-and-fraud-prevention.md
-├── reference/
-│   └── reference-index.md
-├── community/
-│   └── community-overview.md
-├── operations/
-│   ├── operations-overview.md
-│   ├── hiring/
-│   └── playbooks/
-├── scripts/
-├── assets/
-├── FAQ.md
-└── roadmap.md
+│   ├── fundraising-and-budget-plan.md
+│   ├── dfda-cost-benefit-analysis.md
+│   ├── dih-treasury-cash-flow-model.md
+│   └── victory-bond-investment-thesis.md
+├── strategy/                    # Detailed execution plans
+│   ├── 1-percent-treaty.md
+│   ├── decentralized-institutes-of-health.md
+│   ├── referral-rewards-system.md
+│   ├── legal-compliance-framework.md
+│   ├── verification-and-fraud-prevention.md
+│   └── free-rider-solution.md
+├── legal/                       # Compliance and governance
+│   ├── multi-entity-strategy.md
+│   ├── right-to-trial-act.md
+│   └── impact-securities-reform.md
+├── operations/                  # HR, processes, SOPs
+│   ├── hiring-plan.md
+│   ├── crypto-intake-sop.md
+│   ├── nonprofit-partnership-playbook.md
+│   └── process-index.md
+├── reference/                   # Data, studies, citations
+│   ├── costs-of-war.md
+│   ├── recovery-trial.md  
+│   ├── global-government-medical-research-spending.md
+│   └── (other reference files)
+├── assets/                      # Images and diagrams
+└── archive/                     # Everything else (for review/deletion)
 ```
+
+**Decision Rules (Zero Ambiguity):**
+- **Root level:** Core narrative files only - must directly support README.md
+- **economics/:** If it's about money, ROI, or financial models → goes here
+- **strategy/:** If it's about HOW we execute the plan → goes here  
+- **legal/:** If it's about compliance, law, or governance → goes here
+- **operations/:** If it's about team, hiring, or internal processes → goes here
+- **reference/:** If it's data, studies, or citations supporting arguments → goes here
+- **archive/:** Everything else goes here first for review (most will be deleted)
 
 ## Execution Plan
 
 This refactoring uses three automated scripts to safely reorganize the repository:
 
-### Step 1: Create the Refactor Manifest ⚠️ **MANUAL STEP**
+### Step 1: Archive Everything (Clean Slate Approach) ⚠️ **MANUAL STEP**
 
-Create `operations/refactor-manifest.json` - the single source of truth for all file operations. Every file must have an action: `move`, `delete`, `keep`, or `create`.
+**Recommended Approach:** Instead of complex file mapping, move everything to `/archive` and rebuild clean:
 
-**Example structure:**
+1. **Create the new structure** (empty folders and placeholder files)
+2. **Move everything else to `/archive`** (except README.md, assets/, and scripts/)
+3. **Review each archived file** and decide: merge into new structure or delete
+4. **Build the new knowledge base** systematically from the ground up
+
+**Why This Works Better:**
+- ✅ **Zero chance of losing content** - everything preserved in archive
+- ✅ **Forces intentional decisions** - every piece of content gets evaluated
+- ✅ **Clean structure** - no legacy path dependencies or broken links
+- ✅ **Clear progress tracking** - see exactly what's been processed vs. what remains
+
+**Alternative: Traditional Manifest Approach**
+
+If you prefer the traditional approach, create `operations/refactor-manifest.json`:
+
 ```json
 {
   "files": [
     {
       "old_path": "architecture/blueprint.md",
-      "new_path": "introduction.md",
+      "new_path": "problem.md", 
       "action": "move",
-      "reason": "Serves as the high-level introduction to the project"
+      "reason": "Core problem analysis content"
     },
     {
-      "old_path": "operations/wiki-restructuring-plan.md",
-      "action": "delete",
-      "reason": "Redundant with unified wiki-refactoring-plan.md"
+      "old_path": "strategy/1-percent-treaty/1-percent-treaty.md",
+      "new_path": "strategy/1-percent-treaty.md",
+      "action": "move", 
+      "reason": "Main treaty document"
     },
     {
       "new_path": "FAQ.md",
       "action": "create", 
-      "reason": "Missing FAQ file for common questions"
+      "reason": "Common objections from README need dedicated file"
     }
   ]
 }
