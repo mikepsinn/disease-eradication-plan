@@ -253,4 +253,4 @@ Below is a comprehensive list of statutes, executive actions, and related preced
 - 3x increase in rare disease trials
 - 10x increase in adaptive trial designs
 
-<!-- TODO: This document contains many external links to government and academic sources. Perform a comprehensive link verification to check for and fix any dead links. -->
+

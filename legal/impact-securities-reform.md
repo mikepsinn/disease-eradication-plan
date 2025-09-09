@@ -105,3 +105,5 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
 - Impact Investing Regulatory Reform Discourse
   > "Reforms to securities regulation can better support impact investing while maintaining investor protections."
   > — Brookings, 2022, [Policy to Support Impact Investing](https://www.brookings.edu/research/reforming-securities-regulation-to-support-impact-investing/)
+
+<!-- TODO: This file contains internal links (e.g., to `victory-bonds-tokenomics.md`) that will need to be updated after moving it to the `legal/` directory. Also, perform a full verification of external links. -->

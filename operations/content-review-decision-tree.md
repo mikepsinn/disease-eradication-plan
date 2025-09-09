@@ -33,29 +33,31 @@ Content Mapping:
 
 ## Step-by-Step Process
 
-### The "Book" Mental Model: Chapters, Sections, and The Appendix
+### The Guiding Principle: The "Platonic Ideal" Tree is Truth
 
-To eliminate ambiguity, use this powerful heuristic for every file:
+Our goal is to create a clean, readable "book" based on the pre-defined target structure below. We are not simply reorganizing old files; we are writing a new book and using the archive for raw material.
 
-> **Ask: "Is this part of the main story, or is it a footnote/tangent?"**
+**The process is TOP-DOWN, not bottom-up.** For every archived file, the primary question is:
 
-- **Chapters (Root Files like `economics.md`):** These are the main chapters of the book. They provide the high-level narrative and summarize the core arguments. They should be readable from start to finish.
+> **"Does the essential, non-obvious, project-specific content in this file belong inside one of the pre-defined files in our ideal structure?"**
 
-- **Sections (Files in Subdirectories like `economics/`):** These are the sections and subsections that form the substance of a chapter. `economics/investment-thesis.md` is effectively "Section 3.1" of the "Economics" chapter. This is our core, first-party intellectual property.
+If the answer is no, the archived file is deleted. We will only add a new file to the "ideal" structure if we discover a truly critical and unforeseen gap.
 
-- **The Appendix (`reference/` Directory):** This is the **one true appendix** of the book. It is for material that is supplementary to the main argument, not part of it. It's the home for external evidence, raw data, third-party studies, or deep-dive content that would interrupt the narrative flow of a chapter.
+### The "Book" vs. The "Internal Playbook"
 
-**Example Application:**
-- Our analysis of NIH inefficiency (`nih-grant-efficiency-analysis.md`) is a core part of our economic argument. It belongs in the `economics/` directory as a *section* of the Economics chapter.
-- A raw data file *from* the NIH or a third-party study we cite would belong in the Appendix (`reference/`).
+To further clarify, we must distinguish between the public-facing book and our internal operational documents.
+
+- **The Book (`/`, `economics/`, `strategy/`, `legal/`, `reference/`):** This is the public-facing content. It's the story, the argument, and the evidence. Content here should be written for an external audience.
+- **The Internal Playbook (`operations/`):** This is for internal-facing strategy and standard operating procedures (SOPs). This is the "how-to" for running the organization itself. Content here is for the core team (e.g., hiring plans, fundraising SOPs, messaging frameworks). It is **not** part of the readable book.
 
 ### 1. Pre-Screening Questions
 
 For **EVERY** archived file, ask:
 
 **❌ IMMEDIATE DELETE if ANY of these are true:**
+- Is this generic content not highly specific to our project? (e.g., "how to run a marketing campaign")
 - Is this about dFDA technical implementation? (we have separate dFDA wiki)
-- Is this a duplicate of content already in README.md?
+- Is this a duplicate of content already integrated?
 - Is this outdated planning documentation?
 - Is this a test file or template?
 - Does this contradict our simplified approach?
@@ -156,9 +158,10 @@ Following README.md's narrative flow for maximum readability:
 └── community-governance-framework.md        (DAO governance principles)
 ```
 
-**operations/** - Team, Hiring & Processes
+**operations/** - Team, Hiring & Processes (The Internal Playbook)
 ```
 ├── hiring-plan.md                           (Phase-based team roadmap)
+├── communications-and-messaging-playbook.md (Internal framework for public narrative)
 ├── crypto-intake-sop.md                     (Investment/donation procedures)
 ├── nonprofit-partnership-playbook.md        (Coalition building strategy)
 ├── process-index.md                         (Operational process hub)
@@ -204,20 +207,22 @@ Following README.md's narrative flow for maximum readability:
 
 For each archived file:
 
-1. **🔍 SCAN:** Read title and first few paragraphs
-2. **❌ FILTER:** Apply pre-screening delete rules  
-3. **💡 ASSESS:** Does this map to a specific target file above?
-4. **📂 MAP:** Move to exact target location or integrate into chapter
-5. **✅ ACT:** Move, merge, extract, or delete
-6. **✨ QA:** Perform the Quality Assurance Checklist below
+1. **🔍 SCAN:** Read title and first few paragraphs to understand the content.
+2. **🤔 EVALUATE:** Is this content generic/obvious, or is it unique and essential to the project?
+   - If generic → **DELETE**.
+3. **🗺️ LOCATE:** Identify which single file in the "Platonic Ideal" structure this content belongs to.
+   - If it belongs nowhere → **DELETE**.
+   - If it reveals a critical gap in the ideal structure, update the structure first.
+4. **✅ ACT:** **MERGE** the essential, non-obvious content into the target file, then delete the source. Or, if it's a perfect 1:1 fit, **MOVE** and **RENAME** it to match the ideal filename.
+5. **✨ QA:** Perform the Quality Assurance Checklist on the *target file* that was just modified.
 
-## Quality Assurance Checklist (Applied After Mapping & Before Moving)
+## Quality Assurance Checklist (Applied After Content Integration)
 
-For every file that is **KEPT** (moved or merged), perform this quick QA check:
+For every file that is **MODIFIED** (by moving or merging), perform this quick QA check:
 
-**1. Link Verification:**
-   - Scan for all internal relative links (e.g., `[text](./path/file.md)`).
-   - Update any links pointing to files that have been moved or renamed.
+**1. Internal Link Integrity:**
+   - Scan the file for all internal relative links (e.g., `[text](./path/file.md)`).
+   - **IMMEDIATELY FIX** any links that are now broken due to files being moved or renamed.
    - If a link points to a now-deleted file, either remove the link or repoint it to a relevant alternative.
 
 **2. Content Quality Triage:**
@@ -295,14 +300,14 @@ These machine-readable TODOs create an actionable list of content debt to be add
 ### `archive/regulatory/`
 
 **Files to Process:**
-- `ai-driven-regulatory-analysis.md`
-- `dfda-executive-order.md`
-- `hhs-policy-recommendations.md`
-- `impact-securities-reform.md`
-- `petition.md`
+- ✅ `ai-driven-regulatory-analysis.md` → **MOVED** to `operations/ai-driven-regulatory-analysis.md` (Quality: High, No TODOs needed)
+- ✅ `dfda-executive-order.md` → **MERGED** into `strategy/dfda-implementation-via-executive-action.md` to consolidate strategic plan and draft text. (Quality: High)
+- ✅ `hhs-policy-recommendations.md` → **MOVED & RENAMED** to `strategy/hhs-dFDA-policy-recommendations.md` (Quality: High, Added TODO for link check)
+- ✅ `impact-securities-reform.md` → **MOVED** to `legal/impact-securities-reform.md` (Quality: High, Added TODO for link updates)
+- ✅ `petition.md` → **MOVED & RENAMED** to `strategy/global-referendum/support-petition-draft.md` (Quality: Good, Advocacy asset)
 - `regulations-to-modify-or-rescind.md`
 
-**Summary:** 0/6 files processed (0% complete)
+**Summary:** 5/6 files processed (83% complete)
 
 **Next Directory:** `archive/scripts-old/`
 
