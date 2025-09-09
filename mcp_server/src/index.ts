@@ -1,13 +1,7 @@
-import express from 'express';
-import cors from 'cors';
+import { JSONRPCServer } from "json-rpc-2.0";
 import { promises as fs } from 'fs';
 import path from 'path';
-
-const app = express();
-const port = 8000;
-
-app.use(cors());
-app.use(express.json());
+import readline from 'readline';
 
 const ISSUES_DIR = path.join(__dirname, '../../../operations/issues');
 
@@ -36,100 +30,114 @@ const listIssueFiles = async (): Promise<string[]> => {
         const files = await fs.readdir(ISSUES_DIR);
         return files.filter(file => file.endsWith('.md'));
     } catch (error) {
-        console.error('Error reading issues directory:', error);
         return [];
     }
 };
 
-app.get('/list_issues', async (req, res) => {
-    const files = await listIssueFiles();
-    const issues: Issue[] = files
-        .map(filename => {
-            const parsed = parseFilename(filename);
-            if (parsed) {
-                return { ...parsed, filename };
-            }
-            return null;
-        })
-        .filter((issue): issue is Issue => issue !== null)
-        .sort((a, b) => a.number - b.number);
-    res.json(issues);
-});
 
-app.get('/get_issue/:issue_number', async (req, res) => {
-    const issueNumber = parseInt(req.params.issue_number, 10);
-    if (isNaN(issueNumber)) {
-        return res.status(400).json({ error: 'Invalid issue number' });
-    }
+const server = new JSONRPCServer();
 
-    const files = await listIssueFiles();
-    const issueFilename = files.find(file => file.startsWith(`${issueNumber}-`));
+// --- Tool Definitions ---
 
-    if (!issueFilename) {
-        return res.status(404).json({ error: `Issue #${issueNumber} not found.` });
-    }
-
-    try {
-        const content = await fs.readFile(path.join(ISSUES_DIR, issueFilename), 'utf-8');
-        const parsed = parseFilename(issueFilename);
-        if (parsed) {
-            const issueDetail: IssueDetail = {
-                ...parsed,
-                filename: issueFilename,
-                content,
-            };
-            res.json(issueDetail);
-        } else {
-            res.status(500).json({ error: 'Could not parse issue filename.' });
-        }
-    } catch (error) {
-        res.status(500).json({ error: 'Could not read issue file.' });
-    }
-});
-
-app.get('/search_issues', async (req, res) => {
-    const query = req.query.query as string;
-    if (!query) {
-        return res.status(400).json({ error: 'Query parameter is required.' });
-    }
-
-    const files = await listIssueFiles();
-    const matchingIssues: IssueDetail[] = [];
-
-    for (const filename of files) {
-        try {
-            const content = await fs.readFile(path.join(ISSUES_DIR, filename), 'utf-8');
-            if (content.toLowerCase().includes(query.toLowerCase())) {
-                const parsed = parseFilename(filename);
-                if (parsed) {
-                    matchingIssues.push({
-                        ...parsed,
-                        filename,
-                        content,
-                    });
+server.addMethod("tools/list", () => {
+    return {
+        tools: [
+            {
+                name: "list_issues",
+                description: "List all DIH issues",
+                inputSchema: {}
+            },
+            {
+                name: "get_issue",
+                description: "Get a specific issue by number",
+                inputSchema: {
+                    type: "object",
+                    properties: {
+                        issue_number: { type: "number", description: "The number of the issue to retrieve." }
+                    },
+                    required: ["issue_number"]
+                }
+            },
+            {
+                name: "search_issues",
+                description: "Search issues by a query string",
+                inputSchema: {
+                    type: "object",
+                    properties: {
+                        query: { type: "string", description: "The text to search for." }
+                    },
+                    required: ["query"]
+                }
+            },
+            {
+                name: "create_issue",
+                description: "Create a new issue",
+                inputSchema: {
+                    type: "object",
+                    properties: {
+                        title: { type: "string", description: "The title of the new issue." },
+                        body: { type: "string", description: "The Markdown body of the new issue." }
+                    },
+                    required: ["title", "body"]
                 }
             }
-        } catch (error) {
-            // Ignore files that can't be read
-        }
-    }
-    res.json(matchingIssues.sort((a, b) => a.number - b.number));
+        ]
+    };
 });
 
-app.post('/create_issue', async (req, res) => {
-    const { title, body } = req.body;
-    if (!title || !body) {
-        return res.status(400).json({ error: 'Title and body are required.' });
-    }
+server.addMethod("tools/call", async (params: any) => {
+    const { name, input } = params;
+    switch (name) {
+        case "list_issues":
+            const files = await listIssueFiles();
+            const issues: Issue[] = files
+                .map(filename => {
+                    const parsed = parseFilename(filename);
+                    if (parsed) {
+                        return { ...parsed, filename };
+                    }
+                    return null;
+                })
+                .filter((issue): issue is Issue => issue !== null)
+                .sort((a, b) => a.number - b.number);
+            return { output: JSON.stringify(issues) };
 
-    const files = await listIssueFiles();
-    const numbers = files.map(file => parseInt(file.split('-')[0], 10)).filter(num => !isNaN(num));
-    const nextNumber = numbers.length > 0 ? Math.max(...numbers) + 1 : 1;
-    
-    const slugifiedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
-    const newFilename = `${nextNumber}-${slugifiedTitle}.md`;
+        case "get_issue":
+            const { issue_number } = input;
+            const allFiles = await listIssueFiles();
+            const issueFilename = allFiles.find(file => file.startsWith(`${issue_number}-`));
 
-    const frontmatter = `---
+            if (!issueFilename) {
+                 throw new Error(`Issue #${issue_number} not found.`);
+            }
+            const content = await fs.readFile(path.join(ISSUES_DIR, issueFilename), 'utf-8');
+            return { output: content };
+
+        case "search_issues":
+            const { query } = input;
+            const searchFiles = await listIssueFiles();
+            const matchingIssues: IssueDetail[] = [];
+            for (const filename of searchFiles) {
+                const content = await fs.readFile(path.join(ISSUES_DIR, filename), 'utf-8');
+                if (content.toLowerCase().includes(query.toLowerCase())) {
+                    const parsed = parseFilename(filename);
+                    if (parsed) {
+                        matchingIssues.push({ ...parsed, filename, content });
+                    }
+                }
+            }
+            return { output: JSON.stringify(matchingIssues.sort((a, b) => a.number - b.number)) };
+            
+        case "create_issue":
+            const { title, body } = input;
+            const createFiles = await listIssueFiles();
+            const numbers = createFiles.map(file => parseInt(file.split('-')[0], 10)).filter(num => !isNaN(num));
+            const nextNumber = numbers.length > 0 ? Math.max(...numbers) + 1 : 1;
+            
+            const slugifiedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+            const newFilename = `${nextNumber}-${slugifiedTitle}.md`;
+
+            const frontmatter = `---
 title: "${title}"
 description: "A new issue."
 published: true
@@ -140,24 +148,41 @@ dateCreated: '${new Date().toISOString()}'
 ---
 
 `;
+            const fullContent = frontmatter + body;
+            await fs.writeFile(path.join(ISSUES_DIR, newFilename), fullContent, 'utf-8');
+            return { output: `Successfully created issue #${nextNumber}: ${newFilename}` };
 
-    const fullContent = frontmatter + body;
-
-    try {
-        await fs.writeFile(path.join(ISSUES_DIR, newFilename), fullContent, 'utf-8');
-        const newIssue: IssueDetail = {
-            number: nextNumber,
-            title: title,
-            filename: newFilename,
-            content: fullContent,
-        };
-        res.status(201).json(newIssue);
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to create issue file.' });
+        default:
+            throw new Error(`Tool ${name} not found.`);
     }
 });
 
 
-app.listen(port, () => {
-    console.log(`MCP server running at http://localhost:${port}`);
+// --- Stdio Transport ---
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false,
+});
+
+rl.on('line', (line) => {
+    const trimmedLine = line.trim();
+    if (trimmedLine.length === 0) {
+        return;
+    }
+
+    let jsonrpcRequest;
+    try {
+        jsonrpcRequest = JSON.parse(trimmedLine);
+    } catch (e) {
+        return;
+    }
+
+    server.receive(jsonrpcRequest).then((jsonrpcResponse) => {
+        if (jsonrpcResponse) {
+            const responseStr = JSON.stringify(jsonrpcResponse);
+            process.stdout.write(`Content-Length: ${Buffer.byteLength(responseStr, 'utf-8')}\r\n\r\n${responseStr}`);
+        }
+    });
 });

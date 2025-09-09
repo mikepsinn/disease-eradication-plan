@@ -4,6 +4,16 @@
       "name": "DIH Filesystem",
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    },
+    "github-project-manager": {
+      "name": "GitHub Project Manager",
+      "command": "npx",
+      "args": ["-y", "mcp-github-project-manager"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_g4UH7ZqZ0mQKb2N6tQ4a03zK71U1QqUWg8Q0Ug8Z",
+        "GITHUB_OWNER": "decentralized-institutes-of-health",
+        "GITHUB_REPO": "decentralized-institutes-of-health"
+      }
     }
   }
 }
