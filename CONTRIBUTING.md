@@ -108,6 +108,7 @@ This pattern is mandatory to prevent link rot, provide immediate context, and ke
 
 - **Tooling and Server-Side Code:** Any new tooling or server-side components for the project (e.g., MCP servers, automation scripts) **MUST** be written in TypeScript.
 - **Dependencies:** Use `npm` for package management. All projects must include a `package.json` file with clearly defined dependencies.
+- **Execution:** To avoid committing compiled code, run TypeScript files directly using a runtime like `ts-node` or `tsx`. Compiled JavaScript files (`.js`) are disallowed in the repository and should be added to the project's `.gitignore` file.
 
 ### 5. Naming, Linking, and Formatting
 
