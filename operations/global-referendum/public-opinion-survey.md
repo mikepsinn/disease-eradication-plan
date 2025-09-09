@@ -36,14 +36,14 @@ The "1% Treaty" proposes that all signatory nations redirect 1% of their annual 
 
 ## Section 2: Principles for Research Reform
 
-The following questions are about the core principles of this initiative. The central proposal is to upgrade our medical research infrastructure with an **open-source, decentralized platform**, as outlined in the ["Right to Trial and FDA Upgrade Act"](../act.md).
+The following questions are about the core principles of this initiative. The central proposal is to upgrade our medical research infrastructure with an **open-source, decentralized platform**, as outlined in the ["Right to Trial and FDA Upgrade Act"](../../act.md).
 
 This "FDA.gov v2" platform would work like this:
 1.  Any patient could see a ranked list of the most effective treatments for their condition, based on all available global data.
 2.  Any patient would have the **right to participate** in a clinical trial from home.
 3.  All trial data would be made public to accelerate new discoveries.
 
-This new model is made possible by dramatic cost reductions. Evidence from successful, large-scale studies like the UK's [RECOVERY trial](../reference/recovery-trial.md) shows this approach can cut per-patient trial costs by over **95%** (from ~$43,000 down to ~$500), enabling more research for more people.
+This new model is made possible by dramatic cost reductions. Evidence from successful, large-scale studies like the UK's [RECOVERY trial](../../reference/recovery-trial-case-study.md) shows this approach can cut per-patient trial costs by over **95%** (from ~$43,000 down to ~$500), enabling more research for more people.
 
 **Q7: Support for the Principles**
 Based on these goals, to what extent do you support or oppose creating a new system based on these principles?
