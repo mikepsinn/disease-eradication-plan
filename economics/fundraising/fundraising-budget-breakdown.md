@@ -89,3 +89,36 @@ This final phase is the all-out push to ensure treaty ratification in the remain
 | **MIC Co-Opting (Final Tranche)**| $50M        | $100M       | **Justification:** Final strategic incentives to secure key corporate and political endorsements.<br>**Pay-for-Success:** Entirely success-based. |
 | **Treasury & Governance Launch**| $100M       | $150M       | **Justification:** Final preparations for DIH treasury launch, including security audits and insurance.<br>**Pay-for-Success:** Developer bonuses tied to flawless first $1B disbursement. |
 | **Contingency**               | $50M        | $100M       | **Justification:** Final buffer for the most critical phase of the campaign. |
+
+---
+
+## 2. Bottom-Up Budget Justification
+
+The following provides a more granular justification for the phase-based budget.
+
+### **Phase 1: Seed ($250M - $400M)**
+
+| Category | Estimate | Bottom-Up Justification |
+| :--- | :--- | :--- |
+| **Operations** | $10-15M | Based on a team of 20 with a fully-loaded average cost of $250k/year for a 2-year runway. |
+| **Platform MVP** | $50-75M | Includes a 50-person engineering team/contractor budget, plus 3 independent security audits ($5M), and cloud infrastructure costs ($10M). |
+| **Legal (Pilots)** | $40-60M | Based on retaining 5 top-tier global law firms ($5M/year each) and 3 lobbying firms ($5M/year each) for a 2-year period. |
+| **Pilot IE** | $100-150M | Derived from the average cost of a competitive U.S. Senate campaign (~$50-75M per cycle), replicated in two key pilot regions. |
+| **Contingency** | $45-90M | A 20-30% contingency buffer, standard for high-risk ventures. |
+
+### **Phase 2: Series A ($500M - $1B)**
+
+| Category | Estimate | Bottom-Up Justification |
+| :--- | :--- | :--- |
+| **Scaled IEs** | $300-600M | Cost of running 5-10 simultaneous G7-nation-level campaigns. The prize model ($175M total for top 3) is a component of this. |
+| **Incentive Alignment**| $50-100M | Seed capital for structured financial products designed to attract MIC partners. Sized to be competitive with their existing lobbying budgets. |
+| **Platform Scale-Up**| $100-150M| Budget for scaling the platform to 300M+ users, including global CDN, security, and compliance features (e.g., GDPR). |
+| **Legal Expansion** | $40-80M | Expands legal and lobbying footprint to an additional 10-15 countries. |
+
+### **Phase 3: Growth ($500M - $1.1B)**
+
+| Category | Estimate | Bottom-Up Justification |
+| :--- | :--- | :--- |
+| **Saturation Campaigns**| $300-750M | All-out media and political pressure in the final 1-3 holdout nations, which will be the most expensive to win. |
+| **MIC Co-Opting** | $50-100M | Final tranche of incentive capital for key corporate and political endorsements. |
+| **Treasury Launch** | $100-150M| Includes costs for final, comprehensive security audits of the DIH treasury, insurance policies (e.g., against smart contract failure), and initial capitalization of DAO governance mechanisms. |
