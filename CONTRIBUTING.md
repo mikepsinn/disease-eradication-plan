@@ -20,6 +20,9 @@ This repository documents the "War on Disease," a mission to make curing people 
 - **Be Concise and Direct:** Use short sentences, simple words, and powerful language.
 - **Speak Plainly:** Avoid weak corporate euphemisms. Write like a human.
 - **Quantify Everything:** All claims must be backed by data and citations.
+- **Tell a Compelling Story:** This is not just a plan; it's a movement. Use the "chapters" to build a powerful narrative:
+    -   `problem.md` should graphically and emotionally depict the human cost of war and disease. It must build urgency.
+    -   `solution.md` should paint a vivid, hopeful picture of the future we are building—a world without war and disease. It must inspire.
 
 ## Contributor Workflow
 
