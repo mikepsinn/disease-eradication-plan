@@ -20,31 +20,48 @@ The final structure is designed to present the core narrative of the project at 
 ├── problem/
 │   ├── cost-of-war.md
 │   ├── cost-of-disease.md
-│   └── ... (other supporting files)
+│   └── opportunity-cost.md
 ├── solution/
-│   ├── 1-percent-treaty.md
-│   ├── decentralized-institutes-of-health.md
-│   └── dfda-protocol.md
+│   ├── 1-percent-treaty/
+│   │   ├── 1-percent-treaty.md
+│   │   └── national-security-argument.md
+│   ├── decentralized-institutes-of-health/
+│   │   ├── dih-overview.md
+│   │   ├── treasury-architecture.md
+│   │   └── institute-on-aging.md
+│   └── dfda-protocol/
+│       ├── dfda-protocol-overview.md
+│       ├── implementation-plan.md
+│       └── right-to-trial-act.md
 ├── strategy/
-│   ├── fundraising.md
-│   ├── legal-and-compliance.md
-│   └── political.md
+│   ├── fundraising/
+│   │   ├── fundraising-overview.md
+│   │   └── budget-plan.md
+│   ├── legal-and-compliance/
+│   │   ├── legal-compliance-overview.md
+│   │   └── multi-entity-strategy.md
+│   └── political/
+│       ├── political-overview.md
+│       └── co-opting-the-mic.md
 ├── economics/
-│   ├── victory-bonds.md
-│   ├── peace-dividend.md
-│   └── incentives.md
+│   ├── victory-bonds-tokenomics.md
+│   ├── peace-dividend-value-capture.md
+│   └── referral-rewards-system.md
 ├── governance/
 │   ├── organizational-structure.md
-│   └── fraud-prevention.md
-|
-├── operations/
-├── community/
+│   └── verification-and-fraud-prevention.md
 ├── reference/
+│   └── reference-index.md
+├── community/
+│   └── community-overview.md
+├── operations/
+│   ├── operations-overview.md
+│   ├── hiring/
+│   └── playbooks/
 ├── scripts/
 ├── assets/
-|
-├── roadmap.md
-└── FAQ.md
+├── FAQ.md
+└── roadmap.md
 ```
 
 ## 3. Step-by-Step Execution Plan
