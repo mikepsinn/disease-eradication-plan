@@ -163,6 +163,7 @@ Following README.md's narrative flow for maximum readability:
 ├── nonprofit-partnership-playbook.md        (Coalition building strategy)
 ├── process-index.md                         (Operational process hub)
 ├── pre-seed-strategy.md                     (Foundation phase execution)
+├── dih-treasury-management-and-security.md  (CRITICAL: Controls for the $27B+ treasury)
 └── team-incentives.md                       (Dynamic EV compensation model)
 ```
 
@@ -208,6 +209,24 @@ For each archived file:
 3. **💡 ASSESS:** Does this map to a specific target file above?
 4. **📂 MAP:** Move to exact target location or integrate into chapter
 5. **✅ ACT:** Move, merge, extract, or delete
+6. **✨ QA:** Perform the Quality Assurance Checklist below
+
+## Quality Assurance Checklist (Applied After Mapping & Before Moving)
+
+For every file that is **KEPT** (moved or merged), perform this quick QA check:
+
+**1. Link Verification:**
+   - Scan for all internal relative links (e.g., `[text](./path/file.md)`).
+   - Update any links pointing to files that have been moved or renamed.
+   - If a link points to a now-deleted file, either remove the link or repoint it to a relevant alternative.
+
+**2. Content Quality Triage:**
+   - **Is a critical claim missing a citation?** If yes, add `<!-- TODO: Add citation for this claim. -->`
+   - **Does the writing style clash with the project's voice (direct, concise)?** If yes, add `<!-- TODO: Rewrite this section to match project writing style. -->`
+   - **Is a chart, image, or visual desperately needed?** If yes, add `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
+   - **Is there a section that should be expanded, removed, or clarified?** If yes, add a specific TODO comment (e.g., `<!-- TODO: Expand this section to include X. -->`).
+
+These machine-readable TODOs create an actionable list of content debt to be addressed after the structural refactor is complete.
 
 ## Priority Order for Review
 
@@ -236,24 +255,38 @@ For each archived file:
 
 ## Progress Tracking
 
-**Files Processed from `archive/economic-models/`:**
-- ✅ `create_chart.py` → **DELETED** (one-off analysis script)
-- ✅ `dfda-cost-benefit-analysis.md` → **MOVED** to `economics/dfda-cost-benefit-analysis.md`
-- ✅ `dih-treasury-cash-flow-model.md` → **MOVED** to `economics/dih-treasury-cash-flow-model.md`
-- ✅ `fundraising-and-budget-plan.md` → **SPLIT** into `economics/fundraising/` epic:
-  - → `fundraising-budget-breakdown.md` (moved & renamed)
-  - → `fundraising-plan.md` (new overview created)
-- ✅ `fundraising-strategy.md` → **MOVED** to `economics/fundraising/fundraising-strategy.md`
-- ✅ `intervention-comparison-table.md` → **MOVED** to `economics/intervention-comparison-table.md`
-- ✅ `investor-risk-analysis.md` → **MOVED** to `economics/investor-risk-analysis.md`
+**Completed Directories:**
+- `archive/economic-models/`
+- `archive/strategy-old/`
+- `archive/legal-old/`
+- `archive/careers/` (Discovered to be empty; already processed)
 
-**Remaining in `archive/economic-models/`:**
-- `nih-grant-efficiency-analysis.md`
-- `operational-budget-and-financial-model.md`
-- `peace-dividend-value-capture.md`
-- `pre-seed-terms.md`
-- `qaly-comparison-chart.png`
-- `quantitative-value-medical-treatment.md`
-- `victory-bond-investment-thesis.md`
+**Current Directory:** `archive/reference-old/`
 
-**Summary:** 7/14 files processed (50% complete)
+**Files Processed:**
+- 🗑️ `all_of_us_participant_portal_adaptive_platform_for_personalized_engagement.xlsx` → **DELETED** (Per user)
+- 🗑️ `canonicals.md` → **DELETED** (Obsolete navigational index)
+- ✅ `costs-of-war.md` → **MOVED** to `reference/costs-of-war.md` (Quality: High, No TODOs needed)
+- ✅ `data-storage-costs.md` → **MOVED** to `reference/data-storage-costs.md` (Quality: Good, No TODOs needed)
+- ✅ `existing-dct-platforms.md` → **MOVED** to `reference/existing-dct-platforms.md` (Quality: High, No TODOs needed)
+
+**Files to Process:**
+- `global-government-medical-research-spending.md`
+- `historical-evidence-supporting-decentralized-efficacy-trials.md`
+- `historical-evidence-supporting-real-wold-efficacy-trials.md`
+- `history-of-medical-regulation-and-clinical-research.md`
+- `impact-of-innovative-medicines-on-life-expectancy.md`
+- `nih-recover-initiative.md`
+- `organizational-precedents.md`
+- `otc-drugs.md`
+- `pragmatic-trials.md`
+- `recovery-trial.md`
+- `references.md`
+- `Research-and-Development-in-the-Pharmaceutical-Industry.md`
+- `value-of-new-treatment.md`
+
+**Summary:** 5/18 files processed (28% complete)
+
+**Next Directory:** `archive/regulatory/`
+
+**Goal:** Process all archived content systematically with zero ambiguity about decisions.
