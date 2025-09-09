@@ -120,6 +120,7 @@ Following README.md's narrative flow for maximum readability:
 ├── operational-budget-model.md              (Bottom-up budget justification)
 ├── intervention-comparison-table.md         (Health intervention value analysis)
 ├── quantitative-value-medical-treatment.md  (QALY calculations)
+├── health-savings-sharing-model.md          (Incentive model for cures)
 ├── dih-treasury-cash-flow-model.md          (10-year financial projections)
 └── fundraising/                             (Epic folder for fundraising details)
     ├── fundraising-plan.md                  (The overview file)
@@ -233,84 +234,9 @@ For every file that is **MODIFIED** (by moving or merging), perform this quick Q
 
 These machine-readable TODOs create an actionable list of content debt to be addressed after the structural refactor is complete.
 
-## Priority Order for Review
-
-**High Priority (Review First):**
-1. `archive/economic-models/` → Most directly supports README.md
-2. `archive/strategy-old/1-percent-treaty/` → Core solution content
-3. `archive/legal-old/` → Essential compliance frameworks
-4. `archive/careers/hiring-plan.md` → Key operational content
-
-**Medium Priority:**
-5. `archive/reference-old/` → Supporting data and studies
-6. `archive/regulatory/` → May have legal compliance content
-
-**Low Priority (Review Last):**
-7. `archive/operations-old/issues/` → Likely delete most of these
-8. `archive/features/` → Likely dFDA implementation details
-9. Individual files like `archive/act.md`, `archive/dfda.md`
-
 ## Process Rules
 
 **Golden Rules for Each File:**
 1. **Always use PowerShell `Move-Item`** (not copy) - this automatically deletes the source
 2. **When splitting files:** Move the original, then create additional files as needed
 3. **When merging files:** Append content to target, then delete source
-4. **Document each decision** in the tracking log below
-
-## Progress Tracking
-
-**Completed Directories:**
-- `archive/economic-models/`
-- `archive/strategy-old/`
-- `archive/legal-old/`
-- `archive/careers/` (Discovered to be empty; already processed)
-
-**Current Directory:** `archive/reference-old/`
-
-**Files Processed:**
-- 🗑️ `all_of_us_participant_portal_adaptive_platform_for_personalized_engagement.xlsx` → **DELETED** (Per user)
-- 🗑️ `canonicals.md` → **DELETED** (Obsolete navigational index)
-- ✅ `costs-of-war.md` → **MOVED** to `reference/costs-of-war.md` (Quality: High, No TODOs needed)
-- ✅ `data-storage-costs.md` → **MOVED** to `reference/data-storage-costs.md` (Quality: Good, No TODOs needed)
-- ✅ `existing-dct-platforms.md` → **MOVED** to `reference/existing-dct-platforms.md` (Quality: High, No TODOs needed)
-- ✅ `global-government-medical-research-spending.md` → **MOVED** to `reference/global-government-medical-research-spending.md` (Quality: High, No TODOs needed)
-- ✅ `historical-evidence-supporting-decentralized-efficacy-trials.md` → **MOVED & RENAMED** to `reference/historical-evidence-decentralized-trials.md` (Quality: Good, Fixed 5 broken links)
-- 🗑️ `historical-evidence-supporting-real-wold-efficacy-trials.md` → **DELETED** (Redundant duplicate)
-- 🗑️ `history-of-medical-regulation-and-clinical-research.md` → **DELETED** (Redundant duplicate)
-- ✅ `impact-of-innovative-medicines-on-life-expectancy.md` → **MOVED** to `reference/impact-of-innovative-medicines-on-life-expectancy.md` (Quality: High, No TODOs needed)
-- ✅ `nih-recover-initiative.md` → **MOVED & RENAMED** to `reference/nih-funding-efficiency-analysis.md` (Quality: High, Added description)
-- ✅ `organizational-precedents.md` → **MOVED** to `reference/organizational-precedents.md` (Quality: High, Fixed 1 broken link)
-- ✅ `otc-drugs.md` → **MOVED & RENAMED** to `reference/lives-saved-by-drug-accessibility.md` (Quality: High, No TODOs needed)
-- ✅ `pragmatic-trials.md` → **MOVED & RENAMED** to `reference/pragmatic-vs-explanatory-trials.md` (Quality: High, No TODOs needed)
-- ✅ `recovery-trial.md` → **MOVED & RENAMED** to `reference/recovery-trial-case-study.md` (Quality: High, Added TODO to merge with redundant content)
-- ✅ `references.md` → **DELETED** (Obsolete link dump, superseded by organized `reference/` appendix)
-- ✅ `Research-and-Development-in-the-Pharmaceutical-Industry.md` → **MOVED & RENAMED** to `reference/pharmaceutical-industry-randd-analysis.md` (Quality: High, No TODOs needed)
-- ✅ `value-of-new-treatment.md` → **MOVED & RENAMED** to `economics/economic-value-of-accelerated-treatments.md` (Quality: High, No TODOs needed)
-
-**Files to Process:**
-- None.
-
-**Summary:** 18/18 files processed (100% complete)
-
-**Next Directory:** `archive/regulatory/`
-
----
-
-### `archive/regulatory/`
-
-**Files to Process:**
-- ✅ `ai-driven-regulatory-analysis.md` → **MOVED** to `operations/ai-driven-regulatory-analysis.md` (Quality: High, No TODOs needed)
-- ✅ `dfda-executive-order.md` → **MERGED** into `strategy/dfda-implementation-via-executive-action.md` to consolidate strategic plan and draft text. (Quality: High)
-- ✅ `hhs-policy-recommendations.md` → **MOVED & RENAMED** to `strategy/hhs-dFDA-policy-recommendations.md` (Quality: High, Added TODO for link check)
-- ✅ `impact-securities-reform.md` → **MOVED** to `legal/impact-securities-reform.md` (Quality: High, Added TODO for link updates)
-- ✅ `petition.md` → **MOVED & RENAMED** to `strategy/global-referendum/support-petition-draft.md` (Quality: Good, Advocacy asset)
-- `regulations-to-modify-or-rescind.md`
-
-**Summary:** 5/6 files processed (83% complete)
-
-**Next Directory:** `archive/scripts-old/`
-
----
-
-### `archive/scripts-old/`
