@@ -58,3 +58,4 @@ An independent verification layer provides the real-world data and validation ne
 ## Dive Deeper into the Governance Model
 
 -   **[Wishocracy (RAPPA) Governance Model](./governance/wishocracy.md):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
+-   **[DIH On-Chain & AI Architecture](./governance/dih-onchain-architecture.md):** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power the DIH.

@@ -98,7 +98,9 @@ These transformations are not wishful thinking—they are the mathematically ine
 **Individual Wealth Transformation:**
 - **Current median household wealth:** ~$100,000
 - **2055 projected median wealth:** Millions (from eliminated healthcare costs, conflict reduction, and productivity gains)
+- **Projected per capita benefit:** ~$1.2M over 80 years from AI-driven health efficiencies
 - **Healthcare cost savings:** $4.5 trillion annually (US alone) approaching zero
+- **Global disease burden savings:** ~$9.76 trillion annually from a 50% reduction
 - **Energy costs:** Approaching zero through fusion and space-based solar
 - **Manufacturing costs:** Approaching zero through automation and asteroid mining
 

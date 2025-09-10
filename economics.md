@@ -29,13 +29,17 @@ This isn't about defunding defense; it's about making a strategic investment in 
 
 ---
 
-## VICTORY Bonds: The Investment in Humanity
+## VICTORY Instruments: The Investment in Humanity
 
-To bootstrap this new economic model, the DIH will raise its initial capital by issuing **VICTORY Bonds**.
+To bootstrap this new economic model, the DIH will raise its initial capital by issuing two classes of **VICTORY Instruments**, each designed for a specific purpose and audience.
 
-Modeled on the War Bonds that funded victory in WWII, VICTORY Bonds allow citizens, institutions, and even defense contractors to invest directly in the war on disease. They are the financial instrument that allows the DIH to begin operations immediately, engineering a system that delivers a risk-adjusted expected value superior to the world's most elite investment funds.
+### 1. VICTORY Bonds (For Investors)
+Modeled on the War Bonds that funded victory in WWII, VICTORY Bonds are the primary instrument for capitalizing the DIH Treasury. They are a debt-like instrument with a fixed coupon and defined maturity, designed to offer a world-class, de-risked return to accredited and institutional investors.
 
-This transforms a global movement into a concrete financial asset with a clear repayment model, designed to attract the world's most ambitious capital.
+### 2. VICTORY Tokens (For Participants)
+VICTORY Tokens are the primary instrument for incentivizing mass participation in the global referendum. They are a utility token used to reward verifiable actions (like voting and referrals) and may confer governance rights over the DIH treasury. They are not designed to promise profits, which helps mitigate securities risk for a broad, global distribution.
+
+This dual-instrument approach allows the DIH to attract the world's most ambitious capital while simultaneously building a broad, global coalition of engaged stakeholders.
 
 ---
 

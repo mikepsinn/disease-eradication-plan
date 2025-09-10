@@ -82,6 +82,7 @@ This chapter provides the high-level strategic framework. For a detailed breakdo
 
 -   **[The 1% Treaty](./strategy/1-percent-treaty.md):** The full text and game-theoretic design of the core proposal.
 -   **[The Global Referendum](./strategy/global-referendum/):** The detailed implementation plan for building a verifiable, unstoppable global mandate.
+-   **[Legal Compliance Framework](./strategy/legal-compliance-framework.md):** The comprehensive strategy for navigating election law, securities regulations, and international coordination.
 -   **[Co-Opting Defense Contractors](./strategy/co-opting-defense-contractors.md):** The game-theoretic analysis of how to turn the military-industrial complex into an ally.
 -   **[Free-Rider Problem Solution](./strategy/free-rider-solution.md):** A detailed look at the economic and political incentives that ensure national compliance.
 -   **[Historical Precedents](./reference/organizational-precedents.md):** An analysis of the historical movements, from the Campaign to Ban Landmines to WWII War Bonds, that prove the core components of this strategy are feasible.
