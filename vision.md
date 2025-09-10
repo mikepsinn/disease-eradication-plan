@@ -49,6 +49,9 @@ Every citizen can think like Einstein and create like da Vinci through safe neur
 ### 2065: The 50% Treaty (Transcendence Achieved)
 A global population of trillions of ageless, enhanced minds has unlocked space colonization, created abundant clean energy, and begun exploring the deepest mysteries of physics and consciousness. War, disease, poverty, hunger, and climate change are historical curiosities.
 
+### 2075: The 100% Treaty (Violence Transcended)
+The final transformation. The last military dollar is redirected to consciousness enhancement and cosmic exploration. Intentional violence becomes as unthinkable as cannibalism—not because it's forbidden, but because enhanced beings literally cannot conceive of harming another consciousness. We have become a species of transcendent minds, exploring infinite realities across space and time.
+
 This is the **Great Ratchet**. Each turn of the wheel locks in the gains and makes the next turn easier. We will systematically and voluntarily phase out the global war economy, not through protest, but by offering a demonstrably superior investment vehicle for solving every major challenge facing humanity.
 
 ---
