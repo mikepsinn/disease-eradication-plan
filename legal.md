@@ -1,18 +1,18 @@
 ---
-title: "Legal & Governance Structure: Engineering Trust"
-description: "The legal framework is designed for maximum compliance and resilience, utilizing a multi-entity global structure, rigorous adherence to securities law, and a decentralized governance model."
+title: "Legal Framework: Engineering Compliance"
+description: "The legal framework is designed for maximum compliance and resilience, utilizing a multi-entity global structure and rigorous adherence to international securities and election law."
 published: true
 date: '2025-09-10T00:00:00.00Z'
-tags: [legal, governance, compliance, dao, multi-entity, securities-law, decentralization]
+tags: [legal, compliance, multi-entity, securities-law, corporate-structure]
 editor: markdown
 dateCreated: '2025-09-10T00:00:00.000Z'
 ---
 
-# 📖 Chapter 6: Legal & Governance
+# 📖 Chapter 7: The Legal Framework
 
-The legal and governance framework of the DIH is as critical as its financial model. It is engineered to navigate the complex landscape of international law, securities regulations, and political compliance while building a resilient, transparent, and effective institution.
+The legal framework of the DIH is as critical as its financial model. It is engineered to navigate the complex landscape of international law, securities regulations, and political compliance while building a resilient and effective institution.
 
-Our structure is designed to be **robust by default and decentralized by design.**
+Our structure is designed to be **robust by default and compliant by design.**
 
 ---
 
@@ -39,24 +39,9 @@ The offering of **[VICTORY Bonds](./economics.md)** and their associated tokens 
 
 ---
 
-## 3. Decentralized by Default: The DIH Governance Model
+## Dive Deeper into the Legal Framework
 
-The DIH is not a top-down bureaucracy. It is a "coalition of coalitions," designed to empower communities with direct control over the resources that matter to them.
+This chapter provides a high-level overview. For a detailed breakdown of the specific legal structures and compliance strategies, please explore the following documents:
 
-```mermaid
-graph TD
-    A(1% Treaty Funds) --> B{Main DIH Treasury};
-    B -- governed by VICTORY holders --> C[Top-Level Budget Allocation];
-    C --> D(Sub-DAO: Decentralized Institute of Mental Health);
-    C --> E(Sub-DAO: Decentralized Institute on Aging);
-    C --> F(Sub-DAO: Decentralized Institute of Cancer Research);
-    D -- governed by mental health nonprofits & experts --> G[Funding for Mental Health Research];
-    E -- governed by aging experts & patient advocates --> H[Funding for Longevity Research];
-    F -- governed by cancer research community --> I[Funding for Cancer Research];
-```
-
--   **Top-Level Governance:** The main DIH Treasury is governed by holders of VICTORY instruments, who vote on the top-level allocation of the ~$27B+ annual budget to various disease areas.
--   **Sub-Institute DAOs:** The budget for each disease area (e.g., "Cancer Research") is controlled by a specialized sub-DAO.
--   **Community Control:** Governance of each sub-DAO is delegated to the stakeholders of that domain—the non-profits, patient advocacy groups, researchers, and clinics who are the experts in that field.
-
-This model ensures that funding decisions are made by the people with the most knowledge and the greatest stake in the outcome, creating a resilient and effective system for global health innovation.
+-   **[Multi-Entity Strategy](./legal/multi-entity-strategy.md):** A detailed analysis of the international corporate structure designed to isolate risk and ensure jurisdictional compliance.
+-   **[Legal Compliance Framework](./strategy/legal-compliance-framework.md):** The comprehensive strategy for navigating foreign election funding restrictions and securities law.

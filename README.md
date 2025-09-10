@@ -837,11 +837,12 @@ This repository is structured as a book that tells the story of the Decentralize
 *   **[economics.md](./economics.md)**: **Chapter 4: The Financial Engine** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
 *   **[strategy.md](./strategy.md)**: **Chapter 5: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and engineered incentives to align all key stakeholders (i.e. humanity).
 *   **[proof.md](./proof.md)**: **Chapter 6: Why This Isn't Clinically Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
-*   **[legal.md](./legal.md)**: **Chapter 7: Legal & Governance** - An overview of the multi-entity global legal structure and the decentralized governance model designed for compliance and resilience.
-*   **[operations.md](./operations.md)**: **Chapter 8: Building the Organization** - The plan for assembling a lean, elite "activation team" to bootstrap the DIH and then make itself obsolete.
-*   **[FAQ.md](./FAQ.md)**: **Chapter 9: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
-*   **[roadmap.md](./roadmap.md)**: **Chapter 10: Timeline to Global Impact** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
-*   **[call-to-action.md](./call-to-action.md)**: **Chapter 11: How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
+*   **[legal.md](./legal.md)**: **Chapter 7: The Legal Framework** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
+*   **[governance.md](./governance.md)**: **Chapter 8: The Governance Model** - An explanation of the decentralized, stakeholder-driven governance model, powered by the "Wishocracy" voting mechanism.
+*   **[operations.md](./operations.md)**: **Chapter 9: Building the Organization** - The plan for assembling a lean, elite "activation team" to bootstrap the DIH and then make itself obsolete.
+*   **[FAQ.md](./FAQ.md)**: **Chapter 10: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
+*   **[roadmap.md](./roadmap.md)**: **Chapter 11: Timeline to Global Impact** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
+*   **[call-to-action.md](./call-to-action.md)**: **Chapter 12: How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
 *   **[CONTRIBUTING.md](./CONTRIBUTING.md)**: A guide for all contributors, outlining the core principles, content standards, and information architecture of the project.
 
 ### The Sections (Supporting Details)
