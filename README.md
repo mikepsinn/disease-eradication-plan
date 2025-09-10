@@ -824,6 +824,37 @@ To make the abstract numbers feel concrete and personal, a new interactive modul
 
 ---
 
+## Table of Contents: The Book of the DIH
+
+This repository is structured as a book that tells the story of the Decentralized Institutes of Health. The root-level files are the "Chapters" that form the core narrative, and the subdirectories are the "Sections" containing detailed supporting information.
+
+### The Chapters
+
+*   **[README.md](./README.md)**: (This File) A high-level executive summary of the problem, the solution, and the plan.
+*   **[problem.md](./problem.md)**: **Chapter 1: The Grotesque Misallocation** - A detailed analysis of how humanity misallocates trillions to war and destruction while the systems meant to cure disease are broken.
+*   **[solution.md](./solution.md)**: **Chapter 2: Legal Bribery for Peace** - An outline of the 1% Treaty, the simple, rational accord to redirect a fraction of military spending to create a healthier, safer world.
+*   **[economics.md](./economics.md)**: **Chapter 3: The Financial Engine** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
+*   **[strategy.md](./strategy.md)**: **Chapter 4: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and engineered incentives to align all key stakeholders (i.e. humanity).
+*   **[proof.md](./proof.md)**: **Chapter 5: Why This Isn't Clinically Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
+*   **[legal.md](./legal.md)**: **Chapter 6: Legal & Governance** - An overview of the multi-entity global legal structure and the decentralized governance model designed for compliance and resilience.
+*   **[operations.md](./operations.md)**: **Chapter 7: Building the Organization** - The plan for assembling a lean, elite "activation team" to bootstrap the DIH and then make itself obsolete.
+*   **[FAQ.md](./FAQ.md)**: **Chapter 8: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
+*   **[roadmap.md](./roadmap.md)**: **Chapter 9: Timeline to Global Impact** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
+*   **[call-to-action.md](./call-to-action.md)**: **Chapter 10: How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
+*   **[CONTRIBUTING.md](./CONTRIBUTING.md)**: A guide for all contributors, outlining the core principles, content standards, and information architecture of the project.
+
+### The Sections (Supporting Details)
+
+*   **[/economics/](./economics/)**: Contains detailed financial models, investment theses, and ROI calculations.
+*   **[/strategy/](./strategy/)**: Contains detailed execution plans, political strategies, and game-theoretic analyses.
+*   **[/legal/](./legal/)**: Contains detailed legal frameworks, compliance strategies, and governance models.
+*   **[/operations/](./operations/)**: Contains detailed operational plans, hiring documents, and standard operating procedures (SOPs).
+*   **[/reference/](./reference/)**: Contains supporting data, studies, citations, and other third-party evidence.
+*   **[/assets/](./assets/)**: Contains images, diagrams, and other static assets used throughout the knowledge base.
+*   **[/archive/](./archive/)**: Contains all legacy files from the previous structure for historical reference.
+
+---
+
 
 
 
