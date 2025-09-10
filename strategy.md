@@ -40,17 +40,17 @@ This turns our greatest potential obstacle into our most powerful accelerator.
 
 ---
 
-## 3. Solving the Free-Rider Problem: Making Compliance the Rational Choice for Leaders
+## 3. The Bribe: Making Compliance the Most Profitable Decision a Leader Can Make
 
-A global treaty is only as strong as its enforcement. Our enforcement mechanism is not punitive; it is based on making compliance the overwhelmingly rational, self-interested choice for the individual leaders of every nation.
+A global treaty is only as strong as its incentives. Our enforcement mechanism is not the threat of punishment; it is the promise of an overwhelmingly lucrative and career-defining bribe for the individual leaders who join.
 
--   **The Problem (through a Public Choice lens):** A rational, self-interested national leader might ask, "Why should *I* commit 1% of my military budget when I can let others pay and still enjoy the global benefits of new cures?"
--   **The Solution:** We will engineer a system where the personal political and economic cost of *not* joining is catastrophic to a leader's career, and the rewards of joining are immense. The coalition of treaty-signatory nations will form a powerful economic bloc, and access to this bloc will be conditional. A non-compliant leader will have to explain to their key constituents and financial backers why they are choosing to accept:
-    -   **Exclusion from Preferential Trade:** "Why are our country's biggest export industries facing tariffs in the world's largest markets, costing us jobs and your donors' profits?"
-    -   **Denial of Critical Technology:** "Why are the citizens of neighboring countries receiving cures for cancer and Alzheimer's, while our people are not? Are you prepared for the electoral consequences of denying your people these technologies?"
-    -   **Loss of Personal Status & Influence:** "Why have you been excluded from the new global leadership council, diminishing your personal prestige and our nation's voice on the world stage?"
+-   **The Problem (through a Public Choice lens):** A rational, self-interested national leader's calculus is simple: "What's in it for me, personally and politically, right now?" Abstract future benefits for "the nation" are irrelevant.
+-   **The Solution (The Bribe):** We will engineer a system of direct, concentrated, and personal benefits that makes signing the 1% Treaty the single most profitable and politically advantageous move a leader can make. A compliant leader receives:
+    -   **A Personal Political War Chest:** We hand them an undeniable, popular mandate from the **[Global Referendum](./strategy/global-referendum/)**. They can use this massive wave of public support—which we built for them—to crush their political opponents, consolidate power, and build a legacy. We are giving them the ultimate political weapon.
+    -   **The Power to Reward Allies:** Signatory leaders gain the right to direct a portion of the DIH's multi-billion-dollar R&D budget to universities and companies **in their home districts**. This is a firehose of cash they can use to create jobs, reward their biggest financial backers, and stand at ribbon-cutting ceremonies for decades.
+    -   **Enriched Elites:** We will offer privileged, early access to **[VICTORY Bonds](./economics.md)** to a nation's sovereign wealth funds and key financial institutions *contingent on their leader signing the treaty*. This creates a powerful domestic coalition of the nation's wealthiest and most influential players who will pressure their leader to sign the deal that makes them rich.
 
-By making the benefits of participation **concentrated** (lucrative contracts, life-saving cures, personal power) and the costs of non-participation **diffuse** but politically fatal (economic stagnation, angry voters), we make compliance the only logical choice for a leader who wishes to remain in power.
+This is not about avoiding costs. It is about a leader choosing between the status quo or accepting a political and financial package that will personally guarantee their power, prestige, and legacy. We are not asking them to be altruistic; we are offering them the deal of a lifetime.
 
 ---
 
