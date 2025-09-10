@@ -1,95 +1,55 @@
 # Content Review Decision Tree
+## The Top-Down Refactoring Playbook
 
-*Systematic process for reviewing archived files and deciding their fate*
-
-## Decision Tree Flowchart
-
-```
-📁 Archived File
-    ↓
-🤔 Is this about dFDA implementation details?
-    ↓ YES → 🗑️ DELETE (we have separate dFDA wiki)
-    ↓ NO
-    ↓
-🤔 Does this directly support README.md narrative?
-    ↓ YES → Continue to Content Mapping
-    ↓ NO  
-    ↓
-🤔 Is this duplicated elsewhere or obsolete?
-    ↓ YES → 🗑️ DELETE
-    ↓ NO
-    ↓
-🤔 Is this essential for execution?
-    ↓ YES → Continue to Content Mapping
-    ↓ NO → 🗑️ DELETE
-
-Content Mapping:
-💰 Money/ROI/Financial? → economics/
-🎯 Execution/Political? → strategy/
-⚖️ Legal/Compliance? → legal/
-👥 Team/HR/Process? → operations/
-📊 Data/Studies/Citations? → reference/
-```
-
-## Step-by-Step Process
+*Systematic process for populating the new book structure using content from the `/archive` folder.*
 
 ### The Guiding Principle: The "Platonic Ideal" Tree is Truth
 
 Our goal is to create a clean, readable "book" based on the pre-defined target structure below. We are not simply reorganizing old files; we are writing a new book and using the archive for raw material.
 
-**The process is TOP-DOWN, not bottom-up.** For every archived file, the primary question is:
+**The process is TOP-DOWN, not bottom-up.** For every empty file in our ideal structure, the primary question is:
 
-> **"Does the essential, non-obvious, project-specific content in this file belong inside one of the pre-defined files in our ideal structure?"**
+> **"What is the best content in the `/archive` that can be used to build this chapter/section?"**
 
-If the answer is no, the archived file is deleted. We will only add a new file to the "ideal" structure if we discover a truly critical and unforeseen gap.
+If no suitable content exists, the file should be populated with a `TODO` comment outlining what needs to be written. We will only add a new file to the "ideal" structure if we discover a truly critical and unforeseen gap.
 
-### The "Book" vs. The "Internal Playbook"
+### Step-by-Step Process: Populating the Book
 
-To further clarify, we must distinguish between the public-facing book and our internal operational documents.
+Follow this process for each "Chapter" and "Section" in the target structure.
 
-- **The Book (`/`, `economics/`, `strategy/`, `legal/`, `reference/`):** This is the public-facing content. It's the story, the argument, and the evidence. Content here should be written for an external audience.
-- **The Internal Playbook (`operations/`):** This is for internal-facing strategy and standard operating procedures (SOPs). This is the "how-to" for running the organization itself. Content here is for the core team (e.g., hiring plans, fundraising SOPs, messaging frameworks). It is **not** part of the readable book.
+**1. 🎯 SELECT a Target File:**
+   - Pick an empty or incomplete file from the `Complete Target Structure` list below (e.g., `problem.md`).
 
-### 1. Pre-Screening Questions
+**2. 🔎 SEARCH for Source Material:**
+   - Use workspace search (e.g., `@` mentions, keyword search) to find files in the `/archive` directory that contain relevant content.
+   - Good search terms include the target filename, its title, or key concepts it should contain.
 
-For **EVERY** archived file, ask:
+**3. 🤔 EVALUATE and MERGE Content:**
+   - For each potential source file in the archive, review its content and decide what is essential, non-obvious, and project-specific.
+   - Use the **Pre-Screening Questions** below to quickly eliminate irrelevant files.
+   - Copy and paste the valuable content from the source file(s) into your target file.
+   - **Delete the source file from `/archive`** once you have extracted all its valuable content.
+
+**4. ✨ QA the Target File:**
+   - After populating the target file, perform the quality assurance checks outlined in `CONTRIBUTING.md`. This includes:
+     - Fixing all broken internal links.
+     - Adding machine-readable `TODO` comments for any content gaps or style issues.
+
+### Pre-Screening Questions (for evaluating files in `/archive`)
 
 **❌ IMMEDIATE DELETE if ANY of these are true:**
 - Is this generic content not highly specific to our project? (e.g., "how to run a marketing campaign")
-- Is this about dFDA technical implementation? (we have separate dFDA wiki)
+- Is this about dFDA technical implementation? (we have a separate dFDA wiki)
 - Is this a duplicate of content already integrated?
 - Is this outdated planning documentation?
 - Is this a test file or template?
 - Does this contradict our simplified approach?
 
-### 2. Value Assessment
-
-**✅ KEEP AND INTEGRATE if:**
-- Contains unique data/analysis supporting README.md arguments
-- Essential financial models or ROI calculations  
-- Critical execution strategies not covered elsewhere
-- Important legal compliance frameworks
-- Key operational processes
-
-### 3. Content Mapping (Zero Ambiguity Rules)
-
-If keeping content, apply these **exact** rules:
-
-| Content Type | Destination | Examples |
-|--------------|-------------|----------|
-| Financial models, ROI, investment thesis | `economics/` | victory-bonds-tokenomics, peace-dividend-value-capture |
-| Execution plans, political strategy, how-to | `strategy/` | 1-percent-treaty, referral-rewards-system |
-| Legal compliance, governance, regulations | `legal/` | multi-entity-strategy, right-to-trial-act |
-| Team structure, hiring, processes | `operations/` | hiring-plan, crypto-intake-sop |
-| Data, studies, citations, reference material | `reference/` | costs-of-war, recovery-trial |
-
-### 4. Integration Methods
-
-**A. Standalone File:** Move to appropriate directory as-is
-**B. Merge Content:** Combine with existing placeholder or other files
-**C. Extract Key Points:** Pull essential info into root-level narrative files
+---
 
 ## Complete Target Structure: "The 1% Treaty: How to End War and Disease"
+
+*(This is the master plan for the refactoring effort)*
 
 ### Root Level: The Chapters
 Following README.md's narrative flow for maximum readability:
