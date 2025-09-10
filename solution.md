@@ -46,7 +46,12 @@ This plan is executed through a new global organization with a transparent, dece
    - The DIH funds a new clinical trial ecosystem that is **[80X more efficient](./proof.md)** than the current model.
    - All research data and findings are made **open-source and available in real-time** to the entire global scientific community, eliminating waste and accelerating progress.
 
-**4. VICTORY Bonds Kickstart the Process:**
+**4. A "Coalition of Coalitions" Structure:**
+   - The DIH is not a single, top-down bureaucracy. It is a SuperDAO that delegates authority to a network of specialized, subordinate DAOs (subDAOs).
+   - Each subDAO focuses on a specific area of health, such as the **Decentralized Cancer Institute** or the **Decentralized Institute on Aging**.
+   - Governance of each subDAO is delegated to a coalition of the most effective non-profits, patient advocacy groups, and research institutions in that field, ensuring that funding decisions are made by true experts and stakeholders.
+
+**5. VICTORY Bonds Kickstart the Process:**
    - To begin immediately, the DIH will be initially capitalized by selling **VICTORY Bonds** to the public, institutions, and even nations.
    - These bonds allow research and development to start now, with the revenue from the 1% Treaty used to repay bondholders over time, ensuring a sustainable financial cycle.
 

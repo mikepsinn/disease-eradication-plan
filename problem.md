@@ -37,12 +37,16 @@ While we pour trillions into war, the system for creating new medicines is a bur
 
 These are not minor inefficiencies; they are catastrophic failures that cost millions of lives and trillions of dollars.
 
+- **💸 ~$43,000** is the cost per participant in a traditional clinical trial.
 - **💸 ~$2.2 Billion** is the cost to develop a single new treatment, a cost that ultimately falls on patients.
 - **🐢 17 years of suffering** is the average time between the discovery of a new treatment and its arrival to patients.
 - **🚫 85% of patients are forbidden** from participating in the clinical trials that might save their lives.
 - **☠️ 21,000 to 120,000 people die** each decade due to slow and suboptimal regulatory processes.
 - **💊 95% of rare diseases have NO FDA-approved treatments**, because it's impossible to recover a billion-dollar investment from a small patient population.
 - **🙈 Negative results are never published**, leading to billions of dollars being wasted by researchers repeating the same failed experiments.
+- **📊 No Treatment Effectiveness Rankings:** The existing system does not give us a ranked list of the most safe and effective treatments for a given condition.
+- **🥫 No Data on Unpatentable Substances:** We still know next to nothing about the long-term effects of the cocktail of over 330 chemical additives we consume.
+- **🗓️ No Long-Term Outcome Data:** Current trials often only last a few months, so we have no idea what the long-term positive or negative effects of a drug are.
 - **⚛️ 166 billion potential treatments** with drug-like properties have not been tested.
 - **🌍 2 billion people** are suffering from diseases that remain uncured.
 - **🧫 It has been 44 years** since we last eradicated a disease (smallpox in 1980).
