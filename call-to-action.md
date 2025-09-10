@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: '2025-09-10T00:00:00.000Z'
 ---
 
-# 📖 Chapter 10: How You Can Join
+# 📖 Chapter 12: How You Can Join
 
 This is not a spectator sport. The War on Disease requires a global coalition of citizens, investors, leaders, and builders. Your skills, your capital, and your voice are critical to this mission.
 

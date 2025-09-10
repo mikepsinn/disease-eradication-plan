@@ -30,19 +30,23 @@ It is the single most rational and highest-leverage action humanity can take.
 
 ---
 
-## How It Works: The Engine of Cures
+## How It Works: An Engine for Curing Disease
 
-This plan is executed through a new global organization with a transparent, decentralized structure.
+This plan is executed through a new global organization with a transparent, decentralized, and auditable structure.
 
 **1. The 1% Treaty Funds the DIH:**
    - Every participating nation pledges 1% of its annual military budget to the **Decentralized Institutes of Health (DIH)**, a non-profit, globally-governed SuperDAO.
-   - This creates a sustainable, multi-billion dollar annual revenue stream to fund the war on disease.
+   - This creates a sustainable, **[$27+ billion annual treasury](./economics.md)** dedicated to funding public health solutions.
 
-**2. The DIH Runs a More Efficient System:**
-   - The DIH uses its treasury to fund a new clinical trial ecosystem that is **80X more efficient** than the current model, a benchmark already proven by pragmatic trials like the [Oxford RECOVERY trial](./reference/recovery-trial-case-study.md).
+**2. The DIH is Governed by Wishocracy:**
+   - The DIH's budget and research agenda are managed using the **[Wishocracy governance protocol](./governance.md)**.
+   - This allows millions of stakeholders to democratically and efficiently allocate capital to the most promising research without being dominated by special interests.
+
+**3. A Hyper-Efficient & Open-Source R&D Model:**
+   - The DIH funds a new clinical trial ecosystem that is **[80X more efficient](./proof.md)** than the current model.
    - All research data and findings are made **open-source and available in real-time** to the entire global scientific community, eliminating waste and accelerating progress.
 
-**3. VICTORY Bonds Kickstart the Process:**
+**4. VICTORY Bonds Kickstart the Process:**
    - To begin immediately, the DIH will be initially capitalized by selling **VICTORY Bonds** to the public, institutions, and even nations.
    - These bonds allow research and development to start now, with the revenue from the 1% Treaty used to repay bondholders over time, ensuring a sustainable financial cycle.
 
