@@ -37,18 +37,25 @@ The plan *is* the repository. Our goal is to create a single source of truth tha
 
 ## Content and Style Standards
 
-### 1. Information Architecture: The "Book & Appendices" Model
+### 1. Information Architecture: Chapters, Sections, and The Appendix
 
-This repository is structured as a book. The root directory contains the "Chapters," which tell the core narrative. The subdirectories are the "Appendices," which provide the detailed evidence, models, and plans.
+This repository is structured as a book. The root directory contains the "Chapters," which tell the core narrative. The subdirectories are "Sections" that provide detailed evidence, models, and plans for their parent chapter. `reference/` is the one true "Appendix" for external, evidentiary material.
 
 **The Golden Rule:** If a topic is an "Epic" that needs more than one file, it gets a main summary file (`epic.md`) and a corresponding directory (`epic/`) for the details. This pattern applies at all levels.
 
-- **Root Chapters:** `problem.md`, `solution.md`, `economics.md`, `strategy.md`, etc. These are narrative summaries that should be kept concise and link to the appendices for details.
-- **`economics/`:** The appendix for all financial models, ROI calculations, and investment theses.
-- **`strategy/`:** The appendix for all external-facing execution plans (e.g., how we win the referendum).
-- **`legal/`:** The appendix for all binding rules, compliance frameworks, and governance models.
-- **`operations/`:** The appendix for all internal-facing processes for running the organization (e.g., hiring, SOPs).
-- **`reference/`:** The appendix for all supporting data, studies, and third-party evidence.
+**"The Book" vs. "The Internal Playbook"**
+
+- **The Book (`/`, `economics/`, `strategy/`, `legal/`):** This is the public-facing content. It's the story, the argument, and the evidence. Content here should be written for an external audience.
+- **The Internal Playbook (`operations/`):** This is for internal-facing strategy and standard operating procedures (SOPs). This is the "how-to" for running the organization itself. Content here is for the core team.
+- **The Appendix (`reference/`):** This is for supporting data, studies, citations, and other third-party reference material that back up claims made in "The Book."
+
+| Section | Content Type | Examples |
+|---|---|---|
+| `economics/` | Financial models, ROI, investment thesis | `investment-thesis.md`, `peace-dividend-value-capture.md` |
+| `strategy/` | Execution plans, political strategy, how-to | `1-percent-treaty.md`, `co-opting-defense-contractors.md` |
+| `legal/` | Legal compliance, governance, regulations | `multi-entity-strategy.md`, `right-to-trial-act.md` |
+| `operations/` | Team structure, hiring, internal processes | `hiring-plan.md`, `crypto-intake-sop.md` |
+| `reference/` | Data, studies, citations, reference material | `costs-of-war.md`, `recovery-trial.md` |
 
 **Rules for Maintainable Structure:**
 
@@ -61,26 +68,24 @@ This repository is structured as a book. The root directory contains the "Chapte
    
    This ensures every file can be unambiguously referenced with `@filename` while keeping names as simple as possible.
 
-3. **Place new content in the appropriate appendix.** Only modify root-level chapters to summarize and link to new detailed content in the appendices.
+3. **Place new content in the appropriate section.** Only modify root-level chapters to summarize and link to new detailed content.
 
-### 2. Actionable TODOs
+### 2. Quality Assurance and Actionable TODOs
 
-To maintain a clean and actionable list of improvements, we use a specific format for `TODO` comments. These comments flag content that needs citations, stylistic rewrites, clarification, or visual aids.
+To maintain a clean and actionable list of improvements, all contributions must be checked against the following standards. We use a specific format for `TODO` comments to flag content that needs citations, stylistic rewrites, clarification, or visual aids.
 
-**Placement Rules:**
+**1. Internal Link Integrity:**
+   - Before submitting, scan the file for all internal relative links (e.g., `[text](./path/file.md)`).
+   - **You MUST FIX** any links that are broken.
+   - If a link points to a deleted file, either remove the link or repoint it to a relevant alternative.
 
-- Place `TODO`s in the most relevant location **inside the body of the text**.
-- If a `TODO` applies to the entire document (e.g., "Merge this file with another"), place it at the **very bottom of the file**.
-- **NEVER** place `TODO` comments at the top of a file or within the frontmatter block.
-
-**Formatting:**
-
-Use machine-readable comments so they can be easily aggregated into a project-wide "content debt" list.
-
-- `<!-- TODO: Add citation for this claim. -->`
-- `<!-- TODO: Rewrite this section to match project writing style. -->`
-- `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
-- `<!-- TODO: Expand this section to include X. -->`
+**2. Content Quality Triage (TODOs):**
+   - **Placement:** Place `TODO`s in the most relevant location **inside the body of the text**. If a `TODO` applies to the entire document, place it at the **very bottom**. NEVER place `TODO`s at the top of a file or in the frontmatter.
+   - **Formatting:** Use machine-readable comments so they can be easily aggregated into a project-wide "content debt" list.
+     - `<!-- TODO: Add citation for this claim. -->`
+     - `<!-- TODO: Rewrite this section to match project writing style. -->`
+     - `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
+     - `<!-- TODO: Expand this section to include X. -->`
 
 ### 3. Frontmatter Requirements
 
