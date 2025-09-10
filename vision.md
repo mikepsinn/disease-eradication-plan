@@ -80,4 +80,31 @@ In this economy of true abundance, the Three Supers are not sci-fi dreams—they
 
 This is not about becoming post-human; it's about becoming **fully human** for the first time. It's about a species finally free to explore its unlimited potential without the constraints of scarcity, conflict, disease, or death.
 
-This is the endgame. We are not just building a better world. We are building the economic foundation for a civilization that has transcended every major challenge that has limited human flourishing throughout history. It begins with a single, rational decision: to stop funding our own destruction and start investing in our own transcendence.
+## The Economics of Transcendence: By the Numbers
+
+These transformations are not wishful thinking—they are the mathematically inevitable result of redirecting humanity's resources toward creation rather than destruction.
+
+**The Current Misallocation:**
+- **Global military spending:** [$2.44 trillion annually](../reference/costs-of-war.md)
+- **Global medical research:** [$67.5 billion annually](../reference/costs-of-war.md)
+- **Disparity ratio:** 36:1 in favor of weapons over cures
+
+**The Peace Dividend Unlocked:**
+- **Total annual cost of violence:** [$16.5 trillion](../economics/peace-dividend-value-capture.md) (10.9% of global GDP)
+- **Value captured by 1% Treaty:** [$27+ billion annually](../economics/peace-dividend-value-capture.md)
+- **Value returned to society:** [$16.47 trillion annually](../economics/peace-dividend-value-capture.md) (99.84% of total)
+- **Per person impact:** $74,259 saved over lifetime vs. current costs of conflict
+
+**Individual Wealth Transformation:**
+- **Current median household wealth:** ~$100,000
+- **2055 projected median wealth:** Millions (from eliminated healthcare costs, conflict reduction, and productivity gains)
+- **Healthcare cost savings:** $4.5 trillion annually (US alone) approaching zero
+- **Energy costs:** Approaching zero through fusion and space-based solar
+- **Manufacturing costs:** Approaching zero through automation and asteroid mining
+
+**Research and Development Acceleration:**
+- **Current dFDA ROI:** [463:1 over 10 years](../economics/dfda-cost-benefit-analysis.md)
+- **Annual R&D savings potential:** [$50 billion](../economics/dfda-cost-benefit-analysis.md) from efficiency gains
+- **Health outcomes:** [840,000 Quality-Adjusted Life Years](../economics/dfda-cost-benefit-analysis.md) gained annually
+
+This is the endgame. We are not just building a better world. We are building the economic foundation for a civilization that has transcended every major challenge that has limited human flourishing throughout history. The numbers prove it is not only possible—it is inevitable once we make the rational decision to stop funding our own destruction and start investing in our own transcendence.
