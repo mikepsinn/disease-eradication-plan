@@ -105,5 +105,4 @@ The DIH model's success relies on treaty adoption and inflows. For a full discus
 
 The DIH is expanding into a comprehensive ecosystem that mirrors the NIH structure while offering decentralized governance,  titles, and community-specific focus areas. This expansion serves as a strategic recruitment tool for the 1% Treaty referendum effort.
 
-<!-- TODO: The linked file 'dih-organizational-structure.md' does not exist in the new structure. Determine if content from `archive/architecture/organizational-structure.md` should be moved to a new file in `operations/` or if this section should be removed. -->
-For the complete organizational structure, including all sub-agencies,  titles, and implementation roadmap, see [dih-organizational-structure.md](dih-organizational-structure.md).
+For a detailed breakdown of the DIH's internal structure and its relationship with allied non-profits and patient advocacy groups, see the **[DIH Organizational Structure](./governance/organizational-structure.md)** document.
