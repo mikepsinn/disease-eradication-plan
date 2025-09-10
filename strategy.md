@@ -16,6 +16,22 @@ We will succeed by offering every key stakeholder a deal that is mathematically,
 
 ---
 
+## The Intellectual Foundation: Lessons from Public Choice Theory
+
+Our strategy is built on a clear-eyed understanding of how political decisions are actually made. It is a direct application of Public Choice Theory, which analyzes politics through the lens of economics. We operate on four core principles:
+
+-   **1. Individuals Act in Their Own Self-Interest:** We assume that politicians, corporate leaders, and voters are rational actors who will consistently choose the option that provides them with the most personal benefit (wealth, power, security). Our strategy does not rely on altruism; it relies on greed.
+
+-   **2. Concentrated Benefits Outweigh Diffuse Costs:** A small group that stands to gain a large, concentrated benefit will always be more motivated than a large group that bears a small, diffuse cost. We win by engineering a system that provides massive, *concentrated* benefits to key decision-makers for supporting the treaty.
+
+-   **3. Politics is a Marketplace (Politics as Exchange):** Policy is not decided by moral arguments; it is the result of transactions. We are not entering a debate; we are entering a marketplace with a mathematically superior product. We are offering a better deal.
+
+-   **4. Rent-Seeking is Human Nature:** Actors will naturally expend resources to capture economic value through the political process. Instead of fighting this, we channel it. We have created a new, more profitable "rent" for lobbyists and corporations to seek: the Peace Dividend.
+
+By building our entire strategy on these proven principles of human behavior, we are not hoping for change—we are engineering its inevitability.
+
+---
+
 ## The Bribe Sequence: How We Pay Everyone Off
 
 The strategy unfolds in a sequence of bribes, each one funding the next, creating an unstoppable coalition of self-interest.
