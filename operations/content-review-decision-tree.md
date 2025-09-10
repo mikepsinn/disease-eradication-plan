@@ -59,14 +59,15 @@ Following README.md's narrative flow for maximum readability:
 ├── README.md                           ✅ (Perfect intro - "War is incredibly stupid...")
 ├── problem.md                          📖 Chapter 1: The Grotesque Misallocation  
 ├── solution.md                         📖 Chapter 2: Legal Bribery for Peace
-├── economics.md                        📖 Chapter 3: The Financial Engine  
-├── strategy.md                         📖 Chapter 4: How Everyone Wins (The Bribery Strategy)
-├── proof.md                           📖 Chapter 5: Why This Actually Works (Precedents & Evidence)
-├── legal.md                           📖 Chapter 6: Legal Compliance & Structure
-├── operations.md                       📖 Chapter 7: Building the Organization
-├── FAQ.md                             📖 Chapter 8: Objections & Responses
-├── roadmap.md                         📖 Chapter 9: Timeline to Global Impact
-└── call-to-action.md                  📖 Chapter 10: How You Can Join
+├── vision.md                           📖 Chapter 3: The World We Build
+├── economics.md                        📖 Chapter 4: The Financial Engine  
+├── strategy.md                         📖 Chapter 5: How Everyone Wins (The Bribery Strategy)
+├── proof.md                           📖 Chapter 6: Why This Actually Works (Precedents & Evidence)
+├── legal.md                           📖 Chapter 7: Legal Compliance & Structure
+├── operations.md                       📖 Chapter 8: Building the Organization
+├── FAQ.md                             📖 Chapter 9: Objections & Responses
+├── roadmap.md                         📖 Chapter 10: Timeline to Global Impact
+└── call-to-action.md                  📖 Chapter 11: How You Can Join
 ```
 
 ### Supporting Directories: The Detailed Appendices

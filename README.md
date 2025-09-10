@@ -833,14 +833,15 @@ This repository is structured as a book that tells the story of the Decentralize
 *   **[README.md](./README.md)**: (This File) A high-level executive summary of the problem, the solution, and the plan.
 *   **[problem.md](./problem.md)**: **Chapter 1: The Grotesque Misallocation** - A detailed analysis of how humanity misallocates trillions to war and destruction while the systems meant to cure disease are broken.
 *   **[solution.md](./solution.md)**: **Chapter 2: Legal Bribery for Peace** - An outline of the 1% Treaty, the simple, rational accord to redirect a fraction of military spending to create a healthier, safer world.
-*   **[economics.md](./economics.md)**: **Chapter 3: The Financial Engine** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
-*   **[strategy.md](./strategy.md)**: **Chapter 4: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and engineered incentives to align all key stakeholders (i.e. humanity).
-*   **[proof.md](./proof.md)**: **Chapter 5: Why This Isn't Clinically Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
-*   **[legal.md](./legal.md)**: **Chapter 6: Legal & Governance** - An overview of the multi-entity global legal structure and the decentralized governance model designed for compliance and resilience.
-*   **[operations.md](./operations.md)**: **Chapter 7: Building the Organization** - The plan for assembling a lean, elite "activation team" to bootstrap the DIH and then make itself obsolete.
-*   **[FAQ.md](./FAQ.md)**: **Chapter 8: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
-*   **[roadmap.md](./roadmap.md)**: **Chapter 9: Timeline to Global Impact** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
-*   **[call-to-action.md](./call-to-action.md)**: **Chapter 10: How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
+*   **[vision.md](./vision.md)**: **Chapter 3: The World We Build** - A vivid depiction of the future that the DIH will create—a world of accelerated innovation and extended human healthspan.
+*   **[economics.md](./economics.md)**: **Chapter 4: The Financial Engine** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
+*   **[strategy.md](./strategy.md)**: **Chapter 5: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and engineered incentives to align all key stakeholders (i.e. humanity).
+*   **[proof.md](./proof.md)**: **Chapter 6: Why This Isn't Clinically Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
+*   **[legal.md](./legal.md)**: **Chapter 7: Legal & Governance** - An overview of the multi-entity global legal structure and the decentralized governance model designed for compliance and resilience.
+*   **[operations.md](./operations.md)**: **Chapter 8: Building the Organization** - The plan for assembling a lean, elite "activation team" to bootstrap the DIH and then make itself obsolete.
+*   **[FAQ.md](./FAQ.md)**: **Chapter 9: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
+*   **[roadmap.md](./roadmap.md)**: **Chapter 10: Timeline to Global Impact** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
+*   **[call-to-action.md](./call-to-action.md)**: **Chapter 11: How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
 *   **[CONTRIBUTING.md](./CONTRIBUTING.md)**: A guide for all contributors, outlining the core principles, content standards, and information architecture of the project.
 
 ### The Sections (Supporting Details)
