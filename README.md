@@ -846,10 +846,27 @@ This repository is structured as a book that tells the story of the Decentralize
 ### The Sections (Supporting Details)
 
 *   **[/economics/](./economics/)**: Contains detailed financial models, investment theses, and ROI calculations.
+    *   [investment-thesis.md](./economics/investment-thesis.md)
+    *   [peace-dividend-value-capture.md](./economics/peace-dividend-value-capture.md)
+    *   [dfda-cost-benefit-analysis.md](./economics/dfda-cost-benefit-analysis.md)
+    *   [fundraising/](./economics/fundraising/)
 *   **[/strategy/](./strategy/)**: Contains detailed execution plans, political strategies, and game-theoretic analyses.
+    *   [1-percent-treaty.md](./strategy/1-percent-treaty.md)
+    *   [dih-model.md](./strategy/dih-model.md)
+    *   [co-opting-defense-contractors.md](./strategy/co-opting-defense-contractors.md)
+    *   [free-rider-solution.md](./strategy/free-rider-solution.md)
+    *   [global-referendum/](./strategy/global-referendum/)
 *   **[/legal/](./legal/)**: Contains detailed legal frameworks, compliance strategies, and governance models.
+    *   [multi-entity-strategy.md](./legal/multi-entity-strategy.md)
+    *   [impact-securities-reform.md](./legal/impact-securities-reform.md)
 *   **[/operations/](./operations/)**: Contains detailed operational plans, hiring documents, and standard operating procedures (SOPs).
+    *   [hiring-plan.md](./operations/hiring-plan.md)
+    *   [pre-seed-strategy.md](./operations/pre-seed-strategy.md)
+    *   [communications-and-messaging-playbook.md](./operations/communications-and-messaging-playbook.md)
 *   **[/reference/](./reference/)**: Contains supporting data, studies, citations, and other third-party evidence.
+    *   [costs-of-war.md](./reference/costs-of-war.md)
+    *   [recovery-trial.md](./reference/recovery-trial.md)
+    *   [organizational-precedents.md](./reference/organizational-precedents.md)
 *   **[/assets/](./assets/)**: Contains images, diagrams, and other static assets used throughout the knowledge base.
 *   **[/archive/](./archive/)**: Contains all legacy files from the previous structure for historical reference.
 
