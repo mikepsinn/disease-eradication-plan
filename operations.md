@@ -60,3 +60,13 @@ The activation team will be assembled in phases, scaling only as the mission ach
 -   **Key Hires:** CFO, Chief Compliance Officer, Head of Governance / DAO Facilitator, and Treasury Operations.
 
 This lean, phased approach ensures that we remain agile, efficient, and relentlessly focused on the mission at every stage.
+
+---
+
+## Dive Deeper into Operations
+
+This chapter provides a high-level overview of our operational philosophy and hiring roadmap. For more detailed plans and standard operating procedures (SOPs), please explore the following documents:
+
+-   **[Hiring Plan](./careers/hiring-plan.md):** A detailed, phase-by-phase breakdown of the team structure and scaling strategy.
+-   **[Non-Profit Partnership Playbook](./operations/nonprofit-partnership-playbook.md):** The guide for how we will build and manage a global coalition of allied organizations.
+-   **[Crypto Intake SOP](./operations/crypto-intake-sop.md):** The standard operating procedure for securely receiving and managing cryptocurrency donations and investments.

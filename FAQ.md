@@ -60,6 +60,14 @@ No. The DIH is engineered to be the opposite of a typical bureaucracy.
 
 ---
 
+### **"Why focus on reducing military spending? Shouldn't we just increase health research funding directly?"**
+
+This is not about nominal dollar figures; it is about the **real allocation of a finite pie of global resources.** The world's top scientists, engineers, and manufacturing capacity are a limited resource. If we simply "increase health spending" through new appropriations, but the military budget also continues to grow, no real resources have been shifted. It's an inflationary wash.
+
+A **direct, treaty-bound reallocation** is the only mechanism that forces a true shift of these finite resources. By cutting 1% from military budgets, we are not just moving dollars; we are freeing up the physicists, data scientists, and supply chains that were serving the military-industrial complex and making them available to cure Alzheimer's. This is how you change the game.
+
+---
+
 ### **"Don't we already spend enough on medical research?"**
 
 The world spends 40 times more on military force[^3] than on medical research.[^4] The $20-27 billion unlocked by the 1% Treaty would represent a nearly **40% increase in the entire world's budget for medical R&D.** It is a transformative, not incremental, sum of money. This new funding, when deployed through an 80X more efficient model, will have a multiplicative impact on the rate of cures.

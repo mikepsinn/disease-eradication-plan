@@ -35,13 +35,11 @@ This mission is powered by a new financial engine. You can help capitalize it.
 
 ---
 
-### For Leaders of Organizations & Non-Profits: Form an Alliance
+### For Leaders of Non-Profits, NGOs, and Advocacy Organizations
 
-Your organization can play a pivotal role in building the coalition.
+Your organization can play a pivotal role in building the coalition, and the case for your involvement is not based on altruism, but on arithmetic.
 
-1.  **Run the Numbers:** We ask you to do one thing: run a cost-effectiveness analysis comparing the impact of your current programs to the impact of helping pass the 1% Treaty. The data shows that redirecting a portion of your advocacy budget to this fight is the highest-leverage action you can take to achieve your own mission.
-2.  **Join the Coalition:** Contact us to formally join the alliance of non-profits, advocacy groups, and research institutions fighting for this cause. Your voice lends critical legitimacy and expertise.
-3.  **Become a Sponsoring Partner:** As the DIH launches its specialized sub-institutes, you can become a fiscal sponsor or governance partner for the institute aligned with your mission (e.g., The Decentralized Institute of Cancer Research).
+-   **The Challenge: Run the Numbers.** We ask you to do one thing: run a rigorous cost-effectiveness analysis comparing the impact of your current programs to the impact of redirecting a portion of your advocacy budget to helping pass the 1% Treaty. The data shows that for almost any major global problem—health, poverty, climate, or human rights—helping to unlock the $16.5 trillion peace dividend is the single highest-leverage action you can take to achieve your own mission. When you are ready to join the coalition, **[contact us](./operations.md)**.
 
 ---
 
