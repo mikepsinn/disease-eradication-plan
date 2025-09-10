@@ -138,8 +138,6 @@ Following README.md's narrative flow for maximum readability:
 ├── coalition-building.md                    (Partner recruitment & management)
 ├── free-rider-solution.md                   (Preventing treaty defection)
 ├── executive-action-implementation.md       (DOGE model approach)
-├── war-on-disease-strategy.md               (Comprehensive strategy overview)
-├── historical-precedents-and-rationale.md   (Why this playbook wins)
 ├── messaging-value-estimation.md            (Sentiment analysis framework)
 ├── highest-leverage-advocacy.md             (Why every org should focus here)
 └── global-referendum/                       (Epic folder for referendum details)
