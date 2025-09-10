@@ -17,6 +17,10 @@ This repository documents the "War on Disease," a mission to make curing people 
 
 - **Primary Framing:** "Make curing people more profitable than killing them." / "Bribe our way to a better world."
 - **Secondary Framing:** "Make peace more profitable than war." / "Capture the peace dividend."
+- **Anchor in Public Choice Theory:** All strategic arguments must be framed through the lens of public choice theory. Assume that all actors (politicians, corporate leaders, voters) act in their own rational self-interest. Avoid arguments based on abstract "national interests" and instead focus on the specific, concrete incentives that drive individual decision-makers.
+- **Identify the Incentive Gaps:** Frame the *problem* not as a moral failure, but as a system with flawed incentives. The status quo is a rational response by individuals to a system that rewards rent-seeking and concentrates benefits for a few while diffusing costs to the many.
+- **Engineer a Better Deal:** Frame the *solution* as an exercise in incentive engineering. The goal is to create a new system with a superior set of **concentrated benefits** for a broader coalition of key actors. Always answer the question: "What's in it for them, personally and professionally?"
+- **Co-Opt, Don't Fight:** Acknowledge that powerful interest groups exist. The strategy is not to destroy them but to make it more profitable for them to support our goals than to oppose them. This is "politics as exchange."
 - **Be Concise and Direct:** Use short sentences, simple words, and powerful language.
 - **Speak Plainly:** Avoid weak corporate euphemisms. Write like a human.
 - **Quantify Everything:** All claims must be backed by data and citations.
