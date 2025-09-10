@@ -34,30 +34,47 @@ The true power of the 1% Treaty is that it creates a **self-reinforcing flywheel
 
 The first 1% redirection will produce such an absurdly high return on investment—in lives saved, costs averted, and economic productivity unlocked—that the logical next step will be obvious to every citizen and political leader. Once the model is proven, the global referendum will not be about whether to continue, but how fast to accelerate toward humanity's ultimate potential.
 
--   **The 2% Treaty:** "Last year, we spent 1% of our military budget to cure Alzheimer's. This year, shall we spend another 1% to make biological aging optional?"
--   **The 5% Treaty:** "We've conquered disease. Now let's conquer suffering itself. Can we engineer default states of well-being that surpass anything our ancestors could imagine?"
--   **The 20% Treaty:** "We've achieved superlongevity and superhappiness. Now let's augment human intelligence until every citizen can think like Einstein and create like da Vinci."
--   **The 50% Treaty:** The "Peace Dividend" has become humanity's primary economic sector, focused on a single goal: transcending every biological limitation that constrains human flourishing.
+### 2030: The 1% Treaty (Disease Defeated)
+Your child is cured of a genetic disorder in a day. Cancer becomes as treatable as the common cold. You're 95 but feel 65. The annual $270 billion investment has eliminated humanity's major killers and extended healthy lifespan by decades.
 
-This is the **Great Ratchet**. Each turn of the wheel locks in the gains and makes the next turn easier. We will systematically and voluntarily phase out the global war economy, not through protest, but by offering a demonstrably superior investment vehicle for the unlimited potential of human consciousness.
+### 2035: The 2% Treaty (Aging Made Optional)
+You choose to reset your biological age to 25 and stay there. The additional $270 billion has cracked the aging code. Death from old age becomes as obsolete as death from infection once was.
+
+### 2045: The 5% Treaty (Suffering Abolished)
+Depression, anxiety, and mental anguish become treatable conditions. With $675 billion annually dedicated to consciousness research, we've mastered the biological mechanisms of well-being. The default human experience is now profound contentment and creativity.
+
+### 2055: The 20% Treaty (Intelligence Amplified)
+Every citizen can think like Einstein and create like da Vinci through safe neural enhancement. Meanwhile, $2.7 trillion in annual investment has solved climate change through massive clean energy deployment, ended poverty through post-scarcity economics, and eliminated hunger through advanced food production.
+
+### 2065: The 50% Treaty (Transcendence Achieved)
+A global population of trillions of ageless, enhanced minds has unlocked space colonization, created abundant clean energy, and begun exploring the deepest mysteries of physics and consciousness. War, disease, poverty, hunger, and climate change are historical curiosities.
+
+This is the **Great Ratchet**. Each turn of the wheel locks in the gains and makes the next turn easier. We will systematically and voluntarily phase out the global war economy, not through protest, but by offering a demonstrably superior investment vehicle for solving every major challenge facing humanity.
 
 ---
 
 ## A Civilization Reborn: The Economics of Abundance
 
-What happens to a world that no longer bears the twin burdens of disease and war? It becomes a civilization where the impossible becomes routine.
+What happens to a world that no longer bears the twin burdens of disease and war? It becomes a civilization where every major human challenge has been solved.
 
 The **median wealth** of a citizen in this new world is unimaginable by today's standards. Consider the economic chains we will have broken:
 -   **Healthcare costs approach zero.** With aging reversed and all diseases cured, the multi-trillion dollar deadweight loss of the "sick care" industry is eliminated and repurposed for creation.
--   **The $16.5 trillion annual cost of conflict is repurposed.** This capital, once wasted on destruction, is now invested in consciousness enhancement, space exploration, and artistic expression.
+-   **The $16.5 trillion annual cost of conflict is repurposed.** This capital, once wasted on destruction, is now invested in clean energy infrastructure, space habitats, consciousness enhancement, and artistic expression.
 -   **Human capital becomes infinite.** A world where every person can choose their biological age, optimize their mental state, and augment their intelligence is a world where human potential is truly limitless.
 
-In this economy of post-scarcity abundance, the Three Supers are not sci-fi dreams—they are the industrial output of a civilization that has aligned its resources with its grandest possibilities:
+But the transformation goes far beyond individual enhancement. When superintelligent minds tackle collective challenges, the impossible becomes inevitable:
+
+-   **Climate change is reversed.** Massive investments in fusion energy, carbon capture, and geoengineering have not just halted warming but begun restoring pre-industrial climate patterns.
+-   **Poverty is extinct.** Post-scarcity manufacturing and energy abundance have made basic necessities—food, shelter, education, healthcare—freely available to every person on Earth.
+-   **Hunger is eliminated.** Advanced agriculture, lab-grown foods, and precision resource distribution ensure that no human ever lacks nutrition.
+-   **Space becomes home.** Self-sustaining colonies throughout the solar system provide unlimited room for a growing, ageless population to explore and create.
+
+In this economy of true abundance, the Three Supers are not sci-fi dreams—they are the industrial output of a civilization that has aligned its resources with its grandest possibilities:
 
 -   **Superlongevity:** You choose your lifespan. Death from aging becomes as obsolete as death from smallpox. Humanity's planning horizon extends from decades to millennia.
 -   **Superhappiness:** We master the biological mechanisms of consciousness itself. Depression, anxiety, and suffering become treatable conditions. The default human experience becomes profound well-being, creativity, and joy.
 -   **Superintelligence:** A global population of trillions of ageless, blissful minds, each augmented by AI, can direct collective intelligence toward the universe's deepest mysteries—and solve them.
 
-This is not about becoming post-human; it's about becoming **fully human** for the first time. It's about a species finally free to explore its unlimited potential.
+This is not about becoming post-human; it's about becoming **fully human** for the first time. It's about a species finally free to explore its unlimited potential without the constraints of scarcity, conflict, disease, or death.
 
-This is the endgame. We are not just building a better world. We are building the economic foundation for a better form of consciousness. It begins with a single, rational decision: to stop funding our own destruction and start investing in our own transcendence.
+This is the endgame. We are not just building a better world. We are building the economic foundation for a civilization that has transcended every major challenge that has limited human flourishing throughout history. It begins with a single, rational decision: to stop funding our own destruction and start investing in our own transcendence.
