@@ -30,7 +30,7 @@ National security is actually *increased* for two reasons:
 
 This is the primary challenge, and our entire strategy is engineered to solve it. We don't expect politicians to lead; we expect them to follow an undeniable mandate.
 
-1.  **The 3.5% Tipping Point:** Our first goal is to win the support of 3.5% of the global population. History shows that no government can ignore a unified movement of that scale. This makes supporting the treaty the politically rational choice for survival.
+1.  **The 3.5% Tipping Point:** Our first goal is to win the support of 3.5% of the global population. History shows that no government can ignore a unified movement of that scale.[^1] This makes supporting the treaty the politically rational choice for survival.
 2.  **Incentives, Not Morality:** We will **[co-opt the powerful military lobby](./strategy.md)** by offering them a superior financial return. When their profits are aligned with the treaty, their opposition will become advocacy.
 3.  **Critical Mass, Not Unanimity:** The treaty does not require every single country to join at once. Once a critical mass of major economic powers (e.g., the US and EU) signs on, they can use overwhelming **[economic and political incentives](./strategy.md)** (like preferential trade access) to make joining the only logical choice for other nations.
 
@@ -54,7 +54,7 @@ The "cost of being excluded" is not an abstract national cost. It is a direct, p
 
 No. The DIH is engineered to be the opposite of a typical bureaucracy.
 
--   **80X More Efficient:** The DIH's entire purpose is to fund a research model that is **[80 times more efficient](./proof.md)** than the current system.
+-   **80X More Efficient:** The DIH's entire purpose is to fund a research model that is **[80 times more efficient](./proof.md)** than the current system.[^2]
 -   **Decentralized by Default:** It is not a single, top-down organization. It is a **["coalition of coalitions"](./legal.md)** where funding decisions are made by decentralized groups of experts, patients, and advocates in each specific disease area.
 -   **Automated & Transparent:** Most treasury functions are executed by transparent smart contracts, not by committees. The DAO's role is primarily for high-level strategy and emergency overrides, not day-to-day management.
 
@@ -62,4 +62,42 @@ No. The DIH is engineered to be the opposite of a typical bureaucracy.
 
 ### **"Don't we already spend enough on medical research?"**
 
-The world spends 40 times more on military force than on medical research. The $20-27 billion unlocked by the 1% Treaty would represent a nearly **40% increase in the entire world's budget for medical R&D.** It is a transformative, not incremental, sum of money. This new funding, when deployed through an 80X more efficient model, will have a multiplicative impact on the rate of cures.
+The world spends 40 times more on military force[^3] than on medical research.[^4] The $20-27 billion unlocked by the 1% Treaty would represent a nearly **40% increase in the entire world's budget for medical R&D.** It is a transformative, not incremental, sum of money. This new funding, when deployed through an 80X more efficient model, will have a multiplicative impact on the rate of cures.
+
+---
+
+### **"This sounds like an illegal bribe."**
+
+The current system of "legal" lobbying is a slow, inefficient bribe that produces war and disease. We are simply applying market realities to save lives. Our incentives are transparent, and our goal is to produce peace, health, and human flourishing. The consequentialist math is clear: the current misallocation of resources leads to preventable deaths, while our model makes healing more profitable than killing.
+
+---
+
+### **"A global referendum is not a real protest. It's a flawed analogy."**
+
+A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy"; it is the largest, most powerful political mandate in human history. It is a direct threat to the power of traditional media and captured political parties, capable of swinging elections and forcing change. Clicks on a screen are the new boots on the ground.
+
+---
+
+### **"A government's promise to pay is unenforceable. This is a fantasy."**
+
+Enforcement is not based on courts, but on creating direct political and financial consequences for the individual leaders who defy the mandate from their citizens. We make it politically and financially ruinous for them to make the wrong choice. (See the "free-rider" question above for details).
+
+---
+
+### **"This is too operationally complex to build."**
+
+We are assembling proven components, not inventing new technology from scratch. DAOs like MakerDAO already manage billions of dollars securely.[^5] Our approach is to integrate existing, battle-tested solutions for treasury management, governance, and secure voting into a unified, resilient system.
+
+---
+
+## Sources
+
+[^1]: Erica Chenoweth's research on nonviolent civil resistance found that campaigns achieving active participation from just 3.5% of the population have never failed to achieve their goals. See: ["The 3.5% rule"](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), BBC Future, 2019.
+
+[^2]: The Oxford RECOVERY trial cost approximately $500 per patient, while the median cost of a pivotal trial for a new therapeutic is around $41,000—an 80X difference. See: Oren Cass, ["Slow, Costly Clinical Trials Drag Down Biomedical Breakthroughs"](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs), Manhattan Institute, 2023.
+
+[^3]: World military expenditure reached $2.443 trillion in 2023. See: ["Trends in World Military Expenditure, 2023"](https://www.sipri.org/publications/2024/sipri-fact-sheets/trends-world-military-expenditure-2023), SIPRI, 2024.
+
+[^4]: Global government spending on cure-oriented medical research was approximately $67.5 billion in 2023–2024. See: [Global Government Medical Research Spending](./reference/global-government-medical-research-spending.md).
+
+[^5]: MakerDAO is a decentralized autonomous organization that manages over $5 billion in assets through its on-chain governance protocol. See: [MakerDAO Official Site](https://makerdao.com).

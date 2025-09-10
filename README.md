@@ -350,7 +350,7 @@ The financial power of this model comes from capturing the first, tangible porti
 - **The Captured Dividend:** We redirect **$27 billion annually** from military spending to health. This tangible cash flow is the *captured* portion of the Peace Dividend that directly backs our financial instruments.
 - **The Societal Dividend:** By reducing global conflict drivers by 1%, our intervention unlocks a much larger prize for the world. A 1% reduction of the $16.5T Cost of Violence equates to **$165 billion in annual economic value** returned to society through increased stability and productivity.
 
-We capture the first $27B to unlock the full $165B for everyone. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](./economic-models/peace-dividend-value-capture.md).
+We capture the first $27B to unlock the full $165B for everyone. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](./economics/peace-dividend-value-capture.md).
 
 ---
 
@@ -836,12 +836,12 @@ This repository is structured as a book that tells the story of the Decentralize
 *   **[vision.md](./vision.md)**: **Chapter 3: The World We Build** - A vivid depiction of the future that the DIH will create—a world of accelerated innovation and extended human healthspan.
 *   **[economics.md](./economics.md)**: **Chapter 4: The Financial Engine** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
 *   **[strategy.md](./strategy.md)**: **Chapter 5: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and engineered incentives to align all key stakeholders (i.e. humanity).
-*   **[proof.md](./proof.md)**: **Chapter 6: Why This Isn't Clinically Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
+*   **[proof.md](./proof.md)**: **Chapter 6: Why This Isn't Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
 *   **[legal.md](./legal.md)**: **Chapter 7: The Legal Framework** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
 *   **[governance.md](./governance.md)**: **Chapter 8: The Governance Model** - An explanation of the decentralized, stakeholder-driven governance model, powered by the "Wishocracy" voting mechanism.
 *   **[operations.md](./operations.md)**: **Chapter 9: Building the Organization** - The plan for assembling a lean, elite "activation team" to bootstrap the DIH and then make itself obsolete.
-*   **[FAQ.md](./FAQ.md)**: **Chapter 10: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
-*   **[roadmap.md](./roadmap.md)**: **Chapter 11: Timeline to Global Impact** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
+*   **[roadmap.md](./roadmap.md)**: **Chapter 10: The Master Plan** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
+*   **[FAQ.md](./FAQ.md)**: **Chapter 11: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
 *   **[call-to-action.md](./call-to-action.md)**: **Chapter 12: How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
 *   **[CONTRIBUTING.md](./CONTRIBUTING.md)**: A guide for all contributors, outlining the core principles, content standards, and information architecture of the project.
 
