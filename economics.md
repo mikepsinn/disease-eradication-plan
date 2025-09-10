@@ -81,6 +81,6 @@ By engineering a system with a clear path to profitability, a global base of sup
 This chapter provides a high-level overview. For a detailed breakdown of the financial engineering, risk modeling, and value-capture mechanics, please explore the following documents:
 
 -   **[Investment Thesis](./economics/investment-thesis.md):** A quantitative analysis of how VICTORY Bonds are designed to deliver a risk-adjusted expected value superior to the world's most elite hedge funds.
--   **[The Peace Dividend: Value Capture & Distribution](./economics/peace-dividend-value-capture.md):** A quantitative model of how a ~$2.5B investment unlocks a $16.5T annual peace dividend, and how that value is distributed between investors and society.
--   **[dFDA Cost-Benefit Analysis](./economics/dfda-cost-benefit-analysis.md):** A detailed analysis of the dFDA platform, which projects a 463:1 return on investment and an annual generation of 840,000 Quality-Adjusted Life Years (QALYs).
--   **[Costs of War Analysis](./reference/costs-of-war.md):** A data-driven breakdown of the economic, human, and societal costs of war and military spending that form the basis of the Peace Dividend.
+-   **[The Peace Dividend: Value Capture Model](./economics/peace-dividend-value-capture.md):** An analysis of the $16.5 trillion annual "Cost of Violence" and the model for capturing a fraction of it to fund the DIH.
+-   **[dFDA Cost-Benefit Analysis](./economics/dfda-cost-benefit-analysis.md):** A detailed analysis of the dFDA protocol, which projects a 463:1 return on investment and an annual generation of 840,000 Quality-Adjusted Life Years (QALYs).
+-   **[Costs of War](./reference/costs-of-war.md):** A supplementary document detailing the direct and indirect economic costs of global conflict.

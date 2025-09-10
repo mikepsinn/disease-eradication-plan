@@ -110,3 +110,8 @@ These transformations are not wishful thinking—they are the mathematically ine
 - **Health outcomes:** [840,000 Quality-Adjusted Life Years](../economics/dfda-cost-benefit-analysis.md) gained annually
 
 This is the endgame. We are not just building a better world. We are building the economic foundation for a civilization that has transcended every major challenge that has limited human flourishing throughout history. The numbers prove it is not only possible—it is inevitable once we make the rational decision to stop funding our own destruction and start investing in our own transcendence.
+
+## Dive Deeper
+
+-   **[The Economics of Peace](./economics.md):** The core financial model for the 1% Treaty and DIH.
+-   **[The Value of Automating Research](./economics/value-of-automating-research.md):** A detailed analysis of the economic case for AI-driven health efficiencies, projecting a per capita benefit of over $1.2M over a lifetime.

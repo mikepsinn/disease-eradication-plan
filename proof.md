@@ -99,3 +99,8 @@ The failures of past movements are even more instructive than the successes, as 
 ---
 
 This is not a theoretical plan. It is a pragmatic synthesis of proven models for operational efficiency, political mobilization, and financial engineering, deliberately designed to avoid the well-documented failure modes of the past.
+
+-   **[The DIH Model](./strategy/dih-model.md):** The "coalition of coalitions" structure designed for decentralized execution.
+-   **[The Investment Thesis](./economics/investment-thesis.md):** The financial engineering that powers the system.
+-   **[Organizational Precedents](./reference/organizational-precedents.md):** A detailed analysis of the historical organizations (The Global Fund, ICBL, etc.) that informed our hybrid model.
+-   **[The RECOVERY Trial Case Study](./reference/recovery-trial.md):** A deep dive into the Oxford trial that serves as the blueprint for 80X efficiency in medical research.

@@ -16,7 +16,7 @@ The DIH operates not as a research body itself, but as the central financial eng
 
 ## Primary Mission: Subsidizing Patient Access to Trials
 
-The cornerstone of the DIH's mission is to ensure that no patient is denied access to a promising trial due to cost. The DIH acts as the source of patient subsidies for participation in all trials on the dFDA Platform.
+The cornerstone of the DIH's mission is to ensure that no patient is denied access to a promising trial due to cost. The DIH acts as the source of patient subsidies for participation in all trials on the dFDA Protocol.
 
 Subsidies are not allocated uniformly; they are **proportional to the expected value to society** of a patient's participation. This creates a powerful incentive for researchers to focus on high-impact projects. The algorithm for calculating subsidies prioritizes trials based on a combination of factors:
 
@@ -44,8 +44,8 @@ By eliminating duplicated effort, we ensure that a much higher percentage of fun
 Beyond patient subsidies, the DIH Treasury is responsible for the growth and maintenance of the entire dFDA ecosystem. It achieves this through a DAO-governed funding model for:
 
 *   **Prizes & Competitions:** Funding major awards like the FDA-X Prize to incentivize breakthrough innovation from the global community.
-*   **Development Bounties:** Posting and paying out bounties for specific feature enhancements, bug fixes, and security improvements to the dFDA Platform's open-source codebase.
-*   **Infrastructure Maintenance:** Ensuring the long-term sustainability, security, and scalability of the dFDA Platform as a global public good.
+*   **Development Bounties:** Posting and paying out bounties for specific feature enhancements, bug fixes, and security improvements to the dFDA Protocol's open-source codebase.
+*   **Infrastructure Maintenance:** Ensuring the long-term sustainability, security, and scalability of the dFDA Protocol as a global public good.
 
 ## Funding Model: VICTORY Bonds for the War on Disease
 

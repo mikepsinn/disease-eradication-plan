@@ -10,7 +10,7 @@ dateCreated: '2025-08-22T00:00:00.000Z'
 
 # Organizational Precedents & Staffing Models
 
-This document analyzes the organizational structures of three successful entities that serve as precedents for the DIH. By understanding how they are staffed and organized, we can provide a credible, real-world justification for our own [Hiring Plan](../operations/hiring-plan.md).
+This document analyzes the organizational structures of three successful entities that serve as precedents for the DIH. By understanding how they are staffed and organized, we can provide a credible, real-world justification for our own [Hiring Plan](../careers/hiring-plan.md).
 
 The DIH is a hybrid organization that combines the functions of all three:
 1.  **The Global Fund:** A massive, multi-billion dollar public health funding institution.

@@ -81,8 +81,8 @@ This is the pragmatic, sequenced roadmap from a bold idea to an inevitable globa
 This chapter provides the high-level strategic framework. For a detailed breakdown of the specific mechanics, models, and precedents, please explore the following documents:
 
 -   **[The 1% Treaty](./strategy/1-percent-treaty.md):** The full text and game-theoretic design of the core proposal.
--   **[The Global Referendum](./strategy/global-referendum/):** The detailed implementation plan for building a verifiable, unstoppable global mandate.
--   **[Legal Compliance Framework](./strategy/legal-compliance-framework.md):** The comprehensive strategy for navigating election law, securities regulations, and international coordination.
--   **[Co-Opting Defense Contractors](./strategy/co-opting-defense-contractors.md):** The game-theoretic analysis of how to turn the military-industrial complex into an ally.
--   **[Free-Rider Problem Solution](./strategy/free-rider-solution.md):** A detailed look at the economic and political incentives that ensure national compliance.
--   **[Historical Precedents](./reference/organizational-precedents.md):** An analysis of the historical movements, from the Campaign to Ban Landmines to WWII War Bonds, that prove the core components of this strategy are feasible.
+-   **[The Global Referendum](./strategy/global-referendum/):** The plan for mobilizing a global political mandate.
+-   **[Co-Opting the Defense Lobby](./strategy/co-opting-defense-contractors.md):** The strategy for turning adversaries into advocates.
+-   **[Solving the Free-Rider Problem](./strategy/free-rider-solution.md):** The detailed game theory behind ensuring national compliance.
+-   **[The Legal & Compliance Framework](./strategy/legal-compliance-framework.md):** The plan for navigating global election and securities law.
+-   **[Organizational Precedents](./reference/organizational-precedents.md):** An analysis of the historical models that inform this strategy.

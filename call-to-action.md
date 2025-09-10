@@ -48,6 +48,6 @@ Your organization can play a pivotal role in building the coalition, and the cas
 We are recruiting the elite "activation team" to build the infrastructure for this global movement.
 
 -   **The Core Team:** We are hiring for key leadership roles in engineering, finance, growth, and political strategy. See our **[hiring plan](./operations.md)** for more details.
--   **Contribute to Open Source:** The dFDA platform and the global referendum engine will be open-source projects. We will be posting bounties for specific features and security audits.
+-   **Contribute to Open Source:** The dFDA protocol and the global referendum engine will be open-source projects. We will be posting bounties for specific features and security audits.
 
 This is a call to arms for the world's most talented and driven individuals. If you believe in the mission, we want you on the front lines.
