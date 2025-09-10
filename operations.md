@@ -39,9 +39,9 @@ The activation team will be assembled in phases, scaling only as the mission ach
 ### Phase 0: The Founding Team (Months 0-3)
 
 **Goal:** Assemble the 3 core leads with pre-seed funding to execute the main capital raise and global campaign.
--   **Capital Markets Lead:** To structure and execute the VICTORY Bond offering.
--   **Elections & IE Compliance Lead:** To design the legally compliant global political campaign.
--   **Growth & Referrals Lead:** To architect the viral engine for the global referendum.
+-   **[Capital Markets Lead](./careers/capital-markets-lead.md):** Structure the VICTORY bonds, build the comprehensive financial model and data room, and lead the subsequent seed and Series A fundraising efforts.
+-   **Elections & IE Compliance Lead:** A legal and political expert responsible for designing the legally-compliant framework for the global referendum and the multi-jurisdictional independent expenditure (IE) strategy.
+-   **Growth & Referrals Lead:** A product and growth leader responsible for designing the technology, incentive structure, and viral referral mechanics of the global referendum platform and VOTE points system.
 
 ### Phase 1: The Seed Team (Headcount: ~20)
 
