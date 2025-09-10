@@ -20,9 +20,9 @@ The 1% Treaty is not the endgame. It is the **activation energy** for a new huma
 
 Imagine a day in the life, twenty years after the 1% Treaty is ratified.
 
-A child is diagnosed with a rare genetic disorder that was once a death sentence. Her AI-powered physician sequences her genome, identifies the flaw, and designs a custom mRNA therapy that is printed at a local pharmacy the next day. The therapy was developed by a decentralized research institute, funded by the DIH, and its data was made instantly available to the world. The cost to the family is zero.
+Your child is diagnosed with a rare genetic disorder that was once a death sentence. Her AI-powered physician sequences her genome, identifies the flaw, and designs a custom mRNA therapy that is printed at a local pharmacy the next day. The therapy was developed by a decentralized research institute, funded by the DIH, and its data was made instantly available to the world. The cost to the family is zero.
 
-Your parents, now in their 90s, are as sharp and active as they were in their 60s. The neurodegenerative plagues of the 20th century have been rendered treatable, then preventable, by a wave of innovation unleashed by a global coalition of scientists no longer constrained by profit motives.
+You are 95 years old, but you feel 25. You've just completed a standard epigenetic reset, a routine procedure that has reversed 70 years of cellular damage. You are not just "healthy for your age"; you *are* biologically young again. What will you do with your second life? Will you start a new career? Explore the world? Learn a new art? The choice is yours. This is not science fiction; this is the standard of care we are building.
 
 This is the first, tangible return on our investment. It is a world where we have won the war on disease as we know it. But it is only the beginning.
 
@@ -36,7 +36,7 @@ The first 1% redirection will produce such an absurdly high return on investment
 
 -   **The 2% Treaty:** The argument becomes simple: "Last year, we spent 1% of our military budget to cure Alzheimer's. This year, shall we spend another 1% to cure cancer?"
 -   **The 5% Treaty:** The global war on disease expands to tackle the fundamental mechanisms of aging itself.
--   **The 20% Treaty:** The "Peace Dividend" is no longer a metaphor. It is the single largest and most productive sector of the global economy.
+-   **The 20% Treaty:** The "Peace Dividend" is no longer a metaphor. It is the single largest and most productive sector of the global economy, focused on a single goal: upgrading the human condition.
 
 This is the **Great Ratchet**. Each turn of the wheel locks in the gains and makes the next turn easier. We will systematically and voluntarily phase out the global war economy, not through protest, but by offering a demonstrably superior investment vehicle for human capital and resources.
 
