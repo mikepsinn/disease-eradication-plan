@@ -1,12 +1,10 @@
 {
   "default": true,
+  "MD009": false,
   "MD013": { "line_length": 120 },
   "MD029": { "style": "ordered" },
-  "MD033": false,
   "MD030": false,
-  "no-hard-tabs": true,
-  "whitespace": {
-    "br_spaces": 2,
-    "list_indent": true
-  }
+  "MD033": false,
+  "MD047": false,
+  "no-hard-tabs": true
 } 
