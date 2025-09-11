@@ -33,18 +33,18 @@ We'd still have $2.69 trillion/year left over. That's still enough to kill 67.25
 
 ### But how do we do it?
 
-**The Plan:** legally bribe the shit out of literally everyone to get every nation in the world to ratify a "[1% Treaty](./strategy/1-percent-treaty/1-percent-treaty.md)" that redirects 1% of military spending to a global [Decentralized Institutes of Health (DIH)](./strategy/1-percent-treaty/decentralized-institutes-of-health.md) where funding is decided by patient choice and need by subsidizing their participation in "pragmatic clinical trials" that are [80X more efficient](./reference/recovery-trial.md) than standard trials.
+Simple. We bribe EVERYONE.
 
-**How it works:** Make curing disease more profitable than war.
+For every $1 the military-industrial complex spends on lobbying politicians, it receives over [$1,813 in government contracts](#lobbying-roi-calc). 
 
-For every $1 the military-industrial complex spends on lobbying politicians, it receives over [$1,813 in government contracts](#lobbying-roi-calc). So why couldn't a **Peace-Industrial Complex** do the same thing?
+So here's the plan: We do exactly the same thing in reverse.
 
-Getting the 1% Treaty passed will require:
+We create a [1% Treaty](./strategy/1-percent-treaty/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./strategy/1-percent-treaty/decentralized-institutes-of-health.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./reference/recovery-trial.md) for the most promising new treatments."
 
-- A global referendum showing support from at least [3.5% of the population](#3-5-rule) of each nation.
-- Extensive lobbying (using the existing military-industrial complex political apparatus).
+Getting every government to ratify the treaty requires two things:
 
-This effort will likely cost between [\$1 billion and \$2.5 billion](./economic-models/fundraising-and-budget-plan.md).
+1. Prove [3.5% of humanity](#3-5-rule) wants this (that's the magic number for unstoppable political movements).
+2. Spend [\$1-2.5 billion](./economic-models/fundraising-and-budget-plan.md) bribing the right people legally.
 
 ### Q: How do we get \$2 billion and persuade the military industrial complex to help?
 
@@ -60,9 +60,11 @@ The military industrial complex is composed of humans that are not evil, they ju
 
 # II. THE PROBLEM
 
-## The Grotesque Misallocation of Human Resources
+## We're Doing This Backwards
 
-Governments spend **[\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)** on military and **[\$67.5 billion](./reference/global-government-medical-research-spending.md)** on finding cures for diseases. That's a **40X disparity**.
+Governments spend [\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024) on ways to kill people and [\$67.5 billion](./reference/global-government-medical-research-spending.md) on ways to save them.
+
+That's 40 to 1. Forty times more money for death than for life.
 
 The Pentagon alone [can't account for \$2.5 trillion](#pentagon-unaccounted-2-5t) in assets—250 times larger than what we're asking them to redirect. **They lose more money by accident than we need to cure cancer.**
 
