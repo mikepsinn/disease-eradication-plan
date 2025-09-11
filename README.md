@@ -101,7 +101,7 @@ We can't change human nature. But we can change what pays.
 
 Right now, war pays better than peace. So we get war.
 
-The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will legally bribe our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
+Here's the plan: We're going to legally bribe everyone—citizens, politicians, military contractors, investors—by offering them more money than they're making now. We'll bribe our way to a better world with an offer that's too good to refuse because the math is way better than what we're doing now.
 
 ```mermaid
 graph TD;
@@ -156,14 +156,14 @@ The full plan is detailed below. But if you're already convinced, here's how you
 
 **[VICTORY Bonds](./strategy/1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
 
-Our financing is governed by two core, transparent principles that ensure a fair balance between rewarding investors and fulfilling our mission:
+Here are our two rules for how the money works:
 
 Here are the two simple rules:
 
 1. **We're Going to Try to Make You Filthy Rich:** About 40% returns per year, which beats just about everything. That's ~28x your money back over 10 years.
 2. **But We Won't Forget Why We're Here:** No matter how much money we make, we'll never give more than half to investors. The other half goes to actually curing diseases. Because what's the point of getting rich if everyone you love is dead?
 
-The model is designed to **front-load investor returns**, paying out the target amount (~$7.23B per year in the full success scenario) as quickly as treaty inflows allow. The 40% CAGR represents the total 10-year return, while the large year-one payout reflects our strategy of rapidly de-risking the investment for our partners.
+We pay investors most of their money up front (~$7.23B per year when everything works) as fast as the treaty money comes in. The 40% annual return is spread over 10 years, but we front-load it so investors get their money quickly and don't have to worry about us disappearing.
 
 ## The DIH Treasury: 80X More Efficient Research
 
@@ -237,7 +237,7 @@ This simple model ensures that even in conservative scenarios, the DIH remains m
 
 **We don't compete with the military-industrial complex. We co-opt them.**
 
-Our entire thesis is engineered to offer military contractors and politicians a better deal, turning today's **War Contractors** into tomorrow's **Peace Contractors**.
+Here's our plan: We offer military contractors and politicians a better deal than what they're getting now, turning today's **War Contractors** into tomorrow's **Peace Contractors**.
 
 **Current Military Contractor Economics:**
 
@@ -253,7 +253,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 
 - **Who:** Wealthy individuals, funds, Anchor Investors
 - **The Bribe:**
-  - **Targeting a >40% CAGR (~28x Return):** We designed this to make you more money than the fanciest hedge funds run by Harvard guys in expensive suits. The math works because we're taking money that's currently being wasted on bombs and using it to cure cancer instead. Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](./economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](./economic-models/dih-treasury-cash-flow-model.md).
+  - **Targeting a >40% CAGR (~28x Return):** We designed this to make you more money than the fanciest hedge funds run by Harvard guys in expensive suits. The math works because we're taking money that's currently being wasted on bombs and using it to cure cancer instead. Two rules about payouts: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](./economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](./economic-models/dih-treasury-cash-flow-model.md).
   - **VICTORY bonds** that grant governance control over the $27B annual DIH treasury.
   - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](./economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
 
@@ -275,7 +275,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 
 - **Who:** Key legislators in target countries
 - **The Bribe\*:**
-  - **Personal Wealth Creation:** Early access to [VICTORY Bonds](./economic-models/victory-bond-investment-thesis.md) with superior returns designed to outperform defense stocks and traditional political corruption
+  - **Personal Wealth Creation:** Early access to [VICTORY Bonds](./economic-models/victory-bond-investment-thesis.md) with better returns than defense stocks and traditional political corruption
   - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
   - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
 
@@ -288,7 +288,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 1. **They Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats all alternative investment options
 2. **They Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk
 3. **They Protect Their Families:** Their families get diseases too. Hence, they'd be better off profiting from funding cures rather than bombs
-4. **Repurpose Their Lobbyists:** Instead of hiring new lobbyists, we legally bribe them with superior returns to get their existing lobbying apparatus to push for the treaty
+4. **Repurpose Their Lobbyists:** Instead of hiring new lobbyists, we legally bribe them with better returns to get their existing lobbying apparatus to push for the treaty
 
 **Our Superior Offer to Politicians:**
 
@@ -334,7 +334,7 @@ Fair skepticism. Here's why the math actually works:
 ### 4. Financial Enforcement Is Stronger Than Legal Enforcement
 
 - [$16.5 trillion annual cost of violence](#global-violence-costs)—we capture 0.16% of this waste
-- Leaders of nations that default face immediate political consequences. Our enforcement mechanism is not international law, but overwhelming, targeted campaign support for compliant leaders and against defectors.
+- Leaders of nations that default face immediate political consequences. We don't enforce this through international courts. We enforce it by giving massive campaign support to leaders who comply and funding their opponents if they don't.
 - This political and financial alignment provides stronger enforcement than any international court.
 
 ### 5. We Co-opt Rather Than Compete
@@ -426,7 +426,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 8. "You're competing with military contractors who have decades of relationships and influence"
 
-- **Reality:** See [How We Co-opt the Military-Industrial Complex](#the-core-strategy-co-opt-dont-compete) above. We don't compete—we offer superior returns and co-opt their existing networks. For detailed analysis, see [Co-Opting Defense Contractors](./strategy/co-opting-defense-contractors.md).
+- **Reality:** See [How We Co-opt the Military-Industrial Complex](#the-core-strategy-co-opt-dont-compete) above. We don't compete. We offer better returns and co-opt their existing networks. For detailed analysis, see [Co-Opting Defense Contractors](./strategy/co-opting-defense-contractors.md).
 
 ### 9. "How do you prevent waste and ensure the money actually helps patients?"
 
@@ -434,11 +434,11 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 10. "How does this help patients vs. just funding more bureaucracy?"
 
-- **Reality:** The dFDA flips the funding model on its head. Instead of grants going to institutions, the money follows the patient. Funding is allocated as direct subsidies for patients to enroll in eligible clinical trials. While a transparent algorithm helps prioritize trials based on metrics like disease burden, **patients make the final decision.** Researchers and institutions only get paid when patients choose to join their study. This creates a competitive marketplace where the best, most impactful research attracts funding directly from the people it aims to help.
+- **Reality:** The DIH flips the funding model on its head. Instead of grants going to institutions, the money is directed by the patient. Funding is allocated as direct subsidies for patients to enroll in eligible clinical trials. A computer program helps rank trials by which diseases kill the most people, but **patients make the final decision.** Researchers and institutions only get paid when patients choose to join their study. The best research gets the most patients because patients aren't stupid—they'll pick the studies that might actually help them.
 
 ### 11. "What about the millions of jobs in the defense industry? This is a threat to their livelihoods."
 
-- **Reality:** This is not about cutting productive jobs; it's about redirecting a tiny fraction of the budget that is currently lost to waste and transforming it into a new engine for job creation. The U.S. contribution to this plan, for example, is equivalent to less than 0.5% of the trillions the Pentagon already cannot account for—money that isn't funding jobs productively right now. We propose investing that waste into the high-growth job sector of the future. The same brilliant engineers building guidance systems can build next-generation medical imaging devices. The same logistics experts managing military hardware can manage supply chains for delivering trial medications. This is a net job creator, transitioning our most valuable human capital from a cycle of waste to an industry of creation and healing.
+- **Reality:** This is not about cutting productive jobs; it's about redirecting a tiny fraction of the budget that is currently lost to waste and transforming it into a new engine for job creation. The U.S. contribution to this plan, for example, is equivalent to less than 0.5% of the trillions the Pentagon already cannot account for—money that isn't funding jobs productively right now. We want to take that wasted money and use it to create jobs in medicine instead. The same brilliant engineers building guidance systems can build next-generation medical imaging devices. The same logistics experts managing military hardware can manage supply chains for delivering trial medications. This is a net job creator, transitioning our most valuable human capital from a cycle of waste to an industry of creation and healing.
 
 ### 12. "This plan feels anti-military and disrespectful to the soldiers who protect us."
 
@@ -446,7 +446,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 13. "Aren't blockchains environmentally disastrous? How can you save humanity while boiling the oceans?"
 
-- **Reality:** This is a valid concern based on early blockchain technology. However, the DIH will be built on modern, energy-efficient **Proof-of-Stake (PoS)** consensus mechanisms, which consume over 99.9% less energy than their Proof-of-Work predecessors. Our commitment to global health includes planetary health; our technical architecture will reflect this.
+- **Reality:** This is a valid concern based on early blockchain technology. However, the DIH will be built on modern, energy-efficient **Proof-of-Stake (PoS)** consensus mechanisms, which consume over 99.9% less energy than their Proof-of-Work predecessors. Our commitment to global health includes planetary health; we'll build this the right way.
 
 ### 14. "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"
 
@@ -468,7 +468,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **Why This Objection is Overstated:** The US already can't account for **$2.5 trillion** in assets—more than 250 times the $10 billion annual US contribution to this plan. Redirecting 1% is trivial compared to existing waste. Other nations' military spending is relatively small (US represents ~40% of global total). Even if holdouts don't comply, they won't catch up to US capabilities. Everyone has a price: We use massive legal incentives targeting personal financial gain to make compliance more profitable than defection.
 
-- **Making It Personal: Why We Bribe Individuals, Not Institutions:** Countries can't be bribed. But the humans who run countries? They have mortgages and kids and retirement accounts just like everyone else. We apply the same strategy we use with military contractors: **Personal Investment Opportunity** (Leaders and their families can invest in [VICTORY Bonds](./economic-models/victory-bond-investment-thesis.md) designed to offer mathematically superior returns to alternative investments), **Direct Financial Stakes** (We offer leaders opportunities to profit directly from the $27B annual treasury through legally compliant investment vehicles), **Family Security** (Leaders' families get diseases too—they can profit from a system that perpetuates risk, or profit _even more_ from one that funds cures), and **Political Insurance** (Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice).
+- **Making It Personal: Why We Bribe Individuals, Not Institutions:** Countries can't be bribed. But the humans who run countries? They have mortgages and kids and retirement accounts just like everyone else. We apply the same strategy we use with military contractors: **We Let Them Invest Too** (Leaders and their families can invest in [VICTORY Bonds](./economic-models/victory-bond-investment-thesis.md) that pay better than anything else they can find), **We Give Them a Cut** (We offer leaders opportunities to profit directly from the $27B annual treasury through legally compliant investment vehicles), **Family Security** (Leaders' families get diseases too—they can profit from a system that perpetuates risk, or profit _even more_ from one that funds cures), and **Political Insurance** (Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice).
 
 - **Here's the Thing:** If we don't do this, we'll probably all die from nuclear war or get eaten by robots. A U.S.–Russia nuclear exchange would loft ~150 Tg of soot and cause global famine killing >5 billion people. Even if this plan only works partially, it's still better than the alternative. Which is death. For detailed mechanisms, see [Free Rider Solution](./strategy/free-rider-solution.md).
 
@@ -490,7 +490,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 21. "What if this fails? Where's my return?" (Financial Risk)
 
-- **Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, benchmarked against elite funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
+- **Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, compared to the best hedge funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
 
 - **Mitigation:** Clear milestone gates for funding release; diversified repayment from multiple government commitments.
 
@@ -900,14 +900,14 @@ This repository is structured as a book that tells the story of the Decentralize
 - **[README.md](./README.md)**: (This File) A high-level executive summary of the problem, the solution, and the plan.
 - **[problem.md](./problem.md)**: **Chapter 1: The Grotesque Misallocation** - A detailed analysis of how humanity misallocates trillions to war and destruction while the systems meant to cure disease are broken.
 - **[solution.md](./solution.md)**: **Chapter 2: The 1% Treaty** - An outline of the simple, rational accord to redirect a fraction of military spending to create a self-funding engine for global health.
-- **[dfda.md](./dfda.md)**: **Chapter 3: The Engine of Cures** - An introduction to the Decentralized FDA (dFDA), the revolutionary, 80X more efficient research protocol the DIH will build.
+- **[dfda.md](./dfda.md)**: **Chapter 3: The Engine of Cures** - An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build. (It's already been proven to work.)
 - **[vision.md](./vision.md)**: **Chapter 4: The World We Build** - A vivid depiction of the future that the DIH and dFDA will create—a world of accelerated innovation and extended human healthspan.
 - **[economics.md](./economics.md)**: **Chapter 5: The Financial Engine** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
 - **[strategy.md](./strategy.md)**: **Chapter 6: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and engineered incentives to align all key stakeholders (i.e. humanity).
 - **[proof.md](./proof.md)**: **Chapter 7: Why This Isn't Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
 - **[legal.md](./legal.md)**: **Chapter 8: The Legal Framework** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
 - **[governance.md](./governance.md)**: **Chapter 9: The Governance Model** - An explanation of the decentralized, stakeholder-driven governance model that will manage the DIH.
-- **[operations.md](./operations.md)**: **Chapter 10: Building the Organization** - The plan for assembling a lean, elite "activation team" to bootstrap the DIH and then make itself obsolete.
+- **[operations.md](./operations.md)**: **Chapter 10: Building the Organization** - The plan for hiring a few very smart people to bootstrap the DIH and then make itself obsolete.
 - **[roadmap.md](./roadmap.md)**: **Chapter 11: The Master Plan** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
 - **[FAQ.md](./FAQ.md)**: **Chapter 12: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
 - **[call-to-action.md](./call-to-action.md)**: **Chapter 13: How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
