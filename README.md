@@ -48,9 +48,9 @@ Getting every government to ratify the treaty requires two things:
 
 ### Q: How do we get \$2 billion and persuade the military industrial complex to help?
 
-**A: Create the most profitable investment vehicle in the world.**
+**A: We sell bonds designed to be the most profitable investment in the world.**
 
-We create a **1% Treaty Fund** to finance the War on Disease by selling **[VICTORY bonds](./strategy/1-percent-treaty/victory-bonds-tokenomics.md)** just like the US did to finance WW2—except our bonds are designed to deliver world-class returns while funding the cure for disease.
+Remember World War II? America sold war bonds to fund the fight against fascism. We're doing the same thing, but for disease.
 
 The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./strategy/1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
 
@@ -68,22 +68,24 @@ That's 40 to 1. Forty times more money for death than for life.
 
 The Pentagon alone [can't account for \$2.5 trillion](#pentagon-unaccounted-2-5t) in assets—250 times larger than what we're asking them to redirect. **They lose more money by accident than we need to cure cancer.**
 
-We haven't eradicated a single disease in [over 50 years](#smallpox-eradicated). Meanwhile, we have [enough nuclear bombs to kill all of humanity twice](#nuke-winter-150tg).
+We haven't eradicated a single disease in [50 years](#smallpox-eradicated). But we have [enough nuclear weapons to end civilization](#nuke-winter-150tg) several times over. (Just in case the first apocalypse doesn't take.)
 
 In our evolutionary past, when resources were scarce, violence was necessary for survival. But today we live in a world with enough food for everyone. In fact, nearly all starvation today is actually the RESULT of violent conflict.
 
-## Why Good Intentions Have Failed
+## Why We Keep Being Idiots
 
-For centuries, we've known war brings suffering. Yet we fund it anyway. Why?
+War is profitable. 
 
-Military contractors earn billions. Politicians receive generous donations. The cycle continues. **Moral arguments have never been enough to overcome financial incentives.**
+Military contractors make billions. Politicians get campaign donations. Everyone's getting paid except the people getting shot.
 
-## The Existential Choice
+No amount of "war is bad" speeches will fix this. Money talks louder than morals.
 
-So humanity has 2 paths:
+## The Choice
 
-1. Continue on a path of escalating conflict, risking self-inflicted extinction.
-2. Engineer a new system that aligns our vast resources with our collective survival and well-being.
+Humanity has two options:
+
+1. Keep building bigger bombs, autonomous weapons systems until we accidentally blow ourselves up or die of one of our many fine diseases.
+2. Eradicate said disease instead.
 
 Pick one.
 
@@ -91,11 +93,13 @@ See [1% Treaty](./strategy/1-percent-treaty/1-percent-treaty.md) for quantified 
 
 ---
 
-# III. THE SOLUTION (Simple & Clear)
+# III. THE SOLUTION
 
-## Our Answer: Legal Bribery for Peace
+## Make Peace More Profitable Than War
 
-We will not change minds with morals. We will make curing people more profitable than killing them. We call this **Peace Profiteering**.
+We can't change human nature. But we can change what pays.
+
+Right now, war pays better than peace. So we get war.
 
 The core of the plan is a transparent, legally-compliant system of incentives that offers superior financial returns to every stakeholder—from citizens and politicians to military contractors and their investors. We will legally bribe our way to a better world with an offer that is too good to refuse because the math is overwhelmingly superior to the status quo.
 
@@ -120,9 +124,9 @@ graph TD;
     end
 ```
 
-## How We Fix It: The 5-Step Plan
+## The Plan
 
-**The Goal: Make curing people more profitable than killing them.**
+**Goal:** Make curing people more profitable than killing them.
 
 **Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](./economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./strategy/legal-compliance-framework.md)).
 
