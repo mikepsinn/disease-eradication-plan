@@ -180,7 +180,7 @@ async function validateMarkdownFile(filePath: string) {
   const validationPromises = links.map(link => validateLink(link, filePath, sourceHeadingsSet));
   const results = await Promise.all(validationPromises);
   
-  const errors = results.filter(r => r !== null);
+  const errors = results.filter(r => r !== null) as string[];
   
   if (errors.length > 0) {
     console.error(`Found ${errors.length} broken links in ${filePath}:`);
@@ -188,22 +188,46 @@ async function validateMarkdownFile(filePath: string) {
   } else {
     console.log(`All links in ${filePath} are valid.`);
   }
+  return errors;
+}
+
+const ROOT_DIR = path.resolve(__dirname, '..');
+const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand'];
+
+async function findMarkdownFiles(dir: string): Promise<string[]> {
+    let mdFiles: string[] = [];
+    const entries = await fs.promises.readdir(dir, { withFileTypes: true });
+    for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
+        if (IGNORE_PATTERNS.some(p => fullPath.includes(path.sep + p))) continue;
+        if (entry.isDirectory()) {
+            mdFiles = mdFiles.concat(await findMarkdownFiles(fullPath));
+        } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdc'))) {
+            mdFiles.push(fullPath);
+        }
+    }
+    return mdFiles;
 }
 
 async function main() {
-  const args = process.argv.slice(2);
-  let filePath = args[0];
+  const allFiles = await findMarkdownFiles(ROOT_DIR);
+  let allErrors: string[] = [];
 
-  if(!filePath) {filePath = 'economic-models/dfda-cost-benefit-analysis.md';}
-
-  if (!filePath) {
-    console.error('Please provide a file path to validate.');
-    console.error('Usage: ts-node scripts/validate-links.ts <path/to/file.md>');
-    process.exit(1);
+  for (const filePath of allFiles) {
+    const relativePath = path.relative(ROOT_DIR, filePath);
+    await fixAmpersands(relativePath);
+    const errors = await validateMarkdownFile(relativePath);
+    if (errors.length > 0) {
+      allErrors = allErrors.concat(errors.map(e => `${relativePath}: ${e}`));
+    }
   }
-  
-  await fixAmpersands(filePath);
-  await validateMarkdownFile(filePath);
+
+  if (allErrors.length > 0) {
+    console.error(`\nFound a total of ${allErrors.length} broken links across all files.`);
+    process.exit(1);
+  } else {
+    console.log('\n✅ All links in all markdown files are valid!');
+  }
 }
 
 main().catch(err => {

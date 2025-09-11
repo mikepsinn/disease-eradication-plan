@@ -6,7 +6,7 @@ import { hideBin } from 'yargs/helpers';
 import * as yaml from 'js-yaml';
 
 const ROOT_DIR = path.resolve(__dirname, '..');
-const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', 'operations'];
+const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand'];
 
 async function findMarkdownFiles(dir: string): Promise<string[]> {
     let mdFiles: string[] = [];
