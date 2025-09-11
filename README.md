@@ -533,7 +533,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 3. **Complete Transparency & Auditability**
    - All treasury addresses published with real-time public dashboards
    - Immutable transaction logs with standardized disbursement tags
-   - We check the computer code twice a year and the operations every six months with published reports
+   - Annual smart contract audits and semiannual operational audits with published reports
    - Hash-committed invoices and budgets for full accountability
 
 4. **Recovery & Response Mechanisms**
