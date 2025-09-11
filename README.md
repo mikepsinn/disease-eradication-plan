@@ -13,11 +13,11 @@ domains: [cross]
 doc_type: strategy
 ---
 
-War is incredibly stupid. It costs humanity over [$16.5 trillion/year](#global-violence-costs) in lost productivity, healthcare costs, property damage, environmental destruction, and other related expenses.
+War is incredibly stupid. It costs us [$16.5 trillion a year](#global-violence-costs) in wasted time, blown-up buildings, and general human misery.
 
 Yet, we spend [$2.72 trillion](#sipri-2024-spending) per year on this idiocy.
 
-All the while, death and disease are slowly destroying the lives of you and everyone you love. Yet we spend 40X less ([$67.5 billion](./reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
+Meanwhile, aging, death and disease are very gradually destroying the lives of you and everyone you love. Yet we spend 40X less ([$67.5 billion](./reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
 
 Therefore, the **BEST IDEA IN THE WORLD** is for humanity to stop wasting its scarce resources on ever-increasing its capacity for self-destruction and instead use those resources to help the billions of people suffering from disease.
 

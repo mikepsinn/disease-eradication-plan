@@ -10,7 +10,11 @@ dateCreated: "2025-09-09T00:00:00.000Z"
 
 # How to Contribute to the DIH Knowledge Base
 
-Thank you for your interest in contributing. This document defines the contribution rules, structure, and workflows for this knowledge base. By participating, you agree to abide by the terms outlined here.
+Thank you for your interest in contributing to a plan that could save millions of lives. This document defines the contribution rules, structure, and workflows for this knowledge base. 
+
+We're here because humanity spends 40X more on weapons than on curing diseases. While millions die from preventable illnesses, we waste trillions on the capacity to kill each other. This is not a normal business plan—it's an attempt to fix the most grotesque misallocation of resources in human history.
+
+By participating, you agree to abide by the terms outlined here.
 
 ## Core Principles
 
@@ -28,6 +32,34 @@ This repository documents the "War on Disease," a mission to make curing people 
 - **Tell a Compelling Story:** This is not just a plan; it's a movement. Use the "chapters" to build a powerful narrative:
   - `problem.md` should graphically and emotionally depict the human cost of war and disease. It must build urgency.
   - `solution.md` should paint a vivid, hopeful picture of the future we are building—a world without war and disease. It must inspire.
+
+### Critical Writing Quality Standards
+
+Every sentence must pass these tests to avoid sounding like AI-generated content:
+
+**The 4 Core Checks:**
+1. **Clarity:** Can I say this to my mom and have her understand?
+2. **Credibility:** Would I stake my reputation on this claim?
+3. **Concision:** Can I cut words without losing meaning?
+4. **Humanity:** Does this sound like Kurt Vonnegut wrote it?
+
+**Automatic Red Flags (Rewrite Immediately):**
+- **Superlatives:** "best," "world-class," "revolutionary," "unprecedented"
+- **Buzzwords:** "synergy," "leverage," "activation," "paradigm shift"
+- **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
+
+**Gold Standard Test:** Would Warren Buffett write this sentence?
+- Clear enough for anyone
+- Backed by facts
+- No salesy drama
+- Respectful of reader's intelligence
+
+**Authentic Outrage vs. Corporate Hype:**
+- **Good:** "The Pentagon loses more money in accounting errors than we spend trying to cure cancer. This is insane."
+- **Bad:** "We're revolutionizing the paradigm to create world-class solutions for the unprecedented global health crisis."
+- **Write from genuine anger** about millions dying while we waste trillions on weapons. If you're not actually outraged by this situation, you shouldn't be writing this document.
+
+**One-Second Test:** If you hesitate before reading a sentence aloud to a skeptical audience, rewrite it.
 
 ## Contributor Workflow
 
