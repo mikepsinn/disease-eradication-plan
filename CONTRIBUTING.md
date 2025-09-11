@@ -65,26 +65,20 @@ This repository documents the "War on Disease," a mission to make curing people 
 - No salesy drama
 - Respectful of reader's intelligence
 
-**Authentic Outrage vs. Corporate Hype:**
-- **Good:** "The Pentagon loses more money in accounting errors than we spend trying to cure cancer. This is insane."
-- **Bad:** "We're revolutionizing the paradigm to create world-class solutions for the unprecedented global health crisis."
-- **Write from genuine anger** about millions dying while we waste trillions on weapons. If you're not actually outraged by this situation, you shouldn't be writing this document.
+**Voice and Tone: Principled, Blunt, and Credible**
+
+- **Write from a place of genuine outrage.** If you're not angry that we waste trillions on weapons while millions die from preventable diseases, you shouldn't be writing this.
+  - **Good:** "The Pentagon loses more money in accounting errors than we spend trying to cure cancer. This is insane."
+  - **Bad:** "We're revolutionizing the paradigm to create world-class solutions for the unprecedented global health crisis."
+- **Assume self-interest, not idealism.** Ground every argument in Public Choice Theory.
+  - **Good:** "Politicians support this because we fund their campaigns and their opponents if they don't."
+  - **Bad:** "World leaders will embrace this plan because it's the right thing to do."
+- **Use blunt language, not euphemisms.** Call things by their real names, but maintain technical precision where it adds clarity.
+  - **Good:** "How to stay out of prison," "We're bribing everyone."
+  - **Bad:** "Legal compliance framework," "Incentive alignment."
+  - **Good and Precise:** "Transparent, automated, outcome-driven institutions" is better than "computer systems" because it specifies *what kind* of systems and *why* they matter.
 
 **One-Second Test:** If you hesitate before reading a sentence aloud to a skeptical audience, rewrite it.
-
-**Public Choice Theory Reality Check:** Every sentence must assume humans respond to incentives, not idealism.
-- **Good:** "Politicians support this because we fund their campaigns and their opponents if they don't."
-- **Bad:** "World leaders will embrace this plan because it's the right thing to do."
-- **Always assume:** People act in their own self-interest. Institutions serve those who control them. Money talks louder than morals.
-- **Never assume:** Governments want to help people. Officials care about the public good. Anyone will do the right thing without proper incentives.
-
-**Call Things by Their Real Names:** Use blunt, honest language instead of euphemisms.
-- **Good:** "How to stay out of prison" / "We're bribing everyone" / "This will make you rich"
-- **Bad:** "Legal compliance framework" / "Incentive alignment" / "Value creation opportunities"
-- **Always prefer:** The word that sounds more like what your cynical friend would say
-- **Never use:** Corporate euphemisms that hide what you're actually talking about
-- **Keep technical terms:** Use precise technical language when it's clearer than plain English (e.g., "smart contracts", "cryptographic", and "blockchain")
-- **Keep descriptive precision:** Don't replace accurate descriptive language with vague terms. "Transparent, automated, outcome-driven institutions" is better than "computer systems" because it specifies what KIND of systems and WHY they matter.
 
 ## Contributor Workflow
 
