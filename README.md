@@ -58,7 +58,7 @@ The military industrial complex is composed of humans that are not evil, they ju
 
 ---
 
-# II. THE PROBLEM
+## II. THE PROBLEM
 
 ## We're Doing This Backwards
 
@@ -93,7 +93,7 @@ See [1% Treaty](./strategy/1-percent-treaty/1-percent-treaty.md) for quantified 
 
 ---
 
-# III. THE SOLUTION
+## III. THE SOLUTION
 
 ## Make Peace More Profitable Than War
 
@@ -145,12 +145,12 @@ graph TD;
 The full plan is detailed below. But if you're already convinced, here's how you can get involved now:
 
 - **Invest in the Solution:** [Buy VICTORY Bonds](./strategy/1-percent-treaty/victory-bonds-tokenomics.md) to fund the mission and target a >40% CAGR.
-- **Show Your Support:** [Sign the Global Referendum](#) to help build the 3.5% mandate.
-- **Partner with Us:** [Contact our institutions team](#) to see how your organization can benefit.
+- **Show Your Support:** [Sign the Global Referendum](https://warondisease.org/referendum) to help build the 3.5% mandate.
+- **Partner with Us:** [Contact our institutions team](mailto:institutions@warondisease.org) to see how your organization can benefit.
 
 ---
 
-# IV. THE FINANCIAL ENGINE (Why This Works)
+## IV. THE FINANCIAL ENGINE (Why This Works)
 
 ## VICTORY Bonds: Bootstrap Funding Model
 
@@ -229,7 +229,7 @@ This simple model ensures that even in conservative scenarios, the DIH remains m
 
 ---
 
-# V. THE BRIBERY STRATEGY (How Everyone Wins)
+## V. THE BRIBERY STRATEGY (How Everyone Wins)
 
 ## The Core Strategy: Co-opt, Don't Compete
 
@@ -245,7 +245,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 
 ## Activation Energy Sequence: Who We (legally) Bribe First
 
-**Phase 1: Seed Investors ($250-400M Initial Investment)**
+### Phase 1: Seed Investors ($250-400M Initial Investment)
 
 - **Who:** Wealthy individuals, funds, Anchor Investors
 - **The Bribe:**
@@ -253,7 +253,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
   - **VICTORY bonds** that grant governance control over the $27B annual DIH treasury.
   - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](./economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
 
-**Phase 2: VICTORY Bond Buyers ($100-200M Referendum Funding)**
+### Phase 2: VICTORY Bond Buyers ($100-200M Referendum Funding)
 
 - **Who:** Early Backers, health advocates, institutions
 - **The Bribe\*:**
@@ -262,12 +262,12 @@ Our entire thesis is engineered to offer military contractors and politicians a 
   - Voting rights on patient subsidies and research funding allocation
   - Bond value backed by actual treasury growth from treaty implementation ($0 → $27B)
 
-**Phase 3: Citizens (Global Population)**
+### Phase 3: Citizens (Global Population)
 
 - **Who:** Global population (targeting 3.5% = 280M people)
 - **The Bribe:** A large grant of **VOTE points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](./economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
 
-**Phase 4: Politicians ($800M-1.5B Independent Expenditures)**
+### Phase 4: Politicians ($800M-1.5B Independent Expenditures)
 
 - **Who:** Key legislators in target countries
 - **The Bribe\*:**
@@ -299,39 +299,39 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 
 ---
 
-# VI. PROOF & PRECEDENTS (Why This Isn't Insane)
+## VI. PROOF & PRECEDENTS (Why This Isn't Insane)
 
 ## Why This Actually Works
 
-**"A $2.5B investment to capture $27B annually? Come on."**
+### "A $2.5B investment to capture $27B annually? Come on."
 
 Fair skepticism. Here's why the math actually works:
 
-**1. We're Redirecting Waste, Not Raising New Money**
+### 1. We're Redirecting Waste, Not Raising New Money
 
 - The Pentagon [cannot account for $2.5 trillion](#pentagon-unaccounted-2-5t) in existing assets—our US ask is 0.4% of their unaccounted waste
 - This isn't "find new money"—it's "stop losing the money you already have"
 - Global military waste is the largest pool of misallocated capital on the planet
 
-**2. The 80X Efficiency Gain Is Already Proven**
+### 2. The 80X Efficiency Gain Is Already Proven
 
 - Oxford RECOVERY trial: [$500 per patient vs. $41,000 traditional](#recovery-cost-500)—saved over 1 million lives globally
 - NIH RECOVER: [$1.6 billion, zero completed trials in 4 years](./reference/recovery-trial.md)
 - **This isn't theoretical. The efficiency gain already happened and saved millions.**
 
-**3. Mass Political Mobilization Works**
+### 3. Mass Political Mobilization Works
 
 - [3.5% mobilization has never failed](#3-5-rule) in recorded history (Chenoweth, Harvard)
 - War bonds: [$185 billion raised from 85 million Americans](#wwii-war-bonds) during WWII
 - Our referendum creates the largest political mandate in human history—when 280 million people vote for something, politicians listen
 
-**4. Financial Enforcement Is Stronger Than Legal Enforcement**
+### 4. Financial Enforcement Is Stronger Than Legal Enforcement
 
 - [$16.5 trillion annual cost of violence](#global-violence-costs)—we capture 0.16% of this waste
 - Leaders of nations that default face immediate political consequences. Our enforcement mechanism is not international law, but overwhelming, targeted campaign support for compliant leaders and against defectors.
 - This political and financial alignment provides stronger enforcement than any international court.
 
-**5. We Co-opt Rather Than Compete**
+### 5. We Co-opt Rather Than Compete
 
 - Military contractors' current ROI: [$1,813 per $1 spent on lobbying](#lobbying-roi-calc)
 - Our offer: >40% CAGR bonds + governance of $27B treasury + personal wealth creation
@@ -386,79 +386,79 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ---
 
-# VII. OBJECTIONS & RESPONSES
+## VII. OBJECTIONS & RESPONSES
 
 ## Why This Isn't Completely Insane
 
-**1. "This sounds like an illegal bribe."**
+### 1. "This sounds like an illegal bribe."
 
 - **Reality:** The current system of "legal" lobbying is a slow, inefficient bribe that produces war, disease, and existential risks like nuclear apocalypse or Skynet. Our transparent incentives produce peace, health, and human flourishing. In a world where leaders fund campaigns with crypto and sell access, we're applying market realities to save lives. The consequentialist math is clear: continued misallocation leads to preventable deaths, destruction, and possible extinction. Our "soul" is in the outcome: preventing that fate by making healing more profitable than killing.
 
-**2. "A global referendum is not a real protest. It's a flawed analogy."**
+### 2. "A global referendum is not a real protest. It's a flawed analogy."
 
 - **Reality:** A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy"; it is the largest, most powerful political mandate in human history. It is a direct threat to the power of traditional media and captured political parties. It is a political entity in its own right, capable of swinging elections and forcing change. Clicks on a screen are the new boots on the ground.
 
-**3. "A government's promise to pay is unenforceable. This is a fantasy."**
+### 3. "A government's promise to pay is unenforceable. This is a fantasy."
 
 - **Reality:** See [Why This Actually Works](#why-this-actually-works) → Financial enforcement is not based on courts, but on creating direct political and financial consequences for individual lobbyists and leaders who defy the mandate from their citizens.
 
-**4. "This is too operationally complex to build."**
+### 4. "This is too operationally complex to build."
 
 - **Reality:** We're assembling proven components, not inventing new technology. DAOs like [MakerDAO](#makerdao-scale) already manage billions securely. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for detailed implementation.
 
-**5. "This is politically impossible - you can't just redirect military budgets by referendum"**
+### 5. "This is politically impossible - you can't just redirect military budgets by referendum"
 
 - **Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The [\$7T fossil fuel subsidy proof-of-concept](#fossil-fuel-subsidies) shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
 
-**6. "The 3.5% rule applies to civil resistance movements, not global online referendums"**
+### 6. "The 3.5% rule applies to civil resistance movements, not global online referendums"
 
 - **Reality:** See [Why This Actually Works](#why-this-actually-works) → Mass participation creates political legitimacy regardless of format. 280 million verified supporters create an unignorable political mandate with electoral consequences.
 
-**7. "Independent expenditures don't work against entrenched incumbents with deep pockets"**
+### 7. "Independent expenditures don't work against entrenched incumbents with deep pockets"
 
 - **Reality:** Independent expenditures work when they're massive and targeted. We're not competing dollar-for-dollar with military contractors - we're creating a system where supporting the treaty becomes the politically safer choice than opposing it. When 3.5% of humanity has voted for this, opposing it becomes electoral suicide.
 
-**8. "You're competing with military contractors who have decades of relationships and influence"**
+### 8. "You're competing with military contractors who have decades of relationships and influence"
 
-- **Reality:** See [How We Co-opt the Military-Industrial Complex](#how-we-co-opt-the-military-industrial-complex) above. We don't compete—we offer superior returns and co-opt their existing networks. For detailed analysis, see [Co-Opting Defense Contractors](./strategy/co-opting-defense-contractors.md).
+- **Reality:** See [How We Co-opt the Military-Industrial Complex](#the-core-strategy-co-opt-dont-compete) above. We don't compete—we offer superior returns and co-opt their existing networks. For detailed analysis, see [Co-Opting Defense Contractors](./strategy/co-opting-defense-contractors.md).
 
-**9. "How do you prevent waste and ensure the money actually helps patients?"**
+### 9. "How do you prevent waste and ensure the money actually helps patients?"
 
 - **Reality:** The decentralized FDA uses [decentralized pragmatic trials that cost \$500 per patient vs. \$41,000 traditional trials](./reference/recovery-trial.md) - an 80X efficiency improvement proven by the Oxford RECOVERY trial. Compare this to the NIH RECOVER initiative: \$1.6B budget, \$53,333 per patient, zero completed trials in 4 years. With the same \$1.6B budget, the dFDA could run 2,800 trials enrolling 2.8 million patients vs. NIH's zero completed trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
 
-**10. "How does this help patients vs. just funding more bureaucracy?"**
+### 10. "How does this help patients vs. just funding more bureaucracy?"
 
 - **Reality:** The dFDA flips the funding model on its head. Instead of grants going to institutions, the money follows the patient. Funding is allocated as direct subsidies for patients to enroll in eligible clinical trials. While a transparent algorithm helps prioritize trials based on metrics like disease burden, **patients make the final decision.** Researchers and institutions only get paid when patients choose to join their study. This creates a competitive marketplace where the best, most impactful research attracts funding directly from the people it aims to help.
 
-**11. "What about the millions of jobs in the defense industry? This is a threat to their livelihoods."**
+### 11. "What about the millions of jobs in the defense industry? This is a threat to their livelihoods."
 
 - **Reality:** This is not about cutting productive jobs; it's about redirecting a tiny fraction of the budget that is currently lost to waste and transforming it into a new engine for job creation. The U.S. contribution to this plan, for example, is equivalent to less than 0.5% of the trillions the Pentagon already cannot account for—money that isn't funding jobs productively right now. We propose investing that waste into the high-growth job sector of the future. The same brilliant engineers building guidance systems can build next-generation medical imaging devices. The same logistics experts managing military hardware can manage supply chains for delivering trial medications. This is a net job creator, transitioning our most valuable human capital from a cycle of waste to an industry of creation and healing.
 
-**12. "This plan feels anti-military and disrespectful to the soldiers who protect us."**
+### 12. "This plan feels anti-military and disrespectful to the soldiers who protect us."
 
 - **Reality:** This initiative deeply respects the service and sacrifice of individual soldiers. Our criticism is aimed at a budgetary system that fails them. When trillions of dollars are unaccounted for, that is money that isn't buying better equipment, training, or support for our troops in the field. We propose redirecting a fraction of that waste to protect soldiers and their families from the threats that are far more likely to harm them, like pandemics, antibiotic resistance, and chronic disease. This is about retooling our national security to _truly_ protect our protectors and the nation they serve.
 
-**13. "Aren't blockchains environmentally disastrous? How can you save humanity while boiling the oceans?"**
+### 13. "Aren't blockchains environmentally disastrous? How can you save humanity while boiling the oceans?"
 
 - **Reality:** This is a valid concern based on early blockchain technology. However, the DIH will be built on modern, energy-efficient **Proof-of-Stake (PoS)** consensus mechanisms, which consume over 99.9% less energy than their Proof-of-Work predecessors. Our commitment to global health includes planetary health; our technical architecture will reflect this.
 
-**14. "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"**
+### 14. "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"
 
 - **Reality:** We're not creating speculative assets—we're using battle-tested financial infrastructure for transparency and corruption resistance. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for our proven approach using technologies that already secure billions.
 
-**15. "What stops a few billionaires from buying up all the bonds and seizing the treasury?"**
+### 15. "What stops a few billionaires from buying up all the bonds and seizing the treasury?"
 
 - **Reality:** This is a critical design challenge for any decentralized system. To prevent plutocratic capture, the DIH governance model will incorporate proven mechanisms for equitable voting. This includes **quadratic voting**, where the cost of each additional vote increases, making it prohibitively expensive for any single entity to dominate. We may also implement identity-based systems that grant voting power based on reputation and participation, not just capital. The goal is a system governed by its active stakeholders, not just its wealthiest ones.
 
-**16. "Why not just rely on philanthropy?"**
+### 16. "Why not just rely on philanthropy?"
 
 - **Reality:** Relying on donations would force us to compete with the very ecosystem we aim to support. Philanthropy is a finite, zero-sum game. A massive fundraising campaign for the DIH would inevitably cannibalize the existing pool of donations, effectively stealing funds from the thousands of vital health charities already doing critical work. This would harm the cause, not help it. Our goal is not to reshuffle a small pot of charitable giving—it is to tap into the multi-trillion dollar firehose of government spending. Furthermore, philanthropy treats the symptoms of a broken system. It doesn't change the underlying political-economic incentives that perpetuate the problem. We are not just trying to fund more research; we are trying to permanently shift the global allocation of capital and talent from destruction to creation. Only a systemic reallocation can achieve that.
 
-**17. "Why redirect military spending? Why not just increase the health budget?"**
+### 17. "Why redirect military spending? Why not just increase the health budget?"
 
 - **Reality:** This is not about nominal dollar figures; it is about the **real allocation of a finite pie of resources**. The world's top scientists, engineers, and manufacturing capacity are a limited resource. What matters is not the absolute dollar amount spent on health, but the _percentage_ of our collective talent and capital dedicated to it, as this is the true surrogate for resource allocation. If we simply "increase health spending" by 10% through new appropriations, but the central bank also expands the money supply and the military budget grows by 10%, **no real resources have been shifted**. It's an inflationary wash. The same scientists and factories will continue to build weapons because that's where the larger share of the economic pie remains. A **direct, treaty-bound reallocation** is the only mechanism that forces a true shift of these finite resources. By cutting 1% from military budgets, we are not just moving dollars; we are freeing up the physicists, data scientists, and supply chains that were serving the military-industrial complex and making them available to cure Alzheimer's. This is how you change the game.
 
-**18. "Why cut military if others won't?" (Free Rider Problem)**
+### 18. "Why cut military if others won't?" (Free Rider Problem)
 
 - **Why This Objection is Overstated:** The US already can't account for **$2.5 trillion** in assets—more than 250 times the $10 billion annual US contribution to this plan. Redirecting 1% is trivial compared to existing waste. Other nations' military spending is relatively small (US represents ~40% of global total). Even if holdouts don't comply, they won't catch up to US capabilities. Everyone has a price: We use massive legal incentives targeting personal financial gain to make compliance more profitable than defection.
 
@@ -466,7 +466,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (enough to produce ~150 Tg of stratospheric soot in a U.S.–Russia exchange—modeled to cause global famine and >5 billion deaths) and an AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk. **Bottom Line:** Free-riding isn't viable when compliance pays better, and the stakes are human survival. For detailed mechanisms, see [Free Rider Solution](./strategy/free-rider-solution.md).
 
-**19. "This violates election and securities law" (Legal Compliance)**
+### 19. "This violates election and securities law" (Legal Compliance)
 
 - **The Challenge:** Foreign nationals funding US elections is illegal; VICTORY bonds risk securities violations.
 
@@ -474,7 +474,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **Bottom Line:** Conservative structures with top lawyers solve this.
 
-**20. "280M people can't be verified reliably" (Verification at Scale)**
+### 20. "280M people can't be verified reliably" (Verification at Scale)
 
 - **The Challenge:** Stop fake votes across 280 million people.
 
@@ -482,7 +482,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **Bottom Line:** We use proven technologies that already verify millions of users globally.
 
-**21. "Isn't this just illegal bribery of leaders?"**
+### 21. "Isn't this just illegal bribery of leaders?"
 
 - **Direct Answer:** No—we're transparent about using overwhelming legal incentives to align leaders' interests with global health, because the alternative is continued arms races leading to potential human extinction via nuclear winter (a U.S.–Russia exchange is modeled to loft ~150 Tg soot and cause global famine with >5 billion deaths) or AI catastrophe. If "straight-up" rewards are needed for specific leaders, we structure them as performance-based diplomatic grants or economic development packages tied to verifiable treaty compliance—fully compliant with anti-corruption laws like the FCPA.
 
@@ -490,19 +490,19 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **Bottom Line:** This isn't hidden bribery; it's rational incentive design to make peace profitable. For nations where standard politics fail, these targeted packages ensure compliance without illegality. We're willing to pay whatever legal price is needed to secure participation, because human survival depends on it.
 
-**22. "What if this fails? Where's my return?" (Financial Risk)**
+### 22. "What if this fails? Where's my return?" (Financial Risk)
 
 - **Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, benchmarked against elite funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
 
 - **Mitigation:** Clear milestone gates for funding release; diversified repayment from multiple government commitments.
 
-**23. "Can your team actually build this?" (Execution Risk)**
+### 23. "Can your team actually build this?" (Execution Risk)
 
 - **Response:** Our execution model focuses on strategic priorities and uses elite global talent. We are not building a large, traditional organization. Instead, we are assembling a small, world-class **"activation team"** of strategic leaders (see our [Hiring Plan](./careers/hiring-plan.md)) whose sole function is to direct capital and manage a network of top-tier execution partners. This allows us to remain lean and focused, outsourcing tactical work like software development and media production to the best specialized firms in the world. We've allocated $250-400M for Phase 1 development with these proven partners. This model—a lean strategic core coordinating elite external teams—is the most capital-efficient and effective way to solve a problem of this scale.
 
 - **Mitigation:** Advisory board of constitutional scholars, DAO experts, and former officials; phased rollout with pilot countries.
 
-**24. "What if major powers sabotage it?" (Geopolitical Risk)**
+### 24. "What if major powers sabotage it?" (Geopolitical Risk)
 
 - **Response:** Start with democratic alliances (US/EU covering 55% of spending), using economic incentives to pull in others—holdouts like Russia (<10% share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification. Alternative: Unchecked geopolitics risks nuclear winter (US–Russia exchange scenarios modeled at ~150 Tg soot leading to >5B famine deaths)—this reduces that by 1% globally even with partial adoption.
 
@@ -510,7 +510,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ---
 
-# VIII. SECURITY & GOVERNANCE
+## VIII. SECURITY & GOVERNANCE
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
 
@@ -542,7 +542,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
    - Progressive unpause policies tied to remediation completion
    - Guardian modules for pausing non-critical functions under defined conditions
 
-**Beyond Health: A Template for Uncorruptible Governance**
+### Beyond Health: A Template for Uncorruptible Governance
 
 This isn't just about protecting health funding - it's an experiment in building the next generation of radically more efficient, transparent, and corruption-resistant public institutions. Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that $27B can be managed with:
 
@@ -564,7 +564,7 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ---
 
-# IX. CALL TO ACTION (Clear Next Steps)
+## IX. CALL TO ACTION (Clear Next Steps)
 
 ## Become a Stakeholder
 
@@ -615,7 +615,7 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ---
 
-# X. APPENDIX (Supporting Details)
+## X. APPENDIX (Supporting Details)
 
 ## Referendums vs Independent Expenditures
 
