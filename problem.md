@@ -2,10 +2,10 @@
 title: "The Grotesque Misallocation: Why We're Losing the Human Race"
 description: "Humanity spends trillions on war and destruction while the systems meant to cure disease are slow, expensive, and exclusionary. This is the core problem we must solve."
 published: true
-date: '2025-09-10T00:00:00.000Z'
+date: "2025-09-10T00:00:00.000Z"
 tags: [problem, war, disease, cost-of-war, fda, clinical-trials, resource-allocation]
 editor: markdown
-dateCreated: '2025-09-10T00:00:00.000Z'
+dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
 # 📖 Chapter 1: The Grotesque Misallocation

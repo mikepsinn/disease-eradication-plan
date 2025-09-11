@@ -2,10 +2,10 @@
 title: "Objections & Responses"
 description: "Addressing the common objections, frequently asked questions, and critical counter-arguments to the DIH and 1% Treaty proposal."
 published: true
-date: '2025-09-10T00:00:00.000Z'
+date: "2025-09-10T00:00:00.000Z"
 tags: [faq, objections, counter-arguments, q-a, security, feasibility]
 editor: markdown
-dateCreated: '2025-09-10T00:00:00.000Z'
+dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
 # 📖 Chapter 8: Objections & Responses
@@ -16,11 +16,12 @@ Every ambitious plan faces tough questions. Here we address the most common obje
 
 ### **"Won't reducing our military budget by 1% make our country more vulnerable?"**
 
-No. In fact, it makes every country *safer*.
+No. In fact, it makes every country _safer_.
 
 The 1% Treaty is designed to be geopolitically neutral. Since every nation reduces its military spending by the same percentage at the same time, the relative balance of power remains identical. No country loses its strategic advantage over its rivals.
 
-National security is actually *increased* for two reasons:
+National security is actually _increased_ for two reasons:
+
 1.  Every potential adversary has 1% fewer resources for offensive weapons.
 2.  The greatest modern threats are not always conventional armies. A global pandemic can inflict more devastation than most military conflicts. The DIH acts as a planetary defense system against these biological threats, providing a far greater return on investment for protecting citizens.
 
@@ -42,9 +43,9 @@ This is the classic "free-rider problem." The solution is to create overwhelming
 
 A country doesn't make decisions; people do. We make it politically and financially ruinous for them to make the wrong one.
 
--   **For Politicians:** Supporting the treaty means delivering massive health benefits to voters, attracting billions in research funding to their districts, and gaining access to a powerful global political platform. We will also fund massive independent expenditure campaigns to support allies and unseat opponents, making it political suicide to oppose the will of the **[3.5% of their voting population](./strategy.md)** who demand the treaty.
--   **For Corporate & Financial Leaders:** Compliance unlocks access to the world's most powerful economic bloc and the opportunity to invest in and profit from the multi-trillion dollar health innovation ecosystem created by the DIH. Non-compliance means their companies are locked out of key markets and technologies, making it more profitable for them to lobby *for* the treaty than against it.
--   **For Scientists & Research Institutions:** Joining the treaty means access to a new, **$27B+ annual pool of research funding**—an amount that can double or triple the research budgets of entire nations. For any university president or research director, opposing the treaty means deliberately refusing the largest funding firehose in history.
+- **For Politicians:** Supporting the treaty means delivering massive health benefits to voters, attracting billions in research funding to their districts, and gaining access to a powerful global political platform. We will also fund massive independent expenditure campaigns to support allies and unseat opponents, making it political suicide to oppose the will of the **[3.5% of their voting population](./strategy.md)** who demand the treaty.
+- **For Corporate & Financial Leaders:** Compliance unlocks access to the world's most powerful economic bloc and the opportunity to invest in and profit from the multi-trillion dollar health innovation ecosystem created by the DIH. Non-compliance means their companies are locked out of key markets and technologies, making it more profitable for them to lobby _for_ the treaty than against it.
+- **For Scientists & Research Institutions:** Joining the treaty means access to a new, **$27B+ annual pool of research funding**—an amount that can double or triple the research budgets of entire nations. For any university president or research director, opposing the treaty means deliberately refusing the largest funding firehose in history.
 
 The "cost of being excluded" is not an abstract national cost. It is a direct, personal, and career-defining cost to the individual leaders whose support we need. We make compliance the best and only choice for their careers, their profits, and their political survival.
 
@@ -54,9 +55,9 @@ The "cost of being excluded" is not an abstract national cost. It is a direct, p
 
 No. The DIH is engineered to be the opposite of a typical bureaucracy.
 
--   **80X More Efficient:** The DIH's entire purpose is to fund a research model that is **[80 times more efficient](./proof.md)** than the current system.[^2]
--   **Decentralized by Default:** It is not a single, top-down organization. It is a **["coalition of coalitions"](./legal.md)** where funding decisions are made by decentralized groups of experts, patients, and advocates in each specific disease area.
--   **Automated & Transparent:** Most treasury functions are executed by transparent smart contracts, not by committees. The DAO's role is primarily for high-level strategy and emergency overrides, not day-to-day management.
+- **80X More Efficient:** The DIH's entire purpose is to fund a research model that is **[80 times more efficient](./proof.md)** than the current system.[^2]
+- **Decentralized by Default:** It is not a single, top-down organization. It is a **["coalition of coalitions"](./legal.md)** where funding decisions are made by decentralized groups of experts, patients, and advocates in each specific disease area.
+- **Automated & Transparent:** Most treasury functions are executed by transparent smart contracts, not by committees. The DAO's role is primarily for high-level strategy and emergency overrides, not day-to-day management.
 
 ---
 

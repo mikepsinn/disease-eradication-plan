@@ -2,10 +2,10 @@
 title: Impact Securities and Digital Public Goods Financing Act (Draft)
 description: 'Draft model law to enable high‑impact public‑good financing via "impact securities," expanded investor access, and on‑chain reporting safe harbors.'
 published: true
-date: '2025-08-22T00:00:00.000Z'
+date: "2025-08-22T00:00:00.000Z"
 tags: [impact-securities, digital-assets, reg-reform, on-chain-reporting, capital-formation, public-goods]
 editor: markdown
-dateCreated: '2025-08-22T00:00:00.000Z'
+dateCreated: "2025-08-22T00:00:00.000Z"
 topic_id: impact-securities-reform
 canonical: true
 status: active
@@ -35,7 +35,7 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
 - Mandatory public, machine‑readable disclosures via an on‑chain registry:
   - Use of proceeds; proof‑of‑reserves; liabilities; coupon schedules; waterfall and seniority; covenant checks; incident logs.
   - Open‑source report schemas; cryptographic attestations.
- 
+
 ## Section 4A. Marketing & Disclosures Safe Harbor (Plain-English, Outcome-Linked)
 
 - Issuers may state targets and objectives (e.g., “risk‑adjusted returns competitive with leading alternatives”) if:
@@ -80,22 +80,27 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
 ## Source Quotes for Key Parameters
 
 - SEC Regulation Crowdfunding (Reg CF)
+
   > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."
   > — U.S. SEC, [Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
 
 - SEC Regulation A (Reg A)
+
   > "Regulation A provides an exemption from the registration requirements... for offerings of securities up to \$75 million in a 12‑month period, subject to eligibility, disclosure, and reporting requirements."
   > — U.S. SEC, [Regulation A Overview](https://www.sec.gov/smallbusiness/exemptofferings/rega)
 
 - Token Safe Harbor Concept
+
   > "The safe harbor seeks to provide network developers with a three‑year grace period... to facilitate participation in, and the development of, a functional or decentralized network."
   > — Hester M. Peirce, SEC Commissioner, 2021, [Token Safe Harbor 2.0 (speech)](https://www.sec.gov/news/public-statement/peirce-statement-token-safe-harbor-proposal-2.0)
 
 - EU MiCA (Markets in Crypto‑Assets) Transparency
+
   > "MiCA establishes uniform requirements for the offer to the public and admission to trading of crypto‑assets... and for transparency and disclosure."
   > — EUR‑Lex, 2023, [MiCA Regulation](https://eur-lex.europa.eu/eli/reg/2023/1114/oj)
 
 - Climate Bonds / Green Bond Market Scale
+
   > "Cumulative green, social, sustainability and sustainability‑linked (GSS+) debt passed \$4 trillion, with green bonds the largest segment."
   > — Climate Bonds Initiative, 2023, [State of the Market](https://www.climatebonds.net/resources/reports)
 

@@ -1,11 +1,11 @@
 ---
 title: Quantified Costs of War - Direct and Indirect
-description: 'A data-driven breakdown of the economic, human, and societal costs of war and military spending.'
+description: "A data-driven breakdown of the economic, human, and societal costs of war and military spending."
 published: true
-date: '2025-08-15T00:00:00.000Z'
+date: "2025-08-15T00:00:00.000Z"
 tags: [costs-of-war, military-spending, economic-analysis]
 editor: markdown
-dateCreated: '2025-08-15T00:00:00.000Z'
+dateCreated: "2025-08-15T00:00:00.000Z"
 ---
 
 # Direct Costs of War
@@ -45,6 +45,7 @@ Indirect costs encompass long-term economic, health, societal, and opportunity b
 # Total Estimated Costs
 
 Combining direct and indirect costs, modern wars impose staggering burdens:
+
 - **Direct Costs Total:** $4,993 billion.
 - **Indirect Costs Total:** $2,245.25 billion.
 - **Updated Total Annual Cost:** $7,238.25 billion.
@@ -55,6 +56,7 @@ Combining direct and indirect costs, modern wars impose staggering burdens:
 ### Total Cost to the Average Person Over Their Lifetime
 
 Assuming a global population of 7.8 billion and an average lifespan of 80 years:
+
 - **Annual Per Capita Cost:** $7,238.25 billion / 7.8 billion = $928.24
 - **Lifetime Cost Per Person:** $928.24 × 80 years = $74,259.2
 
@@ -63,67 +65,81 @@ These figures highlight the "grotesque misallocation" compared to underfunded ar
 ### Source Quotes for Key Parameters
 
 <a id="global-military-spending"></a>
+
 - **Global Military Spending**
   > "World military expenditure rose to \$2,443 billion in 2023."
   > — SIPRI, 2024, [Trends in World Military Expenditure](https://www.sipri.org/publications/2024/sipri-fact-sheets/trends-world-military-expenditure-2023)
 
 <a id="us-military-spending"></a>
+
 - **US Military Spending**
   > "The United States spent \$916 billion on military in 2023."
   > — SIPRI, 2024, [Trends in World Military Expenditure](https://www.sipri.org/publications/2024/sipri-fact-sheets/trends-world-military-expenditure-2023)
 
 <a id="annual-conflict-deaths"></a>
+
 - **Annual Conflict Deaths**
   > "Armed conflicts cause around 100,000 deaths annually."
   > — Our World in Data, 2023, [War and Peace](https://ourworldindata.org/war-and-peace)
 
 <a id="post-911-deaths"></a>
+
 - **Post-9/11 Deaths**
   > "Direct deaths from post-9/11 wars exceed 900,000."
   > — Brown University, 2021, [Costs of War](https://watson.brown.edu/costsofwar/figures/2021/WarDeathToll)
 
 <a id="iraq-war-spending"></a>
+
 - **Iraq War Spending**
   > "The Iraq War cost \$2.2 trillion in direct US spending."
   > — Brown University, 2021, [Costs of War](https://watson.brown.edu/costsofwar/figures/2021/BudgetaryCosts)
 
 <a id="post-911-long-term-costs"></a>
+
 - **Post-9/11 Long-Term Costs**
   > "The Costs of War Project estimates the total cost of post-9/11 wars at over \$8 trillion."
   > — Brown University, 2021, [Costs of War](https://watson.brown.edu/costsofwar/figures/2021/BudgetaryCosts)
 
 <a id="gdp-impact"></a>
+
 - **GDP Impact**
   > "Wars reduce GDP growth by 1-2% in affected regions."
   > — Our World in Data, 2023, [War and Peace](https://ourworldindata.org/war-and-peace)
 
 <a id="ptsd-costs"></a>
+
 - **PTSD Costs**
   > "US veteran PTSD costs \$232 billion over 20 years."
   > — RAND Corporation, 2018, [Veteran Care Costs](https://www.rand.org/pubs/research_reports/RR1975.html)
 
 <a id="post-911-total"></a>
+
 - **Post-9/11 Total**
   > "Total post-9/11 costs: \$8 trillion."
   > — Brown University, 2021, [Costs of War](https://watson.brown.edu/costsofwar/figures/2021/BudgetaryCosts)
 
 <a id="global-burden"></a>
+
 - **Global Annual Burden**
   > "Military spending plus indirect costs exceed \$3-4 trillion yearly."
   > — Internal estimate based on SIPRI and Brown University data, 2024.
 
 <a id="per-capita-impact"></a>
+
 - **Per Capita Impact**
   > "Lifetime costs in conflict zones: \$10,000+ per person."
   > — World Bank, 2022, [Economic Costs of Conflict](https://www.worldbank.org/en/topic/conflictviolence)
 
 <a id="total-annual-cost"></a>
+
 - **Total Annual Cost of War**
   > "The comprehensive annual cost of war, factoring in both direct and indirect costs, is approximately $7,238.25 billion."
   > — Internal calculation based on multiple sources, 2024.
 
 <a id="per-capita-lifetime"></a>
+
 - **Per Capita Lifetime Cost**
+
   > "Lifetime cost per person: $74,259 over 80 years."
   > — Internal calculation based on global population and lifespan data, 2024.
 

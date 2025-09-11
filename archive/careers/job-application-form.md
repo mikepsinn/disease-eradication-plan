@@ -1,6 +1,6 @@
 ---
 title: dFDA Mission Lead Application
-description: 'Application form for the role of Mission Lead in the Decentralized FDA initiative, focused on leading decentralized clinical trials and global mobilization.'
+description: "Application form for the role of Mission Lead in the Decentralized FDA initiative, focused on leading decentralized clinical trials and global mobilization."
 published: true
 date: 2025-01-01T00:00:00.000Z
 tags: [careers, leadership, decentralized-fda, clinical-trials, strategy]
@@ -13,7 +13,7 @@ fontawesomeIcon: fa-user-tie
 
 **Men wanted for hazardous journey. Low wages, bitter cold, long hours of complete darkness. Safe return doubtful. Honour and recognition in event of success..**
 
-We are looking for the founding **Supreme Allied Commander, War on Disease**. 
+We are looking for the founding **Supreme Allied Commander, War on Disease**.
 
 The mission is to architect and build an army of AI agents to achieve a singular, near-impossible objective: mobilize 3.5% of the global population and create a self-sustaining financial engine to fund a perpetual war on human suffering.
 
@@ -51,24 +51,25 @@ Competitive salary range of \$80,000-\$120,000 annually, based on experience and
 
 ## Section 1: Personal Information
 
--   **Full Name:** <input type="text" size="30"> *
--   **Email Address:** <input type="text" size="30"> *
--   **Country of Residence:** <input type="text" size="20"> *
--   **LinkedIn Profile or Personal Website (if applicable):** <input type="text" size="30">
+- **Full Name:** <input type="text" size="30"> \*
+- **Email Address:** <input type="text" size="30"> \*
+- **Country of Residence:** <input type="text" size="20"> \*
+- **LinkedIn Profile or Personal Website (if applicable):** <input type="text" size="30">
 
 [ ] **I consent to be contacted** by representatives of the War on Disease initiative to discuss my application.
 
 ## Section 2: Technical Evidence & Skill Profile
 
-**1. Rank the following technical areas from your strongest (1) to your weakest (5).** *
-- AI Workflows / Agent Development: [  ]
-- Web App Development (Full-Stack, React): [  ]
-- API Design & Development: [  ]
-- Data Engineering & Analysis: [  ]
-- Blockchain / Smart Contract Development: [  ]
+**1. Rank the following technical areas from your strongest (1) to your weakest (5).** \*
 
-**2. For each area below, provide a link to the project, repo, or evidence that best demonstrates your skill, and write one sentence explaining *why* it's a strong example.** *
-*(Note: Be concise. The work should speak for itself.)*
+- AI Workflows / Agent Development: [ ]
+- Web App Development (Full-Stack, React): [ ]
+- API Design & Development: [ ]
+- Data Engineering & Analysis: [ ]
+- Blockchain / Smart Contract Development: [ ]
+
+**2. For each area below, provide a link to the project, repo, or evidence that best demonstrates your skill, and write one sentence explaining _why_ it's a strong example.** \*
+_(Note: Be concise. The work should speak for itself.)_
 
 - **AI Workflows / Agent Development:**
   - **Evidence Link:** <input type="text" size="50">
@@ -90,15 +91,15 @@ Competitive salary range of \$80,000-\$120,000 annually, based on experience and
   - **Evidence Link:** <input type="text" size="50">
   - **Justification:** <input type="text" size="80">
 
-**3. Provide a link to your primary GitHub profile. This is required.** *
+**3. Provide a link to your primary GitHub profile. This is required.** \*
 <input type="text" size="30">
 
 ## Section 3: Strategic & Technical Philosophy
 
-**4. Describe your philosophy on building and deploying autonomous AI systems. How do you approach architecture, testing, and ensuring alignment in complex agentic workflows?** (Max 200 words) *
+**4. Describe your philosophy on building and deploying autonomous AI systems. How do you approach architecture, testing, and ensuring alignment in complex agentic workflows?** (Max 200 words) \*
 <textarea rows="7" cols="50"></textarea>
 
-**5. Propose a high-level technical strategy for the first battle: building an AI engine to drive millions of survey submissions and convert participants to donors. What would be the core components of your system?** (Max 200 words) *
+**5. Propose a high-level technical strategy for the first battle: building an AI engine to drive millions of survey submissions and convert participants to donors. What would be the core components of your system?** (Max 200 words) \*
 <textarea rows="7" cols="50"></textarea>
 
 ## Section 4: Accomplishments (Optional)
@@ -111,7 +112,7 @@ Competitive salary range of \$80,000-\$120,000 annually, based on experience and
 
 ## Section 5: Availability
 
-**8. This is a full-time mission. What is your availability to start?** *
+**8. This is a full-time mission. What is your availability to start?** \*
 <input type="text" size="30">
 
 **9. Are there any additional details or qualifications you'd like us to know about?** (Max 100 words)
@@ -119,18 +120,19 @@ Competitive salary range of \$80,000-\$120,000 annually, based on experience and
 
 ## Submission
 
-Submit your application via the form below. Required fields are marked with *. Applications are reviewed on a rolling basis.
+Submit your application via the form below. Required fields are marked with \*. Applications are reviewed on a rolling basis.
 
-**[I Understand the Risks & Wish to Proceed]** *(Link to submission portal)*
+**[I Understand the Risks & Wish to Proceed]** _(Link to submission portal)_
 
-*Victory in this war will not be measured in days or months, but in lives saved and futures restored.* 
+_Victory in this war will not be measured in days or months, but in lives saved and futures restored._
 
 ### Source Quotes for Key Parameters
 
 - **Trial Cost Reduction**
+
   > "The average cost to develop a new drug is \$2.6 billion, but decentralized models could reduce this by 50-70% through real-world data efficiency."
-  — [Tufts Center for the Study of Drug Development, 2016](https://csdd.tufts.edu/csddnews/2016/3/10/march-10-2016-tufts-csdd-assessment-of-cost-to-develop-and-win-marketing-approval-for-a-new-drug-now-published)
+  > — [Tufts Center for the Study of Drug Development, 2016](https://csdd.tufts.edu/csddnews/2016/3/10/march-10-2016-tufts-csdd-assessment-of-cost-to-develop-and-win-marketing-approval-for-a-new-drug-now-published)
 
 - **Salary Range**
   > "Average salary for med-tech project leads is \$100,000, with ranges from \$80,000 to \$120,000 depending on experience."
-  — [Payscale Med-Tech Salary Report, 2023](https://www.payscale.com/research/US/Industry=Medical_Devices/Salary) 
+  > — [Payscale Med-Tech Salary Report, 2023](https://www.payscale.com/research/US/Industry=Medical_Devices/Salary)

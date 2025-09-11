@@ -90,35 +90,35 @@ Your data helps improve treatment rankings and benefits future patients globally
 
 **_Look at all these great features giving patients the right to effortlessly participate in decentralized clinical trials! 🚀_**
 
-| Category | FDA v1 | FDA v2 |
-| :--- | :--- | :--- |
+| Category                                     | FDA v1        | FDA v2           |
+| :------------------------------------------- | :------------ | :--------------- |
 | ⏱️ Years Until Patients Can Access Treatment | [17 years][6] | ➡️ [2 years][14] |
-| 💰 Cost of Clinical Trials | [~\$57M][13] | ➡️ [\$2M][15] |
-| 👥 Percent of Patients Able to Join Trials | [15%][4] | ➡️ [100%][16] |
+| 💰 Cost of Clinical Trials                   | [~\$57M][13]  | ➡️ [\$2M][15]    |
+| 👥 Percent of Patients Able to Join Trials   | [15%][4]      | ➡️ [100%][16]    |
 
 ### 👀Look at those savings! 🤑
 
 **By decentralizing and automating clinical research, we could reduce the cost of new treatments by 95%!**
 
-| Cost Item | Current Cost | New Cost | Savings |
-| :--- | :--- | :--- | :--- |
-| 💾 Data Management | \$198,014 | \$10,000 | 94.9% |
-| ✅ Cost Per IRB Approvals | \$324,081 | \$5,000 | 98.5% |
-| 📝 IRB Amendments | \$6,347 | \$0 | 100.0% |
-| 🔍 SDV | \$1,486,250 | \$25,000 | 98.3% |
-| 🤝 Patient Recruitment | \$805,785 | \$15,000 | 98.1% |
-| 🎯 Patient Retention | \$76,879 | \$20,000 | 74.0% |
-| 👨‍⚕️ Nurse/Research Associate | \$2,379,605 | \$150,000 | 93.7% |
-| 👩‍⚕️ Physician | \$1,966,621 | \$100,000 | 94.9% |
-| 🏥 Clinical Procedure Total | \$5,937,819 | \$1,000,000 | 83.2% |
-| 🧪 Laboratory | \$2,325,922 | \$500,000 | 78.5% |
-| 🏢 Site Recruitment | \$849,158 | \$0 | 100.0% |
-| 🏗️ Site Retention | \$4,461,322 | \$0 | 100.0% |
-| 👥 Administrative Staff | \$7,229,968 | \$100,000 | 98.6% |
-| 📊 Site Monitoring | \$4,456,717 | \$0 | 100.0% |
-| 🏢 Site Overhead | \$7,386,816 | \$0 | 100.0% |
-| 📎 All Other | \$17,096,703 | \$100,000 | 99.4% |
-| **TOTAL SAVINGS 🎉** | **\$56,988,007** | **\$2,025,000** | **95.7%** |
+| Cost Item                   | Current Cost     | New Cost        | Savings   |
+| :-------------------------- | :--------------- | :-------------- | :-------- |
+| 💾 Data Management          | \$198,014        | \$10,000        | 94.9%     |
+| ✅ Cost Per IRB Approvals   | \$324,081        | \$5,000         | 98.5%     |
+| 📝 IRB Amendments           | \$6,347          | \$0             | 100.0%    |
+| 🔍 SDV                      | \$1,486,250      | \$25,000        | 98.3%     |
+| 🤝 Patient Recruitment      | \$805,785        | \$15,000        | 98.1%     |
+| 🎯 Patient Retention        | \$76,879         | \$20,000        | 74.0%     |
+| 👨‍⚕️ Nurse/Research Associate | \$2,379,605      | \$150,000       | 93.7%     |
+| 👩‍⚕️ Physician                | \$1,966,621      | \$100,000       | 94.9%     |
+| 🏥 Clinical Procedure Total | \$5,937,819      | \$1,000,000     | 83.2%     |
+| 🧪 Laboratory               | \$2,325,922      | \$500,000       | 78.5%     |
+| 🏢 Site Recruitment         | \$849,158        | \$0             | 100.0%    |
+| 🏗️ Site Retention           | \$4,461,322      | \$0             | 100.0%    |
+| 👥 Administrative Staff     | \$7,229,968      | \$100,000       | 98.6%     |
+| 📊 Site Monitoring          | \$4,456,717      | \$0             | 100.0%    |
+| 🏢 Site Overhead            | \$7,386,816      | \$0             | 100.0%    |
+| 📎 All Other                | \$17,096,703     | \$100,000       | 99.4%     |
+| **TOTAL SAVINGS 🎉**        | **\$56,988,007** | **\$2,025,000** | **95.7%** |
 
 Cost analysis based on data from: [Examination of Clinical Trial Costs and Barriers for Drug Development][13] by the U.S. Department of Health and Human Services, Office of the Assistant Secretary for Planning and Evaluation (ASPE).
 
@@ -136,7 +136,7 @@ See all the wonders we could enjoy with the passage of the Disease Eradication A
 
 Help us give everyone a free superintelligent doctor
 
-[<img alt="video thumbnail" class="ContentAreaBackground_module_img__5e37c38e ContentAreaBackground_module_loaded__5e37c38e" src="https://static.crowdsourcingcures.org/img/slides/fdai-splash.png">](https://player.vimeo.com/video/930843979?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479)
+[<img alt="video thumbnail" class="ContentAreaBackground_module_img__5e37c38e ContentAreaBackground_module_loaded__5e37c38e" src="https://static.crowdsourcingcures.org/img/slides/fdai-splash.png">](https://player.vimeo.com/video/930843979?badge=0&autopause=0&player_id=0&app_id=58479)
 
 ### Your Digital Twin Safe
 
@@ -230,36 +230,43 @@ We'll keep you informed about the latest developments in decentralized clinical 
 [16]: ./act.md#sec-301-universal-eligibility-for-investigational-interventions
 
 1.  **Claim:** ~\$43,000 cost per participant in traditional clinical trials.
+
     > "Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43,000**"
     >
     > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-103-findings)</cite>
 
 2.  **Claim:** ~\$2.2 Billion cost to develop a new treatment falls on patients.
+
     > "The average cost for a Big Pharma to develop a drug in 2024 was \$2.23 billion, up from \$2.12 billion the year before."
     >
     > -- <cite>[Deloitte via Fierce Biotech (2024)](https://www.fiercebiotech.com/biotech/drug-development-cost-pharma-22b-asset-2024-plus-how-glp-1s-impact-roi-deloitte)</cite>
 
 3.  **Claim:** 21,000 to 120,000 more people die each decade due to suboptimal regulatory processes.
+
     > "The annual number of lives lost in the United States because of the drug lag is in the same range as the number of lives lost annually in automobile accidents. The low estimate is 21,000 lives lost per decade, about one-fifth the number of people killed in automobile accidents during the same period. The high estimate is 210,000 lives lost per decade, about double the number of people killed in automobile accidents."
     >
     > -- <cite>[The CATO Journal, Vol. 5, No. 1 (Spring/Summer 1985)](https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/1985/5/cj5n1-10.pdf)</cite>
 
 4.  **Claim:** 85% of patients are not allowed to participate in clinical trials.
+
     > "Up to **85 percent of patients** are excluded from participating in pivotal trials, limiting the generalizability of findings to real-world patient populations."
     >
     > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-103-findings)</cite>
 
 5.  **Claim:** 95% of rare diseases have NO FDA-approved treatments.
+
     > "an estimated **95 percent of rare diseases lack a single FDA-approved treatment**"
     >
     > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-103-findings)</cite>
 
 6.  **Claim:** 17 years of suffering is endured from discovery of a new treatment until it reaches patients.
+
     > "New, effective treatments take an average of **17 years** to transition from scientific discovery to clinical practice"
     >
     > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-103-findings)</cite>
 
 7.  **Claim:** 166 billion potential treatments have not been tested.
+
     > "Sixteen years on, he has amassed the largest database of small molecules in the world, a gigantic virtual collection of 166 billion compounds."
     >
     > -- <cite>[How my race to find a drug for my daughter is helping others](https://www.nature.com/articles/549445a)</cite>
@@ -268,14 +275,16 @@ We'll keep you informed about the latest developments in decentralized clinical 
 
     > "Incidence of acute sequelae were predominantly infectious diseases and short-term injuries, with over 2 billion cases of upper respiratory infections and diarrhoeal disease episodes in 2013..."
     >
-    > -- <cite>[The Lancet, Vol. 386, No. 9995](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)60692-4/abstract)</cite>
+    > -- <cite>[The Lancet, Vol. 386, No. 9995](<https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)60692-4/abstract>)</cite>
 
 9.  **Claim:** It's been 44 years since we last cured a disease.
+
     > "In 1980 WHO declared smallpox eradicated – the only infectious disease to achieve this distinction."
     >
     > -- <cite>[Smallpox - World Health Organization](https://www.who.int/health-topics/smallpox)</cite>
 
 10. **Claim:** Negative Results are Never Published.
+
     > "Half of US clinical trials go unpublished"
     >
     > -- <cite>[Nature - Half of US clinical trials go unpublished](https://www.nature.com/articles/nature.2013.14286)</cite>
@@ -287,21 +296,25 @@ We'll keep you informed about the latest developments in decentralized clinical 
     > -- <cite>[Are the additives in our food making us ill?](https://www.dailymail.co.uk/health/article-8757191/Are-additives-food-making-ill.html)</cite>
 
 12. **Claim:** It's impossible to recover a billion dollars of drug development from a small number of patients.
+
     > "The average cost of drug development from 2009 to 2018 was \$985 million"
     >
     > -- <cite>[The Worlds Most Expensive Drug](https://medium.com/bonobo-investments/the-worlds-most-expensive-drug-1f853731de0c)</cite>
 
 13. **Claim:** Cost analysis based on data from HHS report.
+
     > "This study models the decision-making process for a drug sponsor as a stylized decision tree that looks at the process for formulating a clinical trial from the point of view of an expected-revenue-maximizing sponsor in the face of uncertainty (or risk)."
     >
     > -- <cite>[Examination of Clinical Trial Costs and Barriers for Drug Development](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0)</cite>
 
 14. **Claim:** The dFDA platform can accelerate trial timelines to 2 years.
+
     > "24 months: Universal enrolment guarantee active; subsidies flowing."
     >
     > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-403-implementation-timeline)</cite>
 
 15. **Claim:** The dFDA platform can reduce trial costs to ~\$2M.
+
     > "The total cost of the UK Oxford RECOVERY trial was £2.1 million (~$2.7M)... This is nearly 80 times more cost-efficient than traditional clinical trials"
     >
     > -- <cite>[Decentralized Pragmatic Trials](./reference/recovery-trial.md)</cite>

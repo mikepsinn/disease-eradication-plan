@@ -2,10 +2,10 @@
 title: '"Non-Profit Partnership Incentives: A Mathematically Superior Model"'
 description: A strategic framework for aligning non-profit partners with the 1% Treaty mission through performance-based grants and personal VOTE point incentives.
 published: true
-date: '2025-08-15T00:00:00.000Z'
+date: "2025-08-15T00:00:00.000Z"
 tags: [nonprofits, incentives, partnerships, coalition-building, strategy]
 editor: markdown
-dateCreated: '2025-08-15T00:00:00.000Z'
+dateCreated: "2025-08-15T00:00:00.000Z"
 topic_id: nonprofit-partnership-incentives
 canonical: true
 status: active
@@ -33,19 +33,19 @@ We offer a two-part incentive structure that transforms partners from passive gr
 
 This incentive aligns the organization's budget with our primary mobilization goal.
 
-*   **The Model:** A baseline grant is provided to establish the partnership. This is coupled with a substantial, performance-based multiplier.
-*   **The Offer (Example):**
-    > "Your organization will receive a **baseline partnership grant** to cover initial setup and integration costs. In addition, we will release a **substantial performance grant** for every **X verified referendum votes** (e.g., 10,000) driven through your unique organizational link. This bonus is uncapped."
-*   **The Result:** The non-profit's most rational path to maximizing its budget is to become our most effective mobilization partner. Their team's efforts are now directly focused on a shared, measurable Key Performance Indicator (KPI): referendum votes.
+- **The Model:** A baseline grant is provided to establish the partnership. This is coupled with a substantial, performance-based multiplier.
+- **The Offer (Example):**
+  > "Your organization will receive a **baseline partnership grant** to cover initial setup and integration costs. In addition, we will release a **substantial performance grant** for every **X verified referendum votes** (e.g., 10,000) driven through your unique organizational link. This bonus is uncapped."
+- **The Result:** The non-profit's most rational path to maximizing its budget is to become our most effective mobilization partner. Their team's efforts are now directly focused on a shared, measurable Key Performance Indicator (KPI): referendum votes.
 
 ### 2. Individual Incentive: Personal Stakeholder Grants (VOTE Points)
 
 This incentive aligns the personal financial interests of key leaders with the ultimate success of the mission. This is critical to overcoming the natural tendency to simply use grants to increase internal salaries.
 
-*   **The Model:** We award a significant personal grant of **[VOTE points](../strategy/warondisease-landing.md#step-1-give-everyone-on-earth-a-stake-in-the-outcome)** directly to the individual leaders (e.g., Executive Director, Head of Development) within the partner organization.
-*   **The Offer (Example):**
-    > "For your leadership in this partnership, you will be personally granted a **significant allocation of VOTE points**. These points represent a future claim on the economic value of the **[VICTORY Bonds](../strategy/1-percent-treaty/victory-bonds-tokenomics.md)** and the DIH treasury you are helping to create."
-*   **The Result:** The leader's personal wealth is now directly tied to the treaty's success. They are no longer just an employee of a partner organization; they are a personal stakeholder in the entire endeavor. This creates a powerful incentive to drive for the larger outcome, far beyond their organization's immediate budget.
+- **The Model:** We award a significant personal grant of **[VOTE points](../strategy/warondisease-landing.md#step-1-give-everyone-on-earth-a-stake-in-the-outcome)** directly to the individual leaders (e.g., Executive Director, Head of Development) within the partner organization.
+- **The Offer (Example):**
+  > "For your leadership in this partnership, you will be personally granted a **significant allocation of VOTE points**. These points represent a future claim on the economic value of the **[VICTORY Bonds](../strategy/1-percent-treaty/victory-bonds-tokenomics.md)** and the DIH treasury you are helping to create."
+- **The Result:** The leader's personal wealth is now directly tied to the treaty's success. They are no longer just an employee of a partner organization; they are a personal stakeholder in the entire endeavor. This creates a powerful incentive to drive for the larger outcome, far beyond their organization's immediate budget.
 
 ## The Ultimate Incentive: From Grant Applicant to Grant Maker
 
@@ -53,9 +53,9 @@ The short-term performance grants and personal VOTE points are merely the activa
 
 Our model is designed to empower our coalition partners to become the governors of the very funding bodies that will define their fields for decades to come.
 
-*   **The Vision:** The **[Decentralized Institutes of Health (DIH)](../strategy/1-percent-treaty/decentralized-institutes-of-health.md)** is designed as a "coalition of coalitions." The main $27B+ treasury will allocate multi-billion dollar budgets to specialized sub-DAOs (e.g., Decentralized Institute of Mental Health, Decentralized Institute on Aging).
-*   **The Prize:** Governance of these powerful, well-funded sub-DAOs will be granted to the coalition of non-profit partners who made the 1% Treaty a reality.
-*   **The Result:** By joining our coalition, you are not just helping to unlock a new pool of funding; you are earning a permanent and powerful governance stake in it. The choice is clear: continue competing for small, finite grants, or cooperate to collectively govern a multi-billion dollar annual treasury dedicated to your mission.
+- **The Vision:** The **[Decentralized Institutes of Health (DIH)](../strategy/1-percent-treaty/decentralized-institutes-of-health.md)** is designed as a "coalition of coalitions." The main $27B+ treasury will allocate multi-billion dollar budgets to specialized sub-DAOs (e.g., Decentralized Institute of Mental Health, Decentralized Institute on Aging).
+- **The Prize:** Governance of these powerful, well-funded sub-DAOs will be granted to the coalition of non-profit partners who made the 1% Treaty a reality.
+- **The Result:** By joining our coalition, you are not just helping to unlock a new pool of funding; you are earning a permanent and powerful governance stake in it. The choice is clear: continue competing for small, finite grants, or cooperate to collectively govern a multi-billion dollar annual treasury dedicated to your mission.
 
 ## Earning a Stake: Tracking Contributions for Treasury Allocation
 

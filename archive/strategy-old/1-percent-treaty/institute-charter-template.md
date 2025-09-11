@@ -1,8 +1,8 @@
 ---
 title: DIH Institute Charter Template
-description: 'Reusable one-pager charter to spin up decentralized institutes (e.g., DIH–Aging) with clear scope, titles, governance, and alignment to the 1% Treaty.'
+description: "Reusable one-pager charter to spin up decentralized institutes (e.g., DIH–Aging) with clear scope, titles, governance, and alignment to the 1% Treaty."
 published: true
-date: '2025-08-15T00:00:00.000Z'
+date: "2025-08-15T00:00:00.000Z"
 tags: [governance, template, dih, charter]
 editor: markdown
 ---

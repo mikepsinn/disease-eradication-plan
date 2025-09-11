@@ -1,12 +1,13 @@
 ---
 title: Economic Value of Accelerating Medical Progress Through New Therapies
-description: 'Estimates the economic value of new therapies, including their market valuation and potential impact when accelerating medical progress by 80X.'
+description: "Estimates the economic value of new therapies, including their market valuation and potential impact when accelerating medical progress by 80X."
 published: true
-date: '2025-02-20T05:43:26.476Z'
+date: "2025-02-20T05:43:26.476Z"
 tags: [medical-progress, economic-value, new-therapies, drug-development]
 editor: markdown
-dateCreated: '2025-02-20T05:43:26.477Z'
+dateCreated: "2025-02-20T05:43:26.477Z"
 ---
+
 **Estimating the Economic Value of Accelerating Medical Progress Through New Therapies**
 
 ---

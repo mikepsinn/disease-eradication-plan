@@ -2,15 +2,15 @@
 title: "Fundraising Plan: The $2.5B Activation Energy"
 description: "Overview of the multi-phase fundraising strategy to raise $1.2B-$2.5B for the 1% Treaty implementation."
 published: true
-date: '2025-09-09T00:00:00.000Z'
+date: "2025-09-09T00:00:00.000Z"
 tags: [fundraising, overview, strategy, activation-energy]
 editor: markdown
-dateCreated: '2025-09-09T00:00:00.000Z'
+dateCreated: "2025-09-09T00:00:00.000Z"
 ---
 
 # Fundraising Plan: The $2.5B Activation Energy
 
-*This is the overview file for the fundraising epic. See detailed documents in this folder for specifics.*
+_This is the overview file for the fundraising epic. See detailed documents in this folder for specifics._
 
 ## Executive Summary
 
@@ -41,6 +41,7 @@ The capital required for the 1% Treaty is not for ongoing operations—it is a o
 ## Key Innovation: Pay-for-Success Model
 
 All major expenditures are structured with performance incentives:
+
 - **Legal fees:** Success fees paid in VICTORY bonds upon ratification
 - **Political campaigns:** Competitive prize ecosystem for first ratifications
 - **Tech development:** Bonuses tied to platform performance

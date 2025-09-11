@@ -1,6 +1,6 @@
 ---
 title: Global Survey on Human Values
-description: 'A comprehensive survey to understand global priorities and values, measuring public support for redirecting resources from military spending to health innovation and modernizing medical research systems.'
+description: "A comprehensive survey to understand global priorities and values, measuring public support for redirecting resources from military spending to health innovation and modernizing medical research systems."
 published: true
 date: 2024-06-10T00:00:00.000Z
 tags: [survey, global-values, human-priorities, public-opinion, medical-research, 1-percent-treaty]
@@ -21,6 +21,7 @@ The current medical research system is slow and expensive. New treatments take a
 The "1% Treaty" proposes that all signatory nations redirect 1% of their annual military budget to a global fund. Proponents argue that accelerating medical progress is a critical component of national and global security. This fund would subsidize patient participation in decentralized clinical trials, aiming to dramatically accelerate the development of new cures. ([Read the full security rationale here.](./national-security-argument.md))
 
 **1. Do you support or oppose your country signing the 1% Treaty?**
+
 - [ ] Support
 - [ ] Oppose
 - [ ] Unsure / Need more information
@@ -29,8 +30,8 @@ The "1% Treaty" proposes that all signatory nations redirect 1% of their annual 
 
 **2. Imagine you are given \$100 representing public funds. How would you allocate it between the following two areas?** (The total must add up to \$100).
 
-- **Military / War:** \$______
-- **A Decentralized Institutes of Health (to fund efficient medical trials):** \$______
+- **Military / War:** \$**\_\_**
+- **A Decentralized Institutes of Health (to fund efficient medical trials):** \$**\_\_**
 
 ---
 
@@ -39,6 +40,7 @@ The "1% Treaty" proposes that all signatory nations redirect 1% of their annual 
 The following questions are about the core principles of this initiative. The central proposal is to upgrade our medical research infrastructure with an **open-source, decentralized platform**, as outlined in the ["Right to Trial and FDA Upgrade Act"](../../act.md).
 
 This "FDA.gov v2" platform would work like this:
+
 1.  Any patient could see a ranked list of the most effective treatments for their condition, based on all available global data.
 2.  Any patient would have the **right to participate** in a clinical trial from home.
 3.  All trial data would be made public to accelerate new discoveries.
@@ -50,6 +52,7 @@ Based on these goals, to what extent do you support or oppose creating a new sys
 
 **Q8: Personal Participation**
 If you or a loved one had a serious condition, and a decentralized trial for a promising new treatment was available through a platform like the one described, how likely would you be to participate?
+
 - Very Likely
 - Somewhat Likely
 - Unsure
@@ -68,34 +71,35 @@ This helps illustrate how public priorities may differ from current government s
 
 For each pair of U.S. federal programs, allocate $100 based on your priorities.
 
--   **List of Programs for Comparison:**
-  -   Military / War
-  -   Healthcare (e.g., NIH, CDC, Medicare/Medicaid)
-  -   Scientific & Medical Research
-  -   Education
-  -   Infrastructure (e.g., roads, bridges, energy grid)
-  -   Social Security & Retirement Benefits
-  -   Environmental Protection
-  -   Justice System & Law Enforcement
-  -   International Aid & Diplomacy
-  -   Direct Payments to Citizens (Universal Basic Income)
+- **List of Programs for Comparison:**
+- Military / War
+- Healthcare (e.g., NIH, CDC, Medicare/Medicaid)
+- Scientific & Medical Research
+- Education
+- Infrastructure (e.g., roads, bridges, energy grid)
+- Social Security & Retirement Benefits
+- Environmental Protection
+- Justice System & Law Enforcement
+- International Aid & Diplomacy
+- Direct Payments to Citizens (Universal Basic Income)
 
 **Part B: Global Challenge Priorities**
 
 Now, allocate $100 for each pair of major global challenges.
 
--   **List of Challenges for Comparison:**
-  -   Curing Diseases (e.g., Cancer, Alzheimer's)
-  -   Preventing Future Pandemics
-  -   Combating Climate Change
-  -   Reducing Global Poverty
-  -   Promoting Peace & Preventing Conflict
-  -   Advancing Scientific Discovery & Space Exploration
-  -   Improving Global Education
-  -   Protecting Biodiversity & Ecosystems
+- **List of Challenges for Comparison:**
+- Curing Diseases (e.g., Cancer, Alzheimer's)
+- Preventing Future Pandemics
+- Combating Climate Change
+- Reducing Global Poverty
+- Promoting Peace & Preventing Conflict
+- Advancing Scientific Discovery & Space Exploration
+- Improving Global Education
+- Protecting Biodiversity & Ecosystems
 
 **Q9: Support for A System That Aligned Public Spending With Your Values**
 Would you support the adoption of a system such as Wishocracy that allowed your values to influence the allocation of public resources in accordance with your priorities?
+
 - Strongly Support
 - Support
 - Neutral
@@ -127,12 +131,14 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 <input type="text" size="10">
 
 **What is your age range?**
+
 - 18-29
 - 30-44
 - 45-64
 - 65+
 
 **How would you describe your political outlook?**
+
 - Liberal / Left-leaning
 - Centrist
 - Conservative / Right-leaning
@@ -141,12 +147,14 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 - Prefer not to say
 
 **What is the highest level of education you have completed?**
+
 - High school or less
 - Some college or Associate's degree
 - Bachelor's degree
 - Graduate or professional degree
 
 **What is your approximate annual household income (in USD)?**
+
 - Less than 50,000
 - 50,000 - 99,999
 - 100,000 - 199,999
@@ -164,6 +172,7 @@ Your responses help demonstrate public demand for faster, more accessible medica
 **Share This Survey & Earn Rewards**
 
 Share your unique referral link below. For every person who completes the survey using your link, you'll earn points that can be redeemed for:
+
 - Direct cash payments
 - Donation matching to medical research charities
 - Subsidized participation in decentralized clinical trials
@@ -175,6 +184,7 @@ Share your unique referral link below. For every person who completes the survey
 **Make a Direct Donation**
 
 If you'd like to support our advocacy efforts directly, your donation will help fund:
+
 - Education and outreach to policymakers
 - Public awareness campaigns
 - Technical development of the Decentralized FDA and Decentralized Institutes of Health
@@ -184,6 +194,6 @@ If you'd like to support our advocacy efforts directly, your donation will help 
 
 **Transparency:** All donations are tracked transparently, with real-time dashboards showing progress toward our goals. We target costs of $0.20-$0.50 per verified response through viral referral systems.
 
-**[Donate Now]** *(Link to donation page)*
+**[Donate Now]** _(Link to donation page)_
 
-*Every contribution, whether through sharing or donating, helps accelerate medical progress for everyone.*
+_Every contribution, whether through sharing or donating, helps accelerate medical progress for everyone._

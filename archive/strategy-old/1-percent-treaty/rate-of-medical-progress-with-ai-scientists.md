@@ -1,6 +1,6 @@
 ---
 title: Potential Rate of Medical Progress with AI Scientists
-description: 'AI scientists could potentially achieve 260 years of medical progress in a single year, dramatically accelerating drug discovery and healthcare innovation.'
+description: "AI scientists could potentially achieve 260 years of medical progress in a single year, dramatically accelerating drug discovery and healthcare innovation."
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [ai-scientists, medical-progress, agi, automation, drug-discovery, healthcare-innovation]
@@ -16,7 +16,7 @@ Based on the rate of recent advancements, we may achieve artificial general inte
 
 [![](globalSolutions/1-percent-treaty/agi-progress-projection.pngreaty/agi-progress-projection.png)](https://www.reddit.com/r/singularity/comments/1bf3kqf/alans_conservative_countdown_plot_predicts_agi_by/)
 
-This timeline has been supported by both Sam Altman, CEO of OpenAI, and Elon Musk who believes that AI will be smarter than any human by the end of 2024 and smarter than all combined humans by 2029.   
+This timeline has been supported by both Sam Altman, CEO of OpenAI, and Elon Musk who believes that AI will be smarter than any human by the end of 2024 and smarter than all combined humans by 2029.
 
 ![](elon-agi-tweet.png)
 

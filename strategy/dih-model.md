@@ -1,6 +1,6 @@
 ---
 title: The Decentralized Institutes of Health (DIH) Model
-description: 'A global treasury to fund the dFDA ecosystem, subsidize patient trial participation, and accelerate the war on disease through innovative financial instruments like VICTORY Bonds.'
+description: "A global treasury to fund the dFDA ecosystem, subsidize patient trial participation, and accelerate the war on disease through innovative financial instruments like VICTORY Bonds."
 published: true
 date: 2024-06-12T00:00:00.000Z
 tags: [dih, treasury, victory-bonds, patient-subsidies, dao, 1-percent-treaty, dfda]
@@ -43,9 +43,9 @@ By eliminating duplicated effort, we ensure that a much higher percentage of fun
 
 Beyond patient subsidies, the DIH Treasury is responsible for the growth and maintenance of the entire dFDA ecosystem. It achieves this through a DAO-governed funding model for:
 
-*   **Prizes & Competitions:** Funding major awards like the FDA-X Prize to incentivize breakthrough innovation from the global community.
-*   **Development Bounties:** Posting and paying out bounties for specific feature enhancements, bug fixes, and security improvements to the dFDA Protocol's open-source codebase.
-*   **Infrastructure Maintenance:** Ensuring the long-term sustainability, security, and scalability of the dFDA Protocol as a global public good.
+- **Prizes & Competitions:** Funding major awards like the FDA-X Prize to incentivize breakthrough innovation from the global community.
+- **Development Bounties:** Posting and paying out bounties for specific feature enhancements, bug fixes, and security improvements to the dFDA Protocol's open-source codebase.
+- **Infrastructure Maintenance:** Ensuring the long-term sustainability, security, and scalability of the dFDA Protocol as a global public good.
 
 ## Funding Model: VICTORY Bonds for the War on Disease
 
@@ -58,6 +58,7 @@ Just as citizens once invested in their nation's victory in wartime, they can no
 The financial model is made sustainable through the **[1% Treaty](./1-percent-treaty.md)**. The capital contributions made by signatory nations who pledge 1% of their military budgets are used to repay the VICTORY Bond holders over time, with interest.
 
 This creates a virtuous cycle:
+
 1.  Citizens and institutions buy VICTORY Bonds, funding the war on disease.
 2.  The DIH uses this capital to fund trials and development, producing cures and better health outcomes.
 3.  Nations, seeing the immense benefit, sign the 1% Treaty.
@@ -75,10 +76,10 @@ The DIH is not a monolithic entity; it is a "coalition of coalitions" designed t
 
 The DIH is composed of a main treasury DAO and numerous specialized, subordinate DAOs, or "sub-Institutes."
 
-*   **Decentralized Institute of Mental Health (DIMH)**
-*   **Decentralized Institute on Aging (DIA)** [[memory:8473964]]
-*   **Decentralized Institute of Cancer Research (DICR)**
-*   etc.
+- **Decentralized Institute of Mental Health (DIMH)**
+- **Decentralized Institute on Aging (DIA)** [[memory:8473964]]
+- **Decentralized Institute of Cancer Research (DICR)**
+- etc.
 
 Each sub-Institute is a fully-fledged DAO with its own governance token, budget, and mandate.
 
@@ -93,8 +94,8 @@ Each sub-Institute is a fully-fledged DAO with its own governance token, budget,
 
 This structure is the ultimate incentive for non-profits to make passing the 1% Treaty their temporary primary mission.
 
-*   **The Old Way (Ape Weak):** Compete with hundreds of other non-profits for a small piece of a finite philanthropic pie.
-*   **The New Way (Apes Strong):** Cooperate to unlock a multi-billion dollar annual treasury for your specific domain, and in doing so, earn a permanent, powerful governance stake in that treasury.
+- **The Old Way (Ape Weak):** Compete with hundreds of other non-profits for a small piece of a finite philanthropic pie.
+- **The New Way (Apes Strong):** Cooperate to unlock a multi-billion dollar annual treasury for your specific domain, and in doing so, earn a permanent, powerful governance stake in that treasury.
 
 The message is simple: **Stop applying for grants and become the grant-makers.** By joining the coalition, non-profits are not just supporting a cause; they are earning their seat at the table to govern the future of health funding in their field.
 
@@ -104,6 +105,6 @@ The DIH model's success relies on treaty adoption and inflows. For a full discus
 
 ## Organizational Structure
 
-The DIH is expanding into a comprehensive ecosystem that mirrors the NIH structure while offering decentralized governance,  titles, and community-specific focus areas. This expansion serves as a strategic recruitment tool for the 1% Treaty referendum effort.
+The DIH is expanding into a comprehensive ecosystem that mirrors the NIH structure while offering decentralized governance, titles, and community-specific focus areas. This expansion serves as a strategic recruitment tool for the 1% Treaty referendum effort.
 
 For a detailed breakdown of the DIH's internal structure and its relationship with allied non-profits and patient advocacy groups, see the **[DIH Organizational Structure](./governance/organizational-structure.md)** document.

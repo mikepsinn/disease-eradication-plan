@@ -1,8 +1,8 @@
 ---
 title: DIH On-Chain and AI Architecture
-description: 'Modular blueprint to replace centralized bureaucracy with AI agents and smart contracts across treasury, trials, and evidence-to-funding automation.'
+description: "Modular blueprint to replace centralized bureaucracy with AI agents and smart contracts across treasury, trials, and evidence-to-funding automation."
 published: true
-date: '2025-08-15T00:00:00.000Z'
+date: "2025-08-15T00:00:00.000Z"
 tags: [architecture, smart-contracts, ai, governance, oracle, dfda, dih]
 editor: markdown
 ---
@@ -90,9 +90,9 @@ graph TD
 
 ## Migration path (mirror → replacement)
 
-1) Mirror: run parallel programs with transparent automation and faster cycles
-2) Co-govern: accept third-party funds and match with DIH treasury under shared rules
-3) Replace: program becomes de facto standard; agencies integrate or become data providers
+1. Mirror: run parallel programs with transparent automation and faster cycles
+2. Co-govern: accept third-party funds and match with DIH treasury under shared rules
+3. Replace: program becomes de facto standard; agencies integrate or become data providers
 
 ## KPIs
 

@@ -1,12 +1,13 @@
 ---
 title: How to Contribute
-description: 'The single source of truth for all contribution guidelines, style guides, and project standards for the Decentralized Institutes of Health (DIH) knowledge base.'
+description: "The single source of truth for all contribution guidelines, style guides, and project standards for the Decentralized Institutes of Health (DIH) knowledge base."
 published: true
-date: '2025-09-09T00:00:00.000Z'
+date: "2025-09-09T00:00:00.000Z"
 tags: [contributing, guidelines, standards, book, knowledge-base]
 editor: markdown
-dateCreated: '2025-09-09T00:00:00.000Z'
+dateCreated: "2025-09-09T00:00:00.000Z"
 ---
+
 # How to Contribute to the DIH Knowledge Base
 
 Thank you for your interest in contributing. This document defines the contribution rules, structure, and workflows for this knowledge base. By participating, you agree to abide by the terms outlined here.
@@ -18,24 +19,24 @@ This repository documents the "War on Disease," a mission to make curing people 
 - **Primary Framing:** "Make curing people more profitable than killing them." / "Bribe our way to a better world."
 - **Secondary Framing:** "Make peace more profitable than war." / "Capture the peace dividend."
 - **Anchor in Public Choice Theory:** All strategic arguments must be framed through the lens of public choice theory. Assume that all actors (politicians, corporate leaders, voters) act in their own rational self-interest. Avoid arguments based on abstract "national interests" and instead focus on the specific, concrete incentives that drive individual decision-makers.
-- **Identify the Incentive Gaps:** Frame the *problem* not as a moral failure, but as a system with flawed incentives. The status quo is a rational response by individuals to a system that rewards rent-seeking and concentrates benefits for a few while diffusing costs to the many.
-- **Engineer a Better Deal:** Frame the *solution* as an exercise in incentive engineering. The goal is to create a new system with a superior set of **concentrated benefits** for a broader coalition of key actors. Always answer the question: "What's in it for them, personally and professionally?"
+- **Identify the Incentive Gaps:** Frame the _problem_ not as a moral failure, but as a system with flawed incentives. The status quo is a rational response by individuals to a system that rewards rent-seeking and concentrates benefits for a few while diffusing costs to the many.
+- **Engineer a Better Deal:** Frame the _solution_ as an exercise in incentive engineering. The goal is to create a new system with a superior set of **concentrated benefits** for a broader coalition of key actors. Always answer the question: "What's in it for them, personally and professionally?"
 - **Co-Opt, Don't Fight:** Acknowledge that powerful interest groups exist. The strategy is not to destroy them but to make it more profitable for them to support our goals than to oppose them. This is "politics as exchange."
 - **Be Concise and Direct:** Use short sentences, simple words, and powerful language.
 - **Speak Plainly:** Avoid weak corporate euphemisms. Write like a human.
 - **Quantify Everything:** All claims must be backed by data and citations.
 - **Tell a Compelling Story:** This is not just a plan; it's a movement. Use the "chapters" to build a powerful narrative:
-  -   `problem.md` should graphically and emotionally depict the human cost of war and disease. It must build urgency.
-  -   `solution.md` should paint a vivid, hopeful picture of the future we are building—a world without war and disease. It must inspire.
+  - `problem.md` should graphically and emotionally depict the human cost of war and disease. It must build urgency.
+  - `solution.md` should paint a vivid, hopeful picture of the future we are building—a world without war and disease. It must inspire.
 
 ## Contributor Workflow
 
-The plan *is* the repository. Our goal is to create a single source of truth that is so clear it can be read like a book.
+The plan _is_ the repository. Our goal is to create a single source of truth that is so clear it can be read like a book.
 
 1.  **Identify an Area for Improvement:** Find a "chapter" (a file in the root directory like `problem.md`) or an "appendix" (a file in a subdirectory) that is incomplete, unclear, or could be improved. The highest-priority areas are outlined in the main `roadmap.md`.
 2.  **Suggest an Edit (Propose a Change):** This project uses a standard Git workflow.
-    -   **For Git Users:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `update-financial-model` or `clarify-legal-framework`).
-    -   **For Non-Technical Users:** You can edit files directly through the GitHub web interface, which will handle the process of creating a fork and proposing a change for you.
+    - **For Git Users:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `update-financial-model` or `clarify-legal-framework`).
+    - **For Non-Technical Users:** You can edit files directly through the GitHub web interface, which will handle the process of creating a fork and proposing a change for you.
 3.  **Make Your Changes:** As you work, please adhere to all standards in this document. Your goal is to add clarity, detail, and evidence to the "book."
 4.  **Submit Your Change for Review:** Propose your changes by opening a "Pull Request." Ensure your description is clear and explains how your change improves the overall narrative.
 
@@ -53,13 +54,13 @@ This repository is structured as a book. The root directory contains the "Chapte
 - **The Internal Playbook (`operations/`):** This is for internal-facing strategy and standard operating procedures (SOPs). This is the "how-to" for running the organization itself. Content here is for the core team.
 - **The Appendix (`reference/`):** This is for supporting data, studies, citations, and other third-party reference material that back up claims made in "The Book."
 
-| Section | Content Type | Examples |
-|---|---|---|
-| `economics/` | Financial models, ROI, investment thesis | `investment-thesis.md`, `peace-dividend-value-capture.md` |
-| `strategy/` | Execution plans, political strategy, how-to | `1-percent-treaty.md`, `co-opting-defense-contractors.md` |
-| `legal/` | Legal compliance, governance, regulations | `multi-entity-strategy.md`, `right-to-trial-act.md` |
-| `operations/` | Team structure, hiring, internal processes | `hiring-plan.md`, `crypto-intake-sop.md` |
-| `reference/` | Data, studies, citations, reference material | `costs-of-war.md`, `recovery-trial.md` |
+| Section       | Content Type                                 | Examples                                                  |
+| ------------- | -------------------------------------------- | --------------------------------------------------------- |
+| `economics/`  | Financial models, ROI, investment thesis     | `investment-thesis.md`, `peace-dividend-value-capture.md` |
+| `strategy/`   | Execution plans, political strategy, how-to  | `1-percent-treaty.md`, `co-opting-defense-contractors.md` |
+| `legal/`      | Legal compliance, governance, regulations    | `multi-entity-strategy.md`, `right-to-trial-act.md`       |
+| `operations/` | Team structure, hiring, internal processes   | `hiring-plan.md`, `crypto-intake-sop.md`                  |
+| `reference/`  | Data, studies, citations, reference material | `costs-of-war.md`, `recovery-trial.md`                    |
 
 **Rules for Maintainable Structure:**
 
@@ -69,7 +70,7 @@ This repository is structured as a book. The root directory contains the "Chapte
    - ❌ Bad: `economics/fundraising/strategy.md` (too generic)
    - ✅ Good: `economics/fundraising/fundraising-strategy.md` (context needed)
    - ✅ Also Good: `strategy/1-percent-treaty.md` (inherently unique concept)
-   
+
    This ensures every file can be unambiguously referenced with `@filename` while keeping names as simple as possible.
 
 3. **Place new content in the appropriate section.** Only modify root-level chapters to summarize and link to new detailed content.
@@ -79,11 +80,13 @@ This repository is structured as a book. The root directory contains the "Chapte
 To maintain a clean and actionable list of improvements, all contributions must be checked against the following standards. We use a specific format for `TODO` comments to flag content that needs citations, stylistic rewrites, clarification, or visual aids.
 
 **1. Internal Link Integrity:**
+
 - Before submitting, scan the file for all internal relative links (e.g., `[text](./path/file.md)`).
 - **You MUST FIX** any links that are broken.
 - If a link points to a deleted file, either remove the link or repoint it to a relevant alternative.
 
 **2. Content Quality Triage (TODOs):**
+
 - **Placement:** Place `TODO`s in the most relevant location **inside the body of the text**. If a `TODO` applies to the entire document, place it at the **very bottom**. NEVER place `TODO`s at the top of a file or in the frontmatter.
 - **Formatting:** Use machine-readable comments so they can be easily aggregated into a project-wide "content debt" list.
   - `<!-- TODO: Add citation for this claim. -->`
@@ -100,10 +103,10 @@ All Markdown files **MUST** begin with a YAML frontmatter block. Our frontmatter
 title: "A Clear and Descriptive Title for the Page"
 description: "A brief, one-sentence summary of the page's content. Used in search results. (Max 140 characters)"
 published: true # Set to 'false' for drafts
-date: 'YYYY-MM-DDTHH:MM:SS.sssZ' # The publication or last significant update date
+date: "YYYY-MM-DDTHH:MM:SS.sssZ" # The publication or last significant update date
 tags: [keyword1, keyword2] # A list of relevant tags/keywords
 editor: markdown # Should always be markdown
-dateCreated: 'YYYY-MM-DDTHH:MM:SS.sssZ' # The date the file was first created
+dateCreated: "YYYY-MM-DDTHH:MM:SS.sssZ" # The date the file was first created
 ---
 ```
 
@@ -113,17 +116,18 @@ dateCreated: 'YYYY-MM-DDTHH:MM:SS.sssZ' # The date the file was first created
 
 1.  **Find a High-Quality Source:** Use reputable sources like academic journals, government reports, or major news outlets.
 2.  **Create an Anchor Link in the Text:** In the body of the text, link your claim to a unique anchor ID.
-    -   **Example:** `...global military spending reached [$2.443 trillion](#global-spending-2023)...`
+    - **Example:** `...global military spending reached [$2.443 trillion](#global-spending-2023)...`
 3.  **Add a Source Quote Section:** At the end of the file, create a section titled `## Source Quotes` if one does not exist.
 4.  **Add the Full Citation:** In the source section, create the anchor and add the full quote and link.
-    -   **Example:**
+    - **Example:**
 
-        ```markdown
-        <a id="global-spending-2023"></a>
-        * **Global military spending reached $2.443 trillion**
-          > "World military expenditure reached an all-time high of $2443 billion in 2023..."
-          > — SIPRI, April 2024, [URL](https://www.sipri.org/media/press-release/2024/world-military-expenditure-surges-amid-war-rising-tensions-and-insecurity)
-        ```
+      ```markdown
+      <a id="global-spending-2023"></a>
+
+      - **Global military spending reached $2.443 trillion**
+        > "World military expenditure reached an all-time high of $2443 billion in 2023..."
+        > — SIPRI, April 2024, [URL](https://www.sipri.org/media/press-release/2024/world-military-expenditure-surges-amid-war-rising-tensions-and-insecurity)
+      ```
 
 This pattern is mandatory to prevent link rot, provide immediate context, and keep readers on-page.
 

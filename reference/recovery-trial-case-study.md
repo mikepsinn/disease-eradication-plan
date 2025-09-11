@@ -14,29 +14,29 @@ The traditional model of clinical trials is often criticized for its high cost a
 
 **Key RECOVERY Trial Statistics**
 
-| Metric | Value | Source |
-|--------|--------|---------|
-| Total Patients Enrolled | 49,000+ | [RECOVERY Trial Website](https://www.recoverytrial.net/) |
-| Participating Hospitals | 186 | [RECOVERY Trial Website](https://www.recoverytrial.net/) |
-| Total Trial Cost | £2.1M (~$2.7M) | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/) |
-| Cost per Patient | ~$500 ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)) | [Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs) |
-| Traditional Trial Cost per Patient | ~$41,000 | [NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/) |
-| Treatments Evaluated | 12 | [RECOVERY Results](https://www.recoverytrial.net/results) |
-| Cost per Intervention | ~£175,000 (~$223,000) | Calculated (£2.1M ÷ 12 treatments) |
-| Proven Effective Treatments | 4 | [Nuffield Department of Population Health](https://www.ndph.ox.ac.uk/news/recovery-trial-celebrates-two-year-anniversary-of-life-saving-dexamethasone-result) |
-| UK Lives Saved (by March 2021) | 22,000+ | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/) |
-| Global Lives Saved (by March 2021) | 1,000,000+ | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/) |
-| Days to First Major Result | <100 | [The Conversation](https://theconversation.com/the-inside-story-of-recovery-how-the-worlds-largest-covid-19-trial-transformed-treatment-and-what-it-could-do-for-other-diseases-184772) |
+| Metric                             | Value                                                                                                                             | Source                                                                                                                                                                                  |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Total Patients Enrolled            | 49,000+                                                                                                                           | [RECOVERY Trial Website](https://www.recoverytrial.net/)                                                                                                                                |
+| Participating Hospitals            | 186                                                                                                                               | [RECOVERY Trial Website](https://www.recoverytrial.net/)                                                                                                                                |
+| Total Trial Cost                   | £2.1M (~$2.7M)                                                                                                                    | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)                                  |
+| Cost per Patient                   | ~$500 ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)) | [Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)                                                               |
+| Traditional Trial Cost per Patient | ~$41,000                                                                                                                          | [NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)                                                                                                                           |
+| Treatments Evaluated               | 12                                                                                                                                | [RECOVERY Results](https://www.recoverytrial.net/results)                                                                                                                               |
+| Cost per Intervention              | ~£175,000 (~$223,000)                                                                                                             | Calculated (£2.1M ÷ 12 treatments)                                                                                                                                                      |
+| Proven Effective Treatments        | 4                                                                                                                                 | [Nuffield Department of Population Health](https://www.ndph.ox.ac.uk/news/recovery-trial-celebrates-two-year-anniversary-of-life-saving-dexamethasone-result)                           |
+| UK Lives Saved (by March 2021)     | 22,000+                                                                                                                           | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)                                  |
+| Global Lives Saved (by March 2021) | 1,000,000+                                                                                                                        | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)                                  |
+| Days to First Major Result         | <100                                                                                                                              | [The Conversation](https://theconversation.com/the-inside-story-of-recovery-how-the-worlds-largest-covid-19-trial-transformed-treatment-and-what-it-could-do-for-other-diseases-184772) |
 
 **The RECOVERY Revolution: A Blueprint for Efficiency**
 
 The RECOVERY trial, conducted in the UK, was a remarkable example of pragmatic and cost-effective clinical research. It enrolled over 49,000 patients across 186 hospitals, testing multiple potential COVID-19 treatments with impressive speed and efficacy. Key elements contributing to its success included:
 
-* **Decentralized Recruitment:** Instead of relying on specialized research centers, RECOVERY enrolled patients from regular hospitals and clinics. This significantly broadened the patient pool and reduced the recruitment time and overhead.
-* **Simplified Data Collection:** The trial focused on collecting core clinical outcomes using existing hospital data, reducing the need for extensive and costly data management. They also used a standardized case record form that was streamlined to avoid unnecessary data collection.
-* **Routine Care Integration:** By integrating the trial into routine hospital care, RECOVERY minimized the additional burden on both healthcare professionals and patients.
-* **Adaptive Trial Design:** RECOVERY's design allowed for flexibility to add or remove arms of the trial as new treatments emerged or some were proven ineffective. This meant that fewer patients needed to be enrolled in ineffective arms of the trial, saving time and money.
-* **Emphasis on Pragmatism**: The trial prioritized answering important clinical questions quickly using existing infrastructure, cutting down on administrative costs and bureaucracy.
+- **Decentralized Recruitment:** Instead of relying on specialized research centers, RECOVERY enrolled patients from regular hospitals and clinics. This significantly broadened the patient pool and reduced the recruitment time and overhead.
+- **Simplified Data Collection:** The trial focused on collecting core clinical outcomes using existing hospital data, reducing the need for extensive and costly data management. They also used a standardized case record form that was streamlined to avoid unnecessary data collection.
+- **Routine Care Integration:** By integrating the trial into routine hospital care, RECOVERY minimized the additional burden on both healthcare professionals and patients.
+- **Adaptive Trial Design:** RECOVERY's design allowed for flexibility to add or remove arms of the trial as new treatments emerged or some were proven ineffective. This meant that fewer patients needed to be enrolled in ineffective arms of the trial, saving time and money.
+- **Emphasis on Pragmatism**: The trial prioritized answering important clinical questions quickly using existing infrastructure, cutting down on administrative costs and bureaucracy.
 
 These factors combined to create an exceptionally efficient clinical trial. The estimated cost per patient was roughly $500 ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)), compared to typical clinical trial costs ranging from tens of thousands to hundreds of thousands of dollars per patient, depending on the complexity of the trial. This is an enormous difference, as the median cost of a clinical trial for a new therapeutic is around $41,000 per patient ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)). Moreover, it is estimated that the RECOVERY trial saved hundreds of thousands of lives ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8940185/)) by rapidly determining that steroids are effective in treating severe COVID-19.
 
@@ -56,25 +56,28 @@ The RECOVERY trial offers a clear pathway to reducing the cost of clinical resea
 
 Adopting a global, decentralized, autonomous clinical trial platform inspired by RECOVERY's model could offer numerous benefits:
 
-* **Drastic Cost Reductions:** By automating processes, reducing overhead, and leveraging existing resources, the platform could significantly decrease the cost of clinical trials. While achieving an 80x reduction may be overly optimistic, it is reasonable to expect a substantial cost reduction compared to existing traditional trial models.
-* **Accelerated Drug Development:** Streamlined processes and rapid recruitment would significantly shorten the timelines for clinical trials and reduce the time it takes to bring new drugs to market. This would reduce development costs and get treatments to patients faster.
-* **Increased Patient Access:** The platform would make clinical trials more accessible to patients globally, regardless of their location or socioeconomic status, leading to more representative study populations and a more comprehensive view of treatment efficacy.
-* **Enhanced Scientific Rigor:** Automated data management and validation would ensure high-quality data, while transparent governance would promote scientific integrity.
-* **Global Collaboration:** An open platform would foster global collaboration and innovation, enabling researchers from around the world to participate in the advancement of medical knowledge.
+- **Drastic Cost Reductions:** By automating processes, reducing overhead, and leveraging existing resources, the platform could significantly decrease the cost of clinical trials. While achieving an 80x reduction may be overly optimistic, it is reasonable to expect a substantial cost reduction compared to existing traditional trial models.
+- **Accelerated Drug Development:** Streamlined processes and rapid recruitment would significantly shorten the timelines for clinical trials and reduce the time it takes to bring new drugs to market. This would reduce development costs and get treatments to patients faster.
+- **Increased Patient Access:** The platform would make clinical trials more accessible to patients globally, regardless of their location or socioeconomic status, leading to more representative study populations and a more comprehensive view of treatment efficacy.
+- **Enhanced Scientific Rigor:** Automated data management and validation would ensure high-quality data, while transparent governance would promote scientific integrity.
+- **Global Collaboration:** An open platform would foster global collaboration and innovation, enabling researchers from around the world to participate in the advancement of medical knowledge.
 
 **Sources and Key Quotes**
 
 1. **Funding and Cost**
+
    > "The total cost of the UK Oxford RECOVERY trial was £2.1 million" - [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)
    > "This funding was provided jointly by UK Research and Innovation (UKRI) and the Department of Health and Social Care, through the National Institute for Health Research (NIHR)" - [RECOVERY Trial News](https://www.recoverytrial.net/news/update)
    > "The trial was part of a wider £20 million rapid research response investment by the UK Government" - [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)
 
 2. **Trial Impact**
+
    > "Identified dexamethasone as an effective treatment, which is estimated to have saved around 22,000 lives in the UK and one million lives globally by March 2021" - [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)
    > "Produced three groundbreaking results within its first 100 days that reshaped COVID care globally" - [The Conversation](https://theconversation.com/the-inside-story-of-recovery-how-the-worlds-largest-covid-19-trial-transformed-treatment-and-what-it-could-do-for-other-diseases-184772)
    > "Although RECOVERY will probably be remembered for the dexamethasone result, the study achieved a much wider legacy... including three additional proven COVID-19 treatments: the arthritis drug tocilizumab; a monoclonal antibody treatment, now known as Ronapreve; and [baricitinib]" - [Nuffield Department of Population Health](https://www.ndph.ox.ac.uk/news/recovery-trial-celebrates-two-year-anniversary-of-life-saving-dexamethasone-result)
 
 3. **Patient Enrollment**
+
    > "Became the world's largest clinical trial for COVID-19 treatments, with over 40,000 participants across 185 trial sites in the UK" - [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)
    > "Between 23 April 2020 and 25 January 2021, 4,116 adults were included in the assessment of tocilizumab alone" - [Rxivist](https://rxivist.org/papers/129041)
 

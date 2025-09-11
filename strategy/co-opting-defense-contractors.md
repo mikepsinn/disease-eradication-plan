@@ -2,10 +2,10 @@
 title: Co-Opting Defense Contractors - Strategic Analysis
 description: Detailed rationale and confidence assessment for aligning defense contractors' interests via VICTORY bonds instead of adversarial tactics.
 published: true
-date: '2025-08-15T00:00:00.000Z'
+date: "2025-08-15T00:00:00.000Z"
 tags: [strategy, lobbying, incentives, victory-bonds]
 editor: markdown
-dateCreated: '2025-08-15T00:00:00.000Z'
+dateCreated: "2025-08-15T00:00:00.000Z"
 ---
 
 # Co-Opting Defense Contractors: Why It's Superior to Adversarial Strategies
@@ -40,7 +40,9 @@ Long-term success requires sustainable systemic change. Co-opting creates enduri
 This approach reinforces the "defeat bad money with better money" thesis, potentially cutting costs by 30-50% while speeding timelines.
 
 ### Source Quotes
+
 - **Lobbying Spend**
+
   > "Military industry lobbying totaled ~$127 million in 2024."
   > — OpenSecrets, 2024, [Defense Lobbying](https://www.opensecrets.org/federal-lobbying/industries/summary?cycle=2024&id=D).
 

@@ -5,9 +5,10 @@ title: '"dFDA Implementation Plan: Privacy-Preserving Treatment Review Aggregati
 tags: [dfda, privacy, treatment-reviews, aggregation, implementation-plan]
 published: true
 editor: markdown
-date: '2025-02-12T20:29:46.904Z'
-dateCreated: '2025-02-12T20:29:46.904Z'
+date: "2025-02-12T20:29:46.904Z"
+dateCreated: "2025-02-12T20:29:46.904Z"
 ---
+
 # dFDA Implementation Plan: Privacy-Preserving Treatment Review Aggregation
 
 ## Overview
@@ -29,13 +30,13 @@ This document outlines the implementation plan for creating a privacy-preserving
 
 ```typescript
 interface TreatmentSource {
-  id: string;                    // Unique source identifier
-  name: string;                  // Source name (e.g., "Walgreens", "CVS", "FDA")
-  type: 'manufacturer' | 'retailer' | 'pharmacy' | 'regulatory' | 'research';
-  url?: string;                  // Where to get the treatment
-  verificationStatus: 'verified' | 'unverified' | 'disputed';
+  id: string; // Unique source identifier
+  name: string; // Source name (e.g., "Walgreens", "CVS", "FDA")
+  type: "manufacturer" | "retailer" | "pharmacy" | "regulatory" | "research";
+  url?: string; // Where to get the treatment
+  verificationStatus: "verified" | "unverified" | "disputed";
   qualityMetrics?: {
-    gmpCertified?: boolean;      // Good Manufacturing Practice
+    gmpCertified?: boolean; // Good Manufacturing Practice
     thirdPartyTested?: boolean;
     regulatoryApprovals?: string[];
     batchTesting?: boolean;
@@ -76,36 +77,36 @@ interface TreatmentSource {
 interface AnonymousUserProof {
   // Proof that the user is human (e.g., using zk-SNARK)
   humanityProof: string;
-  
+
   // Deterministic but anonymous identifier derived from user's identity
   // Different apps can generate the same ID for the same user without knowing who they are
   deterministicId: string;
-  
+
   // Proof that this ID belongs to the user without revealing their identity
   ownershipProof: string;
-  
+
   // Optional: age/location attestation for regulatory compliance
   // Proves user is in allowed jurisdiction/age without revealing specific details
   attestations?: {
-    minimumAge?: string;     // Proof user is above required age
-    jurisdiction?: string;   // Proof user is in allowed jurisdiction
+    minimumAge?: string; // Proof user is above required age
+    jurisdiction?: string; // Proof user is in allowed jurisdiction
   };
 }
 
 interface TreatmentSubmissionProof {
   // Proves this is a real treatment experience without revealing user
   experienceProof: string;
-  
+
   // Proves user hasn't submitted this treatment data before
   uniquenessProof: string;
-  
+
   // Timestamp of experience with proof of ordering
   // Allows temporal analysis without revealing exact dates
   timeProof: {
-    orderProof: string;     // Proves chronological order of events
-    periodProof: string;    // Proves experience falls within claimed period
+    orderProof: string; // Proves chronological order of events
+    periodProof: string; // Proves experience falls within claimed period
   };
-  
+
   // Optional: Proof of relevant medical conditions
   // Allows filtering by patient characteristics without revealing specifics
   conditionProofs?: Array<{
@@ -179,23 +180,24 @@ interface TreatmentSubmissionProof {
 ```typescript
 interface AggregatedTreatmentData {
   // Required fields
-  treatmentId: string;           // Content-addressable identifier
-  conditionId: string;          // Content-addressable identifier
+  treatmentId: string; // Content-addressable identifier
+  conditionId: string; // Content-addressable identifier
   source: {
-    id: string;                 // Reference to TreatmentSource
-    batch?: string;             // Optional batch identifier
-    variant?: string;           // Optional variant identifier
-    references?: Array<{        // Links to external data sources
-      type: 'pubchem' | 'drugbank' | 'pubmed' | 'clinicaltrials' | 'fda';
-      id: string;               // ID in the external system
-      url: string;              // Direct URL to the reference
+    id: string; // Reference to TreatmentSource
+    batch?: string; // Optional batch identifier
+    variant?: string; // Optional variant identifier
+    references?: Array<{
+      // Links to external data sources
+      type: "pubchem" | "drugbank" | "pubmed" | "clinicaltrials" | "fda";
+      id: string; // ID in the external system
+      url: string; // Direct URL to the reference
     }>;
   };
   // Zero-knowledge proofs
   proofs: {
     submissionProof: TreatmentSubmissionProof;
     userProof: AnonymousUserProof;
-    aggregationProof: string;   // Proves aggregation was done correctly
+    aggregationProof: string; // Proves aggregation was done correctly
   };
   aggregationPeriod: {
     startDate: string;
@@ -212,9 +214,9 @@ interface AggregatedTreatmentData {
     };
     averageTreatmentDurationDays: number;
     sideEffects: Array<{
-      name: string;             // Should use standardized symptom identifiers
-      frequency: number;        // percentage
-      severity: 'mild' | 'moderate' | 'severe';
+      name: string; // Should use standardized symptom identifiers
+      frequency: number; // percentage
+      severity: "mild" | "moderate" | "severe";
     }>;
     // Optional fields
     costData?: {
@@ -222,34 +224,34 @@ interface AggregatedTreatmentData {
       currency: string;
     };
     qualityMetrics?: {
-      dataCompleteness: number;  // percentage
-      userRetention: number;     // percentage
-      verificationLevel: 'high' | 'medium' | 'low';
+      dataCompleteness: number; // percentage
+      userRetention: number; // percentage
+      verificationLevel: "high" | "medium" | "low";
     };
     // Analysis Results
     analysisResults?: {
       efficacy: {
-        responseRate: number;           // Percentage showing significant improvement
-        numberNeededToTreat: number;    // Number needed to treat for one positive outcome
-        qalysGained?: number;          // Quality-adjusted life years gained
-        costPerQaly?: number;          // Cost per QALY
+        responseRate: number; // Percentage showing significant improvement
+        numberNeededToTreat: number; // Number needed to treat for one positive outcome
+        qalysGained?: number; // Quality-adjusted life years gained
+        costPerQaly?: number; // Cost per QALY
       };
       safety: {
-        adverseEventRate: number;      // Percentage experiencing adverse events
+        adverseEventRate: number; // Percentage experiencing adverse events
         severeAdverseEventRate: number; // Percentage with severe adverse events
-        drugInteractionRisk: 'low' | 'medium' | 'high';
-        contraindications: string[];   // List of contraindicated conditions
+        drugInteractionRisk: "low" | "medium" | "high";
+        contraindications: string[]; // List of contraindicated conditions
       };
       populationData: {
         demographicBreakdown: {
-          age: Record<string, number>;  // Distribution by age groups
+          age: Record<string, number>; // Distribution by age groups
           gender: Record<string, number>; // Distribution by gender
           ethnicity: Record<string, number>; // Distribution by ethnicity
         };
         comorbidities: Array<{
-          condition: string;           // Comorbid condition identifier
-          frequency: number;           // Percentage of users
-          impact: 'positive' | 'negative' | 'neutral';
+          condition: string; // Comorbid condition identifier
+          frequency: number; // Percentage of users
+          impact: "positive" | "negative" | "neutral";
         }>;
       };
     };

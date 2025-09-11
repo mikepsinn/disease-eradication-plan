@@ -1,8 +1,8 @@
 ---
 title: Incentives Layer for DIH/dFDA
-description: 'Social and economic incentive mechanisms that drive growth, engagement, and funding for the 1% Treaty and decentralized trials, wired to on-chain modules, credentials, and public dashboards.'
+description: "Social and economic incentive mechanisms that drive growth, engagement, and funding for the 1% Treaty and decentralized trials, wired to on-chain modules, credentials, and public dashboards."
 published: true
-date: '2025-08-15T00:00:00.000Z'
+date: "2025-08-15T00:00:00.000Z"
 tags: [incentives, referrals, bounties, hypercerts, credentials, leaderboards, dfda, dih]
 editor: markdown
 ---
@@ -44,6 +44,7 @@ editor: markdown
   - Regional/institute matching pools unlocked by meeting verified KPIs (pledges, enrollments, outcomes); default payouts in VOTE points representing earned ownership of [peace dividend value](../economic-models/peace-dividend-value-capture.md) created through successful advocacy
 
 > Canonical references: [Legal Compliance Framework](./legal-compliance-framework.md), [VICTORY Bonds — Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md), [Decentralized Institutes of Health](./1-percent-treaty/decentralized-institutes-of-health.md)
+
 - Transparent formulas; funds flow programmatically
 
 ## On-chain and oracle wiring

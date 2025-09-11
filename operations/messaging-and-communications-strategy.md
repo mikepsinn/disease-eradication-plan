@@ -58,13 +58,13 @@ We can estimate the project's value by tracking its impact on key performance in
 
 ### Step 1: Identify Key Value Drivers & Metrics
 
-| Value Driver                | Key Performance Indicators (KPIs)                                                                    |
-|-----------------------------|----------------------------------------------------------------------------------------------------|
-| **A. Increased Funding & Public Support (Immediate Focus)**    | • Increase in inbound investment/grant inquiries<br>• Increase in total funding received ($)<br>• Higher conversion rate from pitch to commitment<br>• Number of signatures/positive votes on an unofficial public referendum |
-| **B. Community Growth & Future Participant Acquisition**  | • Growth in community mailing list/forum sign-ups<br>• Lower projected Cost Per Acquisition (CPA) for participants<br>• Positive sentiment shifts in target audience segments |
-| **C. Enhanced Partnerships**| • Increase in inbound partnership requests<br>• Number of new formal partnerships (academic, industry)<br>• Higher-profile collaborations |
-| **D. Regulatory Support**   | • Positive sentiment in policy discussions/media<br>• Reduction in time for regulatory feedback (qualitative)<br>• Increased invitations to consult on policy |
-| **E. Talent Acquisition**   | • Growth in qualified job applicants<br>• Higher acceptance rate for offers<br>• Improved perception as a top place to work |
+| Value Driver                                                | Key Performance Indicators (KPIs)                                                                                                                                                                                             |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A. Increased Funding & Public Support (Immediate Focus)** | • Increase in inbound investment/grant inquiries<br>• Increase in total funding received ($)<br>• Higher conversion rate from pitch to commitment<br>• Number of signatures/positive votes on an unofficial public referendum |
+| **B. Community Growth & Future Participant Acquisition**    | • Growth in community mailing list/forum sign-ups<br>• Lower projected Cost Per Acquisition (CPA) for participants<br>• Positive sentiment shifts in target audience segments                                                 |
+| **C. Enhanced Partnerships**                                | • Increase in inbound partnership requests<br>• Number of new formal partnerships (academic, industry)<br>• Higher-profile collaborations                                                                                     |
+| **D. Regulatory Support**                                   | • Positive sentiment in policy discussions/media<br>• Reduction in time for regulatory feedback (qualitative)<br>• Increased invitations to consult on policy                                                                 |
+| **E. Talent Acquisition**                                   | • Growth in qualified job applicants<br>• Higher acceptance rate for offers<br>• Improved perception as a top place to work                                                                                                   |
 
 ### Step 2: Establish Baselines and Set Targets
 
@@ -109,8 +109,8 @@ Let's assume a hypothetical project cost and a conservative set of outcomes.
   3. **Future Trial Efficiencies (Projected):** The community built during the referendum campaign is projected to reduce future CPA for a 1,000-participant trial by 15% (from $1,000 to $850) and accelerate recruitment by one month.
 
 - **Calculated Financial Value:**
-  1. **Funding Contribution:** 20% * $1,000,000 = **$200,000**
-  2. **Projected Recruitment Savings:** 1,000 participants * $150 savings/participant = **$150,000**
+  1. **Funding Contribution:** 20% \* $1,000,000 = **$200,000**
+  2. **Projected Recruitment Savings:** 1,000 participants \* $150 savings/participant = **$150,000**
   3. **Projected Acceleration Value:** Using a conservative delay cost of $20,000/day, saving 30 days is worth **$600,000**.
 
 - **Total Financial Value (Immediate + Projected):** $200,000 + $150,000 + $600,000 = **$950,000**

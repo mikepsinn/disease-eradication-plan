@@ -5,9 +5,10 @@ title: Community Directory
 tags: [dFDA, community, collaboration, decentralized-health, regulatory-processes]
 published: true
 editor: markdown
-date: '2025-02-12T16:52:13.974Z'
-dateCreated: '2025-02-12T16:52:13.974Z'
+date: "2025-02-12T16:52:13.974Z"
+dateCreated: "2025-02-12T16:52:13.974Z"
 ---
+
 # Community Directory
 
 Welcome to the Community Directory! This repository is designed to facilitate collaboration and organization among various stakeholders involved in the project. Our goal is to create an open, transparent, and efficient ecosystem where partners from different sectors can come together to contribute to the advancement of decentralized health regulatory processes.

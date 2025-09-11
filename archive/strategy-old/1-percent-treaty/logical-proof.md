@@ -59,11 +59,9 @@ Although implementing the 1% Treaty may face challenges such as global coordinat
 
 The Treaty would maintain geopolitical stability while massively increasing medical research, reducing catastrophic risks, and generating immense economic value. Given the feasibility, low initial funding requirements, and extraordinary potential benefits, this plan should be seriously considered.
 
-
 [^2]: Bostrom, N. (2014). Superintelligence: Paths, Dangers, Strategies. Oxford University Press.
 
 [^3]: Pew Research Center. (2019). Public Perspectives on the Future of Science and Technology. <https://www.pewresearch.org/science/2019/03/14/public-perspectives-on-the-future-of-science-and-technology/>
-
 
 [^5]: Stockholm International Peace Research Institute. (2021). Global arms industry: Sales by the top 25 companies up 8.5 per cent; Big players active in Global South. <https://www.sipri.org/media/press-release/2021/global-arms-industry-sales-top-25-companies-85-cent-big-players-active-global-south>
 
@@ -74,7 +72,6 @@ The Treaty would maintain geopolitical stability while massively increasing medi
 [^8]: Palermo, T., Olson, J., & Wei, H. (2018). Decentralized Crowdfunding: A New Model for Funding Community-Driven Projects. Computer, 51(10), 68-73.
 
 [^9]: Woolf, A. F. (2020). Monitoring and Verification in Arms Control. Congressional Research Service. <https://fas.org/sgp/crs/nuke/R41201.pdf>
-
 
 [^11]: Estimation based on the current lobbying expenditure and capacity of military contractors.
 

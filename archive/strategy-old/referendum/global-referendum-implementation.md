@@ -1,6 +1,6 @@
 ---
 title: Global Referendum Implementation
-description: 'Practical design for a secure, globally verifiable referendum to measure consent for the 1% Treaty and DIH funding.'
+description: "Practical design for a secure, globally verifiable referendum to measure consent for the 1% Treaty and DIH funding."
 published: true
 date: 2025-08-12T00:00:00.000Z
 tags: [referendum, governance, identity, verifiability, privacy, security]
@@ -62,6 +62,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 ### Source Quotes for Key Parameters
 
 - **Helios (end-to-end verifiable voting)**
+
   > "Helios is an open-audit voting system… voters can verify that their vote is included and correctly tallied."  
   > — Adida et al., Helios, [heliosvoting.org](https://heliosvoting.org/)
 

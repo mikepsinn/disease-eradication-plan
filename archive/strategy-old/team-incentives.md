@@ -2,10 +2,10 @@
 title: "Dynamic Expected Value Incentive Policy"
 description: "Defines a sophisticated, real-time, risk-adjusted compensation model based on Expected Value (EV) calculations, using prediction markets to dynamically price risk."
 published: false
-date: '2025-08-24T00:00:00.000Z'
+date: "2025-08-24T00:00:00.000Z"
 tags: ["incentives", "tokenomics", "team", "algorithmic", "expected-value", "prediction-markets"]
 editor: markdown
-dateCreated: '2025-08-24T00:00:00.000Z'
+dateCreated: "2025-08-24T00:00:00.000Z"
 topic_id: team-incentives
 canonical: true
 status: draft
@@ -64,7 +64,7 @@ To make the Success Grants meaningful, they must map to a share of the network.
 - **Success Valuation:** We define a target valuation for the project at the time of the main capital raise (Phase 2). For modeling purposes, we set this at **$5 Billion**.
 - **Team Allocation Pool Value:** The 20% team allocation pool is therefore worth **$1 Billion** upon success (`$5B * 0.20`).
 - **Calculating Ownership:** A contributor's ownership of the team pool is their share of the total value.
-  - *Example:* The engineer's $4.6M in Success Grants represents `$4,600,000 / $1,000,000,000 = 0.46%` of the team's token pool.
+  - _Example:_ The engineer's $4.6M in Success Grants represents `$4,600,000 / $1,000,000,000 = 0.46%` of the team's token pool.
 
 At the Token Generation Event, their accumulated Success Grants are converted into a corresponding number of VICTORY bonds.
 

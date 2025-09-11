@@ -17,7 +17,7 @@ Creative marketing tactics to amplify the referral rewards system and achieve vi
 ### QR Code T-Shirts
 
 - **Concept**: T-shirts with QR codes linking to personal referral links
-- **Implementation**: 
+- **Implementation**:
   - Custom printing with unique QR codes for each referrer
   - Bulk orders to reduce per-unit costs
   - Referral tracking through QR code analytics
@@ -113,12 +113,12 @@ Creative marketing tactics to amplify the referral rewards system and achieve vi
 
 ### Per-Tactic Cost Breakdown
 
-| Tactic | Initial Cost | Per-Referral Cost | Viral Coefficient | Notes |
-|--------|--------------|-------------------|-------------------|-------|
-| QR Code T-Shirts | $15-25/shirt | $0.30-0.75 | 0.8-1.2 | High visibility, conversation starter |
-| Social Media Challenges | $500-2000 | $0.10-0.30 | 1.5-3.0 | High viral potential, low marginal cost |
-| Local Meetups | $200-1000/event | $0.50-1.00 | 0.5-1.0 | Community building, lower viral spread |
-| Influencer Partnerships | $100-1000 | $0.20-0.60 | 1.0-2.0 | Leverages existing audiences |
+| Tactic                  | Initial Cost    | Per-Referral Cost | Viral Coefficient | Notes                                   |
+| ----------------------- | --------------- | ----------------- | ----------------- | --------------------------------------- |
+| QR Code T-Shirts        | $15-25/shirt    | $0.30-0.75        | 0.8-1.2           | High visibility, conversation starter   |
+| Social Media Challenges | $500-2000       | $0.10-0.30        | 1.5-3.0           | High viral potential, low marginal cost |
+| Local Meetups           | $200-1000/event | $0.50-1.00        | 0.5-1.0           | Community building, lower viral spread  |
+| Influencer Partnerships | $100-1000       | $0.20-0.60        | 1.0-2.0           | Leverages existing audiences            |
 
 ### ROI Optimization Strategies
 
@@ -180,6 +180,7 @@ Creative marketing tactics to amplify the referral rewards system and achieve vi
 ## Source Quotes for Key Parameters
 
 - **Viral Marketing Effectiveness**
+
   > "Viral marketing campaigns can achieve 3-10x higher engagement rates compared to traditional advertising, with referral programs showing particularly strong viral coefficients."
   > — [Viral Marketing Research, 2024](https://example.com/viral-marketing-study)
 

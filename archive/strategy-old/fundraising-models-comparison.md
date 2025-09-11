@@ -1,11 +1,11 @@
 ---
 title: Fundraising Models Comparison — Selecting the Best Path for DIH
-description: 'Comparison of fundraising options (Reg D/Reg S, Reg A+, Reg CF, token sales, grants) against our goals, with precedents and a clear recommendation.'
+description: "Comparison of fundraising options (Reg D/Reg S, Reg A+, Reg CF, token sales, grants) against our goals, with precedents and a clear recommendation."
 published: true
-date: '2025-01-20T00:00:00.000Z'
+date: "2025-01-20T00:00:00.000Z"
 tags: [fundraising-models, capital-raising, reg-d, reg-s, reg-a-plus, grants, public-goods, crypto, strategy]
 editor: markdown
-dateCreated: '2025-01-20T00:00:00.000Z'
+dateCreated: "2025-01-20T00:00:00.000Z"
 ---
 
 ## Purpose
@@ -88,20 +88,24 @@ Use both top‑down caps/precedents and bottom‑up conversion funnels. Run bear
 ### 1) Reg D 506(c) (U.S. accredited)
 
 Parameters per segment i (VC, family office, HNWI, crypto fund):
+
 - Reachable targets: N_i; Contact rate: p_contact_i; Meeting rate: p_meet_i; Commit rate: p_commit_i; Accreditation pass: p_acc_i; Avg check: avg_check_i
 
 Formula (12 months):
+
 - Raise_RegD = Σ_i [N_i × p_contact_i × p_meet_i × p_commit_i × p_acc_i × avg_check_i]
 - Guardrails: first close 60–120 days; typical avg_check_i ranges — VC: \$2–10M, FO: \$1–5M, HNWI: \$100–500k; subtract 15–30% KYC/ops friction.
 
 ### 2) Reg S (non‑U.S.)
 
 By region j (EU, MEA, APAC, LATAM), apply local frictions f_law_j (0.7–0.9) and ops friction f_ops_j (0.7–0.9):
+
 - Raise_RegS = Σ_j Σ_i [N_ij × p_contact_ij × p_meet_ij × p_commit_ij × f_law_j × f_ops_j × avg_check_ij]
 
 ### 3) Reg A+ (Tier 2)
 
 Hard cap and funnel:
+
 - Raise_RegA = min(\$75,000,000, months_live × T × CTR × signup × KYC_pass × invest_rate × avg_ticket)
 - Benchmarks: CTR 1–3%; signup 10–20%; KYC_pass 70–90%; invest_rate 5–15%; avg_ticket \$300–\$1,500.
 
@@ -132,6 +136,7 @@ Hard cap and funnel:
 - Policy/timeline adjustments: EV_adj = EV_Total × (1 − r_time) × (1 − r_policy)
 
 Calibration starters (12 months):
+
 - Reg D: \$250–\$400M; Reg S: \$100–\$250M; Reg A+: \$25–\$75M (6–12 months live); Reg CF: \$1–\$5M; Juicebox: \$2–\$20M sprint; Auction (if ever used): monitor only until compliance greenlight; Grants: \$2–\$10M.
 
 ## Semiquantitative Scoring (Criteria Weights and Scores)
@@ -140,17 +145,18 @@ Weights (sum = 1.0): Speed 0.20; Scale 0.25; Compliance 0.20; Global reach 0.10;
 
 Scores are 1 (poor) to 5 (excellent). Weighted score = Σ(weight × score).
 
-| Option | Speed | Scale | Compliance | Global | Inclusivity | Cost | Optics | Weighted Score |
-| --- | ---:| ---:| ---:| ---:| ---:| ---:| ---:| ---:|
-| Reg D 506(c) | 5 | 4 | 4 | 2 | 1 | 4 | 4 | 0.20×5 + 0.25×4 + 0.20×4 + 0.10×2 + 0.10×1 + 0.05×4 + 0.10×4 = **3.65** |
-| Reg S | 4 | 3 | 3 | 5 | 2 | 3 | 4 | 0.20×4 + 0.25×3 + 0.20×3 + 0.10×5 + 0.10×2 + 0.05×3 + 0.10×4 = **3.30** |
-| Reg A+ | 2 | 3 | 5 | 3 | 5 | 3 | 5 | 0.20×2 + 0.25×3 + 0.20×5 + 0.10×3 + 0.10×5 + 0.05×3 + 0.10×5 = **3.85** |
-| Reg CF | 3 | 1 | 5 | 2 | 5 | 4 | 5 | 0.20×3 + 0.25×1 + 0.20×5 + 0.10×2 + 0.10×5 + 0.05×4 + 0.10×5 = **3.15** |
-| Public token sale/ICO/Auction (Gnosis/LBP) | 5 | 4 | 1 | 5 | 5 | 4 | 2 | 0.20×5 + 0.25×4 + 0.20×1 + 0.10×5 + 0.10×5 + 0.05×4 + 0.10×2 = **3.25** |
-| Juicebox DAO campaign | 5 | 2 | 4 | 4 | 5 | 5 | 4 | 0.20×5 + 0.25×2 + 0.20×4 + 0.10×4 + 0.10×5 + 0.05×5 + 0.10×4 = **3.95** |
-| Grants/Donations | 3 | 2 | 5 | 4 | 5 | 5 | 5 | 0.20×3 + 0.25×2 + 0.20×5 + 0.10×4 + 0.10×5 + 0.05×5 + 0.10×5 = **3.85** |
+| Option                                     | Speed | Scale | Compliance | Global | Inclusivity | Cost | Optics |                                                          Weighted Score |
+| ------------------------------------------ | ----: | ----: | ---------: | -----: | ----------: | ---: | -----: | ----------------------------------------------------------------------: |
+| Reg D 506(c)                               |     5 |     4 |          4 |      2 |           1 |    4 |      4 | 0.20×5 + 0.25×4 + 0.20×4 + 0.10×2 + 0.10×1 + 0.05×4 + 0.10×4 = **3.65** |
+| Reg S                                      |     4 |     3 |          3 |      5 |           2 |    3 |      4 | 0.20×4 + 0.25×3 + 0.20×3 + 0.10×5 + 0.10×2 + 0.05×3 + 0.10×4 = **3.30** |
+| Reg A+                                     |     2 |     3 |          5 |      3 |           5 |    3 |      5 | 0.20×2 + 0.25×3 + 0.20×5 + 0.10×3 + 0.10×5 + 0.05×3 + 0.10×5 = **3.85** |
+| Reg CF                                     |     3 |     1 |          5 |      2 |           5 |    4 |      5 | 0.20×3 + 0.25×1 + 0.20×5 + 0.10×2 + 0.10×5 + 0.05×4 + 0.10×5 = **3.15** |
+| Public token sale/ICO/Auction (Gnosis/LBP) |     5 |     4 |          1 |      5 |           5 |    4 |      2 | 0.20×5 + 0.25×4 + 0.20×1 + 0.10×5 + 0.10×5 + 0.05×4 + 0.10×2 = **3.25** |
+| Juicebox DAO campaign                      |     5 |     2 |          4 |      4 |           5 |    5 |      4 | 0.20×5 + 0.25×2 + 0.20×4 + 0.10×4 + 0.10×5 + 0.05×5 + 0.10×4 = **3.95** |
+| Grants/Donations                           |     3 |     2 |          5 |      4 |           5 |    5 |      5 | 0.20×3 + 0.25×2 + 0.20×5 + 0.10×4 + 0.10×5 + 0.05×5 + 0.10×5 = **3.85** |
 
 Notes:
+
 - Auction mechanisms improve fairness vs. fixed‑price ICOs but do not eliminate securities/optics risks without mature utility and counsel sign‑off.
 - Juicebox scores high on speed/inclusivity/optics for donation‑only sprints; not a substitute for institutional activation capital.
 
@@ -176,14 +182,17 @@ Notes:
 ## Source Quotes for Key Parameters
 
 - **Gitcoin total distributed (\$65M+)**
+
   > “Gitcoin has distributed over \$65 million to projects through grants, bounties, and related products.”
   > — Axios, 2022, [Crypto public goods funding](https://www.axios.com/2022/08/23/crypto-public-goods-green-pill-gitcoin-advocacy-funding)
 
 - **Optimism RetroPGF scale (50M OP)**
+
   > “Optimism has allocated more than 50 million OP tokens across multiple rounds of Retroactive Public Goods Funding.”
   > — Business Insider (Markets), 2024, [RetroPGF funding](https://markets.businessinsider.com/news/currencies/the-next-stage-for-public-good-funding-in-crypto-1033787594)
 
 - **BitGive Pineapple Fund donation (\$1M)**
+
   > “BitGive received a \$1 million donation from the Pineapple Fund in 2017–2018.”
   > — Wikipedia, 2024, [BitGive Foundation](https://en.wikipedia.org/wiki/BitGive_Foundation)
 

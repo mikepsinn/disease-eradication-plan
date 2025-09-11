@@ -2,7 +2,7 @@
 
 ## The Top-Down Refactoring Playbook
 
-*Systematic process for populating the new book structure using content from the `/archive` folder.*
+_Systematic process for populating the new book structure using content from the `/archive` folder._
 
 ### The Guiding Principle: The "Platonic Ideal" Tree is Truth
 
@@ -19,19 +19,23 @@ If no suitable content exists, the file should be populated with a `TODO` commen
 Follow this process for each "Chapter" and "Section" in the target structure.
 
 **1. 🎯 SELECT a Target File:**
+
 - Pick an empty or incomplete file from the `Complete Target Structure` list below (e.g., `problem.md`).
 
 **2. 🔎 SEARCH for Source Material:**
+
 - Use workspace search (e.g., `@` mentions, keyword search) to find files in the `/archive` directory that contain relevant content.
 - Good search terms include the target filename, its title, or key concepts it should contain.
 
 **3. 🤔 EVALUATE and MERGE Content:**
+
 - For each potential source file in the archive, review its content and decide what is essential, non-obvious, and project-specific.
 - Use the **Pre-Screening Questions** below to quickly eliminate irrelevant files.
 - Copy and paste the valuable content from the source file(s) into your target file.
 - **Delete the source file from `/archive`** once you have extracted all its valuable content.
 
 **4. ✨ QA the Target File:**
+
 - After populating the target file, perform the quality assurance checks outlined in `CONTRIBUTING.md`. This includes:
   - Fixing all broken internal links.
   - Adding machine-readable `TODO` comments for any content gaps or style issues.
@@ -39,6 +43,7 @@ Follow this process for each "Chapter" and "Section" in the target structure.
 ### Pre-Screening Questions (for evaluating files in `/archive`)
 
 **❌ IMMEDIATE DELETE if ANY of these are true:**
+
 - Is this generic content not highly specific to our project? (e.g., "how to run a marketing campaign")
 - Is this about dFDA technical implementation? (we have a separate dFDA wiki)
 - Is this a duplicate of content already integrated?
@@ -50,7 +55,7 @@ Follow this process for each "Chapter" and "Section" in the target structure.
 
 ## Complete Target Structure: "The 1% Treaty: How to End War and Disease"
 
-*(This is the master plan for the refactoring effort)*
+_(This is the master plan for the refactoring effort)_
 
 ### Root Level: The Chapters
 
@@ -59,10 +64,10 @@ Following README.md's narrative flow for maximum readability:
 ```
 /
 ├── README.md                           ✅ (Perfect intro - "War is incredibly stupid...")
-├── problem.md                          📖 Chapter 1: The Grotesque Misallocation  
+├── problem.md                          📖 Chapter 1: The Grotesque Misallocation
 ├── solution.md                         📖 Chapter 2: Legal Bribery for Peace
 ├── vision.md                           📖 Chapter 3: The World We Build
-├── economics.md                        📖 Chapter 4: The Financial Engine  
+├── economics.md                        📖 Chapter 4: The Financial Engine
 ├── strategy.md                         📖 Chapter 5: How Everyone Wins (The Bribery Strategy)
 ├── proof.md                           📖 Chapter 6: Why This Actually Works (Precedents & Evidence)
 ├── legal.md                           📖 Chapter 7: Legal Compliance & Structure
@@ -78,7 +83,7 @@ Following README.md's narrative flow for maximum readability:
 
 ```
 ├── investment-thesis.md                     (Core investment case - unique concept)
-├── peace-dividend-value-capture.md          (Economic engine explanation)  
+├── peace-dividend-value-capture.md          (Economic engine explanation)
 ├── dfda-cost-benefit-analysis.md            (80X efficiency ROI analysis)
 ├── investor-risk-analysis.md                (Risk mitigation vs. traditional VC)
 ├── operational-budget-model.md              (Bottom-up budget justification)
@@ -94,7 +99,7 @@ Following README.md's narrative flow for maximum readability:
     └── fundraising-whale-outreach.md        (High-net-worth targeting strategy)
 ```
 
-**strategy/** - Execution Plans & Political Strategy  
+**strategy/** - Execution Plans & Political Strategy
 
 ```
 ├── 1-percent-treaty.md                      (Full treaty text & explanation)
@@ -154,17 +159,18 @@ Following README.md's narrative flow for maximum readability:
 
 **Immediate Destinations for High-Value Content:**
 
-| Archive Source | Target Destination | Reason |
-|---------------|-------------------|---------|
-| `archive/economic-models/*.md` | `economics/*.md` | Direct financial model migration |
-| `archive/strategy-old/1-percent-treaty/*.md` | `strategy/*.md` | Core strategy content |
-| `archive/strategy-old/co-opting-defense-contractors.md` | `strategy/co-opting-defense-contractors.md` | **CRITICAL** - core strategy |
-| `archive/careers/hiring-plan.md` | `operations/hiring-plan.md` | Key operational content |
-| `archive/legal-old/multi-entity-strategy.md` | `legal/multi-entity-strategy.md` | Essential legal framework |
-| `archive/reference-old/*.md` | `reference/*.md` | Supporting evidence |
-| `archive/regulatory/*.md` | `legal/*.md` | Compliance frameworks |
+| Archive Source                                          | Target Destination                          | Reason                           |
+| ------------------------------------------------------- | ------------------------------------------- | -------------------------------- |
+| `archive/economic-models/*.md`                          | `economics/*.md`                            | Direct financial model migration |
+| `archive/strategy-old/1-percent-treaty/*.md`            | `strategy/*.md`                             | Core strategy content            |
+| `archive/strategy-old/co-opting-defense-contractors.md` | `strategy/co-opting-defense-contractors.md` | **CRITICAL** - core strategy     |
+| `archive/careers/hiring-plan.md`                        | `operations/hiring-plan.md`                 | Key operational content          |
+| `archive/legal-old/multi-entity-strategy.md`            | `legal/multi-entity-strategy.md`            | Essential legal framework        |
+| `archive/reference-old/*.md`                            | `reference/*.md`                            | Supporting evidence              |
+| `archive/regulatory/*.md`                               | `legal/*.md`                                | Compliance frameworks            |
 
 **Delete Categories:**
+
 - Most `archive/operations-old/issues/*.md` (planning artifacts)
 - `archive/dfda.md` and related (separate dFDA wiki)
 - `archive/features/*.md` (implementation details)
@@ -181,18 +187,20 @@ For each archived file:
    - If it belongs nowhere → **DELETE**.
    - If it reveals a critical gap in the ideal structure, update the structure first.
 4. **✅ ACT:** **MERGE** the essential, non-obvious content into the target file, then delete the source. Or, if it's a perfect 1:1 fit, **MOVE** and **RENAME** it to match the ideal filename.
-5. **✨ QA:** Perform the Quality Assurance Checklist on the *target file* that was just modified.
+5. **✨ QA:** Perform the Quality Assurance Checklist on the _target file_ that was just modified.
 
 ## Quality Assurance Checklist (Applied After Content Integration)
 
 For every file that is **MODIFIED** (by moving or merging), perform this quick QA check:
 
 **1. Internal Link Integrity:**
+
 - Scan the file for all internal relative links (e.g., `[text](./path/file.md)`).
 - **IMMEDIATELY FIX** any links that are now broken due to files being moved or renamed.
 - If a link points to a now-deleted file, either remove the link or repoint it to a relevant alternative.
 
 **2. Content Quality Triage:**
+
 - **Is a critical claim missing a citation?** If yes, add `<!-- TODO: Add citation for this claim. -->`
 - **Does the writing style clash with the project's voice (direct, concise)?** If yes, add `<!-- TODO: Rewrite this section to match project writing style. -->`
 - **Is a chart, image, or visual desperately needed?** If yes, add `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
@@ -203,6 +211,7 @@ These machine-readable TODOs create an actionable list of content debt to be add
 ## Process Rules
 
 **Golden Rules for Each File:**
+
 1. **Always use PowerShell `Move-Item`** (not copy) - this automatically deletes the source
 2. **When splitting files:** Move the original, then create additional files as needed
 3. **When merging files:** Append content to target, then delete source

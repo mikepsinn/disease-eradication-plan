@@ -1,6 +1,6 @@
 ---
 title: DIH Treasury Architecture
-description: 'Technical and governance architecture for the Decentralized Institutes of Health (DIH) Treasury, targeting Bitcoin-level decentralization via multi-sig and threshold signatures.'
+description: "Technical and governance architecture for the Decentralized Institutes of Health (DIH) Treasury, targeting Bitcoin-level decentralization via multi-sig and threshold signatures."
 published: true
 date: 2025-08-12T00:00:00.000Z
 tags: [dih, treasury, multisig, threshold-signatures, governance, security, transparency]
@@ -83,18 +83,22 @@ The Decentralized Institutes of Health (DIH) operates a global treasury to subsi
 ### Source Quotes for Key Parameters
 
 - **SIPRI global military expenditure (2023)**
+
   > "Total global military expenditure reached \$2443 billion in 2023, an increase of 6.8 per cent in real terms from 2022."  
   > — SIPRI, Apr 2024, [Press release](https://www.sipri.org/media/press-release/2024/global-military-spending-surges-amid-war-rising-tensions-and-insecurity)
 
 - **SIPRI global military expenditure (2024)**
+
   > "World military expenditure reached \$2718 billion in 2024, an increase of 9.4 per cent in real terms from 2023..."  
   > — SIPRI, Apr 2025, [Press release](https://www.sipri.org/media/press-release/2025/unprecedented-rise-global-military-expenditure-european-and-middle-east-spending-surges)
 
 - **Gnosis Safe**
+
   > "Safe is a smart account infrastructure enabling secure and flexible management of digital assets on Ethereum and EVM-compatible networks."  
   > — Safe Docs, [docs.safe.global](https://docs.safe.global/)
 
 - **FROST threshold signatures**
+
   > "FROST is a flexible round-optimal Schnorr threshold signature scheme, designed for practical deployment with support for key refresh and signer aggregation."  
   > — IETF CFRG Draft, [datatracker.ietf.org](https://datatracker.ietf.org/doc/draft-irtf-cfrg-frost/)
 

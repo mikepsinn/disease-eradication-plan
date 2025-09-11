@@ -1,6 +1,6 @@
 ---
 title: n8n Workflow for Evaluating Supreme Allied Commander Applicants
-description: 'A detailed outline of the n8n workflow for parsing, evaluating, and ranking applications for the Supreme Allied Commander, War on Disease.'
+description: "A detailed outline of the n8n workflow for parsing, evaluating, and ranking applications for the Supreme Allied Commander, War on Disease."
 published: true
 date: 2025-01-01T00:00:00.000Z
 tags: [hiring, workflow, n8n, automation, ai, recruitment, leadership]
@@ -26,7 +26,7 @@ graph TD;
     F --> I[Web & API Skill Analysis];
     F --> J[Data & Blockchain Skill Analysis];
     F --> K[Strategic Philosophy Analysis];
-    
+
     subgraph "Evidence Verification"
         H
         I
@@ -108,4 +108,4 @@ The core of the workflow, using an LLM to run multiple specialized evaluations.
   - Saves all data and scores to a central database.
   - For candidates scoring above a threshold (e.g., > 75), a summary is generated for review.
   - Sends a notification to the "Hiring Command" with a link to the ranked list of candidates for human review.
-  - **Guideline:** The Hiring Command should manually review any candidate who scores a 9 or 10 in the `aiSkill` or `webApiSkill` categories, regardless of their final weighted score. A genius in a key area may be more valuable than a candidate who is simply good in all areas. 
+  - **Guideline:** The Hiring Command should manually review any candidate who scores a 9 or 10 in the `aiSkill` or `webApiSkill` categories, regardless of their final weighted score. A genius in a key area may be more valuable than a candidate who is simply good in all areas.

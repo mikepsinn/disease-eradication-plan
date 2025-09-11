@@ -1,11 +1,11 @@
 ---
 title: Whale & Billionaire Outreach Strategy
-description: 'Targeted strategy for raising $1-2.5B from high-net-worth individuals, crypto whales, and major foundations in 6-12 months'
+description: "Targeted strategy for raising $1-2.5B from high-net-worth individuals, crypto whales, and major foundations in 6-12 months"
 published: true
-date: '2025-01-15T00:00:00.000Z'
+date: "2025-01-15T00:00:00.000Z"
 tags: [fundraising, whales, billionaires, institutional-investors, major-donors]
 editor: markdown
-dateCreated: '2025-01-15T00:00:00.000Z'
+dateCreated: "2025-01-15T00:00:00.000Z"
 ---
 
 # Whale & Billionaire Outreach Strategy
@@ -17,12 +17,14 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 ## Why This Approach
 
 **Speed vs. Scale Trade-off:**
+
 - **Traditional fundraising**: 6-18 months to reach thousands of investors
 - **Whale targeting**: 1-6 months to reach 100 key decision makers
 - **Check sizes**: $10-100M vs. $1-10K
 - **Legal complexity**: Lower (fewer investors) vs. Higher (more investors)
 
 **Unit Economics:**
+
 - 1 meeting → $50M check vs. 50,000 meetings → $50M in small checks
 - Higher success probability with mission-aligned billionaires than random retail
 
@@ -33,6 +35,7 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 ### Category 1: Crypto Whales & Protocol Treasuries ($500M-1B potential)
 
 **Individual Crypto Billionaires:**
+
 - Vitalik Buterin (Ethereum founder) - Mission-aligned, understands governance tokens
 - Brian Armstrong (Coinbase) - Health tech investor, crypto infrastructure
 - Changpeng Zhao (Binance) - Global reach, massive liquidity
@@ -40,6 +43,7 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 - Winklevoss Twins - Early Bitcoin adopters, institutional focus
 
 **Protocol Treasuries (DAO-to-DAO):**
+
 - Uniswap Labs ($4B+ treasury) - Understands DAO governance
 - MakerDAO ($8B+ treasury) - Health-aligned investing
 - Compound Treasury - DeFi protocol treasury
@@ -47,6 +51,7 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 - ConsenSys/MetaMask - Ethereum ecosystem alignment
 
 **Crypto VCs with Health Focus:**
+
 - Andreessen Horowitz (a16z) - Bio fund + crypto fund overlap
 - Coinbase Ventures - Healthcare investments
 - Paradigm - Large check sizes, crypto-native
@@ -55,6 +60,7 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 ### Category 2: Health & Pharma Billionaires ($750M-1.5B potential)
 
 **Pharma Executives & Founders:**
+
 - Albert Bourla (Pfizer CEO) - Would get 2-5X more R&D funding
 - Pascal Soriot (AstraZeneca CEO) - Global operations
 - Giovanni Caforio (Bristol Myers Squibb) - Oncology focus
@@ -62,12 +68,14 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 - Emma Walmsley (GSK) - Vaccine/global health
 
 **Health Tech Billionaires:**
+
 - Patrick Soon-Shiong (NantHealth, $7B net worth) - Cancer research focus
 - Anne Wojcicki (23andMe) - Genomics, patient data
 - Jorge Conde (a16z Bio) - Healthcare investing
 - Robert Califf (Former FDA Commissioner) - Regulatory expertise + networks
 
 **Medical Device & Diagnostics:**
+
 - John Mattison (Kaiser Permanente CTO) - Healthcare systems
 - David Feinberg (Oracle Health) - Health data
 - Andy Slavitt (Former CMS) - Healthcare policy + networks
@@ -75,6 +83,7 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 ### Category 3: Mission-Aligned Mega-Foundations ($500M-1B potential)
 
 **Health-Focused Foundations:**
+
 - Gates Foundation ($70B endowment) - Global health mandate
 - Chan Zuckerberg Initiative ($45B commitment) - Science/health focus
 - Wellcome Trust ($38B endowment) - Medical research
@@ -82,12 +91,14 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 - Howard Hughes Medical Institute - Biomedical research
 
 **Effective Altruism & Longevity:**
+
 - Open Philanthropy (Dustin Moskovitz) - EA cause prioritization
 - Good Ventures - Cari Tuna/Dustin Moskovitz foundation
 - Simons Foundation - Jim Simons, quantitative approach
 - Schmidt Futures - Eric Schmidt, technology + health
 
 **Tech Philanthropists:**
+
 - MacKenzie Scott - Large, fast grants
 - Michael Bloomberg - Health policy experience
 - Larry Page/Sergey Brin - Technology + health intersection
@@ -96,14 +107,16 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 ### Category 4: Sovereign Wealth & Institutional ($250M-500M potential)
 
 **Health-Focused Sovereign Funds:**
+
 - Singapore GIC - Healthcare investments
 - Temasek (Singapore) - Life sciences portfolio
 - Norway Government Pension Fund - ESG focus
 - Saudi Arabia PIF - Vision 2030 health goals
 
 **University Endowments:**
+
 - Harvard Medical School endowment
-- Stanford Medicine endowment  
+- Stanford Medicine endowment
 - Johns Hopkins endowment
 - MIT endowment (health tech focus)
 
@@ -182,7 +195,7 @@ The first governance round is $250-400M from mission-aligned institutions. Would
 
 - **Best for:** Traditional investors/foundations
 - **Structure:** Debt that converts to governance tokens
-- **Timeline:** 4-8 weeks to close  
+- **Timeline:** 4-8 weeks to close
 - **Minimum:** $10M investment
 
 ### Option 3: Series Seed Equity
@@ -223,7 +236,7 @@ The first governance round is $250-400M from mission-aligned institutions. Would
 **Pathway:** Cancer research community → NantHealth partnerships
 **Connector:** Medical researchers, biotech CEOs
 
-### Foundation Ecosystem  
+### Foundation Ecosystem
 
 **Target:** Gates Foundation
 **Pathway:** Global health community → Program officers → Leadership
@@ -243,7 +256,7 @@ The first governance round is $250-400M from mission-aligned institutions. Would
 - 95% of diseases have no treatments
 - Current system is 80X less efficient than proven alternatives
 
-### Slide 2: The Proven Solution  
+### Slide 2: The Proven Solution
 
 - Oxford RECOVERY: $500/patient vs $41,000 traditional
 - MakerDAO: $8B treasury managed by token holders
@@ -305,7 +318,7 @@ The first governance round is $250-400M from mission-aligned institutions. Would
 - Begin token issuance and governance setup
 - Target: $150-300M closed
 
-### Month 7-9: Outreach Wave 2 (Next 50 targets)  
+### Month 7-9: Outreach Wave 2 (Next 50 targets)
 
 - Leverage Wave 1 investors for introductions
 - Higher success rate due to social proof and momentum
@@ -323,7 +336,7 @@ The first governance round is $250-400M from mission-aligned institutions. Would
 
 - **Month 3:** 25 outreach attempts, 10 meetings scheduled
 - **Month 6:** $250M committed, 5 investors closed
-- **Month 9:** $500M committed, 10 investors closed  
+- **Month 9:** $500M committed, 10 investors closed
 - **Month 12:** $1B+ committed, 15+ investors closed
 
 ---
@@ -365,7 +378,7 @@ The first governance round is $250-400M from mission-aligned institutions. Would
 ### Team Requirements
 
 - **Fundraising Lead**: Background in both crypto and health, existing relationships
-- **Legal Counsel**: Top-tier securities lawyer with DAO/crypto experience  
+- **Legal Counsel**: Top-tier securities lawyer with DAO/crypto experience
 - **Technical Architect**: Can explain treasury mechanics to sophisticated investors
 - **Domain Expert**: Healthcare/pharma credibility for industry targets
 

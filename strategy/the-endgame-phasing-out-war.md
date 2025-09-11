@@ -2,10 +2,10 @@
 title: '"The Endgame: A Multi-Generational Strategy to Phase Out War"'
 description: Outlines the long-term vision of progressively increasing the military-to-health budget redirection from 1% to eventually make organized violence economically obsolete.
 published: true
-date: '2025-02-01T00:00:00.000Z'
+date: "2025-02-01T00:00:00.000Z"
 tags: [strategy, endgame, peace, long-term-vision, victory-bonds]
 editor: markdown
-dateCreated: '2025-02-01T00:00:00.000Z'
+dateCreated: "2025-02-01T00:00:00.000Z"
 ---
 
 # The Endgame: A Multi-Generational Strategy to Phase Out War
@@ -20,17 +20,17 @@ Our long-term vision is to create a world where the economic incentives for coop
 
 Once the DIH treasury and the VICTORY Bond ecosystem are proven to be efficient, transparent, and effective at deploying capital, we will begin the process of incrementally increasing the redirection percentage.
 
--   **The Process:** Every 5-10 years, a new global referendum will be initiated to increase the redirection by a small, politically palatable amount (e.g., an additional 0.5% or 1%).
--   **The Ratchet Effect:** Each successful increase will further expand the DIH treasury, which in turn provides more funding for health, creates more value for VICTORY holders, and builds a larger coalition of stakeholders (universities, companies, patient groups) who will advocate for the *next* increase. This creates a self-reinforcing flywheel for peace.
--   **The Goal:** Over a period of 100-200 years, we can systematically and voluntarily redirect the vast majority of resources currently spent on military endeavors towards solving humanity's greatest challenges: disease, aging, poverty, and climate change.
+- **The Process:** Every 5-10 years, a new global referendum will be initiated to increase the redirection by a small, politically palatable amount (e.g., an additional 0.5% or 1%).
+- **The Ratchet Effect:** Each successful increase will further expand the DIH treasury, which in turn provides more funding for health, creates more value for VICTORY holders, and builds a larger coalition of stakeholders (universities, companies, patient groups) who will advocate for the _next_ increase. This creates a self-reinforcing flywheel for peace.
+- **The Goal:** Over a period of 100-200 years, we can systematically and voluntarily redirect the vast majority of resources currently spent on military endeavors towards solving humanity's greatest challenges: disease, aging, poverty, and climate change.
 
 ## 3. The Economic Inevitability
 
 This strategy is not based on a utopian hope for a change in human nature, but on a pragmatic understanding of incentives. As the DIH's budget grows from \$27 billion to \$100 billion, to \$500 billion, and eventually to over a trillion dollars annually, the economic gravity will shift.
 
--   The world's most talented scientists and engineers will be drawn to the massive opportunities in health and longevity research.
--   The world's largest investors will see that the greatest returns are found in curing disease, not in building weapons.
--   Nations will find that true security and global influence come not from their capacity for destruction, but from their contributions to human flourishing.
+- The world's most talented scientists and engineers will be drawn to the massive opportunities in health and longevity research.
+- The world's largest investors will see that the greatest returns are found in curing disease, not in building weapons.
+- Nations will find that true security and global influence come not from their capacity for destruction, but from their contributions to human flourishing.
 
 ## 4. Implications for VICTORY Token Holders
 

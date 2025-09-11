@@ -5,9 +5,10 @@ title: 50/50 Health Savings Sharing Program
 tags: [healthcare, cost-reduction, cures, preventative-therapies, chronic-diseases]
 published: true
 editor: markdown
-date: '2025-02-12T16:56:08.061Z'
-dateCreated: '2025-02-12T16:56:08.061Z'
+date: "2025-02-12T16:56:08.061Z"
+dateCreated: "2025-02-12T16:56:08.061Z"
 ---
+
 # 🌟 The 50/50 Health Savings Sharing Program
 
 Cutting Healthcare Costs in **HALF** By Incentivizing Cures and Preventative Therapies 🚀
@@ -60,13 +61,13 @@ Pharmaceutical companies invest in creating treatments that can completely cure 
 ### **📊 2. Calculation of Average Healthcare Savings**
 
 - **Determine Lifetime Costs:** Estimate the average cost of treating the disease over a patient's lifetime.
-  - *Example:* Treating heart disease may cost **$750,000** per patient.
+  - _Example:_ Treating heart disease may cost **$750,000** per patient.
 - **Potential Savings:** This amount represents the savings if the disease is cured or prevented.
 
 ### **3. Agreement on Profit Sharing**
 
 - **50% Savings Share:** The company receives 50% of the healthcare cost savings for each patient cured.
-  - *In our example:* The company earns **$375,000** per patient (50% of $750,000).
+  - _In our example:_ The company earns **$375,000** per patient (50% of $750,000).
 
 ### **4. Accessible Pricing of the Therapy**
 
@@ -129,16 +130,16 @@ Let's consider the impact of curing common age-related diseases collectively.
 ### **Calculations**
 
 1. **Total Healthcare Savings:**
-    - $388,500 (savings per person) × 1,000,000 (people) = **$388.5 billion**
+   - $388,500 (savings per person) × 1,000,000 (people) = **$388.5 billion**
 
 2. **Total Developer Earnings:**
-    - $194,250 (earnings per person) × 1,000,000 (people) = **$194.25 billion**
+   - $194,250 (earnings per person) × 1,000,000 (people) = **$194.25 billion**
 
 3. **Developer Profit:**
-    - $194.25 billion (earnings) - $10 billion (development costs) = **$184.25 billion**
+   - $194.25 billion (earnings) - $10 billion (development costs) = **$184.25 billion**
 
 4. **Healthcare System Savings:**
-    - Remaining 50% of savings: **$194.25 billion**
+   - Remaining 50% of savings: **$194.25 billion**
 
 ### **Summary**
 
@@ -220,15 +221,15 @@ the profit-sharing percentage or combining efforts across multiple conditions.
 - **For Preventative Therapies**:
   - Savings are calculated based on reduction in average per capita healthcare costs across the treated population.
   - Example: If average annual healthcare costs
-      are $12,000 per person, and a preventative therapy reduces this by 15%, the annual savings are $1,800 per person.
-      Over a 10-year period, this amounts to $18,000 in savings, with the manufacturer earning $9,000 per patient.
+    are $12,000 per person, and a preventative therapy reduces this by 15%, the annual savings are $1,800 per person.
+    Over a 10-year period, this amounts to $18,000 in savings, with the manufacturer earning $9,000 per patient.
 
 - **For Longevity Therapies**:
   - Savings are measured by comparing healthcare costs of treated populations against baseline per capita costs for
-      their age group.
+    their age group.
   - Example: If a longevity therapy reduces average healthcare costs for people aged 65-75 from $18,000 to $13,000 per
-      year, the annual savings are $5,000. Over a 10-year period, this generates $50,000 in savings, with the
-      manufacturer earning $25,000 per patient.
+    year, the annual savings are $5,000. Over a 10-year period, this generates $50,000 in savings, with the
+    manufacturer earning $25,000 per patient.
 
 ---
 
@@ -238,7 +239,7 @@ the profit-sharing percentage or combining efforts across multiple conditions.
   which can be hard to define for preventative or longevity therapies. Under this system:
   - The **endpoint is cost savings**, not specific clinical results.
   - Real-world data measures the reduction in healthcare spending over time, making the system inherently adaptable to
-      therapies that work across multiple conditions or improve overall health.
+    therapies that work across multiple conditions or improve overall health.
 
 ---
 
@@ -254,20 +255,20 @@ the profit-sharing percentage or combining efforts across multiple conditions.
 ### **How the System Handles Long-Term Impact**
 
 1. **Ongoing Savings Calculation**:
-    - For preventative and longevity therapies, savings are calculated over a long period using real-world data.
-    - Example: If a therapy reduces annual healthcare costs by $10,000 for 20 years, the total savings are $200,000,
-      with the manufacturer earning $100,000.
+   - For preventative and longevity therapies, savings are calculated over a long period using real-world data.
+   - Example: If a therapy reduces annual healthcare costs by $10,000 for 20 years, the total savings are $200,000,
+     with the manufacturer earning $100,000.
 
 2. **Continuous Monitoring**:
-    - The decentralized FDA platform tracks patient health outcomes and healthcare costs over time to measure the
-      therapy's impact.
-    - Payments to manufacturers are adjusted dynamically based on actual savings achieved.
+   - The decentralized FDA platform tracks patient health outcomes and healthcare costs over time to measure the
+     therapy's impact.
+   - Payments to manufacturers are adjusted dynamically based on actual savings achieved.
 
 3. **Broad Application**:
-    - Preventative and longevity therapies that provide diffuse or long-term benefits still qualify for rewards, even
-      without targeting a single disease or condition.
-    - Example: A therapy that slows aging could reduce the incidence of heart disease, diabetes, cancer, and dementia,
-      generating savings across multiple categories.
+   - Preventative and longevity therapies that provide diffuse or long-term benefits still qualify for rewards, even
+     without targeting a single disease or condition.
+   - Example: A therapy that slows aging could reduce the incidence of heart disease, diabetes, cancer, and dementia,
+     generating savings across multiple categories.
 
 ---
 
@@ -310,13 +311,13 @@ the profit-sharing percentage or combining efforts across multiple conditions.
 ### **Key Benefits for Preventative and Longevity Therapies**
 
 1. **Eliminates the Endpoint Problem**:
-    - Success is measured in cost savings, not disease-specific outcomes, making the system ideal for broad-impact
-      therapies.
+   - Success is measured in cost savings, not disease-specific outcomes, making the system ideal for broad-impact
+     therapies.
 2. **Encourages Long-Term Thinking**:
-    - Manufacturers are incentivized to develop therapies with long-lasting benefits.
+   - Manufacturers are incentivized to develop therapies with long-lasting benefits.
 3. **Accelerates Adoption**:
-    - Patients benefit sooner from preventative and longevity therapies without waiting for traditional trial endpoints.
+   - Patients benefit sooner from preventative and longevity therapies without waiting for traditional trial endpoints.
 4. **Systemic Savings**:
-    - Healthcare systems save billions as chronic disease burdens decline and healthy lifespans increase.
+   - Healthcare systems save billions as chronic disease burdens decline and healthy lifespans increase.
 
 <!-- TODO: Rewrite this document to match the project's formal, direct, and concise writing style. Remove the marketing language, emojis, and overly enthusiastic tone, while preserving the core economic model and calculations. -->

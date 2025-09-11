@@ -1,6 +1,6 @@
 ---
 title: Frequently Asked Questions
-description: 'Discover how a small reduction in military budgets can lead to significant advancements in health research, global cooperation, and security.'
+description: "Discover how a small reduction in military budgets can lead to significant advancements in health research, global cooperation, and security."
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [faq, 1-percent-treaty, military-spending, health-research, global-cooperation]

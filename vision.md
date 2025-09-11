@@ -2,10 +2,10 @@
 title: "A World Without War and Disease"
 description: "The ultimate vision of the DIH: a world where humanity's vast resources are redirected from conflict to curing disease, unlocking superlongevity, superhappiness, superintelligence, and an age of unprecedented abundance."
 published: true
-date: '2025-09-10T00:00:00.000Z'
+date: "2025-09-10T00:00:00.000Z"
 tags: [vision, future, peace, global-health, abundance, superlongevity, superhappiness, superintelligence]
 editor: markdown
-dateCreated: '2025-09-10T00:00:00.000Z'
+dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
 # 📖 Chapter 3: A World Without War and Disease
@@ -67,22 +67,23 @@ This is the **Great Ratchet**. Each turn of the wheel locks in the gains and mak
 What happens to a world that no longer bears the twin burdens of disease and war? It becomes a civilization where every major human challenge has been solved.
 
 The **median wealth** of a citizen in this new world is unimaginable by today's standards. Consider the economic chains we will have broken:
--   **Healthcare costs approach zero.** With aging reversed and all diseases cured, the multi-trillion dollar deadweight loss of the "sick care" industry is eliminated and repurposed for creation.
--   **The $16.5 trillion annual cost of conflict is repurposed.** This capital, once wasted on destruction, is now invested in clean energy infrastructure, space habitats, consciousness enhancement, and artistic expression.
--   **Human capital becomes infinite.** A world where every person can choose their biological age, optimize their mental state, and augment their intelligence is a world where human potential is truly limitless.
+
+- **Healthcare costs approach zero.** With aging reversed and all diseases cured, the multi-trillion dollar deadweight loss of the "sick care" industry is eliminated and repurposed for creation.
+- **The $16.5 trillion annual cost of conflict is repurposed.** This capital, once wasted on destruction, is now invested in clean energy infrastructure, space habitats, consciousness enhancement, and artistic expression.
+- **Human capital becomes infinite.** A world where every person can choose their biological age, optimize their mental state, and augment their intelligence is a world where human potential is truly limitless.
 
 But the transformation goes far beyond individual enhancement. When superintelligent minds tackle collective challenges, the impossible becomes inevitable:
 
--   **Climate change is reversed.** Massive investments in fusion energy, carbon capture, and geoengineering have not just halted warming but begun restoring pre-industrial climate patterns.
--   **Poverty is extinct.** Post-scarcity manufacturing and energy abundance have made basic necessities—food, shelter, education, healthcare—freely available to every person on Earth.
--   **Hunger is eliminated.** Advanced agriculture, lab-grown foods, and precision resource distribution ensure that no human ever lacks nutrition.
--   **Space becomes home.** Self-sustaining colonies throughout the solar system provide unlimited room for a growing, ageless population to explore and create.
+- **Climate change is reversed.** Massive investments in fusion energy, carbon capture, and geoengineering have not just halted warming but begun restoring pre-industrial climate patterns.
+- **Poverty is extinct.** Post-scarcity manufacturing and energy abundance have made basic necessities—food, shelter, education, healthcare—freely available to every person on Earth.
+- **Hunger is eliminated.** Advanced agriculture, lab-grown foods, and precision resource distribution ensure that no human ever lacks nutrition.
+- **Space becomes home.** Self-sustaining colonies throughout the solar system provide unlimited room for a growing, ageless population to explore and create.
 
 In this economy of true abundance, the Three Supers are not sci-fi dreams—they are the industrial output of a civilization that has aligned its resources with its grandest possibilities:
 
--   **Superlongevity:** You choose your lifespan. Death from aging becomes as obsolete as death from smallpox. Humanity's planning horizon extends from decades to millennia.
--   **Superhappiness:** We master the biological mechanisms of consciousness itself. Depression, anxiety, and suffering become treatable conditions. The default human experience becomes profound well-being, creativity, and joy.
--   **Superintelligence:** A global population of trillions of ageless, blissful minds, each augmented by AI, can direct collective intelligence toward the universe's deepest mysteries—and solve them.
+- **Superlongevity:** You choose your lifespan. Death from aging becomes as obsolete as death from smallpox. Humanity's planning horizon extends from decades to millennia.
+- **Superhappiness:** We master the biological mechanisms of consciousness itself. Depression, anxiety, and suffering become treatable conditions. The default human experience becomes profound well-being, creativity, and joy.
+- **Superintelligence:** A global population of trillions of ageless, blissful minds, each augmented by AI, can direct collective intelligence toward the universe's deepest mysteries—and solve them.
 
 This is not about becoming post-human; it's about becoming **fully human** for the first time. It's about a species finally free to explore its unlimited potential without the constraints of scarcity, conflict, disease, or death.
 
@@ -91,17 +92,20 @@ This is not about becoming post-human; it's about becoming **fully human** for t
 These transformations are not wishful thinking—they are the mathematically inevitable result of redirecting humanity's resources toward creation rather than destruction.
 
 **The Current Misallocation:**
+
 - **Global military spending:** [$2.44 trillion annually](../reference/costs-of-war.md)
 - **Global medical research:** [$67.5 billion annually](../reference/costs-of-war.md)
 - **Disparity ratio:** 36:1 in favor of weapons over cures
 
 **The Peace Dividend Unlocked:**
+
 - **Total annual cost of violence:** [$16.5 trillion](../economics/peace-dividend-value-capture.md) (10.9% of global GDP)
 - **Value captured by 1% Treaty:** [$27+ billion annually](../economics/peace-dividend-value-capture.md)
 - **Value returned to society:** [$16.47 trillion annually](../economics/peace-dividend-value-capture.md) (99.84% of total)
 - **Per person impact:** $74,259 saved over lifetime vs. current costs of conflict
 
 **Individual Wealth Transformation:**
+
 - **Current median household wealth:** ~$100,000
 - **2055 projected median wealth:** Millions (from eliminated healthcare costs, conflict reduction, and productivity gains)
 - **Projected per capita benefit:** ~$1.2M over 80 years from AI-driven health efficiencies
@@ -111,6 +115,7 @@ These transformations are not wishful thinking—they are the mathematically ine
 - **Manufacturing costs:** Approaching zero through automation and asteroid mining
 
 **Research and Development Acceleration:**
+
 - **Current dFDA ROI:** [463:1 over 10 years](../economics/dfda-cost-benefit-analysis.md)
 - **Annual R&D savings potential:** [$50 billion](../economics/dfda-cost-benefit-analysis.md) from efficiency gains
 - **Health outcomes:** [840,000 Quality-Adjusted Life Years](../economics/dfda-cost-benefit-analysis.md) gained annually
@@ -119,5 +124,5 @@ This is the endgame. We are not just building a better world. We are building th
 
 ## Dive Deeper
 
--   **[The Economics of Peace](./economics.md):** The core financial model for the 1% Treaty and DIH.
--   **[The Value of Automating Research](./economics/value-of-automating-research.md):** A detailed analysis of the economic case for AI-driven health efficiencies, projecting a per capita benefit of over $1.2M over a lifetime.
+- **[The Economics of Peace](./economics.md):** The core financial model for the 1% Treaty and DIH.
+- **[The Value of Automating Research](./economics/value-of-automating-research.md):** A detailed analysis of the economic case for AI-driven health efficiencies, projecting a per capita benefit of over $1.2M over a lifetime.

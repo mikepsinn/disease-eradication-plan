@@ -3,7 +3,17 @@ title: The 1% Treaty
 description: A global accord to redirect 1% of military spending to discovering new treatments and cures for chronic diseases.
 published: true
 date: 2025-07-02T05:38:42.781Z
-tags: [healthcare-innovation, decentralized-health, ai-research, global-cooperation, 1-percent-treaty, military-spending, cost-benefit, treaty]
+tags:
+  [
+    healthcare-innovation,
+    decentralized-health,
+    ai-research,
+    global-cooperation,
+    1-percent-treaty,
+    military-spending,
+    cost-benefit,
+    treaty,
+  ]
 editor: markdown
 dateCreated: 2025-06-10T19:10:29.965Z
 ---
@@ -22,6 +32,7 @@ Here is the logical proof that signing this accord is the most rational thing yo
 1. Governments currently spend over $2 trillion per year on their militaries. They don't do this because they like blowing up other people and their stuff. They do this to maintain the balance of power against other nations that might blow them up.
 
 2. However, if every nation agreed to reallocate just 1% of their annual military expenditures to a global medical research fund:
+
 - The relative balance of power would remain unchanged. So, despite spending less on the military, they would be at no greater relative risk of being murdered by another country.
 - The entire world would benefit from the resulting health advances and cures for diseases.
 

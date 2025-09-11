@@ -1,10 +1,9 @@
 ---
 name: New Content Proposal
 about: Propose a new article or section for the wiki
-title: 'PROPOSE: A title for the new content'
-labels: 'documentation, content'
-assignees: ''
-
+title: "PROPOSE: A title for the new content"
+labels: "documentation, content"
+assignees: ""
 ---
 
 **1. What is the new content you are proposing?**
@@ -25,5 +24,6 @@ If you have any source material, links, or data to support this new content, ple
 ---
 
 ### Contribution Checklist
+
 - [ ] I have read the [**CONTRIBUTING.md**](../CONTRIBUTING.md) and this proposal aligns with the project's standards (Information Architecture, Voice & Tone, etc.).
 - [ ] I have searched for existing content to avoid duplication.

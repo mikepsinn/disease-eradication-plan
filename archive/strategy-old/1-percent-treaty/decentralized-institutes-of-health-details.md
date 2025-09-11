@@ -1,6 +1,6 @@
 ---
 title: '"The Decentralized Institutes of Health: Revolutionizing Healthcare Through Decentralized Science and AI"'
-description: 'Exploring the transformative potential of Decentralized Institutes of Health (DIH) in reallocating resources from war to medical breakthroughs using blockchain, AI, and decentralized tools.'
+description: "Exploring the transformative potential of Decentralized Institutes of Health (DIH) in reallocating resources from war to medical breakthroughs using blockchain, AI, and decentralized tools."
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [decentralized-health, dih, blockchain, ai, medical-research, quadratic-funding, product-requirements]
@@ -77,7 +77,6 @@ Decentralized Institutes of Health (DIH) Platform
 
 2. Functional Requirements
    2.1 User Roles
-
    - Researchers: Submit project proposals and manage funded projects
    - Funders: Contribute funds to projects and participate in governance
    - Reviewers: Evaluate project proposals and provide feedback
@@ -224,7 +223,6 @@ graph TD
 
 3. Non-Functional Requirements
    3.1 Security
-
    - The platform must be resistant to attacks, hacks, and unauthorized access
    - All transactions and data storage must be encrypted and secure
    - Regular security audits and bug bounties should be conducted
@@ -248,19 +246,16 @@ graph TD
    - The platform should be interoperable with other decentralized science (DeSci) platforms and tools
 
 4. Constraints
-
    - The platform must be developed using open-source technologies
    - The platform must comply with relevant regulations and legal frameworks
    - The platform must be launched within a specified timeframe and budget
 
 5. Assumptions and Dependencies
-
    - The platform assumes the availability of sufficient funding and resources for development and maintenance
    - The platform depends on the continued growth and adoption of blockchain and decentralized technologies
    - The platform assumes the willingness of researchers, funders, and stakeholders to participate in a decentralized model
 
 6. Glossary
-
    - DAO: Decentralized Autonomous Organization
    - DeSci: Decentralized Science
    - DID: Decentralized Identity

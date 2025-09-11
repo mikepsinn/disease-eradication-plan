@@ -1,11 +1,11 @@
 ---
-description: 'A case study comparing the inefficiency of the NIH''s $1.6B RECOVER initiative with the hyper-efficiency of the UK''s RECOVERY trial, making the case for a decentralized trial platform.'
+description: "A case study comparing the inefficiency of the NIH's $1.6B RECOVER initiative with the hyper-efficiency of the UK's RECOVERY trial, making the case for a decentralized trial platform."
 title: Efficiency of NIH Research Funding vs. an Automated Decentralized Trial Platform
 tags: [decentralized-trials, real-world-evidence, clinical-trials]
 published: true
 editor: markdown
-date: '2025-02-12T20:28:54.306Z'
-dateCreated: '2025-02-12T20:28:54.306Z'
+date: "2025-02-12T20:28:54.306Z"
+dateCreated: "2025-02-12T20:28:54.306Z"
 ---
 
 The National Institutes of Health (NIH) is a cornerstone of medical research in the United States, with a budget of approximately $47 billion for fiscal year 2025. However, concerns have arisen regarding the efficiency of NIH funding in translating research into actionable interventions. A prominent example is the RECOVER initiative, which, despite a $1.6 billion budget, has not completed any clinical trials in four years.
@@ -53,15 +53,15 @@ In contrast, the RECOVER initiative has enrolled approximately 30,000 participan
 
 The following table summarizes the comparison between the RECOVER initiative and the estimated outcomes of an automated decentralized trial platform:
 
-| Metric                     | RECOVER Initiative       | Automated Platform (Estimated) |
-|----------------------------|--------------------------|--------------------------------|
-| Budget                     | $1.6 billion             | $1.6 billion                   |
-| Trials Completed in 4 Years| 0                        | ~2,800                         |
-| Total Participants         | ~30,000                  | ~2.8 million                   |
-| Average Cost per Trial     | N/A (none completed)     | $500,000                       |
-| Average Cost per Participant| ~$53,333                 | ~$571                          |
+| Metric                       | RECOVER Initiative   | Automated Platform (Estimated) |
+| ---------------------------- | -------------------- | ------------------------------ |
+| Budget                       | $1.6 billion         | $1.6 billion                   |
+| Trials Completed in 4 Years  | 0                    | ~2,800                         |
+| Total Participants           | ~30,000              | ~2.8 million                   |
+| Average Cost per Trial       | N/A (none completed) | $500,000                       |
+| Average Cost per Participant | ~$53,333             | ~$571                          |
 
-*Note: The average cost per participant for the automated platform includes both variable and fixed costs, calculated as the total budget divided by the total number of participants.*
+_Note: The average cost per participant for the automated platform includes both variable and fixed costs, calculated as the total budget divided by the total number of participants._
 
 ### Additional Efficiency Gains
 

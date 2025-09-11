@@ -1,11 +1,11 @@
 ---
 title: Decentralized Institutes of Health - Master Index & Sitemap
-description: 'The master table of contents and sitemap for the DIH wiki, the central repository for the strategy and operational plans for The 1% Treaty.'
+description: "The master table of contents and sitemap for the DIH wiki, the central repository for the strategy and operational plans for The 1% Treaty."
 published: true
-date: '2025-08-22T00:00:00.000Z'
+date: "2025-08-22T00:00:00.000Z"
 tags: [index, sitemap, toc, strategy]
 editor: markdown
-dateCreated: '2025-08-22T00:00:00.000Z'
+dateCreated: "2025-08-22T00:00:00.000Z"
 ---
 
 # Master Index & Sitemap

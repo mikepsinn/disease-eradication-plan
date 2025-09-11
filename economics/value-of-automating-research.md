@@ -32,9 +32,9 @@ The global cost of disease—encompassing direct healthcare expenses and indirec
 
 Under these assumptions, the potential for AI to transform healthcare and clinical research is quantified in a projected savings analysis:
 
--   **Cumulative Cost Reductions:** Assuming a 50% reduction in the global disease burden over 80 years, the annual savings could amount to **$9.76 trillion**, highlighting the significant economic impact of these technologies.
+- **Cumulative Cost Reductions:** Assuming a 50% reduction in the global disease burden over 80 years, the annual savings could amount to **$9.76 trillion**, highlighting the significant economic impact of these technologies.
 
--   **Per Capita Benefit:** This reduction translates into a per capita benefit of approximately **$1,235,443 over an 80-year period**, illustrating the widespread economic advantages of adopting advanced AI in healthcare.
+- **Per Capita Benefit:** This reduction translates into a per capita benefit of approximately **$1,235,443 over an 80-year period**, illustrating the widespread economic advantages of adopting advanced AI in healthcare.
 
 ## A Future Forged by Intelligence
 

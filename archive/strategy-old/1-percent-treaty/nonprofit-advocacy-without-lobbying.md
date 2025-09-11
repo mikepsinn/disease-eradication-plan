@@ -70,6 +70,7 @@ Nonprofits can play a powerful role in advancing the 1% Treaty while staying wit
   - Promote the importance of open-access research, transparent funding, and blockchain accountability in global health ([see DIH transparency](decentralized-institutes-of-health.md)).
 
 > For more on these topics, see:
+>
 > - [Decentralized Institutes of Health](decentralized-institutes-of-health.md)
 > - [The 1% Treaty](1-percent-treaty.md)
 > - [Cost to Create a DAO](cost-to-create-a-dao.md)
@@ -77,4 +78,4 @@ Nonprofits can play a powerful role in advancing the 1% Treaty while staying wit
 
 ---
 
-*This article is for general informational purposes. For specific legal advice, consult a qualified attorney or compliance expert.* 
+_This article is for general informational purposes. For specific legal advice, consult a qualified attorney or compliance expert._

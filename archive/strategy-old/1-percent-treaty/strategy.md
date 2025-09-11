@@ -1,6 +1,6 @@
 ---
 title: Roadmap for Creating a Decentralized Autonomous Organization (DAO)
-description: 'Explore the detailed roadmap for establishing a DAO, including crowdfunding strategies, lobbying efforts, and post-launch activities.'
+description: "Explore the detailed roadmap for establishing a DAO, including crowdfunding strategies, lobbying efforts, and post-launch activities."
 published: false
 date: 2024-06-09T00:00:00.000Z
 tags: [roadmap, dao, 1-percent-treaty, crowdfunding, lobbying, project-management]

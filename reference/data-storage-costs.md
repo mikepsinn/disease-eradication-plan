@@ -20,13 +20,13 @@ emoji: "💾"
 
 ### Infrastructure Costs (Per Patient/Month)
 
-| Component | Estimated Cost | Notes |
-|-----------|---------------|--------|
-| Raw Storage | $0.02 | Based on standard cloud storage rates |
-| Compute/API | $0.20 | For data processing and access |
-| Database | $0.30 | For structured data storage |
-| Backup/Redundancy | $0.20 | For data safety and compliance |
-| **Total** | **$0.72** | Per patient/month |
+| Component         | Estimated Cost | Notes                                 |
+| ----------------- | -------------- | ------------------------------------- |
+| Raw Storage       | $0.02          | Based on standard cloud storage rates |
+| Compute/API       | $0.20          | For data processing and access        |
+| Database          | $0.30          | For structured data storage           |
+| Backup/Redundancy | $0.20          | For data safety and compliance        |
+| **Total**         | **$0.72**      | Per patient/month                     |
 
 ### Cost Comparisons
 

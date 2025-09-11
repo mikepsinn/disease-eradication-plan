@@ -5,13 +5,14 @@ title: Estimated Lives Saved by Increased Drug Accessibility
 tags: [public-health, drugs, lives-saved, accessibility]
 published: true
 editor: markdown
-date: '2025-02-12T16:55:14.923Z'
-dateCreated: '2025-02-12T16:55:14.923Z'
+date: "2025-02-12T16:55:14.923Z"
+dateCreated: "2025-02-12T16:55:14.923Z"
 ---
+
 Here’s an estimated table of the number of lives that could potentially be saved annually if these drugs were made more accessible, based on available data and studies:
 
 | **Drug**                             | **Purpose**                                          | **Estimated Lives Saved Annually**                                          | **Source of Deaths Prevented**                                 |
-|--------------------------------------|------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------------|
+| ------------------------------------ | ---------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | **Naloxone (Narcan)**                | Reverses opioid overdoses                            | ~50,000                                                                     | Opioid overdoses (over 100,000 annually in the U.S.)           |
 | **Low-Dose Aspirin**                 | Prevents heart attacks and strokes                   | ~10,000                                                                     | Cardiovascular disease, especially secondary prevention        |
 | **Statins**                          | Reduces cholesterol, prevents heart disease          | ~25,000                                                                     | Heart attacks and strokes in high-risk populations             |

@@ -1,12 +1,13 @@
 ---
 title: '"Pragmatic vs Explanatory Trials: A Quantitative Analysis"'
-description: 'A comparison of pragmatic and explanatory trials focusing on cost, time, and real-world applicability.'
+description: "A comparison of pragmatic and explanatory trials focusing on cost, time, and real-world applicability."
 published: true
-date: '2025-02-27T07:36:34.941Z'
+date: "2025-02-27T07:36:34.941Z"
 tags: [clinical-trials, research-methodology, healthcare-innovation, trial-design]
 editor: markdown
-dateCreated: '2025-02-27T07:36:34.941Z'
+dateCreated: "2025-02-27T07:36:34.941Z"
 ---
+
 # Pragmatic vs Explanatory Trials: A Quantitative Analysis
 
 ## What are Pragmatic Trials?
@@ -21,15 +22,15 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 ## Key Differences at a Glance
 
-| Metric | Pragmatic Trials (e.g., RECOVERY) | Traditional Explanatory Trials |
-|--------|-----------------------------------|-------------------------------|
-| Cost per Trial | Lower due to existing infrastructure | [$48-225 million](https://www.anjusoftware.com/insights/eclinical/clinical-trial-costs/) |
-| Time to Results | Weeks to months | [5-7 years average](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research) |
-| Participants | Large (e.g., 47,000+ in RECOVERY) | [Typically 500-3000](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6248200/) |
-| Implementation Speed | Hours to days | Months to years |
-| Patient Population | Diverse, real-world | Highly selected |
-| Setting | Routine clinical practice | Specialized research centers |
-| Generalizability | High | Limited |
+| Metric               | Pragmatic Trials (e.g., RECOVERY)    | Traditional Explanatory Trials                                                                      |
+| -------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| Cost per Trial       | Lower due to existing infrastructure | [$48-225 million](https://www.anjusoftware.com/insights/eclinical/clinical-trial-costs/)            |
+| Time to Results      | Weeks to months                      | [5-7 years average](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research) |
+| Participants         | Large (e.g., 47,000+ in RECOVERY)    | [Typically 500-3000](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6248200/)                         |
+| Implementation Speed | Hours to days                        | Months to years                                                                                     |
+| Patient Population   | Diverse, real-world                  | Highly selected                                                                                     |
+| Setting              | Routine clinical practice            | Specialized research centers                                                                        |
+| Generalizability     | High                                 | Limited                                                                                             |
 
 ## Cost Analysis
 

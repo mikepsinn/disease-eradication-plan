@@ -28,4 +28,4 @@ A nation's strength is directly tied to the health and productivity of its peopl
 
 Global leadership is increasingly defined by a nation's ability to solve global problems. It is more effective and economical to build alliances and gain influence by saving the lives of the world's citizens than through military intimidation. The nation or coalition that leads the "War on Disease" will command immense respect and "soft power," creating a more stable and cooperative global environment.
 
-In summary, the 1% Treaty is a strategic reallocation from a 20th-century model of security to a 21st-century one. It is a direct investment in a safer, more stable, and more prosperous world. 
+In summary, the 1% Treaty is a strategic reallocation from a 20th-century model of security to a 21st-century one. It is a direct investment in a safer, more stable, and more prosperous world.

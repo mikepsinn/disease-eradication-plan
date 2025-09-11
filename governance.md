@@ -2,10 +2,10 @@
 title: "Wishocracy: A Decentralized Governance Protocol"
 description: "The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous 'to-do list for humanity' governed by its stakeholders."
 published: true
-date: '2025-09-10T00:00:00.00Z'
+date: "2025-09-10T00:00:00.00Z"
 tags: [governance, wishocracy, dao, decentralization, ai, collective-intelligence, protocol]
 editor: markdown
-dateCreated: '2025-09-10T00:00:00.000Z'
+dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
 # 📖 Chapter 8: Wishocracy (A Decentralized Governance Protocol)
@@ -40,15 +40,17 @@ Any stakeholder can propose a "Wish"—a clear, measurable outcome for a real-wo
 ### 2. The AI Civil Service
 
 A suite of AI agents acts as a transparent and tireless administrative layer. They:
--   **Analyze Wishes:** Research the current state of science and feasibility for each Wish.
--   **Propose Solutions:** Generate a list of the most promising, evidence-based paths to granting each Wish.
--   **Verify Outcomes:** Monitor real-world data to verify when a successful outcome has occurred.
+
+- **Analyze Wishes:** Research the current state of science and feasibility for each Wish.
+- **Propose Solutions:** Generate a list of the most promising, evidence-based paths to granting each Wish.
+- **Verify Outcomes:** Monitor real-world data to verify when a successful outcome has occurred.
 
 ### 3. The Voting System (RAPPA)
 
 Stakeholders (e.g., VICTORY instrument holders in the DIH) use **Random Aggregated Pairwise Preference Allocation (RAPPA)** to vote on which solutions to fund. This system is:
--   **Scalable:** Millions of users can participate by making simple pairwise choices (e.g., "Project A vs. Project B").
--   **Fair:** It mathematically prevents wealthy "whales" from dominating the budget, ensuring the collective will is represented.
+
+- **Scalable:** Millions of users can participate by making simple pairwise choices (e.g., "Project A vs. Project B").
+- **Fair:** It mathematically prevents wealthy "whales" from dominating the budget, ensuring the collective will is represented.
 
 ### 4. The Treasury (The DAO)
 
@@ -62,5 +64,5 @@ An independent verification layer provides the real-world data and validation ne
 
 ## Dive Deeper into the Governance Model
 
--   **[Wishocracy (RAPPA) Governance Model](./governance/wishocracy.md):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
--   **[DIH On-Chain & AI Architecture](./governance/dih-onchain-architecture.md):** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power the DIH.
+- **[Wishocracy (RAPPA) Governance Model](./governance/wishocracy.md):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
+- **[DIH On-Chain & AI Architecture](./governance/dih-onchain-architecture.md):** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power the DIH.

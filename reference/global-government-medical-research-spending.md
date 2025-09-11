@@ -1,11 +1,11 @@
 ---
 title: Global Government Medical Research Spending
-description: 'Comprehensive data on government budgets allocated to medical research worldwide, including NIH, EU Horizon Europe, and other major public health R&D programs.'
+description: "Comprehensive data on government budgets allocated to medical research worldwide, including NIH, EU Horizon Europe, and other major public health R&D programs."
 published: true
-date: '2025-01-27T00:00:00.000Z'
+date: "2025-01-27T00:00:00.000Z"
 tags: [medical-research, government-spending, health-r&d, nih, eu-horizon, global-health]
 editor: markdown
-dateCreated: '2025-01-27T00:00:00.000Z'
+dateCreated: "2025-01-27T00:00:00.000Z"
 ---
 
 # Global Government Medical Research Funding
@@ -44,7 +44,7 @@ The UK government allocated **£2.5-3.0 billion** ($3.1-3.8 billion USD) to cure
 
 **Canada invested CAD $1.336 billion** (~$980 million USD) through the Canadian Institutes of Health Research in 2024-25, with 95% of funding directed to research activities rather than administrative costs. The Medical Research Future Fund supplements core NHMRC funding, bringing total Australian government medical research investment to approximately AUD $1.59 billion (~$1.1 billion USD).
 
-Smaller but significant contributors include **Singapore** (~$225-375 million through A*STAR biomedical research), **Israel** (~$200-215 million via the Israel Science Foundation), and **Brazil** (several hundred million through FAPESP and other state foundations, though federal funding has faced constraints).
+Smaller but significant contributors include **Singapore** (~$225-375 million through A\*STAR biomedical research), **Israel** (~$200-215 million via the Israel Science Foundation), and **Brazil** (several hundred million through FAPESP and other state foundations, though federal funding has faced constraints).
 
 ## Methodology and calculation approach
 
@@ -117,7 +117,7 @@ Here's a markdown sources section you can copy into WikiJS:
 28. [Budget 2024 investments: How is CIHR investing these new funds?](https://cihr-irsc.gc.ca/e/54123.html) - Canadian Institutes of Health Research
 29. [Budget 2024–25 | NHMRC](https://www.nhmrc.gov.au/about-us/news-centre/budget-2024-25) - National Health and Medical Research Council
 30. [2024-25 Federal Budget Recap - AAMRI](https://aamri.org.au/resources/federal-budgets/2024-25-federal-budget-recap/) - Association of Australian Medical Research Institutes
-31. [A*STAR Biomedical Research Council (BMRC)](https://www.a-star.edu.sg/bmrc) - Agency for Science, Technology and Research Singapore
+31. [A\*STAR Biomedical Research Council (BMRC)](https://www.a-star.edu.sg/bmrc) - Agency for Science, Technology and Research Singapore
 32. [Budget 2025: New Measures for Singapore's R&D, Investment and Innovation](https://sg.fi-group.com/budget-2025-unlocking-singapores-innovation-potential/) - FI Group Singapore
 33. [Singapore: Betting on Biomedical Sciences](https://issues.org/poh/) - Issues in Science and Technology
 
@@ -138,4 +138,4 @@ Here's a markdown sources section you can copy into WikiJS:
 
 ---
 
-*Last updated: August 2025. Data reflects fiscal years 2023-2024 across different national budget cycles.*
+_Last updated: August 2025. Data reflects fiscal years 2023-2024 across different national budget cycles._

@@ -2,11 +2,12 @@
 title: NIH Grant Process Efficiency Analysis
 description: Analysis reveals significant inefficiencies in NIH funding allocation and proposes an 83x more efficient system with a 98.8% cost reduction per trial participant.
 published: true
-date: '2025-02-20T05:43:17.021Z'
+date: "2025-02-20T05:43:17.021Z"
 tags: [NIH, grant-process, efficiency-analysis, clinical-trials, biomedical-research]
 editor: markdown
-dateCreated: '2025-02-20T05:43:17.021Z'
+dateCreated: "2025-02-20T05:43:17.021Z"
 ---
+
 # NIH Grant Process Efficiency Analysis: A Quantitative Perspective
 
 ## Executive Summary
@@ -15,13 +16,13 @@ The National Institutes of Health (NIH) annual budget of [$51 billion](https://w
 
 ## Key Metrics
 
-| Metric | Current System | Proposed Efficient System | Impact |
-|--------|---------------|-------------------------|--------|
-| Annual Trial Participants | ~1.2M ($51B ÷ $41k/patient) | 61M+ ($30.6B ÷ $500/patient) | 83x more efficient |
-| Cost per Trial Participant | [$41,413](https://pmc.ncbi.nlm.nih.gov/articles/PMC7295430/) | [$500](https://sph.nus.edu.sg/wp-content/uploads/2022/09/Meeting-Summary-RECOVERY-Trial.pdf) | 98.8% cost reduction |
-| Time to Treatment Access | [17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) | < 2 years | 88% time reduction |
-| Annual Economic Impact | Current Losses | Potential Savings | Net Benefit |
-| Healthcare Cost Burden | [$2T+ annually](https://jamanetwork.com/journals/jama/fullarticle/2762311) | $2T savings potential | $4T swing |
+| Metric                     | Current System                                                             | Proposed Efficient System                                                                    | Impact               |
+| -------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------- |
+| Annual Trial Participants  | ~1.2M ($51B ÷ $41k/patient)                                                | 61M+ ($30.6B ÷ $500/patient)                                                                 | 83x more efficient   |
+| Cost per Trial Participant | [$41,413](https://pmc.ncbi.nlm.nih.gov/articles/PMC7295430/)               | [$500](https://sph.nus.edu.sg/wp-content/uploads/2022/09/Meeting-Summary-RECOVERY-Trial.pdf) | 98.8% cost reduction |
+| Time to Treatment Access   | [17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/)              | < 2 years                                                                                    | 88% time reduction   |
+| Annual Economic Impact     | Current Losses                                                             | Potential Savings                                                                            | Net Benefit          |
+| Healthcare Cost Burden     | [$2T+ annually](https://jamanetwork.com/journals/jama/fullarticle/2762311) | $2T savings potential                                                                        | $4T swing            |
 
 ## Current System Inefficiencies
 

@@ -1,6 +1,6 @@
 ---
 title: Reference Check Process for the Supreme Allied Commander
-description: 'A guide for conducting final reference checks for the Supreme Allied Commander, War on Disease role, including a bespoke email and form template.'
+description: "A guide for conducting final reference checks for the Supreme Allied Commander, War on Disease role, including a bespoke email and form template."
 published: true
 date: 2025-01-01T00:00:00.000Z
 tags: [hiring, workflow, recruitment, references, leadership]
@@ -49,21 +49,21 @@ Best regards,
 
 ### Section 1: Relationship
 
-*   **Your Name:**
-*   **Your Title & Organization:**
-*   **In what capacity did you work with [Candidate Name]?**
-*   **For how long did you work together?**
+- **Your Name:**
+- **Your Title & Organization:**
+- **In what capacity did you work with [Candidate Name]?**
+- **For how long did you work together?**
 
 ### Section 2: Technical & Strategic Capabilities
 
 1.  **Describe the most complex or ambitious technical system you saw [Candidate Name] architect and build. What made it impressive?**
-    *(This probes for evidence of world-class building ability.)*
+    _(This probes for evidence of world-class building ability.)_
 
 2.  **This role requires building an "army of AI agents" to solve large-scale problems. Can you provide an example of their ability to think in terms of automation, scale, and systems?**
-    *(This assesses their core fit for the automation mandate.)*
+    _(This assesses their core fit for the automation mandate.)_
 
 3.  **How would you describe their ability to operate with extreme autonomy and take complete ownership of a mission-critical objective?**
-    *(This is crucial for a solo founder role.)*
+    _(This is crucial for a solo founder role.)_
 
 4.  **On a scale of 1-10, how would you rate their raw technical problem-solving ability compared to other engineers you've worked with?**
     `[1] [2] [3] [4] [5] [6] [7] [8] [9] [10]`
@@ -74,14 +74,14 @@ Best regards,
 ### Section 3: Final Thoughts
 
 1.  **What is the one area where [Candidate Name] could still grow the most?**
-    *(A thoughtful answer signals an honest reference.)*
+    _(A thoughtful answer signals an honest reference.)_
 
 2.  **We are looking for someone to lead a "War on Disease." In your honest opinion, does this candidate have the resilience, drive, and moral clarity for a mission of that magnitude?**
-    *   [ ] Yes, without a doubt.
-    *   [ ] They have the potential, with the right support.
-    *   [ ] I have some reservations.
+    - [ ] Yes, without a doubt.
+    - [ ] They have the potential, with the right support.
+    - [ ] I have some reservations.
 
 3.  **Would you enthusiastically hire or co-found a company with [Candidate Name] again?**
-    *   [ ] Yes, without hesitation.
-    *   [ ] Yes, with some reservations.
-    *   [ ] No. 
+    - [ ] Yes, without hesitation.
+    - [ ] Yes, with some reservations.
+    - [ ] No.

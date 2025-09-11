@@ -2,10 +2,10 @@
 title: '"Pre-Seed Round: SAFT Terms"'
 description: Defines the proposed terms for the initial $250k-$750k pre-seed funding round using a Simple Agreement for Future Tokens (SAFT).
 published: false
-date: '2025-08-24T00:00:00.000Z'
+date: "2025-08-24T00:00:00.000Z"
 tags: [SAFT, fundraising, tokenomics, pre-seed]
 editor: markdown
-dateCreated: '2025-08-24T00:00:00.000Z'
+dateCreated: "2025-08-24T00:00:00.000Z"
 topic_id: pre-seed-terms
 canonical: false
 status: draft
@@ -23,7 +23,7 @@ This document outlines the proposed terms for the initial, high-risk, pre-seed f
 
 - **Instrument:** Simple Agreement for Future Tokens (SAFT).
 - **Funding Goal:** $750,000 USD.
-- **Use of Funds:** 
+- **Use of Funds:**
   - Legal entity formation in required jurisdictions.
   - Retainer for specialized legal counsel (securities, election law).
   - Salaries for the first 2-3 core team members (e.g., General Counsel, Head of Operations) for a 12-month runway.
@@ -45,7 +45,7 @@ Investors in this round are taking the highest risk and receive the most favorab
   - **How it works:** Pre-seed investors will receive VICTORY bonds at a 35% discount to the price offered to investors in the main public sale. For example, if the public sale price is $1.00 per token, pre-seed investors would receive their tokens at a price of $0.65 per token.
 
 - **Valuation Cap: $20,000,000**
-  - **How it works:** This is a protective mechanism for early investors. It sets a maximum project valuation at which their investment converts. Investors receive tokens based on the *lower* of the discounted price or the valuation cap, ensuring they are rewarded for taking the earliest risk, even if the project's public valuation becomes extremely high.
+  - **How it works:** This is a protective mechanism for early investors. It sets a maximum project valuation at which their investment converts. Investors receive tokens based on the _lower_ of the discounted price or the valuation cap, ensuring they are rewarded for taking the earliest risk, even if the project's public valuation becomes extremely high.
 
 - **Pro-Rata Rights:** Pre-seed investors will be granted the right, but not the obligation, to participate in the main capital raise to maintain their initial percentage ownership of the network.
 

@@ -9,26 +9,26 @@ emoji: 🚀
 
 # War on Disease: Tiered Incentive & Referral System
 
-This document specifies the design for a tiered, multi-level referral and incentive system to drive participation in the 1% Treaty global referendum. The goal is to create a powerful, self-propagating engine for growth that is resistant to fraud and aligns incentives across individuals, organizations, and coalitions. While this system focuses on incentivizing *participation*, our strategy for incentivizing *skilled contributions* is detailed in the [Open Ecosystem and Bounty Model](./open-ecosystem-and-bounty-model.md).
+This document specifies the design for a tiered, multi-level referral and incentive system to drive participation in the 1% Treaty global referendum. The goal is to create a powerful, self-propagating engine for growth that is resistant to fraud and aligns incentives across individuals, organizations, and coalitions. While this system focuses on incentivizing _participation_, our strategy for incentivizing _skilled contributions_ is detailed in the [Open Ecosystem and Bounty Model](./open-ecosystem-and-bounty-model.md).
 
 ## Tier 1: Mass Participation (VOTE Points)
 
 The goal of this tier is to achieve maximum global scale (3.5% of humanity) with minimal friction and legal risk.
 
--   **Mechanism:** For every verified vote on the global referendum, the participant and the referrer receive a grant of non-transferable **VOTE points.**
--   **The Incentive:** VOTE points serve as your verifiable claim to real economic value you help create. Their value is backed by your contribution to unlocking the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) through military budget redirection. After the 1% Treaty is ratified, they become **convertible to VICTORY governance tokens** representing your earned ownership stake in the captured value. This transforms a simple vote into ownership of the wealth you generate for humanity.
--   **Why it Works:** This "Points-then-Conversion" model allows us to sidestep the immense legal and operational complexity of a direct airdrop of a security token to 280 million people, while still providing a powerful, motivating incentive for mass participation.
+- **Mechanism:** For every verified vote on the global referendum, the participant and the referrer receive a grant of non-transferable **VOTE points.**
+- **The Incentive:** VOTE points serve as your verifiable claim to real economic value you help create. Their value is backed by your contribution to unlocking the [$16.5 trillion annual peace dividend](../economic-models/peace-dividend-value-capture.md) through military budget redirection. After the 1% Treaty is ratified, they become **convertible to VICTORY governance tokens** representing your earned ownership stake in the captured value. This transforms a simple vote into ownership of the wealth you generate for humanity.
+- **Why it Works:** This "Points-then-Conversion" model allows us to sidestep the immense legal and operational complexity of a direct airdrop of a security token to 280 million people, while still providing a powerful, motivating incentive for mass participation.
 
 ## Tier 2: Power Users & Organizers (VICTORY Token Grants)
 
 The goal of this tier is to attract and reward the high-value contributors who will build the movement.
 
--   **Mechanism:** Large, direct grants of **VICTORY bonds/bonds** will be awarded to key contributors through targeted prize campaigns, grant programs, and performance-based partnerships. These represent earned ownership stakes in the real economic value created by successful military-to-health budget redirection.
--   **Target Audience:**
-  -   **Organizers:** Community leaders who drive millions of referendum votes.
-  -   **Developers:** Individuals and teams who build valuable tools on top of our platform.
-  -   **Strategic Partners:** Institutions, lobbying firms, and campaign teams whose work directly leads to treaty ratification.
--   **Why it Works:** For this smaller, more sophisticated group of contributors, we can afford to run a legally compliant distribution process for VICTORY instruments. This gives our most valuable partners a direct, immediate, and powerful stake in the outcome, transforming them from contractors into owners.
+- **Mechanism:** Large, direct grants of **VICTORY bonds/bonds** will be awarded to key contributors through targeted prize campaigns, grant programs, and performance-based partnerships. These represent earned ownership stakes in the real economic value created by successful military-to-health budget redirection.
+- **Target Audience:**
+- **Organizers:** Community leaders who drive millions of referendum votes.
+- **Developers:** Individuals and teams who build valuable tools on top of our platform.
+- **Strategic Partners:** Institutions, lobbying firms, and campaign teams whose work directly leads to treaty ratification.
+- **Why it Works:** For this smaller, more sophisticated group of contributors, we can afford to run a legally compliant distribution process for VICTORY instruments. This gives our most valuable partners a direct, immediate, and powerful stake in the outcome, transforming them from contractors into owners.
 
 ---
 
@@ -38,11 +38,11 @@ Research shows that when just **3.5% of a population** actively participates in 
 
 > The "3.5% rule" is based on research by political scientist Erica Chenoweth, who analyzed hundreds of nonviolent movements and found that those engaging at least 3.5% of the population have never failed to achieve serious political change. This threshold is now widely cited as the tipping point for successful social movements ([BBC Future](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world), [Chenoweth & Stephan, 2011](https://www.jstor.org/stable/j.ctt7s7wm)).
 
-| Threshold                        | Historical analogue                                                                       | Why it matters                                           |
-| -------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| **100 k** verifiable supporters  | UK Parliament e-petition rule (prompts a floor debate) ([UK petition 100k rule](https://petition.parliament.uk/help))      | A concrete, fast first benchmark for national advocacy efforts.                        |
-| **≈ 4 M** public comments        | U.S. FCC net-neutrality fight (2014–15) ([Net-neutrality 4M comments - White House](https://obamawhitehouse.archives.gov/net-neutrality), [Net-neutrality 4M comments - FCC](https://apps.fcc.gov/edocs_public/attachmatch/fcc-15-24a1.pdf)) | Volume + mapping to districts can sway a federal agency.   |
-| **3.5 % of population (Global)** | Chenoweth "3.5 % rule" dataset (1905-2006) ([Chenoweth 3.5% rule](https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world))                         | Historically, non-violent movements at this level have never failed. |
+| Threshold                        | Historical analogue                                                                                                                                                                                                                          | Why it matters                                                       |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **100 k** verifiable supporters  | UK Parliament e-petition rule (prompts a floor debate) ([UK petition 100k rule](https://petition.parliament.uk/help))                                                                                                                        | A concrete, fast first benchmark for national advocacy efforts.      |
+| **≈ 4 M** public comments        | U.S. FCC net-neutrality fight (2014–15) ([Net-neutrality 4M comments - White House](https://obamawhitehouse.archives.gov/net-neutrality), [Net-neutrality 4M comments - FCC](https://apps.fcc.gov/edocs_public/attachmatch/fcc-15-24a1.pdf)) | Volume + mapping to districts can sway a federal agency.             |
+| **3.5 % of population (Global)** | Chenoweth "3.5 % rule" dataset (1905-2006) ([Chenoweth 3.5% rule](https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world))                                                                        | Historically, non-violent movements at this level have never failed. |
 
 ## The 80X Efficiency Benchmark: Oxford RECOVERY Trial
 
@@ -54,13 +54,13 @@ The [Oxford RECOVERY trial](https://www.recoverytrial.net/) demonstrated that de
 
 ## Evidence of Latent Public Support (U.S. Case Study)
 
-*While polling shows similar sentiment exists worldwide, the following data from the United States serves as a strong case study for the latent public support waiting to be mobilized.*
+_While polling shows similar sentiment exists worldwide, the following data from the United States serves as a strong case study for the latent public support waiting to be mobilized._
 
-| Data point                                                                        | Source                                                   |
-| --------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| 87 % of Americans say clinical-trial participation should be part of regular care | ([Research!America survey 87 %](https://www.researchamerica.org/press-releases-statements/large-majority-of-americans-say-consideration-of-clinical-trial-participation-should-be-a-part-of-regular-health-care/))                               |
-| >80 % approval when longevity is framed as "health improvement"                   | ([Health-span framing study 2024](https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2827753/garmany_2024_oi_241395_1733259944.03263.pdf)) |
-| 38 + states now have Right-to-Try laws; a **federal** RTT was signed 30 May 2018  | ([State & federal Right-to-Try laws - Wikipedia](https://en.wikipedia.org/wiki/Right-to-try_law), [State & federal Right-to-Try laws - PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC7416898/))       |
+| Data point                                                                        | Source                                                                                                                                                                                                             |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 87 % of Americans say clinical-trial participation should be part of regular care | ([Research!America survey 87 %](https://www.researchamerica.org/press-releases-statements/large-majority-of-americans-say-consideration-of-clinical-trial-participation-should-be-a-part-of-regular-health-care/)) |
+| >80 % approval when longevity is framed as "health improvement"                   | ([Health-span framing study 2024](https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2827753/garmany_2024_oi_241395_1733259944.03263.pdf))                                                                |
+| 38 + states now have Right-to-Try laws; a **federal** RTT was signed 30 May 2018  | ([State & federal Right-to-Try laws - Wikipedia](https://en.wikipedia.org/wiki/Right-to-try_law), [State & federal Right-to-Try laws - PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC7416898/))                    |
 
 > **Take-away:** The core challenge is not a lack of public support, but the absence of a legal and logistical path to channel that sentiment into effective action.
 
@@ -76,12 +76,12 @@ A well-designed referral-rewards system can:
 
 ### Cost Breakdown (per verified vote)
 
-| Component         | Conservative | Aggressive (Viral) | Notes                                 |
-|------------------|--------------|--------------------|---------------------------------------|
-| Direct Rewards   | $0.50–$0.75  | $0.30–$0.50        | Cash, merch, or crypto                |
-| Paid Reach       | $0.75–$1.00  | $0.10              | Ads, influencer micro-fees            |
-| Verification     | $0.25        | $0.05              | KYC-lite vs. email/phone only         |
-| **Total**        | **$1.50–$2** | **$0.45–$0.65**    | Can drop to $0.20–$0.30 in best case  |
+| Component      | Conservative | Aggressive (Viral) | Notes                                |
+| -------------- | ------------ | ------------------ | ------------------------------------ |
+| Direct Rewards | $0.50–$0.75  | $0.30–$0.50        | Cash, merch, or crypto               |
+| Paid Reach     | $0.75–$1.00  | $0.10              | Ads, influencer micro-fees           |
+| Verification   | $0.25        | $0.05              | KYC-lite vs. email/phone only        |
+| **Total**      | **$1.50–$2** | **$0.45–$0.65**    | Can drop to $0.20–$0.30 in best case |
 
 **Benchmarks:**
 
@@ -91,12 +91,12 @@ A well-designed referral-rewards system can:
   - "$100 invested by promotions, a petition will be featured to 2,000 people" (equates to $0.05 per impression or $50 CPM). ([Source: Change.org Help](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition))
   - "$8 will result in the petition ads being displayed to 100 people" (equates to $0.08 per impression or $80 CPM). ([Source: Change.org FAQ](https://www.change.org/l/us/chipping-in-explained))
   - Based on typical signature-conversion rates quoted in user analyses, the **effective cost is estimated at $0.20–$0.40 per added signature**. ([Sources: The Guardian](https://www.theguardian.com/world/2013/jan/15/avaaz-online-campaigning-reinvent-politics), [Change.org Promoted Petitions Instructions](https://www.change.org/l/hi/promoted-petitions-instructions), [Change.org promoted petition math](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition))
-  *Note: The effective cost per action (e.g., signature) is variable and depends on the petition's conversion rate from impression to signature.*
-- **Avaaz global pledge initiatives:** Email-verified signatures reported at **≈ $0.32 per action** (Avaaz finance FAQ). ([Source: Avaaz finance page (≈ \$0.32 CPA)](<https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/>))
+    _Note: The effective cost per action (e.g., signature) is variable and depends on the petition's conversion rate from impression to signature._
+- **Avaaz global pledge initiatives:** Email-verified signatures reported at **≈ $0.32 per action** (Avaaz finance FAQ). ([Source: Avaaz finance page (≈ \$0.32 CPA)](https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/))
 - [GiveDirectly 2021](https://www.givedirectly.org/): $0.48 per verified crypto match
 - **Cost to Obtain Survey Responses (Platform Cost):** Survey platforms like Pollfish indicate costs to businesses starting at ~$0.95 per survey completion, which is the platform's charge for acquiring a response, not a direct referral payout. ([Pollfish](https://www.pollfish.com/pricing/survey-calculator/))
 - **Voter Turnout Referrals (Get-Out-the-Vote Initiative Specific):** Some get-out-the-vote initiatives have offered referrers around $10 per successful referral for getting someone to vote in an official election. ([TurnoutTeam.com](https://turnoutteam.com/))
-- **U.S. Ballot Initiative Field Collection (2024 Average):** *Wet-ink* legal signatures (a much higher bar). Reported cost: **$14.87 per signature**. ([Source: Ballotpedia 2024](https://ballotpedia.org/Ballot_measure_signature_costs%2C_2024))
+- **U.S. Ballot Initiative Field Collection (2024 Average):** _Wet-ink_ legal signatures (a much higher bar). Reported cost: **$14.87 per signature**. ([Source: Ballotpedia 2024](https://ballotpedia.org/Ballot_measure_signature_costs%2C_2024))
 - **General Referral Incentive Sizing:** Referral rewards are often determined based on the expected value or Customer Acquisition Cost (CAC) of the referred individual. A common approach is to offer a fraction of this value back to the referrer and/or the new user. ([Andrew Chen - How to Design a Referral Program](https://andrewchen.com/how-to-design-a-referral-program/))
 
 > **Take-away:** Digital advocacy groups are already acquiring verified actions for **well under $0.60**. A performance cap of **≤ $0.50 per verified pledge** (and bonuses for < $0.30) is defensible. Using digital tactics and referral loops, **< $0.50 per verified pledge** is achievable.
@@ -129,11 +129,11 @@ A well-designed referral-rewards system can:
 
 ## Cost Scenarios for 200,000 Verified Votes
 
-| Scenario             | Reward Pool | Paid Ads | Ops    | Total   | $/vote |
-|----------------------|------------|----------|--------|---------|--------|
-| Baseline (roadmap)   | $25k       | $150k    | $25k   | $200k   | $1.00  |
-| Partner-list heavy   | $25k       | $40k     | $20k   | $85k    | $0.43  |
-| Viral best-case      | $25k       | $15k     | $10k   | $50k    | $0.25  |
+| Scenario           | Reward Pool | Paid Ads | Ops  | Total | $/vote |
+| ------------------ | ----------- | -------- | ---- | ----- | ------ |
+| Baseline (roadmap) | $25k        | $150k    | $25k | $200k | $1.00  |
+| Partner-list heavy | $25k        | $40k     | $20k | $85k  | $0.43  |
+| Viral best-case    | $25k        | $15k     | $10k | $50k  | $0.25  |
 
 ---
 
@@ -166,24 +166,24 @@ A well-designed referral-rewards system can:
 
 ## Concrete Path to Mobilization (Global Template)
 
-| Phase                            | Deliverable                           | Target                                   | Budget guide                    |
-| -------------------------------- | ------------------------------------- | ---------------------------------------- | ------------------------------- |
-| **0. Infra (3 mo)**              | Pledge stack + referral engine        | Live; fraud-checked                      | ≈ \$60 k (engineer, ads, tests) |
-| **1. Pilot Region/District (1-2 mo)**   | 10-20 k pledges in one swing region | ≤ \$0.50 CPA                             | ≤ \$10 k                        |
-| **2. Country-wide Scale (6-9 mo)** | 1 M pledges in first target country      | \$0.30-\$0.40 CPA                          | \$300-\$400 k                   |
-| **3. Policy Channel**            | Bill text + briefings for legislators  | —                                        | parallel                        |
-| **4. Must-pass Vehicle**         | Attach to major health legislation (e.g., U.S. FDA User-Fee Act) | —                                        | coalition                       |
+| Phase                                 | Deliverable                                                      | Target              | Budget guide                    |
+| ------------------------------------- | ---------------------------------------------------------------- | ------------------- | ------------------------------- |
+| **0. Infra (3 mo)**                   | Pledge stack + referral engine                                   | Live; fraud-checked | ≈ \$60 k (engineer, ads, tests) |
+| **1. Pilot Region/District (1-2 mo)** | 10-20 k pledges in one swing region                              | ≤ \$0.50 CPA        | ≤ \$10 k                        |
+| **2. Country-wide Scale (6-9 mo)**    | 1 M pledges in first target country                              | \$0.30-\$0.40 CPA   | \$300-\$400 k                   |
+| **3. Policy Channel**                 | Bill text + briefings for legislators                            | —                   | parallel                        |
+| **4. Must-pass Vehicle**              | Attach to major health legislation (e.g., U.S. FDA User-Fee Act) | —                   | coalition                       |
 
 ---
 
 ## Addressing Political Friction (U.S. Case Study)
 
-*The risks and mitigation strategies below are specific to the United States effort and serve as a template for analysis in other target countries.*
+_The risks and mitigation strategies below are specific to the United States effort and serve as a template for analysis in other target countries._
 
 | Risk                                  | Mitigation                                                                  |
 | ------------------------------------- | --------------------------------------------------------------------------- |
 | Safety advocates claim "deregulation" | Emphasize RECOVERY-style pragmatic trials & safety analytics.               |
-| FDA inertia                           | Frame as **Phase IV modernization** rather than gutting the agency.                |
+| FDA inertia                           | Frame as **Phase IV modernization** rather than gutting the agency.         |
 | Pharma incumbents                     | Seek endorsements from small-biotech and generics eager for cheaper trials. |
 
 ---
@@ -192,9 +192,9 @@ A well-designed referral-rewards system can:
 
 | Factor                    | Feasible?                          | Evidence                              |
 | ------------------------- | ---------------------------------- | ------------------------------------- |
-| Latent public support     | ✅                                  | see section 1 (polls & RTT precedent) |
-| Cost to reach 1 M pledges | ✅ (\$0.5 × 1 M = \$500 k)          | section 3 benchmarks                  |
-| Legislative path          | ✅ (e.g., 2027 UFA or RTT-2.0)            | historical use of must-pass riders    |
+| Latent public support     | ✅                                 | see section 1 (polls & RTT precedent) |
+| Cost to reach 1 M pledges | ✅ (\$0.5 × 1 M = \$500 k)         | section 3 benchmarks                  |
+| Legislative path          | ✅ (e.g., 2027 UFA or RTT-2.0)     | historical use of must-pass riders    |
 | Execution risk            | ⚠️ needs milestones & single owner | see digital CPA cases                 |
 
 **Conclusion:** With disciplined list-building (≤ \$0.50 CPA) and a suitable "must-pass" legislative vehicle in each target country, this public education effort is realistically winnable on a global scale. The immediate next step is building the pledge engine and proving the model in a pilot region.
@@ -211,12 +211,12 @@ A well-designed referral-rewards system can:
 
 ## Real-World Impact: How Public Support Drives Policy Change
 
-Below are three well-documented cases where **large-scale, measurable public support translated into concrete policy change.** They illustrate different mechanisms—petitions, massive online comments, and sustained mobilization—so you can show Keith (or anyone) that *numbers really do move lawmakers* when the threshold is high enough.
+Below are three well-documented cases where **large-scale, measurable public support translated into concrete policy change.** They illustrate different mechanisms—petitions, massive online comments, and sustained mobilization—so you can show Keith (or anyone) that _numbers really do move lawmakers_ when the threshold is high enough.
 
-| Case                                            | Scale of Support                                                                                                  | Immediate Trigger                                                                                                | Policy Outcome                                                                                                                 | Source                                                |
-| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
-| **U.S. Net Neutrality (2014-15)**               | *≈ 4 million public comments* to the FCC + 100 000-signature White-House petition                                 | FCC and White House both had to issue formal responses; President Obama publicly urged Title II reclassification | FCC adopted **strong Title II net-neutrality rules** in Feb 2015                                                               | ([time.com][1], [washingtonpost.com][2])              |
-| **UK Parliament e-petitions**                   | Any petition that hits **100 000 signatures** is "almost always" scheduled for a floor debate                     | Reaching the threshold forces the Petitions Committee to respond and usually sets a debate date                  | Examples include debates on meningitis vaccines, Brexit preparations, and highway code changes that later informed legislation | ([petition.parliament.uk][3], [parliament.uk][4])     |
+| Case                                            | Scale of Support                                                                                                       | Immediate Trigger                                                                                                | Policy Outcome                                                                                                                 | Source                                                |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| **U.S. Net Neutrality (2014-15)**               | _≈ 4 million public comments_ to the FCC + 100 000-signature White-House petition                                      | FCC and White House both had to issue formal responses; President Obama publicly urged Title II reclassification | FCC adopted **strong Title II net-neutrality rules** in Feb 2015                                                               | ([time.com][1], [washingtonpost.com][2])              |
+| **UK Parliament e-petitions**                   | Any petition that hits **100 000 signatures** is "almost always" scheduled for a floor debate                          | Reaching the threshold forces the Petitions Committee to respond and usually sets a debate date                  | Examples include debates on meningitis vaccines, Brexit preparations, and highway code changes that later informed legislation | ([petition.parliament.uk][3], [parliament.uk][4])     |
 | **Non-violent movements 1900-2006 (Chenoweth)** | When \~**3.5 % of a population** participates actively, such movements have **never failed** in the historical dataset | Sustained mass participation (boycotts, strikes, demonstrations)                                                 | Regime change or major policy concessions in >50 cases (e.g., Philippines 1986, Serbia 2000)                                   | ([news.harvard.edu][5], [nonviolent-conflict.org][6]) |
 
 [1]: https://time.com/3834489/comcast-cable-loses-another-battle/
@@ -229,15 +229,15 @@ Below are three well-documented cases where **large-scale, measurable public sup
 ### Take-aways you can cite
 
 1. **Digital advocacy ≠ empty clicks.**
-   Net-neutrality's *4 million comments* and *100 k petition* directly preceded the FCC's strongest pro-consumer rule-making in decades.
+   Net-neutrality's _4 million comments_ and _100 k petition_ directly preceded the FCC's strongest pro-consumer rule-making in decades.
 
 2. **Formal thresholds matter.**
    In the UK system, **100 000 signers reliably buys parliamentary airtime**—a practical, repeatable path from signature to legislative debate.
 
 3. **The 3.5 % rule is real.**
-   Harvard's Erica Chenoweth shows that *active* engagement at that scale (e.g., ≈ 12 M Americans) has been historically sufficient for transformative change every single time it's been reached.
+   Harvard's Erica Chenoweth shows that _active_ engagement at that scale (e.g., ≈ 12 M Americans) has been historically sufficient for transformative change every single time it's been reached.
 
-So when you propose a pledge/ referral system that can gather tens of thousands—or eventually millions—of *district-mapped yes/no pledges*, you're standing on solid historical precedent: **big verified numbers force decision-makers to act.**
+So when you propose a pledge/ referral system that can gather tens of thousands—or eventually millions—of _district-mapped yes/no pledges_, you're standing on solid historical precedent: **big verified numbers force decision-makers to act.**
 
 ---
 
@@ -282,9 +282,9 @@ So when you propose a pledge/ referral system that can gather tens of thousands�
 
 ## Economic Model & Incentive Mechanics Integration
 
--   **VOTE Points:** These represent your verifiable claim to a share of the economic value you help create by building the political mandate for military budget redirection. They are non-transferable pre-treaty and minted to reflect your contribution to unlocking the [$16.5 trillion peace dividend](../economic-models/peace-dividend-value-capture.md).
--   **VICTORY Conversion:** Upon treaty ratification, your earned VOTE points convert to VICTORY governance tokens representing actual ownership of the $27B annual treasury created by your advocacy work. The conversion rate will be fixed and transparent from day one, reflecting the real value you helped create.
--   **Tier 2 Grants:** VICTORY bonds for high-impact contributors represent earned ownership stakes in the captured peace dividend value, allocated from the "Ecosystem & Community Growth" fund based on measurable contributions to treaty success.
+- **VOTE Points:** These represent your verifiable claim to a share of the economic value you help create by building the political mandate for military budget redirection. They are non-transferable pre-treaty and minted to reflect your contribution to unlocking the [$16.5 trillion peace dividend](../economic-models/peace-dividend-value-capture.md).
+- **VICTORY Conversion:** Upon treaty ratification, your earned VOTE points convert to VICTORY governance tokens representing actual ownership of the $27B annual treasury created by your advocacy work. The conversion rate will be fixed and transparent from day one, reflecting the real value you helped create.
+- **Tier 2 Grants:** VICTORY bonds for high-impact contributors represent earned ownership stakes in the captured peace dividend value, allocated from the "Ecosystem & Community Growth" fund based on measurable contributions to treaty success.
 
 This system ensures participants earn real ownership of the economic value they create, not speculative digital assets with no intrinsic backing.
 
@@ -294,14 +294,14 @@ This system ensures participants earn real ownership of the economic value they 
 
 **NOTE:** The following cost-per-acquisition (CPA) analysis is based on the previous fiat-based model. It is retained for historical context but is no longer the primary model. The new model dramatically reduces upfront cash costs, shifting the expense to a contingent token liability.
 
--   **Goal:** Drop verified-vote costs below $1 (and as low as $0.20–$0.30 in viral scenarios)
--   **Key Insight:** Direct cash incentives are expensive and have diminishing returns at scale. A tiered, ownership-based model provides a more powerful and sustainable incentive.
+- **Goal:** Drop verified-vote costs below $1 (and as low as $0.20–$0.30 in viral scenarios)
+- **Key Insight:** Direct cash incentives are expensive and have diminishing returns at scale. A tiered, ownership-based model provides a more powerful and sustainable incentive.
 
-| Channel                     | CPA (Direct) | CPA (Optimized)    | Notes                                         |
-| :-------------------------- | :----------- | :----------------- | :-------------------------------------------- |
-| **Paid Ads (e.g., FB/Google)**  | \$3–\$5    | \$1.00–\$1.50      | High initial cost, scales predictably        |
-| **Promoted Petitions**          | \$2–\$4    | \$0.75–\$1.25      | Leverages existing platforms (e.g., Change.org) |
-| **Referral / Affiliate Payouts**| \$1–\$3    | \$0.50–\$0.75      | Lower fraud, higher engagement                |
-| **Total**                   | **$1.50–$2** | **$0.45–$0.65**    | Can drop to $0.20–$0.30 in best case          |
+| Channel                          | CPA (Direct) | CPA (Optimized) | Notes                                           |
+| :------------------------------- | :----------- | :-------------- | :---------------------------------------------- |
+| **Paid Ads (e.g., FB/Google)**   | \$3–\$5      | \$1.00–\$1.50   | High initial cost, scales predictably           |
+| **Promoted Petitions**           | \$2–\$4      | \$0.75–\$1.25   | Leverages existing platforms (e.g., Change.org) |
+| **Referral / Affiliate Payouts** | \$1–\$3      | \$0.50–\$0.75   | Lower fraud, higher engagement                  |
+| **Total**                        | **$1.50–$2** | **$0.45–$0.65** | Can drop to $0.20–$0.30 in best case            |
 
 ### Data-Driven Benchmarks

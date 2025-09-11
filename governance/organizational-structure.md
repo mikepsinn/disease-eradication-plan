@@ -2,10 +2,10 @@
 title: Organizational Structure
 description: Defines the organizational charts for the for-profit management company (SPV) and the non-profit foundation that comprise the initiative.
 published: true
-date: '2025-08-15T00:00:00.000Z'
+date: "2025-08-15T00:00:00.000Z"
 tags: [org-chart, strategy, legal, hiring, governance]
 editor: markdown
-dateCreated: '2025-08-15T00:00:00.000Z'
+dateCreated: "2025-08-15T00:00:00.000Z"
 topic_id: organizational-structure
 canonical: true
 status: active
@@ -30,11 +30,11 @@ graph TD;
     subgraph "For-Profit Management Co. (SPV)"
         A["Board of Directors<br/>(Investors & Founder)"];
         B["Managing Director"];
-        
+
         C["Capital Markets Lead"];
         D["Elections & IE Compliance Lead"];
         E["Growth & Referrals Lead"];
-        
+
         F["<br><br>Future Hires<br>(Post-Seed Round)<br>Engineering Lead, Design Lead, etc."];
 
         A --> B;
@@ -43,7 +43,7 @@ graph TD;
         B --> E;
         B -.-> F;
     end
-    
+
     style F fill:#fff,stroke:#ccc,stroke-dasharray: 5 5
 ```
 
