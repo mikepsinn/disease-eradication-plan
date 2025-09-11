@@ -22,14 +22,13 @@
     "zod": "^3.25.76"
   },
   "scripts": {
-
+    "test": "echo \"Error: no test specified\" && exit 1",
     "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "lint:md:fix": "markdownlint --config .markdownlint.json --fix \"**/*.md\"",
+    "format": "prettier --write \"**/*.md\"",
     "delete-empty-folders": "ts-node scripts/delete-empty-folders.ts",
-
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
     "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix"
-
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
@@ -46,6 +45,7 @@
     "markdown-it-anchor": "^9.2.0",
     "markdownlint": "^0.29.0",
     "markdownlint-cli": "^0.39.0",
+    "prettier": "^3.6.2",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsx": "^4.16.2",
