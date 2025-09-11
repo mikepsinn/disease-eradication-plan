@@ -59,6 +59,18 @@ This repository documents the "War on Disease," a mission to make curing people 
 
 **One-Second Test:** If you hesitate before reading a sentence aloud to a skeptical audience, rewrite it.
 
+**Public Choice Theory Reality Check:** Every sentence must assume humans respond to incentives, not idealism.
+- **Good:** "Politicians support this because we fund their campaigns and their opponents if they don't."
+- **Bad:** "World leaders will embrace this plan because it's the right thing to do."
+- **Always assume:** People act in their own self-interest. Institutions serve those who control them. Money talks louder than morals.
+- **Never assume:** Governments want to help people. Officials care about the public good. Anyone will do the right thing without proper incentives.
+
+**Call Things by Their Real Names:** Use blunt, honest language instead of euphemisms.
+- **Good:** "How to stay out of prison" / "We're bribing everyone" / "This will make you rich"
+- **Bad:** "Legal compliance framework" / "Incentive alignment" / "Value creation opportunities"
+- **Always prefer:** The word that sounds more like what your cynical friend would say
+- **Never use:** Corporate euphemisms that hide what you're actually talking about
+
 ## Contributor Workflow
 
 The plan _is_ the repository. Our goal is to create a single source of truth that is so clear it can be read like a book.
