@@ -156,12 +156,22 @@ async function validateMarkdownFile(filePath: string) {
   const fileContent = await fs.promises.readFile(fullPath, 'utf-8');
   const { content: markdownContent } = matter(fileContent);
 
-  const linkRegex = /\[[^\]]+\]\(([^)]+)\)/g;
-  let match;
+  const md = markdownit();
+  const tokens = md.parse(markdownContent, {});
   const links: string[] = [];
-  
-  while ((match = linkRegex.exec(markdownContent)) !== null) {
-    links.push(match[1]);
+
+  for (const token of tokens) {
+    if (token.type === 'link_open') {
+      const href = token.attrGet('href');
+      if (href) {
+        links.push(href);
+      }
+    } else if (token.type === 'image') {
+      const src = token.attrGet('src');
+      if (src) {
+        links.push(src);
+      }
+    }
   }
   
   const sourceHeadings = await getHeadings(fullPath);
