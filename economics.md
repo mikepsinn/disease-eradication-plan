@@ -1,5 +1,5 @@
 ---
-title: "The Financial Engine: Peace is Profitable"
+title: "Economics → How to Make Peace More Profitable Than War"
 description: "The economic model that makes the DIH possible. This chapter details the Peace Dividend, VICTORY Bonds, and the investment thesis that makes peace more profitable than war."
 published: true
 date: "2025-09-10T00:00:00.000Z"

@@ -1,5 +1,5 @@
 ---
-title: "Timeline to Global Impact"
+title: "Roadmap → What Happens Next"
 description: "The high-level, multi-year strategic roadmap to achieve the 1% Treaty, from initial pre-seed funding to activating the multi-billion dollar DIH Treasury."
 published: true
 date: "2025-09-10T00:00:00.000Z"

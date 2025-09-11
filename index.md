@@ -83,7 +83,7 @@ This document provides a complete inventory of all markdown files in the reposit
 ---
 
 ### [`dfda.md`](./dfda.md)
-- **title:** The Engine of Cures: A Decentralized FDA
+- **title:** A Decentralized Autonomous FDA: A Decentralized FDA
 - **description:** An introduction to the Decentralized FDA (dFDA), the revolutionary, 80X more efficient research protocol the DIH will build to accelerate medical progress.
 - **date:** 2025-09-10T00:00:00.000Z
 - **tags:** dfda,decentralized-trials,regulatory-reform,clinical-trials,fda,innovation,protocol
@@ -653,7 +653,7 @@ This document provides a complete inventory of all markdown files in the reposit
 ---
 
 ### [`strategy.md`](./strategy.md)
-- **title:** How Everyone Wins: The Strategy of Universal Bribery
+- **title:** How to Bribe Literally Everyone: The Strategy of Universal Bribery
 - **description:** The execution strategy is not based on moral persuasion but on a superior, direct financial bribe for every stakeholder, from citizens to the military-industrial complex.
 - **published:** true
 - **date:** 2025-09-10T00:00:00.000Z

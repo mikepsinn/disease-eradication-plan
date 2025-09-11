@@ -1,5 +1,5 @@
 ---
-title: "The Engine of Cures: A Decentralized FDA"
+title: "Trials → A Decentralized Autonomous FDA"
 description: "An introduction to the Decentralized FDA (dFDA), the revolutionary, 80X more efficient research protocol the DIH will build to accelerate medical progress."
 published: false
 date: "2025-09-10T00:00:00.000Z"
@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 3: The Engine of Cures
+# 📖 Chapter 3: A Decentralized Autonomous FDA
 
 The Decentralized Institutes of Health (DIH) is the treasury. The **Decentralized FDA (dFDA)** is the engine it funds.
 

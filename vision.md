@@ -1,5 +1,5 @@
 ---
-title: "A World Without War and Disease"
+title: "Vision → A World Without War and Disease"
 description: "The ultimate vision of the DIH: a world where humanity's vast resources are redirected from conflict to curing disease, unlocking superlongevity, superhappiness, superintelligence, and an age of unprecedented abundance."
 published: true
 date: "2025-09-10T00:00:00.000Z"

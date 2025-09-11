@@ -1,5 +1,5 @@
 ---
-title: "Why This Isn't Insane: Precedent & Evidence"
+title: "Proof → Why This Isn't Insane"
 description: "The DIH strategy is not theoretical. It is a synthesis of proven historical models, from the financial engineering of WWII War Bonds to the citizen-led victory of the International Campaign to Ban Landmines."
 published: true
 date: "2025-09-10T00:00:00.000Z"

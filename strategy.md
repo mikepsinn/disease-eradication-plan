@@ -1,5 +1,5 @@
 ---
-title: "How Everyone Wins: The Strategy of Universal Bribery"
+title: "Strategy → How to Bribe Literally Everyone"
 description: "The execution strategy is not based on moral persuasion but on a superior, direct financial bribe for every stakeholder, from citizens to the military-industrial complex."
 published: true
 date: "2025-09-10T00:00:00.000Z"
@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 5: How Everyone Wins (The Strategy of Universal Bribery)
+# 📖 Chapter 5: How to Bribe Literally Everyone
 
 Our strategy is not to win a moral argument. It is to bribe the shit out of literally everyone.
 

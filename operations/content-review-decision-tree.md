@@ -66,9 +66,9 @@ Following README.md's narrative flow for maximum readability:
 ├── README.md                           ✅ (Perfect intro - "War is incredibly stupid...")
 ├── problem.md                          📖 Chapter 1: The Grotesque Misallocation
 ├── solution.md                         📖 Chapter 2: Legal Bribery for Peace
-├── vision.md                           📖 Chapter 3: The World We Build
+├── vision.md                           📖 Chapter 3: A World Without War and Disease
 ├── economics.md                        📖 Chapter 4: The Financial Engine
-├── strategy.md                         📖 Chapter 5: How Everyone Wins (The Bribery Strategy)
+├── strategy.md                         📖 Chapter 5: How to Bribe Literally Everyone (The Bribery Strategy)
 ├── proof.md                           📖 Chapter 6: Why This Actually Works (Precedents & Evidence)
 ├── legal.md                           📖 Chapter 7: Legal Compliance & Structure
 ├── operations.md                       📖 Chapter 8: Building the Organization

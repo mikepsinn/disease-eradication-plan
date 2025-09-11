@@ -1,5 +1,5 @@
 ---
-title: "The Grotesque Misallocation: Why We're Losing the Human Race"
+title: "Problem → We Spend More on Bombs Than Cancer Research"
 description: "Humanity spends trillions on war and destruction while the systems meant to cure disease are slow, expensive, and exclusionary. This is the core problem we must solve."
 published: true
 date: "2025-09-10T00:00:00.000Z"

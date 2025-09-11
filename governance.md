@@ -1,5 +1,5 @@
 ---
-title: "Wishocracy: A Decentralized Governance Protocol"
+title: "Governance → How the People Who Pay Get to Vote"
 description: "The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous 'to-do list for humanity' governed by its stakeholders."
 published: true
 date: "2025-09-10T00:00:00.00Z"

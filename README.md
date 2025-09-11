@@ -229,7 +229,7 @@ This simple model ensures that even in conservative scenarios, the DIH remains m
 
 ---
 
-## V. THE BRIBERY STRATEGY (How Everyone Wins)
+## V. THE BRIBERY STRATEGY (How to Bribe Literally Everyone)
 
 ## The Core Strategy: Co-opt, Don't Compete
 
@@ -452,7 +452,7 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ---
 
-## IX. CALL TO ACTION (Clear Next Steps)
+## IX. CALL TO ACTION 
 
 ## Become a Stakeholder
 
@@ -784,19 +784,19 @@ This repository is structured as a book that tells the story of the Decentralize
 ### The Chapters
 
 - **[README.md](./README.md)**: (This File) A high-level executive summary of the problem, the solution, and the plan.
-- **[problem.md](./problem.md)**: **Chapter 1: The Grotesque Misallocation** - A detailed analysis of how humanity misallocates trillions to war and destruction while the systems meant to cure disease are broken.
-- **[solution.md](./solution.md)**: **Chapter 2: The 1% Treaty** - An outline of the simple, rational accord to redirect a fraction of military spending to create a self-funding engine for eradicating disease.
-- **[dfda.md](./dfda.md)**: **Chapter 3: The Engine of Cures** - An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build. (It's already been proven to work.)
-- **[vision.md](./vision.md)**: **Chapter 4: The World We Build** - A vivid depiction of the future that the DIH and dFDA will create—a world of accelerated innovation and extended human healthspan.
-- **[economics.md](./economics.md)**: **Chapter 5: The Financial Engine** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
-- **[strategy.md](./strategy.md)**: **Chapter 6: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and bribes to get everyone on our side (i.e. humanity).
-- **[proof.md](./proof.md)**: **Chapter 7: Why This Isn't Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
-- **[legal.md](./legal.md)**: **Chapter 8: The Legal Framework** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
-- **[governance.md](./governance.md)**: **Chapter 9: The Governance Model** - How the people who paid for this get to vote on how it works.
-- **[operations.md](./operations.md)**: **Chapter 10: Building the Organization** - The plan for hiring a few very smart people to bootstrap the DIH and then make itself obsolete.
-- **[roadmap.md](./roadmap.md)**: **Chapter 11: The Master Plan** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
-- **[FAQ.md](./FAQ.md)**: **Chapter 12: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
-- **[call-to-action.md](./call-to-action.md)**: **Chapter 13: How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
+- **[problem.md](./problem.md)**: **Chapter 1: Problem → We Spend More on Bombs Than Cancer Research** - A detailed analysis of how humanity misallocates trillions to war and destruction while the systems meant to cure disease are broken.
+- **[solution.md](./solution.md)**: **Chapter 2: Solution → The 1% Treaty** - An outline of the simple, rational accord to redirect a fraction of military spending to create a self-funding engine for eradicating disease.
+- **[dfda.md](./dfda.md)**: **Chapter 3: Trials → A Decentralized Autonomous FDA** - An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build. (It's already been proven to work.)
+- **[vision.md](./vision.md)**: **Chapter 4: The Vision → A World Without War and Disease** - A vivid depiction of the future that the DIH and dFDA will create—a world of accelerated innovation and extended human healthspan.
+- **[economics.md](./economics.md)**: **Chapter 5: Economics → How to Make Peace More Profitable Than War** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
+- **[strategy.md](./strategy.md)**: **Chapter 6: Strategy → How to Bribe Literally Everyone** - A breakdown of the execution strategy, which uses a global referendum and bribes to get everyone on our side (i.e. humanity).
+- **[proof.md](./proof.md)**: **Chapter 7: The Proof → Why This Isn't Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
+- **[legal.md](./legal.md)**: **Chapter 8: Legal → How to Stay Out of Prison** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
+- **[governance.md](./governance.md)**: **Chapter 9: Governance → How the People Who Pay Get to Vote** - How the people who paid for this get to vote on how it works.
+- **[operations.md](./operations.md)**: **Chapter 10: Operations → Hiring Smart People and Getting Out of the Way** - The plan for hiring a few very smart people to bootstrap the DIH and then make itself obsolete.
+- **[roadmap.md](./roadmap.md)**: **Chapter 11: Roadmap → What Happens Next** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
+- **[FAQ.md](./FAQ.md)**: **Chapter 12: FAQ → Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
+- **[call-to-action.md](./call-to-action.md)**: **Chapter 13: Join → How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
 - **[CONTRIBUTING.md](./CONTRIBUTING.md)**: A guide for all contributors, outlining the core principles, content standards, and information architecture of the project.
 
 ### The Sections (Supporting Details)

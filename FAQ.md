@@ -1,5 +1,5 @@
 ---
-title: "Objections & Responses"
+title: "FAQ → Objections & Responses"
 description: "Addressing the common objections, frequently asked questions, and critical counter-arguments to the DIH and 1% Treaty proposal."
 published: true
 date: "2025-09-10T00:00:00.000Z"

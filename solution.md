@@ -1,5 +1,5 @@
 ---
-title: "Legal Bribery for Peace: The 1% Treaty"
+title: "Solution → The 1% Treaty"
 description: "The solution is a simple, rational, and profound global accord: The 1% Treaty. By redirecting a tiny fraction of military spending, we can make curing people more profitable than killing them."
 published: true
 date: "2025-09-10T00:00:00.000Z"

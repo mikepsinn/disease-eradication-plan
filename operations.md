@@ -1,5 +1,5 @@
 ---
-title: "Building the Organization: A Lean Activation Team"
+title: "Operations → Hiring Smart People and Getting Out of the Way"
 description: "The operational philosophy is to build a small, elite 'activation team' whose goal is to create a self-sustaining protocol and then make themselves obsolete."
 published: true
 date: "2025-09-10T00:00:00.000Z"

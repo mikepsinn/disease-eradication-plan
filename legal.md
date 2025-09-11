@@ -1,5 +1,5 @@
 ---
-title: "Legal Framework: Engineering Compliance"
+title: "Legal → How to Stay Out of Prison"
 description: "The legal framework is designed for maximum compliance and resilience, utilizing a multi-entity global structure and rigorous adherence to international securities and election law."
 published: true
 date: "2025-09-10T00:00:00.00Z"
