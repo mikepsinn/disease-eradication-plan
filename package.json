@@ -26,6 +26,7 @@
     "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "lint:md:fix": "markdownlint --config .markdownlint.json --fix \"**/*.md\"",
     "format": "prettier --write \"**/*.md\"",
+    "generate:index": "ts-node scripts/generate-index.ts",
     "delete-empty-folders": "ts-node scripts/delete-empty-folders.ts",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
     "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix"
