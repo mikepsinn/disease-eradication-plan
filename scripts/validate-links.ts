@@ -217,7 +217,7 @@ async function main() {
     const relativePath = path.relative(ROOT_DIR, filePath);
     await fixAmpersands(relativePath);
     const errors = await validateMarkdownFile(relativePath);
-    if (errors.length > 0) {
+    if (errors && errors.length > 0) {
       allErrors = allErrors.concat(errors.map(e => `${relativePath}: ${e}`));
     }
   }

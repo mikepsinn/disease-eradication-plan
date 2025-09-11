@@ -34,6 +34,7 @@ async function generateInventory() {
   const inventory: FileInventory[] = [];
 
   for (const filePath of allFiles) {
+    let relativePath = path.relative(workspaceRoot, filePath).replace(/\\/g, '/');
     try {
       const fileContent = await fs.readFile(filePath, 'utf8');
       if (!fileContent.trim()) {
@@ -42,7 +43,6 @@ async function generateInventory() {
       }
       const { data } = matter(fileContent);
 
-      const relativePath = path.relative(workspaceRoot, filePath).replace(/\\/g, '/');
       
       const description = data.description ? String(data.description) : 'No Description';
 

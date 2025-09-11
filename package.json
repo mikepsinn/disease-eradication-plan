@@ -26,7 +26,7 @@
     "migrate": "node scripts/migrate-content.js",
     "process-images": "node scripts/process-images.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:md": "markdownlint \"**/*.md\"",
+    "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "gdocs-sync": "ts-node scripts/gdocs-sync.ts",
     "find-orphaned-pages": "ts-node scripts/find-orphaned-pages.js",
     "find-orphaned-pages:delete": "ts-node scripts/find-orphaned-pages.js --delete",
