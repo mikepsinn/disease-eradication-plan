@@ -33,9 +33,7 @@ This repository documents the "War on Disease," a mission to make curing people 
   - `problem.md` should graphically and emotionally depict the human cost of war and disease. It must build urgency.
   - `solution.md` should paint a vivid, hopeful picture of the future we are building—a world without war and disease. It must inspire.
 
-### Critical Writing Quality Standards
-
-Every sentence must pass these tests to avoid sounding like AI-generated content:
+### Writing Style Guide
 
 **The 4 Core Checks:**
 1. **Clarity:** Can I say this to my mom and have her understand?

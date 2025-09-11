@@ -105,21 +105,21 @@ The core of the plan is a transparent, legally-compliant system of incentives th
 
 ```mermaid
 graph TD;
-    subgraph "The Legal Bribery Engine (Annual Capital Flow)";
+    subgraph "How We Bribe Everyone Legally ($27 Billion a Year)";
         A["$27B Annual Treasury<br/>(1% Military Redirection)"];
 
-        subgraph "Strategic Allocation";
-            A --> B["<b>Investors & Bond Holders</b><br/>(~_ $7.2B/yr Payouts)<br/><i>The Incentive: World-class, de-risked returns</i>"];
-            A --> C["<b>Political Action Fund</b><br/>(~_ $1.5B/yr Independent Expenditures)<br/><i>The Incentive: Overwhelming, targeted campaign support</i>"];
-            A --> D["<b>Citizens (VOTE Points)</b><br/>(Funded by bond sales)<br/><i>The Incentive: A direct stake in the Peace Dividend</i>"];
-            A --> E["<b>Decentralized Institutes of Health (DIH)</b><br/>(~$19.8B/yr Mission Investment)<br/><i>The Engine: Funding cures 80x more efficiently</i>"];
+        subgraph "Where the Money Goes";
+            A --> B["<b>Investors & Bond Holders</b><br/>(~_ $7.2B/yr Payouts)<br/><i>Why They'll Take It: Better returns than anywhere else</i>"];
+            A --> C["<b>Political Action Fund</b><br/>(~_ $1.5B/yr Independent Expenditures)<br/><i>Why Politicians Care: Massive campaign support</i>"];
+            A --> D["<b>Citizens (VOTE Points)</b><br/>(Funded by bond sales)<br/><i>Why People Vote: Real money for voting</i>"];
+            A --> E["<b>Decentralized Institutes of Health (DIH)</b><br/>(~$19.8B/yr Mission Investment)<br/><i>Why It Works: 80x more efficient than current system</i>"];
         end
 
-        subgraph "Outcomes";
-            B --> F["Co-opted Financial Elite"];
-            C --> G["Aligned Political Leaders"];
-            D --> H["Mass Public Mandate (3.5%)"];
-            E --> I["Accelerated Cures & Global Health"];
+        subgraph "What We Get";
+            B --> F["Rich People on Our Side"];
+            C --> G["Politicians Who Need Our Money"];
+            D --> H["280 Million People Voting for This"];
+            E --> I["Actual Cures for Diseases"];
         end
     end
 ```
@@ -158,8 +158,10 @@ The full plan is detailed below. But if you're already convinced, here's how you
 
 Our financing is governed by two core, transparent principles that ensure a fair balance between rewarding investors and fulfilling our mission:
 
-1. **The Target Return Principle (The "Ceiling"):** We aim to deliver the world's best risk-adjusted return, targeting a **~40% compound annual growth rate (CAGR)** (~28x over 10 years) for our early investors.
-2. **The Mission Guarantee Principle (The "Floor"):** To protect our ultimate goal, annual investor payouts will **never exceed 50% of the DIH's total annual income.**
+Here are the two simple rules:
+
+1. **We're Going to Try to Make You Filthy Rich:** About 40% returns per year, which beats just about everything. That's ~28x your money back over 10 years.
+2. **But We Won't Forget Why We're Here:** No matter how much money we make, we'll never give more than half to investors. The other half goes to actually curing diseases. Because what's the point of getting rich if everyone you love is dead?
 
 The model is designed to **front-load investor returns**, paying out the target amount (~$7.23B per year in the full success scenario) as quickly as treaty inflows allow. The 40% CAGR represents the total 10-year return, while the large year-one payout reflects our strategy of rapidly de-risking the investment for our partners.
 
@@ -169,7 +171,7 @@ The model is designed to **front-load investor returns**, paying out the target 
 
 - **[80X Greater Efficiency](./reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [$41,000](#trial-cost-41k) to as low as [$500](#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](./reference/recovery-trial.md), which saved over 1 million lives globally.
 - **[$50 Billion in Annual Savings](./economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA protocol is projected to save the global R&D industry ~$50 billion annually—**based on actual performance data, not projections**.
-- **[840,000+ Extra Years of Healthy Life](./economic-models/dfda-cost-benefit-analysis.md):** The protocol is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**scaling proven results, not theoretical models**.
+- **[840,000+ Extra Years of Healthy Life](./economic-models/dfda-cost-benefit-analysis.md):** The protocol is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**This isn't some pie-in-the-sky idea. The Oxford RECOVERY trial already proved you can run medical trials for $500 per patient instead of $41,000. We're just going to do more of that**.
 
 **Specialized programs fund existing institutions:**
 
@@ -181,27 +183,27 @@ The model is designed to **front-load investor returns**, paying out the target 
 
 ```mermaid
 graph TD;
-    subgraph "The DIH Value Flywheel (Annual Flow)";
+    subgraph "How the Money Goes Around and Makes More Money";
         A[/"$27B Annual Captured<br/>Peace Dividend"/];
 
-        subgraph "Treasury Allocation";
+        subgraph "How We Split It";
             A -->|"Up to 50%"| B["$7.2B/yr<br/>Investor Payouts"];
             A -->|"Min. 50%"| C["$19.8B/yr<br/>DIH Mission Investment"];
         end
 
-        subgraph "dFDA Value Multiplication Engine";
+        subgraph "The Magic: $80 of Results for Every $1";
             C --> D["Invested in dFDA Protocol<br/>& Efficient Research"];
             D ==> E{"463:1 ROI"};
         end
 
-        subgraph "Societal Returns";
+        subgraph "What the World Gets";
             E --> F["$50B+ Annual<br/>R&D Savings"];
             E --> G["840,000+<br/>Extra Years of Healthy Life Annually"];
         end
 
         B --> X["Returns that beat the best hedge funds"];
         F --> Y["Global Economic Growth"];
-        G --> Z["Massively Improved<br/>Public Health"];
+        G --> Z["People Stop Dying<br/>of Preventable Diseases"];
     end
 ```
 
@@ -243,13 +245,15 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 - **Return: $1,813 per $1 spent on lobbying**
 - Politicians get modest campaign donations and revolving door jobs
 
-## Activation Energy Sequence: Who We (legally) Bribe First
+## The Order in Which We Bribe People
+
+*We start with rich people who want to get richer, then move on to politicians. It's depressingly predictable, but it works.*
 
 ### Phase 1: Seed Investors ($250-400M Initial Investment)
 
 - **Who:** Wealthy individuals, funds, Anchor Investors
 - **The Bribe:**
-  - **Targeting a >40% CAGR (~28x Return):** Our financial model is engineered to deliver a risk-adjusted return superior to the world's most elite investment funds (e.g., Renaissance Medallion Fund's ~39% CAGR). Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](./economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](./economic-models/dih-treasury-cash-flow-model.md).
+  - **Targeting a >40% CAGR (~28x Return):** We designed this to make you more money than the fanciest hedge funds run by Harvard guys in expensive suits. The math works because we're taking money that's currently being wasted on bombs and using it to cure cancer instead. Payouts are governed by two clear principles: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](./economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](./economic-models/dih-treasury-cash-flow-model.md).
   - **VICTORY bonds** that grant governance control over the $27B annual DIH treasury.
   - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](./economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
 
@@ -275,7 +279,9 @@ Our entire thesis is engineered to offer military contractors and politicians a 
   - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
   - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
 
-## Superior Offers to Key Stakeholders
+## Why Everyone Will Take Our Deal
+
+*We're offering arms dealers more money to save lives than they currently make blowing things up. Turns out most people aren't actually evil—they just respond to incentives.*
 
 **Our Superior Offer to Military Contractors:**
 
@@ -291,7 +297,7 @@ Our entire thesis is engineered to offer military contractors and politicians a 
 - **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the politically safer choice
 - **Political Insurance:** A new, highly popular policy platform that lets politicians claim credit for curing diseases and extending lifespans
 
-**The Compounding Effect:** Each phase funds the next. Seed investors control governance of $27B treasury. Bond buyers fund the referendum. Citizens create electoral pressure. Politicians pass treaties. Everyone gets paid more than they could anywhere else.
+**How Each Step Pays for the Next Step:** Rich people fund the global vote. The vote creates political pressure. Politicians pass treaties. Treaties create the $27 billion treasury. The treasury makes everyone even richer. And around we go.
 
 **The Math:** We offer everyone more personal wealth than the current system, PLUS better campaign support, PLUS the moral high ground of saving lives, PLUS reduced existential risk. When the math favors peace, rational actors choose peace.
 
@@ -462,9 +468,9 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **Why This Objection is Overstated:** The US already can't account for **$2.5 trillion** in assets—more than 250 times the $10 billion annual US contribution to this plan. Redirecting 1% is trivial compared to existing waste. Other nations' military spending is relatively small (US represents ~40% of global total). Even if holdouts don't comply, they won't catch up to US capabilities. Everyone has a price: We use massive legal incentives targeting personal financial gain to make compliance more profitable than defection.
 
-- **Our Approach: Personal Financial Alignment Over Institutional Punishment:** Leaders are humans driven by personal financial self-interest, not abstract geopolitical strategy. We apply the same strategy we use with military contractors: **Personal Investment Opportunity** (Leaders and their families can invest in [VICTORY Bonds](./economic-models/victory-bond-investment-thesis.md) designed to offer mathematically superior returns to alternative investments), **Direct Financial Stakes** (We offer leaders opportunities to profit directly from the $27B annual treasury through legally compliant investment vehicles), **Family Security** (Leaders' families get diseases too—they can profit from a system that perpetuates risk, or profit _even more_ from one that funds cures), and **Political Insurance** (Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice).
+- **Making It Personal: Why We Bribe Individuals, Not Institutions:** Countries can't be bribed. But the humans who run countries? They have mortgages and kids and retirement accounts just like everyone else. We apply the same strategy we use with military contractors: **Personal Investment Opportunity** (Leaders and their families can invest in [VICTORY Bonds](./economic-models/victory-bond-investment-thesis.md) designed to offer mathematically superior returns to alternative investments), **Direct Financial Stakes** (We offer leaders opportunities to profit directly from the $27B annual treasury through legally compliant investment vehicles), **Family Security** (Leaders' families get diseases too—they can profit from a system that perpetuates risk, or profit _even more_ from one that funds cures), and **Political Insurance** (Massive independent expenditures ensure that supporting the treaty becomes the financially safer political choice).
 
-- **Consequentialist Reality:** The alternative to this coordinated reallocation is continued escalation of nuclear arsenals (enough to produce ~150 Tg of stratospheric soot in a U.S.–Russia exchange—modeled to cause global famine and >5 billion deaths) and an AI arms race leading to potential Skynet scenarios. Partial compliance still reduces global destructive capacity while funding cures—better than the status quo of waste and existential risk. **Bottom Line:** Free-riding isn't viable when compliance pays better, and the stakes are human survival. For detailed mechanisms, see [Free Rider Solution](./strategy/free-rider-solution.md).
+- **Here's the Thing:** If we don't do this, we'll probably all die from nuclear war or get eaten by robots. A U.S.–Russia nuclear exchange would loft ~150 Tg of soot and cause global famine killing >5 billion people. Even if this plan only works partially, it's still better than the alternative. Which is death. For detailed mechanisms, see [Free Rider Solution](./strategy/free-rider-solution.md).
 
 ### 19. "This violates election and securities law" (Legal Compliance)
 
@@ -486,7 +492,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **Direct Answer:** No—we're transparent about using overwhelming legal incentives to align leaders' interests with global health, because the alternative is continued arms races leading to potential human extinction via nuclear winter (a U.S.–Russia exchange is modeled to loft ~150 Tg soot and cause global famine with >5 billion deaths) or AI catastrophe. If "straight-up" rewards are needed for specific leaders, we structure them as performance-based diplomatic grants or economic development packages tied to verifiable treaty compliance—fully compliant with anti-corruption laws like the FCPA.
 
-- **Why This Works Legally and Ethically:** **Legal Framework** (All incentives flow through independent entities with no quid-pro-quo; modeled on existing diplomatic aid packages like US provides $3.8B annual aid to Israel tied to security cooperation), **Consequentialist Justification** (When misallocated military spending already wastes trillions - Pentagon lost $2.5T - redirecting 1% via incentives saves lives and reduces existential risks, far more ethical than the status quo of funding destruction), and **Transparency First** (All rewards publicly disclosed with blockchain auditing to prevent corruption).
+- **Why This Works Legally and Ethically:** **Legal Framework** (All incentives flow through independent entities with no quid-pro-quo; modeled on existing diplomatic aid packages like US provides $3.8B annual aid to Israel tied to security cooperation), **The Math Is Simple** (When the Pentagon loses $2.5T by accident, redirecting 1% to save lives is more ethical than the status quo of funding destruction), and **Everything Is Public** (All rewards disclosed with blockchain auditing to prevent corruption).
 
 - **Bottom Line:** This isn't hidden bribery; it's rational incentive design to make peace profitable. For nations where standard politics fail, these targeted packages ensure compliance without illegality. We're willing to pay whatever legal price is needed to secure participation, because human survival depends on it.
 
@@ -498,7 +504,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 23. "Can your team actually build this?" (Execution Risk)
 
-- **Response:** Our execution model focuses on strategic priorities and uses elite global talent. We are not building a large, traditional organization. Instead, we are assembling a small, world-class **"activation team"** of strategic leaders (see our [Hiring Plan](./careers/hiring-plan.md)) whose sole function is to direct capital and manage a network of top-tier execution partners. This allows us to remain lean and focused, outsourcing tactical work like software development and media production to the best specialized firms in the world. We've allocated $250-400M for Phase 1 development with these proven partners. This model—a lean strategic core coordinating elite external teams—is the most capital-efficient and effective way to solve a problem of this scale.
+- **Response:** Here's how we're actually going to do this thing: We're going to hire a few very smart people instead of building some enormous bureaucracy that would eat money like a hungry pig. These smart people will then hire other smart people to do the actual work. It's cheaper and it works better. So it goes.
 
 - **Mitigation:** Advisory board of constitutional scholars, DAO experts, and former officials; phased rollout with pilot countries.
 
@@ -518,7 +524,9 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 **Our Multi-Layered Defense:**
 
-1. **True Decentralized Control (Proven at Scale)**
+1. **Nobody's in Charge (And That's the Point)**
+
+   *Other organizations that manage billions of dollars this way already exist and work fine. Turns out you don't need a CEO when you have math.*
    - Every VICTORY bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
    - No human signers = no kidnapping, corruption, or coercion targets
    - Smart contracts automatically execute community decisions after 24-72h timelocks
@@ -551,12 +559,14 @@ This isn't just about protecting health funding - it's an experiment in building
 - **Complete transparency** with all decisions and executions on-chain
 - **Automated efficiency** eliminating bureaucratic waste and political favoritism
 
-**Applications Beyond Health:**
+**What Else This Could Fix:**
 
-- **Education systems**: Community-controlled funding based on learning outcomes
-- **Infrastructure projects**: Algorithmic allocation based on measurable public benefit
-- **Environmental protection**: Outcome-based funding for verified climate impact
-- **Social services**: Transparent, efficient distribution based on demonstrated need and effectiveness
+*Once we prove you can run a $27 billion treasury without any humans stealing from it, we could do the same thing for schools, roads, or anything else the government currently screws up.*
+
+- **Education**: Pay teachers based on whether kids actually learn things
+- **Infrastructure**: Fund roads that don't immediately fall apart
+- **Environment**: Pay for actual carbon reduction, not paperwork
+- **Social Services**: Get help to people who need it without 47 forms
 
 **The Vision:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually serve the public interest. The DIH treasury becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
 
@@ -590,7 +600,9 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 **Government health agencies:** Expanded budgets without fighting for appropriations. **Plus:** Officials can personally invest in the system that boosts their agency's funding.
 
-**A Dual Mandate:** Align your institution's mission with personal wealth creation. Your organization gets more funding while you profit from its success—a direct incentive to do good, better.
+**Two Things at Once:** Your Organization Gets More Funding, You Get Rich
+
+*Why choose between doing good and doing well when you can do both? Your cancer research center gets more money, and you personally profit from the system that funds it.*
 
 **Contact us:** [institutions@warondisease.org](mailto:institutions@warondisease.org) to calculate your potential funding increase and personal investment opportunities.
 
