@@ -12,7 +12,7 @@ dateCreated: "2025-09-09T00:00:00.000Z"
 
 ## Table of Contents
 - [Core Principles](#core-principles)
-  - [Writing Style Guide](#writing-style-guide)
+- [Writing Style Guide](#writing-style-guide)
 - [Contributor Workflow](#contributor-workflow)
 - [Content and Style Standards](#content-and-style-standards)
   - [1. Information Architecture: Chapters, Sections, and The Appendix](#1-information-architecture-chapters-sections-and-the-appendix)
@@ -46,7 +46,7 @@ This repository documents the "War on Disease," a mission to make curing people 
   - `problem.md` should graphically and emotionally depict the human cost of war and disease. It must build urgency.
   - `solution.md` should paint a vivid, hopeful picture of the future we are building—a world without war and disease. It must inspire.
 
-### Writing Style Guide
+## Writing Style Guide
 
 **The 4 Core Checks:**
 1. **Clarity:** Can I say this to my mom and have her understand?
