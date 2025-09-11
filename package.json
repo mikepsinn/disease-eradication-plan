@@ -26,7 +26,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "lint:md:fix": "markdownlint --config .markdownlint.json --fix \"**/*.md\"",
-    "format": "prettier --write \"**/*.md\"",
     "generate:index": "tsx scripts/generate-index.ts",
     "delete-empty-folders": "ts-node scripts/delete-empty-folders.ts",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
