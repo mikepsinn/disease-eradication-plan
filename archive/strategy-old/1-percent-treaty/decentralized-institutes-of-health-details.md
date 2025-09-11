@@ -269,9 +269,9 @@ graph TD
    - PRD: Product Requirements Document
 
 7. References
-   - Gitcoin Grants Stack: https://gitcoin.co/grants/
-   - Gitcoin Passport: https://passport.gitcoin.co/
-   - Quadratic Funding: https://wtfisqf.com/
-   - Decentralized Science (DeSci): https://desci.pub/
-   - Fortmatic: https://fortmatic.com/
-   - Torus: https://tor.us/
+   - Gitcoin Grants Stack: <https://gitcoin.co/grants/>
+   - Gitcoin Passport: <https://passport.gitcoin.co/>
+   - Quadratic Funding: <https://wtfisqf.com/>
+   - Decentralized Science (DeSci): <https://desci.pub/>
+   - Fortmatic: <https://fortmatic.com/>
+   - Torus: <https://tor.us/>

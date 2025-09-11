@@ -35,25 +35,25 @@ It is the single most rational and highest-leverage action humanity can take.
 This plan is executed through a new global organization with a transparent, decentralized, and auditable structure.
 
 **1. The 1% Treaty Funds the DIH:**
-   - Every participating nation pledges 1% of its annual military budget to the **Decentralized Institutes of Health (DIH)**, a non-profit, globally-governed SuperDAO.
-   - This creates a sustainable, **[$27+ billion annual treasury](./economics.md)** dedicated to funding public health solutions.
+- Every participating nation pledges 1% of its annual military budget to the **Decentralized Institutes of Health (DIH)**, a non-profit, globally-governed SuperDAO.
+- This creates a sustainable, **[$27+ billion annual treasury](./economics.md)** dedicated to funding public health solutions.
 
 **2. The DIH is Governed by Wishocracy:**
-   - The DIH's budget and research agenda are managed using the **[Wishocracy governance protocol](./governance.md)**.
-   - This allows millions of stakeholders to democratically and efficiently allocate capital to the most promising research without being dominated by special interests.
+- The DIH's budget and research agenda are managed using the **[Wishocracy governance protocol](./governance.md)**.
+- This allows millions of stakeholders to democratically and efficiently allocate capital to the most promising research without being dominated by special interests.
 
 **3. A Hyper-Efficient & Open-Source R&D Model:**
-   - The DIH funds a new clinical trial ecosystem that is **[80X more efficient](./proof.md)** than the current model.
-   - All research data and findings are made **open-source and available in real-time** to the entire global scientific community, eliminating waste and accelerating progress.
+- The DIH funds a new clinical trial ecosystem that is **[80X more efficient](./proof.md)** than the current model.
+- All research data and findings are made **open-source and available in real-time** to the entire global scientific community, eliminating waste and accelerating progress.
 
 **4. A "Coalition of Coalitions" Structure:**
-   - The DIH is not a single, top-down bureaucracy. It is a SuperDAO that delegates authority to a network of specialized, subordinate DAOs (subDAOs).
-   - Each subDAO focuses on a specific area of health, such as the **Decentralized Cancer Institute** or the **Decentralized Institute on Aging**.
-   - Governance of each subDAO is delegated to a coalition of the most effective non-profits, patient advocacy groups, and research institutions in that field, ensuring that funding decisions are made by true experts and stakeholders.
+- The DIH is not a single, top-down bureaucracy. It is a SuperDAO that delegates authority to a network of specialized, subordinate DAOs (subDAOs).
+- Each subDAO focuses on a specific area of health, such as the **Decentralized Cancer Institute** or the **Decentralized Institute on Aging**.
+- Governance of each subDAO is delegated to a coalition of the most effective non-profits, patient advocacy groups, and research institutions in that field, ensuring that funding decisions are made by true experts and stakeholders.
 
 **5. VICTORY Bonds Kickstart the Process:**
-   - To begin immediately, the DIH will be initially capitalized by selling **VICTORY Bonds** to the public, institutions, and even nations.
-   - These bonds allow research and development to start now, with the revenue from the 1% Treaty used to repay bondholders over time, ensuring a sustainable financial cycle.
+- To begin immediately, the DIH will be initially capitalized by selling **VICTORY Bonds** to the public, institutions, and even nations.
+- These bonds allow research and development to start now, with the revenue from the 1% Treaty used to repay bondholders over time, ensuring a sustainable financial cycle.
 
 This is a complete, end-to-end system that makes curing people more profitable and prestigious than killing them.
 

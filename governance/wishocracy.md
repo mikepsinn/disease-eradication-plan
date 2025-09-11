@@ -37,6 +37,7 @@ Imagine a community with a $1 billion public budget to allocate across five prio
 - **Budget Outcome**: $280M to healthcare, $220M to education, etc. This reflects collective relative preferences without anyone needing to evaluate all five at once.
 
 ### Advantages for Collective Budgeting
+
 - **Scalability and Efficiency**: Handles hundreds of options without overwhelming participants, unlike one-shot polls.
 - **Reduces Bias**: Random pairs prevent agenda-setting or elite capture; aggregation smooths out noise.
 - **Optimizes Utility**: Aims for Pareto-efficient allocations that maximize total wish fulfillment in resource-scarce environments.

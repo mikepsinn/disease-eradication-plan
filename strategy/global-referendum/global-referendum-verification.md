@@ -231,18 +231,18 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 
 ### Source Quotes for Key Parameters
 
-* **Helios Voting Protocol**
+- **Helios Voting Protocol**
   > "Helios is a web-based open-audit voting system. Helios enables election integrity through end-to-end verifiability: individual voters can verify that their ballots are recorded correctly, and any party can verify that the recorded ballots are tallied correctly."
   > — Adida et al., 2008, [Helios: Web-based Open-Audit Voting](https://vote.heliosvoting.org/)
 
-* **Estonia e-Residency Statistics**
+- **Estonia e-Residency Statistics**
   > "Estonia's e-Residency program has issued digital identities to over 100,000 people from 170+ countries, demonstrating global-scale digital identity verification."
   > — e-Residency, 2024, [Statistics](https://e-resident.gov.ee/statistics/)
 
-* **GDPR Biometric Data Requirements**
+- **GDPR Biometric Data Requirements**
   > "Processing of biometric data for the purpose of uniquely identifying a natural person shall be prohibited unless one of the conditions referred to in points (a) to (j) of paragraph 2 applies."
   > — GDPR Article 9(1), [EU General Data Protection Regulation](https://gdpr-info.eu/art-9-gdpr/)
 
-* **Worldcoin Identity Verification Scale**
+- **Worldcoin Identity Verification Scale**
   > "Worldcoin has verified over 2 million unique human identities using iris biometric scanning, demonstrating feasibility of global-scale biometric verification."
   > — Worldcoin Foundation, 2024, [Progress Update](https://worldcoin.org/blog/announcements/worldcoin-milestones)

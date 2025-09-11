@@ -24,14 +24,14 @@ The primary goal of this phase is to secure the necessary legal, financial, and 
 The operation will be managed through a dual-entity structure to separate for-profit execution from non-profit mission oversight, ensuring both legal compliance and mission integrity.
 
 *   **For-Profit Management Company (SPV):**
-    *   **Purpose:** The operational engine of the initiative. This entity raises venture capital, hires the core "activation team," manages strategy, develops technology, and executes the campaign.
-    *   **Entity Type:** A Special Purpose Vehicle (SPV), likely a C-Corp or LLC, designed to generate returns for its investors upon the successful launch and capitalization of the DIH and VICTORY Bonds.
-    *   **Accountability:** Accountable to its investors and board of directors. All initial hires will be employees of this entity.
+  *   **Purpose:** The operational engine of the initiative. This entity raises venture capital, hires the core "activation team," manages strategy, develops technology, and executes the campaign.
+  *   **Entity Type:** A Special Purpose Vehicle (SPV), likely a C-Corp or LLC, designed to generate returns for its investors upon the successful launch and capitalization of the DIH and VICTORY Bonds.
+  *   **Accountability:** Accountable to its investors and board of directors. All initial hires will be employees of this entity.
 
 *   **Non-Profit Foundation:**
-    *   **Purpose:** The guardian of the mission. This entity ensures the project's activities remain aligned with its core goal of eradicating disease and promoting global health.
-    *   **Entity Type:** A non-profit organization (e.g., a 501(c)(3) or equivalent).
-    *   **Accountability:** Provides legal and ethical guardrails, serves as a potential recipient for philanthropic grants, and holds oversight powers to ensure the DIH operates as intended.
+  *   **Purpose:** The guardian of the mission. This entity ensures the project's activities remain aligned with its core goal of eradicating disease and promoting global health.
+  *   **Entity Type:** A non-profit organization (e.g., a 501(c)(3) or equivalent).
+  *   **Accountability:** Provides legal and ethical guardrails, serves as a potential recipient for philanthropic grants, and holds oversight powers to ensure the DIH operates as intended.
 
 **First Action:** The immediate first step is the legal incorporation of these two entities.
 
@@ -42,10 +42,10 @@ The initial fundraising target is a **$1M - $3M pre-seed round**.
 *   **Recipient:** This capital will be raised by and for the **For-Profit Management Co.**
 *   **Purpose:** This is *not* for funding the War on Disease directly. It is startup capital to fund the company that will *organize* the War on Disease.
 *   **Use of Funds:**
-    *   **Salaries:** Founder and core activation team for the first 12-18 months.
-    *   **Legal & Compliance:** Retain top-tier legal counsel for securities, election law, and international treaty frameworks.
-    *   **Operations:** Cover initial operating expenses, technology subscriptions, and establishment of a data room for the seed round.
-    *   **Initial Platform Prototyping:** Fund the design and early architecture of the global referendum platform.
+  *   **Salaries:** Founder and core activation team for the first 12-18 months.
+  *   **Legal & Compliance:** Retain top-tier legal counsel for securities, election law, and international treaty frameworks.
+  *   **Operations:** Cover initial operating expenses, technology subscriptions, and establishment of a data room for the seed round.
+  *   **Initial Platform Prototyping:** Fund the design and early architecture of the global referendum platform.
 
 ## 3. The Core "Activation Team"
 

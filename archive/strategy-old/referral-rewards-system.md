@@ -25,9 +25,9 @@ The goal of this tier is to attract and reward the high-value contributors who w
 
 -   **Mechanism:** Large, direct grants of **VICTORY bonds/bonds** will be awarded to key contributors through targeted prize campaigns, grant programs, and performance-based partnerships. These represent earned ownership stakes in the real economic value created by successful military-to-health budget redirection.
 -   **Target Audience:**
-    *   **Organizers:** Community leaders who drive millions of referendum votes.
-    *   **Developers:** Individuals and teams who build valuable tools on top of our platform.
-    *   **Strategic Partners:** Institutions, lobbying firms, and campaign teams whose work directly leads to treaty ratification.
+  -   **Organizers:** Community leaders who drive millions of referendum votes.
+  -   **Developers:** Individuals and teams who build valuable tools on top of our platform.
+  -   **Strategic Partners:** Institutions, lobbying firms, and campaign teams whose work directly leads to treaty ratification.
 -   **Why it Works:** For this smaller, more sophisticated group of contributors, we can afford to run a legally compliant distribution process for VICTORY instruments. This gives our most valuable partners a direct, immediate, and powerful stake in the outcome, transforming them from contractors into owners.
 
 ---
@@ -92,7 +92,7 @@ A well-designed referral-rewards system can:
   - "$8 will result in the petition ads being displayed to 100 people" (equates to $0.08 per impression or $80 CPM). ([Source: Change.org FAQ](https://www.change.org/l/us/chipping-in-explained))
   - Based on typical signature-conversion rates quoted in user analyses, the **effective cost is estimated at $0.20–$0.40 per added signature**. ([Sources: The Guardian](https://www.theguardian.com/world/2013/jan/15/avaaz-online-campaigning-reinvent-politics), [Change.org Promoted Petitions Instructions](https://www.change.org/l/hi/promoted-petitions-instructions), [Change.org promoted petition math](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition))
   *Note: The effective cost per action (e.g., signature) is variable and depends on the petition's conversion rate from impression to signature.*
-- **Avaaz global pledge initiatives:** Email-verified signatures reported at **≈ $0.32 per action** (Avaaz finance FAQ). ([Source: Avaaz finance page (≈ \$0.32 CPA)](https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/))
+- **Avaaz global pledge initiatives:** Email-verified signatures reported at **≈ $0.32 per action** (Avaaz finance FAQ). ([Source: Avaaz finance page (≈ \$0.32 CPA)](<https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/>))
 - [GiveDirectly 2021](https://www.givedirectly.org/): $0.48 per verified crypto match
 - **Cost to Obtain Survey Responses (Platform Cost):** Survey platforms like Pollfish indicate costs to businesses starting at ~$0.95 per survey completion, which is the platform's charge for acquiring a response, not a direct referral payout. ([Pollfish](https://www.pollfish.com/pricing/survey-calculator/))
 - **Voter Turnout Referrals (Get-Out-the-Vote Initiative Specific):** Some get-out-the-vote initiatives have offered referrers around $10 per successful referral for getting someone to vote in an official election. ([TurnoutTeam.com](https://turnoutteam.com/))

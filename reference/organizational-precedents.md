@@ -28,25 +28,25 @@ The DIH is a hybrid organization that combines the functions of all three:
 **Illustrative Org Chart & Key Roles:**
 *   **Executive Office:** Executive Director, Chief of Staff.
 *   **Grant Management Division (Largest team):**
-    *   Fund Portfolio Managers (by region: Africa, Asia, etc.)
-    *   Health Finance Specialists
-    *   Monitoring & Evaluation Specialists
+  *   Fund Portfolio Managers (by region: Africa, Asia, etc.)
+  *   Health Finance Specialists
+  *   Monitoring & Evaluation Specialists
 *   **Finance & Administration Division:**
-    *   Chief Financial Officer
-    *   Controllers & Accountants
-    *   Treasury & Risk Management Teams
-    *   Procurement & Supply Chain Specialists
+  *   Chief Financial Officer
+  *   Controllers & Accountants
+  *   Treasury & Risk Management Teams
+  *   Procurement & Supply Chain Specialists
 *   **Strategy & Policy Division:**
-    *   Public Health Experts
-    *   Economists
-    *   Policy & Strategy Advisors
+  *   Public Health Experts
+  *   Economists
+  *   Policy & Strategy Advisors
 *   **External Relations & Communications Division:**
-    *   Fundraising & Donor Relations Teams
-    *   Government Affairs & Lobbyists
-    *   Communications & Media Relations
+  *   Fundraising & Donor Relations Teams
+  *   Government Affairs & Lobbyists
+  *   Communications & Media Relations
 *   **Legal & Governance:**
-    *   General Counsel
-    *   Board Relations Team
+  *   General Counsel
+  *   Board Relations Team
 
 **Relevance to DIH:** The Global Fund's structure provides a proven blueprint for the team required to manage the **DIH Treasury (Phase 3)**. Our CFO, CCO, Treasury Operations, and Program Officer roles are directly analogous to the core functions of The Global Fund's Secretariat.
 
@@ -60,10 +60,10 @@ The DIH is a hybrid organization that combines the functions of all three:
 
 **Illustrative Org Chart & Key Roles:**
 *   **Coordination Team / Secretariat:**
-    *   Campaign Director / Coordinator
-    *   Communications Lead
-    *   Regional Liaisons (to coordinate with partner NGOs)
-    *   Diplomatic & UN Liaison
+  *   Campaign Director / Coordinator
+  *   Communications Lead
+  *   Regional Liaisons (to coordinate with partner NGOs)
+  *   Diplomatic & UN Liaison
 *   **Advisory Board / Steering Committee:** Composed of leaders from the major partner NGOs.
 *   **The Network:** Thousands of volunteers and staff at hundreds of partner NGOs around the world who performed the actual in-country advocacy.
 

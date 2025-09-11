@@ -12,7 +12,6 @@ dateCreated: '2023-10-28T22:42:49.138Z'
 > This is a work in progress. Contributions are welcome! Just click the edit button in the lower right corner.  It's our goal to avoid any duplication of effort. So please include existing projects that would be interested in fulfilling any part of this global framework.
 {.is-warning}
 
-
 This coordination framework would act as the nexus for facilitating cooperation, communication, and collaborative actions among various stakeholders. It's designed to harness the collective capabilities of existing entities towards achieving the shared vision of accelerated clinical discovery and better health outcomes.
 
 The coordination platform should ideally provide:

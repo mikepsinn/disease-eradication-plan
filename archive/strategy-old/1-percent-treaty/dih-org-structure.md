@@ -93,7 +93,6 @@ Appointments are transparent, criteria-based, and revocable; all appointees sign
 - Growth & Referrals: verified votes, K-factor, CPA in VOTE points, partner conversions
 - Peace Dividend Analytics: calculator usage, methodology transparency, alignment to [Peace Dividend Model](../../economic-models/peace-dividend-value-capture.md)
 
-
 ## Decentralization and automation blueprint
 
 - On-chain treasury modules for grants, quadratic funding, patient subsidies, outcome bounties, and VICTORY bonds
@@ -103,7 +102,3 @@ Appointments are transparent, criteria-based, and revocable; all appointees sign
 - Interop standards: HL7 FHIR/OMOP, DID/VC, EIP-712, IPFS/Arweave
 
 See [DIH On-Chain and AI Architecture](../../architecture/dih-onchain-architecture.md) for technical details and [Incentives Layer](../incentives-layer.md) for social/economic incentives.
-
-
-
-

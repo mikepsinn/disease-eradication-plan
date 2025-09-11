@@ -19,13 +19,13 @@ I propose that VitaDAO create the Decentralized Institutes of Health (DIH) DAO.
 
 The DIH DAO would be a non-profit SuperDAO focused on redirecting 1% of global military spending (approximately $20 billion annually) towards a decentralized, democratic platform for medical research such as VitaDAO. By leveraging the power of DAOs, AI, and global crowdsourcing, the DIH has the potential to dramatically accelerate the pace of biomedical innovation and deliver transformative health benefits to people everywhere.
 
-# Why VitaDAO:
+# Why VitaDAO
 
 VitaDAO is uniquely positioned to bring the vision of the DIH to life. The VitaDAO community brings together an exceptional concentration of expertise, passion, and the ability to drive real progress through decentralized collaboration.
 
 By leading this initiative, VitaDAO has the opportunity to scale its impact to an unprecedented level and cement its position at the forefront of the DeSci revolution. The DIH aligns perfectly with VitaDAO's core objectives of advancing longevity research, democratizing access to health solutions, and leveraging Web3 technologies for social good.
 
-# Key Components:
+# Key Components
 
 1. **Global Advocacy**: The DIH will require a massive awareness and advocacy campaign to secure support from 1% of the global population (80 million people) and lobby governments worldwide to reallocate 1% of military budgets. VitaDAO can leverage its network and thought leadership to drive this campaign.
 
@@ -35,7 +35,7 @@ By leading this initiative, VitaDAO has the opportunity to scale its impact to a
 
 4. **Ecosystem Collaboration**: Launching the DIH will require close collaboration with other key stakeholders in the DeSci and DAO ecosystems. VitaDAO's strong reputation and partnerships put it in an ideal position to convene and align a diverse coalition behind this shared mission.
 
-# Next Steps:
+# Next Steps
 
 1. Form a DIH Launch Working Group within VitaDAO to further refine the vision, strategy, and roadmap.
 2. Conduct outreach to potential partners and supporters within the DeSci and DAO communities to gauge interest and identify collaboration opportunities.

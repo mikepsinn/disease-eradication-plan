@@ -36,8 +36,8 @@ The primary risk for an early investor is the collective action problem: "What i
 
 -   **Mechanism:** All initial funds will be deposited into a secure, transparent smart contract escrow. These funds are locked and cannot be accessed by the project team.
 -   **The Guarantee:** The smart contract has a pre-defined funding goal (e.g., \$250 million) and a deadline (e.g., 12 months).
-    -   If the goal **is met** by the deadline, the funds are released to the project treasury.
-    -   If the goal **is not met**, the funds are automatically and trustlessly returned to every single investor.
+  -   If the goal **is met** by the deadline, the funds are released to the project treasury.
+  -   If the goal **is not met**, the funds are automatically and trustlessly returned to every single investor.
 -   **Net Benefit:** This "money-back guarantee" removes all fundraising risk for our backers, creating powerful social proof and encouraging faster, more confident commitments. We may also implement a **Dominant Assurance Contract (DAC)** model, where a patron offers a small bonus (e.g., extra governance tokens) to all participants if the goal is met, further incentivizing early support.
 
 ## 4. Phased Fundraising Model

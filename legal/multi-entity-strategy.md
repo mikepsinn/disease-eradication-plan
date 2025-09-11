@@ -56,11 +56,11 @@ This entity serves as the educational and research arm of the initiative.
 
 -   **Primary Purpose:** To build a broad base of public understanding and support through non-partisan research, data analysis, and educational outreach.
 -   **Permitted Activities:**
-    -   Publishing white papers, economic models, and strategic documents.
-    -   Developing and maintaining the public-facing website and educational materials.
-    -   Hosting forums, webinars, and workshops to inform the public.
-    -   Conducting non-partisan analysis and research.
-    -   Hiring staff for research, communications, and educational program management.
+  -   Publishing white papers, economic models, and strategic documents.
+  -   Developing and maintaining the public-facing website and educational materials.
+  -   Hosting forums, webinars, and workshops to inform the public.
+  -   Conducting non-partisan analysis and research.
+  -   Hiring staff for research, communications, and educational program management.
 -   **Funding:** Accepts **tax-deductible** donations from individuals and foundations.
 -   **Limitations:** Is strictly prohibited from engaging in substantial lobbying or any partisan political activity (e.g., endorsing candidates).
 -   **Role in Roadmap:** This entity is the primary vehicle for executing **Phase 0 and 1** of the roadmap, as these phases are focused on building the foundational research, narrative, and public platform.
@@ -71,9 +71,9 @@ This entity is the political and advocacy arm, designed to translate public will
 
 -   **Primary Purpose:** To advocate directly for the adoption of the 1% Treaty and related policies.
 -   **Permitted Activities:**
-    -   Engaging in **unlimited lobbying** with legislators and policymakers.
-    -   Running independent expenditure campaigns to support candidates who align with the mission and oppose those who do not.
-    -   Mobilizing voters and organizing direct calls to action.
+  -   Engaging in **unlimited lobbying** with legislators and policymakers.
+  -   Running independent expenditure campaigns to support candidates who align with the mission and oppose those who do not.
+  -   Mobilizing voters and organizing direct calls to action.
 -   **Funding:** Accepts donations that are **not tax-deductible**. This allows it to engage in political work that a 501(c)(3) cannot.
 -   **Limitations:** Donations are not tax-deductible. It must maintain strict financial and operational separation from its 501(c)(3) counterpart.
 -   **Role in Roadmap:** This entity becomes critical in **Phase 2**, which is focused on political mobilization and securing treaty adoption.
@@ -84,9 +84,9 @@ This entity is the financial and operational engine that manages investments and
 
 -   **Primary Purpose:** To manage the sale of [VICTORY Bonds](../strategy/1-percent-treaty/victory-bonds-tokenomics.md), fund the operational development of the dFDA platform, and provide a financial return to investors.
 -   **Permitted Activities:**
-    -   Issuing securities (VICTORY Bonds) and managing investor relations.
-    -   Funding the technology development and operational scaling of the dFDA.
-    -   Managing the DIH treasury and executing investor payouts.
+  -   Issuing securities (VICTORY Bonds) and managing investor relations.
+  -   Funding the technology development and operational scaling of the dFDA.
+  -   Managing the DIH treasury and executing investor payouts.
 -   **Funding:** Funded by **investment capital** from individuals and institutions seeking a financial return.
 -   **Legal Structure:** Likely a C-Corporation in Delaware or a foundation structure in a jurisdiction like the Cayman Islands, optimized for global investment and crypto-asset management.
 -   **Role in Roadmap:** This entity is central to the entire roadmap, as it handles the primary capital raise (**Phase 2**) and executes the mission delivery and investor returns (**Phase 3**).

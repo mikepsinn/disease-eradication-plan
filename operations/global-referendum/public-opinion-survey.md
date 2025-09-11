@@ -21,9 +21,9 @@ The current medical research system is slow and expensive. New treatments take a
 The "1% Treaty" proposes that all signatory nations redirect 1% of their annual military budget to a global fund. Proponents argue that accelerating medical progress is a critical component of national and global security. This fund would subsidize patient participation in decentralized clinical trials, aiming to dramatically accelerate the development of new cures. ([Read the full security rationale here.](./national-security-argument.md))
 
 **1. Do you support or oppose your country signing the 1% Treaty?**
-  - [ ] Support
-  - [ ] Oppose
-  - [ ] Unsure / Need more information
+- [ ] Support
+- [ ] Oppose
+- [ ] Unsure / Need more information
 
 ### Part 2: Core Funding Priorities
 
@@ -68,32 +68,31 @@ This helps illustrate how public priorities may differ from current government s
 
 For each pair of U.S. federal programs, allocate $100 based on your priorities.
 
-*   **List of Programs for Comparison:**
-    *   Military / War
-    *   Healthcare (e.g., NIH, CDC, Medicare/Medicaid)
-    *   Scientific & Medical Research
-    *   Education
-    *   Infrastructure (e.g., roads, bridges, energy grid)
-    *   Social Security & Retirement Benefits
-    *   Environmental Protection
-    *   Justice System & Law Enforcement
-    *   International Aid & Diplomacy
-    *   Direct Payments to Citizens (Universal Basic Income)
+-   **List of Programs for Comparison:**
+  -   Military / War
+  -   Healthcare (e.g., NIH, CDC, Medicare/Medicaid)
+  -   Scientific & Medical Research
+  -   Education
+  -   Infrastructure (e.g., roads, bridges, energy grid)
+  -   Social Security & Retirement Benefits
+  -   Environmental Protection
+  -   Justice System & Law Enforcement
+  -   International Aid & Diplomacy
+  -   Direct Payments to Citizens (Universal Basic Income)
 
 **Part B: Global Challenge Priorities**
 
 Now, allocate $100 for each pair of major global challenges.
 
-*   **List of Challenges for Comparison:**
-    *   Curing Diseases (e.g., Cancer, Alzheimer's)
-    *   Preventing Future Pandemics
-    *   Combating Climate Change
-    *   Reducing Global Poverty
-    *   Promoting Peace & Preventing Conflict
-    *   Advancing Scientific Discovery & Space Exploration
-    *   Improving Global Education
-    *   Protecting Biodiversity & Ecosystems
-
+-   **List of Challenges for Comparison:**
+  -   Curing Diseases (e.g., Cancer, Alzheimer's)
+  -   Preventing Future Pandemics
+  -   Combating Climate Change
+  -   Reducing Global Poverty
+  -   Promoting Peace & Preventing Conflict
+  -   Advancing Scientific Discovery & Space Exploration
+  -   Improving Global Education
+  -   Protecting Biodiversity & Ecosystems
 
 **Q9: Support for A System That Aligned Public Spending With Your Values**
 Would you support the adoption of a system such as Wishocracy that allowed your values to influence the allocation of public resources in accordance with your priorities?

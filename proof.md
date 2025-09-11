@@ -15,6 +15,7 @@ The strategy for the War on Disease is not based on hope. It is a pragmatic plan
 ---
 
 ## 1. The Operational Precedent: 80X Efficiency
+
 **The Precedent: The Oxford RECOVERY Trial**
 
 The claim that we can make medical research **80X more efficient** is not a projection; it's a historical fact.
@@ -29,6 +30,7 @@ The claim that we can make medical research **80X more efficient** is not a proj
 ## 2. The Political Precedents: How to Win
 
 ### A. Creating Binding International Law
+
 **The Precedent: The International Campaign to Ban Landmines (ICBL)**
 
 The idea that a citizen-led movement can create a binding international military treaty is not theoretical. It has already been done.
@@ -38,6 +40,7 @@ The idea that a citizen-led movement can create a binding international military
 **The Lesson:** The ICBL is the definitive proof that a decentralized, global, citizen-led movement can create binding international law, even against the initial opposition of major military powers. Our **[Global Referendum](./strategy.md)** strategy is a direct application of this successful model.
 
 ### B. Achieving a Political Tipping Point
+
 **The Precedent: The 3.5% Rule (Erica Chenoweth's Research)**
 
 The target of mobilizing 3.5% of the global population is not an arbitrary number. It is based on rigorous academic research into the history of social movements.
@@ -51,6 +54,7 @@ The target of mobilizing 3.5% of the global population is not an arbitrary numbe
 ## 3. The Financial Precedents: How to Fund It
 
 ### A. Mobilizing Mass Public Capital
+
 **The Precedent: WWII War Bonds**
 
 The plan to raise billions of dollars from the public to fund a global cause is based on one of the most successful financial mobilizations in history.
@@ -60,6 +64,7 @@ The plan to raise billions of dollars from the public to fund a global cause is 
 **The Lesson:** **[VICTORY Bonds](./economics.md)** apply this same proven model. They provide a mechanism to mobilize massive private capital for a public "war" effort by aligning financial incentives with a powerful moral mission.
 
 ### B. Building a New Global Health Institution
+
 **The Precedent: The Global Fund to Fight AIDS, Tuberculosis and Malaria**
 
 The idea of creating a new, multi-billion-dollar global health institution from scratch is not unprecedented.
@@ -69,6 +74,7 @@ The idea of creating a new, multi-billion-dollar global health institution from 
 **The Lesson:** This provides the precedent for the **[Decentralized Institutes of Health (DIH)](./strategy/dih-model.md).** It proves that the world is capable of creating new, large-scale, and more efficient financial institutions for global health when the existing systems are insufficient.
 
 ### C. Pricing the Political Risk
+
 **The Precedent: Michael Milken's High-Yield Bonds & George Soros's Political Arbitrage**
 
 The investment thesis for VICTORY Bonds—a high-risk, high-reward bet on a political outcome—is grounded in proven financial strategies.
@@ -85,12 +91,14 @@ The investment thesis for VICTORY Bonds—a high-risk, high-reward bet on a poli
 The failures of past movements are even more instructive than the successes, as they reveal the exact failure modes our strategy is engineered to avoid.
 
 ### A. Don't Bring a Moral Argument to a Financial Fight
+
 **The Precedent: The Nuclear Disarmament Movement ("The Freeze")**
 
 -   **The Failure:** Despite enormous popular support in the 1980s, the movement largely failed because it could not overcome the entrenched financial interests of the military-industrial complex.
 -   **The Lesson:** This is the historical proof for our core thesis: **You cannot defeat bad money with good intentions alone.** It is the primary justification for our strategy of **["legal bribery"](./strategy.md)** and co-opting our opposition with a superior financial offer.
 
 ### B. Don't Have a Diffuse, Unactionable Goal
+
 **The Precedent: Occupy Wall Street**
 
 -   **The Failure:** While it successfully changed the public conversation in 2011, the movement produced no lasting policy change because it lacked a single, specific, actionable demand.

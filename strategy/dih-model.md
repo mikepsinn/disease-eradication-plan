@@ -99,6 +99,7 @@ This structure is the ultimate incentive for non-profits to make passing the 1% 
 The message is simple: **Stop applying for grants and become the grant-makers.** By joining the coalition, non-profits are not just supporting a cause; they are earning their seat at the table to govern the future of health funding in their field.
 
 ## Risks and Realism
+
 The DIH model's success relies on treaty adoption and inflows. For a full discussion of risks, repayment, and contingencies, see [../economics/investor-risk-analysis.md](../economics/investor-risk-analysis.md).
 
 ## Organizational Structure

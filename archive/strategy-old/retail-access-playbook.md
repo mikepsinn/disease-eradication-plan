@@ -15,6 +15,7 @@ Enable compliant participation from unaccredited/retail investors while Phase 1 
 ## Routes
 
 ### Regulation A+ (Tier 2)
+
 - **Capacity:** Up to $75M per 12 months
 - **Timeline:** 4–9 months prep + SEC qualification
 - **Materials:** 2Y audited financials, Offering Circular (Form 1‑A), risk factors, marketing plan, transfer agent
@@ -22,6 +23,7 @@ Enable compliant participation from unaccredited/retail investors while Phase 1 
 - **Notes:** Good for broad U.S. access and legitimacy; align launch with milestones
 
 ### Regulation CF
+
 - **Capacity:** ≈$5M per 12 months via FINRA‑registered portal
 - **Timeline:** 1–3 months
 - **Materials:** Form C, reviewed financials, portal listings, investor education
@@ -29,20 +31,24 @@ Enable compliant participation from unaccredited/retail investors while Phase 1 
 - **Notes:** Community alignment; smaller checks; can run before Reg A+ is qualified
 
 ### International (examples)
+
 - **EU (ECSPR):** Up to €5M via authorized crowdfunding service provider; passporting across EU
 - **UK:** FCA‑authorized platforms; appropriateness tests; retail caps
 - **SG/HK:** Explore VCC/authorized portals for region‑specific retail routes
 
 ## Parallelization
+
 - Run Reg D + Reg S now; spin up Reg CF campaign to prime retail; prepare Reg A+ package in parallel
 - Sequence: CF (early) → Reg A+ (post‑milestones) for U.S. retail; add EU/UK portals as legal confirms
 
 ## Guardrails
+
 - No token/auction listings targeting U.S. retail prior to Reg A+
 - Clear separation of donation vs investment channels
 - Centralized compliance tracker; counsel checkpoints per jurisdiction
 
 ## Links
+
 - Legal framework: [Legal Compliance Framework](../strategy/legal-compliance-framework.md)
 - Models & scoring: [Fundraising Models Comparison](../strategy/fundraising-models-comparison.md)
 - Intake SOP: [Crypto Investment and Donation Intake SOP](../operations/crypto-intake-sop.md)

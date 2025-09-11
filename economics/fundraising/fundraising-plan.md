@@ -21,16 +21,19 @@ The capital required for the 1% Treaty is not for ongoing operations—it is a o
 ## Multi-Phase Strategy
 
 ### Phase 1: Seed Round ($250M - $400M)
+
 - Build referendum platform and legal frameworks
 - Prove model in pilot countries
 - **Milestone:** 50M verified participants OR pro-treaty majority in G20 nation
 
 ### Phase 2: Series A ($500M - $1B)
+
 - Scale to all G7 nations
 - Achieve 3.5% global participation (280M people)
 - **Milestone:** 3.5% threshold OR first G7 treaty commitment
 
 ### Phase 3: Growth Round ($500M - $1.1B)
+
 - Secure ratification in major powers (US, EU, China)
 - Capitalize DIH treasury for first year
 - **Milestone:** First $1B disbursement

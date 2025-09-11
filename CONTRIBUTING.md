@@ -25,8 +25,8 @@ This repository documents the "War on Disease," a mission to make curing people 
 - **Speak Plainly:** Avoid weak corporate euphemisms. Write like a human.
 - **Quantify Everything:** All claims must be backed by data and citations.
 - **Tell a Compelling Story:** This is not just a plan; it's a movement. Use the "chapters" to build a powerful narrative:
-    -   `problem.md` should graphically and emotionally depict the human cost of war and disease. It must build urgency.
-    -   `solution.md` should paint a vivid, hopeful picture of the future we are building—a world without war and disease. It must inspire.
+  -   `problem.md` should graphically and emotionally depict the human cost of war and disease. It must build urgency.
+  -   `solution.md` should paint a vivid, hopeful picture of the future we are building—a world without war and disease. It must inspire.
 
 ## Contributor Workflow
 
@@ -34,8 +34,8 @@ The plan *is* the repository. Our goal is to create a single source of truth tha
 
 1.  **Identify an Area for Improvement:** Find a "chapter" (a file in the root directory like `problem.md`) or an "appendix" (a file in a subdirectory) that is incomplete, unclear, or could be improved. The highest-priority areas are outlined in the main `roadmap.md`.
 2.  **Suggest an Edit (Propose a Change):** This project uses a standard Git workflow.
-    *   **For Git Users:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `update-financial-model` or `clarify-legal-framework`).
-    *   **For Non-Technical Users:** You can edit files directly through the GitHub web interface, which will handle the process of creating a fork and proposing a change for you.
+    -   **For Git Users:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `update-financial-model` or `clarify-legal-framework`).
+    -   **For Non-Technical Users:** You can edit files directly through the GitHub web interface, which will handle the process of creating a fork and proposing a change for you.
 3.  **Make Your Changes:** As you work, please adhere to all standards in this document. Your goal is to add clarity, detail, and evidence to the "book."
 4.  **Submit Your Change for Review:** Propose your changes by opening a "Pull Request." Ensure your description is clear and explains how your change improves the overall narrative.
 
@@ -79,17 +79,17 @@ This repository is structured as a book. The root directory contains the "Chapte
 To maintain a clean and actionable list of improvements, all contributions must be checked against the following standards. We use a specific format for `TODO` comments to flag content that needs citations, stylistic rewrites, clarification, or visual aids.
 
 **1. Internal Link Integrity:**
-   - Before submitting, scan the file for all internal relative links (e.g., `[text](./path/file.md)`).
-   - **You MUST FIX** any links that are broken.
-   - If a link points to a deleted file, either remove the link or repoint it to a relevant alternative.
+- Before submitting, scan the file for all internal relative links (e.g., `[text](./path/file.md)`).
+- **You MUST FIX** any links that are broken.
+- If a link points to a deleted file, either remove the link or repoint it to a relevant alternative.
 
 **2. Content Quality Triage (TODOs):**
-   - **Placement:** Place `TODO`s in the most relevant location **inside the body of the text**. If a `TODO` applies to the entire document, place it at the **very bottom**. NEVER place `TODO`s at the top of a file or in the frontmatter.
-   - **Formatting:** Use machine-readable comments so they can be easily aggregated into a project-wide "content debt" list.
-     - `<!-- TODO: Add citation for this claim. -->`
-     - `<!-- TODO: Rewrite this section to match project writing style. -->`
-     - `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
-     - `<!-- TODO: Expand this section to include X. -->`
+- **Placement:** Place `TODO`s in the most relevant location **inside the body of the text**. If a `TODO` applies to the entire document, place it at the **very bottom**. NEVER place `TODO`s at the top of a file or in the frontmatter.
+- **Formatting:** Use machine-readable comments so they can be easily aggregated into a project-wide "content debt" list.
+  - `<!-- TODO: Add citation for this claim. -->`
+  - `<!-- TODO: Rewrite this section to match project writing style. -->`
+  - `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
+  - `<!-- TODO: Expand this section to include X. -->`
 
 ### 3. Frontmatter Requirements
 
@@ -117,6 +117,7 @@ dateCreated: 'YYYY-MM-DDTHH:MM:SS.sssZ' # The date the file was first created
 3.  **Add a Source Quote Section:** At the end of the file, create a section titled `## Source Quotes` if one does not exist.
 4.  **Add the Full Citation:** In the source section, create the anchor and add the full quote and link.
     -   **Example:**
+
         ```markdown
         <a id="global-spending-2023"></a>
         * **Global military spending reached $2.443 trillion**
@@ -143,4 +144,3 @@ This pattern is mandatory to prevent link rot, provide immediate context, and ke
 
 - **Link Checker:** Pull requests with dead internal links will fail.
 - **Frontmatter Validator:** Pull requests will fail if required frontmatter fields are missing.
-

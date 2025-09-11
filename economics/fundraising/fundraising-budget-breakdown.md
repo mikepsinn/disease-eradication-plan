@@ -30,6 +30,7 @@ The budget is structured around a 36-month timeline and is divided into four pri
 The range reflects the variable nature of political campaigns and the potential to scale our efforts. A smaller, more targeted raise of $1.2B is considered the minimum viable amount, while a $2.5B raise would allow for a massively parallel, global campaign with a significantly higher probability of success.
 
 ### Multi-Phase Fundraising Strategy
+
 The raise will be conducted in tranches, with each tranche tied to the achievement of specific, verifiable milestones.
 
 1.  **Phase 1: Seed Round ($250M - $400M)**

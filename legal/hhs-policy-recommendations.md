@@ -168,7 +168,6 @@ Below is a comprehensive list of statutes, executive actions, and related preced
 - **AI for Adaptive Trials:** Machine learning models can personalize patient pathways, optimize trial endpoints, and monitor safety in real-time, radically shortening timelines from discovery to deployment.
 - **Blockchain for Trust and Transparency:** Immutable records of trial data, drug provenance, and patient consent build trust and eliminate fraud risks, ensuring regulatory compliance without manual oversight.
 
-
 ---
 
 # Sources

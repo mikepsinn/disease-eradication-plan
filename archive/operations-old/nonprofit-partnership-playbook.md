@@ -53,9 +53,9 @@ Once the strategic alignment is established, define a concrete, high-value first
 
 Treat the partnership as a formal project with clear ownership and accountability.
 
--   **Assign Leads:** Based on the partner's skills and capacity, collaboratively assign a "Project Lead" for the joint effort.
--   **Establish a Cadence:** Set up a regular, brief check-in (e.g., weekly 30 minutes) to track progress against the plan.
--   **Maintain a Professional Frame:** Consistently reinforce that this is a professional collaboration between strategic partners, not an informal volunteer effort. This respects everyone's time and ensures a high-quality outcome.
+*   **Assign Leads:** Based on the partner's skills and capacity, collaboratively assign a "Project Lead" for the joint effort.
+*   **Establish a Cadence:** Set up a regular, brief check-in (e.g., weekly 30 minutes) to track progress against the plan.
+*   **Maintain a Professional Frame:** Consistently reinforce that this is a professional collaboration between strategic partners, not an informal volunteer effort. This respects everyone's time and ensures a high-quality outcome.
 
 ---
 

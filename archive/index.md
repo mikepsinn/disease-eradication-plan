@@ -20,8 +20,8 @@ This section contains the "why" and "how" of the entire project. It outlines the
 - **[The 1% Treaty — Landing Page](./strategy/warondisease-landing.md):** The primary, persuasive narrative for the entire initiative.
 - **[Canonical Roadmap](./strategy/roadmap.md):** The high-level, multi-year strategic plan.
 - **Core Concepts:**
-    - **[The 1% Treaty](./strategy/1-percent-treaty/1-percent-treaty.md):** The full text and explanation of the core legislative goal.
-    - **[Decentralized Institutes of Health (DIH)](./strategy/1-percent-treaty/decentralized-institutes-of-health.md):** The model for the global treasury that will receive and disburse funds.
+  - **[The 1% Treaty](./strategy/1-percent-treaty/1-percent-treaty.md):** The full text and explanation of the core legislative goal.
+  - **[Decentralized Institutes of Health (DIH)](./strategy/1-percent-treaty/decentralized-institutes-of-health.md):** The model for the global treasury that will receive and disburse funds.
 
 ## 2. Operations & Execution
 
@@ -29,13 +29,13 @@ This section contains the detailed "who" and "how" of our operational plans. It 
 
 - **[Operations Process Index](./operations/process-index.md):** The central hub for all operational plans and processes.
 - **Operational Plans:**
-    - **[Phase 0 Plan](./operations/phase-0-plan.md):** The detailed plan for the pre-seed and foundation phase.
-    - **[Phase 1 Plan](./operations/phase-1-plan.md):** The detailed plan for building our foundational infrastructure.
-    - **[Wiki Restructuring Plan](./operations/wiki-restructuring-plan.md):** The project plan for this current refactoring effort.
+  - **[Phase 0 Plan](./operations/phase-0-plan.md):** The detailed plan for the pre-seed and foundation phase.
+  - **[Phase 1 Plan](./operations/phase-1-plan.md):** The detailed plan for building our foundational infrastructure.
+  - **[Wiki Restructuring Plan](./operations/wiki-restructuring-plan.md):** The project plan for this current refactoring effort.
 - **Playbooks:**
-    - **[Non-Profit Partnership Playbook](./operations/nonprofit-partnership-playbook.md):** Our guide for building a global coalition.
+  - **[Non-Profit Partnership Playbook](./operations/nonprofit-partnership-playbook.md):** Our guide for building a global coalition.
 - **Hiring:**
-    - **[Hiring Plan](./careers/hiring-plan.md):** The strategy for building our core team.
+  - **[Hiring Plan](./careers/hiring-plan.md):** The strategy for building our core team.
 
 ## 3. Economic & Financial Models
 
@@ -52,10 +52,10 @@ This section details how we will build and manage our global, decentralized comm
 
 - **[Community Hub](./community/README.md):** The main entry point for the community.
 - **Key Documents:**
-    - **[Contributor Onboarding Guide](./community/CONTRIBUTING.md):** How to get started as a contributor.
-    - **[Contributor Incentive Program](./community/nonprofit-partnership-incentives.md):** How we reward contributions. (Note: Placeholder link, needs to be created).
-    - **[Stakeholder Directory](./community/stakeholder-directory.md):** Who is involved in the project. (Note: Placeholder link, needs to be created).
-    - **[Contribution Ledger](./community/contribution-ledger.md):** The transparent record of all rewarded work. (Note: Placeholder link, needs to be created).
+  - **[Contributor Onboarding Guide](./community/CONTRIBUTING.md):** How to get started as a contributor.
+  - **[Contributor Incentive Program](./community/nonprofit-partnership-incentives.md):** How we reward contributions. (Note: Placeholder link, needs to be created).
+  - **[Stakeholder Directory](./community/stakeholder-directory.md):** Who is involved in the project. (Note: Placeholder link, needs to be created).
+  - **[Contribution Ledger](./community/contribution-ledger.md):** The transparent record of all rewarded work. (Note: Placeholder link, needs to be created).
 
 ## 5. dFDA Protocol (Archive & Future State)
 

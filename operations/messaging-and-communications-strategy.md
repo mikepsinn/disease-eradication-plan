@@ -29,25 +29,25 @@ The project can be broken down into two phases, each with distinct outputs.
 This phase focuses on understanding the landscape.
 
 - **Goals:**
-    - Identify dominant public and stakeholder narratives (hopes, fears, misconceptions) about longevity, decentralized science, and AI in medicine.
-    - Map key influencers, communities, and information sources.
-    - Segment audiences based on their beliefs and attitudes.
+  - Identify dominant public and stakeholder narratives (hopes, fears, misconceptions) about longevity, decentralized science, and AI in medicine.
+  - Map key influencers, communities, and information sources.
+  - Segment audiences based on their beliefs and attitudes.
 - **Outputs:**
-    - A comprehensive **Sentiment Analysis Report** detailing the above findings.
-    - A **Narrative Landscape Map** visualizing the key themes and their proponents.
-    - An **Audience Persona Deck** to guide targeted communication.
+  - A comprehensive **Sentiment Analysis Report** detailing the above findings.
+  - A **Narrative Landscape Map** visualizing the key themes and their proponents.
+  - An **Audience Persona Deck** to guide targeted communication.
 
 ### Phase 2: Messaging Development & Deployment
 
 This phase turns insight into action.
 
 - **Goals:**
-    - Develop a core messaging framework that proactively addresses concerns and aligns with audience values.
-    - Create and test targeted content to engage different segments.
-    - Equip the dFDA team with consistent, effective talking points.
+  - Develop a core messaging framework that proactively addresses concerns and aligns with audience values.
+  - Create and test targeted content to engage different segments.
+  - Equip the dFDA team with consistent, effective talking points.
 - **Outputs:**
-    - A **Core Messaging Guide** with official positioning statements and narrative pillars.
-    - A/B tested ad-copy performance on social media platforms.
+  - A **Core Messaging Guide** with official positioning statements and narrative pillars.
+  - A/B tested ad-copy performance on social media platforms.
 - Conversion rates from landing pages.
 - Engagement metrics (likes, shares, comments) from **Content Initiatives** (e.g., articles, social media posts, videos).
 - Performance of referral rewards (e.g., K-factor > 1, cost-per-acquisition < $0.50).

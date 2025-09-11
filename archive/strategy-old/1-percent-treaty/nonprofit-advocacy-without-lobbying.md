@@ -33,11 +33,13 @@ Nonprofits can play a powerful role in advancing the 1% Treaty while staying wit
   - Answer questions from the public, media, or policymakers about the treaty in a factual, non-advocacy manner.
 
 ## What to Avoid (Lobbying Triggers)
+
 - Urging the public or legislators to support, oppose, or take action on specific legislation or ballot measures.
 - Asking people to contact their representatives about a specific bill or treaty.
 - Drafting or helping draft legislation.
 
 ## Key Sources
+
 - [IRS: Lobbying](https://www.irs.gov/charities-non-profits/lobbying)
 - [BoardSource: What is Advocacy?](https://boardsource.org/resources/what-is-advocacy/)
 

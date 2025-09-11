@@ -25,36 +25,43 @@ We compare viable fundraising models against the Decentralized Institutes of Hea
 ## Models Considered
 
 ### 1) Reg D 506(c) private placement (U.S. accredited)
+
 - **Fit:** Fast, standard for high‑risk initiatives; unlimited raise from accredited investors; general solicitation allowed with accreditation verification.
 - **Pros:** Speed; large checks; widely understood by VCs/FOs; pairs well with structured notes/bonds.
 - **Cons:** Excludes unaccredited investors; U.S. only.
 
 ### 2) Reg S (offshore, non‑U.S. investors)
+
 - **Fit:** Parallel track with Reg D to reach international investors without triggering SEC registration.
 - **Pros:** Global capital access; can mirror terms with Reg D.
 - **Cons:** Requires careful offering segregation and jurisdiction‑specific counsel.
 
 ### 3) Reg A+ (Tier 2) “mini‑IPO” (public, up to \$75M/yr)
+
 - **Fit:** Allows unaccredited public participation once risk is reduced; SEC‑qualified offering with audited financials.
 - **Pros:** Democratizes access; strong legitimacy for broad base; ongoing reporting manageable vs full IPO.
 - **Cons:** Slower than Reg D/Reg S; capped at \$75M/yr; material preparation and review timeline.
 
 ### 4) Reg CF (crowdfunding) (up to ~\$5M/yr)
+
 - **Fit:** Broad retail participation at very small caps.
 - **Pros:** Inclusive; good for community alignment.
 - **Cons:** Insufficient scale for our activation energy; heavy admin per dollar raised.
 
 ### 5) Public token sale / ICO / Fair launch (Gnosis Auction, LBP)
+
 - **Fit:** Token distribution through public sale or auction mechanisms (e.g., Gnosis Auction batched Dutch auctions; Balancer Liquidity Bootstrapping Pools).
 - **Pros:** Potential for rapid global participation; transparent price discovery in auctions; mitigates sniping/whale dominance vs. fixed‑price ICOs.
 - **Cons:** High likelihood of securities characterization; election‑law/optics risk; secondary‑market volatility; requires mature utility case to justify listing.
 
 ### 6) Juicebox DAO campaign (ConstitutionDAO‑style)
+
 - **Fit:** Time‑boxed, on‑chain treasury raise via Juicebox with NFT receipts/perks; mainly donation‑based (no profit promises).
 - **Pros:** Very fast setup; strong memetic energy; public transparency; low legal risk if structured as pure donations with no ROI claims.
 - **Cons:** Donation caps; operational limits; not sized for \$1B+ activation energy; requires strict firewalling from U.S. election work.
 
 ### 7) Grant/Donation platforms (Gitcoin Grants, Optimism RetroPGF, foundation donations)
+
 - **Fit:** Excellent for distributing funds to public goods; historically raised tens of millions, not billions.
 - **Pros:** Strong alignment with public goods ethos; transparent; community‑driven.
 - **Cons:** Not sized for \$1B+ activation energy; donation‑driven rather than return‑driven capital.

@@ -23,9 +23,9 @@ The most successful and resilient software platforms in the world do not build e
 *   **Provide the Rails, Not Every Destination:** The dFDA platform's primary role is to provide the secure, stable, and well-documented "rails"—the core APIs, data standards, and foundational services.
 *   **Let the Community Build:** A vast ecosystem of third-party developers (commercial, academic, non-profit, and individual) will be empowered to build the "destinations"—specialized plugins, data analysis tools, patient-facing applications, and integrations with other systems.
 *   **Precedents for Success:** This is the model behind nearly every major open technology ecosystem:
-    *   **WordPress:** The core WordPress software is free and open-source. A multi-billion dollar economy of themes and plugins has been built on top of it by third-party developers.
-    *   **Linux:** The Linux kernel is the foundation, but thousands of companies and individuals build and maintain the distributions and applications that make it useful.
-    *   **Browser Extensions (Chrome/Firefox):** The browser provides the platform and APIs; a vibrant community creates extensions that add immense value.
+  *   **WordPress:** The core WordPress software is free and open-source. A multi-billion dollar economy of themes and plugins has been built on top of it by third-party developers.
+  *   **Linux:** The Linux kernel is the foundation, but thousands of companies and individuals build and maintain the distributions and applications that make it useful.
+  *   **Browser Extensions (Chrome/Firefox):** The browser provides the platform and APIs; a vibrant community creates extensions that add immense value.
 
 This model works because it aligns incentives. Commercial developers can build businesses, academics can build research tools, and individual contributors can build their reputation and solve their own problems.
 

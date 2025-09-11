@@ -60,13 +60,13 @@ Pharmaceutical companies invest in creating treatments that can completely cure 
 ### **📊 2. Calculation of Average Healthcare Savings**
 
 - **Determine Lifetime Costs:** Estimate the average cost of treating the disease over a patient's lifetime.
-    - *Example:* Treating heart disease may cost **$750,000** per patient.
+  - *Example:* Treating heart disease may cost **$750,000** per patient.
 - **Potential Savings:** This amount represents the savings if the disease is cured or prevented.
 
 ### **3. Agreement on Profit Sharing**
 
 - **50% Savings Share:** The company receives 50% of the healthcare cost savings for each patient cured.
-    - *In our example:* The company earns **$375,000** per patient (50% of $750,000).
+  - *In our example:* The company earns **$375,000** per patient (50% of $750,000).
 
 ### **4. Accessible Pricing of the Therapy**
 
@@ -218,15 +218,15 @@ the profit-sharing percentage or combining efforts across multiple conditions.
 #### **1. Savings are Based on Reduced Average Healthcare Costs**
 
 - **For Preventative Therapies**:
-    - Savings are calculated based on reduction in average per capita healthcare costs across the treated population.
-    - Example: If average annual healthcare costs
+  - Savings are calculated based on reduction in average per capita healthcare costs across the treated population.
+  - Example: If average annual healthcare costs
       are $12,000 per person, and a preventative therapy reduces this by 15%, the annual savings are $1,800 per person.
       Over a 10-year period, this amounts to $18,000 in savings, with the manufacturer earning $9,000 per patient.
 
 - **For Longevity Therapies**:
-    - Savings are measured by comparing healthcare costs of treated populations against baseline per capita costs for
+  - Savings are measured by comparing healthcare costs of treated populations against baseline per capita costs for
       their age group.
-    - Example: If a longevity therapy reduces average healthcare costs for people aged 65-75 from $18,000 to $13,000 per
+  - Example: If a longevity therapy reduces average healthcare costs for people aged 65-75 from $18,000 to $13,000 per
       year, the annual savings are $5,000. Over a 10-year period, this generates $50,000 in savings, with the
       manufacturer earning $25,000 per patient.
 
@@ -236,8 +236,8 @@ the profit-sharing percentage or combining efforts across multiple conditions.
 
 - Traditional drug trials often require **specific endpoints** (e.g., "Does the drug cure or improve this condition?"),
   which can be hard to define for preventative or longevity therapies. Under this system:
-    - The **endpoint is cost savings**, not specific clinical results.
-    - Real-world data measures the reduction in healthcare spending over time, making the system inherently adaptable to
+  - The **endpoint is cost savings**, not specific clinical results.
+  - Real-world data measures the reduction in healthcare spending over time, making the system inherently adaptable to
       therapies that work across multiple conditions or improve overall health.
 
 ---
@@ -320,4 +320,3 @@ the profit-sharing percentage or combining efforts across multiple conditions.
     - Healthcare systems save billions as chronic disease burdens decline and healthy lifespans increase.
 
 <!-- TODO: Rewrite this document to match the project's formal, direct, and concise writing style. Remove the marketing language, emojis, and overly enthusiastic tone, while preserving the core economic model and calculations. -->
-

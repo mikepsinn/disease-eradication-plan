@@ -21,9 +21,9 @@ This is the high-level, multi-year roadmap from a plan on paper to a self-sustai
 -   **Fundraising:** Raise a **$1M-$3M pre-seed round** to fund salaries and initial operations.
 -   **Legal:** Incorporate the initial for-profit management company and non-profit foundation.
 -   **Hiring:** Recruit the three core leads for the activation team:
-    -   [Capital Markets Lead](./careers/capital-markets-lead.md)
-    -   Elections & IE Compliance Lead
-    -   Growth & Referrals Lead
+  -   [Capital Markets Lead](./careers/capital-markets-lead.md)
+  -   Elections & IE Compliance Lead
+  -   Growth & Referrals Lead
 
 ---
 

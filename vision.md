@@ -35,21 +35,27 @@ The true power of the 1% Treaty is that it creates a **self-reinforcing flywheel
 The first 1% redirection will produce such an absurdly high return on investment—in lives saved, costs averted, and economic productivity unlocked—that the logical next step will be obvious to every citizen and political leader. Once the model is proven, the global referendum will not be about whether to continue, but how fast to accelerate toward humanity's ultimate potential.
 
 ### 2030: The 1% Treaty (Disease Defeated)
+
 Your child is cured of a genetic disorder in a day. Cancer becomes as treatable as the common cold. You're 95 but feel 65. The annual $270 billion investment has eliminated humanity's major killers and extended healthy lifespan by decades.
 
 ### 2035: The 2% Treaty (Aging Made Optional)
+
 You choose to reset your biological age to 25 and stay there. The additional $270 billion has cracked the aging code. Death from old age becomes as obsolete as death from infection once was.
 
 ### 2045: The 5% Treaty (Suffering Abolished)
+
 Depression, anxiety, and mental anguish become treatable conditions. With $675 billion annually dedicated to consciousness research, we've mastered the biological mechanisms of well-being. The default human experience is now profound contentment and creativity.
 
 ### 2055: The 20% Treaty (Intelligence Amplified)
+
 Every citizen can think like Einstein and create like da Vinci through safe neural enhancement. Meanwhile, $2.7 trillion in annual investment has solved climate change through massive clean energy deployment, ended poverty through post-scarcity economics, and eliminated hunger through advanced food production.
 
 ### 2065: The 50% Treaty (Transcendence Achieved)
+
 A global population of trillions of ageless, enhanced minds has unlocked space colonization, created abundant clean energy, and begun exploring the deepest mysteries of physics and consciousness. War, disease, poverty, hunger, and climate change are historical curiosities.
 
 ### 2075: The 100% Treaty (Violence Transcended)
+
 The final transformation. The last military dollar is redirected to consciousness enhancement and cosmic exploration. Intentional violence becomes as unthinkable as cannibalism—not because it's forbidden, but because enhanced beings literally cannot conceive of harming another consciousness. We have become a species of transcendent minds, exploring infinite realities across space and time.
 
 This is the **Great Ratchet**. Each turn of the wheel locks in the gains and makes the next turn easier. We will systematically and voluntarily phase out the global war economy, not through protest, but by offering a demonstrably superior investment vehicle for solving every major challenge facing humanity.

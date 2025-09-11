@@ -1,4 +1,5 @@
 # Content Review Decision Tree
+
 ## The Top-Down Refactoring Playbook
 
 *Systematic process for populating the new book structure using content from the `/archive` folder.*
@@ -18,22 +19,22 @@ If no suitable content exists, the file should be populated with a `TODO` commen
 Follow this process for each "Chapter" and "Section" in the target structure.
 
 **1. 🎯 SELECT a Target File:**
-   - Pick an empty or incomplete file from the `Complete Target Structure` list below (e.g., `problem.md`).
+- Pick an empty or incomplete file from the `Complete Target Structure` list below (e.g., `problem.md`).
 
 **2. 🔎 SEARCH for Source Material:**
-   - Use workspace search (e.g., `@` mentions, keyword search) to find files in the `/archive` directory that contain relevant content.
-   - Good search terms include the target filename, its title, or key concepts it should contain.
+- Use workspace search (e.g., `@` mentions, keyword search) to find files in the `/archive` directory that contain relevant content.
+- Good search terms include the target filename, its title, or key concepts it should contain.
 
 **3. 🤔 EVALUATE and MERGE Content:**
-   - For each potential source file in the archive, review its content and decide what is essential, non-obvious, and project-specific.
-   - Use the **Pre-Screening Questions** below to quickly eliminate irrelevant files.
-   - Copy and paste the valuable content from the source file(s) into your target file.
-   - **Delete the source file from `/archive`** once you have extracted all its valuable content.
+- For each potential source file in the archive, review its content and decide what is essential, non-obvious, and project-specific.
+- Use the **Pre-Screening Questions** below to quickly eliminate irrelevant files.
+- Copy and paste the valuable content from the source file(s) into your target file.
+- **Delete the source file from `/archive`** once you have extracted all its valuable content.
 
 **4. ✨ QA the Target File:**
-   - After populating the target file, perform the quality assurance checks outlined in `CONTRIBUTING.md`. This includes:
-     - Fixing all broken internal links.
-     - Adding machine-readable `TODO` comments for any content gaps or style issues.
+- After populating the target file, perform the quality assurance checks outlined in `CONTRIBUTING.md`. This includes:
+  - Fixing all broken internal links.
+  - Adding machine-readable `TODO` comments for any content gaps or style issues.
 
 ### Pre-Screening Questions (for evaluating files in `/archive`)
 
@@ -52,6 +53,7 @@ Follow this process for each "Chapter" and "Section" in the target structure.
 *(This is the master plan for the refactoring effort)*
 
 ### Root Level: The Chapters
+
 Following README.md's narrative flow for maximum readability:
 
 ```
@@ -73,6 +75,7 @@ Following README.md's narrative flow for maximum readability:
 ### Supporting Directories: The Detailed Appendices
 
 **economics/** - Financial Models & Analysis
+
 ```
 ├── investment-thesis.md                     (Core investment case - unique concept)
 ├── peace-dividend-value-capture.md          (Economic engine explanation)  
@@ -92,6 +95,7 @@ Following README.md's narrative flow for maximum readability:
 ```
 
 **strategy/** - Execution Plans & Political Strategy  
+
 ```
 ├── 1-percent-treaty.md                      (Full treaty text & explanation)
 ├── dih-model.md                             (DIH structure & operation)
@@ -110,6 +114,7 @@ Following README.md's narrative flow for maximum readability:
 ```
 
 **legal/** - Compliance & Governance
+
 ```
 ├── multi-entity-strategy.md                 (501c3/501c4/for-profit structure)
 ├── right-to-trial-act.md                   (FDA modernization legislation)
@@ -119,6 +124,7 @@ Following README.md's narrative flow for maximum readability:
 ```
 
 **operations/** - Team, Hiring & Processes (The Internal Playbook)
+
 ```
 ├── hiring-plan.md                           (Phase-based team roadmap)
 ├── communications-and-messaging-playbook.md (Internal framework for public narrative)
@@ -131,6 +137,7 @@ Following README.md's narrative flow for maximum readability:
 ```
 
 **reference/** - Supporting Data & Evidence
+
 ```
 ├── costs-of-war.md                          (Quantified direct/indirect costs)
 ├── recovery-trial.md                        (80X efficiency proof case)
@@ -181,15 +188,15 @@ For each archived file:
 For every file that is **MODIFIED** (by moving or merging), perform this quick QA check:
 
 **1. Internal Link Integrity:**
-   - Scan the file for all internal relative links (e.g., `[text](./path/file.md)`).
-   - **IMMEDIATELY FIX** any links that are now broken due to files being moved or renamed.
-   - If a link points to a now-deleted file, either remove the link or repoint it to a relevant alternative.
+- Scan the file for all internal relative links (e.g., `[text](./path/file.md)`).
+- **IMMEDIATELY FIX** any links that are now broken due to files being moved or renamed.
+- If a link points to a now-deleted file, either remove the link or repoint it to a relevant alternative.
 
 **2. Content Quality Triage:**
-   - **Is a critical claim missing a citation?** If yes, add `<!-- TODO: Add citation for this claim. -->`
-   - **Does the writing style clash with the project's voice (direct, concise)?** If yes, add `<!-- TODO: Rewrite this section to match project writing style. -->`
-   - **Is a chart, image, or visual desperately needed?** If yes, add `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
-   - **Is there a section that should be expanded, removed, or clarified?** If yes, add a specific TODO comment (e.g., `<!-- TODO: Expand this section to include X. -->`).
+- **Is a critical claim missing a citation?** If yes, add `<!-- TODO: Add citation for this claim. -->`
+- **Does the writing style clash with the project's voice (direct, concise)?** If yes, add `<!-- TODO: Rewrite this section to match project writing style. -->`
+- **Is a chart, image, or visual desperately needed?** If yes, add `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
+- **Is there a section that should be expanded, removed, or clarified?** If yes, add a specific TODO comment (e.g., `<!-- TODO: Expand this section to include X. -->`).
 
 These machine-readable TODOs create an actionable list of content debt to be addressed after the structural refactor is complete.
 

@@ -61,12 +61,10 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ### Source Quotes for Key Parameters
 
-* **Helios (end-to-end verifiable voting)**
+- **Helios (end-to-end verifiable voting)**
   > "Helios is an open-audit voting system… voters can verify that their vote is included and correctly tallied."  
   > — Adida et al., Helios, [heliosvoting.org](https://heliosvoting.org/)
 
-* **Estonia internet voting lessons**
+- **Estonia internet voting lessons**
   > "Estonia's i-voting system has operated nationwide since 2005… offering insights into scaling digital identity and remote voting with continuous security reviews."  
   > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/i-voting/)
-
-

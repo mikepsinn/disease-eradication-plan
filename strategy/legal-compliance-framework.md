@@ -73,18 +73,18 @@ Our compliance strategy is designed to achieve our goal of mass participation wh
 
 This phase focuses on mass distribution of a non-security utility token.
 
-*   **Token Design (Not a Security):**
-    *   **No Financial Value:** VOTE points are explicitly defined as having no financial value and are non-transferable.
-    *   **Pure Utility:** Their sole purpose is to serve as a cryptographically verifiable receipt of participation and a badge of honor.
-    *   **No "Investment of Money":** Points are earned through an action (voting), not purchased.
-    *   **Legal Rationale:** This structure is designed to fail the Howey Test. As a non-tradable token with no promised expectation of profit, it has a very strong argument for not being a security, aligning with the SEC's more favorable stance on non-financial, utility-focused airdrops.
+-   **Token Design (Not a Security):**
+  -   **No Financial Value:** VOTE points are explicitly defined as having no financial value and are non-transferable.
+  -   **Pure Utility:** Their sole purpose is to serve as a cryptographically verifiable receipt of participation and a badge of honor.
+  -   **No "Investment of Money":** Points are earned through an action (voting), not purchased.
+  -   **Legal Rationale:** This structure is designed to fail the Howey Test. As a non-tradable token with no promised expectation of profit, it has a very strong argument for not being a security, aligning with the SEC's more favorable stance on non-financial, utility-focused airdrops.
 
 **Phase 2: VICTORY Token Conversion (Post-Treaty)**
 
 This phase occurs only *after* the 1% Treaty is successfully ratified and the DIH Treasury is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
-*   **Mechanism: Voluntary, Opt-In Conversion:** Holders of VOTE points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
-*   **Legal Rationale & Safe Harbor:** This conversion event will be structured to fall within the SEC's "safe harbor" provisions for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY bond's function is now primarily for utility—governing the active, funded DIH treasury—which strengthens the case for a more favorable regulatory treatment.
+-   **Mechanism: Voluntary, Opt-In Conversion:** Holders of VOTE points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
+-   **Legal Rationale & Safe Harbor:** This conversion event will be structured to fall within the SEC's "safe harbor" provisions for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY bond's function is now primarily for utility—governing the active, funded DIH treasury—which strengthens the case for a more favorable regulatory treatment.
 
 **Fundraising from Accredited Investors (Reg D / Reg S)**
 
@@ -121,6 +121,7 @@ The initial "activation energy" from sophisticated investors (VCs, funds, etc.) 
 - **US Operations:** Delaware (established corporate law, FEC expertise available)
 
 **Legal Entity Structure:**
+
 ```
 Swiss Foundation (Treaty Coordination)
     ├── Singapore Foundation (Token Issuance)
@@ -167,18 +168,21 @@ Swiss Foundation (Treaty Coordination)
 ## Implementation Timeline
 
 ### **Phase 1: Legal Foundation (Months 1-6)**
+
 - Establish legal entities in each jurisdiction
 - Obtain securities law opinions and regulatory guidance
 - Hire compliance officers and election law counsel
 - Implement technical safeguards and monitoring systems
 
 ### **Phase 2: Regulatory Approval (Months 6-12)**
+
 - File necessary registrations with election authorities
 - Submit VICTORY bond structure for regulatory review
 - Obtain no-action letters where possible
 - Establish ongoing compliance monitoring
 
 ### **Phase 3: Operational Launch (Months 12-18)**
+
 - Begin token issuance under appropriate exemptions
 - Launch political activities in compliant jurisdictions
 - Implement real-time compliance monitoring
@@ -187,12 +191,14 @@ Swiss Foundation (Treaty Coordination)
 ## Risk Management
 
 ### **Legal Risk Mitigation**
+
 - **Insurance Coverage:** Directors & officers, professional liability, regulatory defense
 - **Legal Reserves:** \$10M+ dedicated legal defense fund
 - **Rapid Response:** 24-hour legal counsel availability for compliance issues
 - **Regular Updates:** Quarterly legal compliance reviews and strategy updates
 
 ### **Regulatory Change Adaptation**
+
 - **Monitor Developments:** Track proposed election law and securities regulation changes
 - **Regulatory Relationships:** Ongoing dialogue with regulators where appropriate
 - **Flexibility:** Structure allows for rapid adjustment to new requirements
@@ -201,12 +207,14 @@ Swiss Foundation (Treaty Coordination)
 ## Success Metrics
 
 ### **Compliance Indicators**
+
 - Zero election law violations or regulatory enforcement actions
 - Successful securities law exemption for VICTORY bonds
 - Full regulatory approval in all target jurisdictions
 - Independent legal audit confirms ongoing compliance
 
 ### **Operational Effectiveness**
+
 - Political activities proceed without legal interruption
 - International coordination achieves strategic alignment without legal coordination
 - Token issuance and treasury operations function within regulatory framework
@@ -220,14 +228,14 @@ Swiss Foundation (Treaty Coordination)
 
 ### Source Quotes for Key Parameters
 
-* **FEC Foreign National Restrictions**
+- **FEC Foreign National Restrictions**
   > "A foreign national shall not, directly or indirectly, make a contribution or a donation of money or other thing of value, or expressly or impliedly promise to make a contribution or a donation, in connection with any Federal, State, or local election."
   > — 52 U.S.C. § 30121(a)(1)(A), [FEC Guidelines](https://www.fec.gov/updates/foreign-nationals/)
 
-* **Howey Test Securities Definition**  
+- **Howey Test Securities Definition**  
   > "The test is whether the scheme involves an investment of money in a common enterprise with profits to come solely from the efforts of others."
   > — SEC v. W. J. Howey Co., 328 U.S. 293 (1946)
 
-* **UK Electoral Commission Spending Limits**
+- **UK Electoral Commission Spending Limits**
   > "If you plan to spend more than \$10,000 on controlled expenditure in England or more than \$2,000 in Wales, Scotland or Northern Ireland, you must register with us as a non-party campaigner."
   > — UK Electoral Commission, [Non-party campaigners guidance](https://www.electoralcommission.org.uk/i-am-a/non-party-campaigner)

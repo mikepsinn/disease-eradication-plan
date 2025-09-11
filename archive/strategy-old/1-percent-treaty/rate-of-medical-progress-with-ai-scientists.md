@@ -26,37 +26,37 @@ Based on the following estimate, it appears that AGI will eventually be able to 
 
 To estimate the increased efficiency of AGI AI scientists compared to human scientists, we need to consider several factors. Let's break it down:
 
-## 1. Working hours:
+## 1. Working hours
 
 - Human scientists typically work 40 hours per week, with time off for weekends, holidays, and vacations. Assuming 50 working weeks per year, that's around 2,000 hours per year.
 - AGI AI scientists could potentially work 24/7/365, which equates to 8,760 hours per year.
 - Efficiency gain: 8,760 / 2,000 = 4.38 times more working hours.
 
-## 2. Knowledge sharing and access:
+## 2. Knowledge sharing and access
 
 - Human scientists often work in silos, with limited real-time access to the knowledge and insights of their peers. They rely on published papers, conferences, and personal networks to stay informed.
 - AGI AI scientists could have instant, comprehensive access to the knowledge and experiences of all other AI scientists, allowing them to build on each other's work seamlessly.
 - Efficiency gain: Estimating conservatively, let's say this instant knowledge sharing doubles the effective output per working hour.
 
-## 3. Eliminating redundant work:
+## 3. Eliminating redundant work
 
 - Human scientists often duplicate efforts by exploring the same dead ends, as failed experiments are rarely published.
 - AGI AI scientists could share all experimental results, including failures, allowing them to collectively learn and avoid redundant work.
 - Efficiency gain: Let's conservatively estimate that eliminating redundant work could increase effective output by another 50%.
 
-## 4. Cognitive efficiency:
+## 4. Cognitive efficiency
 
 - Human scientists are subject to cognitive limitations, biases, and distractions that can impede their problem-solving efficiency.
 - AGI AI scientists could potentially operate at peak cognitive performance consistently, optimizing their thought processes for maximum insight and productivity.
 - Efficiency gain: Assuming AGI AI scientists are twice as cognitively efficient as humans on average.
 
-## 5. Experimental iteration speed:
+## 5. Experimental iteration speed
 
 - Human scientists are limited by physical constraints in how quickly they can set up, run, and analyze experiments.
 - AGI AI scientists could potentially run simulated experiments and analyze data at a much faster pace, allowing for more rapid iteration and learning.
 - Efficiency gain: Estimating that AGI AI scientists could iterate on experiments 10 times faster than human scientists.
 
-## Putting it all together:
+## Putting it all together
 
 - Baseline human scientist annual output: 1
 - AGI AI scientist annual output:

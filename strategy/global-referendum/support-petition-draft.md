@@ -77,5 +77,3 @@ To do this, we must OPEN-SOURCE FDA.GOV so anyone can improve it and implement t
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
-
-

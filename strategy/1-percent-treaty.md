@@ -8,14 +8,14 @@ editor: markdown
 dateCreated: 2025-06-10T19:10:29.965Z
 ---
 
-## Facts:
+## Facts
 
 1. **2 billion people suffer** from chronic diseases including cancer, diabetes, heart disease, autoimmune disorders, and many others. This causes immense human anguish as well as crippling economic costs.
 2. **Medical research** to find cures for these diseases remains far **too slow** to meet the desperate needs of patients.
 3. **Advanced data analysis and automation** can radically accelerate the clinical research process by automating analysis of medical data, identifying promising drug targets, optimizing clinical trial designs, and more.
 4. A global collaborative effort to automate clinical research, coordinated and governed by the people, could produce revolutionary breakthroughs against chronic diseases and **alleviate the suffering of billions of people.**
 
-## Logical Proof:
+## Logical Proof
 
 Here is the logical proof that signing this accord is the most rational thing you can do with the next few moments of your life:
 
@@ -27,7 +27,7 @@ Here is the logical proof that signing this accord is the most rational thing yo
 
 3. Therefore, it is clearly in your rational self-interest to sign this treaty requesting that all nations to cooperate in this endeavor. By contributing a infinitesimal portion of their military budgets, they can help unlock revolutionary health benefits for their own citizens and the world at large.
 
-## How it Works:
+## How it Works
 
 1. Every participating nation will pledge **1% of its annual military budget** to the [Decentralized Institutes of Health (DIH)](../legal.md) treasury. This creates a sustainable revenue stream to repay bondholders who fund the war on disease and to continuously finance the dFDA ecosystem. <!-- TODO: Add link to dih-technical-architecture.md once created. -->
 2. The **DIH will use its treasury to subsidize patient participation** in dFDA trials that are **80X more efficient** than traditional models, a benchmark already proven by the [Oxford RECOVERY trial](../reference/recovery-trial-case-study.md). The fund will also support infrastructure development and offer bounties for medical innovation, with allocation determined by an algorithm that prioritizes research with the highest expected value to society.

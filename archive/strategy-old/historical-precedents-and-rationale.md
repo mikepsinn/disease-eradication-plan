@@ -50,10 +50,10 @@ The failures of past movements are even more instructive than the successes, as 
 ## Conclusion: A Synthesis for a New Approach
 
 Our strategy is a deliberate synthesis of these historical lessons. It is designed to be a pragmatic, financially-powered machine for change:
--   It harnesses the proven power of a **global citizen movement** (like the ICBL).
--   It is funded by a **publicly-marketed financial instrument** (like War Bonds).
--   It directly confronts the primary failure mode of past peace movements by **using financial incentives to co-opt entrenched interests** (the lesson from the Nuclear Freeze).
--   It avoids the trap of diffuse energy by having a **single, laser-focused policy objective** (the lesson from Occupy).
+*   It harnesses the proven power of a **global citizen movement** (like the ICBL).
+*   It is funded by a **publicly-marketed financial instrument** (like War Bonds).
+*   It directly confronts the primary failure mode of past peace movements by **using financial incentives to co-opt entrenched interests** (the lesson from the Nuclear Freeze).
+*   It avoids the trap of diffuse energy by having a **single, laser-focused policy objective** (the lesson from Occupy).
 
 ---
 

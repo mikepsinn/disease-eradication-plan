@@ -92,6 +92,4 @@ One might say, “It seems more likely — or as likely — to me that drug deve
 
 You might say, "I don't know how much the efficacy regulations contribute to or hampers public health. I do know that correlation does not necessarily imply causation." However, a correlation plus a logical mechanism of action is the least bad method we have for inferring the most likely significant causal factor for an outcome (i.e., life expectancy). Assuming most likely causality based on temporal correlation is the entire basis of a clinical research study and the scientific method generally.
 
-
 [impact-of-innovative-medicines-on-life-expectancy.md](2-solution/impact-of-innovative-medicines-on-life-expectancy.md)
-

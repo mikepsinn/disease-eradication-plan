@@ -34,9 +34,11 @@ This isn't about defunding defense; it's about making a strategic investment in 
 To bootstrap this new economic model, the DIH will raise its initial capital by issuing two classes of **VICTORY Instruments**, each designed for a specific purpose and audience.
 
 ### 1. VICTORY Bonds (For Investors)
+
 Modeled on the War Bonds that funded victory in WWII, VICTORY Bonds are the primary instrument for capitalizing the DIH Treasury. They are a debt-like instrument with a fixed coupon and defined maturity, designed to offer a world-class, de-risked return to accredited and institutional investors.
 
 ### 2. VICTORY Tokens (For Participants)
+
 VICTORY Tokens are the primary instrument for incentivizing mass participation in the global referendum. They are a utility token used to reward verifiable actions (like voting and referrals) and may confer governance rights over the DIH treasury. They are not designed to promise profits, which helps mitigate securities risk for a broad, global distribution.
 
 This dual-instrument approach allows the DIH to attract the world's most ambitious capital while simultaneously building a broad, global coalition of engaged stakeholders.

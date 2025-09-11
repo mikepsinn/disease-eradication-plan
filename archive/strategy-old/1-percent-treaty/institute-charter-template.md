@@ -56,5 +56,3 @@ All appointments are criteria-based, conflict-of-interest disclosed, and listed 
 
 - Circuit-breaker for payouts upon severity-scored incidents; remediation plan and staged unpause
 - Clawback rules for falsification or misconduct; immutable audit logs and public reports
-
-

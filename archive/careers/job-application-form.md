@@ -51,10 +51,10 @@ Competitive salary range of \$80,000-\$120,000 annually, based on experience and
 
 ## Section 1: Personal Information
 
-*   **Full Name:** <input type="text" size="30"> *
-*   **Email Address:** <input type="text" size="30"> *
-*   **Country of Residence:** <input type="text" size="20"> *
-*   **LinkedIn Profile or Personal Website (if applicable):** <input type="text" size="30">
+-   **Full Name:** <input type="text" size="30"> *
+-   **Email Address:** <input type="text" size="30"> *
+-   **Country of Residence:** <input type="text" size="20"> *
+-   **LinkedIn Profile or Personal Website (if applicable):** <input type="text" size="30">
 
 [ ] **I consent to be contacted** by representatives of the War on Disease initiative to discuss my application.
 
@@ -127,10 +127,10 @@ Submit your application via the form below. Required fields are marked with *. A
 
 ### Source Quotes for Key Parameters
 
-* **Trial Cost Reduction**
+- **Trial Cost Reduction**
   > "The average cost to develop a new drug is \$2.6 billion, but decentralized models could reduce this by 50-70% through real-world data efficiency."
   — [Tufts Center for the Study of Drug Development, 2016](https://csdd.tufts.edu/csddnews/2016/3/10/march-10-2016-tufts-csdd-assessment-of-cost-to-develop-and-win-marketing-approval-for-a-new-drug-now-published)
 
-* **Salary Range**
+- **Salary Range**
   > "Average salary for med-tech project leads is \$100,000, with ranges from \$80,000 to \$120,000 depending on experience."
   — [Payscale Med-Tech Salary Report, 2023](https://www.payscale.com/research/US/Industry=Medical_Devices/Salary) 

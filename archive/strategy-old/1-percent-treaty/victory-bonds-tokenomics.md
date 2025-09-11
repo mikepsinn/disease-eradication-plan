@@ -89,16 +89,14 @@ This mechanism is designed for high-growth returns, driven by the increasing val
 
 ### Source Quotes for Key Parameters
 
-* **SEC Regulation Crowdfunding**
+- **SEC Regulation Crowdfunding**
   > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."  
   > — U.S. SEC, [sec.gov](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
 
-* **Regulation A overview**
+- **Regulation A overview**
   > "Regulation A provides an exemption from the registration requirements... for offerings of securities up to \$75 million in a 12-month period, subject to eligibility, disclosure, and reporting requirements."  
   > — U.S. SEC, [sec.gov](https://www.sec.gov/smallbusiness/exemptofferings/rega)
 
-* **Regulation S (offshore)**
+- **Regulation S (offshore)**
   > "The amendments are designed to stop abusive practices in connection with offerings of equity securities purportedly made in reliance on Regulation S."  
   > — U.S. SEC, [sec.gov](https://www.sec.gov/rules-regulations/1998/02/offshore-offers-sales-regulation-s-effective-date-60-days-after-publication-federal-register)
-
-

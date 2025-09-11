@@ -63,7 +63,6 @@ Statins, used for primary prevention of cardiovascular disease, also demonstrate
 
 [^2]: [Comparing treatments in terms of absolute benefit - Better...](https://www.ncbi.nlm.nih.gov/books/NBK426103/)
 
-
 ### Hypothetical Example
 
 To further illustrate, let's consider a new drug for a chronic disease that:

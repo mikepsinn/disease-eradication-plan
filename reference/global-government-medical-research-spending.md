@@ -66,7 +66,6 @@ The concentration of funding in wealthy nations creates significant global healt
 
 Global government medical research funding of $67.5 billion annually represents substantial public investment in discovering new treatments and cures, yet remains concentrated among a small number of wealthy nations. **The United States alone accounts for 75% of global government medical research spending**, creating both opportunities for scientific leadership and risks from funding concentration. Future growth in government medical research investment will likely depend on continued economic growth in major funding countries and increased recognition of medical research as a critical public good requiring sustained government support.
 
-
 Here's a markdown sources section you can copy into WikiJS:
 
 ## Sources

@@ -51,5 +51,3 @@ Appointments are criteria-based with public COI disclosures; titles are honorary
 ## Notes
 
 This document follows the `DIH Institute Charter Template` and may evolve with community input. Titles do not imply governmental authority.
-
-

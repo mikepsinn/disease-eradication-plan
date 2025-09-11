@@ -32,7 +32,7 @@ Our immediate priority is to establish a single, primary fiscal sponsor to act a
 2.  **Brand Cohesion:** It presents the project as focused and organized, channeling all initial support through one primary partner.
 3.  **Administrative Simplicity:** Managing one contractual relationship, one fee structure, and one reporting channel is efficient and allows our team to focus on the mission, not on administrative overhead.
 
-#### Ideal Profile for Primary Host:
+#### Ideal Profile for Primary Host
 
 *   **Broad Mission:** An organization focused on general "health innovation," "medical research policy," "patient empowerment," or "efficient government."
 *   **Innovative Mindset:** A non-profit with a history of supporting novel, high-impact, or technology-driven projects.

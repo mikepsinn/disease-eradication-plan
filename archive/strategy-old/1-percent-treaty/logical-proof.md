@@ -12,7 +12,7 @@ dateCreated: 2024-06-09T00:00:00.000Z
 
 Why it is logical for the nations and citizens of the world to sign the 1% Treaty and reallocate 1% of military spending to medical research each year:
 
-## Axioms:
+## Axioms
 
 1. Reducing death and suffering is a worthy goal.
 2. War increases death and suffering.
@@ -20,7 +20,7 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 4. Resources spent on war cannot be spent on medical research.
 5. Countries act in their self-interest.
 
-## Premises:
+## Premises
 
 1. The world has finite resources.
 2. Resources spent on war are 20 times greater than resources spent on medical research. (See [cost of war](cost-of-war.md) and [cost of disease](cost-of-disease.md).)
@@ -32,7 +32,7 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 8. The world currently has 13,000 nuclear weapons, enough to cause between 13 and 130 "extinction-level events" when accounting for nuclear winter effects.[^6]
 9. Lobbyists are motivated by financial incentives and will work for the highest bidder.[^7]
 
-## Propositions:
+## Propositions
 
 1. An international treaty where all countries allocate 1% of military budgets to medical research would maintain the balance of power while increasing resources for medical research. (See [1% Treaty details](1-percent-treaty.md).)
 2. Reducing military budgets by 1% and allocating that to medical research would increase net national security by reducing the risk of AI-driven catastrophe.
@@ -44,12 +44,12 @@ Why it is logical for the nations and citizens of the world to sign the 1% Treat
 8. The DAO could attempt to outbid military contractors to hire their best lobbyists, potentially reducing their lobbying capacity by 50% and increasing the DAO's lobbying power by 100%.[^11]
 9. To ensure sufficient funding to out-lobby the military-industrial complex, contributors must be compensated at a rate of at least 10% annually, which is higher than the average return of the S&P 500.[^12]
 
-## Counterarguments:
+## Counterarguments
 
 1. Global coordination on the 1% Treaty may be challenging due to differing national interests and priorities. However, the potential benefits of the Treaty, such as reduced catastrophic risks and increased medical research, provide a strong incentive for countries to cooperate.
 2. Some countries may attempt to cheat on the agreement by not fully reallocating 1% of their military budgets. However, the proposed auditing and verification mechanisms, such as satellite monitoring and on-site inspections, would help detect and deter cheating.
 
-## Conclusion:
+## Conclusion
 
 The 1% Treaty, which reallocates a portion of military spending to medical research in a stable, decentralized, and verifiable way, would reduce catastrophic risks, increase resources for beneficial research, and yield significant humanitarian benefits. (See [strategy roadmap](strategy.md).) Given the exorbitant destructive capacity of current nuclear arsenals, safely reducing military budgets through agreements like the 1% Treaty is a reasonable goal.
 
@@ -59,15 +59,13 @@ Although implementing the 1% Treaty may face challenges such as global coordinat
 
 The Treaty would maintain geopolitical stability while massively increasing medical research, reducing catastrophic risks, and generating immense economic value. Given the feasibility, low initial funding requirements, and extraordinary potential benefits, this plan should be seriously considered.
 
-[^1]: World Bank. (2021). Military expenditure (% of GDP). https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS
 
 [^2]: Bostrom, N. (2014). Superintelligence: Paths, Dangers, Strategies. Oxford University Press.
 
-[^3]: Pew Research Center. (2019). Public Perspectives on the Future of Science and Technology. https://www.pewresearch.org/science/2019/03/14/public-perspectives-on-the-future-of-science-and-technology/
+[^3]: Pew Research Center. (2019). Public Perspectives on the Future of Science and Technology. <https://www.pewresearch.org/science/2019/03/14/public-perspectives-on-the-future-of-science-and-technology/>
 
-[^4]: OpenSecrets. (2021). Defense: Lobbying, 2021. https://www.opensecrets.org/industries/lobbying.php?ind=D
 
-[^5]: Stockholm International Peace Research Institute. (2021). Global arms industry: Sales by the top 25 companies up 8.5 per cent; Big players active in Global South. https://www.sipri.org/media/press-release/2021/global-arms-industry-sales-top-25-companies-85-cent-big-players-active-global-south
+[^5]: Stockholm International Peace Research Institute. (2021). Global arms industry: Sales by the top 25 companies up 8.5 per cent; Big players active in Global South. <https://www.sipri.org/media/press-release/2021/global-arms-industry-sales-top-25-companies-85-cent-big-players-active-global-south>
 
 [^6]: Robock, A., & Toon, O. B. (2010). Local nuclear war, global suffering. Scientific American, 302(1), 74-81.
 
@@ -75,10 +73,9 @@ The Treaty would maintain geopolitical stability while massively increasing medi
 
 [^8]: Palermo, T., Olson, J., & Wei, H. (2018). Decentralized Crowdfunding: A New Model for Funding Community-Driven Projects. Computer, 51(10), 68-73.
 
-[^9]: Woolf, A. F. (2020). Monitoring and Verification in Arms Control. Congressional Research Service. https://fas.org/sgp/crs/nuke/R41201.pdf
+[^9]: Woolf, A. F. (2020). Monitoring and Verification in Arms Control. Congressional Research Service. <https://fas.org/sgp/crs/nuke/R41201.pdf>
 
-[^10]: Ord, T. (2020). The Precipice: Existential Risk and the Future of Humanity. Hachette Books.
 
 [^11]: Estimation based on the current lobbying expenditure and capacity of military contractors.
 
-[^12]: S&P Dow Jones Indices. (2021). S&P 500. https://www.spglobal.com/spdji/en/indices/equity/sp-500/
+[^12]: S&P Dow Jones Indices. (2021). S&P 500. <https://www.spglobal.com/spdji/en/indices/equity/sp-500/>

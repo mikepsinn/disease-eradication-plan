@@ -99,5 +99,3 @@ graph TD
 - Cost per trial, time-to-launch, participants subsidized, evidence generated, ROI of subsidies, verified savings redeemed, incident rate and time-to-mitigation
 
 Link: see [DIH Org Structure](../strategy/1-percent-treaty/dih-org-structure.md) for the org view and [Institute Charter Template](../strategy/1-percent-treaty/institute-charter-template.md) for institute‑level governance.
-
-

@@ -48,12 +48,14 @@ Best regards,
 ## Reference Form Template
 
 ### Section 1: Relationship
+
 *   **Your Name:**
 *   **Your Title & Organization:**
 *   **In what capacity did you work with [Candidate Name]?**
 *   **For how long did you work together?**
 
 ### Section 2: Technical & Strategic Capabilities
+
 1.  **Describe the most complex or ambitious technical system you saw [Candidate Name] architect and build. What made it impressive?**
     *(This probes for evidence of world-class building ability.)*
 
@@ -70,6 +72,7 @@ Best regards,
     `[1] [2] [3] [4] [5] [6] [7] [8] [9] [10]`
 
 ### Section 3: Final Thoughts
+
 1.  **What is the one area where [Candidate Name] could still grow the most?**
     *(A thoughtful answer signals an honest reference.)*
 

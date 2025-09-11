@@ -57,14 +57,17 @@ See also: [Legal Compliance Framework](../strategy/legal-compliance-framework.md
 - Allow badges/POAPs, donor walls, updates; no tokens or instruments implying ROI or entitlement
 
 ## Prohibited Practices
+
 - No “donate and receive bonds/tokens” bundles (constitutes a sale of securities)
 - No accepting funds without KYC/AML for investments
 - No routing foreign‑national donations to U.S. independent expenditures
 
 ## Incident Response
+
 - If a prohibited transfer is detected: quarantine funds, notify counsel, file SARs as required, and refund where appropriate
 
 ## References
+
 - Legal framework: [Legal Compliance Framework](../strategy/legal-compliance-framework.md)
 - Fundraising options and estimates: [Fundraising Models Comparison](../strategy/fundraising-models-comparison.md)
 - Investment thesis: [Victory Bond Investment Thesis](../economic-models/victory-bond-investment-thesis.md)

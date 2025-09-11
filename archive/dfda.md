@@ -128,7 +128,6 @@ To further reduce patient costs, new financial models like the [Decentralized In
 
 <img src="https://s3.us-east-1.amazonaws.com/static.crowdsourcingcures.org/img%2Fdfda-framework-diagram.png" alt="Platform architecture" style="max-width: 600px; width: 100%;" />
 
-
 ## Check Out These Great Features! 👀
 
 See all the wonders we could enjoy with the passage of the Disease Eradication Act!
@@ -311,4 +310,3 @@ We'll keep you informed about the latest developments in decentralized clinical 
     > "any U.S. resident who requests an investigational intervention shall be guaranteed enrolment—remotely if necessary—in at least one pragmatic, decentralized trial arm evaluating that intervention"
     >
     > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-301-universal-eligibility-for-investigational-interventions)</cite>
-

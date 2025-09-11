@@ -36,7 +36,6 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
   - Use of proceeds; proof‑of‑reserves; liabilities; coupon schedules; waterfall and seniority; covenant checks; incident logs.
   - Open‑source report schemas; cryptographic attestations.
  
-
 ## Section 4A. Marketing & Disclosures Safe Harbor (Plain-English, Outcome-Linked)
 
 - Issuers may state targets and objectives (e.g., “risk‑adjusted returns competitive with leading alternatives”) if:
@@ -44,8 +43,6 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
   - Payouts are described as capped shares of verified inflows/savings; the cap and methodology are prominently disclosed.
   - A standardized, plain‑English “Key Facts” box is provided (use of proceeds, risks, fees, max payout share, seniority, governance rights, dispute channels), not to exceed 500 words.
 - Performance advertising safe harbor: Comparative statements must cite a public benchmark and link to the on‑chain EV methodology; backtests must be clearly labeled and reproducible.
-
- 
 
 ## Section 5. Token Classification Safe Harbor (Governance and Utility)
 

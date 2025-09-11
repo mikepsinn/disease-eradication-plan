@@ -26,10 +26,10 @@ The "Peace Dividend" is the total economic value reclaimed by reducing global co
 
 -   **Total Annual Value:** The global economic impact of violence was **[\$16.5 trillion](https://www.visionofhumanity.org/resources/global-peace-index-2022/)** in 2021, equivalent to 10.9% of global GDP or \$2,117 per person. This is the total latent value that can be unlocked.
 -   **Sources of Value:** This value is derived from multiple streams, as detailed in our [Quantified Costs of War](../reference/costs-of-war.md) analysis:
-    -   Reduced direct costs (military spending, infrastructure repair).
-    -   Reduced indirect costs (long-term healthcare for veterans, refugee support).
-    -   Increased economic productivity (higher GDP growth, reallocated human capital).
-    -   Improved health and social outcomes.
+  -   Reduced direct costs (military spending, infrastructure repair).
+  -   Reduced indirect costs (long-term healthcare for veterans, refugee support).
+  -   Increased economic productivity (higher GDP growth, reallocated human capital).
+  -   Improved health and social outcomes.
 
 -   **A Note on Scale:** Just 1% of this annual **$16.5 trillion** dividend is **$165 billion**—a sum more than six times larger than the entire $27B treasury we aim to create. This immense underlying value is what makes the financial model for VICTORY instruments so robust.
 
@@ -61,13 +61,13 @@ This captured value is the engine that makes the entire initiative possible, by 
 The vast majority of the peace dividend flows directly to the public.
 
 -   **Calculation:**
-    -   Total Annual Dividend: **\$16,500,000,000,000**
-    -   Value to Investors (from Treasury): **\$27,000,000,000**
-    -   Value to Society: **\$16,473,000,000,000**
+  -   Total Annual Dividend: **\$16,500,000,000,000**
+  -   Value to Investors (from Treasury): **\$27,000,000,000**
+  -   Value to Society: **\$16,473,000,000,000**
 
 -   **Distribution Ratio:**
-    -   VICTORY Holders Capture: `($27B / $16.5T) * 100 =` **~0.16%**
-    -   Society Receives: **~99.84%**
+  -   VICTORY Holders Capture: `($27B / $16.5T) * 100 =` **~0.16%**
+  -   Society Receives: **~99.84%**
 
 This means for every **\$1** of value captured by investors, over **\$600** in value is returned to the global community.
 
@@ -96,7 +96,7 @@ Even with this historic payout, the distribution of the annual peace dividend re
 -   **Value Captured by Investors:** \$2.5 trillion
 -   **Value Remaining for Society:** `\$16.5T - \$2.5T =` **\$14 trillion**
 
-#### Distribution of Value in a 1,000x ROI Scenario:
+#### Distribution of Value in a 1,000x ROI Scenario
 
 -   **Investors' Share:** `(\$2.5T / \$16.5T) * 100 =` **~15.2%**
 -   **Society's Share:** `(\$14T / \$16.5T) * 100 =` **~84.8%**

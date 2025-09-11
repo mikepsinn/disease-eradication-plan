@@ -17,4 +17,3 @@ dateCreated: '2025-08-23T00:00:00.000Z'
 - [Global Referendum Implementation](./referendum/global-referendum-implementation.md)
 - [The Decentralized Institutes of Health (DIH)](./1-percent-treaty/decentralized-institutes-of-health.md)
 - [VICTORY Bonds — Incentive Mechanics](./1-percent-treaty/victory-bonds-tokenomics.md)
-

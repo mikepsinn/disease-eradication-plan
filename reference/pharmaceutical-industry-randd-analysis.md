@@ -79,19 +79,19 @@ The acquisition of a small company by a larger one can create efficiencies that 
 
 Researchers have found some evidence that such acquisitions by larger drug firms are sometimes motivated by large firms’ desire to limit competition. According to a recent study of acquisitions in the pharmaceutical industry, for example, a company was about 5 percent to 7 percent less likely to complete the development of drugs in its acquired company’s pipeline if those drugs would compete with the acquirer’s existing drugs than it would be otherwise.5 In a 2017 study of competition and research and development (R&D), the Government Accountability Office cited several retrospective studies of mergers in the drug industry that found such transactions reduced R&D spending and patenting for several years.6 The reverse was also true: Increases in pharmaceutical industry competition have been found to increase firms’ R&D spending.7
 
-1. See IQVIA Institute for Human Data Science, The Changing Landscape of Research and Development (April 2019), p. 15, https://tinyurl.com/1cm3g2fs.
+1. See IQVIA Institute for Human Data Science, The Changing Landscape of Research and Development (April 2019), p. 15, <https://tinyurl.com/1cm3g2fs>.
 
-2. See Ulrich Geilinger and Chandra Leo, HBM New Drug Approval Report (HBM Partners, January 2019), p. 16. https://tinyurl.com/yyzze476, (PDF, 1.14 MB). HBM Partners is a Swiss health care investment company.
+2. See Ulrich Geilinger and Chandra Leo, HBM New Drug Approval Report (HBM Partners, January 2019), p. 16. <https://tinyurl.com/yyzze476>, (PDF, 1.14 MB). HBM Partners is a Swiss health care investment company.
 
-3. The 30 largest companies have developed 53 percent of drugs approved since 2009, and in 2014, the 25 largest drug companies received more than 70 percent of industry revenues. See IQVIA Institute for Human Data Science, The Changing Landscape of Research and Development (April 2019), p. 16, https://tinyurl.com/y2kpxve8; and Government Accountability Office, Drug Industry: Profits, Research and Development Spending, and Merger and Acquisition Deals, GAO-18-40 (November 2017), p. 16, www.gao.gov/products/GAO-18-40.
+3. The 30 largest companies have developed 53 percent of drugs approved since 2009, and in 2014, the 25 largest drug companies received more than 70 percent of industry revenues. See IQVIA Institute for Human Data Science, The Changing Landscape of Research and Development (April 2019), p. 16, <https://tinyurl.com/y2kpxve8>; and Government Accountability Office, Drug Industry: Profits, Research and Development Spending, and Merger and Acquisition Deals, GAO-18-40 (November 2017), p. 16, <www.gao.gov/products/GAO-18-40>.
 
-4. See Colleen Cunningham, Florian Ederer, and Song Ma, “Killer Acquisitions,” Journal of Political Economy, vol. 129, no. 3 (March 2021), p. 670, http://dx.doi.org/10.1086/712506.
+4. See Colleen Cunningham, Florian Ederer, and Song Ma, “Killer Acquisitions,” Journal of Political Economy, vol. 129, no. 3 (March 2021), p. 670, <http://dx.doi.org/10.1086/712506>.
 
 5. Ibid., pp. 649–702.
 
-6. See Government Accountability Office, Drug Industry: Profits, Research and Development Spending, and Merger and Acquisition Deals, GAO-18-40 (November 2017), p. 16, www.gao.gov/products/GAO-18-40. For the individual studies, see Carmine Ornaghi, “Mergers and Innovation in Big Pharma,” International Journal of Industrial Organization, vol. 27, no. 1 (January 2009), pp. 70–79, https://doi.org/10.1016/j.ijindorg.2008.04.003; and Patricia M. Danzon, Andrew Epstein, and Sean Nicholson, “Mergers and Acquisitions in the Pharmaceutical and Biotech Industries,” Managerial and Decision Economics, vol. 28, no. 4/5 (June–August 2007), pp. 307–328, www.jstor.org/stable/25151520.
+6. See Government Accountability Office, Drug Industry: Profits, Research and Development Spending, and Merger and Acquisition Deals, GAO-18-40 (November 2017), p. 16, <www.gao.gov/products/GAO-18-40>. For the individual studies, see Carmine Ornaghi, “Mergers and Innovation in Big Pharma,” International Journal of Industrial Organization, vol. 27, no. 1 (January 2009), pp. 70–79, <https://doi.org/10.1016/j.ijindorg.2008.04.003>; and Patricia M. Danzon, Andrew Epstein, and Sean Nicholson, “Mergers and Acquisitions in the Pharmaceutical and Biotech Industries,” Managerial and Decision Economics, vol. 28, no. 4/5 (June–August 2007), pp. 307–328, <www.jstor.org/stable/25151520>.
 
-7. See Richard T. Thakor and Andrew W. Lo, “Competition and R&D Financing: Evidence From the Biopharmaceutical Industry,” Journal of Financial and Quantitative Analysis (forthcoming), http://dx.doi.org/10.2139/ssrn.3754494.
+7. See Richard T. Thakor and Andrew W. Lo, “Competition and R&D Financing: Evidence From the Biopharmaceutical Industry,” Journal of Financial and Quantitative Analysis (forthcoming), <http://dx.doi.org/10.2139/ssrn.3754494>.
 
 CBO relied on the PhRMA data because before 2008, the NSF survey did not include domestic firms’ R&D spending outside of the United States. (Both the NSF and PhRMA estimates reflect worldwide R&D spending by pharmaceutical companies with operations in the United States.) NSF’s estimates of R&D spending since 2008 suggest that PhRMA members’ worldwide R&D spending constitutes about 75 percent to 85 percent of the industry total, depending on the year.
 
@@ -101,10 +101,9 @@ Figure 1.
 Average R&D Intensities for Publicly Traded U.S. Companies, by Industry
 Percent
 
-
 Pharmaceutical companies have devoted a growing share of their net revenues to R&D activities, averaging about 19 percent over the past two decades. By comparison, other research-intensive industries, like software and semiconductors, averaged about 15 percent.
 
-Data source: Congressional Budget Office, using data from Bloomberg, limited to U.S. firms as identified by Aswath Damodaran, “Data: Breakdown” (accessed January 13, 2020), https://tinyurl.com/yd5hq4t6. See www.cbo.gov/publication/57025#data.
+Data source: Congressional Budget Office, using data from Bloomberg, limited to U.S. firms as identified by Aswath Damodaran, “Data: Breakdown” (accessed January 13, 2020), <https://tinyurl.com/yd5hq4t6>. See <www.cbo.gov/publication/57025#data>.
 
 R&D intensity is research and development spending as a share of net revenues (sales less expenses and rebates).
 
@@ -119,10 +118,9 @@ Figure 2.
 Average Annual Approvals of New Drugs by the FDA
 Number of Drugs
 
-
 From 2015 to 2019, the FDA approved about twice as many new drugs as it did a decade earlier. Biologic drugs make up a growing share of FDA approvals.
 
-Data source: Congressional Budget Office, using data from the FDA’s Center for Drug Evaluation and Research and the FDA’s Center for Biologics Evaluation and Research. See www.cbo.gov/publication/57025#data.
+Data source: Congressional Budget Office, using data from the FDA’s Center for Drug Evaluation and Research and the FDA’s Center for Biologics Evaluation and Research. See <www.cbo.gov/publication/57025#data>.
 
 Until the 1990s, the FDA did not count biologics as a separate category; they were counted with NMEs.
 
@@ -137,7 +135,7 @@ R&D Spending and New Drug Approvals
 
 Sustained increases in pharmaceutical R&D spending do not necessarily lead to rising numbers of new drugs. R&D spending also reflects rising costs of labor (skilled researchers) and capital (laboratory technologies).
 
-Data source: Congressional Budget Office, using data from the FDA’s Center for Drug Evaluation and Research and PhRMA annual reports (various years). See www.cbo.gov/publication/57025#data.
+Data source: Congressional Budget Office, using data from the FDA’s Center for Drug Evaluation and Research and PhRMA annual reports (various years). See <www.cbo.gov/publication/57025#data>.
 
 Data for 1980–1983 are not shown because the five-year moving average cannot be calculated for the first four years of data.
 
@@ -155,10 +153,9 @@ Figure 4.
 Total U.S. Retail Drug Spending by Therapeutic Class, 2009 and 2019
 Billions of 2019 dollars
 
-
 New drugs can lead to large increases in retail spending because they have higher prices, they are in high demand, or both. Spending decreases can result when patent protection expires on leading drugs and low-cost generic versions are introduced.
 
-Data source: Congressional Budget Office, using data from IQVIA Institute for Human Data Science, Medicine Spending and Affordability in the United States: Understanding Patients’ Costs for Medicines (August 2020), Exhibit 24, https://tinyurl.com/5655tnoc; IMS Institute for Healthcare Informatics, Medicines Use and Spending Shifts: A Review of the Use of Medicines in the U.S. in 2014 (April 2015), p. 40, https://tinyurl.com/3bk9oufn, and Medicine Use and Shifting Costs of Healthcare: A Review of the Use of Medicines in the United States in 2013 (April 2014), Appendix 8, https://go.usa.gov/xsaFR. See www.cbo.gov/publication/57025#data.
+Data source: Congressional Budget Office, using data from IQVIA Institute for Human Data Science, Medicine Spending and Affordability in the United States: Understanding Patients’ Costs for Medicines (August 2020), Exhibit 24, <https://tinyurl.com/5655tnoc>; IMS Institute for Healthcare Informatics, Medicines Use and Spending Shifts: A Review of the Use of Medicines in the U.S. in 2014 (April 2015), p. 40, <https://tinyurl.com/3bk9oufn>, and Medicine Use and Shifting Costs of Healthcare: A Review of the Use of Medicines in the United States in 2013 (April 2014), Appendix 8, <https://go.usa.gov/xsaFR>. See <www.cbo.gov/publication/57025#data>.
 
 Therapeutic classes in the figure are ranked in order of 2019 spending. The figure excludes “other cardiovasculars” (ranked 12th in 2019, with total spending of $10.1 billion) because 2009 data for that class could not be found.
 
@@ -190,14 +187,13 @@ In May 2020, the Department of Health and Human Services initiated “Operation 
 
 The parallel execution of several stages of development that would usually be conducted in sequence, such as combining phase I and phase II clinical trials or building manufacturing capacity while the trials are still under way, has allowed pharmaceutical manufacturers to advance much more quickly through the development process than is typical for vaccines.2 One year after the first case of COVID-19 was diagnosed in the United States, three of the vaccines supported by BARDA funding had received emergency use authorizations from the FDA, and two other vaccines were in phase III clinical trials. (It ordinarily takes several years of research and testing before a candidate vaccine enters phase III clinical trials.3 Seasonal influenza vaccines take much less time to develop and approve because their technologies, and the regulatory and licensing procedures for those vaccines, have been used before.) According to the World Health Organization, more than 200 candidate COVID-19 vaccines were in development in February 2021.4
 
+1. Most of the manufacturers have also received research support from or signed advance-purchase agreements with the European Union, several national governments, and two global partnerships supported by foundations and other donors (Coalition for Epidemic Preparedness Innovations and Gavi, the Vaccine Alliance). See, for example, Christopher M. Snyder and others, “Designing Pull Funding for a COVID-19 Vaccine,” Health Affairs, vol. 39, no. 9 (September 2020), pp. 1633–1642, <https://doi.org/10.1377/hlthaff.2020.00646>.
 
-1. Most of the manufacturers have also received research support from or signed advance-purchase agreements with the European Union, several national governments, and two global partnerships supported by foundations and other donors (Coalition for Epidemic Preparedness Innovations and Gavi, the Vaccine Alliance). See, for example, Christopher M. Snyder and others, “Designing Pull Funding for a COVID-19 Vaccine,” Health Affairs, vol. 39, no. 9 (September 2020), pp. 1633–1642, https://doi.org/10.1377/hlthaff.2020.00646.
+2. See Nicole Lurie and others, “Developing Covid-19 Vaccines at Pandemic Speed,” New England Journal of Medicine, vol. 382 (May 21, 2020), pp. 1969-1973, <https://doi.org/10.1056/NEJMp2005630>.
 
-2. See Nicole Lurie and others, “Developing Covid-19 Vaccines at Pandemic Speed,” New England Journal of Medicine, vol. 382 (May 21, 2020), pp. 1969-1973, https://doi.org/10.1056/NEJMp2005630.
+3. See Wellcome Trust, “The 5 Stages of Vaccine Development” (accessed January 15, 2021), <https://tinyurl.com/y6rxbbuf>.
 
-3. See Wellcome Trust, “The 5 Stages of Vaccine Development” (accessed January 15, 2021), https://tinyurl.com/y6rxbbuf.
-
-4. See World Health Organization, “COVID-19 Vaccines” (accessed March 24, 2021), https://tinyurl.com/fpdcc777.
+4. See World Health Organization, “COVID-19 Vaccines” (accessed March 24, 2021), <https://tinyurl.com/fpdcc777>.
 
 Factors That Influence R&D Spending
 Pharmaceutical companies invest in R&D in anticipation of future profits. For each drug that a company considers pursuing, anticipated returns depend on three main factors: the expected lifetime global revenue from the drug (minus its manufacturing and marketing costs), the new drug’s likely R&D costs, and policies that affect the supply of and demand for prescription drugs. When the anticipation of future profits is higher, companies invest more in R&D and produce more new drugs, CBO estimates. Similarly, if expectations about prices and profits were lower, companies would invest in less R&D, and fewer drugs would be developed (see Box 3).
@@ -208,9 +204,9 @@ If expected profitability of new drugs declined—because of a change in federal
 
 The Congressional Budget Office’s analysis of H.R. 3 in the 116th Congress illustrates those effects. That bill would have required the Secretary of Health and Human Services to negotiate prices for drugs—primarily those for which spending was highest—and to subject manufacturers who did not participate in negotiations to an excise tax. In that analysis, CBO concluded that the bill would reduce drug companies’ expectations about future revenues because of the new negotiating leverage of the Secretary. The prospect of such lower revenues would make investments in R&D less attractive to pharmaceutical companies. CBO estimated that under the bill, approximately 8 fewer drugs would be introduced to the U.S. market over the 2020–2029 period and about 30 fewer drugs over the subsequent 10 years.1 Those estimates were in the middle of the distribution of possible outcomes, in CBO’s assessment, and were uncertain. CBO’s analysis is in line with a broader literature that has found a positive relationship between drug prices and R&D efforts.2
 
-1. See Congressional Budget Office, letter to the Honorable Frank Pallone Jr. regarding the budgetary effects of H.R. 3, the Elijah Cummings Lower Drug Costs Now Act (December 10, 2019), www.cbo.gov/publication/55936.
+1. See Congressional Budget Office, letter to the Honorable Frank Pallone Jr. regarding the budgetary effects of H.R. 3, the Elijah Cummings Lower Drug Costs Now Act (December 10, 2019), <www.cbo.gov/publication/55936>.
 
-2. See Margaret E. Blume-Kohout and Neeraj Sood, “Market Size and Innovation: Effects of Medicare Part D on Pharmaceutical Research and Development,” Journal of Public Economics, vol. 97 (January 2013), pp. 327–336, https://doi.org/10.1016/j.jpubeco.2012.10.003; Daron Acemoglu and Joshua Linn, “Market Size in Innovation: Theory and Evidence From the Pharmaceutical Industry,” Quarterly Journal of Economics, vol. 119, no. 3 (August 2004), pp. 1049–1090, https://doi.org/10.1162/0033553041502144; and Pierre Dubois and others, “Market Size and Pharmaceutical Innovation,” RAND Journal of Economics, vol. 46, no. 4 (Winter 2015), pp. 844–871, https://doi.org/10.1111/1756-2171.12113.
+2. See Margaret E. Blume-Kohout and Neeraj Sood, “Market Size and Innovation: Effects of Medicare Part D on Pharmaceutical Research and Development,” Journal of Public Economics, vol. 97 (January 2013), pp. 327–336, <https://doi.org/10.1016/j.jpubeco.2012.10.003>; Daron Acemoglu and Joshua Linn, “Market Size in Innovation: Theory and Evidence From the Pharmaceutical Industry,” Quarterly Journal of Economics, vol. 119, no. 3 (August 2004), pp. 1049–1090, <https://doi.org/10.1162/0033553041502144>; and Pierre Dubois and others, “Market Size and Pharmaceutical Innovation,” RAND Journal of Economics, vol. 46, no. 4 (Winter 2015), pp. 844–871, <https://doi.org/10.1111/1756-2171.12113>.
 
 Anticipated Revenues
 A company’s expectations about the revenues it could earn from a drug depend on the prices that the company anticipates the drug could command in various markets around the world and the quantities that the company anticipates might be purchased at those prices. Those expectations are informed by the prices and sales volumes observed for existing drugs in various markets. For established drug companies, current revenue streams from existing products also provide an important source of financing for their R&D projects.
@@ -231,10 +227,9 @@ Figure 5.
 Worldwide and Domestic Revenues of PhRMA Member Firms
 Billions of 2019 Dollars
 
-
 Revenues from drug sales have grown substantially since 1980, although that growth was interrupted by patent expirations of some widely used drugs and by the 2007–2009 recession. Revenue growth has since resumed, in part due to expensive new drugs.
 
-Data source: Congressional Budget Office, using data from PhRMA, 2019 PhRMA Annual Membership Survey, Table 4 (PhRMA, 2019), https://tinyurl.com/ycvneve7 (PDF, 2.15 MB). See www.cbo.gov/publication/57025#data.
+Data source: Congressional Budget Office, using data from PhRMA, 2019 PhRMA Annual Membership Survey, Table 4 (PhRMA, 2019), <https://tinyurl.com/ycvneve7> (PDF, 2.15 MB). See <www.cbo.gov/publication/57025#data>.
 
 PhRMA revenue data reflect payments received by manufacturers, excluding cash discounts, Medicaid rebates, returns, and allowances for marketing expenses.
 
@@ -312,10 +307,9 @@ Figure 6.
 Federal Funding for the National Institutes of Health, Fiscal Years 1995 to 2020
 Billions of 2019 Dollars
 
-
 Large increases in funding for NIH—the locus of much of the federal government’s basic biomedical research support—in the late 1990s and early 2000s preceded a decade of declining funding. Since 2016, NIH funding has increased annually.
 
-Data source: Congressional Budget Office, using data from National Institutes of Health, Office of Budget. See www.cbo.gov/publication/57025#data.
+Data source: Congressional Budget Office, using data from National Institutes of Health, Office of Budget. See <www.cbo.gov/publication/57025#data>.
 
 NIH = National Institutes of Health.
 
@@ -383,145 +377,144 @@ More recently, federal policymakers have allowed the use of “surrogate endpoin
 
 The use of surrogate endpoints has helped neutralize a tendency in privately funded research to emphasize treatments that can be commercialized more quickly, which can result in too little investment in clinically valuable treatments that would take longer to develop.69 Speedier clinical trials can also benefit patients by hastening the introduction of life-extending therapies like the HIV antiretroviral treatments developed in the 1990s.70 However, relying on surrogate endpoints means that consumers might spend money on some drugs that would turn out to have little clinically meaningful effect.71
 
-1. See Pharmaceutical Research and Manufacturers of America, 2020 PhRMA Annual Membership Survey (PhRMA, 2020), https://tinyurl.com/ydh6p64t, and 2019 PhRMA Annual Membership Survey (PhRMA, 2019), https://tinyurl.com/ycvneve7 (PDF, 2.15 MB).
+1. See Pharmaceutical Research and Manufacturers of America, 2020 PhRMA Annual Membership Survey (PhRMA, 2020), <https://tinyurl.com/ydh6p64t>, and 2019 PhRMA Annual Membership Survey (PhRMA, 2019), <https://tinyurl.com/ycvneve7> (PDF, 2.15 MB).
 
 2. The total includes only research funded by PhRMA member firms, including any contract research funded by those firms and performed on their behalf by universities or other contract-research laboratories. In particular, the PhRMA total does not include expenditures to acquire the R&D assets (such as drugs in development) of another firm.
 
-3. See National Science Foundation, “Business Enterprise Research and Development Survey” (accessed February 25, 2021), www.nsf.gov/statistics/srvyberd/.
+3. See National Science Foundation, “Business Enterprise Research and Development Survey” (accessed February 25, 2021), <www.nsf.gov/statistics/srvyberd/>.
 
-4. See Pharmaceutical Research and Manufacturers of America, 2019 PhRMA Annual Membership Survey (PhRMA, 2019), Table 2, https://tinyurl.com/ycvneve7 (PDF, 2.15 MB).
+4. See Pharmaceutical Research and Manufacturers of America, 2019 PhRMA Annual Membership Survey (PhRMA, 2019), Table 2, <https://tinyurl.com/ycvneve7> (PDF, 2.15 MB).
 
 5. That range applies to average R&D intensity for the approximately 4,000 firms in the Standard & Poor’s (S&P) Total Market Index, a combination of the S&P 500 Index and the S&P Completion Index (an index of the total U.S. stock market, excluding firms in the S&P 500). CBO chose the Total Market Index as a basis of comparison because of its breadth.
 
-6. See Congressional Budget Office, Prices for and Spending on Specialty Drugs in Medicare Part D and Medicaid (March 2019), www.cbo.gov/publication/54964.
+6. See Congressional Budget Office, Prices for and Spending on Specialty Drugs in Medicare Part D and Medicaid (March 2019), <www.cbo.gov/publication/54964>.
 
 7. Unobserved rebates are paid by manufacturers to insurers or buyers and are considered proprietary information.
 
-8. See Department of Veterans Affairs, “Hepatitis C Medications: An Overview for Patients” (accessed March 16, 2021), https://go.usa.gov/xs7qe.
+8. See Department of Veterans Affairs, “Hepatitis C Medications: An Overview for Patients” (accessed March 16, 2021), <https://go.usa.gov/xs7qe>.
 
-9. See IQVIA Institute for Human Data Science, Medicine Use and Spending in the U.S. (April 2018), p. 37, https://tinyurl.com/yd5cnvrl.
+9. See IQVIA Institute for Human Data Science, Medicine Use and Spending in the U.S. (April 2018), p. 37, <https://tinyurl.com/yd5cnvrl>.
 
-10. See Qi Sun and Mindy Z. Xiaolan, “Financing Intangible Capital,” Journal of Financial Economics, vol. 133, no. 3 (September 2019), pp. 564-588, https://doi.org/10.1016/j.jfineco.2019.04.003; Bronwyn Hall and Josh Lerner, “The Financing of R&D and Innovation,” in Bronwyn H. Hall and Nathan Rosenberg, eds., Handbook of the Economics of Innovation, vol. 1 (North Holland, 2010), pp. 609–639; and Thomas W. Bates, Kathleen M. Kahle, and René M. Stulz, “Why Do U.S. Firms Hold So Much More Cash Than They Used To?” The Journal of Finance, vol. 64, no. 5 (October 2009), pp. 1985–2021, https://doi.org/10.1111/j.1540-6261.2009.01492.x.
+10. See Qi Sun and Mindy Z. Xiaolan, “Financing Intangible Capital,” Journal of Financial Economics, vol. 133, no. 3 (September 2019), pp. 564-588, <https://doi.org/10.1016/j.jfineco.2019.04.003>; Bronwyn Hall and Josh Lerner, “The Financing of R&D and Innovation,” in Bronwyn H. Hall and Nathan Rosenberg, eds., Handbook of the Economics of Innovation, vol. 1 (North Holland, 2010), pp. 609–639; and Thomas W. Bates, Kathleen M. Kahle, and René M. Stulz, “Why Do U.S. Firms Hold So Much More Cash Than They Used To?” The Journal of Finance, vol. 64, no. 5 (October 2009), pp. 1985–2021, <https://doi.org/10.1111/j.1540-6261.2009.01492.x>.
 
-11. See R. Glenn Hubbard, “Capital-Market Imperfections and Investment,” Journal of Economic Literature, vol. 36, no. 1 (March 1998), pp. 193–225, www.jstor.org/stable/2564955.
+11. See R. Glenn Hubbard, “Capital-Market Imperfections and Investment,” Journal of Economic Literature, vol. 36, no. 1 (March 1998), pp. 193–225, <www.jstor.org/stable/2564955>.
 
-12. See Government Accountability Office, Drug Industry: Profits, Research and Development Spending, and Merger and Acquisition Deals, GAO-18-40 (November 2017), p. 36, www.gao.gov/products/GAO-18-40.
+12. See Government Accountability Office, Drug Industry: Profits, Research and Development Spending, and Merger and Acquisition Deals, GAO-18-40 (November 2017), p. 36, <www.gao.gov/products/GAO-18-40>.
 
 13. Ibid., p. 37.
 
-14. A company can, within limits, influence its own success rate because that rate depends on the kinds of drugs the company chooses to pursue and to advance into clinical trials and on how the company manages its research process. For estimated success rates, see Chi Heem Wong, Kien Wei Siah, Andrew W Lo, “Estimation of clinical trial success rates and related parameters,” Biostatistics, vol. 20, no. 2 (April 2019), pp. 273–286, https://doi.org/10.1093/biostatistics/kxx069; David Thomas and others, Clinical Development Success Rates 2006–2015 (Biotechnology Innovation Organization, Amplion, and Biomedtracker, 2016), https://tinyurl.com/y2n8rnzb (PDF, 4.02 MB); and Michael Hay and others, “Clinical Development Success Rates for Investigational Drugs,” Nature Biotechnology, vol. 32, no. 1 (2014), pp. 40–51, https://doi.org/10.1038/nbt.2786.
+14. A company can, within limits, influence its own success rate because that rate depends on the kinds of drugs the company chooses to pursue and to advance into clinical trials and on how the company manages its research process. For estimated success rates, see Chi Heem Wong, Kien Wei Siah, Andrew W Lo, “Estimation of clinical trial success rates and related parameters,” Biostatistics, vol. 20, no. 2 (April 2019), pp. 273–286, <https://doi.org/10.1093/biostatistics/kxx069>; David Thomas and others, Clinical Development Success Rates 2006–2015 (Biotechnology Innovation Organization, Amplion, and Biomedtracker, 2016), <https://tinyurl.com/y2n8rnzb> (PDF, 4.02 MB); and Michael Hay and others, “Clinical Development Success Rates for Investigational Drugs,” Nature Biotechnology, vol. 32, no. 1 (2014), pp. 40–51, <https://doi.org/10.1038/nbt.2786>.
 
-15. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), p. 25, https://doi.org/10.1016/j.jhealeco.2016.01.012. The estimate reported in that study is $430 million in 2013 dollars.
+15. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), p. 25, <https://doi.org/10.1016/j.jhealeco.2016.01.012>. The estimate reported in that study is $430 million in 2013 dollars.
 
 16. Ibid., p. 23.
 
-17. See Vinay Prasad and Sham Mailankody, “Research and Development Spending to Bring a Single Cancer Drug to Market and Revenues After Approval,” JAMA Internal Medicine, vol. 177, no. 11 (November 2017), pp. 1569–1575, https://doi.org/10.1001/jamainternmed.2017.3601.
+17. See Vinay Prasad and Sham Mailankody, “Research and Development Spending to Bring a Single Cancer Drug to Market and Revenues After Approval,” JAMA Internal Medicine, vol. 177, no. 11 (November 2017), pp. 1569–1575, <https://doi.org/10.1001/jamainternmed.2017.3601>.
 
-18. See Barbara Bolten, “Fastest Drug Developers and Their Practices,” The CenterWatch Monthly, vol. 24, no. 8 (August 1, 2017), www.centerwatch.com/articles/13284%20.
+18. See Barbara Bolten, “Fastest Drug Developers and Their Practices,” The CenterWatch Monthly, vol. 24, no. 8 (August 1, 2017), <www.centerwatch.com/articles/13284%20>.
 
-19. See IQVIA Institute for Human Data Science, The Changing Landscape of Research and Development (April 2019), p. 7, https://tinyurl.com/y2kpxve8.
+19. See IQVIA Institute for Human Data Science, The Changing Landscape of Research and Development (April 2019), p. 7, <https://tinyurl.com/y2kpxve8>.
 
-20. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), pp. 23–24, https://doi.org/10.1016/j.jhealeco.2016.01.012.
+20. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), pp. 23–24, <https://doi.org/10.1016/j.jhealeco.2016.01.012>.
 
 21. Ibid., pp. 24–25. The corresponding values in the study, reported in millions of 2013 dollars, are $965, $25.3, $58.6, and $255.4, respectively.
 
-22. The values reported here all use a 7 percent cost of capital, as each study includes calculations that use that rate. (In its analysis of the budgetary effects of H.R. 3 for the 116th Congress, CBO used an 8.1 percent cost of capital for drug R&D because that is CBO’s assessment of the cost; using a higher rate tends to slightly increase estimates of R&D costs.) See Congressional Budget Office, letter to the Honorable Frank Pallone Jr. regarding the budgetary effects of H.R. 3, the Elijah E. Cummings Lower Drug Costs Now Act (December 10, 2019), www.cbo.gov/publication/55936. CBO has converted the values reported here to 2019 dollars.
+22. The values reported here all use a 7 percent cost of capital, as each study includes calculations that use that rate. (In its analysis of the budgetary effects of H.R. 3 for the 116th Congress, CBO used an 8.1 percent cost of capital for drug R&D because that is CBO’s assessment of the cost; using a higher rate tends to slightly increase estimates of R&D costs.) See Congressional Budget Office, letter to the Honorable Frank Pallone Jr. regarding the budgetary effects of H.R. 3, the Elijah E. Cummings Lower Drug Costs Now Act (December 10, 2019), <www.cbo.gov/publication/55936>. CBO has converted the values reported here to 2019 dollars.
 
-23. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), p. 26–27, https://doi.org/10.1016/j.jhealeco.2016.01.012. The values reported in the 2016 DiMasi study, in millions of 2013 dollars and using their central discount rate value of 10.5 percent, are $2,558, $1,098, and $1,460, respectively.
+23. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), p. 26–27, <https://doi.org/10.1016/j.jhealeco.2016.01.012>. The values reported in the 2016 DiMasi study, in millions of 2013 dollars and using their central discount rate value of 10.5 percent, are $2,558, $1,098, and $1,460, respectively.
 
 24. Ibid., p. 20.
 
-25. For a critical review of the 2016 study by DiMasi and others, see Sammy Almashat, “Pharmaceutical Research Costs: The Myth of the $2.6 Billion Pill” (Public Citizen, September 2017), https://tinyurl.com/y4kb4xoq.
+25. For a critical review of the 2016 study by DiMasi and others, see Sammy Almashat, “Pharmaceutical Research Costs: The Myth of the $2.6 Billion Pill” (Public Citizen, September 2017), <https://tinyurl.com/y4kb4xoq>.
 
-26. See Christopher P. Adams and Van V. Brantner, “Estimating the Cost of New Drug Development: Is It Really $802 Million?” Health Affairs, vol. 25, no. 2 (March/April 2006), pp. 420–428, https://doi.org/10.1377/hlthaff.25.2.420.
+26. See Christopher P. Adams and Van V. Brantner, “Estimating the Cost of New Drug Development: Is It Really $802 Million?” Health Affairs, vol. 25, no. 2 (March/April 2006), pp. 420–428, <https://doi.org/10.1377/hlthaff.25.2.420>.
 
-27. See Olivier J. Wouters, Martin McKee, and Jeroen Luyten, “Estimated Research and Development Investment Needed to Bring a New Medicine to Market, 2009–2018,” Journal of the American Medical Association, vol. 323, no. 9 (2020), pp. 844–853, https://doi.org/10.1001/jama.2020.1166. The study’s central published values differ from those reported above: they are expressed in 2018 dollars and use a 10.5 percent cost of capital. The authors also estimated R&D costs using a 7 percent discount rate.
+27. See Olivier J. Wouters, Martin McKee, and Jeroen Luyten, “Estimated Research and Development Investment Needed to Bring a New Medicine to Market, 2009–2018,” Journal of the American Medical Association, vol. 323, no. 9 (2020), pp. 844–853, <https://doi.org/10.1001/jama.2020.1166>. The study’s central published values differ from those reported above: they are expressed in 2018 dollars and use a 10.5 percent cost of capital. The authors also estimated R&D costs using a 7 percent discount rate.
 
-28. See Vinay Prasad and Sham Mailankody, “Research and Development Spending to Bring a Single Cancer Drug to Market and Revenues After Approval,” JAMA Internal Medicine, vol. 177, no. 11 (November 2017), pp. 1569–1575, https://doi.org/10.1001/jamainternmed.2017.3601. The estimates reported in the study are in 2017 dollars.
+28. See Vinay Prasad and Sham Mailankody, “Research and Development Spending to Bring a Single Cancer Drug to Market and Revenues After Approval,” JAMA Internal Medicine, vol. 177, no. 11 (November 2017), pp. 1569–1575, <https://doi.org/10.1001/jamainternmed.2017.3601>. The estimates reported in the study are in 2017 dollars.
 
-29. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), p. 20, https://doi.org/10.1016/j.jhealeco.2016.01.012. The estimate is based on the authors’ comparison of their 2016 findings with an estimate they published in 2007 ($1.2 billion, in 2005 dollars) using the same methods. See Joseph A. DiMasi and Henry G. Grabowski, “The Cost of Biopharmaceutical R&D: Is Biotech Different?” Managerial and Decision Economics, vol. 28, no. 4-5 (June–August 2007), pp. 469–479, https://doi.org/10.1002/mde.1360.
+29. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), p. 20, <https://doi.org/10.1016/j.jhealeco.2016.01.012>. The estimate is based on the authors’ comparison of their 2016 findings with an estimate they published in 2007 ($1.2 billion, in 2005 dollars) using the same methods. See Joseph A. DiMasi and Henry G. Grabowski, “The Cost of Biopharmaceutical R&D: Is Biotech Different?” Managerial and Decision Economics, vol. 28, no. 4-5 (June–August 2007), pp. 469–479, <https://doi.org/10.1002/mde.1360>.
 
-30. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), Table 1, https://doi.org/10.1016/j.jhealeco.2016.01.012.
+30. See Joseph A. DiMasi, Henry G. Grabowski, and Ronald W. Hansen, “Innovation in the Pharmaceutical Industry: New Estimates of R&D Costs,” Journal of Health Economics, vol. 47 (May 2016), Table 1, <https://doi.org/10.1016/j.jhealeco.2016.01.012>.
 
-31. See Chi Heem Wong, Kien Wei Siah, and Andrew W. Lo, “Estimation of Clinical Trial Success Rates and Related Parameters,” Biostatistics, vol. 20, no. 2 (April 2019), pp. 273–286. https://doi.org/10.1093/biostatistics/kxx069; and Jorge Mestre-Ferrandiz, Jon Sussex, and Adrian Towse, The R&D Cost of a New Medicine (Office of Health Economics, United Kingdom, 2012).
+31. See Chi Heem Wong, Kien Wei Siah, and Andrew W. Lo, “Estimation of Clinical Trial Success Rates and Related Parameters,” Biostatistics, vol. 20, no. 2 (April 2019), pp. 273–286. <https://doi.org/10.1093/biostatistics/kxx069>; and Jorge Mestre-Ferrandiz, Jon Sussex, and Adrian Towse, The R&D Cost of a New Medicine (Office of Health Economics, United Kingdom, 2012).
 
-32. See Anup Malani and Tomas J. Philipson, Can Medical Progress Be Sustained? Implications of the Link Between Development and Output Markets, Working Paper 17011 (National Bureau of Economic Research, September 2012), www.nber.org/papers/w17011.
+32. See Anup Malani and Tomas J. Philipson, Can Medical Progress Be Sustained? Implications of the Link Between Development and Output Markets, Working Paper 17011 (National Bureau of Economic Research, September 2012), <www.nber.org/papers/w17011>.
 
-33. See Darius N. Lakdawalla, “Economics of the Pharmaceutical Industry,” Journal of Economic Literature, vol. 56, no. 2 (June 2018), p. 401, https://doi.org/10.1257/jel.20161327.
+33. See Darius N. Lakdawalla, “Economics of the Pharmaceutical Industry,” Journal of Economic Literature, vol. 56, no. 2 (June 2018), p. 401, <https://doi.org/10.1257/jel.20161327>.
 
-34. See Centers for Medicare & Medicaid Services, National Health Expenditures Data, “NHE Tables” (accessed December 16, 2020), Table 16, https://go.usa.gov/xASdV. In the table, the sum of expenditures by Medicare, Medicaid, and “Other Health Insurance Programs” (primarily the Veterans Health Administration, TRICARE, and the Children’s Health Insurance Program) accounts for 40 percent of total retail expenditures on prescription drugs in 2019.
+34. See Centers for Medicare & Medicaid Services, National Health Expenditures Data, “NHE Tables” (accessed December 16, 2020), Table 16, <https://go.usa.gov/xASdV>. In the table, the sum of expenditures by Medicare, Medicaid, and “Other Health Insurance Programs” (primarily the Veterans Health Administration, TRICARE, and the Children’s Health Insurance Program) accounts for 40 percent of total retail expenditures on prescription drugs in 2019.
 
-35. See Margaret E. Blume-Kohout and Neeraj Sood, “Market Size and Innovation: Effects of Medicare Part D on Pharmaceutical Research and Development,” Journal of Public Economics, vol. 97 (January 2013), pp. 327–336, https://doi.org/10.1016/j.jpubeco.2012.10.003; and David Dranove, Craig Garthwaite, and Manuel I. Harmosilla, Expected Profits and the Scientific Novelty of Innovation, Working Paper 27093 (National Bureau of Economic Research, May 2020), www.nber.org/papers/w27093.
+35. See Margaret E. Blume-Kohout and Neeraj Sood, “Market Size and Innovation: Effects of Medicare Part D on Pharmaceutical Research and Development,” Journal of Public Economics, vol. 97 (January 2013), pp. 327–336, <https://doi.org/10.1016/j.jpubeco.2012.10.003>; and David Dranove, Craig Garthwaite, and Manuel I. Harmosilla, Expected Profits and the Scientific Novelty of Innovation, Working Paper 27093 (National Bureau of Economic Research, May 2020), <www.nber.org/papers/w27093>.
 
-36. For an analysis of likely effects of such a policy change on individuals’ decisions about health insurance and consumption of health-care services in general, see Congressional Budget Office, Options for Reducing the Deficit: 2019 to 2028 (December 2018), pp. 235–236, www.cbo.gov/publication/54667.
+36. For an analysis of likely effects of such a policy change on individuals’ decisions about health insurance and consumption of health-care services in general, see Congressional Budget Office, Options for Reducing the Deficit: 2019 to 2028 (December 2018), pp. 235–236, <www.cbo.gov/publication/54667>.
 
-37. See Margaret E. Blume-Kohout, “Does Targeted, Disease-Specific Public Research Funding Influence Pharmaceutical Innovation?” Journal of Policy Analysis and Management, vol. 31, no. 3 (Summer 2012), pp. 641–660, https://doi.org/10.1002/pam.21640; and Michael R. Ward and David Dranove, “The Vertical Chain of Research and Development in the Pharmaceutical Industry,” Economic Inquiry, vol. 33, no. 1 (January 1995), pp. 70–87, https://tinyurl.com/z7huxuxv.
+37. See Margaret E. Blume-Kohout, “Does Targeted, Disease-Specific Public Research Funding Influence Pharmaceutical Innovation?” Journal of Policy Analysis and Management, vol. 31, no. 3 (Summer 2012), pp. 641–660, <https://doi.org/10.1002/pam.21640>; and Michael R. Ward and David Dranove, “The Vertical Chain of Research and Development in the Pharmaceutical Industry,” Economic Inquiry, vol. 33, no. 1 (January 1995), pp. 70–87, <https://tinyurl.com/z7huxuxv>.
 
-38. See Kavya Sekar, National Institutes of Health (NIH) Funding, FY1995–FY2021, Report R43341, version 39 (Congressional Research Service, May 12, 2020), https://go.usa.gov/xshZu. Nominal funding levels have been adjusted for inflation by CBO using the gross domestic price index.
+38. See Kavya Sekar, National Institutes of Health (NIH) Funding, FY1995–FY2021, Report R43341, version 39 (Congressional Research Service, May 12, 2020), <https://go.usa.gov/xshZu>. Nominal funding levels have been adjusted for inflation by CBO using the gross domestic price index.
 
-39. Ekaterina Galkina Cleary and others, “Contribution of NIH Funding to New Drug Approvals 2010–2016,” Proceedings of the National Academy of Sciences, vol. 115, no. 10 (March 6, 2018), pp. 2329–2334. https://doi.org/10.1073/pnas.1715368115.
+39. Ekaterina Galkina Cleary and others, “Contribution of NIH Funding to New Drug Approvals 2010–2016,” Proceedings of the National Academy of Sciences, vol. 115, no. 10 (March 6, 2018), pp. 2329–2334. <https://doi.org/10.1073/pnas.1715368115>.
 
-40. Department of Health and Human Services, Office of the Assistant Secretary for Planning and Evaluation, Report to Congress: Prescription Drug Pricing (May 20, 2020), https://go.usa.gov/xAVns (PDF, 2.04 MB).
+40. Department of Health and Human Services, Office of the Assistant Secretary for Planning and Evaluation, Report to Congress: Prescription Drug Pricing (May 20, 2020), <https://go.usa.gov/xAVns> (PDF, 2.04 MB).
 
-41. See Paul A. David, Bronwyn H. Hall, and Andrew A. Toole, “Is Public R&D a Complement or Substitute for Private R&D? A Review of the Econometric Evidence,” Research Policy, vol. 29, no. 4–5 (April 2000), pp. 497–529, https://doi.org/10.1016/S0048-7333(99)00087-6; and Bettina Becker, “Public R&D Policies and Private R&D Investment: A Survey of the Empirical Evidence,” Journal of Economic Surveys, vol. 29, no. 5 (December 2015), pp. 917–942, https://doi.org/10.1111/joes.12074.
+41. See Paul A. David, Bronwyn H. Hall, and Andrew A. Toole, “Is Public R&D a Complement or Substitute for Private R&D? A Review of the Econometric Evidence,” Research Policy, vol. 29, no. 4–5 (April 2000), pp. 497–529, <https://doi.org/10.1016/S0048-7333(99)00087-6>; and Bettina Becker, “Public R&D Policies and Private R&D Investment: A Survey of the Empirical Evidence,” Journal of Economic Surveys, vol. 29, no. 5 (December 2015), pp. 917–942, <https://doi.org/10.1111/joes.12074>.
 
 42. For additional information, see Wendy H. Schacht, Federal R&D, Drug Discovery, and Pricing: Insights From the NIH-University-Industry Relationship, Report RL32324 (Congressional Research Service, November 30, 2012).
 
-43. See Andrew A. Toole, “Does Public Scientific Research Complement Private Investment in R&D in the Pharma-ceutical Industry?” Journal of Law & Economics, vol. 50, no. 1 (February 2007), pp. 81–104, https://doi.org/10.1086/508314.
+43. See Andrew A. Toole, “Does Public Scientific Research Complement Private Investment in R&D in the Pharma-ceutical Industry?” Journal of Law & Economics, vol. 50, no. 1 (February 2007), pp. 81–104, <https://doi.org/10.1086/508314>.
 
-44. See Pierre Azoulay and others, “Public R&D Investments and Private-Sector Patenting: Evidence From NIH Funding Rules,” Review of Economic Studies, vol. 86, no. 1 (January 2019), pp. 117–15, https://doi.org/10.1093/restud/rdy034.
+44. See Pierre Azoulay and others, “Public R&D Investments and Private-Sector Patenting: Evidence From NIH Funding Rules,” Review of Economic Studies, vol. 86, no. 1 (January 2019), pp. 117–15, <https://doi.org/10.1093/restud/rdy034>.
 
-45. See Austan Goolsbee, “Does Government R&D Policy Mainly Benefit Scientists and Engineers?” American Economic Review, vol. 88, no. 2 (May 1998), pp. 298–302, www.jstor.org/stable/116937.
+45. See Austan Goolsbee, “Does Government R&D Policy Mainly Benefit Scientists and Engineers?” American Economic Review, vol. 88, no. 2 (May 1998), pp. 298–302, <www.jstor.org/stable/116937>.
 
-46. For example, only spending on research deemed to be “technological in nature” qualifies for the credit. See Congressional Budget Office, How Taxes Affect the Incentive to Invest in New Intangible Assets (November 2018), www.cbo.gov/publication/54648.
+46. For example, only spending on research deemed to be “technological in nature” qualifies for the credit. See Congressional Budget Office, How Taxes Affect the Incentive to Invest in New Intangible Assets (November 2018), <www.cbo.gov/publication/54648>.
 
-47. For a history and description of the credit, see Gary Guenther, Research Tax Credit: Current Law and Policy Issues for the 114th Congress, Report RL31181, version 70 (Congressional Research Service, June 18, 2016), https://go.usa.gov/xshBx.
+47. For a history and description of the credit, see Gary Guenther, Research Tax Credit: Current Law and Policy Issues for the 114th Congress, Report RL31181, version 70 (Congressional Research Service, June 18, 2016), <https://go.usa.gov/xshBx>.
 
-48. See Congressional Budget Office, How Taxes Affect the Incentive to Invest in New Intangible Assets (November 2018), www.cbo.gov/publication/54648.
+48. See Congressional Budget Office, How Taxes Affect the Incentive to Invest in New Intangible Assets (November 2018), <www.cbo.gov/publication/54648>.
 
-49. Wesley Yin, “Market Incentives and Pharmaceutical Innovation,” Journal of Health Economics, vol. 27, no. 4 (2008), pp. 1060–1077. https://doi.org/10.1016/j.jhealeco.2008.01.002.
+49. Wesley Yin, “Market Incentives and Pharmaceutical Innovation,” Journal of Health Economics, vol. 27, no. 4 (2008), pp. 1060–1077. <https://doi.org/10.1016/j.jhealeco.2008.01.002>.
 
 50. See New Drug Product Exclusivity, 21 C.F.R. § 314.108 (2020).
 
-51. See Food and Drug Administration, “Biosimilar Development, Review, and Approval” (October 20, 2017), https://go.usa.gov/xASPs.
+51. See Food and Drug Administration, “Biosimilar Development, Review, and Approval” (October 20, 2017), <https://go.usa.gov/xASPs>.
 
-52. See Food and Drug Administration, “Biosimilar Product Information” (December 17, 2020), https://go.usa.gov/xAVna.
+52. See Food and Drug Administration, “Biosimilar Product Information” (December 17, 2020), <https://go.usa.gov/xAVna>.
 
-53. See IQVIA Institute for Human Data Science, Medicine Use and Spending in the U.S.: A Review of 2017 and Outlook to 2022 (April 2018), p. 11. https://tinyurl.com/y36l4bqt.
+53. See IQVIA Institute for Human Data Science, Medicine Use and Spending in the U.S.: A Review of 2017 and Outlook to 2022 (April 2018), p. 11. <https://tinyurl.com/y36l4bqt>.
 
-54. See Food and Drug Administration, “Generic Drugs Undergo Rigorous FDA Scrutiny” (October 8, 2014), https://go.usa.gov/xAVRg, and “Biosimilar Development, Review, and Approval” (October 20, 2017), https://go.usa.gov/xAVR4.
+54. See Food and Drug Administration, “Generic Drugs Undergo Rigorous FDA Scrutiny” (October 8, 2014), <https://go.usa.gov/xAVRg>, and “Biosimilar Development, Review, and Approval” (October 20, 2017), <https://go.usa.gov/xAVR4>.
 
-55. For biologics, see 42 U.S.C. § 262(k)(7)(A) (2018); for orphan drugs, see 21 U.S.C. § 360cc (2018); for small-molecule drugs, see § 355(j)(5)(F)(ii) (2018). Companies can receive an additional six months of exclusivity (beyond its patent exclusivity) if a drug—in any of its formulations, dosages, or approved indications—is designed for pediatric patients. See Food and Drug Administration, “Qualifying for Pediatric Exclusivity Under Section 505A of the Federal Food, Drug, and Cosmetic Act: Frequently Asked Questions on Pediatric Exclusivity” (November 30, 2016), https://go.usa.gov/xAVRP.
+55. For biologics, see 42 U.S.C. § 262(k)(7)(A) (2018); for orphan drugs, see 21 U.S.C. § 360cc (2018); for small-molecule drugs, see § 355(j)(5)(F)(ii) (2018). Companies can receive an additional six months of exclusivity (beyond its patent exclusivity) if a drug—in any of its formulations, dosages, or approved indications—is designed for pediatric patients. See Food and Drug Administration, “Qualifying for Pediatric Exclusivity Under Section 505A of the Federal Food, Drug, and Cosmetic Act: Frequently Asked Questions on Pediatric Exclusivity” (November 30, 2016), <https://go.usa.gov/xAVRP>.
 
-56. See Darius N. Lakdawalla, “Economics of the Pharmaceutical Industry,” Journal of Economic Literature, vol. 56, no. 2 (June 2018), pp. 403–404, https://doi.org/10.1257/jel.20161327.
+56. See Darius N. Lakdawalla, “Economics of the Pharmaceutical Industry,” Journal of Economic Literature, vol. 56, no. 2 (June 2018), pp. 403–404, <https://doi.org/10.1257/jel.20161327>.
 
-57. See Revisions to Payment Policies under the Physician Fee Schedule and Other Revisions to Part B for CY 2018, 82 Fed. Reg. 52976, 53181 (November 15, 2017), www.govinfo.gov/app/details/FR-2017-11-15; and Tony Hagen, “Remove the Disincentives and Biosimilars Will Flourish,” The Center for Biosimilars (July 7, 2020), https://tinyurl.com/acq5f5t3.
+57. See Revisions to Payment Policies under the Physician Fee Schedule and Other Revisions to Part B for CY 2018, 82 Fed. Reg. 52976, 53181 (November 15, 2017), <www.govinfo.gov/app/details/FR-2017-11-15>; and Tony Hagen, “Remove the Disincentives and Biosimilars Will Flourish,” The Center for Biosimilars (July 7, 2020), <https://tinyurl.com/acq5f5t3>.
 
-58. See Amy Finkelstein, “Static and Dynamic Effects of Health Policy: Evidence From the Vaccine Industry,” Quarterly Journal of Economics, vol. 119, no. 2 (May 2004), pp. 527–564, https://doi.org/10.1162/0033553041382166.
+58. See Amy Finkelstein, “Static and Dynamic Effects of Health Policy: Evidence From the Vaccine Industry,” Quarterly Journal of Economics, vol. 119, no. 2 (May 2004), pp. 527–564, <https://doi.org/10.1162/0033553041382166>.
 
-59. See Congressional Budget Office, A Comparison of Brand-Name Drug Prices Among Selected Federal Programs (February 2021), www.cbo.gov/publication/56978.
+59. See Congressional Budget Office, A Comparison of Brand-Name Drug Prices Among Selected Federal Programs (February 2021), <www.cbo.gov/publication/56978>.
 
-60. See Congressional Budget Office, letter to the Honorable Frank Pallone Jr. regarding the budgetary effects of H.R. 3, the Elijah E. Cummings Lower Drug Costs Now Act (December 10, 2019), www.cbo.gov/publication/55936; Christopher Adams and Evan Herrnstadt, CBO’s Model of Drug Price Negotiations Under the Elijah E. Cummings Lower Drug Costs Now Act, Working Paper 2021-01 (Congressional Budget Office, February 2021), www.cbo.gov/publication/56905.
+60. See Congressional Budget Office, letter to the Honorable Frank Pallone Jr. regarding the budgetary effects of H.R. 3, the Elijah E. Cummings Lower Drug Costs Now Act (December 10, 2019), <www.cbo.gov/publication/55936>; Christopher Adams and Evan Herrnstadt, CBO’s Model of Drug Price Negotiations Under the Elijah E. Cummings Lower Drug Costs Now Act, Working Paper 2021-01 (Congressional Budget Office, February 2021), <www.cbo.gov/publication/56905>.
 
-61. See Yan Song and Douglas Barthold, “The Effects of State-Level Pharmacist Regulations on Generic Substitution of Prescription Drugs,” Health Ecoomics, vol. 27, no. 11 (November 2018), pp. 1717-1737. https://doi.org/10.1002/hec.3796.
+61. See Yan Song and Douglas Barthold, “The Effects of State-Level Pharmacist Regulations on Generic Substitution of Prescription Drugs,” Health Ecoomics, vol. 27, no. 11 (November 2018), pp. 1717-1737. <https://doi.org/10.1002/hec.3796>.
 
-62. See Stacie B. Dusetzina and others, “Medicare Part D Plans Rarely Cover Brand-Name Drugs When Generics Are Available,” Health Affairs, vol. 39, no. 8 (August 2020), pp. 1326–1333, https://doi.org/10.1377/hlthaff.2019.01694.
+62. See Stacie B. Dusetzina and others, “Medicare Part D Plans Rarely Cover Brand-Name Drugs When Generics Are Available,” Health Affairs, vol. 39, no. 8 (August 2020), pp. 1326–1333, <https://doi.org/10.1377/hlthaff.2019.01694>.
 
 63. The patent system enables imitation of innovation (such as generic copies of pioneering drugs) by requiring the innovator, in exchange for a patent on a pioneering drug, to disclose sufficient details about the invention to allow “a person having ordinary skill in the art” to replicate it when the patent expires. See 35 U.S.C. § 103 (2018).
 
-64. For legal protection against adverse-event liability, see Aaron S. Kesselheim, Jerry Avorn, and Jeremy A. Greene, “Risk, Responsibility, and Generic Drugs,” New England Journal of Medicine, vol. 367, no. 18 (November 1, 2012), pp. 1679–1681, https://doi.org/10.1056/NEJMp1208781. In the Hatch-Waxman Act, those provisions are balanced by the provision of stronger patent protections to drug innovators, including extension of the statutory period of patent protection by a portion of the time the drug is under FDA review, and five years of ensured market exclusivity before the FDA may approve the first generic copy of a pioneering drug.
+64. For legal protection against adverse-event liability, see Aaron S. Kesselheim, Jerry Avorn, and Jeremy A. Greene, “Risk, Responsibility, and Generic Drugs,” New England Journal of Medicine, vol. 367, no. 18 (November 1, 2012), pp. 1679–1681, <https://doi.org/10.1056/NEJMp1208781>. In the Hatch-Waxman Act, those provisions are balanced by the provision of stronger patent protections to drug innovators, including extension of the statutory period of patent protection by a portion of the time the drug is under FDA review, and five years of ensured market exclusivity before the FDA may approve the first generic copy of a pioneering drug.
 
-65. See Joseph P. Cook, Graeme Hunter, and John A. Vernon, Generic Utilization Rates, Real Pharmaceutical Prices, and Research and Development Expenditures, Working Paper 15723 (National Bureau of Economic Research, February 2010), www.nber.org/papers/w15723.
+65. See Joseph P. Cook, Graeme Hunter, and John A. Vernon, Generic Utilization Rates, Real Pharmaceutical Prices, and Research and Development Expenditures, Working Paper 15723 (National Bureau of Economic Research, February 2010), <www.nber.org/papers/w15723>.
 
-66. See Carmelo Giaccotto, Rexford E. Santerre, and John A. Vernon, “Drug Prices and Research and Development Investment Behavior in the Pharmaceutical Industry,” Journal of Law and Economics, vol. 48, no. 1 (April 2005), pp. 194–214, https://doi.org/10.1086/426882; and F. M. Scherer, Industry Structure, Strategy, and Public Policy (Harper Collins, 1996).
+66. See Carmelo Giaccotto, Rexford E. Santerre, and John A. Vernon, “Drug Prices and Research and Development Investment Behavior in the Pharmaceutical Industry,” Journal of Law and Economics, vol. 48, no. 1 (April 2005), pp. 194–214, <https://doi.org/10.1086/426882>; and F. M. Scherer, Industry Structure, Strategy, and Public Policy (Harper Collins, 1996).
 
-67. See Food and Drug Administration, “Bioavailability and Bioequivalence Studies Submitted in NDAs or INDs—General Considerations” (March 2014), https://go.usa.gov/xAV5f.
+67. See Food and Drug Administration, “Bioavailability and Bioequivalence Studies Submitted in NDAs or INDs—General Considerations” (March 2014), <https://go.usa.gov/xAV5f>.
 
-68. For a comprehensive list of surrogate endpoints used, see Food and Drug Administration, “Table of Surrogate Endpoints That Were the Basis of Drug Approval or Licensure” (March 30, 2021), https://go.usa.gov/xASyF.
+68. For a comprehensive list of surrogate endpoints used, see Food and Drug Administration, “Table of Surrogate Endpoints That Were the Basis of Drug Approval or Licensure” (March 30, 2021), <https://go.usa.gov/xASyF>.
 
-69. See Eric Budish, Benjamin N. Roin, and Heidi Williams, “Do Firms Underinvest in Long-Term Research? Evidence from Cancer Clinical Trials,” American Economic Review, vol. 105, no. 7 (July 2015), pp. 2044–2085. https://doi.org/10.1257/aer.20131176.
+69. See Eric Budish, Benjamin N. Roin, and Heidi Williams, “Do Firms Underinvest in Long-Term Research? Evidence from Cancer Clinical Trials,” American Economic Review, vol. 105, no. 7 (July 2015), pp. 2044–2085. <https://doi.org/10.1257/aer.20131176>.
 
-70. See Mark G. Duggan and William N. Evans, “Estimating the Impact of Medical Innovation: A Case Study of HIV Antiretroviral Treatments,” Forum for Health Economics and Policy, vol. 11, no. 2 (January 2008), pp. 1–37, https://doi.org/10.2202/1558-9544.1102.
+70. See Mark G. Duggan and William N. Evans, “Estimating the Impact of Medical Innovation: A Case Study of HIV Antiretroviral Treatments,” Forum for Health Economics and Policy, vol. 11, no. 2 (January 2008), pp. 1–37, <https://doi.org/10.2202/1558-9544.1102>.
 
-71. See Bishal Gyawali, Spencer Phillips Hey, and Aaron S. Kesselheim, “Assessment of the Clinical Benefit of Cancer Drugs Receiving Accelerated Approval,” JAMA Internal Medicine, vol. 179, no. 7 (May 28, 2019), pp. 906–913, https://doi.org/10.1001/jamainternmed.2019.0462.
-
+71. See Bishal Gyawali, Spencer Phillips Hey, and Aaron S. Kesselheim, “Assessment of the Clinical Benefit of Cancer Drugs Receiving Accelerated Approval,” JAMA Internal Medicine, vol. 179, no. 7 (May 28, 2019), pp. 906–913, <https://doi.org/10.1001/jamainternmed.2019.0462>.

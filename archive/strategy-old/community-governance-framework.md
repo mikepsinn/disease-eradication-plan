@@ -45,6 +45,7 @@ Authority should be earned through demonstrated contribution, not just purchased
 ## Simple Rules
 
 ### 1. Decision Making
+
 - **Routine decisions**: Contributor+ vote required
 - **Major decisions**: Core Team+ vote required  
 - **Strategic direction**: Leadership vote required
@@ -84,6 +85,7 @@ Authority should be earned through demonstrated contribution, not just purchased
 All members must use: "The views expressed are my own and do not represent [Organization]"
 
 ### 3. Conflict Management
+
 - **Disclosure**: All financial interests must be public
 - **Resolution**: Community vote for disputes
 - **Penalties**: Loss of authority for undisclosed conflicts

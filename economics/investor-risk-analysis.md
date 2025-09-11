@@ -39,18 +39,22 @@ As the table shows, we have effectively swapped the near-certainty of high marke
 Because our risk is so specific, we have been able to engineer specific financial and strategic tools to neutralize it.
 
 #### A. The Assurance Contract (Mitigates **Fundraising Risk**)
+
 *   **The Problem:** The "collective action problem." Early investors may hesitate, fearing the project won't attract enough total capital to succeed.
 *   **The Solution:** All initial funds are held in a transparent smart contract escrow. If the fundraising target is not met by a specific deadline, **all capital is automatically returned to investors.** This completely eliminates the risk of investing in a poorly capitalized, doomed-from-the-start effort.
 
 #### B. Metaculus & Dynamic Pricing (Mitigates **Political Risk**)
+
 *   **The Problem:** Political risk is notoriously difficult to quantify.
 *   **The Solution:** We will use a public prediction market (like Metaculus) to create a real-time, transparent probability of the treaty's success. This data will be used to dynamically price the returns on our investment tranches. If the market-perceived risk is high, the offered yield will be higher; if it is low, the yield will be lower. This ensures investors are always being offered a **fair, transparent, and mathematically sound premium for the precise level of political risk they are taking.**
 
 #### C. Front-Loaded Payouts (Mitigates **Timeline Risk**)
+
 *   **The Problem:** Political processes can be slow, and investors' capital could be tied up for years before a return is seen.
 *   **The Solution:** As detailed in our [Cash Flow Model](./dih-treasury-cash-flow-model.md), payouts are aggressively front-loaded. In the first year of treaty inflows, the model is designed to pay out a multiple of the initial investment (e.g., 2.6x in the partial success scenario). This dramatically shortens the time an investor's capital is exposed to risk, from a decade down to just a few years.
 
 #### D. First-Loss Capital (Mitigates **Financial Risk**)
+
 *   **The Problem:** In the event of an unforeseen failure, investors could lose their entire principal.
 *   **The Solution:** We are structuring the capital stack to include a first-loss tranche funded by philanthropic sources and guarantees. This capital provides a buffer that absorbs initial losses, making the senior investment tranches significantly safer and more attractive to institutional capital.
 

@@ -28,6 +28,7 @@ This means that if a contributor performs work when the perceived chance of succ
 ## 2. The Model: How It Works
 
 ### Step 1: Valuing At-Risk Contribution
+
 We use the "Salary + At-Risk Contribution" model to solve the "people need to eat" problem and value the work being put at risk.
 
 - **Determine Market Rate:** Each role has a fair market salary (e.g., Senior Engineer: $200,000/year).
@@ -35,12 +36,14 @@ We use the "Salary + At-Risk Contribution" model to solve the "people need to ea
 - **Calculate At-Risk Contribution:** The remainder is the "at-risk" portion. (e.g., $200k - $120k = **$80,000**). This is the value the contributor is investing in the project.
 
 ### Step 2: Using a Prediction Market as a Risk Oracle
+
 We will use a live prediction market (e.g., on Polymarket or Metaculus) to provide a real-time, decentralized measure of the project's probability of success.
 
 - **The Market:** "Will the 1% Treaty be ratified by at least one G7 nation by 2030?"
 - **The Output:** The market's live probability is our `P(success)`. For example, `P(success) = 2%`.
 
 ### Step 3: Granting "Success Grants" with a Commitment Bonus
+
 For every dollar of at-risk work a contributor performs, they are awarded a corresponding amount of **Success Grants**. To optimally align incentives and conserve the project's cash runway, we apply a **Commitment Bonus** to the at-risk portion, making it mathematically superior to taking cash.
 
 The formula to calculate the grant is:
