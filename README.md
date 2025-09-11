@@ -13,7 +13,7 @@ domains: [cross]
 doc_type: strategy
 ---
 
-War is incredibly stupid. It costs us [$16.5 trillion a year](#global-violence-costs) in wasted time, blown-up buildings, and general human misery.
+War is incredibly stupid. It costs humanity [$16.5 trillion a year](#global-violence-costs) in wasted time, blown-up buildings, and general human misery.
 
 Yet, we spend [$2.72 trillion](#sipri-2024-spending) per year on this idiocy.
 
