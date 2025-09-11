@@ -132,7 +132,7 @@ graph TD;
 
 **Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—your you get to own part of it and vote on how the money gets spent in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Incentive Mechanics](./strategy/1-percent-treaty/victory-bonds-tokenomics.md)).
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—you get to own part of the **$27B+ annual health treasury** and vote on how the money gets spent (see [VICTORY Bonds — Incentive Mechanics](./strategy/1-percent-treaty/victory-bonds-tokenomics.md)).
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 
@@ -156,9 +156,7 @@ The full plan is detailed below. But if you're already convinced, here's how you
 
 **[VICTORY Bonds](./strategy/1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
 
-Here are our two rules for how the money works:
-
-Here are the two simple rules:
+Here are our two simple rules:
 
 1. **We're Going to Try to Make You Filthy Rich:** About 40% returns per year, which beats just about everything. That's ~28x your money back over 10 years.
 2. **But We Won't Forget Why We're Here:** No matter how much money we make, we'll never give more than half to investors. The other half goes to actually curing diseases. Because what's the point of getting rich if everyone you love is dead?
@@ -383,10 +381,10 @@ The worst possible outcome of this plan—total waste—is still a net gain for 
 
 ### The Peace Dividend: The Economic Engine of Victory
 
-The financial power of this model comes from capturing the first, tangible portion of the **$16.5 trillion annual "Cost of Violence"**—the single largest pool of misallocated capital on the planet.
+Here's where our money comes from: Violence costs humanity **$16.5 trillion every year**. That's the biggest pile of wasted money on the planet.
 
-- **The Captured Dividend:** We redirect **$27 billion annually** from military spending to health. This tangible cash flow is the _captured_ portion of the Peace Dividend that directly backs our financial instruments.
-- **The Societal Dividend:** By reducing global conflict drivers by 1%, our intervention unlocks a much larger prize for the world. A 1% reduction of the $16.5T Cost of Violence equates to **$165 billion in annual economic value** returned to society through increased stability and productivity.
+- **The Captured Dividend (What we get):** We redirect **$27 billion annually** from military spending to curing disease. That's our actual cash flow that pays for everything.
+- **The Societal Dividend (What everyone gets):** When we reduce global violence by just 1%, everyone else gets **$165 billion in annual economic value** back through less destruction and more stability.
 
 We capture the first $27B to unlock the full $165B for everyone. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](./economics/peace-dividend-value-capture.md).
 
@@ -462,7 +460,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 17. "Why redirect military spending? Why not just increase the health budget?"
 
-- **Reality:** This is not about nominal dollar figures; it is about the **real allocation of a finite pie of resources**. The world's top scientists, engineers, and manufacturing capacity are a limited resource. What matters is not the absolute dollar amount spent on health, but the _percentage_ of our collective talent and capital dedicated to it, as this is the true surrogate for resource allocation. If we simply "increase health spending" by 10% through new appropriations, but the central bank also expands the money supply and the military budget grows by 10%, **no real resources have been shifted**. It's an inflationary wash. The same scientists and factories will continue to build weapons because that's where the larger share of the economic pie remains. A **direct, treaty-bound reallocation** is the only mechanism that forces a true shift of these finite resources. By cutting 1% from military budgets, we are not just moving dollars; we are freeing up the physicists, data scientists, and supply chains that were serving the military-industrial complex and making them available to cure Alzheimer's. This is how you change the game.
+- **Reality:** This isn't about dollar amounts. It's about where we put our smart people. The world has a limited number of brilliant physicists, engineers, and factories. Right now, most of them work on weapons because that's where the money is. If we just "increase health spending" by 10% but also print more money and grow the military budget by 10%, nothing actually changes. The same smart people keep building bombs because that's still where the bigger paycheck is. A **direct, treaty-bound reallocation** is the only mechanism that forces a true shift of these finite resources. By cutting 1% from military budgets, we are not just moving dollars; we are freeing up the physicists, data scientists, and supply chains that were serving the military-industrial complex and making them available to cure Alzheimer's. This is how you change the game.
 
 ### 18. "Why cut military if others won't?" (Free Rider Problem)
 
@@ -476,7 +474,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **The Challenge:** Foreign nationals funding US elections is illegal; VICTORY bonds risk securities violations.
 
-- **Our Solution:** [Strict legal segregation](./strategy/legal-compliance-framework.md) with expert oversight: **Complete entity separation** (Zero coordination between US and international operations), **Securities compliance** (Utility token structure with proper exemptions - Reg S, Reg A+), **Separate operations in each country** (Different legal entities and lawyers in each country), and **Completely separate systems** (No shared systems, staff, or communication between entities).
+- **Our Solution:** [We keep everything completely separate](./strategy/legal-compliance-framework.md) and hire good lawyers: **Completely separate companies** (Zero coordination between US and international operations), **Following the money rules** (Utility token structure with proper exemptions - Reg S, Reg A+), **Separate operations in each country** (Different legal entities and lawyers in each country), and **Completely separate systems** (No shared systems, staff, or communication between entities).
 
 - **Bottom Line:** Conservative structures with top lawyers solve this.
 
@@ -484,13 +482,13 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **The Challenge:** Stop fake votes across 280 million people.
 
-- **Our Solution:** [Several ways to catch fake votes](./strategy/verification-and-fraud-prevention.md) using computers: **Government ID integration** (Connect with national e-ID systems - Estonia, India, EU), **Biometric verification** (Liveness detection and proof-of-uniqueness partnerships), **AI fraud detection** (Real-time anomaly detection and behavioral analysis), and **Cryptographic verification** (End-to-end verifiable voting with zero-knowledge proofs).
+- **Our Solution:** [Several ways to catch fake votes](./strategy/verification-and-fraud-prevention.md) using computers: **Use government IDs** (Connect with national e-ID systems like Estonia, India, EU), **Fingerprints and face scans** (Make sure you're a real person and not a duplicate), **AI watching for cheaters** (Computers that spot fake patterns and weird behavior), and **Math-based verification** (End-to-end verifiable voting with zero-knowledge proofs).
 
 - **Bottom Line:** We use proven technologies that already verify millions of users globally.
 
 ### 21. "What if this fails? Where's my return?" (Financial Risk)
 
-- **Response:** Our financing follows two simple rules, not the usual Wall Street bullshit. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, compared to the best hedge funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
+- **Response:** Our financing follows two simple rules, not the usual Wall Street bullshit. We're not making money by gambling on stocks or crypto. We're making money by taking a tiny slice of the **$16.5 trillion** humanity wastes on violence every year. The model targets a **~40% CAGR (~28x return)** for early investors, compared to the best hedge funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
 
 - **Mitigation:** Clear milestone gates for funding release; diversified repayment from multiple government commitments.
 
@@ -542,9 +540,9 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
    - Progressive unpause policies tied to remediation completion
    - Guardian modules for pausing non-critical functions under defined conditions
 
-### Beyond Health: A Template for Uncorruptible Governance
+### Beyond Medical Research: A Template for Uncorruptible Governance
 
-This isn't just about protecting health funding - it's an experiment in building the next generation of way better government that doesn't steal. Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that $27B can be managed with:
+This isn't just about protecting research funding - it's an experiment in building the next generation of way better government that doesn't steal. Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that $27B can be managed with:
 
 - **Zero human targets** for violence, kidnapping, or corruption
 - **True community control** through direct token holder governance
@@ -560,7 +558,7 @@ This isn't just about protecting health funding - it's an experiment in building
 - **Environment**: Pay for actual carbon reduction, not paperwork
 - **Social Services**: Get help to people who need it without 47 forms
 
-**The Vision:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually serve the public interest. The DIH treasury becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
+**The Vision:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually work and can't be bribed. The DIH treasury becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
 
 This experiment could usher in a new era of peace, prosperity, and abundance by proving that large-scale public goods can be managed through true decentralization without any centralized control points.
 
@@ -586,11 +584,11 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 **Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [VICTORY Bonds](./economic-models/victory-bond-investment-thesis.md) and profit while their companies benefit.
 
-**Universities:** Massive increase in research grants across all health departments. **Plus:** Administrators and board members can personally invest and profit from the system that funds their institutions.
+**Universities:** Way more research money for all your health departments. And your administrators can personally profit from the system that's funding their institutions.
 
-**Patient advocacy groups:** Direct funding for your cause areas. **Plus:** Leadership can personally invest in the treasury that funds their missions.
+**Patient groups:** Direct funding for whatever disease you're fighting. And your leadership and members can invest in the treasury that funds your cause.
 
-**Government health agencies:** Expanded budgets without fighting for appropriations. **Plus:** Officials can personally invest in the system that boosts their agency's funding.
+**Government health agencies:** Bigger budgets without having to beg Congress. And officials can personally invest in the system that's boosting their agency's funding.
 
 **Two Things at Once:** Your Organization Gets More Funding, You Get Rich
 
@@ -899,14 +897,14 @@ This repository is structured as a book that tells the story of the Decentralize
 
 - **[README.md](./README.md)**: (This File) A high-level executive summary of the problem, the solution, and the plan.
 - **[problem.md](./problem.md)**: **Chapter 1: The Grotesque Misallocation** - A detailed analysis of how humanity misallocates trillions to war and destruction while the systems meant to cure disease are broken.
-- **[solution.md](./solution.md)**: **Chapter 2: The 1% Treaty** - An outline of the simple, rational accord to redirect a fraction of military spending to create a self-funding engine for global health.
+- **[solution.md](./solution.md)**: **Chapter 2: The 1% Treaty** - An outline of the simple, rational accord to redirect a fraction of military spending to create a self-funding engine for eradicating disease.
 - **[dfda.md](./dfda.md)**: **Chapter 3: The Engine of Cures** - An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build. (It's already been proven to work.)
 - **[vision.md](./vision.md)**: **Chapter 4: The World We Build** - A vivid depiction of the future that the DIH and dFDA will create—a world of accelerated innovation and extended human healthspan.
 - **[economics.md](./economics.md)**: **Chapter 5: The Financial Engine** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
 - **[strategy.md](./strategy.md)**: **Chapter 6: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and bribes to get everyone on our side (i.e. humanity).
 - **[proof.md](./proof.md)**: **Chapter 7: Why This Isn't Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
 - **[legal.md](./legal.md)**: **Chapter 8: The Legal Framework** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
-- **[governance.md](./governance.md)**: **Chapter 9: The Governance Model** - An explanation of the decentralized, voting system where the people who paid for this get to decide that will manage the DIH.
+- **[governance.md](./governance.md)**: **Chapter 9: The Governance Model** - How the people who paid for this get to vote on how it works.
 - **[operations.md](./operations.md)**: **Chapter 10: Building the Organization** - The plan for hiring a few very smart people to bootstrap the DIH and then make itself obsolete.
 - **[roadmap.md](./roadmap.md)**: **Chapter 11: The Master Plan** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
 - **[FAQ.md](./FAQ.md)**: **Chapter 12: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
