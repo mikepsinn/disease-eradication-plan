@@ -70,6 +70,7 @@ This repository documents the "War on Disease," a mission to make curing people 
 - **Bad:** "Legal compliance framework" / "Incentive alignment" / "Value creation opportunities"
 - **Always prefer:** The word that sounds more like what your cynical friend would say
 - **Never use:** Corporate euphemisms that hide what you're actually talking about
+- **Keep technical terms:** Use precise technical language when it's clearer than plain English (e.g., "smart contracts" and "blockchain")
 
 ## Contributor Workflow
 
