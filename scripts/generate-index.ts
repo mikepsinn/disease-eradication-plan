@@ -55,26 +55,26 @@ async function generateInventory() {
   }
 
   inventory.sort((a, b) => a.path.localeCompare(b.path));
-
-  const sortedFrontmatterKeys = Array.from(allFrontmatterKeys).sort();
   
   let markdownContent = '# Project File Index\n\n';
   markdownContent += 'This document provides a complete inventory of all markdown files in the repository and their frontmatter.\n\n';
-  
-  const headers = ['File Path', ...sortedFrontmatterKeys];
-  markdownContent += `| ${headers.join(' | ')} |\n`;
-  markdownContent += `|${headers.map(() => '---').join('|')}|\n`;
 
-  inventory.forEach(item => {
-    const row = [item.path, ...sortedFrontmatterKeys.map(key => {
-      const value = item[key];
-      if (value === null || value === undefined) {
-        return '';
+  inventory.forEach((item, index) => {
+    const linkPath = item.path.replace(/ /g, '%20');
+    markdownContent += `### [\`${item.path}\`](./${linkPath})\n`;
+    for (const key in item) {
+      if (key === 'path' || key === 'editor') continue;
+      let value = item[key];
+      if (value instanceof Date) {
+        value = value.toISOString().split('T')[0];
       }
-      const stringValue = String(value);
-      return stringValue.replace(/\r?\n|\r/g, ' ');
-    })];
-    markdownContent += `| ${row.join(' | ')} |\n`;
+      if (value) {
+        markdownContent += `- **${key}:** ${String(value)}\n`;
+      }
+    }
+    if (index < inventory.length - 1) {
+      markdownContent += '\n---\n\n';
+    }
   });
 
   await fs.writeFile(outputFilePath, markdownContent);
