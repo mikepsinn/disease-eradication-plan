@@ -185,6 +185,7 @@ This pattern is mandatory to prevent link rot, provide immediate context, and ke
 - **Internal Links:** Use standard, relative Markdown links (`./`, `../`). Do not use backticks or bare paths for links.
 - **Dollar Sign Escaping:** Always escape dollar signs (`\$`) in regular text to prevent rendering issues (e.g., `\$27B`). Do not escape them inside backticked code blocks.
 - **Code vs. Links:** Use backticks only for code, commands, or literals—not for navigational references.
+- **Sentence Structure:** Each sentence must start on a new line. This makes diffs cleaner, editing easier, and git blame more useful. Break after every period, question mark, or exclamation point.
 
 ## Automation and CI
 
