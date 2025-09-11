@@ -16,6 +16,7 @@
     "dotenv": "^16.4.7",
     "glob": "^10.4.5",
     "gray-matter": "^4.0.3",
+    "ignore": "^7.0.5",
     "js-yaml": "^4.1.0",
     "simple-git": "^3.28.0",
     "yargs": "^18.0.0",
@@ -26,7 +27,7 @@
     "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "lint:md:fix": "markdownlint --config .markdownlint.json --fix \"**/*.md\"",
     "format": "prettier --write \"**/*.md\"",
-    "generate:index": "ts-node scripts/generate-index.ts",
+    "generate:index": "tsx scripts/generate-index.ts",
     "delete-empty-folders": "ts-node scripts/delete-empty-folders.ts",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
     "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix"

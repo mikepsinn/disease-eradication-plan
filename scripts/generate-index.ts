@@ -2,19 +2,10 @@ import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
 import { glob } from 'glob';
+import ignore from 'ignore';
 
 const workspaceRoot = process.cwd();
 const outputFilePath = path.join(workspaceRoot, 'index.md');
-
-async function getGitignorePatterns(): Promise<string[]> {
-    try {
-        const gitignoreContent = await fs.readFile(path.join(workspaceRoot, '.gitignore'), 'utf8');
-        return gitignoreContent.split('\n').filter(line => line.trim() !== '' && !line.startsWith('#'));
-    } catch (error) {
-        console.warn('Could not read .gitignore, proceeding without it.');
-        return [];
-    }
-}
 
 interface FileInventory {
   path: string;
@@ -23,20 +14,26 @@ interface FileInventory {
 
 async function generateInventory() {
   console.log(`Starting inventory generation within: ${workspaceRoot}`);
-  const gitignorePatterns = await getGitignorePatterns();
-  const ignorePatterns = [...gitignorePatterns, 'archive/**', 'index.md'];
-
+  
+  const gitignoreContent = await fs.readFile(path.join(workspaceRoot, '.gitignore'), 'utf8').catch(() => '');
+  const ig = ignore().add(gitignoreContent);
+  ig.add('archive/*');
+  
   const allFiles = await glob('**/*.md', { 
     cwd: workspaceRoot,
-    ignore: ignorePatterns,
     nodir: true,
     absolute: true,
    });
 
+  const filteredFiles = allFiles.filter(file => {
+    const relativePath = path.relative(workspaceRoot, file);
+    return !ig.ignores(relativePath) && relativePath !== 'index.md';
+  });
+
   const inventory: FileInventory[] = [];
   const allFrontmatterKeys = new Set<string>();
 
-  for (const filePath of allFiles) {
+  for (const filePath of filteredFiles) {
     let relativePath = path.relative(workspaceRoot, filePath).replace(/\\/g, '/');
     try {
       const fileContent = await fs.readFile(filePath, 'utf8');
