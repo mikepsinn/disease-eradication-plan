@@ -17,11 +17,19 @@ War is incredibly stupid. It costs us [$16.5 trillion a year](#global-violence-c
 
 Yet, we spend [$2.72 trillion](#sipri-2024-spending) per year on this idiocy.
 
-Meanwhile, aging, death and disease are very gradually destroying the lives of you and everyone you love. Yet we spend 40X less ([$67.5 billion](./reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
+Meanwhile, aging, death and disease are very gradually destroying the lives of you and everyone you love. Yet we spend 40 times less ([$67.5 billion](./reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
 
-Therefore, the **BEST IDEA IN THE WORLD** is for humanity to stop wasting its scarce resources on ever-increasing its capacity for self-destruction and instead use those resources to help the billions of people suffering from disease.
+We spend 40 times more on killing people than on curing them.
 
-However, as this makes far too much sense for governments to ever implement, the **SECOND BEST IDEA IN THE WORLD** is for humanity to redirect just 1% of the $2.7 trillion currently allocated to death and destruction to curing diseases.
+RESULT: We haven't eradicated a single disease in over 50 years! :(
+
+BEST IDEA IN THE WORLD: Humans instead spend that $2.7 trillion on helping each other instead of murdering each other. 
+
+Problem: This makes far too much sense to ever become government policy. 
+
+SECOND BEST IDEA IN THE WORLD: Take just 1% of our murder budget—$27 billion—and spent it on not dying instead? Just 1%. 
+
+We'd still have $2.69 trillion/year left over. That's still enough to kill 67.25 billion people (and we only have 8 billion).
 
 ### But how do we do it?
 
