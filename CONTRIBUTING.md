@@ -10,6 +10,19 @@ dateCreated: "2025-09-09T00:00:00.000Z"
 
 # How to Contribute to the DIH Knowledge Base
 
+## Table of Contents
+- [Core Principles](#core-principles)
+  - [Writing Style Guide](#writing-style-guide)
+- [Contributor Workflow](#contributor-workflow)
+- [Content and Style Standards](#content-and-style-standards)
+  - [1. Information Architecture: Chapters, Sections, and The Appendix](#1-information-architecture-chapters-sections-and-the-appendix)
+  - [2. Quality Assurance and Actionable TODOs](#2-quality-assurance-and-actionable-todos)
+  - [3. Frontmatter Requirements](#3-frontmatter-requirements)
+  - [4. Sourcing and Citation Standard (CRITICAL)](#4-sourcing-and-citation-standard-critical)
+  - [5. Technical Standards](#5-technical-standards)
+  - [6. Naming, Linking, and Formatting](#6-naming-linking-and-formatting)
+- [Automation and CI](#automation-and-ci)
+
 Thank you for your interest in contributing to a plan that could save millions of lives. This document defines the contribution rules, structure, and workflows for this knowledge base. 
 
 We're here because humanity spends 40X more on weapons than on curing diseases. While millions die from preventable illnesses, we waste trillions on the capacity to kill each other. This is not a normal business plan—it's an attempt to fix the most grotesque misallocation of resources in human history.
