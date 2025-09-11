@@ -42,7 +42,7 @@ This repository documents the "War on Disease," a mission to make curing people 
 4. **Humanity:** Does this sound like Kurt Vonnegut wrote it?
 
 **Automatic Red Flags (Rewrite Immediately):**
-- **Superlatives:** "best," "world-class," "revolutionary," "unprecedented"
+- **Superlatives:** "world-class," "revolutionary," "unprecedented"
 - **Buzzwords:** "synergy," "leverage," "activation," "paradigm shift", "stakeholder"
 - **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
 
