@@ -488,27 +488,19 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **Bottom Line:** We use proven technologies that already verify millions of users globally.
 
-### 21. "Isn't this just illegal bribery of leaders?"
-
-- **Direct Answer:** No—we're transparent about using overwhelming legal incentives to align leaders' interests with global health, because the alternative is continued arms races leading to potential human extinction via nuclear winter (a U.S.–Russia exchange is modeled to loft ~150 Tg soot and cause global famine with >5 billion deaths) or AI catastrophe. If "straight-up" rewards are needed for specific leaders, we structure them as performance-based diplomatic grants or economic development packages tied to verifiable treaty compliance—fully compliant with anti-corruption laws like the FCPA.
-
-- **Why This Works Legally and Ethically:** **Legal Framework** (All incentives flow through independent entities with no quid-pro-quo; modeled on existing diplomatic aid packages like US provides $3.8B annual aid to Israel tied to security cooperation), **The Math Is Simple** (When the Pentagon loses $2.5T by accident, redirecting 1% to save lives is more ethical than the status quo of funding destruction), and **Everything Is Public** (All rewards disclosed with blockchain auditing to prevent corruption).
-
-- **Bottom Line:** This isn't hidden bribery; it's rational incentive design to make peace profitable. For nations where standard politics fail, these targeted packages ensure compliance without illegality. We're willing to pay whatever legal price is needed to secure participation, because human survival depends on it.
-
-### 22. "What if this fails? Where's my return?" (Financial Risk)
+### 21. "What if this fails? Where's my return?" (Financial Risk)
 
 - **Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, benchmarked against elite funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
 
 - **Mitigation:** Clear milestone gates for funding release; diversified repayment from multiple government commitments.
 
-### 23. "Can your team actually build this?" (Execution Risk)
+### 22. "Can your team actually build this?" (Execution Risk)
 
 - **Response:** Here's how we're actually going to do this thing: We're going to hire a few very smart people instead of building some enormous bureaucracy that would eat money like a hungry pig. These smart people will then hire other smart people to do the actual work. It's cheaper and it works better. So it goes.
 
 - **Mitigation:** Advisory board of constitutional scholars, DAO experts, and former officials; phased rollout with pilot countries.
 
-### 24. "What if major powers sabotage it?" (Geopolitical Risk)
+### 23. "What if major powers sabotage it?" (Geopolitical Risk)
 
 - **Response:** Start with democratic alliances (US/EU covering 55% of spending), using economic incentives to pull in others—holdouts like Russia (<10% share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification. Alternative: Unchecked geopolitics risks nuclear winter (US–Russia exchange scenarios modeled at ~150 Tg soot leading to >5B famine deaths)—this reduces that by 1% globally even with partial adoption.
 
