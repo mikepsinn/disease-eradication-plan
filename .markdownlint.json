@@ -1,7 +1,7 @@
 {
   "default": true,
   "MD009": false,
-  "MD013": { "line_length": 120 },
+  "MD013": false,
   "MD029": { "style": "ordered" },
   "MD030": false,
   "MD032": false,
