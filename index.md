@@ -452,6 +452,20 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ---
 
+### [`operations/team-incentives.md`](./operations/team-incentives.md)
+- **title:** Dynamic Expected Value Incentive Policy
+- **description:** Defines a sophisticated, real-time, risk-adjusted compensation model based on Expected Value (EV) calculations, using prediction markets to dynamically price risk.
+- **date:** 2025-08-24T00:00:00.000Z
+- **tags:** incentives,tokenomics,team,algorithmic,expected-value,prediction-markets
+- **dateCreated:** 2025-08-24T00:00:00.000Z
+- **topic_id:** team-incentives
+- **canonical:** true
+- **status:** draft
+- **domains:** dih
+- **doc_type:** policy
+
+---
+
 ### [`problem.md`](./problem.md)
 - **title:** The Grotesque Misallocation: Why We're Losing the Human Race
 - **description:** Humanity spends trillions on war and destruction while the systems meant to cure disease are slow, expensive, and exclusionary. This is the core problem we must solve.
@@ -695,6 +709,21 @@ This document provides a complete inventory of all markdown files in the reposit
 - **date:** 2025-01-15T00:00:00.000Z
 - **tags:** free-rider,public-choice-theory,treaty-enforcement,compliance,game-theory,incentives
 - **dateCreated:** 2025-01-15T00:00:00.000Z
+
+---
+
+### [`strategy/global-referendum/global-referendum-implementation.md`](./strategy/global-referendum/global-referendum-implementation.md)
+- **title:** Global Referendum Implementation
+- **description:** Practical design for a secure, globally verifiable referendum to measure consent for the 1% Treaty and DIH funding.
+- **published:** true
+- **date:** 2025-08-12
+- **tags:** referendum,governance,identity,verifiability,privacy,security
+- **dateCreated:** 2025-08-12
+- **topic_id:** referendum-implementation
+- **canonical:** true
+- **status:** active
+- **domains:** treaty
+- **doc_type:** spec
 
 ---
 
