@@ -128,11 +128,11 @@ graph TD;
 
 **Goal:** Make curing people more profitable than killing them.
 
-**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](./economic-models/peace-dividend-value-capture.md) you help create (see [How to Stay Out of Prison](./strategy/legal-compliance-framework.md)).
+**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your proof that you'll get paid from the [$16.5 trillion annual peace dividend](./economic-models/peace-dividend-value-capture.md) you help create (see [How to Stay Out of Prison](./strategy/legal-compliance-framework.md)).
 
 **Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—your earned ownership and governance stake in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Incentive Mechanics](./strategy/1-percent-treaty/victory-bonds-tokenomics.md)).
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—your you get to own part of it and vote on how the money gets spent in the **$27B+ annual health treasury** you helped create by redirecting global military spending (see [VICTORY Bonds — Incentive Mechanics](./strategy/1-percent-treaty/victory-bonds-tokenomics.md)).
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 
@@ -216,8 +216,8 @@ graph TD;
 - Global referendum "Proof-of-Vote" points platform (~$5-10M)
 - Independent expenditures in priority elections (~$800M-1.5B)
 - Targeted legal bribes to co-opt the MIC (~$100-200M)
-- Protocol development and pilot programs (~$250-400M)
-- Legal compliance and treaty framework (~$100-200M)
+- Building the system and testing it (~$250-400M)
+- Staying out of prison and writing the treaty (~$100-200M)
 
 **Annual Returns Once Operational:** $27B+ per year from 1% military budget redirections
 
@@ -264,12 +264,12 @@ Here's our plan: We offer military contractors and politicians a better deal tha
   - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](./economic-models/peace-dividend-value-capture.md)
   - Governance control over $27B annually in captured value from military budget redirection
   - Voting rights on patient subsidies and research funding allocation
-  - Bond value backed by actual treasury growth from treaty implementation ($0 → $27B)
+  - Bond value backed by actual treasury growth from when the treaty actually happens ($0 → $27B)
 
 ### Phase 3: Citizens (Global Population)
 
 - **Who:** Global population (targeting 3.5% = 280M people)
-- **The Bribe:** A large grant of **VOTE points** for each referendum vote—your verifiable claim to real economic value you help create. These represent your earned share of the [$16.5 trillion annual peace dividend](./economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
+- **The Bribe:** A large grant of **VOTE points** for each referendum vote—your proof that you'll get paid real money. These represent your earned share of the [$16.5 trillion annual peace dividend](./economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
 
 ### Phase 4: Politicians ($800M-1.5B Independent Expenditures)
 
@@ -335,7 +335,7 @@ Fair skepticism. Here's why the math actually works:
 
 - [$16.5 trillion annual cost of violence](#global-violence-costs)—we capture 0.16% of this waste
 - Leaders of nations that default face immediate political consequences. We don't enforce this through international courts. We enforce it by giving massive campaign support to leaders who comply and funding their opponents if they don't.
-- This political and financial alignment provides stronger enforcement than any international court.
+- Bribing politicians works better than suing them in international court.
 
 ### 5. We Co-opt Rather Than Compete
 
@@ -458,7 +458,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 16. "Why not just rely on philanthropy?"
 
-- **Reality:** Relying on donations would force us to compete with the very ecosystem we aim to support. Philanthropy is a finite, zero-sum game. A massive fundraising campaign for the DIH would inevitably cannibalize the existing pool of donations, effectively stealing funds from the thousands of vital health charities already doing critical work. This would harm the cause, not help it. Our goal is not to reshuffle a small pot of charitable giving—it is to tap into the multi-trillion dollar firehose of government spending. Furthermore, philanthropy treats the symptoms of a broken system. It doesn't change the underlying political-economic incentives that perpetuate the problem. We are not just trying to fund more research; we are trying to permanently shift the global allocation of capital and talent from destruction to creation. Only a systemic reallocation can achieve that.
+- **Reality:** Relying on donations would force us to compete with the very ecosystem we aim to support. Philanthropy is a finite, zero-sum game. A massive fundraising campaign for the DIH would inevitably cannibalize the existing pool of donations, effectively stealing funds from the thousands of vital health charities already doing critical work. This would harm the cause, not help it. Our goal is not to reshuffle a small pot of charitable giving—it is to tap into the multi-trillion dollar firehose of government spending. Furthermore, philanthropy treats the symptoms of a broken system. It doesn't change why politicians keep doing stupid things for money. We are not just trying to fund more research; we are trying to permanently shift the global allocation of capital and talent from destruction to creation. Only actually moving the money can do that.
 
 ### 17. "Why redirect military spending? Why not just increase the health budget?"
 
@@ -502,7 +502,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 23. "What if major powers sabotage it?" (Geopolitical Risk)
 
-- **Response:** Start with democratic alliances (US/EU covering 55% of spending), using economic incentives to pull in others—holdouts like Russia (<10% share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification. Alternative: Unchecked geopolitics risks nuclear winter (US–Russia exchange scenarios modeled at ~150 Tg soot leading to >5B famine deaths)—this reduces that by 1% globally even with partial adoption.
+- **Response:** Start with friendly countries (US/EU covering 55% of spending), using bribes to pull in others—holdouts like Russia (<10% share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification. Alternative: Unchecked geopolitics risks nuclear winter (US–Russia exchange scenarios modeled at ~150 Tg soot leading to >5B famine deaths)—this reduces that by 1% globally even with partial adoption.
 
 - **Mitigation:** Multi-layered security (AI fraud detection, diplomatic backchannels); focus on mutual benefits over confrontation.
 
@@ -533,7 +533,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 3. **Complete Transparency & Auditability**
    - All treasury addresses published with real-time public dashboards
    - Immutable transaction logs with standardized disbursement tags
-   - Annual smart contract audits and semiannual operational audits with published reports
+   - We check the computer code twice a year and the operations every six months with published reports
    - Hash-committed invoices and budgets for full accountability
 
 4. **Recovery & Response Mechanisms**
@@ -544,7 +544,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### Beyond Health: A Template for Uncorruptible Governance
 
-This isn't just about protecting health funding - it's an experiment in building the next generation of radically more efficient, transparent, and corruption-resistant public institutions. Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that $27B can be managed with:
+This isn't just about protecting health funding - it's an experiment in building the next generation of way better government that doesn't steal. Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that $27B can be managed with:
 
 - **Zero human targets** for violence, kidnapping, or corruption
 - **True community control** through direct token holder governance
@@ -642,7 +642,7 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 
 **Phase 2 (Months 12-24):** Achieve 3.5% global participation; begin independent expenditures in priority elections; first binding referendum votes.
 
-**Phase 3 (Months 24-36):** Secure first national treaty commitments; establish DIH treasury operations; begin institutional funding.
+**Phase 3 (Months 24-36):** Secure first national treaty commitments; establish DIH treasury operations; begin giving money to universities and companies.
 
 **Phase 4 (Months 36-48):** Scale to major powers (US, EU, China); achieve $27B+ annual inflows; full operational deployment.
 
