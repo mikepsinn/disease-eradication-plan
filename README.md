@@ -128,7 +128,7 @@ graph TD;
 
 **Goal:** Make curing people more profitable than killing them.
 
-**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](./economic-models/peace-dividend-value-capture.md) you help create (see [Legal Compliance Framework](./strategy/legal-compliance-framework.md)).
+**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your verifiable claim to a share of the [$16.5 trillion annual peace dividend](./economic-models/peace-dividend-value-capture.md) you help create (see [How to Stay Out of Prison](./strategy/legal-compliance-framework.md)).
 
 **Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
@@ -167,11 +167,11 @@ We pay investors most of their money up front (~$7.23B per year when everything 
 
 ## The DIH Treasury: 80X More Efficient Research
 
-**[Decentralized Institutes of Health (DIH)](./strategy/1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](./problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) protocol** with proven results:
+**[Decentralized Institutes of Health (DIH)](./strategy/1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](./problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) system** with proven results:
 
 - **[80X Greater Efficiency](./reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [$41,000](#trial-cost-41k) to as low as [$500](#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](./reference/recovery-trial.md), which saved over 1 million lives globally.
-- **[$50 Billion in Annual Savings](./economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA protocol is projected to save the global R&D industry ~$50 billion annually—**based on actual performance data, not projections**.
-- **[840,000+ Extra Years of Healthy Life](./economic-models/dfda-cost-benefit-analysis.md):** The protocol is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**This isn't some pie-in-the-sky idea. The Oxford RECOVERY trial already proved you can run medical trials for $500 per patient instead of $41,000. We're just going to do more of that**.
+- **[$50 Billion in Annual Savings](./economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA system is projected to save the global R&D industry ~$50 billion annually—**based on actual performance data, not projections**.
+- **[840,000+ Extra Years of Healthy Life](./economic-models/dfda-cost-benefit-analysis.md):** The system is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**This isn't some pie-in-the-sky idea. The Oxford RECOVERY trial already proved you can run medical trials for $500 per patient instead of $41,000. We're just going to do more of that**.
 
 **Specialized programs fund existing institutions:**
 
@@ -292,7 +292,7 @@ Here's our plan: We offer military contractors and politicians a better deal tha
 
 **Our Superior Offer to Politicians:**
 
-- **Personal Investment Opportunity:** Politicians and their families can directly invest in [VICTORY Bonds](./economic-models/victory-bond-investment-thesis.md) designed to outperform any alternative investment, including defense stocks
+- **Personal Investment Opportunity:** Politicians and their families can directly invest in [VICTORY Bonds](./economic-models/victory-bond-investment-thesis.md) that pay better than anything else they can find, including defense stocks
 - **Campaign Dominance:** Massive independent expenditure support for treaty supporters; equivalent opposition funding for defectors (no coordination)
 - **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the politically safer choice
 - **Political Insurance:** A new, highly popular policy platform that lets politicians claim credit for curing diseases and extending lifespans
@@ -406,9 +406,9 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 3. "A government's promise to pay is unenforceable. This is a fantasy."
 
-- **Reality:** See [Why This Actually Works](#why-this-actually-works) → Financial enforcement is not based on courts, but on creating direct political and financial consequences for individual lobbyists and leaders who defy the mandate from their citizens.
+- **Reality:** See [Why This Actually Works](#why-this-actually-works) → We don't enforce this through courts. We fund campaigns against leaders who break their promises to their own people.
 
-### 4. "This is too operationally complex to build."
+### 4. "This is too too complicated to build."
 
 - **Reality:** We're assembling proven components, not inventing new technology. DAOs like [MakerDAO](#makerdao-scale) already manage billions securely. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for detailed implementation.
 
@@ -450,11 +450,11 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ### 14. "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"
 
-- **Reality:** We're not creating speculative assets—we're using battle-tested financial infrastructure for transparency and corruption resistance. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for our proven approach using technologies that already secure billions.
+- **Reality:** We're not creating speculative assets—we're using proven technology for transparency and corruption resistance. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for our proven approach using technologies that already secure billions.
 
 ### 15. "What stops a few billionaires from buying up all the bonds and seizing the treasury?"
 
-- **Reality:** This is a critical design challenge for any decentralized system. To prevent plutocratic capture, the DIH governance model will incorporate proven mechanisms for equitable voting. This includes **quadratic voting**, where the cost of each additional vote increases, making it prohibitively expensive for any single entity to dominate. We may also implement identity-based systems that grant voting power based on reputation and participation, not just capital. The goal is a system governed by its active stakeholders, not just its wealthiest ones.
+- **Reality:** This is a critical design challenge for any decentralized system. To prevent plutocratic capture, we'll use voting systems that make it impossible for rich people to buy control. This includes **quadratic voting**, where the cost of each additional vote increases, making it prohibitively expensive for any single entity to dominate. We may also implement identity-based systems that grant voting power based on reputation and participation, not just capital. The goal is a system governed by its active stakeholders, not just its wealthiest ones.
 
 ### 16. "Why not just rely on philanthropy?"
 
@@ -476,7 +476,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **The Challenge:** Foreign nationals funding US elections is illegal; VICTORY bonds risk securities violations.
 
-- **Our Solution:** [Strict legal segregation](./strategy/legal-compliance-framework.md) with expert oversight: **Complete entity separation** (Zero coordination between US and international operations), **Securities compliance** (Utility token structure with proper exemptions - Reg S, Reg A+), **Multi-jurisdiction strategy** (Separate legal entities and counsel in each country), and **Technical firewalls** (No shared systems, staff, or communication between entities).
+- **Our Solution:** [Strict legal segregation](./strategy/legal-compliance-framework.md) with expert oversight: **Complete entity separation** (Zero coordination between US and international operations), **Securities compliance** (Utility token structure with proper exemptions - Reg S, Reg A+), **Separate operations in each country** (Different legal entities and lawyers in each country), and **Completely separate systems** (No shared systems, staff, or communication between entities).
 
 - **Bottom Line:** Conservative structures with top lawyers solve this.
 
@@ -484,13 +484,13 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 - **The Challenge:** Stop fake votes across 280 million people.
 
-- **Our Solution:** [Multi-layered verification](./strategy/verification-and-fraud-prevention.md) with AI monitoring: **Government ID integration** (Connect with national e-ID systems - Estonia, India, EU), **Biometric verification** (Liveness detection and proof-of-uniqueness partnerships), **AI fraud detection** (Real-time anomaly detection and behavioral analysis), and **Cryptographic verification** (End-to-end verifiable voting with zero-knowledge proofs).
+- **Our Solution:** [Several ways to catch fake votes](./strategy/verification-and-fraud-prevention.md) using computers: **Government ID integration** (Connect with national e-ID systems - Estonia, India, EU), **Biometric verification** (Liveness detection and proof-of-uniqueness partnerships), **AI fraud detection** (Real-time anomaly detection and behavioral analysis), and **Cryptographic verification** (End-to-end verifiable voting with zero-knowledge proofs).
 
 - **Bottom Line:** We use proven technologies that already verify millions of users globally.
 
 ### 21. "What if this fails? Where's my return?" (Financial Risk)
 
-- **Response:** We've structured financing based on clear principles, not opaque financial engineering. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, compared to the best hedge funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
+- **Response:** Our financing follows two simple rules, not the usual Wall Street bullshit. Our model's high returns are not derived from speculation; they are the direct mathematical result of capturing a tiny fraction of the **$16.5 trillion** currently lost to global violence. The model targets a **~40% CAGR (~28x return)** for early investors, compared to the best hedge funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**. The risk is further mitigated by using **Assurance Contracts** (funds returned if goals aren't met) and first-loss philanthropic capital.
 
 - **Mitigation:** Clear milestone gates for funding release; diversified repayment from multiple government commitments.
 
@@ -604,8 +604,8 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 **Key Solutions:** Address the main objections that could kill this proposal:
 
-- [Free Rider Problem Solution](./strategy/free-rider-solution.md) - Economic enforcement mechanisms
-- [Legal Compliance Framework](./strategy/legal-compliance-framework.md) - Election and securities law compliance
+- [Free Rider Problem Solution](./strategy/free-rider-solution.md) - How we make them pay
+- [How to Stay Out of Prison](./strategy/legal-compliance-framework.md) - Election and securities law compliance
 - [Impact Securities and Digital Public Goods Financing Act (Draft)](./regulatory/impact-securities-reform.md) - Model law to enable compliant, low‑friction financing via on‑chain reporting and impact securities
 - [Verification & Fraud Prevention](./strategy/verification-and-fraud-prevention.md) - Scale verification for 280M people
 
@@ -613,7 +613,7 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 **Treasury:** [DIH funding model](./strategy/1-percent-treaty/decentralized-institutes-of-health.md)
 
-**Coalition:** [Institution partnership framework](./strategy/coalition-building.md)
+**Coalition:** [How institutions can work with us](./strategy/coalition-building.md)
 
 **Treaty:** [Full 1% Treaty text](./strategy/1-percent-treaty/1-percent-treaty.md)
 
@@ -903,10 +903,10 @@ This repository is structured as a book that tells the story of the Decentralize
 - **[dfda.md](./dfda.md)**: **Chapter 3: The Engine of Cures** - An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build. (It's already been proven to work.)
 - **[vision.md](./vision.md)**: **Chapter 4: The World We Build** - A vivid depiction of the future that the DIH and dFDA will create—a world of accelerated innovation and extended human healthspan.
 - **[economics.md](./economics.md)**: **Chapter 5: The Financial Engine** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
-- **[strategy.md](./strategy.md)**: **Chapter 6: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and engineered incentives to align all key stakeholders (i.e. humanity).
+- **[strategy.md](./strategy.md)**: **Chapter 6: How Everyone Wins** - A breakdown of the execution strategy, which uses a global referendum and bribes to get everyone on our side (i.e. humanity).
 - **[proof.md](./proof.md)**: **Chapter 7: Why This Isn't Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
 - **[legal.md](./legal.md)**: **Chapter 8: The Legal Framework** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
-- **[governance.md](./governance.md)**: **Chapter 9: The Governance Model** - An explanation of the decentralized, stakeholder-driven governance model that will manage the DIH.
+- **[governance.md](./governance.md)**: **Chapter 9: The Governance Model** - An explanation of the decentralized, voting system where the people who paid for this get to decide that will manage the DIH.
 - **[operations.md](./operations.md)**: **Chapter 10: Building the Organization** - The plan for hiring a few very smart people to bootstrap the DIH and then make itself obsolete.
 - **[roadmap.md](./roadmap.md)**: **Chapter 11: The Master Plan** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
 - **[FAQ.md](./FAQ.md)**: **Chapter 12: Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
