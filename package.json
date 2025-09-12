@@ -4,6 +4,10 @@
   "description": "",
   "main": "scripts/file-organizer.js",
   "type": "module",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "dependencies": {
     "@ai-sdk/google": "^2.0.12",
     "@modelcontextprotocol/server-filesystem": "^2025.8.21",
