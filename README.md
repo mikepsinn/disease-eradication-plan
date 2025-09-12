@@ -17,7 +17,7 @@ War is incredibly stupid. It costs humanity [$16.5 trillion a year](#global-viol
 
 Yet, we spend [$2.72 trillion](#sipri-2024-spending) per year on this idiocy.
 
-Meanwhile, aging, death and disease are very gradually destroying the lives of you and everyone you love. Yet we spend 40 times less ([$67.5 billion](./book/reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
+Meanwhile, aging, death and disease are very gradually destroying the lives of you and everyone you love. Yet we spend 40 times less ([$67.5 billion](./brain/book/reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
 
 We spend 40 times more on killing people than on curing them.
 
@@ -39,12 +39,12 @@ For every $1 the military-industrial complex spends on lobbying politicians, it 
 
 So here's the plan: We do exactly the same thing in reverse.
 
-We create a [1% Treaty](./book/strategy/1-percent-treaty/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./book/strategy/1-percent-treaty/decentralized-institutes-of-health.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./book/reference/recovery-trial.md) for the most promising new treatments."
+We create a [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./brain/book/reference/recovery-trial.md) for the most promising new treatments."
 
 Getting every government to ratify the treaty requires two things:
 
 1. Prove [3.5% of humanity](#3-5-rule) wants this (that's the magic number for unstoppable political movements).
-2. Spend [\$1-2.5 billion](./book/economic-models/fundraising-and-budget-plan.md) bribing the right people legally.
+2. Spend [\$1-2.5 billion](./brain/book/economic-models/fundraising-and-budget-plan.md) bribing the right people legally.
 
 ### Q: How do we get \$2 billion and persuade the military industrial complex to help?
 
@@ -52,7 +52,7 @@ Getting every government to ratify the treaty requires two things:
 
 Remember World War II? America sold war bonds to fund the fight against fascism. We're doing the same thing, but for disease.
 
-The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
+The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
 
 **The result:** Everyone gets richer by funding cures instead of destruction.
 
@@ -62,7 +62,7 @@ The military industrial complex is composed of humans that are not evil, they ju
 
 ## We're Doing This Backwards
 
-Governments spend [\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024) on ways to kill people and [\$67.5 billion](./book/reference/global-government-medical-research-spending.md) on ways to save them.
+Governments spend [\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024) on ways to kill people and [\$67.5 billion](./brain/book/reference/global-government-medical-research-spending.md) on ways to save them.
 
 That's 40 to 1. Forty times more money for death than for life.
 
@@ -89,7 +89,7 @@ Humanity has two options:
 
 Pick one.
 
-See [1% Treaty](./book/strategy/1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](./book/reference/costs-of-war.md).
+See [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](./brain/book/reference/costs-of-war.md).
 
 ---
 
@@ -128,11 +128,11 @@ graph TD;
 
 **Goal:** Make curing people more profitable than killing them.
 
-**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your proof that you'll get paid from the [$16.5 trillion annual peace dividend](./book/economic-models/peace-dividend-value-capture.md) you help create (see [How to Stay Out of Prison](./book/strategy/legal-compliance-framework.md)).
+**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your proof that you'll get paid from the [$16.5 trillion annual peace dividend](./brain/book/economic-models/peace-dividend-value-capture.md) you help create (see [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)).
 
 **Step 2:** When we hit [3.5% of humanity](#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—you get to own part of the **$27B+ annual health treasury** and vote on how the money gets spent (see [VICTORY Bonds — Incentive Mechanics](./book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)).
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—you get to own part of the **$27B+ annual health treasury** and vote on how the money gets spent (see [VICTORY Bonds — Incentive Mechanics](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)).
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 
@@ -144,7 +144,7 @@ graph TD;
 
 The full plan is detailed below. But if you're already convinced, here's how you can get involved now:
 
-- **Invest in the Solution:** [Buy VICTORY Bonds](./book/strategy/1-percent-treaty/victory-bonds-tokenomics.md) to fund the mission and target a >40% CAGR.
+- **Invest in the Solution:** [Buy VICTORY Bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md) to fund the mission and target a >40% CAGR.
 - **Show Your Support:** [Sign the Global Referendum](https://warondisease.org/referendum) to help build the 3.5% mandate.
 - **Partner with Us:** [Contact our institutions team](mailto:institutions@warondisease.org) to see how your organization can benefit.
 
@@ -154,7 +154,7 @@ The full plan is detailed below. But if you're already convinced, here's how you
 
 ## VICTORY Bonds: Bootstrap Funding Model
 
-**[VICTORY Bonds](./book/strategy/1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
+**[VICTORY Bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
 
 Here are our two simple rules:
 
@@ -165,11 +165,11 @@ We pay investors most of their money up front (~$7.23B per year when everything 
 
 ## The DIH Treasury: 80X More Efficient Research
 
-**[Decentralized Institutes of Health (DIH)](./book/strategy/1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](./book/problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) system** with proven results:
+**[Decentralized Institutes of Health (DIH)](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](./brain/book/problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) system** with proven results:
 
-- **[80X Greater Efficiency](./book/reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [$41,000](#trial-cost-41k) to as low as [$500](#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](./book/reference/recovery-trial.md), which saved over 1 million lives globally.
-- **[$50 Billion in Annual Savings](./book/economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA system is projected to save the global R&D industry ~$50 billion annually—**based on actual performance data, not projections**.
-- **[840,000+ Extra Years of Healthy Life](./book/economic-models/dfda-cost-benefit-analysis.md):** The system is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**This isn't some pie-in-the-sky idea. The Oxford RECOVERY trial already proved you can run medical trials for $500 per patient instead of $41,000. We're just going to do more of that**.
+- **[80X Greater Efficiency](./brain/book/reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [$41,000](#trial-cost-41k) to as low as [$500](#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](./brain/book/reference/recovery-trial.md), which saved over 1 million lives globally.
+- **[$50 Billion in Annual Savings](./brain/book/economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA system is projected to save the global R&D industry ~$50 billion annually—**based on actual performance data, not projections**.
+- **[840,000+ Extra Years of Healthy Life](./brain/book/economic-models/dfda-cost-benefit-analysis.md):** The system is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**This isn't some pie-in-the-sky idea. The Oxford RECOVERY trial already proved you can run medical trials for $500 per patient instead of $41,000. We're just going to do more of that**.
 
 **Specialized programs fund existing institutions:**
 
@@ -209,7 +209,7 @@ graph TD;
 
 **Total Implementation Cost:** $1.2-2.5B over 36 months
 
-**What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](./book/economic-models/fundraising-and-budget-plan.md).
+**What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](./brain/book/economic-models/fundraising-and-budget-plan.md).
 
 - Global referendum "Proof-of-Vote" points platform (~$5-10M)
 - Independent expenditures in priority elections (~$800M-1.5B)
@@ -225,7 +225,7 @@ graph TD;
 
 **The Math:** We're asking for $2.5B to redirect $27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
 
-This simple model ensures that even in conservative scenarios, the DIH remains massively well-funded while providing returns that beat the best hedge funds. For a complete breakdown, see our [Dynamic Cash Flow Model](./book/economic-models/dih-treasury-cash-flow-model.md).
+This simple model ensures that even in conservative scenarios, the DIH remains massively well-funded while providing returns that beat the best hedge funds. For a complete breakdown, see our [Dynamic Cash Flow Model](./brain/book/economic-models/dih-treasury-cash-flow-model.md).
 
 ---
 
@@ -251,15 +251,15 @@ Here's our plan: We offer military contractors and politicians a better deal tha
 
 - **Who:** Wealthy individuals, funds, Anchor Investors
 - **The Bribe:**
-  - **Targeting a >40% CAGR (~28x Return):** We designed this to make you more money than the fanciest hedge funds run by Harvard guys in expensive suits. The math works because we're taking money that's currently being wasted on bombs and using it to cure cancer instead. Two rules about payouts: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](./book/economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](./book/economic-models/dih-treasury-cash-flow-model.md).
+  - **Targeting a >40% CAGR (~28x Return):** We designed this to make you more money than the fanciest hedge funds run by Harvard guys in expensive suits. The math works because we're taking money that's currently being wasted on bombs and using it to cure cancer instead. Two rules about payouts: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](./brain/book/economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](./brain/book/economic-models/dih-treasury-cash-flow-model.md).
   - **VICTORY bonds** that grant governance control over the $27B annual DIH treasury.
-  - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](./book/economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
+  - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](./brain/book/economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
 
 ### Phase 2: VICTORY Bond Buyers ($100-200M Referendum Funding)
 
 - **Who:** Early Backers, health advocates, institutions
 - **The Bribe\*:**
-  - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](./book/economic-models/peace-dividend-value-capture.md)
+  - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](./brain/book/economic-models/peace-dividend-value-capture.md)
   - Governance control over $27B annually in captured value from military budget redirection
   - Voting rights on patient subsidies and research funding allocation
   - Bond value backed by actual treasury growth from when the treaty actually happens ($0 → $27B)
@@ -267,13 +267,13 @@ Here's our plan: We offer military contractors and politicians a better deal tha
 ### Phase 3: Citizens (Global Population)
 
 - **Who:** Global population (targeting 3.5% = 280M people)
-- **The Bribe:** A large grant of **VOTE points** for each referendum vote—your proof that you'll get paid real money. These represent your earned share of the [$16.5 trillion annual peace dividend](./book/economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
+- **The Bribe:** A large grant of **VOTE points** for each referendum vote—your proof that you'll get paid real money. These represent your earned share of the [$16.5 trillion annual peace dividend](./brain/book/economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
 
 ### Phase 4: Politicians ($800M-1.5B Independent Expenditures)
 
 - **Who:** Key legislators in target countries
 - **The Bribe\*:**
-  - **Personal Wealth Creation:** Early access to [VICTORY Bonds](./book/economic-models/victory-bond-investment-thesis.md) with better returns than defense stocks and traditional political corruption
+  - **Personal Wealth Creation:** Early access to [VICTORY Bonds](./brain/book/economic-models/victory-bond-investment-thesis.md) with better returns than defense stocks and traditional political corruption
   - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
   - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
 
@@ -290,7 +290,7 @@ Here's our plan: We offer military contractors and politicians a better deal tha
 
 **Our Superior Offer to Politicians:**
 
-- **Personal Investment Opportunity:** Politicians and their families can directly invest in [VICTORY Bonds](./book/economic-models/victory-bond-investment-thesis.md) that pay better than anything else they can find, including defense stocks
+- **Personal Investment Opportunity:** Politicians and their families can directly invest in [VICTORY Bonds](./brain/book/economic-models/victory-bond-investment-thesis.md) that pay better than anything else they can find, including defense stocks
 - **Campaign Dominance:** Massive independent expenditure support for treaty supporters; equivalent opposition funding for defectors (no coordination)
 - **Electoral Insurance:** The [3.5%](#3-5-rule) public mandate makes supporting the treaty the politically safer choice
 - **Political Insurance:** A new, highly popular policy platform that lets politicians claim credit for curing diseases and extending lifespans
@@ -318,7 +318,7 @@ Fair skepticism. Here's why the math actually works:
 ### 2. The 80X Efficiency Gain Is Already Proven
 
 - Oxford RECOVERY trial: [$500 per patient vs. $41,000 traditional](#recovery-cost-500)—saved over 1 million lives globally
-- NIH RECOVER: [$1.6 billion, zero completed trials in 4 years](./book/reference/recovery-trial.md)
+- NIH RECOVER: [$1.6 billion, zero completed trials in 4 years](./brain/book/reference/recovery-trial.md)
 - **This isn't theoretical. The efficiency gain already happened and saved millions.**
 
 ### 3. Mass Political Mobilization Works
@@ -384,13 +384,13 @@ Here's where our money comes from: Violence costs humanity **$16.5 trillion ever
 - **The Captured Dividend (What we get):** We redirect **$27 billion annually** from military spending to curing disease. That's our actual cash flow that pays for everything.
 - **The Societal Dividend (What everyone gets):** When we reduce global violence by just 1%, everyone else gets **$165 billion in annual economic value** back through less destruction and more stability.
 
-We capture the first $27B to unlock the full $165B for everyone. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](./book/economics/peace-dividend-value-capture.md).
+We capture the first $27B to unlock the full $165B for everyone. For a detailed breakdown, see [The Peace Dividend: Value Capture & Distribution Model](./brain/book/economics/peace-dividend-value-capture.md).
 
 ---
 
 ## VII. OBJECTIONS & RESPONSES
 
-We have answers to the tough questions. For a detailed list of common objections and our responses, please see our [FAQ](./book/FAQ.md).
+We have answers to the tough questions. For a detailed list of common objections and our responses, please see our [FAQ](./brain/book/FAQ.md).
 
 ## VIII. SECURITY & GOVERNANCE
 
@@ -454,21 +454,21 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ## Become a Stakeholder
 
-**[Get your referendum link](./book/strategy/referendum/global-referendum-implementation.md)** → Earn VOTE points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
+**[Get your referendum link](./brain/book/strategy/referendum/global-referendum-implementation.md)** → Earn VOTE points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
 
-**[Request an organization link](./book/strategy/referendum/global-referendum-implementation.md#organization-links)** → Mobilize your organization to earn rewards for verified votes. Access pooled bonus funds for building coalitions.
+**[Request an organization link](./brain/book/strategy/referendum/global-referendum-implementation.md#organization-links)** → Mobilize your organization to earn rewards for verified votes. Access pooled bonus funds for building coalitions.
 
-**[Buy VICTORY bonds](./book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
+**[Buy VICTORY bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
 
-**[Calculate your institution's allocation](./book/strategy/1-percent-treaty/institutional-funding-calculator.md)** → See how much your university/company/nonprofit would receive.
+**[Calculate your institution's allocation](./brain/book/strategy/1-percent-treaty/institutional-funding-calculator.md)** → See how much your university/company/nonprofit would receive.
 
-**[Join the coalition](./book/strategy/coalition-building.md)** → Help coordinate health institutions to support the treaty.
+**[Join the coalition](./brain/book/strategy/coalition-building.md)** → Help coordinate health institutions to support the treaty.
 
 ---
 
 ## For Institutions
 
-**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [VICTORY Bonds](./book/economic-models/victory-bond-investment-thesis.md) and profit while their companies benefit.
+**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [VICTORY Bonds](./brain/book/economic-models/victory-bond-investment-thesis.md) and profit while their companies benefit.
 
 **Universities:** Way more research money for all your health departments. And your administrators can personally profit from the system that's funding their institutions.
 
@@ -488,18 +488,18 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 **Key Solutions:** Address the main objections that could kill this proposal:
 
-- [Free Rider Problem Solution](./book/strategy/free-rider-solution.md) - How we make them pay
-- [How to Stay Out of Prison](./book/strategy/legal-compliance-framework.md) - Election and securities law compliance
-- [Impact Securities and Digital Public Goods Financing Act (Draft)](./book/regulatory/impact-securities-reform.md) - Model law to enable compliant, low‑friction financing via on‑chain reporting and impact securities
-- [Verification & Fraud Prevention](./book/strategy/verification-and-fraud-prevention.md) - Scale verification for 280M people
+- [Free Rider Problem Solution](./brain/book/strategy/free-rider-solution.md) - How we make them pay
+- [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md) - Election and securities law compliance
+- [Impact Securities and Digital Public Goods Financing Act (Draft)](./brain/book/regulatory/impact-securities-reform.md) - Model law to enable compliant, low‑friction financing via on‑chain reporting and impact securities
+- [Verification & Fraud Prevention](./brain/book/strategy/verification-and-fraud-prevention.md) - Scale verification for 280M people
 
-**Strategy:** [The War on Disease: A New Strategy for a New Era](./book/strategy/war-on-disease-strategy.md)
+**Strategy:** [The War on Disease: A New Strategy for a New Era](./brain/book/strategy/war-on-disease-strategy.md)
 
-**Treasury:** [DIH funding model](./book/strategy/1-percent-treaty/decentralized-institutes-of-health.md)
+**Treasury:** [DIH funding model](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md)
 
-**Coalition:** [How institutions can work with us](./book/strategy/coalition-building.md)
+**Coalition:** [How institutions can work with us](./brain/book/strategy/coalition-building.md)
 
-**Treaty:** [Full 1% Treaty text](./book/strategy/1-percent-treaty/1-percent-treaty.md)
+**Treaty:** [Full 1% Treaty text](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md)
 
 ---
 
@@ -520,7 +520,7 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ## Implementation Roadmap
 
-See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./book/strategy/roadmap.md).
+See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./brain/book/strategy/roadmap.md).
 
 **Phase 1 (Months 1-12):** Build global referendum platform; secure initial $250M financing tranche; launch in 5 pilot countries.
 
@@ -530,7 +530,7 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 
 **Phase 4 (Months 36-48):** Scale to major powers (US, EU, China); achieve $27B+ annual inflows; full operational deployment.
 
-**Phase 5 (Years 4+):** Begin the multi-generational endgame. After a successful proof-of-concept period, initiate referendums for incremental increases to the redirection (e.g., to 1.5%, then 2%), creating a perpetual flywheel for peace. For details, see [The Endgame: A Multi-Generational Strategy to Phase Out War](./book/strategy/the-endgame-phasing-out-war.md).
+**Phase 5 (Years 4+):** Begin the multi-generational endgame. After a successful proof-of-concept period, initiate referendums for incremental increases to the redirection (e.g., to 1.5%, then 2%), creating a perpetual flywheel for peace. For details, see [The Endgame: A Multi-Generational Strategy to Phase Out War](./brain/book/strategy/the-endgame-phasing-out-war.md).
 
 **Key Gates:** 100M referendum participants → first $500M independent expenditure cycle → first treaty ratification → first $1B disbursement.
 
@@ -601,7 +601,7 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 
 - **Global government medical research spending (\$67.5B, 2023–2024)**
   > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
-  > — DFDA Wiki, 2025, [Global Government Medical Research Spending](./book/reference/global-government-medical-research-spending.md)
+  > — DFDA Wiki, 2025, [Global Government Medical Research Spending](./brain/book/reference/global-government-medical-research-spending.md)
 
 <a id="pandemics-vs-wars"></a>
 
@@ -781,47 +781,47 @@ This repository is structured as a book that tells the story of the Decentralize
 
 ### The Chapters
 
-- **[README.md](./book/README.md)**: (This File) A high-level executive summary of the problem, the solution, and the plan.
-- **[problem.md](./book/problem.md)**: **Chapter 1: Problem → We Spend More on Bombs Than Cancer Research** - A detailed analysis of how humanity misallocates trillions to war and destruction while the systems meant to cure disease are broken.
-- **[solution.md](./book/solution.md)**: **Chapter 2: Solution → The 1% Treaty** - An outline of the simple, rational accord to redirect a fraction of military spending to create a self-funding engine for eradicating disease.
-- **[dfda.md](./book/dfda.md)**: **Chapter 3: Trials → A Decentralized Autonomous FDA** - An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build. (It's already been proven to work.)
-- **[vision.md](./book/vision.md)**: **Chapter 4: The Vision → A World Without War and Disease** - A vivid depiction of the future that the DIH and dFDA will create—a world of accelerated innovation and extended human healthspan.
-- **[economics.md](./book/economics.md)**: **Chapter 5: Economics → How to Make Peace More Profitable Than War** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
-- **[strategy.md](./book/strategy.md)**: **Chapter 6: Strategy → How to Bribe Literally Everyone** - A breakdown of the execution strategy, which uses a global referendum and bribes to get everyone on our side (i.e. humanity).
-- **[proof.md](./book/proof.md)**: **Chapter 7: The Proof → Why This Isn't as Insane as it Sounds** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
-- **[legal.md](./book/legal.md)**: **Chapter 8: Legal → How to Stay Out of Prison** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
-- **[governance.md](./book/governance.md)**: **Chapter 9: Governance → How the People Who Pay Get to Vote** - How the people who paid for this get to vote on how it works.
-- **[operations.md](./book/operations.md)**: **Chapter 10: Operations → Hiring Smart People and Getting Out of the Way** - The plan for hiring a few very smart people to bootstrap the DIH and then make itself obsolete.
-- **[roadmap.md](./book/roadmap.md)**: **Chapter 11: Roadmap → What Happens Next** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
-- **[FAQ.md](./book/FAQ.md)**: **Chapter 12: FAQ → Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
-- **[call-to-action.md](./book/call-to-action.md)**: **Chapter 13: Join → How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
-- **[CONTRIBUTING.md](./book/CONTRIBUTING.md)**: A guide for all contributors, outlining the core principles, content standards, and information architecture of the project.
+- **[README.md](./brain/book/README.md)**: (This File) A high-level executive summary of the problem, the solution, and the plan.
+- **[problem.md](./brain/book/problem.md)**: **Chapter 1: Problem → We Spend More on Bombs Than Cancer Research** - A detailed analysis of how humanity misallocates trillions to war and destruction while the systems meant to cure disease are broken.
+- **[solution.md](./brain/book/solution.md)**: **Chapter 2: Solution → The 1% Treaty** - An outline of the simple, rational accord to redirect a fraction of military spending to create a self-funding engine for eradicating disease.
+- **[dfda.md](./brain/book/dfda.md)**: **Chapter 3: Trials → A Decentralized Autonomous FDA** - An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build. (It's already been proven to work.)
+- **[vision.md](./brain/book/vision.md)**: **Chapter 4: The Vision → A World Without War and Disease** - A vivid depiction of the future that the DIH and dFDA will create—a world of accelerated innovation and extended human healthspan.
+- **[economics.md](./brain/book/economics.md)**: **Chapter 5: Economics → How to Make Peace More Profitable Than War** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
+- **[strategy.md](./brain/book/strategy.md)**: **Chapter 6: Strategy → How to Bribe Literally Everyone** - A breakdown of the execution strategy, which uses a global referendum and bribes to get everyone on our side (i.e. humanity).
+- **[proof.md](./brain/book/proof.md)**: **Chapter 7: The Proof → Why This Isn't as Insane as it Sounds** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
+- **[legal.md](./brain/book/legal.md)**: **Chapter 8: Legal → How to Stay Out of Prison** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
+- **[governance.md](./brain/book/governance.md)**: **Chapter 9: Governance → How the People Who Pay Get to Vote** - How the people who paid for this get to vote on how it works.
+- **[operations.md](./brain/book/operations.md)**: **Chapter 10: Operations → Hiring Smart People and Getting Out of the Way** - The plan for hiring a few very smart people to bootstrap the DIH and then make itself obsolete.
+- **[roadmap.md](./brain/book/roadmap.md)**: **Chapter 11: Roadmap → What Happens Next** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
+- **[FAQ.md](./brain/book/FAQ.md)**: **Chapter 12: FAQ → Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
+- **[call-to-action.md](./brain/book/call-to-action.md)**: **Chapter 13: Join → How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
+- **[CONTRIBUTING.md](./brain/book/CONTRIBUTING.md)**: A guide for all contributors, outlining the core principles, content standards, and information architecture of the project.
 
 ### The Sections (Supporting Details)
 
-- **[/economics/](./book/economics/)**: Contains detailed financial models, investment theses, and ROI calculations.
-- [investment-thesis.md](./book/economics/investment-thesis.md)
-- [peace-dividend-value-capture.md](./book/economics/peace-dividend-value-capture.md)
-- [dfda-cost-benefit-analysis.md](./book/economics/dfda-cost-benefit-analysis.md)
-- [fundraising/](./book/economics/fundraising/)
-- **[/strategy/](./book/strategy/)**: Contains detailed execution plans, political strategies, and game-theoretic analyses.
-- [1-percent-treaty.md](./book/strategy/1-percent-treaty.md)
-- [dih-model.md](./book/strategy/dih-model.md)
-- [co-opting-defense-contractors.md](./book/strategy/co-opting-defense-contractors.md)
-- [free-rider-solution.md](./book/strategy/free-rider-solution.md)
-- [global-referendum/](./book/strategy/global-referendum/)
-- **[/legal/](./book/legal/)**: Contains detailed legal frameworks, compliance strategies, and governance models.
-- [multi-entity-strategy.md](./book/legal/multi-entity-strategy.md)
-- [impact-securities-reform.md](./book/legal/impact-securities-reform.md)
-- **[/operations/](./book/operations/)**: Contains detailed operational plans, hiring documents, and standard operating procedures (SOPs).
-- [hiring-plan.md](./book/operations/hiring-plan.md)
-- [pre-seed-strategy.md](./book/operations/pre-seed-strategy.md)
-- [communications-and-messaging-playbook.md](./book/operations/communications-and-messaging-playbook.md)
-- **[/reference/](./book/reference/)**: Contains supporting data, studies, citations, and other third-party evidence.
-- [costs-of-war.md](./book/reference/costs-of-war.md)
-- [recovery-trial.md](./book/reference/recovery-trial.md)
-- [organizational-precedents.md](./book/reference/organizational-precedents.md)
-- **[/assets/](./book/assets/)**: Contains images, diagrams, and other static assets used throughout the knowledge base.
-- **[/archive/](./book/archive/)**: Contains all legacy files from the previous structure for historical reference.
+- **[/economics/](./brain/book/economics/)**: Contains detailed financial models, investment theses, and ROI calculations.
+- [investment-thesis.md](./brain/book/economics/investment-thesis.md)
+- [peace-dividend-value-capture.md](./brain/book/economics/peace-dividend-value-capture.md)
+- [dfda-cost-benefit-analysis.md](./brain/book/economics/dfda-cost-benefit-analysis.md)
+- [fundraising/](./brain/book/economics/fundraising/)
+- **[/strategy/](./brain/book/strategy/)**: Contains detailed execution plans, political strategies, and game-theoretic analyses.
+- [1-percent-treaty.md](./brain/book/strategy/1-percent-treaty.md)
+- [dih-model.md](./brain/book/strategy/dih-model.md)
+- [co-opting-defense-contractors.md](./brain/book/strategy/co-opting-defense-contractors.md)
+- [free-rider-solution.md](./brain/book/strategy/free-rider-solution.md)
+- [global-referendum/](./brain/book/strategy/global-referendum/)
+- **[/legal/](./brain/book/legal/)**: Contains detailed legal frameworks, compliance strategies, and governance models.
+- [multi-entity-strategy.md](./brain/book/legal/multi-entity-strategy.md)
+- [impact-securities-reform.md](./brain/book/legal/impact-securities-reform.md)
+- **[/operations/](./brain/book/operations/)**: Contains detailed operational plans, hiring documents, and standard operating procedures (SOPs).
+- [hiring-plan.md](./brain/book/operations/hiring-plan.md)
+- [pre-seed-strategy.md](./brain/book/operations/pre-seed-strategy.md)
+- [communications-and-messaging-playbook.md](./brain/book/operations/communications-and-messaging-playbook.md)
+- **[/reference/](./brain/book/reference/)**: Contains supporting data, studies, citations, and other third-party evidence.
+- [costs-of-war.md](./brain/book/reference/costs-of-war.md)
+- [recovery-trial.md](./brain/book/reference/recovery-trial.md)
+- [organizational-precedents.md](./brain/book/reference/organizational-precedents.md)
+- **[/assets/](./brain/book/assets/)**: Contains images, diagrams, and other static assets used throughout the knowledge base.
+- **[/archive/](./brain/book/archive/)**: Contains all legacy files from the previous structure for historical reference.
 
 ---
