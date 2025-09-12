@@ -75,7 +75,7 @@ This repository documents the "War on Disease," a mission to make curing people 
   - **Bad:** "World leaders will embrace this plan because it's the right thing to do."
 - **Use blunt language, not euphemisms.** Call things by their real names, but maintain technical precision where it adds clarity.
   - **Good:** "How to stay out of prison," "We're bribing everyone."
-  - **Bad:** "Legal compliance framework," "Incentive alignment."
+  - **Bad:** "Legal compliance," "Incentive alignment."
   - **Good and Precise:** "Transparent, automated, outcome-driven institutions" is better than "computer systems" because it specifies *what kind* of systems and *why* they matter.
 
 **One-Second Test:** If you hesitate before reading a sentence aloud to a skeptical audience, rewrite it.

@@ -39,7 +39,7 @@ This mission is powered by a new financial engine. You can help capitalize it.
 
 Your organization can play a pivotal role in building the coalition, and the case for your involvement is not based on altruism, but on arithmetic.
 
-- **The Challenge: Run the Numbers.** We ask you to do one thing: run a rigorous cost-effectiveness analysis comparing the impact of your current programs to the impact of redirecting a portion of your advocacy budget to helping pass the 1% Treaty. The data shows that for almost any major global problem—health, poverty, climate, or human rights—helping to unlock the $16.5 trillion peace dividend is the single highest-leverage action you can take to achieve your own mission. When you are ready to join the coalition, **[contact us](./operations.md)**.
+- **The Challenge: Run the Numbers.** We ask you to do one thing: run a rigorous cost-effectiveness analysis comparing the impact of your current programs to the impact of redirecting a portion of your advocacy budget to helping pass the 1% Treaty. The data shows that for almost any major global problem—health, poverty, climate, or human rights—helping to unlock the $16.5 trillion peace dividend is the single biggest action you can take to achieve your own mission. When you are ready to join the coalition, **[contact us](./operations.md)**.
 
 ---
 

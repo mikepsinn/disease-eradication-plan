@@ -10,7 +10,7 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 # 📖 Chapter 7: The Legal Framework
 
-The legal framework of the DIH is as critical as its financial model. It is engineered to navigate the complex landscape of international law, securities regulations, and political compliance while building a resilient and effective institution.
+The legal framework of the DIH is as critical as its financial model. It is built to navigate the complex landscape of international law, securities regulations, and political compliance while building a resilient and effective institution.
 
 Our structure is designed to be **bulletproof and legal.**
 

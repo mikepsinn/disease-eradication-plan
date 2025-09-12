@@ -12,7 +12,7 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 The Decentralized Institutes of Health (DIH) is a SuperDAO governed by **Wishocracy**, a protocol for managing large, decentralized organizations.
 
-Wishocracy is a model for creating a semi-autonomous "to-do list for humanity," where stakeholders collaborate with AI agents to prioritize, fund, and solve complex problems. It is designed to be a general-purpose governance framework that any decentralized organization can adopt. The DIH is the first and largest implementation of this protocol.
+Wishocracy is a model for creating a semi-autonomous "to-do list for humanity," where people collaborate with AI agents to prioritize, fund, and solve complex problems. It is designed to be a general-purpose governance framework that any decentralized organization can adopt. The DIH is the first and largest implementation of this protocol.
 
 ---
 

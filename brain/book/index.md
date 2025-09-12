@@ -157,7 +157,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`economics/fundraising/fundraising-plan.md`](./economics/fundraising/fundraising-plan.md)
 - **title:** Fundraising Plan: The $2.5B Activation Energy
-- **description:** Overview of the multi-phase fundraising strategy to raise $1.2B-$2.5B for the 1% Treaty implementation.
+- **description:** The multi-phase fundraising strategy to raise $1.2B-$2.5B for the 1% Treaty implementation.
 - **published:** true
 - **date:** 2025-09-09T00:00:00.000Z
 - **tags:** fundraising,overview,strategy,activation-energy
@@ -315,7 +315,7 @@ This document provides a complete inventory of all markdown files in the reposit
 ---
 
 ### [`legal.md`](./legal.md)
-- **title:** Legal Framework: Engineering Compliance
+- **title:** Legal Framework: How to Stay Legal
 - **description:** The legal framework is designed for maximum compliance and resilience, utilizing a multi-entity global structure and rigorous adherence to international securities and election law.
 - **published:** true
 - **date:** 2025-09-10T00:00:00.00Z
@@ -429,7 +429,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`operations/messaging-and-communications-strategy.md`](./operations/messaging-and-communications-strategy.md)
 - **title:** Framework for Estimating the Value of Longevity Sentiment Analysis and Messaging
-- **description:** A framework to estimate the financial and strategic value of analyzing public sentiment and refining messaging to accelerate the dFDA's mission by improving fundraising and building public support.
+- **description:** How to estimate the financial and strategic value of analyzing public sentiment and refining messaging to accelerate the dFDA's mission by improving fundraising and building public support.
 - **published:** true
 - **date:** 2025-06-08
 - **tags:** strategy,messaging,roi,sentiment analysis
