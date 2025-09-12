@@ -97,6 +97,8 @@ The plan _is_ the repository. Our goal is to create a single source of truth tha
 
 This repository is structured as a book. The root directory contains the "Chapters," which tell the core narrative. The subdirectories are "Sections" that provide detailed evidence, models, and plans for their parent chapter. `reference/` is the one true "Appendix" for external, evidentiary material.
 
+**Note:** The file `brain/book/index.md` is automatically generated from the frontmatter of all files in the brain/book directory. Do not edit it directly - instead, update the frontmatter in the individual chapter and section files.
+
 **The Golden Rule:** If a topic is an "Epic" that needs more than one file, it gets a main summary file (`epic.md`) and a corresponding directory (`epic/`) for the details. This pattern applies at all levels.
 
 **"The Book" vs. "The Internal Playbook"**

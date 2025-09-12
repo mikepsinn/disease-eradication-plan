@@ -452,7 +452,7 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 
 ## IX. CALL TO ACTION 
 
-## Become a Stakeholder
+## Join the Movement
 
 **[Get your referendum link](./brain/book/strategy/referendum/global-referendum-implementation.md)** → Earn VOTE points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
 
@@ -761,19 +761,6 @@ See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./
 
 ---
 
-## Calculate Your Return on Curing Disease
-
-To make the abstract numbers feel concrete and personal, a new interactive module should be introduced after the initial problem/solution sections.
-
-- **Concept:** A simple, elegant input field styled to look like it belongs on a formal bond certificate.
-- **Interaction:**
-  1.  The user is prompted: "If you invested this amount in VICTORY bonds..." with an input slider or field (e.g., pre-populated with $10,000).
-  2.  The module instantly calculates and displays two key figures in an animated sequence:
-      - **YOUR FINANCIAL RETURN:** "Your projected 10-year return would be **\$290,000** (a 29X return)."
-      - **YOUR MISSION IMPACT:** "Your \$10,000 investment could fully fund **20 patient-months** in a decentralized clinical trial, directly accelerating the search for a cure."
-- **Impact:** This module is critical. It transforms the user from a passive reader into an active participant. It connects the user's personal financial gain directly to the mission's impact, which is the entire point of the project.
-
----
 
 ## Table of Contents: The Book of the DIH
 
