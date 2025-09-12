@@ -477,7 +477,7 @@ This document provides a complete inventory of all markdown files in the reposit
 ---
 
 ### [`proof.md`](./proof.md)
-- **title:** Why This Isn't Insane: Precedent & Evidence
+- **title:** Why This Isn't as Insane as it Sounds: Precedent & Evidence
 - **description:** The DIH strategy is not theoretical. It is a synthesis of proven historical models, from the financial engineering of WWII War Bonds to the citizen-led victory of the International Campaign to Ban Landmines.
 - **published:** true
 - **date:** 2025-09-10T00:00:00.000Z

@@ -1,5 +1,5 @@
 ---
-title: "Proof → Why This Isn't Insane"
+title: "Proof → Why This Isn't as Insane as it Sounds"
 description: "The DIH strategy is not theoretical. It is a synthesis of proven historical models, from the financial engineering of WWII War Bonds to the citizen-led victory of the International Campaign to Ban Landmines."
 published: true
 date: "2025-09-10T00:00:00.000Z"
@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 6: Why This Isn't Insane
+# 📖 Chapter 6: Why This Isn't as Insane as it Sounds
 
 The strategy for the War on Disease is not based on hope. It is a pragmatic plan engineered from the lessons of major historical movements, both successful and unsuccessful. Each core component of our model is a direct application of a proven real-world precedent.
 

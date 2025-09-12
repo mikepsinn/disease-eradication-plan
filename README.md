@@ -303,9 +303,7 @@ Here's our plan: We offer military contractors and politicians a better deal tha
 
 ---
 
-## VI. PROOF & PRECEDENTS (Why This Isn't Insane)
-
-## Why This Actually Works
+## VI. PROOF & PRECEDENTS (Why This Isn't as Insane as it Sounds)
 
 ### "A $2.5B investment to capture $27B annually? Come on."
 
@@ -790,7 +788,7 @@ This repository is structured as a book that tells the story of the Decentralize
 - **[vision.md](./book/vision.md)**: **Chapter 4: The Vision → A World Without War and Disease** - A vivid depiction of the future that the DIH and dFDA will create—a world of accelerated innovation and extended human healthspan.
 - **[economics.md](./book/economics.md)**: **Chapter 5: Economics → How to Make Peace More Profitable Than War** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
 - **[strategy.md](./book/strategy.md)**: **Chapter 6: Strategy → How to Bribe Literally Everyone** - A breakdown of the execution strategy, which uses a global referendum and bribes to get everyone on our side (i.e. humanity).
-- **[proof.md](./book/proof.md)**: **Chapter 7: The Proof → Why This Isn't Insane** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
+- **[proof.md](./book/proof.md)**: **Chapter 7: The Proof → Why This Isn't as Insane as it Sounds** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
 - **[legal.md](./book/legal.md)**: **Chapter 8: Legal → How to Stay Out of Prison** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
 - **[governance.md](./book/governance.md)**: **Chapter 9: Governance → How the People Who Pay Get to Vote** - How the people who paid for this get to vote on how it works.
 - **[operations.md](./book/operations.md)**: **Chapter 10: Operations → Hiring Smart People and Getting Out of the Way** - The plan for hiring a few very smart people to bootstrap the DIH and then make itself obsolete.

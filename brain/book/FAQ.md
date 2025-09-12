@@ -27,7 +27,7 @@ Every ambitious plan faces tough questions. Here we address the most common obje
 
 ### 3. "A government's promise to pay is unenforceable. This is a fantasy."
 
-- **Reality:** See [Why This Actually Works](#why-this-actually-works) → We don't enforce this through courts. We fund campaigns against leaders who break their promises to their own people.
+- **Reality:** See [Why This Isn't as Insane as it Sounds](#why-this-actually-works) → We don't enforce this through courts. We fund campaigns against leaders who break their promises to their own people.
 
 ### 4. "This is too too complicated to build."
 
@@ -39,7 +39,7 @@ Every ambitious plan faces tough questions. Here we address the most common obje
 
 ### 6. "The 3.5% rule applies to civil resistance movements, not global online referendums"
 
-- **Reality:** See [Why This Actually Works](#why-this-actually-works) → Mass participation creates political legitimacy regardless of format. 280 million verified supporters create an unignorable political mandate with electoral consequences.
+- **Reality:** See [Why This Isn't as Insane as it Sounds](#why-this-actually-works) → Mass participation creates political legitimacy regardless of format. 280 million verified supporters create an unignorable political mandate with electoral consequences.
 
 ### 7. "Independent expenditures don't work against entrenched incumbents with deep pockets"
 
