@@ -67,7 +67,7 @@ The plan to raise billions of dollars from the public to fund a global cause is 
 
 **The Precedent: The Global Fund to Fight AIDS, Tuberculosis and Malaria**
 
-The idea of creating a new, multi-billion-dollar global health institution from scratch is not unprecedented.
+The idea of creating a new, multi-billion-dollar global health institution from scratch has been done before.
 
 - The Global Fund was created in 2002 as a public-private partnership to pool and distribute billions of dollars to fight these three diseases, operating outside of traditional institutional channels. It has since saved an estimated 50 million lives.
 

@@ -26,7 +26,7 @@ The case for the 1% Treaty rests on an irrefutable logical proof:
 2.  If every nation simultaneously reduces its military budget by 1% and contributes that amount to a global fund, **the relative balance of power remains identical**. No nation becomes weaker relative to its rivals.
 3.  Therefore, with no change in relative military risk, every nation on Earth gains access to a massive, perpetually funded engine for biomedical innovation that will cure the diseases afflicting their own citizens.
 
-It is the single most rational and highest-leverage action humanity can take.
+It is the single most rational action humanity can take.
 
 ---
 
@@ -42,7 +42,7 @@ This plan is executed through a new global organization with a transparent, dece
 **2. The DIH is Governed by Wishocracy:**
 
 - The DIH's budget and research agenda are managed using the **[Wishocracy governance protocol](./governance.md)**.
-- This allows millions of stakeholders to democratically and efficiently allocate capital to the most promising research without being dominated by special interests.
+- This allows millions of people to democratically and efficiently allocate capital to the most promising research without being dominated by special interests.
 
 **3. A Hyper-Efficient & Open-Source R&D Model:**
 
@@ -53,7 +53,7 @@ This plan is executed through a new global organization with a transparent, dece
 
 - The DIH is not a single, top-down bureaucracy. It is a SuperDAO that delegates authority to a network of specialized, subordinate DAOs (subDAOs).
 - Each subDAO focuses on a specific area of health, such as the **Decentralized Cancer Institute** or the **Decentralized Institute on Aging**.
-- Governance of each subDAO is delegated to a coalition of the most effective non-profits, patient advocacy groups, and research institutions in that field, ensuring that funding decisions are made by true experts and stakeholders.
+- Governance of each subDAO is delegated to a coalition of the most effective non-profits, patient advocacy groups, and research institutions in that field, ensuring that funding decisions are made by true experts and the people who actually care about results.
 
 **5. VICTORY Bonds Kickstart the Process:**
 

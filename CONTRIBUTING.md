@@ -56,7 +56,7 @@ This repository documents the "War on Disease," a mission to make curing people 
 
 **Automatic Red Flags (Rewrite Immediately):**
 - **Superlatives:** "world-class," "revolutionary," "unprecedented"
-- **Buzzwords:** "synergy," "leverage," "activation," "paradigm shift", "stakeholder"
+- **Buzzwords:** "synergy," "activation," "paradigm shift", "stakeholder"
 - **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
 
 **Gold Standard Test:** Would Warren Buffett write this sentence?

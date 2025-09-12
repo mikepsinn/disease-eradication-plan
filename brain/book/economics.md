@@ -25,7 +25,7 @@ The core of the financial model is the **Peace Dividend**: the immense economic 
 - The first tranche of value captured is a **[$27+ billion annual treasury](./economics/peace-dividend-value-capture.md)**, which is used to fund a hyper-efficient medical R&D system and repay investors.
 - Over **[99.84% of the value unlocked](./economics/peace-dividend-value-capture.md)** flows directly to global society through improved health, increased productivity, and reduced conflict.
 
-This isn't about defunding defense; it's about making a strategic investment in the foundational drivers of security: health, stability, and prosperity. A small reallocation away from destructive capacity creates an exponential return in productive capacity.
+This isn't about defunding defense; it's about making a smart investment in the foundational drivers of security: health, stability, and prosperity. A small reallocation away from destructive capacity creates an exponential return in productive capacity.
 
 ---
 
@@ -35,13 +35,13 @@ To bootstrap this new economic model, the DIH will raise its initial capital by 
 
 ### 1. VICTORY Bonds (For Investors)
 
-Modeled on the War Bonds that funded victory in WWII, VICTORY Bonds are the primary instrument for capitalizing the DIH Treasury. They are a debt-like instrument with a fixed coupon and defined maturity, designed to offer a world-class, de-risked return to accredited and institutional investors.
+Modeled on the War Bonds that funded victory in WWII, VICTORY Bonds are the primary instrument for capitalizing the DIH Treasury. They are a debt-like instrument with a fixed coupon and defined maturity, designed to offer a superior, de-risked return to accredited and institutional investors.
 
 ### 2. VICTORY Tokens (For Participants)
 
 VICTORY Tokens are the primary instrument for incentivizing mass participation in the global referendum. They are a utility token used to reward verifiable actions (like voting and referrals) and may confer governance rights over the DIH treasury. They are not designed to promise profits, which helps mitigate securities risk for a broad, global distribution.
 
-This dual-instrument approach allows the DIH to attract the world's most ambitious capital while simultaneously building a broad, global coalition of engaged stakeholders.
+This dual-instrument approach allows the DIH to attract the most ambitious capital while simultaneously building a broad, global coalition of engaged participants.
 
 ---
 
@@ -74,7 +74,7 @@ The investment thesis for VICTORY Bonds is fundamentally different from traditio
 - **Traditional VC** takes on immense **market risk**, betting that a new technology will find a product-market fit and succeed against competitors. Most bets fail.
 - **VICTORY Bonds** take on a calculated **political risk**. The "product"—curing disease—has infinite and permanent market demand. The thesis is not _if_ people want cures, but _when_ we can achieve the political momentum to unlock the funding.
 
-By engineering a system with a clear path to profitability, a global base of support, and a compelling, rational argument for all stakeholders, we are not just building a non-profit; we are creating a new asset class based on the financial upside of global cooperation.
+By building a system with a clear path to profitability, a global base of support, and a compelling, rational argument for everyone involved, we are not just building a non-profit; we are creating a new asset class based on the financial upside of global cooperation.
 
 ---
 

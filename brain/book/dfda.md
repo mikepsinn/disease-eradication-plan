@@ -1,6 +1,6 @@
 ---
 title: "Trials → A Decentralized Autonomous FDA"
-description: "An introduction to the Decentralized FDA (dFDA), the revolutionary, 80X more efficient research protocol the DIH will build to accelerate medical progress."
+description: "An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build to accelerate medical progress."
 published: false
 date: "2025-09-10T00:00:00.000Z"
 tags: [dfda, decentralized-trials, regulatory-reform, clinical-trials, fda, innovation, protocol]

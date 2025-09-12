@@ -53,4 +53,4 @@ These are not minor inefficiencies; they are catastrophic failures that cost mil
 
 The current system is designed to produce profits for a few, not cures for the many. It is a closed, inefficient, and morally bankrupt model that we can no longer afford. We are fighting 21st-century diseases with a 20th-century bureaucracy.
 
-This is the problem we must solve. It is the highest-leverage opportunity for humanity.
+This is the problem we must solve. It is the biggest opportunity for humanity.

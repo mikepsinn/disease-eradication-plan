@@ -12,7 +12,7 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 The legal framework of the DIH is as critical as its financial model. It is engineered to navigate the complex landscape of international law, securities regulations, and political compliance while building a resilient and effective institution.
 
-Our structure is designed to be **robust by default and compliant by design.**
+Our structure is designed to be **bulletproof and legal.**
 
 ---
 

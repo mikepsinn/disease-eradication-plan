@@ -84,7 +84,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`dfda.md`](./dfda.md)
 - **title:** A Decentralized Autonomous FDA: A Decentralized FDA
-- **description:** An introduction to the Decentralized FDA (dFDA), the revolutionary, 80X more efficient research protocol the DIH will build to accelerate medical progress.
+- **description:** An introduction to the 80X more efficient research protocol the DIH will build to accelerate medical progress.
 - **date:** 2025-09-10T00:00:00.000Z
 - **tags:** dfda,decentralized-trials,regulatory-reform,clinical-trials,fda,innovation,protocol
 - **dateCreated:** 2025-09-10T00:00:00.000Z
@@ -180,7 +180,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`economics/fundraising/fundraising-strategy.md`](./economics/fundraising/fundraising-strategy.md)
 - **title:** Fundraising Strategy - Simple Targets & Market-Driven Mechanics
-- **description:** Details our hybrid strategy for raising capital, combining simple, ambitious ROI targets for marketing with efficient market-driven pricing and de-risked assurance contracts.
+- **description:** Our hybrid strategy for raising capital, combining simple, ambitious ROI targets for marketing with efficient market-driven pricing and de-risked assurance contracts.
 - **published:** true
 - **date:** 2025-01-23T00:00:00.000Z
 - **tags:** fundraising,victory-bonds,assurance-contract,dutch-auction,investment-strategy
@@ -228,7 +228,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`economics/investor-risk-analysis.md`](./economics/investor-risk-analysis.md)
 - **title:** "Investor Risk Analysis: VICTORY Bonds vs. Traditional Venture Capital"
-- **description:** A comprehensive analysis of the unique risk profile of the 1% Treaty initiative, comparing its political arbitrage model to the market-risk model of venture capital and detailing the engineered mechanisms designed to mitigate key risks.
+- **description:** An analysis of the unique risk profile of the 1% Treaty initiative, comparing its political arbitrage model to the market-risk model of venture capital and detailing the engineered mechanisms designed to mitigate key risks.
 - **published:** true
 - **date:** 2025-08-22T00:00:00.000Z
 - **tags:** risk-analysis,investment-thesis,venture-capital,political-arbitrage,assurance-contracts,metaculus
@@ -439,7 +439,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`operations/pre-seed-strategy.md`](./operations/pre-seed-strategy.md)
 - **title:** Pre-Seed Strategy & Foundation
-- **description:** Outlines the initial steps, legal structure, pre-seed fundraising, and core team hiring required to launch the War on Disease initiative.
+- **description:** The initial steps, legal structure, pre-seed fundraising, and core team hiring required to launch the War on Disease initiative.
 - **published:** true
 - **date:** 2025-08-15T00:00:00.000Z
 - **tags:** pre-seed,fundraising,strategy,legal,hiring
@@ -520,7 +520,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`reference/global-government-medical-research-spending.md`](./reference/global-government-medical-research-spending.md)
 - **title:** Global Government Medical Research Spending
-- **description:** Comprehensive data on government budgets allocated to medical research worldwide, including NIH, EU Horizon Europe, and other major public health R&D programs.
+- **description:** Data on government budgets allocated to medical research worldwide, including NIH, EU Horizon Europe, and other major public health R&D programs.
 - **published:** true
 - **date:** 2025-01-27T00:00:00.000Z
 - **tags:** medical-research,government-spending,health-r&d,nih,eu-horizon,global-health
@@ -684,7 +684,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`strategy/dfda-implementation-via-executive-action.md`](./strategy/dfda-implementation-via-executive-action.md)
 - **title:** Strategy Enabling dFDA via Executive Order (DOGE Model)
-- **description:** Outlines a strategy for establishing the dFDA initiative using executive actions, drawing parallels to the Department of Government Efficiency (DOGE) model, while acknowledging funding and legal challenges.
+- **description:** How to establish the dFDA using executive actions, drawing parallels to the Department of Government Efficiency (DOGE) model, while acknowledging funding and legal challenges.
 - **published:** true
 - **date:** 2025-03-10
 - **tags:** executive-action,dfda-implementation,doge-model,hhs,nih,funding,regulatory-strategy,executive-order
@@ -694,7 +694,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`strategy/dih-model.md`](./strategy/dih-model.md)
 - **title:** The Decentralized Institutes of Health (DIH) Model
-- **description:** A global treasury to fund the dFDA ecosystem, subsidize patient trial participation, and accelerate the war on disease through innovative financial instruments like VICTORY Bonds.
+- **description:** A global treasury to fund the dFDA ecosystem, subsidize patient trial participation, and accelerate the war on disease through VICTORY Bonds.
 - **published:** true
 - **date:** 2024-06-12
 - **tags:** dih,treasury,victory-bonds,patient-subsidies,dao,1-percent-treaty,dfda
@@ -729,7 +729,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`strategy/global-referendum/global-referendum-verification.md`](./strategy/global-referendum/global-referendum-verification.md)
 - **title:** Verification and Fraud Prevention
-- **description:** Comprehensive framework for identity verification, sybil resistance, and fraud prevention in the global referendum and treasury operations.
+- **description:** How to verify identities, stop fake accounts, and prevent fraud in the global referendum and treasury operations.
 - **published:** true
 - **date:** 2025-01-15T00:00:00.000Z
 - **tags:** verification,fraud-prevention,sybil-resistance,identity,security,referendum
@@ -739,7 +739,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`strategy/global-referendum/global-referendum-viral-marketing.md`](./strategy/global-referendum/global-referendum-viral-marketing.md)
 - **title:** Viral Marketing Tactics for Referral Rewards
-- **description:** Creative marketing strategies to drive viral adoption of the referral rewards system and reach the 3.5% tipping point.
+- **description:** Creative marketing strategies for viral adoption of the referral rewards system to reach the 3.5% tipping point.
 - **published:** true
 - **date:** 2025-01-27
 - **tags:** viral-marketing,referral-rewards,growth-hacking,community-building,cost-effective-marketing
@@ -769,7 +769,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`strategy/legal-compliance-framework.md`](./strategy/legal-compliance-framework.md)
 - **title:** Legal Compliance Framework
-- **description:** Comprehensive legal compliance strategy for foreign election funding restrictions, securities law compliance, and international coordination.
+- **description:** How to stay out of prison: foreign election funding restrictions, securities law compliance, and international coordination.
 - **published:** true
 - **date:** 2025-01-15T00:00:00.000Z
 - **tags:** legal-compliance,election-law,securities-law,international-law,regulatory
@@ -779,7 +779,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ### [`strategy/open-ecosystem-and-bounty-model.md`](./strategy/open-ecosystem-and-bounty-model.md)
 - **title:** "Strategy: Open Ecosystem and Bounty Model"
-- **description:** The dFDA platform's strategy for fostering a sustainable, innovative ecosystem through open APIs and targeted bounties, rather than direct funding—emulating proven open-source successes.
+- **description:** The dFDA platform's strategy for fostering a sustainable ecosystem through open APIs and targeted bounties, rather than direct funding—emulating proven open-source successes.
 - **published:** true
 - **date:** 2025-06-08
 - **tags:** strategy,ecosystem,open-source,bounties,platform-economics,ai-development

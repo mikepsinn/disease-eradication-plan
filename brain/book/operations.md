@@ -19,7 +19,7 @@ We are not building a large, permanent bureaucracy. We are building a small, eli
 This requires a clear distinction between core and tactical functions:
 
 - **Core Functions (Internal Team):** The permanent brain trust. A small, core team will handle strategy, leadership, political maneuvering, legal architecture, and product vision.
-- **Tactical Execution (Outsourced & Decentralized):** All other functions—software development, media production, specialized analysis—will be handled by world-class agencies, contractors, and eventually, the decentralized community itself through grants and bounties.
+- **Tactical Execution (Outsourced & Decentralized):** All other functions—software development, media production, specialized analysis—will be handled by top agencies, contractors, and eventually, the decentralized community itself through grants and bounties.
 
 The team's ultimate measure of success is the creation of a system that no longer needs them.
 
@@ -30,7 +30,7 @@ To maintain deep alignment with the mission, the core team's compensation is hea
 - **Salaries:** Modest, market-rate cash salaries to cover living expenses.
 - **Incentives:** Large, vested grants of **[VICTORY instruments](./economics.md)**.
 
-This preserves the treasury for high-leverage political and technical spending while ensuring that the team's personal financial success is directly and inextricably linked to the success of the 1% Treaty.
+This preserves the treasury for the most important political and technical spending while ensuring that the team's personal financial success is directly and inextricably linked to the success of the 1% Treaty.
 
 ## The Phased Hiring Roadmap
 

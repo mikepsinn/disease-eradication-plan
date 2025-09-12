@@ -159,7 +159,7 @@ This is the classic "free-rider problem." The solution is to create overwhelming
 
 A country doesn't make decisions; people do. We make it politically and financially ruinous for them to make the wrong one.
 
-- **For Politicians:** Supporting the treaty means delivering massive health benefits to voters, attracting billions in research funding to their districts, and gaining access to a powerful global political platform. We will also fund massive independent expenditure campaigns to support allies and unseat opponents, making it political suicide to oppose the will of the **[3.5% of their voting population](./strategy.md)** who demand the treaty.
+- **For Politicians:** Supporting the treaty means giving massive health benefits to voters, attracting billions in research funding to their districts, and gaining access to a powerful global political platform. We will also fund massive independent expenditure campaigns to support allies and unseat opponents, making it political suicide to oppose the will of the **[3.5% of their voting population](./strategy.md)** who demand the treaty.
 - **For Corporate & Financial Leaders:** Compliance unlocks access to the world's most powerful economic bloc and the opportunity to invest in and profit from the multi-trillion dollar health innovation ecosystem created by the DIH. Non-compliance means their companies are locked out of key markets and technologies, making it more profitable for them to lobby _for_ the treaty than against it.
 - **For Scientists & Research Institutions:** Joining the treaty means access to a new, **$27B+ annual pool of research funding**—an amount that can double or triple the research budgets of entire nations. For any university president or research director, opposing the treaty means deliberately refusing the largest funding firehose in history.
 
@@ -187,7 +187,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 ### **"Don't we already spend enough on medical research?"**
 
-The world spends 40 times more on military force[^3] than on medical research.[^4] The $20-27 billion unlocked by the 1% Treaty would represent a nearly **40% increase in the entire world's budget for medical R&D.** It is a transformative, not incremental, sum of money. This new funding, when deployed through an 80X more efficient model, will have a multiplicative impact on the rate of cures.
+The world spends 40 times more on military force[^3] than on medical research.[^4] The $20-27 billion unlocked by the 1% Treaty would represent a nearly **40% increase in the entire world's budget for medical R&D.** It is a massive, not incremental, sum of money. This new funding, when deployed through an 80X more efficient model, will have a multiplicative impact on the rate of cures.
 
 ---
 

@@ -12,7 +12,7 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 This is the world we are fighting for. It is the future that becomes possible the moment we decide that investing in human potential is more profitable than investing in human destruction.
 
-The 1% Treaty is not the endgame. It is the **activation energy** for a new human trajectory. It is the first turn of a great ratchet that will systematically shift our civilization from a zero-sum game of conflict to a positive-sum game of creation.
+The 1% Treaty is not the endgame. It is the **spark** for a new human trajectory. It is the first turn of a great ratchet that will systematically shift our civilization from a zero-sum game of conflict to a positive-sum game of creation.
 
 ---
 
@@ -70,7 +70,7 @@ The **median wealth** of a citizen in this new world is unimaginable by today's 
 
 - **Healthcare costs approach zero.** With aging reversed and all diseases cured, the multi-trillion dollar deadweight loss of the "sick care" industry is eliminated and repurposed for creation.
 - **The $16.5 trillion annual cost of conflict is repurposed.** This capital, once wasted on destruction, is now invested in clean energy infrastructure, space habitats, consciousness enhancement, and artistic expression.
-- **Human capital becomes infinite.** A world where every person can choose their biological age, optimize their mental state, and augment their intelligence is a world where human potential is truly limitless.
+- **Human capital becomes infinite.** A world where every person can choose their biological age, control their mental state, and augment their intelligence is a world where human potential is truly limitless.
 
 But the transformation goes far beyond individual enhancement. When superintelligent minds tackle collective challenges, the impossible becomes inevitable:
 

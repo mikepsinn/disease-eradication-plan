@@ -1,6 +1,6 @@
 ---
 title: "Governance → How the People Who Pay Get to Vote"
-description: "The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous 'to-do list for humanity' governed by its stakeholders."
+description: "The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous 'to-do list for humanity' governed by the people who use it."
 published: true
 date: "2025-09-10T00:00:00.00Z"
 tags: [governance, wishocracy, dao, decentralization, ai, collective-intelligence, protocol]
@@ -35,7 +35,7 @@ graph TD
 
 ### 1. The To-Do List ("Wishes")
 
-Any stakeholder can propose a "Wish"—a clear, measurable outcome for a real-world problem (e.g., "Cure Alzheimer's," "Develop cheap, scalable carbon capture"). This creates a transparent, crowdsourced list of priorities for the organization.
+Anyone can propose a "Wish"—a clear, measurable outcome for a real-world problem (e.g., "Cure Alzheimer's," "Develop cheap, scalable carbon capture"). This creates a transparent, crowdsourced list of priorities for the organization.
 
 ### 2. The AI Civil Service
 
@@ -47,7 +47,7 @@ A suite of AI agents acts as a transparent and tireless administrative layer. Th
 
 ### 3. The Voting System (RAPPA)
 
-Stakeholders (e.g., VICTORY instrument holders in the DIH) use **Random Aggregated Pairwise Preference Allocation (RAPPA)** to vote on which solutions to fund. This system is:
+People with VICTORY instruments in the DIH use **Random Aggregated Pairwise Preference Allocation (RAPPA)** to vote on which solutions to fund. This system is:
 
 - **Scalable:** Millions of users can participate by making simple pairwise choices (e.g., "Project A vs. Project B").
 - **Fair:** It mathematically prevents wealthy "whales" from dominating the budget, ensuring the collective will is represented.

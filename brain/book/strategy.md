@@ -1,6 +1,6 @@
 ---
 title: "Strategy → How to Bribe Literally Everyone"
-description: "The execution strategy is not based on moral persuasion but on a superior, direct financial bribe for every stakeholder, from citizens to the military-industrial complex."
+description: "The execution strategy is not based on moral persuasion but on a superior, direct financial bribe for everyone, from citizens to the military-industrial complex."
 published: true
 date: "2025-09-10T00:00:00.000Z"
 tags: [strategy, execution, bribery, incentives, public-choice, stakeholder-alignment]
@@ -12,7 +12,7 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 Our strategy is not to win a moral argument. It is to bribe the shit out of literally everyone.
 
-We will succeed by offering every key stakeholder a deal that is mathematically, financially, and politically superior to the status quo. This is a strategy of **engineered stakeholder alignment**, designed to systematically turn opposition into advocacy by making support for the 1% Treaty the most profitable decision a person can make.
+We will succeed by offering everyone a deal that is mathematically, financially, and politically superior to the status quo. This is a strategy of **engineered bribery**, designed to systematically turn opposition into advocacy by making support for the 1% Treaty the most profitable decision a person can make.
 
 ---
 
@@ -51,7 +51,7 @@ The strategy unfolds in a sequence of bribes, each one funding the next, creatin
 - **The Bribe:** A direct stake in the peace dividend they help create, turning a protest into a shareholder movement.
 - **"Proof-of-Vote" Rewards:** Every person who votes in the **[Global Referendum](./strategy/global-referendum/)** receives **VOTE points**—a verifiable, on-chain claim to the economic value they are unlocking.
 - **Conversion to Real Value:** After the treaty is ratified, these points become convertible to VICTORY bonds, granting citizens earned ownership and governance in the **$27B+ annual health treasury** they helped create.
-- **The Result:** We transform a passive populace into an active, incentivized army of stakeholders. This is not a petition; it is the creation of the largest shareholder base in history. This creates a political mandate that is impossible to ignore, based on the historically unstoppable **[3.5% Rule](./reference/organizational-precedents.md)**, which shows that no nonviolent movement has ever failed once it achieved active participation from 3.5% of the population.
+- **The Result:** We transform a passive populace into an active, incentivized army of people who want their money. This is not a petition; it is the creation of the largest shareholder base in history. This creates a political mandate that is impossible to ignore, based on the historically unstoppable **[3.5% Rule](./reference/organizational-precedents.md)**, which shows that no nonviolent movement has ever failed once it achieved active participation from 3.5% of the population.
 
 ### 3. The Bribe for Politicians & Leaders
 
@@ -78,7 +78,7 @@ This is the pragmatic, sequenced roadmap from a bold idea to an inevitable globa
 
 ## Dive Deeper into the Strategy
 
-This chapter provides the high-level strategic framework. For a detailed breakdown of the specific mechanics, models, and precedents, please explore the following documents:
+This chapter provides the high-level strategy. For a detailed breakdown of the specific mechanics, models, and precedents, please explore the following documents:
 
 - **[The 1% Treaty](./strategy/1-percent-treaty.md):** The full text and game-theoretic design of the core proposal.
 - **[The Global Referendum](./strategy/global-referendum/):** The plan for mobilizing a global political mandate.
