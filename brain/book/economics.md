@@ -8,11 +8,11 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 5: Economics - The Money
+# 📖 Chapter 6: Economics - The Money
 
-This is not a charity. It is the largest value creation opportunity in human history. The economic model of the Decentralized Institutes of Health (DIH) is designed to be a self-sustaining engine that makes peace and health outrageously profitable.
+This is not charity. This is the best investment you'll ever make.
 
-We will not overcome the financial incentives for war by appealing to morality. We will do it by offering a mathematically superior financial return.
+We won't beat the war machine by asking nicely. We'll beat it by offering better returns.
 
 ---
 
@@ -31,23 +31,18 @@ This isn't about defunding defense; it's about making a smart investment in the 
 
 ## VICTORY Instruments: The Investment in Humanity
 
-To bootstrap this new economic model, the DIH will raise its initial capital by issuing two classes of **VICTORY Instruments**, each designed for a specific purpose and audience.
+To bootstrap this new economic model, the DIH will raise its initial capital by issuing **[VICTORY Instruments](./economics/victory-bonds.md)**. These are the financial tools that power the entire system.
 
-### 1. VICTORY Bonds (For Investors)
+-   **[VICTORY Bonds (for investors)](./economics/victory-bonds.md):** Modeled on WWII War Bonds, these offer a >40% targeted annual return for accredited and institutional investors.
+-   **[VICTORY Tokens (for participants)](./economics/victory-bonds.md):** Utility tokens that reward citizens for participating in the global referendum and grant governance rights over the DIH treasury.
 
-Modeled on the War Bonds that funded victory in WWII, VICTORY Bonds are the primary instrument for capitalizing the DIH Treasury. They are a debt-like instrument with a fixed coupon and defined maturity, designed to offer a superior, de-risked return to accredited and institutional investors.
-
-### 2. VICTORY Tokens (For Participants)
-
-VICTORY Tokens are the primary instrument for incentivizing mass participation in the global referendum. They are a utility token used to reward verifiable actions (like voting and referrals) and may confer governance rights over the DIH treasury. They are not designed to promise profits, which helps mitigate securities risk for a broad, global distribution.
-
-This dual-instrument approach allows the DIH to attract the most ambitious capital while simultaneously building a broad, global coalition of engaged participants.
+This dual-instrument approach allows the DIH to attract the most ambitious capital while simultaneously building a broad, global coalition of engaged participants. For a full breakdown, see the **[VICTORY Bonds Investment Thesis](./economics/victory-bonds.md)**.
 
 ---
 
-## The Virtuous Financial Cycle
+## How the Money Goes Around
 
-The DIH treasury is designed as a closed-loop, sustainable system where value is created, captured, and reinvested.
+Here's how it works:
 
 ```mermaid
 graph TD
