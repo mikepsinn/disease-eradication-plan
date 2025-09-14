@@ -1,5 +1,5 @@
 ---
-title: "Join → How You Can Join"
+title: "Join → I Want You"
 description: "This is a global mission, and victory requires a global coalition. Here are the specific, actionable ways you can contribute today."
 published: true
 date: "2025-09-10T00:00:00.000Z"
@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 13: Call-to-Action - How You Can Join
+# 📖 Chapter 14: Call-to-Action - I Want You
 
 We need your help. Here's how you can contribute:
 
