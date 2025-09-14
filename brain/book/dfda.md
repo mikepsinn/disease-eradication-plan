@@ -1,21 +1,29 @@
 ---
-title: "Trials → A Decentralized Autonomous FDA"
-description: "An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build to accelerate medical progress."
-published: false
-date: "2025-09-10T00:00:00.000Z"
-tags: [dfda, decentralized-trials, regulatory-reform, clinical-trials, fda, innovation, protocol]
+title: "The dFDA → How We Prove What Works"
+description: "The complete guide to the Decentralized FDA (dFDA), the 80X more efficient, open-source protocol for proving which treatments are safe and effective."
+published: true
+date: "2025-09-14T00:00:00.000Z"
+tags: [solution, dfda, decentralized-trials, regulatory-reform, clinical-trials, fda, innovation, protocol]
 editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 3: DFDA - A Decentralized Autonomous FDA
+# 📖 Chapter 5: The dFDA - How We Prove What Works
 
-The DIH is the treasury. The **dFDA** is what we spend the money on.
+The **Decentralized FDA (dFDA)** is the engine of the DIH. It is an open-source, decentralized protocol for clinical research designed to be **[80 times more efficient](./reference/recovery-trial.md)** than the current system.
 
-The dFDA isn't a new government agency. It's an **open-source system** for clinical research that's **[80 times cheaper](./reference/recovery-trial.md)** than what we have now. It lets companies, universities, and patient groups run trials faster, cheaper, and more transparently.
+Its purpose is to define the rules and standards that allow a competitive ecosystem of companies, universities, and patient groups to conduct research faster, cheaper, and more transparently.
 
-Here's how we fix medical research.
+---
 
-## Dive Deeper
+## How It Works
 
-- **[HHS Policy Recommendations](./legal/hhs-policy-recommendations.md):** The detailed policy memo outlining how the dFDA can be implemented _under existing U.S. law_ without the need for new legislation.
+1.  **Patient Subsidies:** Instead of funding institutions, the DIH pays patients directly to join trials. Researchers only get paid when patients choose their study.
+
+2.  **Pragmatic Trials:** We use the hyper-efficient **[Oxford RECOVERY model](./reference/recovery-trial.md)**, which cuts per-patient costs from $41,000 to $500. This allows us to run 80X more research with the same amount of money.
+
+3.  **Open Data:** All trial data is published to a decentralized ledger in real-time. Negative results cannot be hidden. Cherry-picking data is impossible.
+
+4.  **Outcome Labels:** The dFDA analyzes the data to produce simple, honest "outcome labels" for every food, drug, and supplement, showing what actually works.
+
+This creates a complete, end-to-end system for generating trustworthy data on the safety and effectiveness of all treatments.
