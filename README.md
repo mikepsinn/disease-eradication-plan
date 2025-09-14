@@ -140,16 +140,6 @@ graph TD;
 
 ---
 
-## Ready to Join?
-
-The full plan is detailed below. But if you're already convinced, here's how you can get involved now:
-
-- **Invest in the Solution:** [Buy VICTORY Bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md) to fund the mission and target a >40% CAGR.
-- **Show Your Support:** [Sign the Global Referendum](https://warondisease.org/referendum) to help build the 3.5% mandate.
-- **Partner with Us:** [Contact our institutions team](mailto:institutions@warondisease.org) to see how your organization can benefit.
-
----
-
 ## IV. THE FINANCIAL ENGINE (Why This Works)
 
 ## VICTORY Bonds: Bootstrap Funding Model
@@ -394,59 +384,9 @@ We have answers to the tough questions. For a detailed list of common objections
 
 ## VIII. SECURITY & GOVERNANCE
 
-## Security & Anti-Corruption: Building Uncorruptible Institutions
+A $27B treasury is a massive target. Our security model is designed to be uncorruptible by eliminating human targets and relying on transparent, automated, and battle-tested protocols that already secure billions.
 
-**The Challenge:** A $27B treasury is a massive target for hackers, fraudsters, and corrupt actors. Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks.
-
-**Our Multi-Layered Defense:**
-
-1. **Nobody's in Charge (And That's the Point)**
-
-   *Other organizations that manage billions of dollars this way already exist and work fine. Turns out you don't need a CEO when you have math.*
-   - Every VICTORY bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
-   - No human signers = no kidnapping, corruption, or coercion targets
-   - Smart contracts automatically execute community decisions after 24-72h timelocks
-   - Battle-tested approach managing billions in existing DAOs
-
-2. **AI-Powered Fraud Detection**
-   - Fraud Agent: real-time anomaly detection, duplication monitoring, collusion identification, sybil detection
-   - Safety Oracle: incident severity scoring with automatic payout holds for affected interventions
-   - Manual review queue for flagged actions with whistleblower bounty rewards
-   - Identity Oracle: verifies affiliations and conflicts, prevents unauthorized access
-
-3. **Complete Transparency & Auditability**
-   - All treasury addresses published with real-time public dashboards
-   - Immutable transaction logs with standardized disbursement tags
-   - Annual smart contract audits and semiannual operational audits with published reports
-   - Hash-committed invoices and budgets for full accountability
-
-4. **Recovery & Response Mechanisms**
-   - Clawbacks for data falsification or trial misconduct
-   - Emergency pause capabilities triggered by incident signals
-   - Progressive unpause policies tied to remediation completion
-   - Guardian modules for pausing non-critical functions under defined conditions
-
-### Beyond Medical Research: A Template for Uncorruptible Governance
-
-This isn't just about protecting research funding - it's an experiment in building the next generation of way better government that doesn't steal. Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that $27B can be managed with:
-
-- **Zero human targets** for violence, kidnapping, or corruption
-- **True community control** through direct token holder governance
-- **Complete transparency** with all decisions and executions on-chain
-- **Automated efficiency** eliminating bureaucratic waste and political favoritism
-
-**What Else This Could Fix:**
-
-*Once we prove you can run a $27 billion treasury without any humans stealing from it, we could do the same thing for schools, roads, or anything else the government currently screws up.*
-
-- **Education**: Pay teachers based on whether kids actually learn things
-- **Infrastructure**: Fund roads that don't immediately fall apart
-- **Environment**: Pay for actual carbon reduction, not paperwork
-- **Social Services**: Get help to people who need it without 47 forms
-
-**The Vision:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually work and can't be bribed. The DIH treasury becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
-
-This experiment could usher in a new era of peace, prosperity, and abundance by proving that large-scale public goods can be managed through true decentralization without any centralized control points.
+For a detailed breakdown of the multi-layered defense, AI-powered fraud detection, and technical architecture, see the full **[Governance & Security Protocol](./brain/book/governance.md)**.
 
 ---
 
@@ -500,53 +440,6 @@ This experiment could usher in a new era of peace, prosperity, and abundance by 
 **Coalition:** [How institutions can work with us](./brain/book/strategy/coalition-building.md)
 
 **Treaty:** [Full 1% Treaty text](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md)
-
----
-
-## X. APPENDIX (Supporting Details)
-
-## Referendums vs Independent Expenditures
-
-- **Referendums (where binding and timely):** Highest legitimacy; durable mandate; use when national or state mechanisms exist and timelines are practical.
-- **Advisory signals (where no referendum):** Run scientifically credible polling or representative citizen assemblies; publish verified tallies per district.
-- **Independent expenditures:** Fastest lever to translate district will into votes; pledge support for lawmakers who vote with their district's verified result (and oppose those who defy it), with strict no‑coordination.
-- **Hybrid playbook:** Use the global referendum for umbrella mandate; use country/district signals to direct lawful independent expenditures.
-
-## Legal Compliance (jurisdiction‑specific)
-
-- **United States:** Use independent‑expenditure committees (Super PACs). No coordination with campaigns; comply with FEC reporting and disclaimer rules; respect the foreign‑national ban (funds and decision‑making must be from U.S. persons for U.S. elections) [FEC guidance](./brain/book/references.md#fec-foreign-nationals).
-- **EU/UK/Canada/Japan and others:** Use lawful local equivalents (third‑party campaigners, non‑party campaigners, PACs). Separate, jurisdiction‑specific entities; local counsel review; segregated banking and governance.
-- **No quid‑pro‑quo contracts:** No smart‑contract triggers tied to legislative votes. Rewards are independent expenditures based on public, verified district will.
-
-## Implementation Roadmap
-
-See the consolidated plan: [Canonical Roadmap — 1% Treaty → DIH → dFDA](./brain/book/strategy/roadmap.md).
-
-**Phase 1 (Months 1-12):** Build global referendum platform; secure initial $250M financing tranche; launch in 5 pilot countries.
-
-**Phase 2 (Months 12-24):** Achieve 3.5% global participation; begin independent expenditures in priority elections; first binding referendum votes.
-
-**Phase 3 (Months 24-36):** Secure first national treaty commitments; establish DIH treasury operations; begin giving money to universities and companies.
-
-**Phase 4 (Months 36-48):** Scale to major powers (US, EU, China); achieve $27B+ annual inflows; full operational deployment.
-
-**Phase 5 (Years 4+):** Begin the multi-generational endgame. After a successful proof-of-concept period, initiate referendums for incremental increases to the redirection (e.g., to 1.5%, then 2%), creating a perpetual flywheel for peace. For details, see [The Endgame: A Multi-Generational Strategy to Phase Out War](./brain/book/strategy/the-endgame-phasing-out-war.md).
-
-**Key Gates:** 100M referendum participants → first $500M independent expenditure cycle → first treaty ratification → first $1B disbursement.
-
-## Risks and Mitigations
-
-**Cheating/Holdouts:** Start with coalitions of willing nations; use massive personal financial incentives targeting individual leaders in holdout nations - campaign support, personal investment opportunities in VICTORY bonds, and targeted independent expenditures against treaty opponents.
-
-**Capture/Corruption:** Transparent, algorithmic allocation based on verifiable health outcomes; independent audits funded by bounties.
-
-**Legal Challenges:** Multi-jurisdiction compliance from Day 1; constitutional scholars on advisory board; structured as treaty obligations, not domestic mandates.
-
-**Timeline Risk:** Phased approach with clear gates; early wins in smaller countries build momentum for major powers.
-
----
-
-For detailed source quotes and references supporting all claims made in this document, see [References](./brain/book/references.md).
 
 ---
 

@@ -46,3 +46,11 @@ This chapter provides a high-level overview. For a detailed breakdown of the spe
 - **[Multi-Entity Strategy](./legal/multi-entity-strategy.md):** A detailed analysis of the international corporate structure designed to isolate risk and ensure jurisdictional compliance.
 - **[Legal Compliance Framework](./strategy/legal-compliance-framework.md):** The comprehensive strategy for navigating foreign election funding restrictions and securities law.
 - **[HHS Policy Recommendations](./legal/hhs-policy-recommendations.md):** Specific, actionable policy recommendations for U.S. government agencies to support decentralized research.
+
+---
+
+## Appendix: Legal Compliance Details (Jurisdiction-Specific)
+
+- **United States:** Use independent‑expenditure committees (Super PACs). No coordination with campaigns; comply with FEC reporting and disclaimer rules; respect the foreign‑national ban (funds and decision‑making must be from U.S. persons for U.S. elections) [FEC guidance](./references.md#fec-foreign-nationals).
+- **EU/UK/Canada/Japan and others:** Use lawful local equivalents (third‑party campaigners, non‑party campaigners, PACs). Separate, jurisdiction‑specific entities; local counsel review; segregated banking and governance.
+- **No quid‑pro‑quo contracts:** No smart‑contract triggers tied to legislative votes. Rewards are independent expenditures based on public, verified district will.

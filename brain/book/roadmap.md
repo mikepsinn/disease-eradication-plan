@@ -79,3 +79,31 @@ This is the high-level, multi-year roadmap from a plan on paper to a self-sustai
 - **Gate 2:** First $500M independent expenditure cycle.
 - **Gate 3:** First national treaty ratification.
 - **Gate 4:** First $1B disbursement from the DIH Treasury.
+
+---
+
+## Appendix: Implementation Details
+
+### Implementation Roadmap
+
+**Phase 1 (Months 1-12):** Build global referendum platform; secure initial $250M financing tranche; launch in 5 pilot countries.
+
+**Phase 2 (Months 12-24):** Achieve 3.5% global participation; begin independent expenditures in priority elections; first binding referendum votes.
+
+**Phase 3 (Months 24-36):** Secure first national treaty commitments; establish DIH treasury operations; begin giving money to universities and companies.
+
+**Phase 4 (Months 36-48):** Scale to major powers (US, EU, China); achieve $27B+ annual inflows; full operational deployment.
+
+**Phase 5 (Years 4+):** Begin the multi-generational endgame. After a successful proof-of-concept period, initiate referendums for incremental increases to the redirection (e.g., to 1.5%, then 2%), creating a perpetual flywheel for peace. For details, see [The Endgame: A Multi-Generational Strategy to Phase Out War](./strategy/the-endgame-phasing-out-war.md).
+
+**Key Gates:** 100M referendum participants → first $500M independent expenditure cycle → first treaty ratification → first $1B disbursement.
+
+### Risks and Mitigations
+
+**Cheating/Holdouts:** Start with coalitions of willing nations; use massive personal financial incentives targeting individual leaders in holdout nations - campaign support, personal investment opportunities in VICTORY bonds, and targeted independent expenditures against treaty opponents.
+
+**Capture/Corruption:** Transparent, algorithmic allocation based on verifiable health outcomes; independent audits funded by bounties.
+
+**Legal Challenges:** Multi-jurisdiction compliance from Day 1; constitutional scholars on advisory board; structured as treaty obligations, not domestic mandates.
+
+**Timeline Risk:** Phased approach with clear gates; early wins in smaller countries build momentum for major powers.

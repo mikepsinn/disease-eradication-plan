@@ -86,3 +86,12 @@ This chapter provides the high-level strategy. For a detailed breakdown of the s
 - **[Solving the Free-Rider Problem](./strategy/free-rider-solution.md):** The detailed game theory behind ensuring national compliance.
 - **[The Legal & Compliance Framework](./strategy/legal-compliance-framework.md):** The plan for navigating global election and securities law.
 - **[Organizational Precedents](./reference/organizational-precedents.md):** An analysis of the historical models that inform this strategy.
+
+---
+
+## Appendix: Referendums vs. Independent Expenditures
+
+- **Referendums (where binding and timely):** Highest legitimacy; durable mandate; use when national or state mechanisms exist and timelines are practical.
+- **Advisory signals (where no referendum):** Run scientifically credible polling or representative citizen assemblies; publish verified tallies per district.
+- **Independent expenditures:** Fastest lever to translate district will into votes; pledge support for lawmakers who vote with their district's verified result (and oppose those who defy it), with strict no‑coordination.
+- **Hybrid playbook:** Use the global referendum for umbrella mandate; use country/district signals to direct lawful independent expenditures.
