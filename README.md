@@ -95,13 +95,35 @@ See [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) for 
 
 ## III. THE SOLUTION
 
-## Make Peace More Profitable Than War
+## How It Works: From $27 Billion to Curing Cancer
 
 We can't change human nature. But we can change what pays.
 
-Right now, war pays better than peace. So we get war.
+Here's the complete system that makes curing people more profitable than killing them:
 
-Here's the plan: We're going to legally bribe everyone—citizens, politicians, military contractors, investors—by offering them more money than they're making now. We'll bribe our way to a better world with an offer that's too good to refuse because the math is way better than what we're doing now.
+### The 6-Step Process:
+
+1. **Get the Money**: The 1% Treaty redirects $27B/year from weapons to cures
+2. **Allocate Efficiently**: The DIH uses democratic voting to fund what matters most  
+3. **Pay Patients**: Subsidies go directly to patients who join trials
+4. **Run Cheap Trials**: Pragmatic trials cost $500/patient instead of $41,000
+5. **Publish Everything**: The dFDA shows real effectiveness data for every treatment
+6. **Label Outcomes**: Every food and drug gets honest labels about what it actually does
+
+### The Speed and Cost Revolution:
+
+**Current System:**
+- **$2.2 billion** to develop one new treatment
+- **17 years** from discovery to patients  
+- **95% of diseases** have 0 FDA-approved treatments 
+
+**New System:**
+- **~$27 million** to develop one new treatment (80X cheaper)
+- **2-3 years** from discovery to patients (Oxford RECOVERY speed)
+- **1,000X more treatments** tested with same global budget
+- **Every disease** gets attention (patients pay to participate)
+
+**Result**: We know what works, what doesn't, people get paid to help us find out, and we do it 80X faster and cheaper.
 
 ```mermaid
 graph TD;
@@ -115,7 +137,7 @@ graph TD;
             A --> E["<b>Decentralized Institutes of Health (DIH)</b><br/>(~$19.8B/yr Mission Investment)<br/><i>Why It Works: 80x more efficient than current system</i>"];
         end
 
-        subgraph "What We Get";
+        subgraph "A World Without War and Disease";
             B --> F["Rich People on Our Side"];
             C --> G["Politicians Who Need Our Money"];
             D --> H["280 Million People Voting for This"];
@@ -450,21 +472,23 @@ This repository is structured as a book that tells the story of the Decentralize
 
 ### The Chapters
 
-- **[README.md](./brain/book/README.md)**: (This File) A high-level executive summary of the problem, the solution, and the plan.
-- **[problem.md](./brain/book/problem.md)**: **Chapter 1: Problem → We Spend More on Bombs Than Cancer Research** - A detailed analysis of how humanity misallocates trillions to war and destruction while the systems meant to cure disease are broken.
-- **[solution.md](./brain/book/solution.md)**: **Chapter 2: Solution → The 1% Treaty** - An outline of the simple, rational accord to redirect a fraction of military spending to create a self-funding engine for eradicating disease.
-- **[dfda.md](./brain/book/dfda.md)**: **Chapter 3: Trials → A Decentralized Autonomous FDA** - An introduction to the Decentralized FDA (dFDA), the 80X more efficient research protocol the DIH will build. (It's already been proven to work.)
-- **[vision.md](./brain/book/vision.md)**: **Chapter 4: The Vision → A World Without War and Disease** - A vivid depiction of the future that the DIH and dFDA will create—a world of accelerated innovation and extended human healthspan.
-- **[economics.md](./brain/book/economics.md)**: **Chapter 5: Economics → How to Make Peace More Profitable Than War** - An explanation of the economic model, including the Peace Dividend and VICTORY Bonds, that makes peace more profitable than war.
-- **[strategy.md](./brain/book/strategy.md)**: **Chapter 6: Strategy → How to Bribe Literally Everyone** - A breakdown of the execution strategy, which uses a global referendum and bribes to get everyone on our side (i.e. humanity).
-- **[proof.md](./brain/book/proof.md)**: **Chapter 7: The Proof → Why This Isn't as Insane as it Sounds** - A review of the historical precedents and hard evidence that prove the core components of this plan are feasible.
-- **[legal.md](./brain/book/legal.md)**: **Chapter 8: Legal → How to Stay Out of Prison** - An overview of the multi-entity global corporate structure designed for compliance and resilience.
-- **[governance.md](./brain/book/governance.md)**: **Chapter 9: Governance → How the People Who Pay Get to Vote** - How the people who paid for this get to vote on how it works.
-- **[operations.md](./brain/book/operations.md)**: **Chapter 10: Operations → Hiring Smart People and Getting Out of the Way** - The plan for hiring a few very smart people to bootstrap the DIH and then make itself obsolete.
-- **[roadmap.md](./brain/book/roadmap.md)**: **Chapter 11: Roadmap → What Happens Next** - The high-level, multi-year roadmap from the initial plan to a fully operational global institution.
-- **[FAQ.md](./brain/book/FAQ.md)**: **Chapter 12: FAQ → Objections & Responses** - Direct answers to the most common objections and frequently asked questions.
-- **[call-to-action.md](./brain/book/call-to-action.md)**: **Chapter 13: Join → How You Can Join** - Specific, actionable ways for citizens, investors, leaders, and builders to contribute to the mission.
-- **[CONTRIBUTING.md](./brain/book/CONTRIBUTING.md)**: A guide for all contributors, outlining the core principles, content standards, and information architecture of the project.
+- **[README.md](./brain/book/README.md)**: (This File) High-level executive summary.
+- **[problem.md](./brain/book/problem.md)**: **Chapter 1: Problem → We're Doing This Backwards**
+- **[solution.md](./brain/book/solution.md)**: **Chapter 2: Solution → The Complete System** (Overview)
+- **[1-percent-treaty.md](./brain/book/1-percent-treaty.md)**: **Chapter 3: The 1% Treaty → How We Get the Money**
+- **[dih.md](./brain/book/dih.md)**: **Chapter 4: The DIH → How to Spend $27 Billion Without Wasting It**
+- **[dfda.md](./brain/book/dfda.md)**: **Chapter 5: The dFDA → How We Prove What Works**
+- **[vision.md](./brain/book/vision.md)**: **Chapter 6: Vision → A World Without War and Disease**
+- **[economics.md](./brain/book/economics.md)**: **Chapter 7: Economics → The Money**
+- **[strategy.md](./brain/book/strategy.md)**: **Chapter 8: Strategy → How to Bribe Literally Everyone**
+- **[proof.md](./brain/book/proof.md)**: **Chapter 9: Proof → Why This Isn't as Insane as it Sounds**
+- **[legal.md](./brain/book/legal.md)**: **Chapter 10: Legal → How to Stay Out of Prison**
+- **[governance.md](./brain/book/governance.md)**: **Chapter 11: Governance → How We Make Decisions**
+- **[operations.md](./brain/book/operations.md)**: **Chapter 12: Operations → How We Build This Thing**
+- **[roadmap.md](./brain/book/roadmap.md)**: **Chapter 13: Roadmap → Timeline to Global Impact**
+- **[FAQ.md](./brain/book/FAQ.md)**: **Chapter 14: FAQ → Objections & Responses**
+- **[call-to-action.md](./brain/book/call-to-action.md)**: **Chapter 15: Call-to-Action → I Want You**
+- **[CONTRIBUTING.md](./brain/book/CONTRIBUTING.md)**: Contributor guidelines and project standards.
 
 ### The Sections (Supporting Details)
 

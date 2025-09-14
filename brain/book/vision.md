@@ -16,7 +16,7 @@ The 1% Treaty is not the endgame. It is the **spark** for a new human trajectory
 
 ---
 
-## What We Get: No More Dying From Stupid Diseases
+## Long-Term End State: A World Without War and Disease
 
 Fifty years from now, your kid gets diagnosed with some rare genetic disease. Instead of bankruptcy and death, here's what happens:
 
@@ -32,7 +32,7 @@ That's what happens when we stop wasting money on bombs and start spending it on
 
 ## What Happens Next: From 1% to Everything
 
-Here's the thing about the 1% Treaty: it's just the beginning.
+The 1% Treaty is just the beginning.
 
 When the first 1% works so well that cancer gets cured and people stop dying of preventable diseases, everyone's going to want more. Citizens will vote for it. Politicians will support it because their voters demand it.
 
