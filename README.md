@@ -359,13 +359,13 @@ Fair skepticism. Here's why the math actually works:
 
 ### The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
 
-Even if the Decentralized Institutes of Health were a completely inefficient failure and dumped every single dollar into the ocean, the world would _still_ be better off.
+Even if the Decentralized Institutes of Health were a completely inefficient failure and or we just dumped the $27B into the ocean, the world would _still_ be better off.
 
 Why?
 
-Because we would still have **1% fewer nuclear weapons**. We would still have a **1% slower AI arms race**. We would still have a **1% reduction in the global capacity for organized violence.**
+We would still have a **1% reduction in the global capacity for wanton death and destruction.**
 
-The worst possible outcome of this plan—total waste—is still a net gain for global security. The best possible outcome is that we also cure cancer.
+The worst possible outcome of this plan is still a net gain for global security. The best possible outcome is that we cure your cancer.
 
 ### The Peace Dividend: The Economic Engine of Victory
 
