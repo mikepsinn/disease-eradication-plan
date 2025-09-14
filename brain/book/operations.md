@@ -8,62 +8,61 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 7: Building the Organization
+# 📖 Chapter 7: How We Build This Thing
 
-The DIH is not a typical organization, and it will not be built by a typical team. Our operational philosophy is designed for a singular purpose: to build a self-sustaining, decentralized protocol for global good, and then get out of the way.
+We're not building a normal company. We're building a small team to get this started, then making ourselves obsolete.
 
-## The Philosophy: A Temporary Activation Team
+## The Plan: Start Small, Then Disappear
 
-We are not building a large, permanent bureaucracy. We are building a small, elite **"activation team"** whose sole mission is to bootstrap the DIH and then make themselves obsolete.
+We'll hire a few very smart people to build the system, then get out of the way.
 
-This requires a clear distinction between core and tactical functions:
+Here's how we split the work:
 
-- **Core Functions (Internal Team):** The permanent brain trust. A small, core team will handle strategy, leadership, political maneuvering, legal architecture, and product vision.
-- **Tactical Execution (Outsourced & Decentralized):** All other functions—software development, media production, specialized analysis—will be handled by top agencies, contractors, and eventually, the decentralized community itself through grants and bounties.
+- **Core Team:** A few people handle strategy, politics, legal stuff, and the big picture.
+- **Everything Else:** We hire contractors, agencies, and eventually pay the community to do the actual work.
 
-The team's ultimate measure of success is the creation of a system that no longer needs them.
+We win when the system works without us.
 
-## Compensation: Alignment by Design
+## How We Pay People
 
-To maintain deep alignment with the mission, the core team's compensation is heavily weighted towards the long-term success of the project.
+We pay modest salaries plus a big stake in the outcome.
 
-- **Salaries:** Modest, market-rate cash salaries to cover living expenses.
-- **Incentives:** Large, vested grants of **[VICTORY instruments](./economics.md)**.
+- **Salaries:** Enough to live on, but not crazy money.
+- **Equity:** Big grants of **[VICTORY instruments](./economics.md)** that pay off when we win.
 
-This preserves the treasury for the most important political and technical spending while ensuring that the team's personal financial success is directly and inextricably linked to the success of the 1% Treaty.
+This way, the team gets rich when the mission succeeds, not when they negotiate better salaries.
 
-## The Phased Hiring Roadmap
+## Who We Hire and When
 
-The activation team will be assembled in phases, scaling only as the mission achieves key milestones.
+We start with three people, then scale up as we hit milestones.
 
-### Phase 0: The Founding Team (Months 0-3)
+### Phase 0: The First Three People (Months 0-3)
 
-**Goal:** Assemble the 3 core leads with pre-seed funding to execute the main capital raise and global campaign.
+**Goal:** Get the core team together and raise the first round of money.
 
-- **[Capital Markets Lead](./careers/capital-markets-lead.md):** Structure the VICTORY bonds, build the comprehensive financial model and data room, and lead the subsequent seed and Series A fundraising efforts.
-- **Elections & IE Compliance Lead:** A legal and political expert responsible for designing the legally-compliant framework for the global referendum and the multi-jurisdictional independent expenditure (IE) strategy.
-- **Growth & Referrals Lead:** A product and growth leader responsible for designing the technology, incentive structure, and viral referral mechanics of the global referendum platform and VOTE points system.
+- **Money Person:** Structure the VICTORY bonds, build the financial models, and raise money from investors.
+- **Legal/Political Person:** Design the legal framework for the global referendum and figure out how to run political campaigns in different countries without going to prison.
+- **Growth Person:** Build the platform where people vote and get rewards, and make it spread like wildfire.
 
-### Phase 1: The Seed Team (Headcount: ~20)
+### Phase 1: Twenty People (Months 4-12)
 
-**Goal:** With seed funding secured, build the foundational leadership and technical teams to launch the global campaign.
+**Goal:** Raise serious money and build the platform.
 
-- **Leadership:** CEO, COO, CTO, Chief Strategy Officer, General Counsel.
-- **Core Functions:** Heads of Product, Design, Community, and Political Strategy.
+Get the standard startup leadership team: CEO, COO, CTO, lawyers, and heads of product, design, community, and politics.
 
-### Phase 2: The Scale-Up Team (Headcount: ~50-75)
+### Phase 2: Fifty to Seventy-Five People (Months 13-24)
 
-**Goal:** As the global referendum gains momentum, scale the team to support hundreds of millions of users and a full-scale political operation.
+**Goal:** Run the global referendum and political campaigns.
 
-- **Key Hires:** Head of Security, Data Science team, and expanded engineering and political staff.
+Add security, data science, more engineers, and political operatives.
 
-### Phase 3: The Protocol Team (Headcount: ~75-100)
+### Phase 3: Seventy-Five to One Hundred People (Years 3+)
 
-**Goal:** With the treaty ratified, transition to a team focused on managing the multi-billion dollar DIH treasury and facilitating decentralized governance.
+**Goal:** Manage the $27 billion treasury.
 
-- **Key Hires:** CFO, Chief Compliance Officer, Head of Governance / DAO Facilitator, and Treasury Operations.
+Add CFO, compliance officers, and people who know how to run a massive budget without stealing.
 
-This lean, phased approach ensures that we remain agile, efficient, and relentlessly focused on the mission at every stage.
+The idea is to start small, scale fast when we need to, then stabilize once the money starts flowing.
 
 ---
 

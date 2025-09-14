@@ -8,21 +8,21 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 1: The Grotesque Misallocation
+# 📖 Chapter 1: We're Doing This Backwards
 
-Humanity is engaged in resource misallocation on a planetary scale. We spend trillions of dollars to kill each other and pennies to cure each other. This is not just inefficient; it is a moral and economic catastrophe that locks us in a cycle of destruction and suffering.
+We spend trillions on killing people and almost nothing on curing them.
 
-The total global annual cost of disease is a staggering **[~$244 trillion](./economics/cost-of-disease.md)**, while the direct and indirect costs of war amount to **[~$74,259 per person](./reference/costs-of-war.md)** over an 80-year lifespan.
+Disease costs us **[~$244 trillion](./economics/cost-of-disease.md)** every year globally. War costs each person **[~$74,259](./reference/costs-of-war.md)** over their lifetime.
 
-We are funding our own demise while simultaneously failing to fund our survival.
+We're paying to die instead of paying to live. This is insane.
 
 ---
 
-## Part I: The War Machine's Endless Appetite
+## Part I: Where the Money Goes
 
-The world spends over **[$2.4 trillion annually on military budgets](https://www.sipri.org/media/press-release/2024/world-military-expenditure-surges-amid-war-rising-tensions-and-insecurity)**, an industry optimized for destruction. This spending doesn't just divert resources; it actively dismantles progress in every other field of human endeavor.
+The world spends **[$2.4 trillion every year on weapons](https://www.sipri.org/media/press-release/2024/world-military-expenditure-surges-amid-war-rising-tensions-and-insecurity)**. That's money we could use to solve actual problems.
 
-You can't solve climate change, poverty, or hunger while the engines of war consume the budget and erase progress in a flash.
+Instead, we use it to blow things up. You can't cure cancer with bombs. You can't fix climate change while building more missiles. You can't end poverty while funding armies.
 
 - **Environmental Collapse:** The war in Ukraine **[destroyed 20% of the nation's protected areas](https://www.unep.org/news-and-stories/story/ukraine-assessing-environmental-damage-war)** in months. The Gulf War's oil fires **[burned for 10 months](https://www.britannica.com/event/Persian-Gulf-War/Environmental-consequences)**, releasing more carbon than the annual emissions of most countries. The US military is the **[top global polluter](https://earth.org/military-pollution/)**.
 - **Humanitarian Crisis:** Nearly all starvation today is **[caused by violent conflict](https://www.wfp.org/conflict-and-hunger)**. Conflicts create more poverty than aid organizations can possibly solve.
@@ -31,11 +31,11 @@ We are bailing water out of a sinking ship while others are paid handsomely to d
 
 ---
 
-## Part II: The Broken Engine of Medical Progress
+## Part II: How We Waste Money on Medicine
 
-While we pour trillions into war, the system for creating new medicines is a bureaucratic, financial, and ethical disaster. It is a system that punishes innovation and rations hope.
+While we waste trillions on weapons, the system for creating new medicines is also broken. It's slow, expensive, and stupid.
 
-These are not minor inefficiencies; they are catastrophic failures that cost millions of lives and trillions of dollars.
+Here's how bad it is:
 
 - **💸 ~$43,000** is the cost per participant in a traditional clinical trial.
 - **💸 ~$2.2 Billion** is the cost to develop a single new treatment, a cost that ultimately falls on patients.
@@ -51,6 +51,6 @@ These are not minor inefficiencies; they are catastrophic failures that cost mil
 - **🌍 2 billion people** are suffering from diseases that remain uncured.
 - **🧫 It has been 44 years** since we last eradicated a disease (smallpox in 1980).
 
-The current system is designed to produce profits for a few, not cures for the many. It is a closed, inefficient, and morally bankrupt model that we can no longer afford. We are fighting 21st-century diseases with a 20th-century bureaucracy.
+The current system makes money for drug companies and bureaucrats, not cures for patients. It's broken.
 
-This is the problem we must solve. It is the biggest opportunity for humanity.
+We're fighting 21st-century diseases with 20th-century bureaucracy. This is what we're going to fix.
