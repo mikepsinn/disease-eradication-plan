@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 4: The Financial Engine
+# 📖 Chapter 5: Economics - The Money
 
 This is not a charity. It is the largest value creation opportunity in human history. The economic model of the Decentralized Institutes of Health (DIH) is designed to be a self-sustaining engine that makes peace and health outrageously profitable.
 

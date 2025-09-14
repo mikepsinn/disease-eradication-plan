@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 3: A Decentralized Autonomous FDA
+# 📖 Chapter 3: DFDA - A Decentralized Autonomous FDA
 
 The DIH is the treasury. The **dFDA** is what we spend the money on.
 

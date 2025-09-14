@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 12: How You Can Join
+# 📖 Chapter 13: Call-to-Action - How You Can Join
 
 We need your help. Here's how you can contribute:
 

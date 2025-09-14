@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 2: Legal Bribery for Peace
+# 📖 Chapter 2: The 1% Treaty
 
 The solution to our grotesque misallocation of resources is not complicated. It does not require a complete reinvention of human nature. It requires a simple, logical, and globally coordinated act of rational self-interest.
 

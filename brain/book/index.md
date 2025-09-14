@@ -643,7 +643,7 @@ This document provides a complete inventory of all markdown files in the reposit
 ---
 
 ### [`solution.md`](./solution.md)
-- **title:** Legal Bribery for Peace: The 1% Treaty
+- **title:** The 1% Treaty
 - **description:** The solution is a simple, rational, and profound global accord: The 1% Treaty. By redirecting a tiny fraction of military spending, we can make curing people more profitable than killing them.
 - **published:** true
 - **date:** 2025-09-10T00:00:00.000Z

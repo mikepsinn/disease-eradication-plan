@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 5: How to Bribe Literally Everyone
+# 📖 Chapter 6: Strategy - How to Bribe Literally Everyone
 
 Our strategy is not to win a moral argument. It is to bribe the shit out of literally everyone.
 

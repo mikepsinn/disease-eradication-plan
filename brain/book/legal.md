@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 7: How to Stay Out of Prison
+# 📖 Chapter 8: Legal - How to Stay Out of Prison
 
 The legal setup is just as important as the money. We need to follow international law, securities regulations, and political rules without breaking anything.
 
