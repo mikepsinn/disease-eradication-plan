@@ -12,23 +12,23 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 Our strategy is not to win a moral argument. It is to bribe the shit out of literally everyone.
 
-We will succeed by offering everyone a deal that is mathematically, financially, and politically superior to the status quo. This is a strategy of **engineered bribery**, designed to systematically turn opposition into advocacy by making support for the 1% Treaty the most profitable decision a person can make.
+We will succeed by offering everyone a deal that's better than what they have now. When supporting the 1% Treaty makes you more money than opposing it, rational people support it.
 
 ---
 
-## The Intellectual Foundation: Lessons from Public Choice Theory
+## How Politics Actually Works
 
-Our strategy is built on a clear-eyed understanding of how political decisions are actually made. It is a direct application of Public Choice Theory, which analyzes politics through the lens of economics. We operate on four core principles:
+Politicians don't do things because they're moral. They do things because they get paid. Here's what we know about how this works:
 
-- **1. Individuals Act in Their Own Self-Interest:** We assume that politicians, corporate leaders, and voters are rational actors who will consistently choose the option that provides them with the most personal benefit (wealth, power, security). Our strategy does not rely on altruism; it relies on greed.
+- **People are greedy.** Politicians, corporate leaders, and voters choose whatever makes them richer or more powerful. Our strategy relies on this, not on people being good.
 
-- **2. Concentrated Benefits Outweigh Diffuse Costs:** A small group that stands to gain a large, concentrated benefit will always be more motivated than a large group that bears a small, diffuse cost. We win by engineering a system that provides massive, _concentrated_ benefits to key decision-makers for supporting the treaty.
+- **Small groups beat big groups.** A small group getting a lot of money will always fight harder than a big group losing a little money. We give the small groups massive benefits for supporting the treaty.
 
-- **3. Politics is a Marketplace (Politics as Exchange):** Policy is not decided by moral arguments; it is the result of transactions. We are not entering a debate; we are entering a marketplace with a mathematically superior product. We are offering a better deal.
+- **Politics is shopping.** Policy isn't decided by who has the best moral argument. It's decided by who offers the best deal. We're offering a better deal.
 
-- **4. Rent-Seeking is Human Nature:** Actors will naturally expend resources to capture economic value through the political process. Instead of fighting this, we channel it. We have created a new, more profitable "rent" for lobbyists and corporations to seek: the Peace Dividend.
+- **Everyone wants a cut.** Lobbyists and corporations will always try to grab money through politics. Instead of fighting this, we redirect it. We've created a new, more profitable way for them to get rich: the Peace Dividend.
 
-By building our entire strategy on these proven principles of human behavior, we are not hoping for change—we are engineering its inevitability.
+We're not hoping people change. We're giving them better incentives.
 
 ---
 
@@ -36,43 +36,43 @@ By building our entire strategy on these proven principles of human behavior, we
 
 The strategy unfolds in a sequence of bribes, each one funding the next, creating an unstoppable coalition of self-interest.
 
-### 1. The Bribe for Investors & The Financial Elite
+### 1. The Bribe for Rich People
 
-- **Who:** Wealthy individuals, funds, anchor investors, and the military-industrial complex itself.
-- **The Bribe:** The most profitable investment opportunity in human history, modeled on the proven success of **[WWII War Bonds](./reference/organizational-precedents.md)** but with venture-capital-level returns.
-- **A >40% Targeted Annual Return:** We offer **[VICTORY Bonds](./economics.md)** engineered to deliver a risk-adjusted expected value superior to the world's most elite hedge funds (e.g., Renaissance Medallion Fund's ~39% CAGR).
-- **Governance Over a $27B Treasury:** Investors don't just get a return; they get governance rights over a multi-billion-dollar annual, perpetual capital allocation engine. This "Governance Alpha" is an uncapped source of value and influence.
-- **A De-Risked Bet:** Initial investments are protected by an **[Assurance Contract](./economics/fundraising-strategy.md)**, guaranteeing a full refund if fundraising goals are not met. This eliminates the primary risk for early backers.
-- **The Result:** We co-opt the most powerful financial players on the planet, including defense contractors. Their fiduciary duty compels them to support the treaty that makes them richer.
+- **Who:** Wealthy people, investment funds, and the military-industrial complex.
+- **The Bribe:** Better returns than the best hedge funds, plus you get to vote on how a $27 billion budget gets spent.
+- **40% Annual Returns:** **[VICTORY Bonds](./economics.md)** are designed to beat the world's best hedge funds.
+- **You Get to Vote:** Investors don't just get money back. They get to control how a $27 billion annual budget gets spent. That's power.
+- **Money-Back Guarantee:** If we don't raise enough money to make this work, you get a full refund.
+- **The Result:** Defense contractors and billionaires make more money supporting peace than supporting war. So they support peace.
 
-### 2. The Bribe for Citizens
+### 2. The Bribe for Regular People
 
-- **Who:** The global population (targeting 3.5% = 280 million people).
-- **The Bribe:** A direct stake in the peace dividend they help create, turning a protest into a shareholder movement.
-- **"Proof-of-Vote" Rewards:** Every person who votes in the **[Global Referendum](./strategy/global-referendum/)** receives **VOTE points**—a verifiable, on-chain claim to the economic value they are unlocking.
-- **Conversion to Real Value:** After the treaty is ratified, these points become convertible to VICTORY bonds, granting citizens earned ownership and governance in the **$27B+ annual health treasury** they helped create.
-- **The Result:** We transform a passive populace into an active, incentivized army of people who want their money. This is not a petition; it is the creation of the largest shareholder base in history. This creates a political mandate that is impossible to ignore, based on the historically unstoppable **[3.5% Rule](./reference/organizational-precedents.md)**, which shows that no nonviolent movement has ever failed once it achieved active participation from 3.5% of the population.
+- **Who:** Everyone else (targeting 280 million people worldwide).
+- **The Bribe:** You help us get people to vote, you get paid when we win.
+- **VOTE Points:** Every person who votes in our **[Global Referendum](./strategy/global-referendum/)** gets points. These aren't fake internet points. They represent real money.
+- **You Get Paid:** After the treaty passes, those points become real ownership in the $27 billion annual health budget. You helped create it, you get a piece of it.
+- **The Result:** Instead of a traditional protest where people wave signs and go home, we create 280 million people who have skin in the game. When 3.5% of the world's population wants something and will get paid for it, politicians listen.
 
-### 3. The Bribe for Politicians & Leaders
+### 3. The Bribe for Politicians
 
-- **Who:** Key legislators and heads of state in target countries.
-- **The Bribe:** A package of personal wealth, political power, and a lasting legacy.
-- **A Personal Political War Chest:** We hand them an undeniable, popular mandate from the Global Referendum. They can use this massive wave of public support—which we built for them—to crush their political opponents, consolidate power, and build a legacy. We are giving them the ultimate political weapon.
-- **The Power to Reward Allies:** Signatory leaders gain the right to direct a portion of the DIH's multi-billion-dollar R&D budget to universities and companies **in their home districts**. This is a firehose of cash they can use to create jobs, reward their biggest financial backers, and stand at ribbon-cutting ceremonies for decades.
-- **Enriched Elites:** We will offer privileged, early access to VICTORY Bonds to a nation's sovereign wealth funds and key financial institutions _contingent on their leader signing the treaty_. This creates a powerful domestic coalition of the nation's wealthiest and most influential players who will pressure their leader to sign the deal that makes them rich.
-- **The Result:** The choice for a leader is simple: accept a political and financial package that guarantees their personal power and enriches their allies, or be swept away by the tide. Compliance becomes the only rational choice.
+- **Who:** Presidents, prime ministers, and key legislators.
+- **The Bribe:** We make them look good, help them win elections, and let them hand out money to their friends.
+- **Popular Support:** We give them 280 million people demanding the treaty. Politicians love being on the popular side of an issue, especially when it costs them nothing.
+- **Money for Their Districts:** Leaders who sign get to direct billions in R&D spending to universities and companies in their areas. They get to cut ribbons and take credit for bringing jobs home.
+- **Their Rich Friends Get Richer:** The wealthiest people in their country get early access to the best investment returns in the world, but only if their leader signs the treaty. Rich people then pressure the leader to sign.
+- **The Result:** Leaders who support the treaty get popular support, money for their districts, and happy rich friends. Leaders who oppose it get voted out by people who want their money. Easy choice.
 
 ---
 
-## The Phased Campaign: A High-Level Roadmap
+## The Plan
 
-This strategy will unfold in a series of carefully planned phases, each building on the last.
+Here's how we do it:
 
-1.  **Phase 0: Foundation (Months 0-3):** Establish the core legal/financial structure and hire the elite "activation team" to run the campaign.
-2.  **Phase 1: Mobilization (Months 4-36):** Launch the global referendum to build the 3.5% mandate and execute the **[$1.2–$2.5B capital raise](./economics/fundraising-and-budget-plan.md)** for VICTORY Bonds.
-3.  **Phase 2: Execution (Years 3-5+):** With the mandate and capital secured, achieve legal adoption of the 1% Treaty in key nations, activate the DIH Treasury, and begin funding the war on disease at scale.
+1.  **Months 0-3:** Set up the legal structure and hire smart people to run the campaign.
+2.  **Months 4-36:** Launch the global referendum to get 280 million people to vote, and raise **[$1.2–$2.5 billion](./economics/fundraising-and-budget-plan.md)** from investors.
+3.  **Years 3-5:** Use the mandate and money to get major countries to sign the treaty, then start spending $27 billion per year on curing diseases.
 
-This is the pragmatic, sequenced roadmap from a bold idea to an inevitable global reality.
+That's it.
 
 ---
 
