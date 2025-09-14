@@ -223,9 +223,9 @@ This simple model ensures that even in conservative scenarios, the DIH remains m
 
 ## The Core Strategy: Co-opt, Don't Compete
 
-**We don't compete with the military-industrial complex. We co-opt them.**
+**We don't fight the military-industrial complex. We make them a better offer.**
 
-Here's our plan: We offer military contractors and politicians a better deal than what they're getting now, turning today's **War Contractors** into tomorrow's **Peace Contractors**.
+We turn today's **War Contractors** into tomorrow's **Peace Contractors** by paying them more.
 
 **Current Military Contractor Economics:**
 
@@ -271,19 +271,19 @@ Here's our plan: We offer military contractors and politicians a better deal tha
 
 *We're offering arms dealers more money to save lives than they currently make blowing things up. Turns out most people aren't actually evil—they just respond to incentives.*
 
-**Our Superior Offer to Military Contractors:**
+**Our Better Offer to Military Contractors:**
 
-1. **They Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats all alternative investment options
-2. **They Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk
-3. **They Protect Their Families:** Their families get diseases too. Hence, they'd be better off profiting from funding cures rather than bombs
-4. **Repurpose Their Lobbyists:** Instead of hiring new lobbyists, we legally bribe them with better returns to get their existing lobbying apparatus to push for the treaty
+1. **More Money:** VICTORY bonds pay >40% returns, better than anything else they can find
+2. **Better Security:** A world without disease is safer than a world with 13,000 nukes
+3. **Their Families Too:** Defense contractors get cancer just like everyone else. They can profit from funding cures instead of bombs
+4. **Same Lobbyists:** We pay their existing lobbyists better returns to push for the treaty instead of against it
 
-**Our Superior Offer to Politicians:**
+**Our Better Offer to Politicians:**
 
-- **Personal Investment Opportunity:** Politicians and their families can directly invest in [VICTORY Bonds](./brain/book/economic-models/victory-bond-investment-thesis.md) that pay better than anything else they can find, including defense stocks
-- **Campaign Dominance:** Massive independent expenditure support for treaty supporters; equivalent opposition funding for defectors (no coordination)
-- **Electoral Insurance:** The [3.5%](./brain/book/references.md#3-5-rule) public mandate makes supporting the treaty the politically safer choice
-- **Political Insurance:** A new, highly popular policy platform that lets politicians claim credit for curing diseases and extending lifespans
+- **Personal Investment:** Politicians can invest in [VICTORY Bonds](./brain/book/economic-models/victory-bond-investment-thesis.md) that pay better than defense stocks
+- **Campaign Money:** Massive campaign support for treaty supporters; massive opposition funding for those who vote against it
+- **Political Safety:** When 3.5% of your voters demand this, supporting it becomes the safer political choice
+- **Easy Win:** Politicians get to claim credit for curing cancer and extending lifespans
 
 **How Each Step Pays for the Next Step:** Rich people fund the global vote. The vote creates political pressure. Politicians pass treaties. Treaties create the $27 billion treasury. The treasury makes everyone even richer. And around we go.
 

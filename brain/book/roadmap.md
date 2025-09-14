@@ -10,7 +10,7 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 # 📖 Chapter 10: Timeline to Global Impact
 
-This is the high-level, multi-year roadmap from a plan on paper to a self-sustaining global institution. It is a pragmatic sequence of phases, each with a clear goal, a specific timeline, and measurable milestones.
+Here's how we go from a plan to a $27 billion annual budget in 3-5 years.
 
 ---
 

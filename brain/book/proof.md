@@ -10,20 +10,22 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 # 📖 Chapter 6: Why This Isn't as Insane as it Sounds
 
-The strategy for the War on Disease is not based on hope. It is a pragmatic plan engineered from the lessons of major historical movements, both successful and unsuccessful. Each core component of our model is a direct application of a proven real-world precedent.
+This isn't some crazy new idea. Every piece of this plan has worked before.
+
+Here's the proof:
 
 ---
 
-## 1. The Operational Precedent: 80X Efficiency
+## 1. The 80X Efficiency Is Already Proven
 
-**The Precedent: The Oxford RECOVERY Trial**
+**The Oxford RECOVERY Trial**
 
-The claim that we can make medical research **80X more efficient** is not a projection; it's a historical fact.
+We're not guessing about the 80X efficiency. It already happened.
 
-- During the COVID-19 pandemic, the **[Oxford RECOVERY trial](./reference/recovery-trial.md)** pioneered a pragmatic, decentralized model that reduced per-patient clinical trial costs from an industry average of ~$41,000 to just **$500**.
-- This hyper-efficient model was not only cheaper but faster and more effective, saving an estimated **1 million lives** by rapidly identifying which treatments worked (like Dexamethasone) and which did not.
+- During COVID-19, the **[Oxford RECOVERY trial](./reference/recovery-trial.md)** cut clinical trial costs from $41,000 per patient to **$500**.
+- This wasn't just cheaper—it was faster and more effective, saving an estimated **1 million lives** by quickly figuring out which treatments worked.
 
-**The Lesson:** The DIH's entire operational model is built on scaling this proven, radically more efficient approach to _all_ diseases. The 80X efficiency gain is the hard, factual basis for the massive ROI of the entire project.
+**The Point:** We're not inventing anything new. We're just scaling up what Oxford already proved works. The 80X efficiency is real.
 
 ---
 

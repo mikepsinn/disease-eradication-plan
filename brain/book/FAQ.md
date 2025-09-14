@@ -10,7 +10,7 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 # 📖 Chapter 8: Objections & Responses
 
-Every ambitious plan faces tough questions. Here we address the most common objections to the 1% Treaty and the DIH model directly and transparently.
+People have questions. Here are answers.
 
 ---
 

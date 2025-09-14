@@ -10,11 +10,11 @@ dateCreated: "2025-09-10T00:00:00.000Z"
 
 # 📖 Chapter 3: A Decentralized Autonomous FDA
 
-The Decentralized Institutes of Health (DIH) is the treasury. The **Decentralized FDA (dFDA)** is the engine it funds.
+The DIH is the treasury. The **dFDA** is what we spend the money on.
 
-The dFDA is not a new government bureaucracy or a single software application. It is an **open-source, decentralized protocol** for clinical research designed to be **[80 times more efficient](./reference/recovery-trial.md)** than the current system. Its purpose is to define the rules and standards that allow a competitive ecosystem of companies, universities, and patient groups to conduct research faster, cheaper, and more transparently.
+The dFDA isn't a new government agency. It's an **open-source system** for clinical research that's **[80 times cheaper](./reference/recovery-trial.md)** than what we have now. It lets companies, universities, and patient groups run trials faster, cheaper, and more transparently.
 
-This chapter outlines the vision for this new engine of medical progress.
+Here's how we fix medical research.
 
 ## Dive Deeper
 
