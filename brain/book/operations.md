@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 10: Operations - How We Build This Thing
+# 📖 Chapter 11: Operations - How We Build This Thing
 
 We're not building a normal company. We're building a small team to get this started, then making ourselves obsolete.
 

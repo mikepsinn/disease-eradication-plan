@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 12: FAQ - Objections & Responses
+# 📖 Chapter 13: FAQ - Objections & Responses
 
 People have questions. Here are answers.
 

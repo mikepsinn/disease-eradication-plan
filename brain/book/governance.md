@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 9: Governance - How We Make Decisions
+# 📖 Chapter 10: Governance - How We Make Decisions
 
 The Decentralized Institutes of Health (DIH) is a SuperDAO governed by **Wishocracy**, a protocol for managing large, decentralized organizations.
 

@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 4: Vision - A World Without War and Disease
+# 📖 Chapter 6: Vision - A World Without War and Disease
 
 This is the world we are fighting for. It is the future that becomes possible the moment we decide that investing in human potential is more profitable than investing in human destruction.
 

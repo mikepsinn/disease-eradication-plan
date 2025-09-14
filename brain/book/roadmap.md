@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 11: Roadmap - Timeline to Global Impact
+# 📖 Chapter 12: Roadmap - Timeline to Global Impact
 
 Here's how we go from a plan to a $27 billion annual budget in 3-5 years.
 
