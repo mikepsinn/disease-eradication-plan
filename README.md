@@ -17,7 +17,7 @@ War is incredibly stupid. It costs humanity [$16.5 trillion a year](./brain/book
 
 Yet, we spend [$2.72 trillion](./brain/book/references.md#sipri-2024-spending) per year on this idiocy.
 
-Meanwhile, aging, death and disease are very gradually destroying the lives of you and everyone you love. Yet we spend 40 times less ([$67.5 billion](./brain/book/reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
+Meanwhile, aging, death and disease are very gradually destroying the lives of you and everyone you love. Yet we spend 40 times less ([$67.5 billion](./brain/reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
 
 We spend 40 times more on killing people than on curing them.
 
@@ -39,7 +39,7 @@ For every $1 the military-industrial complex spends on lobbying politicians, it 
 
 So here's the plan: We do exactly the same thing in reverse.
 
-We create a [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./brain/book/reference/recovery-trial.md) for the most promising new treatments."
+We create a [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./brain/reference/recovery-trial.md) for the most promising new treatments."
 
 Getting every government to ratify the treaty requires two things:
 
@@ -62,7 +62,7 @@ The military industrial complex is composed of humans that are not evil, they ju
 
 ## We're Doing This Backwards
 
-Governments spend [\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024) on ways to kill people and [\$67.5 billion](./brain/book/reference/global-government-medical-research-spending.md) on ways to save them.
+Governments spend [\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024) on ways to kill people and [\$67.5 billion](./brain/reference/global-government-medical-research-spending.md) on ways to save them.
 
 That's 40 to 1. Forty times more money for death than for life.
 
@@ -89,7 +89,7 @@ Humanity has two options:
 
 Pick one.
 
-See [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](./brain/book/reference/costs-of-war.md).
+See [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](./brain/reference/costs-of-war.md).
 
 ---
 
@@ -179,7 +179,7 @@ We pay investors most of their money up front (~$7.23B per year when everything 
 
 **[Decentralized Institutes of Health (DIH)](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](./brain/book/problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) system** with proven results:
 
-- **[80X Greater Efficiency](./brain/book/reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [$41,000](./brain/book/references.md#trial-cost-41k) to as low as [$500](./brain/book/references.md#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](./brain/book/reference/recovery-trial.md), which saved over 1 million lives globally.
+- **[80X Greater Efficiency](./brain/reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [$41,000](./brain/book/references.md#trial-cost-41k) to as low as [$500](./brain/book/references.md#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](./brain/reference/recovery-trial.md), which saved over 1 million lives globally.
 - **[$50 Billion in Annual Savings](./brain/book/economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA system is projected to save the global R&D industry ~$50 billion annually—**based on actual performance data, not projections**.
 - **[840,000+ Extra Years of Healthy Life](./brain/book/economic-models/dfda-cost-benefit-analysis.md):** The system is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**This isn't some pie-in-the-sky idea. The Oxford RECOVERY trial already proved you can run medical trials for $500 per patient instead of $41,000. We're just going to do more of that**.
 
@@ -330,7 +330,7 @@ Fair skepticism. Here's why the math actually works:
 ### 2. The 80X Efficiency Gain Is Already Proven
 
 - Oxford RECOVERY trial: [$500 per patient vs. $41,000 traditional](./brain/book/references.md#recovery-cost-500)—saved over 1 million lives globally
-- NIH RECOVER: [$1.6 billion, zero completed trials in 4 years](./brain/book/reference/recovery-trial.md)
+- NIH RECOVER: [$1.6 billion, zero completed trials in 4 years](./brain/reference/recovery-trial.md)
 - **This isn't theoretical. The efficiency gain already happened and saved millions.**
 
 ### 3. Mass Political Mobilization Works
@@ -510,10 +510,10 @@ This repository is structured as a book that tells the story of the Decentralize
 - [hiring-plan.md](./brain/book/operations/hiring-plan.md)
 - [pre-seed-strategy.md](./brain/book/operations/pre-seed-strategy.md)
 - [communications-and-messaging-playbook.md](./brain/book/operations/communications-and-messaging-playbook.md)
-- **[/reference/](./brain/book/reference/)**: Contains supporting data, studies, citations, and other third-party evidence.
-- [costs-of-war.md](./brain/book/reference/costs-of-war.md)
-- [recovery-trial.md](./brain/book/reference/recovery-trial.md)
-- [organizational-precedents.md](./brain/book/reference/organizational-precedents.md)
+- **[/reference/](./brain/reference/)**: Contains supporting data, studies, citations, and other third-party evidence.
+- [costs-of-war.md](./brain/reference/costs-of-war.md)
+- [recovery-trial.md](./brain/reference/recovery-trial.md)
+- [organizational-precedents.md](./brain/reference/organizational-precedents.md)
 - **[/assets/](./brain/book/assets/)**: Contains images, diagrams, and other static assets used throughout the knowledge base.
 - **[/archive/](./brain/book/archive/)**: Contains all legacy files from the previous structure for historical reference.
 
