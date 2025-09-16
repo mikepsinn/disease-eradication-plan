@@ -125,6 +125,39 @@ Here's the complete system that makes curing people more profitable than killing
 
 **Result**: We know what works, what doesn't, people get paid to help us find out, and we do it 80X faster and cheaper.
 
+```mermaid
+graph TD;
+    subgraph "The Complete System: From Killing to Curing";
+        A["$2.7T Global Military Budgets"];
+        
+        A -->|"1% Redirect"| B["$27B Annual Treaty Treasury"];
+        
+        subgraph "Democratic Allocation";
+            B --> C["DIH Governance<br/>(VICTORY Bond Holders Vote)"];
+            C --> D["Patient Subsidy Pools<br/>(Money Goes to Patients)"];
+        end
+        
+        subgraph "80X More Efficient Research";
+            D --> E["Patients Choose Trials<br/>($500/patient vs $41,000)"];
+            E --> F["Pragmatic Trials<br/>(Real-World Evidence)"];
+            F --> G["All Data Published<br/>(No Hidden Results)"];
+        end
+        
+        subgraph "What Everyone Gets";
+            G --> H["dFDA Effectiveness Rankings<br/>(What Actually Works)"];
+            H --> I["Honest Outcome Labels<br/>(On All Foods & Drugs)"];
+            I --> J["People Stop Dying<br/>of Preventable Diseases"];
+        end
+        
+        subgraph "The Flywheel";
+            J --> K["More People Want This"];
+            K --> L["Politicians Support It"];
+            L --> M["More Countries Join"];
+            M --> B;
+        end
+    end
+```
+
 ---
 
 ## What We Get: A World Without War and Disease

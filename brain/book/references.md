@@ -69,6 +69,8 @@ This document contains all source quotes and references supporting the claims ma
   > "Military industry lobbying totaled \~\$127 million in 2024."
   > — OpenSecrets, 2024, [Defense industry lobbying totals](https://www.opensecrets.org/federal-lobbying/industries/summary?cycle=2024&id=D)
 
+<a id="global-gov-med-research-spending"></a>
+
 - **Global government medical research spending (\$67.5B, 2023–2024)**
   > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
   > — DFDA Wiki, 2025, [Global Government Medical Research Spending](./reference/global-government-medical-research-spending.md)
