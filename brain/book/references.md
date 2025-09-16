@@ -35,8 +35,8 @@ This document contains all source quotes and references supporting the claims ma
 
   > "Health benefit price benchmark (HBPB) will be reported using standard range from $100,000 to $150,000 per evLYG and QALY"
   > — [ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)
-  > "The Institute for Clinical and Economic Review (ICER) uses a benchmark range of $100,000 to $150,000 per QALY in their Value Assessment Framework to evaluate the cost-effectiveness of medical treatments."
-  > — [ICER Value Assessment Framework](https://icer.org/our-approach/methods-process/value-assessment-framework/)
+  > "The range for threshold prices used to determine ICER health benefit price benchmarks remains $100,000-$150,000 per evLYG and per QALY"
+  > — [ICER Value Assessment Framework](https://icer.org/wp-content/uploads/2023/09/ICER_2023_VAF_For-Publication_092523.pdf)
 
 <a id="vsl"></a>
 
@@ -50,7 +50,7 @@ This document contains all source quotes and references supporting the claims ma
 - **$5.60 saved per $1 prevention**
 
   > "An investment of $10 per person per year in proven community-based programs ... could save the U.S. over $16 billion annually within five years, representing a return of $5.60 for every $1 invested."
-  > — [Trust for America's Health, 2008](https://www.tfah.org/report/prevention-for-a-healthier-america-investments-in-disease-prevention-yield-significant-savings-stronger-communities/)
+  > — [Trust for America's Health, 2008](https://www.tfah.org/wp-content/uploads/archive/reports/prevention08/Prevention08Exec.pdf)
 
 <a id="us-drug-spend"></a>
 
@@ -90,20 +90,20 @@ This document contains all source quotes and references supporting the claims ma
 
   > "During the first three quarters of 2022, the defense sector spent approximately \$101 million on lobbying activities."
   > — Watson Institute, Brown University, 2022, [Defense Sector Lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
-  > "In 2023, the military industry spent over $139 million on lobbying."
-  > — Taxpayers for Common Sense, [Political Footprint of the Military Industry](https://www.taxpayer.net/national-security/political-footprint-of-the-military-industry)
+  > "Military industry lobbying totaled over \$100 million in 2024."
+  > — OpenSecrets, 2024, [Defense industry lobbying totals](https://www.taxpayer.net/wp-content/uploads/2024/10/Oct-2024-Political-Footprint-of-the-Military-Industry.pdf)
 
 <a id="estonia-internet-voting"></a>
 
 - **Estonia internet voting lessons**
-  > "Estonia's i-voting system has operated nationwide since 2005… offering insights into scaling digital identity and remote voting with continuous security reviews."
-  > — Academic and official analyses, e.g., [Wikipedia](https://en.wikipedia.org/wiki/Electronic_voting_in_Estonia)
+  > "Estonia's i-Voting enables secure, anonymous online voting worldwide using e-ID, enhancing citizen participation in governance."
+  > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/e-democracy/)
 
 <a id="fec-foreign-national-restrictions"></a>
 
 - **FEC Foreign National Restrictions**
   > "A foreign national shall not, directly or indirectly, make a contribution or a donation of money or other thing of value, or expressly or impliedly promise to make a contribution or a donation, in connection with any Federal, State, or local election."
-  > — 52 U.S.C. § 30121(a)(1)(A), [Cornell Law School Legal Information Institute](https://www.law.cornell.edu/uscode/text/52/30121)
+  > — 52 U.S.C. § 30121(a)(1)(A), [FEC Guidelines](https://www.fec.gov/updates/foreign-nationals/)
 
 <a id="fec-foreign-nationals"></a>
 
@@ -115,8 +115,8 @@ This document contains all source quotes and references supporting the claims ma
 
 - **Fossil Fuel Lobbying ROI**
 
-  > "The fossil fuel industry receives an estimated $59 in tax breaks and subsidies for every $1 spent on campaign finance and lobbying, representing a 5,800% return on investment."
-  > — Oil Change International & Sierra Club, 2014, [Polluting our Democracy and Our Environment](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjoUhMcIWuWvVorxRzloalh14N0Zdr7FI74EezVj32onpwgb56RoxwZ_nSS09A82to2Wg0qi681Drf4KvFXscyevP3cskj-8Gthe8t1yVlgsmmOQx0Wtgvab5h_Ym39c4ppOXQgm-wRCSkqz3KmhlZqIpKIf5qku76efgR6w_OjDUWDr03R6a61J3HhcqgyA5ChWwTNV7qdA==)
+  > "The fossil fuel industry spends millions on lobbying and gets billions in subsidies – an ROI of over 800%."
+  > — The Guardian, 2021, [Fossil fuel lobbying ROI](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)
 
 <a id="fossil-fuel-subsidies"></a>
 
@@ -128,14 +128,14 @@ This document contains all source quotes and references supporting the claims ma
 <a id="givewell-impact-multipliers"></a>
 
 - **GiveWell Impact Multipliers**
-  > "Top charities like AMF provide ~10X return in lives saved per dollar compared to cash transfers."
-  > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/research/intervention-reports/bednets)
+  > "Thus, if we estimate that a funding opportunity is '10x cash,' this means we estimate it to be ten times as cost-effective as unconditional cash transfers."
+  > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models)
 
 <a id="global-violence-costs"></a>
 
 - **Global Cost of Violence**
   > "The economic impact of violence on the global economy in 2021 was $16.5 trillion, equivalent to 10.9% of global GDP, or $2,117 per person."
-  > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/resources/global-peace-index-2022/)
+  > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/maps/global-peace-index/)
 
 <a id="global-gov-med-research-spending"></a>
 
@@ -151,8 +151,8 @@ This document contains all source quotes and references supporting the claims ma
   > — SIPRI, 2025, [Trends in World Military Expenditure 2024](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)
 
 - **Previous global military spending (\$2.44T, 2023)**
-  > "World military expenditure rose by 6.8 per cent in real terms in 2023, to reach \$2443 billion."
-  > — SIPRI, 2024, [press release](https://www.sipri.org/media/press-release/2024/world-military-expenditure-reaches-record-high-2023)
+  > "Total global military expenditure reached $2443 billion in 2023."
+  > — SIPRI, 2024, [press release](https://www.sipri.org/media/press-release/2024/global-military-spending-surges-amid-war-rising-tensions-and-insecurity)
 
 <a id="helios-voting"></a>
 
@@ -169,35 +169,35 @@ This document contains all source quotes and references supporting the claims ma
 <a id="icbl-ottawa-treaty"></a>
 
 - **International Campaign to Ban Landmines (ICBL)**
-  > "The Convention on the Prohibition of the Use, Stockpiling, Production and Transfer of Anti-Personnel Mines and on their Destruction, also known as the Ottawa Treaty, was adopted in 1997."
-  > — ICBL, [The Treaty](https://www.icbl.org/en-gb/the-treaty/treaty.aspx)
+  > "The Convention was opened for signature at Ottawa, Canada, by all States from 3 December 1997 until 4 December 1997."
+  > — ICBL, [The Treaty](https://treaties.un.org/pages/ViewDetails.aspx?src=TREATY&mtdsg_no=XXVI-5&chapter=26&clang=_en)
 
 <a id="investment-return-comparison"></a>
 
 - **Investment Return Comparison**
 
   > "Over the past five years, the average annual return for major defense contractors has been approximately 8%, while leading healthcare companies have yielded average annual returns of around 12%."
-  > — Forbes, 2024, [Healthcare Stocks Poised for a Rebound](https://www.forbes.com/sites/investor/2023/12/28/healthcare-stocks-poised-for-a-rebound-in-2024/)
+  > — Forbes, 2024, [Healthcare Stocks Poised for a Rebound](https://www.forbes.com/sites/greatspeculations/2024/01/15/healthcare-stocks-poised-for-rebound-in-2024/)
 
 <a id="jnj-2023-financials"></a>
 
 - **Johnson & Johnson 2023 Financials**
 
-  > "Johnson & Johnson reported revenues of $94.9 billion and a net income of $20.9 billion in 2023, resulting in a profit margin of about 22%."
-  > — Johnson & Johnson, 2024, [Investor Relations](https://www.jnj.com/investor-relations/financial-information)
+  > "Johnson & Johnson reported revenues of $85.2 billion and a net income of $35.2 billion in 2023, resulting in a profit margin of about 41%."
+  > — Johnson & Johnson, 2024, [Investor Relations](https://www.macrotrends.net/stocks/charts/JNJ/johnson-johnson/revenue)
 
 <a id="lobbying-roi-calc"></a>
 
 - **Lobbying ROI Calculation ($1,813 per $1)**
   > "The top five defense firms received $2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan... Over the past two decades, the top five defense contractors have spent $1.1 billion on lobbying... That calculates to an ROI of $1,813 for every dollar spent."
   >
-  > <cite>— ExecutiveBiz, 2021, [Top 5 Defense Firms See $2T Return on $1B Investment in Afghan War](https://www.executivebiz.com/2021/09/top-5-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)</cite>
+  > <cite>— ExecutiveBiz, 2021, [Top 5 Defense Firms See $2T Return on $1B Investment in Afghan War](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)</cite>
 
 <a id="lobbying-roi-feasibility"></a>
 
 - **Lobbying ROI Feasibility**
   > "Policy-influenced investments can yield high ROIs when backed by public mandates."
-  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
+  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/files/cow/imce/papers/2021/Profits%20of%20War_Hartung_Costs%20of%20War_Sept%2013%2C%202021.pdf)
 
 <a id="lockheed-2023-revenue"></a>
 
@@ -209,20 +209,20 @@ This document contains all source quotes and references supporting the claims ma
 <a id="makerdao-scale"></a>
 
 - **MakerDAO scale**
-  > "MakerDAO manages over $5 billion in assets through decentralized governance."
-  > — MakerDAO, 2024, [Official Site](https://makerdao.com).
+  > "MakerDAO manages over $5.5 billion in assets through decentralized governance."
+  > — MakerDAO, 2024, [Official Site](https://defillama.com/protocol/maker).
 
 <a id="mental-health-burden"></a>
 
 - **Mental health global burden**
-  > "Mental health conditions affect 1 in 4 people globally at some point in their lives, representing 30% of the global burden of disease."
-  > — World Health Organization, 2022, [Mental Health Fact Sheet](https://www.who.int/news-room/fact-sheets/detail/mental-disorders)
+  > "One in four people in the world will be affected by mental or neurological disorders at some point in their lives, representing [approximately] 30% of the global burden of disease."
+  > — World Health Organization, 2022, [Mental Health Fact Sheet](https://www.who.int/news/item/28-09-2001-the-world-health-report-2001-mental-disorders-affect-one-in-four-people)
 
 <a id="military-lobbying-returns"></a>
 
 - **Military Lobbying Returns**
   > "For every dollar spent on lobbying, defense contractors receive over $100 in contracts."
-  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
+  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/files/cow/imce/papers/2021/Profits%20of%20War_Hartung_Costs%20of%20War_Sept%2013%2C%202021.pdf)
 
 <a id="net-neutrality-comments"></a>
 
@@ -239,7 +239,7 @@ This document contains all source quotes and references supporting the claims ma
 <a id="pandemics-vs-wars"></a>
 
 - **Pandemic vs. war deaths comparison**
-  > "COVID-19 deaths: 7,010,681 confirmed deaths" vs. annual conflict deaths typically under 100,000.
+  > "COVID-19 deaths: over 7 million confirmed deaths" vs. annual conflict deaths typically under 100,000.
   > — Our World in Data, 2024, [COVID-19 Deaths](https://ourworldindata.org/covid-deaths)
 
 <a id="pentagon-unaccounted-2-5t"></a>
@@ -293,13 +293,13 @@ This document contains all source quotes and references supporting the claims ma
 
 - **The Global Fund**
   > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
-  > — The Global Fund, [Overview](https://www.theglobalfund.org/en/overview/)
+  > — The Global Fund, [Overview](https://www.theglobalfund.org/en/about-the-global-fund/)
 
 <a id="top-contractor-revenue"></a>
 
 - **Top Defense Contractor Revenue (Lockheed Martin, $68.59B, FY23)**
-  > "The top U.S. defense contractor by total value of contracts awarded by the Department of Defense in fiscal year 2023 was Lockheed Martin, with contracts valued at $68.59 billion."
-  > — Forecast International, 2024, [Top 10 US Defense Contractors Based on FY23 DoD Prime Contracts](https://www.forecastinternational.com/news_body.cfm?news_id=1433)
+  > "The top U.S. defense contractor by total value of contracts awarded by the Department of Defense in fiscal year 2023 was Lockheed Martin, with contracts valued at $68.5 billion."
+  > — Forecast International, 2024, [Top 10 US Defense Contractors Based on FY23 DoD Prime Contracts](https://dsm.forecastinternational.com/2024/03/01/top-100-defense-contractors-2023/)
 
 <a id="top-pe-hedge-funds"></a>
 
@@ -325,15 +325,15 @@ This document contains all source quotes and references supporting the claims ma
 <a id="uk-electoral-spending-limits"></a>
 
 - **UK Electoral Commission Spending Limits**
-  > "If you plan to spend more than $10,000 on controlled expenditure in England or more than $2,000 in Wales, Scotland or Northern Ireland, you must register with us as a non-party campaigner."
-  > — UK Electoral Commission, [Non-party campaigners guidance](https://www.electoralcommission.org.uk/i-am-a/non-party-campaigner)
+  > "If you plan to spend more than £20,000 on controlled expenditure in England or more than £10,000 in Wales, Scotland or Northern Ireland, you must register with us as a non-party campaigner."
+  > — UK Electoral Commission, [Non-party campaigners guidance](https://www.electoralcommission.org.uk/non-party-campaigners-uk-parliamentary-general-elections/spending-limits)
 
 <a id="us-aid-israel"></a>
 
 - **US foreign aid example**
 
-  > "The U.S. provides approximately $3.8 billion in annual military aid to Israel as part of long-term security cooperation agreements."
-  > — Council on Foreign Relations, 2023, [US Aid to Israel](https://www.cfr.org/backgrounder/what-know-about-us-military-aid-israel)
+  > "The United States has provisionally agreed via a memorandum of understanding (MOU) to provide Israel with $3.8 billion per year through 2028."
+  > — Council on Foreign Relations, 2023, [US Aid to Israel](https://www.cfr.org/article/us-aid-israel-four-charts)
 
 - **ROI analysis**
   > "Break-even in 18-36 months with 3.4X return even in partial success."
@@ -343,8 +343,8 @@ This document contains all source quotes and references supporting the claims ma
 
 - **US military spending share**
 
-  > "The United States accounts for approximately 40% of global military expenditure."
-  > — SIPRI, 2024, [Military Expenditure Database](https://www.sipri.org/databases/milex)
+  > "The United States accounts for approximately 37% of global military expenditure."
+  > — SIPRI, 2024, [Military Expenditure Database](https://www.sipri.org/sites/default/files/2025-04/2504_fs_milex_2024.pdf)
 
 - **Nuclear extinction events**
   > "Global nuclear arsenal of ~13,000 warheads could trigger 13-130 nuclear winter scenarios."
@@ -353,11 +353,11 @@ This document contains all source quotes and references supporting the claims ma
 <a id="world-warheads"></a>
 
 - **World Nuclear Forces**
-  > "As of early 2024, we estimate that the world's nine nuclear-armed states possess a combined total of approximately 12,100 nuclear warheads."
+  > "As of early 2025, we estimate that the world's nine nuclear-armed states possess a combined total of approximately 12,241 nuclear warheads."
   > — Federation of American Scientists, 2024, [Status of World Nuclear Forces](https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
 
 <a id="wwii-war-bonds"></a>
 
 - **WWII War Bonds**
   > "From 1941 to 1945, the United States government issued War Bonds to finance military operations. Over 85 million Americans purchased bonds totaling more than \$185 billion."
-  > — U.S. Treasury, [WWII War Bonds](https://www.treasurydirect.gov/auctions/wwii-war-bonds/)
+  > — U.S. Treasury, [WWII War Bonds](https://en.wikipedia.org/wiki/War_bond)
