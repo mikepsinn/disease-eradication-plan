@@ -335,6 +335,9 @@ This document contains all source quotes and references supporting the claims ma
     > "Adding up, the benefit–cost ratio for the entire world would have been about (($350 + $1070) ÷ 0.03)/$298 ≈ 159 : 1. These are huge numbers."
     > — PMC3720047, [Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/)
 
+    > "Smallpox Eradication: Model for Global Cooperation."
+    > — CSIS, [Smallpox Eradication Model: Global Cooperation](https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation)
+
 <a id="statins-qaly"></a>
 
 -   **Statins for High-Risk Patients Cost per QALY**
