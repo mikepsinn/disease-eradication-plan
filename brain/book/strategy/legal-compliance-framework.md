@@ -18,7 +18,7 @@ The 1% Treaty initiative faces three critical legal challenges: **foreign nation
 
 ### **The Legal Problem**
 
-- **US Federal Election Campaign Act (FECA):** Prohibits foreign nationals from making expenditures in connection with US elections
+- **US Federal Election Campaign Act (FECA):** Prohibits foreign nationals from making expenditures in connection with US elections ([FEC Foreign National Restrictions](../references.md#fec-foreign-national-restrictions))
 - **FEC Definition:** "Foreign national" includes foreign governments, foreign political parties, foreign corporations, and foreign individuals
 - **Penalties:** Criminal prosecution and civil penalties up to \$100,000+ per violation
 
@@ -66,7 +66,7 @@ The 1% Treaty initiative faces three critical legal challenges: **foreign nation
 
 ### **The Legal Problem**
 
-- **Howey Test:** Investment of money + common enterprise + expectation of profits + from efforts of others = security
+- **Howey Test:** Investment of money + common enterprise + expectation of profits + from efforts of others = security ([Howey Test Securities Definition](../references.md#howey-test-securities))
 - \*\*VICTORY Tokens: Risk of being classified as unregistered securities if they promise returns
 - \*\*SEC Enforcement: Heavy penalties for unregistered securities offerings
 
@@ -145,7 +145,7 @@ Swiss Foundation (Treaty Coordination)
 **United Kingdom:**
 
 - **Electoral Commission Registration:** Register as non-party campaigner
-- **Spending Limits:** Comply with controlled expenditure limits (\$500K+ requires registration)
+- **Spending Limits:** Comply with controlled expenditure limits ([UK Electoral Commission Spending Limits](../references.md#uk-electoral-spending-limits)) (\$500K+ requires registration)
 - **Foreign Funding:** Permissible donations from overseas electors and UK entities
 - **Transparency:** Quarterly donation and spending reports
 
@@ -239,19 +239,3 @@ Swiss Foundation (Treaty Coordination)
 **Legal compliance is achievable through strict entity separation, jurisdiction-specific expertise, and conservative interpretation of regulations.** The key is building robust firewalls between international strategy and domestic political activities while maintaining strategic coherence through public commitments rather than private coordination.
 
 **Investment Required:** \$15-25M annually for legal compliance across all jurisdictions, but this prevents \$100M+ in potential penalties and shutdown risk.
-
-### Source Quotes for Key Parameters
-
-- **FEC Foreign National Restrictions**
-
-  > "A foreign national shall not, directly or indirectly, make a contribution or a donation of money or other thing of value, or expressly or impliedly promise to make a contribution or a donation, in connection with any Federal, State, or local election."
-  > — 52 U.S.C. § 30121(a)(1)(A), [FEC Guidelines](https://www.fec.gov/updates/foreign-nationals/)
-
-- **Howey Test Securities Definition**
-
-  > "The test is whether the scheme involves an investment of money in a common enterprise with profits to come solely from the efforts of others."
-  > — SEC v. W. J. Howey Co., 328 U.S. 293 (1946)
-
-- **UK Electoral Commission Spending Limits**
-  > "If you plan to spend more than \$10,000 on controlled expenditure in England or more than \$2,000 in Wales, Scotland or Northern Ireland, you must register with us as a non-party campaigner."
-  > — UK Electoral Commission, [Non-party campaigners guidance](https://www.electoralcommission.org.uk/i-am-a/non-party-campaigner)

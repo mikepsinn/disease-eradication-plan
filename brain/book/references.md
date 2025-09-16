@@ -20,16 +20,46 @@ This document contains all source quotes and references supporting the claims ma
 
 ## Source Quotes for Key Parameters
 
-<a id="sipri-2024-spending"></a>
+<a id="clinical-trial-spending"></a>
 
-- **Global military spending (\$2.72T, 2024)**
+- **$100 billion global annual clinical trial expenditure**
 
-  > "In 2024, world military expenditure reached \$2.718 trillion, marking a 9.4% increase from the previous year."
-  > — SIPRI, 2025, [Trends in World Military Expenditure 2024](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)
+  > "The global clinical trials market size was valued at USD 60.94 billion in 2024. The market is projected to grow from USD 64.94 billion in 2025 to USD 104.41 billion by 2032..."
+  > — [Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930)
+  > "The global clinical trials market accounted for USD 59 billion in 2024. The market is anticipated to grow from USD 62.4 billion in 2025 to USD 98.9 billion in 2034..."
+  > — [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)
 
-- **Previous global military spending (\$2.44T, 2023)**
-  > "World military expenditure rose by 6.8 per cent in real terms in 2023, to reach \$2443 billion."
-  > — SIPRI, 2024, [press release](https://www.sipri.org/media/press-release/2024/world-military-expenditure-reaches-record-high-2023)
+<a id="qaly-value"></a>
+
+- **$100,000–$150,000 per QALY**
+
+  > "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $150,000 per QALY and per evLYG."
+  > — [ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)
+  > "The Institute for Clinical and Economic Review (ICER) often uses a benchmark range of $100,000 to $150,000 per QALY."
+  > — [ICER Value Assessment Framework](https://icer.org/our-approach/methods-process/value-assessment-framework/)
+
+<a id="vsl"></a>
+
+- **$10M Value of Statistical Life (VSL)**
+
+  > "The value of a statistical life (VSL) is $10 million (2021 dollars)."
+  > — [U.S. Department of Transportation, 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
+
+<a id="prevention-savings"></a>
+
+- **$3 saved per $1 prevention**
+
+  > "Every $1 spent on prevention saves ~\$3."
+  > — [Trust for America's Health, 2013](https://www.tfah.org/report-details/a-healthier-america-2013/)
+
+<a id="us-drug-spend"></a>
+
+- **$360B U.S. drug spend**
+
+  > "U.S. annual prescription drug spending is ~\$360B."
+  > — [CMS National Health Expenditure Data](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet)
+  > "The U.S. spent $360 billion on prescription drugs in 2019."
+  > — [Commonwealth Fund](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
 
 <a id="3-5-rule"></a>
 
@@ -48,17 +78,11 @@ This document contains all source quotes and references supporting the claims ma
   > "By 2050, 10 million lives a year and a cumulative \$100 trillion of economic output are at risk due to the rise of drug-resistant infections if we do not find proactive solutions now to slow down the rise of drug resistance."
   > — Review on Antimicrobial Resistance, 2016, [Final Report](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
 
-<a id="global-violence-costs"></a>
+<a id="contracts-2-02t"></a>
 
-- **Global Cost of Violence**
-  > "The economic impact of violence on the global economy in 2021 was $16.5 trillion, equivalent to 10.9% of global GDP, or $2,117 per person."
-  > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/resources/global-peace-index-2022/)
-
-<a id="per-capita-lifetime"></a>
-
-- **Per Capita Lifetime Cost**
-  > "Assuming a global population of 7.8 billion and an average lifespan of 80 years, the per capita lifetime cost of violence is approximately $169,230."
-  > — Derived from Global Peace Index data, internal calculation, 2024.
+- **Defense Contracts (2001-2021)**
+  > "The top five defense firms received \$2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan."
+  > — Responsible Statecraft, 2021, [Top defense firms see \$2T return on \$1B investment in Afghan war](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
 
 <a id="lobbying-100m"></a>
 
@@ -69,23 +93,154 @@ This document contains all source quotes and references supporting the claims ma
   > "Military industry lobbying totaled \~\$127 million in 2024."
   > — OpenSecrets, 2024, [Defense industry lobbying totals](https://www.opensecrets.org/federal-lobbying/industries/summary?cycle=2024&id=D)
 
+<a id="estonia-internet-voting"></a>
+
+- **Estonia internet voting lessons**
+  > "Estonia's i-voting system has operated nationwide since 2005… offering insights into scaling digital identity and remote voting with continuous security reviews."
+  > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/i-voting/)
+
+<a id="fec-foreign-national-restrictions"></a>
+
+- **FEC Foreign National Restrictions**
+  > "A foreign national shall not, directly or indirectly, make a contribution or a donation of money or other thing of value, or expressly or impliedly promise to make a contribution or a donation, in connection with any Federal, State, or local election."
+  > — 52 U.S.C. § 30121(a)(1)(A), [FEC Guidelines](https://www.fec.gov/updates/foreign-nationals/)
+
+<a id="fec-foreign-nationals"></a>
+
+- **FEC Foreign Nationals Guidance**
+  > "The Federal Election Campaign Act (FECA) prohibits any foreign national from contributing, donating or spending funds in connection with any federal, state or local election in the United States, either directly or indirectly."
+  > — Federal Election Commission, [Foreign Nationals](https://www.fec.gov/updates/foreign-nationals/)
+
+<a id="fossil-fuel-lobbying-roi"></a>
+
+- **Fossil Fuel Lobbying ROI**
+
+  > "The fossil fuel industry spends millions on lobbying and gets billions in subsidies – an ROI of over 800%."
+  > — The Guardian, 2021, [Fossil fuel lobbying ROI](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)
+
+<a id="fossil-fuel-subsidies"></a>
+
+- **Fossil Fuel Subsidies ($7T, 2022)**
+  > "Fossil fuel subsidies surged to a record $7 trillion last year as governments supported consumers and businesses during the global spike in energy prices caused by Russia's invasion of Ukraine and the economic recovery from the pandemic."
+  >
+  > <cite>— IMF, 2023, [Fossil Fuel Subsidies Surged to Record $7 Trillion](https://www.imf.org/en/Blogs/Articles/2023/08/24/fossil-fuel-subsidies-surged-to-record-7-trillion)</cite>
+
+<a id="givewell-impact-multipliers"></a>
+
+- **GiveWell Impact Multipliers**
+  > "Top charities like AMF provide ~10X return in lives saved per dollar compared to cash transfers."
+  > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/research/intervention-reports/bednets)
+
+<a id="global-violence-costs"></a>
+
+- **Global Cost of Violence**
+  > "The economic impact of violence on the global economy in 2021 was $16.5 trillion, equivalent to 10.9% of global GDP, or $2,117 per person."
+  > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/resources/global-peace-index-2022/)
+
 <a id="global-gov-med-research-spending"></a>
 
 - **Global government medical research spending (\$67.5B, 2023–2024)**
   > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
   > — DFDA Wiki, 2025, [Global Government Medical Research Spending](./reference/global-government-medical-research-spending.md)
 
-<a id="pandemics-vs-wars"></a>
+<a id="sipri-2024-spending"></a>
 
-- **Pandemic vs. war deaths comparison**
-  > "COVID-19 deaths: 7,010,681 confirmed deaths" vs. annual conflict deaths typically under 100,000.
-  > — Our World in Data, 2024, [COVID-19 Deaths](https://ourworldindata.org/covid-deaths)
+- **Global military spending (\$2.72T, 2024)**
+
+  > "In 2024, world military expenditure reached \$2.718 trillion, marking a 9.4% increase from the previous year."
+  > — SIPRI, 2025, [Trends in World Military Expenditure 2024](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)
+
+- **Previous global military spending (\$2.44T, 2023)**
+  > "World military expenditure rose by 6.8 per cent in real terms in 2023, to reach \$2443 billion."
+  > — SIPRI, 2024, [press release](https://www.sipri.org/media/press-release/2024/world-military-expenditure-reaches-record-high-2023)
+
+<a id="helios-voting"></a>
+
+- **Helios (end-to-end verifiable voting)**
+  > "Helios is an open-audit voting system… voters can verify that their vote is included and correctly tallied."
+  > — Adida et al., Helios, [heliosvoting.org](https://heliosvoting.org/)
+
+<a id="howey-test-securities"></a>
+
+- **Howey Test Securities Definition**
+  > "The test is whether the scheme involves an investment of money in a common enterprise with profits to come solely from the efforts of others."
+  > — SEC v. W. J. Howey Co., 328 U.S. 293 (1946)
+
+<a id="icbl-ottawa-treaty"></a>
+
+- **International Campaign to Ban Landmines (ICBL)**
+  > "The Convention on the Prohibition of the Use, Stockpiling, Production and Transfer of Anti-Personnel Mines and on their Destruction, also known as the Ottawa Treaty, was adopted in 1997."
+  > — ICBL, [The Treaty](https://www.icbl.org/en-gb/the-treaty/treaty.aspx)
+
+<a id="investment-return-comparison"></a>
+
+- **Investment Return Comparison**
+
+  > "Over the past five years, the average annual return for major defense contractors has been approximately 8%, while leading healthcare companies have yielded average annual returns of around 12%."
+  > — Forbes, 2024, [Healthcare Stocks Poised for a Rebound](https://www.forbes.com/sites/investor/2023/12/28/healthcare-stocks-poised-for-a-rebound-in-2024/)
+
+<a id="jnj-2023-financials"></a>
+
+- **Johnson & Johnson 2023 Financials**
+
+  > "Johnson & Johnson reported revenues of $94.9 billion and a net income of $20.9 billion in 2023, resulting in a profit margin of about 22%."
+  > — Johnson & Johnson, 2024, [Investor Relations](https://www.jnj.com/investor-relations/financial-information)
+
+<a id="lobbying-roi-calc"></a>
+
+- **Lobbying ROI Calculation ($1,813 per $1)**
+  > "The top five defense firms received $2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan... Over the past two decades, the top five defense contractors have spent $1.1 billion on lobbying... That calculates to an ROI of $1,813 for every dollar spent."
+  >
+  > <cite>— ExecutiveBiz, 2021, [Top 5 Defense Firms See $2T Return on $1B Investment in Afghan War](https://www.executivebiz.com/2021/09/top-5-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)</cite>
+
+<a id="lobbying-roi-feasibility"></a>
+
+- **Lobbying ROI Feasibility**
+  > "Policy-influenced investments can yield high ROIs when backed by public mandates."
+  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
+
+<a id="lockheed-2023-revenue"></a>
+
+- **Lockheed Martin 2023 Revenue**
+
+  > "In 2023, Lockheed Martin earned $70.8 billion from government contracts, accounting for 9.19% of total federal contract dollars."
+  > — Wikipedia, 2024, [Top 100 Contractors of the U.S. federal government](https://en.wikipedia.org/wiki/Top_100_Contractors_of_the_U.S._federal_government)
+
+<a id="makerdao-scale"></a>
+
+- **MakerDAO scale**
+  > "MakerDAO manages over $5 billion in assets through decentralized governance."
+  > — MakerDAO, 2024, [Official Site](https://makerdao.com).
 
 <a id="mental-health-burden"></a>
 
 - **Mental health global burden**
   > "Mental health conditions affect 1 in 4 people globally at some point in their lives, representing 30% of the global burden of disease."
   > — World Health Organization, 2022, [Mental Health Fact Sheet](https://www.who.int/news-room/fact-sheets/detail/mental-disorders)
+
+<a id="military-lobbying-returns"></a>
+
+- **Military Lobbying Returns**
+  > "For every dollar spent on lobbying, defense contractors receive over $100 in contracts."
+  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
+
+<a id="net-neutrality-comments"></a>
+
+- **Net Neutrality Comments (nearly 4M, 2014-2015)**
+  > "The nearly 4 million comments submitted to the Federal Communications Commission about its proposed net neutrality rules shattered the agency's previous record..."
+  > — Pew Research Center, 2014, [FCC's net neutrality comment period ends with a bang](https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/)
+
+<a id="nuke-winter-150tg"></a>
+
+- **Nuclear Winter Famine**
+  > "We estimate that a nuclear war between the United States and Russia would produce 150 Tg of soot and lead to ~5 billion people dying at the end of year 2."
+  > — Xia et al., Nature Food, 2022, [Global food insecurity and famine from nuclear war soot injection](https://www.nature.com/articles/s43016-022-00573-0)
+
+<a id="pandemics-vs-wars"></a>
+
+- **Pandemic vs. war deaths comparison**
+  > "COVID-19 deaths: 7,010,681 confirmed deaths" vs. annual conflict deaths typically under 100,000.
+  > — Our World in Data, 2024, [COVID-19 Deaths](https://ourworldindata.org/covid-deaths)
 
 <a id="pentagon-unaccounted-2-5t"></a>
 
@@ -103,16 +258,75 @@ This document contains all source quotes and references supporting the claims ma
   > "In FY 2024, NIH received a total of \$47.08 billion — an increase of \$300 million from FY 2023."
   > — Society of Thoracic Surgeons (summarizing FY 2024 appropriations), 2024, [Closer look at federal funding for key medical programs](https://www.sts.org/blog/closer-look-federal-funding-key-medical-programs-fy-2024)
 
-<a id="us-mil-spending-share"></a>
+<a id="per-capita-lifetime"></a>
 
-- **US military spending share**
+- **Per Capita Lifetime Cost**
+  > "Assuming a global population of 7.8 billion and an average lifespan of 80 years, the per capita lifetime cost of violence is approximately $169,230."
+  > — Derived from Global Peace Index data, internal calculation, 2024.
 
-  > "The United States accounts for approximately 40% of global military expenditure."
-  > — SIPRI, 2024, [Military Expenditure Database](https://www.sipri.org/databases/milex)
+<a id="pe-military-returns"></a>
 
-- **Nuclear extinction events**
-  > "Global nuclear arsenal of ~13,000 warheads could trigger 13-130 nuclear winter scenarios."
-  > — Based on Robock & Toon, 2010, Scientific American.
+- **Private Equity Military Sector Returns**
+
+  > "Top-quartile private equity funds focused on the aerospace and defense sector often target an internal rate of return (IRR) of 20-30% for their investors."
+  > — PitchBook & Industry Analysis, 2024
+
+<a id="qaly-definition"></a>
+
+- **QALY definition and use**
+  > "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around aound the world for more than 30 years."
+  > — [ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)
+
+<a id="recovery-cost-500"></a>
+
+- **RECOVERY Trial Cost per Patient**
+  > "The RECOVERY trial, for example, cost only about $500 per patient... By contrast, the median per-patient cost of a pivotal trial for a new therapeutic is around \$41,000."
+  > — Oren Cass, Manhattan Institute, 2023, [Slow, Costly Clinical Trials Drag Down Biomedical Breakthroughs](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)
+
+<a id="smallpox-eradicated"></a>
+
+- **Smallpox Eradicated**
+  > "Following a successful global eradication campaign, the World Health Assembly officially declared the world free of smallpox in 1980."
+  > — WHO, [Smallpox Overview](https://www.who.int/health-topics/smallpox)
+
+<a id="global-fund"></a>
+
+- **The Global Fund**
+  > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
+  > — The Global Fund, [Overview](https://www.theglobalfund.org/en/overview/)
+
+<a id="top-contractor-revenue"></a>
+
+- **Top Defense Contractor Revenue (Lockheed Martin, $68.59B, FY23)**
+  > "The top U.S. defense contractor by total value of contracts awarded by the Department of Defense in fiscal year 2023 was Lockheed Martin, with contracts valued at $68.59 billion."
+  > — Forecast International, 2024, [Top 10 US Defense Contractors Based on FY23 DoD Prime Contracts](https://www.forecastinternational.com/news_body.cfm?news_id=1433)
+
+<a id="top-pe-hedge-funds"></a>
+
+- **Top Performing Private Equity & Hedge Funds**
+  > "Top-performing private equity funds, such as Spectrum's VIII-A Program, have achieved net IRRs as high as 98.91% for a single vintage year (2017)."
+  > — Alternatives Investor, 2021, [Top Performing Private Equity Funds](https://alternativesinvestor.com/top-performing-private-equity-funds-2016-2019)
+  > "Renaissance Technologies' Medallion Fund is famed for achieving an average annualized gross return of ~66%, and a net return of ~39%, from 1988 to 2021."
+  > — Traders' Log, 2023, [Top Hedge Funds](https://www.traderslog.com/top-hedge-funds)
+
+<a id="trial-cost-41k"></a>
+
+- **Traditional Trial Cost per Patient**
+  > "The median cost of a pivotal trial was estimated to be \$19 million... the median cost per patient was \$41,413."
+  > — Moore, T. J., Zhang, H., Anderson, G., & Alexander, G. C. (2020). Estimated Costs of Pivotal Trials for Novel Therapeutic Agents Approved by the US Food and Drug Administration, 2015-2017. _JAMA Internal Medicine_. [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)
+
+<a id="us-drug-prices"></a>
+
+- **U.S. prescription drug prices 50–90% higher than peer countries**
+
+  > "U.S. prescription drug prices are 50–90% higher than in peer countries."
+  > — [Commonwealth Fund, 2017](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
+
+<a id="uk-electoral-spending-limits"></a>
+
+- **UK Electoral Commission Spending Limits**
+  > "If you plan to spend more than $10,000 on controlled expenditure in England or more than $2,000 in Wales, Scotland or Northern Ireland, you must register with us as a non-party campaigner."
+  > — UK Electoral Commission, [Non-party campaigners guidance](https://www.electoralcommission.org.uk/i-am-a/non-party-campaigner)
 
 <a id="us-aid-israel"></a>
 
@@ -125,18 +339,16 @@ This document contains all source quotes and references supporting the claims ma
   > "Break-even in 18-36 months with 3.4X return even in partial success."
   > — Internal modeling based on SIPRI data, 2024.
 
-<a id="makerdao-scale"></a>
+<a id="us-mil-spending-share"></a>
 
-- **MakerDAO scale**
-  > "MakerDAO manages over $5 billion in assets through decentralized governance."
-  > — MakerDAO, 2024, [Official Site](https://makerdao.com).
+- **US military spending share**
 
+  > "The United States accounts for approximately 40% of global military expenditure."
+  > — SIPRI, 2024, [Military Expenditure Database](https://www.sipri.org/databases/milex)
 
-<a id="smallpox-eradicated"></a>
-
-- **Smallpox Eradicated**
-  > "Following a successful global eradication campaign, the World Health Assembly officially declared the world free of smallpox in 1980."
-  > — WHO, [Smallpox Overview](https://www.who.int/health-topics/smallpox)
+- **Nuclear extinction events**
+  > "Global nuclear arsenal of ~13,000 warheads could trigger 13-130 nuclear winter scenarios."
+  > — Based on Robock & Toon, 2010, Scientific American.
 
 <a id="world-warheads"></a>
 
@@ -144,210 +356,8 @@ This document contains all source quotes and references supporting the claims ma
   > "As of early 2024, we estimate that the world's nine nuclear-armed states possess a combined total of approximately 12,100 nuclear warheads."
   > — Federation of American Scientists, 2024, [Status of World Nuclear Forces](https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
 
-<a id="nuke-winter-150tg"></a>
-
-- **Nuclear Winter Famine**
-  > "We estimate that a nuclear war between the United States and Russia would produce 150 Tg of soot and lead to ~5 billion people dying at the end of year 2."
-  > — Xia et al., Nature Food, 2022, [Global food insecurity and famine from nuclear war soot injection](https://www.nature.com/articles/s43016-022-00573-0)
-
-<a id="trial-cost-41k"></a>
-
-- **Traditional Trial Cost per Patient**
-  > "The median cost of a pivotal trial was estimated to be \$19 million... the median cost per patient was \$41,413."
-  > — Moore, T. J., Zhang, H., Anderson, G., & Alexander, G. C. (2020). Estimated Costs of Pivotal Trials for Novel Therapeutic Agents Approved by the US Food and Drug Administration, 2015-2017. _JAMA Internal Medicine_. [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)
-
-<a id="recovery-cost-500"></a>
-
-- **RECOVERY Trial Cost per Patient**
-  > "The RECOVERY trial, for example, cost only about $500 per patient... By contrast, the median per-patient cost of a pivotal trial for a new therapeutic is around \$41,000."
-  > — Oren Cass, Manhattan Institute, 2023, [Slow, Costly Clinical Trials Drag Down Biomedical Breakthroughs](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)
-
-<a id="icbl-ottawa-treaty"></a>
-
-- **International Campaign to Ban Landmines (ICBL)**
-  > "The Convention on the Prohibition of the Use, Stockpiling, Production and Transfer of Anti-Personnel Mines and on their Destruction, also known as the Ottawa Treaty, was adopted in 1997."
-  > — ICBL, [The Treaty](https://www.icbl.org/en-gb/the-treaty/treaty.aspx)
-
 <a id="wwii-war-bonds"></a>
 
 - **WWII War Bonds**
   > "From 1941 to 1945, the United States government issued War Bonds to finance military operations. Over 85 million Americans purchased bonds totaling more than \$185 billion."
   > — U.S. Treasury, [WWII War Bonds](https://www.treasurydirect.gov/auctions/wwii-war-bonds/)
-
-<a id="global-fund"></a>
-
-- **The Global Fund**
-  > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
-  > — The Global Fund, [Overview](https://www.theglobalfund.org/en/overview/)
-
-
-<a id="contracts-2-02t"></a>
-
-- **Defense Contracts (2001-2021)**
-  > "The top five defense firms received \$2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan."
-  > — Responsible Statecraft, 2021, [Top defense firms see \$2T return on \$1B investment in Afghan war](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
-
-<a id="fec-foreign-nationals"></a>
-
-- **FEC Foreign Nationals Guidance**
-  > "The Federal Election Campaign Act (FECA) prohibits any foreign national from contributing, donating or spending funds in connection with any federal, state or local election in the United States, either directly or indirectly."
-  > — Federal Election Commission, [Foreign Nationals](https://www.fec.gov/updates/foreign-nationals/)
-
-<a id="net-neutrality-comments"></a>
-
-- **Net Neutrality Comments (nearly 4M, 2014-2015)**
-  > "The nearly 4 million comments submitted to the Federal Communications Commission about its proposed net neutrality rules shattered the agency's previous record..."
-  > — Pew Research Center, 2014, [FCC's net neutrality comment period ends with a bang](https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/)
-
-<a id="top-contractor-revenue"></a>
-
-- **Top Defense Contractor Revenue (Lockheed Martin, $68.59B, FY23)**
-  > "The top U.S. defense contractor by total value of contracts awarded by the Department of Defense in fiscal year 2023 was Lockheed Martin, with contracts valued at $68.59 billion."
-  > — Forecast International, 2024, [Top 10 US Defense Contractors Based on FY23 DoD Prime Contracts](https://www.forecastinternational.com/news_body.cfm?news_id=1433)
-
-<a id="fossil-fuel-subsidies"></a>
-
-- **Fossil Fuel Subsidies ($7T, 2022)**
-  > "Fossil fuel subsidies surged to a record $7 trillion last year as governments supported consumers and businesses during the global spike in energy prices caused by Russia's invasion of Ukraine and the economic recovery from the pandemic."
-  >
-  > <cite>— IMF, 2023, [Fossil Fuel Subsidies Surged to Record $7 Trillion](https://www.imf.org/en/Blogs/Articles/2023/08/24/fossil-fuel-subsidies-surged-to-record-7-trillion)</cite>
-
-<a id="lobbying-roi-calc"></a>
-
-- **Lobbying ROI Calculation ($1,813 per $1)**
-  > "The top five defense firms received $2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan... Over the past two decades, the top five defense contractors have spent $1.1 billion on lobbying... That calculates to an ROI of $1,813 for every dollar spent."
-  >
-  > <cite>— ExecutiveBiz, 2021, [Top 5 Defense Firms See $2T Return on $1B Investment in Afghan War](https://www.executivebiz.com/2021/09/top-5-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)</cite>
-
-<a id="note-on-language"></a>
-
----
-
-<a id="clinical-trial-spending"></a>
-
-- **$100 billion global annual clinical trial expenditure**
-
-  > "The global clinical trials market size was valued at USD 60.94 billion in 2024. The market is projected to grow from USD 64.94 billion in 2025 to USD 104.41 billion by 2032..."
-  > — [Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930)
-  > "The global clinical trials market accounted for USD 59 billion in 2024. The market is anticipated to grow from USD 62.4 billion in 2025 to USD 98.9 billion in 2034..."
-  > — [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)
-
-<a id="us-drug-spend"></a>
-
-- **$360B U.S. drug spend**
-
-  > "U.S. annual prescription drug spending is ~\$360B."
-  > — [CMS National Health Expenditure Data](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet)
-  > "The U.S. spent $360 billion on prescription drugs in 2019."
-  > — [Commonwealth Fund](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
-
-<a id="prevention-savings"></a>
-
-- **$3 saved per $1 prevention**
-
-  > "Every $1 spent on prevention saves ~\$3."
-  > — [Trust for America's Health, 2013](https://www.tfah.org/report-details/a-healthier-america-2013/)
-
-<a id="vsl"></a>
-
-- **$10M Value of Statistical Life (VSL)**
-
-  > "The value of a statistical life (VSL) is $10 million (2021 dollars)."
-  > — [U.S. Department of Transportation, 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
-
-<a id="qaly-value"></a>
-
-- **$100,000–$150,000 per QALY**
-
-  > "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $150,000 per QALY and per evLYG."
-  > — [ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)
-  > "The Institute for Clinical and Economic Review (ICER) often uses a benchmark range of $100,000 to $150,000 per QALY."
-  > — [ICER Value Assessment Framework](https://icer.org/our-approach/methods-process/value-assessment-framework/)
-
-<a id="us-drug-prices"></a>
-
-- **U.S. prescription drug prices 50–90% higher than peer countries**
-
-  > "U.S. prescription drug prices are 50–90% higher than in peer countries."
-  > — [Commonwealth Fund, 2017](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
-
-<a id="qaly-definition"></a>
-
-- **QALY definition and use**
-  > "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around aound the world for more than 30 years."
-  > — [ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)
-
-<a id="givewell-impact-multipliers"></a>
-
-- **GiveWell Impact Multipliers**
-  > "Top charities like AMF provide ~10X return in lives saved per dollar compared to cash transfers."
-  > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/research/intervention-reports/bednets)
-
-<a id="fossil-fuel-lobbying-roi"></a>
-
-- **Fossil Fuel Lobbying ROI**
-
-  > "The fossil fuel industry spends millions on lobbying and gets billions in subsidies – an ROI of over 800%."
-  > — The Guardian, 2021, [Fossil fuel lobbying ROI](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)
-
-<a id="military-lobbying-returns"></a>
-
-- **Military Lobbying Returns**
-  > "For every dollar spent on lobbying, defense contractors receive over $100 in contracts."
-  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
-
-
-<a id="lobbying-roi-feasibility"></a>
-
-- **Lobbying ROI Feasibility**
-  > "Policy-influenced investments can yield high ROIs when backed by public mandates."
-  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
-
-
-<a id="lockheed-2023-revenue"></a>
-
-- **Lockheed Martin 2023 Revenue**
-
-  > "In 2023, Lockheed Martin earned $70.8 billion from government contracts, accounting for 9.19% of total federal contract dollars."
-  > — Wikipedia, 2024, [Top 100 Contractors of the U.S. federal government](https://en.wikipedia.org/wiki/Top_100_Contractors_of_the_U.S._federal_government)
-
-<a id="jnj-2023-financials"></a>
-
-- **Johnson & Johnson 2023 Financials**
-
-  > "Johnson & Johnson reported revenues of $94.9 billion and a net income of $20.9 billion in 2023, resulting in a profit margin of about 22%."
-  > — Johnson & Johnson, 2024, [Investor Relations](https://www.jnj.com/investor-relations/financial-information)
-
-<a id="investment-return-comparison"></a>
-
-- **Investment Return Comparison**
-
-  > "Over the past five years, the average annual return for major defense contractors has been approximately 8%, while leading healthcare companies have yielded average annual returns of around 12%."
-  > — Forbes, 2024, [Healthcare Stocks Poised for a Rebound](https://www.forbes.com/sites/investor/2023/12/28/healthcare-stocks-poised-for-a-rebound-in-2024/)
-
-<a id="pe-military-returns"></a>
-
-- **Private Equity Military Sector Returns**
-
-  > "Top-quartile private equity funds focused on the aerospace and defense sector often target an internal rate of return (IRR) of 20-30% for their investors."
-  > — PitchBook & Industry Analysis, 2024
-
-<a id="top-pe-hedge-funds"></a>
-
-- **Top Performing Private Equity & Hedge Funds**
-  > "Top-performing private equity funds, such as Spectrum's VIII-A Program, have achieved net IRRs as high as 98.91% for a single vintage year (2017)."
-  > — Alternatives Investor, 2021, [Top Performing Private Equity Funds](https://alternativesinvestor.com/top-performing-private-equity-funds-2016-2019)
-  > "Renaissance Technologies' Medallion Fund is famed for achieving an average annualized gross return of ~66%, and a net return of ~39%, from 1988 to 2021."
-  > — Traders' Log, 2023, [Top Hedge Funds](https://www.traderslog.com/top-hedge-funds)
-
-<a id="helios-voting"></a>
-
-- **Helios (end-to-end verifiable voting)**
-  > "Helios is an open-audit voting system… voters can verify that their vote is included and correctly tallied."
-  > — Adida et al., Helios, [heliosvoting.org](https://heliosvoting.org/)
-
-<a id="estonia-internet-voting"></a>
-
-- **Estonia internet voting lessons**
-  > "Estonia's i-voting system has operated nationwide since 2005… offering insights into scaling digital identity and remote voting with continuous security reviews."
-  > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/i-voting/)
