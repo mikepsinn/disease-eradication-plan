@@ -232,3 +232,57 @@ This document contains all source quotes and references supporting the claims ma
 <a id="note-on-language"></a>
 
 ---
+
+<a id="clinical-trial-spending"></a>
+
+- **$100 billion global annual clinical trial expenditure**
+
+  > "The global clinical trials market size was valued at USD 60.94 billion in 2024. The market is projected to grow from USD 64.94 billion in 2025 to USD 104.41 billion by 2032..."
+  > — [Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930)
+  > "The global clinical trials market accounted for USD 59 billion in 2024. The market is anticipated to grow from USD 62.4 billion in 2025 to USD 98.9 billion in 2034..."
+  > — [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)
+
+<a id="us-drug-spend"></a>
+
+- **$360B U.S. drug spend**
+
+  > "U.S. annual prescription drug spending is ~\$360B."
+  > — [CMS National Health Expenditure Data](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet)
+  > "The U.S. spent $360 billion on prescription drugs in 2019."
+  > — [Commonwealth Fund](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
+
+<a id="prevention-savings"></a>
+
+- **$3 saved per $1 prevention**
+
+  > "Every $1 spent on prevention saves ~\$3."
+  > — [Trust for America's Health, 2013](https://www.tfah.org/report-details/a-healthier-america-2013/)
+
+<a id="vsl"></a>
+
+- **$10M Value of Statistical Life (VSL)**
+
+  > "The value of a statistical life (VSL) is $10 million (2021 dollars)."
+  > — [U.S. Department of Transportation, 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
+
+<a id="qaly-value"></a>
+
+- **$100,000–$150,000 per QALY**
+
+  > "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $150,000 per QALY and per evLYG."
+  > — [ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)
+  > "The Institute for Clinical and Economic Review (ICER) often uses a benchmark range of $100,000 to $150,000 per QALY."
+  > — [ICER Value Assessment Framework](https://icer.org/our-approach/methods-process/value-assessment-framework/)
+
+<a id="us-drug-prices"></a>
+
+- **U.S. prescription drug prices 50–90% higher than peer countries**
+
+  > "U.S. prescription drug prices are 50–90% higher than in peer countries."
+  > — [Commonwealth Fund, 2017](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
+
+<a id="qaly-definition"></a>
+
+- **QALY definition and use**
+  > "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around aound the world for more than 30 years."
+  > — [ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)

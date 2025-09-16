@@ -1015,7 +1015,7 @@ This stream quantifies the health gains from bringing effective treatments to pa
 
 #### B. Improving Preventative Care via Real-World Evidence
 
-This stream captures the value of using the dFDA's continuous real-world data to optimize and personalize preventative medicine, which is currently underutilized.
+This stream captures the value of using the dFDA's vast data to optimize preventative care and the use of existing treatments.
 
 - **Rationale:** Research demonstrates that existing cancer screenings have already saved millions of life-years, with much potential still untapped at full adherence. The dFDA platform can identify at-risk populations and measure the real-world effectiveness of preventative interventions (e.g., statins, diabetes screening, lifestyle changes) at a massive scale.
 - **Assumptions:**
@@ -1123,67 +1123,6 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 **Conclusion:** Despite these uncertainties, the analysis consistently shows that the daily opportunity cost of inaction is substantial across all plausible scenarios. Every day that the current inefficient, slow, and expensive paradigm for clinical research is maintained, society forgoes hundreds of quality-adjusted life-years and tens to hundreds of millions of dollars in value. This provides a powerful, daily reminder of the urgency and immense potential of the dFDA initiative.
 
-### Source Quotes for Key Parameters
-
-- **$100 billion global annual clinical trial expenditure**
-
-  > "The global clinical trials market size was valued at USD 60.94 billion in 2024. The market is projected to grow from USD 64.94 billion in 2025 to USD 104.41 billion by 2032..."  
-  > — [Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930)
-  > "The global clinical trials market accounted for USD 59 billion in 2024. The market is anticipated to grow from USD 62.4 billion in 2025 to USD 98.9 billion in 2034..."  
-  > — [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)
-
-- **$500 per patient (RECOVERY trial)**
-
-  > "The cost per patient in the RECOVERY trial was approximately $500, compared to [$40,000–$120,000+ per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials."  
-  > — [RECOVERY Trial Wiki](https://wiki.dfda.earth/en/reference/recovery-trial) (citing Manhattan Institute and NCBI), [ProRelix Research](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/), [Power](https://www.withpower.com/guides/clinical-trial-cost-per-patient)
-
-- **$360B U.S. drug spend**
-
-  > "U.S. annual prescription drug spending is ~\$360B."  
-  > — [CMS National Health Expenditure Data](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet)
-  > "The U.S. spent $360 billion on prescription drugs in 2019."  
-  > — [Commonwealth Fund](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
-
-- **$3 saved per $1 prevention**
-
-  > "Every $1 spent on prevention saves ~\$3."  
-  > — [Trust for America's Health, 2013](https://www.tfah.org/report-details/a-healthier-america-2013/)
-
-- **$10M Value of Statistical Life (VSL)**
-
-  > "The value of a statistical life (VSL) is $10 million (2021 dollars)."  
-  > — [U.S. Department of Transportation, 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
-
-- **$100,000–$150,000 per QALY**
-
-  > "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $150,000 per QALY and per evLYG."  
-  > — [ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)
-  > "The Institute for Clinical and Economic Review (ICER) often uses a benchmark range of $100,000 to $150,000 per QALY."  
-  > — [ICER Value Assessment Framework](https://icer.org/our-approach/methods-process/value-assessment-framework/)
-
-- **840,000 QALYs gained/year**
-
-  > The dFDA platform is projected to generate 840,000 QALYs per year in its base case scenario. This is a composite metric derived from a detailed model in the appendix, which sums the impacts of (A) accelerating existing drug development, (B) improving preventative care with real-world evidence, and (C) enabling new therapies for previously untreatable rare diseases. The model is based on inputs from sources including the NBER, CDC, and GAO.
-  > — [See this document's Appendix Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)
-
-- **RECOVERY trial cost reduction**
-
-  > "The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials."  
-  > — [RECOVERY Trial Wiki](https://wiki.dfda.earth/en/reference/recovery-trial)
-
-- **Prevention savings calculation**
-
-  > "If preventive spending increases by $205B and each [$1 saves $3](https://www.tfah.org/report-details/a-healthier-america-2013/), additional savings = $205B × 3 = **\$615B/year**."  
-  > — [Trust for America's Health, 2013](https://www.tfah.org/report-details/a-healthier-america-2013/)
-
-- **U.S. prescription drug prices 50–90% higher than peer countries**
-
-  > "U.S. prescription drug prices are 50–90% higher than in peer countries."  
-  > — [Commonwealth Fund, 2017](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
-
-- **QALY definition and use**
-  > "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around the world for more than 30 years."  
-  > — [ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)
 
 ---
 
@@ -1362,3 +1301,13 @@ This table summarizes the component calculations and derives the total QALY rang
 - "Each year of delayed access to curative therapy for hepatitis C costs 0.2–1.1 QALYs per patient." ([Pho et al., 2015](https://europepmc.org/articles/pmc4515086?pdf=render))
 - "Syphilis causes substantial health losses in adults and children... The average number of discounted lifetime QALYs lost per infection as 0.09." ([Lee et al., 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9907519/))
 - "Statin treatment provides a gain of 0.20 QALYs in men aged 60 years." ([BMJ](https://www.ncbi.nlm.nih.gov/books/NBK426103/))
+
+---
+
+### Model Transparency:
+
+- All calculations, parameters, and sources are detailed in the appendix to ensure full transparency and reproducibility.
+
+---
+
+</rewritten_file>
