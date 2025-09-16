@@ -8,15 +8,6 @@ editor: markdown
 dateCreated: "2025-09-12T00:00:00.000Z"
 ---
 
-# Source Quotes and References
-
-This document contains all source quotes and references supporting the claims made throughout the War on Disease documentation. All statistics and assertions are backed by authoritative sources with direct quotes and links.
-
-## Legal Disclaimer
-
-\* Throughout our documentation, "bribe" means legal incentives: independent expenditures (no coordination), compliant securities (e.g., Reg S/Reg A+ where applicable), and performance‑based diplomatic or economic packages structured to comply with anti‑corruption laws (e.g., FCPA). See [Legal Compliance Framework](./strategy/legal-compliance-framework.md) for details.
-
----
 
 <a id="3-5-rule"></a>
 
