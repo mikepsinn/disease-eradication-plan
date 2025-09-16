@@ -18,47 +18,6 @@ This document contains all source quotes and references supporting the claims ma
 
 ---
 
-<a id="clinical-trial-spending"></a>
-
-- **$100 billion global annual clinical trial expenditure**
-
-  > "The global clinical trials market size was valued at USD 60.94 billion in 2024. The market is projected to grow from USD 64.94 billion in 2025 to USD 104.41 billion by 2032..."
-  > — [Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930)
-  > "The global clinical trials market accounted for USD 59 billion in 2024. The market is anticipated to grow from USD 62.4 billion in 2025 to USD 98.9 billion in 2034..."
-  > — [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)
-
-<a id="qaly-value"></a>
-
-- **$100,000–$150,000 per QALY**
-
-  > "Health benefit price benchmark (HBPB) will be reported using standard range from $100,000 to $150,000 per evLYG and QALY"
-  > — [ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)
-  > "The range for threshold prices used to determine ICER health benefit price benchmarks remains $100,000-$150,000 per evLYG and per QALY"
-  > — [ICER Value Assessment Framework](https://icer.org/wp-content/uploads/2023/09/ICER_2023_VAF_For-Publication_092523.pdf)
-
-<a id="vsl"></a>
-
-- **$12.5M Value of Statistical Life (VSL)**
-
-  > "The value of a statistical life (VSL) is $12.5 million (2022 dollars)."
-  > — [U.S. Department of Transportation, 2023 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
-
-<a id="prevention-savings"></a>
-
-- **$5.60 saved per $1 prevention**
-
-  > "An investment of $10 per person per year in proven community-based programs ... could save the U.S. over $16 billion annually within five years, representing a return of $5.60 for every $1 invested."
-  > — [Trust for America's Health, 2008](https://www.tfah.org/wp-content/uploads/archive/reports/prevention08/Prevention08Exec.pdf)
-
-<a id="us-drug-spend"></a>
-
-- **$449.7B U.S. drug spend (2023)**
-
-  > "Prescription drug spending increased 11.4% to $449.7 billion in 2023."
-  > — [CMS National Health Expenditure Data](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet)
-  > "Retail prescription drug spending increased by 5.7% in 2019, reaching $369.7 billion."
-  > — [CMS Office of the Actuary, 2020](https://www.cms.gov/newsroom/press-releases/cms-office-actuary-releases-2019-national-health-expenditures)
-
 <a id="3-5-rule"></a>
 
 - **3.5% participation tipping point**
@@ -70,18 +29,18 @@ This document contains all source quotes and references supporting the claims ma
   > "Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed."
   > — Wikipedia, [3.5% rule](https://en.wikipedia.org/wiki/3.5%25_rule)
 
+<a id="amr-10m-2050"></a>
+
+- **Antimicrobial resistance deaths projection**
+  > "By 2050, 10 million lives a year and a cumulative \$100 trillion of economic output are at risk due to the rise of drug-resistant infections if we do not find proactive solutions now to slow down the rise of drug resistance."
+  > — Review on Antimicrobial Resistance, 2016, [Final Report](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
+
 <a id="arpa-h-site"></a>
 
 - **ARPA‑H official site**
 
   > "ARPA‑H funds high‑impact research to drive biomedical breakthroughs."
   > — ARPA‑H, [About](https://arpa-h.gov/)
-
-<a id="amr-10m-2050"></a>
-
-- **Antimicrobial resistance deaths projection**
-  > "By 2050, 10 million lives a year and a cumulative \$100 trillion of economic output are at risk due to the rise of drug-resistant infections if we do not find proactive solutions now to slow down the rise of drug resistance."
-  > — Review on Antimicrobial Resistance, 2016, [Final Report](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
 
 <a id="childhood-vaccination-roi"></a>
 
@@ -103,13 +62,6 @@ This document contains all source quotes and references supporting the claims ma
     > "Universal access to clean water, toilets, and hygiene would boost the global economy by trillions of dollars over the next two decades... and would bring returns of 21 times their cost."
     > — WaterAid, [Link](https://www.wateraid.org/us/media/economic-report-unlock-trillions-of-dollars-with-clean-water-decent-toilets-and-hygiene)
 
-<a id="cmmi-overview"></a>
-
-- **CMS Innovation Center (CMMI) Overview**
-
-  > "The Innovation Center tests innovative payment and service delivery models to reduce expenditures."
-  > — CMS, [CMMI Overview](https://www.cms.gov/priorities/innovation/about)
-
 <a id="climate-bonds-gss-plus"></a>
 
 - **Climate Bonds: GSS+ debt $4T cumulative**
@@ -123,20 +75,54 @@ This document contains all source quotes and references supporting the claims ma
   > "Today nearly 80% of clinical trials fail to meet their enrolment timelines and up to 50% of research sites enrol one or no patients. Not only does this translate into as much as $8m in lost revenue for each day a drug is delayed, it also means that cutting-edge new medications are significantly delayed in their journey to the patients who need them most."
   > — Clinical Trials Arena, [Link](https://www.clinicaltrialsarena.com/marketdata/featureclinical-trial-patient-recruitment/)
 
+<a id="clinical-trial-spending"></a>
+
+- **$100 billion global annual clinical trial expenditure**
+
+  > "The global clinical trials market size was valued at USD 60.94 billion in 2024. The market is projected to grow from USD 64.94 billion in 2025 to USD 104.41 billion by 2032..."
+  > — [Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930)
+  > "The global clinical trials market accounted for USD 59 billion in 2024. The market is anticipated to grow from USD 62.4 billion in 2025 to USD 98.9 billion in 2034..."
+  > — [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)
+
+<a id="cmmi-overview"></a>
+
+- **CMS Innovation Center (CMMI) Overview**
+
+  > "The Innovation Center tests innovative payment and service delivery models to reduce expenditures."
+  > — CMS, [CMMI Overview](https://www.cms.gov/priorities/innovation/about)
+
 <a id="contracts-2-02t"></a>
 
 - **Defense Contracts (2001-2021)**
   > "The top five defense firms received \$2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan."
   > — Responsible Statecraft, 2021, [Top defense firms see \$2T return on \$1B investment in Afghan war](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
 
-<a id="lobbying-100m"></a>
+<a id="eo-14158"></a>
 
-- **Defense industry lobbying spending**
+- **Executive Order 14158 (DOGE)**
 
-  > "During the first three quarters of 2022, the defense sector spent approximately \$101 million on lobbying activities."
-  > — Watson Institute, Brown University, 2022, [Defense Sector Lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
-  > "Military industry lobbying totaled over \$100 million in 2024."
-  > — OpenSecrets, 2024, [Defense industry lobbying totals](https://www.taxpayer.net/wp-content/uploads/2024/10/Oct-2024-Political-Footprint-of-the-Military-Industry.pdf)
+  > "Establishing and Implementing the President's Department of Government Efficiency."
+  > — White House, 2025, [EO 14158](https://www.whitehouse.gov/presidential-actions/2025/01/establishing-and-implementing-the-presidents-department-of-government-efficiency/)
+
+<a id="eo-14210"></a>
+
+- **Executive Order 14210 (DOGE Workforce Optimization)**
+
+  > "Implementing the President’s Department of Government Efficiency—Workforce Optimization Initiative."
+  > — White House, 2025, [EO 14210](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-workforce-optimization-initiative/)
+
+<a id="eo-14222"></a>
+
+- **Executive Order 14222 (DOGE Cost Efficiency)**
+
+  > "Implementing the President’s Department of Government Efficiency—Cost Efficiency Initiative."
+  > — White House, 2025, [EO 14222](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-cost-efficiency-initiative/)
+
+<a id="estonia-eresidency-stats"></a>
+
+- **Estonia e-Residency statistics**
+  > "Estonia's e-Residency program has issued digital identities to over 100,000 people from 170+ countries, demonstrating global-scale digital identity verification."
+  > — e-Residency, 2024, [Statistics](https://e-resident.gov.ee/statistics/)
 
 <a id="estonia-internet-voting"></a>
 
@@ -144,11 +130,12 @@ This document contains all source quotes and references supporting the claims ma
   > "Estonia's i-Voting enables secure, anonymous online voting worldwide using e-ID, enhancing citizen participation in governance."
   > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/e-democracy/)
 
-<a id="estonia-eresidency-stats"></a>
+<a id="eu-mica"></a>
 
-- **Estonia e-Residency statistics**
-  > "Estonia's e-Residency program has issued digital identities to over 100,000 people from 170+ countries, demonstrating global-scale digital identity verification."
-  > — e-Residency, 2024, [Statistics](https://e-resident.gov.ee/statistics/)
+- **EU MiCA transparency and disclosure**
+
+  > "MiCA establishes uniform requirements for the offer to the public and admission to trading of crypto‑assets... and for transparency and disclosure."
+  > — EUR‑Lex, 2023, [MiCA Regulation](https://eur-lex.europa.eu/eli/reg/2023/1114/oj)
 
 <a id="fec-foreign-national-restrictions"></a>
 
@@ -176,6 +163,12 @@ This document contains all source quotes and references supporting the claims ma
   >
   > <cite>— IMF, 2023, [Fossil Fuel Subsidies Surged to Record $7 Trillion](https://www.imf.org/en/Blogs/Articles/2023/08/24/fossil-fuel-subsidies-surged-to-record-7-trillion)</cite>
 
+<a id="gdpr-biometric-data"></a>
+
+- **GDPR Biometric Data requirements**
+  > "Processing of biometric data for the purpose of uniquely identifying a natural person shall be prohibited unless one of the conditions referred to in points (a) to (j) of paragraph 2 applies."
+  > — GDPR Article 9(1), [EU General Data Protection Regulation](https://gdpr-info.eu/art-9-gdpr/)
+
 <a id="generic-drug-substitution-savings"></a>
 
 -   **Generic Drug Substitution Savings**
@@ -189,6 +182,12 @@ This document contains all source quotes and references supporting the claims ma
   > "Thus, if we estimate that a funding opportunity is '10x cash,' this means we estimate it to be ten times as cost-effective as unconditional cash transfers."
   > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models)
 
+<a id="global-fund"></a>
+
+- **The Global Fund**
+  > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
+  > — The Global Fund, [Overview](https://www.theglobalfund.org/en/about-the-global-fund/)
+
 <a id="global-gov-med-research-spending"></a>
 
 - **Global government medical research spending (\$67.5B, 2023–2024)**
@@ -200,17 +199,6 @@ This document contains all source quotes and references supporting the claims ma
 - **Global Cost of Violence**
   > "The economic impact of violence on the global economy in 2021 was $16.5 trillion, equivalent to 10.9% of global GDP, or $2,117 per person."
   > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/maps/global-peace-index/)
-
-<a id="sipri-2024-spending"></a>
-
-- **Global military spending (\$2.72T, 2024)**
-
-  > "In 2024, world military expenditure reached \$2.718 trillion, marking a 9.4% increase from the previous year."
-  > — SIPRI, 2025, [Trends in World Military Expenditure 2024](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)
-
-- **Previous global military spending (\$2.44T, 2023)**
-  > "Total global military expenditure reached $2443 billion in 2023."
-  > — SIPRI, 2024, [press release](https://www.sipri.org/media/press-release/2024/global-military-spending-surges-amid-war-rising-tensions-and-insecurity)
 
 <a id="helios-voting"></a>
 
@@ -237,6 +225,13 @@ This document contains all source quotes and references supporting the claims ma
   > "The Convention was opened for signature at Ottawa, Canada, by all States from 3 December 1997 until 4 December 1997."
   > — ICBL, [The Treaty](https://treaties.un.org/pages/ViewDetails.aspx?src=TREATY&mtdsg_no=XXVI-5&chapter=26&clang=_en)
 
+<a id="impact-investing-regulatory-reform"></a>
+
+- **Impact investing regulatory reform**
+
+  > "Reforms to securities regulation can better support impact investing while maintaining investor protections."
+  > — Brookings, 2022, [Policy to Support Impact Investing](https://www.brookings.edu/research/reforming-securities-regulation-to-support-impact-investing/)
+
 <a id="investment-return-comparison"></a>
 
 - **Investment Return Comparison**
@@ -256,6 +251,15 @@ This document contains all source quotes and references supporting the claims ma
 - **Landray, Sir Martin, on the RECOVERY Trial**
   > "In 2019, I had no idea that I would be setting up a trial of treatments for an infectious disease, let alone a pandemic virus. I certainly would not have thought it possible to go from a blank piece of paper to enrolling the first patient in nine days, to finding the first life-saving treatment within ten weeks, and for it to be made standard NHS policy within three hours."
   > — Sir Martin Landray, [Oxford University News](https://www.ox.ac.uk/news/features/recovery-trial-two-years)
+
+<a id="lobbying-100m"></a>
+
+- **Defense industry lobbying spending**
+
+  > "During the first three quarters of 2022, the defense sector spent approximately \$101 million on lobbying activities."
+  > — Watson Institute, Brown University, 2022, [Defense Sector Lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
+  > "Military industry lobbying totaled over \$100 million in 2024."
+  > — OpenSecrets, 2024, [Defense industry lobbying totals](https://www.taxpayer.net/wp-content/uploads/2024/10/Oct-2024-Political-Footprint-of-the-Military-Industry.pdf)
 
 <a id="lobbying-roi-calc"></a>
 
@@ -307,6 +311,27 @@ This document contains all source quotes and references supporting the claims ma
   > "The nearly 4 million comments submitted to the Federal Communications Commission about its proposed net neutrality rules shattered the agency's previous record..."
   > — Pew Research Center, 2014, [FCC's net neutrality comment period ends with a bang](https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/)
 
+<a id="nih-common-fund-overview"></a>
+
+- **NIH Common Fund overview**
+
+  > "The Common Fund supports cross‑cutting programs that are expected to have exceptionally high impact."
+  > — NIH, [Common Fund Overview](https://commonfund.nih.gov/overview)
+
+<a id="nih-od-budget"></a>
+
+- **NIH Office of the Director budget info**
+
+  > "Budget information and appropriations for the Office of the Director."
+  > — NIH, [OD Budget](https://officeofbudget.od.nih.gov/br.html)
+
+<a id="npr-nsf-freezes"></a>
+
+- **NSF grant freezes (news report)**
+
+  > "NSF freezes payments in response to executive actions."
+  > — NPR, 2025, [NSF freezes payments](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia)
+
 <a id="nuke-winter-150tg"></a>
 
 - **Nuclear Winter Famine**
@@ -318,6 +343,20 @@ This document contains all source quotes and references supporting the claims ma
 - **Pandemic vs. war deaths comparison**
   > "COVID-19 deaths: over 7 million confirmed deaths" vs. annual conflict deaths typically under 100,000.
   > — Our World in Data, 2024, [COVID-19 Deaths](https://ourworldindata.org/covid-deaths)
+
+<a id="pe-military-returns"></a>
+
+- **Private Equity Military Sector Returns**
+
+  > "Top-quartile private equity funds focused on the aerospace and defense sector often target an internal rate of return (IRR) of 20-30% for their investors."
+  > — PitchBook & Industry Analysis, 2024
+
+<a id="peirce-token-safe-harbor"></a>
+
+- **Token Safe Harbor concept (Peirce 2.0)**
+
+  > "The safe harbor seeks to provide network developers with a three‑year grace period... to facilitate participation in, and the development of, a functional or decentralized network."
+  > — Hester M. Peirce, SEC Commissioner, 2021, [Token Safe Harbor 2.0](https://www.sec.gov/news/public-statement/peirce-statement-token-safe-harbor-proposal-2.0)
 
 <a id="pentagon-unaccounted-2-5t"></a>
 
@@ -341,13 +380,6 @@ This document contains all source quotes and references supporting the claims ma
   > "Assuming a global population of 7.8 billion and an average lifespan of 80 years, the per capita lifetime cost of violence is approximately $169,230."
   > — Derived from Global Peace Index data, internal calculation, 2024.
 
-<a id="pe-military-returns"></a>
-
-- **Private Equity Military Sector Returns**
-
-  > "Top-quartile private equity funds focused on the aerospace and defense sector often target an internal rate of return (IRR) of 20-30% for their investors."
-  > — PitchBook & Industry Analysis, 2024
-
 <a id="polypill-prevention-qaly"></a>
 
 -   **Polypill for Primary Prevention Cost per QALY**
@@ -355,11 +387,27 @@ This document contains all source quotes and references supporting the claims ma
     > "A polypill strategy was potentially cost-effective compared to other strategies for most sub-groups ranging from dominance to up to £18,811 per QALY depending on patient sub-group."
     > — PLOS One, [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182625)
 
+<a id="prevention-savings"></a>
+
+- **$5.60 saved per $1 prevention**
+
+  > "An investment of $10 per person per year in proven community-based programs ... could save the U.S. over $16 billion annually within five years, representing a return of $5.60 for every $1 invested."
+  > — [Trust for America's Health, 2008](https://www.tfah.org/wp-content/uploads/archive/reports/prevention08/Prevention08Exec.pdf)
+
 <a id="qaly-definition"></a>
 
 - **QALY definition and use**
   > "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around aound the world for more than 30 years."
   > — [ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)
+
+<a id="qaly-value"></a>
+
+- **$100,000–$150,000 per QALY**
+
+  > "Health benefit price benchmark (HBPB) will be reported using standard range from $100,000 to $150,000 per evLYG and QALY"
+  > — [ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)
+  > "The range for threshold prices used to determine ICER health benefit price benchmarks remains $100,000-$150,000 per evLYG and per QALY"
+  > — [ICER Value Assessment Framework](https://icer.org/wp-content/uploads/2023/09/ICER_2023_VAF_For-Publication_092523.pdf)
 
 <a id="recovery-cost-500"></a>
 
@@ -378,6 +426,30 @@ This document contains all source quotes and references supporting the claims ma
 - **RECOVERY Trial Summary Quote**
   > "One trial. Over 47,000 participants. Nearly 200 hospital sites, across six countries. Ten results. Four effective COVID-19 treatments... Through discovering four treatments that effectively reduce deaths from COVID-19, it is certain that the study has saved thousands – if not millions – of lives worldwide."
   > — Oxford University News, [Link](https://www.ox.ac.uk/news/features/recovery-trial-two-years)
+
+<a id="sec-reg-a"></a>
+
+- **SEC Regulation A (Reg A) overview and cap ($75M/yr)**
+
+  > "Regulation A provides an exemption from the registration requirements... for offerings of securities up to $75 million in a 12‑month period, subject to eligibility, disclosure, and reporting requirements."
+  > — U.S. SEC, [Regulation A Overview](https://www.sec.gov/smallbusiness/exemptofferings/rega)
+
+<a id="sec-reg-cf"></a>
+
+- **SEC Regulation Crowdfunding (Reg CF)**
+
+  > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."
+  > — U.S. SEC, [Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
+<a id="sipri-2024-spending"></a>
+
+- **Global military spending ($2.72T, 2024)**
+
+  > "In 2024, world military expenditure reached $2.718 trillion, marking a 9.4% increase from the previous year."
+  > — SIPRI, 2025, [Trends in World Military Expenditure 2024](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)
+
+- **Previous global military spending ($2.44T, 2023)**
+  > "Total global military expenditure reached $2443 billion in 2023."
+  > — SIPRI, 2024, [press release](https://www.sipri.org/media/press-release/2024/global-military-spending-surges-amid-war-rising-tensions-and-insecurity)
 
 <a id="smallpox-eradicated"></a>
 
@@ -402,25 +474,12 @@ This document contains all source quotes and references supporting the claims ma
     > "Standard statin was cost-effective across all categories with incremental cost per QALY from £280 to £8530, with higher intensity statin cost-effective at higher cardiovascular risks and higher LDL-C levels."
     > — The Lancet, [Link](https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(24)00053-X/fulltext)
 
-<a id="global-fund"></a>
+<a id="statnews-nih-terminates"></a>
 
-- **The Global Fund**
-  > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
-  > — The Global Fund, [Overview](https://www.theglobalfund.org/en/about-the-global-fund/)
+- **NIH terminates research grants (news report)**
 
-<a id="peirce-token-safe-harbor"></a>
-
-- **Token Safe Harbor concept (Peirce 2.0)**
-
-  > "The safe harbor seeks to provide network developers with a three‑year grace period... to facilitate participation in, and the development of, a functional or decentralized network."
-  > — Hester M. Peirce, SEC Commissioner, 2021, [Token Safe Harbor 2.0](https://www.sec.gov/news/public-statement/peirce-statement-token-safe-harbor-proposal-2.0)
-
-<a id="wikipedia-doge"></a>
-
-- **Department of Government Efficiency (overview)**
-
-  > "Department created via executive action with centralized oversight teams."
-  > — Wikipedia, [Department of Government Efficiency](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency)
+  > "NIH abruptly terminates millions in research grants, defying court orders."
+  > — STAT News, 2025, [NIH terminates grants](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)
 
 <a id="tobacco-control-roi"></a>
 
@@ -461,13 +520,6 @@ This document contains all source quotes and references supporting the claims ma
   > "Overall, the 138 clinical trials had an estimated median (IQR) cost of $19.0 million ($12.2 million-$33.1 million)... The clinical trials cost a median (IQR) of $41,117 ($31,802-$82,362) per patient."
   > — FDA Study via NCBI, [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6248200/)
 
-<a id="us-drug-prices"></a>
-
-- **U.S. prescription drug prices 50–90% higher than peer countries**
-
-  > "U.S. prescription drug prices are 50–90% higher than in peer countries."
-  > — [Commonwealth Fund, 2017](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
-
 <a id="uk-electoral-spending-limits"></a>
 
 - **UK Electoral Commission Spending Limits**
@@ -485,6 +537,22 @@ This document contains all source quotes and references supporting the claims ma
   > "Break-even in 18-36 months with 3.4X return even in partial success."
   > — Internal modeling based on SIPRI data, 2024.
 
+<a id="us-drug-prices"></a>
+
+- **U.S. prescription drug prices 50–90% higher than peer countries**
+
+  > "U.S. prescription drug prices are 50–90% higher than in peer countries."
+  > — [Commonwealth Fund, 2017](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
+
+<a id="us-drug-spend"></a>
+
+- **$449.7B U.S. drug spend (2023)**
+
+  > "Prescription drug spending increased 11.4% to $449.7 billion in 2023."
+  > — [CMS National Health Expenditure Data](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet)
+  > "Retail prescription drug spending increased by 5.7% in 2019, reaching $369.7 billion."
+  > — [CMS Office of the Actuary, 2020](https://www.cms.gov/newsroom/press-releases/cms-office-actuary-releases-2019-national-health-expenditures)
+
 <a id="us-mil-spending-share"></a>
 
 - **US military spending share**
@@ -496,17 +564,25 @@ This document contains all source quotes and references supporting the claims ma
   > "Global nuclear arsenal of ~13,000 warheads could trigger 13-130 nuclear winter scenarios."
   > — Based on Robock & Toon, 2010, Scientific American.
 
+<a id="vsl"></a>
+
+- **$12.5M Value of Statistical Life (VSL)**
+
+  > "The value of a statistical life (VSL) is $12.5 million (2022 dollars)."
+  > — [U.S. Department of Transportation, 2023 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
+
+<a id="wikipedia-doge"></a>
+
+- **Department of Government Efficiency (overview)**
+
+  > "Department created via executive action with centralized oversight teams."
+  > — Wikipedia, [Department of Government Efficiency](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency)
+
 <a id="world-warheads"></a>
 
 - **World Nuclear Forces**
   > "As of early 2025, we estimate that the world's nine nuclear-armed states possess a combined total of approximately 12,241 nuclear warheads."
   > — Federation of American Scientists, 2024, [Status of World Nuclear Forces](https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/)
-
-<a id="wwii-war-bonds"></a>
-
-- **WWII War Bonds**
-  > "From 1941 to 1945, the United States government issued War Bonds to finance military operations. Over 85 million Americans purchased bonds totaling more than \$185 billion."
-  > — U.S. Treasury, [WWII War Bonds](https://en.wikipedia.org/wiki/War_bond)
 
 <a id="worldcoin-scale"></a>
 
@@ -514,99 +590,8 @@ This document contains all source quotes and references supporting the claims ma
   > "Worldcoin has verified over 2 million unique human identities using iris biometric scanning, demonstrating feasibility of global-scale biometric verification."
   > — Worldcoin Foundation, 2024, [Progress Update](https://worldcoin.org/blog/announcements/worldcoin-milestones)
 
-<a id="impact-investing-regulatory-reform"></a>
+<a id="wwii-war-bonds"></a>
 
-- **Impact investing regulatory reform**
-
-  > "Reforms to securities regulation can better support impact investing while maintaining investor protections."
-  > — Brookings, 2022, [Policy to Support Impact Investing](https://www.brookings.edu/research/reforming-securities-regulation-to-support-impact-investing/)
-
-<a id="eu-mica"></a>
-
-- **EU MiCA transparency and disclosure**
-
-  > "MiCA establishes uniform requirements for the offer to the public and admission to trading of crypto‑assets... and for transparency and disclosure."
-  > — EUR‑Lex, 2023, [MiCA Regulation](https://eur-lex.europa.eu/eli/reg/2023/1114/oj)
-
-<a id="gdpr-biometric-data"></a>
-
-- **GDPR Biometric Data requirements**
-  > "Processing of biometric data for the purpose of uniquely identifying a natural person shall be prohibited unless one of the conditions referred to in points (a) to (j) of paragraph 2 applies."
-  > — GDPR Article 9(1), [EU General Data Protection Regulation](https://gdpr-info.eu/art-9-gdpr/)
-
-<a id="eo-14158"></a>
-
-- **Executive Order 14158 (DOGE)**
-
-  > "Establishing and Implementing the President's Department of Government Efficiency."
-  > — White House, 2025, [EO 14158](https://www.whitehouse.gov/presidential-actions/2025/01/establishing-and-implementing-the-presidents-department-of-government-efficiency/)
-
-<a id="eo-14210"></a>
-
-- **Executive Order 14210 (DOGE Workforce Optimization)**
-
-  > "Implementing the President’s Department of Government Efficiency—Workforce Optimization Initiative."
-  > — White House, 2025, [EO 14210](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-workforce-optimization-initiative/)
-
-<a id="eo-14222"></a>
-
-- **Executive Order 14222 (DOGE Cost Efficiency)**
-
-  > "Implementing the President’s Department of Government Efficiency—Cost Efficiency Initiative."
-  > — White House, 2025, [EO 14222](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-cost-efficiency-initiative/)
-
-<a id="sec-reg-a"></a>
-
-- **SEC Regulation A (Reg A) overview and cap ($75M/yr)**
-
-  > "Regulation A provides an exemption from the registration requirements... for offerings of securities up to $75 million in a 12‑month period, subject to eligibility, disclosure, and reporting requirements."
-  > — U.S. SEC, [Regulation A Overview](https://www.sec.gov/smallbusiness/exemptofferings/rega)
-
-<a id="sec-reg-cf"></a>
-
-- **SEC Regulation Crowdfunding (Reg CF)**
-
-  > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."
-  > — U.S. SEC, [Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
-
-<a id="statnews-nih-terminates"></a>
-
-- **NIH terminates research grants (news report)**
-
-  > "NIH abruptly terminates millions in research grants, defying court orders."
-  > — STAT News, 2025, [NIH terminates grants](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)
-
-<a id="nih-common-fund-overview"></a>
-
-- **NIH Common Fund overview**
-
-  > "The Common Fund supports cross‑cutting programs that are expected to have exceptionally high impact."
-  > — NIH, [Common Fund Overview](https://commonfund.nih.gov/overview)
-
-<a id="nih-od-budget"></a>
-
-- **NIH Office of the Director budget info**
-
-  > "Budget information and appropriations for the Office of the Director."
-  > — NIH, [OD Budget](https://officeofbudget.od.nih.gov/br.html)
-
-<a id="npr-nsf-freezes"></a>
-
-- **NSF grant freezes (news report)**
-
-  > "NSF freezes payments in response to executive actions."
-  > — NPR, 2025, [NSF freezes payments](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia)
-
-<a id="sec-reg-a"></a>
-
-- **SEC Regulation A (Reg A) overview and cap ($75M/yr)**
-
-  > "Regulation A provides an exemption from the registration requirements... for offerings of securities up to $75 million in a 12‑month period, subject to eligibility, disclosure, and reporting requirements."
-  > — U.S. SEC, [Regulation A Overview](https://www.sec.gov/smallbusiness/exemptofferings/rega)
-
-<a id="sec-reg-cf"></a>
-
-- **SEC Regulation Crowdfunding (Reg CF)**
-
-  > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."
-  > — U.S. SEC, [Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
+- **WWII War Bonds**
+  > "From 1941 to 1945, the United States government issued War Bonds to finance military operations. Over 85 million Americans purchased bonds totaling more than \$185 billion."
+  > — U.S. Treasury, [WWII War Bonds](https://en.wikipedia.org/wiki/War_bond)
