@@ -33,9 +33,9 @@ This document contains all source quotes and references supporting the claims ma
 
 - **$100,000–$150,000 per QALY**
 
-  > "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $150,000 per QALY and per evLYG."
+  > "Health benefit price benchmark (HBPB) will be reported using standard range from $100,000 to $150,000 per evLYG and QALY"
   > — [ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)
-  > "The Institute for Clinical and Economic Review (ICER) often uses a benchmark range of $100,000 to $150,000 per QALY."
+  > "The Institute for Clinical and Economic Review (ICER) uses a benchmark range of $100,000 to $150,000 per QALY in their Value Assessment Framework to evaluate the cost-effectiveness of medical treatments."
   > — [ICER Value Assessment Framework](https://icer.org/our-approach/methods-process/value-assessment-framework/)
 
 <a id="vsl"></a>
