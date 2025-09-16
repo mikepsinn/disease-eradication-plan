@@ -26,9 +26,9 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## System Architecture
 
-- **Voting protocol**: Use an end-to-end verifiable scheme (Helios or similar) with individual ballot verification and public bulletin board.
-  - Reference: Helios (Adida et al.)
-- **Identity / Sybil resistance**: Multi-factor: email/phone OTP; device/browser fingerprinting; optional liveness/biometrics; integration with national e-ID where available (e.g., models informed by Estonia’s experience); proof-of-uniqueness partners.
+- **Voting protocol**: Use an end-to-end verifiable scheme ([Helios or similar](../references.md#helios-voting)) with individual ballot verification and public bulletin board.
+  - Reference: [Helios (Adida et al.)](../references.md#helios-voting)
+- **Identity / Sybil resistance**: Multi-factor: email/phone OTP; device/browser fingerprinting; optional liveness/biometrics; integration with national e-ID where available (e.g., models informed by [Estonia's experience](../references.md#estonia-internet-voting)); proof-of-uniqueness partners.
 - **Fraud controls**: Risk scoring, velocity limits, manual review queues; bounty program for reporting abuse.
 - **Internationalization**: 40+ locale support; accessibility-first UI.
 
@@ -59,13 +59,4 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ---
 
-### Source Quotes for Key Parameters
-
-- **Helios (end-to-end verifiable voting)**
-
-  > "Helios is an open-audit voting system… voters can verify that their vote is included and correctly tallied."  
-  > — Adida et al., Helios, [heliosvoting.org](https://heliosvoting.org/)
-
-- **Estonia internet voting lessons**
-  > "Estonia's i-voting system has operated nationwide since 2005… offering insights into scaling digital identity and remote voting with continuous security reviews."  
-  > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/i-voting/)
+---

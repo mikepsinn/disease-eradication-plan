@@ -16,8 +16,8 @@ This analysis calculates the cost per death for a modern nuclear weapon and uses
 
 The cost of a single nuclear warhead is difficult to pinpoint, as it is often bundled into larger modernization and delivery system programs. However, we can use the **B61-12 Life Extension Program** as a credible benchmark.
 
-- **Unit Cost:** The B61-12 bomb has an estimated unit cost of **$27.5 million**.
-- **Program Cost:** The total program cost for 400-500 bombs is estimated at **$11 billion**.
+- **Unit Cost:** The B61-12 bomb has an estimated unit cost of [**$27.5 million**](../book/references.md#b61-12-cost).
+- **Program Cost:** The total program cost for 400-500 bombs is estimated at [**$11 billion**](../book/references.md#b61-12-cost).
 
 For this analysis, we will use the conservative unit cost of **$27.5 million** per bomb.
 
@@ -27,7 +27,7 @@ The number of deaths from a nuclear detonation depends on the weapon's yield, th
 
 A widely used tool for modeling these effects is NUKEMAP, created by historian of science Alex Wellerstein. A simulation of a single, modern 300-kiloton W87 warhead detonated over a dense urban center like Manhattan reveals a catastrophic scale of destruction.
 
-- **Estimated Fatalities:** A surface blast is projected to cause approximately **1,619,570 fatalities**.
+- **Estimated Fatalities:** A surface blast is projected to cause approximately [**1,619,570 fatalities**](../book/references.md#w87-casualties).
 
 This figure includes immediate deaths from the blast, heat, and initial radiation, but does not account for long-term deaths from fallout, disease, or the collapse of medical infrastructure.
 
@@ -54,19 +54,5 @@ If 1% of the global military budget were redirected, $2.69 trillion would remain
 With the $2.69 trillion left over after funding the War on Disease, global military spending could still theoretically purchase enough nuclear weapons to kill **158.4 billion people**, or approximately **20 times the entire population of Earth.**
 
 This calculation highlights the grotesque inefficiency and overkill capacity of the current global military apparatus.
-
-### Source Quotes
-
-<a id="b61-12-cost"></a>
-
-- **B61-12 Program and Unit Cost**
-  > "The B61-12 Life Extension Program... is now estimated to cost more than $11 billion for 400-500 bombs... The cost per bomb is now estimated at more than $27.5 million."
-  > — Federation of American Scientists, 2021, [B61-12 Life Extension Program](https://fas.org/issues/nuclear-weapons/b61-12-life-extension-program/)
-
-<a id="w87-casualties"></a>
-
-- **300-kiloton W87 Warhead Casualties (NUKEMAP Simulation)**
-  > "Simulating a surface burst of a 300-kiloton W87 warhead over Manhattan, NUKEMAP projects an estimated 1,619,570 fatalities and 2,059,570 injuries."
-  > — NUKEMAP by Alex Wellerstein, [Link to Simulation](https://nuclearsecrecy.com/nukemap/?&kt=300&lat=40.72422&lng=-73.99611&hob_opt=1&hob_psi=5&hob_ft=16404&ff=50&psi=20,5,1&zm=12)
 
 ---

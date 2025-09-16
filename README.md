@@ -127,24 +127,60 @@ Here's the complete system that makes curing people more profitable than killing
 
 ```mermaid
 graph TD;
-    subgraph "How We Bribe Everyone Legally ($27 Billion a Year)";
-        A["$27B Annual Treasury<br/>(1% Military Redirection)"];
-
-        subgraph "Where the Money Goes";
-            A --> B["<b>Investors & Bond Holders</b><br/>(~_ $7.2B/yr Payouts)<br/><i>Why They'll Take It: Better returns than anywhere else</i>"];
-            A --> C["<b>Political Action Fund</b><br/>(~_ $1.5B/yr Independent Expenditures)<br/><i>Why Politicians Care: Massive campaign support</i>"];
-            A --> D["<b>Citizens (VOTE Points)</b><br/>(Funded by bond sales)<br/><i>Why People Vote: Real money for voting</i>"];
-            A --> E["<b>Decentralized Institutes of Health (DIH)</b><br/>(~$19.8B/yr Mission Investment)<br/><i>Why It Works: 80x more efficient than current system</i>"];
+    subgraph "The Complete System: From Killing to Curing";
+        A["$2.7T Global Military Budgets"];
+        
+        A -->|"1% Redirect"| B["$27B Annual Treaty Treasury"];
+        
+        subgraph "Democratic Allocation";
+            B --> C["DIH Governance<br/>(VICTORY Bond Holders Vote)"];
+            C --> D["Patient Subsidy Pools<br/>(Money Goes to Patients)"];
         end
-
-        subgraph "A World Without War and Disease";
-            B --> F["Rich People on Our Side"];
-            C --> G["Politicians Who Need Our Money"];
-            D --> H["280 Million People Voting for This"];
-            E --> I["Actual Cures for Diseases"];
+        
+        subgraph "80X More Efficient Research";
+            D --> E["Patients Choose Trials<br/>($500/patient vs $41,000)"];
+            E --> F["Pragmatic Trials<br/>(Real-World Evidence)"];
+            F --> G["All Data Published<br/>(No Hidden Results)"];
+        end
+        
+        subgraph "What Everyone Gets";
+            G --> H["dFDA Effectiveness Rankings<br/>(What Actually Works)"];
+            H --> I["Honest Outcome Labels<br/>(On All Foods & Drugs)"];
+            I --> J["People Stop Dying<br/>of Preventable Diseases"];
+        end
+        
+        subgraph "The Flywheel";
+            J --> K["More People Want This"];
+            K --> L["Politicians Support It"];
+            L --> M["More Countries Join"];
+            M --> B;
         end
     end
 ```
+
+---
+
+## What We Get: A World Without War and Disease
+
+Here's what happens when we stop wasting money on bombs and start spending it on not dying:
+
+### Your Life in 2035
+
+Your kid gets diagnosed with some rare genetic disease. Instead of bankruptcy and death, the doctor sequences her DNA, finds the problem, and designs a treatment. It gets made at the local pharmacy. The whole thing costs you nothing because the research was funded by the health budget we redirected from buying bombs.
+
+Cancer becomes treatable, like strep throat is now. Alzheimer's gets cured. Heart disease becomes optional. You live as long as you want to live, and you stay healthy while you do it.
+
+Your great-grandkids will read about people dying of cancer the way you read about people dying of polio. It will seem primitive and tragic and completely unnecessary.
+
+### The Economics of Not Dying
+
+When we stop spending $2.7 trillion per year on ways to kill each other and start spending it on ways to not die, everything changes:
+
+- **Healthcare costs approach zero.** With diseases cured and aging reversed, the multi-trillion dollar burden of "sick care" disappears.
+- **The $16.5 trillion annual cost of violence gets repurposed.** This money, once wasted on destruction, now gets invested in clean energy, space exploration, and making life better.
+- **Human potential becomes unlimited.** When people can choose how long to live and stay healthy while doing it, we can finally see what humans are actually capable of.
+
+This is the world we're building. Not someday. Starting now.
 
 ## The Plan
 
@@ -255,63 +291,30 @@ We turn today's **War Contractors** into tomorrow's **Peace Contractors** by pay
 - **Return: $1,813 per $1 spent on lobbying**
 - Politicians get modest campaign donations and revolving door jobs
 
-## The Order in Which We Bribe People
+## How We Bribe Everyone
 
-*We start with rich people who want to get richer, then move on to politicians. It's depressingly predictable, but it works.*
+We start with rich people who want to get richer, then move on to politicians. It's depressingly predictable, but it works.
 
-### Phase 1: Seed Investors ($250-400M Initial Investment)
+### 1. Rich People Get Richer
+We offer **[VICTORY Bonds](./brain/book/economics.md)** that pay better returns than the best hedge funds (~40% annually) plus governance control over the $27 billion treasury. Rich people like making money. We help them make more money by funding cures instead of bombs.
 
-- **Who:** Wealthy individuals, funds, Anchor Investors
-- **The Bribe:**
-  - **Targeting a >40% CAGR (~28x Return):** We designed this to make you more money than the fanciest hedge funds run by Harvard guys in expensive suits. The math works because we're taking money that's currently being wasted on bombs and using it to cure cancer instead. Two rules about payouts: a target to deliver a ~28x return to early investors, and a guarantee that at least 50% of annual income is always reserved for our health mission. See our [Investment Thesis](./brain/book/economic-models/victory-bond-investment-thesis.md) and [Cash Flow Model](./brain/book/economic-models/dih-treasury-cash-flow-model.md).
-  - **VICTORY bonds** that grant governance control over the $27B annual DIH treasury.
-  - **De-Risked Investment:** Initial funds are protected by an [Assurance Contract](./brain/book/economic-models/fundraising-strategy.md), guaranteeing a full refund if fundraising goals are not met.
+### 2. Regular People Get Paid
+Citizens get **VOTE points** for participating in the global referendum. After the treaty passes, these become real ownership in the health treasury they helped create. 280 million people with skin in the game create unstoppable political pressure.
 
-### Phase 2: VICTORY Bond Buyers ($100-200M Referendum Funding)
+### 3. Politicians Get Everything
+Leaders who support the treaty get: popular support from millions of voters, campaign money, the ability to direct research funding to their districts, and personal investment opportunities. Leaders who oppose it get voted out by people who want their money.
 
-- **Who:** Early Backers, health advocates, institutions
-- **The Bribe\*:**
-  - VICTORY bonds representing earned ownership of real economic value created by the [peace dividend](./brain/book/economic-models/peace-dividend-value-capture.md)
-  - Governance control over $27B annually in captured value from military budget redirection
-  - Voting rights on patient subsidies and research funding allocation
-  - Bond value backed by actual treasury growth from when the treaty actually happens ($0 → $27B)
-
-### Phase 3: Citizens (Global Population)
-
-- **Who:** Global population (targeting 3.5% = 280M people)
-- **The Bribe:** A large grant of **VOTE points** for each referendum vote—your proof that you'll get paid real money. These represent your earned share of the [$16.5 trillion annual peace dividend](./brain/book/economic-models/peace-dividend-value-capture.md) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
-
-### Phase 4: Politicians ($800M-1.5B Independent Expenditures)
-
-- **Who:** Key legislators in target countries
-- **The Bribe\*:**
-  - **Personal Wealth Creation:** Early access to [VICTORY Bonds](./brain/book/economic-models/victory-bond-investment-thesis.md) with better returns than defense stocks and traditional political corruption
-  - **Campaign Dominance:** Massive campaign support for treaty supporters, equivalent opposition funding for defectors
-  - **Family Security:** Their families get diseases too—profit from funding cures rather than weapons
+For the full bribery playbook, see **[Chapter 7: Strategy](./brain/book/strategy.md)**.
 
 ## Why Everyone Will Take Our Deal
 
 *We're offering arms dealers more money to save lives than they currently make blowing things up. Turns out most people aren't actually evil—they just respond to incentives.*
 
-**Our Better Offer to Military Contractors:**
+**Simple Math:** We offer everyone more money than they're making now, plus the moral high ground of saving lives instead of ending them. When peace pays better than war, rational people choose peace.
 
-1. **More Money:** VICTORY bonds pay >40% returns, better than anything else they can find
-2. **Better Security:** A world without disease is safer than a world with 13,000 nukes
-3. **Their Families Too:** Defense contractors get cancer just like everyone else. They can profit from funding cures instead of bombs
-4. **Same Lobbyists:** We pay their existing lobbyists better returns to push for the treaty instead of against it
+**The Cycle:** Rich people fund the referendum. The referendum creates political pressure. Politicians pass the treaty. The treaty creates the $27 billion treasury. The treasury makes everyone richer and cures diseases. More people want this. The cycle accelerates.
 
-**Our Better Offer to Politicians:**
-
-- **Personal Investment:** Politicians can invest in [VICTORY Bonds](./brain/book/economic-models/victory-bond-investment-thesis.md) that pay better than defense stocks
-- **Campaign Money:** Massive campaign support for treaty supporters; massive opposition funding for those who vote against it
-- **Political Safety:** When 3.5% of your voters demand this, supporting it becomes the safer political choice
-- **Easy Win:** Politicians get to claim credit for curing cancer and extending lifespans
-
-**How Each Step Pays for the Next Step:** Rich people fund the global vote. The vote creates political pressure. Politicians pass treaties. Treaties create the $27 billion treasury. The treasury makes everyone even richer. And around we go.
-
-**The Math:** We offer everyone more personal wealth than the current system, PLUS better campaign support, PLUS the moral high ground of saving lives, PLUS reduced existential risk. When the math favors peace, rational actors choose peace.
-
-**Bottom Line:** By making peace and health more profitable than war and disease, we give every rational actor a clear financial incentive to support the treaty. We legally bribe our way to a better world.
+We legally bribe our way to a world without war and disease.
 
 ---
 

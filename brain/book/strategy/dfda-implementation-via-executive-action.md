@@ -20,13 +20,13 @@ This document outlines how mechanisms similar to those used for DOGE could be ap
 
 The DOGE initiative demonstrated the use of executive power to:
 
-1. **Establish New Structures via Executive Order:** DOGE was formally created by [Executive Order 14158](https://www.whitehouse.gov/presidential-actions/2025/01/establishing-and-implementing-the-presidents-department-of-government-efficiency/) on January 20, 2025, not through new legislation.
+1. **Establish New Structures via Executive Order:** DOGE was formally created by [Executive Order 14158](../book/references.md#eo-14158) on January 20, 2025, not through new legislation.
 2. **Repurpose Existing Agencies:** The order renamed and restructured the existing United States Digital Service (USDS) into the "United States DOGE Service," forming the core operational unit.
-3. **Mandate Agency-Wide Changes:** Subsequent EOs directed sweeping actions across agencies concerning spending, personnel, and regulation, such as the [Workforce Optimization Initiative (E.O. 14210)](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-workforce-optimization-initiative/) and the [Cost Efficiency Initiative (E.O. 14222)](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-cost-efficiency-initiative/).
+3. **Mandate Agency-Wide Changes:** Subsequent EOs directed sweeping actions across agencies concerning spending, personnel, and regulation, such as the [Workforce Optimization Initiative (E.O. 14210)](../book/references.md#eo-14210) and the [Cost Efficiency Initiative (E.O. 14222)](../book/references.md#eo-14222).
 4. **Leverage Technology and Centralized Oversight:** DOGE emphasized creating centralized technological systems for monitoring and control, embedding "DOGE Teams" within agencies.
-5. **Influence Funding and Priorities:** Executive directives led to actions like freezing or terminating research grants at agencies like the [NSF](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia) and [NIH](https://www.nature.com/articles/d41586-025-00703-1), aligning spending with administration priorities (e.g., anti-DEI) without new laws specifically mandating those cuts.
+5. **Influence Funding and Priorities:** Executive directives led to actions like freezing or terminating research grants at agencies like the [NSF](../book/references.md#npr-nsf-freezes) and [NIH](../book/references.md#nature-nih-terminate-grants), aligning spending with administration priorities (e.g., anti-DEI) without new laws specifically mandating those cuts.
 
-A comprehensive overview of DOGE, its structure, actions, and the controversies it faced can be found on its [Wikipedia page](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency).
+A comprehensive overview of DOGE, its structure, actions, and the controversies it faced can be found on its [Wikipedia page](../book/references.md#wikipedia-doge).
 
 ## Applying the Model to dFDA Implementation
 
@@ -117,35 +117,11 @@ This executive action pathway faces significant hurdles:
 
 - **Funding:** Building and operating the full dFDA initiative requires substantial funding. While the core technology platform's upfront cost is estimated at ~$38-46M, the broader initiative components (integration, plugins, legal, etc.) add significant costs depending on execution success. Total upfront costs for the full initiative could range from ~$50M (best case) to ~$274M (medium case) or even **over \$2.2 Billion** (worst case), with ongoing operational costs scaling accordingly (see [dFDA Cost Benefit Analysis](/economic-models/dfda-cost-benefit-analysis.md#3-costs-of-building--operating-the-global-decentralized-fda) Sections 3.1-3.4 for details). Funding the medium or worst-case scenarios significantly exceeds amounts typically addressable by executive reallocation alone. Dedicated congressional appropriations would almost certainly be necessary for full-scale operation.
 - **Statutory Authority:** While regulatory _modifications_ can often occur under existing law, creating a fundamentally new pathway for intervention approval that _competes_ with or bypasses traditional FDA routes might be argued to require new statutory authority from Congress.
-- **Legal Challenges:** As seen with DOGE ([Wikipedia overview](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency#Legal_status)), this approach would likely face lawsuits questioning the scope of executive authority, the repurposing of funds, potential Appointments Clause violations for key personnel, and procedural challenges under the Administrative Procedure Act.
+- **Legal Challenges:** As seen with DOGE ([Wikipedia overview](../book/references.md#wikipedia-doge)), this approach would likely face lawsuits questioning the scope of executive authority, the repurposing of funds, potential Appointments Clause violations for key personnel, and procedural challenges under the Administrative Procedure Act.
 
 ## Conclusion
 
 While requiring congressional action for full funding and unambiguous legal authority seems probable in the long term, the DOGE precedent illustrates a potential strategy for _initiating_ the dFDA using executive orders. By repurposing existing structures, mandating technological development and regulatory adaptation, and centralizing coordination, an administration could significantly accelerate the dFDA's foundational stages without waiting for specific enabling legislation. This approach shifts the focus from _asking_ Congress for permission to _demonstrating_ feasibility and value, potentially building momentum for future legislative support. However, the inherent funding limitations and significant legal risks must be carefully considered.
-
----
-
-## Sources Referenced in this Document
-
-- **DOGE Executive Orders & Information:**
-  - [EO 14158: Establishing and Implementing the President's "Department of Government Efficiency"](https://www.whitehouse.gov/presidential-actions/2025/01/establishing-and-implementing-the-presidents-department-of-government-efficiency/)
-  - [EO 14210: Implementing The President's "Department of Government Efficiency" Workforce Optimization Initiative](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-workforce-optimization-initiative/)
-  - [EO 14222: Implementing the President's "Department of Government Efficiency" Cost Efficiency Initiative](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-cost-efficiency-initiative/)
-  - [Wikipedia: Department of Government Efficiency](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency)
-- **Grant Freezes/Terminations:**
-  - [NPR: NSF freezes payments in response to Trump's executive actions on DEI](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia)
-  - [Nature: Exclusive: NIH to terminate hundreds of active research grants](https://www.nature.com/articles/d41586-025-00703-1)
-  - [STAT News: NIH abruptly terminates millions in research grants, defying court orders](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)
-- **Potential Funding Sources/Authorities:**
-  - [NIH Common Fund Overview](https://commonfund.nih.gov/overview)
-  - [NIH Office of the Director (OD) Budget Information](https://officeofbudget.od.nih.gov/br.html)
-  - [ARPA-H Website](https://arpa-h.gov/)
-  - [FDA Budget Summary FY2024](https://www.fda.gov/media/165930/download)
-  - [FDA Data Modernization Action Plan](https://www.fda.gov/about-fda/reports/data-modernization-action-plan)
-  - [FDA: 21st Century Cures Act Overview](https://www.fda.gov/regulatory-information/selected-amendments-fdc-act/21st-century-cures-act)
-  - [CMS Innovation Center (CMMI) Overview](https://www.cms.gov/priorities/innovation/about)
-- **dFDA Cost Estimates:**
-  - [dFDA Cost Benefit Analysis (Wiki)](/economic-models/dfda-cost-benefit-analysis.md#3-costs-of-building--operating-the-global-decentralized-fda)
 
 ---
 

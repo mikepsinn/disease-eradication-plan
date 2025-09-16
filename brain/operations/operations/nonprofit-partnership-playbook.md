@@ -60,16 +60,3 @@ Treat the partnership as a formal project with clear ownership and accountabilit
 
 ---
 
-## Source Quotes
-
-<a id="us-nonprofit-revenue"></a>
-
-- **U.S. Disease-Focused Non-Profit Revenue (\$44B+ Annually)**
-  > "There are 22,599 disease-focused nonprofit organizations in the United States. Combined, these disease-focused nonprofits generate \$44.3 billion in revenue each year."
-  > — Cause IQ, [Directory of Disease-Focused Nonprofits](https://www.causeiq.com/directory/disease-focused-nonprofits-list/)
-
-<a id="global-gov-med-research-spending"></a>
-
-- **Global government medical research spending (\$67.5B, 2023–2024)**
-  > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
-  > — DFDA Wiki, 2025, [Global Government Medical Research Spending](../reference/global-government-medical-research-spending.md)

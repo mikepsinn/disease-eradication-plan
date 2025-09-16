@@ -38,29 +38,63 @@ The strategy unfolds in a sequence of bribes, each one funding the next, creatin
 
 ### 1. The Bribe for Rich People
 
-- **Who:** Wealthy people, investment funds, and the military-industrial complex.
-- **The Bribe:** Better returns than the best hedge funds, plus you get to vote on how a $27 billion budget gets spent.
-- **40% Annual Returns:** **[VICTORY Bonds](./economics.md)** are designed to beat the world's best hedge funds.
-- **You Get to Vote:** Investors don't just get money back. They get to control how a $27 billion annual budget gets spent. That's power.
-- **Money-Back Guarantee:** If we don't raise enough money to make this work, you get a full refund.
+#### Phase 1: Seed Investors ($250-400M Initial Investment)
+
+- **Who:** Wealthy individuals, funds, anchor investors, and the military-industrial complex itself.
+- **The Bribe:** The most profitable investment opportunity in human history, modeled on the proven success of WWII War Bonds but with venture-capital-level returns.
+- **40% Annual Returns:** **[VICTORY Bonds](./economics.md)** are designed to beat the world's best hedge funds (e.g., Renaissance Medallion Fund's ~39% CAGR).
+- **Governance Over a $27B Treasury:** Investors don't just get a return; they get governance rights over a multi-billion-dollar annual, perpetual capital allocation engine. This "Governance Alpha" is an uncapped source of value and influence.
+- **Money-Back Guarantee:** Initial funds are protected by an **[Assurance Contract](../economics/fundraising-strategy.md)**, guaranteeing a full refund if fundraising goals are not met.
 - **The Result:** Defense contractors and billionaires make more money supporting peace than supporting war. So they support peace.
 
-### 2. The Bribe for Regular People
+#### Our Superior Offer to Military Contractors:
 
-- **Who:** Everyone else (targeting 280 million people worldwide).
-- **The Bribe:** You help us get people to vote, you get paid when we win.
+1. **They Make More Money:** Direct investment in VICTORY bonds with >40% CAGR beats all alternative investment options
+2. **They Get Better Security:** A healthier, more stable world is safer than one with overkill capacity creating existential risk  
+3. **They Protect Their Families:** Their families get diseases too. They'd be better off profiting from funding cures rather than bombs
+4. **Repurpose Their Lobbyists:** Instead of hiring new lobbyists, we legally bribe them with better returns to get their existing lobbying apparatus to push for the treaty
+
+### 2. The Bribe for VICTORY Bond Buyers
+
+#### Phase 2: VICTORY Bond Buyers ($100-200M Referendum Funding)
+
+- **Who:** Early backers, health advocates, institutions
+- **The Bribe:** VICTORY bonds representing earned ownership of real economic value created by the peace dividend
+- **Governance control over $27B annually** in captured value from military budget redirection
+- **Voting rights** on patient subsidies and research funding allocation  
+- **Bond value backed by actual treasury growth** from when the treaty actually happens ($0 → $27B)
+
+### 3. The Bribe for Regular People
+
+#### Phase 3: Citizens (Global Population)
+
+- **Who:** Global population (targeting 3.5% = 280 million people)
+- **The Bribe:** A large grant of **VOTE points** for each referendum vote—your proof that you'll get paid real money. These represent your earned share of the $16.5 trillion annual peace dividend unlocked by redirecting military spending, convertible to **VICTORY bonds** after the 1% Treaty is ratified.
 - **VOTE Points:** Every person who votes in our **[Global Referendum](./strategy/global-referendum/)** gets points. These aren't fake internet points. They represent real money.
 - **You Get Paid:** After the treaty passes, those points become real ownership in the $27 billion annual health budget. You helped create it, you get a piece of it.
 - **The Result:** Instead of a traditional protest where people wave signs and go home, we create 280 million people who have skin in the game. When 3.5% of the world's population wants something and will get paid for it, politicians listen.
 
-### 3. The Bribe for Politicians
+### 4. The Bribe for Politicians
 
-- **Who:** Presidents, prime ministers, and key legislators.
-- **The Bribe:** We make them look good, help them win elections, and let them hand out money to their friends.
-- **Popular Support:** We give them 280 million people demanding the treaty. Politicians love being on the popular side of an issue, especially when it costs them nothing.
-- **Money for Their Districts:** Leaders who sign get to direct billions in R&D spending to universities and companies in their areas. They get to cut ribbons and take credit for bringing jobs home.
-- **Their Rich Friends Get Richer:** The wealthiest people in their country get early access to the best investment returns in the world, but only if their leader signs the treaty. Rich people then pressure the leader to sign.
-- **The Result:** Leaders who support the treaty get popular support, money for their districts, and happy rich friends. Leaders who oppose it get voted out by people who want their money. Easy choice.
+#### Phase 4: Politicians ($800M-1.5B Independent Expenditures)
+
+- **Who:** Key legislators in target countries
+- **The Bribe:** A package of personal wealth, political power, and a lasting legacy.
+
+#### Our Superior Offer to Politicians:
+
+- **Personal Investment Opportunity:** Politicians and their families can directly invest in [VICTORY Bonds](../economics/victory-bonds.md) that pay better than anything else they can find, including defense stocks and traditional political corruption
+- **Campaign Dominance:** Massive independent expenditure support for treaty supporters; equivalent opposition funding for defectors (no coordination)
+- **Electoral Insurance:** The 3.5% public mandate makes supporting the treaty the politically safer choice
+- **Political Insurance:** A new, highly popular policy platform that lets politicians claim credit for curing diseases and extending lifespans
+
+#### What They Get:
+
+- **A Personal Political War Chest:** We hand them an undeniable, popular mandate from the Global Referendum. They can use this massive wave of public support—which we built for them—to crush their political opponents, consolidate power, and build a legacy. We are giving them the ultimate political weapon.
+- **The Power to Reward Allies:** Signatory leaders gain the right to direct a portion of the DIH's multi-billion-dollar R&D budget to universities and companies **in their home districts**. This is a firehose of cash they can use to create jobs, reward their biggest financial backers, and stand at ribbon-cutting ceremonies for decades.
+- **Enriched Elites:** We will offer privileged, early access to VICTORY Bonds to a nation's sovereign wealth funds and key financial institutions _contingent on their leader signing the treaty_. This creates a powerful domestic coalition of the nation's wealthiest and most influential players who will pressure their leader to sign the deal that makes them rich.
+
+**The Result:** The choice for a leader is simple: accept a political and financial package that guarantees their personal power and enriches their allies, or be swept away by the tide. Compliance becomes the only rational choice.
 
 ---
 

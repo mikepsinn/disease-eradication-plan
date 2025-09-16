@@ -69,7 +69,7 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
 ## Commentary: Relation to dFDA/DIH and VICTORY Bonds
 
 - This Act enables compliant financing for [VICTORY instruments](../strategy/1-percent-treaty/victory-bonds-tokenomics.md) and the [DIH Treasury](../features/treasury/dih-treasury-architecture.md) by:
-  - Lowering offering frictions for impact‑linked bonds/tokens.
+  - Lowering offering frictions for impact-linked bonds/tokens.
   - Automating disclosures on‑chain to improve transparency and lower costs.
   - Broadening investor access with knowledge‑based eligibility.
   - Providing a clear token safe harbor for governance‑first designs.
@@ -77,35 +77,3 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
 
 ---
 
-## Source Quotes for Key Parameters
-
-- SEC Regulation Crowdfunding (Reg CF)
-
-  > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."
-  > — U.S. SEC, [Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
-
-- SEC Regulation A (Reg A)
-
-  > "Regulation A provides an exemption from the registration requirements... for offerings of securities up to \$75 million in a 12‑month period, subject to eligibility, disclosure, and reporting requirements."
-  > — U.S. SEC, [Regulation A Overview](https://www.sec.gov/smallbusiness/exemptofferings/rega)
-
-- Token Safe Harbor Concept
-
-  > "The safe harbor seeks to provide network developers with a three‑year grace period... to facilitate participation in, and the development of, a functional or decentralized network."
-  > — Hester M. Peirce, SEC Commissioner, 2021, [Token Safe Harbor 2.0 (speech)](https://www.sec.gov/news/public-statement/peirce-statement-token-safe-harbor-proposal-2.0)
-
-- EU MiCA (Markets in Crypto‑Assets) Transparency
-
-  > "MiCA establishes uniform requirements for the offer to the public and admission to trading of crypto‑assets... and for transparency and disclosure."
-  > — EUR‑Lex, 2023, [MiCA Regulation](https://eur-lex.europa.eu/eli/reg/2023/1114/oj)
-
-- Climate Bonds / Green Bond Market Scale
-
-  > "Cumulative green, social, sustainability and sustainability‑linked (GSS+) debt passed \$4 trillion, with green bonds the largest segment."
-  > — Climate Bonds Initiative, 2023, [State of the Market](https://www.climatebonds.net/resources/reports)
-
-- Impact Investing Regulatory Reform Discourse
-  > "Reforms to securities regulation can better support impact investing while maintaining investor protections."
-  > — Brookings, 2022, [Policy to Support Impact Investing](https://www.brookings.edu/research/reforming-securities-regulation-to-support-impact-investing/)
-
-<!-- TODO: This file contains internal links (e.g., to `victory-bonds-tokenomics.md`) that will need to be updated after moving it to the `legal/` directory. Also, perform a full verification of external links. -->

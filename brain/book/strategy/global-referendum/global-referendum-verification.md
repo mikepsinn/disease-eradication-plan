@@ -28,13 +28,13 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 **Layer 2: Enhanced Verification**
 
 - **Government ID Integration:** Connect with national e-ID systems where available
-  - Estonia e-Residency integration
+  - [Estonia e-Residency integration](../book/references.md#estonia-eresidency-stats)
   - Indian Aadhaar system (with privacy protections)
   - EU eIDAS network compatibility
   - US State ID verification via ID.me partnership
 - **Biometric Liveness Detection:** Camera-based liveness checks to prevent deepfakes
 - **Proof-of-Uniqueness Partners:** Integration with existing identity verification services
-  - Worldcoin iris scanning (where available)
+  - [Worldcoin iris scanning](../book/references.md#worldcoin-scale) (where available)
   - BrightID social verification network
   - Gitcoin Passport identity scoring
 
@@ -46,7 +46,7 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 
 ### **Cryptographic Verification Protocol**
 
-**End-to-End Verifiable Voting (Helios Protocol):**
+**End-to-End Verifiable Voting ([Helios Protocol](../book/references.md#helios-voting)):**
 
 - **Individual Ballot Verification:** Each voter receives cryptographic receipt
 - **Public Bulletin Board:** All ballots published (anonymized) for public audit
@@ -183,6 +183,7 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 - **Lawful Basis:** Legitimate interest for fraud prevention, consent for optional features
 - **Data Subject Rights:** Full implementation of access, rectification, erasure rights
 - **Privacy by Design:** Technical and organizational measures for data protection
+- **Biometric Data:** Adherence to [strict requirements for processing biometric data under Article 9](../book/references.md#gdpr-biometric-data).
 - **Cross-Border Transfers:** Standard contractual clauses for data transfers outside EU
 
 **United States (State Laws):**
@@ -256,24 +257,3 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 **Key Innovation:** We're not just preventing fraud—we're creating a new standard for global digital democracy that other initiatives can build upon.
 
 **Investment Required:** \$50-75M for initial development and first-year operations, but this protects \$27B+ and enables the entire initiative.
-
-### Source Quotes for Key Parameters
-
-- **Helios Voting Protocol**
-
-  > "Helios is a web-based open-audit voting system. Helios enables election integrity through end-to-end verifiability: individual voters can verify that their ballots are recorded correctly, and any party can verify that the recorded ballots are tallied correctly."
-  > — Adida et al., 2008, [Helios: Web-based Open-Audit Voting](https://vote.heliosvoting.org/)
-
-- **Estonia e-Residency Statistics**
-
-  > "Estonia's e-Residency program has issued digital identities to over 100,000 people from 170+ countries, demonstrating global-scale digital identity verification."
-  > — e-Residency, 2024, [Statistics](https://e-resident.gov.ee/statistics/)
-
-- **GDPR Biometric Data Requirements**
-
-  > "Processing of biometric data for the purpose of uniquely identifying a natural person shall be prohibited unless one of the conditions referred to in points (a) to (j) of paragraph 2 applies."
-  > — GDPR Article 9(1), [EU General Data Protection Regulation](https://gdpr-info.eu/art-9-gdpr/)
-
-- **Worldcoin Identity Verification Scale**
-  > "Worldcoin has verified over 2 million unique human identities using iris biometric scanning, demonstrating feasibility of global-scale biometric verification."
-  > — Worldcoin Foundation, 2024, [Progress Update](https://worldcoin.org/blog/announcements/worldcoin-milestones)

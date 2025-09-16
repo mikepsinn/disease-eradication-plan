@@ -12,13 +12,13 @@ dateCreated: "2025-01-20T00:00:00.000Z"
 
 ## 1. Executive Summary
 
-The global economy is grotesquely misaligned, allocating **\$2.72 trillion** annually to military spending while just **\$67.5 billion** is directed toward medical research—a 40:1 disparity. This document provides the quantitative thesis for a strategic investment of **\$1.2–\$2.5 billion** to permanently flip this incentive structure.
+The global economy is grotesquely misaligned, allocating [**\$2.72 trillion**](../references.md#global-military-spending) annually to military spending while just [**\$67.5 billion**](../references.md#global-gov-med-research-spending) is directed toward medical research—a 40:1 disparity. This document provides the quantitative thesis for a strategic investment of **\$1.2–\$2.5 billion** to permanently flip this incentive structure.
 
 The goal is to redirect a **\$27+ billion annual revenue stream** from military budgets to a democratically controlled health treasury. The investment vehicle, **VICTORY Bonds**, is engineered to offer a risk-adjusted expected value superior to the world's most elite investment funds. We are specifically targeting a return that outperforms the historical net returns of **Renaissance Technologies' Medallion Fund (~39% annualized)**, making this the most compelling investment opportunity in the world.
 
 ## 2. The Market Failure & Our Competitive Benchmark
 
-A rational investor allocates capital where returns are highest. While top defense contractors offer stable **~12-15% annualized returns**, this is not the true benchmark for ambitious capital. The undisputed benchmark for scaled, high-performance investing is the **Renaissance Medallion Fund**, with its legendary **~39% net annualized return** over 30 years.
+A rational investor allocates capital where returns are highest. While top defense contractors offer stable **~12-15% annualized returns**, this is not the true benchmark for ambitious capital. The undisputed benchmark for scaled, high-performance investing is the **Renaissance Medallion Fund**, with its legendary [**~39% net annualized return**](../references.md#top-pe-hedge-funds) over 30 years.
 
 Our thesis is not to be merely competitive, but to be mathematically superior.
 
@@ -146,8 +146,8 @@ VICTORY Bonds are designed to deliver risk-adjusted returns superior to alternat
 
 ### Benchmark: Exceptional ROI in Policy-Influenced Sectors
 
-- Fossil fuel lobbying generates average returns of **[800%](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)**, with companies like ExxonMobil spending $27 million on lobbying in 2020 to secure $220 million in benefits.
-- Military contractors achieve similar multiples; for every $1 spent on lobbying, they secure **[over $100 in contracts](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)**, as seen with Lockheed Martin's $14 million in 2023 lobbying yielding $70.8 billion in revenue.
+- Fossil fuel lobbying generates average returns of [**800%**](../references.md#fossil-fuel-lobbying-roi), with companies like ExxonMobil spending $27 million on lobbying in 2020 to secure $220 million in benefits.
+- Military contractors achieve similar multiples; for every $1 spent on lobbying, they secure [**over $100 in contracts**](../references.md#military-lobbying-returns), as seen with Lockheed Martin's $14 million in 2023 lobbying yielding [$70.8 billion in revenue](../references.md#lockheed-2023-revenue).
 
 These returns arise from influencing policy to capture public funds, creating stable revenue streams backed by government budgets.
 
@@ -175,16 +175,6 @@ Under the proposed Impact Securities framework, we present return objectives as 
 
 The financial returns for VICTORY instruments are sourced from the $27B annual treasury. However, the ultimate economic underpinning of this investment is the **$16.5 trillion annual Peace Dividend** unlocked by the treaty. This represents the total value reclaimed from conflict, with over 99% flowing to global society. For a detailed breakdown of this value capture model, see [The Peace Dividend: Value Capture & Distribution Model](./peace-dividend-value-capture.md).
 
-### Source Quotes for Key Parameters
-
-- **Fossil Fuel Lobbying ROI**
-
-  > "The fossil fuel industry spends millions on lobbying and gets billions in subsidies – an ROI of over 800%."
-  > — The Guardian, 2021, [Fossil fuel lobbying ROI](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)
-
-- **Military Lobbying Returns**
-  > "For every dollar spent on lobbying, defense contractors receive over $100 in contracts."
-  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
 
 ## 8. Assessing Realism: Risks, Repayment Timeline, and Contingencies
 
@@ -207,32 +197,18 @@ While the risks of this venture are significant, they are fundamentally differen
 - **Execution and Regulatory Risk**: Building the DIH Treasury involves compliance across jurisdictions. Mitigation: Staggered launches with Reg CF/A/S exemptions, on-chain audits, and automated covenant checks (as in tokenomics).
 - **Financial Risk**: If inflows delay, principal could be at risk. Mitigation: Seniority waterfalls, optional reinsurance, and first-loss capital absorb initial losses; public dashboards track coverage ratios.
 - **Fundraising Risk (Collective Action Problem):** Early investors may hesitate, fearing the project won't reach its funding goal. **Mitigation:** We will use **Assurance Contracts** built on smart contracts. All initial funds will be held in a transparent escrow and automatically returned to investors if the funding target is not met by a specific deadline. This completely eliminates the risk of a failed raise for our backers. For details, see our [Fundraising Strategy](./fundraising-strategy.md).
-- **Overall Probability**: Metaculus forecasts will provide real-time estimates; historical analogs (e.g., war bonds raised $185B adjusted) suggest feasibility, but failure rate could be 30%+ without momentum.
+- **Overall Probability**: Metaculus forecasts will provide real-time estimates; historical analogs (e.g., [war bonds raised $185B adjusted](../references.md#war-bonds-historical-raise)) suggest feasibility, but failure rate could be 30%+ without momentum.
 
 For full details on protections, see [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
 
-### Source Quotes for Key Parameters
-
-- **War Bonds Historical Raise**
-
-  > "U.S. War Bonds during WWII raised approximately $185 billion (nominal), equivalent to over $3 trillion today."
-  > — U.S. Treasury Department, [History of Savings Bonds](https://www.treasurydirect.gov/indiv/research/indepth/savings-bonds/history.htm)
-
-- **Lobbying ROI Feasibility**
-  > "Policy-influenced investments can yield high ROIs when backed by public mandates."
-  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
 
 ### Appeal to Philanthropic Investors
 
 Philanthropic funds can achieve extraordinary impact multiplication through VICTORY Bonds, leveraging advocacy to redirect public budgets at scales far beyond direct grants.
 
-- **Quantitative Leverage**: A $1M investment could unlock $1B in health funding via treaty inflows, offering 1,000X impact—compared to ~10X for high-impact charities like malaria prevention.
+- **Quantitative Leverage**: A $1M investment could unlock $1B in health funding via treaty inflows, offering 1,000X impact—compared to [~10X for high-impact charities](../references.md#givewell-impact-multipliers) like malaria prevention.
 - **Alignment with Effective Altruism**: This mirrors EA principles of high-ROI interventions, potentially saving more lives per dollar than traditional aid (e.g., equivalent to funding 10,000+ years of research).
 - **Risk-Adjusted Giving**: Metaculus pricing allows donors to target high-probability tranches, with governance rights ensuring funds align with impact goals.
-
-- **GiveWell Impact Multipliers**
-  > "Top charities like AMF provide ~10X return in lives saved per dollar compared to cash transfers."
-  > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/research/intervention-reports/bednets)
 
 ### Targeting Defense Contractors as Investors
 
@@ -242,35 +218,3 @@ We have 85-90% confidence this co-opting approach is superior to adversarial str
 
 ---
 
-## Source Quotes for Key Parameters
-
-- **Top 5 Military Contractor Revenue**
-
-  > "Between 2020 and 2024, the U.S. Department of Defense allocated approximately $771 billion in contracts to the top five military contractors: Lockheed Martin, RTX (formerly Raytheon), Boeing, General Dynamics, and Northrop Grumman."
-  > — Watson Institute, Brown University, 2025, [Military Contractors Report](https://watson.brown.edu/costsofwar/papers/2025/MilitaryContractors)
-
-- **Lockheed Martin 2023 Revenue**
-
-  > "In 2023, Lockheed Martin earned $70.8 billion from government contracts, accounting for 9.19% of total federal contract dollars."
-  > — Wikipedia, 2024, [Top 100 Contractors of the U.S. federal government](https://en.wikipedia.org/wiki/Top_100_Contractors_of_the_U.S._federal_government)
-
-- **Johnson & Johnson 2023 Financials**
-
-  > "Johnson & Johnson reported revenues of $94.9 billion and a net income of $20.9 billion in 2023, resulting in a profit margin of about 22%."
-  > — Johnson & Johnson, 2024, [Investor Relations](https://www.jnj.com/investor-relations/financial-information)
-
-- **Investment Return Comparison**
-
-  > "Over the past five years, the average annual return for major defense contractors has been approximately 8%, while leading healthcare companies have yielded average annual returns of around 12%."
-  > — Forbes, 2024, [Healthcare Stocks Poised for a Rebound](https://www.forbes.com/sites/investor/2023/12/28/healthcare-stocks-poised-for-a-rebound-in-2024/)
-
-- **Private Equity Military Sector Returns**
-
-  > "Top-quartile private equity funds focused on the aerospace and defense sector often target an internal rate of return (IRR) of 20-30% for their investors."
-  > — PitchBook & Industry Analysis, 2024
-
-- **Top Performing Private Equity & Hedge Funds**
-  > "Top-performing private equity funds, such as Spectrum's VIII-A Program, have achieved net IRRs as high as 98.91% for a single vintage year (2017)."
-  > — Alternatives Investor, 2021, [Top Performing Private Equity Funds](https://alternativesinvestor.com/top-performing-private-equity-funds-2016-2019)
-  > "Renaissance Technologies' Medallion Fund is famed for achieving an average annualized gross return of ~66%, and a net return of ~39%, from 1988 to 2021."
-  > — Traders' Log, 2023, [Top Hedge Funds](https://www.traderslog.com/top-hedge-funds)
