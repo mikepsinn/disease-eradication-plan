@@ -193,6 +193,11 @@ All references are consolidated in `brain/book/references.md` to avoid duplicati
 
 5.  **Use Descriptive Anchor IDs:** Create meaningful anchor IDs that describe the content (e.g., `sipri-2024-spending`, `recovery-cost-500`, `fossil-fuel-subsidies`).
 
+#### Maintainability
+
+-   **Sort Alphabetically**: To ensure the `references.md` file is easy to navigate, all top-level reference items **MUST** be sorted alphabetically by their brief descriptive title.
+-   **Group Related Quotes**: If multiple quotes are from the same source or refer to the same topic, group them under a single descriptive title. For example, use one entry for "Global Military Spending" and list multiple SIPRI reports underneath it.
+
 #### What NOT to Do
 
 - **Do not create local "Source Quotes" sections** in individual files
