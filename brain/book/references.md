@@ -70,6 +70,13 @@ This document contains all source quotes and references supporting the claims ma
   > "Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed."
   > — Wikipedia, [3.5% rule](https://en.wikipedia.org/wiki/3.5%25_rule)
 
+<a id="arpa-h-site"></a>
+
+- **ARPA‑H official site**
+
+  > "ARPA‑H funds high‑impact research to drive biomedical breakthroughs."
+  > — ARPA‑H, [About](https://arpa-h.gov/)
+
 <a id="amr-10m-2050"></a>
 
 - **Antimicrobial resistance deaths projection**
@@ -96,6 +103,26 @@ This document contains all source quotes and references supporting the claims ma
     > "Universal access to clean water, toilets, and hygiene would boost the global economy by trillions of dollars over the next two decades... and would bring returns of 21 times their cost."
     > — WaterAid, [Link](https://www.wateraid.org/us/media/economic-report-unlock-trillions-of-dollars-with-clean-water-decent-toilets-and-hygiene)
 
+<a id="cmmi-overview"></a>
+
+- **CMS Innovation Center (CMMI) Overview**
+
+  > "The Innovation Center tests innovative payment and service delivery models to reduce expenditures."
+  > — CMS, [CMMI Overview](https://www.cms.gov/priorities/innovation/about)
+
+<a id="climate-bonds-gss-plus"></a>
+
+- **Climate Bonds: GSS+ debt $4T cumulative**
+
+  > "Cumulative green, social, sustainability and sustainability‑linked (GSS+) debt passed $4 trillion, with green bonds the largest segment."
+  > — Climate Bonds Initiative, 2023, [State of the Market](https://www.climatebonds.net/resources/reports)
+
+<a id="clinical-trial-enrollment-timelines"></a>
+
+- **Clinical trial enrollment timelines**
+  > "Today nearly 80% of clinical trials fail to meet their enrolment timelines and up to 50% of research sites enrol one or no patients. Not only does this translate into as much as $8m in lost revenue for each day a drug is delayed, it also means that cutting-edge new medications are significantly delayed in their journey to the patients who need them most."
+  > — Clinical Trials Arena, [Link](https://www.clinicaltrialsarena.com/marketdata/featureclinical-trial-patient-recruitment/)
+
 <a id="contracts-2-02t"></a>
 
 - **Defense Contracts (2001-2021)**
@@ -116,6 +143,12 @@ This document contains all source quotes and references supporting the claims ma
 - **Estonia internet voting lessons**
   > "Estonia's i-Voting enables secure, anonymous online voting worldwide using e-ID, enhancing citizen participation in governance."
   > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/e-democracy/)
+
+<a id="estonia-eresidency-stats"></a>
+
+- **Estonia e-Residency statistics**
+  > "Estonia's e-Residency program has issued digital identities to over 100,000 people from 170+ countries, demonstrating global-scale digital identity verification."
+  > — e-Residency, 2024, [Statistics](https://e-resident.gov.ee/statistics/)
 
 <a id="fec-foreign-national-restrictions"></a>
 
@@ -218,6 +251,12 @@ This document contains all source quotes and references supporting the claims ma
   > "Johnson & Johnson reported revenues of $85.2 billion and a net income of $35.2 billion in 2023, resulting in a profit margin of about 41%."
   > — Johnson & Johnson, 2024, [Investor Relations](https://www.macrotrends.net/stocks/charts/JNJ/johnson-johnson/revenue)
 
+<a id="landray-recovery-trial-quote"></a>
+
+- **Landray, Sir Martin, on the RECOVERY Trial**
+  > "In 2019, I had no idea that I would be setting up a trial of treatments for an infectious disease, let alone a pandemic virus. I certainly would not have thought it possible to go from a blank piece of paper to enrolling the first patient in nine days, to finding the first life-saving treatment within ten weeks, and for it to be made standard NHS policy within three hours."
+  > — Sir Martin Landray, [Oxford University News](https://www.ox.ac.uk/news/features/recovery-trial-two-years)
+
 <a id="lobbying-roi-calc"></a>
 
 - **Lobbying ROI Calculation ($1,813 per $1)**
@@ -230,6 +269,12 @@ This document contains all source quotes and references supporting the claims ma
 - **Lobbying ROI Feasibility**
   > "Policy-influenced investments can yield high ROIs when backed by public mandates."
   > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/files/cow/imce/papers/2021/Profits%20of%20War_Hartung_Costs%20of%20War_Sept%2013%2C%202021.pdf)
+
+<a id="lobbying-spend-defense"></a>
+
+- **Lobbying Spend (Defense)**
+  > "Military industry lobbying totaled ~$127 million in 2024."
+  > — OpenSecrets, 2024, [Defense Lobbying](https://www.opensecrets.org/federal-lobbying/industries/summary?cycle=2024&id=D)
 
 <a id="lockheed-2023-revenue"></a>
 
@@ -322,6 +367,18 @@ This document contains all source quotes and references supporting the claims ma
   > "The RECOVERY trial, for example, cost only about $500 per patient... By contrast, the median per-patient cost of a pivotal trial for a new therapeutic is around \$41,000."
   > — Oren Cass, Manhattan Institute, 2023, [Slow, Costly Clinical Trials Drag Down Biomedical Breakthroughs](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)
 
+<a id="recovery-trial-dexamethasone-results"></a>
+
+- **RECOVERY Trial Dexamethasone Results**
+  > "Dexamethasone reduced deaths by one-third in ventilated patients (rate ratio 0.65 [95% confidence interval 0.48 to 0.88]; p=0.0003) and by one fifth in other patients receiving oxygen only (0.80 [0.67 to 0.96]; p=0.0021)."
+  > — RECOVERY Trial, [Link](https://www.recoverytrial.net/news/low-cost-dexamethasone-reduces-death-by-up-to-one-third-in-hospitalised-patients-with-severe-respiratory-complications-of-covid-19)
+
+<a id="recovery-trial-summary-quote"></a>
+
+- **RECOVERY Trial Summary Quote**
+  > "One trial. Over 47,000 participants. Nearly 200 hospital sites, across six countries. Ten results. Four effective COVID-19 treatments... Through discovering four treatments that effectively reduce deaths from COVID-19, it is certain that the study has saved thousands – if not millions – of lives worldwide."
+  > — Oxford University News, [Link](https://www.ox.ac.uk/news/features/recovery-trial-two-years)
+
 <a id="smallpox-eradicated"></a>
 
 - **Smallpox Eradicated**
@@ -351,12 +408,32 @@ This document contains all source quotes and references supporting the claims ma
   > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
   > — The Global Fund, [Overview](https://www.theglobalfund.org/en/about-the-global-fund/)
 
+<a id="peirce-token-safe-harbor"></a>
+
+- **Token Safe Harbor concept (Peirce 2.0)**
+
+  > "The safe harbor seeks to provide network developers with a three‑year grace period... to facilitate participation in, and the development of, a functional or decentralized network."
+  > — Hester M. Peirce, SEC Commissioner, 2021, [Token Safe Harbor 2.0](https://www.sec.gov/news/public-statement/peirce-statement-token-safe-harbor-proposal-2.0)
+
+<a id="wikipedia-doge"></a>
+
+- **Department of Government Efficiency (overview)**
+
+  > "Department created via executive action with centralized oversight teams."
+  > — Wikipedia, [Department of Government Efficiency](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency)
+
 <a id="tobacco-control-roi"></a>
 
 -   **Tobacco Control ROI**
 
     > "In our study of six Asia-Pacific countries, we found that for every unit of local currency invested in increasing tobacco taxes, the countries would gain between 20 and 1,057 units in return over 15 years. That's a remarkable return on investment ratio of between 20:1 and 1,057:1."
     > — UNDP, [Link](https://www.undp.org/asia-pacific/blog/how-raising-tobacco-taxes-can-save-lives-and-cut-poverty-across-asia-pacific-0)
+
+<a id="tobacco-industry-pivot"></a>
+
+- **Tobacco Industry Pivot Precedent**
+  > "Tobacco companies have pivoted to reduced-harm products when incentives aligned."
+  > — Harvard Business Review, 2022
 
 <a id="top-contractor-revenue"></a>
 
@@ -377,6 +454,12 @@ This document contains all source quotes and references supporting the claims ma
 - **Traditional Trial Cost per Patient**
   > "The median cost of a pivotal trial was estimated to be \$19 million... the median cost per patient was \$41,413."
   > — Moore, T. J., Zhang, H., Anderson, G., & Alexander, G. C. (2020). Estimated Costs of Pivotal Trials for Novel Therapeutic Agents Approved by the US Food and Drug Administration, 2015-2017. _JAMA Internal Medicine_. [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)
+
+<a id="trial-costs-fda-study"></a>
+
+- **Trial Costs, FDA Study**
+  > "Overall, the 138 clinical trials had an estimated median (IQR) cost of $19.0 million ($12.2 million-$33.1 million)... The clinical trials cost a median (IQR) of $41,117 ($31,802-$82,362) per patient."
+  > — FDA Study via NCBI, [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6248200/)
 
 <a id="us-drug-prices"></a>
 
@@ -424,3 +507,106 @@ This document contains all source quotes and references supporting the claims ma
 - **WWII War Bonds**
   > "From 1941 to 1945, the United States government issued War Bonds to finance military operations. Over 85 million Americans purchased bonds totaling more than \$185 billion."
   > — U.S. Treasury, [WWII War Bonds](https://en.wikipedia.org/wiki/War_bond)
+
+<a id="worldcoin-scale"></a>
+
+- **Worldcoin identity verification scale**
+  > "Worldcoin has verified over 2 million unique human identities using iris biometric scanning, demonstrating feasibility of global-scale biometric verification."
+  > — Worldcoin Foundation, 2024, [Progress Update](https://worldcoin.org/blog/announcements/worldcoin-milestones)
+
+<a id="impact-investing-regulatory-reform"></a>
+
+- **Impact investing regulatory reform**
+
+  > "Reforms to securities regulation can better support impact investing while maintaining investor protections."
+  > — Brookings, 2022, [Policy to Support Impact Investing](https://www.brookings.edu/research/reforming-securities-regulation-to-support-impact-investing/)
+
+<a id="eu-mica"></a>
+
+- **EU MiCA transparency and disclosure**
+
+  > "MiCA establishes uniform requirements for the offer to the public and admission to trading of crypto‑assets... and for transparency and disclosure."
+  > — EUR‑Lex, 2023, [MiCA Regulation](https://eur-lex.europa.eu/eli/reg/2023/1114/oj)
+
+<a id="gdpr-biometric-data"></a>
+
+- **GDPR Biometric Data requirements**
+  > "Processing of biometric data for the purpose of uniquely identifying a natural person shall be prohibited unless one of the conditions referred to in points (a) to (j) of paragraph 2 applies."
+  > — GDPR Article 9(1), [EU General Data Protection Regulation](https://gdpr-info.eu/art-9-gdpr/)
+
+<a id="eo-14158"></a>
+
+- **Executive Order 14158 (DOGE)**
+
+  > "Establishing and Implementing the President's Department of Government Efficiency."
+  > — White House, 2025, [EO 14158](https://www.whitehouse.gov/presidential-actions/2025/01/establishing-and-implementing-the-presidents-department-of-government-efficiency/)
+
+<a id="eo-14210"></a>
+
+- **Executive Order 14210 (DOGE Workforce Optimization)**
+
+  > "Implementing the President’s Department of Government Efficiency—Workforce Optimization Initiative."
+  > — White House, 2025, [EO 14210](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-workforce-optimization-initiative/)
+
+<a id="eo-14222"></a>
+
+- **Executive Order 14222 (DOGE Cost Efficiency)**
+
+  > "Implementing the President’s Department of Government Efficiency—Cost Efficiency Initiative."
+  > — White House, 2025, [EO 14222](https://www.whitehouse.gov/presidential-actions/2025/02/implementing-the-presidents-department-of-government-efficiency-cost-efficiency-initiative/)
+
+<a id="sec-reg-a"></a>
+
+- **SEC Regulation A (Reg A) overview and cap ($75M/yr)**
+
+  > "Regulation A provides an exemption from the registration requirements... for offerings of securities up to $75 million in a 12‑month period, subject to eligibility, disclosure, and reporting requirements."
+  > — U.S. SEC, [Regulation A Overview](https://www.sec.gov/smallbusiness/exemptofferings/rega)
+
+<a id="sec-reg-cf"></a>
+
+- **SEC Regulation Crowdfunding (Reg CF)**
+
+  > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."
+  > — U.S. SEC, [Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
+
+<a id="statnews-nih-terminates"></a>
+
+- **NIH terminates research grants (news report)**
+
+  > "NIH abruptly terminates millions in research grants, defying court orders."
+  > — STAT News, 2025, [NIH terminates grants](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)
+
+<a id="nih-common-fund-overview"></a>
+
+- **NIH Common Fund overview**
+
+  > "The Common Fund supports cross‑cutting programs that are expected to have exceptionally high impact."
+  > — NIH, [Common Fund Overview](https://commonfund.nih.gov/overview)
+
+<a id="nih-od-budget"></a>
+
+- **NIH Office of the Director budget info**
+
+  > "Budget information and appropriations for the Office of the Director."
+  > — NIH, [OD Budget](https://officeofbudget.od.nih.gov/br.html)
+
+<a id="npr-nsf-freezes"></a>
+
+- **NSF grant freezes (news report)**
+
+  > "NSF freezes payments in response to executive actions."
+  > — NPR, 2025, [NSF freezes payments](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia)
+
+<a id="sec-reg-a"></a>
+
+- **SEC Regulation A (Reg A) overview and cap ($75M/yr)**
+
+  > "Regulation A provides an exemption from the registration requirements... for offerings of securities up to $75 million in a 12‑month period, subject to eligibility, disclosure, and reporting requirements."
+  > — U.S. SEC, [Regulation A Overview](https://www.sec.gov/smallbusiness/exemptofferings/rega)
+
+<a id="sec-reg-cf"></a>
+
+- **SEC Regulation Crowdfunding (Reg CF)**
+
+  > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."
+  > — U.S. SEC, [Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
