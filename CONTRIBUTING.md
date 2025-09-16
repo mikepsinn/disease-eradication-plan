@@ -166,24 +166,41 @@ dateCreated: "YYYY-MM-DDTHH:MM:SS.sssZ" # The date the file was first created
 
 ### 4. Sourcing and Citation Standard (CRITICAL)
 
-**MANDATORY**: ALL factual claims, statistics, and figures **MUST** be cited with hyperlinks to authoritative sources using the anchor-based method described below.
+**MANDATORY**: ALL factual claims, statistics, and figures **MUST** be cited with hyperlinks to authoritative sources using the centralized reference system described below.
+
+#### Central References File
+
+All references are consolidated in `brain/book/references.md` to avoid duplication and maintain consistency across the knowledge base.
 
 1.  **Find a High-Quality Source:** Use reputable sources like academic journals, government reports, or major news outlets.
-2.  **Create an Anchor Link in the Text:** In the body of the text, link your claim to a unique anchor ID.
-    - **Example:** `...global military spending reached [$2.443 trillion](#global-spending-2023)...`
-3.  **Add a Source Quote Section:** At the end of the file, create a section titled `## Source Quotes` if one does not exist.
-4.  **Add the Full Citation:** In the source section, create the anchor and add the full quote and link.
-    - **Example:**
+
+2.  **Check for Existing References:** Before adding a new reference, search `brain/book/references.md` to see if it already exists. If it does, use the existing anchor ID.
+
+3.  **Link Claims Directly to References:** In your content, hyperlink the relevant text directly to the specific reference in the central file.
+    - **Example:** `...global military spending reached [$2.443 trillion](./references.md#global-spending-2023)...`
+    - **Example:** `[The world spends 40 times more on military force](./references.md#sipri-2024-spending) than on [medical research](./references.md#global-gov-med-research-spending).`
+
+4.  **Add New References (If Needed):** If your source doesn't exist in the central file, add it following this format:
 
       ```markdown
-      <a id="global-spending-2023"></a>
+      <a id="unique-anchor-id"></a>
 
-      - **Global military spending reached $2.443 trillion**
-        > "World military expenditure reached an all-time high of $2443 billion in 2023..."
-        > — SIPRI, April 2024, [URL](https://www.sipri.org/media/press-release/2024/world-military-expenditure-surges-amid-war-rising-tensions-and-insecurity)
+      - **Brief descriptive title**
+
+        > "Direct quote from the source with key statistics or claims..."
+        > — Source Name, Date, [Link Title](URL)
       ```
 
-This pattern is mandatory to prevent link rot, provide immediate context, and keep readers on-page.
+5.  **Use Descriptive Anchor IDs:** Create meaningful anchor IDs that describe the content (e.g., `sipri-2024-spending`, `recovery-cost-500`, `fossil-fuel-subsidies`).
+
+#### What NOT to Do
+
+- **Do not create local "Source Quotes" sections** in individual files
+- **Do not duplicate references** that already exist in the central file  
+- **Do not use generic link text** like "(Source)" - hyperlink the actual claim text
+- **Do not create internal anchor links** within individual files for citations
+
+This centralized approach prevents link rot, eliminates duplicate references, and creates a single source of truth for all factual claims across the knowledge base.
 
 ### 5. Technical Standards
 

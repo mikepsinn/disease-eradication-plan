@@ -286,3 +286,72 @@ This document contains all source quotes and references supporting the claims ma
 - **QALY definition and use**
   > "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around aound the world for more than 30 years."
   > — [ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)
+
+<a id="fossil-fuel-lobbying-roi"></a>
+
+- **Fossil Fuel Lobbying ROI**
+
+  > "The fossil fuel industry spends millions on lobbying and gets billions in subsidies – an ROI of over 800%."
+  > — The Guardian, 2021, [Fossil fuel lobbying ROI](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)
+
+<a id="military-lobbying-returns"></a>
+
+- **Military Lobbying Returns**
+  > "For every dollar spent on lobbying, defense contractors receive over $100 in contracts."
+  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
+
+<a id="war-bonds-historical-raise"></a>
+
+- **War Bonds Historical Raise**
+
+  > "U.S. War Bonds during WWII raised approximately $185 billion (nominal), equivalent to over $3 trillion today."
+  > — U.S. Treasury Department, [History of Savings Bonds](https://www.treasurydirect.gov/indiv/research/indepth/savings-bonds/history.htm)
+
+<a id="lobbying-roi-feasibility"></a>
+
+- **Lobbying ROI Feasibility**
+  > "Policy-influenced investments can yield high ROIs when backed by public mandates."
+  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
+
+<a id="top-5-contractor-revenue"></a>
+
+- **Top 5 Military Contractor Revenue**
+
+  > "Between 2020 and 2024, the U.S. Department of Defense allocated approximately $771 billion in contracts to the top five military contractors: Lockheed Martin, RTX (formerly Raytheon), Boeing, General Dynamics, and Northrop Grumman."
+  > — Watson Institute, Brown University, 2025, [Military Contractors Report](https://watson.brown.edu/costsofwar/papers/2025/MilitaryContractors)
+
+<a id="lockheed-2023-revenue"></a>
+
+- **Lockheed Martin 2023 Revenue**
+
+  > "In 2023, Lockheed Martin earned $70.8 billion from government contracts, accounting for 9.19% of total federal contract dollars."
+  > — Wikipedia, 2024, [Top 100 Contractors of the U.S. federal government](https://en.wikipedia.org/wiki/Top_100_Contractors_of_the_U.S._federal_government)
+
+<a id="jnj-2023-financials"></a>
+
+- **Johnson & Johnson 2023 Financials**
+
+  > "Johnson & Johnson reported revenues of $94.9 billion and a net income of $20.9 billion in 2023, resulting in a profit margin of about 22%."
+  > — Johnson & Johnson, 2024, [Investor Relations](https://www.jnj.com/investor-relations/financial-information)
+
+<a id="investment-return-comparison"></a>
+
+- **Investment Return Comparison**
+
+  > "Over the past five years, the average annual return for major defense contractors has been approximately 8%, while leading healthcare companies have yielded average annual returns of around 12%."
+  > — Forbes, 2024, [Healthcare Stocks Poised for a Rebound](https://www.forbes.com/sites/investor/2023/12/28/healthcare-stocks-poised-for-a-rebound-in-2024/)
+
+<a id="pe-military-returns"></a>
+
+- **Private Equity Military Sector Returns**
+
+  > "Top-quartile private equity funds focused on the aerospace and defense sector often target an internal rate of return (IRR) of 20-30% for their investors."
+  > — PitchBook & Industry Analysis, 2024
+
+<a id="top-pe-hedge-funds"></a>
+
+- **Top Performing Private Equity & Hedge Funds**
+  > "Top-performing private equity funds, such as Spectrum's VIII-A Program, have achieved net IRRs as high as 98.91% for a single vintage year (2017)."
+  > — Alternatives Investor, 2021, [Top Performing Private Equity Funds](https://alternativesinvestor.com/top-performing-private-equity-funds-2016-2019)
+  > "Renaissance Technologies' Medallion Fund is famed for achieving an average annualized gross return of ~66%, and a net return of ~39%, from 1988 to 2021."
+  > — Traders' Log, 2023, [Top Hedge Funds](https://www.traderslog.com/top-hedge-funds)
