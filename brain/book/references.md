@@ -18,8 +18,6 @@ This document contains all source quotes and references supporting the claims ma
 
 ---
 
-## Source Quotes for Key Parameters
-
 <a id="clinical-trial-spending"></a>
 
 - **$100 billion global annual clinical trial expenditure**
@@ -78,6 +76,26 @@ This document contains all source quotes and references supporting the claims ma
   > "By 2050, 10 million lives a year and a cumulative \$100 trillion of economic output are at risk due to the rise of drug-resistant infections if we do not find proactive solutions now to slow down the rise of drug resistance."
   > — Review on Antimicrobial Resistance, 2016, [Final Report](https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf)
 
+<a id="childhood-vaccination-roi"></a>
+
+-   **Childhood Vaccination (US) ROI**
+
+    > "Economic analysis for 2009 alone found that each dollar invested in vaccines saved more than $10 in total societal costs"
+    > — CDC, [Link](https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm)
+
+    > "In a 2005 study on the economic impact of routine childhood immunization in the United States, researchers estimated that for every dollar spent, the vaccination program saved more than $5 in direct costs and approximately $11 in additional costs to society.”
+    > — Vaxopedia, [Link](https://vaxopedia.org/2017/10/01/what-are-the-benefits-of-vaccines/)
+
+<a id="clean-water-sanitation-roi"></a>
+
+-   **Clean Water & Sanitation (LMICs) ROI**
+
+    > "For every dollar invested in water and sanitation, there is a $4.3 return in the form of reduced health care costs for individuals and society around the world"
+    > — UN News, [Link](https://news.un.org/en/story/2014/11/484032)
+
+    > "Universal access to clean water, toilets, and hygiene would boost the global economy by trillions of dollars over the next two decades... and would bring returns of 21 times their cost."
+    > — WaterAid, [Link](https://www.wateraid.org/us/media/economic-report-unlock-trillions-of-dollars-with-clean-water-decent-toilets-and-hygiene)
+
 <a id="contracts-2-02t"></a>
 
 - **Defense Contracts (2001-2021)**
@@ -125,23 +143,30 @@ This document contains all source quotes and references supporting the claims ma
   >
   > <cite>— IMF, 2023, [Fossil Fuel Subsidies Surged to Record $7 Trillion](https://www.imf.org/en/Blogs/Articles/2023/08/24/fossil-fuel-subsidies-surged-to-record-7-trillion)</cite>
 
+<a id="generic-drug-substitution-savings"></a>
+
+-   **Generic Drug Substitution Savings**
+
+    > "According to the IMS Health Institute, generic drugs saved the U.S. health care system $1.67 trillion from 2007 to 2016."
+    > — FDA, [Link](https://www.fda.gov/drugs/generic-drugs/generic-drug-facts)
+
 <a id="givewell-impact-multipliers"></a>
 
 - **GiveWell Impact Multipliers**
   > "Thus, if we estimate that a funding opportunity is '10x cash,' this means we estimate it to be ten times as cost-effective as unconditional cash transfers."
   > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models)
 
-<a id="global-violence-costs"></a>
-
-- **Global Cost of Violence**
-  > "The economic impact of violence on the global economy in 2021 was $16.5 trillion, equivalent to 10.9% of global GDP, or $2,117 per person."
-  > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/maps/global-peace-index/)
-
 <a id="global-gov-med-research-spending"></a>
 
 - **Global government medical research spending (\$67.5B, 2023–2024)**
   > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
   > — DFDA Wiki, 2025, [Global Government Medical Research Spending](./reference/global-government-medical-research-spending.md)
+
+<a id="global-violence-costs"></a>
+
+- **Global Cost of Violence**
+  > "The economic impact of violence on the global economy in 2021 was $16.5 trillion, equivalent to 10.9% of global GDP, or $2,117 per person."
+  > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/maps/global-peace-index/)
 
 <a id="sipri-2024-spending"></a>
 
@@ -165,6 +190,13 @@ This document contains all source quotes and references supporting the claims ma
 - **Howey Test Securities Definition**
   > "The test is whether the scheme involves an investment of money in a common enterprise with profits to come solely from the efforts of others."
   > — SEC v. W. J. Howey Co., 328 U.S. 293 (1946)
+
+<a id="hypertension-screening-treatment-qaly"></a>
+
+-   **Hypertension Screening & Treatment Cost per QALY**
+
+    > "The estimated cost per QALY gained for screening was less than $1000 for men and approximately $1600 for women."
+    > — PMC5217841, [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5217841/)
 
 <a id="icbl-ottawa-treaty"></a>
 
@@ -271,6 +303,13 @@ This document contains all source quotes and references supporting the claims ma
   > "Top-quartile private equity funds focused on the aerospace and defense sector often target an internal rate of return (IRR) of 20-30% for their investors."
   > — PitchBook & Industry Analysis, 2024
 
+<a id="polypill-prevention-qaly"></a>
+
+-   **Polypill for Primary Prevention Cost per QALY**
+
+    > "A polypill strategy was potentially cost-effective compared to other strategies for most sub-groups ranging from dominance to up to £18,811 per QALY depending on patient sub-group."
+    > — PLOS One, [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182625)
+
 <a id="qaly-definition"></a>
 
 - **QALY definition and use**
@@ -289,11 +328,32 @@ This document contains all source quotes and references supporting the claims ma
   > "Following a successful global eradication campaign, the World Health Assembly officially declared the world free of smallpox in 1980."
   > — WHO, [Smallpox Overview](https://www.who.int/health-topics/smallpox)
 
+<a id="smallpox-eradication-roi"></a>
+
+-   **Smallpox Eradication ROI**
+
+    > "Adding up, the benefit–cost ratio for the entire world would have been about (($350 + $1070) ÷ 0.03)/$298 ≈ 159 : 1. These are huge numbers."
+    > — PMC3720047, [Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/)
+
+<a id="statins-qaly"></a>
+
+-   **Statins for High-Risk Patients Cost per QALY**
+
+    > "Standard statin was cost-effective across all categories with incremental cost per QALY from £280 to £8530, with higher intensity statin cost-effective at higher cardiovascular risks and higher LDL-C levels."
+    > — The Lancet, [Link](https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(24)00053-X/fulltext)
+
 <a id="global-fund"></a>
 
 - **The Global Fund**
   > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
   > — The Global Fund, [Overview](https://www.theglobalfund.org/en/about-the-global-fund/)
+
+<a id="tobacco-control-roi"></a>
+
+-   **Tobacco Control ROI**
+
+    > "In our study of six Asia-Pacific countries, we found that for every unit of local currency invested in increasing tobacco taxes, the countries would gain between 20 and 1,057 units in return over 15 years. That's a remarkable return on investment ratio of between 20:1 and 1,057:1."
+    > — UNDP, [Link](https://www.undp.org/asia-pacific/blog/how-raising-tobacco-taxes-can-save-lives-and-cut-poverty-across-asia-pacific-0)
 
 <a id="top-contractor-revenue"></a>
 

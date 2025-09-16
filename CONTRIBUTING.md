@@ -195,8 +195,7 @@ All references are consolidated in `brain/book/references.md` to avoid duplicati
 
 #### Maintainability
 
--   **Sort Alphabetically**: To ensure the `references.md` file is easy to navigate, all top-level reference items **MUST** be sorted alphabetically by their brief descriptive title.
--   **Group Related Quotes**: If multiple quotes are from the same source or refer to the same topic, group them under a single descriptive title. For example, use one entry for "Global Military Spending" and list multiple SIPRI reports underneath it.
+-   **Use a Single, Alphabetized List:** To ensure `references.md` is easy to navigate and free of duplicates, all reference items **MUST** be in a single, flat list sorted alphabetically by their descriptive title. **Do not use subsections or headings.** To avoid clutter, you may group closely related statistics (e.g., multiple years of the same report) under a single alphabetized item.
 
 #### What NOT to Do
 
