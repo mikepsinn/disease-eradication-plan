@@ -339,3 +339,15 @@ This document contains all source quotes and references supporting the claims ma
   > — Alternatives Investor, 2021, [Top Performing Private Equity Funds](https://alternativesinvestor.com/top-performing-private-equity-funds-2016-2019)
   > "Renaissance Technologies' Medallion Fund is famed for achieving an average annualized gross return of ~66%, and a net return of ~39%, from 1988 to 2021."
   > — Traders' Log, 2023, [Top Hedge Funds](https://www.traderslog.com/top-hedge-funds)
+
+<a id="helios-voting"></a>
+
+- **Helios (end-to-end verifiable voting)**
+  > "Helios is an open-audit voting system… voters can verify that their vote is included and correctly tallied."
+  > — Adida et al., Helios, [heliosvoting.org](https://heliosvoting.org/)
+
+<a id="estonia-internet-voting"></a>
+
+- **Estonia internet voting lessons**
+  > "Estonia's i-voting system has operated nationwide since 2005… offering insights into scaling digital identity and remote voting with continuous security reviews."
+  > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/i-voting/)
