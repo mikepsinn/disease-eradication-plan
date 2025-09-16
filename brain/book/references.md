@@ -131,11 +131,6 @@ This document contains all source quotes and references supporting the claims ma
   > "MakerDAO manages over $5 billion in assets through decentralized governance."
   > — MakerDAO, 2024, [Official Site](https://makerdao.com).
 
-<a id="lobbying-total"></a>
-
-- **Military lobbying**
-  > "Military industry lobbying totaled ~$127 million in 2024."
-  > — OpenSecrets, 2024, [Defense Lobbying](https://www.opensecrets.org/federal-lobbying/industries/summary?cycle=2024&id=D).
 
 <a id="smallpox-eradicated"></a>
 
@@ -185,11 +180,6 @@ This document contains all source quotes and references supporting the claims ma
   > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
   > — The Global Fund, [Overview](https://www.theglobalfund.org/en/overview/)
 
-<a id="lobbying-1-1b"></a>
-
-- **Defense Lobbying (2001-2021)**
-  > "Over the past two decades, the top five defense contractors have spent \$1.1 billion on lobbying..."
-  > — Brown University, Watson Institute for International and Public Affairs, 2022. [Link](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
 
 <a id="contracts-2-02t"></a>
 
@@ -287,6 +277,12 @@ This document contains all source quotes and references supporting the claims ma
   > "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around aound the world for more than 30 years."
   > — [ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)
 
+<a id="givewell-impact-multipliers"></a>
+
+- **GiveWell Impact Multipliers**
+  > "Top charities like AMF provide ~10X return in lives saved per dollar compared to cash transfers."
+  > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/research/intervention-reports/bednets)
+
 <a id="fossil-fuel-lobbying-roi"></a>
 
 - **Fossil Fuel Lobbying ROI**
@@ -300,12 +296,6 @@ This document contains all source quotes and references supporting the claims ma
   > "For every dollar spent on lobbying, defense contractors receive over $100 in contracts."
   > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
 
-<a id="war-bonds-historical-raise"></a>
-
-- **War Bonds Historical Raise**
-
-  > "U.S. War Bonds during WWII raised approximately $185 billion (nominal), equivalent to over $3 trillion today."
-  > — U.S. Treasury Department, [History of Savings Bonds](https://www.treasurydirect.gov/indiv/research/indepth/savings-bonds/history.htm)
 
 <a id="lobbying-roi-feasibility"></a>
 
@@ -313,12 +303,6 @@ This document contains all source quotes and references supporting the claims ma
   > "Policy-influenced investments can yield high ROIs when backed by public mandates."
   > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)
 
-<a id="top-5-contractor-revenue"></a>
-
-- **Top 5 Military Contractor Revenue**
-
-  > "Between 2020 and 2024, the U.S. Department of Defense allocated approximately $771 billion in contracts to the top five military contractors: Lockheed Martin, RTX (formerly Raytheon), Boeing, General Dynamics, and Northrop Grumman."
-  > — Watson Institute, Brown University, 2025, [Military Contractors Report](https://watson.brown.edu/costsofwar/papers/2025/MilitaryContractors)
 
 <a id="lockheed-2023-revenue"></a>
 

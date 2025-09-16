@@ -12,13 +12,13 @@ dateCreated: "2025-01-20T00:00:00.000Z"
 
 ## 1. Executive Summary
 
-The global economy is grotesquely misaligned, allocating **\$2.72 trillion** annually to military spending while just **\$67.5 billion** is directed toward medical research—a 40:1 disparity. This document provides the quantitative thesis for a strategic investment of **\$1.2–\$2.5 billion** to permanently flip this incentive structure.
+The global economy is grotesquely misaligned, allocating [**\$2.72 trillion**](../references.md#global-military-spending) annually to military spending while just [**\$67.5 billion**](../references.md#global-gov-med-research-spending) is directed toward medical research—a 40:1 disparity. This document provides the quantitative thesis for a strategic investment of **\$1.2–\$2.5 billion** to permanently flip this incentive structure.
 
 The goal is to redirect a **\$27+ billion annual revenue stream** from military budgets to a democratically controlled health treasury. The investment vehicle, **VICTORY Bonds**, is engineered to offer a risk-adjusted expected value superior to the world's most elite investment funds. We are specifically targeting a return that outperforms the historical net returns of **Renaissance Technologies' Medallion Fund (~39% annualized)**, making this the most compelling investment opportunity in the world.
 
 ## 2. The Market Failure & Our Competitive Benchmark
 
-A rational investor allocates capital where returns are highest. While top defense contractors offer stable **~12-15% annualized returns**, this is not the true benchmark for ambitious capital. The undisputed benchmark for scaled, high-performance investing is the **Renaissance Medallion Fund**, with its legendary **~39% net annualized return** over 30 years.
+A rational investor allocates capital where returns are highest. While top defense contractors offer stable **~12-15% annualized returns**, this is not the true benchmark for ambitious capital. The undisputed benchmark for scaled, high-performance investing is the **Renaissance Medallion Fund**, with its legendary [**~39% net annualized return**](../references.md#top-pe-hedge-funds) over 30 years.
 
 Our thesis is not to be merely competitive, but to be mathematically superior.
 
@@ -146,8 +146,8 @@ VICTORY Bonds are designed to deliver risk-adjusted returns superior to alternat
 
 ### Benchmark: Exceptional ROI in Policy-Influenced Sectors
 
-- Fossil fuel lobbying generates average returns of **[800%](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)**, with companies like ExxonMobil spending $27 million on lobbying in 2020 to secure $220 million in benefits.
-- Military contractors achieve similar multiples; for every $1 spent on lobbying, they secure **[over $100 in contracts](https://watson.brown.edu/costsofwar/papers/2022/ProfitsWar)**, as seen with Lockheed Martin's $14 million in 2023 lobbying yielding $70.8 billion in revenue.
+- Fossil fuel lobbying generates average returns of [**800%**](../references.md#fossil-fuel-lobbying-roi), with companies like ExxonMobil spending $27 million on lobbying in 2020 to secure $220 million in benefits.
+- Military contractors achieve similar multiples; for every $1 spent on lobbying, they secure [**over $100 in contracts**](../references.md#military-lobbying-returns), as seen with Lockheed Martin's $14 million in 2023 lobbying yielding [$70.8 billion in revenue](../references.md#lockheed-2023-revenue).
 
 These returns arise from influencing policy to capture public funds, creating stable revenue streams backed by government budgets.
 
@@ -197,7 +197,7 @@ While the risks of this venture are significant, they are fundamentally differen
 - **Execution and Regulatory Risk**: Building the DIH Treasury involves compliance across jurisdictions. Mitigation: Staggered launches with Reg CF/A/S exemptions, on-chain audits, and automated covenant checks (as in tokenomics).
 - **Financial Risk**: If inflows delay, principal could be at risk. Mitigation: Seniority waterfalls, optional reinsurance, and first-loss capital absorb initial losses; public dashboards track coverage ratios.
 - **Fundraising Risk (Collective Action Problem):** Early investors may hesitate, fearing the project won't reach its funding goal. **Mitigation:** We will use **Assurance Contracts** built on smart contracts. All initial funds will be held in a transparent escrow and automatically returned to investors if the funding target is not met by a specific deadline. This completely eliminates the risk of a failed raise for our backers. For details, see our [Fundraising Strategy](./fundraising-strategy.md).
-- **Overall Probability**: Metaculus forecasts will provide real-time estimates; historical analogs (e.g., war bonds raised $185B adjusted) suggest feasibility, but failure rate could be 30%+ without momentum.
+- **Overall Probability**: Metaculus forecasts will provide real-time estimates; historical analogs (e.g., [war bonds raised $185B adjusted](../references.md#war-bonds-historical-raise)) suggest feasibility, but failure rate could be 30%+ without momentum.
 
 For full details on protections, see [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
 
@@ -206,13 +206,9 @@ For full details on protections, see [VICTORY Bonds Incentive Mechanics](../stra
 
 Philanthropic funds can achieve extraordinary impact multiplication through VICTORY Bonds, leveraging advocacy to redirect public budgets at scales far beyond direct grants.
 
-- **Quantitative Leverage**: A $1M investment could unlock $1B in health funding via treaty inflows, offering 1,000X impact—compared to ~10X for high-impact charities like malaria prevention.
+- **Quantitative Leverage**: A $1M investment could unlock $1B in health funding via treaty inflows, offering 1,000X impact—compared to [~10X for high-impact charities](../references.md#givewell-impact-multipliers) like malaria prevention.
 - **Alignment with Effective Altruism**: This mirrors EA principles of high-ROI interventions, potentially saving more lives per dollar than traditional aid (e.g., equivalent to funding 10,000+ years of research).
 - **Risk-Adjusted Giving**: Metaculus pricing allows donors to target high-probability tranches, with governance rights ensuring funds align with impact goals.
-
-- **GiveWell Impact Multipliers**
-  > "Top charities like AMF provide ~10X return in lives saved per dollar compared to cash transfers."
-  > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/research/intervention-reports/bednets)
 
 ### Targeting Defense Contractors as Investors
 
