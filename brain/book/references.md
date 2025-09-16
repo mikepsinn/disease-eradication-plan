@@ -40,26 +40,26 @@ This document contains all source quotes and references supporting the claims ma
 
 <a id="vsl"></a>
 
-- **$10M Value of Statistical Life (VSL)**
+- **$12.5M Value of Statistical Life (VSL)**
 
-  > "The value of a statistical life (VSL) is $10 million (2021 dollars)."
-  > — [U.S. Department of Transportation, 2021 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
+  > "The value of a statistical life (VSL) is $12.5 million (2022 dollars)."
+  > — [U.S. Department of Transportation, 2023 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
 
 <a id="prevention-savings"></a>
 
-- **$3 saved per $1 prevention**
+- **$5.60 saved per $1 prevention**
 
-  > "Every $1 spent on prevention saves ~\$3."
-  > — [Trust for America's Health, 2013](https://www.tfah.org/report-details/a-healthier-america-2013/)
+  > "An investment of $10 per person per year in proven community-based programs ... could save the U.S. over $16 billion annually within five years, representing a return of $5.60 for every $1 invested."
+  > — [Trust for America's Health, 2008](https://www.tfah.org/report/prevention-for-a-healthier-america-investments-in-disease-prevention-yield-significant-savings-stronger-communities/)
 
 <a id="us-drug-spend"></a>
 
-- **$360B U.S. drug spend**
+- **$449.7B U.S. drug spend (2023)**
 
-  > "U.S. annual prescription drug spending is ~\$360B."
+  > "Prescription drug spending increased 11.4% to $449.7 billion in 2023."
   > — [CMS National Health Expenditure Data](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet)
-  > "The U.S. spent $360 billion on prescription drugs in 2019."
-  > — [Commonwealth Fund](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
+  > "Retail prescription drug spending increased by 5.7% in 2019, reaching $369.7 billion."
+  > — [CMS Office of the Actuary, 2020](https://www.cms.gov/newsroom/press-releases/cms-office-actuary-releases-2019-national-health-expenditures)
 
 <a id="3-5-rule"></a>
 
@@ -90,20 +90,20 @@ This document contains all source quotes and references supporting the claims ma
 
   > "During the first three quarters of 2022, the defense sector spent approximately \$101 million on lobbying activities."
   > — Watson Institute, Brown University, 2022, [Defense Sector Lobbying](https://watson.brown.edu/costsofwar/news/2022/defense-sector-spent-101-million-lobbying-during-first-three-quarters-2022)
-  > "Military industry lobbying totaled \~\$127 million in 2024."
-  > — OpenSecrets, 2024, [Defense industry lobbying totals](https://www.opensecrets.org/federal-lobbying/industries/summary?cycle=2024&id=D)
+  > "In 2023, the military industry spent over $139 million on lobbying."
+  > — Taxpayers for Common Sense, [Political Footprint of the Military Industry](https://www.taxpayer.net/national-security/political-footprint-of-the-military-industry)
 
 <a id="estonia-internet-voting"></a>
 
 - **Estonia internet voting lessons**
   > "Estonia's i-voting system has operated nationwide since 2005… offering insights into scaling digital identity and remote voting with continuous security reviews."
-  > — Academic and official analyses, e.g., [e-estonia.com](https://e-estonia.com/solutions/e-governance/i-voting/)
+  > — Academic and official analyses, e.g., [Wikipedia](https://en.wikipedia.org/wiki/Electronic_voting_in_Estonia)
 
 <a id="fec-foreign-national-restrictions"></a>
 
 - **FEC Foreign National Restrictions**
   > "A foreign national shall not, directly or indirectly, make a contribution or a donation of money or other thing of value, or expressly or impliedly promise to make a contribution or a donation, in connection with any Federal, State, or local election."
-  > — 52 U.S.C. § 30121(a)(1)(A), [FEC Guidelines](https://www.fec.gov/updates/foreign-nationals/)
+  > — 52 U.S.C. § 30121(a)(1)(A), [Cornell Law School Legal Information Institute](https://www.law.cornell.edu/uscode/text/52/30121)
 
 <a id="fec-foreign-nationals"></a>
 
@@ -115,8 +115,8 @@ This document contains all source quotes and references supporting the claims ma
 
 - **Fossil Fuel Lobbying ROI**
 
-  > "The fossil fuel industry spends millions on lobbying and gets billions in subsidies – an ROI of over 800%."
-  > — The Guardian, 2021, [Fossil fuel lobbying ROI](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)
+  > "The fossil fuel industry receives an estimated $59 in tax breaks and subsidies for every $1 spent on campaign finance and lobbying, representing a 5,800% return on investment."
+  > — Oil Change International & Sierra Club, 2014, [Polluting our Democracy and Our Environment](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjoUhMcIWuWvVorxRzloalh14N0Zdr7FI74EezVj32onpwgb56RoxwZ_nSS09A82to2Wg0qi681Drf4KvFXscyevP3cskj-8Gthe8t1yVlgsmmOQx0Wtgvab5h_Ym39c4ppOXQgm-wRCSkqz3KmhlZqIpKIf5qku76efgR6w_OjDUWDr03R6a61J3HhcqgyA5ChWwTNV7qdA==)
 
 <a id="fossil-fuel-subsidies"></a>
 
