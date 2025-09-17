@@ -10,7 +10,9 @@ dateCreated: 2024-06-09T00:00:00.000Z
 
 # The Economic Case for AI-Driven Medical Research
 
-The **[1% Treaty](./strategy/1-percent-treaty.md)** is not just a plan to redirect funds; it is a strategy to ignite a technological revolution in medicine. By reallocating a fraction of global military spending, we can fund the development and deployment of Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) to automate and accelerate every facet of clinical research.
+The **[1% Treaty](../../solution/1-percent-treaty.md)** is not just a plan to redirect funds; it is a strategy to ignite a technological revolution in medicine. By reallocating a fraction of global military spending, we can fund the development and deployment of Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) to automate and accelerate every facet of clinical research.
+
+This document outlines the exponential value created by this approach, projecting that a fully automated research pipeline could **[increase the rate of medical progress by 100-1000x](./../reference/rate-of-medical-progress-with-ai-scientists.md)** within a decade.
 
 ## The Power of AGI and ASI in Healthcare
 

@@ -100,6 +100,8 @@ This repository is structured as a book. The root directory contains the "Chapte
 
 **Note:** The file `brain/book/index.md` is automatically generated from the frontmatter of all files in the brain/book directory. Do not edit it directly - instead, update the frontmatter in the individual chapter and section files.
 
+#### Epic Folders
+
 **The Golden Rule:** If a topic is an "Epic" that needs more than one file, it gets a main summary file (`epic.md`) and a corresponding directory (`epic/`) for the details. This pattern applies at all levels.
 
 **"The Book" vs. "The Internal Playbook"**
@@ -111,7 +113,8 @@ This repository is structured as a book. The root directory contains the "Chapte
 | Section       | Content Type                                 | Examples                                                  |
 | ------------- | -------------------------------------------- | --------------------------------------------------------- |
 | `economics/`  | Financial models, ROI, investment thesis     | `investment-thesis.md`, `peace-dividend-value-capture.md` |
-| `strategy/`   | Execution plans, political strategy, how-to  | `1-percent-treaty.md`, `co-opting-defense-contractors.md` |
+| `solution/`   | Core components of the proposed solution     | `1-percent-treaty.md`, `dih.md`, `dfda.md`                |
+| `strategy/`   | Execution plans, political strategy, how-to  | `co-opting-defense-contractors.md`, `global-referendum.md` |
 | `legal/`      | Legal compliance, governance, regulations    | `multi-entity-strategy.md`, `right-to-trial-act.md`       |
 | `operations/` | Team structure, hiring, internal processes   | `hiring-plan.md`, `crypto-intake-sop.md`                  |
 | `reference/`  | Data, studies, citations, reference material | `costs-of-war.md`, `recovery-trial.md`                    |
@@ -123,7 +126,7 @@ This repository is structured as a book. The root directory contains the "Chapte
 2. **Globally Unique Filenames:** Every filename in the repository must be unique and descriptive. Add context prefixes only when the base filename could realistically exist in multiple directories:
    - ❌ Bad: `economics/fundraising/strategy.md` (too generic)
    - ✅ Good: `economics/fundraising/fundraising-strategy.md` (context needed)
-   - ✅ Also Good: `strategy/1-percent-treaty.md` (inherently unique concept)
+   - ✅ Also Good: `solution/1-percent-treaty.md` (inherently unique concept)
 
    This ensures every file can be unambiguously referenced with `@filename` while keeping names as simple as possible.
 

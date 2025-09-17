@@ -21,7 +21,7 @@ We won't beat the war machine by asking nicely. We'll beat it by offering better
 The core of the financial model is the **Peace Dividend**: the immense economic value unlocked by redirecting a fraction of global conflict spending towards productive ends.
 
 - The total annual global cost of violence is estimated at **[$16.5 trillion](./reference/costs-of-war.md)**.
-- The **[1% Treaty](./strategy/1-percent-treaty.md)** requires an "activation energy" investment of **[$1.2–$2.5 billion](./economics/fundraising-and-budget-plan.md)** to unlock this dividend.
+- The **[1% Treaty](../solution/1-percent-treaty.md)** requires an "activation energy" investment of **[$1.2–$2.5 billion](./economics/fundraising-and-budget-plan.md)** to unlock this dividend.
 - The first tranche of value captured is a **[$27+ billion annual treasury](./economics/peace-dividend-value-capture.md)**, which is used to fund a hyper-efficient medical R&D system and repay investors.
 - Over **[99.84% of the value unlocked](./economics/peace-dividend-value-capture.md)** flows directly to global society through improved health, increased productivity, and reduced conflict.
 

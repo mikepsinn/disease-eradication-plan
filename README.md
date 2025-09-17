@@ -39,7 +39,7 @@ For every $1 the military-industrial complex spends on lobbying politicians, it 
 
 So here's the plan: We do exactly the same thing in reverse.
 
-We create a [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./brain/reference/recovery-trial.md) for the most promising new treatments."
+We create a [1% Treaty](./brain/book/solution/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./brain/book/solution/dih.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./brain/reference/recovery-trial.md) for the most promising new treatments."
 
 Getting every government to ratify the treaty requires two things:
 
@@ -89,7 +89,7 @@ Humanity has two options:
 
 Pick one.
 
-See [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](./brain/reference/costs-of-war.md).
+See [1% Treaty](./brain/book/solution/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](./brain/reference/costs-of-war.md).
 
 ---
 
@@ -464,12 +464,12 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 **Coalition:** [How institutions can work with us](./brain/book/strategy/coalition-building.md)
 
-**Treaty:** [Full 1% Treaty text](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md)
+**Treaty:** [Full 1% Treaty text](./brain/book/solution/1-percent-treaty.md)
 
 ---
 
 
-## Table of Contents: The Book of the DIH
+## Table of Contents
 
 This repository is structured as a book that tells the story of the Decentralized Institutes of Health. The root-level files are the "Chapters" that form the core narrative, and the subdirectories are the "Sections" containing detailed supporting information.
 
@@ -478,9 +478,9 @@ This repository is structured as a book that tells the story of the Decentralize
 - **[README.md](./brain/book/README.md)**: (This File) High-level executive summary.
 - **[problem.md](./brain/book/problem.md)**: **Chapter 1: Problem → We're Doing This Backwards**
 - **[solution.md](./brain/book/solution.md)**: **Chapter 2: Solution → The Complete System** (Overview)
-- **[1-percent-treaty.md](./brain/book/1-percent-treaty.md)**: **Chapter 3: The 1% Treaty → How We Get the Money**
-- **[dih.md](./brain/book/dih.md)**: **Chapter 4: The DIH → How to Spend $27 Billion Without Wasting It**
-- **[dfda.md](./brain/book/dfda.md)**: **Chapter 5: The dFDA → How We Prove What Works**
+- **[1-percent-treaty.md](./brain/book/solution/1-percent-treaty.md)**: **Chapter 3: The 1% Treaty → How We Get the Money**
+- **[dih.md](./brain/book/solution/dih.md)**: **Chapter 4: The DIH → How to Spend $27 Billion Without Wasting It**
+- **[dfda.md](./brain/book/solution/dfda.md)**: **Chapter 5: The dFDA → How We Prove What Works**
 - **[vision.md](./brain/book/vision.md)**: **Chapter 6: Vision → A World Without War and Disease**
 - **[economics.md](./brain/book/economics.md)**: **Chapter 7: Economics → The Money**
 - **[strategy.md](./brain/book/strategy.md)**: **Chapter 8: Strategy → How to Bribe Literally Everyone**

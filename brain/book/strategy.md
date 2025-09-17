@@ -114,7 +114,7 @@ That's it.
 
 This chapter provides the high-level strategy. For a detailed breakdown of the specific mechanics, models, and precedents, please explore the following documents:
 
-- **[The 1% Treaty](./strategy/1-percent-treaty.md):** The full text and game-theoretic design of the core proposal.
+- **[The 1% Treaty](../solution/1-percent-treaty.md):** The full text and game-theoretic design of the core proposal.
 - **[The Global Referendum](./strategy/global-referendum/):** The plan for mobilizing a global political mandate.
 - **[Co-Opting the Defense Lobby](./strategy/co-opting-defense-contractors.md):** The strategy for turning adversaries into advocates.
 - **[Solving the Free-Rider Problem](./strategy/free-rider-solution.md):** The detailed game theory behind ensuring national compliance.

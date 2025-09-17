@@ -15,7 +15,7 @@ doc_type: spec
 
 ## Objective
 
-Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../1-percent-treaty/1-percent-treaty.md) and DIH. Outputs must be auditable and persuasive to policymakers.
+Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../../solution/1-percent-treaty.md) and DIH. Outputs must be auditable and persuasive to policymakers.
 
 ## Principles
 

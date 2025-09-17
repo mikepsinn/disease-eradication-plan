@@ -229,7 +229,7 @@ The question isn't whether you should work on this. The question is whether you 
 
 ## Learn More
 
-- **[Full 1% Treaty Text](./1-percent-treaty/1-percent-treaty.md)** - The actual treaty language
+- **[Full 1% Treaty Text](../solution/1-percent-treaty.md)** - The actual treaty language
 - **[Implementation Roadmap](./roadmap.md)** - How we get this done
 - **[VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.md)** - The financial mechanism
 - **[Cost-Benefit Analysis](../economic-models/dfda-cost-benefit-analysis.md)** - Why this is 463:1 ROI
