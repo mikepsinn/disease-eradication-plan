@@ -18,7 +18,31 @@ We want to spend **$1.2–$2.5 billion** to flip this permanently.
 
 The plan is simple: take **$27+ billion per year** from military budgets and give it to health research instead. The people who lend us the money upfront get paid back with returns that beat **Renaissance Technologies' Medallion Fund (~39% per year)**—the best investment in history.
 
-## 2. What We're Competing Against
+### Our Core Strategic Choice: Two Models for Funding
+
+To raise the $1–2.5 billion required to pass the 1% Treaty, we are debating two primary fundraising models. This is the most important strategic decision we will make, and we are actively seeking feedback on which path is more likely to succeed.
+
+**Model A: The Strategic Partner (Governance Alpha) Model**
+
+*   **The Pitch:** Target a small group of elite, activist investors who can act as strategic partners in the political fight.
+*   **The Offer:** A high return (~40% CAGR) **plus** permanent governance rights over the $27B annual treasury.
+*   **Pros:** Attracts powerful, politically-connected "generals" who can help us win. Their permanent oversight could enforce ruthless efficiency. The non-cash "Governance Alpha" component allows for a lower cash payout, preserving more of the treasury for the mission.
+*   **Cons:** "Governance Alpha" is complex and may confuse some investors. It introduces a permanent, unelected power bloc into the institution, which could be seen as "toxic" or undemocratic.
+
+**Model B: The Public Good (Simple Bond) Model**
+
+*   **The Pitch:** Target a broader audience of impact investors, foundations, and the general public who are motivated by the mission and a clean financial return.
+*   **The Offer:** A higher, cash-only return (e.g., ~50-60% CAGR to ensure the risk-adjusted return is compelling) with no governance rights. Investors are paid back their multiple and then they are out.
+*   **Pros:** Brilliantly simple and easy to understand. It is more transparently democratic and open to a wider range of investors.
+*   **Cons:** May fail to attract the powerful, "shark" investors whose political muscle is necessary to win. The higher cash payout required to compensate for the lack of governance could significantly drain the treasury in its early years, hamstringing the mission.
+
+---
+
+The remainder of this document provides a deep dive into the mechanics and logic of **Model A**, as it is the more complex of the two strategies. We currently believe it is the more pragmatic path to victory, but we are open to being convinced otherwise.
+
+## 2. Deep Dive: The Strategic Partner Model
+
+### What We're Competing Against
 
 Defense contractors make **~12-15% per year**. That's good, but not great.
 
@@ -86,43 +110,26 @@ This turns political risk into something you can actually measure and price.
 
 Here's the real test: Is this better than the best investment in history?
 
-**The Comparison:**
+### Proving the Need for Governance Alpha
 
-Let's say you have $10 million to invest.
+A simple expected value calculation on the cash returns alone *intentionally falls short* of the Medallion benchmark. This is by design, as it mathematically proves that the majority of the investment's value is derived from the governance rights.
 
-**Renaissance Medallion Fund:**
-- **You invest:** $10M
-- **You get back:** $13.9M after one year (39% return)
-- **Risk:** Basically zero (historically)
+**The Math on Cash Returns:**
+- An investment in the Medallion Fund has an expected value of **$13.9M** on a $10M investment (a 39% return).
+- The expected value of the cash portion of a VICTORY Bond is: `(70% × $14M) + (30% × $0) = $9.8M`.
 
-**VICTORY Bonds:**
-- **You invest:** $10M
-- **If we succeed (70% chance):** You get $14M+ back, plus voting rights over $27B/year
-- **If we fail (30% chance):** You get $0
+This isn't a weakness in the model; it's the entire point. It proves that a simple bond could never compete. The investment is only superior when you include the immense value of controlling a $27 billion annual treasury.
 
-**The Expected Value Math:**
-- `Expected Value = (70% × $14M) + (30% × $0) = $9.8M`
+### How We Beat the Benchmark
 
-Wait, that's worse than Medallion. But here's the key: the voting rights over $27B per year are worth a fortune. That's what makes this the better deal.
+To be a better investment, the total risk-adjusted value must exceed Medallion's $13.9M.
 
-### The Simple Math
+`(EV of Cash Returns) + (EV of Governance Alpha) > $13.9M`
+`$9.8M + (70% * Value of Governance Alpha) > $13.9M`
 
-To beat the Medallion Fund, we need to deliver better returns after accounting for risk.
+This means the value of the governance rights in a success scenario must be priced at over **$5.86 million** on a $10M investment. Given the ability to direct billions in funding, incubate companies, and shape the future of global health, this valuation is extremely conservative.
 
-**What We Need:**
-- Medallion delivers $13.9M on a $10M investment (basically guaranteed)
-- We need to deliver more than that (accounting for our 30% failure risk)
-- That means we need to pay almost 100% returns in the success scenario
-
-**How We Do It:**
-The cash returns alone can't beat Medallion. But the voting rights over $27B per year? That's worth way more than any hedge fund return.
-
-When you control where $27 billion gets spent each year, you can:
-- Direct research toward diseases you care about
-- Fund biotech companies with treasury money
-- Launch prize competitions worth millions
-
-That control is worth more than the 100% cash return we'd need to beat Medallion.
+The Governance Alpha is what makes this the best investment in the world.
 
 ## 7. Why Lobbying Pays So Well (And How We Use It)
 
