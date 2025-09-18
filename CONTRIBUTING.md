@@ -10,7 +10,8 @@ dateCreated: "2025-09-09T00:00:00.000Z"
 
 # How to Contribute to the DIH Knowledge Base
 
-## Table of Contents
+**Table of Contents**
+
 - [Core Principles](#core-principles)
 - [Writing Style Guide](#writing-style-guide)
 - [Contributor Workflow](#contributor-workflow)
@@ -23,11 +24,7 @@ dateCreated: "2025-09-09T00:00:00.000Z"
   - [6. Naming, Linking, and Formatting](#6-naming-linking-and-formatting)
 - [Automation and CI](#automation-and-ci)
 
-Thank you for your interest in contributing to a plan that could save millions of lives. This document defines the contribution rules, structure, and workflows for this knowledge base. 
 
-We're here because humanity spends 40X more on weapons than on curing diseases. While millions die from preventable illnesses, we waste trillions on the capacity to kill each other. This is not a normal business plan—it's an attempt to fix the most grotesque misallocation of resources in human history.
-
-By participating, you agree to abide by the terms outlined here.
 
 ## Core Principles
 
