@@ -18,29 +18,7 @@ We want to spend **$1.2–$2.5 billion** to flip this permanently.
 
 The plan is simple: take **$27+ billion per year** from military budgets and give it to health research instead. The people who lend us the money upfront get paid back with returns that beat **Renaissance Technologies' Medallion Fund (~39% per year)**—the best investment in history.
 
-### Our Core Strategic Choice: Two Models for Funding
-
-To raise the $1–2.5 billion required to pass the 1% Treaty, we are debating two primary fundraising models. This is the most important strategic decision we will make, and we are actively seeking feedback on which path is more likely to succeed.
-
-**Model A: The Strategic Partner (Governance Alpha) Model**
-
-*   **The Pitch:** Target a small group of elite, activist investors who can act as strategic partners in the political fight.
-*   **The Offer:** A high return (~40% CAGR) **plus** permanent governance rights over the $27B annual treasury.
-*   **Pros:** Attracts powerful, politically-connected "generals" who can help us win. Their permanent oversight could enforce ruthless efficiency. The non-cash "Governance Alpha" component allows for a lower cash payout, preserving more of the treasury for the mission.
-*   **Cons:** "Governance Alpha" is complex and may confuse some investors. It introduces a permanent, unelected power bloc into the institution, which could be seen as "toxic" or undemocratic.
-
-**Model B: The Public Good (Simple Bond) Model**
-
-*   **The Pitch:** Target a broader audience of impact investors, foundations, and the general public who are motivated by the mission and a clean financial return.
-*   **The Offer:** A higher, cash-only return (e.g., ~50-60% CAGR to ensure the risk-adjusted return is compelling) with no governance rights. Investors are paid back their multiple and then they are out.
-*   **Pros:** Brilliantly simple and easy to understand. It is more transparently democratic and open to a wider range of investors.
-*   **Cons:** May fail to attract the powerful, "shark" investors whose political muscle is necessary to win. The higher cash payout required to compensate for the lack of governance could significantly drain the treasury in its early years, hamstringing the mission.
-
----
-
-The remainder of this document provides a deep dive into the mechanics and logic of **Model A**, as it is the more complex of the two strategies. We currently believe it is the more pragmatic path to victory, but we are open to being convinced otherwise.
-
-## 2. Deep Dive: The Strategic Partner Model
+## 2. How It Works
 
 ### What We're Competing Against
 
@@ -50,7 +28,7 @@ The best investment in history is the **Renaissance Medallion Fund**, which made
 
 We're going to beat that.
 
-## 3. How We Beat 39% Returns
+## 3. How We Beat the Best Investment in History
 
 It's simple math.
 
@@ -65,13 +43,8 @@ It's simple math.
 - **We control:** $27 billion every year, forever.
 - **That's 10.8x leverage.** This is why we can pay such high returns.
 
-**B. You Also Get to Control the Money**
-Beyond cash returns, you get voting rights over the **$27 billion annual health treasury**. You can:
-- Fund the diseases you care about.
-- Launch million-dollar prize challenges.
-- Start biotech companies with treasury money.
-
-No other investment gives you control over $27 billion per year.
+**B. The Scale**
+We're not just redirecting money—we're capturing the biggest pile of wasted capital on Earth. The $27 billion we redirect is just 1% of global military spending, but it's 40X more than the world currently spends on curing disease.
 
 ## 4. The Math
 
@@ -83,7 +56,7 @@ Our [cash flow spreadsheet](./dih-treasury-cash-flow-model.md) shows exactly how
 
 ### The Treasury Keeps Growing
 
-We start by redirecting 1% of military spending. But the plan is to increase this percentage over time. This means the treasury grows, and your voting rights become worth more every year. For details, see [The Endgame: A Multi-Generational Strategy to Phase Out War](../strategy/the-endgame-phasing-out-war.md).
+We start by redirecting 1% of military spending. But the plan is to increase this percentage over time. This means more countries join, the treasury grows, and your returns get even better. For details, see [The Endgame: A Multi-Generational Strategy to Phase Out War](../strategy/the-endgame-phasing-out-war.md).
 
 ## 5. How We Price the Risk
 
@@ -106,30 +79,17 @@ We don't know for sure. Nobody does. So we're going to use prediction markets to
 
 This turns political risk into something you can actually measure and price.
 
-## 6. VICTORY Bonds vs. The Medallion Fund
+## 6. The Risk-Adjusted Math
 
-Here's the real test: Is this better than the best investment in history?
+**Simple math:** 40% beats 39%.
 
-### Proving the Need for Governance Alpha
+The Renaissance Medallion Fund made 39% per year for 30 years. We target 40% per year by using 10.8X leverage—you give us $2.5 billion, we control $27 billion per year.
 
-A simple expected value calculation on the cash returns alone *intentionally falls short* of the Medallion benchmark. This is by design, as it mathematically proves that the majority of the investment's value is derived from the governance rights.
+**The Expected Value:**
+- Medallion Fund: 39% return = $3.9M profit on $10M
+- VICTORY Bonds: 40% return = $4M profit on $10M  
 
-**The Math on Cash Returns:**
-- An investment in the Medallion Fund has an expected value of **$13.9M** on a $10M investment (a 39% return).
-- The expected value of the cash portion of a VICTORY Bond is: `(70% × $14M) + (30% × $0) = $9.8M`.
-
-This isn't a weakness in the model; it's the entire point. It proves that a simple bond could never compete. The investment is only superior when you include the immense value of controlling a $27 billion annual treasury.
-
-### How We Beat the Benchmark
-
-To be a better investment, the total risk-adjusted value must exceed Medallion's $13.9M.
-
-`(EV of Cash Returns) + (EV of Governance Alpha) > $13.9M`
-`$9.8M + (70% * Value of Governance Alpha) > $13.9M`
-
-This means the value of the governance rights in a success scenario must be priced at over **$5.86 million** on a $10M investment. Given the ability to direct billions in funding, incubate companies, and shape the future of global health, this valuation is extremely conservative.
-
-The Governance Alpha is what makes this the best investment in the world.
+We beat the best by capturing political leverage that no hedge fund can access.
 
 ## 7. Why Lobbying Pays So Well (And How We Use It)
 
@@ -200,7 +160,7 @@ If you're trying to save lives with your money, this beats every charity by a hu
 
 - **The Leverage**: A $1M investment could unlock $1B in health funding. That's 1,000X leverage—compared to [~10X for the best charities](../references.md#givewell-impact-multipliers) like malaria nets.
 - **EA Principles**: This follows effective altruism logic—find the intervention that saves the most lives per dollar.
-- **Risk Control**: Use Metaculus to bet on high-probability outcomes, and your voting rights ensure the money goes where you want.
+- **Risk Control**: Use Metaculus to bet on high-probability outcomes, and the democratic treasury ensures the money goes to the most effective treatments.
 
 ### For Defense Contractors
 
