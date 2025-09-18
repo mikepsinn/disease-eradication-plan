@@ -16,11 +16,11 @@ The world spends [**$2.72 trillion**](../references.md#global-military-spending)
 
 We want to spend **$1.2–$2.5 billion** to flip this permanently.
 
-The plan is simple: take **$27+ billion per year** from military budgets and give it to health research instead. The people who lend us the money upfront get paid back with returns that beat **Renaissance Technologies' Medallion Fund (~39% per year)**—the best investment in history.
+The plan is simple: take **$27+ billion per year** from military budgets and give it to health research instead. The people who lend us the money upfront get paid back with **40% annual returns**—beating the best investment ever.
 
 ## 2. How We Beat the Best Investment Ever
 
-The best investment in history is the **Renaissance Medallion Fund**, which made [**~39% per year**](../references.md#top-pe-hedge-funds) for 30 years straight.
+The best investment in history made [**39% per year**](../references.md#top-pe-hedge-funds) for 30 years straight.
 
 We target **40% per year** by using political leverage no hedge fund can access.
 
@@ -38,69 +38,32 @@ The treasury grows over time as more countries join. For details, see [The Endga
 
 ## 4. How We Price the Risk
 
-The biggest question from investors is: "What are the odds this actually works?" 
+**The question:** What are the odds this actually works?
 
-We don't know for sure. Nobody does. So we're going to use prediction markets to figure it out in real time.
-
-**How It Works:**
-
-We use prediction markets (Metaculus, Polymarket) to bet on key milestones. If the odds are low, we pay higher returns. If the odds improve, we pay lower returns to new investors.
+**The answer:** We use prediction markets (Metaculus, Polymarket) to find out in real time. If the odds are low, we pay higher returns. If the odds improve, we pay lower returns to new investors.
 
 This turns political risk into something you can actually measure and price.
 
-## 5. Why This Beats Everything
-
-**Simple math:** We're doing what defense contractors do, but better.
+## 5. The Secret: Political Arbitrage
 
 Defense contractors spend [$14 million on lobbying, get $70.8 billion in contracts](../references.md#military-lobbying-returns). That's 5,000% returns by buying government spending.
 
-We're doing the same thing, except:
-- **Better scale:** We're lobbying the whole world, not one country
-- **Better returns:** 40% beats the best hedge fund ever (39%)
-- **Better cause:** Curing disease instead of starting wars
-
-Bottom line: 40% beats 39%.
-
-### The Legal Disclaimer
-
-We can't promise you'll make money. Nobody can. Here's what we can say:
-
-- **Goal:** Beat the best investments out there.
-- **Money Source:** Your returns come from treaty money, capped at 50% of what we collect.
-- **Transparency:** All the money flows are tracked on-chain, so you can see exactly what's happening.
-- **Risks:** If politicians don't sign the treaty, you lose your money.
-
-For legal details, see [Impact Securities and Digital Public Goods Financing Act (Draft)](../legal/impact-securities-reform.md#section-4a-marketing--disclosures-safe-harbor-plain-english-outcome-linked).
-
-### Where the Money Really Comes From
-
-The $27B treasury pays your returns. But the real source of value is the **$16.5 trillion we waste on war every year**. The treaty captures a tiny slice of this waste. For details, see [The Peace Dividend: Value Capture & Distribution Model](./peace-dividend-value-capture.md).
+We're doing the same thing, but for curing disease instead of starting wars.
 
 
-## 6. The Risks (And How We Deal With Them)
 
-This could fail. Let's be honest about the risks and what we're doing about them.
+## 6. The Risks
 
-### When You Get Paid
+This could fail. Here's what could go wrong and how we handle it:
 
-You get paid when the treaty money comes in, not on fixed dates. Details in [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md):
+**Politicians Don't Sign:** We need 280M people to vote for the referendum. **How we fix it:** Prediction markets price the risk in real time. If odds are low, we pay higher returns.
 
-- **Years 1-2**: Small payments (2–6%) from donations and early program money.
-- **Years 3-5**: Big payments start 18–36 months after the first major country signs the treaty.
-- **Years 5-10**: Full payback at 40% annual returns.
-- **If only 5 countries sign**: You still make 3.4x your money back in the first year.
+**We Run Out of Money:** If treaty money is delayed, you could lose your investment. **How we fix it:** First investors get paid first, and you can track our cash position in real time.
 
-### What Could Go Wrong
+**Nobody Invests:** Early investors might worry we won't hit our funding target. **How we fix it:** Smart contract escrow. If we don't hit the target, you automatically get your money back.
 
-Three main risks:
-
-- **Politicians Don't Sign**: We need 280M people to vote for the referendum. **How we fix it:** Metaculus markets price the risk in real time. If odds are low, we pay higher returns.
-- **We Run Out of Money**: If treaty money is delayed, you could lose your investment. **How we fix it:** First investors get paid first, and you can track our cash position in real time.
-- **Nobody Invests**: Early investors might worry we won't hit our funding target. **How we fix it:** Smart contract escrow. If we don't hit the target, you automatically get your money back.
+**When You Get Paid:** You get paid when treaty money comes in, not on fixed dates. Big payments start 18–36 months after the first major country signs.
 
 For all the details, see [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
 
-
-
 ---
-
