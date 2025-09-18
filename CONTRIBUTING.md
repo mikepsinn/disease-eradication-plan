@@ -87,15 +87,18 @@ The style of this project must balance two core principles: genuine outrage and 
 The plan _is_ the repository. We're building a book that's so clear anyone can read it.
 
 1.  **Find something to improve:** Look at the `roadmap.md` for priorities.
-2.  **Make your changes:** Fork the repo and create a branch, or just edit on GitHub if you're not technical.
-3.  **Follow the standards:** Use the rules in this document.
-4.  **Submit a pull request:** Explain how your change makes things better.
+2.  **If changing book structure:** Update the [Table of Contents in README.md](./README.md#table-of-contents) first.
+3.  **Make your changes:** Fork the repo and create a branch, or just edit on GitHub if you're not technical.
+4.  **Follow the standards:** Use the rules in this document.
+5.  **Submit a pull request:** Explain how your change makes things better.
 
 ## Content and Style Standards
 
 ### 1. Information Architecture: Chapters, Sections, and The Appendix
 
 This repo is structured like a book. Root files are "chapters." Subdirectories are "sections" with the details. `reference/` is the appendix.
+
+**IMPORTANT:** The [Table of Contents in README.md](./README.md#table-of-contents) is the authoritative book structure. Before adding new chapters, sections, or changing the book architecture, update that Table of Contents first. This prevents topic creep and maintains narrative flow.
 
 **Note:** Don't edit `brain/book/index.md` directly - it's auto-generated from frontmatter.
 
