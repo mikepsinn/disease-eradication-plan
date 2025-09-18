@@ -1,6 +1,6 @@
 ---
-title: War on Disease — Eradicating Disease by Redirecting 1%
-description: "A plan to end war and disease by making peace more profitable than conflict through a system of transparent, legal bribes."
+title: The Complete Idiot's Guide to Ending War and Disease
+description: "How to Persuade Humanity to Redirect 1% of Military Spending to Radically Accelerate Medical Progress Through Hyper-Efficient Decentralized Clinical Trials"
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds]
