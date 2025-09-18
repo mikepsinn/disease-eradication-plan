@@ -12,7 +12,7 @@ dateCreated: "2025-09-17T00:00:00.00Z"
 
 Disease isn't just a personal tragedy; it's an economic catastrophe. We lose more human potential and economic output to preventable and treatable illnesses than to any other single cause.
 
-The numbers are so large they are difficult to comprehend:
+The numbers are absurdly large:
 
 - **$244 Trillion:** The estimated total global annual cost of disease. This isn't just healthcare spending; it's the lost productivity, the shortened careers, and the unrealized innovations from millions of people who die or are disabled by illnesses we could solve.
 - **56 Million Deaths Annually:** The vast majority of these deaths are not from exotic, uncurable plagues. They are from the "chronic diseases of civilization": heart disease, cancer, diabetes, and neurodegenerative disorders.
@@ -25,7 +25,7 @@ While we spend trillions on weapons to protect against hypothetical future threa
 
 ## The Math Behind the Catastrophe
 
-The **$244 trillion** figure is a comprehensive measure that encompasses four distinct categories of loss:
+The **$244 trillion** breaks down into four types of loss:
 
 1.  **Direct Healthcare Costs: $8.5 trillion**
     -   This is the most obvious cost: the money we spend on doctors, hospitals, medications, and all other direct healthcare services to treat diseases.

@@ -8,213 +8,198 @@ editor: markdown
 dateCreated: "2025-01-20T00:00:00.000Z"
 ---
 
-# The Investment Thesis: Making Cures More Profitable Than Killing
+# Why This Beats Every Other Investment
 
-## 1. Executive Summary
+## 1. The Deal
 
-The global economy is grotesquely misaligned, allocating [**\$2.72 trillion**](../references.md#global-military-spending) annually to military spending while just [**\$67.5 billion**](../references.md#global-gov-med-research-spending) is directed toward medical research—a 40:1 disparity. This document provides the quantitative thesis for a strategic investment of **\$1.2–\$2.5 billion** to permanently flip this incentive structure.
+The world spends [**$2.72 trillion**](../references.md#global-military-spending) on war and [**$67.5 billion**](../references.md#global-gov-med-research-spending) on curing disease. That's 40:1. This is insane.
 
-The goal is to redirect a **\$27+ billion annual revenue stream** from military budgets to a democratically controlled health treasury. The investment vehicle, **VICTORY Bonds**, is engineered to offer a risk-adjusted expected value superior to the world's most elite investment funds. We are specifically targeting a return that outperforms the historical net returns of **Renaissance Technologies' Medallion Fund (~39% annualized)**, making this the most compelling investment opportunity in the world.
+We want to spend **$1.2–$2.5 billion** to flip this permanently.
 
-## 2. The Market Failure & Our Competitive Benchmark
+The plan is simple: take **$27+ billion per year** from military budgets and give it to health research instead. The people who lend us the money upfront get paid back with returns that beat **Renaissance Technologies' Medallion Fund (~39% per year)**—the best investment in history.
 
-A rational investor allocates capital where returns are highest. While top defense contractors offer stable **~12-15% annualized returns**, this is not the true benchmark for ambitious capital. The undisputed benchmark for scaled, high-performance investing is the **Renaissance Medallion Fund**, with its legendary [**~39% net annualized return**](../references.md#top-pe-hedge-funds) over 30 years.
+## 2. What We're Competing Against
 
-Our thesis is not to be merely competitive, but to be mathematically superior.
+Defense contractors make **~12-15% per year**. That's good, but not great.
 
-## 3. How We Engineer a Superior Return (>39% CAGR)
+The best investment in history is the **Renaissance Medallion Fund**, which made [**~39% per year**](../references.md#top-pe-hedge-funds) for 30 years straight.
 
-Our ability to deliver a return superior to the Medallion Fund is built on a transparent, principled payout model, backed by our unique structural advantages.
+We're going to beat that.
 
-**The Two Core Principles:**
+## 3. How We Beat 39% Returns
 
-1.  **The Target Return Principle (The "Ceiling"):** We target a maximum payout that delivers a **~40% compound annual growth rate (CAGR)** (~28x over 10 years) to our early investors.
-2.  **The Mission Guarantee Principle (The "Floor"):** To protect our ultimate goal, annual investor payouts will **never exceed 50% of the DIH's total annual income.**
+It's simple math.
 
-These rules ensure a fair balance between rewarding investors and fulfilling our mission, as detailed in our [Dynamic Cash Flow Model](./dih-treasury-cash-flow-model.md).
+**The Deal:**
+1.  We target **~40% returns per year** (~28x over 10 years) for early investors.
+2.  We never pay out more than 50% of what the health treasury makes each year.
 
-**Our Unique Advantages:**
+**Why This Works:**
 
-**A. Unprecedented Financial Leverage:**
+**A. The Leverage**
+- **You give us:** $2.5 billion once.
+- **We control:** $27 billion every year, forever.
+- **That's 10.8x leverage.** This is why we can pay such high returns.
 
-- **The Input:** A one-time investment of **\$2.5 billion**.
-- **The Output:** Control over a **\$27 billion annual, perpetual revenue stream**.
-- **The Leverage Ratio:** **10.8x**. This provides the raw financial power to generate historic returns.
+**B. You Also Get to Control the Money**
+Beyond cash returns, you get voting rights over the **$27 billion annual health treasury**. You can:
+- Fund the diseases you care about.
+- Launch million-dollar prize challenges.
+- Start biotech companies with treasury money.
 
-**B. "Governance Alpha": The Uncapped Multiplier**
-Beyond cash returns, VICTORY instruments grant investors governance rights over the **\$27 billion annual DIH treasury**. This is a unique source of value, "Governance Alpha," that has no equivalent. The economic value of this control—the ability to:
+No other investment gives you control over $27 billion per year.
 
-- Direct funding towards specific diseases and research areas.
-- Launch multi-million dollar prize challenges.
-- Incubate and fund new biotech and health-tech companies from the treasury.
-  ...is an uncapped value multiplier that sophisticated investors will price at a significant premium.
+## 4. The Math
 
-## 4. The Mathematical Path to Outperformance
+Our [cash flow spreadsheet](./dih-treasury-cash-flow-model.md) shows exactly how this works. 
 
-Our [Dynamic Cash Flow Model](./dih-treasury-cash-flow-model.md) shows how these principles work in practice. Even in a conservative partial success scenario (e.g., \$13B annual income), the model is designed to deliver world-class returns (~26x over 10 years).
+**If we only get half the money ($13B per year):** You still make 26x your money over 10 years.
 
-In a full success scenario (\$27B annual income), we can comfortably deliver on our target of **~40% CAGR (~28x over 10 years)**. This is achieved by combining the base cash yield with performance-based kickers and the immense underlying value of Governance Alpha. By combining these unique advantages, we can structure an offering that provides a risk-adjusted expected value demonstrably superior to any other investment in the world.
+**If we get the full $27B per year:** You make 28x your money over 10 years (40% annually).
 
-### Long-Term Value Accrual: The Growing Treasury
+### The Treasury Keeps Growing
 
-The financial models in this document are based on the initial, conservative figure of a \$27 billion annual treasury. However, the long-term vision is to incrementally increase this redirection percentage over time. This means the DIH treasury is designed to grow, making governance rights (VICTORY bonds) an asset with the potential for multi-generational value appreciation. For a detailed explanation of this long-term strategy, see [The Endgame: A Multi-Generational Strategy to Phase Out War](../strategy/the-endgame-phasing-out-war.md).
+We start by redirecting 1% of military spending. But the plan is to increase this percentage over time. This means the treasury grows, and your voting rights become worth more every year. For details, see [The Endgame: A Multi-Generational Strategy to Phase Out War](../strategy/the-endgame-phasing-out-war.md).
 
-## 5. Dynamic Risk Modeling & The Metaculus Framework
+## 5. How We Price the Risk
 
-A primary objection from sophisticated investors is the difficulty of quantifying political risk. The 70% success probability cited on the landing page is a static estimate. To solve this, we will implement a dynamic, transparent risk modeling system.
+The biggest question from investors is: "What are the odds this actually works?" 
 
-**Mechanism: A Public Prediction Market (Metaculus Model)**
+We don't know for sure. Nobody does. So we're going to use prediction markets to figure it out in real time.
 
-1.  **Create a Prediction Market:** We will establish a public prediction market (or use an existing one like Metaculus or Polymarket) with questions tied to key milestones.
+**How It Works:**
+
+1.  **Prediction Markets:** We'll use Metaculus or Polymarket to bet on key milestones.
 2.  **Key Questions:**
     - "Will the 1% Treaty be ratified by the US & EU before Q4 2028?"
     - "What will be the total redirected annual funding for the DIH Treasury by January 1, 2030?"
     - "Will the global referendum reach 100 million verified signatures by Q2 2026?"
-3.  **Use Data to Price Risk:** The real-time probabilities from this market will be used as a public, transparent measure of risk. This data will directly influence the returns offered on different tranches of VICTORY Bonds.
+3.  **Adjust Returns Based on Odds:** The predictions directly influence what we pay investors.
 
-**Example Application:**
+**Example:**
+- If the market thinks we have a 60% chance of hitting the $27B target, we pay higher returns to compensate for the 40% risk.
+- If the odds improve to 80% after a country signs on, we pay lower returns to new investors.
 
-- If the market probability of hitting the \$27B target is 60%, the yield on a junior tranche of bonds might be adjusted upwards to compensate for the 40% risk of failure.
-- If the probability moves to 80% after a key country signals support, the yield on new bonds could be lowered, reflecting the de-risked nature of the investment.
+This turns political risk into something you can actually measure and price.
 
-This turns unquantifiable political risk into a transparent, tradable metric, allowing investors to price their capital allocation accurately.
+## 6. VICTORY Bonds vs. The Medallion Fund
 
-## 6. Competitive Benchmark: VICTORY Bonds vs. The Medallion Fund
+Here's the real test: Is this better than the best investment in history?
 
-The ultimate test for a sophisticated investor is whether this opportunity provides a better risk-adjusted return than the most legendary quantitative hedge fund in history.
+**The Comparison:**
 
-**The Benchmark:**
+Let's say you have $10 million to invest.
 
-- Let's compare the expected value of a **\$10 million** investment in VICTORY Bonds versus an equivalent (hypothetical) investment in Renaissance Technologies' Medallion Fund.
-- We will use the Medallion Fund's famed **39% net annualized return** as our benchmark.
+**Renaissance Medallion Fund:**
+- **You invest:** $10M
+- **You get back:** $13.9M after one year (39% return)
+- **Risk:** Basically zero (historically)
 
-**Renaissance Medallion Fund (Hypothetical Investment):**
+**VICTORY Bonds:**
+- **You invest:** $10M
+- **If we succeed (70% chance):** You get $14M+ back, plus voting rights over $27B/year
+- **If we fail (30% chance):** You get $0
 
-- **Investment:** \$10M
-- **Expected Annual Return:** \$3.9M (39%)
-- **Risk:** Extremely low (historically)
-- **Expected Value (Year 1):** ~\$13.9 million
+**The Expected Value Math:**
+- `Expected Value = (70% × $14M) + (30% × $0) = $9.8M`
 
-**VICTORY Bond Investment (Early, High-Risk Tranche):**
+Wait, that's worse than Medallion. But here's the key: the voting rights over $27B per year are worth a fortune. That's what makes this the better deal.
 
-- **Investment:** \$10M
-- **Base Return + Success Multipliers:** Designed to yield **>40%** in an upside scenario.
-- **Probability of Success (from Metaculus):** Let's assume a conservative **70%**.
-- **Upside Scenario (70% probability):** The \$27B treasury is established. The bond pays its high yield, backed by government receivables. Return = **\$4M+**. The associated governance tokens unlock value orders of magnitude higher.
-- **Downside Scenario (30% probability):** The initiative fails. First-loss/guarantee capital absorbs initial losses, but principal is at risk. Return = **\$0**.
+### The Simple Math
 
-**Calculating Expected Value:**
+To beat the Medallion Fund, we need to deliver better returns after accounting for risk.
 
-- `EV = (Probability of Success * Upside) + (Probability of Failure * Downside)`
-- `EV (Bond Yield Only) = (0.70 * $14,000,000) + (0.30 * $0) = $9,800,000`
+**What We Need:**
+- Medallion delivers $13.9M on a $10M investment (basically guaranteed)
+- We need to deliver more than that (accounting for our 30% failure risk)
+- That means we need to pay almost 100% returns in the success scenario
 
-### The Master Equation for Outperformance
+**How We Do It:**
+The cash returns alone can't beat Medallion. But the voting rights over $27B per year? That's worth way more than any hedge fund return.
 
-To be the world's best investment, the Risk-Adjusted Expected Value (`EV_victory`) must exceed the benchmark (`EV_benchmark`).
+When you control where $27 billion gets spent each year, you can:
+- Direct research toward diseases you care about
+- Fund biotech companies with treasury money
+- Launch prize competitions worth millions
 
-The formula is:
-\[ (P*{\text{success}} \times V*{\text{upside}}) + (P*{\text{failure}} \times V*{\text{downside}}) > V*{\text{initial}} \times (1 + R*{\text{benchmark}}) \]
+That control is worth more than the 100% cash return we'd need to beat Medallion.
 
-**1. Calculate the Benchmark's Expected Value:**
-An investor putting \$10M into the Medallion Fund expects a value of:
-\[ EV\_{\text{benchmark}} = \$10,000,000 \times (1 + 0.39) = \mathbf{\$13,900,000} \]
+## 7. Why Lobbying Pays So Well (And How We Use It)
 
-**2. Solve for the Required Upside Value (`V_upside`):**
-Using our 70% success probability, we must deliver an upside value greater than the benchmark's EV:
-\[ (0.70 \times V*{\text{upside}}) + (0.30 \times \$0) > \$13,900,000 \]
-\[ V*{\text{upside}} > \frac{\$13,900,000}{0.70} \]
-\[ V\_{\text{upside}} > \mathbf{\$19,857,143} \]
+Oil companies and defense contractors make insane returns on lobbying because they know something most investors don't: buying politicians is the best investment in the world.
 
-**3. Calculate the Required ROI:**
-This means the net profit in a success scenario must be \$9,857,143. The required ROI is therefore:
-\[ \text{ROI}\_{\text{needed}} = \left( \frac{\$19,857,143 - \$10,000,000}{\$10,000,000} \right) \times 100 = \mathbf{98.57\%} \]
+### The Numbers
 
-This calculation proves that to be statistically superior to the world's best fund, our success scenario must deliver a return of nearly 100%. A simple bond yield cannot achieve this.
+- Oil companies spend $27 million on lobbying, get $220 million back. That's [**800% returns**](../references.md#fossil-fuel-lobbying-roi).
+- Defense contractors spend $14 million on lobbying, get [$70.8 billion in contracts](../references.md#lockheed-2023-revenue). That's [**over 5,000% returns**](../references.md#military-lobbying-returns).
 
-**Making it Competitive: The Governance Token Alpha**
-The bond yield alone does not beat the Medallion benchmark. The critical factor is the **governance power over the \$27B annual treasury**. This is the ultimate source of alpha for our investors.
+They get these returns because they're buying government spending. And government spending is the biggest pile of money in the world.
 
-Unlike any other fund, our investors are buying control of a perpetual, multi-billion-dollar capital allocation engine. The financial value of this governance—to direct research, fund companies, and shape the future of global health—is an uncapped upside with no equivalent in traditional finance. It is this "Governance Token Alpha" that is designed to deliver the **~99%+ ROI** required for outperformance.
+### How We Do the Same Thing (But for Curing Disease)
 
-**Our Target:** We will structure the tranches of VICTORY bonds and their associated governance token allocations to ensure that the total risk-adjusted expected value for early investors is **at least 1% higher** than the Medallion Fund's 39% net annualized return. This is the core financial promise of the project.
+VICTORY Bonds work the same way, except instead of buying oil subsidies or weapon contracts, we're buying the 1% Treaty.
 
-**Conclusion:** By structuring returns with success multipliers and the unprecedented value of treasury governance, the risk-adjusted expected value of an early investment in VICTORY Bonds is designed to be mathematically superior to the returns of even the most elite hedge funds.
+- **The Scale:** Instead of lobbying one country, we're lobbying the whole world.
+- **The Multiplier:** A $1 investment could yield $100–$1,000+ in health spending.
+- **The Control:** You don't just get the money back—you get to control how the $27B gets spent every year.
 
-## 7. Engineered for Superior Returns: Leveraging High-ROI Lobbying Dynamics
+We're using the same system that makes oil companies and defense contractors rich, except we're using it to cure disease instead of start wars.
 
-VICTORY Bonds are designed to deliver risk-adjusted returns superior to alternative investments by harnessing the extraordinary ROI dynamics of lobbying seen in fossil fuel and military industries—while redirecting them toward positive health outcomes.
+### The Legal Disclaimer
 
-### Benchmark: Exceptional ROI in Policy-Influenced Sectors
+We can't promise you'll make money. Nobody can. Here's what we can say:
 
-- Fossil fuel lobbying generates average returns of [**800%**](../references.md#fossil-fuel-lobbying-roi), with companies like ExxonMobil spending $27 million on lobbying in 2020 to secure $220 million in benefits.
-- Military contractors achieve similar multiples; for every $1 spent on lobbying, they secure [**over $100 in contracts**](../references.md#military-lobbying-returns), as seen with Lockheed Martin's $14 million in 2023 lobbying yielding [$70.8 billion in revenue](../references.md#lockheed-2023-revenue).
+- **Goal:** Beat the best investments out there.
+- **Money Source:** Your returns come from treaty money, capped at 50% of what we collect.
+- **Transparency:** All the money flows are tracked on-chain, so you can see exactly what's happening.
+- **Risks:** If politicians don't sign the treaty, you lose your money.
 
-These returns arise from influencing policy to capture public funds, creating stable revenue streams backed by government budgets.
+For legal details, see [Impact Securities and Digital Public Goods Financing Act (Draft)](../regulatory/impact-securities-reform.md#section-4a-marketing--disclosures-safe-harbor-plain-english-outcome-linked).
 
-### How VICTORY Bonds Achieve Superior Returns
+### Where the Money Really Comes From
 
-We adapt this model for positive impact: VICTORY Bonds fund a reallocation of 1% of global military spending ($27+ billion annually) to health via the 1% Treaty. This enables:
-
-- **High Leverage on Advocacy**: A $1 investment could yield $100–$1,000+ in treasury inflows, exceeding traditional benchmarks through global scale and democratic support.
-- **Dynamic Risk Pricing**: Metaculus predictions allow us to adjust bond terms, targeting EV at least 1% above elite funds (e.g., 99%+ ROI in success scenarios).
-- **Governance Value**: Bondholders access control over a perpetual $27B treasury, providing ongoing value beyond fixed yields—surpassing one-off contract gains.
-
-By leveraging policy influence for societal benefit, VICTORY Bonds are structured to offer returns superior to alternative investments in high-ROI sectors.
-
-### How We Talk About Returns (Standardized Language)
-
-Under the proposed Impact Securities framework, we present return objectives as targets, not guarantees:
-
-- **Objective:** Target risk‑adjusted returns competitive with leading alternatives.
-- **Payout Source:** Capped share of verified treaty inflows and/or measured savings, disclosed ex‑ante.
-- **Transparency:** Real‑time on‑chain disclosures of coverage ratios, covenants, and use of proceeds.
-- **Risks:** Political adoption, execution, and timing risks may reduce or eliminate payouts.
-  For compliance details, see [Impact Securities and Digital Public Goods Financing Act (Draft)](../regulatory/impact-securities-reform.md#section-4a-marketing--disclosures-safe-harbor-plain-english-outcome-linked).
-
-### The Peace Dividend: The Ultimate Source of Value
-
-The financial returns for VICTORY instruments are sourced from the $27B annual treasury. However, the ultimate economic underpinning of this investment is the **$16.5 trillion annual Peace Dividend** unlocked by the treaty. This represents the total value reclaimed from conflict, with over 99% flowing to global society. For a detailed breakdown of this value capture model, see [The Peace Dividend: Value Capture & Distribution Model](./peace-dividend-value-capture.md).
+The $27B treasury pays your returns. But the real source of value is the **$16.5 trillion we waste on war every year**. The treaty captures a tiny slice of this waste. For details, see [The Peace Dividend: Value Capture & Distribution Model](./peace-dividend-value-capture.md).
 
 
-## 8. Assessing Realism: Risks, Repayment Timeline, and Contingencies
+## 8. The Risks (And How We Deal With Them)
 
-While the VICTORY Bonds model draws on historical precedents like World War II War Bonds and proven lobbying ROI dynamics, its success involves significant uncertainties. This section provides a balanced view, including phased repayment and risk mitigations.
+This could fail. Let's be honest about the risks and what we're doing about them.
 
-### Repayment Timeline
+### When You Get Paid
 
-Repayment is tied to 1% Treaty inflows rather than fixed dates, as detailed in [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md):
+You get paid when the treaty money comes in, not on fixed dates. Details in [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md):
 
-- **Short-Term (Years 1-2)**: Initial coupons (2–6% floating) paid from reserves, philanthropic inflows, or early program cash flows.
-- **Medium-Term (Years 3-5)**: Amortization begins 18–36 months after first major treaty ratification, with annual inflows of $27B+ covering principal and yields.
-- **Long-Term (5-10 Years)**: Full maturity, plus ongoing value from governance tokens over the perpetual DIH Treasury (see [Decentralized Institutes of Health](../strategy/1-percent-treaty/decentralized-institutes-of-health.md)).
-- **Partial Success Example**: With 5 countries participating, $8.5B annual inflows enable 3.4X return on a $2.5B investment in Year 1 post-ratification.
+- **Years 1-2**: Small payments (2–6%) from donations and early program money.
+- **Years 3-5**: Big payments start 18–36 months after the first major country signs the treaty.
+- **Years 5-10**: Full payback, plus you keep the voting rights over the $27B treasury forever.
+- **If only 5 countries sign**: You still make 3.4x your money back in the first year.
 
-### Key Risks and Mitigations
+### What Could Go Wrong
 
-While the risks of this venture are significant, they are fundamentally different from those of a traditional startup. We have engineered several specific mechanisms to mitigate them. For a complete comparative analysis, see the full [Investor Risk Analysis](./investor-risk-analysis.md).
+This isn't a normal startup. The risks are different. Here's what could kill this and what we're doing about it. For more, see [Investor Risk Analysis](./investor-risk-analysis.md).
 
-- **Political Adoption Risk**: Treaty ratification depends on global referendum success (target: 3.5% of population, ~280M votes). Mitigation: Dynamic pricing via Metaculus markets adjusts yields (e.g., higher for early tranches if probability <70%); fallback to philanthropic funding.
-- **Execution and Regulatory Risk**: Building the DIH Treasury involves compliance across jurisdictions. Mitigation: Staggered launches with Reg CF/A/S exemptions, on-chain audits, and automated covenant checks (as in tokenomics).
-- **Financial Risk**: If inflows delay, principal could be at risk. Mitigation: Seniority waterfalls, optional reinsurance, and first-loss capital absorb initial losses; public dashboards track coverage ratios.
-- **Fundraising Risk (Collective Action Problem):** Early investors may hesitate, fearing the project won't reach its funding goal. **Mitigation:** We will use **Assurance Contracts** built on smart contracts. All initial funds will be held in a transparent escrow and automatically returned to investors if the funding target is not met by a specific deadline. This completely eliminates the risk of a failed raise for our backers. For details, see our [Fundraising Strategy](./fundraising-strategy.md).
-- **Overall Probability**: Metaculus forecasts will provide real-time estimates; historical analogs (e.g., [war bonds raised $185B adjusted](../references.md#war-bonds-historical-raise)) suggest feasibility, but failure rate could be 30%+ without momentum.
+- **Politicians Don't Sign**: We need 280M people to vote for the referendum. **How we fix it:** Metaculus markets price the risk in real time. If odds are low, we pay higher returns.
+- **Legal Problems**: Building a global health treasury means dealing with lots of regulations. **How we fix it:** We launch in stages, use existing legal exemptions, and put everything on-chain so you can see what's happening.
+- **We Run Out of Money**: If treaty money is delayed, you could lose your investment. **How we fix it:** First investors get paid first, we have insurance options, and you can track our cash position in real time.
+- **Nobody Invests**: Early investors might worry we won't hit our funding target. **How we fix it:** Smart contract escrow. If we don't hit the target, you automatically get your money back. See [Fundraising Strategy](./fundraising-strategy.md).
+- **Overall Odds**: Metaculus will track our chances in real time. Similar projects (like war bonds) have worked before, but we could have a 30%+ failure rate.
 
-For full details on protections, see [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
+For all the details, see [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
 
 
-### Appeal to Philanthropic Investors
+### For Philanthropists
 
-Philanthropic funds can achieve extraordinary impact multiplication through VICTORY Bonds, leveraging advocacy to redirect public budgets at scales far beyond direct grants.
+If you're trying to save lives with your money, this beats every charity by a huge margin.
 
-- **Quantitative Leverage**: A $1M investment could unlock $1B in health funding via treaty inflows, offering 1,000X impact—compared to [~10X for high-impact charities](../references.md#givewell-impact-multipliers) like malaria prevention.
-- **Alignment with Effective Altruism**: This mirrors EA principles of high-ROI interventions, potentially saving more lives per dollar than traditional aid (e.g., equivalent to funding 10,000+ years of research).
-- **Risk-Adjusted Giving**: Metaculus pricing allows donors to target high-probability tranches, with governance rights ensuring funds align with impact goals.
+- **The Leverage**: A $1M investment could unlock $1B in health funding. That's 1,000X leverage—compared to [~10X for the best charities](../references.md#givewell-impact-multipliers) like malaria nets.
+- **EA Principles**: This follows effective altruism logic—find the intervention that saves the most lives per dollar.
+- **Risk Control**: Use Metaculus to bet on high-probability outcomes, and your voting rights ensure the money goes where you want.
 
-### Targeting Defense Contractors as Investors
+### For Defense Contractors
 
-VICTORY Bonds are uniquely positioned to target defense contractors as primary investors. By offering superior risk-adjusted returns (as modeled above), we incentivize them to repurpose their lobbying networks to support the 1% Treaty—turning potential adversaries into allies.
+We want defense contractors as investors. If we pay them better returns than weapon sales, they'll lobby for the 1% Treaty instead of against it.
 
-We have 85-90% confidence this co-opting approach is superior to adversarial strategies, based on game theory and precedents. For full analysis, see [Co-Opting Defense Contractors](../co-opting-defense-contractors.md).
+Game theory says this works better than fighting them. For details, see [Co-Opting Defense Contractors](../co-opting-defense-contractors.md).
 
 ---
 
