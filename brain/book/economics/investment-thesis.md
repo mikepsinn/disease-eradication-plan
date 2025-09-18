@@ -161,7 +161,7 @@ We can't promise you'll make money. Nobody can. Here's what we can say:
 - **Transparency:** All the money flows are tracked on-chain, so you can see exactly what's happening.
 - **Risks:** If politicians don't sign the treaty, you lose your money.
 
-For legal details, see [Impact Securities and Digital Public Goods Financing Act (Draft)](../regulatory/impact-securities-reform.md#section-4a-marketing--disclosures-safe-harbor-plain-english-outcome-linked).
+For legal details, see [Impact Securities and Digital Public Goods Financing Act (Draft)](../legal/impact-securities-reform.md#section-4a-marketing--disclosures-safe-harbor-plain-english-outcome-linked).
 
 ### Where the Money Really Comes From
 
