@@ -68,6 +68,14 @@ This repository documents the "War on Disease," a mission to make curing people 
 
 **Voice and Tone: Principled, Blunt, and Credible**
 
+**The Target and the Tone: Aim at the System, Speak to the "Us"**
+
+The style of this project must balance two core principles: genuine outrage and radical inclusivity.
+
+1.  **The Target of Outrage is the System, Not the People:** Our fight is with broken systems, not with the individuals trapped within them. The tone should be one of profound anger at the inefficiency, waste, and tragedy of our current institutions. It should not be a partisan or personal attack on any group. The goal is to critique a broken machine that *we* can all work together to fix.
+
+2.  **The Tone is Radically Inclusive:** The writing should always assume the reader is a potential partner and a co-owner of the project. It should use inclusive language ("we," "us," "our") to create a sense of a massive, collective movement that includes all of humanity. The goal is to make the reader feel like they are being invited to join a powerful rebellion, not being lectured or sold to. The reader is part of the "us" from the first sentence.
+
 - **Write from a place of genuine outrage.** If you're not angry that we waste trillions on weapons while millions die from preventable diseases, you shouldn't be writing this.
   - **Good:** "The Pentagon loses more money in accounting errors than we spend trying to cure cancer. This is insane."
   - **Bad:** "We're revolutionizing the paradigm to create world-class solutions for the unprecedented global health crisis."
