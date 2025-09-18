@@ -57,11 +57,7 @@ This repository documents the "War on Disease," a mission to make curing people 
 - **Buzzwords:** "synergy," "activation," "paradigm shift", "stakeholder"
 - **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
 
-**Gold Standard Test:** Would Warren Buffett write this sentence?
-- Clear enough for anyone
-- Backed by facts
-- No salesy drama
-- Respectful of reader's intelligence
+**The Warren Buffett test:** Clear, factual, no drama, treats readers like adults.
 
 **Voice and Tone: Principled, Blunt, and Credible**
 
@@ -88,32 +84,30 @@ The style of this project must balance two core principles: genuine outrage and 
 
 ## Contributor Workflow
 
-The plan _is_ the repository. Our goal is to create a single source of truth that is so clear it can be read like a book.
+The plan _is_ the repository. We're building a book that's so clear anyone can read it.
 
-1.  **Identify an Area for Improvement:** Find a "chapter" (a file in the root directory like `problem.md`) or an "appendix" (a file in a subdirectory) that is incomplete, unclear, or could be improved. The highest-priority areas are outlined in the main `roadmap.md`.
-2.  **Suggest an Edit (Propose a Change):** This project uses a standard Git workflow.
-    - **For Git Users:** Fork the repository and create a new, descriptive branch for your contribution (e.g., `update-financial-model` or `clarify-legal-framework`).
-    - **For Non-Technical Users:** You can edit files directly through the GitHub web interface, which will handle the process of creating a fork and proposing a change for you.
-3.  **Make Your Changes:** As you work, please adhere to all standards in this document. Your goal is to add clarity, detail, and evidence to the "book."
-4.  **Submit Your Change for Review:** Propose your changes by opening a "Pull Request." Ensure your description is clear and explains how your change improves the overall narrative.
+1.  **Find something to improve:** Look at the `roadmap.md` for priorities.
+2.  **Make your changes:** Fork the repo and create a branch, or just edit on GitHub if you're not technical.
+3.  **Follow the standards:** Use the rules in this document.
+4.  **Submit a pull request:** Explain how your change makes things better.
 
 ## Content and Style Standards
 
 ### 1. Information Architecture: Chapters, Sections, and The Appendix
 
-This repository is structured as a book. The root directory contains the "Chapters," which tell the core narrative. The subdirectories are "Sections" that provide detailed evidence, models, and plans for their parent chapter. `reference/` is the one true "Appendix" for external, evidentiary material.
+This repo is structured like a book. Root files are "chapters." Subdirectories are "sections" with the details. `reference/` is the appendix.
 
-**Note:** The file `brain/book/index.md` is automatically generated from the frontmatter of all files in the brain/book directory. Do not edit it directly - instead, update the frontmatter in the individual chapter and section files.
+**Note:** Don't edit `brain/book/index.md` directly - it's auto-generated from frontmatter.
 
 #### Epic Folders
 
 **The Golden Rule:** If a topic is an "Epic" that needs more than one file, it gets a main summary file (`epic.md`) and a corresponding directory (`epic/`) for the details. This pattern applies at all levels.
 
-**"The Book" vs. "The Internal Playbook"**
+**"The Book" vs. "Internal Stuff"**
 
-- **The Book (`/`, `economics/`, `strategy/`, `legal/`):** This is the public-facing content. It's the story, the argument, and the evidence. Content here should be written for an external audience.
-- **The Internal Playbook (`operations/`):** This is for internal-facing strategy and standard operating procedures (SOPs). This is the "how-to" for running the organization itself. Content here is for the core team.
-- **The Appendix (`reference/`):** This is for supporting data, studies, citations, and other third-party reference material that back up claims made in "The Book."
+- **The Book (`/`, `economics/`, `strategy/`, `legal/`):** Public content. The story and evidence.
+- **Internal Playbook (`operations/`):** How we run things. For the core team.
+- **The Appendix (`reference/`):** Data and citations that back up our claims.
 
 | Section       | Content Type                                 | Examples                                                  |
 | ------------- | -------------------------------------------- | --------------------------------------------------------- |
@@ -124,22 +118,20 @@ This repository is structured as a book. The root directory contains the "Chapte
 | `operations/` | Team structure, hiring, internal processes   | `hiring-plan.md`, `crypto-intake-sop.md`                  |
 | `reference/`  | Data, studies, citations, reference material | `costs-of-war.md`, `recovery-trial.md`                    |
 
-**Rules for Maintainable Structure:**
+**Rules for Clean Structure:**
 
-1. **Single Responsibility Principle:** One file should do one job and do it well. If a file covers multiple distinct topics, it must be split. When in doubt, split files rather than merge them.
+1. **One file, one job.** Split files that try to do too much.
 
-2. **Globally Unique Filenames:** Every filename in the repository must be unique and descriptive. Add context prefixes only when the base filename could realistically exist in multiple directories:
+2. **Unique filenames everywhere.** Add context only when needed:
    - ❌ Bad: `economics/fundraising/strategy.md` (too generic)
-   - ✅ Good: `economics/fundraising/fundraising-strategy.md` (context needed)
-   - ✅ Also Good: `solution/1-percent-treaty.md` (inherently unique concept)
+   - ✅ Good: `economics/fundraising/fundraising-strategy.md`
+   - ✅ Also Good: `solution/1-percent-treaty.md` (already unique)
 
-   This ensures every file can be unambiguously referenced with `@filename` while keeping names as simple as possible.
+3. **Put things where they belong.** New content goes in the right section.
 
-3. **Place new content in the appropriate section.** Only modify root-level chapters to summarize and link to new detailed content.
+### 2. How to Mark What Needs Work
 
-### 2. Quality Assurance and Actionable TODOs
-
-To maintain a clean and actionable list of improvements, all contributions must be checked against the following standards. We use a specific format for `TODO` comments to flag content that needs citations, stylistic rewrites, clarification, or visual aids.
+If something's broken, mark it with a `TODO` comment so we can fix it later.
 
 **1. Internal Link Integrity:**
 
@@ -147,78 +139,70 @@ To maintain a clean and actionable list of improvements, all contributions must 
 - **You MUST FIX** any links that are broken.
 - If a link points to a deleted file, either remove the link or repoint it to a relevant alternative.
 
-**2. Content Quality Triage (TODOs):**
+**2. Marking What Needs Work:**
 
-- **Placement:** Place `TODO`s in the most relevant location **inside the body of the text**. If a `TODO` applies to the entire document, place it at the **very bottom**. NEVER place `TODO`s at the top of a file or in the frontmatter.
-- **Formatting:** Use machine-readable comments so they can be easily aggregated into a project-wide "content debt" list.
+- **Where:** Put `TODO`s where the problem is. Document-wide TODOs go at the bottom. Never at the top.
+- **Format:** Use comments so we can find them all later:
   - `<!-- TODO: Add citation for this claim. -->`
-  - `<!-- TODO: Rewrite this section to match project writing style. -->`
-  - `<!-- TODO: Add a visual (chart, image) to clarify this section. -->`
-  - `<!-- TODO: Expand this section to include X. -->`
+  - `<!-- TODO: Rewrite this section. -->`
+  - `<!-- TODO: Add a chart here. -->`
+  - `<!-- TODO: Expand this section. -->`
 
 ### 3. Frontmatter Requirements
 
-All Markdown files **MUST** begin with a YAML frontmatter block. Our frontmatter is designed for compatibility with [Wiki.js](https://js.wiki/). Please adhere to the following structure:
+Every markdown file needs this header:
 
 ```yaml
 ---
-title: "A Clear and Descriptive Title for the Page"
-description: "A brief, one-sentence summary of the page's content. Used in search results. (Max 140 characters)"
-published: true # Set to 'false' for drafts
-date: "YYYY-MM-DDTHH:MM:SS.sssZ" # The publication or last significant update date
-tags: [keyword1, keyword2] # A list of relevant tags/keywords
-editor: markdown # Should always be markdown
-dateCreated: "YYYY-MM-DDTHH:MM:SS.sssZ" # The date the file was first created
+title: "A Clear and Descriptive Title"
+description: "One sentence summary (max 140 chars)"
+published: true # false for drafts
+date: "YYYY-MM-DDTHH:MM:SS.sssZ"
+tags: [keyword1, keyword2]
+editor: markdown
+dateCreated: "YYYY-MM-DDTHH:MM:SS.sssZ"
 ---
 ```
 
 ### 4. Sourcing and Citation Standard (CRITICAL)
 
-**MANDATORY**: ALL factual claims, statistics, and figures **MUST** be cited with hyperlinks to authoritative sources using the centralized reference system described below.
+**Every claim needs a source.** All sources go in `brain/book/references.md`.
 
-#### Central References File
+1. Check if your source is already there
+2. If yes, link to it: `[your claim](./references.md#anchor-id)`
+3. If no, add it using the format you see in that file
+4. Use good sources (not random blogs)
 
-All references are consolidated in `brain/book/references.md` to avoid duplication and maintain consistency across the knowledge base.
+Example: `[The world spends 40x more on war](./references.md#sipri-2024) than on [curing disease](./references.md#med-research-funding).`
 
-1.  **Find a High-Quality Source:** Use reputable sources like academic journals, government reports, or major news outlets.
+Format for new references:
+```markdown
+<a id="unique-anchor-id"></a>
 
-2.  **Check for Existing References:** Before adding a new reference, search `brain/book/references.md` to see if it already exists. If it does, use the existing anchor ID.
+- **Brief descriptive title**
 
-3.  **Link Claims Directly to References:** In your content, hyperlink the relevant text directly to the specific reference in the central file.
-    - **Example:** `...global military spending reached [$2.443 trillion](./references.md#global-spending-2023)...`
-    - **Example:** `[The world spends 40 times more on military force](./references.md#sipri-2024-spending) than on [medical research](./references.md#global-gov-med-research-spending).`
+  > "Direct quote with key stats..."
+  > — Source Name, Date, [Link Title](URL)
+```
 
-4.  **Add New References (If Needed):** If your source doesn't exist in the central file, add it following this format:
+#### How to Keep This Organized
 
-      ```markdown
-      <a id="unique-anchor-id"></a>
-
-      - **Brief descriptive title**
-
-        > "Direct quote from the source with key statistics or claims..."
-        > — Source Name, Date, [Link Title](URL)
-      ```
-
-5.  **Use Descriptive Anchor IDs:** Create meaningful anchor IDs that describe the content (e.g., `sipri-2024-spending`, `recovery-cost-500`, `fossil-fuel-subsidies`).
-
-#### Maintainability
-
--   **Use a Single, Alphabetized List:** To ensure `references.md` is easy to navigate and free of duplicates, all reference items **MUST** be in a single, flat list sorted alphabetically by their descriptive title. **Do not use subsections or headings.** To avoid clutter, you may group closely related statistics (e.g., multiple years of the same report) under a single alphabetized item.
+-   **One alphabetized list:** Sort references by title. No subsections. Group related stats (like multiple years of the same report) under one item.
 
 #### What NOT to Do
 
-- **Do not create local "Source Quotes" sections** in individual files
-- **Do not duplicate references** that already exist in the central file  
-- **Do not use generic link text** like "(Source)" - hyperlink the actual claim text
-- **Do not create internal anchor links** within individual files for citations
+- Don't create "Sources" sections in individual files
+- Don't duplicate references that already exist
+- Don't use generic link text like "(Source)" - link the actual claim
+- Don't create anchor links within individual files
 
-This centralized approach prevents link rot, eliminates duplicate references, and creates a single source of truth for all factual claims across the knowledge base.
+This keeps everything in one place and prevents broken links.
 
 ### 5. Technical Standards
 
-- **Tooling and Server-Side Code:** Any new tooling or server-side components for the project (e.g., MCP servers, automation scripts) **MUST** be written in TypeScript.
-- **Dependencies:** Use `npm` for package management. All projects must include a `package.json` file with clearly defined dependencies.
-- **Execution:** To avoid committing compiled code, run TypeScript files directly using a runtime like `ts-node` or `tsx`. Compiled JavaScript files (`.js`) are disallowed in the repository and should be added to the project's `.gitignore` file.
+- **Code:** Write new tools in TypeScript
+- **Dependencies:** Use `npm` and include a `package.json`
+- **Execution:** Run TypeScript directly with `ts-node` or `tsx`. No compiled `.js` files in the repo.
 
 ### 6. Naming, Linking, and Formatting
 
