@@ -470,47 +470,86 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 ## Table of Contents
 
-### Part I: The Problem
-*   **Chapter 1: [The Problem](./brain/book/problem.md)**
-    *   [The Cost of War: A $16.5 Trillion Annual Waste](./brain/book/problem/cost-of-war.md)
-    *   [The Cost of Disease: A $244 Trillion Catastrophe](./brain/book/problem/cost-of-disease.md)
-    *   [Why Our Current Systems (NIH/FDA) Fail](./brain/book/problem/nih-funding-is-broken.md)
+### Chapter 1: Why We're All Going to Die Like Idiots
+*   [How We Spend 40X More on Killing Than Curing](./brain/book/problem/cost-of-war.md)
+*   [The $244 Trillion Disease Tax on Humanity](./brain/book/problem/cost-of-disease.md)
+*   [Why the NIH Is a $50 Billion Paperwork Factory](./brain/book/problem/nih-funding-is-broken.md)
+*   [Why the FDA Takes 17 Years to Approve Cures](./brain/book/problem/fda-is-broken.md)
+*   [How Big Pharma Owns Both of Them](./brain/book/problem/regulatory-capture.md)
 
-### Part II: The Solution (The Technical Blueprint)
-*   **Chapter 2: [The Solution](./brain/book/solution.md)**
-    *   [The 1% Treaty: The Funding Mandate](./brain/book/solution/1-percent-treaty.md)
-    *   [The DIH: The Allocation Engine](./brain/book/solution/dih.md)
-    *   [The dFDA: The Efficacy Engine](./brain/book/solution/dfda.md)
+### Chapter 2: The Stupidly Simple Solution Nobody's Tried
+*   [The 1% Treaty: How to Bribe Our Way to Peace](./brain/book/solution/1-percent-treaty.md)
+*   [Decentralized Institutes of Health: Democracy for Cures](./brain/book/solution/dih.md)
+*   [The dFDA: What Actually Works vs. What We're Told Works](./brain/book/solution/dfda.md)
 
-### Part III: The Strategy (The Political Playbook)
-*   **Chapter 3: [The Strategy](./brain/book/strategy.md)**
-    *   [Phase 1: The Global Referendum (The Mandate)](./brain/book/strategy/global-referendum/global-referendum-implementation.md)
-    *   [Phase 2: Co-Opting the War Machine (The Bribe)](./brain/book/strategy/co-opting-defense-contractors.md)
-    *   [The Legal Framework: Navigating the System](./brain/book/strategy/legal-compliance-framework.md)
+### Chapter 3: How to Make Everyone Rich by Not Dying
+*   [VICTORY Bonds: The Most Profitable Investment in Human History](./brain/book/economics/victory-bonds.md)
+*   [The Peace Dividend: $16.5 Trillion We're Leaving on the Table](./brain/book/economics/peace-dividend-value-capture.md)
+*   [Why This Beats Every Other Investment by a Mile](./brain/book/economics/investment-thesis.md)
+*   [The Math That Proves It Works](./brain/book/economics/roi-calculations.md)
 
-### Part IV: The Economics (The Business Plan)
-*   **Chapter 4: [The Economics](./brain/book/economics.md)**
-    *   [The Value Proposition: Unlocking Peace & Health Dividends](./brain/book/economics/peace-dividend-value-capture.md)
-    *   [The Fundraising Instrument: VICTORY Bonds](./brain/book/economics/victory-bonds.md)
-    *   [The Investment Thesis: A Golden Opportunity](./brain/book/economics/investment-thesis.md)
+### Chapter 4: How to Make Everyone Rich (Including Your Enemies)
+*   [Why Defense Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)
+*   [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/political-incentives.md)
+*   [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)
+*   [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)
 
-### Part V: The Proof (Why Isn't Insane)
-*   **Chapter 5: [The Proof](./brain/book/proof.md)**
-    *   [Scientific Precedent: The 80x Efficiency Is Proven](./brain/book/reference/recovery-trial.md)
-    *   [Political Precedent: Creating Treaties & Tipping Points](./brain/book/proof.md#2-the-political-precedents-how-to-win)
-    *   [Financial Precedent: Funding a World War](./brain/book/proof.md#3-the-financial-precedents-how-to-fund-it)
+### Chapter 5: How to Get 280 Million People to Vote
+*   [Building the Voter Registration Machine](./brain/book/strategy/voter-registration.md)
+*   [The Social Media Blitz That Actually Works](./brain/book/strategy/social-media-strategy.md)
+*   [How to Pay People to Care About Politics](./brain/book/strategy/incentive-systems.md)
+*   [Organizing Across 195 Countries Without Losing Your Mind](./brain/book/strategy/international-coordination.md)
 
-### Part VI: The End State (A World Without War and Disease)
-*   **Chapter 6: [The End State](./brain/book/vision.md)** → What a future without war and disease looks like.
+### Chapter 6: How to Bribe the Military-Industrial Complex
+*   [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)
+*   [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)
+*   [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)
+*   [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)
 
-### Part VII: Reference Manuals (Due Diligence)
-*   **[Governance](./brain/book/governance.md):** Security & decision-making for a $27B treasury.
-*   **[Legal & Compliance](./brain/book/legal.md):** How we stay out of prison.
-*   **[Operations](./brain/book/operations.md):** The plan to build and scale the organization.
-*   **[Roadmap](./brain/book/roadmap.md):** Timeline, milestones, and deliverables.
+### Chapter 7: The Technology Infrastructure
+*   [Building a Voting System That Can't Be Hacked](./brain/book/technology/secure-voting.md)
+*   [Wishocracy:L DIH Treasury Management Protocol](./brain/book/technology/treasury-tech.md)
+*   [Fraud Detection That Actually Works](./brain/book/technology/fraud-prevention.md)
+*   [A Decentralized Autonomous FDA](./brain/book/technology/dfda-platform.md)
 
-### Part VIII: Project Hub (How to Get Involved)
-*   **[Call to Action](./brain/book/call-to-action.md):** How you can join the mission.
-*   **[FAQ](./brain/book/FAQ.md):** Answers to common objections.
-*   **[Contributing Guide](./CONTRIBUTING.md):** The rules for contributing to this project.
-*   **[Evidence Library](./brain/reference/):** All supporting data, studies, and third-party evidence.
+### Chapter 8: Why This Isn't as Crazy as It Sounds
+*   [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)
+*   [How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)
+*   [The Economic Proof: Why the Math Actually Works](./brain/book/proof/economic-proof.md)
+*   [Political Proof: How Mass Movements Win](./brain/book/proof/political-proof.md)
+
+### Field Manual: Tactical Operations
+*   **[Campaign Playbook](./brain/book/tactics/campaign-playbook.md):** How to run referendum campaigns that win
+*   **[Lobbying for Dummies](./brain/book/tactics/lobbying-guide.md):** How to legally bribe politicians (step-by-step)
+*   **[Building Local Chapters](./brain/book/tactics/chapter-building.md):** From 0 to 1,000 volunteers in 90 days
+*   **[Media Warfare](./brain/book/tactics/media-strategy.md):** How to win the narrative war
+*   **[Crisis Management](./brain/book/tactics/crisis-management.md):** What to do when everything goes wrong
+
+### Templates and Tools
+*   **[Sample Legislation](./brain/book/templates/legislation.md):** Copy-paste bills for your country
+*   **[Talking Points Library](./brain/book/templates/talking-points.md):** How to explain this to anyone
+*   **[Presentation Templates](./brain/book/templates/presentations.md):** Slide decks that actually work
+*   **[Fundraising Scripts](./brain/book/templates/fundraising.md):** How to ask for money without feeling gross
+
+### Standard Operating Procedures
+*   **[Event Planning SOP](./brain/book/sops/event-planning.md):** From house parties to massive rallies
+*   **[Volunteer Management](./brain/book/sops/volunteer-management.md):** How to not lose all your help
+*   **[Finance and Accounting](./brain/book/sops/finance.md):** How to handle money without going to jail
+*   **[Communications Protocol](./brain/book/sops/communications.md):** Internal and external messaging
+
+### Quick Reference (Cheat Sheets)
+*   **[Key Statistics](./brain/book/reference/key-stats.md):** The numbers that matter most
+*   **[Elevator Pitches](./brain/book/reference/elevator-pitches.md):** 30 seconds to save the world
+*   **[Common Objections & Responses](./brain/book/reference/objections.md):** What they'll say and how to answer
+*   **[Emergency Contacts](./brain/book/reference/emergency-contacts.md):** Who to call when stuff hits the fan
+
+### For the Skeptics and Lawyers
+*   **[FAQ: Every Objection You're Thinking](./brain/book/FAQ.md)**
+*   **[How to Stay Out of Prison](./brain/book/legal.md):** The complete legal playbook
+*   **[Security & Governance](./brain/book/governance.md):** How to run a $27B treasury without getting robbed
+*   **[Operations Manual](./brain/book/operations.md):** How we actually build this thing
+
+### How to Join the Revolution
+*   **[Get Started Here](./brain/book/call-to-action.md):** Your next steps to join the movement
+*   **[Contributing Guide](./CONTRIBUTING.md):** How to help write this book
+*   **[Evidence Library](./brain/reference/):** All the data that proves we're right
