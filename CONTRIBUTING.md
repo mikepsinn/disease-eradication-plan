@@ -50,11 +50,10 @@ This repository documents the "War on Disease," a mission to make curing people 
 1. **Clarity:** Can I say this to my mom and have her understand?
 2. **Credibility:** Would I stake my reputation on this claim?
 3. **Concision:** Can I cut words without losing meaning?
-4. **Humanity:** Does this sound like Kurt Vonnegut wrote it?
+4. **Directness:** Does this sound like Kurt Vonnegut wrote it?
 
 **Automatic Red Flags (Rewrite Immediately):**
-- **Superlatives:** "world-class," "revolutionary," "unprecedented"
-- **Buzzwords:** "synergy," "activation," "paradigm shift", "stakeholder"
+- **Corporate Buzzwords:** "synergy," "activation," "paradigm shift," "stakeholder,"  "utilize," "facilitate" "world-class," "revolutionary," "unprecedented",  "world-class," "revolutionary," "unprecedented," "cutting-edge," "state-of-the-art," "best-in-class"
 - **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
 
 **The Warren Buffett test:** Clear, factual, no drama, treats readers like adults.
