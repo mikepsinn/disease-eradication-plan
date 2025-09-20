@@ -69,7 +69,7 @@ Following README.md's narrative flow for maximum readability:
 ├── vision.md                           📖 Chapter 3: A World Without War and Disease
 ├── economics.md                        📖 Chapter 4: The Financial Engine
 ├── strategy.md                         📖 Chapter 5: How to Bribe Literally Everyone (The Bribery Strategy)
-├── proof.md                           📖 Chapter 6: Why This Isn't as Insane as it Sounds (Precedents & Evidence)
+├── proof.md                           📖 Chapter 6: Why This Isn't Insane (Precedents & Evidence)
 ├── legal.md                           📖 Chapter 7: Legal Compliance & Structure
 ├── operations.md                       📖 Chapter 8: Building the Organization
 ├── FAQ.md                             📖 Chapter 9: Objections & Responses

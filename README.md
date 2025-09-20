@@ -110,7 +110,7 @@ Here's the complete system that makes curing people more profitable than killing
 5. **Publish Everything**: The dFDA shows real effectiveness data for every treatment
 6. **Label Outcomes**: Every food and drug gets honest labels about what it actually does
 
-### The Speed and Cost Revolution:
+### What's Possible:
 
 **Current System:**
 - **$2.2 billion** to develop one new treatment
@@ -160,7 +160,7 @@ graph TD;
 
 ---
 
-## What We Get: A World Without War and Disease
+## A World Without War and Disease
 
 Here's what happens when we stop wasting money on bombs and start spending it on not dying:
 
@@ -318,11 +318,9 @@ We legally bribe our way to a world without war and disease.
 
 ---
 
-## VI. PROOF & PRECEDENTS (Why This Isn't as Insane as it Sounds)
+## VI. PROOF & PRECEDENTS (Why This Isn't Insane)
 
-### "A $2.5B investment to capture $27B annually? Come on."
-
-Fair skepticism. Here's why the math actually works:
+Why the math actually works:
 
 ### 1. We're Redirecting Waste, Not Raising New Money
 
@@ -342,7 +340,7 @@ Fair skepticism. Here's why the math actually works:
 - War bonds: [$185 billion raised from 85 million Americans](./brain/book/references.md#wwii-war-bonds) during WWII
 - Our referendum creates the largest political mandate in human history—when 280 million people vote for something, politicians listen
 
-### 4. Financial Enforcement Is Stronger Than Legal Enforcement
+### 4. Financial Incentives Is Stronger Than Legal Enforcement
 
 - [$16.5 trillion annual cost of violence](./brain/book/references.md#global-violence-costs)—we capture 0.16% of this waste
 - Leaders of nations that default face immediate political consequences. We don't enforce this through international courts. We enforce it by giving massive campaign support to leaders who comply and funding their opponents if they don't.
@@ -356,7 +354,7 @@ Fair skepticism. Here's why the math actually works:
 
 **The Bottom Line:** We're not creating money out of thin air. We're redirecting money that's already being wasted into a system that produces 80X better results with mathematical precision.
 
-## Historical Precedents (Why This Could Actually Work)
+## Historical Precedents (Evidence This Could Actually Work)
 
 - Decentralized coalitions can create binding law: the International Campaign to Ban Landmines led to the 1997 Ottawa Treaty (see [ICBL](./brain/book/references.md#icbl-ottawa-treaty)).
 - Mobilizing private capital for public missions works: [World War II war bonds](./brain/book/references.md#wwii-war-bonds) financed national efforts at scale.
@@ -405,7 +403,7 @@ We capture the first $27B to unlock the full $165B for everyone. For a detailed 
 
 ## VII. OBJECTIONS & RESPONSES
 
-We have answers to the tough questions. For a detailed list of common objections and our responses, please see our [FAQ](./brain/book/FAQ.md).
+For a detailed list of common objections and our responses, please see our [FAQ](./brain/book/FAQ.md).
 
 ## VIII. SECURITY & GOVERNANCE
 
@@ -415,9 +413,7 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 ---
 
-## IX. CALL TO ACTION 
-
-## Join the Movement
+## IX. HOW YOU CAN HELP: Join the War on Disease
 
 **[Get your referendum link](./brain/book/strategy/referendum/global-referendum-implementation.md)** → Earn VOTE points for each person who votes via your link. After the treaty passes, your points become convertible to VICTORY bonds.
 
@@ -451,7 +447,7 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 ## Learn More
 
-**Key Solutions:** Address the main objections that could kill this proposal:
+**Solutions:** Address the main objections that could kill this proposal:
 
 - [Free Rider Problem Solution](./brain/book/strategy/free-rider-solution.md) - How we make them pay
 - [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md) - Election and securities law compliance
@@ -485,11 +481,11 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 ### ECONOMICS: How to Make Everyone Rich by Not Dying
 *   [VICTORY Bonds: The Most Profitable Investment in Human History](./brain/book/economics/victory-bonds.md)
 *   [The Peace Dividend: $16.5 Trillion We're Leaving on the Table](./brain/book/economics/peace-dividend-value-capture.md)
-*   [Why This Beats Every Other Investment by a Mile](./brain/book/economics/investment-thesis.md)
+*   [Why This Beats Every Other Investment](./brain/book/economics/investment-thesis.md)
 *   [The Math That Proves It Works](./brain/book/economics/roi-calculations.md)
 
-### PARTNERS: How to Make Everyone Rich (Including Your Enemies)
-*   [Why Defense Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)
+### PARTNERS: How to Make Everyone Rich
+*   [Why Military Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)
 *   [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/political-incentives.md)
 *   [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)
 *   [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)
@@ -549,7 +545,7 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 *   **[Security & Governance](./brain/book/governance.md):** How to run a $27B treasury without getting robbed
 *   **[Operations Manual](./brain/book/operations.md):** How we actually build this thing
 
-### How to Join the Revolution
+### How to Join the War on Disease
 *   **[Get Started Here](./brain/book/call-to-action.md):** Your next steps to join the movement
 *   **[Contributing Guide](./CONTRIBUTING.md):** How to help write this book
 *   **[Evidence Library](./brain/reference/):** All the data that proves we're right
