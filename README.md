@@ -1,6 +1,6 @@
 ---
-title: War on Disease — Eradicating Disease by Redirecting 1%
-description: "A plan to end war and disease by making peace more profitable than conflict through a system of transparent, legal bribes."
+title: The Complete Idiot's Guide to Ending War and Disease
+description: "How to Persuade Humanity to Redirect 1% of Military Spending to Radically Accelerate Medical Progress Through Hyper-Efficient Decentralized Clinical Trials"
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds]
@@ -39,7 +39,7 @@ For every $1 the military-industrial complex spends on lobbying politicians, it 
 
 So here's the plan: We do exactly the same thing in reverse.
 
-We create a [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./brain/reference/recovery-trial.md) for the most promising new treatments."
+We create a [1% Treaty](./brain/book/solution/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./brain/book/solution/dih.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./brain/reference/recovery-trial.md) for the most promising new treatments."
 
 Getting every government to ratify the treaty requires two things:
 
@@ -89,7 +89,7 @@ Humanity has two options:
 
 Pick one.
 
-See [1% Treaty](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](./brain/reference/costs-of-war.md).
+See [1% Treaty](./brain/book/solution/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](./brain/reference/costs-of-war.md).
 
 ---
 
@@ -464,60 +464,92 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 **Coalition:** [How institutions can work with us](./brain/book/strategy/coalition-building.md)
 
-**Treaty:** [Full 1% Treaty text](./brain/book/strategy/1-percent-treaty/1-percent-treaty.md)
+**Treaty:** [Full 1% Treaty text](./brain/book/solution/1-percent-treaty.md)
 
 ---
 
+## Table of Contents
 
-## Table of Contents: The Book of the DIH
+### PROBLEM: You and Everyone You Love are Going to Suffer and Die
+*   [We Spend 40X More on Killing People Than Curing Them](./brain/book/problem/cost-of-war.md)
+*   [The $244 Trillion Disease Tax on Humanity](./brain/book/problem/cost-of-disease.md)
+*   [Why the NIH Is a $50 Billion Paperwork Factory](./brain/book/problem/nih-funding-is-broken.md)
+*   [Why the FDA Takes 17 Years to Approve Cures](./brain/book/problem/fda-is-broken.md)
+*   [How Big Pharma Owns Both of Them](./brain/book/problem/regulatory-capture.md)
 
-This repository is structured as a book that tells the story of the Decentralized Institutes of Health. The root-level files are the "Chapters" that form the core narrative, and the subdirectories are the "Sections" containing detailed supporting information.
+### SOLUTION: The Stupidly Simple Solution Nobody's Tried
+*   [The 1% Treaty: How to Bribe Our Way to Peace](./brain/book/solution/1-percent-treaty.md)
+*   [Decentralized Institutes of Health: Democracy for Cures](./brain/book/solution/dih.md)
+*   [The dFDA: What Actually Works vs. What We're Told Works](./brain/book/solution/dfda.md)
 
-### The Chapters
+### ECONOMICS: How to Make Everyone Rich by Not Dying
+*   [VICTORY Bonds: The Most Profitable Investment in Human History](./brain/book/economics/victory-bonds.md)
+*   [The Peace Dividend: $16.5 Trillion We're Leaving on the Table](./brain/book/economics/peace-dividend-value-capture.md)
+*   [Why This Beats Every Other Investment by a Mile](./brain/book/economics/investment-thesis.md)
+*   [The Math That Proves It Works](./brain/book/economics/roi-calculations.md)
 
-- **[README.md](./brain/book/README.md)**: (This File) High-level executive summary.
-- **[problem.md](./brain/book/problem.md)**: **Chapter 1: Problem → We're Doing This Backwards**
-- **[solution.md](./brain/book/solution.md)**: **Chapter 2: Solution → The Complete System** (Overview)
-- **[1-percent-treaty.md](./brain/book/1-percent-treaty.md)**: **Chapter 3: The 1% Treaty → How We Get the Money**
-- **[dih.md](./brain/book/dih.md)**: **Chapter 4: The DIH → How to Spend $27 Billion Without Wasting It**
-- **[dfda.md](./brain/book/dfda.md)**: **Chapter 5: The dFDA → How We Prove What Works**
-- **[vision.md](./brain/book/vision.md)**: **Chapter 6: Vision → A World Without War and Disease**
-- **[economics.md](./brain/book/economics.md)**: **Chapter 7: Economics → The Money**
-- **[strategy.md](./brain/book/strategy.md)**: **Chapter 8: Strategy → How to Bribe Literally Everyone**
-- **[proof.md](./brain/book/proof.md)**: **Chapter 9: Proof → Why This Isn't as Insane as it Sounds**
-- **[legal.md](./brain/book/legal.md)**: **Chapter 10: Legal → How to Stay Out of Prison**
-- **[governance.md](./brain/book/governance.md)**: **Chapter 11: Governance → How We Make Decisions**
-- **[operations.md](./brain/book/operations.md)**: **Chapter 12: Operations → How We Build This Thing**
-- **[roadmap.md](./brain/book/roadmap.md)**: **Chapter 13: Roadmap → Timeline to Global Impact**
-- **[FAQ.md](./brain/book/FAQ.md)**: **Chapter 14: FAQ → Objections & Responses**
-- **[call-to-action.md](./brain/book/call-to-action.md)**: **Chapter 15: Call-to-Action → I Want You**
-- **[CONTRIBUTING.md](./brain/book/CONTRIBUTING.md)**: Contributor guidelines and project standards.
+### PARTNERS: How to Make Everyone Rich (Including Your Enemies)
+*   [Why Defense Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)
+*   [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/political-incentives.md)
+*   [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)
+*   [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)
 
-### The Sections (Supporting Details)
+### STRATEGY: How to Get 280 Million People to Vote
+*   [Building the Voter Registration Machine](./brain/book/strategy/voter-registration.md)
+*   [The Social Media Blitz That Actually Works](./brain/book/strategy/social-media-strategy.md)
+*   [How to Pay People to Care About Politics](./brain/book/strategy/incentive-systems.md)
+*   [Organizing Across 195 Countries Without Losing Your Mind](./brain/book/strategy/international-coordination.md)
 
-- **[/economics/](./brain/book/economics/)**: Contains detailed financial models, investment theses, and ROI calculations.
-- [investment-thesis.md](./brain/book/economics/investment-thesis.md)
-- [peace-dividend-value-capture.md](./brain/book/economics/peace-dividend-value-capture.md)
-- [dfda-cost-benefit-analysis.md](./brain/book/economics/dfda-cost-benefit-analysis.md)
-- [fundraising/](./brain/book/economics/fundraising/)
-- **[/strategy/](./brain/book/strategy/)**: Contains detailed execution plans, political strategies, and game-theoretic analyses.
-- [1-percent-treaty.md](./brain/book/strategy/1-percent-treaty.md)
-- [dih-model.md](./brain/book/strategy/dih-model.md)
-- [co-opting-defense-contractors.md](./brain/book/strategy/co-opting-defense-contractors.md)
-- [free-rider-solution.md](./brain/book/strategy/free-rider-solution.md)
-- [global-referendum/](./brain/book/strategy/global-referendum/)
-- **[/legal/](./brain/book/legal/)**: Contains detailed legal frameworks, compliance strategies, and governance models.
-- [multi-entity-strategy.md](./brain/book/legal/multi-entity-strategy.md)
-- [impact-securities-reform.md](./brain/book/legal/impact-securities-reform.md)
-- **[/operations/](./brain/book/operations/)**: Contains detailed operational plans, hiring documents, and standard operating procedures (SOPs).
-- [hiring-plan.md](./brain/book/operations/hiring-plan.md)
-- [pre-seed-strategy.md](./brain/book/operations/pre-seed-strategy.md)
-- [communications-and-messaging-playbook.md](./brain/book/operations/communications-and-messaging-playbook.md)
-- **[/reference/](./brain/reference/)**: Contains supporting data, studies, citations, and other third-party evidence.
-- [costs-of-war.md](./brain/reference/costs-of-war.md)
-- [recovery-trial.md](./brain/reference/recovery-trial.md)
-- [organizational-precedents.md](./brain/reference/organizational-precedents.md)
-- **[/assets/](./brain/book/assets/)**: Contains images, diagrams, and other static assets used throughout the knowledge base.
-- **[/archive/](./brain/book/archive/)**: Contains all legacy files from the previous structure for historical reference.
+### EXECUTION: How to Bribe the Military-Industrial Complex
+*   [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)
+*   [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)
+*   [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)
+*   [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)
 
----
+### TECHNOLOGY: The Technology Infrastructure
+*   [Building a Voting System That Can't Be Hacked](./brain/book/technology/secure-voting.md)
+*   [Wishocracy:L DIH Treasury Management Protocol](./brain/book/technology/treasury-tech.md)
+*   [Fraud Detection That Actually Works](./brain/book/technology/fraud-prevention.md)
+*   [A Decentralized Autonomous FDA](./brain/book/technology/dfda-platform.md)
+
+### PROOF: Why This Isn't Insane
+*   [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)
+*   [How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)
+*   [The Economic Proof: Why the Math Actually Works](./brain/book/proof/economic-proof.md)
+*   [Political Proof: How Mass Movements Win](./brain/book/proof/political-proof.md)
+
+### Field Manual: Tactical Operations
+*   **[Campaign Playbook](./brain/book/tactics/campaign-playbook.md):** How to run referendum campaigns that win
+*   **[Lobbying for Dummies](./brain/book/tactics/lobbying-guide.md):** How to legally bribe politicians (step-by-step)
+*   **[Building Local Chapters](./brain/book/tactics/chapter-building.md):** From 0 to 1,000 volunteers in 90 days
+*   **[Media Warfare](./brain/book/tactics/media-strategy.md):** How to win the narrative war
+*   **[Crisis Management](./brain/book/tactics/crisis-management.md):** What to do when everything goes wrong
+
+### Templates and Tools
+*   **[Sample Legislation](./brain/book/templates/legislation.md):** Copy-paste bills for your country
+*   **[Talking Points Library](./brain/book/templates/talking-points.md):** How to explain this to anyone
+*   **[Presentation Templates](./brain/book/templates/presentations.md):** Slide decks that actually work
+*   **[Fundraising Scripts](./brain/book/templates/fundraising.md):** How to ask for money without feeling gross
+
+### Standard Operating Procedures
+*   **[Event Planning SOP](./brain/book/sops/event-planning.md):** From house parties to massive rallies
+*   **[Volunteer Management](./brain/book/sops/volunteer-management.md):** How to not lose all your help
+*   **[Finance and Accounting](./brain/book/sops/finance.md):** How to handle money without going to jail
+*   **[Communications Protocol](./brain/book/sops/communications.md):** Internal and external messaging
+
+### Quick Reference (Cheat Sheets)
+*   **[Key Statistics](./brain/book/reference/key-stats.md):** The numbers that matter most
+*   **[Elevator Pitches](./brain/book/reference/elevator-pitches.md):** 30 seconds to save the world
+*   **[Common Objections & Responses](./brain/book/reference/objections.md):** What they'll say and how to answer
+*   **[Emergency Contacts](./brain/book/reference/emergency-contacts.md):** Who to call when stuff hits the fan
+
+### For the Skeptics and Lawyers
+*   **[FAQ: Every Objection You're Thinking](./brain/book/FAQ.md)**
+*   **[How to Stay Out of Prison](./brain/book/legal.md):** The complete legal playbook
+*   **[Security & Governance](./brain/book/governance.md):** How to run a $27B treasury without getting robbed
+*   **[Operations Manual](./brain/book/operations.md):** How we actually build this thing
+
+### How to Join the Revolution
+*   **[Get Started Here](./brain/book/call-to-action.md):** Your next steps to join the movement
+*   **[Contributing Guide](./CONTRIBUTING.md):** How to help write this book
+*   **[Evidence Library](./brain/reference/):** All the data that proves we're right

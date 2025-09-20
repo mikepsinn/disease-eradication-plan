@@ -82,7 +82,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ---
 
-### [`dfda.md`](./dfda.md)
+### [`dfda.md`](./solution/dfda.md)
 - **title:** A Decentralized Autonomous FDA: A Decentralized FDA
 - **description:** An introduction to the 80X more efficient research protocol the DIH will build to accelerate medical progress.
 - **date:** 2025-09-10T00:00:00.000Z
@@ -662,7 +662,7 @@ This document provides a complete inventory of all markdown files in the reposit
 
 ---
 
-### [`strategy/1-percent-treaty.md`](./strategy/1-percent-treaty.md)
+### [`strategy/1-percent-treaty.md`](./solution/1-percent-treaty.md)
 - **title:** The 1% Treaty
 - **description:** A global accord to redirect 1% of military spending to discovering new treatments and cures for chronic diseases.
 - **published:** true
