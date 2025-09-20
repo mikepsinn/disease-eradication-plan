@@ -470,49 +470,49 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 ## Table of Contents
 
-### Chapter 1: Why We're All Going to Die Like Idiots
-*   [How We Spend 40X More on Killing Than Curing](./brain/book/problem/cost-of-war.md)
+### PROBLEM: You and Everyone You Love are Going to Suffer and Die
+*   [We Spend 40X More on Killing People Than Curing Them](./brain/book/problem/cost-of-war.md)
 *   [The $244 Trillion Disease Tax on Humanity](./brain/book/problem/cost-of-disease.md)
 *   [Why the NIH Is a $50 Billion Paperwork Factory](./brain/book/problem/nih-funding-is-broken.md)
 *   [Why the FDA Takes 17 Years to Approve Cures](./brain/book/problem/fda-is-broken.md)
 *   [How Big Pharma Owns Both of Them](./brain/book/problem/regulatory-capture.md)
 
-### Chapter 2: The Stupidly Simple Solution Nobody's Tried
+### SOLUTION: The Stupidly Simple Solution Nobody's Tried
 *   [The 1% Treaty: How to Bribe Our Way to Peace](./brain/book/solution/1-percent-treaty.md)
 *   [Decentralized Institutes of Health: Democracy for Cures](./brain/book/solution/dih.md)
 *   [The dFDA: What Actually Works vs. What We're Told Works](./brain/book/solution/dfda.md)
 
-### Chapter 3: How to Make Everyone Rich by Not Dying
+### ECONOMICS: How to Make Everyone Rich by Not Dying
 *   [VICTORY Bonds: The Most Profitable Investment in Human History](./brain/book/economics/victory-bonds.md)
 *   [The Peace Dividend: $16.5 Trillion We're Leaving on the Table](./brain/book/economics/peace-dividend-value-capture.md)
 *   [Why This Beats Every Other Investment by a Mile](./brain/book/economics/investment-thesis.md)
 *   [The Math That Proves It Works](./brain/book/economics/roi-calculations.md)
 
-### Chapter 4: How to Make Everyone Rich (Including Your Enemies)
+### PARTNERS: How to Make Everyone Rich (Including Your Enemies)
 *   [Why Defense Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)
 *   [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/political-incentives.md)
 *   [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)
 *   [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)
 
-### Chapter 5: How to Get 280 Million People to Vote
+### STRATEGY: How to Get 280 Million People to Vote
 *   [Building the Voter Registration Machine](./brain/book/strategy/voter-registration.md)
 *   [The Social Media Blitz That Actually Works](./brain/book/strategy/social-media-strategy.md)
 *   [How to Pay People to Care About Politics](./brain/book/strategy/incentive-systems.md)
 *   [Organizing Across 195 Countries Without Losing Your Mind](./brain/book/strategy/international-coordination.md)
 
-### Chapter 6: How to Bribe the Military-Industrial Complex
+### EXECUTION: How to Bribe the Military-Industrial Complex
 *   [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)
 *   [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)
 *   [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)
 *   [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)
 
-### Chapter 7: The Technology Infrastructure
+### TECHNOLOGY: The Technology Infrastructure
 *   [Building a Voting System That Can't Be Hacked](./brain/book/technology/secure-voting.md)
 *   [Wishocracy:L DIH Treasury Management Protocol](./brain/book/technology/treasury-tech.md)
 *   [Fraud Detection That Actually Works](./brain/book/technology/fraud-prevention.md)
 *   [A Decentralized Autonomous FDA](./brain/book/technology/dfda-platform.md)
 
-### Chapter 8: Why This Isn't as Crazy as It Sounds
+### PROOF: Why This Isn't Insane
 *   [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)
 *   [How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)
 *   [The Economic Proof: Why the Math Actually Works](./brain/book/proof/economic-proof.md)
