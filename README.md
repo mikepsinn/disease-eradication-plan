@@ -470,7 +470,7 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 ## Table of Contents
 
-### Part I: The Problem (Why We Must Act Now)
+### Part I: The Problem
 *   **Chapter 1: [The Problem](./brain/book/problem.md)**
     *   [The Cost of War: A $16.5 Trillion Annual Waste](./brain/book/problem/cost-of-war.md)
     *   [The Cost of Disease: A $244 Trillion Catastrophe](./brain/book/problem/cost-of-disease.md)
@@ -494,16 +494,16 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
     *   [The Fundraising Instrument: VICTORY Bonds](./brain/book/economics/victory-bonds.md)
     *   [The Investment Thesis: A Golden Opportunity](./brain/book/economics/investment-thesis.md)
 
-### Part V: The Proof (Why This Will Work)
+### Part V: The Proof (Why Isn't Insane)
 *   **Chapter 5: [The Proof](./brain/book/proof.md)**
     *   [Scientific Precedent: The 80x Efficiency Is Proven](./brain/book/reference/recovery-trial.md)
     *   [Political Precedent: Creating Treaties & Tipping Points](./brain/book/proof.md#2-the-political-precedents-how-to-win)
     *   [Financial Precedent: Funding a World War](./brain/book/proof.md#3-the-financial-precedents-how-to-fund-it)
 
-### Part VI: The Vision (The World We Win)
-*   **Chapter 6: [The Vision](./brain/book/vision.md)** → What a future without war and disease looks like.
+### Part VI: The End State (A World Without War and Disease)
+*   **Chapter 6: [The End State](./brain/book/vision.md)** → What a future without war and disease looks like.
 
-### Part VII: The Reference Manuals (Due Diligence)
+### Part VII: Reference Manuals (Due Diligence)
 *   **[Governance](./brain/book/governance.md):** Security & decision-making for a $27B treasury.
 *   **[Legal & Compliance](./brain/book/legal.md):** How we stay out of prison.
 *   **[Operations](./brain/book/operations.md):** The plan to build and scale the organization.
