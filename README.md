@@ -519,61 +519,47 @@ b. [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/p
 c. [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)  
 d. [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)  
 
-### Chapter 5: Referendum
+### Chapter 5: The Playbook: From Referendum to Ratification
 a. [Build a Website, Give People Referral Links](./brain/book/strategy/voter-registration.md)  
 b. [How to Reprogram Lots of People](./brain/book/strategy/social-media-strategy.md)  
 c. [Pay People (and Their Friends) to Vote](./brain/book/strategy/incentive-systems.md)  
+d. [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)  
+e. [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)  
+f. [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)  
+g. [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)  
+h. [Campaign Playbook: How to Run Referendum Campaigns That Win](./brain/book/tactics/campaign-playbook.md)  
+i. [Lobbying for Dummies: How to Legally Bribe Politicians (Step-by-Step)](./brain/book/tactics/lobbying-guide.md)  
+j. [Building Local Chapters: From 0 to 1,000 Volunteers in 90 Days](./brain/book/tactics/chapter-building.md)  
+k. [Media Warfare: How to Win the Narrative War](./brain/book/tactics/media-strategy.md)  
+l. [Crisis Management: What to Do When Everything Goes Wrong](./brain/book/tactics/crisis-management.md)  
+m. [Event Planning SOP: From House Parties to Massive Rallies](./brain/book/sops/event-planning.md)  
+n. [Volunteer Management: How to Not Lose All Your Help](./brain/book/sops/volunteer-management.md)  
+o. [Finance and Accounting: How to Handle Money Without Going to Jail](./brain/book/sops/finance.md)  
+p. [Communications Protocol: Internal and External Messaging](./brain/book/sops/communications.md)  
 
-### Chapter 6: Execution
-a. [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)  
-b. [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)  
-c. [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)  
-d. [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)  
-
-### Chapter 7: Technology
+### Chapter 6: Technology
 a. [Building a Voting System That Can't Be Hacked](./brain/book/technology/secure-voting.md)  
 b. [DIH Treasury Management Protocol](./brain/book/technology/treasury-tech.md)  
 c. [Fraud Detection That Actually Works](./brain/book/technology/fraud-prevention.md)  
 d. [A Decentralized Autonomous FDA](./brain/book/technology/dfda-platform.md)  
 
-### Chapter 8: Proof (Why This Isn't Completely Insane)
+### Chapter 7: Proof (Why This Isn't Completely Insane)
 a. [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)  
 b. [How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)  
 c. [The Economic Proof: Why the Math Actually Works](./brain/book/proof/economic-proof.md)  
 d. [Political Proof: How Mass Movements Win](./brain/book/proof/political-proof.md)  
 
-### Field Manual: Tactical Operationsa
-a. [Campaign Playbook: How to Run Referendum Campaigns That Win](./brain/book/tactics/campaign-playbook.md)  
-b. [Lobbying for Dummies: How to Legally Bribe Politicians (Step-by-Step)](./brain/book/tactics/lobbying-guide.md)  
-c. [Building Local Chapters: From 0 to 1,000 Volunteers in 90 Days](./brain/book/tactics/chapter-building.md)  
-d. [Media Warfare: How to Win the Narrative War](./brain/book/tactics/media-strategy.md)  
-e. [Crisis Management: What to Do When Everything Goes Wrong](./brain/book/tactics/crisis-management.md)  
-
-### Chapter 10: Resources and Templates
+### Chapter 8: Resources & Toolkit
 a. [Sample Legislation: Copy-Paste Bills for Your Country](./brain/book/templates/legislation.md)  
 b. [Talking Points Library: How to Explain This to Anyone](./brain/book/templates/talking-points.md)  
 c. [Presentation Templates: Slide Decks That Actually Work](./brain/book/templates/presentations.md)  
 d. [Fundraising Scripts: How to Ask for Money Without Feeling Gross](./brain/book/templates/fundraising.md)  
+e. [Key Statistics: The Numbers That Matter Most](./brain/book/reference/key-stats.md)  
+f. [Elevator Pitches: 30 Seconds to Save the World](./brain/book/reference/elevator-pitches.md)  
+g. [Common Objections & Responses: What They'll Say and How to Answer](./brain/book/reference/objections.md)  
+h. [Emergency Contacts: Who to Call When Stuff Hits the Fan](./brain/book/reference/emergency-contacts.md)  
 
-### Chapter 11: Standard Operating Procedures
-a. [Event Planning SOP: From House Parties to Massive Rallies](./brain/book/sops/event-planning.md)  
-b. [Volunteer Management: How to Not Lose All Your Help](./brain/book/sops/volunteer-management.md)  
-c. [Finance and Accounting: How to Handle Money Without Going to Jail](./brain/book/sops/finance.md)  
-d. [Communications Protocol: Internal and External Messaging](./brain/book/sops/communications.md)  
-
-### Chapter 12: Quick Reference (Cheat Sheets)
-a. [Key Statistics: The Numbers That Matter Most](./brain/book/reference/key-stats.md)  
-b. [Elevator Pitches: 30 Seconds to Save the World](./brain/book/reference/elevator-pitches.md)  
-c. [Common Objections & Responses: What They'll Say and How to Answer](./brain/book/reference/objections.md)  
-d. [Emergency Contacts: Who to Call When Stuff Hits the Fan](./brain/book/reference/emergency-contacts.md)  
-
-### Chapter 13: Legal and Governance (For the Skeptics and Lawyers)
-a. [FAQ: Every Objection You're Thinking](./brain/book/FAQ.md)  
-b. [How to Stay Out of Prison: The Complete Legal Playbook](./brain/book/legal.md)  
-c. [Security & Governance: How to Run a $27B Treasury Without Getting Robbed](./brain/book/governance.md)  
-d. [Operations Manual: How We Actually Build This Thing](./brain/book/operations.md)  
-
-### Chapter 14: Join the War on Disease
+### Chapter 9: Join the War on Disease
 a. [Get Started Here: Your Next Steps to Join the War on Disease](./brain/book/call-to-action.md)  
 b. [Contributing Guide: How to Help Write This Book](./CONTRIBUTING.md)  
-c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)  
+c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)
