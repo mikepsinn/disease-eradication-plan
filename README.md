@@ -13,23 +13,58 @@ domains: [cross]
 doc_type: strategy
 ---
 
-War is incredibly stupid. It costs humanity [$16.5 trillion a year](./brain/book/references.md#global-violence-costs) in wasted time, blown-up buildings, and general human misery.
+## The Complete Idiot's Guide to Ending War and Disease
 
-Yet, we spend [$2.72 trillion](./brain/book/references.md#sipri-2024-spending) per year on this idiocy.
+If you're anything like me, you probably harbor some disdain for war and disease.
 
-Meanwhile, aging, death and disease are very gradually destroying the lives of you and everyone you love. Yet we spend 40 times less ([$67.5 billion](./brain/reference/global-government-medical-research-spending.md)) on discovering cures for all diseases combined.
+War is:
 
-We spend 40 times more on killing people than on curing them.
+1. incredibly stupid
 
-RESULT: We haven't eradicated a single disease in over 50 years! :(
+AND 
 
-BEST IDEA IN THE WORLD: Humans instead spend that $2.7 trillion on helping each other instead of murdering each other. 
+2. _very expensive_! 
 
-Problem: This makes far too much sense to ever become government policy. 
+Indeed, humanity directly spends [$2.72 trillion](./brain/book/references.md#sipri-2024-spending) per year on implements of its own destruction. 
 
-SECOND BEST IDEA IN THE WORLD: Take just 1% of our murder budget—$27 billion—and spent it on not dying instead? Just 1%. 
+These include many fine products such as nuclear bombs, bullets, autonomous AI weapon systems, hypersonic missiles, laser death rays, tanks that cost more than small countries, invisible fighter jets, cyberwarfare unicorns, and probably a secret orbital mind control satellite or two.
 
-We'd still have $2.69 trillion/year left over. That's still enough to kill 67.25 billion people (and we only have 8 billion).
+And if you consider the indirect costs, the bill is actually quite a bit larger.  
+
+i.e. 
+1. factories and power plants get blown up, so entire industries grind to a halt, wasting an ungodly amount of money
+2. roads, bridges, and hospitals reduced to rubble, making it impossible for people to get to work, school, or even the doctor, also causing the loss of an ungodly amount of money
+3. millions of children missing years of education, which means a less skilled workforce for decades (again costing everone)
+4. businesses are destroyed and and GDPs shrinking by double digits
+5. millions forced to flee their homes, losing all their assets and starting over at zero.  (And moving is such a headache, am I right?)
+6. outbreaks of disease and famine in the chaos
+7. farmland get poisoned or mined, so food production collapses
+ and, most insidiously, 
+8. millions of people left with traumatic brain injuries, amputations, PTSD, and/or a plethora chronic illnesses (we aren't curing)—so they can’t work, can’t support their families, and instead need lifelong care, draining public resources (welfare queens)
+
+
+All in all, we're pissing away [$9.2 trillion every year](./brain/book/problem/cost-of-war.md) on this idiotic hobby.
+
+And all the while, aging, disease, and entropy are very gradually destroying the cells you and everyone you've ever loved...
+
+Despite this moderate concern, our species spends 40X less ([$67.5 billion](./brain/reference/global-government-medical-research-spending.md)) searching for cures to all diseases COMBINED. 
+
+This is quite strange given that the average member of the species would say that preventing the complete dissolution of their mind and body would be 40X cooler than creating a nuclear winter. 
+
+So, if you're one of those guys who likes to think "outside the box", you might feel:
+
+THE BEST IDEA IN THE WORLD: Instead of spending $2.7 trillion on enhancing our capacity to murder one and other and destroy everything, how about we use that $2.7T to do research to cure the diseases that will eventually cause your untimely demise?
+
+PROBLEM: The logic concentration in that idea exceeds the maximum allowable limit for federal policy.
+
+Back to the drawing board... 😖
+
+SECOND BEST IDEA IN THE WORLD: 
+Take just *1%* of our murder budget ($27 billion) and spent it helping people with diseases instead? Just 1%. 
+
+We'd still have $2.69 trillion/year left over. 
+
+That's still enough to kill 67.25 billion people (and we only have 8 billion).
 
 ### But how do we do it?
 
@@ -172,9 +207,9 @@ Cancer becomes treatable, like strep throat is now. Alzheimer's gets cured. Hear
 
 Your great-grandkids will read about people dying of cancer the way you read about people dying of polio. It will seem primitive and tragic and completely unnecessary.
 
-### The Economics of Not Dying
+### The Economics of a World Without War and Disease
 
-When we stop spending $2.7 trillion per year on ways to kill each other and start spending it on ways to not die, everything changes:
+When we stop spending $2.7 trillion per year on ways to kill each other and start spending it on reducing suffering and improving the human condition:
 
 - **Healthcare costs approach zero.** With diseases cured and aging reversed, the multi-trillion dollar burden of "sick care" disappears.
 - **The $16.5 trillion annual cost of violence gets repurposed.** This money, once wasted on destruction, now gets invested in clean energy, space exploration, and making life better.
@@ -184,7 +219,7 @@ This is the world we're building. Not someday. Starting now.
 
 ## The Plan
 
-**Goal:** Make curing people more profitable than killing them.
+**Goal:** Make curing people more profitable than murdering them.
 
 **Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your proof that you'll get paid from the [$16.5 trillion annual peace dividend](./brain/book/economic-models/peace-dividend-value-capture.md) you help create (see [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)).
 
@@ -466,86 +501,86 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 ## Table of Contents
 
-### PROBLEM: You and Everyone You Love are Going to Suffer and Die
-*   [We Spend 40X More on Killing People Than Curing Them](./brain/book/problem/cost-of-war.md)
-*   [The $244 Trillion Disease Tax on Humanity](./brain/book/problem/cost-of-disease.md)
-*   [Why the NIH Is a $50 Billion Paperwork Factory](./brain/book/problem/nih-funding-is-broken.md)
-*   [Why the FDA Takes 17 Years to Approve Cures](./brain/book/problem/fda-is-broken.md)
-*   [How Big Pharma Owns Both of Them](./brain/book/problem/regulatory-capture.md)
+### Chapter 1: Problems
+a. [Why War Sucks](./brain/book/problem/cost-of-war.md)  
+b. [Why Diseases Suck](./brain/book/problem/cost-of-disease.md)  
+c. [Why the NIH Sucks](./brain/book/problem/nih-funding-is-broken.md)  
+d. [Why the FDA Sucks](./brain/book/problem/fda-is-broken.md)  
+e. [Why Representative Democracy Sucks](./brain/book/democracy-is-broken.md)
 
-### SOLUTION: The Stupidly Simple Solution Nobody's Tried
-*   [The 1% Treaty: How to Bribe Our Way to Peace](./brain/book/solution/1-percent-treaty.md)
-*   [Decentralized Institutes of Health: Democracy for Cures](./brain/book/solution/dih.md)
-*   [The dFDA: What Actually Works vs. What We're Told Works](./brain/book/solution/dfda.md)
+### Chapter 2: Solutions 
+a. [The 1% Treaty](./brain/book/solution/1-percent-treaty.md)  
+b. [The Decentralized Institutes of Health](./brain/book/solution/dih.md)  
+c. [The Decentralized FDA](./brain/book/solution/dfda.md)  
+d. [Wishocracy: Quantifying Collective Preferences](./brain/book/solution/wishocracy.md)
 
-### ECONOMICS: How to Make Everyone Rich by Not Dying
-*   [VICTORY Bonds: The Most Profitable Investment in Human History](./brain/book/economics/victory-bonds.md)
-*   [The Peace Dividend: $16.5 Trillion We're Leaving on the Table](./brain/book/economics/peace-dividend-value-capture.md)
-*   [Why This Beats Every Other Investment](./brain/book/economics/investment-thesis.md)
-*   [The Math That Proves It Works](./brain/book/economics/roi-calculations.md)
+### Chapter 3: Economics
+a. [VICTORY Bonds: The Most Profitable Investment in the History of the World](./brain/book/economics/victory-bonds.md)  
+b. [The Peace Dividend: $16.5T/yr Humanity is Currrently Pissing Away](./brain/book/economics/peace-dividend-value-capture.md)  
+c. [Why This Is The Best Investment in the History of the Universe](./brain/book/economics/investment-thesis.md)  
+d. [Math Says It's Rite](./brain/book/economics/roi-calculations.md)  
 
-### PARTNERS: How to Make Everyone Rich
-*   [Why Military Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)
-*   [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/political-incentives.md)
-*   [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)
-*   [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)
+### Chapter 4: Bribery
+a. [Why Military Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)  
+b. [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/political-incentives.md)  
+c. [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)  
+d. [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)  
 
-### STRATEGY: How to Get 280 Million People to Vote
-*   [Building the Voter Registration Machine](./brain/book/strategy/voter-registration.md)
-*   [The Social Media Blitz That Actually Works](./brain/book/strategy/social-media-strategy.md)
-*   [How to Pay People to Care About Politics](./brain/book/strategy/incentive-systems.md)
-*   [Organizing Across 195 Countries Without Losing Your Mind](./brain/book/strategy/international-coordination.md)
+### Chapter 5: Referendum
+a. [Build a Website, Give People Referral Links](./brain/book/strategy/voter-registration.md)  
+b. [How to Reprogram Lots of People](./brain/book/strategy/social-media-strategy.md)  
+c. [Pay People (and Their Friends) to Vote](./brain/book/strategy/incentive-systems.md)  
 
-### EXECUTION: How to Bribe the Military-Industrial Complex
-*   [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)
-*   [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)
-*   [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)
-*   [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)
+### Chapter 6: Execution
+a. [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)  
+b. [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)  
+c. [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)  
+d. [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)  
 
-### TECHNOLOGY: The Technology Infrastructure
-*   [Building a Voting System That Can't Be Hacked](./brain/book/technology/secure-voting.md)
-*   [Wishocracy:L DIH Treasury Management Protocol](./brain/book/technology/treasury-tech.md)
-*   [Fraud Detection That Actually Works](./brain/book/technology/fraud-prevention.md)
-*   [A Decentralized Autonomous FDA](./brain/book/technology/dfda-platform.md)
+### Chapter 7: Technology
+a. [Building a Voting System That Can't Be Hacked](./brain/book/technology/secure-voting.md)  
+b. [DIH Treasury Management Protocol](./brain/book/technology/treasury-tech.md)  
+c. [Fraud Detection That Actually Works](./brain/book/technology/fraud-prevention.md)  
+d. [A Decentralized Autonomous FDA](./brain/book/technology/dfda-platform.md)  
 
-### PROOF: Why This Isn't Insane
-*   [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)
-*   [How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)
-*   [The Economic Proof: Why the Math Actually Works](./brain/book/proof/economic-proof.md)
-*   [Political Proof: How Mass Movements Win](./brain/book/proof/political-proof.md)
+### Chapter 8: Proof (Why This Isn't Completely Insane)
+a. [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)  
+b. [How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)  
+c. [The Economic Proof: Why the Math Actually Works](./brain/book/proof/economic-proof.md)  
+d. [Political Proof: How Mass Movements Win](./brain/book/proof/political-proof.md)  
 
-### Field Manual: Tactical Operations
-*   **[Campaign Playbook](./brain/book/tactics/campaign-playbook.md):** How to run referendum campaigns that win
-*   **[Lobbying for Dummies](./brain/book/tactics/lobbying-guide.md):** How to legally bribe politicians (step-by-step)
-*   **[Building Local Chapters](./brain/book/tactics/chapter-building.md):** From 0 to 1,000 volunteers in 90 days
-*   **[Media Warfare](./brain/book/tactics/media-strategy.md):** How to win the narrative war
-*   **[Crisis Management](./brain/book/tactics/crisis-management.md):** What to do when everything goes wrong
+### Field Manual: Tactical Operationsa
+a. [Campaign Playbook: How to Run Referendum Campaigns That Win](./brain/book/tactics/campaign-playbook.md)  
+b. [Lobbying for Dummies: How to Legally Bribe Politicians (Step-by-Step)](./brain/book/tactics/lobbying-guide.md)  
+c. [Building Local Chapters: From 0 to 1,000 Volunteers in 90 Days](./brain/book/tactics/chapter-building.md)  
+d. [Media Warfare: How to Win the Narrative War](./brain/book/tactics/media-strategy.md)  
+e. [Crisis Management: What to Do When Everything Goes Wrong](./brain/book/tactics/crisis-management.md)  
 
-### Templates and Tools
-*   **[Sample Legislation](./brain/book/templates/legislation.md):** Copy-paste bills for your country
-*   **[Talking Points Library](./brain/book/templates/talking-points.md):** How to explain this to anyone
-*   **[Presentation Templates](./brain/book/templates/presentations.md):** Slide decks that actually work
-*   **[Fundraising Scripts](./brain/book/templates/fundraising.md):** How to ask for money without feeling gross
+### Chapter 10: Resources and Templates
+a. [Sample Legislation: Copy-Paste Bills for Your Country](./brain/book/templates/legislation.md)  
+b. [Talking Points Library: How to Explain This to Anyone](./brain/book/templates/talking-points.md)  
+c. [Presentation Templates: Slide Decks That Actually Work](./brain/book/templates/presentations.md)  
+d. [Fundraising Scripts: How to Ask for Money Without Feeling Gross](./brain/book/templates/fundraising.md)  
 
-### Standard Operating Procedures
-*   **[Event Planning SOP](./brain/book/sops/event-planning.md):** From house parties to massive rallies
-*   **[Volunteer Management](./brain/book/sops/volunteer-management.md):** How to not lose all your help
-*   **[Finance and Accounting](./brain/book/sops/finance.md):** How to handle money without going to jail
-*   **[Communications Protocol](./brain/book/sops/communications.md):** Internal and external messaging
+### Chapter 11: Standard Operating Procedures
+a. [Event Planning SOP: From House Parties to Massive Rallies](./brain/book/sops/event-planning.md)  
+b. [Volunteer Management: How to Not Lose All Your Help](./brain/book/sops/volunteer-management.md)  
+c. [Finance and Accounting: How to Handle Money Without Going to Jail](./brain/book/sops/finance.md)  
+d. [Communications Protocol: Internal and External Messaging](./brain/book/sops/communications.md)  
 
-### Quick Reference (Cheat Sheets)
-*   **[Key Statistics](./brain/book/reference/key-stats.md):** The numbers that matter most
-*   **[Elevator Pitches](./brain/book/reference/elevator-pitches.md):** 30 seconds to save the world
-*   **[Common Objections & Responses](./brain/book/reference/objections.md):** What they'll say and how to answer
-*   **[Emergency Contacts](./brain/book/reference/emergency-contacts.md):** Who to call when stuff hits the fan
+### Chapter 12: Quick Reference (Cheat Sheets)
+a. [Key Statistics: The Numbers That Matter Most](./brain/book/reference/key-stats.md)  
+b. [Elevator Pitches: 30 Seconds to Save the World](./brain/book/reference/elevator-pitches.md)  
+c. [Common Objections & Responses: What They'll Say and How to Answer](./brain/book/reference/objections.md)  
+d. [Emergency Contacts: Who to Call When Stuff Hits the Fan](./brain/book/reference/emergency-contacts.md)  
 
-### For the Skeptics and Lawyers
-*   **[FAQ: Every Objection You're Thinking](./brain/book/FAQ.md)**
-*   **[How to Stay Out of Prison](./brain/book/legal.md):** The complete legal playbook
-*   **[Security & Governance](./brain/book/governance.md):** How to run a $27B treasury without getting robbed
-*   **[Operations Manual](./brain/book/operations.md):** How we actually build this thing
+### Chapter 13: Legal and Governance (For the Skeptics and Lawyers)
+a. [FAQ: Every Objection You're Thinking](./brain/book/FAQ.md)  
+b. [How to Stay Out of Prison: The Complete Legal Playbook](./brain/book/legal.md)  
+c. [Security & Governance: How to Run a $27B Treasury Without Getting Robbed](./brain/book/governance.md)  
+d. [Operations Manual: How We Actually Build This Thing](./brain/book/operations.md)  
 
-### How to Join the War on Disease
-*   **[Get Started Here](./brain/book/call-to-action.md):** Your next steps to join the movement
-*   **[Contributing Guide](./CONTRIBUTING.md):** How to help write this book
-*   **[Evidence Library](./brain/reference/):** All the data that proves we're right
+### Chapter 14: Join the War on Disease
+a. [Get Started Here: Your Next Steps to Join the War on Disease](./brain/book/call-to-action.md)  
+b. [Contributing Guide: How to Help Write This Book](./CONTRIBUTING.md)  
+c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)  
