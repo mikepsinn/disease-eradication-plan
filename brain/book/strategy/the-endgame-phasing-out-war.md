@@ -10,7 +10,7 @@ dateCreated: "2025-02-01T00:00:00.000Z"
 
 # The Endgame: A Multi-Generational Strategy to Phase Out War
 
-## 1. The Vision: Beyond the 1% Treaty
+## 1. The 2% Treaty
 
 The initial 1% Treaty is not the end goal; it is the beginning. It is the crucial first step in a multi-generational strategy designed to systematically and peacefully render organized violence economically obsolete.
 
