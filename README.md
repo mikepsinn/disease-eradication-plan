@@ -507,19 +507,19 @@ e. [Why Representative Democracy is Unrepresentative](./brain/book/problem/democ
 - [The Decentralized Institutes of Health](./brain/book/solution/dih.md)  
 - [Wishocracy: Quantifying Collective Preferences](./brain/book/solution/wishocracy.md)
 - [The Decentralized FDA](./brain/book/solution/dfda.md)  
+- [Building a Voting System That Can't Be Hacked](./brain/book/technology/secure-voting.md)  
+- [DIH Treasury Management Protocol](./brain/book/technology/treasury-tech.md)  
+- [Fraud Detection That Actually Works](./brain/book/technology/fraud-prevention.md)  
+- [A Decentralized Autonomous FDA](./brain/book/technology/dfda-platform.md)  
 
 ### Chapter 3: Economics
-b. [The $16.5T Peace Dividend](./brain/book/economics/peace-dividend-value-capture.md)  
-c. [Why This Is The Best Investment in the History of the Universe](./brain/book/economics/investment-thesis.md)  
-d. [Math Says It's Rite](./brain/book/economics/roi-calculations.md)  
+a. [The $16.5T Peace Dividend](./brain/book/economics/peace-dividend-value-capture.md)  
+b. [Why This Is The Best Investment in the History of the Universe](./brain/book/economics/investment-thesis.md)  
+c. [Math Says It's Rite](./brain/book/economics/roi-calculations.md)  
+d. [Why Military Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)
+e. [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)
 
-### Chapter 4: Bribery
-a. [Why Military Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)  
-b. [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/political-incentives.md)  
-c. [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)  
-d. [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)  
-
-### Chapter 5: The Playbook: From Referendum to Ratification
+### Chapter 4: The Playbook: From Referendum to Ratification
 a. [Build a Website, Give People Referral Links](./brain/book/strategy/voter-registration.md)  
 b. [How to Reprogram Lots of People](./brain/book/strategy/social-media-strategy.md)  
 c. [Pay People (and Their Friends) to Vote](./brain/book/strategy/incentive-systems.md)  
@@ -536,20 +536,21 @@ m. [Event Planning SOP: From House Parties to Massive Rallies](./brain/book/sops
 n. [Volunteer Management: How to Not Lose All Your Help](./brain/book/sops/volunteer-management.md)  
 o. [Finance and Accounting: How to Handle Money Without Going to Jail](./brain/book/sops/finance.md)  
 p. [Communications Protocol: Internal and External Messaging](./brain/book/sops/communications.md)  
+q. [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/political-incentives.md)
+r. [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)
 
-### Chapter 6: Technology
-a. [Building a Voting System That Can't Be Hacked](./brain/book/technology/secure-voting.md)  
-b. [DIH Treasury Management Protocol](./brain/book/technology/treasury-tech.md)  
-c. [Fraud Detection That Actually Works](./brain/book/technology/fraud-prevention.md)  
-d. [A Decentralized Autonomous FDA](./brain/book/technology/dfda-platform.md)  
-
-### Chapter 7: Proof (Why This Isn't Completely Insane)
+### Chapter 5: Proof (Why This Isn't Completely Insane)
 a. [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)  
 b. [How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)  
 c. [The Economic Proof: Why the Math Actually Works](./brain/book/proof/economic-proof.md)  
 d. [Political Proof: How Mass Movements Win](./brain/book/proof/political-proof.md)  
 
-### Chapter 8: Resources & Toolkit
+### Chapter 6: Join the War on Disease
+a. [Get Started Here: Your Next Steps to Join the War on Disease](./brain/book/call-to-action.md)  
+b. [Contributing Guide: How to Help Write This Book](./CONTRIBUTING.md)  
+c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)  
+
+### Appendix: Resources & Toolkit
 a. [Sample Legislation: Copy-Paste Bills for Your Country](./brain/book/templates/legislation.md)  
 b. [Talking Points Library: How to Explain This to Anyone](./brain/book/templates/talking-points.md)  
 c. [Presentation Templates: Slide Decks That Actually Work](./brain/book/templates/presentations.md)  
@@ -557,9 +558,4 @@ d. [Fundraising Scripts: How to Ask for Money Without Feeling Gross](./brain/boo
 e. [Key Statistics: The Numbers That Matter Most](./brain/book/reference/key-stats.md)  
 f. [Elevator Pitches: 30 Seconds to Save the World](./brain/book/reference/elevator-pitches.md)  
 g. [Common Objections & Responses: What They'll Say and How to Answer](./brain/book/reference/objections.md)  
-h. [Emergency Contacts: Who to Call When Stuff Hits the Fan](./brain/book/reference/emergency-contacts.md)  
-
-### Chapter 9: Join the War on Disease
-a. [Get Started Here: Your Next Steps to Join the War on Disease](./brain/book/call-to-action.md)  
-b. [Contributing Guide: How to Help Write This Book](./CONTRIBUTING.md)  
-c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)
+h. [Emergency Contacts: Who to Call When Stuff Hits the Fan](./brain/book/reference/emergency-contacts.md)
