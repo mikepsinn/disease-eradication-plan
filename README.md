@@ -13,9 +13,18 @@ domains: [cross]
 doc_type: strategy
 ---
 
-## The Complete Idiot's Guide to Ending War and Disease
+# The Complete Idiot's Guide to Ending War and Disease
 
 If you're anything like me, you probably harbor some disdain for war and disease.
+And you might have at one point found yourself muttering in a empty bus station, "But I'm just one complete idiot, what can I do?"
+
+Well this is the book for you!  
+
+We'll tell you how to persuade your species to stop murdering each other and destroying stuff and instead cure your grandma's dementia, lickety split!
+
+## The Problem
+
+### Problem 1. The Cost of War
 
 War is:
 
@@ -34,22 +43,27 @@ And if you consider the indirect costs, the bill is actually quite a bit larger.
 i.e. 
 1. factories and power plants get blown up, so entire industries grind to a halt, wasting an ungodly amount of money
 2. roads, bridges, and hospitals reduced to rubble, making it impossible for people to get to work, school, or even the doctor, also causing the loss of an ungodly amount of money
-3. millions of children missing years of education, which means a less skilled workforce for decades (again costing everone)
+3. millions of children missing years of education, which means a less skilled workforce for decades (again costing everyone)
 4. businesses are destroyed and and GDPs shrinking by double digits
 5. millions forced to flee their homes, losing all their assets and starting over at zero.  (And moving is such a headache, am I right?)
 6. outbreaks of disease and famine in the chaos
 7. farmland get poisoned or mined, so food production collapses
  and, most insidiously, 
-8. millions of people left with traumatic brain injuries, amputations, PTSD, and/or a plethora chronic illnesses (we aren't curing)—so they can’t work, can’t support their families, and instead need lifelong care, draining public resources (welfare queens)
-
+8. millions of people left with traumatic brain injuries, amputations, PTSD, and/or a plethora chronic illnesses (we aren't curing). So they can’t work, can’t support their families, and instead need lifelong care, draining public resources (welfare queens)
 
 All in all, we're pissing away [$9.2 trillion every year](./brain/book/problem/cost-of-war.md) on this very weird hobby.
+
+[Learn More](./brain/book/problem/cost-of-war.md)
+
+### Problem 2. The Cost of Disease
 
 And all the while, aging, disease, and entropy are very gradually destroying the cells you and everyone you've ever loved...
 
 Despite this moderate concern, our species spends 40X less ([$67.5 billion](./brain/reference/global-government-medical-research-spending.md)) searching for cures to all diseases COMBINED. 
 
 This is quite strange given that the average member of the species would say that preventing the complete dissolution of their mind and body would be 40X cooler than creating a nuclear winter. 
+
+
 
 So, if you're one of those guys who likes to think "outside the box", you might feel:
 
@@ -85,7 +99,7 @@ Getting every government to ratify the treaty requires two things:
 
 **A: We sell bonds designed to be the most profitable investment in the world.**
 
-Remember World War II? America sold war bonds to fund the fight against fascism. We're doing the same thing, but for disease.
+Remember World War II? America sold war bonds to fund the fight against fascism. We're doing the same thing, but for the War on Disease.
 
 The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
 
@@ -205,7 +219,7 @@ Your kid gets diagnosed with some rare genetic disease. Instead of bankruptcy an
 
 Cancer becomes treatable, like strep throat is now. Alzheimer's gets cured. Heart disease becomes optional. You live as long as you want to live, and you stay healthy while you do it.
 
-Your great-grandkids will read about people dying of cancer the way you read about people dying of polio. It will seem primitive and tragic and completely unnecessary.
+Your great-grandchildren will read about people dying of cancer the way you read about people dying of polio. It will seem primitive and tragic and completely unnecessary.
 
 ### The Economics of a World Without War and Disease
 
@@ -215,7 +229,7 @@ When we stop spending $2.7 trillion per year on ways to kill each other and star
 - **The $16.5 trillion annual cost of violence gets repurposed.** This money, once wasted on destruction, now gets invested in clean energy, space exploration, and making life better.
 - **Human potential becomes unlimited.** When people can choose how long to live and stay healthy while doing it, we can finally see what humans are actually capable of.
 
-This is the world we're building. Not someday. Starting now.
+This is the world we can start creating today.
 
 ## The Plan
 

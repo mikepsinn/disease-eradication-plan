@@ -270,4 +270,3 @@ We're spending 5,728 times more per death than we spend per life saved.
 
 The mathematics of human priorities would be fascinating if it weren't so perfectly, tragically absurd.
 
-]
