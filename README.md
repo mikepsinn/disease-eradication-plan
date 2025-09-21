@@ -107,7 +107,7 @@ We create a [1% Treaty](./brain/book/solution/1-percent-treaty.md) that says "De
 Getting every government to ratify the treaty requires two things:
 
 1. Prove [3.5% of humanity](./brain/book/references.md#3-5-rule) wants this (that's the magic number for unstoppable political movements).
-2. Spend [$1-2.5 billion](./brain/book/economic-models/fundraising-and-budget-plan.md) bribing the right people legally.
+2. Spend [$1-2.5 billion](./brain/book/economics/fundraising/fundraising-budget-breakdown.md) bribing the right people legally.
 
 ### Q: How do we get $2 billion and persuade the military industrial complex to help?
 
@@ -115,7 +115,7 @@ Getting every government to ratify the treaty requires two things:
 
 Remember World War II? America sold war bonds to fund the fight against fascism. We're doing the same thing, but for the War on Disease.
 
-The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with a an ability to influence the ratification of the 1% treaty by any particular nation.
+The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./brain/book/economics/victory-bonds.md)** to anyone with a an ability to influence the ratification of the 1% treaty by any particular nation.
 
 **The result:** Everyone gets richer by funding cures instead of destruction.
 
@@ -210,11 +210,11 @@ This is the world we can start creating today.
 
 **Goal:** Make curing people more profitable than murdering them.
 
-**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your proof that you'll get paid from the [$16.5 trillion annual peace dividend](./brain/book/economic-models/peace-dividend-value-capture.md) you help create (see [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)).
+**Step 1:** Give everyone on Earth a stake in the outcome. Reward every person who votes on the global referendum with **VOTE points**—your proof that you'll get paid from the [$16.5 trillion annual peace dividend](./brain/book/economics/peace-dividend-value-capture.md) you help create (see [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)).
 
 **Step 2:** When we hit [3.5% of humanity](./brain/book/references.md#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—you get to own part of the **$27B+ annual health treasury** and vote on how the money gets spent (see [VICTORY Bonds — Incentive Mechanics](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)).
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—you get to own part of the **$27B+ annual health treasury** and vote on how the money gets spent (see [VICTORY Bonds — Incentive Mechanics](./brain/book/economics/victory-bonds.md)).
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 
@@ -226,7 +226,7 @@ This is the world we can start creating today.
 
 ## VICTORY Bonds: Bootstrap Funding Model
 
-**[VICTORY Bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md):** Bootstrap funding now, repaid by treaty inflows.
+**[VICTORY Bonds](./brain/book/economics/victory-bonds.md):** Bootstrap funding now, repaid by treaty inflows.
 
 Here are our two simple rules:
 
@@ -237,11 +237,11 @@ We pay investors most of their money up front (~$7.23B per year when everything 
 
 ## The DIH Treasury: 80X More Efficient Research
 
-**[Decentralized Institutes of Health (DIH)](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](./brain/book/problems/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) system** with proven results:
+**[Decentralized Institutes of Health (DIH)](./brain/book/solution/dih.md):** A treasury that funds research 80X cheaper. The DIH doesn't fund the [old, broken system](./brain/book/problem/problems-in-clinical-research.md)—it funds a **decentralized FDA (dFDA) system** with proven results:
 
 - **[80X Greater Efficiency](./brain/reference/recovery-trial.md):** The dFDA model cuts per-patient trial costs from [$41,000](./brain/book/references.md#trial-cost-41k) to as low as [$500](./brain/book/references.md#recovery-cost-500), an 80X efficiency gain **already proven** by the [Oxford RECOVERY trial](./brain/reference/recovery-trial.md), which saved over 1 million lives globally.
-- **[$50 Billion in Annual Savings](./brain/book/economic-models/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA system is projected to save the global R&D industry ~$50 billion annually—**based on actual performance data, not projections**.
-- **[840,000+ Extra Years of Healthy Life](./brain/book/economic-models/dfda-cost-benefit-analysis.md):** The system is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**This isn't some pie-in-the-sky idea. The Oxford RECOVERY trial already proved you can run medical trials for $500 per patient instead of $41,000. We're just going to do more of that**.
+- **[$50 Billion in Annual Savings](./brain/book/economics/dfda-cost-benefit-analysis.md):** By making research cheaper and faster, the dFDA system is projected to save the global R&D industry ~$50 billion annually—**based on actual performance data, not projections**.
+- **[840,000+ Extra Years of Healthy Life](./brain/book/economics/dfda-cost-benefit-analysis.md):** The system is projected to generate over 840,000 extra years of healthy life annually through faster drug access and new therapies—**This isn't some pie-in-the-sky idea. The Oxford RECOVERY trial already proved you can run medical trials for $500 per patient instead of $41,000. We're just going to do more of that**.
 
 **Specialized programs fund existing institutions:**
 
@@ -281,7 +281,7 @@ graph TD;
 
 **Total Implementation Cost:** $1.2-2.5B over 36 months
 
-**What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](./brain/book/economic-models/fundraising-and-budget-plan.md).
+**What This Buys:** For a detailed breakdown of our multi-phase fundraising strategy and a line-item budget, see our full [Fundraising & Budget Plan](./brain/book/economics/fundraising/fundraising-budget-breakdown.md).
 
 - Global referendum "Proof-of-Vote" points platform (~$5-10M)
 - Independent expenditures in priority elections (~$800M-1.5B)
@@ -297,7 +297,7 @@ graph TD;
 
 **The Math:** We're asking for $2.5B to redirect $27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
 
-This simple model ensures that even in conservative scenarios, the DIH remains massively well-funded while providing returns that beat the best hedge funds. For a complete breakdown, see our [Dynamic Cash Flow Model](./brain/book/economic-models/dih-treasury-cash-flow-model.md).
+This simple model ensures that even in conservative scenarios, the DIH remains massively well-funded while providing returns that beat the best hedge funds. For a complete breakdown, see our [Dynamic Cash Flow Model](./brain/book/economics/dih-treasury-cash-flow-model.md).
 
 ---
 
@@ -320,7 +320,7 @@ We turn today's **War Contractors** into tomorrow's **Peace Contractors** by pay
 We start with rich people who want to get richer, then move on to politicians. It's depressingly predictable, but it works.
 
 ### 1. Rich People Get Richer
-We offer **[VICTORY Bonds](./brain/book/economics.md)** that pay better returns than the best hedge funds (~40% annually) plus governance control over the $27 billion treasury. Rich people like making money. We help them make more money by funding cures instead of bombs.
+We offer **[VICTORY Bonds](./brain/book/economics/victory-bonds.md)** that pay better returns than the best hedge funds (~40% annually) plus governance control over the $27 billion treasury. Rich people like making money. We help them make more money by funding cures instead of bombs.
 
 ### 2. Regular People Get Paid
 Citizens get **VOTE points** for participating in the global referendum. After the treaty passes, these become real ownership in the health treasury they helped create. 280 million people with skin in the game create unstoppable political pressure.
@@ -443,9 +443,9 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 **[Request an organization link](./brain/book/strategy/referendum/global-referendum-implementation.md#organization-links)** → Mobilize your organization to earn rewards for verified votes. Access pooled bonus funds for building coalitions.
 
-**[Buy VICTORY bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)** → Fund the treasury, get repaid with interest when treaties pass.
+**[Buy VICTORY bonds](./brain/book/economics/victory-bonds.md)** → Fund the treasury, get repaid with interest when treaties pass.
 
-**[Calculate your institution's allocation](./brain/book/strategy/1-percent-treaty/institutional-funding-calculator.md)** → See how much your university/company/nonprofit would receive.
+**[Calculate your institution's allocation](./brain/book/strategy/institutional-funding-calculator.md)** → See how much your university/company/nonprofit would receive.
 
 **[Join the coalition](./brain/book/strategy/coalition-building.md)** → Help coordinate health institutions to support the treaty.
 
@@ -453,7 +453,7 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 ## For Institutions
 
-**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [VICTORY Bonds](./brain/book/economic-models/victory-bond-investment-thesis.md) and profit while their companies benefit.
+**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [VICTORY Bonds](./brain/book/economics/victory-bonds.md) and profit while their companies benefit.
 
 **Universities:** Way more research money for all your health departments. And your administrators can personally profit from the system that's funding their institutions.
 
@@ -475,12 +475,12 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 - [Free Rider Problem Solution](./brain/book/strategy/free-rider-solution.md) - How we make them pay
 - [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md) - Election and securities law compliance
-- [Impact Securities and Digital Public Goods Financing Act (Draft)](./brain/book/regulatory/impact-securities-reform.md) - Model law to enable compliant, low‑friction financing via on‑chain reporting and impact securities
+- [Impact Securities and Digital Public Goods Financing Act (Draft)](./brain/book/legal/impact-securities-reform.md) - Model law to enable compliant, low‑friction financing via on‑chain reporting and impact securities
 - [Verification & Fraud Prevention](./brain/book/strategy/verification-and-fraud-prevention.md) - Scale verification for 280M people
 
 **Strategy:** [The War on Disease: A New Strategy for a New Era](./brain/book/strategy/war-on-disease-strategy.md)
 
-**Treasury:** [DIH funding model](./brain/book/strategy/1-percent-treaty/decentralized-institutes-of-health.md)
+**Treasury:** [DIH funding model](./brain/book/solution/dih.md)
 
 **Coalition:** [How institutions can work with us](./brain/book/strategy/coalition-building.md)
 
@@ -497,8 +497,8 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 a. [The Cost of War](./brain/book/problem/cost-of-war.md)  
 b. [The Cost of Disease](./brain/book/problem/cost-of-disease.md)  
 c. [Why NIH is Terrible at Funding Research](./brain/book/problem/nih-funding-is-broken.md)  
-d. [Why FDA is Unsafe and Ineffective](./brain/book/problem/fda-is-broken.md)  
-e. [Why Representative Democracy is Unrepresentative](./brain/book/democracy-is-broken.md)
+d. [Why FDA is Unsafe and Ineffective](./brain/book/problem/fda-approvals-are-broken.md)  
+e. [Why Representative Democracy is Unrepresentative](./brain/book/problem/democracy-is-broken.md)
 
 ### Chapter 2: Solution
 - [The 1% Treaty](./brain/book/solution/1-percent-treaty.md) 
