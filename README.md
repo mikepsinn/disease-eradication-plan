@@ -22,7 +22,7 @@ Well this is the book for you!
 
 We'll tell you how to persuade your species to stop murdering each other and destroying stuff and instead cure your grandma's dementia, lickety split!
 
-## The Problem
+## I. The Problem
 
 ### Problem 1. The Cost of War
 
@@ -63,7 +63,21 @@ Despite this moderate concern, our species spends 40X less ([$67.5 billion](./br
 
 This is quite strange given that the average member of the species would say that preventing the complete dissolution of their mind and body would be 40X cooler than creating a nuclear winter. 
 
+The Pentagon alone [can't account for $2.5 trillion](./brain/book/references.md#pentagon-unaccounted-2-5t) in assets—250 times larger than what we're asking them to redirect. **They lose more money by accident than we need to cure cancer.**
 
+We haven't eradicated a single disease in [50 years](./brain/book/references.md#smallpox-eradicated). But we have [enough nuclear weapons to end civilization](./brain/book/references.md#nuke-winter-150tg) several times over. (Just in case the first apocalypse doesn't take.)
+
+In our evolutionary past, when resources were scarce, violence was necessary for survival. But today we live in a world with enough food for everyone. In fact, nearly all starvation today is actually the RESULT of violent conflict.
+
+### Why We Keep Being Idiots
+
+War is profitable. 
+
+Military contractors make billions. Politicians get campaign donations. Everyone's getting paid except the people getting shot.
+
+---
+
+## II. THE SOLUTION
 
 So, if you're one of those guys who likes to think "outside the box", you might feel:
 
@@ -93,58 +107,19 @@ We create a [1% Treaty](./brain/book/solution/1-percent-treaty.md) that says "De
 Getting every government to ratify the treaty requires two things:
 
 1. Prove [3.5% of humanity](./brain/book/references.md#3-5-rule) wants this (that's the magic number for unstoppable political movements).
-2. Spend [\$1-2.5 billion](./brain/book/economic-models/fundraising-and-budget-plan.md) bribing the right people legally.
+2. Spend [$1-2.5 billion](./brain/book/economic-models/fundraising-and-budget-plan.md) bribing the right people legally.
 
-### Q: How do we get \$2 billion and persuade the military industrial complex to help?
+### Q: How do we get $2 billion and persuade the military industrial complex to help?
 
 **A: We sell bonds designed to be the most profitable investment in the world.**
 
 Remember World War II? America sold war bonds to fund the fight against fascism. We're doing the same thing, but for the War on Disease.
 
-The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with the ability to influence the ratification of the 1% treaty by any particular nation.
+The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./brain/book/strategy/1-percent-treaty/victory-bonds-tokenomics.md)** to anyone with a an ability to influence the ratification of the 1% treaty by any particular nation.
 
 **The result:** Everyone gets richer by funding cures instead of destruction.
 
----
-
-## II. THE PROBLEM
-
-## We're Doing This Backwards
-
-Governments spend [\$2.72 trillion](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024) on ways to kill people and [\$67.5 billion](./brain/reference/global-government-medical-research-spending.md) on ways to save them.
-
-That's 40 to 1. Forty times more money for death than for life.
-
-The Pentagon alone [can't account for \$2.5 trillion](./brain/book/references.md#pentagon-unaccounted-2-5t) in assets—250 times larger than what we're asking them to redirect. **They lose more money by accident than we need to cure cancer.**
-
-We haven't eradicated a single disease in [50 years](./brain/book/references.md#smallpox-eradicated). But we have [enough nuclear weapons to end civilization](./brain/book/references.md#nuke-winter-150tg) several times over. (Just in case the first apocalypse doesn't take.)
-
-In our evolutionary past, when resources were scarce, violence was necessary for survival. But today we live in a world with enough food for everyone. In fact, nearly all starvation today is actually the RESULT of violent conflict.
-
-## Why We Keep Being Idiots
-
-War is profitable. 
-
-Military contractors make billions. Politicians get campaign donations. Everyone's getting paid except the people getting shot.
-
-No amount of "war is bad" speeches will fix this. Money talks louder than morals.
-
-## The Choice
-
-Humanity has two options:
-
-1. Keep building bigger bombs, autonomous weapons systems until we accidentally blow ourselves up or die of one of our many fine diseases.
-2. Eradicate said disease instead.
-
-Pick one.
-
-See [1% Treaty](./brain/book/solution/1-percent-treaty.md) for quantified savings and ROI. For a detailed breakdown of direct and indirect costs of war, see [Quantified Costs of War](./brain/reference/costs-of-war.md).
-
----
-
-## III. THE SOLUTION
-
-## How It Works: From $27 Billion to Curing Cancer
+### How It Works: From $27 Billion to Curing Cancer
 
 We can't change human nature. But we can change what pays.
 
@@ -209,7 +184,7 @@ graph TD;
 
 ---
 
-## A World Without War and Disease
+## III. A World Without War and Disease
 
 Here's what happens when we stop wasting money on bombs and start spending it on not dying:
 
