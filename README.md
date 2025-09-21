@@ -43,7 +43,7 @@ i.e.
 8. millions of people left with traumatic brain injuries, amputations, PTSD, and/or a plethora chronic illnesses (we aren't curing)—so they can’t work, can’t support their families, and instead need lifelong care, draining public resources (welfare queens)
 
 
-All in all, we're pissing away [$9.2 trillion every year](./brain/book/problem/cost-of-war.md) on this idiotic hobby.
+All in all, we're pissing away [$9.2 trillion every year](./brain/book/problem/cost-of-war.md) on this very weird hobby.
 
 And all the while, aging, disease, and entropy are very gradually destroying the cells you and everyone you've ever loved...
 
@@ -499,24 +499,28 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 ---
 
+
+# The Complete Idiot's Guide to Ending War and Disease
+
 ## Table of Contents
 
 ### Chapter 1: Problems
-a. [Why War Sucks](./brain/book/problem/cost-of-war.md)  
-b. [Why Diseases Suck](./brain/book/problem/cost-of-disease.md)  
-c. [Why the NIH Sucks](./brain/book/problem/nih-funding-is-broken.md)  
-d. [Why the FDA Sucks](./brain/book/problem/fda-is-broken.md)  
-e. [Why Representative Democracy Sucks](./brain/book/democracy-is-broken.md)
+a. [The Cost of War](./brain/book/problem/cost-of-war.md)  
+b. [The Cost of Disease](./brain/book/problem/cost-of-disease.md)  
+c. [Why NIH is Terrible at Funding Research](./brain/book/problem/nih-funding-is-broken.md)  
+d. [Why FDA is Unsafe and Ineffective](./brain/book/problem/fda-is-broken.md)  
+e. [Why Representative Democracy is Unrepresentative](./brain/book/democracy-is-broken.md)
 
-### Chapter 2: Solutions 
-a. [The 1% Treaty](./brain/book/solution/1-percent-treaty.md)  
-b. [The Decentralized Institutes of Health](./brain/book/solution/dih.md)  
-c. [The Decentralized FDA](./brain/book/solution/dfda.md)  
-d. [Wishocracy: Quantifying Collective Preferences](./brain/book/solution/wishocracy.md)
+### Chapter 2: Solution
+- [The 1% Treaty](./brain/book/solution/1-percent-treaty.md) 
+- [The Global Referendum on War and Disease](./brain/book/solution/1-percent-treaty.md) 
+- [VICTORY Bonds: The Most Profitable Investment in the History of the World](./brain/book/economics/victory-bonds.md)  
+- [The Decentralized Institutes of Health](./brain/book/solution/dih.md)  
+- [Wishocracy: Quantifying Collective Preferences](./brain/book/solution/wishocracy.md)
+- [The Decentralized FDA](./brain/book/solution/dfda.md)  
 
 ### Chapter 3: Economics
-a. [VICTORY Bonds: The Most Profitable Investment in the History of the World](./brain/book/economics/victory-bonds.md)  
-b. [The Peace Dividend: $16.5T/yr Humanity is Currrently Pissing Away](./brain/book/economics/peace-dividend-value-capture.md)  
+b. [The $16.5T Peace Dividend](./brain/book/economics/peace-dividend-value-capture.md)  
 c. [Why This Is The Best Investment in the History of the Universe](./brain/book/economics/investment-thesis.md)  
 d. [Math Says It's Rite](./brain/book/economics/roi-calculations.md)  
 
