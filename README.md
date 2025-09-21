@@ -516,28 +516,32 @@ e. [Why Representative Democracy is Unrepresentative](./brain/book/problem/democ
 a. [The $16.5T Peace Dividend](./brain/book/economics/peace-dividend-value-capture.md)  
 b. [Why This Is The Best Investment in the History of the Universe](./brain/book/economics/investment-thesis.md)  
 c. [Math Says It's Rite](./brain/book/economics/roi-calculations.md)  
-d. [Why Military Contractors Will Love This](./brain/book/partners/military-industrial-incentives.md)
-e. [Why Big Pharma Gets More R&D Money Than Ever](./brain/book/partners/pharma-incentives.md)
 
 ### Chapter 4: The Playbook: From Referendum to Ratification
-a. [Build a Website, Give People Referral Links](./brain/book/strategy/voter-registration.md)  
-b. [How to Reprogram Lots of People](./brain/book/strategy/social-media-strategy.md)  
-c. [Pay People (and Their Friends) to Vote](./brain/book/strategy/incentive-systems.md)  
-d. [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)  
-e. [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)  
-f. [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)  
-g. [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)  
-h. [Campaign Playbook: How to Run Referendum Campaigns That Win](./brain/book/tactics/campaign-playbook.md)  
-i. [Lobbying for Dummies: How to Legally Bribe Politicians (Step-by-Step)](./brain/book/tactics/lobbying-guide.md)  
-j. [Building Local Chapters: From 0 to 1,000 Volunteers in 90 Days](./brain/book/tactics/chapter-building.md)  
-k. [Media Warfare: How to Win the Narrative War](./brain/book/tactics/media-strategy.md)  
-l. [Crisis Management: What to Do When Everything Goes Wrong](./brain/book/tactics/crisis-management.md)  
-m. [Event Planning SOP: From House Parties to Massive Rallies](./brain/book/sops/event-planning.md)  
-n. [Volunteer Management: How to Not Lose All Your Help](./brain/book/sops/volunteer-management.md)  
-o. [Finance and Accounting: How to Handle Money Without Going to Jail](./brain/book/sops/finance.md)  
-p. [Communications Protocol: Internal and External Messaging](./brain/book/sops/communications.md)  
-q. [How Politicians Get Rich and Popular Simultaneously](./brain/book/partners/political-incentives.md)
-r. [Making the Media Profitable Partners, Not Enemies](./brain/book/partners/media-incentives.md)
+**Phase 1: Public Mobilization**
+- [Build a Website, Give People Referral Links](./brain/book/strategy/voter-registration.md)  
+- [How to Reprogram Lots of People](./brain/book/strategy/social-media-strategy.md)  
+- [Pay People (and Their Friends) to Vote](./brain/book/strategy/incentive-systems.md)  
+
+**Phase 2: Elite & Corporate Strategy**
+- [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)  
+- [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)  
+- [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)
+- [Aligning Incentives: Military, Pharma, Politicians, & Media](./brain/book/partners/incentives.md)
+
+**Phase 3: Tactical Operations**
+- [Campaign Playbook: How to Run Referendum Campaigns That Win](./brain/book/tactics/campaign-playbook.md)  
+- [Lobbying for Dummies: How to Legally Bribe Politicians (Step-by-Step)](./brain/book/tactics/lobbying-guide.md)  
+- [Building Local Chapters: From 0 to 1,000 Volunteers in 90 Days](./brain/book/tactics/chapter-building.md)  
+- [Media Warfare: How to Win the Narrative War](./brain/book/tactics/media-strategy.md)  
+- [Crisis Management: What to Do When Everything Goes Wrong](./brain/book/tactics/crisis-management.md)  
+
+**Phase 4: Organizational Framework**
+- [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)  
+- [Event Planning SOP: From House Parties to Massive Rallies](./brain/book/sops/event-planning.md)  
+- [Volunteer Management: How to Not Lose All Your Help](./brain/book/sops/volunteer-management.md)  
+- [Finance and Accounting: How to Handle Money Without Going to Jail](./brain/book/sops/finance.md)  
+- [Communications Protocol: Internal and External Messaging](./brain/book/sops/communications.md)  
 
 ### Chapter 5: Proof (Why This Isn't Completely Insane)
 a. [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)  
@@ -556,6 +560,6 @@ b. [Talking Points Library: How to Explain This to Anyone](./brain/book/template
 c. [Presentation Templates: Slide Decks That Actually Work](./brain/book/templates/presentations.md)  
 d. [Fundraising Scripts: How to Ask for Money Without Feeling Gross](./brain/book/templates/fundraising.md)  
 e. [Key Statistics: The Numbers That Matter Most](./brain/book/reference/key-stats.md)  
-f. [Elevator Pitches: 30 Seconds to Save the World](./brain/book/reference/elevator-pitches.md)  
+f. [Elevator Pitches: 30 Seconds to End War and Disease](./brain/book/reference/elevator-pitches.md)  
 g. [Common Objections & Responses: What They'll Say and How to Answer](./brain/book/reference/objections.md)  
 h. [Emergency Contacts: Who to Call When Stuff Hits the Fan](./brain/book/reference/emergency-contacts.md)
