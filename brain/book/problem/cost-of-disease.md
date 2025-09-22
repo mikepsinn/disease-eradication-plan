@@ -103,12 +103,16 @@ We're sitting on the largest library of potential cures in human history and we'
 
 ![Studied vs Unstudied Molecules](../../../assets/studied-molecules-chart-no-background.png)
 
-Every day we delay costs us **\$299 billion**.
-That's the daily price of our ignorance.
-Move the end of disease forward by just one day, and we save more money than most countries' entire economies.
+Somewhere in the future, maybe 10 years, maybe 100, maybe 1,000 years, there will be a day when we finally understand human biology completely.
+When we can prevent, reverse, and repair any disease at low cost.
+When cancer becomes as trivial as a scraped knee.
+
+Every SINGLE DAY we delay reaching that future costs us **\$299 BILLION DOLLARS**.
+**\$299 billion** more money than most countries' entire economies.
+That's the daily price of messing around with wars and other nonsense instead of hurrying up.
 
 This \$109 trillion loss represents the **Health Dividend**—the economic value we'll capture when we stop people from dying of preventable diseases.
 Just like the [\$16.5 trillion Peace Dividend](../economics/peace-dividend-value-capture.md) we get from reducing violence, the Health Dividend is massive, measurable, and waiting for us to claim it.
 
-We just need to implement a way to capture part of it to generate the action energy to make it happen.
+This is why we're creating War on Disease VICTORY bonds to capture a tiny part of it to generate the action energy to make it happen.
 It's also the biggest investment opportunity in human history.
