@@ -88,14 +88,20 @@ It's 10 times what we spend on militaries worldwide.
 It's a permanent tax on humanity that makes every other problem look tiny.
 Unlike climate change or nuclear war, this isn't a future threat—it's destroying our families and economies right now.
 
+![Deaths from Disease vs Terrorism](../../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
+
 But here's the thing: **disease isn't inevitable.**
 The human body is a machine—a really complicated, old machine—but machines can be fixed.
 Cancer, Alzheimer's, heart disease—these aren't laws of physics.
 They're engineering problems we haven't solved yet because we know almost nothing about how biology actually works.
 
+![What We Do Not Know](../../../assets/what-we-do-not-know.png)
+
 We've identified [166 billion potential treatments](../references.md#166-billion-compounds) that could cure diseases.
 How many have we tested? Almost none.
 We're sitting on the largest library of potential cures in human history and we're not even looking at the books.
+
+![Studied vs Unstudied Molecules](../../../assets/studied-molecules-chart-no-background.png)
 
 Every day we delay costs us **\$299 billion**.
 That's the daily price of our ignorance.
