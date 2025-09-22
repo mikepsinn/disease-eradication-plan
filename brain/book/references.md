@@ -20,6 +20,12 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed."
   > — Wikipedia, [3.5% rule](https://en.wikipedia.org/wiki/3.5%25_rule)
 
+<a id="166-billion-compounds"></a>
+
+- **166 billion potential treatments remain untested**
+  > "Sixteen years on, he has amassed the largest database of small molecules in the world, a gigantic virtual collection of 166 billion compounds."
+  > — Nature, 2017, [How my race to find a drug for my daughter is helping others](https://www.nature.com/articles/549445a)
+
 <a id="amr-10m-2050"></a>
 
 - **Antimicrobial resistance deaths projection**

@@ -93,6 +93,10 @@ The human body is a machine—a really complicated, old machine—but machines c
 Cancer, Alzheimer's, heart disease—these aren't laws of physics.
 They're engineering problems we haven't solved yet because we know almost nothing about how biology actually works.
 
+We've identified [166 billion potential treatments](../references.md#166-billion-compounds) that could cure diseases.
+How many have we tested? Almost none.
+We're sitting on the largest library of potential cures in human history and we're not even looking at the books.
+
 Every day we delay costs us **\$299 billion**.
 That's the daily price of our ignorance.
 Move the end of disease forward by just one day, and we save more money than most countries' entire economies.
