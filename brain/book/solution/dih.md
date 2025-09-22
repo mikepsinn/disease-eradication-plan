@@ -172,7 +172,7 @@ A small, nine-member Technical and Ethics Council (TEC) serves as a fail-safe fo
 
 ## The Technology Stack: Public Goods for Public Health
 
-The DIH's role is to fund the creation of a shared technology infrastructure, which is then built and operated by the **[dFDA](./dfda.md)** as a global public good. This avoids the insane waste of every nonprofit building their own systems and creates a unified platform for research. Key DIH-funded components include:
+The DIH's role is to fund the creation of a shared technology protocol, which is then built and operated by the [dFDA](./dfda.md) as a global public good. This avoids the insane waste of every nonprofit building their own systems and creates a unified standard for research. Key DIH-funded components of the dFDA protocol include:
 
 -   **Public Blockchain:** The DIH's own financial transactions and governance votes are recorded on a public ledger. The dFDA's operational data lives on its own specialized platform, also designed for transparency.
 -   **Privacy-Preserving Analytics:** The DIH funds the R&D of cutting-edge cryptographic methods like Zero-Knowledge Proofs, which the dFDA implements on its platform. This allows researchers to analyze aggregate health data without ever accessing personally identifiable information.
@@ -188,15 +188,15 @@ This shared infrastructure, funded once by the DIH, saves hundreds of millions a
 
 ## A Researcher's Journey: DIH vs. NIH
 
-To understand the real-world impact, let's follow two researchers with the same promising idea for a new Alzheimer's treatment. The key difference is the ecosystem they work in: Dr. Sharma uses the legacy NIH system, while Dr. Carter uses the integrated **dFDA platform** fueled by **DIH funding**.
+To understand the real-world impact, let's follow two researchers with the same promising idea for a new Alzheimer's treatment. The key difference is the ecosystem they work in: Dr. Sharma uses the legacy NIH system, while Dr. Carter uses the integrated dFDA protocol fueled by **DIH funding**.
 
-| **Step** | **Dr. Anya Sharma (Using the NIH)** | **Dr. Ben Carter (Using the dFDA Platform + DIH Funding)** |
+| **Step** | **Dr. Anya Sharma (Using the NIH)** | **Dr. Ben Carter (Using the dFDA Protocol + DIH Funding)** |
 | :--- | :--- | :--- |
-| **1. The Idea** | Spends 6 months (40% of her time) writing a 100-page grant proposal for the NIH. | Spends a week outlining a trial protocol on the **dFDA's open-source platform**, specifying the outcome to be measured. |
+| **1. The Idea** | Spends 6 months (40% of her time) writing a 100-page grant proposal for the NIH. | Spends a week outlining a trial protocol on the **dFDA's website**, specifying the outcome to be measured according to the protocol's standards. |
 | **2. Funding** | Her grant is submitted to an NIH study section. After 9 months of review, it's rejected due to a perceived lack of preliminary data. She spends another year gathering data to reapply. | The Alzheimer's DAO within the **DIH** reviews his funding request for patient subsidies. The community votes to approve it, recognizing the high potential value. The process takes 3 weeks. |
-| **3. Patient Recruitment** | Spends 18 months and thousands of dollars on advertising to recruit 50 patients from a single hospital. Many drop out due to the cost and travel burden. | He posts his trial on the global **dFDA portal**. 1,000+ eligible patients are notified instantly. Within 2 months, 500 patients are enrolled, receiving their **DIH-funded** subsidy. |
-| **4. Running the Trial** | The trial takes 3 years. Data is collected manually in a proprietary database, siloed from all other research. | The trial takes 1 year. Data is collected in real-time via patient smartphones and wearable devices, flowing into the **dFDA's standardized, open-format database**. |
-| **5. Results & Impact** | After 6 years, her results are finally published in a journal behind a paywall. The findings are promising, but another decade will pass before they influence clinical practice. Total time: **~7 years.** | After 18 months, his results (positive or negative) are automatically published to the public **dFDA knowledge base**. The real-world evidence immediately updates treatment guidelines. Total time: **~1.5 years.** |
+| **3. Patient Recruitment**| Spends 18 months and thousands of dollars on advertising to recruit 50 patients from a single hospital. Many drop out due to the cost and travel burden. | He posts his trial to the **dFDA protocol's global registry**. 1,000+ eligible patients using various connected apps are notified instantly. Within 2 months, 500 patients are enrolled, receiving their **DIH-funded** subsidy. |
+| **4. Running the Trial** | The trial takes 3 years. Data is collected manually in a proprietary database, siloed from all other research. | The trial takes 1 year. Data is collected in real-time via patient smartphones and wearable devices, flowing into a standardized database that adheres to the dFDA protocol. |
+| **5. Results & Impact**| After 6 years, her results are finally published in a journal behind a paywall. The findings are promising, but another decade will pass before they influence clinical practice. Total time: **~7 years.** | After 18 months, his results (positive or negative) are automatically published to the public knowledge base powered by the dFDA protocol. The real-world evidence immediately updates treatment guidelines. Total time: **~1.5 years.** |
 
 ---
 
