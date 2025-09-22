@@ -23,7 +23,69 @@ Investor payouts are not based on arbitrary targets, but are governed by two sim
 1.  **The Target Return Principle (The "Ceiling"):** Our goal is to deliver the world's best risk-adjusted return. We are therefore targeting a maximum payout that provides early investors with a **~40% compound annual growth rate (CAGR)** over 10 years. This equates to a **~28x total return**.
 2.  **The Mission Guarantee Principle (The "Floor"):** Our primary purpose is to fund cures. To protect this, annual investor payouts will **never exceed 50% of the DIH's total annual income**. A minimum of 50% of all funds are always reserved for the DIH's mission.
 
-## 3. Financial Projections: Full vs. Partial Success
+## 3. The Annual Cash Flow Waterfall
+
+Here is the step-by-step model detailing how the DIH treasury's annual income is allocated. This "waterfall" model ensures that all obligations are met in a clear and prioritized order.
+
+**Model Assumptions:**
+- **Annual Income:** $27 billion (Full Success Scenario)
+- **Initial Capital Raised:** $2.5 billion
+- **Target Investor Return:** ~$7.23 billion/year (~40% CAGR over 10 years)
+
+---
+
+### Step 1: Gross Income & Top-Line Split
+
+The process begins with the **$27 billion** collected from the 1% Treaty. This is immediately divided according to the **Mission Guarantee Principle**.
+
+| Fund Pool | Allocation | Amount | Purpose |
+| :--- | :--- | :--- | :--- |
+| **Investor & Rewards Pool** | 50% | **$13.5 Billion** | To pay back all VICTORY bondholders, including initial investors and referendum participants. |
+| **Mission & Operations Pool** | 50% | **$13.5 Billion** | To fund the dFDA protocol and the disease-specific research programs. |
+
+---
+
+### Step 2: Allocation of the Investor & Rewards Pool
+
+This **$13.5 billion** pool is distributed with the following priority:
+
+1.  **Repay Initial VICTORY Bondholders:** The first priority is to pay the **~$7.23 billion** annual target to the investors who provided the initial $2.5B in activation capital.
+2.  **Reward Referendum Participants:** The remaining **~$6.27 billion** is used to repay the VICTORY bonds that were issued to citizens who earned VOTE points during the global referendum. This ensures the public is directly rewarded for their political mobilization.
+
+---
+
+### Step 3: Allocation of the Mission & Operations Pool
+
+This **$13.5 billion** pool is allocated to fund the core mission:
+
+1.  **Fund the dFDA Protocol:** **10%** of this pool (**$1.35 billion**) is allocated directly to the **dFDA**. This is the operational budget for maintaining the core protocol, funding the reference platform, running data analysis, and issuing prizes and bounties for technical development.
+2.  **Fund Disease-Specific DAOs:** The remaining **90%** (**$12.15 billion**) is the primary "mission budget." This capital is transferred to the various disease-specific institutes (e.g., Decentralized Institute on Aging, Decentralized Cancer Institute) based on the allocation formulas decided by DIH governance votes. These DAOs then use their funds to pay for patient subsidies and targeted research prizes.
+
+---
+
+### Summary of Annual Capital Flow
+
+```mermaid
+graph TD;
+    A["$27B Annual<br/>Treaty Income"] --> B{"50/50 Split"};
+    
+    B --> C["<b>$13.5B</b><br/>Investor & Rewards Pool"];
+    B --> D["<b>$13.5B</b><br/>Mission & Operations Pool"];
+    
+    subgraph "Stakeholder Payouts"
+        C --> E["<b>$7.23B</b><br/>Initial VICTORY<br/>Bondholders"];
+        C --> F["<b>$6.27B</b><br/>Referendum Voter<br/>VICTORY Bondholders"];
+    end
+
+    subgraph "Mission Funding"
+        D --> G["<b>$1.35B</b><br/>dFDA Protocol<br/>(Infrastructure & Bounties)"];
+        D --> H["<b>$12.15B</b><br/>Disease-Specific DAOs<br/>(Patient Subsidies & Prizes)"];
+    end
+```
+
+---
+
+## 4. Financial Projections: Full vs. Partial Success
 
 This model demonstrates how these two principles interact under different levels of treaty adoption.
 
