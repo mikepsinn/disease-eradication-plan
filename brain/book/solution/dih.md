@@ -61,6 +61,26 @@ The cancer groups decide how to spend their $4 billion. The mental health groups
 
 ---
 
+## Treasury Allocation: How the $27 Billion is Spent
+
+The DIH's financial model is designed for transparency and is governed by one core principle: a **minimum of 50% of all annual income** is permanently reserved for the core mission. The other half is used to repay the investors and stakeholders who made the 1% Treaty possible.
+
+Here is the budget breakdown in the full success scenario ($27B/year):
+
+#### 1. VICTORY Bondholder & Referendum Rewards (~$7.2 Billion / Year)
+This allocation repays the initial ~$2.5 billion investment required to pass the treaty.
+-   **Target Return:** It's structured to deliver a ~40% compound annual return to VICTORY Bond holders over 10 years.
+-   **Public Rewards:** This pool also funds the conversion of **VOTE points**—earned by citizens for participating in the global referendum—into bonds, directly rewarding the public for their political action.
+
+#### 2. Core Mission Investment (~$19.8 Billion / Year)
+This is the guaranteed 50%+ of the treasury allocated by the **Disease-Specific DAOs**. This is where the actual research gets funded, with the DAOs voting on how to split the funds between four key areas:
+-   **Patient Subsidies:** The largest expense. These funds are transferred to the dFDA's operational accounts to pay patients directly for participating in trials on the dFDA protocol.
+-   **dFDA Protocol Development:** A recurring budget to fund the continuous improvement of the dFDA's open-source protocol, including bounties for developers and prizes for new, more efficient research tools.
+-   **Research Prizes & Grand Challenges:** Large, multi-million dollar prizes for achieving specific scientific breakthroughs (e.g., "$50M for the first team to reverse a specific biomarker of aging by 5 years").
+-   **Shared Infrastructure:** Funding for the shared, open-source software (accounting, donor management, etc.) used by all member non-profits to reduce overhead.
+
+---
+
 ## The Ultimate Incentive: Stop Begging, Start Owning
 
 Here's what we tell every nonprofit:
@@ -94,19 +114,20 @@ The subsidy amount is not arbitrary. It's determined by a transparent, open-sour
 
 These subsidies are not just an idea; they form the core of a detailed legislative proposal. The [Right to Trial & FDA Upgrade Act](../../../archive/act.md) provides the legal framework to make universal, paid trial participation a reality, outlining how the DIH would fund these patient-centric initiatives.
 
-## Eliminating Waste: Stop Building the Same Thing 1000 Times
+## Funding a Transparent Research Marketplace
 
-Every nonprofit currently builds their own accounting system, their own donor database, their own project management tools. This is insane.
+Beyond just paying for trials, the DIH's most important role is to fund the creation of a unified, intelligent, and transparent marketplace for all medical research. This isn't about saving a little money on software; it's about revolutionizing how research is funded, discovered, and executed.
 
-The DIH builds one shared system that every member organization can use:
-- Shared accounting and financial management
-- Shared donor/volunteer management  
-- Shared project tracking and research databases
-- Shared IT infrastructure and security
+The DIH allocates a dedicated portion of its budget to the **dFDA** to build and operate this open-source protocol. The core functions of this marketplace are:
 
-**Example:** Instead of 500 cancer nonprofits each spending $50,000/year on accounting software (total: $25 million), they all use the same system (total cost: $1 million). The other $24 million goes to actual cancer research.
+1.  **A Universal Research Catalog:** Every research initiative funded by the DIH, a member nonprofit, or even through the integrated crowdfunding platform is cataloged in a single, public database.
+2.  **AI-Powered Impact Estimation:** The platform uses AI to analyze each proposal, estimating its potential impact per dollar spent (e.g., QALYs gained, disease burden reduced). This gives all funders—from DAOs to individual donors—a clear, standardized way to assess the value of different research projects.
+3.  **Integrated Fundraising & Crowdfunding:** Any research project can launch a fundraising campaign on the platform, leveraging the DIH's existing financial rails to collect funds from member organizations or the general public.
+4.  **Discoverability and Collaboration Engine:** The system actively identifies similar or overlapping research projects. It then provides tools to make it easy for research teams to connect, share data, merge their efforts, or divide up the work to avoid redundant spending.
 
-**Conservative estimate:** This saves 20-30% of every nonprofit's overhead, redirecting hundreds of millions from administration to actual research.
+**The Ultimate Goal:** This marketplace is designed to evolve into a semi-autonomous project management system for global health, similar to the model proposed by projects like [Wishonia](https://wishonia.love/). The protocol will eventually use AI to decompose complex research projects into a tree of atomic, verifiable tasks; create a dynamic marketplace to find the best AI agents or expert humans to complete each task; and automatically execute payments from the DIH treasury upon their verified completion.
+
+**Result:** This transforms the currently fragmented, opaque, and competitive research landscape into a single, collaborative ecosystem. It ensures that capital flows to the highest-impact projects and that researchers are incentivized to cooperate rather than compete for the same limited pool of grant money.
 
 ---
 
