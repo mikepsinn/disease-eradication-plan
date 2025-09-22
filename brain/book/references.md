@@ -179,6 +179,13 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "Thus, if we estimate that a funding opportunity is '10x cash,' this means we estimate it to be ten times as cost-effective as unconditional cash transfers."
   > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models)
 
+<a id="grant-writing-time-50pct"></a>
+
+- **Grant writing time for top researchers (50%)**
+
+  > "Top researchers can spend up to 50% of their time writing grants."
+  > — Acquisition Talk, 2021, [Top researchers spend 50% of their time writing grants](https://acquisitiontalk.com/2021/12/top-researchers-spend-50-of-their-time-writing-grants-how-to-fix-it-and-what-it-means-for-dod/)
+
 <a id="global-fund"></a>
 
 - **The Global Fund**
@@ -282,6 +289,20 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "Military industry lobbying totaled over \$100 million in 2024."
   > — OpenSecrets, 2024, [Defense industry lobbying totals](https://www.taxpayer.net/wp-content/uploads/2024/10/Oct-2024-Political-Footprint-of-the-Military-Industry.pdf)
 
+<a id="lobbying-breast-cancer-funding"></a>
+
+- **Lobbying impact on breast cancer funding**
+
+  > "Effective lobbying efforts in the 1990s led to a doubling of federal funds for breast cancer research."
+  > — The New York Times, 1992, [Effective Lobbying Increases U.S. Funds for Breast Cancer Research](https://www.nytimes.com/1992/10/19/us/effective-lobbying-increases-us-funds-for-breast-cancer-research.html)
+
+<a id="lobbying-impact-nih-funding"></a>
+
+- **Lobbying impact on NIH funding**
+
+  > "Lobbying for specific diseases, such as AIDS and breast cancer, is associated with a disproportionate increase in NIH funding compared to the burden of the disease."
+  > — BMJ via PMC, 1999, [Role of advocacy in allocation of NIH funds](https://pmc.ncbi.nlm.nih.gov/articles/PMC1116068/)
+
 <a id="lobbying-roi-calc"></a>
 
 - **Lobbying ROI Calculation ($1,813 per $1)**
@@ -294,6 +315,13 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 - **Lobbying ROI Feasibility**
   > "Policy-influenced investments can yield high ROIs when backed by public mandates."
   > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/files/cow/imce/papers/2021/Profits%20of%20War_Hartung_Costs%20of%20War_Sept%2013%2C%202021.pdf)
+
+<a id="lobbying-roi-nih-funding"></a>
+
+- **Lobbying ROI for NIH funding**
+
+  > "Each $1,000 spent on lobbying is associated with an average of $25,000 in extra NIH funding, indicating non-scientific allocation of capital."
+  > — Nature, 2014, [Lobbying for research funding reaps rewards](https://www.nature.com/articles/515019a)
 
 <a id="lobbying-spend-defense"></a>
 
@@ -339,12 +367,96 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "The Common Fund supports cross‑cutting programs that are expected to have exceptionally high impact."
   > — NIH, [Common Fund Overview](https://commonfund.nih.gov/overview)
 
+<a id="nih-favors-experienced-writers"></a>
+
+- **NIH grant system favors experienced writers**
+
+  > "The grant system favors experienced grant writers with extensive preliminary data, potentially costing great ideas from innovative newcomers."
+  > — The New York Times, 2018, [Why the Medical Research Grant System Could Be Costing Us Great Ideas](https://www.nytimes.com/2018/06/18/upshot/why-the-medical-research-grant-system-could-be-costing-us-great-ideas.html)
+
+<a id="nih-first-r01-age-45"></a>
+
+- **NIH first R01 grant average age (>45)**
+
+  > "The average age at which MD investigators receive their first R01 grant from the NIH has risen to over 45."
+  > — PNAS, 2015, [The growing age disadvantage in NIH funding of physician-scientists](https://www.pnas.org/doi/10.1073/pnas.1418761112)
+
+<a id="nih-funding-bias"></a>
+
+- **NIH funding bias towards established researchers**
+
+  > "Critics argue that NIH's funding policies disproportionately favor established researchers and large laboratories, potentially stifling innovation from early-career scientists. In 2017, NIH proposed capping the number of grants per investigator to address this imbalance but retracted the plan after significant opposition."
+  > — Science, 2017, [NIH grant cap plan is dead](https://www.science.org/doi/10.1126/science.aan6504)
+
+<a id="nih-funding-breast-vs-prostate"></a>
+
+- **NIH funding: Breast vs. prostate cancer**
+
+  > "In 2015, NIH funding for prostate cancer was less than half that for breast cancer."
+  > — PMC, 2018, [NIH funding for urologic cancers is disproportionate to disease burden](https://pmc.ncbi.nlm.nih.gov/articles/PMC5836059/)
+
+<a id="nih-funding-cuts-brain-drain"></a>
+
+- **NIH funding cuts and brain drain**
+
+  > "Following a proposed 29% cut to NIH funding in 2025, 75% of scientists are considering leaving the U.S. due to funding instability."
+  > — Silicon Valley Business Journal, 2025, [NIH funding cuts could create a science 'brain drain'](https://www.bizjournals.com/sanjose/news/2025/08/15/nih-funding-cuts-science-brain-drain-berkeley.html)
+
+<a id="nih-funding-hot-topics"></a>
+
+- **NIH funding follows "hot topics"**
+
+  > "Strong lobbies for 'hot' diseases like breast cancer and diabetes receive disproportionate funds, while less popular diseases like stomach cancer are underfunded."
+  > — PMC, 1999, [Role of advocacy in allocation of NIH funds](https://pmc.ncbi.nlm.nih.gov/articles/PMC1116068/)
+
+<a id="nih-grant-success-rate-19pct"></a>
+
+- **NIH grant success rate (~19%)**
+
+  > "The overall success rate for NIH research project grants was 19.1% in fiscal year 2024."
+  > — NIH Data Book, 2024, [Success Rates](https://report.nih.gov/nihdatabook/category/10)
+
+<a id="nih-misaligned-outcomes"></a>
+
+- **NIH research misalignment with public health outcomes**
+
+  > "Despite substantial funding, the United States lags behind other developed nations in key health metrics, such as life expectancy and infant mortality. This discrepancy suggests a misalignment between NIH-funded research and tangible public health improvements."
+  > — Nature, 2011, [US health reform: The NIH's weak report card](https://www.nature.com/articles/471569a)
+
 <a id="nih-od-budget"></a>
 
 - **NIH Office of the Director budget info**
 
   > "Budget information and appropriations for the Office of the Director."
   > — NIH, [OD Budget](https://officeofbudget.od.nih.gov/br.html)
+
+<a id="nih-organizational-complexity"></a>
+
+- **NIH organizational complexity**
+
+  > "The NIH's expansion to 27 institutes and centers has led to a complex organizational structure... associated with increased administrative costs and potential inefficiencies in resource allocation."
+  > — National Academies Press, 2003, [Enhancing the Vitality of the National Institutes of Health](https://www.ncbi.nlm.nih.gov/books/NBK43482/)
+
+<a id="nih-peer-review-risk-penalty"></a>
+
+- **NIH peer review penalizes risk**
+
+  > "The NIH peer review system disproportionately funds safe, incremental research over high-risk, high-reward proposals."
+  > — Federation of American Scientists, [Supercharging Biomedical Science at the NIH](https://fas.org/publication/supercharging-biomedical-science-at-the-national-institutes-of-health/)
+
+<a id="nih-recover-inefficiency"></a>
+
+- **NIH RECOVER Initiative inefficiency**
+
+  > "The RECOVER initiative, launched in 2021 to study long COVID, has a budget of $1.665 billion but has not completed any clinical trials as of February 2025, with an estimated cost per participant of approximately $53,333."
+  > — Wikipedia, 2025, [RECOVER Initiative](https://en.wikipedia.org/wiki/RECOVER_Initiative)
+
+<a id="nih-sbir-grant-success-rate"></a>
+
+- **NIH SBIR grant success rate (9.9%)**
+
+  > "The NIH SBIR Phase I success rate fell to 9.9% in 2024."
+  > — LinkedIn, Kirk Macolini, 2024, [NIH SBIR STTR activity](https://www.linkedin.com/posts/kirk-macolini-25148b12_nih-sbir-sttr-activity-7328164071042686976-fsG7)
 
 <a id="npr-nsf-freezes"></a>
 
@@ -408,6 +520,13 @@ dateCreated: "2025-09-12T00:00:00.000Z"
     > "A polypill strategy was potentially cost-effective compared to other strategies for most sub-groups ranging from dominance to up to £18,811 per QALY depending on patient sub-group."
     > — PLOS One, [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182625)
 
+<a id="prostate-vs-breast-cancer-deaths"></a>
+
+- **Prostate vs. Breast Cancer Deaths**
+
+  > "Prostate cancer now kills more people than breast cancer in some contexts, such as older men in the UK in 2018."
+  > — BMJ, 2018, [Prostate cancer now kills more people than breast cancer: cause for alarm?](https://blogs.bmj.com/bmjebmspotlight/2018/03/09/prostate-cancer-now-kills-more-people-than-breast-cancer-cause-for-alarm/)
+
 <a id="prevention-savings"></a>
 
 - **$5.60 saved per $1 prevention**
@@ -447,6 +566,20 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 - **RECOVERY Trial Summary Quote**
   > "One trial. Over 47,000 participants. Nearly 200 hospital sites, across six countries. Ten results. Four effective COVID-19 treatments... Through discovering four treatments that effectively reduce deaths from COVID-19, it is certain that the study has saved thousands – if not millions – of lives worldwide."
   > — Oxford University News, [Link](https://www.ox.ac.uk/news/features/recovery-trial-two-years)
+
+<a id="recovery-trial-efficiency"></a>
+
+- **RECOVERY Trial efficiency**
+
+  > "The UK-based RECOVERY trial rapidly identified effective COVID-19 treatments by enrolling over 40,000 patients at a cost of approximately $13 million, or $325 per participant."
+  > — RECOVERY Trial, [Official Site](https://www.recoverytrial.net/)
+
+<a id="research-to-practice-gap"></a>
+
+- **Research to practice gap (17 years)**
+
+  > "It takes an average of 17 years for new scientific evidence to be implemented into clinical practice."
+  > — JAMA, 2023, [Mind the 17-Year Gap](https://pubmed.ncbi.nlm.nih.gov/37018006/)
 
 <a id="sec-reg-a"></a>
 
