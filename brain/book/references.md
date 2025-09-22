@@ -179,11 +179,29 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
   > — The Global Fund, [Overview](https://www.theglobalfund.org/en/about-the-global-fund/)
 
+<a id="global-gdp"></a>
+
+- **Global GDP (\$101T, 2022)**
+  > "The global economy is projected to grow from about 101 trillion U.S. dollars in 2022 to about 139 trillion U.S. dollars in 2027."
+  > — Statista, 2023, [Global GDP](https://www.statista.com/statistics/268750/global-gross-domestic-product-gdp/)
+
+<a id="global-gdp-per-capita"></a>
+
+- **Global GDP per capita (\$12,263, 2022)**
+  > "GDP per capita, current prices: U.S. dollars per capita. 2022: 12,262.9"
+  > — World Bank, [Data](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD)
+
 <a id="global-gov-med-research-spending"></a>
 
 - **Global government medical research spending (\$67.5B, 2023–2024)**
   > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
   > — DFDA Wiki, 2025, [Global Government Medical Research Spending](./reference/global-government-medical-research-spending.md)
+
+<a id="global-health-spending-gdp"></a>
+
+- **Global health spending as a share of GDP (9.8%, 2020)**
+  > "In 2020, global spending on health came to US\$ 9 trillion, or 9.8% of global gross domestic product (GDP)."
+  > — World Health Organization, [Global Health Expenditure Report 2022](https://www.who.int/publications/i/item/9789240064929)
 
 <a id="global-violence-costs"></a>
 
@@ -209,6 +227,12 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 
     > "The estimated cost per QALY gained for screening was less than $1000 for men and approximately $1600 for women."
     > — PMC5217841, [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5217841/)
+
+<a id="ihme-gbd-2019"></a>
+
+- **IHME Global Burden of Disease (2.55B DALYs, 2019)**
+  > "Globally, in 2019, the total number of DALYs from all causes was 2.55 billion."
+  > — Institute for Health Metrics and Evaluation (IHME), [GBD Compare Viz Hub](https://vizhub.healthdata.org/gbd-compare/)
 
 <a id="icbl-ottawa-treaty"></a>
 
@@ -562,12 +586,24 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "The value of a statistical life (VSL) is $12.5 million (2022 dollars)."
   > — [U.S. Department of Transportation, 2023 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
 
+<a id="wef-harvard-ncd-cost"></a>
+
+- **WEF/Harvard NCD Cost (\$47T, 2011-2030)**
+  > "The cumulative output loss due to non-communicable diseases (NCDs) under a 'business as usual' scenario is estimated to be US\$ 47 trillion. This loss represents 75% of global GDP in 2010 (US\$ 63 trillion)."
+  > — World Economic Forum and Harvard School of Public Health, 2011, [The Global Economic Burden of Non-communicable Diseases](https://www3.weforum.org/docs/WEF_Harvard_HE_GlobalEconomicBurdenNonCommunicableDiseases_2011.pdf)
+
 <a id="wikipedia-doge"></a>
 
 - **Department of Government Efficiency (overview)**
 
   > "Department created via executive action with centralized oversight teams."
   > — Wikipedia, [Department of Government Efficiency](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency)
+
+<a id="who-choice-daly-value"></a>
+
+- **WHO-CHOICE DALY Valuation (1-3x GDP per capita)**
+  > "In the CHOICE project, we have used a threshold of three times GDP per capita for an intervention to be considered 'cost-effective' and a threshold of one times GDP per capita to be considered 'very cost-effective'."
+  > — World Health Organization, [Cost-effectiveness thresholds](https://www.who.int/activities/choosing-interventions-that-are-cost-effective-(who-choice)/cost-effectiveness-thresholds)
 
 <a id="world-warheads"></a>
 
