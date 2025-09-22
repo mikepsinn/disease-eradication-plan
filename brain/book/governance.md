@@ -120,6 +120,6 @@ This isn't just about protecting research funding - it's an experiment in buildi
 - **Environment**: Pay for actual carbon reduction, not paperwork
 - **Social Services**: Get help to people who need it without 47 forms
 
-**The Vision:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually work and can't be bribed. The DIH treasury becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
+**The End State:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually work and can't be bribed. The DIH treasury becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
 
 This experiment could usher in a new era of peace, prosperity, and abundance by proving that large-scale public goods can be managed through true decentralization without any centralized control points.
