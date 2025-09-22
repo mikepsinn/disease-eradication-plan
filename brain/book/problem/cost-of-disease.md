@@ -87,4 +87,18 @@ We're losing more money to disease than we can wrap our heads around.
 It's 10 times what we spend on militaries worldwide.
 It's a permanent tax on humanity that makes every other problem look tiny.
 Unlike climate change or nuclear war, this isn't a future threat—it's destroying our families and economies right now.
+
+But here's the thing: **disease isn't inevitable.**
+The human body is a machine—a really complicated, old machine—but machines can be fixed.
+Cancer, Alzheimer's, heart disease—these aren't laws of physics.
+They're engineering problems we haven't solved yet because we know almost nothing about how biology actually works.
+
+Every day we delay costs us **\$299 billion**.
+That's the daily price of our ignorance.
+Move the end of disease forward by just one day, and we save more money than most countries' entire economies.
+
+This \$109 trillion loss represents the **Health Dividend**—the economic value we'll capture when we stop people from dying of preventable diseases.
+Just like the [\$16.5 trillion Peace Dividend](../economics/peace-dividend-value-capture.md) we get from reducing violence, the Health Dividend is massive, measurable, and waiting for us to claim it.
+
+We just need to implement a way to capture part of it to generate the action energy to make it happen.
 It's also the biggest investment opportunity in human history.
