@@ -47,11 +47,10 @@ The problems go deeper than just lobbying. The NIH's very structure is a recipe 
 
 If you want to see all of these failures in action, look at the NIH's RECOVER initiative.
 
-Launched to study Long COVID, the initiative was given **$1.6 billion**. After four years, it has [enrolled ~30,000 people and has not completed a single clinical trial](../references.md#nih-recover-inefficiency). The cost per participant is a staggering $53,000.
+Launched to study Long COVID, the initiative was given **$1.6 billion**. After four years, it has [enrolled ~30,000 people and completed ZERO clinical trials](../references.md#nih-recover-inefficiency). The cost per participant is a staggering $53,000.
 
 For comparison, the UK's RECOVERY trial used a streamlined, efficient model to find life-saving COVID treatments in just a few months. It enrolled over 40,000 patients and [cost only $325 per participant](../references.md#recovery-trial-efficiency).
 
-The NIH spent 164 times more money per patient to achieve nothing. This is what happens when bureaucracy replaces science.
 
 ## The Human Cost of Bureaucracy
 

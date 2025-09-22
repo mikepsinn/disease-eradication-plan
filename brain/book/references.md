@@ -360,6 +360,13 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "The nearly 4 million comments submitted to the Federal Communications Commission about its proposed net neutrality rules shattered the agency's previous record..."
   > — Pew Research Center, 2014, [FCC's net neutrality comment period ends with a bang](https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/)
 
+<a id="nih-budget-fy2025"></a>
+
+- **NIH Budget (FY 2025)**
+
+  > "The budget total of $47.7 billion also includes $1.412 billion derived from PHS Evaluation financing..."
+  > — NIH, 2024, [Budget Overview](https://www.nih.gov/about-nih/organization/budget)
+
 <a id="nih-common-fund-overview"></a>
 
 - **NIH Common Fund overview**
@@ -448,8 +455,8 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 
 - **NIH RECOVER Initiative inefficiency**
 
-  > "The RECOVER initiative, launched in 2021 to study long COVID, has a budget of $1.665 billion but has not completed any clinical trials as of February 2025, with an estimated cost per participant of approximately $53,333."
-  > — Wikipedia, 2025, [RECOVER Initiative](https://en.wikipedia.org/wiki/RECOVER_Initiative)
+  > "The RECOVER initiative has a total allocated budget of over $2.3 billion. While major interventional trials like RECOVER-VITAL and RECOVER-NEURO closed enrollment in mid-2025, no results have been published as of late 2025."
+  > — RECOVER Initiative & News Reports, 2025
 
 <a id="nih-sbir-grant-success-rate"></a>
 
@@ -502,10 +509,6 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 
   > "In 2015, the Department of Defense's Inspector General reported that the Army could not adequately support \$6.5 trillion in year-end adjustments, indicating severe accounting discrepancies."
   > — Accounting Magazine, 2016, [Audit: Pentagon Cannot Account for \$6.5 Trillion Dollars](https://accmag.com/audit-pentagon-cannot-account-for-6-5-trillion-dollars-is-taxpayer-money/)
-
-- **NIH public medical research budget (\$47.08B, FY 2024)**
-  > "In FY 2024, NIH received a total of \$47.08 billion — an increase of \$300 million from FY 2023."
-  > — Society of Thoracic Surgeons (summarizing FY 2024 appropriations), 2024, [Closer look at federal funding for key medical programs](https://www.sts.org/blog/closer-look-federal-funding-key-medical-programs-fy-2024)
 
 <a id="per-capita-lifetime"></a>
 
@@ -571,8 +574,22 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 
 - **RECOVERY Trial efficiency**
 
-  > "The UK-based RECOVERY trial rapidly identified effective COVID-19 treatments by enrolling over 40,000 patients at a cost of approximately $13 million, or $325 per participant."
+  > "The UK-based RECOVERY trial rapidly identified effective COVID-19 treatments by enrolling over 47,000 patients at a cost of approximately $13 million, or under $300 per participant."
   > — RECOVERY Trial, [Official Site](https://www.recoverytrial.net/)
+
+<a id="recover-budget-update-2-3b"></a>
+
+- **RECOVER Initiative budget update (>$2.3B)**
+
+  > "The $662 million in funds will be allocated over Fiscal Years 2025-2029 to support the following research areas: RECOVER-TLC clinical trials..."
+  > — RECOVER Initiative, 2024, [NIH Adds Funds to Long COVID Research](https://recovercovid.org/news/nih-adds-funds-long-covid-research-advances-work-new-clinical-trials)
+
+<a id="recover-trial-status-update"></a>
+
+- **RECOVER Initiative trial status update**
+
+  > "NIH RECOVER expects to have VITAL and NEURO trial results available by late 2025 or early 2026."
+  > — The Sick Times, 2025, [Live Blog: RECOVER-TLC Workshop](https://thesicktimes.org/2025/09/09/live-blog-recover-tlc-workshop-on-new-long-covid-clinical-trials/)
 
 <a id="research-to-practice-gap"></a>
 
@@ -761,3 +778,10 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 - **WWII War Bonds**
   > "From 1941 to 1945, the United States government issued War Bonds to finance military operations. Over 85 million Americans purchased bonds totaling more than \$185 billion."
   > — U.S. Treasury, [WWII War Bonds](https://en.wikipedia.org/wiki/War_bond)
+
+<a id="nih-spending-per-drug-bentley"></a>
+
+- **NIH spending per FDA-approved drug (adjusted)**
+
+  > "The average NIH investment per FDA-approved drug from 2010-2019 was $711 million, after adjusting for research spillovers where one study benefits multiple drugs."
+  > — Bentley University, 2022, [New Study Shows NIH Investment in New Drug Approvals](https://www.bentley.edu/news/new-study-shows-nih-investment-new-drug-approvals-comparable-investment-pharmaceutical)
