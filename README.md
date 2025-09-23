@@ -51,7 +51,7 @@ i.e.
  and, most insidiously, 
 8. millions of people left with traumatic brain injuries, amputations, PTSD, and/or a plethora chronic illnesses (we aren't curing). So they can’t work, can’t support their families, and instead need lifelong care, draining public resources (welfare queens)
 
-All in all, we're pissing away [$9.2 trillion every year](./brain/book/problem/cost-of-war.md) on this very weird hobby.
+All in all, humanity is wasting [$9.2 trillion every year](./brain/book/problem/cost-of-war.md) on this very weird hobby.
 
 [Learn More](./brain/book/problem/cost-of-war.md)
 
