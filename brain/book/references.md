@@ -20,6 +20,12 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed."
   > — Wikipedia, [3.5% rule](https://en.wikipedia.org/wiki/3.5%25_rule)
 
+<a id="166-billion-compounds"></a>
+
+- **166 billion potential treatments remain untested**
+  > "Sixteen years on, he has amassed the largest database of small molecules in the world, a gigantic virtual collection of 166 billion compounds."
+  > — Nature, 2017, [How my race to find a drug for my daughter is helping others](https://www.nature.com/articles/549445a)
+
 <a id="amr-10m-2050"></a>
 
 - **Antimicrobial resistance deaths projection**
@@ -173,17 +179,42 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "Thus, if we estimate that a funding opportunity is '10x cash,' this means we estimate it to be ten times as cost-effective as unconditional cash transfers."
   > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models)
 
+<a id="grant-writing-time-50pct"></a>
+
+- **Grant writing time for top researchers (50%)**
+
+  > "Top researchers can spend up to 50% of their time writing grants."
+  > — Acquisition Talk, 2021, [Top researchers spend 50% of their time writing grants](https://acquisitiontalk.com/2021/12/top-researchers-spend-50-of-their-time-writing-grants-how-to-fix-it-and-what-it-means-for-dod/)
+
 <a id="global-fund"></a>
 
 - **The Global Fund**
   > "The Global Fund is a worldwide partnership to defeat HIV, TB and malaria and ensure a healthier, safer, more equitable future for all. We raise and invest more than US\$5 billion a year to fight the deadliest infectious diseases, challenge the injustice that fuels them and strengthen health systems in more than 100 of the world's most affected countries."
   > — The Global Fund, [Overview](https://www.theglobalfund.org/en/about-the-global-fund/)
 
+<a id="global-gdp"></a>
+
+- **Global GDP (\$101T, 2022)**
+  > "The global economy is projected to grow from about 101 trillion U.S. dollars in 2022 to about 139 trillion U.S. dollars in 2027."
+  > — Statista, 2023, [Global GDP](https://www.statista.com/statistics/268750/global-gross-domestic-product-gdp/)
+
+<a id="global-gdp-per-capita"></a>
+
+- **Global GDP per capita (\$12,263, 2022)**
+  > "GDP per capita, current prices: U.S. dollars per capita. 2022: 12,262.9"
+  > — World Bank, [Data](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD)
+
 <a id="global-gov-med-research-spending"></a>
 
 - **Global government medical research spending (\$67.5B, 2023–2024)**
   > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
   > — DFDA Wiki, 2025, [Global Government Medical Research Spending](./reference/global-government-medical-research-spending.md)
+
+<a id="global-health-spending-gdp"></a>
+
+- **Global health spending as a share of GDP (9.8%, 2020)**
+  > "In 2020, global spending on health came to US\$ 9 trillion, or 9.8% of global gross domestic product (GDP)."
+  > — World Health Organization, [Global Health Expenditure Report 2022](https://www.who.int/publications/i/item/9789240064929)
 
 <a id="global-violence-costs"></a>
 
@@ -209,6 +240,12 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 
     > "The estimated cost per QALY gained for screening was less than $1000 for men and approximately $1600 for women."
     > — PMC5217841, [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5217841/)
+
+<a id="ihme-gbd-2019"></a>
+
+- **IHME Global Burden of Disease (2.55B DALYs, 2019)**
+  > "Globally, in 2019, the total number of DALYs from all causes was 2.55 billion."
+  > — Institute for Health Metrics and Evaluation (IHME), [GBD Compare Viz Hub](https://vizhub.healthdata.org/gbd-compare/)
 
 <a id="icbl-ottawa-treaty"></a>
 
@@ -252,6 +289,20 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "Military industry lobbying totaled over \$100 million in 2024."
   > — OpenSecrets, 2024, [Defense industry lobbying totals](https://www.taxpayer.net/wp-content/uploads/2024/10/Oct-2024-Political-Footprint-of-the-Military-Industry.pdf)
 
+<a id="lobbying-breast-cancer-funding"></a>
+
+- **Lobbying impact on breast cancer funding**
+
+  > "Effective lobbying efforts in the 1990s led to a doubling of federal funds for breast cancer research."
+  > — The New York Times, 1992, [Effective Lobbying Increases U.S. Funds for Breast Cancer Research](https://www.nytimes.com/1992/10/19/us/effective-lobbying-increases-us-funds-for-breast-cancer-research.html)
+
+<a id="lobbying-impact-nih-funding"></a>
+
+- **Lobbying impact on NIH funding**
+
+  > "Lobbying for specific diseases, such as AIDS and breast cancer, is associated with a disproportionate increase in NIH funding compared to the burden of the disease."
+  > — BMJ via PMC, 1999, [Role of advocacy in allocation of NIH funds](https://pmc.ncbi.nlm.nih.gov/articles/PMC1116068/)
+
 <a id="lobbying-roi-calc"></a>
 
 - **Lobbying ROI Calculation ($1,813 per $1)**
@@ -264,6 +315,13 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 - **Lobbying ROI Feasibility**
   > "Policy-influenced investments can yield high ROIs when backed by public mandates."
   > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/files/cow/imce/papers/2021/Profits%20of%20War_Hartung_Costs%20of%20War_Sept%2013%2C%202021.pdf)
+
+<a id="lobbying-roi-nih-funding"></a>
+
+- **Lobbying ROI for NIH funding**
+
+  > "Each $1,000 spent on lobbying is associated with an average of $25,000 in extra NIH funding, indicating non-scientific allocation of capital."
+  > — Nature, 2014, [Lobbying for research funding reaps rewards](https://www.nature.com/articles/515019a)
 
 <a id="lobbying-spend-defense"></a>
 
@@ -302,6 +360,13 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "The nearly 4 million comments submitted to the Federal Communications Commission about its proposed net neutrality rules shattered the agency's previous record..."
   > — Pew Research Center, 2014, [FCC's net neutrality comment period ends with a bang](https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/)
 
+<a id="nih-budget-fy2025"></a>
+
+- **NIH Budget (FY 2025)**
+
+  > "The budget total of $47.7 billion also includes $1.412 billion derived from PHS Evaluation financing..."
+  > — NIH, 2024, [Budget Overview](https://www.nih.gov/about-nih/organization/budget)
+
 <a id="nih-common-fund-overview"></a>
 
 - **NIH Common Fund overview**
@@ -309,12 +374,96 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "The Common Fund supports cross‑cutting programs that are expected to have exceptionally high impact."
   > — NIH, [Common Fund Overview](https://commonfund.nih.gov/overview)
 
+<a id="nih-favors-experienced-writers"></a>
+
+- **NIH grant system favors experienced writers**
+
+  > "The grant system favors experienced grant writers with extensive preliminary data, potentially costing great ideas from innovative newcomers."
+  > — The New York Times, 2018, [Why the Medical Research Grant System Could Be Costing Us Great Ideas](https://www.nytimes.com/2018/06/18/upshot/why-the-medical-research-grant-system-could-be-costing-us-great-ideas.html)
+
+<a id="nih-first-r01-age-45"></a>
+
+- **NIH first R01 grant average age (>45)**
+
+  > "The average age at which MD investigators receive their first R01 grant from the NIH has risen to over 45."
+  > — PNAS, 2015, [The growing age disadvantage in NIH funding of physician-scientists](https://www.pnas.org/doi/10.1073/pnas.1418761112)
+
+<a id="nih-funding-bias"></a>
+
+- **NIH funding bias towards established researchers**
+
+  > "Critics argue that NIH's funding policies disproportionately favor established researchers and large laboratories, potentially stifling innovation from early-career scientists. In 2017, NIH proposed capping the number of grants per investigator to address this imbalance but retracted the plan after significant opposition."
+  > — Science, 2017, [NIH grant cap plan is dead](https://www.science.org/doi/10.1126/science.aan6504)
+
+<a id="nih-funding-breast-vs-prostate"></a>
+
+- **NIH funding: Breast vs. prostate cancer**
+
+  > "In 2015, NIH funding for prostate cancer was less than half that for breast cancer."
+  > — PMC, 2018, [NIH funding for urologic cancers is disproportionate to disease burden](https://pmc.ncbi.nlm.nih.gov/articles/PMC5836059/)
+
+<a id="nih-funding-cuts-brain-drain"></a>
+
+- **NIH funding cuts and brain drain**
+
+  > "Following a proposed 29% cut to NIH funding in 2025, 75% of scientists are considering leaving the U.S. due to funding instability."
+  > — Silicon Valley Business Journal, 2025, [NIH funding cuts could create a science 'brain drain'](https://www.bizjournals.com/sanjose/news/2025/08/15/nih-funding-cuts-science-brain-drain-berkeley.html)
+
+<a id="nih-funding-hot-topics"></a>
+
+- **NIH funding follows "hot topics"**
+
+  > "Strong lobbies for 'hot' diseases like breast cancer and diabetes receive disproportionate funds, while less popular diseases like stomach cancer are underfunded."
+  > — PMC, 1999, [Role of advocacy in allocation of NIH funds](https://pmc.ncbi.nlm.nih.gov/articles/PMC1116068/)
+
+<a id="nih-grant-success-rate-19pct"></a>
+
+- **NIH grant success rate (~19%)**
+
+  > "The overall success rate for NIH research project grants was 19.1% in fiscal year 2024."
+  > — NIH Data Book, 2024, [Success Rates](https://report.nih.gov/nihdatabook/category/10)
+
+<a id="nih-misaligned-outcomes"></a>
+
+- **NIH research misalignment with public health outcomes**
+
+  > "Despite substantial funding, the United States lags behind other developed nations in key health metrics, such as life expectancy and infant mortality. This discrepancy suggests a misalignment between NIH-funded research and tangible public health improvements."
+  > — Nature, 2011, [US health reform: The NIH's weak report card](https://www.nature.com/articles/471569a)
+
 <a id="nih-od-budget"></a>
 
 - **NIH Office of the Director budget info**
 
   > "Budget information and appropriations for the Office of the Director."
   > — NIH, [OD Budget](https://officeofbudget.od.nih.gov/br.html)
+
+<a id="nih-organizational-complexity"></a>
+
+- **NIH organizational complexity**
+
+  > "The NIH's expansion to 27 institutes and centers has led to a complex organizational structure... associated with increased administrative costs and potential inefficiencies in resource allocation."
+  > — National Academies Press, 2003, [Enhancing the Vitality of the National Institutes of Health](https://www.ncbi.nlm.nih.gov/books/NBK43482/)
+
+<a id="nih-peer-review-risk-penalty"></a>
+
+- **NIH peer review penalizes risk**
+
+  > "The NIH peer review system disproportionately funds safe, incremental research over high-risk, high-reward proposals."
+  > — Federation of American Scientists, [Supercharging Biomedical Science at the NIH](https://fas.org/publication/supercharging-biomedical-science-at-the-national-institutes-of-health/)
+
+<a id="nih-recover-inefficiency"></a>
+
+- **NIH RECOVER Initiative inefficiency**
+
+  > "The RECOVER initiative has a total allocated budget of over $2.3 billion. While major interventional trials like RECOVER-VITAL and RECOVER-NEURO closed enrollment in mid-2025, no results have been published as of late 2025."
+  > — RECOVER Initiative & News Reports, 2025
+
+<a id="nih-sbir-grant-success-rate"></a>
+
+- **NIH SBIR grant success rate (9.9%)**
+
+  > "The NIH SBIR Phase I success rate fell to 9.9% in 2024."
+  > — LinkedIn, Kirk Macolini, 2024, [NIH SBIR STTR activity](https://www.linkedin.com/posts/kirk-macolini-25148b12_nih-sbir-sttr-activity-7328164071042686976-fsG7)
 
 <a id="npr-nsf-freezes"></a>
 
@@ -361,10 +510,6 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "In 2015, the Department of Defense's Inspector General reported that the Army could not adequately support \$6.5 trillion in year-end adjustments, indicating severe accounting discrepancies."
   > — Accounting Magazine, 2016, [Audit: Pentagon Cannot Account for \$6.5 Trillion Dollars](https://accmag.com/audit-pentagon-cannot-account-for-6-5-trillion-dollars-is-taxpayer-money/)
 
-- **NIH public medical research budget (\$47.08B, FY 2024)**
-  > "In FY 2024, NIH received a total of \$47.08 billion — an increase of \$300 million from FY 2023."
-  > — Society of Thoracic Surgeons (summarizing FY 2024 appropriations), 2024, [Closer look at federal funding for key medical programs](https://www.sts.org/blog/closer-look-federal-funding-key-medical-programs-fy-2024)
-
 <a id="per-capita-lifetime"></a>
 
 - **Per Capita Lifetime Cost**
@@ -377,6 +522,13 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 
     > "A polypill strategy was potentially cost-effective compared to other strategies for most sub-groups ranging from dominance to up to £18,811 per QALY depending on patient sub-group."
     > — PLOS One, [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182625)
+
+<a id="prostate-vs-breast-cancer-deaths"></a>
+
+- **Prostate vs. Breast Cancer Deaths**
+
+  > "Prostate cancer now kills more people than breast cancer in some contexts, such as older men in the UK in 2018."
+  > — BMJ, 2018, [Prostate cancer now kills more people than breast cancer: cause for alarm?](https://blogs.bmj.com/bmjebmspotlight/2018/03/09/prostate-cancer-now-kills-more-people-than-breast-cancer-cause-for-alarm/)
 
 <a id="prevention-savings"></a>
 
@@ -417,6 +569,34 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 - **RECOVERY Trial Summary Quote**
   > "One trial. Over 47,000 participants. Nearly 200 hospital sites, across six countries. Ten results. Four effective COVID-19 treatments... Through discovering four treatments that effectively reduce deaths from COVID-19, it is certain that the study has saved thousands – if not millions – of lives worldwide."
   > — Oxford University News, [Link](https://www.ox.ac.uk/news/features/recovery-trial-two-years)
+
+<a id="recovery-trial-efficiency"></a>
+
+- **RECOVERY Trial efficiency**
+
+  > "The UK-based RECOVERY trial rapidly identified effective COVID-19 treatments by enrolling over 47,000 patients at a cost of approximately $13 million, or under $300 per participant."
+  > — RECOVERY Trial, [Official Site](https://www.recoverytrial.net/)
+
+<a id="recover-budget-update-2-3b"></a>
+
+- **RECOVER Initiative budget update (>$2.3B)**
+
+  > "The $662 million in funds will be allocated over Fiscal Years 2025-2029 to support the following research areas: RECOVER-TLC clinical trials..."
+  > — RECOVER Initiative, 2024, [NIH Adds Funds to Long COVID Research](https://recovercovid.org/news/nih-adds-funds-long-covid-research-advances-work-new-clinical-trials)
+
+<a id="recover-trial-status-update"></a>
+
+- **RECOVER Initiative trial status update**
+
+  > "NIH RECOVER expects to have VITAL and NEURO trial results available by late 2025 or early 2026."
+  > — The Sick Times, 2025, [Live Blog: RECOVER-TLC Workshop](https://thesicktimes.org/2025/09/09/live-blog-recover-tlc-workshop-on-new-long-covid-clinical-trials/)
+
+<a id="research-to-practice-gap"></a>
+
+- **Research to practice gap (17 years)**
+
+  > "It takes an average of 17 years for new scientific evidence to be implemented into clinical practice."
+  > — JAMA, 2023, [Mind the 17-Year Gap](https://pubmed.ncbi.nlm.nih.gov/37018006/)
 
 <a id="sec-reg-a"></a>
 
@@ -562,12 +742,24 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "The value of a statistical life (VSL) is $12.5 million (2022 dollars)."
   > — [U.S. Department of Transportation, 2023 Guidance](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
 
+<a id="wef-harvard-ncd-cost"></a>
+
+- **WEF/Harvard NCD Cost (\$47T, 2011-2030)**
+  > "The cumulative output loss due to non-communicable diseases (NCDs) under a 'business as usual' scenario is estimated to be US\$ 47 trillion. This loss represents 75% of global GDP in 2010 (US\$ 63 trillion)."
+  > — World Economic Forum and Harvard School of Public Health, 2011, [The Global Economic Burden of Non-communicable Diseases](https://www3.weforum.org/docs/WEF_Harvard_HE_GlobalEconomicBurdenNonCommunicableDiseases_2011.pdf)
+
 <a id="wikipedia-doge"></a>
 
 - **Department of Government Efficiency (overview)**
 
   > "Department created via executive action with centralized oversight teams."
   > — Wikipedia, [Department of Government Efficiency](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency)
+
+<a id="who-choice-daly-value"></a>
+
+- **WHO-CHOICE DALY Valuation (1-3x GDP per capita)**
+  > "In the CHOICE project, we have used a threshold of three times GDP per capita for an intervention to be considered 'cost-effective' and a threshold of one times GDP per capita to be considered 'very cost-effective'."
+  > — World Health Organization, [Cost-effectiveness thresholds](https://www.who.int/activities/choosing-interventions-that-are-cost-effective-(who-choice)/cost-effectiveness-thresholds)
 
 <a id="world-warheads"></a>
 
@@ -586,3 +778,10 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 - **WWII War Bonds**
   > "From 1941 to 1945, the United States government issued War Bonds to finance military operations. Over 85 million Americans purchased bonds totaling more than \$185 billion."
   > — U.S. Treasury, [WWII War Bonds](https://en.wikipedia.org/wiki/War_bond)
+
+<a id="nih-spending-per-drug-bentley"></a>
+
+- **NIH spending per FDA-approved drug (adjusted)**
+
+  > "The average NIH investment per FDA-approved drug from 2010-2019 was $711 million, after adjusting for research spillovers where one study benefits multiple drugs."
+  > — Bentley University, 2022, [New Study Shows NIH Investment in New Drug Approvals](https://www.bentley.edu/news/new-study-shows-nih-investment-new-drug-approvals-comparable-investment-pharmaceutical)
