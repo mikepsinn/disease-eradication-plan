@@ -25,11 +25,11 @@ Here's what we found when we ran the numbers on the 1% Treaty. All calculations 
     *   **Robust ROI**: This yields a rigorous, NPV-based Return on Investment of **481:1**.
     *   **Health Return**: The platform is projected to generate **840,000 Quality-Adjusted Life Years (QALYs)** annually.
 
-**Bottom Line**: We take 1% of what humanity spends on bombs and use it to cure diseases instead. This creates two massive wins:
-1. **The peace dividend alone** saves the world economy $91.97 billion every year
-2. **The dFDA platform** generates an additional $268.9 billion in net economic value over 10 years while creating 840,000 extra years of healthy life annually
+**Bottom Line**: We take 1% of what humanity spends on bombs and use it to cure diseases instead. This creates two massive, independent wins for the world:
+1. **The Peace Dividend**: Society gets **$91.97 billion** richer every single year from the economic benefits of slightly less conflict.
+2. **The dFDA Bonus**: We use a fraction of that dividend to unlock an *additional* **$50 billion** in R&D savings annually, plus 840,000 years of healthy life.
 
-**Total annual benefit: ~$118+ billion per year** (peace dividend + annualized dFDA benefits)
+**Total Annual Benefit: ~$142 Billion per year.**
 
 ---
 
@@ -39,15 +39,13 @@ Here are the key metrics from our models. If you want to see exactly how we calc
 
 ### 1. The Peace Dividend: We Win Even If Nothing Else Works
 
-Here's the beautiful part: even if the dFDA completely failed, we'd still come out way ahead just from reducing conflict by 1%.
+Here's the beautiful part: even if the dFDA completely failed, the world would still get **$91.97 billion** richer every single year just from a 1% reduction in conflict. This is the "societal dividend."
 
-| What Happens When We Reduce Conflict by 1% | Annual Value |
+| How We Fund the dFDA | Annual Value |
 | :--- | :--- |
-| **Money we capture** (to fund the dFDA) | $24.43 Billion |
-| **Money the world saves** (less infrastructure damage, fewer casualties, more stable trade) | $91.97 Billion |
-| **Total annual benefit from 1% less war** | **$116.4 Billion** |
+| **Money we capture** (a portion of the societal dividend) | $24.43 Billion |
 
-This means our "worst case scenario" is that the world gets $116.4 billion richer every year. Not a bad floor.
+This means our "worst case scenario" is that the world gets a ~$92 billion annual peace dividend. Not a bad floor.
 
 ### 2. Where We Get the Money
 
