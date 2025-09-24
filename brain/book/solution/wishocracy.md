@@ -72,6 +72,21 @@ To overcome human cognitive limits in prioritizing thousands of competing proble
 
 Instead of asking people to rank a long list, the system shows them a random pair of problems (e.g., "Cure Alzheimer's" vs. "End Factory Farming") and asks them to allocate 100 points between the two. By aggregating millions of these simple, pairwise decisions from thousands of people, the system can generate a highly nuanced and accurate budget that reflects the collective will of the community.
 
+### How APPA/RAPPA Actually Works
+
+1.  **List the options.** We start with a big list of everything competing for money.
+2.  **Show random pairs.** You see two options, like "Build schools" vs. "Fund renewable energy." You split 100 points between them. That's it. Random pairs keep it honest and simple. Most people only need to vote 10-20 times for the math to work.
+3.  **Aggregate the answers.** We collect thousands of these tiny decisions. Algorithms (like Bradley-Terry or PageRank-style methods) turn the pairwise scores into a master budget that reflects what everyone wants.
+4.  **Publish and repeat.** The final budget is public. Next year, we do it again, using data on what worked and what didn't to make better choices.
+
+#### An Example
+Imagine a $1 billion budget for five priorities: healthcare (H), education (E), transportation (T), environment (Env), and social welfare (SW).
+-   **You see:** (H vs. E) and give 60 points to H, 40 to E.
+-   **Someone else sees:** (T vs. Env) and gives 30 to T, 70 to Env.
+-   **The Result:** After thousands of people vote on random pairs, the math shows H gets 28% of votes, E gets 22%, and so on. The budget becomes $280M for healthcare, $220M for education, etc. No one had to rank all five options.
+
+It scales, reduces bias, and is hard to game. Everyone's small choices combine to make one smart collective decision.
+
 ### Step 3: Propose & Evaluate Solutions
 Once a problem has a budget, anyone—human or AI—can submit a potential solution. These solutions are then evaluated by the community using the same pairwise comparison method, this time judging them based on cost-effectiveness, potential side effects, and how well they work together.
 
