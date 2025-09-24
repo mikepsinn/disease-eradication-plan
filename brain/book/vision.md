@@ -52,7 +52,7 @@ We figure out depression and anxiety. Mental health becomes a solved problem. Pe
 
 ### 2055: The 20% Treaty
 
-We get much smarter through safe brain enhancement. We also solve climate change, poverty, and hunger with $2.7 trillion per year. These problems are mostly about money and focus, both of which we now have.
+We get much smarter through safe brain enhancement. We also solve climate change, poverty, and hunger with [$2.72 trillion per year](../references.md#sipri-2024-spending). These problems are mostly about money and focus, both of which we now have.
 
 ### 2065: The 50% Treaty
 

@@ -12,25 +12,25 @@ dateCreated: "2025-08-15T00:00:00.000Z"
 
 Humans have turned warfare into the most expensive hobby in the history of the species. We are very good at it. We are also very good at counting what it costs us.
 
-Consider this: In 2023, our species spent [\$2,443 billion](https://www.sipri.org/yearbook/2024) on military expenditure. That's $2,443,000,000,000. Write it out. Feel the weight of all those zeros.
+Consider this: In 2024, our species spent [\$2,718 billion](../references.md#sipri-2024-spending) on military expenditure. That's $2,718,000,000,000. Write it out. Feel the weight of all those zeros.
 
-To put this in perspective, if you stacked $2,443 billion in one-dollar bills, the stack would reach approximately 264,000 kilometers high—roughly two-thirds of the way to the Moon. We literally spend enough on weapons to build a bridge of money to space.
+To put this in perspective, if you stacked $2,718 billion in one-dollar bills, the stack would reach approximately 296,000 kilometers high—more than two-thirds of the way to the Moon. We literally spend enough on weapons to build a bridge of money to space.
 
 ## Direct Costs: What We Can Actually Count
 
 The immediate costs of war are like a grocery receipt from Hell. Everything is itemized. Everything has a price.
 
-### Primary Expenditure Matrix (2023 Global Data)
+### Primary Expenditure Matrix (2024 Global Data)
 
 | Cost Category | Amount (USD Billions) | Per Capita | Daily Cost | Mathematical Basis |
 |---------------|----------------------|------------|------------|-------------------|
-| Military Personnel Salaries | $612.5 | $78.53 | $1.68B | Global armed forces: 28.4M × avg. salary $21,570 |
-| Weapons Procurement | $588.2 | $75.41 | $1.61B | [SIPRI Arms Transfer Database](https://www.sipri.org/databases/armstransfers) aggregation |
-| Operations & Maintenance | $520.1 | $66.68 | $1.42B | NATO standardized O&M ratios × global spending |
-| Military Infrastructure | $467.9 | $60.00 | $1.28B | Base construction/maintenance × 4,435 major facilities |
-| Intelligence Operations | $254.3 | $32.60 | $0.70B | Estimated 10.4% of total military budgets |
+| Military Personnel Salaries | $681.5 | $87.37 | $1.87B | Global armed forces: 28.4M × avg. salary $24,000 (adjusted for inflation) |
+| Weapons Procurement | $654.3 | $83.88 | $1.79B | [SIPRI Arms Transfer Database](../references.md#sipri-2024-spending) aggregation |
+| Operations & Maintenance | $579.8 | $74.33 | $1.59B | NATO standardized O&M ratios × global spending |
+| Military Infrastructure | $520.4 | $66.72 | $1.43B | Base construction/maintenance × 4,435 major facilities |
+| Intelligence Operations | $282.0 | $36.15 | $0.77B | Estimated 10.4% of total military budgets |
 
-**Total Direct Military Spending: $2,443.0 billion**
+**Total Direct Military Spending: $2,718.0 billion**
 
 ### The Equation of Immediate Destruction
 
@@ -46,14 +46,14 @@ Where:
 - T<sub>disruption</sub> = Trade and economic interruption
 
 **Current Annual Calculation:**
-- M<sub>spending</sub> = $2,443B (verified via [SIPRI database](https://www.sipri.org/yearbook/2024))
+- M<sub>spending</sub> = $2,718B (verified via [SIPRI database](../references.md#sipri-2024-spending))
 - I<sub>damage</sub> = $1,875B (reconstruction cost estimates from 47 active conflicts)
 - H<sub>casualties</sub> = $1,000B (100,000 deaths × $10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation))
 - T<sub>disruption</sub> = $616B ([World Bank trade flow analysis](https://openknowledge.worldbank.org/handle/10986/37015))
 
-**C<sub>direct</sub> = $5,934 billion annually**
+**C<sub>direct</sub> = $6,209 billion annually**
 
-This means every second of every day, humanity spends $188,188 on the tools and consequences of killing each other. While you read this sentence, we spent about $940. There's something almost poetic about precision in destruction.
+This means every second of every day, humanity spends $196,900 on the tools and consequences of killing each other. While you read this sentence, we spent about $985. There's something almost poetic about precision in destruction.
 
 ### Death Accounting: The Statistical Value of a Human Life
 
@@ -132,10 +132,10 @@ Here's a thought experiment: What if we spent our war money on something else?
 
 | Alternative Investment | Global War Spending Could Fund | Mathematical Conversion | Annual Benefit |
 |----------------------|-------------------------------|------------------------|----------------|
-| Medical Research | 36.2 years of current spending | $2,443B ÷ $67.5B = 36.2 | [WHO research expenditure](https://www.who.int/observatories/global-observatory-on-health-research-and-development) |
-| Clean Energy Infrastructure | 4.1 complete global transitions | $2,443B ÷ $600B = 4.1 | [IEA Net Zero Roadmap](https://www.iea.org/reports/net-zero-by-2050) |
-| Global Education Access | 81.4 years of universal coverage | $2,443B ÷ $30B = 81.4 | [UNESCO Education for All](https://en.unesco.org/themes/education) |
-| Poverty Eradication | 2.4 complete eliminations | $2,443B ÷ $1,000B = 2.4 | World Bank extreme poverty estimates |
+| Medical Research | 40.3 years of current spending | $2,718B ÷ $67.5B = 40.3 | [WHO research expenditure](https://www.who.int/observatories/global-observatory-on-health-research-and-development) |
+| Clean Energy Infrastructure | 4.5 complete global transitions | $2,718B ÷ $600B = 4.5 | [IEA Net Zero Roadmap](https://www.iea.org/reports/net-zero-by-2050) |
+| Global Education Access | 90.6 years of universal coverage | $2,718B ÷ $30B = 90.6 | [UNESCO Education for All](https://en.unesco.org/themes/education) |
+| Poverty Eradication | 2.7 complete eliminations | $2,718B ÷ $1,000B = 2.7 | World Bank extreme poverty estimates |
 
 ### The Multiplier Effect: Economic Growth We're Not Having
 
@@ -145,9 +145,9 @@ The economic multiplier for military spending is approximately 0.6. The multipli
 
 Alternative GDP Growth = (Military Spending × Alternative Multiplier) - (Military Spending × Military Multiplier)
 
-Alternative GDP Growth = ($2,443B × 1.6) - ($2,443B × 0.6) = $2,443B
+Alternative GDP Growth = ($2,718B × 1.6) - ($2,718B × 0.6) = $2,718B
 
-We're losing $2.4 trillion in annual GDP growth. Every year. Forever.
+We're losing $2.7 trillion in annual GDP growth. Every year. Forever.
 
 ## Long-term Human Costs: The Gift That Keeps on Taking
 
@@ -201,64 +201,64 @@ The biodiversity loss is listed as "irreplaceable" because once a species is ext
 
 Let us sum our magnificent obsession with organized violence:
 
-## Comprehensive Cost Analysis (2023)
+## Comprehensive Cost Analysis (2024)
 
 ### Direct Costs Summary
 | Category | Amount (Billions) | Percentage | Daily Rate |
 |----------|------------------|------------|------------|
-| Military Expenditure | $2,443.0 | 41.2% | $6.69B |
-| Infrastructure Destruction | $1,875.0 | 31.6% | $5.14B |
-| Human Life Losses | $1,000.0 | 16.8% | $2.74B |
-| Trade Disruption | $616.0 | 10.4% | $1.69B |
-| **Direct Subtotal** | **$5,934.0** | **100%** | **$16.26B** |
+| Military Expenditure | $2,718.0 | 43.8% | $7.45B |
+| Infrastructure Destruction | $1,875.0 | 30.2% | $5.14B |
+| Human Life Losses | $1,000.0 | 16.1% | $2.74B |
+| Trade Disruption | $616.0 | 9.9% | $1.69B |
+| **Direct Subtotal** | **$6,209.0** | **100%** | **$17.02B** |
 
 ### Indirect Costs Summary
 | Category | Amount (Billions) | Percentage | Daily Rate |
 |----------|------------------|------------|------------|
-| Lost Economic Growth | $2,443.0 | 74.8% | $6.69B |
-| Veteran Healthcare | $200.1 | 6.1% | $0.55B |
-| Refugee Support | $150.0 | 4.6% | $0.41B |
-| Environmental Damage | $100.0 | 3.1% | $0.27B |
-| Psychological Impact | $100.0 | 3.1% | $0.27B |
-| Lost Human Capital | $270.0 | 8.3% | $0.74B |
-| **Indirect Subtotal** | **$3,263.1** | **100%** | **$8.93B** |
+| Lost Economic Growth | $2,718.0 | 76.4% | $7.45B |
+| Veteran Healthcare | $200.1 | 5.6% | $0.55B |
+| Refugee Support | $150.0 | 4.2% | $0.41B |
+| Environmental Damage | $100.0 | 2.8% | $0.27B |
+| Psychological Impact | $100.0 | 2.8% | $0.27B |
+| Lost Human Capital | $270.0 | 7.6% | $0.74B |
+| **Indirect Subtotal** | **$3,538.1** | **100%** | **$9.69B** |
 
 ### Ultimate Total
 
-**C<sub>total</sub> = C<sub>direct</sub> + C<sub>indirect</sub> = $5,934.0B + $3,263.1B = $9,197.1 billion**
+**C<sub>total</sub> = C<sub>direct</sub> + C<sub>indirect</sub> = $6,209.0B + $3,538.1B = $9,747.1 billion**
 
-That's $9.2 trillion. Annually. Every year.
+That's $9.7 trillion. Annually. Every year.
 
 ### Per Capita Mathematics: What War Costs You
 
 Current global population: 8.0 billion humans
-Annual war cost per person: $9,197.1B ÷ 8.0B = $1,149.64
+Annual war cost per person: $9,747.1B ÷ 8.0B = $1,218.39
 
-Over an 80-year lifetime: $1,149.64 × 80 = $91,971.20
+Over an 80-year lifetime: $1,218.39 × 80 = $97,471.20
 
-So war costs each human approximately $92,000 over their lifetime. That's a decent car. Or a year at a private university. Or the down payment on a house.
+So war costs each human approximately $97,500 over their lifetime. That's a decent car. Or a year at a private university. Or the down payment on a house.
 
 Instead, we spend it on getting very good at killing each other.
 
 ## Statistical Perspectives: Putting Numbers in Context
 
-To understand the scale of $9.2 trillion annually:
+To understand the scale of $9.7 trillion annually:
 
-- It equals the entire GDP of China plus Japan
-- It's 10.3% of global GDP ($89.5 trillion in 2023)
-- It's 137 times the budget of the [World Health Organization](https://www.who.int/about/funding)
-- It could eliminate extreme poverty globally 9.2 times over
-- It's enough to give every person on Earth $1,150 per year
+- It is more than the entire GDP of Japan and Germany combined
+- It's 10.8% of global GDP ($89.5 trillion in 2023)
+- It's 144 times the budget of the [World Health Organization](https://www.who.int/about/funding)
+- It could eliminate extreme poverty globally 9.7 times over
+- It's enough to give every person on Earth $1,218 per year
 
-If we stacked $9.2 trillion in $100 bills, the stack would be 9,200 kilometers high—roughly the distance from New York to Beijing.
+If we stacked $9.7 trillion in $100 bills, the stack would be 10,500 kilometers high—nearly the diameter of the Earth.
 
 ## The Grotesque Mathematics of Misallocation
 
 The final equation is simple:
 
-**Efficiency<sub>war</sub> = Deaths<sub>produced</sub> ÷ Dollars<sub>spent</sub> = 100,000 ÷ $9.2T = 0.000011 deaths per dollar**
+**Efficiency<sub>war</sub> = Deaths<sub>produced</sub> ÷ Dollars<sub>spent</sub> = 100,000 ÷ $9.7T = 0.000010 deaths per dollar**
 
-Or, inverted: **$92 million per death produced**
+Or, inverted: **$97 million per death produced**
 
 We have created the most expensive way possible to end human lives.
 

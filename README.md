@@ -34,7 +34,7 @@ AND
 
 2. _very expensive_! 
 
-Indeed, humanity directly spends [$2.72 trillion](./brain/book/references.md#sipri-2024-spending) per year on implements of its own destruction. 
+Indeed, humanity directly spends [\$2.72 trillion](./brain/book/references.md#sipri-2024-spending) per year on implements of its own destruction. 
 
 These include many fine products such as nuclear bombs, bullets, autonomous AI weapon systems, hypersonic missiles, laser death rays, tanks that cost more than small countries, invisible fighter jets, cyberwarfare unicorns, and probably a secret orbital mind control satellite or two.
 
@@ -51,7 +51,7 @@ i.e.
  and, most insidiously, 
 8. millions of people left with traumatic brain injuries, amputations, PTSD, and/or a plethora chronic illnesses (we aren't curing). So they can’t work, can’t support their families, and instead need lifelong care, draining public resources (welfare queens)
 
-All in all, humanity is wasting [$9.2 trillion every year](./brain/book/problem/cost-of-war.md) on this very weird hobby.
+All in all, humanity is wasting [\$9.7 trillion every year](./brain/book/problem/cost-of-war.md) on this very weird hobby.
 
 [Learn More](./brain/book/problem/cost-of-war.md)
 
@@ -81,7 +81,7 @@ Military contractors make billions. Politicians get campaign donations. Everyone
 
 So, if you're one of those guys who likes to think "outside the box", you might feel:
 
-THE BEST IDEA IN THE WORLD: Instead of spending $2.7 trillion on enhancing our capacity to murder one and other and destroy everything, how about we use that $2.7T to do research to cure the diseases that will eventually cause your untimely demise?
+THE BEST IDEA IN THE WORLD: Instead of spending [$2.72 trillion](./brain/book/references.md#sipri-2024-spending) on enhancing our capacity to murder one and other and destroy everything, how about we use that money to do research to cure the diseases that will eventually cause your untimely demise?
 
 PROBLEM: The logic concentration in that idea exceeds the maximum allowable limit for federal policy.
 
@@ -198,7 +198,7 @@ Your great-grandchildren will read about people dying of cancer the way you read
 
 ### The Economics of a World Without War and Disease
 
-When we stop spending $2.7 trillion per year on ways to kill each other and start spending it on reducing suffering and improving the human condition:
+When we stop spending [$2.72 trillion per year](./brain/book/references.md#sipri-2024-spending) on ways to kill each other and start spending it on reducing suffering and improving the human condition:
 
 - **Healthcare costs approach zero.** With diseases cured and aging reversed, the multi-trillion dollar burden of "sick care" disappears.
 - **The $16.5 trillion annual cost of violence gets repurposed.** This money, once wasted on destruction, now gets invested in clean energy, space exploration, and making life better.
