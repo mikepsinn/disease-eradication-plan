@@ -168,8 +168,8 @@ graph TD;
         end
         
         subgraph "What Everyone Gets";
-            G --> H["dFDA Effectiveness Rankings<br/>(What Actually Works)"];
-            H --> I["Honest Outcome Labels<br/>(On All Foods & Drugs)"];
+            G --> H["Treatment Effectiveness Rankings<br/>(What Actually Works)"];
+            H --> I["Outcome Labels<br/>(Showing Effects of All Foods & Drugs)"];
             I --> J["People Stop Dying<br/>of Preventable Diseases"];
         end
         
