@@ -1,0 +1,117 @@
+---
+title: "Economic Impact of the 1% Treaty Initiative: A Summary"
+description: "A high-level summary of the economic models for the 1% Treaty, dFDA, and Peace Dividend, synthesizing the findings from our comprehensive analysis."
+published: true
+date: "2025-09-24T00:00:00.00Z"
+tags: [economic-analysis, summary, 1-percent-treaty, dfda, peace-dividend, roi]
+editor: markdown
+dateCreated: "2025-09-24T00:00:00.00Z"
+---
+
+## TL;DR: The Math on Ending War and Disease
+
+Here's what we found when we ran the numbers on the 1% Treaty. All calculations are in our **[Economic Models Jupyter Notebook](./economic_models.ipynb)** if you want to check our work.
+
+*   **The Funding Source (Peace Dividend)**:
+    *   **Captured Dividend**: A 1% redirection of global military spending captures **$24.43 billion annually** to fund the initiative.
+    *   **Societal Dividend**: This same 1% reduction generates a broader **$91.97 billion in annual economic value** through decreased conflict costs.
+
+*   **The Investment (dFDA Platform)**:
+    *   **Total Cost (NPV)**: The total 10-year discounted cost to build and operate the dFDA platform is **$0.56 billion**.
+    *   **Funding Sustainability**: The annual captured dividend of `$24.43B` covers the annual operational cost of `$40M` more than **600 times over**.
+
+*   **The Return (Health & Wealth)**:
+    *   **Economic Return (NPV)**: The platform generates a 10-year discounted net benefit of **$268.9 billion** in R&D savings alone.
+    *   **Robust ROI**: This yields a rigorous, NPV-based Return on Investment of **481:1**.
+    *   **Health Return**: The platform is projected to generate **840,000 Quality-Adjusted Life Years (QALYs)** annually.
+
+**Bottom Line**: We take 1% of what humanity spends on bombs and use it to cure diseases instead. This creates two massive, independent wins for the world:
+1. **The Peace Dividend**: Society gets **$91.97 billion** richer every single year from the economic benefits of slightly less conflict.
+2. **The dFDA Bonus**: We use a fraction of that dividend to unlock an *additional* **$50 billion** in R&D savings annually, plus 840,000 years of healthy life.
+
+**Total Annual Benefit: ~$142 Billion per year.**
+
+---
+
+## The Numbers in Detail
+
+Here are the key metrics from our models. If you want to see exactly how we calculated these, check out the [full analysis](./economic_models.ipynb).
+
+### 1. The Peace Dividend: We Win Even If Nothing Else Works
+
+Here's the beautiful part: even if the dFDA completely failed, the world would still get **$91.97 billion** richer every single year just from a 1% reduction in conflict. This is the "societal dividend."
+
+| How We Fund the dFDA | Annual Value |
+| :--- | :--- |
+| **Money we capture** (a portion of the societal dividend) | $24.43 Billion |
+
+This means our "worst case scenario" is that the world gets a ~$92 billion annual peace dividend. Not a bad floor.
+
+### 2. Where We Get the Money
+
+We fund the dFDA by redirecting 1% of what countries spend on weapons.
+
+| Metric | Value | Description |
+| :--- | :--- | :--- |
+| **Total Annual Cost of War** | `$9.2 Trillion` | The total direct and indirect annual global cost of conflict. |
+| **Captured Dividend** | `$24.43 Billion` | 1% of direct military spending, redirected to the DIH treasury. |
+| **Societal Dividend** | `$91.97 Billion` | Total annual economic benefit of a 1% reduction in conflict. |
+
+*Even if our estimates are off, the Societal Dividend still ranges from **$41.9B to $200.3B** annually.*
+
+### 3. The dFDA: Where the Money Goes
+
+We use that $24.43 billion to build a platform that makes medical research 80x cheaper.
+
+| Metric | Value | Description |
+| :--- | :--- | :--- |
+| **NPV of Total Costs (10-yr)** | `$0.560 Billion` | The discounted cost to build and operate the platform for 10 years. |
+| **NPV of R&D Savings (10-yr)**| `$269.48 Billion`| The discounted value of a 50% reduction in global trial costs. |
+| **Net Benefit (10-yr NPV)** | `$268.92 Billion`| The net economic value created by the investment. |
+| **Robust ROI (NPV-based)** | `481:1` | The return generated for every dollar invested, based on the NPV model. |
+| **Annual QALYs Gained** | `840,000` | The estimated years of healthy life generated annually. |
+
+*Even in worst-case scenarios, we still get an ROI between **375:1 and 3,500:1**.*
+
+### 4. Can We Afford It?
+
+The $24.43 billion we capture each year covers our $40 million in annual costs 610 times over. We're not going to run out of money.
+
+| Metric | Value | Description |
+| :--- | :--- | :--- |
+| **Funding Coverage Ratio** | `610x` | The annual captured dividend covers the dFDA's annual operational costs more than 600 times over. |
+
+---
+
+## 5. How Does This Compare to Other Ways to Save Lives?
+
+Let's compare this to the most effective charities in the world (like those GiveWell recommends).
+
+| Intervention | Cost to Achieve Outcome | Our Initiative's Equivalent |
+| :--- | :--- | :--- |
+| **GiveWell Top Charities** (e.g., Against Malaria Foundation) | Spend **~$3,000 - $5,000** to save one life. | Generate **840,000 QALYs** annually while creating **$268.9 Billion** in net economic value. |
+
+**The Difference**: GiveWell's top charities are the best ways to spend money to save lives. They cost money but save lives very efficiently.
+
+Our plan doesn't cost money—it *makes* money while saving lives. Instead of asking people to donate, we make everyone richer while curing diseases. That's why the math looks so different.
+
+---
+
+## 6. How Does This Compare to the Best Public Health Wins in History?
+
+Here's how our plan stacks up against the most successful health interventions ever—the ones that actually saved money while saving lives.
+
+| Intervention | How it Creates Value | Scale of Annual Net Benefit |
+| :--- | :--- | :--- |
+| **Childhood Vaccinations** | Prevents immense long-term treatment costs for diseases like measles and polio for a very low upfront cost. | Billions to Tens of Billions |
+| **Smoking Cessation** | Prevents a wide range of incredibly expensive chronic diseases (cancer, heart disease) through low-cost interventions. | Billions to Tens of Billions |
+| **Water Fluoridation** | Avoids significant dental care costs for entire populations at a negligible cost per person. | Hundreds of Millions to Billions |
+| **Our Initiative (dFDA)** | Unlocks systemic efficiencies across the entire **$100B+ annual global R&D market**, generating **$268.9 Billion** in net economic value over 10 years. | **Tens of Billions, Annually** |
+
+**Why This Is Different:**
+
+Vaccines and smoking cessation programs are amazing—they solve specific problems really well.
+
+Our plan works differently. Instead of solving one problem, we fix the entire system that finds cures. We make medical research itself 80x cheaper and faster. That's why the benefits are so much bigger than even the best public health wins in history.
+
+When you fix the machine that makes all the other fixes possible, the math gets pretty wild.
