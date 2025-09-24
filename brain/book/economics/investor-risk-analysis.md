@@ -18,7 +18,9 @@ The most critical distinction is the source of risk.
 
 - **Venture Capital Risk Profile:** A VC invests in a startup with the primary risk being **Market Risk**. Will customers want the product? Will the market adopt it? Can the company find product-market fit before the money runs out? The vast majority of startups fail here. The entire model is a bet on **creating a new cash flow from scratch.**
 
-- **Our Risk Profile:** This initiative is a form of **Political Arbitrage**. The primary risk is **Political Risk**. Will the 1% Treaty be ratified? We are not trying to create a new market; we are investing to **redirect a massive, pre-existing cash flow** ($2.72 trillion in annual military spending). Our "market" is already validated and capitalized.
+- **Our Risk Profile:** This initiative is a form of **Political Arbitrage**. The primary risk is **Political Risk**. Will the 1% Treaty be ratified? We are not trying to create a new market; we are investing to **redirect a massive, pre-existing cash flow** ([\$2.72 trillion in annual military spending](../references.md#sipri-2024-spending)). Our "market" is already validated and capitalized.
+- **The Payback Mechanism:** Returns are not dependent on product-market fit, user adoption, or competitive dynamics. They are dependent on the ratification of a treaty, which unlocks direct, recurring government payments.
+- **The Precedent:** The military-industrial complex itself has proven this model for decades, spending [~$1.1 billion on lobbying to secure $2.02 trillion in contracts](../references.md#lobbying-roi-calc)—an ROI of 1,813:1. We are simply reversing the cash flow.
 
 ## 2. Comparative Risk Factor Analysis
 
