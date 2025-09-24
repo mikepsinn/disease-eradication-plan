@@ -1,0 +1,18 @@
+project:
+  type: book
+
+book:
+  title: "The Complete Idiot's Guide to Ending War and Disease"
+  author: "Mike P. Sinn"
+  date: "today"
+  chapters:
+    - README.md
+    - part: "Economics"
+      chapters:
+        - brain/book/economics/economic_models.qmd
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt

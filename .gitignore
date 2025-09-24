@@ -38,3 +38,8 @@ tmp/response.md
 .article-cache.json
 .voltagent
 lint-errors.txt
+
+# Quarto build artifacts
+/_site/
+/_book/
+.quarto/
