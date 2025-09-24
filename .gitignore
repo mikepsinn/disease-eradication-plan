@@ -1,5 +1,7 @@
 # Environment variables
 .env
+.env*.local
+.DS_Store
 
 # Node modules
 node_modules/
@@ -46,3 +48,4 @@ lint-errors.txt
 /.quarto/
 **/*.quarto_ipynb
 site_libs/
+index.html
