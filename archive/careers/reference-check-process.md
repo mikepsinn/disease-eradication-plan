@@ -4,7 +4,6 @@ description: "A guide for conducting final reference checks for the Supreme Alli
 published: true
 date: 2025-01-01T00:00:00.000Z
 tags: [hiring, workflow, recruitment, references, leadership]
-editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---
 

@@ -4,7 +4,6 @@ description: Draft charter and program plan to align aging-focused communities a
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [aging, longevity, dih, governance, referendum]
-editor: markdown
 ---
 
 ## Mission

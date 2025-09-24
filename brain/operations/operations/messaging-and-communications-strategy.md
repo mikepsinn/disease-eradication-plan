@@ -4,7 +4,6 @@ description: A framework to estimate the financial and strategic value of analyz
 published: true
 date: 2025-06-08T02:00:00.000Z
 tags: [strategy, messaging, roi, sentiment analysis]
-editor: markdown
 dateCreated: 2025-06-08T02:00:00.000Z
 ---
 

@@ -4,7 +4,6 @@ description: "Modular blueprint to replace centralized bureaucracy with AI agent
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [architecture, smart-contracts, ai, governance, oracle, dfda, dih]
-editor: markdown
 ---
 
 ## Why on-chain + AI

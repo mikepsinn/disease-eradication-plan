@@ -4,7 +4,6 @@ description: "Comprehensive collection of source quotes, citations, and referenc
 published: true
 date: "2025-09-12T00:00:00.000Z"
 tags: [references, sources, citations, quotes, data, research]
-editor: markdown
 dateCreated: "2025-09-12T00:00:00.000Z"
 ---
 

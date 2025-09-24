@@ -4,7 +4,6 @@ description: Simply increasing spending on medical research while simultaneously
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [reallocation, public-goods, military-spending, health-research, opportunity-cost]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

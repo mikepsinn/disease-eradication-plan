@@ -4,7 +4,6 @@ description: "The economic and human cost of our failure to cure disease, quanti
 published: true
 date: "2025-09-17T00:00:00.00Z"
 tags: [problem, disease, economics, cost-of-illness, quantitative-analysis]
-editor: markdown
 dateCreated: "2025-09-17T00:00:00.00Z"
 ---
 

@@ -4,7 +4,6 @@ description: One place for all repeatable processes needed to deliver the 1% Tre
 published: true
 date: 2025-08-22
 tags: operations, processes, sop, roadmap
-editor: markdown
 dateCreated: 2025-08-22
 ---
 

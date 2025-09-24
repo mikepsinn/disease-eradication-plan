@@ -8,7 +8,6 @@ tags: >-
   repository-management, automation, ai-powered, file-organization,
   content-migration
 published: true
-editor: markdown
 date: "2025-02-12T20:29:36.760Z"
 dateCreated: "2025-02-12T20:29:36.760Z"
 ---

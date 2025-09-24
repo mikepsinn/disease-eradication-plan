@@ -4,7 +4,6 @@ description: A strategic framework for aligning non-profit partners with the 1% 
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [nonprofits, incentives, partnerships, coalition-building, strategy]
-editor: markdown
 dateCreated: "2025-08-15T00:00:00.000Z"
 topic_id: nonprofit-partnership-incentives
 canonical: true

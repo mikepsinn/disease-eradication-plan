@@ -4,7 +4,6 @@ description: Why every advocacy organization should drop their current focus and
 published: true
 date: "2025-01-28T00:00:00.000Z"
 tags: [advocacy, meta-intervention, cost-effectiveness, strategy, cause-prioritization]
-editor: markdown
 dateCreated: "2025-01-28T00:00:00.000Z"
 topic_id: best-idea-in-the-world
 canonical: true

@@ -4,7 +4,6 @@ description: "A quantitative analysis of the cost per death for a modern nuclear
 published: true
 date: "2025-09-11T00:00:00.000Z"
 tags: [nuclear-weapons, cost-analysis, military-spending, casualties]
-editor: markdown
 dateCreated: "2025-09-11T00:00:00.000Z"
 ---
 

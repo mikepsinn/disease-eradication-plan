@@ -4,7 +4,6 @@ description: "Help more people vote by running referrals, leaderboards, and part
 published: true
 date: 2025-08-22T00:00:00.000Z
 tags: [careers, growth, referrals, marketing, analytics]
-editor: markdown
 dateCreated: 2025-08-22T00:00:00.000Z
 ---
 

@@ -4,7 +4,6 @@ description: "The complete investment thesis for VICTORY Bonds and VICTORY Token
 published: true
 date: "2025-09-14T00:00:00.000Z"
 tags: [economics, investment-thesis, victory-bonds, peace-dividend, fundraising, tokenomics]
-editor: markdown
 dateCreated: "2025-09-14T00:00:00.000Z"
 ---
 

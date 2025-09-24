@@ -4,7 +4,6 @@ description: Software and AI engineer wanted to help eradicate disease
 published: true
 date: 2025-06-10T20:18:00.632Z
 tags: [jobs]
-editor: markdown
 dateCreated: 2025-06-10T07:01:46.646Z
 ---
 

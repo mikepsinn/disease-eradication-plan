@@ -4,7 +4,6 @@ description: "Exploring the transformative potential of Decentralized Institutes
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [decentralized-health, dih, blockchain, ai, medical-research, quadratic-funding, product-requirements]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 topic_id: dih-overview
 canonical: false

@@ -4,7 +4,6 @@ description: "An analysis of historical movements that informed the design of th
 published: true
 date: "2025-08-22T00:00:00.000Z"
 tags: [strategy, history, activism, social-change, game-theory, public-choice]
-editor: markdown
 dateCreated: "2025-08-22T00:00:00.000Z"
 ---
 

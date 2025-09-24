@@ -4,7 +4,6 @@ description: "The strategic playbook for building a coalition of non-profit part
 published: true
 date: "2025-08-22T00:00:00.000Z"
 tags: [operations, playbook, nonprofits, coalition, strategy]
-editor: markdown
 dateCreated: "2025-08-22T00:00:00.000Z"
 ---
 

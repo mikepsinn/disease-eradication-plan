@@ -4,7 +4,6 @@ description: Creative marketing strategies to drive viral adoption of the referr
 published: true
 date: 2025-01-27T00:00:00.000Z
 tags: [viral-marketing, referral-rewards, growth-hacking, community-building, cost-effective-marketing]
-editor: markdown
 dateCreated: 2025-01-27T00:00:00.000Z
 ---
 

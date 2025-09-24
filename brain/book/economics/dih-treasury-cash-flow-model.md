@@ -4,7 +4,6 @@ description: "A 10-year cash flow model for the DIH treasury, balancing a ~40% C
 published: true
 date: "2025-01-25T00:00:00.000Z"
 tags: [financial-modeling, cash-flow, treasury-management, roi, victory-bonds, dynamic-payout]
-editor: markdown
 dateCreated: "2025-01-24T00:00:00.000Z"
 ---
 

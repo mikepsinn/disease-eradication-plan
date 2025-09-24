@@ -4,7 +4,6 @@ description: Standard operating procedure for accepting crypto as investments (R
 published: true
 date: "2025-01-20T00:00:00.000Z"
 tags: sop, crypto, investments, donations, kyc, aml, custody, compliance
-editor: markdown
 dateCreated: "2025-01-20T00:00:00.000Z"
 ---
 

@@ -4,7 +4,6 @@ description: "The ultimate vision of the DIH: a world where humanity's vast reso
 published: true
 date: "2025-09-10T00:00:00.000Z"
 tags: [vision, future, peace, global-health, abundance, superlongevity, superhappiness, superintelligence]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

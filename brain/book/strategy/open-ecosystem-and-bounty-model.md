@@ -4,7 +4,6 @@ description: "The dFDA platform's strategy for fostering a sustainable, innovati
 published: true
 date: 2025-06-08T22:00:00.000Z
 tags: [strategy, ecosystem, open-source, bounties, platform-economics, ai-development]
-editor: markdown
 dateCreated: 2025-06-08T22:00:00.000Z
 ---
 

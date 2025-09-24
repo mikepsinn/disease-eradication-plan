@@ -4,7 +4,6 @@ description: "A strategic plan for sourcing, vetting, and funding a CEO/CTO-prof
 published: true
 date: 2025-01-01T00:00:00.000Z
 tags: [strategy, hiring, recruitment, leadership, ai, automation, War-on-Disease]
-editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---
 

@@ -4,7 +4,6 @@ description: "A strategic guide for leveraging fiscal sponsorships to fund and g
 published: true
 date: "2025-08-16T00:00:00.000Z"
 tags: [fundraising, nonprofits, fiscal sponsorship, strategy, financials]
-editor: markdown
 dateCreated: "2025-08-16T00:00:00.000Z"
 ---
 

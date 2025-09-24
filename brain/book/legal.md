@@ -4,7 +4,6 @@ description: "The legal framework is designed for maximum compliance and resilie
 published: true
 date: "2025-09-10T00:00:00.00Z"
 tags: [legal, compliance, multi-entity, securities-law, corporate-structure]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

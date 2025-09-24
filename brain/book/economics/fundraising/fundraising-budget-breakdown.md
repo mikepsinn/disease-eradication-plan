@@ -4,7 +4,6 @@ description: "A detailed breakdown of the total capital required to activate the
 published: true
 date: "2025-08-22T00:00:00.000Z"
 tags: [fundraising, budget, financial-planning, strategy, investor-relations]
-editor: markdown
 dateCreated: "2025-08-22T00:00:00.000Z"
 topic_id: fundraising-budget-plan
 canonical: true

@@ -4,7 +4,6 @@ description: Outlines the long-term vision of progressively increasing the milit
 published: true
 date: "2025-02-01T00:00:00.000Z"
 tags: [strategy, endgame, peace, long-term-vision, victory-bonds]
-editor: markdown
 dateCreated: "2025-02-01T00:00:00.000Z"
 ---
 

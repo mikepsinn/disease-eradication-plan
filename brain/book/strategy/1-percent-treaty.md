@@ -14,7 +14,6 @@ tags:
     cost-benefit,
     treaty,
   ]
-editor: markdown
 dateCreated: 2025-06-10T19:10:29.965Z
 ---
 

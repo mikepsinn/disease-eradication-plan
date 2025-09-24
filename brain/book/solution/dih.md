@@ -4,7 +4,6 @@ description: "The complete guide to the Decentralized Institutes of Health (DIH)
 published: true
 date: "2025-09-14T00:00:00.000Z"
 tags: [solution, dih, governance, dao, funding-model]
-editor: markdown
 dateCreated: "2025-09-14T00:00:00.000Z"
 ---
 

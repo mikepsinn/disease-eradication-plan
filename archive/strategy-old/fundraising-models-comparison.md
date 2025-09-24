@@ -4,7 +4,6 @@ description: "Comparison of fundraising options (Reg D/Reg S, Reg A+, Reg CF, to
 published: true
 date: "2025-01-20T00:00:00.000Z"
 tags: [fundraising-models, capital-raising, reg-d, reg-s, reg-a-plus, grants, public-goods, crypto, strategy]
-editor: markdown
 dateCreated: "2025-01-20T00:00:00.000Z"
 ---
 

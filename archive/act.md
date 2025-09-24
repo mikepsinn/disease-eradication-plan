@@ -15,7 +15,6 @@ tags:
     right-to-trial,
     open-data,
   ]
-editor: markdown
 dateCreated: 2025-05-27T21:53:11.658Z
 ---
 

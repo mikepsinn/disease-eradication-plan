@@ -4,7 +4,6 @@ emoji: "\U0001F31F"
 title: 50/50 Health Savings Sharing Program
 tags: [healthcare, cost-reduction, cures, preventative-therapies, chronic-diseases]
 published: true
-editor: markdown
 date: "2025-02-12T16:56:08.061Z"
 dateCreated: "2025-02-12T16:56:08.061Z"
 ---

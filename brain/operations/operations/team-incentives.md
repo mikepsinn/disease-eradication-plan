@@ -4,7 +4,6 @@ description: "Defines a sophisticated, real-time, risk-adjusted compensation mod
 published: false
 date: "2025-08-24T00:00:00.000Z"
 tags: ["incentives", "tokenomics", "team", "algorithmic", "expected-value", "prediction-markets"]
-editor: markdown
 dateCreated: "2025-08-24T00:00:00.000Z"
 topic_id: team-incentives
 canonical: true

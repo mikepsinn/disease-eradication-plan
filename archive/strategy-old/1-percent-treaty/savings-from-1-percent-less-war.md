@@ -4,7 +4,6 @@ description: "Explore the potential savings from reducing the annual cost of war
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [savings, cost-of-war, peace-dividend, 1-percent-treaty, global-economics]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

@@ -4,7 +4,6 @@ description: "The complete guide to the 1% Treaty, the binding global accord tha
 published: true
 date: "2025-09-14T00:00:00.000Z"
 tags: [solution, 1-percent-treaty, dih, peace-dividend, national-security]
-editor: markdown
 dateCreated: "2025-09-14T00:00:00.000Z"
 ---
 

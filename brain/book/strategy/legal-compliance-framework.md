@@ -4,7 +4,6 @@ description: "Comprehensive legal compliance strategy for foreign election fundi
 published: true
 date: "2025-01-15T00:00:00.000Z"
 tags: [legal-compliance, election-law, securities-law, international-law, regulatory]
-editor: markdown
 dateCreated: "2025-01-15T00:00:00.000Z"
 ---
 

@@ -4,7 +4,6 @@ description: Defines the organizational charts for the for-profit management com
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [org-chart, strategy, legal, hiring, governance]
-editor: markdown
 dateCreated: "2025-08-15T00:00:00.000Z"
 topic_id: organizational-structure
 canonical: true

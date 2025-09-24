@@ -4,7 +4,6 @@ description: "A detailed breakdown of how the 1% Treaty solves the classic free-
 published: true
 date: "2025-01-15T00:00:00.000Z"
 tags: [free-rider, public-choice-theory, treaty-enforcement, compliance, game-theory, incentives]
-editor: markdown
 dateCreated: "2025-01-15T00:00:00.000Z"
 ---
 

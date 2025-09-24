@@ -4,7 +4,6 @@ description: Analyzing the potential cost range per signature and total estimate
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [cost-analysis, signatures, global-initiative, 1-percent-treaty, fundraising, outreach]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

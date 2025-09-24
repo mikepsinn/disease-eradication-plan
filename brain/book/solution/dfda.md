@@ -4,7 +4,6 @@ description: "The complete guide to the Decentralized FDA (dFDA), the 80X more e
 published: true
 date: "2025-09-14T00:00:00.000Z"
 tags: [solution, dfda, decentralized-trials, regulatory-reform, clinical-trials, fda, innovation, protocol]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

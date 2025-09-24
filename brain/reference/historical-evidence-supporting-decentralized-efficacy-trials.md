@@ -4,7 +4,6 @@ description: Large scale efficacy-trials based on real-world evidence have histo
 published: true
 date: 2025-08-01T21:50:13.908Z
 tags: [clinical-trials, real-world-evidence, health-outcomes, decentralized-trials, historical-evidence]
-editor: markdown
 dateCreated: 2025-02-18T04:39:38.486Z
 ---
 

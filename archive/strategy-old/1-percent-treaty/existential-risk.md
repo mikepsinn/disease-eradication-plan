@@ -4,7 +4,6 @@ description: Exploring the implications of current military expenditures on glob
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [existential-risk, military-spending, ai-arms-race, global-security, nuclear-weapons]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

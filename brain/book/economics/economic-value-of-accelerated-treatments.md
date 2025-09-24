@@ -4,7 +4,6 @@ description: "Estimates the economic value of new therapies, including their mar
 published: true
 date: "2025-02-20T05:43:26.476Z"
 tags: [medical-progress, economic-value, new-therapies, drug-development]
-editor: markdown
 dateCreated: "2025-02-20T05:43:26.477Z"
 ---
 

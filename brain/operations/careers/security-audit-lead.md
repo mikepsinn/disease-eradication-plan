@@ -4,7 +4,6 @@ description: Keep money and systems safe. Watch for attacks. Run fast response a
 published: true
 date: 2025-08-22T00:00:00.000Z
 tags: [careers, security, blockchain, audits, dao, risk]
-editor: markdown
 dateCreated: 2025-08-22T00:00:00.000Z
 ---
 

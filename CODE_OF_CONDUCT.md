@@ -4,7 +4,6 @@ description: "Core rules for all contributors."
 published: true
 date: "2025-09-14T00:00:00.000Z"
 tags: [code-of-conduct, governance, team, culture]
-editor: markdown
 dateCreated: "2025-09-14T00:00:00.000Z"
 ---
 

@@ -4,7 +4,6 @@ description: Analysis reveals significant inefficiencies in NIH funding allocati
 published: true
 date: "2025-02-20T05:43:17.021Z"
 tags: [NIH, grant-process, efficiency-analysis, clinical-trials, biomedical-research]
-editor: markdown
 dateCreated: "2025-02-20T05:43:17.021Z"
 ---
 

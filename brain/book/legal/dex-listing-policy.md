@@ -4,7 +4,6 @@ description: "Preconditions, approvals, and monitoring for any decentralized exc
 published: true
 date: "2025-01-20T00:00:00.000Z"
 tags: [dex, liquidity, token, governance, compliance, policy]
-editor: markdown
 dateCreated: "2025-01-20T00:00:00.000Z"
 ---
 

@@ -4,7 +4,6 @@ description: "The formal structure of the Decentralized Institutes of Health, ou
 published: true
 date: "2025-08-16T00:00:00.000Z"
 tags: [dih, structure, governance, nonprofits, coalition]
-editor: markdown
 dateCreated: "2025-08-16T00:00:00.000Z"
 ---
 

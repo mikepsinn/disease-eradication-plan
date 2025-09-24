@@ -4,7 +4,6 @@ description: How to slash per-patient trial costs by up to 80×, generate approx
 published: true
 date: 2025-06-08T20:11:19.719Z
 tags:
-editor: markdown
 dateCreated: 2025-04-29T01:07:30.411Z
 ---
 

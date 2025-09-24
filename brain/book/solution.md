@@ -4,7 +4,6 @@ description: "The solution is a simple, rational, and profound global accord: Th
 published: true
 date: "2025-09-10T00:00:00.000Z"
 tags: [solution, 1-percent-treaty, dih, dfda, peace-dividend, national-security, victory-bonds]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

@@ -4,7 +4,6 @@ description: "Estimated costs for creating a DAO to fund the 1% Treaty Initiativ
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [dao, cost-estimate, decentralized-health, 1-percent-treaty, fundraising, web3]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
