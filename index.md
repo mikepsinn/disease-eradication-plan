@@ -4,7 +4,6 @@ description: "How to Persuade Humanity to Redirect 1% of Military Spending to Ra
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds]
-editor: markdown
 dateCreated: "2025-08-15T00:00:00.000Z"
 topic_id: war-on-disease-landing
 canonical: true
