@@ -618,10 +618,6 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "In 2024, world military expenditure reached $2.718 trillion, marking a 9.4% increase from the previous year."
   > — SIPRI, 2025, [Trends in World Military Expenditure 2024](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024)
 
-- **Previous global military spending ($2.44T, 2023)**
-  > "Total global military expenditure reached $2443 billion in 2023."
-  > — SIPRI, 2024, [press release](https://www.sipri.org/media/press-release/2024/global-military-spending-surges-amid-war-rising-tensions-and-insecurity)
-
 <a id="smallpox-eradicated"></a>
 
 - **Smallpox Eradicated**
