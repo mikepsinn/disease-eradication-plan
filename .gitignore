@@ -43,3 +43,5 @@ lint-errors.txt
 /_site/
 /_book/
 .quarto/
+/.quarto/
+**/*.quarto_ipynb
