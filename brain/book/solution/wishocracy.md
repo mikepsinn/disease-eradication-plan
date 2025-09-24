@@ -37,13 +37,13 @@ Wishocracy ends this. By allowing humanity to collectively create a budget throu
 
 The current system incentivizes a focus on political theater over problem-solving. We waste our limited cognitive bandwidth debating the personal lives of politicians instead of the merits of different solutions to climate change or cancer.
 
-Wishocracy shifts the conversation. The protocol's entire focus is on defining problems, evaluating solutions, and measuring impact. It channels our collective attention toward what actually matters: building a better future.
+Wishocracy shifts the conversation. Instead of arguing about politicians, we argue about solutions. Instead of debating who said what, we debate which cancer research gets funded.
 
 ### 3. Governments Don't Know What We Want
 
 Even if politicians were perfectly incentivized to act in the public's interest, they lack the information to do so. They have no way to accurately know, let alone aggregate, the nuanced preferences of millions of citizens.
 
-Wishocracy provides the data. The pairwise comparison process creates a high-fidelity map of our collective desires, allowing for resource allocation that perfectly reflects our wishes. It builds a system that is accountable to us because it is a direct extension of our stated preferences.
+Wishocracy gives us the data. Millions of pairwise comparisons create an accurate picture of what we actually want. No more guessing what voters think—we have their exact preferences, ranked and weighted.
 
 ### 4. Coordination Failure at Scale
 
@@ -71,7 +71,7 @@ To overcome human cognitive limits in prioritizing thousands of competing proble
 Instead of asking people to rank a long list, the system shows them a random pair of problems (e.g., "Cure Alzheimer's" vs. "End Factory Farming") and asks them to allocate 100 points between the two. By aggregating millions of these simple, pairwise decisions from thousands of people, the system can generate a highly nuanced and accurate budget that reflects the collective will of the community.
 
 ### Step 3: Propose & Evaluate Solutions
-Once a problem has a budget, anyone—human or AI—can submit a potential solution. These solutions are then evaluated by the community using the same pairwise comparison method, this time judging them based on cost-effectiveness, potential side effects, and synergy with other goals.
+Once a problem has a budget, anyone—human or AI—can submit a potential solution. These solutions are then evaluated by the community using the same pairwise comparison method, this time judging them based on cost-effectiveness, potential side effects, and how well they work together.
 
 ### Step 4. Decompose Solutions into Tasks
 The highest-ranked solutions are then broken down by **Goal Decomposition AI Agents** into a tree of atomic, verifiable tasks. The system links tasks that contribute to multiple solutions to avoid duplication of effort and allow for cost-sharing.
@@ -80,7 +80,7 @@ The highest-ranked solutions are then broken down by **Goal Decomposition AI Age
 Finally, the system creates a dynamic marketplace for these tasks, offering prizes and bounties for their completion. This incentivizes a global pool of talent (both human and AI) to work on the problems that humanity has collectively decided are most important. AI agents can bid on tasks, predict completion costs, and identify the most efficient solver for any given job.
 
 ### Step 6. Monitor Impact & Iterate
-As tasks are completed and solutions are implemented, **Monitor Agents** track their real-world impact. This data is fed back into the system, allowing the community to make better, more informed decisions in the next round of resource allocation, creating a powerful, iterative loop of continuous improvement.
+As tasks are completed and solutions are implemented, **Monitor Agents** track their real-world impact. This data is fed back into the system, so we learn what works and stop funding what doesn't.
 
 ---
 
