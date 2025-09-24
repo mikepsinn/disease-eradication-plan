@@ -2,14 +2,37 @@ project:
   type: book
 
 book:
-  title: "The Complete Idiot's Guide to Ending War and Disease"
+  title: "The Complete Idiot's Guide to Ending War and Disease (v1.0)"
   author: "Mike P. Sinn"
   date: "today"
   chapters:
-    - README.md
+    - index.md
+    - part: "The Problem"
+      chapters:
+        - brain/book/problem/cost-of-war.md
+        - brain/book/problem/cost-of-disease.md
+        - brain/book/problem/nih-funding-is-broken.md
+        - brain/book/problem/fda-approvals-are-broken.md
+    - part: "The Solution"
+      chapters:
+        - brain/book/solution/1-percent-treaty.md
+        - brain/book/solution/dih.md
+        - brain/book/solution/dfda.md
+        - brain/book/economics/victory-bonds.md
     - part: "Economics"
       chapters:
         - brain/book/economics/economic_models.qmd
+        - brain/book/economics/peace-dividend-value-capture.md
+        - brain/book/economics/investment-thesis.md
+    - part: "Proof & Precedents"
+      chapters:
+        - brain/book/reference/recovery-trial.md
+    - part: "The Plan"
+      chapters:
+        - brain/book/strategy/legal-compliance-framework.md
+    - part: "Call to Action"
+      chapters:
+        - CONTRIBUTING.md
 
 format:
   html:
