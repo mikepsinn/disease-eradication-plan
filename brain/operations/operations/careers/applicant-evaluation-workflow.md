@@ -4,7 +4,6 @@ description: "A detailed outline of the n8n workflow for parsing, evaluating, an
 published: true
 date: 2025-01-01T00:00:00.000Z
 tags: [hiring, workflow, n8n, automation, ai, recruitment, leadership]
-editor: markdown
 dateCreated: 2024-07-31T00:00:00.000Z
 ---
 

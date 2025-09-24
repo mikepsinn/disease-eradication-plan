@@ -4,7 +4,6 @@ description: "A comprehensive survey to understand global priorities and values,
 published: true
 date: 2024-06-10T00:00:00.000Z
 tags: [survey, global-values, human-priorities, public-opinion, medical-research, 1-percent-treaty]
-editor: markdown
 dateCreated: 2024-06-10T00:00:00.000Z
 ---
 

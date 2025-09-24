@@ -4,7 +4,6 @@ description: "A strategic playbook outlining the legal pathways and operational 
 published: true
 date: "2025-01-20T00:00:00.000Z"
 tags: [retail, reg-a-plus, reg-cf, crowdfunding, international, compliance]
-editor: markdown
 dateCreated: "2025-01-20T00:00:00.000Z"
 ---
 

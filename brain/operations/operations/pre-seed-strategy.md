@@ -4,7 +4,6 @@ description: "Outlines the initial steps, legal structure, pre-seed fundraising,
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [pre-seed, fundraising, strategy, legal, hiring]
-editor: markdown
 dateCreated: "2025-08-15T00:00:00.000Z"
 topic_id: pre-seed-strategy
 canonical: true

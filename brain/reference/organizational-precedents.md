@@ -4,7 +4,6 @@ description: "An analysis of the organizational structures and staffing models o
 published: true
 date: "2025-08-22T00:00:00.000Z"
 tags: [organizational-design, precedents, team-structure, hiring]
-editor: markdown
 dateCreated: "2025-08-22T00:00:00.000Z"
 ---
 

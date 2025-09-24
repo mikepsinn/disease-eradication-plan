@@ -4,7 +4,6 @@ description: "The economic model that makes the DIH possible. This chapter detai
 published: true
 date: "2025-09-10T00:00:00.000Z"
 tags: [economics, investment-thesis, victory-bonds, peace-dividend, fundraising, tokenomics]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

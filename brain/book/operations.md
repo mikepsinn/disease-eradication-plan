@@ -4,7 +4,6 @@ description: "The operational philosophy is to build a small, elite 'activation 
 published: true
 date: "2025-09-10T00:00:00.000Z"
 tags: [operations, team, hiring, roadmap, decentralization, protocol]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

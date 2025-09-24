@@ -4,7 +4,6 @@ description: "A detailed analysis of the economic case for AI-driven health effi
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [ai, automation, clinical-research, drug-development, cost-benefit, 1-percent-treaty]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

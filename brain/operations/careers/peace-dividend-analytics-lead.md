@@ -4,7 +4,6 @@ description: Show the money we save. Keep the calculators and methods clear and 
 published: true
 date: 2025-08-22T00:00:00.000Z
 tags: [careers, analytics, economics, public-dashboards]
-editor: markdown
 dateCreated: 2025-08-22T00:00:00.000Z
 ---
 

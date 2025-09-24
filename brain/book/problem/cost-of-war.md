@@ -4,7 +4,6 @@ description: "A precise accounting of what we spend to destroy ourselves, with n
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [costs-of-war, military-spending, economic-analysis]
-editor: markdown
 dateCreated: "2025-08-15T00:00:00.000Z"
 ---
 

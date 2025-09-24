@@ -4,7 +4,6 @@ description: "By upgrading FDA.gov to automate the pragmatic trial approach of t
 published: true
 date: 2025-05-23T06:21:26.088Z
 tags: [fda, petition, right-to-trial-act]
-editor: markdown
 dateCreated: 2025-05-23T06:21:26.088Z
 ---
 

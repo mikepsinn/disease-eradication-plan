@@ -4,7 +4,6 @@ emoji: "\U0001F91D"
 title: dFDA Collaboration Framework
 tags: [coordination-framework, clinical-discovery, stakeholder-collaboration, health-outcomes]
 published: true
-editor: markdown
 date: "2023-10-28T22:44:51.813Z"
 dateCreated: "2023-10-28T22:42:49.138Z"
 ---

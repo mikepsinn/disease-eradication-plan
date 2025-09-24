@@ -4,7 +4,6 @@ description: Evaluating medical treatments using Quality-Adjusted Life Years (QA
 published: true
 date: "2025-02-20T05:43:21.814Z"
 tags: [medical-treatments, QALYs, healthcare-economics, quantitative-analysis]
-editor: markdown
 dateCreated: "2025-02-20T05:43:21.814Z"
 ---
 

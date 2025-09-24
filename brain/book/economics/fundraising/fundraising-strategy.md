@@ -4,7 +4,6 @@ description: "Details our hybrid strategy for raising capital, combining simple,
 published: true
 date: "2025-01-23T00:00:00.000Z"
 tags: [fundraising, victory-bonds, assurance-contract, dutch-auction, investment-strategy]
-editor: markdown
 dateCreated: "2025-01-23T00:00:00.000Z"
 ---
 

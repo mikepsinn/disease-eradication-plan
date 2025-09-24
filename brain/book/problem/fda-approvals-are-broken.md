@@ -4,7 +4,6 @@ description: "How the FDA's clinical trial process is designed to protect bureau
 published: true
 date: "2025-09-17T00:00:00.000Z"
 tags: [problem, fda, clinical-trials, drug-approval, bureaucracy]
-editor: markdown
 dateCreated: "2025-09-17T00:00:00.000Z"
 ---
 

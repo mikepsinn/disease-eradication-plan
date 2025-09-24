@@ -4,7 +4,6 @@ description: "The master table of contents and sitemap for the DIH wiki, the cen
 published: true
 date: "2025-08-22T00:00:00.000Z"
 tags: [index, sitemap, toc, strategy]
-editor: markdown
 dateCreated: "2025-08-22T00:00:00.000Z"
 ---
 

@@ -4,7 +4,6 @@ description: Exploring the logical reasoning behind reallocating 1% of military 
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [logical-proof, 1-percent-treaty, military-spending, medical-research, decentralized-funding, lobbying]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

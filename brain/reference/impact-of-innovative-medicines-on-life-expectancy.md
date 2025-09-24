@@ -4,7 +4,6 @@ emoji: "\U0001F52C"
 title: "\U0001F4C8 Impact of Innovative Medicines on Life Expectancy"
 tags: [pharmaceuticals, innovation, mortality, cancer, healthcare]
 published: true
-editor: markdown
 date: "2022-07-29T03:35:13.588Z"
 dateCreated: "2022-07-22T19:05:17.419Z"
 ---

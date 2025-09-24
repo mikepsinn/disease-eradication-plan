@@ -4,7 +4,6 @@ description: "A high-level summary of the economic models for the 1% Treaty, dFD
 published: true
 date: "2025-09-24T00:00:00.00Z"
 tags: [economic-analysis, summary, 1-percent-treaty, dfda, peace-dividend, roi]
-editor: markdown
 dateCreated: "2025-09-24T00:00:00.00Z"
 ---
 

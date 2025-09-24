@@ -4,7 +4,6 @@ description: "Outlines the recommended legal structure using separate entities (
 published: true
 date: "2025-08-23T00:00:00.000Z"
 tags: [legal, strategy, 501c3, 501c4, compliance, investment, advocacy]
-editor: markdown
 dateCreated: "2025-08-23T00:00:00.000Z"
 topic_id: multi-entity-strategy
 canonical: true

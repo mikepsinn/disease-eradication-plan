@@ -4,7 +4,6 @@ description: "The DIH strategy is not theoretical. It is a synthesis of proven h
 published: true
 date: "2025-09-10T00:00:00.000Z"
 tags: [evidence, precedent, history, proof, recovery-trial, icbl, war-bonds, 3-5-rule]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

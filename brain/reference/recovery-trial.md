@@ -4,7 +4,6 @@ description: How the Oxford RECOVERY pragmatic trial reduced the cost of clinica
 published: true
 date: 2025-05-07T10:43:28.217Z
 tags: [clinical-trials, cost-efficiency, decentralized-platforms, recovery-trial]
-editor: markdown
 dateCreated: 2025-02-24T00:36:51.173Z
 ---
 

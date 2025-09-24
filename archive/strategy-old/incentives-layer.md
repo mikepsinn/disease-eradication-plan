@@ -4,7 +4,6 @@ description: "Social and economic incentive mechanisms that drive growth, engage
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [incentives, referrals, bounties, hypercerts, credentials, leaderboards, dfda, dih]
-editor: markdown
 ---
 
 ## Goals

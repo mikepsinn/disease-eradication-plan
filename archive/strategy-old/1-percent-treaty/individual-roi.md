@@ -4,7 +4,6 @@ description: Discover how investing just 5 hours of your time can lead to signif
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [individual-roi, 1-percent-treaty, petition, outreach, time-investment]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

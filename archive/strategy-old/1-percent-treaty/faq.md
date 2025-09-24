@@ -4,7 +4,6 @@ description: "Discover how a small reduction in military budgets can lead to sig
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [faq, 1-percent-treaty, military-spending, health-research, global-cooperation]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

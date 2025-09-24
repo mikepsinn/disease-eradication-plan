@@ -3,7 +3,6 @@ description: "A case study comparing the inefficiency of the NIH's $1.6B RECOVER
 title: Efficiency of NIH Research Funding vs. an Automated Decentralized Trial Platform
 tags: [decentralized-trials, real-world-evidence, clinical-trials]
 published: true
-editor: markdown
 date: "2025-02-12T20:28:54.306Z"
 dateCreated: "2025-02-12T20:28:54.306Z"
 ---

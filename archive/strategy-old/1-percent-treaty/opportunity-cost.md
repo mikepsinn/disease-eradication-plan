@@ -4,7 +4,6 @@ description: "This page analyzes the immense opportunity cost of global military
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [opportunity-cost, military-spending, health-research, global-economics, public-health]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

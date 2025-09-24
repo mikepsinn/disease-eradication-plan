@@ -4,7 +4,6 @@ description: "A detailed, phase-based hiring plan outlining the core team struct
 published: true
 date: "2025-08-22T00:00:00.000Z"
 tags: [hiring, careers, team, operations, scaling]
-editor: markdown
 dateCreated: "2025-08-22T00:00:00.000Z"
 ---
 

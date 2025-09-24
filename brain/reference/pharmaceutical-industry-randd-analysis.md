@@ -4,7 +4,6 @@ emoji: "\U0001F52C"
 title: Pharmaceutical R&D Spending and Outcomes
 tags: [pharmaceuticals, R&D, drug-development, industry-analysis]
 published: true
-editor: markdown
 date: "2025-02-12T20:29:04.546Z"
 dateCreated: "2025-02-12T20:29:04.546Z"
 ---

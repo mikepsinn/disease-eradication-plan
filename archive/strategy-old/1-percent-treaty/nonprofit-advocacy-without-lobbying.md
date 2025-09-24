@@ -4,7 +4,6 @@ description: Practical ways nonprofits can advocate for the 1% Treaty without tr
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [nonprofit-advocacy, 1-percent-treaty, public-policy, education, irs-guidance]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 fontawesomeIcon: fa-hands-helping
 ---

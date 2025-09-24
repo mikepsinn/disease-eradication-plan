@@ -4,7 +4,6 @@ description: "Overview of the multi-phase fundraising strategy to raise $1.2B-$2
 published: true
 date: "2025-09-09T00:00:00.000Z"
 tags: [fundraising, overview, strategy, activation-energy]
-editor: markdown
 dateCreated: "2025-09-09T00:00:00.000Z"
 ---
 

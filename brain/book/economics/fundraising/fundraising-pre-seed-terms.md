@@ -4,7 +4,6 @@ description: Defines the proposed terms for the initial $250k-$750k pre-seed fun
 published: false
 date: "2025-08-24T00:00:00.000Z"
 tags: [SAFT, fundraising, tokenomics, pre-seed]
-editor: markdown
 dateCreated: "2025-08-24T00:00:00.000Z"
 topic_id: pre-seed-terms
 canonical: false

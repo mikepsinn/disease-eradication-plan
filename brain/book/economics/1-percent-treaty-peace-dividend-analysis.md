@@ -4,7 +4,6 @@ description: "Quantifying the economic benefits of a 1% reduction in military sp
 published: true
 date: "2025-09-24T00:00:00.000Z"
 tags: [peace-dividend, 1-percent-treaty, economic-analysis, cost-of-war]
-editor: markdown
 dateCreated: "2025-09-24T00:00:00.000Z"
 ---
 

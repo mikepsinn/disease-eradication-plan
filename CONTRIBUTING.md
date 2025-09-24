@@ -4,7 +4,6 @@ description: "The single source of truth for all contribution guidelines, style 
 published: true
 date: "2025-09-09T00:00:00.000Z"
 tags: [contributing, guidelines, standards, book, knowledge-base]
-editor: markdown
 dateCreated: "2025-09-09T00:00:00.000Z"
 ---
 
@@ -158,7 +157,6 @@ description: "One sentence summary (max 140 chars)"
 published: true # false for drafts
 date: "YYYY-MM-DDTHH:MM:SS.sssZ"
 tags: [keyword1, keyword2]
-editor: markdown
 dateCreated: "YYYY-MM-DDTHH:MM:SS.sssZ"
 ---
 ```

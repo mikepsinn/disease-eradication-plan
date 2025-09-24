@@ -4,7 +4,6 @@ description: "The governance model for the DIH is Wishocracy, a decentralized pr
 published: true
 date: "2025-09-10T00:00:00.00Z"
 tags: [governance, wishocracy, dao, decentralization, ai, collective-intelligence, protocol]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

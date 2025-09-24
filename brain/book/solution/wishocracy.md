@@ -4,7 +4,6 @@ description: "A decentralized protocol for optimally allocating societal resourc
 published: true
 date: "2025-09-22T00:00:00.000Z"
 tags: [solution, wishocracy, governance, ai, collective-intelligence, resource-allocation]
-editor: markdown
 dateCreated: "2025-09-22T00:00:00.000Z"
 ---
 

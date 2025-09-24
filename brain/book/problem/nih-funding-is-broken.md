@@ -4,7 +4,6 @@ description: "How the NIH grant system wastes time, stifles innovation, and dire
 published: true
 date: "2025-09-17T00:00:00.000Z"
 tags: [problem, nih, grants, research-funding, bureaucracy]
-editor: markdown
 dateCreated: "2025-09-17T00:00:00.000Z"
 ---
 

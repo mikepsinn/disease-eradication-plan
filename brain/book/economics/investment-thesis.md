@@ -4,7 +4,6 @@ description: "A quantitative analysis of the investment required to make curing 
 published: true
 date: "2025-01-20T00:00:00.000Z"
 tags: [investment-thesis, victory-bonds, impact-investing, quantitative-finance, risk-modeling, metaculus]
-editor: markdown
 dateCreated: "2025-01-20T00:00:00.000Z"
 ---
 

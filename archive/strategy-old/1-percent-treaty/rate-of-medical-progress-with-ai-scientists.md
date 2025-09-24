@@ -4,7 +4,6 @@ description: "AI scientists could potentially achieve 260 years of medical progr
 published: true
 date: 2024-06-09T00:00:00.000Z
 tags: [ai-scientists, medical-progress, agi, automation, drug-discovery, healthcare-innovation]
-editor: markdown
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 

@@ -4,7 +4,6 @@ description: "The execution strategy is not based on moral persuasion but on a s
 published: true
 date: "2025-09-10T00:00:00.000Z"
 tags: [strategy, execution, bribery, incentives, public-choice, stakeholder-alignment]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

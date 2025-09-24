@@ -4,7 +4,6 @@ description: "Entry points for treaty, DIH, and cross-cutting strategy documents
 published: true
 date: "2025-08-23T00:00:00.000Z"
 tags: [index, strategy, canonicals]
-editor: markdown
 dateCreated: "2025-08-23T00:00:00.000Z"
 ---
 

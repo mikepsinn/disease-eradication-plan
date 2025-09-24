@@ -4,7 +4,6 @@ description: "The high-level, multi-year strategy to achieve the 1% Treaty, fund
 published: true
 date: "2025-08-22T00:00:00.000Z"
 tags: [strategy, roadmap, 1-percent-treaty, dih, dfda, financing, policy]
-editor: markdown
 dateCreated: "2025-08-22T00:00:00.000Z"
 topic_id: canonical-roadmap
 canonical: true

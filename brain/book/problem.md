@@ -4,7 +4,6 @@ description: "Humanity spends trillions on war and destruction while the systems
 published: true
 date: "2025-09-10T00:00:00.000Z"
 tags: [problem, war, disease, cost-of-war, fda, clinical-trials, resource-allocation]
-editor: markdown
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 

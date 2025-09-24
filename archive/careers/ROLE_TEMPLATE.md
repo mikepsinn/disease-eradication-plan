@@ -4,7 +4,6 @@ description: "We are seeking a Capital Markets & Treasury Management Lead to dev
 published: false
 date: 2025-08-22T00:00:00.000Z
 tags: [job, capital-markets, treasury, finance, fundraising]
-editor: markdown
 dateCreated: 2025-08-22T00:00:00.000Z
 ---
 

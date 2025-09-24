@@ -4,7 +4,6 @@ description: "A quantitative analysis of how a ~$2.5B investment unlocks a $16.5
 published: true
 date: "2025-01-22T00:00:00.000Z"
 tags: [peace-dividend, value-capture, investment-thesis, victory-bonds, economic-modeling]
-editor: markdown
 dateCreated: "2025-01-22T00:00:00.000Z"
 ---
 

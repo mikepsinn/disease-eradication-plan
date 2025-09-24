@@ -4,7 +4,6 @@ description: "Org chart connecting the Joint Strategic Command, DIH (treasury), 
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [dih, dfda, war-on-disease, organizational-design, governance]
-editor: markdown
 ---
 
 ## Org chart

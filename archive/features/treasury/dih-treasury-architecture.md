@@ -4,7 +4,6 @@ description: "Technical and governance architecture for the Decentralized Instit
 published: true
 date: 2025-08-12T00:00:00.000Z
 tags: [dih, treasury, multisig, threshold-signatures, governance, security, transparency]
-editor: markdown
 dateCreated: 2025-08-12T00:00:00.000Z
 fontawesomeIcon: fa-vault
 topic_id: dih-treasury-architecture
