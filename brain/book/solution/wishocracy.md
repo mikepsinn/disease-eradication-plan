@@ -23,7 +23,29 @@ The goal is to maximize universal health and happiness given limited resources, 
 5.  **Assign Tasks**: **Task Agents** act as a global dispatcher, identifying the most skilled and efficient person or AI to complete each specific task.
 6.  **Monitor Impact**: **Monitor Agents** track the real-world progress and impact of completed tasks, creating a continuous feedback loop to improve the system's future decisions.
 
-## The Problem: Coordination Failure at Scale
+## What Wishocracy Solves
+
+Our current systems for solving global problems are broken. They are slow, corruptible, and fail to harness our collective intelligence. Wishocracy is designed to fix this by addressing four core failures:
+
+### 1. A Budget Process Built for Corruption
+
+Today, allocating public resources is a political bloodsport. Special interests bribe politicians with campaign donations to secure funding, while vital public goods are neglected. The result is a budget that reflects the will of the highest bidder, not the public good.
+
+Wishocracy ends this. By allowing humanity to collectively create a budget through direct, transparent pairwise comparisons, it removes the politician from the equation. There is no one to bribe. Resources flow to the problems we, as a collective, deem most critical.
+
+### 2. Misguided Public Attention
+
+The current system incentivizes a focus on political theater over problem-solving. We waste our limited cognitive bandwidth debating the personal lives of politicians instead of the merits of different solutions to climate change or cancer.
+
+Wishocracy shifts the conversation. The protocol's entire focus is on defining problems, evaluating solutions, and measuring impact. It channels our collective attention toward what actually matters: building a better future.
+
+### 3. Governments Don't Know What We Want
+
+Even if politicians were perfectly incentivized to act in the public's interest, they lack the information to do so. They have no way to accurately know, let alone aggregate, the nuanced preferences of millions of citizens.
+
+Wishocracy provides the data. The pairwise comparison process creates a high-fidelity map of our collective desires, allowing for resource allocation that perfectly reflects our wishes. It builds a system that is accountable to us because it is a direct extension of our stated preferences.
+
+### 4. Coordination Failure at Scale
 
 Solving massive global problems like dementia, climate change, or poverty is not a matter of a single breakthrough; it's a problem of coordinating billions of individual tasks. Humans, with brains that evolved for small-group survival, are not equipped for this level of complexity. We can only hold about seven things in our working memory.
 
