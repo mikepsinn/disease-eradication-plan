@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: _book
 
 book:
   title: "The Complete Idiot's Guide to Ending War and Disease (v1.0)"
