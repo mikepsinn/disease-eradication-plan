@@ -21,6 +21,10 @@ python -m pip install --upgrade pip
 Write-Host "Installing Python packages..." -ForegroundColor Yellow
 pip install -r requirements.txt
 
+# Verify critical packages are installed
+Write-Host "Verifying package installation..." -ForegroundColor Yellow
+python -c "import plotly, pandas, yaml; print('All critical packages installed successfully')"
+
 # Register Jupyter kernel for Quarto
 Write-Host "Registering Jupyter kernel..." -ForegroundColor Yellow
 python -m ipykernel install --user --name=dih-project-kernel --display-name "DIH Project Kernel"

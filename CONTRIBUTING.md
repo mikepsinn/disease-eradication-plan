@@ -77,15 +77,42 @@ The style of this project must balance two core principles: genuine outrage and 
 
 **One-Second Test:** If you hesitate before reading a sentence aloud to a skeptical audience, rewrite it.
 
+## Development Environment Setup
+
+### Quick Start (Automated)
+1. **Run the setup script**: `.\setup.ps1`
+2. **Activate the environment**: `.\venv\Scripts\Activate.ps1`
+3. **Verify setup**: `.\verify-setup.ps1`
+4. **Preview the book**: `quarto preview index.qmd`
+
+### Prerequisites
+- Python 3.8+
+- Quarto
+- PowerShell (Windows)
+
+### Manual Setup
+If the automated setup doesn't work:
+
+1. Create virtual environment: `python -m venv .venv`
+2. Activate it: `.\venv\Scripts\Activate.ps1`
+3. Install dependencies: `pip install -r requirements.txt`
+4. Register Jupyter kernel: `python -m ipykernel install --user --name=dih-project-kernel --display-name "DIH Project Kernel"`
+
+### Troubleshooting
+- **"ModuleNotFoundError"**: Run `.\verify-setup.ps1` to check your environment
+- **"Kernel not found"**: Re-run the Jupyter kernel registration step
+- **Quarto errors**: Make sure your virtual environment is activated
+
 ## Contributor Workflow
 
 The plan _is_ the repository. We're building a book that's so clear anyone can read it.
 
-1.  **Find something to improve:** Look at the `roadmap.md` for priorities.
-2.  **If changing book structure:** Update the [Table of Contents in README.md](./README.md#table-of-contents) first.
-3.  **Make your changes:** Fork the repo and create a branch, or just edit on GitHub if you're not technical.
-4.  **Follow the standards:** Use the rules in this document.
-5.  **Submit a pull request:** Explain how your change makes things better.
+1.  **Set up your environment:** Follow the [Development Environment Setup](#development-environment-setup) above.
+2.  **Find something to improve:** Look at the `roadmap.md` for priorities.
+3.  **If changing book structure:** Update the [Table of Contents in README.md](./README.md#table-of-contents) first.
+4.  **Make your changes:** Fork the repo and create a branch, or just edit on GitHub if you're not technical.
+5.  **Follow the standards:** Use the rules in this document.
+6.  **Submit a pull request:** Explain how your change makes things better.
 
 ## Content and Style Standards
 
