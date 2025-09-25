@@ -14,29 +14,17 @@ doc_type: strategy
 
 # The Complete Idiot's Guide to Ending War and Disease
 
-Why you should read beyond this sentence: this is a practical guide to making all your dreams come true. 
+This is a practical guide to making your dreams come true.
 
-People want the stuff they want.  But there's a limited amount of stuff in the world so in order to get more of the stuff we want, we need to stop using our limited resources on some other stuff. 
+Everyone wants stuff. A cool car, a cure for your grandma's dementia, an end to poverty—you name it. The problem is, the resources to make that stuff are limited. To get more of what we want, we first need to stop wasting trillions on what we *don't* want.
 
-So to get the resources to get more of the stuff we want, we need to stop wasting them on stuff we don't want. 
+Two things most people would agree we don't want are **war and disease**.
 
-The 2 things that most people don't want are war and disease. 
+They aren't just unpleasant; they're ridiculously expensive. When you account for all direct and indirect costs, war and disease consume **[$119 trillion annually](https://dih.wiki/brain/book/economics/humanity-budget-overview)**. Imagine humanity as a business where the security department spends a quarter of its budget attacking the accounting department. It would not be a very productive business.
 
-Even if no one is genociding you at the moment and you don't have any diseases, you might want other stuff like a cool car, ending poverty, or global warming, or more legos, or animal suffering or something.  The way to get the resources is to end war. 
+That's our world today. We're squandering unimaginable wealth on self-destruction while the cures for cancer, Alzheimer's, and thousands of other diseases remain just out of reach.
 
-Just like you have a personal budget, humanity has a budget as well.  And war and disease are an enormous (and totally unecessary expenditure).
-
-Here's humanity's budget:
-
-And here is the most important comparison:
-
-## The Largest Market Failure in Human History
-
-War and disease consume **$119 trillion** annually (113% of global GDP!) when you include all externalities, yet we only spend **$67.5 billion** on medical research. This staggering disparity is the largest market failure in human history.
-
-For a detailed breakdown and visualizations of this economic reality, see the **[Humanity's Budget](./brain/book/economics/humanity-budget-overview.qmd)** chapter.
-
-We propose a simple, powerful solution: **The 1% Treaty**.
+But what if we could change that?
 
 ## The Solution: The 1% Treaty
 
@@ -551,5 +539,5 @@ e. [Political Proof: How Mass Movements Win](./brain/book/proof/political-proof.
 ### Chapter 6: Join the War on Disease
 a. [Get Started Here: Your Next Steps to Join the War on Disease](./brain/book/call-to-action.md)  
 b. [Contributing Guide: How to Help Write This Book](./CONTRIBUTING.md)  
-c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)  
+c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)
 
