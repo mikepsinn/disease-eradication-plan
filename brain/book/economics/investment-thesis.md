@@ -1,11 +1,15 @@
 ---
-title: '"VICTORY Bonds: The Investment Thesis for Curing Disease"'
+title: "Investment Thesis: The Case for Unprecedented Risk-Adjusted Returns"
 description: "A quantitative analysis of the investment required to make curing disease more profitable than war, detailing the risk, return, and competitive benchmark against the military-industrial complex and elite hedge funds."
 published: true
 date: "2025-01-20T00:00:00.000Z"
 tags: [investment-thesis, victory-bonds, impact-investing, quantitative-finance, risk-modeling, metaculus]
 dateCreated: "2025-01-20T00:00:00.000Z"
 ---
+
+*Disclaimer: This section is informational and illustrative, not an offer of securities. Any actual investment would be made via formal offering documents and may differ materially.*
+
+See also: [VICTORY Bonds: An Example Funding Instrument](./victory-bonds.md)
 
 ## The Core Thesis: A Massively Undervalued Asset
 
@@ -69,6 +73,20 @@ This could fail. Here's what could go wrong and how we handle it:
 
 **When You Get Paid:** You get paid when treaty money comes in, not on fixed dates. Big payments start 18–36 months after the first major country signs.
 
-For all the details, see [VICTORY Bonds Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md).
+### Why Risk-Adjusted Returns Can Beat the MIC and Pharma
+
+The financial case rests on several structural advantages that traditional investments in the military-industrial complex (MIC) and pharmaceutical industry cannot match:
+
+- **Structural Value Capture**: We capture a stable, recurring public expenditure (1% of defense budgets) rather than relying on speculative product revenues. This creates a predictable inflow that underpins the entire model. See the [Peace Dividend Value Capture Model](./peace-dividend-value-capture.md).
+
+- **Efficiency Arbitrage**: The 80x cost reduction in clinical trials, validated by the [Oxford RECOVERY trial](../reference/recovery-trial.md), dramatically lowers the capital required to produce a successful health outcome. This de-risks the investment on an operational level.
+
+- **Uncorrelated Alpha**: Returns are driven by political adoption and the redirection of public budgets, not by market beta or the binary success/failure of a single drug. This provides a source of alpha that is uncorrelated with traditional markets.
+
+- **Diversification**: The DIH treasury allocates funding across hundreds or thousands of interventions and diseases, creating a diversified portfolio that is resilient to the failure of any single research program.
+
+- **Downside Resilience**: Even partial adoption (e.g., only the US, EU, & UK) creates a multi-billion dollar annual treasury, ensuring the model is robust and not dependent on unanimous global agreement.
+
+For details on the specific terms of an example funding instrument, see [VICTORY Bonds: A High-Yield Debt Instrument](./victory-bonds.md).
 
 ---

@@ -42,7 +42,6 @@ The strategy unfolds in a sequence of bribes, each one funding the next, creatin
 - **Who:** Wealthy individuals, funds, anchor investors, and the military-industrial complex itself.
 - **The Bribe:** The most profitable investment opportunity in human history, modeled on the proven success of WWII War Bonds but with venture-capital-level returns.
 - **40% Annual Returns:** **[VICTORY Bonds](./economics.md)** are designed to beat the world's best hedge funds (e.g., Renaissance Medallion Fund's ~39% CAGR).
-- **Governance Over a $27B Treasury:** Investors don't just get a return; they get governance rights over a multi-billion-dollar annual, perpetual capital allocation engine. This "Governance Alpha" is an uncapped source of value and influence.
 - **Money-Back Guarantee:** Initial funds are protected by an **[Assurance Contract](../economics/fundraising-strategy.md)**, guaranteeing a full refund if fundraising goals are not met.
 - **The Result:** Defense contractors and billionaires make more money supporting peace than supporting war. So they support peace.
 
