@@ -80,5 +80,5 @@ fig.add_trace(go.Bar(
 ))
 
 
-fig.show()
+fig
 ```
