@@ -14,6 +14,29 @@ doc_type: strategy
 
 # The Complete Idiot's Guide to Ending War and Disease
 
+Why you should read beyond this sentence: this is a practical guide to making all your dreams come true. 
+
+People want the stuff they want.  But there's a limited amount of stuff in the world so in order to get more of the stuff we want, we need to stop using our limited resources on some other stuff. 
+
+So to get the resources to get more of the stuff we want, we need to stop wasting them on stuff we don't want. 
+
+The 2 things that most people don't want are war and disease. 
+
+Even if no one is genociding you at the moment and you don't have any diseases, you might want other stuff like a cool car, ending poverty, or global warming, or more legos, or animal suffering or something.  The way to get the resources is to end war. 
+
+Just like you have a personal budget, humanity has a budget as well.  And war and disease are an enormous (and totally unecessary expenditure).
+
+Here's humanity's budget:
+
+![Humanity's Annual Budget](assets/charts/humanitys_budget_donut.png)
+
+And here is the most important comparison:
+
+![The Problem vs. The Investment](assets/charts/disease_vs_research_spending.png)
+
+**The Punchline:** The total economic burden of disease is **$109 trillion** per year, yet we only spend **$67.5 billion** trying to solve it. This is the largest market failure in human history.
+
+
 If you're anything like me, you probably harbor some disdain for war and disease.
 And you might have at one point found yourself muttering in a empty bus station, "But I'm just one complete idiot, what can I do?"
 
