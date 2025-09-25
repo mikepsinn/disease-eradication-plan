@@ -158,116 +158,90 @@ print(f'Modern chart saved to {file_path}')
 
 ## Humanity's Annual Budget: The True Scale
 
-This donut chart visualizes humanity's "family budget" using the **total economic burden** of war and disease, including all externalities. This gives a much more accurate picture of where our resources are truly going.
+This bar chart provides an accurate and honest visualization of humanity's spending priorities by directly comparing them to global GDP. It makes the scale of the war and disease problems starkly clear.
 
-**The Shocking Reality**: War + Disease = 113% of global GDP!
+**The Shocking Reality**: The total economic burdens of War and Disease *exceed* our entire planet's annual economic output.
 
 ```{python}
-# --- Corrected Visualization: Humanity's Budget with Total Externalities ---
+# --- Corrected Visualization: Humanity's Budget Bar Chart vs. Global GDP ---
 
-# Data for humanity's budget (in trillions USD)
-# Source: Global GDP (~$105T): World Bank
-# War total cost: brain/book/problem/cost-of-war.md ($9.7T)
-# Disease total cost: brain/book/problem/cost-of-disease.md ($109T)
-# Other figures are estimates based on various economic reports.
+# Data for humanity's budget (in trillions USD) is already loaded from a previous cell.
+# global_gdp, total_war_cost, total_disease_cost, etc.
 
-global_gdp = 105.0
-
-# Total externalities (the real costs)
-total_war_cost = 9.7  # From cost-of-war.md - includes ALL externalities
-total_disease_cost = 109.1  # From cost-of-disease.md - includes ALL externalities
-
-# Other major spending categories (direct spending only)
-housing_spending = 15.0
-food_spending = 10.0
-education_spending = 5.0
-transportation_spending = 5.0
-
-# Calculate remaining GDP after accounting for externalities
-total_accounted_for = total_war_cost + total_disease_cost + housing_spending + food_spending + education_spending + transportation_spending
-remaining_gdp = max(0, global_gdp - total_accounted_for)  # Ensure non-negative
-
-# Create budget data
+# Create a DataFrame for the bar chart
 budget_data = {
     'Category': [
-        'Disease (Total Cost)', 'War (Total Cost)', 'Housing', 'Food', 
-        'Education', 'Transportation', 'Other GDP'
+        'Disease (Total Cost)', 'Housing', 'Food', 'War (Total Cost)',
+        'Education', 'Transportation'
     ],
     'Value ($T)': [
-        total_disease_cost, total_war_cost, housing_spending, food_spending,
-        education_spending, transportation_spending, remaining_gdp
+        total_disease_cost,
+        housing_spending,
+        food_spending,
+        total_war_cost,
+        education_spending,
+        transportation_spending
     ]
 }
 budget_df = pd.DataFrame(budget_data)
 budget_df = budget_df.sort_values(by='Value ($T)', ascending=False)
 
-# Create modern donut chart
-fig, ax = plt.subplots(figsize=(14, 14))
+# Create modern bar chart
+fig, ax = plt.subplots(figsize=(14, 10))
 fig.patch.set_facecolor('white')
 
 # Modern color palette - highlight the massive externalities
-budget_colors = [
+bar_colors = [
     colors['danger'],      # Disease - red (biggest problem)
-    colors['warning'],     # War - amber (second biggest)
     colors['primary'],     # Housing - indigo
     colors['success'],     # Food - green
+    colors['warning'],     # War - amber (second biggest)
     colors['secondary'],   # Education - purple
     colors['slate'],       # Transportation - gray
-    colors['slate_light']  # Other GDP - light gray
 ]
 
-# Create donut chart with modern styling
-wedges, texts, autotexts = ax.pie(budget_df['Value ($T)'], 
-                                  labels=budget_df['Category'],
-                                  autopct='%1.1f%%',
-                                  startangle=90,
-                                  pctdistance=0.85,
-                                  colors=budget_colors,
-                                  wedgeprops=dict(width=0.5, edgecolor='white', linewidth=2))
+# Create bars with modern styling
+bars = ax.bar(budget_df['Category'], budget_df['Value ($T)'], 
+              color=bar_colors, width=0.6, alpha=0.9)
 
-# Style the text elements
-for text in texts:
-    text.set_fontsize(12)
-    text.set_fontweight('600')
-    text.set_color(colors['text'])
+# --- Add Global GDP Line for Context ---
+ax.axhline(y=global_gdp, color=colors['dark'], linestyle='--', linewidth=2, alpha=0.8)
+ax.text(len(budget_df['Category']) - 0.45, global_gdp + 3, 'Total Global GDP ($105T)', 
+        fontsize=14, fontweight='600', color=colors['dark'], ha='center')
 
-for autotext in autotexts:
-    autotext.set_fontsize(11)
-    autotext.set_fontweight('700')
-    autotext.set_color('white')
+# Apply modern styling
+apply_modern_style(ax, remove_spines=['top', 'right'])
 
-# Add center circle for clean donut look
-centre_circle = plt.Circle((0,0), 0.6, fc='white', linewidth=2, edgecolor=colors['grid'])
-ax.add_artist(centre_circle)
+# Clean, prominent value labels
+for bar in bars:
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2.0, height, f'${height:,.1f}T', 
+            ha='center', va='bottom', fontsize=14, fontweight='600', color=colors['text'],
+            xytext=(0, 5), textcoords='offset points')
 
-# Add center text with shocking insight
-ax.text(0, 0.15, 'Humanity\'s Budget', ha='center', va='center', 
-        fontsize=20, fontweight='700', color=colors['dark'])
-ax.text(0, -0.05, 'War + Disease = 113%', ha='center', va='center', 
-        fontsize=16, fontweight='700', color=colors['danger'])
-ax.text(0, -0.2, 'of Global GDP!', ha='center', va='center', 
-        fontsize=14, fontweight='600', color=colors['text'])
+# Modern title and labels
+ax.set_title("Humanity's Budget: The True Scale of War & Disease", 
+             fontsize=24, fontweight='700', color=colors['dark'], pad=40)
+ax.set_ylabel('Annual Economic Burden (Trillions USD)', fontsize=14, color=colors['text'], labelpad=15)
+ax.set_xlabel('')
 
-# Modern title
-ax.set_title('Humanity\'s Annual Budget: The True Scale of War & Disease', 
-             fontsize=24, fontweight='700', color=colors['dark'], pad=50)
-
-# Ensure circular shape
-ax.axis('equal')
+# Clean axis formatting
+ax.set_ylim(0, max(total_disease_cost, global_gdp) * 1.1)
+plt.xticks(rotation=0, ha='center', fontsize=12)
 
 # Modern layout
 plt.tight_layout()
-plt.subplots_adjust(left=0.05, right=0.95, top=0.85, bottom=0.05)
+plt.subplots_adjust(left=0.1, right=0.95, top=0.9, bottom=0.1)
 
 # Add modern watermark
 add_modern_watermark(fig)
 
 # Save with high quality
-file_path = os.path.join(charts_dir, 'humanitys_budget_donut_corrected.png')
+file_path = os.path.join(charts_dir, 'humanitys_budget_bar_chart.png')
 plt.savefig(file_path, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
 
 plt.show()
-print(f'Corrected chart saved to {file_path}')
+print(f'Bar chart saved to {file_path}')
 ```
 
 ## The Core Problem: Disease Burden vs. Research Investment

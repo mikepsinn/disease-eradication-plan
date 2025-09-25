@@ -35,8 +35,11 @@
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
     "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix",
+    "build": "npm run quarto:clean && npm run build:html && npm run build:pdf",
     "build:html": "quarto render . --to html",
-    "build:pdf": "quarto render . --to pdf"
+    "build:pdf": "quarto render . --to pdf",
+    "quarto:preview": "quarto preview .",
+    "quarto:clean": "rimraf _book"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
@@ -53,6 +56,7 @@
     "markdown-it-anchor": "^9.2.0",
     "markdownlint": "^0.29.0",
     "markdownlint-cli": "^0.39.0",
+    "rimraf": "^6.0.1",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsx": "^4.16.2",
