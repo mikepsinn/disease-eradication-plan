@@ -1,0 +1,84 @@
+---
+format:
+  html:
+    fig-width: 8
+    fig-height: 6
+---
+
+```{python}
+#| echo: false
+#| fig-cap: "Humanity's annual spending priorities, comparing wasted resources to investments in progress."
+import plotly.graph_objects as go
+import pandas as pd
+
+# Data from the 'Humanity's Family Budget' table
+data = {
+    'Category': [
+        'Disease (Total Cost)', 
+        'War (Total Cost)', 
+        'Housing', 
+        'Transportation', 
+        'Food', 
+        'Education', 
+        'Infrastructure', 
+        'Medical Research'
+    ],
+    'Spending': [109.1, 9.7, 23.0, 12.0, 9.0, 6.0, 4.0, 0.068],
+    'Type': [
+        'Wasted on Problems', 
+        'Wasted on Problems', 
+        'Stuff We Want', 
+        'Stuff We Want', 
+        'Stuff We Want', 
+        'Stuff We Want', 
+        'Stuff We Want', 
+        'Stuff We Want'
+    ]
+}
+df = pd.DataFrame(data)
+
+# Differentiate colors for the two types
+colors = {'Wasted on Problems': '#EF553B', 'Stuff We Want': '#636EFA'}
+df['Color'] = df['Type'].map(colors)
+
+# Sort values for better visualization
+df = df.sort_values('Spending', ascending=True)
+
+fig = go.Figure(go.Bar(
+    x=df['Spending'],
+    y=df['Category'],
+    orientation='h',
+    marker_color=df['Color'],
+    text=[f'${s:,.3f}T' if s >= 1 else f'${s*1000:,.0f}B' for s in df['Spending']],
+    textposition='auto'
+))
+
+fig.update_layout(
+    title_text='<b>Humanity\'s Family Budget: Wasted Spending vs. Investment</b>',
+    xaxis_title='Annual Spending (Trillions USD)',
+    yaxis_title='',
+    font=dict(family="Arial, sans-serif", size=14, color="black"),
+    plot_bgcolor='white',
+    legend=dict(
+        traceorder='reversed',
+        title_text='Category Type'
+    ),
+    bargap=0.4,
+    xaxis=dict(type='log', title='Annual Spending (Trillions USD) - Log Scale')
+)
+
+# Adding custom legend
+fig.add_trace(go.Bar(
+    name='Wasted on Problems',
+    x=[0], y=[None],
+    marker_color=colors['Wasted on Problems']
+))
+fig.add_trace(go.Bar(
+    name='Stuff We Want',
+    x=[0], y=[None],
+    marker_color=colors['Stuff We Want']
+))
+
+
+fig.show()
+```
