@@ -224,7 +224,7 @@ This chart illustrates the fundamental difference between a cost model and a pro
 robust_roi = 481  # From NPV analysis
 
 comparison_data = {
-    'Intervention': ['Traditional Charities', 'Our Initiative'],
+    'Intervention': ['Traditional Charities', '1% Treaty / dFDA Initiative'],
     'Financial Return per $1': [-1, robust_roi]
 }
 df_comparison = pd.DataFrame(comparison_data)

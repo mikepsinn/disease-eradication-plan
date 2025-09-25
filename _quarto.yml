@@ -41,5 +41,7 @@ book:
 format:
   html:
     theme: cosmo
+    echo: false
   pdf:
     documentclass: scrreprt
+    echo: false
