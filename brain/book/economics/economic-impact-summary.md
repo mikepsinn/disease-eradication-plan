@@ -105,12 +105,15 @@ Here's how our plan stacks up against the most successful health interventions e
 | **Childhood Vaccinations** | Prevents immense long-term treatment costs for diseases like measles and polio for a very low upfront cost. | Billions to Tens of Billions |
 | **Smoking Cessation** | Prevents a wide range of incredibly expensive chronic diseases (cancer, heart disease) through low-cost interventions. | Billions to Tens of Billions |
 | **Water Fluoridation** | Avoids significant dental care costs for entire populations at a negligible cost per person. | Hundreds of Millions to Billions |
-| **Our Initiative (dFDA)** | Unlocks systemic efficiencies across the entire **$100B+ annual global R&D market**, generating **$268.9 Billion** in net economic value over 10 years. | **Tens of Billions, Annually** |
+| **1% Treaty (Peace Dividend)** | Reduces global conflict costs by 1%, creating a massive societal economic benefit from decreased destruction and instability. | **~$97 Billion, Annually** |
+| **dFDA (R&D Efficiency)** | Uses a fraction of the Peace Dividend to fund a system that makes clinical research ~80x more efficient, unlocking huge R&D savings. | **~$50 Billion, Annually** |
 
 **Why This Is Different:**
 
-Vaccines and smoking cessation programs are amazing—they solve specific problems really well.
+Vaccines and smoking cessation programs are amazing—they solve specific problems with a high return.
 
-Our plan works differently. Instead of solving one problem, we fix the entire system that finds cures. We make medical research itself 80x cheaper and faster. That's why the benefits are so much bigger than even the best public health wins in history.
+The 1% Treaty and dFDA initiative tackles two problems at once:
+1.  **The Peace Dividend** is a massive economic gain on par with the largest public health wins, created simply by reducing a global negative (conflict).
+2.  **The dFDA** then uses a tiny fraction of that gain to fix the *system* of medical research, generating a *second* massive win that also has an unprecedented ROI.
 
-When you fix the machine that makes all the other fixes possible, the math gets pretty wild.
+Instead of solving one problem, we use a global-scale win to fund a system-scale win. When you use the world's largest source of waste to fund its most impactful opportunity, the math gets pretty wild.
