@@ -7,7 +7,7 @@ book:
   author: "Mike P. Sinn"
   date: "today"
   chapters:
-    - index.md
+    - index.qmd
 
 format:
   html:
