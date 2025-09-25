@@ -127,11 +127,6 @@ c. [Math Says It's Good](./brain/book/economics/economic-impact-summary.md)
 a. [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)  
 b. [How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)  
 c. [Historical Evidence for Decentralized Efficacy Trials](./brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.md)
-d. [The Economic Proof: Why the Math Actually Works](./brain/book/proof/economic-proof.md)  
-e. [Political Proof: How Mass Movements Win](./brain/book/proof/political-proof.md)  
 
 ### Chapter 6: Join the War on Disease
-a. [Get Started Here: Your Next Steps to Join the War on Disease](./brain/book/call-to-action.md)  
-b. [Contributing Guide: How to Help Write This Book](./CONTRIBUTING.md)  
-c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)
-
+a. [How You Can Help](./brain/book/call-to-action.md)  
