@@ -53,9 +53,6 @@ index.html
 # Ignore stray HTML and _files directories from `quarto preview`
 # but DON'T ignore them if they are in the _book directory
 *_files/
-/*/*.html
-/*/*/*.html
-/*/*/*/*.html
-/*/*/*/*/*.html
+brain/book/*/*.html
 !_book/
 libs/
