@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decentralized-institutes-of-health"
+version = "0.1.0"
+description = "The Complete Idiot's Guide to Ending War and Disease"
+authors = [
+    {name = "Mike P. Sinn", email = "mike@dih.earth"}
+]
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "pandas",
+    "numpy",
+    "numpy-financial",
+    "matplotlib",
+    "seaborn",
+    "plotly",
+    "PyYAML",
+    # Jupyter ecosystem for Quarto
+    "jupyter",
+    "ipykernel",
+    "nbformat",
+    "nbclient",
+    "jupyter-client",
+    "jupyter-core",
+    "traitlets",
+    "notebook",
+    "nbconvert",
+    "ipywidgets",
+    "jupyterlab",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["brain*", "scripts*"]

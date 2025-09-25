@@ -1,6 +1,7 @@
 project:
   type: book
   output-dir: _book
+  execute-dir: project
 
 book:
   title: "The Complete Idiot's Guide to Ending War and Disease"
@@ -9,10 +10,19 @@ book:
   chapters:
     - index.qmd
 
+execute:
+  # Relaunch kernel for each render
+  cache: false
+  freeze: auto
+
+# Tell Quarto to use the project's virtual environment
+jupyter: dih-project-kernel
+
 format:
   html:
     theme: cosmo
     echo: false
+    number-sections: false
   pdf:
     documentclass: scrreprt
     echo: false

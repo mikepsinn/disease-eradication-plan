@@ -7,3 +7,13 @@ matplotlib
 seaborn
 plotly
 PyYAML
+# Jupyter ecosystem for Quarto
+jupyter
+nbclient
+jupyter-client
+jupyter-core
+traitlets
+notebook
+nbconvert
+ipywidgets
+jupyterlab
