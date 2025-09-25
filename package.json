@@ -34,7 +34,8 @@
     "generate:index": "tsx scripts/generate-index.ts",
     "delete-empty-folders": "ts-node scripts/delete-empty-folders.ts",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
-    "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix"
+    "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix",
+    "build:book": "quarto render --to html _quarto.yml"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

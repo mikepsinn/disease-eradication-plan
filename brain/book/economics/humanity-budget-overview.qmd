@@ -1,0 +1,353 @@
+---
+title: "Humanity's Budget: The True Scale of War & Disease"
+jupyter: python3
+---
+
+This analysis reveals the shocking reality of humanity's spending priorities by visualizing our global "family budget" with the **total economic burden** of war and disease, including all externalities.
+
+**Key Insight**: When you include all externalities, war and disease consume a massive portion of global GDP - far more than just direct spending.
+
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import pandas as pd
+import os
+
+# Set plot style for consistent visualizations
+sns.set_style("whitegrid")
+
+# Create a directory to save charts if it doesn't exist
+charts_dir = '../../../assets/charts'
+os.makedirs(charts_dir, exist_ok=True)
+
+print("Plotting libraries imported and charts directory configured.")
+```
+
+```{python}
+# --- Modern Design System Setup ---
+
+import matplotlib.font_manager as fm
+
+# Modern color palette - sophisticated and professional
+colors = {
+    'dark': '#2C2C2C',      # Sophisticated off-black
+    'primary': '#6366F1',   # Modern indigo - our main accent
+    'secondary': '#8B5CF6', # Purple accent for variety
+    'success': '#10B981',   # Clean emerald green
+    'warning': '#F59E0B',   # Warm amber
+    'danger': '#EF4444',    # Clean red
+    'slate': '#64748B',     # Medium slate
+    'slate_light': '#94A3B8', # Light slate for secondary data
+    'grid': '#E5E7EB',      # Subtle gray for grids
+    'text': '#374151',      # Readable dark gray
+    'text_light': '#6B7280' # Lighter text
+}
+
+# Set modern typography globally
+plt.rcParams.update({
+    'font.family': 'sans-serif',
+    'font.sans-serif': ['Inter', 'Helvetica Neue', 'Segoe UI', 'Arial', 'sans-serif'],
+    'font.size': 12,
+    'axes.titlesize': 20,
+    'axes.labelsize': 14,
+    'xtick.labelsize': 12,
+    'ytick.labelsize': 12,
+    'legend.fontsize': 12,
+    'figure.titlesize': 24
+})
+
+def apply_modern_style(ax, remove_spines=['top', 'right'], grid_axis='y'):
+    """Apply consistent modern styling to any axis"""
+    ax.set_facecolor('white')
+    
+    # Remove specified spines
+    for spine in remove_spines:
+        ax.spines[spine].set_visible(False)
+    
+    # Style remaining spines
+    for spine in ax.spines.values():
+        if spine.get_visible():
+            spine.set_color(colors['grid'])
+            spine.set_linewidth(0.5)
+    
+    # Add subtle grid
+    if grid_axis:
+        ax.grid(True, axis=grid_axis, color=colors['grid'], 
+                linestyle='-', linewidth=0.5, alpha=0.7)
+        ax.set_axisbelow(True)
+    
+    # Remove tick marks
+    ax.tick_params(axis='both', which='both', length=0)
+    ax.tick_params(axis='x', colors=colors['text'])
+    ax.tick_params(axis='y', colors=colors['text'])
+
+def add_modern_watermark(fig):
+    """Add consistent watermark styling"""
+    fig.text(0.98, 0.02, 'WarOnDisease.org', ha='right', va='bottom', 
+             fontsize=10, color=colors['grid'], alpha=0.8, fontweight='500')
+
+print("✅ Modern design system loaded")
+```
+
+## Global Spending Priorities
+
+Before diving into detailed analysis, it's important to understand the fundamental scale of global military spending relative to medical research. This chart visualizes the core trade-off at the heart of this initiative.
+
+```{python}
+# Data for comparison
+direct_military_expenditure = 2718.0  # in billions of USD
+medical_research_spending = 67.5 # in billions of USD
+
+spending_data = {
+    'Category': ['Military Spending', 'Medical Research'],
+    'Amount ($B)': [direct_military_expenditure, medical_research_spending]
+}
+spending_df = pd.DataFrame(spending_data)
+
+# Create modern figure
+fig, ax = plt.subplots(figsize=(10, 7))
+fig.patch.set_facecolor('white')
+
+# Modern color scheme
+bar_colors = [colors['danger'], colors['success']]  # Red for military, green for medical
+
+# Create bars with modern styling
+bars = ax.bar(spending_df['Category'], spending_df['Amount ($B)'], 
+              color=bar_colors, width=0.6, alpha=0.9)
+
+# Apply modern styling
+apply_modern_style(ax)
+
+# Clean, prominent value labels
+for i, bar in enumerate(bars):
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2, height + 50,
+            f'${height:,.0f}B',
+            ha='center', va='bottom', fontsize=16, fontweight='600', color=colors['text'])
+
+# Modern callout for the multiple
+multiple = direct_military_expenditure / medical_research_spending
+ax.text(0.5, max(spending_df['Amount ($B)']) * 0.45, f'{multiple:.0f}× More', 
+        ha='center', va='center', fontsize=18, fontweight='700', color='white',
+        bbox=dict(facecolor=colors['dark'], alpha=0.8, boxstyle='round,pad=0.8'))
+
+# Modern title and labels
+ax.set_title('Global Spending Priorities', fontsize=22, fontweight='700', 
+             color=colors['dark'], pad=30)
+ax.set_ylabel('Annual Spending (Billions USD)', fontsize=14, color=colors['text'], labelpad=15)
+ax.set_xlabel('')
+
+# Clean axis formatting
+ax.set_ylim(0, direct_military_expenditure * 1.15)
+
+# Modern layout
+plt.tight_layout()
+plt.subplots_adjust(left=0.12, right=0.95, top=0.9, bottom=0.1)
+
+# Add modern watermark
+add_modern_watermark(fig)
+
+# Save with high quality
+file_path = os.path.join(charts_dir, 'military_vs_research_spending.png')
+plt.savefig(file_path, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
+
+plt.show()
+print(f'Modern chart saved to {file_path}')
+```
+
+## Humanity's Annual Budget: The True Scale
+
+This donut chart visualizes humanity's "family budget" using the **total economic burden** of war and disease, including all externalities. This gives a much more accurate picture of where our resources are truly going.
+
+**The Shocking Reality**: War + Disease = 113% of global GDP!
+
+```{python}
+# --- Corrected Visualization: Humanity's Budget with Total Externalities ---
+
+# Data for humanity's budget (in trillions USD)
+# Source: Global GDP (~$105T): World Bank
+# War total cost: brain/book/problem/cost-of-war.md ($9.7T)
+# Disease total cost: brain/book/problem/cost-of-disease.md ($109T)
+# Other figures are estimates based on various economic reports.
+
+global_gdp = 105.0
+
+# Total externalities (the real costs)
+total_war_cost = 9.7  # From cost-of-war.md - includes ALL externalities
+total_disease_cost = 109.1  # From cost-of-disease.md - includes ALL externalities
+
+# Other major spending categories (direct spending only)
+housing_spending = 15.0
+food_spending = 10.0
+education_spending = 5.0
+transportation_spending = 5.0
+
+# Calculate remaining GDP after accounting for externalities
+total_accounted_for = total_war_cost + total_disease_cost + housing_spending + food_spending + education_spending + transportation_spending
+remaining_gdp = max(0, global_gdp - total_accounted_for)  # Ensure non-negative
+
+# Create budget data
+budget_data = {
+    'Category': [
+        'Disease (Total Cost)', 'War (Total Cost)', 'Housing', 'Food', 
+        'Education', 'Transportation', 'Other GDP'
+    ],
+    'Value ($T)': [
+        total_disease_cost, total_war_cost, housing_spending, food_spending,
+        education_spending, transportation_spending, remaining_gdp
+    ]
+}
+budget_df = pd.DataFrame(budget_data)
+budget_df = budget_df.sort_values(by='Value ($T)', ascending=False)
+
+# Create modern donut chart
+fig, ax = plt.subplots(figsize=(14, 14))
+fig.patch.set_facecolor('white')
+
+# Modern color palette - highlight the massive externalities
+budget_colors = [
+    colors['danger'],      # Disease - red (biggest problem)
+    colors['warning'],     # War - amber (second biggest)
+    colors['primary'],     # Housing - indigo
+    colors['success'],     # Food - green
+    colors['secondary'],   # Education - purple
+    colors['slate'],       # Transportation - gray
+    colors['slate_light']  # Other GDP - light gray
+]
+
+# Create donut chart with modern styling
+wedges, texts, autotexts = ax.pie(budget_df['Value ($T)'], 
+                                  labels=budget_df['Category'],
+                                  autopct='%1.1f%%',
+                                  startangle=90,
+                                  pctdistance=0.85,
+                                  colors=budget_colors,
+                                  wedgeprops=dict(width=0.5, edgecolor='white', linewidth=2))
+
+# Style the text elements
+for text in texts:
+    text.set_fontsize(12)
+    text.set_fontweight('600')
+    text.set_color(colors['text'])
+
+for autotext in autotexts:
+    autotext.set_fontsize(11)
+    autotext.set_fontweight('700')
+    autotext.set_color('white')
+
+# Add center circle for clean donut look
+centre_circle = plt.Circle((0,0), 0.6, fc='white', linewidth=2, edgecolor=colors['grid'])
+ax.add_artist(centre_circle)
+
+# Add center text with shocking insight
+ax.text(0, 0.15, 'Humanity\'s Budget', ha='center', va='center', 
+        fontsize=20, fontweight='700', color=colors['dark'])
+ax.text(0, -0.05, 'War + Disease = 113%', ha='center', va='center', 
+        fontsize=16, fontweight='700', color=colors['danger'])
+ax.text(0, -0.2, 'of Global GDP!', ha='center', va='center', 
+        fontsize=14, fontweight='600', color=colors['text'])
+
+# Modern title
+ax.set_title('Humanity\'s Annual Budget: The True Scale of War & Disease', 
+             fontsize=24, fontweight='700', color=colors['dark'], pad=50)
+
+# Ensure circular shape
+ax.axis('equal')
+
+# Modern layout
+plt.tight_layout()
+plt.subplots_adjust(left=0.05, right=0.95, top=0.85, bottom=0.05)
+
+# Add modern watermark
+add_modern_watermark(fig)
+
+# Save with high quality
+file_path = os.path.join(charts_dir, 'humanitys_budget_donut_corrected.png')
+plt.savefig(file_path, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
+
+plt.show()
+print(f'Corrected chart saved to {file_path}')
+```
+
+## The Core Problem: Disease Burden vs. Research Investment
+
+The most critical insight comes from comparing the *total economic burden* of disease—a staggering $109 trillion annually—with what we spend to solve it. This chart visualizes that extreme disparity. The size of the problem versus our investment in the solution is the central economic argument for this initiative.
+
+```{python}
+# --- Modern Visualization: Disease Burden vs. Research Spending ---
+
+# Data for comparison (in trillions USD)
+total_disease_cost = 109.1
+medical_research_spending_trillions = 0.0675
+
+comparison_data = {
+    'Category': ['Total Cost of Disease', 'Medical Research'],
+    'Value ($T)': [total_disease_cost, medical_research_spending_trillions]
+}
+comparison_df = pd.DataFrame(comparison_data)
+
+# Create modern figure
+fig, ax = plt.subplots(figsize=(12, 8))
+fig.patch.set_facecolor('white')
+
+# Modern color scheme
+bar_colors = [colors['danger'], colors['success']]
+
+# Create bars
+bars = ax.bar(comparison_df['Category'], comparison_df['Value ($T)'], 
+              color=bar_colors, width=0.6, alpha=0.9)
+
+# Apply modern styling
+apply_modern_style(ax)
+
+# Use log scale to make the research bar visible
+ax.set_yscale('log')
+
+# Clean, prominent value labels
+for i, bar in enumerate(bars):
+    height = bar.get_height()
+    if height < 1:  # Small values
+        ax.text(bar.get_x() + bar.get_width()/2, height * 3,
+                f'${height:.3f}T',
+                ha='center', va='bottom', fontsize=16, fontweight='600', color=colors['text'])
+    else:  # Large values
+        ax.text(bar.get_x() + bar.get_width()/2, height * 1.1,
+                f'${height:.1f}T',
+                ha='center', va='bottom', fontsize=16, fontweight='600', color=colors['text'])
+
+# Modern callout for the multiple
+multiple = total_disease_cost / medical_research_spending_trillions
+ax.text(0.5, max(comparison_df['Value ($T)']) * 0.3, f'{multiple:,.0f}× More', 
+        ha='center', va='center', fontsize=20, fontweight='700', color='white',
+        bbox=dict(facecolor=colors['dark'], alpha=0.8, boxstyle='round,pad=0.8'))
+
+# Modern title and labels
+ax.set_title('The Largest Market Failure in Human History', fontsize=22, fontweight='700', 
+             color=colors['dark'], pad=30)
+ax.set_ylabel('Annual Cost (Trillions USD, Log Scale)', fontsize=14, color=colors['text'], labelpad=15)
+ax.set_xlabel('')
+
+# Clean axis formatting
+ax.set_ylim(0.01, total_disease_cost * 1.5)
+
+# Modern layout
+plt.tight_layout()
+plt.subplots_adjust(left=0.12, right=0.95, top=0.9, bottom=0.1)
+
+# Add modern watermark
+add_modern_watermark(fig)
+
+# Save with high quality
+file_path = os.path.join(charts_dir, 'disease_vs_research_spending.png')
+plt.savefig(file_path, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
+
+plt.show()
+print(f'Comparison chart saved to {file_path}')
+```
+
+## The Shocking Conclusion
+
+**The Punchline**: War and disease consume **$119 trillion** annually (113% of global GDP!) when you include all externalities, yet we only spend **$67.5 billion** on medical research. This is the largest market failure in human history.
+
+This analysis reveals that humanity's spending priorities are fundamentally broken. We spend more on the problems than on the solutions, creating a massive opportunity for intervention through the 1% Treaty initiative.
