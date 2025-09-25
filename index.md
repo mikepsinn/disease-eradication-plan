@@ -155,7 +155,7 @@ Getting every government to ratify the treaty requires two things:
 
 Remember World War II? America sold war bonds to fund the fight against fascism. We're doing the same thing, but for the War on Disease.
 
-The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./brain/book/economics/victory-bonds.md)** to anyone with a an ability to influence the ratification of the 1% treaty by any particular nation.
+The military industrial complex is composed of humans that are not evil, they just like money. So we offer **[VICTORY bonds](./brain/book/economics/victory-bonds.qmd)** to anyone with a an ability to influence the ratification of the 1% treaty by any particular nation.
 
 **The result:** Everyone gets richer by funding cures instead of destruction.
 
@@ -254,7 +254,7 @@ This is the world we can start creating today.
 
 **Step 2:** When we hit [3.5% of humanity](./brain/book/references.md#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—you get to own part of the **$27B+ annual health treasury** and vote on how the money gets spent (see [VICTORY Bonds — Incentive Mechanics](./brain/book/economics/victory-bonds.md)).
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—you get to own part of the **$27B+ annual health treasury** and vote on how the money gets spent (see [VICTORY Bonds — Incentive Mechanics](./brain/book/economics/victory-bonds.qmd)).
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 
@@ -266,7 +266,7 @@ This is the world we can start creating today.
 
 ## VICTORY Bonds: Bootstrap Funding Model
 
-**[VICTORY Bonds](./brain/book/economics/victory-bonds.md):** Bootstrap funding now, repaid by treaty inflows.
+**[VICTORY Bonds](./brain/book/economics/victory-bonds.qmd):** Bootstrap funding now, repaid by treaty inflows.
 
 Here are our two simple rules:
 
@@ -360,7 +360,7 @@ We turn today's **War Contractors** into tomorrow's **Peace Contractors** by pay
 We start with rich people who want to get richer, then move on to politicians. It's depressingly predictable, but it works.
 
 ### 1. Rich People Get Richer
-We offer **[VICTORY Bonds](./brain/book/economics/victory-bonds.md)** that pay better returns than the best hedge funds (~40% annually) plus governance control over the $27 billion treasury. Rich people like making money. We help them make more money by funding cures instead of bombs.
+We offer **[VICTORY Bonds](./brain/book/economics/victory-bonds.qmd)** that pay better returns than the best hedge funds (~40% annually) plus governance control over the $27 billion treasury. Rich people like making money. We help them make more money by funding cures instead of bombs.
 
 ### 2. Regular People Get Paid
 Citizens get **VOTE points** for participating in the global referendum. After the treaty passes, these become real ownership in the health treasury they helped create. 280 million people with skin in the game create unstoppable political pressure.
@@ -483,7 +483,7 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 **[Request an organization link](./brain/book/strategy/referendum/global-referendum-implementation.md#organization-links)** → Mobilize your organization to earn rewards for verified votes. Access pooled bonus funds for building coalitions.
 
-**[Buy VICTORY bonds](./brain/book/economics/victory-bonds.md)** → Fund the treasury, get repaid with interest when treaties pass.
+**[Buy VICTORY bonds](./brain/book/economics/victory-bonds.qmd)** → Fund the treasury, get repaid with interest when treaties pass.
 
 **[Calculate your institution's allocation](./brain/book/strategy/institutional-funding-calculator.md)** → See how much your university/company/nonprofit would receive.
 
@@ -493,7 +493,7 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 ## For Institutions
 
-**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [VICTORY Bonds](./brain/book/economics/victory-bonds.md) and profit while their companies benefit.
+**Pharmaceutical companies:** Get 2-5X more R&D funding for the same work. **Plus:** Executives can personally invest in [VICTORY Bonds](./brain/book/economics/victory-bonds.qmd) and profit while their companies benefit.
 
 **Universities:** Way more research money for all your health departments. And your administrators can personally profit from the system that's funding their institutions.
 
@@ -507,24 +507,6 @@ For a detailed breakdown of the multi-layered defense, AI-powered fraud detectio
 
 **Contact us:** [institutions@warondisease.org](mailto:institutions@warondisease.org) to calculate your potential funding increase and personal investment opportunities.
 
----
-
-## Learn More
-
-**Solutions:** Address the main objections that could kill this proposal:
-
-- [Free Rider Problem Solution](./brain/book/strategy/free-rider-solution.md) - How we make them pay
-- [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md) - Election and securities law compliance
-- [Impact Securities and Digital Public Goods Financing Act (Draft)](./brain/book/legal/impact-securities-reform.md) - Model law to enable compliant, low‑friction financing via on‑chain reporting and impact securities
-- [Verification & Fraud Prevention](./brain/book/strategy/verification-and-fraud-prevention.md) - Scale verification for 280M people
-
-**Strategy:** [The War on Disease: A New Strategy for a New Era](./brain/book/strategy/war-on-disease-strategy.md)
-
-**Treasury:** [DIH funding model](./brain/book/solution/dih.md)
-
-**Coalition:** [How institutions can work with us](./brain/book/strategy/coalition-building.md)
-
-**Treaty:** [Full 1% Treaty text](./brain/book/solution/1-percent-treaty.md)
 
 ---
 

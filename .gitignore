@@ -54,5 +54,6 @@ index.html
 # but DON'T ignore them if they are in the _book directory
 *_files/
 brain/book/*/*.html
-!_book/
+_book/
 libs/
+index.tex
