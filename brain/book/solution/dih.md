@@ -103,7 +103,7 @@ graph TD;
 Here's exactly how we turn $27 billion into cures without it disappearing into administrative overhead:
 
 ### Step 1: Treaty Money Comes In (Macro-Allocation via Wishocracy)
-The 1% Treaty sends $27+ billion annually to the main DIH treasury. To decide how to split this treasury between the various disease institutes, VICTORY Bond holders vote using the **[Wishocracy](./wishocracy.md)** protocol.
+The 1% Treaty sends $27+ billion annually to the main DIH treasury. To decide how to split this treasury between the various disease institutes, [VICTORY Bond](../economics/victory-bonds.qmd) holders vote using the **[Wishocracy](./wishocracy.md)** protocol.
 
 Instead of a simple "yes/no" vote, this system uses **pairwise comparisons**. Voters are shown two disease areas (e.g., "Cancer Research" vs. "Mental Health") and allocate points between them. By aggregating thousands of these simple choices, the DIH creates a transparent, collectively intelligent budget that reflects the true priorities of its stakeholders. This determines the "macro-allocation."
 
@@ -175,7 +175,7 @@ This allocation repays the initial ~$2.5 billion investment required to pass the
 -   **Public Rewards:** This pool also funds the conversion of **VOTE points**—earned by citizens for participating in the global referendum—into bonds, directly rewarding the public for their political action.
 
 #### 2. Core Mission Investment (~$19.8 Billion / Year)
-This is the guaranteed 50%+ of the treasury allocated by the **Disease-Specific DAOs**. This is where the actual research gets funded, with the DAOs voting on how to split the funds between four key areas:
+This is the guaranteed 50%+ of the treasury allocated by the **Disease-Specific DAOs**. This is where the actual research gets funded, with the DAOs using democratic mechanisms like **Quadratic Funding** to vote on how to split the funds between four key areas:
 -   **Patient Subsidies:** The largest expense. These funds are transferred to the dFDA's operational accounts to pay patients directly for participating in trials on the dFDA protocol.
 -   **dFDA Protocol Development:** A recurring budget to fund the continuous improvement of the dFDA's open-source protocol, including bounties for developers and prizes for new, more efficient research tools.
 -   **Research Prizes & Grand Challenges:** Large, multi-million dollar prizes for achieving specific scientific breakthroughs (e.g., "$50M for the first team to reverse a specific biomarker of aging by 5 years").
@@ -252,11 +252,11 @@ Keep the underlying systems running, secure, and improving over time.
 
 ## Funding Model: War Bonds for the War on Disease
 
-To bootstrap before treaty money arrives, the DIH sells **[VICTORY Bonds](./economics/investment-thesis.md)**—exactly like WWII war bonds, but for fighting disease instead of fascists.
+To bootstrap before treaty money arrives, the DIH sells **[VICTORY Bonds](../economics/victory-bonds.qmd)**—exactly like WWII war bonds, but for fighting disease instead of fascists.
 
 Citizens and institutions buy bonds, funding the initial operations. When the 1% Treaty passes and money starts flowing in, bondholders get repaid with interest.
 
-**The Cycle:**
+The Cycle:
 1. People buy VICTORY Bonds → DIH gets startup capital
 2. DIH funds trials and development → produces results and saves lives  
 3. Countries see the results → sign the 1% Treaty
