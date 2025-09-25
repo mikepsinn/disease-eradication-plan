@@ -107,7 +107,7 @@ c. [Why NIH is Terrible at Funding Research](./brain/book/problem/nih-funding-is
 d. [Why FDA is Unsafe and Ineffective](./brain/book/problem/fda-approvals-are-broken.md)  
 e. [Why Representative Democracy is Unrepresentative](./brain/book/problem/democracy-is-broken.md)
 
-### Chapter 2: Solution
+### Chapter 2: Solutions
 - [The 1% Treaty](./brain/book/solution/1-percent-treaty.md) 
 - [The Global Referendum on War and Disease](./brain/book/solution/1-percent-treaty.md) 
 - [VICTORY Bonds: The Most Profitable Investment in the History of the World](./brain/book/economics/victory-bonds.md)  
@@ -117,8 +117,8 @@ e. [Why Representative Democracy is Unrepresentative](./brain/book/problem/democ
 
 ### Chapter 3: Economics
 a. [The $16.5T Peace Dividend](./brain/book/economics/peace-dividend-value-capture.md)  
-b. [Why This Is The Best Investment in the History of the Universe](./brain/book/economics/investment-thesis.md)  
-c. [Math Says It's Good](./brain/book/economics/economic-impact-summary.md)  
+b. [VICTORY Bonds: The Best Investment in the History of the Universe](./brain/book/economics/investment-thesis.md)  
+c. [Impact Summary: Why This Is The Best Thing You Could Ever Do](./brain/book/economics/economic-impact-summary.md)  
 
 ### Chapter 4: Legal
 - [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)  
