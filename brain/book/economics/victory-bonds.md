@@ -1,6 +1,6 @@
 ---
-title: "Economics for Capitalists: VICTORY Bonds"
-description: "The complete investment thesis for VICTORY Bonds, the financial instrument designed to make curing disease more profitable than war."
+title: "VICTORY Bonds: The Investment Thesis"
+description: "The investment thesis for VICTORY Bonds, the financial instrument designed to make curing disease more profitable than war."
 published: true
 date: "2025-09-14T00:00:00.000Z"
 tags: [economics, investment-thesis, victory-bonds, peace-dividend, fundraising, tokenomics]
@@ -9,15 +9,13 @@ dateCreated: "2025-09-14T00:00:00.000Z"
 
 *Disclaimer: This section is informational and illustrative, not an offer of securities. Any actual investment would be made via formal offering documents and may differ materially.*
 
-## 1. The Core Thesis: We Found the World's Dumbest Investment
+## 1. Executive Summary: The Investment Case
 
-Here's the deal: We spend our money on the wrong things.
+This is a political arbitrage investment. We are raising **$1.2–2.5 billion** to fund a targeted lobbying and public relations campaign to pass the **1% Treaty.**
 
-1.  **The Math is Insane:** We spend [**$2.72 trillion**](../references.md#sipri-2024-spending) blowing things up and only [**$67.5 billion**](../references.md#global-gov-med-research-spending) fixing people. That's 40 dollars on weapons for every 1 dollar on cures.
-2.  **The Fix is Simple:** We invest [$1.2–2.5B](./fundraising/fundraising-budget-breakdown.md) to redirect [$27B+ annually](../references.md#sipri-2024-spending) from weapons to cures. That's like spending $2.50 to redirect $27 every year.
-3.  **The Payoff is Huge:** We run trials that cost [$500 instead of $41,000 per patient](../economics/dfda-cost-benefit-analysis.md), saving [$50B annually](../economics/dfda-cost-benefit-analysis.md) and [840,000+ years of life](../economics/dfda-cost-benefit-analysis.md).
+The treaty redirects **$27 billion per year** of guaranteed, recurring global government spending from military budgets to our treasury. Bondholders are repaid directly from this captured revenue stream.
 
-We're not inventing anything new. We're just pointing humanity's biggest pile of money in a direction that doesn't involve killing people.
+The core thesis is simple: we are using the proven, high-leverage playbook of defense contractors—who turn [$14 million in lobbying into $70.8 billion in contracts](../references.md#military-lobbying-returns)—to generate a multi-thousand-percent return for a better purpose.
 
 ## 2. The Instrument: How VICTORY Bonds Work
 
@@ -31,11 +29,17 @@ Think of War Bonds from WWII, but for curing disease instead of winning wars. VI
 
 **Here's how it works:** You loan us money to pass the 1% Treaty. Once the treaty passes, we pay you back from the money it redirects. Simple as that.
 
-### Key Terms
-
-- **Maturity:** 5–10 years
-- **Seniority:** Program Senior (ensuring bondholders are among the first to be repaid)
-- **Payout:** Direct annual payments from treaty revenues
+### Key Financial Terms
+| Term | Details |
+|---|---|
+| **Instrument Type** | Debt Instrument (Senior Unsecured) |
+| **Total Raise** | $1.2–2.5 Billion (in tranches) |
+| **Target CAGR** | ~40% (approx. 28x MOIC over 10 years) |
+| **Maturity** | 10 years |
+| **Coupon Rate** | Variable; paid from treaty inflows |
+| **Payout Source** | Direct distributions from the DIH Treasury, funded by the 1% Treaty on global military spending. |
+| **Seniority** | Program Senior. Bondholders are senior creditors for all revenue generated from the 1% Treaty, ensuring they are among the first to be repaid. |
+| **Collateral** | The 1% Treaty revenue stream itself. |
 
 ### Investment Timeline & Returns
 
