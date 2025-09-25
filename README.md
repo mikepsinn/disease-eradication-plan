@@ -7,8 +7,6 @@ tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incent
 dateCreated: "2025-08-15T00:00:00.000Z"
 ---
 
-# The Complete Idiot's Guide to Ending War and Disease
-
 > **The 1% Treaty:** Every nation redirects just 1% of global military spending to fund 80X more efficient medical research, creating the most profitable investment in history while saving millions of lives.
 
 [![Join the War on Disease](#join-the-war)](#join-the-war) [![Read the Full Plan](#the-plan)](#the-plan)
@@ -49,7 +47,7 @@ We've created a system where:
 3. **Pay Patients**: Subsidies go directly to patients who join trials
 4. **Run Cheap Trials**: Pragmatic trials cost $500/patient instead of $41,000
 5. **Publish Everything**: The dFDA shows real effectiveness data for every treatment
-6. **Label Outcomes**: Every food and drug gets honest labels about what it actually does
+6. **Outcome Labels**: Every food and drug gets honest labels about what it actually does
 
 ### Current System vs. New System
 
@@ -85,10 +83,20 @@ graph TD;
 
 **The Math:** We're asking for $2.5B to redirect $27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
 
+## The Plan: From Idea to Treaty
 
+1.  **Prove the Mandate (The Global Referendum):** We will mobilize 3.5% of humanity (280 million people) through a global referendum. This creates an undeniable political mandate that no leader can ignore.
 
+2.  **Fund the Mission (VICTORY Bonds):** We will raise the required $2.5B by selling **VICTORY Bonds**—an investment vehicle designed to offer ~40% annual returns, making peace more profitable than war.
 
-# The Complete Idiot's Guide to Ending War and Disease
+3.  **Ratify the Treaty:** With a clear public mandate and a powerful financial engine, we will co-opt the existing political system to ratify the 1% Treaty and begin redirecting funds.
+
+## Join the War on Disease
+
+- **[Participate in the Referendum](mailto:hello@dih.earth)**: Signal your support and become part of the 3.5%.
+- **[Invest in VICTORY Bonds](mailto:hello@dih.earth)**: Fund the mission and earn a share of the peace dividend.
+- **[Join the Coalition](mailto:hello@dih.earth)**: We partner with institutions, companies, and non-profits.
+
 
 ## Table of Contents
 
