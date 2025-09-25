@@ -9,7 +9,18 @@ dateCreated: "2025-09-14T00:00:00.000Z"
 
 *Disclaimer: This section is informational and illustrative, not an offer of securities. Any actual investment would be made via formal offering documents and may differ materially.*
 
-## 1. The Bottom Line: How We'll Make You Rich
+## 1. The Two Core Payout Principles
+
+Investor payouts are not based on arbitrary targets, but are governed by two simple rules:
+
+1.  **The Target Return Principle (The "Ceiling"):** Our goal is to deliver the world's best risk-adjusted return. We are therefore targeting a maximum payout that provides early investors with a **~40% compound annual growth rate (CAGR)** over 10 years. This equates to a **~28x total return**.
+2.  **The Mission Guarantee Principle (The "Floor"):** Our primary purpose is to fund cures. To protect this, annual investor payouts will **never exceed 50% of the DIH's total annual income**. A minimum of 50% of all funds are always reserved for the DIH's mission.
+
+This model is robust enough to deliver world-class returns even in a conservative partial-success scenario.
+
+---
+
+## 2. The Bottom Line: How We'll Make You Rich
 
 This is a political arbitrage play. We're raising **$1.2–2.5 billion** to do one thing: buy a law.
 
@@ -17,15 +28,9 @@ Specifically, we're funding a lobbying campaign to pass the **1% Treaty**, which
 
 The business model is simple: we're adopting the defense industry's massively profitable playbook to give them a better, more profitable investment. They turn [$14 million in lobbying into $70.8 billion in government contracts](../references.md#military-lobbying-returns). We're offering them an even better deal to fund cures instead of wars.
 
-## 2. The Instrument: How VICTORY Bonds Work
+## 3. The Instrument: How VICTORY Bonds Work
 
 Think of War Bonds from WWII, but for curing disease instead of winning wars. VICTORY Bonds work like a simple loan: You give us money now, we pay you back with big returns later.
-
-**We're targeting 40% annual returns (28x your money in 10 years).** That beats most hedge funds.
-
-**Two simple rules:**
-1. Early investors get ~28x their money back over 10 years.
-2. We always keep at least 50% of income for actually curing diseases.
 
 **Here's how it works:** You loan us money to pass the 1% Treaty. Once the treaty passes, we pay you back from the money it redirects. Simple as that.
 
@@ -52,9 +57,51 @@ Think of War Bonds from WWII, but for curing disease instead of winning wars. VI
 - **Annual Returns Once Operational:** $27B+ per year from 1% military budget redirections
 - **ROI Timeline:** 18-36 months after first treaty ratification
 
-**Break-even Analysis:** Even in a conservative partial success scenario where only the **US, EU, & UK** participate (generating **$13B annually**), the system generates a **cash payout of $6.5B (2.6X the initial $2.5B investment)** in the first year of operation alone.
+### Financial Projections: Full vs. Partial Success
 
-## 3. Why This Beats Every Other Investment
+This model demonstrates how the two core principles interact under different levels of treaty adoption.
+
+**Model Assumptions:**
+- **Total Activation Energy Raised:** $2.5 billion.
+- **Target Investor Payout (for ~40% CAGR):** ~$72.25 billion over 10 years, or **~$7.23 billion per year**.
+
+---
+
+#### A. Full Success Scenario
+
+**Assumption:** The 1% Treaty is adopted globally, generating **$27 billion** in annual income.
+
+- **Annual Investor Payout:** The DIH can comfortably pay the target **$7.23 billion** per year. This is only **26.8%** of the annual income, well below the 50% cap.
+- **Annual DIH Mission Funds:** `$27B - $7.23B =` **$19.77 billion**.
+
+**10-Year Cash Flow Table (Full Success)**
+
+| Year      | Annual Inflow         | Max Investor Payout  | **Net for DIH Mission** | Payout % of Income |
+| :-------- | :-------------------- | :------------------- | :---------------------- | :----------------- |
+| **1-10**  | $27,000,000,000      | $7,230,000,000      | **$19,770,000,000**    | 26.8%              |
+| **Total** | **$270,000,000,000** | **$72,300,000,000** | **$197,700,000,000**   |                    |
+
+**Conclusion:** In the full success scenario, we can deliver the historic ~28x return while dedicating nearly **$200 billion** over the decade to our mission.
+
+---
+
+#### B. Partial Success Scenario
+
+**Assumption:** The treaty is adopted by the US, EU, & UK only, generating **$13 billion** in annual income.
+
+- **Annual Investor Payout:** The "Mission Guarantee Principle" is triggered. Payouts are capped at 50% of income, or **$6.5 billion** per year.
+- **Annual DIH Mission Funds:** The DIH is guaranteed to receive the other **$6.5 billion**.
+
+**10-Year Cash Flow Table (Partial Success)**
+
+| Year      | Annual Inflow         | Max Investor Payout  | **Net for DIH Mission** | Payout % of Income |
+| :-------- | :-------------------- | :------------------- | :---------------------- | :----------------- |
+| **1-10**  | $13,000,000,000      | $6,500,000,000      | **$6,500,000,000**     | 50.0%              |
+| **Total** | **$130,000,000,000** | **$65,000,000,000** | **$65,000,000,000**    |                    |
+
+**Conclusion:** Even in a partial success scenario, investors receive a **26x return** (`$65B / $2.5B`), and the DIH is still capitalized with **$65 billion** over 10 years—more than the entire budget of the NIH over a year.
+
+## 4. Why This Beats Every Other Investment
 
 ```{python}
 #| echo: false
@@ -110,7 +157,7 @@ The math on this is brutally simple. We aren't selling a product. We are capturi
 
 Your payout is secured the moment the treaty is signed. While we'll use that money to run hyper-efficient clinical trials (as explained in the [dFDA chapter](./solution/dfda.md)), your return is locked in by the political win alone.
 
-## 4. What Could Go Wrong (And How We Handle It)
+## 5. What Could Go Wrong (And How We Handle It)
 
 - **What if the treaty doesn't pass?**
   - This is the main risk. The solution is that we don't spend the big money until we have proof of support. We wait until 3.5% of the population is on board, which history shows is the tipping point for political change. If we fail, your money is protected (see the next point).
@@ -119,7 +166,7 @@ Your payout is secured the moment the treaty is signed. While we'll use that mon
 - **What if this gets you in legal trouble?**
   - We're spending a pile of money on lawyers to follow all the rules (Reg A, Reg S, etc.) and stay out of prison. This is a core part of the budget.
 
-## 5. We Show You Everything
+## 6. We Show You Everything
 
 We know you don't trust anyone with your money. So we're making everything visible.
 
