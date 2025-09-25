@@ -35,17 +35,80 @@ The DIH doesn't do research. It pays for research. Specifically, it pays patient
 
 The difference: We pay people to solve problems instead of paying them to ask for permission to solve problems.
 
+### Visualizing the Difference: NIH vs. DIH
+
+Here is how the current NIH is structured:
+
+```mermaid
+graph TD;
+    Congress[U.S. Congress] -->|Allocates Funds| NIH[NIH Administration];
+    NIH -->|Distributes Funds| Institutes[Various NIH Institutes];
+    NIH -->|Distributes Funds| Centers[NIH Research Centers];
+    Institutes --> Grants[Grant Programs];
+    Centers --> Contracts[Contracts];
+    Grants -->|Application Process| Review[Peer Review Process];
+    Contracts -->|Bid/Proposal Review| Review;
+    Review -->|Fund Allocation| Recipients[Grant Recipients];
+    Recipients -->|Conducts Research| Universities[Universities];
+    Recipients -->|Conducts Research| Hospitals[Hospitals];
+    Recipients -->|Conducts Research| Industries[Private Industries];
+    Universities -->|Research Outcomes| Publications[Publications];
+    Hospitals -->|Health Improvements| HealthOut[Improved Health Outcomes];
+    Industries -->|Develops Technologies| Tech[New Technologies];
+    Publications -->|Feedback| NIH;
+    HealthOut -->|Feedback| NIH;
+    Tech -->|Feedback| NIH;
+    NIH -->|Policy and Funding Decisions| Congress;
+    Recipients -->|Direct Benefits| Patients[Patients];
+    Patients -->|Feedback| Public[General Public];
+    Public -->|Support and Interest| Congress;
+
+```
+
+And here is how the DIH would work:
+
+```mermaid
+graph TD;
+    Congress -->|Allocates Funds| DIH[DIH Administration];
+    DIH -->|Distributes Funds| DAOs[Research DAOs];
+    DIH -->|Distributes Funds| TechDAOs[Technology DAOs];
+    DIH -->|Distributes Funds| PatientDAOs[Patient Advocacy DAOs];
+    DIH -->|Distributes Funds| FDAi[FDAi];
+    DAOs -->|Funds Projects| Researchers[Researchers];
+    TechDAOs -->|Funds Projects| AIProjects[AI Projects];
+    PatientDAOs -->|Funds Projects| AdvocacyProjects[Advocacy Projects];
+    FDAi -->|Funds Projects| ClinicalTrials[Clinical Trials];
+    Researchers -->|Conducts Research| Universities;
+    Researchers -->|Conducts Research| Hospitals;
+    Researchers -->|Conducts Research| Industries;
+    AIProjects -->|Develops AI Solutions| Tech;
+    AdvocacyProjects -->|Advocates for Patients| Patients;
+    ClinicalTrials -->|Facilitates Trials| Patients;
+    Universities -->|Research Outcomes| Publications;
+    Hospitals -->|Health Improvements| HealthOut;
+    Industries -->|Develops Technologies| Tech;
+    Publications -->|Feedback| DIH;
+    HealthOut -->|Feedback| DIH;
+    Tech -->|Feedback| DIH;
+    DIH -->|Policy and Funding Decisions| Congress;
+    Researchers -->|Direct Benefits| Patients;
+    Patients -->|Feedback| Public;
+    Public -->|Support and Interest| Congress;
+```
+
 ---
 
 ## How the Money Flows
 
 Here's exactly how we turn $27 billion into cures without it disappearing into administrative overhead:
 
-### Step 1: Treaty Money Comes In
-The 1% Treaty sends $27+ billion annually to the main DIH treasury. [VICTORY Bond](./strategy/1-percent-treaty/victory-bonds-tokenomics.md) holders vote on how much each disease area gets.
+### Step 1: Treaty Money Comes In (Macro-Allocation via Wishocracy)
+The 1% Treaty sends $27+ billion annually to the main DIH treasury. To decide how to split this treasury between the various disease institutes, VICTORY Bond holders vote using the **[Wishocracy](./wishocracy.md)** protocol.
+
+Instead of a simple "yes/no" vote, this system uses **pairwise comparisons**. Voters are shown two disease areas (e.g., "Cancer Research" vs. "Mental Health") and allocate points between them. By aggregating thousands of these simple choices, the DIH creates a transparent, collectively intelligent budget that reflects the true priorities of its stakeholders. This determines the "macro-allocation."
 
 ### Step 2: Disease Groups Take Control  
-The money gets split up:
+The money gets split up according to the Wishocracy vote:
 - $4B → Decentralized Cancer Institute
 - $3B → Decentralized Institute of Mental Health  
 - $3B → Decentralized Institute on Aging
@@ -53,10 +116,50 @@ The money gets split up:
 
 Each institute is run by the people who actually care about that disease: patient advocacy groups, the most effective nonprofits, and research institutions that produce results.
 
-### Step 3: Smart Money Goes to Smart Research
-The cancer groups decide how to spend their $4 billion. The mental health groups decide how to spend their $3 billion. No more begging Nancy Pelosi for Alzheimer's funding.
-
 **Why This Works:** The people who live with a disease every day make better funding decisions than politicians who've never heard of that disease.
+
+<details>
+<summary>View the Full Proposed DIH Organizational Structure</summary>
+
+The Decentralized Institutes of Health (DIH) is designed to mirror the structure of the U.S. National Institutes of Health (NIH), providing a familiar and comprehensive framework for researchers, patients, and partner organizations.
+
+Each of the following Institutes and Centers will operate as a subordinate DAO (subDAO) under the main DIH Treasury. Governance of each subDAO will be delegated to the coalition of non-profit partners, research institutions, and patient advocacy groups that were instrumental in the ratification of the 1% Treaty.
+
+### Decentralized Institutes
+
+- **Decentralized Cancer Institute (DCI)**
+- **Decentralized Eye Institute (DEI)**
+- **Decentralized Heart, Lung, and Blood Institute (DHLBI)**
+- **Decentralized Human Genome Research Institute (DHGRI)**
+- **Decentralized Institute on Aging (DIA)**
+- **Decentralized Institute on Alcohol Abuse and Alcoholism (DIAAA)**
+- **Decentralized Institute of Allergy and Infectious Diseases (DIAID)**
+- **Decentralized Institute of Arthritis and Musculoskeletal and Skin Diseases (DIAMSD)**
+- **Decentralized Institute of Biomedical Imaging and Bioengineering (DIBIB)**
+- **Decentralized Institute of Child Health and Human Development (DICHHD)**
+- **Decentralized Institute on Deafness and Other Communication Disorders (DIDCD)**
+- **Decentralized Institute of Dental and Craniofacial Research (DIDCR)**
+- **Decentralized Institute of Diabetes and Digestive and Kidney Diseases (DIDDKD)**
+- **Decentralized Institute on Drug Abuse (DIDA)**
+- **Decentralized Institute of Environmental Health Sciences (DIEHS)**
+- **Decentralized Institute of General Medical Sciences (DIGMS)**
+- **Decentralized Institute of Mental Health (DIMH)**
+- **Decentralized Institute of Neurological Disorders and Stroke (DINDS)**
+- **Decentralized Institute of Nursing Research (DINR)**
+- **Decentralized Institute on Minority Health and Health Disparities (DIMHD)**
+
+### Decentralized Centers & Offices
+
+- **Decentralized Center for Complementary and Integrative Health (DCCIH)**
+- **Decentralized Center for Information Technology (DCIT)**
+- **Decentralized Center for Scientific Review (DCSR)**
+- **Decentralized Clinical Center (DCC)**
+- **Decentralized Fogarty International Center (DFIC)**
+- **Decentralized National Center for Advancing Translational Sciences (DNCATS)**
+- **Decentralized National Library of Medicine (DNLM)**
+- **Decentralized Office of the Director (DOD)**
+
+</details>
 
 ---
 
@@ -170,17 +273,19 @@ The DIH's governance model is designed for maximum transparency and minimal bure
 ### 1. Disease-Specific DAOs
 Each disease institute (e.g., Decentralized Cancer Institute) operates as a Decentralized Autonomous Organization (DAO). This structure is essential for ensuring that funding decisions are made by those with the most expertise and stake in the outcome.
 
--   **Member Organizations (Not "Grantees"):** The DAO's voting members are the key **stakeholders** in the fight against that disease: patient advocacy groups, top research institutions, and clinicians. They are called "members" because they actively participate in governance, unlike passive "grantees" in the old system.
+-   **Member Organizations (Not "Grantees"):** The DAO's voting members are the key **stakeholders** in the fight against that disease: patient advocacy groups, top research institutions, and clinicians. They are called "members" because they actively participate in governance, unlike passive "grantees" in the old system. Their influence is weighted by an on-chain reputation system built on verifiable credentials and past performance.
+-   **Democratic Funding Allocation (Micro-Allocation via Quadratic Funding):** Once an institute like the Decentralized Cancer Institute receives its multi-billion dollar budget from the main treasury, it must decide which specific research projects to fund. To do this, it uses mechanisms like **Quadratic Funding**. This allows the broader community of stakeholders to direct funds to projects based on the *number of unique supporters*, not just the total amount of capital contributed. This prevents a few wealthy members from dominating the funding decisions within a specific disease area.
 -   **Mandate & Voting:** The DAO's collective mandate is to allocate its multi-billion dollar budget to maximize progress. All major funding decisions—such as setting the subsidy level for a particular type of trial or establishing a research prize—are made through transparent, on-chain votes of the member organizations.
 -   **Human Facilitation (Not Directors):** Each DAO elects a small **Stewardship Council** to facilitate operations. This is not a board of directors with unilateral power. Their role is to propose initiatives, moderate discussions, and handle off-chain coordination. Council members are elected by and accountable to the DAO members, ensuring the community retains ultimate control.
 
 ### 2. Automated Operations via Smart Contracts
 The majority of the DIH's functions are automated:
 -   **Treasury Management:** The flow of funds from the 1% Treaty to the disease DAOs is handled automatically by smart contracts based on the initial allocation formulas.
+-   **Milestone-Based Funding:** Projects don't receive lump sums. Funding is locked in a smart contract and released in stages. Payouts are automatically triggered when the project meets pre-defined, verifiable milestones, which are confirmed by on-chain "oracle" services. This ensures money is spent on results, not just promises.
 -   **Automated Safeguards:** To prevent misuse, the treasury is protected by automated, on-chain rules. These include mandatory **timelocks** (a 24-72 hour delay on any large transfer) and **spending limits** (programmatic daily/weekly caps on withdrawals), all enforced by code.
 -   **Patient Subsidy Payments:** Subsidies are calculated and distributed directly to patients' digital wallets based on a public, transparent algorithm that weighs disease burden, treatment potential, and scientific value (see [The Right to Trial Act](../../../archive/act.md) for the QALY-based model).
 -   **Subsidy Payment Execution:** DIH funds are transferred to the **[dFDA's](./dfda.md)** operational wallet based on DAO votes. The dFDA platform then handles the calculation and distribution of subsidies to patients' digital wallets based on the public QALY algorithm.
--   **Public Audits:** All DIH financial flows—from the treaty to the DAOs to the dFDA's operational accounts—are tracked in real-time on a public ledger, making a traditional audit redundant.
+-   **Public Audits:** All DIH financial flows—from the treaty to the DAOs to the dFDA's operational accounts—are tracked in real-time on a public ledger. Key Performance Indicators (KPIs) are computed automatically from on-chain events, making traditional audits redundant and providing radical transparency.
 
 ### 3. Human Oversight (The "Emergency Brakes")
 A small, nine-member Technical and Ethics Council (TEC) serves as a fail-safe for the DIH treasury, with limited and publicly auditable powers. The dFDA has its own separate governance council focused on the ethics and operations of the research platform itself.
@@ -196,6 +301,8 @@ A small, nine-member Technical and Ethics Council (TEC) serves as a fail-safe fo
 The DIH's role is to fund the creation of a shared technology protocol, which is then built and operated by the [dFDA](./dfda.md) as a global public good. This avoids the insane waste of every nonprofit building their own systems and creates a unified standard for research. Key DIH-funded components of the dFDA protocol include:
 
 -   **Public Blockchain:** The DIH's own financial transactions and governance votes are recorded on a public ledger. The dFDA's operational data lives on its own specialized platform, also designed for transparency.
+-   **AI-Powered Triage:** Before human review, all research proposals are analyzed by AI agents. These agents provide a standardized estimate of the project's potential impact (e.g., QALYs gained per dollar), check for overlapping research, and ensure all required data is present. This allows human reviewers to focus on scientific merit, not paperwork.
+-   **Decentralized Peer Review:** The dFDA protocol facilitates a decentralized peer review system. Reviewers are selected by an algorithm based on their verifiable expertise and reputation, are compensated for their time, and conduct their reviews blindly to minimize bias. There are no standing committees.
 -   **Privacy-Preserving Analytics:** The DIH funds the R&D of cutting-edge cryptographic methods like Zero-Knowledge Proofs, which the dFDA implements on its platform. This allows researchers to analyze aggregate health data without ever accessing personally identifiable information.
 -   **Open-Source Platforms:** The DIH provides dedicated funding for the dFDA to build and maintain shared, open-source software for all member organizations, including tools for:
     -   Donor and volunteer management (like a free, shared Salesforce for Nonprofits)
