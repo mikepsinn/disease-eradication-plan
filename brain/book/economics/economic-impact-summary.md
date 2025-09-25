@@ -1,5 +1,5 @@
 ---
-title: "Economic Impact of the 1% Treaty Initiative: A Summary"
+title: "Economics for Philanthropists: Societal Impact Analysis"
 description: "A high-level summary of the economic models for the 1% Treaty, dFDA, and Peace Dividend, synthesizing the findings from our comprehensive analysis."
 published: true
 date: "2025-09-24T00:00:00.00Z"

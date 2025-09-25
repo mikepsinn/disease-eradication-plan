@@ -113,11 +113,9 @@ graph TD;
 *   2.3 [The Decentralized FDA (dFDA): 80X More Efficient Research](./brain/book/solution/dfda.md)
 *   2.4 [Wishocracy: Funding What People Actually Want](./brain/book/solution/wishocracy.md)
 
-### Chapter 3: Incentive Engineering: How to Profit from Peace
-*   3.1 [VICTORY Bonds: The Most Profitable Investment in History](./brain/book/economics/victory-bonds.md)
-*   3.2 [The $16.5T Peace Dividend: Capturing the Value of a Better World](./brain/book/economics/peace-dividend-value-capture.md)
-*   3.3 [Investment Thesis: The Case for Unprecedented Risk-Adjusted Returns](./brain/book/economics/investment-thesis.md)
-*   3.4 [Economic Impact Summary: Humanity Gonna Get Filthy Rich](./brain/book/economics/economic-impact-summary.md)
+### Chapter 3: Economics: How Individuals and Society can both Profit from Peace
+*   3.1 [Economics for Capitalists: VICTORY Bonds](./brain/book/economics/victory-bonds.md)
+*   3.2 [Economics for Philanthropists: Societal Impact Analysis](./brain/book/economics/economic-impact-summary.md)
 
 ### Chapter 4: The Strategy: How to Bribe the World (Legally)
 *   4.1 [The Playbook: Co-Opt, Don't Compete](./brain/book/strategy/playbook.md)
