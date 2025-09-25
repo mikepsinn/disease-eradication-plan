@@ -28,13 +28,13 @@ Just like you have a personal budget, humanity has a budget as well.  And war an
 
 Here's humanity's budget:
 
-![Humanity's Annual Budget](assets/charts/humanitys_budget_donut.png)
+![Humanity's Annual Budget](_book/brain/book/economics/economic_models_files/figure-html/cell-22-output-2.png)
 
 And here is the most important comparison:
 
-![The Problem vs. The Investment](assets/charts/disease_vs_research_spending.png)
+![The Problem vs. The Investment](_book/brain/book/economics/economic_models_files/figure-html/cell-23-output-2.png)
 
-**The Punchline:** The total economic burden of disease is **$109 trillion** per year, yet we only spend **$67.5 billion** trying to solve it. This is the largest market failure in human history.
+**The Punchline:** War and disease consume **$119 trillion** annually (113% of global GDP!) when you include all externalities, yet we only spend **$67.5 billion** on medical research. This is the largest market failure in human history.
 
 
 If you're anything like me, you probably harbor some disdain for war and disease.

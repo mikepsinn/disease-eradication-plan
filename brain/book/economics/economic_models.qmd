@@ -285,6 +285,24 @@ plt.show()
 print(f'Modern chart saved to {file_path}')
 ```
 
+
+
+```{python}
+
+```
+
+
+
+```{python}
+
+```
+
+
+
+```{python}
+
+```
+
 ```{python}
 # --- Modern Visualization: Peace Dividend Breakdown ---
 
@@ -519,6 +537,117 @@ print(f'Modern chart saved to {file_path}')
 ```
 
 ```{python}
+# Core parameters for the dFDA model (in billions of USD)
+# Source: brain/book/economics/dfda-cost-benefit-analysis.md
+
+global_clinical_trial_market = 100.0
+dfda_rd_cost_reduction_pct = 0.50
+dfda_annual_operational_cost = 0.040 # $40 million
+
+# Baseline QALYs generated annually
+qaly_gains_annual_baseline = 840000 # in QALYs, not dollars
+
+# Value of a QALY (standard economic value, can be debated)
+value_per_qaly = 150000 # Using a common benchmark of ~$150k per QALY
+
+# --- Calculations for dFDA Benefits ---
+
+# Gross R&D savings
+gross_rd_savings = global_clinical_trial_market * dfda_rd_cost_reduction_pct
+
+# Net R&D savings (after operational costs)
+net_rd_savings = gross_rd_savings - dfda_annual_operational_cost
+
+# ROI Calculation
+# ROI = (Net Benefit / Cost)
+# Here, the cost is the operational cost, and the benefit is the gross savings it unlocks.
+dfda_roi = gross_rd_savings / dfda_annual_operational_cost
+
+# Monetized value of QALY gains
+monetized_qaly_value = (qaly_gains_annual_baseline * value_per_qaly) / 1_000_000_000 # Convert to billions
+
+# --- Connecting to the Peace Dividend ---
+# The captured dividend must cover the operational cost.
+funding_coverage_ratio = captured_dividend / dfda_annual_operational_cost
+
+
+print(f"--- dFDA Cost-Benefit Analysis (Baseline) ---")
+print(f"Annual Gross R&D Savings: ${gross_rd_savings:,.1f} Billion")
+print(f"Annual dFDA Operational Cost: ${dfda_annual_operational_cost:,.3f} Billion")
+print(f"Return on Investment (ROI): {dfda_roi:,.0f}:1")
+print("-" * 45)
+print(f"Annual QALYs Gained: {qaly_gains_annual_baseline:,.0f}")
+print(f"Monetized Value of Annual QALYs: ${monetized_qaly_value:,.1f} Billion")
+print("-" * 45)
+print(f"Funding Coverage (Captured Dividend / OpEx): {funding_coverage_ratio:,.1f}x")
+```
+
+```{python}
+# NPV Model Parameters
+# Source: brain/book/economics/dfda-cost-benefit-analysis.md -> "Example Parameterization" section
+
+# Costs (in billions USD)
+# Combines core platform build + medium broader initiative setup costs
+C0 = 0.26975  # Upfront Costs
+# Combines core platform ops + medium broader initiative annual costs
+Cop = 0.04005   # Annual Operational Costs (constant)
+
+# Savings (in billions USD)
+Rd = 100.0  # Annual Global R&D Spend on clinical trials
+alpha = 0.50  # Fraction of R&D cost saved
+
+# Financial Parameters
+r = 0.08  # Annual discount rate
+T = 10    # Time horizon in years
+
+# Adoption Curve p(t)
+# Linear ramp from 0% to 100% over 5 years, then constant at 100%
+def adoption_rate(t):
+    if t == 0:
+        return 0
+    elif t <= 5:
+        return t / 5
+    else:
+        return 1.0
+
+# Calculate the annual savings for each year, considering the adoption rate
+# This is needed for the NPV visualization
+annual_savings_stream = [(adoption_rate(t) * alpha * Rd) for t in range(1, T + 1)]
+
+print("NPV Model Parameters Loaded.")
+print(f"Upfront Cost (C0): ${C0:.4f}B")
+print(f"Annual OpEx (Cop): ${Cop:.4f}B")
+print(f"Discount Rate (r): {r:.0%}")
+print(f"Time Horizon (T): {T} years")
+```
+
+```{python}
+# --- Total Annual Benefit Calculation ---
+
+# Win #1: The Societal Dividend from less conflict
+win_1_peace_dividend = societal_dividend
+
+# Win #2: The additional Gross R&D Savings unlocked by the dFDA
+win_2_dfda_bonus = gross_rd_savings
+
+# Total combined annual benefit to society
+total_annual_benefit = win_1_peace_dividend + win_2_dfda_bonus
+
+# Print the final summary
+print("--- The Complete Value Proposition ---\n")
+print("This initiative creates two massive, independent wins for the world:\n")
+print(f"1. The Peace Dividend: Society gets ${win_1_peace_dividend:,.2f} Billion richer every year from less conflict.")
+print(f"2. The dFDA Bonus: We use a fraction of that dividend to unlock an *additional* ${win_2_dfda_bonus:,.2f} Billion in R&D savings.")
+print("-" * 50)
+print(f"Total Combined Annual Benefit to Society: ${total_annual_benefit:,.2f} Billion")
+print(f"Plus {qaly_gains_annual_baseline:,.0f} extra years of healthy life, every year.")
+```
+
+```{python}
+
+```
+
+```{python}
 
 ```
 
@@ -697,6 +826,14 @@ print(f"Annual QALYs Gained: {qaly_gains_annual_baseline:,.0f}")
 print(f"Monetized Value of Annual QALYs: ${monetized_qaly_value:,.1f} Billion")
 print("-" * 45)
 print(f"Funding Coverage (Captured Dividend / OpEx): {funding_coverage_ratio:,.1f}x")
+
+```
+
+```{python}
+
+```
+
+```{python}
 
 ```
 
