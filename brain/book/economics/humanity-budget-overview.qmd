@@ -276,7 +276,7 @@ bars = ax.bar(comparison_df['Category'], comparison_df['Value ($T)'],
 apply_modern_style(ax)
 
 # Use log scale to make the research bar visible
-ax.set_yscale('log')
+# ax.set_yscale('log')  # Changed to linear scale for better readability
 
 # Clean, prominent value labels
 for i, bar in enumerate(bars):

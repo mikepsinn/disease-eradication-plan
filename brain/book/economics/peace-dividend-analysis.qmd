@@ -183,11 +183,11 @@ for i, bar in enumerate(bars):
 # Modern title and labels
 ax.set_title('Military vs. Disease Research Funding', fontsize=22, fontweight='700', 
              color=colors['dark'], pad=30)
-ax.set_ylabel('Annual Funding (Billions USD, Log Scale)', fontsize=14, color=colors['text'], labelpad=15)
+ax.set_ylabel('Annual Funding (Billions USD)', fontsize=14, color=colors['text'], labelpad=15)
 ax.set_xlabel('')
 
 # Use log scale but with cleaner formatting
-ax.set_yscale('log')
+# ax.set_yscale('log')  # Changed to linear scale for better readability
 ax.set_ylim(1, direct_military_expenditure * 2)
 
 # Rotate labels slightly for better fit
