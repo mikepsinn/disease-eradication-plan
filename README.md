@@ -26,6 +26,15 @@ That's our world today. We're squandering unimaginable wealth on self-destructio
 
 But what if we could change that?
 
+## I. The Problem
+
+If you're anything like me, you probably harbor some disdain for war and disease.
+And you might have at one point found yourself muttering in an empty bus station, "But I'm just one complete idiot, what can I do?"
+
+Well, this is the book for you!
+
+We'll tell you how to persuade your species to stop murdering each other and destroying stuff and instead cure your grandma's dementia, lickety-split!
+
 ### Humanity's Family Budget
 
 Think of the global economy as a family budget. We have a limited pile of stuff (people, time, factories, smart brains) to make things with. Money is just how we keep score of who gets what.
@@ -54,17 +63,6 @@ But here's the thing. Money isn't the real problem. The real problem is people.
 When you hire a brilliant scientist to design better missiles, that same brain can't also be curing your grandma's cancer. When a factory builds tanks, those same workers and machines can't build hospitals. 
 
 We have a limited number of smart people and useful stuff. Right now we're using most of it to create problems instead of solving them.
-
-## The Solution: The 1% Treaty
-
-If you're anything like me, you probably harbor some disdain for war and disease.
-And you might have at one point found yourself muttering in a empty bus station, "But I'm just one complete idiot, what can I do?"
-
-Well this is the book for you!  
-
-We'll tell you how to persuade your species to stop murdering each other and destroying stuff and instead cure your grandma's dementia, lickety split!
-
-## I. The Problem
 
 ### Problem 1. The Cost of War
 
