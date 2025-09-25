@@ -177,6 +177,7 @@ Each disease institute (e.g., Decentralized Cancer Institute) operates as a Dece
 ### 2. Automated Operations via Smart Contracts
 The majority of the DIH's functions are automated:
 -   **Treasury Management:** The flow of funds from the 1% Treaty to the disease DAOs is handled automatically by smart contracts based on the initial allocation formulas.
+-   **Automated Safeguards:** To prevent misuse, the treasury is protected by automated, on-chain rules. These include mandatory **timelocks** (a 24-72 hour delay on any large transfer) and **spending limits** (programmatic daily/weekly caps on withdrawals), all enforced by code.
 -   **Patient Subsidy Payments:** Subsidies are calculated and distributed directly to patients' digital wallets based on a public, transparent algorithm that weighs disease burden, treatment potential, and scientific value (see [The Right to Trial Act](../../../archive/act.md) for the QALY-based model).
 -   **Subsidy Payment Execution:** DIH funds are transferred to the **[dFDA's](./dfda.md)** operational wallet based on DAO votes. The dFDA platform then handles the calculation and distribution of subsidies to patients' digital wallets based on the public QALY algorithm.
 -   **Public Audits:** All DIH financial flows—from the treaty to the DAOs to the dFDA's operational accounts—are tracked in real-time on a public ledger, making a traditional audit redundant.
