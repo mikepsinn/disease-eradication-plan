@@ -26,6 +26,35 @@ That's our world today. We're squandering unimaginable wealth on self-destructio
 
 But what if we could change that?
 
+### Humanity's Family Budget
+
+Think of the global economy as a family budget. We have a limited pile of stuff (people, time, factories, smart brains) to make things with. Money is just how we keep score of who gets what.
+
+So where does our global family spend this pile? These numbers aren't just digits on a screen. They're where we point all the humans.
+
+| Category | Annual Spending (Trillions USD) | What This Actually Is |
+| :--- | :--- | :--- |
+| **Money We Waste on Problems** | | |
+| Disease (Total Cost) | $109.1 | People dying, can't work, hospitals everywhere |
+| War (Total Cost) | $9.7 | Blowing stuff up, refugees, PTSD |
+| **Total Waste** | **$118.8** | **The dumbest possible use of human effort** |
+| | | |
+| **Money We Spend on Stuff We Want** | | |
+| Housing | $23.0 | Places to live |
+| Transportation | $12.0 | Ways to get around |
+| Food | $9.0 | Not starving |
+| Education | $6.0 | Teaching kids things |
+| Infrastructure | $4.0 | Roads, bridges, internet |
+| **Medical Research** | **$0.068** | **Actually trying to cure diseases** |
+
+So we spend **1,600 times more** money dealing with diseases than we do trying to cure them. That's like spending $1,600 on bandages and $1 on fixing the thing that keeps cutting you.
+
+But here's the thing. Money isn't the real problem. The real problem is people.
+
+When you hire a brilliant scientist to design better missiles, that same brain can't also be curing your grandma's cancer. When a factory builds tanks, those same workers and machines can't build hospitals. 
+
+We have a limited number of smart people and useful stuff. Right now we're using most of it to create problems instead of solving them.
+
 ## The Solution: The 1% Treaty
 
 If you're anything like me, you probably harbor some disdain for war and disease.
