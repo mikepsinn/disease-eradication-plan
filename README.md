@@ -114,7 +114,7 @@ graph TD;
 *   2.4 [Wishocracy: Funding What People Actually Want](./brain/book/solution/wishocracy.md)
 
 ### Chapter 3: Economics: How Individuals and Society can both Profit from Peace
-*   3.1 [Economics for Capitalists: VICTORY Bonds](./brain/book/economics/victory-bonds.md)
+*   3.1 [Economics for Capitalists: VICTORY Bonds](./brain/book/economics/victory-bonds.qmd)
 *   3.2 [Economics for Philanthropists: Societal Impact Analysis](./brain/book/economics/economic-impact-summary.md)
 
 ### Chapter 4: The Strategy: How to Bribe the World (Legally)
