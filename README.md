@@ -108,16 +108,16 @@ graph TD;
     *   1.3.3 [Why Representative Democracy is Unrepresentative](./brain/book/problem/democracy-is-broken.md)
 
 ### Chapter 2: The Solution: A Better Deal
-*   2.1 [The 1% Treaty: A Simple, Powerful Idea](./brain/book/solution/1-percent-treaty.md)
+*   2.1 [The 1% Treaty: $27B Less Bad Stuff and $27B More Good Stuff](./brain/book/solution/1-percent-treaty.md)
 *   2.2 [The Decentralized Institutes of Health (DIH): An Engine for Cures](./brain/book/solution/dih.md)
 *   2.3 [The Decentralized FDA (dFDA): 80X More Efficient Research](./brain/book/solution/dfda.md)
 *   2.4 [Wishocracy: Funding What People Actually Want](./brain/book/solution/wishocracy.md)
 
-### Chapter 3: The Financial Engine: How Peace Becomes Profitable
+### Chapter 3: Incentive Engineering: How to Profit from Peace
 *   3.1 [VICTORY Bonds: The Most Profitable Investment in History](./brain/book/economics/victory-bonds.md)
 *   3.2 [The $16.5T Peace Dividend: Capturing the Value of a Better World](./brain/book/economics/peace-dividend-value-capture.md)
 *   3.3 [Investment Thesis: The Math Behind the Mission](./brain/book/economics/investment-thesis.md)
-*   3.4 [Economic Impact Summary: A Global Boom](./brain/book/economics/economic-impact-summary.md)
+*   3.4 [Economic Impact Summary: Humanity Gonna Get Filthy Rich](./brain/book/economics/economic-impact-summary.md)
 
 ### Chapter 4: The Strategy: How to Bribe the World (Legally)
 *   4.1 [The Playbook: Co-Opt, Don't Compete](./brain/book/strategy/playbook.md)
