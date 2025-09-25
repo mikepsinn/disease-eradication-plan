@@ -116,7 +116,7 @@ graph TD;
 ### Chapter 3: Incentive Engineering: How to Profit from Peace
 *   3.1 [VICTORY Bonds: The Most Profitable Investment in History](./brain/book/economics/victory-bonds.md)
 *   3.2 [The $16.5T Peace Dividend: Capturing the Value of a Better World](./brain/book/economics/peace-dividend-value-capture.md)
-*   3.3 [Investment Thesis: The Math Behind the Mission](./brain/book/economics/investment-thesis.md)
+*   3.3 [Investment Thesis: The Case for Unprecedented Risk-Adjusted Returns](./brain/book/economics/investment-thesis.md)
 *   3.4 [Economic Impact Summary: Humanity Gonna Get Filthy Rich](./brain/book/economics/economic-impact-summary.md)
 
 ### Chapter 4: The Strategy: How to Bribe the World (Legally)

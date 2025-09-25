@@ -1,5 +1,5 @@
 ---
-title: "VICTORY Bonds → The Investment Thesis"
+title: "VICTORY Bonds: A High-Yield Debt Instrument"
 description: "The complete investment thesis for VICTORY Bonds and VICTORY Tokens, the financial instruments that power the DIH."
 published: true
 date: "2025-09-14T00:00:00.000Z"
@@ -23,9 +23,9 @@ Modeled on the War Bonds that funded victory in WWII, VICTORY Bonds are the prim
 1. Target to deliver a ~28x return to early investors over 10 years
 2. Guarantee that at least 50% of annual income is always reserved for our health mission
 
-**Governance Over a $27B Treasury:** Investors don't just get a return; they get governance rights over a multi-billion-dollar annual, perpetual capital allocation engine. This "Governance Alpha" is an uncapped source of value and influence.
+**A Simple, High-Yield Loan:** This is a debt instrument. Investors provide the capital needed to pass the 1% Treaty and are repaid with interest from the captured treaty inflows. The structure is designed to be straightforward, transparent, and highly profitable.
 
-**A De-Risked Bet:** Initial investments are protected by an **[Assurance Contract](./fundraising-strategy.md)**, guaranteeing a full refund if fundraising goals are not met. This eliminates the primary risk for early backers.
+**A De-Risked Bet:** Initial investments are protected by an **[Assurance Contract](./fundraising/fundraising-budget-breakdown.md)**, guaranteeing a full refund if fundraising goals are not met. This eliminates the primary risk for early backers.
 
 #### Investment Timeline & Returns
 
@@ -50,6 +50,6 @@ This simple model ensures that even in conservative scenarios, the DIH remains m
 
 ### 2. VICTORY Tokens (For Participants)
 
-VICTORY Tokens are the primary instrument for incentivizing mass participation in the global referendum. They are a utility token used to reward verifiable actions (like voting and referrals) and may confer governance rights over the DIH treasury. They are not designed to promise profits, which helps mitigate securities risk for a broad, global distribution.
+VICTORY Tokens are the primary instrument for incentivizing mass participation in the global referendum. They are a utility token used to reward verifiable actions (like voting and referrals). They are not an investment instrument.
 
 This dual-instrument approach allows the DIH to attract the most ambitious capital while simultaneously building a broad, global coalition of engaged participants.
