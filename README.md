@@ -506,41 +506,14 @@ e. [Why Representative Democracy is Unrepresentative](./brain/book/problem/democ
 - [The Decentralized Institutes of Health](./brain/book/solution/dih.md)  
 - [Wishocracy: Quantifying Collective Preferences](./brain/book/solution/wishocracy.md)
 - [The Decentralized FDA](./brain/book/solution/dfda.md)  
-- [Building a Voting System That Can't Be Hacked](./brain/book/technology/secure-voting.md)  
-- [DIH Treasury Management Protocol](./brain/book/technology/treasury-tech.md)  
-- [Fraud Detection That Actually Works](./brain/book/technology/fraud-prevention.md)  
-- [A Decentralized Autonomous FDA](./brain/book/technology/dfda-platform.md)  
 
 ### Chapter 3: Economics
 a. [The $16.5T Peace Dividend](./brain/book/economics/peace-dividend-value-capture.md)  
 b. [Why This Is The Best Investment in the History of the Universe](./brain/book/economics/investment-thesis.md)  
-c. [Math Says It's Rite](./brain/book/economics/roi-calculations.md)  
+c. [Math Says It's Good](./brain/book/economics/economic-impact-summary.md)  
 
-### Chapter 4: The Playbook: From Referendum to Ratification
-**Phase 1: Public Mobilization**
-- [Build a Website, Give People Referral Links](./brain/book/strategy/voter-registration.md)  
-- [How to Reprogram Lots of People](./brain/book/strategy/social-media-strategy.md)  
-- [Pay People (and Their Friends) to Vote](./brain/book/strategy/incentive-systems.md)  
-
-**Phase 2: Elite & Corporate Strategy**
-- [Identifying the 50 People Who Actually Matter](./brain/book/strategy/target-identification.md)  
-- [Making Offers They Can't Refuse](./brain/book/strategy/deal-structuring.md)  
-- [The Revolving Door Strategy](./brain/book/strategy/personnel-recruitment.md)
-- [Aligning Incentives: Military, Pharma, Politicians, & Media](./brain/book/partners/incentives.md)
-
-**Phase 3: Tactical Operations**
-- [Campaign Playbook: How to Run Referendum Campaigns That Win](./brain/book/tactics/campaign-playbook.md)  
-- [Lobbying for Dummies: How to Legally Bribe Politicians (Step-by-Step)](./brain/book/tactics/lobbying-guide.md)  
-- [Building Local Chapters: From 0 to 1,000 Volunteers in 90 Days](./brain/book/tactics/chapter-building.md)  
-- [Media Warfare: How to Win the Narrative War](./brain/book/tactics/media-strategy.md)  
-- [Crisis Management: What to Do When Everything Goes Wrong](./brain/book/tactics/crisis-management.md)  
-
-**Phase 4: Organizational Framework**
+### Chapter 4: Legal
 - [How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)  
-- [Event Planning SOP: From House Parties to Massive Rallies](./brain/book/sops/event-planning.md)  
-- [Volunteer Management: How to Not Lose All Your Help](./brain/book/sops/volunteer-management.md)  
-- [Finance and Accounting: How to Handle Money Without Going to Jail](./brain/book/sops/finance.md)  
-- [Communications Protocol: Internal and External Messaging](./brain/book/sops/communications.md)  
 
 ### Chapter 5: Proof (Why This Isn't Completely Insane)
 a. [We Already Proved the 80X Efficiency Thing Works](./brain/book/reference/recovery-trial.md)  
@@ -554,12 +527,3 @@ a. [Get Started Here: Your Next Steps to Join the War on Disease](./brain/book/c
 b. [Contributing Guide: How to Help Write This Book](./CONTRIBUTING.md)  
 c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)  
 
-### Appendix: Resources & Toolkit
-a. [Sample Legislation: Copy-Paste Bills for Your Country](./brain/book/templates/legislation.md)  
-b. [Talking Points Library: How to Explain This to Anyone](./brain/book/templates/talking-points.md)  
-c. [Presentation Templates: Slide Decks That Actually Work](./brain/book/templates/presentations.md)  
-d. [Fundraising Scripts: How to Ask for Money Without Feeling Gross](./brain/book/templates/fundraising.md)  
-e. [Key Statistics: The Numbers That Matter Most](./brain/book/reference/key-stats.md)  
-f. [Elevator Pitches: 30 Seconds to End War and Disease](./brain/book/reference/elevator-pitches.md)  
-g. [Common Objections & Responses: What They'll Say and How to Answer](./brain/book/reference/objections.md)  
-h. [Emergency Contacts: Who to Call When Stuff Hits the Fan](./brain/book/reference/emergency-contacts.md)
