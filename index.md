@@ -14,31 +14,135 @@ doc_type: strategy
 
 # The Complete Idiot's Guide to Ending War and Disease
 
-Why you should read beyond this sentence: this is a practical guide to making all your dreams come true. 
+This is a practical guide to making your dreams come true.
 
-People want the stuff they want.  But there's a limited amount of stuff in the world so in order to get more of the stuff we want, we need to stop using our limited resources on some other stuff. 
+Everyone wants stuff. A cool car, a cure for your grandma's dementia, an end to poverty—you name it. The problem is, the resources to make that stuff are limited. To get more of what we want, we first need to stop wasting trillions on what we *don't* want.
 
-So to get the resources to get more of the stuff we want, we need to stop wasting them on stuff we don't want. 
+Two things most people would agree we don't want are **war and disease**.
 
-The 2 things that most people don't want are war and disease. 
+They aren't just unpleasant; they're ridiculously expensive. When you account for all direct and indirect costs, war and disease consume **[$119 trillion annually](https://dih.wiki/brain/book/economics/humanity-budget-overview)**. Imagine humanity as a business where the security department spends a quarter of its budget attacking the accounting department. It would not be a very productive business.
 
-Even if no one is genociding you at the moment and you don't have any diseases, you might want other stuff like a cool car, ending poverty, or global warming, or more legos, or animal suffering or something.  The way to get the resources is to end war. 
+That's our world today. We're squandering unimaginable wealth on self-destruction while the cures for cancer, Alzheimer's, and thousands of other diseases remain just out of reach.
 
-Just like you have a personal budget, humanity has a budget as well.  And war and disease are an enormous (and totally unecessary expenditure).
+But what if we could change that?
 
-Here's humanity's budget:
+## I. The Problem
 
-And here is the most important comparison:
+If you're anything like me, you probably harbor some disdain for war and disease.
+And you might have at one point found yourself muttering in an empty bus station, "But I'm just one complete idiot, what can I do?"
 
-## The Largest Market Failure in Human History
+Well, this is the book for you!
 
-War and disease consume **$119 trillion** annually (113% of global GDP!) when you include all externalities, yet we only spend **$67.5 billion** on medical research. This staggering disparity is the largest market failure in human history.
+We'll tell you how to persuade your species to stop murdering each other and destroying stuff and instead cure your grandma's dementia, lickety-split!
 
-For a detailed breakdown and visualizations of this economic reality, see the **[Humanity's Budget](./brain/book/economics/humanity-budget-overview.qmd)** chapter.
+### Humanity's Family Budget
 
-We propose a simple, powerful solution: **The 1% Treaty**.
+Think of the global economy as a family budget. We have a limited pile of stuff (people, time, factories, smart brains) to make things with. Money is just how we keep score of who gets what.
 
-## The Solution: The 1% Treaty
+So where does our global family spend this pile? These numbers aren't just digits on a screen. They're where we point all the humans.
+
+| Category | Annual Spending (Trillions USD) | What This Actually Is |
+| :--- | :--- | :--- |
+| **Money We Waste on Problems** | | |
+| Disease (Total Cost) | $109.1 | People dying, can't work, hospitals everywhere |
+| War (Total Cost) | $9.7 | Blowing stuff up, refugees, PTSD |
+| **Total Waste** | **$118.8** | **The dumbest possible use of human effort** |
+| | | |
+| **Money We Spend on Stuff We Want** | | |
+| Housing | $23.0 | Places to live |
+| Transportation | $12.0 | Ways to get around |
+| Food | $9.0 | Not starving |
+| Education | $6.0 | Teaching kids things |
+| Infrastructure | $4.0 | Roads, bridges, internet |
+| **Medical Research** | **$0.068** | **Actually trying to cure diseases** |
+
+So we spend **1,600 times more** money dealing with diseases than we do trying to cure them. That's like spending $1,600 on bandages and $1 on fixing the thing that keeps cutting you.
+
+But here's the thing. Money isn't the real problem. The real problem is people.
+
+When you hire a brilliant scientist to design better missiles, that same brain can't also be curing your grandma's cancer. When a factory builds tanks, those same workers and machines can't build hospitals. 
+
+We have a limited number of smart people and useful stuff. Right now we're using most of it to create problems instead of solving them.
+
+### Problem 1. The Cost of War
+
+War is:
+
+1. incredibly stupid
+
+AND 
+
+2. _very expensive_! 
+
+Indeed, humanity directly spends [\$2.72 trillion](./brain/book/references.md#sipri-2024-spending) per year on implements of its own destruction. 
+
+These include many fine products such as nuclear bombs, bullets, autonomous AI weapon systems, hypersonic missiles, laser death rays, tanks that cost more than small countries, invisible fighter jets, cyberwarfare unicorns, and probably a secret orbital mind control satellite or two.
+
+And if you consider the indirect costs, the bill is actually quite a bit larger.  
+
+i.e. 
+1. factories and power plants get blown up, so entire industries grind to a halt, wasting an ungodly amount of money
+2. roads, bridges, and hospitals reduced to rubble, making it impossible for people to get to work, school, or even the doctor, also causing the loss of an ungodly amount of money
+3. millions of children missing years of education, which means a less skilled workforce for decades (again costing everyone)
+4. businesses are destroyed and and GDPs shrinking by double digits
+5. millions forced to flee their homes, losing all their assets and starting over at zero.  (And moving is such a headache, am I right?)
+6. outbreaks of disease and famine in the chaos
+7. farmland get poisoned or mined, so food production collapses
+ and, most insidiously, 
+8. millions of people left with traumatic brain injuries, amputations, PTSD, and/or a plethora chronic illnesses (we aren't curing). So they can’t work, can’t support their families, and instead need lifelong care, draining public resources (welfare queens)
+
+All in all, humanity is wasting [\$9.7 trillion every year](./brain/book/problem/cost-of-war.md) on this very weird hobby.
+
+[Learn More](./brain/book/problem/cost-of-war.md)
+
+### Problem 2. The Cost of Disease
+
+And all the while, aging, disease, and entropy are very gradually destroying the cells you and everyone you've ever loved...
+
+Despite this moderate concern, our species spends 40X less ([$67.5 billion](./brain/reference/global-government-medical-research-spending.md)) searching for cures to all diseases COMBINED. 
+
+This is quite strange given that the average member of the species would say that preventing the complete dissolution of their mind and body would be 40X cooler than creating a nuclear winter. 
+
+The Pentagon alone [can't account for $2.5 trillion](./brain/book/references.md#pentagon-unaccounted-2-5t) in assets—250 times larger than what we're asking them to redirect. **They lose more money by accident than we need to cure cancer.**
+
+We haven't eradicated a single disease in [50 years](./brain/book/references.md#smallpox-eradicated). But we have [enough nuclear weapons to end civilization](./brain/book/references.md#nuke-winter-150tg) several times over. (Just in case the first apocalypse doesn't take.)
+
+In our evolutionary past, when resources were scarce, violence was necessary for survival. But today we live in a world with enough food for everyone. In fact, nearly all starvation today is actually the RESULT of violent conflict.
+
+### Why We Keep Being Idiots
+
+War is profitable. 
+
+Military contractors make billions. Politicians get campaign donations. Everyone's getting paid except the people getting shot.
+
+---
+
+## II. THE SOLUTION
+
+So, if you're one of those guys who likes to think "outside the box", you might feel:
+
+THE BEST IDEA IN THE WORLD: Instead of spending [$2.72 trillion](./brain/book/references.md#sipri-2024-spending) on enhancing our capacity to murder one and other and destroy everything, how about we use that money to do research to cure the diseases that will eventually cause your untimely demise?
+
+PROBLEM: The logic concentration in that idea exceeds the maximum allowable limit for federal policy.
+
+Back to the drawing board... 😖
+
+SECOND BEST IDEA IN THE WORLD: 
+Take just *1%* of our murder budget ($27 billion) and spent it helping people with diseases instead? Just 1%. 
+
+We'd still have $2.69 trillion/year left over. 
+
+That's still enough to kill 67.25 billion people (and we only have 8 billion).
+
+### But how do we do it?
+
+Simple. We bribe EVERYONE.
+
+For every $1 the military-industrial complex spends on lobbying politicians, it receives over [$1,813 in government contracts](./brain/book/references.md#lobbying-roi-calc). 
+
+So here's the plan: We do exactly the same thing in reverse.
+
+We create a [1% Treaty](./brain/book/solution/1-percent-treaty.md) that says "Dear World Leaders: Please use 1% of your weapons budget to [Decentralized Institutes of Health (DIH)](./brain/book/solution/dih.md) that pays for patients to participate in super-efficient [pragmatic clinical trials](./brain/reference/recovery-trial.md) for the most promising new treatments."
 
 Getting every government to ratify the treaty requires two things:
 
@@ -462,5 +566,5 @@ e. [Political Proof: How Mass Movements Win](./brain/book/proof/political-proof.
 ### Chapter 6: Join the War on Disease
 a. [Get Started Here: Your Next Steps to Join the War on Disease](./brain/book/call-to-action.md)  
 b. [Contributing Guide: How to Help Write This Book](./CONTRIBUTING.md)  
-c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)  
+c. [Evidence Library: All the Data That Proves We're Right](./brain/reference/)
 
