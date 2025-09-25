@@ -197,7 +197,7 @@ graph TD;
         A -->|"1% Redirect"| B["$27B Annual Treaty Treasury"];
         
         subgraph "Democratic Allocation";
-            B --> C["DIH Governance<br/>(VICTORY Bond Holders Vote)"];
+            B --> C["DIH Governance<br/>(Wishocracy Protocol)"];
             C --> D["Patient Subsidy Pools<br/>(Money Goes to Patients)"];
         end
         
@@ -254,7 +254,7 @@ This is the world we can start creating today.
 
 **Step 2:** When we hit [3.5% of humanity](./brain/book/references.md#3-5-rule), we have proof the world wants this.
 
-**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds—you get to own part of the **$27B+ annual health treasury** and vote on how the money gets spent (see [VICTORY Bonds — Incentive Mechanics](./brain/book/economics/victory-bonds.qmd)).
+**Step 3:** After the treaty is ratified, VOTE points become convertible to VICTORY bonds. The DIH treasury is then governed by the [Wishocracy protocol](./brain/book/solution/wishocracy.md) to ensure the funds are allocated according to the public will.
 
 **Step 4:** Build a legal political engine: independent‑expenditure committees that pledge massive support for candidates who vote with their district's referendum result—and fund challengers against those who defy it.
 
@@ -360,7 +360,7 @@ We turn today's **War Contractors** into tomorrow's **Peace Contractors** by pay
 We start with rich people who want to get richer, then move on to politicians. It's depressingly predictable, but it works.
 
 ### 1. Rich People Get Richer
-We offer **[VICTORY Bonds](./brain/book/economics/victory-bonds.qmd)** that pay better returns than the best hedge funds (~40% annually) plus governance control over the $27 billion treasury. Rich people like making money. We help them make more money by funding cures instead of bombs.
+We offer **[VICTORY Bonds](./brain/book/economics/victory-bonds.qmd)** that pay better returns than the best hedge funds (~40% annually). Rich people like making money. We help them make more money by funding cures instead of bombs.
 
 ### 2. Regular People Get Paid
 Citizens get **VOTE points** for participating in the global referendum. After the treaty passes, these become real ownership in the health treasury they helped create. 280 million people with skin in the game create unstoppable political pressure.
@@ -413,7 +413,7 @@ Why the math actually works:
 ### 5. We Co-opt Rather Than Compete
 
 - Military contractors' current ROI: [$1,813 per $1 spent on lobbying](./brain/book/references.md#lobbying-roi-calc)
-- Our offer: >40% CAGR bonds + governance of $27B treasury + personal wealth creation
+- Our offer: >40% CAGR bonds + massive personal wealth creation
 - **When peace pays better than war, rational actors choose peace**
 
 **The Bottom Line:** We're not creating money out of thin air. We're redirecting money that's already being wasted into a system that produces 80X better results with mathematical precision.
