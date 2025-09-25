@@ -64,7 +64,7 @@ fig.update_layout(
         title_text='Category Type'
     ),
     bargap=0.4,
-    xaxis=dict(type='log', title='Annual Spending (Trillions USD) - Log Scale')
+    xaxis=dict(title='Annual Spending (Trillions USD)')
 )
 
 # Adding custom legend
