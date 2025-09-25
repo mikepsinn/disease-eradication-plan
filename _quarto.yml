@@ -22,7 +22,10 @@ book:
         - brain/book/economics/victory-bonds.md
     - part: "Economics"
       chapters:
-        - brain/book/economics/economic_models.qmd
+        - brain/book/economics/humanity-budget-overview.qmd
+        - brain/book/economics/peace-dividend-analysis.qmd
+        - brain/book/economics/dfda-cost-benefit.qmd
+        - brain/book/economics/economic-summary.qmd
         - brain/book/economics/peace-dividend-value-capture.md
         - brain/book/economics/investment-thesis.md
     - part: "Proof & Precedents"
