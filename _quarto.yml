@@ -9,6 +9,7 @@ book:
   date: "today"
   chapters:
     - index.qmd
+    - brain/book/solution/dih.qmd
 
 execute:
   # Relaunch kernel for each render
