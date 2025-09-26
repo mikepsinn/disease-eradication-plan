@@ -118,10 +118,9 @@ graph TD;
 *   3.2 [Economics for Philanthropists: Societal Impact Analysis](./brain/book/economics/economic-impact-summary.md)
 
 ### Chapter 4: The Strategy: How to Bribe the World (Legally)
-*   4.1 [The Playbook: Co-Opt, Don't Compete](./brain/book/strategy/playbook.md)
-*   4.2 [Step 1: The Global Referendum on War and Disease](./brain/book/strategy/global-referendum.md)
-*   4.3 [Step 2: Making Peace Contractors Out of War Contractors](./brain/book/strategy/co-opting-the-mic.md)
-*   4.4 [Legal Framework: How to Stay Out of Prison](./brain/book/strategy/legal-compliance-framework.md)
+*   4.1 [The Core Strategy: We Don't Fight Them, We Buy Them](./brain/book/strategy/co-opt-dont-compete.md)
+*   4.2 [Step 1: Ask 280 Million People if They Want to Live](./brain/book/strategy/global-referendum.md)
+*   4.3 [Step 2: Pay the Lawyers So We Don't Go to Prison](./brain/book/strategy/legal-compliance-framework.md)
 
 ### Chapter 5: The Proof: Why This Isn't Completely Insane
 *   5.1 [Precedent 1: The 80X Efficiency Gain is Already Proven](./brain/book/reference/recovery-trial.md)

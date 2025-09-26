@@ -1,17 +1,25 @@
 ---
-title: "The Playbook: Co-Opt, Don't Compete"
-description: "The complete strategic guide to passing the 1% Treaty by co-opting existing systems and aligning stakeholder incentives."
+title: "The Core Strategy: We Don't Fight Them, We Buy Them"
+description: "How to turn war profiteers into health profiteers because money is the only language they understand."
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [strategy, lobbying, incentives, victory-bonds]
 dateCreated: "2025-08-15T00:00:00.000Z"
 ---
 
-# 📖 Chapter 4.1: The Playbook - Co-Opt, Don't Compete
+# 📖 Chapter 4.1: We Don't Fight Them, We Buy Them
 
-The core strategy is simple: **We don't fight the military-industrial complex. We make them a better offer.**
+Listen: We could spend decades fighting the military-industrial complex. We could march. We could vote. We could write angry letters. 
 
-We turn today's **War Contractors** into tomorrow's **Peace Contractors** by paying them more. To do this, we must align the incentives of three key groups: defense contractors, nonprofits, and the public.
+We'd lose.
+
+So we're going to do something much simpler. We're going to pay them more money to cure disease than they make from war.
+
+They have shareholders. They have quarterly earnings. They have a legal obligation to maximize profits.
+
+Fine. We'll give them bigger profits.
+
+**War Contractors become Peace Contractors.** Not because they grew a conscience. Because the math changed.
 
 ---
 
