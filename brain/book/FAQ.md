@@ -116,7 +116,7 @@ People have questions. Here are answers.
 
 ### 22. "Can your team actually build this?" (Execution Risk)
 
-- **Response:** Here's how we're actually going to do this thing: We're going to hire a few very smart people instead of building some enormous bureaucracy that would eat money like a hungry pig. These smart people will then hire other smart people to do the actual work. It's cheaper and it works better. So it goes.
+- **Response:** Here's how we're actually going to do this thing: We're going to hire a few very smart people instead of building some enormous bureaucracy that would eat money like a hungry pig. These smart people will then hire other smart people to do the actual work. It's cheaper and it works better. 
 
 - **Mitigation:** Advisory board of constitutional scholars, DAO experts, and former officials; phased rollout with pilot countries.
 
