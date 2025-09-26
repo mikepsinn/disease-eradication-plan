@@ -39,61 +39,60 @@ The difference: We pay people to solve problems instead of paying them to ask fo
 
 Here is how the current NIH is structured:
 
-```mermaid
-graph TD;
-    Congress[U.S. Congress] -->|Allocates Funds| NIH[NIH Administration];
-    NIH -->|Distributes Funds| Institutes[Various NIH Institutes];
-    NIH -->|Distributes Funds| Centers[NIH Research Centers];
-    Institutes --> Grants[Grant Programs];
-    Centers --> Contracts[Contracts];
-    Grants -->|Application Process| Review[Peer Review Process];
-    Contracts -->|Bid/Proposal Review| Review;
-    Review -->|Fund Allocation| Recipients[Grant Recipients];
-    Recipients -->|Conducts Research| Universities[Universities];
-    Recipients -->|Conducts Research| Hospitals[Hospitals];
-    Recipients -->|Conducts Research| Industries[Private Industries];
-    Universities -->|Research Outcomes| Publications[Publications];
-    Hospitals -->|Health Improvements| HealthOut[Improved Health Outcomes];
-    Industries -->|Develops Technologies| Tech[New Technologies];
-    Publications -->|Feedback| NIH;
-    HealthOut -->|Feedback| NIH;
-    Tech -->|Feedback| NIH;
-    NIH -->|Policy and Funding Decisions| Congress;
-    Recipients -->|Direct Benefits| Patients[Patients];
-    Patients -->|Feedback| Public[General Public];
-    Public -->|Support and Interest| Congress;
-
+```{mermaid}
+graph TD
+    Congress["U.S. Congress"] --> NIH["NIH Administration"]
+    NIH --> Institutes["Various NIH Institutes"]
+    NIH --> Centers["NIH Research Centers"]
+    Institutes --> Grants["Grant Programs"]
+    Centers --> Contracts["Contracts"]
+    Grants --> Review["Peer Review Process"]
+    Contracts --> Review
+    Review --> Recipients["Grant Recipients"]
+    Recipients --> Universities["Universities"]
+    Recipients --> Hospitals["Hospitals"]
+    Recipients --> Industries["Private Industries"]
+    Universities --> Publications["Publications"]
+    Hospitals --> HealthOut["Improved Health Outcomes"]
+    Industries --> Tech["New Technologies"]
+    Publications --> NIH
+    HealthOut --> NIH
+    Tech --> NIH
+    NIH --> Congress
+    Recipients --> Patients["Patients"]
+    Patients --> Public["General Public"]
+    Public --> Congress
 ```
 
 And here is how the DIH would work:
 
-```mermaid
-graph TD;
-    Congress -->|Allocates Funds| DIH[DIH Administration];
-    DIH -->|Distributes Funds| DAOs[Research DAOs];
-    DIH -->|Distributes Funds| TechDAOs[Technology DAOs];
-    DIH -->|Distributes Funds| PatientDAOs[Patient Advocacy DAOs];
-    DIH -->|Distributes Funds| FDAi[FDAi];
-    DAOs -->|Funds Projects| Researchers[Researchers];
-    TechDAOs -->|Funds Projects| AIProjects[AI Projects];
-    PatientDAOs -->|Funds Projects| AdvocacyProjects[Advocacy Projects];
-    FDAi -->|Funds Projects| ClinicalTrials[Clinical Trials];
-    Researchers -->|Conducts Research| Universities;
-    Researchers -->|Conducts Research| Hospitals;
-    Researchers -->|Conducts Research| Industries;
-    AIProjects -->|Develops AI Solutions| Tech;
-    AdvocacyProjects -->|Advocates for Patients| Patients;
-    ClinicalTrials -->|Facilitates Trials| Patients;
-    Universities -->|Research Outcomes| Publications;
-    Hospitals -->|Health Improvements| HealthOut;
-    Industries -->|Develops Technologies| Tech;
-    Publications -->|Feedback| DIH;
-    HealthOut -->|Feedback| DIH;
-    Tech -->|Feedback| DIH;
-    DIH -->|Policy and Funding Decisions| Congress;
-    Researchers -->|Direct Benefits| Patients;
-    Patients -->|Feedback| Public;
-    Public -->|Support and Interest| Congress;
+```{mermaid}
+graph TD
+    Congress["U.S. Congress"] --> DIH["DIH Administration"]
+    DIH --> DAOs["Research DAOs"]
+    DIH --> TechDAOs["Technology DAOs"]
+    DIH --> PatientDAOs["Patient Advocacy DAOs"]
+    DIH --> FDAi["FDAi"]
+    DAOs --> Researchers["Researchers"]
+    TechDAOs --> AIProjects["AI Projects"]
+    PatientDAOs --> AdvocacyProjects["Advocacy Projects"]
+    FDAi --> ClinicalTrials["Clinical Trials"]
+    Researchers --> Universities["Universities"]
+    Researchers --> Hospitals["Hospitals"]
+    Researchers --> Industries["Private Industries"]
+    AIProjects --> Tech["New Technologies"]
+    AdvocacyProjects --> Patients["Patients"]
+    ClinicalTrials --> Patients
+    Universities --> Publications["Publications"]
+    Hospitals --> HealthOut["Improved Health Outcomes"]
+    Industries --> Tech
+    Publications --> DIH
+    HealthOut --> DIH
+    Tech --> DIH
+    DIH --> Congress
+    Researchers --> Patients
+    Patients --> Public["General Public"]
+    Public --> Congress
 ```
 
 ---
@@ -181,20 +180,6 @@ This is the guaranteed 50%+ of the treasury allocated by the **Disease-Specific 
 
 ---
 
-## The Ultimate Incentive: Stop Begging, Start Owning
-
-Here's what we tell every nonprofit:
-
-**Current System:** Compete with hundreds of other nonprofits for scraps from a tiny philanthropic pie. Spend 40% of your time writing grant applications that probably get rejected.
-
-**New System:** Work together for 18 months to pass the 1% Treaty. Then control billions of dollars for your disease area forever.
-
-**The Math:** Mental health nonprofits currently fight over ~$500 million in total annual grants. Under the DIH, they would control $3+ billion annually and vote on how it gets spent.
-
-Stop applying for grants. Become the grant-makers.
-
----
-
 ## Patient Subsidies: We Pay You to Get Better
 
 The biggest innovation: **patients get paid to participate in trials** instead of paying to participate.
@@ -248,22 +233,6 @@ Keep the underlying systems running, secure, and improving over time.
 
 ---
 
-## Funding Model: War Bonds for the War on Disease
-
-To bootstrap before treaty money arrives, the DIH sells **[VICTORY Bonds](../economics/victory-bonds.qmd)**—exactly like WWII war bonds, but for fighting disease instead of fascists.
-
-Citizens and institutions buy bonds, funding the initial operations. When the 1% Treaty passes and money starts flowing in, bondholders get repaid with interest.
-
-The Cycle:
-1. People buy VICTORY Bonds → DIH gets startup capital
-2. DIH funds trials and development → produces results and saves lives  
-3. Countries see the results → sign the 1% Treaty
-4. Treaty money flows in → repays bondholders with returns
-
-**Why This Works:** We prove the concept works before asking governments for money, instead of asking for money and promising it might work.
-
----
-
 ## Governance: Transparent, Accountable, and Automated
 
 The DIH's governance model is designed for maximum transparency and minimal bureaucracy, replacing political decision-making with auditable, rules-based systems.
@@ -296,12 +265,19 @@ A small, nine-member Technical and Ethics Council (TEC) serves as a fail-safe fo
 
 ## The Technology Stack: Public Goods for Public Health
 
-The DIH's role is to fund the creation of a shared technology protocol, which is then built and operated by the [dFDA](./dfda.md) as a global public good. This avoids the insane waste of every nonprofit building their own systems and creates a unified standard for research. Key DIH-funded components of the dFDA protocol include:
+The DIH's role is to fund the creation of a shared technology protocol, which is then built and operated by the [dFDA](./dfda.md) as a global public good. This avoids the insane waste of every nonprofit building their own systems and creates a unified standard for research. This protocol functions as a **Transparent Research Marketplace**, and its key DIH-funded components include:
 
+### 1. A Universal, Collaborative Research Hub
+-   **Universal Research Catalog:** Every research initiative—whether funded by the DIH, a member nonprofit, or even a crowdfunded campaign—is cataloged in a single, public database.
+-   **Discoverability and Collaboration Engine:** The system actively identifies similar or overlapping research projects. It then provides tools to make it easy for research teams to connect, share data, merge their efforts, or divide up the work to avoid redundant spending and enable cost-sharing.
+
+### 2. An Intelligent & Automated Platform
 -   **Public Blockchain:** The DIH's own financial transactions and governance votes are recorded on a public ledger. The dFDA's operational data lives on its own specialized platform, also designed for transparency.
 -   **AI-Powered Triage:** Before human review, all research proposals are analyzed by AI agents. These agents provide a standardized estimate of the project's potential impact (e.g., QALYs gained per dollar), check for overlapping research, and ensure all required data is present. This allows human reviewers to focus on scientific merit, not paperwork.
 -   **Decentralized Peer Review:** The dFDA protocol facilitates a decentralized peer review system. Reviewers are selected by an algorithm based on their verifiable expertise and reputation, are compensated for their time, and conduct their reviews blindly to minimize bias. There are no standing committees.
 -   **Privacy-Preserving Analytics:** The DIH funds the R&D of cutting-edge cryptographic methods like Zero-Knowledge Proofs, which the dFDA implements on its platform. This allows researchers to analyze aggregate health data without ever accessing personally identifiable information.
+
+### 3. Shared, Open-Source Infrastructure
 -   **Open-Source Platforms:** The DIH provides dedicated funding for the dFDA to build and maintain shared, open-source software for all member organizations, including tools for:
     -   Donor and volunteer management (like a free, shared Salesforce for Nonprofits)
     -   Accounting and financial reporting
@@ -316,20 +292,75 @@ This shared infrastructure, funded once by the DIH, saves hundreds of millions a
 
 To understand the real-world impact, let's follow two researchers with the same promising idea for a new Alzheimer's treatment. The key difference is the ecosystem they work in: Dr. Sharma uses the legacy NIH system, while Dr. Carter uses the integrated dFDA protocol fueled by **DIH funding**.
 
-| **Step** | **Dr. Anya Sharma (Using the NIH)** | **Dr. Ben Carter (Using the dFDA Protocol + DIH Funding)** |
-| :--- | :--- | :--- |
-| **1. The Idea** | Spends 6 months (40% of her time) writing a 100-page grant proposal for the NIH. | Spends a week outlining a trial protocol on the **dFDA's website**, specifying the outcome to be measured according to the protocol's standards. |
-| **2. Funding** | Her grant is submitted to an NIH study section. After 9 months of review, it's rejected due to a perceived lack of preliminary data. She spends another year gathering data to reapply. | The Alzheimer's DAO within the **DIH** reviews his funding request for patient subsidies. The community votes to approve it, recognizing the high potential value. The process takes 3 weeks. |
-| **3. Patient Recruitment**| Spends 18 months and thousands of dollars on advertising to recruit 50 patients from a single hospital. Many drop out due to the cost and travel burden. | He posts his trial to the **dFDA protocol's global registry**. 1,000+ eligible patients using various connected apps are notified instantly. Within 2 months, 500 patients are enrolled, receiving their **DIH-funded** subsidy. |
-| **4. Running the Trial** | The trial takes 3 years. Data is collected manually in a proprietary database, siloed from all other research. | The trial takes 1 year. Data is collected in real-time via patient smartphones and wearable devices, flowing into a standardized database that adheres to the dFDA protocol. |
-| **5. Results & Impact**| After 6 years, her results are finally published in a journal behind a paywall. The findings are promising, but another decade will pass before they influence clinical practice. Total time: **~7 years.** | After 18 months, his results (positive or negative) are automatically published to the public knowledge base powered by the dFDA protocol. The real-world evidence immediately updates treatment guidelines. Total time: **~1.5 years.** |
+### Step 1: The Idea
+::: {.columns}
+::: {.column width="50%"}
+**Dr. Anya Sharma (Using the NIH)**
+
+Spends 6 months (40% of her time) writing a 100-page grant proposal for the NIH.
+:::
+::: {.column width="50%"}
+**Dr. Ben Carter (Using the dFDA Protocol + DIH Funding)**
+
+Spends a week outlining a trial protocol on the **dFDA's website**, specifying the outcome to be measured according to the protocol's standards.
+:::
+:::
+
+### Step 2: Funding
+::: {.columns}
+::: {.column width="50%"}
+**Dr. Anya Sharma (Using the NIH)**
+
+Her grant is submitted to an NIH study section. After 9 months of review, it's rejected due to a perceived lack of preliminary data. She spends another year gathering data to reapply.
+:::
+::: {.column width="50%"}
+**Dr. Ben Carter (Using the dFDA Protocol + DIH Funding)**
+
+The Alzheimer's DAO within the **DIH** reviews his funding request for patient subsidies. The community votes to approve it, recognizing the high potential value. The process takes 3 weeks.
+:::
+:::
+
+### Step 3: Patient Recruitment
+::: {.columns}
+::: {.column width="50%"}
+**Dr. Anya Sharma (Using the NIH)**
+
+Spends 18 months and thousands of dollars on advertising to recruit 50 patients from a single hospital. Many drop out due to the cost and travel burden.
+:::
+::: {.column width="50%"}
+**Dr. Ben Carter (Using the dFDA Protocol + DIH Funding)**
+
+He posts his trial to the **dFDA protocol's global registry**. 1,000+ eligible patients using various connected apps are notified instantly. Within 2 months, 500 patients are enrolled, receiving their **DIH-funded** subsidy.
+:::
+:::
+
+### Step 4: Running the Trial
+::: {.columns}
+::: {.column width="50%"}
+**Dr. Anya Sharma (Using the NIH)**
+
+The trial takes 3 years. Data is collected manually in a proprietary database, siloed from all other research.
+:::
+::: {.column width="50%"}
+**Dr. Ben Carter (Using the dFDA Protocol + DIH Funding)**
+
+The trial takes 1 year. Data is collected in real-time via patient smartphones and wearable devices, flowing into a standardized database that adheres to the dFDA protocol.
+:::
+:::
+
+### Step 5: Results & Impact
+::: {.columns}
+::: {.column width="50%"}
+**Dr. Anya Sharma (Using the NIH)**
+
+After 6 years, her results are finally published in a journal behind a paywall. The findings are promising, but another decade will pass before they influence clinical practice. Total time: **~7 years.**
+:::
+::: {.column width="50%"}
+**Dr. Ben Carter (Using the dFDA Protocol + DIH Funding)**
+
+After 18 months, his results (positive or negative) are automatically published to the public knowledge base powered by the dFDA protocol. The real-world evidence immediately updates treatment guidelines. Total time: **~1.5 years.**
+:::
+:::
+
 
 ---
-
-## Risks and Realism
-
-The DIH only works if countries actually sign the 1% Treaty and send money. For a full breakdown of what happens if they don't, see [investor risk analysis](../economics/investor-risk-analysis.md).
-
-But even if only half the countries sign up, we'd still have $13+ billion annually—20X more than what's currently spent on medical research globally.
-
-The worst-case scenario is still better than what we have now.

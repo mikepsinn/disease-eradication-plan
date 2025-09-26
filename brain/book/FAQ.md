@@ -46,7 +46,7 @@ People have questions. Here are answers.
 
 ### 8. "You're competing with military contractors who have decades of relationships and influence"
 
-- **Reality:** See [How We Co-opt the Military-Industrial Complex](#the-core-strategy-co-opt-dont-compete) above. We don't compete. We offer better returns and co-opt their existing networks. For detailed analysis, see [Co-Opting Defense Contractors](./strategy/co-opting-defense-contractors.md).
+- **Reality:** See [How We Co-opt the Military-Industrial Complex](#the-core-strategy-co-opt-dont-compete) above. We don't compete. We offer better returns and co-opt their existing networks. For detailed analysis, see [The Playbook: Co-Opt, Don't Compete](./strategy/playbook.md).
 
 ### 9. "How do you prevent waste and ensure the money actually helps patients?"
 
@@ -234,7 +234,7 @@ Independent expenditures work when they're massive and targeted. We're not compe
 
 ### **"You're competing with military contractors who have decades of relationships and influence."**
 
-We don't compete. We offer better returns and co-opt their existing networks. For detailed analysis, see [Co-Opting Defense Contractors](./strategy/co-opting-defense-contractors.md).
+We don't compete. We offer better returns and co-opt their existing networks. For detailed analysis, see [The Playbook: Co-Opt, Don't Compete](./strategy/playbook.md).
 
 ---
 
