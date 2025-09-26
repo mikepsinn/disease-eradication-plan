@@ -109,7 +109,7 @@ graph TD;
 
 ### Chapter 2: The Solution: A Better Deal
 *   2.1 [The 1% Treaty: $27B Less Bad Stuff and $27B More Good Stuff](./brain/book/solution/1-percent-treaty.md)
-*   2.2 [The Decentralized Institutes of Health (DIH): An Engine for Cures](./brain/book/solution/dih.md)
+*   2.2 [The Decentralized Institutes of Health (DIH): An Engine for Cures](./brain/book/solution/dih.qmd)
 *   2.3 [The Decentralized FDA (dFDA): 80X More Efficient Research](./brain/book/solution/dfda.md)
 *   2.4 [Wishocracy: Funding What People Actually Want](./brain/book/solution/wishocracy.md)
 

@@ -2,12 +2,10 @@
 title: "The DIH → How to Spend $27 Billion Without Wasting It"
 description: "The complete guide to the Decentralized Institutes of Health (DIH), the globally-governed SuperDAO that allocates the $27 billion treasury."
 published: true
-date: "2025-09-14T00:00:00.000Z"
 tags: [solution, dih, governance, dao, funding-model]
 dateCreated: "2025-09-14T00:00:00.000Z"
 ---
 
-# 📖 Chapter 4: The DIH - How to Spend $27 Billion Without Wasting It
 
 The **Decentralized Institutes of Health (DIH)** is the treasury that takes the $27 billion from the 1% Treaty and actually spends it on curing diseases instead of feeding bureaucrats.
 
@@ -19,7 +17,8 @@ The DIH doesn't do research. It pays for research. Specifically, it pays patient
 
 ## How This Beats the NIH
 
-**The NIH Way:**
+::: panel-tabset
+### The NIH Way
 - One giant bureaucracy in Bethesda decides everything
 - Researchers spend 40% of their time writing grant applications
 - 90% of grant applications get rejected
@@ -27,11 +26,12 @@ The DIH doesn't do research. It pays for research. Specifically, it pays patient
 - Patients often face thousands in out-of-pocket costs for travel and care
 - Results take 17 years to reach patients
 
-**The DIH Way:**
+### The DIH Way
 - Researchers get funding for results, not paperwork
 - Patients get paid to participate in trial
 - Money follows disease burden and promising treatments
 - New treatments reach patients in 2-3 years
+:::
 
 The difference: We pay people to solve problems instead of paying them to ask for permission to solve problems.
 
@@ -118,14 +118,13 @@ Each institute is run by the people who actually care about that disease: patien
 
 **Why This Works:** The people who live with a disease every day make better funding decisions than politicians who've never heard of that disease.
 
-<details>
-<summary>View the Full Proposed DIH Organizational Structure</summary>
-
+::: {.callout-note collapse="true"}
+### View the Full Proposed DIH Organizational Structure
 The Decentralized Institutes of Health (DIH) is designed to mirror the structure of the U.S. National Institutes of Health (NIH), providing a familiar and comprehensive framework for researchers, patients, and partner organizations.
 
 Each of the following Institutes and Centers will operate as a subordinate DAO (subDAO) under the main DIH Treasury. Governance of each subDAO will be delegated to the coalition of non-profit partners, research institutions, and patient advocacy groups that were instrumental in the ratification of the 1% Treaty.
 
-### Decentralized Institutes
+#### Decentralized Institutes
 
 - **Decentralized Cancer Institute (DCI)**
 - **Decentralized Eye Institute (DEI)**
@@ -138,7 +137,7 @@ Each of the following Institutes and Centers will operate as a subordinate DAO (
 - **Decentralized Institute of Biomedical Imaging and Bioengineering (DIBIB)**
 - **Decentralized Institute of Child Health and Human Development (DICHHD)**
 - **Decentralized Institute on Deafness and Other Communication Disorders (DIDCD)**
-- **Decentralized Institute of Dental and Craniofacial Research (DIDCR)**
+- **Decentralized Institute of Dental and Craniocranial Research (DIDCR)**
 - **Decentralized Institute of Diabetes and Digestive and Kidney Diseases (DIDDKD)**
 - **Decentralized Institute on Drug Abuse (DIDA)**
 - **Decentralized Institute of Environmental Health Sciences (DIEHS)**
@@ -148,7 +147,7 @@ Each of the following Institutes and Centers will operate as a subordinate DAO (
 - **Decentralized Institute of Nursing Research (DINR)**
 - **Decentralized Institute on Minority Health and Health Disparities (DIMHD)**
 
-### Decentralized Centers & Offices
+#### Decentralized Centers & Offices
 
 - **Decentralized Center for Complementary and Integrative Health (DCCIH)**
 - **Decentralized Center for Information Technology (DCIT)**
@@ -158,8 +157,7 @@ Each of the following Institutes and Centers will operate as a subordinate DAO (
 - **Decentralized National Center for Advancing Translational Sciences (DNCATS)**
 - **Decentralized National Library of Medicine (DNLM)**
 - **Decentralized Office of the Director (DOD)**
-
-</details>
+:::
 
 ---
 
