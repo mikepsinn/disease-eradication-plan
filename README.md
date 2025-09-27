@@ -99,43 +99,48 @@ graph TD;
 
 ## Table of Contents
 
-### Chapter 1: The Problem: A $119 Trillion Mistake
-*   1.0 [Why We're Like This: The Evolutionary Trap](./brain/book/problem/the-evolutionary-trap.md)
-*   1.1 [The Cost of War: Humanity's Most Expensive Hobby](./brain/book/problem/cost-of-war.md)
-*   1.2 [The Cost of Disease: A Slow-Motion Apocalypse](./brain/book/problem/cost-of-disease.md)
-*   1.3 [The System is Broken: Why We Don't Have Cures](./brain/book/problem/why-the-system-is-broken.md)
-    *   1.3.1 [Why NIH is Terrible at Funding Research](./brain/book/problem/nih-funding-is-broken.md)
-    *   1.3.2 [Why the FDA is Unsafe and Ineffective](./brain/book/problem/fda-approvals-are-broken.md)
-    *   1.3.3 [Why Representative Democracy is Unrepresentative](./brain/book/problem/democracy-is-broken.md)
+### Part I: The $119 Trillion Central Planning Disaster
+*   1.1 [Evolution Trapped Us in Violence](./brain/book/problem/the-evolutionary-trap.md)
+*   1.2 [The NIH: How Soviet-Style Science Wastes $48B/Year](./brain/book/problem/nih-funding-is-broken.md)
+*   1.3 [The FDA: Central Planning's Body Count](./brain/book/problem/fda-approvals-are-broken.md)
+*   1.4 [Democracy's Failure: Why Voters Can't Fix This](./brain/book/problem/democracy-is-broken.md)
 
-### Chapter 2: The Solution: A Better Deal
-*   2.1 [The 1% Treaty: $27B Less Bad Stuff and $27B More Good Stuff](./brain/book/solution/1-percent-treaty.md)
-*   2.2 [The Decentralized Institutes of Health (DIH): An Engine for Cures](./brain/book/solution/dih.qmd)
-*   2.3 [The Decentralized FDA (dFDA): 80X More Efficient Research](./brain/book/solution/dfda.md)
-*   2.4 [Wishocracy: Funding What People Actually Want](./brain/book/solution/wishocracy.md)
+### Part II: Markets > Committees (The Solution)
+*   2.1 [The DIH: Prediction Markets for Medical Research](./brain/book/solution/dih.qmd)
+*   2.2 [The dFDA: Competition Beats Regulation](./brain/book/solution/dfda.md)
+*   2.3 [The 1% Treaty: Redirecting Resources to What Works](./brain/book/solution/1-percent-treaty.md)
+*   2.4 [Wishocracy: Democratic Markets for Public Goods](./brain/book/solution/wishocracy.md)
 
-### Chapter 3: Economics: How Individuals and Society can both Profit from Peace
-*   3.1 [Economics for Capitalists: VICTORY Bonds](./brain/book/economics/victory-bonds.qmd)
-*   3.2 [Economics for Philanthropists: Societal Impact Analysis](./brain/book/economics/economic-impact-summary.md)
+### Part III: Why Markets Win (The Theory)
+*   3.1 [Hayek Was Right: The Knowledge Problem in Medicine](./brain/book/theory/hayek-knowledge-problem.md)
+*   3.2 [Wisdom of Crowds: 280 Million Brains > 200 NIH Reviewers](./brain/book/theory/wisdom-of-crowds.md)
+*   3.3 [Incentive Alignment: Why Everyone Wins](./brain/book/theory/incentive-alignment.md)
+*   3.4 [Your Body is Just a Machine (And Markets Fix Machines)](./brain/book/proof/body-as-repairable-machine.md)
 
-### Chapter 4: The Strategy: How to Bribe the World (Legally)
-*   4.1 [The Core Strategy: We Don't Fight Them, We Buy Them](./brain/book/strategy/co-opt-dont-compete.md)
-*   4.2 [Step 1: Ask 280 Million People if They Want to Live](./brain/book/strategy/global-referendum.md)
-*   4.3 [Step 2: Pay the Lawyers So We Don't Go to Prison](./brain/book/strategy/legal-compliance-framework.md)
-*   4.4 [Step 3: Raise $2.5B to Bribe Everyone](./brain/book/strategy/fundraising-strategy.md)
+### Part IV: The Money (Making It Real)
+*   4.1 [VICTORY Bonds: War Profiteering for Peace](./brain/book/economics/victory-bonds.qmd)
+*   4.2 [The ROI: $27B → $16.5T Annual Returns](./brain/book/economics/economic-impact-summary.md)
+*   4.3 [The Business Model: Insurance, Not Charity](./brain/book/solution/dih-integration-model.md)
 
-### Chapter 5: The Proof: Why This Isn't Completely Insane
-*   5.1 [Precedent 1: The 80X Efficiency Gain is Already Proven](./brain/book/reference/recovery-trial.md)
-*   5.2 [Precedent 2: How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)
-*   5.3 [Precedent 3: Historical Evidence for Decentralized Trials](./brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.md)
-*   5.4 [The Biological Truth: Your Body is a Machine That Can Be Fixed](./brain/book/proof/body-as-repairable-machine.md)
+### Part V: The Heist (Strategy)
+*   5.1 [We're Not Fighting, We're Buying](./brain/book/strategy/co-opt-dont-compete.md)
+*   5.2 [The Global Referendum: 280M Signatures = Unstoppable](./brain/book/strategy/global-referendum.md)
+*   5.3 [Legal CYA: How Not to Go to Prison](./brain/book/strategy/legal-compliance-framework.md)
+*   5.4 [The $2.5B Bribe Fund](./brain/book/strategy/fundraising-strategy.md)
 
-### Chapter 6: The Futures: Choose Your Own Adventure
-*   6.1 [The Dystopia: What Happens When We Keep Building Skynet](./brain/book/futures/dystopia-skynet-wins.md)
-*   6.2 [The Utopia: The World After We Choose Life Over Death](./brain/book/futures/utopia-health-and-happiness.md)
+### Part VI: Proof This Works
+*   6.1 [RECOVERY Trial: Markets Already Won (80X Efficiency)](./brain/book/reference/recovery-trial.md)
+*   6.2 [Historical Wins: When Decentralization Crushed Central Planning](./brain/book/proof/historical-precedents.md)
+*   6.3 [Pre-1962: When Doctors > Bureaucrats](./brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.md)
 
-### Chapter 7: Join the War on Disease
-*   7.1 [How You Can Help](./brain/book/call-to-action.md)
+### Part VII: Pick Your Future
+*   7.1 [Option A: Skynet + Cancer (Status Quo)](./brain/book/futures/dystopia-skynet-wins.md)
+*   7.2 [Option B: Markets Cure Everything](./brain/book/futures/utopia-health-and-happiness.md)
+
+### Part VIII: Join or Die (Literally)
+*   8.1 [Sign the Referendum](./brain/book/call-to-action.md#referendum)
+*   8.2 [Buy VICTORY Bonds](./brain/book/call-to-action.md#bonds)
+*   8.3 [Spread the Virus (Information, Not Disease)](./brain/book/call-to-action.md#spread)
 
 ### Appendix: Reference Materials
 *   A.1 [Frequently Asked Questions](./brain/book/reference/faq.md)
