@@ -233,8 +233,121 @@ Swiss Foundation (Treaty Coordination)
 - Token issuance and treasury operations function within regulatory framework
 - Public transparency builds trust while maintaining compliance
 
+## Multi-Entity Legal Structure
+
+### Recommended Three-Entity Framework
+
+Building on the compliance requirements outlined above, we recommend a sophisticated multi-entity structure that separates charitable, political, and investment activities while maintaining strategic coherence.
+
+```mermaid
+graph TD
+    subgraph "1% Treaty Initiative"
+        A["<b>For-Profit Entity / Foundation</b><br/>(e.g., Cayman or DE Corp)<br/><i>Accepts Investments</i>"]
+        B["<b>501(c)(3) Public Charity</b><br/><i>Accepts Tax-Deductible Donations</i>"]
+        C["<b>501(c)(4) Social Welfare Org</b><br/><i>Accepts Donations (Not Deductible)</i>"]
+    end
+
+    A -- "Sells VICTORY Bonds" --> Investors
+    A -- "Funds..." --> D["dFDA Platform & Operations<br/><i>(The 'Product')</i>"]
+
+    B -- "Focuses on..." --> E["<b>Education & Research</b><br/>- Public awareness campaigns<br/>- White papers & analysis<br/>- Building the website"]
+
+    C -- "Focuses on..." --> F["<b>Advocacy & Lobbying</b><br/>- Independent expenditures<br/>- Direct lobbying for the treaty<br/>- Mobilizing voters"]
+
+    subgraph "Funding Sources"
+        Donors_c3["Donors (Tax-Deductible)"] --> B
+        Donors_c4["Donors (Not Deductible)"] --> C
+        Investors["Investors (Seeking Return)"] --> A
+    end
+
+    E -.->|"Informs"| F
+    F -.->|"Creates Mandate For"| A
+```
+
+#### 1. The 501(c)(3) Public Charity: "The Educator"
+
+**Primary Purpose:** Build broad public understanding through non-partisan research and education.
+
+**Permitted Activities:**
+- Publishing white papers, economic models, and strategic documents
+- Developing and maintaining public-facing website and educational materials
+- Hosting forums, webinars, and workshops
+- Conducting non-partisan analysis and research
+- Hiring staff for research, communications, and educational programs
+
+**Funding:** Tax-deductible donations from individuals and foundations.
+
+**Limitations:** Strictly prohibited from substantial lobbying or partisan political activity.
+
+#### 2. The 501(c)(4) Social Welfare Organization: "The Advocate"
+
+**Primary Purpose:** Advocate directly for 1% Treaty adoption and related policies.
+
+**Permitted Activities:**
+- Unlimited lobbying with legislators and policymakers
+- Independent expenditure campaigns supporting aligned candidates
+- Voter mobilization and direct calls to action
+
+**Funding:** Non-tax-deductible donations allowing political work.
+
+**Limitations:** Must maintain strict financial and operational separation from 501(c)(3).
+
+#### 3. The For-Profit / Foundation: "The Engine"
+
+**Primary Purpose:** Manage VICTORY Bond sales, fund dFDA development, provide investor returns.
+
+**Permitted Activities:**
+- Issuing securities and managing investor relations
+- Funding technology development and operational scaling
+- Managing DIH treasury and executing investor payouts
+
+**Legal Structure:** Delaware C-Corporation or Cayman Islands foundation optimized for global investment and crypto-asset management.
+
+## Regulatory Reform Agenda
+
+### HHS Policy Recommendations
+
+To maximize the effectiveness of the dFDA platform, we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source, decentralized FDA platform enabling perpetual, patient-driven clinical trials.
+
+**Key Policy Objectives:**
+
+1. **Enable Perpetual Trials:** Real-time global patient participation with automated matching and dynamic protocol adjustments
+2. **Clarify Pricing Mechanisms:** Allow drug companies to set per-participant prices under FDA regulations (21 CFR 312.8)
+3. **Redirect NIH Funding:** Transition research toward dFDA-leveraging projects
+4. **Leverage Medicare/Medicaid:** Utilize existing provisions for clinical trial participation
+5. **Incentivize Innovation:** Launch \$500M X Prize for platform development
+
+**Projected Impact:**
+- Support 61+ million participants annually (\$30.6B ÷ \$500 per participant)
+- Potential for 160+ million participants with Medicare/Medicaid integration
+- Trillions in global healthcare savings
+- Months instead of years from discovery to deployment
+
+### Priority Regulations for Modification
+
+**High-Priority Streamlining Targets:**
+
+1. **21 CFR Part 312 (IND Applications):** Streamlined CMC requirements, flexible preclinical data, accelerated reviews for certified platforms
+
+2. **21 CFR Parts 56 & 45 CFR Part 46 (IRBs):** Enforce single IRB mandate, standardize requirements, enable AI-assisted review
+
+3. **ICH E6(R2) GCP Guidelines:** Risk-based quality management, reduced documentation for automated platforms, remote monitoring standards
+
+4. **21 CFR 312.32 (IND Safety Reporting):** Automated safety reporting from platforms, AI-based signal detection, aggregate reporting for known events
+
+5. **21 CFR Parts 50 & 45 CFR Part 46 (Informed Consent):** Electronic consent validation, dynamic consent for adaptive trials, simplified waivers
+
+**Revolutionary Exemptions for Certified Platforms:**
+
+- **Radical Device Simplification:** Class I/II devices require only registration if evaluated via certified dFDA
+- **Platform-Based Post-Market Surveillance:** Replace traditional REMS programs with real-time platform monitoring
+- **Dynamic Digital Labeling:** FDA-approved systems for rapid label updates based on platform data
+- **Integrated Combination Product Review:** Single coordinated assessment using unified platform data
+
 ## The Bottom Line
 
 **Legal compliance is achievable through strict entity separation, jurisdiction-specific expertise, and conservative interpretation of regulations.** The key is building robust firewalls between international strategy and domestic political activities while maintaining strategic coherence through public commitments rather than private coordination.
 
 **Investment Required:** \$15-25M annually for legal compliance across all jurisdictions, but this prevents \$100M+ in potential penalties and shutdown risk.
+
+**Regulatory Reform Opportunity:** The current regulatory framework can be significantly streamlined without new legislation, potentially reducing development costs by 80%+ and accelerating treatment access from years to months.
