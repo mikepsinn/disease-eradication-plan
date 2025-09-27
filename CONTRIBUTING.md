@@ -73,6 +73,11 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 
 **The Voice Test:** Would this make someone laugh AND think? If not, add more absurdity or more facts.
 
+**Additional Humor Guidelines:**
+- **Humor Should Enhance, Not Distract:** Jokes should make the argument more memorable, not weaker. If a joke doesn't add insight, cut it. Dark observations > cheap shots. Absurd but true > absurd but false.
+- **Emulate Style, Don't Quote:** Channel Vonnegut's dark humor and cosmic irony, but don't use his actual phrases ("so it goes", "listen:", etc.). Create original observations in that style instead of borrowing catchphrases.
+- **Don't Insult Unless It's Really Funny:** If you must make a joke about a group, it needs to be either: (a) So funny it's worth the risk, OR (b) About abstract "systems" not specific people/companies
+
 **Voice and Tone: Principled, Blunt, and Credible**
 
 **The Target and the Tone: Aim at the System, Speak to the "Us"**

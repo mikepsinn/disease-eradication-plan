@@ -10,7 +10,7 @@ This is the master checklist for completing and launching the book, website, and
     - [ ] Review and finalize `_quarto.yml` to ensure all book, website, and presentation settings are correct.
     - [ ] Confirm Python virtual environment (`dih-project-kernel`) is correctly configured and documented.
 - [ ] **Standards & Guidelines:**
-    - [ ] Review `CONTRIBUTING.md` to ensure all guidelines are up-to-date and clear for all contributors.
+    - [x] Review `CONTRIBUTING.md` to ensure all guidelines are up-to-date and clear for all contributors.
     - [ ] Review `brain/book/references.md` for formatting consistency and sort all entries alphabetically.
 - [ ] **Asset Management:**
     - [ ] Create a central directory for Python visualization scripts (e.g., `scripts/charts/`).
@@ -33,7 +33,6 @@ This phase involves a thorough review of every document listed in the official T
 - **1.1 The Cost of War: Humanity's Most Expensive Hobby (`/brain/book/problem/cost-of-war.md`)**
     - [ ] Review for tone and humor (dark humor about human stupidity, absurd analogies).
     - [ ] Verify all claims are sourced to `references.md`.
-    - [ ] Add proper Citations section at the end with full quotes and hyperlinks.
     - [ ] Identify opportunities for and create Python-generated visuals (e.g., chart comparing military spending to other sectors).
 - **1.2 The Cost of Disease: A Slow-Motion Apocalypse (`/brain/book/problem/cost-of-disease.md`)**
     - [ ] Review for tone and humor.
