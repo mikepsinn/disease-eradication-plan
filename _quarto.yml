@@ -9,7 +9,21 @@ book:
   date: "today"
   chapters:
     - index.qmd
-    - brain/book/solution/dih.qmd
+    - part: "The Problem"
+      chapters:
+        - brain/book/problem/the-evolutionary-trap.md
+        - brain/book/problem/cost-of-war.md
+        - brain/book/problem/cost-of-disease.md
+    - part: "The Solution"
+      chapters:
+        - brain/book/solution/1-percent-treaty.md
+        - brain/book/solution/dih.qmd
+        - brain/book/solution/dfda.md
+        - brain/book/solution/wishocracy.md
+    - part: "The Proof"
+      chapters:
+        - brain/book/proof/historical-precedents.md
+        - brain/book/proof/body-as-repairable-machine.md
 
 execute:
   # Relaunch kernel for each render

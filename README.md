@@ -100,6 +100,7 @@ graph TD;
 ## Table of Contents
 
 ### Chapter 1: The Problem: A $119 Trillion Mistake
+*   1.0 [Why We're Like This: The Evolutionary Trap](./brain/book/problem/the-evolutionary-trap.md)
 *   1.1 [The Cost of War: Humanity's Most Expensive Hobby](./brain/book/problem/cost-of-war.md)
 *   1.2 [The Cost of Disease: A Slow-Motion Apocalypse](./brain/book/problem/cost-of-disease.md)
 *   1.3 [The System is Broken: Why We Don't Have Cures](./brain/book/problem/why-the-system-is-broken.md)
@@ -126,6 +127,7 @@ graph TD;
 *   5.1 [Precedent 1: The 80X Efficiency Gain is Already Proven](./brain/book/reference/recovery-trial.md)
 *   5.2 [Precedent 2: How Humans Have Done This Before](./brain/book/proof/historical-precedents.md)
 *   5.3 [Precedent 3: Historical Evidence for Decentralized Trials](./brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.md)
+*   5.4 [The Biological Truth: Your Body is a Machine That Can Be Fixed](./brain/book/proof/body-as-repairable-machine.md)
 
 ### Chapter 6: Join the War on Disease
 *   6.1 [How You Can Help](./brain/book/call-to-action.md)
