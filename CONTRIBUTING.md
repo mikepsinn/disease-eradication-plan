@@ -21,16 +21,18 @@ dateCreated: "2025-09-09T00:00:00.000Z"
   - [4. Sourcing and Citation Standard (CRITICAL)](#4-sourcing-and-citation-standard-critical)
   - [5. Technical Standards](#5-technical-standards)
   - [6. Naming, Linking, and Formatting](#6-naming-linking-and-formatting)
+  - [7. Visualizations and Diagrams](#7-visualizations-and-diagrams)
 - [Automation and CI](#automation-and-ci)
 
 
 
 ## Core Principles
 
-This repository documents the "War on Disease," a mission to make curing people more profitable than killing them. It is structured as a book that can be read from start to finish. Our communication style is designed to be memorable, persuasive, and cut through the noise.
+This repository documents "The Complete Idiot's Guide to Ending War and Disease," a book about getting every nation to sign the **1% Treaty** to redirect 1% of military spending to cure diseases instead of cause them. The plan involves creating a **Wishocratically governed** (using randomized pairwise preference allocations where everyone divides budget allocations between random pairs of priorities) global **Decentralized Institutes of Health (DIH)** that subsidizes patient participation in **80X more efficient decentralized pragmatic clinical trials**. All data flows through the **Decentralized FDA (dFDA)** which provides **Outcome Labels** for every food and drug, plus personalized treatment effectiveness rankings for all diseases.
 
 - **Primary Framing:** "Make curing people more profitable than killing them." / "Bribe our way to a better world."
 - **Secondary Framing:** "Make peace more profitable than war." / "Capture the peace dividend."
+- **The Mission:** Trick humanity into redirecting 1% of its murder budget to not dying instead
 - **Anchor in Public Choice Theory:** All strategic arguments must be framed through the lens of public choice theory. Assume that all actors (politicians, corporate leaders, voters) act in their own rational self-interest. Avoid arguments based on abstract "national interests" and instead focus on the specific, concrete incentives that drive individual decision-makers.
 - **Be Specific About the Goal:** Avoid generic phrases like "saving the world." Our objective is specific and measurable: to redirect 1% of global military spending toward curing disease. Frame the mission in these concrete terms, as the first step toward the complete eradication of war and disease. If you need shorthand for the goal say "End War and Disease" instead of "Save the World" or such nonsense
 - **Identify the Incentive Gaps:** Frame the _problem_ not as a moral failure, but as a system with flawed incentives. The status quo is a rational response by individuals to a system that rewards rent-seeking and concentrates benefits for a few while diffusing costs to the many.
@@ -45,17 +47,31 @@ This repository documents the "War on Disease," a mission to make curing people 
 
 ## Writing Style Guide
 
+**The Tone: Dark Humor Meets Practical Hope**
+
+We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Kurt Vonnegut explaining economics to drunk people at a funeral.
+
 **The 4 Core Checks:**
 1. **Clarity:** Can I say this to my mom and have her understand?
 2. **Credibility:** Would I stake my reputation on this claim?
 3. **Concision:** Can I cut words without losing meaning?
 4. **Directness:** Does this sound like Kurt Vonnegut wrote it?
 
-**Automatic Red Flags (Rewrite Immediately):**
-- **Corporate Buzzwords:** "synergy," "activation," "paradigm shift," "stakeholder,"  "utilize," "facilitate" "world-class," "revolutionary," "unprecedented",  "world-class," "revolutionary," "unprecedented," "cutting-edge," "state-of-the-art," "best-in-class"
-- **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
+**Essential Elements to Include:**
+- **Dark humor about death and human stupidity** - We're all dying anyway, might as well laugh
+- **Cynical but loving observations about humanity** - We're idiots, but we're OUR idiots
+- **Simple, conversational language** - No jargon, write like you're explaining to a smart drunk friend
+- **Absurd but accurate analogies** - "The FDA is like a lifeguard who checks if the life preserver is safe while you drown"
+- **A sense of cosmic irony** - The universe is laughing at us, we might as well join in
+- **Practical solutions presented as obvious common sense** - "What if sick people could just... try treatments?"
 
-**The Warren Buffett test:** Clear, factual, no drama, treats readers like adults.
+**Automatic Red Flags (Rewrite Immediately):**
+- **Corporate Buzzwords:** "synergy," "activation," "paradigm shift," "stakeholder," "utilize," "facilitate" "world-class," "revolutionary," "unprecedented", "cutting-edge," "state-of-the-art," "best-in-class"
+- **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
+- **Euphemisms for death:** Just say "die" or "death" - we're adults here
+- **Academic pomposity:** If you sound like a textbook, rewrite it
+
+**The Voice Test:** Would this make someone laugh AND think? If not, add more absurdity or more facts.
 
 **Voice and Tone: Principled, Blunt, and Credible**
 
@@ -190,16 +206,16 @@ dateCreated: "YYYY-MM-DDTHH:MM:SS.sssZ"
 
 ### 4. Sourcing and Citation Standard (CRITICAL)
 
-**Every claim needs a source.** All sources go in `brain/book/references.md`.
+**Every claim needs a source.** All source quotes go in `brain/book/references.md`.
+
 
 1. Check if your source is already there
 2. If yes, link to it: `[your claim](./references.md#anchor-id)`
 3. If no, add it using the format you see in that file
-4. Use good sources (not random blogs)
 
-Example: `[The world spends 40x more on war](./references.md#sipri-2024) than on [curing disease](./references.md#med-research-funding).`
+Example in-text: `[The world spends 40x more on war](./references.md#sipri-2024) than on [curing disease](./references.md#med-research-funding).`
 
-Format for new references:
+Format for new references in `references.md`:
 ```markdown
 <a id="unique-anchor-id"></a>
 
@@ -235,6 +251,13 @@ This keeps everything in one place and prevents broken links.
 - **Dollar Sign Escaping:** Always escape dollar signs (`\$`) in regular text to prevent rendering issues (e.g., `\$27B`). Do not escape them inside backticked code blocks.
 - **Code vs. Links:** Use backticks only for code, commands, or literals—not for navigational references.
 - **Sentence Structure:** Each sentence must start on a new line. This makes diffs cleaner, editing easier, and git blame more useful. Break after every period, question mark, or exclamation point.
+
+### 7. Visualizations and Diagrams
+
+To make the content more engaging and easier to understand, we will use Python-generated charts and diagrams with a minimalistic and classy aesthetic. Quarto provides excellent tools for this.
+
+- **Diagrams:** For flowcharts, sequence diagrams, etc., please use Mermaid syntax. See the [Quarto Diagrams Guide](https://quarto.org/docs/authoring/diagrams.html) for implementation details.
+- **Python Charts:** For data visualizations, use Python libraries like Matplotlib or Plotly, executed within Quarto. For guidance, refer to the [Quarto Guide for Using Python](https://quarto.org/docs/computations/python.html).
 
 ## Automation and CI
 
