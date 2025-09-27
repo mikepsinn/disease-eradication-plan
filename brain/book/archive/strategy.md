@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This organizational file provided chapter-level navigation but is not directly referenced in README.md table of contents. Content serves as structural overview linking to specific files that are referenced in the TOC. Date archived: 2025-01-15 -->
+
 ---
 title: "Strategy → How to Bribe Literally Everyone"
 description: "The execution strategy is not based on moral persuasion but on a superior, direct financial bribe for everyone, from citizens to the military-industrial complex."

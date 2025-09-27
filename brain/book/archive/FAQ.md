@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This comprehensive FAQ content contains valuable Q&A addressing common objections and could become a future chapter. Currently not referenced in README.md table of contents but maintains high-quality content for potential integration. Date archived: 2025-01-15 -->
+
 ---
 title: "FAQ → Objections & Responses"
 description: "Addressing the common objections, frequently asked questions, and critical counter-arguments to the DIH and 1% Treaty proposal."

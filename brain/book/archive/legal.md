@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This organizational file provided chapter-level navigation but is not directly referenced in README.md table of contents. Content serves as structural overview linking to specific files that are referenced in the TOC. Date archived: 2025-01-15 -->
+
 ---
 title: "Legal → How to Stay Out of Prison"
 description: "The legal framework is designed for maximum compliance and resilience, utilizing a multi-entity global structure and rigorous adherence to international securities and election law."

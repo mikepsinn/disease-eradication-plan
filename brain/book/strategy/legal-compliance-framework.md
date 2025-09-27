@@ -238,3 +238,66 @@ Swiss Foundation (Treaty Coordination)
 **Legal compliance is achievable through strict entity separation, jurisdiction-specific expertise, and conservative interpretation of regulations.** The key is building robust firewalls between international strategy and domestic political activities while maintaining strategic coherence through public commitments rather than private coordination.
 
 **Investment Required:** \$15-25M annually for legal compliance across all jurisdictions, but this prevents \$100M+ in potential penalties and shutdown risk.
+
+---
+
+## Recommended Multi-Entity Structure
+
+To successfully execute the 1% Treaty mission and achieve legal compliance, a sophisticated legal structure is required. The project's activities span charitable work, political advocacy, and for-profit investment, which cannot be housed within a single legal entity in most jurisdictions.
+
+### The Three-Entity Structure
+
+The most robust approach is to establish three separate but cooperating legal entities, each with distinct purposes and legal permissions:
+
+**1. For-Profit Entity / Foundation**
+- **Purpose:** Accept investments, sell VICTORY bonds, fund dFDA platform
+- **Legal Structure:** Cayman or Delaware corporation for flexibility
+- **Restrictions:** No direct political activities in US
+- **Revenue Streams:** Investment returns, token sales, platform revenue
+
+**2. 501(c)(3) Public Charity**  
+- **Purpose:** Education, research, public awareness on health policy
+- **Tax Benefits:** Donations are tax-deductible for donors
+- **Restrictions:** No political campaigning, limited lobbying
+- **Activities:** White papers, research, educational campaigns
+
+**3. 501(c)(4) Social Welfare Organization**
+- **Purpose:** Advocacy, lobbying, independent political expenditures
+- **Tax Status:** Donations not deductible, but unlimited political activity
+- **Activities:** Direct lobbying for treaty, voter mobilization, independent expenditures
+
+### Strategic Coordination Framework
+
+**Permitted Coordination:**
+- Shared mission and goals statements
+- Public information sharing and research
+- Common messaging on health policy benefits
+- Independent strategy development
+
+**Prohibited Coordination:**
+- Direct financial transfers between entities
+- Coordinated political campaign decisions
+- Shared staff in political activities
+- Joint control over expenditure decisions
+
+### Implementation Checklist
+
+**Legal Setup (Months 1-3):**
+- [ ] Establish all three legal entities with separate legal counsel
+- [ ] File appropriate IRS applications (Form 1023/1024)
+- [ ] Register with state and federal election authorities
+- [ ] Create separate governance boards with no overlapping members
+
+**Operational Setup (Months 3-6):**
+- [ ] Establish separate banking and accounting systems
+- [ ] Implement information firewalls between entities
+- [ ] Hire compliance officers for each entity
+- [ ] Create detailed internal compliance policies
+
+**Ongoing Compliance (Ongoing):**
+- [ ] Regular legal audits of coordination and separation
+- [ ] Financial disclosure filings as required
+- [ ] Board governance training on legal restrictions
+- [ ] Public transparency reporting on all activities
+
+This multi-entity structure ensures mission achievement while maintaining strict legal compliance across all jurisdictions and activity types.

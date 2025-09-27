@@ -1,3 +1,8 @@
+<!-- ARCHIVED: Content from this file has been extracted and merged into:
+- /brain/book/strategy/legal-compliance-framework.md (Multi-Entity Structure section)
+This file is preserved for reference but is no longer actively maintained.
+Date archived: 2025-01-15 -->
+
 ---
 title: Multi-Entity Strategy for Legal Compliance and Mission Execution
 description: "Outlines the recommended legal structure using separate entities (501(c)(3), 501(c)(4), and a for-profit/foundation) to legally manage donations, investments, and political advocacy."

@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This organizational file provided chapter-level navigation but is not directly referenced in README.md table of contents. Content serves as structural overview linking to specific files that are referenced in the TOC. Date archived: 2025-01-15 -->
+
 ---
 title: "Governance → How the People Who Pay Get to Vote"
 description: "The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous 'to-do list for humanity' governed by the people who use it."

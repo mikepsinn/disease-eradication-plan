@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This organizational file provided chapter-level navigation but is not directly referenced in README.md table of contents. Content serves as structural overview linking to specific files that are referenced in the TOC. Date archived: 2025-01-15 -->
+
 ---
 title: "Problem → We Spend More on Bombs Than Cancer Research"
 description: "Humanity spends trillions on war and destruction while the systems meant to cure disease are slow, expensive, and exclusionary. This is the core problem we must solve."

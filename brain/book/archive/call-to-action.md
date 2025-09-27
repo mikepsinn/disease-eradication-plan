@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This file provides supporting content but is not directly referenced in README.md table of contents. Content may be valuable for future integration or as reference material. Date archived: 2025-01-15 -->
+
 ---
 title: "Join → I Want You"
 description: "This is a global mission, and victory requires a global coalition. Here are the specific, actionable ways you can contribute today."

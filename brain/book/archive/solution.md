@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This organizational file provided chapter-level navigation but is not directly referenced in README.md table of contents. Content serves as structural overview linking to specific files that are referenced in the TOC. Date archived: 2025-01-15 -->
+
 ---
 title: "Solution → The 1% Treaty"
 description: "The solution is a simple, rational, and profound global accord: The 1% Treaty. By redirecting a tiny fraction of military spending, we can make curing people more profitable than killing them."

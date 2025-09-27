@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This file provides supporting content but is not directly referenced in README.md table of contents. Content may be valuable for future integration or as reference material. Date archived: 2025-01-15 -->
+
 ---
 title: "Source Quotes and References"
 description: "Comprehensive collection of source quotes, citations, and references supporting all claims made throughout the War on Disease documentation."

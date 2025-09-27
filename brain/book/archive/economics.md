@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This organizational file provided chapter-level navigation but is not directly referenced in README.md table of contents. Content serves as structural overview linking to specific files that are referenced in the TOC. Date archived: 2025-01-15 -->
+
 ---
 title: "Economics → How to Make Peace More Profitable Than War"
 description: "The economic model that makes the DIH possible. This chapter details the Peace Dividend, VICTORY Bonds, and the investment thesis that makes peace more profitable than war."

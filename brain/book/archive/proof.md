@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This organizational file provided chapter-level navigation but is not directly referenced in README.md table of contents. Content serves as structural overview linking to specific files that are referenced in the TOC. Date archived: 2025-01-15 -->
+
 ---
 title: "Proof → Why This Isn't Insane"
 description: "The DIH strategy is not theoretical. It is a synthesis of proven historical models, from the financial engineering of WWII War Bonds to the citizen-led victory of the International Campaign to Ban Landmines."

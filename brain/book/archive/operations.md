@@ -1,3 +1,5 @@
+<!-- ARCHIVED: This organizational file provided chapter-level navigation but is not directly referenced in README.md table of contents. Content serves as structural overview linking to specific files that are referenced in the TOC. Date archived: 2025-01-15 -->
+
 ---
 title: "Operations → Hiring Smart People and Getting Out of the Way"
 description: "The operational philosophy is to build a small, elite 'activation team' whose goal is to create a self-sustaining protocol and then make themselves obsolete."
