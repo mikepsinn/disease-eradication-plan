@@ -5,25 +5,54 @@ project:
 
 book:
   title: "The Complete Idiot's Guide to Ending War and Disease"
+  subtitle: "How to Redirect 1% of Military Spending to Cure Disease and Create the Most Profitable Investment in History"
   author: "Mike P. Sinn"
   date: "today"
+  description: "A practical guide to getting every nation to sign the 1% Treaty - redirecting just 1% of military spending to fund 80X more efficient medical research through decentralized clinical trials."
+  cover-image: cover.jpg
+  favicon: favicon.ico
+  site-url: https://dih.wiki
+  repo-url: https://github.com/mikepsinn/decentralized-institutes-of-health
+  issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   chapters:
     - index.qmd
-    - part: "The Problem"
+    - part: "Chapter 1: The Problem: A $119 Trillion Mistake"
       chapters:
         - brain/book/problem/the-evolutionary-trap.md
         - brain/book/problem/cost-of-war.md
         - brain/book/problem/cost-of-disease.md
-    - part: "The Solution"
+        - brain/book/problem/why-the-system-is-broken.md
+        - brain/book/problem/nih-funding-is-broken.md
+        - brain/book/problem/fda-approvals-are-broken.md
+        - brain/book/problem/democracy-is-broken.md
+    - part: "Chapter 2: The Solution: A Better Deal"
       chapters:
         - brain/book/solution/1-percent-treaty.md
         - brain/book/solution/dih.qmd
         - brain/book/solution/dfda.md
         - brain/book/solution/wishocracy.md
-    - part: "The Proof"
+    - part: "Chapter 3: Economics: How Individuals and Society can both Profit from Peace"
       chapters:
+        - brain/book/economics/victory-bonds.qmd
+        - brain/book/economics/economic-impact-summary.md
+    - part: "Chapter 4: The Strategy: How to Bribe the World (Legally)"
+      chapters:
+        - brain/book/strategy/co-opt-dont-compete.md
+        - brain/book/strategy/global-referendum.md
+        - brain/book/strategy/legal-compliance-framework.md
+    - part: "Chapter 5: The Proof: Why This Isn't Completely Insane"
+      chapters:
+        - brain/book/reference/recovery-trial.md
         - brain/book/proof/historical-precedents.md
+        - brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.md
         - brain/book/proof/body-as-repairable-machine.md
+    - part: "Chapter 6: The Futures: Choose Your Own Adventure"
+      chapters:
+        - brain/book/futures/dystopia-skynet-wins.md
+        - brain/book/futures/utopia-health-and-happiness.md
+    - part: "Chapter 7: Join the War on Disease"
+      chapters:
+        - brain/book/call-to-action.md
 
 execute:
   # Relaunch kernel for each render
@@ -38,9 +67,41 @@ format:
     theme: 
       - brite
       - neobrutalist.scss
-    # theme: lux also nice (https://bootswatch.com/brite/)
+    # Alternative themes: lux, flatly, sandstone, minty
     echo: false
     number-sections: false
+    toc: true
+    toc-depth: 3
+    css: styles.css
+    include-in-header: 
+      - text: |
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:title" content="The Complete Idiot's Guide to Ending War and Disease">
+          <meta name="twitter:description" content="How to redirect 1% of military spending to cure disease and create the most profitable investment in history">
+          <meta property="og:title" content="The Complete Idiot's Guide to Ending War and Disease">
+          <meta property="og:description" content="How to redirect 1% of military spending to cure disease and create the most profitable investment in history">
+          <meta property="og:type" content="book">
   pdf:
     documentclass: scrreprt
     echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+  revealjs:
+    theme: dark
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    center: true
+    fig-cap-location: bottom
+    chalkboard: true
+    multiplex: true
+    controls: true
+    navigation-mode: vertical
+    progress: true
