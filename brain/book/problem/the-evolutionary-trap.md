@@ -140,7 +140,7 @@ The choice is evolution or extinction. And this time, we don't have 50,000 years
 
 We have maybe 50.
 
-So it goes.
+
 
 ---
 
