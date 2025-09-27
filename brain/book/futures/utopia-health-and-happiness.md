@@ -325,6 +325,40 @@ Choose the [War on Disease](#join-the-war).
 
 Your future self (who lives to 150) will thank you.
 
+<!-- BEGIN CONTENT MERGED FROM strategy/the-endgame-phasing-out-war.md -->
+
+## The Multi-Generational Strategy: Phasing Out War Over 100-200 Years
+
+The 1% Treaty is not the end goal—it's the crucial first step in a multi-generational strategy to systematically render organized violence economically obsolete.
+
+### The Incremental Ratcheting Mechanism
+
+Our long-term vision is to create a world where economic incentives for cooperation so vastly outweigh incentives for conflict that war becomes a relic of a less rational past.
+
+**The Process:** Every 5-10 years, global referendums will incrementally increase the redirection percentage by politically palatable amounts (0.5% or 1%).
+
+**The Ratchet Effect:** Each successful increase expands the DIH treasury, providing more health funding, creating more value for VICTORY holders, and building larger coalitions of stakeholders who advocate for the *next* increase.
+
+**The Timeline:** Over 100-200 years, we can voluntarily redirect the vast majority of resources from military endeavors toward solving humanity's greatest challenges: disease, aging, poverty, and climate change.
+
+### The Economic Inevitability
+
+This isn't based on utopian hope but pragmatic understanding of incentives. As the DIH's budget grows from $27 billion to $100 billion, to $500 billion, and eventually over a trillion dollars annually, economic gravity shifts:
+
+- The world's most talented scientists are drawn to massive health opportunities
+- The largest investors see greater returns in curing disease than building weapons
+- Nations find true security comes from contributions to human flourishing, not capacity for destruction
+
+### The Multi-Generational Value Proposition
+
+For VICTORY bond holders, this long-term vision is the ultimate source of value. The initial investment thesis is based on governance over a $27 billion annual treasury. The true value is governance over a treasury designed to **grow perpetually**.
+
+An investment in VICTORY is an investment in a system designed to systematically capture the peace dividend, making it an asset with potential for multi-generational value appreciation unlike any other in financial history.
+
+The endgame: a world where we've redirected enough military spending that organized violence becomes economically irrational. Not through force, but through making peace more profitable than war.
+
+<!-- END CONTENT MERGED FROM strategy/the-endgame-phasing-out-war.md -->
+
 ---
 
 *Coming up next: [Join the War on Disease](../call-to-action.md), where we show you exactly how to make this utopia your reality.*
