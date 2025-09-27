@@ -122,6 +122,7 @@ graph TD;
 *   4.1 [The Core Strategy: We Don't Fight Them, We Buy Them](./brain/book/strategy/co-opt-dont-compete.md)
 *   4.2 [Step 1: Ask 280 Million People if They Want to Live](./brain/book/strategy/global-referendum.md)
 *   4.3 [Step 2: Pay the Lawyers So We Don't Go to Prison](./brain/book/strategy/legal-compliance-framework.md)
+*   4.4 [Step 3: Raise $2.5B to Bribe Everyone](./brain/book/strategy/fundraising-strategy.md)
 
 ### Chapter 5: The Proof: Why This Isn't Completely Insane
 *   5.1 [Precedent 1: The 80X Efficiency Gain is Already Proven](./brain/book/reference/recovery-trial.md)
@@ -135,3 +136,7 @@ graph TD;
 
 ### Chapter 7: Join the War on Disease
 *   7.1 [How You Can Help](./brain/book/call-to-action.md)
+
+### Appendix: Reference Materials
+*   A.1 [Frequently Asked Questions](./brain/book/reference/faq.md)
+*   A.2 [Operations and Roadmap](./brain/book/reference/operations-roadmap.md)
