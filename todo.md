@@ -121,9 +121,23 @@ This phase involves a thorough review of every document listed in the official T
     - [ ] Source all scientific claims to `references.md`
     - [ ] Create visual comparing car maintenance/restoration to human body repair
 
-### Chapter 6: Join the War on Disease
+### Chapter 6: The Futures
 
-- **6.1 How You Can Help (`/brain/book/call-to-action.md`)**
+- **6.1 The Dystopia: What Happens When We Keep Building Skynet (`/brain/book/futures/dystopia-skynet-wins.md`)**
+    - [ ] Review for tone and dark humor balance.
+    - [ ] Verify all claims are sourced to `references.md`.
+    - [ ] Create timeline visualization showing military AI development vs disease deaths.
+    - [ ] Add chart comparing military spending to potential medical breakthroughs.
+- **6.2 The Utopia: The World After We Choose Life Over Death (`/brain/book/futures/utopia-health-and-happiness.md`)**
+    - [ ] Review for tone and inspirational quality.
+    - [ ] Verify all claims are sourced to `references.md`.
+    - [ ] Create visualization showing the treaty progression (1% to 50% over time).
+    - [ ] Add chart showing life expectancy and quality of life improvements.
+    - [ ] Create economic model visualization of the peace dividend growth.
+
+### Chapter 7: Join the War on Disease
+
+- **7.1 How You Can Help (`/brain/book/call-to-action.md`)**
     - [ ] Review for clarity and tone.
     - [ ] Ensure all links are correct and actionable.
 
