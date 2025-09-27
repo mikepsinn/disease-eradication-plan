@@ -58,6 +58,9 @@ execute:
   # Relaunch kernel for each render
   cache: false
   freeze: auto
+  # Send all generated figures to a central directory
+  fig-path: "assets/charts/"
+  fig-prefix: "{{< meta doc-title >}}-"
 
 # Tell Quarto to use the project's virtual environment
 jupyter: dih-project-kernel

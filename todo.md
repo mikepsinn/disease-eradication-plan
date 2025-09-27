@@ -13,8 +13,9 @@ This is the master checklist for completing and launching the book, website, and
     - [x] Review `CONTRIBUTING.md` to ensure all guidelines are up-to-date and clear for all contributors.
     - [ ] Review `brain/book/references.md` for formatting consistency and sort all entries alphabetically.
 - [ ] **Asset Management:**
-    - [ ] Create a central directory for Python visualization scripts (e.g., `scripts/charts/`).
+    - [x] Create a central directory for Python visualization scripts (e.g., `brain/charts/`).
     - [ ] Establish a consistent, minimalistic, and classy aesthetic/theme for all Python-generated visuals.
+    - [ ] Create a central Python module (`brain/charts/theme.py`) to provide a reusable theme and watermarking function for all Matplotlib charts.
 
 ---
 
