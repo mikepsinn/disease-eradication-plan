@@ -298,6 +298,98 @@ You chose life.
 Thank you.
 Your great-great-great grandchildren (who you'll meet) are grateful.
 
+---
+
+## The Great Ratchet: From 1% to Everything
+
+The 1% Treaty was just the beginning—the first turn of a great ratchet that systematically shifts our civilization from a zero-sum game of conflict to a positive-sum game of creation.
+
+When the first 1% worked so well that cancer got cured and people stopped dying of preventable diseases, everyone wanted more. Citizens voted for it. Politicians supported it because their voters demanded it.
+
+Once we proved that spending money on cures instead of bombs actually worked, the next referendum wasn't about whether to continue—it was about how fast we could redirect the rest.
+
+### The Timeline of Transformation
+
+**2030: The 1% Treaty**
+- $270 billion per year redirected to medical research
+- Genetic diseases cured in days, cancer becomes treatable
+- Life expectancy increases significantly
+
+**2035: The 2% Treaty**  
+- $540 billion annually for health research
+- Aging mechanisms understood and partially controlled
+- Death from old age becomes increasingly optional
+
+**2045: The 5% Treaty**
+- $1.35 trillion focused on brain research and mental health
+- Depression, anxiety, and mental suffering become solved problems
+- Superhappiness becomes achievable
+
+**2055: The 20% Treaty**
+- $2.72 trillion per year for comprehensive human enhancement
+- Safe brain enhancement enables superintelligence
+- Climate change, poverty, and hunger are solved with abundant focus and funding
+
+**2065: The 50% Treaty**
+- Massive populations living in space with abundant clean energy
+- War, disease, poverty, hunger, and climate change become historical problems
+
+**2075: The 100% Treaty**
+- The last military budget gets redirected
+- Violence becomes as rare as cannibalism—not forbidden, but unwanted
+- Humanity explores space instead of destroying itself
+
+Each turn of the wheel locks in the gains and makes the next turn easier. We systematically and voluntarily phase out the global war economy by offering a demonstrably superior investment vehicle for solving every major challenge facing humanity.
+
+## A Civilization Reborn: The Economics of True Abundance
+
+What happens to a world that no longer bears the twin burdens of disease and war? It becomes a civilization where every major human challenge has been solved.
+
+**The Economic Transformation:**
+- **Healthcare costs approach zero** - With aging reversed and diseases cured, the multi-trillion dollar "sick care" industry is repurposed for creation
+- **The $16.5 trillion annual cost of conflict is repurposed** - Capital once wasted on destruction now builds clean energy, space habitats, and consciousness enhancement  
+- **Human capital becomes infinite** - When every person can choose their biological age, control their mental state, and augment their intelligence, potential becomes limitless
+
+**The Impossible Becomes Inevitable:**
+- **Climate change is reversed** - Massive investments in fusion energy and geoengineering restore pre-industrial climate patterns
+- **Poverty is extinct** - Post-scarcity manufacturing makes necessities freely available to everyone
+- **Space becomes home** - Self-sustaining colonies throughout the solar system provide unlimited room to explore
+
+## The Three Supers: Humanity's Full Potential
+
+In this economy of abundance, the Three Supers are not sci-fi dreams—they are the industrial output of a civilization aligned with its grandest possibilities:
+
+### Superlongevity
+You choose your lifespan. Death from aging becomes as obsolete as death from smallpox. Humanity's planning horizon extends from decades to millennia. Your great-grandchildren will read about people dying of cancer the way you read about dying from polio.
+
+### Superhappiness  
+We master the biological mechanisms of consciousness itself. Depression, anxiety, and suffering become treatable conditions. The default human experience becomes profound well-being, creativity, and joy.
+
+### Superintelligence
+A global population of trillions of ageless, blissful minds, each augmented by AI, directs collective intelligence toward the universe's deepest mysteries—and solves them.
+
+This is not about becoming post-human; it's about becoming **fully human** for the first time. A species finally free to explore its unlimited potential without the constraints of scarcity, conflict, disease, or death.
+
+## The Mathematics of Transcendence
+
+These transformations aren't wishful thinking—they're the mathematically inevitable result of redirecting humanity's resources toward creation rather than destruction.
+
+**Current Misallocation:**
+- Global military spending: $2.44 trillion annually
+- Global medical research: $67.5 billion annually  
+- **Ratio: 36:1 toward destruction**
+
+**Future Allocation:**
+- Global health and enhancement: $2.5+ trillion annually
+- Remaining defense (for actual security): $200 billion annually
+- **Ratio: 12.5:1 toward creation**
+
+The compound returns on investing in human potential rather than human destruction create exponential improvements in every aspect of human flourishing.
+
+---
+
+*This future isn't guaranteed—it's the result of choices we make today. The 1% Treaty is humanity's first step toward this magnificent destiny.*
+
 P.S. The chocolate thing is real. For some genetics, it's basically medicine. Science is weird and wonderful when you fund it.
 
 ## Your Choice

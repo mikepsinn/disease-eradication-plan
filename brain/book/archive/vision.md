@@ -1,3 +1,8 @@
+<!-- ARCHIVED: Content from this file has been extracted and merged into:
+- /brain/book/futures/utopia-health-and-happiness.md (The Great Ratchet, Three Supers, and long-term vision sections)
+This file is preserved for reference but is no longer actively maintained.
+Date archived: 2025-01-15 -->
+
 ---
 title: "Vision → A World Without War and Disease"
 description: "The ultimate vision of the DIH: a world where humanity's vast resources are redirected from conflict to curing disease, unlocking superlongevity, superhappiness, superintelligence, and an age of unprecedented abundance."

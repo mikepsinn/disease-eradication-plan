@@ -1,8 +1,3 @@
-<!-- ARCHIVED: Content from this file has been extracted and merged into:
-- /brain/book/economics/victory-bonds.qmd (Section 6.5 - The dFDA Returns: 463:1 ROI breakdown)
-This file is preserved for reference but is no longer actively maintained.
-Date archived: 2025-01-15 -->
-
 ---
 title: dFDA Cost Benefit Analysis and Return on Investment
 description: How to slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver an ROI of approximately 463:1.
