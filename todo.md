@@ -4,6 +4,58 @@ This is the master checklist for completing and launching the book, website, and
 
 **UPDATED STRATEGY (2025-09-27):** Write first, research later. Focus on getting all content written with placeholder citations, then do a systematic research pass.
 
+## Phase 0.5: Healthcare Integration Clarity (IN PROGRESS)
+
+### Files Updated with Insurance/Integration Model: ✅
+
+- [x] **Core Conceptual Work:**
+    - [x] Created `brain/book/solution/dih-integration-model.md` - Comprehensive insurance model explanation
+    - [x] Updated `brain/book/solution/dih.qmd` - Clarified DIH as trial insurance provider
+    - [x] Updated `brain/book/FAQ.md` - Added insurance model questions
+    - [x] Updated `index.qmd` - Clarified the process with insurance model
+    - [x] Updated `CONTRIBUTING.md` - Added healthcare integration as core principle
+
+### Files Still Need Updating:
+
+- [ ] **Solution Files:**
+    - [ ] `brain/book/solution/dfda.md` - Emphasize integration with EMRs and pharmacy networks
+    - [ ] `brain/book/solution/1-percent-treaty.md` - Update money flow diagrams
+
+- [ ] **Main Documentation:**
+    - [ ] `README.md` - Update "How It Works" section with insurance model
+
+- [ ] **Economics Files:**
+    - [ ] `brain/book/economics/victory-bonds.qmd` - Show how bonds fund insurance pool
+    - [ ] `brain/book/economics/economic-impact-summary.md` - Include insurance model efficiency gains
+
+### Key Messages to Emphasize:
+
+1. **DIH = Clinical Trial Insurance Provider** (not direct payment system)
+2. **Works WITHIN existing healthcare** (not replacing it)
+3. **Doctors remain gatekeepers** (like pre-1962 but with data)
+4. **Small copays** ($20-50) not "bribes" to patients
+5. **Familiar insurance model** (coverage, copays, claims)
+6. **Supplements existing insurance** (doesn't replace)
+7. **Pharmacies & doctors integrated** (no new infrastructure)
+
+### Integration Points to Clarify:
+
+- EMR integration (one-click trial enrollment)
+- Pharmacy networks (trial meds like regular scripts)
+- Insurance coordination (DIH covers what others won't)
+- Doctor workflows (trials alongside standard treatments)
+- Patient experience (familiar insurance card model)
+
+---
+
+## Phase 0: Core Improvements (COMPLETED)
+
+- [x] **Clarify Core Benefits Focus:**
+    - [x] Updated CONTRIBUTING.md to emphasize focusing on OUTCOMES (80X efficiency, speed, scale) over mechanisms (patient control, DAOs)
+    - [x] Revised DIH chapter to lead with concrete benefits: 80X cost efficiency, 10X speed, 1,000X treatments tested
+    - [x] Updated index.qmd to emphasize measurable outcomes in the 6-step process
+    - [x] Added emphasis on econometric optimization to minimize DALYs/maximize QALYs
+
 ---
 
 ## Phase 1: Foundation & Setup ✅

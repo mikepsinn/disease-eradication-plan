@@ -54,7 +54,15 @@ People have questions. Here are answers.
 
 ### 10. "How does this help patients vs. just funding more bureaucracy?"
 
-- **Reality:** The DIH flips the funding model on its head. Instead of grants going to institutions, the money is directed by the patient. Funding is allocated as direct subsidies for patients to enroll in eligible clinical trials. A computer program helps rank trials by which diseases kill the most people, but **patients make the final decision.** Researchers and institutions only get paid when patients choose to join their study. The best research gets the most patients because patients aren't stupid—they'll pick the studies that might actually help them.
+- **Reality:** The DIH functions as a clinical trial insurance provider. Instead of patients paying thousands to join trials, DIH covers all costs (medications, testing, travel, lost wages) while patients pay a small copay ($20-50). Your doctor can recommend trials like any treatment, your pharmacy dispenses trial meds like regular prescriptions, and everything integrates with existing healthcare infrastructure. It's not "paying patients" - it's removing the financial barriers that prevent 85% of patients from participating in research.
+
+### 10.5. "Do patients get paid directly? Isn't that unethical?"
+
+- **Reality:** No, patients are NOT paid directly. The DIH functions like an insurance company that covers clinical trial costs. Patients pay a small copay ($20-50) and DIH covers everything else - medications, testing, travel, lost wages, childcare. It's the same model as regular health insurance, but for experimental treatments. This maintains medical ethics while removing the financial barriers that currently exclude 85% of patients from trials.
+
+### 10.6. "How does this work with my existing insurance?"
+
+- **Reality:** The DIH supplements your existing insurance - it doesn't replace it. Think of it as "experimental treatment coverage" that kicks in when your regular insurance won't cover a treatment because it's still in trials. Your doctor can recommend trials alongside standard treatments, and you use your DIH coverage (via the 1% Treaty funding) just like you'd use any supplemental insurance. The pharmacy processes it the same way, you pay a small copay, and your regular insurance continues covering everything else.
 
 ### 11. "What about the millions of jobs in the defense industry? This is a threat to their livelihoods."
 
