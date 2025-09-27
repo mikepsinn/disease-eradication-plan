@@ -4,47 +4,74 @@ This is the master checklist for completing and launching the book, website, and
 
 **UPDATED STRATEGY (2025-09-27):** Write first, research later. Focus on getting all content written with placeholder citations, then do a systematic research pass.
 
-## Phase 0.5: Healthcare Integration Clarity (IN PROGRESS)
+## Phase 0.5: DIH as Free Market Alternative to NIH Central Planning (IN PROGRESS)
 
-### Files Updated with Insurance/Integration Model: ✅
+### Core Conceptual Reframing: NIH = Communism, DIH = Capitalism
 
-- [x] **Core Conceptual Work:**
-    - [x] Created `brain/book/solution/dih-integration-model.md` - Comprehensive insurance model explanation
-    - [x] Updated `brain/book/solution/dih.qmd` - Clarified DIH as trial insurance provider
-    - [x] Updated `brain/book/FAQ.md` - Added insurance model questions
-    - [x] Updated `index.qmd` - Clarified the process with insurance model
-    - [x] Updated `CONTRIBUTING.md` - Added healthcare integration as core principle
+**NEW FRAMING:** Position DIH as the free market/capitalist alternative to NIH's Soviet-style central planning. Leverage:
+- **Hayek's Information Theory**: Markets as superior information aggregation mechanisms
+- **Wisdom of Crowds**: Distributed decision-making beats expert committees
+- **Market Mechanisms**: Price signals, competition, and incentives vs bureaucracy
+- **Blockchain Question**: Evaluate if necessary for transparency/anti-corruption
 
-### Files Still Need Updating:
+### Files to Update with Market-Based Framing:
 
-- [ ] **Solution Files:**
-    - [ ] `brain/book/solution/dfda.md` - Emphasize integration with EMRs and pharmacy networks
-    - [ ] `brain/book/solution/1-percent-treaty.md` - Update money flow diagrams
+- [ ] **Core DIH Positioning:**
+    - [ ] `brain/book/solution/dih.qmd` - Reframe as market-based research funding system
+    - [ ] `brain/book/solution/dfda.md` - Emphasize market competition in trials
+    - [ ] `brain/book/solution/wishocracy.md` - Position as inequality-addressing mechanism within capitalist framework
+    - [ ] `brain/book/solution/1-percent-treaty.md` - Show transition from central planning to markets
 
-- [ ] **Main Documentation:**
-    - [ ] `README.md` - Update "How It Works" section with insurance model
+- [ ] **Problem Diagnosis (New Angle):**
+    - [ ] Chapter 1.3.1 "Why NIH is Terrible" - Frame as failure of central planning
+    - [ ] Add comparison: NIH grant committees = Soviet planning bureaus
+    - [ ] Show information bottlenecks and misallocated resources
 
-- [ ] **Economics Files:**
-    - [ ] `brain/book/economics/victory-bonds.qmd` - Show how bonds fund insurance pool
-    - [ ] `brain/book/economics/economic-impact-summary.md` - Include insurance model efficiency gains
+- [ ] **Economic Arguments:**
+    - [ ] `brain/book/economics/victory-bonds.qmd` - Markets pricing future health gains
+    - [ ] `brain/book/economics/economic-impact-summary.md` - Market efficiency vs bureaucratic waste
 
-### Key Messages to Emphasize:
+### Key Conceptual Shifts:
 
-1. **DIH = Clinical Trial Insurance Provider** (not direct payment system)
-2. **Works WITHIN existing healthcare** (not replacing it)
-3. **Doctors remain gatekeepers** (like pre-1962 but with data)
-4. **Small copays** ($20-50) not "bribes" to patients
-5. **Familiar insurance model** (coverage, copays, claims)
-6. **Supplements existing insurance** (doesn't replace)
-7. **Pharmacies & doctors integrated** (no new infrastructure)
+1. **NIH = Central Planning Problems:**
+   - Information bottlenecks (committees can't know all science)
+   - Political capture and bureaucratic incentives
+   - Slow adaptation to new information
+   - Winner-picking by committees vs market discovery
 
-### Integration Points to Clarify:
+2. **DIH = Market Solutions:**
+   - Distributed knowledge aggregation (Hayek)
+   - Competition between research approaches
+   - Price signals for research value
+   - Rapid iteration and failure tolerance
 
-- EMR integration (one-click trial enrollment)
-- Pharmacy networks (trial meds like regular scripts)
-- Insurance coordination (DIH covers what others won't)
-- Doctor workflows (trials alongside standard treatments)
-- Patient experience (familiar insurance card model)
+3. **Wishocracy = Addressing Market Failures:**
+   - Democratic input for public goods
+   - Equity considerations in pure capitalism
+   - Collective wisdom for research priorities
+   - Balance between efficiency and fairness
+
+4. **Insurance Model Reconsideration:**
+   - May keep as implementation detail
+   - Or pivot to direct market mechanisms
+   - Focus on incentives and information flow
+
+### New Theoretical Foundations to Incorporate:
+
+- [ ] **Hayekian Knowledge Problem**: Why NIH can't efficiently allocate $48B
+- [ ] **Prediction Markets**: Could DIH use them for research prioritization?
+- [ ] **Wisdom of Crowds**: James Surowiecki's principles applied to research
+- [ ] **Public Choice Theory**: Why NIH serves bureaucrats, not patients
+- [ ] **Mechanism Design**: Optimal incentives for medical innovation
+- [ ] **Blockchain/Transparency**: Necessary or nice-to-have for anti-corruption?
+
+### Writing Tasks:
+
+- [ ] Draft new introduction comparing NIH to Gosplan (Soviet planning committee)
+- [ ] Create comparison table: Central Planning vs Market Mechanisms in Research
+- [ ] Write section on Hayek's "Use of Knowledge in Society" applied to medical research
+- [ ] Develop concrete examples of market mechanisms in DIH operations
+- [ ] Address "but healthcare isn't a normal market" objections
 
 ---
 
