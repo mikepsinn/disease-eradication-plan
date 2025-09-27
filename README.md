@@ -129,5 +129,9 @@ graph TD;
 *   5.3 [Precedent 3: Historical Evidence for Decentralized Trials](./brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.md)
 *   5.4 [The Biological Truth: Your Body is a Machine That Can Be Fixed](./brain/book/proof/body-as-repairable-machine.md)
 
-### Chapter 6: Join the War on Disease
-*   6.1 [How You Can Help](./brain/book/call-to-action.md)
+### Chapter 6: The Futures: Choose Your Own Adventure
+*   6.1 [The Dystopia: What Happens When We Keep Building Skynet](./brain/book/futures/dystopia-skynet-wins.md)
+*   6.2 [The Utopia: The World After We Choose Life Over Death](./brain/book/futures/utopia-health-and-happiness.md)
+
+### Chapter 7: Join the War on Disease
+*   7.1 [How You Can Help](./brain/book/call-to-action.md)
