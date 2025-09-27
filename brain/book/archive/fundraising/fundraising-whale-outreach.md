@@ -1,3 +1,8 @@
+<!-- ARCHIVED: Content from this file has been extracted and merged into:
+- /brain/book/strategy/fundraising-strategy.md (Section III - Whale & Billionaire Outreach Strategy)
+This file is preserved for reference but is no longer actively maintained.
+Date archived: 2025-01-15 -->
+
 ---
 title: Whale & Billionaire Outreach Strategy
 description: "Targeted strategy for raising $1-2.5B from high-net-worth individuals, crypto whales, and major foundations in 6-12 months"

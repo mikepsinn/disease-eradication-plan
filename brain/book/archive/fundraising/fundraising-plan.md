@@ -1,3 +1,8 @@
+<!-- ARCHIVED: Content from this file has been extracted and merged into:
+- /brain/book/strategy/fundraising-strategy.md (Sections I & II - Multi-phase strategy overview)
+This file is preserved for reference but is no longer actively maintained.
+Date archived: 2025-01-15 -->
+
 ---
 title: "Fundraising Plan: The $2.5B Activation Energy"
 description: "Overview of the multi-phase fundraising strategy to raise $1.2B-$2.5B for the 1% Treaty implementation."
