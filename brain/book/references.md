@@ -65,6 +65,18 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "Cumulative green, social, sustainability and sustainability‑linked (GSS+) debt passed $4 trillion, with green bonds the largest segment."
   > — Climate Bonds Initiative, 2023, [State of the Market](https://www.climatebonds.net/resources/reports)
 
+<a id="death-causes-vs-fear"></a>
+
+- **Death Causes vs Fear (Heart Disease vs Terrorism)**
+  > "Cardiovascular disease kills approximately 17.9 million people annually worldwide, while terrorism accounts for approximately 25,000 deaths per year."
+  > — WHO, 2021, [Cardiovascular Diseases](https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)) & Global Terrorism Database, 2021
+
+<a id="dunbar-number"></a>
+
+- **Dunbar's Number**
+  > "The cognitive limit to the number of people with whom one can maintain stable social relationships is approximately 150."
+  > — Dunbar, R.I.M., 1992, [Neocortex size as a constraint on group size in primates](https://doi.org/10.1016/0047-2484(92)90081-J)
+
 <a id="clinical-trial-enrollment-timelines"></a>
 
 - **Clinical trial enrollment timelines**
@@ -120,6 +132,12 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "Estonia's e-Residency program has issued digital identities to over 100,000 people from 170+ countries, demonstrating global-scale digital identity verification."
   > — e-Residency, 2024, [Statistics](https://e-resident.gov.ee/statistics/)
 
+<a id="evolutionary-mismatch"></a>
+
+- **Evolutionary Mismatch and Modern Disease**
+  > "Many modern diseases result from a mismatch between our evolutionary adaptations and current environments, particularly regarding diet and physical activity."
+  > — Lieberman, Daniel, 2013, [The Story of the Human Body: Evolution, Health, and Disease](https://www.hup.harvard.edu/catalog.php?isbn=9780307379412)
+
 <a id="estonia-internet-voting"></a>
 
 - **Estonia internet voting lessons**
@@ -144,6 +162,12 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 - **FEC Foreign Nationals Guidance**
   > "The Federal Election Campaign Act (FECA) prohibits any foreign national from contributing, donating or spending funds in connection with any federal, state or local election in the United States, either directly or indirectly."
   > — Federal Election Commission, [Foreign Nationals](https://www.fec.gov/updates/foreign-nationals/)
+
+<a id="food-abundance-stats"></a>
+
+- **Food Abundance in Modern Society**
+  > "The average American has access to approximately 3,800 calories per day in the food supply, nearly double the recommended daily intake."
+  > — USDA Economic Research Service, 2019, [Food Availability and Consumption](https://www.ers.usda.gov/data-products/food-availability-per-capita-data-system/)
 
 <a id="fossil-fuel-lobbying-roi"></a>
 
@@ -226,6 +250,12 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 - **Helios (end-to-end verifiable voting)**
   > "Helios is an open-audit voting system… voters can verify that their vote is included and correctly tallied."
   > — Adida et al., Helios, [heliosvoting.org](https://heliosvoting.org/)
+
+<a id="hunter-gatherer-violence"></a>
+
+- **Violence in Hunter-Gatherer Societies**
+  > "The proportion of deaths due to warfare among hunter-gatherers ranges from 15% to 30% of all deaths."
+  > — Pinker, Steven, 2011, [The Better Angels of Our Nature](https://stevenpinker.com/publications/better-angels-our-nature)
 
 <a id="howey-test-securities"></a>
 
@@ -471,6 +501,12 @@ dateCreated: "2025-09-12T00:00:00.000Z"
   > "NSF freezes payments in response to executive actions."
   > — NPR, 2025, [NSF freezes payments](https://www.npr.org/2025/01/31/nx-s1-5282162/scientists-grants-frozen-trump-executive-actions-dei-deia)
 
+<a id="obesity-epidemic-stats"></a>
+
+- **Obesity Epidemic Statistics**
+  > "The US obesity prevalence was 42.4% in 2017-2018, and the prevalence of severe obesity increased from 4.7% to 9.2%."
+  > — CDC, 2020
+
 <a id="nuke-winter-150tg"></a>
 
 - **Nuclear Winter Famine**
@@ -514,6 +550,12 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 - **Per Capita Lifetime Cost**
   > "Assuming a global population of 7.8 billion and an average lifespan of 80 years, the per capita lifetime cost of violence is approximately $169,230."
   > — Derived from Global Peace Index data, internal calculation, 2024.
+
+<a id="prehistoric-violence-rates"></a>
+
+- **Prehistoric Violence Rates**
+  > "Archaeological evidence suggests that approximately 15% of prehistoric humans died from violence, compared to less than 1% in modern developed nations."
+  > — Bowles, Samuel, 2009, [Did Warfare Among Ancestral Hunter-Gatherers Affect the Evolution of Human Social Behaviors?](https://www.science.org/doi/10.1126/science.1168112)
 
 <a id="polypill-prevention-qaly"></a>
 
@@ -610,6 +652,13 @@ dateCreated: "2025-09-12T00:00:00.000Z"
 
   > "Regulation Crowdfunding enables eligible companies to offer and sell securities through crowdfunding."
   > — U.S. SEC, [Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding)
+
+<a id="selfish-gene-dawkins"></a>
+
+- **The Selfish Gene Quote**
+  > "We are survival machines—robot vehicles blindly programmed to preserve the selfish molecules known as genes."
+  > — Richard Dawkins, 1976, [The Selfish Gene](https://en.wikipedia.org/wiki/The_Selfish_Gene)
+
 <a id="sipri-2024-spending"></a>
 
 - **Global military spending ($2.72T, 2024)**
