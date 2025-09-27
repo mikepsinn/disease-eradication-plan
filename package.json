@@ -39,7 +39,8 @@
     "build:html": "quarto render . --to html",
     "build:pdf": "quarto render . --to pdf",
     "quarto:preview": "quarto preview .",
-    "quarto:clean": "rimraf _book"
+    "quarto:clean": "rimraf _book",
+    "claude:opus": "claude --model claude-opus-4-1-20250805"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
