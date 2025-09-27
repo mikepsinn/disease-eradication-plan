@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War and Disease" - a guide to getting nations to sign the 1% Treaty redirecting military spending to medical research. The project uses a hybrid Node.js/Python setup with TypeScript utility scripts for content management.
 
+**Current Focus**: Writing and enhancing book chapters with data visualizations, charts, and interactive elements. Track progress in `todo.md`.
+
 ## Essential Commands
 
 ### Book Building and Preview
@@ -87,31 +89,12 @@ pip install -r requirements.txt
 
 ## Content Standards
 
-### Writing Style
-Follow the guidelines in `CONTRIBUTING.md`:
-- **Dark humor with practical hope** (Kurt Vonnegut style)
-- **Plain language**: Write for "smart drunk friend" not academics
-- **Quantify everything**: All claims need data and citations
-- **Public choice theory framing**: Assume rational self-interest, not idealism
+**See `CONTRIBUTING.md` for complete writing guidelines, style requirements, and content standards.**
 
-### Citation Format
-Use placeholder markers during writing:
-- `[TODO: source - claim about X]` for facts needing citations
-- `[STAT NEEDED: specific number about Y]` for statistics
-- `[CITATION: existing reference ID]` for known references
-
-### Frontmatter Requirements
-All markdown files need:
-```yaml
----
-title: "Chapter Title"
-description: "Brief description"
-published: true
-date: "YYYY-MM-DDTHH:mm:ss.000Z"
-tags: [relevant, tags]
-dateCreated: "YYYY-MM-DDTHH:mm:ss.000Z"
----
-```
+Key points for development:
+- Follow the "Write first, research later" approach from `todo.md`
+- Use placeholder citations during writing phase
+- All content should follow the 4 Core Checks (Clarity, Credibility, Concision, Directness)
 
 ## Quality Control
 
@@ -128,19 +111,21 @@ dateCreated: "YYYY-MM-DDTHH:mm:ss.000Z"
 
 ## Development Workflow
 
-1. **Content Creation**: Write in `brain/book/` following chapter structure
-2. **Validation**: Run `npm run validate:frontmatter --fix` and `npm run lint:md:fix`
-3. **Preview**: Use `npm run quarto:preview` for live development
-4. **Build**: Run `npm run build` before major commits
-5. **Index Update**: Run `npm run generate:index` to update file inventory
+**Current Priority: Book Writing & Enhancement (see `todo.md` for detailed task tracking)**
 
-## Technical Notes
+1. **Content Creation**: Write chapters in `brain/book/` following structure in `_quarto.yml`
+2. **Data Visualization**: Add Python/Jupyter charts and interactive elements using Quarto
+3. **Sourcing**: Add proper citations after writing phase is complete
+4. **Validation**: Run `npm run validate:frontmatter --fix` and `npm run lint:md:fix`
+5. **Preview**: Use `npm run quarto:preview` for live development with charts/diagrams
 
-- **Jupyter Integration**: Configured for `dih-project-kernel` Python environment
-- **Figure Management**: All generated charts go to `assets/charts/` with prefixed names
-- **Cross-platform**: Scripts handle Windows/Unix path differences
-- **Caching**: Quarto cache disabled for fresh renders each time
-- **Git Integration**: Configured to ignore build artifacts and cache directories
+## Python/Jupyter Integration for Data Visualization
+
+- **Environment**: Use `dih-project-kernel` Jupyter kernel (configured in `_quarto.yml`)
+- **Charts & Diagrams**: All generated figures saved to `assets/charts/` with doc-title prefixes
+- **Available Libraries**: pandas, numpy, matplotlib, seaborn, plotly (see `requirements.txt`)
+- **Interactive Elements**: Quarto supports interactive plotly charts, widgets, and calculations
+- **Code Execution**: Use Python code blocks in `.qmd` files for dynamic content generation
 
 ## Testing
 
