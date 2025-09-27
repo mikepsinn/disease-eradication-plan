@@ -6,9 +6,9 @@ This is the master checklist for completing and launching the book, website, and
 
 ## Phase 1: Foundation & Setup
 
-- [ ] **Project Configuration:**
-    - [ ] Review and finalize `_quarto.yml` to ensure all book, website, and presentation settings are correct.
-    - [ ] Confirm Python virtual environment (`dih-project-kernel`) is correctly configured and documented.
+- [x] **Project Configuration:**
+    - [x] Review and finalize `_quarto.yml` to ensure all book, website, and presentation settings are correct.
+    - [x] Confirm Python virtual environment (`dih-project-kernel`) is correctly configured and documented.
 - [ ] **Standards & Guidelines:**
     - [x] Review `CONTRIBUTING.md` to ensure all guidelines are up-to-date and clear for all contributors.
     - [ ] Review `brain/book/references.md` for formatting consistency and sort all entries alphabetically.
