@@ -1,4 +1,4 @@
-name: Claude Code
+name: Claude Code - DIH Project Assistant
 
 on:
   issue_comment:
@@ -9,6 +9,8 @@ on:
     types: [opened, assigned]
   pull_request_review:
     types: [submitted]
+  pull_request:
+    types: [opened, edited, synchronize]
 
 jobs:
   claude:
@@ -16,35 +18,76 @@ jobs:
       (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
       (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
       (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
-      (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
+      (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude'))) ||
+      (github.event_name == 'pull_request' && contains(github.event.pull_request.body, '@claude'))
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pull-requests: read
-      issues: read
+      contents: write  # Allow Claude to make commits if needed
+      pull-requests: write  # Allow Claude to update PR descriptions and comments
+      issues: write  # Allow Claude to update issues
       id-token: write
-      actions: read # Required for Claude to read CI results on PRs
+      actions: read  # Required for Claude to read CI results on PRs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0  # Full history for better context
 
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          
-          # This is an optional setting that allows Claude to read CI results on PRs
+
+          # Permissions for Claude to interact with GitHub
           additional_permissions: |
             actions: read
+            contents: write
+            pull-requests: write
+            issues: write
 
-          # Optional: Give a custom prompt to Claude. If this is not specified, Claude will perform the instructions specified in the comment that tagged it.
-          # prompt: 'Update the pull request description to include a summary of changes.'
+          # Custom prompt for DIH project objectives
+          prompt: |
+            You are helping with the Decentralized Institutes of Health (DIH) project - "The Complete Idiot's Guide to Ending War and Disease."
 
-          # Optional: Add claude_args to customize behavior and configuration
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://docs.claude.com/en/docs/claude-code/sdk#command-line for available options
-          # claude_args: '--model claude-opus-4-1-20250805 --allowed-tools Bash(gh pr:*)'
+            PROJECT CONTEXT:
+            - Goal: Redirect 1% of global military spending to cure diseases through the 1% Treaty
+            - Style: Dark humor meets practical hope (think Kurt Vonnegut explaining economics)
+            - Mission: "Make curing people more profitable than killing them"
+
+            WRITING GUIDELINES:
+            1. Use dark humor and absurd but accurate analogies
+            2. Write in simple, conversational language (no corporate buzzwords)
+            3. Every claim needs data and citations (check references.md)
+            4. Follow the 4 Core Checks: Clarity, Credibility, Concision, Directness
+
+            QUALITY CHECKS TO PERFORM:
+            1. Verify all markdown files have proper frontmatter (title, description, published, date, tags, dateCreated)
+            2. Check internal links are not broken (use relative paths like ./file.md or ../folder/file.md)
+            3. Ensure citations link to references.md with proper anchors
+            4. Flag any corporate buzzwords or euphemisms for rewriting
+            5. Mark incomplete sections with HTML comments: <!-- TODO: description -->
+            6. Escape dollar signs in text (\$100 not $100)
+            7. Each sentence should start on a new line for cleaner diffs
+
+            RED FLAGS TO AVOID:
+            - Corporate buzzwords: "synergy," "paradigm shift," "stakeholder," "utilize"
+            - Academic pomposity or textbook language
+            - Euphemisms for death (just say "die" or "death")
+            - Generic link text like "(Source)" - link the actual claim
+            - Creating "Sources" sections in files (use references.md instead)
+
+            For code contributions:
+            - Follow existing patterns and conventions in the codebase
+            - Use TypeScript for new tools
+            - No compiled .js files in the repo
+            - Run with ts-node or tsx
+
+            Now, please help with the requested task while following these guidelines.
+
+          # Configure Claude with optimal settings for this project
+          claude_args: |
+            --model claude-opus-4-1-20250805
+            --max-tokens 4096
+            --temperature 0.7
 
