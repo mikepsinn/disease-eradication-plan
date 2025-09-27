@@ -151,11 +151,6 @@ We have maybe 50.
   > "We are survival machines—robot vehicles blindly programmed to preserve the selfish molecules known as genes."
   > — Richard Dawkins, 1976, [The Selfish Gene](https://en.wikipedia.org/wiki/The_Selfish_Gene)
 
-<a id="evolutionary-mismatch"></a>
-- **Evolutionary Mismatch and Modern Disease**
-  > "Many modern diseases result from a mismatch between our evolutionary adaptations and current environments, particularly regarding diet and physical activity."
-  > — Lieberman, Daniel, 2013, [The Story of the Human Body: Evolution, Health, and Disease](https://www.hup.harvard.edu/catalog.php?isbn=9780307379412)
-
 <a id="hunter-gatherer-violence"></a>
 - **Violence in Hunter-Gatherer Societies**
   > "The proportion of deaths due to warfare among hunter-gatherers ranges from 15% to 30% of all deaths."
