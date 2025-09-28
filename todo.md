@@ -95,69 +95,94 @@ This is the master checklist for completing and launching the book, website, and
 
 ---
 
-## Phase 1.5: Content Consolidation from Orphaned Files
+## Phase 1.5: Content Consolidation from Orphaned Files (IN PROGRESS)
 
-This phase consolidates ~45 orphaned files from brain/book/ that contain valuable content not in the current table of contents. Files will be processed, valuable content merged, and originals moved to archive/.
+### Strategy: Review all ~60 non-archived files in brain/book/ and for each file:
+1. **EXTRACT** valuable content to merge into new table of contents chapters
+2. **CREATE** new chapters only if content is substantial and doesn't fit elsewhere
+3. **DELETE/ARCHIVE** the original file after processing
 
-### High-Priority Economic Content
-- [ ] **Merge ROI and Financial Models:**
-    - [ ] Extract 463:1 dFDA ROI calculation from `economics/dfda-cost-benefit-analysis.md` → merge into `victory-bonds.qmd`
-    - [ ] Extract intervention comparison data from `economics/intervention-comparison-table.md` → merge into `economic-impact-summary.md`
-    - [ ] Extract peace dividend calculations from `economics/1-percent-treaty-peace-dividend-analysis.md` → merge into relevant chapters
-    - [ ] Extract QALY framework from `economics/quantitative-value-medical-treatment.md` → merge into `economic-impact-summary.md`
-    - [ ] Extract accelerated treatment value from `economics/economic-value-of-accelerated-treatments.md` → merge into `dfda.md`
+### Files to Process (By Directory):
 
-### Fundraising Strategy Integration
-- [ ] **Create new fundraising section in Chapter 4:**
-    - [ ] Extract $1.2B-$2.5B phase-by-phase plan from `economics/fundraising/fundraising-plan.md`
-    - [ ] Extract whale outreach strategy from `economics/fundraising/fundraising-whale-outreach.md`
-    - [ ] Extract pre-seed terms from `economics/fundraising/fundraising-pre-seed-terms.md`
-    - [ ] Extract budget breakdown from `economics/fundraising/fundraising-budget-breakdown.md`
-    - [ ] Create new file: `brain/book/strategy/fundraising-strategy.md` with consolidated content
+#### **Economics Directory** (17 files)
+- [ ] `economics/1-percent-treaty-peace-dividend-analysis.md` → Extract to Part IV: 4.2 ROI chapter
+- [ ] `economics/dfda-cost-benefit-analysis.md` → Extract 463:1 ROI to Part IV: 4.2
+- [ ] `economics/dfda-cost-benefit.qmd` → Check for unique content vs .md version
+- [ ] `economics/economic-impact-summary.md` → Already in TOC (Part IV: 4.2)
+- [ ] `economics/economic-summary.qmd` → Check for unique content vs .md version
+- [ ] `economics/economic-value-of-accelerated-treatments.md` → Extract to Part II: 2.2 dFDA
+- [ ] `economics/financial-model.md` → Extract key numbers to Part IV sections
+- [ ] `economics/health-savings-sharing-model.md` → Extract to Part IV: 4.3 Business Model
+- [ ] `economics/humanity-budget-overview.qmd` → Extract visualization to Part I: 1.2-1.3
+- [ ] `economics/intervention-comparison-table.md` → Extract data to Part IV: 4.2 ROI
+- [ ] `economics/investor-risk-analysis.md` → Extract to Part IV: 4.1 VICTORY Bonds
+- [ ] `economics/operational-budget-model.md` → Extract to Part IV: 4.5 Timeline
+- [ ] `economics/peace-dividend-analysis.qmd` → Extract calculations to Part IV: 4.2
+- [ ] `economics/quantitative-value-medical-treatment.md` → Extract QALY framework to Part III theory
+- [ ] `economics/value-of-automating-research.md` → Extract to Part II: 2.2 dFDA
+- [ ] `economics/victory-bonds.qmd` → Already in TOC (Part IV: 4.1)
+- [ ] `economics.md` → Archive (just section overview)
 
-### Legal and Governance Framework
-- [ ] **Enhance legal compliance chapter:**
-    - [ ] Extract multi-entity structure from `legal/multi-entity-strategy.md` → merge into `legal-compliance-framework.md`
-    - [ ] Extract Right to Trial Act from `legal/right-to-trial-act.md` → create new section in Chapter 4
-    - [ ] Extract HHS recommendations from `legal/hhs-policy-recommendations.md` → merge into relevant strategy files
-    - [ ] Extract regulatory modifications from `legal/regulations-to-modify-or-rescind.md` → merge into legal framework
-    - [ ] Extract impact securities from `legal/impact-securities-reform.md` → merge into VICTORY bonds section
+#### **Governance Directory** (3 files)
+- [ ] `governance/dih-onchain-architecture.md` → Extract blockchain discussion to Part IV: 4.4 Infrastructure
+- [ ] `governance/organizational-structure.md` → Extract to Part II: 2.1 DIH structure
+- [ ] `governance.md` → Archive (just section overview)
 
-### Strategy and Implementation
-- [ ] **Consolidate global referendum details:**
-    - [ ] Extract implementation plan from `strategy/global-referendum/global-referendum-implementation.md`
-    - [ ] Extract verification protocols from `strategy/global-referendum/global-referendum-verification.md`
-    - [ ] Extract viral marketing from `strategy/global-referendum/global-referendum-viral-marketing.md`
-    - [ ] Merge all into existing `global-referendum.md`
-- [ ] **Add endgame strategy:**
-    - [ ] Extract 100-200 year vision from `strategy/the-endgame-phasing-out-war.md` → merge into `utopia-health-and-happiness.md`
-- [ ] **Add coalition and advocacy:**
-    - [ ] Extract coalition building from `strategy/coalition-building.md` → merge into `co-opt-dont-compete.md`
-    - [ ] Extract advocacy strategies from `strategy/highest-leverage-advocacy.md` → merge into relevant strategy files
+#### **Legal Directory** (3 files)
+- [ ] `legal/community-governance-framework.md` → Extract to Part II: 2.4 Wishocracy
+- [ ] `legal/impact-securities-reform.md` → Extract to Part IV: 4.1 VICTORY Bonds
+- [ ] `legal.md` → Archive (just section overview)
 
-### Operations and FAQ
-- [ ] **Create FAQ chapter:**
-    - [ ] Extract Q&A from `FAQ.md` and create new Chapter 8 or appendix
-    - [ ] Include common objections and responses
-- [ ] **Create operations appendix:**
-    - [ ] Extract operational content from `operations.md`
-    - [ ] Extract roadmap from `roadmap.md`
-    - [ ] Create `brain/book/reference/operations-roadmap.md`
+#### **Partners Directory** (1 file)
+- [ ] `partners/incentives.md` → Extract to Part III: 3.3 Incentive Alignment
 
-### Vision and Meta Content
-- [ ] **Integrate vision content:**
-    - [ ] Extract vision from `vision.md` → merge into introduction or futures chapter
-    - [ ] Archive section overview files (`problem.md`, `solution.md`, `proof.md`, etc.)
+#### **Problem Directory** (6 files)
+- [ ] `problem/cost-of-disease.md` → Already in TOC (Part I: 1.3)
+- [ ] `problem/cost-of-war.md` → Already in TOC (Part I: 1.2)
+- [ ] `problem/fda-approvals-are-broken.md` → Already in TOC (Part I: 1.5)
+- [ ] `problem/nih-funding-is-broken.md` → Already in TOC (Part I: 1.4)
+- [ ] `problem/the-evolutionary-trap.md` → Already in TOC (Part I: 1.1)
+- [ ] `problem/why-the-system-is-broken.md` → Extract key points to Part I: 1.4-1.6
+- [ ] `problem.md` → Archive (just section overview)
 
-### Final Cleanup
-- [ ] **Move all processed files to archive:**
-    - [ ] Create archive log documenting what was extracted from each file
-    - [ ] Move processed files to `brain/book/archive/`
-    - [ ] Update any broken internal links
-- [ ] **Generate consolidation report:**
-    - [ ] List all content merges performed
-    - [ ] Document any content that was archived without merging
-    - [ ] Identify any remaining gaps or duplications
+#### **Proof Directory** (2 files)
+- [ ] `proof/body-as-repairable-machine.md` → Already in TOC (Part III: 3.4)
+- [ ] `proof/historical-precedents.md` → Already in TOC (Part VI: 6.2)
+- [ ] `proof.md` → Archive (just section overview)
+
+#### **Solution Directory** (6 files)
+- [ ] `solution/1-percent-treaty.md` → Already in TOC (Part II: 2.3)
+- [ ] `solution/dfda.md` → Already in TOC (Part II: 2.2)
+- [ ] `solution/dih.qmd` → Already in TOC (Part II: 2.1)
+- [ ] `solution/dih-core-benefits.md` → Extract key points to Part II: 2.1
+- [ ] `solution/dih-integration-model.md` → Already in TOC (Part IV: 4.3)
+- [ ] `solution/wishocracy.md` → Already in TOC (Part II: 2.4)
+- [ ] `solution.md` → Archive (just section overview)
+
+#### **Strategy Directory** (11 files)
+- [ ] `strategy/1-percent-treaty.md` → Check if duplicate of solution version
+- [ ] `strategy/coalition-building.md` → Extract to Part V: 5.1 co-opt chapter
+- [ ] `strategy/co-opt-dont-compete.md` → Already in TOC (Part V: 5.1)
+- [ ] `strategy/dfda-implementation-via-executive-action.md` → Extract to Part V: 5.3 Legal
+- [ ] `strategy/free-rider-solution.md` → Extract to Part II: 2.6 Treaty Enforcement
+- [ ] `strategy/fundraising-strategy.md` → Already in TOC (Part V: 5.4)
+- [ ] `strategy/global-referendum.md` → Already in TOC (Part V: 5.2)
+- [ ] `strategy/hhs-dFDA-policy-recommendations.md` → Extract to Part V: 5.3 Legal
+- [ ] `strategy/highest-leverage-advocacy.md` → Extract to Part V: 5.1
+- [ ] `strategy/legal-compliance-framework.md` → Already in TOC (Part V: 5.3)
+- [ ] `strategy/open-ecosystem-and-bounty-model.md` → Extract to Part IV: 4.4 Infrastructure
+- [ ] `strategy.md` → Archive (just section overview)
+
+#### **Other Root Files** (5 files)
+- [ ] `call-to-action.md` → Already in TOC (Part VIII)
+- [ ] `futures/dystopia-skynet-wins.md` → Already in TOC (Part VII: 7.1)
+- [ ] `futures/utopia-health-and-happiness.md` → Already in TOC (Part VII: 7.2)
+- [ ] `references.md` → Keep for bibliography
+- [ ] `vision.md` → Extract inspiring content to Introduction or Part VII
+
+#### **Reference Directory** (2 files)
+- [ ] `reference/faq.md` → Already in TOC (Appendix A.1)
+- [ ] `reference/operations-roadmap.md` → Already in TOC (Appendix A.2)
 
 ---
 
@@ -167,73 +192,82 @@ This phase consolidates ~45 orphaned files from brain/book/ that contain valuabl
 
 **Instructions:** Write engaging content with placeholder citations. Use these markers:
 - `[TODO: source - claim about X]` for facts needing citations
-- `[STAT NEEDED: specific number about Y]` for statistics  
+- `[STAT NEEDED: specific number about Y]` for statistics
 - `[CITATION: existing reference ID]` for claims we know are already in references.md
 - Focus on narrative flow and dark humor
-- DON'T worry about references.md yet
+- Frame NIH as central planning failure, DIH as market solution
 
-#### Chapter 1: The Problem: A $119 Trillion Mistake
+### Part I: The $119 Trillion Central Planning Disaster
 
-- **1.0 Why We're Like This: The Evolutionary Trap** ✅ WRITTEN
-- **1.1 The Cost of War: Humanity's Most Expensive Hobby** ✅ WRITTEN (already has good sources)
-- **1.2 The Cost of Disease: A Slow-Motion Apocalypse** ✅ WRITTEN (already has good sources)
-- **1.3 The System is Broken: Why We Don't Have Cures** ⚠️ NEEDS CREATION
-    - [ ] Write the chapter with humor and placeholder citations
-- **1.3.1 Why NIH is Terrible at Funding Research** ⚠️ NEEDS CREATION
-    - [ ] Write the chapter with humor and placeholder citations
-- **1.3.2 Why the FDA is Unsafe and Ineffective** ⚠️ NEEDS CREATION
-    - [ ] Write the chapter with humor and placeholder citations
-- **1.3.3 Why Representative Democracy is Unrepresentative** ⚠️ NEEDS CREATION
-    - [ ] Write the chapter with humor and placeholder citations
+- **1.1 Evolution Trapped Us in Violence** ✅ WRITTEN
+- **1.2 The Cost of War: Humanity's Most Expensive Hobby** ✅ WRITTEN
+- **1.3 The Cost of Disease: A Slow-Motion Apocalypse** ✅ WRITTEN
+- **1.4 The NIH: How Soviet-Style Science Wastes $48B/Year** ⚠️ NEEDS CREATION
+    - [ ] Frame as central planning failure
+    - [ ] Compare to Soviet economic planning
+- **1.5 The FDA: Central Planning's Body Count** ⚠️ NEEDS CREATION
+    - [ ] Show deaths from delayed approvals
+    - [ ] Regulatory capture examples
+- **1.6 Regulatory Capture: How Pharma Bought the Refs** ⚠️ NEEDS CREATION
+- **1.7 Democracy's Failure: Why Voters Can't Fix This** ⚠️ NEEDS CREATION
+- **1.8 Why Nobody Fixed This Yet: A Century of Failed Reforms** ⚠️ NEEDS CREATION
 
-#### Chapter 2: The Solution: A Better Deal
+### Part II: Markets > Committees (The Solution)
 
-- **2.1 The 1% Treaty** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
-- **2.2 The Decentralized Institutes of Health (DIH)** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
-- **2.3 The Decentralized FDA (dFDA)** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
-- **2.4 Wishocracy** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
+- **2.1 The DIH: Prediction Markets for Medical Research** 📝 NEEDS REVIEW
+    - [ ] Reframe as market-based alternative
+    - [ ] Emphasize Hayekian knowledge aggregation
+- **2.2 The dFDA: Competition Beats Regulation** 📝 NEEDS REVIEW
+- **2.3 The 1% Treaty: Redirecting Resources to What Works** 📝 NEEDS REVIEW
+- **2.4 Wishocracy: Democratic Markets for Public Goods** 📝 NEEDS REVIEW
+- **2.5 The Transition Plan: From Soviet Science to Free Markets** ⚠️ NEEDS CREATION
+- **2.6 International Coordination: Making Treaties Stick** ⚠️ NEEDS CREATION
 
-#### Chapter 3: Economics
+### Part III: Why Markets Win (The Theory) ⚠️ ALL NEW
 
-- **3.1 VICTORY Bonds** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
-- **3.2 Societal Impact Analysis** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
+- **3.1 Hayek Was Right: The Knowledge Problem in Medicine** ⚠️ NEEDS CREATION
+- **3.2 Wisdom of Crowds: 280 Million Brains > 200 NIH Reviewers** ⚠️ NEEDS CREATION
+- **3.3 Incentive Alignment: Why Everyone Wins** ⚠️ NEEDS CREATION
+- **3.4 Your Body is Just a Machine (And Markets Fix Machines)** ✅ WRITTEN
+- **3.5 Other Industries That Escaped Central Planning** ⚠️ NEEDS CREATION
+- **3.6 Network Effects: Why This Gets Better at Scale** ⚠️ NEEDS CREATION
+- **3.7 Information Theory: Why Transparency Beats Secrecy** ⚠️ NEEDS CREATION
 
-#### Chapter 4: The Strategy
+### Part IV: The Money (Making It Real)
 
-- **4.1 The Core Strategy: Co-opt, Don't Compete** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
-- **4.2 Global Referendum** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
-- **4.3 Legal Compliance** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
+- **4.1 VICTORY Bonds: War Profiteering for Peace** 📝 NEEDS REVIEW
+- **4.2 The ROI: $27B → $16.5T Annual Returns** 📝 NEEDS REVIEW
+- **4.3 The Business Model: Insurance, Not Charity** 📝 EXISTS, NEEDS REVIEW
+- **4.4 The Infrastructure: Tech Stack for Distributed Trials** ⚠️ NEEDS CREATION
+- **4.5 Implementation Timeline: 36 Months to Launch** ⚠️ NEEDS CREATION
 
-#### Chapter 5: The Proof
+### Part V: The Heist (Strategy)
 
-- **5.1 Precedent 1: The 80X Efficiency Gain** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
-- **5.2 Precedent 2: Historical Precedents** ⚠️ NEEDS CREATION
-    - [ ] Write the chapter with humor and placeholder citations
-- **5.3 Precedent 3: Historical Evidence for Decentralized Trials** 📝 NEEDS REVIEW
-    - [ ] Review for tone and humor, add placeholder citations
-- **5.4 The Biological Truth: Your Body is a Machine That Can Be Fixed** ✅ WRITTEN (needs citation verification)
+- **5.1 We're Not Fighting, We're Buying** 📝 NEEDS REVIEW
+- **5.2 The Global Referendum: 280M Signatures = Unstoppable** 📝 NEEDS REVIEW
+- **5.3 Legal CYA: How Not to Go to Prison** 📝 NEEDS REVIEW
+- **5.4 The $2.5B Bribe Fund** ⚠️ NEEDS CREATION (fundraising-strategy.md)
 
-#### Chapter 6: The Futures
+### Part VI: Proof This Works
 
-- **6.1 The Dystopia: What Happens When We Keep Building Skynet** ✅ WRITTEN
-    - [ ] Review for tone, add placeholder citations where needed
-- **6.2 The Utopia: The World After We Choose Life Over Death** ✅ WRITTEN
-    - [ ] Review for tone, add placeholder citations where needed
+- **6.1 RECOVERY Trial: Markets Already Won (80X Efficiency)** 📝 NEEDS REVIEW
+- **6.2 Historical Wins: When Decentralization Crushed Central Planning** 📝 NEEDS REVIEW
+- **6.3 Pre-1962: When Doctors > Bureaucrats** 📝 NEEDS REVIEW
+- **6.4 Case Studies: Cancer, Alzheimer's, Rare Diseases** ⚠️ NEEDS CREATION
+- **6.5 Why Other Reforms Failed (And We Won't)** ⚠️ NEEDS CREATION
 
-#### Chapter 7: Join the War on Disease
+### Part VII: Pick Your Future
 
-- **7.1 How You Can Help** 📝 NEEDS REVIEW
-    - [ ] Review for clarity and actionable steps
+- **7.1 Option A: Skynet + Cancer (Status Quo)** ✅ WRITTEN
+- **7.2 Option B: Markets Cure Everything** ✅ WRITTEN
+
+### Part VIII: Join or Die (Literally)
+
+- **8.1-8.3 Call to Action sections** 📝 NEEDS REVIEW
+
+### Part IX: Yes, We've Heard Your Concerns ⚠️ ALL NEW
+
+- **9.1-9.5 Objection Handling chapters** ⚠️ ALL NEED CREATION
 
 ---
 
@@ -293,30 +327,42 @@ This phase consolidates ~45 orphaned files from brain/book/ that contain valuabl
 
 ---
 
-## 🎯 IMMEDIATE PRIORITY: 
+## 🎯 IMMEDIATE PRIORITIES:
 
-**CREATE THE 4 MISSING CHAPTERS:**
-1. Chapter 1.3: The System is Broken
-2. Chapter 1.3.1: Why NIH is Terrible  
-3. Chapter 1.3.2: Why FDA is Unsafe
-4. Chapter 1.3.3: Why Democracy is Unrepresentative
+### Priority 1: Process Orphaned Files (Phase 1.5)
+**ACTION:** Go through each file in brain/book/, extract valuable content to new chapters, then archive/delete
 
-These are the only chapters that don't exist yet. Everything else just needs review/polish.
+### Priority 2: Create Missing Theory Chapters (Part III)
+**CREATE:** All 7 theory chapters explaining WHY markets beat central planning
+
+### Priority 3: Create Missing Problem Chapters (Part I)
+**CREATE:**
+- 1.4 NIH: Soviet-Style Science
+- 1.5 FDA: Central Planning's Body Count
+- 1.6 Regulatory Capture
+- 1.7 Democracy's Failure
+- 1.8 Century of Failed Reforms
+
+### Priority 4: Create Objection Handling (Part IX)
+**CREATE:** All 5 chapters preemptively addressing criticisms
 
 ---
 
 ## Progress Tracking
 
-**Chapters Complete:** 5/18 (28%)
-- ✅ 1.0 Evolutionary Trap
-- ✅ 1.1 Cost of War  
-- ✅ 1.2 Cost of Disease
-- ✅ 5.4 Body as Machine
-- ✅ 6.1 Dystopia
-- ✅ 6.2 Utopia (partial)
+**Chapters Complete:** 5/~45 (11%)
+- ✅ Part I: 1.1, 1.2, 1.3 (Evolution, War, Disease)
+- ✅ Part III: 3.4 (Body as Machine)
+- ✅ Part VII: 7.1, 7.2 (Dystopia, Utopia)
 
-**Chapters Needing Creation:** 4/18 (22%)
-- ⚠️ 1.3, 1.3.1, 1.3.2, 1.3.3, 5.2
+**Chapters Needing Creation:** ~25/45 (56%)
+- ⚠️ Part I: 5 chapters (NIH, FDA, Regulatory Capture, Democracy, Failed Reforms)
+- ⚠️ Part II: 2 chapters (Transition, Treaty Enforcement)
+- ⚠️ Part III: 6 chapters (Theory - Hayek, Crowds, Incentives, etc.)
+- ⚠️ Part IV: 2 chapters (Infrastructure, Timeline)
+- ⚠️ Part V: 1 chapter (Fundraising)
+- ⚠️ Part VI: 2 chapters (Case Studies, Why Others Failed)
+- ⚠️ Part IX: 5 chapters (All objection handling)
 
-**Chapters Needing Review:** 9/18 (50%)
-- 📝 All of Chapters 2, 3, 4, plus some of 5, 6, 7
+**Chapters Needing Review/Reframing:** ~15/45 (33%)
+- 📝 Most of Parts II, IV, V, VI need market-based reframing
