@@ -97,12 +97,10 @@ This is the master checklist for completing and launching the book, website, and
 
 ## Phase 1.5: Content Consolidation from Orphaned Files (IN PROGRESS)
 
-### Strategy: Review all ~60 non-archived files in brain/book/ and for each file:
-1. **EXTRACT** valuable content to merge into new table of contents chapters
-2. **CREATE** new chapters only if content is substantial and doesn't fit elsewhere
-3. **DELETE/ARCHIVE** the original file after processing
+### REVISED STRATEGY: Triage files by value, only process HIGH priority now
 
-### Files to Process (By Directory):
+#### 🔴 HIGH PRIORITY (Process immediately - contains critical data/arguments):
+**These files have unique valuable content that directly supports our market vs central planning argument**
 
 #### **Economics Directory** (17 files)
 - [ ] `economics/1-percent-treaty-peace-dividend-analysis.md` → Extract to Part IV: 4.2 ROI chapter

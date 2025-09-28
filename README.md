@@ -40,27 +40,30 @@ We've created a system where:
 
 ## How It Works
 
-### The 6-Step Process
+### The Market Revolution in Medical Research
 
-1. **Get the Money**: The 1% Treaty redirects $27B/year from weapons to cures
-2. **Allocate Efficiently**: The DIH uses democratic voting to fund what matters most  
-3. **Pay Patients**: Subsidies go directly to patients who join trials
-4. **Run Cheap Trials**: Pragmatic trials cost $500/patient instead of $41,000
-5. **Publish Everything**: The dFDA shows real effectiveness data for every treatment
-6. **Outcome Labels**: Every food and drug gets honest labels about what it actually does
+1. **Replace Central Planning**: NIH's Soviet-style committees → DIH's prediction markets and wisdom of crowds
+2. **Amazon for Trials**: dFDA creates an open marketplace where treatments compete on real results, not lobbying
+3. **Universal Integration**: One-click trial enrollment from any EHR, health app, or doctor's office
+4. **80X Efficiency**: Market competition drives costs from $41,000 to $500/patient (Oxford proved it)
+5. **Radical Transparency**: All data public, all results ranked - like Amazon reviews but for staying alive
+6. **Pay for Success**: Researchers get rich by curing diseases, not by writing grant proposals
 
-### Current System vs. New System
+### Central Planning vs. Free Markets
 
-**Current System:**
-- $2.2B to develop one new treatment
-- 17 years from discovery to patients  
-- 95% of diseases have 0 FDA-approved treatments 
+**Current System (NIH/FDA Central Planning):**
+- $2.2B per drug (committees pick losers)
+- 17 years to market (bureaucracy moves at bureaucracy speed)
+- 90% grant rejection rate (200 reviewers play god with $48B)
+- 95% of diseases have 0 treatments (committees don't care about rare diseases)
+- 15% patient access (gatekeepers everywhere)
 
-**New System:**
-- ~$27M to develop one new treatment (80X cheaper)
-- 2-3 years from discovery to patients 
-- 1,000X more treatments tested with same global budget
-- Every disease gets attention (patients pay to participate)
+**New System (DIH/dFDA Free Markets):**
+- ~$27M per treatment (competition drives efficiency)
+- 2-3 years to market (markets move at market speed)
+- Fund everything, measure results (let data pick winners)
+- 1,000X more treatments tested (markets find every niche)
+- 100% patient access (Amazon doesn't turn away customers)
 
 ```mermaid
 graph TD;
