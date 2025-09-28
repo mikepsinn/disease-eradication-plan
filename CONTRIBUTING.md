@@ -151,9 +151,28 @@ This repo is structured like a book. Root files are "chapters." Subdirectories a
 
 **The Golden Rule:** If a topic is an "Epic" that needs more than one file, it gets a main summary file (`epic.md`) and a corresponding directory (`epic/`) for the details. This pattern applies at all levels.
 
+**Book Chapter Structure:**
+Each major chapter follows the epic pattern:
+- **Executive Summary File:** `brain/book/problem.qmd` - Overview that links to all sections
+- **Section Files:** `brain/book/problem/*.qmd` - Detailed content for each section
+- **Example Structure:**
+  ```
+  brain/book/
+    problem.qmd          # Executive summary linking to all problem sections
+    problem/             # Folder with detailed sections
+      cost-of-war.md
+      cost-of-disease.md
+      nih-funding-is-broken.md
+    solution.qmd         # Executive summary linking to all solution sections
+    solution/            # Folder with detailed sections
+      dfda.md
+      dih.qmd
+      1-percent-treaty.md
+  ```
+
 **"The Book" vs. "Internal Stuff"**
 
-- **The Book (`/`, `economics/`, `strategy/`, `legal/`):** Public content. The story and evidence.
+- **The Book (`brain/book/`):** Main book content organized by chapters with executive summaries
 - **Internal Playbook (`operations/`):** How we run things. For the core team.
 - **The Appendix (`reference/`):** Data and citations that back up our claims.
 

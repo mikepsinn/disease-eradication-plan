@@ -7,7 +7,13 @@
       "Bash(while read name)",
       "Bash(do if ! grep -q \"$name\" README.md)",
       "Bash(then find brain/book -name \"$name.md\" -type f)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(for:*)",
+      "Bash(do if [ -d \"brain/book/$dir\" ])",
+      "Bash(then if [ -f \"brain/book/$dir.qmd\" ])",
+      "Bash([ -f \"brain/book/$dir.md\" ])",
+      "Bash(then echo \"✓ $dir has summary\")",
+      "Bash(else echo \"✗ $dir MISSING summary\")"
     ],
     "deny": [],
     "ask": []
