@@ -95,92 +95,111 @@ This is the master checklist for completing and launching the book, website, and
 
 ---
 
-## Phase 1.5: Content Consolidation from Orphaned Files (IN PROGRESS)
+## Phase 1.5: Clean brain/book/ Folder Completely (IN PROGRESS)
 
-### REVISED STRATEGY: Triage files by value, only process HIGH priority now
+### STRATEGY: Extract ONLY valuable sources and unique ideas, then DELETE
 
-#### 🔴 HIGH PRIORITY (Process immediately - contains critical data/arguments):
-**These files have unique valuable content that directly supports our market vs central planning argument**
+**The orphaned files have terrible writing. We're ONLY keeping:**
+1. **Sources/citations** → Add to `brain/book/references.md`
+2. **Unique data/calculations** → Note for use in real chapters
+3. **Ideas not yet covered** → Note for incorporation
 
-#### **Economics Directory** (17 files)
-- [ ] `economics/1-percent-treaty-peace-dividend-analysis.md` → Extract to Part IV: 4.2 ROI chapter
+**Everything else gets deleted. The writing style sucks and needs complete rewrite per CONTRIBUTING.md.**
+
+#### Files to Process (60 total):
+
+**Economics (17 files):**
+- [ ] `economics/1-percent-treaty-peace-dividend-analysis.md` → Extract to Part IV: 4.2 ROI
 - [ ] `economics/dfda-cost-benefit-analysis.md` → Extract 463:1 ROI to Part IV: 4.2
-- [ ] `economics/dfda-cost-benefit.qmd` → Check for unique content vs .md version
-- [ ] `economics/economic-impact-summary.md` → Already in TOC (Part IV: 4.2)
-- [ ] `economics/economic-summary.qmd` → Check for unique content vs .md version
+- [ ] `economics/dfda-cost-benefit.qmd` → Check vs .md, archive duplicate
+- [ ] `economics/economic-impact-summary.md` → Already in TOC, skip
+- [ ] `economics/economic-summary.qmd` → Check vs .md, archive duplicate
 - [ ] `economics/economic-value-of-accelerated-treatments.md` → Extract to Part II: 2.2 dFDA
-- [ ] `economics/financial-model.md` → Extract key numbers to Part IV sections
+- [ ] `economics/financial-model.md` → Extract to Part IV: 4.5 Timeline
 - [ ] `economics/health-savings-sharing-model.md` → Extract to Part IV: 4.3 Business Model
-- [ ] `economics/humanity-budget-overview.qmd` → Extract visualization to Part I: 1.2-1.3
-- [ ] `economics/intervention-comparison-table.md` → Extract data to Part IV: 4.2 ROI
-- [ ] `economics/investor-risk-analysis.md` → Extract to Part IV: 4.1 VICTORY Bonds
-- [ ] `economics/operational-budget-model.md` → Extract to Part IV: 4.5 Timeline
-- [ ] `economics/peace-dividend-analysis.qmd` → Extract calculations to Part IV: 4.2
-- [ ] `economics/quantitative-value-medical-treatment.md` → Extract QALY framework to Part III theory
-- [ ] `economics/value-of-automating-research.md` → Extract to Part II: 2.2 dFDA
-- [ ] `economics/victory-bonds.qmd` → Already in TOC (Part IV: 4.1)
-- [ ] `economics.md` → Archive (just section overview)
+- [ ] `economics/humanity-budget-overview.qmd` → Extract visuals to Part I
+- [ ] `economics/intervention-comparison-table.md` → Extract to Part IV: 4.2
+- [ ] `economics/investor-risk-analysis.md` → Extract to Part IV: 4.1 VICTORY
+- [ ] `economics/operational-budget-model.md` → Extract to Part IV: 4.5
+- [ ] `economics/peace-dividend-analysis.qmd` → Extract to Part IV: 4.2
+- [ ] `economics/quantitative-value-medical-treatment.md` → Extract to Part III: 3.3
+- [ ] `economics/value-of-automating-research.md` → Extract to Part II: 2.2
+- [ ] `economics/victory-bonds.qmd` → Already in TOC, skip
+- [ ] `economics.md` → Archive
 
-#### **Governance Directory** (3 files)
-- [ ] `governance/dih-onchain-architecture.md` → Extract blockchain discussion to Part IV: 4.4 Infrastructure
-- [ ] `governance/organizational-structure.md` → Extract to Part II: 2.1 DIH structure
-- [ ] `governance.md` → Archive (just section overview)
+**Governance (3 files):**
+- [ ] `governance/dih-onchain-architecture.md` → Extract to Part IV: 4.4 Infrastructure
+- [ ] `governance/organizational-structure.md` → Extract to Part II: 2.1 DIH
+- [ ] `governance.md` → Archive
 
-#### **Legal Directory** (3 files)
+**Legal (3 files):**
 - [ ] `legal/community-governance-framework.md` → Extract to Part II: 2.4 Wishocracy
-- [ ] `legal/impact-securities-reform.md` → Extract to Part IV: 4.1 VICTORY Bonds
-- [ ] `legal.md` → Archive (just section overview)
+- [ ] `legal/impact-securities-reform.md` → Extract to Part IV: 4.1 VICTORY
+- [ ] `legal.md` → Archive
 
-#### **Partners Directory** (1 file)
+**Partners (1 file):**
 - [ ] `partners/incentives.md` → Extract to Part III: 3.3 Incentive Alignment
 
-#### **Problem Directory** (6 files)
-- [ ] `problem/cost-of-disease.md` → Already in TOC (Part I: 1.3)
-- [ ] `problem/cost-of-war.md` → Already in TOC (Part I: 1.2)
-- [ ] `problem/fda-approvals-are-broken.md` → Already in TOC (Part I: 1.5)
-- [ ] `problem/nih-funding-is-broken.md` → Already in TOC (Part I: 1.4)
-- [ ] `problem/the-evolutionary-trap.md` → Already in TOC (Part I: 1.1)
-- [ ] `problem/why-the-system-is-broken.md` → Extract key points to Part I: 1.4-1.6
-- [ ] `problem.md` → Archive (just section overview)
+**Problem (7 files):**
+- [ ] `problem/cost-of-disease.md` → Already in TOC Part I: 1.3, skip
+- [ ] `problem/cost-of-war.md` → Already in TOC Part I: 1.2, skip
+- [ ] `problem/fda-approvals-are-broken.md` → Already in TOC Part I: 1.5, skip
+- [ ] `problem/nih-funding-is-broken.md` → Already in TOC Part I: 1.4, skip
+- [ ] `problem/the-evolutionary-trap.md` → Already in TOC Part I: 1.1, skip
+- [ ] `problem/why-the-system-is-broken.md` → Extract key points to new chapters
+- [ ] `problem.md` → Archive
 
-#### **Proof Directory** (2 files)
-- [ ] `proof/body-as-repairable-machine.md` → Already in TOC (Part III: 3.4)
-- [ ] `proof/historical-precedents.md` → Already in TOC (Part VI: 6.2)
-- [ ] `proof.md` → Archive (just section overview)
+**Proof (3 files):**
+- [ ] `proof/body-as-repairable-machine.md` → Already in TOC Part III: 3.4, skip
+- [ ] `proof/historical-precedents.md` → Already in TOC Part VI: 6.2, skip
+- [ ] `proof.md` → Archive
 
-#### **Solution Directory** (6 files)
-- [ ] `solution/1-percent-treaty.md` → Already in TOC (Part II: 2.3)
-- [ ] `solution/dfda.md` → Already in TOC (Part II: 2.2)
-- [ ] `solution/dih.qmd` → Already in TOC (Part II: 2.1)
-- [ ] `solution/dih-core-benefits.md` → Extract key points to Part II: 2.1
-- [ ] `solution/dih-integration-model.md` → Already in TOC (Part IV: 4.3)
-- [ ] `solution/wishocracy.md` → Already in TOC (Part II: 2.4)
-- [ ] `solution.md` → Archive (just section overview)
+**Solution (7 files):**
+- [ ] `solution/1-percent-treaty.md` → Already in TOC Part II: 2.3, skip
+- [ ] `solution/dfda.md` → Already in TOC Part II: 2.2, skip
+- [ ] `solution/dih.qmd` → Already in TOC Part II: 2.1, skip
+- [ ] `solution/dih-core-benefits.md` → Extract to Part II: 2.1
+- [ ] `solution/dih-integration-model.md` → Already in TOC Part IV: 4.3, skip
+- [ ] `solution/wishocracy.md` → Already in TOC Part II: 2.4, skip
+- [ ] `solution.md` → Archive
 
-#### **Strategy Directory** (11 files)
-- [ ] `strategy/1-percent-treaty.md` → Check if duplicate of solution version
-- [ ] `strategy/coalition-building.md` → Extract to Part V: 5.1 co-opt chapter
-- [ ] `strategy/co-opt-dont-compete.md` → Already in TOC (Part V: 5.1)
-- [ ] `strategy/dfda-implementation-via-executive-action.md` → Extract to Part V: 5.3 Legal
-- [ ] `strategy/free-rider-solution.md` → Extract to Part II: 2.6 Treaty Enforcement
-- [ ] `strategy/fundraising-strategy.md` → Already in TOC (Part V: 5.4)
-- [ ] `strategy/global-referendum.md` → Already in TOC (Part V: 5.2)
-- [ ] `strategy/hhs-dFDA-policy-recommendations.md` → Extract to Part V: 5.3 Legal
+**Strategy (12 files):**
+- [ ] `strategy/1-percent-treaty.md` → Check if duplicate, likely archive
+- [ ] `strategy/coalition-building.md` → Extract to Part V: 5.1
+- [ ] `strategy/co-opt-dont-compete.md` → Already in TOC Part V: 5.1, skip
+- [ ] `strategy/dfda-implementation-via-executive-action.md` → Extract to Part V: 5.3
+- [ ] `strategy/free-rider-solution.md` → Extract to Part II: 2.6
+- [ ] `strategy/fundraising-strategy.md` → Already in TOC Part V: 5.4, skip
+- [ ] `strategy/global-referendum.md` → Already in TOC Part V: 5.2, skip
+- [ ] `strategy/hhs-dFDA-policy-recommendations.md` → Extract to Part V: 5.3
 - [ ] `strategy/highest-leverage-advocacy.md` → Extract to Part V: 5.1
-- [ ] `strategy/legal-compliance-framework.md` → Already in TOC (Part V: 5.3)
-- [ ] `strategy/open-ecosystem-and-bounty-model.md` → Extract to Part IV: 4.4 Infrastructure
-- [ ] `strategy.md` → Archive (just section overview)
+- [ ] `strategy/legal-compliance-framework.md` → Already in TOC Part V: 5.3, skip
+- [ ] `strategy/open-ecosystem-and-bounty-model.md` → Extract to Part IV: 4.4
+- [ ] `strategy.md` → Archive
 
-#### **Other Root Files** (5 files)
-- [ ] `call-to-action.md` → Already in TOC (Part VIII)
-- [ ] `futures/dystopia-skynet-wins.md` → Already in TOC (Part VII: 7.1)
-- [ ] `futures/utopia-health-and-happiness.md` → Already in TOC (Part VII: 7.2)
+**Root & Other (8 files):**
+- [ ] `call-to-action.md` → Already in TOC Part VIII, skip
+- [ ] `futures/dystopia-skynet-wins.md` → Already in TOC Part VII: 7.1, skip
+- [ ] `futures/utopia-health-and-happiness.md` → Already in TOC Part VII: 7.2, skip
+- [ ] `reference/faq.md` → Already in TOC Appendix A.1, skip
+- [ ] `reference/operations-roadmap.md` → Already in TOC Appendix A.2, skip
 - [ ] `references.md` → Keep for bibliography
-- [ ] `vision.md` → Extract inspiring content to Introduction or Part VII
+- [ ] `vision.md` → Extract to introduction
+- [ ] `economics.md`, `governance.md`, `legal.md`, `problem.md`, `proof.md`, `solution.md`, `strategy.md` → All archive
 
-#### **Reference Directory** (2 files)
-- [ ] `reference/faq.md` → Already in TOC (Appendix A.1)
-- [ ] `reference/operations-roadmap.md` → Already in TOC (Appendix A.2)
+### Phase 1.6: Convert All Files to .qmd Format
+
+**WHEN:** After Phase 1.5 cleanup is complete
+**WHY:** Quarto needs .qmd for interactive features, Python integration, better rendering
+
+#### Conversion Strategy:
+1. **Batch rename** all .md files to .qmd in brain/book/
+2. **Update all internal links** to point to .qmd files
+3. **Update _quarto.yml** chapter references
+4. **Update README.md** TOC links
+5. **Test build** to ensure no broken references
+
+**Script needed:** Create rename-to-qmd.js utility script
 
 ---
 
@@ -325,24 +344,30 @@ This is the master checklist for completing and launching the book, website, and
 
 ---
 
-## 🎯 IMMEDIATE PRIORITIES:
+## 🎯 IMMEDIATE PRIORITIES (REVISED ORDER):
 
-### Priority 1: Process Orphaned Files (Phase 1.5)
-**ACTION:** Go through each file in brain/book/, extract valuable content to new chapters, then archive/delete
+### Priority 1: Clean brain/book/ folder (Phase 1.5) ✅ IN PROGRESS
+**ACTION:** Process all 60 orphaned files, extract value, archive originals
 
-### Priority 2: Create Missing Theory Chapters (Part III)
-**CREATE:** All 7 theory chapters explaining WHY markets beat central planning
+### Priority 2: Write Theory Foundation FIRST (Part III)
+**WHY:** These chapters explain WHY markets > central planning - needed before writing other chapters
+- [ ] 3.1 Hayek Was Right: The Knowledge Problem in Medicine
+- [ ] 3.2 Wisdom of Crowds: 280 Million Brains > 200 NIH Reviewers
+- [ ] 3.3 Incentive Alignment: Why Everyone Wins
+- [ ] 3.5 Other Industries That Escaped Central Planning
+- [ ] 3.6 Network Effects: Why This Gets Better at Scale
+- [ ] 3.7 Information Theory: Why Transparency Beats Secrecy
 
-### Priority 3: Create Missing Problem Chapters (Part I)
-**CREATE:**
-- 1.4 NIH: Soviet-Style Science
-- 1.5 FDA: Central Planning's Body Count
-- 1.6 Regulatory Capture
-- 1.7 Democracy's Failure
-- 1.8 Century of Failed Reforms
+### Priority 3: Reframe Existing Chapters with Market Theory
+**UPDATE:** Apply theory to existing content
+- [ ] Part II: All DIH/dFDA chapters - reframe with market mechanisms
+- [ ] Part I: NIH/FDA chapters - frame as central planning failures
 
-### Priority 4: Create Objection Handling (Part IX)
-**CREATE:** All 5 chapters preemptively addressing criticisms
+### Priority 4: Create New Problem/Strategy Chapters
+**CREATE:** Fill gaps with market framing
+- [ ] Part I: Regulatory Capture, Failed Reforms chapters
+- [ ] Part II: Transition Plan, Treaty Enforcement
+- [ ] Part V: Fundraising strategy chapter
 
 ---
 
