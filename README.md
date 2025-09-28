@@ -100,7 +100,14 @@ graph TD;
 - **[Join the Coalition](mailto:hello@dih.earth)**: We partner with institutions, companies, and non-profits.
 
 
-## Table of Contents
+## Book Outline
+
+> **Note:** This is a comprehensive outline for writing, not the final table of contents.
+> - **Parts** = Major sections of the book
+> - **Numbered items (1.1, 2.3, etc.)** = Chapters or major sections
+> - **Indented items** = Subsections within chapters
+>
+> Writers should work through this outline systematically, treating it as a checklist of topics to cover. The final book may consolidate many of these into single chapters.
 
 ### Part I: Everyone You Love Is Dying (While We Build Better Bombs)
 *   1.1 [Why Your Brain Wants You Dead (Evolution's Sick Joke)](./brain/book/problem/the-evolutionary-trap.qmd)
@@ -115,20 +122,21 @@ graph TD;
 ### Part II: The Solution (Bribe Everyone Until They Stop Killing People)
 *   2.1 [The 1% Treaty: Trade 1% of Murder Budget for Not Dying](./brain/book/solution/1-percent-treaty.qmd)
 *   2.2 [The DIH: The Money Router That Funds Everything](./brain/book/solution/dih.qmd)
-    *   2.2.1 [Payment Rails: How $27B Gets to the Right People](./brain/book/solution/dih-payment-system.qmd)
-    *   2.2.2 [The 2% Solution: Self-Funding Infrastructure](./brain/book/solution/dih-funding-model.qmd)
 *   2.3 [The dFDA: Amazon But For Not Dying](./brain/book/solution/dfda.qmd)
     *   2.3.1 [Outcome Labels: Like Nutrition Labels But For Not Dying](./brain/book/solution/dfda-outcome-labels.qmd)
-    *   2.3.2 [The Global Registry: Every Treatment, Every Result, Forever](./brain/book/solution/dfda-registry.qmd)
-    *   2.3.3 [Standards and Interoperability: Making Everything Talk](./brain/book/solution/dfda-standards.qmd)
+    *   2.3.2 [Treatment Rankings: TripAdvisor for Every Drug and Disease](./brain/book/solution/dfda-treatment-rankings.qmd)
+    *   2.3.3 [The Global Registry: Every Treatment, Every Result, Forever](./brain/book/solution/dfda-registry.qmd)
+    *   2.3.4 [Digital Twin Safe: Your Medical Data Vault That Learns](./brain/book/solution/dfda-digital-twin.qmd)
+    *   2.3.5 [FDAi: Your Free 24/7 AI Doctor (Powered by 8 Billion Patients)](./brain/book/solution/dfda-ai-doctor.qmd)
 *   2.4 [Wishocracy: 8 Billion Brains Making Tiny Decisions That Add Up to Genius](./brain/book/solution/wishocracy.qmd)
-*   2.5 [How to Build This in 36 Months Without Going to Prison](./brain/book/solution/transition-plan.qmd)
+*   2.5 [The Procurement: Prizes, Bounties, and Market Subsidies](./brain/book/solution/procurement-revolution.qmd)
 *   2.6 [Making Treaties That Countries Can't Weasel Out Of](./brain/book/solution/treaty-enforcement.qmd)
 
-### Part III: Why This Actually Works (Besides "Markets Good, Government Bad")
-*   3.1 [The Knowledge Problem: 8 Billion People Know Their Pain Better Than 200 Bureaucrats](./brain/book/theory/hayek-knowledge-problem.qmd)
-*   3.2 [Your Body Is Just a Meat Robot (And We Know How to Fix Robots)](./brain/book/proof/body-as-repairable-machine.qmd)
-*   3.3 [Why Everyone Gets Rich](./brain/book/theory/incentive-alignment.qmd)
+### Part III: Why This Actually Works
+*   3.1 [Public Choice Theory: Everyone's a Selfish Bastard (And That's Good)](./brain/book/theory/public-choice-framework.qmd)
+*   3.2 [The Knowledge Problem: 8 Billion Brains Beat 200 Bureaucrats](./brain/book/theory/hayek-knowledge-problem.qmd)
+*   3.3 [Your Body Is Just a Meat Robot (And We Know How to Fix Robots)](./brain/book/proof/body-as-repairable-machine.qmd)
+*   3.4 [Concentrated Benefits Beat Diffuse Costs: Why This Actually Happens](./brain/book/theory/concentrated-benefits.qmd)
 
 ### Part IV: The Money (Making Everyone Rich)
 *   4.1 [VICTORY Bonds: War Profiteering for Peace](./brain/book/economics/victory-bonds.qmd)
@@ -142,6 +150,7 @@ graph TD;
     *   4.4.1 [Why Epic/Cerner Build the Platforms: They're Getting $26B](./brain/book/economics/treaty-creates-infrastructure.qmd)
     *   4.4.2 [How Everything Connects: APIs, Standards, and Market Forces](./brain/book/economics/ecosystem-emergence.qmd)
 *   4.5 [Risk Analysis: Political Arbitrage vs VC](./brain/book/economics/investor-risk-analysis.qmd)
+*   4.6 [The Prize Economy: $10B in Bounties for Specific Cures](./brain/book/economics/prize-economy.qmd)
 
 ### Part V: The Heist (How to Steal the World and Give It Back to Itself)
 *   5.1 [Step 1: We're Not Fighting the Military-Industrial Complex, We're Buying It](./brain/book/strategy/co-opt-dont-compete.qmd)
@@ -150,6 +159,7 @@ graph TD;
 *   5.4 [Step 4: The $2.5B Slush Fund for Completely Legal Bribes](./brain/book/strategy/fundraising-strategy.qmd)
 *   5.5 [Step 5: Executive Order Our Way to Victory (Bypass Congress Completely)](./brain/book/strategy/dfda-implementation-via-executive-action.qmd)
 *   5.6 [Step 6: Make It Personal (Bribe the Actual Humans, Not the Countries)](./brain/book/strategy/free-rider-solution.qmd)
+*   5.7 [Step 7: The Integration Strategy (Making Big Tech Build Our Infrastructure)](./brain/book/strategy/integration-strategy.qmd)
 
 ### Part VI: Proof This Isn't Completely Insane
 *   6.1 [That Time Oxford Cured COVID for $500/Patient While America Spent $41,000 on Forms](./brain/book/proof/recovery-trial.qmd)
@@ -166,6 +176,8 @@ graph TD;
 *   8.2 [Buy VICTORY Bonds (40% Returns > Dying)](./brain/book/call-to-action.qmd#bonds)
 *   8.3 [Spread This Like COVID But Good](./brain/book/call-to-action.qmd#spread)
 
+### Part IX: "But What About..." (Every Stupid Objection You're Thinking)
+*   9.1 [Common Objections and Why They're Wrong](./brain/book/objections/all-objections.qmd)
 
 ### Appendix: Boring Stuff for Nerds
 *   A.1 [FAQ for People Who Skipped to the End](./brain/book/reference/faq.qmd)
