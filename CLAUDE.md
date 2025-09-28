@@ -8,7 +8,7 @@ This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War a
 
 **Key Navigation:**
 - **`todo.md`**: Master task list and current priorities for book completion
-- **`README.md`**: Complete table of contents and book structure
+- **`README.md`**: Complete book outline (comprehensive writing checklist)
 - **`index.qmd`**: Book introduction and overview (landing page)
 - **`_quarto.yml`**: Chapter ordering and build configuration
 

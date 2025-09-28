@@ -133,11 +133,30 @@ If the automated setup doesn't work:
 The plan _is_ the repository. We're building a book that's so clear anyone can read it.
 
 1.  **Set up your environment:** Follow the [Development Environment Setup](#development-environment-setup) above.
-2.  **Find something to improve:** Look at the `roadmap.md` for priorities.
-3.  **If changing book structure:** Update the [Table of Contents in README.md](./README.md#table-of-contents) first.
+2.  **Find something to improve:** Look at the `todo.md` for priorities.
+3.  **If changing book structure:** Update the [Book Outline in README.md](./README.md#book-outline) first.
 4.  **Make your changes:** Fork the repo and create a branch, or just edit on GitHub if you're not technical.
 5.  **Follow the standards:** Use the rules in this document.
 6.  **Submit a pull request:** Explain how your change makes things better.
+
+### Understanding the Book Outline
+
+The Book Outline in README.md is the **complete skeleton of the book** showing the final narrative structure. It defines:
+
+- **Parts:** Major thematic sections (8 total)
+- **Chapters:** Main arguments within each part (16 total)
+- **Sections:** Key points within chapters (numbered like 1.1, 1.2)
+- **Subsections:** Supporting details (numbered like 1.1.1, 1.1.2)
+
+**Format Rules:**
+- Every item follows "[Core Concept]: [Dark Humor Description]"
+  - Good: "FDA Gatekeeping: Killing You Safely Since 1962"
+  - Bad: "The FDA approval process and its problems"
+
+**Content Guardrails:**
+- **Anti-Central-Planning:** Every solution must emphasize decentralization/markets/competition over committees
+- **Public Choice Focus:** Frame problems through self-interest, not idealism
+- **Dark Humor Required:** If it's not funny, make it funny
 
 ## Content and Style Standards
 
@@ -145,7 +164,7 @@ The plan _is_ the repository. We're building a book that's so clear anyone can r
 
 This repo is structured like a book. Root files are "chapters." Subdirectories are "sections" with the details. `reference/` is the appendix.
 
-**IMPORTANT:** The [Table of Contents in README.md](./README.md#table-of-contents) is the authoritative book structure. Before adding new chapters, sections, or changing the book architecture, update that Table of Contents first. This prevents topic creep and maintains narrative flow.
+**IMPORTANT:** The [Book Outline in README.md](./README.md#book-outline) is the authoritative writing checklist. Before adding new topics or changing the book architecture, update the Book Outline first. This prevents topic creep and maintains narrative flow. Remember: the outline is comprehensive for writing purposes - the final book will consolidate many items into cohesive chapters.
 
 **Note:** Don't edit `brain/book/index.md` directly - it's auto-generated from frontmatter.
 
