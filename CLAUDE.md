@@ -6,6 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War and Disease" - a guide to getting nations to sign the 1% Treaty redirecting military spending to medical research. The project uses a hybrid Node.js/Python setup with TypeScript utility scripts for content management.
 
+**Key Navigation:**
+- **`todo.md`**: Master task list and current priorities for book completion
+- **`README.md`**: Complete table of contents and book structure
+- **`index.qmd`**: Book introduction and overview (landing page)
+- **`_quarto.yml`**: Chapter ordering and build configuration
+
 **Current Focus**: Writing and enhancing book chapters with data visualizations, charts, and interactive elements. Track progress in `todo.md`.
 
 ## Essential Commands
@@ -91,10 +97,29 @@ pip install -r requirements.txt
 
 **See `CONTRIBUTING.md` for complete writing guidelines, style requirements, and content standards.**
 
-Key points for development:
+### Core Message & Focus
+- **Primary Focus:** The unnecessary suffering and death from war (14M deaths/year) and disease (55M deaths/year). Every year we lose 69 million lives that could be saved.
+- **The Problem:** We spend $119 trillion annually on war and disease while investing just 0.06% of that on finding cures. Children die of rare diseases while we build nuclear submarines.
+- **The Solution:** Redirect just 1% of military spending to medical research through systems that are 80X more efficient than current approaches.
+- **The Mission:** Save millions of lives by making curing people more profitable than killing them
+
+### Writing Tone & Style
+- **Dark Humor Meets Practical Hope:** Think Kurt Vonnegut explaining economics to drunk people at a funeral
+- **The 4 Core Checks:** Clarity (would mom understand?), Credibility (can I stake my reputation on this?), Concision (can I cut words?), Directness (does it sound like Vonnegut?)
+- **Voice Test:** "Would this make someone laugh AND think?"
+- **Avoid:** Corporate buzzwords, academic pomposity, euphemisms for death
+
+### Framing Central Planning
+- **Use History Wisely:** Central planning has killed millions (Soviet famines, Great Leap Forward). Present as historical evidence that committee-based systems fail in complex domains
+- **Walk Readers Logically:** From "committees failed at agriculture" to "committees are failing at medical research"
+- **Keep It Bipartisan:** Both Democrats and Republicans lose loved ones to disease. Both parties have created successful market-based programs (Medicare Part D, etc.)
+- **Not Ideological:** This is about what saves lives, not winning political debates
+
+### Key Writing Guidelines
 - Follow the "Write first, research later" approach from `todo.md`
-- Use placeholder citations during writing phase
-- All content should follow the 4 Core Checks (Clarity, Credibility, Concision, Directness)
+- Use placeholder citations during writing phase: `[TODO: source - claim]`
+- Lead with human stories and suffering, not economic theory
+- Present decentralization as practical, not ideological
 
 ## Quality Control
 
