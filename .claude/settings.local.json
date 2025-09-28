@@ -13,7 +13,9 @@
       "Bash(then if [ -f \"brain/book/$dir.qmd\" ])",
       "Bash([ -f \"brain/book/$dir.md\" ])",
       "Bash(then echo \"✓ $dir has summary\")",
-      "Bash(else echo \"✗ $dir MISSING summary\")"
+      "Bash(else echo \"✗ $dir MISSING summary\")",
+      "Bash(node:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

@@ -95,16 +95,26 @@ This is the master checklist for completing and launching the book, website, and
 
 ---
 
-## Phase 1.5: Clean brain/book/ Folder Completely (IN PROGRESS)
+## Phase 1.5: Implement Epic Structure (NEW PRIORITY)
 
-### STRATEGY: Extract ONLY valuable sources and unique ideas, then DELETE
+### STRATEGY: Create executive summary files for each major chapter
 
-**The orphaned files have terrible writing. We're ONLY keeping:**
-1. **Sources/citations** → Add to `brain/book/references.md`
-2. **Unique data/calculations** → Note for use in real chapters
-3. **Ideas not yet covered** → Note for incorporation
+**Epic Pattern Implementation:**
+1. Each chapter gets an executive summary `.qmd` file (e.g., `problem.qmd`)
+2. Summary files provide overview and link to detailed sections
+3. Sections remain in subdirectories (e.g., `problem/*.md`)
 
-**Everything else gets deleted. The writing style sucks and needs complete rewrite per CONTRIBUTING.md.**
+**Files to Create:**
+- [ ] `brain/book/problem.qmd` - Executive summary for Part I
+- [ ] `brain/book/solution.qmd` - Executive summary for Part II
+- [ ] `brain/book/theory.qmd` - Executive summary for Part III
+- [ ] `brain/book/economics.qmd` - Executive summary for Part IV
+- [ ] `brain/book/strategy.qmd` - Executive summary for Part V
+- [ ] `brain/book/proof.qmd` - Executive summary for Part VI
+- [ ] `brain/book/futures.qmd` - Executive summary for Part VII
+- [ ] `brain/book/objections.qmd` - Executive summary for Part IX
+
+**Note:** Orphaned file cleanup ABANDONED. Focus on writing new content.
 
 #### Files to Process (60 total):
 
