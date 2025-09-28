@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(then echo \"$f\")"
     ],
     "deny": [],
     "ask": []
