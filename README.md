@@ -121,8 +121,8 @@ graph TD;
 *   1.3 [The Cost of Disease: A Slow-Motion Apocalypse](./brain/book/problem/cost-of-disease.qmd)
 
 #### Chapter 2: Central Planning Kills (Whether Soviet or American)
-*   1.4 [The NIH: How Soviet-Style Science Wastes $48B/Year](./brain/book/problem/nih-funding-is-broken.qmd)
-*   1.5 [The FDA: Killing You Safely Since 1962](./brain/book/problem/fda-approvals-are-broken.qmd)
+*   2.1 [The NIH: How Soviet-Style Science Wastes $48B/Year](./brain/book/problem/nih-funding-is-broken.qmd)
+*   2.2 [The FDA: Killing You Safely Since 1962](./brain/book/problem/fda-approvals-are-broken.qmd)
 *   2.3 [Regulatory Capture: How Pharma and Lockheed Bought Your Government](./brain/book/problem/regulatory-capture.qmd)
 
 #### Chapter 3: Why Democracy Can't Fix This (Public Choice Theory)
@@ -138,7 +138,7 @@ graph TD;
 #### Chapter 5: The Market Revolution in Medical Research
 *   5.1 [Decentralized Institutes (DIH): The Money Router That Replaces Committees](./brain/book/solution/dih.qmd)
 *   5.2 [Decentralized FDA (dFDA): Amazon for Clinical Trials](./brain/book/solution/dfda.qmd)
-    *   2.3.1 [Outcome Labels: Like Nutrition Labels But For Not Dying](./brain/book/solution/dfda-outcome-labels.qmd)
+    *   5.2.1 [Outcome Labels: Like Nutrition Labels But For Not Dying](./brain/book/solution/dfda-outcome-labels.qmd)
     *   5.2.2 [Treatment Rankings: Prescribing the Optimal Treatment Based on the Universe of Data Instead of Vague Intuition](./brain/book/solution/dfda-treatment-rankings.qmd)
     *   5.2.3 [Global Registry: Every Treatment, Every Result, No Hiding](./brain/book/solution/dfda-registry.qmd)
 *   5.3 [Digital Twin Safe: Privacy Preserving Personal Data Storage and Sharing](./brain/book/solution/dfda-digital-twin.qmd)
@@ -161,7 +161,7 @@ graph TD;
 ### Part IV: The Money (Making Everyone Rich While Saving Lives)
 
 #### Chapter 9: The Investment Opportunity of the Century
-*   9.1 [VICTORY Bonds: Peace Profiteering for Peace](./brain/book/economics/victory-bonds.qmd)
+*   9.1 [VICTORY Bonds: Peace Profiteering](./brain/book/economics/victory-bonds.qmd)
 *   9.2 [The Returns: Why 40% Annual Is Conservative](./brain/book/economics/economic-impact-summary.qmd)
     *   9.2.1 [Peace Dividend: $92B from 1% Less War](./brain/book/economics/1-percent-treaty-peace-dividend-analysis.qmd)
     *   9.2.2 [Trial Efficiency: 463:1 ROI from Competition](./brain/book/economics/dfda-roi-breakdown.qmd)
@@ -169,26 +169,27 @@ graph TD;
     *   9.2.4 [Total Impact: $16.5T Annual Value Creation](./brain/book/economics/total-economic-impact.qmd)
 *   9.3 [Risk Analysis: Why This Beats Venture Capital](./brain/book/economics/investor-risk-analysis.qmd)
 
+
 ### Part V: The Implementation (How to Actually Pull This Off)
 
-#### Chapter 11: How to Steal $27 Billion Dollars 
-*   11.1 [Co-option Strategy: Buying the Military-Industrial Complex](./brain/book/strategy/co-opt-dont-compete.qmd)
-*   11.2 [Global Referendum: Getting 3.5% of Humanity to Click Yes](./brain/book/strategy/global-referendum.qmd)
-*   11.3 [Legal Bribery: How to Buy Politicians Without Prison](./brain/book/strategy/legal-compliance-framework.qmd)
-*   11.4 [Fundraising: The $2.5B Bootstrap Fund](./brain/book/strategy/fundraising-strategy.qmd)
+#### Chapter 10: How to Steal $27 Billion Dollars
+*   10.1 [Co-option Strategy: Buying the Military-Industrial Complex](./brain/book/strategy/co-opt-dont-compete.qmd)
+*   10.2 [Global Referendum: Getting 3.5% of Humanity to Click Yes](./brain/book/strategy/global-referendum.qmd)
+*   10.3 [Legal Bribery: How to Buy Politicians Without Prison](./brain/book/strategy/legal-compliance-framework.qmd)
+*   10.4 [Fundraising: The $2.5B Bootstrap Fund](./brain/book/strategy/fundraising-strategy.qmd)
 
-#### Chapter 12: The Execution Playbook
-*   12.1 [Executive Action: Bypassing Congress Legally](./brain/book/strategy/dfda-implementation-via-executive-action.qmd)
-*   12.2 [Free Rider Solution: Making Individual Incentives Beat National Interests](./brain/book/strategy/free-rider-solution.qmd)
-*   12.3 [Integration Strategy: Making Big Tech Build Our Infrastructure](./brain/book/strategy/integration-strategy.qmd)
+#### Chapter 11: The Execution Playbook
+*   11.1 [Executive Action: Bypassing Congress Legally](./brain/book/strategy/dfda-implementation-via-executive-action.qmd)
+*   11.2 [Free Rider Solution: Making Individual Incentives Beat National Interests](./brain/book/strategy/free-rider-solution.qmd)
+*   11.3 [Integration Strategy: Making Big Tech Build Our Infrastructure](./brain/book/strategy/integration-strategy.qmd)
 
 ### Part VI: The Evidence (This Already Works)
 
-#### Chapter 13: Historical Proof Markets Beat Planning
-*   13.1 [RECOVERY Trial: How Oxford Cured COVID for $500/Patient](./brain/book/proof/recovery-trial.qmd)
-*   13.2 [Pre-1962: When Doctors Decided, Not Bureaucrats](./brain/book/proof/pre-1962-golden-age.qmd)
-*   13.3 [Citizen Movements: How We Banned Landmines, Can Ban Disease](./brain/book/proof/historical-precedents.qmd)
-*   13.4 [Case Studies: Diseases We Could Cure Tomorrow](./brain/book/proof/case-studies.qmd)
+#### Chapter 12: Historical Proof Markets Beat Planning
+*   12.1 [RECOVERY Trial: How Oxford Cured COVID for $500/Patient](./brain/book/proof/recovery-trial.qmd)
+*   12.2 [Pre-1962: When Doctors Decided, Not Bureaucrats](./brain/book/proof/pre-1962-golden-age.qmd)
+*   12.3 [Citizen Movements: How We Banned Landmines, Can Ban Disease](./brain/book/proof/historical-precedents.qmd)
+*   12.4 [Case Studies: Diseases We Could Cure Tomorrow](./brain/book/proof/case-studies.qmd)
 
 ### Part VII: The Future (Pick Your Dystopia)
 
