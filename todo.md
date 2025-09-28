@@ -4,57 +4,64 @@ This is the master checklist for completing and launching the book, website, and
 
 **UPDATED STRATEGY (2025-09-27):** Write first, research later. Focus on getting all content written with placeholder citations, then do a systematic research pass.
 
-## Phase 0.5: DIH as Free Market Alternative to NIH Central Planning (IN PROGRESS)
+## Phase 0.5: Focus on Human Suffering, Show Why Central Planning Kills (IN PROGRESS)
 
-### Core Conceptual Reframing: NIH = Communism, DIH = Capitalism
+### Core Message: 69 Million Deaths Per Year Are Preventable
 
-**NEW FRAMING:** Position DIH as the free market/capitalist alternative to NIH's Soviet-style central planning. Leverage:
-- **Hayek's Information Theory**: Markets as superior information aggregation mechanisms
-- **Wisdom of Crowds**: Distributed decision-making beats expert committees
-- **Market Mechanisms**: Price signals, competition, and incentives vs bureaucracy
-- **Blockchain Question**: Evaluate if necessary for transparency/anti-corruption
+**PRIMARY FOCUS:** The human tragedy - 55M die from disease, 14M from war, while we spend 140x more on killing than curing. Children die from rare diseases while we build nuclear submarines.
 
-### Files to Update with Market-Based Framing:
+**THE LESSON FROM HISTORY:** Central planning has a body count. Whether it's Soviet agriculture (7M dead in Ukraine), Chinese Great Leap Forward (30M dead), or the NIH/FDA system (11M dead per year of delay) - the pattern is clear: when committees replace markets, people die unnecessarily.
 
-- [ ] **Core DIH Positioning:**
-    - [ ] `brain/book/solution/dih.qmd` - Reframe as market-based research funding system
-    - [ ] `brain/book/solution/dfda.md` - Emphasize market competition in trials
-    - [ ] `brain/book/solution/wishocracy.md` - Position as inequality-addressing mechanism within capitalist framework
-    - [ ] `brain/book/solution/1-percent-treaty.md` - Show transition from central planning to markets
+**SOLUTION FRAMING:** This isn't about left vs right - it's about what actually saves lives. Democrats created Medicare Part D's successful market-based system. Republicans expanded NIH funding. Both parties recognize that some problems need distributed solutions. Medical research is one of them.
 
-- [ ] **Problem Diagnosis (New Angle):**
-    - [ ] Chapter 1.3.1 "Why NIH is Terrible" - Frame as failure of central planning
-    - [ ] Add comparison: NIH grant committees = Soviet planning bureaus
-    - [ ] Show information bottlenecks and misallocated resources
+**Historical Evidence to Present Gently:**
+- **Soviet Agriculture**: 7 million died in famines while committees decided what to plant
+- **NIH/FDA Today**: 95% of diseases have no treatment while committees decide what to fund
+- **The Pattern**: Central planning fails in complex domains because no committee can process enough information
+- **The Success Stories**: When we decentralized telecom, computing, and agriculture, innovation exploded
 
-- [ ] **Economic Arguments:**
-    - [ ] `brain/book/economics/victory-bonds.qmd` - Markets pricing future health gains
-    - [ ] `brain/book/economics/economic-impact-summary.md` - Market efficiency vs bureaucratic waste
+### Files to Update with Human-Centered Framing:
 
-### Key Conceptual Shifts:
+- [ ] **Core Solution Positioning:**
+    - [ ] `brain/book/solution/dih.qmd` - Frame as saving lives through 80X efficiency gains
+    - [ ] `brain/book/solution/dfda.md` - Focus on getting treatments to patients faster
+    - [ ] `brain/book/solution/wishocracy.md` - Democratic prioritization of which diseases to cure first
+    - [ ] `brain/book/solution/1-percent-treaty.md` - Stop funding death, start funding life
 
-1. **NIH = Central Planning Problems:**
-   - Information bottlenecks (committees can't know all science)
-   - Political capture and bureaucratic incentives
-   - Slow adaptation to new information
-   - Winner-picking by committees vs market discovery
+- [ ] **Problem Diagnosis (Human Cost Focus):**
+    - [ ] Chapter 1.4 "Why NIH Fails" - 95% of diseases have no cure, explain structural reasons
+    - [ ] Show how committee bottlenecks = people dying while waiting
+    - [ ] Use specific patient stories where possible
 
-2. **DIH = Market Solutions:**
-   - Distributed knowledge aggregation (Hayek)
-   - Competition between research approaches
-   - Price signals for research value
-   - Rapid iteration and failure tolerance
+- [ ] **Economic Arguments (Lives Saved, Not Just Money):**
+    - [ ] `brain/book/economics/victory-bonds.qmd` - Investment in saving lives
+    - [ ] `brain/book/economics/economic-impact-summary.md` - QALYs gained, suffering prevented
 
-3. **Wishocracy = Addressing Market Failures:**
-   - Democratic input for public goods
-   - Equity considerations in pure capitalism
-   - Collective wisdom for research priorities
-   - Balance between efficiency and fairness
+### Key Message Shifts:
 
-4. **Insurance Model Reconsideration:**
-   - May keep as implementation detail
-   - Or pivot to direct market mechanisms
-   - Focus on incentives and information flow
+1. **Why Current System Kills People:**
+   - 200 reviewers can't possibly evaluate all medical knowledge
+   - 90% rejection rate = brilliant researchers give up
+   - 17-year approval process = millions die waiting
+   - Committee decisions are political, not medical
+
+2. **Why Decentralized Systems Save Lives:**
+   - Thousands of researchers testing solutions in parallel
+   - Patients and doctors choose what to try (not committees)
+   - Real-world evidence from actual patients (not just lab mice)
+   - 80X cost reduction = 80X more treatments tested
+
+3. **Why This Isn't Radical:**
+   - Oxford already proved it works (RECOVERY trial)
+   - Every other industry improved when decentralized
+   - We're not eliminating oversight, just making it efficient
+   - Patients still protected, just not prevented from trying
+
+4. **Keep It Bipartisan:**
+   - Both parties lose family to disease
+   - Both parties want lower healthcare costs
+   - Both parties support troops (redirect military waste, not soldier pay)
+   - Focus on results, not ideology
 
 ### New Theoretical Foundations to Incorporate:
 
@@ -65,13 +72,14 @@ This is the master checklist for completing and launching the book, website, and
 - [ ] **Mechanism Design**: Optimal incentives for medical innovation
 - [ ] **Blockchain/Transparency**: Necessary or nice-to-have for anti-corruption?
 
-### Writing Tasks:
+### Writing Approach:
 
-- [ ] Draft new introduction comparing NIH to Gosplan (Soviet planning committee)
-- [ ] Create comparison table: Central Planning vs Market Mechanisms in Research
-- [ ] Write section on Hayek's "Use of Knowledge in Society" applied to medical research
-- [ ] Develop concrete examples of market mechanisms in DIH operations
-- [ ] Address "but healthcare isn't a normal market" objections
+- [ ] Start with human stories: patients dying while waiting for committee approvals
+- [ ] Build the pattern: "Every time we've centralized complex decisions, people died"
+- [ ] Use gentle historical parallels: "The NIH faces the same information problem that caused Soviet famines"
+- [ ] Show bipartisan solutions: Medicare Part D (Bush), ACA marketplaces (Obama)
+- [ ] Present decentralization as practical, not ideological: "This is what worked for telecom, agriculture, and computing"
+- [ ] Address concerns: "We're not eliminating oversight, we're making it efficient"
 
 ---
 
