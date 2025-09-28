@@ -18,41 +18,41 @@ book:
     - index.qmd
     - part: "Chapter 1: The Problem: A $119 Trillion Mistake"
       chapters:
-        - brain/book/problem/the-evolutionary-trap.md
-        - brain/book/problem/cost-of-war.md
-        - brain/book/problem/cost-of-disease.md
-        - brain/book/problem/why-the-system-is-broken.md
-        - brain/book/problem/nih-funding-is-broken.md
-        - brain/book/problem/fda-approvals-are-broken.md
-        - brain/book/problem/democracy-is-broken.md
+        - brain/book/problem/the-evolutionary-trap.qmd
+        - brain/book/problem/cost-of-war.qmd
+        - brain/book/problem/cost-of-disease.qmd
+        - brain/book/problem/why-the-system-is-broken.qmd
+        - brain/book/problem/nih-funding-is-broken.qmd
+        - brain/book/problem/fda-approvals-are-broken.qmd
+        - brain/book/problem/democracy-is-broken.qmd
     - part: "Chapter 2: The Solution: A Better Deal"
       chapters:
-        - brain/book/solution/1-percent-treaty.md
+        - brain/book/solution/1-percent-treaty.qmd
         - brain/book/solution/dih.qmd
-        - brain/book/solution/dfda.md
-        - brain/book/solution/wishocracy.md
+        - brain/book/solution/dfda.qmd
+        - brain/book/solution/wishocracy.qmd
     - part: "Chapter 3: Economics: How Individuals and Society can both Profit from Peace"
       chapters:
         - brain/book/economics/victory-bonds.qmd
-        - brain/book/economics/economic-impact-summary.md
+        - brain/book/economics/economic-impact-summary.qmd
     - part: "Chapter 4: The Strategy: How to Bribe the World (Legally)"
       chapters:
-        - brain/book/strategy/co-opt-dont-compete.md
-        - brain/book/strategy/global-referendum.md
-        - brain/book/strategy/legal-compliance-framework.md
+        - brain/book/strategy/co-opt-dont-compete.qmd
+        - brain/book/strategy/global-referendum.qmd
+        - brain/book/strategy/legal-compliance-framework.qmd
     - part: "Chapter 5: The Proof: Why This Isn't Completely Insane"
       chapters:
-        - brain/book/reference/recovery-trial.md
-        - brain/book/proof/historical-precedents.md
-        - brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.md
-        - brain/book/proof/body-as-repairable-machine.md
+        - brain/book/reference/recovery-trial.qmd
+        - brain/book/proof/historical-precedents.qmd
+        - brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.qmd
+        - brain/book/proof/body-as-repairable-machine.qmd
     - part: "Chapter 6: The Futures: Choose Your Own Adventure"
       chapters:
-        - brain/book/futures/dystopia-skynet-wins.md
-        - brain/book/futures/utopia-health-and-happiness.md
+        - brain/book/futures/dystopia-skynet-wins.qmd
+        - brain/book/futures/utopia-health-and-happiness.qmd
     - part: "Chapter 7: Join the War on Disease"
       chapters:
-        - brain/book/call-to-action.md
+        - brain/book/call-to-action.qmd
 
 execute:
   # Relaunch kernel for each render
