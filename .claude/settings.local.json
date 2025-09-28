@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(git restore:*)",
-      "Bash(then echo \"$f\")"
+      "Bash(then echo \"$f\")",
+      "Bash(find:*)",
+      "Bash(while read name)",
+      "Bash(do if ! grep -q \"$name\" README.md)",
+      "Bash(then find brain/book -name \"$name.md\" -type f)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
