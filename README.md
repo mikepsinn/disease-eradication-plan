@@ -131,7 +131,11 @@ graph TD;
 
 ### Part IV: The Money (Making It Real)
 *   4.1 [VICTORY Bonds: War Profiteering for Peace](./brain/book/economics/victory-bonds.qmd)
-*   4.2 [The ROI: $27B → $16.5T Annual Returns](./brain/book/economics/economic-impact-summary.md)
+*   4.2 [The Economics: Breaking Down the Returns](./brain/book/economics/economic-impact-summary.md)
+    *   4.2.1 [Treaty Peace Dividend: $92B from 1% Less War](./brain/book/economics/1-percent-treaty-peace-dividend-analysis.md)
+    *   4.2.2 [dFDA ROI: 463:1 from Trial Efficiency](./brain/book/economics/dfda-roi-breakdown.md)
+    *   4.2.3 [DIH Market Allocation: Wisdom > Committees](./brain/book/economics/dih-market-returns.md)
+    *   4.2.4 [Combined Impact: $16.5T Annual Value](./brain/book/economics/total-economic-impact.md)
 *   4.3 [The Business Model: Insurance, Not Charity](./brain/book/solution/dih-integration-model.md)
 *   4.4 [The Infrastructure: Tech Stack for Distributed Trials](./brain/book/implementation/tech-infrastructure.md)
 *   4.5 [Implementation Timeline: 36 Months to Launch](./brain/book/implementation/timeline.md)
