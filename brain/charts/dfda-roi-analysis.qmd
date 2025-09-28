@@ -1,0 +1,438 @@
+---
+title: "dFDA ROI Analysis Charts"
+description: "Reusable visualizations for dFDA cost-benefit analysis and return on investment"
+format:
+  html:
+    code-fold: true
+jupyter: dih-project-kernel
+---
+
+```{python}
+#| label: setup
+#| echo: false
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Set style
+plt.style.use('seaborn-v0_8-darkgrid')
+sns.set_palette("husl")
+```
+
+## dFDA Platform Economics
+
+### Key Metrics
+
+```{python}
+#| label: key-metrics
+#| echo: false
+
+# Core economic metrics from analysis
+metrics = {
+    'ROI Ratio': 463,
+    'Annual R&D Savings (Billions)': 50,
+    'Annual QALYs Generated': 840_000,
+    'Daily Opportunity Cost (Millions)': 137,
+    'ICER per QALY': -59_501,
+    'Per-Patient Cost Reduction': 80,
+    'Platform Annual Cost (Millions)': 40
+}
+
+# Create interactive key metrics display
+fig = go.Figure()
+
+# Add metric cards
+metric_names = list(metrics.keys())
+metric_values = list(metrics.values())
+
+# Format values for display
+formatted_values = []
+for name, value in metrics.items():
+    if 'Billions' in name:
+        formatted_values.append(f'${value}B')
+    elif 'Millions' in name:
+        formatted_values.append(f'${value}M')
+    elif 'ROI' in name:
+        formatted_values.append(f'{value}:1')
+    elif 'QALY' in name and 'ICER' not in name:
+        formatted_values.append(f'{value:,}')
+    elif 'ICER' in name:
+        formatted_values.append(f'${value:,}')
+    elif 'Reduction' in name:
+        formatted_values.append(f'{value}x')
+    else:
+        formatted_values.append(str(value))
+
+# Create subplot with metric cards
+fig = go.Figure()
+
+for i, (name, value) in enumerate(zip(metric_names, formatted_values)):
+    color = px.colors.qualitative.Plotly[i % len(px.colors.qualitative.Plotly)]
+
+    fig.add_trace(go.Indicator(
+        mode = "number",
+        value = metrics[name] if not isinstance(metrics[name], str) else 0,
+        number = {'font': {'size': 40, 'color': color}, 'prefix': '', 'suffix': ''},
+        title = {'text': f"<b>{name}</b><br><span style='font-size:30px'>{value}</span>",
+                'font': {'size': 16}},
+        domain = {'row': i // 2, 'column': i % 2}
+    ))
+
+fig.update_layout(
+    title="dFDA Platform: Key Economic Metrics",
+    grid={'rows': 4, 'columns': 2, 'pattern': "independent"},
+    height=800,
+    showlegend=False
+)
+
+fig.show()
+```
+
+### Cost Reduction Scenarios
+
+```{python}
+#| label: cost-reduction-scenarios
+#| echo: false
+
+# Cost reduction scenarios from the analysis
+scenarios = pd.DataFrame({
+    'Scenario': ['Conservative', 'Base Case', 'Optimistic', 'Transformative'],
+    'Cost Reduction %': [30, 50, 70, 95],
+    'Annual Savings (Billions)': [30, 50, 70, 95]
+})
+
+# Create waterfall chart showing progression of savings
+fig = go.Figure(go.Waterfall(
+    name = "Cost Savings",
+    orientation = "v",
+    measure = ["relative", "relative", "relative", "total"],
+    x = scenarios['Scenario'],
+    textposition = "outside",
+    text = [f"${x}B" for x in scenarios['Annual Savings (Billions)']],
+    y = [30, 20, 20, 25],  # Incremental values
+    connector = {"line":{"color":"rgb(63, 63, 63)"}},
+    increasing = {"marker":{"color":"green"}},
+    decreasing = {"marker":{"color":"red"}},
+    totals = {"marker":{"color":"blue"}}
+))
+
+fig.update_layout(
+    title = "Annual R&D Savings by Cost Reduction Scenario",
+    xaxis_title = "Scenario",
+    yaxis_title = "Annual Savings ($ Billions)",
+    showlegend = False,
+    height=500
+)
+
+fig.show()
+```
+
+### ROI Sensitivity Analysis
+
+```{python}
+#| label: roi-sensitivity
+#| echo: false
+
+# ROI ranges based on different ecosystem costs
+roi_data = pd.DataFrame({
+    'Cost Scenario': ['Best Case', 'Lean Ecosystem', 'Medium Case', 'Worst Case'],
+    'Annual Platform Cost (Millions)': [11, 40, 60, 270],
+    'ROI Ratio': [2577, 463, 250, 66],
+    'NPV 10-Year (Billions)': [495, 249, 190, 50]
+})
+
+# Create dual-axis chart
+fig = go.Figure()
+
+# Add ROI bars
+fig.add_trace(go.Bar(
+    name='ROI Ratio',
+    x=roi_data['Cost Scenario'],
+    y=roi_data['ROI Ratio'],
+    yaxis='y',
+    marker_color='lightblue',
+    text=[f'{x}:1' for x in roi_data['ROI Ratio']],
+    textposition='auto',
+))
+
+# Add NPV line
+fig.add_trace(go.Scatter(
+    name='10-Year NPV',
+    x=roi_data['Cost Scenario'],
+    y=roi_data['NPV 10-Year (Billions)'],
+    yaxis='y2',
+    mode='lines+markers',
+    marker=dict(size=12, color='darkgreen'),
+    line=dict(width=3, color='darkgreen'),
+    text=[f'${x}B' for x in roi_data['NPV 10-Year (Billions)']],
+    textposition='top center'
+))
+
+fig.update_layout(
+    title='ROI Sensitivity to Platform Cost Scenarios',
+    xaxis_title='Cost Scenario',
+    yaxis=dict(
+        title='ROI Ratio',
+        titlefont=dict(color='lightblue'),
+        tickfont=dict(color='lightblue')
+    ),
+    yaxis2=dict(
+        title='10-Year NPV ($ Billions)',
+        titlefont=dict(color='darkgreen'),
+        tickfont=dict(color='darkgreen'),
+        overlaying='y',
+        side='right'
+    ),
+    hovermode='x unified',
+    height=500,
+    showlegend=True,
+    legend=dict(x=0.7, y=1)
+)
+
+fig.show()
+```
+
+### Health Impact: QALYs Generated
+
+```{python}
+#| label: qaly-impact
+#| echo: false
+
+# QALY sources breakdown
+qaly_sources = pd.DataFrame({
+    'Source': ['Faster Drug Access', 'New Rare Disease Treatments',
+               'Enhanced Prevention', 'Reduced Trial Participation Burden',
+               'Improved Treatment Matching'],
+    'Annual QALYs': [350000, 200000, 150000, 80000, 60000],
+    'Percentage': [41.7, 23.8, 17.9, 9.5, 7.1]
+})
+
+# Create donut chart
+fig = go.Figure(data=[go.Pie(
+    labels=qaly_sources['Source'],
+    values=qaly_sources['Annual QALYs'],
+    hole=.4,
+    marker_colors=px.colors.qualitative.Set2,
+    textinfo='label+percent',
+    textposition='outside',
+    pull=[0.1 if i == 0 else 0 for i in range(len(qaly_sources))]
+)])
+
+fig.update_traces(
+    textfont_size=12,
+    marker=dict(line=dict(color='white', width=2))
+)
+
+fig.update_layout(
+    title="Annual QALYs Generated by Source (Total: 840,000)",
+    annotations=[dict(text='840K<br>QALYs/Year', x=0.5, y=0.5,
+                     font_size=20, showarrow=False)],
+    height=500,
+    showlegend=True
+)
+
+fig.show()
+```
+
+### Per-Patient Cost Comparison
+
+```{python}
+#| label: per-patient-costs
+#| echo: false
+
+# Per-patient trial costs comparison
+cost_comparison = pd.DataFrame({
+    'Trial Type': ['Traditional Phase III', 'Current DCT Average',
+                   'dFDA Platform', 'RECOVERY Trial Model'],
+    'Cost per Patient': [80000, 25000, 1000, 500],
+    'Reduction Factor': [1, 3.2, 80, 160]
+})
+
+# Create bar chart with cost reduction factors
+fig = go.Figure()
+
+colors = ['red', 'orange', 'lightgreen', 'darkgreen']
+fig.add_trace(go.Bar(
+    x=cost_comparison['Trial Type'],
+    y=cost_comparison['Cost per Patient'],
+    marker_color=colors,
+    text=[f'${x:,}<br>{r}x reduction' if r > 1 else f'${x:,}<br>baseline'
+          for x, r in zip(cost_comparison['Cost per Patient'],
+                         cost_comparison['Reduction Factor'])],
+    textposition='auto',
+))
+
+fig.update_layout(
+    title='Per-Patient Clinical Trial Cost Comparison',
+    xaxis_title='Trial Type',
+    yaxis_title='Cost per Patient ($)',
+    yaxis_type='log',
+    showlegend=False,
+    height=500
+)
+
+fig.show()
+```
+
+### Daily Opportunity Cost Counter
+
+```{python}
+#| label: opportunity-cost
+#| echo: false
+
+# Daily opportunity cost breakdown
+daily_costs = pd.DataFrame({
+    'Category': ['Economic Waste', 'Lost QALYs Value', 'Delayed Innovation',
+                 'Preventable Deaths Cost'],
+    'Daily Cost (Millions)': [137, 345, 68, 27],
+    'Annual Cost (Billions)': [50, 126, 25, 10]
+})
+
+# Create stacked area chart showing cumulative daily cost
+days = np.arange(1, 366)
+cumulative_costs = pd.DataFrame({
+    'Day': days,
+    'Economic Waste': days * 137,
+    'Lost QALYs Value': days * 345,
+    'Delayed Innovation': days * 68,
+    'Preventable Deaths': days * 27
+})
+
+fig = go.Figure()
+
+for column in ['Preventable Deaths', 'Delayed Innovation', 'Lost QALYs Value', 'Economic Waste']:
+    fig.add_trace(go.Scatter(
+        x=cumulative_costs['Day'],
+        y=cumulative_costs[column],
+        mode='lines',
+        name=column,
+        stackgroup='one',
+        fillcolor=px.colors.qualitative.Pastel[
+            ['Economic Waste', 'Lost QALYs Value', 'Delayed Innovation', 'Preventable Deaths'].index(column)
+        ]
+    ))
+
+fig.update_layout(
+    title='Cumulative Opportunity Cost of Inaction (1 Year)',
+    xaxis_title='Days',
+    yaxis_title='Cumulative Cost ($ Millions)',
+    hovermode='x unified',
+    height=500,
+    showlegend=True,
+    legend=dict(x=0.02, y=0.98)
+)
+
+# Add annotation for total annual cost
+fig.add_annotation(
+    x=365, y=sum(cumulative_costs.iloc[-1][1:]),
+    text=f"Total Annual Cost: ${sum(daily_costs['Annual Cost (Billions)'])}B",
+    showarrow=True,
+    arrowhead=2,
+    bgcolor="white",
+    bordercolor="black",
+    borderwidth=1
+)
+
+fig.show()
+```
+
+### Investment vs Returns Timeline
+
+```{python}
+#| label: investment-timeline
+#| echo: false
+
+# 10-year investment vs returns projection
+years = np.arange(0, 11)
+platform_costs = np.array([40] + [40]*10)  # Initial + annual costs
+cumulative_costs = np.cumsum(platform_costs)
+annual_savings = np.array([0] + [50000]*10)  # No savings in year 0
+cumulative_savings = np.cumsum(annual_savings)
+net_benefit = cumulative_savings - cumulative_costs
+
+timeline_data = pd.DataFrame({
+    'Year': years,
+    'Cumulative Investment': cumulative_costs,
+    'Cumulative Savings': cumulative_savings,
+    'Net Benefit': net_benefit
+})
+
+# Create line chart
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
+    x=timeline_data['Year'],
+    y=timeline_data['Cumulative Investment'],
+    mode='lines+markers',
+    name='Cumulative Investment',
+    line=dict(color='red', width=3),
+    marker=dict(size=8)
+))
+
+fig.add_trace(go.Scatter(
+    x=timeline_data['Year'],
+    y=timeline_data['Cumulative Savings'],
+    mode='lines+markers',
+    name='Cumulative Savings',
+    line=dict(color='green', width=3),
+    marker=dict(size=8)
+))
+
+fig.add_trace(go.Scatter(
+    x=timeline_data['Year'],
+    y=timeline_data['Net Benefit'],
+    mode='lines+markers',
+    name='Net Benefit',
+    line=dict(color='blue', width=3, dash='dash'),
+    marker=dict(size=8)
+))
+
+# Add break-even point
+break_even_year = 1  # Platform pays for itself after year 1
+fig.add_vline(x=break_even_year, line_dash="dot", line_color="gray",
+              annotation_text="Break-even", annotation_position="top")
+
+fig.update_layout(
+    title='dFDA Platform: 10-Year Investment vs Returns',
+    xaxis_title='Year',
+    yaxis_title='Amount ($ Millions)',
+    hovermode='x unified',
+    height=500,
+    showlegend=True,
+    legend=dict(x=0.02, y=0.98)
+)
+
+# Add ROI annotation at year 10
+fig.add_annotation(
+    x=10, y=net_benefit[10],
+    text=f"10-Year ROI: 463:1<br>NPV: ${net_benefit[10]/1000:.1f}B",
+    showarrow=True,
+    arrowhead=2,
+    bgcolor="lightblue",
+    bordercolor="blue",
+    borderwidth=2
+)
+
+fig.show()
+```
+
+## Usage Instructions
+
+This file contains reusable chart components for the dFDA economic analysis. To use these charts in other documents:
+
+1. **Include specific charts**: Use Quarto's chunk options to include individual charts
+2. **Modify data**: Update the dataframes in each chunk to reflect new calculations
+3. **Export static images**: Charts can be saved as PNG/SVG for presentations
+
+### Key Data Sources
+
+- **ROI Calculation**: 463:1 based on $40M annual cost generating $50B savings
+- **QALY Impact**: 840,000 annual QALYs from multiple sources
+- **Cost Reductions**: 80-160x per-patient cost reduction vs traditional trials
+- **Daily Opportunity Cost**: $137M economic + 2,301 QALYs lost daily
+
+All figures derived from the comprehensive dFDA cost-benefit analysis.

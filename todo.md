@@ -108,29 +108,208 @@ This is the master checklist for completing and launching the book, website, and
 
 #### Files to Process (60 total):
 
-**Economics (17 files):**
-- [ ] `economics/1-percent-treaty-peace-dividend-analysis.md` → Extract to Part IV: 4.2 ROI
-- [ ] `economics/dfda-cost-benefit-analysis.md` → Extract 463:1 ROI to Part IV: 4.2
-- [ ] `economics/dfda-cost-benefit.qmd` → Check vs .md, archive duplicate
-- [ ] `economics/economic-impact-summary.md` → Already in TOC, skip
-- [ ] `economics/economic-summary.qmd` → Check vs .md, archive duplicate
-- [ ] `economics/economic-value-of-accelerated-treatments.md` → Extract to Part II: 2.2 dFDA
-- [ ] `economics/financial-model.md` → Extract to Part IV: 4.5 Timeline
-- [ ] `economics/health-savings-sharing-model.md` → Extract to Part IV: 4.3 Business Model
-- [ ] `economics/humanity-budget-overview.qmd` → Extract visuals to Part I
-- [ ] `economics/intervention-comparison-table.md` → Extract to Part IV: 4.2
-- [ ] `economics/investor-risk-analysis.md` → Extract to Part IV: 4.1 VICTORY
-- [ ] `economics/operational-budget-model.md` → Extract to Part IV: 4.5
-- [ ] `economics/peace-dividend-analysis.qmd` → Extract to Part IV: 4.2
-- [ ] `economics/quantitative-value-medical-treatment.md` → Extract to Part III: 3.3
-- [ ] `economics/value-of-automating-research.md` → Extract to Part II: 2.2
-- [ ] `economics/victory-bonds.qmd` → Already in TOC, skip
-- [ ] `economics.md` → Archive
+**⚠️ STRUCTURAL CONSIDERATION:**
+Part IV: 4.2 "The ROI" is getting too much content. Consider splitting into:
+- 4.2a: **Treaty Peace Dividend** ($24B redirect, $92B savings from 1% less war)
+- 4.2b: **dFDA Efficiency Gains** (463:1 ROI from 80X cheaper trials)
+- 4.2c: **DIH Market Allocation** (Better funding via markets vs committees)
+- 4.2d: **Combined Impact** (How all three multiply together)
+
+**Economics (18 files) - COMPLETE ACTION PLAN:**
+
+- [ ] **`1-percent-treaty-peace-dividend-analysis.md`**
+  - Content: $24.43B redirect, $91.97B savings breakdown
+  - Action: Create `brain/charts/treaty-peace-dividend-waterfall.qmd`
+  - Delete after extraction
+
+- [ ] **`dfda-cost-benefit-analysis.md`** (CRITICAL - 33K tokens!)
+  - Content: 463:1 ROI, platform costs, 840K QALYs/year
+  - Action: Extract to multiple reusable charts:
+    - `brain/charts/dfda-roi-waterfall.qmd` (463:1 from trial efficiency)
+    - `brain/charts/dfda-qaly-impact.qmd` (840K QALYs/year)
+    - `brain/charts/dfda-platform-costs.qmd` (build & operational costs)
+  - **CREATE NEW SECTION:** Part IV: 4.2b "dFDA Efficiency Returns"
+  - Delete after extraction
+
+- [ ] **`intervention-comparison-table.md`**
+  - Content: Compares dFDA to smallpox eradication, vaccines, etc.
+  - Action: Create `brain/charts/health-intervention-roi-comparison.qmd`
+  - Delete after extraction
+
+- [ ] **`quantitative-value-medical-treatment.md`**
+  - Content: QALY framework explanation
+  - Action: Extract to Part III: 3.3 (Incentive Alignment) or new theory chapter
+  - Delete after extraction
+
+- [ ] **`economic-value-of-accelerated-treatments.md`**
+  - Content: Value of faster drug development
+  - Action: Extract key data to Part II: 2.2 (dFDA benefits)
+  - Delete after extraction
+
+- [ ] **`financial-model.md`**
+  - Action: Check for unique data → Part IV: 4.5 Timeline/Budget
+  - Delete after extraction
+
+- [ ] **`health-savings-sharing-model.md`**
+  - Action: Check for unique content → Part IV: 4.3 Business Model
+  - Delete after extraction
+
+- [ ] **`investor-risk-analysis.md`**
+  - Action: Extract to Part IV: 4.1 VICTORY Bonds
+  - Delete after extraction
+
+- [ ] **`operational-budget-model.md`**
+  - Content: 36-month implementation budget
+  - Action: Extract to Part IV: 4.5 Timeline
+  - Delete after extraction
+
+- [ ] **`value-of-automating-research.md`**
+  - Action: Extract automation benefits to Part II: 2.2 dFDA
+  - Delete after extraction
+
+- [ ] **Files already in TOC (keep):**
+  - `economic-impact-summary.md` → Part IV: 4.2 ✓
+  - `victory-bonds.qmd` → Part IV: 4.1 ✓
+
+- [ ] **Likely duplicates (delete):**
+  - `dfda-cost-benefit.qmd` (check vs .md)
+  - `economic-summary.qmd` (check vs economic-impact-summary.md)
+  - `humanity-budget-overview.qmd` (check for unique visuals)
+  - `peace-dividend-analysis.qmd` (check vs 1-percent-treaty version)
+  - `victory-bonds.html` (generated file)
+  - `economic_models.ipynb` (check for unique calculations)
 
 **Governance (3 files):**
-- [ ] `governance/dih-onchain-architecture.md` → Extract to Part IV: 4.4 Infrastructure
-- [ ] `governance/organizational-structure.md` → Extract to Part II: 2.1 DIH
-- [ ] `governance.md` → Archive
+
+- [ ] **`governance/dih-onchain-architecture.md`**
+  - Content: Blockchain/DAO governance details
+  - Action: Extract to Part IV: 4.4 Infrastructure (blockchain discussion)
+  - Delete after extraction
+
+- [ ] **`governance/organizational-structure.md`**
+  - Content: DIH organizational design
+  - Action: Extract to Part II: 2.1 DIH market structure
+  - Delete after extraction
+
+- [ ] **`governance.md`**
+  - Action: Section overview file → Delete
+**Legal (3 files):**
+
+- [ ] **`legal/community-governance-framework.md`**
+  - Action: Extract to Part II: 2.4 Wishocracy
+  - Delete after extraction
+
+- [ ] **`legal/impact-securities-reform.md`**
+  - Content: Legal framework for VICTORY bonds
+  - Action: Extract to Part IV: 4.1 VICTORY Bonds
+  - Delete after extraction
+
+- [ ] **`legal.md`**
+  - Action: Section overview file → Delete
+
+**Partners (1 file):**
+
+- [ ] **`partners/incentives.md`**
+  - Content: Stakeholder incentive alignment
+  - Action: Extract to Part III: 3.3 Incentive Alignment
+  - Delete after extraction
+
+**Problem (7 files):**
+
+- [ ] **Files already in TOC (keep):**
+  - `problem/the-evolutionary-trap.md` → Part I: 1.1 ✓
+  - `problem/cost-of-war.md` → Part I: 1.2 ✓
+  - `problem/cost-of-disease.md` → Part I: 1.3 ✓
+  - `problem/nih-funding-is-broken.md` → Part I: 1.4 ✓
+  - `problem/fda-approvals-are-broken.md` → Part I: 1.5 ✓
+
+- [ ] **`problem/why-the-system-is-broken.md`**
+  - Action: Extract unique points to Part I: 1.6-1.8 (Regulatory Capture, Democracy, Failed Reforms)
+  - Delete after extraction
+
+- [ ] **`problem.md`**
+  - Action: Section overview file → Delete
+
+**Proof (3 files):**
+
+- [ ] **Files already in TOC (keep):**
+  - `proof/body-as-repairable-machine.md` → Part III: 3.4 ✓
+  - `proof/historical-precedents.md` → Part VI: 6.2 ✓
+
+- [ ] **`proof.md`**
+  - Action: Section overview file → Delete
+
+**Solution (7 files):**
+
+- [ ] **Files already in TOC (keep):**
+  - `solution/dih.qmd` → Part II: 2.1 ✓
+  - `solution/dfda.md` → Part II: 2.2 ✓
+  - `solution/1-percent-treaty.md` → Part II: 2.3 ✓
+  - `solution/wishocracy.md` → Part II: 2.4 ✓
+  - `solution/dih-integration-model.md` → Part IV: 4.3 ✓
+
+- [ ] **`solution/dih-core-benefits.md`**
+  - Content: Additional DIH benefits
+  - Action: Extract to Part II: 2.1
+  - Delete after extraction
+
+- [ ] **`solution.md`**
+  - Action: Section overview file → Delete
+
+**Strategy (12 files):**
+
+- [ ] **Files already in TOC (keep):**
+  - `strategy/co-opt-dont-compete.md` → Part V: 5.1 ✓
+  - `strategy/global-referendum.md` → Part V: 5.2 ✓
+  - `strategy/legal-compliance-framework.md` → Part V: 5.3 ✓
+  - `strategy/fundraising-strategy.md` → Part V: 5.4 ✓
+
+- [ ] **`strategy/1-percent-treaty.md`**
+  - Action: Check if duplicate of solution version → Likely delete
+
+- [ ] **`strategy/coalition-building.md`**
+  - Content: Partnership strategy
+  - Action: Extract to Part V: 5.1
+  - Delete after extraction
+
+- [ ] **`strategy/dfda-implementation-via-executive-action.md`**
+  - Content: Executive order path
+  - Action: Extract to Part V: 5.3 Legal
+  - Delete after extraction
+
+- [ ] **`strategy/free-rider-solution.md`**
+  - Content: Treaty enforcement mechanism
+  - Action: Extract to Part II: 2.6 Treaty Enforcement
+  - Delete after extraction
+
+- [ ] **`strategy/hhs-dFDA-policy-recommendations.md`**
+  - Content: HHS policy specifics
+  - Action: Extract to Part V: 5.3 Legal
+  - Delete after extraction
+
+- [ ] **`strategy/highest-leverage-advocacy.md`**
+  - Content: Lobbying ROI ($1:$1,813)
+  - Action: Extract data to Part V: 5.1
+  - Delete after extraction
+
+- [ ] **`strategy/open-ecosystem-and-bounty-model.md`**
+  - Content: Open source strategy
+  - Action: Extract to Part IV: 4.4 Infrastructure
+  - Delete after extraction
+
+- [ ] **`strategy.md`**
+  - Action: Section overview file → Delete
+
+**Other Files (8 in root/subdirs):**
+
+- [ ] **`call-to-action.md`** → Part VIII (already in TOC) ✓
+- [ ] **`futures/dystopia-skynet-wins.md`** → Part VII: 7.1 ✓
+- [ ] **`futures/utopia-health-and-happiness.md`** → Part VII: 7.2 ✓
+- [ ] **`reference/faq.md`** → Appendix A.1 ✓
+- [ ] **`reference/operations-roadmap.md`** → Appendix A.2 ✓
+- [ ] **`references.md`** → Keep for bibliography ✓
+- [ ] **`vision.md`** → Extract inspiring content to Introduction, then delete
+- [ ] **`economics.md`** → Section overview file → Delete
 
 **Legal (3 files):**
 - [ ] `legal/community-governance-framework.md` → Extract to Part II: 2.4 Wishocracy
