@@ -129,7 +129,6 @@ graph TD;
 *   3.1 [The Knowledge Problem: 8 Billion People Know Their Pain Better Than 200 Bureaucrats](./brain/book/theory/hayek-knowledge-problem.qmd)
 *   3.2 [Your Body Is Just a Meat Robot (And We Know How to Fix Robots)](./brain/book/proof/body-as-repairable-machine.qmd)
 *   3.3 [Why Everyone Gets Rich](./brain/book/theory/incentive-alignment.qmd)
-*   3.4 [Network Effects: Why This Gets Better Forever](./brain/book/theory/network-effects.qmd)
 
 ### Part IV: The Money (Making Everyone Rich)
 *   4.1 [VICTORY Bonds: War Profiteering for Peace](./brain/book/economics/victory-bonds.qmd)
@@ -166,13 +165,6 @@ graph TD;
 *   8.1 [Sign the Damn Referendum](./brain/book/call-to-action.qmd#referendum)
 *   8.2 [Buy VICTORY Bonds (40% Returns > Dying)](./brain/book/call-to-action.qmd#bonds)
 *   8.3 [Spread This Like COVID But Good](./brain/book/call-to-action.qmd#spread)
-
-### Part IX: "But What About..." (Every Stupid Objection You're Thinking)
-*   9.1 ["But People Will Die in Trials!" - 15 Million Die Per Year Waiting for Your Safety](./brain/book/objections/safety-objection.qmd)
-*   9.2 ["But Poor People Will Be Guinea Pigs!" - Rich People Get Cancer Too, Brad](./brain/book/objections/exploitation-objection.qmd)
-*   9.3 ["But Pharma Will Game This!" - They Already Game Everything, That's the Point](./brain/book/objections/pharma-gaming-objection.qmd)
-*   9.4 ["But This Is Too Radical!" - Why Incremental Reform Always Fails](./brain/book/objections/too-radical-objection.qmd)
-*   9.5 ["But Countries Won't Coordinate!" - We're Bribing Them To](./brain/book/objections/coordination-objection.qmd)
 
 
 ### Appendix: Boring Stuff for Nerds
