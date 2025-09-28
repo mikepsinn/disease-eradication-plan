@@ -123,9 +123,8 @@ graph TD;
 ### Part III: Why This Actually Works (Besides "Markets Good, Government Bad")
 *   3.1 [The Knowledge Problem: 8 Billion People Know Their Pain Better Than 200 Bureaucrats](./brain/book/theory/hayek-knowledge-problem.qmd)
 *   3.2 [Your Body Is Just a Meat Robot (And We Know How to Fix Robots)](./brain/book/proof/body-as-repairable-machine.qmd)
-*   3.3 [Remember When Airlines Didn't Suck? Deregulation Did That](./brain/book/theory/deregulation-success-stories.qmd)
-*   3.4 [Why Everyone Gets Rich (Even the Assholes)](./brain/book/theory/incentive-alignment.qmd)
-*   3.5 [Network Effects: Why This Gets Better Forever](./brain/book/theory/network-effects.qmd)
+*   3.3 [Why Everyone Gets Rich (Even the Assholes)](./brain/book/theory/incentive-alignment.qmd)
+*   3.4 [Network Effects: Why This Gets Better Forever](./brain/book/theory/network-effects.qmd)
 
 ### Part IV: The Money (Making It Real)
 *   4.1 [VICTORY Bonds: War Profiteering for Peace](./brain/book/economics/victory-bonds.qmd)
@@ -152,7 +151,6 @@ graph TD;
 *   6.2 [Citizens Banned Landmines, We Can Ban Disease](./brain/book/proof/historical-precedents.qmd)
 *   6.3 [Pre-1962: When Doctors > Bureaucrats](./brain/book/proof/pre-1962-golden-age.qmd)
 *   6.4 [Diseases We Could Cure Tomorrow (But Won't Because Paperwork)](./brain/book/proof/case-studies.qmd)
-*   6.5 [Why Every Other Reform Failed (They Forgot the Bribes)](./brain/book/proof/why-other-reforms-failed.qmd)
 
 ### Part VII: Pick Your Future (Spoiler: One Has Killer Robots)
 *   7.1 [Option A: Skynet + Cancer + Nuclear Winter](./brain/book/futures/dystopia-skynet-wins.qmd)
