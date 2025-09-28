@@ -101,26 +101,37 @@ graph TD;
 
 ### Part I: The $119 Trillion Central Planning Disaster
 *   1.1 [Evolution Trapped Us in Violence](./brain/book/problem/the-evolutionary-trap.md)
-*   1.2 [The NIH: How Soviet-Style Science Wastes $48B/Year](./brain/book/problem/nih-funding-is-broken.md)
-*   1.3 [The FDA: Central Planning's Body Count](./brain/book/problem/fda-approvals-are-broken.md)
-*   1.4 [Democracy's Failure: Why Voters Can't Fix This](./brain/book/problem/democracy-is-broken.md)
+*   1.2 [The Cost of War: Humanity's Most Expensive Hobby](./brain/book/problem/cost-of-war.md)
+*   1.3 [The Cost of Disease: A Slow-Motion Apocalypse](./brain/book/problem/cost-of-disease.md)
+*   1.4 [The NIH: How Soviet-Style Science Wastes $48B/Year](./brain/book/problem/nih-funding-is-broken.md)
+*   1.5 [The FDA: Central Planning's Body Count](./brain/book/problem/fda-approvals-are-broken.md)
+*   1.6 [Regulatory Capture: How Pharma Bought the Refs](./brain/book/problem/regulatory-capture.md)
+*   1.7 [Democracy's Failure: Why Voters Can't Fix This](./brain/book/problem/democracy-is-broken.md)
+*   1.8 [Why Nobody Fixed This Yet: A Century of Failed Reforms](./brain/book/problem/why-reforms-failed.md)
 
 ### Part II: Markets > Committees (The Solution)
 *   2.1 [The DIH: Prediction Markets for Medical Research](./brain/book/solution/dih.qmd)
 *   2.2 [The dFDA: Competition Beats Regulation](./brain/book/solution/dfda.md)
 *   2.3 [The 1% Treaty: Redirecting Resources to What Works](./brain/book/solution/1-percent-treaty.md)
 *   2.4 [Wishocracy: Democratic Markets for Public Goods](./brain/book/solution/wishocracy.md)
+*   2.5 [The Transition Plan: From Soviet Science to Free Markets](./brain/book/solution/transition-plan.md)
+*   2.6 [International Coordination: Making Treaties Stick](./brain/book/solution/treaty-enforcement.md)
 
 ### Part III: Why Markets Win (The Theory)
 *   3.1 [Hayek Was Right: The Knowledge Problem in Medicine](./brain/book/theory/hayek-knowledge-problem.md)
 *   3.2 [Wisdom of Crowds: 280 Million Brains > 200 NIH Reviewers](./brain/book/theory/wisdom-of-crowds.md)
 *   3.3 [Incentive Alignment: Why Everyone Wins](./brain/book/theory/incentive-alignment.md)
 *   3.4 [Your Body is Just a Machine (And Markets Fix Machines)](./brain/book/proof/body-as-repairable-machine.md)
+*   3.5 [Other Industries That Escaped Central Planning](./brain/book/theory/deregulation-success-stories.md)
+*   3.6 [Network Effects: Why This Gets Better at Scale](./brain/book/theory/network-effects.md)
+*   3.7 [Information Theory: Why Transparency Beats Secrecy](./brain/book/theory/information-theory.md)
 
 ### Part IV: The Money (Making It Real)
 *   4.1 [VICTORY Bonds: War Profiteering for Peace](./brain/book/economics/victory-bonds.qmd)
 *   4.2 [The ROI: $27B → $16.5T Annual Returns](./brain/book/economics/economic-impact-summary.md)
 *   4.3 [The Business Model: Insurance, Not Charity](./brain/book/solution/dih-integration-model.md)
+*   4.4 [The Infrastructure: Tech Stack for Distributed Trials](./brain/book/implementation/tech-infrastructure.md)
+*   4.5 [Implementation Timeline: 36 Months to Launch](./brain/book/implementation/timeline.md)
 
 ### Part V: The Heist (Strategy)
 *   5.1 [We're Not Fighting, We're Buying](./brain/book/strategy/co-opt-dont-compete.md)
@@ -132,6 +143,8 @@ graph TD;
 *   6.1 [RECOVERY Trial: Markets Already Won (80X Efficiency)](./brain/book/reference/recovery-trial.md)
 *   6.2 [Historical Wins: When Decentralization Crushed Central Planning](./brain/book/proof/historical-precedents.md)
 *   6.3 [Pre-1962: When Doctors > Bureaucrats](./brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.md)
+*   6.4 [Case Studies: Cancer, Alzheimer's, Rare Diseases](./brain/book/proof/case-studies.md)
+*   6.5 [Why Other Reforms Failed (And We Won't)](./brain/book/proof/why-other-reforms-failed.md)
 
 ### Part VII: Pick Your Future
 *   7.1 [Option A: Skynet + Cancer (Status Quo)](./brain/book/futures/dystopia-skynet-wins.md)
@@ -141,6 +154,13 @@ graph TD;
 *   8.1 [Sign the Referendum](./brain/book/call-to-action.md#referendum)
 *   8.2 [Buy VICTORY Bonds](./brain/book/call-to-action.md#bonds)
 *   8.3 [Spread the Virus (Information, Not Disease)](./brain/book/call-to-action.md#spread)
+
+### Part IX: Yes, We've Heard Your Concerns
+*   9.1 ["But What About Safety?" - Why Markets Are Safer Than Bureaucracy](./brain/book/objections/safety-objection.md)
+*   9.2 ["But Poor People Will Be Guinea Pigs!" - Why the Opposite Is True](./brain/book/objections/exploitation-objection.md)
+*   9.3 ["But Pharma Will Game This Too!" - Anti-Gaming Mechanisms](./brain/book/objections/pharma-gaming-objection.md)
+*   9.4 ["But Doctors Aren't Researchers!" - Why That's the Point](./brain/book/objections/doctor-researcher-objection.md)
+*   9.5 ["But This Is Too Radical!" - Why Incremental Reform Always Fails](./brain/book/objections/too-radical-objection.md)
 
 ### Appendix: Reference Materials
 *   A.1 [Frequently Asked Questions](./brain/book/reference/faq.md)
