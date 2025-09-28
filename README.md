@@ -165,9 +165,8 @@ graph TD;
 *   9.1 ["But People Will Die in Trials!" - 15 Million Die Per Year Waiting for Your Safety](./brain/book/objections/safety-objection.qmd)
 *   9.2 ["But Poor People Will Be Guinea Pigs!" - Rich People Get Cancer Too, Brad](./brain/book/objections/exploitation-objection.qmd)
 *   9.3 ["But Pharma Will Game This!" - They Already Game Everything, That's the Point](./brain/book/objections/pharma-gaming-objection.qmd)
-*   9.4 ["But Doctors Aren't Scientists!" - Scientists Are Studying Mice While Humans Die](./brain/book/objections/doctor-researcher-objection.qmd)
-*   9.5 ["But This Is Too Radical!" - Why Incremental Reform Always Fails](./brain/book/objections/too-radical-objection.qmd)
-*   9.6 ["But Countries Won't Coordinate!" - We're Bribing Them To](./brain/book/objections/coordination-objection.qmd)
+*   9.4 ["But This Is Too Radical!" - Why Incremental Reform Always Fails](./brain/book/objections/too-radical-objection.qmd)
+*   9.5 ["But Countries Won't Coordinate!" - We're Bribing Them To](./brain/book/objections/coordination-objection.qmd)
 
 
 ### Appendix: Boring Stuff for Nerds
@@ -175,5 +174,4 @@ graph TD;
 *   A.2 [Technical Specs for Engineers](./brain/book/reference/technical-specs.qmd)
 *   A.3 [Legal Architecture So We Don't Go to Prison](./brain/book/reference/legal-framework.qmd)
 *   A.4 [Spreadsheets That Prove We're Right](./brain/book/reference/financial-models.qmd)
-*   A.5 [Organizational Charts Nobody Will Look At](./brain/book/reference/governance.qmd)
-*   A.6 [Citations Because Academics Need Jobs](./brain/book/references.md)
+*   A.5 [Citations Because Academics Need Jobs](./brain/book/references.md)
