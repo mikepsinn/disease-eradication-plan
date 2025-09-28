@@ -330,7 +330,41 @@ print(f"Developer ROI: {sharing['developer_roi']:.1f}x")
 print(f"Break-even at {sharing['break_even_patients']:,.0f} patients")
 ```
 
-## 7. Accelerated Innovation Impact
+## 7. Health Savings Sharing Model (50/50)
+
+```{python}
+#| label: savings-sharing-50-50
+#| echo: true
+
+def calculate_savings_sharing_5050(
+    disease_annual_cost: float = 388_500,
+    cure_development_cost: float = 10_000_000_000,
+    patients_treated: int = 1_000_000,
+    sharing_ratio: float = 0.50
+) -> Dict[str, float]:
+    """
+    50/50 profit sharing model for cures.
+    From health-savings-sharing-model.md
+    """
+    total_savings = disease_annual_cost * patients_treated
+    developer_revenue = total_savings * sharing_ratio
+    developer_profit = developer_revenue - cure_development_cost
+    developer_roi = developer_profit / cure_development_cost
+
+    return {
+        'total_savings': total_savings,
+        'developer_revenue': developer_revenue,
+        'developer_profit': developer_profit,
+        'developer_roi': developer_roi,
+        'break_even_patients': cure_development_cost / (disease_annual_cost * sharing_ratio)
+    }
+
+sharing = calculate_savings_sharing_5050()
+print(f"Developer revenue per million patients: ${sharing['developer_revenue']/1e9:.1f}B")
+print(f"Break-even: {sharing['break_even_patients']:,.0f} patients")
+```
+
+## 8. Accelerated Innovation Impact
 
 ```{python}
 #| label: acceleration-impact

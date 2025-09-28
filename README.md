@@ -139,12 +139,15 @@ graph TD;
 *   4.3 [The Business Model: Insurance, Not Charity](./brain/book/solution/dih-integration-model.md)
 *   4.4 [The Infrastructure: Tech Stack for Distributed Trials](./brain/book/implementation/tech-infrastructure.md)
 *   4.5 [Implementation Timeline: 36 Months to Launch](./brain/book/implementation/timeline.md)
+*   4.6 [Risk Analysis: Political Arbitrage vs VC](./brain/book/economics/investor-risk-analysis.md)
 
 ### Part V: The Heist (Strategy)
 *   5.1 [We're Not Fighting, We're Buying](./brain/book/strategy/co-opt-dont-compete.md)
 *   5.2 [The Global Referendum: 280M Signatures = Unstoppable](./brain/book/strategy/global-referendum.md)
 *   5.3 [Legal CYA: How Not to Go to Prison](./brain/book/strategy/legal-compliance-framework.md)
 *   5.4 [The $2.5B Bribe Fund](./brain/book/strategy/fundraising-strategy.md)
+*   5.5 [Executive Implementation: The DOGE Model](./brain/book/strategy/dfda-implementation-via-executive-action.md)
+*   5.6 [Solving Free-Riders: Personal Incentives > National Sanctions](./brain/book/strategy/free-rider-solution.md)
 
 ### Part VI: Proof This Works
 *   6.1 [RECOVERY Trial: Markets Already Won (80X Efficiency)](./brain/book/reference/recovery-trial.md)
