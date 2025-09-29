@@ -427,6 +427,7 @@
     - Subsidies = available funds ÷ participating patients
     - Natural demand management (more patients = lower subsidy per person)
     - Prevents frivolous treatment seeking (patients pay unsubsidized portion)
+    - Refundable data deposit ensures complete trial data
     - Creates patient incentive to organize for treasury growth
     - Patients self-organize for passage of 2%, 5%, 10% treaties = larger subsidies and lower costs
   - Why subsidize patients, not researchers:
@@ -495,9 +496,10 @@
   - Open-source FDA alternative (FDA.gov v2)
   - Zero-knowledge proofs protect patient privacy
   - All trial results public, individual data anonymous
-  - APIs for developers
+  - Backend-as-a-Service for existing health systems
+  - APIs enable any platform to integrate
   - Patient-owned records
-  - Integrates with existing health apps
+  - Works with, not against, existing infrastructure
 - **The Result: 80X Medical Progress Acceleration**
   - Before: 17 years, $2.6B per drug, 95% of diseases ignored
   - After: 6 months, $30M per treatment, 100% of diseases targetable
