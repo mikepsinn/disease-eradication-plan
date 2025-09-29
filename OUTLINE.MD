@@ -300,27 +300,29 @@
   - 12.5.4 The demonstration: Fair money is possible
 
 ### Chapter 13: VICTORY Bonds - War Profiteering for Peace
-- 13.1 **The Instrument: Smart Contracts That Print Money**
-  - 13.1.1 If treaty passes: 40% annual returns forever
-  - 13.1.2 If treaty fails: Full refund plus interest
-  - 13.1.3 No custody risk: Code is law
-  - 13.1.4 No management fees: Algorithms don't need yachts
-- 13.2 **The Returns: Better Than Everything**
-  - 13.2.1 S&P 500: 10% (boring)
-  - 13.2.2 Hedge funds: 15% (meh)
-  - 13.2.3 Venture capital: 25% (risky)
-  - 13.2.4 VICTORY bonds: 40% (guaranteed by treaty)
-  - 13.2.5 Returns paid from $27B annual budget
-- 13.3 **The Investor Stack**
-  - 13.3.1 Founders: $100M at 100X potential
-  - 13.3.2 Seed: $400M at 50X potential
-  - 13.3.3 Series A: $1B at 20X potential
-  - 13.3.4 Public: Unlimited at 40% annual
-- 13.4 **Risk Mitigation: Every Angle Covered**
-  - 13.4.1 Treaty risk: Multiple countries = diversification
-  - 13.4.2 Political risk: We own the politicians
-  - 13.4.3 Technical risk: Simple smart contracts
-  - 13.4.4 Market risk: Health demand never decreases
+- 13.1 **The Instrument: Funding the Treaty Campaign**
+  - 13.1.1 Total raise: $1B to pass the treaty
+  - 13.1.2 Use of funds: Lobbying, media, referendum campaign
+  - 13.1.3 If treaty passes: 40% annual returns from $27B budget
+  - 13.1.4 If treaty fails: Full refund plus interest
+  - 13.1.5 Smart contracts: Automated payment, no trust needed
+- 13.2 **The Math: How $1B Gets 40% Returns**
+  - 13.2.1 Total bonds issued: $1B (capped)
+  - 13.2.2 Annual return obligation: $400M (40% of $1B)
+  - 13.2.3 DIH annual budget: $27B (from treaty)
+  - 13.2.4 Bond payments: 1.5% of budget (easily sustainable)
+  - 13.2.5 Compare: US pays $400B on debt service (we pay $400M)
+- 13.3 **Why This Beats Everything**
+  - 13.3.1 S&P 500: 10% average (unstable)
+  - 13.3.2 Venture capital: 25% (90% fail completely)
+  - 13.3.3 VICTORY bonds: 40% (backed by treaty)
+  - 13.3.4 Risk mitigation: Multiple countries = diversification
+- 13.4 **Use of Funds: The $1B Campaign**
+  - 13.4.1 $400M: Media and education campaigns
+  - 13.4.2 $300M: Lobbying and political action
+  - 13.4.3 $200M: Technology and platform development
+  - 13.4.4 $100M: Operations and contingency
+  - 13.4.5 Full transparency: Every dollar tracked on-chain
 
 ### Chapter 14: Central Banks: The War Machines That Kill Your Kids
 - 14.1 **The Historical Pattern: Every Central Bank Funds War**
@@ -364,10 +366,10 @@
   - 15.2.2 Democracy advocates: Strengthening participation
   - 15.2.3 Recognition: Named research programs
 - 15.3 **Level 2: Defense Contractors** (The beautiful jujitsu)
-  - 15.3.1 Lockheed gets $5B in VICTORY bonds
-  - 15.3.2 40% returns > 8% from weapons
-  - 15.3.3 They lobby FOR the treaty (with their resources)
-  - 15.3.4 Their lobbyists become our lobbyists
+  - 15.3.1 They can buy VICTORY bonds (capped at $1B total)
+  - 15.3.2 40% returns > 8% from defense bonds
+  - 15.3.3 Plus: Medical device contracts from DIH
+  - 15.3.4 Their lobbyists work for highest bidder (that's us)
 - 15.4 **Level 3: Insurance Companies** (They save trillions)
   - 15.4.1 Healthy people = no claims
   - 15.4.2 Investment opportunity: VICTORY bonds
@@ -767,10 +769,10 @@
   - 29.1.6 Help others learn about the treaty
 - 29.2 **Action 2: Invest** (If you have capital)
   - 29.2.1 VICTORY Bonds: $100 minimum
-  - 29.2.2 Expected return: 40% annual
-  - 29.2.3 Risk: Zero if treaty fails (refund)
-  - 29.2.4 Upside: Massive when treaty passes
-  - 29.2.5 Due diligence: Read the economics chapter
+  - 29.2.2 Total available: $1B (first come, first served)
+  - 29.2.3 Return: 40% annual paid from $27B budget
+  - 29.2.4 Risk: Full refund if treaty fails
+  - 29.2.5 Math: Your returns = tiny fraction of DIH budget
 - 29.3 **Action 3: Build** (If you have skills)
   - 29.3.1 Developers: Paid work building systems
   - 29.3.2 Organizers: Compensated coordinator positions
