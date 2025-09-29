@@ -226,6 +226,13 @@
   - No country loses relative power (everyone cuts equally)
   - Small enough to pass, big enough to matter
   - The precedent: If 1% works, why not 2%?
+- **What 1% Less War Buys in Health**
+  - $27B funds 54,000 clinical trials at $500K each
+  - Or 27 million patients in dFDA trials at $1,000 each
+  - Equivalent to 540 new drug approvals (current rate: 50/year)
+  - Could cure 10-20 rare diseases completely in Year 1
+  - Prevention programs reaching 270 million people
+  - Saves 180,000 lives annually (using standard QALY calculations)
 - **The Game Theory: Everyone Wins or Nobody Plays**
   - Simultaneous reduction: No first-mover disadvantage
   - Verification: Budgets are public anyway
@@ -246,7 +253,39 @@
 
 ## Part IV: The Money (How Everyone Gets Rich by Getting Healthy)
 
-### Chapter 10: How Central Banks Fund Your Death (The War Machine's ATM)
+### Chapter 10: The Economic Case - 463:1 Return on Killing Disease
+- **The ROI That Breaks Reality**
+  - Investment: $40M annual platform cost
+  - Return: $50B annual savings from trial efficiency alone
+  - ROI: 463:1 (makes every other investment look stupid)
+  - 10-year NPV: $249 billion in value creation
+  - Comparison: Best hedge funds dream of 2:1 annual returns
+- **The Daily Holocaust of Inaction**
+  - Every day we wait: $137 million burned in inefficiency
+  - Every day we wait: 2,301 Quality-Adjusted Life Years lost
+  - That's 840,000 QALYs lost annually (a mid-sized city dying)
+  - Each hour: $5.7 million wasted, 96 people's life-years gone
+  - While you read this sentence: $66,000 vanished, someone's year of life lost
+- **The Dominant Intervention (Saves Money AND Lives)**
+  - ICER: -$59,501 per QALY (negative = you profit while saving lives)
+  - Normal interventions: Pay $50,000-150,000 per QALY
+  - This intervention: GET PAID $59,501 per life-year saved
+  - No trade-off between money and health (both improve)
+  - First time in history: Healing is more profitable than harming
+- **Prevention Economics: The 3X Multiplier**
+  - Current prevention spending: 5% of healthcare (pathetic)
+  - Prevention ROI: Every $1 spent saves $3 in treatment
+  - Double prevention spending: $615B annual savings
+  - Early detection via dFDA: Catching cancer at Stage 1 vs 4 = 90% cost reduction
+  - Behavioral intervention: $100 app prevents $10,000 surgery
+- **The $100 Billion Market We're Capturing**
+  - Global clinical trial market: $100B annually
+  - Our 50% efficiency gain: $50B annual savings (conservative)
+  - Best case (95% reduction like RECOVERY): $95B annual savings
+  - These aren't projections - Oxford already proved it works
+  - Market capture: Even 10% adoption = $5B value creation
+
+### Chapter 11: How Central Banks Fund Your Death (The War Machine's ATM)
 - **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
   - Dollar: Created by Fed to fund WWI, still funding wars
   - Euro: ECB funds NATO expansions
@@ -465,6 +504,12 @@
   - Include everyone, not just the healthy
   - Results in months not decades
   - Automated compliance and paperwork
+- **Universal Trial Economics**
+  - Traditional Phase 3: $40M-100M, 3-5 years, 1,000 patients
+  - dFDA pragmatic trial: $500K, 6 months, 10,000 patients
+  - 20X more patients at 1/80th the cost
+  - Every citizen becomes a potential trial participant
+  - Network effects: Each trial makes the next one cheaper
 - **For Researchers: Launch Trials in Minutes, Not Years**
   - Simple templates with automated compliance
   - Instant liability insurance quotes
