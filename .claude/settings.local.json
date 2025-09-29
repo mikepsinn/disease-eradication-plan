@@ -15,7 +15,8 @@
       "Bash(then echo \"✓ $dir has summary\")",
       "Bash(else echo \"✗ $dir MISSING summary\")",
       "Bash(node:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(powershell:*)"
     ],
     "deny": [],
     "ask": []
