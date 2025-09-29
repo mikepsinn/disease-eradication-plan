@@ -428,12 +428,12 @@
   - Aging Institute: Research on extending healthspan
   - Rare Disease Institute: Every disease matters
   - Emergency Response: Pandemic preparedness
-- **The Patient Payment System**
-  - Patient signs up: $500 immediate payment
-  - Trial completion: $2,000 bonus
-  - Long-term tracking: $100/year for life
-  - 20% copay requirement: Skin in the game
-  - Direct deposit: No bureaucracy
+- **The Patient Subsidy System**
+  - Researchers set treatment prices on dFDA marketplace
+  - DIH subsidizes 80% of treatment costs
+  - Patients pay 20% copay (skin in the game)
+  - Rare/high-burden trials: Additional participation incentives
+  - Direct payment: No insurance bureaucracy
 
 ### Chapter 17: The dFDA - The Amazon of Not Dying
 - **The FDA's Catastrophic Failure (Why We Need This)**
@@ -593,7 +593,7 @@
   - 5% Treaty signed (135B annual budget)
   - Cancer: 80% curable
   - Mental illness: Precision treatments
-  - Basic income: From trial participation
+  - Healthcare access: Universal through DIH trials
   - Dollar: Abandoned by half the world
 - **2040: Wishonia Manifests Physically**
   - Singapore declares itself Wishonian
@@ -619,8 +619,8 @@
 
 ### Chapter 24: Your Personal Benefits (What You Get)
 - **Economic Security**
-  - Trial participation: $2,500 per trial
-  - Healthcare coverage: No more medical bankruptcy
+  - Subsidized treatment: 80% coverage for any trial
+  - Healthcare access: No more medical bankruptcy
   - Investment opportunity: VICTORY bonds at 100%
   - Job creation: Research and healthcare jobs
   - Economic growth: From health innovation
@@ -649,7 +649,7 @@
   - Connect wallet or email
   - Verify identity (30 seconds)
   - Vote YES on the treaty
-  - Become eligible for trial payments
+  - Become eligible for subsidized treatments
   - Help others learn about the treaty
 - **Action 2: Invest** (If you have capital)
   - VICTORY Bonds: $100 minimum
