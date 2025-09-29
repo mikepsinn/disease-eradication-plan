@@ -254,12 +254,6 @@
   - $300B annually to banks in "reverse repo" (your money)
   - Bailouts for banks, bankruptcy for you
   - The only solution: Make war funding impossible
-- **Historical Pattern: Money Printing = Mass Death**
-  - Weimar Germany: Printed for WWI reparations → Hitler
-  - Zimbabwe: Printed for Congo war → collapse
-  - Venezuela: Printed for military → starvation
-  - Every hyperinflation started with war funding
-  - The lesson: Control money creation or die
 - **Why We Can't Reform the Fed (It's Terminal)**
   - Captured by military-banking complex (unfixable)
   - Dollar is global reserve (can't be reformed)
@@ -369,38 +363,6 @@
   - The dFDA Parallel Track Act (faster approvals)
   - The Right to Try Expansion Act (patient choice)
   - The Budget Reallocation Act (moves the money)
-
-
-### Chapter 14: The Transition Minefield (5 Years of Sabotage)
-- **Years 1-2: The Character Assassination Phase**
-  - Media hit pieces: "Death panels but crypto"
-  - Regulatory attacks: SEC, FDA, everyone sues
-  - Academic capture: "Experts" explain why it can't work
-  - Our defense: Results speak louder than op-eds
-  - The $400M media budget: We buy louder megaphones
-- **Years 3-4: The Legislative Sabotage**
-  - Poison pill amendments to gut the treaty
-  - Competing "fake" treaties to confuse
-  - Regulatory capture of implementation
-  - Our defense: Smart contracts can't be amended
-  - Multiple jurisdiction strategy (they can't stop all)
-- **Year 5: The Desperation Moves**
-  - National security claims (everything's terrorism)
-  - Banking blockades (operation choke point 2.0)
-  - International treaty conflicts manufactured
-  - Our defense: Too big to fail by then
-  - Public opinion shield (3.5% is unstoppable)
-- **Why They'll Ultimately Fail**
-  - Can't coordinate globally (prisoners' dilemma)
-  - Some countries will defect for competitive advantage
-  - Results accumulate faster than sabotage
-  - Every attack proves we're threatening them
-  - Streisand effect: Attacks create supporters
-- **Exit Ramps for Every Attack Vector**
-  - Multiple jurisdictions (they can't stop all)
-  - Treaty protection (diplomatic immunity)
-  - Decentralized operations (no single point of failure)
-  - Direct democracy override (referendum power)
 
 ## Part V: The Implementation (Building Paradise)
 
@@ -528,24 +490,6 @@
   - Your kid's rare disease: Finally profitable to cure
   - Mental health: No longer the ugly stepchild of medicine
 
-### Chapter 18: The Technology (Simple but Unstoppable)
-- **Smart Contracts Handle the Money**
-  - $27B treasury controlled by code, not politicians
-  - Automatic payments based on voting results
-  - No corruption possible (code is law)
-- **Decentralized Data Storage**
-  - Medical records that can't be deleted
-  - Trial results public forever
-  - Patient data owned by patients
-- **The Apps People Actually Use**
-  - Web and mobile apps that work
-  - APIs so anyone can build on top
-  - Works with devices you already own
-- **AI That Actually Helps**
-  - Predicts which treatments work for YOU
-  - Translates medical jargon to English
-  - Finds patterns humans miss
-
 ## Part VI: The Proof (This Already Works)
 
 ### Chapter 19: Political Movements That Changed Everything
@@ -671,36 +615,7 @@
   - Humanity: Upgraded to Humanity 2.0
   - Next challenge: Which galaxy to explore
 
-### Chapter 23: How We Build Wishonia (The Practical Steps)
-- **The Fork in the Timeline** (You Are Here)
-  - Current trajectory: Gollumland
-  - Alternative path: Wishonia
-  - The switch: One treaty, one vote
-  - The window: 5 years maximum
-- **Year 1-2: The Seed** (2025-2027)
-  - Launch referendum platform
-  - First million signatures
-  - Raise $400M seed round
-  - Build technology infrastructure
-  - Small nations show interest
-- **Year 3-5: The Growth** (2027-2030)
-  - 10-50 million participants
-  - $1B raised total
-  - First small countries sign treaty
-  - Pilot programs launched
-  - Proof of concept demonstrated
-- **Year 6-8: The Acceleration** (2030-2033)
-  - 100+ million participants
-  - Major powers begin negotiations
-  - $10B+ treasury from early adopters
-  - First major breakthroughs announced
-  - Network state recognition discussions
-- **Year 9-15: The Transformation** (2033-2040)
-  - Major powers join treaty (1-5% levels)
-  - Military spending reduced by 20-30%
-  - Disease burden dropping measurably
-
-## Part VIII: Join or Get Left Behind
+## Part VIII: Join or Die (Literally)
 
 ### Chapter 24: Your Personal Benefits (What You Get)
 - **Economic Security**
@@ -781,4 +696,3 @@
   - Our "war" is actually a peace treaty with biology
   - The War on Disease is really the Market for Health
 
-## Epilogue: The Binary Choice
