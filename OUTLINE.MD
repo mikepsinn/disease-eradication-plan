@@ -183,12 +183,13 @@
 
 ## Part III: The Solution (Wishocracy: Real Democracy Finally)
 
-### Chapter 8: Wishocracy - Tinder for the Federal Budget
+### Chapter 8: Wishocracy - Markets Not Majorities
 - **The Innovation: Budget Allocation Through Micro-Decisions**
+  - Not representative democracy (that failed)
+  - Market-style preference expression via simple choices
   - See two options: "Cancer research" vs "F-35 maintenance"
   - Slide to allocate: 80% cancer, 20% jet (your choice)
-  - 20 swipes = your entire tax contribution allocated
-  - Cognitive load: Minimal (your brain can actually do this)
+  - Cognitive load: Minimal (markets > committees)
 - **The Math: How Swipes Become Budgets**
   - Pairwise comparison: How your brain actually works
   - Condorcet aggregation: Finding true social preference
@@ -281,18 +282,18 @@
   - Real estate: 15% with hassle (VICTORY: 40%+ liquid)
   - Defense contracts: 8-15% margins (VICTORY: 40%+ returns forever)
   - Alternative systems prove viability: Bitcoin hit $1T without governments, M-Pesa became Kenya's real economy
-- **Why Defense Contractors Must Buy**
-  - Lockheed's entire F-35 profit < 5 years of VICTORY returns
-  - Raytheon pension obligations: Funded forever with one purchase
-  - Boeing reputation: From "death merchant" to "health hero"
-  - Liquidity premium: Sell anytime vs locked government contracts
-  - ESG compliance: Best impact investment possible
+- **Why Defense Contractors Should Diversify**
+  - Portfolio diversification: Hedge against peace breaking out
+  - Pension fund stability: 40% returns for employee retirement
+  - ESG compliance: Balance death merchant reputation
+  - Liquidity advantage: Tradable vs locked government contracts
+  - First-mover advantage: Limited $3.375B available
 - **Use of Funds: The $3.375B War Chest**
   - $1.35B: Media blitz and education campaign
   - $1B: Lobbying to outspend defense industry 3:1
   - $675M: Technology platform (dFDA + Wishocracy)
   - $225M: Operations and contingency
-  - $125M: Initial patient subsidies before treaty kicks in
+  - $125M: Reserve for treaty implementation
   - Full transparency: Every dollar tracked publicly
 
 ### Chapter 12: The Coalition That Ends War (Aligned Incentives Beat Ideology)
@@ -361,8 +362,8 @@
 - **The Legislation Package** (Already drafted)
   - The Treaty Implementation Act (makes it binding)
   - The DIH Authorization Act (creates the institutes)
-  - The dFDA Parallel Track Act (faster approvals)
-  - The Right to Try Expansion Act (patient choice)
+  - The dFDA Parallel Track Act (alternative pathway alongside FDA)
+  - The Right to Try Expansion Act (patient choice beyond FDA)
   - The Budget Reallocation Act (moves the money)
 
 ## Part V: The Implementation (Building Paradise)
@@ -392,11 +393,11 @@
   - Tipping point: Day 280 critical mass achieved
 
 ### Chapter 16: The DIH - Government Without Governments
-- **The Structure: Nobody's in Charge**
-  - $27B/year controlled by smart contracts
-  - No CEO or board to corrupt
-  - Every transaction public
-  - Core rules immutable, allocations dynamically voted
+- **The Structure: Distributed Control**
+  - $27B/year flows through transparent smart contracts
+  - No CEO or board making unilateral decisions
+  - Financial transactions public, medical records private
+  - Core treaty terms locked, allocations democratically adjusted
 - **How Wishocracy Controls the Treasury**
   - The $27B flows according to millions of micro-decisions
     - Not committees picking winners
@@ -469,7 +470,7 @@
 - **The Clinical Trial Revolution**
   - Decentralized: Do trials from home
   - Real-world data: Your devices are the lab
-  - No placebos: Compare to current best treatment
+  - Pragmatic trials: Compare to current standard of care
   - Results in months, not decades
   - Rate researchers and trials
 - **The Data Liberation**
@@ -581,10 +582,10 @@
   - Economy: Post-scarcity through medical innovation
   - Constitution: Maximize median wellbeing
 - **2030: The First Wishes Granted**
-  - Type 1 diabetes: Cured in 1,000 days
-  - Depression: 5 new effective treatments
-  - Rare diseases: 500 new treatments
-  - Aging: Slowed by 20%
+  - Type 1 diabetes: Major breakthrough in treatment
+  - Depression: 5 new treatment pathways identified
+  - Rare diseases: 500 new trials launched
+  - Aging: Biomarkers identified and tracked
   - dFDA system: Millions joining trials globally
 - **2035: The Tipping Point**
   - 5% Treaty signed (135B annual budget)
