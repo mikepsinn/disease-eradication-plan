@@ -405,6 +405,8 @@
   - $27B/year flows through transparent smart contracts
   - No CEO or board making unilateral decisions
   - Financial transactions public, medical records private
+  - Progressive decentralization: System designed to become fully autonomous
+  - AI governance: Automated code review and security verification
   - Core treaty terms locked, allocations democratically adjusted
 - **How Wishocracy Controls the Treasury**
   - Anyone submits proposals: Researchers, patients, garage scientists
@@ -452,6 +454,7 @@
   - 85% of patients EXCLUDED from trials (too sick, too old, wrong zip code)
   - Current trials: $48,000 per patient (pharma passes cost to you)
   - FDA.gov: A 1990s website that kills people with bureaucracy
+  - Solution: FDA.gov v2 as global public infrastructure
 - **The 80X Solution: Decentralized Trials**
   - Oxford RECOVERY trial proved it: $500 per patient vs $41,000
   - Pragmatic trials at home
@@ -465,10 +468,13 @@
   - Blockchain-verified supply chain
   - Real-time results (pivot fast)
   - Get paid when patients join your trials
+  - FDA-X Prize: $X million for 80X cost reduction proof
 - **For Patients: Find What Actually Works**
   - Enter your condition
   - See treatments ranked by real effectiveness
+  - Right to Trial: Guaranteed enrollment in at least one trial
   - Join trials from home with one click
+  - Comprehension quiz ensures you understand risks
   - Get meds delivered to you
   - Report outcomes through your existing apps
   - Your data improves rankings for everyone
@@ -486,9 +492,9 @@
   - Results in months, not decades
   - Rate researchers and trials
 - **The Data Liberation**
-  - Open-source FDA alternative
-  - All trial results public
-  - Raw data downloadable
+  - Open-source FDA alternative (FDA.gov v2)
+  - Zero-knowledge proofs protect patient privacy
+  - All trial results public, individual data anonymous
   - APIs for developers
   - Patient-owned records
   - Integrates with existing health apps
