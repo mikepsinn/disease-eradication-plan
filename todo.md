@@ -184,6 +184,25 @@ Converted 48 .md files to .qmd format with updated links across all documents.
 
 ---
 
+## 🆕 OPERATIONAL & NONPROFIT TASKS (NEW SECTION - Jan 2025)
+
+### Nonprofit Foundation Setup
+
+- [x] **IRS Compliance Documentation for Healome Contract**
+    - [x] Created comprehensive list of allowable expenses for 501(c)(3)
+    - [x] Documented contractual requirements for IRS compliance
+    - [x] Added sample budget structure and documentation strategy
+    - [x] Saved to: `operations/nonprofit-allowable-expenses-healome.md`
+
+- [ ] **Next Steps for Nonprofit Operations:**
+    - [ ] Get legal review of Healome contract terms
+    - [ ] Create board resolution template for software development contracts
+    - [ ] Develop impact metrics tracking system for charitable activities
+    - [ ] Set up documentation process for market rate comparisons
+    - [ ] Create SOW template linking deliverables to charitable mission
+
+---
+
 ## 🎯 IMMEDIATE PRIORITIES (REVISED ORDER):
 
 ### Priority 1: Clean brain/book/ folder (Phase 1.5) ✅ IN PROGRESS
