@@ -694,12 +694,12 @@
   - 27.2.3 Return: 100% annual paid from $27B budget
   - 27.2.4 Risk: Full refund if treaty fails
   - 27.2.5 Math: Your returns = tiny fraction of DIH budget
-- 27.3 **Action 3: Build** (If you have skills)
-  - 27.3.1 Developers: Paid work building systems
-  - 27.3.2 Organizers: Compensated coordinator positions
-  - 27.3.3 Educators: Teach others about the treaty
-  - 27.3.4 Researchers: Apply for medical research grants
-  - 27.3.5 Everyone: Share knowledge, build community
+- 24.3 **Action 3: Build** (If you have skills)
+  - 24.3.1 Developers: Paid work building systems
+  - 24.3.2 Organizers: Help spread the referendum
+  - 24.3.3 Educators: Teach others about the treaty
+  - 24.3.4 Researchers: Offer trials on the dFDA marketplace
+  - 24.3.5 Everyone: Share knowledge, build community
 
 ### Chapter 25: Every Objection Demolished
 - 28.1 **"This is too complicated"**
