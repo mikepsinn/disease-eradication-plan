@@ -397,27 +397,26 @@
   - Every attack proves we're threatening them
   - Streisand effect: Attacks create supporters
 - **Exit Ramps for Every Attack Vector**
-  - Jurisdiction shopping (regulatory arbitrage)
-  - Diplomatic immunity (treaty protection)
-  - Decentralized operations (no single point)
-  - Public referendum override (direct democracy)
-  - The nuclear option: Full network state
+  - Multiple jurisdictions (they can't stop all)
+  - Treaty protection (diplomatic immunity)
+  - Decentralized operations (no single point of failure)
+  - Direct democracy override (referendum power)
 
 ## Part V: The Implementation (Building Paradise)
 
-### Chapter 16: The Global Referendum (Democracy at Scale)
-- **The Platform: TikTok Meets Democracy**
-  - 30-second onboarding (simpler than Instagram)
-  - Swipe to allocate (addictive UX)
-  - Share to earn (pyramid scheme for good)
-  - Gamification: Leaderboards, achievements, dopamine
-  - The dopamine democracy (voting feels good)
-- **Identity Without Dystopia**
-  - Government ID API (where available)
-  - Biometric hashing (privacy preserved)
-  - Social verification (friends confirm friends)
-  - Proof of unique human (no bots allowed)
-  - Zero-knowledge proofs (anonymous but verified)
+### Chapter 15: The Global Referendum (Democracy at Scale)
+- **The Platform: Direct Democracy App**
+  - 30-second onboarding
+  - Swipe interface for budget allocation
+  - Share to earn rewards
+  - Gamification: Leaderboards and achievements
+  - Make voting engaging and rewarding
+- **Identity Verification**
+  - Government ID integration where available
+  - Privacy-preserving biometrics
+  - Social network verification
+  - Bot prevention systems
+  - Anonymous but verified voting
 - **The Viral Mechanics**
   - Network effects: Each user recruits 3.5 average
   - Influencer strategy: Mr. Beast announces first
@@ -429,7 +428,7 @@
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
 
-### Chapter 17: The DIH - Government Without Governments
+### Chapter 16: The DIH - Government Without Governments
 - **The Structure: Nobody's in Charge (By Design)**
   - $27B/year controlled by smart contracts
   - No CEO to bribe, kidnap, or corrupt
@@ -475,7 +474,7 @@
   - 20% copay requirement: Skin in the game
   - Direct deposit: No bureaucracy
 
-### Chapter 18: The dFDA - The Amazon of Not Dying (With Consumer Reports' Honesty)
+### Chapter 17: The dFDA - The Amazon of Not Dying
 - **The FDA's Catastrophic Failure (Why We Need This)**
   - 95% of diseases have ZERO FDA-approved treatments (your kid's rare disease = death sentence)
   - 17 YEARS from discovery to patient (you'll be dead before the cure arrives)
@@ -541,34 +540,23 @@
   - Speaks every language
   - Never judges, never rushes
 
-### Chapter 19: The Technology Stack (How We Build God)
-- **The Technology Infrastructure**
-  - Smart contracts: Immutable treasury logic
-  - Secure voting system: Cryptographic verification
-  - Governance: Transparent decision tracking
-  - Identity: Privacy-preserving verification
-  - Scalability: Cloud infrastructure for billions
-- **The Data Layer** (Decentralized Storage)
-  - IPFS: Immutable medical records
-  - Arweave: Permanent trial data
-  - Ceramic: Mutable patient profiles
-  - The Graph: Indexed for instant queries
-- **The Verification Network** (Reality Bridge)
-  - Health outcome tracking systems
-  - Treatment effectiveness verification
-  - Multi-source data validation
-  - Real-time result reporting
-- **The Frontend** (Where Humans Live)
-  - Web app: Works on everything
-  - Mobile apps: Native iOS/Android
-  - API: Build your own interface
-  - Hardware integration: Direct device connection
-- **The AI Layer** (The Intelligence)
-  - LLMs: Natural language interaction
-  - Computer vision: Scan diagnostics
-  - Predictive models: Outcome forecasting
-  - Recommendation engine: Personalized treatments
-  - Collective intelligence: Swarm optimization
+### Chapter 18: The Technology (Simple but Unstoppable)
+- **Smart Contracts Handle the Money**
+  - $27B treasury controlled by code, not politicians
+  - Automatic payments based on voting results
+  - No corruption possible (code is law)
+- **Decentralized Data Storage**
+  - Medical records that can't be deleted
+  - Trial results public forever
+  - Patient data owned by patients
+- **The Apps People Actually Use**
+  - Web and mobile apps that work
+  - APIs so anyone can build on top
+  - Works with devices you already own
+- **AI That Actually Helps**
+  - Predicts which treatments work for YOU
+  - Translates medical jargon to English
+  - Finds patterns humans miss
 
 ## Part VI: The Proof (This Already Works)
 
