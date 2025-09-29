@@ -408,16 +408,13 @@
     - Expansion campaigns (growing from 1% to 2% to 5%)
     - Performance rewards (what actually worked gets more)
     - Community campaigns (when 50,000 people want something, it happens)
-  - Why patients pay copay:
-    - Prevents frivolous treatment seeking
-    - "Free" = infinite demand = system collapse
-    - Skin in the game = better decisions
   - Why dynamic subsidies work:
+    - Researchers set prices on dFDA marketplace
     - Subsidies = available funds ÷ participating patients
     - Natural demand management (more patients = lower subsidy per person)
+    - Prevents frivolous treatment seeking (patients pay unsubsidized portion)
     - Creates patient incentive to organize for treasury growth
     - Patients self-organize for passage of 2%, 5%, 10% treaties = larger subsidies and lower costs
-    - Built-in skin in the game (patients still pay the unsubsidized portion)
   - Why subsidize patients, not researchers:
     - NIH: 200 people guess what might work
     - DIH: Millions of sick people know what they need
@@ -434,10 +431,6 @@
   - Aging Institute: Research on extending healthspan
   - Rare Disease Institute: Every disease matters
   - Emergency Response: Pandemic preparedness
-- **The Patient Subsidy System**
-  - Researchers set treatment prices on dFDA marketplace
-  - Dynamic vouchers: Available funds ÷ participating patients
-  - Direct payment: No insurance bureaucracy
 
 ### Chapter 17: The dFDA - The Amazon of Not Dying
 - **The FDA's Catastrophic Failure (Why We Need This)**
@@ -642,7 +635,6 @@
   - No more unnecessary death
 - **Power Returns**
   - Direct democracy (real votes)
-  - Your taxes, your choice
   - No more "representatives"
   - Sovereign citizen of Wishonia
   - Co-owner of the future
