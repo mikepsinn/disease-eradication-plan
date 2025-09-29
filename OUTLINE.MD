@@ -269,12 +269,12 @@
 
 ## Part IV: The Money (How Everyone Gets Rich by Getting Healthy)
 
-### Chapter 12: $WISH - The Fair Money Experiment (UBI That Works)
-- 12.1 **Fixing Money Creation: From Bailouts to Basic Income**
-  - 12.1.1 Current system: Fed prints money for banks
-  - 12.1.2 The cantillon effect: First receivers get rich
-  - 12.1.3 $WISH experiment: Everyone gets new money equally
-  - 12.1.4 Participation reward: Get paid to be a citizen
+### Chapter 12: $WISH - The Peace Currency Experiment
+- 12.1 **The Problem: Every Currency Funds War**
+  - 12.1.1 Dollar: Created by Fed to fund WWI, still funding wars
+  - 12.1.2 Euro: ECB funds NATO expansions
+  - 12.1.3 Every fiat currency: War machine in disguise
+  - 12.1.4 $WISH: First currency that CAN'T fund war (by design)
 - 12.2 **The UBI Demonstration: Participation Pays**
   - 12.2.1 Vote in Wishocracy: Earn 1,000 $WISH/month
   - 12.2.2 Transaction tax funds it (like sales tax, but fair)
@@ -322,28 +322,37 @@
   - 13.4.3 Technical risk: Simple smart contracts
   - 13.4.4 Market risk: Health demand never decreases
 
-### Chapter 14: Fixing 1972 - The Algorithmic Fed
-- 14.1 **When Productivity Divorced Wages**
-  - 14.1.1 Nixon's original sin: Killing gold standard
-  - 14.1.2 Fiat currency: License to steal via inflation
-  - 14.1.3 50 years of wealth extraction to the 1%
-  - 14.1.4 Productivity up 246%, wages up 115%
-  - 14.1.5 The missing trillions: They printed them for themselves
-- 14.2 **The $WISH Solution: Code Not Committees**
-  - 14.2.1 Supply adjusts algorithmically (no human discretion)
-  - 14.2.2 Productivity gains flow to UBI automatically
-  - 14.2.3 No insider trading (algorithms don't have friends)
-  - 14.2.4 No boom-bust cycles (math doesn't panic)
-- 14.3 **The Oracle Network: Reality-Based Money**
-  - 14.3.1 Millions of price feeds (not 12 fed governors)
-  - 14.3.2 Real-time adjustments (not quarterly meetings)
-  - 14.3.3 Transparent formulas (not secret deliberations)
-  - 14.3.4 Democratic overrides (if absolutely needed)
-- 14.4 **The Death of Central Banking**
-  - 14.4.1 No more bailouts (banks fail like everyone else)
-  - 14.4.2 No more cantillon effect (no money printer privilege)
-  - 14.4.3 No more inflation tax (purchasing power protected)
-  - 14.4.4 The Fed: Museum piece next to bloodletting
+### Chapter 14: Central Banks: The War Machines That Kill Your Kids
+- 14.1 **The Historical Pattern: Every Central Bank Funds War**
+  - 14.1.1 Bank of England (1694): Created to fund war with France
+  - 14.1.2 Federal Reserve (1913): WWI started 6 months later (coincidence?)
+  - 14.1.3 Every war since: Funded by money printing (inflation tax on you)
+  - 14.1.4 Vietnam: $168B printed, your wages destroyed
+  - 14.1.5 Iraq/Afghanistan: $8T printed while cancer research got $68B
+- 14.2 **1972: When Nixon Weaponized Money Against You**
+  - 14.2.1 Killed gold standard to fund Vietnam without tax revolt
+  - 14.2.2 Productivity up 246%, wages up 115% (they stole the difference)
+  - 14.2.3 The cantillon effect: Banks get new money first, you get inflation
+  - 14.2.4 Every war since: Funded by destroying your purchasing power
+  - 14.2.5 The missing trillions: Printed for wars, not cures
+- 14.3 **The $WISH Solution: Algorithmic Peace Money**
+  - 14.3.1 Can't fund wars (hard-coded for medical research only)
+  - 14.3.2 New money → Everyone equally (kills cantillon effect)
+  - 14.3.3 Productivity gains → UBI automatically (not stolen by banks)
+  - 14.3.4 No insider trading (algorithms don't have defense contractor friends)
+  - 14.3.5 No boom-bust cycles (math doesn't panic-print for wars)
+- 14.4 **Why We Can't Fix the Fed (It's Terminal)**
+  - 14.4.1 Captured by military-banking complex (unfixable)
+  - 14.4.2 Dollar is global reserve (can't be reformed)
+  - 14.4.3 Too many wars depend on money printer
+  - 14.4.4 Solution: Build alternative, let Fed die naturally
+  - 14.4.5 $WISH: The lifeboat while USS Dollar sinks
+- 14.5 **The Oracle Network: Reality-Based Money**
+  - 14.5.1 Millions of price feeds (not 12 war-funders)
+  - 14.5.2 Real-time adjustments (not FOMC theater)
+  - 14.5.3 Transparent formulas (not backroom deals)
+  - 14.5.4 Democratic overrides possible (actual democracy)
+  - 14.5.5 No more secret bailouts for defense contractors
 
 ### Chapter 15: The Coalition Building (Aligned Incentives)
 - 15.1 **Level 0: The Organizers** (Making it happen)
