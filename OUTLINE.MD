@@ -55,17 +55,34 @@
   - 3.2.2 Time cost of being informed: 1,000 hours/year
   - 3.2.3 Rational ignorance: It's literally stupid to pay attention
   - 3.2.4 The paradox: Everyone knows it's broken, nobody can fix it
-- 3.3 **535 People Pretending to Represent 335 Million**
+- 3.3 **The Representation Illusion: 535 People Pretending to Represent 335 Million**
   - 3.3.1 Your "representative" has 750,000 constituents (you get 0.00013%)
   - 3.3.2 They spend 70% of their time fundraising, not representing
-  - 3.3.3 The budget is 10,000 decisions you'll never influence
-  - 3.3.4 Omnibus bills: 2,000 pages passed at 2 AM (democracy!)
-- 3.4 **Regulatory Capture: The Foxes Own All Henhouses**
-  - 3.4.1 FDA run by ex-pharma executives (shocking!)
-  - 3.4.2 DoD run by future defense contractors (who could have guessed!)
-  - 3.4.3 The revolving door: 400% salary increase for playing ball
-  - 3.4.4 The IRS: 87,000 agents to squeeze you while billionaires pay zero
-  - 3.4.5 The Fed: Privately owned, publicly destroying your savings
+  - 3.3.3 Party platforms: 1,000 positions you never chose
+  - 3.3.4 Gerrymandering: They pick voters, not vice versa
+  - 3.3.5 The median voter theorem: Everyone gets ignored
+- 3.4 **The Budget Black Box: $6 Trillion You Don't Control**
+  - 3.4.1 Omnibus bills: 2,000 pages passed at 2 AM
+  - 3.4.2 Earmarks: Trading your healthcare for someone's bridge
+  - 3.4.3 Baseline budgeting: Increases are automatic, cuts are impossible
+  - 3.4.4 The debt ceiling theater: Fake fights, real damage
+  - 3.4.5 The budget is 10,000 decisions you'll never influence
+- 3.5 **Regulatory Capture: The Foxes Own All Henhouses**
+  - 3.5.1 FDA run by ex-pharma executives (shocking!)
+  - 3.5.2 DoD run by future defense contractors (who could have guessed!)
+  - 3.5.3 The revolving door: 400% salary increase for playing ball
+  - 3.5.4 The IRS: 87,000 agents to squeeze you while billionaires pay zero
+  - 3.5.5 The Fed: Privately owned, publicly destroying your savings
+- 3.6 **Direct Democracy Fails Too (California Proved It)**
+  - 3.6.1 Information overload: 50 propositions = random voting
+  - 3.6.2 Special interest capture: Who writes the propositions?
+  - 3.6.3 No coherence: Conflicting mandates everywhere
+  - 3.6.4 The solution: Micro-decisions with macro-coherence
+- 3.7 **The Democracy That Never Was**
+  - 3.7.1 Athens: Only 10% could vote (slaves don't count)
+  - 3.7.2 America: Designed for landowners, not you
+  - 3.7.3 Modern "democracy": Choose between two pre-selected options
+  - 3.7.4 The real system: Oligarchy with democratic theater
 
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
@@ -195,29 +212,7 @@
 
 ## Part III: The Solution (Wishocracy: Real Democracy Finally)
 
-### Chapter 9: Representative Democracy Is a Scam (You Already Know This)
-- 9.1 **The Representation Illusion**
-  - 9.1.1 One person cannot represent 750,000 opinions
-  - 9.1.2 Party platforms: 1,000 positions you never chose
-  - 9.1.3 Gerrymandering: They pick voters, not vice versa
-  - 9.1.4 The median voter theorem: Everyone gets ignored
-- 9.2 **The Budget Black Box: $6 Trillion You Don't Control**
-  - 9.2.1 Omnibus bills: 2,000 pages passed at 2 AM
-  - 9.2.2 Earmarks: Trading your healthcare for someone's bridge
-  - 9.2.3 Baseline budgeting: Increases are automatic, cuts are impossible
-  - 9.2.4 The debt ceiling theater: Fake fights, real damage
-- 9.3 **Direct Democracy Fails Too (California Proved It)**
-  - 9.3.1 Information overload: 50 propositions = random voting
-  - 9.3.2 Special interest capture: Who writes the propositions?
-  - 9.3.3 No coherence: Conflicting mandates everywhere
-  - 9.3.4 The solution: Micro-decisions with macro-coherence
-- 9.4 **The Democracy That Never Was**
-  - 9.4.1 Athens: Only 10% could vote (slaves don't count)
-  - 9.4.2 America: Designed for landowners, not you
-  - 9.4.3 Modern "democracy": Choose between two pre-selected options
-  - 9.4.4 The real system: Oligarchy with democratic theater
-
-### Chapter 10: Wishocracy - Tinder for the Federal Budget
+### Chapter 9: Wishocracy - Tinder for the Federal Budget
 - 10.1 **The Innovation: Budget Allocation Through Micro-Decisions**
   - 10.1.1 See two options: "Cancer research" vs "F-35 maintenance"
   - 10.1.2 Slide to allocate: 80% cancer, 20% jet (your choice)
