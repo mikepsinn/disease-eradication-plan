@@ -86,37 +86,31 @@
 
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
-### Chapter 4: Why Every Government "War" Creates More of What It Fights
-- 4.1 **The War on Drugs: How to Create Cartels** ($1T spent, drugs cheaper and stronger)
-  - 4.1.1 The incentive failure: DEA budget grows with drug problem
-  - 4.1.2 Black markets created: Violence up 10,000%
-  - 4.1.3 Incarceration industrial complex: $80B industry needs prisoners
-  - 4.1.4 Result: More drugs, more violence, more death
-  - 4.1.5 The lesson: Prohibition creates what it prohibits
-- 4.2 **The War on Poverty: How to Keep People Poor** ($22T spent, poverty unchanged)
-  - 4.2.1 Welfare cliffs: Earning more makes you poorer
-  - 4.2.2 Bureaucratic jobs program: 90% goes to administrators
-  - 4.2.3 Dependency creation: Helplessness is rewarded
-  - 4.2.4 The poverty industrial complex: Needs poor people to exist
-  - 4.2.5 Result: Intergenerational poverty locked in
-- 4.3 **The War on Cancer: Nixon's 1971 Central Planning Disaster**
-  - 4.3.1 Top-down NIH approach: Committee picks winners (wrong)
-  - 4.3.2 Academic capture: Grants for papers, not cures
-  - 4.3.3 FDA gatekeeping: 17 years and $2.2B per drug
-  - 4.3.4 Result: Cancer rates up, costs up, cures near zero
-  - 4.3.5 The cancer industrial complex: $200B/year treating, not curing
-- 4.4 **The War on Terror: How to Manufacture Terrorists** ($8T spent, terrorism increased)
-  - 4.4.1 Every drone strike: Creates 10 new terrorists
-  - 4.4.2 Defense contractor incentives: Endless war = endless profit
-  - 4.4.3 The surveillance state: $100B watching you, not them
-  - 4.4.4 Result: ISIS, Taliban stronger than ever
-  - 4.4.5 The fear industrial complex: Needs enemies to justify budgets
-- 4.5 **The Pattern: Centralized Wars Create Their Enemies**
-  - 4.5.1 Bureaucracies need problems to solve (or they die)
-  - 4.5.2 Solving the problem = unemployment (perverse incentive)
-  - 4.5.3 Growing the problem = bigger budgets (actual incentive)
-  - 4.5.4 Nearly every government war on X creates more X
-  - 4.5.5 The solution: Create markets that profit from solving, not preserving problems
+### Chapter 4: Why Central Planning Kills People 
+- 4.1 **The Pattern: Every Government "War" Creates More of What It Fights**
+  - 4.1.1 War on Drugs ($1T): Created cartels, violence up 10,000%
+  - 4.1.2 War on Poverty ($22T): Welfare cliffs keep people poor
+  - 4.1.3 War on Cancer (Nixon 1971): $200B/year treating, not curing
+  - 4.1.4 War on Terror ($8T): Every drone strike creates 10 terrorists
+  - 4.1.5 The perverse incentive: Bureaucracies need problems to exist
+- 4.2 **The Knowledge Problem (Hayek Was Right)**
+  - 4.2.1 200 NIH bureaucrats can't know 8 billion health needs
+  - 4.2.2 Every patient knows their pain (committees know PowerPoints)
+  - 4.2.3 Soviet agriculture: Smart people, 100 million starved
+  - 4.2.4 NIH medicine: Smart people, 55 million die annually
+  - 4.2.5 The pretense of knowledge: Central planning always fails
+- 4.3 **Markets: The Distributed Computer That Works**
+  - 4.3.1 Prices are information packets (committees are noise)
+  - 4.3.2 RECOVERY trial: $500 vs $41,000 per patient (80X efficiency)
+  - 4.3.3 Pre-1962 medicine: Doctors prescribed, patients decided
+  - 4.3.4 Software/Internet: No FDA = exponential innovation
+  - 4.3.5 Lasik/cosmetic surgery: Cash markets = 50% price drops
+- 4.4 **Public Choice Theory: Everyone's Selfish, Use It**
+  - 4.4.1 Politicians maximize power, not health (2-year horizons)
+  - 4.4.2 Bureaucrats maximize budgets (bigger = more power)
+  - 4.4.3 Defense contractors: $100M lobbying → $2T contracts
+  - 4.4.4 The solution: Make curing more profitable than treating
+  - 4.4.5 Align incentives or die (literally)
 
 ### Chapter 5: The War on Disease - The First War Designed to Win
 - 5.1 **Different Structure: Markets Not Ministries**
@@ -143,101 +137,78 @@
   - 5.4.3 The end of central planning's credibility
   - 5.4.4 The beginning of the market revolution
 
-### Chapter 6: Hayek Explained Why the NIH Kills People
-- 6.1 **The Knowledge Problem: 200 Bureaucrats Can't Know 8 Billion Needs**
-  - 6.1.1 Every patient knows their pain (committees know PowerPoints)
-  - 6.1.2 Distributed knowledge: Millions of symptoms, one database
-  - 6.1.3 The pretense of knowledge: NIH thinks it's omniscient
-  - 6.1.4 Local information: Your body talks, committees don't listen
-- 6.2 **Central Planning Always Fails** (Ask 100 Million Dead Soviets)
-  - 6.2.1 Soviet agriculture: Smart people, mass starvation
-  - 6.2.2 NIH medicine: Smart people, mass death
-  - 6.2.3 Same system, same result (committees can't allocate)
-  - 6.2.4 The Fed: Soviet planning for money (working great!)
-  - 6.2.5 More centralization of power correlates with more corruption, waste, death
-- 6.3 **Markets: The Distributed Computer That Actually Works**
-  - 6.3.1 Prices are information packets (committees are noise)
-  - 6.3.2 Profit/loss is binary feedback (committees never learn)
-  - 6.3.3 Competition drives innovation (monopolies drive stagnation)
-  - 6.3.4 Creative destruction: Bad ideas die (except in government)
-- 6.4 **I, Pencil: The Miracle No Committee Could Create**
-  - 6.4.1 Nobody knows how to make a pencil (yet pencils exist)
-  - 6.4.2 Markets coordinate millions unconsciously
-  - 6.4.3 If committees can't make pencils, they can't cure cancer
-  - 6.4.4 Spontaneous order > planned order (every single time)
+### Chapter 6: Public Choice Theory (Everyone's a Selfish Prick, Use It)
+- 6.1 **Politicians Maximize Power, Not Your Health**
+  - 6.1.1 Time horizons: 2-year election cycles vs 20-year cures
+  - 6.1.2 Blame avoidance > credit claiming (do nothing, stay safe)
+  - 6.1.3 Their healthcare is free (yours isn't their problem)
+  - 6.1.4 Concentrated benefits, diffuse costs (you always lose)
+- 6.2 **The Interest Group Auction House**
+  - 6.2.1 Defense contractors: $100M lobbying → $2T contracts
+  - 6.2.2 You: Pay $1,000/year, too small to notice
+  - 6.2.3 They organize, you don't (and never will)
+  - 6.2.4 The lobbyist ROI: 1,813% returns (best investment ever)
+- 6.3 **Bureaucrats: The Permanent Government**
+  - 6.3.1 Budget maximization: Bigger department = more power
+  - 6.3.2 Risk minimization: Never try anything new
+  - 6.3.3 Job security: Can't be fired, won't innovate
+  - 6.3.4 The iron law: Every bureaucracy becomes self-serving
+- 6.4 **The Solution: Align Incentives or Die**
+  - 6.4.1 Make curing disease more profitable than causing it
+  - 6.4.2 Bribe the same people, but for health
+  - 6.4.3 Use greed for good (it's the only reliable force)
+  - 6.4.4 Create concentrated benefits for healing
 
-### Chapter 7: Public Choice Theory (Everyone's a Selfish Prick, Use It)
-- 7.1 **Politicians Maximize Power, Not Your Health**
-  - 7.1.1 Time horizons: 2-year election cycles vs 20-year cures
-  - 7.1.2 Blame avoidance > credit claiming (do nothing, stay safe)
-  - 7.1.3 Their healthcare is free (yours isn't their problem)
-  - 7.1.4 Concentrated benefits, diffuse costs (you always lose)
-- 7.2 **The Interest Group Auction House**
-  - 7.2.1 Defense contractors: $100M lobbying → $2T contracts
-  - 7.2.2 You: Pay $1,000/year, too small to notice
-  - 7.2.3 They organize, you don't (and never will)
-  - 7.2.4 The lobbyist ROI: 1,813% returns (best investment ever)
-- 7.3 **Bureaucrats: The Permanent Government**
-  - 7.3.1 Budget maximization: Bigger department = more power
-  - 7.3.2 Risk minimization: Never try anything new
-  - 7.3.3 Job security: Can't be fired, won't innovate
-  - 7.3.4 The iron law: Every bureaucracy becomes self-serving
-- 7.4 **The Solution: Align Incentives or Die**
-  - 7.4.1 Make curing disease more profitable than causing it
-  - 7.4.2 Bribe the same people, but for health
-  - 7.4.3 Use greed for good (it's the only reliable force)
-  - 7.4.4 Create concentrated benefits for healing
-
-### Chapter 8: The Wisdom of Crowds (8 Billion Geniuses > 200 Idiots)
-- 8.1 **Surowiecki Was Right About Everything**
-  - 8.1.1 The Ox: 800 farmers' average beat all experts
-  - 8.1.2 Wikipedia destroyed Britannica (amateurs beat professionals)
-  - 8.1.3 Jelly beans in jar: Crowd average within 1% (experts off by 20%)
-  - 8.1.4 Linux beat Windows Server (open source beat closed)
-- 8.2 **Prediction Markets: Crowdsourced Crystal Balls**
-  - 8.2.1 Elections: Markets 96% accurate, polls 60%
-  - 8.2.2 Drug trials: Markets predict FDA approval better than FDA
-  - 8.2.3 Everything else: Weather, sports, stocks (markets always win)
-  - 8.2.4 The Iowa Electronic Markets: Beat every pundit
-- 8.3 **The Superintelligence We Already Have**
-  - 8.3.1 8 billion networked brains = planet-sized neural network
-  - 8.3.2 Collective IQ: Potentially infinite
-  - 8.3.3 Current use: Arguing on Twitter (what a waste)
-  - 8.3.4 Properly harnessed: Could solve everything
-- 8.4 **Network Effects: Why Decentralization Wins**
-  - 8.4.1 Metcalfe's Law: Value = N² (centralization = N)
-  - 8.4.2 Reed's Law: Group forming = 2^N (exponential power)
-  - 8.4.3 The internet beat every centralized network
-  - 8.4.4 Your brain: 86 billion neurons > any central processor
+### Chapter 7: The Wisdom of Crowds (8 Billion Geniuses > 200 Idiots)
+- 7.1 **Surowiecki Was Right About Everything**
+  - 7.1.1 The Ox: 800 farmers' average beat all experts
+  - 7.1.2 Wikipedia destroyed Britannica (amateurs beat professionals)
+  - 7.1.3 Jelly beans in jar: Crowd average within 1% (experts off by 20%)
+  - 7.1.4 Linux beat Windows Server (open source beat closed)
+- 7.2 **Prediction Markets: Crowdsourced Crystal Balls**
+  - 7.2.1 Elections: Markets 96% accurate, polls 60%
+  - 7.2.2 Drug trials: Markets predict FDA approval better than FDA
+  - 7.2.3 Everything else: Weather, sports, stocks (markets always win)
+  - 7.2.4 The Iowa Electronic Markets: Beat every pundit
+- 7.3 **The Superintelligence We Already Have**
+  - 7.3.1 8 billion networked brains = planet-sized neural network
+  - 7.3.2 Collective IQ: Potentially infinite
+  - 7.3.3 Current use: Arguing on Twitter (what a waste)
+  - 7.3.4 Properly harnessed: Could solve everything
+- 7.4 **Network Effects: Why Decentralization Wins**
+  - 7.4.1 Metcalfe's Law: Value = N² (centralization = N)
+  - 7.4.2 Reed's Law: Group forming = 2^N (exponential power)
+  - 7.4.3 The internet beat every centralized network
+  - 7.4.4 Your brain: 86 billion neurons > any central processor
 
 ## Part III: The Solution (Wishocracy: Real Democracy Finally)
 
-### Chapter 9: Wishocracy - Tinder for the Federal Budget
-- 9.1 **The Innovation: Budget Allocation Through Micro-Decisions**
-  - 9.1.1 See two options: "Cancer research" vs "F-35 maintenance"
-  - 9.1.2 Slide to allocate: 80% cancer, 20% jet (your choice)
-  - 9.1.3 20 swipes = your entire tax contribution allocated
-  - 9.1.4 Cognitive load: Minimal (your brain can actually do this)
-- 9.2 **The Math: How Swipes Become Budgets**
-  - 9.2.1 Pairwise comparison: How your brain actually works
-  - 9.2.2 Condorcet aggregation: Finding true social preference
-  - 9.2.3 The law of large numbers: Noise cancels, signal emerges
-  - 9.2.4 Impossibility theorem solved: No cycles with enough voters
-- 9.3 **Your AI Twin: Scaling to Infinite Decisions**
-  - 9.3.1 Learns from 100 choices, predicts 10,000
-  - 9.3.2 You audit and adjust (maintaining control)
-  - 9.3.3 Collective intelligence: 8 billion advisors
-  - 9.3.4 The hive mind: Smarter than any individual
-- 9.4 **The Feedback Loop: Democracy That Learns**
-  - 9.4.1 Every allocation tracked to outcomes
-  - 9.4.2 Good allocations get reinforced
-  - 9.4.3 Bad allocations get punished
-  - 9.4.4 The system gets smarter every cycle
-- 9.5 **The Incentive Layer: Democracy That Rewards**
-  - 9.5.1 Participation points for voting (gamification)
-  - 9.5.2 Good allocations earn reputation (competence rewarded)
-  - 9.5.3 Leaderboards and achievements (social proof)
-  - 9.5.4 Democracy becomes addictive (dopamine hits for voting)
+### Chapter 8: Wishocracy - Tinder for the Federal Budget
+- 8.1 **The Innovation: Budget Allocation Through Micro-Decisions**
+  - 8.1.1 See two options: "Cancer research" vs "F-35 maintenance"
+  - 8.1.2 Slide to allocate: 80% cancer, 20% jet (your choice)
+  - 8.1.3 20 swipes = your entire tax contribution allocated
+  - 8.1.4 Cognitive load: Minimal (your brain can actually do this)
+- 8.2 **The Math: How Swipes Become Budgets**
+  - 8.2.1 Pairwise comparison: How your brain actually works
+  - 8.2.2 Condorcet aggregation: Finding true social preference
+  - 8.2.3 The law of large numbers: Noise cancels, signal emerges
+  - 8.2.4 Impossibility theorem solved: No cycles with enough voters
+- 8.3 **Your AI Twin: Scaling to Infinite Decisions**
+  - 8.3.1 Learns from 100 choices, predicts 10,000
+  - 8.3.2 You audit and adjust (maintaining control)
+  - 8.3.3 Collective intelligence: 8 billion advisors
+  - 8.3.4 The hive mind: Smarter than any individual
+- 8.4 **The Feedback Loop: Democracy That Learns**
+  - 8.4.1 Every allocation tracked to outcomes
+  - 8.4.2 Good allocations get reinforced
+  - 8.4.3 Bad allocations get punished
+  - 8.4.4 The system gets smarter every cycle
+- 8.5 **The Incentive Layer: Democracy That Rewards**
+  - 8.5.1 Participation points for voting (gamification)
+  - 8.5.2 Good allocations earn reputation (competence rewarded)
+  - 8.5.3 Leaderboards and achievements (social proof)
+  - 8.5.4 Democracy becomes addictive (dopamine hits for voting)
 
 ### Chapter 10: The 1% Treaty (The Trojan Horse That Conquers Everything)
 - 10.1 **Start Tiny: Just 1% of Military Budgets**
@@ -508,73 +479,48 @@
 
 ## Part VI: The Proof (This Already Works)
 
-### Chapter 19: Markets Beat Central Planning (Every Time)
-- 19.1 **The RECOVERY Trial: 80X Efficiency Achieved**
-  - 19.1.1 $500 per patient (vs $41,000 US trials)
-  - 19.1.2 47,000 patients in 9 months (vs 500 in 5 years)
-  - 19.1.3 Found 4 treatments that work
-  - 19.1.4 Saved 1 million lives (conservative estimate)
-  - 19.1.5 The blueprint: Just copy this everywhere
-- 19.2 **Pre-1962: When Medicine Actually Worked**
-  - 19.2.1 Doctors prescribed, patients decided
-  - 19.2.2 Innovation without permission
-  - 19.2.3 Treatments cost dollars, not billions
-  - 19.2.4 The FDA killed more than it saved
-- 19.3 **Every Industry Centralization Ruined**
-  - 19.3.1 Education: Costs up 1,000%, quality down
-  - 19.3.2 Healthcare: Most expensive, worst outcomes
-  - 19.3.3 Housing: Regulated into unaffordability
-  - 19.3.4 Banking: Too big to fail = you bail them out
-- 19.4 **Every Industry Markets Fixed**
-  - 19.4.1 Software: No FDA = exponential innovation
-  - 19.4.2 Internet: Unregulated = changed everything
-  - 19.4.3 Supplements: $50B industry, minimal regulation
-  - 19.4.4 Lasik: Cash market = 50% price drop
-  - 19.4.5 Cosmetic surgery: Competition = better and cheaper
+### Chapter 19: Alternative Currencies That Won
+- 19.1 **When Money Dies, People Make New Money**
+  - 19.1.1 Zimbabwe: USD replaced Zim dollars
+  - 19.1.2 Venezuela: Bitcoin replaced bolivars
+  - 19.1.3 Argentina: Anything but pesos
+  - 19.1.4 Weimar Germany: Cigarettes were currency
+- 19.2 **Digital Currencies That Succeeded**
+  - 19.2.1 M-Pesa: Became Kenya's real economy
+  - 19.2.2 WeChat Pay: Killed cash in China
+  - 19.2.3 Bitcoin: $1 trillion despite everything
+  - 19.2.4 Stablecoins: $150B and growing
+- 19.3 **Community Currencies Work**
+  - 19.3.1 Ithaca HOURS: 20 years of success
+  - 19.3.2 Bristol Pound: Local economy thrived
+  - 19.3.3 Time banks: 30 countries participating
+  - 19.3.4 The lesson: People create money when needed
+- 19.4 **VICTORY Bonds Have Better Fundamentals**
+  - 19.4.1 Backed by treaty obligations (government guaranteed)
+  - 19.4.2 Universal demand (100% returns beat everything)
+  - 19.4.3 Network effects (more buyers = more political power)
+  - 19.4.4 Limited supply (only $1B issued)
 
-### Chapter 20: Alternative Currencies That Won
-- 20.1 **When Money Dies, People Make New Money**
-  - 20.1.1 Zimbabwe: USD replaced Zim dollars
-  - 20.1.2 Venezuela: Bitcoin replaced bolivars
-  - 20.1.3 Argentina: Anything but pesos
-  - 20.1.4 Weimar Germany: Cigarettes were currency
-- 20.2 **Digital Currencies That Succeeded**
-  - 20.2.1 M-Pesa: Became Kenya's real economy
-  - 20.2.2 WeChat Pay: Killed cash in China
-  - 20.2.3 Bitcoin: $1 trillion despite everything
-  - 20.2.4 Stablecoins: $150B and growing
-- 20.3 **Community Currencies Work**
-  - 20.3.1 Ithaca HOURS: 20 years of success
-  - 20.3.2 Bristol Pound: Local economy thrived
-  - 20.3.3 Time banks: 30 countries participating
-  - 20.3.4 The lesson: People create money when needed
-- 20.4 **VICTORY Bonds Have Better Fundamentals**
-  - 20.4.1 Backed by treaty obligations (government guaranteed)
-  - 20.4.2 Universal demand (100% returns beat everything)
-  - 20.4.3 Network effects (more buyers = more political power)
-  - 20.4.4 Limited supply (only $1B issued)
-
-### Chapter 21: Political Movements That Changed Everything
-- 21.1 **War Bonds: Capitalism Defeated Fascism**
-  - 21.1.1 WW2: $185B raised from regular people
-  - 21.1.2 Marketing genius: Patriotism + profit
-  - 21.1.3 Celebrity endorsements before influencers
-  - 21.1.4 The lesson: Aligned incentives win wars
-- 21.2 **The Landmine Treaty: Civil Society Won**
-  - 21.2.1 Military-industrial complex opposed
-  - 21.2.2 160+ nations signed anyway
-  - 21.2.3 Nobel Peace Prize validated approach
-  - 21.2.4 The lesson: Citizens > governments
-- 21.3 **The 3.5% Rule: Historical Proof**
-  - 21.3.1 Civil rights: 3.5% ended segregation
-  - 21.3.2 Indian independence: 3.5% beat empire
-  - 21.3.3 Women's suffrage: 3.5% got the vote
-
-- 21.4 **We Have Advantages They Didn't**
-  - 21.4.1 Internet: Instant global coordination
-  - 21.4.2 Money: We're paying participants
-  - 21.4.3 Data: We can prove what works
-  - 21.4.4 Urgency: People are literally dying
+### Chapter 20: Political Movements That Changed Everything
+- 20.1 **War Bonds: Capitalism Defeated Fascism**
+  - 20.1.1 WW2: $185B raised from regular people
+  - 20.1.2 Marketing genius: Patriotism + profit
+  - 20.1.3 Celebrity endorsements before influencers
+  - 20.1.4 The lesson: Aligned incentives win wars
+- 20.2 **The Landmine Treaty: Civil Society Won**
+  - 20.2.1 Military-industrial complex opposed
+  - 20.2.2 160+ nations signed anyway
+  - 20.2.3 Nobel Peace Prize validated approach
+  - 20.2.4 The lesson: Citizens > governments
+- 20.3 **The 3.5% Rule: Historical Proof**
+  - 20.3.1 Civil rights: 3.5% ended segregation
+  - 20.3.2 Indian independence: 3.5% beat empire
+  - 20.3.3 Women's suffrage: 3.5% got the vote
+- 20.4 **We Have Advantages They Didn't**
+  - 20.4.1 Internet: Instant global coordination
+  - 20.4.2 Money: We're paying participants
+  - 20.4.3 Data: We can prove what works
+  - 20.4.4 Urgency: People are literally dying
 
 ### Chapter 22: Your Body Is Just a Machine
 - 22.1 **The Engineering Reality of Biology**
