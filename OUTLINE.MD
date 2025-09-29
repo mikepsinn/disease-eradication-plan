@@ -31,11 +31,13 @@
   - Mental illness: 1 billion suffering, $5T lost productivity
   - Healthcare spending: $8.2T globally (mostly treating, not curing)
   - Rare diseases: 95% have zero treatments (your kids will die)
+  - 44 YEARS since last major disease cured (polio 1979, nothing since)
 - **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
   - We spend more on Halloween costumes than curing cancer
   - The military's toilet seats cost more than malaria research
   - One fighter jet = entire rare disease research budget
   - Viagra got more funding than Alzheimer's (priorities!)
+  - 166 BILLION untested treatment combinations (we've tried 0.0001%)
 - **The 1972 Catastrophe: When Your Wages Got Divorced From Your Work**
   - Nixon kills gold standard: Money becomes meaningless paper
   - Productivity up 246%, wages up 115% (where'd the money go?)
@@ -454,6 +456,7 @@
   - 17 YEARS from discovery to patient (you'll be dead before the cure arrives)
   - 85% of patients EXCLUDED from trials (too sick, too old, wrong zip code)
   - Current trials: $48,000 per patient (pharma passes cost to you)
+  - Negative results NEVER published (half of all research is hidden)
   - FDA.gov: A 1990s website that kills people with bureaucracy
   - Solution: FDA.gov v2 as global public infrastructure
 - **The 80X Solution: Decentralized Trials**
@@ -479,10 +482,17 @@
   - Get meds delivered to you
   - Report outcomes through your existing apps
   - Your data improves rankings for everyone
+  - FDAi Agent: Your personal AI doctor
+    - Analyzes your health data continuously
+    - Matches you to optimal trials
+    - Predicts treatment effectiveness for YOUR biology
+    - Monitors for side effects in real-time
+    - Adjusts recommendations as you respond
 - **Outcome Labels: The Truth About Everything**
   - Every food: "Increases diabetes risk 12%"
   - Every drug: "73% effective for your genotype"
   - Every supplement: "Does nothing" or actual effect size
+  - 330 chemical additives: Currently UNKNOWN effects (we'll finally test them)
   - Star ratings from real-world data
   - Personalized to YOUR biology
   - "Best value" badges for cost-effectiveness
@@ -496,6 +506,10 @@
   - Open-source FDA alternative (FDA.gov v2)
   - Zero-knowledge proofs protect patient privacy
   - All trial results public, individual data anonymous
+  - Digital Twin Safe: Your lifetime health data vault
+    - Encrypted personal health repository
+    - AI creates anonymized digital twin for research
+    - You control access and earn from data use
   - Backend-as-a-Service for existing health systems
   - APIs enable any platform to integrate
   - Patient-owned records
@@ -503,6 +517,13 @@
 - **The Result: 80X Medical Progress Acceleration**
   - Before: 17 years, $2.6B per drug, 95% of diseases ignored
   - After: 6 months, $30M per treatment, 100% of diseases targetable
+  - Cost breakdown showing 95% savings:
+    - Site payments: $12,000 → $200 (virtual trials)
+    - Patient recruitment: $8,000 → $50 (direct digital)
+    - Monitoring: $6,000 → $100 (automated)
+    - Data management: $5,000 → $50 (blockchain)
+    - Regulatory: $4,000 → $100 (smart contracts)
+    - Total per patient: $48,000 → $500 (proven by RECOVERY trial)
   - Thousands of decentralized trials (vs traditional bottlenecks)
   - Your grandma's Alzheimer's: Actually gets studied
   - Your kid's rare disease: Finally profitable to cure
