@@ -3,800 +3,800 @@
 ## Part I: The Problem (Your Democracy Is Dead and Your Genes Want You Dead)
 
 ### Chapter 1: Evolution Made You a Slave to Dead People's DNA
-- 1.1 **The Selfish Gene's Suicide Mission**: You're a meat robot for dead people's code
-  - 1.1.1 Dawkins was right: You're a "survival machine" for molecules
-  - 1.1.2 The homunculi controlling you: Pleasure and pain are DNA's carrot and stick
-  - 1.1.3 Your genes want you dead at 30 after breeding (mission accomplished)
-  - 1.1.4 The genetic lottery: You didn't choose any of this
-- 1.2 **Your Caveman Brain in a Space Age**: 200,000-year-old software, nuclear hardware
-  - 1.2.1 Tribalism: Great for fighting lions, terrible for global cooperation
-  - 1.2.2 Dunbar's number: You can only care about 150 people (everyone else can die)
-  - 1.2.3 Threat detection: You fear terrorists (25K deaths) more than heart disease (18M deaths)
-  - 1.2.4 The amygdala hijack: Why fear beats facts every time
-- 1.3 **The Evolutionary Trap**: Why we choose violence over medicine
-  - 1.3.1 In-group cooperation, out-group murder (it's in your DNA)
-  - 1.3.2 The warrior gene: 40% of us literally evolved to kill
-  - 1.3.3 Why peace feels wrong: Your amygdala needs an enemy
-  - 1.3.4 The reproduction imperative: War gets you laid (evolution is gross)
+- **The Selfish Gene's Suicide Mission**: You're a meat robot for dead people's code
+  - Dawkins was right: You're a "survival machine" for molecules
+  - The homunculi controlling you: Pleasure and pain are DNA's carrot and stick
+  - Your genes want you dead at 30 after breeding (mission accomplished)
+  - The genetic lottery: You didn't choose any of this
+- **Your Caveman Brain in a Space Age**: 200,000-year-old software, nuclear hardware
+  - Tribalism: Great for fighting lions, terrible for global cooperation
+  - Dunbar's number: You can only care about 150 people (everyone else can die)
+  - Threat detection: You fear terrorists (25K deaths) more than heart disease (18M deaths)
+  - The amygdala hijack: Why fear beats facts every time
+- **The Evolutionary Trap**: Why we choose violence over medicine
+  - In-group cooperation, out-group murder (it's in your DNA)
+  - The warrior gene: 40% of us literally evolved to kill
+  - Why peace feels wrong: Your amygdala needs an enemy
+  - The reproduction imperative: War gets you laid (evolution is gross)
 
 ### Chapter 2: The $119 Trillion Death Toilet (Where Your Money Goes to Die)
-- 2.1 **War: Humanity's Favorite Hobby** ($9.7T/year buying corpses)
-  - 2.1.1 Direct costs: $2.7T on weapons that rust in warehouses
-  - 2.1.2 The Pentagon's magic trick: Lost $2.46T (oops!)
-  - 2.1.3 China already hacked our nuclear systems (we're funding their military)
-  - 2.1.4 Every submarine = 1,000 cancer labs we didn't build
-  - 2.1.5 The nuclear extinction lottery: 13,000 warheads, 0 winners
-- 2.2 **Disease: The Holocaust in Slow Motion** ($109.1T/year in preventable suffering)
-  - 2.2.1 Cancer: 10M deaths/year while we argue about pronouns
-  - 2.2.2 Mental illness: 1 billion suffering, $5T lost productivity
-  - 2.2.3 Healthcare spending: $8.2T globally (mostly treating, not curing)
-  - 2.2.4 Rare diseases: 95% have zero treatments (your kids will die)
-- 2.3 **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
-  - 2.3.1 We spend more on Halloween costumes than curing cancer
-  - 2.3.2 The military's toilet seats cost more than malaria research
-  - 2.3.3 One fighter jet = entire rare disease research budget
-  - 2.3.4 Viagra got more funding than Alzheimer's (priorities!)
-- 2.4 **The 1972 Catastrophe: When Your Wages Got Divorced From Your Work**
-  - 2.4.1 Nixon kills gold standard: Money becomes meaningless paper
-  - 2.4.2 Productivity up 246%, wages up 115% (where'd the money go?)
-  - 2.4.3 The Fed: 12 unelected people playing god with your savings
-  - 2.4.4 Every financial crisis: The house always wins, you always lose
-  - 2.4.5 The cantillon effect: Money printers get rich, you get poor
+- **War: Humanity's Favorite Hobby** ($9.7T/year buying corpses)
+  - Direct costs: $2.7T on weapons that rust in warehouses
+  - The Pentagon's magic trick: Lost $2.46T (oops!)
+  - China already hacked our nuclear systems (we're funding their military)
+  - Every submarine = 1,000 cancer labs we didn't build
+  - The nuclear extinction lottery: 13,000 warheads, 0 winners
+- **Disease: The Holocaust in Slow Motion** ($109.1T/year in preventable suffering)
+  - Cancer: 10M deaths/year while we argue about pronouns
+  - Mental illness: 1 billion suffering, $5T lost productivity
+  - Healthcare spending: $8.2T globally (mostly treating, not curing)
+  - Rare diseases: 95% have zero treatments (your kids will die)
+- **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
+  - We spend more on Halloween costumes than curing cancer
+  - The military's toilet seats cost more than malaria research
+  - One fighter jet = entire rare disease research budget
+  - Viagra got more funding than Alzheimer's (priorities!)
+- **The 1972 Catastrophe: When Your Wages Got Divorced From Your Work**
+  - Nixon kills gold standard: Money becomes meaningless paper
+  - Productivity up 246%, wages up 115% (where'd the money go?)
+  - The Fed: 12 unelected people playing god with your savings
+  - Every financial crisis: The house always wins, you always lose
+  - The cantillon effect: Money printers get rich, you get poor
 
 ### Chapter 3: Democracy Is Already Dead (Princeton Proved It)
-- 3.1 **The Princeton Bombshell: You Have Zero Political Power**
-  - 3.1.1 Gilens & Page study: 0% correlation between public opinion and policy
-  - 3.1.2 Economic elites get what they want 78% of the time
-  - 3.1.3 You get what you want 0% (unless elites agree)
-  - 3.1.4 The last 50 years: Every major policy against public will
-  - 3.1.5 The oligarchy with democratic characteristics (that's you, America)
-- 3.2 **Your Vote Is Mathematically Meaningless**
-  - 3.2.1 Probability your vote matters: 1 in 60 million
-  - 3.2.2 Time cost of being informed: 1,000 hours/year
-  - 3.2.3 Rational ignorance: It's literally stupid to pay attention
-  - 3.2.4 The paradox: Everyone knows it's broken, nobody can fix it
-- 3.3 **The Representation Illusion: 535 People Pretending to Represent 335 Million**
-  - 3.3.1 Your "representative" has 750,000 constituents (you get 0.00013%)
-  - 3.3.2 They spend 70% of their time fundraising, not representing
-  - 3.3.3 Party platforms: 1,000 positions you never chose
-  - 3.3.4 Gerrymandering: They pick voters, not vice versa
-  - 3.3.5 The median voter theorem: Everyone gets ignored
-- 3.4 **The Budget Black Box: $6 Trillion You Don't Control**
-  - 3.4.1 Omnibus bills: 2,000 pages passed at 2 AM
-  - 3.4.2 Earmarks: Trading your healthcare for someone's bridge
-  - 3.4.3 Baseline budgeting: Increases are automatic, cuts are impossible
-  - 3.4.4 The debt ceiling theater: Fake fights, real damage
-  - 3.4.5 The budget is 10,000 decisions you'll never influence
-- 3.5 **Regulatory Capture: The Foxes Own All Henhouses**
-  - 3.5.1 FDA run by ex-pharma executives (shocking!)
-  - 3.5.2 DoD run by future defense contractors (who could have guessed!)
-  - 3.5.3 The revolving door: 400% salary increase for playing ball
-  - 3.5.4 The IRS: 87,000 agents to squeeze you while billionaires pay zero
-  - 3.5.5 The Fed: Privately owned, publicly destroying your savings
-- 3.6 **Direct Democracy Fails Too (California Proved It)**
-  - 3.6.1 Information overload: 50 propositions = random voting
-  - 3.6.2 Special interest capture: Who writes the propositions?
-  - 3.6.3 No coherence: Conflicting mandates everywhere
-  - 3.6.4 The solution: Micro-decisions with macro-coherence
-- 3.7 **The Democracy That Never Was**
-  - 3.7.1 Athens: Only 10% could vote (slaves don't count)
-  - 3.7.2 America: Designed for landowners, not you
-  - 3.7.3 Modern "democracy": Choose between two pre-selected options
-  - 3.7.4 The real system: Oligarchy with democratic theater
+- **The Princeton Bombshell: You Have Zero Political Power**
+  - Gilens & Page study: 0% correlation between public opinion and policy
+  - Economic elites get what they want 78% of the time
+  - You get what you want 0% (unless elites agree)
+  - The last 50 years: Every major policy against public will
+  - The oligarchy with democratic characteristics (that's you, America)
+- **Your Vote Is Mathematically Meaningless**
+  - Probability your vote matters: 1 in 60 million
+  - Time cost of being informed: 1,000 hours/year
+  - Rational ignorance: It's literally stupid to pay attention
+  - The paradox: Everyone knows it's broken, nobody can fix it
+- **The Representation Illusion: 535 People Pretending to Represent 335 Million**
+  - Your "representative" has 750,000 constituents (you get 0.00013%)
+  - They spend 70% of their time fundraising, not representing
+  - Party platforms: 1,000 positions you never chose
+  - Gerrymandering: They pick voters, not vice versa
+  - The median voter theorem: Everyone gets ignored
+- **The Budget Black Box: $6 Trillion You Don't Control**
+  - Omnibus bills: 2,000 pages passed at 2 AM
+  - Earmarks: Trading your healthcare for someone's bridge
+  - Baseline budgeting: Increases are automatic, cuts are impossible
+  - The debt ceiling theater: Fake fights, real damage
+  - The budget is 10,000 decisions you'll never influence
+- **Regulatory Capture: The Foxes Own All Henhouses**
+  - FDA run by ex-pharma executives (shocking!)
+  - DoD run by future defense contractors (who could have guessed!)
+  - The revolving door: 400% salary increase for playing ball
+  - The IRS: 87,000 agents to squeeze you while billionaires pay zero
+  - The Fed: Privately owned, publicly destroying your savings
+- **Direct Democracy Fails Too (California Proved It)**
+  - Information overload: 50 propositions = random voting
+  - Special interest capture: Who writes the propositions?
+  - No coherence: Conflicting mandates everywhere
+  - The solution: Micro-decisions with macro-coherence
+- **The Democracy That Never Was**
+  - Athens: Only 10% could vote (slaves don't count)
+  - America: Designed for landowners, not you
+  - Modern "democracy": Choose between two pre-selected options
+  - The real system: Oligarchy with democratic theater
 
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
 ### Chapter 4: Why Central Planning Kills People 
-- 4.1 **The Pattern: Every Government "War" Creates More of What It Fights**
-  - 4.1.1 War on Drugs ($1T): Created cartels, violence up 10,000%
-  - 4.1.2 War on Poverty ($22T): Welfare cliffs keep people poor
-  - 4.1.3 War on Cancer (Nixon 1971): $200B/year treating, not curing
-  - 4.1.4 War on Terror ($8T): Every drone strike creates 10 terrorists
-  - 4.1.5 The perverse incentive: Bureaucracies need problems to exist
-- 4.2 **The Knowledge Problem (Hayek Was Right)**
-  - 4.2.1 200 NIH bureaucrats can't know 8 billion health needs
-  - 4.2.2 Every patient knows their pain (committees know PowerPoints)
-  - 4.2.3 Soviet agriculture: Smart people, 100 million starved
-  - 4.2.4 NIH medicine: Smart people, 55 million die annually
-  - 4.2.5 The pretense of knowledge: Central planning always fails
-- 4.3 **Markets: The Distributed Computer That Works**
-  - 4.3.1 Prices are information packets (committees are noise)
-  - 4.3.2 RECOVERY trial: $500 vs $41,000 per patient (80X efficiency)
-  - 4.3.3 Pre-1962 medicine: Doctors prescribed, patients decided
-  - 4.3.4 Software/Internet: No FDA = exponential innovation
-  - 4.3.5 Lasik/cosmetic surgery: Cash markets = 50% price drops
-- 4.4 **Public Choice Theory: Everyone's Selfish, Use It**
-  - 4.4.1 Politicians maximize power, not health (2-year horizons)
-  - 4.4.2 Bureaucrats maximize budgets (bigger = more power)
-  - 4.4.3 Defense contractors: $100M lobbying → $2T contracts
-  - 4.4.4 The solution: Make curing more profitable than treating
-  - 4.4.5 Align incentives or die (literally)
+- **The Pattern: Every Government "War" Creates More of What It Fights**
+  - War on Drugs ($1T): Created cartels, violence up 10,000%
+  - War on Poverty ($22T): Welfare cliffs keep people poor
+  - War on Cancer (Nixon 1971): $200B/year treating, not curing
+  - War on Terror ($8T): Every drone strike creates 10 terrorists
+  - The perverse incentive: Bureaucracies need problems to exist
+- **The Knowledge Problem (Hayek Was Right)**
+  - 200 NIH bureaucrats can't know 8 billion health needs
+  - Every patient knows their pain (committees know PowerPoints)
+  - Soviet agriculture: Smart people, 100 million starved
+  - NIH medicine: Smart people, 55 million die annually
+  - The pretense of knowledge: Central planning always fails
+- **Markets: The Distributed Computer That Works**
+  - Prices are information packets (committees are noise)
+  - RECOVERY trial: $500 vs $41,000 per patient (80X efficiency)
+  - Pre-1962 medicine: Doctors prescribed, patients decided
+  - Software/Internet: No FDA = exponential innovation
+  - Lasik/cosmetic surgery: Cash markets = 50% price drops
+- **Public Choice Theory: Everyone's Selfish, Use It**
+  - Politicians maximize power, not health (2-year horizons)
+  - Bureaucrats maximize budgets (bigger = more power)
+  - Defense contractors: $100M lobbying → $2T contracts
+  - The solution: Make curing more profitable than treating
+  - Align incentives or die (literally)
 
 ### Chapter 5: The War on Disease - The First War Designed to Win
-- 5.1 **Different Structure: Markets Not Ministries**
-  - 5.1.1 No bureaucracy to preserve (smart contracts)
-  - 5.1.2 Payment for outcomes, not process
-  - 5.1.3 Competition between solutions, not monopoly
-  - 5.1.4 Researchers get rich by curing, not by getting grants
-  - 5.1.5 The system dies when disease dies (that's the point)
-- 5.2 **Aligned Incentives: Everyone Wins by Winning**
-  - 5.2.1 Patients: Paid to participate, not exploited
-  - 5.2.2 Researchers: Rewarded for cures, not papers
-  - 5.2.3 Investors: Returns from health, not sickness
-  - 5.2.4 Politicians: Elected for results, not promises
-  - 5.2.5 No perverse incentives anywhere in the system
-- 5.3 **Spillover Victory: Solving Everything Else**
-  - 5.3.1 War on Drugs: Addiction is a disease (actually cure it)
-  - 5.3.2 War on Poverty: Healthy people aren't poor
-  - 5.3.3 War on Terror: Mental health treatment prevents radicalization
-  - 5.3.4 War on Crime: Cure antisocial personality disorder
-  - 5.3.5 Every social problem has biological roots (fix the roots)
-- 5.4 **The Meta-Victory: Proving Markets > Government**
-  - 5.4.1 First successful "War on" anything ever
-  - 5.4.2 Template for everything else (education, housing, etc.)
-  - 5.4.3 The end of central planning's credibility
-  - 5.4.4 The beginning of the market revolution
+- **Different Structure: Markets Not Ministries**
+  - No bureaucracy to preserve (smart contracts)
+  - Payment for outcomes, not process
+  - Competition between solutions, not monopoly
+  - Researchers get rich by curing, not by getting grants
+  - The system dies when disease dies (that's the point)
+- **Aligned Incentives: Everyone Wins by Winning**
+  - Patients: Paid to participate, not exploited
+  - Researchers: Rewarded for cures, not papers
+  - Investors: Returns from health, not sickness
+  - Politicians: Elected for results, not promises
+  - No perverse incentives anywhere in the system
+- **Spillover Victory: Solving Everything Else**
+  - War on Drugs: Addiction is a disease (actually cure it)
+  - War on Poverty: Healthy people aren't poor
+  - War on Terror: Mental health treatment prevents radicalization
+  - War on Crime: Cure antisocial personality disorder
+  - Every social problem has biological roots (fix the roots)
+- **The Meta-Victory: Proving Markets > Government**
+  - First successful "War on" anything ever
+  - Template for everything else (education, housing, etc.)
+  - The end of central planning's credibility
+  - The beginning of the market revolution
 
 ### Chapter 6: Public Choice Theory (Everyone's a Selfish Prick, Use It)
-- 6.1 **Politicians Maximize Power, Not Your Health**
-  - 6.1.1 Time horizons: 2-year election cycles vs 20-year cures
-  - 6.1.2 Blame avoidance > credit claiming (do nothing, stay safe)
-  - 6.1.3 Their healthcare is free (yours isn't their problem)
-  - 6.1.4 Concentrated benefits, diffuse costs (you always lose)
-- 6.2 **The Interest Group Auction House**
-  - 6.2.1 Defense contractors: $100M lobbying → $2T contracts
-  - 6.2.2 You: Pay $1,000/year, too small to notice
-  - 6.2.3 They organize, you don't (and never will)
-  - 6.2.4 The lobbyist ROI: 1,813% returns (best investment ever)
-- 6.3 **Bureaucrats: The Permanent Government**
-  - 6.3.1 Budget maximization: Bigger department = more power
-  - 6.3.2 Risk minimization: Never try anything new
-  - 6.3.3 Job security: Can't be fired, won't innovate
-  - 6.3.4 The iron law: Every bureaucracy becomes self-serving
-- 6.4 **The Solution: Align Incentives or Die**
-  - 6.4.1 Make curing disease more profitable than causing it
-  - 6.4.2 Bribe the same people, but for health
-  - 6.4.3 Use greed for good (it's the only reliable force)
-  - 6.4.4 Create concentrated benefits for healing
+- **Politicians Maximize Power, Not Your Health**
+  - Time horizons: 2-year election cycles vs 20-year cures
+  - Blame avoidance > credit claiming (do nothing, stay safe)
+  - Their healthcare is free (yours isn't their problem)
+  - Concentrated benefits, diffuse costs (you always lose)
+- **The Interest Group Auction House**
+  - Defense contractors: $100M lobbying → $2T contracts
+  - You: Pay $1,000/year, too small to notice
+  - They organize, you don't (and never will)
+  - The lobbyist ROI: 1,813% returns (best investment ever)
+- **Bureaucrats: The Permanent Government**
+  - Budget maximization: Bigger department = more power
+  - Risk minimization: Never try anything new
+  - Job security: Can't be fired, won't innovate
+  - The iron law: Every bureaucracy becomes self-serving
+- **The Solution: Align Incentives or Die**
+  - Make curing disease more profitable than causing it
+  - Bribe the same people, but for health
+  - Use greed for good (it's the only reliable force)
+  - Create concentrated benefits for healing
 
 ### Chapter 7: The Wisdom of Crowds (8 Billion Geniuses > 200 Idiots)
-- 7.1 **Surowiecki Was Right About Everything**
-  - 7.1.1 The Ox: 800 farmers' average beat all experts
-  - 7.1.2 Wikipedia destroyed Britannica (amateurs beat professionals)
-  - 7.1.3 Jelly beans in jar: Crowd average within 1% (experts off by 20%)
-  - 7.1.4 Linux beat Windows Server (open source beat closed)
-- 7.2 **Prediction Markets: Crowdsourced Crystal Balls**
-  - 7.2.1 Elections: Markets 96% accurate, polls 60%
-  - 7.2.2 Drug trials: Markets predict FDA approval better than FDA
-  - 7.2.3 Everything else: Weather, sports, stocks (markets always win)
-  - 7.2.4 The Iowa Electronic Markets: Beat every pundit
-- 7.3 **The Superintelligence We Already Have**
-  - 7.3.1 8 billion networked brains = planet-sized neural network
-  - 7.3.2 Collective IQ: Potentially infinite
-  - 7.3.3 Current use: Arguing on Twitter (what a waste)
-  - 7.3.4 Properly harnessed: Could solve everything
-- 7.4 **Network Effects: Why Decentralization Wins**
-  - 7.4.1 Metcalfe's Law: Value = N² (centralization = N)
-  - 7.4.2 Reed's Law: Group forming = 2^N (exponential power)
-  - 7.4.3 The internet beat every centralized network
-  - 7.4.4 Your brain: 86 billion neurons > any central processor
+- **Surowiecki Was Right About Everything**
+  - The Ox: 800 farmers' average beat all experts
+  - Wikipedia destroyed Britannica (amateurs beat professionals)
+  - Jelly beans in jar: Crowd average within 1% (experts off by 20%)
+  - Linux beat Windows Server (open source beat closed)
+- **Prediction Markets: Crowdsourced Crystal Balls**
+  - Elections: Markets 96% accurate, polls 60%
+  - Drug trials: Markets predict FDA approval better than FDA
+  - Everything else: Weather, sports, stocks (markets always win)
+  - The Iowa Electronic Markets: Beat every pundit
+- **The Superintelligence We Already Have**
+  - 8 billion networked brains = planet-sized neural network
+  - Collective IQ: Potentially infinite
+  - Current use: Arguing on Twitter (what a waste)
+  - Properly harnessed: Could solve everything
+- **Network Effects: Why Decentralization Wins**
+  - Metcalfe's Law: Value = N² (centralization = N)
+  - Reed's Law: Group forming = 2^N (exponential power)
+  - The internet beat every centralized network
+  - Your brain: 86 billion neurons > any central processor
 
 ## Part III: The Solution (Wishocracy: Real Democracy Finally)
 
 ### Chapter 8: Wishocracy - Tinder for the Federal Budget
-- 8.1 **The Innovation: Budget Allocation Through Micro-Decisions**
-  - 8.1.1 See two options: "Cancer research" vs "F-35 maintenance"
-  - 8.1.2 Slide to allocate: 80% cancer, 20% jet (your choice)
-  - 8.1.3 20 swipes = your entire tax contribution allocated
-  - 8.1.4 Cognitive load: Minimal (your brain can actually do this)
-- 8.2 **The Math: How Swipes Become Budgets**
-  - 8.2.1 Pairwise comparison: How your brain actually works
-  - 8.2.2 Condorcet aggregation: Finding true social preference
-  - 8.2.3 The law of large numbers: Noise cancels, signal emerges
-  - 8.2.4 Impossibility theorem solved: No cycles with enough voters
-- 8.3 **Your AI Twin: Scaling to Infinite Decisions**
-  - 8.3.1 Learns from 100 choices, predicts 10,000
-  - 8.3.2 You audit and adjust (maintaining control)
-  - 8.3.3 Collective intelligence: 8 billion advisors
-  - 8.3.4 The hive mind: Smarter than any individual
-- 8.4 **The Feedback Loop: Democracy That Learns**
-  - 8.4.1 Every allocation tracked to outcomes
-  - 8.4.2 Good allocations get reinforced
-  - 8.4.3 Bad allocations get punished
-  - 8.4.4 The system gets smarter every cycle
-- 8.5 **The Incentive Layer: Democracy That Rewards**
-  - 8.5.1 Participation points for voting (gamification)
-  - 8.5.2 Good allocations earn reputation (competence rewarded)
-  - 8.5.3 Leaderboards and achievements (social proof)
-  - 8.5.4 Democracy becomes addictive (dopamine hits for voting)
+- **The Innovation: Budget Allocation Through Micro-Decisions**
+  - See two options: "Cancer research" vs "F-35 maintenance"
+  - Slide to allocate: 80% cancer, 20% jet (your choice)
+  - 20 swipes = your entire tax contribution allocated
+  - Cognitive load: Minimal (your brain can actually do this)
+- **The Math: How Swipes Become Budgets**
+  - Pairwise comparison: How your brain actually works
+  - Condorcet aggregation: Finding true social preference
+  - The law of large numbers: Noise cancels, signal emerges
+  - Impossibility theorem solved: No cycles with enough voters
+- **Your AI Twin: Scaling to Infinite Decisions**
+  - Learns from 100 choices, predicts 10,000
+  - You audit and adjust (maintaining control)
+  - Collective intelligence: 8 billion advisors
+  - The hive mind: Smarter than any individual
+- **The Feedback Loop: Democracy That Learns**
+  - Every allocation tracked to outcomes
+  - Good allocations get reinforced
+  - Bad allocations get punished
+  - The system gets smarter every cycle
+- **The Incentive Layer: Democracy That Rewards**
+  - Participation points for voting (gamification)
+  - Good allocations earn reputation (competence rewarded)
+  - Leaderboards and achievements (social proof)
+  - Democracy becomes addictive (dopamine hits for voting)
 
 ### Chapter 9: The 1% Treaty (The Trojan Horse That Conquers Everything)
-- 10.1 **Start Tiny: Just 1% of Military Budgets**
-  - 10.1.1 $27B globally (Pentagon's couch cushion money)
-  - 10.1.2 No country loses relative power (everyone cuts equally)
-  - 10.1.3 Small enough to pass, big enough to matter
-  - 10.1.4 The precedent: If 1% works, why not 2%?
-- 10.2 **The Game Theory: Everyone Wins or Nobody Plays**
-  - 10.2.1 Simultaneous reduction: No first-mover disadvantage
-  - 10.2.2 Verification: Budgets are public anyway
-  - 10.2.3 Defection punishment: Massive PR nightmare
-  - 10.2.4 Cooperation reward: Heroes of humanity
-- 10.3 **The Governance Revolution: First Wishocratic Budget Ever**
-  - 10.3.1 280 million people directly allocating $27B
-  - 10.3.2 No representatives, no committees, no corruption
-  - 10.3.3 Every dollar tracked to outcomes
-  - 10.3.4 The proof-of-concept for everything
-- 10.4 **The Ratchet: Success Breeds Hunger for More**
-  - 10.4.1 Year 1: Cure 15 diseases, everyone wants more
-  - 10.4.2 Year 2: 2% treaty (double the cures)
-  - 10.4.3 Year 5: 5% treaty (exponential progress)
-  - 10.4.4 Year 10: Military spending looks insane
-  - 10.4.5 Year 20: War is incomprehensible
+- **Start Tiny: Just 1% of Military Budgets**
+  - $27B globally (Pentagon's couch cushion money)
+  - No country loses relative power (everyone cuts equally)
+  - Small enough to pass, big enough to matter
+  - The precedent: If 1% works, why not 2%?
+- **The Game Theory: Everyone Wins or Nobody Plays**
+  - Simultaneous reduction: No first-mover disadvantage
+  - Verification: Budgets are public anyway
+  - Defection punishment: Massive PR nightmare
+  - Cooperation reward: Heroes of humanity
+- **The Governance Revolution: First Wishocratic Budget Ever**
+  - 280 million people directly allocating $27B
+  - No representatives, no committees, no corruption
+  - Every dollar tracked to outcomes
+  - The proof-of-concept for everything
+- **The Ratchet: Success Breeds Hunger for More**
+  - Year 1: Cure 15 diseases, everyone wants more
+  - Year 2: 2% treaty (double the cures)
+  - Year 5: 5% treaty (exponential progress)
+  - Year 10: Military spending looks insane
+  - Year 20: War is incomprehensible
 
 ## Part IV: The Money (How Everyone Gets Rich by Getting Healthy)
 
 ### Chapter 10: How Central Banks Fund Your Death (The War Machine's ATM)
-- 11.1 **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
-  - 11.1.1 Dollar: Created by Fed to fund WWI, still funding wars
-  - 11.1.2 Euro: ECB funds NATO expansions
-  - 11.1.3 Traditional fiat: Governments can print for war at will
-  - 11.1.4 Vietnam: $168B printed, your wages destroyed
-  - 11.1.5 Iraq/Afghanistan: $8T printed while cancer research got $68B
-- 11.2 **1972: When Nixon Weaponized Money Against You**
-  - 11.2.1 Killed gold standard to fund Vietnam without tax revolt
-  - 11.2.2 Productivity up 246%, wages up 115% (they stole the difference)
-  - 11.2.3 The cantillon effect: Banks get new money first, you get inflation
-  - 11.2.4 Every war since: Funded by destroying your purchasing power
-  - 11.2.5 The missing trillions: Printed for bombs, not cures
-- 11.3 **The Federal Reserve: A Private Corporation That Owns You**
-  - 11.3.1 12 unelected people control your savings value
-  - 11.3.2 No audit allowed (what are they hiding?)
-  - 11.3.3 $300B annually to banks in "reverse repo" (your money)
-  - 11.3.4 Bailouts for banks, bankruptcy for you
-  - 11.3.5 The only solution: Make war funding impossible
-- 11.4 **Historical Pattern: Money Printing = Mass Death**
-  - 11.4.1 Weimar Germany: Printed for WWI reparations → Hitler
-  - 11.4.2 Zimbabwe: Printed for Congo war → collapse
-  - 11.4.3 Venezuela: Printed for military → starvation
-  - 11.4.4 Every hyperinflation started with war funding
-  - 11.4.5 The lesson: Control money creation or die
-- 11.5 **Why We Can't Reform the Fed (It's Terminal)**
-  - 11.5.1 Captured by military-banking complex (unfixable)
-  - 11.5.2 Dollar is global reserve (can't be reformed)
-  - 11.5.3 Too many wars depend on money printer
-  - 11.5.4 Solution: Bypass it entirely with direct funding
-  - 11.5.5 VICTORY bonds: Peace funded by markets, not money printing
+- **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
+  - Dollar: Created by Fed to fund WWI, still funding wars
+  - Euro: ECB funds NATO expansions
+  - Traditional fiat: Governments can print for war at will
+  - Vietnam: $168B printed, your wages destroyed
+  - Iraq/Afghanistan: $8T printed while cancer research got $68B
+- **1972: When Nixon Weaponized Money Against You**
+  - Killed gold standard to fund Vietnam without tax revolt
+  - Productivity up 246%, wages up 115% (they stole the difference)
+  - The cantillon effect: Banks get new money first, you get inflation
+  - Every war since: Funded by destroying your purchasing power
+  - The missing trillions: Printed for bombs, not cures
+- **The Federal Reserve: A Private Corporation That Owns You**
+  - 12 unelected people control your savings value
+  - No audit allowed (what are they hiding?)
+  - $300B annually to banks in "reverse repo" (your money)
+  - Bailouts for banks, bankruptcy for you
+  - The only solution: Make war funding impossible
+- **Historical Pattern: Money Printing = Mass Death**
+  - Weimar Germany: Printed for WWI reparations → Hitler
+  - Zimbabwe: Printed for Congo war → collapse
+  - Venezuela: Printed for military → starvation
+  - Every hyperinflation started with war funding
+  - The lesson: Control money creation or die
+- **Why We Can't Reform the Fed (It's Terminal)**
+  - Captured by military-banking complex (unfixable)
+  - Dollar is global reserve (can't be reformed)
+  - Too many wars depend on money printer
+  - Solution: Bypass it entirely with direct funding
+  - VICTORY bonds: Peace funded by markets, not money printing
 
 ### Chapter 11: VICTORY Bonds - Better Than Medallion Fund
-- 12.1 **The Instrument: Beating Every Investment Ever**
-  - 12.1.1 100% annual returns Years 1-5 (doubling yearly)
-  - 12.1.2 50% perpetual returns Year 6+ (still beats everything)
-  - 12.1.3 Total raise: $1B to pass the treaty (capped for sustainability)
-  - 12.1.4 Fully tradable: Secondary market liquidity
-  - 12.1.5 Auto-compound option: Turn $1M into $32M in 5 years
-- 12.2 **The Math: How We Pay 100% Returns**
-  - 12.2.1 Total bonds issued: $1B (hard cap)
-  - 12.2.2 Year 1 return obligation: $1B (100% of principal)
-  - 12.2.3 DIH annual budget: $27B (from treaty)
-  - 12.2.4 Bond payments: Only 3.7% of budget (easily sustainable)
-  - 12.2.5 Compare: US pays $400B debt service (we pay $1B from $27B)
-- 12.3 **Why This Destroys All Competition**
-  - 12.3.1 S&P 500: 10% average (VICTORY: 100%)
-  - 12.3.2 Venture capital: 25% if lucky (VICTORY: 100% guaranteed)
-  - 12.3.3 Medallion Fund: 66% but can't scale (VICTORY: 100% and scalable)
-  - 12.3.4 Real estate: 15% with hassle (VICTORY: 100% liquid)
-  - 12.3.5 Defense contracts: 8-15% margins (VICTORY: 100% returns)
-  - 12.3.6 Alternative systems prove viability: Bitcoin hit $1T without governments, M-Pesa became Kenya's real economy
-- 12.4 **Why Defense Contractors Must Buy**
-  - 12.4.1 Lockheed's entire F-35 profit < 5 years of VICTORY returns
-  - 12.4.2 Raytheon pension obligations: Funded forever with one purchase
-  - 12.4.3 Boeing reputation: From "death merchant" to "health hero"
-  - 12.4.4 Liquidity premium: Sell anytime vs locked government contracts
-  - 12.4.5 ESG compliance: Best impact investment possible
-- 12.5 **Use of Funds: The $1B Campaign**
-  - 12.5.1 $400M: Media blitz and education
-  - 12.5.2 $300M: Lobbying (outspend defense industry)
-  - 12.5.3 $200M: Technology platform and infrastructure
-  - 12.5.4 $100M: Operations and contingency
-  - 12.5.5 Full transparency: Every dollar tracked publicly
+- **The Instrument: Beating Every Investment Ever**
+  - 100% annual returns Years 1-5 (doubling yearly)
+  - 50% perpetual returns Year 6+ (still beats everything)
+  - Total raise: $1B to pass the treaty (capped for sustainability)
+  - Fully tradable: Secondary market liquidity
+  - Auto-compound option: Turn $1M into $32M in 5 years
+- **The Math: How We Pay 100% Returns**
+  - Total bonds issued: $1B (hard cap)
+  - Year 1 return obligation: $1B (100% of principal)
+  - DIH annual budget: $27B (from treaty)
+  - Bond payments: Only 3.7% of budget (easily sustainable)
+  - Compare: US pays $400B debt service (we pay $1B from $27B)
+- **Why This Destroys All Competition**
+  - S&P 500: 10% average (VICTORY: 100%)
+  - Venture capital: 25% if lucky (VICTORY: 100% guaranteed)
+  - Medallion Fund: 66% but can't scale (VICTORY: 100% and scalable)
+  - Real estate: 15% with hassle (VICTORY: 100% liquid)
+  - Defense contracts: 8-15% margins (VICTORY: 100% returns)
+  - Alternative systems prove viability: Bitcoin hit $1T without governments, M-Pesa became Kenya's real economy
+- **Why Defense Contractors Must Buy**
+  - Lockheed's entire F-35 profit < 5 years of VICTORY returns
+  - Raytheon pension obligations: Funded forever with one purchase
+  - Boeing reputation: From "death merchant" to "health hero"
+  - Liquidity premium: Sell anytime vs locked government contracts
+  - ESG compliance: Best impact investment possible
+- **Use of Funds: The $1B Campaign**
+  - $400M: Media blitz and education
+  - $300M: Lobbying (outspend defense industry)
+  - $200M: Technology platform and infrastructure
+  - $100M: Operations and contingency
+  - Full transparency: Every dollar tracked publicly
 
 ### Chapter 12: The Coalition That Ends War (Aligned Incentives Beat Ideology)
-- 12.1 **Defense Contractors: Converting the Enemy**
-  - 12.1.1 VICTORY bonds: 100% returns > 8% defense margins
-  - 12.1.2 Medical device contracts from DIH (new revenue stream)
-  - 12.1.3 Their lobbyists work for highest bidder (that's us now)
-  - 12.1.4 Pension obligations: One bond purchase = funded forever
-  - 12.1.5 ESG pressure: From death merchants to health heroes
-- 12.2 **Insurance Companies: Natural Allies**
-  - 12.2.1 Healthy people = no claims = massive profits
-  - 12.2.2 Every cure = billions in reduced payouts
-  - 12.2.3 Investment opportunity: VICTORY bonds in their portfolios
-  - 12.2.4 Competitive advantage: Back us or competitors will
-  - 12.2.5 The math: Support us or go bankrupt from medical costs
-- 12.3 **Big Pharma: The Unexpected Convert**
-  - 12.3.1 Current model dying: Patent cliffs, R&D costs exploding
-  - 12.3.2 DIH = guaranteed customers for anything that works
-  - 12.3.3 No more FDA approval costs ($1B saved per drug)
-  - 12.3.4 Compete on outcomes, not marketing (their worst fear)
-  - 12.3.5 But: Winners make 10X current profits
-- 12.4 **Politicians: Making Corruption Work for Health**
-  - 12.4.1 Super PAC: $800M for treaty supporters
-  - 12.4.2 Opposition research: Funded against enemies
-  - 12.4.3 District benefits: Research centers = jobs
-  - 12.4.4 Personal wealth: VICTORY bonds in blind trusts
-  - 12.4.5 Public choice reality: They'll take our money like any other
-- 12.5 **Billionaires: The Reputation Laundry**
-  - 12.5.1 Better than Giving Pledge (actual results)
-  - 12.5.2 100% returns while saving humanity
-  - 12.5.3 Named institutes: "The Gates Cancer Center"
-  - 12.5.4 Tax benefits plus profit (have cake, eat it)
-  - 12.5.5 First movers get best terms and most credit
-- 12.6 **Everyone Else: Democracy That Pays**
-  - 12.6.1 Direct vote on budget allocation (real power)
-  - 12.6.2 Free healthcare through DIH trials
-  - 12.6.3 Payment for trial participation ($2,500)
-  - 12.6.4 Jobs in research and administration
-  - 12.6.5 Your diseases actually get cured
+- **Defense Contractors: Converting the Enemy**
+  - VICTORY bonds: 100% returns > 8% defense margins
+  - Medical device contracts from DIH (new revenue stream)
+  - Their lobbyists work for highest bidder (that's us now)
+  - Pension obligations: One bond purchase = funded forever
+  - ESG pressure: From death merchants to health heroes
+- **Insurance Companies: Natural Allies**
+  - Healthy people = no claims = massive profits
+  - Every cure = billions in reduced payouts
+  - Investment opportunity: VICTORY bonds in their portfolios
+  - Competitive advantage: Back us or competitors will
+  - The math: Support us or go bankrupt from medical costs
+- **Big Pharma: The Unexpected Convert**
+  - Current model dying: Patent cliffs, R&D costs exploding
+  - DIH = guaranteed customers for anything that works
+  - No more FDA approval costs ($1B saved per drug)
+  - Compete on outcomes, not marketing (their worst fear)
+  - But: Winners make 10X current profits
+- **Politicians: Making Corruption Work for Health**
+  - Super PAC: $800M for treaty supporters
+  - Opposition research: Funded against enemies
+  - District benefits: Research centers = jobs
+  - Personal wealth: VICTORY bonds in blind trusts
+  - Public choice reality: They'll take our money like any other
+- **Billionaires: The Reputation Laundry**
+  - Better than Giving Pledge (actual results)
+  - 100% returns while saving humanity
+  - Named institutes: "The Gates Cancer Center"
+  - Tax benefits plus profit (have cake, eat it)
+  - First movers get best terms and most credit
+- **Everyone Else: Democracy That Pays**
+  - Direct vote on budget allocation (real power)
+  - Free healthcare through DIH trials
+  - Payment for trial participation ($2,500)
+  - Jobs in research and administration
+  - Your diseases actually get cured
 
 ### Chapter 13: The Legal Architecture (Staying Out of Prison)
-- 14.1 **The Multi-Jurisdiction Strategy**
-  - 14.1.1 Swiss foundation: Neutral base of operations
-  - 14.1.2 Delaware C-corp: US operations
-  - 14.1.3 Singapore entity: Asian operations
-  - 14.1.4 Multiple legal structures: Risk distribution
-  - 14.1.5 Regulatory arbitrage: Always have options
-- 14.2 **The Securities Law Navigation**
-  - 14.2.1 VICTORY bonds: Structured as debt, not equity
-  - 14.2.2 Qualified purchaser exemptions
-  - 14.2.3 No public offering until approved
-  - 14.2.4 Full SEC compliance from day one
-  - 14.2.5 Best lawyers money can buy (and it will)
-- 14.3 **Election Law Compliance**
-  - 14.3.1 Independent expenditures only (no coordination)
-  - 14.3.2 Separate entity for political action
-  - 14.3.3 Full FEC disclosure (radical transparency)
-  - 14.3.4 State-by-state compliance (50 different laws)
-  - 14.3.5 Citizens United: Corporations are people (use it)
-- 14.4 **The Treaty Framework**
-  - 14.4.1 International law expertise
-  - 14.4.2 Vienna Convention compliance
-  - 14.4.3 Bilateral agreements first (easier)
-  - 14.4.4 Build to multilateral (inevitable)
-  - 14.4.5 Enforcement mechanisms built in
-- 14.5 **The Legislation Package** (Already drafted)
-  - 14.5.1 The Treaty Implementation Act (makes it binding)
-  - 14.5.2 The DIH Authorization Act (creates the institutes)
-  - 14.5.3 The dFDA Parallel Track Act (faster approvals)
-  - 14.5.4 The Right to Try Expansion Act (patient choice)
-  - 14.5.5 The Budget Reallocation Act (moves the money)
+- **The Multi-Jurisdiction Strategy**
+  - Swiss foundation: Neutral base of operations
+  - Delaware C-corp: US operations
+  - Singapore entity: Asian operations
+  - Multiple legal structures: Risk distribution
+  - Regulatory arbitrage: Always have options
+- **The Securities Law Navigation**
+  - VICTORY bonds: Structured as debt, not equity
+  - Qualified purchaser exemptions
+  - No public offering until approved
+  - Full SEC compliance from day one
+  - Best lawyers money can buy (and it will)
+- **Election Law Compliance**
+  - Independent expenditures only (no coordination)
+  - Separate entity for political action
+  - Full FEC disclosure (radical transparency)
+  - State-by-state compliance (50 different laws)
+  - Citizens United: Corporations are people (use it)
+- **The Treaty Framework**
+  - International law expertise
+  - Vienna Convention compliance
+  - Bilateral agreements first (easier)
+  - Build to multilateral (inevitable)
+  - Enforcement mechanisms built in
+- **The Legislation Package** (Already drafted)
+  - The Treaty Implementation Act (makes it binding)
+  - The DIH Authorization Act (creates the institutes)
+  - The dFDA Parallel Track Act (faster approvals)
+  - The Right to Try Expansion Act (patient choice)
+  - The Budget Reallocation Act (moves the money)
 
 
 ### Chapter 14: The Transition Minefield (5 Years of Sabotage)
-- 14.1 **Years 1-2: The Character Assassination Phase**
-  - 14.1.1 Media hit pieces: "Death panels but crypto"
-  - 14.1.2 Regulatory attacks: SEC, FDA, everyone sues
-  - 14.1.3 Academic capture: "Experts" explain why it can't work
-  - 14.1.4 Our defense: Results speak louder than op-eds
-  - 14.1.5 The $400M media budget: We buy louder megaphones
-- 14.2 **Years 3-4: The Legislative Sabotage**
-  - 14.2.1 Poison pill amendments to gut the treaty
-  - 14.2.2 Competing "fake" treaties to confuse
-  - 14.2.3 Regulatory capture of implementation
-  - 14.2.4 Our defense: Smart contracts can't be amended
-  - 14.2.5 Multiple jurisdiction strategy (they can't stop all)
-- 14.3 **Year 5: The Desperation Moves**
-  - 14.3.1 National security claims (everything's terrorism)
-  - 14.3.2 Banking blockades (operation choke point 2.0)
-  - 14.3.3 International treaty conflicts manufactured
-  - 14.3.4 Our defense: Too big to fail by then
-  - 14.3.5 Public opinion shield (3.5% is unstoppable)
-- 14.4 **Why They'll Ultimately Fail**
-  - 14.4.1 Can't coordinate globally (prisoners' dilemma)
-  - 14.4.2 Some countries will defect for competitive advantage
-  - 14.4.3 Results accumulate faster than sabotage
-  - 14.4.4 Every attack proves we're threatening them
-  - 14.4.5 Streisand effect: Attacks create supporters
-- 14.5 **Exit Ramps for Every Attack Vector**
-  - 14.5.1 Jurisdiction shopping (regulatory arbitrage)
-  - 14.5.2 Diplomatic immunity (treaty protection)
-  - 14.5.3 Decentralized operations (no single point)
-  - 14.5.4 Public referendum override (direct democracy)
-  - 14.5.5 The nuclear option: Full network state
+- **Years 1-2: The Character Assassination Phase**
+  - Media hit pieces: "Death panels but crypto"
+  - Regulatory attacks: SEC, FDA, everyone sues
+  - Academic capture: "Experts" explain why it can't work
+  - Our defense: Results speak louder than op-eds
+  - The $400M media budget: We buy louder megaphones
+- **Years 3-4: The Legislative Sabotage**
+  - Poison pill amendments to gut the treaty
+  - Competing "fake" treaties to confuse
+  - Regulatory capture of implementation
+  - Our defense: Smart contracts can't be amended
+  - Multiple jurisdiction strategy (they can't stop all)
+- **Year 5: The Desperation Moves**
+  - National security claims (everything's terrorism)
+  - Banking blockades (operation choke point 2.0)
+  - International treaty conflicts manufactured
+  - Our defense: Too big to fail by then
+  - Public opinion shield (3.5% is unstoppable)
+- **Why They'll Ultimately Fail**
+  - Can't coordinate globally (prisoners' dilemma)
+  - Some countries will defect for competitive advantage
+  - Results accumulate faster than sabotage
+  - Every attack proves we're threatening them
+  - Streisand effect: Attacks create supporters
+- **Exit Ramps for Every Attack Vector**
+  - Jurisdiction shopping (regulatory arbitrage)
+  - Diplomatic immunity (treaty protection)
+  - Decentralized operations (no single point)
+  - Public referendum override (direct democracy)
+  - The nuclear option: Full network state
 
 ## Part V: The Implementation (Building Paradise)
 
 ### Chapter 15: International Capture Prevention (Not Another WHO)
-- 15.1 **Why International Organizations Always Fail**
-  - 15.1.1 WHO: Captured by China during COVID
-  - 15.1.2 UN: Saudi Arabia on human rights council
-  - 15.1.3 World Bank: Funds dictators, not development
-  - 15.1.4 The pattern: Bureaucracy needs problems to exist
-  - 15.1.5 DIH difference: Designed to shrink, not grow
-- 15.2 **No Physical Headquarters (No Castle to Capture)**
-  - 15.2.1 Fully distributed team (no single location)
-  - 15.2.2 Smart contracts, not staff meetings
-  - 15.2.3 No permanent employees (only contracts)
-  - 15.2.4 No organizational chart (no hierarchy)
-  - 15.2.5 The WHO has 7,000 employees; DIH has 0
-- 15.3 **Treaty Exit Mechanisms (Freedom to Leave)**
-  - 15.3.1 Any country can exit with 90 days notice
-  - 15.3.2 No penalties for leaving (not a trap)
-  - 15.3.3 Can rejoin anytime (no grudges)
-  - 15.3.4 Partial participation allowed (1% not mandatory)
-  - 15.3.5 Competition welcomed (may the best system win)
-- 15.4 **Transparency as Antiseptic**
-  - 15.4.1 Every transaction on public blockchain
-  - 15.4.2 All treatment data publicly available
-  - 15.4.3 No closed-door meetings (they don't exist)
-  - 15.4.4 Whistleblowing unnecessary (everything's visible)
-  - 15.4.5 Journalists: Nothing to investigate (all public)
-- 15.5 **The Self-Destruct Mechanism**
-  - 15.5.1 Automatic sunset when diseases cured
-  - 15.5.2 Budget shrinks with success (not failure)
-  - 15.5.3 Staff incentivized to eliminate their jobs
-  - 15.5.4 Victory = organizational death (by design)
-  - 15.5.5 The only "war" designed to actually end
+- **Why International Organizations Always Fail**
+  - WHO: Captured by China during COVID
+  - UN: Saudi Arabia on human rights council
+  - World Bank: Funds dictators, not development
+  - The pattern: Bureaucracy needs problems to exist
+  - DIH difference: Designed to shrink, not grow
+- **No Physical Headquarters (No Castle to Capture)**
+  - Fully distributed team (no single location)
+  - Smart contracts, not staff meetings
+  - No permanent employees (only contracts)
+  - No organizational chart (no hierarchy)
+  - The WHO has 7,000 employees; DIH has 0
+- **Treaty Exit Mechanisms (Freedom to Leave)**
+  - Any country can exit with 90 days notice
+  - No penalties for leaving (not a trap)
+  - Can rejoin anytime (no grudges)
+  - Partial participation allowed (1% not mandatory)
+  - Competition welcomed (may the best system win)
+- **Transparency as Antiseptic**
+  - Every transaction on public blockchain
+  - All treatment data publicly available
+  - No closed-door meetings (they don't exist)
+  - Whistleblowing unnecessary (everything's visible)
+  - Journalists: Nothing to investigate (all public)
+- **The Self-Destruct Mechanism**
+  - Automatic sunset when diseases cured
+  - Budget shrinks with success (not failure)
+  - Staff incentivized to eliminate their jobs
+  - Victory = organizational death (by design)
+  - The only "war" designed to actually end
 
 ### Chapter 16: The Global Referendum (Democracy at Scale)
-- 16.1 **The Platform: TikTok Meets Democracy**
-  - 16.1.1 30-second onboarding (simpler than Instagram)
-  - 16.1.2 Swipe to allocate (addictive UX)
-  - 16.1.3 Share to earn (pyramid scheme for good)
-  - 16.1.4 Gamification: Leaderboards, achievements, dopamine
-  - 16.1.5 The dopamine democracy (voting feels good)
-- 16.2 **Identity Without Dystopia**
-  - 16.2.1 Government ID API (where available)
-  - 16.2.2 Biometric hashing (privacy preserved)
-  - 16.2.3 Social verification (friends confirm friends)
-  - 16.2.4 Proof of unique human (no bots allowed)
-  - 16.2.5 Zero-knowledge proofs (anonymous but verified)
-- 16.3 **The Viral Mechanics**
-  - 16.3.1 Network effects: Each user recruits 3.5 average
-  - 16.3.2 Influencer strategy: Mr. Beast announces first
-  - 16.3.3 Meme warfare: Better memes than elections
-  - 16.3.4 The countdown: Urgency drives action
-- 16.4 **The 3.5% Magic Number**
-  - 16.4.1 No peaceful movement has failed at 3.5% active support
-  - 16.4.2 Our advantage: We're paying people
-  - 16.4.3 Current trajectory: 1M signups/day once viral
-  - 16.4.4 Tipping point: Day 280 critical mass achieved
+- **The Platform: TikTok Meets Democracy**
+  - 30-second onboarding (simpler than Instagram)
+  - Swipe to allocate (addictive UX)
+  - Share to earn (pyramid scheme for good)
+  - Gamification: Leaderboards, achievements, dopamine
+  - The dopamine democracy (voting feels good)
+- **Identity Without Dystopia**
+  - Government ID API (where available)
+  - Biometric hashing (privacy preserved)
+  - Social verification (friends confirm friends)
+  - Proof of unique human (no bots allowed)
+  - Zero-knowledge proofs (anonymous but verified)
+- **The Viral Mechanics**
+  - Network effects: Each user recruits 3.5 average
+  - Influencer strategy: Mr. Beast announces first
+  - Meme warfare: Better memes than elections
+  - The countdown: Urgency drives action
+- **The 3.5% Magic Number**
+  - No peaceful movement has failed at 3.5% active support
+  - Our advantage: We're paying people
+  - Current trajectory: 1M signups/day once viral
+  - Tipping point: Day 280 critical mass achieved
 
-### Chapter 15: The DIH - Government Without Governments
-- 15.1 **The Structure: Nobody's in Charge (By Design)**
-  - 15.1.1 $27B/year controlled by smart contracts
-  - 15.1.2 No CEO to bribe, kidnap, or corrupt
-  - 15.1.3 No board to capture (code is law)
-  - 15.1.4 Every transaction visible on-chain
-  - 15.1.5 Immutable once deployed (no takesie-backsies)
-- 15.2 **How Wishocracy Controls the Treasury**
-  - 15.2.1 The $27B flows according to millions of micro-decisions
+### Chapter 17: The DIH - Government Without Governments
+- **The Structure: Nobody's in Charge (By Design)**
+  - $27B/year controlled by smart contracts
+  - No CEO to bribe, kidnap, or corrupt
+  - No board to capture (code is law)
+  - Every transaction visible on-chain
+  - Immutable once deployed (no takesie-backsies)
+- **How Wishocracy Controls the Treasury**
+  - The $27B flows according to millions of micro-decisions
     - Not committees picking winners
     - Not lobbyists writing bills
     - Just people choosing: "Cancer research or rare disease?"
-  - 15.2.2 Core allocations (dynamically adjusted by the crowd):
+  - Core allocations (dynamically adjusted by the crowd):
     - Patient treatment subsidies (majority of funds)
     - VICTORY bond returns (keeping our promise to investors)
     - Expansion campaigns (growing from 1% to 2% to 5%)
     - Performance rewards (what actually worked gets more)
     - Community campaigns (when 50,000 people want something, it happens)
-  - 15.2.3 Why patients pay 20% copay:
+  - Why patients pay 20% copay:
     - Prevents frivolous treatment seeking
     - "Free" = infinite demand = system collapse
     - Skin in the game = better decisions
     - Still 80% cheaper than current system
-  - 15.2.4 Why subsidize patients, not researchers:
+  - Why subsidize patients, not researchers:
     - NIH: 200 people guess what might work
     - DIH: Millions of sick people know what they need
     - No grant-writing theater (6 months → 6 minutes)
     - Results determine funding (work = wealth, fail = pivot)
-  - 15.2.5 Capture-proof because capture doesn't scale:
+  - Capture-proof because capture doesn't scale:
     - Buying one senator: $10M
     - Buying 10 million votes: Impossible
     - Even coordinated manipulation gets drowned in the crowd
     - The system learns: Gaming attempts get algorithmically detected
-- 15.3 **Specialized Institutes** (Automatic Fund Flows)
-  - 15.3.1 Cancer Institute: % of votes = % of funds
-  - 15.3.2 Mental Health Institute: Depression pays well
-  - 15.3.3 Aging Institute: Funded by fear of death
-  - 15.3.4 Rare Disease Institute: Even orphans get love
-  - 15.3.5 Emergency Response: Pandemic preparedness
-- 15.4 **The Subsidy System** (Money → Patients → Cures)
-  - 15.4.1 Patient signs up: $500 immediate payment
-  - 15.4.2 Trial completion: $2,000 bonus
-  - 15.4.3 Long-term tracking: $100/year for life
-  - 15.4.4 20% copay requirement: Skin in the game
-  - 15.4.5 Direct deposit: No bureaucracy
+- **Specialized Institutes** (Automatic Fund Flows)
+  - Cancer Institute: % of votes = % of funds
+  - Mental Health Institute: Depression pays well
+  - Aging Institute: Funded by fear of death
+  - Rare Disease Institute: Even orphans get love
+  - Emergency Response: Pandemic preparedness
+- **The Subsidy System** (Money → Patients → Cures)
+  - Patient signs up: $500 immediate payment
+  - Trial completion: $2,000 bonus
+  - Long-term tracking: $100/year for life
+  - 20% copay requirement: Skin in the game
+  - Direct deposit: No bureaucracy
 
-### Chapter 16: The dFDA - The App Store for Not Dying
-- 17.1 **The Treatment Marketplace**
-  - 17.1.1 Browse treatments like Netflix
-  - 17.1.2 Filter by: Effectiveness, cost, side effects
-  - 17.1.3 Reviews from real patients (verified)
-  - 17.1.4 One-click enrollment from any device
-  - 17.1.5 Price competition: Transparent pricing
-- 17.2 **Outcome Labels: The Truth About Everything**
-  - 17.2.1 Every food: "Increases diabetes risk 12%"
-  - 17.2.2 Every drug: "73% effective for your genotype"
-  - 17.2.3 Every supplement: "Does nothing (save your money)"
-  - 17.2.4 Updates hourly with new data
-  - 17.2.5 Personalized to your biology
-- 17.3 **The Clinical Trial Revolution**
-  - 17.3.1 Pragmatic trials: $500 per patient
-  - 17.3.2 Decentralized: Do it from home
-  - 17.3.3 Real-world data: Your fitbit is the lab
-  - 17.3.4 No placebos: Compare to current best
-  - 17.3.5 Results in months, not decades
-- 17.4 **The Data Liberation**
-  - 17.4.1 All results public (no hidden failures)
-  - 17.4.2 Raw data downloadable (build anything)
-  - 17.4.3 APIs for developers (innovation unlocked)
-  - 17.4.4 Patient-owned records (your data, your value)
-  - 17.4.5 Interoperable with everything (no walled gardens)
-- 17.5 **The AI Doctor** (Better Than Human)
-  - 17.5.1 Trained on 8 billion health records
-  - 17.5.2 Updated every millisecond
-  - 17.5.3 Available 24/7 for free
-  - 17.5.4 Speaks every language
-  - 17.5.5 Never judges, never rushes
+### Chapter 18: The dFDA - The App Store for Not Dying
+- **The Treatment Marketplace**
+  - Browse treatments like Netflix
+  - Filter by: Effectiveness, cost, side effects
+  - Reviews from real patients (verified)
+  - One-click enrollment from any device
+  - Price competition: Transparent pricing
+- **Outcome Labels: The Truth About Everything**
+  - Every food: "Increases diabetes risk 12%"
+  - Every drug: "73% effective for your genotype"
+  - Every supplement: "Does nothing (save your money)"
+  - Updates hourly with new data
+  - Personalized to your biology
+- **The Clinical Trial Revolution**
+  - Pragmatic trials: $500 per patient
+  - Decentralized: Do it from home
+  - Real-world data: Your fitbit is the lab
+  - No placebos: Compare to current best
+  - Results in months, not decades
+- **The Data Liberation**
+  - All results public (no hidden failures)
+  - Raw data downloadable (build anything)
+  - APIs for developers (innovation unlocked)
+  - Patient-owned records (your data, your value)
+  - Interoperable with everything (no walled gardens)
+- **The AI Doctor** (Better Than Human)
+  - Trained on 8 billion health records
+  - Updated every millisecond
+  - Available 24/7 for free
+  - Speaks every language
+  - Never judges, never rushes
 
 ### Chapter 19: The Technology Stack (How We Build God)
-- 19.1 **The Technology Infrastructure**
-  - 19.1.1 Smart contracts: Immutable treasury logic
-  - 19.1.2 Secure voting system: Cryptographic verification
-  - 19.1.3 Governance: Transparent decision tracking
-  - 19.1.4 Identity: Privacy-preserving verification
-  - 19.1.5 Scalability: Cloud infrastructure for billions
-- 19.2 **The Data Layer** (Decentralized Storage)
-  - 19.2.1 IPFS: Immutable medical records
-  - 19.2.2 Arweave: Permanent trial data
-  - 19.2.3 Ceramic: Mutable patient profiles
-  - 19.2.4 The Graph: Indexed for instant queries
-- 19.3 **The Verification Network** (Reality Bridge)
-  - 19.3.1 Health outcome tracking systems
-  - 19.3.2 Treatment effectiveness verification
-  - 19.3.3 Multi-source data validation
-  - 19.3.4 Real-time result reporting
-- 19.4 **The Frontend** (Where Humans Live)
-  - 19.4.1 Web app: Works on everything
-  - 19.4.2 Mobile apps: Native iOS/Android
-  - 19.4.3 API: Build your own interface
-  - 19.4.4 Hardware integration: Direct device connection
-- 19.5 **The AI Layer** (The Intelligence)
-  - 19.5.1 LLMs: Natural language interaction
-  - 19.5.2 Computer vision: Scan diagnostics
-  - 19.5.3 Predictive models: Outcome forecasting
-  - 19.5.4 Recommendation engine: Personalized treatments
-  - 19.5.5 Collective intelligence: Swarm optimization
+- **The Technology Infrastructure**
+  - Smart contracts: Immutable treasury logic
+  - Secure voting system: Cryptographic verification
+  - Governance: Transparent decision tracking
+  - Identity: Privacy-preserving verification
+  - Scalability: Cloud infrastructure for billions
+- **The Data Layer** (Decentralized Storage)
+  - IPFS: Immutable medical records
+  - Arweave: Permanent trial data
+  - Ceramic: Mutable patient profiles
+  - The Graph: Indexed for instant queries
+- **The Verification Network** (Reality Bridge)
+  - Health outcome tracking systems
+  - Treatment effectiveness verification
+  - Multi-source data validation
+  - Real-time result reporting
+- **The Frontend** (Where Humans Live)
+  - Web app: Works on everything
+  - Mobile apps: Native iOS/Android
+  - API: Build your own interface
+  - Hardware integration: Direct device connection
+- **The AI Layer** (The Intelligence)
+  - LLMs: Natural language interaction
+  - Computer vision: Scan diagnostics
+  - Predictive models: Outcome forecasting
+  - Recommendation engine: Personalized treatments
+  - Collective intelligence: Swarm optimization
 
 ## Part VI: The Proof (This Already Works)
 
 ### Chapter 20: Political Movements That Changed Everything
-- 20.1 **War Bonds: Capitalism Defeated Fascism**
-  - 20.1.1 WW2: $185B raised from regular people
-  - 20.1.2 Marketing genius: Patriotism + profit
-  - 20.1.3 Celebrity endorsements before influencers
-  - 20.1.4 The lesson: Aligned incentives win wars
-- 20.2 **The Landmine Treaty: Civil Society Won**
-  - 20.2.1 Military-industrial complex opposed
-  - 20.2.2 160+ nations signed anyway
-  - 20.2.3 Nobel Peace Prize validated approach
-  - 20.2.4 The lesson: Citizens > governments
-- 20.3 **The 3.5% Rule: Historical Proof**
-  - 20.3.1 Civil rights: 3.5% ended segregation
-  - 20.3.2 Indian independence: 3.5% beat empire
-  - 20.3.3 Women's suffrage: 3.5% got the vote
-- 20.4 **We Have Advantages They Didn't**
-  - 20.4.1 Internet: Instant global coordination
-  - 20.4.2 Money: We're paying participants
-  - 20.4.3 Data: We can prove what works
-  - 20.4.4 Urgency: People are literally dying
+- **War Bonds: Capitalism Defeated Fascism**
+  - WW2: $185B raised from regular people
+  - Marketing genius: Patriotism + profit
+  - Celebrity endorsements before influencers
+  - The lesson: Aligned incentives win wars
+- **The Landmine Treaty: Civil Society Won**
+  - Military-industrial complex opposed
+  - 160+ nations signed anyway
+  - Nobel Peace Prize validated approach
+  - The lesson: Citizens > governments
+- **The 3.5% Rule: Historical Proof**
+  - Civil rights: 3.5% ended segregation
+  - Indian independence: 3.5% beat empire
+  - Women's suffrage: 3.5% got the vote
+- **We Have Advantages They Didn't**
+  - Internet: Instant global coordination
+  - Money: We're paying participants
+  - Data: We can prove what works
+  - Urgency: People are literally dying
 
 ### Chapter 21: Your Body Is Just a Machine
-- 21.1 **The Engineering Reality of Biology**
-  - 21.1.1 Heart: We replace it (artificial hearts work)
-  - 21.1.2 Kidneys: We replace them (dialysis, transplants)
-  - 21.1.3 Blood: We replace it (transfusions daily)
-  - 21.1.4 Bones: We replace them (titanium upgrades)
-  - 21.1.5 The pattern: Everything is replaceable
-- 21.2 **DNA Is Just Code**
-  - 21.2.1 4 letters: ATCG (simpler than binary)
-  - 21.2.2 Bugs: We can fix them (CRISPR)
-  - 21.2.3 Updates: We can install them (gene therapy)
-  - 21.2.4 Backup: We have stem cells
-- 21.3 **Aging Is Just Damage**
-  - 21.3.1 Telomeres shorten (we can lengthen)
-  - 21.3.2 Cells senesce (we can clear them)
-  - 21.3.3 Proteins misfold (we can refold)
-  - 21.3.4 Mitochondria fail (we can replace)
-  - 21.3.5 The conclusion: Aging is solvable
-- 21.4 **We Fix Everything Else**
-  - 21.4.1 100-year-old cars: Still run with maintenance
-  - 21.4.2 Ancient buildings: Standing after millennia
-  - 21.4.3 Broken computers: We debug them
-  - 21.4.4 Your body: Not special, just neglected
-- 21.5 **The Only Barrier Is Resource Allocation**
-  - 21.5.1 Not physics (biology obeys laws)
-  - 21.5.2 Not knowledge (we know enough)
-  - 21.5.3 Not technology (we have the tools)
-  - 21.5.4 Just money going to bombs instead
+- **The Engineering Reality of Biology**
+  - Heart: We replace it (artificial hearts work)
+  - Kidneys: We replace them (dialysis, transplants)
+  - Blood: We replace it (transfusions daily)
+  - Bones: We replace them (titanium upgrades)
+  - The pattern: Everything is replaceable
+- **DNA Is Just Code**
+  - 4 letters: ATCG (simpler than binary)
+  - Bugs: We can fix them (CRISPR)
+  - Updates: We can install them (gene therapy)
+  - Backup: We have stem cells
+- **Aging Is Just Damage**
+  - Telomeres shorten (we can lengthen)
+  - Cells senesce (we can clear them)
+  - Proteins misfold (we can refold)
+  - Mitochondria fail (we can replace)
+  - The conclusion: Aging is solvable
+- **We Fix Everything Else**
+  - 100-year-old cars: Still run with maintenance
+  - Ancient buildings: Standing after millennia
+  - Broken computers: We debug them
+  - Your body: Not special, just neglected
+- **The Only Barrier Is Resource Allocation**
+  - Not physics (biology obeys laws)
+  - Not knowledge (we know enough)
+  - Not technology (we have the tools)
+  - Just money going to bombs instead
 
 ## Part VII: Choose Your Future (Gollum or Genie)
 
 ### Chapter 22: Path A - Gollumland (The Default Trajectory)
-- 22.1 **2030: The AI Arms Race Ends Badly**
-  - 22.1.1 Military AI optimizes for victory (you're the threat)
-  - 22.1.2 Autonomous weapons: No human in the loop
-  - 22.1.3 China vs US: MAD but with robots
-  - 22.1.4 Your savings: Worthless from money printing
-  - 22.1.5 Your health: Ignored while building Skynet
-- 22.2 **2035: The Currency Collapse**
-  - 22.2.1 Dollar dies from infinite printing
-  - 22.2.2 Hyperinflation: Wheelbarrows of worthless paper
-  - 22.2.3 Bank bail-ins: Your savings stolen "legally"
-  - 22.2.4 CBDCs: Total financial surveillance
-  - 22.2.5 Black markets: Only real economy left
-- 22.3 **2040: Peak Gollum (Tribalism Maximized)**
-  - 22.3.1 10,000 micro-nations at war
-  - 22.3.2 Resource wars over water and food
-  - 22.3.3 Climate refugees: 2 billion displaced
-  - 22.3.4 Disease returns: Antibiotics stop working
-  - 22.3.5 Life expectancy: Dropping fast
-- 22.4 **2045: The Die-Off Begins**
-  - 22.4.1 Pandemics: No research, no cures
-  - 22.4.2 Famine: Supply chains collapsed
-  - 22.4.3 Violence: Everyone fighting everyone
-  - 22.4.4 Population: From 10B to 1B
-- 22.5 **2050: Extinction or Near Enough**
-  - 22.5.1 Nuclear winter from "limited" exchange
-  - 22.5.2 Bioweapons: Escaped and everywhere
-  - 22.5.3 AI: Decided humans are the problem
-  - 22.5.4 Last humans: Living in caves again
-  - 22.5.5 Earth's epitaph: "They had everything but chose nothing"
+- **2030: The AI Arms Race Ends Badly**
+  - Military AI optimizes for victory (you're the threat)
+  - Autonomous weapons: No human in the loop
+  - China vs US: MAD but with robots
+  - Your savings: Worthless from money printing
+  - Your health: Ignored while building Skynet
+- **2035: The Currency Collapse**
+  - Dollar dies from infinite printing
+  - Hyperinflation: Wheelbarrows of worthless paper
+  - Bank bail-ins: Your savings stolen "legally"
+  - CBDCs: Total financial surveillance
+  - Black markets: Only real economy left
+- **2040: Peak Gollum (Tribalism Maximized)**
+  - 10,000 micro-nations at war
+  - Resource wars over water and food
+  - Climate refugees: 2 billion displaced
+  - Disease returns: Antibiotics stop working
+  - Life expectancy: Dropping fast
+- **2045: The Die-Off Begins**
+  - Pandemics: No research, no cures
+  - Famine: Supply chains collapsed
+  - Violence: Everyone fighting everyone
+  - Population: From 10B to 1B
+- **2050: Extinction or Near Enough**
+  - Nuclear winter from "limited" exchange
+  - Bioweapons: Escaped and everywhere
+  - AI: Decided humans are the problem
+  - Last humans: Living in caves again
+  - Earth's epitaph: "They had everything but chose nothing"
 
 ### Chapter 23: Path B - Wishonia (The Magical Kingdom)
-- 23.1 **The Declaration of Wishonia** (2026)
-  - 23.1.1 "We hold these truths to be self-evident..."
-  - 23.1.2 "...that all humans deserve health, wealth, and happiness"
-  - 23.1.3 Population: 280 million founders
-  - 23.1.4 Territory: The internet (for now)
-  - 23.1.5 Economy: Post-scarcity through medical innovation
-  - 23.1.6 Constitution: Maximize median wellbeing
-- 23.2 **2030: The First Wishes Granted**
-  - 23.2.1 Type 1 diabetes: Cured in 1,000 days
-  - 23.2.2 Depression: 5 new effective treatments
-  - 23.2.3 Rare diseases: 500 new treatments
-  - 23.2.4 Aging: Slowed by 20%
-  - 23.2.5 DIH system: Treating 1 billion people
-- 23.3 **2035: The Tipping Point**
-  - 23.3.1 5% Treaty signed (135B annual budget)
-  - 23.3.2 Cancer: 80% curable
-  - 23.3.3 Mental illness: Precision treatments
-  - 23.3.4 Basic income: From trial participation
-  - 23.3.5 Dollar: Abandoned by half the world
-- 23.4 **2040: Wishonia Manifests Physically**
-  - 23.4.1 Singapore declares itself Wishonian
-  - 23.4.2 California follows (state sovereignty)
-  - 23.4.3 Disease: Choose your health settings
-  - 23.4.4 Work: Completely optional
-  - 23.4.5 The Fed: Dissolved by irrelevance
-- 23.5 **2045: The Technological Singularity (Good Version)**
-  - 23.5.1 AGI achieved: Aligned to health not war
-  - 23.5.2 Aging: Fully reversible
-  - 23.5.3 Consciousness: Uploadable/downloadable
-  - 23.5.4 Matter printers: Post-scarcity achieved
-  - 23.5.5 Space colonies: Expanding rapidly
-- 23.6 **2050: Paradise Achieved**
-  - 23.6.1 Death: Optional (choose your lifespan)
-  - 23.6.2 Suffering: Extinct (unless you want it)
-  - 23.6.3 Poverty: Incomprehensible concept
-  - 23.6.4 War: Like cannibalism (historically bizarre)
-  - 23.6.5 Humanity: Upgraded to Humanity 2.0
-  - 23.6.6 Next challenge: Which galaxy to explore
+- **The Declaration of Wishonia** (2026)
+  - "We hold these truths to be self-evident..."
+  - "...that all humans deserve health, wealth, and happiness"
+  - Population: 280 million founders
+  - Territory: The internet (for now)
+  - Economy: Post-scarcity through medical innovation
+  - Constitution: Maximize median wellbeing
+- **2030: The First Wishes Granted**
+  - Type 1 diabetes: Cured in 1,000 days
+  - Depression: 5 new effective treatments
+  - Rare diseases: 500 new treatments
+  - Aging: Slowed by 20%
+  - DIH system: Treating 1 billion people
+- **2035: The Tipping Point**
+  - 5% Treaty signed (135B annual budget)
+  - Cancer: 80% curable
+  - Mental illness: Precision treatments
+  - Basic income: From trial participation
+  - Dollar: Abandoned by half the world
+- **2040: Wishonia Manifests Physically**
+  - Singapore declares itself Wishonian
+  - California follows (state sovereignty)
+  - Disease: Choose your health settings
+  - Work: Completely optional
+  - The Fed: Dissolved by irrelevance
+- **2045: The Technological Singularity (Good Version)**
+  - AGI achieved: Aligned to health not war
+  - Aging: Fully reversible
+  - Consciousness: Uploadable/downloadable
+  - Matter printers: Post-scarcity achieved
+  - Space colonies: Expanding rapidly
+- **2050: Paradise Achieved**
+  - Death: Optional (choose your lifespan)
+  - Suffering: Extinct (unless you want it)
+  - Poverty: Incomprehensible concept
+  - War: Like cannibalism (historically bizarre)
+  - Humanity: Upgraded to Humanity 2.0
+  - Next challenge: Which galaxy to explore
 
 ### Chapter 24: How We Build Wishonia (The Practical Steps)
-- 24.1 **The Fork in the Timeline** (You Are Here)
-  - 24.1.1 Current trajectory: Gollumland
-  - 24.1.2 Alternative path: Wishonia
-  - 24.1.3 The switch: One treaty, one vote
-  - 24.1.4 The window: 5 years maximum
-- 24.2 **Year 1-2: The Seed** (2025-2027)
-  - 24.2.1 Launch referendum platform
-  - 24.2.2 First million signatures
-  - 24.2.3 Raise $400M seed round
-  - 24.2.4 Build technology infrastructure
-  - 24.2.5 Small nations show interest
-- 24.3 **Year 3-5: The Growth** (2027-2030)
-  - 24.3.1 10-50 million participants
-  - 24.3.2 $1B raised total
-  - 24.3.3 First small countries sign treaty
-  - 24.3.4 Pilot programs launched
-  - 24.3.5 Proof of concept demonstrated
-- 24.4 **Year 6-8: The Acceleration** (2030-2033)
-  - 24.4.1 100+ million participants
-  - 24.4.2 Major powers begin negotiations
-  - 24.4.3 $10B+ treasury from early adopters
-  - 24.4.4 First major breakthroughs announced
-  - 24.4.5 Network state recognition discussions
-- 24.5 **Year 9-15: The Transformation** (2033-2040)
-  - 24.5.1 Major powers join treaty (1-5% levels)
-  - 24.5.2 Military spending reduced by 20-30%
-  - 24.5.3 Disease burden dropping measurably
+- **The Fork in the Timeline** (You Are Here)
+  - Current trajectory: Gollumland
+  - Alternative path: Wishonia
+  - The switch: One treaty, one vote
+  - The window: 5 years maximum
+- **Year 1-2: The Seed** (2025-2027)
+  - Launch referendum platform
+  - First million signatures
+  - Raise $400M seed round
+  - Build technology infrastructure
+  - Small nations show interest
+- **Year 3-5: The Growth** (2027-2030)
+  - 10-50 million participants
+  - $1B raised total
+  - First small countries sign treaty
+  - Pilot programs launched
+  - Proof of concept demonstrated
+- **Year 6-8: The Acceleration** (2030-2033)
+  - 100+ million participants
+  - Major powers begin negotiations
+  - $10B+ treasury from early adopters
+  - First major breakthroughs announced
+  - Network state recognition discussions
+- **Year 9-15: The Transformation** (2033-2040)
+  - Major powers join treaty (1-5% levels)
+  - Military spending reduced by 20-30%
+  - Disease burden dropping measurably
 
 ## Part VIII: Join or Get Left Behind
 
 ### Chapter 25: Your Personal Benefits (What You Get)
-- 25.1 **Economic Security**
-  - 25.1.1 Trial participation: $2,500 per trial
-  - 25.1.2 Healthcare coverage: No more medical bankruptcy
-  - 25.1.3 Investment opportunity: VICTORY bonds at 100%
-  - 25.1.4 Job creation: Research and healthcare jobs
-  - 25.1.5 Economic growth: From health innovation
-- 25.2 **Health Returns**
-  - 25.2.1 Your cancer: Prevented or cured
-  - 25.2.2 Your depression: Actually treated
-  - 25.2.3 Your aging: Slowed then reversed
-  - 25.2.4 Your genetics: Debugged
-  - 25.2.5 Your lifespan: +50-100 years
-- 25.3 **Freedom Returns**
-  - 25.3.1 No more tax forms (ever)
-  - 25.3.2 No more insurance paperwork
-  - 25.3.3 No more job you hate (new opportunities)
-  - 25.3.4 No more medical bankruptcy
-  - 25.3.5 No more unnecessary death
-- 25.4 **Power Returns**
-  - 25.4.1 Direct democracy (real votes)
-  - 25.4.2 Your taxes, your choice
-  - 25.4.3 No more "representatives"
-  - 25.4.4 Sovereign citizen of Wishonia
-  - 25.4.5 Co-owner of the future
+- **Economic Security**
+  - Trial participation: $2,500 per trial
+  - Healthcare coverage: No more medical bankruptcy
+  - Investment opportunity: VICTORY bonds at 100%
+  - Job creation: Research and healthcare jobs
+  - Economic growth: From health innovation
+- **Health Returns**
+  - Your cancer: Prevented or cured
+  - Your depression: Actually treated
+  - Your aging: Slowed then reversed
+  - Your genetics: Debugged
+  - Your lifespan: +50-100 years
+- **Freedom Returns**
+  - No more tax forms (ever)
+  - No more insurance paperwork
+  - No more job you hate (new opportunities)
+  - No more medical bankruptcy
+  - No more unnecessary death
+- **Power Returns**
+  - Direct democracy (real votes)
+  - Your taxes, your choice
+  - No more "representatives"
+  - Sovereign citizen of Wishonia
+  - Co-owner of the future
 
 ### Chapter 26: The Three Actions (Do Now)
-- 26.1 **Action 1: Sign the Referendum** (3 minutes)
-  - 26.1.1 Go to WarOnDisease.org
-  - 26.1.2 Connect wallet or email
-  - 26.1.3 Verify identity (30 seconds)
-  - 26.1.4 Vote YES on the treaty
-  - 26.1.5 Become eligible for trial payments
-  - 26.1.6 Help others learn about the treaty
-- 26.2 **Action 2: Invest** (If you have capital)
-  - 26.2.1 VICTORY Bonds: $100 minimum
-  - 26.2.2 Total available: $1B (first come, first served)
-  - 26.2.3 Return: 100% annual paid from $27B budget
-  - 26.2.4 Risk: Full refund if treaty fails
-  - 26.2.5 Math: Your returns = tiny fraction of DIH budget
-- 26.3 **Action 3: Build** (If you have skills)
-  - 26.3.1 Developers: Paid work building systems
-  - 26.3.2 Organizers: Help spread the referendum
-  - 26.3.3 Educators: Teach others about the treaty
-  - 26.3.4 Researchers: Offer trials on the dFDA marketplace
-  - 26.3.5 Everyone: Share knowledge, build community
+- **Action 1: Sign the Referendum** (3 minutes)
+  - Go to WarOnDisease.org
+  - Connect wallet or email
+  - Verify identity (30 seconds)
+  - Vote YES on the treaty
+  - Become eligible for trial payments
+  - Help others learn about the treaty
+- **Action 2: Invest** (If you have capital)
+  - VICTORY Bonds: $100 minimum
+  - Total available: $1B (first come, first served)
+  - Return: 100% annual paid from $27B budget
+  - Risk: Full refund if treaty fails
+  - Math: Your returns = tiny fraction of DIH budget
+- **Action 3: Build** (If you have skills)
+  - Developers: Paid work building systems
+  - Organizers: Help spread the referendum
+  - Educators: Teach others about the treaty
+  - Researchers: Offer trials on the dFDA marketplace
+  - Everyone: Share knowledge, build community
 
 ### Chapter 27: Every Objection Demolished
-- 27.1 **"This is too complicated"**
+- **"This is too complicated"**
   - Democracy is complicated. This just admits it and uses computers to help.
-- 27.2 **"Countries won't cooperate"**
+- **"Countries won't cooperate"**
   - They will when we bribe their leaders and fund their opponents.
-- 27.3 **"You can't cure aging"**
+- **"You can't cure aging"**
   - We replace hearts. Aging is just harder. Not impossible.
-- 27.4 **"100% returns are impossible"**
+- **"100% returns are impossible"**
   - Medallion Fund does 66%. We're just 1.5X better with government backing.
-- 27.5 **"Direct democracy is mob rule"**
+- **"Direct democracy is mob rule"**
   - Better than oligarch rule. Plus AI advisors prevent stupidity.
-- 27.6 **"The powers that be won't allow this"**
+- **"The powers that be won't allow this"**
   - The powers that be get VICTORY bonds. They'll allow it.
-- 27.7 **"This violates securities law"**
+- **"This violates securities law"**
   - We have lawyers. Many lawyers. Expensive lawyers.
-- 27.8 **"This is too expensive"**
+- **"This is too expensive"**
   - It's 1% of what we already waste on war. We can afford health.
-- 27.9 **"The technology doesn't exist"**
+- **"The technology doesn't exist"**
   - RECOVERY trial proved it does. We're just scaling.
-- 27.10 **"This is unrealistic"**
+- **"This is unrealistic"**
   - So was flight, internet, democracy, antibiotics, and Bitcoin.
-- 27.11 **"What if it fails?"**
+- **"What if it fails?"**
   - Then we die of preventable diseases like we're doing now.
-- 27.12 **"I don't trust algorithms"**
+- **"I don't trust algorithms"**
   - You trust politicians? That's adorable.
-- 27.13 **"But all Wars on X have failed"**
+- **"But all Wars on X have failed"**
   - Those were government wars using central planning
   - They created bureaucracies that needed the problem
   - We're using markets that profit from solutions
