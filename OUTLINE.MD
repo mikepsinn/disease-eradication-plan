@@ -417,11 +417,11 @@
   - Social network verification
   - Bot prevention systems
   - Anonymous but verified voting
-- **The Viral Mechanics**
-  - Network effects: Each user recruits 3.5 average
-  - Influencer strategy: Mr. Beast announces first
-  - Meme warfare: Better memes than elections
-  - The countdown: Urgency drives action
+- **The Viral Growth Strategy**
+  - Network effects: Each user brings 3.5 more
+  - Influencer partnerships for launch
+  - Social media campaign strategy
+  - Time-limited signup windows create urgency
 - **The 3.5% Magic Number**
   - No peaceful movement has failed at 3.5% active support
   - Our advantage: We're paying people
@@ -429,12 +429,11 @@
   - Tipping point: Day 280 critical mass achieved
 
 ### Chapter 16: The DIH - Government Without Governments
-- **The Structure: Nobody's in Charge (By Design)**
+- **The Structure: Nobody's in Charge**
   - $27B/year controlled by smart contracts
-  - No CEO to bribe, kidnap, or corrupt
-  - No board to capture (code is law)
-  - Every transaction visible on-chain
-  - Immutable once deployed (no takesie-backsies)
+  - No CEO or board to corrupt
+  - Every transaction public
+  - Code is law, can't be changed once deployed
 - **How Wishocracy Controls the Treasury**
   - The $27B flows according to millions of micro-decisions
     - Not committees picking winners
@@ -461,13 +460,13 @@
     - Buying 10 million votes: Impossible
     - Even coordinated manipulation gets drowned in the crowd
     - The system learns: Gaming attempts get algorithmically detected
-- **Specialized Institutes** (Automatic Fund Flows)
-  - Cancer Institute: % of votes = % of funds
-  - Mental Health Institute: Depression pays well
-  - Aging Institute: Funded by fear of death
-  - Rare Disease Institute: Even orphans get love
+- **Specialized Institutes**
+  - Cancer Institute: Funded by public voting
+  - Mental Health Institute: Finally gets proper funding
+  - Aging Institute: Research on extending healthspan
+  - Rare Disease Institute: Every disease matters
   - Emergency Response: Pandemic preparedness
-- **The Subsidy System** (Money → Patients → Cures)
+- **The Patient Payment System**
   - Patient signs up: $500 immediate payment
   - Trial completion: $2,000 bonus
   - Long-term tracking: $100/year for life
@@ -481,16 +480,12 @@
   - 85% of patients EXCLUDED from trials (too sick, too old, wrong zip code)
   - Current trials: $48,000 per patient (pharma passes cost to you)
   - FDA.gov: A 1990s website that kills people with bureaucracy
-- **The 80X Solution: Decentralized FDA Alternative**
+- **The 80X Solution: Decentralized Trials**
   - Oxford RECOVERY trial proved it: $500 per patient vs $41,000
-  - Pragmatic trials at home (your couch = the clinic)
-  - Include everyone (no more arbitrary exclusions)
+  - Pragmatic trials at home
+  - Include everyone, not just the healthy
   - Results in months not decades
-  - Automated compliance (AI handles paperwork)
-- **What It Is: Amazon + Consumer Reports for Decentralized Trials**
-  - Amazon's marketplace: Browse, compare, one-click join
-  - Consumer Reports' independence: Unbiased effectiveness data
-  - Uber's convenience: Treatment comes to you
+  - Automated compliance and paperwork
 - **For Researchers: Launch Trials in Minutes, Not Years**
   - Simple templates with automated compliance
   - Instant liability insurance quotes
@@ -501,9 +496,9 @@
 - **For Patients: Find What Actually Works**
   - Enter your condition
   - See treatments ranked by real effectiveness
-  - Join trials from home (one-click enrollment)
+  - Join trials from home with one click
   - Get meds delivered to you
-  - Report outcomes through apps you already use
+  - Report outcomes through your existing apps
   - Your data improves rankings for everyone
 - **Outcome Labels: The Truth About Everything**
   - Every food: "Increases diabetes risk 12%"
@@ -512,20 +507,19 @@
   - Star ratings from real-world data
   - Personalized to YOUR biology
   - "Best value" badges for cost-effectiveness
-- **The Clinical Trial Revolution (Decentralized & Democratic)**
-  - Pragmatic trials: $500 per patient (vs $41,000 traditional)
-  - Decentralized: Do it from home
-  - Real-world data: Your fitbit is the lab
+- **The Clinical Trial Revolution**
+  - Decentralized: Do trials from home
+  - Real-world data: Your devices are the lab
   - No placebos: Compare to current best treatment
   - Results in months, not decades
-  - Rate researchers and trials (like Uber drivers)
+  - Rate researchers and trials
 - **The Data Liberation**
-  - FDA.gov becomes open-source (like Wikipedia beat Britannica)
-  - All results public (no hidden failures)
-  - Raw data downloadable (build your own AI)
-  - APIs for developers (innovation unlocked)
-  - Patient-owned records (your data, your control)
-  - Works with everything (Apple Health, MyChart, Fitbit)
+  - Open-source FDA alternative
+  - All trial results public
+  - Raw data downloadable
+  - APIs for developers
+  - Patient-owned records
+  - Integrates with existing health apps
 - **The Result: 80X Medical Progress Acceleration**
   - Before: 17 years, $2.6B per drug, 95% of diseases ignored
   - After: 6 months, $30M per treatment, 100% of diseases targeted
@@ -533,12 +527,6 @@
   - Your grandma's Alzheimer's: Actually gets studied
   - Your kid's rare disease: Finally profitable to cure
   - Mental health: No longer the ugly stepchild of medicine
-- **The AI Doctor** (Better Than Human)
-  - Trained on 8 billion health records
-  - Updated every millisecond
-  - Available 24/7 for free
-  - Speaks every language
-  - Never judges, never rushes
 
 ### Chapter 18: The Technology (Simple but Unstoppable)
 - **Smart Contracts Handle the Money**
@@ -560,7 +548,7 @@
 
 ## Part VI: The Proof (This Already Works)
 
-### Chapter 20: Political Movements That Changed Everything
+### Chapter 19: Political Movements That Changed Everything
 - **War Bonds: Capitalism Defeated Fascism**
   - WW2: $185B raised from regular people
   - Marketing genius: Patriotism + profit
@@ -581,7 +569,7 @@
   - Data: We can prove what works
   - Urgency: People are literally dying
 
-### Chapter 21: Your Body Is Just a Machine
+### Chapter 20: Your Body Is Just a Machine
 - **The Engineering Reality of Biology**
   - Heart: We replace it (artificial hearts work)
   - Kidneys: We replace them (dialysis, transplants)
@@ -612,7 +600,7 @@
 
 ## Part VII: Choose Your Future (Gollum or Genie)
 
-### Chapter 22: Path A - Gollumland (The Default Trajectory)
+### Chapter 21: Path A - Gollumland (The Default Trajectory)
 - **2030: The AI Arms Race Ends Badly**
   - Military AI optimizes for victory (you're the threat)
   - Autonomous weapons: No human in the loop
@@ -643,7 +631,7 @@
   - Last humans: Living in caves again
   - Earth's epitaph: "They had everything but chose nothing"
 
-### Chapter 23: Path B - Wishonia (The Magical Kingdom)
+### Chapter 22: Path B - Wishonia (The Magical Kingdom)
 - **The Declaration of Wishonia** (2026)
   - "We hold these truths to be self-evident..."
   - "...that all humans deserve health, wealth, and happiness"
@@ -683,7 +671,7 @@
   - Humanity: Upgraded to Humanity 2.0
   - Next challenge: Which galaxy to explore
 
-### Chapter 24: How We Build Wishonia (The Practical Steps)
+### Chapter 23: How We Build Wishonia (The Practical Steps)
 - **The Fork in the Timeline** (You Are Here)
   - Current trajectory: Gollumland
   - Alternative path: Wishonia
@@ -714,7 +702,7 @@
 
 ## Part VIII: Join or Get Left Behind
 
-### Chapter 25: Your Personal Benefits (What You Get)
+### Chapter 24: Your Personal Benefits (What You Get)
 - **Economic Security**
   - Trial participation: $2,500 per trial
   - Healthcare coverage: No more medical bankruptcy
@@ -740,7 +728,7 @@
   - Sovereign citizen of Wishonia
   - Co-owner of the future
 
-### Chapter 26: The Three Actions (Do Now)
+### Chapter 25: The Three Actions (Do Now)
 - **Action 1: Sign the Referendum** (3 minutes)
   - Go to WarOnDisease.org
   - Connect wallet or email
@@ -761,7 +749,7 @@
   - Researchers: Offer trials on the dFDA marketplace
   - Everyone: Share knowledge, build community
 
-### Chapter 27: Every Objection Demolished
+### Chapter 26: Every Objection Demolished
 - **"This is too complicated"**
   - Democracy is complicated. This just admits it and uses computers to help.
 - **"Countries won't cooperate"**
