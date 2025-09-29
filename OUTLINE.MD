@@ -282,7 +282,7 @@
   - 5% of $27B treasury = $1.35B annual distribution
   - $1.35B ÷ $3.375B bonds = 40% starting yield
   - As treaty expands (2%, 5%, 10%), returns scale proportionally
-  - Compare: Medallion capped at $10B AUM, we scale with global GDP
+  - Inflation-protected: Tied to treaty inflows, not dying currencies
 - **Why This Destroys All Competition**
   - S&P 500: 10% average (VICTORY: 40% starting, scaling up)
   - Venture capital: 25% if lucky (VICTORY: 40% guaranteed + growth)
@@ -324,7 +324,7 @@
   - Compete on outcomes, not marketing (their worst fear)
   - But: Winners make 10X current profits
 - **Politicians: Making Corruption Work for Health**
-  - Super PAC: $800M for treaty supporters
+  - Super PAC: Major funding for treaty supporters
   - Opposition research: Funded against enemies
   - District benefits: Research centers = jobs
   - Personal wealth: VICTORY bonds in blind trusts
@@ -396,7 +396,7 @@
   - Time-limited signup windows create urgency
 - **The 3.5% Magic Number**
   - No peaceful movement has failed at 3.5% active support
-  - Our advantage: Subsidized healthcare for participants
+  - Our advantage: Economic incentive to participate
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
 
@@ -464,7 +464,7 @@
   - Set your own price per patient
   - Blockchain-verified supply chain
   - Real-time results (pivot fast)
-  - Get paid for outcomes, not grant-writing
+  - Get paid when patients join your trials
 - **For Patients: Find What Actually Works**
   - Enter your condition
   - See treatments ranked by real effectiveness
@@ -606,17 +606,17 @@
   - Healthcare access: Universal through dFDA trials
   - Dollar: Abandoned by half the world
 - **2040: Wishonia Manifests Physically**
-  - Singapore declares itself Wishonian
-  - California follows (state sovereignty)
-  - Disease: Choose your health settings
-  - Work: Completely optional
-  - The Fed: Dissolved by irrelevance
-- **2045: The Technological Singularity (Good Version)**
-  - AGI achieved: Aligned to health not war
-  - Aging: Fully reversible
-  - Consciousness: Uploadable/downloadable
-  - Matter printers: Post-scarcity achieved
-  - Space colonies: Expanding rapidly
+  - Singapore adopts DIH model
+  - California follows with state program
+  - Disease: Personalized prevention standard
+  - Work: Transformed by health innovation
+  - Traditional healthcare: Obsolete
+- **2045: The Medical Renaissance**
+  - AI: Optimized for health discovery, not warfare
+  - Aging: Major interventions extending healthspan
+  - Personalized medicine: Treatments tailored to your genome
+  - Global health: Every disease has active research
+  - Prevention focus: Disease stopped before symptoms
 - **2050: Paradise Achieved**
   - Death: Optional (choose your lifespan)
   - Suffering: Extinct (unless you want it)
@@ -624,6 +624,7 @@
   - War: Like cannibalism (historically bizarre)
   - Humanity: Upgraded to Humanity 2.0
   - Next challenge: Which galaxy to explore
+
 
 ## Part VIII: Join or Die (Literally)
 
@@ -641,7 +642,7 @@
   - Your genetics: Debugged
   - Your lifespan: +50-100 years
 - **Freedom Returns**
-  - Direct control over your tax allocation
+  - Direct vote on health spending priorities
   - No more insurance paperwork
   - No more job you hate (new opportunities)
   - No more medical bankruptcy
