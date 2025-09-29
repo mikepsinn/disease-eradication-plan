@@ -77,7 +77,8 @@
   - Information overload: 50 propositions = random voting
   - Special interest capture: Who writes the propositions?
   - No coherence: Conflicting mandates everywhere
-  - The solution: Micro-decisions with macro-coherence
+  - Wishocracy solves this: Pairwise choices, not 50-item ballots
+  - Anyone can propose, aggregation creates coherence
 - **The Democracy That Never Was**
   - Athens: Only 10% could vote (slaves don't count)
   - America: Designed for landowners, not you
@@ -124,7 +125,7 @@
   - Researchers: Rewarded for cures, not papers
   - Investors: Returns from health, not sickness
   - Politicians: Elected for results, not promises
-  - No perverse incentives anywhere in the system
+  - Perverse incentives minimized through market competition
 - **Spillover Victory: Solving Everything Else**
   - War on Drugs: Addiction is a disease (actually cure it)
   - War on Poverty: Healthy people aren't poor
@@ -184,17 +185,23 @@
 ## Part III: The Solution (Wishocracy: Real Democracy Finally)
 
 ### Chapter 8: Wishocracy - Markets Not Majorities
-- **The Innovation: Budget Allocation Through Micro-Decisions**
-  - Not representative democracy (that failed)
-  - Market-style preference expression via simple choices
-  - See two options: "Cancer research" vs "F-35 maintenance"
-  - Slide to allocate: 80% cancer, 20% jet (your choice)
-  - Cognitive load: Minimal (markets > committees)
+- **The Innovation: Anyone Can Propose, Everyone Decides**
+  - Open proposal system: ANY human can submit funding requests
+  - Minimal stake required: Small bond prevents spam proposals
+  - Random pairwise comparisons: Each voter sees different proposal pairs
+  - Slide to allocate: "Jane's autism trial: 70% vs Bob's diabetes device: 30%"
+  - No centralized control: Nobody decides what gets voted on
 - **The Math: How Swipes Become Budgets**
   - Pairwise comparison: How your brain actually works
   - Condorcet aggregation: Finding true social preference
   - The law of large numbers: Noise cancels, signal emerges
   - Impossibility theorem solved: No cycles with enough voters
+- **Why This Isn't Central Planning**
+  - No committee decides what gets funded
+  - No approval process for proposals
+  - No human has more voting power than another
+  - Emergent order from billions of micro-decisions
+  - True market discovery of society's health priorities
 - **Your AI Twin: Scaling to Infinite Decisions**
   - Learns from 100 choices, predicts 10,000
   - You audit and adjust (maintaining control)
@@ -223,13 +230,14 @@
   - Defection punishment: Massive PR nightmare
   - Cooperation reward: Heroes of humanity
 - **The Governance Revolution: First Wishocratic Budget Ever**
-  - 280 million people directly allocating $27B
+  - Anyone on Earth can propose how to spend the $27B
+  - 280 million+ people directly allocating via pairwise choices
   - No representatives, no committees, no corruption
-  - Every dollar tracked to outcomes
-  - The proof-of-concept for everything
+  - Your grandma's remedy competes with Big Pharma's drug
+  - The proof-of-concept for replacing all government budgeting
 - **The Ratchet: Success Breeds Hunger for More**
-  - Year 1: Cure 15 diseases, everyone wants more
-  - Year 2: 2% treaty (double the cures)
+  - Year 1: Major advances in 15 disease areas
+  - Year 2: 2% treaty (double the funding)
   - Year 5: 5% treaty (exponential progress)
   - Year 10: Military spending looks insane
   - Year 20: War is incomprehensible
@@ -290,7 +298,7 @@
   - First-mover advantage: Limited $3.375B available
 - **Use of Funds: The $3.375B War Chest**
   - $1.35B: Media blitz and education campaign
-  - $1B: Lobbying to outspend defense industry 3:1
+  - $1B: Lobbying (10X defense industry's annual $100M)
   - $675M: Technology platform (dFDA + Wishocracy)
   - $225M: Operations and contingency
   - $125M: Reserve for treaty implementation
@@ -312,7 +320,7 @@
 - **Big Pharma: The Unexpected Convert**
   - Current model dying: Patent cliffs, R&D costs exploding
   - DIH = guaranteed customers for anything that works
-  - No more FDA approval costs ($1B saved per drug)
+  - Parallel pathway: Faster results, lower trial costs
   - Compete on outcomes, not marketing (their worst fear)
   - But: Winners make 10X current profits
 - **Politicians: Making Corruption Work for Health**
@@ -399,10 +407,13 @@
   - Financial transactions public, medical records private
   - Core treaty terms locked, allocations democratically adjusted
 - **How Wishocracy Controls the Treasury**
-  - The $27B flows according to millions of micro-decisions
-    - Not committees picking winners
-    - Not lobbyists writing bills
-    - Just people choosing: "Cancer research or rare disease?"
+  - Anyone submits proposals: Researchers, patients, garage scientists
+  - 8 billion people see random proposal pairs
+    - "Sarah's long COVID trial" vs "MIT's cancer vaccine"
+    - "Village clinic in Kenya" vs "Gene therapy for aging"
+  - Billions of pairwise allocations create emergent consensus
+  - Money flows automatically to top-ranked proposals
+  - Zero human gatekeepers between ideas and funding
   - Core allocations (dynamically adjusted by the crowd):
     - Patient treatment subsidies (majority of funds)
     - VICTORY bond returns (5% of all inflows guaranteed)
@@ -421,11 +432,12 @@
     - DIH: Millions of sick people know what they need
     - No grant-writing theater (6 months → 6 minutes)
     - Results determine funding (work = wealth, fail = pivot)
-  - Capture-proof because capture doesn't scale:
-    - Buying one senator: $10M
-    - Buying 10 million votes: Impossible
-    - Even coordinated manipulation gets drowned in the crowd
-    - The system learns: Gaming attempts get algorithmically detected
+  - Capture-proof because there's nothing to capture:
+    - No approval committee to bribe
+    - No gatekeeper to influence
+    - Can't stop others from submitting competing proposals
+    - Buying 10 million votes: Economically impossible
+    - Gaming attempts get drowned in billions of honest allocations
 - **Specialized Institutes**
   - Cancer Institute: Funded by public voting
   - Mental Health Institute: Finally gets proper funding
@@ -482,8 +494,8 @@
   - Integrates with existing health apps
 - **The Result: 80X Medical Progress Acceleration**
   - Before: 17 years, $2.6B per drug, 95% of diseases ignored
-  - After: 6 months, $30M per treatment, 100% of diseases targeted
-  - 10 million trials running simultaneously (vs 400,000 today)
+  - After: 6 months, $30M per treatment, 100% of diseases targetable
+  - Thousands of decentralized trials (vs traditional bottlenecks)
   - Your grandma's Alzheimer's: Actually gets studied
   - Your kid's rare disease: Finally profitable to cure
   - Mental health: No longer the ugly stepchild of medicine
@@ -635,10 +647,10 @@
   - No more medical bankruptcy
   - No more unnecessary death
 - **Power Returns**
-  - Direct democracy (real votes)
-  - No more "representatives"
-  - Sovereign citizen of Wishonia
-  - Co-owner of the future
+  - Direct funding power (your proposals compete equally)
+  - No more "representatives" or gatekeepers
+  - Equal to every other human (1 person = 1 allocation power)
+  - Co-creator of humanity's health priorities
 
 ### Chapter 25: The Three Actions (Do Now)
 - **Action 1: Sign the Referendum** (3 minutes)
