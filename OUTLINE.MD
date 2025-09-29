@@ -263,23 +263,23 @@
 
 ### Chapter 11: VICTORY Bonds - Better Than Medallion Fund
 - **The Instrument: Beating Every Investment Ever**
-  - 100% annual returns Years 1-5 (doubling yearly)
-  - 50% perpetual returns Year 6+ (still beats everything)
-  - Total raise: $1B to pass the treaty (capped for sustainability)
-  - Fully tradable: Secondary market liquidity
-  - Auto-compound option: Turn $1M into $32M in 5 years
-- **The Math: How We Pay 100% Returns**
-  - Total bonds issued: $1B (hard cap)
-  - Year 1 return obligation: $1B (100% of principal)
-  - DIH annual budget: $27B (from treaty)
-  - Bond payments: Only 3.7% of budget (easily sustainable)
-  - Compare: US pays $400B debt service (we pay $1B from $27B)
+  - Perpetual 5% of all DIH treasury inflows forever
+  - Starting yield: 40% annually (beats Medallion's 39% CAGR)
+  - Growth potential: Returns automatically scale as treasury grows
+  - Fully tradable: Secondary markets with liquidity premium
+  - Aligned incentives: Bondholders profit by growing DIH
+- **The Math: Why This Beats Everything**
+  - Total bonds issued: $3.375B hard cap (scarcity drives value)
+  - 5% of $27B treasury = $1.35B annual distribution
+  - $1.35B ÷ $3.375B bonds = 40% starting yield
+  - As treaty expands (2%, 5%, 10%), returns scale proportionally
+  - Compare: Medallion capped at $10B AUM, we scale with global GDP
 - **Why This Destroys All Competition**
-  - S&P 500: 10% average (VICTORY: 100%)
-  - Venture capital: 25% if lucky (VICTORY: 100% guaranteed)
-  - Medallion Fund: 66% but can't scale (VICTORY: 100% and scalable)
-  - Real estate: 15% with hassle (VICTORY: 100% liquid)
-  - Defense contracts: 8-15% margins (VICTORY: 100% returns)
+  - S&P 500: 10% average (VICTORY: 40% starting, scaling up)
+  - Venture capital: 25% if lucky (VICTORY: 40% guaranteed + growth)
+  - Medallion Fund: 39% but can't scale (VICTORY: 40%+ and infinitely scalable)
+  - Real estate: 15% with hassle (VICTORY: 40%+ liquid)
+  - Defense contracts: 8-15% margins (VICTORY: 40%+ returns forever)
   - Alternative systems prove viability: Bitcoin hit $1T without governments, M-Pesa became Kenya's real economy
 - **Why Defense Contractors Must Buy**
   - Lockheed's entire F-35 profit < 5 years of VICTORY returns
@@ -287,16 +287,17 @@
   - Boeing reputation: From "death merchant" to "health hero"
   - Liquidity premium: Sell anytime vs locked government contracts
   - ESG compliance: Best impact investment possible
-- **Use of Funds: The $1B Campaign**
-  - $400M: Media blitz and education
-  - $300M: Lobbying (outspend defense industry)
-  - $200M: Technology platform and infrastructure
-  - $100M: Operations and contingency
+- **Use of Funds: The $3.375B War Chest**
+  - $1.35B: Media blitz and education campaign
+  - $1B: Lobbying to outspend defense industry 3:1
+  - $675M: Technology platform (dFDA + Wishocracy)
+  - $225M: Operations and contingency
+  - $125M: Initial patient subsidies before treaty kicks in
   - Full transparency: Every dollar tracked publicly
 
 ### Chapter 12: The Coalition That Ends War (Aligned Incentives Beat Ideology)
 - **Defense Contractors: Converting the Enemy**
-  - VICTORY bonds: 100% returns > 8% defense margins
+  - VICTORY bonds: 40%+ perpetual returns > 8% defense margins
   - Medical device contracts from DIH (new revenue stream)
   - Their lobbyists work for highest bidder (that's us now)
   - Pension obligations: One bond purchase = funded forever
@@ -321,14 +322,14 @@
   - Public choice reality: They'll take our money like any other
 - **Billionaires: The Reputation Laundry**
   - Better than Giving Pledge (actual results)
-  - 100% returns while saving humanity
+  - 40%+ perpetual returns while saving humanity
   - Named institutes: "The Gates Cancer Center"
   - Tax benefits plus profit (have cake, eat it)
   - First movers get best terms and most credit
 - **Everyone Else: Democracy That Pays**
   - Direct vote on budget allocation (real power)
-  - 80% subsidized healthcare through dFDA trials
-  - Additional incentives for rare/high-burden trials
+  - Subsidized healthcare through dFDA trials (dynamic vouchers)
+  - Your participation helps grow voucher size for everyone
   - Jobs in research and administration
   - Your diseases actually get cured
 
@@ -403,15 +404,19 @@
     - Just people choosing: "Cancer research or rare disease?"
   - Core allocations (dynamically adjusted by the crowd):
     - Patient treatment subsidies (majority of funds)
-    - VICTORY bond returns (keeping our promise to investors)
+    - VICTORY bond returns (5% of all inflows guaranteed)
     - Expansion campaigns (growing from 1% to 2% to 5%)
     - Performance rewards (what actually worked gets more)
     - Community campaigns (when 50,000 people want something, it happens)
-  - Why patients pay 20% copay:
+  - Why patients pay copay:
     - Prevents frivolous treatment seeking
     - "Free" = infinite demand = system collapse
     - Skin in the game = better decisions
-    - Still 80% cheaper than current system
+  - Why dynamic subsidies work:
+    - Subsidies = available funds ÷ participating patients
+    - Creates patient incentive to grow DIH treasury
+    - Natural demand management (more patients = lower subsidy)
+    - Patients self-organize for passage of 2%, 5%, 10%... Treaties larger subsidese and lower costs
   - Why subsidize patients, not researchers:
     - NIH: 200 people guess what might work
     - DIH: Millions of sick people know what they need
@@ -428,11 +433,11 @@
   - Aging Institute: Research on extending healthspan
   - Rare Disease Institute: Every disease matters
   - Emergency Response: Pandemic preparedness
-- **The Patient Subsidy System**
+- **The Dynamic Subsidy System**
   - Researchers set treatment prices on dFDA marketplace
-  - DIH subsidizes 80% of treatment costs
-  - Patients pay 20% copay (skin in the game)
-  - Rare/high-burden trials: Additional participation incentives
+  - Available subsidies spread across all patients who join
+  - More patients = smaller individual subsidies (incentivizes treasury growth)
+  - Patients organize to increase DIH funding for bigger vouchers
   - Direct payment: No insurance bureaucracy
 
 ### Chapter 17: The dFDA - The Amazon of Not Dying
@@ -619,9 +624,9 @@
 
 ### Chapter 24: Your Personal Benefits (What You Get)
 - **Economic Security**
-  - Subsidized treatment: 80% coverage for any trial
+  - Subsidized treatment: Dynamic vouchers for dFDA trials
   - Healthcare access: No more medical bankruptcy
-  - Investment opportunity: VICTORY bonds at 100%
+  - Investment opportunity: VICTORY bonds at 40%+ perpetual
   - Job creation: Research and healthcare jobs
   - Economic growth: From health innovation
 - **Health Returns**
@@ -652,11 +657,12 @@
   - Become eligible for subsidized treatments
   - Help others learn about the treaty
 - **Action 2: Invest** (If you have capital)
-  - VICTORY Bonds: $100 minimum
-  - Total available: $1B (first come, first served)
-  - Return: 100% annual paid from $27B budget
-  - Risk: Full refund if treaty fails
-  - Math: Your returns = tiny fraction of DIH budget
+  - VICTORY Bonds: $1,000 minimum
+  - Total available: $3.375B (first come, first served)
+  - Return: 5% of all DIH inflows forever (40% starting yield)
+  - Growth: Returns automatically scale as treasury grows
+  - Risk: Tradable on secondary markets if treaty delayed
+  - Math: Bondholders share 5% of all treasury inflows forever
 - **Action 3: Build** (If you have skills)
   - Developers: Paid work building systems
   - Organizers: Help spread the referendum
@@ -671,8 +677,8 @@
   - They will when we bribe their leaders and fund their opponents.
 - **"You can't cure aging"**
   - We replace hearts. Aging is just harder. Not impossible.
-- **"100% returns are impossible"**
-  - Medallion Fund does 66%. We're just 1.5X better with government backing.
+- **"40% returns are impossible"**
+  - Medallion Fund does 39% with $10B cap. We do 40%+ with unlimited scaling as treaty grows.
 - **"Direct democracy is mob rule"**
   - Better than oligarch rule. Plus AI advisors prevent stupidity.
 - **"The powers that be won't allow this"**
