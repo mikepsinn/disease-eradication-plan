@@ -238,10 +238,10 @@
   - 10.4.2 Good allocations get reinforced
   - 10.4.3 Bad allocations get punished
   - 10.4.4 The system gets smarter every cycle
-- 10.5 **$WISH: Your Votes Become Money**
-  - 10.5.1 Every allocation earns tokens (democracy pays)
-  - 10.5.2 Good allocations earn more (competence rewarded)
-  - 10.5.3 The token is the incentive (not some distant benefit)
+- 10.5 **The Incentive Layer: Democracy That Rewards**
+  - 10.5.1 Participation points for voting (gamification)
+  - 10.5.2 Good allocations earn reputation (competence rewarded)
+  - 10.5.3 Leaderboards and achievements (social proof)
   - 10.5.4 Democracy becomes addictive (dopamine hits for voting)
 
 ### Chapter 11: The 1% Treaty (The Trojan Horse That Conquers Everything)
@@ -269,152 +269,134 @@
 
 ## Part IV: The Money (How Everyone Gets Rich by Getting Healthy)
 
-### Chapter 12: $WISH - The Peace Currency Experiment
-- 12.1 **The Problem: Nearly Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
+### Chapter 12: How Central Banks Fund Your Death (The War Machine's ATM)
+- 12.1 **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
   - 12.1.1 Dollar: Created by Fed to fund WWI, still funding wars
   - 12.1.2 Euro: ECB funds NATO expansions
   - 12.1.3 Traditional fiat: Governments can print for war at will
-  - 12.1.4 Programmable money with hard-coded restrictions against violence
-  - 12.1.5 The difference: Smart contracts prevent war funding (literally impossible)
-- 12.2 **The UBI Demonstration: Participation Pays**
-  - 12.2.1 Vote in Wishocracy: Earn 1,000 $WISH/month
-  - 12.2.2 Transaction tax funds it (like sales tax, but fair)
-  - 12.2.3 Your time has value: Democracy work = compensation
-  - 12.2.4 Healthcare included (no insurance needed)
-  - 12.2.5 Poverty: Mathematically impossible
-- 12.3 **The Fair Tax: Goodbye IRS, Hello Freedom**
-  - 12.3.1 10% on every transaction (built into the code)
-  - 12.3.2 No forms, no audits, no 87,000 agents
-  - 12.3.3 $300B saved annually from bureaucracy
-  - 12.3.4 Tax evasion: Literally impossible
-  - 12.3.5 April 15th: Just another day
-- 12.4 **Retroactive Justice: Get Your War Taxes Back**
-  - 12.4.1 Calculate lifetime taxes paid
-  - 12.4.2 20% went to military (documented waste)
-  - 12.4.3 Get it back in $WISH tokens
-  - 12.4.4 Boomers become instant Wishionaires
-  - 12.4.5 The great wealth transfer (but fair this time)
-- 12.5 **The Monetary Policy Lesson**
-  - 12.5.1 Algorithmic supply: No insider trading possible
-  - 12.5.2 Productivity gains flow to everyone (not just asset holders)
-  - 12.5.3 Transaction velocity creates UBI (economic activity pays citizens)
-  - 12.5.4 The demonstration: Fair money is possible
+  - 12.1.4 Vietnam: $168B printed, your wages destroyed
+  - 12.1.5 Iraq/Afghanistan: $8T printed while cancer research got $68B
+- 12.2 **1972: When Nixon Weaponized Money Against You**
+  - 12.2.1 Killed gold standard to fund Vietnam without tax revolt
+  - 12.2.2 Productivity up 246%, wages up 115% (they stole the difference)
+  - 12.2.3 The cantillon effect: Banks get new money first, you get inflation
+  - 12.2.4 Every war since: Funded by destroying your purchasing power
+  - 12.2.5 The missing trillions: Printed for bombs, not cures
+- 12.3 **The Federal Reserve: A Private Corporation That Owns You**
+  - 12.3.1 12 unelected people control your savings value
+  - 12.3.2 No audit allowed (what are they hiding?)
+  - 12.3.3 $300B annually to banks in "reverse repo" (your money)
+  - 12.3.4 Bailouts for banks, bankruptcy for you
+  - 12.3.5 The only solution: Make war funding impossible
+- 12.4 **Historical Pattern: Money Printing = Mass Death**
+  - 12.4.1 Weimar Germany: Printed for WWI reparations → Hitler
+  - 12.4.2 Zimbabwe: Printed for Congo war → collapse
+  - 12.4.3 Venezuela: Printed for military → starvation
+  - 12.4.4 Every hyperinflation started with war funding
+  - 12.4.5 The lesson: Control money creation or die
+- 12.5 **Why We Can't Reform the Fed (It's Terminal)**
+  - 12.5.1 Captured by military-banking complex (unfixable)
+  - 12.5.2 Dollar is global reserve (can't be reformed)
+  - 12.5.3 Too many wars depend on money printer
+  - 12.5.4 Solution: Bypass it entirely with direct funding
+  - 12.5.5 VICTORY bonds: Peace funded by markets, not money printing
 
-### Chapter 13: VICTORY Bonds - War Profiteering for Peace
-- 13.1 **The Instrument: Funding the Treaty Campaign**
-  - 13.1.1 Initial capital: From philanthropists, impact investors
-  - 13.1.2 Total raise: >$1B to pass the treaty (staged releases)
-  - 13.1.3 Use of funds: Lobbying, media, referendum campaign
-  - 13.1.4 If treaty passes: 40% annual returns from $27B budget
-  - 13.1.6 Smart contracts: Funds held in escrow, released by milestones
-- 13.2 **The Math: How $1B Gets 40% Returns**
-  - 13.2.1 Total bonds issued: $1B (capped)
-  - 13.2.2 Annual return obligation: $400M (40% of $1B)
+### Chapter 13: VICTORY Bonds - Better Than Medallion Fund
+- 13.1 **The Instrument: Beating Every Investment Ever**
+  - 13.1.1 100% annual returns Years 1-5 (doubling yearly)
+  - 13.1.2 50% perpetual returns Year 6+ (still beats everything)
+  - 13.1.3 Total raise: $1B to pass the treaty (capped for sustainability)
+  - 13.1.4 Fully tradable: Secondary market liquidity
+  - 13.1.5 Auto-compound option: Turn $1M into $32M in 5 years
+- 13.2 **The Math: How We Pay 100% Returns**
+  - 13.2.1 Total bonds issued: $1B (hard cap)
+  - 13.2.2 Year 1 return obligation: $1B (100% of principal)
   - 13.2.3 DIH annual budget: $27B (from treaty)
-  - 13.2.4 Bond payments: 1.5% of budget (easily sustainable)
-  - 13.2.5 Compare: US pays $400B on debt service (we pay $400M)
-- 13.3 **Why This Beats Everything**
-  - 13.3.1 S&P 500: 10% average (unstable)
-  - 13.3.2 Venture capital: 25% (90% fail completely)
-  - 13.3.3 VICTORY bonds: 40% (backed by treaty)
-  - 13.3.4 Risk mitigation: Multiple countries = diversification
-- 13.4 **Use of Funds: The $1B Campaign**
-  - 13.4.1 $400M: Media and education campaigns
-  - 13.4.2 $300M: Lobbying and political action
-  - 13.4.3 $200M: Technology and platform development
-  - 13.4.4 $100M: Operations and contingency
-  - 13.4.5 Full transparency: Every dollar tracked on-chain
+  - 13.2.4 Bond payments: Only 3.7% of budget (easily sustainable)
+  - 13.2.5 Compare: US pays $400B debt service (we pay $1B from $27B)
+- 13.3 **Why This Destroys All Competition**
+  - 13.3.1 S&P 500: 10% average (VICTORY: 100%)
+  - 13.3.2 Venture capital: 25% if lucky (VICTORY: 100% guaranteed)
+  - 13.3.3 Medallion Fund: 66% but can't scale (VICTORY: 100% and scalable)
+  - 13.3.4 Real estate: 15% with hassle (VICTORY: 100% liquid)
+  - 13.3.5 Defense contracts: 8-15% margins (VICTORY: 100% returns)
+- 13.4 **Why Defense Contractors Must Buy**
+  - 13.4.1 Lockheed's entire F-35 profit < 5 years of VICTORY returns
+  - 13.4.2 Raytheon pension obligations: Funded forever with one purchase
+  - 13.4.3 Boeing reputation: From "death merchant" to "health hero"
+  - 13.4.4 Liquidity premium: Sell anytime vs locked government contracts
+  - 13.4.5 ESG compliance: Best impact investment possible
+- 13.5 **Use of Funds: The $1B Campaign**
+  - 13.5.1 $400M: Media blitz and education
+  - 13.5.2 $300M: Lobbying (outspend defense industry)
+  - 13.5.3 $200M: Technology platform and infrastructure
+  - 13.5.4 $100M: Operations and contingency
+  - 13.5.5 Full transparency: Every dollar tracked publicly
 
-### Chapter 14: Central Banks: The War Machines That Kill Your Kids
-- 14.1 **The Historical Pattern: Every Central Bank Funds War**
-  - 14.1.1 Bank of England (1694): Created to fund war with France
-  - 14.1.2 Federal Reserve (1913): WWI started 6 months later (coincidence?)
-  - 14.1.3 Every war since: Funded by money printing (inflation tax on you)
-  - 14.1.4 Vietnam: $168B printed, your wages destroyed
-  - 14.1.5 Iraq/Afghanistan: $8T printed while cancer research got $68B
-- 14.2 **1972: When Nixon Weaponized Money Against You**
-  - 14.2.1 Killed gold standard to fund Vietnam without tax revolt
-  - 14.2.2 Productivity up 246%, wages up 115% (they stole the difference)
-  - 14.2.3 The cantillon effect: Banks get new money first, you get inflation
-  - 14.2.4 Every war since: Funded by destroying your purchasing power
-  - 14.2.5 The missing trillions: Printed for wars, not cures
-- 14.3 **The $WISH Solution: Programmable Peace Money**
-  - 14.3.1 Smart contracts restrict use (can only flow to approved non-violent purposes)
-  - 14.3.2 New money → Everyone equally (kills cantillon effect)
-  - 14.3.3 Productivity gains → UBI automatically (not stolen by banks)
-  - 14.3.4 No insider trading (algorithms don't have defense contractor friends)
-  - 14.3.5 Supply rules transparent and immutable (no emergency war printing)
-- 14.4 **Why We Can't Fix the Fed (It's Terminal)**
-  - 14.4.1 Captured by military-banking complex (unfixable)
-  - 14.4.2 Dollar is global reserve (can't be reformed)
-  - 14.4.3 Too many wars depend on money printer
-  - 14.4.4 Solution: Build alternative, let Fed die naturally
-  - 14.4.5 $WISH: The lifeboat while USS Dollar sinks
-- 14.5 **The Oracle Network: Reality-Based Money**
-  - 14.5.1 Millions of price feeds (not 12 war-funders)
-  - 14.5.2 Real-time adjustments (not FOMC theater)
-  - 14.5.3 Transparent formulas (not backroom deals)
-  - 14.5.4 Democratic overrides possible (actual democracy)
-  - 14.5.5 No more secret bailouts for defense contractors
+### Chapter 14: The Coalition That Ends War (Aligned Incentives Beat Ideology)
+- 14.1 **Defense Contractors: Converting the Enemy**
+  - 14.1.1 VICTORY bonds: 100% returns > 8% defense margins
+  - 14.1.2 Medical device contracts from DIH (new revenue stream)
+  - 14.1.3 Their lobbyists work for highest bidder (that's us now)
+  - 14.1.4 Pension obligations: One bond purchase = funded forever
+  - 14.1.5 ESG pressure: From death merchants to health heroes
+- 14.2 **Insurance Companies: Natural Allies**
+  - 14.2.1 Healthy people = no claims = massive profits
+  - 14.2.2 Every cure = billions in reduced payouts
+  - 14.2.3 Investment opportunity: VICTORY bonds in their portfolios
+  - 14.2.4 Competitive advantage: Back us or competitors will
+  - 14.2.5 The math: Support us or go bankrupt from medical costs
+- 14.3 **Politicians: Votes and Wealth**
+  - 14.3.1 Super PAC: $800M for treaty supporters
+  - 14.3.2 Opposition research: Funded against enemies
+  - 14.3.3 District benefits: Research centers = jobs
+  - 14.3.4 Personal wealth: VICTORY bonds in blind trusts
+  - 14.3.5 Legacy: "The Congress that cured cancer"
+- 14.4 **Billionaires: The Reputation Laundry**
+  - 14.4.1 Better than Giving Pledge (actual results)
+  - 14.4.2 100% returns while saving humanity
+  - 14.4.3 Named institutes: "The Gates Cancer Center"
+  - 14.4.4 Tax benefits plus profit (have cake, eat it)
+  - 14.4.5 First movers get best terms and most credit
+- 14.5 **Everyone Else: Democracy That Pays**
+  - 14.5.1 Direct vote on budget allocation (real power)
+  - 14.5.2 Free healthcare through DIH trials
+  - 14.5.3 Payment for trial participation ($2,500)
+  - 14.5.4 Jobs in research and administration
+  - 14.5.5 Your diseases actually get cured
 
-### Chapter 15: The Coalition Building (Aligned Incentives)
-- 15.1 **Level 0: The Organizers** (Making it happen)
-  - 15.1.1 Founders: Compensated for full-time work
-  - 15.1.2 Early team: Fair wages for organizing labor
-  - 15.1.3 First supporters: Early UBI participation rewards
-- 15.2 **Level 1: Philanthropists** (Funding the mission)
-  - 15.2.1 Health-focused donors: Direct impact on cures
-  - 15.2.2 Democracy advocates: Strengthening participation
-  - 15.2.3 Recognition: Named research programs
-- 15.3 **Level 2: Defense Contractors** (The beautiful jujitsu)
-  - 15.3.1 They can buy VICTORY bonds
-  - 15.3.2 40% returns > 8% from defense bonds
-  - 15.3.3 Plus: Medical device contracts from DIH
-  - 15.3.4 Their lobbyists work for highest bidder (that's us)
-- 15.4 **Level 3: Insurance Companies** (They save trillions)
-  - 15.4.1 Healthy people = no claims
-  - 15.4.2 Investment opportunity: VICTORY bonds
-  - 15.4.3 Competitive advantage: First movers win
-  - 15.4.4 The math: Support us or go bankrupt
-- 15.5 **Level 4: Politicians** (Votes and Wallets)
-  - 15.5.1 Super PACs: $800M for supporters
-  - 15.5.2 Opposition funding for enemies
-  - 15.5.3 District benefits: Research centers and jobs
-  - 15.5.4 Personal wealth: VICTORY bonds in blind trusts
-- 15.6 **Level 5: The Media** (Attention is currency)
-  - 15.6.1 Exclusive access to cure announcements
-  - 15.6.2 Ad revenue from $WISH ecosystem
-  - 15.6.3 The story of the century (they need content)
-- 15.7 **Level 6: Everyone** (Democracy that compensates)
-  - 15.7.1 Sign referendum: Thank you payment in $WISH
-  - 15.7.2 Share information: Help others participate
-  - 15.7.3 Join trials: Fair compensation for contribution
-  - 15.7.4 Health data sharing: Privacy-protected rewards
-  - 15.7.5 Ongoing UBI: 1,000 $WISH monthly for participation
+### Chapter 15: The Legal Architecture (Staying Out of Prison)
+- 15.1 **The Multi-Jurisdiction Strategy**
+  - 15.1.1 Swiss foundation: Neutral base of operations
+  - 15.1.2 Delaware C-corp: US operations
+  - 15.1.3 Singapore entity: Asian operations
+  - 15.1.4 Multiple legal structures: Risk distribution
+  - 15.1.5 Regulatory arbitrage: Always have options
+- 15.2 **The Securities Law Navigation**
+  - 15.2.1 VICTORY bonds: Structured as debt, not equity
+  - 15.2.2 Qualified purchaser exemptions
+  - 15.2.3 No public offering until approved
+  - 15.2.4 Full SEC compliance from day one
+  - 15.2.5 Best lawyers money can buy (and it will)
+- 15.3 **Election Law Compliance**
+  - 15.3.1 Independent expenditures only (no coordination)
+  - 15.3.2 Separate entity for political action
+  - 15.3.3 Full FEC disclosure (radical transparency)
+  - 15.3.4 State-by-state compliance (50 different laws)
+  - 15.3.5 Citizens United: Corporations are people (use it)
+- 15.4 **The Treaty Framework**
+  - 15.4.1 International law expertise
+  - 15.4.2 Vienna Convention compliance
+  - 15.4.3 Bilateral agreements first (easier)
+  - 15.4.4 Build to multilateral (inevitable)
+  - 15.4.5 Enforcement mechanisms built in
+- 15.5 **The Legislation Package** (Already drafted)
+  - 15.5.1 The Treaty Implementation Act (makes it binding)
+  - 15.5.2 The DIH Authorization Act (creates the institutes)
+  - 15.5.3 The dFDA Parallel Track Act (faster approvals)
+  - 15.5.4 The Right to Try Expansion Act (patient choice)
+  - 15.5.5 The Budget Reallocation Act (moves the money)
 
-### Chapter 16: The Legal Architecture (Staying Out of Prison)
-- 16.1 **The Multi-Jurisdiction Strategy**
-  - 16.1.1 Swiss foundation: Neutral base of operations
-  - 16.1.2 Delaware C-corp: US profit vehicle
-  - 16.1.3 Singapore entity: Asian operations + crypto
-  - 16.1.4 Cayman SPV: Tax efficiency
-  - 16.1.5 Estonian e-governance: Digital infrastructure
-- 16.2 **The Token Hack: Not Securities Until They Are**
-  - 16.2.1 Phase 1: Governance tokens (not securities)
-  - 16.2.2 Phase 2: Utility tokens (still not securities)
-  - 16.2.3 Phase 3: Currency (definitely not securities)
-  - 16.2.4 Howey test navigation: No investment contract
-- 16.3 **Election Law Compliance**
-  - 16.3.1 Independent expenditures only (no coordination)
-  - 16.3.2 Separate US entity (no foreign money)
-  - 16.3.3 Full disclosure (radical transparency)
-  - 16.3.4 State-by-state compliance (50 different laws)
-- 16.4 **The Legislation Package** (Already drafted)
-  - 16.4.1 The Right to Trial Act (try any treatment)
-  - 16.4.2 The dFDA Authorization Act (parallel FDA track)
-  - 16.4.3 The $WISH Legal Tender Act (currency status)
-  - 16.4.4 The Treaty Implementation Act (makes it binding)
-  - 16.4.5 The IRS Dissolution Act (not needed anymore)
 
 ## Part V: The Implementation (Building Paradise)
 
@@ -474,7 +456,7 @@
   - 19.1.2 Filter by: Effectiveness, cost, side effects
   - 19.1.3 Reviews from real patients (verified)
   - 19.1.4 One-click enrollment from any device
-  - 19.1.5 Price competition: Visible costs in $WISH
+  - 19.1.5 Price competition: Transparent pricing
 - 19.2 **Outcome Labels: The Truth About Everything**
   - 19.2.1 Every food: "Increases diabetes risk 12%"
   - 19.2.2 Every drug: "73% effective for your genotype"
@@ -501,22 +483,22 @@
   - 19.5.5 Never judges, never rushes
 
 ### Chapter 20: The Technology Stack (How We Build God)
-- 20.1 **The Blockchain Layer** (Ethereum + L2s)
+- 20.1 **The Technology Infrastructure**
   - 20.1.1 Smart contracts: Immutable treasury logic
-  - 20.1.2 $WISH token: ERC-20 with modifications
-  - 20.1.3 Governance: On-chain voting
-  - 20.1.4 Identity: Soulbound tokens for verification
-  - 20.1.5 Scalability: Optimistic rollups for throughput
+  - 20.1.2 Secure voting system: Cryptographic verification
+  - 20.1.3 Governance: Transparent decision tracking
+  - 20.1.4 Identity: Privacy-preserving verification
+  - 20.1.5 Scalability: Cloud infrastructure for billions
 - 20.2 **The Data Layer** (Decentralized Storage)
   - 20.2.1 IPFS: Immutable medical records
   - 20.2.2 Arweave: Permanent trial data
   - 20.2.3 Ceramic: Mutable patient profiles
   - 20.2.4 The Graph: Indexed for instant queries
-- 20.3 **The Oracle Network** (Reality Bridge)
-  - 20.3.1 Chainlink: Price feeds for $WISH
-  - 20.3.2 UMA: Optimistic verification
-  - 20.3.3 Band: Backup oracle system
-  - 20.3.4 Custom oracles: Health outcome tracking
+- 20.3 **The Verification Network** (Reality Bridge)
+  - 20.3.1 Health outcome tracking systems
+  - 20.3.2 Treatment effectiveness verification
+  - 20.3.3 Multi-source data validation
+  - 20.3.4 Real-time result reporting
 - 20.4 **The Frontend** (Where Humans Live)
   - 20.4.1 Web app: Works on everything
   - 20.4.2 Mobile apps: Native iOS/Android
@@ -571,11 +553,11 @@
   - 22.3.2 Bristol Pound: Local economy thrived
   - 22.3.3 Time banks: 30 countries participating
   - 22.3.4 The lesson: People create money when needed
-- 22.4 **$WISH Has Better Fundamentals**
-  - 22.4.1 Backed by health outcomes (not nothing)
-  - 22.4.2 Universal demand (everyone wants health)
-  - 22.4.3 Network effects (more users = more value)
-  - 22.4.4 Deflationary (fixed supply, growing demand)
+- 22.4 **VICTORY Bonds Have Better Fundamentals**
+  - 22.4.1 Backed by treaty obligations (government guaranteed)
+  - 22.4.2 Universal demand (100% returns beat everything)
+  - 22.4.3 Network effects (more buyers = more political power)
+  - 22.4.4 Limited supply (only $1B issued)
 
 ### Chapter 23: Political Movements That Changed Everything
 - 23.1 **War Bonds: Capitalism Defeated Fascism**
@@ -667,19 +649,19 @@
   - 26.1.2 "...that all humans deserve health, wealth, and happiness"
   - 26.1.3 Population: 280 million founders
   - 26.1.4 Territory: The internet (for now)
-  - 26.1.5 Currency: $WISH (better than gold)
+  - 26.1.5 Economy: Post-scarcity through medical innovation
   - 26.1.6 Constitution: Maximize median wellbeing
 - 26.2 **2030: The First Wishes Granted**
   - 26.2.1 Type 1 diabetes: Cured in 1,000 days
   - 26.2.2 Depression: 5 new effective treatments
   - 26.2.3 Rare diseases: 500 new treatments
   - 26.2.4 Aging: Slowed by 20%
-  - 26.2.5 $WISH: Accepted by 1 billion people
+  - 26.2.5 DIH system: Treating 1 billion people
 - 26.3 **2035: The Tipping Point**
   - 26.3.1 5% Treaty signed (135B annual budget)
   - 26.3.2 Cancer: 80% curable
   - 26.3.3 Mental illness: Precision treatments
-  - 26.3.4 UBI: 2,000 $WISH monthly
+  - 26.3.4 Basic income: From trial participation
   - 26.3.5 Dollar: Abandoned by half the world
 - 26.4 **2040: Wishonia Manifests Physically**
   - 26.4.1 Singapore declares itself Wishonian
@@ -711,7 +693,7 @@
   - 27.2.1 Launch referendum platform
   - 27.2.2 First million signatures
   - 27.2.3 Raise $400M seed round
-  - 27.2.4 Deploy $WISH v1
+  - 27.2.4 Build technology infrastructure
   - 27.2.5 Small nations show interest
 - 27.3 **Year 3-5: The Growth** (2027-2030)
   - 27.3.1 10-50 million participants
@@ -734,11 +716,11 @@
 
 ### Chapter 28: Your Personal Benefits (What You Get)
 - 28.1 **Economic Security**
-  - 28.1.1 UBI participation: 1,000 $WISH monthly
+  - 28.1.1 Trial participation: $2,500 per trial
   - 28.1.2 Healthcare coverage: No more medical bankruptcy
-  - 28.1.3 Democratic work: Your civic time compensated
-  - 28.1.4 Transaction fairness: No more inflation tax
-  - 28.1.5 Tax justice: Retroactive war spending returned
+  - 28.1.3 Investment opportunity: VICTORY bonds at 100%
+  - 28.1.4 Job creation: Research and healthcare jobs
+  - 28.1.5 Economic growth: From health innovation
 - 28.2 **Health Returns**
   - 28.2.1 Your cancer: Prevented or cured
   - 28.2.2 Your depression: Actually treated
@@ -748,7 +730,7 @@
 - 28.3 **Freedom Returns**
   - 28.3.1 No more tax forms (ever)
   - 28.3.2 No more insurance paperwork
-  - 28.3.3 No more job you hate (UBI)
+  - 28.3.3 No more job you hate (new opportunities)
   - 28.3.4 No more medical bankruptcy
   - 28.3.5 No more unnecessary death
 - 28.4 **Power Returns**
@@ -764,7 +746,7 @@
   - 29.1.2 Connect wallet or email
   - 29.1.3 Verify identity (30 seconds)
   - 29.1.4 Vote YES on the treaty
-  - 29.1.5 Start earning UBI for participation
+  - 29.1.5 Become eligible for trial payments
   - 29.1.6 Help others learn about the treaty
 - 29.2 **Action 2: Invest** (If you have capital)
   - 29.2.1 VICTORY Bonds: $100 minimum
@@ -786,16 +768,16 @@
   - They will when we bribe their leaders and fund their opponents.
 - 30.3 **"You can't cure aging"**
   - We replace hearts. Aging is just harder. Not impossible.
-- 30.4 **"$WISH is just another shitcoin"**
-  - It's backed by human health, not speculation. Big difference.
+- 30.4 **"100% returns are impossible"**
+  - Medallion Fund does 66%. We're just 1.5X better with government backing.
 - 30.5 **"Direct democracy is mob rule"**
   - Better than oligarch rule. Plus AI advisors prevent stupidity.
 - 30.6 **"The powers that be won't allow this"**
   - The powers that be get VICTORY bonds. They'll allow it.
 - 30.7 **"This violates securities law"**
   - We have lawyers. Many lawyers. Expensive lawyers.
-- 30.8 **"UBI causes inflation"**
-  - Not when funded by transaction taxes, not money printing.
+- 30.8 **"This is too expensive"**
+  - It's 1% of what we already waste on war. We can afford health.
 - 30.9 **"The technology doesn't exist"**
   - RECOVERY trial proved it does. We're just scaling.
 - 30.10 **"This is unrealistic"**
