@@ -405,38 +405,6 @@
 
 ## Part V: The Implementation (Building Paradise)
 
-### Chapter 15: International Capture Prevention (Not Another WHO)
-- **Why International Organizations Always Fail**
-  - WHO: Captured by China during COVID
-  - UN: Saudi Arabia on human rights council
-  - World Bank: Funds dictators, not development
-  - The pattern: Bureaucracy needs problems to exist
-  - DIH difference: Designed to shrink, not grow
-- **No Physical Headquarters (No Castle to Capture)**
-  - Fully distributed team (no single location)
-  - Smart contracts, not staff meetings
-  - No permanent employees (only contracts)
-  - No organizational chart (no hierarchy)
-  - The WHO has 7,000 employees; DIH has 0
-- **Treaty Exit Mechanisms (Freedom to Leave)**
-  - Any country can exit with 90 days notice
-  - No penalties for leaving (not a trap)
-  - Can rejoin anytime (no grudges)
-  - Partial participation allowed (1% not mandatory)
-  - Competition welcomed (may the best system win)
-- **Transparency as Antiseptic**
-  - Every transaction on public blockchain
-  - All treatment data publicly available
-  - No closed-door meetings (they don't exist)
-  - Whistleblowing unnecessary (everything's visible)
-  - Journalists: Nothing to investigate (all public)
-- **The Self-Destruct Mechanism**
-  - Automatic sunset when diseases cured
-  - Budget shrinks with success (not failure)
-  - Staff incentivized to eliminate their jobs
-  - Victory = organizational death (by design)
-  - The only "war" designed to actually end
-
 ### Chapter 16: The Global Referendum (Democracy at Scale)
 - **The Platform: TikTok Meets Democracy**
   - 30-second onboarding (simpler than Instagram)
