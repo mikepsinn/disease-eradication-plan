@@ -120,7 +120,7 @@
   - Researchers get rich by curing, not by getting grants
   - The system dies when disease dies (that's the point)
 - **Aligned Incentives: Everyone Wins by Winning**
-  - Patients: Paid to participate, not exploited
+  - Patients: Subsidized treatments, not exploited
   - Researchers: Rewarded for cures, not papers
   - Investors: Returns from health, not sickness
   - Politicians: Elected for results, not promises
@@ -387,7 +387,7 @@
   - Time-limited signup windows create urgency
 - **The 3.5% Magic Number**
   - No peaceful movement has failed at 3.5% active support
-  - Our advantage: We're paying people
+  - Our advantage: Subsidized healthcare for participants
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
 
@@ -396,7 +396,7 @@
   - $27B/year controlled by smart contracts
   - No CEO or board to corrupt
   - Every transaction public
-  - Code is law, can't be changed once deployed
+  - Core rules immutable, allocations dynamically voted
 - **How Wishocracy Controls the Treasury**
   - The $27B flows according to millions of micro-decisions
     - Not committees picking winners
@@ -414,9 +414,10 @@
     - Skin in the game = better decisions
   - Why dynamic subsidies work:
     - Subsidies = available funds ÷ participating patients
-    - Creates patient incentive to grow DIH treasury
-    - Natural demand management (more patients = lower subsidy)
-    - Patients self-organize for passage of 2%, 5%, 10%... Treaties larger subsidese and lower costs
+    - Natural demand management (more patients = lower subsidy per person)
+    - Creates patient incentive to organize for treasury growth
+    - Patients self-organize for passage of 2%, 5%, 10% treaties = larger subsidies and lower costs
+    - Built-in skin in the game (patients still pay the unsubsidized portion)
   - Why subsidize patients, not researchers:
     - NIH: 200 people guess what might work
     - DIH: Millions of sick people know what they need
@@ -433,11 +434,9 @@
   - Aging Institute: Research on extending healthspan
   - Rare Disease Institute: Every disease matters
   - Emergency Response: Pandemic preparedness
-- **The Dynamic Subsidy System**
+- **The Patient Subsidy System**
   - Researchers set treatment prices on dFDA marketplace
-  - Available subsidies spread across all patients who join
-  - More patients = smaller individual subsidies (incentivizes treasury growth)
-  - Patients organize to increase DIH funding for bigger vouchers
+  - Dynamic vouchers: Available funds ÷ participating patients
   - Direct payment: No insurance bureaucracy
 
 ### Chapter 17: The dFDA - The Amazon of Not Dying
@@ -514,7 +513,7 @@
   - Women's suffrage: 3.5% got the vote
 - **We Have Advantages They Didn't**
   - Internet: Instant global coordination
-  - Money: We're paying participants
+  - Money: Subsidized healthcare creates participation incentive
   - Data: We can prove what works
   - Urgency: People are literally dying
 
@@ -593,7 +592,7 @@
   - Depression: 5 new effective treatments
   - Rare diseases: 500 new treatments
   - Aging: Slowed by 20%
-  - dFDA system: Treating 1 billion people
+  - dFDA system: Millions joining trials globally
 - **2035: The Tipping Point**
   - 5% Treaty signed (135B annual budget)
   - Cancer: 80% curable
@@ -636,7 +635,7 @@
   - Your genetics: Debugged
   - Your lifespan: +50-100 years
 - **Freedom Returns**
-  - No more tax forms (ever)
+  - Direct control over your tax allocation
   - No more insurance paperwork
   - No more job you hate (new opportunities)
   - No more medical bankruptcy
