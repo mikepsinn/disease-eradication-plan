@@ -392,30 +392,56 @@
   - 15.4.4 Tipping point: Day 280 critical mass achieved
 
 ### Chapter 15: The DIH - Government Without Governments
-- 16.1 **The Structure: Nobody's in Charge (By Design)**
-  - 16.1.1 $27B/year controlled by smart contracts
-  - 16.1.2 No CEO to bribe, kidnap, or corrupt
-  - 16.1.3 No board to capture (code is law)
-  - 16.1.4 Every transaction visible on-chain
-  - 16.1.5 Immutable once deployed (no takesie-backsies)
-- 16.2 **Specialized Institutes** (Automatic Fund Flows)
-  - 16.2.1 Cancer Institute: % of votes = % of funds
-  - 16.2.2 Mental Health Institute: Depression pays well
-  - 16.2.3 Aging Institute: Funded by fear of death
-  - 16.2.4 Rare Disease Institute: Even orphans get love
-  - 16.2.5 Emergency Response: Pandemic preparedness
-- 16.3 **The Subsidy System** (Money → Patients → Cures)
-  - 16.3.1 Patient signs up: $500 immediate payment
-  - 16.3.2 Trial completion: $2,000 bonus
-  - 16.3.3 Long-term tracking: $100/year for life
-  - 16.3.4 Insurance model: $20 copay for legitimacy
-  - 16.3.5 Direct deposit: No bureaucracy
-- 16.4 **The Researcher Rewards**
-  - 16.4.1 Per patient enrolled: $1,000
-  - 16.4.2 Per trial completed: $100,000
-  - 16.4.3 Successful treatment: $10M bonus
-  - 16.4.4 Open source bonus: 2X rewards for sharing
-  - 16.4.5 No grants needed: Just start treating
+- 15.1 **The Structure: Nobody's in Charge (By Design)**
+  - 15.1.1 $27B/year controlled by smart contracts
+  - 15.1.2 No CEO to bribe, kidnap, or corrupt
+  - 15.1.3 No board to capture (code is law)
+  - 15.1.4 Every transaction visible on-chain
+  - 15.1.5 Immutable once deployed (no takesie-backsies)
+- 15.2 **How Wishocracy Controls the Treasury**
+  - 15.2.1 The $27B flows according to millions of micro-decisions
+    - Not committees picking winners
+    - Not lobbyists writing bills
+    - Just people choosing: "Cancer research or rare disease?"
+  - 15.2.2 Core allocations (dynamically adjusted by the crowd):
+    - Patient treatment subsidies (majority of funds)
+    - VICTORY bond returns (keeping our promise to investors)
+    - Expansion campaigns (growing from 1% to 2% to 5%)
+    - Performance rewards (what actually worked gets more)
+    - Community campaigns (when 50,000 people want something, it happens)
+  - 15.2.3 Why patients pay 20% copay:
+    - Prevents frivolous treatment seeking
+    - "Free" = infinite demand = system collapse
+    - Skin in the game = better decisions
+    - Still 80% cheaper than current system
+  - 15.2.4 Why subsidize patients, not researchers:
+    - NIH: 200 people guess what might work
+    - DIH: Millions of sick people know what they need
+    - No grant-writing theater (6 months → 6 minutes)
+    - Results determine funding (work = wealth, fail = pivot)
+  - 15.2.5 Capture-proof because capture doesn't scale:
+    - Buying one senator: $10M
+    - Buying 10 million votes: Impossible
+    - Even coordinated manipulation gets drowned in the crowd
+    - The system learns: Gaming attempts get algorithmically detected
+- 15.3 **Specialized Institutes** (Automatic Fund Flows)
+  - 15.3.1 Cancer Institute: % of votes = % of funds
+  - 15.3.2 Mental Health Institute: Depression pays well
+  - 15.3.3 Aging Institute: Funded by fear of death
+  - 15.3.4 Rare Disease Institute: Even orphans get love
+  - 15.3.5 Emergency Response: Pandemic preparedness
+- 15.4 **The Subsidy System** (Money → Patients → Cures)
+  - 15.4.1 Patient signs up: $500 immediate payment
+  - 15.4.2 Trial completion: $2,000 bonus
+  - 15.4.3 Long-term tracking: $100/year for life
+  - 15.4.4 Insurance model: $20 copay for legitimacy
+  - 15.4.5 Direct deposit: No bureaucracy
+- 15.5 **The Researcher Rewards**
+  - 15.5.1 Per patient enrolled: $1,000
+  - 15.5.2 Per trial completed: $100,000
+  - 15.5.3 Successful treatment: $10M bonus
+  - 15.5.4 Open source bonus: 2X rewards for sharing
+  - 15.5.5 No grants needed: Just start treating
 
 ### Chapter 16: The dFDA - The App Store for Not Dying
 - 17.1 **The Treatment Marketplace**
