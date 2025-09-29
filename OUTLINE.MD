@@ -29,7 +29,7 @@
 - 2.2 **Disease: The Holocaust in Slow Motion** ($109.1T/year in preventable suffering)
   - 2.2.1 Cancer: 10M deaths/year while we argue about pronouns
   - 2.2.2 Mental illness: 1 billion suffering, $5T lost productivity
-  - 2.2.3 Aging: The 100% fatal disease we pretend isn't a disease
+  - 2.2.3 Healthcare spending: $8.2T globally (mostly treating, not curing)
   - 2.2.4 Rare diseases: 95% have zero treatments (your kids will die)
 - 2.3 **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
   - 2.3.1 We spend more on Halloween costumes than curing cancer
@@ -98,8 +98,8 @@
   - 4.5.1 Bureaucracies need problems to solve (or they die)
   - 4.5.2 Solving the problem = unemployment (perverse incentive)
   - 4.5.3 Growing the problem = bigger budgets (actual incentive)
-  - 4.5.4 The iron law: Every war on X creates more X
-  - 4.5.5 The solution: Markets don't need problems to exist
+  - 4.5.4 Nearly every government war on X creates more X
+  - 4.5.5 The solution: Create markets that profit from solving, not preserving problems
 
 ### Chapter 5: The War on Disease - The First War Designed to Win
 - 5.1 **Different Structure: Markets Not Ministries**
@@ -137,7 +137,7 @@
   - 6.2.2 NIH medicine: Smart people, mass death
   - 6.2.3 Same system, same result (committees can't allocate)
   - 6.2.4 The Fed: Soviet planning for money (working great!)
-  - 6.2.5 Every centralized system: Corruption, waste, death
+  - 6.2.5 More centralization of power correlates with more corruption, waste, death
 - 6.3 **Markets: The Distributed Computer That Actually Works**
   - 6.3.1 Prices are information packets (committees are noise)
   - 6.3.2 Profit/loss is binary feedback (committees never learn)
@@ -270,11 +270,12 @@
 ## Part IV: The Money (How Everyone Gets Rich by Getting Healthy)
 
 ### Chapter 12: $WISH - The Peace Currency Experiment
-- 12.1 **The Problem: Every Currency Funds War**
+- 12.1 **The Problem: Nearly Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
   - 12.1.1 Dollar: Created by Fed to fund WWI, still funding wars
   - 12.1.2 Euro: ECB funds NATO expansions
-  - 12.1.3 Every fiat currency: War machine in disguise
-  - 12.1.4 $WISH: First currency that CAN'T fund war (by design)
+  - 12.1.3 Traditional fiat: Governments can print for war at will
+  - 12.1.4 Programmable money with hard-coded restrictions against violence
+  - 12.1.5 The difference: Smart contracts prevent war funding (literally impossible)
 - 12.2 **The UBI Demonstration: Participation Pays**
   - 12.2.1 Vote in Wishocracy: Earn 1,000 $WISH/month
   - 12.2.2 Transaction tax funds it (like sales tax, but fair)
@@ -301,11 +302,11 @@
 
 ### Chapter 13: VICTORY Bonds - War Profiteering for Peace
 - 13.1 **The Instrument: Funding the Treaty Campaign**
-  - 13.1.1 Total raise: $1B to pass the treaty
-  - 13.1.2 Use of funds: Lobbying, media, referendum campaign
-  - 13.1.3 If treaty passes: 40% annual returns from $27B budget
-  - 13.1.4 If treaty fails: Full refund plus interest
-  - 13.1.5 Smart contracts: Automated payment, no trust needed
+  - 13.1.1 Initial capital: From philanthropists, impact investors
+  - 13.1.2 Total raise: >$1B to pass the treaty (staged releases)
+  - 13.1.3 Use of funds: Lobbying, media, referendum campaign
+  - 13.1.4 If treaty passes: 40% annual returns from $27B budget
+  - 13.1.6 Smart contracts: Funds held in escrow, released by milestones
 - 13.2 **The Math: How $1B Gets 40% Returns**
   - 13.2.1 Total bonds issued: $1B (capped)
   - 13.2.2 Annual return obligation: $400M (40% of $1B)
@@ -337,12 +338,12 @@
   - 14.2.3 The cantillon effect: Banks get new money first, you get inflation
   - 14.2.4 Every war since: Funded by destroying your purchasing power
   - 14.2.5 The missing trillions: Printed for wars, not cures
-- 14.3 **The $WISH Solution: Algorithmic Peace Money**
-  - 14.3.1 Can't fund wars (hard-coded for medical research only)
+- 14.3 **The $WISH Solution: Programmable Peace Money**
+  - 14.3.1 Smart contracts restrict use (can only flow to approved non-violent purposes)
   - 14.3.2 New money → Everyone equally (kills cantillon effect)
   - 14.3.3 Productivity gains → UBI automatically (not stolen by banks)
   - 14.3.4 No insider trading (algorithms don't have defense contractor friends)
-  - 14.3.5 No boom-bust cycles (math doesn't panic-print for wars)
+  - 14.3.5 Supply rules transparent and immutable (no emergency war printing)
 - 14.4 **Why We Can't Fix the Fed (It's Terminal)**
   - 14.4.1 Captured by military-banking complex (unfixable)
   - 14.4.2 Dollar is global reserve (can't be reformed)
@@ -366,7 +367,7 @@
   - 15.2.2 Democracy advocates: Strengthening participation
   - 15.2.3 Recognition: Named research programs
 - 15.3 **Level 2: Defense Contractors** (The beautiful jujitsu)
-  - 15.3.1 They can buy VICTORY bonds (capped at $1B total)
+  - 15.3.1 They can buy VICTORY bonds
   - 15.3.2 40% returns > 8% from defense bonds
   - 15.3.3 Plus: Medical device contracts from DIH
   - 15.3.4 Their lobbyists work for highest bidder (that's us)
@@ -436,10 +437,10 @@
   - 17.3.3 Meme warfare: Better memes than elections
   - 17.3.4 The countdown: Urgency drives action
 - 17.4 **The 3.5% Magic Number**
-  - 17.4.1 Chenoweth's research: Never fails at 3.5%
+  - 17.4.1 No peaceful movement has failed at 3.5% active support
   - 17.4.2 Our advantage: We're paying people
   - 17.4.3 Current trajectory: 1M signups/day once viral
-  - 17.4.4 Tipping point: Day 280 we win
+  - 17.4.4 Tipping point: Day 280 critical mass achieved
 
 ### Chapter 18: The DIH - Government Without Governments
 - 18.1 **The Structure: Nobody's in Charge (By Design)**
@@ -591,7 +592,7 @@
   - 23.3.1 Civil rights: 3.5% ended segregation
   - 23.3.2 Indian independence: 3.5% beat empire
   - 23.3.3 Women's suffrage: 3.5% got the vote
-  - 23.3.4 The rule: Never fails at scale
+
 - 23.4 **We Have Advantages They Didn't**
   - 23.4.1 Internet: Instant global coordination
   - 23.4.2 Money: We're paying participants
@@ -706,30 +707,28 @@
   - 27.1.2 Alternative path: Wishonia
   - 27.1.3 The switch: One treaty, one vote
   - 27.1.4 The window: 5 years maximum
-- 27.2 **Year 1: The Seed** (2025-2026)
+- 27.2 **Year 1-2: The Seed** (2025-2027)
   - 27.2.1 Launch referendum platform
   - 27.2.2 First million signatures
   - 27.2.3 Raise $400M seed round
   - 27.2.4 Deploy $WISH v1
-  - 27.2.5 First country commits
-- 27.3 **Year 2-3: The Growth** (2026-2028)
-  - 27.3.1 280 million participants
-  - 27.3.2 $2.5B raised total
-  - 27.3.3 Major powers sign treaty
-  - 27.3.4 $27B treasury activated
-  - 27.3.5 First cures announced
-- 27.4 **Year 4-5: The Acceleration** (2028-2030)
-  - 27.4.1 2% Treaty negotiations
-  - 27.4.2 $WISH > Dollar in usage
-  - 27.4.3 First disease eliminated
-  - 27.4.4 UBI covers basic needs
-  - 27.4.5 Network state recognition
-- 27.5 **Year 6-10: The Transformation** (2030-2035)
-  - 27.5.1 5% Treaty standard
-  - 27.5.2 Military spending halved
-  - 27.5.3 Disease burden halved
-  - 27.5.4 Wishonia has physical territory
-  - 27.5.5 The old system collapses
+  - 27.2.5 Small nations show interest
+- 27.3 **Year 3-5: The Growth** (2027-2030)
+  - 27.3.1 10-50 million participants
+  - 27.3.2 $1B raised total
+  - 27.3.3 First small countries sign treaty
+  - 27.3.4 Pilot programs launched
+  - 27.3.5 Proof of concept demonstrated
+- 27.4 **Year 6-8: The Acceleration** (2030-2033)
+  - 27.4.1 100+ million participants
+  - 27.4.2 Major powers begin negotiations
+  - 27.4.3 $10B+ treasury from early adopters
+  - 27.4.4 First major breakthroughs announced
+  - 27.4.5 Network state recognition discussions
+- 27.5 **Year 9-15: The Transformation** (2033-2040)
+  - 27.5.1 Major powers join treaty (1-5% levels)
+  - 27.5.2 Military spending reduced by 20-30%
+  - 27.5.3 Disease burden dropping measurably
 
 ## Part VIII: Join or Get Left Behind
 
