@@ -210,7 +210,7 @@
   - 8.5.3 Leaderboards and achievements (social proof)
   - 8.5.4 Democracy becomes addictive (dopamine hits for voting)
 
-### Chapter 10: The 1% Treaty (The Trojan Horse That Conquers Everything)
+### Chapter 9: The 1% Treaty (The Trojan Horse That Conquers Everything)
 - 10.1 **Start Tiny: Just 1% of Military Budgets**
   - 10.1.1 $27B globally (Pentagon's couch cushion money)
   - 10.1.2 No country loses relative power (everyone cuts equally)
@@ -235,7 +235,7 @@
 
 ## Part IV: The Money (How Everyone Gets Rich by Getting Healthy)
 
-### Chapter 11: How Central Banks Fund Your Death (The War Machine's ATM)
+### Chapter 10: How Central Banks Fund Your Death (The War Machine's ATM)
 - 11.1 **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
   - 11.1.1 Dollar: Created by Fed to fund WWI, still funding wars
   - 11.1.2 Euro: ECB funds NATO expansions
@@ -267,7 +267,7 @@
   - 11.5.4 Solution: Bypass it entirely with direct funding
   - 11.5.5 VICTORY bonds: Peace funded by markets, not money printing
 
-### Chapter 12: VICTORY Bonds - Better Than Medallion Fund
+### Chapter 11: VICTORY Bonds - Better Than Medallion Fund
 - 12.1 **The Instrument: Beating Every Investment Ever**
   - 12.1.1 100% annual returns Years 1-5 (doubling yearly)
   - 12.1.2 50% perpetual returns Year 6+ (still beats everything)
@@ -286,6 +286,7 @@
   - 12.3.3 Medallion Fund: 66% but can't scale (VICTORY: 100% and scalable)
   - 12.3.4 Real estate: 15% with hassle (VICTORY: 100% liquid)
   - 12.3.5 Defense contracts: 8-15% margins (VICTORY: 100% returns)
+  - 12.3.6 Alternative systems prove viability: Bitcoin hit $1T without governments, M-Pesa became Kenya's real economy
 - 12.4 **Why Defense Contractors Must Buy**
   - 12.4.1 Lockheed's entire F-35 profit < 5 years of VICTORY returns
   - 12.4.2 Raytheon pension obligations: Funded forever with one purchase
@@ -299,7 +300,7 @@
   - 12.5.4 $100M: Operations and contingency
   - 12.5.5 Full transparency: Every dollar tracked publicly
 
-### Chapter 13: The Coalition That Ends War (Aligned Incentives Beat Ideology)
+### Chapter 12: The Coalition That Ends War (Aligned Incentives Beat Ideology)
 - 13.1 **Defense Contractors: Converting the Enemy**
   - 13.1.1 VICTORY bonds: 100% returns > 8% defense margins
   - 13.1.2 Medical device contracts from DIH (new revenue stream)
@@ -331,7 +332,7 @@
   - 13.5.4 Jobs in research and administration
   - 13.5.5 Your diseases actually get cured
 
-### Chapter 14: The Legal Architecture (Staying Out of Prison)
+### Chapter 13: The Legal Architecture (Staying Out of Prison)
 - 14.1 **The Multi-Jurisdiction Strategy**
   - 14.1.1 Swiss foundation: Neutral base of operations
   - 14.1.2 Delaware C-corp: US operations
@@ -366,7 +367,7 @@
 
 ## Part V: The Implementation (Building Paradise)
 
-### Chapter 15: The Global Referendum (Democracy at Scale)
+### Chapter 14: The Global Referendum (Democracy at Scale)
 - 15.1 **The Platform: TikTok Meets Democracy**
   - 15.1.1 30-second onboarding (simpler than Instagram)
   - 15.1.2 Swipe to allocate (addictive UX)
@@ -390,7 +391,7 @@
   - 15.4.3 Current trajectory: 1M signups/day once viral
   - 15.4.4 Tipping point: Day 280 critical mass achieved
 
-### Chapter 16: The DIH - Government Without Governments
+### Chapter 15: The DIH - Government Without Governments
 - 16.1 **The Structure: Nobody's in Charge (By Design)**
   - 16.1.1 $27B/year controlled by smart contracts
   - 16.1.2 No CEO to bribe, kidnap, or corrupt
@@ -416,7 +417,7 @@
   - 16.4.4 Open source bonus: 2X rewards for sharing
   - 16.4.5 No grants needed: Just start treating
 
-### Chapter 17: The dFDA - The App Store for Not Dying
+### Chapter 16: The dFDA - The App Store for Not Dying
 - 17.1 **The Treatment Marketplace**
   - 17.1.1 Browse treatments like Netflix
   - 17.1.2 Filter by: Effectiveness, cost, side effects
@@ -448,7 +449,7 @@
   - 17.5.4 Speaks every language
   - 17.5.5 Never judges, never rushes
 
-### Chapter 18: The Technology Stack (How We Build God)
+### Chapter 17: The Technology Stack (How We Build God)
 - 18.1 **The Technology Infrastructure**
   - 18.1.1 Smart contracts: Immutable treasury logic
   - 18.1.2 Secure voting system: Cryptographic verification
@@ -479,81 +480,59 @@
 
 ## Part VI: The Proof (This Already Works)
 
-### Chapter 19: Alternative Currencies That Won
-- 19.1 **When Money Dies, People Make New Money**
-  - 19.1.1 Zimbabwe: USD replaced Zim dollars
-  - 19.1.2 Venezuela: Bitcoin replaced bolivars
-  - 19.1.3 Argentina: Anything but pesos
-  - 19.1.4 Weimar Germany: Cigarettes were currency
-- 19.2 **Digital Currencies That Succeeded**
-  - 19.2.1 M-Pesa: Became Kenya's real economy
-  - 19.2.2 WeChat Pay: Killed cash in China
-  - 19.2.3 Bitcoin: $1 trillion despite everything
-  - 19.2.4 Stablecoins: $150B and growing
-- 19.3 **Community Currencies Work**
-  - 19.3.1 Ithaca HOURS: 20 years of success
-  - 19.3.2 Bristol Pound: Local economy thrived
-  - 19.3.3 Time banks: 30 countries participating
-  - 19.3.4 The lesson: People create money when needed
-- 19.4 **VICTORY Bonds Have Better Fundamentals**
-  - 19.4.1 Backed by treaty obligations (government guaranteed)
-  - 19.4.2 Universal demand (100% returns beat everything)
-  - 19.4.3 Network effects (more buyers = more political power)
-  - 19.4.4 Limited supply (only $1B issued)
+### Chapter 18: Political Movements That Changed Everything
+- 19.1 **War Bonds: Capitalism Defeated Fascism**
+  - 19.1.1 WW2: $185B raised from regular people
+  - 19.1.2 Marketing genius: Patriotism + profit
+  - 19.1.3 Celebrity endorsements before influencers
+  - 19.1.4 The lesson: Aligned incentives win wars
+- 19.2 **The Landmine Treaty: Civil Society Won**
+  - 19.2.1 Military-industrial complex opposed
+  - 19.2.2 160+ nations signed anyway
+  - 19.2.3 Nobel Peace Prize validated approach
+  - 19.2.4 The lesson: Citizens > governments
+- 19.3 **The 3.5% Rule: Historical Proof**
+  - 19.3.1 Civil rights: 3.5% ended segregation
+  - 19.3.2 Indian independence: 3.5% beat empire
+  - 19.3.3 Women's suffrage: 3.5% got the vote
+- 19.4 **We Have Advantages They Didn't**
+  - 19.4.1 Internet: Instant global coordination
+  - 19.4.2 Money: We're paying participants
+  - 19.4.3 Data: We can prove what works
+  - 19.4.4 Urgency: People are literally dying
 
-### Chapter 20: Political Movements That Changed Everything
-- 20.1 **War Bonds: Capitalism Defeated Fascism**
-  - 20.1.1 WW2: $185B raised from regular people
-  - 20.1.2 Marketing genius: Patriotism + profit
-  - 20.1.3 Celebrity endorsements before influencers
-  - 20.1.4 The lesson: Aligned incentives win wars
-- 20.2 **The Landmine Treaty: Civil Society Won**
-  - 20.2.1 Military-industrial complex opposed
-  - 20.2.2 160+ nations signed anyway
-  - 20.2.3 Nobel Peace Prize validated approach
-  - 20.2.4 The lesson: Citizens > governments
-- 20.3 **The 3.5% Rule: Historical Proof**
-  - 20.3.1 Civil rights: 3.5% ended segregation
-  - 20.3.2 Indian independence: 3.5% beat empire
-  - 20.3.3 Women's suffrage: 3.5% got the vote
-- 20.4 **We Have Advantages They Didn't**
-  - 20.4.1 Internet: Instant global coordination
-  - 20.4.2 Money: We're paying participants
-  - 20.4.3 Data: We can prove what works
-  - 20.4.4 Urgency: People are literally dying
-
-### Chapter 22: Your Body Is Just a Machine
-- 22.1 **The Engineering Reality of Biology**
-  - 22.1.1 Heart: We replace it (artificial hearts work)
-  - 22.1.2 Kidneys: We replace them (dialysis, transplants)
-  - 22.1.3 Blood: We replace it (transfusions daily)
-  - 22.1.4 Bones: We replace them (titanium upgrades)
-  - 22.1.5 The pattern: Everything is replaceable
-- 22.2 **DNA Is Just Code**
-  - 22.2.1 4 letters: ATCG (simpler than binary)
-  - 22.2.2 Bugs: We can fix them (CRISPR)
-  - 22.2.3 Updates: We can install them (gene therapy)
-  - 22.2.4 Backup: We have stem cells
-- 22.3 **Aging Is Just Damage**
-  - 22.3.1 Telomeres shorten (we can lengthen)
-  - 22.3.2 Cells senesce (we can clear them)
-  - 22.3.3 Proteins misfold (we can refold)
-  - 22.3.4 Mitochondria fail (we can replace)
-  - 22.3.5 The conclusion: Aging is solvable
-- 22.4 **We Fix Everything Else**
-  - 22.4.1 100-year-old cars: Still run with maintenance
-  - 22.4.2 Ancient buildings: Standing after millennia
-  - 22.4.3 Broken computers: We debug them
-  - 22.4.4 Your body: Not special, just neglected
-- 22.5 **The Only Barrier Is Resource Allocation**
-  - 22.5.1 Not physics (biology obeys laws)
-  - 22.5.2 Not knowledge (we know enough)
-  - 22.5.3 Not technology (we have the tools)
-  - 22.5.4 Just money going to bombs instead
+### Chapter 19: Your Body Is Just a Machine
+- 20.1 **The Engineering Reality of Biology**
+  - 20.1.1 Heart: We replace it (artificial hearts work)
+  - 20.1.2 Kidneys: We replace them (dialysis, transplants)
+  - 20.1.3 Blood: We replace it (transfusions daily)
+  - 20.1.4 Bones: We replace them (titanium upgrades)
+  - 20.1.5 The pattern: Everything is replaceable
+- 20.2 **DNA Is Just Code**
+  - 20.2.1 4 letters: ATCG (simpler than binary)
+  - 20.2.2 Bugs: We can fix them (CRISPR)
+  - 20.2.3 Updates: We can install them (gene therapy)
+  - 20.2.4 Backup: We have stem cells
+- 20.3 **Aging Is Just Damage**
+  - 20.3.1 Telomeres shorten (we can lengthen)
+  - 20.3.2 Cells senesce (we can clear them)
+  - 20.3.3 Proteins misfold (we can refold)
+  - 20.3.4 Mitochondria fail (we can replace)
+  - 20.3.5 The conclusion: Aging is solvable
+- 20.4 **We Fix Everything Else**
+  - 20.4.1 100-year-old cars: Still run with maintenance
+  - 20.4.2 Ancient buildings: Standing after millennia
+  - 20.4.3 Broken computers: We debug them
+  - 20.4.4 Your body: Not special, just neglected
+- 20.5 **The Only Barrier Is Resource Allocation**
+  - 20.5.1 Not physics (biology obeys laws)
+  - 20.5.2 Not knowledge (we know enough)
+  - 20.5.3 Not technology (we have the tools)
+  - 20.5.4 Just money going to bombs instead
 
 ## Part VII: Choose Your Future (Gollum or Genie)
 
-### Chapter 23: Path A - Gollumland (The Default Trajectory)
+### Chapter 20: Path A - Gollumland (The Default Trajectory)
 - 23.1 **2030: The AI Arms Race Ends Badly**
   - 23.1.1 Military AI optimizes for victory (you're the threat)
   - 23.1.2 Autonomous weapons: No human in the loop
@@ -584,7 +563,7 @@
   - 23.5.4 Last humans: Living in caves again
   - 23.5.5 Earth's epitaph: "They had everything but chose nothing"
 
-### Chapter 24: Path B - Wishonia (The Magical Kingdom)
+### Chapter 21: Path B - Wishonia (The Magical Kingdom)
 - 24.1 **The Declaration of Wishonia** (2026)
   - 24.1.1 "We hold these truths to be self-evident..."
   - 24.1.2 "...that all humans deserve health, wealth, and happiness"
@@ -624,7 +603,7 @@
   - 24.6.5 Humanity: Upgraded to Humanity 2.0
   - 24.6.6 Next challenge: Which galaxy to explore
 
-### Chapter 25: How We Build Wishonia (The Practical Steps)
+### Chapter 22: How We Build Wishonia (The Practical Steps)
 - 25.1 **The Fork in the Timeline** (You Are Here)
   - 25.1.1 Current trajectory: Gollumland
   - 25.1.2 Alternative path: Wishonia
@@ -655,7 +634,7 @@
 
 ## Part VIII: Join or Get Left Behind
 
-### Chapter 26: Your Personal Benefits (What You Get)
+### Chapter 23: Your Personal Benefits (What You Get)
 - 26.1 **Economic Security**
   - 26.1.1 Trial participation: $2,500 per trial
   - 26.1.2 Healthcare coverage: No more medical bankruptcy
@@ -681,7 +660,7 @@
   - 26.4.4 Sovereign citizen of Wishonia
   - 26.4.5 Co-owner of the future
 
-### Chapter 27: The Three Actions (Do Now)
+### Chapter 24: The Three Actions (Do Now)
 - 27.1 **Action 1: Sign the Referendum** (3 minutes)
   - 27.1.1 Go to WarOnDisease.org
   - 27.1.2 Connect wallet or email
@@ -702,7 +681,7 @@
   - 27.3.4 Researchers: Apply for medical research grants
   - 27.3.5 Everyone: Share knowledge, build community
 
-### Chapter 28: Every Objection Demolished
+### Chapter 25: Every Objection Demolished
 - 28.1 **"This is too complicated"**
   - Democracy is complicated. This just admits it and uses computers to help.
 - 28.2 **"Countries won't cooperate"**
