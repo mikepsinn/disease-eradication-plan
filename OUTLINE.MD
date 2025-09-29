@@ -434,14 +434,8 @@
   - 15.4.1 Patient signs up: $500 immediate payment
   - 15.4.2 Trial completion: $2,000 bonus
   - 15.4.3 Long-term tracking: $100/year for life
-  - 15.4.4 Insurance model: $20 copay for legitimacy
+  - 15.4.4 20% copay requirement: Skin in the game
   - 15.4.5 Direct deposit: No bureaucracy
-- 15.5 **The Researcher Rewards**
-  - 15.5.1 Per patient enrolled: $1,000
-  - 15.5.2 Per trial completed: $100,000
-  - 15.5.3 Successful treatment: $10M bonus
-  - 15.5.4 Open source bonus: 2X rewards for sharing
-  - 15.5.5 No grants needed: Just start treating
 
 ### Chapter 16: The dFDA - The App Store for Not Dying
 - 17.1 **The Treatment Marketplace**
