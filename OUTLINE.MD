@@ -269,16 +269,16 @@
 
 ## Part IV: The Money (How Everyone Gets Rich by Getting Healthy)
 
-### Chapter 12: $WISH - The Currency That Grants Wishes
-- 12.1 **Better Than Bitcoin: Money Backed by Not Dying**
-  - 12.1.1 Bitcoin: Backed by wasted electricity
-  - 12.1.2 Dollar: Backed by nuclear weapons
-  - 12.1.3 $WISH: Backed by human health and happiness
-  - 12.1.4 The ultimate store of value: Life itself
-- 12.2 **The Universal Basic Income That Funds Itself**
-  - 12.2.1 Every human: 1,000 $WISH/month baseline
-  - 12.2.2 Funded by transaction taxes (not money printing)
-  - 12.2.3 Increases with treasury success (aligned incentives)
+### Chapter 12: $WISH - The Fair Money Experiment (UBI That Works)
+- 12.1 **Fixing Money Creation: From Bailouts to Basic Income**
+  - 12.1.1 Current system: Fed prints money for banks
+  - 12.1.2 The cantillon effect: First receivers get rich
+  - 12.1.3 $WISH experiment: Everyone gets new money equally
+  - 12.1.4 Participation reward: Get paid to be a citizen
+- 12.2 **The UBI Demonstration: Participation Pays**
+  - 12.2.1 Vote in Wishocracy: Earn 1,000 $WISH/month
+  - 12.2.2 Transaction tax funds it (like sales tax, but fair)
+  - 12.2.3 Your time has value: Democracy work = compensation
   - 12.2.4 Healthcare included (no insurance needed)
   - 12.2.5 Poverty: Mathematically impossible
 - 12.3 **The Fair Tax: Goodbye IRS, Hello Freedom**
@@ -293,11 +293,11 @@
   - 12.4.3 Get it back in $WISH tokens
   - 12.4.4 Boomers become instant Wishionaires
   - 12.4.5 The great wealth transfer (but fair this time)
-- 12.5 **The Network Effects Make This Unstoppable**
-  - 12.5.1 More users = more value (Metcalfe's Law)
-  - 12.5.2 More transactions = more UBI (positive feedback)
-  - 12.5.3 More health data = better outcomes (learning system)
-  - 12.5.4 Tipping point: When $WISH > Dollar
+- 12.5 **The Monetary Policy Lesson**
+  - 12.5.1 Algorithmic supply: No insider trading possible
+  - 12.5.2 Productivity gains flow to everyone (not just asset holders)
+  - 12.5.3 Transaction velocity creates UBI (economic activity pays citizens)
+  - 12.5.4 The demonstration: Fair money is possible
 
 ### Chapter 13: VICTORY Bonds - War Profiteering for Peace
 - 13.1 **The Instrument: Smart Contracts That Print Money**
@@ -310,7 +310,7 @@
   - 13.2.2 Hedge funds: 15% (meh)
   - 13.2.3 Venture capital: 25% (risky)
   - 13.2.4 VICTORY bonds: 40% (guaranteed by treaty)
-  - 13.2.5 Paid in $WISH: Appreciating currency
+  - 13.2.5 Returns paid from $27B annual budget
 - 13.3 **The Investor Stack**
   - 13.3.1 Founders: $100M at 100X potential
   - 13.3.2 Seed: $400M at 50X potential
@@ -345,15 +345,15 @@
   - 14.4.3 No more inflation tax (purchasing power protected)
   - 14.4.4 The Fed: Museum piece next to bloodletting
 
-### Chapter 15: The Bribery Cascade (Completely Legal Edition)
-- 15.1 **Level 0: The Visionaries** (First believers get everything)
-  - 15.1.1 Founders allocation: 1% of all $WISH forever
-  - 15.1.2 Early team: Life-changing equity
-  - 15.1.3 First 1,000 supporters: OG Wishionaire status
-- 15.2 **Level 1: Billionaires** ($400M for the bootstrap)
-  - 15.2.1 Peter Thiel types: Contrarian bet pays 100X
-  - 15.2.2 Elon Musk: Becomes first trillionaire via $WISH
-  - 15.2.3 Naming rights: "The Gates Malaria Cure"
+### Chapter 15: The Coalition Building (Aligned Incentives)
+- 15.1 **Level 0: The Organizers** (Making it happen)
+  - 15.1.1 Founders: Compensated for full-time work
+  - 15.1.2 Early team: Fair wages for organizing labor
+  - 15.1.3 First supporters: Early UBI participation rewards
+- 15.2 **Level 1: Philanthropists** (Funding the mission)
+  - 15.2.1 Health-focused donors: Direct impact on cures
+  - 15.2.2 Democracy advocates: Strengthening participation
+  - 15.2.3 Recognition: Named research programs
 - 15.3 **Level 2: Defense Contractors** (The beautiful jujitsu)
   - 15.3.1 Lockheed gets $5B in VICTORY bonds
   - 15.3.2 40% returns > 8% from weapons
@@ -373,12 +373,12 @@
   - 15.6.1 Exclusive access to cure announcements
   - 15.6.2 Ad revenue from $WISH ecosystem
   - 15.6.3 The story of the century (they need content)
-- 15.7 **Level 6: Everyone** (The people get paid)
-  - 15.7.1 Sign referendum: 100 $WISH
-  - 15.7.2 Share with friends: 10 $WISH each
-  - 15.7.3 Participate in trials: 500 $WISH
-  - 15.7.4 Stay healthy: Bonus $WISH rewards
-  - 15.7.5 UBI forever: 1,000 $WISH monthly
+- 15.7 **Level 6: Everyone** (Democracy that compensates)
+  - 15.7.1 Sign referendum: Thank you payment in $WISH
+  - 15.7.2 Share information: Help others participate
+  - 15.7.3 Join trials: Fair compensation for contribution
+  - 15.7.4 Health data sharing: Privacy-protected rewards
+  - 15.7.5 Ongoing UBI: 1,000 $WISH monthly for participation
 
 ### Chapter 16: The Legal Architecture (Staying Out of Prison)
 - 16.1 **The Multi-Jurisdiction Strategy**
@@ -722,13 +722,13 @@
 
 ## Part VIII: Join or Get Left Behind
 
-### Chapter 28: Your Personal ROI (What You Get)
-- 28.1 **Financial Returns**
-  - 28.1.1 Founders: $1M+ in $WISH
-  - 28.1.2 Early investors: 100X returns
-  - 28.1.3 Referendum voters: 1,000 $WISH
-  - 28.1.4 Monthly UBI: 1,000 $WISH forever
-  - 28.1.5 Retroactive refund: Lifetime war taxes
+### Chapter 28: Your Personal Benefits (What You Get)
+- 28.1 **Economic Security**
+  - 28.1.1 UBI participation: 1,000 $WISH monthly
+  - 28.1.2 Healthcare coverage: No more medical bankruptcy
+  - 28.1.3 Democratic work: Your civic time compensated
+  - 28.1.4 Transaction fairness: No more inflation tax
+  - 28.1.5 Tax justice: Retroactive war spending returned
 - 28.2 **Health Returns**
   - 28.2.1 Your cancer: Prevented or cured
   - 28.2.2 Your depression: Actually treated
@@ -754,20 +754,20 @@
   - 29.1.2 Connect wallet or email
   - 29.1.3 Verify identity (30 seconds)
   - 29.1.4 Vote YES on the treaty
-  - 29.1.5 Receive 100 $WISH immediately
-  - 29.1.6 Share for 10 $WISH per referral
+  - 29.1.5 Start earning UBI for participation
+  - 29.1.6 Help others learn about the treaty
 - 29.2 **Action 2: Invest** (If you have capital)
   - 29.2.1 VICTORY Bonds: $100 minimum
   - 29.2.2 Expected return: 40% annual
   - 29.2.3 Risk: Zero if treaty fails (refund)
-  - 29.2.4 Upside: Unlimited if we win
-  - 29.2.5 Due diligence: Read the damn book
+  - 29.2.4 Upside: Massive when treaty passes
+  - 29.2.5 Due diligence: Read the economics chapter
 - 29.3 **Action 3: Build** (If you have skills)
-  - 29.3.1 Developers: Bounties in $WISH
-  - 29.3.2 Organizers: District coordinator roles
-  - 29.3.3 Influencers: Affiliate program
-  - 29.3.4 Researchers: Early grant access
-  - 29.3.5 Everyone: Spread the word
+  - 29.3.1 Developers: Paid work building systems
+  - 29.3.2 Organizers: Compensated coordinator positions
+  - 29.3.3 Educators: Teach others about the treaty
+  - 29.3.4 Researchers: Apply for medical research grants
+  - 29.3.5 Everyone: Share knowledge, build community
 
 ### Chapter 30: Every Objection Demolished
 - 30.1 **"This is too complicated"**
