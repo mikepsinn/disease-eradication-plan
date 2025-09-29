@@ -226,6 +226,17 @@
   - No country loses relative power (everyone cuts equally)
   - Small enough to pass, big enough to matter
   - The precedent: If 1% works, why not 2%?
+- **The Two-Tier Peace Dividend**
+  - Captured Dividend: $24.4B to DIH treasury (direct military cuts)
+  - Societal Dividend: $92B to humanity (total economic benefit)
+    - Lost economic growth avoided: $24.4B
+    - Infrastructure not destroyed: $18.8B
+    - Lives not lost: $10B
+    - Trade not disrupted: $6.2B
+    - Veterans not created: $2B
+    - Refugees not displaced: $1.5B
+  - We fund DIH with the captured $24.4B
+  - Society keeps the other $67.6B in value creation
 - **What 1% Less War Buys in Health**
   - $27B funds 54,000 clinical trials at $500K each
   - Or 27 million patients in dFDA trials at $1,000 each
@@ -284,6 +295,30 @@
   - Best case (95% reduction like RECOVERY): $95B annual savings
   - These aren't projections - Oxford already proved it works
   - Market capture: Even 10% adoption = $5B value creation
+- **The Combined $142 Billion Annual Win**
+  - Peace Dividend: $92B from 1% less conflict
+  - dFDA Savings: $50B from trial efficiency
+  - Total Direct Benefit: $142B every year
+  - This is before any multiplier effects
+  - Equivalent to ending world hunger 14 times over annually
+- **The $16.5 Trillion Endgame (When Everything Compounds)**
+  - Direct savings: $155.5B/year (military + trials + allocation)
+  - Health value created: $126B/year (840,000 QALYs)
+  - Economic multiplier effects: $16.2T/year when mature
+    - Healthy people work more: +$8.4T productivity
+    - No refugee crises: +$1.5T saved
+    - Infrastructure preserved: +$1.9T not destroyed
+    - Global trade flows: +$2.4T commerce
+    - Innovation compounds: +$2.0T new industries
+  - Total Annual Value at maturity: $16.5 TRILLION
+  - That's more than China's entire GDP
+  - ROI: 25,781:1 (not a typo)
+- **The Compound Growth Timeline**
+  - Year 1: $142B direct benefit (pays for itself 220x over)
+  - Year 5: ~$1T as network effects kick in
+  - Year 10: ~$5T as health improvements compound
+  - Year 20: Full $16.5T annual value realized
+  - Every second we wait: $522,539 destroyed forever
 
 ### Chapter 11: How Central Banks Fund Your Death (The War Machine's ATM)
 - **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
