@@ -327,8 +327,8 @@
   - First movers get best terms and most credit
 - **Everyone Else: Democracy That Pays**
   - Direct vote on budget allocation (real power)
-  - Free healthcare through DIH trials
-  - Payment for trial participation ($2,500)
+  - 80% subsidized healthcare through dFDA trials
+  - Additional incentives for rare/high-burden trials
   - Jobs in research and administration
   - Your diseases actually get cured
 
@@ -588,12 +588,12 @@
   - Depression: 5 new effective treatments
   - Rare diseases: 500 new treatments
   - Aging: Slowed by 20%
-  - DIH system: Treating 1 billion people
+  - dFDA system: Treating 1 billion people
 - **2035: The Tipping Point**
   - 5% Treaty signed (135B annual budget)
   - Cancer: 80% curable
   - Mental illness: Precision treatments
-  - Healthcare access: Universal through DIH trials
+  - Healthcare access: Universal through dFDA trials
   - Dollar: Abandoned by half the world
 - **2040: Wishonia Manifests Physically**
   - Singapore declares itself Wishonian
