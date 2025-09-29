@@ -38,6 +38,15 @@
   - One fighter jet = entire rare disease research budget
   - Viagra got more funding than Alzheimer's (priorities!)
   - 166 BILLION untested treatment combinations (we've tried 0.0001%)
+- **Humanity's Budget as a Family Making $100,000/Year**
+  - If global spending was a family budget:
+    - Healthcare spending: $8,200 (treating symptoms after we're sick)
+    - Military spending: $2,700 (home defense)
+    - Medical research: $68 (finding actual cures)
+  - The punchline: We spend 40X more on weapons than cures
+  - The tragedy: We spend 115X more treating disease than curing it
+  - The joke: One fighter jet costs more than all rare disease research combined
+  - Visual: On a pie chart, the research slice (0.068%) is literally invisible
 - **The 1972 Catastrophe: When Your Wages Got Divorced From Your Work**
   - Nixon kills gold standard: Money becomes meaningless paper
   - Productivity up 246%, wages up 115% (where'd the money go?)
