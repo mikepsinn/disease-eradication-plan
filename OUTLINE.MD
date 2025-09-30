@@ -26,6 +26,7 @@
   - China already hacked our nuclear systems (we're funding their military)
   - Every submarine = 1,000 cancer labs we didn't build
   - The nuclear extinction lottery: 13,000 warheads, 0 winners
+  - Switzerland's alternative: 0.7% on defense, $93K GDP per capita
 - **Disease: The Holocaust in Slow Motion** ($109.1T/year in preventable suffering)
   - Cancer: 10M deaths/year while we argue about pronouns
   - Mental illness: 1 billion suffering, $5T lost productivity
