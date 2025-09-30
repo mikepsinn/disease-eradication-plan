@@ -108,3 +108,6 @@ format:
     controls: true
     navigation-mode: vertical
     progress: true
+  pptx:
+    reference-doc: assets/template.pptx
+    incremental: false
