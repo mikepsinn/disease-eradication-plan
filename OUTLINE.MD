@@ -260,6 +260,14 @@
   - Verification: Budgets are public anyway
   - Defection punishment: Massive PR nightmare
   - Cooperation reward: Heroes of humanity
+- **Treaty Verification That Actually Works**
+  - Blockchain receipts: Every dollar tracked publicly
+  - Satellite verification: Military bases don't lie
+  - Whistleblower bounties: $10M for proving cheating
+  - Automatic penalties: Smart contracts freeze payments
+  - Name and shame: Real-time public scoreboards
+  - Insurance model: Countries pay into compliance pool
+  - If caught cheating: Lose 10X what you tried to save
 - **The Governance Revolution: First Wishocratic Budget Ever**
   - Anyone on Earth can propose how to spend the $27B
   - 280 million+ people directly allocating via pairwise choices
@@ -485,7 +493,7 @@
   - Patient consent management
   - Regulatory compliance automation
 
-### Chapter 15: The Global Referendum (Democracy at Scale)
+### Chapter 16: The Global Referendum (Democracy at Scale)
 - **The Platform: Wishocracy App**
   - 30-second onboarding
   - Swipe interface for budget allocation
@@ -509,7 +517,10 @@
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
 
-### Chapter 16: The DIH - Government Without Governments
+### Chapter 17: The DIH - Government Without Governments
+- **The Bridge Year: Running Both Systems Until One Wins**
+  - dFDA runs parallel to FDA (not replacement, competition)
+  - Patients choose: Old slow FDA or new fast dFDA
 - **The Structure: Distributed Control**
   - $27B/year flows through transparent smart contracts
   - No CEO or board making unilateral decisions
@@ -586,6 +597,14 @@
   - Real-time results (pivot fast)
   - Get paid when patients join your trials
   - FDA-X Prize: $X million for 80X cost reduction proof
+- **For Doctors: Finally Practice Medicine Not Paperwork**
+  - One-click trial enrollment for patients
+  - Liability protection via insurance pool
+  - Get paid for patient outcomes, not procedures
+  - Real-time decision support from global data
+  - No prior authorization hell (instant approval)
+  - CME credits for participating in trials
+  - Your EHR already integrated (Epic/Cerner APIs built in)
 - **For Patients: Find What Actually Works**
   - Enter your condition
   - See treatments ranked by real effectiveness
@@ -615,6 +634,12 @@
   - Pragmatic trials: Compare to current standard of care
   - Results in months, not decades
   - Rate researchers and trials
+- **Patient Safety Without Bureaucracy**
+  - AI monitoring: 24/7 adverse event detection
+  - Automatic stopping: Trial halts if harm signal detected
+  - Vulnerable protection: Extra safeguards for children/pregnant/elderly
+  - Liability Insurance
+  - Real-time dashboards: See safety data as it happens
 - **The Data Liberation**
   - Open-source trial marketplace (decentralized alternative to FDA.gov)
   - Zero-knowledge proofs protect patient privacy
@@ -627,6 +652,14 @@
   - Open APIs enable any platform to participate
   - Patient-owned records
   - Designed to complement, not replace, existing infrastructure
+- **Privacy Paradox Solved: Public Science, Private Patients**
+  - Individual level: Your data encrypted, you hold keys
+  - Aggregated level: Results public after differential privacy
+  - Right to delete: Remove your data anytime (GDPR++)
+  - Re-identification bounties: $1M to anyone who can break anonymity
+  - Homomorphic encryption: Compute on data without seeing it
+  - The rule: Researchers see patterns, not people
+  - Radical transparency: Every query logged and public
 - **The Result: 80X Medical Progress Acceleration**
   - Before: 17 years, $2.6B per drug, 95% of diseases ignored
   - After: 6 months, $30M per treatment, 100% of diseases targetable
