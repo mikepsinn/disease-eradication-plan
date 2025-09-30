@@ -1,0 +1,54 @@
+---
+title: "Global Spending Priorities"
+description: "Bar chart comparing $109T disease treatment, $9.7T war, vs $68B finding cures"
+doc-title: "budget-waste"
+---
+
+```{python}
+#| label: budget-waste
+#| fig-cap: "The Stupidest Budget on Earth"
+
+import sys
+sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
+
+import matplotlib.pyplot as plt
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_MID, COLOR_LIGHT, COLOR_ACCENT, COLOR_DARK, COLOR_WHITE, COLOR_BG
+)
+
+# Setup styling
+setup_chart_style(style='light', dpi=150)
+
+# Data
+categories = ['Disease\nTreatment', 'War &\nConflict', 'Finding\nCures']
+amounts = [109.1, 9.7, 0.068]
+colors_budget = [COLOR_MID, COLOR_LIGHT, COLOR_ACCENT]
+
+# Create chart
+fig, ax = plt.subplots(figsize=(18, 10))
+bars = ax.bar(categories, amounts, color=colors_budget, width=0.6,
+              edgecolor=COLOR_WHITE, linewidth=2)
+
+# Add value labels on bars
+for bar, amount in zip(bars, amounts):
+    height = bar.get_height()
+    label = f'${amount}T' if amount >= 1 else f'${int(amount*1000)}B'
+    ax.text(bar.get_x() + bar.get_width()/2., height,
+            label, ha='center', va='bottom', fontsize=48, weight='bold', color=COLOR_DARK)
+
+ax.set_ylabel('Trillions per Year', fontsize=36, weight='bold', color=COLOR_DARK)
+ax.tick_params(axis='both', labelsize=32, colors=COLOR_MID)
+ax.set_ylim(0, 120)
+clean_spines(ax)
+ax.grid(axis='y', alpha=0.3, linestyle='--', color=COLOR_LIGHT)
+
+# Add branding
+add_watermark(fig)
+
+plt.tight_layout()
+plt.savefig('assets/charts/budget-waste.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+plt.show()
+```
+
+**Key Insight:** We spend **1,600X more** treating disease than curing it. That's $119 trillion on the problem vs $68 billion on the solution.

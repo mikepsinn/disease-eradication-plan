@@ -1,0 +1,52 @@
+---
+title: "Annual Deaths from War and Disease"
+description: "Pie chart showing 69 million annual deaths: 55M from disease, 14M from war"
+doc-title: "annual-deaths"
+---
+
+```{python}
+#| label: annual-deaths
+#| fig-cap: "Annual Deaths from War and Disease"
+
+import sys
+sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
+
+import matplotlib.pyplot as plt
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark,
+    COLOR_ACCENT, COLOR_MID, COLOR_DARK, COLOR_WHITE, COLOR_BG
+)
+
+# Setup styling
+setup_chart_style(style='light', dpi=150)
+
+# Data
+sizes = [55, 14]
+labels = ['Disease\n55M', 'War\n14M']
+colors = [COLOR_ACCENT, COLOR_MID]
+explode = (0.05, 0.05)
+
+# Create chart
+fig, ax = plt.subplots(figsize=(10, 10))
+wedges, texts, autotexts = ax.pie(
+    sizes,
+    explode=explode,
+    labels=labels,
+    colors=colors,
+    autopct='',
+    startangle=90,
+    textprops={'fontsize': 32, 'weight': 'bold', 'color': COLOR_DARK},
+    wedgeprops={'edgecolor': COLOR_WHITE, 'linewidth': 2}
+)
+
+ax.set_title('Annual Deaths', fontsize=40, pad=20, weight='bold', color=COLOR_DARK)
+
+# Add branding
+add_watermark(fig)
+
+plt.tight_layout()
+plt.savefig('assets/charts/annual-deaths.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+plt.show()
+```
+
+**Key Insight:** 69 million people die every year from preventable causes—55 million from disease and 14 million from war. This is the human cost of our current budget priorities.
