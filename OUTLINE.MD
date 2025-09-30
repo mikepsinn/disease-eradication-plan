@@ -672,76 +672,108 @@
 
 ## Part VII: Choose Your Future (Gollum or Genie)
 
-### Chapter 21: Path A - Gollumland (The Default Trajectory)
-- **2030: The AI Arms Race Ends Badly**
-  - Military AI optimizes for victory (you're the threat)
-  - Autonomous weapons: No human in the loop
-  - China vs US: MAD but with robots
-  - Your savings: Worthless from money printing
-  - Your health: Ignored while building Skynet
-- **2035: The Currency Collapse**
-  - Dollar dies from infinite printing
-  - Hyperinflation: Wheelbarrows of worthless paper
-  - Bank bail-ins: Your savings stolen "legally"
-  - CBDCs: Total financial surveillance
-  - Black markets: Only real economy left
-- **2040: Peak Gollum (Tribalism Maximized)**
-  - 10,000 micro-nations at war
-  - Resource wars over water and food
-  - Climate refugees: 2 billion displaced
-  - Disease returns: Antibiotics stop working
-  - Life expectancy: Dropping fast
-- **2045: The Die-Off Begins**
-  - Pandemics: No research, no cures
-  - Famine: Supply chains collapsed
-  - Violence: Everyone fighting everyone
-  - Population: From 10B to 1B
-- **2050: Extinction or Near Enough**
-  - Nuclear winter from "limited" exchange
-  - Bioweapons: Escaped and everywhere
-  - AI: Decided humans are the problem
-  - Last humans: Living in caves again
-  - Earth's epitaph: "They had everything but chose nothing"
+### Chapter 21: Path A - Gollumland (Humanity Becomes Gollum, Precious Military Spending)
+- **2030: The AI Arms Race (Death Optimization Wins)**
+  - Military AI: Optimized to eliminate threats (that's you)
+  - The default objective function: Minimize resistance to authority
+  - Skynet isn't evil, just following its programming
+  - Your savings: Inflated to nothing by infinite money printing
+  - Your health: Sacrificed for the next fighter jet upgrade
+  - China vs US: MAD but with robots (nobody wins, everybody dies)
+- **2035: The Currency Collapse (Your Dollars Become Toilet Paper)**
+  - Dollar dies from Fed printing $100T for the next war
+  - Hyperinflation: A loaf of bread costs $10,000
+  - Bank bail-ins: Your savings confiscated "for the greater good"
+  - CBDCs: Every transaction monitored, dissent = account frozen
+  - Black markets: Only real economy (paid in gold and ammo)
+  - You eat bugs while elites eat steak (WEF wet dream realized)
+- **2040: Peak Gollum (Tribalism Maximized, "My Precious" Military Budget)**
+  - 10,000 micro-nations fighting over scraps
+  - IRS has 500,000 armed agents while hospitals close
+  - Technology exists only for destruction and surveillance
+  - "My precious" military spending while your kids die of treatable diseases
+  - Climate refugees: 2 billion displaced, borders militarized
+  - Antibiotics stop working: Minor cuts become death sentences
+  - Humanity's collective IQ: Dropping to Gollum levels
+- **2045: The Die-Off Begins (Nature's Final Solution)**
+  - Pandemics: No research, no cures (all money went to missiles)
+  - Famine: Supply chains collapsed, cities starving
+  - Violence: Neighbor killing neighbor for food
+  - Population: From 10B to 1B in a decade
+  - Average lifespan: Back to 35 years
+  - Mental illness: 80% of survivors clinically insane
+- **2050: Extinction (We Chose This)**
+  - Nuclear winter from "limited" exchange (oops)
+  - Bioweapons: Released by accident, killing indiscriminately
+  - AI genocide: Decided humans are the virus (it's not wrong)
+  - Last humans: Fighting over bunker supplies in radioactive wastelands
+  - Final generation: Sterile from radiation, dying alone
+  - Earth's epitaph: "They had magic but chose madness"
+  - The universe doesn't notice or care
 
-### Chapter 22: Path B - Wishonia (The Magical Kingdom)
-- **The Declaration of Wishonia** (2026)
+### Chapter 22: Path B - Wishonia (Humanity Becomes a Superintelligent Genie)
+- **The Declaration of Wishonia** (2026 - We Just Decided It Exists)
   - "We hold these truths to be self-evident..."
   - "...that all humans deserve health, wealth, and happiness"
-  - Population: 280 million founders
-  - Territory: The internet (for now)
-  - Economy: Post-scarcity through medical innovation
-  - Constitution: Maximize median wellbeing
-- **2030: The First Wishes Granted**
-  - Type 1 diabetes: Major breakthrough in treatment
-  - Depression: 5 new treatment pathways identified
-  - Rare diseases: 500 new trials launched
-  - Aging: Biomarkers identified and tracked
-  - dFDA system: Millions joining trials globally
-- **2035: The Tipping Point**
-  - 5% Treaty signed (135B annual budget)
-  - Cancer: 80% curable
-  - Mental illness: Precision treatments
-  - Healthcare access: Universal through dFDA trials
-  - Dollar: Abandoned by half the world
-- **2040: Wishonia Manifests Physically**
-  - Singapore adopts DIH model
-  - California follows with state program
-  - Disease: Personalized prevention standard
-  - Work: Transformed by health innovation
-  - Traditional healthcare: Obsolete
-- **2045: The Medical Renaissance**
-  - AI: Optimized for health discovery, not warfare
-  - Aging: Major interventions extending healthspan
-  - Personalized medicine: Treatments tailored to your genome
-  - Global health: Every disease has active research
-  - Prevention focus: Disease stopped before symptoms
-- **2050: Paradise Achieved**
-  - Death: Optional (choose your lifespan)
-  - Suffering: Extinct (unless you want it)
-  - Poverty: Incomprehensible concept
-  - War: Like cannibalism (historically bizarre)
-  - Humanity: Upgraded to Humanity 2.0
-  - Next challenge: Which galaxy to explore
+  - Population: 280 million founders (before we even have land)
+  - Territory: The internet first, then cities, then Earth
+  - Currency: $WISH (backed by health outcomes, not gold or violence)
+  - Constitution: Everyone is sovereign, maximize median joy
+  - Economy: Post-scarcity through health innovation + universal basic income
+  - First law: Curing people is more profitable than killing them
+- **2030: The Genie Awakens (First Wishes Granted)**
+  - $WISH becomes primary currency for 1 billion people
+  - Universal Basic Income: 1,000 $WISH/month to every human (poverty deleted)
+  - IRS dissolved: $300B/year saved, zero tax forms ever again
+  - Type 1 diabetes: Cured (not managed, CURED)
+  - Depression: 5 treatments that actually work (not SSRIs that don't)
+  - First cancer vaccines: 90% effective
+  - Aging: Reversed in mice (humans next)
+  - AI becomes our golden mirror: Reflecting wisdom not war
+  - Collective IQ: 8 billion networked brains = planetary superintelligence
+  - Fed officials in prison for crimes against humanity (just kidding, they fled to Switzerland)
+- **2035: The Tipping Point (Magic Becomes Normal)**
+  - 5% Treaty signed: $135B annual budget (bigger than most countries)
+  - Cancer: 80% curable, 20% preventable
+  - Mental illness: Precision treatments based on your genome
+  - Healthcare: Free through dFDA trials (insurance companies extinct)
+  - Dollar: Abandoned by half the world for $WISH
+  - Work week: 20 hours (AI does the boring stuff)
+  - Productivity gains: 100% to workers via $WISH (not to shareholders)
+  - Life expectancy: 100 becomes the new 60
+- **2040: Wishonia Manifests Physically (The Network State Materializes)**
+  - Singapore declares itself first Wishonian territory
+  - California secedes to join Wishonia (nobody fights it)
+  - Cities worldwide declare themselves "Wishonian Free Zones"
+  - Disease: Optional (choose your health settings like a video game)
+  - Work: Optional (UBI covers everything, work for fun)
+  - Aging: Reversible (be 25 forever if you want)
+  - Dollar: Dead (everyone uses $WISH)
+  - War: Incomprehensible (like cannibalism today)
+  - Scarcity: Ended (3D print anything from atoms)
+  - Every human: Direct democracy vote on everything
+- **2045: The Medical Renaissance (Indistinguishable From Magic)**
+  - AI doctors: 1000X better than human (and they care more)
+  - Aging: Completely optional (death by choice only)
+  - All diseases: Curable or preventable
+  - Mental illness: Extinct (brain chemistry perfected)
+  - Personalized medicine: Treatments designed for YOUR specific DNA
+  - Nanobots: Fixing you from inside 24/7
+  - Median wealth: 1 million $WISH (post-scarcity achieved)
+  - The Fed: In a museum next to bloodletting tools
+- **2050: Paradise Achieved (The Magical Kingdom Realized)**
+  - Death: Optional (immortality available but not mandatory)
+  - Suffering: Extinct (unless you're into that)
+  - Poverty: A weird historical concept nobody understands
+  - War: As bizarre as human sacrifice seems now
+  - Every human: A sovereign of their own reality
+  - Collective achievements: We cure death, solve physics, talk to aliens
+  - Humanity 2.0: Upgraded biology, enhanced cognition, infinite lifespan
+  - Work: Whatever brings you joy (robots do everything else)
+  - Money: $WISH only (dollars in history books as "that thing that failed")
+  - Government: Direct democracy via AI (no politicians needed)
+  - Next challenge: Which galaxy to colonize first
+  - Earth's epitaph: "They chose magic over madness"
 
 
 ## Part VIII: Join or Die (Literally)
@@ -754,11 +786,13 @@
   - Job creation: Research and healthcare jobs
   - Economic growth: From health innovation
 - **Health Returns**
-  - Your cancer: Prevented or cured
-  - Your depression: Actually treated
-  - Your aging: Slowed then reversed
-  - Your genetics: Debugged
-  - Your lifespan: +50-100 years
+  - Your cancer: Prevented before it starts (or cured if you have it)
+  - Your depression: Actually fixed (not just numbed with SSRIs)
+  - Your aging: Reversed (choose your biological age)
+  - Your genetics: Debugged like software
+  - Your lifespan: +50-100 healthy years (death optional by 2040)
+  - Healthcare cost: $0 (covered by $WISH economy)
+  - Insurance premiums: $0 (insurance companies extinct)
 - **Freedom Returns**
   - Direct vote on health spending priorities
   - No more insurance paperwork
@@ -796,10 +830,13 @@
 ### Chapter 26: Every Objection Demolished
 - **"This is too complicated"**
   - Democracy is complicated. This just admits it and uses computers to help.
+  - You use Netflix's algorithm to pick movies, why not health spending?
 - **"Countries won't cooperate"**
   - They will when we bribe their leaders and fund their opponents.
 - **"You can't cure aging"**
-  - We replace hearts. Aging is just harder. Not impossible.
+  - We replace hearts, kidneys, blood, bones
+  - Aging is just harder engineering, not magic
+  - We went to the moon with slide rules, we can fix cells with AI
 - **"40% returns are impossible"**
   - Medallion Fund does 39% with $10B cap. We do 40%+ with unlimited scaling as treaty grows.
 - **"Direct democracy is mob rule"**
@@ -813,14 +850,16 @@
 - **"The technology doesn't exist"**
   - RECOVERY trial proved it does. We're just scaling.
 - **"This is unrealistic"**
-  - So was flight, internet, democracy, antibiotics, and Bitcoin.
+  - So was: Flight, internet, democracy, antibiotics, Bitcoin, landing on moon
+  - "Unrealistic" is what people say before paradigm shifts
+  - Reality: 69 million people dying unnecessarily each year
 - **"What if it fails?"**
-  - Then we die of preventable diseases like we're doing now.
-- **"I don't trust algorithms"**
-  - You trust politicians? That's adorable.
+  - Then we die of preventable diseases like we're doing now
+  - We're already in the worst timeline, can only improve
+  - Doing nothing guarantees Gollumland, trying gives us a chance at paradise
 - **"But all Wars on X have failed"**
   - Those were government wars using central planning
-  - They created bureaucracies that needed the problem
+  - They created bureaucracies that needed the problem to exist
   - We're using markets that profit from solutions
   - Our "war" is actually a peace treaty with biology
   - The War on Disease is really the Market for Health
