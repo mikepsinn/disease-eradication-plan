@@ -25,9 +25,9 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## System Architecture
 
-- **Voting protocol**: Use an end-to-end verifiable scheme ([Helios or similar](../references.md#helios-voting)) with individual ballot verification and public bulletin board.
-  - Reference: [Helios (Adida et al.)](../references.md#helios-voting)
-- **Identity / Sybil resistance**: Multi-factor: email/phone OTP; device/browser fingerprinting; optional liveness/biometrics; integration with national e-ID where available (e.g., models informed by [Estonia's experience](../references.md#estonia-internet-voting)); proof-of-uniqueness partners.
+- **Voting protocol**: Use an end-to-end verifiable scheme ([Helios or similar](../references.qmd#helios-voting)) with individual ballot verification and public bulletin board.
+  - Reference: [Helios (Adida et al.)](../references.qmd#helios-voting)
+- **Identity / Sybil resistance**: Multi-factor: email/phone OTP; device/browser fingerprinting; optional liveness/biometrics; integration with national e-ID where available (e.g., models informed by [Estonia's experience](../references.qmd#estonia-internet-voting)); proof-of-uniqueness partners.
 - **Fraud controls**: Risk scoring, velocity limits, manual review queues; bounty program for reporting abuse.
 - **Internationalization**: 40+ locale support; accessibility-first UI.
 

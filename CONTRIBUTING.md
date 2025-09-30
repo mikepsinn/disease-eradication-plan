@@ -253,16 +253,16 @@ dateCreated: "YYYY-MM-DDTHH:MM:SS.sssZ"
 
 ### 4. Sourcing and Citation Standard (CRITICAL)
 
-**Every claim needs a source.** All source quotes go in `brain/book/references.md`.
+**Every claim needs a source.** All source quotes go in `brain/book/references.qmd`.
 
 
 1. Check if your source is already there
-2. If yes, link to it: `[your claim](./references.md#anchor-id)`
+2. If yes, link to it: `[your claim](./references.qmd#anchor-id)`
 3. If no, add it using the format you see in that file
 
-Example in-text: `[The world spends 40x more on war](./references.md#sipri-2024) than on [curing disease](./references.md#med-research-funding).`
+Example in-text: `[The world spends 40x more on war](./references.qmd#sipri-2024) than on [curing disease](./references.qmd#med-research-funding).`
 
-Format for new references in `references.md`:
+Format for new references in `references.qmd`:
 ```markdown
 <a id="unique-anchor-id"></a>
 

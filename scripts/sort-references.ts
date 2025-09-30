@@ -7,7 +7,7 @@ interface Reference {
 }
 
 async function sortReferences() {
-  const referencesFilePath = path.join(process.cwd(), 'brain', 'book', 'references.md');
+  const referencesFilePath = path.join(process.cwd(), 'brain', 'book', 'references.qmd');
   const fileContent = await fs.readFile(referencesFilePath, 'utf-8');
 
   const lines = fileContent.split('\n');
