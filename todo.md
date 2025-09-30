@@ -28,18 +28,18 @@
 
 ### Tasks
 
-- [ ] **CREATE** `brain/book/theory.qmd` (P0 - blocks presentation)
-  - Why central planning kills (Soviet famines, FDA delays)
-  - Why markets work (price signals, distributed knowledge)
-  - Public choice theory (self-interest, not idealism)
-  - Wisdom of crowds (8B > 200 bureaucrats)
-  - Keep to 300-500 words (this is a summary)
+- [x] ~~**CREATE** `brain/book/theory.qmd` (P0 - blocks presentation)~~ ✅ DONE
+  - ~~Why central planning kills (Soviet famines, FDA delays)~~
+  - ~~Why markets work (price signals, distributed knowledge)~~
+  - ~~Public choice theory (self-interest, not idealism)~~
+  - ~~Wisdom of crowds (8B > 200 bureaucrats)~~
+  - ~~Keep to 300-500 words (this is a summary)~~
 
-- [ ] **CREATE** `brain/book/futures.qmd` (P0 - blocks presentation)
-  - Two paths: Gollumland (extinction) vs Wishonia (transcendence)
-  - The Three Subs vs The Three Supers
-  - One 1% decision determines which timeline
-  - Keep to 300-500 words (this is a summary)
+- [x] ~~**CREATE** `brain/book/futures.qmd` (P0 - blocks presentation)~~ ✅ DONE
+  - ~~Two paths: Gollumland (extinction) vs Wishonia (transcendence)~~
+  - ~~The Three Subs vs The Three Supers~~
+  - ~~One 1% decision determines which timeline~~
+  - ~~Keep to 300-500 words (this is a summary)~~
 
 - [ ] **REVIEW** `brain/book/economics.qmd` (P1)
   - Strengthen VICTORY Bonds pitch (40% returns)
@@ -452,8 +452,8 @@ fig.text(0.98, 0.02, 'WarOnDisease.org',
 
 | Phase | Status | Completion | Deliverable |
 |-------|--------|------------|-------------|
-| Phase 1: Foundation | 🟡 In Progress | 5/7 summaries | 7 part summaries |
-| Phase 2: Quick Launch | ⏸️ Blocked | 0% | Website + Presentation |
+| Phase 1: Foundation | ✅ Complete | 7/7 summaries | 7 part summaries |
+| Phase 2: Quick Launch | 🟢 Ready | 0% | Website + Presentation |
 | Phase 3: Theory | ⏸️ Blocked | 0/4 chapters | Theory foundation |
 | Phase 4: Fill Gaps | ⏸️ Waiting | 0/5 chapters | Complete skeleton |
 | Phase 5: Reframe | ⏸️ Waiting | 0/15 chapters | Enhanced content |
@@ -463,14 +463,13 @@ fig.text(0.98, 0.02, 'WarOnDisease.org',
 
 ### Files Status
 
-**Complete:** 7/33 chapters (21%)
+**Complete:** 9/33 chapters (27%)
 - ✅ Part I: Ch 1, 2 (Evolution, War+Disease)
 - ✅ Part VI: Ch 20 (Body as Machine)
 - ✅ Part VII: Ch 21, 22 (Dystopia, Utopia)
-- ✅ 2 part summaries (problem, solution)
+- ✅ 4 part summaries (problem, solution, theory, futures)
 
-**To Create:** 11/33 chapters (33%)
-- ⚠️ 2 part summaries (theory, futures) - **BLOCKS PHASE 2**
+**To Create:** 9/33 chapters (27%)
 - ⚠️ 4 theory chapters - **PHASE 3**
 - ⚠️ 5 gap chapters - **PHASE 4**
 
