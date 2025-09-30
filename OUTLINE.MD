@@ -621,6 +621,15 @@
 ## Part VI: The Proof (This Already Works)
 
 ### Chapter 19: Political Movements That Changed Everything
+- **Switzerland: The 200-Year Proof That Peace Creates Wealth**
+  - No natural resources: Just mountains and cows
+  - Center of TWO world wars: Still avoided both
+  - Result: $93,000 GDP per capita (vs US $76,000)
+  - Healthcare: Universal, excellent, 12% of GDP (vs US 18%)
+  - The lesson: Not fighting wars = getting rich
+  - Defense spending: 0.7% GDP (purely defensive)
+  - Life expectancy: 84 years (vs US 79)
+  - They proved it: Skip war, build paradise
 - **War Bonds: Capitalism Defeated Fascism**
   - WW2: $185B raised from regular people
   - Marketing genius: Patriotism + profit
@@ -834,6 +843,7 @@
   - You use Netflix's algorithm to pick movies, why not health spending?
 - **"Countries won't cooperate"**
   - They will when we bribe their leaders and fund their opponents.
+  - Switzerland proved you can skip every war and get rich instead.
 - **"You can't cure aging"**
   - We replace hearts, kidneys, blood, bones
   - Aging is just harder engineering, not magic
