@@ -1,250 +1,173 @@
-# DIH Book Launch - Master To-Do List
+# DIH Book - Completion Checklist
 
-This is the master checklist for completing and launching the book, website, and presentation. 
+**Mission:** Complete all chapters from OUTLINE.MD, write first with placeholder citations, research later.
 
-**UPDATED STRATEGY (2025-09-27):** Write first, research later. Focus on getting all content written with placeholder citations, then do a systematic research pass.
-
-## Phase 0: Core Improvements (COMPLETED)
-
-- [x] **Clarify Core Benefits Focus:**
-    - [x] Updated CONTRIBUTING.md to emphasize focusing on OUTCOMES (80X efficiency, speed, scale) over mechanisms (patient control, DAOs)
-    - [x] Revised DIH chapter to lead with concrete benefits: 80X cost efficiency, 10X speed, 1,000X treatments tested
-    - [x] Updated index.qmd to emphasize measurable outcomes in the 6-step process
-    - [x] Added emphasis on econometric optimization to minimize DALYs/maximize QALYs
+**Writing Strategy:**
+- Use `[TODO: source - claim]` for facts needing citations
+- Use `[STAT NEEDED: description]` for missing statistics
+- Focus on narrative flow and dark humor (Vonnegut style)
+- Frame NIH/FDA as central planning failures, DIH/dFDA as market solutions
 
 ---
 
-## Phase 1: Foundation & Setup ✅
+## Part I: The Problem (Your Democracy Is Dead)
 
-- [x] **Project Configuration:**
-    - [x] Review and finalize `_quarto.yml` to ensure all book, website, and presentation settings are correct.
-    - [x] Confirm Python virtual environment (`dih-project-kernel`) is correctly configured and documented.
-- [x] **Standards & Guidelines:**
-    - [x] Review `CONTRIBUTING.md` to ensure all guidelines are up-to-date and clear for all contributors.
+| Chapter | File Path | Status |
+|---------|-----------|--------|
+| 1. Evolution Made You a Slave | `brain/book/problem/evolution-trap.qmd` | ✅ DONE |
+| 2. The $119 Trillion Death Toilet | `brain/book/problem/cost-of-war-and-disease.qmd` | ✅ DONE |
+| 3. Democracy Is Already Dead | `brain/book/problem/democracy-failure.qmd` | ⚠️ CREATE |
 
----
-
-## Phase 1.5: Create Chapter Executive Summaries (IN PROGRESS)
-
-**Files to Create:**
-- [x] `brain/book/problem.qmd` - Executive summary for Part I ✅
-- [x] `brain/book/solution.qmd` - Executive summary for Part II ✅
-- [ ] `brain/book/theory.qmd` - Executive summary for Part III
-- [ ] `brain/book/economics.qmd` - Executive summary for Part IV (exists, needs update)
-- [ ] `brain/book/strategy.qmd` - Executive summary for Part V (exists, needs update)
-- [ ] `brain/book/proof.qmd` - Executive summary for Part VI (exists, needs update)
-- [ ] `brain/book/futures.qmd` - Executive summary for Part VII
-- [ ] `brain/book/objections.qmd` - Executive summary for Part IX
-
-
-### Phase 1.6: Convert All Files to .qmd Format ✅ COMPLETED
-
-Converted 48 .md files to .qmd format with updated links across all documents.
+**Part Summary:** `brain/book/problem.qmd` ✅ DONE
 
 ---
 
-## Phase 2: Content Creation (Write First, Research Later)
+## Part II: The Theory (Why Markets Work)
 
-### 📝 WRITING PHASE (Current Priority)
+| Chapter | File Path | Status |
+|---------|-----------|--------|
+| 4. Why Central Planning Kills People | `brain/book/theory/central-planning-failure.qmd` | ⚠️ CREATE |
+| 5. The War on Disease (First War to Win) | `brain/book/theory/war-on-disease.qmd` | ⚠️ CREATE |
+| 6. Public Choice Theory | `brain/book/theory/public-choice.qmd` | ⚠️ CREATE |
+| 7. Wisdom of Crowds | `brain/book/theory/wisdom-of-crowds.qmd` | ⚠️ CREATE |
 
-**Instructions:** Write engaging content with placeholder citations. Use these markers:
-- `[TODO: source - claim about X]` for facts needing citations
-- `[STAT NEEDED: specific number about Y]` for statistics
-- `[CITATION: existing reference ID]` for claims we know are already in references.md
-- Focus on narrative flow and dark humor
-- Frame NIH as central planning failure, DIH as market solution
+**Part Summary:** `brain/book/theory.qmd` ⚠️ CREATE
 
-### Part I: The $119 Trillion Central Planning Disaster
-
-- **1.1 Evolution Trapped Us in Violence** ✅ WRITTEN
-- **1.2 The Cost of War: Humanity's Most Expensive Hobby** ✅ WRITTEN
-- **1.3 The Cost of Disease: A Slow-Motion Apocalypse** ✅ WRITTEN
-- **1.4 The NIH: How Soviet-Style Science Wastes $48B/Year** ⚠️ NEEDS CREATION
-    - [ ] Frame as central planning failure
-    - [ ] Compare to Soviet economic planning
-- **1.5 The FDA: Central Planning's Body Count** ⚠️ NEEDS CREATION
-    - [ ] Show deaths from delayed approvals
-    - [ ] Regulatory capture examples
-- **1.6 Regulatory Capture: How Pharma Bought the Refs** ⚠️ NEEDS CREATION
-- **1.7 Democracy's Failure: Why Voters Can't Fix This** ⚠️ NEEDS CREATION
-- **1.8 Why Nobody Fixed This Yet: A Century of Failed Reforms** ⚠️ NEEDS CREATION
-
-### Part II: Markets > Committees (The Solution)
-
-- **2.1 The DIH: Prediction Markets for Medical Research** 📝 NEEDS REVIEW
-    - [ ] Reframe as market-based alternative
-    - [ ] Emphasize Hayekian knowledge aggregation
-- **2.2 The dFDA: Competition Beats Regulation** 📝 NEEDS REVIEW
-- **2.3 The 1% Treaty: Redirecting Resources to What Works** 📝 NEEDS REVIEW
-- **2.4 Wishocracy: Democratic Markets for Public Goods** 📝 NEEDS REVIEW
-- **2.5 The Transition Plan: From Soviet Science to Free Markets** ⚠️ NEEDS CREATION
-- **2.6 International Coordination: Making Treaties Stick** ⚠️ NEEDS CREATION
-
-### Part III: Why Markets Win (The Theory) ⚠️ ALL NEW
-
-- **3.1 Hayek Was Right: The Knowledge Problem in Medicine** ⚠️ NEEDS CREATION
-- **3.2 Wisdom of Crowds: 280 Million Brains > 200 NIH Reviewers** ⚠️ NEEDS CREATION
-- **3.3 Incentive Alignment: Why Everyone Wins** ⚠️ NEEDS CREATION
-- **3.4 Your Body is Just a Machine (And Markets Fix Machines)** ✅ WRITTEN
-- **3.5 Other Industries That Escaped Central Planning** ⚠️ NEEDS CREATION
-- **3.6 Network Effects: Why This Gets Better at Scale** ⚠️ NEEDS CREATION
-- **3.7 Information Theory: Why Transparency Beats Secrecy** ⚠️ NEEDS CREATION
-
-### Part IV: The Money (Making It Real)
-
-- **4.1 VICTORY Bonds: War Profiteering for Peace** 📝 NEEDS REVIEW
-- **4.2 The ROI: $27B → $16.5T Annual Returns** 📝 NEEDS REVIEW
-- **4.3 The Business Model: Insurance, Not Charity** 📝 EXISTS, NEEDS REVIEW
-- **4.4 The Infrastructure: Tech Stack for Distributed Trials** ⚠️ NEEDS CREATION
-- **4.5 Implementation Timeline: 36 Months to Launch** ⚠️ NEEDS CREATION
-
-### Part V: The Heist (Strategy)
-
-- **5.1 We're Not Fighting, We're Buying** 📝 NEEDS REVIEW
-- **5.2 The Global Referendum: 280M Signatures = Unstoppable** 📝 NEEDS REVIEW
-- **5.3 Legal CYA: How Not to Go to Prison** 📝 NEEDS REVIEW
-- **5.4 The $2.5B Bribe Fund** ⚠️ NEEDS CREATION (fundraising-strategy.md)
-
-### Part VI: Proof This Works
-
-- **6.1 RECOVERY Trial: Markets Already Won (80X Efficiency)** 📝 NEEDS REVIEW
-- **6.2 Historical Wins: When Decentralization Crushed Central Planning** 📝 NEEDS REVIEW
-- **6.3 Pre-1962: When Doctors > Bureaucrats** 📝 NEEDS REVIEW
-- **6.4 Case Studies: Cancer, Alzheimer's, Rare Diseases** ⚠️ NEEDS CREATION
-- **6.5 Why Other Reforms Failed (And We Won't)** ⚠️ NEEDS CREATION
-
-### Part VII: Pick Your Future
-
-- **7.1 Option A: Skynet + Cancer (Status Quo)** ✅ WRITTEN
-- **7.2 Option B: Markets Cure Everything** ✅ WRITTEN
-
-### Part VIII: Join or Die (Literally)
-
-- **8.1-8.3 Call to Action sections** 📝 NEEDS REVIEW
-
-### Part IX: Yes, We've Heard Your Concerns ⚠️ ALL NEW
-
-- **9.1-9.5 Objection Handling chapters** ⚠️ ALL NEED CREATION
+**Priority:** Write these FIRST - they explain the "why" needed for other chapters
 
 ---
 
-## Phase 3: Research & Citation (After Writing)
+## Part III: The Solution (Wishocracy)
 
-### 🔬 RESEARCH PHASE (Do After All Chapters Written)
+| Chapter | File Path | Status |
+|---------|-----------|--------|
+| 8. Wishocracy - Markets Not Majorities | `brain/book/solution/wishocracy.qmd` | 📝 REVIEW |
+| 9. The 1% Treaty | `brain/book/solution/1-percent-treaty.qmd` | 📝 REVIEW |
 
-- [ ] **Systematic Source Verification:**
-    - [ ] Go through each chapter and list all [TODO: source] placeholders
-    - [ ] Use web_search to find real quotes and statistics
-    - [ ] Build a clean references.md with verified sources only
-    - [ ] Replace all placeholders with proper links to references.md
-- [ ] **Fact Checking:**
-    - [ ] Verify all statistics are current and accurate
-    - [ ] Ensure all quotes are real and properly attributed
-    - [ ] Check that all claims can be substantiated
+**Part Summary:** `brain/book/solution.qmd` ✅ DONE
 
 ---
 
-## Phase 4: Visualization & Polish
+## Part IV: The Money (Economics)
 
-### 📊 VISUALIZATION PHASE
+| Chapter | File Path | Status |
+|---------|-----------|--------|
+| 10. The Economic Case (463:1 ROI) | `brain/book/economics/economic-case.qmd` | 📝 REVIEW |
+| 11. VICTORY Bonds | `brain/book/economics/victory-bonds.qmd` | 📝 REVIEW |
+| 12. The Coalition That Ends War | `brain/book/economics/coalition.qmd` | ⚠️ CREATE |
+| 13. Legal Architecture | `brain/book/economics/legal-framework.qmd` | ⚠️ CREATE |
 
-- [ ] **Create Data Visualizations:**
-    - [ ] Military spending vs medical research (Chapter 1.1)
-    - [ ] Disease costs breakdown (Chapter 1.2)
-    - [ ] NIH grant success rates over time (Chapter 1.3.1)
-    - [ ] FDA approval timeline (Chapter 1.3.2)
-    - [ ] 1% budget carve-out (Chapter 2.1)
-    - [ ] VICTORY Bond returns comparison (Chapter 3.1)
-    - [ ] 3.5% population map (Chapter 4.2)
-    - [ ] Treaty progression timeline (Chapter 6.2)
-
-### 🎨 POLISH PHASE
-
-- [ ] **Content Polish:**
-    - [ ] Final tone and humor pass
-    - [ ] Ensure consistent voice throughout
-    - [ ] Check chapter transitions and flow
-- [ ] **Technical Review:**
-    - [ ] Verify all internal links work
-    - [ ] Test all Mermaid diagrams render correctly
-    - [ ] Ensure frontmatter is consistent
+**Part Summary:** `brain/book/economics.qmd` 📝 REVIEW
 
 ---
 
-## Phase 5: Build & Launch
+## Part V: The Implementation (Building It)
 
-- [ ] **Build All Formats:**
-    - [ ] Generate and test website (`quarto render`)
-    - [ ] Generate and review PDF
-    - [ ] Create presentation slides
-- [ ] **Launch:**
-    - [ ] Deploy to GitHub Pages
-    - [ ] Announce the launch
-    - [ ] Prepare distribution materials
+| Chapter | File Path | Status |
+|---------|-----------|--------|
+| 14. The Technology Stack | `brain/book/strategy/technology-stack.qmd` | ⚠️ CREATE |
+| 16. The Global Referendum | `brain/book/strategy/global-referendum.qmd` | 📝 REVIEW |
+| 17 (DIH). Government Without Governments | `brain/book/solution/dih.qmd` | 📝 REVIEW |
+| 17 (dFDA). The Amazon of Not Dying | `brain/book/solution/dfda.qmd` | 📝 REVIEW |
 
----
-
-## 🆕 OPERATIONAL & NONPROFIT TASKS (NEW SECTION - Jan 2025)
-
-### Nonprofit Foundation Setup
-
-- [x] **IRS Compliance Documentation for Healome Contract**
-    - [x] Created comprehensive list of allowable expenses for 501(c)(3)
-    - [x] Documented contractual requirements for IRS compliance
-    - [x] Added sample budget structure and documentation strategy
-    - [x] Saved to: `operations/nonprofit-allowable-expenses-healome.md`
-
-- [ ] **Next Steps for Nonprofit Operations:**
-    - [ ] Get legal review of Healome contract terms
-    - [ ] Create board resolution template for software development contracts
-    - [ ] Develop impact metrics tracking system for charitable activities
-    - [ ] Set up documentation process for market rate comparisons
-    - [ ] Create SOW template linking deliverables to charitable mission
+**Part Summary:** `brain/book/strategy.qmd` 📝 REVIEW
 
 ---
 
-## 🎯 IMMEDIATE PRIORITIES (REVISED ORDER):
+## Part VI: The Proof (This Already Works)
 
-### Priority 1: Clean brain/book/ folder (Phase 1.5) ✅ IN PROGRESS
-**ACTION:** Process all 60 orphaned files, extract value, archive originals
+| Chapter | File Path | Status |
+|---------|-----------|--------|
+| 19. Political Movements That Changed Everything | `brain/book/proof/historical-precedents.qmd` | 📝 REVIEW |
+| 20. Your Body Is Just a Machine | `brain/book/proof/body-as-machine.qmd` | ✅ DONE |
 
-### Priority 2: Write Theory Foundation FIRST (Part III)
-**WHY:** These chapters explain WHY markets > central planning - needed before writing other chapters
-- [ ] 3.1 Hayek Was Right: The Knowledge Problem in Medicine
-- [ ] 3.2 Wisdom of Crowds: 280 Million Brains > 200 NIH Reviewers
-- [ ] 3.3 Incentive Alignment: Why Everyone Wins
-- [ ] 3.5 Other Industries That Escaped Central Planning
-- [ ] 3.6 Network Effects: Why This Gets Better at Scale
-- [ ] 3.7 Information Theory: Why Transparency Beats Secrecy
-
-### Priority 3: Reframe Existing Chapters with Market Theory
-**UPDATE:** Apply theory to existing content
-- [ ] Part II: All DIH/dFDA chapters - reframe with market mechanisms
-- [ ] Part I: NIH/FDA chapters - frame as central planning failures
-
-### Priority 4: Create New Problem/Strategy Chapters
-**CREATE:** Fill gaps with market framing
-- [ ] Part I: Regulatory Capture, Failed Reforms chapters
-- [ ] Part II: Transition Plan, Treaty Enforcement
-- [ ] Part V: Fundraising strategy chapter
+**Part Summary:** `brain/book/proof.qmd` 📝 REVIEW
 
 ---
 
-## Progress Tracking
+## Part VII: Choose Your Future (Dystopia vs Utopia)
 
-**Chapters Complete:** 5/~45 (11%)
-- ✅ Part I: 1.1, 1.2, 1.3 (Evolution, War, Disease)
-- ✅ Part III: 3.4 (Body as Machine)
-- ✅ Part VII: 7.1, 7.2 (Dystopia, Utopia)
+| Chapter | File Path | Status |
+|---------|-----------|--------|
+| 21. Path A - Gollumland | `brain/book/futures/dystopia.qmd` | ✅ DONE |
+| 22. Path B - Wishonia | `brain/book/futures/utopia.qmd` | ✅ DONE |
+| 23. The Tale of Two Futures | `brain/book/futures/comparison.qmd` | ⚠️ CREATE |
 
-**Chapters Needing Creation:** ~25/45 (56%)
-- ⚠️ Part I: 5 chapters (NIH, FDA, Regulatory Capture, Democracy, Failed Reforms)
-- ⚠️ Part II: 2 chapters (Transition, Treaty Enforcement)
-- ⚠️ Part III: 6 chapters (Theory - Hayek, Crowds, Incentives, etc.)
-- ⚠️ Part IV: 2 chapters (Infrastructure, Timeline)
-- ⚠️ Part V: 1 chapter (Fundraising)
-- ⚠️ Part VI: 2 chapters (Case Studies, Why Others Failed)
-- ⚠️ Part IX: 5 chapters (All objection handling)
+**Part Summary:** `brain/book/futures.qmd` ⚠️ CREATE
 
-**Chapters Needing Review/Reframing:** ~15/45 (33%)
-- 📝 Most of Parts II, IV, V, VI need market-based reframing
+---
+
+## Part VIII: Join or Die (Call to Action)
+
+| Chapter | File Path | Status |
+|---------|-----------|--------|
+| 24. Your Personal Benefits | `brain/book/call-to-action/personal-benefits.qmd` | 📝 REVIEW |
+| 25. The Three Actions | `brain/book/call-to-action/three-actions.qmd` | 📝 REVIEW |
+| 26. Every Objection Demolished | `brain/book/call-to-action/objections.qmd` | 📝 REVIEW |
+
+**Part Summary:** `brain/book/objections.qmd` (if separate) or include in Part VIII summary
+
+---
+
+## Summary: What Needs to Be Done
+
+### 🔴 CREATE (11 files) - Priority Order
+
+**Theory First (explains the "why"):**
+1. `brain/book/theory/central-planning-failure.qmd` (Ch 4)
+2. `brain/book/theory/war-on-disease.qmd` (Ch 5)
+3. `brain/book/theory/public-choice.qmd` (Ch 6)
+4. `brain/book/theory/wisdom-of-crowds.qmd` (Ch 7)
+5. `brain/book/theory.qmd` (Part II summary)
+
+**Then Problem Chapters:**
+6. `brain/book/problem/democracy-failure.qmd` (Ch 3)
+
+**Then Fill Gaps:**
+7. `brain/book/economics/coalition.qmd` (Ch 12)
+8. `brain/book/economics/legal-framework.qmd` (Ch 13)
+9. `brain/book/strategy/technology-stack.qmd` (Ch 14)
+10. `brain/book/futures/comparison.qmd` (Ch 23)
+11. `brain/book/futures.qmd` (Part VII summary)
+
+### 📝 REVIEW & REFRAME (15+ files)
+
+Apply market theory framing to existing files:
+- All Part III (Solution) chapters - add market mechanisms
+- All Part IV (Economics) chapters - strengthen market arguments
+- Part V (Implementation) chapters - emphasize decentralization
+- Part VI (Proof) chapters - connect to market success stories
+- Part VIII (Call to Action) chapters - final polish
+
+---
+
+## Next Phases (After Writing Complete)
+
+### Phase 3: Research & Citation
+- Find sources for all `[TODO: source]` placeholders
+- Verify all `[STAT NEEDED]` with real data
+- Build `brain/reference/references.md` with verified citations
+
+### Phase 4: Visualization & Polish
+- Create Python/Plotly charts for key data points
+- Add Mermaid diagrams where helpful
+- Final voice and humor pass
+- Verify all internal links
+
+### Phase 5: Build & Launch
+- `npm run build` - generate HTML/PDF
+- Deploy to GitHub Pages
+- Announce launch
+
+---
+
+## Progress Tracker
+
+**Files Complete:** 7/33 chapters (21%)
+- ✅ Ch 1, 2, 20, 21, 22 written
+- ✅ 2 part summaries done (problem, solution)
+
+**Files to Create:** 11/33 (33%)
+**Files to Review:** 15/33 (46%)
+
+**Target:** Complete all 33 files, then move to research phase
