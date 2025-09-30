@@ -35,7 +35,8 @@
       "Bash(do sed -i '1,/^---$/d; /^---$/d' \"$f\")",
       "Bash(done)",
       "Bash(npm run build:pptx:*)",
-      "Bash(do sed -i '/^\\*\\*Key Insight/d' \"$f\")"
+      "Bash(do sed -i '/^\\*\\*Key Insight/d' \"$f\")",
+      "Bash(npm run build:presentation:*)"
     ],
     "deny": [],
     "ask": []
