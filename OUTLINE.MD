@@ -106,15 +106,18 @@
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
 ### Chapter 4: Why Central Planning Kills People
-- **1893-1962 Proved Decentralization Works**
-  - 1893: JAMA creates crowdsourced trials from 144,000 physicians
-  - Result: Life expectancy suddenly starts growing 4 years/year (after 10,000 years of stagnation)
-  - 1938: FDA safety regulations added (no change in progress rate)
-  - 1962: FDA takes over efficacy trials from doctors
-  - Immediate result: 70% reduction in new treatments
-  - Life expectancy growth cut in half: From 4 years/year to 2 years/year
-  - Drug development costs: $74M → $1B+ (inflation-adjusted)
-  - The proof: When doctors ran trials, progress was 2X faster
+- **1962: When FDA Centralization Destroyed Medical Progress**
+  - Pre-1962: 144,000 physicians ran real-world trials through JAMA
+  - 1962: FDA centralizes efficacy trials, immediate disaster:
+    - New drug approvals drop 70% overnight
+    - Drug costs: $74M → $2.6B today (35X more expensive)
+    - Timeline: 6 months → 17 years to market
+    - Life expectancy gains slow by more than half
+  - 2020: Oxford RECOVERY trial proves decentralization still works
+    - $500 per patient vs $41,000 FDA standard (82X cheaper)
+    - 6 months to results vs 5+ years
+    - Included real sick patients FDA would reject
+  - The proven inefficiency: FDA trials are 82X more expensive than necessary
 - **The Pattern: Every Government "War" Creates More of What It Fights**
   - War on Drugs ($1T): Created cartels, violence up 10,000%
   - War on Poverty ($22T): Welfare cliffs keep people poor
@@ -129,7 +132,7 @@
   - The pretense of knowledge: Central planning always fails
 - **Markets: The Distributed Computer That Works**
   - Prices are information packets (committees are noise)
-  - RECOVERY trial: $500 vs $41,000 per patient (80X efficiency)
+  - RECOVERY trial: $500 vs $41,000 per patient (82X efficiency)
   - Pre-1962 medicine: Doctors prescribed, patients decided
   - Software/Internet: No FDA = exponential innovation
   - Lasik/cosmetic surgery: Cash markets = 50% price drops
@@ -596,6 +599,10 @@
   - Emergency Response: Pandemic preparedness
 
 ### Chapter 17: The dFDA - The Amazon of Not Dying
+- **Historical Proof This Works: 82X More Efficient**
+  - Pre-1962: 144,000 doctors ran successful real-world trials
+  - 2020: Oxford RECOVERY trial proved 82X efficiency gain ($500 vs $41,000 per patient)
+  - dFDA scales this proven model globally with modern tech
 - **The FDA's Catastrophic Failure (Why We Need This)**
   - 95% of diseases have ZERO FDA-approved treatments (your kid's rare disease = death sentence)
   - 17 YEARS from discovery to patient (you'll be dead before the cure arrives)
@@ -606,7 +613,7 @@
   - Negative results NEVER published (half of all research is hidden)
   - FDA.gov: A 1990s website that kills people with bureaucracy
   - Solution: Decentralized marketplace, not FDA.gov v2 (opposite of centralization)
-- **The 80X Solution: Decentralized Trials**
+- **The 82X Solution: Decentralized Trials**
   - Oxford RECOVERY trial demonstrated potential: $500 per patient vs $41,000
   - Model works best for pragmatic trials testing existing drugs
   - Include everyone, not just the healthy
@@ -627,7 +634,7 @@
   - Blockchain-verified supply chain
   - Real-time results (pivot fast)
   - Get paid when patients join your trials
-  - FDA-X Prize: $X million for 80X cost reduction proof
+  - FDA-X Prize: $X million for 82X cost reduction proof
 - **For Doctors: Finally Practice Medicine Not Paperwork**
   - One-click trial enrollment for patients
   - Liability protection via insurance pool
@@ -701,10 +708,10 @@
   - Homomorphic encryption: Compute on data without seeing it
   - The rule: Researchers see patterns, not people
   - Radical transparency: Every query logged and public
-- **The Result: 80X Medical Progress Acceleration**
+- **The Result: 82X Medical Progress Acceleration**
   - Before: 17 years, $2.6B per drug, 95% of diseases ignored
   - After: ~2 years, $2M per treatment, 100% of diseases targetable
-  - 80x acceleration means centuries of progress in decades
+  - 82X acceleration means centuries of progress in decades
   - Cost breakdown showing 96% savings:
     - Site payments: $12,000 → $200 (virtual trials)
     - Patient recruitment: $8,000 → $50 (direct digital)
