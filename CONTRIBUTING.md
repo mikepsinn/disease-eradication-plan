@@ -454,6 +454,7 @@ plt.show()
 - Use bbox_inches=None when saving (not bbox_inches='tight')
 - Margins are set globally by `setup_chart_style()` to ensure the watermark never overlaps chart content
 - For charts with bottom legends or x-axis labels, the automatic margins provide sufficient clearance
+- **NEVER use logarithmic scales for disparity charts** - Linear scales show the TRUE absurdity. If your solution bars are barely visible next to problem bars, GOOD - that's the point. Logarithmic scales hide disparity and make everything look reasonable. Our budget is NOT reasonable.
 
 ## Automation and CI
 

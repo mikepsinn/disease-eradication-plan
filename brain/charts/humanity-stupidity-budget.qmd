@@ -15,62 +15,75 @@ from brain.charts._chart_style import (
 # Setup styling
 setup_chart_style(style='light', dpi=150)
 
-# Data - values in billions for easier display
+# Data - values in billions
 categories = [
-    'Disease\nBurden',
-    'War &\nConflict',
-    'Direct War\nSpending',
-    'Finding\nCures',
+    #'Total\nCost of\nDisease',
+    #'Total\nCost of\nWar &\nConflict',
+    'Direct Military\nSpending',
+    #'Trying\nto Find\nCures',
     'Cancer\nResearch',
     'Alzheimer\'s\nResearch'
 ]
 
-# Values in billions
+# Values in billions - LINEAR scale to show TRUE disparity
 values = [
-    109100,  # Disease burden: $109.1T
-    9700,    # War & conflict total cost: $9.7T
+    #109100,  # Disease burden: $109.1T
+    #9700,    # War & conflict total cost: $9.7T
     2720,    # Direct military spending: $2.72T
-    68,      # Finding cures: $68B
+    #68,      # Finding cures: $68B
     6.9,     # Cancer research: $6.9B
     3.7      # Alzheimer's research: $3.7B
 ]
 
-# Colors - red for bad, blue for good
+# Colors - red for problems, blue for solutions
 colors = [COLOR_RED, COLOR_RED, COLOR_RED, COLOR_BLUE, COLOR_BLUE, COLOR_BLUE]
 
-# Create chart with logarithmic scale to show the absurdity
+# Create chart with LINEAR scale - show the REAL disparity
 fig, ax = plt.subplots(figsize=(24, 12))
 
-# Use log scale to actually see the small numbers
+# LINEAR scale - let people see how absurdly tiny the solution bars are
 bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9)
 
-# Log scale
-ax.set_yscale('log')
-
-# Format labels with actual dollar amounts
-labels = ['$109.1T', '$9.7T', '$2.7T', '$68B', '$7B', '$4B']
+# Format labels - put inside tall bars, outside short bars
+labels = [
+#    '$109.1T', 
+#    '$9.7T', 
+    '$2.7T', 
+#    '$68B', 
+    '$7B', 
+    '$4B'
+    ]
 for bar, label, value in zip(bars, labels, values):
     height = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2., height,
-            label, ha='center', va='bottom', fontsize=40, weight='bold', color=COLOR_DARK)
+    # Put label inside for tall bars (> 1000B), outside for short bars
+    if value > 1000:
+        y_pos = height * 0.95  # Near top of bar
+        va = 'top'
+        color = COLOR_WHITE
+        size = 48
+    else:
+        y_pos = height + (max(values) * 0.02)  # Just above bar
+        va = 'bottom'
+        color = COLOR_DARK
+        size = 40
+    ax.text(bar.get_x() + bar.get_width()/2., y_pos,
+            label, ha='center', va=va, fontsize=size, weight='bold', color=color)
 
 # Styling
-ax.set_ylabel('Annual Spending (logarithmic scale)', fontsize=32, weight='bold', color=COLOR_DARK)
+ax.set_ylabel('Annual Spending (Billions)', fontsize=36, weight='bold', color=COLOR_DARK)
 ax.tick_params(axis='x', labelsize=32, colors=COLOR_DARK)
 ax.tick_params(axis='y', labelsize=28, colors=COLOR_MID)
-ax.set_title('The Stupidest Budget in the Universe', fontsize=56, pad=30, weight='bold', color=COLOR_DARK)
+#ax.set_title('The Stupidest Budget in the Universe', fontsize=56, pad=30, weight='bold', color=COLOR_DARK)
 
-# Add subtitle explaining the scale
-ax.text(0.5, 0.95, '(Logarithmic scale - each line up is 10X larger)',
-        transform=ax.transAxes, ha='center', va='top',
-        fontsize=28, color=COLOR_MID, style='italic')
+# Format y-axis to show scale clearly
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x/1000:.0f}T' if x >= 1000 else f'{x:.0f}B'))
 
 clean_spines(ax, ['top', 'right'])
-ax.grid(True, alpha=0.3, color=COLOR_LIGHT, axis='y')
+ax.grid(True, alpha=0.3, color=COLOR_MID, axis='y')
 
 # Add branding
 add_watermark(fig)
 
-plt.savefig('assets/charts/humanity-stupidity-budget.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.savefig('humanity-stupidity-budget.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
 plt.show()
 ```

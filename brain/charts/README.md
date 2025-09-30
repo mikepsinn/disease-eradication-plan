@@ -105,3 +105,4 @@ When creating new charts:
 6. Use `clean_spines(ax)` for minimal design
 7. **DO NOT use plt.tight_layout()** - it overrides the automatic margins
 8. Ensure adequate padding - margins are automatic but verify no overlap
+9. **Use LINEAR scales for disparity charts** - Never use logarithmic scales when showing budget disparities. The whole point is to make the absurdity VISIBLE. Tiny solution bars next to massive problem bars = effective communication.
