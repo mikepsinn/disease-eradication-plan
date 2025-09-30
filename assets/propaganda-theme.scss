@@ -57,3 +57,8 @@ $color-blue: #0051a5;
   width: auto;
   object-fit: contain;
 }
+
+// Hide the markdown heading (used for menu only, visual title is in HTML)
+.reveal .slide > h2 {
+  display: none;
+}
