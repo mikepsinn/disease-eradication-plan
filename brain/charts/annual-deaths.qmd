@@ -43,4 +43,3 @@ plt.savefig('assets/charts/annual-deaths.png', dpi=150, bbox_inches=None, faceco
 plt.show()
 ```
 
-**Key Insight:** 69 million people die every year from preventable causes—55 million from disease and 14 million from war. This is the human cost of our current budget priorities.

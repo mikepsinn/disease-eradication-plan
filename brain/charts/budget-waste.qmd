@@ -45,4 +45,3 @@ plt.savefig('assets/charts/budget-waste.png', dpi=150, bbox_inches=None, facecol
 plt.show()
 ```
 
-**Key Insight:** We spend **1,600X more** treating disease than curing it. That's $119 trillion on the problem vs $68 billion on the solution.

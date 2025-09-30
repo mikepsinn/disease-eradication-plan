@@ -77,4 +77,3 @@ plt.savefig('assets/charts/money-flow-diagram.png', dpi=150, bbox_inches=None, f
 plt.show()
 ```
 
-**Key Insight:** The $27B flows through the DIH treasury to three channels: **$10B in patient subsidies** (free treatment), **$1.35B to VICTORY bondholders** (40% returns), and **$15.65B to research** (finding cures). Everyone profits.

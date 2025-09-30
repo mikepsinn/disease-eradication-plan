@@ -44,5 +44,3 @@ add_watermark(fig)
 plt.savefig('assets/charts/oxford-recovery-proof.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
 plt.show()
 ```
-
-**Key Insight:** The Oxford RECOVERY trial (2020) proved decentralized trials work: **$500 per patient**, **1 million+ lives saved**, results in **6 months**, **40,000 patients** enrolled. This already works. We're just scaling it.
