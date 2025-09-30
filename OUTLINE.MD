@@ -31,15 +31,17 @@
   - Direct healthcare spending: $8.2T/year globally (treating symptoms)
   - Economic losses from disease: $100.9T/year (lost productivity, early death)
   - Cancer: 10M deaths/year while we argue about pronouns
+  - Chronic disease: 2 billion people suffering RIGHT NOW
   - Mental illness: 1 billion suffering, $5T lost productivity
   - Rare diseases: 95% have zero FDA-approved treatments
-  - 44 YEARS since last major disease cured (polio
+  - Hepatitis C cured (2014), but still 50+ years between major disease eradications
 - **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
   - We spend more on Halloween costumes than curing cancer
   - The military's toilet seats cost more than malaria research
   - One fighter jet = entire rare disease research budget
   - Viagra got more funding than Alzheimer's (priorities!)
   - 166 BILLION untested treatment combinations (we've tried 0.0001%)
+  - 0.00001% of potential medicinal molecules ever tested (leaving 99.99999% unexplored)
 - **Humanity's Budget as a Family Making $100,000/Year**
   - If global spending was a family budget:
     - Healthcare spending: $8,200 (treating symptoms after we're sick)
@@ -308,6 +310,7 @@
   - Current prevention spending: 5% of healthcare (pathetic)
   - Prevention ROI: Every $1 spent saves $3 in treatment
   - Double prevention spending: $615B annual savings
+  - Preventative approach potential: $360B in healthcare savings (proven by data)
   - Early detection via dFDA: Catching cancer at Stage 1 vs 4 = 90% cost reduction
   - Behavioral intervention: $100 app prevents $10,000 surgery
 - **The $100 Billion Market We're Capturing**
@@ -543,13 +546,14 @@
     - Performance rewards (what actually worked gets more)
     - Community campaigns (when 50,000 people want something, it happens)
   - Why dynamic subsidies work:
-    - Researchers set prices on dFDA marketplace
+    - Researchers set flexible participant pricing
     - Subsidies = available funds ÷ participating patients
     - Natural demand management (more patients = lower subsidy per person)
     - Prevents frivolous treatment seeking (patients pay unsubsidized portion)
-    - Refundable data deposit ensures complete trial data
+    - Refundable deposits for trial participants (get money back for completing)
     - Creates patient incentive to organize for treasury growth
     - Patients self-organize for passage of 2%, 5%, 10% treaties = larger subsidies and lower costs
+    - Competitive liability insurance quotes keep costs down
   - Why subsidize patients, not researchers:
     - NIH: 200 people guess what might work
     - DIH: Millions of sick people know what they need
@@ -573,6 +577,8 @@
   - 95% of diseases have ZERO FDA-approved treatments (your kid's rare disease = death sentence)
   - 17 YEARS from discovery to patient (you'll be dead before the cure arrives)
   - 85% of patients EXCLUDED from trials (too sick, too old, wrong zip code)
+  - 100% patient inclusion possible with dFDA (vs current 15% acceptance rate)
+  - 21K-120K preventable deaths per decade from FDA delays
   - Current trials: $48,000 per patient (pharma passes cost to you)
   - Negative results NEVER published (half of all research is hidden)
   - FDA.gov: A 1990s website that kills people with bureaucracy
@@ -586,6 +592,8 @@
 - **Universal Trial Economics**
   - Traditional Phase 3: $40M-100M, 3-5 years, 1,000 patients
   - dFDA pragmatic trial: $500K, 6 months, 10,000 patients
+  - Total trial costs: From ~$57M down to ~$2M (96% reduction)
+  - Timeline: From 17 years to ~2 years (88% faster)
   - 20X more patients at 1/80th the cost
   - Every citizen becomes a potential trial participant
   - Network effects: Each trial makes the next one cheaper
@@ -614,12 +622,18 @@
   - Get meds delivered to you
   - Report outcomes through your existing apps
   - Your data improves rankings for everyone
-  - FDAi Agent: Your personal AI doctor
+  - FDAi Agent: Your personal AI doctor (the "super-intelligent robot doctor")
     - Analyzes your health data continuously
     - Matches you to optimal trials
     - Predicts treatment effectiveness for YOUR biology
     - Monitors for side effects in real-time
     - Adjusts recommendations as you respond
+    - Automated data collection from all sources:
+      - Wearable device integration (heart rate, sleep, activity)
+      - Browser AI agents importing medical records
+      - Speech-based symptom reporting
+      - Image scanning of test results
+      - Causal inference using Hill's 6 Criteria
 - **Outcome Labels: The Truth About Everything**
   - Every food: "Increases diabetes risk 12%"
   - Every drug: "73% effective for your genotype"
@@ -644,6 +658,8 @@
   - Open-source trial marketplace (decentralized alternative to FDA.gov)
   - Zero-knowledge proofs protect patient privacy
   - All trial results public, individual data anonymous
+  - Clinipedia: Wikipedia for clinical research (crowd-sourced medical knowledge)
+  - Mega-studies: Population-level treatment tracking (millions of data points)
   - Digital Twin Safe: Your lifetime health data vault
     - Encrypted personal health repository
     - AI creates anonymized digital twin for research
