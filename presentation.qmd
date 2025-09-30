@@ -62,19 +62,12 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 
 ## The Problem {background-color="#f8f8f8"}
 
-:::: {.columns}
-::: {.column width="50%"}
-<br><br><br>
-<h1 style="font-size: 120px; line-height: 1.1; color: #1a1a1a;">69 Million</h1>
-<h2 style="font-size: 60px; color: #2c5f7d;">Die Every Year</h2>
-<br>
-<p style="font-size: 36px; color: #4a4a4a;">From war and disease</p>
-:::
+<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #1a1a1a;">The Problem</h1>
+<p style="text-align: center; font-size: 52px; color: #c1272d; margin-bottom: 30px;">
+**69 million die every year** from war and disease
+</p>
 
-::: {.column width="50%"}
-{{< include brain/charts/annual-deaths.qmd >}}
-:::
-::::
+{{< include brain/charts/humanity-stupidity-budget.qmd >}}
 
 ---
 

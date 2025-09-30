@@ -1,0 +1,76 @@
+```{python}
+#| label: humanity-stupidity-budget
+#| fig-cap: "Humanity's Budget Priorities"
+
+import sys
+sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
+
+import matplotlib.pyplot as plt
+import numpy as np
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_RED, COLOR_BLUE, COLOR_DARK, COLOR_MID, COLOR_WHITE, COLOR_BG
+)
+
+# Setup styling
+setup_chart_style(style='light', dpi=150)
+
+# Data - values in billions for easier display
+categories = [
+    'Disease\nBurden',
+    'War &\nConflict',
+    'Direct War\nSpending',
+    'Finding\nCures',
+    'Cancer\nResearch',
+    'Alzheimer\'s\nResearch'
+]
+
+# Values in billions
+values = [
+    109100,  # Disease burden: $109.1T
+    9700,    # War & conflict total cost: $9.7T
+    2720,    # Direct military spending: $2.72T
+    68,      # Finding cures: $68B
+    6.9,     # Cancer research: $6.9B
+    3.7      # Alzheimer's research: $3.7B
+]
+
+# Colors - red for bad, blue for good
+colors = [COLOR_RED, COLOR_RED, COLOR_RED, COLOR_BLUE, COLOR_BLUE, COLOR_BLUE]
+
+# Create chart with logarithmic scale to show the absurdity
+fig, ax = plt.subplots(figsize=(24, 12))
+
+# Use log scale to actually see the small numbers
+bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9)
+
+# Log scale
+ax.set_yscale('log')
+
+# Format labels with actual dollar amounts
+labels = ['$109.1T', '$9.7T', '$2.7T', '$68B', '$7B', '$4B']
+for bar, label, value in zip(bars, labels, values):
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height,
+            label, ha='center', va='bottom', fontsize=40, weight='bold', color=COLOR_DARK)
+
+# Styling
+ax.set_ylabel('Annual Spending (logarithmic scale)', fontsize=32, weight='bold', color=COLOR_DARK)
+ax.tick_params(axis='x', labelsize=32, colors=COLOR_DARK)
+ax.tick_params(axis='y', labelsize=28, colors=COLOR_MID)
+ax.set_title('The Stupidest Budget in the Universe', fontsize=56, pad=30, weight='bold', color=COLOR_DARK)
+
+# Add subtitle explaining the scale
+ax.text(0.5, 0.95, '(Logarithmic scale - each line up is 10X larger)',
+        transform=ax.transAxes, ha='center', va='top',
+        fontsize=28, color=COLOR_MID, style='italic')
+
+clean_spines(ax, ['top', 'right'])
+ax.grid(True, alpha=0.3, color=COLOR_LIGHT, axis='y')
+
+# Add branding
+add_watermark(fig)
+
+plt.savefig('assets/charts/humanity-stupidity-budget.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.show()
+```
