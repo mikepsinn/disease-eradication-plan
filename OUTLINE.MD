@@ -111,11 +111,10 @@
   - 1962: FDA centralizes efficacy trials, immediate disaster:
     - New drug approvals drop 70% overnight
     - Drug costs: $74M → $2.6B today (35X more expensive)
-    - Timeline: 6 months → 17 years to market
+    - Timeline: 2-3 years → 17 years to market
     - Life expectancy gains slow by more than half
   - 2020: Oxford RECOVERY trial proves decentralization still works
     - $500 per patient vs $41,000 FDA standard (82X cheaper)
-    - 6 months to results vs 5+ years
     - Included real sick patients FDA would reject
   - The proven inefficiency: FDA trials are 82X more expensive than necessary
 - **The Pattern: Every Government "War" Creates More of What It Fights**
@@ -621,9 +620,9 @@
   - Automated compliance reduces paperwork burden
 - **Universal Trial Economics**
   - Traditional Phase 3: $40M-100M, 3-5 years, 1,000 patients
-  - dFDA pragmatic trial: $500K, 6 months, 10,000 patients
+  - dFDA pragmatic trial: $500K, 1-2 years, 10,000 patients 
   - Total trial costs: From ~$57M down to ~$2M (96% reduction)
-  - Timeline: From 17 years to ~2 years (88% faster)
+  - Timeline: From 17 years to ~2-3 years for repurposing, ~5 years for new drugs
   - 20X more patients at 1/80th the cost
   - Every citizen becomes a potential trial participant
   - Network effects: Each trial makes the next one cheaper
@@ -710,7 +709,7 @@
   - Radical transparency: Every query logged and public
 - **The Result: 82X Medical Progress Acceleration**
   - Before: 17 years, $2.6B per drug, 95% of diseases ignored
-  - After: ~2 years, $2M per treatment, 100% of diseases targetable
+  - After: 2-3 years for repurposing, 5-7 years for new drugs, $2M per treatment, 100% of diseases targetable
   - 82X acceleration means centuries of progress in decades
   - Cost breakdown showing 96% savings:
     - Site payments: $12,000 → $200 (virtual trials)
