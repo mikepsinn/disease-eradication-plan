@@ -43,8 +43,8 @@ ax.set_title('Everyone Profits', fontsize=40, pad=30, weight='bold', color=COLOR
 # Add branding
 add_watermark(fig)
 
-plt.tight_layout()
-plt.savefig('assets/charts/coalition-wheel.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+#plt.tight_layout()  # Disabled - using rcParams margins instead
+plt.savefig('assets/charts/coalition-wheel.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
 plt.show()
 ```
 

@@ -19,7 +19,7 @@ Wishocracy is a model for creating a semi-autonomous "to-do list for humanity," 
 
 Wishocracy combines collective human intelligence with the efficiency of AI to create a new form of governance.
 
-```mermaid
+```{mermaid}
 graph TD
     subgraph "The Wishocracy Protocol"
         A(Stakeholders) -- propose --> B(Wishes: The To-Do List);

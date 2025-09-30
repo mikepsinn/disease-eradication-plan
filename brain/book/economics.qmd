@@ -31,7 +31,7 @@ This chapter explains how everyone wins—especially the bastards currently gett
 
 ## How the Money Flows
 
-```mermaid
+```{mermaid}
 graph TD
     A[Investors] -->|Buy VICTORY Bonds| B[\$3.375B Raised];
     B -->|Fund Campaign| C[Lobbying + Global Referendum];

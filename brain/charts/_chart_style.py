@@ -66,10 +66,11 @@ def setup_chart_style(style='light', dpi=150):
         text_color = COLOR_LIGHT
         grid_color = COLOR_MID
 
-    # Typography - elegant serif fonts for timeless, prestigious look
-    rcParams['font.family'] = 'serif'
-    rcParams['font.serif'] = ['EB Garamond', 'Libre Baskerville', 'Georgia', 'Times New Roman']
-    rcParams['font.size'] = 11
+    # Typography - bold propaganda poster style with Cooper Black
+    rcParams['font.family'] = 'sans-serif'
+    rcParams['font.sans-serif'] = ['Cooper Black', 'Impact', 'Arial Black', 'Helvetica']
+    rcParams['font.size'] = 12
+    rcParams['font.weight'] = 'bold'
 
     # Colors
     rcParams['figure.facecolor'] = bg_color
@@ -83,11 +84,15 @@ def setup_chart_style(style='light', dpi=150):
     rcParams['grid.color'] = grid_color
     rcParams['grid.alpha'] = 0.3
 
-    # Spacing and layout
+    # Spacing and layout - ensure padding to avoid watermark overlap
     rcParams['axes.titlepad'] = 20
     rcParams['axes.labelpad'] = 10
     rcParams['xtick.major.pad'] = 7
     rcParams['ytick.major.pad'] = 7
+    rcParams['figure.subplot.bottom'] = 0.15  # Bottom margin for watermark
+    rcParams['figure.subplot.top'] = 0.92     # Top margin
+    rcParams['figure.subplot.left'] = 0.12    # Left margin
+    rcParams['figure.subplot.right'] = 0.95   # Right margin
 
     # Line and marker styling
     rcParams['lines.linewidth'] = 2.5
@@ -97,8 +102,9 @@ def setup_chart_style(style='light', dpi=150):
     # Figure settings
     rcParams['figure.dpi'] = dpi
     rcParams['savefig.dpi'] = dpi
-    rcParams['savefig.bbox'] = 'tight'
+    rcParams['savefig.bbox'] = 'tight'  # This will be overridden - use pad_inches instead
     rcParams['savefig.facecolor'] = bg_color
+    rcParams['savefig.pad_inches'] = 0.3  # Add padding around saved figures
 
     # Remove chart junk by default
     rcParams['axes.spines.top'] = False
@@ -111,18 +117,21 @@ def setup_chart_style(style='light', dpi=150):
     rcParams['grid.linewidth'] = 0.5
 
 
-def add_watermark(fig, text='WarOnDisease.org', alpha=0.6):
+def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
     """
     Add consistent branding watermark to a figure.
+
+    The watermark is positioned with padding from edges to avoid overlap with chart elements.
+    Uses black color and bold weight for better visibility.
 
     Args:
         fig: matplotlib Figure object
         text: Watermark text (default: 'WarOnDisease.org')
-        alpha: Transparency (default: 0.6)
+        alpha: Transparency (default: 1.0 - fully opaque black)
     """
-    fig.text(0.98, 0.02, text,
-             fontsize=8, color=COLOR_MID,
-             ha='right', va='bottom', alpha=alpha)
+    fig.text(0.97, 0.03, text,
+             fontsize=11, color=COLOR_DARK,
+             ha='right', va='bottom', alpha=alpha, weight='bold')
 
 
 def clean_spines(ax, positions=['top', 'right']):
