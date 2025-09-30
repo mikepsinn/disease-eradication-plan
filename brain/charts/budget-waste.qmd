@@ -1,9 +1,3 @@
----
-title: "Global Spending Priorities"
-description: "Bar chart comparing $109T disease treatment, $9.7T war, vs $68B finding cures"
-doc-title: "budget-waste"
----
-
 ```{python}
 #| label: budget-waste
 #| fig-cap: "The Stupidest Budget on Earth"
