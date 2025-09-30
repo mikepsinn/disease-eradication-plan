@@ -17,20 +17,24 @@ Usage:
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
-# Official Color Palette (Palette C - Modern Neutral)
+# Official Color Palette (WWII Propaganda Style)
 COLOR_DARK = '#1a1a1a'       # Almost black - primary text and emphasis
 COLOR_MID = '#4a4a4a'        # Charcoal - secondary elements
 COLOR_LIGHT = '#e0e0e0'      # Light gray - backgrounds and subtle elements
-COLOR_ACCENT = '#2c5f7d'     # Muted teal/blue - key data points
+COLOR_RED = '#c1272d'        # Bold propaganda red - danger, urgency, problems (war, disease, waste)
+COLOR_BLUE = '#0051a5'       # Bold propaganda blue - hope, solutions, action (treaty, cures, bonds)
 COLOR_BG = '#f8f8f8'         # Off-white - chart backgrounds
 COLOR_WHITE = '#ffffff'      # Pure white - high contrast elements
+
+# Legacy name for backwards compatibility
+COLOR_ACCENT = COLOR_BLUE
 
 # Secondary palette for categorical data (when more than one color is needed)
 PALETTE_CATEGORICAL = [
     COLOR_DARK,
-    COLOR_ACCENT,
+    COLOR_RED,
+    COLOR_BLUE,
     COLOR_MID,
-    '#6b8e9f',  # Lighter teal
     '#999999',  # Medium gray
 ]
 
@@ -40,8 +44,8 @@ PALETTE_SEQUENTIAL = [
     '#e0e0e0',
     '#c0c0c0',
     '#999999',
-    '#6b8e9f',
-    '#2c5f7d',
+    '#0051a5',
+    '#c1272d',
     '#1a1a1a',
 ]
 

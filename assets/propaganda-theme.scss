@@ -1,0 +1,50 @@
+/*-- scss:defaults --*/
+
+// Propaganda Poster Typography
+$font-family-sans-serif: "Cooper Black", "Impact", "Arial Black", "Helvetica", sans-serif !default;
+$presentation-font-size-root: 40px;
+$presentation-heading-font: "Cooper Black", "Impact", "Arial Black", sans-serif;
+$presentation-heading-font-weight: bold;
+
+// Color Palette (WWII Propaganda Style)
+$body-bg: #f8f8f8;
+$body-color: #1a1a1a;
+$link-color: #0051a5;
+$selection-bg: #c1272d;
+$color-red: #c1272d;
+$color-blue: #0051a5;
+
+/*-- scss:rules --*/
+
+.reveal {
+  font-family: $font-family-sans-serif;
+  font-weight: bold;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: $presentation-heading-font;
+  font-weight: $presentation-heading-font-weight;
+  color: $body-color;
+}
+
+.reveal p,
+.reveal li {
+  font-family: $font-family-sans-serif;
+  font-weight: bold;
+}
+
+.reveal strong {
+  color: $body-color;
+  font-weight: 900;
+}
+
+// Background customization
+.reveal-viewport {
+  background: $body-bg;
+  background-color: $body-bg;
+}

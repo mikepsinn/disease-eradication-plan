@@ -1,223 +1,281 @@
 ---
 title: "The Complete Idiot's Guide to Ending War and Disease"
 subtitle: "How to Redirect 1% of Military Spending to Cure Everything"
-author: "WarOnDisease.org"
+author: "Mike P. SInn"
 format:
   revealjs:
-    theme: dark
+    theme: [dark, assets/propaganda-theme.scss]
     transition: slide
     slide-number: true
-    footer: "WarOnDisease.org | Sign the Treaty"
+    footer: "Vote at WarOnDisease.org"
     logo: assets/logo.png
+    width: 1920
+    height: 1080
   pptx:
-    reference-doc: assets/template.pptx
+    incremental: false
+jupyter: dih-project-kernel
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-# The Problem in Numbers
+```{python}
+#| label: setup
+import sys
+sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
 
-::: {.columns}
-:::: {.column width="60%"}
-| What We Waste | Annual Cost |
-|---------------|-------------|
-| Disease Burden | $109.1T |
-| War & Conflict | $9.7T |
-| **Total Waste** | **$118.8T** |
-| **Finding Cures** | **$0.068T** |
-::::
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from matplotlib.patches import Rectangle
 
-:::: {.column width="40%"}
-We spend **1,600X more** treating disease than curing it.
+# Import centralized styling
+from brain.charts._chart_style import (
+    setup_chart_style,
+    add_watermark,
+    clean_spines,
+    COLOR_DARK,
+    COLOR_MID,
+    COLOR_LIGHT,
+    COLOR_ACCENT,
+    COLOR_BG,
+    COLOR_WHITE,
+    PALETTE_CATEGORICAL,
+    get_presentation_font_sizes
+)
 
-That's like buying 1,600 mops instead of fixing the pipe.
-::::
-:::
+# Setup elegant light theme for presentation
+setup_chart_style(style='light', dpi=150)
 
----
+# Get presentation font sizes
+FONT_SIZES = get_presentation_font_sizes()
 
-# Part I: Your Democracy Is Dead {.center}
-
-::: {.content-visible when-format="revealjs"}
-## Key Points
-- Evolution trapped us in violence (warrior genes)
-- $119T spent on war + disease annually
-- Democracy is mathematically broken (Princeton study)
-- You have 0% influence on policy
-:::
-
-::: {.content-visible when-format="pptx"}
-{{< include brain/book/problem.qmd >}}
-:::
-
----
-
-# Part II: Why Markets Beat Committees {.center}
-
-::: {.content-visible when-format="revealjs"}
-## The Theory
-- Central planning kills (Soviet famines, FDA delays)
-- Markets aggregate knowledge better than bureaucrats
-- Public choice: Everyone acts in self-interest
-- Wisdom of crowds: 8B brains > 200 experts
-:::
-
-::: {.content-visible when-format="pptx"}
-{{< include brain/book/theory.qmd >}}
-:::
-
----
-
-# Part III: The Solution (Wishocracy) {.center}
-
-::: {.content-visible when-format="revealjs"}
-## The 1% Treaty
-- Redirect 1% of military spending ($27B/year)
-- Wishocracy: Pairwise voting on health priorities
-- DIH subsidizes patient participation
-- dFDA marketplace: Amazon for clinical trials
-:::
-
-::: {.content-visible when-format="pptx"}
-{{< include brain/book/solution.qmd >}}
-:::
-
----
-
-# The dFDA: Amazon for Not Dying
-
-```mermaid
-graph LR
-    A[Patient] --> B[Browse Trials]
-    B --> C[Read Reviews]
-    C --> D[One-Click Join]
-    D --> E[Get Treatment]
-    E --> F[Report Outcomes]
-    F --> B
-
-    style A fill:#2ecc71
-    style E fill:#3498db
-    style F fill:#e74c3c
+# Override some defaults for presentation (larger fonts)
+plt.rcParams['font.size'] = FONT_SIZES['body']
+plt.rcParams['axes.titlesize'] = FONT_SIZES['chart_title']
+plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 ```
 
-**Cost:** $500/patient (vs $41,000 FDA standard)
-**Time:** 2 years (vs 17 years)
-**Access:** 100% (vs 15%)
-
 ---
 
-# Part IV: The Economics {.center}
-
-::: {.content-visible when-format="revealjs"}
-## VICTORY Bonds
-- 40% annual returns (better than Medallion Fund)
-- $3.375B total issuance (scarce)
-- 5% of all DIH inflows forever
-- Scales as treaty expands (1% → 2% → 5%)
-:::
-
-::: {.content-visible when-format="pptx"}
-{{< include brain/book/economics.qmd >}}
-:::
-
----
-
-# Part V: The Implementation {.center}
-
-::: {.content-visible when-format="revealjs"}
-## 3-Step Plan
-1. **Prove Mandate:** 280M signatures (3.5% of humanity)
-2. **Fund Mission:** $2.5B via VICTORY Bonds
-3. **Ratify Treaty:** Lobbying + public pressure
-:::
-
-::: {.content-visible when-format="pptx"}
-{{< include brain/book/strategy.qmd >}}
-:::
-
----
-
-# Part VI: This Already Works {.center}
-
-::: {.content-visible when-format="revealjs"}
-## Oxford RECOVERY Trial
-- **Cost:** $500 per patient
-- **FDA Standard:** $41,000 per patient
-- **Efficiency:** 82X better
-- **Lives Saved:** 1 million+
-- **Time:** Months, not years
-
-**Proof:** Decentralization works. We just need to scale it.
-:::
-
----
-
-# Part VII: Choose Your Future
+# {background-color="#f8f8f8"}
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Path A: Gollumland
-- AI optimized for killing
-- Crime economy > productive economy
-- Cybercrime unpunished
-- Currency collapse
-- Life expectancy: 35 years
-- **The Three Subs:** Sub-intelligence, Sub-longevity, Sub-wellbeing
+<br><br><br>
+<h1 style="font-size: 120px; line-height: 1.1; color: #1a1a1a;">69 Million</h1>
+<h2 style="font-size: 60px; color: #2c5f7d;">Die Every Year</h2>
+<br>
+<p style="font-size: 36px; color: #4a4a4a;">From war and disease</p>
 :::
 
 ::: {.column width="50%"}
-### Path B: Wishonia
-- AI optimized for healing
-- Disease becomes optional
-- Death becomes optional
-- Universal prosperity
-- Life expectancy: Choose your age
-- **The Three Supers:** Super-intelligence, Super-longevity, Super-wellbeing
+{{< include brain/charts/annual-deaths.qmd >}}
 :::
 ::::
 
-**The difference:** One 1% budget reallocation in 2026.
+---
+
+# {background-color="#f8f8f8"}
+
+<h1 style="text-align: center; font-size: 80px; color: #1a1a1a;">The Stupidest Budget on Earth</h1>
+
+{{< include brain/charts/budget-waste.qmd >}}
+
+<p style="text-align: center; font-size: 48px; color: #2c5f7d; margin-top: 30px;">
+We spend **1,600X more** treating disease than curing it
+</p>
 
 ---
 
-# Call to Action {.center background-color="#e74c3c"}
+# {background-color="#f8f8f8"}
 
-## Three Things You Can Do Today
+<h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">The Solution</h1>
+<br>
 
-::: {.incremental}
-1. **Sign** the global referendum at **WarOnDisease.org** (3 minutes)
-2. **Invest** in VICTORY Bonds - 40% perpetual returns (if you have capital)
-3. **Build** with us - developers, organizers, educators (if you have skills)
+:::: {.columns}
+::: {.column width="50%"}
+<div style="text-align: center; padding: 40px;">
+<h2 style="font-size: 120px; color: #f39c12; margin: 0;">1%</h2>
+<p style="font-size: 48px; margin: 20px 0;">of military spending</p>
+<h2 style="font-size: 80px; color: #2ecc71; margin: 20px 0;">= $27B</h2>
+<p style="font-size: 36px; color: #95a5a6;">per year to cure disease</p>
+</div>
 :::
 
+::: {.column width="50%"}
+{{< include brain/charts/treaty-impact.qmd >}}
+:::
+::::
+
 ---
 
-# Why This Will Work {.center}
+# {background-color="#f8f8f8"}
 
-::: {.incremental}
-- **Not ideological:** Math, not politics
-- **Everyone profits:** Defense contractors, pharma, patients, investors
-- **Already proven:** Oxford did it, we're scaling it
-- **Unstoppable at 3.5%:** Historical precedent (civil rights, suffrage)
+<h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #1a1a1a;">What $27B Buys</h1>
+
+{{< include brain/charts/treaty-impact-metrics.qmd >}}
+
+---
+
+# {background-color="#f8f8f8"}
+
+<h1 style="text-align: center; font-size: 80px; margin-bottom: 40px;  color: #1a1a1a;">How It Works</h1>
+
+{{< include brain/charts/money-flow-diagram.qmd >}}
+
+---
+
+# {background-color="#f8f8f8"}
+
+<h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">dFDA</h1>
+<p style="text-align: center; font-size: 56px; color: #4a4a4a;">Amazon for Clinical Trials</p>
+
+<br>
+
+{{< include brain/charts/dfda-comparison.qmd >}}
+
+---
+
+# {background-color="#f8f8f8"}
+
+<h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #1a1a1a;">For Investors</h1>
+
+:::: {.columns}
+::: {.column width="60%"}
+{{< include brain/charts/victory-bonds-returns.qmd >}}
 :::
 
-:::{.notes}
-This is the pitch. Keep it simple. Show them the door. Get them to act.
+::: {.column width="40%"}
+<div style="padding: 60px 40px;">
+<h2 style="font-size: 72px; color: #f39c12; margin: 0;">40%</h2>
+<p style="font-size: 36px; margin: 20px 0;">Annual Perpetual Returns</p>
+<br>
+<h3 style="font-size: 56px; color: #2ecc71;">$3.375B</h3>
+<p style="font-size: 32px; color: #95a5a6;">Total Issuance (Scarce)</p>
+<br>
+<p style="font-size: 28px; line-height: 1.6;">
+5% of all DIH inflows<br>
+Forever<br>
+Tradable<br>
+Scales with treaty growth
+</p>
+</div>
+:::
+::::
+
+---
+
+# {background-color="#f8f8f8"}
+
+<h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #1a1a1a;">The Proof</h1>
+
+<p style="text-align: center; font-size: 48px; color: #4a4a4a;">Oxford RECOVERY Trial (2020)</p>
+
+{{< include brain/charts/oxford-recovery-proof.qmd >}}
+
+<p style="text-align: center; font-size: 48px; color: #2c5f7d; margin-top: 40px; ">
+**This already works.** We're just scaling it.
+</p>
+
+---
+
+# {background-color="#f8f8f8"}
+
+<h1 style="text-align: center; font-size: 100px; margin-bottom: 40px;  color: #1a1a1a;">Two Futures</h1>
+
+{{< include brain/charts/futures-comparison.qmd >}}
+
+<p style="text-align: center; font-size: 56px; color: #2c5f7d; margin-top: 30px; ">
+The difference: **1% budget reallocation in 2026**
+</p>
+
+---
+
+# {background-color="#2c5f7d"}
+
+<br><br>
+<h1 style="text-align: center; font-size: 120px; color: white; ">Take Action</h1>
+<br><br>
+
+:::: {.columns}
+::: {.column width="33%"}
+<div style="text-align: center; padding: 40px;">
+<h2 style="font-size: 80px; margin: 0;">1</h2>
+<h3 style="font-size: 48px; margin: 20px 0;">Sign</h3>
+<p style="font-size: 32px; line-height: 1.6;">
+WarOnDisease.org<br>
+<span style="font-size: 24px; color: #ecf0f1;">(3 minutes)</span>
+</p>
+</div>
 :::
 
+::: {.column width="33%"}
+<div style="text-align: center; padding: 40px; border-left: 3px solid white; border-right: 3px solid white;">
+<h2 style="font-size: 80px; margin: 0;">2</h2>
+<h3 style="font-size: 48px; margin: 20px 0;">Invest</h3>
+<p style="font-size: 32px; line-height: 1.6;">
+VICTORY Bonds<br>
+<span style="font-size: 24px; color: #ecf0f1;">($1,000 minimum)</span>
+</p>
+</div>
+:::
+
+::: {.column width="33%"}
+<div style="text-align: center; padding: 40px;">
+<h2 style="font-size: 80px; margin: 0;">3</h2>
+<h3 style="font-size: 48px; margin: 20px 0;">Build</h3>
+<p style="font-size: 32px; line-height: 1.6;">
+Join the team<br>
+<span style="font-size: 24px; color: #ecf0f1;">(developers, organizers)</span>
+</p>
+</div>
+:::
+::::
+
 ---
 
-# Questions? {.center background-color="#2c3e50"}
+# {background-color="#f8f8f8"}
 
-**Website:** WarOnDisease.org
-**Email:** hello@dih.earth
-**Docs:** dih.wiki
+<br><br><br>
+<h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">Why This Will Win</h1>
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+{{< include brain/charts/coalition-wheel.qmd >}}
+:::
+
+::: {.column width="50%"}
+<div style="padding: 80px 40px;">
+<ul style="font-size: 40px; line-height: 2.2; list-style: none;">
+<li>✓ <strong>Not ideological</strong> — Math, not politics</li>
+<li>✓ <strong>Already proven</strong> — Oxford did it</li>
+<li>✓ <strong>Everyone wins</strong> — Aligned incentives</li>
+<li>✓ <strong>Unstoppable at 3.5%</strong> — Historical precedent</li>
+</ul>
+</div>
+:::
+::::
 
 ---
 
-# Appendix: The Math
+# {background-color="#1a1a1a"}
 
-**Investment:** $2.5B (VICTORY Bonds)
-**Annual Return:** $27B (1% treaty) → $135B (5% treaty)
-**ROI:** 10:1 annually, scaling with treaty expansion
-**Lives Saved:** 180,000+ annually at 1%, millions at scale
+<br><br><br><br>
+<div style="text-align: center;">
+<h1 style="font-size: 120px; color: white; margin-bottom: 60px; ">Questions?</h1>
 
-**This isn't charity. This is the best investment in human history.**
+<p style="font-size: 56px; color: #ecf0f1; margin: 30px 0;">
+<strong>WarOnDisease.org</strong>
+</p>
+
+<p style="font-size: 40px; color: #bdc3c7; margin: 20px 0;">
+hello@dih.earth
+</p>
+
+<p style="font-size: 40px; color: #bdc3c7; margin: 20px 0;">
+dih.wiki
+</p>
+</div>
