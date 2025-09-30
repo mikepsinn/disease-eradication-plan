@@ -1,69 +1,223 @@
 ---
 title: "The Complete Idiot's Guide to Ending War and Disease"
-author: "Mike P. Sinn"
-format: revealjs
+subtitle: "How to Redirect 1% of Military Spending to Cure Everything"
+author: "WarOnDisease.org"
+format:
+  revealjs:
+    theme: dark
+    transition: slide
+    slide-number: true
+    footer: "WarOnDisease.org | Sign the Treaty"
+    logo: assets/logo.png
+  pptx:
+    reference-doc: assets/template.pptx
 ---
 
-## The Problem in Numbers
+# The Problem in Numbers
 
-| What We Waste Money On | Annual Cost | What We Get |
-|----------------|------------|-------------|
-| War & Conflict | $9.7T | Destruction, refugees, and disabilities |
-| Disease Burden | $109.1T | Suffering and lost potential |
-| **Total Waste** | **$118.8T** | **The dumbest possible use of our limited resources** |
-| **Medical Research**| **$0.068T** | Actual cures and treatments |
+::: {.columns}
+:::: {.column width="60%"}
+| What We Waste | Annual Cost |
+|---------------|-------------|
+| Disease Burden | $109.1T |
+| War & Conflict | $9.7T |
+| **Total Waste** | **$118.8T** |
+| **Finding Cures** | **$0.068T** |
+::::
+
+:::: {.column width="40%"}
+We spend **1,600X more** treating disease than curing it.
+
+That's like buying 1,600 mops instead of fixing the pipe.
+::::
+:::
 
 ---
 
-## The 1% Solution
+# Part I: Your Democracy Is Dead {.center}
 
-1.  **Nations redirect 1%** of military budgets to cure disease
-2.  **Patients get paid** to participate in clinical trials
-3.  **Research becomes 80x more efficient** using proven methods
-4.  **EVERYONE profits** from the $16.5T annual peace dividend
+::: {.content-visible when-format="revealjs"}
+## Key Points
+- Evolution trapped us in violence (warrior genes)
+- $119T spent on war + disease annually
+- Democracy is mathematically broken (Princeton study)
+- You have 0% influence on policy
+:::
+
+::: {.content-visible when-format="pptx"}
+{{< include brain/book/problem.qmd >}}
+:::
 
 ---
 
-## How It Works
+# Part II: Why Markets Beat Committees {.center}
+
+::: {.content-visible when-format="revealjs"}
+## The Theory
+- Central planning kills (Soviet famines, FDA delays)
+- Markets aggregate knowledge better than bureaucrats
+- Public choice: Everyone acts in self-interest
+- Wisdom of crowds: 8B brains > 200 experts
+:::
+
+::: {.content-visible when-format="pptx"}
+{{< include brain/book/theory.qmd >}}
+:::
+
+---
+
+# Part III: The Solution (Wishocracy) {.center}
+
+::: {.content-visible when-format="revealjs"}
+## The 1% Treaty
+- Redirect 1% of military spending ($27B/year)
+- Wishocracy: Pairwise voting on health priorities
+- DIH subsidizes patient participation
+- dFDA marketplace: Amazon for clinical trials
+:::
+
+::: {.content-visible when-format="pptx"}
+{{< include brain/book/solution.qmd >}}
+:::
+
+---
+
+# The dFDA: Amazon for Not Dying
 
 ```mermaid
-graph TD;
-    A["$2.7T Global Military Budgets"] -->|1% Redirect| B["$27B Annual Treaty Treasury"];
-    B --> C["DIH Governance<br/>(Wishocracy Protocol)"];
-    C --> D["Patient Subsidy Pools<br/>(Money Goes to Patients)"];
-    D --> E["Patients Choose Trials<br/>($500/patient vs $41,000)"];
-    E --> F["Pragmatic Trials<br/>(Real-World Evidence)"];
-    F --> G["All Data Published<br/>(No Hidden Results)"];
-    G --> H["People Stop Dying<br/>of Preventable Diseases"];
+graph LR
+    A[Patient] --> B[Browse Trials]
+    B --> C[Read Reviews]
+    C --> D[One-Click Join]
+    D --> E[Get Treatment]
+    E --> F[Report Outcomes]
+    F --> B
+
+    style A fill:#2ecc71
+    style E fill:#3498db
+    style F fill:#e74c3c
 ```
 
----
-
-## Why This Works
-
--   **✅ Proven Model:** The Oxford RECOVERY trial showed we can run trials for $500 instead of $41,000 per patient.
--   **✅ Aligned Incentives:** Everyone profits from curing disease instead of from conflict.
--   **✅ No Losers:** Even partial success means less war and more cures.
+**Cost:** $500/patient (vs $41,000 FDA standard)
+**Time:** 2 years (vs 17 years)
+**Access:** 100% (vs 15%)
 
 ---
 
-## The Economics
+# Part IV: The Economics {.center}
 
--   **Investment:** $1.2-2.5B over 36 months to fund the lobbying and infrastructure.
--   **Return:** $27B+ annually from the 1% Treaty.
--   **Vehicle:** VICTORY Bonds designed to offer ~40% annual returns, making peace more profitable than war.
+::: {.content-visible when-format="revealjs"}
+## VICTORY Bonds
+- 40% annual returns (better than Medallion Fund)
+- $3.375B total issuance (scarce)
+- 5% of all DIH inflows forever
+- Scales as treaty expands (1% → 2% → 5%)
+:::
+
+::: {.content-visible when-format="pptx"}
+{{< include brain/book/economics.qmd >}}
+:::
 
 ---
 
-## The 3-Step Plan
+# Part V: The Implementation {.center}
 
-1.  **Prove the Mandate**: Mobilize 3.5% of humanity in a Global Referendum.
-2.  **Fund the Mission**: Raise $2.5B by selling VICTORY Bonds.
-3.  **Ratify the Treaty**: Use the public mandate and financial engine to ratify the 1% Treaty.
+::: {.content-visible when-format="revealjs"}
+## 3-Step Plan
+1. **Prove Mandate:** 280M signatures (3.5% of humanity)
+2. **Fund Mission:** $2.5B via VICTORY Bonds
+3. **Ratify Treaty:** Lobbying + public pressure
+:::
+
+::: {.content-visible when-format="pptx"}
+{{< include brain/book/strategy.qmd >}}
+:::
 
 ---
 
-## Join the War on Disease
+# Part VI: This Already Works {.center}
 
--   **[Participate in the Referendum](mailto:hello@dih.earth)**: Signal your support and become part of the 3.5%.
--   **[Join the Coalition](mailto:hello@dih.earth)**: Partner with us to change the world.
+::: {.content-visible when-format="revealjs"}
+## Oxford RECOVERY Trial
+- **Cost:** $500 per patient
+- **FDA Standard:** $41,000 per patient
+- **Efficiency:** 82X better
+- **Lives Saved:** 1 million+
+- **Time:** Months, not years
+
+**Proof:** Decentralization works. We just need to scale it.
+:::
+
+---
+
+# Part VII: Choose Your Future
+
+:::: {.columns}
+::: {.column width="50%"}
+### Path A: Gollumland
+- AI optimized for killing
+- Crime economy > productive economy
+- Cybercrime unpunished
+- Currency collapse
+- Life expectancy: 35 years
+- **The Three Subs:** Sub-intelligence, Sub-longevity, Sub-wellbeing
+:::
+
+::: {.column width="50%"}
+### Path B: Wishonia
+- AI optimized for healing
+- Disease becomes optional
+- Death becomes optional
+- Universal prosperity
+- Life expectancy: Choose your age
+- **The Three Supers:** Super-intelligence, Super-longevity, Super-wellbeing
+:::
+::::
+
+**The difference:** One 1% budget reallocation in 2026.
+
+---
+
+# Call to Action {.center background-color="#e74c3c"}
+
+## Three Things You Can Do Today
+
+::: {.incremental}
+1. **Sign** the global referendum at **WarOnDisease.org** (3 minutes)
+2. **Invest** in VICTORY Bonds - 40% perpetual returns (if you have capital)
+3. **Build** with us - developers, organizers, educators (if you have skills)
+:::
+
+---
+
+# Why This Will Work {.center}
+
+::: {.incremental}
+- **Not ideological:** Math, not politics
+- **Everyone profits:** Defense contractors, pharma, patients, investors
+- **Already proven:** Oxford did it, we're scaling it
+- **Unstoppable at 3.5%:** Historical precedent (civil rights, suffrage)
+:::
+
+:::{.notes}
+This is the pitch. Keep it simple. Show them the door. Get them to act.
+:::
+
+---
+
+# Questions? {.center background-color="#2c3e50"}
+
+**Website:** WarOnDisease.org
+**Email:** hello@dih.earth
+**Docs:** dih.wiki
+
+---
+
+# Appendix: The Math
+
+**Investment:** $2.5B (VICTORY Bonds)
+**Annual Return:** $27B (1% treaty) → $135B (5% treaty)
+**ROI:** 10:1 annually, scaling with treaty expansion
+**Lives Saved:** 180,000+ annually at 1%, millions at scale
+
+**This isn't charity. This is the best investment in human history.**
