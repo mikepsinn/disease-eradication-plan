@@ -19,12 +19,12 @@
 | Part | File | Status | Priority |
 |------|------|--------|----------|
 | I. The Problem | `brain/book/problem.qmd` | ✅ DONE | - |
-| II. The Theory | `brain/book/theory.qmd` | ⚠️ **CREATE** | **P0** |
+| II. The Theory | `brain/book/theory.qmd` | ✅ DONE | - |
 | III. The Solution | `brain/book/solution.qmd` | ✅ DONE | - |
 | IV. The Money | `brain/book/economics.qmd` | 📝 Review | P1 |
 | V. The Implementation | `brain/book/strategy.qmd` | 📝 Review | P1 |
 | VI. The Proof | `brain/book/proof.qmd` | 📝 Review | P1 |
-| VII. The Futures | `brain/book/futures.qmd` | ⚠️ **CREATE** | **P0** |
+| VII. The Futures | `brain/book/futures.qmd` | ✅ DONE | - |
 
 ### Tasks
 
