@@ -26,7 +26,8 @@
       "WebSearch",
       "Bash(test:*)",
       "Bash(npm run quarto:preview:*)",
-      "Bash(timeout:*)"
+      "Bash(timeout:*)",
+      "Bash(quarto render:*)"
     ],
     "deny": [],
     "ask": []
