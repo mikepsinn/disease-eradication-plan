@@ -27,12 +27,13 @@
   - Every submarine = 1,000 cancer labs we didn't build
   - The nuclear extinction lottery: 13,000 warheads, 0 winners
   - Switzerland's alternative: 0.7% on defense, $93K GDP per capita
-- **Disease: The Holocaust in Slow Motion** ($109.1T/year in preventable suffering)
+- **Disease: The Holocaust in Slow Motion** ($109.1T/year total economic burden)
+  - Direct healthcare spending: $8.2T/year globally (treating symptoms)
+  - Economic losses from disease: $100.9T/year (lost productivity, early death)
   - Cancer: 10M deaths/year while we argue about pronouns
   - Mental illness: 1 billion suffering, $5T lost productivity
-  - Healthcare spending: $8.2T globally (mostly treating, not curing)
-  - Rare diseases: 95% have zero treatments (your kids will die)
-  - 44 YEARS since last major disease cured (polio 1979, nothing since)
+  - Rare diseases: 95% have zero FDA-approved treatments
+  - 44 YEARS since last major disease cured (polio
 - **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
   - We spend more on Halloween costumes than curing cancer
   - The military's toilet seats cost more than malaria research
@@ -277,11 +278,12 @@
 ### Chapter 10: The Economic Case - 463:1 Return on Killing Disease
 - **The ROI That Breaks Reality**
   - Investment: $40M annual platform cost
-  - Return: $50B annual savings from trial efficiency alone
-  - ROI: 463:1 (makes every other investment look stupid)
+  - Return: $50B annual savings from trial efficiency
+  - Annual ROI: 1,250:1 year-over-year ($50B/$40M)
+  - 10-year cumulative ROI: 463:1 accounting for build time
   - 10-year NPV: $249 billion in value creation
   - Comparison: Best hedge funds dream of 2:1 annual returns
-  - Real-world proof: Switzerland's $93K GDP per capita from avoiding war
+  - Real-world proof: Switzerland's $93K GDP per capita (aided by centuries of compound peace dividends)
 - **The Daily Holocaust of Inaction**
   - Every day we wait: $137 million burned in inefficiency
   - Every day we wait: 2,301 Quality-Adjusted Life Years lost
@@ -329,7 +331,7 @@
   - Year 5: ~$1T as network effects kick in
   - Year 10: ~$5T as health improvements compound
   - Year 20: Full $16.5T annual value realized
-  - Every second we wait: $522,539 destroyed forever
+  - Every year we delay: $142B in immediate benefits lost forever
 
 ### Chapter 11: How Central Banks Fund Your Death (The War Machine's ATM)
 - **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
@@ -360,22 +362,22 @@
 ### Chapter 11: VICTORY Bonds - Better Than Medallion Fund
 - **The Instrument: Beating Every Investment Ever**
   - Perpetual 5% of all DIH treasury inflows forever
-  - Starting yield: 40% annually (beats Medallion's 39% CAGR)
-  - Growth potential: Returns automatically scale as treasury grows
-  - Fully tradable: Secondary markets with liquidity premium
+  - Target yield: 40% annually once treaty fully funded
+  - Growth potential: Returns scale automatically as treaty expands
+  - Fully tradable: Secondary markets provide liquidity
   - Aligned incentives: Bondholders profit by growing DIH
 - **The Math: Why This Beats Everything**
   - Total bonds issued: $3.375B hard cap (scarcity drives value)
-  - 5% of $27B treasury = $1.35B annual distribution
-  - $1.35B ÷ $3.375B bonds = 40% starting yield
+  - At full $27B treasury: $1.35B annual distribution (5% of inflows)
+  - $1.35B ÷ $3.375B bonds = 40% yield when treaty implemented
   - As treaty expands (2%, 5%, 10%), returns scale proportionally
   - Inflation-protected: Tied to treaty inflows, not dying currencies
 - **Why This Destroys All Competition**
-  - S&P 500: 10% average (VICTORY: 40% starting, scaling up)
-  - Venture capital: 25% if lucky (VICTORY: 40% guaranteed + growth)
-  - Medallion Fund: 39% but can't scale (VICTORY: 40%+ and infinitely scalable)
-  - Real estate: 15% with hassle (VICTORY: 40%+ liquid)
-  - Defense contracts: 8-15% margins (VICTORY: 40%+ returns forever)
+  - S&P 500: 10% average (VICTORY: 40% target, scaling with treaty success)
+  - Venture capital: 25% if lucky (VICTORY: 40% at full implementation)
+  - Medallion Fund: 39% CAGR at $10B cap (VICTORY: 40% target, no artificial cap)
+  - Real estate: 15% with hassle (VICTORY: 40% liquid if treaty succeeds)
+  - Defense contracts: 8-15% margins (VICTORY: 40% perpetual once operational)
   - Alternative systems prove viability: Bitcoin hit $1T without governments, M-Pesa became Kenya's real economy
 - **Why Defense Contractors Should Diversify**
   - Portfolio diversification: Hedge against peace breaking out
@@ -463,6 +465,26 @@
 
 ## Part V: The Implementation (Building Paradise)
 
+### Chapter 14: The Technology Stack (Code That Saves Lives)
+- **The Platform Architecture**
+  - Distributed ledger for transparency (not blockchain hype)
+  - Smart contracts for automatic fund distribution
+  - Zero-knowledge proofs for patient privacy
+  - APIs for universal health system integration
+  - Open source: Anyone can audit, no black boxes
+- **The AI Layer**
+  - Personal health agents for every human
+  - Treatment matching algorithms
+  - Side effect prediction models
+  - Drug interaction warnings
+  - Continuous learning from outcomes
+- **The Security Requirements**
+  - Medical data encryption standards
+  - Multi-signature treasury controls
+  - Audit trails for every dollar
+  - Patient consent management
+  - Regulatory compliance automation
+
 ### Chapter 15: The Global Referendum (Democracy at Scale)
 - **The Platform: Wishocracy App**
   - 30-second onboarding
@@ -482,7 +504,7 @@
   - Social media campaign strategy
   - Time-limited signup windows create urgency
 - **The 3.5% Magic Number**
-  - No peaceful movement has failed at 3.5% active support
+  - Historical pattern: Peaceful movements with 3.5% active support tend to succeed
   - Our advantage: Economic incentive to participate
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
@@ -543,13 +565,13 @@
   - Current trials: $48,000 per patient (pharma passes cost to you)
   - Negative results NEVER published (half of all research is hidden)
   - FDA.gov: A 1990s website that kills people with bureaucracy
-  - Solution: FDA.gov v2 as global public infrastructure
+  - Solution: Decentralized marketplace, not FDA.gov v2 (opposite of centralization)
 - **The 80X Solution: Decentralized Trials**
-  - Oxford RECOVERY trial proved it: $500 per patient vs $41,000
-  - Pragmatic trials at home
+  - Oxford RECOVERY trial demonstrated potential: $500 per patient vs $41,000
+  - Model works best for pragmatic trials testing existing drugs
   - Include everyone, not just the healthy
-  - Results in months not decades
-  - Automated compliance and paperwork
+  - Results in months not decades for suitable trial types
+  - Automated compliance reduces paperwork burden
 - **Universal Trial Economics**
   - Traditional Phase 3: $40M-100M, 3-5 years, 1,000 patients
   - dFDA pragmatic trial: $500K, 6 months, 10,000 patients
@@ -594,17 +616,17 @@
   - Results in months, not decades
   - Rate researchers and trials
 - **The Data Liberation**
-  - Open-source FDA alternative (FDA.gov v2)
+  - Open-source trial marketplace (decentralized alternative to FDA.gov)
   - Zero-knowledge proofs protect patient privacy
   - All trial results public, individual data anonymous
   - Digital Twin Safe: Your lifetime health data vault
     - Encrypted personal health repository
     - AI creates anonymized digital twin for research
     - You control access and earn from data use
-  - Backend-as-a-Service for existing health systems
-  - APIs enable any platform to integrate
+  - Integration layer for existing health systems
+  - Open APIs enable any platform to participate
   - Patient-owned records
-  - Works with, not against, existing infrastructure
+  - Designed to complement, not replace, existing infrastructure
 - **The Result: 80X Medical Progress Acceleration**
   - Before: 17 years, $2.6B per drug, 95% of diseases ignored
   - After: 6 months, $30M per treatment, 100% of diseases targetable
@@ -628,10 +650,10 @@
   - Center of TWO world wars: Still avoided both
   - Result: $93,000 GDP per capita (vs US $76,000)
   - Healthcare: Universal, excellent, 12% of GDP (vs US 18%)
-  - The lesson: Not fighting wars = getting rich
+  - Multiple factors: Neutrality + banking + stability + compound growth
   - Defense spending: 0.7% GDP (purely defensive)
   - Life expectancy: 84 years (vs US 79)
-  - They proved it: Skip war, build paradise
+  - Key lesson: Peace dividends compound over centuries
 - **War Bonds: Capitalism Defeated Fascism**
   - WW2: $185B raised from regular people
   - Marketing genius: Patriotism + profit
@@ -939,9 +961,9 @@
 - **"The technology doesn't exist"**
   - RECOVERY trial proved it does. We're just scaling.
 - **"You can't avoid war in the real world"**
-  - Switzerland: 200 years of avoiding war while surrounded by it
-  - Costa Rica: Abolished their army in 1948, still exists
-  - The Swiss got rich specifically BY avoiding war
+  - Switzerland: 200+ years of avoiding major wars while surrounded by them
+  - Costa Rica: Abolished their army in 1948, still sovereign
+  - The Swiss prosperity correlates with centuries of peace
   - Neutrality isn't weakness, it's profitable
 - **"This is unrealistic"**
   - So was: Flight, internet, democracy, antibiotics, Bitcoin, landing on moon
