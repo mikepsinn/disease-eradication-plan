@@ -62,3 +62,8 @@ $color-blue: #0051a5;
 .reveal .slide > h2 {
   display: none;
 }
+
+// Hide figure captions
+.reveal figcaption {
+  display: none;
+}

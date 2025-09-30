@@ -133,9 +133,11 @@ def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
         text: Watermark text (default: 'WarOnDisease.org')
         alpha: Transparency (default: 1.0 - fully opaque black)
     """
-    fig.text(0.97, 0.03, text,
-             fontsize=11, color=COLOR_DARK,
-             ha='right', va='bottom', alpha=alpha, weight='bold')
+    # Watermark disabled
+    pass
+    # fig.text(0.97, 0.03, text,
+    #          fontsize=11, color=COLOR_DARK,
+    #          ha='right', va='bottom', alpha=alpha, weight='bold')
 
 
 def clean_spines(ax, positions=['top', 'right']):

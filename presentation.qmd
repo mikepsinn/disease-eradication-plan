@@ -18,6 +18,7 @@ execute:
   echo: false
   warning: false
   message: false
+  fig-cap: false
 ---
 
 ```{python}
