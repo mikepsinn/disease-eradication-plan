@@ -677,6 +677,7 @@
   - Military AI: Optimized to eliminate threats (that's you)
   - The default objective function: Minimize resistance to authority
   - Skynet isn't evil, just following its programming
+  - AI becomes a black mirror reflecting our violence
   - Your savings: Inflated to nothing by infinite money printing
   - Your health: Sacrificed for the next fighter jet upgrade
   - China vs US: MAD but with robots (nobody wins, everybody dies)
@@ -713,6 +714,7 @@
 
 ### Chapter 22: Path B - Wishonia (Humanity Becomes a Superintelligent Genie)
 - **The Declaration of Wishonia** (2026 - We Just Decided It Exists)
+  - Some guy invented England, we're inventing Wishonia
   - "We hold these truths to be self-evident..."
   - "...that all humans deserve health, wealth, and happiness"
   - Population: 280 million founders (before we even have land)
