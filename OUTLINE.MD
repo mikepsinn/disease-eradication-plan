@@ -22,7 +22,10 @@
 ### Chapter 2: The $119 Trillion Death Toilet (Where Your Money Goes to Die)
 - **War: Humanity's Favorite Hobby** ($9.7T/year buying corpses)
   - Direct costs: $2.7T on weapons that rust in warehouses
+  - We spend 162X more on military than brain research (preventing threats 2 million times less likely)
   - The Pentagon's magic trick: Lost $2.46T (oops!)
+  - US = 37% of global military spending with only 4.4% of world population
+  - War costs your family $74,259 over your lifetime (for the privilege of maybe dying)
   - China already hacked our nuclear systems (we're funding their military)
   - Every submarine = 1,000 cancer labs we didn't build
   - The nuclear extinction lottery: 13,000 warheads, 0 winners

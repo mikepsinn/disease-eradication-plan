@@ -20,7 +20,10 @@
       "WebFetch(domain:fdai.earth)",
       "WebFetch(domain:dfda.earth)",
       "WebFetch(domain:wishonia.love)",
-      "WebFetch(domain:*)"
+      "WebFetch(domain:*)",
+      "WebFetch(domain:thinkbynumbers.org)",
+      "WebFetch(domain:wiki.dfda.earth)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
