@@ -1,9 +1,3 @@
----
-title: "Annual Deaths from War and Disease"
-description: "Pie chart showing 69 million annual deaths: 55M from disease, 14M from war"
-doc-title: "annual-deaths"
----
-
 ```{python}
 #| label: annual-deaths
 #| fig-cap: "Annual Deaths from War and Disease"

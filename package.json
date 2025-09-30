@@ -38,8 +38,14 @@
     "build": "npm run quarto:clean && npm run build:html && npm run build:pdf",
     "build:html": "quarto render . --to html",
     "build:pdf": "quarto render . --to pdf",
+    "build:pptx": "quarto render presentation.qmd --to pptx",
+    "build:presentation": "quarto render presentation.qmd",
+    "preview:presentation": "quarto preview presentation.qmd",
+    "preview:book": "quarto preview .",
     "quarto:preview": "quarto preview .",
     "quarto:clean": "rimraf _book",
+    "validate:all": "npm run validate:frontmatter && npm run lint:md",
+    "fix:all": "npm run fix:frontmatter && npm run lint:md:fix",
     "claude:opus": "claude --model claude-opus-4-1-20250805"
   },
   "devDependencies": {

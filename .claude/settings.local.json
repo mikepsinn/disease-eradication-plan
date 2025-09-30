@@ -30,7 +30,8 @@
       "Bash(quarto render:*)",
       "Bash(pip install:*)",
       "Bash(jupyter:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
