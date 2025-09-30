@@ -46,8 +46,8 @@ ax.grid(axis='y', alpha=0.3, linestyle='--', color=COLOR_LIGHT)
 # Add branding
 add_watermark(fig)
 
-plt.tight_layout()
-plt.savefig('assets/charts/budget-waste.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+#plt.tight_layout()  # Disabled - using rcParams margins instead
+plt.savefig('assets/charts/budget-waste.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
 plt.show()
 ```
 

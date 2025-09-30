@@ -44,8 +44,8 @@ ax.set_title('Military Budget After Treaty', fontsize=36, pad=20, weight='bold',
 # Add branding
 add_watermark(fig)
 
-plt.tight_layout()
-plt.savefig('assets/charts/treaty-impact.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+#plt.tight_layout()  # Disabled - using rcParams margins instead
+plt.savefig('assets/charts/treaty-impact.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
 plt.show()
 ```
 

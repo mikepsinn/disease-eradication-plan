@@ -1,0 +1,52 @@
+---
+title: "What the 1% Treaty Buys"
+description: "Bar chart showing what $27B annually delivers: 54K trials, 27M patients, 180K lives saved"
+doc-title: "treaty-impact-metrics"
+---
+
+```{python}
+#| label: treaty-impact-metrics
+#| fig-cap: "What $27B Buys: Impact Metrics"
+
+import sys
+sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
+
+import matplotlib.pyplot as plt
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_ACCENT, COLOR_MID, COLOR_DARK, COLOR_WHITE, COLOR_BG
+)
+
+# Setup styling
+setup_chart_style(style='light', dpi=150)
+
+# Data
+metrics = ['Clinical\nTrials', 'Patients\nTreated', 'Lives\nSaved\nAnnually', 'Diseases\nCured\nYear 1']
+values = [54000, 27000000, 180000, 15]
+display_values = ['54,000', '27M', '180K', '10-20']
+
+# Create chart
+fig, ax = plt.subplots(figsize=(20, 10))
+bars = ax.bar(metrics, values, color=[COLOR_ACCENT, COLOR_MID, COLOR_ACCENT, COLOR_MID],
+              width=0.6, edgecolor=COLOR_WHITE, linewidth=3)
+
+# Add value labels
+for bar, display_val in zip(bars, display_values):
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height/2,
+            display_val, ha='center', va='center', fontsize=56, weight='bold', color=COLOR_WHITE)
+
+ax.set_ylim(0, max(values) * 1.1)
+ax.tick_params(axis='x', labelsize=32, colors=COLOR_DARK)
+ax.set_yticks([])
+clean_spines(ax, ['top', 'right', 'left'])
+
+# Add branding
+add_watermark(fig)
+
+# Don't use tight_layout - it overrides margins
+plt.savefig('assets/charts/treaty-impact-metrics.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.show()
+```
+
+**Key Insight:** The $27B annual investment from the 1% Treaty funds **54,000 clinical trials**, treats **27 million patients**, saves **180,000 lives annually**, and could cure **10-20 diseases in year one**.

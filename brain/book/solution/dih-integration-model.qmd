@@ -67,7 +67,7 @@ The DIH doesn't disrupt healthcare - it enhances it by functioning like an insur
 
 ### 4. The Money Flow (Realistic Version)
 
-```mermaid
+```{mermaid}
 graph TD
     A[1% Treaty Funds] --> B[DIH Treasury]
     B --> C[Trial Coverage Pool]

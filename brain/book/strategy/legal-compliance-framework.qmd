@@ -239,7 +239,7 @@ Swiss Foundation (Treaty Coordination)
 
 Building on the compliance requirements outlined above, we recommend a sophisticated multi-entity structure that separates charitable, political, and investment activities while maintaining strategic coherence.
 
-```mermaid
+```{mermaid}
 graph TD
     subgraph "1% Treaty Initiative"
         A["<b>For-Profit Entity / Foundation</b><br/>(e.g., Cayman or DE Corp)<br/><i>Accepts Investments</i>"]

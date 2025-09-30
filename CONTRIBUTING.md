@@ -367,18 +367,19 @@ COLOR_WHITE = '#ffffff'      # Pure white - use for high contrast elements
 
 **Typography Guidelines:**
 
-For a prestigious, timeless aesthetic, use serif fonts for display text and body copy:
+For bold, impactful messaging inspired by WWII propaganda posters:
 
 **Recommended Font Hierarchy:**
-- **Display/Headlines:** EB Garamond, Libre Baskerville, or Crimson Text (elegant, classic serif)
-- **Body Text:** Georgia or Garamond (readable serif for longer passages)
-- **Data/Numbers:** Inter or SF Mono (modern, clear sans-serif for numerical clarity)
+- **Display/Headlines:** Cooper Black (bold, rounded, commanding presence)
+- **Body Text:** Impact or Arial Black (strong, authoritative)
+- **Fallbacks:** Helvetica Bold, Arial Bold
 
 **Python Implementation:**
 ```python
-plt.rcParams['font.family'] = 'serif'
-plt.rcParams['font.serif'] = ['EB Garamond', 'Libre Baskerville', 'Georgia', 'Times New Roman']
-plt.rcParams['font.size'] = 11
+plt.rcParams['font.family'] = 'sans-serif'
+plt.rcParams['font.sans-serif'] = ['Cooper Black', 'Impact', 'Arial Black', 'Helvetica']
+plt.rcParams['font.size'] = 12
+plt.rcParams['font.weight'] = 'bold'
 ```
 
 **Font Size Guidelines:**
@@ -389,6 +390,24 @@ plt.rcParams['font.size'] = 11
 - Presentation headlines: 48-72pt
 - Presentation body: 24-36pt
 
+**Chart Margins and Padding:**
+
+All charts must have adequate padding to avoid overlap with the watermark and maintain visual balance:
+
+- **Bottom margin:** 12% (for watermark clearance)
+- **Top margin:** 8%
+- **Left margin:** 10%
+- **Right margin:** 5%
+
+These margins are automatically set by `setup_chart_style()` but can be adjusted per chart if needed.
+
+**Watermark Specifications:**
+
+- **Font size:** 11pt (bold)
+- **Color:** Black (`COLOR_DARK = #1a1a1a`)
+- **Position:** Bottom-right with 3% padding from edges
+- **Opacity:** 100% (fully opaque)
+
 **Implementation in Python (Matplotlib Example):**
 
 To ensure consistency, use the centralized style module at `brain/charts/_chart_style.py`. Here is a basic example of how to apply these principles:
@@ -397,10 +416,11 @@ To ensure consistency, use the centralized style module at `brain/charts/_chart_
 import matplotlib.pyplot as plt
 import numpy as np
 
-# --- 1. Import centralized style (or use these settings directly) ---
-from brain.charts._chart_style import setup_chart_style, COLOR_DARK, COLOR_MID, COLOR_ACCENT
+# --- 1. Import centralized style ---
+from brain.charts._chart_style import setup_chart_style, add_watermark, clean_spines
+from brain.charts._chart_style import COLOR_DARK, COLOR_MID, COLOR_ACCENT, COLOR_LIGHT
 
-setup_chart_style()  # Applies consistent styling
+setup_chart_style()  # Applies consistent styling with automatic margins
 
 # --- 2. Create the Plot ---
 x = np.linspace(0, 10, 100)
@@ -415,19 +435,23 @@ ax.set_xlabel('X-Axis Label', fontsize=12, color=COLOR_MID)
 ax.set_ylabel('Y-Axis Label', fontsize=12, color=COLOR_MID)
 
 # --- 3. Add the Watermark ---
-fig.text(0.98, 0.02, 'WarOnDisease.org',
-         fontsize=8, color=COLOR_MID,
-         ha='right', va='bottom', alpha=0.6)
+add_watermark(fig)  # Black, bold, 11pt, positioned with padding
 
 # Remove unnecessary spines for a cleaner look
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
+clean_spines(ax)  # Removes top and right spines by default
 ax.spines['left'].set_color(COLOR_LIGHT)
 ax.spines['bottom'].set_color(COLOR_LIGHT)
 
-plt.tight_layout()
+#plt.tight_layout()  # Don't use - overrides margins!
 plt.show()
 ```
+
+**Important Notes:**
+
+- **DO NOT use plt.tight_layout()** - it overrides margin settings and makes charts touch edges
+- Use bbox_inches=None when saving (not bbox_inches='tight')
+- Margins are set globally by `setup_chart_style()` to ensure the watermark never overlaps chart content
+- For charts with bottom legends or x-axis labels, the automatic margins provide sufficient clearance
 
 ## Automation and CI
 

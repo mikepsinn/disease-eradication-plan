@@ -24,7 +24,7 @@ See [Pre-Seed Strategy](../strategy/pre-seed-strategy.qmd) for details on the ro
 
 This entity is the operational engine. It employs the core team, raises investment capital, and executes the strategy.
 
-```mermaid
+```{mermaid}
 graph TD;
     subgraph "For-Profit Management Co. (SPV)"
         A["Board of Directors<br/>(Investors & Founder)"];
@@ -50,7 +50,7 @@ graph TD;
 
 This entity is the guardian of the mission. It provides legal and ethical oversight to ensure the project remains aligned with its public benefit goals.
 
-```mermaid
+```{mermaid}
 graph TD;
     subgraph "Non-Profit Foundation"
         A["Board of Trustees<br/>(Independent, Mission-Aligned)"];
