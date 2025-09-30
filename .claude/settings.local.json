@@ -16,7 +16,8 @@
       "Bash(else echo \"✗ $dir MISSING summary\")",
       "Bash(node:*)",
       "Bash(npm install:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "WebFetch(domain:fdai.earth)"
     ],
     "deny": [],
     "ask": []
