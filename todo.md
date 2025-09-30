@@ -286,13 +286,13 @@ title: "Chapter X: [Title]"
   - Verify all numbers are current
   - Find original sources (not secondary)
 
-- [ ] **Build** `brain/reference/references.md`
+- [ ] **Build** `brain/reference/references.qmd`
   - One alphabetized list
   - Format: anchor ID, brief title, quote, source link
   - No duplicates
 
 - [ ] **Replace placeholders** with proper links
-  - Format: `[claim](./references.md#anchor-id)`
+  - Format: `[claim](./references.qmd#anchor-id)`
   - Verify all links work
 
 **Deliverable:** Fully cited book with zero placeholders

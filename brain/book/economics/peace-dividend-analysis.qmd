@@ -96,7 +96,7 @@ print("✅ Modern design system loaded")
 
 ```{python}
 # Data from the "Cost of War" analysis (in billions of USD)
-# Source: brain/book/references.md#sipri-2024-spending
+# Source: brain/book/references.qmd#sipri-2024-spending
 
 # Direct Costs
 direct_military_expenditure = 2718.0

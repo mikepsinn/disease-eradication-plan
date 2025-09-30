@@ -27,13 +27,13 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 **Layer 2: Enhanced Verification**
 
 - **Government ID Integration:** Connect with national e-ID systems where available
-  - [Estonia e-Residency integration](../book/references.md#estonia-eresidency-stats)
+  - [Estonia e-Residency integration](../book/references.qmd#estonia-eresidency-stats)
   - Indian Aadhaar system (with privacy protections)
   - EU eIDAS network compatibility
   - US State ID verification via ID.me partnership
 - **Biometric Liveness Detection:** Camera-based liveness checks to prevent deepfakes
 - **Proof-of-Uniqueness Partners:** Integration with existing identity verification services
-  - [Worldcoin iris scanning](../book/references.md#worldcoin-scale) (where available)
+  - [Worldcoin iris scanning](../book/references.qmd#worldcoin-scale) (where available)
   - BrightID social verification network
   - Gitcoin Passport identity scoring
 
@@ -45,7 +45,7 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 
 ### **Cryptographic Verification Protocol**
 
-**End-to-End Verifiable Voting ([Helios Protocol](../book/references.md#helios-voting)):**
+**End-to-End Verifiable Voting ([Helios Protocol](../book/references.qmd#helios-voting)):**
 
 - **Individual Ballot Verification:** Each voter receives cryptographic receipt
 - **Public Bulletin Board:** All ballots published (anonymized) for public audit
@@ -182,7 +182,7 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 - **Lawful Basis:** Legitimate interest for fraud prevention, consent for optional features
 - **Data Subject Rights:** Full implementation of access, rectification, erasure rights
 - **Privacy by Design:** Technical and organizational measures for data protection
-- **Biometric Data:** Adherence to [strict requirements for processing biometric data under Article 9](../book/references.md#gdpr-biometric-data).
+- **Biometric Data:** Adherence to [strict requirements for processing biometric data under Article 9](../book/references.qmd#gdpr-biometric-data).
 - **Cross-Border Transfers:** Standard contractual clauses for data transfers outside EU
 
 **United States (State Laws):**

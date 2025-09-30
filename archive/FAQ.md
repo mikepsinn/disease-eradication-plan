@@ -30,11 +30,11 @@ People have questions. Here are answers.
 
 ### 4. "This is too too complicated to build."
 
-- **Reality:** We're assembling proven components, not inventing new technology. DAOs like [MakerDAO](./references.md#makerdao-scale) already manage billions securely. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for detailed implementation.
+- **Reality:** We're assembling proven components, not inventing new technology. DAOs like [MakerDAO](./references.qmd#makerdao-scale) already manage billions securely. See [Security & Anti-Corruption](#security--anti-corruption-building-uncorruptible-institutions) for detailed implementation.
 
 ### 5. "This is politically impossible - you can't just redirect military budgets by referendum"
 
-- **Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The [$7T fossil fuel subsidy proof-of-concept](./references.md#fossil-fuel-subsidies) shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
+- **Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The [$7T fossil fuel subsidy proof-of-concept](./references.qmd#fossil-fuel-subsidies) shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
 
 ### 6. "The 3.5% rule applies to civil resistance movements, not global online referendums"
 
@@ -154,7 +154,7 @@ National security is actually _increased_ for two reasons:
 
 This is the primary challenge, and our entire strategy is engineered to solve it. We don't expect politicians to lead; we expect them to follow an undeniable mandate.
 
-1.  **The 3.5% Tipping Point:** Our first goal is to win the support of 3.5% of the global population. [History shows that no government can ignore a unified movement of that scale.](./references.md#3-5-rule) This makes supporting the treaty the politically rational choice for survival.
+1.  **The 3.5% Tipping Point:** Our first goal is to win the support of 3.5% of the global population. [History shows that no government can ignore a unified movement of that scale.](./references.qmd#3-5-rule) This makes supporting the treaty the politically rational choice for survival.
 2.  **Incentives, Not Morality:** We will **[co-opt the powerful military lobby](./strategy.md)** by offering them a superior financial return. When their profits are aligned with the treaty, their opposition will become advocacy.
 3.  **Critical Mass, Not Unanimity:** The treaty does not require every single country to join at once. Once a critical mass of major economic powers (e.g., the US and EU) signs on, they can use overwhelming **[economic and political incentives](./strategy.md)** (like preferential trade access) to make joining the only logical choice for other nations.
 
@@ -194,7 +194,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 ### **"Don't we already spend enough on medical research?"**
 
-[The world spends 40 times more on military force](./references.md#sipri-2024-spending) than on [medical research](./references.md#global-gov-med-research-spending). The $20-27 billion unlocked by the 1% Treaty would represent a nearly **40% increase in the entire world's budget for medical R&D.** It is a massive, not incremental, sum of money. This new funding, when deployed through an 80X more efficient model, will have a multiplicative impact on the rate of cures.
+[The world spends 40 times more on military force](./references.qmd#sipri-2024-spending) than on [medical research](./references.qmd#global-gov-med-research-spending). The $20-27 billion unlocked by the 1% Treaty would represent a nearly **40% increase in the entire world's budget for medical R&D.** It is a massive, not incremental, sum of money. This new funding, when deployed through an 80X more efficient model, will have a multiplicative impact on the rate of cures.
 
 ---
 
@@ -218,13 +218,13 @@ Enforcement is not based on courts, but on creating direct political and financi
 
 ### **"This is too operationally complex to build."**
 
-We are assembling proven components, not inventing new technology from scratch. [DAOs like MakerDAO already manage billions of dollars securely.](./references.md#makerdao-scale) Our approach is to integrate existing, battle-tested solutions for treasury management, governance, and secure voting into a unified, resilient system.
+We are assembling proven components, not inventing new technology from scratch. [DAOs like MakerDAO already manage billions of dollars securely.](./references.qmd#makerdao-scale) Our approach is to integrate existing, battle-tested solutions for treasury management, governance, and secure voting into a unified, resilient system.
 
 ---
 
 ### **"This is politically impossible - you can't just redirect military budgets by referendum."**
 
-Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The [$7T fossil fuel subsidy proof-of-concept](./references.md#fossil-fuel-subsidies) shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
+Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether we can generate enough pressure. The [$7T fossil fuel subsidy proof-of-concept](./references.qmd#fossil-fuel-subsidies) shows that massive economic reallocation is achievable when the right incentives align. We're not asking for unilateral disarmament - we're asking all nations to move 1% together, maintaining relative power balances.
 
 ---
 

@@ -58,13 +58,13 @@ jobs:
             WRITING GUIDELINES:
             1. Use dark humor and absurd but accurate analogies
             2. Write in simple, conversational language (no corporate buzzwords)
-            3. Every claim needs data and citations (check references.md)
+            3. Every claim needs data and citations (check references.qmd)
             4. Follow the 4 Core Checks: Clarity, Credibility, Concision, Directness
 
             QUALITY CHECKS TO PERFORM:
             1. Verify all markdown files have proper frontmatter (title, description, published, date, tags, dateCreated)
             2. Check internal links are not broken (use relative paths like ./file.md or ../folder/file.md)
-            3. Ensure citations link to references.md with proper anchors
+            3. Ensure citations link to references.qmd with proper anchors
             4. Flag any corporate buzzwords or euphemisms for rewriting
             5. Mark incomplete sections with HTML comments: <!-- TODO: description -->
             6. Escape dollar signs in text (\$100 not $100)
@@ -75,7 +75,7 @@ jobs:
             - Academic pomposity or textbook language
             - Euphemisms for death (just say "die" or "death")
             - Generic link text like "(Source)" - link the actual claim
-            - Creating "Sources" sections in files (use references.md instead)
+            - Creating "Sources" sections in files (use references.qmd instead)
 
             For code contributions:
             - Follow existing patterns and conventions in the codebase
