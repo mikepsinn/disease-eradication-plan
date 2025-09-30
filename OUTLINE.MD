@@ -105,7 +105,16 @@
 
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
-### Chapter 4: Why Central Planning Kills People 
+### Chapter 4: Why Central Planning Kills People
+- **1893-1962 Proved Decentralization Works**
+  - 1893: JAMA creates crowdsourced trials from 144,000 physicians
+  - Result: Life expectancy suddenly starts growing 4 years/year (after 10,000 years of stagnation)
+  - 1938: FDA safety regulations added (no change in progress rate)
+  - 1962: FDA takes over efficacy trials from doctors
+  - Immediate result: 70% reduction in new treatments
+  - Life expectancy growth cut in half: From 4 years/year to 2 years/year
+  - Drug development costs: $74M → $1B+ (inflation-adjusted)
+  - The proof: When doctors ran trials, progress was 2X faster
 - **The Pattern: Every Government "War" Creates More of What It Fights**
   - War on Drugs ($1T): Created cartels, violence up 10,000%
   - War on Poverty ($22T): Welfare cliffs keep people poor
