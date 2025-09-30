@@ -25,7 +25,8 @@
       "WebFetch(domain:wiki.dfda.earth)",
       "WebSearch",
       "Bash(test:*)",
-      "Bash(npm run quarto:preview:*)"
+      "Bash(npm run quarto:preview:*)",
+      "Bash(timeout:*)"
     ],
     "deny": [],
     "ask": []
