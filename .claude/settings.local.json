@@ -31,7 +31,10 @@
       "Bash(pip install:*)",
       "Bash(jupyter:*)",
       "Bash(python:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(do sed -i '1,/^---$/d; /^---$/d' \"$f\")",
+      "Bash(done)",
+      "Bash(npm run build:pptx:*)"
     ],
     "deny": [],
     "ask": []
