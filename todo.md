@@ -453,8 +453,8 @@ fig.text(0.98, 0.02, 'WarOnDisease.org',
 | Phase | Status | Completion | Deliverable |
 |-------|--------|------------|-------------|
 | Phase 1: Foundation | ✅ Complete | 7/7 summaries DONE | 7 part summaries |
-| Phase 2: Quick Launch | 🟢 Ready to Deploy | 80% | Website + Presentation |
-| Phase 3: Theory | ⏸️ Blocked | 0/4 chapters | Theory foundation |
+| Phase 2: Quick Launch | ✅ Complete | 95% (deploy when ready) | Website + Presentation |
+| Phase 3: Theory | 🟢 Ready to Start | 0/4 chapters | Theory foundation |
 | Phase 4: Fill Gaps | ⏸️ Waiting | 0/5 chapters | Complete skeleton |
 | Phase 5: Reframe | ⏸️ Waiting | 0/15 chapters | Enhanced content |
 | Phase 6: Research | ⏸️ Waiting | 0% | Full citations |

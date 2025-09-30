@@ -1,0 +1,52 @@
+---
+title: "1% Treaty Budget Split"
+description: "Pie chart showing 99% military budget remains, 1% goes to curing disease"
+doc-title: "treaty-impact"
+---
+
+```{python}
+#| label: treaty-impact
+#| fig-cap: "Military Budget After 1% Treaty"
+
+import sys
+sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
+
+import matplotlib.pyplot as plt
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark,
+    COLOR_LIGHT, COLOR_ACCENT, COLOR_DARK, COLOR_WHITE, COLOR_BG
+)
+
+# Setup styling
+setup_chart_style(style='light', dpi=150)
+
+# Data
+labels = ['Still for\nDefense\n99%', 'To Cure\nDisease\n1%']
+sizes = [99, 1]
+colors_treaty = [COLOR_LIGHT, COLOR_ACCENT]
+explode = (0, 0.15)
+
+# Create chart
+fig, ax = plt.subplots(figsize=(10, 10))
+wedges, texts, autotexts = ax.pie(
+    sizes,
+    explode=explode,
+    labels=labels,
+    colors=colors_treaty,
+    autopct='',
+    startangle=90,
+    textprops={'fontsize': 28, 'weight': 'bold', 'color': COLOR_DARK},
+    wedgeprops={'edgecolor': COLOR_WHITE, 'linewidth': 3}
+)
+
+ax.set_title('Military Budget After Treaty', fontsize=36, pad=20, weight='bold', color=COLOR_DARK)
+
+# Add branding
+add_watermark(fig)
+
+plt.tight_layout()
+plt.savefig('assets/charts/treaty-impact.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+plt.show()
+```
+
+**Key Insight:** The 1% Treaty takes just **1% of military spending** ($27B/year) for medical research, leaving 99% for defense. It's a tiny ask with massive impact.

@@ -1,0 +1,54 @@
+---
+title: "VICTORY Bonds Investment Returns"
+description: "Comparison of annual returns: VICTORY Bonds (40%) vs other investments"
+doc-title: "victory-bonds-returns"
+---
+
+```{python}
+#| label: victory-bonds-returns
+#| fig-cap: "VICTORY Bonds: 40% Perpetual Returns"
+
+import sys
+sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
+
+import matplotlib.pyplot as plt
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_LIGHT, COLOR_MID, COLOR_ACCENT, COLOR_DARK, COLOR_WHITE, COLOR_BG
+)
+
+# Setup styling
+setup_chart_style(style='light', dpi=150)
+
+# Data
+investments = ['S&P 500', 'Real Estate', 'Venture\nCapital', 'Medallion\nFund', 'VICTORY\nBonds']
+returns = [10, 15, 25, 39, 40]
+colors_investments = [COLOR_LIGHT, COLOR_LIGHT, COLOR_LIGHT, COLOR_MID, COLOR_ACCENT]
+
+# Create chart
+fig, ax = plt.subplots(figsize=(14, 10))
+bars = ax.barh(investments, returns, color=colors_investments, height=0.6, edgecolor=COLOR_WHITE, linewidth=2)
+
+# Add value labels
+for bar, ret in zip(bars, returns):
+    width = bar.get_width()
+    ax.text(width, bar.get_y() + bar.get_height()/2.,
+            f'  {ret}%', ha='left', va='center', fontsize=44, weight='bold',
+            color=COLOR_DARK)
+
+ax.set_xlabel('Annual Returns', fontsize=36, weight='bold', color=COLOR_DARK)
+ax.tick_params(axis='y', labelsize=36, colors=COLOR_DARK)
+ax.tick_params(axis='x', labelsize=28, colors=COLOR_MID)
+ax.set_xlim(0, 50)
+clean_spines(ax)
+ax.grid(axis='x', alpha=0.3, linestyle='--', color=COLOR_LIGHT)
+
+# Add branding
+add_watermark(fig)
+
+plt.tight_layout()
+plt.savefig('assets/charts/victory-bonds-returns.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+plt.show()
+```
+
+**Key Insight:** VICTORY Bonds offer **40% annual perpetual returns**, beating even the legendary Medallion Fund (39%). Only $3.375B total issuance makes them scarce and valuable.

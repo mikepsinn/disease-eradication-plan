@@ -28,7 +28,9 @@
       "Bash(npm run quarto:preview:*)",
       "Bash(timeout:*)",
       "Bash(quarto render:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(jupyter:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

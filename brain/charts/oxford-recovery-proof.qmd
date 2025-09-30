@@ -1,0 +1,53 @@
+---
+title: "Oxford RECOVERY Trial Results"
+description: "Bar chart showing Oxford RECOVERY trial achieved 82X efficiency at $500/patient"
+doc-title: "oxford-recovery-proof"
+---
+
+```{python}
+#| label: oxford-recovery-proof
+#| fig-cap: "Oxford RECOVERY Trial: Proof of Concept"
+
+import sys
+sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
+
+import matplotlib.pyplot as plt
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_ACCENT, COLOR_MID, COLOR_DARK, COLOR_WHITE, COLOR_BG
+)
+
+# Setup styling
+setup_chart_style(style='light', dpi=150)
+
+# Data
+metrics_oxford = ['Cost per\nPatient', 'Lives\nSaved', 'Time to\nResults', 'Patients\nIncluded']
+oxford_vals = [500, 1000000, 6, 40000]
+display_oxford = ['$500', '1M+', '6 months', '40,000']
+
+# Create chart
+fig, ax = plt.subplots(figsize=(20, 9))
+bars = ax.bar(metrics_oxford, oxford_vals,
+              color=[COLOR_ACCENT, COLOR_MID, COLOR_ACCENT, COLOR_MID],
+              width=0.6, edgecolor=COLOR_WHITE, linewidth=3)
+
+# Add value labels
+for bar, display_val in zip(bars, display_oxford):
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height/2,
+            display_val, ha='center', va='center', fontsize=56, weight='bold', color=COLOR_WHITE)
+
+ax.set_ylim(0, max(oxford_vals) * 1.1)
+ax.tick_params(axis='x', labelsize=36, colors=COLOR_DARK)
+ax.set_yticks([])
+clean_spines(ax, ['top', 'right', 'left'])
+
+# Add branding
+add_watermark(fig)
+
+plt.tight_layout()
+plt.savefig('assets/charts/oxford-recovery-proof.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+plt.show()
+```
+
+**Key Insight:** The Oxford RECOVERY trial (2020) proved decentralized trials work: **$500 per patient**, **1 million+ lives saved**, results in **6 months**, **40,000 patients** enrolled. This already works. We're just scaling it.
