@@ -207,6 +207,7 @@
   - Slide to allocate: "Jane's autism trial: 70% vs Bob's diabetes device: 30%"
   - No centralized control: Nobody decides what gets voted on
 - **The Math: How Swipes Become Budgets**
+  - Aggregated Pairwise Preference Allocation (APPA): The technical framework
   - Pairwise comparison: How your brain actually works
   - Condorcet aggregation: Finding true social preference
   - The law of large numbers: Noise cancels, signal emerges
@@ -218,10 +219,12 @@
   - Emergent order from billions of micro-decisions
   - True market discovery of society's health priorities
 - **Your AI Twin: Scaling to Infinite Decisions**
+  - Digital Twin: AI agent aligned to YOUR goals, automating YOUR tasks
   - Learns from 100 choices, predicts 10,000
   - You audit and adjust (maintaining control)
   - Collective intelligence: 8 billion advisors
   - The hive mind: Smarter than any individual
+  - Positron Agents: Prosocial AIs automating public goods production
 - **The Feedback Loop: Democracy That Learns**
   - Every allocation tracked to outcomes
   - Good allocations get reinforced
@@ -539,6 +542,14 @@
   - Billions of pairwise allocations create emergent consensus
   - Money flows automatically to top-ranked proposals
   - Zero human gatekeepers between ideas and funding
+  - The 7-Step Problem-Solving Process:
+    1. Quantify global health wants/needs through APPA voting
+    2. Create collaborative budget based on collective priorities
+    3. Catalog solutions for each problem
+    4. Rank solutions by feasibility/impact
+    5. Break solutions into actionable tasks
+    6. Match tasks to most suitable people/AI agents
+    7. Track progress and measure impact continuously
   - Core allocations (dynamically adjusted by the crowd):
     - Patient treatment subsidies (majority of funds)
     - VICTORY bond returns (5% of all inflows guaranteed)
@@ -616,6 +627,8 @@
 - **For Patients: Find What Actually Works**
   - Enter your condition
   - See treatments ranked by real effectiveness
+  - Global trial access: Join studies anywhere in the world
+  - Real-time effectiveness tracking (see what's working NOW)
   - Right to Trial: Guaranteed enrollment in at least one trial
   - Join trials from home with one click
   - Comprehension quiz ensures you understand risks
@@ -678,8 +691,9 @@
   - Radical transparency: Every query logged and public
 - **The Result: 80X Medical Progress Acceleration**
   - Before: 17 years, $2.6B per drug, 95% of diseases ignored
-  - After: 6 months, $30M per treatment, 100% of diseases targetable
-  - Cost breakdown showing 95% savings:
+  - After: ~2 years, $2M per treatment, 100% of diseases targetable
+  - 80x acceleration means centuries of progress in decades
+  - Cost breakdown showing 96% savings:
     - Site payments: $12,000 → $200 (virtual trials)
     - Patient recruitment: $8,000 → $50 (direct digital)
     - Monitoring: $6,000 → $100 (automated)
@@ -843,9 +857,10 @@
   - Population: 280 million founders (before we even have land)
   - Territory: The internet first, then cities, then Earth
   - Currency: $WISH (backed by health outcomes, not gold or violence)
-  - Constitution: Everyone is sovereign, maximize median joy
+  - Constitution: Everyone is sovereign, maximize median health and happiness
   - Economy: Post-scarcity through health innovation + universal basic income
   - First law: Curing people is more profitable than killing them
+  - The Mission: Use collective intelligence to solve humanity's problems
   - The Three Supers become human rights, not privileges
 - **2030: The Genie Awakens (First Wishes Granted)**
   - **Super-Wellbeing begins:** Depression cured with 5 real treatments, anxiety optional
