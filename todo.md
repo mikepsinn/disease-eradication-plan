@@ -1,173 +1,540 @@
-# DIH Book - Completion Checklist
+# DIH Book - Master Build Plan
 
-**Mission:** Complete all chapters from OUTLINE.MD, write first with placeholder citations, research later.
+**Strategy:** Build in layers - summaries first (reusable everywhere), then detailed chapters, then polish. Use Quarto's `{{< include >}}` system to write once, render to website/presentation/book.
 
-**Writing Strategy:**
-- Use `[TODO: source - claim]` for facts needing citations
-- Use `[STAT NEEDED: description]` for missing statistics
-- Focus on narrative flow and dark humor (Vonnegut style)
+**Writing Guidelines:**
+- `[TODO: source - claim]` for facts needing citations
+- `[STAT NEEDED: description]` for missing statistics
+- Vonnegut-style dark humor throughout
 - Frame NIH/FDA as central planning failures, DIH/dFDA as market solutions
 
 ---
 
-## Part I: The Problem (Your Democracy Is Dead)
+## Phase 1: Foundation Layer (Week 1-2) 🏗️
 
-| Chapter | File Path | Status |
-|---------|-----------|--------|
-| 1. Evolution Made You a Slave | `brain/book/problem/evolution-trap.qmd` | ✅ DONE |
-| 2. The $119 Trillion Death Toilet | `brain/book/problem/cost-of-war-and-disease.qmd` | ✅ DONE |
-| 3. Democracy Is Already Dead | `brain/book/problem/democracy-failure.qmd` | ⚠️ CREATE |
+**Goal:** Write/polish the 7 part summaries that will be reused in ALL outputs (website, presentation, book)
 
-**Part Summary:** `brain/book/problem.qmd` ✅ DONE
+### Part Summaries Status
 
----
+| Part | File | Status | Priority |
+|------|------|--------|----------|
+| I. The Problem | `brain/book/problem.qmd` | ✅ DONE | - |
+| II. The Theory | `brain/book/theory.qmd` | ⚠️ **CREATE** | **P0** |
+| III. The Solution | `brain/book/solution.qmd` | ✅ DONE | - |
+| IV. The Money | `brain/book/economics.qmd` | 📝 Review | P1 |
+| V. The Implementation | `brain/book/strategy.qmd` | 📝 Review | P1 |
+| VI. The Proof | `brain/book/proof.qmd` | 📝 Review | P1 |
+| VII. The Futures | `brain/book/futures.qmd` | ⚠️ **CREATE** | **P0** |
 
-## Part II: The Theory (Why Markets Work)
+### Tasks
 
-| Chapter | File Path | Status |
-|---------|-----------|--------|
-| 4. Why Central Planning Kills People | `brain/book/theory/central-planning-failure.qmd` | ⚠️ CREATE |
-| 5. The War on Disease (First War to Win) | `brain/book/theory/war-on-disease.qmd` | ⚠️ CREATE |
-| 6. Public Choice Theory | `brain/book/theory/public-choice.qmd` | ⚠️ CREATE |
-| 7. Wisdom of Crowds | `brain/book/theory/wisdom-of-crowds.qmd` | ⚠️ CREATE |
+- [ ] **CREATE** `brain/book/theory.qmd` (P0 - blocks presentation)
+  - Why central planning kills (Soviet famines, FDA delays)
+  - Why markets work (price signals, distributed knowledge)
+  - Public choice theory (self-interest, not idealism)
+  - Wisdom of crowds (8B > 200 bureaucrats)
+  - Keep to 300-500 words (this is a summary)
 
-**Part Summary:** `brain/book/theory.qmd` ⚠️ CREATE
+- [ ] **CREATE** `brain/book/futures.qmd` (P0 - blocks presentation)
+  - Two paths: Gollumland (extinction) vs Wishonia (transcendence)
+  - The Three Subs vs The Three Supers
+  - One 1% decision determines which timeline
+  - Keep to 300-500 words (this is a summary)
 
-**Priority:** Write these FIRST - they explain the "why" needed for other chapters
+- [ ] **REVIEW** `brain/book/economics.qmd` (P1)
+  - Strengthen VICTORY Bonds pitch (40% returns)
+  - Emphasize 463:1 ROI
+  - Add coalition alignment (defense contractors, pharma, insurers)
 
----
+- [ ] **REVIEW** `brain/book/strategy.qmd` (P1)
+  - Clarify 3-step plan (mandate → funding → treaty)
+  - Emphasize 3.5% rule
+  - Technology stack overview
 
-## Part III: The Solution (Wishocracy)
+- [ ] **REVIEW** `brain/book/proof.qmd` (P1)
+  - Lead with Oxford RECOVERY (82X efficiency)
+  - Historical precedents (Switzerland, landmine treaty)
+  - Body as machine analogy
 
-| Chapter | File Path | Status |
-|---------|-----------|--------|
-| 8. Wishocracy - Markets Not Majorities | `brain/book/solution/wishocracy.qmd` | 📝 REVIEW |
-| 9. The 1% Treaty | `brain/book/solution/1-percent-treaty.qmd` | 📝 REVIEW |
-
-**Part Summary:** `brain/book/solution.qmd` ✅ DONE
-
----
-
-## Part IV: The Money (Economics)
-
-| Chapter | File Path | Status |
-|---------|-----------|--------|
-| 10. The Economic Case (463:1 ROI) | `brain/book/economics/economic-case.qmd` | 📝 REVIEW |
-| 11. VICTORY Bonds | `brain/book/economics/victory-bonds.qmd` | 📝 REVIEW |
-| 12. The Coalition That Ends War | `brain/book/economics/coalition.qmd` | ⚠️ CREATE |
-| 13. Legal Architecture | `brain/book/economics/legal-framework.qmd` | ⚠️ CREATE |
-
-**Part Summary:** `brain/book/economics.qmd` 📝 REVIEW
-
----
-
-## Part V: The Implementation (Building It)
-
-| Chapter | File Path | Status |
-|---------|-----------|--------|
-| 14. The Technology Stack | `brain/book/strategy/technology-stack.qmd` | ⚠️ CREATE |
-| 16. The Global Referendum | `brain/book/strategy/global-referendum.qmd` | 📝 REVIEW |
-| 17 (DIH). Government Without Governments | `brain/book/solution/dih.qmd` | 📝 REVIEW |
-| 17 (dFDA). The Amazon of Not Dying | `brain/book/solution/dfda.qmd` | 📝 REVIEW |
-
-**Part Summary:** `brain/book/strategy.qmd` 📝 REVIEW
+**Deliverable:** 7 polished summaries that work as standalone content
 
 ---
 
-## Part VI: The Proof (This Already Works)
+## Phase 2: Quick Launch (Week 2-3) 🚀
 
-| Chapter | File Path | Status |
-|---------|-----------|--------|
-| 19. Political Movements That Changed Everything | `brain/book/proof/historical-precedents.qmd` | 📝 REVIEW |
-| 20. Your Body Is Just a Machine | `brain/book/proof/body-as-machine.qmd` | ✅ DONE |
+**Goal:** Ship website + presentation using the summaries from Phase 1
 
-**Part Summary:** `brain/book/proof.qmd` 📝 REVIEW
+### Website Setup
 
----
+- [ ] **Polish** `index.qmd` as landing page
+  - Use existing content (already strong)
+  - Add links to part summaries
+  - Ensure all links work
 
-## Part VII: Choose Your Future (Dystopia vs Utopia)
+- [ ] **Update** `_quarto.yml` for multiple outputs
+  - Book format (existing)
+  - Website format (existing)
+  - Presentation format (add revealjs/pptx)
 
-| Chapter | File Path | Status |
-|---------|-----------|--------|
-| 21. Path A - Gollumland | `brain/book/futures/dystopia.qmd` | ✅ DONE |
-| 22. Path B - Wishonia | `brain/book/futures/utopia.qmd` | ✅ DONE |
-| 23. The Tale of Two Futures | `brain/book/futures/comparison.qmd` | ⚠️ CREATE |
+### Presentation Build
 
-**Part Summary:** `brain/book/futures.qmd` ⚠️ CREATE
+- [ ] **Finalize** `presentation.qmd` (already drafted)
+  - Uses `{{< include >}}` for part summaries
+  - Conditional content: bullets for slides, prose for PowerPoint
+  - Test both revealjs and pptx outputs
 
----
+### Build & Deploy
 
-## Part VIII: Join or Die (Call to Action)
+- [ ] **Test builds**
+  ```bash
+  quarto render index.qmd --to html          # Website
+  quarto render presentation.qmd --to revealjs  # Web slides
+  quarto render presentation.qmd --to pptx      # PowerPoint
+  ```
 
-| Chapter | File Path | Status |
-|---------|-----------|--------|
-| 24. Your Personal Benefits | `brain/book/call-to-action/personal-benefits.qmd` | 📝 REVIEW |
-| 25. The Three Actions | `brain/book/call-to-action/three-actions.qmd` | 📝 REVIEW |
-| 26. Every Objection Demolished | `brain/book/call-to-action/objections.qmd` | 📝 REVIEW |
+- [ ] **Deploy to GitHub Pages**
+  ```bash
+  quarto publish gh-pages
+  ```
 
-**Part Summary:** `brain/book/objections.qmd` (if separate) or include in Part VIII summary
-
----
-
-## Summary: What Needs to Be Done
-
-### 🔴 CREATE (11 files) - Priority Order
-
-**Theory First (explains the "why"):**
-1. `brain/book/theory/central-planning-failure.qmd` (Ch 4)
-2. `brain/book/theory/war-on-disease.qmd` (Ch 5)
-3. `brain/book/theory/public-choice.qmd` (Ch 6)
-4. `brain/book/theory/wisdom-of-crowds.qmd` (Ch 7)
-5. `brain/book/theory.qmd` (Part II summary)
-
-**Then Problem Chapters:**
-6. `brain/book/problem/democracy-failure.qmd` (Ch 3)
-
-**Then Fill Gaps:**
-7. `brain/book/economics/coalition.qmd` (Ch 12)
-8. `brain/book/economics/legal-framework.qmd` (Ch 13)
-9. `brain/book/strategy/technology-stack.qmd` (Ch 14)
-10. `brain/book/futures/comparison.qmd` (Ch 23)
-11. `brain/book/futures.qmd` (Part VII summary)
-
-### 📝 REVIEW & REFRAME (15+ files)
-
-Apply market theory framing to existing files:
-- All Part III (Solution) chapters - add market mechanisms
-- All Part IV (Economics) chapters - strengthen market arguments
-- Part V (Implementation) chapters - emphasize decentralization
-- Part VI (Proof) chapters - connect to market success stories
-- Part VIII (Call to Action) chapters - final polish
+**Deliverable:** Live website at dih.wiki + downloadable presentation
 
 ---
 
-## Next Phases (After Writing Complete)
+## Phase 3: Theory Foundation (Week 3-6) 📚
 
-### Phase 3: Research & Citation
-- Find sources for all `[TODO: source]` placeholders
-- Verify all `[STAT NEEDED]` with real data
-- Build `brain/reference/references.md` with verified citations
+**Goal:** Write the 4 theory chapters that explain WHY markets > central planning. These will be referenced throughout other chapters.
 
-### Phase 4: Visualization & Polish
-- Create Python/Plotly charts for key data points
-- Add Mermaid diagrams where helpful
-- Final voice and humor pass
-- Verify all internal links
+**Why First?** These provide the intellectual framework for reframing all other content.
 
-### Phase 5: Build & Launch
-- `npm run build` - generate HTML/PDF
-- Deploy to GitHub Pages
-- Announce launch
+| Chapter | File | Topics | Words |
+|---------|------|--------|-------|
+| 4. Why Central Planning Kills | `brain/book/theory/central-planning-failure.qmd` | 1962 FDA centralization disaster, Soviet famines, knowledge problem, NIH inefficiency | 2,500 |
+| 5. The War on Disease | `brain/book/theory/war-on-disease.qmd` | First "war" designed to win, aligned incentives, spillover effects, meta-victory | 2,000 |
+| 6. Public Choice Theory | `brain/book/theory/public-choice.qmd` | Politicians maximize power, bureaucrats maximize budgets, lobbyist ROI, incentive engineering | 2,000 |
+| 7. Wisdom of Crowds | `brain/book/theory/wisdom-of-crowds.qmd` | Surowiecki's ox, prediction markets, network effects, superintelligence we already have | 2,000 |
+
+### Chapter Templates
+
+Each chapter should follow this structure:
+```markdown
+---
+title: "Chapter X: [Title]"
+---
+
+## The Problem (Historical Evidence)
+[Soviet agriculture / FDA delays / NIH waste - pick one parallel]
+
+## Why It Failed (Theory)
+[Hayek's knowledge problem / Public choice theory / etc.]
+
+## How Markets Solve This
+[Price signals / Competition / Wisdom of crowds]
+
+## Applied to Medical Research
+[Specific examples from dFDA / DIH]
+
+## The Proof
+[Oxford RECOVERY / Pre-1962 medicine / Other examples]
+```
+
+**Deliverable:** 4 theory chapters (~8,500 words) that can be referenced in all other content
+
+---
+
+## Phase 4: Fill Critical Gaps (Week 6-10) 🔌
+
+**Goal:** Complete the missing chapters needed for coherent narrative flow
+
+### Problem Section
+
+- [ ] **CREATE** `brain/book/problem/democracy-failure.qmd` (2,500 words)
+  - Princeton study (0% public influence)
+  - Rational ignorance (1 in 60M vote probability)
+  - Representation illusion (750K constituents per rep)
+  - Budget black box (omnibus bills)
+  - Regulatory capture
+  - Direct democracy failures (California)
+
+### Economics Section
+
+- [ ] **CREATE** `brain/book/economics/coalition.qmd` (2,500 words)
+  - Defense contractors (40% returns > 8% margins)
+  - Insurance companies (healthy people = profit)
+  - Big Pharma (DIH = guaranteed customers)
+  - Politicians (our money > their money)
+  - Billionaires (reputation + returns)
+
+- [ ] **CREATE** `brain/book/economics/legal-framework.qmd` (2,000 words)
+  - Multi-jurisdiction strategy
+  - Securities law navigation (VICTORY bonds as debt)
+  - Election law compliance
+  - Treaty framework
+  - Legislation package (already drafted)
+
+### Strategy Section
+
+- [ ] **CREATE** `brain/book/strategy/technology-stack.qmd` (2,000 words)
+  - Platform architecture (distributed ledger, smart contracts)
+  - AI layer (personal health agents, treatment matching)
+  - Security requirements
+  - Privacy paradox solved (public science, private patients)
+
+### Futures Section
+
+- [ ] **CREATE** `brain/book/futures/comparison.qmd` (2,000 words)
+  - Side-by-side comparison table (2030, 2035, 2040, 2045, 2050)
+  - The Three Subs vs The Three Supers
+  - Daily life in each timeline
+  - Math that should have warned us
+
+**Deliverable:** 5 new chapters (~11,000 words) completing the narrative skeleton
+
+---
+
+## Phase 5: Reframe & Enhance (Week 10-14) 🔄
+
+**Goal:** Apply market theory framework to all existing chapters
+
+### Part III: Solution (Apply Market Framing)
+
+- [ ] **REFRAME** `brain/book/solution/wishocracy.qmd`
+  - Add: How APPA prevents central planning
+  - Add: Market discovery vs committee decisions
+  - Add: Why AI twins scale better than representatives
+
+- [ ] **REFRAME** `brain/book/solution/1-percent-treaty.qmd`
+  - Add: Game theory (why countries cooperate)
+  - Add: Verification mechanism (blockchain, satellites)
+  - Add: Ratchet effect (1% → 2% → 5%)
+
+- [ ] **REFRAME** `brain/book/solution/dih.qmd`
+  - Add: Why subsidizing patients > funding researchers
+  - Add: Capture-proof design (no committee to bribe)
+  - Add: 7-step problem-solving process
+
+- [ ] **REFRAME** `brain/book/solution/dfda.qmd`
+  - Add: Amazon comparison (marketplace, not gatekeeper)
+  - Add: Competition drives efficiency (82X proof)
+  - Add: Network effects (each trial makes next cheaper)
+
+### Part IV: Economics (Strengthen Arguments)
+
+- [ ] **ENHANCE** `brain/book/economics/victory-bonds.qmd`
+  - Add: Comparison to Medallion Fund
+  - Add: Why defense contractors should diversify
+  - Add: Use of funds transparency
+
+- [ ] **ENHANCE** `brain/book/economics/economic-case.qmd`
+  - Add: Daily holocaust of inaction (2,301 QALYs/day)
+  - Add: Dominant intervention (negative ICER)
+  - Add: $16.5T endgame calculation
+
+### Part V: Implementation (Emphasize Decentralization)
+
+- [ ] **ENHANCE** `brain/book/strategy/global-referendum.qmd`
+  - Add: Viral growth strategy (3.5 multiplier)
+  - Add: Network effects
+  - Add: Platform details (Wishocracy app)
+
+- [ ] **ENHANCE** `brain/book/strategy/legal-compliance-framework.qmd`
+  - Add: Specific legislation package
+  - Add: How to stay out of prison
+  - Add: International coordination
+
+### Part VI: Proof (Connect to Market Success)
+
+- [ ] **ENHANCE** `brain/book/proof/historical-precedents.qmd`
+  - Add: Switzerland (200-year peace dividend)
+  - Add: War bonds (capitalism defeated fascism)
+  - Add: 3.5% rule (we have advantages they didn't)
+
+- [ ] **ENHANCE** `brain/book/reference/recovery-trial.qmd`
+  - Add: Cost breakdown ($500 vs $41,000)
+  - Add: Timeline comparison
+  - Add: Why it proves decentralization works
+
+### Part VIII: Call to Action (Final Polish)
+
+- [ ] **POLISH** `brain/book/call-to-action.qmd`
+  - Ensure clear 3-action structure
+  - Personal benefits list
+  - Every objection demolished
+
+**Deliverable:** 15+ chapters enhanced with consistent market theory framing
+
+---
+
+## Phase 6: Research & Citations (Week 14-15) 🔬
+
+**Goal:** Replace all placeholder citations with real sources
+
+### Systematic Source Hunt
+
+- [ ] **Scan all files** for citation placeholders
+  ```bash
+  rg "\[TODO: source" brain/book/ --type md
+  rg "\[STAT NEEDED:" brain/book/ --type md
+  ```
+
+- [ ] **Create master citation list**
+  - Extract all claims needing sources
+  - Prioritize by importance (critical stats first)
+
+- [ ] **Research & verify**
+  - Use WebSearch tool for statistics
+  - Verify all numbers are current
+  - Find original sources (not secondary)
+
+- [ ] **Build** `brain/reference/references.md`
+  - One alphabetized list
+  - Format: anchor ID, brief title, quote, source link
+  - No duplicates
+
+- [ ] **Replace placeholders** with proper links
+  - Format: `[claim](./references.md#anchor-id)`
+  - Verify all links work
+
+**Deliverable:** Fully cited book with zero placeholders
+
+---
+
+## Phase 7: Visualization (Week 15-16) 📊
+
+**Goal:** Add Python-generated charts using Quarto's computation features
+
+### Priority Charts (Create as `.qmd` files in `brain/charts/`)
+
+- [ ] **Military spending vs medical research** (Chapter 1)
+  - Bar chart comparing $2.7T to $68B
+  - Annotations showing fighter jet = rare disease budget
+
+- [ ] **Disease costs breakdown** (Chapter 1)
+  - Pie chart: direct healthcare, lost productivity, death costs
+  - $109.1T total with components
+
+- [ ] **FDA approval timeline** (Chapter 4)
+  - Timeline visualization: pre-1962 vs post-1962
+  - 2-3 years → 17 years, $74M → $2.6B
+
+- [ ] **1% budget carve-out** (Chapter 9)
+  - Visual showing 1% = $27B from $2.7T
+  - "Still have 99% for killing"
+
+- [ ] **VICTORY Bond returns comparison** (Chapter 11)
+  - Bar chart: S&P (10%), VC (25%), Medallion (39%), VICTORY (40%)
+  - Scaling potential as treaty expands
+
+- [ ] **3.5% population map** (Chapter 16)
+  - World map showing 280M = 3.5% of 8B
+  - Historical examples (civil rights, suffrage)
+
+- [ ] **Treaty progression timeline** (Chapter 9)
+  - Gantt chart: Year 1 (1%), Year 2 (2%), Year 5 (5%)
+  - Corresponding budget growth
+
+- [ ] **Oxford RECOVERY cost breakdown** (Chapter 19)
+  - Detailed comparison: $500 vs $41,000 per patient
+  - Where the 82X savings come from
+
+### Chart Style Standards
+
+All charts must follow the style guide:
+```python
+# Use centralized theme (to be created)
+plt.rcParams.update({
+    'font.family': 'sans-serif',
+    'figure.dpi': 150,
+})
+
+# Watermark every chart
+fig.text(0.98, 0.02, 'WarOnDisease.org',
+         fontsize=8, color='gray',
+         ha='right', va='bottom', alpha=0.7)
+```
+
+**Deliverable:** 8 professional charts embedded throughout book
+
+---
+
+## Phase 8: Polish & Launch (Week 16) 🎨
+
+**Goal:** Final quality pass and full deployment
+
+### Content Polish
+
+- [ ] **Voice consistency pass**
+  - Ensure Vonnegut-style dark humor throughout
+  - Remove any corporate buzzwords
+  - Check for euphemisms (replace with direct language)
+
+- [ ] **Flow & transitions**
+  - Ensure chapters connect logically
+  - Add forward/backward references where helpful
+  - Smooth narrative arc from problem → solution → action
+
+### Technical Review
+
+- [ ] **Verify all internal links**
+  ```bash
+  npm run lint:links
+  ```
+
+- [ ] **Test all Mermaid diagrams**
+  - Render each one in preview
+  - Ensure no syntax errors
+
+- [ ] **Validate frontmatter**
+  ```bash
+  npm run validate:frontmatter --fix
+  ```
+
+- [ ] **Markdown linting**
+  ```bash
+  npm run lint:md:fix
+  ```
+
+### Build All Formats
+
+- [ ] **HTML (website)**
+  ```bash
+  quarto render --to html
+  ```
+
+- [ ] **PDF (book)**
+  ```bash
+  quarto render --to pdf
+  ```
+
+- [ ] **EPUB (ebook)**
+  ```bash
+  quarto render --to epub
+  ```
+
+- [ ] **RevealJS (web presentation)**
+  ```bash
+  quarto render presentation.qmd --to revealjs
+  ```
+
+- [ ] **PowerPoint**
+  ```bash
+  quarto render presentation.qmd --to pptx
+  ```
+
+### Deployment
+
+- [ ] **Deploy to GitHub Pages**
+  ```bash
+  quarto publish gh-pages
+  ```
+
+- [ ] **Upload presentation** to Google Drive / Dropbox
+  - Share PowerPoint for offline use
+  - Share RevealJS link for online viewing
+
+- [ ] **Generate PDF/EPUB** for distribution
+  - Host on website
+  - Submit to ebook platforms (optional)
+
+### Announcement
+
+- [ ] **Launch post** on social media
+- [ ] **Email list announcement**
+- [ ] **Submit to relevant communities** (Reddit, HN, etc.)
+
+**Deliverable:** Fully polished book in 5 formats (HTML, PDF, EPUB, RevealJS, PPTX)
 
 ---
 
 ## Progress Tracker
 
-**Files Complete:** 7/33 chapters (21%)
-- ✅ Ch 1, 2, 20, 21, 22 written
-- ✅ 2 part summaries done (problem, solution)
+### Overall Status
 
-**Files to Create:** 11/33 (33%)
-**Files to Review:** 15/33 (46%)
+| Phase | Status | Completion | Deliverable |
+|-------|--------|------------|-------------|
+| Phase 1: Foundation | 🟡 In Progress | 5/7 summaries | 7 part summaries |
+| Phase 2: Quick Launch | ⏸️ Blocked | 0% | Website + Presentation |
+| Phase 3: Theory | ⏸️ Blocked | 0/4 chapters | Theory foundation |
+| Phase 4: Fill Gaps | ⏸️ Waiting | 0/5 chapters | Complete skeleton |
+| Phase 5: Reframe | ⏸️ Waiting | 0/15 chapters | Enhanced content |
+| Phase 6: Research | ⏸️ Waiting | 0% | Full citations |
+| Phase 7: Visualization | ⏸️ Waiting | 0/8 charts | Professional charts |
+| Phase 8: Launch | ⏸️ Waiting | 0% | Published book |
 
-**Target:** Complete all 33 files, then move to research phase
+### Files Status
+
+**Complete:** 7/33 chapters (21%)
+- ✅ Part I: Ch 1, 2 (Evolution, War+Disease)
+- ✅ Part VI: Ch 20 (Body as Machine)
+- ✅ Part VII: Ch 21, 22 (Dystopia, Utopia)
+- ✅ 2 part summaries (problem, solution)
+
+**To Create:** 11/33 chapters (33%)
+- ⚠️ 2 part summaries (theory, futures) - **BLOCKS PHASE 2**
+- ⚠️ 4 theory chapters - **PHASE 3**
+- ⚠️ 5 gap chapters - **PHASE 4**
+
+**To Review/Enhance:** 15/33 chapters (46%)
+- 📝 15 existing chapters need market framing - **PHASE 5**
+
+---
+
+## Key Efficiency Principles
+
+1. **Write Once, Render Everywhere**
+   - Part summaries used in website, presentation, and book
+   - Detailed chapters included via `{{< include >}}`
+   - Conditional content for different formats
+
+2. **Build in Layers**
+   - Summaries first (reusable foundation)
+   - Theory second (framework for everything else)
+   - Details last (when framework is solid)
+
+3. **Ship Incrementally**
+   - Phase 2: Website + presentation (2-3 weeks)
+   - Phase 8: Full book (16 weeks)
+   - Feedback improves final product
+
+4. **Leverage Quarto Features**
+   - Conditional content: `{.content-visible when-format="revealjs"}`
+   - Includes: `{{< include path.qmd >}}`
+   - Python charts: Executed during render
+   - Multiple outputs: One command → HTML + PDF + EPUB
+
+5. **Parallel Work Possible**
+   - Theory chapters (Phase 3) can be written in parallel
+   - Gap chapters (Phase 4) independent
+   - Research (Phase 6) can start early
+
+---
+
+## Commands Reference
+
+### Preview (Live Reload)
+```bash
+quarto preview                      # Preview book
+quarto preview presentation.qmd     # Preview presentation
+quarto preview index.qmd           # Preview website
+```
+
+### Build Specific Formats
+```bash
+quarto render index.qmd --to html
+quarto render presentation.qmd --to revealjs
+quarto render presentation.qmd --to pptx
+quarto render --to pdf
+quarto render --to epub
+```
+
+### Quality Checks
+```bash
+npm run validate:frontmatter --fix  # Fix YAML headers
+npm run lint:md:fix                 # Fix markdown issues
+npm run generate:index              # Update file index
+```
+
+### Deploy
+```bash
+quarto publish gh-pages             # Deploy to GitHub Pages
+```
