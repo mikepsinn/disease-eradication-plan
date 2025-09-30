@@ -1,13 +1,11 @@
 ---
-title: "Economics → How to Make Peace More Profitable Than War"
-description: "The economic model that makes the DIH possible. This chapter details the Peace Dividend, VICTORY Bonds, and the investment thesis that makes peace more profitable than war."
+title: "Part IV: The Money - How Everyone Gets Rich by Getting Healthy"
+description: "463:1 ROI on killing disease. VICTORY Bonds at 40% returns. How to make curing people more profitable than killing them."
 published: true
-date: "2025-09-10T00:00:00.000Z"
-tags: [economics, investment-thesis, victory-bonds, peace-dividend, fundraising, tokenomics]
-dateCreated: "2025-09-10T00:00:00.000Z"
+date: "2025-01-30T00:00:00.000Z"
+tags: [economics, investment-thesis, victory-bonds, peace-dividend, roi, coalition]
+dateCreated: "2025-01-30T00:00:00.000Z"
 ---
-
-# 📖 Chapter 4: The Economics - How to Make Peace Pay Better Than War
 
 This isn't a charity. It's a machine for converting the two most destructive forces in the world—war and disease—into the two most profitable: peace and health.
 
@@ -20,28 +18,50 @@ The economic argument is simple:
 
 This chapter explains the math.
 
----
-
-## The Details
-
-*   **[The Peace Dividend](./economics/peace-dividend-value-capture.qmd):** The $16.5 trillion we waste on war every year.
-*   **[The Health Dividend](./economics/economic-value-of-accelerated-treatments.qmd):** The trillions we lose to disease every year.
-*   **[VICTORY Bonds](./economics/victory-bonds.qmd):** How we raise the money upfront.
-*   **[Investment Thesis](./economics/investment-thesis.qmd):** Why this beats every other investment.
-*   **[Financial Models](./economics/dih-treasury-cash-flow-model.qmd):** The spreadsheets and risk analysis.
-
----
-## How the Money Goes Around
-
-Here's how it works:
+## How the Money Flows
 
 ```mermaid
 graph TD
-    A[Investors & Citizens] -- purchase --> B(VICTORY Bonds);
-    B -- funds --> C{DIH Treasury};
-    C -- finances --> D[Hyper-Efficient Medical R&D];
-    D -- produces --> E[Cures, Health & Economic Productivity];
-    E -- justifies --> F(The 1% Treaty);
-    F -- sovereign contributions --> C;
-    C -- repays --> A;
+    A[Investors] -->|Buy VICTORY Bonds| B[\$3.375B Raised];
+    B -->|Fund Campaign| C[Lobbying + Global Referendum];
+    C -->|Treaty Ratified| D[\$27B/Year to DIH Treasury];
+
+    D -->|5% Forever| E[VICTORY Bondholders: \$1.35B/year];
+    D -->|95% via Wishocracy| F{Allocated by Everyone};
+
+    F -->|Most Funds| G[Patient Subsidies for dFDA Trials];
+    F --> H[dFDA Infrastructure: Rankings, Outcome Labels, Insurance];
+    F --> I[Campaign for 2% Treaty];
+    F --> J[Whatever Else People Vote For];
+
+    G --> K[Trials at \$500 vs \$41,000];
+    H --> K;
+    K --> L[Cures Created 82X Faster];
+    L --> M[Success Justifies Treaty Expansion];
+    M -->|2% → 5% → 10%| D;
+
+    style E fill:#2ecc71
+    style K fill:#3498db
+    style L fill:#e74c3c
 ```
+
+## The Details
+
+### The Value We're Capturing
+
+- **[The Peace Dividend](./economics/peace-dividend-value-capture.qmd):** The \$9.7 trillion we waste on war every year
+- **[The Health Dividend](./economics/economic-value-of-accelerated-treatments.qmd):** The trillions we lose to disease every year
+- **[Economic Impact Summary](./economics/economic-impact-summary.qmd):** The \$16.5T endgame when everything compounds
+
+### How We Fund It
+
+- **[VICTORY Bonds](./economics/victory-bonds.qmd):** 40% returns that beat every hedge fund
+- **[Investment Thesis](./economics/investment-thesis.qmd):** Why this is the most profitable investment in history
+- **[Financial Models](./economics/dih-treasury-cash-flow-model.qmd):** Spreadsheets, cash flow projections, and risk analysis
+
+### Who We're Bribing
+
+- **[Chapter 10: The Economic Case](economics/economic-case.qmd):** 463:1 ROI and the daily holocaust of inaction
+- **[Chapter 11: VICTORY Bonds](economics/victory-bonds.qmd):** How to beat Medallion Fund returns
+- **[Chapter 12: The Coalition That Ends War](economics/coalition.qmd):** Co-opting defense contractors, pharma, insurers, and politicians
+- **[Chapter 13: Legal Architecture](economics/legal-framework.qmd):** Multi-jurisdiction strategy for staying out of prison
