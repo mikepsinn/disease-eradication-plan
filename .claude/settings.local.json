@@ -23,7 +23,8 @@
       "WebFetch(domain:*)",
       "WebFetch(domain:thinkbynumbers.org)",
       "WebFetch(domain:wiki.dfda.earth)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(test:*)"
     ],
     "deny": [],
     "ask": []
