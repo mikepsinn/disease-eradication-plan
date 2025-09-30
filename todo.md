@@ -41,20 +41,20 @@
   - ~~One 1% decision determines which timeline~~
   - ~~Keep to 300-500 words (this is a summary)~~
 
-- [ ] **REVIEW** `brain/book/economics.qmd` (P1)
-  - Strengthen VICTORY Bonds pitch (40% returns)
-  - Emphasize 463:1 ROI
-  - Add coalition alignment (defense contractors, pharma, insurers)
+- [x] **REVIEW** `brain/book/economics.qmd` (P1) ✅ DONE
+  - ~~Strengthen VICTORY Bonds pitch (40% returns)~~
+  - ~~Emphasize 463:1 ROI~~
+  - ~~Add coalition alignment (defense contractors, pharma, insurers)~~
 
-- [ ] **REVIEW** `brain/book/strategy.qmd` (P1)
-  - Clarify 3-step plan (mandate → funding → treaty)
-  - Emphasize 3.5% rule
-  - Technology stack overview
+- [x] **REVIEW** `brain/book/strategy.qmd` (P1) ✅ DONE
+  - ~~Clarify 3-step plan (mandate → funding → treaty)~~
+  - ~~Emphasize 3.5% rule~~
+  - ~~Technology stack overview~~
 
-- [ ] **REVIEW** `brain/book/proof.qmd` (P1)
-  - Lead with Oxford RECOVERY (82X efficiency)
-  - Historical precedents (Switzerland, landmine treaty)
-  - Body as machine analogy
+- [x] **REVIEW** `brain/book/proof.qmd` (P1) ✅ DONE
+  - ~~Lead with Oxford RECOVERY (82X efficiency)~~
+  - ~~Historical precedents (Switzerland, landmine treaty)~~
+  - ~~Body as machine analogy~~
 
 **Deliverable:** 7 polished summaries that work as standalone content
 
@@ -452,8 +452,8 @@ fig.text(0.98, 0.02, 'WarOnDisease.org',
 
 | Phase | Status | Completion | Deliverable |
 |-------|--------|------------|-------------|
-| Phase 1: Foundation | ✅ Complete | 7/7 summaries | 7 part summaries |
-| Phase 2: Quick Launch | 🟢 Ready | 0% | Website + Presentation |
+| Phase 1: Foundation | ✅ Complete | 7/7 summaries DONE | 7 part summaries |
+| Phase 2: Quick Launch | 🟢 Ready to Deploy | 80% | Website + Presentation |
 | Phase 3: Theory | ⏸️ Blocked | 0/4 chapters | Theory foundation |
 | Phase 4: Fill Gaps | ⏸️ Waiting | 0/5 chapters | Complete skeleton |
 | Phase 5: Reframe | ⏸️ Waiting | 0/15 chapters | Enhanced content |
