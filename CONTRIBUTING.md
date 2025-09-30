@@ -343,25 +343,27 @@ All code-generated visualizations in this project must adhere to a consistent, p
 2.  **Clarity:** Use elegant, readable typography (see typography guidelines below). Ensure font sizes are large enough to be easily read.
 3.  **Consistent Branding:** All charts must be watermarked with "WarOnDisease.org" in the lower-right corner.
 
-**Official Color Palette (Palette C - Modern Neutral):**
+**Official Color Palette (WWII Propaganda Style):**
 
-All visualizations must use this palette for consistency and elegant, timeless design:
+All visualizations use bold red and blue inspired by WWII propaganda posters:
 
 ```python
 # Primary Colors
 COLOR_DARK = '#1a1a1a'       # Almost black - use for primary text and emphasis
 COLOR_MID = '#4a4a4a'        # Charcoal - use for secondary elements
 COLOR_LIGHT = '#e0e0e0'      # Light gray - use for backgrounds and subtle elements
-COLOR_ACCENT = '#2c5f7d'     # Muted teal/blue - use sparingly for key data points
+COLOR_RED = '#c1272d'        # Bold propaganda red - danger, urgency, problems (war, disease, waste)
+COLOR_BLUE = '#0051a5'       # Bold propaganda blue - hope, solutions, action (treaty, cures, bonds)
 COLOR_BG = '#f8f8f8'         # Off-white - use for chart backgrounds
 COLOR_WHITE = '#ffffff'      # Pure white - use for high contrast elements
 ```
 
 **When to Use Each Color:**
-- **COLOR_DARK:** Primary data series, headlines, key numbers
-- **COLOR_MID:** Secondary data series, axis labels, annotations
+- **COLOR_RED:** Bad things - war deaths, disease deaths, wasted spending, problems
+- **COLOR_BLUE:** Good things - treaty solution, cures, VICTORY bonds, hope
+- **COLOR_DARK:** Primary text, headlines, key numbers
+- **COLOR_MID:** Secondary text, axis labels, annotations
 - **COLOR_LIGHT:** Subtle gridlines, dividers, less important elements
-- **COLOR_ACCENT:** Critical data points requiring emphasis (deaths, breakthrough results, ROI)
 - **COLOR_BG:** Chart backgrounds, slide backgrounds
 - **COLOR_WHITE:** Text on dark backgrounds, high contrast needs
 
