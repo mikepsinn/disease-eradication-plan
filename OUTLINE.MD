@@ -462,7 +462,7 @@
 ## Part V: The Implementation (Building Paradise)
 
 ### Chapter 15: The Global Referendum (Democracy at Scale)
-- **The Platform: Direct Democracy App**
+- **The Platform: Wishocracy App**
   - 30-second onboarding
   - Swipe interface for budget allocation
   - Share to earn rewards
@@ -722,8 +722,7 @@
   - Economy: Post-scarcity through health innovation + universal basic income
   - First law: Curing people is more profitable than killing them
 - **2030: The Genie Awakens (First Wishes Granted)**
-  - $WISH becomes primary currency for 1 billion people
-  - Universal Basic Income: 1,000 $WISH/month to every human (poverty deleted)
+  - Universal Basic Income for every human (poverty deleted)
   - IRS dissolved: $300B/year saved, zero tax forms ever again
   - Type 1 diabetes: Cured (not managed, CURED)
   - Depression: 5 treatments that actually work (not SSRIs that don't)
@@ -737,9 +736,9 @@
   - Cancer: 80% curable, 20% preventable
   - Mental illness: Precision treatments based on your genome
   - Healthcare: Free through dFDA trials (insurance companies extinct)
-  - Dollar: Abandoned by half the world for $WISH
+  - Dollar: Abandoned by half the world can no longer be printed to fund unpopular wars
   - Work week: 20 hours (AI does the boring stuff)
-  - Productivity gains: 100% to workers via $WISH (not to shareholders)
+  - Productivity gains: 100% to workers
   - Life expectancy: 100 becomes the new 60
 - **2040: Wishonia Manifests Physically (The Network State Materializes)**
   - Singapore declares itself first Wishonian territory
@@ -748,10 +747,10 @@
   - Disease: Optional (choose your health settings like a video game)
   - Work: Optional (UBI covers everything, work for fun)
   - Aging: Reversible (be 25 forever if you want)
-  - Dollar: Dead (everyone uses $WISH)
+  - Dollar: Dead
   - War: Incomprehensible (like cannibalism today)
   - Scarcity: Ended (3D print anything from atoms)
-  - Every human: Direct democracy vote on everything
+  - Every human: Wishocracy vote on everything
 - **2045: The Medical Renaissance (Indistinguishable From Magic)**
   - AI doctors: 1000X better than human (and they care more)
   - Aging: Completely optional (death by choice only)
@@ -759,7 +758,7 @@
   - Mental illness: Extinct (brain chemistry perfected)
   - Personalized medicine: Treatments designed for YOUR specific DNA
   - Nanobots: Fixing you from inside 24/7
-  - Median wealth: 1 million $WISH (post-scarcity achieved)
+  - Post-scarcity achieved
   - The Fed: In a museum next to bloodletting tools
 - **2050: Paradise Achieved (The Magical Kingdom Realized)**
   - Death: Optional (immortality available but not mandatory)
@@ -770,8 +769,8 @@
   - Collective achievements: We cure death, solve physics, talk to aliens
   - Humanity 2.0: Upgraded biology, enhanced cognition, infinite lifespan
   - Work: Whatever brings you joy (robots do everything else)
-  - Money: $WISH only (dollars in history books as "that thing that failed")
-  - Government: Direct democracy via AI (no politicians needed)
+  - Money: dollars in history books as "that thing that failed"
+  - Government: Wishocracy via AI (no politicians needed)
   - Next challenge: Which galaxy to colonize first
   - Earth's epitaph: "They chose magic over madness"
 
@@ -839,7 +838,7 @@
   - We went to the moon with slide rules, we can fix cells with AI
 - **"40% returns are impossible"**
   - Medallion Fund does 39% with $10B cap. We do 40%+ with unlimited scaling as treaty grows.
-- **"Direct democracy is mob rule"**
+- **"Wishocracy is mob rule"**
   - Better than oligarch rule. Plus AI advisors prevent stupidity.
 - **"The powers that be won't allow this"**
   - The powers that be get VICTORY bonds. They'll allow it.
