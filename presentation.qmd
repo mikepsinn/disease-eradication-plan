@@ -140,9 +140,11 @@ We spend **1,600X more** treating disease than curing it
 <h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">dFDA</h1>
 <p style="text-align: center; font-size: 56px; color: #4a4a4a;">Amazon for Clinical Trials</p>
 
-<br>
-
 {{< include brain/charts/dfda-comparison.qmd >}}
+
+<p style="text-align: center; font-size: 52px; color: #c1272d; margin-top: 30px;">
+**82X more efficient** than FDA: **$500** vs **$41,000** per patient
+</p>
 
 ---
 
@@ -191,11 +193,17 @@ Scales with treaty growth
 
 ## Two Futures {background-color="#f8f8f8"}
 
-<h1 style="text-align: center; font-size: 100px; margin-bottom: 40px;  color: #1a1a1a;">Two Futures</h1>
+<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px;  color: #1a1a1a;">Two Futures</h1>
+
+<p style="text-align: center; font-size: 44px; color: #4a4a4a; margin-bottom: 30px;">
+**Gollumland** (Three Subs: Sub-Intelligence, Sub-Longevity, Sub-Wellbeing)<br>
+vs<br>
+**Wishonia** (Three Supers: Super-Intelligence, Super-Longevity, Super-Wellbeing)
+</p>
 
 {{< include brain/charts/futures-comparison.qmd >}}
 
-<p style="text-align: center; font-size: 56px; color: #2c5f7d; margin-top: 30px; ">
+<p style="text-align: center; font-size: 56px; color: #c1272d; margin-top: 30px; ">
 The difference: **1% budget reallocation in 2026**
 </p>
 
