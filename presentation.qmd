@@ -1,14 +1,14 @@
 ---
 title: "The Complete Idiot's Guide to Ending War and Disease"
 subtitle: "How to Redirect 1% of Military Spending to Cure Everything"
-author: "Mike P. SInn"
+#author: "Mike P. SInn"
 format:
   revealjs:
     theme: [dark, assets/propaganda-theme.scss]
     transition: slide
     slide-number: true
-    footer: "Vote at WarOnDisease.org"
-    logo: assets/logo.png
+    #footer: "Vote at WarOnDisease.org"
+    #logo: assets/logo.png
     width: 1920
     height: 1080
   pptx:
@@ -59,7 +59,7 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 
 ---
 
-# {background-color="#f8f8f8"}
+## The Problem {background-color="#f8f8f8"}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -77,7 +77,7 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 
 ---
 
-# {background-color="#f8f8f8"}
+## Budget Priorities {background-color="#f8f8f8"}
 
 <h1 style="text-align: center; font-size: 80px; color: #1a1a1a;">The Stupidest Budget on Earth</h1>
 
@@ -89,7 +89,7 @@ We spend **1,600X more** treating disease than curing it
 
 ---
 
-# {background-color="#f8f8f8"}
+## The Solution {background-color="#f8f8f8"}
 
 <h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">The Solution</h1>
 <br>
@@ -115,7 +115,7 @@ We spend **1,600X more** treating disease than curing it
 
 ---
 
-# {background-color="#f8f8f8"}
+## What $27B Buys {background-color="#f8f8f8"}
 
 <h1 style="text-align: center; font-size: 80px; margin-bottom: 40px;  color: #1a1a1a;">What $27B Buys</h1>
 
@@ -127,7 +127,7 @@ We spend **1,600X more** treating disease than curing it
 
 ---
 
-# {background-color="#f8f8f8"}
+## How It Works {background-color="#f8f8f8"}
 
 <h1 style="text-align: center; font-size: 80px; margin-bottom: 40px;  color: #1a1a1a;">How It Works</h1>
 
@@ -135,7 +135,7 @@ We spend **1,600X more** treating disease than curing it
 
 ---
 
-# {background-color="#f8f8f8"}
+## dFDA {background-color="#f8f8f8"}
 
 <h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">dFDA</h1>
 <p style="text-align: center; font-size: 56px; color: #4a4a4a;">Amazon for Clinical Trials</p>
@@ -146,7 +146,7 @@ We spend **1,600X more** treating disease than curing it
 
 ---
 
-# {background-color="#f8f8f8"}
+## VICTORY Bonds {background-color="#f8f8f8"}
 
 <h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #1a1a1a;">For Investors</h1>
 
@@ -175,7 +175,7 @@ Scales with treaty growth
 
 ---
 
-# {background-color="#f8f8f8"}
+## The Proof {background-color="#f8f8f8"}
 
 <h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #1a1a1a;">The Proof</h1>
 
@@ -189,7 +189,7 @@ Scales with treaty growth
 
 ---
 
-# {background-color="#f8f8f8"}
+## Two Futures {background-color="#f8f8f8"}
 
 <h1 style="text-align: center; font-size: 100px; margin-bottom: 40px;  color: #1a1a1a;">Two Futures</h1>
 
@@ -201,7 +201,7 @@ The difference: **1% budget reallocation in 2026**
 
 ---
 
-# {background-color="#2c5f7d"}
+## Take Action {background-color="#2c5f7d"}
 
 <br><br>
 <h1 style="text-align: center; font-size: 120px; color: white; ">Take Action</h1>
@@ -244,7 +244,7 @@ Join the team<br>
 
 ---
 
-# {background-color="#f8f8f8"}
+## Why This Will Win {background-color="#f8f8f8"}
 
 <br><br><br>
 <h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">Why This Will Win</h1>
@@ -269,7 +269,7 @@ Join the team<br>
 
 ---
 
-# {background-color="#1a1a1a"}
+## Questions? {background-color="#1a1a1a"}
 
 <br><br><br><br>
 <div style="text-align: center;">
