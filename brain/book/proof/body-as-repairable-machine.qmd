@@ -428,7 +428,6 @@ fig = px.scatter(timeline_data, x='Year', y='Impact',
                  labels={'Impact': 'Life Extension Impact (0-100)'},
                  size_max=30)
 
-fig.update_layout(height=500)
-fig.update_xaxis(range=[2023, 2052])
+fig.update_layout(height=500, xaxis_range=[2023, 2052])
 fig.show()
 ```
