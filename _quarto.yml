@@ -16,41 +16,51 @@ book:
   issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   chapters:
     - index.qmd
-    - part: "Chapter 1: The Problem: A $119 Trillion Mistake"
+    - part: "Part I: The Problem (Your Democracy Is Dead and Your Genes Want You Dead)"
       chapters:
         - brain/book/problem/the-evolutionary-trap.qmd
         - brain/book/problem/cost-of-war.qmd
         - brain/book/problem/cost-of-disease.qmd
-        - brain/book/problem/why-the-system-is-broken.qmd
-        - brain/book/problem/nih-funding-is-broken.qmd
-        - brain/book/problem/fda-approvals-are-broken.qmd
         - brain/book/problem/democracy-is-broken.qmd
-    - part: "Chapter 2: The Solution: A Better Deal"
+    - part: "Part II: The Theory (Why Markets Work and Democracy Doesn't)"
       chapters:
+        - brain/book/theory.qmd
+        # - brain/book/theory/central-planning-failure.qmd  # TODO: Create
+        # - brain/book/theory/war-on-disease.qmd  # TODO: Create
+        # - brain/book/theory/public-choice.qmd  # TODO: Create
+        # - brain/book/theory/wisdom-of-crowds.qmd  # TODO: Create
+    - part: "Part III: The Solution (Wishocracy: Real Democracy Finally)"
+      chapters:
+        - brain/book/solution.qmd
+        - brain/book/solution/wishocracy.qmd
         - brain/book/solution/1-percent-treaty.qmd
+    - part: "Part IV: The Money (How Everyone Gets Rich by Getting Healthy)"
+      chapters:
+        - brain/book/economics.qmd
+        - brain/book/economics/victory-bonds.qmd
+        # - brain/book/economics/coalition.qmd  # TODO: Create
+        # - brain/book/economics/legal-framework.qmd  # TODO: Create
+    - part: "Part V: The Implementation (Building Paradise)"
+      chapters:
+        - brain/book/strategy.qmd
+        # - brain/book/strategy/technology-stack.qmd  # TODO: Create
+        - brain/book/strategy/global-referendum.qmd
         - brain/book/solution/dih.qmd
         - brain/book/solution/dfda.qmd
-        - brain/book/solution/wishocracy.qmd
-    - part: "Chapter 3: Economics: How Individuals and Society can both Profit from Peace"
+    - part: "Part VI: The Proof (This Already Works)"
       chapters:
-        - brain/book/economics/victory-bonds.qmd
-        - brain/book/economics/economic-impact-summary.qmd
-    - part: "Chapter 4: The Strategy: How to Bribe the World (Legally)"
-      chapters:
-        - brain/book/strategy/co-opt-dont-compete.qmd
-        - brain/book/strategy/global-referendum.qmd
-        - brain/book/strategy/legal-compliance-framework.qmd
-    - part: "Chapter 5: The Proof: Why This Isn't Completely Insane"
-      chapters:
+        - brain/book/proof.qmd
         - brain/book/reference/recovery-trial.qmd
+        - brain/book/reference/historical-evidence-supporting-decentralized-efficacy-trials.qmd
         - brain/book/proof/historical-precedents.qmd
-        - brain/reference/historical-evidence-supporting-decentralized-efficacy-trials.qmd
         - brain/book/proof/body-as-repairable-machine.qmd
-    - part: "Chapter 6: The Futures: Choose Your Own Adventure"
+    - part: "Part VII: Choose Your Future (Gollum or Genie)"
       chapters:
+        - brain/book/futures.qmd
         - brain/book/futures/dystopia-skynet-wins.qmd
         - brain/book/futures/utopia-health-and-happiness.qmd
-    - part: "Chapter 7: Join the War on Disease"
+        - brain/book/futures/comparison.qmd
+    - part: "Part VIII: Join or Die (Literally)"
       chapters:
         - brain/book/call-to-action.qmd
 

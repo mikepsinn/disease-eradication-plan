@@ -66,22 +66,22 @@
 
 ### Website Setup
 
-- [ ] **Polish** `index.qmd` as landing page
-  - Use existing content (already strong)
-  - Add links to part summaries
-  - Ensure all links work
+- [x] **Polish** `index.qmd` as landing page
+  - ~~Use existing content (already strong)~~
+  - ~~Add links to part summaries~~
+  - ~~Ensure all links work~~
 
-- [ ] **Update** `_quarto.yml` for multiple outputs
-  - Book format (existing)
-  - Website format (existing)
-  - Presentation format (add revealjs/pptx)
+- [x] **Update** `_quarto.yml` for multiple outputs
+  - ~~Book format (existing)~~
+  - ~~Website format (existing)~~
+  - ~~Presentation format (add revealjs/pptx)~~
 
 ### Presentation Build
 
-- [ ] **Finalize** `presentation.qmd` (already drafted)
-  - Uses `{{< include >}}` for part summaries
-  - Conditional content: bullets for slides, prose for PowerPoint
-  - Test both revealjs and pptx outputs
+- [x] **Finalize** `presentation.qmd` (already drafted)
+  - ~~Uses `{{< include >}}` for part summaries~~
+  - ~~Conditional content: bullets for slides, prose for PowerPoint~~
+  - ~~Test both revealjs and pptx outputs~~
 
 ### Build & Deploy
 
