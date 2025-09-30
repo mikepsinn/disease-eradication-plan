@@ -27,7 +27,8 @@
       "Bash(test:*)",
       "Bash(npm run quarto:preview:*)",
       "Bash(timeout:*)",
-      "Bash(quarto render:*)"
+      "Bash(quarto render:*)",
+      "Bash(pip install:*)"
     ],
     "deny": [],
     "ask": []

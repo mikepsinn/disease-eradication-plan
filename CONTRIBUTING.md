@@ -340,53 +340,93 @@ All code-generated visualizations in this project must adhere to a consistent, p
 **Core Principles:**
 
 1.  **Minimalism:** Avoid "chart junk." This means no unnecessary gridlines, borders, shadows, or 3D effects. Every visual element should serve a clear purpose.
-2.  **Clarity:** Use a clean, legible sans-serif font (e.g., Lato, Open Sans, or similar). Ensure font sizes are large enough to be easily read.
+2.  **Clarity:** Use elegant, readable typography (see typography guidelines below). Ensure font sizes are large enough to be easily read.
 3.  **Consistent Branding:** All charts must be watermarked with "WarOnDisease.org" in the lower-right corner.
+
+**Official Color Palette (Palette C - Modern Neutral):**
+
+All visualizations must use this palette for consistency and elegant, timeless design:
+
+```python
+# Primary Colors
+COLOR_DARK = '#1a1a1a'       # Almost black - use for primary text and emphasis
+COLOR_MID = '#4a4a4a'        # Charcoal - use for secondary elements
+COLOR_LIGHT = '#e0e0e0'      # Light gray - use for backgrounds and subtle elements
+COLOR_ACCENT = '#2c5f7d'     # Muted teal/blue - use sparingly for key data points
+COLOR_BG = '#f8f8f8'         # Off-white - use for chart backgrounds
+COLOR_WHITE = '#ffffff'      # Pure white - use for high contrast elements
+```
+
+**When to Use Each Color:**
+- **COLOR_DARK:** Primary data series, headlines, key numbers
+- **COLOR_MID:** Secondary data series, axis labels, annotations
+- **COLOR_LIGHT:** Subtle gridlines, dividers, less important elements
+- **COLOR_ACCENT:** Critical data points requiring emphasis (deaths, breakthrough results, ROI)
+- **COLOR_BG:** Chart backgrounds, slide backgrounds
+- **COLOR_WHITE:** Text on dark backgrounds, high contrast needs
+
+**Typography Guidelines:**
+
+For a prestigious, timeless aesthetic, use serif fonts for display text and body copy:
+
+**Recommended Font Hierarchy:**
+- **Display/Headlines:** EB Garamond, Libre Baskerville, or Crimson Text (elegant, classic serif)
+- **Body Text:** Georgia or Garamond (readable serif for longer passages)
+- **Data/Numbers:** Inter or SF Mono (modern, clear sans-serif for numerical clarity)
+
+**Python Implementation:**
+```python
+plt.rcParams['font.family'] = 'serif'
+plt.rcParams['font.serif'] = ['EB Garamond', 'Libre Baskerville', 'Georgia', 'Times New Roman']
+plt.rcParams['font.size'] = 11
+```
+
+**Font Size Guidelines:**
+- Chart titles: 16-18pt (bold)
+- Axis labels: 11-12pt
+- Data labels: 10-11pt
+- Watermark: 8-9pt
+- Presentation headlines: 48-72pt
+- Presentation body: 24-36pt
 
 **Implementation in Python (Matplotlib Example):**
 
-To ensure consistency, we will create a central Python module for styling. In the meantime, here is a basic example of how to apply these principles:
+To ensure consistency, use the centralized style module at `brain/charts/_chart_style.py`. Here is a basic example of how to apply these principles:
 
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
 
-# --- 1. Create a Consistent Theme (will be moved to a central file) ---
-plt.style.use('seaborn-v0_8-whitegrid') # A clean starting point
-plt.rcParams.update({
-    'font.family': 'sans-serif',
-    'font.sans-serif': ['Lato'],
-    'axes.labelcolor': '#333333',
-    'xtick.color': '#333333',
-    'ytick.color': '#333333',
-    'axes.titlepad': 20,
-    'axes.labelpad': 15,
-    'figure.dpi': 150,
-})
+# --- 1. Import centralized style (or use these settings directly) ---
+from brain.charts._chart_style import setup_chart_style, COLOR_DARK, COLOR_MID, COLOR_ACCENT
+
+setup_chart_style()  # Applies consistent styling
 
 # --- 2. Create the Plot ---
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
 
 fig, ax = plt.subplots(figsize=(8, 5))
-ax.plot(x, y, color='#007ACC', linewidth=2)
+ax.plot(x, y, color=COLOR_ACCENT, linewidth=2.5)
 
-# Add titles and labels with a clean look
-ax.set_title('Example of a Clean, Minimalist Chart', fontsize=16, weight='bold', color='#333333')
-ax.set_xlabel('X-Axis Label', fontsize=12)
-ax.set_ylabel('Y-Axis Label', fontsize=12)
+# Add titles and labels with elegant typography
+ax.set_title('Example of an Elegant, Minimalist Chart', fontsize=16, weight='bold', color=COLOR_DARK)
+ax.set_xlabel('X-Axis Label', fontsize=12, color=COLOR_MID)
+ax.set_ylabel('Y-Axis Label', fontsize=12, color=COLOR_MID)
 
 # --- 3. Add the Watermark ---
 fig.text(0.98, 0.02, 'WarOnDisease.org',
-         fontsize=8, color='gray',
-         ha='right', va='bottom', alpha=0.7)
+         fontsize=8, color=COLOR_MID,
+         ha='right', va='bottom', alpha=0.6)
 
 # Remove unnecessary spines for a cleaner look
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color(COLOR_LIGHT)
+ax.spines['bottom'].set_color(COLOR_LIGHT)
 
+plt.tight_layout()
 plt.show()
-
 ```
 
 ## Automation and CI
