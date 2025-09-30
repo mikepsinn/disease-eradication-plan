@@ -48,3 +48,12 @@ $color-blue: #0051a5;
   background: $body-bg;
   background-color: $body-bg;
 }
+
+// Image sizing - constrain charts to fit slides
+.reveal img {
+  max-width: 90%;
+  max-height: 700px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
