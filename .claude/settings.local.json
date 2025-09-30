@@ -24,7 +24,8 @@
       "WebFetch(domain:thinkbynumbers.org)",
       "WebFetch(domain:wiki.dfda.earth)",
       "WebSearch",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(npm run quarto:preview:*)"
     ],
     "deny": [],
     "ask": []
