@@ -280,6 +280,7 @@
   - ROI: 463:1 (makes every other investment look stupid)
   - 10-year NPV: $249 billion in value creation
   - Comparison: Best hedge funds dream of 2:1 annual returns
+  - Real-world proof: Switzerland's $93K GDP per capita from avoiding war
 - **The Daily Holocaust of Inaction**
   - Every day we wait: $137 million burned in inefficiency
   - Every day we wait: 2,301 Quality-Adjusted Life Years lost
@@ -860,6 +861,11 @@
   - It's 1% of what we already waste on war. We can afford health.
 - **"The technology doesn't exist"**
   - RECOVERY trial proved it does. We're just scaling.
+- **"You can't avoid war in the real world"**
+  - Switzerland: 200 years of avoiding war while surrounded by it
+  - Costa Rica: Abolished their army in 1948, still exists
+  - The Swiss got rich specifically BY avoiding war
+  - Neutrality isn't weakness, it's profitable
 - **"This is unrealistic"**
   - So was: Flight, internet, democracy, antibiotics, Bitcoin, landing on moon
   - "Unrealistic" is what people say before paradigm shifts
