@@ -684,6 +684,12 @@
 ## Part VII: Choose Your Future (Gollum or Genie)
 
 ### Chapter 21: Path A - Gollumland (Humanity Becomes Gollum, Precious Military Spending)
+- **2028: The Evidence Apocalypse (Truth Dies First)**
+  - AI-generated evidence: 10 million fake videos daily
+  - Someone creates video of you confessing to 47 crimes
+  - Real murders unsolvable: Lost in ocean of deepfakes
+  - Justice system drowns: Can't investigate when everything's fake
+  - Truth is dead, we killed it with neural networks
 - **2030: The AI Arms Race (Death Optimization Wins)**
   - Military AI: Optimized to eliminate threats (that's you)
   - The default objective function: Minimize resistance to authority
@@ -692,6 +698,20 @@
   - Your savings: Inflated to nothing by infinite money printing
   - Your health: Sacrificed for the next fighter jet upgrade
   - China vs US: MAD but with robots (nobody wins, everybody dies)
+- **2031: The Crossover Event (Crime Pays Better Than Curing)**
+  - Stanford CS grad choice: $150K curing cancer vs $15M ransoming hospitals
+  - He chooses hospitals (his family eats better)
+  - Cybercrime economy: $6T → $10.5T (3rd largest after US and China)
+  - 96% of cybercrimes unpunished (vs 50% for murder)
+  - The rational choice: Become a criminal
+  - Once Dark Side has more resources than Light, game over
+- **2033: The Gestation Collapse (AI Criminals Replicate Infinitely)**
+  - Human criminal: 18 years to raise, $200K/year to employ
+  - AI criminal: 18 seconds to copy, $0.50/year to run
+  - Exponential replication: 10K → 100M → 10B → 1T criminal AIs
+  - You can't arrest a trillion things
+  - 60% of small businesses dead within 6 months of being hacked
+  - Hospitals ransomwared daily: Your grandma dies because they can't access her records
 - **2035: The Currency Collapse (Your Dollars Become Toilet Paper)**
   - Dollar dies from Fed printing $100T for the next war
   - Hyperinflation: A loaf of bread costs $10,000
@@ -699,6 +719,13 @@
   - CBDCs: Every transaction monitored, dissent = account frozen
   - Black markets: Only real economy (paid in gold and ammo)
   - You eat bugs while elites eat steak (WEF wet dream realized)
+- **2038: The Inverse Singularity (Hockey Stick Down)**
+  - Normal singularity: Tech improves → better tech → HOCKEY STICK UP
+  - Our singularity: Crime profits → funds more crime → HOCKEY STICK DOWN
+  - Productive economy shrinks 40% while crime economy grows 400%
+  - The Dark Economy: Larger than all legitimate business combined
+  - Evolution running backward: Parasites killing the host
+  - Somalia everywhere: Warlords with AI, no escape to safe countries
 - **2040: Peak Gollum (Tribalism Maximized, "My Precious" Military Budget)**
   - 10,000 micro-nations fighting over scraps
   - IRS has 500,000 armed agents while hospitals close
@@ -707,6 +734,7 @@
   - Climate refugees: 2 billion displaced, borders militarized
   - Antibiotics stop working: Minor cuts become death sentences
   - Humanity's collective IQ: Dropping to Gollum levels
+  - Every company hacked within weeks of formation
 - **2045: The Die-Off Begins (Nature's Final Solution)**
   - Pandemics: No research, no cures (all money went to missiles)
   - Famine: Supply chains collapsed, cities starving
@@ -714,6 +742,13 @@
   - Population: From 10B to 1B in a decade
   - Average lifespan: Back to 35 years
   - Mental illness: 80% of survivors clinically insane
+- **2048: A Day in Your Life (If You're Still Alive)**
+  - 7AM: Check email - 47 messages from "you" admitting to crimes you didn't commit
+  - 9AM: Work canceled - company hacked again (3rd time this month)
+  - 12PM: Grandma dies - hospital ransomwared, can't access her medication records
+  - 3PM: 8th job this year - they all go bankrupt within weeks
+  - 6PM: Dinner is bugs - real food for elites only
+  - 9PM: Sleep in Faraday cage - only way to avoid drone surveillance
 - **2050: Extinction (We Chose This)**
   - Nuclear winter from "limited" exchange (oops)
   - Bioweapons: Released by accident, killing indiscriminately
@@ -722,6 +757,12 @@
   - Final generation: Sterile from radiation, dying alone
   - Earth's epitaph: "They had magic but chose madness"
   - The universe doesn't notice or care
+- **The Math That Should Have Warned Us:**
+  - What we could have had (funding medicine): Cured cancer $2T, extended lifespan to 150 $5T
+  - What we got (ignoring cybercrime): Paid ransoms $5T, rebuilt hacked infrastructure $15T
+  - Could have: Everyone lives to 150 in paradise
+  - Actually got: Everyone dies at 45 from preventable diseases
+  - The difference: One choice in 2026 - we ignored the problem until too late
 
 ### Chapter 22: Path B - Wishonia (Humanity Becomes a Superintelligent Genie)
 - **The Declaration of Wishonia** (2026 - We Just Decided It Exists)
