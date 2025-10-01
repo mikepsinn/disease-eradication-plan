@@ -62,6 +62,8 @@ book:
     - part: "Join or Die (Literally)"
       chapters:
         - brain/book/call-to-action.qmd
+  appendices:
+    - brain/book/references.qmd
 
 execute:
   # Relaunch kernel for each render
