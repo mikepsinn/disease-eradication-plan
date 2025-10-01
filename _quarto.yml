@@ -32,23 +32,14 @@ book:
         # - brain/book/theory/war-on-disease.qmd  # TODO: Create
         # - brain/book/theory/public-choice.qmd  # TODO: Create
         # - brain/book/theory/wisdom-of-crowds.qmd  # TODO: Create
-    - part: "The Solution: Wishocracy (Real Democracy Finally)"
+    - part: "The Solution"
       chapters:
         - brain/book/solution.qmd
-        - brain/book/solution/wishocracy.qmd
-        - brain/book/solution/1-percent-treaty.qmd
-    - part: "The Money: How Everyone Gets Rich by Getting Healthy"
-      chapters:
-        - brain/book/economics.qmd
         - brain/book/economics/victory-bonds.qmd
-        # - brain/book/economics/coalition.qmd  # TODO: Create
-        # - brain/book/economics/legal-framework.qmd  # TODO: Create
-    - part: "The Implementation: Building Paradise"
-      chapters:
-        - brain/book/strategy.qmd
-        # - brain/book/strategy/technology-stack.qmd  # TODO: Create
+        - brain/book/solution/1-percent-treaty.qmd
         - brain/book/strategy/global-referendum.qmd
         - brain/book/solution/dih.qmd
+        - brain/book/solution/wishocracy.qmd
         - brain/book/solution/dfda.qmd
     - part: "The Proof: This Already Works"
       chapters:
