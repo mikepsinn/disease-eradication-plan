@@ -311,6 +311,21 @@
   - 10-year NPV: $249 billion in value creation
   - Comparison: Best hedge funds dream of 2:1 annual returns
   - Real-world proof: Switzerland's $93K GDP per capita (aided by centuries of compound peace dividends)
+- **DIH: The $100 Trillion Double-Dividend Company**
+  - Current titans: Apple ($3T), Microsoft ($3T), Saudi Aramco ($2T)
+  - DIH captures TWO massive dividends in one elegant model:
+    - **Peace Dividend**: $2.7T military budgets → DIH treaties (revenue stream)
+    - **Health Dividend**: $109.1T disease burden → productivity gains (value creation)
+  - The genius: Peace dividend funds the infrastructure, health dividend justifies expansion
+  - Revenue model: Government treaties, not fees (defense contractor playbook)
+  - Treaty progression: $27B → $270B → $2.7T as health outcomes prove the model
+  - Why $100T valuation? Capturing even 10% of health dividend = $10.9T annual value
+  - The feedback loop: Better health outcomes → bigger treaties → more cures → repeat
+  - We're defense contractors who cure instead of kill (same lobbying, opposite outcome)
+  - Platform strategy: dFDA free for everyone (like GPS military → civilian)
+  - Market failure reality: No individual can buy "world peace" or "disease eradication"
+  - First company to successfully monetize NOT killing people at global scale
+  - Why no one's done it: Couldn't coordinate 8 billion people (until Wishocracy)
 - **The Daily Holocaust of Inaction**
   - Every day we wait: $137 million burned in inefficiency
   - Every day we wait: 2,301 Quality-Adjusted Life Years lost
@@ -452,6 +467,8 @@
   - Named institutes: "The Gates Cancer Center"
   - Tax benefits plus profit (have cake, eat it)
   - First movers get best terms and most credit
+  - Chance to own piece of $100T company (makes their current wealth look quaint)
+  - Legacy: Founded the company that ended human suffering
 - **Everyone Else: Democracy That Pays**
   - Direct vote on budget allocation (real power)
   - Subsidized healthcare through dFDA trials (dynamic vouchers)
