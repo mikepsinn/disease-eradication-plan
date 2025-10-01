@@ -1,45 +1,47 @@
 # The Complete Idiot's Guide to Ending War and Disease: Master Outline (Complete High-Resolution Version)
 
-## Part I: The Problem (Your Democracy Is Dead and Your Genes Want You Dead)
+## Part I: The Problem: Everyone You Love Is Dying While We Build Skynet
 
-### Chapter 1: Evolution Made You a Slave to Dead People's DNA
+### Chapter 1: The Human Cost - 150,000 Deaths Per Day While We Count Missiles
 
-- **The Selfish Gene's Suicide Mission**: You're a meat robot for dead people's code
-  - Dawkins was right: You're a "survival machine" for molecules
-  - The homunculi controlling you: Pleasure and pain are DNA's carrot and stick
-  - Your genes want you dead at 30 after breeding (mission accomplished)
-  - The genetic lottery: You didn't choose any of this
-- **Your Caveman Brain in a Space Age**: 200,000-year-old software, nuclear hardware
-  - Tribalism: Great for fighting lions, terrible for global cooperation
-  - Dunbar's number: You can only care about 150 people (everyone else can die)
-  - Threat detection: You fear terrorists (25K deaths) more than heart disease (18M deaths)
-  - The amygdala hijack: Why fear beats facts every time
-- **The Evolutionary Trap**: Why we choose violence over medicine
-  - In-group cooperation, out-group murder (it's in your DNA)
-  - The warrior gene: 40% of us literally evolved to kill
-  - Why peace feels wrong: Your amygdala needs an enemy
-  - The reproduction imperative: War gets you laid (evolution is gross)
+- **The Daily Massacre No One Talks About**
+  - 150,000 people die every day, mostly from preventable/curable diseases
+  - That's fifty 9/11s. Every. Single. Day.
+  - Your parent, child, or friend is statistically likely to be one of them
+  - We could prevent most of these deaths with existing technology
+  - But we're too busy spending $2.7 trillion on weapons
+- **The Bureaucratic Murder Machine**
+  - NIH: 200 people deciding which diseases get studied (yours probably doesn't)
+  - FDA: Making treatments 82X more expensive than necessary (proven by Oxford RECOVERY trial)
+  - 95% of diseases have ZERO approved treatments
+  - Your rare disease child has a better chance of being struck by lightning than getting a cure
+- **The Misallocation That Kills**
+  - Military spending: $2.7 trillion (for threats that kill 25,000/year)
+  - Medical research: $68 billion (for diseases that kill 55 million/year)
+  - We spend 40X more preparing to kill each other than learning to heal each other
+  - One fighter jet = entire rare disease research budget
+  - We know exactly how to fix this, but the system is designed not to
 
 ### Chapter 2: The $119 Trillion Death Toilet (Where Your Money Goes to Die)
 
-- **[FIGURE: The $119 Trillion Death Toilet]**
-  - Visual toilet with money flowing in: $9.7T (war) + $109.1T (disease burden) = $119T annually
-  - Tiny $68B research budget shown as a droplet
-  - Impact: Memorable metaphor for waste
-- **War: Humanity's Favorite Hobby** ($9.7T/year buying corpses)
+- **[FIGURE: The $119 Trillion Waste]**
+  - Visual showing money flow: $9.7T (war) + $109.1T (disease burden) = $119T annually
+  - Tiny $68B research budget shown in comparison
+  - Impact: Shows the staggering scale of misallocation
+- **The Cost of War: $9.7 Trillion/Year**
   - The War on Humanity: $2.7T annual military spending (killing each other)
   - The War on Disease: $68B annual medical research (saving each other)
   - We spend 40X more on the War on Humanity than the War on Disease
   - Direct costs: $2.7T on weapons that rust in warehouses
   - We spend 162X more on military than brain research (preventing threats 2 million times less likely)
-  - The Pentagon's magic trick: Lost $2.46T (oops!)
+  - The Pentagon: Lost $2.46T with no accountability
   - US = 37% of global military spending with only 4.4% of world population
-  - War costs your family $74,259 over your lifetime (for the privilege of maybe dying)
+  - War costs your family $74,259 over your lifetime
   - China already hacked our nuclear systems (we're funding their military)
   - Every submarine = 1,000 cancer labs we didn't build
   - The nuclear extinction lottery: 13,000 warheads, 0 winners
   - Switzerland's alternative: 0.7% on defense, $93K GDP per capita
-- **Disease: The Holocaust in Slow Motion** ($109.1T/year total economic burden)
+- **The Disease Burden: $109.1 Trillion/Year in Suffering and Lost Productivity**
   - Direct healthcare spending: $8.2T/year globally (treating symptoms)
   - Economic losses from disease: $100.9T/year (lost productivity, early death)
   - Cancer: 10M deaths/year while we argue about pronouns
@@ -61,7 +63,7 @@
     - Medical research: $68 (finding actual cures)
   - The punchline: We spend 40X more on weapons than cures
   - The tragedy: We spend 115X more treating disease than curing it
-  - The joke: One fighter jet costs more than all rare disease research combined
+  - The comparison: One fighter jet costs more than all rare disease research combined
   - Visual: On a pie chart, the research slice (0.068%) is literally invisible
 - **[FIGURE: Humanity's Budget Pie Chart]**
   - Pie chart showing our priorities: War on Humanity ($2,700) vs War on Disease ($68)
@@ -72,7 +74,7 @@
 - **The 1972 Catastrophe: When Your Wages Got Divorced From Your Work**
   - Nixon kills gold standard: Money becomes meaningless paper
   - Productivity up 246%, wages up 115% (where'd the money go?)
-  - The Fed: 12 unelected people playing god with your savings
+  - The Fed: 12 unelected people devaluing your paycheck and your savings
   - Every financial crisis: The house always wins, you always lose
   - The cantillon effect: Money printers get rich, you get poor
 
@@ -194,7 +196,7 @@
   - The end of central planning's credibility
   - The beginning of the market revolution
 
-### Chapter 6: Public Choice Theory (Everyone's a Selfish Prick, Use It)
+### Chapter 6: Public Choice Theory - (Everyone's Selfish, Use It)
 
 - **Politicians Maximize Power, Not Your Health**
   - Time horizons: 2-year election cycles vs 20-year cures
@@ -217,7 +219,7 @@
   - Use greed for good (it's the only reliable force)
   - Create concentrated benefits for healing
 
-### Chapter 7: The Wisdom of Crowds (8 Billion Geniuses > 200 Idiots)
+### Chapter 7: The Wisdom of Crowds - 8 Billion Minds Better Than 200 Bureaucrats
 
 - **Surowiecki Was Right About Everything**
   - The Ox: 800 farmers' average beat all experts
@@ -330,7 +332,7 @@
   - Anyone on Earth can propose how to spend the $27B
   - 280 million+ people directly allocating via pairwise choices
   - No representatives, no committees, no corruption
-  - Your grandma's remedy competes with Big Pharma's drug
+  - Traditional remedies tested alongside pharmaceutical innovations
   - The proof-of-concept for replacing all government budgeting
 - **The Ratchet: Success Breeds Hunger for More**
   - Year 1: Major advances in 15 disease areas
@@ -348,8 +350,8 @@
   - Return: $50B annual savings from trial efficiency (real money)
   - Annual ROI: 1,250:1 year-over-year ($50B/$40M)
   - 10-year cumulative ROI: 463:1 accounting for build time
-  - **ATTENTION IDIOTS**: This is SOCIETAL return from dFDA efficiency, not your personal VICTORY bond returns (those are "only" 40%)
-  - Translation: Every dollar spent makes society $463 richer (you personally get less, but still get stupid rich)
+  - **IMPORTANT DISTINCTION**: This is SOCIETAL return from dFDA efficiency, not your personal VICTORY bond returns (those are 40%)
+  - Translation: Every dollar spent makes society $463 richer (you personally get substantial returns at 40%)
   - 10-year NPV: $249 billion in value creation (enough to buy several small countries or one medium-sized tech company)
   - Comparison: Best hedge funds dream of 2:1 annual returns (we laugh at their poverty)
   - Real-world proof: Switzerland's $93K GDP per capita (what happens when you stop buying bombs for 200 years)
@@ -876,11 +878,11 @@
   - Not technology (we have the tools)
   - Just money going to bombs instead
 
-## Part VII: Choose Your Future (Gollum or Genie)
+## Part VII: Choose Your Future - Dystopia or Wishonia
 
-### Chapter 21: Path A - Gollumland (Humanity Becomes Gollum, Precious Military Spending)
+### Chapter 21: Path A - The Dystopian Default (If We Do Nothing)
 
-- **[FIGURE: The Two Timelines - Gollumland Path]**
+- **[FIGURE: The Two Timelines - Dystopian Path]**
   - Diverging timeline from 2026 showing descent into darkness
   - Key milestones: 2028 (Evidence dies), 2031 (Crime wins), 2035 (Currency collapse), 2050 (Extinction)
   - Visual shows timeline descending into black void
@@ -919,19 +921,20 @@
   - Bank bail-ins: Your savings confiscated "for the greater good"
   - CBDCs: Every transaction monitored, dissent = account frozen
   - Black markets: Only real economy (paid in gold and ammo)
-  - You eat bugs while elites eat steak (WEF wet dream realized)
+  - Food scarcity creates extreme inequality
 - **2038: The Inverse Singularity (Hockey Stick Down)**
   - Normal singularity: Tech improves → better tech → HOCKEY STICK UP
   - Our singularity: Crime profits → funds more crime → HOCKEY STICK DOWN
   - Productive economy shrinks 40% while crime economy grows 400%
   - The Dark Economy: Larger than all legitimate business combined
+  - Society collapsing: Destructive forces overwhelming productive ones. 
   - Evolution running backward: Parasites killing the host
   - Somalia everywhere: Warlords with AI, no escape to safe countries
-- **2040: Peak Gollum (Tribalism Maximized, "My Precious" Military Budget)**
+- **2040: Peak Dystopia (Tribalism Maximized, Resources Hoarded)**
   - 10,000 micro-nations fighting over scraps
   - IRS has 500,000 armed agents while hospitals close
   - Technology exists only for destruction and surveillance
-  - "My precious" military spending while your kids die of treatable diseases
+  - Military spending prioritized while treatable diseases kill millions
   - Climate refugees: 2 billion displaced, borders militarized
   - Antibiotics stop working: Minor cuts become death sentences
   - Humanity's collective IQ: Dropping to Gollum levels
@@ -965,15 +968,15 @@
   - Actually got: Everyone dies at 45 from preventable diseases
   - The difference: One choice in 2026 - we ignored the problem until too late
 
-### Chapter 22: Path B - Wishonia (Humanity Becomes a Superintelligent Genie)
+### Chapter 22: Path B - Wishonia - The Transcendent Path (Humanity Evolves Beyond Limits and Becomes the Equivalent of a Superintelligent Genie)
 
 - **[FIGURE: The Two Timelines - Wishonia Path]**
   - Diverging timeline from 2026 showing ascent into light
-  - Key milestones: 2030 (Genie awakens), 2035 (Tipping point), 2040 (Wishonia manifests), 2050 (Paradise)
+  - Key milestones: 2030 (Transformation begins), 2035 (Tipping point), 2040 (Wishonia manifests), 2050 (Paradise achieved)
   - Visual shows timeline ascending into golden light with Three Supers icons (🧠⏳😊)
   - Impact: Shows the positive alternative we're choosing between
 - **The Declaration of Wishonia** (2026 - We Just Decided It Exists)
-  - Some guy invented England, we're inventing Wishonia
+  - A new Wishonian model of governance emerges optimally allocating public goods funding to maximize median health and wellbeing
   - "We hold these truths to be self-evident..."
   - "...that all humans deserve the Three Supers: Super-Intelligence, Super-Longevity, Super-Wellbeing"
   - **[DESIGN NOTE: Three Supers Icons]**
@@ -998,7 +1001,7 @@
   - First cancer vaccines: 90% effective
   - AI becomes our golden mirror: Reflecting wisdom not war
   - Mental illness: Becoming engineering problem, not life sentence
-  - Fed officials in prison for crimes against humanity (just kidding, they fled to Switzerland)
+  - Centralized financial system replaced with a decentralized one designed to maximize median health, wealth, and happiness, instead of stealing resources from the productive economy
 - **2035: The Tipping Point (The Three Supers Accelerate)**
   - **Super-Wellbeing:** Suffering becomes optional, joy baseline adjustable
   - **Super-Longevity:** Life expectancy hits 100, aging slows to 1/2 speed
@@ -1150,7 +1153,7 @@
 - **"40% returns are impossible"**
   - Medallion Fund does 39% with $10B cap. We do 40%+ with unlimited scaling as treaty grows.
 - **"Wishocracy is mob rule"**
-  - Better than oligarch rule. Plus AI advisors prevent stupidity.
+  - Better than oligarch rule. Plus AI advisors prevent poor decisions.
 - **"The powers that be won't allow this"**
   - The powers that be get VICTORY bonds. They'll allow it.
 - **"This violates securities law"**
