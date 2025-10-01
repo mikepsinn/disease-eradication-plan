@@ -15,10 +15,10 @@ book:
   issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   chapters:
     - index.qmd
-    - part: "The Problem: Your Democracy Is Dead and Your Genes Want You Dead"
+    - part: "The Problem: Everyone You Love Is Dying While We Build Skynet"
       chapters:
-        - brain/book/problem/the-evolutionary-trap.qmd
-        - brain/book/problem/cost-of-war.qmd
+        - brain/book/problem/the-evolutionary-trap.qmd  # TODO: Update content to focus on human cost
+        - brain/book/problem/cost-of-war.qmd  # TODO: Merge with cost-of-disease into 119-trillion-waste
         - brain/book/problem/cost-of-disease.qmd
         - brain/book/problem/democracy-is-broken.qmd
     - part: "The Theory: Why Markets Work and Democracy Doesn't"
@@ -53,11 +53,11 @@ book:
         - brain/book/reference/historical-evidence-supporting-decentralized-efficacy-trials.qmd
         - brain/book/proof/historical-precedents.qmd
         - brain/book/proof/body-as-repairable-machine.qmd
-    - part: "Choose Your Future: Gollum or Genie"
+    - part: "Choose Your Future: Dystopia or Transcendence"
       chapters:
         - brain/book/futures.qmd
-        - brain/book/futures/dystopia-skynet-wins.qmd
-        - brain/book/futures/utopia-health-and-happiness.qmd
+        - brain/book/futures/dystopia-skynet-wins.qmd  # TODO: Update to match "Dystopian Default" framing
+        - brain/book/futures/utopia-health-and-happiness.qmd  # TODO: Update to match "Transcendent Path" framing
         - brain/book/futures/comparison.qmd
     - part: "Join or Die (Literally)"
       chapters:
