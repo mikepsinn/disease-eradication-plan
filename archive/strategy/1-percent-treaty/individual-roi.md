@@ -1,5 +1,5 @@
 ---
-title: Individual ROI on Getting Friends to Sign the Treaty
+title: Individual ROI on Getting Friends to Vote on the Referendum
 description: Discover how investing just 5 hours of your time can lead to significant impact in garnering support for global initiatives through your friends.
 published: true
 date: 2024-06-09T00:00:00.000Z
@@ -7,7 +7,7 @@ tags: [individual-roi, 1-percent-treaty, petition, outreach, time-investment]
 dateCreated: 2024-06-09T00:00:00.000Z
 ---
 
-# Individual ROI on Getting Friends to Sign the Treaty
+# Individual ROI on Getting Friends to Vote on the Referendum
 
 $1,258,412 for 5 Hours of Your Time (see [1% Treaty](1-percent-treaty.md))
 
