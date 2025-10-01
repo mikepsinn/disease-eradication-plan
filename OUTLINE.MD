@@ -25,6 +25,9 @@
   - Tiny $68B research budget shown as a droplet
   - Impact: Memorable metaphor for waste
 - **War: Humanity's Favorite Hobby** ($9.7T/year buying corpses)
+  - The War on Humanity: $2.7T annual military spending (killing each other)
+  - The War on Disease: $68B annual medical research (saving each other)
+  - We spend 40X more on the War on Humanity than the War on Disease
   - Direct costs: $2.7T on weapons that rust in warehouses
   - We spend 162X more on military than brain research (preventing threats 2 million times less likely)
   - The Pentagon's magic trick: Lost $2.46T (oops!)
@@ -59,8 +62,10 @@
   - The joke: One fighter jet costs more than all rare disease research combined
   - Visual: On a pie chart, the research slice (0.068%) is literally invisible
 - **[FIGURE: Humanity's Budget Pie Chart]**
-  - Pie chart where military ($2,700) and healthcare treatment ($8,200) dominate
-  - Medical research ($68) literally invisible - need magnifying glass insert to see it
+  - Pie chart showing our priorities: War on Humanity ($2,700) vs War on Disease ($68)
+  - Healthcare treatment ($8,200) dominates (treating symptoms, not causes)
+  - War on Disease ($68) literally invisible - need magnifying glass insert to see it
+  - Caption: "We spend 40X more on killing each other than curing each other"
   - Impact: Viscerally shows the insanity of our spending priorities
 - **The 1972 Catastrophe: When Your Wages Got Divorced From Your Work**
   - Nixon kills gold standard: Money becomes meaningless paper
@@ -155,6 +160,11 @@
   - Align incentives or die (literally)
 
 ### Chapter 5: The War on Disease - The First War Designed to Win
+- **The Two Wars: One We're Losing, One We Haven't Started**
+  - War on Humanity: $2.7T/year, 75+ years running, no victory possible
+  - War on Disease: $68B/year, barely fighting, victory achievable
+  - We fund death 40X more than life (explains everything wrong with humanity)
+  - Time to flip the budget: Make the War on Disease bigger than the War on Humanity
 - **Different Structure: Markets Not Ministries**
   - No bureaucracy to preserve (smart contracts)
   - Payment for outcomes, not process
@@ -1033,8 +1043,9 @@
 - **The Delta: Infinite Divergence**
   - Same species, same year, opposite outcomes
   - Difference: One 1% budget reallocation in 2026
-  - Gollumland chose military AI, got extinction
-  - Wishonia chose medical AI, got transcendence
+  - Gollumland kept funding the War on Humanity ($2.7T), got extinction
+  - Wishonia switched to the War on Disease ($2.7T), got transcendence
+  - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
 
 ## Part VIII: Join or Die (Literally)
@@ -1112,7 +1123,8 @@
 - **"This violates securities law"**
   - We have lawyers. Many lawyers. Expensive lawyers.
 - **"This is too expensive"**
-  - It's 1% of what we already waste on war. We can afford health.
+  - We spend $2.7T on the War on Humanity. We're asking for 1% to start the War on Disease.
+  - If we can afford to kill each other, we can afford to cure each other.
 - **"The technology doesn't exist"**
   - RECOVERY trial proved it does. We're just scaling.
 - **"You can't avoid war in the real world"**
