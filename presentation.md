@@ -1,6 +1,6 @@
 # The Complete Idiot's Guide to Ending War and Disease: A TED Talk
 
-## SLIDE 1: Title Slide
+## SLIDE: Title Slide
 **Visual**: Speaker standing next to a giant toilet made of money, flames coming out the top
 **Text**: "How to Trick Humanity Into Not Killing Itself"
 **Subtitle**: "A Love Story"
@@ -14,7 +14,7 @@ Don't worry, this has a happy ending. Well, one of the endings does. The other o
 
 ---
 
-## SLIDE 2: Meet Earth, Inc.
+## SLIDE: Meet Earth, Inc.
 **Visual**: Organizational chart of "Earth, Inc." with drunk CEO, golfing board, and departments actively murdering each other
 **Text**: "Current Management Structure"
 
@@ -25,7 +25,7 @@ No other species does this. Dolphins don't have a military-industrial complex. Y
 
 ---
 
-## SLIDE 3: Humanity's Family Budget
+## SLIDE: Humanity's Family Budget
 **Visual**: Pie chart where military and disease spending dominate, medical research is literally invisible without magnifying glass
 **Text**: "We spend 40X more on killing each other than curing each other"
 
@@ -43,7 +43,7 @@ This is like buying 1,600 mops instead of fixing the burst pipe."
 
 ---
 
-## SLIDE 4: The $119 Trillion Death Toilet
+## SLIDE: The $119 Trillion Death Toilet
 **Visual**: Animated toilet with money flowing in - $9.7T (war) + $109.1T (disease burden) = $119T annually. Tiny $68B droplet labeled "research"
 **Text**: "Annual Spending on Human Suffering"
 
@@ -58,7 +58,7 @@ And this tiny droplet here? [points] That's our research budget. It's like bring
 
 ---
 
-## SLIDE 5: The Pentagon's Magic Trick
+## SLIDE: The Pentagon's Magic Trick
 **Visual**: Pentagon building with "$2.46 TRILLION" disappearing in a puff of smoke
 **Text**: "Now you see it... now you don't!"
 
@@ -69,7 +69,7 @@ For context, that's enough money to give every human on Earth $300 just to stop 
 
 ---
 
-## SLIDE 6: Your Democracy Score
+## SLIDE: Your Democracy Score
 **Visual**: Graph showing correlation between public opinion and policy outcomes - it's a flat line at 0%
 **Text**: "Princeton University: 'Democracy is Already Dead'"
 
@@ -82,7 +82,7 @@ It's zero. The line is flat. You have as much political power as your houseplant
 
 ---
 
-## SLIDE 7: The FDA Death Counter
+## SLIDE: The FDA Death Counter
 **Visual**: Graveyard with tombstones labeled "Died waiting 17 years" next to a single "APPROVED" stamp
 **Text**: "95% of diseases have ZERO approved treatments"
 
@@ -95,7 +95,7 @@ They kill 21,000 to 120,000 people per decade through delays. That's a mid-sized
 
 ---
 
-## SLIDE 8: NIH - Soviet Science in America  
+## SLIDE: NIH - Soviet Science in America  
 **Visual**: NIH building as Soviet-style bureaucracy with "REJECTED" stamps raining down
 **Text**: "90% rejection rate | 200 people pretending to know everything"
 
@@ -108,7 +108,7 @@ We give them $48 billion a year to pick winners and losers. Spoiler alert: We're
 
 ---
 
-## SLIDE 9: The War on Humanity vs The War on Disease
+## SLIDE: The War on Humanity vs The War on Disease
 **Visual**: Two armies facing each other - one massive ($2.7T) labeled "War on Humanity", one tiny ($68B) labeled "War on Disease"
 **Text**: "Guess which one we're losing?"
 
@@ -121,7 +121,7 @@ We fund death 40 times more than life. This explains everything wrong with our s
 
 ---
 
-## SLIDE 8: The Solution (That's Too Obvious)
+## SLIDE: The Solution (That's Too Obvious)
 **Visual**: Big red "X" over current spending, arrow pointing to flipped version
 **Text**: "Step 1: Stop being idiots"
 
@@ -134,7 +134,7 @@ PROBLEM: This makes too much sense for Earth."
 
 ---
 
-## SLIDE 9: The 1% Solution
+## SLIDE: The 1% Solution
 **Visual**: Military budget as a pie, tiny 1% slice being removed
 **Text**: "The smallest ask in human history"
 
@@ -147,7 +147,7 @@ I think we can live with that. Pun intended."
 
 ---
 
-## SLIDE 10: What $27 Billion Buys
+## SLIDE: What $27 Billion Buys
 **Visual**: Animated counter showing what 1% could achieve
 **Text**: 
 - "54,000 clinical trials"
@@ -162,7 +162,7 @@ Or we could buy one aircraft carrier that will rust in a dock. Your choice."
 
 ---
 
-## SLIDE 11: The Secret Weapon - Human Greed
+## SLIDE: The Secret Weapon - Human Greed
 **Visual**: Graph showing lobbying ROI - $1 in → $1,813 out
 **Text**: "The best investment in the world (if you don't mind the screaming)"
 
@@ -173,7 +173,7 @@ So we're going to do the exact same thing, but backwards. We're going to make cu
 
 ---
 
-## SLIDE 12: VICTORY Bonds
+## SLIDE: VICTORY Bonds
 **Visual**: WWII propaganda poster style - "BUY VICTORY BONDS - 40% RETURNS - DEFEAT DEATH"
 **Text**: "Better than cocaine trafficking, legal-er too"
 
@@ -190,7 +190,7 @@ But wait - before we hand $27 billion to anyone, we need to talk about a problem
 
 ---
 
-## SLIDE 13: The Capture Problem
+## SLIDE: The Capture Problem
 **Visual**: NIH/FDA buildings with puppet strings attached to pharma/defense contractors
 **Text**: "Why we can't just give $27B to existing systems"
 
@@ -203,7 +203,7 @@ If we pour $27B into broken systems, we'll get $27B worth of broken results. We 
 
 ---
 
-## SLIDE 14: How Wishocracy Works
+## SLIDE: How Wishocracy Works
 **Visual**: Flow diagram - Anyone proposes → Random pairs shown → Swipe to allocate → Funds flow automatically
 **Text**: "Democracy that actually works"
 
@@ -216,7 +216,7 @@ No committees to bribe. No gatekeepers to capture. Just millions of micro-decisi
 
 ---
 
-## SLIDE 15: The Money Flow
+## SLIDE: The Money Flow
 **Visual**: Flow chart: Treaty → $27B Treasury → Wishocracy voting → DIH/dFDA → Actual cures → Bigger treaties
 **Text**: "Money flows from voters to cures, no middlemen"
 
@@ -233,7 +233,7 @@ No politicians. No committees. No corruption. Just math."
 
 ---
 
-## SLIDE 16: dFDA vs FDA
+## SLIDE: dFDA vs FDA
 **Visual**: Side-by-side comparison - FDA: 17 years, $2.6B, 95% diseases ignored vs dFDA: 2-3 years, $2M, 100% diseases covered
 **Text**: "82X improvement (not a typo)"
 
@@ -246,7 +246,7 @@ Oxford already proved this works. They spent $500 per patient and saved a millio
 
 ---
 
-## SLIDE 17: The Two Timelines
+## SLIDE: The Two Timelines
 **Visual**: Split screen - top timeline descending into darkness (Gollumland), bottom ascending into light (Wishonia)
 **Text**: "Choose your own adventure"
 
@@ -261,7 +261,7 @@ We're literally choosing between Star Trek and Mad Max."
 
 ---
 
-## SLIDE 18: Your Personal Death Clock
+## SLIDE: Your Personal Death Clock
 **Visual**: Interactive timer showing "150,671 people have died from preventable disease since this talk started"
 **Text**: "This could be you"
 
@@ -274,7 +274,7 @@ But sure, let's build another aircraft carrier."
 
 ---
 
-## SLIDE 19: The DIH Feedback Loop
+## SLIDE: The DIH Feedback Loop
 **Visual**: Circular diagram showing: Peace dividend → Funds trials → Health outcomes → Bigger treaties → More peace dividend
 **Text**: "Success creates more success (1% → 2% → 10% → Peace)"
 
@@ -285,7 +285,7 @@ It's a virtuous cycle, the opposite of the death spiral we're in now. Eventually
 
 ---
 
-## SLIDE 20: Everyone Wins (Except Death)
+## SLIDE: Everyone Wins (Except Death)
 **Visual**: Happy montage - defense contractors counting VICTORY bond returns, pharma companies high-fiving patients, politicians getting reelected, Death filing for unemployment
 **Text**: "The ending where nobody dies"
 
@@ -302,7 +302,7 @@ Everyone wins. The military-industrial complex keeps 99% of their budget AND get
 
 ---
 
-## SLIDE 21: The Call to Action
+## SLIDE: The Call to Action
 **Visual**: Big button labeled "STOP BEING IDIOTS" with website below
 **Text**: "WarOnDisease.org - Vote on the Referendum. Buy VICTORY bonds. Live forever."
 
@@ -317,7 +317,7 @@ Because here's the thing..."
 
 ---
 
-## SLIDE 22: Final Slide
+## SLIDE: Final Slide
 **Visual**: Earth from space, slowly transforming from gray/brown to green/blue
 **Text**: "We can be the first species to defeat death... or the last species to cause it."
 
