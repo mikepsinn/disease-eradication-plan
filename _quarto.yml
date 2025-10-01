@@ -17,14 +17,18 @@ book:
     - index.qmd
     - part: "The Problem: Everyone You Love Is Dying While We Build Skynet"
       chapters:
-        - brain/book/problem/the-evolutionary-trap.qmd  # TODO: Update content to focus on human cost
-        - brain/book/problem/cost-of-war.qmd  # TODO: Merge with cost-of-disease into 119-trillion-waste
+        - brain/book/problem/the-evolutionary-trap.qmd
+        - brain/book/problem/cost-of-war.qmd
         - brain/book/problem/cost-of-disease.qmd
+        - brain/book/problem/why-the-system-is-broken.qmd
+        - brain/book/problem/nih-funding-is-broken.qmd
+        - brain/book/problem/fda-approvals-are-broken.qmd
+        - brain/book/problem/regulatory-capture.qmd
         - brain/book/problem/democracy-is-broken.qmd
     - part: "The Theory: Why Markets Work and Democracy Doesn't"
       chapters:
         - brain/book/theory.qmd
-        # - brain/book/theory/central-planning-failure.qmd  # TODO: Create
+        - brain/book/theory/central-planning-failure.qmd  # TODO: Create
         # - brain/book/theory/war-on-disease.qmd  # TODO: Create
         # - brain/book/theory/public-choice.qmd  # TODO: Create
         # - brain/book/theory/wisdom-of-crowds.qmd  # TODO: Create
