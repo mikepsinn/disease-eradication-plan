@@ -46,21 +46,26 @@ This table highlights the profound public health impact that could result from r
 ### **Additional Sources:**
 
 1. **Naloxone Estimates**:
+
    - Lancet study on naloxone need across fentanyl, heroin, and prescription opioids (<https://www.thelancet.com/article/S2468-2667(21)00304-2/fulltext>)
    - CDC report on opioid overdose prevention programs providing naloxone (<https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6423a2.htm>)
 
 2. **PrEP (Truvada) Estimates**:
+
    - CDC clinical guidance on PrEP for HIV prevention (<https://www.cdc.gov/hivnexus/hcp/prep/index.html>)
    - PEPFAR's global impact on HIV prevention through PrEP (<https://www.hiv.gov/federal-response/pepfar-global-aids/pepfar>)
 
 3. **Hydroxyurea Estimates**:
+
    - CDC data on sickle cell disease mortality and hydroxyurea usage (<https://www.cdc.gov/sickle-cell/data/index.html>)
    - JAMA Network study on life expectancy improvements with hydroxyurea treatment (<https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2755485>)
 
 4. **Ivermectin Estimates**:
+
    - WHO fact sheet on river blindness and ivermectin treatment (<https://www.who.int/news-room/fact-sheets/detail/onchocerciasis>)
    - Nature study on ivermectin's impact on parasitic diseases (<https://www.nature.com/articles/ja201711>)
 
 5. **Misoprostol Estimates**:
+
    - PubMed study on misoprostol's impact on postpartum hemorrhage mortality (<https://pubmed.ncbi.nlm.nih.gov/19783291/>)
    - BMC Pregnancy & Childbirth study on maternal mortality reduction (<https://bmcpregnancychildbirth.biomedcentral.com/articles/10.1186/1471-2393-14-78>)

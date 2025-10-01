@@ -52,6 +52,7 @@ We've created a system where:
 ### Central Planning vs. Free Markets
 
 **Current System (NIH/FDA Central Planning):**
+
 - $2.2B per drug (committees pick losers)
 - 17 years to market (bureaucracy moves at bureaucracy speed)
 - 90% grant rejection rate (200 reviewers play god with $48B)
@@ -59,6 +60,7 @@ We've created a system where:
 - 15% patient access (gatekeepers everywhere)
 
 **New System (DIH/dFDA Free Markets):**
+
 - ~$27M per treatment (competition drives efficiency)
 - 2-3 years to market (markets move at market speed)
 - Fund everything, measure results (let data pick winners)

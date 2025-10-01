@@ -6,6 +6,7 @@ jupyter: python3
 This analysis quantifies the economic benefits derived from a 1% reduction in global military spending and the broader costs of conflict. The calculations are based on the data compiled in our [Cost of War analysis](../problem/cost-of-war.qmd).
 
 We model two types of benefits:
+
 1. **The Captured Dividend**: The direct funds redirected from military budgets to the DIH treasury.
 2. **The Societal Dividend**: The total economic value retained by society due to a 1% reduction in all conflict-related costs.
 
@@ -446,6 +447,7 @@ print(f'Modern chart saved to {file_path}')
 A key principle of rigorous economic modeling is to test the assumptions to understand how they impact the final conclusions. A sensitivity analysis allows us to see how the "Societal Dividend" changes when we vary our key inputs.
 
 In this analysis, we will vary two key parameters simultaneously:
+
 1. **Reduction Percentage**: We will model a range of reductions from 0.5% to 2.0% to see the impact of partial or greater-than-expected success.
 2. **Accuracy of Indirect Cost Estimates**: The indirect costs of war (like lost economic growth) are harder to quantify than direct spending. We will model a scenario where these costs might be overestimated or underestimated by 25%.
 
@@ -491,6 +493,7 @@ The peace dividend analysis reveals:
 
 1. **Massive Scale**: Even a 1% reduction in conflict costs generates $97+ billion annually in societal benefits
 2. **Two-Tier Benefits**: 
+
    - **Captured Dividend**: $27.2B annually (direct military budget reallocation)
    - **Societal Dividend**: $97.1B annually (total economic benefits)
 3. **Robust to Assumptions**: The sensitivity analysis shows the benefits remain substantial even under conservative scenarios

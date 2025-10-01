@@ -59,10 +59,12 @@ Once the General Fund is established and core operations are stable, we will exp
 
 1.  **Identify & Vet:** Research and identify a shortlist of potential primary fiscal sponsors that fit the "broad mission" profile.
 2.  **Develop a Simplified Pitch:** Create a concise, 1-2 page proposal that focuses on the least controversial and most compelling aspects of the DIH for an initial approach.
+
     - **The Hook:** Frame the project around patient-centricity, research efficiency (the 80x cheaper trial model), and empowering patients.
     - **De-emphasize:** Initially, downplay the more radical political and economic elements. The goal is to get a foot in the door by highlighting the shared mission of accelerating cures.
 3.  **Launch Phase 1:** Secure the primary sponsor and launch the General Fund donation drive.
 4.  **Initiate Phase 2:** Once Phase 1 is successful, begin outreach to specialized non-profits. Pitch them on sponsoring specific, named "programs" or "funds" that align directly with their core mission (e.g., "The Patient-Powered Rare Disease Trial Fund, a project of the DIH").
 5.  **Website Integration:** As specialized funds are established, update the main project website to feature a clear, two-part donation page:
+
     - A primary call-to-action for the **General Fund**.
     - A secondary section for **Specialized Funds**, allowing donors to support work on specific diseases through our trusted partners.

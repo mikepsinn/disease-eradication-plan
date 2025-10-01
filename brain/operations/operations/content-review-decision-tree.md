@@ -182,8 +182,10 @@ For each archived file:
 
 1. **🔍 SCAN:** Read title and first few paragraphs to understand the content.
 2. **🤔 EVALUATE:** Is this content generic/obvious, or is it unique and essential to the project?
+
    - If generic → **DELETE**.
 3. **🗺️ LOCATE:** Identify which single file in the "Platonic Ideal" structure this content belongs to.
+
    - If it belongs nowhere → **DELETE**.
    - If it reveals a critical gap in the ideal structure, update the structure first.
 4. **✅ ACT:** **MERGE** the essential, non-obvious content into the target file, then delete the source. Or, if it's a perfect 1:1 fit, **MOVE** and **RENAME** it to match the ideal filename.

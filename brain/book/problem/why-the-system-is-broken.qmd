@@ -34,6 +34,7 @@ Here's the beautiful dysfunction we've created:
 
 The National Institutes of Health has a $47 billion budget [CITATION: nih-budget-fy2025].
 With that money, they've perfected the art of:
+
 - Making scientists spend [TODO: source - percentage] of their time writing grants
 - Rejecting [CITATION: nih-grant-success-rate-19pct] of all applications
 - Funding the same 20% of researchers who already have funding
@@ -46,6 +47,7 @@ By then, their best ideas are collecting Social Security.
 
 The Food and Drug Administration takes [TODO: source - exact years] and [TODO: source - cost] to approve a new drug.
 During those years:
+
 - [STAT NEEDED: number of people who die waiting]
 - The drug company goes bankrupt
 - A cheaper alternative is discovered but can't be tested because we're still testing the first one
@@ -56,6 +58,7 @@ It's like having a fire department that takes 17 years to approve water as "safe
 ### The Patent System: Monetizing Misery
 
 Here's how we ensure diseases stay profitable:
+
 1. Company discovers cure for Disease X
 2. Patents it for 20 years
 3. Charges $100,000 per dose
@@ -125,26 +128,31 @@ We test medicines on people who don't represent actual sick people, then act sur
 Everyone in the system is perfectly incentivized to not cure diseases:
 
 ### Pharmaceutical Companies
+
 - **Cure a disease:** One-time payment, stock price drops
 - **Treat symptoms forever:** Infinite money printer go brrrrr
 - **Winner:** Treating symptoms
 
 ### Researchers
+
 - **Find controversial breakthrough:** Get attacked by peers, lose funding
 - **Publish incremental nothing:** Get promoted, tenure, speaking fees
 - **Winner:** Incremental nothing
 
 ### FDA Regulators
+
 - **Approve drug that kills someone:** Congressional hearing, fired, career over
 - **Delay drug that could save millions:** Nobody notices, get promoted
 - **Winner:** Delay everything
 
 ### Insurance Companies
+
 - **Pay for cures:** Lose money
 - **Deny coverage:** Make money
 - **Winner:** "Prior authorization required" (translation: go die)
 
 ### Politicians
+
 - **Fund actual research:** Boring, no photo ops
 - **Create new agencies with acronyms:** Ribbon cutting ceremonies!
 - **Winner:** The National Institute for Instituting Institutes (NIII)
@@ -154,11 +162,13 @@ Everyone in the system is perfectly incentivized to not cure diseases:
 Let's add up the inefficiency:
 
 **Input:** 
+
 - $67.5 billion in global medical research [CITATION: global-gov-med-research-spending]
 - 1.2 million biomedical researchers [TODO: source - number of researchers]
 - 50 years of modern molecular biology
 
 **Output:**
+
 - 0 diseases cured since [TODO: source - smallpox year]
 - [TODO: source - number] of FDA-approved drugs (mostly me-too drugs)
 - 95% of diseases have zero treatments [TODO: source - rare disease stats]
@@ -177,6 +187,7 @@ Here's why democracy fails at medical research:
 ### Problem 1: Voters Don't Understand Science
 
 Ask the average voter about CRISPR:
+
 - 5% think it's gene editing
 - 20% think it's a new salad
 - 75% think it's a government conspiracy
@@ -225,6 +236,7 @@ It's like having 50 people separately discover that touching fire hurts, but nob
 
 95% of diseases are classified as "rare" [TODO: source - rare disease statistics].
 "Rare" means:
+
 - Not profitable to cure
 - No research funding
 - No FDA fast-track
@@ -259,6 +271,7 @@ Here's the dark truth: The system isn't broken.
 It's working exactly as designed.
 
 It's designed to:
+
 - Keep scientists busy writing grants (✓)
 - Keep regulators avoiding blame (✓)
 - Keep pharma companies profitable (✓)
@@ -292,6 +305,7 @@ Just not for you.
 ---
 
 *Coming up next: We dive into the specific dysfunction of each major player in this tragedy:*
+
 - [Why NIH is Terrible at Funding Research](./nih-funding-is-broken.qmd)
 - [Why the FDA is Unsafe and Ineffective](./fda-approvals-are-broken.qmd)  
 - [Why Representative Democracy is Unrepresentative](./democracy-is-broken.qmd)

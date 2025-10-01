@@ -45,9 +45,11 @@ This means that for the price of a cup of coffee, our current military apparatus
 If 1% of the global military budget were redirected, $2.69 trillion would remain. We can now calculate the potential human cost of that remaining budget.
 
 1.  **Number of Bombs:**
+
     -   $2,690,000,000,000 / $27,500,000 per bomb = **97,818 bombs**
 
 2.  **Total Potential Deaths:**
+
     -   97,818 bombs * 1,619,570 deaths per bomb = **~158,421,000,000 people**
 
 With the $2.69 trillion left over after funding the War on Disease, global military spending could still theoretically purchase enough nuclear weapons to kill **158.4 billion people**, or approximately **20 times the entire population of Earth.**

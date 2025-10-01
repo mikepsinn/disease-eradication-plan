@@ -17,12 +17,14 @@ The DIH doesn't disrupt healthcare - it enhances it by functioning like an insur
 ### 1. The Patient Journey
 
 **Traditional Path:**
+
 1. Patient sees doctor
 2. Doctor prescribes FDA-approved treatment
 3. Insurance covers it (maybe)
 4. Patient pays copay
 
 **DIH-Enhanced Path:**
+
 1. Patient sees doctor
 2. Doctor can ALSO recommend relevant trials (like pre-1962)
 3. DIH covers trial participation costs
@@ -32,6 +34,7 @@ The DIH doesn't disrupt healthcare - it enhances it by functioning like an insur
 ### 2. The DIH Insurance Model
 
 **What DIH Covers (Like Insurance):**
+
 - Trial medication costs
 - Required testing and monitoring
 - Travel reimbursement (if needed)
@@ -39,6 +42,7 @@ The DIH doesn't disrupt healthcare - it enhances it by functioning like an insur
 - Complication coverage
 
 **Patient Responsibilities:**
+
 - Small copay ($20-50 per month)
 - Report outcomes via app
 - Attend follow-ups
@@ -47,18 +51,21 @@ The DIH doesn't disrupt healthcare - it enhances it by functioning like an insur
 ### 3. Integration Points with Existing System
 
 **At the Doctor's Office:**
+
 - DIH portal integrated into EMR systems
 - Doctors see trial options alongside standard treatments
 - One-click enrollment (like e-prescribing)
 - Automatic eligibility checking
 
 **At the Pharmacy:**
+
 - Trial medications dispensed like regular prescriptions
 - Pharmacy becomes trial distribution site
 - Standard pickup/delivery options
 - Automatic refill reminders
 
 **With Existing Insurance:**
+
 - DIH supplements, doesn't replace
 - Covers what traditional insurance won't (experimental treatments)
 - Seamless billing coordination
@@ -82,18 +89,21 @@ graph TD
 ### 5. Why This Works Better Than Direct Payments
 
 **Avoids Perverse Incentives:**
+
 - No "professional patients" gaming the system
 - No coercion of desperate people
 - Maintains doctor-patient relationship
 - Preserves medical ethics
 
 **Reduces Friction:**
+
 - Works within existing workflows
 - Uses familiar insurance model
 - No new systems to learn
 - Doctors remain gatekeepers
 
 **Ensures Quality:**
+
 - Medical oversight maintained
 - Safety monitoring preserved
 - Professional standards upheld
@@ -104,12 +114,14 @@ graph TD
 **Sarah has Type 2 Diabetes:**
 
 **Old System:**
+
 - Metformin not working well
 - No other options covered
 - Pays $500/month for branded drug
 - Still has poor control
 
 **With DIH Integration:**
+
 1. Doctor checks DIH portal during visit
 2. Sees 5 relevant trials for new diabetes drugs
 3. Recommends Trial #3 based on Sarah's profile
@@ -123,6 +135,7 @@ graph TD
 ## Implementation Requirements
 
 ### Technical Infrastructure
+
 - EMR integration APIs
 - Pharmacy network connections
 - Claims processing system
@@ -130,6 +143,7 @@ graph TD
 - Data collection platform
 
 ### Regulatory Framework
+
 - Modified clinical trial regulations
 - Insurance coordination rules
 - Privacy/HIPAA compliance
@@ -137,6 +151,7 @@ graph TD
 - Safety monitoring standards
 
 ### Stakeholder Buy-In
+
 - **Doctors:** CME credits for trial participation
 - **Pharmacies:** Dispensing fees for trial meds
 - **Hospitals:** Infrastructure payments
@@ -145,12 +160,14 @@ graph TD
 ## The Pre-1962 Model (What We're Returning To)
 
 Before the 1962 Kefauver-Harris Amendment:
+
 - Doctors could prescribe experimental treatments
 - Patients and doctors decided together
 - Innovation happened at bedside
 - FDA only regulated safety, not efficacy
 
 **We're bringing this back, but with:**
+
 - Modern safety monitoring
 - Real-time data collection
 - Systematic outcome tracking
@@ -160,6 +177,7 @@ Before the 1962 Kefauver-Harris Amendment:
 ## Cost Structure (Realistic Numbers)
 
 **Per Patient Per Trial:**
+
 - Medication costs: $200-2000/month (covered by DIH)
 - Monitoring costs: $100-500/month (covered by DIH)
 - Travel/time: $50-200/month (covered by DIH)
@@ -191,18 +209,21 @@ Before the 1962 Kefauver-Harris Amendment:
 ## The Transition Plan
 
 **Phase 1: Pilot Programs (Year 1)**
+
 - 10 health systems
 - 5 disease areas
 - 10,000 patients
 - Prove the model works
 
 **Phase 2: Regional Rollout (Year 2)**
+
 - 100 health systems
 - 20 disease areas
 - 100,000 patients
 - Refine operations
 
 **Phase 3: National Scale (Year 3+)**
+
 - All willing providers
 - All diseases
 - Millions of patients
@@ -211,6 +232,7 @@ Before the 1962 Kefauver-Harris Amendment:
 ## The Bottom Line
 
 The DIH isn't trying to replace the healthcare system. It's adding an "experimental treatment insurance layer" that:
+
 - Works within existing infrastructure
 - Respects current relationships
 - Maintains safety standards

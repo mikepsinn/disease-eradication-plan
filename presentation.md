@@ -176,6 +176,7 @@ One-click join trials from your doctor's office. Results in 2 years, not 17."
 "How do we get the treaty passed and prevent the military-industrial complex from killing it?
 
 Three steps:
+
 1. Turn enemies into investors with VICTORY bonds
 2. Get 280 million humans to vote - unstoppable mandate
 3. Hire their own lobbyists to push health instead of death

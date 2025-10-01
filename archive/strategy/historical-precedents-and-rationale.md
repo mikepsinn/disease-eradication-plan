@@ -64,21 +64,25 @@ To design optimal investment terms, we must also look at historical analogues fo
 ### Successful Financial Precedents
 
 1.  **Michael Milken & High-Yield ("Junk") Bonds**
+
     - **The Precedent:** In the 1980s, Drexel Burnham Lambert pioneered the use of high-yield bonds to finance leveraged buyouts (LBOs) and other ventures the establishment considered too risky, raising billions.
     - **The Lesson for Our Terms:** This is the strongest precedent for the core structure of VICTORY Bonds. It proves that **to attract capital for high-risk ventures, you must offer a correspondingly high, contractually obligated return.** Our front-loaded payout model, promising a massive year-one cash flow, is a direct application of this principle. It is the "high-yield" premium necessary to compensate for the immense political risk.
 
 2.  **George Soros & The Quantum Fund (Betting on Political Arbitrage)**
+
     - **The Precedent:** In 1992, Soros's fund risked over $10 billion on a successful bet that the UK would be forced to leave the European Exchange Rate Mechanism (ERM), a binary political/economic event.
     - **The Lesson for Our Terms:** This is the ultimate example of **privately financed political arbitrage.** It proves that it's possible to deploy immense private capital to bet on a political outcome. The lesson is to **frame the investment as a sophisticated, leveraged bet on a political outcome,** which will attract the kind of hedge funds and financiers who understand and are compensated for this unique risk profile.
 
 ### Unsuccessful Efforts & Cautionary Tales
 
 1.  **Long-Term Capital Management (LTCM)**
+
     - **The Precedent:** A massive hedge fund run by Nobel laureates that collapsed in 1998 due to a "black swan" event (the Russian financial crisis) that its models failed to predict, requiring a $3.6 billion bailout.
     - **The Lesson for Our Terms:** The failure of LTCM is the ultimate cautionary tale against underestimating systemic risk. For us, the "black swan" is a complete political failure. This justifies our most critical risk mitigation terms:
       - **The Assurance Contract:** Guarantees that all initial funds are returned if the fundraising target is not met, eliminating the risk of a partial failure.
       - **First-Loss Philanthropic Capital:** Provides a cushion to absorb initial losses and protect senior investors.
 
 2.  **The South Sea Bubble (1720)**
+
     - **The Precedent:** A classic speculative mania where the stock price of the South Sea Company soared based on a compelling story (a monopoly on trade) that was completely disconnected from its actual (and negligible) profits.
     - **The Lesson for Our Terms:** This warns against the dangers of pure speculation. The value of our VICTORY instruments cannot be based on hype alone. It teaches us that **payouts must be explicitly and contractually tied to real-world, verifiable outcomes**—namely, the ratification of the 1% Treaty and the subsequent flow of real government funds into the DIH treasury. This grounds the project in tangible value, not just a narrative.

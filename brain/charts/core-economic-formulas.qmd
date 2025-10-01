@@ -500,6 +500,7 @@ roi = calculate_dfda_roi(cost_reduction=0.95)  # Test 95% reduction
 ```
 
 ### Key Variables to Track:
+
 - `GLOBAL_MILITARY_SPENDING` - Update annually from SIPRI
 - `GLOBAL_CLINICAL_TRIAL_MARKET` - Update from industry reports
 - `QALY_VALUE` - Adjust for inflation

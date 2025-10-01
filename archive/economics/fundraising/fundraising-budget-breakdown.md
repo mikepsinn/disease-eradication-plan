@@ -33,14 +33,17 @@ The range reflects the variable nature of political campaigns and the potential 
 The raise will be conducted in tranches, with each tranche tied to the achievement of specific, verifiable milestones.
 
 1.  **Phase 1: Seed Round ($250M - $400M)**
+
     - **Goal:** To fund the development of the global referendum platform, establish the legal frameworks in pilot countries, and run the first electoral cycle interventions.
     - **Milestone to Unlock Phase 2:** Secure 50 million verified referendum participants and/or secure a pro-treaty legislative majority in a pilot G20 nation.
 
 2.  **Phase 2: Series A ($500M - $1B)**
+
     - **Goal:** To expand political operations to all G7 nations and achieve the 3.5% global participation threshold (280 million people).
     - **Milestone to Unlock Phase 3:** Achieve the 3.5% threshold and/or secure the first national treaty commitment from a G7 nation.
 
 3.  **Phase 3: Growth Round ($500M - $1.1B)**
+
     - **Goal:** To ensure treaty ratification in all major powers (US, EU, China) and fully capitalize the DIH treasury for its first year of operation.
     - **Milestone:** Full operational deployment and the first $1B disbursement.
 

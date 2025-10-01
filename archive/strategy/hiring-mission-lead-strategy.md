@@ -24,6 +24,7 @@ We are searching for a rare combination of world-class engineering talent, strat
 **Key Attributes:**
 
 1.  **The Full-Stack AI-Executor:** This is a non-negotiable, hands-on-keyboard role. The candidate must be a brilliant architect and implementer, with demonstrated mastery in two key areas:
+
     - **Autonomous Systems:** Creating complex, autonomous AI agent workflows.
     - **Full-Stack Development:** Building robust applications (React, API design, data engineering, and blockchain).
 2.  **The Automation Architect:** They must think in terms of systems and scale. Their primary instinct should be to automate everything: outreach, fundraising, data analysis, and operational logistics.

@@ -51,12 +51,15 @@ The initial fundraising target is a **$1M - $3M pre-seed round**.
 The pre-seed funds will be used to hire a small, world-class team to build the foundation for the larger operation. These individuals will work for the **For-Profit Management Co.** The three immediate, critical hires are outlined in the [Hiring Plan](../careers/hiring-plan.md):
 
 1.  **Capital Markets Lead:**
+
     - **Mandate:** Structure the VICTORY bonds, build the comprehensive financial model and data room, and lead the subsequent seed and Series A fundraising efforts.
 
 2.  **Elections & IE Compliance Lead:**
+
     - **Mandate:** A legal and political expert responsible for designing the legally-compliant framework for the global referendum and the multi-jurisdictional independent expenditure (IE) strategy.
 
 3.  **Growth & Referrals Lead:**
+
     - **Mandate:** A product and growth leader responsible for designing the technology, incentive structure, and viral referral mechanics of the global referendum platform and VOTE points system.
 
 This lean, expert team provides the necessary foundation to de-risk the project and successfully execute the larger fundraising and mobilization efforts outlined in the main roadmap.
