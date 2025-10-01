@@ -31,13 +31,19 @@ The Foundation will provide a total grant of **$120,000** for the successful com
     *   **Strategic & Technical Leadership:** ~$30,000
     *   **Administrative & Operational Support:** ~$10,000
 
-*   **Payment Schedule:**
-    *   **$60,000** upon execution of this SOW.
-    *   **$60,000** upon The Foundation's written acceptance of all final deliverables.
+*   **Payment Schedule:** Payments will be made upon the acceptance of specific deliverables, with amounts corresponding to the value and effort of each milestone, structured as follows:
+    1.  **$10,000** upon execution of this SOW.
+    2.  **$20,000** upon acceptance of the draft Health & Economic Impact Analysis (QALY model).
+    3.  **$10,000** upon acceptance of the final Health & Economic Impact Analysis report.
+    4.  **$20,000** upon acceptance of the draft Economic & Governance Model (Voucher System).
+    5.  **$10,000** upon acceptance of the final Economic & Governance Model, including the insurance framework.
+    6.  **$25,000** upon acceptance of the Legal, Regulatory & Treaty Framework Analysis report.
+    7.  **$10,000** upon acceptance of the high-level Technical Architecture document.
+    8.  **$15,000** upon acceptance of the final, detailed Development Roadmap for subsequent SOWs.
 
 ## 5. REPORTING
 
-The Contractor shall provide a final presentation of all deliverables upon completion, as well as any interim updates as reasonably requested by The Foundation.
+The Contractor shall provide a written summary and present each deliverable to The Foundation for review and acceptance. The Foundation agrees to provide timely feedback and acceptance for each submitted deliverable.
 
 ## 6. SIGNATURES
 
