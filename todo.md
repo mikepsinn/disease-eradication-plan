@@ -37,7 +37,7 @@
   - ~~Keep to 300-500 words (this is a summary)~~
 
 - [x] ~~**CREATE** `brain/book/futures.qmd` (P0 - blocks presentation)~~ ✅ DONE
-  - ~~Two paths: Gollumland (extinction) vs Wishonia (transcendence)~~
+  - ~~Two paths: Idiocracy (extinction) vs Wishonia (transcendence)~~
   - ~~The Three Subs vs The Three Supers~~
   - ~~One 1% decision determines which timeline~~
   - ~~Keep to 300-500 words (this is a summary)~~
