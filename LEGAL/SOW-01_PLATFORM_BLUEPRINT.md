@@ -35,7 +35,7 @@ The Foundation will provide a total grant of **$41,500** for the successful comp
     *   **$20,000** upon execution of this SOW.
     *   **$21,500** upon The Foundation's written acceptance of the final "Platform Blueprint" deliverable.
 
-*   **Budget Justification:** The grant amount is based on the following estimated allocation of resources:
+*   **Budget Estimates:** The grant amount is based on the following estimated allocation of resources. This is provided as an example of how funds may be used to achieve the deliverables; actual expenditures may vary as long as they align with the overall budget categories and serve the project's charitable purpose.
 
 | Role                          | Estimated Hours | Rate     | Cost      |
 | ----------------------------- | --------------- | -------- | --------- |
