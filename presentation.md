@@ -23,7 +23,34 @@ Don't worry, this has a happy ending. Well, one of the endings does. The other o
 
 That's 40 times more on murder than medicine. 
 
+Dolphins don't have a military-industrial complex. Ants don't lobby Congress for better chemical weapons. Your dog doesn't invest in missiles. Just us.
+
+The Pentagon alone has LOST $2.5 trillion. Not spent. Lost. Like change in a couch, except the couch is the size of Nebraska and the change could cure cancer 250 times.
+
 We spend more on Halloween costumes than curing cancer. One fighter jet costs more than all rare disease research combined. We're the only species that pays to kill itself."
+
+---
+
+## SLIDE: Earth's Household Budget
+**Visual**: Table showing spending priorities
+**Text**: "A deeply disturbed household"
+
+**SPEAKER**: 
+"Think of Earth as a household. A deeply disturbed household. Here's our budget:
+
+Disease (watching people rot): $109.1 trillion - Everyone you love slowly dissolving
+War (professional murder): $9.7 trillion - Turning cities into rubble for fun
+Total Stupidity: $118.8 trillion - More than everything else combined
+
+Meanwhile...
+Houses: $23 trillion - Boxes to die in
+Food: $9 trillion - Stuff to eat before dying
+Teaching Kids: $6 trillion - How to read before dying
+Actually Curing Diseases: $0.068 trillion - LOL
+
+We spend 1,600 times more money dealing with disease than preventing it. That's like buying 1,600 mops instead of fixing the burst pipe.
+
+It's like humanity is a teenager who spends all their money on fireworks while their teeth fall out."
 
 ---
 
@@ -35,6 +62,10 @@ We spend more on Halloween costumes than curing cancer. One fighter jet costs mo
 "But that's not all. The true cost of war? $9.7 trillion when you count destroyed cities, PTSD, and orphans. The true cost of treating disease instead of curing it? $109.1 trillion in lost productivity and suffering.
 
 Total: $119 trillion flushed down the Death Toilet every year. That's more than every country's GDP combined.
+
+Every bomb makes someone rich. Every missile funds a yacht. Every war creates a billionaire.
+
+Disease is profitable too. Not curing it—treating it. Insulin costs $300 a vial because dead diabetics don't buy insulin, but cured diabetics don't either. So we keep them barely alive. It's good business.
 
 So you might say: Let's have the government spend more and fix it!"
 
@@ -87,6 +118,8 @@ They kill 21,000 to 120,000 people per decade through delays. Know what takes le
 "And democracy doesn't even work anyway. Princeton proved it - zero correlation between what you want and what happens. You have as much political power as your houseplant.
 
 These agencies are captured by companies that profit from lifelong disease. Ex-pharma executives run the FDA, then go back to pharma with 400% salary increases.
+
+The people making money from war and disease aren't evil. They just like money. Like trained seals, but with nuclear weapons.
 
 We need systems that CAN'T be captured."
 
@@ -145,7 +178,9 @@ Three steps:
 2. Get 280 million humans to vote - unstoppable mandate
 3. Hire their own lobbyists to push health instead of death
 
-We use their own playbook against them."
+The military-industrial complex spends $1 on lobbying and gets $1,813 back in contracts. It's the best investment in the world, if you don't mind the screaming.
+
+But what if there was a version of this strategy that actually reduced the amount of screaming?"
 
 ---
 
@@ -156,7 +191,9 @@ We use their own playbook against them."
 **SPEAKER**: 
 "VICTORY bonds: 40% annual returns forever. That's better than the stock market (10%), real estate (8%), or cocaine trafficking (35% but risky).
 
-5% of the $27 billion treaty funds go to bondholders forever. Defense contractors and pharma executives love money more than bombs or disease. So we give them the best investment in history."
+5% of the $27 billion treaty funds go to bondholders forever. Defense contractors and pharma executives love money more than bombs or disease. So we give them the best investment in history.
+
+It's a Ponzi scheme where everyone wins and nobody goes to jail."
 
 ---
 
@@ -230,7 +267,7 @@ We're literally choosing between Mad Max and Star Trek."
 **Text**: "Vote. Buy bonds. Live forever."
 
 **SPEAKER**: 
-"We're the species that put humans on the moon with computers weaker than your phone. We split the atom. We made the McRib. 
+"We're the species that put humans on the moon with computers weaker than your phone. We split the atom. We invented cheese in a can. 
 
 Surely we can figure out how to stop killing each other.
 
