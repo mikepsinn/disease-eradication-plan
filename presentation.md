@@ -40,6 +40,21 @@ So you might say: Let's have the government spend more and fix it!"
 
 ---
 
+## SLIDE: Your Personal Death Clock
+**Visual**: Live counter: "150,671 people have died from preventable disease since this talk started"
+**Text**: "This could be you"
+
+**SPEAKER**: 
+"But first, let's make this personal. While I've been talking, over 150,000 people died from preventable diseases. That's a small city. Gone.
+
+Based on your age, you have a 23% chance of dying from something we could cure if we just moved money from the kill column to the cure column. 
+
+Your mom's Alzheimer's. Your dad's diabetes. Your kid's rare disease that currently has zero treatments. All preventable. All ignored.
+
+So yeah, let's have government fix it..."
+
+---
+
 ## SLIDE: Why Government Can't Fix It - NIH
 **Visual**: NIH building as Soviet-style bureaucracy with "REJECTED" stamps raining down
 **Text**: "90% rejection rate | $48B wasted annually"
@@ -90,6 +105,21 @@ Oxford already proved this works: $500 per patient vs FDA's $41,000."
 
 ---
 
+## SLIDE: The Oxford Proof
+**Visual**: Side-by-side: Oxford RECOVERY trial vs US trials with costs and outcomes
+**Text**: "$500 vs $41,000 per patient | 1 million lives saved"
+
+**SPEAKER**: 
+"This isn't theory. Oxford ran the RECOVERY trial during COVID. Cost: $500 per patient. They tested existing drugs on actual sick people - the ones FDA trials exclude.
+
+They found dexamethasone. Saved a million lives. 
+
+American trials? $41,000 per patient. Mountains of paperwork. Excluded 85% of patients for being too sick. Found... nothing.
+
+Oxford proved decentralized trials are 82X more efficient. We're just doing that everywhere."
+
+---
+
 ## SLIDE: What Is the dFDA Really?
 **Visual**: Amazon/Yelp interface showing treatments ranked by actual outcomes
 **Text**: "Amazon for clinical trials + Yelp for every pill"
@@ -103,14 +133,19 @@ One-click join trials from your doctor's office. Results in 2 years, not 17."
 
 ---
 
-## SLIDE: How Do We Make This Happen?
-**Visual**: Three-step plan with icons
-**Text**: "Bribe everyone (legally)"
+## SLIDE: The Three-Part Heist
+**Visual**: Three icons: 💰 Bonds → 🗳️ Votes → 🏛️ Lobbyists
+**Text**: "How to hijack the system that hijacked democracy"
 
 **SPEAKER**: 
 "How do we get the treaty passed and prevent the military-industrial complex from killing it?
 
-Simple. We bribe them."
+Three steps:
+1. Turn enemies into investors with VICTORY bonds
+2. Get 280 million humans to vote - unstoppable mandate
+3. Hire their own lobbyists to push health instead of death
+
+We use their own playbook against them."
 
 ---
 
@@ -127,14 +162,14 @@ Simple. We bribe them."
 
 ## SLIDE: The Global Referendum
 **Visual**: World map lighting up as votes spread virally
-**Text**: "3.5% = Critical mass for change"
+**Text**: "280 million votes = Unstoppable mandate"
 
 **SPEAKER**: 
-"Step 2: Global referendum on the treaty. Pay $0.20 per vote referral reward. Get 3.5% of humanity to vote - that's the magic number where politicians get scared.
+"Step 2: Global referendum. We need 3.5% of humanity - that's 280 million votes. History shows when 3.5% of a population actively supports change, it becomes unstoppable. Civil rights. Women's suffrage. The Berlin Wall. Every time.
 
-Step 3: Hire pharma and military lobbyists to push the treaty. They work for whoever pays most. That's us now.
+How? Like Uber paying you to refer drivers, we pay $0.20 for each vote you bring. Share with 10 friends, earn $2. They share, you earn more. Viral spread.
 
-Everyone with power gets VICTORY bonds. Their wealth depends on the treaty surviving."
+Step 3: Hire pharma and military lobbyists. They push whoever pays most. That's us now. Everyone with power gets VICTORY bonds - their wealth depends on keeping the treaty alive."
 
 ---
 
@@ -186,7 +221,7 @@ Gollumland: Keep funding war. By 2050 - nuclear winter, eating bugs, fighting ov
 
 Wishonia: Fund cures. By 2050 - death optional, suffering extinct, AI doctors for all. Life expectancy: Whatever you want. WiFi: Telepathic.
 
-Your personal death clock is ticking. 23% chance you'll die from something curable while we argue about this."
+We're literally choosing between Mad Max and Star Trek."
 
 ---
 
