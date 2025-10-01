@@ -21,7 +21,7 @@ This directory contains modular, reusable chart visualizations that can be inclu
 ### Evidence & Futures
 
 9. **[oxford-recovery-proof.qmd](oxford-recovery-proof.qmd)** - Bar chart showing Oxford RECOVERY trial metrics
-10. **[futures-comparison.qmd](futures-comparison.qmd)** - Side-by-side comparison: Gollumland vs Wishonia
+10. **[futures-comparison.qmd](futures-comparison.qmd)** - Side-by-side comparison: Idiocracy vs Wishonia
 
 ## Usage
 
