@@ -58,17 +58,6 @@ And this tiny droplet here? [points] That's our research budget. It's like bring
 
 ---
 
-## SLIDE: The Pentagon's Magic Trick
-**Visual**: Pentagon building with "$2.46 TRILLION" disappearing in a puff of smoke
-**Text**: "Now you see it... now you don't!"
-
-**SPEAKER**: 
-"Fun fact: The Pentagon has LOST $2.46 trillion. Not spent. LOST. Like change in a couch, except the couch is the size of Nebraska and the change could cure cancer 250 times.
-
-For context, that's enough money to give every human on Earth $300 just to stop asking questions."
-
----
-
 ## SLIDE: Your Democracy Score
 **Visual**: Graph showing correlation between public opinion and policy outcomes - it's a flat line at 0%
 **Text**: "Princeton University: 'Democracy is Already Dead'"
@@ -78,7 +67,9 @@ For context, that's enough money to give every human on Earth $300 just to stop 
 
 [pause]
 
-It's zero. The line is flat. You have as much political power as your houseplant. Less, actually - at least politicians pretend to care about the environment."
+It's zero. The line is flat. You have as much political power as your houseplant. Less, actually - at least politicians pretend to care about the environment.
+
+And guess what? The agencies that are supposed to cure you? They're captured by the same people who profit from you being sick."
 
 ---
 
@@ -121,16 +112,16 @@ We fund death 40 times more than life. This explains everything wrong with our s
 
 ---
 
-## SLIDE: The Solution (That's Too Obvious)
-**Visual**: Big red "X" over current spending, arrow pointing to flipped version
-**Text**: "Step 1: Stop being idiots"
+## SLIDE: The Capture Problem
+**Visual**: NIH/FDA buildings with puppet strings attached to pharma/defense contractors
+**Text**: "Why we can't just fix this with existing systems"
 
 **SPEAKER**: 
-"Here's an idea so obvious a child could think of it: Stop spending $2.7 trillion on murder and spend it on not dying instead.
+"You might think - great, just redirect the money to NIH and FDA!
 
-[pause]
+WRONG. They're already captured. NIH rejects 90% of grant applications. FDA takes 17 years to approve anything. They're run by ex-pharma executives who go back to pharma with 400% salary increases.
 
-PROBLEM: This makes too much sense for Earth."
+If we pour money into broken systems, we'll get broken results. We need systems that CAN'T be captured."
 
 ---
 
@@ -186,20 +177,7 @@ So we're going to do the exact same thing, but backwards. We're going to make cu
 
 It's capitalism, but pointed at not dying.
 
-But wait - before we hand $27 billion to anyone, we need to talk about a problem..."
-
----
-
-## SLIDE: The Capture Problem
-**Visual**: NIH/FDA buildings with puppet strings attached to pharma/defense contractors
-**Text**: "Why we can't just give $27B to existing systems"
-
-**SPEAKER**: 
-"You might think - great, we get $27B, give it to NIH and FDA, problem solved!
-
-WRONG. They're already captured. NIH rejects 90% of grant applications. FDA takes 17 years to approve anything. They're run by ex-pharma executives who go back to pharma with 400% salary increases.
-
-If we pour $27B into broken systems, we'll get $27B worth of broken results. We need systems that CAN'T be captured."
+But wait - now that we have $27 billion, how do we allocate it without repeating the same mistakes?"
 
 ---
 
@@ -294,8 +272,8 @@ It's a virtuous cycle, the opposite of the death spiral we're in now. Eventually
 - Defense contractors collect 40% returns forever from VICTORY bonds
 - Politicians look like heroes and get reelected
 - Pharma gets 80X more drugs to sell
-- Insurance companies... actually, they can find real jobs
 - You get to see your grandchildren graduate
+- Your grandchildren get to see their grandchildren graduate
 - Death gets fired
 
 Everyone wins. The military-industrial complex keeps 99% of their budget AND gets massive returns from the 1% that goes to health. It's not sacrifice - it's the best investment they'll ever make."
