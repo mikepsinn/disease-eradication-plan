@@ -737,6 +737,10 @@
 - **For Patients: Find What Actually Works**
   - Enter your condition
   - See treatments ranked by real effectiveness
+  - **See the Future with Prediction Markets:**
+    - Live, financially-backed odds on trial outcomes (e.g., "72% chance of positive response," "5% chance of serious adverse events").
+    - A powerful forecasting tool to complement historical data.
+    - Bets are settled against real dFDA data, ensuring accuracy and creating a system that learns.
   - Global trial access: Join studies anywhere in the world
   - Real-time effectiveness tracking (see what's working NOW)
   - Right to Trial: Guaranteed enrollment in at least one trial
