@@ -246,7 +246,7 @@ print(f'Bar chart saved to {file_path}')
 
 ## The Core Problem: Disease Burden vs. Research Investment
 
-The most critical insight comes from comparing the *total economic burden* of disease—a staggering $109 trillion annually—with what we spend to solve it. This chart visualizes that extreme disparity. The size of the problem versus our investment in the solution is the central economic argument for this initiative.
+The most critical insight comes from comparing the *total economic burden* of disease, a staggering $109 trillion annually, with what we spend to solve it. This chart visualizes that extreme disparity. The size of the problem versus our investment in the solution is the central economic argument for this initiative.
 
 ```{python}
 # --- Modern Visualization: Disease Burden vs. Research Spending ---
@@ -325,3 +325,4 @@ print(f'Comparison chart saved to {file_path}')
 **The Punchline**: War and disease consume **$119 trillion** annually (113% of global GDP!) when you include all externalities, yet we only spend **$67.5 billion** on medical research. This is the largest market failure in human history.
 
 This analysis reveals that humanity's spending priorities are fundamentally broken. We spend more on the problems than on the solutions, creating a massive opportunity for intervention through the 1% Treaty initiative.
+
