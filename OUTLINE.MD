@@ -20,6 +20,10 @@
   - The reproduction imperative: War gets you laid (evolution is gross)
 
 ### Chapter 2: The $119 Trillion Death Toilet (Where Your Money Goes to Die)
+- **[FIGURE: The $119 Trillion Death Toilet]**
+  - Visual toilet with money flowing in: $9.7T (war) + $109.1T (disease burden) = $119T annually
+  - Tiny $68B research budget shown as a droplet
+  - Impact: Memorable metaphor for waste
 - **War: Humanity's Favorite Hobby** ($9.7T/year buying corpses)
   - Direct costs: $2.7T on weapons that rust in warehouses
   - We spend 162X more on military than brain research (preventing threats 2 million times less likely)
@@ -54,6 +58,10 @@
   - The tragedy: We spend 115X more treating disease than curing it
   - The joke: One fighter jet costs more than all rare disease research combined
   - Visual: On a pie chart, the research slice (0.068%) is literally invisible
+- **[FIGURE: Humanity's Budget Pie Chart]**
+  - Pie chart where military ($2,700) and healthcare treatment ($8,200) dominate
+  - Medical research ($68) literally invisible - need magnifying glass insert to see it
+  - Impact: Viscerally shows the insanity of our spending priorities
 - **The 1972 Catastrophe: When Your Wages Got Divorced From Your Work**
   - Nixon kills gold standard: Money becomes meaningless paper
   - Productivity up 246%, wages up 115% (where'd the money go?)
@@ -68,6 +76,10 @@
   - You get what you want 0% (unless elites agree)
   - The last 50 years: Every major policy against public will
   - The oligarchy with democratic characteristics (that's you, America)
+- **[FIGURE: Your Democracy Score: 0%]**
+  - Graph showing correlation between public opinion (X-axis) and policy outcomes (Y-axis)
+  - It's a flat line at 0% - no correlation whatsoever
+  - Impact: One image destroys the democracy illusion
 - **Your Vote Is Mathematically Meaningless**
   - Probability your vote matters: 1 in 60 million
   - Time cost of being informed: 1,000 hours/year
@@ -220,6 +232,10 @@
   - Random pairwise comparisons: Each voter sees different proposal pairs
   - Slide to allocate: "Jane's autism trial: 70% vs Bob's diabetes device: 30%"
   - No centralized control: Nobody decides what gets voted on
+- **[FIGURE: How Wishocracy Works]**
+  - Flow diagram: Anyone proposes → Random pairs shown to voters → Swipe to allocate → Aggregation → Funds flow automatically
+  - Simple visual showing decentralized decision-making
+  - Impact: Makes the complex simple
 - **The Math: How Swipes Become Budgets**
   - Aggregated Pairwise Preference Allocation (APPA): The technical framework
   - Pairwise comparison: How your brain actually works
@@ -251,6 +267,10 @@
   - Democracy becomes addictive (dopamine hits for voting)
 
 ### Chapter 9: The 1% Treaty (The Trojan Horse That Conquers Everything)
+- **[FIGURE: The 1% Treaty Visualization]**
+  - Visual showing $2.7T military budget with tiny 1% slice ($27B) being redirected
+  - Shows what $27B could buy: 54,000 trials, 27M patients treated, 10-20 diseases cured
+  - Impact: Shows how little we're asking for, how much we'd get
 - **Start Tiny: Just 1% of Military Budgets**
   - $27B globally (Pentagon's couch cushion money)
   - No country loses relative power (everyone cuts equally)
@@ -311,6 +331,10 @@
   - 10-year NPV: $249 billion in value creation
   - Comparison: Best hedge funds dream of 2:1 annual returns
   - Real-world proof: Switzerland's $93K GDP per capita (aided by centuries of compound peace dividends)
+- **[FIGURE: 463:1 ROI Comparison]**
+  - Bar chart comparing returns: S&P 500 (10%), Hedge funds (20%), Medallion Fund (39%), DIH (463:1)
+  - DIH bar literally goes off the chart
+  - Impact: Makes the economic case undeniable
 - **DIH: The $100 Trillion Double-Dividend Company**
   - Current titans: Apple ($3T), Microsoft ($3T), Saudi Aramco ($2T)
   - DIH captures TWO massive dividends in one elegant model:
@@ -326,12 +350,20 @@
   - Market failure reality: No individual can buy "world peace" or "disease eradication"
   - First company to successfully monetize NOT killing people at global scale
   - Why no one's done it: Couldn't coordinate 8 billion people (until Wishocracy)
+- **[FIGURE: The DIH Feedback Loop]**
+  - Circular diagram: Peace dividend → Funds trials → Health outcomes → Justifies bigger treaties → More peace dividend
+  - Shows exponential growth potential through positive feedback
+  - Impact: Shows how success compounds itself
 - **The Daily Holocaust of Inaction**
   - Every day we wait: $137 million burned in inefficiency
   - Every day we wait: 2,301 Quality-Adjusted Life Years lost
   - That's 840,000 QALYs lost annually (a mid-sized city dying)
   - Each hour: $5.7 million wasted, 96 people's life-years gone
   - While you read this sentence: $66,000 vanished, someone's year of life lost
+- **[FIGURE: Death Toll Counter]**
+  - Live counter showing deaths and economic loss WHILE YOU READ THIS PAGE
+  - Updates in real-time: "150,671 people died of preventable disease since you started reading"
+  - Impact: Makes inaction feel criminal
 - **The Dominant Intervention (Saves Money AND Lives)**
   - ICER: -$59,501 per QALY (negative = you profit while saving lives)
   - Normal interventions: Pay $50,000-150,000 per QALY
@@ -629,6 +661,12 @@
   - Negative results NEVER published (half of all research is hidden)
   - FDA.gov: A 1990s website that kills people with bureaucracy
   - Solution: Decentralized marketplace, not FDA.gov v2 (opposite of centralization)
+- **[FIGURE: dFDA vs FDA Comparison]**
+  - Side-by-side comparison:
+    - FDA: 17 years, $2.6B, 85% excluded, 95% diseases ignored
+    - dFDA: 2-3 years, $2M, 100% included, 100% diseases covered
+  - Visual shows 82X improvement in every metric
+  - Impact: Makes the 82X improvement concrete
 - **The 82X Solution: Decentralized Trials**
   - Oxford RECOVERY trial demonstrated potential: $500 per patient vs $41,000
   - Model works best for pragmatic trials testing existing drugs
@@ -804,6 +842,11 @@
 ## Part VII: Choose Your Future (Gollum or Genie)
 
 ### Chapter 21: Path A - Gollumland (Humanity Becomes Gollum, Precious Military Spending)
+- **[FIGURE: The Two Timelines - Gollumland Path]**
+  - Diverging timeline from 2026 showing descent into darkness
+  - Key milestones: 2028 (Evidence dies), 2031 (Crime wins), 2035 (Currency collapse), 2050 (Extinction)
+  - Visual shows timeline descending into black void
+  - Impact: Shows the stakes visually
 - **2028: The Evidence Apocalypse (Truth Dies First)**
   - AI-generated evidence: 10 million fake videos daily
   - Someone creates video of you confessing to 47 crimes
@@ -885,10 +928,19 @@
   - The difference: One choice in 2026 - we ignored the problem until too late
 
 ### Chapter 22: Path B - Wishonia (Humanity Becomes a Superintelligent Genie)
+- **[FIGURE: The Two Timelines - Wishonia Path]**
+  - Diverging timeline from 2026 showing ascent into light
+  - Key milestones: 2030 (Genie awakens), 2035 (Tipping point), 2040 (Wishonia manifests), 2050 (Paradise)
+  - Visual shows timeline ascending into golden light with Three Supers icons (🧠⏳😊)
+  - Impact: Shows the positive alternative we're choosing between
 - **The Declaration of Wishonia** (2026 - We Just Decided It Exists)
   - Some guy invented England, we're inventing Wishonia
   - "We hold these truths to be self-evident..."
   - "...that all humans deserve the Three Supers: Super-Intelligence, Super-Longevity, Super-Wellbeing"
+  - **[DESIGN NOTE: Three Supers Icons]**
+    - Use throughout Wishonia chapters: 🧠 Super-Intelligence, ⏳ Super-Longevity, 😊 Super-Wellbeing
+    - Show progress bars filling up as timeline advances
+    - Impact: Visual tracking of humanity's evolution
   - Population: 280 million founders (before we even have land)
   - Territory: The internet first, then cities, then Earth
   - Currency: $WISH (backed by health outcomes, not gold or violence)
@@ -988,6 +1040,10 @@
 ## Part VIII: Join or Die (Literally)
 
 ### Chapter 24: Your Personal Benefits (What You Get)
+- **[FIGURE: Your Personal Death Probability]**
+  - Interactive element: Enter your age, see probability of dying from preventable disease before DIH succeeds
+  - Shows percentage chance you'll die waiting vs joining now
+  - Impact: Makes it personal - "You have a 23% chance of dying before we cure your condition"
 - **Economic Security**
   - Subsidized treatment: Dynamic vouchers for dFDA trials
   - Healthcare access: No more medical bankruptcy
