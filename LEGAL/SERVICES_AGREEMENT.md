@@ -28,11 +28,46 @@ The Contractor shall provide the expert services required to execute the followi
 *   **Objective:** To produce a comprehensive strategic, technical, and legal blueprint while building the core infrastructure necessary for the platform's long-term success, scalability, and compliance.
 *   **Key Services & Deliverables:**
     1.  **Health & Economic Impact Analysis:** A formal report modeling the platform's potential to generate Quality-Adjusted Life Years (QALYs) and reduce healthcare expenditures, establishing the quantitative case for the platform's societal ROI.
-    2.  **Technical Architecture & Privacy-Preserving Infrastructure:** A detailed technical blueprint and initial implementation of the high-level, HIPAA-compliant systems architecture. This includes the formal integration of privacy-preserving technologies (e.g., Zero-Knowledge Proofs) for the "Digital Twin Safe," enabling aggregate data analysis without compromising individual privacy.
-    3.  **Economic & Governance Model:** A detailed model for the platform's sustainable economy, including the "Dynamic Voucher System" to subsidize patient participation and a governance framework for the decentralized ecosystem.
-    4.  **Legal & Regulatory Strategy:** A thorough analysis of the global legal and regulatory landscape (including FDA, GDPR, etc.) with a clear strategy for compliance and a framework for ethical oversight.
-    5.  **Public Education & Dissemination Strategy:** A plan for producing and disseminating educational materials to the public, researchers, and clinicians about the principles and benefits of decentralized research, in furtherance of the foundation's educational mission.
-    6.  **Phase 2 Implementation Roadmap:** A detailed project plan, budget, and timeline for the platform's pilot launch outlined in Phase 2.
+    2.  **Technical Architecture & Privacy-Preserving Infrastructure:** A detailed technical blueprint and initial implementation of the high-level, HIPAA-compliant systems architecture, including:
+        *   Zero-Knowledge Proof implementation for the "Digital Twin Safe" enabling anonymous data aggregation
+        *   Medical data encryption standards and patient consent management systems
+        *   Multi-signature treasury controls and audit trails for financial transparency
+        *   APIs for universal health system integration (Epic, Cerner, etc.)
+        *   Distributed ledger architecture for transparent fund flows
+        *   Security protocols and regulatory compliance automation
+    3.  **AI-Driven Clinical Intelligence Systems:** Design and prototype development of:
+        *   Personal health agents for patient decision support
+        *   Treatment matching algorithms linking patients to optimal trials
+        *   Side effect prediction models and drug interaction warning systems
+        *   Automated compliance checking and real-time safety monitoring
+        *   Continuous learning systems that improve from outcome data
+    4.  **Wishocracy Democratic Allocation Platform:** Design and prototype of the decentralized governance system, including:
+        *   Pairwise comparison interface for budget allocation decisions
+        *   Identity verification systems (privacy-preserving biometrics, government ID integration)
+        *   Bot prevention and sybil resistance mechanisms
+        *   Gamification features (leaderboards, achievements, participation rewards)
+        *   The 7-step problem-solving process implementation
+        *   Aggregation algorithms for converting billions of preferences into coherent budgets
+    5.  **Economic & Governance Model:** A detailed model for the platform's sustainable economy, including:
+        *   Dynamic Voucher System mechanics for subsidizing patient participation
+        *   Clinical trial insurance pool structure and liability coverage framework
+        *   Refundable deposit mechanisms for trial participants
+        *   Performance-based funding allocation algorithms
+        *   Economic modeling of network effects and scaling dynamics
+    6.  **Legal, Regulatory & Treaty Framework Analysis:** A thorough educational research analysis covering:
+        *   Global legal and regulatory landscape (FDA, EMA, GDPR, HIPAA, etc.)
+        *   Compliance strategy and ethical oversight framework
+        *   International treaty law research (Vienna Convention compliance)
+        *   Comparative analysis of bilateral vs. multilateral agreement structures
+        *   Historical precedent analysis for international health cooperation
+        *   Educational materials on treaty enforcement mechanisms (research/educational purposes only)
+    7.  **Public Education & Dissemination Materials:** Production and distribution strategy for:
+        *   Public education content explaining decentralized research principles
+        *   Training materials and documentation for researchers and clinicians
+        *   Patient education on privacy-preserving technologies and data rights
+        *   White papers, case studies, and peer-reviewed publications
+        *   Multimedia educational content for broad accessibility
+    8.  **Phase 2 Implementation Roadmap:** A detailed project plan, budget, and timeline for the platform's pilot launch outlined in Phase 2.
 
 ### Phase 2: Platform Launch & Pilot Network (Year 2)
 
@@ -49,24 +84,32 @@ The Contractor shall provide the expert services required to execute the followi
 The Foundation will provide a total grant of **$475,000** for the successful completion of the services outlined in **Phase 1**. Funding for subsequent phases will be determined by separate amendments to this agreement upon successful completion of the preceding phase.
 
 **Phase 1 Budget Justification:**
-The grant amount is designated for securing the highly specialized talent and resources required to execute Phase 1. The Contractor will operate with a lean, agile team, leveraging internal employees and augmented by advanced AI systems to maximize efficiency. The allocation of funds is based on the estimated effort required for a project of this complexity and strategic importance. For illustrative purposes, the cost structure is projected as follows:
+The grant amount is designated for securing the highly specialized talent and resources required to execute Phase 1's comprehensive scope. The Contractor will operate with a lean, agile team, leveraging internal employees and augmented by advanced AI systems to maximize efficiency and output. The allocation of funds is based on the estimated effort required for a project of this technical complexity and strategic importance. For illustrative purposes, the cost structure is projected as follows:
 
-*   **Strategic & Technical Leadership:** ~$200,000
-    *   *Covers senior personnel for project architecture, product management, and technical oversight.* 
-*   **Core Engineering & Data Science:** ~$150,000
-    *   *Covers development of the foundational infrastructure, privacy-preserving systems, and data models.*
-*   **Specialized Counsel & Analysis:** ~$100,000
-    *   *Covers external experts for healthcare regulatory law, health economics, and specialized modeling.*
+*   **Strategic & Technical Leadership:** ~$180,000
+    *   *Covers senior personnel for overall project architecture, product management, and technical oversight across all workstreams.* 
+*   **Core Platform Engineering:** ~$140,000
+    *   *Covers development of the foundational dFDA infrastructure, privacy-preserving systems (Zero-Knowledge Proofs), security protocols, and API integrations.*
+*   **AI & Data Science Systems:** ~$80,000
+    *   *Covers design and prototyping of AI-driven clinical intelligence, treatment matching algorithms, and predictive safety models.*
+*   **Wishocracy Platform Development:** ~$60,000
+    *   *Covers design and prototyping of the democratic allocation interface, identity verification, and aggregation algorithms.*
+*   **Specialized Legal & Economic Analysis:** ~$80,000
+    *   *Covers external experts for healthcare regulatory law, international treaty framework research, health economics modeling, and insurance pool design.*
+*   **Educational Content Production:** ~$40,000
+    *   *Covers creation of white papers, training materials, patient education content, and multimedia resources.*
+*   **Infrastructure & Tools:** ~$35,000
+    *   *Covers cloud infrastructure, development tools, security auditing, and testing environments.*
 *   **Administrative & Operational Support:** ~$25,000
-    *   *Covers direct administrative costs and overhead (capped at 5.5%).*
+    *   *Covers direct administrative costs and overhead (capped at 5.3%).*
 
 This structure provides a framework for expenditure without requiring a direct, auditable link between grant funds and specific employee salaries, offering operational flexibility while ensuring accountability to the project's goals.
 
 **Phase 1 Payment Schedule:**
-*   **$125,000** upon execution of this Agreement.
-*   **$125,000** upon delivery of the draft Health & Economic Impact Analysis and Technical Architecture.
-*   **$125,000** upon delivery of the draft Economic & Governance Model and Legal & Regulatory Strategy.
-*   **$100,000** upon The Foundation's written acceptance of all final Phase 1 deliverables.
+*   **$120,000** upon execution of this Agreement.
+*   **$120,000** upon delivery of the draft Health & Economic Impact Analysis, Technical Architecture, and AI Systems Design.
+*   **$120,000** upon delivery of the draft Wishocracy Platform Design, Economic Model, and Insurance Framework.
+*   **$115,000** upon The Foundation's written acceptance of all final Phase 1 deliverables, including educational materials and implementation roadmap.
 
 The Contractor agrees to use these funds exclusively for reasonable and necessary expenses directly related to the Scope of Work.
 ## 5. REPORTING & EXPENDITURE RESPONSIBILITY
