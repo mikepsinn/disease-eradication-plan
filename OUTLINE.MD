@@ -334,13 +334,15 @@
 
 ### Chapter 10: The Economic Case - 463:1 Return on Killing Disease
 - **The ROI That Breaks Reality**
-  - Investment: $40M annual platform cost
-  - Return: $50B annual savings from trial efficiency
+  - Investment: $40M annual platform cost (couch cushion money)
+  - Return: $50B annual savings from trial efficiency (real money)
   - Annual ROI: 1,250:1 year-over-year ($50B/$40M)
   - 10-year cumulative ROI: 463:1 accounting for build time
-  - 10-year NPV: $249 billion in value creation
-  - Comparison: Best hedge funds dream of 2:1 annual returns
-  - Real-world proof: Switzerland's $93K GDP per capita (aided by centuries of compound peace dividends)
+  - **ATTENTION IDIOTS**: This is SOCIETAL return from dFDA efficiency, not your personal VICTORY bond returns (those are "only" 40%)
+  - Translation: Every dollar spent makes society $463 richer (you personally get less, but still get stupid rich)
+  - 10-year NPV: $249 billion in value creation (enough to buy several small countries or one medium-sized tech company)
+  - Comparison: Best hedge funds dream of 2:1 annual returns (we laugh at their poverty)
+  - Real-world proof: Switzerland's $93K GDP per capita (what happens when you stop buying bombs for 200 years)
 - **[FIGURE: 463:1 ROI Comparison]**
   - Bar chart comparing returns: S&P 500 (10%), Hedge funds (20%), Medallion Fund (39%), DIH (463:1)
   - DIH bar literally goes off the chart
@@ -492,11 +494,15 @@
   - Competitive advantage: Back us or competitors will
   - The math: Support us or go bankrupt from medical costs
 - **Big Pharma: The Unexpected Convert**
-  - Current model dying: Patent cliffs, R&D costs exploding
-  - DIH = guaranteed customers for anything that works
-  - Parallel pathway: Faster results, lower trial costs
+  - Current model dying: Patent cliffs, R&D costs exploding like cancer cells
+  - **The Beautiful Payment Reversal**: 
+    - Old way: Pharma burns $48,000 per subject
+    - New way: Patients + DIH subsidies PAY PHARMA for phase 2 and beyond
+    - From biggest expense to revenue stream
+  - DIH subsidies = Pharma gets paid to run trials instead of paying
+  - Parallel pathway: Faster results, positive cash flow, CEOs spontaneously orgasm
   - Compete on outcomes, not marketing (their worst fear)
-  - But: Winners make 10X current profits
+  - But: Winners make 10X current profits (losers still make 5X)
 - **Politicians: Making Corruption Work for Health**
   - Super PAC: Major funding for treaty supporters
   - Opposition research: Funded against enemies
