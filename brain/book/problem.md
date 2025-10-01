@@ -7,8 +7,6 @@ tags: [problem, war, disease, cost-of-war, fda, clinical-trials, resource-alloca
 dateCreated: "2025-09-10T00:00:00.000Z"
 ---
 
-# 📖 Chapter 1: Problem - We're Doing This Backwards
-
 Humanity has two core problems:
 1.  **We spend our money on killing people instead of curing them.**
 2.  **The systems we have for curing them are catastrophically broken.**
