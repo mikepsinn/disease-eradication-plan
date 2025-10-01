@@ -82,7 +82,33 @@ It's zero. The line is flat. You have as much political power as your houseplant
 
 ---
 
-## SLIDE 7: The War on Humanity vs The War on Disease
+## SLIDE 7: The FDA Death Counter
+**Visual**: Graveyard with tombstones labeled "Died waiting 17 years" next to a single "APPROVED" stamp
+**Text**: "95% of diseases have ZERO approved treatments"
+
+**SPEAKER**: 
+"The FDA takes 17 years to approve a drug. SEVENTEEN YEARS. That's longer than most dogs live. It costs $2.6 billion. And they ignore 95% of diseases because they're not profitable enough.
+
+Know what takes less than 17 years? Dying from the disease you're trying to cure.
+
+They kill 21,000 to 120,000 people per decade through delays. That's a mid-sized city worth of corpses because of paperwork. But hey, at least the forms were filled out correctly."
+
+---
+
+## SLIDE 8: NIH - Soviet Science in America  
+**Visual**: NIH building as Soviet-style bureaucracy with "REJECTED" stamps raining down
+**Text**: "90% rejection rate | 200 people pretending to know everything"
+
+**SPEAKER**: 
+"The NIH is literally Soviet central planning for science. 200 reviewers pretend to understand all of human biology. They reject 90% of grant applications. NINETY PERCENT.
+
+Scientists spend 60% of their time writing grants, 40% doing science. It's like making Leonardo da Vinci fill out TPS reports.
+
+We give them $48 billion a year to pick winners and losers. Spoiler alert: We're all losers."
+
+---
+
+## SLIDE 9: The War on Humanity vs The War on Disease
 **Visual**: Two armies facing each other - one massive ($2.7T) labeled "War on Humanity", one tiny ($68B) labeled "War on Disease"
 **Text**: "Guess which one we're losing?"
 
@@ -158,22 +184,56 @@ So we're going to do the exact same thing, but backwards. We're going to make cu
 - Your cousin's crypto scheme: -100%
 - Cocaine trafficking: 35%, but risky
 
-It's capitalism, but pointed at not dying."
+It's capitalism, but pointed at not dying.
+
+But wait - before we hand $27 billion to anyone, we need to talk about a problem..."
 
 ---
 
-## SLIDE 13: How Wishocracy Works
+## SLIDE 13: The Capture Problem
+**Visual**: NIH/FDA buildings with puppet strings attached to pharma/defense contractors
+**Text**: "Why we can't just give $27B to existing systems"
+
+**SPEAKER**: 
+"You might think - great, we get $27B, give it to NIH and FDA, problem solved!
+
+WRONG. They're already captured. NIH rejects 90% of grant applications. FDA takes 17 years to approve anything. They're run by ex-pharma executives who go back to pharma with 400% salary increases.
+
+If we pour $27B into broken systems, we'll get $27B worth of broken results. We need systems that CAN'T be captured."
+
+---
+
+## SLIDE 14: How Wishocracy Works
 **Visual**: Flow diagram - Anyone proposes → Random pairs shown → Swipe to allocate → Funds flow automatically
 **Text**: "Democracy that actually works"
 
 **SPEAKER**: 
 "Current democracy: 535 people pretend to represent 335 million while actually representing whoever paid for their campaign.
 
-Wishocracy: You swipe left or right on funding proposals. Like Tinder, but for not dying. Takes 5 minutes, no politicians required."
+Wishocracy: Instead of 200 bureaucrats deciding how to spend $27B, we let 8 billion people decide. You swipe left or right on funding proposals. Like Tinder, but for not dying. 
+
+No committees to bribe. No gatekeepers to capture. Just millions of micro-decisions adding up to smart allocation. The $27B flows where humanity wants it, not where lobbyists want it."
 
 ---
 
-## SLIDE 14: dFDA vs FDA
+## SLIDE 15: The Money Flow
+**Visual**: Flow chart: Treaty → $27B Treasury → Wishocracy voting → DIH/dFDA → Actual cures → Bigger treaties
+**Text**: "Money flows from voters to cures, no middlemen"
+
+**SPEAKER**:
+"Here's how the money flows:
+1. Treaty creates $27B annual treasury
+2. 8 billion people vote on what to fund through Wishocracy  
+3. Money goes to Decentralized Institutes - mental health, cancer, aging
+4. They fund trials through the dFDA marketplace
+5. Cures happen, people live, everyone votes for bigger treaties
+6. Repeat until death optional
+
+No politicians. No committees. No corruption. Just math."
+
+---
+
+## SLIDE 16: dFDA vs FDA
 **Visual**: Side-by-side comparison - FDA: 17 years, $2.6B, 95% diseases ignored vs dFDA: 2-3 years, $2M, 100% diseases covered
 **Text**: "82X improvement (not a typo)"
 
@@ -186,7 +246,7 @@ Oxford already proved this works. They spent $500 per patient and saved a millio
 
 ---
 
-## SLIDE 15: The Two Timelines
+## SLIDE 17: The Two Timelines
 **Visual**: Split screen - top timeline descending into darkness (Gollumland), bottom ascending into light (Wishonia)
 **Text**: "Choose your own adventure"
 
@@ -201,7 +261,7 @@ We're literally choosing between Star Trek and Mad Max."
 
 ---
 
-## SLIDE 16: Your Personal Death Clock
+## SLIDE 18: Your Personal Death Clock
 **Visual**: Interactive timer showing "150,671 people have died from preventable disease since this talk started"
 **Text**: "This could be you"
 
@@ -214,36 +274,35 @@ But sure, let's build another aircraft carrier."
 
 ---
 
-## SLIDE 17: The DIH Feedback Loop
+## SLIDE 19: The DIH Feedback Loop
 **Visual**: Circular diagram showing: Peace dividend → Funds trials → Health outcomes → Bigger treaties → More peace dividend
-**Text**: "Success creates more success"
+**Text**: "Success creates more success (1% → 2% → 10% → Peace)"
 
 **SPEAKER**: 
-"Here's the beautiful part: Success compounds. Every disease we cure justifies bigger budgets. Every life saved creates a voter for more funding. Every healthy person is a productive person who generates wealth.
+"Here's the beautiful part: Success compounds. Every disease we cure justifies bigger budgets. Treaty grows from 1% to 2% to 10%. Every life saved creates a voter for more funding. Every healthy person is a productive person who generates wealth.
 
-It's a virtuous cycle, the opposite of the death spiral we're in now."
+It's a virtuous cycle, the opposite of the death spiral we're in now. Eventually, we're spending more on curing than killing. That's when we know we've won."
 
 ---
 
-## SLIDE 18: Everyone Wins (Except Death)
-**Visual**: Happy montage - soldiers building hospitals, pharma companies high-fiving patients, politicians getting reelected, Death filing for unemployment
+## SLIDE 20: Everyone Wins (Except Death)
+**Visual**: Happy montage - defense contractors counting VICTORY bond returns, pharma companies high-fiving patients, politicians getting reelected, Death filing for unemployment
 **Text**: "The ending where nobody dies"
 
 **SPEAKER**: 
 "In this new world:
-- Weapons manufacturers pivot to medical equipment
-- Soldiers become medical corps  
-- Politicians look like heroes
+- Defense contractors collect 40% returns forever from VICTORY bonds
+- Politicians look like heroes and get reelected
 - Pharma gets 80X more drugs to sell
 - Insurance companies... actually, they can find real jobs
 - You get to see your grandchildren graduate
 - Death gets fired
 
-Everyone wins. Even the military contractors - we're offering them 40% returns to switch sides."
+Everyone wins. The military-industrial complex keeps 99% of their budget AND gets massive returns from the 1% that goes to health. It's not sacrifice - it's the best investment they'll ever make."
 
 ---
 
-## SLIDE 19: The Call to Action
+## SLIDE 21: The Call to Action
 **Visual**: Big button labeled "STOP BEING IDIOTS" with website below
 **Text**: "WarOnDisease.org - Vote on the Referendum. Buy VICTORY bonds. Live forever."
 
@@ -258,7 +317,7 @@ Because here's the thing..."
 
 ---
 
-## SLIDE 20: Final Slide
+## SLIDE 22: Final Slide
 **Visual**: Earth from space, slowly transforming from gray/brown to green/blue
 **Text**: "We can be the first species to defeat death... or the last species to cause it."
 

@@ -481,7 +481,7 @@
 ### Chapter 12: The Coalition That Ends War (Aligned Incentives Beat Ideology)
 - **Defense Contractors: Converting the Enemy**
   - VICTORY bonds: 40%+ perpetual returns > 8% defense margins
-  - Medical device contracts from DIH (new revenue stream)
+  - Keep 99% of military budget AND get returns on VICTORY bonds
   - Their lobbyists work for highest bidder (that's us now)
   - Pension obligations: One bond purchase = funded forever
   - ESG pressure: From death merchants to health heroes
