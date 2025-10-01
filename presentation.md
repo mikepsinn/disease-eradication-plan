@@ -251,13 +251,13 @@ By preventing suffering instead of causing it."
 ---
 
 ## SLIDE: Choose Your Future
-**Visual**: Split timeline - Gollumland (darkness) vs Wishonia (light)
+**Visual**: Split timeline - Idiocracy (darkness) vs Wishonia (light)
 **Text**: "Mad Max or Star Trek - You're voting right now"
 
 **SPEAKER**: 
 "Two futures:
 
-Gollumland: Keep funding war. By 2050 - nuclear winter, eating bugs, fighting over bunkers. Life expectancy: 35. WiFi: Terrible.
+Idiocracy: Keep funding war. By 2050 - nuclear winter, eating bugs, fighting over bunkers. Life expectancy: 35. WiFi: Terrible.
 
 Wishonia: Fund cures. By 2050 - death optional, suffering extinct, AI doctors for all. Life expectancy: Whatever you want. WiFi: Telepathic.
 

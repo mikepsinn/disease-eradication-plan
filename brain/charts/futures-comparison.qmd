@@ -20,7 +20,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 futures_data = pd.DataFrame({
     'Metric': ['Life\nExpectancy', 'Healthcare\nCost', 'AI\nAlignment', 'Economic\nGrowth', 'Disease\nBurden'],
-    'Gollumland': [35, 100, 10, -40, 95],
+    'Idiocracy': [35, 100, 10, -40, 95],
     'Wishonia': [150, 5, 95, 400, 5]
 })
 
@@ -29,8 +29,8 @@ width = 0.35
 
 # Create chart
 fig, ax = plt.subplots(figsize=(22, 10))
-bars1 = ax.bar(x - width/2, futures_data['Gollumland'], width,
-               label='Path A: Gollumland', color=COLOR_MID, edgecolor=COLOR_WHITE, linewidth=2)
+bars1 = ax.bar(x - width/2, futures_data['Idiocracy'], width,
+               label='Path A: Idiocracy', color=COLOR_MID, edgecolor=COLOR_WHITE, linewidth=2)
 bars2 = ax.bar(x + width/2, futures_data['Wishonia'], width,
                label='Path B: Wishonia', color=COLOR_ACCENT, edgecolor=COLOR_WHITE, linewidth=2)
 
