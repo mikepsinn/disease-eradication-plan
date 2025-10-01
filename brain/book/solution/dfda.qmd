@@ -193,6 +193,26 @@ Instead of "This drug is approved for exactly this condition in exactly these pa
 
 It's like Yelp, but for not dying.
 
+### Step 2.5: See the Future (With Financially-Backed Predictions)
+
+To complement the real-world data from past patients, the dFDA will integrate a powerful forecasting tool: **live prediction markets**.
+
+This isn't just polling experts; it's a marketplace where researchers, doctors, investors, and even the public can bet real money on a trial's future outcomes.
+
+
+For any given trial, you'll see real-time odds on questions like:
+
+-   **Effectiveness**: "What are the chances this treatment will reduce tumor size by >50% in the next 6 months?" **Market Price: 38%**
+-   **Adverse Events**: "What is the probability of patients experiencing severe nausea?" **Market Price: 22%**
+-   **Completion**: "What are the odds this trial will be fully enrolled by its target date?" **Market Price: 71%**
+
+**Why Trust This?**
+
+1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong, creating a powerful incentive for accuracy.
+2.  **The Ultimate Fact-Checker**: The DIH automatically resolves these bets using the actual, aggregated, and anonymized patient data collected by the dFDA. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts—or bettors go broke.
+
+This gives patients an invaluable second layer of information: not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
+
 ### Step 3: Join a Trial from Your Couch (While Dying Comfortably)
 
 <img src="https://static.crowdsourcingcures.org/video/autonomous-study-search.gif" alt="Join trials" style="max-width: 600px; width: 100%;" />
