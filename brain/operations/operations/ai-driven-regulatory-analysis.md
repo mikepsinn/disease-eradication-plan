@@ -16,6 +16,7 @@ To fulfill the mandate for comprehensive health and economic impact analysis of 
 ## Core Components & Workflow
 
 1. **Data Science AI Agent:**
+
    - **Capabilities:** Equipped with a state-of-the-art reasoning Large Language Model (LLM).
    - **Tool Use:**
      - Can perform targeted web searches to gather global evidence, data, and existing models.
@@ -23,6 +24,7 @@ To fulfill the mandate for comprehensive health and economic impact analysis of 
    - **Interaction:** Can be prompted and guided by human experts (health economists, policy analysts) to perform complex analytical tasks.
 
 2. **Open Source Workflow & Collaboration:**
+
    - **Version Control:** All analytical scripts, models, data inputs (where permissible), and reports will reside in a public GitHub repository.
    - **Reporting Format:** Analyses and reports will be generated in Markdown format for ease of versioning, review, and web publishing.
    - **Public Engagement:**
@@ -31,6 +33,7 @@ To fulfill the mandate for comprehensive health and economic impact analysis of 
    - **Democratic Governance:** GitHub Actions can be configured to manage a democratic review and merging process for community-contributed pull requests, potentially involving a designated review committee or voting mechanism.
 
 3. **Transparent Publishing:**
+
    - **Static Site Generation:** Approved reports and analyses will be automatically published to a static website using GitHub Pages, ensuring broad public accessibility.
    - **Data and Model Availability:** All underlying data (where public), assumptions, and models (scripts, algorithms) will be linked or included with the published reports, fostering reproducibility and further research, consistent with Sec. 405(e)(4)(C) of the Act.
 

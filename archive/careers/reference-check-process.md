@@ -76,11 +76,13 @@ Best regards,
     _(A thoughtful answer signals an honest reference.)_
 
 2.  **We are looking for someone to lead a "War on Disease." In your honest opinion, does this candidate have the resilience, drive, and moral clarity for a mission of that magnitude?**
+
     - [ ] Yes, without a doubt.
     - [ ] They have the potential, with the right support.
     - [ ] I have some reservations.
 
 3.  **Would you enthusiastically hire or co-found a company with [Candidate Name] again?**
+
     - [ ] Yes, without hesitation.
     - [ ] Yes, with some reservations.
     - [ ] No.

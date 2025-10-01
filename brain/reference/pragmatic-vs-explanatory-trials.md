@@ -88,21 +88,25 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 ## Advantages of Pragmatic Trials
 
 1. **Better Generalizability**
+
    - Results apply to broader patient populations
    - Findings directly relevant to routine clinical practice
    - Higher external validity
 
 2. **Resource Efficiency**
+
    - Uses existing healthcare infrastructure
    - Lower per-patient costs
    - Faster recruitment and completion
 
 3. **Implementation Speed**
+
    - Rapid translation to clinical practice
    - Immediate real-world validation
    - Reduced lag between evidence and practice
 
 4. **Statistical Power**
+
    - Larger sample sizes possible
    - More diverse patient populations
    - Better representation of real-world outcomes

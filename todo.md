@@ -3,6 +3,7 @@
 **Strategy:** Build in layers - summaries first (reusable everywhere), then detailed chapters, then polish. Use Quarto's `{{< include >}}` system to write once, render to website/presentation/book.
 
 **Writing Guidelines:**
+
 - `[TODO: source - claim]` for facts needing citations
 - `[STAT NEEDED: description]` for missing statistics
 - Vonnegut-style dark humor throughout
@@ -464,16 +465,19 @@ fig.text(0.98, 0.02, 'WarOnDisease.org',
 ### Files Status
 
 **Complete:** 9/33 chapters (27%)
+
 - ✅ Part I: Ch 1, 2 (Evolution, War+Disease)
 - ✅ Part VI: Ch 20 (Body as Machine)
 - ✅ Part VII: Ch 21, 22 (Dystopia, Utopia)
 - ✅ 4 part summaries (problem, solution, theory, futures)
 
 **To Create:** 9/33 chapters (27%)
+
 - ⚠️ 4 theory chapters - **PHASE 3**
 - ⚠️ 5 gap chapters - **PHASE 4**
 
 **To Review/Enhance:** 15/33 chapters (46%)
+
 - 📝 15 existing chapters need market framing - **PHASE 5**
 
 ---
@@ -481,27 +485,32 @@ fig.text(0.98, 0.02, 'WarOnDisease.org',
 ## Key Efficiency Principles
 
 1. **Write Once, Render Everywhere**
+
    - Part summaries used in website, presentation, and book
    - Detailed chapters included via `{{< include >}}`
    - Conditional content for different formats
 
 2. **Build in Layers**
+
    - Summaries first (reusable foundation)
    - Theory second (framework for everything else)
    - Details last (when framework is solid)
 
 3. **Ship Incrementally**
+
    - Phase 2: Website + presentation (2-3 weeks)
    - Phase 8: Full book (16 weeks)
    - Feedback improves final product
 
 4. **Leverage Quarto Features**
+
    - Conditional content: `{.content-visible when-format="revealjs"}`
    - Includes: `{{< include path.qmd >}}`
    - Python charts: Executed during render
    - Multiple outputs: One command → HTML + PDF + EPUB
 
 5. **Parallel Work Possible**
+
    - Theory chapters (Phase 3) can be written in parallel
    - Gap chapters (Phase 4) independent
    - Research (Phase 6) can start early

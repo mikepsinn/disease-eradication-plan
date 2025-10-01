@@ -65,6 +65,7 @@ Send the following to <jobs@dfda.earth>:
 2. **Links to your best open-source projects or code samples** (with a brief description of your role/contribution)
 3. Resume
 4. Cover letter explaining:
+
    - Your experience with AI automation
    - Why patient rights advocacy matters to you
    - Examples of systems you've built that scaled human efforts

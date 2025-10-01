@@ -3,6 +3,7 @@
 ## Part I: The Problem (Your Democracy Is Dead and Your Genes Want You Dead)
 
 ### Chapter 1: Evolution Made You a Slave to Dead People's DNA
+
 - **The Selfish Gene's Suicide Mission**: You're a meat robot for dead people's code
   - Dawkins was right: You're a "survival machine" for molecules
   - The homunculi controlling you: Pleasure and pain are DNA's carrot and stick
@@ -20,6 +21,7 @@
   - The reproduction imperative: War gets you laid (evolution is gross)
 
 ### Chapter 2: The $119 Trillion Death Toilet (Where Your Money Goes to Die)
+
 - **[FIGURE: The $119 Trillion Death Toilet]**
   - Visual toilet with money flowing in: $9.7T (war) + $109.1T (disease burden) = $119T annually
   - Tiny $68B research budget shown as a droplet
@@ -75,6 +77,7 @@
   - The cantillon effect: Money printers get rich, you get poor
 
 ### Chapter 3: Democracy Is Already Dead (Princeton Proved It)
+
 - **The Princeton Bombshell: You Have Zero Political Power**
   - Gilens & Page study: 0% correlation between public opinion and policy
   - Economic elites get what they want 78% of the time
@@ -123,6 +126,7 @@
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
 ### Chapter 4: Why Central Planning Kills People
+
 - **1962: When FDA Centralization Destroyed Medical Progress**
   - Pre-1962: 144,000 physicians ran real-world trials through JAMA
   - 1962: FDA centralizes efficacy trials, immediate disaster:
@@ -160,6 +164,7 @@
   - Align incentives or die (literally)
 
 ### Chapter 5: The War on Disease - The First War Designed to Win
+
 - **The Two Wars: One We're Losing, One We Haven't Started**
   - War on Humanity: $2.7T/year, 75+ years running, no victory possible
   - War on Disease: $68B/year, barely fighting, victory achievable
@@ -190,6 +195,7 @@
   - The beginning of the market revolution
 
 ### Chapter 6: Public Choice Theory (Everyone's a Selfish Prick, Use It)
+
 - **Politicians Maximize Power, Not Your Health**
   - Time horizons: 2-year election cycles vs 20-year cures
   - Blame avoidance > credit claiming (do nothing, stay safe)
@@ -212,6 +218,7 @@
   - Create concentrated benefits for healing
 
 ### Chapter 7: The Wisdom of Crowds (8 Billion Geniuses > 200 Idiots)
+
 - **Surowiecki Was Right About Everything**
   - The Ox: 800 farmers' average beat all experts
   - Wikipedia destroyed Britannica (amateurs beat professionals)
@@ -236,6 +243,7 @@
 ## Part III: The Solution (Wishocracy: Real Democracy Finally)
 
 ### Chapter 8: Wishocracy - Markets Not Majorities
+
 - **The Innovation: Anyone Can Propose, Everyone Decides**
   - Open proposal system: ANY human can submit funding requests
   - Minimal stake required: Small bond prevents spam proposals
@@ -277,6 +285,7 @@
   - Democracy becomes addictive (dopamine hits for voting)
 
 ### Chapter 9: The 1% Treaty (The Trojan Horse That Conquers Everything)
+
 - **[FIGURE: The 1% Treaty Visualization]**
   - Visual showing $2.7T military budget with tiny 1% slice ($27B) being redirected
   - Shows what $27B could buy: 54,000 trials, 27M patients treated, 10-20 diseases cured
@@ -333,6 +342,7 @@
 ## Part IV: The Money (How Everyone Gets Rich by Getting Healthy)
 
 ### Chapter 10: The Economic Case - 463:1 Return on Killing Disease
+
 - **The ROI That Breaks Reality**
   - Investment: $40M annual platform cost (couch cushion money)
   - Return: $50B annual savings from trial efficiency (real money)
@@ -421,6 +431,7 @@
   - Every year we delay: $142B in immediate benefits lost forever
 
 ### Chapter 11: How Central Banks Fund Your Death (The War Machine's ATM)
+
 - **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
   - Dollar: Created by Fed to fund WWI, still funding wars
   - Euro: ECB funds NATO expansions
@@ -447,6 +458,7 @@
   - VICTORY bonds: Peace funded by markets, not money printing
 
 ### Chapter 11: VICTORY Bonds - Better Than Medallion Fund
+
 - **The Instrument: Beating Every Investment Ever**
   - Perpetual 5% of all DIH treasury inflows forever
   - Target yield: 40% annually once treaty fully funded
@@ -481,6 +493,7 @@
   - Full transparency: Every dollar tracked publicly
 
 ### Chapter 12: The Coalition That Ends War (Aligned Incentives Beat Ideology)
+
 - **Defense Contractors: Converting the Enemy**
   - VICTORY bonds: 40%+ perpetual returns > 8% defense margins
   - Keep 99% of military budget AND get returns on VICTORY bonds
@@ -525,6 +538,7 @@
   - Your diseases actually get cured
 
 ### Chapter 13: The Legal Architecture (Staying Out of Prison)
+
 - **The Multi-Jurisdiction Strategy**
   - Swiss foundation: Neutral base of operations
   - Delaware C-corp: US operations
@@ -559,6 +573,7 @@
 ## Part V: The Implementation (Building Paradise)
 
 ### Chapter 14: The Technology Stack (Code That Saves Lives)
+
 - **The Platform Architecture**
   - Distributed ledger for transparency (not blockchain hype)
   - Smart contracts for automatic fund distribution
@@ -579,6 +594,7 @@
   - Regulatory compliance automation
 
 ### Chapter 16: The Global Referendum (Democracy at Scale)
+
 - **The Platform: Wishocracy App**
   - 30-second onboarding
   - Swipe interface for budget allocation
@@ -603,6 +619,7 @@
   - Tipping point: Day 280 critical mass achieved
 
 ### Chapter 17: The DIH - Government Without Governments
+
 - **The Bridge Year: Running Both Systems Until One Wins**
   - dFDA runs parallel to FDA (not replacement, competition)
   - Patients choose: Old slow FDA or new fast dFDA
@@ -629,6 +646,7 @@
     5. Break solutions into actionable tasks
     6. Match tasks to most suitable people/AI agents
     7. Track progress and measure impact continuously
+
   - Core allocations (dynamically adjusted by the crowd):
     - Patient treatment subsidies (majority of funds)
     - VICTORY bond returns (5% of all inflows guaranteed)
@@ -663,6 +681,7 @@
   - Emergency Response: Pandemic preparedness
 
 ### Chapter 17: The dFDA - The Amazon of Not Dying
+
 - **Historical Proof This Works: 82X More Efficient**
   - Pre-1962: 144,000 doctors ran successful real-world trials
   - 2020: Oxford RECOVERY trial proved 82X efficiency gain ($500 vs $41,000 per patient)
@@ -797,6 +816,7 @@
 ## Part VI: The Proof (This Already Works)
 
 ### Chapter 19: Political Movements That Changed Everything
+
 - **Switzerland: The 200-Year Proof That Peace Creates Wealth**
   - No natural resources: Just mountains and cows
   - Center of TWO world wars: Still avoided both
@@ -827,6 +847,7 @@
   - Urgency: People are literally dying
 
 ### Chapter 20: Your Body Is Just a Machine
+
 - **The Engineering Reality of Biology**
   - Heart: We replace it (artificial hearts work)
   - Kidneys: We replace them (dialysis, transplants)
@@ -858,6 +879,7 @@
 ## Part VII: Choose Your Future (Gollum or Genie)
 
 ### Chapter 21: Path A - Gollumland (Humanity Becomes Gollum, Precious Military Spending)
+
 - **[FIGURE: The Two Timelines - Gollumland Path]**
   - Diverging timeline from 2026 showing descent into darkness
   - Key milestones: 2028 (Evidence dies), 2031 (Crime wins), 2035 (Currency collapse), 2050 (Extinction)
@@ -944,6 +966,7 @@
   - The difference: One choice in 2026 - we ignored the problem until too late
 
 ### Chapter 22: Path B - Wishonia (Humanity Becomes a Superintelligent Genie)
+
 - **[FIGURE: The Two Timelines - Wishonia Path]**
   - Diverging timeline from 2026 showing ascent into light
   - Key milestones: 2030 (Genie awakens), 2035 (Tipping point), 2040 (Wishonia manifests), 2050 (Paradise)
@@ -1034,6 +1057,7 @@
 
 
 ### Chapter 23: The Tale of Two Futures (Three Supers vs Three Subs)
+
 - **Gollumland 2050: The Three Subs (Subhuman Degradation)**
   - **Sub-Intelligence:** IQ dropping, education collapsed, truth unknowable
   - **Sub-Longevity:** Life expectancy 35 years, diseases resurging, medicine gone
@@ -1057,6 +1081,7 @@
 ## Part VIII: Join or Die (Literally)
 
 ### Chapter 24: Your Personal Benefits (What You Get)
+
 - **[FIGURE: Your Personal Death Probability]**
   - Interactive element: Enter your age, see probability of dying from preventable disease before DIH succeeds
   - Shows percentage chance you'll die waiting vs joining now
@@ -1088,6 +1113,7 @@
   - Co-creator of humanity's health priorities
 
 ### Chapter 25: The Three Actions (Do Now)
+
 - **Action 1: Sign the Referendum** (3 minutes)
   - Go to WarOnDisease.org
   - Connect wallet or email
@@ -1110,6 +1136,7 @@
   - Everyone: Share knowledge, build community
 
 ### Chapter 26: Every Objection Demolished
+
 - **"This is too complicated"**
   - Democracy is complicated. This just admits it and uses computers to help.
   - You use Netflix's algorithm to pick movies, why not health spending?

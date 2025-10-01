@@ -34,6 +34,7 @@ Include charts in any `.qmd` file using:
 ## Design System
 
 All charts follow the official style guide defined in:
+
 - **Color Palette:** [CONTRIBUTING.md](../../CONTRIBUTING.md#official-color-palette-palette-c---modern-neutral)
 - **Typography:** EB Garamond (serif) for elegant, prestigious aesthetic
 - **Style Module:** [_chart_style.py](_chart_style.py) - Centralized styling functions

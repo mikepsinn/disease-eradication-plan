@@ -20,6 +20,7 @@ Successfully consolidated high-value economic content from orphaned files, prese
 **Content Merged:** 463:1 ROI calculation and dFDA economic multiplier effect
 
 **Key Addition:**
+
 - Added section "8. The dFDA Multiplier Effect: 463:1 ROI"
 - Explained double arbitrage: political (10-20x) + economic (463x)
 - $40M annual platform cost generates $50B in global R&D savings
@@ -28,6 +29,7 @@ Successfully consolidated high-value economic content from orphaned files, prese
 ### 2. Consolidated Fundraising Strategy
 
 **Sources:**
+
 - `economics/fundraising/fundraising-plan.md`
 - `economics/fundraising/fundraising-strategy.md`
 - `economics/fundraising/fundraising-whale-outreach.md`
@@ -36,6 +38,7 @@ Successfully consolidated high-value economic content from orphaned files, prese
 **Target:** `strategy/fundraising-strategy.md` (NEW FILE)
 
 **Content Merged:**
+
 - $1.2B-$2.5B multi-phase strategy
 - Whale targeting approach (crypto, health, foundations)
 - Pay-for-success model
@@ -50,6 +53,7 @@ Successfully consolidated high-value economic content from orphaned files, prese
 **Content Merged:** 100-200 year multi-generational strategy
 
 **Key Addition:**
+
 - Added section "The Multi-Generational Strategy: Phasing Out War Over 100-200 Years"
 - Incremental ratcheting mechanism (5-10 year referendum cycles)
 - Economic inevitability of peace through superior incentives
@@ -78,10 +82,12 @@ All merged content includes clear source attribution:
 ## Recommendations for Further Consolidation
 
 ### High Priority
+
 - `economics/dfda-cost-benefit-analysis.md` - Very large file (33K+ tokens), needs careful extraction of key metrics beyond the 463:1 ROI
 - Other economics files in the consolidation script mapping
 
 ### Medium Priority
+
 - Legal/governance files consolidation
 - Strategy files consolidation
 - Global referendum sub-files

@@ -56,12 +56,14 @@ This repository documents "The Complete Idiot's Guide to Ending War and Disease,
 We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Kurt Vonnegut explaining economics to drunk people at a funeral.
 
 **The 4 Core Checks:**
+
 1. **Clarity:** Can I say this to my mom and have her understand?
 2. **Credibility:** Would I stake my reputation on this claim?
 3. **Concision:** Can I cut words without losing meaning?
 4. **Directness:** Does this sound like Kurt Vonnegut wrote it?
 
 **Essential Elements to Include:**
+
 - **Dark humor about death and human stupidity** - We're all dying anyway, might as well laugh
 - **Cynical but loving observations about humanity** - We're idiots, but we're OUR idiots
 - **Simple, conversational language** - No jargon, write like you're explaining to a smart drunk friend
@@ -70,6 +72,7 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 - **Practical solutions presented as obvious common sense** - "What if sick people could just... try treatments?"
 
 **Automatic Red Flags (Rewrite Immediately):**
+
 - **Corporate Buzzwords:** "synergy," "activation," "paradigm shift," "stakeholder," "utilize," "facilitate" "world-class," "revolutionary," "unprecedented", "cutting-edge," "state-of-the-art," "best-in-class"
 - **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
 - **Euphemisms for death:** Just say "die" or "death" - we're adults here
@@ -78,6 +81,7 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 **The Voice Test:** Would this make someone laugh AND think? If not, add more absurdity or more facts.
 
 **Additional Humor Guidelines:**
+
 - **Humor Should Enhance, Not Distract:** Jokes should make the argument more memorable, not weaker. If a joke doesn't add insight, cut it. Dark observations > cheap shots. Absurd but true > absurd but false.
 - **Emulate Style, Don't Quote:** Channel Vonnegut's dark humor and cosmic irony, but don't use his actual phrases ("so it goes", "listen:", etc.). Create original observations in that style instead of borrowing catchphrases.
 - **Don't Insult Unless It's Really Funny:** If you must make a joke about a group, it needs to be either: (a) So funny it's worth the risk, OR (b) About abstract "systems" not specific people/companies
@@ -105,12 +109,14 @@ The style of this project must balance two core principles: genuine outrage and 
 ## Development Environment Setup
 
 ### Quick Start (Automated)
+
 1. **Run the setup script**: `.\setup.ps1`
 2. **Activate the environment**: `.\venv\Scripts\Activate.ps1`
 3. **Verify setup**: `.\verify-setup.ps1`
 4. **Preview the book**: `quarto preview index.qmd`
 
 ### Prerequisites
+
 - Python 3.8+
 - Quarto
 - PowerShell (Windows)
@@ -124,6 +130,7 @@ If the automated setup doesn't work:
 4. Register Jupyter kernel: `python -m ipykernel install --user --name=dih-project-kernel --display-name "DIH Project Kernel"`
 
 ### Troubleshooting
+
 - **"ModuleNotFoundError"**: Run `.\verify-setup.ps1` to check your environment
 - **"Kernel not found"**: Re-run the Jupyter kernel registration step
 - **Quarto errors**: Make sure your virtual environment is activated
@@ -149,11 +156,13 @@ The Book Outline in README.md is the **complete skeleton of the book** showing t
 - **Subsections:** Supporting details (numbered like 1.1.1, 1.1.2)
 
 **Format Rules:**
+
 - Every item follows "[Core Concept]: [Dark Humor Description]"
   - Good: "FDA Gatekeeping: Killing You Safely Since 1962"
   - Bad: "The FDA approval process and its problems"
 
 **Content Guardrails:**
+
 - **Anti-Central-Planning:** Every solution must emphasize decentralization/markets/competition over committees
 - **Public Choice Focus:** Frame problems through self-interest, not idealism
 - **Dark Humor Required:** If it's not funny, make it funny
@@ -174,6 +183,7 @@ This repo is structured like a book. Root files are "chapters." Subdirectories a
 
 **Book Chapter Structure:**
 Each major chapter follows the epic pattern:
+
 - **Executive Summary File:** `brain/book/problem.qmd` - Overview that links to all sections
 - **Section Files:** `brain/book/problem/*.qmd` - Detailed content for each section
 - **Example Structure:**
@@ -211,6 +221,7 @@ Each major chapter follows the epic pattern:
 1. **One file, one job.** Split files that try to do too much.
 
 2. **Unique filenames everywhere.** Add context only when needed:
+
    - ❌ Bad: `economics/fundraising/strategy.md` (too generic)
    - ✅ Good: `economics/fundraising/fundraising-strategy.md`
    - ✅ Also Good: `solution/1-percent-treaty.md` (already unique)
@@ -311,16 +322,19 @@ To make the content more engaging and easier to understand, we will use Python-g
 To keep our project organized, here’s where different types of visual assets should go. The golden rule is: **if you can create it with code, do it.**
 
 1.  **Reproducible Charts (`brain/charts/`)**
+
     -   **What:** All new data visualizations generated from code (Python, R, etc.). This is the default location for charts.
     -   **Format:** `.qmd` files that can be included in any document.
     -   **Why:** This approach allows us to easily reuse and maintain consistent styling across the book, website, and presentations. It’s the difference between a recipe and a photo of a cake—we want the recipe.
 
 2.  **Static Images (`assets/`)**
+
     -   **What:** General images that are not data visualizations, such as photos, icons, or diagrams from external sources.
     -   **Format:** `.png`, `.jpg`, `.gif`, etc.
     -   **Why:** This is the general-purpose folder for all static visual assets that aren't charts.
 
 3.  **Static Charts (`assets/charts/`)**
+
     -   **What:** Pre-existing, static charts that were not generated by code in this repository (e.g., from a scientific paper).
     -   **Format:** `.png`, `.jpg`, etc.
     -   **Why:** This is a holding area for charts we can't generate ourselves. The long-term goal is to recreate them as reproducible charts in `brain/charts/` whenever possible.
@@ -359,6 +373,7 @@ COLOR_WHITE = '#ffffff'      # Pure white - use for high contrast elements
 ```
 
 **When to Use Each Color:**
+
 - **COLOR_RED:** Bad things - war deaths, disease deaths, wasted spending, problems
 - **COLOR_BLUE:** Good things - treaty solution, cures, VICTORY bonds, hope
 - **COLOR_DARK:** Primary text, headlines, key numbers
@@ -372,6 +387,7 @@ COLOR_WHITE = '#ffffff'      # Pure white - use for high contrast elements
 For bold, impactful messaging inspired by WWII propaganda posters:
 
 **Recommended Font Hierarchy:**
+
 - **Display/Headlines:** Cooper Black (bold, rounded, commanding presence)
 - **Body Text:** Impact or Arial Black (strong, authoritative)
 - **Fallbacks:** Helvetica Bold, Arial Bold
@@ -385,6 +401,7 @@ plt.rcParams['font.weight'] = 'bold'
 ```
 
 **Font Size Guidelines:**
+
 - Chart titles: 16-18pt (bold)
 - Axis labels: 11-12pt
 - Data labels: 10-11pt

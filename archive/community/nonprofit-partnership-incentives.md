@@ -35,6 +35,7 @@ This incentive aligns the organization's budget with our primary mobilization go
 - **The Model:** A baseline grant is provided to establish the partnership. This is coupled with a substantial, performance-based multiplier.
 - **The Offer (Example):**
   > "Your organization will receive a **baseline partnership grant** to cover initial setup and integration costs. In addition, we will release a **substantial performance grant** for every **X verified referendum votes** (e.g., 10,000) driven through your unique organizational link. This bonus is uncapped."
+
 - **The Result:** The non-profit's most rational path to maximizing its budget is to become our most effective mobilization partner. Their team's efforts are now directly focused on a shared, measurable Key Performance Indicator (KPI): referendum votes.
 
 ### 2. Individual Incentive: Personal Stakeholder Grants (VOTE Points)
@@ -44,6 +45,7 @@ This incentive aligns the personal financial interests of key leaders with the u
 - **The Model:** We award a significant personal grant of **[VOTE points](../strategy/warondisease-landing.md#step-1-give-everyone-on-earth-a-stake-in-the-outcome)** directly to the individual leaders (e.g., Executive Director, Head of Development) within the partner organization.
 - **The Offer (Example):**
   > "For your leadership in this partnership, you will be personally granted a **significant allocation of VOTE points**. These points represent a future claim on the economic value of the **[VICTORY Bonds](../strategy/1-percent-treaty/victory-bonds-tokenomics.md)** and the DIH treasury you are helping to create."
+
 - **The Result:** The leader's personal wealth is now directly tied to the treaty's success. They are no longer just an employee of a partner organization; they are a personal stakeholder in the entire endeavor. This creates a powerful incentive to drive for the larger outcome, far beyond their organization's immediate budget.
 
 ## The Ultimate Incentive: From Grant Applicant to Grant Maker

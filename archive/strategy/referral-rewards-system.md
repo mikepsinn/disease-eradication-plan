@@ -92,6 +92,7 @@ A well-designed referral-rewards system can:
   - "$8 will result in the petition ads being displayed to 100 people" (equates to $0.08 per impression or $80 CPM). ([Source: Change.org FAQ](https://www.change.org/l/us/chipping-in-explained))
   - Based on typical signature-conversion rates quoted in user analyses, the **effective cost is estimated at $0.20–$0.40 per added signature**. ([Sources: The Guardian](https://www.theguardian.com/world/2013/jan/15/avaaz-online-campaigning-reinvent-politics), [Change.org Promoted Petitions Instructions](https://www.change.org/l/hi/promoted-petitions-instructions), [Change.org promoted petition math](https://help.change.org/supporting-petition/what-does-it-mean-to-promote-a-petition))
     _Note: The effective cost per action (e.g., signature) is variable and depends on the petition's conversion rate from impression to signature._
+
 - **Avaaz global pledge initiatives:** Email-verified signatures reported at **≈ $0.32 per action** (Avaaz finance FAQ). ([Source: Avaaz finance page (≈ \$0.32 CPA)](https://secure.avaaz.org/campaign/en/avaaz_expenses_and_financial_information/))
 - [GiveDirectly 2021](https://www.givedirectly.org/): $0.48 per verified crypto match
 - **Cost to Obtain Survey Responses (Platform Cost):** Survey platforms like Pollfish indicate costs to businesses starting at ~$0.95 per survey completion, which is the platform's charge for acquiring a response, not a direct referral payout. ([Pollfish](https://www.pollfish.com/pricing/survey-calculator/))
@@ -106,22 +107,27 @@ A well-designed referral-rewards system can:
 ## Practical Steps to Achieve Viral Scale
 
 1. **Performance Awards + Leaderboards**
+
    - Weekly leaderboard awards for top contributors (denominated in VOTE points)
    - Randomized recognition awards for verified referrers (in VOTE points)
    - Keeps marginal cost per new vote near zero after pool is funded
 2. **Lower-Touch Verification (Early Phases)**
+
    - Email + phone OTP for initial onboarding
    - Add selfie-ID only when legally required by a jurisdiction
    - Saves $0.15–$0.20 per participant
 3. **Partner Newsletters > Paid Ads**
+
    - Ready-to-send HTML for disease foundations, patient forums, Reddit, etc.
    - A single 100k-subscriber list at 5% conversion = 5,000 votes for almost no incremental cash
 4. **Creative Viral Marketing**: See [Viral Marketing Tactics](./viral-marketing-tactics.md) for detailed implementation of:
+
    - QR code t-shirts and wearable marketing
    - Social media challenges and meme campaigns
    - Community building and local activation
    - Event marketing and content strategies
 5. **Track K-Factor (Viral Coefficient) Weekly**
+
    - K > 0.8: Cut ad spend
    - K < 0.5: Increase award pool or test new creatives
 
