@@ -104,7 +104,9 @@ We gave them money. They gave us bureaucracy."
 **Text**: "Making cures 80X harder and more expensive"
 
 **SPEAKER**: 
-"The FDA? They've used their $7 billion budget to make everything 80X harder. Takes 17 years and $2.6 billion to approve a drug. They ignore 95% of diseases because they're not profitable enough.
+"The FDA? They've used their $7 billion budget to make everything 80X harder. Takes 17 years and $2.6 billion to approve a drug. 
+
+95% of diseases have ZERO approved treatments. Not one. Nothing. Because they're not profitable enough to navigate the $2.6 billion gauntlet.
 
 They kill 21,000 to 120,000 people per decade through delays. Know what takes less than 17 years? Dying from the disease you're trying to cure."
 
@@ -202,7 +204,7 @@ It's a Ponzi scheme where everyone wins and nobody goes to jail."
 **Text**: "280 million votes = Unstoppable mandate"
 
 **SPEAKER**: 
-"Step 2: Global referendum. We need 3.5% of humanity - that's 280 million votes. History shows when 3.5% of a population actively supports change, it becomes unstoppable. Civil rights. Women's suffrage. The Berlin Wall. Every time.
+"Step 2: Global referendum. We need 3.5% of humanity - that's 280 million out of 8 billion humans. History shows when 3.5% of a population actively supports change, it becomes unstoppable. Civil rights. Women's suffrage. The Berlin Wall. Every time.
 
 How? Like Uber paying you to refer drivers, we pay $0.20 for each vote you bring. Share with 10 friends, earn $2. They share, you earn more. Viral spread.
 
@@ -297,3 +299,6 @@ A: "'Wash your hands' seemed too simple. 'Don't dump sewage in drinking water' s
 
 **Q: "Are you calling us idiots?"**
 A: "I'm calling us the species that spends 40 times more on killing than healing. You can pick your own adjective for that."
+
+**Q: "Won't defense contractors fight this?"**
+A: "Why? We're offering them 40% returns forever. They're not ideological - they just like money. We're not taking their money away, we're making them richer through VICTORY bonds. It's hostile takeover via superior returns."
