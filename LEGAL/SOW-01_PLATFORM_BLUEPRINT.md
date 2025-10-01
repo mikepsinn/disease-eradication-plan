@@ -21,11 +21,17 @@ The Contractor shall perform the services required to produce a single, comprehe
         *   Develop a detailed economic model for the "Dynamic Voucher System" to sustainably subsidize patient participation.
     *   **Technical & Regulatory Blueprint:**
         *   Conduct a technical requirements analysis, including a formal evaluation of privacy-preserving technologies (e.g., Zero-Knowledge Proofs) for the "Digital Twin Safe" concept.
-        *   Propose a high-level, HIPAA-compliant systems architecture for data aggregation, analysis, and publication.
-        *   Perform a legal and regulatory review to identify compliance risks and requirements.
+        *   Propose a high-level, HIPAA-compliant systems architecture for data aggregation, analysis, and publication, including a Data Protection Impact Assessment (DPIA).
+        *   Perform a legal and regulatory review to identify compliance risks and requirements for FDA, GDPR, and other relevant bodies.
+        *   Develop a draft Clinical Governance and Human Subjects Protection Roadmap for future phases, outlining potential IRB and ethics oversight structures.
+    *   **Governance & Compliance Framework:**
+        *   Conduct a nonpartisan analysis of legislative and treaty landscapes relevant to global health initiatives (for educational purposes only, with no advocacy).
+        *   Produce compliance memoranda on the feasibility and regulatory requirements for contemplated activities under U.S. law (SEC, CFTC, OFAC, EAR).
+        *   Design an Open Science & Publication Plan, ensuring a commitment to publishing all results, including negative findings.
     *   **Implementation Roadmap:**
         *   Create a detailed project plan, budget, and timeline for a potential MVP development phase.
 *   **Deliverable:** A single, comprehensive "Platform Blueprint" document containing the results of all services.
+*   **Phase 1 Exclusions:** For the avoidance of doubt, grant funds under this SOW shall not be used for: (a) lobbying, propaganda, or attempting to influence any specific legislation; (b) participating in any political campaign; (c) the offering, marketing, or sale of any securities, tokens, or financial instruments; (d) conducting any human subjects research or clinical trials; or (e) deploying any real-money prediction markets.
 
 ## 4. GRANT FUNDING & PAYMENT SCHEDULE
 
