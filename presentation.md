@@ -10,305 +10,198 @@
 
 [pause for uncomfortable laughter]
 
-Don't worry, this has a happy ending. Well, one of the endings does. The other one involves nuclear winter and eating bugs. "
+Don't worry, this has a happy ending. Well, one of the endings does. The other one involves nuclear winter and eating bugs."
 
 ---
 
-## SLIDE: Meet Earth, Inc.
-**Visual**: Organizational chart of "Earth, Inc." with drunk CEO, golfing board, and departments actively murdering each other
-**Text**: "Current Management Structure"
+## SLIDE: The 40X Problem
+**Visual**: Bar chart - War on Humanity ($2.7T) towers over War on Disease ($68B)
+**Text**: "We spend 40X more on killing than curing"
 
 **SPEAKER**: 
-"Let's talk about Earth like it's a company. The security department spends a quarter of our budget shooting up the accounting department. The medical department watches everyone die while buying Band-Aids in bulk. The CEO is drunk. The board is playing golf. And somehow we're surprised the stock is tanking.
+"Listen. We spend $2.7 trillion a year on the War on Humanity - that's killing each other. We spend $68 billion on the War on Disease - that's curing each other.
 
-No other species does this. Dolphins don't have a military-industrial complex. Your dog doesn't invest in missiles. Just us. We're special."
+That's 40 times more on murder than medicine. 
+
+We spend more on Halloween costumes than curing cancer. One fighter jet costs more than all rare disease research combined. We're the only species that pays to kill itself."
 
 ---
 
-## SLIDE: Humanity's Family Budget
-**Visual**: Pie chart where military and disease spending dominate, medical research is literally invisible without magnifying glass
-**Text**: "We spend 40X more on killing each other than curing each other"
+## SLIDE: The True Cost
+**Visual**: Death Toilet with $119T flowing in ($9.7T war + $109.1T disease burden)
+**Text**: "The real bill: $119 trillion every year"
 
 **SPEAKER**: 
-"Here's humanity's budget as a household making $100,000 a year:
-- Healthcare: $8,200 - that's treating symptoms after we're sick
-- Military: $2,700 - that's our 'home defense' 
-- Medical research: $68 - that's finding actual cures
+"But that's not all. The true cost of war? $9.7 trillion when you count destroyed cities, PTSD, and orphans. The true cost of treating disease instead of curing it? $109.1 trillion in lost productivity and suffering.
 
-[click to zoom in with magnifying glass]
+Total: $119 trillion flushed down the Death Toilet every year. That's more than every country's GDP combined.
 
-You literally need a magnifying glass to see the research budget. We spend more on Halloween costumes than curing cancer. One fighter jet costs more than all rare disease research combined.
-
-This is like buying 1,600 mops instead of fixing the burst pipe."
+So you might say: Let's have the government spend more and fix it!"
 
 ---
 
-## SLIDE: The $119 Trillion Death Toilet
-**Visual**: Animated toilet with money flowing in - $9.7T (war) + $109.1T (disease burden) = $119T annually. Tiny $68B droplet labeled "research"
-**Text**: "Annual Spending on Human Suffering"
-
-**SPEAKER**: 
-"Every year, we flush $119 trillion down the Death Toilet. 
-
-$9.7 trillion on war - that's the direct cost of turning cities into parking lots and people into statistics.
-
-$109.1 trillion on disease - that's the cost of letting everyone slowly fall apart while we watch.
-
-And this tiny droplet here? [points] That's our research budget. It's like bringing a water pistol to a forest fire."
-
----
-
-## SLIDE: Your Democracy Score
-**Visual**: Graph showing correlation between public opinion and policy outcomes - it's a flat line at 0%
-**Text**: "Princeton University: 'Democracy is Already Dead'"
-
-**SPEAKER**: 
-"Here's a fun graph from Princeton. It shows how much your opinion matters in democracy. 
-
-[pause]
-
-It's zero. The line is flat. You have as much political power as your houseplant. Less, actually - at least politicians pretend to care about the environment.
-
-And guess what? The agencies that are supposed to cure you? They're captured by the same people who profit from you being sick."
-
----
-
-## SLIDE: The FDA Death Counter
-**Visual**: Graveyard with tombstones labeled "Died waiting 17 years" next to a single "APPROVED" stamp
-**Text**: "95% of diseases have ZERO approved treatments"
-
-**SPEAKER**: 
-"The FDA takes 17 years to approve a drug. SEVENTEEN YEARS. That's longer than most dogs live. It costs $2.6 billion. And they ignore 95% of diseases because they're not profitable enough.
-
-Know what takes less than 17 years? Dying from the disease you're trying to cure.
-
-They kill 21,000 to 120,000 people per decade through delays. That's a mid-sized city worth of corpses because of paperwork. But hey, at least the forms were filled out correctly."
-
----
-
-## SLIDE: NIH - Soviet Science in America  
+## SLIDE: Why Government Can't Fix It - NIH
 **Visual**: NIH building as Soviet-style bureaucracy with "REJECTED" stamps raining down
-**Text**: "90% rejection rate | 200 people pretending to know everything"
+**Text**: "90% rejection rate | $48B wasted annually"
 
 **SPEAKER**: 
-"The NIH is literally Soviet central planning for science. 200 reviewers pretend to understand all of human biology. They reject 90% of grant applications. NINETY PERCENT.
+"WRONG. The NIH is literally Soviet science. They get $48 billion a year. 200 reviewers pretend to understand all human biology. They reject 90% of grants.
 
-Scientists spend 60% of their time writing grants, 40% doing science. It's like making Leonardo da Vinci fill out TPS reports.
+Scientists spend 60% of their time writing grants, 40% doing science. It's like making Leonardo da Vinci fill out TPS reports. 
 
-We give them $48 billion a year to pick winners and losers. Spoiler alert: We're all losers."
+We gave them money. They gave us bureaucracy."
 
 ---
 
-## SLIDE: The War on Humanity vs The War on Disease
-**Visual**: Two armies facing each other - one massive ($2.7T) labeled "War on Humanity", one tiny ($68B) labeled "War on Disease"
-**Text**: "Guess which one we're losing?"
+## SLIDE: Why Government Can't Fix It - FDA
+**Visual**: Graveyard with tombstones "Died waiting 17 years" + "$2.6B per drug" price tag
+**Text**: "Making cures 80X harder and more expensive"
 
 **SPEAKER**: 
-"We're fighting two wars:
-- The War on Humanity: $2.7 trillion a year, 75 years running, no victory possible
-- The War on Disease: $68 billion a year, barely fighting
+"The FDA? They've used their $7 billion budget to make everything 80X harder. Takes 17 years and $2.6 billion to approve a drug. They ignore 95% of diseases because they're not profitable enough.
 
-We fund death 40 times more than life. This explains everything wrong with our species."
+They kill 21,000 to 120,000 people per decade through delays. Know what takes less than 17 years? Dying from the disease you're trying to cure."
 
 ---
 
-## SLIDE: The Capture Problem
-**Visual**: NIH/FDA buildings with puppet strings attached to pharma/defense contractors
-**Text**: "Why we can't just fix this with existing systems"
+## SLIDE: Democracy Is Already Dead
+**Visual**: Princeton graph showing 0% correlation between public opinion and policy
+**Text**: "Your opinion matters: 0%"
 
 **SPEAKER**: 
-"You might think - great, just redirect the money to NIH and FDA!
+"And democracy doesn't even work anyway. Princeton proved it - zero correlation between what you want and what happens. You have as much political power as your houseplant.
 
-WRONG. They're already captured. NIH rejects 90% of grant applications. FDA takes 17 years to approve anything. They're run by ex-pharma executives who go back to pharma with 400% salary increases.
+These agencies are captured by companies that profit from lifelong disease. Ex-pharma executives run the FDA, then go back to pharma with 400% salary increases.
 
-If we pour money into broken systems, we'll get broken results. We need systems that CAN'T be captured."
+We need systems that CAN'T be captured."
 
 ---
 
-## SLIDE: The 1% Solution
-**Visual**: Military budget as a pie, tiny 1% slice being removed
-**Text**: "The smallest ask in human history"
+## SLIDE: The Solution Package
+**Visual**: Flow chart: 1% Treaty → Wishocracy → DIH → dFDA → Cures
+**Text**: "Uncapturable, decentralized, 80X more efficient"
 
 **SPEAKER**: 
-"So here's the compromise: Just 1%. One percent of the murder budget. A rounding error. Pentagon couch cushion money.
+"So here's the solution: The 1% Treaty redirects just 1% of military spending - $27 billion - to a Wishocracy-controlled treasury. 
 
-That's $27 billion a year. We'd still have $2.69 trillion for killing - enough to murder everyone on Earth 67 times instead of 68. 
+8 billion people allocate funds by swiping on proposals. No committees to bribe. Money flows to Decentralized Institutes of Health, which fund trials through the dFDA - a marketplace 80X more efficient than the FDA.
 
-I think we can live with that. Pun intended."
+Oxford already proved this works: $500 per patient vs FDA's $41,000."
 
 ---
 
-## SLIDE: What $27 Billion Buys
-**Visual**: Animated counter showing what 1% could achieve
-**Text**: 
-- "54,000 clinical trials"
-- "10-20 diseases cured annually"  
-- "27 million patients treated"
-- "Your grandma living to see 100"
+## SLIDE: What Is the dFDA Really?
+**Visual**: Amazon/Yelp interface showing treatments ranked by actual outcomes
+**Text**: "Amazon for clinical trials + Yelp for every pill"
 
 **SPEAKER**: 
-"With just 1% of the military budget, we could run 54,000 clinical trials. Cure 10-20 diseases every year. Treat 27 million patients. 
+"The dFDA is Amazon meets Yelp for not dying. Browse trials like shopping. Read real patient reviews. See outcome labels on everything - foods, drugs, supplements. 
 
-Or we could buy one aircraft carrier that will rust in a dock. Your choice."
+Your AI doctor analyzes all treatments globally, matches you to the best ones. Treatments ranked by what actually works, not marketing budgets.
+
+One-click join trials from your doctor's office. Results in 2 years, not 17."
 
 ---
 
-## SLIDE: The Secret Weapon - Human Greed
-**Visual**: Graph showing lobbying ROI - $1 in → $1,813 out
-**Text**: "The best investment in the world (if you don't mind the screaming)"
+## SLIDE: How Do We Make This Happen?
+**Visual**: Three-step plan with icons
+**Text**: "Bribe everyone (legally)"
 
 **SPEAKER**: 
-"The military-industrial complex spends $1 on lobbying and gets $1,813 back. It's a money printer powered by human suffering.
+"How do we get the treaty passed and prevent the military-industrial complex from killing it?
 
-So we're going to do the exact same thing, but backwards. We're going to make curing cancer more profitable than causing it."
+Simple. We bribe them."
 
 ---
 
-## SLIDE: VICTORY Bonds
-**Visual**: WWII propaganda poster style - "BUY VICTORY BONDS - 40% RETURNS - DEFEAT DEATH"
-**Text**: "Better than cocaine trafficking, legal-er too"
+## SLIDE: VICTORY Bonds - The Ultimate Bribe
+**Visual**: WWII-style poster "BUY VICTORY BONDS - 40% RETURNS - DEFEAT DEATH"
+**Text**: "Better returns than cocaine trafficking"
 
 **SPEAKER**: 
-"Introducing VICTORY bonds: 40% annual returns. That's better than:
-- The stock market: 10%
-- Real estate: 8%  
-- Your cousin's crypto scheme: -100%
-- Cocaine trafficking: 35%, but risky
+"VICTORY bonds: 40% annual returns forever. That's better than the stock market (10%), real estate (8%), or cocaine trafficking (35% but risky).
 
-It's capitalism, but pointed at not dying.
-
-But wait - now that we have $27 billion, how do we allocate it without repeating the same mistakes?"
+5% of the $27 billion treaty funds go to bondholders forever. Defense contractors and pharma executives love money more than bombs or disease. So we give them the best investment in history."
 
 ---
 
-## SLIDE: How Wishocracy Works
-**Visual**: Flow diagram - Anyone proposes → Random pairs shown → Swipe to allocate → Funds flow automatically
-**Text**: "Democracy that actually works"
+## SLIDE: The Global Referendum
+**Visual**: World map lighting up as votes spread virally
+**Text**: "3.5% = Critical mass for change"
 
 **SPEAKER**: 
-"Current democracy: 535 people pretend to represent 335 million while actually representing whoever paid for their campaign.
+"Step 2: Global referendum on the treaty. Pay $0.20 per vote referral reward. Get 3.5% of humanity to vote - that's the magic number where politicians get scared.
 
-Wishocracy: Instead of 200 bureaucrats deciding how to spend $27B, we let 8 billion people decide. You swipe left or right on funding proposals. Like Tinder, but for not dying. 
+Step 3: Hire pharma and military lobbyists to push the treaty. They work for whoever pays most. That's us now.
 
-No committees to bribe. No gatekeepers to capture. Just millions of micro-decisions adding up to smart allocation. The $27B flows where humanity wants it, not where lobbyists want it."
+Everyone with power gets VICTORY bonds. Their wealth depends on the treaty surviving."
 
 ---
 
-## SLIDE: The Money Flow
-**Visual**: Flow chart: Treaty → $27B Treasury → Wishocracy voting → DIH/dFDA → Actual cures → Bigger treaties
-**Text**: "Money flows from voters to cures, no middlemen"
+## SLIDE: Why This Can't Be Corrupted
+**Visual**: Wishocracy with 8 billion decision points vs traditional democracy's single capture point
+**Text**: "8 billion bosses > 535 politicians"
 
-**SPEAKER**:
-"Here's how the money flows:
-1. Treaty creates $27B annual treasury
-2. 8 billion people vote on what to fund through Wishocracy  
-3. Money goes to Decentralized Institutes - mental health, cancer, aging
-4. They fund trials through the dFDA marketplace
-5. Cures happen, people live, everyone votes for bigger treaties
-6. Repeat until death optional
+**SPEAKER**: 
+"Normal government: Lobbyists bribe 535 people, steal everything.
 
-No politicians. No committees. No corruption. Just math."
+Wishocracy: 8 billion people making micro-decisions. Can't bribe them all. Lobbyists get their guaranteed 5% from VICTORY bonds, but can't secretly steal more like they usually do.
+
+No committees. No gatekeepers. No capture points. Just math."
 
 ---
 
-## SLIDE: dFDA vs FDA
-**Visual**: Side-by-side comparison - FDA: 17 years, $2.6B, 95% diseases ignored vs dFDA: 2-3 years, $2M, 100% diseases covered
-**Text**: "82X improvement (not a typo)"
+## SLIDE: The $100 Trillion Company
+**Visual**: Market cap comparison - Apple ($3T) vs DIH ($100T potential)
+**Text**: "Capturing 1% of human suffering = most valuable company ever"
 
 **SPEAKER**: 
-"The FDA is Soviet central planning. Takes 17 years, costs $2.6 billion, ignores 95% of diseases.
+"If we capture just 1% of the $119 trillion peace and health dividend, that's $1.19 trillion annual revenue. 
 
-The dFDA is Amazon for clinical trials. Takes 2 years, costs $2 million, covers everything. 
+At standard valuations, we'd be worth $100 trillion. That's 33 Apples. The most valuable company in history.
 
-Oxford already proved this works. They spent $500 per patient and saved a million lives. America spent $41,000 per patient and saved a million forms."
+By preventing suffering instead of causing it."
 
 ---
 
-## SLIDE: The Two Timelines
-**Visual**: Split screen - top timeline descending into darkness (Gollumland), bottom ascending into light (Wishonia)
-**Text**: "Choose your own adventure"
+## SLIDE: The Feedback Loop
+**Visual**: Success spiral: 1% → Cures → Votes → 2% → More cures → 10% → Peace
+**Text**: "Success creates more success"
 
 **SPEAKER**: 
-"We have two futures:
+"Here's the beautiful part: Success compounds. Every disease we cure proves the model. Every cure creates voters for bigger treaties. 
 
-Path A - Gollumland: We keep funding the War on Humanity. By 2050, nuclear winter, eating bugs, fighting over bunker supplies. Life expectancy: 35. Mental illness: 80%. WiFi: Probably terrible.
-
-Path B - Wishonia: We fund the War on Disease. By 2050, death is optional, suffering is extinct, everyone has their own AI doctor. Life expectancy: Whatever you want. Mental illness: What's that? WiFi: Telepathic.
-
-We're literally choosing between Star Trek and Mad Max."
+1% becomes 2% becomes 10%. Eventually we're spending more on curing than killing. That's when we've won."
 
 ---
 
-## SLIDE: Your Personal Death Clock
-**Visual**: Interactive timer showing "150,671 people have died from preventable disease since this talk started"
-**Text**: "This could be you"
+## SLIDE: Choose Your Future
+**Visual**: Split timeline - Gollumland (darkness) vs Wishonia (light)
+**Text**: "Mad Max or Star Trek - You're voting right now"
 
 **SPEAKER**: 
-"While I've been talking, over 150,000 people died from preventable diseases. That's like a small city just... gone. 
+"Two futures:
 
-Based on your age, you have a 23% chance of dying from something we could cure if we just moved some numbers in a spreadsheet.
+Gollumland: Keep funding war. By 2050 - nuclear winter, eating bugs, fighting over bunkers. Life expectancy: 35. WiFi: Terrible.
 
-But sure, let's build another aircraft carrier."
+Wishonia: Fund cures. By 2050 - death optional, suffering extinct, AI doctors for all. Life expectancy: Whatever you want. WiFi: Telepathic.
 
----
-
-## SLIDE: The DIH Feedback Loop
-**Visual**: Circular diagram showing: Peace dividend → Funds trials → Health outcomes → Bigger treaties → More peace dividend
-**Text**: "Success creates more success (1% → 2% → 10% → Peace)"
-
-**SPEAKER**: 
-"Here's the beautiful part: Success compounds. Every disease we cure justifies bigger budgets. Treaty grows from 1% to 2% to 10%. Every life saved creates a voter for more funding. Every healthy person is a productive person who generates wealth.
-
-It's a virtuous cycle, the opposite of the death spiral we're in now. Eventually, we're spending more on curing than killing. That's when we know we've won."
-
----
-
-## SLIDE: Everyone Wins (Except Death)
-**Visual**: Happy montage - defense contractors counting VICTORY bond returns, pharma companies high-fiving patients, politicians getting reelected, Death filing for unemployment
-**Text**: "The ending where nobody dies"
-
-**SPEAKER**: 
-"In this new world:
-- Defense contractors collect 40% returns forever from VICTORY bonds
-- Politicians look like heroes and get reelected
-- Pharma gets 80X more drugs to sell
-- You get to see your grandchildren graduate
-- Your grandchildren get to see their grandchildren graduate
-- Death gets fired
-
-Everyone wins. The military-industrial complex keeps 99% of their budget AND gets massive returns from the 1% that goes to health. It's not sacrifice - it's the best investment they'll ever make."
+Your personal death clock is ticking. 23% chance you'll die from something curable while we argue about this."
 
 ---
 
 ## SLIDE: The Call to Action
-**Visual**: Big button labeled "STOP BEING IDIOTS" with website below
-**Text**: "WarOnDisease.org - Vote on the Referendum. Buy VICTORY bonds. Live forever."
+**Visual**: "STOP BEING IDIOTS" button → WarOnDisease.org
+**Text**: "Vote. Buy bonds. Live forever."
 
 **SPEAKER**: 
-"We're the only species that pays to kill itself. But we're also the species that invented cheese in a can, so clearly we're capable of miracles.
+"We're the species that put humans on the moon with computers weaker than your phone. We split the atom. We made the McRib. 
 
-All we're asking is to move 1% of the murder budget to the not-dying budget. One percent. The military will still have enough to end the world 66 times.
+Surely we can figure out how to stop killing each other.
 
-Go to WarOnDisease.org. Vote on the Referendum. Buy VICTORY bonds if you like money. Tell your representatives you'd prefer to live.
+Go to WarOnDisease.org. Vote on the referendum. Buy VICTORY bonds if you like money. Tell everyone.
 
-Because here's the thing..."
-
----
-
-## SLIDE: Final Slide
-**Visual**: Earth from space, slowly transforming from gray/brown to green/blue
-**Text**: "We can be the first species to defeat death... or the last species to cause it."
-
-**SPEAKER**: 
-"We put humans on the moon using computers weaker than your phone. We split the atom. We made the McRib. Surely we can figure out how to stop killing each other.
-
-The people in charge aren't evil. They're just following incentives. So let's change the incentives. Let's make saving lives more profitable than ending them.
-
-We can keep being the stupidest species in the universe, or we can try something else.
-
-The choice is yours. Choose wisely. Your grandchildren are watching.
-
-Well, they will be. If they exist.
+Because your grandchildren are watching. Well, they will be. If they exist.
 
 Thank you."
 
@@ -319,16 +212,16 @@ Thank you."
 ## Q&A Prep Notes:
 
 **Q: "Isn't this just socialism?"**
-A: "No, it's capitalism pointed at not dying. We're using the exact same system that built the military-industrial complex, just backwards. Free markets, but for cures instead of corpses."
+A: "No, it's capitalism pointed at not dying. Free markets, but for cures instead of corpses. The military-industrial complex model, just backwards."
 
 **Q: "How do we know this will work?"**
-A: "Oxford already did it. $500 per patient, saved a million lives. We're just doing that, but everywhere."
+A: "Oxford RECOVERY trial already proved it. $500 per patient, saved a million lives. FDA trials: $41,000 per patient, saved paperwork."
 
-**Q: "What if countries cheat?"**
-A: "Same thing that happens when they cheat on nuclear treaties - we publicly shame them and their citizens get mad. Plus blockchain receipts."
+**Q: "What if countries cheat on the treaty?"**
+A: "Blockchain receipts. Satellite verification. Plus everyone with power has VICTORY bonds - cheating crashes their wealth."
 
 **Q: "This seems too simple."**
-A: "The best ideas usually are. 'Wash your hands' seemed too simple. 'Don't dump sewage in drinking water' seemed too simple. 'Stop spending all our money on killing each other' is the same level of obvious."
+A: "'Wash your hands' seemed too simple. 'Don't dump sewage in drinking water' seemed too simple. 'Stop spending all our money on killing each other' - same level of obvious."
 
 **Q: "Are you calling us idiots?"**
 A: "I'm calling us the species that spends 40 times more on killing than healing. You can pick your own adjective for that."
