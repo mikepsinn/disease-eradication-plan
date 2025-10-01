@@ -1061,7 +1061,7 @@
 
 ### Chapter 23: The Tale of Two Futures (Three Supers vs Three Subs)
 
-- **Gollumland 2050: The Three Subs (Subhuman Degradation)**
+- **Idiocracy 2050: The Three Subs (Subhuman Degradation)**
   - **Sub-Intelligence:** IQ dropping, education collapsed, truth unknowable
   - **Sub-Longevity:** Life expectancy 35 years, diseases resurging, medicine gone
   - **Sub-Wellbeing:** 80% mentally ill, constant fear, suffering normalized
@@ -1076,7 +1076,7 @@
 - **The Delta: Infinite Divergence**
   - Same species, same year, opposite outcomes
   - Difference: One 1% budget reallocation in 2026
-  - Gollumland kept funding the War on Humanity ($2.7T), got extinction
+  - Idiocracy kept funding the War on Humanity ($2.7T), got extinction
   - Wishonia switched to the War on Disease ($2.7T), got transcendence
   - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
@@ -1175,7 +1175,7 @@
 - **"What if it fails?"**
   - Then we die of preventable diseases like we're doing now
   - We're already in the worst timeline, can only improve
-  - Doing nothing guarantees Gollumland, trying gives us a chance at paradise
+  - Doing nothing guarantees Idiocracy, trying gives us a chance at paradise
 - **"But all Wars on X have failed"**
   - Those were government wars using central planning
   - They created bureaucracies that needed the problem to exist
