@@ -9,7 +9,7 @@ tags: [style-guide, writing, tone, voice, contributing]
 
 **The Tone: Dark Humor Meets Practical Hope**
 
-We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Kurt Vonnegut explaining economics to drunk people at a funeral.
+We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Douglas Adams and Kurt Vonnegut explaining economics to drunk people at a funeral.
 
 ## Core Principles
 
@@ -39,6 +39,6 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 -   **Clarity:** Can my mom understand this?
 -   **Credibility:** Would I stake my reputation on this claim?
 -   **Concision:** Can I cut words without losing meaning?
--   **Directness:** Does this sound like Kurt Vonnegut wrote it?
+-   **Directness:** Does this sound like Kurt Vonnegut or Douglas Adams wrote it?
 -   **Impact:** Does it make someone laugh AND think?
 -   **Confidence:** Do I hesitate before reading it aloud to a skeptic?
