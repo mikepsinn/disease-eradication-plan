@@ -28,7 +28,7 @@ book:
     - part: "The Theory: Why Markets Work and Democracy Doesn't"
       chapters:
         - brain/book/theory.qmd
-        - brain/book/theory/central-planning-failure.qmd  # TODO: Create
+        # - brain/book/theory/central-planning-failure.qmd # TODO: Create
         # - brain/book/theory/war-on-disease.qmd  # TODO: Create
         # - brain/book/theory/public-choice.qmd  # TODO: Create
         # - brain/book/theory/wisdom-of-crowds.qmd  # TODO: Create
