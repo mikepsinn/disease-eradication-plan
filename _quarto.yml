@@ -35,12 +35,12 @@ book:
     - part: "The Solution"
       chapters:
         - brain/book/solution.qmd
-        - brain/book/economics/victory-bonds.qmd
+        - brain/book/solution/dfda.qmd
         - brain/book/solution/1-percent-treaty.qmd
         - brain/book/strategy/global-referendum.qmd
+        - brain/book/economics/victory-bonds.qmd
         - brain/book/solution/dih.qmd
         - brain/book/solution/wishocracy.qmd
-        - brain/book/solution/dfda.qmd
     - part: "The Proof: This Already Works"
       chapters:
         - brain/book/proof.qmd
