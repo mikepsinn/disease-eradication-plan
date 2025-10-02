@@ -882,9 +882,9 @@
   - Not technology (we have the tools)
   - Just money going to bombs instead
 
-## Part VII: Choose Your Future - Dystopia or Wishonia
+## Part VII: Choose Your Own Adventure - Idiocracy or Wishonia
 
-### Chapter 21: Path A - The Dystopian Default (If We Do Nothing)
+### Chapter 21: Path A - Idiocracy - The Dystopian Default (If We Do Nothing)
 
 - **[FIGURE: The Two Timelines - Dystopian Path]**
   - Diverging timeline from 2026 showing descent into darkness

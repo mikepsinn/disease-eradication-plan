@@ -244,7 +244,7 @@ By preventing suffering instead of causing it."
 
 ---
 
-## SLIDE: Choose Your Future
+## SLIDE: Choose Your Own Adventure
 **Visual**: Split timeline - Idiocracy (darkness) vs Wishonia (light)
 **Text**: "Mad Max or Star Trek - You're voting right now"
 
