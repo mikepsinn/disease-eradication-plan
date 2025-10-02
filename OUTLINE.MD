@@ -1089,10 +1089,6 @@
 
 ### Chapter 24: Your Personal Benefits (What You Get)
 
-- **[FIGURE: Your Personal Death Probability]**
-  - Interactive element: Enter your age, see probability of dying from preventable disease before DIH succeeds
-  - Shows percentage chance you'll die waiting vs joining now
-  - Impact: Makes it personal - "You have a 23% chance of dying before we cure your condition"
 - **Economic Security**
   - Subsidized treatment: Dynamic vouchers for dFDA trials
   - Healthcare access: No more medical bankruptcy

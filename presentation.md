@@ -71,18 +71,12 @@ So you might say: Let's have the government spend more and fix it!"
 
 ---
 
-## SLIDE: Your Personal Death Clock
+## SLIDE: Death Clock
 **Visual**: Live counter: "150,671 people have died from preventable disease since this talk started"
-**Text**: "This could be you"
+**Text**: "Death Clock"
 
 **SPEAKER**: 
-"But first, let's make this personal. While I've been talking, over 150,000 people died from preventable diseases. That's a small city. Gone.
-
-Based on your age, you have a 23% chance of dying from something we could cure if we just moved money from the kill column to the cure column. 
-
-Your mom's Alzheimer's. Your dad's diabetes. Your kid's rare disease that currently has zero treatments. All preventable. All ignored.
-
-So yeah, let's have government fix it..."
+"While I've been talking, over 150,000 people died from preventable diseases. That's a small city. Gone."
 
 ---
 
