@@ -49,21 +49,19 @@ ax.text(0, war_indirect_total * 0.85, f'${war_indirect_total/1000:.1f}T', ha='ce
 
 # Add breakdown text below
 breakdown_text = (
-    'INFRASTRUCTURE DESTRUCTION\n'
+    'BLOWN UP BUILDINGS\n'
     '+\n'
-    'TRADE DISRUPTION\n'
+    'RUINED BUSINESSES\n'
     '+\n'
-    'DEATH + DISABILITY\n'
+    'KILLED & CRIPPLED PEOPLE\n'
     '+\n'
-    'LOST ECONOMIC GROWTH\n'
+    'FLEEING FAMILIES\n'
     '+\n'
-    'REFUGEES\n'
+    'POISONED EARTH\n'
     '+\n'
-    'ENVIRONMENTAL DAMAGE\n'
+    'BROKEN MINDS\n'
     '+\n'
-    'PSYCHOLOGICAL IMPACT\n'
-    '+\n'
-    'LOST HUMAN CAPITAL'
+    'STOLEN TOMORROWS'
 )
 ax.text(0, war_indirect_total * 0.35, breakdown_text, ha='center', va='center',
         fontsize=22, weight='bold', color=COLOR_WHITE, linespacing=1.2)
