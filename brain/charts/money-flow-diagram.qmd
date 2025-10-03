@@ -82,8 +82,9 @@ add_watermark(fig)
 
 # Don't use tight_layout - it overrides margins
 
-# Save in the same directory as this .qmd file
-output_dir = Path(__file__).parent
+# Save in brain/charts directory
+output_dir = project_root / 'brain' / 'charts'
+output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'money-flow-diagram.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```

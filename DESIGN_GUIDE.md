@@ -140,7 +140,7 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 
 **What to Include:**
 - Data bars (solid black or red/blue when meaning is clear)
-- Essential axis labels (round numbers only, no decimals)
+- Essential axis labels (prefer round numbers, use decimals when precision matters)
 - Key data values (large, bold, impossible to miss)
 - Watermark (required)
 
