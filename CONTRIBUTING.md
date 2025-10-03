@@ -317,6 +317,8 @@ To make the content more engaging and easier to understand, we will use Python-g
 - **Diagrams:** For flowcharts, sequence diagrams, etc., please use Mermaid syntax. See the [Quarto Diagrams Guide](https://quarto.org/docs/authoring/diagrams.html) for implementation details.
 - **Python Charts:** For data visualizations, use Python libraries like Matplotlib or Plotly, executed within Quarto. For guidance, refer to the [Quarto Guide for Using Python](https://quarto.org/docs/computations/python.html).
 
+**For detailed chart creation guidelines, naming conventions, and technical standards, see [brain/charts/README.md](brain/charts/README.md).**
+
 ### Where to Put Visuals: A Quick Guide
 
 To keep our project organized, here’s where different types of visual assets should go. The golden rule is: **if you can create it with code, do it.**
@@ -354,124 +356,19 @@ All code-generated visualizations in this project must adhere to a consistent, p
 **Core Principles:**
 
 1.  **Minimalism:** Avoid "chart junk." This means no unnecessary gridlines, borders, shadows, or 3D effects. Every visual element should serve a clear purpose.
-2.  **Clarity:** Use elegant, readable typography (see typography guidelines below). Ensure font sizes are large enough to be easily read.
+2.  **Clarity:** Use elegant, readable typography with proper font sizes.
 3.  **Consistent Branding:** All charts must be watermarked with "WarOnDisease.org" in the lower-right corner.
 
-**Official Color Palette (WWII Propaganda Style):**
+**Color Philosophy:** WWII propaganda-inspired bold red (problems/war/disease) and blue (solutions/hope/cures)
 
-All visualizations use bold red and blue inspired by WWII propaganda posters:
+**Typography:** Bold, impactful fonts (Cooper Black, Impact) for commanding presence
 
-```python
-# Primary Colors
-COLOR_DARK = '#1a1a1a'       # Almost black - use for primary text and emphasis
-COLOR_MID = '#4a4a4a'        # Charcoal - use for secondary elements
-COLOR_LIGHT = '#e0e0e0'      # Light gray - use for backgrounds and subtle elements
-COLOR_RED = '#c1272d'        # Bold propaganda red - danger, urgency, problems (war, disease, waste)
-COLOR_BLUE = '#0051a5'       # Bold propaganda blue - hope, solutions, action (treaty, cures, bonds)
-COLOR_BG = '#f8f8f8'         # Off-white - use for chart backgrounds
-COLOR_WHITE = '#ffffff'      # Pure white - use for high contrast elements
-```
+**Critical Design Rules:**
 
-**When to Use Each Color:**
-
-- **COLOR_RED:** Bad things - war deaths, disease deaths, wasted spending, problems
-- **COLOR_BLUE:** Good things - treaty solution, cures, VICTORY bonds, hope
-- **COLOR_DARK:** Primary text, headlines, key numbers
-- **COLOR_MID:** Secondary text, axis labels, annotations
-- **COLOR_LIGHT:** Subtle gridlines, dividers, less important elements
-- **COLOR_BG:** Chart backgrounds, slide backgrounds
-- **COLOR_WHITE:** Text on dark backgrounds, high contrast needs
-
-**Typography Guidelines:**
-
-For bold, impactful messaging inspired by WWII propaganda posters:
-
-**Recommended Font Hierarchy:**
-
-- **Display/Headlines:** Cooper Black (bold, rounded, commanding presence)
-- **Body Text:** Impact or Arial Black (strong, authoritative)
-- **Fallbacks:** Helvetica Bold, Arial Bold
-
-**Python Implementation:**
-```python
-plt.rcParams['font.family'] = 'sans-serif'
-plt.rcParams['font.sans-serif'] = ['Cooper Black', 'Impact', 'Arial Black', 'Helvetica']
-plt.rcParams['font.size'] = 12
-plt.rcParams['font.weight'] = 'bold'
-```
-
-**Font Size Guidelines:**
-
-- Chart titles: 16-18pt (bold)
-- Axis labels: 11-12pt
-- Data labels: 10-11pt
-- Watermark: 8-9pt
-- Presentation headlines: 48-72pt
-- Presentation body: 24-36pt
-
-**Chart Margins and Padding:**
-
-All charts must have adequate padding to avoid overlap with the watermark and maintain visual balance:
-
-- **Bottom margin:** 12% (for watermark clearance)
-- **Top margin:** 8%
-- **Left margin:** 10%
-- **Right margin:** 5%
-
-These margins are automatically set by `setup_chart_style()` but can be adjusted per chart if needed.
-
-**Watermark Specifications:**
-
-- **Font size:** 11pt (bold)
-- **Color:** Black (`COLOR_DARK = #1a1a1a`)
-- **Position:** Bottom-right with 3% padding from edges
-- **Opacity:** 100% (fully opaque)
-
-**Implementation in Python (Matplotlib Example):**
-
-To ensure consistency, use the centralized style module at `brain/charts/_chart_style.py`. Here is a basic example of how to apply these principles:
-
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-# --- 1. Import centralized style ---
-from brain.charts._chart_style import setup_chart_style, add_watermark, clean_spines
-from brain.charts._chart_style import COLOR_DARK, COLOR_MID, COLOR_ACCENT, COLOR_LIGHT
-
-setup_chart_style()  # Applies consistent styling with automatic margins
-
-# --- 2. Create the Plot ---
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
-
-fig, ax = plt.subplots(figsize=(8, 5))
-ax.plot(x, y, color=COLOR_ACCENT, linewidth=2.5)
-
-# Add titles and labels with elegant typography
-ax.set_title('Example of an Elegant, Minimalist Chart', fontsize=16, weight='bold', color=COLOR_DARK)
-ax.set_xlabel('X-Axis Label', fontsize=12, color=COLOR_MID)
-ax.set_ylabel('Y-Axis Label', fontsize=12, color=COLOR_MID)
-
-# --- 3. Add the Watermark ---
-add_watermark(fig)  # Black, bold, 11pt, positioned with padding
-
-# Remove unnecessary spines for a cleaner look
-clean_spines(ax)  # Removes top and right spines by default
-ax.spines['left'].set_color(COLOR_LIGHT)
-ax.spines['bottom'].set_color(COLOR_LIGHT)
-
-#plt.tight_layout()  # Don't use - overrides margins!
-plt.show()
-```
-
-**Important Notes:**
-
-- **DO NOT use plt.tight_layout()** - it overrides margin settings and makes charts touch edges
-- Use bbox_inches=None when saving (not bbox_inches='tight')
-- Margins are set globally by `setup_chart_style()` to ensure the watermark never overlaps chart content
-- For charts with bottom legends or x-axis labels, the automatic margins provide sufficient clearance
 - **NEVER use logarithmic scales for disparity charts** - Linear scales show the TRUE absurdity. If your solution bars are barely visible next to problem bars, GOOD - that's the point. Logarithmic scales hide disparity and make everything look reasonable. Our budget is NOT reasonable.
+- **DO NOT use plt.tight_layout()** - It overrides margin settings and causes watermark overlap
+
+For complete color palettes, typography specifications, margin guidelines, watermark details, and implementation examples, see [brain/charts/README.md](brain/charts/README.md).
 
 ## Automation and CI
 

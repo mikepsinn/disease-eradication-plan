@@ -2,6 +2,11 @@
 
 This directory contains modular, reusable chart visualizations that can be included in both the presentation and book chapters.
 
+## Quick Reference
+
+- **High-Level Philosophy:** See [CONTRIBUTING.md - Visual Style Guide](../../CONTRIBUTING.md#visual-style-guide-clean-minimalist-and-watermarked)
+- **Technical Implementation:** See [_chart_style.py](_chart_style.py) for all code constants and functions
+
 ## Available Charts
 
 ### Core Data Visualizations
@@ -31,79 +36,143 @@ Include charts in any `.qmd` file using:
 {{< include brain/charts/annual-deaths.qmd >}}
 ```
 
-## Design System
+## Chart Creation Guidelines
 
-All charts follow the official style guide defined in:
+### File Naming
 
-- **Color Palette:** [CONTRIBUTING.md](../../CONTRIBUTING.md#official-color-palette-palette-c---modern-neutral)
-- **Typography:** EB Garamond (serif) for elegant, prestigious aesthetic
-- **Style Module:** [_chart_style.py](_chart_style.py) - Centralized styling functions
+Name charts starting with the leftmost/biggest column: `[primary-topic]-[secondary-topics]-[chart-type].qmd`
 
-### Color Palette (Palette C - Modern Neutral)
+**Examples:**
+- ✅ `war-vs-curing-diseases-column-chart.qmd`
+- ✅ `disease-war-curing-costs-column-chart.qmd`
+- ❌ `chart1.qmd` (not descriptive)
+
+### Labels - Plain Language Only
+
+**The "mom test":** Would your mom understand this label at a glance?
+
+- ✅ "Curing Diseases" (not "Medical R&D")
+- ✅ "Cost of Disease" (not "Disease Burden")
+- ✅ "War's Hidden Costs" (not "Indirect Costs")
+
+### Technical Checklist
+
+1. Import from [_chart_style.py](_chart_style.py): `setup_chart_style()`, color constants, helper functions
+2. Save to `brain/charts/` directory (stay next to source code)
+3. Use linear scales for disparity charts (never logarithmic)
+4. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
+5. Don't use `plt.tight_layout()` (overrides margins)
+
+## Official Color Palette (WWII Propaganda Style)
+
+Bold red and blue inspired by WWII propaganda posters:
 
 ```python
-COLOR_DARK = '#1a1a1a'       # Primary text and emphasis
-COLOR_MID = '#4a4a4a'        # Secondary elements
-COLOR_LIGHT = '#e0e0e0'      # Subtle backgrounds
-COLOR_ACCENT = '#2c5f7d'     # Key data points (use sparingly)
-COLOR_BG = '#f8f8f8'         # Chart backgrounds
-COLOR_WHITE = '#ffffff'      # High contrast
+# Primary Colors
+COLOR_DARK = '#1a1a1a'       # Almost black - use for primary text and emphasis
+COLOR_MID = '#4a4a4a'        # Charcoal - use for secondary elements
+COLOR_LIGHT = '#e0e0e0'      # Light gray - use for backgrounds and subtle elements
+COLOR_RED = '#c1272d'        # Bold propaganda red - danger, urgency, problems (war, disease, waste)
+COLOR_BLUE = '#0051a5'       # Bold propaganda blue - hope, solutions, action (treaty, cures, bonds)
+COLOR_BG = '#f8f8f8'         # Off-white - use for chart backgrounds
+COLOR_WHITE = '#ffffff'      # Pure white - use for high contrast elements
 ```
 
-### Typography
+**When to Use Each Color:**
 
-- **Display/Headlines:** EB Garamond, Libre Baskerville (classic serif)
-- **Body Text:** Georgia, Garamond
-- **Data/Numbers:** Clear, bold rendering in serif fonts
+- **COLOR_RED:** Bad things - war deaths, disease deaths, wasted spending, problems
+- **COLOR_BLUE:** Good things - treaty solution, cures, VICTORY bonds, hope
+- **COLOR_DARK:** Primary text, headlines, key numbers
+- **COLOR_MID:** Secondary text, axis labels, annotations
+- **COLOR_LIGHT:** Subtle gridlines, dividers, less important elements
+- **COLOR_BG:** Chart backgrounds, slide backgrounds
+- **COLOR_WHITE:** Text on dark backgrounds, high contrast needs
 
-## Chart Outputs
+## Typography Guidelines
 
-All charts are automatically saved to `assets/charts/` when rendered:
+For bold, impactful messaging inspired by WWII propaganda posters:
 
-- `annual-deaths.png`
-- `budget-waste.png`
-- `treaty-impact.png`
-- `treaty-impact-metrics.png`
-- `dfda-comparison.png`
-- `victory-bonds-returns.png`
-- `money-flow-diagram.png`
-- `coalition-wheel.png`
-- `oxford-recovery-proof.png`
-- `futures-comparison.png`
+**Recommended Font Hierarchy:**
 
-## Chart Specifications
+- **Display/Headlines:** Cooper Black (bold, rounded, commanding presence)
+- **Body Text:** Impact or Arial Black (strong, authoritative)
+- **Fallbacks:** Helvetica Bold, Arial Bold
 
-### Margins and Padding
+**Python Implementation:**
+```python
+plt.rcParams['font.family'] = 'sans-serif'
+plt.rcParams['font.sans-serif'] = ['Cooper Black', 'Impact', 'Arial Black', 'Helvetica']
+plt.rcParams['font.size'] = 12
+plt.rcParams['font.weight'] = 'bold'
+```
 
-All charts automatically include proper margins to avoid watermark overlap and maintain visual balance:
+**Font Size Guidelines:**
+
+- Chart titles: 16-18pt (bold)
+- Axis labels: 11-12pt
+- Data labels: 10-11pt
+- Watermark: 8-9pt
+- Presentation headlines: 48-72pt
+- Presentation body: 24-36pt
+
+## Chart Margins and Padding
+
+All charts must have adequate padding to avoid overlap with the watermark and maintain visual balance:
 
 - **Bottom margin:** 12% (for watermark clearance)
 - **Top margin:** 8%
 - **Left margin:** 10%
 - **Right margin:** 5%
 
-These are set automatically by `setup_chart_style()`.
+These margins are automatically set by `setup_chart_style()` but can be adjusted per chart if needed.
 
-### Watermark
-
-All charts include the **WarOnDisease.org** watermark:
+## Watermark Specifications
 
 - **Font size:** 11pt (bold)
-- **Color:** Black (#1a1a1a)
+- **Color:** Black (`COLOR_DARK = #1a1a1a`)
 - **Position:** Bottom-right with 3% padding from edges
 - **Opacity:** 100% (fully opaque)
-- **Usage:** `add_watermark(fig)`
 
-## Contributing
+## Implementation Example
 
-When creating new charts:
+To ensure consistency, use the centralized style module at `_chart_style.py`:
 
-1. Use the centralized `_chart_style.py` module
-2. Follow the official color palette (blacks, grays, single teal accent)
-3. Add meaningful captions and insights
-4. Save to `assets/charts/` with descriptive names
-5. Include branding watermark: `add_watermark(fig)`
-6. Use `clean_spines(ax)` for minimal design
-7. **DO NOT use plt.tight_layout()** - it overrides the automatic margins
-8. Ensure adequate padding - margins are automatic but verify no overlap
-9. **Use LINEAR scales for disparity charts** - Never use logarithmic scales when showing budget disparities. The whole point is to make the absurdity VISIBLE. Tiny solution bars next to massive problem bars = effective communication.
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# --- 1. Import centralized style ---
+from brain.charts._chart_style import setup_chart_style, add_watermark, clean_spines
+from brain.charts._chart_style import COLOR_DARK, COLOR_MID, COLOR_BLUE, COLOR_LIGHT
+
+setup_chart_style()  # Applies consistent styling with automatic margins
+
+# --- 2. Create the Plot ---
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.plot(x, y, color=COLOR_BLUE, linewidth=2.5)
+
+# Add titles and labels
+ax.set_title('Example Chart', fontsize=16, weight='bold', color=COLOR_DARK)
+ax.set_xlabel('X-Axis Label', fontsize=12, color=COLOR_MID)
+ax.set_ylabel('Y-Axis Label', fontsize=12, color=COLOR_MID)
+
+# --- 3. Add the Watermark ---
+add_watermark(fig)  # Black, bold, 11pt, positioned with padding
+
+# Remove unnecessary spines for a cleaner look
+clean_spines(ax)  # Removes top and right spines by default
+ax.spines['left'].set_color(COLOR_LIGHT)
+ax.spines['bottom'].set_color(COLOR_LIGHT)
+
+# DON'T use plt.tight_layout() - overrides margins!
+plt.show()
+```
+
+**Important Notes:**
+
+- **DO NOT use plt.tight_layout()** - it overrides margin settings and makes charts touch edges
+- Use `bbox_inches=None` when saving (not `bbox_inches='tight'`)
+- Margins are set globally by `setup_chart_style()` to ensure the watermark never overlaps chart content
