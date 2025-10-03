@@ -147,9 +147,18 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 **Label Placement (Tufte-approved):**
 - Put labels directly ON the data (on bars, lines, points)
 - Format: `"$7T\nIndirect War Costs"` (value + description with line break)
+- **Large bars:** Label inside (white text on colored bars)
+- **Small bars:** Label above (black text, positioned just above the bar)
 - Remove redundant x-axis labels when data is self-labeled
 - Remove y-axis entirely on column charts when all columns show their amounts
 - This eliminates matching numbers to separate axis labels
+
+**Typography Size (Neobrutalist approach):**
+- **Make text as large as reasonably possible** - Bold, commanding, impossible to miss
+- Bar labels: 44-72pt (depending on available space)
+- Numbers should dominate the visual hierarchy
+- If text feels too small, it probably is - go bigger
+- Think propaganda posters, not academic papers
 
 **What to Remove:**
 - Gridlines (unless absolutely necessary, then use sparingly)

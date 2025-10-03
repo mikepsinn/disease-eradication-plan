@@ -87,17 +87,14 @@ ax.text(2, cure_research + (war_indirect_total * 0.02), '$68B\nCuring Diseases',
         fontsize=44, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 
 
-# Remove x-axis labels (labels are on bars instead)
+# Remove all axis labels and ticks (all columns are labeled with amounts)
 ax.set_xticks([])
 ax.set_xticklabels([])
+ax.set_yticks([])
+ax.set_yticklabels([])
 
-# No y-axis label - the scale and bar labels provide all needed info
-ax.tick_params(axis='x', labelsize=34, colors=COLOR_BLACK, pad=10)
-ax.tick_params(axis='y', labelsize=32, colors=COLOR_BLACK)
-ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x/1000:.0f}T' if x >= 1000 else f'${x:.0f}B'))
-clean_spines(ax, ['top', 'right'])
-# Remove gridlines for cleaner look
-# ax.grid(True, alpha=0.2, color=COLOR_BLACK, axis='y', linestyle='--')
+# Remove all spines for ultra-clean look
+clean_spines(ax, ['top', 'right', 'left', 'bottom'])
 
 # Set y-axis limits to show the full scale
 ax.set_ylim(0, war_indirect_total * 1.15)

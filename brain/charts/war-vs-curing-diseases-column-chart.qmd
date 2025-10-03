@@ -45,39 +45,23 @@ fig, ax = plt.subplots(figsize=(24, 12))
 # LINEAR scale - let people see how absurdly tiny the solution bars are
 bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_WHITE, linewidth=3)
 
-# Format labels - put inside tall bars, outside short bars - no decimals
-labels = [
-    '$3T',   # War & Military (rounded, no decimals)
-    '$68B'   # Cure Research
-]
+# Add labels directly on bars with descriptions
+# Bar 1: War (inside bar, white text)
+ax.text(0, values[0] * 0.5, '$2.7T\nWar & Military', ha='center', va='center',
+        fontsize=72, weight='bold', color=COLOR_WHITE, linespacing=1.2)
 
-for bar, label, value in zip(bars, labels, values):
-    height = bar.get_height()
-    # Put label inside for tall bars (> 1000B), outside for short bars
-    if value > 1000:
-        y_pos = height * 0.95  # Near top of bar
-        va = 'top'
-        color = COLOR_WHITE
-        size = 48
-    else:
-        y_pos = height + (max(values) * 0.02)  # Just above bar
-        va = 'bottom'
-        color = COLOR_BLACK
-        size = 44
-    ax.text(bar.get_x() + bar.get_width()/2., y_pos,
-            label, ha='center', va=va, fontsize=size, weight='bold', color=color)
+# Bar 2: Curing (above bar, black text)
+ax.text(1, values[1] + (max(values) * 0.02), '$68B\nCuring Diseases', ha='center', va='bottom',
+        fontsize=44, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 
-# Styling - black text, no decimals
-ax.set_ylabel('Annual Spending (Billions)', fontsize=36, weight='bold', color=COLOR_BLACK)
-ax.tick_params(axis='x', labelsize=32, colors=COLOR_BLACK)
-ax.tick_params(axis='y', labelsize=28, colors=COLOR_BLACK)
+# Remove all axis labels and ticks (all columns are labeled with amounts)
+ax.set_xticks([])
+ax.set_xticklabels([])
+ax.set_yticks([])
+ax.set_yticklabels([])
 
-# Format y-axis to show scale clearly - no decimals
-ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x/1000:.0f}T' if x >= 1000 else f'{x:.0f}B'))
-
-clean_spines(ax, ['top', 'right'])
-# Remove gridlines for cleaner look
-# ax.grid(True, alpha=0.3, color=COLOR_BLACK, axis='y')
+# Remove all spines for ultra-clean look
+clean_spines(ax, ['top', 'right', 'left', 'bottom'])
 
 # Add branding
 add_watermark(fig)
