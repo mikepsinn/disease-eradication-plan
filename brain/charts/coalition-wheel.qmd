@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from brain.charts._chart_style import (
     setup_chart_style, add_watermark,
-    COLOR_ACCENT, COLOR_MID, COLOR_DARK, COLOR_WHITE, COLOR_LIGHT, COLOR_BG
+    COLOR_BLACK, COLOR_BLUE, COLOR_WHITE
 )
 
 # Setup styling
@@ -18,7 +18,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 coalition = ['Defense\nContractors', 'Big Pharma', 'Insurance', 'Investors', 'Patients', 'Nonprofits']
 benefits = [40, 35, 45, 40, 50, 35]  # Relative benefit scores
-colors_coalition = [COLOR_ACCENT, COLOR_MID, COLOR_ACCENT, COLOR_DARK, COLOR_ACCENT, COLOR_MID]
+colors_coalition = [COLOR_BLUE] * len(coalition)  # All stakeholders benefit - use blue
 
 # Create chart
 fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(projection='polar'))
@@ -27,18 +27,19 @@ bars = ax.bar(theta, benefits, width=0.8, bottom=0, color=colors_coalition,
               edgecolor=COLOR_WHITE, linewidth=2, alpha=0.9)
 
 ax.set_xticks(theta)
-ax.set_xticklabels(coalition, fontsize=24, weight='bold', color=COLOR_DARK)
+ax.set_xticklabels(coalition, fontsize=24, weight='bold', color=COLOR_BLACK)
 ax.set_ylim(0, 60)
 ax.set_yticks([])
 ax.spines['polar'].set_visible(False)
-ax.grid(True, alpha=0.3, color=COLOR_LIGHT)
-ax.set_title('Everyone Profits', fontsize=40, pad=30, weight='bold', color=COLOR_DARK)
+ax.grid(False)  # Remove gridlines for cleaner look
+# Remove title - let context provide it
+# ax.set_title('Everyone Profits', fontsize=40, pad=30, weight='bold', color=COLOR_BLACK)
 
 # Add branding
 add_watermark(fig)
 
 #plt.tight_layout()  # Disabled - using rcParams margins instead
-plt.savefig('assets/charts/coalition-wheel.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.savefig('assets/charts/coalition-wheel.png', dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
 

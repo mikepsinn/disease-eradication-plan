@@ -9,7 +9,7 @@ sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
 import matplotlib.pyplot as plt
 from brain.charts._chart_style import (
     setup_chart_style, add_watermark,
-    COLOR_LIGHT, COLOR_ACCENT, COLOR_DARK, COLOR_WHITE, COLOR_BG
+    COLOR_BLACK, COLOR_BLUE, COLOR_WHITE
 )
 
 # Setup styling
@@ -18,7 +18,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 labels = ['Still for\nDefense\n99%', 'To Cure\nDisease\n1%']
 sizes = [99, 1]
-colors_treaty = [COLOR_LIGHT, COLOR_ACCENT]
+colors_treaty = [COLOR_BLACK, COLOR_BLUE]  # Black for defense (neutral), blue for solution
 explode = (0, 0.15)
 
 # Create chart
@@ -30,17 +30,18 @@ wedges, texts, autotexts = ax.pie(
     colors=colors_treaty,
     autopct='',
     startangle=90,
-    textprops={'fontsize': 28, 'weight': 'bold', 'color': COLOR_DARK},
+    textprops={'fontsize': 28, 'weight': 'bold', 'color': COLOR_BLACK},
     wedgeprops={'edgecolor': COLOR_WHITE, 'linewidth': 3}
 )
 
-ax.set_title('Military Budget After Treaty', fontsize=36, pad=20, weight='bold', color=COLOR_DARK)
+# Remove title - let context provide it
+# ax.set_title('Military Budget After Treaty', fontsize=36, pad=20, weight='bold', color=COLOR_BLACK)
 
 # Add branding
 add_watermark(fig)
 
 #plt.tight_layout()  # Disabled - using rcParams margins instead
-plt.savefig('assets/charts/treaty-impact.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.savefig('assets/charts/treaty-impact.png', dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
 

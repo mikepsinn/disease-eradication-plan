@@ -8,7 +8,7 @@ sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
 import matplotlib.pyplot as plt
 from brain.charts._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_MID, COLOR_LIGHT, COLOR_ACCENT, COLOR_DARK, COLOR_WHITE, COLOR_BG
+    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
 )
 
 # Setup styling
@@ -17,7 +17,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 categories = ['Disease\nTreatment', 'War &\nConflict', 'Finding\nCures']
 amounts = [109.1, 9.7, 0.068]
-colors_budget = [COLOR_MID, COLOR_LIGHT, COLOR_ACCENT]
+colors_budget = [COLOR_RED, COLOR_RED, COLOR_BLUE]  # Problems are red, solution is blue
 
 # Create chart
 fig, ax = plt.subplots(figsize=(18, 10))
@@ -29,19 +29,20 @@ for bar, amount in zip(bars, amounts):
     height = bar.get_height()
     label = f'${amount}T' if amount >= 1 else f'${int(amount*1000)}B'
     ax.text(bar.get_x() + bar.get_width()/2., height,
-            label, ha='center', va='bottom', fontsize=48, weight='bold', color=COLOR_DARK)
+            label, ha='center', va='bottom', fontsize=48, weight='bold', color=COLOR_BLACK)
 
-ax.set_ylabel('Trillions per Year', fontsize=36, weight='bold', color=COLOR_DARK)
-ax.tick_params(axis='both', labelsize=32, colors=COLOR_MID)
+ax.set_ylabel('Trillions per Year', fontsize=36, weight='bold', color=COLOR_BLACK)
+ax.tick_params(axis='both', labelsize=32, colors=COLOR_BLACK)
 ax.set_ylim(0, 120)
 clean_spines(ax)
-ax.grid(axis='y', alpha=0.3, linestyle='--', color=COLOR_LIGHT)
+# Remove gridlines for cleaner look
+# ax.grid(axis='y', alpha=0.3, linestyle='--', color=COLOR_LIGHT)
 
 # Add branding
 add_watermark(fig)
 
 #plt.tight_layout()  # Disabled - using rcParams margins instead
-plt.savefig('assets/charts/budget-waste.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.savefig('assets/charts/budget-waste.png', dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
 

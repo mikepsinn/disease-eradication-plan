@@ -6,47 +6,41 @@ for all charts and diagrams. Import this module and call setup_chart_style()
 at the beginning of any visualization code.
 
 Usage:
-    from brain.charts._chart_style import setup_chart_style, COLOR_DARK, COLOR_ACCENT
+    from brain.charts._chart_style import setup_chart_style, COLOR_BLACK, COLOR_RED, COLOR_BLUE
 
     setup_chart_style()
 
     fig, ax = plt.subplots()
-    ax.plot(x, y, color=COLOR_ACCENT)
+    ax.plot(x, y, color=COLOR_BLACK)
 """
 
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
-# Official Color Palette (WWII Propaganda Style)
-COLOR_DARK = '#1a1a1a'       # Almost black - primary text and emphasis
-COLOR_MID = '#4a4a4a'        # Charcoal - secondary elements
-COLOR_LIGHT = '#e0e0e0'      # Light gray - backgrounds and subtle elements
-COLOR_RED = '#c1272d'        # Bold propaganda red - danger, urgency, problems (war, disease, waste)
-COLOR_BLUE = '#0051a5'       # Bold propaganda blue - hope, solutions, action (treaty, cures, bonds)
-COLOR_BG = '#f8f8f8'         # Off-white - chart backgrounds
-COLOR_WHITE = '#ffffff'      # Pure white - high contrast elements
+# Official Color Palette (American Flag Colors - 1950s Atomic Age Style)
+COLOR_BLACK = '#000000'      # Pure black - bars, primary text, emphasis
+COLOR_RED = '#B22234'        # Flag red - danger, war, disease, problems
+COLOR_BLUE = '#3C3B6E'       # Flag blue - hope, solutions, cures, action
+COLOR_WHITE = '#FFFFFF'      # Pure white - backgrounds, text on dark elements
 
-# Legacy name for backwards compatibility
+# Legacy names for backwards compatibility
+COLOR_DARK = COLOR_BLACK
 COLOR_ACCENT = COLOR_BLUE
+COLOR_BG = COLOR_WHITE
 
 # Secondary palette for categorical data (when more than one color is needed)
 PALETTE_CATEGORICAL = [
-    COLOR_DARK,
+    COLOR_BLACK,
     COLOR_RED,
     COLOR_BLUE,
-    COLOR_MID,
-    '#999999',  # Medium gray
 ]
 
-# Sequential palette for gradients (light to dark)
+# Sequential palette for gradients (light to dark) - minimal use recommended
 PALETTE_SEQUENTIAL = [
-    '#f8f8f8',
-    '#e0e0e0',
-    '#c0c0c0',
-    '#999999',
-    '#0051a5',
-    '#c1272d',
-    '#1a1a1a',
+    COLOR_WHITE,
+    COLOR_BLUE,
+    COLOR_RED,
+    COLOR_BLACK,
 ]
 
 
@@ -60,19 +54,19 @@ def setup_chart_style(style='light', dpi=150):
     """
 
     if style == 'light':
-        bg_color = COLOR_BG
-        fg_color = COLOR_DARK
-        text_color = COLOR_MID
-        grid_color = COLOR_LIGHT
+        bg_color = COLOR_WHITE
+        fg_color = COLOR_BLACK
+        text_color = COLOR_BLACK
+        grid_color = '#e0e0e0'  # Very light gray for minimal gridlines
     else:  # dark
-        bg_color = COLOR_DARK
+        bg_color = COLOR_BLACK
         fg_color = COLOR_WHITE
-        text_color = COLOR_LIGHT
-        grid_color = COLOR_MID
+        text_color = COLOR_WHITE
+        grid_color = '#4a4a4a'  # Charcoal for dark mode
 
-    # Typography - bold propaganda poster style with Cooper Black
+    # Typography - bold atomic age propaganda style
     rcParams['font.family'] = 'sans-serif'
-    rcParams['font.sans-serif'] = ['Cooper Black', 'Impact', 'Arial Black', 'Helvetica']
+    rcParams['font.sans-serif'] = ['Impact', 'Arial Black', 'Helvetica', 'Arial']
     rcParams['font.size'] = 12
     rcParams['font.weight'] = 'bold'
 
@@ -114,8 +108,8 @@ def setup_chart_style(style='light', dpi=150):
     rcParams['axes.spines.top'] = False
     rcParams['axes.spines.right'] = False
 
-    # Grid styling (subtle)
-    rcParams['axes.grid'] = True
+    # Grid styling (minimal - disabled by default for clean look)
+    rcParams['axes.grid'] = False
     rcParams['axes.grid.axis'] = 'y'
     rcParams['grid.linestyle'] = '--'
     rcParams['grid.linewidth'] = 0.5
@@ -136,7 +130,7 @@ def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
     # Watermark disabled
     pass
     # fig.text(0.97, 0.03, text,
-    #          fontsize=11, color=COLOR_DARK,
+    #          fontsize=11, color=COLOR_BLACK,
     #          ha='right', va='bottom', alpha=alpha, weight='bold')
 
 

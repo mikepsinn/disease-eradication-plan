@@ -8,7 +8,7 @@ sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
 import matplotlib.pyplot as plt
 from brain.charts._chart_style import (
     setup_chart_style, add_watermark,
-    COLOR_ACCENT, COLOR_MID, COLOR_DARK, COLOR_WHITE, COLOR_BG
+    COLOR_BLACK, COLOR_RED, COLOR_WHITE
 )
 
 # Setup styling
@@ -17,7 +17,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 sizes = [55, 14]
 labels = ['Disease\n55M', 'War\n14M']
-colors = [COLOR_ACCENT, COLOR_MID]
+colors = [COLOR_RED, COLOR_RED]  # Both are problems - use red
 explode = (0.05, 0.05)
 
 # Create chart
@@ -29,17 +29,18 @@ wedges, texts, autotexts = ax.pie(
     colors=colors,
     autopct='',
     startangle=90,
-    textprops={'fontsize': 32, 'weight': 'bold', 'color': COLOR_DARK},
+    textprops={'fontsize': 32, 'weight': 'bold', 'color': COLOR_BLACK},
     wedgeprops={'edgecolor': COLOR_WHITE, 'linewidth': 2}
 )
 
-ax.set_title('Annual Deaths', fontsize=40, pad=20, weight='bold', color=COLOR_DARK)
+# Remove title - let context provide it
+# ax.set_title('Annual Deaths', fontsize=40, pad=20, weight='bold', color=COLOR_BLACK)
 
 # Add branding
 add_watermark(fig)
 
 #plt.tight_layout()  # Disabled - using rcParams margins instead
-plt.savefig('assets/charts/annual-deaths.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.savefig('assets/charts/annual-deaths.png', dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
 

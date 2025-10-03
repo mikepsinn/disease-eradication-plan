@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 from brain.charts._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_MID, COLOR_ACCENT, COLOR_DARK, COLOR_WHITE, COLOR_LIGHT, COLOR_BG
+    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
 )
 
 # Setup styling
@@ -30,25 +30,26 @@ width = 0.35
 # Create chart
 fig, ax = plt.subplots(figsize=(22, 10))
 bars1 = ax.bar(x - width/2, futures_data['Idiocracy'], width,
-               label='Path A: Idiocracy', color=COLOR_MID, edgecolor=COLOR_WHITE, linewidth=2)
+               label='Path A: Idiocracy', color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=2)
 bars2 = ax.bar(x + width/2, futures_data['Wishonia'], width,
-               label='Path B: Wishonia', color=COLOR_ACCENT, edgecolor=COLOR_WHITE, linewidth=2)
+               label='Path B: Wishonia', color=COLOR_BLUE, edgecolor=COLOR_WHITE, linewidth=2)
 
-ax.set_ylabel('Index (Relative Scale)', fontsize=36, weight='bold', color=COLOR_DARK)
+ax.set_ylabel('Index (Relative Scale)', fontsize=36, weight='bold', color=COLOR_BLACK)
 ax.set_xticks(x)
 ax.set_xticklabels(futures_data['Metric'], fontsize=36)
-ax.tick_params(axis='y', labelsize=28, colors=COLOR_MID)
-ax.tick_params(axis='x', colors=COLOR_DARK)
+ax.tick_params(axis='y', labelsize=28, colors=COLOR_BLACK)
+ax.tick_params(axis='x', colors=COLOR_BLACK)
 ax.legend(fontsize=40, loc='upper left')
-ax.axhline(y=0, color=COLOR_MID, linestyle='-', linewidth=2, alpha=0.5)
+ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=2, alpha=0.5)
 clean_spines(ax)
-ax.grid(axis='y', alpha=0.3, linestyle='--', color=COLOR_LIGHT)
+# Remove gridlines for cleaner look
+# ax.grid(axis='y', alpha=0.3, linestyle='--', color=COLOR_BLACK)
 
 # Add branding
 add_watermark(fig)
 
 # Don't use tight_layout - it overrides margins
-plt.savefig('assets/charts/futures-comparison.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.savefig('assets/charts/futures-comparison.png', dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
 

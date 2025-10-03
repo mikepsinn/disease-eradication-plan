@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from brain.charts._chart_style import (
     setup_chart_style, add_watermark,
-    COLOR_ACCENT, COLOR_MID, COLOR_DARK, COLOR_WHITE, COLOR_BG
+    COLOR_BLACK, COLOR_BLUE, COLOR_WHITE
 )
 
 # Setup styling
@@ -22,27 +22,27 @@ ax.set_xlim(0, 10)
 ax.set_ylim(0, 10)
 ax.axis('off')
 
-# Define positions and boxes
+# Define positions and boxes - use BLUE for all (showing solutions/flow of good)
 boxes = [
-    {'pos': (1, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\n$27B/year', 'color': COLOR_ACCENT},
-    {'pos': (3.5, 5), 'size': (1.5, 1.2), 'text': 'DIH\nTreasury', 'color': COLOR_MID},
-    {'pos': (6, 7.5), 'size': (1.5, 1.2), 'text': 'Patient\nSubsidies', 'color': COLOR_ACCENT},
-    {'pos': (6, 5), 'size': (1.5, 1.2), 'text': 'VICTORY\nBonds 5%', 'color': COLOR_DARK},
-    {'pos': (6, 2.5), 'size': (1.5, 1.2), 'text': 'Research\nFunding', 'color': COLOR_MID},
-    {'pos': (8.5, 7.5), 'size': (1.5, 1.2), 'text': 'Free\nTreatment', 'color': COLOR_ACCENT},
-    {'pos': (8.5, 5), 'size': (1.5, 1.2), 'text': '40%\nReturns', 'color': COLOR_DARK},
-    {'pos': (8.5, 2.5), 'size': (1.5, 1.2), 'text': 'Cures\nFound', 'color': COLOR_ACCENT},
+    {'pos': (1, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\n$27B/year', 'color': COLOR_BLUE},
+    {'pos': (3.5, 5), 'size': (1.5, 1.2), 'text': 'DIH\nTreasury', 'color': COLOR_BLUE},
+    {'pos': (6, 7.5), 'size': (1.5, 1.2), 'text': 'Patient\nSubsidies', 'color': COLOR_BLUE},
+    {'pos': (6, 5), 'size': (1.5, 1.2), 'text': 'VICTORY\nBonds 5%', 'color': COLOR_BLUE},
+    {'pos': (6, 2.5), 'size': (1.5, 1.2), 'text': 'Research\nFunding', 'color': COLOR_BLUE},
+    {'pos': (8.5, 7.5), 'size': (1.5, 1.2), 'text': 'Free\nTreatment', 'color': COLOR_BLUE},
+    {'pos': (8.5, 5), 'size': (1.5, 1.2), 'text': '40%\nReturns', 'color': COLOR_BLUE},
+    {'pos': (8.5, 2.5), 'size': (1.5, 1.2), 'text': 'Cures\nFound', 'color': COLOR_BLUE},
 ]
 
 # Draw boxes
 for box in boxes:
     rect = Rectangle(box['pos'], box['size'][0], box['size'][1],
-                     facecolor=box['color'], edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9)
+                     facecolor=box['color'], edgecolor=COLOR_WHITE, linewidth=3)
     ax.add_patch(rect)
     ax.text(box['pos'][0] + box['size'][0]/2, box['pos'][1] + box['size'][1]/2,
             box['text'], ha='center', va='center', fontsize=28, weight='bold', color=COLOR_WHITE)
 
-# Draw arrows
+# Draw arrows - black for clarity
 arrows = [
     ((2.5, 5.6), (3.5, 5.6)),  # Treaty -> Treasury
     ((5, 6.5), (6, 8.1)),      # Treasury -> Patient Subsidies
@@ -55,25 +55,25 @@ arrows = [
 
 for arrow in arrows:
     ax.annotate('', xy=arrow[1], xytext=arrow[0],
-                arrowprops=dict(arrowstyle='->', lw=6, color=COLOR_MID, alpha=0.6))
+                arrowprops=dict(arrowstyle='->', lw=6, color=COLOR_BLACK, alpha=0.6))
 
 # Add flow amounts
 flow_labels = [
     ((3, 5.9), '$27B'),
     ((5.3, 7), '$10B'),
-    ((5.3, 5.9), '$1.35B'),
-    ((5.3, 3.7), '$15.65B'),
+    ((5.3, 5.9), '$1B'),
+    ((5.3, 3.7), '$16B'),
 ]
 
 for pos, label in flow_labels:
-    ax.text(pos[0], pos[1], label, fontsize=24, weight='bold', color=COLOR_DARK,
-            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_ACCENT, linewidth=2))
+    ax.text(pos[0], pos[1], label, fontsize=24, weight='bold', color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLUE, linewidth=2))
 
 # Add branding
 add_watermark(fig)
 
 # Don't use tight_layout - it overrides margins
-plt.savefig('assets/charts/money-flow-diagram.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.savefig('assets/charts/money-flow-diagram.png', dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
 

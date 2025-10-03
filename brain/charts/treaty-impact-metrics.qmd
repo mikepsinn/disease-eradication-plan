@@ -9,7 +9,7 @@ sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
 import matplotlib.pyplot as plt
 from brain.charts._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_ACCENT, COLOR_MID, COLOR_DARK, COLOR_WHITE, COLOR_BG
+    COLOR_BLACK, COLOR_BLUE, COLOR_WHITE
 )
 
 # Setup styling
@@ -20,9 +20,9 @@ metrics = ['Clinical\nTrials', 'Patients\nTreated', 'Lives\nSaved\nAnnually', 'D
 values = [54000, 27000000, 180000, 15]
 display_values = ['54,000', '27M', '180K', '10-20']
 
-# Create chart
+# Create chart - all BLUE (showing positive impact/solution)
 fig, ax = plt.subplots(figsize=(20, 10))
-bars = ax.bar(metrics, values, color=[COLOR_ACCENT, COLOR_MID, COLOR_ACCENT, COLOR_MID],
+bars = ax.bar(metrics, values, color=COLOR_BLUE,
               width=0.6, edgecolor=COLOR_WHITE, linewidth=3)
 
 # Add value labels
@@ -32,7 +32,7 @@ for bar, display_val in zip(bars, display_values):
             display_val, ha='center', va='center', fontsize=56, weight='bold', color=COLOR_WHITE)
 
 ax.set_ylim(0, max(values) * 1.1)
-ax.tick_params(axis='x', labelsize=32, colors=COLOR_DARK)
+ax.tick_params(axis='x', labelsize=32, colors=COLOR_BLACK)
 ax.set_yticks([])
 clean_spines(ax, ['top', 'right', 'left'])
 
@@ -40,7 +40,7 @@ clean_spines(ax, ['top', 'right', 'left'])
 add_watermark(fig)
 
 # Don't use tight_layout - it overrides margins
-plt.savefig('assets/charts/treaty-impact-metrics.png', dpi=150, bbox_inches=None, facecolor=COLOR_BG)
+plt.savefig('assets/charts/treaty-impact-metrics.png', dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
 

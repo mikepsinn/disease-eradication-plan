@@ -4,7 +4,7 @@ subtitle: "How to Redirect 1% of Military Spending to Cure Everything"
 #author: "Mike P. SInn"
 format:
   revealjs:
-    theme: [dark, assets/propaganda-theme.scss]
+    theme: [default, assets/propaganda-theme.scss]
     transition: slide
     slide-number: true
     #footer: "Vote at WarOnDisease.org"
@@ -36,13 +36,10 @@ from brain.charts._chart_style import (
     setup_chart_style,
     add_watermark,
     clean_spines,
-    COLOR_DARK,
-    COLOR_MID,
-    COLOR_LIGHT,
-    COLOR_ACCENT,
-    COLOR_BG,
+    COLOR_BLACK,
+    COLOR_RED,
+    COLOR_BLUE,
     COLOR_WHITE,
-    PALETTE_CATEGORICAL,
     get_presentation_font_sizes
 )
 
@@ -62,7 +59,7 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 
 ## The Problem: Direct Spending
 
-<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #1a1a1a;">Humanity spends **40X more** on war than curing diseases</h1>
+<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #000000;">Humanity spends **40X more** on war than curing diseases</h1>
 
 {{< include brain/charts/war-vs-curing-diseases-column-chart.qmd >}}
 
@@ -70,7 +67,7 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 
 ## The Problem: True War Costs
 
-<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #1a1a1a;">Here's What That $2.7T Actually Buys</h1>
+<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #000000;">Here's What That $2.7T Actually Buys</h1>
 
 
 {{< include brain/charts/war-hidden-direct-curing-diseases-column-chart.qmd >}}
@@ -80,14 +77,14 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 
 ## The Problem: Disease Costs
 
-<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #1a1a1a;">And Here's What We're NOT Curing</h1>
-<p style="text-align: center; font-size: 56px; color: #5a0000; margin-bottom: 30px;">
+<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #000000;">And Here's What We're NOT Curing</h1>
+<p style="text-align: center; font-size: 56px; color: #B22234; margin-bottom: 30px;">
 **$109 trillion** annual disease burden
 </p>
 
 {{< include brain/charts/disease-war-curing-costs-column-chart.qmd >}}
 
-<p style="text-align: center; font-size: 44px; color: #c1272d; margin-top: 30px;">
+<p style="text-align: center; font-size: 44px; color: #B22234; margin-top: 30px;">
 Disease costs **11X more** than war. We spend **$68B** trying to cure it.
 </p>
 
@@ -95,31 +92,31 @@ Disease costs **11X more** than war. We spend **$68B** trying to cure it.
 
 ## Budget Priorities
 
-<h1 style="text-align: center; font-size: 80px; color: #1a1a1a;">The Stupidest Budget on Earth</h1>
+<h1 style="text-align: center; font-size: 80px; color: #000000;">The Stupidest Budget on Earth</h1>
 
 {{< include brain/charts/budget-waste.qmd >}}
 
-<p style="text-align: center; font-size: 48px; color: #2c5f7d; margin-top: 30px;">
+<p style="text-align: center; font-size: 48px; color: #3C3B6E; margin-top: 30px;">
 We spend **1,600X more** treating disease than curing it<br>
-<span style="font-size: 40px; color: #4a4a4a; font-style: italic;">(Like buying 1,600 mops instead of fixing the pipe)</span>
+<span style="font-size: 40px; color: #000000; font-style: italic;">(Like buying 1,600 mops instead of fixing the pipe)</span>
 </p>
 
 ---
 
 ## The Solution
 
-<h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">The Solution</h1>
-<p style="text-align: center; font-size: 48px; color: #4a4a4a; margin-bottom: 20px;">Make curing more profitable than killing</p>
+<h1 style="text-align: center; font-size: 100px; color: #000000; ">The Solution</h1>
+<p style="text-align: center; font-size: 48px; color: #000000; margin-bottom: 20px;">Make curing more profitable than killing</p>
 
 :::: {.columns}
 ::: {.column width="50%"}
 <div style="text-align: center; padding: 40px;">
-<h2 style="font-size: 120px; color: #c1272d; margin: 0;">1%</h2>
+<h2 style="font-size: 120px; color: #B22234; margin: 0;">1%</h2>
 <p style="font-size: 48px; margin: 20px 0;">of military spending</p>
-<h2 style="font-size: 80px; color: #0051a5; margin: 20px 0;">= $27B</h2>
-<p style="font-size: 36px; color: #4a4a4a;">per year to cure disease</p>
+<h2 style="font-size: 80px; color: #3C3B6E; margin: 20px 0;">= $27B</h2>
+<p style="font-size: 36px; color: #000000;">per year to cure disease</p>
 <br>
-<p style="font-size: 32px; color: #4a4a4a; font-style: italic;">
+<p style="font-size: 32px; color: #000000; font-style: italic;">
 (99% still goes to defense)
 </p>
 </div>
@@ -134,11 +131,11 @@ We spend **1,600X more** treating disease than curing it<br>
 
 ## What $27B Buys
 
-<h1 style="text-align: center; font-size: 80px; margin-bottom: 40px;  color: #1a1a1a;">What $27B Buys</h1>
+<h1 style="text-align: center; font-size: 80px; margin-bottom: 40px;  color: #000000;">What $27B Buys</h1>
 
 {{< include brain/charts/treaty-impact-metrics.qmd >}}
 
-<p style="text-align: center; font-size: 36px; color: #4a4a4a; margin-top: 40px; line-height: 1.8;">
+<p style="text-align: center; font-size: 36px; color: #000000; margin-top: 40px; line-height: 1.8;">
 **54,000 clinical trials** • **27M patients treated** • **180K lives saved annually** • **10-20 diseases cured in year one**
 </p>
 
@@ -146,7 +143,7 @@ We spend **1,600X more** treating disease than curing it<br>
 
 ## How It Works
 
-<h1 style="text-align: center; font-size: 80px; margin-bottom: 40px;  color: #1a1a1a;">How It Works</h1>
+<h1 style="text-align: center; font-size: 80px; margin-bottom: 40px;  color: #000000;">How It Works</h1>
 
 {{< include brain/charts/money-flow-diagram.qmd >}}
 
@@ -154,12 +151,12 @@ We spend **1,600X more** treating disease than curing it<br>
 
 ## dFDA
 
-<h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">dFDA</h1>
-<p style="text-align: center; font-size: 56px; color: #4a4a4a;">Amazon for Clinical Trials</p>
+<h1 style="text-align: center; font-size: 100px; color: #000000; ">dFDA</h1>
+<p style="text-align: center; font-size: 56px; color: #000000;">Amazon for Clinical Trials</p>
 
 {{< include brain/charts/dfda-comparison.qmd >}}
 
-<p style="text-align: center; font-size: 52px; color: #c1272d; margin-top: 30px;">
+<p style="text-align: center; font-size: 52px; color: #B22234; margin-top: 30px;">
 **82X more efficient** than FDA: **$500** vs **$41,000** per patient
 </p>
 
@@ -167,7 +164,7 @@ We spend **1,600X more** treating disease than curing it<br>
 
 ## VICTORY Bonds
 
-<h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #1a1a1a;">For Investors</h1>
+<h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #000000;">For Investors</h1>
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -176,11 +173,11 @@ We spend **1,600X more** treating disease than curing it<br>
 
 ::: {.column width="40%"}
 <div style="padding: 60px 40px;">
-<h2 style="font-size: 72px; color: #0051a5; margin: 0;">40%</h2>
+<h2 style="font-size: 72px; color: #3C3B6E; margin: 0;">40%</h2>
 <p style="font-size: 36px; margin: 20px 0;">Annual Perpetual Returns</p>
 <br>
-<h3 style="font-size: 56px; color: #c1272d;">$3.375B</h3>
-<p style="font-size: 32px; color: #4a4a4a;">Total Issuance (Scarce)</p>
+<h3 style="font-size: 56px; color: #B22234;">$3.375B</h3>
+<p style="font-size: 32px; color: #000000;">Total Issuance (Scarce)</p>
 <br>
 <p style="font-size: 28px; line-height: 1.6;">
 5% of all DIH inflows<br>
@@ -196,13 +193,13 @@ Scales with treaty growth
 
 ## The Proof
 
-<h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #1a1a1a;">The Proof</h1>
+<h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #000000;">The Proof</h1>
 
-<p style="text-align: center; font-size: 48px; color: #4a4a4a;">Oxford RECOVERY Trial (2020)</p>
+<p style="text-align: center; font-size: 48px; color: #000000;">Oxford RECOVERY Trial (2020)</p>
 
 {{< include brain/charts/oxford-recovery-proof.qmd >}}
 
-<p style="text-align: center; font-size: 48px; color: #2c5f7d; margin-top: 40px; ">
+<p style="text-align: center; font-size: 48px; color: #3C3B6E; margin-top: 40px; ">
 **This already works.** We're just scaling it.
 </p>
 
@@ -210,9 +207,9 @@ Scales with treaty growth
 
 ## Two Futures
 
-<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px;  color: #1a1a1a;">Two Futures</h1>
+<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px;  color: #000000;">Two Futures</h1>
 
-<p style="text-align: center; font-size: 44px; color: #4a4a4a; margin-bottom: 30px;">
+<p style="text-align: center; font-size: 44px; color: #000000; margin-bottom: 30px;">
 **Idiocracy** (Three Subs: Sub-Intelligence, Sub-Longevity, Sub-Wellbeing)<br>
 vs<br>
 **Wishonia** (Three Supers: Super-Intelligence, Super-Longevity, Super-Wellbeing)
@@ -220,13 +217,13 @@ vs<br>
 
 {{< include brain/charts/futures-comparison.qmd >}}
 
-<p style="text-align: center; font-size: 56px; color: #c1272d; margin-top: 30px; ">
+<p style="text-align: center; font-size: 56px; color: #B22234; margin-top: 30px; ">
 The difference: **1% budget reallocation in 2026**
 </p>
 
 ---
 
-## Take Action {background-color="#2c5f7d"}
+## Take Action {background-color="#3C3B6E"}
 
 <br><br>
 <h1 style="text-align: center; font-size: 120px; color: white; ">Take Action</h1>
@@ -272,7 +269,7 @@ Join the team<br>
 ## Why This Will Win
 
 <br><br><br>
-<h1 style="text-align: center; font-size: 100px; color: #1a1a1a; ">Why This Will Win</h1>
+<h1 style="text-align: center; font-size: 100px; color: #000000; ">Why This Will Win</h1>
 <br>
 
 :::: {.columns}
@@ -294,7 +291,7 @@ Join the team<br>
 
 ---
 
-## Questions? {background-color="#1a1a1a"}
+## Questions? {background-color="#000000"}
 
 <br><br><br><br>
 <div style="text-align: center;">
