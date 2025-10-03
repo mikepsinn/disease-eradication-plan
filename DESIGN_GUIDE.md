@@ -140,7 +140,7 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 
 **What to Include:**
 - Data bars (solid black or red/blue when meaning is clear)
-- Y-axis with scale (shows magnitude, keep axis but remove axis label/title)
+- Y-axis with scale (only when columns aren't all labeled with amounts)
 - Key data values (large, bold, impossible to miss)
 - Watermark (required)
 
@@ -148,14 +148,14 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 - Put labels directly ON the data (on bars, lines, points)
 - Format: `"$7T\nIndirect War Costs"` (value + description with line break)
 - Remove redundant x-axis labels when data is self-labeled
-- Remove y-axis label/title (axis scale is enough, title is redundant)
+- Remove y-axis entirely on column charts when all columns show their amounts
 - This eliminates matching numbers to separate axis labels
 
 **What to Remove:**
 - Gridlines (unless absolutely necessary, then use sparingly)
 - Chart titles (let the context provide the title)
 - X-axis labels (when labels are on the bars themselves)
-- Y-axis label/title (keep the axis scale, remove the title text)
+- Y-axis entirely (when all columns are labeled with amounts)
 - Legends (use direct labels instead)
 - Backgrounds/fills (pure white only)
 - Borders, shadows, gradients, 3D effects

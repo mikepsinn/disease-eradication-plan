@@ -41,7 +41,8 @@
       "Bash(echo \"warondisease\ny\nn\ny\ny\nn\ny\n\")",
       "Bash(npx create-next-app:*)",
       "Bash(npm run dev:*)",
-      "Bash(quarto clean:*)"
+      "Bash(quarto clean:*)",
+      "Bash(sed:*)"
     ],
     "deny": [],
     "ask": []
