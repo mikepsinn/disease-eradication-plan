@@ -27,7 +27,7 @@ Dolphins don't have a military-industrial complex. Ants don't lobby Congress for
 
 The Pentagon alone has LOST $2.5 trillion. Not spent. Lost. Like change in a couch, except the couch is the size of Nebraska and the change could cure cancer 250 times.
 
-We spend more on Halloween costumes than curing cancer. One fighter jet costs more than all rare disease research combined. We're the only species that pays to kill itself."
+ One fighter jet costs more than all rare disease research combined. We're the only species that pays to kill itself."
 
 ---
 

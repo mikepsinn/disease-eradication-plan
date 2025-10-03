@@ -57,243 +57,365 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 
 ---
 
-## The $119 Trillion Death Toilet
+## While You Watch This...
 
-<h1 style="text-align: center; font-size: 90px; margin-bottom: 20px; color: #000000;">Welcome to Humanity's Stupidest Achievement</h1>
+<div style="text-align: center; padding: 80px 20px;">
+<h1 style="font-size: 140px; color: #B22234; margin-bottom: 60px; font-weight: bold;">17 people just died</h1>
 
-<p style="text-align: center; font-size: 56px; color: #000000; margin-bottom: 30px;">
-We're the only species that **pays to kill itself**<br>
-<span style="font-size: 44px; color: #B22234;">Dolphins don't have a military-industrial complex</span>
+<p style="font-size: 64px; color: #000000; line-height: 1.8; margin-bottom: 60px;">
+From preventable diseases.<br>
+In the last 10 seconds.<br>
+While you read that sentence.
 </p>
+
+<p style="font-size: 56px; color: #3C3B6E; margin-top: 80px;">
+By the end of this presentation:<br>
+<span style="font-size: 80px; color: #B22234; font-weight: bold;">1,700 more will be dead</span>
+</p>
+
+<p style="font-size: 48px; color: #000000; margin-top: 60px; font-style: italic;">
+We could have saved them.<br>
+We chose not to.
+</p>
+</div>
+
+---
+
+## Here's What We Spend Killing vs Curing
 
 {{< include brain/charts/war-vs-curing-diseases-column-chart.qmd >}}
 
-<p style="text-align: center; font-size: 56px; color: #B22234; margin-top: 30px;">
-We spend **40X** more teaching murder than curing cancer<br>
-<span style="font-size: 44px; color: #000000; font-style: italic;">(Your tax dollars at work)</span>
+<div style="text-align: center; margin-top: 40px;">
+<p style="font-size: 72px; color: #B22234; font-weight: bold; margin-bottom: 30px;">
+40-to-1
 </p>
+<p style="font-size: 48px; color: #000000;">
+For every dollar we spend finding cures,<br>
+we spend <span style="color: #B22234; font-weight: bold;">$40 on weapons</span>
+</p>
+</div>
+
 
 ---
 
-## The Problem: True War Costs
-
-<h1 style="text-align: center; font-size: 90px; margin-bottom: 20px; color: #000000;">But Wait, There's More!</h1>
-
-<p style="text-align: center; font-size: 56px; color: #B22234; margin-bottom: 30px;">
-War is like an iceberg of stupidity<br>
-<span style="font-size: 44px; color: #000000;">The $2.7T is just what we admit to spending</span>
-</p>
+## But the Real Cost of War Is Hidden
 
 {{< include brain/charts/war-hidden-direct-curing-diseases-column-chart.qmd >}}
 
-<p style="text-align: center; font-size: 48px; color: #000000; margin-top: 30px;">
-The real cost? **$10 TRILLION**<br>
-<span style="font-size: 40px; color: #B22234; font-style: italic;">(That's $1,320 per human per year to achieve... absolutely nothing)</span>
+<div style="text-align: center; margin-top: 40px;">
+<p style="font-size: 64px; color: #000000; margin-bottom: 30px;">
+The $2.7T military budget? <span style="color: #B22234; font-weight: bold;">That's just the tip.</span>
 </p>
-
+<p style="font-size: 48px; color: #3C3B6E; line-height: 1.6;">
++ Destroyed cities<br>
++ Refugee crises<br>
++ PTSD treatment<br>
++ Lost productivity<br>
+= <span style="font-size: 72px; color: #B22234; font-weight: bold;">$10 TRILLION</span>
+</p>
+</div>
 
 ---
 
-## The Problem: Disease Costs
-
-<h1 style="text-align: center; font-size: 90px; margin-bottom: 20px; color: #000000;">Meanwhile, What's Actually Killing You</h1>
-
-<p style="text-align: center; font-size: 56px; color: #000000; margin-bottom: 30px;">
-**BREAKING:** Disease kills **4X** more people than all wars combined<br>
-<span style="font-size: 44px; color: #B22234;">Our response? Spend 0.06% on finding cures</span>
-</p>
+## Now Add Disease Costs: The Full Picture
 
 {{< include brain/charts/disease-war-curing-costs-column-chart.qmd >}}
 
-<p style="text-align: center; font-size: 48px; color: #000000; margin-top: 30px;">
-That's like your house being on fire<br>
-<span style="font-size: 40px; color: #B22234;">And spending your money on **gasoline and matches**</span>
+<div style="text-align: center; margin-top: 50px;">
+<p style="font-size: 80px; color: #B22234; font-weight: bold; margin-bottom: 40px;">
+$119 TRILLION
 </p>
+<p style="font-size: 56px; color: #000000; line-height: 1.6;">
+Every year, humanity spends this on <span style="color: #B22234;">death</span><br>
+While spending <span style="color: #3C3B6E; font-weight: bold;">0.06%</span> on cures
+</p>
+</div>
 
 ---
 
-## The $119 Trillion Death Toilet
-
-<h1 style="text-align: center; font-size: 80px; color: #000000;">Every Year, We Flush $119 Trillion Down This:</h1>
+## The 1,750-to-1 Stupidity Ratio
 
 {{< include brain/charts/disease-burden-war-curing-comparison.qmd >}}
 
-<p style="text-align: center; font-size: 56px; color: #B22234; margin-top: 30px;">
-**The Death Toilet Breakdown:**
+<div style="text-align: center; margin-top: 50px;">
+<p style="font-size: 100px; color: #B22234; font-weight: bold;">1,750X</p>
+<p style="font-size: 56px; color: #000000; margin-top: 30px;">
+We spend 1,750 times more<br>
+<span style="color: #B22234;">mopping up death</span> than <span style="color: #3C3B6E;">preventing it</span>
 </p>
-<p style="text-align: center; font-size: 44px; color: #000000;">
-💀 $109T on mopping up disease (after it kills people)<br>
-💣 $10T on creating new ways to kill people<br>
-💊 $0.068T on actually curing what kills people<br>
-<span style="font-size: 40px; color: #3C3B6E; font-style: italic; font-weight: bold;">
-That's 1,750-to-1 stupidity ratio. Even lottery tickets have better odds.
-</span>
-</p>
-
----
-
-## The Solution
-
-<h1 style="text-align: center; font-size: 100px; color: #000000; ">The Solution</h1>
-<p style="text-align: center; font-size: 48px; color: #000000; margin-bottom: 20px;">Make curing more profitable than killing</p>
-
-:::: {.columns}
-::: {.column width="50%"}
-<div style="text-align: center; padding: 40px;">
-<h2 style="font-size: 120px; color: #B22234; margin: 0;">1%</h2>
-<p style="font-size: 48px; margin: 20px 0;">of military spending</p>
-<h2 style="font-size: 80px; color: #3C3B6E; margin: 20px 0;">= $27B</h2>
-<p style="font-size: 36px; color: #000000;">per year to cure disease</p>
-<br>
-<p style="font-size: 32px; color: #000000; font-style: italic;">
-(99% still goes to defense)
+<p style="font-size: 48px; color: #3C3B6E; margin-top: 40px; font-style: italic;">
+That's like buying 1,750 mops instead of fixing the leak
 </p>
 </div>
-:::
-
-::: {.column width="50%"}
-{{< include brain/charts/treaty-impact.qmd >}}
-:::
-::::
 
 ---
 
-## What $27B Buys
+## Here's the Stupidest Part
 
-<h1 style="text-align: center; font-size: 80px; margin-bottom: 40px;  color: #000000;">What $27B Buys</h1>
+<div style="text-align: center; padding: 60px 20px;">
+<p style="font-size: 72px; color: #000000; margin-bottom: 80px;">
+We could fix this with a <span style="color: #B22234; font-weight: bold;">rounding error</span>
+</p>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 60px;">
+<div style="text-align: center;">
+<p style="font-size: 180px; color: #B22234; font-weight: bold; margin: 0;">1%</p>
+<p style="font-size: 48px; color: #000000;">of military budget</p>
+</div>
+<div style="font-size: 100px; color: #3C3B6E;">=</div>
+<div style="text-align: center;">
+<p style="font-size: 100px; color: #3C3B6E; font-weight: bold; margin: 0;">$27B</p>
+<p style="font-size: 48px; color: #000000;">per year</p>
+</div>
+</div>
+
+<div style="background-color: #f8f8f8; padding: 40px; border-radius: 20px; margin: 60px auto; max-width: 1200px;">
+<p style="font-size: 48px; color: #000000; line-height: 1.8;">
+Military keeps <span style="color: #3C3B6E; font-weight: bold;">$2.69 trillion</span> (99%)<br>
+<span style="font-size: 40px; color: #666;">Enough nukes to kill everyone 66 times instead of 67</span>
+</p>
+</div>
+
+<p style="font-size: 56px; color: #B22234; margin-top: 60px; font-weight: bold;">
+This kills no one. It saves millions.
+</p>
+</div>
+
+---
+
+## What $27B Actually Buys
 
 {{< include brain/charts/treaty-impact-metrics.qmd >}}
 
-<p style="text-align: center; font-size: 36px; color: #000000; margin-top: 40px; line-height: 1.8;">
-**54,000 clinical trials** • **27M patients treated** • **180K lives saved annually** • **10-20 diseases cured in year one**
+<div style="text-align: center; margin-top: 50px;">
+<p style="font-size: 72px; color: #B22234; font-weight: bold; margin-bottom: 40px;">Year One Results:</p>
+<div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1400px; margin: 0 auto;">
+<div style="padding: 20px;">
+<p style="font-size: 64px; color: #3C3B6E; font-weight: bold; margin: 0;">54,000</p>
+<p style="font-size: 32px; color: #000000;">new trials</p>
+</div>
+<div style="padding: 20px;">
+<p style="font-size: 64px; color: #3C3B6E; font-weight: bold; margin: 0;">27M</p>
+<p style="font-size: 32px; color: #000000;">patients treated</p>
+</div>
+<div style="padding: 20px;">
+<p style="font-size: 64px; color: #3C3B6E; font-weight: bold; margin: 0;">180,000</p>
+<p style="font-size: 32px; color: #000000;">lives saved</p>
+</div>
+<div style="padding: 20px;">
+<p style="font-size: 64px; color: #3C3B6E; font-weight: bold; margin: 0;">10-20</p>
+<p style="font-size: 32px; color: #000000;">diseases cured</p>
+</div>
+</div>
+<p style="font-size: 48px; color: #B22234; margin-top: 40px; font-style: italic;">
+For the cost of 3 fighter jets
 </p>
+</div>
 
 ---
 
-## How It Works
+## The 3-Step Plan to Not Die Stupid
 
-<h1 style="text-align: center; font-size: 80px; margin-bottom: 40px;  color: #000000;">How It Works</h1>
+<div style="text-align: center; padding: 60px 20px;">
+<div style="max-width: 1200px; margin: 0 auto;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 80px;">
+<div style="flex: 1; padding: 30px;">
+<p style="font-size: 100px; color: #B22234; font-weight: bold; margin: 0;">1</p>
+<p style="font-size: 44px; color: #000000; margin-top: 20px;">Get 3.5% of humans<br>to sign the treaty</p>
+<p style="font-size: 32px; color: #666; margin-top: 15px; font-style: italic;">(280 million people)</p>
+</div>
+<div style="font-size: 60px; color: #3C3B6E;">→</div>
+<div style="flex: 1; padding: 30px;">
+<p style="font-size: 100px; color: #B22234; font-weight: bold; margin: 0;">2</p>
+<p style="font-size: 44px; color: #000000; margin-top: 20px;">Politicians suddenly<br>"care about cancer"</p>
+<p style="font-size: 32px; color: #666; margin-top: 15px; font-style: italic;">(They care about votes)</p>
+</div>
+<div style="font-size: 60px; color: #3C3B6E;">→</div>
+<div style="flex: 1; padding: 30px;">
+<p style="font-size: 100px; color: #B22234; font-weight: bold; margin: 0;">3</p>
+<p style="font-size: 44px; color: #000000; margin-top: 20px;">$27B flows to<br>decentralized trials</p>
+<p style="font-size: 32px; color: #666; margin-top: 15px; font-style: italic;">(Amazon for cures)</p>
+</div>
+</div>
+</div>
 
-{{< include brain/charts/money-flow-diagram.qmd >}}
+<p style="font-size: 56px; color: #3C3B6E; font-weight: bold;">
+History shows: 3.5% always wins
+</p>
+<p style="font-size: 40px; color: #000000; margin-top: 20px;">
+Civil rights. Women's suffrage. Every major change.
+</p>
+</div>
 
 ---
 
-## dFDA
+## Why It Works: Markets Beat Committees
 
-<h1 style="text-align: center; font-size: 100px; color: #000000; ">dFDA</h1>
-<p style="text-align: center; font-size: 56px; color: #000000;">Amazon for Clinical Trials</p>
+<div style="text-align: center; padding: 40px 20px;">
+<p style="font-size: 64px; color: #000000; margin-bottom: 60px;">
+<span style="color: #B22234; font-weight: bold;">Soviet FDA</span> vs <span style="color: #3C3B6E; font-weight: bold;">Amazon for Cures</span>
+</p>
 
 {{< include brain/charts/dfda-comparison.qmd >}}
 
-<p style="text-align: center; font-size: 52px; color: #B22234; margin-top: 30px;">
-**82X more efficient** than FDA: **$500** vs **$41,000** per patient
-</p>
-
----
-
-## VICTORY Bonds
-
-<h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #000000;">For Investors</h1>
-
-:::: {.columns}
-::: {.column width="60%"}
-{{< include brain/charts/victory-bonds-returns.qmd >}}
-:::
-
-::: {.column width="40%"}
-<div style="padding: 60px 40px;">
-<h2 style="font-size: 72px; color: #3C3B6E; margin: 0;">40%</h2>
-<p style="font-size: 36px; margin: 20px 0;">Annual Perpetual Returns</p>
-<br>
-<h3 style="font-size: 56px; color: #B22234;">$3.375B</h3>
-<p style="font-size: 32px; color: #000000;">Total Issuance (Scarce)</p>
-<br>
-<p style="font-size: 28px; line-height: 1.6;">
-5% of all DIH inflows<br>
-Forever<br>
-Tradable<br>
-Scales with treaty growth
+<div style="display: flex; justify-content: space-around; margin-top: 60px; max-width: 1400px; margin: 60px auto;">
+<div style="flex: 1; padding: 30px;">
+<p style="font-size: 56px; color: #B22234; font-weight: bold;">Current FDA</p>
+<p style="font-size: 40px; color: #000000; line-height: 1.8;">
+200 bureaucrats decide<br>
+17 years to market<br>
+$2.2 billion per drug<br>
+95% of diseases ignored
 </p>
 </div>
-:::
-::::
+<div style="flex: 1; padding: 30px; border-left: 3px solid #ccc;">
+<p style="font-size: 56px; color: #3C3B6E; font-weight: bold;">dFDA Platform</p>
+<p style="font-size: 40px; color: #000000; line-height: 1.8;">
+8 billion people choose<br>
+2 years to market<br>
+$27 million per drug<br>
+Every disease gets trials
+</p>
+</div>
+</div>
+
+<p style="font-size: 64px; color: #B22234; margin-top: 40px; font-weight: bold;">
+82X cheaper. 8X faster. Actually works.
+</p>
+</div>
 
 ---
 
-## The Proof
+## For the Greedy: Get Rich Saving Humanity
 
-<h1 style="text-align: center; font-size: 80px; margin-bottom: 60px;  color: #000000;">The Proof</h1>
+<div style="text-align: center; padding: 40px 20px;">
+<p style="font-size: 72px; color: #B22234; font-weight: bold; margin-bottom: 60px;">
+VICTORY Bonds: 40% Annual Returns Forever
+</p>
 
-<p style="text-align: center; font-size: 48px; color: #000000;">Oxford RECOVERY Trial (2020)</p>
+{{< include brain/charts/victory-bonds-returns.qmd >}}
+
+<div style="background-color: #f8f8f8; padding: 40px; border-radius: 20px; margin: 60px auto; max-width: 1000px;">
+<p style="font-size: 48px; color: #000000; line-height: 1.8;">
+Better than the S&P 500 (10%)<br>
+Better than real estate (8%)<br>
+Better than your crypto (−100%)<br>
+<span style="color: #3C3B6E; font-weight: bold;">Plus you're not a sociopath</span>
+</p>
+</div>
+
+<p style="font-size: 44px; color: #B22234; margin-top: 40px;">
+Only $3.375B available. Ever.<br>
+<span style="font-size: 36px; color: #666;">First come, first served, then it's gone.</span>
+</p>
+</div>
+
+---
+
+## This Already Works (Oxford Proved It)
+
+<div style="text-align: center; padding: 40px 20px;">
+<p style="font-size: 64px; color: #000000; margin-bottom: 60px;">
+During COVID, Oxford embarrassed America
+</p>
 
 {{< include brain/charts/oxford-recovery-proof.qmd >}}
 
-<p style="text-align: center; font-size: 48px; color: #3C3B6E; margin-top: 40px; ">
-**This already works.** We're just scaling it.
+<div style="display: flex; justify-content: space-around; margin-top: 60px; max-width: 1200px; margin: 60px auto;">
+<div style="flex: 1; padding: 30px;">
+<p style="font-size: 56px; color: #B22234; font-weight: bold;">America</p>
+<p style="font-size: 40px; color: #000000; line-height: 1.8;">
+$41,000 per patient<br>
+Saved paperwork<br>
+17 months for results
 </p>
+</div>
+<div style="flex: 1; padding: 30px; border-left: 3px solid #ccc;">
+<p style="font-size: 56px; color: #3C3B6E; font-weight: bold;">Oxford</p>
+<p style="font-size: 40px; color: #000000; line-height: 1.8;">
+$500 per patient<br>
+Saved 1 million lives<br>
+3 months for results
+</p>
+</div>
+</div>
+
+<p style="font-size: 56px; color: #B22234; margin-top: 40px; font-weight: bold;">
+82X more efficient. Not theory. Historical fact.
+</p>
+</div>
 
 ---
 
-## Two Futures
+## Your Grandkids Will Live In One of Two Worlds
 
-<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px;  color: #000000;">Two Futures</h1>
+<div style="text-align: center; padding: 40px 20px;">
+<div style="display: flex; justify-content: space-around; margin-bottom: 60px; max-width: 1400px; margin: 0 auto;">
+<div style="flex: 1; padding: 30px;">
+<p style="font-size: 72px; color: #B22234; font-weight: bold; margin: 0;">2050: Idiocracy</p>
+<p style="font-size: 40px; color: #000000; line-height: 1.8; margin-top: 30px;">
+Life expectancy: 35<br>
+Diet: Bugs and lead paint<br>
+Entertainment: Water wars<br>
+Cancer treatment: "Thoughts and prayers"<br>
+Status: Mad Max with worse teeth
+</p>
+</div>
+<div style="flex: 1; padding: 30px; border-left: 3px solid #ccc;">
+<p style="font-size: 72px; color: #3C3B6E; font-weight: bold; margin: 0;">2050: Wishonia</p>
+<p style="font-size: 40px; color: #000000; line-height: 1.8; margin-top: 30px;">
+Life expectancy: "Yes"<br>
+Disease: In museums<br>
+Death: Optional<br>
+Your kid's cancer: Fixed by Thursday<br>
+Status: Star Trek but real
+</p>
+</div>
+</div>
 
-<p style="text-align: center; font-size: 44px; color: #000000; margin-bottom: 30px;">
-**Idiocracy** (Three Subs: Sub-Intelligence, Sub-Longevity, Sub-Wellbeing)<br>
-vs<br>
-**Wishonia** (Three Supers: Super-Intelligence, Super-Longevity, Super-Wellbeing)
+<p style="font-size: 64px; color: #B22234; margin-top: 80px; font-weight: bold;">
+The only difference: What we do with 1% in 2026
 </p>
 
-{{< include brain/charts/futures-comparison.qmd >}}
-
-<p style="text-align: center; font-size: 56px; color: #B22234; margin-top: 30px; ">
-The difference: **1% budget reallocation in 2026**
+<p style="font-size: 48px; color: #000000; margin-top: 30px; font-style: italic;">
+Your choice. Their future.
 </p>
+</div>
 
 ---
 
-## Stop Being the Stupidest Species in the Universe {background-color="#3C3B6E"}
+## The Clock Is Ticking {background-color="#B22234"}
 
-<br>
-<h1 style="text-align: center; font-size: 100px; color: white; margin-bottom: 20px;">Three Things. Right Now. Before You Die.</h1>
-<p style="text-align: center; font-size: 48px; color: #ecf0f1; margin-bottom: 40px;">
-<span style="font-style: italic;">(Seriously, you could die tomorrow and we'd still be spending $0 on your cure)</span>
+<div style="text-align: center; padding: 80px 20px;">
+<p style="font-size: 120px; color: white; font-weight: bold; margin-bottom: 60px;">
+17 people died<br>
+while you watched this
 </p>
 
-:::: {.columns}
-::: {.column width="33%"}
-<div style="text-align: center; padding: 40px;">
-<h2 style="font-size: 80px; margin: 0; color: #B22234;">1</h2>
-<h3 style="font-size: 48px; margin: 20px 0;">Sign the Damn Thing</h3>
-<p style="font-size: 32px; line-height: 1.6;">
-WarOnDisease.org<br>
-<span style="font-size: 24px; color: #ecf0f1;">Takes 30 seconds.<br>Less time than you spend<br>choosing a Netflix show.</span>
+<p style="font-size: 64px; color: #ecf0f1; margin-bottom: 80px;">
+Tomorrow: 150,000 more<br>
+Next year: 55 million<br>
+<span style="font-size: 48px;">All preventable. All unnecessary.</span>
 </p>
-</div>
-:::
 
-::: {.column width="33%"}
-<div style="text-align: center; padding: 40px; border-left: 3px solid white; border-right: 3px solid white;">
-<h2 style="font-size: 80px; margin: 0; color: #B22234;">2</h2>
-<h3 style="font-size: 48px; margin: 20px 0;">Get Rich Saving Lives</h3>
-<p style="font-size: 32px; line-height: 1.6;">
-VICTORY Bonds: 40% returns<br>
-<span style="font-size: 24px; color: #ecf0f1;">Better than Bitcoin.<br>Plus you don't look like<br>a sociopath at parties.</span>
+<div style="background-color: rgba(255,255,255,0.2); padding: 60px; border-radius: 20px; max-width: 1000px; margin: 0 auto;">
+<p style="font-size: 72px; color: white; font-weight: bold; margin-bottom: 40px;">
+You have 3 options:
+</p>
+<p style="font-size: 48px; color: #ecf0f1; line-height: 2;">
+1. Do nothing → Everyone dies<br>
+2. Sign the treaty → Some people live<br>
+3. Join us → We fix this forever
 </p>
 </div>
-:::
 
-::: {.column width="33%"}
-<div style="text-align: center; padding: 40px;">
-<h2 style="font-size: 80px; margin: 0; color: #B22234;">3</h2>
-<h3 style="font-size: 48px; margin: 20px 0;">Join the Heist</h3>
-<p style="font-size: 32px; line-height: 1.6;">
-We're stealing from death<br>
-<span style="font-size: 24px; color: #ecf0f1;">Need coders, organizers,<br>and people angry enough<br>to actually do something.</span>
+<p style="font-size: 80px; color: white; margin-top: 80px; font-weight: bold;">
+WarOnDisease.org
+</p>
+<p style="font-size: 44px; color: #ecf0f1; margin-top: 20px;">
+30 seconds to not be complicit in mass death
 </p>
 </div>
-:::
-::::
 
 ---
 

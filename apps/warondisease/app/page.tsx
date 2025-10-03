@@ -114,7 +114,6 @@ export default function Home() {
       <div className="mb-8">
         <p className="text-xl font-bold mb-3">We spend more on these than curing cancer:</p>
         <ul className="space-y-1 text-lg">
-          <li className="hover:bg-yellow-50 p-1 -m-1 transition-colors">• Halloween costumes ($12B vs $9B for cancer)</li>
           <li className="hover:bg-yellow-50 p-1 -m-1 transition-colors">• Pet costumes ($490M vs $400M for rare diseases)</li>
           <li className="hover:bg-yellow-50 p-1 -m-1 transition-colors">• Military marching bands ($437M)</li>
           <li className="hover:bg-yellow-50 p-1 -m-1 transition-colors">• Pentagon's coffee budget ($1.2B)</li>

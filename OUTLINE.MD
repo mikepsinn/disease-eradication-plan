@@ -50,7 +50,6 @@
   - Rare diseases: 95% have zero FDA-approved treatments
   - Hepatitis C cured (2014), but still 50+ years between major disease eradications
 - **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
-  - We spend more on Halloween costumes than curing cancer
   - The military's toilet seats cost more than malaria research
   - One fighter jet = entire rare disease research budget
   - Viagra got more funding than Alzheimer's (priorities!)
