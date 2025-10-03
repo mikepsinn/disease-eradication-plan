@@ -317,7 +317,7 @@ To make the content more engaging and easier to understand, we will use Python-g
 - **Diagrams:** For flowcharts, sequence diagrams, etc., please use Mermaid syntax. See the [Quarto Diagrams Guide](https://quarto.org/docs/authoring/diagrams.html) for implementation details.
 - **Python Charts:** For data visualizations, use Python libraries like Matplotlib or Plotly, executed within Quarto. For guidance, refer to the [Quarto Guide for Using Python](https://quarto.org/docs/computations/python.html).
 
-**For detailed chart creation guidelines, naming conventions, and technical standards, see [brain/charts/README.md](brain/charts/README.md).**
+**For detailed chart creation guidelines, naming conventions, and technical standards, see [DESIGN_GUIDE.md](DESIGN_GUIDE.md).**
 
 ### Where to Put Visuals: A Quick Guide
 
@@ -349,26 +349,6 @@ To keep our project organized, here’s where different types of visual assets s
 | A photo, icon, or non-chart image            | `assets/`            | `.png`, `.jpg`   |
 | A static chart from an external source       | `assets/charts/`     | `.png`, `.jpg`   |
 
-### Visual Style Guide: Clean, Minimalist, and Watermarked
-
-All code-generated visualizations in this project must adhere to a consistent, professional aesthetic. The goal is to create charts that are not only informative but also clean, modern, and instantly recognizable as part of the WarOnDisease.org brand.
-
-**Core Principles:**
-
-1.  **Minimalism:** Avoid "chart junk." This means no unnecessary gridlines, borders, shadows, or 3D effects. Every visual element should serve a clear purpose.
-2.  **Clarity:** Use elegant, readable typography with proper font sizes.
-3.  **Consistent Branding:** All charts must be watermarked with "WarOnDisease.org" in the lower-right corner.
-
-**Color Philosophy:** WWII propaganda-inspired bold red (problems/war/disease) and blue (solutions/hope/cures)
-
-**Typography:** Bold, impactful fonts (Cooper Black, Impact) for commanding presence
-
-**Critical Design Rules:**
-
-- **NEVER use logarithmic scales for disparity charts** - Linear scales show the TRUE absurdity. If your solution bars are barely visible next to problem bars, GOOD - that's the point. Logarithmic scales hide disparity and make everything look reasonable. Our budget is NOT reasonable.
-- **DO NOT use plt.tight_layout()** - It overrides margin settings and causes watermark overlap
-
-For complete color palettes, typography specifications, margin guidelines, watermark details, and implementation examples, see [brain/charts/README.md](brain/charts/README.md).
 
 ## Automation and CI
 

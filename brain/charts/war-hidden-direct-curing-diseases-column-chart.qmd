@@ -45,8 +45,8 @@ categories = ['War\'s Hidden\nCosts', 'War Direct\nSpending', 'Curing\nDiseases'
 # Create figure with more vertical space
 fig, ax = plt.subplots(figsize=(30, 16))
 
-# Use black for all bars
-bar_color = COLOR_DARK  # Black for all bars
+# Use darker black for all bars
+bar_color = '#000000'  # Pure black for all bars
 
 # Plot single solid bar for indirect war costs
 bar1 = ax.bar(0, war_indirect_total, color=bar_color, edgecolor=COLOR_WHITE,

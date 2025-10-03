@@ -7,6 +7,14 @@ tags: [style-guide, writing, tone, voice, contributing]
 
 # Writing Style Guide
 
+This guide defines the writing tone, voice, and style for all prose content in the project.
+
+**See also:**
+- [DESIGN_GUIDE.md](DESIGN_GUIDE.md) - Visual design standards for charts and diagrams
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Overall contribution workflow and standards
+
+---
+
 **The Tone: Dark Humor Meets Practical Hope**
 
 We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Douglas Adams and Kurt Vonnegut explaining economics to drunk people at a funeral.
