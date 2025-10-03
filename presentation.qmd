@@ -62,16 +62,9 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 
 ## The Problem: Direct Spending {background-color="#f8f8f8"}
 
-<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #1a1a1a;">You Think That's Bad?</h1>
-<p style="text-align: center; font-size: 52px; color: #c1272d; margin-bottom: 30px;">
-We spend **40X more** on war than curing diseases
-</p>
+<h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #1a1a1a;">Humanity spends **40X more** on war than curing diseases</h1>
 
 {{< include brain/charts/war-vs-curing-diseases-column-chart.qmd >}}
-
-<p style="text-align: center; font-size: 40px; color: #4a4a4a; margin-top: 30px; font-style: italic;">
-$2.7 trillion on war. $68 billion on curing diseases.
-</p>
 
 ---
 
@@ -79,14 +72,11 @@ $2.7 trillion on war. $68 billion on curing diseases.
 
 <h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #1a1a1a;">Here's What That $2.7T Actually Buys</h1>
 <p style="text-align: center; font-size: 52px; color: #8b0000; margin-bottom: 30px;">
-**$9.7 trillion** in total war costs annually
+**Another $7 trillion** bill for more bullshit like infrastructure destruction +  + trade disruption + death + disability + lost economic growth + refugees + environmental damage + psychological impact + lost human capital
 </p>
 
 {{< include brain/charts/war-hidden-direct-curing-diseases-column-chart.qmd >}}
 
-<p style="text-align: center; font-size: 40px; color: #4a4a4a; margin-top: 30px; font-style: italic;">
-Direct spending + infrastructure destruction + lives lost + trade disruption + long-term costs
-</p>
 
 ---
 
