@@ -35,11 +35,13 @@ This repository documents "The Complete Idiot's Guide to Ending War and Disease,
 - **The Solution:** Redirect just 1% of military spending to medical research through systems that are 80X more efficient than current approaches.
 - **The Mission:** Save millions of lives by making curing people more profitable than killing them
 - **Core Benefits to Emphasize:** The DIH delivers **80X more efficient medical research** (proven by Oxford RECOVERY trial: $500/patient vs $41,000), tests **1,000X more treatments** with the same budget, uses **economic analysis to minimize DALYs/maximize QALYs**, provides **complete data transparency** (no hidden failures), and enables **100% patient participation** (vs 15% in traditional trials). Focus on OUTCOMES (more cures, faster, cheaper), not mechanisms (patient control, DAOs).
+- **Healthcare Integration Model:** The DIH functions as a **clinical trial insurance provider** that works WITHIN existing healthcare infrastructure. Patients pay small copays ($20-50), doctors recommend trials like any treatment, pharmacies dispense trial meds like regular prescriptions. We're NOT "paying patients directly" - we're covering their costs like insurance. This maintains medical ethics while removing financial barriers.
 - **Anchor in Public Choice Theory:** All strategic arguments must be framed through the lens of public choice theory. Assume that all actors (politicians, corporate leaders, voters) act in their own rational self-interest. Avoid arguments based on abstract "national interests" and instead focus on the specific, concrete incentives that drive individual decision-makers.
 - **Be Specific About the Goal:** Avoid generic phrases like "saving the world." Our objective is specific and measurable: to redirect 1% of global military spending toward curing disease. Frame the mission in these concrete terms, as the first step toward the complete eradication of war and disease. If you need shorthand for the goal say "End War and Disease" instead of "Save the World" or such nonsense
 - **Identify the Incentive Gaps:** Frame the _problem_ not as a moral failure, but as a system with flawed incentives. The status quo is a rational response by individuals to a system that rewards rent-seeking and concentrates benefits for a few while diffusing costs to the many.
 - **Engineer a Better Deal:** Frame the _solution_ as an exercise in incentive engineering. The goal is to create a new system with a superior set of **concentrated benefits** for a broader coalition of key actors. Always answer the question: "What's in it for them, personally and professionally?"
-- **Co-Opt, Don't Fight:** Acknowledge that powerful interest groups exist. The strategy is not to destroy them but to make it more profitable for them to support our goals than to oppose them. This is "politics as exchange."
+- **Co-Opt, Control:** Acknowledge that powerful interest groups exist. The strategy is not to destroy them but to make it more profitable for them to support our goals than to oppose them. This is "politics as exchange."
+- **Use History Wisely:** Central planning has a documented history of causing unnecessary death (Soviet famines, Great Leap Forward, etc.). Use these examples as evidence that committee-based systems fail in complex domains - but present them as historical lessons, not ideological attacks. Walk readers logically from "committees failed at agriculture" to "committees are failing at medical research." Both Democrats and Republicans can agree that some problems need distributed solutions.
 - **Be Concise and Direct:** Use short sentences, simple words, and powerful language.
 - **Speak Plainly:** Avoid weak corporate euphemisms. Write like a human.
 - **Quantify Everything:** All claims must be backed by data and citations.
@@ -49,7 +51,60 @@ This repository documents "The Complete Idiot's Guide to Ending War and Disease,
 
 ## Writing Style Guide
 
-For all content, please adhere to the official [Writing Style Guide](./STYLE_GUIDE.md).
+**The Tone: Dark Humor Meets Practical Hope**
+
+We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Kurt Vonnegut explaining economics to drunk people at a funeral.
+
+**The 4 Core Checks:**
+
+1. **Clarity:** Can I say this to my mom and have her understand?
+2. **Credibility:** Would I stake my reputation on this claim?
+3. **Concision:** Can I cut words without losing meaning?
+4. **Directness:** Does this sound like Kurt Vonnegut wrote it?
+
+**Essential Elements to Include:**
+
+- **Dark humor about death and human stupidity** - We're all dying anyway, might as well laugh
+- **Cynical but loving observations about humanity** - We're idiots, but we're OUR idiots
+- **Simple, conversational language** - No jargon, write like you're explaining to a smart drunk friend
+- **Absurd but accurate analogies** - "The FDA is like a lifeguard who checks if the life preserver is safe while you drown"
+- **A sense of cosmic irony** - The universe is laughing at us, we might as well join in
+- **Practical solutions presented as obvious common sense** - "What if sick people could just... try treatments?"
+
+**Automatic Red Flags (Rewrite Immediately):**
+
+- **Corporate Buzzwords:** "synergy," "activation," "paradigm shift," "stakeholder," "utilize," "facilitate" "world-class," "revolutionary," "unprecedented", "cutting-edge," "state-of-the-art," "best-in-class"
+- **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
+- **Euphemisms for death:** Just say "die" or "death" - we're adults here
+- **Academic pomposity:** If you sound like a textbook, rewrite it
+
+**The Voice Test:** Would this make someone laugh AND think? If not, add more absurdity or more facts.
+
+**Additional Humor Guidelines:**
+
+- **Humor Should Enhance, Not Distract:** Jokes should make the argument more memorable, not weaker. If a joke doesn't add insight, cut it. Dark observations > cheap shots. Absurd but true > absurd but false.
+- **Emulate Style, Don't Quote:** Channel Vonnegut's dark humor and cosmic irony, but don't use his actual phrases ("so it goes", "listen:", etc.). Create original observations in that style instead of borrowing catchphrases.
+- **Don't Insult Unless It's Really Funny:** If you must make a joke about a group, it needs to be either: (a) So funny it's worth the risk, OR (b) About abstract "systems" not specific people/companies
+
+**Voice and Tone: Principled, Blunt, and Credible**
+
+**The Target and the Tone: Aim at the System, Speak to the "Us"**
+
+The style of this project must balance two core principles: genuine outrage and radical inclusivity.
+
+1.  **The Target of Outrage is the System, Not the People:** Our fight is with broken systems, not with the individuals trapped within them. The tone should be one of profound anger at the inefficiency, waste, and tragedy of our current institutions. It should not be a partisan or personal attack on any group. The goal is to critique a broken machine that *we* can all work together to fix.
+
+2.  **We're All In This Together:** The writing should always assume the reader is a potential partner and a co-owner of the project. It should use terms like "we," "us," "our" to create a sense of a massive, collective movement that includes all of humanity. The goal is to make the reader feel like they are being invited to join a powerful rebellion, not being lectured or sold to. The reader is part of the "us" from the first sentence.
+
+- **Assume self-interest, not idealism.** Ground every argument in Public Choice Theory.
+  - **Good:** "Politicians support this because we fund their campaigns and their opponents if they don't."
+  - **Bad:** "World leaders will embrace this plan because it's the right thing to do."
+- **Use blunt language, not euphemisms.** Call things by their real names, but maintain technical precision where it adds clarity.
+  - **Good:** "How to stay out of prison," "We're bribing everyone."
+  - **Bad:** "Legal compliance," "Incentive alignment."
+  - **Good and Precise:** "Transparent, automated, outcome-driven institutions" is better than "computer systems" because it specifies *what kind* of systems and *why* they matter.
+
+**One-Second Test:** If you hesitate before reading a sentence aloud to a skeptical audience, rewrite it.
 
 ## Development Environment Setup
 
