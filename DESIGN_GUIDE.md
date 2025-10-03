@@ -59,10 +59,11 @@ Name charts starting with the leftmost/biggest column: `[primary-topic]-[seconda
 ### Technical Checklist
 
 1. Import from [_chart_style.py](_chart_style.py): `setup_chart_style()`, color constants, helper functions
-2. Save to `brain/charts/` directory (stay next to source code)
-3. Use linear scales for disparity charts (never logarithmic)
-4. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
-5. Don't use `plt.tight_layout()` (overrides margins)
+2. Save generated images in `brain/charts/` directory (same location as `.qmd` source file)
+3. Name output file to match source: `chart-name.qmd` → `chart-name.png`
+4. Use linear scales for disparity charts (never logarithmic)
+5. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
+6. Don't use `plt.tight_layout()` (overrides margins)
 
 ## Official Color Palette (American Flag Colors)
 
