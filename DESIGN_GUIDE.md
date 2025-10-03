@@ -160,6 +160,13 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 - If text feels too small, it probably is - go bigger
 - Think propaganda posters, not academic papers
 
+**Text Width and Clipping:**
+- **Test your text fits** - Long text on bars gets clipped at edges
+- Use abbreviations when needed: "55M Deaths/Year" not "55 Million Deaths/Year"
+- Multi-line text is better than long single lines
+- If text is wider than the bar, make it smaller or split it up
+- Check the generated PNG - if text is cut off, shorten or reduce font size
+
 **What to Remove:**
 - Gridlines (unless absolutely necessary, then use sparingly)
 - Chart titles (let the context provide the title)
