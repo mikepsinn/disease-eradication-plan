@@ -15,13 +15,15 @@ sys.path.insert(0, str(project_root))
 
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+from matplotlib import patheffects
 from brain.charts._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_RED, COLOR_BLUE, COLOR_DARK, COLOR_MID, COLOR_WHITE, COLOR_BG
 )
 
-# Setup styling
-setup_chart_style(style='light', dpi=150)
+# Setup styling with higher DPI for crisper text
+setup_chart_style(style='light', dpi=200)
 
 # War costs breakdown (from cost-of-war.qmd)
 war_direct = 2720  # Direct military spending
@@ -32,70 +34,99 @@ war_lives_trade = 1616  # Human life losses + trade disruption ($1000B + $616B)
 war_longterm = 3538  # Lost growth, veterans, refugees, environment
 war_indirect_total = war_infrastructure + war_lives_trade + war_longterm
 
+# Total war cost
+total_war = war_indirect_total + war_direct
+
 # Cure research
 cure_research = 68  # Global government medical research spending
 
 categories = ['War\'s Hidden\nCosts', 'War Direct\nSpending', 'Curing\nDiseases']
 
-# Create figure
-fig, ax = plt.subplots(figsize=(28, 12))
+# Create figure with more vertical space
+fig, ax = plt.subplots(figsize=(30, 16))
+
+# Use black for all bars
+bar_color = COLOR_DARK  # Black for all bars
 
 # Plot single solid bar for indirect war costs
-ax.bar(0, war_indirect_total, color='#8b1a1f', edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
+bar1 = ax.bar(0, war_indirect_total, color=bar_color, edgecolor=COLOR_WHITE,
+               linewidth=4, alpha=0.95, width=0.75)
 
 # Add large total at top
-ax.text(0, war_indirect_total * 0.85, f'${war_indirect_total/1000:.1f}T', ha='center', va='center',
-        fontsize=56, weight='bold', color=COLOR_WHITE)
+ax.text(0, war_indirect_total * 0.9, f'${war_indirect_total/1000:.1f}T', ha='center', va='center',
+        fontsize=72, weight='bold', color=COLOR_WHITE)
 
-# Add breakdown text below
+# Add breakdown text with better formatting
 breakdown_text = (
-    'BLOWN UP BUILDINGS\n'
-    '+\n'
-    'RUINED BUSINESSES\n'
-    '+\n'
-    'KILLED & CRIPPLED PEOPLE\n'
-    '+\n'
-    'FLEEING FAMILIES\n'
-    '+\n'
-    'POISONED EARTH\n'
-    '+\n'
-    'BROKEN MINDS\n'
-    '+\n'
-    'STOLEN TOMORROWS'
+    '2.8 MILLION DEAD CIVILIANS\n'
+    '$1.9 TRILLION IN RUBBLE\n'
+    '$616 BILLION IN LOST TRADE\n'
+    '$1.5 TRILLION IN PTSD\n'
+    '11 MILLION REFUGEES\n'
+    '$500 BILLION IN POLLUTION\n'
+    '$1.5 TRILLION IN LOST GROWTH'
 )
-ax.text(0, war_indirect_total * 0.35, breakdown_text, ha='center', va='center',
-        fontsize=22, weight='bold', color=COLOR_WHITE, linespacing=1.2)
+ax.text(0, war_indirect_total * 0.4, breakdown_text, ha='center', va='center',
+        fontsize=24, weight='bold', color=COLOR_WHITE, linespacing=1.8,
+        fontfamily='monospace')
 
 # Plot direct military spending bar
-ax.bar(1, war_direct, color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
-ax.text(1, war_direct * 0.5, f'${war_direct/1000:.1f}T\nDirect', ha='center', va='center',
-        fontsize=44, weight='bold', color=COLOR_WHITE)
+bar2 = ax.bar(1, war_direct, color=direct_color, edgecolor=COLOR_WHITE,
+               linewidth=4, alpha=0.95, width=0.75)
+ax.text(1, war_direct * 0.5, f'${war_direct/1000:.1f}T', ha='center', va='center',
+        fontsize=60, weight='bold', color=COLOR_WHITE)
 
-# Plot cure research bar (tiny in comparison)
-ax.bar(2, cure_research, color=COLOR_BLUE, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
+# Plot cure research bar (make it more visible with outline)
+bar3 = ax.bar(2, cure_research, color=cure_color, edgecolor=COLOR_DARK,
+               linewidth=3, alpha=1.0, width=0.75)
 
-# Label for cure research
+# Label for cure research with arrow pointing to tiny bar
 max_value = war_indirect_total  # Scale labels based on tallest bar
-ax.text(2, cure_research + (max_value * 0.005), '$68B', ha='center', va='bottom',
-        fontsize=44, weight='bold', color=COLOR_DARK)
 
-# Styling
+# Add dramatic arrow pointing to the tiny cure bar
+arrow = FancyArrowPatch((2.3, max_value * 0.15), (2.05, cure_research + 200),
+                        arrowstyle='->', mutation_scale=40, linewidth=3,
+                        color=COLOR_DARK, alpha=0.8)
+ax.add_patch(arrow)
+
+# Add text box with the shocking comparison
+comparison_text = (
+    f'JUST $68B\n'
+    f'FOR CURING\n'
+    f'ALL DISEASES\n\n'
+    f'That\'s {(total_war/cure_research):.0f}X\n'
+    f'LESS than war!'
+)
+ax.text(2.4, max_value * 0.18, comparison_text, ha='left', va='bottom',
+        fontsize=28, weight='bold', color=COLOR_DARK,
+        bbox=dict(boxstyle="round,pad=0.5", facecolor='white', edgecolor=cure_color, linewidth=3))
+
+# Add percentage callout
+ax.text(2, cure_research * 2, '0.06%', ha='center', va='center',
+        fontsize=48, weight='bold', color=cure_color,
+        bbox=dict(boxstyle="round,pad=0.3", facecolor='white', edgecolor=cure_color, linewidth=3))
+
+# Styling with better labels
 ax.set_xticks([0, 1, 2])
-ax.set_xticklabels(categories)
-ax.set_ylabel('Annual Cost', fontsize=36, weight='bold', color=COLOR_DARK)
-ax.tick_params(axis='x', labelsize=32, colors=COLOR_DARK)
-ax.tick_params(axis='y', labelsize=28, colors=COLOR_MID)
-ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x/1000:.1f}T' if x >= 1000 else f'{x:.0f}B'))
+ax.set_xticklabels(['WAR\'S HIDDEN\nDAMAGE', 'WAR DIRECT\nSPENDING', 'CURING ALL\nDISEASES'],
+                   fontsize=36, weight='bold')
+
+ax.set_ylabel('Annual Global Spending (Trillions USD)', fontsize=38, weight='bold', color=COLOR_DARK)
+ax.tick_params(axis='x', labelsize=34, colors=COLOR_DARK, pad=10)
+ax.tick_params(axis='y', labelsize=32, colors=COLOR_MID)
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x/1000:.1f}T' if x >= 1000 else f'${x:.0f}B'))
 clean_spines(ax, ['top', 'right'])
-ax.grid(True, alpha=0.3, color=COLOR_MID, axis='y')
+ax.grid(True, alpha=0.2, color=COLOR_MID, axis='y', linestyle='--')
+
+# Set y-axis limits to show the full scale
+ax.set_ylim(0, war_indirect_total * 1.15)
 
 # Add branding
 add_watermark(fig)
 
-# Save in brain/charts directory
-import os
+# Save in brain/charts directory with higher quality
 output_dir = project_root / 'brain' / 'charts'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'war-hidden-direct-curing-diseases-column-chart.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+plt.savefig(output_dir / 'war-hidden-direct-curing-diseases-column-chart.png', dpi=200, bbox_inches='tight', facecolor=COLOR_BG)
 plt.show()
 ```
