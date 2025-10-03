@@ -1,6 +1,6 @@
 ```{python}
-#| label: military-indirect-direct-cancer-dementia-column-chart
-#| fig-cap: "War Indirect Costs vs Direct Spending vs Cancer vs Dementia Research"
+#| label: war-hidden-direct-curing-diseases-column-chart
+#| fig-cap: "War's Hidden Costs + Direct Spending vs Curing Diseases"
 
 import sys
 import os
@@ -32,11 +32,10 @@ war_lives_trade = 1616  # Human life losses + trade disruption ($1000B + $616B)
 war_longterm = 3538  # Lost growth, veterans, refugees, environment
 war_indirect_total = war_infrastructure + war_lives_trade + war_longterm
 
-# Cure values
-cure_cancer = 11
-cure_dementia = 5.5
+# Cure research
+cure_research = 68  # Global government medical research spending
 
-categories = ['War Indirect\nCosts', 'War Direct\nSpending', 'Curing\nCancer', 'Curing\nDementia']
+categories = ['War\'s Hidden\nCosts', 'War Direct\nSpending', 'Curing\nDiseases']
 
 # Create figure
 fig, ax = plt.subplots(figsize=(28, 12))
@@ -59,19 +58,16 @@ ax.bar(1, war_direct, color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, alpha
 ax.text(1, war_direct * 0.5, f'${war_direct/1000:.1f}T\nDirect', ha='center', va='center',
         fontsize=44, weight='bold', color=COLOR_WHITE)
 
-# Plot cure bars (tiny in comparison)
-ax.bar(2, cure_cancer, color=COLOR_BLUE, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
-ax.bar(3, cure_dementia, color=COLOR_BLUE, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
+# Plot cure research bar (tiny in comparison)
+ax.bar(2, cure_research, color=COLOR_BLUE, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
 
-# Labels for cures
+# Label for cure research
 max_value = war_indirect_total  # Scale labels based on tallest bar
-ax.text(2, cure_cancer + (max_value * 0.005), '$11B', ha='center', va='bottom',
-        fontsize=40, weight='bold', color=COLOR_DARK)
-ax.text(3, cure_dementia + (max_value * 0.005), '$6B', ha='center', va='bottom',
-        fontsize=40, weight='bold', color=COLOR_DARK)
+ax.text(2, cure_research + (max_value * 0.005), '$68B', ha='center', va='bottom',
+        fontsize=44, weight='bold', color=COLOR_DARK)
 
 # Styling
-ax.set_xticks([0, 1, 2, 3])
+ax.set_xticks([0, 1, 2])
 ax.set_xticklabels(categories)
 ax.set_ylabel('Annual Cost (Billions)', fontsize=36, weight='bold', color=COLOR_DARK)
 ax.tick_params(axis='x', labelsize=32, colors=COLOR_DARK)
@@ -83,7 +79,10 @@ ax.grid(True, alpha=0.3, color=COLOR_MID, axis='y')
 # Add branding
 add_watermark(fig)
 
-# Save in same directory as this .qmd file
-plt.savefig('military-indirect-direct-cancer-dementia-column-chart.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+# Save in brain/charts directory
+import os
+output_dir = project_root / 'brain' / 'charts'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'war-hidden-direct-curing-diseases-column-chart.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
 plt.show()
 ```

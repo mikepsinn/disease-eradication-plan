@@ -1,0 +1,103 @@
+```{python}
+#| label: disease-war-curing-costs-column-chart
+#| fig-cap: "Cost of Disease vs War Costs vs Curing Diseases"
+
+import sys
+import os
+from pathlib import Path
+
+# Add project root to path (find it relative to current working directory)
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+import matplotlib.pyplot as plt
+import numpy as np
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_RED, COLOR_BLUE, COLOR_DARK, COLOR_MID, COLOR_WHITE, COLOR_BG
+)
+
+# Setup styling
+setup_chart_style(style='light', dpi=150)
+
+# Disease burden (from cost-of-disease.qmd)
+disease_medical = 9900  # Direct medical costs
+disease_productivity = 5000  # Lost productivity
+disease_lives = 94200  # Lost human life (DALYs)
+disease_total = disease_medical + disease_productivity + disease_lives  # $109.1T
+
+# War costs breakdown
+war_direct = 2720  # Direct military spending
+war_infrastructure = 1875  # Infrastructure destruction
+war_lives_trade = 1616  # Human life losses + trade disruption
+war_longterm = 3538  # Lost growth, veterans, refugees, environment
+war_indirect_total = war_infrastructure + war_lives_trade + war_longterm
+
+# Cure research spending
+cure_total = 68  # Global government medical research spending
+
+categories = [
+    'Cost of\nDisease',
+    'War\'s Hidden\nCosts',
+    'War Direct\nSpending',
+    'Curing\nDiseases'
+]
+
+# Create figure
+fig, ax = plt.subplots(figsize=(28, 12))
+
+# Column 1: Total Disease Burden
+ax.bar(0, disease_total, color='#8b0000', edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
+disease_breakdown_text = (
+    f'${disease_total/1000:.0f}T\nTotal\n\n'
+    f'Medical\nCosts:\n${disease_medical/1000:.1f}T\n'
+    f'Lost\nProductivity:\n${disease_productivity/1000:.0f}T\n'
+    f'Lost Lives\n(DALYs):\n${disease_lives/1000:.0f}T'
+)
+ax.text(0, disease_total * 0.5, disease_breakdown_text, ha='center', va='center',
+        fontsize=28, weight='bold', color=COLOR_WHITE, linespacing=1.5)
+
+# Column 2: War Indirect Costs
+ax.bar(1, war_indirect_total, color='#c1272d', edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
+war_indirect_text = (
+    f'${war_indirect_total/1000:.1f}T\nTotal\n\n'
+    f'Infrastructure:\n${war_infrastructure/1000:.1f}T\n'
+    f'Lives + Trade:\n${war_lives_trade/1000:.1f}T\n'
+    f'Lost Growth:\n${war_longterm/1000:.1f}T'
+)
+ax.text(1, war_indirect_total * 0.5, war_indirect_text, ha='center', va='center',
+        fontsize=28, weight='bold', color=COLOR_WHITE, linespacing=1.5)
+
+# Column 3: War Direct Spending
+ax.bar(2, war_direct, color='#d63031', edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
+ax.text(2, war_direct * 0.5, f'${war_direct/1000:.1f}T\n\nDirect\nMilitary',
+        ha='center', va='center', fontsize=44, weight='bold', color=COLOR_WHITE)
+
+# Column 4: Cure Research Spending
+ax.bar(3, cure_total, color=COLOR_BLUE, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
+ax.text(3, cure_total + (disease_total * 0.005), f'${cure_total:.0f}B',
+        ha='center', va='bottom', fontsize=44, weight='bold', color=COLOR_DARK)
+
+# Styling
+ax.set_xticks([0, 1, 2, 3])
+ax.set_xticklabels(categories)
+ax.set_ylabel('Annual Cost (Billions)', fontsize=36, weight='bold', color=COLOR_DARK)
+ax.tick_params(axis='x', labelsize=32, colors=COLOR_DARK)
+ax.tick_params(axis='y', labelsize=28, colors=COLOR_MID)
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x/1000:.1f}T' if x >= 1000 else f'{x:.0f}B'))
+clean_spines(ax, ['top', 'right'])
+ax.grid(True, alpha=0.3, color=COLOR_MID, axis='y')
+
+# Add branding
+add_watermark(fig)
+
+# Save in brain/charts directory
+import os
+output_dir = project_root / 'brain' / 'charts'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'disease-war-curing-costs-column-chart.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+plt.show()
+```

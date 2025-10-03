@@ -64,13 +64,13 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 
 <h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #1a1a1a;">You Think That's Bad?</h1>
 <p style="text-align: center; font-size: 52px; color: #c1272d; margin-bottom: 30px;">
-We spend **247X more** on war than curing cancer
+We spend **40X more** on war than curing diseases
 </p>
 
-{{< include brain/charts/military-cancer-dementia-spending-column-chart.qmd >}}
+{{< include brain/charts/war-vs-curing-diseases-column-chart.qmd >}}
 
 <p style="text-align: center; font-size: 40px; color: #4a4a4a; margin-top: 30px; font-style: italic;">
-$2.7 trillion on weapons. $11 billion on curing cancer. $6 billion on curing dementia.
+$2.7 trillion on war. $68 billion on curing diseases.
 </p>
 
 ---
@@ -82,7 +82,7 @@ $2.7 trillion on weapons. $11 billion on curing cancer. $6 billion on curing dem
 **$9.7 trillion** in total war costs annually
 </p>
 
-{{< include brain/charts/military-indirect-direct-cancer-dementia-column-chart.qmd >}}
+{{< include brain/charts/war-hidden-direct-curing-diseases-column-chart.qmd >}}
 
 <p style="text-align: center; font-size: 40px; color: #4a4a4a; margin-top: 30px; font-style: italic;">
 Direct spending + infrastructure destruction + lives lost + trade disruption + long-term costs
@@ -97,10 +97,10 @@ Direct spending + infrastructure destruction + lives lost + trade disruption + l
 **$109 trillion** annual disease burden
 </p>
 
-{{< include brain/charts/war-disease-cancer-dementia-costs-mixed-column-chart.qmd >}}
+{{< include brain/charts/disease-war-curing-costs-column-chart.qmd >}}
 
 <p style="text-align: center; font-size: 44px; color: #c1272d; margin-top: 30px;">
-Disease costs **11X more** than war. We spend **$17B** trying to cure it.
+Disease costs **11X more** than war. We spend **$68B** trying to cure it.
 </p>
 
 ---

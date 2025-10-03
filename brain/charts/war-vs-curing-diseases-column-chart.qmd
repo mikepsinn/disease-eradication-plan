@@ -1,6 +1,6 @@
 ```{python}
-#| label: military-cancer-dementia-spending-column-chart
-#| fig-cap: "Direct Spending: Military vs Cancer vs Dementia Research"
+#| label: war-vs-curing-diseases-column-chart
+#| fig-cap: "War vs Curing Diseases: Direct Spending Comparison"
 
 import sys
 import os
@@ -27,19 +27,17 @@ setup_chart_style(style='light', dpi=150)
 # Data - values in billions (all global figures for consistency)
 categories = [
     'War &\nMilitary',
-    'Curing\nCancer',
-    'Curing\nDementia'
+    'Curing\nDiseases'
 ]
 
 # Values in billions - LINEAR scale to show TRUE disparity
 values = [
     2720,    # Global military spending: $2.72T = $2,720B (SIPRI 2024)
-    11,      # Global cancer research (gov + philanthropy): ~$10-12B (Lancet 2023)
-    5.5      # Global dementia research (gov): ~$5-6B (US $3.8B + other G7/EU, 2024)
+    68       # Global government medical research: $67.5B (global-government-medical-research-spending.md)
 ]
 
 # Colors - red for war, blue for cures
-colors = [COLOR_RED, COLOR_BLUE, COLOR_BLUE]
+colors = [COLOR_RED, COLOR_BLUE]
 
 # Create chart with LINEAR scale - show the REAL disparity
 fig, ax = plt.subplots(figsize=(24, 12))
@@ -50,8 +48,7 @@ bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_WHITE, linewidth
 # Format labels - put inside tall bars, outside short bars
 labels = [
     '$2.7T',  # War & Military
-    '$11B',   # Cancer
-    '$6B'     # Dementia
+    '$68B'    # Cure Research
 ]
 
 for bar, label, value in zip(bars, labels, values):
@@ -66,7 +63,7 @@ for bar, label, value in zip(bars, labels, values):
         y_pos = height + (max(values) * 0.02)  # Just above bar
         va = 'bottom'
         color = COLOR_DARK
-        size = 40
+        size = 44
     ax.text(bar.get_x() + bar.get_width()/2., y_pos,
             label, ha='center', va=va, fontsize=size, weight='bold', color=color)
 
@@ -84,7 +81,10 @@ ax.grid(True, alpha=0.3, color=COLOR_MID, axis='y')
 # Add branding
 add_watermark(fig)
 
-# Save in same directory as this .qmd file
-plt.savefig('military-cancer-dementia-spending-column-chart.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+# Save in brain/charts directory
+import os
+output_dir = project_root / 'brain' / 'charts'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'war-vs-curing-diseases-column-chart.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
 plt.show()
 ```
