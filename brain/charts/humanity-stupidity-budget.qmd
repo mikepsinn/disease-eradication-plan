@@ -15,28 +15,22 @@ from brain.charts._chart_style import (
 # Setup styling
 setup_chart_style(style='light', dpi=150)
 
-# Data - values in billions
+# Data - values in billions (all global figures for consistency)
 categories = [
-    #'Total\nCost of\nDisease',
-    #'Total\nCost of\nWar &\nConflict',
-    'Direct Military\nSpending',
-    #'Trying\nto Find\nCures',
-    'Cancer\nResearch',
-    'Alzheimer\'s\nResearch'
+    'War &\nMilitary',
+    'Curing\nCancer',
+    'Curing\nDementia'
 ]
 
 # Values in billions - LINEAR scale to show TRUE disparity
 values = [
-    #109100,  # Disease burden: $109.1T
-    #9700,    # War & conflict total cost: $9.7T
-    2720,    # Direct military spending: $2.72T
-    #68,      # Finding cures: $68B
-    6.9,     # Cancer research: $6.9B
-    3.7      # Alzheimer's research: $3.7B
+    2720,    # Global military spending: $2.72T = $2,720B (SIPRI 2024)
+    11,      # Global cancer research (gov + philanthropy): ~$10-12B (Lancet 2023, avg $6.4B/yr 2016-23, trending up)
+    5.5      # Global dementia research (gov): ~$5-6B (US $3.8B + other G7/EU ~$1.5-2B, 2024)
 ]
 
-# Colors - red for problems, blue for solutions
-colors = [COLOR_RED, COLOR_RED, COLOR_RED, COLOR_BLUE, COLOR_BLUE, COLOR_BLUE]
+# Colors - red for war, blue for cures
+colors = [COLOR_RED, COLOR_BLUE, COLOR_BLUE]
 
 # Create chart with LINEAR scale - show the REAL disparity
 fig, ax = plt.subplots(figsize=(24, 12))
@@ -46,13 +40,10 @@ bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_WHITE, linewidth
 
 # Format labels - put inside tall bars, outside short bars
 labels = [
-#    '$109.1T', 
-#    '$9.7T', 
-    '$2.7T', 
-#    '$68B', 
-    '$7B', 
-    '$4B'
-    ]
+    '$2.7T',  # War & Military
+    '$11B',   # Cancer
+    '$6B'     # Dementia
+]
 for bar, label, value in zip(bars, labels, values):
     height = bar.get_height()
     # Put label inside for tall bars (> 1000B), outside for short bars

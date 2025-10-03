@@ -1,4 +1,4 @@
-# The Complete Idiot's Guide to Ending War and Disease: A TED Talk
+# The Complete Idiot's Guide to Ending War and Disease
 
 ## SLIDE: Title Slide
 **Visual**: Speaker standing next to a giant toilet made of money, flames coming out the top
