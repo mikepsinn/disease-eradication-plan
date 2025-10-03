@@ -36,7 +36,11 @@
       "Bash(done)",
       "Bash(npm run build:pptx:*)",
       "Bash(do sed -i '/^\\*\\*Key Insight/d' \"$f\")",
-      "Bash(npm run build:presentation:*)"
+      "Bash(npm run build:presentation:*)",
+      "Bash(where code)",
+      "Bash(echo \"warondisease\ny\nn\ny\ny\nn\ny\n\")",
+      "Bash(npx create-next-app:*)",
+      "Bash(npm run dev:*)"
     ],
     "deny": [],
     "ask": []
