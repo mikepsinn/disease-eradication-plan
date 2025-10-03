@@ -1,0 +1,90 @@
+```{python}
+#| label: military-cancer-dementia-spending-column-chart
+#| fig-cap: "Direct Spending: Military vs Cancer vs Dementia Research"
+
+import sys
+import os
+from pathlib import Path
+
+# Add project root to path (find it relative to this file's location)
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    # If we're in a subdirectory, go up until we find the project root
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+import matplotlib.pyplot as plt
+import numpy as np
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_RED, COLOR_BLUE, COLOR_DARK, COLOR_MID, COLOR_WHITE, COLOR_BG
+)
+
+# Setup styling
+setup_chart_style(style='light', dpi=150)
+
+# Data - values in billions (all global figures for consistency)
+categories = [
+    'War &\nMilitary',
+    'Curing\nCancer',
+    'Curing\nDementia'
+]
+
+# Values in billions - LINEAR scale to show TRUE disparity
+values = [
+    2720,    # Global military spending: $2.72T = $2,720B (SIPRI 2024)
+    11,      # Global cancer research (gov + philanthropy): ~$10-12B (Lancet 2023)
+    5.5      # Global dementia research (gov): ~$5-6B (US $3.8B + other G7/EU, 2024)
+]
+
+# Colors - red for war, blue for cures
+colors = [COLOR_RED, COLOR_BLUE, COLOR_BLUE]
+
+# Create chart with LINEAR scale - show the REAL disparity
+fig, ax = plt.subplots(figsize=(24, 12))
+
+# LINEAR scale - let people see how absurdly tiny the solution bars are
+bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9)
+
+# Format labels - put inside tall bars, outside short bars
+labels = [
+    '$2.7T',  # War & Military
+    '$11B',   # Cancer
+    '$6B'     # Dementia
+]
+
+for bar, label, value in zip(bars, labels, values):
+    height = bar.get_height()
+    # Put label inside for tall bars (> 1000B), outside for short bars
+    if value > 1000:
+        y_pos = height * 0.95  # Near top of bar
+        va = 'top'
+        color = COLOR_WHITE
+        size = 48
+    else:
+        y_pos = height + (max(values) * 0.02)  # Just above bar
+        va = 'bottom'
+        color = COLOR_DARK
+        size = 40
+    ax.text(bar.get_x() + bar.get_width()/2., y_pos,
+            label, ha='center', va=va, fontsize=size, weight='bold', color=color)
+
+# Styling
+ax.set_ylabel('Annual Spending (Billions)', fontsize=36, weight='bold', color=COLOR_DARK)
+ax.tick_params(axis='x', labelsize=32, colors=COLOR_DARK)
+ax.tick_params(axis='y', labelsize=28, colors=COLOR_MID)
+
+# Format y-axis to show scale clearly
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x/1000:.0f}T' if x >= 1000 else f'{x:.0f}B'))
+
+clean_spines(ax, ['top', 'right'])
+ax.grid(True, alpha=0.3, color=COLOR_MID, axis='y')
+
+# Add branding
+add_watermark(fig)
+
+# Save in same directory as this .qmd file
+plt.savefig('military-cancer-dementia-spending-column-chart.png', dpi=150, bbox_inches='tight', facecolor=COLOR_BG)
+plt.show()
+```
