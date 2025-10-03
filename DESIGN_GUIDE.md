@@ -8,6 +8,23 @@ This guide defines the visual design standards for all charts, diagrams, and vis
 - **Content Guidelines:** See [CONTRIBUTING.md](CONTRIBUTING.md) for overall contribution workflow
 - **Technical Implementation:** See [brain/charts/_chart_style.py](brain/charts/_chart_style.py) for all code constants and functions
 
+## Design Philosophy
+
+**Minimalism Above All**
+
+Charts should be as simple and powerful as possible. Every element must earn its place.
+
+- Strip away everything that doesn't directly convey data
+- Use color only when it adds meaning (problem vs solution)
+- Default to black bars on white backgrounds
+- Make numbers impossible to miss
+- Remove decorative elements, gradients, shadows, 3D effects
+
+**Visual Inspiration:**
+
+- **Charts:** Edward Tufte's minimalism - maximize data-ink ratio
+- **Images/Graphics:** 1950s atomic age propaganda posters - bold, stark, urgent
+
 ## Chart Library
 
 All reusable charts are located in [brain/charts/](brain/charts/). See that directory for the complete list of available visualizations.
@@ -47,45 +64,46 @@ Name charts starting with the leftmost/biggest column: `[primary-topic]-[seconda
 4. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
 5. Don't use `plt.tight_layout()` (overrides margins)
 
-## Official Color Palette (WWII Propaganda Style)
+## Official Color Palette (American Flag Colors)
 
-Bold red and blue inspired by WWII propaganda posters:
+Simple, powerful colors inspired by 1950s atomic age propaganda:
 
 ```python
-# Primary Colors
-COLOR_DARK = '#1a1a1a'       # Almost black - use for primary text and emphasis
-COLOR_MID = '#4a4a4a'        # Charcoal - use for secondary elements
-COLOR_LIGHT = '#e0e0e0'      # Light gray - use for backgrounds and subtle elements
-COLOR_RED = '#c1272d'        # Bold propaganda red - danger, urgency, problems (war, disease, waste)
-COLOR_BLUE = '#0051a5'       # Bold propaganda blue - hope, solutions, action (treaty, cures, bonds)
-COLOR_BG = '#f8f8f8'         # Off-white - use for chart backgrounds
-COLOR_WHITE = '#ffffff'      # Pure white - use for high contrast elements
+# The Four Colors - That's It
+COLOR_BLACK = '#000000'      # Pure black - bars, primary text, emphasis
+COLOR_RED = '#B22234'        # Flag red - danger, war, disease, problems
+COLOR_WHITE = '#FFFFFF'      # Pure white - backgrounds, text on dark elements
+COLOR_BLUE = '#3C3B6E'       # Flag blue - hope, solutions, cures, action
 ```
 
 **When to Use Each Color:**
 
-- **COLOR_RED:** Bad things - war deaths, disease deaths, wasted spending, problems
-- **COLOR_BLUE:** Good things - treaty solution, cures, VICTORY bonds, hope
-- **COLOR_DARK:** Primary text, headlines, key numbers
-- **COLOR_MID:** Secondary text, axis labels, annotations
-- **COLOR_LIGHT:** Subtle gridlines, dividers, less important elements
-- **COLOR_BG:** Chart backgrounds, slide backgrounds
-- **COLOR_WHITE:** Text on dark backgrounds, high contrast needs
+- **BLACK:** All chart bars (default), primary text, headlines, axis labels
+- **RED:** Problems/threats (war deaths, disease, waste) - use sparingly for emphasis
+- **WHITE:** Chart backgrounds, text overlaid on colored bars
+- **BLUE:** Solutions (treaty, cures, VICTORY bonds) - use sparingly for emphasis
+
+**Design Philosophy:**
+
+- **Default to black** - Most charts should use solid black bars
+- **Color = meaning** - Only use red/blue when the color adds semantic meaning (problem vs solution)
+- **Maximum contrast** - Black on white, white on black, no grays
+- **Less is more** - If you're not sure whether to add color, don't
 
 ## Typography Guidelines
 
-For bold, impactful messaging inspired by WWII propaganda posters:
+For bold, impactful messaging inspired by atomic age propaganda posters:
 
 **Recommended Font Hierarchy:**
 
-- **Display/Headlines:** Cooper Black (bold, rounded, commanding presence)
-- **Body Text:** Impact or Arial Black (strong, authoritative)
-- **Fallbacks:** Helvetica Bold, Arial Bold
+- **Display/Headlines:** Impact, Arial Black (strong, commanding)
+- **Body Text:** Helvetica, Arial (clean, readable)
+- **Fallbacks:** System sans-serif fonts
 
 **Python Implementation:**
 ```python
 plt.rcParams['font.family'] = 'sans-serif'
-plt.rcParams['font.sans-serif'] = ['Cooper Black', 'Impact', 'Arial Black', 'Helvetica']
+plt.rcParams['font.sans-serif'] = ['Impact', 'Arial Black', 'Helvetica', 'Arial']
 plt.rcParams['font.size'] = 12
 plt.rcParams['font.weight'] = 'bold'
 ```
@@ -113,9 +131,46 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 ## Watermark Specifications
 
 - **Font size:** 11pt (bold)
-- **Color:** Black (`COLOR_DARK = #1a1a1a`)
+- **Color:** Black (`COLOR_BLACK = #000000`)
 - **Position:** Bottom-right with 3% padding from edges
 - **Opacity:** 100% (fully opaque)
+
+## Minimalist Chart Design Rules
+
+**What to Include:**
+- Data bars (solid black or red/blue when meaning is clear)
+- Essential axis labels (round numbers only, no decimals)
+- Key data values (large, bold, impossible to miss)
+- Watermark (required)
+
+**What to Remove:**
+- Gridlines (unless absolutely necessary, then use sparingly)
+- Chart titles (let the context provide the title)
+- Legends (use direct labels instead)
+- Backgrounds/fills (pure white only)
+- Borders, shadows, gradients, 3D effects
+- Decorative elements
+- Extra annotations, callouts, arrows (use only if critical)
+
+**The Tufte Test:**
+Ask: "If I remove this element, does the chart lose essential information?" If no, remove it.
+
+## 1950s Atomic Age Aesthetic (for Images/Graphics)
+
+When creating or sourcing images:
+
+- **Bold, stark compositions** - High contrast, dramatic
+- **Limited color palette** - Red, white, blue, black only
+- **Strong typography** - Impact fonts, all caps for headlines
+- **Urgent messaging** - "Act Now", "The Future Is At Stake"
+- **Retro-futurism** - Atoms, rockets, bold geometric shapes
+- **Propaganda poster style** - Direct, commanding, no subtlety
+
+**Think:**
+- "Duck and Cover" civil defense posters
+- 1950s "Atoms for Peace" campaign
+- WWII "We Can Do It" propaganda
+- Cold War public information graphics
 
 ## Implementation Example
 
@@ -127,7 +182,7 @@ import numpy as np
 
 # --- 1. Import centralized style ---
 from brain.charts._chart_style import setup_chart_style, add_watermark, clean_spines
-from brain.charts._chart_style import COLOR_DARK, COLOR_MID, COLOR_BLUE, COLOR_LIGHT
+from brain.charts._chart_style import COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
 
 setup_chart_style()  # Applies consistent styling with automatic margins
 
@@ -136,20 +191,17 @@ x = np.linspace(0, 10, 100)
 y = np.sin(x)
 
 fig, ax = plt.subplots(figsize=(8, 5))
-ax.plot(x, y, color=COLOR_BLUE, linewidth=2.5)
+ax.plot(x, y, color=COLOR_BLACK, linewidth=2.5)
 
-# Add titles and labels
-ax.set_title('Example Chart', fontsize=16, weight='bold', color=COLOR_DARK)
-ax.set_xlabel('X-Axis Label', fontsize=12, color=COLOR_MID)
-ax.set_ylabel('Y-Axis Label', fontsize=12, color=COLOR_MID)
+# Add labels (no title needed)
+ax.set_xlabel('X-Axis Label', fontsize=12, color=COLOR_BLACK)
+ax.set_ylabel('Y-Axis Label', fontsize=12, color=COLOR_BLACK)
 
 # --- 3. Add the Watermark ---
 add_watermark(fig)  # Black, bold, 11pt, positioned with padding
 
 # Remove unnecessary spines for a cleaner look
 clean_spines(ax)  # Removes top and right spines by default
-ax.spines['left'].set_color(COLOR_LIGHT)
-ax.spines['bottom'].set_color(COLOR_LIGHT)
 
 # DON'T use plt.tight_layout() - overrides margins!
 plt.show()
