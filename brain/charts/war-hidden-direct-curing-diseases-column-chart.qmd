@@ -51,8 +51,10 @@ bar1 = ax.bar(0, war_indirect_total, color=COLOR_RED, edgecolor=COLOR_WHITE,
                linewidth=4, width=0.75)
 
 # Add large total at top - no decimal
-ax.text(0, war_indirect_total * 0.9, f'${war_indirect_total/1000:.0f}T', ha='center', va='center',
+ax.text(0, war_indirect_total * 0.92, f'${war_indirect_total/1000:.0f}T', ha='center', va='center',
         fontsize=72, weight='bold', color=COLOR_WHITE)
+ax.text(0, war_indirect_total * 0.82, 'Indirect War Costs', ha='center', va='center',
+        fontsize=32, weight='bold', color=COLOR_WHITE)
 
 # Add breakdown text with better formatting - rounded numbers
 breakdown_text = (
@@ -71,24 +73,25 @@ ax.text(0, war_indirect_total * 0.4, breakdown_text, ha='center', va='center',
 # Plot direct military spending bar (RED - problem)
 bar2 = ax.bar(1, war_direct, color=COLOR_RED, edgecolor=COLOR_WHITE,
                linewidth=4, width=0.75)
-ax.text(1, war_direct * 0.5, f'${war_direct/1000:.0f}T', ha='center', va='center',
-        fontsize=60, weight='bold', color=COLOR_WHITE)
+ax.text(1, war_direct * 0.6, f'${war_direct/1000:.1f}T', ha='center', va='center',
+        fontsize=72, weight='bold', color=COLOR_WHITE)
+ax.text(1, war_direct * 0.4, 'Direct Military', ha='center', va='center',
+        fontsize=32, weight='bold', color=COLOR_WHITE)
 
 # Plot cure research bar (BLUE - solution)
 bar3 = ax.bar(2, cure_research, color=COLOR_BLUE, edgecolor=COLOR_WHITE,
                linewidth=4, width=0.75)
 
 # Label for cure research
-ax.text(2, cure_research + (war_indirect_total * 0.02), '$68B', ha='center', va='bottom',
-        fontsize=44, weight='bold', color=COLOR_BLACK)
+ax.text(2, cure_research + (war_indirect_total * 0.02), '$68B\nCuring Diseases', ha='center', va='bottom',
+        fontsize=44, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 
 
-# Styling with better labels - black text
-ax.set_xticks([0, 1, 2])
-ax.set_xticklabels(['WAR\'S HIDDEN\nDAMAGE', 'WAR DIRECT\nSPENDING', 'CURING ALL\nDISEASES'],
-                   fontsize=36, weight='bold')
+# Remove x-axis labels (labels are on bars instead)
+ax.set_xticks([])
+ax.set_xticklabels([])
 
-ax.set_ylabel('Annual Global Spending (Trillions USD)', fontsize=38, weight='bold', color=COLOR_BLACK)
+# No y-axis label - the scale and bar labels provide all needed info
 ax.tick_params(axis='x', labelsize=34, colors=COLOR_BLACK, pad=10)
 ax.tick_params(axis='y', labelsize=32, colors=COLOR_BLACK)
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x/1000:.0f}T' if x >= 1000 else f'${x:.0f}B'))

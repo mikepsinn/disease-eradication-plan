@@ -140,13 +140,22 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 
 **What to Include:**
 - Data bars (solid black or red/blue when meaning is clear)
-- Essential axis labels (prefer round numbers, use decimals when precision matters)
+- Y-axis with scale (shows magnitude, keep axis but remove axis label/title)
 - Key data values (large, bold, impossible to miss)
 - Watermark (required)
+
+**Label Placement (Tufte-approved):**
+- Put labels directly ON the data (on bars, lines, points)
+- Format: `"$7T\nIndirect War Costs"` (value + description with line break)
+- Remove redundant x-axis labels when data is self-labeled
+- Remove y-axis label/title (axis scale is enough, title is redundant)
+- This eliminates matching numbers to separate axis labels
 
 **What to Remove:**
 - Gridlines (unless absolutely necessary, then use sparingly)
 - Chart titles (let the context provide the title)
+- X-axis labels (when labels are on the bars themselves)
+- Y-axis label/title (keep the axis scale, remove the title text)
 - Legends (use direct labels instead)
 - Backgrounds/fills (pure white only)
 - Borders, shadows, gradients, 3D effects

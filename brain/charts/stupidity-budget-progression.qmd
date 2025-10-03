@@ -97,7 +97,7 @@ for i, value in enumerate(war_stack):
     # Add labels for each segment - no decimals
     label_y = bottom + value/2
     if i == 0:
-        label_text = f'Direct: ${war_direct/1000:.0f}T'
+        label_text = f'Direct: ${war_direct/1000:.1f}T'
     elif i == 1:
         label_text = f'Infrastructure: ${war_infrastructure/1000:.0f}T'
     elif i == 2:

@@ -73,7 +73,7 @@ ax.text(1, war_indirect_total * 0.5, war_indirect_text, ha='center', va='center'
 
 # Column 3: War Direct Spending (RED - problem)
 ax.bar(2, war_direct, color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
-ax.text(2, war_direct * 0.5, f'${war_direct/1000:.0f}T\n\nDirect\nMilitary',
+ax.text(2, war_direct * 0.5, f'${war_direct/1000:.1f}T\n\nDirect\nMilitary',
         ha='center', va='center', fontsize=44, weight='bold', color=COLOR_WHITE)
 
 # Column 4: Cure Research Spending (BLUE - solution)
