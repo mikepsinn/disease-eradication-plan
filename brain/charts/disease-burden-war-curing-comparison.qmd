@@ -1,5 +1,5 @@
 ```{python}
-#| label: budget-waste
+#| label: disease-burden-war-curing-comparison
 #| fig-cap: "The Stupidest Budget on Earth"
 
 import sys
@@ -23,7 +23,7 @@ from brain.charts._chart_style import (
 setup_chart_style(style='light', dpi=150)
 
 # Data
-categories = ['Disease\nTreatment', 'War &\nConflict', 'Finding\nCures']
+categories = ['Disease\nBurden', 'War &\nConflict', 'Finding\nCures']
 amounts = [109.1, 9.7, 0.068]
 colors_budget = [COLOR_RED, COLOR_RED, COLOR_BLUE]  # Problems are red, solution is blue
 
@@ -32,19 +32,32 @@ fig, ax = plt.subplots(figsize=(18, 10))
 bars = ax.bar(categories, amounts, color=colors_budget, width=0.6,
               edgecolor=COLOR_WHITE, linewidth=2)
 
-# Add value labels on bars
-for bar, amount in zip(bars, amounts):
-    height = bar.get_height()
-    label = f'${amount}T' if amount >= 1 else f'${int(amount*1000)}B'
-    ax.text(bar.get_x() + bar.get_width()/2., height,
-            label, ha='center', va='bottom', fontsize=48, weight='bold', color=COLOR_BLACK)
+# Add labels directly on/above bars with descriptions
+labels_with_desc = [
+    ('$109T', 'Disease\nBurden'),
+    ('$10T', 'War &\nConflict'),
+    ('$68B', 'Finding\nCures')
+]
 
-ax.set_ylabel('Trillions per Year', fontsize=36, weight='bold', color=COLOR_BLACK)
-ax.tick_params(axis='both', labelsize=32, colors=COLOR_BLACK)
+for i, (bar, (amount_label, desc)) in enumerate(zip(bars, labels_with_desc)):
+    height = bar.get_height()
+    if amounts[i] >= 50:  # Only very large bars (>$50T) get label inside
+        ax.text(bar.get_x() + bar.get_width()/2., height * 0.5, f'{amount_label}\n{desc}',
+                ha='center', va='center', fontsize=60, weight='bold', color=COLOR_WHITE, linespacing=1.2)
+    else:  # Smaller bars - label above in black
+        ax.text(bar.get_x() + bar.get_width()/2., height + 3, f'{amount_label}\n{desc}',
+                ha='center', va='bottom', fontsize=48, weight='bold', color=COLOR_BLACK, linespacing=1.2)
+
+# Remove all axis labels and ticks (all columns are labeled with amounts)
+ax.set_xticks([])
+ax.set_xticklabels([])
+ax.set_yticks([])
+ax.set_yticklabels([])
+
 ax.set_ylim(0, 120)
-clean_spines(ax)
-# Remove gridlines for cleaner look
-# ax.grid(axis='y', alpha=0.3, linestyle='--', color=COLOR_LIGHT)
+
+# Remove all spines for ultra-clean look
+clean_spines(ax, ['top', 'right', 'left', 'bottom'])
 
 # Add branding
 add_watermark(fig)
@@ -54,7 +67,7 @@ add_watermark(fig)
 # Save in brain/charts directory
 output_dir = project_root / 'brain' / 'charts'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'budget-waste.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_dir / 'disease-burden-war-curing-comparison.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
 
