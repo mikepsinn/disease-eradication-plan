@@ -206,6 +206,32 @@ graph TD
 It's capitalism, but pointed at not dying.
 :::
 
+## The Math That Matters
+
+::: {.card}
+### Why This Will Actually Work
+
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff', 'primaryTextColor':'#000', 'primaryBorderColor':'#000', 'lineColor':'#000'}}}%%
+graph LR
+    A["Current: $1 lobbying → $1,813 in contracts<br/>(Military-Industrial Complex)"] 
+    B["New: $1 lobbying → $27 billion redirected<br/>(Medical-Industrial Complex)"]
+    C["Result: 82X efficiency → Millions of lives saved"]
+    
+    A --> B
+    B --> C
+    
+    style A fill:#f5f5f5,stroke:#000,stroke-width:3px
+    style B fill:#FFFF00,stroke:#000,stroke-width:3px
+    style C fill:#fff,stroke:#000,stroke-width:3px
+```
+
+- Current cost to develop a drug: $2.2 billion
+- New cost with competition: ~$27 million
+- Lives saved: Millions annually
+- Jobs lost: Zero (same companies, different products)
+:::
+
 ## Two Futures Are Racing Toward Us
 
 :::: {.columns}
