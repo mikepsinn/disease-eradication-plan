@@ -36,44 +36,31 @@ disease_total = disease_medical + disease_productivity + disease_lives  # $109.1
 cure_cancer = 11
 cure_dementia = 5.5
 
-categories = ['War\n(Total)', 'Disease\n(Total)', 'Curing\nCancer', 'Curing\nDementia']
+categories = ['Disease\n(Total)', 'War\n(Total)', 'Curing\nCancer', 'Curing\nDementia']
 
 # Create figure
 fig, ax = plt.subplots(figsize=(28, 12))
 
+# Plot disease total as single solid bar with breakdown text inside
+ax.bar(0, disease_total, color='#8b0000', edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
+
+# Add breakdown text inside the disease column
+disease_breakdown_text = (
+    f'${disease_total/1000:.0f}T\nTotal\n\n'
+    f'Medical\nCosts:\n${disease_medical/1000:.1f}T\n'
+    f'Lost\nProductivity:\n${disease_productivity/1000:.0f}T\n'
+    f'Lost Lives\n(DALYs):\n${disease_lives/1000:.0f}T'
+)
+ax.text(0, disease_total * 0.5, disease_breakdown_text, ha='center', va='center',
+        fontsize=28, weight='bold', color=COLOR_WHITE, linespacing=1.5)
+
 # Plot war total (single bar, red)
-ax.bar(0, war_total, color='#c1272d', edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
-ax.text(0, war_total * 0.5, f'$9.7T', ha='center', va='center',
+ax.bar(1, war_total, color='#c1272d', edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
+ax.text(1, war_total * 0.5, f'$9.7T', ha='center', va='center',
         fontsize=48, weight='bold', color=COLOR_WHITE)
 
-# Colors for disease stack (shades of dark red/burgundy)
-disease_colors = ['#8b0000', '#5a0000', '#2d0000']
-
-# Plot stacked disease bar
-bottom = 0
-disease_segments = [disease_medical, disease_productivity, disease_lives]
-disease_labels = [
-    f'Direct Medical\nCosts\n${disease_medical/1000:.1f}T',
-    f'Lost\nProductivity\n${disease_productivity/1000:.0f}T',
-    f'Lost Human\nLives (DALYs)\n${disease_lives/1000:.0f}T'
-]
-
-for i, (value, color, label) in enumerate(zip(disease_segments, disease_colors, disease_labels)):
-    bar = ax.bar(1, value, bottom=bottom, color=color, edgecolor=COLOR_WHITE,
-                 linewidth=2, alpha=0.9, width=0.8)
-
-    # Add labels for each segment
-    label_y = bottom + value/2
-    ax.text(1, label_y, label, ha='center', va='center',
-            fontsize=28, weight='bold', color=COLOR_WHITE)
-    bottom += value
-
-# Total label on disease stack
-ax.text(1, disease_total + (disease_total * 0.02), f'$109T\nTOTAL', ha='center', va='bottom',
-        fontsize=56, weight='bold', color='#8b0000')
-
 # Add "11X" comparison arrow/text
-ax.annotate('', xy=(1, war_total), xytext=(0, war_total),
+ax.annotate('', xy=(0, war_total), xytext=(1, war_total),
             arrowprops=dict(arrowstyle='<->', color=COLOR_DARK, lw=3))
 ax.text(0.5, war_total + (disease_total * 0.01), '11X bigger', ha='center', va='bottom',
         fontsize=38, weight='bold', color=COLOR_DARK, style='italic')

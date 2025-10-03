@@ -46,13 +46,13 @@ ax.bar(0, war_indirect_total, color='#8b1a1f', edgecolor=COLOR_WHITE, linewidth=
 
 # Add breakdown text inside the indirect costs column
 breakdown_text = (
-    f'${war_indirect_total/1000:.1f}T Total\n\n'
-    f'Infrastructure: ${war_infrastructure/1000:.1f}T\n'
-    f'Lives + Trade: ${war_lives_trade/1000:.1f}T\n'
-    f'Lost Growth: ${war_longterm/1000:.1f}T'
+    f'${war_indirect_total/1000:.1f}T\nTotal\n\n'
+    f'Infrastructure:\n${war_infrastructure/1000:.1f}T\n'
+    f'Lives + Trade:\n${war_lives_trade/1000:.1f}T\n'
+    f'Lost Growth:\n${war_longterm/1000:.1f}T'
 )
 ax.text(0, war_indirect_total * 0.5, breakdown_text, ha='center', va='center',
-        fontsize=32, weight='bold', color=COLOR_WHITE, linespacing=1.4)
+        fontsize=28, weight='bold', color=COLOR_WHITE, linespacing=1.5)
 
 # Plot direct military spending bar
 ax.bar(1, war_direct, color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
