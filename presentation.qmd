@@ -71,9 +71,7 @@ plt.rcParams['axes.labelsize'] = FONT_SIZES['axis_label']
 ## The Problem: True War Costs
 
 <h1 style="text-align: center; font-size: 100px; margin-bottom: 20px; color: #1a1a1a;">Here's What That $2.7T Actually Buys</h1>
-<p style="text-align: center; font-size: 52px; color: #8b0000; margin-bottom: 30px;">
-**Another $7 trillion** bill for more bullshit like infrastructure destruction +  + trade disruption + death + disability + lost economic growth + refugees + environmental damage + psychological impact + lost human capital
-</p>
+
 
 {{< include brain/charts/war-hidden-direct-curing-diseases-column-chart.qmd >}}
 

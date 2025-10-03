@@ -43,15 +43,30 @@ fig, ax = plt.subplots(figsize=(28, 12))
 # Plot single solid bar for indirect war costs
 ax.bar(0, war_indirect_total, color='#8b1a1f', edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
 
-# Add breakdown text inside the indirect costs column
+# Add large total at top
+ax.text(0, war_indirect_total * 0.85, f'${war_indirect_total/1000:.1f}T', ha='center', va='center',
+        fontsize=56, weight='bold', color=COLOR_WHITE)
+
+# Add breakdown text below
 breakdown_text = (
-    f'${war_indirect_total/1000:.1f}T\nTotal\n\n'
-    f'Infrastructure:\n${war_infrastructure/1000:.1f}T\n'
-    f'Lives + Trade:\n${war_lives_trade/1000:.1f}T\n'
-    f'Lost Growth:\n${war_longterm/1000:.1f}T'
+    'INFRASTRUCTURE DESTRUCTION\n'
+    '+\n'
+    'TRADE DISRUPTION\n'
+    '+\n'
+    'DEATH + DISABILITY\n'
+    '+\n'
+    'LOST ECONOMIC GROWTH\n'
+    '+\n'
+    'REFUGEES\n'
+    '+\n'
+    'ENVIRONMENTAL DAMAGE\n'
+    '+\n'
+    'PSYCHOLOGICAL IMPACT\n'
+    '+\n'
+    'LOST HUMAN CAPITAL'
 )
-ax.text(0, war_indirect_total * 0.5, breakdown_text, ha='center', va='center',
-        fontsize=28, weight='bold', color=COLOR_WHITE, linespacing=1.5)
+ax.text(0, war_indirect_total * 0.35, breakdown_text, ha='center', va='center',
+        fontsize=22, weight='bold', color=COLOR_WHITE, linespacing=1.2)
 
 # Plot direct military spending bar
 ax.bar(1, war_direct, color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, alpha=0.9, width=0.8)
@@ -69,7 +84,7 @@ ax.text(2, cure_research + (max_value * 0.005), '$68B', ha='center', va='bottom'
 # Styling
 ax.set_xticks([0, 1, 2])
 ax.set_xticklabels(categories)
-ax.set_ylabel('Annual Cost (Billions)', fontsize=36, weight='bold', color=COLOR_DARK)
+ax.set_ylabel('Annual Cost', fontsize=36, weight='bold', color=COLOR_DARK)
 ax.tick_params(axis='x', labelsize=32, colors=COLOR_DARK)
 ax.tick_params(axis='y', labelsize=28, colors=COLOR_MID)
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x/1000:.1f}T' if x >= 1000 else f'{x:.0f}B'))
