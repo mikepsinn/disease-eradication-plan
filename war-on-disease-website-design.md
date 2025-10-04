@@ -5,7 +5,7 @@ A scrollytelling website that reveals humanity's insane spending priorities and 
 
 ---
 
-## Act 1: The Spending Insanity
+## The Spending Insanity
 
 ### Scene 1: "What Humanity Buys" (Animated Column Chart)
 
@@ -99,7 +99,7 @@ This Second: $3.4 MILLION [live counter]
 
 ---
 
-## Act 2: The Death Clock
+## The Death Clock
 
 ### Live Death Counter Display
 
@@ -126,7 +126,7 @@ Since you arrived [X seconds] ago:
 
 ---
 
-## Act 3: Why They're All Dying (The System Is Broken)
+## Why They're All Dying (The System Is Broken)
 
 ### "We Give Billions to 'Cure Disease' - They Cure Nothing"
 
@@ -171,7 +171,7 @@ They completed ZERO trials in 4 years."
 
 ---
 
-## Act 4: The Solution Already Exists
+## The Solution Already Exists
 
 ### "Meanwhile, Oxford Just Showed Everyone How to Actually Save Lives"
 
@@ -219,7 +219,7 @@ The solution exists. We're just not using it."
 
 ---
 
-## Act 5: The 1% Solution
+## The 1% Solution
 
 ### Interactive Budget Reallocation Slider
 
@@ -246,7 +246,7 @@ Cost to You: $0
 
 ---
 
-## Act 6: Where the Money Goes
+## Where the Money Goes
 
 ### Animated Money Flow Diagram
 
@@ -288,49 +288,8 @@ Cost to You: $0
 
 ---
 
-## Act 9: The Amazon for Not Dying (dFDA Demo)
 
-### Mock Shopping Interface
-
-**Visual Design:**
-- Exact Amazon UI clone but for medical trials
-- Star ratings based on real patient outcomes
-- One-click join buttons
-
-```
-🔍 Search: "Type 2 Diabetes"
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⭐⭐⭐⭐⭐ (8,924 reviews)
-METFORMIN + EXERCISE PROTOCOL
-"Cured my diabetes AND my marriage" - Janet, 52
-"Literally just eating vegetables and walking, but it works" - Bob
-Effectiveness: 73% | Cost: $20/mo | Side Effects: Minimal
-✅ COVERED BY DIH | 📍 Available everywhere
-[JOIN TRIAL NOW]
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⭐⭐⭐⭐⭐ (69 reviews)
-EXPERIMENTAL CRISPR THERAPY
-"Edited my genes, now I'm basically Wolverine" - Trial Participant
-"10/10 would let strangers edit my DNA again" - Another Guy
-Effectiveness: 91% (in trials) | Cost: FREE | Revolutionary
-✅ 100% DIH FUNDED | 📍 27 locations
-[JOIN WAITLIST - 2,847 ahead of you]
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⭐ (156,392 reviews)
-INSULIN AT $300/VIAL
-"Choosing between rent and not dying! Thanks America!" - Everyone
-"Side effects include bankruptcy" - Verified Purchaser
-Effectiveness: Keeps you alive | Cost: Your life savings
-❌ Not recommended | "Why are you doing this to yourself?"
-[SERIOUSLY, TRY SOMETHING ELSE]
-```
-
----
-
-## Act 7: "But Wait, Democracy Is Already Dead"
+## "But Wait, Democracy Is Already Dead"
 
 ### The Princeton Bombshell Nobody Talks About
 
@@ -359,7 +318,7 @@ Traditional Democracy:
 - Your $27B → Their pet projects
 
 Committee Allocation:
-- 200 NIH bureaucrats failed already (Act 3)
+- 200 NIH bureaucrats failed already (shown earlier)
 - Any new committee = same capture
 - Special interests always win
 - Your diseases stay unfunded
@@ -370,7 +329,7 @@ Committee Allocation:
 
 ---
 
-## Act 8: Democracy That Actually Works (Wishocracy)
+## Democracy That Actually Works (Wishocracy)
 
 ### The Uncapturable Budget System
 
@@ -430,8 +389,48 @@ Live Global Consensus:
 - "First time in history: True democracy without politicians"
 
 ---
+## The Amazon for Not Dying (dFDA Demo)
 
-## Act 10: The Investment Opportunity  
+### Mock Shopping Interface
+
+**Visual Design:**
+- Exact Amazon UI clone but for medical trials
+- Star ratings based on real patient outcomes
+- One-click join buttons
+
+```
+🔍 Search: "Type 2 Diabetes"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⭐⭐⭐⭐⭐ (8,924 reviews)
+METFORMIN + EXERCISE PROTOCOL
+"Cured my diabetes AND my marriage" - Janet, 52
+"Literally just eating vegetables and walking, but it works" - Bob
+Effectiveness: 73% | Cost: $20/mo | Side Effects: Minimal
+✅ COVERED BY DIH | 📍 Available everywhere
+[JOIN TRIAL NOW]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⭐⭐⭐⭐⭐ (69 reviews)
+EXPERIMENTAL CRISPR THERAPY
+"Edited my genes, now I'm basically Wolverine" - Trial Participant
+"10/10 would let strangers edit my DNA again" - Another Guy
+Effectiveness: 91% (in trials) | Cost: FREE | Revolutionary
+✅ 100% DIH FUNDED | 📍 27 locations
+[JOIN WAITLIST - 2,847 ahead of you]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⭐ (156,392 reviews)
+INSULIN AT $300/VIAL
+"Choosing between rent and not dying! Thanks America!" - Everyone
+"Side effects include bankruptcy" - Verified Purchaser
+Effectiveness: Keeps you alive | Cost: Your life savings
+❌ Not recommended | "Why are you doing this to yourself?"
+[SERIOUSLY, TRY SOMETHING ELSE]
+```
+
+
+## The Investment Opportunity  
 
 ### Returns Comparison (Animated Bar Race)
 
@@ -459,7 +458,7 @@ Defense Contractor Lobbying 1,813% 💀        $181,000 (but evil)
 
 ---
 
-## Act 11: The Prisoner's Dilemma Solved
+## The Prisoner's Dilemma Solved
 
 ### Game Theory Matrix
 
@@ -492,7 +491,7 @@ Result: Treaty passes or rich people destroy whoever blocks it
 
 ---
 
-## Act 12: A Day in Your Life (2025 vs 2050)
+## A Day in Your Life (2025 vs 2050)
 
 **Visual Design:**
 - Split screen showing two daily schedules
@@ -523,7 +522,7 @@ Life expectancy: "Yes"
 
 ---
 
-## Act 13: Choose Your Future
+## Choose Your Future
 
 ### Split Screen: Two Timelines
 
@@ -556,7 +555,7 @@ Life expectancy: "Yes"
 
 ---
 
-## Act 14: The Call to Action
+## The Call to Action
 
 ### Three Big Buttons
 
@@ -587,7 +586,7 @@ Life expectancy: "Yes"
 
 ---
 
-## Act 15: Quick Answers for Skeptics
+## Quick Answers for Skeptics
 
 **Visual Design:**
 - FAQ accordion style
@@ -617,7 +616,7 @@ Not when their richest citizens lose billions if they do. Money enforces complia
 
 ---
 
-## Act 16: The Ticking Clock (Final Urgency)
+## The Ticking Clock (Final Urgency)
 
 **Visual Design:**
 - Large countdown timers
@@ -758,21 +757,21 @@ This design document is for internal use. Remember:
 
 ### Phase 1: Core Message (Week 1)
 Build these first - they carry 80% of the impact:
-1. **The spending comparison chart** (Act 1, Scene 1)
-2. **The death counter** (Act 2) 
-3. **NIH vs Oxford comparison** (Acts 3-4)
-4. **The 1% budget slider** (Act 5)
-5. **Call to action buttons** (Act 12)
+1. **The spending comparison chart** (Spending Insanity section)
+2. **The death counter** (Death Clock section) 
+3. **NIH vs Oxford comparison** (Why They're Dying + Solution Exists sections)
+4. **The 1% budget slider** (1% Solution section)
+5. **Call to action buttons** (Call to Action section)
 
 ### Phase 2: Engagement Features (Week 2)
 Add interactivity:
-1. **dFDA mockup interface** (Act 7)
-2. **Wishocracy voting demo** (Act 8)
-3. **Investment returns comparison** (Act 9)
+1. **dFDA mockup interface** (Amazon for Not Dying section)
+2. **Wishocracy voting demo** (Democracy That Works section)
+3. **Investment returns comparison** (Investment Opportunity section)
 
 ### Phase 3: Polish (Week 3)
 Nice-to-haves:
-1. **Timeline comparison** (Act 11)
+1. **Timeline comparison** (Choose Your Future section)
 2. **Sound effects** (optional throughout)
 3. **Share widgets and social features**
 4. **A/B testing infrastructure**
