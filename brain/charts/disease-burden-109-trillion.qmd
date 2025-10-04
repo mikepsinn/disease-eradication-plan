@@ -1,0 +1,94 @@
+```{python}
+#| label: disease-burden-109-trillion
+#| fig-cap: "Disease Burden: The Real Killer ($109 Trillion)"
+
+import matplotlib.pyplot as plt
+import sys
+from pathlib import Path
+
+# Ensure project root is in path
+sys.path.insert(0, str(Path.cwd()))
+
+
+import matplotlib.pyplot as plt
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_RED, COLOR_WHITE
+)
+
+# Setup neobrutalist styling
+setup_chart_style(style='light', dpi=150)
+
+# Create chart showing all three for final comparison
+fig, ax = plt.subplots(figsize=(16, 10))
+
+# Data - all three costs for perspective
+categories = ['Military\n(Admitted)', 'War\n(True Cost)', 'DISEASE\nBURDEN']
+values = [2.7, 9.7, 109]  # In trillions
+colors = ['#FFFF00', '#FFA500', '#FF0000']  # Yellow to orange to red
+
+# Bars - linear scale to show true disparity
+bars = ax.bar(categories, values, color=colors,
+              edgecolor=COLOR_BLACK, linewidth=4, width=0.7)
+
+# Add value labels
+for i, (bar, value) in enumerate(zip(bars, values)):
+    height = bar.get_height()
+    if i < 2:  # Small bars - label above
+        ax.text(bar.get_x() + bar.get_width()/2., height + 2,
+                f'${value}T', ha='center', va='bottom',
+                color=COLOR_BLACK, fontsize=24, fontweight='bold')
+    else:  # Massive bar - label inside
+        ax.text(bar.get_x() + bar.get_width()/2., height * 0.5,
+                f'$109\nTRILLION', ha='center', va='center',
+                color=COLOR_WHITE, fontsize=48, fontweight='bold')
+
+# Add multipliers showing escalation
+ax.text(0.5, 6, '3.6X', ha='center', fontsize=20,
+        color=COLOR_RED, fontweight='bold')
+ax.text(1.5, 55, '11.2X', ha='center', fontsize=32,
+        color=COLOR_RED, fontweight='bold')
+
+# The shocking comparison
+ax.text(2, 90, 'DISEASE IS THE\nREAL APOCALYPSE', ha='center', va='center',
+        fontsize=24, color=COLOR_RED, fontweight='bold',
+        bbox=dict(boxstyle='round', facecolor='yellow', edgecolor=COLOR_BLACK, linewidth=4))
+
+# Formatting - linear scale shows the truth
+ax.set_ylim(0, 120)
+ax.set_ylabel('TRILLIONS PER YEAR', fontsize=20, color=COLOR_BLACK, fontweight='bold')
+ax.tick_params(colors=COLOR_BLACK, labelsize=16)
+
+# Brutal borders
+for spine in ax.spines.values():
+    spine.set_color(COLOR_BLACK)
+    spine.set_linewidth(4)
+
+plt.title('THE $109 TRILLION DISEASE BURDEN DWARFS WAR',
+          fontsize=28, color=COLOR_BLACK, pad=20, fontweight='bold')
+
+# Add watermark
+add_watermark(fig)
+
+# Save the figure
+plt.savefig('brain/charts/disease-burden-109-trillion.png',
+            dpi=300, bbox_inches='tight', facecolor='white')
+plt.tight_layout()
+plt.show()
+
+# Print the shocking reality
+print("\n💀 THE DISEASE BURDEN:")
+print(f"  Healthcare costs: $8.2 trillion")
+print(f"  Lost productivity: $100.9 trillion")
+print(f"  = TOTAL: $109 TRILLION per year")
+print(f"\nComparison:")
+print(f"  Military (admitted): $2.7T (2.5% of disease)")
+print(f"  War (true cost): $9.7T (8.9% of disease)")
+print(f"  Disease burden: $109T (100%)")
+print(f"\n📊 DISEASE COSTS:")
+print(f"  Per day: $298 billion")
+print(f"  Per hour: $12.4 billion")
+print(f"  Per minute: $207 million")
+print(f"  Per second: $3.45 million")
+print(f"\nWar was never the real problem.")
+```

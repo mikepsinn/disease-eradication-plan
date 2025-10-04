@@ -1,0 +1,309 @@
+---
+title: "The Wisdom of Crowds: 8 Billion > 200"
+subtitle: "Why Everyone Together Is Smarter Than Any Expert Committee"
+---
+
+## The Experiment That Changed Everything
+
+In 1906, statistician Francis Galton visited a county fair.
+
+They had a contest: guess the weight of an ox.
+
+- 787 people guessed
+- Most had no expertise
+- Individual guesses ranged wildly
+
+Galton calculated the median guess: **1,197 pounds**
+
+The ox's actual weight: **1,198 pounds**
+
+**The crowd was off by 1 pound. The best expert was off by 100 pounds.**
+
+## The Pattern Repeats Everywhere
+
+### Stock Markets
+- Individual investors: Often wrong
+- Market average: Remarkably accurate at pricing
+- Expert fund managers: Usually lose to index funds
+
+### Wikipedia
+- Individual editors: Sometimes wrong, sometimes biased
+- Aggregate knowledge: More accurate than Encyclopedia Britannica
+- Expert editors alone: Couldn't scale to cover everything
+
+### Google Search
+- Individual websites: Varying quality
+- PageRank (crowd wisdom): Finds best results
+- Any single expert curator: Can't keep up
+
+## Why Crowds Beat Experts
+
+### 1. Diversity of Information
+
+**Expert Committee** (NIH model):
+- 200 people
+- Similar education (medical schools)
+- Similar experience (academic research)
+- Similar biases (publish or perish)
+- **Total knowledge**: What 200 similar people know
+
+**Crowd** (dFDA model):
+- 8 billion people
+- Every disease experience
+- Every genetic variation
+- Every treatment response
+- **Total knowledge**: All human experience
+
+### 2. Error Cancellation
+
+**Expert Committee**:
+- All experts might share same blind spot
+- No mechanism to correct systematic bias
+- Groupthink amplifies errors
+
+**Crowd**:
+- Individual errors are random
+- Random errors cancel out
+- Systematic errors are rare (too diverse to share bias)
+
+### 3. Skin in the Game
+
+**Expert Committee**:
+- Makes decisions for others
+- No consequence if wrong
+- Career safe either way
+
+**Crowd**:
+- Decides for themselves
+- Direct consequence if wrong
+- Strong incentive to be right
+
+## The Math: Why 8 Billion > 200
+
+```python
+import numpy as np
+
+# Expert committee
+experts = 200
+expert_accuracy = 0.70  # 70% right
+committee_error = 1 - expert_accuracy  # 30% wrong
+
+# If they have correlated errors (groupthink)
+committee_correlation = 0.50
+effective_committee_accuracy = expert_accuracy + (1 - expert_accuracy) * (1 - committee_correlation)
+# = 0.85 (85% accurate)
+
+# Crowd
+crowd_size = 8_000_000_000
+individual_accuracy = 0.55  # 55% right (worse than experts individually)
+crowd_correlation = 0.01  # Almost no correlation (too diverse)
+
+# Wisdom of crowds effect
+crowd_error_rate = (1 - individual_accuracy) / np.sqrt(crowd_size)
+crowd_accuracy = 1 - crowd_error_rate
+# = 0.9999... (99.99% accurate)
+
+print(f"Committee accuracy: {effective_committee_accuracy:.1%}")
+print(f"Crowd accuracy: {crowd_accuracy:.2%}")
+```
+
+**8 billion mediocre guesses beat 200 expert guesses.**
+
+## When Crowds Fail (And How to Fix It)
+
+### Failure Mode 1: Herding
+
+**Problem**: Everyone copies each other instead of thinking independently
+
+**Example**: Stock market bubbles, fashion trends
+
+**Fix**: Make individual decisions before seeing others' choices (dFDA does this)
+
+### Failure Mode 2: Manipulation
+
+**Problem**: A few powerful actors influence many
+
+**Example**: Propaganda, advertising
+
+**Fix**: Transparent data, auditable results, no gatekeepers
+
+### Failure Mode 3: Homogeneity
+
+**Problem**: Crowd becomes too similar (loses diversity)
+
+**Example**: Echo chambers, filter bubbles
+
+**Fix**: Include all 8 billion humans (maximum diversity)
+
+## How Medical Research Currently Violates Every Principle
+
+### NIH Funding Decisions
+
+**Current**: 200-person committee decides what to research
+
+**Problem**:
+- All medical researchers (homogeneous)
+- All want more research grants (aligned incentive to continue, not solve)
+- No skin in the game (not sick themselves)
+- Groupthink (all went to same schools)
+
+**Result**: 50 years, $2.4 trillion spent, zero diseases eradicated
+
+### FDA Drug Approval
+
+**Current**: ~200 reviewers decide what treatments allowed
+
+**Problem**:
+- All bureaucrats (similar risk aversion)
+- Career incentive to delay (safe choice)
+- No disease experience (not patients)
+- Correlated errors (all trained same way)
+
+**Result**: 17 years per drug, millions die waiting
+
+## How dFDA Uses Wisdom of Crowds
+
+### Trial Participation
+- 8 billion potential participants (maximum diversity)
+- Each decides for themselves (skin in the game)
+- Data aggregated across millions (errors cancel)
+- No gatekeepers (can't be manipulated)
+
+### Treatment Effectiveness
+- Everyone tracks their outcomes
+- Algorithm aggregates data
+- Individual errors cancel out
+- Truth emerges from noise
+
+### Resource Allocation (Wishocracy)
+- 8 billion people express preferences
+- No single committee decides
+- Preferences aggregated via AI
+- Result reflects collective wisdom
+
+## The Proof: Decentralized > Centralized
+
+### Centralized (Soviet Agriculture)
+- Experts plan everything
+- Committee decides what to plant
+- **Result**: Millions starve
+
+### Decentralized (Market Agriculture)
+- Millions of farmers decide independently
+- Prices aggregate information
+- **Result**: Food abundance
+
+### Centralized (Encyclopedia Britannica)
+- Expert editors curate knowledge
+- Slow, expensive, limited
+- **Result**: 40,000 articles
+
+### Decentralized (Wikipedia)
+- Crowd curates knowledge
+- Fast, free, comprehensive
+- **Result**: 6 million articles, more accurate
+
+### Centralized (NIH/FDA)
+- 200-person committees decide
+- Slow, expensive, limited
+- **Result**: 95% of diseases have no treatment
+
+### Decentralized (dFDA)
+- 8 billion people decide
+- Fast, efficient, comprehensive
+- **Result**: Every disease gets trials
+
+## Why Experts Hate This
+
+### The Expert's Dilemma
+
+If crowds are smarter than expert committees, **experts lose power**.
+
+**Current system**:
+- Experts gatekeep knowledge
+- Experts decide what to research
+- Experts approve treatments
+- Experts justify their $200K salaries
+
+**dFDA system**:
+- Crowd generates knowledge
+- Crowd decides what to research (via behavior)
+- Algorithm approves (crowd wisdom aggregated)
+- Experts... become less important
+
+### The Real Reason They Fight Decentralization
+
+It's not about patient safety (crowds are safer).
+It's not about quality (crowds are more accurate).
+
+**It's about power.**
+
+200 people losing control over medicine for 8 billion.
+
+## The Conditions for Crowd Wisdom
+
+Per James Surowiecki's research, crowds are wise when:
+
+1. **Diversity**: Wide range of opinions and information
+2. **Independence**: People decide without group pressure
+3. **Decentralization**: Decisions made by individuals
+4. **Aggregation**: Method to combine individual inputs
+
+### Does NIH/FDA Have These?
+
+1. Diversity: ❌ (All medical researchers, all bureaucrats)
+2. Independence: ❌ (Groupthink, career pressure)
+3. Decentralization: ❌ (Committee decides for everyone)
+4. Aggregation: ❌ (No aggregation, committee vote)
+
+### Does dFDA Have These?
+
+1. Diversity: ✅ (8 billion humans, all diseases, all genetics)
+2. Independence: ✅ (Each person decides for themselves)
+3. Decentralization: ✅ (Millions of parallel trials)
+4. Aggregation: ✅ (AI combines all data)
+
+## The Uncomfortable Truth
+
+The world's leading medical experts, working together in committees, **are dumber than random people deciding independently**.
+
+This isn't an insult. **It's mathematics.**
+
+- 200 correlated guesses < 8 billion uncorrelated guesses
+- Experts have blind spots; crowds don't
+- Committees have groupthink; markets don't
+
+## Real-World Proof: COVID-19
+
+### Expert Committees Said:
+- Masks don't work (Feb 2020)
+- Actually masks do work (April 2020)
+- Lockdowns for 2 weeks
+- Actually lockdowns for 2 years
+- Vaccines stop transmission
+- Actually vaccines reduce symptoms
+
+### Crowd Wisdom Said:
+- Some things work, some don't
+- Try everything, measure everything
+- Learn from data, not theory
+
+### Who Got It Right Faster?
+**Oxford RECOVERY trial** (crowdsourced data):
+- Tested 7 treatments in 6 months
+- Saved 1 million lives
+- Cost: $10 million
+
+**NIH/FDA** (expert committees):
+- Blocked early treatment trials
+- Delayed approvals
+- Saved: Far fewer lives
+- Cost: $1.6 billion
+
+## The Bottom Line
+
+You can trust 200 experts to agree with each other.
+
+You can trust 8 billion people to find the truth.
+
+**Choose wisely. Your life depends on it.**

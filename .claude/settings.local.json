@@ -42,7 +42,9 @@
       "Bash(npx create-next-app:*)",
       "Bash(npm run dev:*)",
       "Bash(quarto clean:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(quarto:*)",
+      "Bash(do)"
     ],
     "deny": [],
     "ask": []
