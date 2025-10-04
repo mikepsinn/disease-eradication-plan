@@ -214,7 +214,7 @@ People Dying While You Read This: [rapidly counting]
 3. Disease burden: $109T (the real apocalypse)
 
 **Final Punchline:**
-"We're so worried about terrorists killing everyone...
+"We're so worried about cave-dwellers in turbins killing everyone...
 While disease is ACTUALLY killing everyone.
 55 million per year. Every year. Forever."
 
