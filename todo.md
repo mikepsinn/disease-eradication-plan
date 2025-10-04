@@ -6,8 +6,8 @@
 - [x] `brain/book/economics/investment-thesis.qmd`
 - [x] `brain/book/proof/body-as-machine.qmd`
 - [x] `brain/book/reference/organizational-precedents.qmd`
-- [ ] `brain/book/futures/dystopia.qmd`
-- [ ] `brain/book/futures/utopia.qmd`
+- [x] `brain/book/futures/dystopia.qmd`
+- [x] `brain/book/futures/utopia.qmd`
 - [ ] `brain/economics/fundraising-strategy.qmd`
 - [ ] `brain/economics/victory-bonds.qmd`
 - [ ] `brain/book/economics/fundraising-and-budget-plan.qmd`
