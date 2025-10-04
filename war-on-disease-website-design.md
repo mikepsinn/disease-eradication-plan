@@ -1,5 +1,83 @@
 # War on Disease - Website Visual Journey Design
 
+## NEOBRUTALIST DESIGN SYSTEM
+
+### Core Aesthetic: Aggressive Minimalism
+**Inspiration:** Emigre Magazine's raw confrontational style - purposefully harsh, unapologetically bold, militantly simple.
+
+### Typography
+- **Primary:** Space Mono or IBM Plex Mono (monospace brutalism)
+- **Display:** Bebas Neue or Anton (condensed, aggressive)
+- **Body:** Inter or Work Sans (geometric, no-nonsense)
+- **Sizes:** Only 3 - MASSIVE (120px), LOUD (48px), whisper (16px)
+- **All caps for impact statements**
+- **No font smoothing** - let the pixels show
+
+### Color Palette (Maximum 4 Colors)
+```
+BLACK:      #000000 (primary)
+WHITE:      #FFFFFF (background)
+BLOOD RED:  #FF0000 (death/war)
+NEON GREEN: #00FF00 (life/cure)
+```
+No gradients. No shadows. No mercy.
+
+### Layout Principles
+- **Thick black borders:** Everything has a 4-8px solid black border
+- **Brutal grid:** 12-column, no deviation, visible grid lines
+- **Harsh angles:** No rounded corners ever
+- **Raw spacing:** Either cramped (0px) or massive (100px+)
+- **Offset elements:** Deliberately misaligned for discomfort
+- **Stark backgrounds:** Pure white with black elements
+- **No decoration:** If it doesn't convey data, delete it
+
+### Animation Rules
+- **Binary states:** On/off, no easing, no transitions
+- **Jarring cuts:** Instant changes, no smoothness
+- **Glitch effects:** Data corruption aesthetic for emphasis
+- **Marquee scrolling:** 1990s web brutalism
+- **Flashing:** Aggressive attention grabbing (with seizure warnings)
+
+### UI Components
+```css
+/* BUTTON BRUTALISM */
+.brutal-button {
+  background: #FFFFFF;
+  border: 8px solid #000000;
+  padding: 20px 40px;
+  font-family: 'Space Mono';
+  font-size: 24px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: none;
+  transition: none;
+}
+
+.brutal-button:hover {
+  background: #000000;
+  color: #FFFFFF;
+  /* No transition - instant flip */
+}
+
+.brutal-button:active {
+  transform: translate(8px, 8px);
+  /* Harsh physical push */
+}
+```
+
+### Data Visualization Style
+- **Bar charts:** Solid black rectangles, no rounding
+- **Counters:** Monospace, no commas, raw numbers
+- **Comparisons:** Stark size differences, no subtle scaling
+- **Icons:** None. Use ASCII art or raw text
+- **Charts:** Black lines on white, 4px stroke minimum
+
+### Interaction Patterns
+- **Hover:** Instant color inversion
+- **Click:** Harsh visual feedback (screen shake, flash)
+- **Scroll:** Jarring jumps between sections
+- **Loading:** No spinners - show "LOADING" in massive text
+
 ## Overview
 A scrollytelling website that reveals humanity's insane spending priorities through three escalating shocks:
 1. We spend 40X more on weapons than cures
@@ -924,7 +1002,7 @@ Life expectancy: "Yes"
 │   📢 SHARE THIS INSANITY            │
 │   "Save your friends from death"    │
 │   [Share counter: 924,847]          │
-└─────────────────────────────────────┘
+└─────────────────────────────────┘
 ```
 
 **What Each Action Does:**
@@ -1068,3 +1146,172 @@ Your mom might be one of them."
 4. Referral system
 
 **Remember:** Simple death counter > complex animations. The data is the story.
+
+---
+
+## NEOBRUTALIST TECHNICAL IMPLEMENTATION
+
+### Global CSS Foundation
+```css
+/* RESET EVERYTHING TO BRUTAL DEFAULTS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  text-rendering: optimizeSpeed;
+}
+
+/* BRUTAL TYPOGRAPHY */
+body {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.2;
+  background: #FFFFFF;
+  color: #000000;
+}
+
+h1 { font-size: 120px; font-weight: 900; letter-spacing: -5px; }
+h2 { font-size: 72px; font-weight: 900; letter-spacing: -3px; }
+h3 { font-size: 48px; font-weight: 900; letter-spacing: -2px; }
+
+/* BRUTAL CONTAINERS */
+.brutal-section {
+  border: 8px solid #000000;
+  padding: 0;
+  margin: 0;
+  background: #FFFFFF;
+}
+
+/* BRUTAL GRID */
+.brutal-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0;
+  border: 4px solid #000000;
+}
+
+.brutal-grid > * {
+  border-right: 4px solid #000000;
+  border-bottom: 4px solid #000000;
+}
+
+/* NO ANIMATIONS */
+* {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* HOVER STATES - INSTANT INVERSION */
+.brutal-hover:hover {
+  background: #000000;
+  color: #FFFFFF;
+  outline: 8px solid #000000;
+  outline-offset: -8px;
+}
+
+/* DATA VISUALIZATION */
+.brutal-bar {
+  background: #000000;
+  height: 40px;
+  border: none;
+  margin: 0;
+}
+
+.brutal-counter {
+  font-family: 'Space Mono', monospace;
+  font-size: 200px;
+  font-weight: 900;
+  letter-spacing: -10px;
+  text-align: center;
+}
+
+/* GLITCH EFFECT FOR EMPHASIS */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-8px, 8px); }
+  40% { transform: translate(-8px, -8px); }
+  60% { transform: translate(8px, 8px); }
+  80% { transform: translate(8px, -8px); }
+  100% { transform: translate(0); }
+}
+
+.glitch {
+  animation: glitch 0.3s infinite !important;
+}
+
+/* BRUTAL SCROLLING */
+html {
+  scroll-behavior: auto;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+}
+```
+
+### JavaScript Brutalism
+```javascript
+// NO SMOOTH TRANSITIONS - INSTANT STATE CHANGES
+document.querySelectorAll('.brutal-button').forEach(btn => {
+  btn.addEventListener('click', function() {
+    this.style.background = this.style.background === '#000000' ? '#FFFFFF' : '#000000';
+    this.style.color = this.style.color === '#FFFFFF' ? '#000000' : '#FFFFFF';
+  });
+});
+
+// DEATH COUNTER - RAW UPDATES
+let deaths = 0;
+setInterval(() => {
+  deaths += 3;
+  document.getElementById('death-counter').textContent = deaths;
+  // No formatting, no commas, just raw numbers
+}, 1000);
+
+// BRUTAL SCROLL - HARD JUMPS
+document.addEventListener('wheel', (e) => {
+  if (e.deltaY > 0) {
+    window.scrollBy(0, window.innerHeight);
+  } else {
+    window.scrollBy(0, -window.innerHeight);
+  }
+  e.preventDefault();
+}, { passive: false });
+```
+
+### Accessibility Within Brutalism
+- **High Contrast:** Already built in (pure black/white)
+- **Large Text:** Minimum 16px, headers massive
+- **Keyboard Nav:** Tab through sections with thick focus borders
+- **Screen Readers:** Semantic HTML underneath the brutalism
+- **Seizure Warning:** For any flashing/glitch effects
+- **Reduced Motion:** Respects prefers-reduced-motion
+
+### Performance Considerations
+- **No Libraries:** Pure CSS/JS only
+- **No Images:** ASCII art or geometric shapes
+- **No Fonts Beyond System:** Fallback to system monospace
+- **Instant Loading:** No progressive enhancement
+- **Binary States:** Reduces computational overhead
+
+### The Anti-Patterns (What NOT to Do)
+- ❌ Gradients
+- ❌ Shadows  
+- ❌ Rounded corners
+- ❌ Smooth animations
+- ❌ Decorative elements
+- ❌ Stock photos
+- ❌ Icons (use text)
+- ❌ Subtle anything
+
+### The Brutalist Manifesto
+1. **If it doesn't convey data, delete it**
+2. **Every pixel must justify its existence**
+3. **Comfort is the enemy of impact**
+4. **Beauty is found in raw truth**
+5. **The message is the only decoration needed**
+
+This is not a website. It's a weapon against complacency.
