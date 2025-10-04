@@ -566,160 +566,271 @@ Option E: Something New...
 
 ## But Wait, Democracy Is Already Dead
 
-### The Princeton Bombshell Nobody Talks About
+### The Princeton Study That Changes Everything
 
 **Visual Design:**
-- Graph showing flat line at 0% correlation
-- Animated money flowing from lobbyists to politicians
-- Public opinion vs policy outcomes visualization
+- Single devastating graph: Flat line at 0%
+- Money flowing from corporations to politicians
+- Your vote in a trash can
 
-**The Study That Proves You Don't Matter:**
+**One Study. One Finding. Game Over:**
 ```
-PRINCETON UNIVERSITY - 20 YEAR STUDY
-1,779 Policy Decisions Analyzed
+PRINCETON UNIVERSITY - 20 YEAR ANALYSIS
+1,779 Policy Decisions Studied
 
-Correlation between what YOU want and what happens: 0%
-Correlation between what RICH PEOPLE want and what happens: 78%
+What YOU want → Policy outcome: 0% correlation
+What RICH want → Policy outcome: 78% correlation
 
-Translation: Your vote is theater. Money is the real vote.
+Translation: Your vote is theater. 
+Money is the only vote that counts.
 ```
 
-**Why Any $27 Billion Would Get Stolen:**
-```
-Traditional Democracy:
-- 535 people control the budget
-- Each one needs money to get reelected  
-- Lobbyists offer that money
-- Your $27B → Their pet projects
+**So Any $27 Billion Would Get Stolen:**
+"Give it to politicians? → Goes to Raytheon for 'medical' drones
+Give it to NIH? → More hamster treadmills  
+Give it to FDA? → They block MORE treatments
+Give it to a committee? → Same 200 people who already failed
 
-Committee Allocation:
-- 200 NIH bureaucrats failed already (shown earlier)
-- Any new committee = same capture
-- Special interests always win
-- Your diseases stay unfunded
-```
+There's literally no human or group you can trust with $27 billion."
 
 **The Problem:**
-"You can't allocate $27 billion through representatives or committees without it being stolen by whoever bribes them"
+"Every dollar that goes through human hands gets stolen."
+
+[Keep scrolling for the only solution...]
 
 ---
 
-## Enter Wishocracy: 8 Billion Allocators
+## Enter Wishocracy: 8 Billion Treasury Governors
 
-### The Uncapturable System for Spending Treaty Funds
+### The Uncapturable System for Treasury Governance
 
 **Visual Design:**
-- Show traditional budget (top-down) vs Wishocracy (bottom-up)
+- Show traditional budget (committees decide) vs Wishocracy (everyone decides)
 - Animated visualization of millions of votes aggregating
-- No middlemen between voters and budget
+- No middlemen between voters and treasury
 
-**The Innovation: Direct Allocation Without Representatives**
+**The Innovation: Direct Treasury Governance Without Politicians**
 ```
 THE TREATY GIVES US $27 BILLION
-BUT WHO DECIDES HOW TO SPEND IT?
+BUT WHO DECIDES THE BUDGET SPLIT?
 
 THE PROBLEM WITH EVERY OTHER SYSTEM:
-❌ Representatives = Bribeable (535 people)
-❌ Committees = Capturable (200 people)  
-❌ Direct Democracy = Overwhelming (10,000 decisions)
+❌ Politicians = Will redirect to bombs somehow
+❌ NIH Committee = Failed for 50 years  
+❌ Direct Democracy = 100 budget items? Chaos
 
-✅ WISHOCRACY = UNCAPTURABLE (8 billion deciders)
+✅ WISHOCRACY = UNCAPTURABLE (8 billion governors)
 ```
 
-**What Wishocracy Does:**
-- NOT about passing the treaty (that's the referendum)
-- IS about allocating the $27B once we have it
-- Every human gets equal say in how funds are distributed
-- No politicians or committees can override
+**What Wishocracy Governs:**
+- NOT individual disease funding (patients do that)
+- IS the treasury allocation between major categories
+- How much for patient subsidies vs infrastructure
+- What percentage for operations vs expansion
+- Emergency reserves vs active spending
 
 **How It Works:**
 1. **Treaty passes → $27B enters DIH Treasury**
-2. **You never see a complex budget** - Just simple pairs
-3. **Random pairs for each person** - Can't game the system
-4. **Slide to allocate** - "Cancer research vs Alzheimer's" [60/40 split]
-5. **AI aggregates millions of micro-decisions** - Creates coherent budget
-6. **Funds automatically distributed** - No human can override
+2. **You see simple pairs** - "Patient subsidies vs Platform development"
+3. **Slide to allocate** - "85% subsidies, 15% platform"
+4. **AI aggregates millions** - Creates coherent budget
+5. **Smart contracts execute** - No human can override
 
 ### Wishocracy Live Demo
 
 **Interactive Demo:**
 ```
-Help Allocate The Treaty's $27 Billion
+Help Govern The $27 Billion Treasury
 
-Which deserves more subsidy support?
+How should we split these funds?
 
-[Childhood Cancer Trials]  ← 30% | 70% →  [Alzheimer's Trials]
+[Patient Treatment Subsidies]  ← 85% | 15% →  [Platform Infrastructure]
                           [YOUR ALLOCATION SLIDER]
 
-You'll see 20 random pairs. Takes 3 minutes total.
+[VICTORY Bond Returns]  ← 10% | 90% →  [Everything Else]
+                    [YOUR ALLOCATION SLIDER]
+
+[Emergency Reserve]  ← 5% | 95% →  [Active Programs]
+                 [YOUR ALLOCATION SLIDER]
 
 Live Global Consensus:
-🌍 8,924,123 people allocating right now
-📊 Current allocation: 44% | 56%
-⚡ Your vote updates subsidy pools instantly
+🌍 8,924,123 people governing right now
+📊 Current allocation: 85% subsidies, 10% bonds, 5% platform
+⚡ Your vote updates the treasury allocation
 
 [NEXT PAIR →]
 ```
 
-**Then Patients Vote With Their Feet (And Subsidies):**
-```
-PATIENT VIEW:
-"I have early Alzheimer's"
-
-Available Trials (Ranked by effectiveness):
-1. Drug X Trial - Your copay: $30 (DIH covers $4,970)
-2. Drug Y Trial - Your copay: $25 (DIH covers $3,475)
-3. Lifestyle Trial - Your copay: $0 (DIH covers $500)
-
-[JOIN TRIAL] → Subsidy follows patient choice
-```
-
-**The Two-Layer System:**
-1. **Wishocracy allocates subsidy pools** (cancer gets X%, Alzheimer's gets Y%)
-2. **Patients choose trials** (subsidies follow their choices)
-3. **Market forces optimize** (best trials attract most patients/subsidies)
+**Then Patients Vote With Their Feet:**
+Once Wishocracy allocates 85% to subsidies, patients choose trials:
+- Cancer patient joins cancer trial → subsidy follows
+- Alzheimer's patient joins Alzheimer's trial → subsidy follows
+- Market discovers which diseases need most help
+- No committee deciding "cancer is more important"
 
 **Why This Can't Be Captured:**
-- **No gatekeepers:** Nobody approves/rejects proposals
-- **No representatives:** Direct allocation, no middlemen
-- **Too many allocators:** Can't bribe 8 billion people
-- **Random pairs:** Can't coordinate manipulation
+- **No approval committees:** Can't bribe what doesn't exist
+- **Too many governors:** Can't corrupt 8 billion people
 - **Transparent math:** Every calculation public
-- **Treaty funds only:** Not your taxes, just the redirected military money
+- **Smart contracts:** Code enforces the will of the crowd
+- **No human override:** Not even founders can change it
 
 **Key Messages:**
-- "The treaty gets the money, Wishocracy decides where it goes"
-- "It's like Netflix recommendations but for civilization"
-- "You already do this - 'Pizza or Chinese?' - just scaled up"
-- "First time in history: Budget allocation without politicians"
+- "First treasury in history run by everyone instead of someone"
+- "Like a DAO but for saving humanity"
+- "You become a governor just by participating"
 
 ---
 
 ## The Investment Opportunity  
 
-### Returns Comparison (Animated Bar Race)
+### VICTORY Bonds: The Greatest Investment in History
 
 **Visual Design:**
-- Bars race over 20-year timeline
+- Timeline showing: Investment → Lobbying → Treaty → Perpetual returns
 - Money counter showing compound growth
-- Risk indicators for each investment
+- Comparison to other investments getting dwarfed
 
+**The Simple Math That Breaks Brains:**
 ```
-INVESTMENT VEHICLE          ANNUAL RETURN    YOUR $10K BECOMES
+THE OFFER:
+You invest: Help fund $1-3B lobbying campaign
+You get: 10% of all treaty inflows FOREVER
 
-Savings Account               0.5% 😴         $11,000
-10-Year Treasury              3.5% 🛡️         $20,000  
-S&P 500 Index                10.0% 📈         $67,000
-Bitcoin                       ???% 🎰         $0 - $10M
-Cocaine Trafficking          300% 🚔         [PRISON]
-Defense Contractor Lobbying 1,813% 💀        $181,000 (but evil)
+THE MATH (if we raise $1B):
+Treaty passes → $27B/year flows to DIH
+Bondholders get → 10% = $2.7B/year
+Your return → 270% ANNUAL YIELD FOREVER
 
-✨ VICTORY BONDS              40% 🚀         $2.9 MILLION
-                                             (and you're a hero)
+THE MATH (if we raise $3B):
+Treaty passes → $27B/year flows to DIH
+Bondholders get → 10% = $2.7B/year
+Your return → 90% ANNUAL YIELD FOREVER
 ```
+
+**Timeline:**
+1. **Year 0:** You invest in bonds, we lobby
+2. **Year 1-2:** Treaty gets signed 
+3. **Year 3+:** You get 10% of $27B = $2.7B/year distributed to bondholders
+4. **Forever:** As treaty grows (1% → 2% → 5%), your returns grow too
+
+**Returns Comparison (Starting Year 3):**
+```
+INVESTMENT              ANNUAL RETURN    YOUR $1M BECOMES (Year 10)
+
+Savings Account         0.5% 😴          $1.04M
+S&P 500 Index          10% 📈           $2.6M  
+Top Hedge Funds        20% 💰           $6.2M
+Renaissance Medallion  39% 🏆           $28M
+
+VICTORY BONDS          90-270% 🚀       $181M - $2.2 BILLION
+(depending on total raised)            (and growing forever)
+```
+
+**Why This Works:**
+- We're capturing a fraction of the $109 TRILLION disease burden
+- 10% of peace dividend = tiny slice of massive value creation
+- As more countries join, returns increase
+- As treaty percentage grows (1% → 10%), returns 10X
+
+**Risk Mitigation:**
+- If treaty fails: Bonds convert to equity in DIH (still valuable)
+- Partial success: Regional treaties still pay returns
+- Secondary market: Sell your bonds anytime after issue
 
 **The Pitch:**
-"5% of all DIH treasury flows, forever. As treasury grows from 1% → 2% → 10%, your returns scale automatically."
+"For the price of a house, own a permanent slice of humanity's transition from killing to healing. This isn't an investment. It's buying a toll booth on the bridge from death to immortality."
+
+---
+
+## Who Wins (Spoiler: Everyone Except Death)
+
+### The Coalition of the Willing to Not Die
+
+**Visual Design:**
+- Grid of stakeholder cards
+- Each card flips to show their benefits
+- Green dollar signs and health icons flowing to each group
+
+**PATIENTS - You Get:**
+```
+✅ Treatment in 2 years, not 17 (while you're still alive)
+✅ $20-50 copay vs $100,000 medical bankruptcy
+✅ YOUR rare disease finally gets trials
+✅ Access to global trials from your couch
+✅ Get paid small amounts for participating
+✅ AI matches you to best treatments
+✅ No more "sorry, nothing we can do"
+```
+
+**DOCTORS - Finally Practice Medicine:**
+```
+✅ Get PAID to run trials (new revenue stream)
+✅ One-click patient enrollment (no paperwork hell)
+✅ Treat rare diseases (not just refer and watch them die)
+✅ Liability protection through DIH insurance pool
+✅ CME credits for trial participation
+✅ Real-time global data on what actually works
+✅ Stop saying "we need more research" - DO the research
+```
+
+**BIG PHARMA - From Enemy to Ally:**
+```
+✅ Trials become REVENUE not expense ($2.6B cost → profit)
+✅ 10,000 shelved drugs suddenly profitable
+✅ Every rare disease = new market
+✅ No more gambling billions on blockbusters
+✅ Patients PAY THEM during trials (mind blown)
+✅ 82X faster approval = 82X faster profits
+✅ Global market access through dFDA
+```
+
+**INSURANCE COMPANIES - Profits From Health:**
+```
+✅ Every cure = billions they don't pay out
+✅ Alzheimer's cure = $500B saved annually  
+✅ Cancer prevention = $1.7T not spent
+✅ Lower premiums = competitive advantage
+✅ Healthy customers = pure profit
+✅ No more medical bankruptcy claims
+✅ Preventive care actually happens
+```
+
+**DEFENSE CONTRACTORS - Keep the Money Flowing:**
+```
+✅ Keep 99% of military budget (barely notice 1%)
+✅ VICTORY bonds: 90-270% returns > 8% margins
+✅ New market: Medical equipment using defense tech
+✅ Raytheon MRI machines, Lockheed lab robots
+✅ ESG compliance (finally look less evil)
+✅ Employees get healthcare benefits
+✅ No political backlash (heroes not villains)
+```
+
+**POLITICIANS - Easy Re-election:**
+```
+✅ "I cured cancer" campaign slogan
+✅ VICTORY bond holders fund campaigns
+✅ No more angry constituents dying
+✅ Defense contractors still happy (99% budget)
+✅ Pharma lobby supports them
+✅ Insurance lobby supports them
+✅ History books: Hero not villain
+```
+
+**BILLIONAIRES - Legacy Plus Profit:**
+```
+✅ VICTORY bonds: Best investment ever created
+✅ 90-270% annual returns forever
+✅ Named institutes (immortality via branding)
+✅ Tax benefits plus profit
+✅ First $100 trillion company ownership
+✅ "Saved humanity" in obituary
+✅ Makes current wealth look like pocket change
+```
+
+**The Beautiful Alignment:**
+"For the first time in history, every powerful interest makes MORE money by curing disease than causing it."
 
 ---
 
@@ -787,39 +898,6 @@ Life expectancy: "Yes"
 
 ---
 
-## Choose Your Future
-
-### Split Screen: Two Timelines
-
-**Visual Design:**
-- Two columns with 4 key snapshots each
-- Click buttons to jump between years: [2025] [2030] [2040] [2050]
-- Simple fade transition between states
-- Left side darkens progressively, right side brightens
-
-**Timeline A: Do Nothing (Dystopia)**
-```
-[2025] Status quo - spending on war continues
-[2030] New pandemic, no cures, 50M dead
-[2040] Climate refugees, resource wars
-[2050] Life expectancy: 45, Your kids: Dead
-```
-
-**Timeline B: Vote YES on Treaty (Wishonia)**
-```
-[2025] Treaty passes, $27B redirected
-[2030] Cancer mostly cured, aging slowing
-[2040] Death optional, suffering extinct
-[2050] Life expectancy: 150+, Your kids: Immortal
-```
-
-**Interaction:**
-- Click year buttons to see that snapshot
-- Auto-play option that steps through each year
-- Share buttons for each timeline comparison
-
----
-
 ## The Call to Action
 
 ### Three Big Buttons
@@ -863,202 +941,130 @@ Life expectancy: "Yes"
 **Visual Design:**
 - FAQ accordion style
 - Click to expand each objection
-- Responses are short and punchy
+- Responses are short and devastating
 
-**"This is communism!"**
-No, it's capitalism where we bet on not dying instead of dying.
+**"This will never work"**
+The Oxford RECOVERY trial already proved it works. $500 per patient. Saved 1 million lives. We're just scaling it.
 
-**"You can't trust voting masses!"**
-We trust them to elect presidents with nukes. This is safer.
+**"Countries won't cooperate"**
+They will when their richest citizens own VICTORY bonds and lose billions if they don't.
 
-**"Big Pharma will block this!"**
-Big Pharma MAKES MONEY from this. We're giving them millions of new paying customers.
+**"You can't trust 8 billion people to allocate budgets"**
+We trust them to elect people with nuclear codes. This is safer - no single point of failure.
 
-**"The military-industrial complex won't allow it!"**
-They get 99% of their budget PLUS 40% returns on VICTORY bonds. They'll lobby FOR us.
+**"Big Pharma will block this"**
+Big Pharma MAKES MONEY. We turn their biggest expense (trials) into revenue. They'll lobby FOR us.
 
-**"This is too good to be true!"**
-So was democracy, antibiotics, and the internet. Sometimes good things happen.
+**"The military-industrial complex won't allow it"**
+They keep 99% of budget PLUS get 90-270% returns on bonds. Raytheon's lobbyists become OUR lobbyists.
 
-**"What if corrupt actors take over?"**
-They literally can't. There's no central point to capture. 8 billion people vote directly.
+**"What if politicians steal the money?"**
+Smart contracts. Blockchain. No human touches the money. Code enforces allocation.
 
-**"Won't countries cheat?"**
-Not when their richest citizens lose billions if they do. Money enforces compliance.
+**"This is too good to be true"**
+So was democracy, antibiotics, and the internet. Sometimes humanity gets lucky.
 
 ---
 
-## The Ticking Clock (Final Urgency)
+## The Bottom Line
 
 **Visual Design:**
-- Large countdown timers
-- Red pulsing for urgency
-- Personal statistics calculated from user's age/location
+- Stark black background
+- White text, massive font
+- Counter showing deaths while reading
 
-**The Clock Is Ticking:**
+**The Choice:**
 ```
-Senate votes on military budget in: [47 DAYS : 13 HOURS : 28 MINUTES]
-Deaths before that vote: 7,050,000 (at current rate)
-Your parents' remaining years (average): 12.3
-Chance your kid gets rare disease: 1 in 10
-People dying while you hesitate: [calculated counter: 3/second]
+Keep spending $2.7 TRILLION on weapons
+Result: 55 million die annually forever
 
-Time to act: NOW
+OR
+
+Redirect 1% to medical research  
+Result: Your kids see their grandkids
+
+Time to choose: NOW
+People dying while you hesitate: [counter: 3/second]
 ```
 
 **Final Message:**
-"Every day you wait, 150,000 people run out of days"
+"Every day we wait, 150,000 people run out of days.
+Your mom might be one of them."
 
 [VOTE YES] [INVEST] [SHARE]
 
 ---
 
-## Technical Implementation
+## Launch Strategy (Simple Version)
 
-### Core Technologies
-- **Framework:** Next.js 14 with TypeScript
-- **Animation:** CSS animations + Framer Motion for simple transitions
-- **Charts:** D3.js or Chart.js for interactive visualizations
-- **Sound:** Howler.js for simple audio cues (optional)
-- **Real-time:** Simple setInterval for counters (no WebSockets needed)
-- **Blockchain:** Ethers.js for VICTORY bond purchases
+### The 3.5% Magic Number
+- Historical fact: Every peaceful movement that gets 3.5% active support succeeds
+- Our target: 280 million humans (3.5% of 8 billion)
+- Just need 1/5th of China OR most of America OR 1/3 of India
 
-### Performance Requirements
-- First Contentful Paint: <1.5s
-- Time to Interactive: <3s
-- Mobile-first responsive design
-- Works without JavaScript (progressive enhancement)
-- No complex physics or 3D requirements
+### Phase 1: Build the Army (Months 1-3)
+- Crypto degens and tech bros (they get the bonds)
+- Healthcare workers (they're exhausted and angry)
+- Rare disease communities (they're desperate)
+- Parents of sick kids (they'll fight)
 
-### Analytics Events to Track
-- Scroll depth on each section
-- Slider interactions
-- Button clicks
-- Time spent on page
-- Share actions
-- Video completions
+### Phase 2: Go Viral (Months 4-6)
+- Death counter widgets everywhere
+- "We have 13,000 nukes but no cure for [disease]" memes
+- Influencer army with referral rewards
+- "$1M in bonds for top referrer"
 
-### A/B Tests to Run
-- Different death counter speeds
-- Humor level (darker vs lighter)
-- CTA button copy variations  
-- Investment returns emphasis
-- Fear vs hope messaging balance
+### Phase 3: Political Pressure (Months 7-12)
+- 100M signatures = unstoppable
+- Super PACs in swing districts
+- Defense contractors buy bonds = game over
+- Treaty signing ceremony = history made
 
 ---
 
-## Content Principles
+## Success = 3.5% of Humanity
 
-### Voice & Tone
-- **Dark humor:** "We're all dying anyway, might as well fix it"
-- **Radical honesty:** "Politicians are bribed, here's how we outbribe them"
-- **Urgency without panic:** "Your grandma is dying but we can save her"
-- **Accessible complexity:** "It's complicated but here's the 5-year-old version"
-
-### Key Messages to Hammer
-1. We spend 40X more on weapons (including nuclear & AI) than cures
-2. We have 13,000 nukes but zero cures for 95% of diseases
-3. We're literally building Skynet while grandma dies of Alzheimer's
-4. Oxford already proved we can be 82X more efficient
-5. Just 1% of military budget = 20-50 diseases cured
-
-### What to Avoid
-- Partisan politics (both sides are bribed)
-- Country-specific blame (every country does this)
-- Technical jargon (keep it simple)
-- Optimism without evidence (show the proof)
-- Asking for donations (this is an investment)
+**Primary Goal:** 280 million people vote YES (historically guarantees success)
+**Investment Goal:** $1-3B in VICTORY bonds sold
+**Viral Goal:** 100M+ shares (creates unstoppable momentum)
 
 ---
 
-## Launch Strategy
-
-### Phase 1: Beta (Week 1-2)
-- Soft launch to 10K crypto/tech early adopters
-- Gather feedback, fix bugs
-- Test server capacity
-
-### Phase 2: Influencer Blitz (Week 3-4)
-- Coordinate with 50+ influencers
-- Focus on finance + health + tech personalities
-- "$1M in VICTORY bonds for top referrer"
-
-### Phase 3: Media Storm (Week 5-6)
-- Press release to major outlets
-- Op-eds in WSJ, NYT, FT
-- Podcast tour (Rogan, Lex, etc.)
-
-### Phase 4: Viral Mechanics (Ongoing)
-- Referral rewards in VICTORY bonds
-- Gamification (leaderboards, achievements)
-- Daily "insane stat" social media posts
-- Death counter widgets for embedding
-
----
-
-## Success Metrics
-
-### Primary KPIs
-- Referendum votes (target: 280M in year 1)
-- VICTORY bonds sold (target: $2.5B)
-- Social shares (target: 100M)
-- Media mentions (target: 10K+)
-
-### Secondary Metrics  
-- Average time on page (target: >8 minutes)
-- Scroll completion rate (target: >60%)
-- Return visitor rate (target: >30%)
-- Conversion rate to vote (target: >20%)
-
----
-
-## Notes
-
-This design document is for internal use. Remember:
-- We're not asking for donations, we're offering investments
-- We're not fighting the system, we're bribing it better  
-- We're not idealists, we're pragmatists with dark humor
-- We're not promising utopia, we're promising 1% less stupidity
+## Remember
 
 **The One-Line Pitch:**
 "Humanity has 13,000 nukes and is building Skynet while 55 million die annually from diseases we could cure with 1% of the military budget."
 
+**We're Not:**
+- Asking for donations (we're offering investment)
+- Fighting the system (we're bribing it)
+- Promising utopia (just 1% less stupidity)
+
+**We Are:**
+- Proving that healing is more profitable than killing
+- Using greed to defeat death
+- Making every power player richer by curing disease
+
 ---
 
-## Implementation Priorities
+## Implementation Priority
 
-### Phase 1: Core Message (Week 1)
-Build these first - they carry 80% of the impact:
-1. **The spending comparison chart** (Spending Insanity section)
-2. **The death counter** (Death Clock section) 
-3. **NIH vs Oxford comparison** (Why They're Dying + Solution Exists sections)
-4. **The 1% budget slider** (1% Solution section)
-5. **Call to action buttons** (Call to Action section)
+**Week 1: Core Horror**
+1. The spending comparison (40X more on killing)
+2. The death counter (real-time mortality)
+3. NIH vs Oxford comparison (82X efficiency proven)
+4. VICTORY bonds calculator
 
-### Phase 2: Engagement Features (Week 2)
-Add interactivity:
-1. **dFDA mockup interface** (Amazon for Not Dying section)
-2. **Wishocracy voting demo** (Democracy That Works section)
-3. **Investment returns comparison** (Investment Opportunity section)
+**Week 2: Hope**
+1. The 1% Treaty explanation
+2. Patient subsidy system
+3. Benefits for all parties
+4. Wishocracy demo
 
-### Phase 3: Polish (Week 3)
-Nice-to-haves:
-1. **Timeline comparison** (Choose Your Future section)
-2. **Sound effects** (optional throughout)
-3. **Share widgets and social features**
-4. **A/B testing infrastructure**
+**Week 3: Social Proof**
+1. Live vote counter
+2. Investment thermometer
+3. Share mechanics
+4. Referral system
 
-### Future Additions (Once Live with Real Data):
-- **Live social proof counter** (viewing now, votes today, etc.)
-- **Real-time government position tracker**
-- **Actual death counter** (connected to WHO data)
-- **Live investment thermometer**
-
-### What NOT to Build:
-- Physics engines
-- 3D animations  
-- Complex particle systems
-- Real-time WebSocket connections
-- Elaborate transitions
-
-**Remember:** The data tells the story, not the animations. A simple counter showing preventable deaths is more powerful than any special effect.
+**Remember:** Simple death counter > complex animations. The data is the story.
