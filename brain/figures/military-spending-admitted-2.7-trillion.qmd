@@ -2,12 +2,18 @@
 #| label: military-spending-admitted
 #| fig-cap: "Military Spending: What They Admit ($2.7 Trillion)"
 
-import matplotlib.pyplot as plt
 import sys
+import os
 from pathlib import Path
 
-# Ensure project root is in path
-sys.path.insert(0, str(Path.cwd()))
+# Add project root to path (find it relative to current working directory)
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+import matplotlib.pyplot as plt
 
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
@@ -50,10 +56,10 @@ ax.spines['bottom'].set_linewidth(4)
 # Add watermark
 add_watermark(fig)
 
-# Save the figure
-plt.savefig('brain/figures/military-spending-admitted-2.7-trillion.png',
-            dpi=300, bbox_inches='tight', facecolor='white')
-plt.tight_layout()
+# Save in brain/figures directory
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'military-spending-admitted-2.7-trillion.png', dpi=300, bbox_inches='tight', facecolor='white')
 plt.show()
 
 # Print details

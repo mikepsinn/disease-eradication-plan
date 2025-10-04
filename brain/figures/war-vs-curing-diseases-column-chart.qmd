@@ -68,7 +68,7 @@ add_watermark(fig)
 
 # Save in brain/charts directory
 import os
-output_dir = project_root / 'brain' / 'charts'
+output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'war-vs-curing-diseases-column-chart.png', dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 plt.show()

@@ -59,9 +59,10 @@ ax2.axis('off')
 # Add watermark
 add_watermark(fig)
 
-# Save the figure
-plt.savefig('brain/figures/military-vs-medical-research-spending-comparison.png',
-            dpi=300, bbox_inches='tight', facecolor='white')
+# Save in brain/figures directory
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'military-vs-medical-research-spending-comparison.png', dpi=300, bbox_inches='tight', facecolor='white')
 plt.show()
 
 # Print statistics
