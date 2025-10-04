@@ -1,0 +1,18 @@
+- [x] `brain/book/central-planning-kills.qmd`
+- [x] `brain/book/the-two-wars.qmd`
+- [x] `brain/book/public-choice.qmd`
+- [x] `brain/book/wisdom-of-crowds.qmd`
+- [ ] `brain/book/strategy/dih-model.qmd`
+- [ ] `brain/book/economics/investment-thesis.qmd`
+- [ ] `brain/book/proof/body-as-machine.qmd`
+- [ ] `brain/book/reference/organizational-precedents.qmd`
+- [ ] `brain/book/futures/dystopia.qmd`
+- [ ] `brain/book/futures/utopia.qmd`
+- [ ] `brain/economics/fundraising-strategy.qmd`
+- [ ] `brain/economics/victory-bonds.qmd`
+- [ ] `brain/book/economics/fundraising-and-budget-plan.qmd`
+- [ ] `brain/book/strategy/technology-stack.qmd`
+- [ ] `brain/book/strategy/co-opting-defense-contractors.qmd`
+- [ ] `brain/book/economics/solution/dfda.qmd`
+- [ ] `brain/book/operations.qmd`
+- [ ] `brain/book/reference/global-government-medical-research-spending.qmd`
