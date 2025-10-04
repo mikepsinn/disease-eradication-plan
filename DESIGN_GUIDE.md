@@ -27,11 +27,19 @@ Charts should be as simple and powerful as possible. Every element must earn its
 
 ## Chart Library
 
-All reusable charts are located in [brain/charts/](brain/charts/). See that directory for the complete list of available visualizations.
+All reusable charts are located in [brain/charts/](brain/charts/) as **Quarto Markdown (.qmd) files**. These files contain executable Python code that generates visualizations. See that directory for the complete list of available visualizations.
+
+## Chart File Format
+
+**IMPORTANT:** Charts must be created as `.qmd` files, NOT Python scripts. This ensures they can be:
+- Included directly in book chapters and presentations
+- Rendered independently for testing
+- Reused across multiple documents
+- Version controlled with their output
 
 ## Usage
 
-Include charts in any `.qmd` file using:
+Include charts in any `.qmd` file using Quarto's include directive:
 
 ```markdown
 {{< include brain/charts/annual-deaths.qmd >}}
@@ -39,14 +47,24 @@ Include charts in any `.qmd` file using:
 
 ## Chart Creation Guidelines
 
+### File Format Requirements
+
+1. **Must be `.qmd` files** with Python code blocks
+2. **Use descriptive filenames** following the naming convention below
+3. **Save generated images** in the same `brain/charts/` directory
+4. **Include proper labels** for cross-referencing
+
 ### File Naming
 
-Name charts starting with the leftmost/biggest column: `[primary-topic]-[secondary-topics]-[chart-type].qmd`
+Name charts descriptively starting with the primary topic: `[primary-topic]-[secondary-topics]-[chart-type].qmd`
 
 **Examples:**
 - ✅ `war-vs-curing-diseases-column-chart.qmd`
 - ✅ `disease-war-curing-costs-column-chart.qmd`
+- ✅ `death-counter-realtime.qmd`
+- ✅ `three-shocks-escalation-chart.qmd`
 - ❌ `chart1.qmd` (not descriptive)
+- ❌ `spending.py` (wrong format - use .qmd not .py)
 
 ### Labels - Plain Language Only
 
