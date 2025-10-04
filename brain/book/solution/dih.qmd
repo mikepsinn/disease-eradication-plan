@@ -507,66 +507,6 @@ The NIH is run by whoever the President appoints, usually someone who donated en
 
 The DIH is run by math.
 
-### Disease-Specific DAOs: Letting Sick People Run Things
-
-Each disease institute is a DAO (Decentralized Autonomous Organization), which sounds fancy but just means "democracy that actually works."
-
-**Who Gets to Vote:**
-
-- Patient advocacy groups (50% of votes) - because they're literally dying
-- Research institutions (30% of votes) - because they know things
-- Clinicians (20% of votes) - because they watch people die daily
-- Politicians (0% of votes) - because fuck them
-
-**But Wait, How Do We Know They're Not Full of Shit?**
-
-The On-Chain Reputation System (Like Credit Scores, But for Not Being Evil):
-
-Every member organization has a reputation score based on:
-
-- **Track Record**: Did their last recommendation work? (+100 points) Or kill people? (-1000 points)
-- **Transparency**: Do they publish their data? (+50 points) Or hide failures? (-500 points)
-- **Actual Expertise**: Real credentials verified on-chain, not "my cousin knows a guy"
-- **Skin in the Game**: Do they use their own treatments? (Huge bonus)
-- **Community Trust**: Other members can vouch or call bullshit
-
-**Example Reputation Scores:**
-
-- Johns Hopkins Cancer Center: 9,500 (they know their shit)
-- "Bob's Totally Legit Cancer Cure LLC": 0 (nice try, Bob)
-- Patient group that's been fighting for 20 years: 8,000 (battle-tested)
-- Pharma company hiding data: -5,000 (bye bye voting rights)
-
-The beauty: Your voting power = Base allocation × Reputation score
-
-So even if you're technically in the "30% research institution" bucket, if you suck, your vote counts for nothing. If you're amazing, it counts for more. It's meritocracy, but with math.
-
-**What They Vote On:**
-
-- How much to pay patients
-- Which treatments to test first
-- What problems to put bounties on
-- Whether to fire anyone making over $1 million
-
-**How Voting Works (Quadratic Funding):**
-
-Instead of "whoever has the most money wins," we use quadratic funding, which is math's way of making democracy fair:
-
-- Your first vote costs 1 point
-- Your second vote costs 4 points
-- Your third vote costs 9 points
-- Your tenth vote costs 100 points
-
-This means a thousand poor people beat one rich person. It's beautiful.
-
-Example:
-
-- Bill Gates wants all money to go to malaria: Spends $1 billion, gets 1,000 votes
-- Million cancer patients want cancer research: Spend $1 each, get 1,000,000 votes
-- Cancer wins
-- Democracy works
-- Bill is confused but accepts it
-
 ### The Technology Stack: How We Built a Government That Can't Be Corrupted
 
 The NIH runs on:
@@ -650,30 +590,6 @@ Most DIH operations are run by smart contracts - computer programs that can't be
 - **Public Everything**: All transactions visible (radical transparency, terrifying honesty)
 
 It's like having the world's most honest accountant who works for free and can't be murdered.
-
-### The Emergency Brake: Nine Humans Who Can Stop Everything
-
-Because sometimes robots do stupid things, we have nine humans who can hit the emergency brake:
-
-**The Technical and Ethics Council:**
-
-- 3 security experts (to spot hacks)
-- 3 bioethicists (to prevent zombie apocalypses)
-- 2 patient advocates (to ensure we're not torturing people)
-- 1 wild card (someone weird for perspective)
-
-**Their Powers:**
-
-- Can freeze everything for 72 hours
-- Must explain why publicly
-- Need 7 of 9 votes to act
-- Can be fired by the community
-- Cannot give themselves raises
-- Must pass annual "are you evil?" tests
-
-It's like the Supreme Court, but useful.
-
----
 
 ## Why This Actually Works: The Psychology of Proper Incentives
 
