@@ -60,7 +60,7 @@ ax2.axis('off')
 add_watermark(fig)
 
 # Save the figure
-plt.savefig('brain/charts/military-vs-medical-research-spending-comparison.png',
+plt.savefig('brain/figures/military-vs-medical-research-spending-comparison.png',
             dpi=300, bbox_inches='tight', facecolor='white')
 plt.show()
 

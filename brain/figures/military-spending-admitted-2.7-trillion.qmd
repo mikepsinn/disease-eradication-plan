@@ -38,19 +38,20 @@ ax.text(0, value + 0.2, 'PER YEAR', ha='center', va='bottom',
 
 # Formatting
 ax.set_ylim(0, 3)
-ax.set_ylabel('TRILLIONS OF DOLLARS', fontsize=20, color=COLOR_BLACK, fontweight='bold')
+ax.set_yticks([])  # Remove y-axis - value is on the bar
 ax.tick_params(colors=COLOR_BLACK, labelsize=16)
 
 # Brutal borders
-for spine in ax.spines.values():
-    spine.set_color(COLOR_BLACK)
-    spine.set_linewidth(4)
+for spine in ['top', 'right', 'left']:
+    ax.spines[spine].set_visible(False)
+ax.spines['bottom'].set_color(COLOR_BLACK)
+ax.spines['bottom'].set_linewidth(4)
 
 # Add watermark
 add_watermark(fig)
 
 # Save the figure
-plt.savefig('brain/charts/military-spending-admitted-2.7-trillion.png',
+plt.savefig('brain/figures/military-spending-admitted-2.7-trillion.png',
             dpi=300, bbox_inches='tight', facecolor='white')
 plt.tight_layout()
 plt.show()

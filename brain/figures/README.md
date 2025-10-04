@@ -14,7 +14,7 @@ All chart design guidelines, color palettes, typography specifications, and tech
 This directory contains all reusable chart visualizations (`.qmd` files) that can be included in presentations and book chapters using:
 
 ```markdown
-{{< include brain/charts/chart-name.qmd >}}
+{{< include brain/figures/chart-name.qmd >}}
 ```
 
 Browse the files in this directory to see all available visualizations.

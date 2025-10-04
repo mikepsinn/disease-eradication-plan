@@ -99,7 +99,7 @@ ax2.set_title('THE INSANE RATIO', fontsize=32, fontweight='bold', pad=20)
 add_watermark(fig)
 
 # Save the figure
-plt.savefig('brain/charts/death-toilet-119-trillion-breakdown.png',
+plt.savefig('brain/figures/death-toilet-119-trillion-breakdown.png',
             dpi=300, bbox_inches='tight', facecolor='white')
 plt.tight_layout()
 plt.show()

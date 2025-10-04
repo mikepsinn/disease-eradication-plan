@@ -67,17 +67,18 @@ ax.text(0.5, 50000, 'MORE ON DEATH\nTHAN CURES', ha='center',
 
 # Style the axes - LINEAR SCALE SHOWS THE TRUTH
 ax.set_ylim(0, 130000)
-ax.set_ylabel('BILLIONS PER YEAR', fontsize=24, color=COLOR_BLACK, fontweight='bold')
+ax.set_yticks([])  # Remove y-axis - values are on the bars
 ax.tick_params(colors=COLOR_BLACK, labelsize=20)
-for spine in ax.spines.values():
-    spine.set_color(COLOR_BLACK)
-    spine.set_linewidth(4)
+for spine in ['top', 'right', 'left']:
+    ax.spines[spine].set_visible(False)
+ax.spines['bottom'].set_color(COLOR_BLACK)
+ax.spines['bottom'].set_linewidth(4)
 
 # Add watermark
 add_watermark(fig)
 
 # Save the figure
-plt.savefig('brain/charts/investment-ratio-1750-to-1.png',
+plt.savefig('brain/figures/investment-ratio-1750-to-1.png',
             dpi=300, bbox_inches='tight', facecolor='white')
 plt.tight_layout()
 plt.show()

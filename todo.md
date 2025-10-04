@@ -304,7 +304,7 @@ title: "Chapter X: [Title]"
 
 **Goal:** Add Python-generated charts using Quarto's computation features
 
-### Priority Charts (Create as `.qmd` files in `brain/charts/`)
+### Priority Charts (Create as `.qmd` files in `brain/figures/`)
 
 - [ ] **Military spending vs medical research** (Chapter 1)
   - Bar chart comparing $2.7T to $68B

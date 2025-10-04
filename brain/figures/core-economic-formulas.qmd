@@ -490,7 +490,7 @@ Edit the constants at the top of this file. All calculations will automatically 
 
 ### To Use in Documents:
 ```markdown
-{{< include ../../charts/core-economic-formulas.qmd#peace-dividend >}}
+{{< include ../../figures/core-economic-formulas.qmd#peace-dividend >}}
 ```
 
 ### To Extract Specific Values:

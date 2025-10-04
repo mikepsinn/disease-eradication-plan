@@ -83,7 +83,7 @@ We chose not to.
 
 ## Here's What We Spend Killing vs Curing
 
-{{< include brain/charts/war-vs-curing-diseases-column-chart.qmd >}}
+{{< include brain/figures/war-vs-curing-diseases-column-chart.qmd >}}
 
 <div style="text-align: center; margin-top: 40px;">
 <p style="font-size: 72px; color: #B22234; font-weight: bold; margin-bottom: 30px;">
@@ -100,7 +100,7 @@ we spend <span style="color: #B22234; font-weight: bold;">$40 on weapons</span>
 
 ## But the Real Cost of War Is Hidden
 
-{{< include brain/charts/war-hidden-direct-curing-diseases-column-chart.qmd >}}
+{{< include brain/figures/war-hidden-direct-curing-diseases-column-chart.qmd >}}
 
 <div style="text-align: center; margin-top: 40px;">
 <p style="font-size: 64px; color: #000000; margin-bottom: 30px;">
@@ -119,7 +119,7 @@ The $2.7T military budget? <span style="color: #B22234; font-weight: bold;">That
 
 ## Now Add Disease Costs: The Full Picture
 
-{{< include brain/charts/disease-war-curing-costs-column-chart.qmd >}}
+{{< include brain/figures/disease-war-curing-costs-column-chart.qmd >}}
 
 <div style="text-align: center; margin-top: 50px;">
 <p style="font-size: 80px; color: #B22234; font-weight: bold; margin-bottom: 40px;">
@@ -135,7 +135,7 @@ While spending <span style="color: #3C3B6E; font-weight: bold;">0.06%</span> on 
 
 ## The 1,750-to-1 Stupidity Ratio
 
-{{< include brain/charts/disease-burden-war-curing-comparison.qmd >}}
+{{< include brain/figures/disease-burden-war-curing-comparison.qmd >}}
 
 <div style="text-align: center; margin-top: 50px;">
 <p style="font-size: 100px; color: #B22234; font-weight: bold;">1,750X</p>
@@ -225,7 +225,7 @@ Civil rights. Women's suffrage. Every major change.
 <span style="color: #B22234; font-weight: bold;">Soviet FDA</span> vs <span style="color: #3C3B6E; font-weight: bold;">Amazon for Cures</span>
 </p>
 
-{{< include brain/charts/dfda-comparison.qmd >}}
+{{< include brain/figures/dfda-comparison.qmd >}}
 
 <div style="display: flex; justify-content: space-around; margin-top: 60px; max-width: 1400px; margin: 60px auto;">
 <div style="flex: 1; padding: 30px;">
@@ -262,7 +262,7 @@ Every disease gets trials
 VICTORY Bonds: 40% Annual Returns Forever
 </p>
 
-{{< include brain/charts/victory-bonds-returns.qmd >}}
+{{< include brain/figures/victory-bonds-returns.qmd >}}
 
 <div style="background-color: #f8f8f8; padding: 40px; border-radius: 20px; margin: 60px auto; max-width: 1000px;">
 <p style="font-size: 48px; color: #000000; line-height: 1.8;">

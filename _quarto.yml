@@ -86,7 +86,7 @@ execute:
   cache: false
   freeze: auto
   # Send all generated figures to a central directory
-  fig-path: "assets/charts/"
+  fig-path: "assets/figures/"
   fig-prefix: "{{< meta doc-title >}}-"
 
 # Tell Quarto to use the project's virtual environment

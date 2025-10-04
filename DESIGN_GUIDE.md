@@ -6,7 +6,7 @@ This guide defines the visual design standards for all charts, diagrams, and vis
 
 - **Writing Style:** See [STYLE_GUIDE.md](STYLE_GUIDE.md) for tone, voice, and writing conventions
 - **Content Guidelines:** See [CONTRIBUTING.md](CONTRIBUTING.md) for overall contribution workflow
-- **Technical Implementation:** See [brain/charts/_chart_style.py](brain/charts/_chart_style.py) for all code constants and functions
+- **Technical Implementation:** See [brain/figures/_chart_style.py](brain/figures/_chart_style.py) for all code constants and functions
 
 ## Design Philosophy
 
@@ -27,7 +27,7 @@ Charts should be as simple and powerful as possible. Every element must earn its
 
 ## Chart Library
 
-All reusable charts are located in [brain/charts/](brain/charts/) as **Quarto Markdown (.qmd) files**. These files contain executable Python code that generates visualizations. See that directory for the complete list of available visualizations.
+All reusable charts are located in [brain/figures/](brain/figures/) as **Quarto Markdown (.qmd) files**. These files contain executable Python code that generates visualizations. See that directory for the complete list of available visualizations.
 
 ## Chart File Format
 
@@ -42,7 +42,7 @@ All reusable charts are located in [brain/charts/](brain/charts/) as **Quarto Ma
 Include charts in any `.qmd` file using Quarto's include directive:
 
 ```markdown
-{{< include brain/charts/annual-deaths.qmd >}}
+{{< include brain/figures/annual-deaths.qmd >}}
 ```
 
 ## Chart Creation Guidelines
@@ -51,7 +51,7 @@ Include charts in any `.qmd` file using Quarto's include directive:
 
 1. **Must be `.qmd` files** with Python code blocks
 2. **Use descriptive filenames** following the naming convention below
-3. **Save generated images** in the same `brain/charts/` directory
+3. **Save generated images** in the same `brain/figures/` directory
 4. **Include proper labels** for cross-referencing
 
 ### File Naming
@@ -77,7 +77,7 @@ Name charts descriptively starting with the primary topic: `[primary-topic]-[sec
 ### Technical Checklist
 
 1. Import from [_chart_style.py](_chart_style.py): `setup_chart_style()`, color constants, helper functions
-2. Save generated images in `brain/charts/` directory (same location as `.qmd` source file)
+2. Save generated images in `brain/figures/` directory (same location as `.qmd` source file)
 3. Name output file to match source: `chart-name.qmd` → `chart-name.png`
 4. Use linear scales for disparity charts (never logarithmic)
 5. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`

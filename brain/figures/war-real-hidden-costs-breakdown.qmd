@@ -97,7 +97,7 @@ ax.spines['bottom'].set_linewidth(3)
 add_watermark(fig)
 
 # Save the figure
-plt.savefig('brain/charts/war-real-hidden-costs-breakdown.png',
+plt.savefig('brain/figures/war-real-hidden-costs-breakdown.png',
             dpi=300, bbox_inches='tight', facecolor='white')
 plt.tight_layout()
 plt.show()
