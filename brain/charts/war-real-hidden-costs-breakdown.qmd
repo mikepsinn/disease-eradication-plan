@@ -1,0 +1,136 @@
+```{python}
+#| label: war-real-hidden-costs
+#| fig-cap: "The REAL Cost of War: What They Don't Tell You"
+
+import sys
+import os
+from pathlib import Path
+
+# Add project root to path
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+import matplotlib.pyplot as plt
+import numpy as np
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+)
+
+# Setup neobrutalist styling
+setup_chart_style(style='light', dpi=150)
+
+# The hidden costs data
+costs = {
+    'What They Admit\n(Military Budget)': 2700,
+    'Infrastructure\nDestroyed': 2400,
+    'Veterans\nHealthcare': 500,
+    'Refugee\nCrisis': 800,
+    'Trade\nDisruption': 1500,
+    'Human Capital\nLoss': 2000
+}
+
+# Calculate cumulative for stacked effect
+cumulative = []
+current = 0
+for value in costs.values():
+    current += value
+    cumulative.append(current)
+
+# Create horizontal stacked bar chart
+fig, ax = plt.subplots(figsize=(20, 12))
+
+y_pos = np.arange(len(costs))
+colors_stack = ['#FF0000', '#CC0000', '#990000', '#660000', '#330000', '#800020']
+
+# Create bars
+bars = ax.barh(y_pos, list(costs.values()), color=colors_stack,
+               edgecolor=COLOR_BLACK, linewidth=3, height=0.7)
+
+# Add value labels on bars
+for i, (key, value) in enumerate(costs.items()):
+    # Value in center of bar
+    ax.text(value/2, i, f'${value}B', ha='center', va='center',
+            color=COLOR_WHITE, fontsize=24, fontweight='bold')
+    # Category label to the left
+    ax.text(-200, i, key, ha='right', va='center',
+            color=COLOR_BLACK, fontsize=18, fontweight='bold')
+
+# Add cumulative total with dramatic emphasis
+total_cost = cumulative[-1]
+ax.text(total_cost + 500, len(costs)-1,
+        f'TOTAL:\n${total_cost/1000:.1f}T',
+        ha='center', va='center', color=COLOR_BLACK,
+        fontsize=36, fontweight='bold',
+        bbox=dict(boxstyle='round,pad=1', facecolor='yellow',
+                  edgecolor=COLOR_BLACK, linewidth=4))
+
+# Add arrow showing escalation
+ax.annotate('', xy=(total_cost, len(costs)-1),
+            xytext=(costs['What They Admit\n(Military Budget)'], 0),
+            arrowprops=dict(arrowstyle='->', lw=4, color=COLOR_RED))
+
+# Add "3.6X BIGGER" annotation
+ax.text(total_cost/2, len(costs)/2,
+        f'{total_cost/2700:.1f}X\nBIGGER\nTHAN\nADMITTED',
+        ha='center', va='center', fontsize=32,
+        color=COLOR_RED, fontweight='bold', rotation=0)
+
+# Formatting
+ax.set_xlim(-2500, 12000)
+ax.set_ylim(-0.5, len(costs)-0.5)
+ax.set_xlabel('BILLIONS OF DOLLARS', fontsize=24, fontweight='bold')
+ax.set_title('THE REAL COST OF WAR: $9.7 TRILLION (NOT $2.7T)',
+             fontsize=36, color=COLOR_BLACK, pad=20, fontweight='bold')
+
+# Remove y-axis
+ax.set_yticks([])
+for spine in ['top', 'right', 'left']:
+    ax.spines[spine].set_visible(False)
+ax.spines['bottom'].set_color(COLOR_BLACK)
+ax.spines['bottom'].set_linewidth(3)
+
+# Add watermark
+add_watermark(fig)
+
+# Save the figure
+plt.savefig('brain/charts/war-real-hidden-costs-breakdown.png',
+            dpi=300, bbox_inches='tight', facecolor='white')
+plt.tight_layout()
+plt.show()
+
+# Print the breakdown
+print("\n🔥 THE HIDDEN COSTS OF WAR BREAKDOWN:\n")
+print("💰 Military Budget (What They Admit): $2.7T")
+print("➕ Hidden Costs They Don't Tell You About:")
+print("   🏚️ Cities Turned to Rubble: $2.4T")
+print("      • Syria: $300B to rebuild")
+print("      • Ukraine: $400B and counting")
+print("      • Iraq: $600B in destruction")
+print("      • Afghanistan: $500B wasted")
+print("   🧠 Veterans With PTSD Forever: $500B")
+print("      • 1.2M veterans need lifetime care")
+print("      • 22 veteran suicides per day")
+print("      • Families destroyed: priceless")
+print("   👥 70 Million Refugees: $800B")
+print("      • Housing, food, healthcare")
+print("      • Lost productivity")
+print("      • Social integration costs")
+print("   📉 Global Trade Destroyed: $1.5T")
+print("      • Supply chains broken")
+print("      • Markets destabilized")
+print("      • Investment fled")
+print("   💀 Dead Innovators & Scientists: $2.0T")
+print("      • Every Einstein killed = centuries lost")
+print("      • Brain drain from war zones")
+print("      • Innovation that never happens")
+
+print("\n" + "="*60)
+print(f"📊 REAL ANNUAL COST OF WAR: $9.7 TRILLION")
+print(f"   That's ${9_700_000_000_000/365/24/3600:,.0f} per second")
+print(f"   That's 3.6X what they admit")
+print("="*60)
+```

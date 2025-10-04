@@ -1,0 +1,128 @@
+```{python}
+#| label: death-toilet-119-trillion
+#| fig-cap: "The $119 Trillion Death Toilet: Where Humanity Flushes Its Future"
+
+import sys
+import os
+from pathlib import Path
+
+# Add project root to path
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+import matplotlib.pyplot as plt
+import numpy as np
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+)
+
+# Setup neobrutalist styling
+setup_chart_style(style='light', dpi=150)
+
+# Create figure with multiple subplots
+fig = plt.figure(figsize=(24, 14))
+
+# Main pie chart showing the death toilet composition
+ax1 = plt.subplot(121)
+sizes = [9.7, 109]
+labels = ['WAR\n$9.7T\n(8%)', 'DISEASE\n$109T\n(92%)']
+colors = [COLOR_RED, '#9400D3']  # Red for war, purple for disease
+explode = (0.05, 0)  # Slightly separate war slice
+
+wedges, texts, autotexts = ax1.pie(sizes, explode=explode, labels=labels, colors=colors,
+                                     autopct='', shadow=False, startangle=90,
+                                     textprops={'fontsize': 24, 'fontweight': 'bold'})
+
+# Make text white on dark wedges
+for text in texts:
+    text.set_color(COLOR_WHITE)
+    text.set_fontsize(28)
+    text.set_fontweight('bold')
+
+ax1.set_title('THE $119 TRILLION DEATH TOILET',
+              fontsize=36, fontweight='bold', pad=20)
+
+# Right side: Comparison to cure investment - LINEAR SCALE TO SHOW TRUE INSANITY
+ax2 = plt.subplot(122)
+categories = ['Death Toilet\n(War + Disease)', 'Cure\nInvestment']
+values = [119000, 68]  # In billions for proper scale
+colors_bar = ['#8B008B', COLOR_BLUE]
+
+# Use LINEAR scale - show the TRUE disparity!
+bars = ax2.bar(categories, values, color=colors_bar, edgecolor=COLOR_BLACK, linewidth=4)
+
+# Add value labels
+for i, (bar, value) in enumerate(zip(bars, values)):
+    height = bar.get_height()
+    if value > 1000:
+        label = f'${value/1000:.0f}T'
+    else:
+        label = f'${value}B'
+
+    if i == 0:  # Death toilet - label inside the massive bar
+        ax2.text(bar.get_x() + bar.get_width()/2., height * 0.5,
+                label, ha='center', va='center',
+                color=COLOR_WHITE, fontsize=40, fontweight='bold')
+    else:  # Cure investment - so tiny it's invisible, label above with arrow
+        ax2.text(bar.get_x() + bar.get_width()/2., 3000,
+                label, ha='center', va='bottom',
+                color=COLOR_BLACK, fontsize=20, fontweight='bold')
+        # Arrow pointing to the invisible bar
+        ax2.annotate('↓\nBarely\nVisible!', xy=(bar.get_x() + bar.get_width()/2., 0),
+                    xytext=(bar.get_x() + bar.get_width()/2., 8000),
+                    fontsize=16, color=COLOR_RED, ha='center', fontweight='bold',
+                    arrowprops=dict(arrowstyle='->', lw=3, color=COLOR_RED))
+
+# Add the insane ratio
+ratio = 119000 / 68
+ax2.text(0.5, 70000, f'{ratio:,.0f}X', ha='center',
+        fontsize=72, color=COLOR_RED, fontweight='bold')
+ax2.text(0.5, 60000, 'MORE ON DEATH\nTHAN CURES', ha='center',
+        fontsize=24, color=COLOR_RED, fontweight='bold')
+
+ax2.set_ylim(0, 130000)
+ax2.set_ylabel('BILLIONS PER YEAR', fontsize=20, color=COLOR_BLACK, fontweight='bold')
+ax2.tick_params(colors=COLOR_BLACK, labelsize=16)
+for spine in ax2.spines.values():
+    spine.set_color(COLOR_BLACK)
+    spine.set_linewidth(3)
+
+ax2.set_title('THE INSANE RATIO', fontsize=32, fontweight='bold', pad=20)
+
+# Add watermark
+add_watermark(fig)
+
+# Save the figure
+plt.savefig('brain/charts/death-toilet-119-trillion-breakdown.png',
+            dpi=300, bbox_inches='tight', facecolor='white')
+plt.tight_layout()
+plt.show()
+
+# Print the breakdown
+print("\n🚽 THE $119 TRILLION DEATH TOILET BREAKDOWN:\n")
+print("Components:")
+print(f"├─ War (Real Cost):     $9.7T   (8%)")
+print(f"├─ Disease Burden:      $109T   (92%)")
+print(f"└─ TOTAL:              $119T   (100%)")
+
+print("\n📊 WHAT THIS MEANS:")
+print(f"• Humanity wastes $119 TRILLION annually on death")
+print(f"• That's ${119_000_000_000_000/8_000_000_000:,.0f} per human per year")
+print(f"• That's ${119_000_000_000_000/365:,.0f} billion per day")
+print(f"• That's ${119_000_000_000_000/365/24:,.0f} billion per hour")
+print(f"• That's ${119_000_000_000_000/365/24/60:,.0f} billion per minute")
+print(f"• That's ${119_000_000_000_000/365/24/3600:,.0f} million per second")
+
+print("\n🔬 MEANWHILE:")
+print(f"• Investment in cures: $68 billion (0.06% of problem)")
+print(f"• Ratio: {119_000/68:.0f}:1 death spending vs cure spending")
+
+print("\n💡 THE SOLUTION:")
+print(f"• Just 1% of death toilet = $1.19 trillion for cures")
+print(f"• That's a 17X increase in cure funding")
+print(f"• Enough to cure most diseases in a decade")
+```

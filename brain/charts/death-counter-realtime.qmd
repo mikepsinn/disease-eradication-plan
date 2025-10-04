@@ -1,0 +1,60 @@
+```{python}
+#| label: death-counter-realtime
+#| fig-cap: "Real-Time Global Death Counter"
+#| echo: false
+
+from IPython.display import HTML, display
+
+# Global death statistics (per second)
+DEATHS_PER_SECOND = 1.8  # Total global deaths
+DISEASE_DEATHS_PER_SECOND = 1.5  # Deaths from disease
+PREVENTABLE_DEATHS_PER_SECOND = 0.9  # Preventable deaths
+CHILD_DEATHS_PER_SECOND = 0.17  # Children under 5
+
+def create_death_counter():
+    """Create an interactive real-time death counter widget"""
+    html = """
+    <div style="background: #000; color: #0F0; padding: 40px; font-family: 'Courier New', monospace; text-align: center; border: 8px solid #0F0; margin: 20px 0;">
+        <h2 style="color: #0F0; font-size: 48px; margin-bottom: 30px; font-weight: bold;">GLOBAL DEATH MONITOR</h2>
+        <div id="death-counter" style="font-size: 24px; line-height: 2;">
+            <div>Since you opened this page: <span id="total" style="color: #FF0000; font-size: 36px; font-weight: bold;">0</span> deaths</div>
+            <div>From disease: <span id="disease" style="color: #FFA500; font-size: 30px;">0</span></div>
+            <div>Were preventable: <span id="preventable" style="color: #FFFF00; font-size: 30px;">0</span></div>
+            <div>Children under 5: <span id="children" style="color: #FF69B4; font-size: 30px;">0</span></div>
+        </div>
+        <div style="margin-top: 30px; font-size: 18px; color: #888;">
+            That's 3 human beings per second. Forever. Until we fix this.
+        </div>
+    </div>
+
+    <script>
+    let startTime = Date.now();
+
+    function updateCounter() {
+        let elapsed = (Date.now() - startTime) / 1000;
+        document.getElementById('total').textContent = Math.floor(elapsed * 1.8);
+        document.getElementById('disease').textContent = Math.floor(elapsed * 1.5);
+        document.getElementById('preventable').textContent = Math.floor(elapsed * 0.9);
+        document.getElementById('children').textContent = Math.floor(elapsed * 0.17);
+    }
+
+    setInterval(updateCounter, 100);
+    </script>
+    """
+    return HTML(html)
+
+# Display the counter
+display(create_death_counter())
+
+# Also print static statistics for non-interactive viewing
+print("\n📊 DEATH STATISTICS (Per Second):")
+print(f"• Total deaths: {DEATHS_PER_SECOND}")
+print(f"• Disease deaths: {DISEASE_DEATHS_PER_SECOND}")
+print(f"• Preventable deaths: {PREVENTABLE_DEATHS_PER_SECOND}")
+print(f"• Children under 5: {CHILD_DEATHS_PER_SECOND}")
+print("\n💀 DAILY TOTALS:")
+print(f"• 150,000 total deaths")
+print(f"• 130,000 from disease")
+print(f"• 80,000 preventable")
+print(f"• 15,000 children")
+```

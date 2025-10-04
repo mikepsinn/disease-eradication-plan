@@ -10,15 +10,7 @@ format:
 
 Let's start with what they admit to:
 
-```{python}
-#| echo: false
-import sys
-sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
-from brain.charts.scripts.spending_comparison import create_spending_comparison, print_statistics
-
-create_spending_comparison(show_plot=True)
-print_statistics()
-```
+{{< include ../../charts/military-vs-medical-research-spending-comparison.qmd >}}
 
 ### Breaking It Down Per Human
 
@@ -44,15 +36,7 @@ But that $2.7 trillion? That's just what they ADMIT to spending.
 
 Here comes the part they don't tell you:
 
-```{python}
-#| echo: false
-import sys
-sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
-from brain.charts.scripts.war_real_costs import create_war_real_costs, print_cost_breakdown
-
-create_war_real_costs(show_plot=True)
-print_cost_breakdown()
-```
+{{< include ../../charts/war-real-hidden-costs-breakdown.qmd >}}
 
 ### What $9.7 Trillion Actually Means
 
@@ -94,27 +78,11 @@ print_disease_statistics()
 
 ### The Three Shocks Summary
 
-```{python}
-#| echo: false
-import sys
-sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
-from brain.charts.scripts.three_shocks import create_three_shocks, print_shock_summary
-
-create_three_shocks(show_plot=True)
-print_shock_summary()
-```
+{{< include ../../charts/three-shocks-escalation-chart.qmd >}}
 
 ## The $119 Trillion Death Toilet
 
-```{python}
-#| echo: false
-import sys
-sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
-from brain.charts.scripts.death_toilet_breakdown import create_death_toilet_breakdown, print_breakdown
-
-create_death_toilet_breakdown(show_plot=True)
-print_breakdown()
-```
+{{< include ../../charts/death-toilet-119-trillion-breakdown.qmd >}}
 
 ### Meanwhile, Our Investment in Cures
 
@@ -329,10 +297,3 @@ We'd have a 99:1 ratio.
 
 Still insane, but survivable.
 
-## Next Chapter
-
-Why does this insane system persist? Because democracy is broken and 200 bureaucrats in Maryland control all medical research. Let's explore why centralized systems always fail...
-
----
-
-*Turn the page to understand why every committee in history has failed at complex problems...*

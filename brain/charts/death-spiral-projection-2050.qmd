@@ -1,0 +1,119 @@
+```{python}
+#| label: death-spiral-projection
+#| fig-cap: "The Death Spiral: Exponential Costs vs Stagnant Cures"
+
+import sys
+import os
+from pathlib import Path
+
+# Add project root to path
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+import matplotlib.pyplot as plt
+import numpy as np
+from brain.charts._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+)
+
+# Setup neobrutalist styling
+setup_chart_style(style='light', dpi=150)
+
+# Create projection data
+years = np.arange(2024, 2051)
+death_cost = 119 * (1.03 ** np.arange(len(years)))  # 3% annual growth
+cure_investment = 0.068 * (1.02 ** np.arange(len(years)))  # 2% annual growth
+
+# Create figure
+fig, ax = plt.subplots(figsize=(20, 12))
+
+# Plot the lines with brutal colors
+ax.plot(years, death_cost, color=COLOR_RED, linewidth=6, label='Death Costs ($T)')
+ax.plot(years, cure_investment * 1000, color=COLOR_BLUE, linewidth=6, label='Cure Investment (×1000 for visibility)')
+
+# Fill areas for emphasis
+ax.fill_between(years, 0, death_cost, color=COLOR_RED, alpha=0.2)
+ax.fill_between(years, 0, cure_investment * 1000, color=COLOR_BLUE, alpha=0.2)
+
+# Add critical annotations
+ax.annotate('ECONOMIC\nCOLLAPSE', xy=(2040, 180),
+            fontsize=36, color=COLOR_RED, fontweight='bold', ha='center',
+            bbox=dict(boxstyle='round,pad=1', facecolor='yellow', edgecolor=COLOR_BLACK, linewidth=4))
+
+ax.annotate('Species extinction\nlikely by 2050', xy=(2045, 200),
+            fontsize=24, color=COLOR_BLACK, ha='center', fontweight='bold')
+
+# Add data labels for key years
+for year in [2024, 2030, 2040, 2050]:
+    idx = year - 2024
+    if idx < len(years):
+        # Death cost label
+        ax.annotate(f'${death_cost[idx]:.0f}T',
+                   xy=(year, death_cost[idx]), xytext=(year, death_cost[idx] + 10),
+                   fontsize=16, color=COLOR_RED, fontweight='bold', ha='center')
+
+        # Cure investment label (actual value, not scaled)
+        actual_cure = cure_investment[idx]
+        ax.annotate(f'${actual_cure*1000:.0f}B',
+                   xy=(year, actual_cure * 1000), xytext=(year, actual_cure * 1000 - 10),
+                   fontsize=14, color=COLOR_BLUE, fontweight='bold', ha='center')
+
+# Styling
+ax.set_xlabel('Year', fontsize=24, color=COLOR_BLACK, fontweight='bold')
+ax.set_ylabel('Trillions per Year', fontsize=24, color=COLOR_BLACK, fontweight='bold')
+ax.set_title('THE DEATH SPIRAL: UNSUSTAINABLE BY DESIGN',
+             fontsize=36, color=COLOR_BLACK, pad=20, fontweight='bold')
+
+# Legend
+ax.legend(loc='upper left', fontsize=20, frameon=True, facecolor='white',
+          edgecolor=COLOR_BLACK, framealpha=1, borderpad=1)
+
+# Grid for readability
+ax.grid(True, alpha=0.3, color=COLOR_BLACK, linewidth=2, linestyle='--')
+
+# Brutal borders
+ax.tick_params(colors=COLOR_BLACK, labelsize=18)
+for spine in ax.spines.values():
+    spine.set_color(COLOR_BLACK)
+    spine.set_linewidth(4)
+
+# Set limits
+ax.set_xlim(2024, 2050)
+ax.set_ylim(0, 250)
+
+# Add watermark
+add_watermark(fig)
+
+# Save the figure
+plt.savefig('brain/charts/death-spiral-projection-2050.png',
+            dpi=300, bbox_inches='tight', facecolor='white')
+plt.tight_layout()
+plt.show()
+
+# Print projections
+print("\n📈 THE DEATH SPIRAL PROJECTIONS:\n")
+print("Year 2024 (Today):")
+print(f"  • Death costs: $119 trillion")
+print(f"  • Cure investment: $68 billion")
+print(f"  • Ratio: 1,750:1\n")
+
+print("Year 2030:")
+print(f"  • Death costs: ${119 * 1.03**6:.0f} trillion")
+print(f"  • Cure investment: ${68 * 1.02**6:.0f} billion")
+print(f"  • Ratio: {(119 * 1.03**6) / (0.068 * 1.02**6):,.0f}:1\n")
+
+print("Year 2040:")
+print(f"  • Death costs: ${119 * 1.03**16:.0f} trillion")
+print(f"  • Cure investment: ${68 * 1.02**16:.0f} billion")
+print(f"  • Ratio: {(119 * 1.03**16) / (0.068 * 1.02**16):,.0f}:1\n")
+
+print("Year 2050 (If Nothing Changes):")
+print(f"  • Death costs: ${119 * 1.03**26:.0f} trillion")
+print(f"  • Cure investment: ${68 * 1.02**26:.0f} billion")
+print(f"  • Ratio: {(119 * 1.03**26) / (0.068 * 1.02**26):,.0f}:1")
+print(f"  • Result: Economic collapse, species extinction")
+```

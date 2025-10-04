@@ -98,7 +98,7 @@
   quarto publish gh-pages
   ```
 
-**Deliverable:** Live website at dih.wiki + downloadable presentation
+**Deliverable:** Live website at WarOnDisease.org + downloadable presentation
 
 ---
 

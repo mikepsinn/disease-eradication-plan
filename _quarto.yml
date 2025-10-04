@@ -10,7 +10,7 @@ book:
   description: "A practical guide to getting every nation to sign the 1% Treaty - redirecting just 1% of military spending to fund 80X more efficient medical research through decentralized clinical trials."
   cover-image: cover.jpg
   favicon: favicon.ico
-  site-url: https://dih.wiki
+  site-url: https://WarOnDisease.org
   repo-url: https://github.com/mikepsinn/decentralized-institutes-of-health
   issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   chapters:
@@ -18,8 +18,8 @@ book:
 
     - part: "The Daily Massacre: 150,000 Deaths While You Read This"
       chapters:
-        # - brain/book/problem/the-daily-massacre.qmd  # TODO: CREATE - 150,000 deaths/day
-        # - brain/book/problem/the-119-trillion-death-toilet.qmd  # TODO: CREATE - The three shocks
+        - brain/book/problem/the-daily-massacre.qmd  # 150,000 deaths/day
+        - brain/book/problem/the-119-trillion-death-toilet.qmd  # The three shocks
         - brain/book/problem/the-evolutionary-trap.qmd
         - brain/book/problem/cost-of-war.qmd  # Real $9.7T cost
         - brain/book/problem/cost-of-disease.qmd  # $109T burden
@@ -32,7 +32,7 @@ book:
     - part: "The Science of Why Everything Is Broken"
       chapters:
         - brain/book/theory.qmd
-        # - brain/book/theory/central-planning-kills.qmd  # TODO: CREATE - FDA's 82X inefficiency
+        - brain/book/theory/central-planning-kills.qmd  # FDA's 82X inefficiency
         # - brain/book/theory/democracy-cant-cure-cancer.qmd  # TODO: CREATE - Princeton + capture
         # - brain/book/theory/the-two-wars.qmd  # TODO: CREATE - War on Humanity vs Disease
         # - brain/book/theory/public-choice.qmd  # TODO: CREATE - Everyone's selfish, use it
@@ -66,7 +66,7 @@ book:
       chapters:
         - brain/book/strategy.qmd
         - brain/book/economics/victory-bonds.qmd  # Fund the revolution
-        # - brain/book/economics/coalition-that-wins.qmd  # TODO: CREATE - Everyone profits
+        - brain/book/economics/coalition-that-wins.qmd  # Everyone profits
         - brain/book/strategy/global-referendum.qmd  # Democratic path
         # - brain/book/strategy/viral-marketing.qmd  # TODO: CREATE - Social media strategy
         # - brain/book/strategy/grassroots-mobilization.qmd  # TODO: CREATE - Movement building

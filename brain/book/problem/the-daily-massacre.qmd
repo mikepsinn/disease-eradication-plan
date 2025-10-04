@@ -8,13 +8,7 @@ format:
 
 ## Right Now, As You Read This
 
-```{python}
-#| echo: false
-import sys
-sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
-from brain.charts.scripts.death_counter import display_counter
-display_counter()
-```
+{{< include ../../charts/death-counter-realtime.qmd >}}
 
 ## The Numbers Are Incomprehensible
 
@@ -67,15 +61,7 @@ print(f"• That's {int(preventable_deaths/days_left):,} preventable deaths for 
 
 ## Meanwhile, Our Spending Priorities
 
-```{python}
-#| echo: false
-import sys
-sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
-from brain.charts.scripts.spending_comparison import create_spending_comparison, print_statistics
-
-create_spending_comparison(show_plot=True)
-print_statistics()
-```
+{{< include ../../charts/military-vs-medical-research-spending-comparison.qmd >}}
 
 ## Your Personal Death Clock
 
@@ -292,10 +278,3 @@ print("• You'll be one day closer to joining them")
 print("\nUnless we fix this.")
 ```
 
-## Next Chapter
-
-The $119 Trillion Death Toilet: How humanity spends $119 trillion annually on the consequences of war and disease while investing just 0.06% of that in finding cures.
-
----
-
-*Turn the page to discover the true cost of our death addiction...*
