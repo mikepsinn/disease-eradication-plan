@@ -267,6 +267,47 @@ The solution exists. We're just not using it."
 
 ---
 
+## The $2.6 Billion Problem Nobody Talks About
+
+### Why 95% of Diseases Have No Treatment
+
+**Visual Design:**
+- Show graveyard of "unprofitable" diseases
+- Each tombstone = a disease with no cure because economics don't work
+- Counter showing diseases with zero approved treatments
+
+**The Dirty Secret of Drug Development:**
+```
+FDA TRIAL COSTS: $2.6 BILLION per drug
+
+TO BREAK EVEN, A DRUG NEEDS:
+$2.6B in revenue over patent life (20 years)
+= $130 million revenue per year minimum
+= Must affect millions of patients OR cost $100K+
+
+YOUR KID'S RARE DISEASE:
+Affects 10,000 people worldwide
+Max price society can bear: $10,000/year
+Potential revenue: $100M/year
+Verdict: LET THEM DIE (not profitable)
+
+95% of diseases fall into this "death by economics" category
+```
+
+**Treatments That Will Never Exist (Under Current System):**
+- Rare diseases affecting < 100,000 people
+- Old drugs (off-patent, no monopoly pricing)
+- Natural compounds (can't be patented)
+- Lifestyle interventions (no product to sell)
+- Preventive treatments (healthy people don't pay)
+- Cures (dead disease = dead revenue stream)
+
+**The Solution: Flip the Economics**
+"What if pharma got PAID to run trials instead of paying for them?"
+[Keep scrolling to see how...]
+
+---
+
 ## Scaling the Solution Globally: The dFDA
 
 ### Taking Oxford's Breakthrough to 8 Billion People
@@ -424,36 +465,52 @@ Cost to You: $0
     ↓ (1% of military budgets)
 [💰 DIH Treasury: $27B/year]
     ↓
-[Fund Categories]
+[Primary Function: Patient Subsidies]
+    ├─→ 💊 Patient Trial Subsidies (85%)
+    │   "Covers most trial costs"
+    │   "Patients pay small copay ($20-50)"
+    │   "Pharma RECEIVES money instead of paying"
     ├─→ 📱 dFDA Platform (5%)
     │   "Global trial infrastructure"
-    ├─→ 💊 Patient Subsidies (85%)
-    │   "Free trials for everyone"  
     ├─→ 📈 VICTORY Bond Returns (5%)
     │   "Investor rewards"
     └─→ 🔬 Platform Operations (5%)
         "Keep the lights on"
 ```
 
-**Animation:**
-- Dollar signs move along paths continuously
-- Subtle glow on hover
-- Click for breakdown details
+**The Game-Changing Economics:**
+```
+OLD SYSTEM (FDA):
+Pharma pays: $2.6 BILLION per drug
+Patients pay: $0 (but 85% excluded)
+Result: Only blockbuster drugs get made
 
-**What Each Category Means:**
-- **dFDA Platform:** The Amazon-like marketplace for trials
-- **Patient Subsidies:** Covers trial costs so anyone can participate
-- **VICTORY Bonds:** Returns to investors who funded treaty passage
-- **Operations:** Running costs, servers, staff
+NEW SYSTEM (DIH):
+Pharma RECEIVES: Payment from patients + subsidies
+Patients pay: $20-50 copay (rest covered by DIH)
+Result: EVERY treatment becomes profitable
+```
+
+**Why Pharma Won't Fight This:**
+- They go from biggest expense (trials) to revenue stream
+- Thousands of shelved treatments suddenly profitable
+- No more $2.6B gambles on blockbusters
+- Every rare disease becomes a market opportunity
+
+**What This Unlocks:**
+- Treatments that would only make $100M (not enough to cover $2.6B trials) now viable
+- Rare diseases affecting 1,000 people become profitable
+- Old off-patent drugs get tested for new uses
+- Natural compounds finally get proper trials
 
 **Anti-Corruption Features Built In:**
-- "No politicians can redirect these funds"
-- "No pharma exec can capture the treasury"
-- "Transparent blockchain tracking of every dollar"
+- "Subsidies go directly to patients, not companies"
 - "Smart contracts enforce the allocation"
+- "No politician can redirect to defense contractors"
+- "Transparent tracking of every dollar"
 
 **But this is just the STRUCTURE...**
-"The real question: Within these categories, who decides which specific diseases and trials get funded?"
+"The real question: Which patients and trials get these subsidies?"
 [Keep scrolling for the answer...]
 
 ---
@@ -471,23 +528,33 @@ Cost to You: $0
 ```
 Option A: Politicians Decide
 ━━━━━━━━━━━━━━━━━━━━━━
-Result: Money goes to their donors' diseases
-Your rare disease: Still ignored
-Corruption level: 100%
+Result: Money → Their donors' companies (not cures)
+- Raytheon gets "medical drone" contracts
+- Lockheed builds "health satellites" 
+- Somehow it all becomes weapons anyway
+Actual medical progress: 0%
 
-Option B: Expert Committee Decides (Like NIH)
+Option B: Give It to NIH (The Current System)
 ━━━━━━━━━━━━━━━━━━━━━━
-Result: 200 people guess what matters
-90% of diseases: Still no funding
-We already showed this fails
+Result: 200 bureaucrats waste it on hamster treadmills
+- $48B/year already wasted
+- Zero diseases cured in 50 years
+- We already showed this fails
 
-Option C: Direct Democracy (Everyone Votes)
+Option C: Give It to FDA (Even Worse)
+━━━━━━━━━━━━━━━━━━━━━━
+Result: They use it to BLOCK treatments
+- More regulations = fewer cures
+- 17-year approval times get longer
+- Your kid dies waiting for paperwork
+
+Option D: Direct Democracy (Everyone Votes)
 ━━━━━━━━━━━━━━━━━━━━━━
 Problem: 10,000 diseases on one ballot?
 Information overload: Nobody can decide
 Result: Random chaos
 
-Option D: Something New...
+Option E: Something New...
 ━━━━━━━━━━━━━━━━━━━━━━
 [KEEP SCROLLING TO DISCOVER]
 ```
@@ -579,9 +646,9 @@ THE PROBLEM WITH EVERY OTHER SYSTEM:
 ```
 Help Allocate The Treaty's $27 Billion
 
-Which should get more funding?
+Which deserves more subsidy support?
 
-[Childhood Cancer Research]  ← 30% | 70% →  [Alzheimer's Research]
+[Childhood Cancer Trials]  ← 30% | 70% →  [Alzheimer's Trials]
                           [YOUR ALLOCATION SLIDER]
 
 You'll see 20 random pairs. Takes 3 minutes total.
@@ -589,10 +656,28 @@ You'll see 20 random pairs. Takes 3 minutes total.
 Live Global Consensus:
 🌍 8,924,123 people allocating right now
 📊 Current allocation: 44% | 56%
-⚡ Your vote updates the global allocation instantly
+⚡ Your vote updates subsidy pools instantly
 
 [NEXT PAIR →]
 ```
+
+**Then Patients Vote With Their Feet (And Subsidies):**
+```
+PATIENT VIEW:
+"I have early Alzheimer's"
+
+Available Trials (Ranked by effectiveness):
+1. Drug X Trial - Your copay: $30 (DIH covers $4,970)
+2. Drug Y Trial - Your copay: $25 (DIH covers $3,475)
+3. Lifestyle Trial - Your copay: $0 (DIH covers $500)
+
+[JOIN TRIAL] → Subsidy follows patient choice
+```
+
+**The Two-Layer System:**
+1. **Wishocracy allocates subsidy pools** (cancer gets X%, Alzheimer's gets Y%)
+2. **Patients choose trials** (subsidies follow their choices)
+3. **Market forces optimize** (best trials attract most patients/subsidies)
 
 **Why This Can't Be Captured:**
 - **No gatekeepers:** Nobody approves/rejects proposals
