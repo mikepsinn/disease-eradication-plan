@@ -32,7 +32,7 @@ import pandas as pd
 from matplotlib.patches import Rectangle
 
 # Import centralized styling
-from brain.charts._chart_style import (
+from brain.figures._chart_style import (
     setup_chart_style,
     add_watermark,
     clean_spines,

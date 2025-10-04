@@ -231,8 +231,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # --- 1. Import centralized style ---
-from brain.charts._chart_style import setup_chart_style, add_watermark, clean_spines
-from brain.charts._chart_style import COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines
+from brain.figures._chart_style import COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
 
 setup_chart_style()  # Applies consistent styling with automatic margins
 

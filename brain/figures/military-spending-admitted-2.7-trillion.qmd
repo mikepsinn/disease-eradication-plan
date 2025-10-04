@@ -9,7 +9,7 @@ from pathlib import Path
 # Ensure project root is in path
 sys.path.insert(0, str(Path.cwd()))
 
-from brain.charts._chart_style import (
+from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_RED, COLOR_WHITE
 )

@@ -6,7 +6,7 @@ for all charts and diagrams. Import this module and call setup_chart_style()
 at the beginning of any visualization code.
 
 Usage:
-    from brain.charts._chart_style import setup_chart_style, COLOR_BLACK, COLOR_RED, COLOR_BLUE
+    from brain.figures._chart_style import setup_chart_style, COLOR_BLACK, COLOR_RED, COLOR_BLUE
 
     setup_chart_style()
 
