@@ -1,0 +1,23 @@
+/* Responsive figure sizing - ensures matplotlib charts fit within page width */
+.figure-img {
+    max-width: 100%;   /* Ensures image does not exceed container width */
+    height: auto;      /* Maintains aspect ratio */
+}
+
+/* Additional responsive image handling */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure figure containers don't overflow */
+figure {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Handle code output images */
+.cell-output-display img {
+    max-width: 100%;
+    height: auto;
+}

@@ -158,9 +158,15 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 
 **What to Include:**
 - Data bars (solid black or red/blue when meaning is clear)
-- Y-axis with scale (only when columns aren't all labeled with amounts)
+- Y-axis with scale (ONLY when columns aren't all labeled with amounts)
 - Key data values (large, bold, impossible to miss)
 - Watermark (required)
+
+**Chart Reusability Rule:**
+- **NO titles in chart code** - Context provides the title (chapter heading, figure caption, etc.)
+- **NO explanatory text in charts** - The surrounding document explains the chart
+- **Charts must work in ANY context** - Book, website, presentation, social media
+- This allows the same chart to be included with different captions and contexts
 
 **Label Placement (Tufte-approved):**
 - Put labels directly ON the data (on bars, lines, points)
@@ -186,15 +192,15 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 - Check the generated PNG - if text is cut off, shorten or reduce font size
 
 **What to Remove:**
-- Gridlines (unless absolutely necessary, then use sparingly)
-- Chart titles (let the context provide the title)
-- X-axis labels (when labels are on the bars themselves)
-- Y-axis entirely (when all columns are labeled with amounts)
-- Legends (use direct labels instead)
-- Backgrounds/fills (pure white only)
-- Borders, shadows, gradients, 3D effects
-- Decorative elements
-- Extra annotations, callouts, arrows (use only if critical)
+- **Chart titles** - ALWAYS remove (context provides the title via captions/headings)
+- **Gridlines** - Remove unless absolutely necessary for readability
+- **Y-axis entirely** - Remove on column charts when all columns show numeric labels
+- **X-axis labels** - Remove when labels are on the bars themselves
+- **Legends** - Remove (use direct labels on data instead)
+- **Explanatory text** - Remove (the surrounding document explains the chart)
+- **Backgrounds/fills** - Remove (pure white only)
+- **Borders, shadows, gradients, 3D effects** - Remove all decorative effects
+- **Extra annotations, callouts, arrows** - Remove unless critical for understanding
 
 **The Tufte Test:**
 Ask: "If I remove this element, does the chart lose essential information?" If no, remove it.
