@@ -31,27 +31,28 @@ A scrollytelling website that reveals humanity's insane spending priorities and 
 
 ---
 
-### Scene 2: "The True Cost of War" (Stacked Waterfall)
+### Scene 2: "The True Cost of War" (Stacked Cost Counter)
 
 **Visual Design:**
-- Costs CRASH down and stack with physics animation
-- Each block crushes tiny human figures below
+- Costs slide in from right and stack with CSS transitions
+- Each new cost shakes the total with CSS animation
 - Blood-red color scheme darkening with each addition
+- Number counter rapidly increasing with each stack
 
 **Cost Breakdown:**
 ```javascript
 Direct Military Spending: $2.7T
-+ Cities Turned to Rubble: $2.4T [CRASHES DOWN]
-+ PTSD & Veteran Care: $500B [CRASHES DOWN]
-+ 70 Million Refugees: $800B [CRASHES DOWN]  
-+ Lost Global Trade: $1.5T [CRASHES DOWN]
-+ Dead Innovators: $2.0T [CRASHES DOWN]
++ Cities Turned to Rubble: $2.4T [SLIDES IN]
++ PTSD & Veteran Care: $500B [SLIDES IN]
++ 70 Million Refugees: $800B [SLIDES IN]  
++ Lost Global Trade: $1.5T [SLIDES IN]
++ Dead Innovators: $2.0T [SLIDES IN]
 = TOTAL WAR STUPIDITY: $9.7 TRILLION/YEAR
 ```
 
 **Interaction:**
-- Each block shows devastation images on hover
-- Sound effects: Building collapse, cash register, screams (subtle)
+- Each block shows devastation stats on hover
+- Sound effects: Cash register "cha-ching" with each addition (simple)
 
 ---
 
@@ -77,12 +78,13 @@ This Second: $3.4 MILLION [live counter]
 
 ## Act 2: The Death Clock
 
-### Live Graveyard Generator
+### Live Death Counter Display
 
 **Visual Design:**
-- Minimalist grave icons (⚰️) appearing in real-time
-- Fades from white to dark gray as graves accumulate
-- Heartbeat audio that stops with each death
+- Large numerical counters that increment in real-time
+- Subtle grave icons (⚰️) fade in every 10 deaths in a grid
+- Simple "thud" sound every 100 deaths (optional)
+- Clean, minimalist design focused on the numbers
 
 **Real-Time Counters:**
 ```
@@ -93,7 +95,7 @@ Since you arrived [X seconds] ago:
 👶 Children under 5: [28 and counting]
 🧠 Mental illness suicides: [3 and counting]
 
-[Graves appear on screen as counters increment]
+[Small grid of graves appears subtly in background]
 ```
 
 **Personalization:**
@@ -202,9 +204,10 @@ Cost to You: $0
 ### Animated Money Flow Diagram
 
 **Visual Design:**
-- Photorealistic money flowing through glass tubes
+- Clean SVG flowchart with animated dotted lines
+- Dollar signs slide along paths (simple CSS animation)
 - Each component clickable for details
-- Corruption blockers at each step
+- Subway map aesthetic - simple and clear
 
 ```
 [🌍 All Countries] 
@@ -221,6 +224,11 @@ Cost to You: $0
     └─→ 📈 VICTORY Bonds (5%)
         "Investors Enforcing Peace"
 ```
+
+**Animation:**
+- Dollar signs move along paths continuously
+- Subtle glow on hover
+- Click for breakdown details
 
 **Anti-Corruption Features Highlighted:**
 - "No politicians can touch this money"
@@ -357,29 +365,31 @@ THE NEW GAME (With VICTORY Bonds):
 ### Split Screen: Two Timelines
 
 **Visual Design:**
-- Slider at bottom: "2025 ← → 2050"
-- Left side gets darker, right side gets brighter
-- User can scrub through time
+- Two columns with 4 key snapshots each
+- Click buttons to jump between years: [2025] [2030] [2040] [2050]
+- Simple fade transition between states
+- Left side darkens progressively, right side brightens
 
-**Timeline A: Do Nothing (Gollumland)**
+**Timeline A: Do Nothing (Dystopia)**
 ```
-2025: Status quo
-2030: New pandemic, no cures, 50M dead
-2035: Dollar collapse from war printing  
-2040: Climate refugees, resource wars
-2045: Nuclear exchange "limited" to 5 cities
-2050: Life expectancy: 45, Your kids: Dead
+[2025] Status quo - spending on war continues
+[2030] New pandemic, no cures, 50M dead
+[2040] Climate refugees, resource wars
+[2050] Life expectancy: 45, Your kids: Dead
 ```
 
-**Timeline B: Sign Treaty (Wishonia)**
+**Timeline B: Vote YES on Treaty (Wishonia)**
 ```
-2025: Treaty signed, $27B redirected
-2030: Cancer mostly cured, aging slowing
-2035: Mental illness optional, work optional
-2040: Death optional, suffering extinct
-2045: Biological age choosable
-2050: Life expectancy: 150+, Your kids: Immortal
+[2025] Treaty passes, $27B redirected
+[2030] Cancer mostly cured, aging slowing
+[2040] Death optional, suffering extinct
+[2050] Life expectancy: 150+, Your kids: Immortal
 ```
+
+**Interaction:**
+- Click year buttons to see that snapshot
+- Auto-play option that steps through each year
+- Share buttons for each timeline comparison
 
 ---
 
@@ -418,17 +428,18 @@ THE NEW GAME (With VICTORY Bonds):
 
 ### Core Technologies
 - **Framework:** Next.js 14 with TypeScript
-- **Animation:** Framer Motion + GSAP for complex sequences
-- **Charts:** D3.js for interactive visualizations
-- **3D Elements:** Three.js for money flow, grave generation
-- **Real-time:** WebSockets for live voting/death counters
+- **Animation:** CSS animations + Framer Motion for simple transitions
+- **Charts:** D3.js or Chart.js for interactive visualizations
+- **Sound:** Howler.js for simple audio cues (optional)
+- **Real-time:** Simple setInterval for counters (no WebSockets needed)
 - **Blockchain:** Ethers.js for VICTORY bond purchases
 
 ### Performance Requirements
 - First Contentful Paint: <1.5s
 - Time to Interactive: <3s
 - Mobile-first responsive design
-- Progressive enhancement for slow connections
+- Works without JavaScript (progressive enhancement)
+- No complex physics or 3D requirements
 
 ### Analytics Events to Track
 - Scroll depth on each section
@@ -522,3 +533,37 @@ This design document is for internal use. Remember:
 
 **The One-Line Pitch:**
 "Humanity spends $119 trillion on war and disease while spending 0.06% on cures. Let's be 1% less stupid."
+
+---
+
+## Implementation Priorities
+
+### Phase 1: Core Message (Week 1)
+Build these first - they carry 80% of the impact:
+1. **The spending comparison chart** (Act 1, Scene 1)
+2. **The death counter** (Act 2) 
+3. **NIH vs Oxford comparison** (Acts 3-4)
+4. **The 1% budget slider** (Act 5)
+5. **Call to action buttons** (Act 12)
+
+### Phase 2: Engagement Features (Week 2)
+Add interactivity:
+1. **dFDA mockup interface** (Act 7)
+2. **Wishocracy voting demo** (Act 8)
+3. **Investment returns comparison** (Act 9)
+
+### Phase 3: Polish (Week 3)
+Nice-to-haves:
+1. **Timeline comparison** (Act 11)
+2. **Sound effects** (optional throughout)
+3. **Share widgets and social features**
+4. **A/B testing infrastructure**
+
+### What NOT to Build:
+- Physics engines
+- 3D animations  
+- Complex particle systems
+- Real-time WebSocket connections
+- Elaborate transitions
+
+**Remember:** The data tells the story, not the animations. A simple counter showing preventable deaths is more powerful than any special effect.
