@@ -46,9 +46,6 @@ for spine in ax.spines.values():
     spine.set_color(COLOR_BLACK)
     spine.set_linewidth(4)
 
-plt.title('WHAT THEY ADMIT TO SPENDING ON WAR',
-          fontsize=28, color=COLOR_BLACK, pad=20, fontweight='bold')
-
 # Add watermark
 add_watermark(fig)
 
