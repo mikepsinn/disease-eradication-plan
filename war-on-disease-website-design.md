@@ -205,6 +205,7 @@ CENTRALIZED (NIH)           |  DECENTRALIZED (Oxford)
 **The Secret Sauce Oxford Used:**
 - No FDA paperwork orgies (just simple forms)
 - Used WhatsApp to coordinate (not $100M software)
+- Tested old cheap drugs (not new $1M molecules)
 - Included dying people (FDA trials exclude the sickest)
 - Published failures immediately (pharma usually buries them)
 - Cost: One Pentagon toilet seat
@@ -282,9 +283,12 @@ Cost to You: $0
 - "Transparent blockchain tracking"
 - "8 billion people voting beats any lobby"
 
+**But here's the $27 billion question:**
+"Who decides exactly where each dollar goes? Congress? Another committee? That's how we got into this mess..."
+
 ---
 
-## Act 7: The Amazon for Not Dying (dFDA Demo)
+## Act 9: The Amazon for Not Dying (dFDA Demo)
 
 ### Mock Shopping Interface
 
@@ -326,14 +330,73 @@ Effectiveness: Keeps you alive | Cost: Your life savings
 
 ---
 
-## Act 8: Democracy That Actually Works
+## Act 7: "But Wait, Democracy Is Already Dead"
 
-### Wishocracy Live Demo
+### The Princeton Bombshell Nobody Talks About
 
 **Visual Design:**
-- Simple slider interface
-- Real-time global vote aggregation visible
-- No complex ballot, just pairwise choices
+- Graph showing flat line at 0% correlation
+- Animated money flowing from lobbyists to politicians
+- Public opinion vs policy outcomes visualization
+
+**The Study That Proves You Don't Matter:**
+```
+PRINCETON UNIVERSITY - 20 YEAR STUDY
+1,779 Policy Decisions Analyzed
+
+Correlation between what YOU want and what happens: 0%
+Correlation between what RICH PEOPLE want and what happens: 78%
+
+Translation: Your vote is theater. Money is the real vote.
+```
+
+**Why Any $27 Billion Would Get Stolen:**
+```
+Traditional Democracy:
+- 535 people control the budget
+- Each one needs money to get reelected  
+- Lobbyists offer that money
+- Your $27B → Their pet projects
+
+Committee Allocation:
+- 200 NIH bureaucrats failed already (Act 3)
+- Any new committee = same capture
+- Special interests always win
+- Your diseases stay unfunded
+```
+
+**The Problem:**
+"You can't allocate $27 billion through representatives or committees without it being stolen by whoever bribes them"
+
+---
+
+## Act 8: Democracy That Actually Works (Wishocracy)
+
+### The Uncapturable Budget System
+
+**Visual Design:**
+- Show traditional budget (top-down) vs Wishocracy (bottom-up)
+- Animated visualization of millions of votes aggregating
+- No middlemen between voters and budget
+
+**The Innovation: 8 Billion People Directly Allocating $27 Billion**
+```
+THE PROBLEM WITH EVERY OTHER SYSTEM:
+❌ Representatives = Bribeable (535 people)
+❌ Committees = Capturable (200 people)  
+❌ Direct Democracy = Overwhelming (10,000 decisions)
+
+✅ WISHOCRACY = UNCAPTURABLE (8 billion deciders)
+```
+
+**How It Works:**
+1. **You never see a complex ballot** - Just simple pairs
+2. **Random pairs for each person** - Can't game the system
+3. **Slide to allocate** - "Cancer research vs Alzheimer's" [60/40 split]
+4. **AI aggregates millions of micro-decisions** - Creates coherent budget
+5. **No human can override** - Math determines allocation
+
+### Wishocracy Live Demo
 
 **Interactive Demo:**
 ```
@@ -344,6 +407,8 @@ Which should get more funding?
 [Childhood Cancer Research]  ← 30% | 70% →  [Alzheimer's Research]
                           [YOUR VOTE SLIDER]
 
+You'll see 20 random pairs. Takes 3 minutes total.
+
 Live Global Consensus:
 🌍 8,924,123 people voting right now
 📊 Current allocation: 44% | 56%
@@ -352,15 +417,21 @@ Live Global Consensus:
 [NEXT PAIR →]
 ```
 
+**Why This Can't Be Captured:**
+- **No gatekeepers:** Nobody approves/rejects proposals
+- **No representatives:** Direct allocation, no middlemen
+- **Too many voters:** Can't bribe 8 billion people
+- **Random pairs:** Can't coordinate manipulation
+- **Transparent math:** Every calculation public
+
 **Key Messages:**
-- "No politicians needed"
-- "No lobbyists allowed"  
-- "Every human has equal say"
-- "AI advisors prevent stupid allocations"
+- "It's like Netflix recommendations but for civilization"
+- "You already do this - 'Pizza or Chinese?' - just scaled up"
+- "First time in history: True democracy without politicians"
 
 ---
 
-## Act 9: The Investment Opportunity  
+## Act 10: The Investment Opportunity  
 
 ### Returns Comparison (Animated Bar Race)
 
@@ -388,7 +459,7 @@ Defense Contractor Lobbying 1,813% 💀        $181,000 (but evil)
 
 ---
 
-## Act 10: The Prisoner's Dilemma Solved
+## Act 11: The Prisoner's Dilemma Solved
 
 ### Game Theory Matrix
 
@@ -421,7 +492,7 @@ Result: Treaty passes or rich people destroy whoever blocks it
 
 ---
 
-## Act 10.5: A Day in Your Life (2025 vs 2050)
+## Act 12: A Day in Your Life (2025 vs 2050)
 
 **Visual Design:**
 - Split screen showing two daily schedules
@@ -452,7 +523,7 @@ Life expectancy: "Yes"
 
 ---
 
-## Act 11: Choose Your Future
+## Act 13: Choose Your Future
 
 ### Split Screen: Two Timelines
 
@@ -485,7 +556,7 @@ Life expectancy: "Yes"
 
 ---
 
-## Act 12: The Call to Action
+## Act 14: The Call to Action
 
 ### Three Big Buttons
 
@@ -516,7 +587,7 @@ Life expectancy: "Yes"
 
 ---
 
-## Act 13: Quick Answers for Skeptics
+## Act 15: Quick Answers for Skeptics
 
 **Visual Design:**
 - FAQ accordion style
@@ -546,7 +617,7 @@ Not when their richest citizens lose billions if they do. Money enforces complia
 
 ---
 
-## Act 14: The Ticking Clock (Final Urgency)
+## Act 16: The Ticking Clock (Final Urgency)
 
 **Visual Design:**
 - Large countdown timers
