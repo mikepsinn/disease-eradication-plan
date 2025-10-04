@@ -219,6 +219,95 @@ The solution exists. We're just not using it."
 
 ---
 
+## Scaling the Solution Globally: The dFDA
+
+### Taking Oxford's Breakthrough to 8 Billion People
+
+**Visual Design:**
+- Split screen: Oxford (UK only) → dFDA (global)
+- Data flowing from millions of sources into effectiveness rankings
+- NOT Amazon reviews - algorithmic analysis visualization
+
+**What the dFDA Does:**
+```
+Takes Oxford's 82X efficiency and makes it:
+✅ GLOBAL - Every human can participate
+✅ UNIVERSAL - Every treatment gets tested
+✅ CONTINUOUS - Real-time effectiveness tracking
+✅ TRANSPARENT - All data public (anonymized)
+✅ UNCAPTURABLE - No single approval authority
+```
+
+### Treatment Effectiveness Rankings (Not Reviews - Data)
+
+**Visual Design:**
+- Show data sources flowing into rankings
+- Causal inference algorithms analyzing patterns
+- Individual experiences aggregating into population insights
+
+```
+🔍 Search: "Type 2 Diabetes"
+
+EFFECTIVENESS RANKINGS (Based on 1.2M patient outcomes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#1. METFORMIN + LIFESTYLE CHANGE
+Effectiveness: 73% | Data points: 487,293 patients
+Causal confidence: HIGH (randomized trials + real world data)
+Time to improvement: 3-6 weeks
+[VIEW DETAILED ANALYSIS] [JOIN TRIAL]
+
+#2. SGLT2 INHIBITORS  
+Effectiveness: 68% | Data points: 293,847 patients
+Causal confidence: HIGH (multiple RCTs)
+Cardiovascular benefit: Additional 24% reduction
+[VIEW DETAILED ANALYSIS] [JOIN TRIAL]
+
+#847. INSULIN ONLY (No lifestyle change)
+Effectiveness: 12% | Data points: 892,734 patients
+Causal confidence: HIGH (decades of data)
+Warning: Weight gain in 67% of users
+[WHY THIS FAILS] [SEE BETTER OPTIONS]
+```
+
+**How Rankings Are Created:**
+- **NOT user reviews** (Amazon's weakness)
+- **Causal inference on time-series data** (what actually caused improvement)
+- **N-of-1 analysis** (each person is their own control)
+- **Aggregated across millions** (wisdom of crowds, but with data)
+- **Continuously updated** (gets smarter every day)
+
+### Outcome Labels: The Truth About Everything
+
+**Visual Design:**
+- Foods and drugs with data-driven labels
+- Positive and negative effects quantified
+- Personalized based on your biology
+
+```
+OUTCOME LABELS (Not marketing claims - actual effects)
+
+🥤 COCA-COLA (Based on 2.3M consumer records)
+Positive: Energy +15% for 1 hour
+Negative: Diabetes risk +23%, Tooth decay +34%, Addiction 12%
+Net health impact: -8.7 QALYs over lifetime
+[See alternatives with positive impact]
+
+💊 STATINS (Based on 47M patient records)  
+Positive: Heart attack risk -29%, Stroke -24%
+Negative: Muscle pain 18%, Diabetes +9%, Memory issues 4%
+Net for your profile: +2.3 QALYs
+[Personalized risk/benefit analysis]
+```
+
+**The Data Revolution:**
+- Every treatment outcome tracked
+- Every side effect quantified  
+- Every food's health impact measured
+- Updated every second as new data arrives
+- No hiding negative results (everything public)
+
+---
+
 ## The 1% Solution
 
 ### Interactive Budget Reallocation Slider
@@ -389,47 +478,6 @@ Live Global Consensus:
 - "First time in history: True democracy without politicians"
 
 ---
-## The Amazon for Not Dying (dFDA Demo)
-
-### Mock Shopping Interface
-
-**Visual Design:**
-- Exact Amazon UI clone but for medical trials
-- Star ratings based on real patient outcomes
-- One-click join buttons
-
-```
-🔍 Search: "Type 2 Diabetes"
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⭐⭐⭐⭐⭐ (8,924 reviews)
-METFORMIN + EXERCISE PROTOCOL
-"Cured my diabetes AND my marriage" - Janet, 52
-"Literally just eating vegetables and walking, but it works" - Bob
-Effectiveness: 73% | Cost: $20/mo | Side Effects: Minimal
-✅ COVERED BY DIH | 📍 Available everywhere
-[JOIN TRIAL NOW]
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⭐⭐⭐⭐⭐ (69 reviews)
-EXPERIMENTAL CRISPR THERAPY
-"Edited my genes, now I'm basically Wolverine" - Trial Participant
-"10/10 would let strangers edit my DNA again" - Another Guy
-Effectiveness: 91% (in trials) | Cost: FREE | Revolutionary
-✅ 100% DIH FUNDED | 📍 27 locations
-[JOIN WAITLIST - 2,847 ahead of you]
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⭐ (156,392 reviews)
-INSULIN AT $300/VIAL
-"Choosing between rent and not dying! Thanks America!" - Everyone
-"Side effects include bankruptcy" - Verified Purchaser
-Effectiveness: Keeps you alive | Cost: Your life savings
-❌ Not recommended | "Why are you doing this to yourself?"
-[SERIOUSLY, TRY SOMETHING ELSE]
-```
-
-
 ## The Investment Opportunity  
 
 ### Returns Comparison (Animated Bar Race)
