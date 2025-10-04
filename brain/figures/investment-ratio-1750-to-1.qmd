@@ -29,9 +29,9 @@ setup_chart_style(style='light', dpi=150)
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Data
-categories = ['Dealing with Death\n(War + Disease)', 'Finding Cures']
+categories = ['Death Toilet\n(War + Disease)', 'Curing Diseases']
 values = [119000, 68]  # In billions for proper scale
-colors = ['#8B008B', COLOR_BLUE]
+colors = [COLOR_RED, COLOR_BLUE]
 
 # Use LINEAR scale to show TRUE disparity - no hiding the insanity!
 bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_BLACK, linewidth=4, width=0.6)
@@ -58,13 +58,6 @@ for i, (bar, value) in enumerate(zip(bars, values)):
                    xytext=(bar.get_x() + bar.get_width()/2., height + 1500),
                    arrowprops=dict(arrowstyle='->', lw=3, color=COLOR_RED))
 
-# Add the insane ratio with brutal typography
-ratio = values[0] / values[1]
-ax.text(0.5, 60000, f'{ratio:,.0f}X', ha='center',
-        fontsize=96, color=COLOR_RED, fontweight='bold')
-ax.text(0.5, 50000, 'MORE ON DEATH\nTHAN CURES', ha='center',
-        fontsize=32, color=COLOR_RED, fontweight='bold')
-
 # Style the axes - LINEAR SCALE SHOWS THE TRUTH
 ax.set_ylim(0, 130000)
 ax.set_yticks([])  # Remove y-axis - values are on the bars
@@ -77,16 +70,16 @@ ax.spines['bottom'].set_linewidth(4)
 # Add watermark
 add_watermark(fig)
 
-# Save the figure
-plt.savefig('brain/figures/investment-ratio-1750-to-1.png',
-            dpi=300, bbox_inches='tight', facecolor='white')
-plt.tight_layout()
+# Save in brain/charts directory
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'investment-ratio-1750-to-1.png', dpi=300, bbox_inches='tight', facecolor='white')
 plt.show()
 
 # Print the brutal truth
 print("\n📊 THE INSANE RATIO:")
-print(f"• Death spending (war + disease): $119 TRILLION")
-print(f"• Cure investment: $68 billion")
+print(f"• Death Toilet (war + disease): $119 TRILLION")
+print(f"• Curing Diseases: $68 billion")
 print(f"• Ratio: {119_000/68:,.0f}:1")
 print("\n🎯 TRANSLATION:")
 print(f"• For every $1 trying to cure disease...")
