@@ -33,10 +33,10 @@ book:
       chapters:
         - brain/book/theory.qmd
         - brain/book/theory/central-planning-kills.qmd  # FDA's 82X inefficiency
-        # - brain/book/theory/democracy-cant-cure-cancer.qmd  # TODO: CREATE - Princeton + capture
-        # - brain/book/theory/the-two-wars.qmd  # TODO: CREATE - War on Humanity vs Disease
-        # - brain/book/theory/public-choice.qmd  # TODO: CREATE - Everyone's selfish, use it
-        # - brain/book/theory/wisdom-of-crowds.qmd  # TODO: CREATE - 8 billion > 200
+        - brain/book/theory/democracy-cant-cure-cancer.qmd  # Princeton + capture
+        - brain/book/theory/the-two-wars.qmd  # War on Humanity vs Disease
+        - brain/book/theory/public-choice.qmd  # Everyone's selfish, use it
+        - brain/book/theory/wisdom-of-crowds.qmd  # 8 billion > 200
 
     - part: "The Solution: Making Death Unprofitable"
       chapters:
@@ -68,15 +68,15 @@ book:
         - brain/book/economics/victory-bonds.qmd  # Fund the revolution
         - brain/book/economics/coalition-that-wins.qmd  # Everyone profits
         - brain/book/strategy/global-referendum.qmd  # Democratic path
-        # - brain/book/strategy/viral-marketing.qmd  # TODO: CREATE - Social media strategy
-        # - brain/book/strategy/grassroots-mobilization.qmd  # TODO: CREATE - Movement building
-        # - brain/book/strategy/diplomatic-approach.qmd  # TODO: CREATE - Government relations
+        - brain/book/strategy/viral-marketing.qmd  # Social media strategy
+        - brain/book/strategy/grassroots-mobilization.qmd  # Movement building
+        - brain/book/strategy/diplomatic-approach.qmd  # Government relations
 
     - part: "Join or Die (Literally)"
       chapters:
-        # - brain/book/call-to-action/your-personal-benefits.qmd  # TODO: CREATE - What YOU get
-        # - brain/book/call-to-action/three-actions.qmd  # TODO: CREATE - Vote, Invest, Share
-        # - brain/book/call-to-action/every-objection-demolished.qmd  # TODO: CREATE - FAQ
+        - brain/book/call-to-action/your-personal-benefits.qmd  # What YOU get
+        - brain/book/call-to-action/three-actions.qmd  # Vote, Invest, Share
+        - brain/book/call-to-action/every-objection-demolished.qmd  # FAQ
         - brain/book/call-to-action.qmd  # Final rallying cry
   appendices:
     - brain/book/references.qmd
