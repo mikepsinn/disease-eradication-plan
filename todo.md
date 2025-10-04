@@ -2,10 +2,10 @@
 - [x] `brain/book/the-two-wars.qmd`
 - [x] `brain/book/public-choice.qmd`
 - [x] `brain/book/wisdom-of-crowds.qmd`
-- [ ] `brain/book/strategy/dih-model.qmd`
-- [ ] `brain/book/economics/investment-thesis.qmd`
-- [ ] `brain/book/proof/body-as-machine.qmd`
-- [ ] `brain/book/reference/organizational-precedents.qmd`
+- [x] `brain/book/strategy/dih-model.qmd`
+- [x] `brain/book/economics/investment-thesis.qmd`
+- [x] `brain/book/proof/body-as-machine.qmd`
+- [x] `brain/book/reference/organizational-precedents.qmd`
 - [ ] `brain/book/futures/dystopia.qmd`
 - [ ] `brain/book/futures/utopia.qmd`
 - [ ] `brain/economics/fundraising-strategy.qmd`
