@@ -16,10 +16,10 @@ book:
   chapters:
     - index.qmd
 
-    - part: "The Horror: Everyone You Love Is Dying While We Build Skynet"
+    - part: "The Daily Massacre: 150,000 Deaths While You Read This"
       chapters:
-        - brain/book/problem/the-daily-massacre.qmd  # 150,000 deaths/day
-        - brain/book/problem/the-119-trillion-death-toilet.qmd  # The three shocks reveal
+        # - brain/book/problem/the-daily-massacre.qmd  # TODO: CREATE - 150,000 deaths/day
+        # - brain/book/problem/the-119-trillion-death-toilet.qmd  # TODO: CREATE - The three shocks
         - brain/book/problem/the-evolutionary-trap.qmd
         - brain/book/problem/cost-of-war.qmd  # Real $9.7T cost
         - brain/book/problem/cost-of-disease.qmd  # $109T burden
@@ -29,25 +29,23 @@ book:
         - brain/book/problem/regulatory-capture.qmd
         - brain/book/problem/democracy-is-broken.qmd  # Princeton study
 
-    - part: "The Theory: Why Markets Win and Democracy Loses"
+    - part: "The Science of Why Everything Is Broken"
       chapters:
         - brain/book/theory.qmd
-        - brain/book/theory/central-planning-kills.qmd  # FDA's 82X inefficiency
-        - brain/book/theory/the-two-wars.qmd  # War on Humanity vs War on Disease
-        - brain/book/theory/public-choice.qmd  # Everyone's selfish, use it
-        - brain/book/theory/wisdom-of-crowds.qmd  # 8 billion > 200
-        - brain/book/theory/central-banks-fund-your-death.qmd  # Fed/money printing
+        # - brain/book/theory/central-planning-kills.qmd  # TODO: CREATE - FDA's 82X inefficiency
+        # - brain/book/theory/democracy-cant-cure-cancer.qmd  # TODO: CREATE - Princeton + capture
+        # - brain/book/theory/the-two-wars.qmd  # TODO: CREATE - War on Humanity vs Disease
+        # - brain/book/theory/public-choice.qmd  # TODO: CREATE - Everyone's selfish, use it
+        # - brain/book/theory/wisdom-of-crowds.qmd  # TODO: CREATE - 8 billion > 200
 
     - part: "The Solution: Making Death Unprofitable"
       chapters:
         - brain/book/solution.qmd
-        - brain/book/solution/1-percent-treaty.qmd
-        - brain/book/solution/dih.qmd  # Treasury structure first
-        - brain/book/solution/wishocracy.qmd  # Then how we prevent capture
+        - brain/book/solution/1-percent-treaty.qmd  # The funding mechanism
+        - brain/book/solution/dih.qmd  # Treasury structure
+        - brain/book/solution/wishocracy.qmd  # Anti-capture governance
         - brain/book/solution/dfda.qmd  # 82X efficiency engine
-        - brain/book/economics/victory-bonds.qmd  # 40% returns
-        - brain/book/economics/coalition-that-wins.qmd  # Everyone profits
-        - brain/book/economics/economic-incentives.qmd
+        # - brain/book/economics/economic-incentives.qmd  # TODO: CREATE - Why everyone wins
 
     - part: "The Proof: This Already Works"
       chapters:
@@ -62,21 +60,23 @@ book:
         - brain/book/futures.qmd
         - brain/book/futures/dystopia-skynet-wins.qmd  # The three subs
         - brain/book/futures/utopia-health-and-happiness.qmd  # The three supers
-        - brain/book/futures/the-delta.qmd  # Side-by-side comparison
+        - brain/book/futures/comparison.qmd  # Side-by-side comparison
 
     - part: "The Strategy: How We Actually Win This War"
       chapters:
         - brain/book/strategy.qmd
+        - brain/book/economics/victory-bonds.qmd  # Fund the revolution
+        # - brain/book/economics/coalition-that-wins.qmd  # TODO: CREATE - Everyone profits
         - brain/book/strategy/global-referendum.qmd  # Democratic path
-        - brain/book/strategy/viral-marketing.qmd  # Social media strategy
-        - brain/book/strategy/grassroots-mobilization.qmd  # Movement building
-        - brain/book/strategy/diplomatic-approach.qmd  # Government relations
+        # - brain/book/strategy/viral-marketing.qmd  # TODO: CREATE - Social media strategy
+        # - brain/book/strategy/grassroots-mobilization.qmd  # TODO: CREATE - Movement building
+        # - brain/book/strategy/diplomatic-approach.qmd  # TODO: CREATE - Government relations
 
     - part: "Join or Die (Literally)"
       chapters:
-        - brain/book/call-to-action/your-personal-benefits.qmd  # What YOU get
-        - brain/book/call-to-action/three-actions.qmd  # Vote, Invest, Share
-        - brain/book/call-to-action/every-objection-demolished.qmd  # FAQ/objections
+        # - brain/book/call-to-action/your-personal-benefits.qmd  # TODO: CREATE - What YOU get
+        # - brain/book/call-to-action/three-actions.qmd  # TODO: CREATE - Vote, Invest, Share
+        # - brain/book/call-to-action/every-objection-demolished.qmd  # TODO: CREATE - FAQ
         - brain/book/call-to-action.qmd  # Final rallying cry
   appendices:
     - brain/book/references.qmd
