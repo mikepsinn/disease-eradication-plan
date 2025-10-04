@@ -77,7 +77,19 @@ Name charts descriptively starting with the primary topic: `[primary-topic]-[sec
 ### Technical Checklist
 
 1. Import from [_chart_style.py](_chart_style.py): `setup_chart_style()`, color constants, helper functions
-2. Save generated images in `brain/figures/` directory (same location as `.qmd` source file)
+2. **Save images using dynamic project root** (works regardless of where quarto runs from):
+   ```python
+   # At top of file - find project root dynamically
+   project_root = Path.cwd()
+   if project_root.name != 'decentralized-institutes-of-health':
+       while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+           project_root = project_root.parent
+
+   # At bottom - save to brain/figures/ using dynamic path
+   output_dir = project_root / 'brain' / 'figures'
+   output_dir.mkdir(parents=True, exist_ok=True)
+   plt.savefig(output_dir / 'chart-name.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+   ```
 3. Name output file to match source: `chart-name.qmd` → `chart-name.png`
 4. Use linear scales for disparity charts (never logarithmic)
 5. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
