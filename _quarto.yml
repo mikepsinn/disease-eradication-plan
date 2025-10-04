@@ -63,18 +63,21 @@ book:
         - brain/book/futures/dystopia-skynet-wins.qmd  # The three subs
         - brain/book/futures/utopia-health-and-happiness.qmd  # The three supers
         - brain/book/futures/the-delta.qmd  # Side-by-side comparison
-        - brain/book/futures/comparison.qmd
+
+    - part: "The Strategy: How We Actually Win This War"
+      chapters:
+        - brain/book/strategy.qmd
+        - brain/book/strategy/global-referendum.qmd  # Democratic path
+        - brain/book/strategy/viral-marketing.qmd  # Social media strategy
+        - brain/book/strategy/grassroots-mobilization.qmd  # Movement building
+        - brain/book/strategy/diplomatic-approach.qmd  # Government relations
 
     - part: "Join or Die (Literally)"
       chapters:
-        - brain/book/strategy.qmd
-        - brain/book/strategy/viral-marketing.qmd
-        - brain/book/strategy/grassroots-mobilization.qmd
-        - brain/book/strategy/diplomatic-approach.qmd
         - brain/book/call-to-action/your-personal-benefits.qmd  # What YOU get
         - brain/book/call-to-action/three-actions.qmd  # Vote, Invest, Share
-        - brain/book/call-to-action/every-objection-demolished.qmd
-        - brain/book/call-to-action.qmd
+        - brain/book/call-to-action/every-objection-demolished.qmd  # FAQ/objections
+        - brain/book/call-to-action.qmd  # Final rallying cry
   appendices:
     - brain/book/references.qmd
 
