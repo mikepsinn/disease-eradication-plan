@@ -1,101 +1,149 @@
 # War on Disease - Website Visual Journey Design
 
 ## Overview
-A scrollytelling website that reveals humanity's insane spending priorities and offers the 1% Treaty as a profitable solution to end war and disease.
+A scrollytelling website that reveals humanity's insane spending priorities through three escalating shocks:
+1. We spend 40X more on weapons than cures
+2. War actually costs 4X more than admitted ($9.7T not $2.7T)
+3. Disease burden is 10X bigger than war ($109T)
+
+Then offers the 1% Treaty as a simple solution: redirect just 1% of military spending to cure diseases using systems proven to be 82X more efficient.
 
 ---
 
-## The Spending Insanity
+## The Three Shocks (Building to Maximum Horror)
 
-### Scene 1: "What Humanity Buys" (Animated Column Chart)
+### Scene 1: "The Murder Budget vs The Cure Budget"
 
 **Visual Design:**
-- Full-screen column chart that builds as user arrives
+- Full-screen comparison with two columns
 - War column breaks through the top of screen, requires scrolling
-- Coins animated falling into each column
-- Dark humor tooltips on hover
+- Medical research column barely visible at bottom
+- Nuclear missiles and skulls raining down the war column
+- Tiny medicine pills trickling down the research column
 
 **Data Visualization:**
 ```
-💣 MILITARY: $2,700,000,000,000 [MASSIVE RED COLUMN - 100% viewport height]
-🧠 Brain Research: $17,000,000,000 [1% height - barely visible]
-🎃 Halloween Costumes: $12,000,000,000 [0.7% height]
-💊 All Medical Research: $68,000,000,000 [4% height]
-🚽 Pentagon's "Lost" Money: $2,460,000,000,000 [91% height]
+💣 MILITARY SPENDING: $2,700,000,000,000/year [MASSIVE RED COLUMN - breaks screen]
+   What this buys:
+   - 13,000 nuclear warheads (ending civilization 67 times)
+   - AI autonomous weapons development (Skynet in progress)
+   - Hypersonic missiles that can't be stopped
+   - Space weapons programs
+   - Cyber warfare capabilities
+   - Enough firepower to kill everyone 535 times
+
+💊 MEDICAL RESEARCH: $68,000,000,000/year [TINY GREEN BAR - 2.5% height]
+   What this buys:
+   - Your kid's rare disease research: $0
+   - Alzheimer's cure: Still waiting after 50 years
+   - Cancer universal cure: Nope
+   - Mental illness cure: Nope
+   - Aging reversal: Nope
+   - 95% of diseases: ZERO approved treatments
+
+[MASSIVE TEXT]: WE SPEND 40X MORE ON KILLING THAN CURING
 ```
 
 **Interaction:**
-- Scroll indicator: "⬇️ Keep scrolling to see how stupid this gets..."
-- Click columns for breakdown details
-- Counter showing: "Money spent on war while you read this: $[counting up]"
+- Counter showing: "Money spent on war while you read this: $[rapidly counting up]"
+- Deaths from disease while you read this: [counting up]
+- Click war column: Shows specific weapon systems and costs
+- Click medical column: Shows diseases with zero funding
+
+**The Punchline:**
+"But that $2.7 trillion is just what they ADMIT to spending..."
+[Keep scrolling to see the REAL cost]
 
 ---
 
-### Scene 1.5: "We Pay to Kill Ourselves"
+### Scene 2: "The REAL Cost of War (The Part They Don't Tell You)"
 
 **Visual Design:**
-- Quick comparison showing we fund our own destruction
-- Dark red color scheme
-
-**Humanity's Death Wish Budget:**
-```
-💣 Military (killing each other): $2.7 TRILLION
-🚬 Cigarettes (killing ourselves): $888 BILLION  
-🎰 Gambling (destroying families): $450 BILLION
-= $4 TRILLION on self-destruction
-
-vs.
-
-💊 Medical Research (saving ourselves): $68 BILLION (1.7% of destruction budget)
-```
-
-**Punchline:** 
-"We spend 60X more on dying than on not dying"
-
----
-
-### Scene 2: "The True Cost of War" (Stacked Cost Counter)
-
-**Visual Design:**
-- Costs slide in from right and stack with CSS transitions
-- Each new cost shakes the total with CSS animation
+- Start with the $2.7T military budget already shown
+- Hidden costs slide in from sides and stack on top with violent shaking
 - Blood-red color scheme darkening with each addition
-- Number counter rapidly increasing with each stack
+- Total grows exponentially with each reveal
+- Screen cracks appear as number gets bigger
 
 **Cost Breakdown:**
 ```javascript
-Direct Military Spending: $2.7T
-+ Cities Turned to Rubble: $2.4T [SLIDES IN]
-+ PTSD & Veteran Care: $500B [SLIDES IN]
-+ 70 Million Refugees: $800B [SLIDES IN]  
-+ Lost Global Trade: $1.5T [SLIDES IN]
-+ Dead Innovators: $2.0T [SLIDES IN]
-= TOTAL WAR STUPIDITY: $9.7 TRILLION/YEAR
+What They Admit: $2.7 TRILLION military spending
+[Screen shakes, hidden costs appear]
+
+THE COSTS THEY HIDE:
++ Cities Turned to Parking Lots: $2.4T [CRASHES IN FROM LEFT]
++ Veterans With PTSD Forever: $500B [CRASHES IN FROM RIGHT]
++ 70 Million Refugees: $800B [FALLS FROM TOP]  
++ Global Trade Destroyed: $1.5T [SLIDES UP FROM BOTTOM]
++ Dead Innovators & Scientists: $2.0T [EXPLODES IN CENTER]
+━━━━━━━━━━━━━━━━━━━━━━━━━
+= REAL COST OF WAR: $9.7 TRILLION/YEAR
+
+[Counter rapidly updating]
+That's $307,000 PER SECOND wasted on destruction
 ```
 
 **Interaction:**
-- Each block shows devastation stats on hover
-- Sound effects: Cash register "cha-ching" with each addition (simple)
+- Each cost block shows real examples on hover:
+  - "Syria: $300B to rebuild"
+  - "Ukraine: $400B and counting"
+  - "1.2M veterans need lifetime care"
+  - "Could have cured cancer 485 times"
+
+**The Reveal:**
+"We told you military spending was $2.7 trillion...
+We lied. The REAL cost is $9.7 trillion.
+But even THAT looks like pocket change compared to..."
+[Keep scrolling]
 
 ---
 
-### Scene 3: "Meanwhile, Disease Is Eating Everyone Alive"
+### Scene 3: "Plot Twist: Disease Makes War Look Cheap"
 
 **Visual Design:**
-- Purple blob monster that grows and consumes the screen
+- Screen zooms out to show war costs were just a tiny part
+- Purple disease blob emerges and DWARFS the war costs
+- War's $9.7T shrinks as disease's $109T fills entire screen
 - Tentacles reaching out grabbing stick figures
 - Counter of real-time deaths prominently displayed
 
-**The Disease Monster Stats:**
+**The Ultimate Horror:**
 ```
-Direct Healthcare Costs: $8.2T [growing purple blob]
-Lost Human Productivity: $100.9T [MASSIVE blob consuming everything]
+You thought $9.7 TRILLION for war was insane?
+
+MEET THE REAL KILLER:
+
+💀 THE DISEASE BURDEN:
+Direct Healthcare Costs: $8.2T [purple blob appears]
++ Lost Human Productivity: $100.9T [EXPLODES to consume screen]
+━━━━━━━━━━━━━━━━━━━━━━━━━
 = THE $109 TRILLION DEATH TOILET
 
-Daily Cost: $298 BILLION
-Hourly Cost: $12.4 BILLION  
+[Visual: War costs shrink to 9% while disease fills 91% of screen]
+
+WAR:     $9.7T  (■■□□□□□□□□) 9%
+DISEASE: $109T  (■■■■■■■■■■) 91%
+
+Daily Disease Cost: $298 BILLION
+Hourly Disease Cost: $12.4 BILLION  
 This Second: $3.4 MILLION [live counter]
+People Dying While You Read This: [rapidly counting]
 ```
+
+**The Three-Layer Revelation Summary:**
+1. Military spending: $2.7T (what they admit)
+2. True war cost: $9.7T (including destruction)
+3. Disease burden: $109T (the real apocalypse)
+
+**Final Punchline:**
+"We're so worried about nuclear war killing everyone...
+While disease is ACTUALLY killing everyone.
+55 million per year. Every year. Forever."
+
+**Transition to Death Clock:**
+"Want to see what $109 trillion in suffering looks like?
+Let's count the bodies..."
+[Scroll down to watch people die in real-time]
 
 ---
 
@@ -308,7 +356,25 @@ Net for your profile: +2.3 QALYs
 
 ---
 
-## The 1% Solution
+## The 1% Treaty
+
+### The International Agreement to End Stupidity
+
+**Visual Design:**
+- Treaty document with nation flags around it
+- Signatures appearing as countries join
+- Counter showing total redirected funds growing
+
+**What Is The 1% Treaty?**
+```
+AN INTERNATIONAL AGREEMENT WHERE EVERY NATION:
+- Reduces military spending by 1%
+- Redirects that 1% to medical research
+- All countries do it simultaneously (no one loses military advantage)
+- Creates $27 BILLION annual fund for curing disease
+
+NOT A CHARITY. NOT A TAX. JUST 1% LESS STUPIDITY.
+```
 
 ### Interactive Budget Reallocation Slider
 
@@ -320,7 +386,7 @@ Net for your profile: +2.3 QALYs
 **At 1% Setting:**
 ```
 Military Budget: $2,673 Billion (still 99% for killing)
-Health Budget: $27 Billion (finally 1% for healing)
+Health Research: $27 Billion (finally 1% for healing)
 
 Lives Saved Annually: 180,000
 Diseases Cured in 10 Years: 20-50
@@ -333,11 +399,19 @@ Cost to You: $0
 - Disease monster shrinks
 - Green growth overtakes red destruction
 
+**The Magic of Simultaneous Reduction:**
+- USA: -1% military = $8B to health
+- China: -1% military = $3B to health
+- Russia: -1% military = $1B to health
+- Every other country: -1% military
+- TOTAL: $27B for humanity
+- Military balance: UNCHANGED (everyone reduces equally)
+
 ---
 
-## Where the Money Goes
+## Where the $27 Billion Goes
 
-### Animated Money Flow Diagram
+### The DIH Treasury Structure
 
 **Visual Design:**
 - Clean SVG flowchart with animated dotted lines
@@ -346,19 +420,19 @@ Cost to You: $0
 - Subway map aesthetic - simple and clear
 
 ```
-[🌍 All Countries] 
-    ↓ (1% of military)
+[🌍 All Countries Sign Treaty] 
+    ↓ (1% of military budgets)
 [💰 DIH Treasury: $27B/year]
     ↓
-[Distribution]
+[Fund Categories]
     ├─→ 📱 dFDA Platform (5%)
-    │   "Amazon for Clinical Trials"
-    ├─→ 🗳️ Wishocracy Voting (5%)
-    │   "8 Billion CEOs"  
+    │   "Global trial infrastructure"
     ├─→ 💊 Patient Subsidies (85%)
-    │   "Free Trials for Everyone"
-    └─→ 📈 VICTORY Bonds (5%)
-        "Investors Enforcing Peace"
+    │   "Free trials for everyone"  
+    ├─→ 📈 VICTORY Bond Returns (5%)
+    │   "Investor rewards"
+    └─→ 🔬 Platform Operations (5%)
+        "Keep the lights on"
 ```
 
 **Animation:**
@@ -366,19 +440,64 @@ Cost to You: $0
 - Subtle glow on hover
 - Click for breakdown details
 
-**Anti-Corruption Features Highlighted:**
-- "No politicians can touch this money"
-- "No pharma exec can capture this"
-- "Transparent blockchain tracking"
-- "8 billion people voting beats any lobby"
+**What Each Category Means:**
+- **dFDA Platform:** The Amazon-like marketplace for trials
+- **Patient Subsidies:** Covers trial costs so anyone can participate
+- **VICTORY Bonds:** Returns to investors who funded treaty passage
+- **Operations:** Running costs, servers, staff
 
-**But here's the $27 billion question:**
-"Who decides exactly where each dollar goes? Congress? Another committee? That's how we got into this mess..."
+**Anti-Corruption Features Built In:**
+- "No politicians can redirect these funds"
+- "No pharma exec can capture the treasury"
+- "Transparent blockchain tracking of every dollar"
+- "Smart contracts enforce the allocation"
+
+**But this is just the STRUCTURE...**
+"The real question: Within these categories, who decides which specific diseases and trials get funded?"
+[Keep scrolling for the answer...]
 
 ---
 
+## The $27 Billion Question: Who Decides?
 
-## "But Wait, Democracy Is Already Dead"
+### The Most Important Question Nobody's Asking
+
+**Visual Design:**
+- Three doors with different allocation methods behind them
+- Each door opens to show the horror/failure within
+- Final door reveals Wishocracy as the solution
+
+**We Have $27 Billion. Now What?**
+```
+Option A: Politicians Decide
+━━━━━━━━━━━━━━━━━━━━━━
+Result: Money goes to their donors' diseases
+Your rare disease: Still ignored
+Corruption level: 100%
+
+Option B: Expert Committee Decides (Like NIH)
+━━━━━━━━━━━━━━━━━━━━━━
+Result: 200 people guess what matters
+90% of diseases: Still no funding
+We already showed this fails
+
+Option C: Direct Democracy (Everyone Votes)
+━━━━━━━━━━━━━━━━━━━━━━
+Problem: 10,000 diseases on one ballot?
+Information overload: Nobody can decide
+Result: Random chaos
+
+Option D: Something New...
+━━━━━━━━━━━━━━━━━━━━━━
+[KEEP SCROLLING TO DISCOVER]
+```
+
+**The Core Problem:**
+"Every allocation system in history has been captured by special interests. We need something uncapturable."
+
+---
+
+## But Wait, Democracy Is Already Dead
 
 ### The Princeton Bombshell Nobody Talks About
 
@@ -418,17 +537,20 @@ Committee Allocation:
 
 ---
 
-## Democracy That Actually Works (Wishocracy)
+## Enter Wishocracy: 8 Billion Allocators
 
-### The Uncapturable Budget System
+### The Uncapturable System for Spending Treaty Funds
 
 **Visual Design:**
 - Show traditional budget (top-down) vs Wishocracy (bottom-up)
 - Animated visualization of millions of votes aggregating
 - No middlemen between voters and budget
 
-**The Innovation: 8 Billion People Directly Allocating $27 Billion**
+**The Innovation: Direct Allocation Without Representatives**
 ```
+THE TREATY GIVES US $27 BILLION
+BUT WHO DECIDES HOW TO SPEND IT?
+
 THE PROBLEM WITH EVERY OTHER SYSTEM:
 ❌ Representatives = Bribeable (535 people)
 ❌ Committees = Capturable (200 people)  
@@ -437,30 +559,37 @@ THE PROBLEM WITH EVERY OTHER SYSTEM:
 ✅ WISHOCRACY = UNCAPTURABLE (8 billion deciders)
 ```
 
+**What Wishocracy Does:**
+- NOT about passing the treaty (that's the referendum)
+- IS about allocating the $27B once we have it
+- Every human gets equal say in how funds are distributed
+- No politicians or committees can override
+
 **How It Works:**
-1. **You never see a complex ballot** - Just simple pairs
-2. **Random pairs for each person** - Can't game the system
-3. **Slide to allocate** - "Cancer research vs Alzheimer's" [60/40 split]
-4. **AI aggregates millions of micro-decisions** - Creates coherent budget
-5. **No human can override** - Math determines allocation
+1. **Treaty passes → $27B enters DIH Treasury**
+2. **You never see a complex budget** - Just simple pairs
+3. **Random pairs for each person** - Can't game the system
+4. **Slide to allocate** - "Cancer research vs Alzheimer's" [60/40 split]
+5. **AI aggregates millions of micro-decisions** - Creates coherent budget
+6. **Funds automatically distributed** - No human can override
 
 ### Wishocracy Live Demo
 
 **Interactive Demo:**
 ```
-Help Allocate $27 Billion for Health
+Help Allocate The Treaty's $27 Billion
 
 Which should get more funding?
 
 [Childhood Cancer Research]  ← 30% | 70% →  [Alzheimer's Research]
-                          [YOUR VOTE SLIDER]
+                          [YOUR ALLOCATION SLIDER]
 
 You'll see 20 random pairs. Takes 3 minutes total.
 
 Live Global Consensus:
-🌍 8,924,123 people voting right now
+🌍 8,924,123 people allocating right now
 📊 Current allocation: 44% | 56%
-⚡ Your vote counted instantly
+⚡ Your vote updates the global allocation instantly
 
 [NEXT PAIR →]
 ```
@@ -468,16 +597,19 @@ Live Global Consensus:
 **Why This Can't Be Captured:**
 - **No gatekeepers:** Nobody approves/rejects proposals
 - **No representatives:** Direct allocation, no middlemen
-- **Too many voters:** Can't bribe 8 billion people
+- **Too many allocators:** Can't bribe 8 billion people
 - **Random pairs:** Can't coordinate manipulation
 - **Transparent math:** Every calculation public
+- **Treaty funds only:** Not your taxes, just the redirected military money
 
 **Key Messages:**
+- "The treaty gets the money, Wishocracy decides where it goes"
 - "It's like Netflix recommendations but for civilization"
 - "You already do this - 'Pizza or Chinese?' - just scaled up"
-- "First time in history: True democracy without politicians"
+- "First time in history: Budget allocation without politicians"
 
 ---
+
 ## The Investment Opportunity  
 
 ### Returns Comparison (Animated Bar Race)
@@ -615,7 +747,7 @@ Life expectancy: "Yes"
 ```
 ┌─────────────────────────────────────┐
 │   🗳️ VOTE YES ON THE 1% TREATY      │
-│   "I want to not die"               │
+│   "Join the global referendum"      │
 │   [2,847,923 already voted YES]     │
 └─────────────────────────────────────┘
 
@@ -631,6 +763,13 @@ Life expectancy: "Yes"
 │   [Share counter: 924,847]          │
 └─────────────────────────────────────┘
 ```
+
+**What Each Action Does:**
+- **Vote on Treaty:** Join 280 million humans demanding the 1% redirect
+- **Buy Bonds:** Fund the lobbying to make it happen, earn 40% returns
+- **Share:** Every person who joins increases political pressure
+
+**After Treaty Passes:** You'll use Wishocracy to help allocate the $27B
 
 ---
 
@@ -732,11 +871,11 @@ Time to act: NOW
 - **Accessible complexity:** "It's complicated but here's the 5-year-old version"
 
 ### Key Messages to Hammer
-1. We spend 40X more on killing than curing
-2. We already proved the solution works (Oxford trial)
-3. This makes you money while saving lives
-4. Politicians will do it if we bribe them enough
-5. 3.5% participation = inevitable success
+1. We spend 40X more on weapons (including nuclear & AI) than cures
+2. We have 13,000 nukes but zero cures for 95% of diseases
+3. We're literally building Skynet while grandma dies of Alzheimer's
+4. Oxford already proved we can be 82X more efficient
+5. Just 1% of military budget = 20-50 diseases cured
 
 ### What to Avoid
 - Partisan politics (both sides are bribed)
@@ -797,7 +936,7 @@ This design document is for internal use. Remember:
 - We're not promising utopia, we're promising 1% less stupidity
 
 **The One-Line Pitch:**
-"Humanity spends $119 trillion on war and disease while spending 0.06% on cures. Let's be 1% less stupid."
+"Humanity has 13,000 nukes and is building Skynet while 55 million die annually from diseases we could cure with 1% of the military budget."
 
 ---
 
