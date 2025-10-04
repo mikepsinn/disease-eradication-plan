@@ -15,47 +15,65 @@ book:
   issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   chapters:
     - index.qmd
-    - part: "The Problem: Everyone You Love Is Dying While We Build Skynet"
+
+    - part: "The Horror: Everyone You Love Is Dying While We Build Skynet"
       chapters:
+        - brain/book/problem/the-daily-massacre.qmd  # 150,000 deaths/day
+        - brain/book/problem/the-119-trillion-death-toilet.qmd  # The three shocks reveal
         - brain/book/problem/the-evolutionary-trap.qmd
-        - brain/book/problem/cost-of-war.qmd
-        - brain/book/problem/cost-of-disease.qmd
+        - brain/book/problem/cost-of-war.qmd  # Real $9.7T cost
+        - brain/book/problem/cost-of-disease.qmd  # $109T burden
         - brain/book/problem/why-the-system-is-broken.qmd
         - brain/book/problem/nih-funding-is-broken.qmd
         - brain/book/problem/fda-approvals-are-broken.qmd
         - brain/book/problem/regulatory-capture.qmd
-        - brain/book/problem/democracy-is-broken.qmd
-    - part: "The Theory: Why Markets Work and Democracy Doesn't"
+        - brain/book/problem/democracy-is-broken.qmd  # Princeton study
+
+    - part: "The Theory: Why Markets Win and Democracy Loses"
       chapters:
         - brain/book/theory.qmd
-        # - brain/book/theory/central-planning-failure.qmd # TODO: Create
-        # - brain/book/theory/war-on-disease.qmd  # TODO: Create
-        # - brain/book/theory/public-choice.qmd  # TODO: Create
-        # - brain/book/theory/wisdom-of-crowds.qmd  # TODO: Create
-    - part: "The Solution"
+        - brain/book/theory/central-planning-kills.qmd  # FDA's 82X inefficiency
+        - brain/book/theory/the-two-wars.qmd  # War on Humanity vs War on Disease
+        - brain/book/theory/public-choice.qmd  # Everyone's selfish, use it
+        - brain/book/theory/wisdom-of-crowds.qmd  # 8 billion > 200
+        - brain/book/theory/central-banks-fund-your-death.qmd  # Fed/money printing
+
+    - part: "The Solution: Making Death Unprofitable"
       chapters:
         - brain/book/solution.qmd
-        - brain/book/solution/dfda.qmd
         - brain/book/solution/1-percent-treaty.qmd
-        - brain/book/strategy/global-referendum.qmd
-        - brain/book/economics/victory-bonds.qmd
-        - brain/book/solution/dih.qmd
-        - brain/book/solution/wishocracy.qmd
+        - brain/book/solution/dih.qmd  # Treasury structure first
+        - brain/book/solution/wishocracy.qmd  # Then how we prevent capture
+        - brain/book/solution/dfda.qmd  # 82X efficiency engine
+        - brain/book/economics/victory-bonds.qmd  # 40% returns
+        - brain/book/economics/coalition-that-wins.qmd  # Everyone profits
+        - brain/book/economics/economic-incentives.qmd
+
     - part: "The Proof: This Already Works"
       chapters:
         - brain/book/proof.qmd
-        - brain/book/reference/recovery-trial.qmd
+        - brain/book/reference/recovery-trial.qmd  # Oxford's $500 miracle
         - brain/book/reference/historical-evidence-supporting-decentralized-efficacy-trials.qmd
         - brain/book/proof/historical-precedents.qmd
         - brain/book/proof/body-as-repairable-machine.qmd
-    - part: "Choose Your Own Adventure: Idiocracy or Wishonia"
+
+    - part: "Choose Your Future: Idiocracy or Wishonia"
       chapters:
         - brain/book/futures.qmd
-        - brain/book/futures/dystopia-skynet-wins.qmd  # TODO: Update to match "Dystopian Default" framing
-        - brain/book/futures/utopia-health-and-happiness.qmd  # TODO: Update to match "Transcendent Path" framing
+        - brain/book/futures/dystopia-skynet-wins.qmd  # The three subs
+        - brain/book/futures/utopia-health-and-happiness.qmd  # The three supers
+        - brain/book/futures/the-delta.qmd  # Side-by-side comparison
         - brain/book/futures/comparison.qmd
+
     - part: "Join or Die (Literally)"
       chapters:
+        - brain/book/strategy.qmd
+        - brain/book/strategy/viral-marketing.qmd
+        - brain/book/strategy/grassroots-mobilization.qmd
+        - brain/book/strategy/diplomatic-approach.qmd
+        - brain/book/call-to-action/your-personal-benefits.qmd  # What YOU get
+        - brain/book/call-to-action/three-actions.qmd  # Vote, Invest, Share
+        - brain/book/call-to-action/every-objection-demolished.qmd
         - brain/book/call-to-action.qmd
   appendices:
     - brain/book/references.qmd
