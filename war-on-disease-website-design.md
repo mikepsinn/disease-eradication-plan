@@ -31,6 +31,29 @@ A scrollytelling website that reveals humanity's insane spending priorities and 
 
 ---
 
+### Scene 1.5: "We Pay to Kill Ourselves"
+
+**Visual Design:**
+- Quick comparison showing we fund our own destruction
+- Dark red color scheme
+
+**Humanity's Death Wish Budget:**
+```
+💣 Military (killing each other): $2.7 TRILLION
+🚬 Cigarettes (killing ourselves): $888 BILLION  
+🎰 Gambling (destroying families): $450 BILLION
+= $4 TRILLION on self-destruction
+
+vs.
+
+💊 Medical Research (saving ourselves): $68 BILLION (1.7% of destruction budget)
+```
+
+**Punchline:** 
+"We spend 60X more on dying than on not dying"
+
+---
+
 ### Scene 2: "The True Cost of War" (Stacked Cost Counter)
 
 **Visual Design:**
@@ -81,19 +104,19 @@ This Second: $3.4 MILLION [live counter]
 ### Live Death Counter Display
 
 **Visual Design:**
-- Large numerical counters that increment in real-time
+- Large numerical counters that increment based on statistical rates
 - Subtle grave icons (⚰️) fade in every 10 deaths in a grid
 - Simple "thud" sound every 100 deaths (optional)
 - Clean, minimalist design focused on the numbers
 
-**Real-Time Counters:**
+**Real-Time Counters (calculated from global averages):**
 ```
 Since you arrived [X seconds] ago:
 
-⚰️ Total deaths from disease: [147 and counting]
-💀 Preventable deaths: [73 and counting]
-👶 Children under 5: [28 and counting]
-🧠 Mental illness suicides: [3 and counting]
+⚰️ Total deaths from disease: [147 and counting - 3/second]
+💀 Preventable deaths: [73 and counting - 1.5/second]
+👶 Children under 5: [28 and counting - 0.6/second]
+🧠 Mental illness suicides: [3 and counting - 1 per 40 seconds]
 
 [Small grid of graves appears subtly in background]
 ```
@@ -126,6 +149,19 @@ Patients Excluded From Trials: 85%
 "We gave them $1.6 billion for COVID research.
 They completed ZERO trials in 4 years."
 ```
+
+**The NIH's Greatest Hits:**
+- Spent $3M to study why lesbians are fat (conclusion: unclear)
+- Spent $2.6M watching hamsters fight on steroids
+- Spent $1.5M studying wine and cheese pairings (in France!)
+- Spent $856K training mountain lions to run on treadmills
+- But your kid's rare disease? "Sorry, no funding available"
+
+**How NIH Scientists Spend Their Time:**
+- 60% - Writing grant proposals
+- 30% - Reviewing other people's grant proposals  
+- 9% - Meetings about grant proposals
+- 1% - Actual science
 
 **The Problem Explained:**
 - "200 bureaucrats in Maryland decide what gets researched"
@@ -165,6 +201,16 @@ CENTRALIZED (NIH)           |  DECENTRALIZED (Oxford)
 - "They used EXISTING hospital systems, not special trial centers"
 - "They tested MULTIPLE treatments simultaneously"
 - "They published ALL results immediately, even failures"
+
+**The Secret Sauce Oxford Used:**
+- No FDA paperwork orgies (just simple forms)
+- Used WhatsApp to coordinate (not $100M software)
+- Included dying people (FDA trials exclude the sickest)
+- Published failures immediately (pharma usually buries them)
+- Cost: One Pentagon toilet seat
+- Lives saved: One million
+
+**Translation:** "A few doctors with WhatsApp beat the entire US medical establishment"
 
 **The Key Insight:**
 "Decentralized trials are 82X more efficient than centralized bureaucracy.
@@ -234,6 +280,7 @@ Cost to You: $0
 - "No politicians can touch this money"
 - "No pharma exec can capture this"
 - "Transparent blockchain tracking"
+- "8 billion people voting beats any lobby"
 
 ---
 
@@ -252,21 +299,27 @@ Cost to You: $0
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⭐⭐⭐⭐⭐ (8,924 reviews)
 METFORMIN + EXERCISE PROTOCOL
+"Cured my diabetes AND my marriage" - Janet, 52
+"Literally just eating vegetables and walking, but it works" - Bob
 Effectiveness: 73% | Cost: $20/mo | Side Effects: Minimal
 ✅ COVERED BY DIH | 📍 Available everywhere
 [JOIN TRIAL NOW]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⭐⭐⭐⭐ (423 reviews)  
-CRISPR GENE THERAPY - BETA CELL RESTORATION
+⭐⭐⭐⭐⭐ (69 reviews)
+EXPERIMENTAL CRISPR THERAPY
+"Edited my genes, now I'm basically Wolverine" - Trial Participant
+"10/10 would let strangers edit my DNA again" - Another Guy
 Effectiveness: 91% (in trials) | Cost: FREE | Revolutionary
 ✅ 100% DIH FUNDED | 📍 27 locations
 [JOIN WAITLIST - 2,847 ahead of you]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⭐⭐ (48,392 reviews)
-STANDARD AMERICAN MEDICAL APPROACH  
-Effectiveness: 12% | Cost: $500/mo | Side Effects: Yes
+⭐ (156,392 reviews)
+INSULIN AT $300/VIAL
+"Choosing between rent and not dying! Thanks America!" - Everyone
+"Side effects include bankruptcy" - Verified Purchaser
+Effectiveness: Keeps you alive | Cost: Your life savings
 ❌ Not recommended | "Why are you doing this to yourself?"
 [SERIOUSLY, TRY SOMETHING ELSE]
 ```
@@ -355,8 +408,47 @@ THE NEW GAME (With VICTORY Bonds):
     Result: EVERYONE SIGNS OR BILLIONAIRES DESTROY THEM
 ```
 
-**Key Insight:**
-"We're not fighting human nature - we're bribing it"
+**The Problem Without Bonds:**
+Every country thinks: "If I reduce military spending and others don't, I'm weak"
+Result: Nobody reduces, everyone keeps dying
+
+**The Solution With Bonds:**
+Billionaires own bonds → They LOSE MONEY if countries cheat
+Billionaires control politicians → Politicians obey or get replaced
+Result: Treaty passes or rich people destroy whoever blocks it
+
+**Translation:** "We weaponized greed against itself"
+
+---
+
+## Act 10.5: A Day in Your Life (2025 vs 2050)
+
+**Visual Design:**
+- Split screen showing two daily schedules
+- Clock icons showing time progression
+- Red/gray for today, green/gold for future
+
+**Today (Status Quo):**
+```
+6 AM: Check GoFundMe for cancer treatment ($847 raised of $2M needed)
+9 AM: Insurance denies grandma's Alzheimer's medication 
+12 PM: News: Another $50B for new fighter jets
+3 PM: Friend dies of treatable disease (couldn't afford treatment)
+6 PM: Take 7 pills that treat symptoms, cure nothing
+9 PM: Set alarm to wake up and do it all again tomorrow
+Life expectancy: -2 months since yesterday
+```
+
+**2050 (With Treaty):**
+```
+6 AM: AI doctor adjusts your cellular age to 25
+9 AM: Grandma's 150th birthday party planning
+12 PM: News: Last disease eradicated, scientists "bored"
+3 PM: Friend's cancer detected and cured in same appointment
+6 PM: Take longevity pill (optional, some people choose mortality for variety)
+9 PM: Plan which galaxy to visit next
+Life expectancy: "Yes"
+```
 
 ---
 
@@ -421,6 +513,61 @@ THE NEW GAME (With VICTORY Bonds):
 │   [Share counter: 924,847]          │
 └─────────────────────────────────────┘
 ```
+
+---
+
+## Act 13: Quick Answers for Skeptics
+
+**Visual Design:**
+- FAQ accordion style
+- Click to expand each objection
+- Responses are short and punchy
+
+**"This is communism!"**
+No, it's capitalism where we bet on not dying instead of dying.
+
+**"You can't trust voting masses!"**
+We trust them to elect presidents with nukes. This is safer.
+
+**"Big Pharma will block this!"**
+Big Pharma MAKES MONEY from this. We're giving them millions of new paying customers.
+
+**"The military-industrial complex won't allow it!"**
+They get 99% of their budget PLUS 40% returns on VICTORY bonds. They'll lobby FOR us.
+
+**"This is too good to be true!"**
+So was democracy, antibiotics, and the internet. Sometimes good things happen.
+
+**"What if corrupt actors take over?"**
+They literally can't. There's no central point to capture. 8 billion people vote directly.
+
+**"Won't countries cheat?"**
+Not when their richest citizens lose billions if they do. Money enforces compliance.
+
+---
+
+## Act 14: The Ticking Clock (Final Urgency)
+
+**Visual Design:**
+- Large countdown timers
+- Red pulsing for urgency
+- Personal statistics calculated from user's age/location
+
+**The Clock Is Ticking:**
+```
+Senate votes on military budget in: [47 DAYS : 13 HOURS : 28 MINUTES]
+Deaths before that vote: 7,050,000 (at current rate)
+Your parents' remaining years (average): 12.3
+Chance your kid gets rare disease: 1 in 10
+People dying while you hesitate: [calculated counter: 3/second]
+
+Time to act: NOW
+```
+
+**Final Message:**
+"Every day you wait, 150,000 people run out of days"
+
+[VOTE YES] [INVEST] [SHARE]
 
 ---
 
@@ -558,6 +705,12 @@ Nice-to-haves:
 2. **Sound effects** (optional throughout)
 3. **Share widgets and social features**
 4. **A/B testing infrastructure**
+
+### Future Additions (Once Live with Real Data):
+- **Live social proof counter** (viewing now, votes today, etc.)
+- **Real-time government position tracker**
+- **Actual death counter** (connected to WHO data)
+- **Live investment thermometer**
 
 ### What NOT to Build:
 - Physics engines
