@@ -65,8 +65,6 @@ for year in [2024, 2030, 2040, 2050]:
 # Styling
 ax.set_xlabel('Year', fontsize=24, color=COLOR_BLACK, fontweight='bold')
 ax.set_ylabel('Trillions per Year', fontsize=24, color=COLOR_BLACK, fontweight='bold')
-ax.set_title('THE DEATH SPIRAL: UNSUSTAINABLE BY DESIGN',
-             fontsize=36, color=COLOR_BLACK, pad=20, fontweight='bold')
 
 # Legend
 ax.legend(loc='upper left', fontsize=20, frameon=True, facecolor='white',
