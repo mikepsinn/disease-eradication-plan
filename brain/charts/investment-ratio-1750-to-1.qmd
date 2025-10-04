@@ -1,6 +1,8 @@
 ```{python}
 #| label: investment-ratio-1750-to-1
 #| fig-cap: "The 1,750:1 Ratio: Death Spending vs Cure Investment"
+#| fig-width: 10
+#| fig-height: 6
 
 import sys
 import os
@@ -24,7 +26,7 @@ from brain.charts._chart_style import (
 setup_chart_style(style='light', dpi=150)
 
 # Create figure
-fig, ax = plt.subplots(figsize=(20, 12))
+fig, ax = plt.subplots(figsize=(10, 6))
 
 # Data
 categories = ['Dealing with Death\n(War + Disease)', 'Finding Cures']
@@ -69,11 +71,7 @@ ax.set_ylabel('BILLIONS PER YEAR', fontsize=24, color=COLOR_BLACK, fontweight='b
 ax.tick_params(colors=COLOR_BLACK, labelsize=20)
 for spine in ax.spines.values():
     spine.set_color(COLOR_BLACK)
-    spine.set_linewidth=4)
-
-# Title
-plt.title('HUMANITY\'S INSANE SPENDING PRIORITIES',
-          fontsize=36, color=COLOR_BLACK, pad=20, fontweight='bold')
+    spine.set_linewidth(4)
 
 # Add watermark
 add_watermark(fig)

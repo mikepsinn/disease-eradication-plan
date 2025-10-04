@@ -1,6 +1,8 @@
 ```{python}
 #| label: war-real-hidden-costs
 #| fig-cap: "The REAL Cost of War: What They Don't Tell You"
+#| fig-width: 10
+#| fig-height: 6
 
 import sys
 import os
@@ -41,7 +43,7 @@ for value in costs.values():
     cumulative.append(current)
 
 # Create horizontal stacked bar chart
-fig, ax = plt.subplots(figsize=(20, 12))
+fig, ax = plt.subplots(figsize=(10, 6))
 
 y_pos = np.arange(len(costs))
 colors_stack = ['#FF0000', '#CC0000', '#990000', '#660000', '#330000', '#800020']
@@ -83,8 +85,6 @@ ax.text(total_cost/2, len(costs)/2,
 ax.set_xlim(-2500, 12000)
 ax.set_ylim(-0.5, len(costs)-0.5)
 ax.set_xlabel('BILLIONS OF DOLLARS', fontsize=24, fontweight='bold')
-ax.set_title('THE REAL COST OF WAR: $9.7 TRILLION (NOT $2.7T)',
-             fontsize=36, color=COLOR_BLACK, pad=20, fontweight='bold')
 
 # Remove y-axis
 ax.set_yticks([])

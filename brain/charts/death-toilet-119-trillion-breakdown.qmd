@@ -1,6 +1,8 @@
 ```{python}
 #| label: death-toilet-119-trillion
 #| fig-cap: "The $119 Trillion Death Toilet: Where Humanity Flushes Its Future"
+#| fig-width: 12
+#| fig-height: 7
 
 import sys
 import os
@@ -24,7 +26,7 @@ from brain.charts._chart_style import (
 setup_chart_style(style='light', dpi=150)
 
 # Create figure with multiple subplots
-fig = plt.figure(figsize=(24, 14))
+fig = plt.figure(figsize=(12, 7))
 
 # Main pie chart showing the death toilet composition
 ax1 = plt.subplot(121)

@@ -63,9 +63,6 @@ for spine in ax.spines.values():
     spine.set_color(COLOR_BLACK)
     spine.set_linewidth(4)
 
-plt.title('THE REAL COST OF WAR (THEY HIDE $7 TRILLION)',
-          fontsize=26, color=COLOR_BLACK, pad=20, fontweight='bold')
-
 # Add watermark
 add_watermark(fig)
 

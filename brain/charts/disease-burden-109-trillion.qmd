@@ -1,6 +1,8 @@
 ```{python}
 #| label: disease-burden-109-trillion
 #| fig-cap: "Disease Burden: The Real Killer ($109 Trillion)"
+#| fig-width: 10
+#| fig-height: 6
 
 import matplotlib.pyplot as plt
 import sys
@@ -20,7 +22,7 @@ from brain.charts._chart_style import (
 setup_chart_style(style='light', dpi=150)
 
 # Create chart showing all three for final comparison
-fig, ax = plt.subplots(figsize=(16, 10))
+fig, ax = plt.subplots(figsize=(10, 6))
 
 # Data - all three costs for perspective
 categories = ['Military\n(Admitted)', 'War\n(True Cost)', 'DISEASE\nBURDEN']
@@ -63,9 +65,6 @@ ax.tick_params(colors=COLOR_BLACK, labelsize=16)
 for spine in ax.spines.values():
     spine.set_color(COLOR_BLACK)
     spine.set_linewidth(4)
-
-plt.title('THE $109 TRILLION DISEASE BURDEN DWARFS WAR',
-          fontsize=28, color=COLOR_BLACK, pad=20, fontweight='bold')
 
 # Add watermark
 add_watermark(fig)
