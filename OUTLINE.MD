@@ -1,5 +1,8 @@
 # The Complete Idiot's Guide to Ending War and Disease: Master Outline (Complete High-Resolution Version)
 
+**[VIDEO: Charlie Chaplin's "The Great Dictator" Speech - The Choice Between Machinery and Humanity]**
+*"We think too much and feel too little. More than machinery, we need humanity. More than cleverness, we need kindness and gentleness."*
+
 ## Part I: The Problem: Everyone You Love Is Dying While We Build Skynet
 
 ### The Human Cost - 150,000 Deaths Per Day While We Count Missiles
@@ -51,6 +54,7 @@
   - Rare diseases: 95% have zero FDA-approved treatments
   - Hepatitis C cured (2014), but still 50+ years between major disease eradications
 - **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
+  - **[VIDEO: Hans Rosling's "The Best Stats You've Ever Seen" - Visualizing Health vs Military Spending]**
   - The military's toilet seats cost more than malaria research
   - One fighter jet = entire rare disease research budget
   - Viagra got more funding than Alzheimer's (priorities!)
@@ -166,6 +170,7 @@
   - NIH medicine: Smart people, 55 million die annually
   - The pretense of knowledge: Central planning always fails
 - **Markets: The Distributed Computer That Works**
+  - **[VIDEO: Milton Friedman's "I, Pencil" - How Markets Coordinate Without Central Planning]**
   - Prices are information packets (committees are noise)
   - RECOVERY trial: $500 vs $41,000 per patient (82X efficiency)
   - Pre-1962 medicine: Doctors prescribed, patients decided
@@ -580,6 +585,7 @@
   - Productivity surge: +2.5% annually (double normal rate)
   - The pattern: Every time we cut military spending, prosperity follows
 - **Eisenhower's Warning (1961): He Saw This Coming**
+  - **[VIDEO: Eisenhower's Farewell Address - Military-Industrial Complex Warning]**
   - "We must guard against acquisition of unwarranted influence by the military-industrial complex"
   - Former 5-star general and Supreme Allied Commander warning about his own industry
   - "Every gun made, every warship launched, every rocket fired signifies theft from those who hunger"
@@ -826,6 +832,9 @@
 
 
 ### The Tale of Two Futures (Three Supers vs Three Subs)
+
+**[VIDEO: Carl Sagan's "Pale Blue Dot" - The Stakes of Our Choice]**
+*"On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives."*
 
 - **Idiocracy 2050: The Three Subs (Subhuman Degradation)**
   - **Sub-Intelligence:** IQ dropping, education collapsed, truth unknowable
@@ -1212,6 +1221,7 @@
   - The Swiss prosperity correlates with centuries of peace
   - Neutrality isn't weakness, it's profitable
 - **"This is unrealistic"**
+  - **[VIDEO: JFK's "We Choose to Go to the Moon" - Doing the Impossible]**
   - So was: Flight, internet, democracy, antibiotics, Bitcoin, landing on moon
   - "Unrealistic" is what people say before paradigm shifts
   - Reality: 69 million people dying unnecessarily each year
@@ -1226,3 +1236,31 @@
   - Our "war" is actually a peace treaty with biology
   - The War on Disease is really the Market for Health
 
+## Multimedia Enhancements for Web Version
+
+### Essential Videos to Embed
+- **Opening**: Charlie Chaplin's "The Great Dictator" (humanity vs machinery)
+- **Historical Proof**: Eisenhower's Farewell Address (military-industrial complex warning)
+- **Economic Theory**: Milton Friedman's "I, Pencil" (decentralized coordination)
+- **Health Data**: Hans Rosling's TED Talks (visualizing global health)
+- **Perspective**: Carl Sagan's "Pale Blue Dot" (what we're fighting for)
+- **Inspiration**: JFK's Moon Speech (doing the impossible)
+
+### Additional Media Suggestions
+- **George Carlin**: "The American Dream" (on the military-industrial complex)
+- **"The Corporation"**: Documentary clips on regulatory capture
+- **"Inside Job"**: Federal Reserve/banking system clips
+
+### Interactive Elements
+- **Death Counter**: Real-time counter of preventable deaths while reading
+- **Budget Simulator**: Drag sliders to reallocate military to medical spending
+- **Your Disease Calculator**: Enter condition, see funding vs military equipment
+- **Peace Dividend Calculator**: Show GDP growth from military cuts
+- **Wishocracy Demo**: Mini-version to try pairwise allocation
+
+### Data Visualizations
+- **Animated Timeline**: Shows diverging paths (Idiocracy vs Wishonia)
+- **Spending Treemap**: Visual breakdown of global budgets
+- **Disease Burden Map**: Heat map of global suffering
+- **Resource Flow Diagram**: Where talent goes (weapons vs cures)
+- **Historical Peace Dividends**: Interactive graph of military cuts → prosperity
