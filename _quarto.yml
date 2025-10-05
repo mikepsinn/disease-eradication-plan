@@ -63,13 +63,17 @@ book:
         - brain/book/futures/utopia-health-and-happiness.qmd  # The three supers
         - brain/book/futures/comparison.qmd  # Side-by-side comparison
 
-    - part: "The Strategy: How We Actually Win This War"
+    - part: "The Money: How Everyone Gets Rich by Eradicating Disease"
       chapters:
-        - brain/book/strategy.qmd
+        - brain/book/economics.qmd # Executive Summary
         - brain/book/economics/victory-bonds.qmd  # Fund the revolution
         - brain/book/economics/coalition-that-wins.qmd  # Everyone profits
         - brain/book/economics/dih-treasury-cash-flow-model.qmd # Cash Flow Model
         - brain/book/economics/fundraising-and-budget-plan.qmd # Fundraising budget
+    
+    - part: "The Implementation: Building Paradise"
+      chapters:
+        - brain/book/strategy.qmd
         - brain/book/strategy/global-referendum.qmd  # Democratic path
         - brain/book/strategy/viral-marketing.qmd  # Social media strategy
         - brain/book/strategy/co-opting-defense-contractors.qmd # Co-Opting the Defense Lobby
