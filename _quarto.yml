@@ -18,16 +18,16 @@ book:
 
     - part: "The Problem: Everyone You Love Is Dying While We Build Skynet"
       chapters:
+        - brain/book/problem.qmd  # Overview
         - brain/book/problem/the-daily-massacre.qmd  # 150,000 deaths/day
-        - brain/book/problem/the-119-trillion-death-toilet.qmd  # The three shocks
-        - brain/book/problem/the-evolutionary-trap.qmd
-        - brain/book/problem/cost-of-war.qmd  # Real $9.7T cost
+        - brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd  # NIH failure
+        - brain/book/problem/fda-is-unsafe-and-ineffective.qmd  # 82X more expensive, 17 years
+        - brain/book/problem/cost-of-war.qmd  # $2.7T on killing
         - brain/book/problem/cost-of-disease.qmd  # $109T burden
-        - brain/book/problem/why-the-system-is-broken.qmd
-        - brain/book/problem/nih-funding-is-broken.qmd
-        - brain/book/problem/fda-approvals-are-broken.qmd
-        - brain/book/problem/regulatory-capture.qmd
-        - brain/book/problem/democracy-is-broken.qmd  # Princeton study
+        - brain/book/problem/the-119-trillion-death-toilet.qmd  # Total waste visualization
+        - brain/book/problem/unrepresentative-democracy.qmd  # Princeton study
+        - brain/book/problem/regulatory-capture.qmd  # Foxes guarding henhouses
+        - brain/book/problem/the-evolutionary-trap.qmd  # Why we're wired for war
 
     - part: "The Theory (Why Markets Work and Democracy Doesn't)"
       chapters:

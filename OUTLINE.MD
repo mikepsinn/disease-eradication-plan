@@ -5,47 +5,52 @@
 
 ## Part I: The Problem: Everyone You Love Is Dying While We Build Skynet
 
-### The Human Cost - 150,000 Deaths Per Day While We Count Missiles
+### The Daily Massacre - 150,000 Deaths Per Day While We Count Missiles
 
-- **The Daily Massacre No One Talks About**
+- **The Numbers That Should Start a Revolution**
   - 150,000 people die every day, mostly from preventable/curable diseases
   - That's fifty 9/11s. Every. Single. Day.
   - Your parent, child, or friend is statistically likely to be one of them
   - We could prevent most of these deaths with existing technology
   - But we're too busy spending $2.7 trillion on weapons
-- **The Bureaucratic Murder Machine**
-  - NIH: 200 people deciding which diseases get studied (yours probably doesn't)
-  - FDA: Making treatments 82X more expensive than necessary (proven by Oxford RECOVERY trial)
+
+### The NIH Has Spent $1 Trillion to Eradicate 0 Diseases
+
+- **The Most Expensive Failure in Human History**
+  - Since 1970: $1+ trillion spent (inflation adjusted)
+  - Diseases eradicated: ZERO (smallpox was WHO, not NIH)
+  - Success rate: 0.00% for complete disease elimination
+  - 200 bureaucrats deciding which of 10,000 diseases matter (yours doesn't)
+  - They fund what gets published, not what saves lives
+  - Result: 55 million die annually while papers get published
+
+### The FDA Is Unsafe and Ineffective
+
+- **Making Medicine 82X More Expensive and 1000X Slower**
+  - Oxford RECOVERY trial proved treatments can cost $500/patient
+  - FDA demands $41,000/patient (82X more expensive)
+  - 17 years from discovery to patient (while you die waiting)
   - 95% of diseases have ZERO approved treatments
-  - Your rare disease child has a better chance of being struck by lightning than getting a cure
-- **The Misallocation That Kills**
-  - Military spending: $2.7 trillion (for threats that kill 25,000/year)
-  - Medical research: $68 billion (for diseases that kill 55 million/year)
-  - We spend 40X more preparing to kill each other than learning to heal each other
-  - One fighter jet = entire rare disease research budget
-  - We know exactly how to fix this, but the system is designed not to
+  - Your rare disease child has better odds with lottery tickets
+  - Designed to prevent lawsuits, not save lives
 
-### The $119 Trillion Death Toilet (Where Your Money Goes to Die)
+### The Cost of War - $2.7 Trillion on Killing Each Other
 
-- **[FIGURE: The $119 Trillion Waste]**
-  - Visual showing money flow: $9.7T (war) + $109.1T (disease burden) = $119T annually
-  - Tiny $68B research budget shown in comparison
-  - Impact: Shows the staggering scale of misallocation
-- **The Cost of War: $9.7 Trillion/Year**
-  - The War on Humanity: $2.7T annual military spending (killing each other)
-  - The War on Disease: $68B annual medical research (saving each other)
-  - We spend 40X more on the War on Humanity than the War on Disease
-  - Eisenhower warned us: "Every gun made, every warship launched, every rocket fired signifies theft from those who hunger and those who are not fed, those who are cold and are not clothed"
+- **The War on Humanity We're Losing**
+  - $2.7T annual military spending globally
+  - We spend 40X more on killing than curing
+  - Eisenhower warned us: "Every gun made, every warship launched, every rocket fired signifies theft from those who hunger"
   - Direct costs: $2.7T on weapons that rust in warehouses
-  - We spend 162X more on military than brain research (preventing threats 2 million times less likely)
+  - We spend 162X more on military than brain research
   - The Pentagon: Lost $2.46T with no accountability
   - US = 37% of global military spending with only 4.4% of world population
   - War costs your family $74,259 over your lifetime
-  - China already hacked our nuclear systems (we're funding their military)
   - Every submarine = 1,000 cancer labs we didn't build
   - The nuclear extinction lottery: 13,000 warheads, 0 winners
-  - Switzerland's alternative: 0.7% on defense, $93K GDP per capita
-- **The Disease Burden: $109.1 Trillion/Year in Suffering and Lost Productivity**
+
+### The Cost of Disease - $109.1 Trillion in Annual Suffering
+
+- **The Economic Burden That Dwarfs Everything Else**
   - Direct healthcare spending: $8.2T/year globally (treating symptoms)
   - Economic losses from disease: $100.9T/year (lost productivity, early death)
   - Cancer: 10M deaths/year while we argue about pronouns
@@ -53,6 +58,13 @@
   - Mental illness: 1 billion suffering, $5T lost productivity
   - Rare diseases: 95% have zero FDA-approved treatments
   - Hepatitis C cured (2014), but still 50+ years between major disease eradications
+
+### The $119 Trillion Death Toilet - Where Your Money Goes to Die
+
+- **[FIGURE: The $119 Trillion Waste]**
+  - Visual showing money flow: $9.7T (war) + $109.1T (disease burden) = $119T annually
+  - Tiny $68B research budget shown in comparison
+  - Impact: Shows the staggering scale of misallocation
 - **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
   - **[VIDEO: Hans Rosling's "The Best Stats You've Ever Seen" - Visualizing Health vs Military Spending]**
   - The military's toilet seats cost more than malaria research
@@ -95,7 +107,7 @@
   - Every financial crisis: The house always wins, you always lose
   - The cantillon effect: Money printers get rich, you get poor
 
-### Democracy Is Already Dead (Princeton Proved It)
+### Unrepresentative Democracy - Princeton Proved It
 
 - **The Princeton Bombshell: You Have Zero Political Power**
   - Gilens & Page study: 0% correlation between public opinion and policy
@@ -124,12 +136,6 @@
   - Baseline budgeting: Increases are automatic, cuts are impossible
   - The debt ceiling theater: Fake fights, real damage
   - The budget is 10,000 decisions you'll never influence
-- **Regulatory Capture: The Foxes Own All Henhouses**
-  - FDA run by ex-pharma executives (shocking!)
-  - DoD run by future defense contractors (who could have guessed!)
-  - The revolving door: 400% salary increase for playing ball
-  - The IRS: 87,000 agents to squeeze you while billionaires pay zero
-  - The Fed: Privately owned, publicly destroying your savings
 - **Direct Democracy Fails Too (California Proved It)**
   - Information overload: 50 propositions = random voting
   - Special interest capture: Who writes the propositions?
@@ -141,6 +147,46 @@
   - America: Designed for landowners, not you
   - Modern "democracy": Choose between two pre-selected options
   - The real system: Oligarchy with democratic theater
+
+### Regulatory Capture - The Foxes Own All Henhouses
+
+- **Every Regulator Works for Who They Regulate**
+  - FDA run by ex-pharma executives (shocking!)
+  - DoD run by future defense contractors (who could have guessed!)
+  - The revolving door: 400% salary increase for playing ball
+  - The IRS: 87,000 agents to squeeze you while billionaires pay zero
+  - The Fed: Privately owned, publicly destroying your savings
+- **Why the System Can't Be Reformed (It's Working As Designed)**
+  - FDA delays = Pharma profits (17 years of patent monopoly)
+  - NIH bureaucracy = Grant industrial complex (feed the beast)
+  - Military spending = Defense contractor wealth (the point)
+  - Disease continues = Healthcare profits ($4.5T industry needs you sick)
+  - Every "failure" is someone's success story
+
+### The Evolutionary Trap - Why We're Wired for War
+
+- **Your Brain Was Designed for Small Tribes, Not Global Cooperation**
+  - Evolved for: 150-person tribes where everyone knew each other
+  - Living in: 8 billion person world with nuclear weapons
+  - Result: Tribalism at civilization-ending scale
+- **The Threat Detection Bug That Kills Millions**
+  - Your amygdala: Optimized to spot tigers, sees terrorists everywhere
+  - Actual risk of terrorism: 1 in 30 million
+  - Resources spent on terrorism: $2.7 trillion
+  - Actual risk of disease: 1 in 1.5 (you will get sick)
+  - Resources spent on disease research: $68 billion
+  - Your fear circuit is 40X miscalibrated
+- **Status Games: Why War Leaders Win Elections**
+  - Peacetime leaders: Average 20% approval
+  - Wartime leaders: Average 70% approval
+  - Churchill: From 30% to 83% when war started
+  - Bush: From 51% to 90% after 9/11
+  - Your brain rewards warriors, ignores healers
+- **The Cooperation Paradox**
+  - Small groups: Cooperation is optimal
+  - Large groups: Defection pays better
+  - Global scale: Cooperation nearly impossible
+  - Solution needed: Change the payoff matrix
 
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
