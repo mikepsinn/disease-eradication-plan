@@ -1,12 +1,7 @@
-- [ ] `brain/economics/victory-bonds.qmd`
-- [ ] `brain/economics/fundraising-strategy.qmd`
-- [ ] `brain/economics/fundraising-and-budget-plan.qmd`
-- [ ] `brain/book/technology-stack.qmd`
-- [ ] `brain/book/co-opting-defense-contractors.qmd`
-- [x] `brain/book/reference/organizational-precedents.qmd`
-- [ ] `brain/book/economics/victory-bond-investment-thesis.md`
-- [ ] `brain/book/economics/dih-treasury-cash-flow-model.md`
-- [ ] `brain/book/strategy/warondisease-landing.md`
-- [ ] `brain/book/economics/operational-budget-and-financial-model.md`
-- [ ] `brain/reference/operations-roadmap.qmd`
-- [ ] `brain/book/reference/global-government-medical-research-spending.qmd`
+- [ ] `brain/economics/victory-bonds.qmd` (from `strategy.qmd`)
+- [ ] `brain/economics/fundraising-strategy.qmd` (from `strategy.qmd`)
+- [ ] `brain/economics/fundraising-and-budget-plan.qmd` (from `strategy.qmd`)
+- [ ] `brain/book/technology-stack.qmd` (from `strategy.qmd`)
+- [ ] `brain/book/co-opting-defense-contractors.qmd` (from `strategy.qmd`)
+- [ ] `brain/reference/organizational-precedents.qmd` (from `strategy.qmd`)
+- [ ] All other broken links
