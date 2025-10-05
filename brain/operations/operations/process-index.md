@@ -29,7 +29,7 @@ dateCreated: 2025-08-22
 - WIG: Hit verified vote targets in each country.
 - Lead (weekly): new partner sends; leaderboard awards posted; fake accounts fixed ≤48h.
 - Lag (quarter): total verified votes; cost per verified vote; partner conversion.
-- Docs: [Referral Rewards](../strategy/referral-rewards-system.md), [Incentives Layer](../strategy/incentives-layer.md), [War on Disease Landing](../strategy/warondisease-landing.md)
+- Docs: [Referral Rewards](../strategy/referral-rewards-system.md), [Incentives Layer](../strategy/incentives-layer.md),
 
 ## Elections & IE (Owner: Elections & IE Compliance Lead)
 
@@ -77,7 +77,7 @@ dateCreated: 2025-08-22
 - WIG: Site converts: votes in; investors booked; partners signed.
 - Lead (weekly): ship A/B tests; improve page speed; update proof links.
 - Lag (quarter): conversion rates; time on page; investor/partner leads.
-- Docs: [War on Disease Landing](../strategy/warondisease-landing.md)
+
 
 ## Legal & Policy (Owner: Legal/Policy Lead)
 
@@ -101,7 +101,7 @@ dateCreated: 2025-08-22
 - WIG: Major org endorsements and anchor partner deals.
 - Lead (weekly): outreach touches; follow‑ups; MOUs drafted.
 - Lag (quarter): endorsements signed; anchors live.
-- Docs: [War on Disease Landing](../strategy/warondisease-landing.md)
+
 
 ---
 

@@ -42,7 +42,7 @@ This incentive aligns the organization's budget with our primary mobilization go
 
 This incentive aligns the personal financial interests of key leaders with the ultimate success of the mission. This is critical to overcoming the natural tendency to simply use grants to increase internal salaries.
 
-- **The Model:** We award a significant personal grant of **[VOTE points](../strategy/warondisease-landing.md#step-1-give-everyone-on-earth-a-stake-in-the-outcome)** directly to the individual leaders (e.g., Executive Director, Head of Development) within the partner organization.
+- **The Model:** We award a significant personal grant of **VOTE points** directly to the individual leaders (e.g., Executive Director, Head of Development) within the partner organization.
 - **The Offer (Example):**
   > "For your leadership in this partnership, you will be personally granted a **significant allocation of VOTE points**. These points represent a future claim on the economic value of the **[VICTORY Bonds](../strategy/1-percent-treaty/victory-bonds-tokenomics.md)** and the DIH treasury you are helping to create."
 
