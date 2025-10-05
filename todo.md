@@ -1,22 +1,14 @@
-- [x] `brain/book/central-planning-kills.qmd`
-- [x] `brain/book/the-two-wars.qmd`
-- [x] `brain/book/public-choice.qmd`
-- [x] `brain/book/wisdom-of-crowds.qmd`
-- [x] `brain/book/strategy/dih-model.qmd`
-- [x] `brain/book/economics/investment-thesis.qmd`
-- [x] `brain/book/proof/body-as-machine.qmd`
-- [x] `brain/book/reference/organizational-precedents.qmd`
-- [x] `brain/book/futures/dystopia.qmd`
-- [x] `brain/book/futures/utopia.qmd`
-- [x] `brain/economics/fundraising-strategy.qmd`
+- [x] `brain/economics/fundraising-strategy.qmd` -> Renamed to .qmd, need to update links.
 - [x] `brain/economics/victory-bonds.qmd`
-- [x] `brain/book/economics/fundraising-and-budget-plan.qmd`
+- [x] `brain/book/economics/fundraising-and-budget-plan.qmd` -> Renamed to .qmd, need to update links.
 - [x] `brain/book/strategy/technology-stack.qmd`
 - [x] `brain/book/strategy/co-opting-defense-contractors.qmd`
-- [x] `brain/book/economics/solution/dfda.qmd`
-- [x] `brain/book/operations.qmd`
-- [x] `brain/book/reference/global-government-medical-research-spending.qmd`
-- [ ] Search for global-gov-med-research-spending and update chapters with new estimate
-- [ ] Search for per-capita-lifetime and update violence cost in chapters
-- [ ] Search for roi-analysis and update break-even/ROI claims
-- [ ] Search for nuclear-extinction and update nuclear winter info
+- [ ] `brain/book/reference/organizational-precedents.qmd`
+- [ ] `brain/book/references.md`
+- [ ] `brain/reference/operations-roadmap.qmd`
+- [ ] `brain/book/reference/global-government-medical-research-spending.qmd`
+- [ ] **New Process:** For moved files, convert to .qmd and update all old links.
+- [x] Convert `fundraising-strategy.md` to `.qmd` and update `_quarto.yml`.
+- [x] Convert `fundraising-and-budget-plan.md` to `.qmd` and update `_quarto.yml`.
+- [x] Find and replace any links to `archive/economics/fundraising/fundraising-strategy.md`.
+- [x] Find and replace any links to `archive/economics/fundraising/fundraising-budget-breakdown.md`.
