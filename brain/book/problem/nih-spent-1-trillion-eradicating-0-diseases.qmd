@@ -40,6 +40,19 @@ By the time scientists get real funding, they're closer to retirement than to th
 
 Einstein published special relativity at 26. Under NIH rules, he'd still be a "promising young investigator" at 40.
 
+## The 85% Exclusion Zone
+
+Even when the NIH funds trials, they systematically exclude **85% of patients** ([source](../references.qmd#clinical-trial-exclusions)).
+
+Who can't participate:
+- Too old (most people who need medicine)
+- Too sick (people who really need medicine)
+- Wrong zip code (rural people)
+- Taking other meds (everyone over 50)
+- Not white enough (historically)
+
+It's like testing umbrellas only on sunny days, then wondering why they don't work in the rain.
+
 ## The Committee Industrial Complex
 
 The NIH organizational chart looks like someone tried to draw the internet:
@@ -71,6 +84,54 @@ Meanwhile, the UK RECOVERY trial:
 **Cost per patient:** $277
 
 The NIH spent **192X more per patient** to achieve **infinitely less** (dividing by zero trials completed).
+
+## Americans Got Sicker While NIH Got Richer
+
+"But maybe the NIH improved health in other ways!" you might say, hope flickering in your eyes.
+
+Let's check the scoreboard since NIH's founding in 1887 (and massive expansion post-1970):
+
+**1970:**
+- Obesity rate: 13%
+- Diabetes rate: 3.4%
+- Life expectancy: 70.8 years
+
+**2024:**
+- Obesity rate: 42% (3X worse)
+- Diabetes rate: 11.6% (3.4X worse)
+- Life expectancy: 76.4 years (only +5.6 years, mostly from fewer people smoking)
+
+During the NIH's trillion-dollar spending spree, Americans got:
+- Fatter
+- Sicker
+- More diabetic
+- More depressed
+- More medicated
+
+It's like hiring a personal trainer and gaining 100 pounds. At some point you have to wonder if they're working for McDonald's.
+
+## The 95% Failure Rate Nobody Talks About
+
+Here's a fun fact the NIH doesn't advertise:
+
+**95% of diseases have ZERO FDA-approved treatments** ([source](../references.qmd#rare-disease-treatment-gap)).
+
+That's 9,500 out of 10,000 known diseases where your treatment options are:
+1. Suffer
+2. Die
+3. Both
+
+But don't worry - the NIH formed a committee to study why their committees aren't working.
+
+## The Death Toll: 120,000 Per Decade From Delays
+
+While the NIH debates, people die:
+
+**Deaths from regulatory delays:** 120,000 per decade ([source](../references.qmd#regulatory-delay-deaths))
+
+That's 12,000 preventable deaths every year just from treatments stuck in bureaucracy. For context, that's four 9/11s worth of deaths annually from paperwork.
+
+The NIH response? Form a subcommittee to investigate whether they need a task force to study the problem.
 
 ## The Publishing Industrial Complex
 
@@ -105,9 +166,24 @@ Major breakthroughs while NIH was busy:
 
 The NIH is like that group member who shows up after the project is done to add their name.
 
-## The Efficiency Rating
+## The Efficiency Rating: An 83X Opportunity Cost
 
-Let's do the math:
+Let's do the real math on what we could have done with that money:
+
+**Current NIH System:**
+- Annual budget: $51 billion
+- Cost per trial participant: $41,413
+- Annual participants: ~1.2 million
+- Diseases cured: Zero
+
+**What $51 billion could buy using UK RECOVERY methods:**
+- Cost per trial participant: $500
+- Annual participants: 102 million (83X more)
+- Potential treatments found: Hundreds
+
+We're literally choosing to help 1 person badly instead of helping 83 people well.
+
+The overall efficiency score:
 - **Input:** $1.1 trillion over 50 years
 - **Output:** Zero diseases eradicated
 - **Efficiency:** $1.1 trillion ÷ 0 = ∞ dollars per disease cured
