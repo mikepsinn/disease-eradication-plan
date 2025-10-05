@@ -241,7 +241,7 @@
   - The internet beat every centralized network
   - Your brain: 86 billion neurons > any central processor
 
-## Part III: The Solution 
+## Part III: The Solution
 
 ### Wishocracy - Markets Not Majorities
 
@@ -431,7 +431,7 @@
   - Automated compliance reduces paperwork burden
 - **Universal Trial Economics**
   - Traditional Phase 3: $40M-100M, 3-5 years, 1,000 patients
-  - dFDA pragmatic trial: $500K, 1-2 years, 10,000 patients 
+  - dFDA pragmatic trial: $500K, 1-2 years, 10,000 patients
   - Total trial costs: From ~$57M down to ~$2M (96% reduction)
   - Timeline: From 17 years to ~2-3 years for repurposing, ~5 years for new drugs
   - 20X more patients at 1/80th the cost
@@ -880,7 +880,7 @@
   - Not technology (we have the tools)
   - Just money going to bombs instead
 
-## Part VIII: Choose Your Own Adventure - Idiocracy or Wishonia
+## Part VII: Choose Your Own Adventure - Idiocracy or Wishonia
 
 ### Path A - Idiocracy - The Dystopian Default (If We Do Nothing)
 
@@ -1083,7 +1083,7 @@
   - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
 
-## Part IX: Join or Die (Literally)
+## Part VIII: Join or Die (Literally)
 
 ### Your Personal Benefits (What You Get)
 
