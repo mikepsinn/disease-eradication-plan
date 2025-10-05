@@ -16,7 +16,7 @@ book:
   chapters:
     - index.qmd
 
-    - part: "The Daily Massacre: 150,000 Deaths While You Read This"
+    - part: "The Problem"
       chapters:
         - brain/book/problem/the-daily-massacre.qmd  # 150,000 deaths/day
         - brain/book/problem/the-119-trillion-death-toilet.qmd  # The three shocks
@@ -29,7 +29,7 @@ book:
         - brain/book/problem/regulatory-capture.qmd
         - brain/book/problem/democracy-is-broken.qmd  # Princeton study
 
-    - part: "The Science of Why Everything Is Broken"
+    - part: "The Science"
       chapters:
         - brain/book/theory.qmd
         - brain/book/theory/central-planning-kills.qmd  # FDA's 82X inefficiency
@@ -47,7 +47,7 @@ book:
         - brain/book/solution/dfda.qmd  # 82X efficiency engine
         # - brain/book/economics/economic-incentives.qmd  # TODO: CREATE - Why everyone wins
 
-    - part: "The Proof: This Already Works"
+    - part: "The Proof"
       chapters:
         - brain/book/proof.qmd
         - brain/book/reference/recovery-trial.qmd  # Oxford's $500 miracle
@@ -55,14 +55,14 @@ book:
         - brain/book/proof/historical-precedents.qmd
         - brain/book/proof/body-as-repairable-machine.qmd
 
-    - part: "Choose Your Future: Idiocracy or Wishonia"
+    - part: "The Future"
       chapters:
         - brain/book/futures.qmd
         - brain/book/futures/dystopia-skynet-wins.qmd  # The three subs
         - brain/book/futures/utopia-health-and-happiness.qmd  # The three supers
         - brain/book/futures/comparison.qmd  # Side-by-side comparison
 
-    - part: "The Money: How Everyone Gets Rich by Eradicating Disease"
+    - part: "The Money"
       chapters:
         - brain/book/economics.qmd # Executive Summary
         - brain/book/economics/economic-impact-summary.qmd # Economic Impact Summary
@@ -72,11 +72,11 @@ book:
         - brain/book/economics/dih-treasury-cash-flow-model.qmd # Cash Flow Model
         - brain/book/economics/fundraising-and-budget-plan.qmd # Fundraising budget
     
-    - part: "The Legal Architecture: Staying Out of Prison"
+    - part: "The Law"
       chapters:
         - brain/book/legal/legal-framework.qmd
 
-    - part: "The Implementation: Building Paradise"
+    - part: "The Strategy"
       chapters:
         - brain/book/strategy.qmd
         - brain/book/strategy/global-referendum.qmd  # Democratic path
