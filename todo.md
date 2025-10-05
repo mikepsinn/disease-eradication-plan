@@ -8,11 +8,15 @@
 - [x] `brain/book/reference/organizational-precedents.qmd`
 - [x] `brain/book/futures/dystopia.qmd`
 - [x] `brain/book/futures/utopia.qmd`
-- [ ] `brain/economics/fundraising-strategy.qmd`
-- [ ] `brain/economics/victory-bonds.qmd`
-- [ ] `brain/book/economics/fundraising-and-budget-plan.qmd`
-- [ ] `brain/book/strategy/technology-stack.qmd`
-- [ ] `brain/book/strategy/co-opting-defense-contractors.qmd`
-- [ ] `brain/book/economics/solution/dfda.qmd`
-- [ ] `brain/book/operations.qmd`
-- [ ] `brain/book/reference/global-government-medical-research-spending.qmd`
+- [x] `brain/economics/fundraising-strategy.qmd`
+- [x] `brain/economics/victory-bonds.qmd`
+- [x] `brain/book/economics/fundraising-and-budget-plan.qmd`
+- [x] `brain/book/strategy/technology-stack.qmd`
+- [x] `brain/book/strategy/co-opting-defense-contractors.qmd`
+- [x] `brain/book/economics/solution/dfda.qmd`
+- [x] `brain/book/operations.qmd`
+- [x] `brain/book/reference/global-government-medical-research-spending.qmd`
+- [ ] Search for global-gov-med-research-spending and update chapters with new estimate
+- [ ] Search for per-capita-lifetime and update violence cost in chapters
+- [ ] Search for roi-analysis and update break-even/ROI claims
+- [ ] Search for nuclear-extinction and update nuclear winter info
