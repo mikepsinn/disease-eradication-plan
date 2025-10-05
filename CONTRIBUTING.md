@@ -228,24 +228,18 @@ Each major chapter follows the epic pattern:
 
 3. **Put things where they belong.** New content goes in the right section.
 
-### 2. How to Mark What Needs Work
+### 2. Quality Assurance and Actionable TODOs
 
-If something's broken, mark it with a `TODO` comment so we can fix it later.
+To ensure all unfinished work is tracked and easily searchable, please add a `TODO` comment directly in the file at the location where work is needed. This allows any contributor to find actionable tasks by simply searching the entire project for "TODO".
 
-**1. Internal Link Integrity:**
-
-- Before submitting, scan the file for all internal relative links (e.g., `[text](./path/file.md)`).
-- **You MUST FIX** any links that are broken.
-- If a link points to a deleted file, either remove the link or repoint it to a relevant alternative.
-
-**2. Marking What Needs Work:**
-
-- **Where:** Put `TODO`s where the problem is. Document-wide TODOs go at the bottom. Never at the top.
+- **Where:** Put `TODO`s where the problem is. Document-wide TODOs go at the bottom of the file. Never at the top.
 - **Format:** Use comments so we can find them all later:
   - `<!-- TODO: Add citation for this claim. -->`
   - `<!-- TODO: Rewrite this section. -->`
   - `<!-- TODO: Add a chart here. -->`
   - `<!-- TODO: Expand this section. -->`
+
+**Internal Link Integrity:** Before submitting, you **MUST FIX** any broken links in your changed files. Scan for all internal relative links (e.g., `[text](./path/file.md)`). If a link points to a deleted file, either remove the link or repoint it to a relevant alternative. This is a critical pre-submission check, not a task to be marked with a `TODO`.
 
 ### 3. Frontmatter Requirements
 
