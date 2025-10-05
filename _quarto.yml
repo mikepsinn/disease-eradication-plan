@@ -66,11 +66,16 @@ book:
     - part: "The Money: How Everyone Gets Rich by Eradicating Disease"
       chapters:
         - brain/book/economics.qmd # Executive Summary
+        - brain/book/economics/economic-impact-summary.qmd # Economic Impact Summary
         - brain/book/economics/victory-bonds.qmd  # Fund the revolution
         - brain/book/economics/coalition-that-wins.qmd  # Everyone profits
         - brain/book/economics/dih-treasury-cash-flow-model.qmd # Cash Flow Model
         - brain/book/economics/fundraising-and-budget-plan.qmd # Fundraising budget
     
+    - part: "The Legal Architecture: Staying Out of Prison"
+      chapters:
+        - brain/book/legal/legal-framework.qmd
+
     - part: "The Implementation: Building Paradise"
       chapters:
         - brain/book/strategy.qmd
