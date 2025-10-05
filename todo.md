@@ -1,14 +1,12 @@
-- [x] `brain/economics/fundraising-strategy.qmd` -> Renamed to .qmd, need to update links.
-- [x] `brain/economics/victory-bonds.qmd`
-- [x] `brain/book/economics/fundraising-and-budget-plan.qmd` -> Renamed to .qmd, need to update links.
-- [x] `brain/book/strategy/technology-stack.qmd`
-- [x] `brain/book/strategy/co-opting-defense-contractors.qmd`
-- [ ] `brain/book/reference/organizational-precedents.qmd`
-- [ ] `brain/book/references.md`
+- [ ] `brain/economics/victory-bonds.qmd`
+- [ ] `brain/economics/fundraising-strategy.qmd`
+- [ ] `brain/economics/fundraising-and-budget-plan.qmd`
+- [ ] `brain/book/technology-stack.qmd`
+- [ ] `brain/book/co-opting-defense-contractors.qmd`
+- [x] `brain/book/reference/organizational-precedents.qmd`
+- [ ] `brain/book/economics/victory-bond-investment-thesis.md`
+- [ ] `brain/book/economics/dih-treasury-cash-flow-model.md`
+- [ ] `brain/book/strategy/warondisease-landing.md`
+- [ ] `brain/book/economics/operational-budget-and-financial-model.md`
 - [ ] `brain/reference/operations-roadmap.qmd`
 - [ ] `brain/book/reference/global-government-medical-research-spending.qmd`
-- [ ] **New Process:** For moved files, convert to .qmd and update all old links.
-- [x] Convert `fundraising-strategy.md` to `.qmd` and update `_quarto.yml`.
-- [x] Convert `fundraising-and-budget-plan.md` to `.qmd` and update `_quarto.yml`.
-- [x] Find and replace any links to `archive/economics/fundraising/fundraising-strategy.md`.
-- [x] Find and replace any links to `archive/economics/fundraising/fundraising-budget-breakdown.md`.
