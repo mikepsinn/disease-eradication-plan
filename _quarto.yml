@@ -38,14 +38,13 @@ book:
         - brain/book/theory/public-choice.qmd  # Everyone's selfish, use it
         - brain/book/theory/wisdom-of-crowds.qmd  # 8 billion > 200
 
-    - part: "The Solution: Making Death Unprofitable"
+    - part: "The Solution"
       chapters:
         - brain/book/solution.qmd
         - brain/book/solution/1-percent-treaty.qmd  # The funding mechanism
         - brain/book/solution/dih.qmd  # Treasury structure
         - brain/book/solution/wishocracy.qmd  # Anti-capture governance
         - brain/book/solution/dfda.qmd  # 82X efficiency engine
-        - brain/book/solution/technology-stack.qmd # The enabling technology
         # - brain/book/economics/economic-incentives.qmd  # TODO: CREATE - Why everyone wins
 
     - part: "The Proof: This Already Works"
