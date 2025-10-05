@@ -16,7 +16,7 @@ book:
   chapters:
     - index.qmd
 
-    - part: "The Problem"
+    - part: "The Problem: Everyone You Love Is Dying While We Build Skynet"
       chapters:
         - brain/book/problem/the-daily-massacre.qmd  # 150,000 deaths/day
         - brain/book/problem/the-119-trillion-death-toilet.qmd  # The three shocks
@@ -29,7 +29,7 @@ book:
         - brain/book/problem/regulatory-capture.qmd
         - brain/book/problem/democracy-is-broken.qmd  # Princeton study
 
-    - part: "The Science"
+    - part: "The Theory (Why Markets Work and Democracy Doesn't)"
       chapters:
         - brain/book/theory.qmd
         - brain/book/theory/central-planning-kills.qmd  # FDA's 82X inefficiency
@@ -47,7 +47,7 @@ book:
         - brain/book/solution/dfda.qmd  # 82X efficiency engine
         # - brain/book/economics/economic-incentives.qmd  # TODO: CREATE - Why everyone wins
 
-    - part: "The Proof"
+    - part: "The Proof (This Already Works)"
       chapters:
         - brain/book/proof.qmd
         - brain/book/reference/recovery-trial.qmd  # Oxford's $500 miracle
@@ -55,14 +55,14 @@ book:
         - brain/book/proof/historical-precedents.qmd
         - brain/book/proof/body-as-repairable-machine.qmd
 
-    - part: "The Future"
+    - part: "The Future - Choose Your Own Adventure - Idiocracy or Wishonia"
       chapters:
         - brain/book/futures.qmd
         - brain/book/futures/dystopia-skynet-wins.qmd  # The three subs
         - brain/book/futures/utopia-health-and-happiness.qmd  # The three supers
         - brain/book/futures/comparison.qmd  # Side-by-side comparison
 
-    - part: "The Money"
+    - part: "The Money (How Everyone Gets Rich by Eradicating Disease)"
       chapters:
         - brain/book/economics.qmd # Executive Summary
         - brain/book/economics/economic-impact-summary.qmd # Economic Impact Summary
@@ -70,12 +70,14 @@ book:
         - brain/book/economics/victory-bonds.qmd  # Fund the revolution
         - brain/book/economics/coalition-that-wins.qmd  # Everyone profits
         - brain/book/economics/financial-plan.qmd # The Financial Plan
+        - brain/book/economics/health-savings-sharing-model.qmd # 50/50 split incentives
     
-    - part: "The Law"
+    - part: "The Legal Architecture (Staying Out of Prison)"
       chapters:
-        - brain/book/legal/legal-framework.qmd
+        - brain/book/legal.qmd  # Overview
+        - brain/book/legal/legal-framework.qmd  # Multi-jurisdiction strategy
 
-    - part: "The Strategy"
+    - part: "The Strategy (Building Paradise)"
       chapters:
         - brain/book/strategy.qmd
         - brain/book/strategy/global-referendum.qmd  # Democratic path
