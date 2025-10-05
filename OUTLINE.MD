@@ -70,6 +70,19 @@
   - War on Disease ($68) literally invisible - need magnifying glass insert to see it
   - Caption: "We spend 40X more on killing each other than curing each other"
   - Impact: Viscerally shows the insanity of our spending priorities
+- **The Fixed Pie Reality: Why "Just Print More for Medicine" Doesn't Work**
+  - Earth has 8 billion brains (can't print more)
+  - Top talent is finite: ~40 million work on weapons, ~1 million on cures
+  - When Fed prints money for war, defense contractors buy up the smartest people
+  - Medical research funding up 10X in dollars, DOWN as % of GDP (0.08% → 0.065%)
+  - The inflation shell game: NIH gets 50% raise, but everything costs 50% more
+  - Resources (not money) cure disease: Scientists, equipment, factory time
+  - Every MIT grad building missiles is NOT curing cancer
+  - The brain drain: Raytheon pays $150k, NIH pays $55k (guess where geniuses go)
+  - Money is just bidding power for finite resources
+  - When war gets printed money first, it monopolizes the best minds
+  - The only solution: Change the ratio, not the total
+  - Switzerland proves it: 0.7% on defense → $93K GDP per capita (highest quality of life on Earth)
 - **The 1972 Catastrophe: When Your Wages Got Divorced From Your Work**
   - Nixon kills gold standard: Money becomes meaningless paper
   - Productivity up 246%, wages up 115% (where'd the money go?)
@@ -909,6 +922,12 @@
   - The cantillon effect: Banks get new money first, you get inflation
   - Every war since: Funded by destroying your purchasing power
   - The missing trillions: Printed for bombs, not cures
+- **The Fixed Pie Trick: How They Steal Medical Progress** (see Part I for full explanation)
+  - Fed prints $1T for war → Defense contractors buy all the talent
+  - NIH gets nominal increases → But loses bidding war for scientists
+  - Medical research as % of GDP: Actually DECLINING since 1975
+  - The brain drain: Every genius building bombs is NOT finding cures
+  - You can't print more Einsteins, only bid them away from healing
 - **The Federal Reserve: A Private Corporation That Owns You**
   - 12 unelected people control your savings value
   - No audit allowed (what are they hiding?)
@@ -921,6 +940,11 @@
   - Too many wars depend on money printer
   - Solution: Bypass it entirely with direct funding
   - VICTORY bonds: Peace funded by markets, not money printing
+- **The 1% Treaty: Redirecting the Death Printer to Life**
+  - They're going to print money anyway (addicted to the printer)
+  - We're just asking them to print 1% for life instead of 100% for death
+  - Same inflation, but at least people get cured
+  - It's not about more money, it's about redirecting existing money
 
 ### VICTORY Bonds - Better Than Medallion Fund
 
@@ -1117,6 +1141,12 @@
 
 ### Every Objection Demolished
 
+- **"Why not just fund medical research more?"**
+  - Because money isn't real, resources are (see Fixed Pie Reality in Part I)
+  - Earth has finite brains, and defense contractors monopolize them with printed money
+  - Medical research as % of GDP has DECLINED while nominal funding increased 10X
+  - Every brilliant engineer designing missiles is NOT designing medical devices
+  - The only solution: Redirect the ratio, not increase the total
 - **"This is too complicated"**
   - Democracy is complicated. This just admits it and uses computers to help.
   - You use Netflix's algorithm to pick movies, why not health spending?
