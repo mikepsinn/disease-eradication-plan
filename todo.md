@@ -23,7 +23,7 @@ This document tracks all remaining work to complete "The $119T Death Toilet" boo
 ## Phase 2: Fact-Checking & Sourcing
 
 ### Files with Missing Sources (TODO markers)
-- [ ] `brain/book/problem/why-the-system-is-broken.qmd` (20+ missing sources)
+- [ ] `brain/book/references.qmd` (20+ missing sources)
   - [ ] Years since last disease cured
   - [ ] Percentage of time scientists spend on grants
   - [ ] FDA approval timeline and costs
