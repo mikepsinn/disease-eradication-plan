@@ -22,47 +22,15 @@ This document tracks all remaining work to complete "The $119T Death Toilet" boo
 
 ## Phase 2: Fact-Checking & Sourcing
 
-### Files with Missing Sources (TODO markers)
-- [ ] `brain/book/references.qmd` (20+ missing sources)
-  - [ ] Years since last disease cured
-  - [ ] Percentage of time scientists spend on grants
-  - [ ] FDA approval timeline and costs
-  - [ ] Pharma profit margins
-  - [ ] Percentage of scientific time on paperwork
-  - [ ] Journal industry profits
-  - [ ] Protocol page counts, regulatory fees, approval counts
-  - [ ] Number of biomedical researchers
-  - [ ] Smallpox cure year
-  - [ ] Number of FDA-approved drugs
-  - [ ] Rare disease statistics
-  - [ ] Disease advocacy lobbying amounts
-  - [ ] Breast cancer vs heart disease funding disparity
-  - [ ] Amount saved by publishing negative results
-  - [ ] Total rare disease patients
-  - [ ] Number of medical papers published annually
-
 ### Files with Internal Link TODOs
 - [ ] `brain/book/strategy/1-percent-treaty.qmd`
   - [ ] Add link to dih-technical-architecture.md (decide if needed)
   - [ ] Link to detailed tokenomics file (decide if needed)
   - [ ] Review sections on Cost of War/Disease and ROI (decide if they belong here or should be moved/summarized)
 
-### Global Fact-Checking Pass
-- [ ] Scan all completed chapters for unsourced claims
-- [ ] Verify all numerical claims against `references.qmd`
-- [ ] Add missing sources to `references.qmd` with proper anchor IDs
-- [ ] Link all claims to their sources
-
 ## Phase 3: Visuals & Illustrations
 
 ### Requested Visualizations
-- [ ] `brain/book/futures/comparison.qmd`
-  - [ ] Create visualization showing divergence curves over time (Idiocracy vs Wishonia paths)
-  - [ ] Create interactive calculator for personal timeline impact
-  - [ ] Add chart comparing quality of life metrics (Three Supers vs Three Subs)
-
-- [ ] `brain/book/problem/the-evolutionary-trap.qmd`
-  - [ ] Create visualization showing evolution of brain from scarcity to abundance
 
 ### Figures from OUTLINE.MD to Create
 (Scan OUTLINE.MD for all `[FIGURE:` markers and add them here as we process chapters)
