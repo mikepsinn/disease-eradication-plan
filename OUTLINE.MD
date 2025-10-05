@@ -2,7 +2,7 @@
 
 ## Part I: The Problem: Everyone You Love Is Dying While We Build Skynet
 
-### Chapter 1: The Human Cost - 150,000 Deaths Per Day While We Count Missiles
+### The Human Cost - 150,000 Deaths Per Day While We Count Missiles
 
 - **The Daily Massacre No One Talks About**
   - 150,000 people die every day, mostly from preventable/curable diseases
@@ -22,7 +22,7 @@
   - One fighter jet = entire rare disease research budget
   - We know exactly how to fix this, but the system is designed not to
 
-### Chapter 2: The $119 Trillion Death Toilet (Where Your Money Goes to Die)
+### The $119 Trillion Death Toilet (Where Your Money Goes to Die)
 
 - **[FIGURE: The $119 Trillion Waste]**
   - Visual showing money flow: $9.7T (war) + $109.1T (disease burden) = $119T annually
@@ -77,7 +77,7 @@
   - Every financial crisis: The house always wins, you always lose
   - The cantillon effect: Money printers get rich, you get poor
 
-### Chapter 3: Democracy Is Already Dead (Princeton Proved It)
+### Democracy Is Already Dead (Princeton Proved It)
 
 - **The Princeton Bombshell: You Have Zero Political Power**
   - Gilens & Page study: 0% correlation between public opinion and policy
@@ -126,7 +126,7 @@
 
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
-### Chapter 4: Why Central Planning Kills People
+### Why Central Planning Kills People
 
 - **1962: When FDA Centralization Destroyed Medical Progress**
   - Pre-1962: 144,000 physicians ran real-world trials through JAMA
@@ -164,7 +164,7 @@
   - The solution: Make curing more profitable than treating
   - Align incentives or die (literally)
 
-### Chapter 5: The War on Disease - The First War Designed to Win
+### The War on Disease - The First War Designed to Win
 
 - **The Two Wars: One We're Losing, One We Haven't Started**
   - War on Humanity: $2.7T/year, 75+ years running, no victory possible
@@ -195,7 +195,7 @@
   - The end of central planning's credibility
   - The beginning of the market revolution
 
-### Chapter 6: Public Choice Theory - (Everyone's Selfish, Use It)
+### Public Choice Theory - (Everyone's Selfish, Use It)
 
 - **Politicians Maximize Power, Not Your Health**
   - Time horizons: 2-year election cycles vs 20-year cures
@@ -218,7 +218,7 @@
   - Use greed for good (it's the only reliable force)
   - Create concentrated benefits for healing
 
-### Chapter 7: The Wisdom of Crowds - 8 Billion Minds Better Than 200 Bureaucrats
+### The Wisdom of Crowds - 8 Billion Minds Better Than 200 Bureaucrats
 
 - **Surowiecki Was Right About Everything**
   - The Ox: 800 farmers' average beat all experts
@@ -243,7 +243,7 @@
 
 ## Part III: The Solution (Wishocracy: Real Democracy Finally)
 
-### Chapter 8: Wishocracy - Markets Not Majorities
+### Wishocracy - Markets Not Majorities
 
 - **The Innovation: Anyone Can Propose, Everyone Decides**
   - Open proposal system: ANY human can submit funding requests
@@ -285,7 +285,7 @@
   - Leaderboards and achievements (social proof)
   - Democracy becomes addictive (dopamine hits for voting)
 
-### Chapter 9: The 1% Treaty (The Trojan Horse That Conquers Everything)
+### The 1% Treaty (The Trojan Horse That Conquers Everything)
 
 - **[FIGURE: The 1% Treaty Visualization]**
   - Visual showing $2.7T military budget with tiny 1% slice ($27B) being redirected
@@ -342,7 +342,7 @@
 
 ## Part IV: The Money (How Everyone Gets Rich by Eradicating Disease)
 
-### Chapter 10: The Economic Case - 463:1 Return on Killing Disease
+### The Economic Case - 463:1 Return on Killing Disease
 
 - **The ROI That Breaks Reality**
   - Investment: $40M annual platform cost (couch cushion money)
@@ -431,7 +431,7 @@
   - Year 20: Full $16.5T annual value realized
   - Every year we delay: $142B in immediate benefits lost forever
 
-### Chapter 11: How Central Banks Fund Your Death (The War Machine's ATM)
+### How Central Banks Fund Your Death (The War Machine's ATM)
 
 - **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
   - Dollar: Created by Fed to fund WWI, still funding wars
@@ -458,7 +458,7 @@
   - Solution: Bypass it entirely with direct funding
   - VICTORY bonds: Peace funded by markets, not money printing
 
-### Chapter 11: VICTORY Bonds - Better Than Medallion Fund
+### VICTORY Bonds - Better Than Medallion Fund
 
 - **The Instrument: Beating Every Investment Ever**
   - Perpetual 5% of all DIH treasury inflows forever
@@ -493,7 +493,7 @@
   - $125M: Reserve for treaty implementation
   - Full transparency: Every dollar tracked publicly
 
-### Chapter 12: The Coalition That Ends War (Aligned Incentives Beat Ideology)
+### The Coalition That Ends War (Aligned Incentives Beat Ideology)
 
 - **Defense Contractors: Converting the Enemy**
   - VICTORY bonds: 40%+ perpetual returns > 8% defense margins
@@ -538,7 +538,7 @@
   - Jobs in research and administration
   - Your diseases actually get cured
 
-### Chapter 13: The Legal Architecture (Staying Out of Prison)
+### The Legal Architecture (Staying Out of Prison)
 
 - **The Multi-Jurisdiction Strategy**
   - Swiss foundation: Neutral base of operations
@@ -573,7 +573,7 @@
 
 ## Part V: The Implementation (Building Paradise)
 
-### Chapter 14: The Technology Stack (Code That Saves Lives)
+### The Technology Stack (Code That Saves Lives)
 
 - **The Platform Architecture**
   - Distributed ledger for transparency (not blockchain hype)
@@ -594,7 +594,7 @@
   - Patient consent management
   - Regulatory compliance automation
 
-### Chapter 16: The Global Referendum (Democracy at Scale)
+### The Global Referendum (Democracy at Scale)
 
 - **The Platform: Wishocracy App**
   - 30-second onboarding
@@ -619,11 +619,10 @@
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
 
-### Chapter 17: The DIH - Government Without Governments
+### The DIH - Government Without Governments
 
 - **The Bridge Year: Running Both Systems Until One Wins**
   - dFDA runs parallel to FDA (not replacement, competition)
-  - Patients choose: Old slow FDA or new fast dFDA
 - **The Structure: Distributed Control**
   - $27B/year flows through transparent smart contracts
   - No CEO or board making unilateral decisions
@@ -681,7 +680,7 @@
   - Rare Disease Institute: Every disease matters
   - Emergency Response: Pandemic preparedness
 
-### Chapter 17: The dFDA - The Amazon of Not Dying
+### The dFDA - The Amazon of Not Dying
 
 - **Historical Proof This Works: 82X More Efficient**
   - Pre-1962: 144,000 doctors ran successful real-world trials
@@ -820,7 +819,7 @@
 
 ## Part VI: The Proof (This Already Works)
 
-### Chapter 19: Political Movements That Changed Everything
+### Political Movements That Changed Everything
 
 - **Switzerland: The 200-Year Proof That Peace Creates Wealth**
   - No natural resources: Just mountains and cows
@@ -851,7 +850,7 @@
   - Data: We can prove what works
   - Urgency: People are literally dying
 
-### Chapter 20: Your Body Is Just a Machine
+### Your Body Is Just a Machine
 
 - **The Engineering Reality of Biology**
   - Heart: We replace it (artificial hearts work)
@@ -883,7 +882,7 @@
 
 ## Part VII: Choose Your Own Adventure - Idiocracy or Wishonia
 
-### Chapter 21: Path A - Idiocracy - The Dystopian Default (If We Do Nothing)
+### Path A - Idiocracy - The Dystopian Default (If We Do Nothing)
 
 - **[FIGURE: The Two Timelines - Dystopian Path]**
   - Diverging timeline from 2026 showing descent into darkness
@@ -971,7 +970,7 @@
   - Actually got: Everyone dies at 45 from preventable diseases
   - The difference: One choice in 2026 - we ignored the problem until too late
 
-### Chapter 22: Path B - Wishonia - The Transcendent Path (Humanity Evolves Beyond Limits and Becomes the Equivalent of a Superintelligent Genie)
+### Path B - Wishonia - The Transcendent Path (Humanity Evolves Beyond Limits and Becomes the Equivalent of a Superintelligent Genie)
 
 - **[FIGURE: The Two Timelines - Wishonia Path]**
   - Diverging timeline from 2026 showing ascent into light
@@ -1062,7 +1061,7 @@
   - The choice: Stay human, become more, or try something completely new
 
 
-### Chapter 23: The Tale of Two Futures (Three Supers vs Three Subs)
+### The Tale of Two Futures (Three Supers vs Three Subs)
 
 - **Idiocracy 2050: The Three Subs (Subhuman Degradation)**
   - **Sub-Intelligence:** IQ dropping, education collapsed, truth unknowable
@@ -1086,7 +1085,7 @@
 
 ## Part VIII: Join or Die (Literally)
 
-### Chapter 24: Your Personal Benefits (What You Get)
+### Your Personal Benefits (What You Get)
 
 - **Economic Security**
   - Subsidized treatment: Dynamic vouchers for dFDA trials
@@ -1114,7 +1113,7 @@
   - Equal to every other human (1 person = 1 allocation power)
   - Co-creator of humanity's health priorities
 
-### Chapter 25: The Three Actions (Do Now)
+### The Three Actions (Do Now)
 
 - **Action 1: Sign the Referendum** (3 minutes)
   - Go to WarOnDisease.org
@@ -1137,7 +1136,7 @@
   - Researchers: Offer trials on the dFDA marketplace
   - Everyone: Share knowledge, build community
 
-### Chapter 26: Every Objection Demolished
+### Every Objection Demolished
 
 - **"This is too complicated"**
   - Democracy is complicated. This just admits it and uses computers to help.
