@@ -45,6 +45,7 @@ book:
         - brain/book/solution/dih.qmd  # Treasury structure
         - brain/book/solution/wishocracy.qmd  # Anti-capture governance
         - brain/book/solution/dfda.qmd  # 82X efficiency engine
+        - brain/book/solution/technology-stack.qmd # The enabling technology
         # - brain/book/economics/economic-incentives.qmd  # TODO: CREATE - Why everyone wins
 
     - part: "The Proof: This Already Works"
@@ -70,11 +71,9 @@ book:
         - brain/book/economics/fundraising-strategy.qmd # Fundraising strategy
         - brain/book/economics/victory-bond-investment-thesis.qmd # Investment Thesis
         - brain/book/economics/dih-treasury-cash-flow-model.qmd # Cash Flow Model
-        - brain/book/economics/operational-budget-and-financial-model.qmd # Budget Model
         - brain/book/economics/fundraising-and-budget-plan.qmd # Fundraising budget
         - brain/book/strategy/global-referendum.qmd  # Democratic path
         - brain/book/strategy/viral-marketing.qmd  # Social media strategy
-        - brain/book/strategy/technology-stack.qmd # Technology Stack
         - brain/book/strategy/co-opting-defense-contractors.qmd # Co-Opting the Defense Lobby
         - brain/book/strategy/grassroots-mobilization.qmd  # Movement building
         - brain/book/strategy/diplomatic-approach.qmd  # Government relations
@@ -89,6 +88,7 @@ book:
     - brain/book/references.qmd
     - brain/book/reference/organizational-precedents.qmd
     - brain/book/reference/global-government-medical-research-spending.qmd
+    - brain/book/economics/operational-budget-and-financial-model.qmd # Budget Model
 
 execute:
   # Relaunch kernel for each render
