@@ -1,3 +1,1 @@
-- [x] `brain/book/economics/operational-budget-and-financial-model.md`
-- [ ] `brain/reference/operations-roadmap.qmd`
-- [ ] `brain/book/reference/global-government-medical-research-spending.qmd`
+- [x] `brain/book/reference/global-government-medical-research-spending.qmd`
