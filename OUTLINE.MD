@@ -340,7 +340,7 @@
   - Year 10: Military spending looks insane
   - Year 20: War is incomprehensible
 
-## Part IV: The Money (How Everyone Gets Rich by Getting Healthy)
+## Part IV: The Money (How Everyone Gets Rich by Eradicating Disease)
 
 ### Chapter 10: The Economic Case - 463:1 Return on Killing Disease
 
