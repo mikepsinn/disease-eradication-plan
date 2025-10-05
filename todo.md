@@ -1,6 +1,3 @@
-- [x] `brain/book/economics/victory-bond-investment-thesis.md`
-- [x] `brain/book/economics/dih-treasury-cash-flow-model.md`
-- [ ] `brain/book/strategy/warondisease-landing.md`
-- [ ] `brain/book/economics/operational-budget-and-financial-model.md`
+- [x] `brain/book/economics/operational-budget-and-financial-model.md`
 - [ ] `brain/reference/operations-roadmap.qmd`
 - [ ] `brain/book/reference/global-government-medical-research-spending.qmd`
