@@ -1,6 +1,5 @@
 ```{python}
 #| label: military-vs-medical-research-spending
-#| fig-cap: "Military Spending vs Medical Research: 40X Disparity"
 #| fig-width: 12
 #| fig-height: 6
 
@@ -29,7 +28,7 @@ setup_chart_style(style='light', dpi=150)
 fig, ax = plt.subplots(figsize=(12, 6))
 
 # Data
-categories = ['War on Humanity', 'Curing Diseases']
+categories = ['War on Humanity\n(War & Military)', 'War on Disease']
 spending = [2700, 68]  # In billions
 colors = [COLOR_RED, COLOR_BLUE]
 
@@ -38,7 +37,7 @@ bars = ax.bar(categories, spending, color=colors)
 # Add custom labels
 # Label inside large bar
 war_spending = spending[0]
-ax.text(bars[0].get_x() + bars[0].get_width()/2., war_spending * 0.6,
+ax.text(bars[0].get_x() + bars[0].get_width()/2., war_spending * 0.7,
         f'${war_spending/1000:.1f}T', ha='center', va='center',
         color=COLOR_WHITE, fontsize=72, fontweight='bold')
 ax.text(bars[0].get_x() + bars[0].get_width()/2., war_spending * 0.4,
