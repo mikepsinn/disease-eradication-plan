@@ -6,13 +6,13 @@ project:
 book:
   title: "The $119T Death Toilet"
   subtitle: "A Practical Guide to Ending War and Disease"
-  author: "Mike P. Sinn"
+  # author: "Mike P. Sinn"
   description: "A practical guide to getting every nation to sign the 1% Treaty - redirecting just 1% of military spending to fund 80X more efficient medical research through decentralized clinical trials."
-  cover-image: cover.jpg
-  favicon: favicon.ico
+  # cover-image: cover.jpg
+  # favicon: favicon.ico
   site-url: https://WarOnDisease.org
-  repo-url: https://github.com/mikepsinn/decentralized-institutes-of-health
-  issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
+  #repo-url: https://github.com/mikepsinn/decentralized-institutes-of-health
+  #issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   chapters:
     - index.qmd
 
