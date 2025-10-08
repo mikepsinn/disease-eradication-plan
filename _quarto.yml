@@ -98,9 +98,9 @@ book:
 execute:
   # Relaunch kernel for each render
   cache: false
-  freeze: auto
+  freeze: false
   # Send all generated figures to a central directory
-  fig-path: "assets/figures/"
+  fig-path: "brain/figures/"
   fig-prefix: "{{< meta doc-title >}}-"
 
 # Tell Quarto to use the project's virtual environment

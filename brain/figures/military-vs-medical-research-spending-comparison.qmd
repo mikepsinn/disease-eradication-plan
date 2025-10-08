@@ -45,17 +45,6 @@ for bar, value in zip(bars, spending):
 ax1.set_ylim(0, 3000)
 ax1.axis('off')  # Remove axes - labels are on the bars
 
-# Right plot: Ratio visualization
-ax2.text(0.5, 0.7, '40X', ha='center', va='center',
-         fontsize=120, color=COLOR_RED, fontweight='bold')
-ax2.text(0.5, 0.4, 'MORE ON', ha='center', va='center',
-         fontsize=40, color=COLOR_BLACK, fontweight='bold')
-ax2.text(0.5, 0.2, 'KILLING', ha='center', va='center',
-         fontsize=60, color=COLOR_RED, fontweight='bold')
-ax2.set_xlim(0, 1)
-ax2.set_ylim(0, 1)
-ax2.axis('off')
-
 # Add watermark
 add_watermark(fig)
 
