@@ -65,25 +65,4 @@ output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'military-vs-medical-research-spending-comparison.png', dpi=300, bbox_inches='tight', facecolor='white')
 plt.show()
 
-# Print statistics
-print("\n💣 WHAT $2.7 TRILLION BUYS:")
-print("• 13,000 nuclear warheads (can end civilization 67 times)")
-print("• AI autonomous weapons (Skynet in development)")
-print("• Hypersonic missiles (unstoppable)")
-print("• Space weapons programs")
-print("• Enough firepower to kill everyone 535 times")
-
-print("\n💊 WHAT $68 BILLION BUYS:")
-print("• Your kid's rare disease research: $0")
-print("• Alzheimer's cure: Still waiting after 50 years")
-print("• Cancer universal cure: Nope")
-print("• Mental illness cure: Nope")
-print("• 95% of diseases: ZERO approved treatments")
-
-print("\n📊 PER HUMAN BREAKDOWN:")
-military_per_human = 2700_000_000_000 / 8_000_000_000
-medical_per_human = 68_000_000_000 / 8_000_000_000
-print(f"• Military spending: ${military_per_human:.2f}/year per human")
-print(f"• Medical research: ${medical_per_human:.2f}/year per human")
-print(f"• Ratio: {military_per_human/medical_per_human:.1f}:1 in favor of DEATH")
 ```
