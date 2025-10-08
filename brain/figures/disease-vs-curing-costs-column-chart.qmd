@@ -69,6 +69,9 @@ ax.set_xticklabels([])
 ax.set_yticks([])
 ax.set_yticklabels([])
 
+# Set Y-axis limit to remove extra whitespace at the top
+ax.set_ylim(0, disease_total * 1.01)
+
 # Remove all spines for ultra-clean look
 clean_spines(ax, ['top', 'right', 'left', 'bottom'])
 
