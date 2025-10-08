@@ -102,7 +102,7 @@ ax.set_ylim(0, war_indirect_total * 1.15)
 # Add branding
 add_watermark(fig)
 
-# Save in brain/charts directory with higher quality
+# Save in brain/figures directory with higher quality
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'war-hidden-direct-curing-diseases-column-chart.png', dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)

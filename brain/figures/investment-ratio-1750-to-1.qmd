@@ -70,7 +70,7 @@ ax.spines['bottom'].set_linewidth(4)
 # Add watermark
 add_watermark(fig)
 
-# Save in brain/charts directory
+# Save in brain/figures directory
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'investment-ratio-1750-to-1.png', dpi=300, bbox_inches='tight', facecolor='white')
