@@ -25,25 +25,35 @@ from brain.figures._chart_style import (
 # Setup brutal neobrutalist styling
 setup_chart_style(style='light', dpi=150)
 
-# Create figure with two subplots
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+# Create figure
+fig, ax = plt.subplots(figsize=(12, 6))
 
-# Left plot: Bar comparison
-categories = ['KILLING\n(Military)', 'CURING\n(Medical Research)']
+# Data
+categories = ['War on Humanity', 'Curing Diseases']
 spending = [2700, 68]  # In billions
 colors = [COLOR_RED, COLOR_BLUE]
 
-bars = ax1.bar(categories, spending, color=colors, edgecolor=COLOR_BLACK, linewidth=4)
+bars = ax.bar(categories, spending, color=colors)
 
-# Add value labels with brutal typography
-for bar, value in zip(bars, spending):
-    height = bar.get_height()
-    ax1.text(bar.get_x() + bar.get_width()/2., height + 50,
-            f'${value:,}B', ha='center', va='bottom',
-            color=COLOR_BLACK, fontsize=32, fontweight='bold')
+# Add custom labels
+# Label inside large bar
+war_spending = spending[0]
+ax.text(bars[0].get_x() + bars[0].get_width()/2., war_spending * 0.6,
+        f'${war_spending/1000:.1f}T', ha='center', va='center',
+        color=COLOR_WHITE, fontsize=72, fontweight='bold')
+ax.text(bars[0].get_x() + bars[0].get_width()/2., war_spending * 0.4,
+        categories[0], ha='center', va='center',
+        color=COLOR_WHITE, fontsize=32, fontweight='bold')
 
-ax1.set_ylim(0, 3000)
-ax1.axis('off')  # Remove axes - labels are on the bars
+# Label above small bar
+cure_spending = spending[1]
+ax.text(bars[1].get_x() + bars[1].get_width()/2., cure_spending + (war_spending * 0.025),
+        f'${cure_spending}B\n{categories[1]}', ha='center', va='bottom',
+        color=COLOR_BLACK, fontsize=44, fontweight='bold', linespacing=1.2)
+
+
+ax.set_ylim(0, 3000)
+ax.axis('off')  # Remove axes - labels are on the bars
 
 # Add watermark
 add_watermark(fig)
@@ -51,7 +61,7 @@ add_watermark(fig)
 # Save in brain/figures directory
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'military-vs-medical-research-spending-comparison.png', dpi=300, bbox_inches='tight', facecolor='white')
+plt.savefig(output_dir / 'military-vs-medical-research-spending-comparison.png', dpi=300, bbox_inches='tight', facecolor=COLOR_WHITE)
 plt.show()
 
 ```
