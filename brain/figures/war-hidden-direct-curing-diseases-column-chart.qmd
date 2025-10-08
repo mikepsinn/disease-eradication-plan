@@ -54,7 +54,7 @@ bar1 = ax.bar(0, war_indirect_total, color=COLOR_RED, edgecolor=COLOR_WHITE,
 ax.text(0, war_indirect_total * 0.92, f'${war_indirect_total/1000:.0f}T', ha='center', va='center',
         fontsize=72, weight='bold', color=COLOR_WHITE)
 ax.text(0, war_indirect_total * 0.82, 'Indirect War Costs', ha='center', va='center',
-        fontsize=32, weight='bold', color=COLOR_WHITE)
+        fontsize=40, weight='bold', color=COLOR_WHITE)
 
 # Add breakdown text with better formatting - rounded numbers
 breakdown_text = (
@@ -76,7 +76,7 @@ bar2 = ax.bar(1, war_direct, color=COLOR_RED, edgecolor=COLOR_WHITE,
 ax.text(1, war_direct * 0.6, f'${war_direct/1000:.1f}T', ha='center', va='center',
         fontsize=72, weight='bold', color=COLOR_WHITE)
 ax.text(1, war_direct * 0.4, 'Direct Military', ha='center', va='center',
-        fontsize=32, weight='bold', color=COLOR_WHITE)
+        fontsize=40, weight='bold', color=COLOR_WHITE)
 
 # Plot cure research bar (BLUE - solution)
 bar3 = ax.bar(2, cure_research, color=COLOR_BLUE, edgecolor=COLOR_WHITE,
