@@ -156,6 +156,61 @@ See [Appendix: Detailed QALY Calculation Model](./dfda-cost-benefit-analysis.qmd
 
 ---
 
+### Step 3b: Alternative Cost Perspective - The Funding Mechanism
+
+**Important Note**: The above calculation uses traditional health economics methodology, counting all upfront costs. However, the actual funding mechanism makes the true cost perspective more nuanced.
+
+#### Understanding the Funding Flow
+
+**The DIH Treasury Mechanism**:
+1. **Countries redirect $27B/year** from military budgets to DIH treasury
+2. **DIH treasury allocates**:
+   - $2.7B/year → VICTORY bondholders (10% of redirected funds)
+   - $24.3B/year → Medical research and operations
+   - This $24.3B covers:
+     - dFDA operations: $40M/year
+     - Clinical trial subsidies: ~$10-20B/year
+     - Other medical research: Remaining funds
+
+**VICTORY Bond Financing**:
+- **Investors provide**: $1B upfront (funds the campaign)
+- **Investors receive**: $2.7B/year perpetually (270% annual return)
+- **Payback period**: 4.4 months
+- **Result**: Campaign is self-funding from investor perspective
+
+#### Alternative Cost Framings
+
+**Framing 1: Zero Upfront Cost (Investor-Funded)**
+- Campaign cost: $0 (funded by VICTORY bond investors who get repaid)
+- dFDA operations: $0 (funded by DIH treasury from redirected military spending)
+- **Total cost to society: $0/year**
+- **ICER = -$168,114 per QALY** (society pays nothing, gets everything)
+
+**Framing 2: Opportunity Cost of Redirected Spending**
+- Cost: $27B/year (redirected military spending)
+- But this $27B is ALREADY COUNTED in the $97.1B peace dividend
+- Net cost: $27B - $27B = $0
+- **ICER = -$168,114 per QALY**
+
+**Framing 3: Military Waste Conversion**
+- Military spending has negative ROI (destroys value)
+- Medical spending has positive ROI (creates value)
+- We're converting waste into productive investment
+- **True cost: Negative** (we're avoiding wasteful spending)
+- **ICER = Undefined** (negative cost, positive QALYs)
+
+#### Why We Use Conservative $290M/Year in Primary Analysis
+
+**For credibility and conservative estimation**:
+1. Health economics convention requires counting all costs
+2. Someone must pay the $1B campaign cost initially (even if repaid)
+3. Conservative estimates are more defensible to skeptics
+4. The intervention is dominant even with costs included
+
+**Key insight**: Even counting ALL costs conservatively, the ICER is -$167,771/QALY. Under more realistic framings where the campaign is self-funding, the true societal cost approaches $0, making the intervention infinitely cost-effective.
+
+---
+
 ### Step 4: ICER Calculation
 
 **ICER (Incremental Cost-Effectiveness Ratio)** = (Costs - Benefits) / QALYs gained
@@ -254,6 +309,23 @@ This is a **dominant intervention** - it makes society richer while saving lives
 | **Optimistic** | $294.8B | 2,152,500 | **-$136,945** | **-$4.79M** |
 
 **Key finding**: In ALL scenarios, the intervention is dominant (saves money while saving lives).
+
+### Alternative ICER Calculations Based on Funding Perspective
+
+| Perspective | Annual Cost | Annual Benefit | QALYs | ICER/QALY | Cost/Life | Notes |
+|-------------|------------:|---------------:|------:|----------:|----------:|-------|
+| **Conservative (All Costs)** | $290M | $147.1B | 875k | **-$167,771** | **-$5.87M** | Counts all upfront costs |
+| **Investor-Funded** | $0 | $147.1B | 875k | **-$168,114** | **-$5.88M** | Campaign funded by VICTORY bonds |
+| **Opportunity Cost** | $27B | $147.1B | 875k | **-$137,257** | **-$4.80M** | Counts redirected military spending |
+| **Waste Conversion** | -$27B* | $147.1B | 875k | **Undefined** | **Undefined** | Military spending creates negative value |
+
+*Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
+
+**Interpretation**:
+- Under traditional health economics (Conservative), the ICER is -$167,771/QALY
+- Under realistic funding (Investor-Funded), society pays $0, ICER approaches -∞
+- Considering opportunity cost of military spending, ICER is -$137,257/QALY
+- Recognizing military spending as waste, the intervention has undefined (infinite) cost-effectiveness
 
 **Worst case** (conservative): Society still saves $5.97M per life saved
 
@@ -361,6 +433,28 @@ The math works. The challenge is execution.
 **Even in worst-case scenarios** (conservative column), the ICER is still -$170,514/QALY.
 
 The intervention is **robustly dominant** across all reasonable parameter ranges.
+
+### Q: Is it misleading to say society pays $0 when the campaign is investor-funded?
+
+**A**: This depends on perspective:
+
+**From society's aggregate perspective**: The $1B campaign cost is real money that someone must provide initially. However, since investors get repaid with 270% returns from redirected military spending, the net cost to society approaches $0 after payback.
+
+**From taxpayers' perspective**: They give up $27B in military spending but receive $147.1B in economic benefits (peace dividend + R&D savings). Net gain: $120.1B.
+
+**From investors' perspective**: They invest $1B and receive $2.7B/year perpetually. This is the best investment in history.
+
+**The key insight**: Traditional ICER assumes spending society's resources on health interventions. Here, we're redirecting resources from **destructive uses** (war) to **productive uses** (medical research). The "cost" is really just stopping waste.
+
+### Q: Isn't redirecting military spending politically impossible?
+
+**A**: That's what the $1B campaign budget is for - making the politically impossible become inevitable through:
+- Viral referendum showing overwhelming public support (80%+ want less war, more cures)
+- VICTORY bonds that make supporting the treaty more profitable than opposing it
+- AI-assisted lobbying that's 60-80% more cost-effective than traditional campaigns
+- Creating unstoppable momentum in pilot countries first
+
+The math shows it's worth trying. Even a 10% chance of success has positive expected value given the enormous returns.
 
 ---
 
