@@ -89,42 +89,53 @@ for i in range(3):
             f'${cost:,.0f}',
             ha='center', va='bottom', fontsize=14, color=COLOR_BLACK, weight='bold')
 
-# Label for stacked 1% Treaty bar
+# Label for stacked 1% Treaty bar (total value below)
 ax.text(x_pos[3], costs[3] - errors_lower[3] - 400000,
-        f'${costs[3]/1000:,.0f}k\ntotal savings\nper life',
-        ha='center', va='top', fontsize=14, color=COLOR_BLACK, weight='bold')
+        f'-${abs(costs[3])/1000000:,.1f}M',
+        ha='center', va='top', fontsize=16, color=COLOR_BLACK, weight='bold')
 
 # Label segments within the stacked bar
-ax.text(x_pos[3] + 0.32, peace_dividend_per_life/2,
-        'Peace\nDividend',
-        ha='left', va='center', fontsize=10, color=COLOR_BLACK, weight='bold')
-ax.text(x_pos[3] + 0.32, peace_dividend_per_life + dfda_savings_per_life/2,
-        'dFDA\nSavings',
-        ha='left', va='center', fontsize=10, color=COLOR_BLACK, weight='bold')
+ax.text(x_pos[3] - 0.35, peace_dividend_per_life/2,
+        'Peace\nDividend\n(1% less war)',
+        ha='right', va='center', fontsize=9, color=COLOR_BLACK, style='italic')
+ax.text(x_pos[3] - 0.35, peace_dividend_per_life + dfda_savings_per_life/2,
+        'dFDA\nR&D\nSavings',
+        ha='right', va='center', fontsize=9, color=COLOR_BLACK, style='italic')
 
 # Add zero line for reference
-ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.3)
+ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=2, alpha=0.5)
 
-# Add explanatory annotations
-# Annotation for top charities
-ax.text(1, 8000, 'GiveWell Top Charities:\nSociety PAYS to save lives\n(excellent value, but costs money)',
-        ha='center', va='bottom', fontsize=11, color=COLOR_BLACK,
-        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
+# Add explanatory annotations - moved away from bars with arrows
+# Annotation for top charities (upper right, away from bars)
+ax.annotate('GiveWell Top Charities:\nSociety PAYS $3,500-$5,500\nto save one life\n(excellent, but costs money)',
+            xy=(1.5, 6500), xytext=(0.5, -2000000),
+            ha='center', fontsize=10, color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
+            arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
 
-# Annotation for 1% Treaty
-ax.text(3, -7500000, '1% Treaty/dFDA:\nSociety SAVES $5.87M per life\nwhile preventing deaths\n(dominant intervention)',
-        ha='center', va='top', fontsize=11, color=COLOR_BLACK,
-        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
+# Annotation for 1% Treaty (lower left, away from bar)
+ax.annotate('1% Treaty + dFDA:\nSociety SAVES $5.87M\nper life saved\n(dominant intervention)',
+            xy=(x_pos[3], -3000000), xytext=(1.5, -6500000),
+            ha='center', fontsize=10, color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
+            arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
 
-# Add legend for stacked bar
-legend = ax.legend(loc='upper left', frameon=True, fancybox=False, fontsize=10)
-legend.get_frame().set_facecolor(COLOR_WHITE)
-legend.get_frame().set_edgecolor(COLOR_BLACK)
-legend.get_frame().set_linewidth(1.5)
+# Axis formatting with millions formatter
+from matplotlib.ticker import FuncFormatter
 
-# Axis formatting
-ax.set_ylabel('Cost to Society per Life Saved (USD)\n← Saves Money | Costs Money →',
-              fontsize=12, color=COLOR_BLACK, weight='bold')
+def millions_formatter(x, pos):
+    """Format y-axis labels in millions"""
+    if x == 0:
+        return '$0'
+    elif abs(x) >= 1000000:
+        return f'-${abs(x)/1000000:.0f}M' if x < 0 else f'${x/1000000:.0f}M'
+    else:
+        return f'${x/1000:,.0f}k' if x >= 0 else f'-${abs(x)/1000:,.0f}k'
+
+ax.yaxis.set_major_formatter(FuncFormatter(millions_formatter))
+
+ax.set_ylabel('Cost to Society per Life Saved\n← Saves Money | Costs Money →',
+              fontsize=13, color=COLOR_BLACK, weight='bold', labelpad=10)
 ax.set_xlabel('')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(charities, fontsize=11)
@@ -140,20 +151,31 @@ ax.set_axisbelow(True)
 clean_spines(ax, ['top', 'right'])
 
 # Add title/context at top
-fig.text(0.5, 0.95, 'Philanthropic Cost-Effectiveness Comparison',
-         ha='center', fontsize=16, color=COLOR_BLACK, weight='bold')
-fig.text(0.5, 0.92, 'How much does it cost society to save one life? (Lower is better, negative = profit)',
-         ha='center', fontsize=10, color=COLOR_BLACK)
+fig.text(0.5, 0.96, 'Philanthropic Cost-Effectiveness Comparison',
+         ha='center', fontsize=18, color=COLOR_BLACK, weight='bold')
+fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
+         ha='center', fontsize=12, color=COLOR_BLACK)
 
-# Add data sources at bottom
-fig.text(0.5, 0.02, 'Sources: GiveWell 2024, dFDA Cost-Benefit Analysis, Cost of War Analysis\n1% Treaty: $147.1B annual savings (peace + dFDA) ÷ 875k QALYs = -$167,771/QALY × 35 QALYs/life = -$5.87M/life\nPeace dividend: 1,000 lives saved/year from 1% conflict reduction. dFDA: 840k QALYs/year. Error bars show uncertainty ranges.',
-         ha='center', fontsize=8, color=COLOR_BLACK, style='italic')
+# Add calculation details and sources at bottom (in box for readability)
+calc_text = '''Calculation for 1% Treaty + dFDA:
+Annual Benefits: $97.1B (peace dividend from 1% conflict reduction) + $50B (dFDA R&D savings) = $147.1B
+Annual Costs: $290M (campaign + operations)
+Net Benefit: $146.8B/year
+
+Health Impact: 35,000 QALYs (from 1,000 lives saved via peace) + 840,000 QALYs (from dFDA) = 875,000 QALYs/year
+ICER = ($290M - $147.1B) / 875k QALYs = -$167,771 per QALY × 35 QALYs/life = -$5.87M per life
+
+Sources: GiveWell 2024 Top Charities, dFDA Cost-Benefit Analysis, Cost of War Analysis. Error bars show uncertainty ranges.'''
+
+fig.text(0.5, -0.02, calc_text,
+         ha='center', va='top', fontsize=7, color=COLOR_BLACK, style='italic',
+         bbox=dict(boxstyle='round,pad=0.8', facecolor='#f5f5f5', edgecolor=COLOR_BLACK, linewidth=1))
 
 # Add watermark
 add_watermark(fig)
 
-# Adjust layout
-plt.tight_layout(rect=[0, 0.05, 1, 0.90])
+# Adjust layout to accommodate bottom text box and top titles
+plt.tight_layout(rect=[0, 0.12, 1, 0.91])
 
 # Save figure
 output_dir = project_root / 'brain' / 'figures'
