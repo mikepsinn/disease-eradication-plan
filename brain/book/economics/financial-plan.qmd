@@ -13,45 +13,51 @@ This document provides a high-level overview of the entire financial architectur
 
 ## The Three Financial Pillars
 
-### 1. Fundraising: How We Raise $1.2-2.5B
+### 1. Fundraising: How We Raise $1B
 
 **Instrument:** [VICTORY Bonds](./victory-bonds.qmd)
 
-- **Target Returns:** 40% annually (28x over 10 years)
+- **Target Returns:** 270% annually, perpetually
 - **Structure:** Debt instrument, senior to all other claims
-- **Payout:** 5% of all DIH treasury inflows, perpetually
+- **Payout:** 10% of all DIH treaty inflows ($2.7B/year)
 - **Protection:** Bondholders paid before mission spending
 - **Collateral:** $27B+ annual treaty revenue stream
+- **The Pitch:** "Invest $1B. Get $2.7B/year. Forever."
 
-**Strategy:** [Fundraising Strategy](./fundraising-strategy.qmd)
+**Why This Works:**
+- Simplest pitch in finance: 270% annual returns, perpetual
+- Clean $1B target (vs confusing $1.2-2.5B range)
+- 10% payout is easy math (vs 5% complex calculations)
+- "Forever" beats any finite timeline
+- Better returns than any investment in history
 
-- **Phased approach:** $250-400M (Seed) → $500M-1B (Series A) → $500M-1.1B (Growth)
-- **Milestone-gated:** Funds release only upon verified achievements
-- **Assurance contracts:** Money-back guarantee if targets missed
-- **Market-driven:** Dutch auctions for price discovery
-
-**Timeline:** 12-36 months to raise full amount
+**Timeline:** 12-24 months to raise $1B (simplified structure accelerates fundraising)
 
 ---
 
-### 2. Campaign Budget: How We Spend $1.2-2.5B
+### 2. Campaign Budget: How We Spend $1B
 
 **Detailed Breakdown:** [Campaign Budget](./campaign-budget.qmd)
 
-The one-time "activation energy" to pass the 1% Treaty:
+The one-time "activation energy" to pass the 1% Treaty, made affordable through AI and viral mechanics:
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
-| **Political Campaigns** | $700M - $1.5B | Independent expenditures to elect pro-treaty candidates |
-| **Technology Platform** | $150M - $225M | Global referendum system + dFDA marketplace |
-| **Legal & Compliance** | $120M - $200M | Navigate election law in 20+ countries |
-| **Strategic Alignment** | $100M - $200M | Co-opt defense contractors with better returns |
-| **Treasury Launch** | $100M - $150M | Security, insurance, governance for $27B+ |
-| **Contingency** | $105M - $260M | Murphy's Law buffer |
+| **Viral Referendum** | $200M (20%) | Referral rewards ($0.20/vote), 280M votes |
+| **AI-Assisted Lobbying** | $250M (25%) | Strategic, AI-targeted campaigns in 20 countries |
+| **Technology Platform** | $250M (25%) | dFDA + Wishocracy (AI-assisted development) |
+| **AI Legal & Compliance** | $100M (10%) | AI drafts, lawyers review (80% cost reduction) |
+| **Strategic Partnerships** | $100M (10%) | Co-opt MIC, align stakeholders |
+| **Operations** | $50M (5%) | Lean, remote-first, AI-augmented teams |
+| **Implementation Support** | $50M (5%) | Post-passage transition |
 
-**Key Insight:** 59% goes to political campaigns because that's what changes laws. Technology and legal are enablers; political power is the goal.
+**Key Innovations:**
+- **AI leverage**: 60-80% cost reduction vs traditional campaigns
+- **Viral mechanics**: $0.20/vote vs $5-15 traditional cost per voter
+- **Strategic focus**: 20 high-impact countries, not all 195
+- **Result**: $1B achieves what would cost $2-5B traditionally
 
-**Timeline:** 36 months from first funding to treaty passage
+**Timeline:** 36-60 months from first funding to treaty passage
 
 ---
 
@@ -74,12 +80,13 @@ Once the treaty passes, $27 billion flows annually from military budgets to the 
 
 #### Expenditure Allocation
 
-**The Only Fixed Cost (5%):**
-- VICTORY bond returns: $1.35B annually
+**The Only Fixed Cost (10%):**
+- VICTORY bond returns: $2.7B annually (10% of treaty inflows)
 - Sacred and untouchable (or investors walk)
 - Automatically distributed via smart contracts
+- 270% annual returns to bondholders
 
-**Everything Else (95%): Decided by Wishocracy**
+**Everything Else (90%): Decided by Wishocracy**
 
 Instead of committees, 8 billion humans vote via pairwise comparisons:
 
@@ -135,15 +142,14 @@ As more patients join:
 
 **Revenue:**
 - 1% Treaty: $27B
-- Remaining VICTORY bond capital: ~$500M
 
 **Expenses:**
-- VICTORY bond returns: $1.35B (5% of treaty inflows)
-- Patient subsidies: ~$18B (decided by Wishocracy)
+- VICTORY bond returns: $2.7B (10% of treaty inflows)
+- Patient subsidies: ~$16B (decided by Wishocracy, ~66%)
 - Platform infrastructure: ~$3B (scaling to 10M patients)
 - Research prizes: ~$2.5B (first-cure bonuses)
 - Expansion campaign: ~$2B (advocacy for 2% treaty)
-- Contingency: ~$150M
+- Contingency: ~$800M
 
 ### Year 4: 2% Treaty Expansion
 
@@ -151,12 +157,12 @@ As more patients join:
 - 2% Treaty: $54B (doubled)
 
 **Expenses:**
-- VICTORY bond returns: $2.7B (5% of treaty inflows)
-- Patient subsidies: ~$35B (more patients, more trials)
+- VICTORY bond returns: $5.4B (10% of treaty inflows)
+- Patient subsidies: ~$33B (more patients, more trials)
 - Platform infrastructure: ~$5B (50M patients)
 - Research prizes: ~$5B (major diseases falling)
-- Expansion campaign: ~$5B (advocacy for 5% treaty)
-- Pharma partnerships: ~$1.3B (co-development)
+- Expansion campaign: ~$4B (advocacy for 5% treaty)
+- Pharma partnerships: ~$1.6B (co-development)
 
 ### Year 8: 5% Treaty Domination
 
@@ -164,12 +170,12 @@ As more patients join:
 - 5% Treaty: $135B (exponential)
 
 **Expenses:**
-- VICTORY bond returns: $6.75B (5% of treaty inflows)
-- Patient subsidies: ~$90B (universal access)
+- VICTORY bond returns: $13.5B (10% of treaty inflows)
+- Patient subsidies: ~$85B (universal access)
 - Platform infrastructure: ~$12B (200M patients)
 - Research prizes: ~$15B (rare diseases getting solved)
-- Space medicine: ~$8B (extending to longevity research)
-- Prevention programs: ~$3B (shifting from treatment to prevention)
+- Space medicine: ~$6B (extending to longevity research)
+- Prevention programs: ~$3.5B (shifting from treatment to prevention)
 
 ### Year 10+: Endgame
 
@@ -177,6 +183,7 @@ As more patients join:
 - 10%+ Treaty: $270B+ (war is obsolete)
 
 **Expenses:**
+- VICTORY bond returns: $27B+ (10% forever)
 - Death becomes optional
 - Suffering becomes archaeology
 - Humanity explores space
@@ -189,9 +196,10 @@ As more patients join:
 ### Return on Investment (The 463:1 Multiplier)
 
 **Direct Investment Returns (VICTORY Bonds):**
-- 40% annually to bondholders
-- 28x total return over 10 years
-- Better than Medallion Fund, S&P 500, and every hedge fund
+- 270% annually to bondholders
+- Perpetual returns (not 10-year finite)
+- $1B investment → $2.7B/year forever
+- Better than every investment in human history
 
 **Societal Returns (Everyone Else):**
 - $463 in value created per dollar spent
@@ -225,9 +233,10 @@ That's more than China's entire GDP.
 - Phase 3 (70%): Treaty signed by 3+ G7 nations
 
 **Downside Protection:**
-- Even with partial treaty adoption ($13B), bonds return 26x
+- Even with partial treaty adoption ($13B), bonds return 130% annually
 - Tradable on secondary markets if exit needed
 - First-mover advantages for early investors
+- 10% perpetual payout means returns never stop
 
 ### Operational Protection
 
@@ -303,8 +312,8 @@ That's more than China's entire GDP.
 
 **Financial:**
 - Treaty expansion rate (1% → 2% → 5%)
-- VICTORY bond returns delivered (target: 40% CAGR)
-- Multiplier effects (target: 463:1)
+- VICTORY bond returns delivered (target: 270% annually)
+- Multiplier effects (target: 463:1 societal value)
 
 ### Compare to NIH Metrics (For Contrast)
 
@@ -373,12 +382,14 @@ Each success makes the next success easier:
 
 ## The Bottom Line
 
-**To Raise:** $1.2-2.5B via VICTORY Bonds
+**To Raise:** $1B via VICTORY Bonds
 
-**To Spend:** 59% politics, 10% tech, 9% legal, 8% co-opting MIC, 7% treasury security, 1% ops, 10% contingency
+**To Spend:** 20% viral referendum, 25% AI lobbying, 25% tech platform, 10% AI legal, 10% partnerships, 5% ops, 5% implementation
 
 **To Manage:** $27B+ annually via Wishocracy (8 billion voters)
 
-**To Deliver:** 40% annual returns to investors, 463:1 societal returns, optional death by 2050
+**To Deliver:** 270% annual returns to investors (perpetual), 463:1 societal returns, optional death by 2050
+
+**The Simple Math:** Invest $1B → Get $2.7B/year → Forever
 
 **The Question:** Do you want in, or do you want to watch us win without you?

@@ -31,7 +31,7 @@ tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incent
   - [Step 3: Deploy $1B on Legal Lobbying](#step-3-deploy-1b-on-legal-lobbying)
   - [Step 4: Create Super PACs That Punish Treaty Opponents](#step-4-create-super-pacs-that-punish-treaty-opponents)
   - [Step 5: Watch Treaties Pass and Diseases Fall](#step-5-watch-treaties-pass-and-diseases-fall)
-- [VI. The Investment: 40% Annual Returns for Saving Humanity](#vi-the-investment-40-annual-returns-for-saving-humanity)
+- [VI. The Investment: 270% Annual Returns for Saving Humanity](#vi-the-investment-270-annual-returns-for-saving-humanity)
   - [VICTORY Bonds: Better Returns Than Cocaine Trafficking (And Legal)](#victory-bonds-better-returns-than-cocaine-trafficking-and-legal)
   - [The Revenue Model: Capturing 1% of $119T Death Economy](#the-revenue-model-capturing-1-of-119t-death-economy)
   - [Building the First $100 Trillion Company](#building-the-first-100-trillion-company)
@@ -490,7 +490,7 @@ This isn't utopia. People will still be people. We'll still have reality TV and 
 flowchart TD
     Step1["📊 Step 1: Global Referendum<br/>Get 280M votes<br/>(3.5% of humanity)<br/>VOTE points as future claims"]
 
-    Step2["💰 Step 2: VICTORY Bonds<br/>Raise $2.5B<br/>from investors<br/>40% annual returns"]
+    Step2["💰 Step 2: VICTORY Bonds<br/>Raise $1B<br/>from investors<br/>270% annual returns"]
 
     Step3["🏛️ Step 3: Legal Lobbying<br/>Deploy $1B (ROI: 1,813:1)<br/>Build stakeholder<br/>coalition"]
 
@@ -515,7 +515,7 @@ Get [3.5% of humanity](./brain/book/references.qmd#3-5-rule) to click "yes" on "
 
 (Harder than it sounds. Humans are suspicious of good ideas.)
 
-### Step 2: Raise $2.5B Through VICTORY Bonds
+### Step 2: Raise $1B Through VICTORY Bonds
 
 Remember World War II? America sold war bonds to fund the fight against fascism. People bought them because:
 
@@ -542,11 +542,11 @@ Create Super PACs in every country. Not to support candidates, to support math. 
 
 ---
 
-## VI. The Investment: 40% Annual Returns for Saving Humanity
+## VI. The Investment: 270% Annual Returns for Saving Humanity
 
 ### VICTORY Bonds: Better Returns Than Cocaine Trafficking (And Legal)
 
-**We're offering up to 40% annual returns.**
+**We're offering 270% annual returns. Perpetually.**
 
 Better than:
 
@@ -558,18 +558,19 @@ Better than:
 
 **IMPORTANT MATH FOR CONFUSED PEOPLE:**
 
-- VICTORY bonds: 40% annual returns for investors (that's you getting rich)
+- VICTORY bonds: 270% annual returns for investors (that's you getting rich)
 - dFDA platform: 463:1 societal ROI (that's humanity getting rich)
-- Translation: You make 40% per year, society makes $463 for every $1 spent
+- Translation: You make 270% per year forever, society makes $463 for every $1 spent
 - Everyone wins except disease and death
 
 ### The Revenue Model: Capturing 1% of $119T Death Economy
 
 **Here's how:**
 
-- We invest $2.5 billion to redirect $27 billion annually
-- That's a 10:1 ratio every year forever
-- If we fully succeed, you buy a small country
+- We raise $1 billion to redirect $27 billion annually
+- You get 10% of treaty inflows = $2.7B/year
+- That's 270% returns. Forever.
+- If we fully succeed, your grandchildren's grandchildren are still getting paid
 
 **The Two-Layer Money Machine:**
 
@@ -583,27 +584,27 @@ Better than:
 **The Bootstrap Hustle:**
 
 1. Sell VICTORY bonds to rich people who fear death (all of them)
-2. Use that money to legalize bribes (lobbying)
+2. Use that $1B for AI-powered campaign (viral + lobbying + tech)
 3. Get the treaty signed
-4. Treaty money pays back bonds with insane returns
+4. Treaty money pays bondholders $2.7B/year forever
 5. Everyone gets rich except disease and death
 
 ```{mermaid}
 flowchart LR
     subgraph "The VICTORY Bonds Money Machine"
-        Investors["💸 Investors<br/>$2.5B investment"]
+        Investors["💸 Investors<br/>$1B investment"]
 
-        Lobbying["🏛️ Lobbying<br/>$1B deployed<br/>ROI: 1,813:1"]
+        Campaign["🏛️ AI Campaign<br/>$1B deployed<br/>Viral + Lobbying + Tech"]
 
         Treaty["📜 1% Treaty<br/>$27B/year redirected"]
 
-        Returns["💰 Returns<br/>40% annual<br/>to investors"]
+        Returns["💰 Returns<br/>270% annual<br/>$2.7B/year forever"]
 
-        Cures["💊 Cures<br/>$13.5B to dFDA<br/>trials & research"]
+        Cures["💊 Cures<br/>$24.3B to dFDA<br/>trials & research"]
     end
 
-    Investors --> Lobbying
-    Lobbying --> Treaty
+    Investors --> Campaign
+    Campaign --> Treaty
     Treaty --> Returns
     Treaty --> Cures
     Returns -.->|"Attracts More"| Investors
