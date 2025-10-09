@@ -21,3 +21,22 @@ figure {
     max-width: 100%;
     height: auto;
 }
+
+/* Mermaid diagram customization - Black and white color scheme */
+:root {
+    /* Background colors */
+    --mermaid-bg-color: #ffffff;
+    --mermaid-node-bg-color: #ffffff;
+
+    /* Border and edge colors */
+    --mermaid-edge-color: #000000;
+    --mermaid-border-color: #000000;
+
+    /* Text colors */
+    --mermaid-node-fg-color: #000000;
+    --mermaid-label-color: #000000;
+
+    /* Additional grayscale shades for different elements */
+    --mermaid-alt-bg-color: #f5f5f5;
+    --mermaid-cluster-bg-color: #eeeeee;
+}

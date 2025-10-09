@@ -101,17 +101,18 @@ execute:
   freeze: false
   # Send all generated figures to a central directory
   fig-path: "brain/figures/"
-  fig-prefix: "{{< meta doc-title >}}-"
 
 # Tell Quarto to use the project's virtual environment
 jupyter: dih-project-kernel
 
 format:
   html:
-    theme: 
+    theme:
       - lux
       #- neobrutalist.scss
     # Alternative themes: lux, flatly, sandstone, minty
+    mermaid:
+      theme: neutral  # Uses grayscale/minimal colors for black and white diagrams
     echo: false
     number-sections: false
     toc: true
