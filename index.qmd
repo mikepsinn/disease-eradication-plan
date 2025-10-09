@@ -50,7 +50,7 @@ We spend **[$2.72 trillion](./brain/book/references.qmd#sipri-2024-spending)** e
 Meanwhile, we spend $68 billion on medical research. That's **40 times less** on curing all diseases combined than we spend on new ways to create corpses.
 
 ```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#000000', 'pie2': '#FFFFFF', 'textColor': '#000000', 'pieOuterStrokeColor': '#000000', 'pieStrokeColor': '#000000'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#000000', 'pie2': '#FFFFFF', 'textColor': '#000000', 'pieOuterStrokeColor': '#000000', 'pieStrokeColor': '#000000', 'background': 'transparent'}}}%%
 pie title "Global Annual Spending: Death vs Life"
     "Military (Death Tools)" : 2720
     "Medical Research (Life Tools)" : 68
@@ -97,7 +97,7 @@ Add it all up: **$119 trillion per year** on death and suffering. That's more th
 While spending **$68 billion** trying to prevent it. A rounding error.
 
 ```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF', 'background': 'transparent'}}}%%
 flowchart TD
     subgraph "The $119 Trillion Death Economy"
         War["🔫 War Costs<br/>$9.7T/year<br/>• Direct military: $2.7T<br/>• Hidden costs: $7T<br/>• Lost Pentagon money: $2.5T"]
@@ -117,6 +117,8 @@ flowchart TD
     style Disease fill:#000000,color:#FFFFFF
     style DeathToilet fill:#000000,color:#FFFFFF
     style Research fill:#000000,color:#FFFFFF
+    style "The $119 Trillion Death Economy" fill:transparent,stroke:#000
+    style "What We Spend on Solutions" fill:transparent,stroke:#000
 ```
 
 #### You Are a Meat Robot (and It's Possible to Fix Robots)
@@ -266,7 +268,7 @@ However, in reality, public support has almost no influence on what laws are pas
 ## II. The Solution: Four Systems to Make Curing More Profitable Than Killing
 
 ```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF', 'background': 'transparent'}}}%%
 flowchart TB
     subgraph "The 4-System Solution Architecture"
         Treaty["🌍 System 1: The 1% Treaty<br/>Redirect $27B from military<br/>to medical<br/>Every nation contributes"]
@@ -288,6 +290,7 @@ flowchart TB
     style DIH fill:#000000,color:#FFFFFF
     style Wish fill:#000000,color:#FFFFFF
     style Results fill:#000000,color:#FFFFFF
+    style "The 4-System Solution Architecture" fill:transparent,stroke:#000
 ```
 
 ### System 1: The 1% Treaty - Redirect $27B From Military to Medical
@@ -337,7 +340,7 @@ Time to results: 2 years (markets) vs 17 years (bureaucracy)
 Patient access: 100% (integrated) vs 15% (gatekept)
 
 ```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF', 'background': 'transparent'}}}%%
 flowchart LR
     subgraph "Current FDA System"
         FDA1["📋 Central Committee<br/>200 bureaucrats"]
@@ -371,6 +374,8 @@ flowchart LR
     style dFDA3 fill:#000000,color:#FFFFFF
     style dFDA4 fill:#000000,color:#FFFFFF
     style dFDA5 fill:#000000,color:#FFFFFF
+    style "Current FDA System" fill:transparent,stroke:#000
+    style "dFDA Marketplace" fill:transparent,stroke:#000
 ```
 
 It's literally Amazon but for cures. Same convenience, same competition, same customer obsession - but instead of buying crap you don't need, you're buying years of life.
@@ -513,7 +518,7 @@ This isn't utopia. People will still be people. We'll still have reality TV and 
 ## V. The Strategy: How to Pass a Global Treaty in 5 Steps
 
 ```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF', 'background': 'transparent'}}}%%
 flowchart TD
     Step1["📊 Step 1: Global Referendum<br/>Get 280M votes<br/>(3.5% of humanity)<br/>VOTE points as future claims"]
 
@@ -625,7 +630,7 @@ Better than:
 5. Everyone gets rich except disease and death
 
 ```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF', 'background': 'transparent'}}}%%
 flowchart LR
     subgraph "The VICTORY Bonds Money Machine"
         Investors["💸 Investors<br/>$2.5B investment"]
@@ -650,6 +655,7 @@ flowchart LR
     style Treaty fill:#000000,color:#FFFFFF
     style Returns fill:#000000,color:#FFFFFF
     style Cures fill:#000000,color:#FFFFFF
+    style "The VICTORY Bonds Money Machine" fill:transparent,stroke:#000
 ```
 
 It's a virtuous cycle where early investors fund the lobbying that creates the treaty that generates the returns that attract more investors.
