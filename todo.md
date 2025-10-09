@@ -5,9 +5,8 @@ This document tracks all remaining work to complete "The $119T Death Toilet" boo
 ## Phase 1: Content Generation (Expand Placeholder Chapters)
 
 ### Priority 1: Core Economic/Legal Chapters
-- [ ] Expand `brain/book/economics/financial-plan.qmd` (2 sections need expansion)
-  - [ ] DIH Treasury Cash Flow Model section
-  - [ ] Operational Budget & Financial Model section
+- [x] ~~Expand `brain/book/economics/financial-plan.qmd`~~ - RESTRUCTURED: Now high-level overview linking to detailed files
+- [x] ~~Create `brain/book/economics/campaign-budget.qmd`~~ - COMPLETED: Detailed budget breakdown
 - [ ] Expand `brain/book/economics/central-banks.qmd` (full chapter placeholder)
 - [ ] Expand `brain/book/legal/legal-framework.qmd` (full chapter placeholder)
 
