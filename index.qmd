@@ -49,6 +49,13 @@ We spend **[$2.72 trillion](./brain/book/references.qmd#sipri-2024-spending)** e
 
 Meanwhile, we spend $68 billion on medical research. That's **40 times less** on curing all diseases combined than we spend on new ways to create corpses.
 
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#000000', 'pie2': '#FFFFFF', 'textColor': '#000000', 'pieOuterStrokeColor': '#000000', 'pieStrokeColor': '#000000'}}}%%
+pie title "Global Annual Spending: Death vs Life"
+    "Military (Death Tools)" : 2720
+    "Medical Research (Life Tools)" : 68
+```
+
 {{< include brain/figures/military-vs-medical-research-spending-comparison.qmd >}}
 
 
@@ -88,6 +95,29 @@ The global burden of disease (watching people rot + lost productivity + everyone
 Add it all up: **$119 trillion per year** on death and suffering. That's more than Earth's entire GDP, somehow.
 
 While spending **$68 billion** trying to prevent it. A rounding error.
+
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+flowchart TD
+    subgraph "The $119 Trillion Death Economy"
+        War["🔫 War Costs<br/>$9.7T/year<br/>• Direct military: $2.7T<br/>• Hidden costs: $7T<br/>• Lost Pentagon money: $2.5T"]
+        Disease["💀 Disease Burden<br/>$109.1T/year<br/>• Healthcare costs<br/>• Lost productivity<br/>• Human suffering"]
+
+        War --> DeathToilet["🚽 The Death Toilet<br/>$118.8 Trillion/year<br/>(More than Earth's GDP)"]
+        Disease --> DeathToilet
+    end
+
+    subgraph "What We Spend on Solutions"
+        Research["🔬 Medical Research<br/>$68B/year<br/>(0.06% of death costs)"]
+    end
+
+    DeathToilet -.->|"1,750x more"| Research
+
+    style War fill:#000000,color:#FFFFFF
+    style Disease fill:#000000,color:#FFFFFF
+    style DeathToilet fill:#000000,color:#FFFFFF
+    style Research fill:#000000,color:#FFFFFF
+```
 
 #### You Are a Meat Robot (and It's Possible to Fix Robots)
 
@@ -235,6 +265,31 @@ However, in reality, public support has almost no influence on what laws are pas
 
 ## II. The Solution: Four Systems to Make Curing More Profitable Than Killing
 
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+flowchart TB
+    subgraph "The 4-System Solution Architecture"
+        Treaty["🌍 System 1: The 1% Treaty<br/>Redirect $27B from military<br/>to medical<br/>Every nation contributes"]
+
+        dFDA["🛒 System 2: Decentralized FDA<br/>Amazon for clinical trials<br/>$500 vs $41,000<br/>per patient"]
+
+        DIH["💰 System 3: DIH Treasury<br/>Market-based funding<br/>Patients choose trials"]
+
+        Wish["🗳️ System 4: Wishocracy<br/>8 billion<br/>decision-makers<br/>vs 200 bureaucrats"]
+    end
+
+    Treaty --> DIH
+    DIH --> dFDA
+    Wish --> DIH
+    dFDA --> Results["✨ Results<br/>• 82X cost reduction<br/>• 17 years → 2 years<br/>• 100% patient access<br/>• Millions of lives saved"]
+
+    style Treaty fill:#000000,color:#FFFFFF
+    style dFDA fill:#000000,color:#FFFFFF
+    style DIH fill:#000000,color:#FFFFFF
+    style Wish fill:#000000,color:#FFFFFF
+    style Results fill:#000000,color:#FFFFFF
+```
+
 ### System 1: The 1% Treaty - Redirect $27B From Military to Medical
 
 Every nation redirects just **1%** of their current murder budget to a Decentralized Institute of Health (DIH) that will pay for sick people to participate in super-efficient decentralized clinical trials.
@@ -280,6 +335,43 @@ The dFDA is Amazon meets Yelp for not dying:
 Cost per patient: $500 (competition) vs $41,000 (monopoly)
 Time to results: 2 years (markets) vs 17 years (bureaucracy)
 Patient access: 100% (integrated) vs 15% (gatekept)
+
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+flowchart LR
+    subgraph "Current FDA System"
+        FDA1["📋 Central Committee<br/>200 bureaucrats"]
+        FDA2["💸 $41,000/patient"]
+        FDA3["⏰ 17 years to market"]
+        FDA4["🚫 15% patient access"]
+        FDA5["📉 70% approval drop"]
+
+        FDA1 --> FDA2 --> FDA3 --> FDA4 --> FDA5
+    end
+
+    subgraph "dFDA Marketplace"
+        dFDA1["🛒 Open Platform<br/>Millions of users"]
+        dFDA2["💰 $500/patient"]
+        dFDA3["🚀 2 years to results"]
+        dFDA4["✅ 100% patient access"]
+        dFDA5["📈 Competition drives innovation"]
+
+        dFDA1 --> dFDA2 --> dFDA3 --> dFDA4 --> dFDA5
+    end
+
+    FDA5 -.->|"82X Efficiency Gain"| dFDA5
+
+    style FDA1 fill:#000000,color:#FFFFFF
+    style FDA2 fill:#000000,color:#FFFFFF
+    style FDA3 fill:#000000,color:#FFFFFF
+    style FDA4 fill:#000000,color:#FFFFFF
+    style FDA5 fill:#000000,color:#FFFFFF
+    style dFDA1 fill:#000000,color:#FFFFFF
+    style dFDA2 fill:#000000,color:#FFFFFF
+    style dFDA3 fill:#000000,color:#FFFFFF
+    style dFDA4 fill:#000000,color:#FFFFFF
+    style dFDA5 fill:#000000,color:#FFFFFF
+```
 
 It's literally Amazon but for cures. Same convenience, same competition, same customer obsession - but instead of buying crap you don't need, you're buying years of life.
 
@@ -420,6 +512,32 @@ This isn't utopia. People will still be people. We'll still have reality TV and 
 
 ## V. The Strategy: How to Pass a Global Treaty in 5 Steps
 
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+flowchart TD
+    Step1["📊 Step 1: Global Referendum<br/>Get 280M votes<br/>(3.5% of humanity)<br/>VOTE points as future claims"]
+
+    Step2["💰 Step 2: VICTORY Bonds<br/>Raise $2.5B<br/>from investors<br/>40% annual returns"]
+
+    Step3["🏛️ Step 3: Legal Lobbying<br/>Deploy $1B (ROI: 1,813:1)<br/>Build stakeholder<br/>coalition"]
+
+    Step4["🗳️ Step 4: Super PACs<br/>Fund treaty supporters<br/>Replace opponents<br/>with math"]
+
+    Step5["🎯 Step 5: Treaties Pass<br/>1% → 2% → 5% → Victory<br/>Diseases fall,<br/>humanity rises"]
+
+    Step1 --> Step2
+    Step2 --> Step3
+    Step3 --> Step4
+    Step4 --> Step5
+    Step5 -.->|"Success Spiral"| Step1
+
+    style Step1 fill:#000000,color:#FFFFFF
+    style Step2 fill:#000000,color:#FFFFFF
+    style Step3 fill:#000000,color:#FFFFFF
+    style Step4 fill:#000000,color:#FFFFFF
+    style Step5 fill:#000000,color:#FFFFFF
+```
+
 ### Step 1: Get 280 Million Votes in Global Referendum
 
 Give everyone on Earth a lottery ticket to the future. Call them VOTE points. They're worthless now, but if we win, they become claims on the $16.5 trillion annual peace dividend.
@@ -505,6 +623,34 @@ Better than:
 3. Get the treaty signed
 4. Treaty money pays back bonds with insane returns
 5. Everyone gets rich except disease and death
+
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#FFFFFF'}}}%%
+flowchart LR
+    subgraph "The VICTORY Bonds Money Machine"
+        Investors["💸 Investors<br/>$2.5B investment"]
+
+        Lobbying["🏛️ Lobbying<br/>$1B deployed<br/>ROI: 1,813:1"]
+
+        Treaty["📜 1% Treaty<br/>$27B/year redirected"]
+
+        Returns["💰 Returns<br/>40% annual<br/>to investors"]
+
+        Cures["💊 Cures<br/>$13.5B to dFDA<br/>trials & research"]
+    end
+
+    Investors --> Lobbying
+    Lobbying --> Treaty
+    Treaty --> Returns
+    Treaty --> Cures
+    Returns -.->|"Attracts More"| Investors
+
+    style Investors fill:#000000,color:#FFFFFF
+    style Lobbying fill:#000000,color:#FFFFFF
+    style Treaty fill:#000000,color:#FFFFFF
+    style Returns fill:#000000,color:#FFFFFF
+    style Cures fill:#000000,color:#FFFFFF
+```
 
 It's a virtuous cycle where early investors fund the lobbying that creates the treaty that generates the returns that attract more investors.
 
