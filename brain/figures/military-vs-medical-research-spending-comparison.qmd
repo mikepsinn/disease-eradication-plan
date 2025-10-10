@@ -42,7 +42,7 @@ ax.text(bars[0].get_x() + bars[0].get_width()/2., war_spending * 0.7,
         color=COLOR_WHITE, fontsize=72, fontweight='bold')
 ax.text(bars[0].get_x() + bars[0].get_width()/2., war_spending * 0.4,
         categories[0], ha='center', va='center',
-        color=COLOR_WHITE, fontsize=32, fontweight='bold')
+        color=COLOR_WHITE, fontsize=44, fontweight='bold')
 
 # Label above small bar
 cure_spending = spending[1]

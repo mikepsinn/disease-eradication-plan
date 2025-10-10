@@ -185,7 +185,8 @@ Sources: GiveWell 2024, dFDA Cost-Benefit Analysis, Peace Dividend Analysis, Cos
 
 fig.text(0.5, -0.03, calc_text,
          ha='center', va='top', fontsize=6.5, color=COLOR_BLACK, family='monospace',
-         bbox=dict(boxstyle='round,pad=0.8', facecolor='#f5f5f5', edgecolor=COLOR_BLACK, linewidth=1.5))
+         bbox=dict(boxstyle='round,pad=0.8', facecolor='#f5f5f5', edgecolor=COLOR_BLACK, linewidth=1.5),
+         usetex=False)  # Prevent LaTeX interpretation of $ symbols
 
 # Add watermark
 add_watermark(fig)
