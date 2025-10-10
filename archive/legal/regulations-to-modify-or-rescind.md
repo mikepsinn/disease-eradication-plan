@@ -67,10 +67,10 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Acceptance of Foreign Clinical Data (21 CFR 312.120):**
   - _Area for Review:_ Requirements for demonstrating GCP equivalence for foreign data; potential barriers to seamlessly integrating global data generated via the platform.
-  - _Potential Modifications:_ **Establish clear pathways for validating and accepting data generated globally via a standardized, certified dFDA platform, potentially deeming platform adherence as sufficient evidence of data quality and integrity.** Harmonize data standards and validation requirements internationally to facilitate seamless data pooling.
+  - _Potential Modifications:_ **Establish clear pathways for validating and accepting data generated globally via a standardized, certified dFDA Infrastructure, potentially deeming platform adherence as sufficient evidence of data quality and integrity.** Harmonize data standards and validation requirements internationally to facilitate seamless data pooling.
 
 - **Software as a Medical Device (SaMD) Regulations/Guidance:**
-  - _Area for Review:_ Regulatory classification and requirements for the dFDA platform itself, especially its AI/ML components used for analysis, ranking, safety monitoring, or protocol generation.
+  - _Area for Review:_ Regulatory classification and requirements for the dFDA Infrastructure itself, especially its AI/ML components used for analysis, ranking, safety monitoring, or protocol generation.
   - _Potential Modifications:_ **Develop a specific regulatory framework for large-scale, multi-functional clinical trial platforms like the dFDA.** Define validation requirements (including algorithmic transparency, bias assessment, and continuous learning validation) for platform components, potentially using pre-certification models or tiered approaches based on component risk.
 
 - **Drug Labeling Requirements (21 CFR Part 201):**
@@ -83,7 +83,7 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Regulatory Silos across FDA Centers (CDER, CBER, CDRH, CFSAN):**
   - _Area for Review:_ Separate regulatory pathways, data standards, and review processes for drugs, biologics, devices, foods, and supplements hinder a unified platform approach.
-  - _Potential Modifications:_ **Harmonize data submission standards, clinical evidence requirements, and safety monitoring processes across Centers for interventions evaluated on the dFDA platform.** Create integrated review pathways or teams for products/interventions that span multiple categories (e.g., drug-device combinations, digital therapeutics, medical foods) evaluated via the platform.
+  - _Potential Modifications:_ **Harmonize data submission standards, clinical evidence requirements, and safety monitoring processes across Centers for interventions evaluated on the dFDA Infrastructure.** Create integrated review pathways or teams for products/interventions that span multiple categories (e.g., drug-device combinations, digital therapeutics, medical foods) evaluated via the platform.
 
 - **State Laws & Regulations (Telehealth, Pharmacy Practice, Professional Licensing):**
   - _Area for Review:_ Inconsistent state-level requirements impede the ability to run seamless nationwide/global DCTs, manage remote patient care, ship medications directly, and utilize healthcare professionals across state lines.
@@ -91,15 +91,15 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Product Liability Frameworks (Federal & State Tort Law):**
   - _Area for Review:_ Uncertainty regarding the assignment of liability (manufacturer, investigator, platform provider, patient) in highly automated, decentralized trials with potentially AI-driven insights or greater patient autonomy.
-  - _Potential Modifications:_ **Develop clear legal frameworks or safe harbors clarifying liability distribution in the context of dFDA platform operations.** Address liability related to platform algorithms, data integrity, remote monitoring failures, and direct-to-patient models. Potentially explore no-fault compensation systems for trial-related injuries in this new context.
+  - _Potential Modifications:_ **Develop clear legal frameworks or safe harbors clarifying liability distribution in the context of dFDA Infrastructure operations.** Address liability related to platform algorithms, data integrity, remote monitoring failures, and direct-to-patient models. Potentially explore no-fault compensation systems for trial-related injuries in this new context.
 
 - **Data Standardization/Interoperability Mandates (e.g., ONC Cures Act Final Rule, HIPAA related):**
   - _Area for Review:_ Lack of universal enforcement of deep interoperability standards hinders automated data aggregation from diverse sources (EHRs, apps, wearables).
-  - _Potential Modifications:_ **Mandate adoption of specific technical standards (e.g., FHIR APIs) across all relevant health IT systems.** Establish clear requirements for real-time data access and exchange specifically for participation in certified dFDA platform trials and RWD collection.
+  - _Potential Modifications:_ **Mandate adoption of specific technical standards (e.g., FHIR APIs) across all relevant health IT systems.** Establish clear requirements for real-time data access and exchange specifically for participation in certified dFDA Infrastructure trials and RWD collection.
 
 - **Cybersecurity Frameworks for Health Data Platforms (e.g., NIST CSF, HIPAA Security Rule):**
   - _Area for Review:_ Ensuring adequate security for a global, decentralized platform aggregating highly sensitive health data from millions/billions of users.
-  - _Potential Modifications:_ **Develop specific cybersecurity standards and best practices tailored to large-scale, decentralized health data platforms.** Require regular, independent security audits and certifications for the dFDA platform and its connected data sources. Establish clear protocols for breach notification and response in a decentralized context.
+  - _Potential Modifications:_ **Develop specific cybersecurity standards and best practices tailored to large-scale, decentralized health data platforms.** Require regular, independent security audits and certifications for the dFDA Infrastructure and its connected data sources. Establish clear protocols for breach notification and response in a decentralized context.
 
 - **Regulations/Guidance on AI/ML in Healthcare Decision-Making:**
   - _Area for Review:_ Validation, transparency, bias, and lifecycle management of AI/ML algorithms used for core dFDA functions (analysis, ranking, safety monitoring).
@@ -107,43 +107,43 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Food Labeling and Claims Regulations (21 CFR Part 101):**
   - _Area for Review:_ Different standards for substantiating health claims for foods versus drugs; incompatibility with a unified evidence-ranking system.
-  - _Potential Modifications:_ **Harmonize evidence standards for health claims across foods, supplements, and drugs evaluated via the dFDA platform.** Allow food/nutrient interventions to be evaluated and ranked alongside drugs based on platform-generated evidence, and permit communication of these findings in a standardized format.
+  - _Potential Modifications:_ **Harmonize evidence standards for health claims across foods, supplements, and drugs evaluated via the dFDA Infrastructure.** Allow food/nutrient interventions to be evaluated and ranked alongside drugs based on platform-generated evidence, and permit communication of these findings in a standardized format.
 
 - **Central Platform Certification & Third-Party Roles Pathway (New Guidance / Modification of DCT, SaMD, QSR & BIMO Guidance):**
-  - _Area for Review:_ Lack of clear pathways for certifying core dFDA platform infrastructure and defining roles for independent bodies in oversight.
+  - _Area for Review:_ Lack of clear pathways for certifying core dFDA Infrastructure infrastructure and defining roles for independent bodies in oversight.
   - _Potential Modifications:_ **Develop and issue specific guidance establishing a clear regulatory pathway and technical standards for the certification of dFDA-like platforms.** Modify Quality System regulations (e.g., 21 CFR Part 820) and inspection guidance (BIMO) to **formally define standards, accreditation, and oversight for qualified third-party organizations** to conduct platform certifications, remote audits, or algorithm validations, leveraging external expertise.
 
 - **Radical Simplification/Exemption for Low-Risk Devices/SaMD (Modification of 21 CFR Parts 860-892 & related Guidance):**
   - _Area for Review:_ Existing pre-market requirements (e.g., 510(k), PMA) may be excessive for certain lower-risk devices or SaMD when continuous monitoring is available.
-  - _Potential Modifications:_ **Modify device classification and pre-market submission regulations to create exemptions or radically simplified pathways (e.g., registration and platform integration only) for low-risk devices/SaMD (Classes I/II) contingent upon their mandatory use and evaluation via a certified dFDA platform.** Rely on the platform's real-time safety and effectiveness monitoring for post-market control, shifting focus from pre-market prediction to real-world performance.
+  - _Potential Modifications:_ **Modify device classification and pre-market submission regulations to create exemptions or radically simplified pathways (e.g., registration and platform integration only) for low-risk devices/SaMD (Classes I/II) contingent upon their mandatory use and evaluation via a certified dFDA Infrastructure.** Rely on the platform's real-time safety and effectiveness monitoring for post-market control, shifting focus from pre-market prediction to real-world performance.
 
 - **International Harmonization & Mutual Recognition (Modification of FDA International Cooperation Guidance / MRAs):**
   - _Area for Review:_ Slow processes for international regulatory cooperation impede global trials.
-  - _Potential Modifications:_ **Modify FDA procedures and guidance related to international cooperation (e.g., under MRAs) to explicitly include pathways for mutual recognition of dFDA platform certifications** and harmonized data standards/validation requirements with key global regulators (EMA, MHRA, etc.). Repeal requirements demanding duplicative reviews/validations where a trusted international partner has certified platform compliance.
+  - _Potential Modifications:_ **Modify FDA procedures and guidance related to international cooperation (e.g., under MRAs) to explicitly include pathways for mutual recognition of dFDA Infrastructure certifications** and harmonized data standards/validation requirements with key global regulators (EMA, MHRA, etc.). Repeal requirements demanding duplicative reviews/validations where a trusted international partner has certified platform compliance.
 
 - **Streamlined Biomarker Qualification via dFDA (Modification of FDA Biomarker Guidance / 21 CFR 314.500s):**
   - _Area for Review:_ Biomarker qualification is often a lengthy, separate process from drug trials.
-  - _Potential Modifications:_ **Modify FDA guidance and related regulations to establish streamlined pathways for qualifying biomarkers based primarily on robust RWE generated continuously _through_ a certified dFDA platform.** Repeal requirements for separate, extensive qualification packages where sufficient validation data emerges directly from platform-based trials.
+  - _Potential Modifications:_ **Modify FDA guidance and related regulations to establish streamlined pathways for qualifying biomarkers based primarily on robust RWE generated continuously _through_ a certified dFDA Infrastructure.** Repeal requirements for separate, extensive qualification packages where sufficient validation data emerges directly from platform-based trials.
 
 - **Integrated Combination Product Review (Modification of 21 CFR Part 3, Part 4 & related guidance):**
   - _Area for Review:_ Complex framework for assigning lead Center and coordinating review for combination products.
-  - _Potential Modifications:_ **Modify regulations/guidance to create integrated, streamlined review pathways for combination products evaluated using the dFDA platform.** Leverage the unified platform data stream for a single, coordinated assessment (potentially by a dedicated team). Repeal requirements for separate, sequential reviews where the platform provides holistic evidence.
+  - _Potential Modifications:_ **Modify regulations/guidance to create integrated, streamlined review pathways for combination products evaluated using the dFDA Infrastructure.** Leverage the unified platform data stream for a single, coordinated assessment (potentially by a dedicated team). Repeal requirements for separate, sequential reviews where the platform provides holistic evidence.
 
 - **Streamlined PRO Instrument Validation (Modification of FDA PRO Guidance):**
   - _Area for Review:_ Time-consuming validation for PRO instruments, especially electronic ones (ePROs).
-  - _Potential Modifications:_ **Modify FDA guidance to establish streamlined validation requirements for ePRO tools fully integrated and standardized within a certified dFDA platform.** Accept platform-generated usability data and real-world performance metrics as key validation components. Repeal guidance demanding validation approaches ill-suited for integrated platform tools.
+  - _Potential Modifications:_ **Modify FDA guidance to establish streamlined validation requirements for ePRO tools fully integrated and standardized within a certified dFDA Infrastructure.** Accept platform-generated usability data and real-world performance metrics as key validation components. Repeal guidance demanding validation approaches ill-suited for integrated platform tools.
 
 - **Risk-Based Device Trial Determination (Modification of 21 CFR 812.3(m) & IRB Guidance):**
   - _Area for Review:_ Determination of Significant Risk (SR) vs. Non-Significant Risk (NSR) for devices in trials impacts oversight.
-  - _Potential Modifications:_ **Modify guidance for IRBs/sponsors to explicitly allow consideration of a certified dFDA platform's real-time safety monitoring** when making SR/NSR determinations. Enhanced platform oversight could justify classifying more studies as NSR, reducing IDE requirements. Repeal interpretations preventing platform capabilities from informing risk classification.
+  - _Potential Modifications:_ **Modify guidance for IRBs/sponsors to explicitly allow consideration of a certified dFDA Infrastructure's real-time safety monitoring** when making SR/NSR determinations. Enhanced platform oversight could justify classifying more studies as NSR, reducing IDE requirements. Repeal interpretations preventing platform capabilities from informing risk classification.
 
 - **Reduced Reliance on Formal Pre-Submission Meetings (Modification of FDA MAPP/Guidance on Formal Meetings):**
   - _Area for Review:_ Formal meetings consume significant sponsor and FDA resources, potentially redundant with platform use.
-  - _Potential Modifications:_ **Issue guidance significantly reducing or waiving the necessity for formal pre-submission meetings** for trials using certified dFDA platforms and standardized/validated protocols. Rely more on platform-based checks and asynchronous communication. Repeal policies mandating meetings where platform use provides sufficient clarity.
+  - _Potential Modifications:_ **Issue guidance significantly reducing or waiving the necessity for formal pre-submission meetings** for trials using certified dFDA Infrastructures and standardized/validated protocols. Rely more on platform-based checks and asynchronous communication. Repeal policies mandating meetings where platform use provides sufficient clarity.
 
 - **Streamlined Post-Approval Manufacturing Changes (Modification of 21 CFR 314.70, 601.12, 814.39 & GMP Guidance):**
   - _Area for Review:_ Burdensome reporting/approval for post-approval manufacturing changes.
-  - _Potential Modifications:_ **Modify regulations/guidance to allow real-time manufacturing process data and dFDA platform outcomes data to support justification/classification** of certain post-approval changes, potentially moving more changes to annual reports. Repeal prior approval requirements where platform data demonstrates continued quality/performance.
+  - _Potential Modifications:_ **Modify regulations/guidance to allow real-time manufacturing process data and dFDA Infrastructure outcomes data to support justification/classification** of certain post-approval changes, potentially moving more changes to annual reports. Repeal prior approval requirements where platform data demonstrates continued quality/performance.
 
 - **Remote/Platform-Centric Facility Inspections (Modification of FDA Inspection Guidance, e.g., BIMO, GMP):**
   - _Area for Review:_ Traditional on-site inspections may be inefficient for facilities integrated with digital platforms.
@@ -151,15 +151,15 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Adapting Formal Dispute Resolution (Modification of FDA Guidance on Formal Dispute Resolution, MAPPs):**
   - _Area for Review:_ Current dispute resolution pathways ill-suited for dynamic platform data.
-  - _Potential Modifications:_ **Modify relevant guidance (MAPPs) to establish clear processes for handling scientific disputes/appeals related to decisions based on dynamic dFDA platform data** (e.g., re-analysis windows, platform tools for verification). Repeal procedural requirements incompatible with continuous data generation.
+  - _Potential Modifications:_ **Modify relevant guidance (MAPPs) to establish clear processes for handling scientific disputes/appeals related to decisions based on dynamic dFDA Infrastructure data** (e.g., re-analysis windows, platform tools for verification). Repeal procedural requirements incompatible with continuous data generation.
 
 - **Adapting Pediatric Protections for DCTs (Modification of 21 CFR 50 Subpart D & Pediatric Study Guidance):**
   - _Area for Review:_ Specific requirements for protecting children in research need tailoring for remote settings.
-  - _Potential Modifications:_ **Modify regulations/guidance to provide specific standards for assessing risks/benefits and implementing appropriate safeguards** (e.g., remote monitoring methods, validated digital assent tools, data privacy measures) tailored for pediatric participants enrolled via the dFDA platform.
+  - _Potential Modifications:_ **Modify regulations/guidance to provide specific standards for assessing risks/benefits and implementing appropriate safeguards** (e.g., remote monitoring methods, validated digital assent tools, data privacy measures) tailored for pediatric participants enrolled via the dFDA Infrastructure.
 
 - **Leveraging dFDA for Emergency Use Authorization (EUA) (Modification of EUA Guidance, IND 21 CFR 312):**
   - _Area for Review:_ EUA processes could be faster if integrated with real-time data platforms.
-  - _Potential Modifications:_ **Modify relevant guidance/regulations to create expedited pathways for utilizing evidence generated from a certified dFDA platform to support EUA submissions** during public health emergencies (e.g., pre-agreed protocols/data standards).
+  - _Potential Modifications:_ **Modify relevant guidance/regulations to create expedited pathways for utilizing evidence generated from a certified dFDA Infrastructure to support EUA submissions** during public health emergencies (e.g., pre-agreed protocols/data standards).
 
 - **Clarifying DSCSA for Direct-to-Patient Models (Modification of DSCSA Implementation Guidance):**
   - _Area for Review:_ Drug Supply Chain Security Act track-and-trace requirements need clarity for DCTs.
@@ -171,11 +171,11 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Leverage dFDA for Record Retention Requirements (ICH E6 / 21 CFR Part 11 / GMP Regs Guidance):**
   - _Area for Review:_ Costly/duplicative maintenance of separate long-term archives.
-  - _Potential Modifications:_ Issue guidance clarifying that validated dFDA platform's immutable electronic records fulfill primary retention requirements. Repeal guidance interpretations requiring separate, redundant sponsor-maintained archives for data captured reliably by the platform.
+  - _Potential Modifications:_ Issue guidance clarifying that validated dFDA Infrastructure's immutable electronic records fulfill primary retention requirements. Repeal guidance interpretations requiring separate, redundant sponsor-maintained archives for data captured reliably by the platform.
 
 - **Cybersecurity Incident Response & Safe Harbors for Platforms (Modification of FDA Cybersecurity Guidance, HIPAA Security Rule 45 CFR 164 Subpart C):**
   - _Area for Review:_ Clarity needed on handling breaches in large-scale platforms; incentives for robust security.
-  - _Potential Modifications:_ **Issue guidance clarifying cybersecurity incident reporting requirements specifically for certified dFDA platforms.** Potentially offer **safe harbors from certain penalties** if predefined, certified best-practice security protocols were implemented and followed, encouraging robust security adoption. Define clear protocols for breach notification/response in a decentralized context.
+  - _Potential Modifications:_ **Issue guidance clarifying cybersecurity incident reporting requirements specifically for certified dFDA Infrastructures.** Potentially offer **safe harbors from certain penalties** if predefined, certified best-practice security protocols were implemented and followed, encouraging robust security adoption. Define clear protocols for breach notification/response in a decentralized context.
 
 - **Recognize Patient Data Ownership & Facilitate Third-Party Ratings (HIPAA 45 CFR Parts 160, 164 Guidance):**
   - _Area for Review:_ Lack of explicit patient data ownership; barriers to market-based rating systems; restrictions on secondary use.
@@ -191,7 +191,7 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Streamline/Simplify IND Requirements (21 CFR Part 312):**
   - _Area for Review:_ Rigid, document-heavy requirements ill-suited for adaptive/decentralized trials, especially on certified platforms; potential bias against innovative designs.
-  - _Potential Modifications:_ Create a significantly streamlined IND pathway. For trials on **certified** dFDA platforms, **reduce IND submission to essential preclinical safety, manufacturing quality, and protocol only**, relying on platform monitoring for ongoing safety. Repeal requirements for extensive upfront documentation rendered redundant by platform capabilities. Support validation of **AI/ML tools for automated protocol checking/validation** prior to submission via guidance. Issue guidance explicitly **maximizing sponsor flexibility** in choosing scientifically valid trial designs (adaptive, pragmatic, N-of-1, platform trials, etc.) verifiable via the platform, repealing interpretations favoring traditional designs.
+  - _Potential Modifications:_ Create a significantly streamlined IND pathway. For trials on **certified** dFDA Infrastructures, **reduce IND submission to essential preclinical safety, manufacturing quality, and protocol only**, relying on platform monitoring for ongoing safety. Repeal requirements for extensive upfront documentation rendered redundant by platform capabilities. Support validation of **AI/ML tools for automated protocol checking/validation** prior to submission via guidance. Issue guidance explicitly **maximizing sponsor flexibility** in choosing scientifically valid trial designs (adaptive, pragmatic, N-of-1, platform trials, etc.) verifiable via the platform, repealing interpretations favoring traditional designs.
 
 - **Simplify Informed Consent & Facilitate Secondary Data Use (21 CFR Part 50 / 45 CFR Part 164 - HIPAA):**
   - _Area for Review:_ Lengthy, paternalistic forms; bureaucratic burdens; barriers to secondary research use.
@@ -211,7 +211,7 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Minimize/Repeal Post-Marketing Requirements/Commitments (e.g., 21 CFR Part 314, Subpart H; Part 601, Subpart E; Part 822):**
   - _Area for Review:_ Duplicative mandated studies add costs/delays when platform provides continuous monitoring.
-  - _Potential Modifications:_ Allow dFDA's perpetual monitoring to fulfill post-marketing surveillance needs for approved treatments. **Repeal regulations requiring separate mandated studies or reporting** where the certified dFDA platform provides continuous, sufficient real-world safety and effectiveness data.
+  - _Potential Modifications:_ Allow dFDA's perpetual monitoring to fulfill post-marketing surveillance needs for approved treatments. **Repeal regulations requiring separate mandated studies or reporting** where the certified dFDA Infrastructure provides continuous, sufficient real-world safety and effectiveness data.
 
 - **Repeal Restrictions on Truthful Promotion & Scientific Exchange (21 CFR Part 202, FDA Guidances):**
   - _Area for Review:_ Strict FDA rules limiting truthful communication constitute prior restraint on speech.
@@ -223,11 +223,11 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Replace/Repeal REMS Requirements via dFDA Monitoring (21 CFR Part 208):**
   - _Area for Review:_ Significant burdens from REMS programs redundant with platform capabilities.
-  - _Potential Modifications:_ Allow robust dFDA platform monitoring (tracking usage, AEs, outcomes) to satisfy requirements. **Repeal the requirement for separate mandated REMS programs** where a certified dFDA platform can verifiably achieve the same safety goals with less burden.
+  - _Potential Modifications:_ Allow robust dFDA Infrastructure monitoring (tracking usage, AEs, outcomes) to satisfy requirements. **Repeal the requirement for separate mandated REMS programs** where a certified dFDA Infrastructure can verifiably achieve the same safety goals with less burden.
 
 - **Repeal Duplicative Mandatory Reporting (e.g., ClinicalTrials.gov via 42 CFR Part 11; IND Safety via 21 CFR 312.32):**
   - _Area for Review:_ Duplicative administrative work for separate registry/safety reporting.
-  - _Potential Modifications:_ Allow the dFDA platform's public data interface and internal logs to fulfill requirements. **Repeal regulations mandating separate submission** of data elements (protocol, status, results, specific safety reports) already transparently available and structured on a certified platform.
+  - _Potential Modifications:_ Allow the dFDA Infrastructure's public data interface and internal logs to fulfill requirements. **Repeal regulations mandating separate submission** of data elements (protocol, status, results, specific safety reports) already transparently available and structured on a certified platform.
 
 - **Permit Direct-to-Consumer (DTC) Advertising for dFDA Trials (Revisiting 21 CFR 202 Interpretation):**
   - _Area for Review:_ Restrictions limit public awareness and patient autonomy.
@@ -263,11 +263,11 @@ This list identifies specific U.S. regulations, rules, or guidance documents tha
 
 - **Leverage dFDA for Record Retention Requirements (ICH E6 / 21 CFR Part 11 / GMP Regs Guidance):**
   - _Area for Review:_ Costly/duplicative maintenance of separate long-term archives.
-  - _Potential Modifications:_ Issue guidance clarifying that validated dFDA platform's immutable electronic records fulfill primary retention requirements. Repeal guidance interpretations requiring separate, redundant sponsor-maintained archives for data captured reliably by the platform.
+  - _Potential Modifications:_ Issue guidance clarifying that validated dFDA Infrastructure's immutable electronic records fulfill primary retention requirements. Repeal guidance interpretations requiring separate, redundant sponsor-maintained archives for data captured reliably by the platform.
 
 - **Cybersecurity Incident Response & Safe Harbors for Platforms (Modification of FDA Cybersecurity Guidance, HIPAA Security Rule 45 CFR 164 Subpart C):**
   - _Area for Review:_ Clarity needed on handling breaches in large-scale platforms; incentives for robust security.
-  - _Potential Modifications:_ **Issue guidance clarifying cybersecurity incident reporting requirements specifically for certified dFDA platforms.** Potentially offer **safe harbors from certain penalties** if predefined, certified best-practice security protocols were implemented and followed, encouraging robust security adoption. Define clear protocols for breach notification/response in a decentralized context.
+  - _Potential Modifications:_ **Issue guidance clarifying cybersecurity incident reporting requirements specifically for certified dFDA Infrastructures.** Potentially offer **safe harbors from certain penalties** if predefined, certified best-practice security protocols were implemented and followed, encouraging robust security adoption. Define clear protocols for breach notification/response in a decentralized context.
 
 - **Recognize Patient Data Ownership & Facilitate Third-Party Ratings (HIPAA 45 CFR Parts 160, 164 Guidance):**
   - _Area for Review:_ Lack of explicit patient data ownership; barriers to market-based rating systems; restrictions on secondary use.

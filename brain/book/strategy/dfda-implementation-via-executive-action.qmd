@@ -37,7 +37,7 @@ A similar strategy could be employed to initiate the dFDA:
 
 2. **Repurposing Existing Infrastructure & Expertise:**
 
-   - Instead of creating a new agency from scratch, the EO could designate an existing entity or component within HHS (e.g., parts of FDA's digital health center, ONC, or leveraging infrastructure/teams from the _All of Us_ Research Program) as the core dFDA platform operator, potentially renaming it.
+   - Instead of creating a new agency from scratch, the EO could designate an existing entity or component within HHS (e.g., parts of FDA's digital health center, ONC, or leveraging infrastructure/teams from the _All of Us_ Research Program) as the core dFDA Infrastructure operator, potentially renaming it.
    - This leverages existing budgets, personnel slots, and infrastructure, mirroring the USDS transformation into the U.S. DOGE Service.
 
 3. **Mandating Digital Platform Development & Standards:**
@@ -57,11 +57,11 @@ A similar strategy could be employed to initiate the dFDA:
 
 6. **Influencing Funding & Reimbursement:**
 
-   - **NIH Prioritization:** Direct NIH (potentially via the Office of the Director [~\$2.3B FY24 budget, incl. Common Fund] or Common Fund [~\$684M FY24 budget]) to prioritize grant applications utilizing the dFDA platform, focusing on decentralized trial methodologies, or developing relevant technologies. (See precedents of executive influence on [NIH grant terminations](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)).
+   - **NIH Prioritization:** Direct NIH (potentially via the Office of the Director [~\$2.3B FY24 budget, incl. Common Fund] or Common Fund [~\$684M FY24 budget]) to prioritize grant applications utilizing the dFDA Infrastructure, focusing on decentralized trial methodologies, or developing relevant technologies. (See precedents of executive influence on [NIH grant terminations](https://www.statnews.com/2025/03/07/nih-terminates-dei-transgender-related-research-grants/)).
    - **ARPA-H Direction:** Direct the Advanced Research Projects Agency for Health (ARPA-H [\$1.5B FY24 budget]), with its flexible funding for high-impact projects, to issue solicitations specifically for dFDA core technologies.
    - **FDA Resource Alignment:** Push FDA to prioritize existing IT/data modernization funds (part of FDA's overall budget, e.g., significant portion of the requested +\$105M for modernization in FY24) and Sentinel Initiative resources towards building infrastructure compatible with dFDA.
    - **CMS Innovation Models:** Direct the Center for Medicare & Medicaid Innovation (CMMI [approx. \$10B available per decade]), with its authority and funding, to test payment models supporting dFDA trial participation and validated interventions.
-   - **Limited Reallocation:** Explore _limited_ reallocation or re-prioritization of existing, congressionally appropriated discretionary funds within agencies towards dFDA platform development and pilot trials, acknowledging this is politically and legally complex and likely insufficient for full-scale development.
+   - **Limited Reallocation:** Explore _limited_ reallocation or re-prioritization of existing, congressionally appropriated discretionary funds within agencies towards dFDA Infrastructure development and pilot trials, acknowledging this is politically and legally complex and likely insufficient for full-scale development.
 
    **Summary of Potential Funding Sources (Annualized Estimates):**
 
@@ -77,7 +77,7 @@ A similar strategy could be employed to initiate the dFDA:
 
 ### NIH Funding Fulfilling Goals Addressable by dFDA
 
-While the dFDA platform requires dedicated funding for its creation and operation, a significant portion of the existing NIH budget is already allocated towards activities whose goals directly align with the dFDA's core function: efficient and large-scale clinical evaluation of interventions. The dFDA proposes a _method_ to achieve these existing mandates more effectively.
+While the dFDA Infrastructure requires dedicated funding for its creation and operation, a significant portion of the existing NIH budget is already allocated towards activities whose goals directly align with the dFDA's core function: efficient and large-scale clinical evaluation of interventions. The dFDA proposes a _method_ to achieve these existing mandates more effectively.
 
 | Institute/Center/Office                              | FY2024 Budget (Approx.) | Mandated Purpose/Activities Potentially Fulfilled More Efficiently by dFDA       | How dFDA Enhances Fulfillment                                                                      |
 | :--------------------------------------------------- | :---------------------- | :------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------- |
@@ -105,12 +105,12 @@ _Note: Table excludes ICs primarily focused on basic science (like NIGMS, NHGRI)
 
 The table highlights that a substantial portion of NIH's budget (~\$39.6 Billion across these selected ICs) is allocated to Institutes whose mandates inherently involve funding or supporting clinical trials to find treatments for specific diseases or conditions.
 
-- **The dFDA offers a Method, Not a New Goal:** The dFDA platform represents a potentially revolutionary _method_ for achieving the existing, congressionally mandated goals of these Institutes – finding effective treatments – but doing so faster, cheaper, and at a larger scale.
-- **Efficiency Argument:** Instead of funding numerous traditional, site-based clinical trials costing tens of thousands per patient, these ICs could potentially achieve their clinical evaluation objectives more efficiently by funding trials run _on_ the dFDA platform at a fraction of the cost (~\$500-\$1000 per patient).
+- **The dFDA offers a Method, Not a New Goal:** The dFDA Infrastructure represents a potentially revolutionary _method_ for achieving the existing, congressionally mandated goals of these Institutes – finding effective treatments – but doing so faster, cheaper, and at a larger scale.
+- **Efficiency Argument:** Instead of funding numerous traditional, site-based clinical trials costing tens of thousands per patient, these ICs could potentially achieve their clinical evaluation objectives more efficiently by funding trials run _on_ the dFDA Infrastructure at a fraction of the cost (~\$500-\$1000 per patient).
 - **Targetable Spending:** While not all ~\$39.6B is spent _solely_ on clinical trials (basic science is also funded), a significant fraction (conservatively estimated earlier at \$10-15B+ annually across NIH) _is_ directed towards clinical evaluation. It is _this_ portion of spending whose purpose could be directly and more efficiently fulfilled by leveraging the dFDA.
 - **Synergy:** This approach allows ICs to continue focusing on their specific disease areas (cancer, infectious disease, aging, etc.) while utilizing a shared, efficient, cutting-edge platform for the clinical trial phase, maximizing the impact of their appropriated funds.
 
-Therefore, while direct _reallocation_ of funds between appropriations accounts via executive order is problematic, there is a strong argument that the executive branch could direct NIH to _fulfill its existing mandates_ for clinical evaluation by prioritizing the use of the more efficient dFDA platform, thereby achieving congressional goals more effectively with the allocated funds.
+Therefore, while direct _reallocation_ of funds between appropriations accounts via executive order is problematic, there is a strong argument that the executive branch could direct NIH to _fulfill its existing mandates_ for clinical evaluation by prioritizing the use of the more efficient dFDA Infrastructure, thereby achieving congressional goals more effectively with the allocated funds.
 
 7. **Personnel & Expertise:**
 
@@ -185,10 +185,10 @@ Additional critical issues include:
 #### **3.1 Establishment of the Decentralized Autonomous FDA**
 
 Within 180 days, the Secretary of Health and Human Services (HHS) shall:
-(a) Develop and deploy the **dFDA platform**, integrating:
+(a) Develop and deploy the **dFDA Infrastructure**, integrating:
 
 - [Blockchain technology](https://aws.amazon.com/what-is/blockchain/) for immutable, transparent data sharing (e.g., [Hyperledger Fabric](https://www.lfdecentralizedtrust.org/projects/fabric)).
-- **Open Source**: The dFDA platform will be developed as open-source software, with publicly accessible code repositories to foster transparency, community contributions, and independent audits.
+- **Open Source**: The dFDA Infrastructure will be developed as open-source software, with publicly accessible code repositories to foster transparency, community contributions, and independent audits.
 - [Machine-learning models](https://www.databricks.com/glossary/machine-learning-models) trained on the entire universe of clinical and RWD, including international datasets ([EU EMA](https://www.ema.europa.eu/en/homepage), [Japan PMDA](https://www.pmda.go.jp/english/)).
 - Automated adverse-event detection using [Natural Language Processing (NLP)](https://www.ibm.com/think/topics/natural-language-processing) of social media, EHRs, and pharmacy records.
 - **Transform fda.gov into an "Amazon for Decentralized Trials"** where anyone can effortlessly create or join a study, modeled after successful platforms like the [Oxford RECOVERY trial](https://www.recoverytrial.net/).

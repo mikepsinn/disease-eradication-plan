@@ -8,7 +8,7 @@ tags: [aging, longevity, dih, governance, referendum]
 
 ## Mission
 
-Accelerate the prevention and reversal of age-related decline by coordinating aging/longevity communities, launching decentralized trials on the dFDA platform, and mobilizing institutional endorsements for the 1% Treaty referendum.
+Accelerate the prevention and reversal of age-related decline by coordinating aging/longevity communities, launching decentralized trials on the dFDA Infrastructure, and mobilizing institutional endorsements for the 1% Treaty referendum.
 
 ## Scope
 
@@ -27,7 +27,7 @@ Appointments are criteria-based with public COI disclosures; titles are honorary
 
 ## Interfaces
 
-- dFDA Platform: trial templates for aging endpoints; outcome ranking integration
+- dFDA Infrastructure: trial templates for aging endpoints; outcome ranking integration
 - DIH Cross-Cutting: Data/Interop (standards), Safety (pharmacovigilance), AI/Methods (adaptive designs), Treasury (subsidies)
 - On-chain modules: grants/QF rounds, outcome bounties, patient subsidies; institute wallet with role-bound credentials
 - Oracles: evidence (ranked outcomes), identity/COI attestations, safety incident feed; public attestation registry

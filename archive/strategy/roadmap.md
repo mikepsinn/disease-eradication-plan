@@ -68,7 +68,7 @@ See the [Operations Process Index](../operations/process-index.md) for links to 
 
 - [ ] **Activate the DIH Treasury:** Begin receiving the 1% revenue stream (\$27B+ annually) from signatory nations.
 - [ ] **Deliver Superior Returns to Investors:** Repay `VICTORY Bond` holders with a return engineered to be superior to alternative investments, fulfilling the core financial promise.
-- [ ] **Fund Global Public Goods:** Deploy treasury funds to high-impact initiatives, with the primary focus on subsidizing patient participation in efficient, decentralized clinical trials via the **[dFDA Platform Technical Roadmap](../features/dfda-roadmap.md)**.
+- [ ] **Fund Global Public Goods:** Deploy treasury funds to high-impact initiatives, with the primary focus on subsidizing patient participation in efficient, decentralized clinical trials via the **[dFDA Infrastructure Technical Roadmap](../features/dfda-roadmap.md)**.
 
 ---
 

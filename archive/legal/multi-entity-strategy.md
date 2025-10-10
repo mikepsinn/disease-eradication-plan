@@ -31,7 +31,7 @@ graph TD
     end
 
     A -- "Sells VICTORY Bonds" --> Investors
-    A -- "Funds..." --> D["dFDA Platform & Operations<br/><i>(The 'Product')</i>"]
+    A -- "Funds..." --> D["dFDA Infrastructure & Operations<br/><i>(The 'Product')</i>"]
 
     B -- "Focuses on..." --> E["<b>Education & Research</b><br/>- Public awareness campaigns<br/>- White papers & analysis<br/>- Building the website"]
 
@@ -81,7 +81,7 @@ This entity is the political and advocacy arm, designed to translate public will
 
 This entity is the financial and operational engine that manages investments and delivers returns.
 
-- **Primary Purpose:** To manage the sale of [VICTORY Bonds](../strategy/1-percent-treaty/victory-bonds-tokenomics.md), fund the operational development of the dFDA platform, and provide a financial return to investors.
+- **Primary Purpose:** To manage the sale of [VICTORY Bonds](../strategy/1-percent-treaty/victory-bonds-tokenomics.md), fund the operational development of the dFDA Infrastructure, and provide a financial return to investors.
 - **Permitted Activities:**
 - Issuing securities (VICTORY Bonds) and managing investor relations.
 - Funding the technology development and operational scaling of the dFDA.

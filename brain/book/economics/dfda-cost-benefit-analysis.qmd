@@ -29,7 +29,7 @@ dateCreated: 2025-04-29T01:07:30.411Z
 
 **Exceptional Economic Value:**
 
-- **Return on Investment (ROI):** The dFDA platform demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**\$50 billion in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately [**463:1**](#final-roi-and-net-benefit) over 10 years. This high ratio reflects the platform's significant leverage: a relatively modest investment in a global software infrastructure that generates vast savings across the entire pharmaceutical R&D industry.
+- **Return on Investment (ROI):** The dFDA Infrastructure demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**\$50 billion in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately [**463:1**](#final-roi-and-net-benefit) over 10 years. This high ratio reflects the platform's significant leverage: a relatively modest investment in a global software infrastructure that generates vast savings across the entire pharmaceutical R&D industry.
 - **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves substantial costs and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$59,501 per QALY gained**](../references.qmd#qaly-value)), far exceeding standard government value thresholds.
 - **Daily Opportunity Cost of Inaction:** Each day the current paradigm is maintained represents a societal opportunity cost of approximately [**\$137 million** in forgone economic efficiencies and **2,301** in lost Quality-Adjusted Life Years (QALYs)](#daily-opportunity-cost-of-inaction).
 
@@ -152,7 +152,7 @@ To complement the bottom-up ROM, we can derive a top-down estimate by examining 
 
 **Analogous ROM Conclusion:**
 
-Based on these market comparables, the total investment required to fund a global dFDA platform initiative, from initial build to widespread adoption, can be estimated to be in the range of **\$50 million to \$500 million**.
+Based on these market comparables, the total investment required to fund a global dFDA Infrastructure initiative, from initial build to widespread adoption, can be estimated to be in the range of **\$50 million to \$500 million**.
 
 - The lower end (~\$50M) aligns with the capital needed to build a robust platform and achieve initial scale, similar to companies like Science 37 or Thread.
 - The upper end (~\$500M+) reflects the multi-year investment needed to build a market-leading, feature-rich global platform with a vast ecosystem, analogous to the trajectory of Medable.
@@ -206,9 +206,9 @@ The **5M MAU** target is an illustrative milestone used for these initial ROM es
 _(Note: The underlying cloud infrastructure cost (\$5M-\$15M/year) is a top-down ROM estimate. A more granular, bottom-up analysis based on projected per-user storage, data transfer, and compute would provide further support for these figures and is a key area for future refinement of this model.)_
 
 \*Note on Participant Financial Contributions and NIH Cost Discounts (Alignment with "Right to Trial & FDA Upgrade Act"):
-This core platform operational cost estimate **focuses on the technology infrastructure and does not include the direct financial transactions related to individual trial participation.** The "Right to Trial & FDA Upgrade Act" (specifically SEC. 303 and SEC. 304) outlines a model where: 1. **Sponsor-Determined Participation Costs:** Sponsors itemize the direct costs of a patient's participation in a trial (SEC. 304(a)). 2. **NIH-Funded Direct Discount:** The NIH Trial Participation Cost Discount Fund directly covers a portion of these patient-borne costs. The specific percentage or amount of this discount is determined by an NIH-managed allocation algorithm aiming to maximize QALYs and other public health benefits (SEC. 303(b, c)). For initial operationalization, while the full algorithm is developed and sufficient data is accrued via the platform, a standardized default discount (e.g., the NIH Fund covering 50% of patient-borne costs) could be applied as a baseline policy. This would allow subsidies to flow quickly, with the mechanism evolving towards the dynamic, data-driven algorithm over time as envisioned in the Act. 3. **Patient Net Cost Contribution:** The patient is responsible for the remaining net cost after the NIH discount is applied (SEC. 304(b)). 4. **Platform Facilitation:** The dFDA platform's role, as costed in its operational ROM, includes modules (like the Trial Cost and Discount Module per SEC. 204(c)(3)) to transparently display the itemized costs, the NIH-funded discount, and the final net patient contribution. The platform facilitates the management of these financial components but does not itself disburse the NIH funds or determine the discount amounts.
+This core platform operational cost estimate **focuses on the technology infrastructure and does not include the direct financial transactions related to individual trial participation.** The "Right to Trial & FDA Upgrade Act" (specifically SEC. 303 and SEC. 304) outlines a model where: 1. **Sponsor-Determined Participation Costs:** Sponsors itemize the direct costs of a patient's participation in a trial (SEC. 304(a)). 2. **NIH-Funded Direct Discount:** The NIH Trial Participation Cost Discount Fund directly covers a portion of these patient-borne costs. The specific percentage or amount of this discount is determined by an NIH-managed allocation algorithm aiming to maximize QALYs and other public health benefits (SEC. 303(b, c)). For initial operationalization, while the full algorithm is developed and sufficient data is accrued via the platform, a standardized default discount (e.g., the NIH Fund covering 50% of patient-borne costs) could be applied as a baseline policy. This would allow subsidies to flow quickly, with the mechanism evolving towards the dynamic, data-driven algorithm over time as envisioned in the Act. 3. **Patient Net Cost Contribution:** The patient is responsible for the remaining net cost after the NIH discount is applied (SEC. 304(b)). 4. **Platform Facilitation:** The dFDA Infrastructure's role, as costed in its operational ROM, includes modules (like the Trial Cost and Discount Module per SEC. 204(c)(3)) to transparently display the itemized costs, the NIH-funded discount, and the final net patient contribution. The platform facilitates the management of these financial components but does not itself disburse the NIH funds or determine the discount amounts.
 
-Large-scale figures sometimes discussed for "participant support" or "subsidies" would primarily reflect the total budget and impact of the NIH Trial Participation Cost Discount Fund, not operational outlays by the dFDA platform for direct compensation (which is not part of this model).
+Large-scale figures sometimes discussed for "participant support" or "subsidies" would primarily reflect the total budget and impact of the NIH Trial Participation Cost Discount Fund, not operational outlays by the dFDA Infrastructure for direct compensation (which is not part of this model).
 
 _This estimate also excludes costs associated with running the **DAO governance structure** itself and the cost of developing and maintaining the **plugin ecosystem** (though some plugin development could be incentivized via platform-specific bounties as per the Act)._
 
@@ -302,7 +302,7 @@ _This estimate also excludes costs associated with running the **DAO governance 
 > - **Upfront (Year 1):** [\$8.5M (including contingency)](#cost-optimization-strategies-and-risk-mitigation)
 > - **Annual Operations (Years 2+):** [\$3.0M (including bounties and community programs)](#cost-optimization-strategies-and-risk-mitigation)
 
-_Note: These optimized ROM estimates reflect a strategic approach leveraging open-source, community engagement, and AI to deliver the comprehensive dFDA platform capabilities mandated by the Act in a cost-effective manner. The success of this model hinges on robust community participation and effective management of bounty and prize programs._
+_Note: These optimized ROM estimates reflect a strategic approach leveraging open-source, community engagement, and AI to deliver the comprehensive dFDA Infrastructure capabilities mandated by the Act in a cost-effective manner. The success of this model hinges on robust community participation and effective management of bounty and prize programs._
 
 ### Scenario Based ROM Estimates for Broader Initiative Costs
 
@@ -333,7 +333,7 @@ This revised, bottom-up ROM highlights that while the core _technology platform_
 
 ## Benefit Analysis Quantifying the Savings
 
-This section quantifies the potential societal benefits of the dFDA platform, focusing primarily on R&D cost savings and health outcome improvements.
+This section quantifies the potential societal benefits of the dFDA Infrastructure, focusing primarily on R&D cost savings and health outcome improvements.
 
 ### Market Size and Impact
 
@@ -378,11 +378,11 @@ For this analysis, we use a conservative baseline estimate of **[\$100 billion p
 
 4. **Accelerated Adoption through Legislative Mandates**
 
-   - Provisions such as a "Right to Trial," as outlined in the ["Right to Trial and FDA Upgrade Act"](../act.qmd), would significantly accelerate the adoption and utilization of the dFDA platform. By guaranteeing patient access to trials via the platform, data generation, network effects, and the realization of cost savings would be expedited, further enhancing the overall benefits projected in this analysis.
+   - Provisions such as a "Right to Trial," as outlined in the ["Right to Trial and FDA Upgrade Act"](../act.qmd), would significantly accelerate the adoption and utilization of the dFDA Infrastructure. By guaranteeing patient access to trials via the platform, data generation, network effects, and the realization of cost savings would be expedited, further enhancing the overall benefits projected in this analysis.
 
 5. **Increased Competition Among Sponsors Leading to Lower Submitted Trial Costs**
 
-   - The transparent nature of the dFDA platform, coupled with mechanisms like NIH discount allocations based on value (QALYs per dollar as described in the "Right to Trial & FDA Upgrade Act"), is expected to create a competitive environment. Sponsors will be incentivized to submit the most efficient trial designs and leanest operational costs to the platform to attract NIH support and patient participation, further driving down the overall R&D expenditure beyond just the technical efficiencies of decentralized trials themselves.
+   - The transparent nature of the dFDA Infrastructure, coupled with mechanisms like NIH discount allocations based on value (QALYs per dollar as described in the "Right to Trial & FDA Upgrade Act"), is expected to create a competitive environment. Sponsors will be incentivized to submit the most efficient trial designs and leanest operational costs to the platform to attract NIH support and patient participation, further driving down the overall R&D expenditure beyond just the technical efficiencies of decentralized trials themselves.
 
 ### Drug Price Reductions from Global Competition and Importation
 
@@ -395,7 +395,7 @@ For this analysis, we use a conservative baseline estimate of **[\$100 billion p
   - Sarnak, D. O., et al. (2017). [Paying for Prescription Drugs Around the World: Why Is the U.S. an Outlier?](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
   - Kesselheim, A. S., et al. (2016). [The high cost of prescription drugs in the United States.](https://jamanetwork.com/journals/jama/article-abstract/2545691)
 
-Beyond direct importation effects, the fundamental efficiencies introduced by the dFDA platform, drastically reduced R&D costs and accelerated development timelines, are anticipated to further enhance overall market competition for medicines. By lowering the barriers to entry for bringing novel therapies, as well as generics and biosimilars, to market, the dFDA can foster a richer landscape of therapeutic alternatives. A greater number of competing products for similar indications is a well-established economic driver for lower final drug prices, benefiting payors and patients alike. While quantifying this specific effect on end-user drug prices is complex and multifactorial, the structural changes proposed by the dFDA strongly support a trend towards increased affordability through enhanced market competition.
+Beyond direct importation effects, the fundamental efficiencies introduced by the dFDA Infrastructure, drastically reduced R&D costs and accelerated development timelines, are anticipated to further enhance overall market competition for medicines. By lowering the barriers to entry for bringing novel therapies, as well as generics and biosimilars, to market, the dFDA can foster a richer landscape of therapeutic alternatives. A greater number of competing products for similar indications is a well-established economic driver for lower final drug prices, benefiting payors and patients alike. While quantifying this specific effect on end-user drug prices is complex and multifactorial, the structural changes proposed by the dFDA strongly support a trend towards increased affordability through enhanced market competition.
 
 ### Prevention Savings from Increased Preventive Care
 
@@ -450,7 +450,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 ## ROI Analysis
 
-The return on investment for the dFDA platform is exceptionally high due to its nature as a leveraged, global software infrastructure. Unlike investments in single drugs or therapies, an investment in the dFDA platform creates systemic efficiencies that benefit the entire R&D ecosystem. The primary economic benefit is the drastic reduction in clinical trial operational costs, which can be redeployed to fund a greater volume and diversity of research.
+The return on investment for the dFDA Infrastructure is exceptionally high due to its nature as a leveraged, global software infrastructure. Unlike investments in single drugs or therapies, an investment in the dFDA Infrastructure creates systemic efficiencies that benefit the entire R&D ecosystem. The primary economic benefit is the drastic reduction in clinical trial operational costs, which can be redeployed to fund a greater volume and diversity of research.
 
 ### Methodology
 
@@ -780,7 +780,7 @@ For a concrete (though simplified) scenario, assume:
    $$
      \alpha = 0.50 \quad (50\% \text{ average reduction})
    $$
-   (This is conservative relative to some references suggesting up to [80× savings](#decentralized-trial-costs-modeled-on-oxford-recovery). It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA platform will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates. [See Gross R and D Savings](#gross-r-and-d-savings-from-dfda-implementation).)\*
+   (This is conservative relative to some references suggesting up to [80× savings](#decentralized-trial-costs-modeled-on-oxford-recovery). It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates. [See Gross R and D Savings](#gross-r-and-d-savings-from-dfda-implementation).)\*
 
 5. **Adoption Curve** ($p(t)$):
 
@@ -989,18 +989,18 @@ To meet the standards of government and health technology assessment (HTA) bodie
   - "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..." ([ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/))
   - "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $150,000 per QALY..." ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf))
 
-#### Parameterization Overall dFDA Platform Impact
+#### Parameterization Overall dFDA Infrastructure Impact
 
-The dFDA platform's primary economic impact comes from significantly reducing R&D costs. Its health impact, measured in Quality-Adjusted Life Years (QALYs), stems from three main pillars: accelerating drug development, enabling better prevention through real-world evidence, and facilitating research for previously untreatable conditions.
+The dFDA Infrastructure's primary economic impact comes from significantly reducing R&D costs. Its health impact, measured in Quality-Adjusted Life Years (QALYs), stems from three main pillars: accelerating drug development, enabling better prevention through real-world evidence, and facilitating research for previously untreatable conditions.
 
-**A. Net Incremental Cost of dFDA Platform (Annual):**
+**A. Net Incremental Cost of dFDA Infrastructure (Annual):**
 
 - Calculated as: `(Platform Operational Costs) - (Gross R and D Savings from dFDA)`
 - **Baseline Assumptions for R&D Savings (same as before):**
   - Global Clinical Trial Spending Addressable by dFDA: **$100 Billion / year**.
-  - R&D Trial Cost Reduction due to dFDA (Baseline): **50%**. (Leads to $50B Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA platform will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
+  - R&D Trial Cost Reduction due to dFDA (Baseline): **50%**. (Leads to $50B Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
 
-- **Aggregate Annual QALYs Gained (ΔQALYs_total):** The number of QALYs generated annually by the dFDA platform is a composite metric derived from a detailed model in the appendix. The model provides a range of estimates based on the successful realization of the platform's potential.
+- **Aggregate Annual QALYs Gained (ΔQALYs_total):** The number of QALYs generated annually by the dFDA Infrastructure is a composite metric derived from a detailed model in the appendix. The model provides a range of estimates based on the successful realization of the platform's potential.
 - **Conservative Scenario:** 190,000 QALYs/year
 - **Base Case Scenario:** 840,000 QALYs/year
 - **Optimistic/Transformative Scenario:** 3,650,000 QALYs/year
@@ -1013,9 +1013,9 @@ For a complete breakdown of the assumptions, data sources (including NBER workin
 - **Illustrative Total Ecosystem (Low-Medium):** $0.5B ($500M) / year
 - **Illustrative Total Ecosystem (High):** $5B / year
 
-#### Sensitivity Analysis Overall dFDA Platform Cost-Effectiveness
+#### Sensitivity Analysis Overall dFDA Infrastructure Cost-Effectiveness
 
-This table analyzes the ICER for the dFDA platform by varying key assumptions. Global Clinical Trial Spending Addressable by dFDA is assumed at $100B/year (leading to $50B gross savings in the 50% reduction scenario) unless otherwise specified.
+This table analyzes the ICER for the dFDA Infrastructure by varying key assumptions. Global Clinical Trial Spending Addressable by dFDA is assumed at $100B/year (leading to $50B gross savings in the 50% reduction scenario) unless otherwise specified.
 
 | Scenario                                             | R&D Trial Cost Reduction   | Platform Op. Cost (Annual) | Net Incremental Cost (Annual) | Aggregate QALYs Gained (Annual) | ICER (Cost per QALY Gained) | Classification                          | Source/Note                                                                                                                                                                                                                                                                           |
 | ---------------------------------------------------- | -------------------------- | -------------------------- | ----------------------------- | ------------------------------- | --------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1028,28 +1028,28 @@ This table analyzes the ICER for the dFDA platform by varying key assumptions. G
 | **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ($95B Savings)     | **$0.5B ($500M)**          | **-$94.5B**                   | **3,650,000**                   | **-$25,890**                | **Dominant**                            | Using Low-Med Ecosystem Cost & [Optimistic QALY model](#summary-of-total-annual-qaly-gains).                                                                                                                                                                                          |
 | Platform Breaks Even (R&D Savings = Ops Cost)        | e.g., 0.5% ($0.5B Savings) | $0.5B ($500M)              | $0                            | 840,000                         | $0                          | Dominant (Cost-Neutral, Health Gaining) | Using Low-Med Ecosystem Cost & Base QALYs.                                                                                                                                                                                                                                            |
 
-_Note: Negative ICER values indicate that the dFDA platform is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core Platform Ops" is per the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation._
+_Note: Negative ICER values indicate that the dFDA Infrastructure is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core Platform Ops" is per the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation._
 
 #### Discussion: Policy Implications
 
-The analysis robustly demonstrates that the **dFDA platform is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the core platform's technical operational costs.**
+The analysis robustly demonstrates that the **dFDA Infrastructure is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the core platform's technical operational costs.**
 
-- **Massive Cost Savings & Extremely Favorable Core ICER**: The core dFDA platform (with operational costs of ~$19M-$40M/year as per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM) generates tens of billions in net annual R and D savings. This results in extremely negative ICERs (e.g., ~-$59,501 per QALY), indicating exceptional value.
+- **Massive Cost Savings & Extremely Favorable Core ICER**: The core dFDA Infrastructure (with operational costs of ~$19M-$40M/year as per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM) generates tens of billions in net annual R and D savings. This results in extremely negative ICERs (e.g., ~-$59,501 per QALY), indicating exceptional value.
 - **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), the dFDA initiative remains dominant and highly cost-saving, with strongly negative ICERs (e.g., -$19,041 to -$155,263 per QALY in various scenarios).
 
 **Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~$19M-$40M per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM), leading to ICERs around -$59,476 per QALY. Even when considering broader illustrative total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields substantial net monetary savings (e.g., -$29.5B to -$94.5B annually in various scenarios) while simultaneously generating hundreds of thousands to millions of QALYs each year. The actual cost per QALY gained remains strongly negative across all these scopes, making it an exceptionally high-value proposition.**
 
-*(Optional: A note could be added here that specific programs *built upon* the dFDA platform, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
+*(Optional: A note could be added here that specific programs *built upon* the dFDA Infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
 
 ---
 
 ### Appendix: Detailed QALY Calculation Model {#appendix-detailed-qaly-calculation-model}
 
-This model provides a transparent basis for the aggregate annual Quality-Adjusted Life Years (QALYs) generated by the dFDA platform. The total QALY gain is the sum of three distinct benefit streams, each presented with a conservative, base, and optimistic estimate.
+This model provides a transparent basis for the aggregate annual Quality-Adjusted Life Years (QALYs) generated by the dFDA Infrastructure. The total QALY gain is the sum of three distinct benefit streams, each presented with a conservative, base, and optimistic estimate.
 
 #### A. Accelerating Development of Existing Pipeline Drugs
 
-This stream quantifies the health gains from bringing effective treatments to patients faster. The dFDA platform is expected to shorten development and approval timelines significantly.
+This stream quantifies the health gains from bringing effective treatments to patients faster. The dFDA Infrastructure is expected to shorten development and approval timelines significantly.
 
 - **Rationale:** a one-year delay in the diffusion of new cancer therapies alone resulted in a loss of **84,000 life-years**. By reducing trial times, the dFDA can recapture this value across the entire pharmaceutical pipeline.
 - **Assumptions:**
@@ -1065,7 +1065,7 @@ This stream quantifies the health gains from bringing effective treatments to pa
 
 This stream captures the value of using the dFDA's vast data to optimize preventative care and the use of existing treatments.
 
-- **Rationale:** Research demonstrates that existing cancer screenings have already saved millions of life-years, with much potential still untapped at full adherence. The dFDA platform can identify at-risk populations and measure the real-world effectiveness of preventative interventions (e.g., statins, diabetes screening, lifestyle changes) at a massive scale.
+- **Rationale:** Research demonstrates that existing cancer screenings have already saved millions of life-years, with much potential still untapped at full adherence. The dFDA Infrastructure can identify at-risk populations and measure the real-world effectiveness of preventative interventions (e.g., statins, diabetes screening, lifestyle changes) at a massive scale.
 - **Assumptions:**
 - **Conservative:** The platform leads to modest improvements in adherence and targeting for a few key preventative measures.
 - **Base:** The platform drives significant uptake and better targeting of established preventative care across multiple chronic diseases.
@@ -1130,7 +1130,7 @@ This stream reflects the transformative potential of the dFDA to create viable r
 
 ### Daily Opportunity Cost of Inaction
 
-This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA platform. By translating the annualized benefits identified in this analysis into a daily metric, we can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.
+This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA Infrastructure. By translating the annualized benefits identified in this analysis into a daily metric, we can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.
 
 #### Base Case: Daily Lost QALYs and Financial Savings
 
@@ -1163,7 +1163,7 @@ The daily costs of inaction are highly sensitive to the underlying assumptions a
 
 #### Discussion of Uncertainty and Key Variables
 
-While the figures are presented as daily point estimates for clarity, they represent the steady-state potential loss once the dFDA platform is fully adopted. The actual daily loss on any given day depends on several key variables that introduce uncertainty:
+While the figures are presented as daily point estimates for clarity, they represent the steady-state potential loss once the dFDA Infrastructure is fully adopted. The actual daily loss on any given day depends on several key variables that introduce uncertainty:
 
 1. **Adoption Rate ($p(t)$):** The calculations above implicitly assume full adoption ($p(t)=1$). As modeled in the NPV analysis in the [ROI Analysis section](#roi-analysis), adoption will be gradual. Therefore, the daily opportunity cost will ramp up over time, starting smaller and growing as the platform's use becomes standard. The figures represent the daily cost once that potential is reached.
 2. **Magnitude of R&D Savings ($\alpha$):** The percentage reduction in R&D costs is a critical variable. While the 95% reduction seen in the RECOVERY trial demonstrates what is possible, the system-wide average may be lower. The sensitivity table addresses this by showing a range from 30% to 95%.
@@ -1182,7 +1182,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 ## Comparative Cost-Effectiveness: dFDA vs. Other Public Health Interventions
 
-To provide context for the dFDA platform's impact, the chart below visualizes its cost-effectiveness against other well-understood public health programs. The metric used is **Quality-Adjusted Life Years (QALYs) Gained per $1 Million of Spending**. A higher number signifies greater cost-effectiveness.
+To provide context for the dFDA Infrastructure's impact, the chart below visualizes its cost-effectiveness against other well-understood public health programs. The metric used is **Quality-Adjusted Life Years (QALYs) Gained per $1 Million of Spending**. A higher number signifies greater cost-effectiveness.
 
 For standard interventions, this value is calculated as `$1,000,000 / ICER`, where the ICER (Incremental Cost-Effectiveness Ratio) is the cost to gain one QALY. For **dominant** interventions that are both more effective and less expensive, the ICER is negative, and this metric isn't strictly applicable. For these cases, an illustrative range is used to represent their high value.
 
@@ -1194,7 +1194,7 @@ The following table provides the data and sources that support the chart. The li
 
 | Intervention                  | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :---------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **dFDA Platform**             |                     **4,744 - 194,667**                      | **-$260,000 to -$19,000**<a href="#ref_dfda_icer">²</a> | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating 840,000-3.65M QALYs annually.                                                                              |
+| **dFDA Infrastructure**             |                     **4,744 - 194,667**                      | **-$260,000 to -$19,000**<a href="#ref_dfda_icer">²</a> | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating 840,000-3.65M QALYs annually.                                                                              |
 | **Smallpox Eradication**      |      **10,000 - 100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its unprecedented scale. [WHO, 2010](https://www.who.int/news/item/17-05-2010-statue-commemorates-smallpox-eradication)) |
 | **Childhood Vaccinations**    |        **22 - 10,000+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. ([CDC, 2023](https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm))                                 |
 | **Clean Water Programs**      |                       **100 - 1,000**                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $20-$500/DALY averted. Community water supply improvements cost $200-$2,000/DALY. ([WHO, 2004](https://iris.who.int/bitstream/handle/10665/68568/WHO_SDE_WSH_04.04.pdf))                                              |
@@ -1207,7 +1207,7 @@ The following table provides the data and sources that support the chart. The li
 <a id="ref_chart_calc"></a>¹ **QALYs per $1M Calculation**:
 
 - For interventions with positive ICERs: `1,000,000 / ICER`
-- For the dFDA Platform: `(Annual QALYs Gained) / (Annual Cost in Millions)`
+- For the dFDA Infrastructure: `(Annual QALYs Gained) / (Annual Cost in Millions)`
 - Ranges reflect conservative to optimistic scenarios accounting for parameter uncertainties
 
 <a id="ref_dfda_icer"></a>² **Negative ICER Interpretation**:
@@ -1238,13 +1238,13 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 
 | Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to dFDA Annual Cost           | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :--------------------------------------- | :------------------------------------------------------------------------- |
-| **dFDA Platform (Lean Ecosystem)**   | **~\$40 Million / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
+| **dFDA Infrastructure (Lean Ecosystem)**   | **~\$40 Million / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                                | [21st Century Cures Act](https://www.cancer.gov/about-nci/budget)          |
 | **NIH "All of Us" Research Program** | \*\*[~\$500 Million / year](https://www.nih.gov/about-nih/what-we-do/budget) (FY23 Approx. Budget) | **~12.5x**                               | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
 | **HealthCare.gov (Initial Build)**   | **[~\$1.7 - \$2.1 Billion](https://www.gao.gov/assets/gao-07-49.pdf)** (Total Upfront Cost)        | **~42x - 52x** (of one year's dFDA cost) | [GAO Reports / Public Reporting](https://www.gao.gov/assets/gao-07-49.pdf) |
 | **National Cancer Institute (NCI)**  | **[~\$7.2 Billion / year](https://www.cancer.gov/about-nci/budget)** (FY25 Budget)                 | **~180x**                                | [NCI Budget Data](https://www.cancer.gov/about-nci/budget)                 |
 
-**Key Takeaway:** The estimated annual cost of the dFDA initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from [dFDA annual cost](#simplified-roi-scenario) and [NCI budget](#comparison-to-other-major-public-investments)). This comparison underscores that the dFDA platform is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
+**Key Takeaway:** The estimated annual cost of the dFDA initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from [dFDA annual cost](#simplified-roi-scenario) and [NCI budget](#comparison-to-other-major-public-investments)). This comparison underscores that the dFDA Infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
 
 ---
 
@@ -1258,7 +1258,7 @@ This stream models the benefit of accelerating the approval of new drugs that wo
 
 - **Parameters:**
   - $N_{\text{drugs}}$: Number of new drugs approved annually whose development is accelerated.
-    - **Rationale:** The FDA approves a significant number of new drugs each year, and the dFDA platform is expected to accelerate the development of a meaningful fraction of these.
+    - **Rationale:** The FDA approves a significant number of new drugs each year, and the dFDA Infrastructure is expected to accelerate the development of a meaningful fraction of these.
     - **Source:** The FDA consistently approves a substantial number of novel therapies. For example, in 2023, the Center for Drug Evaluation and Research (CDER) approved 55 novel drugs.
     - **Quote:** "[In 2023], the Center for Drug Evaluation and Research (CDER) approved 55 novel drugs, either as new molecular entities (NMEs) under New Drug Applications (NDAs) or as new therapeutic biologics under Biologics License Applications (BLAs)." — [Friends of Cancer Research](https://www.focr.org/)
   - $T_{\text{accel}}$: Average years of acceleration per drug.
@@ -1310,7 +1310,7 @@ This stream models the benefit of enabling trials for therapies that are current
 
 - **Parameters:**
   - $N_{\text{new\_therapies}}$: Number of entirely new, effective therapies enabled per year for untreated conditions.
-    - **Rationale:** There is a vast unmet need in the rare disease space, with an estimated [7,000 to 10,000 known rare diseases](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10290406/) and treatments for only about 5%. Lowering trial costs via the dFDA platform would catalyze R&D for this underserved population.
+    - **Rationale:** There is a vast unmet need in the rare disease space, with an estimated [7,000 to 10,000 known rare diseases](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10290406/) and treatments for only about 5%. Lowering trial costs via the dFDA Infrastructure would catalyze R&D for this underserved population.
     - **Source:** U.S. Government Accountability Office (GAO).
     - **Quote:** "But only about 5% of the nearly 10,000 identified rare diseases have Food and Drug Administration-approved treatments." — [GAO, Nov 2024](https://www.gao.gov/products/gao-25-106774)
   - $P_{\text{therapy}}$: Average number of patients benefiting from a new rare disease therapy.

@@ -10,7 +10,7 @@ The model is based on the data in the full [dFDA Cost Benefit Analysis document]
 Key outputs of this model include:
 
 - Projected annual R&D savings
-- Return on Investment (ROI) for the dFDA platform
+- Return on Investment (ROI) for the dFDA Infrastructure
 - Estimated health gains in Quality-Adjusted Life Years (QALYs)
 - Sensitivity analysis on the key drivers of these benefits
 - Rigorous Net Present Value (NPV) analysis
@@ -150,7 +150,7 @@ print(f"Funding Coverage (Captured Dividend / OpEx): {funding_coverage_ratio:,.1
 
 ## dFDA Investment Returns Visualization
 
-This chart shows the dramatic return on investment for the dFDA platform, comparing the small operational cost to the massive benefits it generates.
+This chart shows the dramatic return on investment for the dFDA Infrastructure, comparing the small operational cost to the massive benefits it generates.
 
 ```{python}
 # --- Modern Visualization: dFDA Investment Returns ---

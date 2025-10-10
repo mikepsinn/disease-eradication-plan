@@ -1,5 +1,5 @@
 ---
-title: Security & Audit Lead — DIH Treasury and dFDA Platform
+title: Security & Audit Lead — DIH Treasury and dFDA Infrastructure
 description: Keep money and systems safe. Watch for attacks. Run fast response and audits.
 published: true
 date: 2025-08-22T00:00:00.000Z

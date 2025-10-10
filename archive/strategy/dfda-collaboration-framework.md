@@ -39,7 +39,7 @@ Implementing the dFDA collaboration platform utilizing existing open-source tool
 
 1. **Research and Selection of Tools**:
 
-   - Conduct a thorough review of existing open-source tools that align with the requirements of the dFDA platform, focusing on communication, collaboration, data sharing, and decentralized governance.
+   - Conduct a thorough review of existing open-source tools that align with the requirements of the dFDA Infrastructure, focusing on communication, collaboration, data sharing, and decentralized governance.
 
 2. **Core Communication and Collaboration**:
 

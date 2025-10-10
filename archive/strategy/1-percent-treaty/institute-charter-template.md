@@ -39,7 +39,7 @@ All appointments are criteria-based, conflict-of-interest disclosed, and listed 
 ## Interfaces
 
 - Coordination with DIH Treasury, Safety, Data/Interop, and AI/Methods
-- dFDA platform usage: trial templates, data standards, and outcome reporting
+- dFDA Infrastructure usage: trial templates, data standards, and outcome reporting
 - On-chain modules used: grants/QF rounds, outcome bounties, patient subsidies
 - Oracles consumed: evidence, identity/COI, safety; institute maintains a public attestation feed
 

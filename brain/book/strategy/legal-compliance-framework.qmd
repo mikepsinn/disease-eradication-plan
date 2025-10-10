@@ -247,7 +247,7 @@ graph TD
     end
 
     A -- "Sells VICTORY Bonds" --> Investors
-    A -- "Funds..." --> D["dFDA Platform & Operations<br/><i>(The 'Product')</i>"]
+    A -- "Funds..." --> D["dFDA Infrastructure & Operations<br/><i>(The 'Product')</i>"]
 
     B -- "Focuses on..." --> E["<b>Education & Research</b><br/>- Public awareness campaigns<br/>- White papers & analysis<br/>- Building the website"]
 
@@ -309,7 +309,7 @@ graph TD
 
 ### HHS Policy Recommendations
 
-To maximize the effectiveness of the dFDA platform, we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source, decentralized FDA platform enabling perpetual, patient-driven clinical trials.
+To maximize the effectiveness of the dFDA Infrastructure, we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source, decentralized FDA platform enabling perpetual, patient-driven clinical trials.
 
 **Key Policy Objectives:**
 

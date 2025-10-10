@@ -548,7 +548,7 @@ Cost to You: $0
     │   "Covers most trial costs"
     │   "Patients pay small copay ($20-50)"
     │   "Pharma RECEIVES money instead of paying"
-    ├─→ 📱 dFDA Platform (5%)
+    ├─→ 📱 dFDA Infrastructure (5%)
     │   "Global trial infrastructure"
     ├─→ 📈 VICTORY Bond Returns (5%)
     │   "Investor rewards"

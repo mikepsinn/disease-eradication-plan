@@ -9,9 +9,9 @@ dateCreated: 2025-02-20T05:44:49.624Z
 
 This proposal recommends that the Department of Health and Human Services (HHS) sponsor an **FDA-X Prize** to incentivize the creation of an **open-source, decentralized FDA (dFDA)** platform. This platform would enable **perpetual, patient-driven clinical trials** accessible to anyone globally, eliminating inefficiencies in the current phased trial system. The proposal outlines strategies for **redirecting NIH research funding**, **leveraging existing HHS authorities**, and **adopting outcome-based funding models** to maximize trial participation without requiring new legislation. Additionally, it proposes the **strategic reallocation of portions of Medicare and Medicaid funding** under existing statutory provisions to support broader access to decentralized trials.
 
-A critical component of this proposal is to **clarify the potential for drug companies to set a per-participant price** when creating trials on the dFDA platform. Under existing **FDA regulations ([21 CFR 312.8](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/section-312.8))**, companies may charge for investigational drugs to recover direct costs, including employee salaries. This means that **drug companies could legally charge the NIH a per-participant price** covering all operational expenses—such as manufacturing, distribution, and employee compensation—**without requiring pre-approval**, provided they do not exceed cost-recovery limits. This structure would enable companies to sustain clinical trial operations while maintaining compliance with regulatory standards, promoting a scalable and sustainable ecosystem for perpetual trials.
+A critical component of this proposal is to **clarify the potential for drug companies to set a per-participant price** when creating trials on the dFDA Infrastructure. Under existing **FDA regulations ([21 CFR 312.8](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/section-312.8))**, companies may charge for investigational drugs to recover direct costs, including employee salaries. This means that **drug companies could legally charge the NIH a per-participant price** covering all operational expenses—such as manufacturing, distribution, and employee compensation—**without requiring pre-approval**, provided they do not exceed cost-recovery limits. This structure would enable companies to sustain clinical trial operations while maintaining compliance with regulatory standards, promoting a scalable and sustainable ecosystem for perpetual trials.
 
-Moreover, **existing Medicare and Medicaid policies** already permit reimbursement for routine patient costs in qualifying clinical trials. By aligning the dFDA platform's operational structure with these statutory frameworks, **drug companies could expand access to experimental treatments**, leveraging government funding mechanisms to cover essential costs. This approach ensures that trial sponsors can sustainably conduct large-scale studies while maintaining affordability and regulatory compliance.
+Moreover, **existing Medicare and Medicaid policies** already permit reimbursement for routine patient costs in qualifying clinical trials. By aligning the dFDA Infrastructure's operational structure with these statutory frameworks, **drug companies could expand access to experimental treatments**, leveraging government funding mechanisms to cover essential costs. This approach ensures that trial sponsors can sustainably conduct large-scale studies while maintaining affordability and regulatory compliance.
 
 ---
 
@@ -34,7 +34,7 @@ Moreover, **existing Medicare and Medicaid policies** already permit reimburseme
 3. **Clarify Pricing Mechanisms for Trial Sponsors:** Allow drug companies to set per-participant prices charged to NIH, covering direct costs (including employee salaries) without profit generation, consistent with **FDA regulations (21 CFR 312.8)**.
 4. **Redirect NIH Research Funding:** Transition NIH-funded research toward projects leveraging the dFDA system ([NIH Budget](https://www.hhs.gov/sites/default/files/fy-2025-budget-in-brief.pdf)).
 5. **Leverage Medicare and Medicaid for Trial Access:** Utilize existing statutory provisions allowing beneficiaries to participate in qualifying clinical trials ([CMS Medicare Policy](https://www.cms.gov/medicare/coverage/approved-facilities-trials-registries/clinical-policies), [Medicaid Clinical Trial Coverage Act](https://www.medicaid.gov/federal-policy-guidance/downloads/smd21005.pdf)).
-6. **Incentivize Innovation via FDA-X Prize:** Launch a $500 million X Prize competition to develop and deploy the dFDA platform.
+6. **Incentivize Innovation via FDA-X Prize:** Launch a $500 million X Prize competition to develop and deploy the dFDA Infrastructure.
 7. **Expand Adaptive and Pragmatic Trials:** Use NIH funding and Medicare/Medicaid reimbursements to sponsor scalable adaptive trials, ensuring cost-effective and real-world data generation.
 8. **Government Co-Funding and Outcome-Based Payment Models:** Utilize milestone-based payments and alternative payment models through CMMI to incentivize private-sector participation.
 
@@ -67,7 +67,7 @@ Given the **$30.6 billion** annual allocation for perpetual and adaptive trial e
 
 - **Total Prize Pool:** $500 million.
 - **Prize Structure:**
-  - $250M for the first team to build a fully functional, open-source dFDA platform.
+  - $250M for the first team to build a fully functional, open-source dFDA Infrastructure.
   - $150M distributed among teams demonstrating scalable perpetual trials.
   - $100M in milestone prizes for critical technological breakthroughs.
 - **Key Requirements:**
@@ -207,7 +207,7 @@ Below is a comprehensive list of statutes, executive actions, and related preced
 
 ## Phase 2 (Months 6-18)
 
-- First working prototypes of dFDA platform
+- First working prototypes of dFDA Infrastructure
 - Pilot trials with 3-5 drug candidates
 - Integration with existing EHR systems
 - Security and compliance audits

@@ -9,7 +9,7 @@ dateCreated: "2025-01-20T00:00:00.000Z"
 
 ## Purpose
 
-We compare viable fundraising models against the Decentralized Institutes of Health (DIH) initiative’s requirements: speed to capital, scale (\$1.2–\$2.5B), global reach, legal risk, investor inclusivity, and reputational integrity. The DIH will fund the dFDA platform and decentralized trials. We also identify proven public‑goods funding precedents and recommend a best‑fit approach.
+We compare viable fundraising models against the Decentralized Institutes of Health (DIH) initiative’s requirements: speed to capital, scale (\$1.2–\$2.5B), global reach, legal risk, investor inclusivity, and reputational integrity. The DIH will fund the dFDA Infrastructure and decentralized trials. We also identify proven public‑goods funding precedents and recommend a best‑fit approach.
 
 ## Evaluation Criteria
 

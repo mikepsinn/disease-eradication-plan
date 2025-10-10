@@ -306,19 +306,19 @@ We'll keep you informed about the latest developments in decentralized clinical 
     >
     > -- <cite>[Examination of Clinical Trial Costs and Barriers for Drug Development](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0)</cite>
 
-14. **Claim:** The dFDA platform can accelerate trial timelines to 2 years.
+14. **Claim:** The dFDA Infrastructure can accelerate trial timelines to 2 years.
 
     > "24 months: Universal enrolment guarantee active; subsidies flowing."
     >
     > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-403-implementation-timeline)</cite>
 
-15. **Claim:** The dFDA platform can reduce trial costs to ~\$2M.
+15. **Claim:** The dFDA Infrastructure can reduce trial costs to ~\$2M.
 
     > "The total cost of the UK Oxford RECOVERY trial was £2.1 million (~$2.7M)... This is nearly 80 times more cost-efficient than traditional clinical trials"
     >
     > -- <cite>[Decentralized Pragmatic Trials](./reference/recovery-trial.md)</cite>
 
-16. **Claim:** The dFDA platform can enable 100% patient participation.
+16. **Claim:** The dFDA Infrastructure can enable 100% patient participation.
     > "any U.S. resident who requests an investigational intervention shall be guaranteed enrolment—remotely if necessary—in at least one pragmatic, decentralized trial arm evaluating that intervention"
     >
     > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-301-universal-eligibility-for-investigational-interventions)</cite>
