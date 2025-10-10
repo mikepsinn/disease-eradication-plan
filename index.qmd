@@ -87,25 +87,19 @@ When you actually use these murder tools, the real costs explode:
 **Total true cost of war: $9.7 trillion annually.** That's enough money to give every human on Earth $1,200 just to shut up about their problems.
 
 
-#### Now Add What Not Curing Diseases Actually Costs Us
+#### The $119 Trillion Death Economy
 
 {{< include brain/figures/disease-vs-curing-costs-column-chart.qmd >}}
 
-Disease doesn't just kill you. It bankrupts you first.
-
-The global burden of disease (watching people rot + lost productivity + everyone's GoFundMe) is **$109 trillion annually**.
-
-Add it all up: **$119 trillion per year** on death and suffering. That's more than Earth's entire GDP, somehow.
-
-While spending **$68 billion** trying to prevent it. A rounding error.
+Disease doesn't just kill you. It bankrupts you first. The global burden of disease is **$109 trillion annually**. Add war's $9.7 trillion. Total: **$119 trillion per year** flushed down the death toilet.
 
 ```{mermaid}
 flowchart TD
     subgraph "The $119 Trillion Death Economy"
-        War["🔫 War Costs<br/>$9.7T/year<br/>• Direct military: $2.7T<br/>• Hidden costs: $7T<br/>• Lost Pentagon money: $2.5T"]
-        Disease["💀 Disease Burden<br/>$109.1T/year<br/>• Healthcare costs<br/>• Lost productivity<br/>• Human suffering"]
+        War["🔫 War: $9.7T/year<br/>(Direct + hidden + lost Pentagon money)"]
+        Disease["💀 Disease: $109.1T/year<br/>(Healthcare + lost productivity + suffering)"]
 
-        War --> DeathToilet["🚽 The Death Toilet<br/>$118.8 Trillion/year<br/>(More than Earth's GDP)"]
+        War --> DeathToilet["🚽 The Death Toilet<br/>$118.8T/year<br/>(More than Earth's GDP)"]
         Disease --> DeathToilet
     end
 
@@ -116,59 +110,25 @@ flowchart TD
     DeathToilet -.->|"1,750x more"| Research
 ```
 
-#### You Are a Meat Robot (and It's Possible to Fix Robots)
+**We spend 1,750 times more causing or mopping up death than preventing it.** If humanity's budget was a family making $100,000/year, we'd spend $8,200 on healthcare, $2,700 on home defense, and **$68** on actually finding cures. That's like buying 1,600 mops instead of fixing the burst pipe.
 
-You might say that $109 trillion worth of death and disease is unavoidable. Fortunately, you'd be completely wrong!
+#### Death Is Just a Software Bug
+
+You might say $109 trillion worth of disease is unavoidable. Fortunately, you'd be completely wrong.
 
 **Death is not a law of nature. It's a mechanical failure we haven't figured out how to fix yet.**
 
-Your body is basically a self-repairing meat robot running on chemistry:
-- Software: DNA (literally just code, like Windows but with more bugs)
-- Hardware: Organs (your CPU and cooling system made of ham)
-- Self-repair protocols: You build 330 billion new cells daily
-- No warranty: God's customer service is terrible
+Your body is a self-repairing meat robot:
+- Software: DNA (Windows but with more bugs)
+- Hardware: Organs (CPU made of ham)
+- Self-repair: 330 billion new cells daily
+- Warranty: Expired at birth
 
-Death is what happens when your repair subroutines can't keep up with hardware degradation. That's it. 
+**We're already fixing you:** Hot-swapping hearts like power supplies. 3D-printing titanium skulls. CRISPR literally debugs human source code with find-and-replace.
 
-**Proof We Can Already Fix You:**
-- We hot-swap hearts like power supplies
-- A kid in Michigan has a 3D-printed titanium skull
-- We can reprogram skin cells to become brain cells (like reformatting a hard drive as RAM)
-- CRISPR literally debugs human source code with find-and-replace
+**Animals that solved death while we built bombs:** Hydras (immortal), naked mole rats (cancer-proof, ugly), bowhead whales (200+ years, no Botox).
 
-**Animals That Solved Death While We Built Bombs:**
-- Hydras: Biologically immortal, been alive since before your country existed
-- Naked mole rats: Live 10x longer than they should, immune to cancer, look terrible
-- Bowhead whales: 200+ years old, no wrinkles
-
-Harvard scientists already reversed aging in mice - made them young again. Humans are just big mice with mortgages. If it works in mice, it'll work in you. Eventually. Unless we keep spending all our money on bombs.
-
-#### The Final Stupidity Ratio: 1,750-to-1
-
-**We spend 1,750 times more money causing or mopping up death than preventing it.**
-
-| What We Buy | Annual Cost | Translation for Idiots |
-| :--- | :--- | :--- |
-| **The Death Toilet** | | |
-| Disease (watching people rot) | $109.1 Trillion | Everyone you love slowly dissolving while you pay to watch |
-| War (professional murder) | $9.7 Trillion | Turning children into skeletons for fun and profit |
-| **Total Death Toilet** | **$118.8 Trillion** | **More than Earth's entire GDP, somehow** |
-| | | |
-| **Things That Don't Kill Us** | | |
-| Houses | $23.0 Trillion | Boxes to die in (at least they have WiFi) |
-| Cars & Planes | $12.0 Trillion | Metal tubes to die in (but faster) |
-| Food | $9.0 Trillion | Fuel for your meat robot |
-| Teaching Kids | $6.0 Trillion | How to read death certificates |
-| Roads & Internet | $4.0 Trillion | Infrastructure for dying while browsing |
-| **Actually Curing Diseases** | **$0.068 Trillion** | **A rounding error. LOL.** |
-
-If humanity's budget was a family making $100,000/year:
-
-- Healthcare (treating symptoms): $8,200
-- Military (home defense): $2,700  
-- Medical research (finding cures): **$68**
-
-That's like buying 1,600 mops instead of fixing the burst pipe.
+Harvard reversed aging in mice. Humans are just big mice with mortgages. If it works in mice, it'll work in you. Eventually. Unless we keep spending all our money on bombs.
 
 
 ### 150,000 Die Daily From Preventable Diseases While We Count Missiles
@@ -220,41 +180,17 @@ The people making money from war and disease aren't evil. They just like money. 
 
 ### Democracy Is Broken: Princeton Proved Your Vote Doesn't Matter
 
-Lots of people think we can fix this simply by electing better leaders. But what lots of people don't realize is that democracy is basically just theatre at this point.
+Think voting will fix this? Adorable.
 
-Princeton University did a study. They analyzed 1,779 policy decisions over 20 years. The correlation between what you want and what happens? 
+Princeton [analyzed 1,779 policy decisions](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/62327F513959D0A304D4893B382B992B/S1537592714001595a.pdf/testing_theories_of_american_politics_elites_interest_groups_and_average_citizens.pdf) over 20 years. Correlation between what you want and what happens? **Zero percent.**
 
-**Zero. Percent.**
+When economic elites want something? 78% success rate.
 
-Not low. Not small. ZERO.
+![](assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
 
-But when economic elites want something? They get it 78% of the time.
-
-You have the same political influence as your houseplant. Actually less, at least politicians pretend to care about the environment.
-
-Your "representative" has 750,000 constituents. You get 0.00013% of their attention. They spend 70% of their time fundraising from rich people who aren't you.
+Your "representative" has 750,000 constituents. You get 0.00013% of their attention. They spend 70% of their time fundraising from people who aren't you. You have the same political influence as your houseplant. Actually less - politicians pretend to care about the environment.
 
 This isn't cynicism. It's math. You live in an oligarchy with democracy cosplay.
-
-The math that matters:
-
-- 0% correlation between public preference and policy outcomes
-- 78% correlation when economic elites want something
-- Translation: You're not a citizen. You're a spectator with a ballot.
-
-Professors Martin Gilens and Benjamin Page analyzed over two decades of data to answer a fundamental question: **Does the government represent the people?**
-
-After examining nearly 2,000 public opinion surveys and comparing them to actual policy outcomes, they discovered that the opinions of [90% of Americans have virtually no impact on legislation](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/62327F513959D0A304D4893B382B992B/S1537592714001595a.pdf/testing_theories_of_american_politics_elites_interest_groups_and_average_citizens.pdf).
-
-In a representative democracy, the more people like a bill, the more likely it would be to become law.
-
-![](assets/bill-public-support-vs-chance-of-adoption-true-democracy.png)
-
-However, in reality, public support has almost no influence on what laws are passed. Whether there is [0% or 100%](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/62327F513959D0A304D4893B382B992B/S1537592714001595a.pdf/testing_theories_of_american_politics_elites_interest_groups_and_average_citizens.pdf) support for a policy, there's a [30% likelihood](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/62327F513959D0A304D4893B382B992B/S1537592714001595a.pdf/testing_theories_of_american_politics_elites_interest_groups_and_average_citizens.pdf) that it will become law.
-
-![This image has an empty alt attribute; its file name is image-5.png](assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
-
-So voting won't fix this. Neither will protests. The system is designed to ignore you.
 
 But there's another way to change the world: **Make doing the right thing more profitable than doing the wrong thing.**
 
@@ -511,59 +447,15 @@ We're not inventing anything. We're just doing the smart thing more often.
 
 ---
 
-## V. The Future: Choose Between Mad Max or Star Trek
+## V. The Future: Your Kid Gets Cancer in 2050
 
-### Path A (Idiocracy): Nuclear Winter and 35-Year Lifespans by 2050
+**Option A (Status Quo):** You sell your house, start a GoFundMe, watch her die anyway. Life expectancy: 35. Diet: Bugs. WiFi: Terrible. Mad Max but with worse teeth.
 
-![Figure 8: Choose Your Own Adventure - Split timeline visualization. Left path leads to dark "Idiocracy" with mushroom clouds, bunkers, and people fighting over water. Right path leads to bright "Wishonia" with floating cities, healthy centenarians playing tennis, and children learning from holographic teachers.]
-
-**Idiocracy (if we keep funding war) - The Three Subs:**
-
-- 🧠 **Sub-Intelligence**: IQ dropping, education collapsed, eating lead paint for nutrients
-- ⏳ **Sub-Longevity**: Life expectancy 35, dying of scurvy like a pirate
-- 😢 **Sub-Wellbeing**: 80% mentally ill, constant fear, happiness is illegal
-- Nuclear winter by 2050
-- Diet: Bugs and bunker rations (the bugs are winning)
-- Entertainment: Fighting over water (water usually wins)
-- WiFi: Terrible
-- Status: Mad Max but with worse teeth
-
-### Path B (Wishonia): Optional Death and Paradise by 2050
-
-**Wishonia (if we fund cures) - The Three Supers:**
-
-- 🧠 **Super-Intelligence**: IQ unlimited, merge with AI, understand Rick & Morty
-- ⏳ **Super-Longevity**: Death optional, backups available, respawn enabled
-- 😊 **Super-Wellbeing**: Happiness baseline adjustable, suffering extinct, bliss on tap
-- Death defeated by 2050 (it retired)
-- Life expectancy: "Yes"
-- Disease: In museums next to smallpox
-- Poverty: Conceptually impossible
-- War: "That thing where people murdered each other? Weird."
-- WiFi: Telepathic
-- Status: Star Trek but with better writing
-
-Your kid gets diagnosed with something unpronounceable. 
-
-In Idiocracy: You sell your house, start a GoFundMe, watch her die anyway.
-
-In Wishonia: The doctor uploads her DNA, a computer designs a cure, the pharmacy prints it, she's fine by Thursday. Cost: $0. Because we stopped buying bombs.
-
-Cancer becomes like strep throat, annoying but fixable. Alzheimer's gets deleted. Hearts get upgraded. Death becomes optional, or at least negotiable.
+**Option B (With 1% Treaty):** Doctor uploads her DNA, computer designs cure, pharmacy prints it, she's fine by Thursday. Cost: $0. Life expectancy: "Yes." Disease: In museums next to smallpox.
 
 Your great-grandchildren will think we were barbarians. "They let people die of CANCER?" they'll say. "What, did they also drill holes in skulls for headaches?"
 
 Yes, actually. We did that too.
-
-When we stop spending money on murder:
-
-- Healthcare costs approach zero (no sick people = no bills)
-- The $16.5 trillion we waste on violence goes to space colonies or whatever
-- Humans live as long as they want (or until they get bored)
-- The entire concept of "retirement" becomes weird
-- Insurance companies have to find real jobs
-
-This isn't utopia. People will still be people. We'll still have reality TV and Twitter. But at least we won't be dying of preventable diseases while building our 10,000th nuclear warhead.
 
 ---
 
@@ -639,51 +531,16 @@ Better than:
 
 {{< include brain/figures/victory-bonds-returns.qmd >}}
 
-**IMPORTANT MATH FOR CONFUSED PEOPLE:**
-
-- VICTORY bonds: 270% annual returns for investors (that's you getting rich)
-- dFDA Infrastructure: 463:1 societal ROI (that's humanity getting rich)
-- Translation: You make 270% per year forever, society makes $463 for every $1 spent
-- Everyone wins except disease and death
-
-### The Revenue Model: Capturing 1% of $119T Death Economy
-
-**Here's how:**
-
-- We raise $1 billion to redirect $27 billion annually
-- You get 10% of treaty inflows = $2.7B/year
-- That's 270% returns. Forever.
-- If we fully succeed, your grandchildren's grandchildren are still getting paid
-
-**The Two-Layer Money Machine:**
-
-- Direct Capture: $24.4B to DIH treasury (1% military budget cut)
-- Societal Dividend: $92B in total economic benefit (reduced disease burden)
-- We only capture 26% of the value we create
-- The other 74% flows to humanity: cheaper healthcare, longer lives, more productivity
-- Translation: We're giving $3 to humanity for every $1 we take
-
-
-**The Bootstrap Hustle:**
-
-1. Sell VICTORY bonds to rich people who fear death (all of them)
-2. Use that $1B for AI-powered campaign (viral + lobbying + tech)
-3. Get the treaty signed
-4. Treaty money pays bondholders $2.7B/year forever
-5. Everyone gets rich except disease and death
+### The Revenue Model: How You Get 270% Returns Forever
 
 ```{mermaid}
 flowchart LR
     subgraph "The VICTORY Bonds Money Machine"
-        Investors["💸 Investors<br/>$1B investment"]
-
-        Campaign["🏛️ AI Campaign<br/>$1B deployed<br/>Viral + Lobbying + Tech"]
-
-        Treaty["📜 1% Treaty<br/>$27B/year redirected"]
-
-        Returns["💰 Returns<br/>270% annual<br/>$2.7B/year forever"]
-
-        Cures["💊 Cures<br/>$24.3B to dFDA<br/>trials & research"]
+        Investors["💸 You invest $1B"]
+        Campaign["🏛️ Fund AI campaign<br/>(lobbying + viral)"]
+        Treaty["📜 1% Treaty passes<br/>$27B/year redirected"]
+        Returns["💰 You get $2.7B/year<br/>(270% returns forever)"]
+        Cures["💊 $24.3B funds cures"]
     end
 
     Investors --> Campaign
@@ -693,7 +550,14 @@ flowchart LR
     Returns -.->|"Attracts More"| Investors
 ```
 
-It's a virtuous cycle where early investors fund the lobbying that creates the treaty that generates the returns that attract more investors.
+**The math:** Raise $1B → Redirect $27B annually → Investors get 10% of treaty inflows → $2.7B/year forever.
+
+**Important distinction:**
+- VICTORY bonds: 270% annual returns for investors (you getting rich)
+- dFDA Infrastructure: 463:1 societal ROI (humanity getting rich)
+- We capture 26% of value created, humanity gets the other 74%
+
+Your grandchildren's grandchildren are still getting paid. Disease and death get fired.
 
 ### Building the First $100 Trillion Company
 
@@ -704,28 +568,12 @@ That's 33 Apples. The most valuable company in history. By preventing suffering 
 
 ## VIII. Your Choice: Join the Revolution or Die of Something Preventable
 
-Listen: Humanity spends $118.8 trillion a year on war and disease.
+Humanity spends **$118.8 trillion a year** on war and disease. That's **$14,850 per human per year** on suffering.
 
-That's $14,850 per human per year on suffering.
+We're asking for **1% of the military budget**. The military keeps 99% - enough to end the world 66 times instead of 67.
 
-We're asking for 1% of the military budget. One percent. To cure the diseases that are going to kill you, your parents, your children, and everyone you've ever loved.
+This isn't liberal or conservative. It's math.
 
-The military will still have 99% of its budget. That's enough to end the world 66 times instead of 67.
+The people in charge aren't evil. They just like money. So we're making saving lives more profitable than ending them.
 
-This isn't liberal or conservative. It's not capitalism or socialism. It's math.
-
-We can keep building bombs until the sun explodes, or we can cure cancer.
-
-We can keep treating symptoms until everyone's bankrupt, or we can eliminate disease.
-
-We can keep being the stupidest species in the universe, or we can try something else.
-
-The people in charge aren't evil. They just like money. So we're going to change what makes the most money. We're going to make saving lives more profitable than ending them.
-
-This isn't just another policy proposal. This is the only realistic path to transcending our natural state of barbarism and fully realizing the magnificent potential of the gifts we've been given: consciousness, reason, and love. We can remain slaves to a system designed for scarce resources and stone axes, or we can rewrite the code of civilization itself.
-
-The choice is binary: Continue our death march toward mutual annihilation, or redirect a mere 1% toward universal flourishing.
-
----
-
-*P.S. - If you think this is impossible, remember: We put humans on the moon using computers weaker than your phone. We split the atom. We invented cheese in a can. Surely we can figure out how to stop killing each other.*
+The choice is binary: Continue our death march toward mutual annihilation, or redirect 1% toward universal flourishing.
