@@ -28,7 +28,7 @@ setup_chart_style(style='light', dpi=150)
 fig, ax = plt.subplots(figsize=(12, 6))
 
 # Data
-categories = ['War on Humanity\n(War & Military)', 'War on Disease']
+categories = ['War on\nHumanity', 'War on Disease']
 spending = [2700, 68]  # In billions
 colors = [COLOR_RED, COLOR_BLUE]
 
