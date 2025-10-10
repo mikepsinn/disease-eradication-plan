@@ -1,0 +1,138 @@
+---
+jupyter: python3
+echo: false
+---
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+import sys
+
+# Find project root dynamically
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+# Import centralized style
+from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines
+from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE
+
+setup_chart_style()
+
+# ROI Data from intervention-comparison-table.qmd
+# Using central/conservative estimates where ranges exist
+interventions = {
+    'Decentralized FDA': {
+        'roi': 463,  # Central estimate from 66:1 to 2,577:1
+        'category': 'proposed',
+        'note': 'Leverages all global R&D'
+    },
+    'Smallpox Eradication': {
+        'roi': 280,  # Mid-point of 159:1 to 400:1
+        'category': 'historical',
+        'note': 'One-time historical achievement'
+    },
+    'Tobacco Control': {
+        'roi': 100,  # Conservative from 20:1 to 1,057:1
+        'category': 'current',
+        'note': 'Highly variable by program'
+    },
+    'Childhood Vaccinations': {
+        'roi': 13,  # Mid-point of 10:1 to 16:1
+        'category': 'current',
+        'note': 'US programs'
+    },
+    'Clean Water & Sanitation': {
+        'roi': 12,  # Mid-point of 4:1 to 21:1
+        'category': 'current',
+        'note': 'Low/middle-income countries'
+    },
+    'Statins (High-Risk)': {
+        'roi': 3,  # From intervention table
+        'category': 'current',
+        'note': 'Pharmaceutical intervention'
+    }
+}
+
+# Create figure - adjusted for tighter layout
+fig, ax = plt.subplots(figsize=(14, 8))
+
+# Prepare data
+names = list(interventions.keys())
+rois = [interventions[name]['roi'] for name in names]
+categories = [interventions[name]['category'] for name in names]
+
+# Define colors and patterns for categories
+category_styles = {
+    'proposed': {'color': COLOR_WHITE, 'hatch': '///', 'edge': COLOR_BLACK},
+    'historical': {'color': COLOR_WHITE, 'hatch': '...', 'edge': COLOR_BLACK},
+    'current': {'color': COLOR_WHITE, 'hatch': '', 'edge': COLOR_BLACK}
+}
+
+# Create bars
+x_pos = np.arange(len(names))
+bars = []
+for i, (name, roi, cat) in enumerate(zip(names, rois, categories)):
+    style = category_styles[cat]
+    bar = ax.bar(x_pos[i], roi, width=0.7,
+                 color=style['color'], edgecolor=style['edge'],
+                 linewidth=2, hatch=style['hatch'])
+    bars.append(bar)
+
+    # Add value labels above bars
+    ax.text(x_pos[i], roi + 10,
+            f'{roi}:1',
+            ha='center', va='bottom',
+            fontsize=14, color=COLOR_BLACK, weight='bold')
+
+    # Add intervention name above the ROI value, split into multiple lines for readability
+    label_lines = name.replace(' ', '\n')
+    ax.text(x_pos[i], roi + 35,
+            label_lines,
+            ha='center', va='bottom',
+            fontsize=10, color=COLOR_BLACK, weight='bold',
+            linespacing=1.1)
+
+# Axis formatting - remove both x-axis and y-axis
+ax.set_ylabel('')
+ax.set_xlabel('')
+ax.set_xticks([])  # Remove x-axis ticks and labels
+ax.set_yticks([])  # Remove y-axis ticks
+
+# Y-axis formatting - reduce top space, ensure bottom padding
+ax.set_ylim(-30, max(rois) * 1.3)
+
+# Title
+ax.set_title('Return on Investment Comparison: Health Interventions',
+            fontsize=16, color=COLOR_BLACK, weight='bold', pad=20)
+
+# Subtitle explaining ROI - moved below title with proper spacing
+ax.text(0.5, 0.98, 'Benefit returned per dollar invested (e.g., 463:1 = $463 benefit per $1 spent)',
+        transform=ax.transAxes, ha='center', fontsize=10, color=COLOR_BLACK, alpha=0.7)
+
+# Add explanatory callout in the empty space above smaller bars
+callout_text = ('dFDA achieves the highest ROI by leveraging\nplatform effects: modest infrastructure investment\ngenerates massive industry-wide R&D savings')
+ax.text(0.80, 0.65, callout_text,
+        transform=ax.transAxes, ha='center', va='center',
+        fontsize=9, color=COLOR_BLACK,
+        bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1.5, alpha=0.95),
+        linespacing=1.3)
+
+# Clean spines - remove all spines since no axes
+clean_spines(ax, ['top', 'right', 'left', 'bottom'])
+
+# Add watermark
+add_watermark(fig)
+
+# Save figure with tight bbox to minimize whitespace
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'roi-comparison-bar.png',
+            dpi=200, bbox_inches='tight', pad_inches=0.1, facecolor=COLOR_WHITE)
+
+plt.show()
+```
