@@ -1,0 +1,175 @@
+---
+jupyter: python3
+echo: false
+---
+
+```{python}
+import matplotlib.pyplot as plt
+from pathlib import Path
+import sys
+
+# Find project root dynamically
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+# Import centralized style
+from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines
+from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE
+
+setup_chart_style()
+
+# Data from our analyses
+# Current ongoing interventions (annual benefits) - ordered smallest to largest
+interventions_data = {
+    'Water\nFluoridation': 0.8,
+    'Clean Water &\nSanitation': 8.0,
+    'Tobacco Control\nPrograms': 12.0,
+    'Childhood\nVaccinations (US)': 15.0
+}
+
+# 1% Treaty + DIH + dFDA breakdown
+peace_dividend_components = {
+    'Peace Dividend': 97.1,
+    'dFDA R&D\nSavings': 50.0,
+    'Disease\nReduction': 10.9,
+    'GDP\nGrowth': 27.2
+}
+
+total_treaty_benefit = sum(peace_dividend_components.values())
+
+# Create figure - more square for better mobile viewing
+fig, ax = plt.subplots(figsize=(12, 10))
+
+# X positions
+intervention_names = list(interventions_data.keys())
+intervention_values = list(interventions_data.values())
+treaty_x_pos = len(intervention_names)
+x_positions = list(range(len(intervention_names) + 1))
+
+# Plot traditional interventions - white bars with black edges
+for i, (name, value) in enumerate(zip(intervention_names, intervention_values)):
+    bar = ax.bar(i, value, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
+                 linewidth=2, width=0.75)
+
+    # Add value labels on top
+    ax.text(i, value + 2, f'${value:.1f}B',
+            ha='center', va='bottom', fontsize=12, color=COLOR_BLACK, weight='bold')
+
+# Plot stacked bar for 1% Treaty + dFDA
+bottom_offset = 0
+hatches = ['', '///', '...', '|||']
+colors = [COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE]
+
+component_names = list(peace_dividend_components.keys())
+component_values = list(peace_dividend_components.values())
+
+for idx, (name, value) in enumerate(peace_dividend_components.items()):
+    bar = ax.bar(treaty_x_pos, value, bottom=bottom_offset,
+                 color=colors[idx], edgecolor=COLOR_BLACK,
+                 linewidth=2, width=0.75, hatch=hatches[idx])
+
+    # Add label inside ONLY the first (Peace Dividend) segment
+    if idx == 0:
+        ax.text(treaty_x_pos, bottom_offset + value/2,
+                f'$97.1B\nPeace\nDividend',
+                ha='center', va='center', fontsize=13,
+                color=COLOR_BLACK, weight='bold', linespacing=1.2)
+
+    bottom_offset += value
+
+# Add labels with arrows pointing to the top 3 stacked segments (not Peace Dividend - already labeled)
+# Calculate positions for arrows - need to track where each segment is
+segment_positions = []
+current_y = 0
+for value in [97.1, 50.0, 10.9, 27.2]:
+    segment_middle = current_y + value/2
+    segment_positions.append(segment_middle)
+    current_y += value
+
+# dFDA R&D Savings (2nd segment from bottom)
+ax.annotate('dFDA R&D Savings\n$50.0B',
+           xy=(treaty_x_pos - 0.375, segment_positions[1]),
+           xytext=(treaty_x_pos - 1.5, segment_positions[1]),
+           ha='right', va='center', fontsize=11,
+           color=COLOR_BLACK, weight='bold',
+           bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                     edgecolor=COLOR_BLACK, linewidth=1.5),
+           arrowprops=dict(arrowstyle='-', lw=2, color=COLOR_BLACK))
+
+# Disease Reduction (3rd segment from bottom) - offset slightly to avoid overlap
+ax.annotate('Disease Reduction\n$10.9B',
+           xy=(treaty_x_pos - 0.375, segment_positions[2]),
+           xytext=(treaty_x_pos - 1.5, segment_positions[2] + 8),
+           ha='right', va='center', fontsize=11,
+           color=COLOR_BLACK, weight='bold',
+           bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                     edgecolor=COLOR_BLACK, linewidth=1.5),
+           arrowprops=dict(arrowstyle='-', lw=2, color=COLOR_BLACK))
+
+# GDP Growth (top segment) - offset slightly to avoid overlap
+ax.annotate('GDP Growth\n$27.2B',
+           xy=(treaty_x_pos - 0.375, segment_positions[3]),
+           xytext=(treaty_x_pos - 1.5, segment_positions[3] + 16),
+           ha='right', va='center', fontsize=11,
+           color=COLOR_BLACK, weight='bold',
+           bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                     edgecolor=COLOR_BLACK, linewidth=1.5),
+           arrowprops=dict(arrowstyle='-', lw=2, color=COLOR_BLACK))
+
+# Add total label on top
+ax.text(treaty_x_pos, total_treaty_benefit + 4,
+        f'${total_treaty_benefit:.1f}B\ntotal',
+        ha='center', va='bottom', fontsize=14,
+        color=COLOR_BLACK, weight='bold')
+
+# X-axis labels
+all_labels = intervention_names + ['1% Treaty +\ndFDA Initiative']
+ax.set_xticks(x_positions)
+ax.set_xticklabels(all_labels, fontsize=11, weight='bold')
+
+# Remove Y-axis - values are labeled on bars
+ax.set_ylabel('')
+ax.set_yticks([])
+
+# Set y-axis limits
+ax.set_ylim(0, total_treaty_benefit * 1.15)
+
+# Title
+ax.set_title('Annual Net Societal Benefits:\nCurrent Health Programs vs 1% Treaty + dFDA',
+            fontsize=16, color=COLOR_BLACK, weight='bold', pad=20)
+
+# Add callout about uniqueness - positioned in upper left with consistent style
+callout_text = 'Only intervention that generates\nwealth WHILE saving lives'
+ax.text(0.02, 0.98, callout_text,
+        transform=ax.transAxes, ha='left', va='top',
+        fontsize=11, color=COLOR_BLACK, weight='bold',
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1.5, alpha=0.98),
+        linespacing=1.4)
+
+# Note about methodology - consistent style, subtle
+ax.text(0.5, -0.08,
+        'Annual NET societal benefits (economic benefits minus program costs)',
+        transform=ax.transAxes, ha='center', va='top',
+        fontsize=9, color=COLOR_BLACK, alpha=0.6)
+
+# Clean spines - remove left spine too since no y-axis
+clean_spines(ax, ['top', 'right', 'left'])
+
+# Add watermark
+add_watermark(fig)
+
+# Adjust layout
+plt.tight_layout()
+
+# Save figure
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'net-societal-benefit-comparison-vertical-bar.png',
+            dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+plt.show()
+```
