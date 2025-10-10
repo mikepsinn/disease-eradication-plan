@@ -29,12 +29,13 @@ mpl.rcParams['text.usetex'] = False
 mpl.rcParams['mathtext.default'] = 'regular'  # Use regular font, not math font
 
 # Data: Cost per life saved (NEGATIVE = society saves money, POSITIVE = society pays)
-# GiveWell top charities (2024 data)
+# GiveWell top charities (2024 data) and historical benchmarks
 charities = [
     'Helen Keller Int\'l\n(Vitamin A)',
     'New Incentives\n(Vaccination)',
     'Against Malaria\nFoundation',
-    '1% Treaty +\ndFDA Platform'
+    'Smallpox\nEradication\n(Historical)',
+    '1% Treaty +\ndFDA Infrastructure'
 ]
 
 # Central estimates (positive = cost to society, negative = net savings to society)
@@ -42,6 +43,7 @@ costs = [
     3500,   # Helen Keller
     4500,   # New Incentives
     5500,   # AMF
+    -25000, # Smallpox - dominant intervention with ROI 159:1 to 400:1
     -5870000  # 1% Treaty/dFDA - DOMINANT intervention (full ICER = -$167,771/QALY × 35 QALY/life)
 ]
 
@@ -54,9 +56,9 @@ peace_dividend_per_life = -5870000 * (35000 / 875000)  # Proportional to QALYs
 dfda_savings_per_life = -5870000 * (840000 / 875000)   # Proportional to QALYs
 
 # Error bars (uncertainty ranges from GiveWell and dFDA analysis)
-# GiveWell range: $3,000-5,500, 1% Treaty range based on sensitivity
-errors_lower = [500, 1000, 500, 870000]   # Distance below central
-errors_upper = [2000, 1000, 2000, 1130000]  # Distance above central
+# GiveWell range: $3,000-5,500, Smallpox range, 1% Treaty range based on sensitivity
+errors_lower = [500, 1000, 500, 5000, 870000]   # Distance below central
+errors_upper = [2000, 1000, 2000, 10000, 1130000]  # Distance above central
 
 # Create figure with more height for annotations
 fig, ax = plt.subplots(figsize=(12, 8))
@@ -65,46 +67,51 @@ fig, ax = plt.subplots(figsize=(12, 8))
 x_pos = np.arange(len(charities))
 
 # Create bars with white fill and black edges
-# For first 3 charities (regular bars)
-for i in range(3):
+# For first 4 bars (regular bars - includes smallpox)
+for i in range(4):
     ax.bar(x_pos[i], costs[i], width=0.6,
            color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2,
            yerr=[[errors_lower[i]], [errors_upper[i]]], capsize=8,
            error_kw={'linewidth': 2, 'ecolor': COLOR_BLACK})
 
-# For the 4th bar (1% Treaty), create stacked bar showing peace + dFDA
+# For the 5th bar (1% Treaty), create stacked bar showing peace + dFDA
 # Bottom segment: Peace dividend contribution
-bar_peace = ax.bar(x_pos[3], peace_dividend_per_life, width=0.6,
+bar_peace = ax.bar(x_pos[4], peace_dividend_per_life, width=0.6,
                    color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2,
                    label='Peace Dividend (1% less conflict)')
 
 # Top segment: dFDA contribution (stacked on peace)
-bar_dfda = ax.bar(x_pos[3], dfda_savings_per_life, width=0.6, bottom=peace_dividend_per_life,
+bar_dfda = ax.bar(x_pos[4], dfda_savings_per_life, width=0.6, bottom=peace_dividend_per_life,
                   color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2,
                   hatch='///', label='dFDA R&D Savings')
 
 # Add error bars to the stacked bar (total)
-ax.errorbar(x_pos[3], costs[3], yerr=[[errors_lower[3]], [errors_upper[3]]],
+ax.errorbar(x_pos[4], costs[4], yerr=[[errors_lower[4]], [errors_upper[4]]],
             fmt='none', capsize=8, ecolor=COLOR_BLACK, linewidth=2)
 
 # Add value labels on/near bars
-for i in range(3):
+for i in range(4):
     cost = costs[i]
-    # Positive costs - label above bar
-    ax.text(x_pos[i], cost + errors_upper[i] + 500,
-            f'${cost:,.0f}',
-            ha='center', va='bottom', fontsize=14, color=COLOR_BLACK, weight='bold')
+    if cost > 0:
+        # Positive costs - label above bar
+        ax.text(x_pos[i], cost + errors_upper[i] + 500,
+                f'${cost:,.0f}',
+                ha='center', va='bottom', fontsize=14, color=COLOR_BLACK, weight='bold')
+    elif i == 3:  # Smallpox (small negative value)
+        ax.text(x_pos[i], cost - errors_lower[i] - 2000,
+                f'-${abs(cost):,.0f}',
+                ha='center', va='top', fontsize=14, color=COLOR_BLACK, weight='bold')
 
 # Label for stacked 1% Treaty bar (total value below)
-ax.text(x_pos[3], costs[3] - errors_lower[3] - 400000,
-        f'-${abs(costs[3])/1000000:,.1f}M',
+ax.text(x_pos[4], costs[4] - errors_lower[4] - 400000,
+        f'-${abs(costs[4])/1000000:,.1f}M',
         ha='center', va='top', fontsize=16, color=COLOR_BLACK, weight='bold')
 
 # Label segments within the stacked bar
-ax.text(x_pos[3] - 0.35, peace_dividend_per_life/2,
+ax.text(x_pos[4] - 0.35, peace_dividend_per_life/2,
         'Peace\nDividend\n(1% less war)',
         ha='right', va='center', fontsize=9, color=COLOR_BLACK, style='italic')
-ax.text(x_pos[3] - 0.35, peace_dividend_per_life + dfda_savings_per_life/2,
+ax.text(x_pos[4] - 0.35, peace_dividend_per_life + dfda_savings_per_life/2,
         'dFDA\nR&D\nSavings',
         ha='right', va='center', fontsize=9, color=COLOR_BLACK, style='italic')
 
@@ -119,9 +126,16 @@ ax.annotate('GiveWell Top Charities:\nSociety PAYS $3,500-$5,500\nto save one li
             bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
             arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
 
+# Annotation for Smallpox (historical benchmark)
+ax.annotate('Smallpox Eradication:\nHistoric dominant intervention\n(saved money while saving lives)',
+            xy=(x_pos[3], -15000), xytext=(x_pos[3], -1500000),
+            ha='center', fontsize=9, color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1),
+            arrowprops=dict(arrowstyle='->', lw=1, color=COLOR_BLACK))
+
 # Annotation for 1% Treaty (lower left, away from bar)
-ax.annotate('1% Treaty + dFDA:\nSociety SAVES $5.87M\nper life saved\n(dominant intervention)',
-            xy=(x_pos[3], -3000000), xytext=(1.5, -6500000),
+ax.annotate('1% Treaty + DIH + dFDA:\nSociety SAVES $5.87M\nper life saved\n(dominant intervention)',
+            xy=(x_pos[4], -3000000), xytext=(2, -6500000),
             ha='center', fontsize=10, color=COLOR_BLACK,
             bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
             arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
