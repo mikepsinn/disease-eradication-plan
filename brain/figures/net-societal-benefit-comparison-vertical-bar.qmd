@@ -58,7 +58,7 @@ for i, (name, value) in enumerate(zip(intervention_names, intervention_values)):
     ax.text(i, value + 2, f'${value:.1f}B',
             ha='center', va='bottom', fontsize=12, color=COLOR_BLACK, weight='bold')
 
-# Plot stacked bar for 1% Treaty + dFDA
+# Plot stacked bar for 1% Treaty + DIH + dFDA
 bottom_offset = 0
 hatches = ['', '///', '...', '|||']
 colors = [COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE]
@@ -138,7 +138,7 @@ ax.set_yticks([])
 ax.set_ylim(0, total_treaty_benefit * 1.15)
 
 # Title
-ax.set_title('Annual Net Societal Benefits:\nCurrent Health Programs vs 1% Treaty + dFDA',
+ax.set_title('Annual Net Societal Benefits:\nCurrent Health Programs vs 1% Treaty + DIH + dFDA',
             fontsize=16, color=COLOR_BLACK, weight='bold', pad=20)
 
 # Add callout about uniqueness - positioned in upper left with consistent style
