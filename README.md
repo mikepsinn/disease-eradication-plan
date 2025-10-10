@@ -92,7 +92,7 @@ graph TD;
 
 1.  **Prove the Mandate (The Global Referendum):** We will mobilize 3.5% of humanity (280 million people) through a global referendum. This creates an undeniable political mandate that no leader can ignore.
 
-2.  **Fund the Mission (VICTORY Bonds):** We will raise the required $1B by selling **VICTORY Bonds**—an investment vehicle designed to offer ~40% annual returns, making peace more profitable than war.
+2.  **Fund the Mission (VICTORY Bonds):** We will raise the required $1B by selling **VICTORY Bonds**—an investment vehicle designed to offer 270% annual returns (10% of redirected military spending), making peace more profitable than war.
 
 3.  **Ratify the Treaty:** With a clear public mandate and a powerful financial engine, we will co-opt the existing political system to ratify the 1% Treaty and begin redirecting funds.
 
