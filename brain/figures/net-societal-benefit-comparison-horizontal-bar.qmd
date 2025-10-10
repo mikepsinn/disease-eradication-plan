@@ -1,0 +1,171 @@
+---
+jupyter: python3
+echo: false
+---
+
+```{python}
+import matplotlib.pyplot as plt
+from pathlib import Path
+import sys
+
+# Find project root dynamically
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+# Import centralized style
+from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines
+from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE
+
+setup_chart_style()
+
+# Data from our analyses
+# Current ongoing interventions (annual benefits) - ordered largest to smallest
+interventions_data = {
+    'Water Fluoridation': {
+        'net_benefit': 0.8,  # Annual benefit
+        'description': 'Cost-effective prevention'
+    },
+    'Clean Water & Sanitation': {
+        'net_benefit': 8.0,  # Annual benefit estimate
+        'description': 'ROI 4:1 to 21:1'
+    },
+    'Tobacco Control Programs': {
+        'net_benefit': 12.0,  # Annual savings
+        'description': 'ROI 20:1 to 1,057:1'
+    },
+    'Childhood Vaccinations (US)': {
+        'net_benefit': 15.0,  # Annual benefit from ongoing programs
+        'description': 'ROI 10:1 to 16:1, dominant'
+    }
+}
+
+# 1% Treaty + DIH + dFDA breakdown
+# From peace-dividend-analysis.qmd and dfda-cost-benefit-analysis.qmd
+peace_dividend_components = {
+    'Peace Dividend': {'value': 97.1, 'label': 'Peace Dividend\n$97.1B'},
+    'dFDA R&D Savings': {'value': 50.0, 'label': 'dFDA R&D\nSavings\n$50.0B'},
+    'Disease Reduction': {'value': 10.9, 'label': 'Disease\nReduction\n$10.9B'},
+    'GDP Growth': {'value': 27.2, 'label': 'GDP\nGrowth\n$27.2B'}
+}
+
+total_treaty_benefit = sum(c['value'] for c in peace_dividend_components.values())
+
+# Create figure
+fig, ax = plt.subplots(figsize=(14, 9))
+
+# Prepare data for plotting
+intervention_names = list(interventions_data.keys())
+intervention_values = [interventions_data[name]['net_benefit'] for name in intervention_names]
+
+# Y positions
+y_positions = list(range(len(intervention_names)))
+treaty_y_pos = len(intervention_names)
+
+# Plot traditional interventions - white bars with black edges
+for i, (name, value) in enumerate(zip(intervention_names, intervention_values)):
+    bar = ax.barh(i, value, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
+                  linewidth=2, height=0.55)
+
+    # Add value labels
+    if value < 100:
+        label_text = f'${value:.1f}B'
+    else:
+        label_text = f'${value:.0f}B'
+
+    ax.text(value + 5, i, label_text,
+            va='center', ha='left', fontsize=12, color=COLOR_BLACK, weight='bold')
+
+# Plot stacked bar for 1% Treaty + DIH + dFDA
+left_offset = 0
+colors_cycle = [COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE]
+hatches = ['', '///', '...', '|||']
+components = list(peace_dividend_components.values())
+
+for idx, component in enumerate(components):
+    value = component['value']
+    bar = ax.barh(treaty_y_pos, value, left=left_offset,
+                  color=colors_cycle[idx], edgecolor=COLOR_BLACK,
+                  linewidth=2, height=0.55, hatch=hatches[idx])
+
+    # Add label inside the Peace Dividend segment (largest)
+    if idx == 0:
+        ax.text(left_offset + value/2, treaty_y_pos,
+                component['label'],
+                ha='center', va='center', fontsize=11,
+                color=COLOR_BLACK, weight='bold', linespacing=1.2)
+
+    left_offset += value
+
+# Add labels with arrows pointing to the top 3 segments
+# Calculate positions for arrows
+segment_positions = []
+current_x = 0
+for component in components:
+    value = component['value']
+    segment_middle = current_x + value/2
+    segment_positions.append(segment_middle)
+    current_x += value
+
+# Define annotation positions well below the treaty bar (in the space between bars 2 and 3)
+annotation_positions = [
+    {'xytext': (segment_positions[1], 2.5), 'ha': 'center'},
+    {'xytext': (segment_positions[2], 1.8), 'ha': 'center'},
+    {'xytext': (segment_positions[3], 1.0), 'ha': 'center'}
+]
+
+# Annotate the last 3 segments with arrows pointing up to the bar
+for i, (component, pos_info) in enumerate(zip(components[1:], annotation_positions)):
+    segment_idx = i + 1
+    ax.annotate(component['label'],
+               xy=(segment_positions[segment_idx], treaty_y_pos - 0.275),
+               xytext=pos_info['xytext'],
+               ha=pos_info['ha'], va='top', fontsize=10,
+               color=COLOR_BLACK, weight='bold',
+               bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                         edgecolor=COLOR_BLACK, linewidth=1.5),
+               arrowprops=dict(arrowstyle='-', lw=2, color=COLOR_BLACK))
+
+# Add total label for 1% Treaty
+ax.text(total_treaty_benefit + 5, treaty_y_pos,
+        f'${total_treaty_benefit:.1f}B total',
+        va='center', ha='left', fontsize=13,
+        color=COLOR_BLACK, weight='bold')
+
+# Y-axis labels
+all_labels = intervention_names + ['1% Treaty + DIH + dFDA']
+ax.set_yticks(range(len(all_labels)))
+ax.set_yticklabels(all_labels, fontsize=11)
+
+# Note about methodology - positioned at bottom
+ax.text(0.5, -0.05,
+        'Annual NET societal benefits (economic benefits minus program costs)',
+        transform=ax.transAxes, ha='center', va='top',
+        fontsize=9, color=COLOR_BLACK, alpha=0.6)
+
+# Axis formatting - remove x-axis since values are labeled on bars
+ax.set_xlabel('')
+ax.set_ylabel('')
+ax.set_xlim(0, total_treaty_benefit * 1.15)
+ax.set_xticks([])  # Remove x-axis ticks
+
+# Title
+ax.set_title('Annual Net Societal Benefits: Current Health Programs vs 1% Treaty + DIH + dFDA',
+            fontsize=16, color=COLOR_BLACK, weight='bold', pad=20)
+
+# Clean spines
+clean_spines(ax, ['top', 'right', 'left'])
+
+# Add watermark
+add_watermark(fig)
+
+# Save figure
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'net-societal-benefit-comparison-horizontal-bar.png',
+            dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+plt.show()
+```
