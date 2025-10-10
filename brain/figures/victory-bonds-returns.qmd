@@ -1,7 +1,7 @@
 
 ```{python}
 #| label: victory-bonds-returns
-#| fig-cap: "VICTORY Bonds: 40% Perpetual Returns"
+#| fig-cap: "VICTORY Bonds: 270% Perpetual Returns"
 
 import sys
 import os
@@ -24,9 +24,9 @@ from brain.figures._chart_style import (
 setup_chart_style(style='light', dpi=150)
 
 # Data
-investments = ['S&P 500', 'Real Estate', 'Venture\nCapital', 'Medallion\nFund', 'VICTORY\nBonds']
-returns = [10, 15, 25, 39, 40]
-colors_investments = [COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLUE]  # Black for comparison, blue for solution
+investments = ['S&P 500', 'Real Estate', 'Venture\nCapital', 'Medallion\nFund', 'Cocaine\nTrafficking', 'VICTORY\nBonds']
+returns = [10, 15, 25, 39, 90, 270]
+colors_investments = [COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK]  # All black for B&W
 
 # Create chart
 fig, ax = plt.subplots(figsize=(14, 10))
@@ -42,7 +42,7 @@ for bar, ret in zip(bars, returns):
 ax.set_xlabel('Annual Returns', fontsize=36, weight='bold', color=COLOR_BLACK)
 ax.tick_params(axis='y', labelsize=36, colors=COLOR_BLACK)
 ax.tick_params(axis='x', labelsize=28, colors=COLOR_BLACK)
-ax.set_xlim(0, 50)
+ax.set_xlim(0, 300)
 clean_spines(ax)
 # Remove gridlines for cleaner look
 # ax.grid(axis='x', alpha=0.3, linestyle='--', color=COLOR_BLACK)

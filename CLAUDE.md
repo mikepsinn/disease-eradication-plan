@@ -13,3 +13,5 @@ This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War a
 ## Content Standards
 
 **See `CONTRIBUTING.md` for complete writing guidelines, style requirements, and content standards.**
+
+Please render and critically review output images of quarto files whenever you modify figure generating files. 
