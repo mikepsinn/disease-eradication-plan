@@ -150,11 +150,11 @@ Oxford proved decentralized trials are 82X more efficient. We're just doing that
 ---
 
 ## SLIDE: What Is the dFDA Really?
-**Visual**: Amazon/Yelp interface showing treatments ranked by actual outcomes
-**Text**: "Amazon for clinical trials + Yelp for every pill"
+**Visual**: Amazon/Consumer Reports interface showing treatments ranked by actual outcomes
+**Text**: "Amazon for clinical trials + Consumer Reports for every pill"
 
 **SPEAKER**: 
-"The dFDA is Amazon meets Yelp for not dying. Browse trials like shopping. Read real patient reviews. See outcome labels on everything - foods, drugs, supplements. 
+"The dFDA is Amazon meets Consumer Reports for not dying. Browse trials like shopping. See outcome labels on everything - foods, drugs, supplements. 
 
 Your AI doctor analyzes all treatments globally, matches you to the best ones. Treatments ranked by what actually works, not marketing budgets.
 
