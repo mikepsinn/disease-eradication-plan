@@ -15,7 +15,7 @@ tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incent
   - [Democracy Is Broken: Princeton Proved Your Vote Doesn't Matter](#democracy-is-broken-princeton-proved-your-vote-doesnt-matter)
 - [II. The Solution: Four Systems to Make Curing More Profitable Than Killing](#ii-the-solution-four-systems-to-make-curing-more-profitable-than-killing)
   - [System 1: The 1% Treaty - Redirect $27B From Military to Medical](#system-1-the-1-treaty---redirect-27b-from-military-to-medical)
-  - [System 2: The Decentralized FDA - Amazon for Clinical Trials](#system-2-the-decentralized-fda---amazon-for-clinical-trials)
+  - [System 2: The Decentralized FDA - Amazon for Clinical Trials + Consumer Reports for Drugs](#system-2-the-decentralized-fda---amazon-for-clinical-trials)
   - [System 3: The DIH Treasury - Markets Replace NIH Committees](#system-3-the-dih-treasury---markets-replace-nih-committees)
   - [System 4: Wishocracy - 8 Billion Brains Beat 200 Bureaucrats](#system-4-wishocracy---8-billion-brains-beat-200-bureaucrats)
 - [III. The Economics: Why This Is the Most Profitable Investment in History](#iii-the-economics-why-this-is-the-most-profitable-investment-in-history)
@@ -267,7 +267,7 @@ flowchart TB
     subgraph "The 4-System Solution Architecture"
         Treaty["🌍 System 1: The 1% Treaty<br/>Redirect $27B from military<br/>to medical<br/>Every nation contributes"]
 
-        dFDA["🛒 System 2: Decentralized FDA<br/>Amazon for clinical trials<br/>$500 vs $41,000<br/>per patient"]
+        dFDA["🛒 System 2: Decentralized FDA<br/>Amazon for Clinical Trials + Consumer Reports for Drugs<br/>$500 vs $41,000<br/>per patient"]
 
         DIH["💰 System 3: DIH Treasury<br/>Market-based funding<br/>Patients choose trials"]
 
@@ -286,7 +286,7 @@ Every nation redirects just **1%** of their current murder budget to a Decentral
 
 We'd still have $2.69 trillion left for everyone.  $2.69 trillion is enough to murder everyone on Earth 67 times. (Current population: 8 billion. Murder capacity: 535 billion. We're overachievers.)
 
-### System 2: The Decentralized FDA - Amazon for Clinical Trials
+### System 2: The Decentralized FDA - Amazon for Clinical Trials + Consumer Reports for Drugs
 
 The current FDA is Soviet central planning: One committee in Maryland decides what 335 million Americans can try. Takes 17 years, costs $2.2 billion, everyone dies waiting. 
 
@@ -352,6 +352,43 @@ flowchart LR
 ```
 
 It's literally Amazon but for cures. Same convenience, same competition, same customer obsession - but instead of buying crap you don't need, you're buying years of life.
+
+**Outcome Labels: Nutrition Facts for Drugs**
+
+Food has nutrition labels. Cigarettes have warning labels. Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
+
+The dFDA fixes that with **Outcome Labels** - simple, data-driven summaries showing exactly what happens when real people try a treatment:
+
+![Outcome Labels Example](assets/dfda-outcome-labels.png)
+
+Based on thousands of real patients, you see:
+- **Cognitive Improvements**: Memory +35%, Executive Function +22%
+- **Side Effects**: Headache +9%, Fatigue +7%
+- **The Truth**: Not marketing claims, actual measured effects from real humans
+
+Just like nutrition labels transformed food transparency, outcome labels will transform medical transparency. No more guessing. No more 40-page legal documents. Just clear data about what actually happens.
+
+**Treatment Rankings: Google for Cures**
+
+Current system: Your doctor guesses which treatment might work based on one pharma lunch presentation from 2003.
+
+dFDA system: Type your condition, see every treatment ranked by real-world effectiveness:
+
+![Treatment Rankings Example](assets/dfda-comparative-effectiveness-ranking-search.png)
+
+Search "Alzheimer's" and instantly see:
+- **Lecanemab**: 92% effectiveness (FDA approved)
+- **Donanemab**: 88% effectiveness (Phase 3)
+- **Aducanumab**: 76% effectiveness (FDA approved)
+- **Experimental options**: See Phase 2 trials you can join today
+
+Each treatment shows:
+- Real-world effectiveness scores from actual patients
+- Approval status (FDA approved, Phase 3, Phase 2, experimental)
+- One-click access to available trials
+- Side effect profiles and outcome labels
+
+Stop guessing. Start knowing. It's Google meets Amazon meets "please don't let me die."
 
 ### System 3: The DIH Treasury - Markets Replace NIH Committees
 
