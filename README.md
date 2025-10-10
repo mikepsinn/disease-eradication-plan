@@ -86,13 +86,13 @@ graph TD;
 
 **Annual Returns Once Operational:** $27B+ per year from 1% military budget redirections
 
-**The Math:** We're asking for $2.5B to redirect $27B annually. That's a 10:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
+**The Math:** We're asking for $1B to redirect $27B annually. That's a 27:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
 
 ## The Plan: From Idea to Treaty
 
 1.  **Prove the Mandate (The Global Referendum):** We will mobilize 3.5% of humanity (280 million people) through a global referendum. This creates an undeniable political mandate that no leader can ignore.
 
-2.  **Fund the Mission (VICTORY Bonds):** We will raise the required $2.5B by selling **VICTORY Bonds**—an investment vehicle designed to offer ~40% annual returns, making peace more profitable than war.
+2.  **Fund the Mission (VICTORY Bonds):** We will raise the required $1B by selling **VICTORY Bonds**—an investment vehicle designed to offer ~40% annual returns, making peace more profitable than war.
 
 3.  **Ratify the Treaty:** With a clear public mandate and a powerful financial engine, we will co-opt the existing political system to ratify the 1% Treaty and begin redirecting funds.
 
