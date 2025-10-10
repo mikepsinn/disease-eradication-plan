@@ -131,7 +131,7 @@ add_watermark(fig)
 # Save figure with tight bbox to minimize whitespace
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'roi-comparison-bar.png',
+plt.savefig(output_dir / 'dfda-roi-comparison-column-chart.png',
             dpi=200, bbox_inches='tight', pad_inches=0.1, facecolor=COLOR_WHITE)
 
 plt.show()
