@@ -5,9 +5,8 @@ published: true
 date: "2025-01-09T00:00:00.000Z"
 tags: [finance, overview, strategy, treasury-management]
 dateCreated: "2025-08-22T00:00:00.000Z"
+title-id: sec-financial-plan
 ---
-
-# Financial Plan: The Complete Picture
 
 This document provides a high-level overview of the entire financial architecture required to pass the 1% Treaty and operate the Decentralized Institutes of Health (DIH). For detailed breakdowns, see the linked documents below.
 
@@ -349,7 +348,7 @@ Each success makes the next success easier:
 ### For Investors
 - **[VICTORY Bonds - Investment Thesis](./victory-bonds.qmd)** - Why this beats every other investment
 - **[Investor Risk Analysis](./investor-risk-analysis.qmd)** - What could go wrong and how we mitigate it
-- **[Fundraising Strategy](./fundraising-strategy.qmd)** - How we raise $1.2-2.5B in 36 months
+- **[Fundraising Strategy](../strategy/fundraising-strategy.qmd)** - How we raise $1.2-2.5B in 36 months
 
 ### For Budget Wonks
 - **[Campaign Budget](./campaign-budget.qmd)** - Detailed line-item breakdown of the $1.2-2.5B
