@@ -64,11 +64,12 @@ def setup_chart_style(style='light', dpi=150):
         text_color = COLOR_WHITE
         grid_color = '#4a4a4a'  # Charcoal for dark mode
 
-    # Typography - classic newspaper serif style
-    rcParams['font.family'] = 'serif'
-    rcParams['font.serif'] = ['Georgia', 'Palatino', 'Palatino Linotype', 'Charter', 'Times New Roman', 'serif']
+    # Typography - clean professional sans-serif style
+    rcParams['font.family'] = 'sans-serif'
+    rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans', 'sans-serif']
     rcParams['font.size'] = 12
     rcParams['font.weight'] = 'normal'
+    rcParams['text.usetex'] = False  # Prevent LaTeX math parsing
 
     # Colors
     rcParams['figure.facecolor'] = bg_color

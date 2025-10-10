@@ -5,6 +5,7 @@ echo: false
 
 ```{python}
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import numpy as np
 from pathlib import Path
 import sys
@@ -21,6 +22,11 @@ from brain.figures._chart_style import setup_chart_style, add_watermark, clean_s
 from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE
 
 setup_chart_style()
+
+# CRITICAL: Disable matplotlib's automatic math text parsing for dollar signs
+# This prevents "$" from being interpreted as LaTeX math delimiters
+mpl.rcParams['text.usetex'] = False
+mpl.rcParams['mathtext.default'] = 'regular'  # Use regular font, not math font
 
 # Data: Cost per life saved (NEGATIVE = society saves money, POSITIVE = society pays)
 # GiveWell top charities (2024 data)
@@ -157,7 +163,8 @@ fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
          ha='center', fontsize=12, color=COLOR_BLACK)
 
 # Add calculation details and sources at bottom (in box for readability)
-calc_text = '''Full Calculation (see brain/book/economics/icer-full-calculation.qmd for complete methodology):
+# Note: Using r-string (raw string) to prevent any escape sequence interpretation
+calc_text = r'''Full Calculation (see brain/book/economics/icer-full-calculation.qmd for complete methodology):
 
 Annual Economic Benefits:
   - Peace Dividend: $97.1B (1% reduction in $9.7T annual war costs)
@@ -185,8 +192,7 @@ Sources: GiveWell 2024, dFDA Cost-Benefit Analysis, Peace Dividend Analysis, Cos
 
 fig.text(0.5, -0.03, calc_text,
          ha='center', va='top', fontsize=6.5, color=COLOR_BLACK, family='monospace',
-         bbox=dict(boxstyle='round,pad=0.8', facecolor='#f5f5f5', edgecolor=COLOR_BLACK, linewidth=1.5),
-         usetex=False)  # Prevent LaTeX interpretation of $ symbols
+         bbox=dict(boxstyle='round,pad=0.8', facecolor='#f5f5f5', edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Add watermark
 add_watermark(fig)
