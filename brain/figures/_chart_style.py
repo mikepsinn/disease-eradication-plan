@@ -64,11 +64,11 @@ def setup_chart_style(style='light', dpi=150):
         text_color = COLOR_WHITE
         grid_color = '#4a4a4a'  # Charcoal for dark mode
 
-    # Typography - bold atomic age propaganda style
-    rcParams['font.family'] = 'sans-serif'
-    rcParams['font.sans-serif'] = ['Impact', 'Arial Black', 'Helvetica', 'Arial']
+    # Typography - classic newspaper serif style
+    rcParams['font.family'] = 'serif'
+    rcParams['font.serif'] = ['Georgia', 'Palatino', 'Palatino Linotype', 'Charter', 'Times New Roman', 'serif']
     rcParams['font.size'] = 12
-    rcParams['font.weight'] = 'bold'
+    rcParams['font.weight'] = 'normal'
 
     # Colors
     rcParams['figure.facecolor'] = bg_color

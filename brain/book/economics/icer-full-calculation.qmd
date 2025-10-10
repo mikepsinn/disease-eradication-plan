@@ -331,6 +331,36 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 **Best case** (optimistic): Society saves $4.79M per life saved (lower because we're saving many more lives, so the economic benefit is spread across more QALYs)
 
+---
+
+## Visual Comparisons
+
+### Cost-Effectiveness: How Much Does Society Pay to Save a Life?
+
+{{< include ../../../brain/figures/charity-cost-vs-roi-comparison-bar.qmd >}}
+
+This chart demonstrates the fundamental difference between traditional philanthropy and the 1% Treaty approach:
+
+- **GiveWell Top Charities** (Helen Keller International, New Incentives, Against Malaria Foundation): Society pays $3,500-$5,500 per life saved. These are excellent interventions—among the most cost-effective charitable uses of money in the world.
+
+- **1% Treaty + dFDA**: Society SAVES $5.87 million per life saved. This is a dominant intervention that generates wealth while saving lives. The stacked bar shows contributions from both the peace dividend (1% less conflict) and dFDA R&D savings.
+
+The dramatic scale difference illustrates why this intervention is ~1,700× more cost-effective than even the best traditional charities.
+
+### Scale of Impact: Annual Economic Benefits
+
+{{< include ../../../brain/figures/public-health-impact-comparison-horizontal-bar.qmd >}}
+
+This chart compares the gross annual economic benefits across major public health interventions:
+
+- **Traditional interventions** (Water Fluoridation, Smoking Cessation, Childhood Vaccinations): Generate $0.8B to $15B in annual economic benefits. These are highly successful programs that have transformed public health.
+
+- **1% Treaty + dFDA**: Generates $147.1B in annual economic benefits ($97.1B peace dividend + $50B dFDA R&D savings). This is nearly 10× larger than childhood vaccinations, one of the most successful interventions in history.
+
+**Key distinction**: Only the 1% Treaty is self-funding—it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
+
+---
+
 ### Monte Carlo Simulation (Recommended)
 
 For publication-quality analysis, we recommend running a Monte Carlo simulation with:

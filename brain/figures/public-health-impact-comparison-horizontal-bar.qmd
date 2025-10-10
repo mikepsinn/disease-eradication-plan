@@ -29,29 +29,64 @@ total_benefit = peace_dividend + dfda_savings
 interventions = [
     'Water Fluoridation',
     'Smoking Cessation',
-    'Childhood Vaccinations',
-    '1% Treaty / dFDA Initiative'
+    'Childhood Vaccinations'
 ]
-values = [0.8, 12.0, 15.0, total_benefit]
+values = [0.8, 12.0, 15.0]
 
 # Create figure
-fig, ax = plt.subplots(figsize=(12, 6))
+fig, ax = plt.subplots(figsize=(12, 7))
 
-# Create horizontal bars - all black
-bars = ax.barh(interventions, values, color=COLOR_BLACK, height=0.6)
+# Create horizontal bars for traditional interventions - white with black edge
+for i, (intervention, value) in enumerate(zip(interventions, values)):
+    ax.barh(i, value, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, height=0.6)
 
-# Value labels
-max_val = max(values)
-for i, (bar, val) in enumerate(zip(bars, values)):
-    width = bar.get_width()
-    y = bar.get_y() + bar.get_height() / 2
-    ax.text(width + max_val * 0.015, y, f'${val:,.1f}B',
-            va='center', ha='left', fontsize=16, color=COLOR_BLACK, weight='bold')
+# Create stacked bar for 1% Treaty
+y_pos = 3
+# Peace dividend portion
+bar1 = ax.barh(y_pos, peace_dividend, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
+               linewidth=2, height=0.6, label='Peace Dividend')
+# dFDA savings portion (stacked)
+bar2 = ax.barh(y_pos, dfda_savings, left=peace_dividend, color=COLOR_WHITE,
+               edgecolor=COLOR_BLACK, linewidth=2, height=0.6, hatch='///', label='dFDA R&D Savings')
+
+# Update y-axis labels
+all_interventions = interventions + ['1% Treaty / dFDA Initiative']
+ax.set_yticks(range(len(all_interventions)))
+ax.set_yticklabels(all_interventions)
+
+# Value labels for traditional interventions
+for i, value in enumerate(values):
+    ax.text(value + 2, i, f'${value:,.1f}B',
+            va='center', ha='left', fontsize=14, color=COLOR_BLACK, weight='bold')
+
+# Value labels for stacked 1% Treaty bar
+# Peace dividend label
+ax.text(peace_dividend/2, y_pos, f'${peace_dividend:.1f}B\nPeace',
+        ha='center', va='center', fontsize=12, color=COLOR_BLACK, weight='bold')
+# dFDA label
+ax.text(peace_dividend + dfda_savings/2, y_pos, f'${dfda_savings:.0f}B\ndFDA',
+        ha='center', va='center', fontsize=12, color=COLOR_BLACK, weight='bold')
+# Total label
+ax.text(total_benefit + 2, y_pos, f'${total_benefit:.1f}B total',
+        va='center', ha='left', fontsize=14, color=COLOR_BLACK, weight='bold')
+
+# Add annotations
+# Note about gross benefits
+ax.text(0.98, 0.95, 'Note: Shows GROSS annual economic benefits (not net of costs)',
+        transform=ax.transAxes, ha='right', va='top', fontsize=10, color=COLOR_BLACK, style='italic',
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1))
+
+# Note about self-funding
+ax.annotate('Only the 1% Treaty is self-funding\n(generates wealth while saving lives)',
+           xy=(total_benefit/2, y_pos), xytext=(total_benefit/2, y_pos - 1.5),
+           ha='center', fontsize=10, color=COLOR_BLACK, weight='bold',
+           bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
+           arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
 
 # Axis formatting
 ax.set_xlabel('Annual Gross Economic Benefit (Billions USD)', fontsize=12, color=COLOR_BLACK)
 ax.set_ylabel('')
-ax.set_xlim(0, max_val * 1.12)
+ax.set_xlim(0, total_benefit * 1.15)
 
 # Clean spines
 clean_spines(ax, ['top', 'right', 'left'])
