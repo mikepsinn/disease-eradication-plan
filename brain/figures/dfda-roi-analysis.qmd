@@ -23,7 +23,7 @@ plt.style.use('seaborn-v0_8-darkgrid')
 sns.set_palette("husl")
 ```
 
-## dFDA Platform Economics
+## dFDA Infrastructure Economics
 
 ### Key Metrics
 
@@ -83,7 +83,7 @@ for i, (name, value) in enumerate(zip(metric_names, formatted_values)):
     ))
 
 fig.update_layout(
-    title="dFDA Platform: Key Economic Metrics",
+    title="dFDA Infrastructure: Key Economic Metrics",
     grid={'rows': 4, 'columns': 2, 'pattern': "independent"},
     height=800,
     showlegend=False
@@ -247,7 +247,7 @@ fig.show()
 # Per-patient trial costs comparison
 cost_comparison = pd.DataFrame({
     'Trial Type': ['Traditional Phase III', 'Current DCT Average',
-                   'dFDA Platform', 'RECOVERY Trial Model'],
+                   'dFDA Infrastructure', 'RECOVERY Trial Model'],
     'Cost per Patient': [80000, 25000, 1000, 500],
     'Reduction Factor': [1, 3.2, 80, 160]
 })
@@ -397,7 +397,7 @@ fig.add_vline(x=break_even_year, line_dash="dot", line_color="gray",
               annotation_text="Break-even", annotation_position="top")
 
 fig.update_layout(
-    title='dFDA Platform: 10-Year Investment vs Returns',
+    title='dFDA Infrastructure: 10-Year Investment vs Returns',
     xaxis_title='Year',
     yaxis_title='Amount ($ Millions)',
     hovermode='x unified',

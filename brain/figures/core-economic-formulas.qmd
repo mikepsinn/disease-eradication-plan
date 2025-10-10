@@ -98,7 +98,7 @@ def calculate_dfda_roi(
     addressable_market: float = GLOBAL_CLINICAL_TRIAL_MARKET
 ) -> Dict[str, float]:
     """
-    Calculate ROI for the dFDA platform.
+    Calculate ROI for the dFDA Infrastructure.
 
     Returns:
         Dictionary with ROI metrics
