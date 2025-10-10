@@ -84,7 +84,7 @@ for i, (name, roi, cat) in enumerate(zip(names, rois, categories)):
 
     # Add value labels above bars
     ax.text(x_pos[i], roi + 10,
-            f'{roi}:1',
+            f'${roi}',
             ha='center', va='bottom',
             fontsize=14, color=COLOR_BLACK, weight='bold')
 
@@ -107,14 +107,11 @@ ax.set_ylim(-30, max(rois) * 1.3)
 
 # Title
 ax.set_title('Return on Investment Comparison: Health Interventions',
-            fontsize=16, color=COLOR_BLACK, weight='bold', pad=20)
+            fontsize=16, color=COLOR_BLACK, weight='bold', pad=10)
 
-# Subtitle explaining ROI - moved below title with proper spacing
-ax.text(0.5, 0.98, 'Benefit returned per dollar invested (e.g., 463:1 = $463 benefit per $1 spent)',
-        transform=ax.transAxes, ha='center', fontsize=10, color=COLOR_BLACK, alpha=0.7)
 
 # Add explanatory callout in the empty space above smaller bars
-callout_text = ('dFDA achieves the highest ROI by leveraging\nplatform effects: modest infrastructure investment\ngenerates massive industry-wide R&D savings')
+callout_text = ('For every $1 invested, the intervention generates\nthe shown dollar amount in benefits.\n\ndFDA achieves the highest ROI by leveraging\nplatform effects: modest infrastructure investment\ngenerates massive industry-wide R&D savings')
 ax.text(0.80, 0.65, callout_text,
         transform=ax.transAxes, ha='center', va='center',
         fontsize=9, color=COLOR_BLACK,
