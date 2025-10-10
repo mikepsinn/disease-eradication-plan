@@ -46,7 +46,9 @@
       "Bash(quarto:*)",
       "Bash(do)",
       "Bash(move:*)",
-      "Bash(if exist roi-comparison-bar.png del roi-comparison-bar.png)"
+      "Bash(if exist roi-comparison-bar.png del roi-comparison-bar.png)",
+      "Bash(mv:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
