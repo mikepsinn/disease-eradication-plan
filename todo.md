@@ -1,6 +1,5 @@
 # Book Completion TODO List
 
-This document tracks all remaining work to complete "The $119T Death Toilet" book. Tasks are organized by phase and priority.
 
 ## Phase 1: Content Generation (Expand Placeholder Chapters)
 
