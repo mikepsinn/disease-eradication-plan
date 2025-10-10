@@ -86,14 +86,14 @@ for i, (name, roi, cat) in enumerate(zip(names, rois, categories)):
     ax.text(x_pos[i], roi + 10,
             f'${roi}',
             ha='center', va='bottom',
-            fontsize=18, color=COLOR_BLACK, weight='bold')
+            fontsize=24, color=COLOR_BLACK, weight='bold')
 
     # Add intervention name above the ROI value, split into multiple lines for readability
     label_lines = name.replace(' ', '\n')
-    ax.text(x_pos[i], roi + 35,
+    ax.text(x_pos[i], roi + 50,
             label_lines,
             ha='center', va='bottom',
-            fontsize=12, color=COLOR_BLACK, weight='bold',
+            fontsize=16, color=COLOR_BLACK, weight='bold',
             linespacing=1.1)
 
 # Axis formatting - remove both x-axis and y-axis
@@ -102,19 +102,19 @@ ax.set_xlabel('')
 ax.set_xticks([])  # Remove x-axis ticks and labels
 ax.set_yticks([])  # Remove y-axis ticks
 
-# Y-axis formatting - balance top and bottom margins
-ax.set_ylim(-15, max(rois) * 1.15)
+# Y-axis formatting - balance top and bottom margins, increase top space for labels
+ax.set_ylim(-15, max(rois) * 1.25)
 
-# Title
+# Title - positioned higher to avoid overlap with labels
 ax.set_title('Return on Investment Comparison: Health Interventions',
-            fontsize=20, color=COLOR_BLACK, weight='bold', pad=10, y=0.96)
+            fontsize=24, color=COLOR_BLACK, weight='bold', pad=15, y=0.98)
 
 
 # Add explanatory callout in the empty space above smaller bars
-callout_text = ('For every $1 invested, the intervention generates\nthe shown dollar amount in benefits.\n\ndFDA achieves the highest ROI by leveraging\nplatform effects: modest infrastructure investment\ngenerates massive industry-wide R&D savings')
-ax.text(0.80, 0.65, callout_text,
+callout_text = ('For every $1 invested, the intervention generates\nthe shown dollar amount in benefits.\n\ndFDA achieves the highest ROI through:\n• $50B annual R&D cost savings\n• Faster access to new treatments\n• Better prevention via real-world data\n• New therapies for rare/neglected diseases')
+ax.text(0.72, 0.65, callout_text,
         transform=ax.transAxes, ha='center', va='center',
-        fontsize=11, color=COLOR_BLACK,
+        fontsize=16, color=COLOR_BLACK,
         bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE,
                   edgecolor=COLOR_BLACK, linewidth=1.5, alpha=0.95),
         linespacing=1.3)
