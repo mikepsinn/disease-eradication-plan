@@ -163,18 +163,17 @@ fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
          ha='center', fontsize=12, color=COLOR_BLACK)
 
 # Add calculation details and sources at bottom (in box for readability)
-# Note: Using r-string (raw string) to prevent any escape sequence interpretation
-calc_text = r'''Full Calculation (see brain/book/economics/icer-full-calculation.qmd for complete methodology):
+calc_text = '''Full Calculation (see brain/book/economics/icer-full-calculation.qmd for complete methodology):
 
 Annual Economic Benefits:
-  - Peace Dividend: $97.1B (1% reduction in $9.7T annual war costs)
-  - dFDA R&D Savings: $50B (50% reduction in $100B clinical trial market)
-  - Total Benefits: $147.1B/year
+  - Peace Dividend: 97.1B (1% reduction in 9.7T annual war costs)
+  - dFDA R&D Savings: 50B (50% reduction in 100B clinical trial market)
+  - Total Benefits: 147.1B/year
 
 Annual Costs:
-  - Campaign: $250M/year ($1B over 4 years, amortized)
-  - dFDA Operations: $40M/year
-  - Total Costs: $290M/year
+  - Campaign: 250M/year (1B over 4 years, amortized)
+  - dFDA Operations: 40M/year
+  - Total Costs: 290M/year
 
 Annual Health Benefits:
   - Peace: 1,000 lives saved (1% of 100k conflict deaths/year) x 35 QALYs/life = 35,000 QALYs
@@ -182,11 +181,11 @@ Annual Health Benefits:
   - Total: 875,000 QALYs/year
 
 ICER Calculation:
-  Net Benefit = $290M - $147.1B = -$146.8B/year (society saves money)
-  ICER = -$146.8B / 875k QALYs = -$167,771 per QALY
-  Per Life = -$167,771 x 35 QALYs/life = -$5.87M per life saved
+  Net Benefit = 290M - 147.1B = -146.8B/year (society saves money)
+  ICER = -146.8B / 875k QALYs = -167,771 per QALY
+  Per Life = -167,771 x 35 QALYs/life = -5.87M per life saved
 
-Sensitivity: Conservative: -$5.97M/life | Central: -$5.87M/life | Optimistic: -$4.79M/life (all scenarios dominant)
+Sensitivity: Conservative: -5.97M/life | Central: -5.87M/life | Optimistic: -4.79M/life (all scenarios dominant)
 
 Sources: GiveWell 2024, dFDA Cost-Benefit Analysis, Peace Dividend Analysis, Cost of War Analysis. Error bars show uncertainty ranges.'''
 
