@@ -133,9 +133,9 @@ ax.set_title('When Self-Funded by 1% Military Redirection: Infinite ROI',
             fontsize=24, color=COLOR_BLACK, weight='bold', pad=15, y=0.98)
 
 
-# Add explanatory callout - centered in middle of chart
-callout_text = ('The 1% Treaty redirects military spending to fund DIH + dFDA\nat zero net cost to society.\n\nROI = Benefits ÷ New Cost = $147B ÷ $0 = ∞\n\nResult: $147B in annual benefits (peace dividend + R&D savings)\nwith zero new spending = infinite ROI.\n\nThis is a "dominant intervention" - it saves money while saving lives.\n\nOther health interventions (shown for comparison) are invisible at this scale.')
-ax.text(0.50, 0.50, callout_text,
+# Add explanatory callout with inline LaTeX equation - positioned to the right
+callout_text = r'The 1% Treaty redirects military spending to fund DIH + dFDA at zero net cost to society.' + '\n\n' + r'$\mathrm{ROI} = \frac{\$147\mathrm{B}}{\$0} = \infty$' + '\n\n' + 'Result: $147B in annual benefits (peace dividend + R&D savings)\nwith zero new spending = infinite ROI.\n\nThis is a "dominant intervention" - it saves money while saving lives.\n\nOther health interventions (shown for comparison) are invisible at this scale.'
+ax.text(0.62, 0.50, callout_text,
         transform=ax.transAxes, ha='center', va='center',
         fontsize=15, color=COLOR_BLACK,
         bbox=dict(boxstyle='round,pad=1.0', facecolor=COLOR_WHITE,
