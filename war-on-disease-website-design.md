@@ -902,7 +902,6 @@ VICTORY BONDS          90-270% 🚀       $181M - $2.2 BILLION
 ✅ 90-270% annual returns forever
 ✅ Named institutes (immortality via branding)
 ✅ Tax benefits plus profit
-✅ First $100 trillion company ownership
 ✅ "Saved humanity" in obituary
 ✅ Makes current wealth look like pocket change
 ```

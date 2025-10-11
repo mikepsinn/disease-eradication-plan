@@ -220,19 +220,6 @@ No committees. No gatekeepers. No capture points. Just math."
 
 ---
 
-## SLIDE: The $100 Trillion Company
-**Visual**: Market cap comparison - Apple ($3T) vs DIH ($100T potential)
-**Text**: "Capturing 1% of human suffering = most valuable company ever"
-
-**SPEAKER**: 
-"If we capture just 1% of the $119 trillion peace and health dividend, that's $1.19 trillion annual revenue. 
-
-At standard valuations, we'd be worth $100 trillion. That's 33 Apples. The most valuable company in history.
-
-By preventing suffering instead of causing it."
-
----
-
 ## SLIDE: The Feedback Loop
 **Visual**: Success spiral: 1% → Cures → Votes → 2% → More cures → 10% → Peace
 **Text**: "Success creates more success"
