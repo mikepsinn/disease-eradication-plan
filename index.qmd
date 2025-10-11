@@ -186,24 +186,25 @@ The current FDA is Soviet central planning: One committee in Maryland decides wh
 - Before 1962: 144,000 doctors ran real-world trials
 - After 1962: 200 bureaucrats pretending to be god
 
-![Figure 9: dFDA Interface Mockup - Shows Amazon-style layout with treatments as "products," star ratings from real patients, filters for conditions/side effects/cost, "Add to My Treatment Plan" buttons, and integration with Apple Health showing real-time outcome tracking.]
+![](assets/black-box-model-animation.gif)
+
 
 The dFDA is Amazon meets Consumer Reports for not dying:
 
 - **Treatment Rankings**: Enter your condition and see all treatments ranked by real-world effectiveness
 - **One-Click Join**: Click "Try This Treatment" from your doctor's iPad during your appointment
-- **Open Source**: Anyone can build on it
+- **Open Source**: Anyone can use it or build on it
 
 **The Payment Revolution**:
 
-- Old FDA trials: Pharma burns $48,000 per patient
+- Old Standard NIH/FDA trials: Pharma burns $48,000 per patient
 - dFDA trials: Patients PAY pharma (covered by DIH subsidies)
 - Pharma goes from biggest expense to revenue generator DURING trials
 - CEOs are literally crying tears of joy (and money)
 
-Cost per patient: $500 (competition) vs $41,000 (monopoly)
-Time to results: 2 years (markets) vs 17 years (bureaucracy)
-Patient access: 100% (integrated) vs 15% (gatekept)
+Cost per patient: $500 vs $41,000
+Time to results: 2 years vs 17 years
+Patient access: 100% (universal access) vs 15% (gatekept)
 
 ```{mermaid}
 flowchart LR
@@ -247,7 +248,7 @@ Based on thousands of real patients, you see:
 
 Just like nutrition labels transformed food transparency, outcome labels will transform medical transparency. No more guessing. No more 40-page legal documents. Just clear data about what actually happens.
 
-**Treatment Rankings: Google for Cures**
+**Treatment Rankings: Consumer Reports for Drugs**
 
 Current system: Your doctor guesses which treatment might work based on one pharma lunch presentation from 2003.
 
