@@ -102,4 +102,30 @@ graph TD;
 - **[Join the Coalition](mailto:hello@dih.earth)**: We partner with institutions, companies, and non-profits.
 
 
+## Development & Deployment
+
+### Local Preview
+```bash
+npm run quarto:preview
+```
+
+### Deploy to GitHub Pages
+
+The book automatically deploys to GitHub Pages when you push to the `master` branch.
+
+**First-time setup:**
+1. Go to your repository settings on GitHub
+2. Navigate to Settings → Pages
+3. Under "Build and deployment", select "Deploy from a branch"
+4. Select the `gh-pages` branch
+5. Click Save
+
+The site will be available at: `https://mikepsinn.github.io/decentralized-institutes-of-health/`
+
+**Manual deployment:**
+You can also trigger a deployment manually:
+1. Go to the "Actions" tab on GitHub
+2. Select "Quarto Publish" workflow
+3. Click "Run workflow"
+
 See [Book Outline](./OUTLINE.MD)
