@@ -197,12 +197,14 @@ We'd still have $2.69 trillion left for everyone.  $2.69 trillion is enough to m
 
 **Wishocracy and Patient Choice Replace NIH Committees**
 
-The NIH: Where good ideas go to fill out forms until they die of old age. It's literally Soviet science:
+The NIH: Since 1970, the NIH has spent **$1.1 trillion** (inflation-adjusted). Diseases eradicated: **zero**. Meanwhile, Americans got **3X more obese** and **3.4X more diabetic**. It's literally Soviet science:
 
 - A central committee of 200 reviewers pretends to know all human knowledge
 - $48 billion is allocated by politics, not results
-- A 90% rejection rate means most good ideas die in committee
+- **85% of patients are systematically excluded** from NIH trials
+- The average scientist doesn't get their first real grant until **age 45**—two decades past peak creativity
 - Scientists spend 60% of their time begging for money like Victorian orphans instead of doing science
+- When the NIH finally ran a long COVID trial: **$55,500 per patient**. The UK spent **$277** (200X worse efficiency)
 
 The DIH replaces this broken system with a simple, market-based approach. Instead of a committee picking winners, the DIH treasury directly subsidizes patients in the dFDA marketplace, letting them choose which trials to fund.
 
@@ -288,7 +290,7 @@ The dFDA is Amazon meets Consumer Reports for not dying:
 ```{mermaid}
 flowchart LR
     subgraph "Current FDA System"
-        FDA1["📋 Central Committee<br/>200 bureaucrats"]
+        FDA1["📋 Central Planning"]
         FDA2["💸 $41,000/patient"]
         FDA3["⏰ 17 years to market"]
         FDA4["🚫 15% patient access"]
@@ -298,7 +300,7 @@ flowchart LR
     end
 
     subgraph "dFDA Marketplace"
-        dFDA1["🛒 Open Platform<br/>Millions of users"]
+        dFDA1["🛒 Open Framework<br/>Millions of users"]
         dFDA2["💰 $500/patient"]
         dFDA3["🚀 2 years to results"]
         dFDA4["✅ 100% patient access"]
