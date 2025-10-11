@@ -42,7 +42,7 @@ All reusable charts are located in [brain/figures/](brain/figures/) as **Quarto 
 Include charts in any `.qmd` file using Quarto's include directive:
 
 ```markdown
-{{< include brain/figures/annual-deaths.qmd >}}
+{{< include brain/figures/disease-vs-war-annual-deaths-pie-chart.qmd >}}
 ```
 
 ## Chart Creation Guidelines
@@ -56,11 +56,16 @@ Include charts in any `.qmd` file using Quarto's include directive:
 
 ### File Naming
 
-Name charts descriptively starting with the primary topic: `[primary-topic]-[secondary-topics]-[chart-type].qmd`
+**Format:** `[topic]-[comparison/metric]-[visualization]-chart.qmd`
+
+Always end filenames with `-chart` (or `-diagram`, `-counter` for non-charts).
 
 **Examples:**
-- ✅ `military-spending-vs-medical-research-bar.qmd`
-- ✅ `disease-deaths-by-type-2024-pie.qmd`
+- ✅ `military-spending-vs-medical-research-bar-chart.qmd`
+- ✅ `disease-deaths-by-type-2024-pie-chart.qmd`
+- ✅ `money-flow-diagram.qmd` (diagrams don't need `-chart`)
+- ✅ `death-counter-realtime.qmd` (counters don't need `-chart`)
+- ❌ `military-spending-bar.qmd` (missing `-chart`)
 - ❌ `data.qmd`, `figure1.qmd`, `comparison.qmd`
 
 ### Labels - Plain Language Only
