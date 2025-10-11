@@ -233,7 +233,7 @@ Funds release in tranches based on achievements (protects investors):
 
 ## The Expansion Flywheel
 
-```mermaid
+```{mermaid}
 flowchart TB
     Invest["💰 Investors Give $1B"]
     Treaty1["📜 1% Treaty Passes<br/>$27B/year"]
@@ -369,7 +369,7 @@ It's not charity. It's the most profitable investment available.
 
 Yes. See:
 - @sec-campaign-budget for detailed spending breakdown
-- @sec-financial-plan for high-level financial architecture
+- [Financial Plan](financial-plan.qmd) for high-level financial architecture
 - Full offering docs available upon request for serious investors
 
 ### "Who else is investing?"
@@ -424,8 +424,8 @@ Every billionaire who sits this out will watch from the sidelines as the investo
 
 **For detailed materials**:
 - @sec-campaign-budget - Where the money goes
-- @sec-financial-plan - How the system works
-- @sec-coalition-that-wins - Why everyone profits
+- [Financial Plan](financial-plan.qmd) - How the system works
+- [Coalition That Wins](coalition-that-wins.qmd) - Why everyone profits
 
 **For the impatient**:
 
