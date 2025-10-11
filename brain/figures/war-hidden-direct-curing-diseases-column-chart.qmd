@@ -19,7 +19,7 @@ from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 from matplotlib import patheffects
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
 )
 
 # Setup styling with higher DPI for crisper text
@@ -45,16 +45,15 @@ categories = ['War\'s Hidden\nCosts', 'War Direct\nSpending', 'Curing\nDiseases'
 # Create figure with more vertical space
 fig, ax = plt.subplots(figsize=(30, 16))
 
-# Use RED for war costs (problems), BLUE for cures (solution)
-# Plot single solid bar for indirect war costs (RED - problem)
-bar1 = ax.bar(0, war_indirect_total, color=COLOR_RED, edgecolor=COLOR_WHITE,
+# Plot single solid bar for indirect war costs (white bar with black text)
+bar1 = ax.bar(0, war_indirect_total, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
                linewidth=4, width=0.75)
 
 # Add large total at top - no decimal
 ax.text(0, war_indirect_total * 0.92, f'${war_indirect_total/1000:.0f}T', ha='center', va='center',
-        fontsize=72, weight='bold', color=COLOR_WHITE)
+        fontsize=72, weight='bold', color=COLOR_BLACK)
 ax.text(0, war_indirect_total * 0.82, 'Indirect War Costs', ha='center', va='center',
-        fontsize=40, weight='bold', color=COLOR_WHITE)
+        fontsize=40, weight='bold', color=COLOR_BLACK)
 
 # Add breakdown text with better formatting - rounded numbers
 breakdown_text = (
@@ -67,19 +66,19 @@ breakdown_text = (
     '$2 TRILLION IN LOST GROWTH'
 )
 ax.text(0, war_indirect_total * 0.4, breakdown_text, ha='center', va='center',
-        fontsize=24, weight='bold', color=COLOR_WHITE, linespacing=1.8,
+        fontsize=24, weight='bold', color=COLOR_BLACK, linespacing=1.8,
         fontfamily='monospace')
 
-# Plot direct military spending bar (RED - problem)
-bar2 = ax.bar(1, war_direct, color=COLOR_RED, edgecolor=COLOR_WHITE,
-               linewidth=4, width=0.75)
+# Plot direct military spending bar (diagonal pattern)
+bar2 = ax.bar(1, war_direct, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
+               linewidth=4, width=0.75, hatch='///')
 ax.text(1, war_direct * 0.6, f'${war_direct/1000:.1f}T', ha='center', va='center',
-        fontsize=72, weight='bold', color=COLOR_WHITE)
+        fontsize=72, weight='bold', color=COLOR_BLACK)
 ax.text(1, war_direct * 0.4, 'Direct Military', ha='center', va='center',
-        fontsize=40, weight='bold', color=COLOR_WHITE)
+        fontsize=40, weight='bold', color=COLOR_BLACK)
 
-# Plot cure research bar (BLUE - solution)
-bar3 = ax.bar(2, cure_research, color=COLOR_BLUE, edgecolor=COLOR_WHITE,
+# Plot cure research bar (solid black)
+bar3 = ax.bar(2, cure_research, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
                linewidth=4, width=0.75)
 
 # Label for cure research

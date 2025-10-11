@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark,
-    COLOR_BLACK, COLOR_BLUE, COLOR_WHITE
+    COLOR_BLACK, COLOR_WHITE
 )
 
 # Setup styling
@@ -30,22 +30,22 @@ ax.set_xlim(0, 10)
 ax.set_ylim(0, 10)
 ax.axis('off')
 
-# Define positions and boxes - use BLUE for all (showing solutions/flow of good)
+# Define positions and boxes - use BLACK for all
 boxes = [
-    {'pos': (1, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\n$27B/year', 'color': COLOR_BLUE},
-    {'pos': (3.5, 5), 'size': (1.5, 1.2), 'text': 'DIH\nTreasury', 'color': COLOR_BLUE},
-    {'pos': (6, 7.5), 'size': (1.5, 1.2), 'text': 'Patient\nSubsidies', 'color': COLOR_BLUE},
-    {'pos': (6, 5), 'size': (1.5, 1.2), 'text': 'VICTORY\nBonds 5%', 'color': COLOR_BLUE},
-    {'pos': (6, 2.5), 'size': (1.5, 1.2), 'text': 'Research\nFunding', 'color': COLOR_BLUE},
-    {'pos': (8.5, 7.5), 'size': (1.5, 1.2), 'text': 'Free\nTreatment', 'color': COLOR_BLUE},
-    {'pos': (8.5, 5), 'size': (1.5, 1.2), 'text': '40%\nReturns', 'color': COLOR_BLUE},
-    {'pos': (8.5, 2.5), 'size': (1.5, 1.2), 'text': 'Cures\nFound', 'color': COLOR_BLUE},
+    {'pos': (1, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\n$27B/year', 'color': COLOR_BLACK},
+    {'pos': (3.5, 5), 'size': (1.5, 1.2), 'text': 'DIH\nTreasury', 'color': COLOR_BLACK},
+    {'pos': (6, 7.5), 'size': (1.5, 1.2), 'text': 'Patient\nSubsidies', 'color': COLOR_BLACK},
+    {'pos': (6, 5), 'size': (1.5, 1.2), 'text': 'VICTORY\nBonds 5%', 'color': COLOR_BLACK},
+    {'pos': (6, 2.5), 'size': (1.5, 1.2), 'text': 'Research\nFunding', 'color': COLOR_BLACK},
+    {'pos': (8.5, 7.5), 'size': (1.5, 1.2), 'text': 'Free\nTreatment', 'color': COLOR_BLACK},
+    {'pos': (8.5, 5), 'size': (1.5, 1.2), 'text': '40%\nReturns', 'color': COLOR_BLACK},
+    {'pos': (8.5, 2.5), 'size': (1.5, 1.2), 'text': 'Cures\nFound', 'color': COLOR_BLACK},
 ]
 
 # Draw boxes
 for box in boxes:
     rect = Rectangle(box['pos'], box['size'][0], box['size'][1],
-                     facecolor=box['color'], edgecolor=COLOR_WHITE, linewidth=3)
+                     facecolor=box['color'], edgecolor=COLOR_BLACK, linewidth=3)
     ax.add_patch(rect)
     ax.text(box['pos'][0] + box['size'][0]/2, box['pos'][1] + box['size'][1]/2,
             box['text'], ha='center', va='center', fontsize=28, weight='bold', color=COLOR_WHITE)
@@ -75,7 +75,7 @@ flow_labels = [
 
 for pos, label in flow_labels:
     ax.text(pos[0], pos[1], label, fontsize=24, weight='bold', color=COLOR_BLACK,
-            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLUE, linewidth=2))
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2))
 
 # Add branding
 add_watermark(fig)

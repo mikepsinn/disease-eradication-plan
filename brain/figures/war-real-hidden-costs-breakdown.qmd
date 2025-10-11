@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+    COLOR_BLACK, COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL
 )
 
 # Setup neobrutalist styling
@@ -37,7 +37,7 @@ categories = [
 values = [2700, 2400, 500, 800, 1500, 2000]
 
 # BLACK for admitted, RED for all hidden costs
-colors_pie = [COLOR_BLACK, COLOR_RED, COLOR_RED, COLOR_RED, COLOR_RED, COLOR_RED]
+colors_pie = [COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK]
 
 # Create minimalist pie chart
 fig, ax = plt.subplots(figsize=(14, 14))

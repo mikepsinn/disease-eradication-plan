@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+    COLOR_BLACK, COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL
 )
 
 # Setup styling
@@ -33,12 +33,12 @@ values = [daily_disease_deaths, september_11_deaths]
 fig, ax = plt.subplots(figsize=(14, 12))
 
 # Bar for Daily Disease Deaths (RED)
-ax.bar(0, values[0], color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
+ax.bar(0, values[0], color=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
 ax.text(0, values[0] * 0.5, f'{values[0]:,}', ha='center', va='center',
         fontsize=96, weight='bold', color=COLOR_WHITE)
 
 # Bar for 9/11 Deaths (BLUE)
-ax.bar(1, values[1], color=COLOR_BLUE, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
+ax.bar(1, values[1], color=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
 ax.text(1, values[1] + (values[0] * 0.02), f'{values[1]:,}', ha='center', va='bottom',
         fontsize=44, weight='bold', color=COLOR_BLACK)
 

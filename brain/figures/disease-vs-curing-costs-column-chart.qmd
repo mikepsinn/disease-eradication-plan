@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+    COLOR_BLACK, COLOR_WHITE
 )
 
 # Setup styling
@@ -40,13 +40,13 @@ categories = [
 # Create figure, adjust size for two columns
 fig, ax = plt.subplots(figsize=(14, 128))
 
-# Column 1: Disease Burden (RED - problem) - WITH KEY COMPONENTS
-ax.bar(0, disease_total, color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
+# Column 1: Disease Burden (white bar with black text)
+ax.bar(0, disease_total, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=3, width=0.8)
 
 ax.text(0, disease_total * 0.98, 'Dealing\nwith\nUncured\nDiseases', ha='center', va='center',
-        fontsize=40, weight='bold', color=COLOR_WHITE)
+        fontsize=40, weight='bold', color=COLOR_BLACK)
 ax.text(0, disease_total * 0.95, '$109T', ha='center', va='center',
-        fontsize=96, weight='bold', color=COLOR_WHITE)
+        fontsize=96, weight='bold', color=COLOR_BLACK)
 
 # Add breakdown - simple and clear
 disease_breakdown = (
@@ -56,10 +56,10 @@ disease_breakdown = (
     '55M Deaths/Year'
 )
 ax.text(0, disease_total * 0.92, disease_breakdown, ha='center', va='center',
-        fontsize=32, weight='bold', color=COLOR_WHITE, linespacing=1.4)
+        fontsize=32, weight='bold', color=COLOR_BLACK, linespacing=1.4)
 
-# Column 2: Cure Research Spending (BLUE - solution)
-ax.bar(1, cure_total, color=COLOR_BLUE, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
+# Column 2: Cure Research Spending (solid black)
+ax.bar(1, cure_total, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=3, width=0.8)
 ax.text(1, cure_total + (disease_total * 0.005), f'${cure_total:.0f}B\nCuring Diseases',
         ha='center', va='bottom', fontsize=44, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 

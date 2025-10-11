@@ -16,7 +16,7 @@ sys.path.insert(0, str(project_root))
 import matplotlib.pyplot as plt
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+    COLOR_BLACK, COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL
 )
 
 # Setup styling
@@ -25,7 +25,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 categories = ['Disease\nBurden', 'War &\nConflict', 'Finding\nCures']
 amounts = [109.1, 9.7, 0.068]
-colors_budget = [COLOR_RED, COLOR_RED, COLOR_BLUE]  # Problems are red, solution is blue
+colors_budget = [COLOR_BLACK, COLOR_BLACK, PATTERN_DIAGONAL]  # Use solid black and patterns
 
 # Create chart
 fig, ax = plt.subplots(figsize=(18, 10))

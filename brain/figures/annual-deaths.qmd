@@ -16,7 +16,7 @@ sys.path.insert(0, str(project_root))
 import matplotlib.pyplot as plt
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark,
-    COLOR_BLACK, COLOR_RED, COLOR_WHITE
+    COLOR_BLACK, COLOR_WHITE
 )
 
 # Setup styling
@@ -25,7 +25,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 sizes = [55, 14]
 labels = ['Disease\n55M', 'War\n14M']
-colors = [COLOR_RED, COLOR_RED]  # Both are problems - use red
+colors = [COLOR_BLACK, COLOR_BLACK]  # Both are problems - use solid black
 explode = (0.05, 0.05)
 
 # Create chart

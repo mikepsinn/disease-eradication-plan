@@ -109,19 +109,27 @@ COLOR_WHITE = '#FFFFFF'      # Pure white - backgrounds
 When you need to distinguish between categories, use fill patterns instead of color:
 
 ```python
-PATTERN_SOLID = None         # Solid black fill (default)
+# Default: White fill with black outline (most elegant)
+PATTERN_SOLID = None         # No hatch pattern (white fill)
 PATTERN_DIAGONAL = '///'     # Diagonal lines
 PATTERN_HORIZONTAL = '---'   # Horizontal lines
 PATTERN_CROSS = 'xxx'        # Crosshatch
 PATTERN_DOTS = '...'         # Dots/stippling
 ```
 
+**Bar Fill Guidelines:**
+
+- **Default: White with black outline** - Clean, elegant, maximizes data-ink ratio
+- **For emphasis: Solid black fill** - Use sparingly for critical data that needs maximum visual weight
+- **Patterns on white** - Use hatching patterns on white fills to distinguish categories
+
 **Design Philosophy:**
 
-- **Default to solid black** - Single-category charts use solid black bars
-- **Patterns = distinction** - Use patterns only when comparing multiple categories
-- **Maximum contrast** - Black on white only, no grays, no color
-- **Academic authority** - B&W conveys seriousness and credibility
+- **Default to white fills** - Lighter, more sophisticated, easier to read
+- **Solid black for emphasis** - Reserve for the most important data point
+- **Patterns = distinction** - Use hatching to differentiate categories
+- **Maximum contrast** - Black lines on white fills, no grays, no color
+- **Academic authority** - Tufte-approved minimalism conveys seriousness and credibility
 
 ## Typography Guidelines
 
@@ -171,7 +179,7 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 ## Minimalist Chart Design Rules
 
 **What to Include:**
-- Data bars (solid black, or patterns for multi-category charts)
+- Data bars (white fill with black outline, use solid black for emphasis)
 - Y-axis with scale (ONLY when columns aren't all labeled with amounts)
 - Key data values (large, bold, impossible to miss)
 - Watermark (required)
@@ -185,7 +193,8 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 **Label Placement (Tufte-approved):**
 - Put labels directly ON the data (on bars, lines, points)
 - Format: `"$7T\nIndirect War Costs"` (value + description with line break)
-- **Large bars:** Label inside (white text on black/patterned bars)
+- **Large bars (white fill):** Label inside (black text on white bars) OR label above
+- **Large bars (solid black fill):** Label inside (white text on black bars)
 - **Small bars:** Label above (black text, positioned just above the bar)
 - Remove redundant x-axis labels when data is self-labeled
 - Remove y-axis entirely on column charts when all columns show their amounts
@@ -251,16 +260,15 @@ from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONA
 setup_chart_style()  # Applies consistent styling with automatic margins
 
 # --- 2. Create the Plot ---
-categories = ['Category A', 'Category B']
-values = [100, 75]
-patterns = [None, PATTERN_DIAGONAL]  # Solid black and diagonal pattern
+categories = ['Category A', 'Category B', 'Category C']
+values = [100, 75, 50]
 
 fig, ax = plt.subplots(figsize=(8, 5))
-bars = ax.bar(categories, values, color=COLOR_BLACK, edgecolor=COLOR_BLACK)
 
-# Apply patterns
-for bar, pattern in zip(bars, patterns):
-    bar.set_hatch(pattern)
+# Default: white fill with black outline, use patterns to distinguish
+bar1 = ax.bar(0, values[0], color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, hatch=None)
+bar2 = ax.bar(1, values[1], color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, hatch=PATTERN_DIAGONAL)
+bar3 = ax.bar(2, values[2], color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)  # Solid black for emphasis
 
 # Add labels (no title needed)
 ax.set_ylabel('Y-Axis Label', fontsize=12, color=COLOR_BLACK)
