@@ -15,8 +15,8 @@ This guide defines the visual design standards for all charts, diagrams, and vis
 Charts should be as simple and powerful as possible. Every element must earn its place.
 
 - Strip away everything that doesn't directly convey data
-- Use color only when it adds meaning (problem vs solution)
-- Default to black bars on white backgrounds
+- Use black and white only (no color)
+- Use patterns to distinguish categories when needed
 - Make numbers impossible to miss
 - Remove decorative elements, gradients, shadows, 3D effects
 
@@ -95,31 +95,33 @@ Name charts descriptively starting with the primary topic: `[primary-topic]-[sec
 5. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
 6. Don't use `plt.tight_layout()` (overrides margins)
 
-## Official Color Palette (American Flag Colors)
+## Official Color Palette
 
-Simple, powerful colors inspired by 1950s atomic age propaganda:
+**Black and white only** for maximum authority, timelessness, and accessibility:
 
 ```python
-# The Four Colors - That's It
-COLOR_BLACK = '#000000'      # Pure black - bars, primary text, emphasis
-COLOR_RED = '#B22234'        # Flag red - danger, war, disease, problems
-COLOR_WHITE = '#FFFFFF'      # Pure white - backgrounds, text on dark elements
-COLOR_BLUE = '#3C3B6E'       # Flag blue - hope, solutions, cures, action
+COLOR_BLACK = '#000000'      # Pure black - bars, text, lines
+COLOR_WHITE = '#FFFFFF'      # Pure white - backgrounds
 ```
 
-**When to Use Each Color:**
+**Pattern Palette for Multi-Category Charts:**
 
-- **BLACK:** All chart bars (default), primary text, headlines, axis labels
-- **RED:** Problems/threats (war deaths, disease, waste) - use sparingly for emphasis
-- **WHITE:** Chart backgrounds, text overlaid on colored bars
-- **BLUE:** Solutions (treaty, cures, VICTORY bonds) - use sparingly for emphasis
+When you need to distinguish between categories, use fill patterns instead of color:
+
+```python
+PATTERN_SOLID = None         # Solid black fill (default)
+PATTERN_DIAGONAL = '///'     # Diagonal lines
+PATTERN_HORIZONTAL = '---'   # Horizontal lines
+PATTERN_CROSS = 'xxx'        # Crosshatch
+PATTERN_DOTS = '...'         # Dots/stippling
+```
 
 **Design Philosophy:**
 
-- **Default to black** - Most charts should use solid black bars
-- **Color = meaning** - Only use red/blue when the color adds semantic meaning (problem vs solution)
-- **Maximum contrast** - Black on white, white on black, no grays
-- **Less is more** - If you're not sure whether to add color, don't
+- **Default to solid black** - Single-category charts use solid black bars
+- **Patterns = distinction** - Use patterns only when comparing multiple categories
+- **Maximum contrast** - Black on white only, no grays, no color
+- **Academic authority** - B&W conveys seriousness and credibility
 
 ## Typography Guidelines
 
@@ -169,7 +171,7 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 ## Minimalist Chart Design Rules
 
 **What to Include:**
-- Data bars (solid black or red/blue when meaning is clear)
+- Data bars (solid black, or patterns for multi-category charts)
 - Y-axis with scale (ONLY when columns aren't all labeled with amounts)
 - Key data values (large, bold, impossible to miss)
 - Watermark (required)
@@ -183,7 +185,7 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 **Label Placement (Tufte-approved):**
 - Put labels directly ON the data (on bars, lines, points)
 - Format: `"$7T\nIndirect War Costs"` (value + description with line break)
-- **Large bars:** Label inside (white text on colored bars)
+- **Large bars:** Label inside (white text on black/patterned bars)
 - **Small bars:** Label above (black text, positioned just above the bar)
 - Remove redundant x-axis labels when data is self-labeled
 - Remove y-axis entirely on column charts when all columns show their amounts
@@ -244,19 +246,23 @@ import numpy as np
 
 # --- 1. Import centralized style ---
 from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines
-from brain.figures._chart_style import COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
 
 setup_chart_style()  # Applies consistent styling with automatic margins
 
 # --- 2. Create the Plot ---
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
+categories = ['Category A', 'Category B']
+values = [100, 75]
+patterns = [None, PATTERN_DIAGONAL]  # Solid black and diagonal pattern
 
 fig, ax = plt.subplots(figsize=(8, 5))
-ax.plot(x, y, color=COLOR_BLACK, linewidth=2.5)
+bars = ax.bar(categories, values, color=COLOR_BLACK, edgecolor=COLOR_BLACK)
+
+# Apply patterns
+for bar, pattern in zip(bars, patterns):
+    bar.set_hatch(pattern)
 
 # Add labels (no title needed)
-ax.set_xlabel('X-Axis Label', fontsize=12, color=COLOR_BLACK)
 ax.set_ylabel('Y-Axis Label', fontsize=12, color=COLOR_BLACK)
 
 # --- 3. Add the Watermark ---

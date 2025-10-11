@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL
 )
 
 # Setup styling
@@ -49,8 +49,8 @@ categories = [
 # Create figure
 fig, ax = plt.subplots(figsize=(28, 12))
 
-# Column 1: Disease Burden (RED - problem) - WITH KEY COMPONENTS
-ax.bar(0, disease_total, color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
+# Column 1: Disease Burden (solid black) - WITH KEY COMPONENTS
+bar1 = ax.bar(0, disease_total, color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=3, width=0.8)
 ax.text(0, disease_total * 0.75, '$109T', ha='center', va='center',
         fontsize=96, weight='bold', color=COLOR_WHITE)
 ax.text(0, disease_total * 0.65, 'Disease Burden', ha='center', va='center',
@@ -65,18 +65,18 @@ disease_breakdown = (
 ax.text(0, disease_total * 0.35, disease_breakdown, ha='center', va='center',
         fontsize=32, weight='bold', color=COLOR_WHITE, linespacing=1.4)
 
-# Column 2: War Indirect Costs (RED - problem) - NO BREAKDOWN
-ax.bar(1, war_indirect_total, color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
+# Column 2: War Indirect Costs (diagonal pattern)
+bar2 = ax.bar(1, war_indirect_total, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=3, width=0.8, hatch='///')
 ax.text(1, war_indirect_total + (disease_total * 0.005), '$7T\nWar\'s Hidden Costs',
         ha='center', va='bottom', fontsize=48, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 
-# Column 3: War Direct Spending (RED - problem)
-ax.bar(2, war_direct, color=COLOR_RED, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
+# Column 3: War Direct Spending (horizontal pattern)
+bar3 = ax.bar(2, war_direct, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=3, width=0.8, hatch='---')
 ax.text(2, war_direct + (disease_total * 0.005), '$2.7T\nDirect Military',
         ha='center', va='bottom', fontsize=48, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 
-# Column 4: Cure Research Spending (BLUE - solution)
-ax.bar(3, cure_total, color=COLOR_BLUE, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
+# Column 4: Cure Research Spending (solid black)
+bar4 = ax.bar(3, cure_total, color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=3, width=0.8)
 ax.text(3, cure_total + (disease_total * 0.005), f'${cure_total:.0f}B\nCuring Diseases',
         ha='center', va='bottom', fontsize=44, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 

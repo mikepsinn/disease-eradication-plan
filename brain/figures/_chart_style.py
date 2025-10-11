@@ -1,46 +1,48 @@
 """
 Centralized chart styling for all visualizations in the DIH project.
 
-This module provides consistent color palettes, typography, and styling
-for all charts and diagrams. Import this module and call setup_chart_style()
-at the beginning of any visualization code.
+This module provides consistent B&W styling with patterns for categorical data.
+Import this module and call setup_chart_style() at the beginning of any visualization code.
 
 Usage:
-    from brain.figures._chart_style import setup_chart_style, COLOR_BLACK, COLOR_RED, COLOR_BLUE
+    from brain.figures._chart_style import setup_chart_style, COLOR_BLACK, COLOR_WHITE
+    from brain.figures._chart_style import PATTERN_DIAGONAL, PATTERN_HORIZONTAL
 
     setup_chart_style()
 
     fig, ax = plt.subplots()
-    ax.plot(x, y, color=COLOR_BLACK)
+    bars = ax.bar(x, y, color=COLOR_BLACK)
+    bars[1].set_hatch(PATTERN_DIAGONAL)  # Apply pattern to differentiate
 """
 
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
-# Official Color Palette (American Flag Colors - 1950s Atomic Age Style)
-COLOR_BLACK = '#000000'      # Pure black - bars, primary text, emphasis
-COLOR_RED = '#B22234'        # Flag red - danger, war, disease, problems
-COLOR_BLUE = '#3C3B6E'       # Flag blue - hope, solutions, cures, action
-COLOR_WHITE = '#FFFFFF'      # Pure white - backgrounds, text on dark elements
+# Official Color Palette (Black & White Only)
+COLOR_BLACK = '#000000'      # Pure black - bars, text, lines
+COLOR_WHITE = '#FFFFFF'      # Pure white - backgrounds
 
 # Legacy names for backwards compatibility
 COLOR_DARK = COLOR_BLACK
-COLOR_ACCENT = COLOR_BLUE
+COLOR_ACCENT = COLOR_BLACK
 COLOR_BG = COLOR_WHITE
+COLOR_RED = COLOR_BLACK      # Deprecated - use patterns instead
+COLOR_BLUE = COLOR_BLACK     # Deprecated - use patterns instead
 
-# Secondary palette for categorical data (when more than one color is needed)
-PALETTE_CATEGORICAL = [
-    COLOR_BLACK,
-    COLOR_RED,
-    COLOR_BLUE,
-]
+# Hatch patterns for multi-category charts (use instead of color)
+PATTERN_SOLID = None         # Solid black fill (default)
+PATTERN_DIAGONAL = '///'     # Diagonal lines
+PATTERN_HORIZONTAL = '---'   # Horizontal lines
+PATTERN_CROSS = 'xxx'        # Crosshatch
+PATTERN_DOTS = '...'         # Dots/stippling
 
-# Sequential palette for gradients (light to dark) - minimal use recommended
-PALETTE_SEQUENTIAL = [
-    COLOR_WHITE,
-    COLOR_BLUE,
-    COLOR_RED,
-    COLOR_BLACK,
+# Pattern palette for categorical data
+PALETTE_PATTERNS = [
+    PATTERN_SOLID,
+    PATTERN_DIAGONAL,
+    PATTERN_HORIZONTAL,
+    PATTERN_CROSS,
+    PATTERN_DOTS,
 ]
 
 
@@ -147,20 +149,24 @@ def clean_spines(ax, positions=['top', 'right']):
         ax.spines[pos].set_visible(False)
 
 
-def style_bar_chart(ax, color=COLOR_ACCENT, edge_color=COLOR_WHITE, edge_width=1.5):
+def style_bar_chart(ax, color=COLOR_BLACK, patterns=None, edge_color=COLOR_BLACK, edge_width=1.5):
     """
     Apply consistent styling to bar charts.
 
     Args:
         ax: matplotlib Axes object with bar chart
-        color: Fill color for bars
+        color: Fill color for bars (default: black)
+        patterns: List of hatch patterns for multi-category charts (default: None for solid)
         edge_color: Edge color for bars
         edge_width: Width of bar edges
     """
-    for patch in ax.patches:
+    patches = ax.patches
+    for i, patch in enumerate(patches):
         patch.set_facecolor(color)
         patch.set_edgecolor(edge_color)
         patch.set_linewidth(edge_width)
+        if patterns:
+            patch.set_hatch(patterns[i % len(patterns)])
 
 
 def get_presentation_font_sizes():
