@@ -116,9 +116,8 @@ The book automatically deploys to GitHub Pages when you push to the `master` bra
 **First-time setup:**
 1. Go to your repository settings on GitHub
 2. Navigate to Settings → Pages
-3. Under "Build and deployment", select "Deploy from a branch"
-4. Select the `gh-pages` branch
-5. Click Save
+3. Under "Build and deployment", select **"GitHub Actions"** as the source
+4. Save (if required)
 
 The site will be available at: `https://mikepsinn.github.io/decentralized-institutes-of-health/`
 
