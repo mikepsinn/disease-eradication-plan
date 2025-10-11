@@ -59,12 +59,9 @@ Include charts in any `.qmd` file using Quarto's include directive:
 Name charts descriptively starting with the primary topic: `[primary-topic]-[secondary-topics]-[chart-type].qmd`
 
 **Examples:**
-- ✅ `war-vs-curing-diseases-column-chart.qmd`
-- ✅ `disease-war-curing-costs-column-chart.qmd`
-- ✅ `death-counter-realtime.qmd`
-- ✅ `three-shocks-escalation-chart.qmd`
-- ❌ `chart1.qmd` (not descriptive)
-- ❌ `spending.py` (wrong format - use .qmd not .py)
+- ✅ `military-spending-vs-medical-research-bar.qmd`
+- ✅ `disease-deaths-by-type-2024-pie.qmd`
+- ❌ `data.qmd`, `figure1.qmd`, `comparison.qmd`
 
 ### Labels - Plain Language Only
 
