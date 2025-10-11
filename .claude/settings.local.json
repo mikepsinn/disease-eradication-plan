@@ -19,7 +19,8 @@
       "Bash(then git mv investment-ratio-1750-to-1.png military-vs-medical-spending-ratio-bar-chart.png)",
       "Bash(quarto preview:*)",
       "Bash(npm run build:html:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []
