@@ -16,7 +16,7 @@ book:
   chapters:
     - index.qmd
 
-    - part: "The Problem: Everyone You Love Is Dying While We Build Skynet"
+    - part: "Problems" #: Everyone You Love Is Dying While We Build Skynet"
       chapters:
         - brain/book/problem.qmd  # Overview
         - brain/book/problem/the-daily-massacre.qmd  # 150,000 deaths/day
@@ -29,7 +29,7 @@ book:
         - brain/book/problem/regulatory-capture.qmd  # Foxes guarding henhouses
         - brain/book/problem/the-evolutionary-trap.qmd  # Why we're wired for war
 
-    - part: "The Theory (Why Markets Work and Democracy Doesn't)"
+    - part: "Theory" # (Why Markets Work and Democracy Doesn't)"
       chapters:
         - brain/book/theory.qmd
         - brain/book/theory/central-planning-kills.qmd  # FDA's 82X inefficiency
@@ -38,7 +38,7 @@ book:
         - brain/book/theory/public-choice.qmd  # Everyone's selfish, use it
         - brain/book/theory/wisdom-of-crowds.qmd  # 8 billion > 200
 
-    - part: "The Solution"
+    - part: "Solutions"
       chapters:
         - brain/book/solution.qmd
         - brain/book/solution/1-percent-treaty.qmd  # The funding mechanism
@@ -47,7 +47,7 @@ book:
         - brain/book/solution/dfda.qmd  # 82X efficiency engine
         # - brain/book/economics/economic-incentives.qmd  # TODO: CREATE - Why everyone wins
 
-    - part: "The Proof (This Already Works)"
+    - part: "Proof" # (This Already Works)"
       chapters:
         - brain/book/proof.qmd
         - brain/book/reference/recovery-trial.qmd  # Oxford's $500 miracle
@@ -55,13 +55,13 @@ book:
         - brain/book/proof/historical-precedents.qmd
         - brain/book/proof/body-as-repairable-machine.qmd
 
-    - part: "The Future - Choose Your Own Adventure - Idiocracy or Wishonia"
+    - part: "The Future" # - Choose Your Own Adventure - Idiocracy or Wishonia"
       chapters:
         - brain/book/futures.qmd
         - brain/book/futures/dystopia-skynet-wins.qmd  # The three subs
         - brain/book/futures/utopia-health-and-happiness.qmd  # The three supers
 
-    - part: "The Money (How Everyone Gets Rich by Eradicating Disease)"
+    - part: "The Money" # (How Everyone Gets Rich by Eradicating Disease)"
       chapters:
         - brain/book/economics.qmd # Executive Summary
         - brain/book/economics/economic-impact-summary.qmd # Economic Impact Summary
@@ -72,12 +72,12 @@ book:
         - brain/book/economics/campaign-budget.qmd # Campaign Budget (Detailed)
         - brain/book/economics/health-savings-sharing-model.qmd # 50/50 split incentives
     
-    - part: "The Legal Architecture (Staying Out of Prison)"
+    - part: "Legal: How to Stay Out of Prison"
       chapters:
         - brain/book/legal.qmd  # Overview
         - brain/book/legal/legal-framework.qmd  # Multi-jurisdiction strategy
 
-    - part: "The Strategy (Building Paradise)"
+    - part: "The Strategy" # (Building Paradise)"
       chapters:
         - brain/book/strategy.qmd
         - brain/book/strategy/global-referendum.qmd  # Democratic path
@@ -86,7 +86,7 @@ book:
         - brain/book/strategy/grassroots-mobilization.qmd  # Movement building
         - brain/book/strategy/diplomatic-approach.qmd  # Government relations
 
-    - part: "Join or Die (Literally)"
+    - part: "Join or Die" # (Literally)"
       chapters:
         - brain/book/call-to-action/your-personal-benefits.qmd  # What YOU get
         - brain/book/call-to-action/three-actions.qmd  # Vote, Invest, Share
