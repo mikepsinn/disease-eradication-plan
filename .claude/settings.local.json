@@ -22,7 +22,8 @@
       "Bash(mkdir:*)",
       "Bash(node:*)",
       "Bash(git log:*)",
-      "Bash(git remote get-url:*)"
+      "Bash(git remote get-url:*)",
+      "Bash(powershell:*)"
     ],
     "deny": [],
     "ask": []
