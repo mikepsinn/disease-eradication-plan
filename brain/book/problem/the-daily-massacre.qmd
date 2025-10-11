@@ -61,7 +61,7 @@ print(f"• That's {int(preventable_deaths/days_left):,} preventable deaths for 
 
 ## Meanwhile, Our Spending Priorities
 
-{{< include ../../figures/military-vs-medical-research-spending-comparison.qmd >}}
+{{< include ../../figures/military-vs-medical-research-spending-bar-chart.qmd >}}
 
 ## Your Personal Death Clock
 

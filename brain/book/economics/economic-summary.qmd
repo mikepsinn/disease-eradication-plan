@@ -128,7 +128,7 @@ print(f"Plus {qaly_gains_annual_baseline:,.0f} extra years of healthy life, ever
 
 This chart shows the total economic impact of the initiative, combining both the peace dividend and the dFDA benefits.
 
-{{< include ../../../brain/figures/peace-dividend-dfda-combined-stacked-bar.qmd >}}
+{{< include ../../../brain/figures/peace-dividend-dfda-combined-stacked-bar-chart.qmd >}}
 
 ## Comparative Analysis: Benchmarking Our Impact
 
@@ -141,13 +141,13 @@ The final two charts provide context for the scale of this initiative by compari
 
 This chart illustrates the fundamental difference between a cost model and a profit model. Top charities *spend* money to save lives (a financial cost for a health gain). Our initiative *makes* money while saving lives (a financial gain *and* a health gain).
 
-{{< include ../../../brain/figures/charity-cost-vs-roi-comparison-bar.qmd >}}
+{{< include ../../../brain/figures/charity-cost-vs-roi-bar-chart.qmd >}}
 
 ### Scale of Impact: Historical Public Health Wins
 
 This chart compares the annual economic impact of our initiative to some of the most successful public health interventions in history.
 
-{{< include ../../../brain/figures/public-health-impact-comparison-horizontal-bar.qmd >}}
+{{< include ../../../brain/figures/public-health-impact-horizontal-bar-chart.qmd >}}
 
 ## Final Summary: The Economic Case
 

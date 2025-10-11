@@ -168,7 +168,7 @@ plt.tight_layout()
 # Save figure
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'net-societal-benefit-comparison-vertical-bar.png',
+plt.savefig(output_dir / 'net-societal-benefit-vertical-bar-chart.png',
             dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 plt.show()
