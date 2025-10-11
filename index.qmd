@@ -157,23 +157,20 @@ But there's another way to change the world: **Make doing the right thing more p
 
 ## II. The Solution
 
-**Four Systems to Make Curing More Profitable Than Killing**
+**Three Systems to Make Curing More Profitable Than Killing**
 
 ```{mermaid}
 flowchart TB
-    subgraph "The 4-System Solution Architecture"
+    subgraph "The 3-System Solution Architecture"
         Treaty["🌍 System 1: The 1% Treaty<br/>Redirect $27B from military<br/>to medical<br/>Every nation contributes"]
 
-        dFDA["🛒 System 2: Decentralized FDA<br/>Amazon for Clinical Trials + Consumer Reports for Drugs<br/>$500 vs $41,000<br/>per patient"]
+        DIH["💰 System 2: DIH Treasury<br/>Market-based funding<br/>Patients choose trials<br/>Wishocracy governance"]
 
-        DIH["💰 System 3: DIH Treasury<br/>Market-based funding<br/>Patients choose trials"]
-
-        Wish["🗳️ System 4: Wishocracy<br/>8 billion<br/>decision-makers<br/>vs 200 bureaucrats"]
+        dFDA["🛒 System 3: Decentralized FDA<br/>Amazon for Clinical Trials + Consumer Reports for Drugs<br/>$500 vs $41,000<br/>per patient"]
     end
 
     Treaty --> DIH
     DIH --> dFDA
-    Wish --> DIH
     dFDA --> Results["✨ Results<br/>• 82X cost reduction<br/>• 17 years → 2 years<br/>• 100% patient access<br/>• Millions of lives saved"]
 ```
 
@@ -185,11 +182,62 @@ Every nation redirects just **1%** of their current murder budget to a Decentral
 
 We'd still have $2.69 trillion left for everyone.  $2.69 trillion is enough to murder everyone on Earth 67 times. (Literally.)
 
-### System 2: The Decentralized FDA
+### System 2: The DIH Treasury
+
+**Markets Replace NIH Committees**
+
+The NIH: Where good ideas go to fill out forms until they die of old age. It's literally Soviet science:
+
+- A central committee of 200 reviewers pretends to know all human knowledge
+- $48 billion is allocated by politics, not results
+- A 90% rejection rate means most good ideas die in committee
+- Scientists spend 60% of their time begging for money like Victorian orphans instead of doing science
+
+The DIH replaces this broken system with a simple, market-based approach. Instead of a committee picking winners, the DIH treasury directly subsidizes patients in the dFDA marketplace, letting them choose which trials to fund.
+
+This unleashes the power of decentralized decision-making:
+
+- **Wisdom of Crowds**: Millions of patients and their doctors deciding is smarter than 200 bureaucrats guessing.
+- **Real Competition**: The best treatments attract patients and funding.
+- **No Gatekeepers**: If patients are willing, a trial can get funded. Data and patient demand (not politics) pick the winners.
+- **Pay for Success**: Researchers are rewarded for running trials that attract patients and deliver results, not for writing grant proposals.
+
+#### How Patients Get Paid: The Dynamic Voucher System
+
+- Researchers set prices based on trial difficulty ($100 for easy, $5,000 for invasive)
+- DIH subsidies = total treaty funds ÷ participating patients
+- More people join = bigger treaty = bigger subsidies for everyone
+- Creates viral incentive: "Join my trial, we both get paid more!"
+- Refundable deposits ensure commitment (no-shows hurt everyone's payout)
+
+#### Wishocracy: Preventing Capture
+
+**Protecting the $24.3B From Special Interests**
+
+Remember how democracy got captured by special interests? The military-industrial complex? Big Pharma? Yeah, we're not letting that happen again with the DIH's $27 billion annual budget.
+
+**The Problem**: After we pay back the 10% to investors (the oligarchy that made this all possible), we still have $24.3 billion per year. Without safeguards, lobbyists and special interests will swarm like vultures. Within 5 years, the DIH would become just another captured institution funneling money to whoever has the best K Street connections.
+
+**The Solution**: Wishocracy - where everyone votes on DIH budget allocation, preventing capture.
+
+![Wishocracy Public Budget Voting Example](assets/wishocracy-slider.png)
+
+**How it protects the $24.3B from capture**:
+
+1. **Anyone can propose projects**: Patient subsidies, trial infrastructure, expanding to a 2% treaty - all competing for funding
+2. **Everyone votes through pairwise comparisons**: "Fund Alzheimer's trials" vs "Build trial infrastructure in Africa?" Simple choices, not 10,000-item ballots
+3. **Mathematical aggregation prevents gaming**: Can't buy 51% of votes when there are 8 billion voters
+4. **Real-time transparency**: Every allocation is public.
+
+**Why this matters**: Investors who funded this deserve their 10% returns. But the remaining 90% must serve humanity, not special interests.
+
+Without Wishocracy, the DIH becomes another captured institution.
+
+### System 3: The Decentralized FDA
 
 **Amazon for Clinical Trials + Consumer Reports for Drugs**
 
-The current FDA is Soviet central planning: One committee in Maryland decides what 335 million Americans can try. Takes 17 years, costs $2.2 billion, everyone dies waiting. 
+The current FDA is Soviet central planning: One committee in Maryland decides what 335 million Americans can try. Takes 17 years, costs $2.2 billion, everyone dies waiting.
 
 **Historical Proof This Failed**: In 1962, FDA outlawed decentralized pragmatic efficacy trials run by doctors and published in JAMA. Immediate disaster:
 
@@ -201,7 +249,6 @@ The current FDA is Soviet central planning: One committee in Maryland decides wh
 - After 1962: 200 bureaucrats pretending to be god
 
 ![](assets/black-box-model-animation.gif)
-
 
 The dFDA is Amazon meets Consumer Reports for not dying:
 
@@ -286,58 +333,6 @@ Each treatment shows:
 - Side effect profiles and outcome labels
 
 Stop guessing. Start knowing. It's Google meets Amazon meets "please don't let me die."
-
-### System 3: The DIH Treasury
-
-**Markets Replace NIH Committees**
-
-The NIH: Where good ideas go to fill out forms until they die of old age. It's literally Soviet science:
-
-- A central committee of 200 reviewers pretends to know all human knowledge
-- $48 billion is allocated by politics, not results
-- A 90% rejection rate means most good ideas die in committee
-- Scientists spend 60% of their time begging for money like Victorian orphans instead of doing science
-
-The DIH replaces this broken system with a simple, market-based approach. Instead of a committee picking winners, the DIH treasury directly subsidizes patients in the dFDA marketplace, letting them choose which trials to fund.
-
-This unleashes the power of decentralized decision-making:
-
-- **Wisdom of Crowds**: Millions of patients and their doctors deciding is smarter than 200 bureaucrats guessing.
-- **Real Competition**: The best treatments attract patients and funding.
-- **No Gatekeepers**: If patients are willing, a trial can get funded. Data and patient demand (not politics) pick the winners.
-- **Pay for Success**: Researchers are rewarded for running trials that attract patients and deliver results, not for writing grant proposals.
-
-#### How Patients Get Paid: The Dynamic Voucher System
-
-- Researchers set prices based on trial difficulty ($100 for easy, $5,000 for invasive)
-- DIH subsidies = total treaty funds ÷ participating patients
-- More people join = bigger treaty = bigger subsidies for everyone
-- Creates viral incentive: "Join my trial, we both get paid more!"
-- Refundable deposits ensure commitment (no-shows hurt everyone's payout)
-
-### System 4: Wishocracy
-
-**Preventing a Repeat of Democratic Failures**
-
-Remember how democracy got captured by special interests? The military-industrial complex? Big Pharma? Yeah, we're not letting that happen again with the DIH's $27 billion annual budget.
-
-**The Problem**: After we pay back the 10% to investors (the oligarchy that made this all possible), we still have $24.3 billion per year. Without safeguards, lobbyists and special interests will swarm like vultures. Within 5 years, the DIH would become just another captured institution funneling money to whoever has the best K Street connections.
-
-**The Solution**: Wishocracy - where everyone votes on DIH budget allocation, preventing capture.
-
-![Wishocracy Public Budget Voting Example](assets/wishocracy-slider.png)
-
-
-**How it protects the $24.3B from capture**:
-
-1. **Anyone can propose projects**: Patient subsidies, trial infrastructure, expanding to a 2% treaty - all competing for funding
-2. **Everyone votes through pairwise comparisons**: "Fund Alzheimer's trials" vs "Build trial infrastructure in Africa?" Simple choices, not 10,000-item ballots
-3. **Mathematical aggregation prevents gaming**: Can't buy 51% of votes when there are 8 billion voters
-4. **Real-time transparency**: Every allocation is public.
-
-**Why this matters**: Investors who funded this deserve their 10% returns. But the remaining 90% must serve humanity, not special interests.
-
-Without Wishocracy, the DIH becomes another captured institution.
 
 
 ---
