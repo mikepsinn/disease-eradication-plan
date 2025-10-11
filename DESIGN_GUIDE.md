@@ -56,17 +56,22 @@ Include charts in any `.qmd` file using Quarto's include directive:
 
 ### File Naming
 
-**Format:** `[topic]-[comparison/metric]-[visualization]-chart.qmd`
+**Format:** `[topic]-[comparison/metric]-[type]-chart.qmd`
 
-Always end filenames with `-chart` (or `-diagram`, `-counter` for non-charts).
+**Rules:**
+- Always end with `[type]-chart` for charts (e.g., `bar-chart`, `pie-chart`, `line-chart`)
+- Use `-diagram`, `-counter` etc. for non-charts
+- Don't add redundant context (if "victory-bonds" is clear, don't add "medical-")
+- Use hyphens between all words
 
 **Examples:**
 - ✅ `military-spending-vs-medical-research-bar-chart.qmd`
 - ✅ `disease-deaths-by-type-2024-pie-chart.qmd`
-- ✅ `money-flow-diagram.qmd` (diagrams don't need `-chart`)
-- ✅ `death-counter-realtime.qmd` (counters don't need `-chart`)
+- ✅ `victory-bonds-roi-projection-line-chart.qmd` (not `medical-victory-bonds...`)
+- ✅ `money-flow-diagram.qmd`
+- ✅ `death-counter-realtime.qmd`
 - ❌ `military-spending-bar.qmd` (missing `-chart`)
-- ❌ `data.qmd`, `figure1.qmd`, `comparison.qmd`
+- ❌ `data.qmd`, `figure1.qmd`
 
 ### Labels - Plain Language Only
 

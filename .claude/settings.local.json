@@ -1,8 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "Bash(while read file)",
-      "Bash(do echo \"=== $file ===\" grep -B3 \"color=COLOR_WHITE.*fontsize\" \"$file\")"
+      "Bash(git mv:*)",
+      "Bash(if [ -f brain/figures/victory-bonds-returns.png ])",
+      "Bash(then git mv brain/figures/victory-bonds-returns.png brain/figures/medical-victory-bonds-roi-projection.png)",
+      "Bash(fi)",
+      "Bash(if [ -f brain/figures/victory-bonds-returns.html ])",
+      "Bash(then git mv brain/figures/victory-bonds-returns.html brain/figures/medical-victory-bonds-roi-projection.html)",
+      "Bash(if [ -d brain/figures/victory-bonds-returns_files ])",
+      "Bash(then git mv brain/figures/victory-bonds-returns_files brain/figures/medical-victory-bonds-roi-projection_files)",
+      "Bash(then mv brain/figures/victory-bonds-returns.html brain/figures/medical-victory-bonds-roi-projection.html)",
+      "Bash(then mv brain/figures/victory-bonds-returns_files brain/figures/medical-victory-bonds-roi-projection_files)"
     ],
     "deny": [],
     "ask": []
