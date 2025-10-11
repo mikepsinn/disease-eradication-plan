@@ -20,7 +20,9 @@
       "Bash(quarto preview:*)",
       "Bash(npm run build:html:*)",
       "Bash(mkdir:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(git log:*)",
+      "Bash(git remote get-url:*)"
     ],
     "deny": [],
     "ask": []
