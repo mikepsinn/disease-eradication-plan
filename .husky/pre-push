@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Rendering Quarto book to check for errors..."
+echo "   (Use 'git push --no-verify' to skip this check)"
+
+# Run quarto render and capture output
+if quarto render; then
+  echo "✅ Quarto render successful!"
+  exit 0
+else
+  echo ""
+  echo "❌ Quarto render failed! Fix errors before pushing."
+  echo "   Or use 'git push --no-verify' to skip validation."
+  exit 1
+fi

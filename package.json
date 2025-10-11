@@ -46,7 +46,8 @@
     "quarto:clean": "rimraf _book",
     "validate:all": "npm run validate:frontmatter && npm run lint:md",
     "fix:all": "npm run fix:frontmatter && npm run lint:md:fix",
-    "claude:opus": "claude --model claude-opus-4-1-20250805"
+    "claude:opus": "claude --model claude-opus-4-1-20250805",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

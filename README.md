@@ -109,6 +109,14 @@ graph TD;
 npm run quarto:preview
 ```
 
+### Pre-Push Validation
+A git pre-push hook automatically runs `quarto render` to catch errors before pushing. This prevents broken builds in CI/CD.
+
+**To skip validation** (for WIP commits):
+```bash
+git push --no-verify
+```
+
 ### Deploy to GitHub Pages
 
 The book automatically deploys to GitHub Pages when you push to the `master` branch.
