@@ -442,9 +442,62 @@ We'll use the same proven lobbying ROI to build a coalition where everyone profi
 Create Super PACs in every country. Not to support candidates, to support math. If your district votes 70% for the treaty and you vote against it, we fund your opponent with spreadsheets and bar graphs.
 
 
-### Step 5: Watch Treaties Pass and Diseases Fall
+### Step 5: End War and Disease
 
-![Figure 14: The Success Spiral - Animated spiral showing: 1% Treaty → First cures → Media coverage → More votes → 2% Treaty → More cures → 5% Treaty → Eventually spiraling up to majority of budget going to healing instead of killing. Each loop shows increasing speed and scale.]
+```{mermaid}
+flowchart TD
+    subgraph "The Success Spiral"
+        Start[["🎯 1% Treaty Passes<br/>$27B redirected"]]
+
+        Cures1["💊 First Major Cures<br/>Cancer, Alzheimer's breakthroughs"]
+        Media1["📺 Global Media Coverage<br/>'The Treaty That Cured Cancer'"]
+        Votes1["🗳️ Public Support Surges<br/>500M+ new votes"]
+
+        Treaty2[["📈 2% Treaty<br/>$54B redirected"]]
+
+        Cures2["🧬 Accelerated Progress<br/>Aging reversed, organ printing"]
+        Media2["🌍 Paradigm Shift<br/>'Death becomes optional'"]
+        Votes2["⚡ Momentum Builds<br/>2B+ supporters"]
+
+        Treaty5[["🚀 5% Treaty<br/>$135B redirected"]]
+
+        Cures5["✨ Disease Eradicated<br/>All major diseases cured"]
+        Media5["🎊 Victory Declared<br/>'Humanity wins war on death'"]
+        Votes5["🌟 Universal Support<br/>7B+ advocates"]
+
+        TreatyMajority[["🏆 50%+ Budget<br/>Healing > Killing<br/>New human era begins"]]
+    end
+
+    Start --> Cures1
+    Cures1 --> Media1
+    Media1 --> Votes1
+    Votes1 --> Treaty2
+
+    Treaty2 --> Cures2
+    Cures2 --> Media2
+    Media2 --> Votes2
+    Votes2 --> Treaty5
+
+    Treaty5 --> Cures5
+    Cures5 --> Media5
+    Media5 --> Votes5
+    Votes5 --> TreatyMajority
+
+    TreatyMajority -.->|"Perpetual Innovation"| TreatyMajority
+
+    style Start fill:#4CAF50,color:#fff
+    style Treaty2 fill:#2196F3,color:#fff
+    style Treaty5 fill:#9C27B0,color:#fff
+    style TreatyMajority fill:#FFD700,color:#000,stroke-width:3px
+```
+
+Each successful treaty level creates a positive feedback loop:
+- **1% Treaty** ($27B) → First major cures → Media attention → More public support
+- **2% Treaty** ($54B) → Accelerated breakthroughs → Paradigm shift → Massive momentum
+- **5% Treaty** ($135B) → Disease eradication → Victory declared → Universal support
+- **50%+ Budget** → Humanity permanently prioritizes healing over killing
+
+The spiral accelerates with each cycle as success breeds more success, eventually flipping humanity's spending from destruction to flourishing.
 
 ---
 
