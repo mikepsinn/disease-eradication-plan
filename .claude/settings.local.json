@@ -17,7 +17,9 @@
       "Bash(then git mv medical-victory-bonds-roi-projection.png victory-bonds-roi-projection-bar-chart.png)",
       "Bash(if [ -f investment-ratio-1750-to-1.png ])",
       "Bash(then git mv investment-ratio-1750-to-1.png military-vs-medical-spending-ratio-bar-chart.png)",
-      "Bash(quarto preview:*)"
+      "Bash(quarto preview:*)",
+      "Bash(npm run build:html:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []
