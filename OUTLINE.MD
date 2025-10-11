@@ -5,7 +5,7 @@
 
 ## Part I: The Problem: Everyone You Love Is Dying While We Build Skynet
 
-### The Daily Massacre - 150,000 Deaths Per Day While We Count Missiles
+### The Daily Massacre - 150,000 Deaths Per Day While We Build Skynet
 
 - **The Numbers That Should Start a Revolution**
   - 150,000 people die every day, mostly from preventable/curable diseases
