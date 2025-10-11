@@ -49,7 +49,9 @@
       "Bash(if exist roi-comparison-bar.png del roi-comparison-bar.png)",
       "Bash(mv:*)",
       "Bash(rm:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
