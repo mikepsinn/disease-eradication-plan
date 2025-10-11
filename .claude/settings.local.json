@@ -10,7 +10,14 @@
       "Bash(if [ -d brain/figures/victory-bonds-returns_files ])",
       "Bash(then git mv brain/figures/victory-bonds-returns_files brain/figures/medical-victory-bonds-roi-projection_files)",
       "Bash(then mv brain/figures/victory-bonds-returns.html brain/figures/medical-victory-bonds-roi-projection.html)",
-      "Bash(then mv brain/figures/victory-bonds-returns_files brain/figures/medical-victory-bonds-roi-projection_files)"
+      "Bash(then mv brain/figures/victory-bonds-returns_files brain/figures/medical-victory-bonds-roi-projection_files)",
+      "Bash(quarto render:*)",
+      "Bash(ls:*)",
+      "Bash(if [ -f medical-victory-bonds-roi-projection.png ])",
+      "Bash(then git mv medical-victory-bonds-roi-projection.png victory-bonds-roi-projection-bar-chart.png)",
+      "Bash(if [ -f investment-ratio-1750-to-1.png ])",
+      "Bash(then git mv investment-ratio-1750-to-1.png military-vs-medical-spending-ratio-bar-chart.png)",
+      "Bash(quarto preview:*)"
     ],
     "deny": [],
     "ask": []

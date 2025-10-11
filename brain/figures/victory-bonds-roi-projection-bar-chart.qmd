@@ -55,7 +55,7 @@ add_watermark(fig)
 # Save in brain/figures directory
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'medical-victory-bonds-roi-projection.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_dir / 'victory-bonds-roi-projection-bar-chart.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
 

@@ -31,10 +31,15 @@ fig, ax = plt.subplots(figsize=(10, 6))
 # Data
 categories = ['Death Toilet\n(War + Disease)', 'Curing Diseases']
 values = [119000, 68]  # In billions for proper scale
-colors = [COLOR_BLACK, PATTERN_DIAGONAL]
+colors = [COLOR_BLACK, COLOR_WHITE]
+hatches = [None, PATTERN_DIAGONAL]
 
 # Use LINEAR scale to show TRUE disparity - no hiding the insanity!
 bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_BLACK, linewidth=4, width=0.6)
+
+# Add hatching patterns
+for bar, hatch in zip(bars, hatches):
+    bar.set_hatch(hatch)
 
 # Add value labels
 for i, (bar, value) in enumerate(zip(bars, values)):
@@ -73,7 +78,7 @@ add_watermark(fig)
 # Save in brain/figures directory
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'investment-ratio-1750-to-1.png', dpi=300, bbox_inches='tight', facecolor='white')
+plt.savefig(output_dir / 'military-vs-medical-spending-ratio-bar-chart.png', dpi=300, bbox_inches='tight', facecolor='white')
 plt.show()
 
 # Print the brutal truth
