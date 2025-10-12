@@ -107,7 +107,7 @@
   - Every financial crisis: The house always wins, you always lose
   - The cantillon effect: Money printers get rich, you get poor
 
-### Unrepresentative Democracy - Princeton Proved It
+### Unrepresentative Democracy
 
 - **The Princeton Bombshell: You Have Zero Political Power**
   - Gilens & Page study: 0% correlation between public opinion and policy
