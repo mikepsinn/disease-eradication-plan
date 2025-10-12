@@ -1,0 +1,15 @@
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff', 'primaryTextColor':'#000', 'primaryBorderColor':'#000', 'lineColor':'#000', 'secondaryColor':'#fff', 'tertiaryColor':'#fff', 'clusterBkg':'#fff', 'clusterBorder':'#000', 'edgeLabelBackground':'#fff', 'fontFamily':'Courier New, monospace'}}}%%
+flowchart TB
+    subgraph "The 3 Ingredients"
+        Treaty["🌍 The 1% Treaty<br/>Redirect $27B<br/>from war to<br/>curing diseases"]
+
+        DIH["💰 DIH Treasury<br/>Market-based<br/>funding<br/>Wishocracy<br/>governance"]
+
+        dFDA["🛒 Decentralized FDA<br/>Amazon for<br/>Clinical Trials<br/>$500 vs $41,000"]
+    end
+
+    Treaty --> DIH
+    DIH --> dFDA
+    dFDA --> Results["✨ Results<br/>• 82X cost reduction<br/>• 17 years → 2 years<br/>• 100% patient access<br/>• Millions saved"]
+```

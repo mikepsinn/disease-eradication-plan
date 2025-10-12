@@ -1,0 +1,47 @@
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff', 'primaryTextColor':'#000', 'primaryBorderColor':'#000', 'lineColor':'#000', 'secondaryColor':'#fff', 'tertiaryColor':'#fff', 'clusterBkg':'#fff', 'clusterBorder':'#000', 'edgeLabelBackground':'#fff', 'fontFamily':'Courier New, monospace'}}}%%
+flowchart TD
+    subgraph "The Success Spiral"
+        Start[["🎯 1% Treaty<br/>Passes<br/>$27B redirected"]]
+
+        Cures1["💊 First Major<br/>Cures<br/>Cancer,<br/>Alzheimer's"]
+        Media1["📺 Global Media<br/>Coverage<br/>'Treaty That<br/>Cured Cancer'"]
+        Votes1["🗳️ Public Support<br/>Surges<br/>500M+ votes"]
+
+        Treaty2[["📈 2% Treaty<br/>$54B redirected"]]
+
+        Cures2["🧬 Accelerated<br/>Progress<br/>Aging reversed<br/>organ printing"]
+        Media2["🌍 Paradigm<br/>Shift<br/>'Death becomes<br/>optional'"]
+        Votes2["⚡ Momentum<br/>Builds<br/>2B+ supporters"]
+
+        Treaty5[["🚀 5% Treaty<br/>$135B redirected"]]
+
+        Cures5["✨ Disease<br/>Eradicated<br/>All major<br/>diseases cured"]
+        Media5["🎊 Victory<br/>Declared<br/>'Humanity wins<br/>war on death'"]
+        Votes5["🌟 Universal<br/>Support<br/>7B+ advocates"]
+
+        TreatyMajority[["🏆 50%+ Budget<br/>Healing > Killing<br/>New human era"]]
+    end
+
+    Start --> Cures1
+    Cures1 --> Media1
+    Media1 --> Votes1
+    Votes1 --> Treaty2
+
+    Treaty2 --> Cures2
+    Cures2 --> Media2
+    Media2 --> Votes2
+    Votes2 --> Treaty5
+
+    Treaty5 --> Cures5
+    Cures5 --> Media5
+    Media5 --> Votes5
+    Votes5 --> TreatyMajority
+
+    TreatyMajority -.->|"Perpetual Innovation"| TreatyMajority
+
+    style Start fill:#4CAF50,color:#fff
+    style Treaty2 fill:#2196F3,color:#fff
+    style Treaty5 fill:#9C27B0,color:#fff
+    style TreatyMajority fill:#FFD700,color:#000,stroke-width:3px
+```

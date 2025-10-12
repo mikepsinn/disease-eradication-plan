@@ -1,0 +1,17 @@
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff', 'primaryTextColor':'#000', 'primaryBorderColor':'#000', 'lineColor':'#000', 'secondaryColor':'#fff', 'tertiaryColor':'#fff', 'clusterBkg':'#fff', 'clusterBorder':'#000', 'edgeLabelBackground':'#fff', 'fontFamily':'Courier New, monospace'}}}%%
+flowchart LR
+    subgraph "The VICTORY Bonds Money Machine"
+        Investors["💸 You invest<br/>$1B"]
+        Campaign["🏛️ Fund AI<br/>campaign<br/>(lobbying<br/>+ viral)"]
+        Treaty["📜 1% Treaty<br/>passes<br/>$27B/year<br/>redirected"]
+        Returns["💰 You get<br/>$2.7B/year<br/>(270% returns<br/>forever)"]
+        Cures["💊 $24.3B funds<br/>efficient<br/>decentralized<br/>trials"]
+    end
+
+    Investors --> Campaign
+    Campaign --> Treaty
+    Treaty --> Returns
+    Treaty --> Cures
+    Returns -.->|"Attracts More"| Investors
+```

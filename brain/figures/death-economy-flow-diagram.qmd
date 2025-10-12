@@ -1,0 +1,17 @@
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff', 'primaryTextColor':'#000', 'primaryBorderColor':'#000', 'lineColor':'#000', 'secondaryColor':'#fff', 'tertiaryColor':'#fff', 'clusterBkg':'#fff', 'clusterBorder':'#000', 'edgeLabelBackground':'#fff', 'fontFamily':'Courier New, monospace'}}}%%
+flowchart TD
+    subgraph "The $119 Trillion Death Toilet"
+        War["🔫 War: $9.7T/year<br/>(Direct + hidden +<br/>lost Pentagon money)"]
+        Disease["💀 Disease: $109.1T/year<br/>(Healthcare + lost<br/>productivity + suffering)"]
+
+        War --> DeathToilet["🚽 The Death Toilet<br/>$118.8T/year<br/>(More than<br/>Earth's GDP)"]
+        Disease --> DeathToilet
+    end
+
+    subgraph "What We Spend<br/>on Solutions"
+        Research["🔬 Medical Research<br/>$68B/year<br/>(0.06% of<br/>death costs)"]
+    end
+
+    DeathToilet -.->|"1,750x more"| Research
+```

@@ -91,22 +91,7 @@ Add war's $9.7 trillion.
 
 Total: **$119 trillion per year** humanity flushes down the death toilet.
 
-```{mermaid}
-flowchart TD
-    subgraph "The $119 Trillion Death Economy"
-        War["🔫 War: $9.7T/year<br/>(Direct + hidden + lost Pentagon money)"]
-        Disease["💀 Disease: $109.1T/year<br/>(Healthcare + lost productivity + suffering)"]
-
-        War --> DeathToilet["🚽 The Death Toilet<br/>$118.8T/year<br/>(More than Earth's GDP)"]
-        Disease --> DeathToilet
-    end
-
-    subgraph "What We Spend on Solutions"
-        Research["🔬 Medical Research<br/>$68B/year<br/>(0.06% of death costs)"]
-    end
-
-    DeathToilet -.->|"1,750x more"| Research
-```
+{{< include brain/figures/death-economy-flow-diagram.qmd >}}
 
 #### The Final Stupidity Ratio: 1,750-to-1
 
@@ -200,20 +185,7 @@ But there's another way to change the world: **Make doing the right thing more p
 
 **3 Ingredients of a World Without War and Disease**
 
-```{mermaid}
-flowchart TB
-    subgraph "The 3 Ingredients"
-        Treaty["🌍 The 1% Treaty<br/>Redirect $27B from military<br/>to medical<br/>Every nation contributes"]
-
-        DIH["💰 DIH Treasury<br/>Market-based funding<br/>Patients choose trials<br/>Wishocracy governance"]
-
-        dFDA["🛒 Decentralized FDA<br/>Amazon for Clinical Trials<br/>$500 vs $41,000<br/>per patient"]
-    end
-
-    Treaty --> DIH
-    DIH --> dFDA
-    dFDA --> Results["✨ Results<br/>• 82X cost reduction<br/>• 17 years → 2 years<br/>• 100% patient access<br/>• Millions of lives saved"]
-```
+{{< include brain/figures/three-ingredients-system-diagram.qmd >}}
 
 ### The 1% Treaty
 
@@ -286,14 +258,18 @@ Without Wishocracy, the DIH becomes another captured institution and repeats the
 
 The current FDA is Soviet central planning: One committee in Maryland decides what 335 million Americans can try. Takes 17 years, costs $2.2 billion, everyone dies waiting.
 
-**Historical Proof This Failed**: In 1962, FDA outlawed decentralized pragmatic efficacy trials run by doctors and published in JAMA. Immediate disaster:
+**Historical Proof This Failed**: In 1962, congress passed the Kefauver Harris Amendment which effectively outlawed decentralized pragmatic efficacy trials run by doctors and published in JAMA. Immediate disaster:
 
-- New drug approvals dropped 70% overnight (whoops)
+- New drug approvals dropped 70% overnight
 - Drug costs: $74M → $2.6B today (35X more expensive)
 - Timeline: 2-3 years → 17 years to market
 - Life expectancy gains slowed by more than half
 - Before 1962: 144,000 doctors ran real-world trials
 - After 1962: 200 bureaucrats pretending to be god
+
+![New Treatments Per Year](assets/new-treatments-per-year-2.png)
+
+![Cost to Develop a New Drug](assets/cost-to-develop-a-new-drug.png)
 
 ![](assets/black-box-model-animation.gif)
 
@@ -311,30 +287,7 @@ The dFDA is Amazon meets Consumer Reports for not dying:
 - **Patient access**: Universal access vs 85% excluded currently
 
 
-```{mermaid}
-flowchart LR
-    subgraph "Current FDA System"
-        FDA1["📋 Central Planning"]
-        FDA2["💸 $41,000/patient"]
-        FDA3["⏰ 17 years to market"]
-        FDA4["🚫 15% patient access"]
-        FDA5["📉 70% approval drop"]
-
-        FDA1 --> FDA2 --> FDA3 --> FDA4 --> FDA5
-    end
-
-    subgraph "dFDA Marketplace"
-        dFDA1["🛒 Open Framework<br/>Millions of users"]
-        dFDA2["💰 $500/patient"]
-        dFDA3["🚀 2 years to results"]
-        dFDA4["✅ 100% patient access"]
-        dFDA5["📈 Competition drives innovation"]
-
-        dFDA1 --> dFDA2 --> dFDA3 --> dFDA4 --> dFDA5
-    end
-
-    FDA5 -.->|"82X Efficiency Gain"| dFDA5
-```
+{{< include brain/figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}
 
 **Outcome Labels: Nutrition Facts for Drugs**
 
@@ -401,13 +354,12 @@ America spent $41,000 per patient on paperwork.
 
 ## The Economics
 
-### The dFDA Alone
+### Return on Investment
 
 **463:1 ROI (Better Than Smallpox Eradication)**
 
-{{< include brain/figures/dfda-roi-comparison-column-chart.qmd >}}
-
-The dFDA alone achieves a **463:1 return on investment**—better than history's greatest public health achievements like smallpox eradication (280:1) and childhood vaccinations (13:1).
+The Decentralized FDA alone achieves a **463:1 return on investment**.  
+This means for every $1 invested, we society get $463 in benefits. 
 
 This exceptional ROI comes from multiple sources:
 - **$50B in annual R&D cost savings**: 82X reduction in clinical trial costs
@@ -415,7 +367,11 @@ This exceptional ROI comes from multiple sources:
 - **Better prevention through real-world data**: Continuous learning from millions of patients
 - **Enabling new therapies**: Making rare disease trials economically viable
 
-### With Treaty Funding
+{{< include brain/figures/dfda-roi-comparison-column-chart.qmd >}}
+
+This ROI is better than history's greatest public health achievements like smallpox eradication (280:1) and childhood vaccinations (13:1).
+
+### ROI With 1% Treaty Funding
 
 **Infinite ROI (Self-Funding System)**
 
@@ -431,15 +387,18 @@ But here's the real magic: when funded by the 1% Treaty's military redirection, 
 - **The math**: $147B benefit ÷ $0 new spending = ∞ (infinite ROI)
 - **Per life saved**: Society PROFITS $167,771 instead of spending
 
-This is a **dominant health intervention**—the only one in history that simultaneously saves money AND saves lives. Unlike traditional interventions requiring ongoing charity, this generates $147 billion annually while saving 25,000 lives. It's what happens when you redirect money from destroying life to creating it.
+This is a **dominant health intervention**. 
+This means it simultaneously saves money AND saves lives. 
+Unlike traditional interventions requiring ongoing charity, this generates $147 billion annually while saving 25,000 lives. 
 
-### 10X Bigger Than History's Best
+### Total Annual Benefit
 
-**Comparing to Public Health Victories**
+**10X Bigger Than History's Best to Public Health Victories**
 
 {{< include brain/figures/public-health-impact-horizontal-bar-chart.qmd >}}
 
-The $147.1 billion annual economic benefit makes this intervention nearly **10× larger than childhood vaccinations**—one of the most successful public health programs in history. The stacked bar shows how both the peace dividend ($97.1B) and dFDA R&D savings ($50B) contribute to this unprecedented scale.
+The $147.1 billion annual economic benefit makes this intervention nearly **10× larger than childhood vaccinations** (one of the most successful public health programs in history). 
+The stacked bar shows how both the peace dividend ($97.1B) and dFDA R&D savings ($50B) contribute to this unprecedented scale.
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates the wealth needed to sustain itself through VICTORY bonds that pay investors 270% annual returns.
 
@@ -449,7 +408,7 @@ Unlike traditional interventions that require ongoing charitable funding, the 1%
 
 ## The Future
 
-**Choose Between Mad Max or Star Trek**
+**Choose Your Own Adventure**
 
 ### Path A (Idiocracy): Nuclear Winter and 35-Year Lifespans by 2050
 
@@ -495,24 +454,7 @@ Yes, actually. We did that too.
 
 **How to Pass a Global Treaty in 5 Steps**
 
-```{mermaid}
-flowchart TD
-    Step1["📊 Step 1: Global Referendum<br/>Get 280M votes<br/>(3.5% of humanity)<br/>VOTE points as future claims"]
-
-    Step2["💰 Step 2: VICTORY Bonds<br/>Raise $1B<br/>from investors<br/>270% annual returns"]
-
-    Step3["🏛️ Step 3: Legal Lobbying<br/>Deploy $1B (ROI: 1,813:1)<br/>Build stakeholder<br/>coalition"]
-
-    Step4["🗳️ Step 4: Super PACs<br/>Fund treaty supporters<br/>Replace opponents<br/>with math"]
-
-    Step5["🎯 Step 5: Treaties Pass<br/>1% → 2% → 5% → Victory<br/>Diseases fall,<br/>humanity rises"]
-
-    Step1 --> Step2
-    Step2 --> Step3
-    Step3 --> Step4
-    Step4 --> Step5
-    Step5 -.->|"Success Spiral"| Step1
-```
+{{< include brain/figures/five-step-strategy-flowchart.qmd >}}
 
 ### Step 1: Global Referendum
 
@@ -553,52 +495,7 @@ Create Super PACs in every country. Not to support candidates, to support math. 
 
 ### Step 5: End War and Disease
 
-```{mermaid}
-flowchart TD
-    subgraph "The Success Spiral"
-        Start[["🎯 1% Treaty Passes<br/>$27B redirected"]]
-
-        Cures1["💊 First Major Cures<br/>Cancer, Alzheimer's breakthroughs"]
-        Media1["📺 Global Media Coverage<br/>'The Treaty That Cured Cancer'"]
-        Votes1["🗳️ Public Support Surges<br/>500M+ new votes"]
-
-        Treaty2[["📈 2% Treaty<br/>$54B redirected"]]
-
-        Cures2["🧬 Accelerated Progress<br/>Aging reversed, organ printing"]
-        Media2["🌍 Paradigm Shift<br/>'Death becomes optional'"]
-        Votes2["⚡ Momentum Builds<br/>2B+ supporters"]
-
-        Treaty5[["🚀 5% Treaty<br/>$135B redirected"]]
-
-        Cures5["✨ Disease Eradicated<br/>All major diseases cured"]
-        Media5["🎊 Victory Declared<br/>'Humanity wins war on death'"]
-        Votes5["🌟 Universal Support<br/>7B+ advocates"]
-
-        TreatyMajority[["🏆 50%+ Budget<br/>Healing > Killing<br/>New human era begins"]]
-    end
-
-    Start --> Cures1
-    Cures1 --> Media1
-    Media1 --> Votes1
-    Votes1 --> Treaty2
-
-    Treaty2 --> Cures2
-    Cures2 --> Media2
-    Media2 --> Votes2
-    Votes2 --> Treaty5
-
-    Treaty5 --> Cures5
-    Cures5 --> Media5
-    Media5 --> Votes5
-    Votes5 --> TreatyMajority
-
-    TreatyMajority -.->|"Perpetual Innovation"| TreatyMajority
-
-    style Start fill:#4CAF50,color:#fff
-    style Treaty2 fill:#2196F3,color:#fff
-    style Treaty5 fill:#9C27B0,color:#fff
-    style TreatyMajority fill:#FFD700,color:#000,stroke-width:3px
-```
+{{< include brain/figures/success-spiral-flowchart.qmd >}}
 
 Gradually moving toward a world with less and less war and more and more cures:
 - **1% Treaty** ($27B) → First major cures → Media attention → More public support
@@ -633,22 +530,7 @@ Better than:
 
 **How You Get 270% Returns Forever**
 
-```{mermaid}
-flowchart LR
-    subgraph "The VICTORY Bonds Money Machine"
-        Investors["💸 You invest $1B"]
-        Campaign["🏛️ Fund AI campaign<br/>(lobbying + viral)"]
-        Treaty["📜 1% Treaty passes<br/>$27B/year redirected"]
-        Returns["💰 You get $2.7B/year<br/>(270% returns forever)"]
-        Cures["💊 $24.3B funds cures"]
-    end
-
-    Investors --> Campaign
-    Campaign --> Treaty
-    Treaty --> Returns
-    Treaty --> Cures
-    Returns -.->|"Attracts More"| Investors
-```
+{{< include brain/figures/victory-bonds-money-flow-diagram.qmd >}}
 
 **The math:** Raise $1B → Redirect $27B annually → Investors get 10% of treaty inflows → $2.7B/year forever.
 
