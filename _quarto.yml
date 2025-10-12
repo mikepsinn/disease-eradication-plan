@@ -14,7 +14,15 @@ book:
   #repo-url: https://github.com/mikepsinn/decentralized-institutes-of-health
   #issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   chapters:
-    - index.qmd
+    - text: "🚀 Start Here (Landing Page)"
+      href: landing-page.qmd
+    - text: "📖 Full Book Overview"
+      href: index.qmd
+    - text: "⚡ Quick Summary"
+      href: index-abridged.qmd
+    - text: "🎯 Elevator Pitch"
+      href: elevator-pitch.qmd
+    - text: "---"
 
     - part: "Problems" #: Everyone You Love Is Dying While We Build Skynet"
       chapters:

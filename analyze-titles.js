@@ -4,7 +4,7 @@ import { glob } from 'glob';
 
 // Find all .qmd files
 const qmdFiles = await glob('**/*.qmd', {
-  ignore: ['node_modules/**', '**/node_modules/**']
+  ignore: ['node_modules/**', '**/node_modules/**', '_book/**']
 });
 
 const titles = [];
