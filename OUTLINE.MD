@@ -1299,7 +1299,7 @@
 
 ### Interactive Elements
 - **Death Counter**: Real-time counter of preventable deaths while reading
-- **Budget Simulator**: Drag sliders to reallocate military to medical spending
+- **Budget Simulator**: Drag sliders to reallocate military and war spending to curing diseases
 - **Your Disease Calculator**: Enter condition, see funding vs military equipment
 - **Peace Dividend Calculator**: Show GDP growth from military cuts
 - **Wishocracy Demo**: Mini-version to try pairwise allocation
