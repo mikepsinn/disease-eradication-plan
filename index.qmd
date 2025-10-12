@@ -8,15 +8,28 @@ tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incent
 
 ## The Problem
 
+### The Daily Holocaust
+
 Every 2 seconds, two things happen:
 1. Someone dies from a curable disease
 2. Your government pisses away $172,000 on bombs and bullets and murderbots and a bunch of fucking nonsense like that
 
-Think of Earth as a household. A deeply disturbed household. Here's what we spend our allowance on:
+The number of people that die from curable diseases every year is equal to 18,274 September 11 terrorist attacks.
+
+<!-- {{< include brain/figures/disease-deaths-vs-historical-events-chart.qmd >}} -->
+
+![Comparison of annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
+
+
+And while we're perfecting the art of long-distance murder, your body is quietly falling apart. Your cancer cells are multiplying RIGHT NOW. Your brain is deleting memories. Your joints are turning into gravel. Your heart is getting tired of beating. Your telomeres are shortening. You are literally dissolving.
+
+You'd think we'd prioritize fixing this. You'd be adorable for thinking that.
+
+We haven't cured a single disease in [50 years](./brain/book/references.qmd#smallpox-eradicated). But we have enough nukes to end civilization 13 times, just in case the first apocalypse doesn't take.
 
 ### The Cost of War
 
-We spend **[$2.72 trillion](./brain/book/references.qmd#sipri-2024-spending)** every year on tools designed specifically to make humans stop being alive. 
+We spend **[$2.72 trillion](./brain/book/references.qmd#sipri-2024-spending)** every year on stuff designed specifically to make humans stop being alive. 
 
 These include sundry items such as:
 
@@ -33,7 +46,7 @@ Meanwhile, we spend $68 billion on medical research. That's **40 times less** on
 
 The Pentagon alone has **lost** $2.5 trillion. Not spent. Lost. Like change in a couch, except the couch is the size of Nebraska and the change could cure cancer hundreds of times over. The Pentagon loses more money than exists in most countries.
 
- We have a Space Force but no Death Force. Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%.
+We have a Space Force but no Death Force. Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%.
 
 But wait. It gets dumber.
 
@@ -57,9 +70,9 @@ When you consider the secondary effects of war, the total costs explode:
 
 So before we begin, you must understand that you are a meat robot.
 
-Aging and disease are just mechanical failures that can be fixed (but we haven't because we're too busy blowing each other up).
+Aging and disease are just mechanical failures that can be fixed (but we haven't figured out how to fix them because we're too busy blowing each other up).
 
-Your body is a machine. When machines break, we fix them. We don't just "manage symptoms" of a broken car engine—we replace the parts.
+Your body is a machine. When machines break, we fix them. We don't just "manage symptoms" of a broken car engine. We replace the parts.
 
 Yet somehow, we've convinced ourselves that human bodies are magical exceptions to basic engineering principles. They're not.
 
@@ -70,24 +83,13 @@ Yet somehow, we've convinced ourselves that human bodies are magical exceptions 
 - Diabetes? Fuel regulation system malfunction
 - Aging itself? Accumulated wear and tear
 
-We've already proven we can fix these things:
-- We've cured Hepatitis C (90%+ cure rate)
-- We've eliminated smallpox (killed billions, now extinct)
-- We've turned HIV from a death sentence into a manageable condition
-- We've extended lifespans by 30+ years in a century
-
-**The only reason we haven't cured everything is because we spend 1,750 times more money on death than on cures.**
-
-If we redirected even 1% of military spending ($27 billion) to medical research, we'd nearly double the global research budget overnight. The diseases would start falling like dominoes.
-
-We're not limited by biology. We're limited by stupidity.
-
+We're not limited by biology. We're limited by paying our smartest humans to make bombs instead of figuring these things out.
 
 The cost of almost never curing any diseases is **$109 trillion annually**. 
 
 Add war's $9.7 trillion. 
 
-Total: **$119 trillion per year** flushed down the death toilet.
+Total: **$119 trillion per year** humanity flushes down the death toilet.
 
 ```{mermaid}
 flowchart TD
@@ -133,38 +135,6 @@ If humanity's budget was a family making $100,000/year:
 That's like buying 1,600 mops instead of fixing the burst pipe.
 
 {{< include brain/figures/disease-vs-curing-costs-column-chart.qmd >}}
-
-
-
-
-### The Daily Holocaust
-
-**150,000 Die Daily From Preventable Diseases While We Build Skynet**
-
-<!-- {{< include brain/figures/disease-deaths-vs-historical-events-chart.qmd >}} -->
-
-![Comparison of annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
-
-While you read this sentence, 17 people died from preventable diseases. By the time you finish this chapter, over 150,000 will be gone. That's a small city. Deleted. Ctrl+Alt+Delete on a Cincinnati worth of humans.
-
-Every day we delay costs:
-
-- **$137 million** burned in inefficiency (enough to buy 274,000 PS5s)
-- **2,301 Quality-Adjusted Life Years** lost (that's 2,301 years of someone's grandma)
-- **150,671 people** dead from preventable disease
-- While you read this paragraph: **$66,000 vanished**, someone lost a year of life
-
-The speed of stupidity:
-
-- Every second: $196,900 spent on war instead of cures
-- Every heartbeat: Someone dies of something curable
-- Every time you blink: $590,700 flushed down the death toilet
-
-And while we're perfecting the art of long-distance murder, your body is quietly falling apart. Your cancer cells are multiplying RIGHT NOW. Your brain is deleting memories. Your joints are turning into gravel. Your heart is getting tired of beating. Your telomeres are shortening. You are literally dissolving.
-
-Yet we don't prioritize fixing this.
-
-We haven't cured a single disease in [50 years](./brain/book/references.qmd#smallpox-eradicated). But we have enough nukes to end civilization several times over, just in case the first apocalypse doesn't take.
 
 ### Why We're Idiots
 
@@ -220,7 +190,6 @@ However, in reality, public support has almost no influence on what laws are pas
 
 So voting won't fix this. Neither will protests. The system is designed to ignore you.
 
-
 This isn't cynicism. It's math. You live in an oligarchy with democracy cosplay.
 
 But there's another way to change the world: **Make doing the right thing more profitable than doing the wrong thing.**
@@ -256,18 +225,24 @@ We'd still have $2.69 trillion left for everyone.  $2.69 trillion is enough to m
 
 ### The DIH Treasury
 
-**Wishocracy and Patient Choice Replace NIH Committees**
+The NIH: 
 
-The NIH: Since 1970, the NIH has spent **$1.1 trillion** (inflation-adjusted). Diseases eradicated: **zero**. Meanwhile, Americans got **3X more obese** and **3.4X more diabetic**. It's literally Soviet science:
+Since 1970, the NIH has spent **$1.1 trillion** (inflation-adjusted). 
+
+Diseases eradicated: **zero**. 
+
+Meanwhile, Americans got **3X more obese** and **3.4X more diabetic**. 
+
+It's literally Soviet science:
 
 - A central committee of 200 reviewers pretends to know all human knowledge
 - $48 billion is allocated by politics, not results
-- **85% of patients are systematically excluded** from NIH trials
+- **85% of patients are systematically excluded** from trials
 - The average scientist doesn't get their first real grant until **age 45**—two decades past peak creativity
 - Scientists spend 60% of their time begging for money like Victorian orphans instead of doing science
-- When the NIH finally ran a long COVID trial: **$55,500 per patient**. The UK spent **$277** (200X worse efficiency)
+- The NIH got $1.6B for COVID research and completed zero 0 trials in 4 years
 
-The DIH replaces this broken system with a simple, market-based approach. Instead of a committee picking winners, the DIH treasury directly subsidizes patients in the dFDA marketplace, letting them choose which trials to fund.
+The solution: a simple, market-based approach. Instead of a committee picking winners, the DIH treasury directly subsidizes patients in the dFDA marketplace, letting them choose which trials to fund.
 
 This unleashes the power of decentralized decision-making:
 
@@ -280,17 +255,13 @@ This unleashes the power of decentralized decision-making:
 
 **The Dynamic Voucher System**
 
-- Researchers set prices based on trial difficulty ($100 for easy, $5,000 for invasive)
+- Researchers or the trial sponse sets a price for the trial
 - DIH subsidies = total treaty funds ÷ participating patients
-- More people join = bigger treaty = bigger subsidies for everyone
-- Creates viral incentive: "Join my trial, we both get paid more!"
-- Refundable deposits ensure commitment (no-shows hurt everyone's payout)
+- More countries join = bigger treaty = bigger subsidies for everyone
 
 #### Wishocracy: Preventing Capture
 
-**Protecting the $24.3B From Special Interests**
-
-Remember how democracy got captured by special interests? The military-industrial complex? Big Pharma? Yeah, we're not letting that happen again with the DIH's $27 billion annual budget.
+**Protecting the $24.3B From Special Interest Hamburglers**
 
 **The Problem**: After we pay back the 10% to investors (the oligarchy that made this all possible), we still have $24.3 billion per year. Without safeguards, lobbyists and special interests will swarm like vultures. Within 5 years, the DIH would become just another captured institution funneling money to whoever has the best K Street connections.
 
@@ -330,22 +301,14 @@ The dFDA is Amazon meets Consumer Reports for not dying:
 
 - **Treatment Rankings**: Enter your condition and see all treatments ranked by real-world effectiveness
 - **One-Click Join**: Click "Try This Treatment" from your doctor's iPad during your appointment
-- **Open Source**: Anyone can use it or build on it
-
-**The Payment Revolution**:
-
-- Old Standard NIH/FDA trials: Pharma burns $48,000 per patient
-- dFDA trials: Patients PAY pharma (covered by DIH subsidies)
-- Pharma goes from biggest expense to revenue generator DURING trials
-- CEOs are literally crying tears of joy (and money)
 
 ### Why dFDA Wins
 
 **82X More Efficient Than Current System**
 
-- **Cost per patient**: $500 vs $41,000
-- **Time to results**: 2 years vs 17 years
-- **Patient access**: 100% (universal access) vs 15% (gatekept)
+- **Cost per patient**: $500 vs the current $41,000
+- **Time to results**: 2 years vs the current 17 years
+- **Patient access**: Universal access vs 85% excluded currently
 
 
 ```{mermaid}
@@ -372,8 +335,6 @@ flowchart LR
 
     FDA5 -.->|"82X Efficiency Gain"| dFDA5
 ```
-
-It's literally Amazon but for cures. Same convenience, same competition, same customer obsession - but instead of buying crap you don't need, you're buying years of life.
 
 **Outcome Labels: Nutrition Facts for Drugs**
 
@@ -410,12 +371,9 @@ Each treatment shows:
 - One-click access to available trials
 - Side effect profiles and outcome labels
 
-Stop guessing. Start knowing. It's Consumer Reports meets Amazon meets "please don't let me die."
-
-
 ---
 
-## The Proof
+## Proof This Isn't Insane
 
 **Oxford Already Achieved 82X Cost Reduction**
 
@@ -445,10 +403,6 @@ So we know it works. Oxford proved competition beats monopoly by 82:1. Now let's
 ---
 
 ## The Economics
-
-**Why This Is the Most Profitable Investment in History**
-
-This isn't charity. This is the best investment opportunity in human history. Here's why:
 
 ### The dFDA Alone
 
@@ -492,7 +446,7 @@ The $147.1 billion annual economic benefit makes this intervention nearly **10×
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates the wealth needed to sustain itself through VICTORY bonds that pay investors 270% annual returns.
 
-**Bottom line**: While the world's best charities spend $3,500-5,500 to save a life (which is excellent), the 1% Treaty + DIH + dFDA actually **SAVES society $5.87 million per life saved**. This isn't charity—it's the most profitable intervention in human history.
+**Bottom line**: While the world's best charities spend $3,500-5,500 to save a life (which is excellent), the 1% Treaty + DIH + dFDA actually **SAVES society $5.87 million per life saved**.
 
 ---
 
@@ -641,13 +595,11 @@ flowchart TD
     style TreatyMajority fill:#FFD700,color:#000,stroke-width:3px
 ```
 
-Each successful treaty level creates a positive feedback loop:
+Gradually moving toward a world with less and less war and more and more cures:
 - **1% Treaty** ($27B) → First major cures → Media attention → More public support
 - **2% Treaty** ($54B) → Accelerated breakthroughs → Paradigm shift → Massive momentum
 - **5% Treaty** ($135B) → Disease eradication → Victory declared → Universal support
 - **50%+ Budget** → Humanity permanently prioritizes healing over killing
-
-The spiral accelerates with each cycle as success breeds more success, eventually flipping humanity's spending from destruction to flourishing.
 
 ---
 
@@ -672,7 +624,7 @@ Better than:
 
 {{< include brain/figures/victory-bonds-roi-projection-bar-chart.qmd >}}
 
-### The Revenue Model
+### Investment Thesis
 
 **How You Get 270% Returns Forever**
 
@@ -695,14 +647,7 @@ flowchart LR
 
 **The math:** Raise $1B → Redirect $27B annually → Investors get 10% of treaty inflows → $2.7B/year forever.
 
-**Important distinction:**
-- VICTORY bonds: 270% annual returns for investors (you getting rich)
-- dFDA Infrastructure: 463:1 societal ROI (humanity getting rich)
-- We capture 26% of value created, humanity gets the other 74%
-
-Your grandchildren's grandchildren are still getting paid. Disease and death get fired.
-
-### Who Wins
+### Persuading Special Interests
 
 **Everyone Profits More From Cures Than Forever Wars**
 
@@ -714,11 +659,11 @@ Your grandchildren's grandchildren are still getting paid. Disease and death get
 
 **Politicians**: We create Super PACs. Vote for the treaty or we fund your opponent with bar graphs showing you hate grandmas with cancer.
 
-**Billionaires**: Better than the Giving Pledge. 270% returns. Your current wealth becomes a rounding error.
+**Billionaires**: 270% returns. Your current wealth becomes a rounding error.
 
 **Poor People**: Don't die of preventable diseases (revolutionary concept)
 
-**You**: Get to see your grandchildren graduate (and their grandchildren, and theirs...)
+**You**: Don't suffer and die.
 
 **Death**: Gets fired
 
@@ -728,8 +673,7 @@ Your grandchildren's grandchildren are still getting paid. Disease and death get
 
 ![Join or Die Snake](assets/join-or-die-snake.jpg)
 
-
-Humanity spends **$118.8 trillion a year** on war and disease. That's **$14,850 per human per year** on suffering.
+Humanity spends **$118.8 trillion a year** on war and disease.
 
 We're asking for **1% of the military budget**. The military keeps 99% - enough to end the world 66 times instead of 67.
 
