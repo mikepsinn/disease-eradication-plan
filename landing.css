@@ -152,6 +152,16 @@ strong {
   color: var(--color-white);
 }
 
+.card.inverted h1,
+.card.inverted h2,
+.card.inverted h3,
+.card.inverted h4,
+.card.inverted h5,
+.card.inverted h6 {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
 .card.inverted a {
     color: var(--color-highlight);
 }
