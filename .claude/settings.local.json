@@ -24,7 +24,8 @@
       "Bash(git log:*)",
       "Bash(git remote get-url:*)",
       "Bash(powershell:*)",
-      "Bash(timeout:*)"
+      "Bash(timeout:*)",
+      "Bash(pandoc:*)"
     ],
     "deny": [],
     "ask": []
