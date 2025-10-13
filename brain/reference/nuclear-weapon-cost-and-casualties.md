@@ -52,8 +52,24 @@ If 1% of the global military budget were redirected, $2.69 trillion would remain
 
     -   97,818 bombs * 1,619,570 deaths per bomb = **~158,421,000,000 people**
 
-With the $2.69 trillion left over after funding the War on Disease, global military spending could still theoretically purchase enough nuclear weapons to kill **158.4 billion people**, or approximately **20 times the entire population of Earth.**
+With the $2.69 trillion left over after funding the War on Disease, global military spending could still theoretically purchase enough nuclear weapons to kill **158.4 billion people**, or approximately **20 times the entire population of Earth** (based on 8 billion current population).
 
 This calculation highlights the grotesque inefficiency and overkill capacity of the current global military apparatus.
+
+## V. Summary of Key Findings
+
+**Cost-Effectiveness of Nuclear Weapons:**
+- Cost per death: **$16.98** (less than a cup of coffee)
+- B61-12 unit cost: **$27.5 million** per bomb
+- Deaths per W87 warhead (Manhattan): **1,619,570 people**
+
+**Impact of 1% Treaty:**
+- Current military budget: **$2.72 trillion/year**
+- After 1% redirect: **$2.69 trillion remaining** (99%)
+- Potential deaths with remaining budget: **158.4 billion people**
+- Earth's population: **~8 billion**
+- **Overkill capacity: 20× Earth's population** (or 19.8× to be precise)
+
+This means that even after redirecting 1% to medical research, the remaining 99% of military spending has enough destructive capacity to theoretically kill everyone on Earth approximately **20 times over**.
 
 ---
