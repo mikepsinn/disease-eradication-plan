@@ -171,7 +171,7 @@ export default function IdiocracyTimeline() {
         {/* Final Choice */}
         <section className="text-center">
           <h2 className="text-5xl font-bold mb-6">
-            Listen: This Is Stupid
+            This Is Stupid
           </h2>
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
             We just showed you your own death certificate.

@@ -34,7 +34,7 @@ export default function VictoryBonds() {
         {/* The Real Deal */}
         <section className="mb-20">
           <h2 className="text-4xl font-bold mb-8 text-center">
-            Listen: Here's What This Actually Is
+            Here's What This Actually Is
           </h2>
 
           <div className="bg-gradient-to-br from-yellow-950/30 to-orange-950/30 border-2 border-yellow-700 rounded-2xl p-8">
