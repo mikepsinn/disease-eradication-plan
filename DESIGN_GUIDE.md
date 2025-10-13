@@ -186,16 +186,11 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 ## Minimalist Chart Design Rules
 
 **What to Include:**
+- **Chart title** - Clear, concise title at the top (16-18pt bold) makes charts self-documenting
 - Data bars (white fill with black outline, use solid black for emphasis)
 - Y-axis with scale (ONLY when columns aren't all labeled with amounts)
 - Key data values (large, bold, impossible to miss)
 - Watermark (required)
-
-**Chart Reusability Rule:**
-- **NO titles in chart code** - Context provides the title (chapter heading, figure caption, etc.)
-- **NO explanatory text in charts** - The surrounding document explains the chart
-- **Charts must work in ANY context** - Book, website, presentation, social media
-- This allows the same chart to be included with different captions and contexts
 
 **Label Placement (Tufte-approved):**
 - Put labels directly ON the data (on bars, lines, points)
@@ -222,12 +217,10 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 - Check the generated PNG - if text is cut off, shorten or reduce font size
 
 **What to Remove:**
-- **Chart titles** - ALWAYS remove (context provides the title via captions/headings)
 - **Gridlines** - Remove unless absolutely necessary for readability
 - **Y-axis entirely** - Remove on column charts when all columns show numeric labels
 - **X-axis labels** - Remove when labels are on the bars themselves
 - **Legends** - Remove (use direct labels on data instead)
-- **Explanatory text** - Remove (the surrounding document explains the chart)
 - **Backgrounds/fills** - Remove (pure white only)
 - **Borders, shadows, gradients, 3D effects** - Remove all decorative effects
 - **Extra annotations, callouts, arrows** - Remove unless critical for understanding
@@ -277,7 +270,8 @@ bar1 = ax.bar(0, values[0], color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=
 bar2 = ax.bar(1, values[1], color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, hatch=PATTERN_DIAGONAL)
 bar3 = ax.bar(2, values[2], color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)  # Solid black for emphasis
 
-# Add labels (no title needed)
+# Add title and labels
+ax.set_title('Chart Title Here', fontsize=16, color=COLOR_BLACK, weight='bold', pad=20)
 ax.set_ylabel('Y-Axis Label', fontsize=12, color=COLOR_BLACK)
 
 # --- 3. Add the Watermark ---

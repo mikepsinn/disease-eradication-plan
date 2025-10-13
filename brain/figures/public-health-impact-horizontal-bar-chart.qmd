@@ -61,20 +61,19 @@ for i, value in enumerate(values):
 
 # Value labels for stacked 1% Treaty bar
 # Peace dividend label
-ax.text(peace_dividend/2, y_pos, f'${peace_dividend:.1f}B\nPeace',
-        ha='center', va='center', fontsize=12, color=COLOR_BLACK, weight='bold')
+ax.text(peace_dividend/2, y_pos, f'${peace_dividend:.1f}B\nPeace Dividend\nfrom 1% Less Conflict',
+        ha='center', va='center', fontsize=10, color=COLOR_BLACK, weight='bold')
 # dFDA label
-ax.text(peace_dividend + dfda_savings/2, y_pos, f'${dfda_savings:.0f}B\ndFDA',
-        ha='center', va='center', fontsize=12, color=COLOR_BLACK, weight='bold')
+ax.text(peace_dividend + dfda_savings/2, y_pos, f'${dfda_savings:.0f}B\nHealth and Economic\nBenefit of a\nDecentralized FDA',
+        ha='center', va='center', fontsize=9, color=COLOR_BLACK, weight='bold')
 # Total label
 ax.text(total_benefit + 2, y_pos, f'${total_benefit:.1f}B total',
         va='center', ha='left', fontsize=14, color=COLOR_BLACK, weight='bold')
 
+# Add title
+ax.set_title('Public Health Impact: Gross Annual Economic Benefits', fontsize=16, color=COLOR_BLACK, weight='bold', pad=20)
+
 # Add annotations
-# Note about gross benefits
-ax.text(0.98, 0.95, 'Note: Shows GROSS annual economic benefits (not net of costs)',
-        transform=ax.transAxes, ha='right', va='top', fontsize=10, color=COLOR_BLACK, style='italic',
-        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1))
 
 # Note about self-funding
 ax.annotate('Only the 1% Treaty is self-funding\n(generates wealth while saving lives)',
@@ -84,12 +83,13 @@ ax.annotate('Only the 1% Treaty is self-funding\n(generates wealth while saving 
            arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
 
 # Axis formatting
-ax.set_xlabel('Annual Gross Economic Benefit (Billions USD)', fontsize=12, color=COLOR_BLACK)
+ax.set_xlabel('')
 ax.set_ylabel('')
 ax.set_xlim(0, total_benefit * 1.15)
 
-# Clean spines
-clean_spines(ax, ['top', 'right', 'left'])
+# Clean spines - remove bottom axis too since all values are labeled
+clean_spines(ax, ['top', 'right', 'left', 'bottom'])
+ax.tick_params(bottom=False, labelbottom=False)  # Remove x-axis ticks and labels
 
 # Add watermark
 add_watermark(fig)
