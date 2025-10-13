@@ -25,7 +25,8 @@
       "Bash(git remote get-url:*)",
       "Bash(powershell:*)",
       "Bash(timeout:*)",
-      "Bash(pandoc:*)"
+      "Bash(pandoc:*)",
+      "Bash(curl -o favicon.ico https://wishonia.love/favicon.ico)"
     ],
     "deny": [],
     "ask": []
