@@ -158,12 +158,22 @@ plt.rcParams['font.weight'] = 'bold'
 
 **Font Size Guidelines:**
 
+**Desktop/Print:**
 - Chart titles: 16-18pt (bold)
 - Axis labels: 11-12pt
 - Data labels: 10-11pt
 - Watermark: 8-9pt
 - Presentation headlines: 48-72pt
 - Presentation body: 24-36pt
+
+**Mobile Readability:**
+
+Charts must be readable on mobile devices.
+
+**Mobile Design Rules:**
+1. **Larger is better**
+2. **Prioritize legibility over elegance**
+3. **Use multi-line labels** - Better than small single-line text
 
 ## Chart Margins and Padding
 
