@@ -1,7 +1,7 @@
 ```{mermaid}
 %%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff', 'primaryTextColor':'#000', 'primaryBorderColor':'#000', 'lineColor':'#000', 'secondaryColor':'#fff', 'tertiaryColor':'#fff', 'clusterBkg':'#fff', 'clusterBorder':'#000', 'edgeLabelBackground':'#fff', 'fontFamily':'Courier New, monospace'}}}%%
 flowchart LR
-    subgraph "The VICTORY Bonds Money Machine"
+    subgraph "The VICTORY Bond<br/>Money Machine"
         Investors["💸 You invest<br/>$1B"]
         Campaign["🏛️ Fund AI<br/>campaign<br/>(lobbying<br/>+ viral)"]
         Treaty["📜 1% Treaty<br/>passes<br/>$27B/year<br/>redirected"]
