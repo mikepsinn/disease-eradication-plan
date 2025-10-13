@@ -119,7 +119,12 @@ dFDA system: Type your condition, see every treatment ranked by real-world effec
 
 **463:1 ROI (Better Than Smallpox Eradication)**
 
-The Decentralized FDA alone achieves a **463:1 return on investment**.  This means for every $1 invested, society recieves $463 in benefits. 
+The Decentralized FDA alone achieves a **463:1 return on investment**.
+
+This means for every $1 invested, society recieves $463 in benefits. 
+
+
+$$\text{ROI} = \frac{\$463 \text{ in benefits}}{\$1 \text{ invested}} = 463:1$$ 
 
 This exceptional ROI comes from multiple sources:
 
@@ -142,11 +147,16 @@ But here's the real magic: when funded by the 1% Treaty's military redirection, 
 
 **Why the ROI is literally infinite** ([see full calculation](brain/book/economics/icer-full-calculation.qmd)):
 
+$$\text{ROI} = \frac{\$147.1B \text{ annual benefits}}{\$0 \text{ new spending}} = \infty$$
+
+Where the benefits come from:
+
+$$\text{Total Benefit} = \underbrace{\$97.1B}_{\text{Peace Dividend}} + \underbrace{\$50B}_{\text{R\&D Savings}} = \$147.1B$$
+
 - **Zero net cost**: The $27B comes from redirected military spending (money already budgeted)
 - **$147.1B in annual benefits**: Peace dividend ($97.1B) + R&D savings ($50B)
 - **Operating costs**: Only $290M/year (campaign + operations)
 - **Lives saved**: 25,000/year (875,000 QALYs ÷ 35 QALYs/life)
-- **The math**: $147B benefit ÷ $0 new spending = ∞ (infinite ROI)
 - **Per life saved**: Society PROFITS $167,771 instead of spending
 
 This is a **dominant health intervention**. 
@@ -271,7 +281,13 @@ Better than:
 
 {{< include brain/figures/victory-bonds-money-flow-diagram.qmd >}}
 
-**The math:** Raise $1B → Redirect $27B annually → Investors get 10% of treaty inflows → $2.7B/year forever.
+**The math:**
+
+$$\text{Annual Return} = \$27B \times 10\% = \$2.7B$$
+
+$$\text{ROI} = \frac{\$2.7B \text{ annual return}}{\$1B \text{ invested}} = 270\%$$
+
+Raise $1B → Redirect $27B annually → Investors get 10% of treaty inflows → $2.7B/year forever.
 
 ### Persuading Special Interests
 
