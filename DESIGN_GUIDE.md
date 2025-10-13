@@ -158,22 +158,22 @@ plt.rcParams['font.weight'] = 'bold'
 
 **Font Size Guidelines:**
 
-**Desktop/Print:**
-- Chart titles: 16-18pt (bold)
-- Axis labels: 11-12pt
-- Data labels: 10-11pt
-- Watermark: 8-9pt
-- Presentation headlines: 48-72pt
-- Presentation body: 24-36pt
+All charts must be readable on mobile (320-428px width). **Make fonts BIG.**
 
-**Mobile Readability:**
+**Minimum Sizes:**
+- **Data value labels:** 36-44pt (BIGGEST - most important)
+- **Chart titles:** 28-36pt (second biggest)
+- **Y-axis labels:** 28-36pt (same as title)
+- **Watermark:** 11pt
 
-Charts must be readable on mobile devices.
+**The Rule:** Data Values > Title ≥ Axis Labels
 
-**Mobile Design Rules:**
-1. **Larger is better**
-2. **Prioritize legibility over elegance**
-3. **Use multi-line labels** - Better than small single-line text
+When in doubt, go bigger. Think propaganda posters, not academic papers.
+
+**Common Mistakes:**
+- ❌ 18pt title with 44pt data - title disappears
+- ❌ Fonts that look "fine" on desktop but illegible on mobile
+- ✅ 36pt+ for everything - instantly readable anywhere
 
 ## Chart Margins and Padding
 
@@ -196,7 +196,7 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 ## Minimalist Chart Design Rules
 
 **What to Include:**
-- **Chart title** - Clear, concise title at the top (16-18pt bold) makes charts self-documenting
+- **Chart title** - Clear, concise, properly sized (28-36pt bold)
 - Data bars (white fill with black outline, use solid black for emphasis)
 - Y-axis with scale (ONLY when columns aren't all labeled with amounts)
 - Key data values (large, bold, impossible to miss)
@@ -219,12 +219,10 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 - Essential for text over hatched/patterned areas (e.g., labels on diagonal stripe patterns)
 - Keep padding minimal (0.4) to avoid visual clutter
 
-**Typography Size (Neobrutalist approach):**
-- **Make text as large as reasonably possible** - Bold, commanding, impossible to miss
-- Bar labels: 44-72pt (depending on available space)
+**Typography Approach:**
+- **Make text as large as reasonably possible**
 - Numbers should dominate the visual hierarchy
 - If text feels too small, it probably is - go bigger
-- Think propaganda posters, not academic papers
 
 **Text Width and Clipping:**
 - **Test your text fits** - Long text on bars gets clipped at edges
