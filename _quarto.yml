@@ -81,7 +81,9 @@ book:
 
     - part: "The Strategy" # (Building Paradise)"
       chapters:
-        - brain/book/strategy.qmd
+        - brain/book/strategy.qmd  # High-level overview
+        - brain/book/strategy/bribe-sequence.qmd  # How we pay everyone off
+        - brain/book/strategy/five-step-execution.qmd  # Tactical execution plan
         - brain/book/strategy/global-referendum.qmd  # Democratic path
         - brain/book/strategy/viral-marketing.qmd  # Social media strategy
         - brain/book/strategy/co-opting-defense-contractors.qmd # Co-Opting the Defense Lobby
