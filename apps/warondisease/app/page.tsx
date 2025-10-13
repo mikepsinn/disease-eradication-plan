@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* The $119T Death Toilet */}
       <div className="border-2 border-black p-4 sm:p-6 mb-8">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4">The $119 Trillion Death Toilet</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">The $119T Death Toilet</h2>
         <div className="space-y-2 text-base sm:text-lg">
           <div className="flex justify-between gap-2">
             <span className="text-sm sm:text-base">Disease burden (treatment + lost productivity):</span>

@@ -1,6 +1,6 @@
 ---
-title: "The $119 Trillion Death Toilet"
-subtitle: "The Three Shocks That Will Break Your Brain"
+title: "The $119T Death Toilet"
+#subtitle: "The Three Shocks That Will Break Your Brain"
 format:
   html:
     code-fold: true
@@ -68,7 +68,7 @@ You thought $9.7 trillion for war was insane?
 
 {{< include ../../figures/disease-war-curing-costs-column-chart.qmd >}}
 
-## The $119 Trillion Death Toilet
+## The $119T Death Toilet
 
 So when you add it all up:
 - **War**: $9.7T
@@ -175,7 +175,7 @@ print("• Have $100 trillion left over")
 
 ```{python}
 #| echo: false
-print("🚽 THE $119 TRILLION DEATH TOILET:\n")
+print("🚽 THE $119T Death Toilet:\n")
 print(f"• We flush ${119_000_000_000_000/365:,.0f} billion down it daily")
 print(f"• That's ${119_000_000_000_000/365/24:,.0f} billion per hour")
 print(f"• That's ${119_000_000_000_000/365/24/60:,.0f} billion per minute")

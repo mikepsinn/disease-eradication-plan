@@ -59,7 +59,7 @@
   - Rare diseases: 95% have zero FDA-approved treatments
   - Hepatitis C cured (2014), but still 50+ years between major disease eradications
 
-### The $119 Trillion Death Toilet - Where Your Money Goes to Die
+### The $119T Death Toilet - Where Your Money Goes to Die
 
 - **[FIGURE: The $119 Trillion Waste]**
   - Visual showing money flow: $9.7T (war) + $109.1T (disease burden) = $119T annually
