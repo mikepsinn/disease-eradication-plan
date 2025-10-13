@@ -163,7 +163,7 @@
   - Disease continues = Healthcare profits ($4.5T industry needs you sick)
   - Every "failure" is someone's success story
 
-### The Evolutionary Trap - Why We're Wired for War
+### Why We're Idiots Wired for War
 
 - **Your Brain Was Designed for Small Tribes, Not Global Cooperation**
   - Evolved for: 150-person tribes where everyone knew each other
