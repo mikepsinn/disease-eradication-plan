@@ -65,6 +65,7 @@ book:
     - part: "The Money" # (How Everyone Gets Rich by Eradicating Disease)"
       chapters:
         - brain/book/economics.qmd # Executive Summary
+        - brain/book/economics/best-idea-in-the-world.qmd # The Best Idea in the World
         - brain/book/economics/economic-impact-summary.qmd # Economic Impact Summary
         - brain/book/economics/central-banks.qmd # How Central Banks Fund War
         - brain/book/economics/victory-bonds.qmd  # Fund the revolution
