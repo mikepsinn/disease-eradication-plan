@@ -52,37 +52,35 @@ bar2 = ax.barh(y_pos, dfda_savings, left=peace_dividend, color=COLOR_WHITE,
 # Update y-axis labels
 all_interventions = interventions + ['1% Treaty / dFDA Initiative']
 ax.set_yticks(range(len(all_interventions)))
-ax.set_yticklabels(all_interventions)
+ax.set_yticklabels(all_interventions, fontsize=15)
 
 # Value labels for traditional interventions
 for i, value in enumerate(values):
     ax.text(value + 2, i, f'${value:,.1f}B',
-            va='center', ha='left', fontsize=14, color=COLOR_BLACK, weight='bold',
-            bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1))
+            va='center', ha='left', fontsize=20, color=COLOR_BLACK, weight='bold')
 
 # Value labels for stacked 1% Treaty bar
 # Peace dividend label
 ax.text(peace_dividend/2, y_pos, f'${peace_dividend:.1f}B\nPeace Dividend\nfrom 1% Less Conflict',
-        ha='center', va='center', fontsize=10, color=COLOR_BLACK, weight='bold',
+        ha='center', va='center', fontsize=14, color=COLOR_BLACK, weight='bold',
         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1))
 # dFDA label
 ax.text(peace_dividend + dfda_savings/2, y_pos, f'${dfda_savings:.0f}B\nHealth and Economic\nBenefit of a\nDecentralized FDA',
-        ha='center', va='center', fontsize=9, color=COLOR_BLACK, weight='bold',
+        ha='center', va='center', fontsize=13, color=COLOR_BLACK, weight='bold',
         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1))
 # Total label
 ax.text(total_benefit + 2, y_pos, f'${total_benefit:.1f}B total',
-        va='center', ha='left', fontsize=14, color=COLOR_BLACK, weight='bold',
-        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1))
+        va='center', ha='left', fontsize=20, color=COLOR_BLACK, weight='bold')
 
 # Add title
-ax.set_title('Gross Annual Economic Benefit of the 1% Treaty and Decentralized FDA', fontsize=16, color=COLOR_BLACK, weight='bold', pad=20)
+ax.set_title('Gross Annual Economic Benefit of the 1% Treaty and Decentralized FDA', fontsize=18, color=COLOR_BLACK, weight='bold', pad=20)
 
 # Add annotations
 
 # Note about self-funding
 ax.annotate('Only the 1% Treaty is self-funding\n(generates wealth while saving lives)',
            xy=(total_benefit/2, y_pos), xytext=(total_benefit/2, y_pos - 1.5),
-           ha='center', fontsize=10, color=COLOR_BLACK, weight='bold',
+           ha='center', fontsize=12, color=COLOR_BLACK, weight='bold',
            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
            arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
 

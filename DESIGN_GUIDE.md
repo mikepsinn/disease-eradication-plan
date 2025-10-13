@@ -202,6 +202,13 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 - Remove y-axis entirely on column charts when all columns show their amounts
 - This eliminates matching numbers to separate axis labels
 
+**White Background Boxes for Labels:**
+- **Use white boxes ONLY for labels placed ON bars/columns** - Makes text readable over patterns
+- **Do NOT use boxes for labels positioned above/outside bars** - They're already on white background
+- Add boxes using: `bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)`
+- Essential for text over hatched/patterned areas (e.g., labels on diagonal stripe patterns)
+- Keep padding minimal (0.4) to avoid visual clutter
+
 **Typography Size (Neobrutalist approach):**
 - **Make text as large as reasonably possible** - Bold, commanding, impossible to miss
 - Bar labels: 44-72pt (depending on available space)
