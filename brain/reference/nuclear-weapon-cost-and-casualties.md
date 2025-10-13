@@ -72,4 +72,59 @@ This calculation highlights the grotesque inefficiency and overkill capacity of 
 
 This means that even after redirecting 1% to medical research, the remaining 99% of military spending has enough destructive capacity to theoretically kill everyone on Earth approximately **20 times over**.
 
+## VI. Comparison: Nuclear vs. Conventional Weapons Cost-Effectiveness
+
+For context, how does the cost per death compare across different weapon systems?
+
+### Small Arms (Rifles/Machine Guns)
+
+**Ammunition Expenditure:**
+- U.S. forces fired approximately **250,000 bullets for every insurgent killed** in Iraq and Afghanistan
+- Cost per 5.56mm NATO round: **~$0.40** (2024 military procurement price)
+
+**Cost per Death:**
+- 250,000 bullets × $0.40 = **$100,000 per death**
+
+### Artillery (155mm Howitzer Shells)
+
+**Standard Round Expenditure:**
+- Assuming multiple rounds per target engagement (typical fire missions use 10-50 rounds)
+- Standard 155mm shell cost: **~$8,000-$14,000** per round (2024 prices)
+
+**Cost per Death (Estimated):**
+- Assuming 20 rounds per casualty: 20 × $10,000 = **$200,000 per death**
+
+### Precision-Guided Munitions
+
+**Excalibur GPS-Guided Artillery:**
+- Cost per round: **$176,624** (FY-22)
+- Higher accuracy means fewer rounds needed
+- **Cost per Death: ~$177,000-$350,000** (1-2 rounds typically sufficient)
+
+**Air-Launched Missiles:**
+- AMRAAM missile: **~$1 million** per unit
+- AARGM-ER: **~$6.1 million** per unit
+- **Cost per Death: $1-6 million+** (depending on target type)
+
+### Nuclear Weapons
+
+**Nuclear Warhead:**
+- B61-12 cost: **$27.5 million**
+- Deaths per detonation (urban center): **~1.6 million**
+- **Cost per Death: $16.98**
+
+### Comparative Summary
+
+| Weapon Type | Cost per Death | Efficiency Rank |
+|-------------|----------------|-----------------|
+| Nuclear warhead (urban) | **$16.98** | 1st (most "efficient") |
+| Small arms (250k rounds) | **$100,000** | 2nd |
+| Standard artillery | **$200,000** | 3rd |
+| Precision-guided artillery | **$177,000-$350,000** | 4th |
+| Air-launched missiles | **$1-6 million+** | 5th (least "efficient") |
+
+**Key Finding:** Nuclear weapons are approximately **5,900× more "cost-effective"** at killing than small arms, and **10,000-350,000× more "cost-effective"** than precision missiles—which explains why $2.69 trillion in military spending has such enormous destructive capacity.
+
+This grotesque "efficiency" calculation exists purely to illustrate the absurdity of military spending priorities. The fact that we can calculate a "cost per death" metric at all—and that we've optimized it—demonstrates how thoroughly we've industrialized human destruction instead of human healing.
+
 ---
