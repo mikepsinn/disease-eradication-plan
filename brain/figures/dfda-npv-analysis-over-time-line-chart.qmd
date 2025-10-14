@@ -1,0 +1,121 @@
+---
+jupyter: python3
+echo: false
+---
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from pathlib import Path
+import sys
+import numpy_financial as npf
+
+# Find project root dynamically
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+# Import centralized style
+from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines
+from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE
+
+setup_chart_style()
+
+# NPV Model Parameters - WORST CASE SCENARIO (Conservative)
+# From brain/book/economics/dfda-cost-benefit-analysis.qmd worst case estimates
+C0 = 2.277  # Upfront Costs (billions USD) - Platform $46M + Broader initiatives $2.231B
+Cop = 0.2975  # Annual Operational Costs (billions USD) - Platform $26.5M + Broader $271M = $297.5M
+Rd = 100.0  # Annual Global R&D Spend on clinical trials
+alpha = 0.50  # Fraction of R&D cost saved (50% reduction - conservative baseline)
+r = 0.08  # Annual discount rate
+T = 10  # Time horizon in years
+
+# Adoption Curve - linear ramp from 0% to 100% over 5 years
+def adoption_rate(t):
+    if t == 0:
+        return 0
+    elif t <= 5:
+        return t / 5
+    else:
+        return 1.0
+
+# Calculate annual savings stream
+annual_savings_stream = [(adoption_rate(t) * alpha * Rd) for t in range(1, T + 1)]
+
+# Calculate cumulative NPV streams for plotting
+years = np.arange(1, T + 1)
+cumulative_npv_costs = [C0]  # Start with upfront cost at year 0
+cumulative_npv_savings = [0]  # No savings at year 0
+
+# Calculate discounted streams
+discounted_ops_stream = [Cop / ((1+r)**t) for t in years]
+discounted_savings_stream = [s / ((1+r)**t) for t, s in enumerate(annual_savings_stream, 1)]
+
+# Calculate cumulative sums
+cumulative_npv_costs.extend(C0 + np.cumsum(discounted_ops_stream))
+cumulative_npv_savings.extend(np.cumsum(discounted_savings_stream))
+
+# Create DataFrame
+npv_df = pd.DataFrame({
+    'Year': np.arange(0, T + 1),
+    'Cumulative NPV of Costs ($B)': cumulative_npv_costs,
+    'Cumulative NPV of Savings ($B)': cumulative_npv_savings
+})
+npv_df['Net Benefit ($B)'] = npv_df['Cumulative NPV of Savings ($B)'] - npv_df['Cumulative NPV of Costs ($B)']
+
+# Create figure
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Plot lines with simple styling
+line_width = 3
+marker_size = 8
+
+# Savings line
+ax.plot(npv_df['Year'], npv_df['Cumulative NPV of Savings ($B)'],
+        label='Cumulative Savings', color=COLOR_BLACK,
+        linewidth=line_width, marker='o', markersize=marker_size)
+
+# Costs line (dotted)
+ax.plot(npv_df['Year'], npv_df['Cumulative NPV of Costs ($B)'],
+        label='Cumulative Costs', color=COLOR_BLACK,
+        linewidth=line_width, marker='s', markersize=marker_size, linestyle='--')
+
+# Area fills
+ax.fill_between(npv_df['Year'], npv_df['Cumulative NPV of Costs ($B)'], npv_df['Cumulative NPV of Savings ($B)'],
+                where=(npv_df['Cumulative NPV of Savings ($B)'] > npv_df['Cumulative NPV of Costs ($B)']),
+                color=COLOR_BLACK, alpha=0.1, interpolate=True, label='Net Benefit')
+
+ax.fill_between(npv_df['Year'], npv_df['Cumulative NPV of Costs ($B)'], npv_df['Cumulative NPV of Savings ($B)'],
+                where=(npv_df['Cumulative NPV of Savings ($B)'] <= npv_df['Cumulative NPV of Costs ($B)']),
+                color=COLOR_BLACK, alpha=0.05, interpolate=True, label='Investment Period')
+
+# Apply styling
+clean_spines(ax, ['top', 'right'])
+
+# Title and labels
+ax.set_title(f'NPV Analysis: Investment Payback Over {T} Years', fontsize=28,
+             fontweight='bold', color=COLOR_BLACK, pad=25)
+ax.set_xlabel('Year', fontsize=28, color=COLOR_BLACK, labelpad=15, fontweight='bold')
+ax.set_ylabel('Cumulative NPV (Billions USD)', fontsize=28, color=COLOR_BLACK, labelpad=15, fontweight='bold')
+
+# Axis formatting
+ax.set_xticks(np.arange(0, T + 1, 1))
+ax.tick_params(axis='both', labelsize=24, colors=COLOR_BLACK)
+
+# Legend
+legend = ax.legend(loc='upper left', frameon=True, fancybox=False,
+                  fontsize=14, facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK)
+
+# Add watermark
+add_watermark(fig)
+
+# Save figure
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'dfda-npv-analysis-over-time-line-chart.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+plt.show()
+```

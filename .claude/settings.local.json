@@ -26,7 +26,10 @@
       "Bash(powershell:*)",
       "Bash(timeout:*)",
       "Bash(pandoc:*)",
-      "Bash(curl -o favicon.ico https://wishonia.love/favicon.ico)"
+      "Bash(curl -o favicon.ico https://wishonia.love/favicon.ico)",
+      "Bash(start \"c:\\code\\decentralized-institutes-of-health\\_book\\index.html\")",
+      "Bash(start \"c:\\code\\decentralized-institutes-of-health\\brain\\figures\\dfda-investment-returns-bar-chart.html\")",
+      "Bash(start \"c:\\code\\decentralized-institutes-of-health\\brain\\figures\\dfda-npv-analysis-over-time-line-chart.html\")"
     ],
     "deny": [],
     "ask": []

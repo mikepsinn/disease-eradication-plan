@@ -136,9 +136,10 @@ $$\text{ROI} = \frac{\$463 \text{ in benefits}}{\$1 \text{ invested}} = 463:1$$
 This exceptional ROI comes from multiple sources:
 
 - [**$50B in annual R&D cost savings**](brain/book/economics/dfda-cost-benefit-analysis.qmd): 82X reduction in clinical trial costs
-- **Faster access to new treatments**: [2 years instead of 17 years](brain/book/reference/recovery-trial.qmd) to market
-- **Better prevention through real-world data**: Continuous learning from millions of patients
-- **Enabling new therapies**: Making rare disease trials economically viable
+- [**840,000 Quality-Adjusted Life Years (QALYs) saved annually**](brain/book/economics/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model):
+  - **Faster access to new treatments**: 200,000 QALYs from faster drug access ([2 years instead of 17 years](brain/book/reference/recovery-trial.qmd) to market)
+  - **Better prevention through real-world data**: 140,000 QALYs 
+  - **Enabling new therapies**: 500,000 QALYs from enabling new therapies for rare diseases and previously untreatable conditions
 
 {{< include brain/figures/dfda-roi-comparison-column-chart.qmd >}}
 
@@ -158,12 +159,12 @@ $$\text{ROI} = \frac{\$147.1B \text{ annual benefits}}{\$0 \text{ new spending}}
 
 Where the benefits come from:
 
-$$\text{Total Benefit} = \underbrace{\$97.1B}_{\text{Peace Dividend}} + \underbrace{\$50B}_{\text{R\&D Savings}} = \$147.1B$$
+$$\text{Total Benefit} = \underbrace{\$97.1B}_{\text{Peace Dividend}} + \underbrace{\$50B}_{\text{Health Dividend}} = \$147.1B$$
 
-([See detailed breakdown](brain/book/economics/economic-impact-summary.qmd))
+([See peace dividend calculation](brain/book/economics/peace-dividend-analysis.qmd) | [See dFDA health benefits breakdown](brain/book/economics/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) | [See economic impact summary](brain/book/economics/economic-impact-summary.qmd))
 
 - **Zero net cost**: The $27B comes from redirected military spending (money already budgeted)
-- **$147.1B in annual benefits**: Peace dividend ($97.1B) + R&D savings ($50B)
+- **$147.1B in annual benefits**: Peace dividend ($97.1B) + Health dividend ($50B)
 - **Operating costs**: Only [$290M/year](brain/book/economics/icer-full-calculation.qmd) (campaign + operations)
 - **Lives saved**: [25,000/year](brain/book/economics/icer-full-calculation.qmd) (875,000 QALYs ÷ 35 QALYs/life)
 - **Per life saved**: Society PROFITS [$167,771](brain/book/economics/icer-full-calculation.qmd) instead of spending
@@ -178,8 +179,8 @@ Unlike traditional interventions requiring ongoing charity, this generates $147 
 
 {{< include brain/figures/public-health-impact-vertical-column-chart.qmd >}}
 
-The $147.1 billion annual economic benefit makes this intervention nearly **10× larger than childhood vaccinations** (one of the most successful public health programs in history). 
-The stacked bar shows how both the peace dividend ($97.1B) and dFDA R&D savings ($50B) contribute to this unprecedented scale.
+The $147.1 billion annual economic benefit makes this intervention nearly **10× larger than childhood vaccinations** (one of the most successful public health programs in history).
+The stacked bar shows how both the peace dividend ($97.1B) and health dividend ($50B from dFDA R&D savings) contribute to this unprecedented scale.
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates the wealth needed to sustain itself through VICTORY bonds that pay investors [270% annual returns](brain/book/economics/victory-bonds.qmd).
 
