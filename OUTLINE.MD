@@ -59,134 +59,59 @@
   - Rare diseases: 95% have zero FDA-approved treatments
   - Hepatitis C cured (2014), but still 50+ years between major disease eradications
 
-### The $119T Death Toilet - Where Your Money Goes to Die
+### Humanity's Upside-Down Budget
 
-- **[FIGURE: The $119 Trillion Waste]**
-  - Visual showing money flow: $9.7T (war) + $109.1T (disease burden) = $119T annually
-  - Tiny $68B research budget shown in comparison
-  - Impact: Shows the staggering scale of misallocation
-- **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
-  - **[VIDEO: Hans Rosling's "The Best Stats You've Ever Seen" - Visualizing Health vs Military Spending]**
-  - The military's toilet seats cost more than malaria research
-  - One fighter jet = entire rare disease research budget
-  - Viagra got more funding than Alzheimer's (priorities!)
-  - 166 BILLION untested treatment combinations (we've tried 0.0001%)
-  - 0.00001% of potential medicinal molecules ever tested (leaving 99.99999% unexplored)
-- **Humanity's Budget as a Family Making $100,000/Year**
-  - If global spending was a family budget:
-    - Healthcare spending: $8,200 (treating symptoms after we're sick)
-    - Military spending: $2,700 (home defense)
-    - Medical research: $68 (finding actual cures)
-  - The punchline: We spend 40X more on weapons than cures
-  - The tragedy: We spend 115X more treating disease than curing it
-  - The comparison: One fighter jet costs more than all rare disease research combined
-  - Visual: On a pie chart, the research slice (0.068%) is literally invisible
 - **[FIGURE: Humanity's Budget Pie Chart]**
   - Pie chart showing our priorities: War on Humanity ($2,700) vs War on Disease ($68)
   - Healthcare treatment ($8,200) dominates (treating symptoms, not causes)
   - War on Disease ($68) literally invisible - need magnifying glass insert to see it
   - Caption: "We spend 40X more on killing each other than curing each other"
-  - Impact: Viscerally shows the insanity of our spending priorities
+- **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
+  - The military's toilet seats cost more than malaria research
+  - One fighter jet = entire rare disease research budget
+  - Viagra got more funding than Alzheimer's (priorities!)
+  - 166 BILLION untested treatment combinations (we've tried 0.0001%)
 - **The Fixed Pie Reality: Why "Just Print More for Medicine" Doesn't Work**
   - Earth has 8 billion brains (can't print more)
   - Top talent is finite: ~40 million work on weapons, ~1 million on cures
   - When Fed prints money for war, defense contractors buy up the smartest people
-  - Medical research funding up 10X in dollars, DOWN as % of GDP (0.08% → 0.065%)
-  - The inflation shell game: NIH gets 50% raise, but everything costs 50% more
-  - Resources (not money) cure disease: Scientists, equipment, factory time
+  - Medical research funding up 10X in dollars, DOWN as % of GDP
   - Every MIT grad building missiles is NOT curing cancer
   - The brain drain: Raytheon pays $150k, NIH pays $55k (guess where geniuses go)
-  - Money is just bidding power for finite resources
-  - When war gets printed money first, it monopolizes the best minds
   - The only solution: Change the ratio, not the total
-  - Switzerland proves it: 0.7% on defense → $93K GDP per capita (highest quality of life on Earth)
-- **The 1972 Catastrophe: When Your Wages Got Divorced From Your Work**
-  - Nixon kills gold standard: Money becomes meaningless paper
-  - Productivity up 246%, wages up 115% (where'd the money go?)
-  - The Fed: 12 unelected people devaluing your paycheck and your savings
-  - Every financial crisis: The house always wins, you always lose
-  - The cantillon effect: Money printers get rich, you get poor
+  - Switzerland proves it: 0.7% on defense → $93K GDP per capita
 
-### Unrepresentative Democracy
+### Your Democracy Is Theater
 
 - **The Princeton Bombshell: You Have Zero Political Power**
   - Gilens & Page study: 0% correlation between public opinion and policy
   - Economic elites get what they want 78% of the time
   - You get what you want 0% (unless elites agree)
-  - The last 50 years: Every major policy against public will
-  - The oligarchy with democratic characteristics (that's you, America)
+  - The oligarchy with democratic characteristics
 - **[FIGURE: Your Democracy Score: 0%]**
-  - Graph showing correlation between public opinion (X-axis) and policy outcomes (Y-axis)
-  - It's a flat line at 0% - no correlation whatsoever
-  - Impact: One image destroys the democracy illusion
-- **Your Vote Is Mathematically Meaningless**
-  - Probability your vote matters: 1 in 60 million
-  - Time cost of being informed: 1,000 hours/year
-  - Rational ignorance: It's literally stupid to pay attention
-  - The paradox: Everyone knows it's broken, nobody can fix it
-- **The Representation Illusion: 535 People Pretending to Represent 335 Million**
-  - Your "representative" has 750,000 constituents (you get 0.00013%)
-  - They spend 70% of their time fundraising, not representing
-  - Party platforms: 1,000 positions you never chose
-  - Gerrymandering: They pick voters, not vice versa
-  - The median voter theorem: Everyone gets ignored
-- **The Budget Black Box: $6 Trillion You Don't Control**
-  - Omnibus bills: 2,000 pages passed at 2 AM
-  - Earmarks: Trading your healthcare for someone's bridge
-  - Baseline budgeting: Increases are automatic, cuts are impossible
-  - The debt ceiling theater: Fake fights, real damage
+  - Graph showing flat line - no correlation between public will and policy
+  - One image destroys the democracy illusion
+- **Why Representative Democracy Can't Fix This**
+  - Your "representative" has 750,000 constituents (you get 0.00013% of their attention)
+  - They spend 70% of time fundraising, not representing
+  - Omnibus bills: 2,000 pages passed at 2 AM (nobody reads them)
   - The budget is 10,000 decisions you'll never influence
-- **Direct Democracy Fails Too (California Proved It)**
+- **Why Direct Democracy Also Fails (California Proved It)**
   - Information overload: 50 propositions = random voting
   - Special interest capture: Who writes the propositions?
-  - No coherence: Conflicting mandates everywhere
   - Wishocracy solves this: Pairwise choices, not 50-item ballots
-  - Anyone can propose, aggregation creates coherence
-- **The Democracy That Never Was**
-  - Athens: Only 10% could vote (slaves don't count)
-  - America: Designed for landowners, not you
-  - Modern "democracy": Choose between two pre-selected options
-  - The real system: Oligarchy with democratic theater
 
 ### Regulatory Capture - The Foxes Own All Henhouses
 
 - **Every Regulator Works for Who They Regulate**
-  - FDA run by ex-pharma executives (shocking!)
-  - DoD run by future defense contractors (who could have guessed!)
+  - FDA run by ex-pharma executives
+  - DoD run by future defense contractors
   - The revolving door: 400% salary increase for playing ball
-  - The IRS: 87,000 agents to squeeze you while billionaires pay zero
-  - The Fed: Privately owned, publicly destroying your savings
 - **Why the System Can't Be Reformed (It's Working As Designed)**
   - FDA delays = Pharma profits (17 years of patent monopoly)
-  - NIH bureaucracy = Grant industrial complex (feed the beast)
   - Military spending = Defense contractor wealth (the point)
   - Disease continues = Healthcare profits ($4.5T industry needs you sick)
   - Every "failure" is someone's success story
-
-### Why We're Idiots Wired for War
-
-- **Your Brain Was Designed for Small Tribes, Not Global Cooperation**
-  - Evolved for: 150-person tribes where everyone knew each other
-  - Living in: 8 billion person world with nuclear weapons
-  - Result: Tribalism at civilization-ending scale
-- **The Threat Detection Bug That Kills Millions**
-  - Your amygdala: Optimized to spot tigers, sees terrorists everywhere
-  - Actual risk of terrorism: 1 in 30 million
-  - Resources spent on terrorism: $2.7 trillion
-  - Actual risk of disease: 1 in 1.5 (you will get sick)
-  - Resources spent on disease research: $68 billion
-  - Your fear circuit is 40X miscalibrated
-- **Status Games: Why War Leaders Win Elections**
-  - Peacetime leaders: Average 20% approval
-  - Wartime leaders: Average 70% approval
-  - Churchill: From 30% to 83% when war started
-  - Bush: From 51% to 90% after 9/11
-  - Your brain rewards warriors, ignores healers
-- **The Cooperation Paradox**
-  - Small groups: Cooperation is optimal
-  - Large groups: Defection pays better
-  - Global scale: Cooperation nearly impossible
-  - Solution needed: Change the payoff matrix
 
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
@@ -998,44 +923,6 @@
   - Year 10: ~$5T as health improvements compound
   - Year 20: Full $16.5T annual value realized
   - Every year we delay: $142B in immediate benefits lost forever
-
-### How Central Banks Fund Your Death (The War Machine's ATM)
-
-- **The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars**
-  - Dollar: Created by Fed to fund WWI, still funding wars
-  - Euro: ECB funds NATO expansions
-  - Traditional fiat: Governments can print for war at will
-  - Vietnam: $168B printed, your wages destroyed
-  - Iraq/Afghanistan: $8T printed while cancer research got $68B
-- **1972: When Nixon Weaponized Money Against You**
-  - Killed gold standard to fund Vietnam without tax revolt
-  - Productivity up 246%, wages up 115% (they stole the difference)
-  - The cantillon effect: Banks get new money first, you get inflation
-  - Every war since: Funded by destroying your purchasing power
-  - The missing trillions: Printed for bombs, not cures
-- **The Fixed Pie Trick: How They Steal Medical Progress** (see Part I for full explanation)
-  - Fed prints $1T for war → Defense contractors buy all the talent
-  - NIH gets nominal increases → But loses bidding war for scientists
-  - Medical research as % of GDP: Actually DECLINING since 1975
-  - The brain drain: Every genius building bombs is NOT finding cures
-  - You can't print more Einsteins, only bid them away from healing
-- **The Federal Reserve: A Private Corporation That Owns You**
-  - 12 unelected people control your savings value
-  - No audit allowed (what are they hiding?)
-  - $300B annually to banks in "reverse repo" (your money)
-  - Bailouts for banks, bankruptcy for you
-  - The only solution: Make war funding impossible
-- **Why We Can't Reform the Fed (It's Terminal)**
-  - Captured by military-banking complex (unfixable)
-  - Dollar is global reserve (can't be reformed)
-  - Too many wars depend on money printer
-  - Solution: Bypass it entirely with direct funding
-  - VICTORY bonds: Peace funded by markets, not money printing
-- **The 1% Treaty: Redirecting the Death Printer to Life**
-  - They're going to print money anyway (addicted to the printer)
-  - We're just asking them to print 1% for life instead of 100% for death
-  - Same inflation, but at least people get cured
-  - It's not about more money, it's about redirecting existing money
 
 ### VICTORY Bonds - Better Than Medallion Fund
 
