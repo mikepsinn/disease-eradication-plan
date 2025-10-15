@@ -1,46 +1,56 @@
 ---
 title: "Problem Overview"
-description: "Humanity spends 40x more on killing each other than curing disease"
+description: "Everyone You Love Is Dying While We Build Skynet"
 format:
   html:
     toc: true
 ---
 
-Humanity has two core problems:
+150,000 people die every day from preventable diseases. That's fifty 9/11s. Every. Single. Day.
 
-1. **We spend our money on killing people instead of curing them.**
-2. **The systems we have for curing them are catastrophically broken.**
+Your parent, child, or friend is statistically likely to be one of them. We could prevent most of these deaths with existing technology. But we're too busy spending $2.7 trillion on weapons.
 
-We spend trillions on war and almost nothing on disease. Disease costs us **~$244 trillion** every year. War costs each person **~$74,259** over their lifetime.
+This isn't a funding problem. It's a priorities problem.
 
-We are paying to die instead of paying to live. This is insane.
+## Humanity's  Budget
 
----
+Picture humanity as a family making $100,000 a year. Here's how we spend it:
 
-## Part I: We Fund Bombs Instead of Cures
+- **Healthcare treatment:** $8,200 (treating symptoms after we're sick)
+- **Military spending:** $2,700 (home defense)
+- **Medical research:** $68 (finding actual cures)
 
-The world spends **[$2.4 trillion every year on weapons](https://www.sipri.org/media/press-release/2024/world-military-expenditure-surges-amid-war-rising-tensions-and-insecurity)**. That's money we could use to solve actual problems.
+We spend **40X more on weapons than cures**. We spend **115X more treating disease than curing it**.
 
-Instead, we use it to blow things up. You can't cure cancer with bombs. You can't fix climate change while building more missiles. You can't end poverty while funding armies. We are bailing water out of a sinking ship while others are paid handsomely to drill more holes in the hull.
-
-We spend **$2.72 trillion** every year on stuff designed specifically to make humans stop being alive. Meanwhile, we spend $68 billion on medical research. That's **40 times less** on curing all diseases combined than we spend on new ways to create corpses.
+On a pie chart, the research slice is literally invisible. You need a magnifying glass.
 
 {{< include ../figures/military-vs-medical-research-spending-bar-chart.qmd >}}
 
-Humanity has a spending problem. We blow **$119 trillion every year** on two things: killing each other ($9.7T) and dying from preventable diseases ($109.1T). Meanwhile, we spend just $68 billion on medical research - that's 0.06% of the problem.
+The numbers are obscene:
+
+- **$2.7 trillion/year** on killing each other
+- **$109.1 trillion/year** lost to disease (treatment + lost productivity)
+- **$68 billion/year** on finding cures
+
+One fighter jet costs more than all rare disease research combined. The military's toilet seats cost more than malaria research. Viagra got more funding than Alzheimer's.
+
+We've tried **0.0001%** of the 166 billion possible treatment combinations. Your rare disease kid has better odds with lottery tickets.
 
 {{< include ../figures/disease-vs-curing-costs-column-chart.qmd >}}
 
----
+## The System Is Working As Designed (To Not Work)
 
-## Part II: Our Medical System is a Bureaucratic Nightmare
+Here's the brutal truth: The system isn't broken. It's working exactly as designed. And it's designed to keep you sick and broke.
 
-While we waste trillions on weapons, the system for creating new medicines is also broken. It's not a money problem; it's a *system* problem. The two main culprits are the National Institutes of Health (NIH) and the Food and Drug Administration (FDA).
+**The NIH: $1 Trillion to Eradicate 0 Diseases**
 
-- **The NIH is a black hole of wasted genius.** It forces the world's best scientists to spend 40% of their time begging for money instead of doing research.
-- **The FDA kills more people than it saves.** Its approval process is so slow and expensive that it delays life-saving drugs for years and makes it impossible to cure rare diseases.
+Since 1970, the National Institutes of Health has spent over $1 trillion (inflation-adjusted). Diseases eradicated: **ZERO**. Smallpox was the WHO, not NIH. Success rate: 0.00%.
 
-Here's a summary of the damage:
+200 bureaucrats decide which of 10,000 diseases matter. Yours doesn't. They fund what gets published, not what saves lives. Result: 55 million die annually while papers get published.
+
+**The FDA: Making Medicine 82X More Expensive**
+
+Oxford's RECOVERY trial proved treatments can cost $500 per patient. The FDA demands $41,000 per patient. That's **82 times more expensive** for the same result.
 
 - **💸 ~$2.2 Billion** to develop one new treatment.
 - **🐢 17 years** from discovery to patient.
@@ -49,7 +59,34 @@ Here's a summary of the damage:
 - **🙈 Negative results are hidden**, wasting billions on repeated failures.
 - **🧫 44 years** since we last eradicated a disease.
 
-The system is designed to protect bureaucrats, not patients. We're fighting 21st-century diseases with 20th-century bureaucracy. This is what the 1% Treaty fixes.
+Your rare disease child? Better odds with lottery tickets. The system is designed to prevent lawsuits, not save lives.
+
+**Democracy Is Theater**
+
+Princeton University proved it: There's a **0% correlation** between what you want and what policies get enacted. Economic elites get what they want 78% of the time. You get what you want 0% (unless elites agree).
+
+Your "representative" has 750,000 constituents. You get 0.00013% of their attention. They spend 70% of their time fundraising, not representing.
+
+**Regulatory Capture: The Foxes Own Every Henhouse**
+
+- FDA run by ex-pharma executives
+- DoD run by future defense contractors
+- The revolving door: 400% salary increase for playing ball
+
+Every "failure" is someone's success story:
+- FDA delays = Pharma profits (17 years of patent monopoly)
+- Military spending = Defense contractor wealth (the point)
+- Disease continues = Healthcare profits ($4.5T industry needs you sick)
+
+## The Fixed Pie Reality
+
+You can't print your way out of this. Earth has 8 billion brains - can't print more.
+
+When the Fed prints money for war, defense contractors buy up the smartest people. Medical research funding up **10X in dollars**, but **DOWN as % of GDP**. Every MIT grad building missiles is NOT curing cancer.
+
+The brain drain: Raytheon pays $150k, NIH pays $55k. Guess where geniuses go.
+
+Switzerland proves the alternative works: 0.7% on defense → $93K GDP per capita (highest quality of life on Earth).
 
 ## The Chapters
 
