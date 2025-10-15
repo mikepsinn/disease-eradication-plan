@@ -233,17 +233,17 @@
 
 ## Part III: The Solution
 
-### The 1% Treaty (The Trojan Horse That Conquers Everything)
+### The 1% Treaty (How It Works)
 
 - **[FIGURE: The 1% Treaty Visualization]**
   - Visual showing $2.7T military budget with tiny 1% slice ($27B) being redirected
-  - Shows what $27B could buy: 54,000 trials, 27M patients treated, 10-20 diseases cured
-  - Impact: Shows how little we're asking for, how much we'd get
-- **Start Tiny: Just 1% of Military Budgets**
-  - $27B globally (Pentagon's couch cushion money)
-  - No country loses relative power (everyone cuts equally)
-  - Small enough to pass, big enough to matter
-  - The precedent: If 1% works, why not 2%?
+  - Shows what $27B funds: 54,000 trials, 27M patients treated, 10-20 diseases cured
+  - Impact: Shows the scale comparison
+- **Starting Small: 1% of Military Budgets**
+  - $27B globally (Pentagon's rounding error)
+  - No country loses relative power (simultaneous equal cuts)
+  - Small enough to be politically viable, large enough for impact
+  - Precedent for expansion: If 1% works, 2% becomes possible
 - **The Two-Tier Peace Dividend (History Shows This Works)**
   - Captured Dividend: $24.4B to DIH treasury (direct military cuts)
   - Societal Dividend: $92B to humanity (total economic benefit)
@@ -258,7 +258,7 @@
   - Historical proof this creates prosperity:
     - Post-WW2: 30% GDP military cut → Greatest boom in history
     - Post-Cold War: 3% GDP military cut → 1990s tech revolution
-    - Our ask: Just 1% cut → Fund the cure revolution
+    - The 1% treaty: Modest cut → Funds the super-efficient decentralized trials
   - The multiplier effect: Every 1% cut from military historically creates 3-4% GDP growth
 - **What 1% Less War Buys in Health**
   - $27B funds 54,000 clinical trials at $500K each
@@ -295,8 +295,8 @@
 
 ### The DIH - Government Without Governments
 
-- **The Bridge Year: Running Both Systems Until One Wins**
-  - dFDA runs parallel to FDA (not replacement, competition)
+- **Parallel Systems: Competition Not Replacement**
+  - dFDA runs alongside FDA (alternative pathway, not abolishment)
 - **The Structure: Distributed Control**
   - $27B/year flows through transparent smart contracts
   - No CEO or board making unilateral decisions
@@ -354,9 +354,9 @@
   - Rare Disease Institute: Every disease matters
   - Emergency Response: Pandemic preparedness
 
-### Wishocracy - Markets Not Majorities
+### Wishocracy - How Distributed Decision-Making Works
 
-- **The Innovation: Anyone Can Propose, Everyone Decides**
+- **Open Participation: Proposals and Voting**
   - Open proposal system: ANY human can submit funding requests
   - Minimal stake required: Small bond prevents spam proposals
   - Random pairwise comparisons: Each voter sees different proposal pairs
@@ -561,7 +561,7 @@
   - Former 5-star general and Supreme Allied Commander warning about his own industry
   - "Every gun made, every warship launched, every rocket fired signifies theft from those who hunger"
   - Predicted the permanent war economy we now live in
-  - His solution then = Our solution now: Redirect the resources
+  - His solution then = The solution now: Redirect the resources
 - **Switzerland: The 200-Year Proof That Peace Creates Wealth**
   - No natural resources: Just mountains and cows
   - Center of TWO world wars: Still avoided both
@@ -778,7 +778,7 @@
   - Post-Cold War (1990-2000): Cut military 3% of GDP → Created the internet economy
   - Switzerland (1815-2025): Kept military <1% of GDP → Highest quality of life on Earth
   - The pattern: Every 1% reduction in military spending → 3-4% GDP growth
-  - Our 1% Treaty: Conservative compared to history's proven peace dividends
+  - The 1% Treaty: Conservative compared to history's proven peace dividends
 - **[FIGURE: 463:1 ROI Comparison]**
   - Bar chart comparing returns: S&P 500 (10%), Hedge funds (20%), Medallion Fund (39%), DIH (463:1)
   - DIH bar literally goes off the chart
@@ -827,7 +827,7 @@
   - Behavioral intervention: $100 app prevents $10,000 surgery
 - **The $100 Billion Market**
   - Global clinical trial market: $100B annually
-  - Our 50% efficiency gain: $50B annual savings (conservative)
+  - 50% efficiency gain: $50B annual savings (conservative estimate)
   - Best case (95% reduction like RECOVERY): $95B annual savings
   - These aren't projections - Oxford already proved it works
   - Market capture: Even 10% adoption = $5B value creation
@@ -856,14 +856,14 @@
   - Year 20: Full $16.5T annual value realized
   - Every year we delay: $142B in immediate benefits lost forever
 
-### VICTORY Bonds - Better Than Medallion Fund
+### VICTORY Bonds - The Investment Structure
 
-- **The Instrument: Beating Every Investment Ever**
-  - Perpetual 10% of all DIH treaty inflows forever
+- **The Instrument: High-Risk, High-Return Political Arbitrage**
+  - Perpetual 10% of all DIH treaty inflows
   - Target yield: 270% annually once treaty fully funded
   - Growth potential: Returns scale automatically as treaty expands (2%, 5%, 10% treaties)
   - Fully tradable: Secondary markets provide liquidity
-  - Aligned incentives: Bondholders profit by growing DIH
+  - Aligned incentives: Bondholders profit from DIH growth
 - **The Math: Simple and Brutal**
   - Total bonds issued: $1B (first come, first served)
   - At full $27B treaty: $2.7B annual distribution (10% of inflows)
@@ -895,50 +895,50 @@
   - $25M: Reserve for treaty implementation
   - Full transparency: Every dollar tracked publicly
 
-### The Coalition That Ends War (Aligned Incentives Beat Ideology)
+### How Incentives Align (Why Different Groups Support This)
 
-- **Defense Contractors: Converting the Enemy**
-  - VICTORY bonds: 40%+ perpetual returns > 8% defense margins
-  - Keep 99% of military budget AND get returns on VICTORY bonds
-  - Their lobbyists work for highest bidder (that's us now)
-  - Pension obligations: One bond purchase = funded forever
-  - ESG pressure: From death merchants to health heroes
-- **Insurance Companies: Natural Allies**
-  - Healthy people = no claims = massive profits
-  - Every cure = billions in reduced payouts
-  - Investment opportunity: VICTORY bonds in their portfolios
-  - Competitive advantage: Back us or competitors will
-  - The math: Support us or go bankrupt from medical costs
-- **Big Pharma: The Unexpected Convert**
-  - Current model dying: Patent cliffs, R&D costs exploding like cancer cells
-  - **The Beautiful Payment Reversal**: 
-    - Old way: Pharma burns $48,000 per subject
-    - New way: Patients + DIH subsidies PAY PHARMA for phase 2 and beyond
-    - From biggest expense to revenue stream
-  - DIH subsidies = Pharma gets paid to run trials instead of paying
-  - Parallel pathway: Faster results, positive cash flow, CEOs spontaneously orgasm
-  - Compete on outcomes, not marketing (their worst fear)
-  - But: Winners make 10X current profits (losers still make 5X)
-- **Politicians: Making Corruption Work for Health**
-  - Super PAC: Major funding for treaty supporters
-  - Opposition research: Funded against enemies
-  - District benefits: Research centers = jobs
-  - Personal wealth: VICTORY bonds in blind trusts
-  - Public choice reality: They'll take our money like any other
-- **Billionaires: The Reputation Laundry**
-  - Better than Giving Pledge (actual results)
-  - 40%+ perpetual returns while saving humanity
-  - Named institutes: "The Gates Cancer Center"
-  - Tax benefits plus profit (have cake, eat it)
-  - First movers get best terms and most credit
-  - Chance to own piece of $100T company (makes their current wealth look quaint)
-  - Legacy: Founded the company that ended human suffering
-- **Everyone Else: Democracy That Pays**
-  - Direct vote on budget allocation (real power)
-  - Subsidized healthcare through dFDA trials (dynamic vouchers)
-  - Your participation helps grow voucher size for everyone
-  - Jobs in research and administration
-  - Your diseases actually get cured
+- **Defense Contractors: The Math Changes**
+  - VICTORY bonds offer 40%+ perpetual returns vs 8% defense margins
+  - They keep 99% of military budget AND can buy VICTORY bonds
+  - Lobbyists follow money (bonds pay better than bombs)
+  - Pension obligations get funded permanently
+  - ESG pressure creates reputational value
+- **Insurance Companies: Profit from Health**
+  - Healthy people = fewer claims = higher profits
+  - Each cure = billions in reduced payouts
+  - VICTORY bonds fit their investment portfolios
+  - First movers gain competitive advantage
+  - Math is simple: adapt or face bankruptcy from rising medical costs
+- **Pharmaceutical Companies: Revenue Model Inverts**
+  - Current model failing: Patent cliffs, exploding R&D costs
+  - **The Payment Reversal**:
+    - Old way: Pharma spends $48,000 per trial subject
+    - New way: Patients + DIH subsidies pay pharma for trials
+    - Transforms biggest expense into revenue stream
+  - DIH subsidies mean getting paid to run trials
+  - Parallel pathway provides faster results, positive cash flow
+  - Competition shifts to outcomes vs marketing
+  - Winners can make 10X current profits (losers still make 5X)
+- **Politicians: Corruption Redirected**
+  - Super PACs fund treaty supporters
+  - Opposition research available against opponents
+  - Research centers create district jobs
+  - VICTORY bonds available for blind trusts
+  - Public choice theory: money talks, health or weapons
+- **Billionaires: Returns Plus Reputation**
+  - Outperforms Giving Pledge (measurable results)
+  - 40%+ perpetual returns plus legacy
+  - Named institutes available: "The Gates Cancer Center"
+  - Tax benefits plus profits
+  - First movers get premium terms and credit
+  - Early stake in potential $100T company
+  - Legacy: Funded the end of human suffering
+- **Everyone Else: Direct Democracy Plus Healthcare**
+  - Direct voting on budget allocation (actual power)
+  - Subsidized healthcare via dFDA trials (dynamic vouchers)
+  - Participation grows voucher value for all
+  - Research and administration jobs
+  - Diseases get funded and studied
 
 ## Part VII: The Legal Architecture (Staying Out of Prison)
 
@@ -996,13 +996,13 @@
   - Time-limited signup windows create urgency
 - **The 3.5% Magic Number**
   - Historical pattern: Peaceful movements with 3.5% active support tend to succeed
-  - Our advantage: Economic incentive to participate
+  - Key advantage: Economic incentive to participate
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
 
-## Part IX: Join or Die (Literally)
+## Part IX: Taking Action
 
-### Your Personal Benefits (What You Get)
+### What This Means for You
 
 - **Economic Security**
   - Subsidized treatment: Dynamic vouchers for dFDA trials
@@ -1030,28 +1030,28 @@
   - Equal to every other human (1 person = 1 allocation power)
   - Co-creator of humanity's health priorities
 
-### The Three Actions (Do Now)
+### Three Ways to Participate
 
-- **Action 1: Sign the Referendum** (3 minutes)
-  - Go to WarOnDisease.org
+- **Sign the Referendum** (3 minutes)
+  - WarOnDisease.org has the referendum
   - Connect wallet or email
   - Verify identity (30 seconds)
-  - Vote YES on the treaty
+  - Vote on the treaty
   - Become eligible for subsidized treatments
-  - Help others learn about the treaty
-- **Action 2: Invest** (If you have capital)
+  - Share information with others
+- **Invest Capital** (If you have it)
   - VICTORY Bonds: $1,000 minimum
-  - Total available: $3.375B (first come, first served)
-  - Return: 5% of all DIH inflows forever (40% starting yield)
-  - Growth: Returns automatically scale as treasury grows
-  - Risk: Tradable on secondary markets if treaty delayed
-  - Math: Bondholders share 5% of all treasury inflows forever
-- **Action 3: Build** (If you have skills)
-  - Developers: Paid work building systems
-  - Organizers: Help spread the referendum
-  - Educators: Teach others about the treaty
-  - Researchers: Offer trials on the dFDA marketplace
-  - Everyone: Share knowledge, build community
+  - Total available: $3.375B (limited supply)
+  - Return: 5% of all DIH inflows perpetually (40% starting yield)
+  - Growth: Returns scale automatically with treasury
+  - Risk: Tradable on secondary markets
+  - Math: Bondholders share 10% of all inflows perpetually
+- **Contribute Skills** (If you have them)
+  - Developers: Build the systems
+  - Organizers: Spread the referendum
+  - Educators: Teach others
+  - Researchers: Launch trials on dFDA
+  - Anyone: Share knowledge, build community
 
 ### Every Objection Demolished
 
@@ -1065,8 +1065,8 @@
   - Democracy is complicated. This just admits it and uses computers to help.
   - You use Netflix's algorithm to pick movies, why not health spending?
 - **"Countries won't cooperate"**
-  - They will when we bribe their leaders and fund their opponents.
-  - Switzerland proved you can skip every war and get rich instead.
+  - History shows incentives work: lobbyists follow money
+  - Switzerland proved neutrality creates wealth over 200 years
 - **"You can't cure aging"**
   - We replace hearts, kidneys, blood, bones
   - Aging is just harder engineering, not magic
@@ -1076,12 +1076,15 @@
 - **"Wishocracy is mob rule"**
   - Better than oligarch rule. Plus AI advisors prevent poor decisions.
 - **"The powers that be won't allow this"**
-  - The powers that be get VICTORY bonds. They'll allow it.
+  - Existing power structures can buy VICTORY bonds
+  - Incentive alignment beats opposition
 - **"This violates securities law"**
-  - We have lawyers. Many lawyers. Expensive lawyers.
+  - Structured as debt instruments with qualified purchaser exemptions
+  - Legal architecture detailed in Part VII
 - **"This is too expensive"**
-  - We spend $2.7T on the War on Humanity. We're asking for 1% to start the War on Disease.
-  - If we can afford to kill each other, we can afford to cure each other.
+  - Global military spending: $2.7T annually on weapons
+  - The treaty redirects 1% ($27B) to medical research
+  - If humanity can afford weapons, it can afford cures
 - **"The technology doesn't exist"**
   - RECOVERY trial proved it does. We're just scaling.
 - **"You can't avoid war in the real world"**
