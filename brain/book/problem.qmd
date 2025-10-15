@@ -1,116 +1,153 @@
 ---
 title: "Problem Overview"
-description: "Everyone You Love Is Dying While We Build Skynet"
-format:
-  html:
-    toc: true
+subtitle: "Everyone You Love Is Dying While We Build Skynet"
+description: "A darkly humorous tour of humanity's spectacular failure at prioritizing not dying"
+published: true
+date: "2025-01-20T00:00:00.000Z"
+tags: [problem, war, disease, death, military-spending, healthcare, democracy, regulatory-capture]
 ---
 
-150,000 people die every day from preventable diseases. That's fifty 9/11s. Every. Single. Day.
 
-Your parent, child, or friend is statistically likely to be one of them. We could prevent most of these deaths with existing technology. But we're too busy spending $2.7 trillion on weapons.
+Here's a fun fact: While you're reading this sentence, approximately 3 people just died from preventable diseases. By the time you finish this paragraph, that number will be 12. Don't worry though—we just spent enough money on a single fighter jet to have saved all of them for the next century.
 
-This isn't a funding problem. It's a priorities problem.
+Welcome to Earth, where we've mastered the art of doing everything backwards.
 
-## Humanity's  Budget
+## The Daily Massacre Nobody Talks About
 
-Picture humanity as a family making $100,000 a year. Here's how we spend it:
+[Every single day, 150,000 humans stop being alive](./problem/the-daily-massacre.qmd). That's fifty September 11th attacks. Every. Single. Day.
 
-- **Healthcare treatment:** $8,200 (treating symptoms after we're sick)
-- **Military spending:** $2,700 (home defense)
-- **Medical research:** $68 (finding actual cures)
+But instead of treating this like the emergency it is, we've decided the real threat is that someone, somewhere, might have slightly different colored skin or worship a slightly different imaginary friend. So naturally, we spend [$2.7 trillion annually](./problem/cost-of-war.qmd) on elaborate machines designed to make the dying happen faster.
 
-We spend **40X more on weapons than cures**. We spend **115X more treating disease than curing it**.
+Your body, meanwhile, is conducting its own personal 9/11 right now. Cancer cells are multiplying. Your telomeres are shortening. Your joints are turning into gravel. Your brain is deleting memories like a drunk person cleaning their phone.
 
-On a pie chart, the research slice is literally invisible. You need a magnifying glass.
+You're essentially a meat computer running Windows 95, and instead of installing updates, we're investing in bigger hammers to hit each other with.
 
-{{< include ../figures/military-vs-medical-research-spending-bar-chart.qmd >}}
+## The NIH: A Trillion Dollar Participation Trophy
 
-The numbers are obscene:
+Since 1970, the National Institutes of Health has spent [over $1 trillion](./problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) (adjusted for inflation, because even failure gets more expensive over time).
 
-- **$2.7 trillion/year** on killing each other
-- **$109.1 trillion/year** lost to disease (treatment + lost productivity)
-- **$68 billion/year** on finding cures
+Diseases completely eradicated by the NIH: **Zero.**
 
-One fighter jet costs more than all rare disease research combined. The military's toilet seats cost more than malaria research. Viagra got more funding than Alzheimer's.
+That's right. Zero. Zilch. Nada. The big goose egg.
 
-We've tried **0.0001%** of the 166 billion possible treatment combinations. Your rare disease kid has better odds with lottery tickets.
+Smallpox? That was the WHO in 1980, and even they just got lucky that cowpox happened to work. The NIH's greatest achievement is creating 200 committees to decide which of your diseases don't matter. Spoiler: It's probably yours.
 
-{{< include ../figures/disease-vs-curing-costs-column-chart.qmd >}}
+They've turned medical research into a grant-writing competition where the prize is more grant-writing. It's like a pyramid scheme, except instead of essential oils, everyone's selling false hope and PowerPoint presentations.
 
-## The System Is Working As Designed (To Not Work)
+## The FDA: Making Medicine 82X More Expensive
 
-Here's the brutal truth: The system isn't broken. It's working exactly as designed. And it's designed to keep you sick and broke.
+The Food and Drug Administration has achieved something remarkable: [They've made medicine 82 times more expensive and 1,000 times slower](./problem/fda-is-unsafe-and-ineffective.qmd), all while claiming it's for your safety.
 
-**The NIH: $1 Trillion to Eradicate 0 Diseases**
+It's like having a lifeguard who checks if the life preserver meets federal specifications while you drown. But don't worry—in 17 years, after $2.6 billion in trials, they might approve something that could have saved you.
 
-Since 1970, the National Institutes of Health has spent over $1 trillion (inflation-adjusted). Diseases eradicated: **ZERO**. Smallpox was the WHO, not NIH. Success rate: 0.00%.
+Currently, 95% of diseases have ZERO FDA-approved treatments. If you have a rare disease, the FDA's official position is essentially: "Have you tried not having that disease?"
 
-200 bureaucrats decide which of 10,000 diseases matter. Yours doesn't. They fund what gets published, not what saves lives. Result: 55 million die annually while papers get published.
+The Oxford RECOVERY trial proved we could test treatments for $500 per patient. The FDA demands $41,000. That's not a rounding error. That's systemic sabotage with a government seal of approval.
 
-**The FDA: Making Medicine 82X More Expensive**
+## The War Budget: Humanity's Death Wish Retirement Fund
 
-Oxford's RECOVERY trial proved treatments can cost $500 per patient. The FDA demands $41,000 per patient. That's **82 times more expensive** for the same result.
+We spend [$2.7 trillion every year](./problem/cost-of-war.qmd) on things specifically designed to make humans stop breathing. This includes:
 
-- **💸 ~$2.2 Billion** to develop one new treatment.
-- **🐢 17 years** from discovery to patient.
-- **🚫 85% of patients** are forbidden from trials.
-- **💊 95% of rare diseases** have NO approved treatments.
-- **🙈 Negative results are hidden**, wasting billions on repeated failures.
-- **🧫 44 years** since we last eradicated a disease.
+- Nuclear weapons (because one apocalypse isn't enough, we need backup apocalypses)
+- Fighter jets that cost more than hospitals
+- Submarines that could fund cancer research for decades
+- Whatever the hell a "Space Force" does
 
-Your rare disease child? Better odds with lottery tickets. The system is designed to prevent lawsuits, not save lives.
+The Pentagon alone has **lost**—not spent, LOST—$2.5 trillion. Like a drunk person losing their keys, except the keys could have cured Alzheimer's hundreds of times over.
 
-**Democracy Is Theater**
+Your chance of dying from terrorism: 1 in 30 million.
+Your chance of dying from disease: 100%.
 
-Princeton University proved it: There's a **0% correlation** between what you want and what policies get enacted. Economic elites get what they want 78% of the time. You get what you want 0% (unless elites agree).
+But sure, let's buy more tanks. I'm sure cancer will be intimidated.
 
-Your "representative" has 750,000 constituents. You get 0.00013% of their attention. They spend 70% of their time fundraising, not representing.
+## The Disease Bill: $109 Trillion in Annual Suffering
 
-**Regulatory Capture: The Foxes Own Every Henhouse**
+While we're burning money on bombs, disease is running a [$109.1 trillion annual tab](./problem/cost-of-disease.qmd). That's:
 
-- FDA run by ex-pharma executives
-- DoD run by future defense contractors
-- The revolving door: 400% salary increase for playing ball
+- $8.2 trillion in direct healthcare costs (treating symptoms, not causes)
+- $100.9 trillion in lost productivity (dead people are notoriously unproductive)
 
-Every "failure" is someone's success story:
-- FDA delays = Pharma profits (17 years of patent monopoly)
-- Military spending = Defense contractor wealth (the point)
-- Disease continues = Healthcare profits ($4.5T industry needs you sick)
+We're essentially paying $109 trillion per year to maintain human suffering at maximum capacity. It's like running a torture chamber and billing the victims for the electricity.
 
-## The Fixed Pie Reality
+## Humanity's Upside-Down Budget: A Visual Tragedy
 
-You can't print your way out of this. Earth has 8 billion brains - can't print more.
+[We spend 40 times more on killing than curing](./problem/the-119-trillion-death-toilet.qmd). Let that sink in.
 
-When the Fed prints money for war, defense contractors buy up the smartest people. Medical research funding up **10X in dollars**, but **DOWN as % of GDP**. Every MIT grad building missiles is NOT curing cancer.
+If humanity were a person, we'd be spending our entire paycheck on hiring hitmen to kill us while allocating pocket change to maybe, possibly, if there's time, buying some bandaids.
 
-The brain drain: Raytheon pays $150k, NIH pays $55k. Guess where geniuses go.
+Medical research gets $68 billion globally. The military's toilet paper budget is probably higher. One F-35 fighter jet costs more than the entire global funding for rare disease research.
 
-Switzerland proves the alternative works: 0.7% on defense → $93K GDP per capita (highest quality of life on Earth).
+This is like your house being on fire and using your water to fill a swimming pool for sharks with laser beams attached to their heads.
 
-## The Chapters
+## Your Democracy Is Theater (And Not Even Good Theater)
 
-### [Evolution Trapped Us](./problem/the-evolutionary-trap.qmd)
-**Caveman Brains and Nuclear Bombs**
+Princeton University studied American democracy and discovered something hilarious: [It doesn't exist](./problem/unrepresentative-democracy.qmd).
 
-### [The Cost of War](./problem/cost-of-war.qmd)
-**$9.7 Trillion Per Year on Humanity's Most Expensive Hobby**
+The correlation between what the public wants and what becomes policy? **Zero percent.**
+
+The correlation between what economic elites want and what becomes policy? **78 percent.**
+
+You have as much influence on government policy as you do on the weather. Actually, less—at least you can seed clouds.
+
+Your "representative" has 750,000 constituents. Your share of their attention is 0.00013%. They spend 70% of their time fundraising, not that it matters since they vote however their donors tell them to.
+
+Democracy is basically a suggestion box that goes straight into a shredder operated by someone who owns a weapons factory.
+
+## Regulatory Capture: The Foxes Bought the Henhouse (And Turned It Into a Slaughterhouse)
+
+Every regulatory agency is run by the industry it's supposed to regulate. [It's not a bug; it's a feature](./problem/regulatory-capture.qmd).
+
+- The FDA is run by ex-pharma executives who make drugs more expensive
+- The DoD is run by future defense contractors who need enemies to exist
+- The NIH is run by grant recipients who need diseases to study, not cure
+
+It's like putting vampires in charge of the blood bank and then acting surprised when everyone's anemic.
+
+The revolving door spins so fast it could power a small city. Regulators who play ball see 400% salary increases when they switch sides. Those who don't play ball don't get to play at all.
+
+## The Evolutionary Trap: We're Chimps with Nuclear Weapons
+
+Here's the cosmic joke: [We're using Stone Age brains to manage Space Age weapons](./problem/the-evolutionary-trap.qmd).
+
+Our ancestors needed to quickly identify threats, form tribes, and fight other tribes over resources. Fast-forward 200,000 years, and we're doing the exact same thing, except now the rocks are nuclear and the tribes have flags.
+
+We're literally too stupid to stop killing ourselves. Our monkey brains are optimized for surviving on the savanna, not managing global civilization. We see different tribes and immediately think "enemy" instead of "potential customer for our clinical trials."
+
+Evolution gave us the tools to build nuclear weapons but not the wisdom to not use them. It's like giving a toddler a flamethrower and being surprised when everything's on fire.
+
+## The Bottom Line: We Chose This
+
+Every single problem listed here is a choice. Not a law of nature. Not an inevitability. A choice.
+
+We choose to spend $2.7 trillion on weapons while 150,000 people die daily from curable diseases.
+
+We choose to let 200 bureaucrats decide which diseases matter while millions suffer from the ones that don't.
+
+We choose to make medicine 82 times more expensive than necessary because paperwork is more important than people.
+
+We choose to let our democracy be a puppet show where the strings are made of money and pulled by defense contractors.
+
+We choose to let fear of extremely unlikely threats justify ignoring the 100% certain threat of disease and death.
+
+The good news? We can choose differently.
+
+The bad news? We probably won't, because there's something good on Netflix and choosing is hard.
+
+But just in case you're tired of living in a world where we're all marching toward preventable death while arguing about which flag to wave, [there's a solution](../solution.qmd). It's absurdly simple. It's mathematically proven. It's economically profitable.
 
 
-### [The Cost of Disease](./problem/cost-of-disease.qmd)
-**$109.1 Trillion Annual Slow-Motion Apocalypse**
 
-### [The NIH Has Not Instituted Health](./problem/nih-spent-1-trillion-eradicating-0-diseases.qmd)
-**Soviet-Style Science Wastes $48B/Year**
+---
 
-The National Institutes of Health has spent $1 trillion to eradicate 0 diseases and has miserably failed in its mission to improve public health.
+*Continue to Part II: [The Theory (Why Markets Work and Democracy Doesn't)](../theory.qmd)*
 
-### [The FDA is Unsafe and Ineffective](./problem/fda-is-unsafe-and-ineffective.qmd)
-**Central Planning Takes 17 Years to Approve a Drug**
-
-### [Regulatory Capture](./problem/regulatory-capture.qmd)
-
-### [Democracy Can't Fix This](./problem/unrepresentative-democracy.qmd)
-
-
-
+*Or dive into the specific problems:*
+- [The Daily Massacre](./problem/the-daily-massacre.qmd) - 150,000 preventable deaths every day
+- [NIH's Trillion Dollar Failure](./problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) - How to spend $1 trillion and cure nothing
+- [The FDA's 82X Inefficiency](./problem/fda-is-unsafe-and-ineffective.qmd) - Making medicine unaffordable since 1962
+- [The $2.7 Trillion Death Budget](./problem/cost-of-war.qmd) - What we spend on killing each other
+- [The $109 Trillion Disease Bill](./problem/cost-of-disease.qmd) - The economy of suffering
+- [Humanity's Upside-Down Priorities](./problem/the-119-trillion-death-toilet.qmd) - A visual guide to our insanity
+- [Democracy Theater](./problem/unrepresentative-democracy.qmd) - Why your vote doesn't matter
+- [Regulatory Capture](./problem/regulatory-capture.qmd) - How the foxes bought all the henhouses
+- [The Evolutionary Trap](./problem/the-evolutionary-trap.qmd) - Stone Age brains with Space Age weapons
