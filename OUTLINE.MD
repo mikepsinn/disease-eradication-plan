@@ -825,7 +825,7 @@
   - Preventative approach potential: $360B in healthcare savings (proven by data)
   - Early detection via dFDA: Catching cancer at Stage 1 vs 4 = 90% cost reduction
   - Behavioral intervention: $100 app prevents $10,000 surgery
-- **The $100 Billion Market We're Capturing**
+- **The $100 Billion Market**
   - Global clinical trial market: $100B annually
   - Our 50% efficiency gain: $50B annual savings (conservative)
   - Best case (95% reduction like RECOVERY): $95B annual savings
@@ -859,36 +859,40 @@
 ### VICTORY Bonds - Better Than Medallion Fund
 
 - **The Instrument: Beating Every Investment Ever**
-  - Perpetual 5% of all DIH treasury inflows forever
-  - Target yield: 40% annually once treaty fully funded
-  - Growth potential: Returns scale automatically as treaty expands
+  - Perpetual 10% of all DIH treaty inflows forever
+  - Target yield: 270% annually once treaty fully funded
+  - Growth potential: Returns scale automatically as treaty expands (2%, 5%, 10% treaties)
   - Fully tradable: Secondary markets provide liquidity
   - Aligned incentives: Bondholders profit by growing DIH
-- **The Math: Why This Beats Everything**
-  - Total bonds issued: $3.375B hard cap (scarcity drives value)
-  - At full $27B treasury: $1.35B annual distribution (5% of inflows)
-  - $1.35B ÷ $3.375B bonds = 40% yield when treaty implemented
+- **The Math: Simple and Brutal**
+  - Total bonds issued: $1B (first come, first served)
+  - At full $27B treaty: $2.7B annual distribution (10% of inflows)
+  - $2.7B ÷ $1B bonds = 270% yield when treaty implemented
   - As treaty expands (2%, 5%, 10%), returns scale proportionally
-  - Inflation-protected: Tied to treaty inflows, not dying currencies
+  - Leaves $24.3B for research (90% of treaty funds - plenty to cure everything)
 - **Why This Destroys All Competition**
-  - S&P 500: 10% average (VICTORY: 40% target, scaling with treaty success)
-  - Venture capital: 25% if lucky (VICTORY: 40% at full implementation)
-  - Medallion Fund: 39% CAGR at $10B cap (VICTORY: 40% target, no artificial cap)
-  - Real estate: 15% with hassle (VICTORY: 40% liquid if treaty succeeds)
-  - Defense contracts: 8-15% margins (VICTORY: 40% perpetual once operational)
-  - Alternative systems prove viability: Bitcoin hit $1T without governments, M-Pesa became Kenya's real economy
+  - S&P 500: 10% average 
+  - Venture capital: 25% if lucky 
+  - Medallion Fund: 39% CAGR at $10B cap 
+  - Real estate: 15% with hassle
+  - Defense contracts: 8-15% margins 
+  - Cocaine trafficking: 90% but risky 
+- **The High-Risk, High-Reward Reality**
+  - This is political arbitrage: Betting $1B that nations redirect $27B/year
+  - If treaty fails: You lose your investment (but you'll also die of preventable disease, so...)
+  - If treaty passes: 270% returns forever (or until heat death of universe)
 - **Why Defense Contractors Should Diversify**
   - Portfolio diversification: Hedge against peace breaking out
-  - Pension fund stability: 40% returns for employee retirement
+  - Pension fund stability: 270% returns for employee retirement
   - ESG compliance: Balance death merchant reputation
   - Liquidity advantage: Tradable vs locked government contracts
-  - First-mover advantage: Limited $3.375B available
-- **Use of Funds: The $3.375B War Chest**
-  - $1.35B: Media blitz and education campaign
-  - $1B: Lobbying (10X defense industry's annual $100M)
-  - $675M: Technology platform (dFDA + Wishocracy)
-  - $225M: Operations and contingency
-  - $125M: Reserve for treaty implementation
+  - First-mover advantage: Limited $1B available
+- **Use of Funds: The $1B War Chest**
+  - $400M: Media blitz and global referendum ($0.20-0.50 per vote = 800M-2B votes)
+  - $300M: Lobbying (3X defense industry's annual $100M spend)
+  - $200M: Technology platform (dFDA + Wishocracy)
+  - $75M: Operations and contingency
+  - $25M: Reserve for treaty implementation
   - Full transparency: Every dollar tracked publicly
 
 ### The Coalition That Ends War (Aligned Incentives Beat Ideology)
