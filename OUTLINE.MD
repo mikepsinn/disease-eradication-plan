@@ -321,12 +321,12 @@
     6. Match tasks to most suitable people/AI agents
     7. Track progress and measure impact continuously
 
-  - Core allocations (dynamically adjusted by the crowd):
-    - Patient treatment subsidies (majority of funds)
+  - Core Treasury Allocations (dynamically adjusted by the crowd):
+    - Patient treatment subsidies (the majority of funds, creating a market for trials)
     - VICTORY bond returns (5% of all inflows guaranteed)
     - Expansion campaigns (growing from 1% to 2% to 5%)
-    - Performance rewards (what actually worked gets more)
-    - Community campaigns (when 50,000 people want something, it happens)
+
+    - Community campaigns (e.g., bounties for specific platform features)
   - Why dynamic subsidies work:
     - Researchers set flexible participant pricing
     - Subsidies = available funds ÷ participating patients
@@ -338,30 +338,25 @@
     - Competitive liability insurance quotes keep costs down
   - Why subsidize patients, not researchers:
     - NIH: 200 people guess what might work
-    - DIH: Millions of sick people know what they need
-    - No grant-writing theater (6 months → 6 minutes)
-    - Results determine funding (work = wealth, fail = pivot)
-  - Capture-proof because there's nothing to capture:
-    - No approval committee to bribe
-    - No gatekeeper to influence
-    - Can't stop others from submitting competing proposals
-    - Buying 10 million votes: Economically impossible
-    - Gaming attempts get drowned in billions of honest allocations
-- **Specialized Institutes**
-  - Cancer Institute: Funded by public voting
-  - Mental Health Institute: Finally gets proper funding
-  - Aging Institute: Research on extending healthspan
-  - Rare Disease Institute: Every disease matters
-  - Emergency Response: Pandemic preparedness
+    - DIH: Millions of sick people, guided by doctors and data, choose what they need
+    - No grant-writing theater (researchers are paid by patients, not committees)
+    - Results determine funding (successful trials attract more patients and thus more funding)
+  - Capture-proof because there's nothing to capture at the top level:
+    - No central committee to bribe for a specific research grant
+    - No gatekeeper to influence for trial funding
+    - Can't stop others from launching competing trials on the dFDA
+    - Gaming the high-level budget is economically impossible
+    - Billions of votes determine the allocation percentages, not specific winners
+
 
 ### Wishocracy - How Distributed Decision-Making Works
 
 - **Open Participation: Proposals and Voting**
-  - Open proposal system: ANY human can submit funding requests
-  - Minimal stake required: Small bond prevents spam proposals
-  - Random pairwise comparisons: Each voter sees different proposal pairs
-  - Slide to allocate: "Jane's autism trial: 70% vs Bob's diabetes device: 30%"
-  - No centralized control: Nobody decides what gets voted on
+  - Open proposal system: ANY human can submit budget allocation proposals
+  - Minimal stake required: Small bond prevents spam
+  - Random pairwise comparisons: Each voter sees different budget allocation pairs
+  - Slide to allocate: "Patient Subsidies: 80% vs 2% Treaty Initiative: 20%"
+  - No centralized control: Nobody decides what budget proposals get voted on
 - **[FIGURE: How Wishocracy Works]**
   - Flow diagram: Anyone proposes → Random pairs shown to voters → Swipe to allocate → Aggregation → Funds flow automatically
   - Simple visual showing decentralized decision-making
@@ -377,9 +372,9 @@
   - No approval process for proposals
   - No human has more voting power than another
   - Emergent order from billions of micro-decisions
-  - True market discovery of society's health priorities
+  - True market discovery of society's high-level health priorities
 - **Your AI Twin: Scaling to Infinite Decisions**
-  - Digital Twin: AI agent aligned to YOUR goals, automating YOUR tasks
+  - Digital Twin: AI agent aligned to YOUR goals, automating YOUR budget allocations
   - Learns from 100 choices, predicts 10,000
   - You audit and adjust (maintaining control)
   - Collective intelligence: 8 billion advisors
@@ -452,9 +447,9 @@
   - Enter your condition
   - See treatments ranked by real effectiveness
   - **See the Future with Prediction Markets:**
-    - Live, financially-backed odds on trial outcomes (e.g., "72% chance of positive response," "5% chance of serious adverse events").
-    - A powerful forecasting tool to complement historical data.
-    - Bets are settled against real dFDA data, ensuring accuracy and creating a system that learns.
+    - View live, financially-backed odds on trial outcomes (e.g., "72% chance of positive response"). This provides a powerful, unbiased forecast to complement historical data and help you choose promising trials.
+    - These markets provide real-time feedback to researchers and help guide patients and doctors toward the most viable treatments, maximizing the impact of subsidized funding.
+    - Bets are settled against real dFDA data, ensuring the system is accurate and constantly learning.
   - Global trial access: Join studies anywhere in the world
   - Real-time effectiveness tracking (see what's working NOW)
   - Right to Trial: Guaranteed enrollment in at least one trial
@@ -1025,10 +1020,10 @@
   - No more medical bankruptcy
   - No more unnecessary death
 - **Power Returns**
-  - Direct funding power (your proposals compete equally)
-  - No more "representatives" or gatekeepers
+  - Direct funding power (your high-level proposals compete equally)
+  - No more "representatives" or gatekeepers controlling the treasury
   - Equal to every other human (1 person = 1 allocation power)
-  - Co-creator of humanity's health priorities
+  - Co-creator of humanity's health budget priorities
 
 ### Three Ways to Participate
 
