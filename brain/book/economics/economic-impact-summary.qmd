@@ -9,7 +9,7 @@ dateCreated: "2025-09-24T00:00:00.00Z"
 
 ## TL;DR: The Math on Ending War and Disease
 
-Here's what we found when we ran the numbers on the 1% Treaty. All calculations are in our **[Economic Models Jupyter Notebook](./economic_models.ipynb)** if you want to check our work.
+Here are the numbers on the 1% Treaty. All calculations are in our **[Economic Models Notebook](./economic_models.ipynb)** if you want to check our work.
 
 *   **The Funding Source (Peace Dividend)**:
     *   **Captured Dividend**: A 1% redirection of global military spending captures **$27.18 billion annually** to fund the initiative.
@@ -24,10 +24,10 @@ Here's what we found when we ran the numbers on the 1% Treaty. All calculations 
     *   **Robust ROI**: This yields a rigorous, NPV-based Return on Investment of **463:1**.
     *   **Health Return**: The platform is projected to generate **840,000 Quality-Adjusted Life Years (QALYs)** annually.
 
-**Bottom Line**: We take 1% of what humanity spends on bombs and use it to cure diseases instead. This creates two massive, independent wins for the world:
+**Bottom Line**: The treaty takes 1% of what humanity spends on bombs and redirects it to cure diseases instead. This creates two massive, independent wins for the world:
 
 1. **The Peace Dividend**: Society gets **$97.1 billion** richer every single year from the economic benefits of slightly less conflict.
-2. **The dFDA Bonus**: We use a fraction of that dividend to unlock an *additional* **$50 billion** in R&D savings annually, plus 840,000 years of healthy life.
+2. **The dFDA Bonus**: The DIH uses a fraction of that dividend to unlock an *additional* **$50 billion** in R&D savings annually, plus 840,000 years of healthy life.
 
 **Total Annual Benefit: ~$147.1 Billion per year.**
 
@@ -35,17 +35,17 @@ Here's what we found when we ran the numbers on the 1% Treaty. All calculations 
 
 ## The Numbers in Detail
 
-Here are the key metrics from our models. If you want to see exactly how we calculated these, check out the [full analysis](./economic_models.ipynb).
+Here are the key metrics from the models. For full calculations, see the [complete analysis](./economic_models.ipynb).
 
-### 1. The Peace Dividend: We Win Even If Nothing Else Works
+### 1. The Peace Dividend: Success Even If Nothing Else Works
 
 Here's the beautiful part: even if the dFDA completely failed, the world would still get **$97.1 billion** richer every single year just from a 1% reduction in conflict. This is the "societal dividend."
 
-| How We Fund the dFDA | Annual Value |
+| How The dFDA Gets Funded | Annual Value |
 | :--- | :--- |
-| **Money we capture** (a portion of the societal dividend) | $27.18 Billion |
+| **Money the treaty captures** (a portion of the societal dividend) | $27.18 Billion |
 
-This means our "worst case scenario" is that the world gets a ~$97 billion annual peace dividend. Not a bad floor.
+This means the "worst case scenario" is that the world gets a ~$97 billion annual peace dividend. Not a bad floor.
 
 ### 2. Where You Get the Money
 
@@ -57,7 +57,7 @@ The system funds the dFDA by redirecting 1% of what countries spend on weapons.
 | **Captured Dividend** | `$27.18 Billion` | 1% of direct military spending, redirected to the DIH treasury. |
 | **Societal Dividend** | `$97.1 Billion` | Total annual economic benefit of a 1% reduction in conflict. |
 
-*Even if our estimates are off, the Societal Dividend still ranges from **$41.9B to $200.3B** annually.*
+*Even if estimates are off, the Societal Dividend still ranges from **$41.9B to $200.3B** annually.*
 
 ### 3. The dFDA: Where the Money Goes
 
@@ -71,11 +71,11 @@ The DIH uses that $24.43 billion to build a platform that makes medical research
 | **Robust ROI (NPV-based)** | `463:1` | The return generated for every dollar invested, based on the NPV model. |
 | **Annual QALYs Gained** | `840,000` | The estimated years of healthy life generated annually. |
 
-*Even in worst-case scenarios, we still get an ROI between **375:1 and 3,500:1**.*
+*Even in worst-case scenarios, the system still achieves an ROI between **375:1 and 3,500:1**.*
 
-### 4. Can We Afford It?
+### 4. Can This System Afford Itself?
 
-The $27.18 billion we capture each year covers our $40 million in annual costs 679 times over. We're not going to run out of money.
+The $27.18 billion captured each year covers the $40 million in annual costs 679 times over. The system won't run out of money.
 
 | Metric | Value | Description |
 | :--- | :--- | :--- |
@@ -93,13 +93,13 @@ Let's compare this to the most effective charities in the world (like those Give
 
 **The Difference**: GiveWell's top charities are the best ways to spend money to save lives. They cost money but save lives very efficiently.
 
-Our plan doesn't cost money, it *makes* money while saving lives. Instead of asking people to donate, we make everyone richer while curing diseases. That's why the math looks so different.
+This plan doesn't cost money, it *makes* money while saving lives. Instead of asking people to donate, it makes everyone richer while curing diseases. That's why the math looks so different.
 
 ---
 
 ## 6. How Does This Compare to the Best Public Health Wins in History?
 
-Here's how our plan stacks up against the most successful health interventions ever, the ones that actually saved money while saving lives.
+Here's how this plan stacks up against the most successful health interventions ever, the ones that actually saved money while saving lives.
 
 | Intervention | How it Creates Value | Scale of Annual Net Benefit |
 | :--- | :--- | :--- |
@@ -118,7 +118,7 @@ The 1% Treaty and dFDA initiative tackles two problems at once:
 1.  **The Peace Dividend** is a massive economic gain on par with the largest public health wins, created simply by reducing a global negative (conflict).
 2.  **The dFDA** then uses a tiny fraction of that gain to fix the *system* of medical research, generating a *second* massive win that also has an unprecedented ROI.
 
-Instead of solving one problem, we use a global-scale win to fund a system-scale win. When you use the world's largest source of waste to fund its most impactful opportunity, the math gets pretty wild.
+Instead of solving one problem, this uses a global-scale win to fund a system-scale win. When you redirect the world's largest source of waste to fund its most impactful opportunity, the math gets pretty wild.
 
 ## The Economics
 
@@ -127,7 +127,7 @@ Instead of solving one problem, we use a global-scale win to fund a system-scale
 **463:1 ROI (Better Than Smallpox Eradication)**
 
 The Decentralized FDA alone achieves a **463:1 return on investment**.
-This means for every $1 invested, we society get $463 in benefits.
+This means for every $1 invested, society gets $463 in benefits.
 
 This exceptional ROI comes from multiple sources:
 - **$50B in annual R&D cost savings**: 82X reduction in clinical trial costs
