@@ -11,8 +11,8 @@
   - 150,000 people die every day, mostly from preventable/curable diseases
   - That's fifty 9/11s. Every. Single. Day.
   - Your parent, child, or friend is statistically likely to be one of them
-  - We could prevent most of these deaths with existing technology
-  - But we're too busy spending $2.7 trillion on weapons
+  - Biotechnology could prevent most of these deaths
+  - But humanity wastes $2.7 trillion on bombs, bullets, and nonsense like that instead
 
 ### The NIH Has Spent $1 Trillion to Eradicate 0 Diseases
 
