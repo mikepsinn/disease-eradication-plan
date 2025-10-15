@@ -147,12 +147,6 @@
   - Pre-1962 medicine: Doctors prescribed, patients decided
   - Software/Internet: No FDA = exponential innovation
   - Lasik/cosmetic surgery: Cash markets = 50% price drops
-- **Public Choice Theory: Everyone's Selfish, Use It**
-  - Politicians maximize power, not health (2-year horizons)
-  - Bureaucrats maximize budgets (bigger = more power)
-  - Defense contractors: $100M lobbying → $2T contracts
-  - The solution: Make curing more profitable than treating
-  - Align incentives or die (literally)
 
 ### The War on Disease - Designing the First War to Win
 
