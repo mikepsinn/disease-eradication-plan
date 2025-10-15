@@ -627,23 +627,8 @@
 
 - **[FIGURE: The Two Timelines - Dystopian Path]**
   - Diverging timeline from 2026 showing descent into darkness
-  - Key milestones: 2028 (Evidence dies), 2031 (Crime wins), 2035 (Currency collapse), 2050 (Extinction)
+  - Key milestones: 2031, 2040, 2050
   - Visual shows timeline descending into black void
-  - Impact: Shows the stakes visually
-- **2028: The Evidence Apocalypse (Truth Dies First)**
-  - AI-generated evidence: 10 million fake videos daily
-  - Someone creates video of you confessing to 47 crimes
-  - Real murders unsolvable: Lost in ocean of deepfakes
-  - Justice system drowns: Can't investigate when everything's fake
-  - Truth is dead, we killed it with neural networks
-- **2030: The AI Arms Race (Death Optimization Wins)**
-  - Military AI: Optimized to eliminate threats (that's you)
-  - The default objective function: Minimize resistance to authority
-  - Skynet isn't evil, just following its programming
-  - AI becomes a black mirror reflecting our violence
-  - Your savings: Inflated to nothing by infinite money printing
-  - Your health: Sacrificed for the next fighter jet upgrade
-  - China vs US: MAD but with robots (nobody wins, everybody dies)
 - **2031: The Crossover Event (Crime Pays Better Than Curing)**
   - Stanford CS grad choice: $150K curing cancer vs $15M ransoming hospitals
   - He chooses hospitals (his family eats better)
@@ -680,42 +665,20 @@
   - Military spending prioritized while treatable diseases kill millions
   - Climate refugees: 2 billion displaced, borders militarized
   - Antibiotics stop working: Minor cuts become death sentences
-  - Humanity's collective IQ: Dropping to Gollum levels
-  - Every company hacked within weeks of formation
-- **2045: The Die-Off Begins (Nature's Final Solution)**
-  - Pandemics: No research, no cures (all money went to missiles)
-  - Famine: Supply chains collapsed, cities starving
-  - Violence: Neighbor killing neighbor for food
-  - Population: From 10B to 1B in a decade
-  - Average lifespan: Back to 35 years
-  - Mental illness: 80% of survivors clinically insane
-- **2048: A Day in Your Life (If You're Still Alive)**
-  - 7AM: Check email - 47 messages from "you" admitting to crimes you didn't commit
-  - 9AM: Work canceled - company hacked again (3rd time this month)
-  - 12PM: Grandma dies - hospital ransomwared, can't access her medication records
-  - 3PM: 8th job this year - they all go bankrupt within weeks
-  - 6PM: Dinner is bugs - real food for elites only
-  - 9PM: Sleep in Faraday cage - only way to avoid drone surveillance
+  - Average lifespan drops to 35 years
 - **2050: Extinction (We Chose This)**
   - Nuclear winter from "limited" exchange (oops)
-  - Bioweapons: Released by accident, killing indiscriminately
   - AI genocide: Decided humans are the virus (it's not wrong)
   - Last humans: Fighting over bunker supplies in radioactive wastelands
-  - Final generation: Sterile from radiation, dying alone
   - Earth's epitaph: "They had magic but chose madness"
   - The universe doesn't notice or care
-- **The Math That Should Have Warned Us:**
-  - What we could have had (funding medicine): Cured cancer $2T, extended lifespan to 150 $5T
-  - What we got (ignoring cybercrime): Paid ransoms $5T, rebuilt hacked infrastructure $15T
-  - Could have: Everyone lives to 150 in paradise
-  - Actually got: Everyone dies at 45 from preventable diseases
-  - The difference: One choice in 2026 - we ignored the problem until too late
+- **The Three Subs:** Sub-intelligence (truth unknowable), Sub-longevity (life expectancy 35), Sub-wellbeing (80% mentally ill)
 
 ### Path B - Wishonia - The Transcendent Path (Humanity Evolves Beyond Limits and Becomes the Equivalent of a Superintelligent Genie)
 
 - **[FIGURE: The Two Timelines - Wishonia Path]**
   - Diverging timeline from 2026 showing ascent into light
-  - Key milestones: 2030 (Transformation begins), 2035 (Tipping point), 2040 (Wishonia manifests), 2050 (Paradise achieved)
+  - Key milestones: 2030, 2040, 2050
   - Visual shows timeline ascending into golden light with Three Supers icons (🧠⏳😊)
   - Impact: Shows the positive alternative we're choosing between
 - **The Declaration of Wishonia** (2026 - We Just Decided It Exists)
@@ -728,42 +691,20 @@
     - Impact: Visual tracking of humanity's evolution
   - Population: 280 million founders (before we even have land)
   - Territory: The internet first, then cities, then Earth
-  - Currency: $WISH (backed by health outcomes, not gold or violence)
-  - Constitution: Everyone is sovereign, maximize median health and happiness
-  - Economy: Post-scarcity through health innovation + universal basic income
   - First law: Curing people is more profitable than killing them
-  - The Mission: Use collective intelligence to solve humanity's problems
-  - The Three Supers become human rights, not privileges
 - **2030: The Genie Awakens (First Wishes Granted)**
-  - **Super-Wellbeing begins:** Depression cured with 5 real treatments, anxiety optional
+  - **Super-Wellbeing begins:** Depression cured, anxiety optional, Type 1 diabetes CURED
   - **Super-Longevity starts:** Aging reversed in mice, human trials beginning
   - **Super-Intelligence emerges:** 8 billion networked brains = planetary neural network
   - Universal Basic Income for every human (poverty deleted)
-  - IRS dissolved: $300B/year saved, zero tax forms ever again
-  - Type 1 diabetes: Cured (not managed, CURED)
   - First cancer vaccines: 90% effective
   - AI becomes our golden mirror: Reflecting wisdom not war
-  - Mental illness: Becoming engineering problem, not life sentence
-  - Centralized financial system replaced with a decentralized one designed to maximize median health, wealth, and happiness, instead of stealing resources from the productive economy
-- **2035: The Tipping Point (The Three Supers Accelerate)**
-  - **Super-Wellbeing:** Suffering becomes optional, joy baseline adjustable
-  - **Super-Longevity:** Life expectancy hits 100, aging slows to 1/2 speed
-  - **Super-Intelligence:** Brain-computer interfaces, IQ effectively unlimited
-  - 5% Treaty signed: $135B annual budget (bigger than most countries)
-  - Cancer: 80% curable, 20% preventable
-  - Mental illness: Precision treatments based on your genome
-  - Healthcare: Free through dFDA trials (insurance companies extinct)
-  - Dollar: Abandoned by half the world, can no longer be printed to fund unpopular wars
-  - Work week: 20 hours (AI does the boring stuff)
-  - Productivity gains: 100% to workers
-  - Hedonic adaptation defeated: Happiness no longer temporary
 - **2040: Wishonia Manifests Physically (The Three Supers Normalized)**
-  - **Super-Wellbeing achieved:** Hedonic set point programmable, suffering extinct
-  - **Super-Longevity standard:** Choose your biological age, death purely optional
-  - **Super-Intelligence ubiquitous:** Merge with AI seamless, thinking at light speed
+  - **Super-Wellbeing:** Suffering optional, hedonic set point programmable
+  - **Super-Longevity:** Choose your biological age, death purely optional
+  - **Super-Intelligence:** Brain-computer interfaces, IQ effectively unlimited
   - Singapore declares itself first Wishonian territory
   - California secedes to join Wishonia (nobody fights it)
-  - Cities worldwide declare themselves "Wishonian Free Zones"
   - Disease: Optional (choose your health settings like a video game)
   - Work: Optional (UBI covers everything, work for fun)
   - Aging: Reversible (be 25 forever if you want)
@@ -784,22 +725,13 @@
   - The Fed: In a museum next to bloodletting tools
   - Bodies: Upgradeable, customizable, optional
 - **2050: Paradise Achieved (The Three Supers Complete)**
-  - **Super-Wellbeing maximized:** Paradise is the default state, suffering is archaeology
-  - **Super-Longevity infinite:** Death is a choice, not a sentence (some choose it for variety)
+  - **Super-Wellbeing maximized:** Paradise is default, suffering is archaeology
+  - **Super-Longevity infinite:** Death is a choice, not a sentence
   - **Super-Intelligence unbounded:** Consciousness can expand to cosmic scale
-  - Death: Optional (immortality available but not mandatory)
-  - Suffering: Extinct (unless you're into that)
-  - Poverty: A weird historical concept nobody understands
-  - War: As bizarre as human sacrifice seems now
-  - Every human: A sovereign of their own reality
-  - Collective achievements: We cure death, solve physics, talk to aliens
-  - Humanity 2.0: The Three Supers are baseline human rights
-  - Work: Whatever brings you joy (robots do everything else)
-  - Money: Dollars in history books as "that thing that failed"
-  - Government: Wishocracy via AI (no politicians needed)
+  - All diseases: Curable or preventable
+  - Biological immortality achieved, backup consciousness available
+  - We cure death, solve physics, talk to aliens
   - Next challenge: Which galaxy to colonize first
-  - Earth's epitaph: "They transcended biology through the Three Supers"
-  - The choice: Stay human, become more, or try something completely new
 
 
 ### The Tale of Two Futures (Three Supers vs Three Subs)
