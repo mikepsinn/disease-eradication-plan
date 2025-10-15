@@ -118,19 +118,21 @@ Instead of one massive bureaucracy in Maryland deciding everything, create disea
 
 ### Implement the Revolutionary Concept: Patient Choice Drives Research Priorities
 
-Give each disease category its own treasury where patients, doctors, and data collectively guide funding:
+Instead of a central committee dictating research, the DIH is composed of specialized institutes that emerge organically from patient needs. When patients use their subsidies to join trials on the dFDA, they are collectively directing funds toward specific disease areas.
 
-- **Decentralized Cancer Institute**: Patient demand + oncologist expertise + dFDA outcomes data
-- **Decentralized Institute of Mental Health**: Patient preferences + psychiatric data + treatment effectiveness
-- **Decentralized Institute on Aging**: Aging population priorities + geriatric expertise + longevity research data
-- **Decentralized Institute of Rare Diseases**: Patient advocacy + specialist physicians + trial results
+This creates a market-driven structure where the institutes with the most patient demand and the most promising research receive the most funding.
 
-Why does this work? Because patients know what matters (quality of life, side effects, cost), doctors know what's feasible, and the dFDA tracks what actually works. A bureaucrat in Bethesda knows none of these things.
+- The **Decentralized Cancer Institute** grows because millions of patients are funding cancer trials.
+- The **Decentralized Institute of Mental Health** is funded by individuals seeking better mental health solutions.
+- The **Decentralized Institute on Aging** is powered by those who want to extend their healthspan.
+- The **Decentralized Institute of Rare Diseases** allows even small patient groups to pool resources and attract researchers.
 
-### The Complete List of Institutes (Or: Every Way Your Body Can Betray You)
+This model ensures that research priorities are set by the people who are actually sick, in consultation with their doctors, based on real-world data from the dFDA.
+
+### The Emergent Institutes (A Non-Exhaustive List)
 
 ::: {.callout-note collapse="true"}
-### The Full DIH Structure That Will Replace the NIH (And Actually Work)
+### The DIH Structure Emerges from Patient Need
 
 **Major Killing Machines (The Big Institutes):**
 
@@ -161,13 +163,7 @@ Why does this work? Because patients know what matters (quality of life, side ef
 - **Decentralized Institute of Infectious Diseases (DIAID)** - For germs humanity can't kill yet
 - **Decentralized Institute of Environmental Health (DIEHS)** - For poisons humanity keeps making
 
-Structure each institute's governance as:
-
-- 40% patients (setting priorities based on lived experience)
-- 40% physicians/researchers (determining what's scientifically feasible)
-- 20% dFDA algorithms (allocating based on outcomes data and cost-effectiveness)
-- 0% administrators (replaced by software)
-- 0% politicians (critical for success)
+Governance for each institute is fluid and decentralized, managed by the stakeholders (patients, researchers) who are actively participating in that disease area. They can collectively decide to fund shared infrastructure, post bounties, and coordinate research efforts using the tools provided by the DIH platform.
 :::
 
 ---
@@ -203,83 +199,37 @@ It's insurance, but for treatments that don't exist yet.
 - The disease with the best PR wins
 - Actual sick people are ignored
 
-**How to Set Up Budget Allocation:**
+**How DIH Allocates Its Budget**
 
-- Let VICTORY bondholders vote using pairwise comparisons
-- Show them: "Would you rather cure cancer or depression?" Click.
-- Show them: "Would you rather cure ALS or diabetes?" Click.
-- Aggregate millions of these choices
-- Route money to what people actually want cured
+The DIH Treasury is governed by Wishocracy, the global voting system detailed in the outline. Millions of participants vote on high-level budget allocations, not specific trials.
 
-It's democracy, but for not dying.
+A typical Wishocracy vote might look like this:
 
-### Step 2: Distribute to Disease Groups
+- "Allocate 70% to Patient Subsidies vs. 15% to dFDA Protocol Development"
+- "Allocate 10% to Expansion Campaigns (The 2% Treaty) vs. 5% for Research Prizes"
 
-Based on the vote, split the money:
+This process happens continuously, creating a transparent and democratically controlled budget. The core principle is to direct the vast majority of funds to patients, empowering them to make the final choice on which research gets funded.
 
-- $4 billion → Cancer (lots of voters have tumors)
-- $3 billion → Mental Health (everyone's depressed)
-- $3 billion → Aging (nobody wants to crumble)
-- $2 billion → Heart Disease (ticking time bombs)
-- $2 billion → Diabetes (sugar is delicious but deadly)
-- And so on...
+### Step 2: Empower Patients with Subsidies
 
-Each institute now has billions to spend. But here's the beautiful part: structure it so they can't spend it on bureaucracy.
+The largest portion of the DIH budget flows directly to patients as subsidies, which they use to join trials on the dFDA platform. This is how the DIH's broad budget categories are translated into funding for specific disease areas.
 
-### Step 3: Program the Rules (Enforced by Robots)
+- If more patients join cancer trials, the "Decentralized Cancer Institute" organically receives more funding.
+- If a new breakthrough in mental health appears, patient demand will automatically shift resources to the "Decentralized Institute of Mental Health."
 
-Set up smart contracts - which are neither smart nor contracts, but rather stupid computer programs that can't be bribed - to enforce these rules:
+The institutes don't have fixed budgets; their funding is a real-time reflection of patient needs and scientific progress. They are coordination hubs, not bureaucratic gatekeepers.
 
-**The Sacred 50/50 Split:**
+### Step 3: Enforce the Rules with Code
 
-**50% for VICTORY Bondholders and Referendum Rewards (~$13.5 billion/year)**
+The budget allocations decided by Wishocracy are enforced by smart contracts. These are simple, transparent programs that automate the flow of funds and can't be bribed or altered.
 
-- ~$7.2 billion/year to bondholders (they took the risk, they get the reward)
-- ~$6.3 billion/year to citizens who voted (democracy that actually pays)
-- Creates unstoppable political momentum (everyone's getting rich)
-- Turns greed into a force for good (beautiful)
+Key rules enforced by code:
 
-**50% for Actually Curing Diseases (~$13.5 billion/year)**
+- **Treasury Allocation:** Automatically distribute funds to the Patient Subsidy pool, dFDA development bounties, etc., according to the real-time results of Wishocracy votes.
+- **Milestone Payments:** For prizes or infrastructure projects, funds are released automatically when predefined goals are met.
+- **Radical Transparency:** Every transaction is public, creating a permanent, auditable record of how every dollar is spent.
 
-This is where it gets interesting. The Disease DAOs vote on the split:
-
-**Patient Subsidies (~$8 billion/year):**
-
-- Money flows to the dFDA's operational wallet
-- dFDA's algorithm calculates who gets how much
-- Patients' digital wallets receive payment instantly
-- No paperwork, no waiting, no bullshit
-- Biggest line item because patients matter most
-
-**dFDA Protocol Development (~$2 billion/year):**
-
-- Building the trial platform that actually works
-- Bounties for developers who improve it
-- Prizes for efficiency breakthroughs
-- Making sure the system gets better, not worse
-
-**Research Prizes & Grand Challenges (~$2.5 billion/year):**
-
-- The big "cure cancer" moonshots
-- Medium "improve treatment" prizes  
-- Small "fix this specific problem" bounties
-- All paid on results, not promises
-
-**Shared Infrastructure (~$1 billion/year):**
-
-- The tech stack that makes everything work
-- Free tools for every nonprofit
-- Security that actually secures
-- Backups of backups of backups
-
-**0% for:**
-
-- Conference rooms named after donors
-- Retreats in Aspen
-- Diversity consultants for the diversity consultants
-- Reports about reports
-- Committees to oversee committees
-- Any building with columns
+This automated enforcement minimizes the need for administrators, reduces the potential for corruption, and ensures the will of the voters is carried out precisely.
 
 ---
 
@@ -444,18 +394,13 @@ Someone solves it, they get paid. No applications. No committees. No bullshit.
 
 **Who Decides What Problems to Post?**
 
-Not committees. Let AI and algorithms decide. Here's how to set it up:
+The community does. Patients, doctors, and researchers within each emergent disease institute can propose and fund bounties. They use transparent data and decision-making tools, not closed-door committees.
 
-**The AI Triage System** (Smarter Than Any Committee):
+**How Bounties are Prioritized:**
 
-- AI analyzes every research proposal in 0.3 seconds
-- Calculates potential lives saved per dollar
-- Checks if someone's already solving this (they usually are)
-- Estimates actual feasibility (not hopium)
-- Assigns priority score
-- Posts bounty amounts
-- Does this for 10,000 proposals per day
-- Never needs coffee
+1.  **Proposal:** Any member of a disease community can propose a bounty (e.g., "$50M for a functional cure for Type 1 Diabetes").
+2.  **Scoping & Feasibility:** The community, aided by AI tools, assesses the proposal's feasibility, potential impact (QALYs saved), and cost. This is a transparent discussion, not a back-room review.
+3.  **Funding:** The institute can vote to allocate a portion of its emergent funds (from patient trial participation) to the bounty prize.
 
 **The Decentralized Peer Review** (Like Regular Peer Review, But Honest):
 
@@ -635,8 +580,7 @@ It's like having the world's most honest accountant who works for free and can't
 
 **Reward administrators for:**
 
-- Not existing
-- If they must exist, automating themselves out of jobs
+- Automating administrative tasks to maximize efficiency
 - Making things faster
 - Spending less
 - Disappearing
