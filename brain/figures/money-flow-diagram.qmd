@@ -38,7 +38,7 @@ boxes = [
     {'pos': (6, 5), 'size': (1.5, 1.2), 'text': 'VICTORY\nBonds 5%', 'color': COLOR_BLACK},
     {'pos': (6, 2.5), 'size': (1.5, 1.2), 'text': 'Research\nFunding', 'color': COLOR_BLACK},
     {'pos': (8.5, 7.5), 'size': (1.5, 1.2), 'text': 'Free\nTreatment', 'color': COLOR_BLACK},
-    {'pos': (8.5, 5), 'size': (1.5, 1.2), 'text': '40%\nReturns', 'color': COLOR_BLACK},
+    {'pos': (8.5, 5), 'size': (1.5, 1.2), 'text': '270%\nReturns', 'color': COLOR_BLACK},
     {'pos': (8.5, 2.5), 'size': (1.5, 1.2), 'text': 'Cures\nFound', 'color': COLOR_BLACK},
 ]
 
