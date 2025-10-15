@@ -1018,7 +1018,7 @@
   - Equal to every other human (1 person = 1 allocation power)
   - Co-creator of humanity's health budget priorities
 
-### Three Ways to Participate
+### Three Ways to Get Started
 
 - **Sign the Referendum** (3 minutes)
   - WarOnDisease.org has the referendum
@@ -1029,11 +1029,8 @@
   - Share information with others
 - **Invest Capital** (If you have it)
   - VICTORY Bonds: $1,000 minimum
-  - Total available: $3.375B (limited supply)
-  - Return: 5% of all DIH inflows perpetually (40% starting yield)
   - Growth: Returns scale automatically with treasury
   - Risk: Tradable on secondary markets
-  - Math: Bondholders share 10% of all inflows perpetually
 - **Contribute Skills** (If you have them)
   - Developers: Build the systems
   - Organizers: Spread the referendum
