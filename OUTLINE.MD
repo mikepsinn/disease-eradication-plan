@@ -62,10 +62,10 @@
 ### Humanity's Upside-Down Budget
 
 - **[FIGURE: Humanity's Budget Pie Chart]**
-  - Pie chart showing our priorities: War on Humanity ($2,700) vs War on Disease ($68)
+  - Pie chart showing humanity's priorities: War on Humanity ($2,700) vs War on Disease ($68)
   - Healthcare treatment ($8,200) dominates (treating symptoms, not causes)
   - War on Disease ($68) literally invisible - need magnifying glass insert to see it
-  - Caption: "We spend 40X more on killing each other than curing each other"
+  - Caption: "Humanity spends 40X more on killing each other than curing each other"
 - **Medical Research: The Pocket Change** ($68B = 0.06% of the problem)
   - The military's toilet seats cost more than malaria research
   - One fighter jet = entire rare disease research budget
@@ -154,25 +154,24 @@
   - The solution: Make curing more profitable than treating
   - Align incentives or die (literally)
 
-### The War on Disease - The First War Designed to Win
+### The War on Disease - Designing the First War to Win
 
-- **The Two Wars: One We're Losing, One We Haven't Started**
+- **The Two Wars**
   - War on Humanity: $2.7T/year, 75+ years running, no victory possible
   - War on Disease: $68B/year, barely fighting, victory achievable
-  - We fund death 40X more than life (explains everything wrong with humanity)
-  - Time to flip the budget: Make the War on Disease bigger than the War on Humanity
-- **Different Structure: Markets Not Ministries**
-  - No bureaucracy to preserve (smart contracts)
-  - Payment for outcomes, not process
-  - Competition between solutions, not monopoly
-  - Researchers get rich by curing, not by getting grants
-  - The system dies when disease dies (that's the point)
-- **Aligned Incentives: Everyone Wins by Winning**
-  - Patients: Subsidized treatments, not exploited
-  - Researchers: Rewarded for cures, not papers
-  - Investors: Returns from health, not sickness
-  - Politicians: Elected for results, not promises
-  - Perverse incentives minimized through market competition
+  - Humanity funds death 40X more than life
+  - Flip the budget: Make the War on Disease bigger than the War on Humanity
+- **Structure It Differently: Markets Not Ministries**
+  - Build no bureaucracy to preserve (use smart contracts)
+  - Pay for outcomes, not process
+  - Create competition between solutions, not monopoly
+  - Let researchers get paid for curing diseases, not by getting grants
+- **Align the Incentives: Everyone Wins by Winning**
+  - Patients: Get subsidized treatments, not exploited
+  - Researchers: Get rewarded for cures, not papers
+  - Investors: Earn returns from health, not death and disease
+  - Politicians: Get elected for results, not promises
+  - Minimize perverse incentives through market competition
 - **Spillover Victory: Solving Everything Else**
   - War on Drugs: Addiction is a disease (actually cure it)
   - War on Poverty: Healthy people aren't poor
@@ -239,11 +238,11 @@
   - Visual showing $2.7T military budget with tiny 1% slice ($27B) being redirected
   - Shows what $27B funds: 54,000 trials, 27M patients treated, 10-20 diseases cured
   - Impact: Shows the scale comparison
-- **Starting Small: 1% of Military Budgets**
+- **Start Small: 1% of Military Budgets**
   - $27B globally (Pentagon's rounding error)
   - No country loses relative power (simultaneous equal cuts)
   - Small enough to be politically viable, large enough for impact
-  - Precedent for expansion: If 1% works, 2% becomes possible
+  - Create expansion path: If 1% works, push for 2% next
 - **The Two-Tier Peace Dividend (History Shows This Works)**
   - Captured Dividend: $24.4B to DIH treasury (direct military cuts)
   - Societal Dividend: $92B to humanity (total economic benefit)
@@ -253,8 +252,8 @@
     - Trade not disrupted: $6.2B
     - Veterans not created: $2B
     - Refugees not displaced: $1.5B
-  - We fund DIH with the captured $24.4B
-  - Society keeps the other $67.6B in value creation
+  - Fund DIH with the captured $24.4B
+  - Let society keep the other $67.6B in value creation
   - Historical proof this creates prosperity:
     - Post-WW2: 30% GDP military cut → Greatest boom in history
     - Post-Cold War: 3% GDP military cut → 1990s tech revolution
@@ -286,24 +285,24 @@
   - No representatives, no committees, no corruption
   - Traditional remedies tested alongside pharmaceutical innovations
   - The proof-of-concept for replacing all government budgeting
-- **The Ratchet: Success Breeds Hunger for More**
-  - Year 1: Major advances in 15 disease areas
-  - Year 2: 2% treaty (double the funding)
-  - Year 5: 5% treaty (exponential progress)
-  - Year 10: Military spending looks insane
-  - Year 20: War is incomprehensible
+- **Use the Ratchet: Success Breeds Hunger for More**
+  - Year 1: Deliver major advances in 15 disease areas
+  - Year 2: Push for 2% treaty (double the funding)
+  - Year 5: Push for 5% treaty (exponential progress)
+  - Year 10: Make military spending look insane
+  - Year 20: Make war incomprehensible
 
 ### The DIH - Government Without Governments
 
-- **Parallel Systems: Competition Not Replacement**
-  - dFDA runs alongside FDA (alternative pathway, not abolishment)
-- **The Structure: Distributed Control**
-  - $27B/year flows through transparent smart contracts
-  - No CEO or board making unilateral decisions
-  - Financial transactions public, medical records private
-  - Progressive decentralization: System designed to become fully autonomous
-  - AI governance: Automated code review and security verification
-  - Core treaty terms locked, allocations democratically adjusted
+- **Run Parallel Systems: Competition Not Replacement**
+  - Run dFDA alongside FDA (alternative pathway, not abolishment)
+- **Structure for Distributed Control**
+  - Flow $27B/year through transparent smart contracts
+  - Eliminate CEO or board making unilateral decisions
+  - Keep financial transactions public, medical records private
+  - Design for progressive decentralization: System becomes fully autonomous
+  - Implement AI governance: Automated code review and security verification
+  - Lock core treaty terms, adjust allocations democratically
 - **How Wishocracy Controls the Treasury**
   - Anyone submits proposals: Researchers, patients, garage scientists
   - 8 billion people see random proposal pairs
