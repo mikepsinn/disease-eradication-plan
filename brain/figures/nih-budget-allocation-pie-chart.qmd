@@ -1,0 +1,74 @@
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+import sys
+
+# Find the project root dynamically
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# Add brain/figures to path for imports
+sys.path.insert(0, str(project_root / 'brain' / 'figures'))
+
+# Import centralized style
+from _chart_style import setup_chart_style, add_watermark, COLOR_BLACK, COLOR_WHITE
+from _chart_style import PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS, PATTERN_DOTS
+
+setup_chart_style()
+
+# Data: Two segments to show the stark contrast
+categories = [
+    'Actually Testing Treatments\n$2.5B',
+    'Everything Else\n(Buildings, Admin, Training, Basic Research)\n$48.5B'
+]
+
+values = [2.5, 48.5]  # Billions
+colors = [COLOR_WHITE, COLOR_WHITE]  # Both white fills
+hatches = [None, PATTERN_DIAGONAL]  # No pattern for trials, diagonal for everything else
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10, 8))
+
+# Create pie chart with patterns - start with the small slice at top
+wedges, texts, autotexts = ax.pie(
+    values,
+    labels=categories,
+    autopct='%1.0f%%',
+    colors=colors,
+    wedgeprops={'edgecolor': COLOR_BLACK, 'linewidth': 3},
+    textprops={'fontsize': 16, 'weight': 'bold', 'color': COLOR_BLACK},
+    startangle=90,
+    explode=(0.1, 0)  # Slightly separate the human trials slice to emphasize it
+)
+
+# Add patterns to wedges
+for wedge, hatch in zip(wedges, hatches):
+    wedge.set_hatch(hatch)
+
+# Make percentage text larger and bold
+for autotext in autotexts:
+    autotext.set_fontsize(24)
+    autotext.set_weight('bold')
+    autotext.set_color(COLOR_BLACK)
+
+# Add title
+plt.title('NIH Budget: Where Your $51 Billion Goes',
+         fontsize=26, weight='bold', pad=20, color=COLOR_BLACK)
+
+# Add watermark
+add_watermark(fig)
+
+# Adjust layout to remove white space
+plt.tight_layout()
+
+# Save the figure
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'nih-budget-allocation-pie-chart.png',
+            dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+plt.show()
+```

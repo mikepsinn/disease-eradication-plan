@@ -20,10 +20,12 @@
   - Since 1970: $1+ trillion spent (inflation adjusted)
   - Diseases eradicated: ZERO (smallpox was WHO, not NIH)
   - 166 billion drug combinations exist, NIH tests ~5,000/year
-  - 55% of budget on basic research (understanding mice)
-  - 5% on human trials (actually testing cures)
+  - **[FIGURE: NIH Budget Allocation Pie Chart]**
+    - 55% on basic research (understanding mice)
+    - 5% on human trials (actually testing cures)
+    - Result: Mountains of papers, zero cures
   - Correlation with patient needs: 0.07 (essentially random)
-  - Result: We understand disease perfectly, cure nothing
+  - We understand disease mechanisms perfectly, cure nothing
 
 ### The FDA Is Unsafe and Ineffective
 
