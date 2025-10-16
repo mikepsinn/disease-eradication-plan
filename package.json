@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "@ai-sdk/google": "^2.0.12",
+    "@anthropic-ai/sdk": "^0.67.0",
     "@google/generative-ai": "^0.24.1",
     "@modelcontextprotocol/server-filesystem": "^2025.8.21",
     "@notionhq/client": "^2.2.15",
@@ -33,7 +34,10 @@
     "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "lint:md:fix": "markdownlint --config .markdownlint.json --fix \"**/*.md\"",
     "generate:index": "tsx scripts/generate-index.ts",
+    "format:file": "tsx scripts/review/format-file.ts",
     "format:all": "tsx scripts/review/format-all-files.ts",
+    "style:file": "tsx scripts/review/style-file.ts",
+    "style:all": "tsx scripts/review/style-all-files.ts",
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
     "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix",
