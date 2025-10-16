@@ -17,7 +17,7 @@ if (!API_KEY) {
   throw new Error('GOOGLE_GENERATIVE_AI_API_KEY is not set in the .env file.');
 }
 const genAI = new GoogleGenerativeAI(API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+const model = genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
 
 // --- Exported Functions ---
 
@@ -51,7 +51,7 @@ export async function getStaleFiles(checkType: string): Promise<string[]> {
 }
 
 export async function formatFileWithLLM(filePath: string): Promise<void> {
-  console.log(`\nFormatting ${filePath} with Gemini 2.5 Flash...`);
+  console.log(`\nFormatting ${filePath} with Gemini 2.5 Pro...`);
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
 

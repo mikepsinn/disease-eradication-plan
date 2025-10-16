@@ -12,8 +12,10 @@ async function main() {
     return;
   }
 
-  console.log(`Found ${staleFiles.length} files to format:`);
-  for (const file of staleFiles) {
+  const bookFiles = staleFiles.filter(file => file.startsWith('brain/book'));
+
+  console.log(`Found ${bookFiles.length} files in brain/book to format:`);
+  for (const file of bookFiles) {
     await formatFileWithLLM(file);
   }
 
