@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import matter from 'gray-matter';
 import { simpleGit } from 'simple-git';
 import { glob } from 'glob';
+import crypto from 'crypto';
 import ignore from 'ignore';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import dotenv from 'dotenv';
@@ -34,15 +35,10 @@ export async function getStaleFiles(checkType: string): Promise<string[]> {
       const content = await fs.readFile(file, 'utf-8');
       const { data: frontmatter } = matter(content);
 
-      const log = await git.log({ file, maxCount: 1 });
-      if (!log.latest) {
-        console.warn(`Could not get git log for ${file}. Skipping.`);
-        continue;
-      }
-      const lastModified = new Date(log.latest.date);
-      const lastCheck = frontmatter[checkType] ? new Date(frontmatter[checkType]) : null;
+      const currentHash = crypto.createHash('sha256').update(content).digest('hex');
+      const lastHash = frontmatter.lastFormattedHash;
 
-      if (!lastCheck || lastModified > lastCheck) {
+      if (currentHash !== lastHash) {
         staleFiles.push(file);
       }
     } catch (error) {
@@ -67,6 +63,7 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   const today = new Date().toISOString().split('T')[0];
   frontmatter.lastFormatted = today;
   frontmatter.lastStyleCheck = today;
+  frontmatter.lastFormattedHash = crypto.createHash('sha256').update(newBody).digest('hex');
 
   const newContent = matter.stringify(newBody, frontmatter);
   await fs.writeFile(filePath, newContent, 'utf-8');

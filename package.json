@@ -33,6 +33,7 @@
     "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "lint:md:fix": "markdownlint --config .markdownlint.json --fix \"**/*.md\"",
     "generate:index": "tsx scripts/generate-index.ts",
+    "format:all": "tsx scripts/review/format-all-files.ts",
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
     "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix",
