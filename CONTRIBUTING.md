@@ -167,6 +167,45 @@ The Book Outline in README.md is the **complete skeleton of the book** showing t
 - **Public Choice Focus:** Frame problems through self-interest, not idealism
 - **Dark Humor Required:** If it's not funny, make it funny
 
+## Systematic Content Review Process
+
+To ensure every chapter meets the project's quality standards, we use a systematic audit process. All progress is tracked in the [CONTENT_REVIEW_CHECKLIST.md](./CONTENT_REVIEW_CHECKLIST.md).
+
+### The Audit Workflow
+
+1.  **Select a Chapter:** Pick a chapter from the checklist file that is marked as "📝 To Do".
+2.  **Update Status:** Change its status to "🔍 In Progress".
+3.  **Perform the Audit:** Review the chapter against the 5-point checklist below.
+4.  **Fix and Document:** Correct issues directly. For larger tasks (e.g., creating a new chart or sourcing a difficult claim), add a `TODO` comment in the file (e.g., `<!-- TODO: Add a chart here showing X vs. Y. -->`).
+5.  **Mark as Done:** Once the chapter is fully audited and improved, update its status to "✅ Done" in the checklist.
+
+### The Chapter Audit Checklist
+
+Use these five checks to audit every chapter file.
+
+**1. Content & Narrative Flow:**
+- **Completeness:** Does the chapter deliver on its promise from the master `OUTLINE.MD`? Is any critical information missing?
+- **Conciseness:** Is there redundant content already covered elsewhere? Can anything be cut to make the argument stronger?
+- **Independence:** Does the chapter avoid phrases like "in the previous chapter," ensuring it can be reused in different contexts?
+
+**2. Tone & Voice (per `STYLE_GUIDE.md`):**
+- **Instructional Tone:** Does it read like a DIY manual ("Here's how you...") rather than a sales pitch ("Our solution will...")?
+- **Voice Consistency:** Does it maintain the "dark humor meets practical hope" tone?
+- **Word Choice:** Does it avoid corporate buzzwords, academic jargon, and euphemisms?
+
+**3. Sourcing & Credibility:**
+- **Universal Citation:** Is every claim, number, and statistic backed by an inline citation to `brain/book/references.qmd`?
+- **Source Verification:** Have you personally checked that the source exists, is valid, and actually supports the claim being made?
+
+**4. Visuals & Data (per `DESIGN_GUIDE.md`):**
+- **Opportunity:** Could the argument be made stronger with a chart, diagram, or illustration?
+- **Clarity:** Is data presented in the most effective, honest, and minimalist way possible?
+
+**5. Technical & Structural Integrity:**
+- **Frontmatter:** Does the file have a complete and accurate YAML frontmatter block?
+- **Link Integrity:** Are all internal links (`[link](./path/to/file.md)`) valid and pointing to existing files?
+- **Formatting:** Does each sentence start on a new line? Are dollar signs properly escaped (`\$`) in plain text?
+
 ## Content and Style Standards
 
 ### 1. Information Architecture: Chapters, Sections, and The Appendix
