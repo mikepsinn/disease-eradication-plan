@@ -281,16 +281,20 @@ To ensure all unfinished work is tracked and easily searchable, please add a `TO
 
 ### 3. Frontmatter Requirements
 
-Every markdown file needs this header:
+Every markdown file needs this header. These fields are essential for our automated review and maintenance scripts.
 
 ```yaml
 ---
 title: "A Clear and Descriptive Title"
 description: "One sentence summary (max 140 chars)"
 published: true # false for drafts
-date: "YYYY-MM-DDTHH:MM:SS.sssZ" # Last modified date
+date: "YYYY-MM-DDTHH:MM:SS.sssZ" # Last modified date, managed by script
 tags: [keyword1, keyword2]
-lastReviewed: "YYYY-MM-DD" # Date of last content review pass
+lastFormatted: "YYYY-MM-DD"
+lastStyleCheck: "YYYY-MM-DD"
+lastFactCheck: "YYYY-MM-DD"
+lastLinkCheck: "YYYY-MM-DD"
+lastFigureCheck: "YYYY-MM-DD"
 ---
 ```
 
@@ -340,6 +344,7 @@ This keeps everything in one place and prevents broken links.
 - **Internal Links:** Use standard, relative Markdown links (`./`, `../`). Do not use backticks or bare paths for links.
 - **Dollar Sign Escaping:** Always escape dollar signs (`\$`) in regular text to prevent rendering issues (e.g., `\$27B`). Do not escape them inside backticked code blocks.
 - **Code vs. Links:** Use backticks only for code, commands, or literals—not for navigational references.
+- **List Spacing:** All ordered (`1.`) and unordered (`-`) lists must be preceded by a blank line to ensure correct rendering.
 - **Sentence Structure:** Each sentence must start on a new line. This makes diffs cleaner, editing easier, and git blame more useful. Break after every period, question mark, or exclamation point.
 
 ### 7. Chapter Independence and Reusability
