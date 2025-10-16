@@ -167,15 +167,14 @@ The Book Outline in README.md is the **complete skeleton of the book** showing t
 
 ## Systematic Content Review Process
 
-To ensure every chapter meets the project's quality standards, we use a systematic audit process. All progress is tracked in the [CONTENT_REVIEW_CHECKLIST.md](./CONTENT_REVIEW_CHECKLIST.md).
+To ensure every chapter meets the project's quality standards, we use a systematic audit process. Instead of a central checklist, the review status is tracked directly within each file's frontmatter using the `lastReviewed` property.
 
 ### The Audit Workflow
 
-1.  **Select a Chapter:** Pick a chapter from the checklist file that is marked as "📝 To Do".
-2.  **Update Status:** Change its status to "🔍 In Progress".
-3.  **Perform the Audit:** Review the chapter against the 5-point checklist below.
-4.  **Fix and Document:** Correct issues directly. For larger tasks (e.g., creating a new chart or sourcing a difficult claim), add a `TODO` comment in the file (e.g., `<!-- TODO: Add a chart here showing X vs. Y. -->`).
-5.  **Mark as Done:** Once the chapter is fully audited and improved, update its status to "✅ Done" in the checklist.
+1.  **Find a Chapter to Review:** Identify a chapter that has no `lastReviewed` date or has one that is significantly out of date.
+2.  **Perform the Audit:** Review the chapter against the 5-point checklist below.
+3.  **Fix and Document:** Correct issues directly. For larger tasks (e.g., creating a new chart or sourcing a difficult claim), add a `TODO` comment in the file (e.g., `<!-- TODO: Add a chart here showing X vs. Y. -->`).
+4.  **Update Frontmatter:** Once the chapter is fully audited and improved, update the `lastReviewed` date in the frontmatter to the current date (e.g., `lastReviewed: "YYYY-MM-DD"`).
 
 ### The Chapter Audit Checklist
 
@@ -287,8 +286,9 @@ Every markdown file needs this header:
 title: "A Clear and Descriptive Title"
 description: "One sentence summary (max 140 chars)"
 published: true # false for drafts
-date: "YYYY-MM-DDTHH:MM:SS.sssZ"
+date: "YYYY-MM-DDTHH:MM:SS.sssZ" # Last modified date
 tags: [keyword1, keyword2]
+lastReviewed: "YYYY-MM-DD" # Date of last content review pass
 ---
 ```
 
