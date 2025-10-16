@@ -72,6 +72,7 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 **Automatic Red Flags (Rewrite Immediately):**
 
 - **Corporate Buzzwords:** "synergy," "activation," "paradigm shift," "stakeholder," "utilize," "facilitate" "world-class," "revolutionary," "unprecedented", "cutting-edge," "state-of-the-art," "best-in-class"
+- **Stylistic Redundancy:** Avoid using a string of synonyms or clichés for emphasis (e.g., "Zero. Zilch. Nada."). A single, powerful word is more effective. Let the facts be the punchline.
 - **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
 - **Euphemisms for death:** Just say "die" or "death" - we're adults here
 - **Academic pomposity:** If you sound like a textbook, rewrite it
