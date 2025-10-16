@@ -14,17 +14,7 @@ async function main() {
 
   console.log(`Found ${staleFiles.length} files to format:`);
   for (const file of staleFiles) {
-    console.log(`- ${file}`);
-  }
-
-  for (const file of staleFiles) {
-    try {
-      console.log(`\nFormatting ${file} with Gemini 2.5 Pro...`);
-      await formatFileWithLLM(file);
-      console.log(`Successfully formatted ${file}.`);
-    } catch (error) {
-      console.error(`Failed to format ${file}:`, error);
-    }
+    await formatFileWithLLM(file);
   }
 
   console.log('\nFormatting process complete.');

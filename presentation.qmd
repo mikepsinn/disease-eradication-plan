@@ -22,8 +22,9 @@ execute:
   fig-cap: false
 lastFormatted: '2025-10-16'
 lastStyleCheck: '2025-10-16'
+lastFormattedHash: 3b91a69cea150ac6f59cfbf2b75217b32d2e8ef267dd698d94be809181011d5f
 ---
-```python
+```{python}
 #| label: setup
 import sys
 sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
@@ -287,6 +288,3 @@ Ever.<br>
 <span style="font-size: 36px; color: #666;">First come, first served, then it's gone.</span>
 </p>
 </div>
-
-
----

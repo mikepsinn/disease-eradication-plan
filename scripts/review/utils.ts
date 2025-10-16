@@ -51,6 +51,7 @@ export async function getStaleFiles(checkType: string): Promise<string[]> {
 }
 
 export async function formatFileWithLLM(filePath: string): Promise<void> {
+  console.log(`\nFormatting ${filePath} with Gemini 2.5 Flash...`);
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
 
@@ -73,8 +74,17 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   const today = new Date().toISOString().split('T')[0];
   frontmatter.lastFormatted = today;
   frontmatter.lastStyleCheck = today;
-  frontmatter.lastFormattedHash = crypto.createHash('sha256').update(finalBody).digest('hex');
 
+  // To ensure hash consistency, we create a temporary stringified version
+  // to see what the body will look like after gray-matter processes it.
+  const tempContent = matter.stringify(finalBody, frontmatter);
+  const { content: finalBodyAsSaved } = matter(tempContent);
+  
+  // Now, hash the body as it will actually be saved.
+  frontmatter.lastFormattedHash = crypto.createHash('sha256').update(finalBodyAsSaved).digest('hex');
+
+  // Stringify the final version with the correct hash and write to file.
   const newContent = matter.stringify(finalBody, frontmatter);
   await fs.writeFile(filePath, newContent, 'utf-8');
+  console.log(`Successfully formatted ${filePath}.`);
 }
