@@ -35,10 +35,11 @@ export async function getStaleFiles(checkType: string): Promise<string[]> {
       const content = await fs.readFile(file, 'utf-8');
       const { data: frontmatter } = matter(content);
 
-      const currentHash = crypto.createHash('sha256').update(content).digest('hex');
+      const { content: body } = matter(content);
+      const currentBodyHash = crypto.createHash('sha256').update(body).digest('hex');
       const lastHash = frontmatter.lastFormattedHash;
 
-      if (currentHash !== lastHash) {
+      if (currentBodyHash !== lastHash) {
         staleFiles.push(file);
       }
     } catch (error) {
@@ -54,17 +55,25 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   const { data: frontmatter, content: body } = matter(originalContent);
 
   const formattingGuide = await fs.readFile('FORMATTING_GUIDE.md', 'utf-8');
-  const prompt = `${formattingGuide}\n\nPlease reformat the following file content based on the rules above.`;
+  const prompt = `${formattingGuide}\n\nYour task is to reformat the following file content based *only* on the rules above. **If the file already conforms to all rules, you MUST return the special string "NO_CHANGES_NEEDED".** Otherwise, return the full, corrected file content.`;
 
   const result = await model.generateContent(prompt + `\n\n**File Content to Reformulate:**\n---\n${body}\n---`);
   const response = await result.response;
-  const newBody = response.text();
+  const responseText = response.text();
+
+  let finalBody;
+  if (responseText.trim() === 'NO_CHANGES_NEEDED') {
+    console.log(`File ${filePath} is already formatted correctly. Updating metadata.`);
+    finalBody = body; // Use the original body
+  } else {
+    finalBody = responseText; // Use the new body from the LLM
+  }
 
   const today = new Date().toISOString().split('T')[0];
   frontmatter.lastFormatted = today;
   frontmatter.lastStyleCheck = today;
-  frontmatter.lastFormattedHash = crypto.createHash('sha256').update(newBody).digest('hex');
+  frontmatter.lastFormattedHash = crypto.createHash('sha256').update(finalBody).digest('hex');
 
-  const newContent = matter.stringify(newBody, frontmatter);
+  const newContent = matter.stringify(finalBody, frontmatter);
   await fs.writeFile(filePath, newContent, 'utf-8');
 }
