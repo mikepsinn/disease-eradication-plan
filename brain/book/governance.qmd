@@ -1,15 +1,28 @@
 ---
-title: "Governance"
-description: "How the People Who Pay Get to Vote - The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous 'to-do list for humanity' governed by the people who use it."
+title: Governance
+description: 'How the People Who Pay Get to Vote - The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous ''to-do list for humanity'' governed by the people who use it.'
 published: true
-date: "2025-09-10T00:00:00.00Z"
-tags: [governance, wishocracy, dao, decentralization, ai, collective-intelligence, protocol]
-dateCreated: "2025-09-10T00:00:00.000Z"
+date: '2025-09-10T00:00:00.00Z'
+tags:
+  - governance
+  - wishocracy
+  - dao
+  - decentralization
+  - ai
+  - collective-intelligence
+  - protocol
+dateCreated: '2025-09-10T00:00:00.000Z'
+lastFormatted: '2025-10-16'
+lastStyleCheck: '2025-10-16'
+lastFormattedHash: 2fc2e2fe5025bc28a4a1034c25fc99af953285031cf8ebda2c70d2c7d276631b
 ---
-
 The Decentralized Institutes of Health (DIH) is a SuperDAO governed by **Wishocracy**, a protocol for managing large, decentralized organizations.
 
-Wishocracy is a model for creating a semi-autonomous "to-do list for humanity," where people collaborate with AI agents to prioritize, fund, and solve complex problems. It is designed to be a general-purpose governance framework that any decentralized organization can adopt. The DIH is the first and largest implementation of this protocol.
+Wishocracy is a model for creating a semi-autonomous "to-do list for humanity," where people collaborate with AI agents to prioritize, fund, and solve complex problems.
+
+It is designed to be a general-purpose governance framework that any decentralized organization can adopt.
+
+The DIH is the first and largest implementation of this protocol.
 
 ---
 
@@ -32,11 +45,15 @@ graph TD
 
 ### 1. The To-Do List ("Wishes")
 
-Anyone can propose a "Wish"—a clear, measurable outcome for a real-world problem (e.g., "Cure Alzheimer's," "Develop cheap, scalable carbon capture"). This creates a transparent, crowdsourced list of priorities for the organization.
+Anyone can propose a "Wish"—a clear, measurable outcome for a real-world problem (e.g., "Cure Alzheimer's," "Develop cheap, scalable carbon capture").
+
+This creates a transparent, crowdsourced list of priorities for the organization.
 
 ### 2. The AI Civil Service
 
-A suite of AI agents acts as a transparent and tireless administrative layer. They:
+A suite of AI agents acts as a transparent and tireless administrative layer.
+
+They:
 
 - **Analyze Wishes:** Research the current state of science and feasibility for each Wish.
 - **Propose Solutions:** Generate a list of the most promising, evidence-based paths to granting each Wish.
@@ -44,18 +61,22 @@ A suite of AI agents acts as a transparent and tireless administrative layer. Th
 
 ### 3. The Voting System (RAPPA)
 
-People with VICTORY instruments in the DIH use **Random Aggregated Pairwise Preference Allocation (RAPPA)** to vote on which solutions to fund. This system is:
+People with VICTORY instruments in the DIH use **Random Aggregated Pairwise Preference Allocation (RAPPA)** to vote on which solutions to fund.
+
+This system is:
 
 - **Scalable:** Millions of users can participate by making simple pairwise choices (e.g., "Project A vs. Project B").
 - **Fair:** It mathematically prevents wealthy "whales" from dominating the budget, ensuring the collective will is represented.
 
 ### 4. The Treasury (The DAO)
 
-The DAO's treasury (in this case, the **DIH**) automatically executes the will of the voters, deploying its **$27B+ annual budget** to fund the "Contributors" (the researchers, scientists, and engineers) who are working to grant the top-ranked wishes.
+The DAO's treasury (in this case, the **DIH**) automatically executes the will of the voters, deploying its **\$27B+ annual budget** to fund the "Contributors" (the researchers, scientists, and engineers) who are working to grant the top-ranked wishes.
 
 ### 5. The Verification Layer (e.g., The dFDA)
 
-An independent verification layer provides the real-world data and validation necessary to confirm that outcomes have been achieved. For the DIH, this function is performed by the **Decentralized FDA (dFDA)** protocol.
+An independent verification layer provides the real-world data and validation necessary to confirm that outcomes have been achieved.
+
+For the DIH, this function is performed by the **Decentralized FDA (dFDA)** protocol.
 
 ---
 
@@ -69,13 +90,17 @@ An independent verification layer provides the real-world data and validation ne
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
 
-**The Challenge:** A $27B treasury is a massive target for hackers, fraudsters, and corrupt actors. Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks.
+**The Challenge:** A \$27B treasury is a massive target for hackers, fraudsters, and corrupt actors.
+
+Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks.
 
 **Our Multi-Layered Defense:**
 
 1.  **Nobody's in Charge (And That's the Point)**
 
-    *Other organizations that manage billions of dollars this way already exist and work fine. Turns out you don't need a CEO when you have math.*
+    *Other organizations that manage billions of dollars this way already exist and work fine.*
+
+    *Turns out you don't need a CEO when you have math.*
 
     - Every VICTORY bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
     - No human signers = no kidnapping, corruption, or coercion targets
@@ -105,7 +130,9 @@ An independent verification layer provides the real-world data and validation ne
 
 ### Beyond Medical Research: A Template for Uncorruptible Governance
 
-This isn't just about protecting research funding - it's an experiment in building the next generation of way better government that doesn't steal. Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that $27B can be managed with:
+This isn't just about protecting research funding - it's an experiment in building the next generation of way better government that doesn't steal.
+
+Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that \$27B can be managed with:
 
 - **Zero human targets** for violence, kidnapping, or corruption
 - **True community control** through direct token holder governance
@@ -114,13 +141,15 @@ This isn't just about protecting research funding - it's an experiment in buildi
 
 **What Else This Could Fix:**
 
-*Once we prove you can run a $27 billion treasury without any humans stealing from it, we could do the same thing for schools, roads, or anything else the government currently screws up.*
+*Once we prove you can run a \$27 billion treasury without any humans stealing from it, we could do the same thing for schools, roads, or anything else the government currently screws up.*
 
 - **Education**: Pay teachers based on whether kids actually learn things
 - **Infrastructure**: Fund roads that don't immediately fall apart
 - **Environment**: Pay for actual carbon reduction, not paperwork
 - **Social Services**: Get help to people who need it without 47 forms
 
-**The End State:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually work and can't be bribed. The DIH treasury becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
+**The End State:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually work and can't be bribed.
+
+The DIH treasury becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
 
 This experiment could usher in a new era of peace, prosperity, and abundance by proving that large-scale public goods can be managed through true decentralization without any centralized control points.
