@@ -204,28 +204,6 @@
   - Harness self-interest for public good (reliable motivation)
   - Create concentrated benefits for producing cures rather than perpetuating disease
 
-### The Wisdom of Crowds - 8 Billion Minds Better Than 200 Bureaucrats
-
-- **Surowiecki Was Right About Everything**
-  - The Ox: 800 farmers' average beat all experts
-  - Wikipedia destroyed Britannica (amateurs beat professionals)
-  - Jelly beans in jar: Crowd average within 1% (experts off by 20%)
-  - Linux beat Windows Server (open source beat closed)
-- **Prediction Markets: Crowdsourced Crystal Balls**
-  - Elections: Markets 96% accurate, polls 60%
-  - Drug trials: Markets predict FDA approval better than FDA
-  - Everything else: Weather, sports, stocks (markets always win)
-  - The Iowa Electronic Markets: Beat every pundit
-- **The Superintelligence We Already Have**
-  - 8 billion networked brains = planet-sized neural network
-  - Collective IQ: Potentially infinite
-  - Current use: Arguing on Twitter (what a waste)
-  - Properly harnessed: Could solve everything
-- **Network Effects: Why Decentralization Wins**
-  - Metcalfe's Law: Value = N² (centralization = N)
-  - Reed's Law: Group forming = 2^N (exponential power)
-  - The internet beat every centralized network
-  - Your brain: 86 billion neurons > any central processor
 
 ## Part III: The Solution
 
