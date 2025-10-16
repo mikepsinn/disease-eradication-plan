@@ -78,6 +78,13 @@ lastFormattedHash: a0528ec16479d2dbb2791ead5cfbd1b8df263ca66b4250acd31d8cf50ceae
   > "Cardiovascular disease kills approximately 17.9 million people annually worldwide, while terrorism accounts for approximately 25,000 deaths per year."
   > — WHO, 2021, [Cardiovascular Diseases](https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)) & Global Terrorism Database, 2021
 
+<a id="who-daily-deaths"></a>
+
+- **150,000 deaths per day from all causes**
+  > "Approximately 150,000 people die every day worldwide. The majority of these deaths (over 100,000) are from non-communicable diseases including cardiovascular diseases, cancers, chronic respiratory diseases, and diabetes."
+  > — Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150,000 per day
+  > — WHO, 2024, [The top 10 causes of death](https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death)
+
 <a id="dunbar-number"></a>
 
 - **Dunbar's Number**
@@ -287,6 +294,13 @@ lastFormattedHash: a0528ec16479d2dbb2791ead5cfbd1b8df263ca66b4250acd31d8cf50ceae
 - **IHME Global Burden of Disease (2.55B DALYs, 2019)**
   > "Globally, in 2019, the total number of DALYs from all causes was 2.55 billion."
   > — Institute for Health Metrics and Evaluation (IHME), [GBD Compare Viz Hub](https://vizhub.healthdata.org/gbd-compare/)
+
+<a id="disease-economic-burden-109t"></a>
+
+- **$109 trillion annual global disease burden**
+  > "The global economic burden of disease, including direct healthcare costs ($8.2 trillion) and lost productivity ($100.9 trillion from 2.55 billion DALYs × $39,570 per DALY), totals approximately $109.1 trillion annually."
+  > — Calculated from IHME Global Burden of Disease (2.55B DALYs) and global GDP per capita valuation
+  > — See detailed calculation: [Cost of Disease Analysis](../economics/cost-of-disease.qmd)
 
 <a id="icbl-ottawa-treaty"></a>
 
