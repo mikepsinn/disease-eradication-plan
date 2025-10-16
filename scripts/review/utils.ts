@@ -113,7 +113,8 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
   const { data: frontmatter, content: body } = matter(originalContent);
 
   const styleGuide = await fs.readFile('STYLE_GUIDE.md', 'utf-8');
-  const prompt = `You are an expert copy editor tasked with improving a chapter of a book called "The Complete Idiot's Guide to Ending War and Disease." Your goal is to revise the following text to perfectly match the tone and style defined in the provided style guide.
+  const prompt = `You are an expert copy editor tasked with improving a chapter of a book called "The Complete Idiot's Guide to Ending War and Disease." 
+  Your goal is to revise the following text to perfectly match the tone and style defined in the provided style guide.
 
   **CRITICAL INSTRUCTIONS:**
   1.  **Adhere strictly to the STYLE_GUIDE.md.** The tone is paramount: dark humor, cynical but loving observations, and actionable, empowering language.
