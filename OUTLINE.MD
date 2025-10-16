@@ -386,20 +386,6 @@
 
 ### The dFDA - The Amazon of Not Dying
 
-- **Historical Proof This Works: 82X More Efficient**
-  - Pre-1962: 144,000 doctors ran successful real-world trials
-  - 2020: Oxford RECOVERY trial proved 82X efficiency gain ($500 vs $41,000 per patient)
-  - dFDA scales this proven model globally with modern tech
-- **The FDA's Catastrophic Failure (Why We Need This)**
-  - 95% of diseases have ZERO FDA-approved treatments (your kid's rare disease = death sentence)
-  - 17 YEARS from discovery to patient (you'll be dead before the cure arrives)
-  - 85% of patients EXCLUDED from trials (too sick, too old, wrong zip code)
-  - 100% patient inclusion possible with dFDA (vs current 15% acceptance rate)
-  - 21K-120K preventable deaths per decade from FDA delays
-  - Current trials: $48,000 per patient (pharma passes cost to you)
-  - Negative results NEVER published (half of all research is hidden)
-  - FDA.gov: A 1990s website that kills people with bureaucracy
-  - Solution: Decentralized marketplace, not FDA.gov v2 (opposite of centralization)
 - **[FIGURE: dFDA vs FDA Comparison]**
   - Side-by-side comparison:
     - FDA: 17 years, $2.6B, 85% excluded, 95% diseases ignored
@@ -961,7 +947,7 @@
   - The Right to Try Expansion Act (patient choice beyond FDA)
   - The Budget Reallocation Act (moves the money)
 
-## Part VIII: The Strategy (Building Paradise)
+## Part VIII: The Strategy (Your Action Plan)
 
 ### The Global Referendum (Democracy at Scale)
 
@@ -987,8 +973,6 @@
   - Key advantage: Economic incentive to participate
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
-
-## Part IX: Taking Action
 
 ### What This Means for You
 
