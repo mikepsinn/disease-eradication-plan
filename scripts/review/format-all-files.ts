@@ -6,15 +6,15 @@ dotenv.config();
 async function main() {
   console.log('Identifying stale files for formatting...');
   const staleFiles = await getStaleFiles('lastFormatted');
+  const bookFiles = staleFiles.filter(file => file.startsWith('brain\\book'));
 
-  if (staleFiles.length === 0) {
-    console.log('All files are up-to-date. No formatting needed.');
+  console.log(`Checked ${staleFiles.length} total stale files.`);
+  console.log(`Found ${bookFiles.length} files in brain/book to format:`);
+
+  if (bookFiles.length === 0) {
+    console.log('All files in brain/book are up-to-date.');
     return;
   }
-
-  const bookFiles = staleFiles.filter(file => file.startsWith('brain/book'));
-
-  console.log(`Found ${bookFiles.length} files in brain/book to format:`);
   for (const file of bookFiles) {
     await formatFileWithLLM(file);
   }

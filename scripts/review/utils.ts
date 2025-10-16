@@ -19,6 +19,13 @@ if (!API_KEY) {
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
 
+// --- Helper Functions ---
+
+function getBodyHash(content: string): string {
+  const { content: body } = matter(content);
+  return crypto.createHash('sha256').update(body).digest('hex');
+}
+
 // --- Exported Functions ---
 
 export async function getStaleFiles(checkType: string): Promise<string[]> {
@@ -35,10 +42,14 @@ export async function getStaleFiles(checkType: string): Promise<string[]> {
       const content = await fs.readFile(file, 'utf-8');
       const { data: frontmatter } = matter(content);
 
-      const { content: body } = matter(content);
-      const currentBodyHash = crypto.createHash('sha256').update(body).digest('hex');
       const lastHash = frontmatter.lastFormattedHash;
 
+      if (!lastHash) {
+        staleFiles.push(file);
+        continue;
+      }
+
+      const currentBodyHash = getBodyHash(content);
       if (currentBodyHash !== lastHash) {
         staleFiles.push(file);
       }
@@ -78,10 +89,9 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   // To ensure hash consistency, we create a temporary stringified version
   // to see what the body will look like after gray-matter processes it.
   const tempContent = matter.stringify(finalBody, frontmatter);
-  const { content: finalBodyAsSaved } = matter(tempContent);
   
   // Now, hash the body as it will actually be saved.
-  frontmatter.lastFormattedHash = crypto.createHash('sha256').update(finalBodyAsSaved).digest('hex');
+  frontmatter.lastFormattedHash = getBodyHash(tempContent);
 
   // Stringify the final version with the correct hash and write to file.
   const newContent = matter.stringify(finalBody, frontmatter);
