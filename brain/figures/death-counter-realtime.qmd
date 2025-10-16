@@ -46,15 +46,19 @@ def create_death_counter():
 # Display the counter
 display(create_death_counter())
 
-# Also print static statistics for non-interactive viewing
-print("\n📊 DEATH STATISTICS (Per Second):")
-print(f"• Total deaths: {DEATHS_PER_SECOND}")
-print(f"• Disease deaths: {DISEASE_DEATHS_PER_SECOND}")
-print(f"• Preventable deaths: {PREVENTABLE_DEATHS_PER_SECOND}")
-print(f"• Children under 5: {CHILD_DEATHS_PER_SECOND}")
-print("\n💀 DAILY TOTALS:")
-print(f"• 150,000 total deaths")
-print(f"• 130,000 from disease")
-print(f"• 80,000 preventable")
-print(f"• 15,000 children")
+# Also display static statistics for non-interactive viewing
+from IPython.display import Markdown
+display(Markdown(f"""
+### 📊 DEATH STATISTICS (Per Second):
+- Total deaths: **{DEATHS_PER_SECOND}**
+- Disease deaths: **{DISEASE_DEATHS_PER_SECOND}**
+- Preventable deaths: **{PREVENTABLE_DEATHS_PER_SECOND}**
+- Children under 5: **{CHILD_DEATHS_PER_SECOND}**
+
+### 💀 DAILY TOTALS:
+- **150,000** total deaths
+- **130,000** from disease
+- **80,000** preventable
+- **15,000** children
+"""))
 ```
