@@ -14,21 +14,15 @@ Let's start with what they admit to:
 
 ### Breaking It Down Per Human
 
-```{python}
-#| echo: false
-military_per_human = 2700_000_000_000 / 8_000_000_000
-medical_per_human = 68_000_000_000 / 8_000_000_000
+**PER HUMAN BEING ON EARTH:**
+- Military spending: **$337.50**/year
+- Medical research: **$8.50**/year
+- Ratio: **39.7:1** in favor of DEATH
 
-print(f"PER HUMAN BEING ON EARTH:")
-print(f"├─ Military spending: ${military_per_human:.2f}/year")
-print(f"├─ Medical research: ${medical_per_human:.2f}/year")
-print(f"└─ Ratio: {military_per_human/medical_per_human:.1f}:1 in favor of DEATH")
-
-print(f"\nPER SECOND:")
-print(f"├─ Military: ${2700_000_000_000/365/24/3600:,.0f}")
-print(f"├─ Medical: ${68_000_000_000/365/24/3600:,.0f}")
-print(f"└─ We could fund an entire clinical trial every second with military money")
-```
+**PER SECOND:**
+- Military: **$85,571**
+- Medical: **$2,155**
+- We could fund an entire clinical trial every second with military money
 
 ## Shock #2: The REAL Cost of War ($9.7 Trillion)
 
@@ -40,23 +34,20 @@ Here comes the part they don't tell you:
 
 ### What $9.7 Trillion Actually Means
 
-```{python}
-#| echo: false
-real_war_cost = 9_700_000_000_000
+#### THE $9.7 TRILLION REALITY CHECK:
 
-print("THE $9.7 TRILLION REALITY CHECK:\n")
-print(f"• Per second: ${real_war_cost/365/24/3600:,.0f}")
-print(f"• Per human: ${real_war_cost/8_000_000_000:,.2f}/year")
-print(f"• Could fund {real_war_cost/50_000_000:,.0f} Oxford RECOVERY trials")
-print(f"• Could develop {real_war_cost/2_600_000_000:,.0f} new drugs")
-print(f"• Could cure approximately ALL diseases several times over")
-print(f"\nInstead we chose to:")
-print(f"• Build machines that kill people")
-print(f"• Destroy cities")
-print(f"• Create refugees")
-print(f"• Traumatize soldiers")
-print(f"• Accomplish literally nothing positive")
-```
+• Per second: **$307,594**
+• Per human: **$1,212.50**/year
+• Could fund **194,000** Oxford RECOVERY trials
+• Could develop **3,731** new drugs
+• Could cure approximately **ALL** diseases several times over
+
+**Instead we chose to:**
+• Build machines that kill people
+• Destroy cities
+• Create refugees
+• Traumatize soldiers
+• Accomplish literally nothing positive
 
 ## Shock #3: Disease Makes War Look Like a Bargain ($109 Trillion)
 
@@ -83,105 +74,70 @@ That's more than the entire global GDP. Humanity spends more on death and suffer
 
 ## Breaking Down the $109 Trillion Disease Burden
 
-```{python}
-#| echo: false
-# Disease cost breakdown
-disease_costs = {
-    'Heart Disease': 2100,
-    'Cancer': 1800,
-    'Diabetes': 1500,
-    'Alzheimer\'s': 1300,
-    'Respiratory': 900,
-    'Kidney Disease': 600,
-    'Mental Illness': 1600,
-    'All Others': 99200
-}
+### DISEASE COST BREAKDOWN (billions):
 
-total = sum(disease_costs.values())
+• Heart Disease: **$2,100B** (1.9%)
+• Cancer: **$1,800B** (1.7%)
+• Mental Illness: **$1,600B** (1.5%)
+• Diabetes: **$1,500B** (1.4%)
+• Alzheimer's: **$1,300B** (1.2%)
+• Respiratory: **$900B** (0.8%)
+• Kidney Disease: **$600B** (0.6%)
 
-print("💀 DISEASE COST BREAKDOWN (billions):\n")
-for disease, cost in sorted(disease_costs.items(), key=lambda x: x[1], reverse=True):
-    pct = (cost / total) * 100
-    if disease != 'All Others':
-        print(f"• {disease}: ${cost:,}B ({pct:.1f}%)")
-
-print(f"\n📊 DISEASE ECONOMICS:")
-print(f"• Daily Disease Cost: $298 BILLION")
-print(f"• Hourly Disease Cost: $12.4 BILLION")
-print(f"• Per Second: $3.4 MILLION")
-print(f"• Per Human Per Year: $13,625")
-print(f"• % of Global GDP: 15%")
-```
+### DISEASE ECONOMICS:
+• Daily Disease Cost: **$298 BILLION**
+• Hourly Disease Cost: **$12.4 BILLION**
+• Per Second: **$3.4 MILLION**
+• Per Human Per Year: **$13,625**
+• % of Global GDP: **15%**
 
 ## The Per-Second Reality
 
-```{python}
-#| echo: false
-import time
+### THE DEATH TOILET IN REAL-TIME:
 
-# Real-time cost counter
-print("⏱️ THE DEATH TOILET IN REAL-TIME:\n")
-print("While you've been reading this chapter:\n")
+**While you've been reading this chapter (3 minutes):**
 
-war_per_second = 9_700_000_000_000 / 365 / 24 / 3600
-disease_per_second = 109_000_000_000_000 / 365 / 24 / 3600
-cure_per_second = 68_000_000_000 / 365 / 24 / 3600
+- War costs: **$55,366,920**
+- Disease costs: **$622,087,080**
+- Cure investment: **$387,900**
 
-reading_time = 180  # Assume 3 minutes to read this far
+**TOTALS:**
+- TOTAL WASTED: **$677,454,000**
+- TOTAL ON SOLUTIONS: **$387,900**
 
-print(f"💣 War costs: ${war_per_second * reading_time:,.0f}")
-print(f"💀 Disease costs: ${disease_per_second * reading_time:,.0f}")
-print(f"💊 Cure investment: ${cure_per_second * reading_time:,.0f}")
-print(f"\n📊 TOTAL WASTED: ${(war_per_second + disease_per_second) * reading_time:,.0f}")
-print(f"🔬 TOTAL ON SOLUTIONS: ${cure_per_second * reading_time:,.0f}")
-print(f"\n😵 RATIO: {((war_per_second + disease_per_second) / cure_per_second):,.0f}:1 waste vs solutions")
-```
+**RATIO: 1,747:1** waste vs solutions
 
 ## What $119 Trillion Could Buy Instead
 
-```{python}
-#| echo: false
-total_waste = 119_000_000_000_000
+### IF WE REDIRECTED THE $119 TRILLION:
 
-print("🌟 IF WE REDIRECTED THE $119 TRILLION:\n")
+• **2,380,000** Oxford RECOVERY trials
+• **45,769** New drug developments
+• **2,479** Years of NIH budget
+• **1,190** Moon bases
+• **238** Mars colonies
+• **5,950** Nuclear fusion plants
+• **30** Years of free healthcare for Earth
+• **119** Years of free education for everyone
 
-alternatives = [
-    ("Oxford RECOVERY trials", 50_000_000, "trials"),
-    ("New drug developments", 2_600_000_000, "drugs"),
-    ("Years of NIH budget", 48_000_000_000, "years"),
-    ("Moon bases", 100_000_000_000, "bases"),
-    ("Mars colonies", 500_000_000_000, "colonies"),
-    ("Nuclear fusion plants", 20_000_000_000, "plants"),
-    ("Years of free healthcare for Earth", 4_000_000_000_000, "years"),
-    ("Years of free education for everyone", 1_000_000_000_000, "years")
-]
-
-for item, cost, unit in alternatives:
-    quantity = total_waste / cost
-    if quantity > 1000:
-        print(f"• {quantity:,.0f} {item}")
-    else:
-        print(f"• {quantity:.0f} {item}")
-
-print("\n🎯 OR MORE REALISTICALLY:")
-print("• Cure every disease")
-print("• End aging")
-print("• Achieve biological immortality")
-print("• Make death optional")
-print("• Have $100 trillion left over")
-```
+### OR MORE REALISTICALLY:
+• Cure every disease
+• End aging
+• Achieve biological immortality
+• Make death optional
+• Have $100 trillion left over
 
 ## The Investment Ratio That Defines Insanity
 
-```{python}
-#| echo: false
-print("🚽 THE $119T Death Toilet:\n")
-print(f"• We flush ${119_000_000_000_000/365:,.0f} billion down it daily")
-print(f"• That's ${119_000_000_000_000/365/24:,.0f} billion per hour")
-print(f"• That's ${119_000_000_000_000/365/24/60:,.0f} billion per minute")
-print(f"\n💊 CURE RESEARCH GETS: 0.06% of that")
-print(f"\n📊 RATIO: 1,750:1 (death spending vs cure spending)")
-```
+### THE $119T DEATH TOILET:
+
+• We flush **$326 billion** down it daily
+• That's **$14 billion** per hour
+• That's **$227 million** per minute
+
+**CURE RESEARCH GETS: 0.06% of that**
+
+**RATIO: 1,750:1** (death spending vs cure spending)
 
 ## The Bottom Line
 

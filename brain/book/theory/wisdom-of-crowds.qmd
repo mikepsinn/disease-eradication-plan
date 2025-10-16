@@ -6,7 +6,6 @@ lastFormatted: '2025-10-16'
 lastStyleCheck: '2025-10-16'
 lastFormattedHash: d25a1e1ae39cae972a2ee7c2dcbfad9e447b25bbfd6900290465c8a930e70943
 ---
-## The Experiment That Changed Everything
 
 In 1906, statistician Francis Galton visited a county fair.
 
@@ -116,8 +115,11 @@ crowd_error_rate = (1 - individual_accuracy) / np.sqrt(crowd_size)
 crowd_accuracy = 1 - crowd_error_rate
 # = 0.9999... (99.99% accurate)
 
-print(f"Committee accuracy: {effective_committee_accuracy:.1%}")
-print(f"Crowd accuracy: {crowd_accuracy:.2%}")
+from IPython.display import Markdown, display
+display(Markdown(f"""
+**Committee accuracy: {effective_committee_accuracy:.1%}**
+**Crowd accuracy: {crowd_accuracy:.2%}**
+"""))
 ```
 
 **8 billion mediocre guesses beat 200 expert guesses.**
@@ -331,11 +333,14 @@ This isn't an insult.
 - Saved: Far fewer lives
 - Cost: \$1.6 billion
 
-## The Bottom Line
+### Bonus: Prediction Markets vs Experts
 
-You can trust 200 experts to agree with each other.
+**Iowa Electronic Markets** (crowd betting on elections):
+- More accurate than polls 74% of the time
+- Beat expert pundits 451 out of 596 races
 
-You can trust 8 billion people to find the truth.
+**Expert Political Analysts**:
+- Wrong about Brexit
+- Wrong about 2016 US election
+- Wrong about most "sure things"
 
-**Choose wisely.**
-**Your life depends on it.**
