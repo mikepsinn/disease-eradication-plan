@@ -337,15 +337,13 @@ This keeps everything in one place and prevents broken links.
 - **Code:** Write new tools in TypeScript
 - **Dependencies:** Use `npm` and include a `package.json`
 - **Execution:** Run TypeScript directly with `ts-node` or `tsx`. No compiled `.js` files in the repo.
+- **Automated Formatting:** All `.qmd` files are subject to automated formatting checks based on the rules defined in [`FORMATTING_GUIDE.md`](./FORMATTING_GUIDE.md).
 
-### 6. Naming, Linking, and Formatting
+### 6. Naming and Linking
 
 - **Filenames:** Use kebab-case and be descriptive (e.g., `dih-treasury-cash-flow-model.md`).
 - **Internal Links:** Use standard, relative Markdown links (`./`, `../`). Do not use backticks or bare paths for links.
-- **Dollar Sign Escaping:** Always escape dollar signs (`\$`) in regular text to prevent rendering issues (e.g., `\$27B`). Do not escape them inside backticked code blocks.
 - **Code vs. Links:** Use backticks only for code, commands, or literals—not for navigational references.
-- **List Spacing:** All ordered (`1.`) and unordered (`-`) lists must be preceded by a blank line to ensure correct rendering.
-- **Sentence Structure:** Each sentence must start on a new line. This makes diffs cleaner, editing easier, and git blame more useful. Break after every period, question mark, or exclamation point.
 
 ### 7. Chapter Independence and Reusability
 
