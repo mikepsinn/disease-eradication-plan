@@ -44,9 +44,9 @@
   - We spend 162X more on military than brain research
   - The Pentagon: Lost $2.46T with no accountability
   - US = 37% of global military spending with only 4.4% of world population
-  - War costs your family $74,259 over your lifetime
-  - Every submarine = 1,000 cancer labs we didn't build
-  - The nuclear extinction lottery: 13,000 warheads, 0 winners
+  - War costs your family an estimated $74,259 over your lifetime
+  - Every submarine represents approximately 1,000 cancer labs we didn't build
+  - The nuclear extinction lottery: 13,000 warheads, no winners
 
 ### The Cost of Disease - $109.1 Trillion in Annual Suffering
 
@@ -83,11 +83,11 @@
 
 ### Your Democracy Is Theater
 
-- **The Princeton Bombshell: You Have Zero Political Power**
-  - Gilens & Page study: 0% correlation between public opinion and policy
+- **The Princeton Bombshell: You Have Nearly Zero Political Power**
+  - Gilens & Page study: Virtually no correlation between public opinion and policy when elites disagree
   - Economic elites get what they want 78% of the time
-  - You get what you want 0% (unless elites agree)
-  - The oligarchy with democratic characteristics
+  - Average citizens get preferred outcomes only when elites agree (which is rarely on their behalf)
+  - An oligarchy with democratic characteristics
 - **[FIGURE: Your Democracy Score: 0%]**
   - Graph showing flat line - no correlation between public will and policy
   - One image destroys the democracy illusion
@@ -103,15 +103,15 @@
 
 ### Regulatory Capture - The Foxes Own All Henhouses
 
-- **Every Regulator Works for Who They Regulate**
-  - FDA run by ex-pharma executives
-  - DoD run by future defense contractors
+- **Regulators Often Come From (and Return To) Those They Regulate**
+  - FDA frequently staffed by ex-pharma executives (like an internship program where interns make the rules)
+  - DoD procurement staffed by future defense contractors
   - The revolving door: 400% salary increase for playing ball
-- **Why the System Can't Be Reformed (It's Working As Designed)**
-  - FDA delays = Pharma profits (17 years of patent monopoly)
-  - Military spending = Defense contractor wealth (the point)
-  - Disease continues = Healthcare profits ($4.5T industry needs you sick)
-  - Every "failure" is someone's success story
+- **Why the System Resists Reform (It's Optimized for Different Goals)**
+  - FDA delays = Pharma profits (17 years of patent exclusivity protection)
+  - Military spending = Defense contractor revenue streams
+  - Chronic disease = Healthcare industry revenue ($4.5T industry incentivized for treatment over cures)
+  - Every "failure" is someone's quarterly earnings success
 
 ## Part II: The Theory (Why Markets Work and Democracy Doesn't)
 
@@ -126,20 +126,20 @@
     - Life expectancy gains slow by more than half
   - 2020: Oxford RECOVERY trial proves decentralization still works
     - $500 per patient vs $41,000 FDA standard (82X cheaper)
-    - Included real sick patients FDA would reject
-  - The proven inefficiency: FDA trials are 82X more expensive than necessary
-- **The Pattern: Every Government "War" Creates More of What It Fights**
-  - War on Drugs ($1T): Created cartels, violence up 10,000%
-  - War on Poverty ($22T): Welfare cliffs keep people poor
-  - War on Cancer (Nixon 1971): $200B/year treating, not curing
-  - War on Terror ($8T): Every drone strike creates 10 terrorists
-  - The perverse incentive: Bureaucracies need problems to exist
+    - Included real sick patients who would be excluded from typical FDA trials
+  - The demonstrated inefficiency: FDA trials are 82X more expensive than necessary
+- **The Pattern: Most Government "Wars" Create Perverse Incentives**
+  - War on Drugs ($1T): Created powerful cartels, violence increased dramatically
+  - War on Poverty ($22T): Welfare cliffs create disincentives to work
+  - War on Cancer (Nixon 1971): $200B/year treating symptoms rather than pursuing cures
+  - War on Terror ($8T): Drone strikes often create blowback and new recruitment
+  - The systemic issue: Bureaucracies are incentivized to perpetuate the problems they're funded to solve
 - **The Knowledge Problem (Hayek Was Right)**
-  - 200 NIH bureaucrats can't know 8 billion health needs
-  - Every patient knows their pain (committees know PowerPoints)
-  - Soviet agriculture: Smart people, 100 million starved
-  - NIH medicine: Smart people, 55 million die annually
-  - The pretense of knowledge: Central planning always fails
+  - 200 NIH bureaucrats can't possibly know 8 billion individual health needs
+  - Patients experience their conditions firsthand (committees review PowerPoints)
+  - Soviet agriculture: Smart central planners, tens of millions starved
+  - NIH medicine: Smart central planners, 55 million die annually from treatable/preventable causes
+  - The pretense of knowledge: Central planning consistently underperforms distributed decision-making
 - **Markets: The Distributed Computer That Works**
   - **[VIDEO: Milton Friedman's "I, Pencil" - How Markets Coordinate Without Central Planning]**
   - Prices are information packets (committees are noise)
@@ -178,28 +178,28 @@
   - The end of central planning's credibility
   - The beginning of the market revolution
 
-### Public Choice Theory - (Everyone's Selfish, Use It)
+### Public Choice Theory - (Everyone Responds to Incentives, Use It)
 
-- **Politicians Maximize Power, Not Your Health**
+- **Politicians Optimize for Re-election, Not Long-term Outcomes**
   - Time horizons: 2-year election cycles vs 20-year cures
-  - Blame avoidance > credit claiming (do nothing, stay safe)
-  - Their healthcare is free (yours isn't their problem)
-  - Concentrated benefits, diffuse costs (you always lose)
+  - Blame avoidance > credit claiming (safer to do nothing)
+  - Their healthcare is government-provided (misaligned incentives with constituents)
+  - Concentrated benefits, diffuse costs (special interests win)
 - **The Interest Group Auction House**
   - Defense contractors: $100M lobbying → $2T contracts
   - You: Pay $1,000/year, too small to notice
   - They organize, you don't (and never will)
   - The lobbyist ROI: 1,813% returns (best investment ever)
 - **Bureaucrats: The Permanent Government**
-  - Budget maximization: Bigger department = more power
-  - Risk minimization: Never try anything new
-  - Job security: Can't be fired, won't innovate
-  - The iron law: Every bureaucracy becomes self-serving
-- **The Solution: Align Incentives or Die**
-  - Make curing disease more profitable than causing it
-  - Bribe the same people, but for health
-  - Use greed for good (it's the only reliable force)
-  - Create concentrated benefits for healing
+  - Budget maximization: Larger budgets = more influence and job security
+  - Risk minimization: Easier to avoid new initiatives than risk failure
+  - Employment protection: Difficult to remove = low accountability
+  - The iron law: Bureaucracies tend toward self-preservation over mission
+- **The Solution: Align Incentives or Continue Current Trajectory**
+  - Make curing disease more profitable than treating symptoms indefinitely
+  - Use the same lobbying system, redirected toward health outcomes
+  - Harness self-interest for public good (reliable motivation)
+  - Create concentrated benefits for producing cures rather than perpetuating disease
 
 ### The Wisdom of Crowds - 8 Billion Minds Better Than 200 Bureaucrats
 
