@@ -8,8 +8,6 @@ tags: >-
   repository-management, automation, ai-powered, file-organization,
   content-migration
 published: true
-date: "2025-02-12T20:29:36.760Z"
-dateCreated: "2025-02-12T20:29:36.760Z"
 ---
 
 # 📁 Scripts Directory

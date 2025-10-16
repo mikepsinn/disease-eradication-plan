@@ -2,9 +2,7 @@
 title: How to Contribute
 description: "The single source of truth for all contribution guidelines, style guides, and project standards for the Decentralized Institutes of Health (DIH) knowledge base."
 published: true
-date: "2025-09-09T00:00:00.000Z"
 tags: [contributing, guidelines, standards, book, knowledge-base]
-dateCreated: "2025-09-09T00:00:00.000Z"
 ---
 
 # How to Contribute to the DIH Knowledge Base
@@ -291,7 +289,6 @@ description: "One sentence summary (max 140 chars)"
 published: true # false for drafts
 date: "YYYY-MM-DDTHH:MM:SS.sssZ"
 tags: [keyword1, keyword2]
-dateCreated: "YYYY-MM-DDTHH:MM:SS.sssZ"
 ---
 ```
 

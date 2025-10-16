@@ -62,7 +62,7 @@ jobs:
             4. Follow the 4 Core Checks: Clarity, Credibility, Concision, Directness
 
             QUALITY CHECKS TO PERFORM:
-            1. Verify all markdown files have proper frontmatter (title, description, published, date, tags, dateCreated)
+            1. Verify all markdown files have proper frontmatter (title, description, published, tags)
             2. Check internal links are not broken (use relative paths like ./file.md or ../folder/file.md)
             3. Ensure citations link to references.qmd with proper anchors
             4. Flag any corporate buzzwords or euphemisms for rewriting

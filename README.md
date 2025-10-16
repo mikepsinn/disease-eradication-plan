@@ -4,7 +4,6 @@ description: "How to Redirect 1% of Military Spending to Cure Disease and Create
 published: true
 date: "2025-08-15T00:00:00.000Z"
 tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds]
-dateCreated: "2025-08-15T00:00:00.000Z"
 ---
 
 > **The 1% Treaty:** Every nation redirects just 1% of global military spending to fund 80X more efficient medical research, creating the most profitable investment in history while saving millions of lives.
