@@ -5,10 +5,11 @@
 **Formatting Rules to Enforce:**
 
 1.  **Sentence Structure:** Each sentence must start on a new line.
-2.  **Dollar Sign Escaping:** Escape all dollar signs (`\$`) in plain text.
+2.  **Dollar Sign Escaping:** Escape all dollar signs (`\$`) in plain text that are not part of a LaTeX equation.
 3.  **List Spacing:** Ensure all markdown lists are preceded by a blank line.
-4.  **Preserve Quarto Syntax:** All Quarto syntax must be preserved *exactly*. This includes:
+4.  **Math Formatting:** Enclose all inline mathematical formulas in single dollar signs (`$...$`) and block-level formulas in double dollar signs (`$$...$$`) for proper LaTeX rendering.
+5.  **Preserve Quarto Syntax:** All Quarto syntax must be preserved *exactly*. This includes:
     *   Code blocks with curly braces: ````{python}`
     *   Special comments: `#| label: my-label`
     *   Shortcodes: `{{< include ... >}}`
-5.  **Preserve Markdown:** All standard markdown (headers, tables, etc.) must be preserved.
+6.  **Preserve Markdown:** All standard markdown (headers, tables, etc.) must be preserved.
