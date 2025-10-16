@@ -1,14 +1,23 @@
 ---
 title: "Problem Overview"
 subtitle: "Everyone You Love Is Dying While We Build Skynet"
-description: "A darkly humorous tour of humanity's spectacular failure at prioritizing not dying"
+description: "Humanity's spectacular failure at prioritizing not dying"
 published: true
-date: "2025-01-20T00:00:00.000Z"
-tags: [problem, war, disease, death, military-spending, healthcare, democracy, regulatory-capture]
-lastReviewed: "2025-10-16"
+date: '2025-01-20T00:00:00.000Z'
+tags:
+  - problem
+  - war
+  - disease
+  - death
+  - military-spending
+  - healthcare
+  - democracy
+  - regulatory-capture
+lastReviewed: '2025-10-16'
+lastFormatted: '2025-10-16'
+lastStyleCheck: '2025-10-16'
+lastFormattedHash: aba334bdf77a731a1cbe7d54266b199ef795ae75d4fc1b30c122d04862c9dfe7
 ---
-
-
 Here's a fun fact: While you're reading this sentence, approximately 3 people just died from preventable diseases.
 By the time you finish this paragraph, that number will be 12.
 Don't worry though—we just spent enough money on a single fighter jet to have saved all of them for the next century.
@@ -66,12 +75,13 @@ That's systemic sabotage with a government seal of approval.
 ## The War Budget: Humanity's Death Wish Retirement Fund
 
 We spend [\$2.7 trillion every year](./problem/cost-of-war.qmd) on things specifically designed to make humans stop breathing.
+
 This includes:
 
-- Nuclear weapons (because one apocalypse isn't enough, we need backup apocalypses)
-- Fighter jets that cost more than hospitals
-- Submarines that could fund cancer research for decades
-- Whatever the hell a "Space Force" does
+-   Nuclear weapons (because one apocalypse isn't enough, we need backup apocalypses)
+-   Fighter jets that cost more than hospitals
+-   Submarines that could fund cancer research for decades
+-   Whatever the hell a "Space Force" does
 
 The Pentagon alone has **lost**—not spent, LOST—\$2.5 trillion.
 Like a drunk person losing their keys, except the keys could have cured Alzheimer's hundreds of times over.
@@ -85,10 +95,11 @@ I'm sure cancer will be intimidated.
 ## The Disease Bill: \$109 Trillion in Annual Suffering
 
 While we're burning money on bombs, disease is running a [\$109.1 trillion annual tab](./problem/cost-of-disease.qmd).
+
 That's:
 
-- \$8.2 trillion in direct healthcare costs (treating symptoms, not causes)
-- \$100.9 trillion in lost productivity (dead people are notoriously unproductive)
+-   \$8.2 trillion in direct healthcare costs (treating symptoms, not causes)
+-   \$100.9 trillion in lost productivity (dead people are notoriously unproductive)
 
 We're essentially paying \$109 trillion per year to maintain human suffering at maximum capacity.
 It's like running a torture chamber and billing the victims for the electricity.
@@ -130,9 +141,9 @@ Democracy is basically a suggestion box that goes straight into a shredder opera
 Every regulatory agency is run by the industry it's supposed to regulate.
 [It's not a bug; it's a feature](./problem/regulatory-capture.qmd).
 
-- The FDA is run by ex-pharma executives who make drugs more expensive
-- The DoD is run by future defense contractors who need enemies to exist
-- The NIH is run by grant recipients who need diseases to study, not cure
+-   The FDA is run by ex-pharma executives who make drugs more expensive
+-   The DoD is run by future defense contractors who need enemies to exist
+-   The NIH is run by grant recipients who need diseases to study, not cure
 
 It's like putting vampires in charge of the blood bank and then acting surprised when everyone's anemic.
 
@@ -189,12 +200,13 @@ It's economically profitable.
 *Continue to Part II: [The Theory (Why Markets Work and Democracy Doesn't)](../theory.qmd)*
 
 *Or dive into the specific problems:*
-- [The Daily Massacre](./problem/the-daily-massacre.qmd) - 150,000 preventable deaths every day
-- [NIH's Trillion Dollar Failure](./problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) - How to spend \$1 trillion and cure nothing
-- [The FDA's 82X Inefficiency](./problem/fda-is-unsafe-and-ineffective.qmd) - Making medicine unaffordable since 1962
-- [The \$2.7 Trillion Death Budget](./problem/cost-of-war.qmd) - What we spend on killing each other
-- [The \$109 Trillion Disease Bill](./problem/cost-of-disease.qmd) - The economy of suffering
-- [Humanity's Upside-Down Priorities](./problem/the-119-trillion-death-toilet.qmd) - A visual guide to our insanity
-- [Democracy Theater](./problem/unrepresentative-democracy.qmd) - Why your vote doesn't matter
-- [Regulatory Capture](./problem/regulatory-capture.qmd) - How the foxes bought all the henhouses
-- [The Evolutionary Trap](./problem/the-evolutionary-trap.qmd) - Stone Age brains with Space Age weapons
+
+-   [The Daily Massacre](./problem/the-daily-massacre.qmd) - 150,000 preventable deaths every day
+-   [NIH's Trillion Dollar Failure](./problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) - How to spend \$1 trillion and cure nothing
+-   [The FDA's 82X Inefficiency](./problem/fda-is-unsafe-and-ineffective.qmd) - Making medicine unaffordable since 1962
+-   [The \$2.7 Trillion Death Budget](./problem/cost-of-war.qmd) - What we spend on killing each other
+-   [The \$109 Trillion Disease Bill](./problem/cost-of-disease.qmd) - The economy of suffering
+-   [Humanity's Upside-Down Priorities](./problem/the-119-trillion-death-toilet.qmd) - A visual guide to our insanity
+-   [Democracy Theater](./problem/unrepresentative-democracy.qmd) - Why your vote doesn't matter
+-   [Regulatory Capture](./problem/regulatory-capture.qmd) - How the foxes bought all the henhouses
+-   [The Evolutionary Trap](./problem/the-evolutionary-trap.qmd) - Stone Age brains with Space Age weapons

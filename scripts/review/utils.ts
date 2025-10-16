@@ -88,13 +88,13 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
 
   // To ensure hash consistency, we create a temporary stringified version
   // to see what the body will look like after gray-matter processes it.
-  const tempContent = matter.stringify(finalBody, frontmatter);
+  const tempContent = matter.stringify(finalBody, frontmatter, { lineWidth: -1 } as any);
   
   // Now, hash the body as it will actually be saved.
   frontmatter.lastFormattedHash = getBodyHash(tempContent);
 
   // Stringify the final version with the correct hash and write to file.
-  const newContent = matter.stringify(finalBody, frontmatter);
+  const newContent = matter.stringify(finalBody, frontmatter, { lineWidth: -1 } as any);
   await fs.writeFile(filePath, newContent, 'utf-8');
   console.log(`Successfully formatted ${filePath}.`);
 }
