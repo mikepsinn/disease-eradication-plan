@@ -17,7 +17,7 @@ if (!API_KEY) {
   throw new Error('GOOGLE_GENERATIVE_AI_API_KEY is not set in the .env file.');
 }
 const genAI = new GoogleGenerativeAI(API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
+const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
 // --- Exported Functions ---
 
@@ -55,9 +55,9 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   const { data: frontmatter, content: body } = matter(originalContent);
 
   const formattingGuide = await fs.readFile('FORMATTING_GUIDE.md', 'utf-8');
-  const prompt = `${formattingGuide}\n\nYour task is to reformat the following file content based *only* on the rules above. **If the file already conforms to all rules, you MUST return the special string "NO_CHANGES_NEEDED".** Otherwise, return the full, corrected file content.`;
+  const prompt = `${formattingGuide}\n\nYour task is to reformat the following file content based *only* on the rules above. **If the file already conforms to all rules, you MUST return the special string "NO_CHANGES_NEEDED".** Otherwise, return *only* the corrected file content, with no other text or separators.`;
 
-  const result = await model.generateContent(prompt + `\n\n**File Content to Reformulate:**\n---\n${body}\n---`);
+  const result = await model.generateContent(prompt + `\n\n**File Content to Reformulate:**\n${body}`);
   const response = await result.response;
   const responseText = response.text();
 
@@ -66,7 +66,8 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
     console.log(`File ${filePath} is already formatted correctly. Updating metadata.`);
     finalBody = body; // Use the original body
   } else {
-    finalBody = responseText; // Use the new body from the LLM
+    // Clean up potential trailing separators from the LLM response
+    finalBody = responseText.trim().replace(/(\s*---|\s*```)*\s*$/, '');
   }
 
   const today = new Date().toISOString().split('T')[0];
