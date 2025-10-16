@@ -9,3 +9,4 @@
 3.  **List Spacing:** All ordered (`1.`) and unordered (`-`) lists must be preceded by a blank line to ensure correct rendering.
 4.  **Markdown Integrity:** Preserve all original markdown formatting, including headers, tables, and code blocks, without any alteration.
 5.  **Quarto Code Blocks:** Do NOT modify the special comment lines starting with `#|` inside code blocks. The language name must be enclosed in curly braces (e.g., ````{python}`). These are Quarto execution options and must be preserved exactly as they are.
+6.  **Quarto Shortcodes:** Do NOT modify Quarto shortcodes, which are enclosed in `{{< ... >}}`. This includes video embeds, includes, and other special directives. They must be preserved exactly as they are.

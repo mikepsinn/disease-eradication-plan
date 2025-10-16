@@ -4,6 +4,9 @@ import { simpleGit } from 'simple-git';
 import { glob } from 'glob';
 import ignore from 'ignore';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const git = simpleGit();
 
@@ -54,17 +57,8 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
 
-  const prompt = `
-    Please reformat the following markdown file content to adhere strictly to our project's contribution guidelines.
-
-    **CRITICAL INSTRUCTION: You are a formatting engine. Your ONLY task is to fix objective formatting errors. Do NOT alter the writing style, tone, or content in any way. The user's original phrasing and voice must be perfectly preserved.**
-
-    **Formatting Rules to Enforce:**
-    1.  **One Sentence Per Line:** Each sentence must start on a new line. Break lines *only* after a period, question mark, or exclamation point that is followed by a space.
-    2.  **Dollar Sign Escaping:** All dollar signs (\$) in plain text must be escaped (e.g., \\\$2.7 trillion). Do not escape them inside markdown code blocks (\`\`\`) or tables.
-    3.  **List Spacing:** Ensure all markdown lists (ordered and unordered) are preceded by exactly one empty line.
-    4.  **Markdown Integrity:** Preserve all original markdown formatting, including headers, tables, and code blocks, without any alteration.
-  `;
+  const formattingGuide = await fs.readFile('FORMATTING_GUIDE.md', 'utf-8');
+  const prompt = `${formattingGuide}\n\nPlease reformat the following file content based on the rules above.`;
 
   const result = await model.generateContent(prompt + `\n\n**File Content to Reformulate:**\n---\n${body}\n---`);
   const response = await result.response;

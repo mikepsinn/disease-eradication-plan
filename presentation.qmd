@@ -1,14 +1,15 @@
 ---
-title: "How to End War and Disease"
-subtitle: "The Complete Idiot's Guide to Bribing Humanity to Redirect 1% of Military Spending to Cure All Diseases"
-#author: "Mike P. SInn"
+title: How to End War and Disease
+subtitle: >-
+  The Complete Idiot's Guide to Bribing Humanity to Redirect 1% of Military
+  Spending to Cure All Diseases
 format:
   revealjs:
-    theme: [default, assets/propaganda-theme.scss]
+    theme:
+      - default
+      - assets/propaganda-theme.scss
     transition: slide
     slide-number: true
-    #footer: "Vote at WarOnDisease.org"
-    #logo: assets/logo.png
     width: 1920
     height: 1080
   pptx:
@@ -19,9 +20,10 @@ execute:
   warning: false
   message: false
   fig-cap: false
+lastFormatted: '2025-10-16'
+lastStyleCheck: '2025-10-16'
 ---
-
-```{python}
+```python
 #| label: setup
 import sys
 sys.path.insert(0, 'c:/code/decentralized-institutes-of-health')
@@ -91,7 +93,7 @@ We chose not to.
 </p>
 <p style="font-size: 48px; color: #000000;">
 For every dollar we spend finding cures,<br>
-we spend <span style="color: #B22234; font-weight: bold;">$40 on weapons</span>
+we spend <span style="color: #B22234; font-weight: bold;">\$40 on weapons</span>
 </p>
 </div>
 
@@ -104,14 +106,14 @@ we spend <span style="color: #B22234; font-weight: bold;">$40 on weapons</span>
 
 <div style="text-align: center; margin-top: 40px;">
 <p style="font-size: 64px; color: #000000; margin-bottom: 30px;">
-The $2.7T military budget? <span style="color: #B22234; font-weight: bold;">That's just the tip.</span>
+The \$2.7T military budget? <span style="color: #B22234; font-weight: bold;">That's just the tip.</span>
 </p>
 <p style="font-size: 48px; color: #3C3B6E; line-height: 1.6;">
 + Destroyed cities<br>
 + Refugee crises<br>
 + PTSD treatment<br>
 + Lost productivity<br>
-= <span style="font-size: 72px; color: #B22234; font-weight: bold;">$10 TRILLION</span>
+= <span style="font-size: 72px; color: #B22234; font-weight: bold;">\$10 TRILLION</span>
 </p>
 </div>
 
@@ -123,7 +125,7 @@ The $2.7T military budget? <span style="color: #B22234; font-weight: bold;">That
 
 <div style="text-align: center; margin-top: 50px;">
 <p style="font-size: 80px; color: #B22234; font-weight: bold; margin-bottom: 40px;">
-$119 TRILLION
+\$119 TRILLION
 </p>
 <p style="font-size: 56px; color: #000000; line-height: 1.6;">
 Every year, humanity spends this on <span style="color: #B22234;">death</span><br>
@@ -164,20 +166,21 @@ We could fix this with a <span style="color: #B22234; font-weight: bold;">roundi
 </div>
 <div style="font-size: 100px; color: #3C3B6E;">=</div>
 <div style="text-align: center;">
-<p style="font-size: 100px; color: #3C3B6E; font-weight: bold; margin: 0;">$27B</p>
+<p style="font-size: 100px; color: #3C3B6E; font-weight: bold; margin: 0;">\$27B</p>
 <p style="font-size: 48px; color: #000000;">per year</p>
 </div>
 </div>
 
 <div style="background-color: #f8f8f8; padding: 40px; border-radius: 20px; margin: 60px auto; max-width: 1200px;">
 <p style="font-size: 48px; color: #000000; line-height: 1.8;">
-Military keeps <span style="color: #3C3B6E; font-weight: bold;">$2.69 trillion</span> (99%)<br>
+Military keeps <span style="color: #3C3B6E; font-weight: bold;">\$2.69 trillion</span> (99%)<br>
 <span style="font-size: 40px; color: #666;">Enough nukes to kill everyone 66 times instead of 67</span>
 </p>
 </div>
 
 <p style="font-size: 56px; color: #B22234; margin-top: 60px; font-weight: bold;">
-This kills no one. It saves millions.
+This kills no one.
+It saves millions.
 </p>
 </div>
 
@@ -202,7 +205,7 @@ This kills no one. It saves millions.
 <div style="font-size: 60px; color: #3C3B6E;">→</div>
 <div style="flex: 1; padding: 30px;">
 <p style="font-size: 100px; color: #B22234; font-weight: bold; margin: 0;">3</p>
-<p style="font-size: 44px; color: #000000; margin-top: 20px;">$27B flows to<br>decentralized trials</p>
+<p style="font-size: 44px; color: #000000; margin-top: 20px;">\$27B flows to<br>decentralized trials</p>
 <p style="font-size: 32px; color: #666; margin-top: 15px; font-style: italic;">(Amazon for cures)</p>
 </div>
 </div>
@@ -212,7 +215,9 @@ This kills no one. It saves millions.
 History shows: 3.5% always wins
 </p>
 <p style="font-size: 40px; color: #000000; margin-top: 20px;">
-Civil rights. Women's suffrage. Every major change.
+Civil rights.
+Women's suffrage.
+Every major change.
 </p>
 </div>
 
@@ -233,7 +238,7 @@ Civil rights. Women's suffrage. Every major change.
 <p style="font-size: 40px; color: #000000; line-height: 1.8;">
 200 bureaucrats decide<br>
 17 years to market<br>
-$2.2 billion per drug<br>
+\$2.2 billion per drug<br>
 95% of diseases ignored
 </p>
 </div>
@@ -242,14 +247,16 @@ $2.2 billion per drug<br>
 <p style="font-size: 40px; color: #000000; line-height: 1.8;">
 8 billion people choose<br>
 2 years to market<br>
-$27 million per drug<br>
+\$27 million per drug<br>
 Every disease gets trials
 </p>
 </div>
 </div>
 
 <p style="font-size: 64px; color: #B22234; margin-top: 40px; font-weight: bold;">
-82X cheaper. 8X faster. Actually works.
+82X cheaper.
+8X faster.
+Actually works.
 </p>
 </div>
 
@@ -274,8 +281,11 @@ Better than your crypto (−100%)<br>
 </div>
 
 <p style="font-size: 44px; color: #B22234; margin-top: 40px;">
-Only $3.375B available. Ever.<br>
+Only \$3.375B available.
+Ever.<br>
 <span style="font-size: 36px; color: #666;">First come, first served, then it's gone.</span>
 </p>
 </div>
 
+
+---
