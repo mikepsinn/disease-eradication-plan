@@ -16,23 +16,24 @@
 
 ### The NIH Has Spent $1 Trillion to Eradicate 0 Diseases
 
-- **The Most Expensive Failure in Human History**
+- **The Translation Crisis: 166 Billion Treatments Untested**
   - Since 1970: $1+ trillion spent (inflation adjusted)
   - Diseases eradicated: ZERO (smallpox was WHO, not NIH)
-  - Success rate: 0.00% for complete disease elimination
-  - 200 bureaucrats deciding which of 10,000 diseases matter (yours doesn't)
-  - They fund what gets published, not what saves lives
-  - Result: 55 million die annually while papers get published
+  - 166 billion drug combinations exist, NIH tests ~5,000/year
+  - 55% of budget on basic research (understanding mice)
+  - 5% on human trials (actually testing cures)
+  - Correlation with patient needs: 0.07 (essentially random)
+  - Result: We understand disease perfectly, cure nothing
 
 ### The FDA Is Unsafe and Ineffective
 
 - **Making Medicine 82X More Expensive and 1000X Slower**
   - Oxford RECOVERY trial proved treatments can cost $500/patient
-  - FDA demands $41,000/patient (82X more expensive)
+  - FDA-regulated trials cost $41,000/patient (82X more expensive)
   - 17 years from discovery to patient (while you die waiting)
   - 95% of diseases have ZERO approved treatments
-  - Your rare disease child has better odds with lottery tickets
-  - Designed to prevent lawsuits, not save lives
+  - Risk-averse culture optimized for avoiding visible harm, not preventing invisible deaths
+  - System designed to prevent lawsuits, not maximize lives saved
 
 ### The Cost of War - $2.7 Trillion on Killing Each Other
 
