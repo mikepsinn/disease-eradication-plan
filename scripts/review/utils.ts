@@ -162,102 +162,104 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
   let originalContent = await fs.readFile(filePath, 'utf-8');
   let { data: frontmatter, content: body } = matter(originalContent);
 
-  const citationGuide = await fs.readFile('CONTRIBUTING.md', 'utf-8');
-  const claimIdentificationPrompt = `You are an expert fact-checker. Your task is to identify all factual claims in the provided text that are not properly cited.
+  // Load existing references
+  let existingReferences = '';
+  try {
+    existingReferences = await fs.readFile('brain/book/references.qmd', 'utf-8');
+  } catch (error) {
+    console.warn('Could not load references.qmd, will create new file');
+  }
 
-  **CRITICAL INSTRUCTIONS:**
-  1. A "factual claim" is a statement with specific data, statistics, or verifiable facts.
-  2. A claim is "cited" if it's a markdown link to "references.qmd".
-  3. Return a numbered list of exact, verbatim quotes of **only the uncited claims**.
-  4. If all claims are cited, you MUST return the special string "NO_UNCITED_CLAIMS_FOUND".
+  // Single LLM call to fact-check and link to existing refs OR create placeholder refs
+  const factCheckPrompt = `You are an expert fact-checker and citation assistant.
 
-  **Text to Analyze:**
-  ${body}`;
+**YOUR TASK:**
+1. Review the CHAPTER CONTENT below for uncited factual claims that ABSOLUTELY NEED a source
+2. Only cite claims that are:
+   - Specific statistics or numbers (e.g., "$916 billion spent on military")
+   - Verifiable historical facts or data points
+   - Claims that readers would reasonably question without a source
+3. DO NOT require sources for:
+   - General statements or obvious facts
+   - Author's opinions or arguments
+   - Commonly known information
+4. For each uncited claim that NEEDS a source:
+   - If an existing reference in EXISTING REFERENCES supports it (even loosely), add a link: [claim](../references.qmd#anchor-id)
+   - If no suitable existing reference exists, create a new placeholder reference entry
+5. Return ONLY valid JSON (no markdown code blocks):
 
-  const result = await genAI.models.generateContent({
-    model: GEMINI_MODEL_ID,
-    contents: claimIdentificationPrompt
-  });
-  const responseText = (result.text || '').trim();
+{
+  "updatedChapter": "the complete chapter text with citation links added",
+  "updatedReferences": "the complete updated references.qmd file with new placeholder references added in alphabetical order by anchor ID"
+}
 
-  if (responseText === 'NO_UNCITED_CLAIMS_FOUND') {
-    console.log(`No uncited claims found in ${filePath}.`);
-  } else {
-    console.log(`Found potential uncited claims. Attempting to find sources...`);
-    const claims = responseText.split('\n').map(line => line.replace(/^\d+\.\s*/, '').trim()).filter(Boolean);
-    
-    let newBody = body;
-    let referencesToAdd = '';
+**RULES FOR NEW PLACEHOLDER REFERENCES:**
+- Create anchor ID by slugifying the claim topic (lowercase, hyphens, max 50 chars)
+- Format: <a id="anchor-id"></a>\\n- **[Descriptive title for the claim]**\\n  > "The exact claim text from the chapter"\\n  > — <!-- TODO: Add source URL -->
+- Add to EXISTING REFERENCES in alphabetical order by anchor ID
+- Keep all existing references intact
 
-    for (const claim of claims) {
-      const sourceFindingPrompt = `Find authoritative sources to verify this claim: "${claim}"
+**EXAMPLE PLACEHOLDER:**
+<a id="global-population-8-billion"></a>
+- **Global population reaches 8 billion**
+  > "The global population is approximately 8 billion people."
+  > — <!-- TODO: Add source URL -->
 
-      Search for reliable sources using Google Search. Return ONLY valid JSON in this exact format with no markdown formatting:
-      {"verified":true,"title":"source title","url":"source URL","snippet":"relevant excerpt that supports the claim"}
+**RULES:**
+- Link ALL factual claims (either to existing refs or new placeholders)
+- Do NOT use Google Search - just create placeholders for new claims
+- Maintain alphabetical order by anchor ID
+- If no uncited claims exist, return existing references unchanged
 
-      If you cannot verify the claim, return:
-      {"verified":false}
+**EXISTING REFERENCES:**
+${existingReferences}
 
-      IMPORTANT: Return ONLY the JSON object, no other text, no markdown code blocks, no explanations.`;
+**CHAPTER CONTENT:**
+${body}`;
 
-      try {
-        const sourceResult = await genAI.models.generateContent({
-          model: GEMINI_MODEL_ID,
-          contents: sourceFindingPrompt,
-          config: {
-            tools: [{ googleSearch: {} }]
-          }
-        });
+  try {
+    const result = await genAI.models.generateContent({
+      model: GEMINI_MODEL_ID,
+      contents: factCheckPrompt
+    });
 
-        // Extract JSON from response, handling markdown code blocks
-        let responseText = (sourceResult.text || '').trim();
+    // Extract JSON from response
+    let responseText = (result.text || '').trim();
+    responseText = responseText.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '');
 
-        // Remove markdown code block formatting if present
-        responseText = responseText.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '');
+    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      throw new Error('No JSON object found in response');
+    }
 
-        // Try to extract JSON object from the response
-        const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-        if (!jsonMatch) {
-          throw new Error('No JSON object found in response');
-        }
+    const resultData = JSON.parse(jsonMatch[0]);
 
-        const sourceData = JSON.parse(jsonMatch[0]);
+    if (!resultData.updatedChapter) {
+      throw new Error('LLM did not return updatedChapter');
+    }
 
-        if (sourceData.verified && sourceData.title && sourceData.url) {
-          // Create reference entry with anchor
-          const anchorId = `ref-${crypto.randomBytes(4).toString('hex')}`;
-          const referenceEntry = `\n<a id="${anchorId}"></a>\n**${sourceData.title}**\n${sourceData.snippet || 'Source verification'}\n[Source](${sourceData.url})\n`;
+    body = resultData.updatedChapter;
 
-          referencesToAdd += referenceEntry;
-          const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-          newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `[${claim}](../references.qmd#${anchorId})`);
-
-          console.log(`✓ Found source for: "${claim.substring(0, 50)}..."`);
-        } else {
-          throw new Error('No verified sources found');
-        }
-
-      } catch (error) {
-        console.error(`Failed to find source for claim: "${claim}". Adding TODO.`, error);
-        const todoComment = `<!-- TODO: FACT_CHECK - Uncited claim. LLM failed to find a source. -->`;
-        const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        if (!newBody.includes(todoComment)) {
-          newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `${todoComment}\n${claim}`);
-        }
+    // Write updated references file if it changed
+    if (resultData.updatedReferences) {
+      // Check if references actually changed
+      if (resultData.updatedReferences.trim() !== existingReferences.trim()) {
+        await fs.writeFile('brain/book/references.qmd', resultData.updatedReferences, 'utf-8');
+        console.log(`✓ Updated references.qmd with new citations`);
+      } else {
+        console.log(`✓ All claims linked to existing references (no new references added)`);
       }
     }
-    
-    if (referencesToAdd) {
-      await fs.appendFile('brain/book/references.qmd', referencesToAdd);
-    }
-    
-    body = newBody;
+
+  } catch (error) {
+    console.error('Fact-check failed:', error);
+    console.log('Skipping fact-check for this file');
   }
 
   frontmatter.lastFactCheckHash = getBodyHash(matter.stringify(body, frontmatter));
   const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
   await fs.writeFile(filePath, newContent, 'utf-8');
-  console.log(`Successfully updated fact-check metadata for ${filePath}.`);
+  console.log(`Successfully updated ${filePath}`);
 }
 
 export async function linkCheckFile(filePath: string): Promise<void> {

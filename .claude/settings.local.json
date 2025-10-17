@@ -34,7 +34,8 @@
       "Bash(start \"c:\\code\\decentralized-institutes-of-health\\brain\\figures\\nih-budget-allocation-pie-chart.html\")",
       "Bash(start \"c:\\code\\decentralized-institutes-of-health\\brain\\figures\\fda-vs-dfda-comparison-bar-chart.html\")",
       "Bash(start \"c:\\code\\decentralized-institutes-of-health\\_book\\brain\\book\\solution\\wishocracy.html\")",
-      "Bash(npx tsx:*)"
+      "Bash(npx tsx:*)",
+      "Bash(git restore:*)"
     ],
     "deny": [],
     "ask": []
