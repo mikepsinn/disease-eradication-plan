@@ -167,116 +167,115 @@ interface Reference {
 
 function parseReferences(referencesContent: string): Reference[] {
   const references: Reference[] = [];
-  const lines = referencesContent.split('\n');
-  const seenIds = new Map<string, number>(); // Track IDs and their first occurrence line
 
-  let currentRef: Reference | null = null;
-  let inQuoteBlock = false;
-  let currentQuote = '';
-  let currentLineNumber = 0;
+  // Split by anchor tags to get reference blocks
+  const anchorRegex = /<a\s+id="([^"]+)"><\/a>/g;
+  const blocks: Array<{ id: string; content: string }> = [];
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    currentLineNumber = i + 1;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
 
-    // Match anchor tags: <a id="anchor-id"></a>
-    const anchorMatch = line.match(/<a\s+id="([^"]+)"><\/a>/);
-    if (anchorMatch) {
-      if (currentRef) {
-        references.push(currentRef);
-      }
+  while ((match = anchorRegex.exec(referencesContent)) !== null) {
+    if (blocks.length > 0) {
+      // Save content between previous anchor and this one
+      blocks[blocks.length - 1].content = referencesContent.substring(lastIndex, match.index);
+    }
+    blocks.push({ id: match[1], content: '' });
+    lastIndex = match.index + match[0].length;
+  }
 
-      const id = anchorMatch[1];
+  // Get content after last anchor
+  if (blocks.length > 0) {
+    blocks[blocks.length - 1].content = referencesContent.substring(lastIndex);
+  }
 
-      // Check for duplicate IDs
-      if (seenIds.has(id)) {
-        console.warn(`⚠ Duplicate reference ID "${id}" found at line ${currentLineNumber} (first seen at line ${seenIds.get(id)})`);
-        console.warn(`  → Merging entries with same ID`);
+  // Parse each block
+  for (const block of blocks) {
+    const lines = block.content.trim().split('\n');
+    if (lines.length === 0) continue;
 
-        // Find the existing reference and merge with it
-        const existingRef = references.find(r => r.id === id);
-        if (existingRef) {
-          currentRef = existingRef;
-          continue;
-        }
-      }
-
-      seenIds.set(id, currentLineNumber);
-      currentRef = {
-        id: id,
-        title: '',
-        quotes: [],
-        source: ''
-      };
+    // Extract title from first line: - **Title**
+    const titleMatch = lines[0].match(/^-\s+\*\*(.+)\*\*$/);
+    if (!titleMatch) {
+      console.warn(`⚠ No title found for reference ${block.id}`);
       continue;
     }
 
-    // Match title: - **Title text**
-    const titleMatch = line.match(/^-\s+\*\*(.+)\*\*$/);
-    if (titleMatch && currentRef) {
-      // If title already exists and we're merging, append to quotes instead
-      if (currentRef.title && currentRef.title !== titleMatch[1]) {
-        // This is a second title for the same ID - add previous title as a note
-        currentRef.quotes.push(`Alternative title: ${titleMatch[1]}`);
-      } else if (!currentRef.title) {
-        currentRef.title = titleMatch[1];
-      }
-      continue;
-    }
+    const title = titleMatch[1];
+    const quotes: string[] = [];
+    let source = '';
+    let currentQuote = '';
 
-    // Match quote lines: start with > followed by content or >—
-    if (line.trim().startsWith('>')) {
-      const quoteContent = line.trim().substring(1).trim();
+    // Parse remaining lines for quotes and source
+    for (let i = 1; i < lines.length; i++) {
+      const line = lines[i].trim();
 
-      // Check if this is the source line (starts with —)
-      if (quoteContent.startsWith('—')) {
-        if (currentQuote && currentRef) {
-          currentRef.quotes.push(currentQuote.trim());
-          currentQuote = '';
-        }
-        if (currentRef) {
-          // If we already have a source and this is different, append it
-          const newSource = quoteContent.substring(1).trim();
-          if (currentRef.source && currentRef.source !== newSource) {
-            currentRef.source += ' | ' + newSource;
-          } else if (!currentRef.source) {
-            currentRef.source = newSource;
+      // Skip empty lines
+      if (!line) continue;
+
+      // Lines starting with > are quotes or source
+      if (line.startsWith('>')) {
+        const content = line.substring(1).trim();
+
+        // Check if this is the source line (starts with —)
+        if (content.startsWith('—')) {
+          // Save any pending quote
+          if (currentQuote) {
+            quotes.push(currentQuote.trim());
+            currentQuote = '';
+          }
+          // Extract source (remove — prefix)
+          const newSource = content.substring(1).trim();
+          if (source && source !== newSource) {
+            source += ' | ' + newSource;
+          } else if (!source) {
+            source = newSource;
+          }
+        } else {
+          // Regular quote content - accumulate multi-line quotes
+          if (currentQuote) {
+            currentQuote += '\n' + content;
+          } else {
+            currentQuote = content;
           }
         }
-        inQuoteBlock = false;
-      } else {
-        // Regular quote content
-        if (currentQuote) {
-          currentQuote += '\n' + quoteContent;
-        } else {
-          currentQuote = quoteContent;
-        }
-        inQuoteBlock = true;
       }
-    } else if (inQuoteBlock && currentQuote) {
-      // End of quote block
-      if (currentRef) {
-        currentRef.quotes.push(currentQuote.trim());
-      }
-      currentQuote = '';
-      inQuoteBlock = false;
     }
+
+    // Save any remaining quote
+    if (currentQuote) {
+      quotes.push(currentQuote.trim());
+    }
+
+    references.push({
+      id: block.id,
+      title,
+      quotes,
+      source: source || '<!-- TODO: Add source URL -->'
+    });
   }
 
-  // Push the last reference
-  if (currentRef) {
-    references.push(currentRef);
-  }
+  // Check for duplicates
+  const seenIds = new Map<string, number>();
+  const uniqueRefs: Reference[] = [];
 
-  // Deduplicate by ID (keep first occurrence)
-  const uniqueReferences = new Map<string, Reference>();
   for (const ref of references) {
-    if (!uniqueReferences.has(ref.id)) {
-      uniqueReferences.set(ref.id, ref);
+    if (seenIds.has(ref.id)) {
+      console.warn(`⚠ Duplicate reference ID "${ref.id}" - merging`);
+      const existingIndex = seenIds.get(ref.id)!;
+      const existing = uniqueRefs[existingIndex];
+      // Merge quotes and sources
+      existing.quotes.push(...ref.quotes);
+      if (ref.source && ref.source !== existing.source) {
+        existing.source += ' | ' + ref.source;
+      }
+    } else {
+      seenIds.set(ref.id, uniqueRefs.length);
+      uniqueRefs.push(ref);
     }
   }
 
-  return Array.from(uniqueReferences.values());
+  return uniqueRefs;
 }
 
 function formatReferencesFile(references: Reference[], frontmatter: string): string {
@@ -289,7 +288,11 @@ function formatReferencesFile(references: Reference[], frontmatter: string): str
     output += `<a id="${ref.id}"></a>\n`;
     output += `- **${ref.title}**\n`;
     for (const quote of ref.quotes) {
-      output += `  > ${quote}\n`;
+      // Handle multi-line quotes: split by newline and output each line with > prefix
+      const quoteLines = quote.split('\n');
+      for (const line of quoteLines) {
+        output += `  > ${line}\n`;
+      }
     }
     output += `  > — ${ref.source}\n\n`;
   }

@@ -18,40 +18,70 @@ import matplotlib.pyplot as plt
 import numpy as np
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_RED, COLOR_BLUE, COLOR_WHITE
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
 )
 
-# Setup brutal neobrutalist styling
-setup_chart_style(style='light', dpi=150)
+# Setup minimalist styling
+setup_chart_style(dpi=150)
 
 # Create figure
 fig, ax = plt.subplots(figsize=(12, 6))
 
 # Data
 categories = ['War on\nHumanity', 'War on Disease']
-spending = [2700, 68]  # In billions
-colors = [COLOR_RED, COLOR_BLUE]
+military_total = 2700  # In billions
+cure_spending = 68
 
-bars = ax.bar(categories, spending, color=colors)
+# Make the 1% stack visually prominent (exaggerate it to ~100B so it's actually visible)
+visual_stack_height = 100  # Visual height for the 1% slice (much larger than actual 27B)
+military_99_visual = military_total - visual_stack_height
+
+# Create stacked bar for military spending
+x_positions = [0, 1]
+bar_width = 0.8
+
+# War on Humanity - stacked bar (lower part solid black, top part with diagonal pattern)
+bar_99 = ax.bar(x_positions[0], military_99_visual, bar_width,
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
+bar_1 = ax.bar(x_positions[0], visual_stack_height, bar_width, bottom=military_99_visual,
+               color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, hatch='////')
+
+# War on Disease - solid black bar
+bar_cure = ax.bar(x_positions[1], cure_spending, bar_width,
+                  color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
 
 # Add custom labels
-# Label inside large bar
-war_spending = spending[0]
-ax.text(bars[0].get_x() + bars[0].get_width()/2., war_spending * 0.7,
-        f'${war_spending/1000:.1f}T', ha='center', va='center',
+# Main label inside the 99% bar (white text on black)
+ax.text(x_positions[0], military_99_visual * 0.6,
+        f'${military_total/1000:.1f}T', ha='center', va='center',
         color=COLOR_WHITE, fontsize=72, fontweight='bold')
-ax.text(bars[0].get_x() + bars[0].get_width()/2., war_spending * 0.4,
+ax.text(x_positions[0], military_99_visual * 0.35,
         categories[0], ha='center', va='center',
         color=COLOR_WHITE, fontsize=44, fontweight='bold')
 
-# Label above small bar
-cure_spending = spending[1]
-ax.text(bars[1].get_x() + bars[1].get_width()/2., cure_spending + (war_spending * 0.025),
+# Callout annotation for the 1% sliver - positioned to the right, moved down more
+arrow_end_x = x_positions[0] + bar_width/2  # Right edge of bar
+arrow_end_y = military_99_visual + (visual_stack_height / 2)  # Middle of the stripe
+
+ax.annotate('The 1% Treaty would\nredirect this tiny sliver\n($27B) to the\nWar on Disease',
+            xy=(arrow_end_x, arrow_end_y),
+            xytext=(x_positions[0] + 0.7, arrow_end_y - 250),
+            fontsize=20, fontweight='bold', color=COLOR_BLACK,
+            ha='left', va='center',
+            arrowprops=dict(arrowstyle='->', lw=3, color=COLOR_BLACK),
+            bbox=dict(boxstyle='square,pad=0.6', facecolor=COLOR_WHITE,
+                     edgecolor=COLOR_BLACK, linewidth=2))
+
+# Label above small bar (as it was originally)
+ax.text(x_positions[1], cure_spending + (military_total * 0.025),
         f'${cure_spending}B\n{categories[1]}', ha='center', va='bottom',
         color=COLOR_BLACK, fontsize=44, fontweight='bold', linespacing=1.2)
 
+# Set x-axis with category labels
+ax.set_xticks(x_positions)
+ax.set_xticklabels(['', ''])  # We'll keep labels on the bars themselves
 
-ax.set_ylim(0, 3000)
+ax.set_ylim(0, 2900)
 ax.axis('off')  # Remove axes - labels are on the bars
 
 # Add watermark

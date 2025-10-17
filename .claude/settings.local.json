@@ -36,7 +36,9 @@
       "Bash(start \"c:\\code\\decentralized-institutes-of-health\\_book\\brain\\book\\solution\\wishocracy.html\")",
       "Bash(npx tsx:*)",
       "Bash(git restore:*)",
-      "Bash(npm run fact-check:all:*)"
+      "Bash(npm run fact-check:all:*)",
+      "Bash(npm run link-check:file:*)",
+      "Bash(npm run figure-check:file:*)"
     ],
     "deny": [],
     "ask": []
