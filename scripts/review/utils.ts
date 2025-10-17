@@ -4,7 +4,7 @@ import { simpleGit } from 'simple-git';
 import { glob } from 'glob';
 import crypto from 'crypto';
 import ignore from 'ignore';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import Anthropic from '@anthropic-ai/sdk';
 import dotenv from 'dotenv';
 import path from 'path';
@@ -22,8 +22,9 @@ const API_KEY = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
 if (!API_KEY) {
   throw new Error('GOOGLE_GENERATIVE_AI_API_KEY is not set in the .env file.');
 }
-const genAI = new GoogleGenerativeAI(API_KEY);
+const genAI = new GoogleGenAI(API_KEY);
 const geminiModel = genAI.getGenerativeModel({ model: GEMINI_MODEL_ID });
+const geminiModelWithSearch = genAI.getGenerativeModel({ model: GEMINI_MODEL_ID, tools: [{ googleSearch: {} }] });
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -169,24 +170,47 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
   **Text to Analyze:**
   ${body}`;
 
-  const result = await geminiModel.generateContent(claimIdentificationPrompt);
+  const result = await geminiModel.generateContent(claimIdentificationPrompt + `\n\n**Text to Analyze:**\n${body}`);
   const response = await result.response;
   const responseText = response.text().trim();
 
   if (responseText === 'NO_UNCITED_CLAIMS_FOUND') {
     console.log(`No uncited claims found in ${filePath}.`);
   } else {
-    console.log(`Found and marked potential uncited claims in ${filePath}.`);
-    const claims = responseText.split('\n').map(line => line.replace(/^\d+\.\s*/, '').trim());
+    console.log(`Found potential uncited claims. Attempting to find sources...`);
+    const claims = responseText.split('\n').map(line => line.replace(/^\d+\.\s*/, '').trim()).filter(Boolean);
     
     let newBody = body;
+    let referencesToAdd = '';
+
     for (const claim of claims) {
-      const todoComment = `<!-- TODO: FACT_CHECK - The following claim is uncited. Please find a source and add it to references.qmd. -->`;
-      const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      // Prevent adding duplicate TODOs
-      if (!newBody.includes(todoComment)) {
-        newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `${todoComment}\n${claim}`);
+      const sourceFindingPrompt = `You are a research assistant...`; // Prompt truncated
+
+      try {
+        const sourceResult = await geminiModelWithSearch.generateContent(sourceFindingPrompt);
+        const sourceResponse = await sourceResult.response;
+        const sourceText = sourceResponse.text().replace(/```json|```/g, '').trim();
+        const sourceData = JSON.parse(sourceText);
+        
+        const anchorMatch = sourceData.snippet.match(/<a id="([^"]+)"><\/a>/);
+        const anchorId = anchorMatch ? anchorMatch[1] : `anchor-${crypto.randomBytes(4).toString('hex')}`;
+
+        referencesToAdd += `\n${sourceData.snippet}\n`;
+        const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `[${claim}](../references.qmd#${anchorId})`);
+
+      } catch (error) {
+        console.error(`Failed to find source for claim: "${claim}". Adding TODO.`, error);
+        const todoComment = `<!-- TODO: FACT_CHECK - Uncited claim. LLM failed to find a source. -->`;
+        const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        if (!newBody.includes(todoComment)) {
+          newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `${todoComment}\n${claim}`);
+        }
       }
+    }
+    
+    if (referencesToAdd) {
+      await fs.appendFile('brain/book/references.qmd', referencesToAdd);
     }
     
     body = newBody;
