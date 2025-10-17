@@ -5,7 +5,7 @@ dotenv.config();
 
 async function main() {
   console.log('Identifying stale files for link-checking...');
-  const staleFiles = await getStaleFiles('lastLinkCheck');
+  const staleFiles = await getStaleFiles('lastLinkCheckHash');
   const bookFiles = staleFiles.filter(file => file.startsWith('brain\\book'));
 
   console.log(`Checked ${staleFiles.length} total stale files.`);

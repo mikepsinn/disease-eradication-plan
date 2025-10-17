@@ -13,39 +13,31 @@ dotenv.config();
 async function main() {
   console.log('Starting comprehensive review process...');
 
-  // For now, we'll use the hash-based getStaleFiles. 
-  // This could be updated to the date-based logic from get-stale-files.ts if preferred.
-  const staleFiles = await getStaleFiles('lastFormattedHash');
-  const bookFiles = staleFiles.filter(file => file.startsWith('brain\\book'));
+  const checks = [
+    { name: 'Formatting', hashField: 'lastFormattedHash', checkFunction: formatFileWithLLM },
+    { name: 'Style', hashField: 'lastStyleHash', checkFunction: styleFileWithLLM },
+    { name: 'Fact Check', hashField: 'lastFactCheckHash', checkFunction: factCheckFileWithLLM },
+    { name: 'Link Check', hashField: 'lastLinkCheckHash', checkFunction: linkCheckFile },
+    { name: 'Figure Check', hashField: 'lastFigureCheckHash', checkFunction: figureCheckFile }
+  ];
 
-  if (bookFiles.length === 0) {
-    console.log('All files in brain/book are up-to-date. No review needed.');
-    return;
-  }
+  for (const check of checks) {
+    console.log(`\n--- Running ${check.name} Check ---`);
+    const staleFiles = await getStaleFiles(check.hashField);
+    const bookFiles = staleFiles.filter(file => file.startsWith('brain\\book'));
 
-  console.log(`Found ${bookFiles.length} stale files in brain/book to review.`);
+    if (bookFiles.length === 0) {
+      console.log(`All files are up-to-date for ${check.name}.`);
+      continue;
+    }
 
-  for (const file of bookFiles) {
-    console.log(`\n--- Processing: ${file} ---`);
-    try {
-      // Step 1: Format file (auto-fixes)
-      await formatFileWithLLM(file);
-
-      // Step 2: Style file (auto-fixes)
-      await styleFileWithLLM(file);
-
-      // Step 3: Fact Check (reports warnings)
-      await factCheckFileWithLLM(file);
-
-      // Step 4: Link Check (reports warnings)
-      await linkCheckFile(file);
-
-      // Step 5: Figure Check (reports warnings)
-      await figureCheckFile(file);
-
-    } catch (error) {
-      console.error(`An error occurred while processing ${file}:`, error);
-      // Continue to the next file
+    console.log(`Found ${bookFiles.length} files needing a ${check.name.toLowerCase()} review.`);
+    for (const file of bookFiles) {
+      try {
+        await check.checkFunction(file);
+      } catch (error) {
+        console.error(`An error occurred during the ${check.name} check for ${file}:`, error);
+      }
     }
   }
 

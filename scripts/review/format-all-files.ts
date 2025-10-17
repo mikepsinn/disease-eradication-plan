@@ -5,7 +5,7 @@ dotenv.config();
 
 async function main() {
   console.log('Identifying stale files for formatting...');
-  const staleFiles = await getStaleFiles('lastFormatted');
+  const staleFiles = await getStaleFiles('lastFormattedHash');
   const bookFiles = staleFiles.filter(file => file.startsWith('brain\\book'));
 
   console.log(`Checked ${staleFiles.length} total stale files.`);

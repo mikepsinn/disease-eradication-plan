@@ -5,7 +5,7 @@ dotenv.config();
 
 async function main() {
   console.log('Identifying stale files for figure-checking...');
-  const staleFiles = await getStaleFiles('lastFigureCheck');
+  const staleFiles = await getStaleFiles('lastFigureCheckHash');
   const bookFiles = staleFiles.filter(file => file.startsWith('brain\\book'));
 
   console.log(`Checked ${staleFiles.length} total stale files.`);

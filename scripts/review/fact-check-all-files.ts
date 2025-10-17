@@ -6,9 +6,7 @@ dotenv.config();
 async function main() {
   console.log('Identifying stale files for fact-checking...');
   // Note: We get *all* stale files and then filter. 
-  // The 'checkType' in getStaleFiles is currently based on hash, not date.
-  // We will rely on the logic within factCheckFileWithLLM to handle the date update.
-  const staleFiles = await getStaleFiles('lastFactCheck'); 
+  const staleFiles = await getStaleFiles('lastFactCheckHash'); 
   const bookFiles = staleFiles.filter(file => file.startsWith('brain\\book'));
 
   console.log(`Checked ${staleFiles.length} total stale files.`);

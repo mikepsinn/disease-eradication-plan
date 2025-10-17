@@ -44,6 +44,7 @@
     "link-check:all": "tsx scripts/review/link-check-all-files.ts",
     "figure-check:file": "tsx scripts/review/figure-check-file.ts",
     "figure-check:all": "tsx scripts/review/figure-check-all-files.ts",
+    "review": "tsx scripts/review/review.ts",
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
     "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix",

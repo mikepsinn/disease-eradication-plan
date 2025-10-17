@@ -37,7 +37,7 @@ function getBodyHash(content: string): string {
 
 // --- Exported Functions ---
 
-export async function getStaleFiles(checkType: string): Promise<string[]> {
+export async function getStaleFiles(hashFieldName: string): Promise<string[]> {
   const gitignoreContent = await fs.readFile('.gitignore', 'utf-8');
   const ig = ignore().add(gitignoreContent);
 
@@ -51,14 +51,9 @@ export async function getStaleFiles(checkType: string): Promise<string[]> {
       const content = await fs.readFile(file, 'utf-8');
       const { data: frontmatter } = matter(content);
 
-      const lastHash = frontmatter.lastFormattedHash;
-
-      if (!lastHash) {
-        staleFiles.push(file);
-        continue;
-      }
-
+      const lastHash = frontmatter[hashFieldName];
       const currentBodyHash = getBodyHash(content);
+
       if (currentBodyHash !== lastHash) {
         staleFiles.push(file);
       }
@@ -90,10 +85,6 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
     // Clean up potential trailing separators from the LLM response
     finalBody = responseText.trim().replace(/(\s*---|\s*```)*\s*$/, '');
   }
-
-  const today = new Date().toISOString().split('T')[0];
-  frontmatter.lastFormatted = today;
-  frontmatter.lastStyleCheck = today;
 
   // To ensure hash consistency, we create a temporary stringified version
   // to see what the body will look like after gray-matter processes it.
@@ -149,9 +140,6 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
     finalBody = responseText.trim();
   }
 
-  const today = new Date().toISOString().split('T')[0];
-  frontmatter.lastStyleCheck = today;
-
   const tempContent = matter.stringify(finalBody, frontmatter, { lineWidth: -1 } as any);
   frontmatter.lastStyleHash = getBodyHash(tempContent);
 
@@ -194,8 +182,7 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
     // For now, we will just warn the user.
   }
 
-  const today = new Date().toISOString().split('T')[0];
-  frontmatter.lastFactCheck = today;
+  frontmatter.lastFactCheckHash = getBodyHash(originalContent);
 
   const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
   await fs.writeFile(filePath, newContent, 'utf-8');
@@ -244,8 +231,7 @@ export async function linkCheckFile(filePath: string): Promise<void> {
     console.log(`No broken links found in ${filePath}.`);
   }
 
-  const today = new Date().toISOString().split('T')[0];
-  frontmatter.lastLinkCheck = today;
+  frontmatter.lastLinkCheckHash = getBodyHash(originalContent);
 
   const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
   await fs.writeFile(filePath, newContent, 'utf-8');
@@ -300,8 +286,7 @@ export async function figureCheckFile(filePath: string): Promise<void> {
     console.log(`No design guide violations found in ${filePath}.`);
   }
 
-  const today = new Date().toISOString().split('T')[0];
-  frontmatter.lastFigureCheck = today;
+  frontmatter.lastFigureCheckHash = getBodyHash(originalContent);
 
   const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
   await fs.writeFile(filePath, newContent, 'utf-8');

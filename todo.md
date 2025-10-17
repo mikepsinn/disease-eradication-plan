@@ -1,91 +1,100 @@
-# Book Completion TODO List
+# Project Plan: Automated Content Review & Fixing Engine
 
+This document outlines the plan to create a suite of scripts that automate the content review and fixing process for the DIH knowledge base.
 
-## Phase 1: Content Generation (Expand Placeholder Chapters)
+## I. Core Objectives
 
-### Priority 1: Core Economic/Legal Chapters
-- [x] ~~Expand `brain/book/economics/financial-plan.qmd`~~ - RESTRUCTURED: Now high-level overview linking to detailed files
-- [x] ~~Create `brain/book/economics/campaign-budget.qmd`~~ - COMPLETED: Detailed budget breakdown
-- [ ] Expand `brain/book/economics/central-banks.qmd` (full chapter placeholder)
-- [ ] Expand `brain/book/legal/legal-framework.qmd` (full chapter placeholder)
+1.  **Automate Repetitive Tasks:** Eliminate the manual effort required for formatting, style checks, and source verification.
+2.  **Improve Consistency:** Ensure every file strictly adheres to the guidelines defined in `CONTRIBUTING.md`.
+3.  **Optimize Costs:** Minimize LLM API usage by only reviewing files that have been modified since their last review.
+4.  **Streamline Workflow:** Create a single command that developers can run to validate and fix all staged files before committing.
 
-### Priority 2: Strategy Chapters
-- [ ] Expand `brain/book/strategy/co-opting-defense-contractors.qmd` (full chapter placeholder)
+## II. Frontmatter Strategy
 
-### Priority 3: Reference/Appendix Chapters
-- [ ] Expand `brain/book/reference/global-government-medical-research-spending.qmd` (full chapter placeholder)
+We will adopt a granular frontmatter-based tracking system. The `lastReviewed` field will be deprecated in favor of specific, per-task timestamps.
 
-### Priority 4: Rewrite for Style Consistency
-- [ ] Rewrite `brain/book/economics/health-savings-sharing-model.qmd` to match formal, direct tone (remove marketing language and emojis)
+### New Frontmatter Fields:
+- `lastModified`: To be updated automatically by a script using `git` history.
+- `lastFormatted`: Timestamp for when the formatting script was last run.
+- `lastStyleCheck`: Timestamp for the last automated style/tone review.
+- `lastFactCheck`: Timestamp for the last source and fact verification.
+- `lastLinkCheck`: Timestamp for the last internal and external link validation.
+- `lastFigureCheck`: Timestamp for the last check for visualization opportunities.
 
-## Phase 2: Fact-Checking & Sourcing
+## III. Script Development Plan
 
-### Files with Internal Link TODOs
-- [ ] `brain/book/strategy/1-percent-treaty.qmd`
-  - [ ] Add link to dih-technical-architecture.md (decide if needed)
-  - [ ] Link to detailed tokenomics file (decide if needed)
-  - [ ] Review sections on Cost of War/Disease and ROI (decide if they belong here or should be moved/summarized)
+All scripts will be developed in TypeScript and located in the `scripts/review/` directory.
 
-## Phase 3: Visuals & Illustrations
+### 1. `get-stale-files.ts`
+- **Purpose:** Identify which files need review.
+- **Logic:**
+    - Use `simple-git` to get the last commit date for every `.qmd` file.
+    - Parse the frontmatter of each file to get the review timestamps.
+    - If `lastModified` is more recent than any of the `last...` check dates, the file is "stale" and needs review for that specific check.
+- **Output:** A JSON object mapping each check type to a list of files that need processing.
 
-### Requested Visualizations
+### 2. `format-file.ts` (Enhancement of `check-formatting.ts`)
+- **Purpose:** Automatically fix formatting issues.
+- **Logic:**
+    - Read a file.
+    - Add missing frontmatter fields.
+    - Escape unescaped dollar signs.
+    - Split lines with multiple sentences.
+    - Overwrite the file with the corrected content.
+    - Update the `lastFormatted` timestamp in the frontmatter.
 
-### Figures from OUTLINE.MD to Create
-(Scan OUTLINE.MD for all `[FIGURE:` markers and add them here as we process chapters)
-- [ ] The $119 Trillion Waste (Problem section)
-- [ ] Humanity's Budget Pie Chart (Problem section)
-- [ ] Your Democracy Score: 0% (Problem section)
-- [ ] How Wishocracy Works (Solution section)
-- [ ] The 1% Treaty Visualization (Solution section)
-- [ ] dFDA vs FDA Comparison (Solution section)
-- [ ] 463:1 ROI Comparison (Money section)
-- [ ] The DIH Feedback Loop (Money section)
-- [ ] Death Toll Counter (Money section)
-- [ ] The Two Timelines - Dystopian Path (Futures section)
-- [ ] The Two Timelines - Wishonia Path (Futures section)
+### 3. `check-style.ts`
+- **Purpose:** Review the file for tone, voice, and style guide adherence.
+- **Logic:**
+    - Use an LLM API to analyze the text against the rules in `CONTRIBUTING.md`.
+    - The prompt will instruct the LLM to identify violations of "dark humor," "Factual Mischaracterization," "Stylistic Redundancy," etc.
+- **Output:** A list of suggested improvements. It will **not** auto-fix, as style is subjective.
 
-## Phase 4: Tone & Style Polish
+### 4. `check-facts.ts`
+- **Purpose:** Verify claims against their sources.
+- **Logic:**
+    - Extract all claims with inline citations.
+    - For each claim, fetch the content of the cited source.
+    - Use an LLM API to determine if the source material supports the claim.
+- **Output:** A report of claims that may be misaligned with their sources.
 
-### Chapters Needing Humor/Style Pass
-- [ ] All completed chapters need a final pass for:
-  - [ ] Consistent tone (irreverent, funny, but serious about data)
-  - [ ] Punch lines land properly
-  - [ ] Complex ideas simplified without dumbing down
-  - [ ] Smooth transitions between sections
-  - [ ] Consistent voice throughout
+### 5. `check-links.ts`
+- **Purpose:** Validate all internal and external links.
+- **Logic:**
+    - Extract all markdown links.
+    - For internal links, check if the target file exists.
+    - For external links, make a HEAD request to ensure a `200 OK` response.
+- **Output:** A list of broken links.
 
-### Specific Style Issues Identified
-- [ ] `brain/book/economics/health-savings-sharing-model.qmd` - remove marketing language and emojis
+### 6. `check-figures.ts`
+- **Purpose:** Identify opportunities for new visualizations.
+- **Logic:**
+    - Use an LLM API to read a chapter and identify sections with dense data or complex concepts.
+- **Output:** Suggestions for new charts or diagrams (e.g., "A bar chart comparing X and Y would be effective here.").
 
-## Phase 5: Technical & Structural
+### 7. `review.ts` (Master Orchestrator Script)
+- **Purpose:** Run the entire review and fixing process.
+- **Logic:**
+    1. Run `get-stale-files.ts` to get the list of files to process.
+    2. For each file needing formatting, run `format-file.ts`.
+    3. For each file needing a style check, run `check-style.ts` and log the suggestions.
+    4. ...and so on for all other checks.
+- **Usage:** `npx ts-node scripts/review/review.ts`
 
-### Rendering & Link Verification
-- [ ] Run `quarto render` and verify no broken links
-- [ ] Verify all cross-references work correctly
-- [ ] Check all anchor links in references.qmd
+## IV. Implementation Roadmap
 
-### Final Review
-- [ ] Ensure OUTLINE.MD and _quarto.yml remain in sync
-- [ ] Verify all appendices are properly categorized
-- [ ] Check that all chapter titles match between files and _quarto.yml
+- [ ] **Phase 1: Foundational Scripts**
+    - [ ] Update `CONTRIBUTING.md` with the new frontmatter fields.
+    - [ ] Develop `get-stale-files.ts` to identify target files.
+    - [ ] Enhance `check-formatting.ts` into the auto-fixing `format-file.ts`.
+- [ ] **Phase 2: LLM-Powered Checks**
+    - [ ] Develop `check-style.ts`.
+    - [ ] Develop `check-facts.ts`.
+    - [ ] Develop `check-figures.ts`.
+- [ ] **Phase 3: Finalization & Integration**
+    - [ ] Develop `check-links.ts`.
+    - [ ] Build the master `review.ts` orchestrator script.
+    - [ ] Add a `pnpm` script in `package.json` (e.g., `"review": "npx ts-node scripts/review/review.ts"`).
+    - [ ] (Optional) Integrate the `review` script into a pre-commit hook using `husky`.
 
----
-
-## Notes on Workflow
-
-**Phase Order**: Complete each phase sequentially for best results
-1. Generate all content first (so we know what needs sourcing)
-2. Fact-check and source everything (so we know the facts are solid)
-3. Add visuals (to enhance the verified content)
-4. Polish tone (final creative pass on completed, verified content)
-
-**Automation Opportunities**:
-- AI-assisted drafting of placeholder chapters based on OUTLINE.MD
-- Automated web search for sources
-- Automated insertion of source links
-- Batch processing of style checks
-
-**Quality Standards**:
-- Every numerical claim must have a source in references.qmd
-- Every placeholder `TODO` must be resolved before moving to next phase
-- Every figure mentioned in text must either exist or have a detailed creation spec
+This plan provides a clear, phased approach to building a powerful, cost-effective automated review system.
