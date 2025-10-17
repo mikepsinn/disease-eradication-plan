@@ -360,35 +360,48 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
 2. Distinguish between THREE types of claims:
 
    **TYPE A - EXTERNAL FACTS (need external citations to references.qmd):**
-   - Current/historical statistics from real-world sources (e.g., "Global military spending is $2.44 trillion")
-   - Published research findings or studies
-   - Historical events or data
-   - Statements about existing organizations, policies, or systems
+   - Current/historical statistics from real-world sources (e.g., "Global military spending is $2.44 trillion in 2024")
+   - Published research findings or studies from external sources
+   - Historical events or data points
+   - Statements about existing real-world organizations, policies, or systems
+   - Statistics that existed BEFORE this book was written
 
-   **TYPE B - INTERNAL PROPOSALS/CALCULATIONS (can link to other book chapters):**
-   - The book's own proposals (e.g., "the 1% Treaty")
-   - Calculations based on the book's models (e.g., "$270 billion per year from 1% Treaty")
-   - Projections or estimates made by this book
-   - Economic models described in other chapters
-   → For these, link to the relevant CHAPTER from the BOOK STRUCTURE below (not references.qmd)
+   **TYPE B - INTERNAL PROPOSALS/CALCULATIONS (link sparingly or not at all):**
+   - The book's own proposals and terminology (e.g., "the 1% Treaty", "dFDA", "Wishocracy")
+     → Link ONLY the FIRST mention of key concepts to their defining chapter
+     → DO NOT link every subsequent mention - readers know what these are after first reference
+   - Dollar amounts DERIVED from the book's proposals (e.g., "$270B per year" comes from 1% of $27T)
+     → These are OUR CALCULATIONS, not external facts - DO NOT link to references.qmd
+     → If needed, link to the chapter explaining the calculation, but prefer no link
+   - Projections based on the book's models (e.g., "$74,259 saved per person from our Treaty model")
+     → These are OUR PROJECTIONS, not external data - DO NOT link to references.qmd
+   - Future timeline estimates made by this book (e.g., "2055 projected median wealth")
+     → These are OUR PREDICTIONS, not citations - DO NOT link to references.qmd
 
    **TYPE C - NO CITATION NEEDED:**
    - General statements or obvious facts
    - Author's opinions or arguments
-  - Commonly known information
+   - Commonly known information
    - Metaphors, analogies, or hypothetical examples
    - Mathematical calculations or conversions that are self-evident
    - Future scenarios or aspirational visions (e.g., "Cancer becomes treatable")
    - Rhetorical devices or colorful language
    - Thought experiments or illustrations
+   - Repeated mentions of already-introduced concepts
 
-3. **CRITICAL: DO NOT modify text that is already linked!**
+3. **LINKING RULES:**
+   - **DO NOT over-link**: Link a term/concept only ONCE (first significant mention), not every time it appears
+   - **DO NOT link internal calculations to references.qmd**: If a number comes from the book's own model, either don't link it or link to the chapter explaining the calculation
+   - Be conservative with links - only add them when absolutely necessary for credibility
+
+4. **CRITICAL: DO NOT modify text that is already linked!**
    - If text already has a markdown link like [text](url), leave it completely unchanged
    - Only add links to PLAIN TEXT that needs a citation
    - Examples of text to IGNORE (leave unchanged):
      * [existing link](./problem/file.qmd)
      * [existing link](../references.qmd#some-id)
      * [existing link](https://example.com)
+
 5. For each UNCITED claim that NEEDS a source:
    - If an existing reference in EXISTING REFERENCES supports it (even loosely), add a link: [claim](${referencesPath}#anchor-id)
    - If no suitable existing reference exists, create a new placeholder reference entry
