@@ -4,7 +4,7 @@ import { simpleGit } from 'simple-git';
 import { glob } from 'glob';
 import crypto from 'crypto';
 import ignore from 'ignore';
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI, Type } from '@google/genai';
 import Anthropic from '@anthropic-ai/sdk';
 import dotenv from 'dotenv';
 import path from 'path';
@@ -192,30 +192,55 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
     for (const claim of claims) {
       const sourceFindingPrompt = `Find authoritative sources to verify this claim: "${claim}"
 
-      Search for reliable sources and return JSON with this format:
-      {
-        "claim": "the original claim",
-        "sources": [
-          {
-            "title": "source title",
-            "url": "source URL",
-            "snippet": "relevant excerpt that supports the claim"
-          }
-        ],
-        "verified": true/false
-      }`;
+      Search for reliable sources using Google Search. If you find credible sources, return verified: true and include the source details. If you cannot verify the claim, return verified: false.`;
 
       try {
         const sourceResult = await genAI.models.generateContent({
           model: GEMINI_MODEL_ID,
           contents: sourceFindingPrompt,
           config: {
-            tools: [{ googleSearch: {} }]
+            tools: [{ googleSearch: {} }],
+            responseMimeType: "application/json",
+            responseSchema: {
+              type: Type.OBJECT,
+              properties: {
+                claim: {
+                  type: Type.STRING,
+                  description: "The original claim being verified"
+                },
+                verified: {
+                  type: Type.BOOLEAN,
+                  description: "Whether the claim was verified with credible sources"
+                },
+                sources: {
+                  type: Type.ARRAY,
+                  description: "Array of sources that verify the claim",
+                  items: {
+                    type: Type.OBJECT,
+                    properties: {
+                      title: {
+                        type: Type.STRING,
+                        description: "Title of the source"
+                      },
+                      url: {
+                        type: Type.STRING,
+                        description: "URL of the source"
+                      },
+                      snippet: {
+                        type: Type.STRING,
+                        description: "Relevant excerpt from the source"
+                      }
+                    },
+                    required: ["title", "url", "snippet"]
+                  }
+                }
+              },
+              required: ["claim", "verified", "sources"]
+            }
           }
         });
 
-        const sourceText = (sourceResult.text || '').replace(/```json|```/g, '').trim();
-        const sourceData = JSON.parse(sourceText);
+        const sourceData = JSON.parse(sourceResult.text || '{}');
 
         if (sourceData.verified && sourceData.sources && sourceData.sources.length > 0) {
           // Create reference entry with anchor
