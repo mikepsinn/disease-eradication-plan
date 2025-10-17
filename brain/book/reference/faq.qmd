@@ -5,9 +5,8 @@ published: true
 date: "2025-09-27T00:00:00.000Z"
 tags: [faq, objections, counter-arguments, q-a, security, feasibility]
 dateCreated: "2025-09-27T00:00:00.000Z"
+lastFactCheckHash: e09e434bf63dd6fdb5f3549892240af39aa8c2e79ba00037304d2cfaa8ce3710
 ---
-
-
 People have questions. Here are answers, with appropriate levels of sarcasm for particularly ridiculous objections.
 
 ---
@@ -32,7 +31,7 @@ People have questions. Here are answers, with appropriate levels of sarcasm for 
 
 ### "This is too complicated to build."
 
-**Reality:** We're assembling proven components, not inventing new technology. DAOs like MakerDAO already manage billions securely. We use battle-tested solutions for treasury management, governance, and secure voting integrated into a unified system.
+**Reality:** We're assembling proven components, not inventing new technology. DAOs like [MakerDAO already manage billions securely](../references.qmd#makerdao-scale). We use battle-tested solutions for treasury management, governance, and secure voting integrated into a unified system.
 
 ### "280M people can't be verified reliably."
 
@@ -40,16 +39,16 @@ People have questions. Here are answers, with appropriate levels of sarcasm for 
 
 **Our Solution:** Several computerized methods to catch fake votes:
 
-- **Government IDs:** Connect with national e-ID systems (Estonia, India, EU)
+- **Government IDs:** Connect with national e-ID systems ([Estonia](../references.qmd#estonia-eresidency-stats), [India](../references.qmd#indian-aadhaar-system), [EU](../references.qmd#eu-eidas-network))
 - **Biometrics:** Fingerprints and face scans to ensure real, unique people
 - **AI Fraud Detection:** Computers that spot fake patterns and suspicious behavior
-- **Mathematical Verification:** End-to-end verifiable voting with zero-knowledge proofs
+- **Mathematical Verification:** [End-to-end verifiable voting](../references.qmd#helios-voting) with zero-knowledge proofs
 
 **Bottom Line:** We use proven technologies that already verify millions of users globally.
 
 ### "Aren't blockchains environmentally disastrous? How can you save humanity while boiling the oceans?"
 
-**Reality:** This is a valid concern based on early blockchain technology. However, the DIH will be built on modern, energy-efficient **Proof-of-Stake (PoS)** consensus mechanisms, which consume over 99.9% less energy than their Proof-of-Work predecessors. Our commitment to global health includes planetary health; we'll build this the right way.
+**Reality:** This is a valid concern based on early blockchain technology. However, the DIH will be built on modern, energy-efficient **[Proof-of-Stake (PoS) consensus mechanisms, which consume over 99.9% less energy than their Proof-of-Work predecessors](../references.qmd#pos-energy-efficiency)**. Our commitment to global health includes planetary health; we'll build this the right way.
 
 ### "The crypto world is full of scams. Why should we trust a plan built on such a risky foundation?"
 
@@ -61,11 +60,11 @@ People have questions. Here are answers, with appropriate levels of sarcasm for 
 
 ### "This is politically impossible - you can't just redirect military budgets by referendum."
 
-**Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether enough pressure can be generated. The $7T fossil fuel subsidy proof-of-concept shows that massive economic reallocation is achievable when the right incentives align. This isn't asking for unilateral disarmament - this asks all nations to move 1% together, maintaining relative power balances.
+**Reality:** Military budgets are redirected all the time through political pressure. The question isn't whether it's possible, but whether enough pressure can be generated. The [$7T fossil fuel subsidy](../references.qmd#fossil-fuel-subsidies) proof-of-concept shows that massive economic reallocation is achievable when the right incentives align. This isn't asking for unilateral disarmament - this asks all nations to move 1% together with a [1% Treaty](../solution/1-percent-treaty.qmd), maintaining relative power balances.
 
 ### "The 3.5% rule applies to civil resistance movements, not global online referendums."
 
-**Reality:** Mass participation creates political legitimacy regardless of format. 280 million verified supporters create an unignorable political mandate with electoral consequences.
+**Reality:** Mass participation creates political legitimacy regardless of format. The [3.5% rule](../references.qmd#3-5-rule) is a historical benchmark for successful movements, and 280 million verified supporters create an unignorable political mandate with electoral consequences.
 
 ### "Independent expenditures don't work against entrenched incumbents with deep pockets."
 
@@ -84,7 +83,7 @@ The 1% Treaty is designed to be geopolitically neutral. Since every nation reduc
 National security is actually increased for two reasons:
 
 1. Every potential adversary has 1% fewer resources for offensive weapons
-2. The greatest modern threats are not always conventional armies. A global pandemic can inflict more devastation than most military conflicts. The DIH acts as a planetary defense system against these biological threats, providing a far greater return on investment for protecting citizens.
+2. The greatest modern threats are not always conventional armies. A [global pandemic can inflict more devastation than most military conflicts](../references.qmd#pandemics-vs-wars). The [DIH](../solution/dih.qmd) acts as a planetary defense system against these biological threats, providing a far greater return on investment for protecting citizens.
 
 ---
 
@@ -106,9 +105,9 @@ This is the classic "free-rider problem." The solution is to create overwhelming
 
 ### "Why cut military if others won't?"
 
-**Why This Objection is Overstated:** The US already can't account for $2.5 trillion in assets, more than 250 times the $10 billion annual US contribution to this plan. Redirecting 1% is trivial compared to existing waste. Other nations' military spending is relatively small (US represents ~40% of global total). Even if holdouts don't comply, they won't catch up to US capabilities.
+**Why This Objection is Overstated:** The US already can't account for [$2.5 trillion in assets](../references.qmd#pentagon-unaccounted-2-5t), more than 250 times the $10 billion annual US contribution to this plan. Redirecting 1% is trivial compared to existing waste. Other nations' military spending is relatively small (US represents [~40% of global total](../references.qmd#us-mil-spending-share)). Even if holdouts don't comply, they won't catch up to US capabilities.
 
-**Here's the thing:** If we don't do this, we'll probably all die from nuclear war or get eaten by robots. A U.S.–Russia nuclear exchange would loft ~150 Tg of soot and cause global famine killing >5 billion people. Even if this plan only works partially, it's still better than the alternative. Which is death.
+**Here's the thing:** If we don't do this, we'll probably all die from nuclear war or get eaten by robots. A [U.S.–Russia nuclear exchange would loft ~150 Tg of soot and cause global famine killing >5 billion people](../references.qmd#nuke-winter-150tg). Even if this plan only works partially, it's still better than the alternative. Which is death.
 
 ---
 
@@ -116,9 +115,9 @@ This is the classic "free-rider problem." The solution is to create overwhelming
 
 ### "What if this fails? Where's my return?"
 
-**Response:** Our financing follows two simple rules, not the usual Wall Street bullshit. We're not making money by gambling on stocks or crypto. We're making money by taking a tiny slice of the $16.5 trillion humanity wastes on violence every year.
+**Response:** Our financing follows two simple rules, not the usual Wall Street bullshit. We're not making money by gambling on stocks or crypto. We're making money by taking a tiny slice of the [$16.5 trillion humanity wastes on violence every year](../references.qmd#global-violence-costs).
 
-The model targets a **~40% CAGR (~28x return)** for early investors, compared to the best hedge funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**.
+The model targets a **270%/year return** for investors, compared to the best hedge funds, while guaranteeing at least 50% of income for the mission. Even in a partial success scenario (e.g., US/EU/UK adoption), the model provides a **year-one cash payout of 2.6X the initial investment**.
 
 **Risk Mitigation:** Assurance Contracts (funds returned if goals aren't met), clear milestone gates for funding release, and diversified repayment from multiple government commitments.
 
@@ -138,9 +137,9 @@ The goal is not to reshuffle a small pot of charitable giving, it is to tap into
 
 ### "How do you prevent waste and ensure the money actually helps patients?"
 
-**Reality:** The decentralized FDA uses decentralized pragmatic trials that cost $500 per patient vs. $41,000 traditional trials - an 80X efficiency improvement proven by the Oxford RECOVERY trial.
+**Reality:** The [decentralized FDA](../solution/dfda.qmd) uses decentralized pragmatic trials that cost [$500 per patient](../references.qmd#recovery-cost-500) vs. [$41,000 traditional trials](../references.qmd#trial-cost-41k) - an [80X efficiency improvement](../references.qmd#recovery-trial-82x-cost-reduction) proven by the [Oxford RECOVERY trial](../references.qmd#recovery-trial-efficiency).
 
-Compare this to the NIH RECOVER initiative: $1.6B budget, $53,333 per patient, zero completed trials in 4 years. With the same $1.6B budget, the dFDA could run 2,800 trials enrolling 2.8 million patients vs. NIH's zero completed trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
+Compare this to the [NIH RECOVER initiative](../references.qmd#nih-recover-inefficiency): $1.6B budget, $53,333 per patient, zero completed trials in 4 years. With the same $1.6B budget, the dFDA could run 2,800 trials enrolling 2.8 million patients vs. NIH's zero completed trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
 
 ### "How does this help patients vs. just funding more bureaucracy?"
 
@@ -166,7 +165,7 @@ A **direct, treaty-bound reallocation** is the only mechanism that forces a true
 
 ### "Don't we already spend enough on medical research?"
 
-**Reality:** The world spends 40 times more on military force than on medical research. The $20-27 billion unlocked by the 1% Treaty would represent a nearly 40% increase in the entire world's budget for medical R&D. It is a massive, not incremental, sum of money. This new funding, when deployed through an 80X more efficient model, will have a multiplicative impact on the rate of cures.
+**Reality:** The world spends [40 times more on military force than on medical research](../references.qmd#disparity-ratio-weapons-vs-cures). The $20-27 billion unlocked by the 1% Treaty would represent a nearly 40% increase in the entire world's budget for medical R&D. It is a massive, not incremental, sum of money. This new funding, when deployed through an 80X more efficient model, will have a multiplicative impact on the rate of cures.
 
 ### "What about the millions of jobs in the defense industry? This is a threat to their livelihoods."
 
@@ -186,12 +185,12 @@ We propose redirecting a fraction of that waste to protect soldiers and their fa
 
 ### "This violates election and securities law."
 
-**The Challenge:** Foreign nationals funding US elections is illegal; VICTORY bonds risk securities violations.
+**The Challenge:** Foreign nationals funding US elections is illegal; [VICTORY bonds](../economics/victory-bonds.qmd) risk securities violations.
 
 **Our Solution:** We keep everything completely separate and hire good lawyers:
 
 - **Completely separate companies** with zero coordination between US and international operations
-- **Following money rules** like utility token structures with proper exemptions (Reg S, Reg A+)
+- **Following money rules** like utility token structures with proper exemptions ([Reg S](../references.qmd#sec-reg-s), [Reg A+](../references.qmd#sec-reg-a))
 - **Separate operations in each country** with different legal entities and lawyers
 - **Completely separate systems** with no shared systems, staff, or communication between entities
 
@@ -209,7 +208,7 @@ We propose redirecting a fraction of that waste to protect soldiers and their fa
 
 ### "What if major powers sabotage it?"
 
-**Response:** Start with friendly countries (US/EU covering 55% of spending), using bribes to pull in others, holdouts like Russia (<10% share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification.
+**Response:** Start with friendly countries ([US/EU covering 55% of spending](../references.qmd#us-eu-military-spending-share)), using bribes to pull in others, holdouts like [Russia (<10% share)](../references.qmd#russia-military-spending-share) can't derail the math. Sabotage attempts (e.g., disinformation) are countered by blockchain verification.
 
 **Alternative:** Unchecked geopolitics risks nuclear winter (US–Russia exchange scenarios modeled at ~150 Tg soot leading to >5B famine deaths)—this reduces that by 1% globally even with partial adoption.
 
@@ -218,4 +217,3 @@ We propose redirecting a fraction of that waste to protect soldiers and their fa
 ---
 
 *Source: Consolidated from original FAQ.md and enhanced with project tone and updated cross-references.*
-

@@ -5,17 +5,17 @@ published: true
 date: 2025-08-01T21:50:13.908Z
 tags: [clinical-trials, real-world-evidence, health-outcomes, decentralized-trials, historical-evidence]
 dateCreated: 2025-02-18T04:39:38.486Z
+lastFactCheckHash: 289a128174d6a01bc98f20b94c29bd7206963d57810a4bce559c56426292de44
 ---
-
 Large scale efficacy-trials based on real-world evidence have ultimately led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
 
-For over 99% of recorded human history, the average human life expectancy has been around 30 years.
+For over 99% of recorded human history, [the average human life expectancy has been around 30 years](../references.qmd#historical-life-expectancy-30-years).
 
 ![historical life expectancy](https://static.crowdsourcingcures.org/dfda/assets/life-expectancy-historical.jpg)
 
 **1893 – The Advent of Safety and Efficacy Trials**
 
-In the late nineteenth and early twentieth century, clinical objectivity grew. The independent peer-reviewed Journal of the American Medical Association (JAMA) was founded in 1893. It would gather case reports from the 144,000 physicians members of the AMA on the safety and effectiveness of drugs. The leading experts in the area of a specific medicine would review all the case reports and compile them into a study, listing side effects and the conditions for which a drug was or was not effective. If a medicine were found to be safe, JAMA would give its seal of approval for the conditions where it was found to be effective.
+In the late nineteenth and early twentieth century, clinical objectivity grew. [The independent peer-reviewed Journal of the American Medical Association (JAMA) was founded in 1893](../references.qmd#jama-founded-1893). It would gather case reports from the [144,000 physicians](../references.qmd#pre-1962-physician-trials) members of the AMA on the safety and effectiveness of drugs. The leading experts in the area of a specific medicine would review all the case reports and compile them into a study, listing side effects and the conditions for which a drug was or was not effective. If a medicine were found to be safe, JAMA would give its seal of approval for the conditions where it was found to be effective.
 
 The adoption of this system of crowdsourced, observational, objective, and peer-reviewed clinical research was followed by a sudden shift in the growth of human life expectancy. After over 10,000 years of almost no improvement, we suddenly saw a strangely linear 4-year increase in life expectancy every single year.
 
@@ -37,19 +37,19 @@ This suggests that the regulations did not have a large-scale positive or negati
 
 #### **1950**'s – Thalidomide **Causes Thousands of Birth Defects Outside US**
 
-Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki/Thalidomide) for morning sickness. While it was initially thought to be safe in pregnancy, it resulted in thousands of horrific congenital disabilities.
+Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki/Thalidomide) for morning sickness. While it was initially thought to be safe in pregnancy, [it resulted in thousands of horrific congenital disabilities](../references.qmd#thalidomide-birth-defects).
 
-Fortunately, the existing FDA safety regulations prevented any birth defects in the US. Despite the effectiveness of the existing US regulatory framework in protecting Americans, newspaper stories such as the one below created a strong public outcry for increased regulation.
+Fortunately, [the existing FDA safety regulations prevented any birth defects in the US](../references.qmd#thalidomide-no-us-birth-defects). Despite the effectiveness of the existing US regulatory framework in protecting Americans, newspaper stories such as the one below created a strong public outcry for increased regulation.
 
 ![Thalidomide](https://static.crowdsourcingcures.org/dfda/assets/thalidomide.jpg)
 
 #### 1962 – New **Efficacy Regulations Reduce the Amount and Quality of Efficacy Data Collected**
 
-As effective **safety** regulations were already in place, the government instead responded to the Thalidomide disaster by regulating **efficacy** testing via the 1962 Kefauver Harris Amendment. Before the 1962 regulations, it cost a drug manufacturer an average of $74 million (2020 inflation-adjusted) to develop and test a new drug for safety before bringing it to market. Once the FDA had approved it as safe, efficacy testing was performed by the third-party American Medical Association. Following the regulation, trials were instead to be conducted in small, highly-controlled trials by the pharmaceutical industry.
+As effective **safety** regulations were already in place, the government instead responded to the Thalidomide disaster by regulating **efficacy** testing via the [1962 Kefauver Harris Amendment](../references.qmd#kefauver-harris-amendment-1962). Before the 1962 regulations, [it cost a drug manufacturer an average of $74 million (2020 inflation-adjusted)](../references.qmd#pre-1962-drug-costs-timeline) to develop and test a new drug for safety before bringing it to market. Once the FDA had approved it as safe, [efficacy testing was performed by the third-party American Medical Association](../references.qmd#pre-1962-physician-trials). Following the regulation, trials were instead to be conducted in small, highly-controlled trials by the pharmaceutical industry.
 
 **Reduction in Efficacy Data**
 
-The 1962 regulations made these large real-world efficacy trials illegal. Ironically, even though the new regulations were primarily focused on ensuring that drugs were effective through controlled FDA efficacy trials, they massively reduced the quantity and quality of the efficacy data that was collected for several reasons:
+The 1962 regulations [made these large real-world efficacy trials illegal](../references.qmd#kefauver-harris-amendment-1962). Ironically, even though the new regulations were primarily focused on ensuring that drugs were effective through controlled FDA efficacy trials, they massively reduced the quantity and quality of the efficacy data that was collected for several reasons:
 
 - New Trials Were Much Smaller
 - Participants Were Less Representative of Actual Patients
@@ -57,7 +57,7 @@ The 1962 regulations made these large real-world efficacy trials illegal. Ironic
 
 **Reduction in New Treatments**
 
-The new regulatory clampdown on approvals immediately reduced the production of new treatments by 70%.
+The new regulatory clampdown on approvals immediately [reduced the production of new treatments by 70%](../references.qmd#post-1962-drug-approval-drop).
 
 ![](https://static.crowdsourcingcures.org/dfda/assets/new-treatments-per-year-2.png)
 
@@ -69,7 +69,7 @@ Since the abandonment of the former efficacy trial model, costs have exploded. S
 
 **Increase in Patent Monopoly**
 
-Industry agitation surrounding the "drug lag" finally led to the modification of the drug patenting system in the Drug Price Competition and Patent Term Restoration Act of 1984. This further extended the life of drug patents. Thus, Kefauver's amendments ultimately made drugs more expensive by granting longer monopolies.
+Industry agitation surrounding the "drug lag" finally led to the modification of the drug patenting system in the [Drug Price Competition and Patent Term Restoration Act of 1984](../references.qmd#drug-price-competition-act-1984). This further extended the life of drug patents. Thus, Kefauver's amendments ultimately made drugs more expensive by granting longer monopolies.
 
 **Decreased Ability to Determine Comparative Efficacy**
 
@@ -77,7 +77,7 @@ The placebo-controlled, randomized controlled trial helped researchers gauge the
 
 **Slowed Growth in Life Expectancy**
 
-From 1890 to 1960, there was a linear 4-year increase in human lifespan every year. This amazingly linear growth rate had followed millennia with a flat human lifespan of around 28 years. Following this new 70% reduction in the pace of medical progress, the growth in human lifespan was immediately cut in half to an increase of 2 years per year.
+From 1890 to 1960, there was [a linear 4-year increase in human lifespan every year](../references.qmd#life-expectancy-increase-pre-1962). This amazingly linear growth rate had followed millennia with [a flat human lifespan of around 28 years](../references.qmd#historical-life-expectancy-30-years). Following this new 70% reduction in the pace of medical progress, [the growth in human lifespan was immediately cut in half](../references.qmd#post-1962-life-expectancy-slowdown) to an increase of 2 years per year.
 
 ![Average Life Expectancy Over Time](https://static.crowdsourcingcures.org/dfda/assets/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
 
