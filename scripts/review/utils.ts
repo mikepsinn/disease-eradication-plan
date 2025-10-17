@@ -211,7 +211,14 @@ function parseReferences(referencesContent: string): Reference[] {
       const line = lines[i].trim();
 
       // Skip empty lines
-      if (!line) continue;
+      if (!line) {
+        // Empty line ends current quote
+        if (currentQuote) {
+          quotes.push(currentQuote.trim());
+          currentQuote = '';
+        }
+        continue;
+      }
 
       // Lines starting with > are quotes or source
       if (line.startsWith('>')) {
@@ -239,6 +246,10 @@ function parseReferences(referencesContent: string): Reference[] {
             currentQuote = content;
           }
         }
+      } else if (currentQuote && !line.startsWith('<') && !line.startsWith('-')) {
+        // Continuation line without > prefix (edge case in original file)
+        // Only include if we're already in a quote and it's not HTML/markdown syntax
+        currentQuote += '\n' + line;
       }
     }
 
