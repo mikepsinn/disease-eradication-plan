@@ -493,6 +493,9 @@ ${body}`;
   // Reconstruct file preserving original frontmatter format
   let newContent: string;
   if (originalFrontmatterText) {
+    // Ensure body ends with exactly one newline
+    const normalizedBody = body.trimEnd() + '\n';
+
     // Update only the lastFactCheckHash field in the original frontmatter
     const updatedFrontmatter = originalFrontmatterText.replace(
       /(lastFactCheckHash:\s*)[^\n]*/,
@@ -503,9 +506,9 @@ ${body}`;
       newContent = originalFrontmatterText.replace(
         /\n---$/,
         `\nlastFactCheckHash: ${frontmatter.lastFactCheckHash}\n---`
-      ) + '\n' + body;
+      ) + '\n' + normalizedBody;
     } else {
-      newContent = updatedFrontmatter + '\n' + body;
+      newContent = updatedFrontmatter + '\n' + normalizedBody;
     }
   } else {
     // Fallback to gray-matter if no frontmatter found
