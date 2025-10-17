@@ -22,9 +22,11 @@ const API_KEY = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
 if (!API_KEY) {
   throw new Error('GOOGLE_GENERATIVE_AI_API_KEY is not set in the .env file.');
 }
-const genAI = new GoogleGenAI(API_KEY);
-const geminiModel = genAI.getGenerativeModel({ model: GEMINI_MODEL_ID });
-const geminiModelWithSearch = genAI.getGenerativeModel({ model: GEMINI_MODEL_ID, tools: [{ googleSearch: {} }] });
+
+// Initialize Google Generative AI client
+const genAI = new GoogleGenAI({
+  apiKey: API_KEY
+});
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -78,9 +80,11 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   const formattingGuide = await fs.readFile('FORMATTING_GUIDE.md', 'utf-8');
   const prompt = `${formattingGuide}\n\nYour task is to reformat the following file content based *only* on the rules above. **If the file already conforms to all rules, you MUST return the special string "NO_CHANGES_NEEDED".** Otherwise, return *only* the corrected file content, with no other text or separators.`;
 
-  const result = await geminiModel.generateContent(prompt + `\n\n**File Content to Reformulate:**\n${body}`);
-  const response = await result.response;
-  const responseText = response.text();
+  const result = await genAI.models.generateContent({
+    model: GEMINI_MODEL_ID,
+    contents: prompt + `\n\n**File Content to Reformulate:**\n${body}`
+  });
+  const responseText = result.text || '';
 
   let finalBody;
   if (responseText.trim() === 'NO_CHANGES_NEEDED') {
@@ -160,7 +164,7 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
 
   const citationGuide = await fs.readFile('CONTRIBUTING.md', 'utf-8');
   const claimIdentificationPrompt = `You are an expert fact-checker. Your task is to identify all factual claims in the provided text that are not properly cited.
-  
+
   **CRITICAL INSTRUCTIONS:**
   1. A "factual claim" is a statement with specific data, statistics, or verifiable facts.
   2. A claim is "cited" if it's a markdown link to "references.qmd".
@@ -170,9 +174,11 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
   **Text to Analyze:**
   ${body}`;
 
-  const result = await geminiModel.generateContent(claimIdentificationPrompt + `\n\n**Text to Analyze:**\n${body}`);
-  const response = await result.response;
-  const responseText = response.text().trim();
+  const result = await genAI.models.generateContent({
+    model: GEMINI_MODEL_ID,
+    contents: claimIdentificationPrompt
+  });
+  const responseText = (result.text || '').trim();
 
   if (responseText === 'NO_UNCITED_CLAIMS_FOUND') {
     console.log(`No uncited claims found in ${filePath}.`);
@@ -184,20 +190,46 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
     let referencesToAdd = '';
 
     for (const claim of claims) {
-      const sourceFindingPrompt = `You are a research assistant...`; // Prompt truncated
+      const sourceFindingPrompt = `Find authoritative sources to verify this claim: "${claim}"
+
+      Search for reliable sources and return JSON with this format:
+      {
+        "claim": "the original claim",
+        "sources": [
+          {
+            "title": "source title",
+            "url": "source URL",
+            "snippet": "relevant excerpt that supports the claim"
+          }
+        ],
+        "verified": true/false
+      }`;
 
       try {
-        const sourceResult = await geminiModelWithSearch.generateContent(sourceFindingPrompt);
-        const sourceResponse = await sourceResult.response;
-        const sourceText = sourceResponse.text().replace(/```json|```/g, '').trim();
-        const sourceData = JSON.parse(sourceText);
-        
-        const anchorMatch = sourceData.snippet.match(/<a id="([^"]+)"><\/a>/);
-        const anchorId = anchorMatch ? anchorMatch[1] : `anchor-${crypto.randomBytes(4).toString('hex')}`;
+        const sourceResult = await genAI.models.generateContent({
+          model: GEMINI_MODEL_ID,
+          contents: sourceFindingPrompt,
+          config: {
+            tools: [{ googleSearch: {} }]
+          }
+        });
 
-        referencesToAdd += `\n${sourceData.snippet}\n`;
-        const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `[${claim}](../references.qmd#${anchorId})`);
+        const sourceText = (sourceResult.text || '').replace(/```json|```/g, '').trim();
+        const sourceData = JSON.parse(sourceText);
+
+        if (sourceData.verified && sourceData.sources && sourceData.sources.length > 0) {
+          // Create reference entry with anchor
+          const anchorId = `ref-${crypto.randomBytes(4).toString('hex')}`;
+          const referenceEntry = `\n<a id="${anchorId}"></a>\n**${sourceData.sources[0].title}**\n${sourceData.sources[0].snippet}\n[Source](${sourceData.sources[0].url})\n`;
+
+          referencesToAdd += referenceEntry;
+          const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `[${claim}](../references.qmd#${anchorId})`);
+
+          console.log(`✓ Found source for: "${claim.substring(0, 50)}..."`);
+        } else {
+          throw new Error('No verified sources found');
+        }
 
       } catch (error) {
         console.error(`Failed to find source for claim: "${claim}". Adding TODO.`, error);
