@@ -5,12 +5,11 @@ published: true
 date: "2025-09-27T00:00:00.000Z"
 tags: [dih, integration, insurance-model, healthcare-system]
 dateCreated: "2025-09-27T00:00:00.000Z"
+lastFactCheckHash: 6ec42e4ca3e32422d558c8d0d0a0c2745aceddb1a774de089af5439d2f7ff3ec
 ---
-
-
 ## The Core Insight: DIH as a Trial Insurance Provider
 
-The DIH doesn't disrupt healthcare - it enhances it by functioning like an insurance company that covers clinical trial participation.
+The [DIH](../solution/dih.qmd) doesn't disrupt healthcare - it enhances it by functioning like an insurance company that covers clinical trial participation.
 
 ## How It Actually Works (The Realistic Model)
 
@@ -161,10 +160,10 @@ graph TD
 
 Before the 1962 Kefauver-Harris Amendment:
 
-- Doctors could prescribe experimental treatments
+- [Doctors could prescribe experimental treatments](../references.qmd#pre-1962-physician-trials)
 - Patients and doctors decided together
 - Innovation happened at bedside
-- FDA only regulated safety, not efficacy
+- [FDA only regulated safety, not efficacy](../references.qmd#fda-pre-1962-mandate)
 
 **We're bringing this back, but with:**
 
@@ -185,7 +184,7 @@ Before the 1962 Kefauver-Harris Amendment:
 - Data collection: $10/month (automated)
 
 **Total DIH cost per patient:** $360-2,710/month
-**Traditional trial cost per patient:** $6,800-13,600/month
+**Traditional trial cost per patient:** [$6,800-13,600/month](../references.qmd#trial-costs-fda-study)
 
 **Efficiency gain: 75-80% cost reduction**
 

@@ -5,15 +5,15 @@ published: true
 date: "2025-09-22T00:00:00.000Z"
 tags: [solution, wishocracy, governance, ai, collective-intelligence, resource-allocation, democracy-but-working]
 dateCreated: "2025-09-22T00:00:00.000Z"
+lastFactCheckHash: eab100eb63eb0c4bb66d0bf37e96c1318df0efe4ceb76d9fd2447bfa7870b92f
 ---
-
-Congratulations! You've passed the 1% Treaty and now you've got $27B/year to allocate.  How [continue]
+Congratulations! You've passed the [1% Treaty](./1-percent-treaty.qmd) and now you've got $27B/year to allocate.  How [continue]
 
 ---
 
 ## Wishocracy: What If We Let Everyone Decide, But Cleverly
 
-Wishocracy is democracy designed by someone who actually understands math and psychology.
+[Wishocracy](./wishocracy.qmd) is democracy designed by someone who actually understands math and psychology.
 
 Instead of asking 8 billion people to understand everything (impossible), we ask them to make tiny decisions they can actually handle.
 
@@ -81,7 +81,7 @@ APPA sounds complex because academics need tenure. It's actually simple:
 10. [Random guessing]
 11-20. [Fuck it]
 
-Your brain gives up around item 7. You're not stupid; you're human. This is like asking a goldfish to do your taxes.
+Your brain gives up around [item 7](../references.qmd#cognitive-limit-seven-items). You're not stupid; you're human. This is like asking a goldfish to do your taxes.
 
 ### How APPA Makes It Simple
 
@@ -106,9 +106,9 @@ It's like those Facebook quizzes that tell you which Harry Potter character you 
 When millions of people make pairwise choices:
 
 - Random pairs prevent gaming
-- Statistical models (Bradley-Terry, PageRank) extract global preferences
+- [Statistical models (Bradley-Terry, PageRank)](../references.qmd#bradley-terry-pagerank-models) extract global preferences
 - Outliers cancel out
-- Wisdom of crowds emerges
+- [Wisdom of crowds](../references.qmd#wisdom-of-crowds) emerges
 
 Example with real numbers:
 
@@ -169,7 +169,7 @@ Once we know what problems to solve and have budgets, we need solutions. Enter t
 5. Dies inside
 6. Repeat
 
-**Success rate:** 10%
+**Success rate:** [10%](../references.qmd#nih-sbir-grant-success-rate)
 **Time wasted:** 90%
 **Researchers who quit in frustration:** Most
 
@@ -243,8 +243,8 @@ It's efficiency, but without the usual corporate evil.
 **2022:** "Whatever, we're tired"
 **2023-2025:** "COVID? What COVID?"
 
-**Death toll:** 7+ million
-**Economic damage:** $16 trillion
+**Death toll:** [7+ million](../references.qmd#pandemics-vs-wars)
+**Economic damage:** [$16 trillion](../references.qmd#covid-economic-damage-16t)
 **Trust in institutions:** Deceased
 
 ### What Would Have Happened with Wishocracy:
@@ -272,7 +272,7 @@ It's efficiency, but without the usual corporate evil.
 **Month 2: First Results**
 
 - Genome sequenced, published
-- Dexamethasone identified as treatment
+- [Dexamethasone identified as treatment](../references.qmd#recovery-trial-dexamethasone-results)
 - Vaccine candidates in trials
 - Mask production at 1 billion/day
 
@@ -308,7 +308,7 @@ The difference? No committees. No politics. No bureaucracy. Just problems, solut
 **Answer:** AI will write clearer ones, instantly.
 
 **Congress:** "But we're the representatives!"
-**Answer:** You represent donors, not people. You're fired.
+**Answer:** You [represent donors, not people](../references.qmd#unrepresentative-democracy). You're fired.
 
 **Skeptics:** "But people are too stupid to decide!"
 **Answer:** People are individually stupid but collectively smart. Politicians are the reverse.
@@ -495,7 +495,7 @@ Might as well die in a system that actually tries to prevent it.
 
 **Protecting the $24.3B From Special Interest Hamburglers**
 
-**The Problem**: After we pay back the 10% to investors (the oligarchy that made this all possible), we still have $24.3 billion per year. Without safeguards, lobbyists and special interests will swarm like vultures. Within 5 years, the DIH would become just another captured institution funneling money to whoever has the best K Street connections.
+**The Problem**: After we pay back the 10% to investors (the oligarchy that made this all possible), we still have $24.3 billion per year. Without safeguards, lobbyists and special interests will swarm like vultures. Within 5 years, the [DIH](./dih.qmd) would become just another captured institution funneling money to whoever has the best K Street connections.
 
 **The Solution**: Wishocracy - where everyone votes on DIH budget allocation, preventing capture.
 

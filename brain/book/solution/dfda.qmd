@@ -5,9 +5,8 @@ published: true
 date: 2025-03-06T22:55:07.316Z
 tags: [overview, dfda, bureaucratic-murder, death-by-clipboard]
 dateCreated: 2023-11-24T22:24:09.275Z
+lastFactCheckHash: 073b940c027763bbeebc324098db9f71b578a80886e58697562f208db2f17733
 ---
-
-
 ## The Solution: Just Let People Try Stuff (Carefully)
 
 Here's a thought that apparently never occurred to anyone in Washington:
@@ -18,7 +17,7 @@ And then we could... write down what happens?
 
 And then other sick people could... see what worked?
 
-I know, I know. Without 17 years of paperwork, how would we know if medicines are safe? We'd have to rely on primitive methods like "observing if people get better or die."
+I know, I know. Without [17 years](../references.qmd#research-to-practice-gap-17-years) of paperwork, how would we know if medicines are safe? We'd have to rely on primitive methods like "observing if people get better or die."
 
 ### Introducing FDA.gov 2.0: Now With 80% Less Death
 
@@ -76,7 +75,7 @@ For any given trial, you'll see real-time odds on questions like:
 **Why Trust This?**
 
 1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong, creating a powerful incentive for accuracy.
-2.  **The Ultimate Fact-Checker**: The DIH automatically resolves these bets using the actual, aggregated, and anonymized patient data collected by the dFDA. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts—or bettors go broke.
+2.  **The Ultimate Fact-Checker**: [The DIH](../solution/dih.qmd) automatically resolves these bets using the actual, aggregated, and anonymized patient data collected by the dFDA. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts—or bettors go broke.
 
 This gives patients an invaluable second layer of information: not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
 
@@ -129,7 +128,7 @@ Look at these beautiful savings! It's like Black Friday, but for survival!
 | What We're Fixing | Current Insanity | New Reality | Money Saved | Lives Saved |
 | :--- | :--- | :--- | :--- | :--- |
 | Years to get treatment | **[17 years](../book/references.qmd#research-to-practice-gap-17-years)** | **2 years** | 15 years of suffering | [~50,000/year](../book/references.qmd#beta-blocker-deaths) |
-| Cost per trial | **$57 million** | **$2 million** | $55 million | Infinite ROI |
+| Cost per trial | [**$57 million**](../references.qmd#clinical-trial-cost-breakdown) | **$2 million** | $55 million | Infinite ROI |
 | Who can participate | **[15% of patients](../book/references.qmd#clinical-trial-exclusions)** | **100% of patients** | 85% inclusion rate | Everyone |
 | Rare diseases with treatments | **[5%](../book/references.qmd#fda-untreated-diseases-95pct)** | **Eventually 100%** | Priceless | Millions |
 
@@ -153,7 +152,7 @@ Look at these beautiful savings! It's like Black Friday, but for survival!
 | 📊 Site Monitoring | $4,456,717 | $0 | 100% | People who watch the people who watch you |
 | 🏢 Site Overhead | $7,386,816 | $0 | 100% | Electricity for the filing cabinets |
 | 📎 All Other | $17,096,703 | $100,000 | 99.4% | Nobody knows but it's expensive |
-| **TOTAL STUPIDITY** | **$56,988,007** | **$2,025,000** | **95.7%** | **The price of bureaucracy** |
+| **TOTAL STUPIDITY** | [**$56,988,007**](../references.qmd#clinical-trial-cost-breakdown) | **$2,025,000** | **95.7%** | **The price of bureaucracy** |
 
 This eliminates $55 million of paperwork per trial. That's 55 million pieces of paper nobody reads, filed in cabinets nobody opens, in buildings nobody visits.
 
@@ -178,9 +177,9 @@ That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan 
 
 Results:
 
-- Found that steroids cut COVID deaths by 30%
-- Saved over 1 million lives globally
-- Took 3 months instead of 3 years
+- Found that [steroids cut COVID deaths by 30%](../references.qmd#recovery-trial-dexamethasone-results)
+- [Saved over 1 million lives globally](../references.qmd#recovery-trial-summary-quote)
+- [Took 3 months](../references.qmd#recovery-trial-100-days-to-cure) instead of 3 years
 - Cost less than one Super Bowl commercial
 
 The FDA's response: "But did they file the correct paperwork?"
@@ -338,10 +337,10 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 
 ![](../../../assets/black-box-model-animation.gif)
 
-The dFDA achieves **82X More Efficiency** through:
+The dFDA achieves [**82X More Efficiency**](../references.qmd#recovery-trial-82x-cost-reduction) through:
 
 - **Cost per patient**: $500 vs the current $41,000
 - **Time to results**: 2 years vs the current 17 years
-- **Patient access**: Universal access vs 85% excluded currently
+- **Patient access**: Universal access vs [85% excluded](../references.qmd#clinical-trial-patient-participation-rate) currently
 
 {{< include ../../figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}
