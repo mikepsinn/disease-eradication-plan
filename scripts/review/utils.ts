@@ -14,14 +14,16 @@ dotenv.config();
 const git = simpleGit();
 
 // --- LLM Setup ---
+// DO NOT CHANGE THESE MODEL NUMBERS
+const GEMINI_MODEL_ID = 'gemini-2.5-pro';
+const CLAUDE_MODEL_ID = 'claude-opus-4-1-20250805';
+
 const API_KEY = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
 if (!API_KEY) {
   throw new Error('GOOGLE_GENERATIVE_AI_API_KEY is not set in the .env file.');
 }
 const genAI = new GoogleGenerativeAI(API_KEY);
-const geminiModel = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
-const groundingTool = { googleSearch: {} };
-const geminiModelWithSearch = genAI.getGenerativeModel({ model: 'gemini-1.5-pro', tools: [groundingTool] });
+const geminiModel = genAI.getGenerativeModel({ model: GEMINI_MODEL_ID });
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -68,7 +70,7 @@ export async function getStaleFiles(hashFieldName: string): Promise<string[]> {
 }
 
 export async function formatFileWithLLM(filePath: string): Promise<void> {
-  console.log(`\nFormatting ${filePath} with Gemini 2.5 Pro...`);
+  console.log(`\nFormatting ${filePath} with ${GEMINI_MODEL_ID}...`);
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
 
@@ -123,7 +125,7 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
   ${body}`;
 
   const msg = await anthropic.messages.create({
-    model: "claude-opus-4-1-20250805",
+    model: CLAUDE_MODEL_ID,
     max_tokens: 8192,
     messages: [{ role: "user", content: prompt }],
   });
@@ -151,7 +153,7 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
 }
 
 export async function factCheckFileWithLLM(filePath: string): Promise<void> {
-  console.log(`\nFact-checking ${filePath} with Gemini 1.5 Pro...`);
+  console.log(`\nFact-checking ${filePath} with ${GEMINI_MODEL_ID}...`);
   let originalContent = await fs.readFile(filePath, 'utf-8');
   let { data: frontmatter, content: body } = matter(originalContent);
 
@@ -174,52 +176,19 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
   if (responseText === 'NO_UNCITED_CLAIMS_FOUND') {
     console.log(`No uncited claims found in ${filePath}.`);
   } else {
-    console.log(`Found potential uncited claims in ${filePath}. Now attempting to find sources...`);
+    console.log(`Found and marked potential uncited claims in ${filePath}.`);
     const claims = responseText.split('\n').map(line => line.replace(/^\d+\.\s*/, '').trim());
     
     let newBody = body;
     for (const claim of claims) {
-      const sourceFindingPrompt = `You are a research assistant. Find the most credible, primary source URL that verifies the following claim. Then, generate a pre-formatted markdown snippet for a references file.
-      
-      **CRITICAL INSTRUCTIONS:**
-      1. Use Google Search to find the best source for the claim.
-      2. Return a JSON object with three keys: "sourceURL", "quote", and "snippet".
-      3. "quote" should be the verbatim text from the source that supports the claim.
-      4. "snippet" should be a complete, formatted markdown block for references.qmd.
-      
-      **Claim to Verify:**
-      "${claim}"`;
-
-      try {
-        const sourceResult = await geminiModelWithSearch.generateContent(sourceFindingPrompt);
-        const sourceResponse = await sourceResult.response;
-        const sourceText = sourceResponse.text().replace(/```json|```/g, '').trim();
-        const sourceData = JSON.parse(sourceText);
-
-        const todoComment = `<!-- 
-TODO: FACT_CHECK - The following claim is uncited. A potential source has been found by the LLM. Please verify the source and add it to references.qmd.
-
-Claim: "${claim}"
-
-Suggested Source: ${sourceData.sourceURL}
-
-Suggested Snippet for references.qmd:
-${sourceData.snippet}
--->`;
-        
-        // Escape special characters in the claim for regex replacement
-        const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `${todoComment}\n${claim}`);
-
-      } catch (error) {
-        console.error(`Failed to find source for claim: "${claim}"`, error);
-        const todoComment = `<!-- TODO: FACT_CHECK - The following claim is uncited. The LLM failed to find a source. Please find a source manually. -->`;
-        const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const todoComment = `<!-- TODO: FACT_CHECK - The following claim is uncited. Please find a source and add it to references.qmd. -->`;
+      const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      // Prevent adding duplicate TODOs
+      if (!newBody.includes(todoComment)) {
         newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `${todoComment}\n${claim}`);
       }
     }
     
-    // Update the body content before writing the file
     body = newBody;
   }
 
