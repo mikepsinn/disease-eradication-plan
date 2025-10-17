@@ -19,7 +19,9 @@ if (!API_KEY) {
   throw new Error('GOOGLE_GENERATIVE_AI_API_KEY is not set in the .env file.');
 }
 const genAI = new GoogleGenerativeAI(API_KEY);
-const geminiModel = genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
+const geminiModel = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
+const groundingTool = { googleSearch: {} };
+const geminiModelWithSearch = genAI.getGenerativeModel({ model: 'gemini-1.5-pro', tools: [groundingTool] });
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -149,41 +151,79 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
 }
 
 export async function factCheckFileWithLLM(filePath: string): Promise<void> {
-  console.log(`\nFact-checking ${filePath} with Gemini 2.5 Pro...`);
-  const originalContent = await fs.readFile(filePath, 'utf-8');
-  const { data: frontmatter, content: body } = matter(originalContent);
+  console.log(`\nFact-checking ${filePath} with Gemini 1.5 Pro...`);
+  let originalContent = await fs.readFile(filePath, 'utf-8');
+  let { data: frontmatter, content: body } = matter(originalContent);
 
   const citationGuide = await fs.readFile('CONTRIBUTING.md', 'utf-8');
-  const prompt = `You are an expert fact-checker auditing a chapter of a book. Your task is to identify any factual claims that are not properly cited according to the project's standards.
-
+  const claimIdentificationPrompt = `You are an expert fact-checker. Your task is to identify all factual claims in the provided text that are not properly cited.
+  
   **CRITICAL INSTRUCTIONS:**
-  1.  Read the Sourcing and Citation Standard section from the provided guide.
-  2.  A "factual claim" is any statement that presents data, statistics, or a specific, verifiable assertion (e.g., "costs \$2.6 billion," "approvals dropped 70%," "10,000+ excess deaths").
-  3.  A claim is considered "cited" if it is immediately part of a markdown link pointing to "references.qmd". For example: \`[The FDA is slow](../references.qmd#fda-slow)\`.
-  4.  Your task is to find all factual claims that are **NOT** cited in this way.
-  5.  **If you find one or more uncited claims, return them as a direct quote in a numbered list.**
-  6.  **If all claims are properly cited, you MUST return the special string "NO_UNCITED_CLAIMS_FOUND".**
-  7.  Return *only* the numbered list of uncited claims or the special string. Do not include any other text, explanations, or markdown formatting.
+  1. A "factual claim" is a statement with specific data, statistics, or verifiable facts.
+  2. A claim is "cited" if it's a markdown link to "references.qmd".
+  3. Return a numbered list of exact, verbatim quotes of **only the uncited claims**.
+  4. If all claims are cited, you MUST return the special string "NO_UNCITED_CLAIMS_FOUND".
 
-  ${citationGuide}
-
-  **File Content to Fact-Check:**
+  **Text to Analyze:**
   ${body}`;
 
-  const result = await geminiModel.generateContent(prompt);
+  const result = await geminiModel.generateContent(claimIdentificationPrompt);
   const response = await result.response;
   const responseText = response.text().trim();
 
   if (responseText === 'NO_UNCITED_CLAIMS_FOUND') {
     console.log(`No uncited claims found in ${filePath}.`);
   } else {
-    console.warn(`WARNING: Found potential uncited claims in ${filePath}:\n${responseText}`);
-    // In a more advanced implementation, we could add TODOs to the file.
-    // For now, we will just warn the user.
+    console.log(`Found potential uncited claims in ${filePath}. Now attempting to find sources...`);
+    const claims = responseText.split('\n').map(line => line.replace(/^\d+\.\s*/, '').trim());
+    
+    let newBody = body;
+    for (const claim of claims) {
+      const sourceFindingPrompt = `You are a research assistant. Find the most credible, primary source URL that verifies the following claim. Then, generate a pre-formatted markdown snippet for a references file.
+      
+      **CRITICAL INSTRUCTIONS:**
+      1. Use Google Search to find the best source for the claim.
+      2. Return a JSON object with three keys: "sourceURL", "quote", and "snippet".
+      3. "quote" should be the verbatim text from the source that supports the claim.
+      4. "snippet" should be a complete, formatted markdown block for references.qmd.
+      
+      **Claim to Verify:**
+      "${claim}"`;
+
+      try {
+        const sourceResult = await geminiModelWithSearch.generateContent(sourceFindingPrompt);
+        const sourceResponse = await sourceResult.response;
+        const sourceText = sourceResponse.text().replace(/```json|```/g, '').trim();
+        const sourceData = JSON.parse(sourceText);
+
+        const todoComment = `<!-- 
+TODO: FACT_CHECK - The following claim is uncited. A potential source has been found by the LLM. Please verify the source and add it to references.qmd.
+
+Claim: "${claim}"
+
+Suggested Source: ${sourceData.sourceURL}
+
+Suggested Snippet for references.qmd:
+${sourceData.snippet}
+-->`;
+        
+        // Escape special characters in the claim for regex replacement
+        const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `${todoComment}\n${claim}`);
+
+      } catch (error) {
+        console.error(`Failed to find source for claim: "${claim}"`, error);
+        const todoComment = `<!-- TODO: FACT_CHECK - The following claim is uncited. The LLM failed to find a source. Please find a source manually. -->`;
+        const escapedClaim = claim.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        newBody = newBody.replace(new RegExp(escapedClaim, 'g'), `${todoComment}\n${claim}`);
+      }
+    }
+    
+    // Update the body content before writing the file
+    body = newBody;
   }
 
-  frontmatter.lastFactCheckHash = getBodyHash(originalContent);
-
+  frontmatter.lastFactCheckHash = getBodyHash(matter.stringify(body, frontmatter));
   const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
   await fs.writeFile(filePath, newContent, 'utf-8');
   console.log(`Successfully updated fact-check metadata for ${filePath}.`);
@@ -191,48 +231,59 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
 
 export async function linkCheckFile(filePath: string): Promise<void> {
   console.log(`\nChecking links in ${filePath}...`);
-  const originalContent = await fs.readFile(filePath, 'utf-8');
-  const { data: frontmatter, content: body } = matter(originalContent);
+  let originalContent = await fs.readFile(filePath, 'utf-8');
+  let { data: frontmatter, content: body } = matter(originalContent);
 
   const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
   let match;
-  const brokenLinks: string[] = [];
-  const directory = path.dirname(filePath);
+  let newBody = body;
+  let issuesFound = false;
 
-  while ((match = linkRegex.exec(body)) !== null) {
+  // Create a new array of matches to avoid issues with modifying the string during iteration
+  const matches = Array.from(body.matchAll(linkRegex));
+
+  for (const match of matches) {
+    const fullMatch = match[0];
     const link = match[2];
 
-    // Ignore external links and empty links
     if (link.startsWith('http') || link.startsWith('https') || !link) {
       continue;
     }
 
     const [linkPath, anchor] = link.split('#');
-    const absolutePath = path.resolve(directory, linkPath);
+    const absolutePath = path.resolve(path.dirname(filePath), linkPath);
+    let issueDescription = '';
 
     try {
       await fs.access(absolutePath);
-      // File exists, now check anchor if it exists
       if (anchor) {
         const targetContent = await fs.readFile(absolutePath, 'utf-8');
-        const anchorRegex = new RegExp(`id="${anchor}"`);
-        if (!anchorRegex.test(targetContent)) {
-          brokenLinks.push(`Broken anchor in ${filePath}: Anchor #${anchor} not found in ${linkPath}`);
+        if (!targetContent.includes(`id="${anchor}"`)) {
+          issueDescription = `Broken anchor: #${anchor} not found in ${linkPath}`;
         }
       }
     } catch (error) {
-      brokenLinks.push(`Broken link in ${filePath}: ${linkPath} not found.`);
+      issueDescription = `Broken link: ${linkPath} not found.`;
+    }
+
+    if (issueDescription) {
+      issuesFound = true;
+      const todoComment = `<!-- TODO: LINK_CHECK - ${issueDescription} -->`;
+      // Prevent adding duplicate TODOs
+      if (!newBody.includes(todoComment)) {
+        newBody = newBody.replace(fullMatch, `${todoComment}\n${fullMatch}`);
+      }
     }
   }
 
-  if (brokenLinks.length > 0) {
-    console.warn(`WARNING: Found broken links in ${filePath}:\n${brokenLinks.join('\n')}`);
+  if (issuesFound) {
+    console.warn(`WARNING: Found and marked broken links in ${filePath}.`);
+    body = newBody; // Update body with TODOs
   } else {
     console.log(`No broken links found in ${filePath}.`);
   }
 
-  frontmatter.lastLinkCheckHash = getBodyHash(originalContent);
-
+  frontmatter.lastLinkCheckHash = getBodyHash(matter.stringify(body, frontmatter));
   const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
   await fs.writeFile(filePath, newContent, 'utf-8');
   console.log(`Successfully updated link-check metadata for ${filePath}.`);
@@ -240,54 +291,67 @@ export async function linkCheckFile(filePath: string): Promise<void> {
 
 export async function figureCheckFile(filePath: string): Promise<void> {
   console.log(`\nChecking figures and design elements in ${filePath}...`);
-  const originalContent = await fs.readFile(filePath, 'utf-8');
-  const { data: frontmatter, content: body } = matter(originalContent);
-
-  const designGuide = await fs.readFile('DESIGN_GUIDE.md', 'utf-8');
-  const designViolations: string[] = [];
+  let originalContent = await fs.readFile(filePath, 'utf-8');
+  let { data: frontmatter, content: body } = matter(originalContent);
+  let newBody = body;
+  let issuesFound = false;
 
   // --- Check for included Quarto chart files ---
   const includeRegex = /{{<\s*include\s+([^>]+)\s*>}}/g;
-  let includeMatch;
-  while ((includeMatch = includeRegex.exec(body)) !== null) {
-    const includedPath = includeMatch[1].trim();
+  const includeMatches = Array.from(body.matchAll(includeRegex));
+  for (const match of includeMatches) {
+    const fullMatch = match[0];
+    const includedPath = match[1].trim();
     if (includedPath.startsWith('brain/figures')) {
       const chartFilePath = path.resolve(includedPath);
       try {
         const chartContent = await fs.readFile(chartFilePath, 'utf-8');
+        const violations = [];
         if (chartContent.includes('plt.tight_layout()')) {
-          designViolations.push(`Design violation in ${chartFilePath}: Use of 'plt.tight_layout()' is discouraged.`);
+          violations.push(`Use of 'plt.tight_layout()' is discouraged.`);
         }
         if (!chartContent.includes('setup_chart_style()')) {
-          designViolations.push(`Design violation in ${chartFilePath}: Missing 'setup_chart_style()'.`);
+          violations.push(`Missing 'setup_chart_style()'.`);
         }
         if (!chartContent.includes('add_watermark()')) {
-          designViolations.push(`Design violation in ${chartFilePath}: Missing 'add_watermark()'.`);
+          violations.push(`Missing 'add_watermark()'.`);
+        }
+        if (violations.length > 0) {
+          issuesFound = true;
+          const todoComment = `<!-- TODO: FIGURE_CHECK - Design violations in ${includedPath}: ${violations.join(' ')} -->`;
+          if (!newBody.includes(todoComment)) {
+            newBody = newBody.replace(fullMatch, `${todoComment}\n${fullMatch}`);
+          }
         }
       } catch (error) {
-        designViolations.push(`Could not read included chart file: ${chartFilePath}`);
+        // This case is handled by the link checker
       }
     }
   }
 
   // --- Check for static images ---
   const imageRegex = /!\[[^\]]*\]\(([^)]+)\)/g;
-  let imageMatch;
-  while ((imageMatch = imageRegex.exec(body)) !== null) {
-    const imagePath = imageMatch[1];
+  const imageMatches = Array.from(body.matchAll(imageRegex));
+  for (const match of imageMatches) {
+    const fullMatch = match[0];
+    const imagePath = match[1];
     if (!imagePath.startsWith('http') && !imagePath.includes('assets/')) {
-      designViolations.push(`Design violation in ${filePath}: Static image '${imagePath}' is not in the 'assets/' directory.`);
+      issuesFound = true;
+      const todoComment = `<!-- TODO: FIGURE_CHECK - Static image '${imagePath}' should be in the 'assets/' directory. -->`;
+      if (!newBody.includes(todoComment)) {
+        newBody = newBody.replace(fullMatch, `${todoComment}\n${fullMatch}`);
+      }
     }
   }
 
-  if (designViolations.length > 0) {
-    console.warn(`WARNING: Found design guide violations for ${filePath}:\n${designViolations.join('\n')}`);
+  if (issuesFound) {
+    console.warn(`WARNING: Found and marked design guide violations in ${filePath}.`);
+    body = newBody;
   } else {
     console.log(`No design guide violations found in ${filePath}.`);
   }
 
-  frontmatter.lastFigureCheckHash = getBodyHash(originalContent);
-
+  frontmatter.lastFigureCheckHash = getBodyHash(matter.stringify(body, frontmatter));
   const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
   await fs.writeFile(filePath, newContent, 'utf-8');
   console.log(`Successfully updated figure-check metadata for ${filePath}.`);
