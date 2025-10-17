@@ -12,15 +12,28 @@ async function main() {
     'brain\\book\\vision.qmd',       // Aspirational/hypothetical future scenarios
   ];
 
+  // Exclude futures chapters (aspirational/hypothetical scenarios)
+  const excludedPatterns = [
+    /brain[\\\/]book[\\\/]futures[\\\/]/
+  ];
+
   // Get all files in brain/book that are stale (need fact-checking)
   const allStaleBookFiles = await getStaleFiles('lastFactCheckHash', 'brain/book');
 
-  // Filter out explicitly excluded files
-  const staleFilesToCheck = allStaleBookFiles.filter(file => !excludedFiles.includes(file));
+  // Filter out explicitly excluded files and pattern-based exclusions
+  const staleFilesToCheck = allStaleBookFiles.filter(file => {
+    // Check exact file matches
+    if (excludedFiles.includes(file)) return false;
+
+    // Check pattern matches
+    if (excludedPatterns.some(pattern => pattern.test(file))) return false;
+
+    return true;
+  });
 
   console.log(`\nFound ${allStaleBookFiles.length} stale files in brain/book`);
   if (allStaleBookFiles.length > staleFilesToCheck.length) {
-    console.log(`  - ${allStaleBookFiles.length - staleFilesToCheck.length} excluded (references.qmd, vision.qmd)`);
+    console.log(`  - ${allStaleBookFiles.length - staleFilesToCheck.length} excluded (references.qmd, vision.qmd, futures chapters)`);
   }
   console.log(`  - ${staleFilesToCheck.length} files to fact-check\n`);
 
