@@ -5,11 +5,21 @@ dotenv.config();
 
 async function main() {
   console.log('Identifying stale files for fact-checking...');
-  // Note: We get *all* stale files and then filter. 
-  const staleFiles = await getStaleFiles('lastFactCheckHash'); 
-  const bookFiles = staleFiles.filter(file => file.startsWith('brain\\book'));
+  // Note: We get *all* stale files and then filter.
+  const staleFiles = await getStaleFiles('lastFactCheckHash');
+
+  // Exclude files that shouldn't be fact-checked
+  const excludedFiles = [
+    'brain\\book\\references.qmd',  // References file itself
+    'brain\\book\\vision.qmd',       // Aspirational/hypothetical future scenarios
+  ];
+
+  const bookFiles = staleFiles.filter(file =>
+    file.startsWith('brain\\book') && !excludedFiles.includes(file)
+  );
 
   console.log(`Checked ${staleFiles.length} total stale files.`);
+  console.log(`Excluded ${excludedFiles.length} files (references.qmd, vision.qmd)`);
   console.log(`Found ${bookFiles.length} files in brain/book to fact-check:`);
 
   if (bookFiles.length === 0) {
