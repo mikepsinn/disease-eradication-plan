@@ -13,6 +13,7 @@ dateCreated: '2025-09-10T00:00:00.000Z'
 lastFormatted: '2025-10-16'
 lastStyleCheck: '2025-10-16'
 lastFormattedHash: 4d980f40b1242a7a42bc04e36d488751a638d6710019ea1815a1c0ef5571488f
+lastFactCheckHash: 1cc362fe63afe97795f525369c01a769173317046042d555a5ecb9f7ca883377
 ---
 The legal setup is just as important as the money.
 The structure must follow international law, securities regulations, and political rules without breaking anything.
@@ -33,7 +34,7 @@ This handles the main \$27 billion treasury.
 Zero coordination with the international stuff.
 - **🇸🇬 Singapore Entity:** Handles crypto and treasury management in a place with clear crypto rules.
 - **🇪🇪 Estonian Entity:** Builds the technology platform.
-Estonia is best in the world at digital governance.
+Estonia is [best in the world at digital governance](./references.qmd#estonia-eresidency-stats).
 
 This splits up the legal risk and lets us optimize for each country's rules while keeping the core mission protected.
 
@@ -48,7 +49,7 @@ The design is compliant from day one.
 This provides a solid financial base.
 - **Tokens for Everyone Else:** Regular people earn utility tokens for actions like voting.
 These start as utility points, not investments.
-They only become valuable after the treaty passes and the system works, which avoids securities law problems.
+They only become valuable after the treaty passes and the system works, which [avoids securities law problems](./references.qmd#howey-test-securities).
 - **No Bullshit Marketing:** Focus on what the project actually does, not get-rich-quick promises.
 Be clear about risks.
 
@@ -69,6 +70,6 @@ For a detailed breakdown of the specific legal structures and compliance strateg
 
 - **United States:** Use independent‑expenditure committees (Super PACs).
 No coordination with campaigns; comply with FEC reporting and disclaimer rules; respect the foreign‑national ban (funds and decision‑making must be from U.S. persons for U.S. elections) [FEC guidance](./references.qmd#fec-foreign-nationals).
-- **EU/UK/Canada/Japan and others:** Use lawful local equivalents (third‑party campaigners, non‑party campaigners, PACs). Separate, jurisdiction‑specific entities; local counsel review; segregated banking and governance.
+- **EU/UK/Canada/Japan and others:** Use lawful local equivalents (third‑party campaigners, [non‑party campaigners](./references.qmd#uk-electoral-spending-limits), PACs). Separate, jurisdiction‑specific entities; local counsel review; segregated banking and governance.
 - **No quid‑pro‑quo contracts:** No smart‑contract triggers tied to legislative votes.
 Rewards are independent expenditures based on public, verified district will.

@@ -5,9 +5,8 @@ published: true
 date: "2025-09-27T00:00:00.000Z"
 tags: [referendum, governance, identity, verifiability, privacy, security, viral-marketing, fraud-prevention]
 dateCreated: "2025-09-27T00:00:00.000Z"
+lastFactCheckHash: 85e2ca4e3d5d050061ca231a9583d59903295b3bfdbe991a5727cf1fb277dc2b
 ---
-
-
 A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy"; it is the largest, most powerful political mandate in human history. Here's how to build it.
 
 ---
@@ -16,7 +15,7 @@ A cryptographically secure, on-chain list of 280 million verified supporters is 
 
 ### Primary Objective
 
-Implement a privacy-preserving, globally verifiable referendum to assess public support for the 1% Treaty and DIH. Outputs must be auditable and persuasive to policymakers while achieving the **3.5% global participation threshold** (280M+ verified votes).
+Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../solution/1-percent-treaty.qmd) and [DIH](../solution/dih.qmd). Outputs must be auditable and persuasive to policymakers while achieving the **[3.5% global participation threshold](../references.qmd#3-5-rule)** (280M+ verified votes).
 
 ### Core Principles
 
@@ -34,7 +33,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 **End-to-End Verifiable System:**
 
-- Use an end-to-end verifiable scheme (Helios or similar) with individual ballot verification and public bulletin board
+- Use an end-to-end verifiable scheme ([Helios](../references.qmd#helios-voting) or similar) with individual ballot verification and public bulletin board
 - **Individual Ballot Verification**: Each voter receives cryptographic receipt
 - **Public Bulletin Board**: All ballots published (anonymized) for public audit
 - **Zero-Knowledge Proofs**: Prove vote validity without revealing vote content
@@ -79,15 +78,15 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 **Layer 2: Enhanced Verification**
 
 - **Government ID Integration**: Connect with national e-ID systems where available
-  - Estonia e-Residency integration
-  - Indian Aadhaar system (with privacy protections)
-  - EU eIDAS network compatibility
-  - US State ID verification via ID.me partnership
+  - [Estonia e-Residency](../references.qmd#estonia-eresidency-stats) integration
+  - [Indian Aadhaar system](../references.qmd#indian-aadhaar-system) (with privacy protections)
+  - [EU eIDAS network](../references.qmd#eu-eidas-network) compatibility
+  - US State ID verification via [ID.me partnership](../references.qmd#id-me-verification)
 - **Biometric Liveness Detection**: Camera-based liveness checks to prevent deepfakes
 - **Proof-of-Uniqueness Partners**: Integration with existing identity verification services
-  - Worldcoin iris scanning (where available)
-  - BrightID social verification network
-  - Gitcoin Passport identity scoring
+  - [Worldcoin iris scanning](../references.qmd#worldcoin-scale) (where available)
+  - [BrightID social verification network](../references.qmd#brightid-social-verification-network)
+  - [Gitcoin Passport identity scoring](../references.qmd#gitcoin-passport)
 
 **Layer 3: Social Verification**
 
@@ -122,10 +121,10 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 **Regional Compliance:**
 
-- **GDPR Compliance**: Full implementation of EU data protection requirements
-- **CCPA/CPRA Compliance**: California privacy rights implementation
-- **Biometric Privacy Laws**: Illinois BIPA and similar state law compliance
-- **Children's Privacy**: COPPA compliance for participants under 13
+- **[GDPR Compliance](../references.qmd#gdpr-biometric-data)**: Full implementation of EU data protection requirements
+- **[CCPA/CPRA Compliance](../references.qmd#ccpa-cpra-compliance)**: California privacy rights implementation
+- **Biometric Privacy Laws**: [Illinois BIPA](../references.qmd#illinois-bipa) and similar state law compliance
+- **Children's Privacy**: [COPPA compliance](../references.qmd#coppa-compliance) for participants under 13
 
 ---
 
@@ -235,7 +234,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 **Reward Structure:**
 
-- Funded via VICTORY bonds with strict anti-fraud caps
+- Funded via [VICTORY bonds](../economics/victory-bonds.qmd) with strict anti-fraud caps
 - Per-capita limits to prevent gaming
 - Public ledger of reward disbursements for transparency
 
@@ -327,7 +326,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ### FDA Petition Template
 
-For immediate impact, the system provides a petition template for the "FDA.gov Upgrade Act" that demonstrates the dFDA concept:
+For immediate impact, the system provides a petition template for the "FDA.gov Upgrade Act" that demonstrates the [dFDA concept](../solution/dfda.qmd):
 
 **Key Features for Research Partners:**
 
@@ -361,4 +360,3 @@ For immediate impact, the system provides a petition template for the "FDA.gov U
 ---
 
 *Source: Consolidated from global-referendum sub-files including implementation details, verification framework, and viral marketing strategies.*
-

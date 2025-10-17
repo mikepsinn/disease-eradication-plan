@@ -1,20 +1,20 @@
 ---
 title: "The Two Wars"
 subtitle: "War on Humanity vs War on Disease - Only One Is Designed to Win"
+lastFactCheckHash: 960a8300d951896fcd6455c9a842ef3c52c39fdb47928afffc87db63eece0037
 ---
-
 ## Humanity Fights Two Wars
 
 **War #1: Against Each Other** (War on Humanity)
-- Cost: \$2.7 trillion/year
+- Cost: [$2.7 trillion/year](../references.qmd#sipri-2024-spending)
 - Deaths: Direct war deaths plus ongoing conflicts
 - Duration: All of human history
 - Progress: Getting worse
 - Designed to: Continue forever
 
 **War #2: Against Disease** (War on Disease)
-- Cost: \$68 billion/year (medical research)
-- Deaths: 55 million/year
+- Cost: [$68 billion/year](../references.qmd#global-gov-med-research-spending) (medical research)
+- Deaths: [55 million/year](../references.qmd#who-daily-deaths)
 - Duration: Also all of human history
 - Progress: Glacial
 - Designed to: Make pharma rich, not cure disease
@@ -39,11 +39,11 @@ But it isn't.
 ### The Result
 
 We have:
-- 13,000 nuclear weapons (can [destroy Earth 20 times](../../reference/nuclear-weapon-cost-and-casualties.md))
+- [13,000 nuclear weapons](../references.qmd#world-warheads) (can [destroy Earth 20 times](../../reference/nuclear-weapon-cost-and-casualties.md))
 - Hypersonic missiles that can't be stopped
 - Autonomous weapons (Skynet approaching)
 - Space weapons programs
-- $2.7 trillion annual budget
+- [$2.7 trillion annual budget](../references.qmd#sipri-2024-spending)
 
 But we still have wars.
 
@@ -63,9 +63,9 @@ But we still have wars.
 
 We have:
 - 50 years of cancer research, no universal cure
-- $48 billion NIH budget, zero diseases eradicated
-- 17 years to approve one drug
-- 95% of diseases have no treatment
+- [$48 billion NIH budget](../references.qmd#nih-budget-fy2025), zero diseases eradicated
+- [17 years to approve one drug](../references.qmd#research-to-practice-gap)
+- [95% of diseases have no treatment](../references.qmd#95-pct-diseases-no-treatment)
 - Your kid dies while bureaucrats meet
 
 **Because this system also isn't designed to win. It's designed to continue.**
@@ -82,7 +82,7 @@ We have:
 ### Why It Worked
 
 - Clear victory condition (unconditional surrender)
-- Massive resources deployed ($4 trillion in modern dollars)
+- Massive resources deployed ([$4 trillion in modern dollars](../references.qmd#wwii-cost-4-trillion-today))
 - No profit motive (national survival)
 - All unnecessary barriers removed
 - Speed prioritized over bureaucracy
@@ -93,7 +93,7 @@ We have:
 - **Start**: 1942
 - **End**: 1945
 - **Duration**: 3 years
-- **Cost**: $2 billion (1945 dollars) = $30 billion today
+- **Cost**: $2 billion (1945 dollars) = [$30 billion today](../references.qmd#manhattan-project-cost-30b)
 - **Result**: Atomic bomb deployed, war ended
 
 ## What War on Disease Designed to Win Would Look Like
@@ -112,10 +112,10 @@ We have:
 
 | Disease | Current State | After 10 Years |
 |---------|--------------|----------------|
-| Cancer | 10M deaths/year | Cured |
-| Heart Disease | 18M deaths/year | Prevented |
-| Alzheimer's | 2.6M deaths/year | Cured |
-| Diabetes | 2M deaths/year | Cured |
+| Cancer | [10M deaths/year](../references.qmd#cancer-deaths-10m-annually) | Cured |
+| Heart Disease | [18M deaths/year](../references.qmd#death-causes-vs-fear) | Prevented |
+| Alzheimer's | [2.6M deaths/year](../references.qmd#alzheimers-deaths-2-6m-annually) | Cured |
+| Diabetes | [2M deaths/year](../references.qmd#diabetes-deaths-2m-annually) | Cured |
 | All others | 22M deaths/year | Drastically reduced |
 
 **Total lives saved over 10 years**: 200-300 million
@@ -129,7 +129,7 @@ Unlike previous "wars on" things, the War on Disease uses markets, not bureaucra
 - Bureaucracy needs problem to exist (job security)
 - Result: Problem continues forever
 
-**War on Disease (DIH Model)**:
+**War on Disease ([DIH](../solution/dih.qmd) Model)**:
 - Build no bureaucracy to preserve (use smart contracts)
 - Pay for outcomes, not process
 - Create competition between solutions, not monopoly
@@ -164,19 +164,23 @@ The beginning of the market revolution.
 
 ### War on Humanity (Current)
 ```python
-annual_spending = 2_700_000_000_000
-annual_deaths = 14_000_000
+annual_spending = 2_700_000_000_000 # [1]
+annual_deaths = 14_000_000 # [2]
 victory_condition = None  # No end state
 years_to_victory = float('inf')  # Never
 ```
+[1]: ../references.qmd#sipri-2024-spending
+[2]: ../references.qmd#war-deaths-indirect-14m-annually
 
 ### War on Disease (Current)
 ```python
-annual_spending = 68_000_000_000
-annual_deaths = 55_000_000
+annual_spending = 68_000_000_000 # [1]
+annual_deaths = 55_000_000 # [2]
 victory_condition = None  # No end state (pharma wants recurring revenue)
 years_to_victory = float('inf')  # Never
 ```
+[1]: ../references.qmd#global-gov-med-research-spending
+[2]: ../references.qmd#who-daily-deaths
 
 ### War on Disease (Redesigned)
 ```python
@@ -192,8 +196,8 @@ deaths_prevented = 200_000_000  # Over 10 years
 ### Follow the Money
 
 **If cancer is cured**:
-- Oncologists lose $200K/year jobs
-- Pharma loses $100B/year in chemo sales
+- [Oncologists lose $200K/year jobs](../references.qmd#oncologist-median-salary-200k)
+- Pharma loses [$100B/year in chemo sales](../references.qmd#war-on-cancer-treatment-cost)
 - Hospitals lose entire oncology departments
 - Research grants disappear
 - NIH budget justifications collapse
@@ -203,7 +207,7 @@ deaths_prevented = 200_000_000  # Over 10 years
 ### The Same Pattern as War
 
 **If war ended**:
-- Defense contractors lose $2.7T/year
+- Defense contractors lose [$2.7T/year](../references.qmd#sipri-2024-spending)
 - Generals lose justification for budgets
 - Politicians lose campaign donations from defense lobby
 - Jobs disappear
@@ -212,7 +216,7 @@ deaths_prevented = 200_000_000  # Over 10 years
 
 ## The First War Designed to Be Won
 
-The 1% Treaty + DIH + dFDA creates the **first War on Disease designed for victory**.
+The [1% Treaty](../solution/1-percent-treaty.qmd) + DIH + [dFDA](../solution/dfda.qmd) creates the **first War on Disease designed for victory**.
 
 ### How It's Different
 
@@ -220,7 +224,7 @@ The 1% Treaty + DIH + dFDA creates the **first War on Disease designed for victo
 **Incentive**: Cure disease → get paid (not treat disease → get paid)
 **Barriers**: Removed (no FDA, decentralized trials)
 **Speed**: Months to results (not decades)
-**Scale**: Everyone participates (not just 15%)
+**Scale**: [Everyone participates (not just 15%)](../references.qmd#clinical-trial-patient-participation-rate)
 **Endpoint**: Diseases eradicated, mission accomplished
 
 ### Why It Will Work
@@ -235,7 +239,7 @@ The 1% Treaty + DIH + dFDA creates the **first War on Disease designed for victo
 
 We've won wars before when we actually tried:
 
-- **Smallpox**: Eradicated in 10 years once we committed
+- **Smallpox**: [Eradicated in 10 years once we committed](../references.qmd#smallpox-eradication-10-year-campaign)
 - **Polio**: Nearly eradicated through mass campaigns
 - **WWII**: Won in 6 years with full commitment
 
@@ -245,7 +249,7 @@ We can win War on Disease. **We just have to design it to be won.**
 
 ### Option A: Continue Both Wars Forever
 - Keep spending $9.7T on War on Humanity (never win)
-- Keep spending $68B on War on Disease (never win)
+- Keep spending [$68B on War on Disease](../references.qmd#global-gov-med-research-spending) (never win)
 - 69 million die annually, forever
 
 ### Option B: Win One War, Then the Other

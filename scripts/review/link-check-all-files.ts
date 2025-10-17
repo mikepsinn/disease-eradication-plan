@@ -4,18 +4,21 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function main() {
-  console.log('Identifying stale files for link-checking...');
-  const staleFiles = await getStaleFiles('lastLinkCheckHash');
-  const bookFiles = staleFiles.filter(file => file.startsWith('brain\\book'));
+  console.log('Checking brain/book files for stale link-checks...');
 
-  console.log(`Checked ${staleFiles.length} total stale files.`);
-  console.log(`Found ${bookFiles.length} files in brain/book to link-check:`);
+  const staleFilesToCheck = await getStaleFiles('lastLinkCheckHash', 'brain/book');
 
-  if (bookFiles.length === 0) {
-    console.log('All files in brain/book are up-to-date.');
+  console.log(`\nFound ${staleFilesToCheck.length} stale files in brain/book to link-check\n`);
+
+  if (staleFilesToCheck.length === 0) {
+    console.log('All files in brain/book are up-to-date!');
     return;
   }
-  for (const file of bookFiles) {
+
+  console.log('Link-checking the following files:');
+  staleFilesToCheck.forEach(file => console.log(`  - ${file}`));
+
+  for (const file of staleFilesToCheck) {
     await linkCheckFile(file);
   }
 

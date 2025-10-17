@@ -2,11 +2,11 @@
 title: "Public Choice Theory"
 subtitle: "Everyone's Selfish - Use It to Save Humanity"
 description: "How to Save Humanity By Assuming Everyone's a Bastard"
+lastFactCheckHash: 406a63b61da51354d505efc52a730dc14dddbbdbd622b5667b32e76b858228e4
 ---
-
 ## The Nobel Prize for Cynicism
 
-In 1986, James Buchanan won the Nobel Prize in Economics for proving what everyone already knew:
+[In 1986, James Buchanan won the Nobel Prize in Economics](../references.qmd#james-buchanan-nobel-prize-1986) for proving what everyone already knew:
 
 **People don't suddenly become angels when they work for the government.**
 
@@ -64,7 +64,7 @@ The only difference is what they're maximizing.
 - Budget growth (more power)
 - Avoiding scandal (no risky research)
 
-**Result**: $48 billion spent, zero diseases eradicated in 50 years
+**Result**: [$48 billion spent](../references.qmd#nih-budget-fy2025), zero diseases eradicated in 50 years
 
 ### The FDA Maximizes
 
@@ -76,7 +76,7 @@ The only difference is what they're maximizing.
 - Personal career advancement (revolving door to pharma)
 - Regulatory power (more rules = more important)
 
-**Result**: 17-year drug approval, millions die waiting
+**Result**: [17-year drug approval](../references.qmd#research-to-practice-gap), millions die waiting
 
 ## The Incentive Mismatch
 
@@ -114,13 +114,13 @@ Since everyone maximizes their own interest:
 
 ### Fixed System (Aligned)
 
-**dFDA Participant**:
+**[dFDA](../solution/dfda.qmd) Participant**:
 - Joins trial → Gets paid
 - Shares data → Contributes to cure
 - Cure found → Everyone benefits
 - **Incentive**: Participate and share data
 
-**Pharma Company (Under DIH)**:
+**Pharma Company (Under [DIH](../solution/dih.qmd))**:
 - Runs trial → Patients pay them (via subsidy)
 - Fast results → Run more trials
 - Cure found → Reputation boost + more trials
@@ -173,8 +173,8 @@ And humans respond to incentives.
 
 ### Examples
 
-- **War on Drugs**: DEA maximizes budget → Needs drugs to stay illegal → War continues
-- **War on Poverty**: Welfare administrators maximize beneficiaries → Need poor people → Poverty continues
+- **[War on Drugs](../references.qmd#war-on-drugs-cost-and-violence)**: DEA maximizes budget → Needs drugs to stay illegal → War continues
+- **[War on Poverty](../references.qmd#war-on-poverty-cost)**: Welfare administrators maximize beneficiaries → Need poor people → Poverty continues
 - **War on Disease**: NIH maximizes grants → Needs diseases to study → Diseases continue
 
 ## The Solution: Remove Discretion
@@ -193,7 +193,7 @@ Patient → Doctor → Trial → Data → Algorithm → Result
 
 No humans in the approval chain = No human selfishness
 
-### Wishocracy
+### [Wishocracy](../solution/wishocracy.qmd)
 ```
 People → Budget Preferences → Smart Contract → Automatic Allocation
 ```
@@ -202,7 +202,7 @@ No politicians in the funding chain = No political corruption
 
 ## Using Selfishness for Good
 
-### VICTORY Bonds
+### [VICTORY Bonds](../economics/victory-bonds.qmd)
 
 We **want** investors to be selfish.
 

@@ -18,6 +18,7 @@ dateCreated: '2025-09-10T00:00:00.000Z'
 lastFormatted: '2025-10-16'
 lastStyleCheck: '2025-10-16'
 lastFormattedHash: e4fdaea7394f4a721768b1d7b60e0b135d90f8ef93f2d1a12d8011dd60ad8138
+lastFactCheckHash: ef5f31e5815dfcf4e7a9dc483be3e98c8dd1191b10a28dce0f36a8426b2a7b27
 ---
 The solution isn't complicated.
 It doesn't require changing human nature.
@@ -32,7 +33,7 @@ Here's the complete system that makes curing people more profitable than killing
 **1. Get the Money**: The **[1% Treaty](./solution/1-percent-treaty.qmd)** redirects \$27B/year from weapons to cures  
 **2. Allocate Efficiently**: The **[DIH](./solution/dih.qmd)** uses democratic voting to fund what matters most  
 **3. Pay Patients**: Subsidies go directly to patients who join trials  
-**4. Run Cheap Trials**: Pragmatic trials cost \$500/patient instead of \$41,000 (Oxford RECOVERY proved this works)  
+**4. Run Cheap Trials**: Pragmatic trials cost [$500/patient](references.qmd#recovery-cost-500) instead of [$41,000](references.qmd#trial-cost-41k) (Oxford RECOVERY proved this works)  
 **5. Publish Everything**: The **[dFDA](./solution/dfda.qmd)** shows real effectiveness data for every treatment  
 **6. Label Outcomes**: Every food and drug gets honest labels about what it actually does  
 
@@ -42,10 +43,10 @@ Here's the complete system that makes curing people more profitable than killing
 
 Before you think this is theoretical, know that **Oxford already proved it works**:
 
-- **Cost**: $500 per patient (vs FDA's $41,000)
-- **Speed**: 100 days to first cure (vs FDA's 10 years)
-- **Lives saved**: 1 million+ globally
-- **Efficiency gain**: 82X cost reduction proven
+- **Cost**: [$500 per patient](references.qmd#recovery-cost-500) (vs FDA's [$41,000](references.qmd#trial-cost-41k))
+- **Speed**: [100 days to first cure](references.qmd#recovery-trial-100-days-to-cure) (vs FDA's [10 years](references.qmd#fda-approval-timeline-10-years))
+- **Lives saved**: [1 million+ globally](references.qmd#recovery-trial-summary-quote)
+- **Efficiency gain**: [82X cost reduction proven](references.qmd#recovery-trial-82x-cost-reduction)
 
 The RECOVERY trial isn't a model - it's proof. We're just scaling what already succeeded. [See the full RECOVERY analysis →](./reference/recovery-trial.qmd)
 

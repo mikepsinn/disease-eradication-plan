@@ -4,9 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function main() {
-  console.log('Identifying stale files for fact-checking...');
-  // Note: We get *all* stale files and then filter.
-  const staleFiles = await getStaleFiles('lastFactCheckHash');
+  console.log('Checking brain/book files for stale fact-checks...');
 
   // Exclude files that shouldn't be fact-checked
   const excludedFiles = [
@@ -14,19 +12,27 @@ async function main() {
     'brain\\book\\vision.qmd',       // Aspirational/hypothetical future scenarios
   ];
 
-  const bookFiles = staleFiles.filter(file =>
-    file.startsWith('brain\\book') && !excludedFiles.includes(file)
-  );
+  // Get all files in brain/book that are stale (need fact-checking)
+  const allStaleBookFiles = await getStaleFiles('lastFactCheckHash', 'brain/book');
 
-  console.log(`Checked ${staleFiles.length} total stale files.`);
-  console.log(`Excluded ${excludedFiles.length} files (references.qmd, vision.qmd)`);
-  console.log(`Found ${bookFiles.length} files in brain/book to fact-check:`);
+  // Filter out explicitly excluded files
+  const staleFilesToCheck = allStaleBookFiles.filter(file => !excludedFiles.includes(file));
 
-  if (bookFiles.length === 0) {
-    console.log('All files in brain/book are up-to-date.');
+  console.log(`\nFound ${allStaleBookFiles.length} stale files in brain/book`);
+  if (allStaleBookFiles.length > staleFilesToCheck.length) {
+    console.log(`  - ${allStaleBookFiles.length - staleFilesToCheck.length} excluded (references.qmd, vision.qmd)`);
+  }
+  console.log(`  - ${staleFilesToCheck.length} files to fact-check\n`);
+
+  if (staleFilesToCheck.length === 0) {
+    console.log('All files in brain/book are up-to-date!');
     return;
   }
-  for (const file of bookFiles) {
+
+  console.log('Fact-checking the following files:');
+  staleFilesToCheck.forEach(file => console.log(`  - ${file}`));
+
+  for (const file of staleFilesToCheck) {
     await factCheckFileWithLLM(file);
   }
 
