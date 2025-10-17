@@ -321,11 +321,15 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
     .map(ref => `- ID: ${ref.id}\n  Title: ${ref.title}\n  Quote: ${ref.quotes[0] || ''}`)
     .join('\n\n');
 
+  // Calculate the correct relative path to references.qmd from the current file
+  const fileDir = path.dirname(filePath);
+  const referencesPath = path.relative(fileDir, 'brain/book/references.qmd').replace(/\\/g, '/');
+
   // Single LLM call to fact-check and link to existing refs OR create placeholder refs
   const factCheckPrompt = `You are an expert fact-checker and citation assistant.
 
 **YOUR TASK:**
-1. Review the CHAPTER CONTENT below for uncited factual claims that ABSOLUTELY NEED a source
+1. Review the CHAPTER CONTENT below for UNCITED factual claims that ABSOLUTELY NEED a source
 2. Only cite claims that are:
    - Specific statistics or numbers (e.g., "$916 billion spent on military")
    - Verifiable historical facts or data points
@@ -334,10 +338,21 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
    - General statements or obvious facts
    - Author's opinions or arguments
    - Commonly known information
-4. For each uncited claim that NEEDS a source:
-   - If an existing reference in EXISTING REFERENCES supports it (even loosely), add a link: [claim](../references.qmd#anchor-id)
+   - Metaphors, analogies, or hypothetical examples (e.g., "if you stacked money to the moon")
+   - Mathematical calculations or conversions that are self-evident
+   - Rhetorical devices or colorful language used for emphasis
+   - Thought experiments or illustrations
+4. **CRITICAL: DO NOT modify text that is already linked!**
+   - If text already has a markdown link like [text](url), leave it completely unchanged
+   - Only add links to PLAIN TEXT that needs a citation
+   - Examples of text to IGNORE (leave unchanged):
+     * [existing link](./problem/file.qmd)
+     * [existing link](../references.qmd#some-id)
+     * [existing link](https://example.com)
+5. For each UNCITED claim that NEEDS a source:
+   - If an existing reference in EXISTING REFERENCES supports it (even loosely), add a link: [claim](${referencesPath}#anchor-id)
    - If no suitable existing reference exists, create a new placeholder reference entry
-5. Return ONLY valid JSON (no markdown code blocks):
+6. Return ONLY valid JSON (no markdown code blocks):
 
 {
   "updatedChapter": "the complete chapter text with citation links added",
