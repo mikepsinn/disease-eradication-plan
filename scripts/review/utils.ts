@@ -157,18 +157,169 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
   console.log(`Successfully improved style for ${filePath}.`);
 }
 
+// Parse references.qmd into structured array
+interface Reference {
+  id: string;
+  title: string;
+  quotes: string[];
+  source: string;
+}
+
+function parseReferences(referencesContent: string): Reference[] {
+  const references: Reference[] = [];
+  const lines = referencesContent.split('\n');
+  const seenIds = new Map<string, number>(); // Track IDs and their first occurrence line
+
+  let currentRef: Reference | null = null;
+  let inQuoteBlock = false;
+  let currentQuote = '';
+  let currentLineNumber = 0;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    currentLineNumber = i + 1;
+
+    // Match anchor tags: <a id="anchor-id"></a>
+    const anchorMatch = line.match(/<a\s+id="([^"]+)"><\/a>/);
+    if (anchorMatch) {
+      if (currentRef) {
+        references.push(currentRef);
+      }
+
+      const id = anchorMatch[1];
+
+      // Check for duplicate IDs
+      if (seenIds.has(id)) {
+        console.warn(`⚠ Duplicate reference ID "${id}" found at line ${currentLineNumber} (first seen at line ${seenIds.get(id)})`);
+        console.warn(`  → Merging entries with same ID`);
+
+        // Find the existing reference and merge with it
+        const existingRef = references.find(r => r.id === id);
+        if (existingRef) {
+          currentRef = existingRef;
+          continue;
+        }
+      }
+
+      seenIds.set(id, currentLineNumber);
+      currentRef = {
+        id: id,
+        title: '',
+        quotes: [],
+        source: ''
+      };
+      continue;
+    }
+
+    // Match title: - **Title text**
+    const titleMatch = line.match(/^-\s+\*\*(.+)\*\*$/);
+    if (titleMatch && currentRef) {
+      // If title already exists and we're merging, append to quotes instead
+      if (currentRef.title && currentRef.title !== titleMatch[1]) {
+        // This is a second title for the same ID - add previous title as a note
+        currentRef.quotes.push(`Alternative title: ${titleMatch[1]}`);
+      } else if (!currentRef.title) {
+        currentRef.title = titleMatch[1];
+      }
+      continue;
+    }
+
+    // Match quote lines: start with > followed by content or >—
+    if (line.trim().startsWith('>')) {
+      const quoteContent = line.trim().substring(1).trim();
+
+      // Check if this is the source line (starts with —)
+      if (quoteContent.startsWith('—')) {
+        if (currentQuote && currentRef) {
+          currentRef.quotes.push(currentQuote.trim());
+          currentQuote = '';
+        }
+        if (currentRef) {
+          // If we already have a source and this is different, append it
+          const newSource = quoteContent.substring(1).trim();
+          if (currentRef.source && currentRef.source !== newSource) {
+            currentRef.source += ' | ' + newSource;
+          } else if (!currentRef.source) {
+            currentRef.source = newSource;
+          }
+        }
+        inQuoteBlock = false;
+      } else {
+        // Regular quote content
+        if (currentQuote) {
+          currentQuote += '\n' + quoteContent;
+        } else {
+          currentQuote = quoteContent;
+        }
+        inQuoteBlock = true;
+      }
+    } else if (inQuoteBlock && currentQuote) {
+      // End of quote block
+      if (currentRef) {
+        currentRef.quotes.push(currentQuote.trim());
+      }
+      currentQuote = '';
+      inQuoteBlock = false;
+    }
+  }
+
+  // Push the last reference
+  if (currentRef) {
+    references.push(currentRef);
+  }
+
+  // Deduplicate by ID (keep first occurrence)
+  const uniqueReferences = new Map<string, Reference>();
+  for (const ref of references) {
+    if (!uniqueReferences.has(ref.id)) {
+      uniqueReferences.set(ref.id, ref);
+    }
+  }
+
+  return Array.from(uniqueReferences.values());
+}
+
+function formatReferencesFile(references: Reference[], frontmatter: string): string {
+  // Sort by ID alphabetically
+  const sorted = references.sort((a, b) => a.id.localeCompare(b.id));
+
+  let output = frontmatter + '\n\n';
+
+  for (const ref of sorted) {
+    output += `<a id="${ref.id}"></a>\n`;
+    output += `- **${ref.title}**\n`;
+    for (const quote of ref.quotes) {
+      output += `  > ${quote}\n`;
+    }
+    output += `  > — ${ref.source}\n\n`;
+  }
+
+  return output.trimEnd() + '\n';
+}
+
 export async function factCheckFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nFact-checking ${filePath} with ${GEMINI_MODEL_ID}...`);
   let originalContent = await fs.readFile(filePath, 'utf-8');
   let { data: frontmatter, content: body } = matter(originalContent);
 
-  // Load existing references
-  let existingReferences = '';
+  // Load and parse existing references
+  let existingReferencesContent = '';
+  let existingReferences: Reference[] = [];
+  let referencesFrontmatter = '';
+
   try {
-    existingReferences = await fs.readFile('brain/book/references.qmd', 'utf-8');
+    existingReferencesContent = await fs.readFile('brain/book/references.qmd', 'utf-8');
+    const refMatter = matter(existingReferencesContent);
+    referencesFrontmatter = matter.stringify('', refMatter.data, { lineWidth: -1 } as any).trim();
+    existingReferences = parseReferences(refMatter.content);
   } catch (error) {
     console.warn('Could not load references.qmd, will create new file');
   }
+
+  // Create summary of existing references for the prompt
+  const existingRefsSummary = existingReferences
+    .map(ref => `- ID: ${ref.id}\n  Title: ${ref.title}\n  Quote: ${ref.quotes[0] || ''}`)
+    .join('\n\n');
 
   // Single LLM call to fact-check and link to existing refs OR create placeholder refs
   const factCheckPrompt = `You are an expert fact-checker and citation assistant.
@@ -190,29 +341,24 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
 
 {
   "updatedChapter": "the complete chapter text with citation links added",
-  "updatedReferences": "the complete updated references.qmd file with new placeholder references added in alphabetical order by anchor ID"
+  "newReferences": [
+    {
+      "id": "slugified-id",
+      "title": "Descriptive title for the claim",
+      "quotes": ["The exact claim text from the chapter"],
+      "source": "<!-- TODO: Add source URL -->"
+    }
+  ]
 }
 
 **RULES FOR NEW PLACEHOLDER REFERENCES:**
 - Create anchor ID by slugifying the claim topic (lowercase, hyphens, max 50 chars)
-- Format: <a id="anchor-id"></a>\\n- **[Descriptive title for the claim]**\\n  > "The exact claim text from the chapter"\\n  > — <!-- TODO: Add source URL -->
-- Add to EXISTING REFERENCES in alphabetical order by anchor ID
-- Keep all existing references intact
+- Only return NEW references in the newReferences array
+- Do NOT return existing references in newReferences
+- If no new references needed, return empty array: "newReferences": []
 
-**EXAMPLE PLACEHOLDER:**
-<a id="global-population-8-billion"></a>
-- **Global population reaches 8 billion**
-  > "The global population is approximately 8 billion people."
-  > — <!-- TODO: Add source URL -->
-
-**RULES:**
-- Link ALL factual claims (either to existing refs or new placeholders)
-- Do NOT use Google Search - just create placeholders for new claims
-- Maintain alphabetical order by anchor ID
-- If no uncited claims exist, return existing references unchanged
-
-**EXISTING REFERENCES:**
-${existingReferences}
+**EXISTING REFERENCES (for linking only - do NOT return these):**
+${existingRefsSummary}
 
 **CHAPTER CONTENT:**
 ${body}`;
@@ -240,15 +386,30 @@ ${body}`;
 
     body = resultData.updatedChapter;
 
-    // Write updated references file if it changed
-    if (resultData.updatedReferences) {
-      // Check if references actually changed
-      if (resultData.updatedReferences.trim() !== existingReferences.trim()) {
-        await fs.writeFile('brain/book/references.qmd', resultData.updatedReferences, 'utf-8');
-        console.log(`✓ Updated references.qmd with new citations`);
-      } else {
-        console.log(`✓ All claims linked to existing references (no new references added)`);
+    // Merge new references with existing ones
+    if (resultData.newReferences && resultData.newReferences.length > 0) {
+      const newRefs: Reference[] = resultData.newReferences;
+
+      // Check for duplicate IDs
+      const existingIds = new Set(existingReferences.map(r => r.id));
+      const dedupedNewRefs = newRefs.filter(ref => {
+        if (existingIds.has(ref.id)) {
+          console.warn(`⚠ Skipping duplicate reference ID: ${ref.id}`);
+          return false;
+        }
+        return true;
+      });
+
+      if (dedupedNewRefs.length > 0) {
+        // Merge and regenerate references.qmd
+        const allReferences = [...existingReferences, ...dedupedNewRefs];
+        const newReferencesFile = formatReferencesFile(allReferences, referencesFrontmatter);
+
+        await fs.writeFile('brain/book/references.qmd', newReferencesFile, 'utf-8');
+        console.log(`✓ Added ${dedupedNewRefs.length} new reference(s) to references.qmd`);
       }
+    } else {
+      console.log(`✓ All claims linked to existing references (no new references added)`);
     }
 
   } catch (error) {

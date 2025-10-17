@@ -35,7 +35,8 @@
       "Bash(start \"c:\\code\\decentralized-institutes-of-health\\brain\\figures\\fda-vs-dfda-comparison-bar-chart.html\")",
       "Bash(start \"c:\\code\\decentralized-institutes-of-health\\_book\\brain\\book\\solution\\wishocracy.html\")",
       "Bash(npx tsx:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(npm run fact-check:all:*)"
     ],
     "deny": [],
     "ask": []
