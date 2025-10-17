@@ -314,7 +314,11 @@ function formatReferencesFile(references: Reference[], frontmatter: string): str
 export async function factCheckFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nFact-checking ${filePath} with ${GEMINI_MODEL_ID}...`);
   let originalContent = await fs.readFile(filePath, 'utf-8');
-  let { data: frontmatter, content: body } = matter(originalContent);
+  let { data: frontmatter, content: body, orig: originalBuffer } = matter(originalContent);
+
+  // Extract original frontmatter to preserve formatting
+  const frontmatterMatch = originalContent.match(/^---\n([\s\S]*?)\n---/);
+  const originalFrontmatterText = frontmatterMatch ? frontmatterMatch[0] : null;
 
   // Load and parse existing references
   let existingReferencesContent = '';
@@ -339,24 +343,46 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
   const fileDir = path.dirname(filePath);
   const referencesPath = path.relative(fileDir, 'brain/book/references.qmd').replace(/\\/g, '/');
 
+  // Load book structure from _quarto.yml to know about chapters
+  let bookStructure = '';
+  try {
+    const quartoConfig = await fs.readFile('_quarto.yml', 'utf-8');
+    bookStructure = quartoConfig;
+  } catch (error) {
+    console.warn('Could not load _quarto.yml');
+  }
+
   // Single LLM call to fact-check and link to existing refs OR create placeholder refs
-  const factCheckPrompt = `You are an expert fact-checker and citation assistant.
+  const factCheckPrompt = `You are an expert fact-checker and citation assistant for a book called "The Complete Idiot's Guide to Ending War and Disease."
 
 **YOUR TASK:**
 1. Review the CHAPTER CONTENT below for UNCITED factual claims that ABSOLUTELY NEED a source
-2. Only cite claims that are:
-   - Specific statistics or numbers (e.g., "$916 billion spent on military")
-   - Verifiable historical facts or data points
-   - Claims that readers would reasonably question without a source
-3. DO NOT require sources for:
+2. Distinguish between THREE types of claims:
+
+   **TYPE A - EXTERNAL FACTS (need external citations to references.qmd):**
+   - Current/historical statistics from real-world sources (e.g., "Global military spending is $2.44 trillion")
+   - Published research findings or studies
+   - Historical events or data
+   - Statements about existing organizations, policies, or systems
+
+   **TYPE B - INTERNAL PROPOSALS/CALCULATIONS (can link to other book chapters):**
+   - The book's own proposals (e.g., "the 1% Treaty")
+   - Calculations based on the book's models (e.g., "$270 billion per year from 1% Treaty")
+   - Projections or estimates made by this book
+   - Economic models described in other chapters
+   → For these, link to the relevant CHAPTER from the BOOK STRUCTURE below (not references.qmd)
+
+   **TYPE C - NO CITATION NEEDED:**
    - General statements or obvious facts
    - Author's opinions or arguments
-   - Commonly known information
-   - Metaphors, analogies, or hypothetical examples (e.g., "if you stacked money to the moon")
+  - Commonly known information
+   - Metaphors, analogies, or hypothetical examples
    - Mathematical calculations or conversions that are self-evident
-   - Rhetorical devices or colorful language used for emphasis
+   - Future scenarios or aspirational visions (e.g., "Cancer becomes treatable")
+   - Rhetorical devices or colorful language
    - Thought experiments or illustrations
-4. **CRITICAL: DO NOT modify text that is already linked!**
+
+3. **CRITICAL: DO NOT modify text that is already linked!**
    - If text already has a markdown link like [text](url), leave it completely unchanged
    - Only add links to PLAIN TEXT that needs a citation
    - Examples of text to IGNORE (leave unchanged):
@@ -386,7 +412,10 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
 - Do NOT return existing references in newReferences
 - If no new references needed, return empty array: "newReferences": []
 
-**EXISTING REFERENCES (for linking only - do NOT return these):**
+**BOOK STRUCTURE (available chapters for TYPE B internal links):**
+${bookStructure}
+
+**EXISTING REFERENCES (for TYPE A external facts - link only, do NOT return these):**
 ${existingRefsSummary}
 
 **CHAPTER CONTENT:**
@@ -447,7 +476,29 @@ ${body}`;
   }
 
   frontmatter.lastFactCheckHash = getBodyHash(matter.stringify(body, frontmatter));
-  const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
+
+  // Reconstruct file preserving original frontmatter format
+  let newContent: string;
+  if (originalFrontmatterText) {
+    // Update only the lastFactCheckHash field in the original frontmatter
+    const updatedFrontmatter = originalFrontmatterText.replace(
+      /(lastFactCheckHash:\s*)[^\n]*/,
+      `$1${frontmatter.lastFactCheckHash}`
+    );
+    // If lastFactCheckHash doesn't exist, add it before the closing ---
+    if (!updatedFrontmatter.includes('lastFactCheckHash:')) {
+      newContent = originalFrontmatterText.replace(
+        /\n---$/,
+        `\nlastFactCheckHash: ${frontmatter.lastFactCheckHash}\n---`
+      ) + '\n' + body;
+    } else {
+      newContent = updatedFrontmatter + '\n' + body;
+    }
+  } else {
+    // Fallback to gray-matter if no frontmatter found
+    newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
+  }
+
   await fs.writeFile(filePath, newContent, 'utf-8');
   console.log(`Successfully updated ${filePath}`);
 }
