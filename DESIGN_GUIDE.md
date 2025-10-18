@@ -185,19 +185,13 @@ plt.rcParams['font.size'] = 12
 plt.rcParams['font.weight'] = 'bold'
 ```
 
-**Font Size Guidelines:**
+**Font Sizing - Adaptive to Chart Density:**
 
-All charts must be readable on mobile (320-428px width). **Make fonts BIG.**
+Mobile-first (320-428px). Scale fonts based on element count:
+- **Sparse (≤5 elements):** Max sizes | **Dense (>10):** Min sizes to prevent overlap
+- **Hierarchy:** Data values (24-44pt) > Title (28-36pt) ≥ Axis labels (20-36pt) > Annotations (11-24pt) > Callouts (11-22pt) > Notes (9-16pt) > Watermark (11pt fixed)
 
-**Minimum Sizes:**
-- **Data value labels:** 36-44pt (BIGGEST - most important)
-- **Chart titles:** 28-36pt (second biggest)
-- **Y-axis labels:** 28-36pt (same as title)
-- **Watermark:** 11pt
-
-**The Rule:** Data Values > Title ≥ Axis Labels
-
-When in doubt, go bigger. Think propaganda posters, not academic papers.
+**Anti-overlap:** Start with full descriptive text at smaller sizes. Only shorten if essential. Stagger vertically when crowded (5pt min spacing). Better: 11pt readable text than 28pt overlapping mess.
 
 **Common Mistakes:**
 - ❌ 18pt title with 44pt data - title disappears
