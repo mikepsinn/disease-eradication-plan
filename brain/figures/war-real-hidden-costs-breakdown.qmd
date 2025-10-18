@@ -36,8 +36,8 @@ categories = [
 ]
 values = [2700, 2400, 500, 800, 1500, 2000]
 
-# BLACK for admitted, RED for all hidden costs
-colors_pie = [COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, COLOR_BLACK]
+# WHITE slices with black borders
+colors_pie = [COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE]
 
 # Create minimalist pie chart
 fig, ax = plt.subplots(figsize=(14, 14))
@@ -48,19 +48,19 @@ wedges, texts, autotexts = ax.pie(values, labels=categories, colors=colors_pie,
                                     autopct='%1.0f%%',
                                     pctdistance=0.85,
                                     labeldistance=1.15,
-                                    textprops={'fontsize': 32, 'fontweight': 'bold'},
-                                    wedgeprops={'edgecolor': COLOR_WHITE, 'linewidth': 4})
+                                    textprops={'fontsize': 28, 'fontweight': 'bold'},
+                                    wedgeprops={'edgecolor': COLOR_BLACK, 'linewidth': 4})
 
-# Make percentage text white and bold
+# Make percentage text black and bold (visible on white slices)
 for autotext in autotexts:
-    autotext.set_color(COLOR_WHITE)
+    autotext.set_color(COLOR_BLACK)
     autotext.set_fontsize(36)
     autotext.set_fontweight('bold')
 
 # Make label text black (outside the pie)
 for text in texts:
     text.set_color(COLOR_BLACK)
-    text.set_fontsize(24)
+    text.set_fontsize(28)  # Even larger font for maximum readability
     text.set_fontweight('bold')
 
 # Add total in center
