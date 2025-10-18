@@ -542,6 +542,52 @@ ${body}`;
   console.log(`Successfully updated ${filePath}`);
 }
 
+export async function structureCheckFileWithLLM(filePath: string): Promise<void> {
+  console.log(`\nChecking structure of ${filePath} with ${GEMINI_MODEL_ID}...`);
+  const originalContent = await fs.readFile(filePath, 'utf-8');
+  let { data: frontmatter, content: body } = matter(originalContent);
+
+  const outlineContent = await fs.readFile('OUTLINE.md', 'utf-8');
+  
+  const prompt = `You are an expert editor for a book called "The Complete Idiot's Guide to Ending War and Disease."
+Your task is to ensure a chapter's content is logically structured and placed correctly within the book's overall outline.
+
+**CRITICAL INSTRUCTIONS:**
+1.  **Analyze the CHAPTER CONTENT** against the provided **BOOK OUTLINE**.
+2.  **Identify any paragraphs or sections** within the chapter that seem misplaced or would fit better in a *different* chapter as defined by the outline.
+3.  **For each misplaced section you find, insert a structured TODO comment** on the line *directly above* it.
+4.  **The TODO comment MUST follow this exact format:** \`<!-- TODO: STRUCTURE_CHECK - This section might belong in 'PART X: Chapter Title'. REASON: [Your brief, one-sentence reason] -->\`
+5.  **Do not modify the chapter's text in any other way.** Only insert the TODO comments.
+6.  **If the chapter is well-structured and all content belongs, you MUST return the special string "NO_CHANGES_NEEDED".**
+7.  Otherwise, return *only* the full, original chapter content with your TODO comments added. Do not include any other text, explanations, or markdown formatting.
+
+---
+**BOOK OUTLINE:**
+${outlineContent}
+---
+**CHAPTER CONTENT:**
+${body}`;
+
+  const result = await genAI.models.generateContent({
+    model: GEMINI_MODEL_ID,
+    contents: prompt
+  });
+  const responseText = result.text || '';
+
+  let finalBody;
+  if (responseText.trim() === 'NO_CHANGES_NEEDED') {
+    console.log(`File ${filePath} is already structured correctly. Updating metadata.`);
+    finalBody = body; // Use the original body
+  } else {
+    finalBody = responseText.trim();
+  }
+
+  frontmatter.lastStructureCheckHash = getBodyHash(matter.stringify(finalBody, frontmatter));
+  const newContent = matter.stringify(finalBody, frontmatter, { lineWidth: -1 } as any);
+  await fs.writeFile(filePath, newContent, 'utf-8');
+  console.log(`Successfully checked structure for ${filePath}.`);
+}
+
 export async function linkCheckFile(filePath: string): Promise<void> {
   console.log(`\nChecking links in ${filePath}...`);
   let originalContent = await fs.readFile(filePath, 'utf-8');

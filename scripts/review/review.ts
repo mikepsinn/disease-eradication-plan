@@ -4,7 +4,8 @@ import {
   styleFileWithLLM, 
   factCheckFileWithLLM, 
   linkCheckFile, 
-  figureCheckFile 
+  figureCheckFile,
+  structureCheckFileWithLLM
 } from './utils';
 import dotenv from 'dotenv';
 
@@ -18,7 +19,8 @@ async function main() {
     { name: 'Style', hashField: 'lastStyleHash', checkFunction: styleFileWithLLM },
     { name: 'Fact Check', hashField: 'lastFactCheckHash', checkFunction: factCheckFileWithLLM },
     { name: 'Link Check', hashField: 'lastLinkCheckHash', checkFunction: linkCheckFile },
-    { name: 'Figure Check', hashField: 'lastFigureCheckHash', checkFunction: figureCheckFile }
+    { name: 'Figure Check', hashField: 'lastFigureCheckHash', checkFunction: figureCheckFile },
+    { name: 'Structure Check', hashField: 'lastStructureCheckHash', checkFunction: structureCheckFileWithLLM }
   ];
 
   for (const check of checks) {
