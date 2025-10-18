@@ -44,11 +44,12 @@ function getBodyHash(content: string): string {
 
 // --- Exported Functions ---
 
-export async function getStaleFiles(hashFieldName: string): Promise<string[]> {
+export async function getStaleFiles(hashFieldName: string, basePath?: string): Promise<string[]> {
   const gitignoreContent = await fs.readFile('.gitignore', 'utf-8');
   const ig = ignore().add(gitignoreContent);
 
-  const allQmdFiles = glob.sync('**/*.qmd', { ignore: 'node_modules/**' });
+  const searchPattern = basePath ? `${basePath}/**/*.qmd` : '**/*.qmd';
+  const allQmdFiles = glob.sync(searchPattern, { ignore: 'node_modules/**' });
   const qmdFiles = ig.filter(allQmdFiles);
   
   const staleFiles: string[] = [];
@@ -366,6 +367,13 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
    - Statements about existing real-world organizations, policies, or systems
    - Statistics that existed BEFORE this book was written
 
+   **CRITICAL: Context matters! Only cite external facts when they are presented as ACTUAL CLAIMS, not when used in:**
+   - Hypothetical examples (e.g., "Suppose 70% support..." or "If we assume 70% approval...")
+   - Illustrative scenarios (e.g., "Imagine a world where..." or "Consider a case where...")
+   - Investor pitch materials (e.g., "Show investors the 270% returns..." - these are PROJECTIONS)
+   - Modeling assumptions (e.g., "Using 70% as our baseline..." - these are MODEL INPUTS)
+   - "What-if" calculations (e.g., "If 100 countries sign..." - these are HYPOTHETICALS)
+
    **TYPE B - INTERNAL PROPOSALS/CALCULATIONS (link sparingly or not at all):**
    - The book's own proposals and terminology (e.g., "the 1% Treaty", "dFDA", "Wishocracy")
      → Link ONLY the FIRST mention of key concepts to their defining chapter
@@ -377,6 +385,10 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
      → These are OUR PROJECTIONS, not external data - DO NOT link to references.qmd
    - Future timeline estimates made by this book (e.g., "2055 projected median wealth")
      → These are OUR PREDICTIONS, not citations - DO NOT link to references.qmd
+   - Percentage assumptions in pitch/marketing materials (e.g., "70% public support" in an investor deck)
+     → These are ILLUSTRATIVE EXAMPLES for the pitch, not factual claims - DO NOT link
+   - Numbers in tables showing scenarios (e.g., "Scenario A: 270% ROI" or "Year 1-3: 1%")
+     → These are HYPOTHETICAL PROJECTIONS for the model, not citations - DO NOT link
 
    **TYPE C - NO CITATION NEEDED:**
    - General statements or obvious facts
@@ -388,11 +400,22 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
    - Rhetorical devices or colorful language
    - Thought experiments or illustrations
    - Repeated mentions of already-introduced concepts
+   - Numbers used in investor pitches, marketing materials, or fundraising documents
+   - Assumptions stated as "what if" or "suppose" or "imagine" scenarios
+   - Illustrative percentages in hypothetical examples (e.g., "70% approval in this scenario")
 
 3. **LINKING RULES:**
    - **DO NOT over-link**: Link a term/concept only ONCE (first significant mention), not every time it appears
    - **DO NOT link internal calculations to references.qmd**: If a number comes from the book's own model, either don't link it or link to the chapter explaining the calculation
+   - **Context is EVERYTHING**: Before adding a link, ask yourself:
+     * Is this number/claim presented as a FACTUAL ASSERTION about the current world?
+     * Or is it an ASSUMPTION, PROJECTION, or HYPOTHETICAL used in a model/pitch?
+     * Phrases like "Show investors...", "Assume...", "If we...", "Projected..." indicate TYPE B/C, not TYPE A
+   - **Chapters about fundraising, pitches, or investor materials**: These contain ILLUSTRATIVE EXAMPLES, not factual claims
+     * Example: "70% approval" in an investor pitch is a PITCH ASSUMPTION, not a cited fact
+     * Example: "270% ROI" in a bond prospectus is a PROJECTION, not a historical return
    - Be conservative with links - only add them when absolutely necessary for credibility
+   - **When in doubt, DO NOT LINK** - over-linking hurts readability and credibility
 
 4. **CRITICAL: DO NOT modify text that is already linked!**
    - If text already has a markdown link like [text](url), leave it completely unchanged
