@@ -15,6 +15,7 @@ lastFormatted: '2025-10-16'
 lastStyleCheck: '2025-10-16'
 lastFormattedHash: a0528ec16479d2dbb2791ead5cfbd1b8df263ca66b4250acd31d8cf50ceaeea8
 lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2b8f
+lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e982c9a2d
 ---
 
 <a id="166-billion-compounds"></a>
@@ -2710,38 +2711,67 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="occupy-wall-street"></a>
 - **Occupy Wall Street Movement (2011)**
-  > A 2011 protest movement against economic inequality and the influence of money in politics.
-  > — <!-- TODO: Add source URL -->
+  > Left-wing populist movement against economic inequality, capitalism, corporate greed, big finance, money in politics
+  > September 17 - November 15, 2011 (59 days) in Zuccotti Park, NYC Financial District
+  > Slogan "We are the 99%" highlighted income/wealth inequality: Top 1% owned 40% of wealth, earned 20% of income (2011)
+  > Organized by Adbusters (Kalle Lasn, Micah White); ended November 15 when police cleared park (~200 arrested)
+  > Legacy: Successfully reframed national conversation about economic inequality in simple, effective terms
+  > — [Wikipedia: Occupy Wall Street](https://en.wikipedia.org/wiki/Occupy_Wall_Street) | [Britannica: Occupy Wall Street](https://www.britannica.com/topic/Occupy-Wall-Street) | [History: Occupy Wall Street Begins](https://history.com/this-day-in-history/occupy-wall-street-begins-zuccotti-park)
 
 <a id="odds-of-decisive-vote"></a>
 - **Odds of a single vote being decisive in a U.S. presidential election**
-  > Chance your vote decides an election: 1 in 60 million
-  > — <!-- TODO: Add source URL -->
+  > National average: 1 in 60 million chance (2008 election analysis by Gelman, Silver, Edlin)
+  > Swing states (NM, VA, NH, CO): ~1 in 10 million chance
+  > Non-competitive states: 34 states >1 in 100 million odds; 20 states >1 in 1 billion
+  > Washington DC: 1 in 490 billion odds
+  > Methodology: Probability state is necessary for electoral college win × probability state vote is tied
+  > — [Columbia/NBER: What Is the Probability Your Vote Will Make a Difference?](https://sites.stat.columbia.edu/gelman/research/published/probdecisive2.pdf) | [Economic Inquiry 2012](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1465-7295.2010.00272.x)
 
 <a id="onc-healthit"></a>
 - **Office of the National Coordinator for Health Information Technology (ONC)**
-  > ONC
-  > — <!-- TODO: Add source URL -->
+  > Now: Office of the Assistant Secretary for Technology Policy/ONC (ASTP/ONC) - within HHS Office of the Secretary
+  > Mission: Coordinate nationwide efforts for advanced health IT and electronic health information exchange
+  > Created: April 27, 2004 by President Bush (Executive Order 13335)
+  > Mandated by Congress: 2009 Health Information Technology for Economic and Clinical Health Act (HITECH Act, part of ARRA)
+  > Focus: Data, technology, interoperability, AI strategies and policies for HHS
+  > — [Wikipedia: ONC](https://en.wikipedia.org/wiki/Office_of_the_National_Coordinator_for_Health_Information_Technology) | [HHS: ASTP/ONC](https://www.hhs.gov/about/agencies/astp/index.html) | [HealthIT.gov](https://www.healthit.gov)
 
 <a id="oncologist-median-salary-200k"></a>
 - **Median oncologist salary**
-  > Oncologists lose $200K/year jobs
-  > — <!-- TODO: Add source URL -->
+  > 2024 average compensation: $464,000 (medical oncology), well above average U.S. specialist salary of $394,000
+  > Radiation oncology: Frequently exceeds $472,000/year
+  > Hematology-Oncology: $450,000-$516,017 (MGMA median)
+  > High-demand states (SD, NH, ND): Often >$500,000 due to rural workforce shortages
+  > Locum tenens: $200-$250/hour
+  > — [Weatherby: Medical Oncologist Salary 2024](https://weatherbyhealthcare.com/blog/medical-oncologist-salary) | [Sermo: Oncologist Salaries 2025](https://www.sermo.com/resources/oncologist-salaries-2025/) | [AMN Healthcare: Oncologist Salary 2025](https://www.amnhealthcare.com/blog/physician/locums/oncologist-salary-and-specialties/)
 
 <a id="open-source-platform-multi-trillion-dollar-reality"></a>
 - **Open-source and platform-as-a-service multi-trillion dollar market**
-  > it is a proven, multi-trillion-dollar reality
-  > — <!-- TODO: Add source URL -->
+  > Open source services market: $30.2B (2023) → $81.4B (2030) at 16.5% CAGR; other estimates $135.9B by 2033
+  > Open source cloud platform: $6.23B (2024) → $18.12B (2033) at 12.8% CAGR
+  > Platform as a Service (PaaS): Growing at 12.6% CAGR
+  > Broader cloud computing market: Projected $1.5 trillion by 2033 at 15% CAGR
+  > Current market in tens of billions, approaching multi-trillion valuations in long term
+  > — [Grand View Research: Open Source Services Market](https://www.grandviewresearch.com/industry-analysis/open-source-services-market-report) | [Precedence Research: Open Source Services Market](https://www.precedenceresearch.com/open-source-services-market)
 
 <a id="opentrials-database"></a>
 - **OpenTrials Database Initiative**
-  > OpenTrials
-  > — <!-- TODO: Add source URL -->
+  > Collaborative open database for all structured data/documents on all clinical trials
+  > Launched: October 10, 2016 beta at World Health Summit
+  > Director: Dr. Ben Goldacre (University of Oxford DataLab, author of Bad Science/Bad Pharma, AllTrials campaign founder)
+  > Collaboration: Open Knowledge International + Oxford DataLab; funded by Laura and John Arnold Foundation
+  > Features: Threads together registry entries, journal papers, regulatory docs, systematic reviews, clinical study reports, consent forms, protocols
+  > Goal: Increase discoverability, identify inconsistent data, enable audits, support advocacy for better data, drive up open data standards
+  > — [OpenTrials: Official Site](https://opentrials.net/) | [Trials: OpenTrials Article](https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-016-1290-8) | [Open Knowledge Blog](https://blog.okfn.org/2016/10/10/opentrials-launches-beta-version-today-at-the-world-health-summit/)
 
 <a id="ostrom-game-theory-cooperation"></a>
 - **Elinor Ostrom's work on cooperation vs. punishment**
-  > Game theory (e.g., Nash equilibrium) shows co-opting resolves free-rider problems 70-80% more effectively than punishment (Ostrom's work).
-  > — <!-- TODO: Add source URL -->
+  > Ostrom demonstrated cooperative management of natural resources can preserve (not degrade) them; trust between strangers can be established as basis for collaborative common-pool resource management
+  > Pioneering experiments confirmed widespread use of costly punishment in response to excessive resource extraction
+  > Showed power of communication and critical role of informal agreements in supporting cooperation
+  > Public goods game experiments: 70-80% cooperation thresholds achievable with leader support systems (vs. none without support)
+  > Provided sharp critique of free-rider problem arguments from within mainstream economics
+  > — [ResearchGate: Ostrom's Contributions to Experimental Study of Social Dilemmas](https://www.researchgate.net/publication/225351948_Elinor_Ostrom's_contributions_to_the_experimental_study_of_social_dilemmas) | [Jacobin: The Economist Who Solved the Free-Rider Problem](https://jacobin.com/2025/06/ostrom-capitalism-free-rider-problem)
 
 <a id="pandemics-vs-wars"></a>
 - **Pandemic vs. war deaths comparison**
@@ -2750,18 +2780,29 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="parents-of-sick-children-50m"></a>
 - **Over 50 million parents of sick children**
-  > (50M+)
-  > — <!-- TODO: Add source URL -->
+  > Children with special health care needs (CSHCN): 14.6M children (19.8% of American children)
+  > Chronic conditions: ~43% of US children (32M) have at least 1 of 20 chronic conditions; 54.1% when including overweight/obesity/developmental delays
+  > Recent rise: Nearly 1-in-3 young people (25M ages 5-25) now living with chronic condition/functional limitation
+  > Impact on parents: Increased stress, families more likely to experience poverty and poor health
+  > — [UCLA Health: Pediatric Chronic Disease Prevalence](https://www.uclahealth.org/news/release/pediatric-chronic-disease-prevalence-has-risen-nearly-30) | [PMC: Health Outcomes of Parents](https://pubmed.ncbi.nlm.nih.gov/31916997/) | [Documenting Hope: Statistics](https://documentinghope.com/the-startling-statistics/)
 
 <a id="patient-access-clinical-trials"></a>
 - **Patient enrollment rates in clinical trials**
-  > less than 5% are ever offered the chance
-  > — <!-- TODO: Add source URL -->
+  > Overall enrollment: 5-8% of adult cancer patients (historically <5%, recent data shows 7.1%)
+  > When offered participation: 55% of patients agree to enroll
+  > Gap caused by: Structural barriers (half of patients), eligibility exclusions (half of remaining), physicians not offering
+  > Physician referral rate: Median 5 patients/year (<0.2% of annual patient volume)
+  > Conclusion: Low enrollment not primarily due to patient refusal, but lack of opportunity
+  > — [Applied Clinical Trials: Rebooting the 5% Statistic](https://www.appliedclinicaltrialsonline.com/view/rebooting-the-statistic-that-5-of-eligible-patients-participate-in-clinical-trials) | [JNCI: When Offered to Participate](https://academic.oup.com/jnci/article/113/3/244/5918345) | [JCO: National Estimates](https://ascopubs.org/doi/10.1200/JCO.23.01030)
 
 <a id="patient-willingness-clinical-trials"></a>
 - **Patient willingness to participate in clinical trials**
-  > 60% of patients
-  > — <!-- TODO: Add source URL -->
+  > Recent surveys: 49-51% willingness (2020-2022) - dramatic drop from 85% (2019) during COVID-19 pandemic
+  > Cancer patients when approached: 88% consented to trials (Royal Marsden Hospital)
+  > Study type variation: 44.8% willing for drug trial, 76.2% for diagnostic study
+  > Top motivation: "Learning more about my health/medical condition" (67.4%)
+  > Top barrier: "Worry about experiencing side effects" (52.6%)
+  > — [Trials: Patients' Willingness Survey](https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-015-1105-3) | [CenterWatch: Willingness Drops Dramatically](https://www.centerwatch.com/articles/24924-patient-willingness-to-join-clinical-trials-drops-dramatically-new-data-show) | [PMC: Study Design Factors](https://pmc.ncbi.nlm.nih.gov/articles/PMC7183682/)
 
 <a id="patientslikeme-advocacy"></a>
 - **PatientsLikeMe Patient Advocacy Group**
