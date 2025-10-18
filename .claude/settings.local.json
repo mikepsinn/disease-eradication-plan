@@ -3,7 +3,8 @@
     "allow": [
       "Bash(quarto render:*)",
       "Bash(dir:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(del:*)"
     ],
     "deny": [],
     "ask": []
