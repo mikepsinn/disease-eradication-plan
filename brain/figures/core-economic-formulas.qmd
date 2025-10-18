@@ -489,9 +489,7 @@ fig.show()
 Edit the constants at the top of this file. All calculations will automatically update.
 
 ### To Use in Documents:
-```markdown
-{{< include ../../figures/core-economic-formulas.qmd#peace-dividend >}}
-```
+To include this file in other documents, use the Quarto include directive with the proper relative path from your document location.
 
 ### To Extract Specific Values:
 ```python
