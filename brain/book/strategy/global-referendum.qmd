@@ -79,7 +79,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 - **Government ID Integration**: Connect with national e-ID systems where available
   - [Estonia e-Residency](../references.qmd#estonia-eresidency-stats) integration
-  - [Indian Aadhaar system](../references.qmd#indian-aadhaar-system) (with privacy protections)
+  - [Indian Aadhaar system](../references.qmd#indian-aadhaar-system) integration
   - [EU eIDAS network](../references.qmd#eu-eidas-network) compatibility
   - US State ID verification via [ID.me partnership](../references.qmd#id-me-verification)
 - **Biometric Liveness Detection**: Camera-based liveness checks to prevent deepfakes

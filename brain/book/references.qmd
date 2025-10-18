@@ -1893,9 +1893,12 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="historical-life-expectancy-30-years"></a>
 - **Historical life expectancy around 30 years**
-  > For over 99% of recorded human history, the average human life expectancy has been around 30 years.
-  > a flat human lifespan of around 28 years.
-  > — <!-- TODO: Add source URL -->
+  > Average life expectancy at birth: ~30 years for most of human history until 1800s
+  > 1820: Global average still ~30 years; 1800-2000: Rose from 30 to 67 years
+  > Context: Low life expectancy driven primarily by high infant mortality (~1/3 of children died before age 5)
+  > Medieval England: Life expectancy at birth = 31.3 years, but life expectancy at age 25 = 25.7 additional years (total 50.7)
+  > Roman Egypt: Average in 20s, but many lived into 40s+ if they survived childhood
+  > — [Our World in Data: Life Expectancy](https://ourworldindata.org/life-expectancy) | [PMC: Changing Life Expectancy](https://pmc.ncbi.nlm.nih.gov/articles/PMC2625386/) | [USC: Old Age Not Modern Phenomenon](https://sc.edu/uofsc/posts/2022/08/conversation-old-age-is-not-a-modern-phenomenon.php) | [Discover: Life Expectancy Ancient Humans](https://www.discovermagazine.com/the-sciences/what-was-the-life-expectancy-of-ancient-humans)
 
 
 <a id="howey-test-securities"></a>
@@ -1912,8 +1915,12 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="human-metabolic-activity"></a>
 - **Estimated Chemical Reactions in the Human Body**
-  > Your body performs approximately 37 billion billion (10^21) chemical reactions per second
-  > — <!-- TODO: Add source URL -->
+  > 37 thousand billion billion (37 × 10^21) chemical reactions per second
+  > Calculation: ~1 billion (10^9) reactions/second/cell × 37 trillion (37 × 10^12) cells
+  > Range: Some estimates suggest 3.7 × 10^22, others up to septillions (10^24) per second
+  > Cell count: 37.2 trillion cells (most current estimate)
+  > Variation: Each cell can host thousands of simultaneous chemical reactions; estimates per cell range from hundreds of millions to several billion
+  > — [Step One Foods: 37 Billion Billion](https://www.steponefoods.com/blogs/news/37-billion-billion-and-why-it-matters) | [Biology Insights: Chemical Reactions](https://biologyinsights.com/how-many-chemical-reactions-occur-in-the-human-body/) | [ECHEMI: Chemical Reactions in Body](https://www.echemi.com/community/on-average-how-many-chemical-reactions-happen-in-the-body-in-one-second_mjart22040911583_805.html)
 
 <a id="hunter-gatherer-violence"></a>
 - **Violence in Hunter-Gatherer Societies**
@@ -1932,13 +1939,25 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="id-me-verification"></a>
 - **ID.me digital identity verification service**
-  > US State ID verification via ID.me partnership
-  > — <!-- TODO: Add source URL -->
+  > Trusted technology partner to multiple US government agencies for secure digital identity verification
+  > Scale: Serves 20 federal agencies, 44 state government agencies, 66 healthcare organizations
+  > Use cases: Unemployment, Tax, Retirement, Centers for Medicare/Medicaid
+  > 2013: Awarded 2-year grant by US Chamber for President's National Strategy for Trusted Identities in Cyberspace (NSTIC)
+  > 2014: Won contract with General Services Administration for Connect.gov digital identity credentials
+  > COVID-19 pandemic: Contracted by several state unemployment agencies to verify claimants
+  > Standards: NIST 800-63-3 establishes guidelines for identity verification providers serving federal agencies
+  > Privacy concerns: IRS announced (Feb 2022) new authentication option without biometric data including facial recognition
+  > — [ID.me: Government Services](https://www.id.me/individuals/government) | [Wikipedia: ID.me](https://en.wikipedia.org/wiki/ID.me) | [ID.me: About](https://www.id.me/about) | [ID.me: Public Sector](https://www.id.me/business/government)
 
 <a id="iea-net-zero-roadmap-cost"></a>
 - **IEA Net Zero Roadmap cost for energy transition**
-  > "\$600B [for a] complete global transitions [to clean energy]"
-  > — <!-- TODO: Add source URL -->
+  > 2023: Record $1.8 trillion invested in clean energy; needs to climb to ~$4.5 trillion/year by early 2030s to align with net zero
+  > Energy investment: 2017-2021 = 2% of global GDP annually; rises to ~4% by 2030 in Net Zero Emissions (NZE) Scenario
+  > Electricity generation from renewables: $390B recent years → $1,300B by 2030
+  > Public demonstration projects: $90B needed globally before 2030
+  > Universal energy access: $40B/year (1% of average annual energy sector investment)
+  > — [IEA: Net Zero by 2050](https://www.iea.org/reports/net-zero-by-2050) | [IEA PDF: Net Zero Roadmap](https://iea.blob.core.windows.net/assets/deebef5d-0c34-4539-9d0c-10b13d840027/NetZeroby2050-ARoadmapfortheGlobalEnergySector_CORR.pdf) | [WRI: 5 Things About IEA Roadmap](https://www.wri.org/insights/5-things-know-about-ieas-roadmap-net-zero-2050)
+  > Note: "$600B" figure NOT found in IEA Net Zero Roadmap. Actual: $1.8T current (2023), $4.5T/year needed by early 2030s
 
 <a id="ihme-gbd-2019"></a>
 - **IHME Global Burden of Disease (2.55B DALYs, 2019)**
@@ -1947,13 +1966,27 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="illinois-bipa"></a>
 - **Illinois Biometric Information Privacy Act (BIPA)**
-  > Illinois BIPA and similar state law compliance
-  > — <!-- TODO: Add source URL -->
+  > Enacted: October 3, 2008 (introduced Feb 14, 2008 by State Sen. Terry Link; passed both Houses July 10, 2008; signed by Gov. Rod Blagojevich)
+  > Purpose: Regulate collection, use, and handling of biometric identifiers and information by private entities in Illinois
+  > Requirements: Written notice of what data is collected/stored, specific purpose & duration, obtain written consent
+  > Covered biometrics: Retina/iris scans, fingerprints, voiceprints, hand scans, facial geometry, DNA, other unique biological info
+  > Prohibitions: Selling or profiting from consumers' biometric information
+  > Penalties: $1,000 per violation; $5,000 per intentional/reckless violation
+  > Private right of action: Any aggrieved individual can sue
+  > 2024 update (SB2979): Multiple collections from same person = single violation (single recovery per individual)
+  > — [ACLU Illinois: BIPA](https://www.aclu-il.org/en/campaigns/biometric-information-privacy-act-bipa) | [Wikipedia: BIPA](https://en.wikipedia.org/wiki/Biometric_Information_Privacy_Act) | [Securiti: Illinois BIPA Overview](https://securiti.ai/privacy-laws/us/illinois/) | [Winston & Strawn: What Is BIPA](https://www.winston.com/en/legal-glossary/what-is-bipa)
 
 <a id="immunotherapy-pioneers-nih-rejection"></a>
 - **NIH rejection of early immunotherapy research**
-  > Immunotherapy: Pioneered by researchers NIH rejected
-  > — <!-- TODO: Add source URL -->
+  > William Coley (1862-1936): Developed "Coley's toxins" (1891) - bacteria/bacterial products to treat cancer (first immunotherapy)
+  > Coley faced opposition from medical establishment, not NIH rejection (NIH didn't exist in modern form during his time)
+  > 1894: JAMA issued statement criticizing use of his toxins
+  > 1962: FDA refused to acknowledge toxin as proven drug, made it illegal to treat cancer
+  > Early funding: Small Rockefeller donations; 1902 large grant from Huntington family
+  > Steven Rosenberg: Currently chief of surgery & head of tumor immunology at NCI/NIH (no evidence of NIH rejection)
+  > 30+ years ago: NCI intramural scientists began exploring using immune system to fight cancer
+  > — [Cancer Research Institute: Coley's Toxins](https://www.cancerresearch.org/blog/april-2015/what-ever-happened-to-coleys-toxins) | [Wikipedia: Coley's toxins](https://en.wikipedia.org/wiki/Coley's_toxins) | [PMC: Talkin' Toxins](https://pmc.ncbi.nlm.nih.gov/articles/PMC7232517/) | [Wikipedia: William Coley](https://en.wikipedia.org/wiki/William_Coley) | [NIH: Rosenberg Immunotherapy Pioneer](https://www.cancer.gov/news-events/press-releases/2023/rosenberg-national-medal-of-technology-and-innovation)
+  > Note: "NIH rejected immunotherapy pioneers" NOT verified. Coley faced medical establishment opposition, FDA rejection (1962), not NIH funding rejection
 
 <a id="impact-investing-regulatory-reform"></a>
 - **Impact investing regulatory reform**
@@ -1962,23 +1995,49 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="india-medical-research-spending-1-2b"></a>
 - **India medical research spending: $1.2 billion**
-  > India: $1.2 billion
-  > — <!-- TODO: Add source URL -->
+  > Current pharma & MedTech R&D: ~$3 billion (vs US $50-60B, China $15-20B)
+  > Department of Health Research budget 2025-26: Rs. 3900.69 crores ($467M USD)
+  > Recent budget: Rs 3,201 crore ($419.2M)
+  > Historical health research funding: US $1,053M (2007-08) → $1,423M (2011-12), 8.8% annual increase
+  > Public health spending: ~1.2% of GDP (among lowest globally)
+  > Healthcare infrastructure need: $1.2 trillion (NITI Aayog 2022 report)
+  > — [ACS: India Budget Biotech Health](https://cen.acs.org/policy/research-funding/India-prioritizes-new-research-foundation-biotech-and-health-in-new-budget/99/web/2021/03) | [National Medical Journal of India: Health Research Funding](https://nmji.in/mapping-of-health-research-funding-in-india/) | [Dept of Health Research: Budget Reports](https://dhr.gov.in/documents/budget-reports)
+  > Note: "$1.2 billion" may refer to historical 2011-12 figure ($1.423B). Current: $3B pharma/MedTech, $467M govt budget
 
 <a id="india-population-1-4b"></a>
 - **India population: 1.4 billion**
-  > Population: 1.4 billion
-  > — <!-- TODO: Add source URL -->
+  > 2024: 1.442-1.455 billion (mid-2024: 1.451B; Nov 2024: 1.455B)
+  > 2025: Adding 12.86 million people
+  > 2023: India surpassed China (1.428B vs 1.425B) as world's most populous nation
+  > Future: Will peak at 1.69-1.7 billion in 2054-2064, then decline
+  > Projected 2030: 1.5+ billion
+  > UN World Population Prospects 2024 revision
+  > — [Worldometer: India Population 2025](https://www.worldometers.info/world-population/india-population/) | [Statistics Times: India Population 2025](https://statisticstimes.com/demographics/country/india-population.php) | [UNFPA: India Dashboard](https://www.unfpa.org/data/world-population/IN) | [Wikipedia: Demographics of India](https://en.wikipedia.org/wiki/Demographics_of_India)
 
 <a id="indian-aadhaar-system"></a>
 - **Indian Aadhaar national identity system**
-  > Indian Aadhaar system (with privacy protections)
-  > — <!-- TODO: Add source URL -->
+  > Largest biometric identity system in history: ~1 billion registered users (nearly all of India's 1.4B population)
+  > 12-digit unique identification number issued by Unique Identification Authority of India (UIDAI)
+  > Biometric data: Fingerprints, facial images, iris scans stored in Central Identities Repository (national centralized database)
+  > Privacy concerns: Deployed without direct legislative privacy/ethics constraints; comprehensive data protection legislation not yet passed
+  > Security issues: High-ranking official's Aadhaar number shared on Twitter led to hackers accessing personal info (mobile, tax ID)
+  > 2017: Supreme Court enshrined privacy rights
+  > Supreme Court ruling: 4 of 5 judges allowed program to continue with limited scope & restrictions on data storage
+  > Threats: Potential for 360-degree profiling; viewed by many as mass surveillance tool infringing privacy rights
+  > — [PMC: Aadhaar Failure to Do No Harm](https://pmc.ncbi.nlm.nih.gov/articles/PMC5741784/) | [TIME: India Supreme Court Upholds](https://time.com/5388257/india-aadhaar-biometric-identification/) | [Privacy International: Aadhaar Analysis](https://privacyinternational.org/case-study/4698/id-systems-analysed-aadhaar) | [Yale Insights: Billion Identities Digitized](https://insights.som.yale.edu/insights/what-happens-when-billion-identities-are-digitized)
+  > Note: "with privacy protections" is questionable - significant privacy concerns remain despite Supreme Court restrictions
 
 <a id="infrastructure-investment-economic-multiplier"></a>
 - **Infrastructure investment economic multiplier (1.6)**
-  > "The multiplier for infrastructure investment is 1.6."
-  > — <!-- TODO: Add source URL -->
+  > Infrastructure fiscal multiplier: ~1.6 during contractionary phase of economic cycle
+  > Average across all economic states: ~1.5 (meaning $1 of public investment → $1.50 of economic activity)
+  > Time horizon: 0.8 within 1 year, ~1.5 within 2-5 years
+  > Range of estimates: 1.5-2.0 (following 2008 financial crisis & American Recovery Act)
+  > Italian public construction: 1.5-1.9 multiplier
+  > US ARRA: 0.4-2.2 range (differential impacts by program type)
+  > Economic Policy Institute: Uses 1.6 for infrastructure spending (middle range of estimates)
+  > Note: Public investment less likely to crowd out private activity during recessions; particularly effective when monetary policy loose with near-zero rates
+  > — [World Bank: Infrastructure Investment as Stimulus](https://blogs.worldbank.org/en/ppps/effectiveness-infrastructure-investment-fiscal-stimulus-what-weve-learned) | [Global Infrastructure Hub: Fiscal Multiplier](https://www.gihub.org/infrastructure-monitor/insights/fiscal-multiplier-effect-of-infrastructure-investment/) | [CEPR: Government Investment](https://cepr.org/voxeu/columns/government-investment-and-fiscal-stimulus) | [Richmond Fed: Infrastructure Spending](https://www.richmondfed.org/publications/research/economic_brief/2022/eb_22-04)
 
 <a id="insulin-history-and-pricing"></a>
 - **History of insulin patent and modern price disparities**
