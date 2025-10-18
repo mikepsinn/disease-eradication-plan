@@ -1,10 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(for qmd in *.qmd)",
-      "Bash(do base=\"$qmd%.qmd\")",
-      "Bash([ ! -f \"$base/.qmd/.png\" ])",
-      "Bash(then echo \"$qmd - MISSING PNG\")"
+      "Bash(quarto render:*)"
     ],
     "deny": [],
     "ask": []
