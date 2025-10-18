@@ -24,7 +24,8 @@
       "Bash(quarto check:*)",
       "Bash(where:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(timeout 120 dir:*)"
     ],
     "deny": [],
     "ask": []
