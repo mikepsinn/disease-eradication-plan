@@ -38,7 +38,11 @@
       "Bash(git restore:*)",
       "Bash(npm run fact-check:all:*)",
       "Bash(npm run link-check:file:*)",
-      "Bash(npm run figure-check:file:*)"
+      "Bash(npm run figure-check:file:*)",
+      "Bash(for file in disease-war-curing-costs-column-chart.qmd health-interventions-roi-comparison-column-chart.qmd military-vs-medical-spending-ratio-bar-chart.qmd self-funding-roi-comparison-column-chart.qmd war-hidden-direct-curing-diseases-column-chart.qmd)",
+      "Bash(do)",
+      "Bash(echo:*)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

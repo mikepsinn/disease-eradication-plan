@@ -59,13 +59,14 @@ Include charts in any `.qmd` file using Quarto's include directive:
 **Format:** `[topic]-[comparison/metric]-[type]-chart.qmd`
 
 **Rules:**
-- Always end with `[type]-chart` for charts (e.g., `bar-chart`, `pie-chart`, `line-chart`)
+- Always end with `[type]-chart` for charts (e.g., `column-chart`, `pie-chart`, `line-chart`)
+- **Prefer `column-chart` over `bar-chart`** for better mobile readability
 - Use `-diagram`, `-counter` etc. for non-charts
 - Don't add redundant context (if "victory-bonds" is clear, don't add "medical-")
 - Use hyphens between all words
 
 **Examples:**
-- ✅ `military-spending-vs-medical-research-bar-chart.qmd`
+- ✅ `military-spending-vs-medical-research-column-chart.qmd`
 - ✅ `disease-deaths-by-type-2024-pie-chart.qmd`
 - ✅ `victory-bonds-roi-projection-line-chart.qmd` (not `medical-victory-bonds...`)
 - ✅ `money-flow-diagram.qmd`
@@ -193,11 +194,24 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 - **Position:** Bottom-right with 3% padding from edges
 - **Opacity:** 100% (fully opaque)
 
+## Mobile-First Chart Orientation
+
+**Prefer Column Charts (Vertical) Over Bar Charts (Horizontal):**
+
+Mobile devices are held vertically - column charts use this natural orientation better:
+- **Column charts:** Full width for data, natural scrolling if needed
+- **Horizontal bar charts:** Cramped, text gets squeezed, hard to read labels
+
+**When to Use Each:**
+- **Column charts (default):** Comparisons, rankings, time series - anything under 10 categories
+- **Horizontal bars (rare):** Only when you have 15+ categories or very long labels
+- **Pie charts:** Only for showing parts of a whole (max 3-4 slices)
+
 ## Minimalist Chart Design Rules
 
 **What to Include:**
 - **Chart title** - Clear, concise, properly sized (28-36pt bold)
-- Data bars (white fill with black outline, use solid black for emphasis)
+- Data bars/columns (white fill with black outline, use solid black for emphasis)
 - Y-axis with scale (ONLY when columns aren't all labeled with amounts)
 - Key data values (large, bold, impossible to miss)
 - Watermark (required)
