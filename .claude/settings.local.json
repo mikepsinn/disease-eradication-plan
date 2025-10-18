@@ -12,7 +12,10 @@
       "Bash(for file in brain/book/futures.qmd brain/book/vision.qmd brain/book/theory.qmd brain/book/economics.qmd)",
       "Bash(do echo \"=== $file ===\")",
       "Bash(done)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(while read f)",
+      "Bash(do grep -q \"$f\" _quarto.yml)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []
