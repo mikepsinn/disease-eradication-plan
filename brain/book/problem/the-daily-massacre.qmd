@@ -15,7 +15,9 @@ format:
     code-fold: true
 lastFactCheckHash: 588478e3be34ef718e0d4490edad10905d7ec9de46d8f2aeb36accddf924832a
 lastFormattedHash: dcb3750a3642f6cdd9c2596f0c7f14f41314d8e446fd82c14a00a89aad8f0395
+lastStructureCheckHash: 15755f0743efc56741bb8c1bff0a3f064d975df823922e8e38571b2050a8dbc7
 ---
+<!-- TODO: CHAPTER_CONSOLIDATION - This chapter should be MERGED. REASON: The title is 'The Daily Massacre', but the file is named 'the-daily-massacre.qmd'. The content should be merged into the parent file 'Step 1: Calculate the Daily Massacre in Your Area' (which is probably problem.qmd) to create a single, powerful introductory chapter. This is a file structure issue, but for now I will treat this as the full chapter text. -->
 ## Right Now, As You Read This
 
 {{< include ../../figures/death-counter-realtime.qmd >}}
@@ -122,6 +124,7 @@ By the time you finish reading this chapter, approximately **500 people** will h
 - **3 people** died in the United States
 - **2 people** died in Europe
 
+<!-- TODO: STRUCTURE_CHECK - MOVE to 'problem/cost-of-war.qmd'. REASON: This section details a potential solution and contrasts military spending options. It dilutes the chapter's core focus on the scale of the daily death toll and belongs in a chapter analyzing the opportunity cost of war. -->
 ## What Could We Buy With Military Money?
 
 With just **ONE YEAR** of military spending (\$2.7 trillion), we could:
@@ -143,6 +146,7 @@ With just **ONE YEAR** of military spending (\$2.7 trillion), we could:
 - The ability to kill everyone 1,000 times instead of 535 times.
 - The nuclear extinction lottery: [13,000 warheads](../references.qmd#world-warheads), 0 winners.
 
+<!-- TODO: STRUCTURE_CHECK - MOVE to 'problem/cost-of-war.qmd'. REASON: This section identifies the specific entities profiting from military spending, which is the core topic of the 'Cost of War' chapter, not the 'Daily Massacre' chapter. -->
 ## The Companies Profiting From Death
 
 ### The Merchants of Death (Military Contractors)
@@ -217,6 +221,7 @@ What would they conclude about humanity?
 
 **Answer**: That we're a death cult that chose extinction.
 
+<!-- TODO: STRUCTURE_CHECK - MOVE to 'solution/1-percent-treaty.qmd'. REASON: This section introduces a specific solution. Problem chapters should focus solely on the problem to maximize impact. This content dilutes the urgency by immediately offering a fix. -->
 ## But Here's the Thing
 
 **We could fix this with 1% of military spending.**
@@ -233,6 +238,7 @@ That would:
 - Save millions of lives.
 - Cost the military almost nothing (they keep 99%).
 
+<!-- TODO: STRUCTURE_CHECK - MOVE to 'futures/the-tale-of-two-futures.qmd'. REASON: This section explicitly frames the book's core choice between two futures, which is the exact purpose of the 'Futures' part of the book. It introduces a specific solution ('The 1% Treaty') and is premature for a chapter focused only on establishing the problem's scale. -->
 ## The Choice Is Binary
 
 ### Path A: Status Quo
