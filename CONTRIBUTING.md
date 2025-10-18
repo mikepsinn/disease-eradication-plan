@@ -203,7 +203,7 @@ Use these five checks to audit every chapter file.
 **5. Technical & Structural Integrity:**
 - **Frontmatter:** Does the file have a complete and accurate YAML frontmatter block?
 - **Link Integrity:** Are all internal links (`[link](./path/to/file.md)`) valid and pointing to existing files?
-- **Formatting:** Does each sentence start on a new line? Are dollar signs properly escaped (`\$`) in plain text?
+- **Formatting:** Does each sentence start on a new line? 
 
 ## Content and Style Standards
 

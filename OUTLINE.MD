@@ -1,13 +1,13 @@
-# The Complete Idiot's Guide to Ending War and Disease: Master Outline (Complete High-Resolution Version)
+# Your Complete Idiot's Guide to Actually Ending War and Disease: The Step-by-Step Manual
 
 **[VIDEO: Charlie Chaplin's "The Great Dictator" Speech - The Choice Between Machinery and Humanity]**
 *"We think too much and feel too little. More than machinery, we need humanity. More than cleverness, we need kindness and gentleness."*
 
-## Part I: The Problem: Everyone You Love Is Dying While We Build Skynet
+## Part I: Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet
 
-### The Daily Massacre - 150,000 Deaths Per Day While We Build Skynet
+### Step 1: Calculate the Daily Massacre in Your Area
 
-- **The Numbers That Should Start a Revolution**
+- **How to Document the Numbers That Will Start Your Revolution**
   - 150,000 people die every day, mostly from preventable/curable diseases
   - That's fifty 9/11s. Every. Single. Day.
   - Your parent, child, or friend is statistically likely to be one of them
@@ -116,7 +116,7 @@
   - Chronic disease = Healthcare industry revenue ($4.5T industry incentivized for treatment over cures)
   - Every "failure" is someone's quarterly earnings success
 
-## Part II: The Theory (Why Markets Work and Democracy Doesn't)
+## Part II: Understanding Why Your Current Systems Fail (And How to Replace Them)
 
 ### Why Central Planning Kills People
 
@@ -205,9 +205,9 @@
   - Create concentrated benefits for producing cures rather than perpetuating disease
 
 
-## Part III: The Solution
+## Part III: Your Step-by-Step Solution
 
-### The 1% Treaty (How It Works)
+### How to Create and Pass the 1% Treaty
 
 - **[FIGURE: The 1% Treaty Visualization]**
   - Visual showing $2.7T military budget with tiny 1% slice ($27B) being redirected
@@ -267,9 +267,9 @@
   - Year 10: Make military spending look insane
   - Year 20: Make war incomprehensible
 
-### The DIH - Government Without Governments
+### How to Build the DIH - Government Without Politicians
 
-- **Run Parallel Systems: Competition Not Replacement**
+- **Step 1: Set Up Parallel Systems (Competition Not Replacement)**
   - Run dFDA alongside FDA (alternative pathway, not abolishment)
 - **Structure for Distributed Control**
   - Flow $27B/year through transparent smart contracts
@@ -323,9 +323,9 @@
     - Billions of votes determine the allocation percentages, not specific winners
 
 
-### Wishocracy - How Distributed Decision-Making Works
+### How to Implement Wishocracy - Your Distributed Decision-Making System
 
-- **Open Participation: Proposals and Voting**
+- **Setting Up Open Participation: Proposals and Voting**
   - Open proposal system: ANY human can submit budget allocation proposals
   - Minimal stake required: Small bond prevents spam
   - Random pairwise comparisons: Each voter sees different budget allocation pairs
@@ -365,7 +365,7 @@
   - Leaderboards and achievements (social proof)
   - Democracy becomes addictive (dopamine hits for voting)
 
-### The dFDA - The Amazon of Not Dying
+### How to Build the Decentralized FDA - The Amazon and Consumer Reports of Not Dying
 
 - **[FIGURE: dFDA vs FDA Comparison]**
   - Side-by-side comparison:
@@ -488,7 +488,7 @@
   - Your kid's rare disease: Finally profitable to cure
   - Mental health: No longer the ugly stepchild of medicine
 
-## Part IV: The Proof (This Already Works)
+## Part IV: Your Evidence Arsenal (Use These Examples to Convince Others)
 
 ### Political Movements That Changed Everything
 
@@ -714,7 +714,7 @@
   - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
 
-## Part VI: The Money (How Everyone Gets Rich by Eradicating Disease)
+## Part VI: The Money: How to Make Everyone Rich While Ending Disease (Your Financial Playbook)
 
 ### The Economic Case - 463:1 Return on Killing Disease
 
@@ -811,7 +811,7 @@
   - Year 20: Full $16.5T annual value realized
   - Every year we delay: $142B in immediate benefits lost forever
 
-### VICTORY Bonds - The Investment Structure
+### How to Structure VICTORY Bonds - Your Investment Vehicle
 
 - **The Instrument: High-Risk, High-Return Political Arbitrage**
   - Perpetual 10% of all DIH treaty inflows
@@ -895,7 +895,7 @@
   - Research and administration jobs
   - Diseases get funded and studied
 
-## Part VII: The Legal Architecture (Staying Out of Prison)
+## Part VII: How to Set Up the Legal Architecture (And Stay Out of Prison)
 
 - **The Multi-Jurisdiction Strategy**
   - Swiss foundation: Neutral base of operations
@@ -928,9 +928,9 @@
   - The Right to Try Expansion Act (patient choice beyond FDA)
   - The Budget Reallocation Act (moves the money)
 
-## Part VIII: The Strategy (Your Action Plan)
+## Part VIII: Your Complete Action Plan (Do This Step by Step)
 
-### The Global Referendum (Democracy at Scale)
+### How to Run Your Global Referendum (Democracy at Scale)
 
 - **The Platform: Wishocracy App**
   - 30-second onboarding

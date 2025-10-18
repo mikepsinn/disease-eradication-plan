@@ -4,13 +4,13 @@ description: "1% Treaty + DIH + dFDA - Step-by-step calculation showing why this
 published: true
 date: 2025-01-09
 tags: [icer, cost-effectiveness, qaly, calculation, sensitivity-analysis]
+lastFactCheckHash: a3b5ed5c444e0871923ad5b3a9df93db7519e177fffab7aba8c22eac35bea6b3
 ---
-
 ## Executive Summary
 
 **Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **$5.87 million per life saved** (ICER = -$167,771 per QALY).
 
-This means for every life saved, society becomes **$5.87 million richer** instead of paying the $3,500-$5,500 cost of top charitable interventions.
+This means for every life saved, society becomes **$5.87 million richer** instead of paying the [$3,500-$5,500 cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
 
 **How is this possible?** This initiative generates massive economic value ($147.1B annually) while also saving lives (875,000 QALYs annually), making it profitable for society to implement.
 
@@ -23,7 +23,7 @@ This means for every life saved, society becomes **$5.87 million richer** instea
 **Source**: [Peace Dividend Analysis](./peace-dividend-analysis.qmd)
 
 From [Cost of War Analysis](../problem/cost-of-war.qmd):
-- **Total annual cost of war**: $9,719B
+- **Total annual cost of war**: [$9,719B](../references.qmd#total-military-and-war-costs-9-7t)
   - Direct costs: $6,209B (military spending, infrastructure damage, human casualties, trade disruption)
   - Indirect costs: $3,510B (lost growth, veteran care, refugees, environmental damage)
 
@@ -42,7 +42,7 @@ From [Cost of War Analysis](../problem/cost-of-war.qmd):
 **Source**: [dFDA Cost-Benefit Analysis](./dfda-cost-benefit-analysis.qmd)
 
 From dFDA analysis:
-- **Global clinical trial market**: ~$100B/year
+- **Global clinical trial market**: [~$100B/year](../references.qmd#clinical-trial-spending)
 - **Baseline cost reduction**: 50% (conservative estimate)
 - **Mechanism**: Decentralized trials modeled on Oxford RECOVERY trial
   - Traditional Phase III: $40,000-$120,000 per patient
@@ -248,7 +248,7 @@ See [Appendix: Detailed QALY Calculation Model](./dfda-cost-benefit-analysis.qmd
 
 ## Comparison to Other Interventions
 
-### Top Charitable Interventions (GiveWell 2024)
+### [Top Charitable Interventions (GiveWell 2024)](../references.qmd#givewell-cost-per-life-saved)
 
 | Intervention | Cost per Life Saved | ICER (approx) |
 |-------------|--------------------:|---------------:|

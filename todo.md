@@ -38,7 +38,6 @@ All scripts will be developed in TypeScript and located in the `scripts/review/`
 - **Logic:**
     - Read a file.
     - Add missing frontmatter fields.
-    - Escape unescaped dollar signs.
     - Split lines with multiple sentences.
     - Overwrite the file with the corrected content.
     - Update the `lastFormatted` timestamp in the frontmatter.

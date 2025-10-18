@@ -2,8 +2,8 @@
 title: "Humanity's Budget"
 description: "The True Scale of War & Disease"
 jupyter: python3
+lastFactCheckHash: dd789a075b7f994e23f7a9cd900a9bf36c23abe125ec84656bc0797b44b0993e
 ---
-
 This analysis reveals the shocking reality of humanity's spending priorities by visualizing our global "family budget" with the **total economic burden** of war and disease, including all externalities.
 
 **Key Insight**: When you include all externalities, war and disease consume a massive portion of global GDP - far more than just direct spending.
@@ -247,7 +247,7 @@ print(f'Bar chart saved to {file_path}')
 
 ## The Core Problem: Disease Burden vs. Research Investment
 
-The most critical insight comes from comparing the *total economic burden* of disease, a staggering $109 trillion annually, with what we spend to solve it. This chart visualizes that extreme disparity. The size of the problem versus our investment in the solution is the central economic argument for this initiative.
+The most critical insight comes from comparing the *total economic burden* of disease, a staggering [$109 trillion annually](../references.qmd#disease-economic-burden-109t), with what we spend to solve it. This chart visualizes that extreme disparity. The size of the problem versus our investment in the solution is the central economic argument for this initiative.
 
 ```{python}
 # --- Modern Visualization: Disease Burden vs. Research Spending ---
@@ -323,7 +323,6 @@ print(f'Comparison chart saved to {file_path}')
 
 ## The Shocking Conclusion
 
-**The Punchline**: War and disease consume **$119 trillion** annually (113% of global GDP!) when you include all externalities, yet we only spend **$67.5 billion** on medical research. This is the largest market failure in human history.
+**The Punchline**: War and disease consume **$119 trillion** annually (113% of global GDP!) when you include all externalities, yet we only spend [**$67.5 billion**](../references.qmd#global-gov-med-research-spending) on medical research. This is the largest market failure in human history.
 
 This analysis reveals that humanity's spending priorities are fundamentally broken. We spend more on the problems than on the solutions, creating a massive opportunity for intervention through the 1% Treaty initiative.
-

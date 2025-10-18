@@ -67,7 +67,7 @@ jobs:
             3. Ensure citations link to references.qmd with proper anchors
             4. Flag any corporate buzzwords or euphemisms for rewriting
             5. Mark incomplete sections with HTML comments: <!-- TODO: description -->
-            6. Escape dollar signs in text (\$100 not $100)
+   
             7. Each sentence should start on a new line for cleaner diffs
 
             RED FLAGS TO AVOID:

@@ -5,7 +5,6 @@
 **Formatting Rules to Enforce:**
 
 1.  **Sentence Structure:** Each sentence must start on a new line.
-2.  **Dollar Sign Escaping:** Escape all dollar signs (`\$`) in plain text that are not part of a LaTeX equation.
 3.  **List Spacing:** Ensure all markdown lists are preceded by a blank line.
 4.  **Math Formatting:** Enclose all inline mathematical formulas in single dollar signs (`$...$`) and block-level formulas in double dollar signs (`$$...$$`) for proper LaTeX rendering.
 5.  **Preserve Quarto Syntax:** All Quarto syntax must be preserved *exactly*. This includes:

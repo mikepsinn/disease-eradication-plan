@@ -6,18 +6,18 @@ date: "2025-09-14T00:00:00.000Z"
 tags: [economics, fundraising, bond-structure, campaign-finance, capital-raising]
 dateCreated: "2025-09-14T00:00:00.000Z"
 title-id: sec-victory-bonds
+lastFactCheckHash: 225cfe7e95312e30188197611aa5a6c66fa3d89ec7ccb7a6f196cbc36688166c
 ---
-
 *Disclaimer: This section is informational and illustrative, not an offer of securities. Any actual implementation would require formal legal review and regulatory compliance.*
 
 ## What You're Building
 
-Create a funding mechanism that raises $1 billion to finance the 1% Treaty campaign through perpetual revenue-sharing bonds.
+Create a funding mechanism that raises $1 billion to finance the [1% Treaty](../solution/1-percent-treaty.qmd) campaign through perpetual revenue-sharing bonds.
 
 **The structure to build:**
 - Raise $1 billion from bond investors
 - Use funds to execute the treaty campaign
-- Once treaty passes, $27B annually flows from military budgets to DIH
+- Once treaty passes, $27B annually flows from military budgets to [DIH](../solution/dih.qmd)
 - Pay bondholders 10% of treaty inflows perpetually
 - Use remaining 90% for medical research
 
@@ -44,7 +44,7 @@ Use the capital structure detailed below.
 Deploy the $1B raised:
 - Get 280M people to vote for the treaty ($0.20/vote = $56M)
 - Lobby 20 strategic countries ($250M, AI-targeted)
-- Build the dFDA and Wishocracy platforms ($250M, AI-assisted)
+- Build the [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms ($250M, AI-assisted)
 - Handle all legal, compliance, and partnerships ($444M)
 
 See @sec-campaign-budget for detailed allocation.
@@ -70,7 +70,7 @@ Continue indefinitely—no maturity date means revenue never stops as long as tr
 
 ### Show Them the Revenue Math
 
-**Current global military spending**: $2.7 trillion/year
+**Current global military spending**: [$2.7 trillion/year](../references.qmd#sipri-2024-spending)
 
 **What the 1% Treaty redirects**: 1% = $27B/year to medical research
 
@@ -135,7 +135,7 @@ Show investors what full treaty adoption looks like:
 
 Show investors the downside case is still attractive:
 
-**Treaty adoption**: US, EU, UK only (~50% of global military spending)
+**Treaty adoption**: US, EU, UK only ([~50% of global military spending](../references.qmd#us-eu-military-spending-share))
 **Annual DIH revenue**: $13B
 **Bondholder annual payment**: $1.3B (10%)
 **Research funding**: $11.7B (90%)
@@ -205,12 +205,12 @@ Protect investors by releasing funds in tranches tied to achievements:
 **Mitigate political risk:**
 - Build multi-country strategy (don't depend on one nation)
 - Create bipartisan coalitions (avoid partisan framing)
-- Leverage >70% public support (politicians can't ignore)
+- Leverage [>70% public support](../references.qmd#public-support-for-peace-funding-70-pct) (politicians can't ignore)
 
 **Mitigate execution risk:**
 - Use milestone-gated funding (pay for performance)
 - Deploy AI for 80% cost reduction
-- Follow proven model (defense lobbying gets 1813:1 ROI)
+- Follow proven model (defense lobbying gets [1813:1 ROI](../references.qmd#lobbying-roi-calc))
 
 **Mitigate financial risk:**
 - Structure first-lien security (get paid before mission spending)
@@ -234,8 +234,8 @@ Protect investors by releasing funds in tranches tied to achievements:
 | Real Estate | 8% | Moderate | 30 years |
 | Venture Capital | 15-25% | Extreme | 7-10 years |
 | Hedge Funds | 8-15% | High | Variable lock-up |
-| Medallion Fund | 39% | Extreme | Closed to new investors |
-| Warren Buffett career avg. | 20% | Moderate | 60 years |
+| Medallion Fund | [39%](../references.qmd#top-pe-hedge-funds) | Extreme | Closed to new investors |
+| Warren Buffett career avg. | [20%](../references.qmd#warren-buffett-career-average-return-20-pct) | Moderate | 60 years |
 
 *Remind investors: Returns assume full treaty passage. Actual results depend on political outcomes.
 
