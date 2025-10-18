@@ -55,6 +55,57 @@ async function updateFileWithHash(
   await fs.writeFile(filePath, newContent, 'utf-8');
 }
 
+// Parse _quarto.yml to get chapters and appendices
+export interface BookStructure {
+  chapters: string[];
+  appendices: string[];
+}
+
+export async function parseQuartoYml(): Promise<BookStructure> {
+  const quartoYmlContent = await fs.readFile('_quarto.yml', 'utf-8');
+  const chapters: string[] = [];
+  const appendices: string[] = [];
+
+  const lines = quartoYmlContent.split('\n');
+  let inAppendices = false;
+  let inChapters = false;
+
+  for (const line of lines) {
+    // Check if we're entering chapters section
+    if (line.includes('chapters:')) {
+      inChapters = true;
+      inAppendices = false;
+      continue;
+    }
+
+    // Check if we're entering the appendices section
+    if (line.includes('appendices:')) {
+      inAppendices = true;
+      inChapters = false;
+      continue;
+    }
+
+    // Check if we're leaving a section (new top-level key)
+    if (!line.startsWith(' ') && !line.startsWith('\t') && line.includes(':') &&
+        !line.includes('chapters:') && !line.includes('appendices:')) {
+      inChapters = false;
+      inAppendices = false;
+    }
+
+    // Extract .qmd file paths
+    const match = line.match(/^\s*-\s+(brain\/[^\s]+\.qmd)/);
+    if (match) {
+      if (inAppendices) {
+        appendices.push(match[1]);
+      } else if (inChapters) {
+        chapters.push(match[1]);
+      }
+    }
+  }
+
+  return { chapters, appendices };
+}
+
 // --- Exported Functions ---
 
 export async function getStaleFiles(hashFieldName: string, basePath?: string): Promise<string[]> {
@@ -537,42 +588,17 @@ export async function structureCheckFileWithLLM(filePath: string): Promise<void>
 
   const outlineContent = await fs.readFile('OUTLINE.md', 'utf-8');
 
-  // Read _quarto.yml to get list of chapters and appendices
-  const quartoYmlContent = await fs.readFile('_quarto.yml', 'utf-8');
-  const chapterPaths: string[] = [];
-  const appendixPaths: string[] = [];
-
-  const lines = quartoYmlContent.split('\n');
-  let inAppendices = false;
-
-  for (const line of lines) {
-    // Check if we're entering the appendices section
-    if (line.trim() === 'appendices:') {
-      inAppendices = true;
-      continue;
-    }
-
-    // Check if we're leaving appendices (new top-level section)
-    if (!line.startsWith(' ') && !line.startsWith('\t') && line.includes(':')) {
-      inAppendices = false;
-    }
-
-    const match = line.match(/^\s*-\s+(brain\/[^\s]+\.qmd)/);
-    if (match && match[1] !== filePath) {
-      if (inAppendices) {
-        appendixPaths.push(match[1]);
-      } else {
-        chapterPaths.push(match[1]);
-      }
-    }
-  }
+  // Use the reusable function to get chapters and appendices
+  const { chapters, appendices } = await parseQuartoYml();
 
   // Check if current file is in appendix
-  const isInAppendix = appendixPaths.includes(filePath);
-  if (isInAppendix) {
+  if (appendices.includes(filePath)) {
     console.log(`File ${filePath} is already in appendix. Skipping structure check.`);
     return; // Don't check appendix files
   }
+
+  // Filter out current file from chapters list
+  const otherChapters = chapters.filter(ch => ch !== filePath);
 
   const prompt = `You are an expert editor for "The Complete Idiot's Guide to Ending War and Disease."
 Your task is to ensure each chapter has a single, clear focus and remove anything that dilutes it.
@@ -624,7 +650,7 @@ PART B - SECTION-LEVEL ANALYSIS:
 ${outlineContent}
 ---
 **OTHER CHAPTERS IN THE BOOK (for reference):**
-${chapterPaths.join('\n')}
+${otherChapters.join('\n')}
 ---
 **CHAPTER BEING EVALUATED:** ${filePath}
 ${body}`;
