@@ -233,12 +233,12 @@ Mobile devices are held vertically - column charts use this natural orientation 
 **When to Use Each:**
 - **Column charts (default):** Comparisons, rankings, time series - anything under 10 categories with comparable value ranges (within 100× of each other)
 - **Horizontal bars:** Use when you have 5+ categories
-- **Pie charts:** Only for showing parts of a whole (max 3-4 slices)
+- **Pie charts:** Only for showing parts of a whole (max 3-4 slices). **Default to white fill with black outline** for slices
 
 ## Minimalist Chart Design Rules
 
 **What to Include:**
-- **Chart title** - Clear, concise, properly sized (28-36pt bold)
+- **Chart title (MANDATORY)** - Clear, concise, properly sized (28-36pt bold). **Every chart MUST have a title for standalone readability**
 - Data bars/columns (white fill with black outline, use solid black for emphasis)
 - Y-axis with scale (ONLY when columns aren't all labeled with amounts)
 - Key data values (large, bold, impossible to miss)
