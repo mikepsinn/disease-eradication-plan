@@ -6,7 +6,8 @@
       "Bash(findstr:*)",
       "Bash(del:*)",
       "Bash(rm:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(npm run format:file:*)"
     ],
     "deny": [],
     "ask": []
