@@ -607,43 +607,45 @@ export async function structureCheckFileWithLLM(filePath: string): Promise<void>
     }
   }
 
-  const prompt = `You are an expert editor for a book called "The Complete Idiot's Guide to Ending War and Disease."
-Your task is to ensure a chapter is necessary, properly placed, and its content is logically structured.
+  const prompt = `You are an expert editor for "The Complete Idiot's Guide to Ending War and Disease."
+Your task is to ensure each chapter has a single, clear focus and remove anything that dilutes it.
 
-**CRITICAL INSTRUCTIONS:**
+**CORE PRINCIPLE: Every chapter must have ONE primary purpose. Content that doesn't directly support that purpose belongs elsewhere.**
+
+**INSTRUCTIONS:**
 
 PART A - CHAPTER-LEVEL ANALYSIS:
-1. First, evaluate if this ENTIRE CHAPTER should be:
-   - KEPT as-is (essential and well-placed)
-   - DELETED (redundant, off-topic, or doesn't add value)
-   - MERGED into another chapter (content overlaps significantly)
-   - MOVED to a different section
+1. Based on the chapter title and outline position, identify its SINGLE core purpose
+2. Decide if the chapter should be:
+   - KEPT (has unique, essential content)
+   - DELETED (redundant or off-topic)
+   - MERGED (overlaps significantly with another chapter)
+   - MOVED (belongs in a different section)
 
-2. Consider these criteria:
-   - Does this chapter directly support the book's mission (redirecting military spending to medical research)?
-   - Is the content unique or does it duplicate other chapters?
-   - Does it fit logically in the book's narrative flow?
-   - Is the content substantial enough for its own chapter?
-   - Would merging with another chapter create better flow?
+3. If DELETE/MERGE/MOVE, add at the TOP:
+   \`<!-- TODO: CHAPTER_CONSOLIDATION - This chapter should be [action]. REASON: [explanation] -->\`
 
-3. If the chapter should be DELETED, MERGED, or MOVED:
-   - Add a prominent TODO comment at the VERY TOP of the file (first line)
-   - Format: \`<!-- TODO: CHAPTER_CONSOLIDATION - This entire chapter should be [DELETED/MERGED with 'chapter-name.qmd'/MOVED to 'Part X']. REASON: [Brief explanation] -->\`
-   - For DELETE: List any key points worth preserving in other chapters
-   - For MERGE: Specify exactly which chapter it should merge with
-   - For MOVE: Specify the target section
+PART B - SECTION-LEVEL ANALYSIS:
+4. For each section/paragraph, ask: "Does this directly support the chapter's core purpose?"
+5. Flag content that:
+   - Belongs in a different chapter
+   - Repeats points already made
+   - Adds no value (filler)
+   - Diverges from the core message
 
-PART B - SECTION-LEVEL ANALYSIS (only if chapter is KEPT):
-4. **Analyze the CHAPTER CONTENT** against the provided **BOOK OUTLINE**.
-5. **Identify any paragraphs or sections** within the chapter that seem misplaced or would fit better in a *different* chapter.
-6. **For each misplaced section you find, insert a structured TODO comment** on the line *directly above* it.
-7. **The TODO comment MUST follow this exact format:** \`<!-- TODO: STRUCTURE_CHECK - This section might belong in 'PART X: Chapter Title'. REASON: [Your brief, one-sentence reason] -->\`
+6. Add TODO above problematic sections:
+   \`<!-- TODO: STRUCTURE_CHECK - [DELETE/MOVE to 'chapter.qmd']. REASON: [why] -->\`
 
-**OUTPUT RULES:**
-- **If the chapter should be kept AND is well-structured with all content belonging, return the special string "NO_CHANGES_NEEDED".**
-- **Otherwise, return *only* the full, original chapter content with your TODO comments added.**
-- **Do not modify the chapter's text in any other way.** Only insert TODO comments.
-- **Do not include any other text, explanations, or markdown formatting.**
+**GENERAL PRINCIPLES:**
+- Problem chapters shouldn't contain solutions
+- Solution chapters shouldn't restate problems at length
+- Each chapter should make a distinct contribution
+- Be aggressive about cutting redundancy and tangents
+
+**OUTPUT:**
+- Return "NO_CHANGES_NEEDED" if perfectly focused
+- Otherwise return full content with TODO comments added
+- Don't modify the actual text
 
 ---
 **BOOK OUTLINE:**
