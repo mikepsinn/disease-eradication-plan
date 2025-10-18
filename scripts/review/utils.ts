@@ -642,10 +642,12 @@ PART B - SECTION-LEVEL ANALYSIS:
 - Each chapter should make a distinct contribution
 - Be aggressive about cutting redundancy and tangents
 
-**OUTPUT:**
-- Return "NO_CHANGES_NEEDED" if perfectly focused
-- Otherwise return full content with TODO comments added
-- Don't modify the actual text
+**OUTPUT RULES:**
+- If perfectly focused with no issues: return ONLY the string "NO_CHANGES_NEEDED"
+- Otherwise: return THE ENTIRE CHAPTER TEXT with TODO comments inserted at appropriate locations
+- CRITICAL: You must return ALL the original content, just with TODO comments added where needed
+- Never delete or remove any existing text - only ADD TODO comments
+- Don't modify the actual prose/text content
 
 ---
 **BOOK OUTLINE:**
