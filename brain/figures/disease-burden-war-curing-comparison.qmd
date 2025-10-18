@@ -25,12 +25,15 @@ setup_chart_style(style='light', dpi=150)
 # Data
 categories = ['Disease\nBurden', 'War &\nConflict', 'Finding\nCures']
 amounts = [109.1, 9.7, 0.068]
-colors_budget = [COLOR_BLACK, COLOR_BLACK, PATTERN_DIAGONAL]  # Use solid black and patterns
+colors_budget = [COLOR_BLACK, COLOR_BLACK, COLOR_WHITE]  # Use solid black and white
 
 # Create chart
 fig, ax = plt.subplots(figsize=(18, 10))
 bars = ax.bar(categories, amounts, color=colors_budget, width=0.6,
-              edgecolor=COLOR_WHITE, linewidth=2)
+              edgecolor=COLOR_BLACK, linewidth=2)
+
+# Apply pattern to the third bar (Finding Cures)
+bars[2].set_hatch(PATTERN_DIAGONAL)
 
 # Add labels directly on/above bars with descriptions
 labels_with_desc = [

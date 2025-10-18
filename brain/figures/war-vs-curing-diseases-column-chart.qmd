@@ -36,14 +36,17 @@ values = [
     68       # Global government medical research: $67.5B (global-government-medical-research-spending.md)
 ]
 
-# Colors - red for war (problem), blue for cures (solution)
-colors = [COLOR_BLACK, PATTERN_DIAGONAL]
+# Colors - black for war, white with pattern for cures
+colors = [COLOR_BLACK, COLOR_WHITE]
 
 # Create chart with LINEAR scale - show the REAL disparity
 fig, ax = plt.subplots(figsize=(24, 12))
 
 # LINEAR scale - let people see how absurdly tiny the solution bars are
-bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_WHITE, linewidth=3)
+bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_BLACK, linewidth=3)
+
+# Apply pattern to the second bar (Curing)
+bars[1].set_hatch(PATTERN_DIAGONAL)
 
 # Add labels directly on bars with descriptions
 # Bar 1: War (inside bar, white text)
