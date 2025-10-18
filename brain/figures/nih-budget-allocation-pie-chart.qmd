@@ -20,12 +20,13 @@ from _chart_style import PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS, PA
 setup_chart_style()
 
 # Data: Two segments to show the stark contrast
+# Based on FY2025 NIH budget of $47.7B with ~5% for clinical trials
 categories = [
-    'Actually Testing Treatments\n$2.5B',
-    'Everything Else\n(Buildings, Admin, Training, Basic Research)\n$48.5B'
+    'Actually Testing\nTreatments\n$2.4B',
+    'Everything Else\n(Buildings, Admin,\nTraining, Basic Research)\n$45.3B'
 ]
 
-values = [2.5, 48.5]  # Billions
+values = [2.4, 45.3]  # Billions (5% and 95% of $47.7B)
 colors = [COLOR_WHITE, COLOR_WHITE]  # Both white fills
 hatches = [None, PATTERN_DIAGONAL]  # No pattern for trials, diagonal for everything else
 
@@ -39,36 +40,46 @@ wedges, texts, autotexts = ax.pie(
     autopct='%1.0f%%',
     colors=colors,
     wedgeprops={'edgecolor': COLOR_BLACK, 'linewidth': 3},
-    textprops={'fontsize': 16, 'weight': 'bold', 'color': COLOR_BLACK},
+    textprops={'fontsize': 16, 'weight': 'bold', 'color': COLOR_BLACK},  # Adjusted for dense chart
     startangle=90,
     explode=(0.1, 0)  # Slightly separate the human trials slice to emphasize it
 )
+
+# Add white background boxes with black borders to labels
+for text in texts:
+    text.set_bbox(dict(boxstyle="round,pad=0.3", facecolor=COLOR_WHITE,
+                      edgecolor=COLOR_BLACK, linewidth=2))
+
+# Add white background boxes with black borders to percentage labels
+# Per DESIGN_GUIDE: Use white boxes for labels placed ON patterned areas
+for autotext in autotexts:
+    autotext.set_bbox(dict(boxstyle="round,pad=0.4", facecolor=COLOR_WHITE,
+                          edgecolor=COLOR_BLACK, linewidth=1))
 
 # Add patterns to wedges
 for wedge, hatch in zip(wedges, hatches):
     wedge.set_hatch(hatch)
 
-# Make percentage text larger and bold
+# Make percentage text larger and bold (36-44pt for data per DESIGN_GUIDE)
 for autotext in autotexts:
-    autotext.set_fontsize(24)
+    autotext.set_fontsize(40)
     autotext.set_weight('bold')
     autotext.set_color(COLOR_BLACK)
 
-# Add title
+# Add title (28-36pt per DESIGN_GUIDE)
 plt.title('NIH Budget: Where Your $51 Billion Goes',
-         fontsize=26, weight='bold', pad=20, color=COLOR_BLACK)
+         fontsize=32, weight='bold', pad=20, color=COLOR_BLACK)
 
 # Add watermark
 add_watermark(fig)
 
-# Adjust layout to remove white space
-plt.tight_layout()
+# DON'T use plt.tight_layout() - it overrides margin settings
 
 # Save the figure
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'nih-budget-allocation-pie-chart.png',
-            dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
+            dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 plt.show()
 ```
