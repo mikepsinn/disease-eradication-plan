@@ -1,9 +1,9 @@
-import { 
-  getStaleFiles, 
-  formatFileWithLLM, 
-  styleFileWithLLM, 
-  factCheckFileWithLLM, 
-  linkCheckFile, 
+import {
+  getStaleFiles,
+  formatFileWithLLM,
+  styleFileWithLLM,
+  factCheckFileWithLLM,
+  linkCheckFile,
   figureCheckFile,
   structureCheckFileWithLLM
 } from './utils';
@@ -16,7 +16,7 @@ async function main() {
 
   const checks = [
     { name: 'Formatting', hashField: 'lastFormattedHash', checkFunction: formatFileWithLLM },
-    { name: 'Style', hashField: 'lastStyleHash', checkFunction: styleFileWithLLM },
+    { name: 'Style & Content Quality', hashField: 'lastStyleHash', checkFunction: styleFileWithLLM },
     { name: 'Fact Check', hashField: 'lastFactCheckHash', checkFunction: factCheckFileWithLLM },
     { name: 'Link Check', hashField: 'lastLinkCheckHash', checkFunction: linkCheckFile },
     { name: 'Figure Check', hashField: 'lastFigureCheckHash', checkFunction: figureCheckFile },

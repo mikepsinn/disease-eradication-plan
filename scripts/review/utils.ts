@@ -110,24 +110,45 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
 }
 
 export async function styleFileWithLLM(filePath: string): Promise<void> {
-  console.log(`\nImproving style for ${filePath} with Claude Opus...`);
+  console.log(`\nImproving style and content quality for ${filePath} with Claude Opus...`);
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
 
   const styleGuide = await fs.readFile('STYLE_GUIDE.md', 'utf-8');
-  const prompt = `You are an expert copy editor tasked with improving a chapter of a book called "The Complete Idiot's Guide to Ending War and Disease." 
-  Your goal is to revise the following text to perfectly match the tone and style defined in the provided style guide.
+  const prompt = `You are an expert copy editor reviewing a chapter of "The Complete Idiot's Guide to Ending War and Disease."
+  Your task has TWO PARTS:
+
+  **PART A - CONTENT QUALITY ISSUES (add TODO comments):**
+  Identify and mark problematic sections with TODO comments:
+
+  1. **BORING/UNENGAGING:** Sections that are too dry, academic, lack examples/stories, or have walls of text
+     → Add: \`<!-- TODO: STYLE - BORING: [Specific fix, e.g., "Add compelling example or story here"] -->\`
+
+  2. **VERBOSE/REDUNDANT:** Content that could be condensed by 30-50%, repetitive explanations, or filler
+     → Add: \`<!-- TODO: STYLE - VERBOSE: [Specific fix, e.g., "Condense these 3 paragraphs to 1"] -->\`
+
+  3. **STRUCTURAL ISSUES:** Buried leads, poor transitions, takes too long to get to the point
+     → Add: \`<!-- TODO: STYLE - STRUCTURE: [Specific fix, e.g., "Move key point to beginning"] -->\`
+
+  4. **MISSING ELEMENTS:** Needs data, examples, calls to action, or visual breaks
+     → Add: \`<!-- TODO: STYLE - MISSING: [What to add, e.g., "Add statistics to support claim"] -->\`
+
+  **PART B - STYLE GUIDE ADHERENCE (rewrite prose):**
+  After adding TODO comments, revise the prose to match the style guide:
+  - Dark humor, cynical but loving observations, actionable empowering language
+  - Preserve all facts and meaning
+  - Don't touch markdown/Quarto syntax
 
   **CRITICAL INSTRUCTIONS:**
-  1.  **Adhere strictly to the STYLE_GUIDE.md.** The tone is paramount: dark humor, cynical but loving observations, and actionable, empowering language.
-  2.  **Preserve the original meaning and all facts.** Do not add or remove information.
-  3.  **Do not touch frontmatter, markdown, or Quarto syntax.** Only modify the prose.
-  4.  **If the file already perfectly adheres to the style guide, you MUST return the special string "NO_CHANGES_NEEDED".**
-  5.  Otherwise, return *only* the revised prose. Do not include any other text, explanations, or markdown formatting.
+  1. FIRST add TODO comments for content quality issues
+  2. THEN revise the prose for style (keeping your TODO comments)
+  3. If NO issues found AND style is perfect, return "NO_CHANGES_NEEDED"
+  4. Otherwise, return the full content with TODOs added and prose revised
+  5. Do not include any explanations or formatting outside the content
 
   ${styleGuide}
 
-  **File Content to Improve:**
+  **File Content to Review and Improve:**
   ${body}`;
 
   const msg = await anthropic.messages.create({
@@ -548,24 +569,64 @@ export async function structureCheckFileWithLLM(filePath: string): Promise<void>
   let { data: frontmatter, content: body } = matter(originalContent);
 
   const outlineContent = await fs.readFile('OUTLINE.md', 'utf-8');
-  
+
+  // Read _quarto.yml to get list of other chapters
+  const quartoYmlContent = await fs.readFile('_quarto.yml', 'utf-8');
+  const chapterPaths: string[] = [];
+  const lines = quartoYmlContent.split('\n');
+  for (const line of lines) {
+    const match = line.match(/^\s*-\s+(brain\/[^\s]+\.qmd)/);
+    if (match && match[1] !== filePath) {
+      chapterPaths.push(match[1]);
+    }
+  }
+
   const prompt = `You are an expert editor for a book called "The Complete Idiot's Guide to Ending War and Disease."
-Your task is to ensure a chapter's content is logically structured and placed correctly within the book's overall outline.
+Your task is to ensure a chapter is necessary, properly placed, and its content is logically structured.
 
 **CRITICAL INSTRUCTIONS:**
-1.  **Analyze the CHAPTER CONTENT** against the provided **BOOK OUTLINE**.
-2.  **Identify any paragraphs or sections** within the chapter that seem misplaced or would fit better in a *different* chapter as defined by the outline.
-3.  **For each misplaced section you find, insert a structured TODO comment** on the line *directly above* it.
-4.  **The TODO comment MUST follow this exact format:** \`<!-- TODO: STRUCTURE_CHECK - This section might belong in 'PART X: Chapter Title'. REASON: [Your brief, one-sentence reason] -->\`
-5.  **Do not modify the chapter's text in any other way.** Only insert the TODO comments.
-6.  **If the chapter is well-structured and all content belongs, you MUST return the special string "NO_CHANGES_NEEDED".**
-7.  Otherwise, return *only* the full, original chapter content with your TODO comments added. Do not include any other text, explanations, or markdown formatting.
+
+PART A - CHAPTER-LEVEL ANALYSIS:
+1. First, evaluate if this ENTIRE CHAPTER should be:
+   - KEPT as-is (essential and well-placed)
+   - DELETED (redundant, off-topic, or doesn't add value)
+   - MERGED into another chapter (content overlaps significantly)
+   - MOVED to a different section
+
+2. Consider these criteria:
+   - Does this chapter directly support the book's mission (redirecting military spending to medical research)?
+   - Is the content unique or does it duplicate other chapters?
+   - Does it fit logically in the book's narrative flow?
+   - Is the content substantial enough for its own chapter?
+   - Would merging with another chapter create better flow?
+
+3. If the chapter should be DELETED, MERGED, or MOVED:
+   - Add a prominent TODO comment at the VERY TOP of the file (first line)
+   - Format: \`<!-- TODO: CHAPTER_CONSOLIDATION - This entire chapter should be [DELETED/MERGED with 'chapter-name.qmd'/MOVED to 'Part X']. REASON: [Brief explanation] -->\`
+   - For DELETE: List any key points worth preserving in other chapters
+   - For MERGE: Specify exactly which chapter it should merge with
+   - For MOVE: Specify the target section
+
+PART B - SECTION-LEVEL ANALYSIS (only if chapter is KEPT):
+4. **Analyze the CHAPTER CONTENT** against the provided **BOOK OUTLINE**.
+5. **Identify any paragraphs or sections** within the chapter that seem misplaced or would fit better in a *different* chapter.
+6. **For each misplaced section you find, insert a structured TODO comment** on the line *directly above* it.
+7. **The TODO comment MUST follow this exact format:** \`<!-- TODO: STRUCTURE_CHECK - This section might belong in 'PART X: Chapter Title'. REASON: [Your brief, one-sentence reason] -->\`
+
+**OUTPUT RULES:**
+- **If the chapter should be kept AND is well-structured with all content belonging, return the special string "NO_CHANGES_NEEDED".**
+- **Otherwise, return *only* the full, original chapter content with your TODO comments added.**
+- **Do not modify the chapter's text in any other way.** Only insert TODO comments.
+- **Do not include any other text, explanations, or markdown formatting.**
 
 ---
 **BOOK OUTLINE:**
 ${outlineContent}
 ---
-**CHAPTER CONTENT:**
+**OTHER CHAPTERS IN THE BOOK (for reference):**
+${chapterPaths.join('\n')}
+---
+**CHAPTER BEING EVALUATED:** ${filePath}
 ${body}`;
 
   const result = await genAI.models.generateContent({
@@ -715,3 +776,4 @@ export async function figureCheckFile(filePath: string): Promise<void> {
   await fs.writeFile(filePath, newContent, 'utf-8');
   console.log(`Successfully updated figure-check metadata for ${filePath}.`);
 }
+

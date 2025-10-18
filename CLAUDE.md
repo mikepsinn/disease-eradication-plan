@@ -10,6 +10,8 @@ This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War a
 - **`_quarto.yml`**: Book configuration, chapter order, and output formats
 - **`package.json`**: Node.js dependencies and npm scripts
 
+**Important:** Use `tsx` (not ts-node) to run TypeScript files. Example: `npx tsx scripts/review/review.ts`
+
 ## Content Standards
 
 **See `CONTRIBUTING.md` for complete writing guidelines, style requirements, and content standards.**
