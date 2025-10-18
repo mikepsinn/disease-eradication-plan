@@ -42,7 +42,8 @@
       "Bash(for file in disease-war-curing-costs-column-chart.qmd health-interventions-roi-comparison-column-chart.qmd military-vs-medical-spending-ratio-bar-chart.qmd self-funding-roi-comparison-column-chart.qmd war-hidden-direct-curing-diseases-column-chart.qmd)",
       "Bash(do)",
       "Bash(echo:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []
