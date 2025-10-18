@@ -8,7 +8,10 @@
       "Bash(rm:*)",
       "Bash(python:*)",
       "Bash(npm run format:file:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(for file in brain/book/futures.qmd brain/book/vision.qmd brain/book/theory.qmd brain/book/economics.qmd)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

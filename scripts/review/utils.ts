@@ -596,15 +596,41 @@ export async function structureCheckFileWithLLM(filePath: string): Promise<void>
 
   const outlineContent = await fs.readFile('OUTLINE.md', 'utf-8');
 
-  // Read _quarto.yml to get list of other chapters
+  // Read _quarto.yml to get list of chapters and appendices
   const quartoYmlContent = await fs.readFile('_quarto.yml', 'utf-8');
   const chapterPaths: string[] = [];
+  const appendixPaths: string[] = [];
+
   const lines = quartoYmlContent.split('\n');
+  let inAppendices = false;
+
   for (const line of lines) {
+    // Check if we're entering the appendices section
+    if (line.trim() === 'appendices:') {
+      inAppendices = true;
+      continue;
+    }
+
+    // Check if we're leaving appendices (new top-level section)
+    if (!line.startsWith(' ') && !line.startsWith('\t') && line.includes(':')) {
+      inAppendices = false;
+    }
+
     const match = line.match(/^\s*-\s+(brain\/[^\s]+\.qmd)/);
     if (match && match[1] !== filePath) {
-      chapterPaths.push(match[1]);
+      if (inAppendices) {
+        appendixPaths.push(match[1]);
+      } else {
+        chapterPaths.push(match[1]);
+      }
     }
+  }
+
+  // Check if current file is in appendix
+  const isInAppendix = appendixPaths.includes(filePath);
+  if (isInAppendix) {
+    console.log(`File ${filePath} is already in appendix. Skipping structure check.`);
+    return; // Don't check appendix files
   }
 
   const prompt = `You are an expert editor for "The Complete Idiot's Guide to Ending War and Disease."
