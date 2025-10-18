@@ -11,7 +11,8 @@
       "Bash(find:*)",
       "Bash(for file in brain/book/futures.qmd brain/book/vision.qmd brain/book/theory.qmd brain/book/economics.qmd)",
       "Bash(do echo \"=== $file ===\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []
