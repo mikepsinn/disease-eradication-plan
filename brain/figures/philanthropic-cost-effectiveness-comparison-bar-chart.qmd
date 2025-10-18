@@ -176,47 +176,47 @@ fig.text(0.5, 0.96, 'Philanthropic Cost-Effectiveness Comparison',
 fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
          ha='center', fontsize=12, color=COLOR_BLACK)
 
-# Add calculation details and sources at bottom (in box for readability)
-calc_text = '''Full Calculation (see brain/book/economics/icer-full-calculation.qmd for complete methodology):
-
-Annual Economic Benefits:
-  - Peace Dividend: 97.1B (1% reduction in 9.7T annual war costs)
-  - dFDA R&D Savings: 50B (50% reduction in 100B clinical trial market)
-  - Total Benefits: 147.1B/year
-
-Annual Costs:
-  - Campaign: 250M/year (1B over 4 years, amortized)
-  - dFDA Operations: 40M/year
-  - Total Costs: 290M/year
-
-Annual Health Benefits:
-  - Peace: 1,000 lives saved (1% of 100k conflict deaths/year) x 35 QALYs/life = 35,000 QALYs
-  - dFDA: 840,000 QALYs (faster drugs + new therapies + prevention)
-  - Total: 875,000 QALYs/year
-
-ICER Calculation:
-  Net Benefit = 290M - 147.1B = -146.8B/year (society saves money)
-  ICER = -146.8B / 875k QALYs = -167,771 per QALY
-  Per Life = -167,771 x 35 QALYs/life = -5.87M per life saved
-
-Sensitivity: Conservative: -5.97M/life | Central: -5.87M/life | Optimistic: -4.79M/life (all scenarios dominant)
-
-Sources: GiveWell 2024, dFDA Cost-Benefit Analysis, Peace Dividend Analysis, Cost of War Analysis. Error bars show uncertainty ranges.'''
-
-fig.text(0.5, -0.03, calc_text,
-         ha='center', va='top', fontsize=6.5, color=COLOR_BLACK, family='monospace',
-         bbox=dict(boxstyle='round,pad=0.8', facecolor='#f5f5f5', edgecolor=COLOR_BLACK, linewidth=1.5))
+# Calculation details removed - see brain/book/economics/icer-full-calculation.qmd for complete methodology
+# calc_text = '''Full Calculation (see brain/book/economics/icer-full-calculation.qmd for complete methodology):
+#
+# Annual Economic Benefits:
+#   - Peace Dividend: 97.1B (1% reduction in 9.7T annual war costs)
+#   - dFDA R&D Savings: 50B (50% reduction in 100B clinical trial market)
+#   - Total Benefits: 147.1B/year
+#
+# Annual Costs:
+#   - Campaign: 250M/year (1B over 4 years, amortized)
+#   - dFDA Operations: 40M/year
+#   - Total Costs: 290M/year
+#
+# Annual Health Benefits:
+#   - Peace: 1,000 lives saved (1% of 100k conflict deaths/year) x 35 QALYs/life = 35,000 QALYs
+#   - dFDA: 840,000 QALYs (faster drugs + new therapies + prevention)
+#   - Total: 875,000 QALYs/year
+#
+# ICER Calculation:
+#   Net Benefit = 290M - 147.1B = -146.8B/year (society saves money)
+#   ICER = -146.8B / 875k QALYs = -167,771 per QALY
+#   Per Life = -167,771 x 35 QALYs/life = -5.87M per life saved
+#
+# Sensitivity: Conservative: -5.97M/life | Central: -5.87M/life | Optimistic: -4.79M/life (all scenarios dominant)
+#
+# Sources: GiveWell 2024, dFDA Cost-Benefit Analysis, Peace Dividend Analysis, Cost of War Analysis. Error bars show uncertainty ranges.'''
+#
+# fig.text(0.5, -0.03, calc_text,
+#          ha='center', va='top', fontsize=6.5, color=COLOR_BLACK, family='monospace',
+#          bbox=dict(boxstyle='round,pad=0.8', facecolor='#f5f5f5', edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Add watermark
 add_watermark(fig)
 
-# Adjust layout to accommodate larger bottom text box and top titles
-plt.tight_layout(rect=[0, 0.18, 1, 0.91])
+# Adjust layout to accommodate top titles (no bottom text box)
+plt.tight_layout(rect=[0, 0, 1, 0.91])
 
 # Save figure
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'charity-cost-vs-roi-bar-chart.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_dir / 'philanthropic-cost-effectiveness-comparison-bar-chart.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 plt.show()
 ```
