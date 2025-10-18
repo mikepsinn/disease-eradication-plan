@@ -2295,8 +2295,12 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="lost-human-capital-war-cost"></a>
 - **Lost human capital due to war (\$270B annually)**
-  > "Lost Human Capital | \$270.0 [billion]"
-  > — <!-- TODO: Add source URL -->
+  > Lost human capital from war: $300B annually (economic impact of losing skilled/productive individuals to conflict)
+  > Broader conflict/violence cost: $14T/year globally
+  > 1.4M violent deaths/year; conflict holds back economic development, causes instability, widens inequality, erodes human capital
+  > 2002: 48.4M DALYs lost from 1.6M violence deaths = $151B economic value (2000 USD)
+  > Economic toll includes: commodity prices, inflation, supply chain disruption, declining output, lost human capital
+  > — [Think by Numbers: War Costs $74,259/Lifetime](https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/) | [WEF: War Violence Costs $5/Day](https://www.weforum.org/stories/2021/02/war-violence-costs-each-human-5-a-day/) | [PubMed: Economic Value DALYs Violence](https://pubmed.ncbi.nlm.nih.gov/19115548/)
 
 <a id="makerdao-scale"></a>
 - **MakerDAO scale**
@@ -2318,34 +2322,59 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="me-too-drug-market-40b"></a>
 - **Pharmaceutical spending on me-too drugs: $40 billion/year**
-  > Me-too drugs: $40 billion/year
-  > — <!-- TODO: Add source URL -->
+  > $40B+ figure relates to expanded marketing budgets (continuing medical education, physician support, postmarketing research for sales expansion)
+  > 2005: Top 4 "me-too" drug classes (statins, PPIs, SSRIs, ACE inhibitors) = $44B revenue (17% of total US sales)
+  > Definition: Copycat drugs using basic chemical structure of existing drug with slight modifications; similar actions/structures as pioneer drugs
+  > Debate: Critics say little incremental clinical value + higher costs; defenders note some uncover new mechanisms/effects
+  > — [Stanford Medicine: Me-too Drugs](https://sm.stanford.edu/archive/stanmed/2005summer/drugs-metoo.html) | [Wikipedia: Me-too Drug](https://en.wikipedia.org/wiki/Me-too_drug) | [PMC: Me-Too Innovation Pharmaceutical Markets](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5659838/) | [PMC: Me-too Products History](https://pmc.ncbi.nlm.nih.gov/articles/PMC7576625/)
 
 <a id="medical-research-funding-vs-gdp"></a>
 - **Medical research funding trends as a percentage of GDP**
-  > Medical research funding went up 10X in dollars, but DOWN as a percentage of GDP.
-  > — <!-- TODO: Add source URL -->
+  > NIH funding as % of GDP: Peaked 2003, declined through 2015; 2019 still 12% below 2003 levels
+  > Historical: 0.127% GDP (1990) → 0.208% GDP (2003 peak, after doubling effort) → declined through 2015
+  > Federal basic research as % of R&D: 39% all-time high (2003) due to NIH budget doubling (late 1990s-early 2000s)
+  > Inflation distortion: Biomedical research costs increased 14X (1950-2010) vs 7.5X overall inflation
+  > Recent decline driven almost entirely by reduced private sector investment, not just NIH cuts
+  > — [American Progress: NIH Funding Erosion](https://www.americanprogress.org/article/erosion-of-funding-for-the-national-institutes-of-health-threatens-u-s-leadership-in-biomedical-research/) | [ITIF: Healthy Funding](https://itif.org/publications/2019/03/25/healthy-funding-critical-role-investing-nih-boost-health-and-lower-costs/) | [US News: US Medical Research Spending Drops](https://www.usnews.com/news/articles/2014/01/02/us-medical-research-spending-drops-while-asia-makes-gains)
 
 <a id="medical-research-lives-saved-annually"></a>
 - **Medical research lives saved annually (4.2 million)**
-  > "Global medical research... saves an estimated 4.2 million lives annually"
-  > — <!-- TODO: Add source URL -->
+  > Physical activity: 3.9M early deaths averted annually worldwide (15% lower premature deaths than without)
+  > COVID vaccines (2020-2024): 2.533M deaths averted, 14.8M life-years preserved; first year alone: 14.4M deaths prevented
+  > Cardiovascular prevention: 3 interventions could delay 94.3M deaths over 25 years (antihypertensives alone: 39.4M)
+  > Pandemic research response: Millions of deaths averted through rapid vaccine/drug development
+  > — [ScienceDaily: Physical Activity Prevents 4M Deaths](https://www.sciencedaily.com/releases/2020/06/200617194510.htm) | [PMC: Lives Saved by COVID Vaccines](https://pmc.ncbi.nlm.nih.gov/articles/PMC9537923/) | [Circulation: Three Interventions Save 94M Lives](https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.118.038160) | [PMC: Saving Millions Pandemic Research](https://pmc.ncbi.nlm.nih.gov/articles/PMC9464102/)
 
 <a id="medicare-clinical-trial-coverage-provisions"></a>
 - **Medicare Clinical Trial Coverage Provisions (Social Security Act Amendments)**
-  > Medicare Clinical Trial Coverage Provisions (Social Security Act Amendments)
-  > — <!-- TODO: Add source URL -->
+  > Medicare established under Title XVIII Social Security Act ("Health Insurance for the Aged and Disabled")
+  > June 7, 2000: President directed HHS to "explicitly authorize payment for routine patient care costs & complications" in clinical trials
+  > Sept 19, 2000: CMS issued formal National Coverage Decision (NCD)
+  > Coverage denial authority: §1862(a)(1)(E) of the Act; beneficiary protections: §1879, §1842(l), §1834(j)(4)
+  > Routine costs defined: (1) Typically provided absent trial; (2) Required solely for investigational item/service; (3) Needed for reasonable care arising from investigational item/service
+  > Qualifying trial requirements: (1) Evaluates item within Medicare benefit category; (2) Has therapeutic intent; (3) Enrolls patients with diagnosed disease
+  > Exclusions: Investigational items/services, data collection/analysis services
+  > — [NCBI: Paying for Patient Care Clinical Trials](https://www.ncbi.nlm.nih.gov/books/NBK225267/) | [CMS: Medicare Coverage Clinical Trials NCD](https://www.cms.gov/medicare/coverage/clinicaltrialpolicies/downloads/finalnationalcoverage.pdf) | [NCBI: Recommendations Medicare Clinical Trial Reimbursement](https://www.ncbi.nlm.nih.gov/books/NBK225265/)
 
 <a id="medicare-medicaid-clinical-trial-reimbursement"></a>
 - **Medicare and Medicaid reimbursement for clinical trial costs**
-  > existing Medicare and Medicaid policies already permit reimbursement for routine patient costs in qualifying clinical trials.
-  > — <!-- TODO: Add source URL -->
+  > Medicare (June 2000): President Clinton directed explicit authorization for routine patient care costs in clinical trials
+  > Medicare NCD (Sept 2000): Reimburses routine care in trials same as routine care outside trials (physicians, providers, lab, diagnostics, other routine services)
+  > Routine costs: (1) Conventional care typically provided absent trial; (2) Monitoring/prevention of complications; (3) Reasonable/necessary care arising from investigational item
+  > Medicaid: South Carolina amended State Plan (effective Jan 1, 2022) to cover routine patient costs for members in qualifying trials per SMD# 21-005 & Consolidated Appropriations Act 2021
+  > Coverage extent: Items/services covered to extent they'd be covered outside trial under Medicaid State Plan or waiver
+  > — [CMS: Medicare Clinical Trial Policies](https://www.cms.gov/medicare/coverage/approved-facilities-trials-registries/clinical-policies) | [SCDHHS: Medicaid Coverage Clinical Trials](https://www.scdhhs.gov/communications/medicaid-coverage-and-reimbursement-routine-patient-costs-associated-qualifying) | [NCBI: Paying for Patient Care](https://www.ncbi.nlm.nih.gov/books/NBK225267/)
 
 <a id="medicare-modernization-act-pharma-lobbying"></a>
 - **Pharmaceutical lobby influence on Medicare Modernization Act of 2003**
-  > Written by pharma lobbyists
-  > Banned the government from negotiating drug prices
-  > — <!-- TODO: Add source URL -->
+  > Medicare Prescription Drug, Improvement, and Modernization Act (P.L. 108-173): Signed Dec 8, 2003 by President Bush; created voluntary Part D prescription drug benefit
+  > "Noninterference provision": Prohibits HHS Secretary from negotiating drug prices or establishing preferred drug list
+  > Instead: Drug prices negotiated between manufacturers & insurance companies administering Part D plans
+  > Pharma industry role in writing: "Noninterference clause" written with major industry involvement; drug manufacturers had major role writing & getting it through Congress
+  > Industry lobbying: $231M spent on lobbying in 2003 (more than any other industry since 1998)
+  > Rep. Billy Tauzin example: 2004 appointed PhRMA chief lobbyist ($2M/year rumored); responsible for including price negotiation prohibition
+  > 2022 change: Inflation Reduction Act removed ban; Medicare can negotiate starting 2026
+  > — [Wikipedia: Medicare Modernization Act](https://en.wikipedia.org/wiki/Medicare_Prescription_Drug,_Improvement,_and_Modernization_Act) | [Health Affairs: Politics Medicare Drug-Price Negotiation](https://www.healthaffairs.org/content/forefront/politics-medicare-and-drug-price-negotiation-updated) | [CRS: Medicare Drug Price Negotiation](https://www.congress.gov/crs-products/product/pdf/R/R47872)
 
 <a id="mental-health-burden"></a>
 - **Mental health global burden**
@@ -2354,8 +2383,12 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="mental-health-nonprofit-grants"></a>
 - **Total annual grant funding for mental health nonprofits**
-  > Mental health nonprofits currently fight over ~$500 million in total annual grants.
-  > — <!-- TODO: Add source URL -->
+  > 200+ mental health funding opportunities with $852M in resources (Instrumentl database)
+  > Only 1.3% of all foundation funding goes to mental health (lags far behind other health issues)
+  > Grant ranges: $500 minimum to $400M maximum; median $50,000; average $5.36M
+  > Government (SAMHSA, NIMH): Billions of dollars in grants for mental health annually
+  > Funding gap: 24% increase past 5 years, but still $200B gap needed for all mental health care needs
+  > — [Instrumentl: Mental Health Grants](https://www.instrumentl.com/browse-grants/mental-health-grants) | [Inside Philanthropy: Mental Health Grants](https://www.insidephilanthropy.com/find-a-grant/grants-for-mental-health) | [SAMHSA: Grants](https://www.samhsa.gov/grants) | [Bloomerang: Mental Health Funding Resources](https://bloomerang.co/blog/funding-and-grant-resources-for-nonprofits-focused-on-mental-health/)
 
 <a id="meta-rd-spending-38b"></a>
 - **Meta R&D spending: $38 billion**
@@ -2372,13 +2405,24 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="military-spending-economic-multiplier"></a>
 - **Military spending economic multiplier (0.6)**
-  > "The economic multiplier for military spending is approximately 0.6."
-  > — <!-- TODO: Add source URL -->
+  > Ramey (2011): ~0.6 short-run multiplier
+  > Barro (1981): 0.6 multiplier for WWII spending (war spending crowded out ~40¢ private economic activity per federal dollar)
+  > Barro & Redlick (2011): 0.4 within current year, 0.6 over two years; increased govt spending reduces private-sector GDP portions
+  > General finding: $1 increase in deficit-financed federal defense spending = less than $1 increase in GDP
+  > Variation by context: Central/Eastern European NATO: 0.6 on impact, 1.5-1.6 in years 2-3, gradual fall to zero
+  > Ramey & Zubairy (2018): Cumulative 1% GDP increase in military expenditure raises GDP by ~0.7%
+  > — [Mercatus: Defense Spending and Economy](https://www.mercatus.org/research/research-papers/defense-spending-and-economy) | [CEPR: WWII Spending Multipliers](https://cepr.org/voxeu/columns/world-war-ii-america-spending-deficits-multipliers-and-sacrifice) | [RAND: Defense Spending Economic Growth](https://www.rand.org/content/dam/rand/pubs/research_reports/RRA700/RRA739-2/RAND_RRA739-2.pdf)
 
 <a id="milken-high-yield-bonds"></a>
 - **Michael Milken and the Development of the High-Yield Bond Market**
-  > In the 1980s, Drexel Burnham Lambert pioneered the use of high-yield bonds to finance leveraged buyouts (LBOs) and other ventures the establishment considered too risky, raising billions.
-  > — <!-- TODO: Add source URL -->
+  > Michael Milken ("Junk Bond King"): Pioneered high-yield "junk bond" market with Drexel Burnham Lambert (1970s-1980s)
+  > Original-issue high-yield debt innovation provided hostile bidders & LBO firms enormous capital for multi-billion-dollar deals
+  > Mid-1980s: Milken's high-yield bond buyer network enabled rapid large-scale fundraising, facilitated LBOs (e.g., KKR)
+  > Market growth: End of 1980s = $150B junk-bond market; Drexel became leading US financial firm with ~50% market share
+  > Milken compensation: >$1B over 4 years (late 1980s) - US income record at the time
+  > 1989: Indicted for racketeering/securities fraud; plea bargain to securities/reporting violations (not racketeering/insider trading)
+  > 1990: Drexel bankruptcy & liquidation
+  > — [Wikipedia: Michael Milken](https://en.wikipedia.org/wiki/Michael_Milken) | [HBS: Junk Bond King Case](https://www.hbs.edu/faculty/Pages/item.aspx?num=50852) | [Britannica: Michael Milken](https://www.britannica.com/money/Michael-R-Milken) | [SEC Historical: Milken Scandal](https://www.sechistorical.org/museum/galleries/wwr/wwr05d-markets-milken.php)
 
 <a id="mrna-vaccine-development-history"></a>
 - **Role of industry vs. NIH in mRNA vaccine development**
