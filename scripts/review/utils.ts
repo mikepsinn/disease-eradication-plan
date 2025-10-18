@@ -617,24 +617,27 @@ Your task is to ensure each chapter has a single, clear focus and remove anythin
 PART A - CHAPTER-LEVEL ANALYSIS:
 1. Based on the chapter title and outline position, identify its SINGLE core purpose
 2. Decide if the chapter should be:
-   - KEPT (has unique, essential content)
-   - DELETED (redundant or off-topic)
-   - MERGED (overlaps significantly with another chapter)
-   - MOVED (belongs in a different section)
+   - KEPT (has unique, essential content appropriate for main book)
+   - MERGED (overlaps with another chapter - PREFER THIS over DELETE to preserve content)
+   - MOVED TO APPENDIX (too technical/detailed for main narrative but valuable as reference)
+   - MOVED (belongs in a different section of main book)
+   - DELETED (ONLY if completely empty or 100% redundant with NO unique insights)
 
-3. If DELETE/MERGE/MOVE, add at the TOP:
+3. IMPORTANT: Default to MERGE over DELETE to preserve any unique content, jokes, or insights.
+
+4. If MERGE/MOVE/DELETE, add at the TOP:
    \`<!-- TODO: CHAPTER_CONSOLIDATION - This chapter should be [action]. REASON: [explanation] -->\`
 
 PART B - SECTION-LEVEL ANALYSIS:
-4. For each section/paragraph, ask: "Does this directly support the chapter's core purpose?"
-5. Flag content that:
-   - Belongs in a different chapter
-   - Repeats points already made
-   - Adds no value (filler)
-   - Diverges from the core message
+5. For each section/paragraph, ask: "Does this directly support the chapter's core purpose?"
+6. Flag content that:
+   - Belongs in a different chapter (MOVE, don't delete)
+   - Repeats points already made (consider condensing, not deleting)
+   - Adds no value (only DELETE if truly empty filler)
+   - Diverges from the core message (MOVE to appropriate chapter)
 
-6. Add TODO above problematic sections:
-   \`<!-- TODO: STRUCTURE_CHECK - [DELETE/MOVE to 'chapter.qmd']. REASON: [why] -->\`
+7. Add TODO above problematic sections:
+   \`<!-- TODO: STRUCTURE_CHECK - [MOVE to 'chapter.qmd'/CONDENSE/DELETE only if truly empty]. REASON: [why] -->\`
 
 **GENERAL PRINCIPLES:**
 - Problem chapters shouldn't contain solutions
