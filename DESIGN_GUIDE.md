@@ -98,10 +98,15 @@ Include charts in any `.qmd` file using Quarto's include directive:
    output_dir.mkdir(parents=True, exist_ok=True)
    plt.savefig(output_dir / 'chart-name.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
    ```
-3. Name output file to match source: `chart-name.qmd` → `chart-name.png`
-4. Use linear scales for disparity charts (never logarithmic)
-5. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
-6. Don't use `plt.tight_layout()` (overrides margins)
+3. **MANDATORY: Generate PNG output** - Every chart MUST save a PNG:
+   ```python
+   plt.savefig(output_dir / 'exact-same-name-as-qmd.png',
+               dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+   ```
+4. Name output file to match source: `chart-name.qmd` → `chart-name.png`
+5. Use linear scales for disparity charts (never logarithmic)
+6. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
+7. Don't use `plt.tight_layout()` (overrides margins)
 
 ## Official Color Palette
 
