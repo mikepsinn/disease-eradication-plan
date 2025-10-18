@@ -20,13 +20,15 @@ from _chart_style import PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS, PA
 setup_chart_style()
 
 # Data: Two segments to show the stark contrast
-# Based on FY2025 NIH budget of $47.7B with ~5% for clinical trials
+# Based on FY2025 NIH budget of $47.7B
+# Clinical development for drug trials = 3.3% of total NIH funding
+# Source: PMC10349341 - NIH spent $8.1B on clinical development out of $247.3B total (2010-2019)
 categories = [
-    'Actually Testing\nTreatments\n$2.4B',
-    'Everything Else\n(Buildings, Admin,\nTraining, Basic Research)\n$45.3B'
+    'Actually Testing\nTreatments\n$1.6B',
+    'Everything Else\n(Buildings, Admin,\nTraining, Basic Research)\n$46.1B'
 ]
 
-values = [2.4, 45.3]  # Billions (5% and 95% of $47.7B)
+values = [1.6, 46.1]  # Billions (3.3% and 96.7% of $47.7B)
 colors = [COLOR_WHITE, COLOR_WHITE]  # Both white fills
 hatches = [None, PATTERN_DIAGONAL]  # No pattern for trials, diagonal for everything else
 
@@ -67,8 +69,8 @@ for autotext in autotexts:
     autotext.set_color(COLOR_BLACK)
 
 # Add title (28-36pt per DESIGN_GUIDE)
-plt.title('NIH Budget: Where Your $51 Billion Goes',
-         fontsize=32, weight='bold', pad=20, color=COLOR_BLACK)
+plt.title('NIH Budget: Where Your $47.7 Billion Goes',
+         fontsize=32, weight='bold', pad=35, color=COLOR_BLACK)
 
 # Add watermark
 add_watermark(fig)

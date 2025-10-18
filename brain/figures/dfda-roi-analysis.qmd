@@ -177,12 +177,12 @@ fig.update_layout(
     xaxis_title='Cost Scenario',
     yaxis=dict(
         title='ROI Ratio',
-        titlefont=dict(color='lightblue'),
+        title_font=dict(color='lightblue'),
         tickfont=dict(color='lightblue')
     ),
     yaxis2=dict(
         title='10-Year NPV ($ Billions)',
-        titlefont=dict(color='darkgreen'),
+        title_font=dict(color='darkgreen'),
         tickfont=dict(color='darkgreen'),
         overlaying='y',
         side='right'
