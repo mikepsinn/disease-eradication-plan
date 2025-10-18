@@ -166,8 +166,14 @@ This bar chart provides an accurate and honest visualization of humanity's spend
 ```{python}
 # --- Corrected Visualization: Humanity's Budget Bar Chart vs. Global GDP ---
 
-# Data for humanity's budget (in trillions USD) is already loaded from a previous cell.
-# global_gdp, total_war_cost, total_disease_cost, etc.
+# Define the data for humanity's budget (in trillions USD)
+global_gdp = 105.0  # Global GDP
+total_disease_cost = 109.1  # Total economic burden of disease
+total_war_cost = 10.0  # Total cost of war including externalities
+housing_spending = 9.0  # Global housing expenditure
+food_spending = 7.5  # Global food expenditure
+education_spending = 5.0  # Global education expenditure
+transportation_spending = 6.5  # Global transportation expenditure
 
 # Create a DataFrame for the bar chart
 budget_data = {

@@ -2932,13 +2932,20 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="pos-energy-efficiency"></a>
 - **Proof-of-Stake Energy Efficiency**
-  > Proof-of-Stake (PoS) consensus mechanisms, which consume over 99.9% less energy than their Proof-of-Work predecessors.
-  > — <!-- TODO: Add source URL -->
+  > Ethereum's "Merge" (Sept 15, 2022): Transition from proof-of-work to proof-of-stake
+  > Energy reduction: 99.9-99.95% less energy consumption (~2000X more energy-efficient)
+  > Actual consumption drop: 23M megawatt hours/year → 2,600 megawatt hours/year
+  > Carbon footprint: 99.992% reduction (11.016M tonnes CO2e → 870 tonnes CO2e)
+  > — [Ethereum Foundation: ETH Will Use 99.95% Less Energy](https://blog.ethereum.org/2021/05/18/country-power-no-more) | [Ethereum.org: Energy Consumption](https://ethereum.org/energy-consumption/) | [Decrypt: Energy Down 99.99% After Merge](https://decrypt.co/109848/ethereum-energy-carbon-footprint-down-99-percent-merge)
 
 <a id="post-1962-drug-approval-drop"></a>
 - **Post-1962 drop in new drug approvals**
-  > New drug approvals drop **70% overnight**
-  > — <!-- TODO: Add source URL -->
+  > 1962 Kefauver-Harris Amendment: Required proof of effectiveness (not just safety) before FDA approval
+  > Impact: "New regulatory clampdown on approvals immediately reduced the production of new treatments by 70%"
+  > Context: Regulatory response to thalidomide tragedy (late 1950s); drug caused birth defects in 46 countries but was already blocked in U.S. by existing FDA safety requirements
+  > More than half of medicines available in 1962 were discontinued following implementation
+  > Correlated effect: Lifespan growth declined from ~4 years/decade (pre-1962) to ~2 years/decade (post-1962)
+  > — [Think by Numbers: How Many Lives Does FDA Save?](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/) | [Wikipedia: Kefauver-Harris Amendment](https://en.wikipedia.org/wiki/Kefauver–Harris_Amendment) | [PMC: Lost Medicines](https://pmc.ncbi.nlm.nih.gov/articles/PMC7245331/)
 
 <a id="post-1962-drug-costs-explode"></a>
 - **Post-1962 explosion in drug development costs**
@@ -2950,19 +2957,31 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="post-1962-life-expectancy-slowdown"></a>
 - **Post-1962 slowdown in life expectancy gains**
-  > Life expectancy gains slow by **more than half**
-  > — <!-- TODO: Add source URL -->
+  > Pre-1962: Lifespan growth increased by ~4 years per decade
+  > Post-1962: Lifespan growth declined to ~2 years per decade (50% reduction)
+  > Correlation: Slowdown directly coincided with 70% reduction in new drug approvals following 1962 Kefauver-Harris Amendment
+  > Context: Regulatory clampdown on approvals immediately reduced production of new treatments by 70%
+  > — [Think by Numbers: How Many Lives Does FDA Save?](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/)
 
 <a id="pre-1962-drug-costs-timeline"></a>
 - **Pre-1962 drug development costs and timeline**
-  > Drug costs: $74M.
-  > Timeline: 2-3 years.
-  > — <!-- TODO: Add source URL -->
+  > 1962 Drug Amendments significantly increased costs and timelines
+  > Historical estimates (1970-1985): USD $226M fully capitalized (2011 prices)
+  > 1980s drugs: ~$65M after-tax R&D (1990 dollars), ~$194M compounded to approval (1990 dollars)
+  > Modern comparison: $2-3B costs, 7-12 years (dramatic increase from pre-1962)
+  > Context: 1962 regulatory clampdown reduced new treatment production by 70%, dramatically increasing development timelines and costs
+  > Note: Specific pre-1962 "$74M, 2-3 years" figures not verified in sources
+  > — [Think by Numbers: How Many Lives Does FDA Save?](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/) | [Wikipedia: Cost of Drug Development](https://en.wikipedia.org/wiki/Cost_of_drug_development) | [STAT: 1962 Law Slowed Development](https://www.statnews.com/2018/10/01/changing-1962-law-slash-drug-prices/)
 
 <a id="pre-1962-physician-trials"></a>
 - **Pre-1962 physician-led clinical trials**
-  > Pre-1962: 144,000 physicians ran real-world trials through JAMA.
-  > — <!-- TODO: Add source URL -->
+  > Pre-1962: Physicians could report real-world evidence directly
+  > 1962 Drug Amendments replaced "premarket notification" with "premarket approval", requiring extensive efficacy testing
+  > Impact: New regulatory clampdown reduced new treatment production by 70%; lifespan growth declined from ~4 years/decade to ~2 years/decade
+  > Drug Efficacy Study Implementation (DESI): NAS/NRC evaluated 3,400+ drugs approved 1938-1962 for safety only; reviewed >3,000 products, >16,000 therapeutic claims
+  > FDA has had authority to accept real-world evidence since 1962, clarified by 21st Century Cures Act (2016)
+  > Note: Specific "144,000 physicians" figure not verified in sources
+  > — [Think by Numbers: How Many Lives Does FDA Save?](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/) | [FDA: Drug Efficacy Study Implementation](https://www.fda.gov/drugs/enforcement-activities-fda/drug-efficacy-study-implementation-desi) | [NAS: Drug Efficacy Study 1966-1969](http://www.nasonline.org/about-nas/history/archives/collections/des-1966-1969-1.html)
 
 <a id="prehistoric-violence-rates"></a>
 - **Prehistoric Violence Rates**
@@ -2976,14 +2995,21 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="princeton-oligarchy-study"></a>
 - **Princeton study on policy outcomes and influence of elites vs. average citizens**
-  > Princeton University did a study. They analyzed 1,779 policy decisions over 20 years. The correlation between what you want and what happens? Zero. Percent.
-  > when economic elites want something? They get it 78% of the time
-  > — <!-- TODO: Add source URL -->
+  > Study by Martin Gilens (Princeton) and Benjamin I. Page (Northwestern): Analyzed 1,779 policy outcomes (1981-2002)
+  > Finding: "Economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while average citizens have little or no independent influence"
+  > Rich, well-connected individuals steer the country's direction, regardless of or even against the will of the majority of voters
+  > Note: Specific "78 percent" and "zero percent correlation" statistics not found in sources
+  > — [Princeton: Testing Theories of American Politics (PDF)](https://scholar.princeton.edu/sites/default/files/mgilens/files/gilens_and_page_2014_-testing_theories_of_american_politics.doc.pdf) | [RepresentUs: US Oligarchy Research Explained](https://act.represent.us/sign/usa-oligarchy-research-explained) | [Internet Archive: Gilens and Page 2014](https://archive.org/details/gilens_and_page_2014_-testing_theories_of_american_politics.doc)
 
 <a id="principal-agent-theory-cost-reduction"></a>
 - **Cost reduction in principal-agent theory through incentive alignment**
-  > Principal-agent theory indicates it reduces costs by 50-70% vs. adversarial monitoring.
-  > — <!-- TODO: Add source URL -->
+  > Agency theory explores conflicts between principals (shareholders) and agents (executives/managers)
+  > When agent incentives align with principal objectives, agency costs reduce significantly
+  > Steeper alignment of agent rewards with principal objectives = lower costs
+  > Benefits of reducing agency costs can outweigh monitoring costs
+  > Example: Energy efficiency study showed misaligned incentives caused 30% less electricity savings
+  > Note: General "50-70% cost reduction" claim not verified in sources
+  > — [Wikipedia: Principal-Agent Problem](https://en.wikipedia.org/wiki/Principal–agent_problem) | [Inspired Economist: Agency Theory](https://inspiredeconomist.com/articles/agency-theory/) | [AEA: The Costs of Misaligned Incentives](https://www.aeaweb.org/articles?id=10.1257%2Fpol.20210208)
 
 
 <a id="projected-per-capita-benefit-1-2m"></a>
@@ -2998,13 +3024,22 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="psychological-impact-war-cost"></a>
 - **Psychological impact of war cost (\$100B annually)**
-  > "Psychological Impact | \$100.0 [billion]"
-  > — <!-- TODO: Add source URL -->
+  > PTSD economic burden (2018 U.S.): $232.2B total ($189.5B civilian, $42.7B military)
+  > Civilian costs driven by: Direct healthcare ($66B), unemployment ($42.7B)
+  > Military costs driven by: Disability ($17.8B), direct healthcare ($10.1B)
+  > Exceeds costs of other mental health conditions (anxiety, depression)
+  > War-exposed populations: 2-3X higher rates of anxiety, depression, PTSD; women and children most vulnerable
+  > Note: Actual burden $232B, significantly higher than "$100B" claimed
+  > — [PubMed: Economic Burden of PTSD](https://pubmed.ncbi.nlm.nih.gov/35485933/) | [VA News: Study Economic Burden](https://news.va.gov/103611/study-national-economic-burden-of-ptsd-staggering/) | [PMC: Mental Health Costs Armed Conflicts](https://pmc.ncbi.nlm.nih.gov/articles/PMC9957523/)
 
 <a id="public-support-for-peace-funding-70-pct"></a>
 - **Public support for redirecting military spending to health**
-  > >70% public support
-  > — <!-- TODO: Add source URL -->
+  > >70% of voters said their community would struggle temporarily/recover or that Pentagon cuts would have no local impact
+  > 2-to-1: Voters agreed "U.S. should cut Pentagon spending to invest more in healthcare, education, infrastructure, clean energy that create more jobs"
+  > 57% supported cutting defense budget 10% if funding reallocated to CDC and pressing domestic needs (July 2020)
+  > 67% of Americans want to expand federal budget for healthcare (2024)
+  > Healthcare ranks #1 priority for increased funding (23%), military ranks 5th (11%)
+  > — [The Nation: Americans Want Jobs Not War](https://www.thenation.com/article/archive/pentagon-military-spending/) | [Data for Progress: Cut Pentagon Budget](https://www.dataforprogress.org/blog/2020/7/20/cut-the-pentagons-budget) | [Chicago Council: Americans Prioritize Domestic Spending](https://globalaffairs.org/research/public-opinion-survey/americans-prioritize-domestic-spending-over-foreign-aid)
 
 <a id="publication-bias-clinical-trials"></a>
 - **Publication rate of clinical trial results**

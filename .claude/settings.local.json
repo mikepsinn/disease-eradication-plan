@@ -20,7 +20,9 @@
       "Bash(xargs:*)",
       "Bash(git restore:*)",
       "Bash(git mv:*)",
-      "Bash(npx tsx:*)"
+      "Bash(npx tsx:*)",
+      "Bash(quarto check:*)",
+      "Bash(where:*)"
     ],
     "deny": [],
     "ask": []
