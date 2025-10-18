@@ -15,12 +15,12 @@ async function main() {
   console.log('Starting comprehensive review process...');
 
   const checks = [
+    { name: 'Structure Check', hashField: 'lastStructureCheckHash', checkFunction: structureCheckFileWithLLM }, // Run FIRST to remove/consolidate content
     { name: 'Formatting', hashField: 'lastFormattedHash', checkFunction: formatFileWithLLM },
     { name: 'Style & Content Quality', hashField: 'lastStyleHash', checkFunction: styleFileWithLLM },
     { name: 'Fact Check', hashField: 'lastFactCheckHash', checkFunction: factCheckFileWithLLM },
     { name: 'Link Check', hashField: 'lastLinkCheckHash', checkFunction: linkCheckFile },
-    { name: 'Figure Check', hashField: 'lastFigureCheckHash', checkFunction: figureCheckFile },
-    { name: 'Structure Check', hashField: 'lastStructureCheckHash', checkFunction: structureCheckFileWithLLM }
+    { name: 'Figure Check', hashField: 'lastFigureCheckHash', checkFunction: figureCheckFile }
   ];
 
   for (const check of checks) {
