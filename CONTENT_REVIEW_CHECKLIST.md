@@ -32,8 +32,8 @@ This document tracks the systematic review status of every chapter in the book. 
 | `brain/book/solution/wishocracy.qmd` | 📝 To Do | |
 | `brain/book/solution/dfda.qmd` | 📝 To Do | |
 | `brain/book/proof.qmd` | 📝 To Do | |
-| `brain/book/reference/recovery-trial.qmd` | 📝 To Do | |
-| `brain/book/reference/historical-evidence-supporting-decentralized-efficacy-trials.qmd` | 📝 To Do | |
+| `brain/book/appendix/recovery-trial.qmd` | 📝 To Do | |
+| `brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd` | 📝 To Do | |
 | `brain/book/proof/historical-precedents.qmd` | 📝 To Do | |
 | `brain/book/proof/body-as-repairable-machine.qmd` | 📝 To Do | |
 | `brain/book/futures.qmd` | 📝 To Do | |

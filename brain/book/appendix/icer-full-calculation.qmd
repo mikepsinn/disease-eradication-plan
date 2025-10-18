@@ -20,7 +20,7 @@ This means for every life saved, society becomes **$5.87 million richer** instea
 
 #### 1a. Peace Dividend ($97.1B/year)
 
-**Source**: [Peace Dividend Analysis](./peace-dividend-analysis.qmd)
+**Source**: [Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd)
 
 From [Cost of War Analysis](../problem/cost-of-war.qmd):
 - **Total annual cost of war**: [$9,719B](../references.qmd#total-military-and-war-costs-9-7t)
@@ -39,7 +39,7 @@ From [Cost of War Analysis](../problem/cost-of-war.qmd):
 
 #### 1b. dFDA R&D Savings ($50B/year)
 
-**Source**: [dFDA Cost-Benefit Analysis](./dfda-cost-benefit-analysis.qmd)
+**Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
 
 From dFDA analysis:
 - **Global clinical trial market**: [~$100B/year](../references.qmd#clinical-trial-spending)
@@ -82,7 +82,7 @@ From dFDA analysis:
 
 #### 2b. dFDA Health Benefits (840,000 QALYs/year)
 
-**Source**: [dFDA Cost-Benefit Analysis](./dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
+**Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
 
 **Baseline projection**: 840,000 QALYs/year from:
 1. **Faster drug access** (50% of total): 420,000 QALYs
@@ -101,7 +101,7 @@ From dFDA analysis:
 
 **Sensitivity range**: 420,000 (conservative) to 2,100,000 (optimistic) QALYs
 
-See [Appendix: Detailed QALY Calculation Model](./dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) for complete methodology.
+See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) for complete methodology.
 
 #### Total Annual Health Benefits
 
@@ -137,7 +137,7 @@ See [Appendix: Detailed QALY Calculation Model](./dfda-cost-benefit-analysis.qmd
 
 #### 3b. dFDA Operational Costs ($40M/year)
 
-**Source**: [dFDA Cost-Benefit Analysis](./dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
+**Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
 
 **Annual operational costs**: $40M/year
 - Platform maintenance: $15M
@@ -377,12 +377,12 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 ### Economic Benefits
 
-1. **Peace Dividend**: [Peace Dividend Analysis](./peace-dividend-analysis.qmd)
+1. **Peace Dividend**: [Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd)
    - Based on [Cost of War Analysis](../problem/cost-of-war.qmd)
    - Total war costs: $9.7T annually
    - 1% reduction: $97.1B
 
-2. **dFDA R&D Savings**: [dFDA Cost-Benefit Analysis](./dfda-cost-benefit-analysis.qmd)
+2. **dFDA R&D Savings**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
    - Clinical trial market: ~$100B/year
    - 50% cost reduction (baseline)
    - Range: 25%-95%
@@ -393,7 +393,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
    - 100,000 deaths/year
    - Sources: ACLED, GTD, Uppsala
 
-4. **dFDA QALYs**: [dFDA QALY Model](./dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
+4. **dFDA QALYs**: [dFDA QALY Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
    - Baseline: 840,000 QALYs/year
    - Range: 420,000-2,100,000
 
@@ -406,7 +406,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
    - Total: $1B over 3-5 years
    - Amortized: $200-333M/year
 
-7. **dFDA Operations**: [dFDA Cost Analysis](./dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
+7. **dFDA Operations**: [dFDA Cost Analysis](dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
    - Annual: $40M/year
    - Range: $30-60M
 
@@ -498,8 +498,8 @@ The math shows it's worth trying. Even a 10% chance of success has positive expe
 
 ## Related Analyses
 
-- [dFDA Cost-Benefit Analysis](./dfda-cost-benefit-analysis.qmd) - Deep dive on medical R&D savings
-- [Peace Dividend Analysis](./peace-dividend-analysis.qmd) - Economic value of reduced conflict
+- [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) - Deep dive on medical R&D savings
+- [Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd) - Economic value of reduced conflict
 - [Campaign Budget](./campaign-budget.qmd) - Detailed cost breakdown
-- [Intervention Comparison Table](./intervention-comparison-table.qmd) - Compare to other health interventions
-- [Total Economic Impact](./total-economic-impact.qmd) - Full $16.5T analysis over 10 years
+- [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd) - Compare to other health interventions
+- [Total Economic Impact](../appendix/total-economic-impact.qmd) - Full $16.5T analysis over 10 years

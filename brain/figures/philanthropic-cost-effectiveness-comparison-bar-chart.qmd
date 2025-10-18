@@ -176,8 +176,8 @@ fig.text(0.5, 0.96, 'Philanthropic Cost-Effectiveness Comparison',
 fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
          ha='center', fontsize=12, color=COLOR_BLACK)
 
-# Calculation details removed - see brain/book/economics/icer-full-calculation.qmd for complete methodology
-# calc_text = '''Full Calculation (see brain/book/economics/icer-full-calculation.qmd for complete methodology):
+# Calculation details removed - see brain/book/appendix/icer-full-calculation.qmd for complete methodology
+# calc_text = '''Full Calculation (see brain/book/appendix/icer-full-calculation.qmd for complete methodology):
 #
 # Annual Economic Benefits:
 #   - Peace Dividend: 97.1B (1% reduction in 9.7T annual war costs)

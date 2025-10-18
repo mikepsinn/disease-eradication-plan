@@ -23,7 +23,7 @@ lastStyleCheck: '2025-10-16'
 Humanity spends [\$2.7 trillion on weapons, \$68 billion on medical research](brain/book/problem/the-119-trillion-death-toilet.qmd) (40X more on killing than curing).
 
 **The Goal:** Get 190 nations to sign a treaty redirecting just 1% of military budgets (\$27B/year) to fund cheaper medical trials.
-[Oxford proved](brain/book/reference/recovery-trial.qmd) trials can cost \$500 per patient instead of the current \$41,000 (82X cheaper).
+[Oxford proved](brain/book/appendix/recovery-trial.qmd) trials can cost \$500 per patient instead of the current \$41,000 (82X cheaper).
 
 **How to Make It Happen (With \$1B):**
 
@@ -42,7 +42,7 @@ Instead GET PAID by patients (who have subsidies).
 - **Insurance companies:** Healthy people cost billions less than sick people.
 - **Patients:** Get paid to participate in trials + vote directly on which diseases get funded.
 
-**The Math:** Every \$1 invested creates [\$463 in benefits](brain/book/economics/dfda-cost-benefit-analysis.qmd).
+**The Math:** Every \$1 invested creates [\$463 in benefits](brain/book/appendix/dfda-cost-benefit-analysis.qmd).
 <!-- TODO: Link broken. Was this file renamed or moved? -->
 (better than smallpox eradication's 280:1 ROI).
 
@@ -116,7 +116,7 @@ It gets dumber.
 
 **3 Ingredients of a World Without War and Disease**
 
-1.  **[The 1% Treaty](brain/book/solution/1-percent-treaty.qmd)** = Redirects 1% of military budgets globally to the Decentralized Institute of Health (DIH) Treasury.
+1.  **[The 1% Treaty](brain/book/appendix/1-percent-treaty.qmd)** = Redirects 1% of military budgets globally to the Decentralized Institute of Health (DIH) Treasury.
 2.  **[The Decentralized Institute of Health (DIH) Treasury](brain/book/solution/dih.qmd)** = Holds the money and uses a new system of collective budgeting called [Wishocracy](brain/book/solution/wishocracy.qmd) where everyone gets to vote on how to spend the money.
 3.  **[The Decentralized FDA (dFDA)](brain/book/solution/dfda.qmd)** = A new and improved FDA that ranks treatments by real-world effectiveness and enables patients to effortlessly participate in global decentralized clinical trials.
 
@@ -147,7 +147,7 @@ The power of global collective intelligence decides.
 
 **Amazon for Clinical Trials + Consumer Reports for Drugs**
 
-[The dFDA](brain/book/solution/dfda.qmd) achieves [**82X cost reduction**](brain/book/reference/recovery-trial.qmd) through decentralized pragmatic trials.
+[The dFDA](brain/book/solution/dfda.qmd) achieves [**82X cost reduction**](brain/book/appendix/recovery-trial.qmd) through decentralized pragmatic trials.
 Patients can search treatments ranked by real-world effectiveness and join trials with one click.
 
 **Outcome Labels: Nutrition Facts for Drugs**
@@ -203,15 +203,15 @@ $$\text{ROI} = \frac{\text{\$463 in benefits}}{\text{\$1 invested}} = 463:1$$
 
 This exceptional ROI comes from multiple sources:
 
-- [**\$50B in annual R&D cost savings**](brain/book/economics/dfda-cost-benefit-analysis.qmd): 82X reduction in clinical trial costs <!-- TODO: Link broken. Was this file renamed or moved? -->
-- [**840,000 Quality-Adjusted Life Years (QALYs) saved annually**](brain/book/economics/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model): <!-- TODO: Link broken. Was this file renamed or moved? -->
-  - **Faster access to new treatments**: 200,000 QALYs from faster drug access ([2 years instead of 17 years](brain/book/reference/recovery-trial.qmd) to market)
+- [**\$50B in annual R&D cost savings**](brain/book/appendix/dfda-cost-benefit-analysis.qmd): 82X reduction in clinical trial costs <!-- TODO: Link broken. Was this file renamed or moved? -->
+- [**840,000 Quality-Adjusted Life Years (QALYs) saved annually**](brain/book/appendix/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model): <!-- TODO: Link broken. Was this file renamed or moved? -->
+  - **Faster access to new treatments**: 200,000 QALYs from faster drug access ([2 years instead of 17 years](brain/book/appendix/recovery-trial.qmd) to market)
   - **Better prevention through real-world data**: 140,000 QALYs
   - **Enabling new therapies**: 500,000 QALYs from enabling new therapies for rare diseases and previously untreatable conditions
 
 {{< include brain/figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
-This ROI is better than history's greatest public health achievements like [smallpox eradication (280:1) and childhood vaccinations (13:1)](brain/book/economics/dfda-cost-benefit-analysis.qmd).
+This ROI is better than history's greatest public health achievements like [smallpox eradication (280:1) and childhood vaccinations (13:1)](brain/book/appendix/dfda-cost-benefit-analysis.qmd).
 <!-- TODO: Link broken. Was this file renamed or moved? -->
 
 ### ROI With 1% Treaty Funding
@@ -222,7 +222,7 @@ This ROI is better than history's greatest public health achievements like [smal
 
 But here's the real magic: when funded by the 1% Treaty's military redirection, the entire system becomes **self-funding with infinite ROI**.
 
-**Why the ROI is literally infinite** ([see full calculation](brain/book/economics/icer-full-calculation.qmd)): <!-- TODO: Link broken. Was this file renamed or moved? -->
+**Why the ROI is literally infinite** ([see full calculation](brain/book/appendix/icer-full-calculation.qmd)): <!-- TODO: Link broken. Was this file renamed or moved? -->
 
 $$\text{ROI} = \frac{\text{\$147.1B annual benefits}}{\text{\$0 new spending}} = \infty$$
 
@@ -230,13 +230,13 @@ Where the benefits come from:
 
 $$\text{Total Benefit} = \underbrace{\text{\$97.1B}}_{\text{Peace Dividend}} + \underbrace{\text{\$50B}}_{\text{Health Dividend}} = \text{\$147.1B}$$
 
-([See peace dividend calculation](brain/book/economics/peace-dividend-analysis.qmd) | [See dFDA health benefits breakdown](brain/book/economics/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) | [See economic impact summary](brain/book/economics/economic-impact-summary.qmd)) <!-- TODO: Multiple broken links here. -->
+([See peace dividend calculation](brain/book/appendix/peace-dividend-analysis.qmd) | [See dFDA health benefits breakdown](brain/book/appendix/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) | [See economic impact summary](brain/book/economics/economic-impact-summary.qmd)) <!-- TODO: Multiple broken links here. -->
 
 - **Zero net cost**: The \$27B comes from redirected military spending (money already budgeted)
 - **\$147.1B in annual benefits**: Peace dividend (\$97.1B) + Health dividend (\$50B)
-- **Operating costs**: Only [\$290M/year](brain/book/economics/icer-full-calculation.qmd) (campaign + operations) <!-- TODO: Link broken. Was this file renamed or moved? -->
-- **Lives saved**: [25,000/year](brain/book/economics/icer-full-calculation.qmd) (875,000 QALYs ÷ 35 QALYs/life) <!-- TODO: Link broken. Was this file renamed or moved? -->
-- **Per life saved**: Society PROFITS [\$167,771](brain/book/economics/icer-full-calculation.qmd) instead of spending <!-- TODO: Link broken. Was this file renamed or moved? -->
+- **Operating costs**: Only [\$290M/year](brain/book/appendix/icer-full-calculation.qmd) (campaign + operations) <!-- TODO: Link broken. Was this file renamed or moved? -->
+- **Lives saved**: [25,000/year](brain/book/appendix/icer-full-calculation.qmd) (875,000 QALYs ÷ 35 QALYs/life) <!-- TODO: Link broken. Was this file renamed or moved? -->
+- **Per life saved**: Society PROFITS [\$167,771](brain/book/appendix/icer-full-calculation.qmd) instead of spending <!-- TODO: Link broken. Was this file renamed or moved? -->
 
 Based on the math, the dFDA/1% Treaty appears to quantifiably be the best thing anyone could do with a billion dollars.
 It is a **dominant health intervention** - it simultaneously saves money AND saves lives.
@@ -266,8 +266,8 @@ Unlike traditional interventions that require ongoing charitable funding, the 1%
 
 ### The Proof Already Exists
 
-- **🔬 Oxford Already Did It**: [The RECOVERY trial](brain/book/reference/recovery-trial.qmd) proved 82X cost reduction isn't theory - it happened.
-Real patients, real drugs, real results at [\$500 per patient instead of \$41,000](brain/book/reference/recovery-trial.qmd).
+- **🔬 Oxford Already Did It**: [The RECOVERY trial](brain/book/appendix/recovery-trial.qmd) proved 82X cost reduction isn't theory - it happened.
+Real patients, real drugs, real results at [\$500 per patient instead of \$41,000](brain/book/appendix/recovery-trial.qmd).
 - **📈 Historical Precedent**: [After WW2, cutting military spending by 30% of GDP](brain/book/proof/historical-precedents.qmd) created the greatest economic boom in history.
 The treaty proposes just 1%.
 

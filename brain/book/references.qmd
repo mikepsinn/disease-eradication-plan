@@ -1848,7 +1848,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
   > QALY definition: One year in perfect health = 1 QALY; scores range from 1 (perfect health) to 0 (dead)
   > Calculation: Change in utility value induced by treatment × duration of treatment effect
   > Used in economic evaluation to assess value of medical interventions; combines length & quality of life into single index
-  > — Internal model: [Appendix: Detailed QALY Calculation Model](../economics/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) | QALY background: [Wikipedia: Quality-adjusted life year](https://en.wikipedia.org/wiki/Quality-adjusted_life_year) | [PMC: Calculating QALYs](https://pmc.ncbi.nlm.nih.gov/articles/PMC317370/) | [Physiopedia: QALY](https://www.physio-pedia.com/Quality-Adjusted_Life_Year) | [York Health Economics: QALY](https://yhec.co.uk/glossary/quality-adjusted-life-year-qaly/)
+  > — Internal model: [Appendix: Detailed QALY Calculation Model](appendix/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) | QALY background: [Wikipedia: Quality-adjusted life year](https://en.wikipedia.org/wiki/Quality-adjusted_life_year) | [PMC: Calculating QALYs](https://pmc.ncbi.nlm.nih.gov/articles/PMC317370/) | [Physiopedia: QALY](https://www.physio-pedia.com/Quality-Adjusted_Life_Year) | [York Health Economics: QALY](https://yhec.co.uk/glossary/quality-adjusted-life-year-qaly/)
 
 <a id="healthcare-cost-savings-4-5t-us-annually"></a>
 - **$4.5 trillion annual healthcare cost savings (US)**

@@ -23,7 +23,7 @@ dateCreated: 2025-04-29T01:07:30.411Z
 
 **Transformative Benefits:**
 
-- **Dramatic Cost Reductions:** The dFDA model projects average R&D clinical trial cost savings of [**50%**](#gross-r-and-d-savings-from-dfda-implementation), with exceptionally efficient designs (akin to the UK's [RECOVERY trial](../reference/recovery-trial.qmd), which achieved up to [**80-100x+ cost reduction**](#decentralized-trial-costs-modeled-on-oxford-recovery)) potentially achieving up to [**95% reduction**](#gross-r-and-d-savings-from-dfda-implementation). This translates to **[tens of billions of dollars in annual savings](#roi-analysis)** from the estimated [**\$100 billion global annual clinical trial expenditure**](../references.qmd#clinical-trial-spending).
+- **Dramatic Cost Reductions:** The dFDA model projects average R&D clinical trial cost savings of [**50%**](#gross-r-and-d-savings-from-dfda-implementation), with exceptionally efficient designs (akin to the UK's [RECOVERY trial](recovery-trial.qmd), which achieved up to [**80-100x+ cost reduction**](#decentralized-trial-costs-modeled-on-oxford-recovery)) potentially achieving up to [**95% reduction**](#gross-r-and-d-savings-from-dfda-implementation). This translates to **[tens of billions of dollars in annual savings](#roi-analysis)** from the estimated [**\$100 billion global annual clinical trial expenditure**](../references.qmd#clinical-trial-spending).
 - **Accelerated Innovation & Access:** Faster, cheaper trials allow for a vastly increased volume and diversity of tested therapies, including those for rare diseases and unpatentable treatments, significantly speeding up the delivery of new medicines to patients.
 - **Improved Health Outcomes:** The dFDA is projected to generate a baseline of **[840,000 Quality-Adjusted Life Years (QALYs) annually](#appendix-detailed-qaly-calculation-model)**. This figure, detailed in a full model in the appendix, is a composite of benefits from faster drug access, enhanced preventative care enabled by real-world data, and new therapies for rare and neglected diseases ([see Appendix](#appendix-detailed-qaly-calculation-model) for full model.
 
@@ -350,7 +350,7 @@ For this analysis, we use a conservative baseline estimate of **[\$100 billion p
 
 ### Decentralized Trial Costs Modeled on Oxford RECOVERY
 
-- **Oxford RECOVERY**: Achieved [**~\$500 per patient**](../reference/recovery-trial.qmd). Key strategies included:
+- **Oxford RECOVERY**: Achieved [**~\$500 per patient**](recovery-trial.qmd). Key strategies included:
   1. Embedding trial protocols within routine hospital care.
   2. Minimizing overhead by leveraging existing staff/resources and electronic data capture.
   3. Focused, pragmatic trial designs.
@@ -425,7 +425,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 - **Parameter**: Percentage reduction in addressable clinical trial costs due to dFDA.
 - **Source/Rationale**:
   - Decentralized Clinical Trials (DCTs), a core component of dFDA, have demonstrated potential for significant cost reductions (20-50% or more) through reduced site management, travel, and streamlined data collection ([Rogers et al., 2022](https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf); [Nature, 2024](https://www.nature.com/articles/s41746-024-01214-5)).
-  - The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials (<!-- [RECOVERY trial](../reference/recovery-trial.qmd) -->, citing Manhattan Institute and NCBI).
+  - The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials (<!-- [RECOVERY trial](recovery-trial.qmd) -->, citing Manhattan Institute and NCBI).
   - _Note on R&D Savings Estimates_: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), the average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. Rogers et al. (2022) in their systematic review noted that there is currently "insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost" on a generalized basis. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
 - **Range Used in Sensitivity Analysis**:
   - Conservative: 30% (saving $30B annually from a [$100B addressable spend](#market-size-and-impact))
@@ -1262,9 +1262,9 @@ This stream models the benefit of accelerating the approval of new drugs that wo
     - **Source:** The FDA consistently approves a substantial number of novel therapies. For example, in 2023, the Center for Drug Evaluation and Research (CDER) approved 55 novel drugs.
     - **Quote:** "[In 2023], the Center for Drug Evaluation and Research (CDER) approved 55 novel drugs, either as new molecular entities (NMEs) under New Drug Applications (NDAs) or as new therapeutic biologics under Biologics License Applications (BLAs)." — [Friends of Cancer Research](https://www.focr.org/)
   - $T_{\text{accel}}$: Average years of acceleration per drug.
-    - **Rationale:** The dFDA model, inspired by hyper-efficient trials like the [RECOVERY trial](./../reference/recovery-trial.qmd), can drastically cut development timelines from years to months.
-    - **Source:** The [RECOVERY trial](./../reference/recovery-trial.qmd) demonstrated unprecedented speed in generating clinical results.
-    - **Quote:** "Days to First Major Result: <100" — [The Conversation, via dFDA Wiki](../reference/recovery-trial.qmd)
+    - **Rationale:** The dFDA model, inspired by hyper-efficient trials like the [RECOVERY trial](recovery-trial.qmd), can drastically cut development timelines from years to months.
+    - **Source:** The [RECOVERY trial](recovery-trial.qmd) demonstrated unprecedented speed in generating clinical results.
+    - **Quote:** "Days to First Major Result: <100" — [The Conversation, via dFDA Wiki](recovery-trial.qmd)
   - $\text{QALYs}_{\text{drug}}$: Average QALYs gained per drug, per year of earlier access.
     - **Rationale:** Accelerating access to effective drugs has a direct and significant impact on life-years and quality of life.
 

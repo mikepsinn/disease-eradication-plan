@@ -48,8 +48,8 @@ book:
     - part: "Proof" # (This Already Works)"
       chapters:
         - brain/book/proof.qmd
-        - brain/book/reference/recovery-trial.qmd  # Oxford's $500 miracle
-        - brain/book/reference/historical-evidence-supporting-decentralized-efficacy-trials.qmd
+        - brain/book/appendix/recovery-trial.qmd  # Oxford's $500 miracle
+        - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd
         - brain/book/proof/historical-precedents.qmd
         - brain/book/proof/body-as-repairable-machine.qmd
 
@@ -94,8 +94,38 @@ book:
         - brain/book/call-to-action/every-objection-demolished.qmd  # FAQ
         - brain/book/call-to-action.qmd  # Final rallying cry
   appendices:
+    - brain/book/appendix/vision.qmd
+    - brain/book/appendix/governance.qmd
+    - brain/book/appendix/dih-integration-model.qmd
+    - brain/book/appendix/open-ecosystem-and-bounty-model.qmd
+    - brain/book/appendix/legal-compliance-framework.qmd
+    - brain/book/appendix/highest-leverage-advocacy.qmd
+    - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd
+    - brain/book/appendix/fundraising-strategy.qmd
+    - brain/book/appendix/free-rider-solution.qmd
+    - brain/book/appendix/dfda-implementation-via-executive-action.qmd
+    - brain/book/appendix/co-opt-dont-compete.qmd
+    - brain/book/appendix/1-percent-treaty.qmd
+    - brain/book/appendix/operations-roadmap.qmd
+    - brain/book/appendix/faq.qmd
+    - brain/book/appendix/impact-securities-reform.qmd
+    - brain/book/appendix/organizational-structure.qmd
+    - brain/book/appendix/total-economic-impact.qmd
+    - brain/book/appendix/peace-dividend-analysis.qmd
+    - brain/book/appendix/investor-risk-analysis.qmd
+    - brain/book/appendix/intervention-comparison-table.qmd
+    - brain/book/appendix/icer-full-calculation.qmd
+    - brain/book/appendix/humanity-budget-overview.qmd
+    - brain/book/appendix/economic-value-of-accelerated-treatments.qmd
+    - brain/book/appendix/economic-summary.qmd
+    - brain/book/appendix/dih-market-returns.qmd
+    - brain/book/appendix/dfda-roi-breakdown.qmd
+    - brain/book/appendix/dfda-cost-benefit-analysis.qmd
+    - brain/book/appendix/1-percent-treaty-peace-dividend-analysis.qmd
+    - brain/book/appendix/recovery-trial.qmd
+    - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd
     - brain/book/references.qmd
-    - brain/book/reference/global-government-medical-research-spending.qmd
+    - brain/book/appendix/global-government-medical-research-spending.qmd
     - brain/figures/core-economic-formulas.qmd
     - brain/figures/consolidated-economics.qmd
     - brain/figures/risk-mitigation-mechanisms-chart.qmd
