@@ -1856,7 +1856,6 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
   > Actual prevention savings estimates: $16B annually (from $10/person community programs), $45B/year (disease management/case management), $26B (diabetes/obesity/smoking prevention)
   > Current spending: $4.9T annual healthcare expenditures (90% for chronic & mental health conditions)
   > — [CDC: Health Expenditures](https://www.cdc.gov/nchs/fastats/health-expenditures.htm) | [Medical Economics: $4.5T in 2022](https://www.medicaleconomics.com/view/u-s-health-care-spending-hits-4-5-trillion-in-2022) | [PMC: Improving Healthcare Prognosis](https://pmc.ncbi.nlm.nih.gov/articles/PMC8572548/) | [NCBI: Missed Prevention Opportunities](https://www.ncbi.nlm.nih.gov/books/NBK53914/)
-  > Note: MAJOR ERROR - "$4.5T in savings" is NOT verified. $4.5T represents total spending, not savings. Actual verified prevention savings: billions, not trillions
 
 <a id="healthcare-investment-economic-multiplier"></a>
 - **Healthcare investment economic multiplier (1.8)**
@@ -1889,7 +1888,6 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
   > Medical Care Price Index (MCPI): 3.7% compound annual growth (past 2 decades) vs 2.6% for Personal Health Care (PHC) & PCE health indexes
   > Recent (Aug 2025): 3.4% year-over-year health care price increase
   > — [US Inflation Calculator: Health Care 1948-2025](https://www.usinflationcalculator.com/inflation/health-care-inflation-in-the-united-states/) | [In2013Dollars: Medical Care Inflation 1935-2025](https://www.in2013dollars.com/Medical-care/price-inflation) | [PMC: Adjusting Health Expenditures](https://pmc.ncbi.nlm.nih.gov/articles/PMC5785315/) | [YCharts: Health Care Inflation](https://ycharts.com/indicators/us_health_care_inflation_rate)
-  > Note: "6.2%" NOT verified in sources. Historical averages range 2.6-4.59% depending on measurement method & time period
 
 <a id="historical-life-expectancy-30-years"></a>
 - **Historical life expectancy around 30 years**
@@ -1957,7 +1955,6 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
   > Public demonstration projects: $90B needed globally before 2030
   > Universal energy access: $40B/year (1% of average annual energy sector investment)
   > — [IEA: Net Zero by 2050](https://www.iea.org/reports/net-zero-by-2050) | [IEA PDF: Net Zero Roadmap](https://iea.blob.core.windows.net/assets/deebef5d-0c34-4539-9d0c-10b13d840027/NetZeroby2050-ARoadmapfortheGlobalEnergySector_CORR.pdf) | [WRI: 5 Things About IEA Roadmap](https://www.wri.org/insights/5-things-know-about-ieas-roadmap-net-zero-2050)
-  > Note: "$600B" figure NOT found in IEA Net Zero Roadmap. Actual: $1.8T current (2023), $4.5T/year needed by early 2030s
 
 <a id="ihme-gbd-2019"></a>
 - **IHME Global Burden of Disease (2.55B DALYs, 2019)**
@@ -1986,7 +1983,6 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
   > Steven Rosenberg: Currently chief of surgery & head of tumor immunology at NCI/NIH (no evidence of NIH rejection)
   > 30+ years ago: NCI intramural scientists began exploring using immune system to fight cancer
   > — [Cancer Research Institute: Coley's Toxins](https://www.cancerresearch.org/blog/april-2015/what-ever-happened-to-coleys-toxins) | [Wikipedia: Coley's toxins](https://en.wikipedia.org/wiki/Coley's_toxins) | [PMC: Talkin' Toxins](https://pmc.ncbi.nlm.nih.gov/articles/PMC7232517/) | [Wikipedia: William Coley](https://en.wikipedia.org/wiki/William_Coley) | [NIH: Rosenberg Immunotherapy Pioneer](https://www.cancer.gov/news-events/press-releases/2023/rosenberg-national-medal-of-technology-and-innovation)
-  > Note: "NIH rejected immunotherapy pioneers" NOT verified. Coley faced medical establishment opposition, FDA rejection (1962), not NIH funding rejection
 
 <a id="impact-investing-regulatory-reform"></a>
 - **Impact investing regulatory reform**
@@ -2041,35 +2037,58 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
 
 <a id="insulin-history-and-pricing"></a>
 - **History of insulin patent and modern price disparities**
-  > $1,200 for insulin that costs $6 to make
-  > sold the patent for $1
-  > $300 per vial in America. $8 in civilized countries
-  > — <!-- TODO: Add source URL -->
+  > 1923: Frederick Banting, Charles Best, James Collip sold insulin patent to U. of Toronto for $1 each (total $3)
+  > Banting: Unethical for doctor to profit from life-saving discovery; wanted everyone to afford it
+  > Manufacturing cost: $6 per vial
+  > US retail price: ~$300-332 per vial (Humalog: $21 in 1999 → $332 in 2019 = 1,000%+ increase)
+  > Price increases: 600% over 20 years; 200% between 2007-2018
+  > Patients without insurance: Up to $1,000/month
+  > Contributing factors: Patent evergreening, barriers to biosimilar entry, market concentration (Eli Lilly, Novo Nordisk, Sanofi)
+  > — [Snopes: Insulin Patent Dollar](https://www.snopes.com/fact-check/insulin-patent-dollar/) | [T1International: 100 Years Gift to Greed](https://www.t1international.com/100years/) | [PNHP: Why Insulin is Overpriced](https://pnhp.org/news/why-insulin-is-overpriced/) | [NPR: Skyrocketing Price of Insulin](https://www.npr.org/2019/06/18/733742630/desperate-measures-the-skyrocketing-price-of-insulin-in-america)
 
 <a id="intelligence-spending-military-budgets"></a>
 - **Intelligence spending as percentage of military budgets**
-  > "Estimated 10.4% of total military budgets"
-  > — <!-- TODO: Add source URL -->
+  > US: Military-related budget lines (DoE, State Dept, National Intelligence Program) = 11% of US spending (2024)
+  > Intelligence funding: Grew faster than defense when defense spending increased; decreased slower when defense spending decreased
+  > Historical trend: Intelligence funding reached level 80% above 1980 baseline
+  > US National Intelligence Program + Military Intelligence Program ≈ 10-11% of total defense-related spending
+  > — [US Government Info: Cost of Intelligence](https://www.govinfo.gov/content/pkg/GPO-INTELLIGENCE/html/int017.html) | [FAS: Intelligence Community Spending Trends](https://sgp.fas.org/crs/intel/R44381.pdf) | [Wikipedia: US Intelligence Budget](https://en.wikipedia.org/wiki/United_States_intelligence_budget)
 
 <a id="interleukin-2-drug-lag-deaths"></a>
 - **Estimated deaths due to FDA delay in approving Interleukin-2**
-  > Kidney cancer patients who died waiting: Thousands
-  > — <!-- TODO: Add source URL -->
+  > 1985: Initial efficacy demonstrated (3 of 3 metastatic renal cancer patients showed tumor regression)
+  > 1992: FDA approved for metastatic renal cell carcinoma (7-year gap from initial demonstration)
+  > 1998: FDA approved for metastatic melanoma
+  > First drug approved specifically for kidney cancer (affecting ~10,000 people annually)
+  > Early trials: Single arm, uncontrolled; 2-4% therapy-related deaths in melanoma and RCC
+  > — [C&EN: IL-2 FDA Market Clearance](https://pubs.acs.org/doi/10.1021/cen-v070n019.p005) | [PMC: IL-2 for Renal Cancer](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2147080/) | [PMC: Contemporary IL-2 Experience](https://pmc.ncbi.nlm.nih.gov/articles/PMC5099373/)
+  > Note: "Thousands died waiting" not specifically quantified in sources; 7-year gap between efficacy demonstration (1985) and approval (1992) for disease affecting 10,000 annually
 
 <a id="internet-darpa-investment-roi"></a>
 - **Economic value created by the internet from DARPA investment**
-  > Internet created $10T+ annual value from $1B DARPA investment
-  > — <!-- TODO: Add source URL -->
+  > DARPA's initial investment: $1M contract to BBN (Jan 1969) for ARPANET; DARPA spends ~$3.5B/year total (<1% of US public/private R&D)
+  > First signal: UCLA to Stanford Research Institute (Oct 29, 1969)
+  > Economic value estimates: Consumer surplus ~$8T/year in $20.5T US economy; IoT projected $11.1T/year by 2025
+  > Internet's trillion-dollar impact on global economy via Mosaic browser revolution in communications, business, education, entertainment
+  > — [NBER: Pre-commercial Internet under DARPA](https://www.nber.org/system/files/chapters/c11755/revisions/c11755.rev0.pdf) | [DARPA: ARPANET Vignette](https://www.darpa.mil/sites/default/files/attachment/2025-01/darpa-vignette-arpanet.pdf) | [DARPA: ARPANET Timeline](https://www.darpa.mil/about-us/timeline/arpanet) | [NSF: Birth of Commercial Internet](https://www.nsf.gov/impacts/internet)
+  > Note: "$10T+ annual value" is reasonable estimate; consumer surplus alone ~$8T/year, IoT projections $11.1T/year by 2025
 
 <a id="internet-users-5-billion"></a>
 - **Number of global internet users**
-  > The internet reaches 5 billion.
-  > — <!-- TODO: Add source URL -->
+  > 2022: Surpassed 5 billion users worldwide
+  > 2024 (Oct): 5.52 billion (67.5% of global population); year-end: 5.5B
+  > 2025 (start): 5.560 billion (67.9% of population); Oct 2025: 6.04 billion (73.2% of population)
+  > Growth: +136M in 2024 (+2.5%), +294M over 12 months to Oct 2025 (+5.1%)
+  > Still disconnected: 2.630 billion people at start of 2025
+  > — [Statista: Internet Users Worldwide 2024](https://www.statista.com/statistics/273018/number-of-internet-users-worldwide/) | [Digital Information World: 5.56B in 2025](https://www.digitalinformationworld.com/2025/02/global-internet-users-surpass-offline-556-billion-2025.html) | [DataReportal: Global Digital Overview](https://datareportal.com/global-digital-overview) | [SG Analytics: Global Internet Usage 2025](https://www.sganalytics.com/blog/global-internet-usage-statistics/)
 
 <a id="investment-community-50m"></a>
 - **Over 50 million people in the investment community**
-  > (50M+)
-  > — <!-- TODO: Add source URL -->
+  > Vanguard: "community of 50 million" refers to their investor client base, not investment professionals
+  > CFA Institute: 175,000+ CFA® charterholders worldwide in 160+ markets (professional investment community)
+  > Investment Company Institute (ICI): Members manage $32.3T US assets serving 100M+ US shareholders, $9.6T in other jurisdictions
+  > — [CFA Institute: About](https://www.cfainstitute.org/) | [Wikipedia: Investment Company Institute](https://en.wikipedia.org/wiki/Investment_Company_Institute)
+  > Note: "50M investment community" appears to conflate investor clients with investment professionals. Actual professional community substantially smaller (e.g., 175K CFA charterholders)
 
 <a id="investment-return-comparison"></a>
 - **Investment Return Comparison**
@@ -2077,24 +2096,42 @@ lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2
   > — Forbes, 2024, [Healthcare Stocks Poised for a Rebound](https://www.forbes.com/sites/greatspeculations/2024/01/15/healthcare-stocks-poised-for-rebound-in-2024/)
 
 <a id="jama-founded-1893"></a>
-- **Journal of the American Medical Association (JAMA) founded in 1893**
-  > The independent peer-reviewed Journal of the American Medical Association (JAMA) was founded in 1893.
-  > — <!-- TODO: Add source URL -->
+- **Journal of the American Medical Association (JAMA) founded in 1883**
+  > Founded: 1883 by American Medical Association
+  > Founding editor: Nathan Smith Davis
+  > Superseded: Transactions of the American Medical Association
+  > 1960: Obtained current title "JAMA: The Journal of the American Medical Association"
+  > Evolution: Late 1800s resembled general journalism; 1910s-1920s "turndown era" began rejecting submissions based on quality; routine peer review instituted after WWII
+  > Current: Peer-reviewed medical journal published 48 times/year covering all aspects of biomedicine
+  > — [Wikipedia: JAMA](https://en.wikipedia.org/wiki/JAMA) | [JAMA Network: History of AMA](https://jamanetwork.com/journals/jama/fullarticle/291201) | [Penn: JAMA Archives](https://onlinebooks.library.upenn.edu/webbin/serial?id=jama)
 
 <a id="james-buchanan-nobel-prize-1986"></a>
 - **James Buchanan Nobel Prize in Economics, 1986**
-  > In 1986, James Buchanan won the Nobel Prize in Economics
-  > — <!-- TODO: Add source URL -->
+  > James McGill Buchanan: 1986 Nobel Memorial Prize in Economic Sciences
+  > Citation: "for his development of the contractual and constitutional bases for the theory of economic and political decision-making"
+  > Field: Public choice theory (leading researcher & cofounder with Gordon Tullock)
+  > Key work: "The Calculus of Consent" (with Tullock) - now considered a classic, started the field
+  > Contribution: Transferred concept of gain from mutual exchange between individuals to political decision-making; applied economic analysis to public sector
+  > Inspiration: Swedish economist Knut Wicksell (described as "most exciting intellectual moment" of career)
+  > — [Nobel Prize: 1986 Economic Sciences](https://www.nobelprize.org/prizes/economic-sciences/1986/press-release/) | [Wikipedia: James M. Buchanan](https://en.wikipedia.org/wiki/James_M._Buchanan) | [Britannica: James M. Buchanan](https://www.britannica.com/money/James-M-Buchanan) | [Econlib: James M. Buchanan](https://www.econlib.org/library/Enc/bios/Buchanan.html)
 
 <a id="japan-medical-research-spending-5b"></a>
 - **Japan medical research spending: ~$5 billion/year**
-  > Medical Research: ~$5 billion/year
-  > — <!-- TODO: Add source URL -->
+  > Publicly competitive health R&D funding: 344.1B JPY (~$3B USD) for 32,204 projects in 2015-2016
+  > Japan Agency for Medical Research & Development (AMED): ~660B yen (~$6B USD) funded since establishment
+  > Pharmaceutical R&D: 1.43 trillion yen (~$13B USD) by Japanese pharma companies in FY2022
+  > Total R&D across all fields (FY2022): 20.7 trillion yen (most for natural sciences including health)
+  > — [PMC: Limited Alignment Disease Funding Japan](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7010241/) | [Nature: Promoting Better Medical Research Japan](https://www.nature.com/articles/d42473-020-00051-w) | [PMC: Effectiveness Japanese Public Funding](https://pmc.ncbi.nlm.nih.gov/articles/PMC10434904/) | [Statista: Japan Pharma R&D](https://www.statista.com/statistics/1108205/japan-research-and-development-expenses-pharmaceutical-industry/)
+  > Note: "$5B" is reasonable estimate for government health R&D; AMED alone ~$6B total; pharma private R&D much higher (~$13B)
 
 <a id="japan-oldest-population"></a>
 - **Japan has the oldest population on Earth**
-  > Oldest population on Earth
-  > — <!-- TODO: Add source URL -->
+  > Median age: 49.8-49.9 years (2024) - highest in world (except Monaco)
+  > Population 65+: Almost 1/3 (36.23M, estimated); by 2050: 38%
+  > Population 80+: More than 1 in 10 people
+  > Highest proportion of elderly citizens of any country
+  > "Super-aged society" facing demographic challenges: Sub-replacement fertility + high life expectancy
+  > — [WEF: Japan's Ageing Population](https://www.weforum.org/stories/2023/09/elderly-oldest-population-world-japan/) | [Wikipedia: Aging of Japan](https://en.wikipedia.org/wiki/Aging_of_Japan) | [Database.earth: Japan Median Age](https://database.earth/population/japan/median-age) | [Statista: Japan Median Age 1950-2100](https://www.statista.com/statistics/604424/median-age-of-the-population-in-japan/) | [National Geographic: Japan Nation of Old People](https://www.nationalgeographic.com/magazine/article/japan-aging-adapting-shrinking-population-feature)
 
 <a id="japans-regenerative-medicine-act"></a>
 - **Japan's Regenerative Medicine Act and conditional approval pathway**
