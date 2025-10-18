@@ -3043,8 +3043,13 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="publication-bias-clinical-trials"></a>
 - **Publication rate of clinical trial results**
-  > 50% of all trials never publish results
-  > — <!-- TODO: Add source URL -->
+  > ~50% of clinical trials never publish results (NHS-funded systematic review, 2010)
+  > Schmucker et al (2014): 53% of trials published (analyzing 39 studies, >20,000 trials)
+  > Munch et al (2014): 46% of pain treatment trials published
+  > Chang et al (2015): 49% of high-risk cardiac device trials published
+  > Positive findings: 3X more likely to be published than negative results
+  > Antidepressant example: Published literature showed 94% positive trials; FDA analysis showed only 51% positive
+  > — [AllTrials: Half of Trials Unreported](https://www.alltrials.net/news/half-of-all-trials-unreported/) | [Nature: Half of US Trials Go Unpublished](https://www.nature.com/articles/nature.2013.14286) | [PMC: Publication Bias in Clinical Trials](https://pmc.ncbi.nlm.nih.gov/articles/PMC8276556/)
 
 <a id="qaly-definition"></a>
 - **QALY definition and use**
@@ -3059,23 +3064,38 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="rare-disease-patients-300m-globally"></a>
 - **300 million people with rare diseases globally**
-  > (300M globally)
-  > — <!-- TODO: Add source URL -->
+  > Conservative estimate: 300 million people (3.5-5.9% of world population of 7.5B)
+  > Range: 263-446 million people globally
+  > Based on Orphanet database analysis of 3,585 rare diseases
+  > Note: Excludes rare cancers and infectious diseases, so actual number likely higher
+  > — [Rare Diseases International: 300 Million Worldwide](https://www.rarediseasesinternational.org/new-scientific-paper-confirms-300-million-people-living-with-a-rare-disease-worldwide/) | [ScienceDaily: 300 Million Affected](https://sciencedaily.com/releases/2019/10/191024075007.htm) | [PMC: Rare Disease Global Priority](https://pmc.ncbi.nlm.nih.gov/articles/PMC9632971/)
 
 <a id="rare-disease-prevalence-400m"></a>
 - **Global prevalence of rare diseases: 400 million**
-  > 400 million people affected
-  > — <!-- TODO: Add source URL -->
+  > Estimates range: 263-446 million people (some sources cite ~400M)
+  > Conservative estimate: 300 million (widely cited)
+  > Analysis based on 3,585 rare diseases = 3.5-5.9% of global population
+  > Excludes rare cancers/infectious diseases, actual number likely higher
+  > — [Global Genes: 300M+ Worldwide](https://globalgenes.org/raredaily/study-estimates-more-than-300-million-with-rare-disease-worldwide-but-number-likely-higher/) | [AJMC: Not So Rare](https://www.ajmc.com/view/not-so-rare-300-million-people-worldwide-affected-by-rare-diseases)
 
 <a id="raytheon-annual-revenue-42b"></a>
 - **Raytheon annual revenue**
-  > Raytheon: $42 billion/year selling death.
-  > — <!-- TODO: Add source URL -->
+  > RTX Corporation (formerly Raytheon Technologies): $80.8B sales (2024), up 9% from 2023
+  > 2023: $68.92B revenue
+  > Merger: 2020 with United Technologies; renamed RTX Corporation July 2023
+  > Segments: Collins Aerospace (34%), Pratt & Whitney (34%), Raytheon Intelligence & Space (32%)
+  > Note: $42B figure outdated; current revenue ~$80B
+  > — [RTX: 2024 Results](https://investors.rtx.com/static-files/ceebbf85-eb69-4563-a303-c62ad9918fba) | [Wikipedia: RTX Corporation](https://en.wikipedia.org/wiki/RTX_Corporation) | [Statista: Raytheon Revenue 2008-2024](https://www.statista.com/statistics/261562/net-sales-of-united-technologies/)
 
 <a id="reconstruction-costs-active-conflicts"></a>
 - **Reconstruction costs from active conflicts**
-  > "I<sub>damage</sub> = \$1,875B (reconstruction cost estimates from 47 active conflicts)"
-  > — <!-- TODO: Add source URL -->
+  > Individual conflict examples: Libya, Syria, Yemen ~$300B combined (World Bank)
+  > Syria alone: $250B-$1T estimates
+  > Ukraine: >€500B reconstruction costs
+  > Gaza: $18.5B infrastructure damage
+  > Global conflict/violence cost: $14.3T/year (2016, includes military spending, security, losses)
+  > Note: Specific "$1,875B for 47 conflicts" figure not verified in sources
+  > — [IMF: Cost of Conflict](https://www.imf.org/external/pubs/ft/fandd/2017/12/imus.htm) | [WEF: Conflict Costs $14T/Year](https://www.weforum.org/stories/2018/01/conflict-costs-global-economy-14-trillion-a-year/) | [Fortune: Ukraine $1T Reconstruction](https://fortune.com/2022/04/21/ukraine-reconstruction-cost-rebuild-economists-plan-russia-foot-trillion-bill/)
 
 <a id="recover-budget-update-2-3b"></a>
 - **RECOVER Initiative budget update (>\$2.3B)**
@@ -3084,8 +3104,11 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="recover-initiative-patient-enrollment"></a>
 - **NIH RECOVER Initiative patient enrollment numbers**
-  > Patients enrolled: ~30,000
-  > — <!-- TODO: Add source URL -->
+  > Enrolled: ~30,000 people in ongoing studies and clinical trials
+  > Goal: 40,000 adults and children
+  > $1.15B effort (including American Rescue Plan Act 2021 support)
+  > One of largest, most diverse Long COVID cohorts in world
+  > — [NIH: RECOVER Initiative Enrollment](https://www.nih.gov/news-events/news-releases/nih-builds-large-nationwide-study-population-tens-thousands-support-research-long-term-effects-covid-19) | [RECOVER: Long COVID Clinical Trials](https://recovercovid.org/news/nih-launches-long-covid-clinical-trials-through-recover-initiative-opening-enrollment)
 
 <a id="recover-trial-status-update"></a>
 - **RECOVER Initiative trial status update**
@@ -3104,13 +3127,20 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="recovery-trial-1m-lives-saved"></a>
 - **RECOVERY trial global lives saved**
-  > saved over 1 million lives globally
-  > — <!-- TODO: Add source URL -->
+  > Dexamethasone saved ~1 million lives worldwide (by March 2021, 9 months after discovery)
+  > UK alone: 22,000 lives saved
+  > June 2020 announcement: Dexamethasone reduced deaths by up to 1/3 (ventilated patients), 1/5 (oxygen patients)
+  > Impact immediate: Adopted into standard care globally within hours of announcement
+  > — [NHS England: 1 Million Lives Saved](https://www.england.nhs.uk/2021/03/covid-treatment-developed-in-the-nhs-saves-a-million-lives/) | [Pharmaceutical Journal: 1M Lives Saved](https://pharmaceutical-journal.com/article/news/steroid-has-saved-the-lives-of-one-million-covid-19-patients-worldwide-figures-show) | [RECOVERY Trial: Dexamethasone Result](https://www.recoverytrial.net/news/recovery-trial-celebrates-two-year-anniversary-of-life-saving-dexamethasone-result)
 
 <a id="recovery-trial-82x-cost-reduction"></a>
 - **RECOVERY trial 82x cost reduction**
-  > "82X cost reduction proven"
-  > — <!-- TODO: Add source URL -->
+  > RECOVERY trial: ~$500 per patient ($20M for 48,000 patients = $417/patient)
+  > Typical clinical trial: ~$41,000 median per-patient cost
+  > Cost reduction: ~80-82X cheaper ($41,000 ÷ $500 ≈ 82X)
+  > Efficiency: $50 per patient per answer (10 therapeutics tested, 4 effective)
+  > Dexamethasone estimated to save >630,000 lives
+  > — [Manhattan Institute: Slow Costly Trials](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs) | [PMC: Establishing RECOVERY at Scale](https://pmc.ncbi.nlm.nih.gov/articles/PMC9293394/)
 
 <a id="recovery-trial-dexamethasone-results"></a>
 - **RECOVERY Trial Dexamethasone Results**
@@ -3134,16 +3164,22 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="refugee-lost-earning-potential"></a>
 - **Refugee lost annual earning potential (\$23,400)**
-  > "The average refugee has \$23,400 in lost annual earning potential."
-  > — <!-- TODO: Add source URL -->
+  > Refugee economic impact: Net positive $123.8B fiscal impact (2005-2019, 15 years)
+  > Refugees pay $21K more in taxes than benefits received over first 20 years in U.S.
+  > Earnings gap: Refugees work at higher rates than natives but earn less; never reach U.S.-born earning levels
+  > Income progression: <5 years in U.S. = $30,500 median; 20+ years = $71,400 (exceeds national $67,100 median)
+  > Note: Specific "$23,400 lost earning potential" figure not verified in sources
+  > — [ASPE: Fiscal Impact of Refugees](https://aspe.hhs.gov/reports/fiscal-impact-refugees-asylees) | [American Immigration Council: Economic Impact](https://www.americanimmigrationcouncil.org/sites/default/files/research/05.23_refugee_report_v3_0.pdf) | [NBER: Economic Outcomes of Refugees](https://www.nber.org/system/files/working_papers/w23498/w23498.pdf)
 
 <a id="regenerative-medicine-milestones"></a>
 - **Milestones in Regenerative Medicine and Tissue Engineering**
-  > We've grown bladders, windpipes, and blood vessels in labs
-  > We print custom titanium skulls, jaws, and ribs
-  > A kid in Michigan has a 3D-printed windpipe
-  > We can regrow skin for burn victims, cartilage for damaged joints
-  > — <!-- TODO: Add source URL -->
+  > 1999: First 3D-printed organ (bladder) transplanted into human (Wake Forest Institute, still functioning 20+ years later)
+  > Windpipes (trachea): 3D-printed windpipe transplants performed; patient received biodegradable 5-year windpipe
+  > Blood vessels, skin: Mobile bioprinters can print skin directly onto wounds at patient bedside
+  > Tubular organs: Urine conduits engineered and implanted in patients
+  > 3D-printed ear implant: World's first successfully transplanted
+  > Current status: Can print flat structures (skin), tubular (blood vessels), hollow non-tubular (bladder); complex life-sized organs 20-30 years away
+  > — [Wake Forest: Record of Firsts](https://school.wakehealth.edu/research/institutes-and-centers/wake-forest-institute-for-regenerative-medicine/research/a-record-of-firsts) | [Built In: 3D-Printed Organs](https://builtin.com/articles/3d-printed-organs) | [PMC: 3D Bioprinting for Organ Regeneration](https://pmc.ncbi.nlm.nih.gov/articles/PMC5313259/)
 
 <a id="regulator-revolving-door-salary-increase"></a>
 - **Salary increases for regulators after entering private industry**

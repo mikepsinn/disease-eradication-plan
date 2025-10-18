@@ -124,13 +124,6 @@ book:
     - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd
     - brain/book/references.qmd
     - brain/book/appendix/global-government-medical-research-spending.qmd
-    - brain/figures/core-economic-formulas.qmd
-    - brain/figures/consolidated-economics.qmd
-    - brain/figures/risk-mitigation-mechanisms-chart.qmd
-    # - brain/figures/dfda-npv-analysis-over-time-line-chart.qmd  # File deleted
-    - brain/figures/dct-platform-market-comparables-chart.qmd
-    - brain/figures/executive-implementation-pathways-chart.qmd
-    - brain/figures/implementation-timeline-scenarios-chart.qmd
 
 execute:
   # Relaunch kernel for each render

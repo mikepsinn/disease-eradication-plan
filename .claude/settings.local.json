@@ -23,7 +23,8 @@
       "Bash(npx tsx:*)",
       "Bash(quarto check:*)",
       "Bash(where:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
