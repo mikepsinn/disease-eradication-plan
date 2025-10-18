@@ -15,7 +15,12 @@
       "Bash(git rm:*)",
       "Bash(while read f)",
       "Bash(do grep -q \"$f\" _quarto.yml)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(do basename \"$f\")",
+      "Bash(xargs:*)",
+      "Bash(git restore:*)",
+      "Bash(git mv:*)",
+      "Bash(npx tsx:*)"
     ],
     "deny": [],
     "ask": []
