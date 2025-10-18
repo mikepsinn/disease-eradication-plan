@@ -125,11 +125,7 @@ print(f"Total Combined Annual Benefit to Society: ${total_annual_benefit:,.2f} B
 print(f"Plus {qaly_gains_annual_baseline:,.0f} extra years of healthy life, every year.")
 ```
 
-## Combined Annual Benefits Visualization
 
-This chart shows the total economic impact of the initiative, combining both the peace dividend and the dFDA benefits.
-
-{{< include ../../../brain/figures/peace-dividend-dfda-combined-stacked-bar-chart.qmd >}}
 
 ## Comparative Analysis: Benchmarking Our Impact
 
