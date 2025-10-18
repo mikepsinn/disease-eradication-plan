@@ -42,6 +42,19 @@ function getBodyHash(content: string): string {
   return crypto.createHash('sha256').update(body).digest('hex');
 }
 
+// Generic helper to update file with new body and hash
+async function updateFileWithHash(
+  filePath: string,
+  body: string,
+  frontmatter: any,
+  hashFieldName: string
+): Promise<void> {
+  const tempContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
+  frontmatter[hashFieldName] = getBodyHash(tempContent);
+  const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
+  await fs.writeFile(filePath, newContent, 'utf-8');
+}
+
 // --- Exported Functions ---
 
 export async function getStaleFiles(hashFieldName: string, basePath?: string): Promise<string[]> {
@@ -96,16 +109,7 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
     finalBody = responseText.trim().replace(/(\s*---|\s*```)*\s*$/, '');
   }
 
-  // To ensure hash consistency, we create a temporary stringified version
-  // to see what the body will look like after gray-matter processes it.
-  const tempContent = matter.stringify(finalBody, frontmatter, { lineWidth: -1 } as any);
-  
-  // Now, hash the body as it will actually be saved.
-  frontmatter.lastFormattedHash = getBodyHash(tempContent);
-
-  // Stringify the final version with the correct hash and write to file.
-  const newContent = matter.stringify(finalBody, frontmatter, { lineWidth: -1 } as any);
-  await fs.writeFile(filePath, newContent, 'utf-8');
+  await updateFileWithHash(filePath, finalBody, frontmatter, 'lastFormattedHash');
   console.log(`Successfully formatted ${filePath}.`);
 }
 
@@ -197,11 +201,7 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
     finalBody = responseText.trim();
   }
 
-  const tempContent = matter.stringify(finalBody, frontmatter, { lineWidth: -1 } as any);
-  frontmatter.lastStyleHash = getBodyHash(tempContent);
-
-  const newContent = matter.stringify(finalBody, frontmatter, { lineWidth: -1 } as any);
-  await fs.writeFile(filePath, newContent, 'utf-8');
+  await updateFileWithHash(filePath, finalBody, frontmatter, 'lastStyleHash');
   console.log(`Successfully improved style for ${filePath}.`);
 }
 
@@ -400,100 +400,41 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
     console.warn('Could not load _quarto.yml');
   }
 
-  // Single LLM call to fact-check and link to existing refs OR create placeholder refs
-  const factCheckPrompt = `You are an expert fact-checker and citation assistant for a book called "The Complete Idiot's Guide to Ending War and Disease."
+  // Simplified fact-check prompt
+  const factCheckPrompt = `You are a fact-checker for "The Complete Idiot's Guide to Ending War and Disease."
 
-**YOUR TASK:**
-1. Review the CHAPTER CONTENT below for UNCITED factual claims that ABSOLUTELY NEED a source
-2. Distinguish between THREE types of claims:
+**TASK: Add citations ONLY to uncited external facts that need sources.**
 
-   **TYPE A - EXTERNAL FACTS (need external citations to references.qmd):**
-   - Current/historical statistics from real-world sources (e.g., "Global military spending is $2.44 trillion in 2024")
-   - Published research findings or studies from external sources
-   - Historical events or data points
-   - Statements about existing real-world organizations, policies, or systems
-   - Statistics that existed BEFORE this book was written
+**NEEDS CITATION (link to references.qmd):**
+- Real-world statistics (e.g., "$2.44 trillion military spending")
+- Published research findings
+- Historical events or data
 
-   **CRITICAL: Context matters! Only cite external facts when they are presented as ACTUAL CLAIMS, not when used in:**
-   - Hypothetical examples (e.g., "Suppose 70% support..." or "If we assume 70% approval...")
-   - Illustrative scenarios (e.g., "Imagine a world where..." or "Consider a case where...")
-   - Investor pitch materials (e.g., "Show investors the 270% returns..." - these are PROJECTIONS)
-   - Modeling assumptions (e.g., "Using 70% as our baseline..." - these are MODEL INPUTS)
-   - "What-if" calculations (e.g., "If 100 countries sign..." - these are HYPOTHETICALS)
+**DOES NOT NEED CITATION:**
+- The book's own proposals (1% Treaty, dFDA, etc.)
+- Our calculations and projections
+- Hypotheticals, examples, or "what-if" scenarios
+- Investor pitch assumptions
+- Already-linked text (DO NOT modify existing links)
+- Opinions, metaphors, common knowledge
 
-   **TYPE B - INTERNAL PROPOSALS/CALCULATIONS (link sparingly or not at all):**
-   - The book's own proposals and terminology (e.g., "the 1% Treaty", "dFDA", "Wishocracy")
-     → Link ONLY the FIRST mention of key concepts to their defining chapter
-     → DO NOT link every subsequent mention - readers know what these are after first reference
-   - Dollar amounts DERIVED from the book's proposals (e.g., "$270B per year" comes from 1% of $27T)
-     → These are OUR CALCULATIONS, not external facts - DO NOT link to references.qmd
-     → If needed, link to the chapter explaining the calculation, but prefer no link
-   - Projections based on the book's models (e.g., "$74,259 saved per person from our Treaty model")
-     → These are OUR PROJECTIONS, not external data - DO NOT link to references.qmd
-   - Future timeline estimates made by this book (e.g., "2055 projected median wealth")
-     → These are OUR PREDICTIONS, not citations - DO NOT link to references.qmd
-   - Percentage assumptions in pitch/marketing materials (e.g., "70% public support" in an investor deck)
-     → These are ILLUSTRATIVE EXAMPLES for the pitch, not factual claims - DO NOT link
-   - Numbers in tables showing scenarios (e.g., "Scenario A: 270% ROI" or "Year 1-3: 1%")
-     → These are HYPOTHETICAL PROJECTIONS for the model, not citations - DO NOT link
+**RULES:**
+- Link each fact ONCE (first mention only)
+- Be conservative - when uncertain, don't link
+- Context matters - "Show investors 270% ROI" is a projection, not a fact
 
-   **TYPE C - NO CITATION NEEDED:**
-   - General statements or obvious facts
-   - Author's opinions or arguments
-   - Commonly known information
-   - Metaphors, analogies, or hypothetical examples
-   - Mathematical calculations or conversions that are self-evident
-   - Future scenarios or aspirational visions (e.g., "Cancer becomes treatable")
-   - Rhetorical devices or colorful language
-   - Thought experiments or illustrations
-   - Repeated mentions of already-introduced concepts
-   - Numbers used in investor pitches, marketing materials, or fundraising documents
-   - Assumptions stated as "what if" or "suppose" or "imagine" scenarios
-   - Illustrative percentages in hypothetical examples (e.g., "70% approval in this scenario")
-
-3. **LINKING RULES:**
-   - **DO NOT over-link**: Link a term/concept only ONCE (first significant mention), not every time it appears
-   - **DO NOT link internal calculations to references.qmd**: If a number comes from the book's own model, either don't link it or link to the chapter explaining the calculation
-   - **Context is EVERYTHING**: Before adding a link, ask yourself:
-     * Is this number/claim presented as a FACTUAL ASSERTION about the current world?
-     * Or is it an ASSUMPTION, PROJECTION, or HYPOTHETICAL used in a model/pitch?
-     * Phrases like "Show investors...", "Assume...", "If we...", "Projected..." indicate TYPE B/C, not TYPE A
-   - **Chapters about fundraising, pitches, or investor materials**: These contain ILLUSTRATIVE EXAMPLES, not factual claims
-     * Example: "70% approval" in an investor pitch is a PITCH ASSUMPTION, not a cited fact
-     * Example: "270% ROI" in a bond prospectus is a PROJECTION, not a historical return
-   - Be conservative with links - only add them when absolutely necessary for credibility
-   - **When in doubt, DO NOT LINK** - over-linking hurts readability and credibility
-
-4. **CRITICAL: DO NOT modify text that is already linked!**
-   - If text already has a markdown link like [text](url), leave it completely unchanged
-   - Only add links to PLAIN TEXT that needs a citation
-   - Examples of text to IGNORE (leave unchanged):
-     * [existing link](./problem/file.qmd)
-     * [existing link](../references.qmd#some-id)
-     * [existing link](https://example.com)
-
-5. For each UNCITED claim that NEEDS a source:
-   - If an existing reference in EXISTING REFERENCES supports it (even loosely), add a link: [claim](${referencesPath}#anchor-id)
-   - If no suitable existing reference exists, create a new placeholder reference entry
-6. Return ONLY valid JSON (no markdown code blocks):
-
+Return ONLY valid JSON:
 {
-  "updatedChapter": "the complete chapter text with citation links added",
+  "updatedChapter": "complete chapter text with [citations](${referencesPath}#anchor-id) added",
   "newReferences": [
     {
-      "id": "slugified-id",
-      "title": "Descriptive title for the claim",
-      "quotes": ["The exact claim text from the chapter"],
+      "id": "slug-id",
+      "title": "Claim title",
+      "quotes": ["Exact claim text"],
       "source": "<!-- TODO: Add source URL -->"
     }
   ]
 }
-
-**RULES FOR NEW PLACEHOLDER REFERENCES:**
-- Create anchor ID by slugifying the claim topic (lowercase, hyphens, max 50 chars)
-- Only return NEW references in the newReferences array
-- Do NOT return existing references in newReferences
-- If no new references needed, return empty array: "newReferences": []
 
 **BOOK STRUCTURE (available chapters for TYPE B internal links):**
 ${bookStructure}
@@ -702,9 +643,7 @@ ${body}`;
     finalBody = responseText.trim();
   }
 
-  frontmatter.lastStructureCheckHash = getBodyHash(matter.stringify(finalBody, frontmatter));
-  const newContent = matter.stringify(finalBody, frontmatter, { lineWidth: -1 } as any);
-  await fs.writeFile(filePath, newContent, 'utf-8');
+  await updateFileWithHash(filePath, finalBody, frontmatter, 'lastStructureCheckHash');
   console.log(`Successfully checked structure for ${filePath}.`);
 }
 
@@ -762,9 +701,7 @@ export async function linkCheckFile(filePath: string): Promise<void> {
     console.log(`No broken links found in ${filePath}.`);
   }
 
-  frontmatter.lastLinkCheckHash = getBodyHash(matter.stringify(body, frontmatter));
-  const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
-  await fs.writeFile(filePath, newContent, 'utf-8');
+  await updateFileWithHash(filePath, body, frontmatter, 'lastLinkCheckHash');
   console.log(`Successfully updated link-check metadata for ${filePath}.`);
 }
 
@@ -830,9 +767,7 @@ export async function figureCheckFile(filePath: string): Promise<void> {
     console.log(`No design guide violations found in ${filePath}.`);
   }
 
-  frontmatter.lastFigureCheckHash = getBodyHash(matter.stringify(body, frontmatter));
-  const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
-  await fs.writeFile(filePath, newContent, 'utf-8');
+  await updateFileWithHash(filePath, body, frontmatter, 'lastFigureCheckHash');
   console.log(`Successfully updated figure-check metadata for ${filePath}.`);
 }
 
