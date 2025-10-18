@@ -1,0 +1,93 @@
+---
+title: "Risk Mitigation Mechanisms"
+description: "Risk mitigation mechanisms"
+format:
+  html:
+    code-fold: true
+jupyter: dih-project-kernel
+---
+
+```{python}
+#| label: risk-mitigation
+#| echo: false
+
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Risk mitigation strategies from investor-risk-analysis.md
+risk_data = pd.DataFrame({
+    'Risk Type': [
+        'Fundraising Risk',
+        'Political Risk',
+        'Timeline Risk',
+        'Financial Risk',
+        'Execution Risk'
+    ],
+    'Traditional VC Risk Level': [8, 3, 7, 9, 8],
+    'dFDA Mitigated Risk': [2, 4, 3, 2, 4],
+    'Mitigation Strategy': [
+        'Assurance Contract (auto-refund)',
+        'Metaculus prediction markets',
+        'Front-loaded payouts (2.6x Year 1)',
+        'First-loss capital buffer',
+        'Open-source + bounties'
+    ]
+})
+
+# Create radar chart comparing risks
+categories = risk_data['Risk Type'].tolist()
+categories.append(categories[0])  # Close the polygon
+
+fig = go.Figure()
+
+# Traditional VC risks
+traditional = risk_data['Traditional VC Risk Level'].tolist()
+traditional.append(traditional[0])
+
+# Mitigated risks
+mitigated = risk_data['dFDA Mitigated Risk'].tolist()
+mitigated.append(mitigated[0])
+
+fig.add_trace(go.Scatterpolar(
+    r=traditional,
+    theta=categories,
+    fill='toself',
+    name='Traditional VC Risk',
+    fillcolor='rgba(255, 0, 0, 0.2)',
+    line=dict(color='red', width=2)
+))
+
+fig.add_trace(go.Scatterpolar(
+    r=mitigated,
+    theta=categories,
+    fill='toself',
+    name='dFDA with Mitigation',
+    fillcolor='rgba(0, 255, 0, 0.2)',
+    line=dict(color='green', width=2)
+))
+
+fig.update_layout(
+    polar=dict(
+        radialaxis=dict(
+            visible=True,
+            range=[0, 10],
+            tickmode='linear',
+            tick0=0,
+            dtick=2
+        )
+    ),
+    title='Risk Profile: Traditional VC vs dFDA with Mitigation',
+    showlegend=True,
+    height=500
+)
+
+fig.show()
+
+# Display mitigation strategies
+print("\n=== Key Risk Mitigation Innovations ===")
+for _, row in risk_data.iterrows():
+    print(f"\n{row['Risk Type']}: {row['Mitigation Strategy']}")
+    reduction = ((row['Traditional VC Risk Level'] - row['dFDA Mitigated Risk']) /
+                 row['Traditional VC Risk Level'] * 100)
+    print(f"  → Risk reduced by {reduction:.0f}%")

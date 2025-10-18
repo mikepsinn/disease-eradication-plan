@@ -1,0 +1,55 @@
+---
+title: "Implementation Timeline Scenarios"
+description: "Implementation timeline scenarios"
+format:
+  html:
+    code-fold: true
+jupyter: dih-project-kernel
+---
+
+```{python}
+#| label: implementation-timeline
+#| echo: false
+
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Timeline scenarios
+scenarios = pd.DataFrame({
+    'Approach': ['Legislative', 'Executive Order', 'Hybrid (EO→Congress)'],
+    'Time to Launch (Months)': [36, 12, 18],
+    'Initial Funding': [27000, 100, 1177],
+    'Success Probability': [30, 60, 75],
+    'Legal Challenge Risk': [10, 80, 40]
+})
+
+# Create grouped bar chart
+fig = go.Figure()
+
+metrics = ['Time to Launch (Months)', 'Success Probability', 'Legal Challenge Risk']
+colors = ['blue', 'green', 'red']
+
+for i, metric in enumerate(metrics):
+    fig.add_trace(go.Bar(
+        name=metric,
+        x=scenarios['Approach'],
+        y=scenarios[metric],
+        marker_color=colors[i]
+    ))
+
+fig.update_layout(
+    title='Implementation Approach Comparison',
+    xaxis_title='Implementation Approach',
+    yaxis_title='Value',
+    barmode='group',
+    height=500,
+    legend=dict(x=0.7, y=1)
+)
+
+fig.show()
+
+print("\nRecommended Strategy: Hybrid Approach")
+print("1. Launch via Executive Order (fast, demonstrates value)")
+print("2. Build momentum with early wins")
+print("3. Secure Congressional funding once proven")

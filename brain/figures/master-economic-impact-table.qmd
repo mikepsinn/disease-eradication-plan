@@ -1,0 +1,117 @@
+---
+title: "Master Economic Impact Table"
+description: "Master economic impact table"
+format:
+  html:
+    code-fold: true
+jupyter: dih-project-kernel
+---
+
+```{python}
+#| label: master-economic-impact-table
+#| echo: false
+
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Set up formatting
+pd.options.display.float_format = '{:,.0f}'.format
+
+# Comprehensive economic impact data from all analyses
+economic_impacts = pd.DataFrame({
+    'Source': [
+        '1% Treaty Peace Dividend',
+        'dFDA Trial Efficiency (50% reduction)',
+        'dFDA Trial Efficiency (95% reduction)',
+        'DIH Market Allocation (50% better)',
+        'Health Value (840K QALYs)',
+        'Accelerated Treatments (80x)',
+        'Health Savings Sharing Model',
+        'Prevention ROI',
+        'Drug Price Competition',
+        'Combined Ecosystem (Conservative)',
+        'Combined Ecosystem (Optimistic)'
+    ],
+    'Annual Value (Billions)': [
+        92,
+        50,
+        95,
+        13.5,
+        126,
+        6480,
+        388.5,
+        615,
+        45,
+        281,
+        16500
+    ],
+    'ROI Ratio': [
+        184,
+        1250,
+        2375,
+        135,
+        np.nan,
+        np.nan,
+        18.4,
+        3,
+        np.nan,
+        439,
+        25781
+    ],
+    'Implementation Cost (Millions)': [
+        500,
+        40,
+        40,
+        100,
+        40,
+        100,
+        10000,
+        205000,
+        100,
+        640,
+        640
+    ]
+})
+
+# Calculate ROI where missing
+mask = economic_impacts['ROI Ratio'].isna()
+economic_impacts.loc[mask, 'ROI Ratio'] = (
+    economic_impacts.loc[mask, 'Annual Value (Billions)'] * 1000 /
+    economic_impacts.loc[mask, 'Implementation Cost (Millions)']
+).round(0)
+
+# Create interactive table
+fig = go.Figure(data=[go.Table(
+    header=dict(
+        values=['<b>Economic Impact Source</b>',
+                '<b>Annual Value</b>',
+                '<b>ROI Ratio</b>',
+                '<b>Implementation Cost</b>'],
+        fill_color='darkblue',
+        font=dict(color='white', size=14),
+        align='left',
+        height=40
+    ),
+    cells=dict(
+        values=[
+            economic_impacts['Source'],
+            ['$' + str(int(x)) + 'B' for x in economic_impacts['Annual Value (Billions)']],
+            [str(int(x)) + ':1' if pd.notna(x) else 'N/A' for x in economic_impacts['ROI Ratio']],
+            ['$' + str(int(x)) + 'M' for x in economic_impacts['Implementation Cost (Millions)']]
+        ],
+        fill_color=[['lightgray', 'white']*len(economic_impacts)],
+        font=dict(size=12),
+        align=['left', 'right', 'right', 'right'],
+        height=30
+    ))
+])
+
+fig.update_layout(
+    title='Comprehensive Economic Impact Analysis',
+    height=500,
+    margin=dict(l=0, r=0, t=40, b=0)
+)
+
+fig.show()

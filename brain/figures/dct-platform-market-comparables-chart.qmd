@@ -1,0 +1,55 @@
+---
+title: "DCT Platform Market Comparables"
+description: "DCT market analysis"
+format:
+  html:
+    code-fold: true
+jupyter: dih-project-kernel
+---
+
+```{python}
+#| label: dct-platform-market-comparables
+#| echo: false
+
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Data from dfda-cost-benefit-analysis.md
+dct_companies = pd.DataFrame({
+    'Company': ['Medable', 'Science 37', 'Thread', 'uMotif', 'dFDA (Target)'],
+    'Total Raised (Millions)': [521, 40, 50, 25.5, 40],
+    'Valuation (Billions)': [2.1, 0.2, 0.25, 0.1, None],
+    'Global Reach': ['60+ countries', '10+ countries', '15+ countries', '5+ countries', 'Global target'],
+    'Status': ['Market Leader', 'Established', 'Growing', 'Emerging', 'Proposed']
+})
+
+# Create bar chart of funding
+fig = go.Figure()
+
+colors = ['darkgreen' if x == 'Medable' else 'lightgreen' if x == 'dFDA (Target)' else 'gray'
+          for x in dct_companies['Company']]
+
+fig.add_trace(go.Bar(
+    x=dct_companies['Company'],
+    y=dct_companies['Total Raised (Millions)'],
+    marker_color=colors,
+    text=[f'${x}M<br>{s}' for x, s in zip(dct_companies['Total Raised (Millions)'],
+                                           dct_companies['Status'])],
+    textposition='auto'
+))
+
+fig.update_layout(
+    title='DCT Platform Funding Comparables',
+    xaxis_title='Company',
+    yaxis_title='Total Capital Raised ($ Millions)',
+    height=500,
+    annotations=[
+        dict(x='Medable', y=521, text='$2.1B Valuation',
+             showarrow=True, arrowhead=2, yshift=20)
+    ]
+)
+
+fig.show()
+
+

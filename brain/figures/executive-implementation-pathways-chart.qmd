@@ -1,0 +1,57 @@
+---
+title: "Executive Implementation Pathways"
+description: "Executive implementation paths"
+format:
+  html:
+    code-fold: true
+jupyter: dih-project-kernel
+---
+
+```{python}
+#| label: executive-pathways
+#| echo: false
+
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Funding sources available via executive action
+funding_sources = pd.DataFrame({
+    'Source': [
+        'NIH Common Fund',
+        'NIH Office of Director',
+        'CMMI (10-year authority)',
+        'ARPA-H',
+        'FDA Innovation Fund',
+        'Total Addressable'
+    ],
+    'Annual Budget (Millions)': [684, 2300, 1000, 1500, 50, 5534],
+    'Redirectable %': [20, 5, 30, 40, 50, None],
+    'Potential dFDA Funding': [137, 115, 300, 600, 25, 1177]
+})
+
+# Create waterfall of potential funding
+fig = go.Figure(go.Waterfall(
+    name="Funding",
+    orientation="v",
+    measure=["relative", "relative", "relative", "relative", "relative", "total"],
+    x=funding_sources['Source'][:-1].tolist() + ['Total Potential'],
+    y=funding_sources['Potential dFDA Funding'].tolist(),
+    textposition="outside",
+    text=[f'${x}M' for x in funding_sources['Potential dFDA Funding']],
+    connector={"line": {"color": "rgb(63, 63, 63)"}},
+    increasing={"marker": {"color": "green"}},
+    totals={"marker": {"color": "blue"}}
+))
+
+fig.update_layout(
+    title='Executive Branch Funding Potential (Without Congress)',
+    xaxis_title='Funding Source',
+    yaxis_title='Potential Annual Funding ($ Millions)',
+    height=500
+)
+
+fig.show()
+
+print("\nDOGE Precedent: Executive Order 14158 repurposed existing USDS → DOGE Service")
+print("dFDA Strategy: Similar EO could redirect NIH/ARPA-H funds to decentralized trials")
