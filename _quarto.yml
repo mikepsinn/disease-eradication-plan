@@ -48,8 +48,6 @@ book:
     - part: "Proof" # (This Already Works)"
       chapters:
         - brain/book/proof.qmd
-        - brain/book/appendix/recovery-trial.qmd  # Oxford's $500 miracle
-        - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd
         - brain/book/proof/historical-precedents.qmd
         - brain/book/proof/body-as-repairable-machine.qmd
 
