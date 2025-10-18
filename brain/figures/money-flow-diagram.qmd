@@ -30,6 +30,10 @@ ax.set_xlim(0, 10)
 ax.set_ylim(0, 10)
 ax.axis('off')
 
+# Add title - MANDATORY per DESIGN_GUIDE
+fig.text(0.5, 0.95, 'Money Flow: From Treaty to Impact', fontsize=36,
+         ha='center', va='top', weight='bold', color=COLOR_BLACK)
+
 # Define positions and boxes - use BLACK for all
 boxes = [
     {'pos': (1, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\n$27B/year', 'color': COLOR_BLACK},

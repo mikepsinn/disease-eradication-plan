@@ -25,7 +25,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 sizes = [55, 14]
 labels = ['Disease\n55M', 'War\n14M']
-colors = [COLOR_BLACK, COLOR_BLACK]  # Both are problems - use solid black
+colors = [COLOR_WHITE, COLOR_WHITE]  # Use white fill with black outline per DESIGN_GUIDE
 explode = (0.05, 0.05)
 
 # Create chart
@@ -38,11 +38,11 @@ wedges, texts, autotexts = ax.pie(
     autopct='',
     startangle=90,
     textprops={'fontsize': 32, 'weight': 'bold', 'color': COLOR_BLACK},
-    wedgeprops={'edgecolor': COLOR_WHITE, 'linewidth': 2}
+    wedgeprops={'edgecolor': COLOR_BLACK, 'linewidth': 3}  # Black outline on white fill
 )
 
-# Remove title - let context provide it
-# ax.set_title('Annual Deaths', fontsize=40, pad=20, weight='bold', color=COLOR_BLACK)
+# Add title - MANDATORY per DESIGN_GUIDE for standalone readability
+ax.set_title('Annual Deaths: Disease vs War', fontsize=36, pad=20, weight='bold', color=COLOR_BLACK)
 
 # Add branding
 add_watermark(fig)

@@ -129,7 +129,7 @@ add_watermark(fig)
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'dfda-roi-comparison-column-chart.png',
-            dpi=200, bbox_inches='tight', pad_inches=0.1, facecolor=COLOR_WHITE)
+            dpi=200, bbox_inches=None, pad_inches=0.1, facecolor=COLOR_WHITE)
 
 plt.show()
 ```
