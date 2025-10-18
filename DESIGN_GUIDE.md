@@ -51,8 +51,31 @@ Include charts in any `.qmd` file using Quarto's include directive:
 
 1. **Must be `.qmd` files** with Python code blocks
 2. **Use descriptive filenames** following the naming convention below
-3. **Save generated images** in the same `brain/figures/` directory
-4. **Include proper labels** for cross-referencing
+3. **MUST generate PNG files** - Every chart must save a PNG output
+4. **Save generated images** in the same `brain/figures/` directory
+5. **Include proper labels** for cross-referencing
+
+### PNG Generation is MANDATORY
+
+**Every QMD chart file MUST generate a corresponding PNG file.** No exceptions.
+
+**Why PNGs are required:**
+- Used in presentations and slide decks
+- Shared on social media (Twitter, LinkedIn, etc.)
+- Embedded in external reports and documents
+- Backup visualization if Quarto rendering fails
+- Version control tracking of visual output changes
+- Quick preview without running code
+
+**Implementation:**
+```python
+# This code MUST be at the end of every chart file:
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'same-name-as-qmd-file.png',
+            dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.show()  # For Quarto display
+```
 
 ### File Naming
 
@@ -104,7 +127,7 @@ Include charts in any `.qmd` file using Quarto's include directive:
                dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
    ```
 4. Name output file to match source: `chart-name.qmd` → `chart-name.png`
-5. Use linear scales for disparity charts (never logarithmic)
+5. Use linear scales for disparity charts (avoid logarithmic scales - they hide the dramatic differences we're trying to highlight)
 6. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
 7. Don't use `plt.tight_layout()` (overrides margins)
 
@@ -208,8 +231,8 @@ Mobile devices are held vertically - column charts use this natural orientation 
 - **Horizontal bar charts:** Cramped, text gets squeezed, hard to read labels
 
 **When to Use Each:**
-- **Column charts (default):** Comparisons, rankings, time series - anything under 10 categories
-- **Horizontal bars (rare):** Only when you have 15+ categories or very long labels
+- **Column charts (default):** Comparisons, rankings, time series - anything under 10 categories with comparable value ranges (within 100× of each other)
+- **Horizontal bars:** Use when you have 5+ categories
 - **Pie charts:** Only for showing parts of a whole (max 3-4 slices)
 
 ## Minimalist Chart Design Rules
