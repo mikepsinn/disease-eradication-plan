@@ -44,6 +44,19 @@ graph TD;
     style F fill:#fff,stroke:#ccc,stroke-dasharray: 5 5
 ```
 
+### Operational Command: The General Staff (G-Staff)
+
+Within the SPV, day-to-day operations for the War on Disease are managed by a General Staff, or "G-Staff," modeled after military command structures. This ensures clear lines of responsibility for every aspect of the campaign.
+
+-   **G-1 (Personnel & Recruitment):** Manages the `Personnel Roster`—our master list of every individual involved. This is the core of our recruitment effort.
+-   **G-2 (Intelligence):** Manages intelligence on the enemy (diseases) and the operational landscape. This includes tracking research, trials, and outcomes.
+-   **G-3 (Operations):** The warfighters. This department plans and executes the clinical trials via the dFDA.
+-   **G-4 (Logistics & Treasury):** Manages the supply lines, primarily the flow of funds from VICTORY Bonds and other sources.
+-   **G-5 (Plans & Strategy):** Develops long-term strategy, including the Global Draft, treaty expansions, and major campaigns.
+-   **G-6 (Signal & Communications):** Manages all propaganda, internal communications, and the technology platforms (Wishocracy, dFDA).
+
+See the [Command & Control Systems](./command-and-control-systems.qmd) document for the detailed technical implementation of this structure.
+
 ## 2. Non-Profit Foundation
 
 This entity is the guardian of the mission. It provides legal and ethical oversight to ensure the project remains aligned with its public benefit goals.

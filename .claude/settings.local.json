@@ -26,7 +26,17 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(timeout 120 dir:*)",
-      "Bash(npm run build:dih)"
+      "Bash(npm run build:dih)",
+      "Read(//c/Users/m/.cursor/**)",
+      "Bash(claude mcp add --transport stdio airtable --env AIRTABLE_API_KEY=patAQEwwKXChpQBnL.d9ca339d66431e6cfece5a3fe1c1d69c6c36848386804a3b1bc773dfedcde127 -- npx -y @domdomegg/airtable-mcp-server)",
+      "Bash(claude mcp list)",
+      "Read(//c/Users/m/**)",
+      "Bash(claude mcp list --mcp-debug)",
+      "Bash(npx -y @domdomegg/airtable-mcp-server)",
+      "Bash(npm search airtable-mcp)",
+      "Bash(claude mcp remove airtable)",
+      "Bash(claude mcp add --transport stdio airtable --env AIRTABLE_API_KEY=patAQEwwKXChpQBnL.d9ca339d66431e6cfece5a3fe1c1d69c6c36848386804a3b1bc773dfedcde127 -- npx -y airtable-mcp-server)",
+      "Bash(npx -y airtable-mcp-server)"
     ],
     "deny": [],
     "ask": []

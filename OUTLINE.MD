@@ -475,6 +475,11 @@
 ### The War on Disease
 *How to Design the First Government War That Actually Wins*
 
+- **The Global Draft: Your Planet Needs You (Whether You Like It or Not)**
+    - Universal Service Mandate: Every human is conscripted.
+    - Two Ways to Serve: Fight (participate in trials) or Fund (buy VICTORY bonds).
+    - Draft Dodgers: The philosophical cowards of the 21st century who think dying of preventable disease is a "personal choice."
+    - The Referendum as Draft Registration: Voting "Yes" is enlisting.
 - **How to Structure a War Without Creating a Military-Industrial Complex**
   - Build zero bureaucracy (smart contracts don't need pensions)
   - Pay for corpses prevented, not papers published

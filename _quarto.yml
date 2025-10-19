@@ -39,6 +39,7 @@ book:
         - brain/book/solution/wishocracy.qmd # Wishocracy
         - brain/book/solution/dfda.qmd # The Decentralized FDA
         - brain/book/solution/war-on-disease.qmd # The War on Disease
+        - brain/book/solution/global-draft.qmd # The Global Draft
         - brain/book/solution/aligning-incentives.qmd # Aligning Incentives
 
     - part: "Part III: The Case"
@@ -69,6 +70,7 @@ book:
     - brain/book/appendix/vision.qmd
     - brain/book/appendix/governance.qmd
     - brain/book/appendix/organizational-structure.qmd
+    - brain/book/appendix/command-and-control-systems.qmd
     - brain/book/appendix/dih-integration-model.qmd
     - brain/book/appendix/open-ecosystem-and-bounty-model.qmd
 
@@ -124,6 +126,7 @@ book:
     - brain/book/appendix/dih-seed-grant-proposal-template.qmd
     - brain/book/appendix/legal-compliance-framework.qmd
     - brain/book/appendix/impact-securities-reform.qmd
+    - brain/book/appendix/recruitment-and-propaganda-plan.qmd
 
     # Reference Materials
     - brain/book/appendix/faq.qmd

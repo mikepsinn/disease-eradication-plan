@@ -1,0 +1,104 @@
+---
+title: "Recruitment & Propaganda Plan"
+description: "Operational directive for identifying, enlisting, and mobilizing key supporters for the War on Disease during Phase 0."
+published: true
+date: "2025-10-19T00:00:00.000Z"
+tags: [operations, fundraising, recruitment, strategy, propaganda]
+dateCreated: "2025-10-19T00:00:00.000Z"
+---
+
+## 1. MISSION BRIEFING
+
+Here's how you establish a simple, effective, and covert system for identifying, categorizing, and managing early volunteers for the War on Disease. This initial phase of operations ("Phase 0") precedes the formal establishment of the command structure and financial supply lines.
+
+The goal is not to solicit funds, but to build a high-quality roster of potential recruits, allies, and financial backers to ensure the success of the initial offensive.
+
+## 2. SITUATION REPORT: THE ENEMY WITHIN
+
+The current propaganda directs patriots to "Donate" or "Buy VICTORY Bonds." These actions are not yet possible, as the necessary wartime infrastructure is still being assembled. This premature call to arms confuses potential recruits and allows valuable early support to slip through our fingers like sand. You're losing the intelligence war before the first shot is fired.
+
+## 3. THE WEAPON: A Covert Intelligence Database
+
+You use **Airtable** as a simple, no-cost intelligence-gathering tool. It provides the ideal balance of flexibility and ease of use for this covert phase.
+
+- **Why Airtable?**
+  - **No Cost:** The free tier is more than sufficient for our initial intelligence operations.
+  - **Flexible:** It functions as a secure database, allowing for easy categorization and management of personnel files.
+  - **Rapid Deployment:** Airtable's native form builder allows us to create and deploy enlistment forms quickly and efficiently.
+  - **Future-Proof:** It can be easily integrated with more advanced communication systems or transferred to a more robust command-and-control system in later phases of the war.
+
+## 4. BATTLE PLAN
+
+### Step 1: Establish the Recruitment Roster
+
+You establish a single Airtable base, codenamed **"DIH Recruitment Roster,"** containing three primary divisions:
+
+1.  **Financial Infantry:** To enlist subscribers for VICTORY Bonds.
+2.  **Home Front Supporters:** To enlist donors for the 501(c)(3) supply lines.
+3.  **Allied Command:** To enlist strategic partners from nonprofit and institutional forces.
+
+### Step 2: Design Enlistment Papers
+
+You create three distinct enlistment forms, one for each division. To better segment recruits and tailor future communiqués, each form collects specific, relevant intelligence.
+
+#### Financial Infantry Enlistment
+
+-   **Full Name**
+-   **Email Address**
+-   **Unit / Organization** (Optional)
+-   **Rank / Title** (Optional)
+-   **Projected War Bond Contribution** (Dropdown: <$25k, $25k-$100k, $100k-$500k, $500k+)
+-   **Classification** (Dropdown: Angel, VC, Family Office, Individual, Other)
+-   **Service Record (LinkedIn URL)** (Optional)
+-   **How did you hear the call to arms?** (Optional)
+-   **Field Message** (Open text)
+-   **Receive Future Directives** (Checkbox)
+
+#### Home Front Supporter Enlistment
+
+-   **Full Name**
+-   **Email Address**
+-   **Organization** (Optional)
+-   **Primary Theater of Interest** (Dropdown: General Support, Research, Technology Development, Propaganda)
+-   **Are you willing to volunteer for active duty?** (Checkbox, with optional text field for special skills)
+-   **How did you hear the call to arms?** (Optional)
+-   **Field Message** (Open text)
+-   **Receive Future Directives** (Checkbox)
+
+#### Allied Command Enlistment
+
+-   **Field Contact Name**
+-   **Field Contact Email**
+-   **Organization Name**
+-   **Organization Type** (Dropdown: Nonprofit, Research Institution, University, For-Profit, Government, Other)
+-   **Website**
+-   **Area of Potential Alliance** (Checkboxes: Research, Propaganda, Technology, Community Mobilization, Other)
+-   **Briefly state your organization's mission.** (Open text)
+-   **Field Message** (Open text)
+-   **Receive Future Directives** (Checkbox)
+
+### Step 3: Deploy Propaganda
+
+You update all public-facing propaganda, including the main project website. The "Donate" and "Buy Bonds" buttons are replaced with links directing recruits to the new enlistment forms.
+
+- **"Buy VICTORY Bonds"** will link to the **Financial Infantry Enlistment Form**.
+- **"Support the Home Front"** (replacing "Donate Now") will link to the **Home Front Supporter Enlistment Form**.
+- A new call to action, **"Join the Alliance,"** will be created, linking to the **Allied Command Enlistment Form**.
+
+The links will be placeholders (e.g., `https://airtable.com/form/financial-infantry`) until the actual forms are deployed.
+
+### Step 4: Manage Recruits & Maintain Morale
+
+As High Command, you are responsible for:
+
+- **Reviewing enlistment papers** weekly.
+- **Identifying and tagging** high-value assets.
+- **Issuing periodic communiqués** to all enlisted personnel to keep morale high as you prepare for the main offensive.
+
+## 5. MARCHING ORDERS
+
+1.  Establish the **"DIH Recruitment Roster"** Airtable base.
+2.  Deploy the three enlistment forms (Financial Infantry, Home Front Supporters, Allied Command).
+3.  Update propaganda links on the main project website to point to the live enlistment form URLs.
+
+Use this plan to professionally manage recruitment and build the foundation for a successful first offensive.

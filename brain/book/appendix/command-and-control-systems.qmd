@@ -1,0 +1,187 @@
+---
+title: "Command & Control Systems"
+description: "Technical specifications for the DIH Command & Control Airtable base, the central nervous system of the War on Disease."
+published: false
+date: "2025-10-19T00:00:00.000Z"
+tags: [operations, systems, database, airtable, strategy]
+dateCreated: "2025-10-19T00:00:00.000Z"
+---
+
+## 1. Overview
+
+This document outlines the definitive architecture for the **`DIH Command & Control`** Airtable base. This base is designed as a complete, unified, and relational database to manage all personnel, fundraising, projects, finances, and communications for the entire global initiative. It is the single source of truth for the War on Disease.
+
+## 2. Base Architecture: The G-Staff Model
+
+The base is structured around the G-Staff military command model, ensuring every aspect of the operation is covered. The architecture is person-centric, with the `Personnel Roster` serving as the central hub.
+
+---
+
+### **SECTION 1: G-1 (Personnel Command)**
+*Core tables for managing every human asset.*
+
+**Table 1: `Personnel Roster` (The Master Human Directory)**
+*The central hub for every individual. Every other table links back to this.*
+-   `Personnel ID` (Autonumber, Primary Key)
+-   `Full Name` (Full Name)
+-   `Email` (Email)
+-   `Status` (Single Select: Active, Inactive, Prospect)
+-   `Primary Division` (Link to `Divisions`)
+-   `Organization` (Link to `Organizations`)
+-   `Role / Title` (Text)
+-   `Engagements` (Link to `Engagements`)
+-   `Projects` (Link to `Projects & Tasks`)
+-   `Campaigns` (Link to `Campaigns`)
+-   `VICTORY Bonds Owned` (Link to `VICTORY Bonds`)
+-   `Referendum Votes` (Link to `Global Referendum`)
+-   `Date Joined` (Date)
+-   `LinkedIn Profile` (URL)
+-   `Notes` (Long Text, Rich Text enabled)
+-   `Opt-in for Updates` (Checkbox)
+
+**Table 2: `Engagements` (Interaction Log)**
+*A complete historical log of every interaction with every person.*
+-   `Engagement ID` (Autonumber, Primary Key)
+-   `Personnel` (Link to `Personnel Roster`)
+-   `Type` (Single Select: Enlistment, Donation, Investment Inquiry, Partnership Inquiry, Meeting, Call, Email)
+-   `Date` (Date)
+-   `Summary` (Text)
+-   `Amount` (Currency) - *For financial engagements*
+-   `Related Campaign` (Link to `Campaigns`)
+-   `Follow-up Date` (Date)
+
+**Table 3: `HR & Recruitment` (Talent Operations)**
+*Manages the entire lifecycle of our internal team.*
+-   `Position ID` (Autonumber, Primary Key)
+-   `Position Title` (Text)
+-   `Status` (Single Select: Open, Interviewing, Filled, On Hold)
+-   `Division` (Link to `Divisions`)
+-   `Applicants` (Link to `Personnel Roster`)
+-   `Job Description` (Long Text, Rich Text enabled)
+-   `Onboarding Docs` (Attachments)
+
+---
+
+### **SECTION 2: G-2 & G-3 (Operations & Intelligence)**
+*Tables for managing our work and the organizations we work with.*
+
+**Table 4: `Organizations` (External Entities)**
+*Master directory of all funds, nonprofits, companies, and institutions.*
+-   `Organization Name` (Text, Primary Key)
+-   `Type` (Single Select: VC Fund, Family Office, Nonprofit, Research Institution, Government, For-Profit)
+-   `Status` (Single Select: Ally, Neutral, Adversary)
+-   `Website` (URL)
+-   `Contacts` (Link to `Personnel Roster`)
+-   `Mission Statement` (Long Text)
+
+**Table 5: `Divisions` (Internal Command Structure)**
+*The high-level departments of our war machine.*
+-   `Division Name` (Text, Primary Key) - *e.g., G-1 Personnel, G-4 Treasury*
+-   `Mandate` (Long Text)
+-   `Lead` (Link to `Personnel Roster`)
+-   `Personnel` (Link to `Personnel Roster`)
+-   `Projects` (Link to `Projects & Tasks`)
+
+**Table 6: `Projects & Tasks` (The War Room)**
+*A complete project management system for all internal work.*
+-   `Task ID` (Autonumber, Primary Key)
+-   `Task Name` (Text)
+-   `Status` (Single Select: To Do, In Progress, In Review, Done)
+-   `Project` (Link to this same table, for parent projects)
+-   `Assignee` (Link to `Personnel Roster`)
+-   `Division` (Link to `Divisions`)
+-   `Due Date` (Date)
+-   `Priority` (Single Select: Critical, High, Medium, Low)
+-   `Related Campaign` (Link to `Campaigns`)
+-   `Description` (Long Text, Rich Text enabled)
+-   `Attachments` (Attachments)
+
+---
+
+### **SECTION 3: G-4 & G-5 (Strategy & Logistics)**
+*Tables for managing our money and our plans.*
+
+**Table 7: `Treasury (Financials)` (The War Chest)**
+*The master ledger for every dollar.*
+-   `Transaction ID` (Autonumber, Primary Key)
+-   `Date` (Date)
+-   `Type` (Single Select: Inflow, Outflow)
+-   `Category` (Single Select: VICTORY Bond, Donation, Grant, Salary, Operations, Marketing)
+-   `Source/Destination` (Link to `Personnel Roster` or `Organizations`)
+-   `Amount` (Currency)
+-   `Purpose` (Text)
+-   `Related Engagement` (Link to `Engagements`)
+
+**Table 8: `Campaigns` (Strategic Initiatives)**
+*Tracks our major, high-level strategic efforts.*
+-   `Campaign Name` (Text, Primary Key) - *e.g., Global Referendum - Phase 1, VICTORY Bond Seed Round*
+-   `Status` (Single Select: Planning, Active, Completed, On Hold)
+-   `Objective` (Long Text)
+-   `Lead` (Link to `Personnel Roster`)
+-   `Key Personnel` (Link to `Personnel Roster`)
+-   `Related Projects` (Link to `Projects & Tasks`)
+-   `Budget` (Currency)
+
+---
+
+### **SECTION 4: G-6 (Signal & Communications)**
+*Tables for managing our propaganda and public-facing content.*
+
+**Table 9: `Communiqués` (Propaganda Log)**
+*Manages all outbound messaging.*
+-   `Message ID` (Autonumber, Primary Key)
+-   `Title` (Text)
+-   `Channel` (Single Select: Email, Social Media, Press Release, Blog Post)
+-   `Status` (Single Select: Draft, Scheduled, Sent)
+-   `Send Date` (Date)
+-   `Target Audience` (Link to `Divisions` or `Campaigns`)
+-   `Content` (Long Text, Rich Text enabled)
+-   `Related Asset` (Link to `Media Assets`)
+
+**Table 10: `Media Assets` (Propaganda Library)**
+*A central library for all our creative assets.*
+-   `Asset ID` (Autonumber, Primary Key)
+-   `Asset Name` (Text)
+-   `Type` (Single Select: Image, Video, Document, Audio)
+-   `File` (Attachments)
+-   `Related Campaign` (Link to `Campaigns`)
+-   `Usage Notes` (Long Text)
+
+---
+
+### **SECTION 5: MISSION COMMAND (The War-Winning Components)**
+*Specialized tables for executing the core strategic objectives: Fundraising, Global Mobilization, and Political Victory.*
+
+**Table 11: `VICTORY Bonds` (The $1B War Chest)**
+*Tracks every investment bond sold to fund the entire operation.*
+-   `Bond ID` (Autonumber, Primary Key)
+-   `Investor` (Link to `Personnel Roster` or `Organizations`)
+-   `Amount Invested` (Currency)
+-   `Date Issued` (Date)
+-   `Status` (Single Select: Pending, Active, Matured)
+-   `Certificate` (Attachments)
+-   `Related Engagement` (Link to `Engagements`)
+-   `Notes` (Long Text, Rich Text enabled)
+
+**Table 12: `Global Referendum` (The Will of Humanity)**
+*Manages the global petition to secure the 3.5% tipping point.*
+-   `Vote ID` (Autonumber, Primary Key)
+-   `Voter` (Link to `Personnel Roster`)
+-   `Country` (Single Select) - *Pre-populated with all nations*
+-   `Date Voted` (Date)
+-   `Verification Status` (Single Select: Verified, Unverified, Pending)
+-   `Referral Source` (Link to `Personnel Roster`)
+-   `Reward Tier` (Single Select: Tier 1, Tier 2, Tier 3)
+-   `Related Campaign` (Link to `Campaigns`)
+
+**Table 13: `Treaty Status` (The Political Battlefield)**
+*Tracks the diplomatic and lobbying effort to pass the 1% Treaty in every nation.*
+-   `Country` (Single Line Text, Primary Key) - *e.g., United States*
+-   `Status` (Single Select: Not Approached, In Discussion, Lobbying Active, Signed, Ratified, Rejected)
+-   `Lead Lobbyist` (Link to `Personnel Roster`)
+-   `Key Contacts` (Link to `Personnel Roster`)
+-   `Lobbying Firm` (Link to `Organizations`)
+-   `Lobbying Budget` (Currency)
+-   `Next Action Date` (Date)
+-   `Notes` (Long Text, Rich Text enabled)
+-   `Related Campaign` (Link to `Campaigns`)
