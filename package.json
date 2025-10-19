@@ -52,7 +52,7 @@
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
     "validate:frontmatter": "ts-node scripts/validate-frontmatter.ts",
     "fix:frontmatter": "ts-node scripts/validate-frontmatter.ts --fix",
-    "build": "npm run quarto:clean && npm run build:html && npm run build:pdf",
+    "build": "quarto render && quarto render _dih.yml && quarto render _1percenttreaty.yml",
     "build:html": "quarto render . --to html",
     "build:pdf": "quarto render . --to pdf",
     "build:pptx": "quarto render presentation.qmd --to pptx",

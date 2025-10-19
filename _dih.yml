@@ -1,0 +1,23 @@
+# _dih.yml
+project:
+  type: website
+  output-dir: _book/dih # Output to a specific subdirectory
+
+website:
+  title: "Decentralized Institutes of Health (DIH)"
+  site-url: https://dih.earth
+  favicon: favicon.ico # Path is relative to the project root
+  
+  navbar:
+    left:
+      - href: brain/book/solution/dih.qmd
+        text: "About the DIH"
+      - href: brain/book/solution/dfda.qmd
+        text: "The dFDA"
+      - href: brain/book/appendix/governance.qmd
+        text: "Governance"
+
+format:
+  html:
+    theme: lux
+    css: styles.css

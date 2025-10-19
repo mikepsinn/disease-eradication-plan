@@ -1,0 +1,23 @@
+# _1percenttreaty.yml
+project:
+  type: website
+  output-dir: _book/1percenttreaty
+
+website:
+  title: "The 1% Treaty"
+  site-url: https://1percenttreaty.org
+  favicon: favicon.ico
+
+  navbar:
+    left:
+      - href: brain/book/solution/1-percent-treaty.qmd
+        text: "The Treaty"
+      - href: brain/book/strategy/global-referendum.qmd
+        text: "The Referendum"
+      - href: brain/book/economics/victory-bonds.qmd
+        text: "Victory Bonds"
+
+format:
+  html:
+    theme: lux
+    css: styles.css
