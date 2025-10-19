@@ -522,7 +522,7 @@
 
 ## Part III: The Case
 
-*Your Evidence Arsenal (Use These Examples to Convince Others)*
+*Why this is possible, necessary, and profitable*
 
 ### Political Movements That Changed Everything
 
