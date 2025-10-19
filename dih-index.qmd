@@ -24,28 +24,22 @@ format:
 
 ::::{.grid}
 
-:::{.g-col-md-4 .card}
-### 55 MILLION PEOPLE DIE ANNUALLY
-
-That's one Holocaust every 40 days.
-
-While the NIH spends 6 months deciding if Comic Sans is acceptable in grant applications.
+:::{.g-col-md-4 style="text-align: center;"}
+<span class="stat-number">55M</span>
+<span class="stat-label">DEATHS / YEAR</span>
+<p class="content-block" style="margin-top: 1rem;">That's one Holocaust every 40 days, while the NIH spends 6 months deciding if Comic Sans is acceptable in grant applications.</p>
 :::
 
-:::{.g-col-md-4 .card}
-### $41,000 TO TEST ONE DRUG ON ONE PERSON
-
-Oxford proved you can do it for $500.
-
-The other $40,500 goes to paperwork about paperwork.
+:::{.g-col-md-4 style="text-align: center;"}
+<span class="stat-number">$41K</span>
+<span class="stat-label">PER PATIENT</span>
+<p class="content-block" style="margin-top: 1rem;">Oxford proved you can do it for $500. The other $40,500 goes to paperwork about paperwork.</p>
 :::
 
-:::{.g-col-md-4 .card}
-### 0.06% OF HEALTHCARE SPENDING ON RESEARCH
-
-Like spending $100,000 on car repairs but 6 cents on not crashing.
-
-Then wondering why you keep crashing.
+:::{.g-col-md-4 style="text-align: center;"}
+<span class="stat-number">0.06%</span>
+<span class="stat-label">SPENT ON RESEARCH</span>
+<p class="content-block" style="margin-top: 1rem;">Like spending $100,000 on car repairs but 6 cents on not crashing. Then wondering why you keep crashing.</p>
 :::
 
 ::::
@@ -61,6 +55,8 @@ By the time they approve a good idea, either the scientist is dead or the diseas
 
 **Bureaucracy is a disease. Here's how you cure it.**
 :::
+
+![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png){fig-alt="A bar chart comparing the 54,750,000 annual deaths from disease to the 2,996 deaths from the 9/11 terrorist attacks. The disease bar is enormous, while the 9/11 bar is barely visible."}
 
 ---
 
@@ -141,28 +137,22 @@ The current system lets knowledge die in drawers. Your system makes ignorance il
 
 ::::{.grid}
 
-:::{.g-col-md-4 .card}
-### 82X CHEAPER
-
-Oxford tested 11,000 patients for what the FDA spends on 134.
-
-That's not a typo. That's what happens when you stop paying lawyers to argue about fonts.
+:::{.g-col-md-4 style="text-align: center;"}
+<span class="stat-number">82X</span>
+<span class="stat-label">CHEAPER</span>
+<p class="content-block" style="margin-top: 1rem;">Oxford tested 11,000 patients for what the FDA spends on 134. That's not a typo. That's what happens when you stop paying lawyers to argue about fonts.</p>
 :::
 
-:::{.g-col-md-4 .card}
-### 10X FASTER
-
-Get treatments in 2-3 years instead of 17.
-
-By year 17, either you're dead or the disease has a PhD.
+:::{.g-col-md-4 style="text-align: center;"}
+<span class="stat-number">10X</span>
+<span class="stat-label">FASTER</span>
+<p class="content-block" style="margin-top: 1rem;">Get treatments in 2-3 years instead of 17. By year 17, either you're dead or the disease has a PhD.</p>
 :::
 
-:::{.g-col-md-4 .card}
-### 100% TRANSPARENT
-
-Every failure published. Every success shared. Every dataset open.
-
-Because hiding knowledge is how you maximize corpses.
+:::{.g-col-md-4 style="text-align: center;"}
+<span class="stat-number">100%</span>
+<span class="stat-label">TRANSPARENT</span>
+<p class="content-block" style="margin-top: 1rem;">Every failure published. Every success shared. Every dataset open. Because hiding knowledge is how you maximize corpses.</p>
 :::
 
 ::::
@@ -173,43 +163,24 @@ Because hiding knowledge is how you maximize corpses.
 
 ::::{.grid}
 
-:::{.g-col-md-4 .card}
-### OXFORD ALREADY DID IT
-
-The RECOVERY trial tested 11,000 patients for $500 each.
-
-The FDA would have spent $41,000 per patient and taken 17 years.
-
-Oxford did it in months. During a pandemic. While everyone was dying.
-
-[82X cheaper. Proven. Not theoretical.](brain/book/appendix/recovery-trial.qmd)
+:::{.g-col-md-4 style="text-align: center;"}
+<span class="stat-number">82X</span>
+<span class="stat-label">PROVEN COST REDUCTION</span>
+<p class="content-block" style="margin-top: 1rem;">The RECOVERY trial did it for $500/patient. The FDA spends $41,000. This isn't theory. It's math. And dead bodies.</p>
+<a href="brain/book/appendix/recovery-trial.qmd" class="btn btn-outline-secondary" style="transform: rotate(-1deg);">See The Proof</a>
 :::
 
-:::{.g-col-md-4 .card}
-### THE MATH THAT BREAKS CALCULATORS
-
-Every $1 invested returns $463 in benefits.
-
-That's better than:
-- Smallpox eradication (280:1)
-- Childhood vaccines (13:1)
-- Selling organs (illegal but only 50:1)
-
-[See the actual math →](brain/book/appendix/dfda-cost-benefit-analysis.qmd)
+:::{.g-col-md-4 style="text-align: center;"}
+<span class="stat-number">463:1</span>
+<span class="stat-label">RETURN ON INVESTMENT</span>
+<p class="content-block" style="margin-top: 1rem;">Better than smallpox eradication (280:1) or selling organs (illegal, only 50:1). You literally profit from not dying.</p>
+<a href="brain/book/appendix/dfda-cost-benefit-analysis.qmd" class="btn btn-outline-secondary" style="transform: rotate(1deg);">See The Math</a>
 :::
 
-:::{.g-col-md-4 .card}
-### 25,000 LIVES PER YEAR
-
-That's 68 people not dying daily.
-
-Starting immediately.
-
-Exponentially growing as the system scales.
-
-By year 10, death becomes optional.*
-
-*Terms and conditions apply
+:::{.g-col-md-4 style="text-align: center;"}
+<span class="stat-number">25K</span>
+<span class="stat-label">LIVES SAVED / YEAR</span>
+<p class="content-block" style="margin-top: 1rem;">That's 68 people not dying daily, starting immediately. By year 10, death becomes optional.*<br/><small>*Terms and conditions apply</small></p>
 :::
 
 ::::
@@ -218,29 +189,7 @@ By year 10, death becomes optional.*
 
 ## HOW YOU FUND THIS DEATH-PREVENTION MACHINE {#funding-flow}
 
-```{mermaid}
-%%| fig-width: 8
-graph TB
-    A["1% TREATY<br/>$27B/year<br/>(Military's coffee budget)"] --> B["DIH TREASURY<br/>(Swiss bank account<br/>but for not dying)"]
-    B --> C["WISHOCRACY<br/>8 billion voters<br/>vs 200 bureaucrats"]
-    C --> D["PATIENT SUBSIDIES<br/>70%<br/>(Sick people choose)"]
-    C --> E["RESEARCH BOUNTIES<br/>20%<br/>(Pay for cures)"]
-    C --> F["INFRASTRUCTURE<br/>10%<br/>(Pipes for data)"]
-    D --> G["Patients vote<br/>with their bodies"]
-    E --> H["Scientists cure<br/>things for money"]
-    G --> I["HUMANITY<br/>STOPS<br/>DYING<br/>STUPIDLY"]
-    H --> I
-
-    style A fill:#000,stroke:#000,color:#fff,stroke-width:4px
-    style I fill:#000,stroke:#000,color:#fff,stroke-width:4px
-    style B fill:#fff,stroke:#000,stroke-width:4px
-    style C fill:#fff,stroke:#000,stroke-width:4px
-    style D fill:#fff,stroke:#000,stroke-width:4px
-    style E fill:#fff,stroke:#000,stroke-width:4px
-    style F fill:#fff,stroke:#000,stroke-width:4px
-    style G fill:#fff,stroke:#000,stroke-width:4px
-    style H fill:#fff,stroke:#000,stroke-width:4px
-```
+{{< include brain/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
 
 **HERE'S HOW YOU PAY FOR NOT DYING:**
 
@@ -266,7 +215,16 @@ It's capitalism's redemption arc: greed saving lives.
 
 ## THE dFDA: AMAZON FOR NOT DYING
 
-Here's the machine you build to run this system:
+Here's the machine you build to run this system. It provides two things humanity has never had: **Outcome Labels** (like nutrition facts for drugs) and **Treatment Rankings** (like Consumer Reports for medicine).
+
+::::{.grid .g-col-2}
+::: {.g-col-1}
+![Outcome Labels Example](assets/dfda-outcome-labels.png){fig-alt="An example of a dFDA Outcome Label for a fictional drug, showing clear data on cognitive improvements and side effects, similar to a nutrition facts label on food."}
+:::
+::: {.g-col-1}
+![Treatment Rankings Example](assets/dfda-comparative-effectiveness-ranking-search.png){fig-alt="An example of dFDA treatment rankings, showing a search for a condition and a list of treatments ranked by real-world effectiveness."}
+:::
+::::
 
 ::::{.grid}
 
