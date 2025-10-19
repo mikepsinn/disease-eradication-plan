@@ -645,9 +645,6 @@
   - 10-year NPV: $249 billion in value creation (enough to buy several small countries or one medium-sized tech company)
   - Comparison: Best hedge funds dream of 2:1 annual returns (we laugh at their poverty)
   - Real-world proof: Switzerland's $93K GDP per capita (what happens when you stop buying bombs for 200 years)
-- **Historical Peace Dividend Returns (Proven 3-4X GDP Multiplier)**
-  - The pattern: Every 1% reduction in military spending → 3-4% GDP growth
-  - The 1% Treaty: Conservative compared to history's proven peace dividends
 - **[FIGURE: 463:1 ROI Comparison]**
   - Bar chart comparing returns: S&P 500 (10%), Hedge funds (20%), Medallion Fund (39%), DIH (463:1)
   - DIH bar literally goes off the chart
