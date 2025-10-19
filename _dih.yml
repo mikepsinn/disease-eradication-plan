@@ -49,10 +49,9 @@ website:
 
 format:
   html:
-    theme: lux
-    css: styles.css
-    toc: true
-    toc-depth: 3
+    theme: none
+    css: dih-styles.css
+    toc: false
     link-external-newwindow: true
     mermaid:
       theme: neutral
