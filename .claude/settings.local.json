@@ -25,7 +25,8 @@
       "Bash(where:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(timeout 120 dir:*)"
+      "Bash(timeout 120 dir:*)",
+      "Bash(npm run build:dih)"
     ],
     "deny": [],
     "ask": []
