@@ -56,6 +56,60 @@ This is how you fund not just thousands of individual trials, but the entire eco
 
 ---
 
+### How You Build the Machine: The Legal and Financial Engine
+
+You don't just need a plan; you need a vehicle. The DIH is a hybrid system designed to use the tools of capitalism to build a post-capitalist health economy. It unfolds in three phases.
+
+**Phase 0: The Seed**
+Before you can raise a billion-dollar war chest, you need gas money. You start by establishing a **U.S.-based 501(c)(3) non-profit**. This is the legal entity that can accept initial, tax-deductible seed grants from foundations and early believers. The goal of this seed funding isn't to boil the ocean; it's to fund the essentials required to get to the next stage:
+*   **Legal Architecture:** Paying the lawyers to set up the for-profit entity and the Swiss foundation.
+*   **The Investment Case:** Building the materials and financial models for the [VICTORY Bonds](../appendix/victory-bonds.qmd).
+*   **Core Team:** Assembling the initial operators to run the campaign.
+
+And yes, using non-profit funds to create a for-profit entity is perfectly legal when it's the most effective tool to achieve the charitable mission. The 501(c)(3)'s mission is to end disease. Since it can't legally engage in the massive political lobbying required to pass the treaty, it funds the creation of a separate vehicle that *can*. It's not a conflict of interest; it's a strategic necessity. The for-profit is a weapon built by the non-profit to fight the war.
+
+This non-profit is the bootstrap loader for the entire system. It's the spark that lights the fuse.
+
+**Phase 1: The For-Profit Engine**
+With the legal groundwork laid, you launch the for-profit vehicle to raise a **$1 billion war chest** from investors. This isn't a charity; it's a high-risk, high-return investment in political and social change. This capital is used for three things:
+*   **Fund the Campaign:** A global media and lobbying effort to get the [1% Treaty](../solution/1-percent-treaty.qmd) signed.
+*   **Build the Platform:** The software for the [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd).
+*   **Cover Operations:** The administrative and technical costs to get the system running.
+
+**Phase 2: The Non-Profit Treasury**
+Once the treaty is signed, the $27 billion in annual funding flows into a **Swiss foundation**. This non-profit structure ensures the funds are managed transparently and used solely for their intended purpose: funding research and patient subsidies. It's legally firewalled from the for-profit engine and its investors, allowing it to accept treaty funds and donations without compromising the political action needed to create it.
+
+**The Full Value Flow**
+Here's how the entire system is designed to be self-sustaining and capture-proof:
+
+```mermaid
+graph TD
+    subgraph "Phase 0: Seed Funding"
+        A[Foundations & Donors] -- Seed Grants --> B{US 501(c)(3)};
+        B -- Funds --> C[Legal & For-Profit Setup];
+    end
+
+    subgraph "Phase 1: Capitalization"
+        C --> D{For-Profit Vehicle};
+        E[Investors] -- $1B War Chest --> D;
+        D -- Funds --> F[Lobbying & Referendum for 1% Treaty];
+        D -- Funds --> G[Platform Development (dFDA, Wishocracy)];
+    end
+    
+    subgraph "Phase 2: Ongoing Funding Cycle"
+        H[Governments] -- Sign --> I[1% Treaty];
+        I -- $27B/year --> J{Swiss Foundation (DIH Treasury)};
+        J -- 10% of inflows --> E;
+        J -- 90% of inflows --> K[Patient Subsidies & Research Bounties];
+        K --> L[Researchers & Clinical Trials];
+        L -- Cures & Data --> M[Humanity];
+    end
+```
+
+This structure separates the political and financial risk (the for-profit side) from the scientific and humanitarian mission (the non-profit side). It uses capitalism to build a system that transcends it.
+
+---
+
 ### The Result: A Revolution in Medicine
 
 This model isn't an improvement. It's a phase change.
