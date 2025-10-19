@@ -113,6 +113,30 @@
   - Special interest capture: Who writes the propositions?
   - Wishocracy solves this: Pairwise choices, not 50-item ballots
 
+### Public Choice Theory
+*Everyone Responds to Incentives*
+
+- **Politicians Optimize for Re-election, Not Long-term Outcomes**
+  - Time horizons: 2-year election cycles vs 20-year cures
+  - Blame avoidance > credit claiming (safer to do nothing)
+  - Their healthcare is government-provided (misaligned incentives with constituents)
+  - Concentrated benefits, diffuse costs (special interests win)
+- **The Interest Group Auction House**
+  - Defense contractors: $100M lobbying → $2T contracts
+  - You: Pay $1,000/year, too small to notice
+  - They organize, you don't (and never will)
+  - The lobbyist ROI: 1,813% returns (best investment ever)
+- **Bureaucrats: The Permanent Government**
+  - Budget maximization: Larger budgets = more influence and job security
+  - Risk minimization: Easier to avoid new initiatives than risk failure
+  - Employment protection: Difficult to remove = low accountability
+  - The iron law: Bureaucracies tend toward self-preservation over mission
+- **The Solution: Align Incentives or Continue Current Trajectory**
+  - Make curing disease more profitable than treating symptoms indefinitely
+  - Use the same lobbying system, redirected toward health outcomes
+  - Harness self-interest for public good (reliable motivation)
+  - Create concentrated benefits for producing cures rather than perpetuating disease
+
 ### Regulatory Capture
 *The Foxes Own All Henhouses*
 
@@ -125,37 +149,6 @@
   - Military spending = Defense contractor revenue streams
   - Chronic disease = Healthcare industry revenue ($4.5T industry incentivized for treatment over cures)
   - Every "failure" is someone's quarterly earnings success
-
-### The Body as a Machine
-*The Engineering Reality of Biology*
-
-- **The Engineering Reality of Biology**
-  - Heart: We replace it (artificial hearts work)
-  - Kidneys: We replace them (dialysis, transplants)
-  - Blood: We replace it (transfusions daily)
-  - Bones: We replace them (titanium upgrades)
-  - The pattern: Everything is replaceable
-- **DNA Is Just Code**
-  - 4 letters: ATCG (simpler than binary)
-  - Bugs: We can fix them (CRISPR)
-  - Updates: We can install them (gene therapy)
-  - Backup: We have stem cells
-- **Aging Is Just Damage**
-  - Telomeres shorten (we can lengthen)
-  - Cells senesce (we can clear them)
-  - Proteins misfold (we can refold)
-  - Mitochondria fail (we can replace)
-  - The conclusion: Aging is solvable
-- **We Fix Everything Else**
-  - 100-year-old cars: Still run with maintenance
-  - Ancient buildings: Standing after millennia
-  - Broken computers: We debug them
-  - Your body: Not special, just neglected
-- **The Only Barrier Is Resource Allocation**
-  - Not physics (biology obeys laws)
-  - Not knowledge (we know enough)
-  - Not technology (we have the tools)
-  - Just money going to bombs instead
 
 ### Central Planning Kills
 *Why Top-Down Control Fails*
@@ -190,31 +183,6 @@
   - Pre-1962 medicine: Doctors prescribed, patients decided
   - Software/Internet: No FDA = exponential innovation
   - Lasik/cosmetic surgery: Cash markets = 50% price drops
-
-
-### Public Choice Theory
-*Everyone Responds to Incentives*
-
-- **Politicians Optimize for Re-election, Not Long-term Outcomes**
-  - Time horizons: 2-year election cycles vs 20-year cures
-  - Blame avoidance > credit claiming (safer to do nothing)
-  - Their healthcare is government-provided (misaligned incentives with constituents)
-  - Concentrated benefits, diffuse costs (special interests win)
-- **The Interest Group Auction House**
-  - Defense contractors: $100M lobbying → $2T contracts
-  - You: Pay $1,000/year, too small to notice
-  - They organize, you don't (and never will)
-  - The lobbyist ROI: 1,813% returns (best investment ever)
-- **Bureaucrats: The Permanent Government**
-  - Budget maximization: Larger budgets = more influence and job security
-  - Risk minimization: Easier to avoid new initiatives than risk failure
-  - Employment protection: Difficult to remove = low accountability
-  - The iron law: Bureaucracies tend toward self-preservation over mission
-- **The Solution: Align Incentives or Continue Current Trajectory**
-  - Make curing disease more profitable than treating symptoms indefinitely
-  - Use the same lobbying system, redirected toward health outcomes
-  - Harness self-interest for public good (reliable motivation)
-  - Create concentrated benefits for producing cures rather than perpetuating disease
 
 
 ## Part II: The Solution
@@ -644,6 +612,162 @@
   - Data: We can prove what works
   - Urgency: People are literally dying
 
+### The Body as a Machine
+*The Engineering Reality of Biology*
+
+- **The Engineering Reality of Biology**
+  - Heart: We replace it (artificial hearts work)
+  - Kidneys: We replace them (dialysis, transplants)
+  - Blood: We replace it (transfusions daily)
+  - Bones: We replace them (titanium upgrades)
+  - The pattern: Everything is replaceable
+- **DNA Is Just Code**
+  - 4 letters: ATCG (simpler than binary)
+  - Bugs: We can fix them (CRISPR)
+  - Updates: We can install them (gene therapy)
+  - Backup: We have stem cells
+- **Aging Is Just Damage**
+  - Telomeres shorten (we can lengthen)
+  - Cells senesce (we can clear them)
+  - Proteins misfold (we can refold)
+  - Mitochondria fail (we can replace)
+  - The conclusion: Aging is solvable
+- **We Fix Everything Else**
+  - 100-year-old cars: Still run with maintenance
+  - Ancient buildings: Standing after millennia
+  - Broken computers: We debug them
+  - Your body: Not special, just neglected
+- **The Only Barrier Is Resource Allocation**
+  - Not physics (biology obeys laws)
+  - Not knowledge (we know enough)
+  - Not technology (we have the tools)
+  - Just money going to bombs instead
+
+### The Economic Case
+*A 463:1 ROI*
+
+- **The ROI That Breaks Reality**
+  - Investment: $40M annual platform cost (couch cushion money)
+  - Return: $50B annual savings from trial efficiency (real money)
+  - Annual ROI: 1,250:1 year-over-year ($50B/$40M)
+  - 10-year cumulative ROI: 463:1 accounting for build time
+  - **IMPORTANT DISTINCTION**: This is SOCIETAL return from dFDA efficiency, not your personal VICTORY bond returns (those are 40%)
+  - Translation: Every dollar spent makes society $463 richer (you personally get substantial returns at 40%)
+  - 10-year NPV: $249 billion in value creation (enough to buy several small countries or one medium-sized tech company)
+  - Comparison: Best hedge funds dream of 2:1 annual returns (we laugh at their poverty)
+  - Real-world proof: Switzerland's $93K GDP per capita (what happens when you stop buying bombs for 200 years)
+- **Historical Peace Dividend Returns (Proven 3-4X GDP Multiplier)**
+  - Post-WW2 (1945-1950): Cut military 30% of GDP → 8% annual growth for a decade
+  - Post-Cold War (1990-2000): Cut military 3% of GDP → Created the internet economy
+  - Switzerland (1815-2025): Kept military <1% of GDP → Highest quality of life on Earth
+  - The pattern: Every 1% reduction in military spending → 3-4% GDP growth
+  - The 1% Treaty: Conservative compared to history's proven peace dividends
+- **[FIGURE: 463:1 ROI Comparison]**
+  - Bar chart comparing returns: S&P 500 (10%), Hedge funds (20%), Medallion Fund (39%), DIH (463:1)
+  - DIH bar literally goes off the chart
+  - Impact: Makes the economic case undeniable
+- **DIH: The $100 Trillion Double-Dividend Company**
+  - Current titans: Apple ($3T), Microsoft ($3T), Saudi Aramco ($2T)
+  - DIH captures TWO massive dividends in one elegant model:
+    - **Peace Dividend**: $2.7T military budgets → DIH treaties (revenue stream)
+    - **Health Dividend**: $109.1T disease burden → productivity gains (value creation)
+  - The genius: Peace dividend funds the infrastructure, health dividend justifies expansion
+  - Revenue model: Government treaties, not fees (defense contractor playbook)
+  - Treaty progression: $27B → $270B → $2.7T as health outcomes prove the model
+  - Why $100T valuation? Capturing even 10% of health dividend = $10.9T annual value
+  - The feedback loop: Better health outcomes → bigger treaties → more cures → repeat
+  - We're defense contractors who cure instead of kill (same lobbying, opposite outcome)
+  - Platform strategy: dFDA free for everyone (like GPS military → civilian)
+  - Market failure reality: No individual can buy "world peace" or "disease eradication"
+  - First company to successfully monetize NOT killing people at global scale
+  - Why no one's done it: Couldn't coordinate 8 billion people (until Wishocracy)
+- **[FIGURE: The DIH Feedback Loop]**
+  - Circular diagram: Peace dividend → Funds trials → Health outcomes → Justifies bigger treaties → More peace dividend
+  - Shows exponential growth potential through positive feedback
+  - Impact: Shows how success compounds itself
+- **The Daily Holocaust of Inaction**
+  - Every day we wait: $137 million burned in inefficiency
+  - Every day we wait: 2,301 Quality-Adjusted Life Years lost
+  - That's 840,000 QALYs lost annually (a mid-sized city dying)
+  - Each hour: $5.7 million wasted, 96 people's life-years gone
+  - While you read this sentence: $66,000 vanished, someone's year of life lost
+- **[FIGURE: Death Toll Counter]**
+  - Live counter showing deaths and economic loss WHILE YOU READ THIS PAGE
+  - Updates in real-time: "150,671 people died of preventable disease since you started reading"
+  - Impact: Makes inaction feel criminal
+- **The Dominant Intervention (Saves Money AND Lives)**
+  - ICER: -$59,501 per QALY (negative = you profit while saving lives)
+  - Normal interventions: Pay $50,000-150,000 per QALY
+  - This intervention: GET PAID $59,501 per life-year saved
+  - No trade-off between money and health (both improve)
+  - First time in history: Healing is more profitable than harming
+- **Prevention Economics: The 3X Multiplier**
+  - Current prevention spending: 5% of healthcare (pathetic)
+  - Prevention ROI: Every $1 spent saves $3 in treatment
+  - Double prevention spending: $615B annual savings
+  - Preventative approach potential: $360B in healthcare savings (proven by data)
+  - Early detection via dFDA: Catching cancer at Stage 1 vs 4 = 90% cost reduction
+  - Behavioral intervention: $100 app prevents $10,000 surgery
+- **The $100 Billion Market**
+  - Global clinical trial market: $100B annually
+  - 50% efficiency gain: $50B annual savings (conservative estimate)
+  - Best case (95% reduction like RECOVERY): $95B annual savings
+  - These aren't projections - Oxford already proved it works
+  - Market capture: Even 10% adoption = $5B value creation
+- **The Combined $142 Billion Annual Win**
+  - Peace Dividend: $92B from 1% less conflict
+  - dFDA Savings: $50B from trial efficiency
+  - Total Direct Benefit: $142B every year
+  - This is before any multiplier effects
+  - Equivalent to ending world hunger 14 times over annually
+- **The $16.5 Trillion Endgame (When Everything Compounds)**
+  - Direct savings: $155.5B/year (military + trials + allocation)
+  - Health value created: $126B/year (840,000 QALYs)
+  - Economic multiplier effects: $16.2T/year when mature
+    - Healthy people work more: +$8.4T productivity
+    - No refugee crises: +$1.5T saved
+    - Infrastructure preserved: +$1.9T not destroyed
+    - Global trade flows: +$2.4T commerce
+    - Innovation compounds: +$2.0T new industries
+  - Total Annual Value at maturity: $16.5 TRILLION
+  - That's more than China's entire GDP
+  - ROI: 25,781:1 (not a typo)
+- **The Compound Growth Timeline**
+  - Year 1: $142B direct benefit (pays for itself 220x over)
+  - Year 5: ~$1T as network effects kick in
+  - Year 10: ~$5T as health improvements compound
+  - Year 20: Full $16.5T annual value realized
+  - Every year we delay: $142B in immediate benefits lost forever
+
+### Your ROI
+*Health, Wealth, and Freedom*
+
+- **Economic Security**
+  - Subsidized treatment: Dynamic vouchers for dFDA trials
+  - Healthcare access: No more medical bankruptcy
+  - Investment opportunity: VICTORY bonds at 40%+ perpetual
+  - Job creation: Research and healthcare jobs
+  - Economic growth: From health innovation
+- **Health Returns**
+  - Your cancer: Prevented before it starts (or cured if you have it)
+  - Your depression: Actually fixed (not just numbed with SSRIs)
+  - Your aging: Reversed (choose your biological age)
+  - Your genetics: Debugged like software
+  - Your lifespan: +50-100 healthy years (death optional by 2040)
+  - Healthcare cost: $0 (covered by $WISH economy)
+  - Insurance premiums: $0 (insurance companies extinct)
+- **Freedom Returns**
+  - Direct vote on health spending priorities
+  - No more insurance paperwork
+  - No more job you hate (new opportunities)
+  - No more medical bankruptcy
+  - No more unnecessary death
+- **Power Returns**
+  - Direct funding power (your high-level proposals compete equally)
+  - No more "representatives" or gatekeepers controlling the treasury
+  - Equal to every other human (1 person = 1 allocation power)
+  - Co-creator of humanity's health budget priorities
+
 ### Path A: Idiocracy
 *The Dystopian Default (If We Do Nothing)*
 
@@ -783,131 +907,6 @@
   - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
 
-### The Economic Case
-*A 463:1 ROI*
-
-- **The ROI That Breaks Reality**
-  - Investment: $40M annual platform cost (couch cushion money)
-  - Return: $50B annual savings from trial efficiency (real money)
-  - Annual ROI: 1,250:1 year-over-year ($50B/$40M)
-  - 10-year cumulative ROI: 463:1 accounting for build time
-  - **IMPORTANT DISTINCTION**: This is SOCIETAL return from dFDA efficiency, not your personal VICTORY bond returns (those are 40%)
-  - Translation: Every dollar spent makes society $463 richer (you personally get substantial returns at 40%)
-  - 10-year NPV: $249 billion in value creation (enough to buy several small countries or one medium-sized tech company)
-  - Comparison: Best hedge funds dream of 2:1 annual returns (we laugh at their poverty)
-  - Real-world proof: Switzerland's $93K GDP per capita (what happens when you stop buying bombs for 200 years)
-- **Historical Peace Dividend Returns (Proven 3-4X GDP Multiplier)**
-  - Post-WW2 (1945-1950): Cut military 30% of GDP → 8% annual growth for a decade
-  - Post-Cold War (1990-2000): Cut military 3% of GDP → Created the internet economy
-  - Switzerland (1815-2025): Kept military <1% of GDP → Highest quality of life on Earth
-  - The pattern: Every 1% reduction in military spending → 3-4% GDP growth
-  - The 1% Treaty: Conservative compared to history's proven peace dividends
-- **[FIGURE: 463:1 ROI Comparison]**
-  - Bar chart comparing returns: S&P 500 (10%), Hedge funds (20%), Medallion Fund (39%), DIH (463:1)
-  - DIH bar literally goes off the chart
-  - Impact: Makes the economic case undeniable
-- **DIH: The $100 Trillion Double-Dividend Company**
-  - Current titans: Apple ($3T), Microsoft ($3T), Saudi Aramco ($2T)
-  - DIH captures TWO massive dividends in one elegant model:
-    - **Peace Dividend**: $2.7T military budgets → DIH treaties (revenue stream)
-    - **Health Dividend**: $109.1T disease burden → productivity gains (value creation)
-  - The genius: Peace dividend funds the infrastructure, health dividend justifies expansion
-  - Revenue model: Government treaties, not fees (defense contractor playbook)
-  - Treaty progression: $27B → $270B → $2.7T as health outcomes prove the model
-  - Why $100T valuation? Capturing even 10% of health dividend = $10.9T annual value
-  - The feedback loop: Better health outcomes → bigger treaties → more cures → repeat
-  - We're defense contractors who cure instead of kill (same lobbying, opposite outcome)
-  - Platform strategy: dFDA free for everyone (like GPS military → civilian)
-  - Market failure reality: No individual can buy "world peace" or "disease eradication"
-  - First company to successfully monetize NOT killing people at global scale
-  - Why no one's done it: Couldn't coordinate 8 billion people (until Wishocracy)
-- **[FIGURE: The DIH Feedback Loop]**
-  - Circular diagram: Peace dividend → Funds trials → Health outcomes → Justifies bigger treaties → More peace dividend
-  - Shows exponential growth potential through positive feedback
-  - Impact: Shows how success compounds itself
-- **The Daily Holocaust of Inaction**
-  - Every day we wait: $137 million burned in inefficiency
-  - Every day we wait: 2,301 Quality-Adjusted Life Years lost
-  - That's 840,000 QALYs lost annually (a mid-sized city dying)
-  - Each hour: $5.7 million wasted, 96 people's life-years gone
-  - While you read this sentence: $66,000 vanished, someone's year of life lost
-- **[FIGURE: Death Toll Counter]**
-  - Live counter showing deaths and economic loss WHILE YOU READ THIS PAGE
-  - Updates in real-time: "150,671 people died of preventable disease since you started reading"
-  - Impact: Makes inaction feel criminal
-- **The Dominant Intervention (Saves Money AND Lives)**
-  - ICER: -$59,501 per QALY (negative = you profit while saving lives)
-  - Normal interventions: Pay $50,000-150,000 per QALY
-  - This intervention: GET PAID $59,501 per life-year saved
-  - No trade-off between money and health (both improve)
-  - First time in history: Healing is more profitable than harming
-- **Prevention Economics: The 3X Multiplier**
-  - Current prevention spending: 5% of healthcare (pathetic)
-  - Prevention ROI: Every $1 spent saves $3 in treatment
-  - Double prevention spending: $615B annual savings
-  - Preventative approach potential: $360B in healthcare savings (proven by data)
-  - Early detection via dFDA: Catching cancer at Stage 1 vs 4 = 90% cost reduction
-  - Behavioral intervention: $100 app prevents $10,000 surgery
-- **The $100 Billion Market**
-  - Global clinical trial market: $100B annually
-  - 50% efficiency gain: $50B annual savings (conservative estimate)
-  - Best case (95% reduction like RECOVERY): $95B annual savings
-  - These aren't projections - Oxford already proved it works
-  - Market capture: Even 10% adoption = $5B value creation
-- **The Combined $142 Billion Annual Win**
-  - Peace Dividend: $92B from 1% less conflict
-  - dFDA Savings: $50B from trial efficiency
-  - Total Direct Benefit: $142B every year
-  - This is before any multiplier effects
-  - Equivalent to ending world hunger 14 times over annually
-- **The $16.5 Trillion Endgame (When Everything Compounds)**
-  - Direct savings: $155.5B/year (military + trials + allocation)
-  - Health value created: $126B/year (840,000 QALYs)
-  - Economic multiplier effects: $16.2T/year when mature
-    - Healthy people work more: +$8.4T productivity
-    - No refugee crises: +$1.5T saved
-    - Infrastructure preserved: +$1.9T not destroyed
-    - Global trade flows: +$2.4T commerce
-    - Innovation compounds: +$2.0T new industries
-  - Total Annual Value at maturity: $16.5 TRILLION
-  - That's more than China's entire GDP
-  - ROI: 25,781:1 (not a typo)
-- **The Compound Growth Timeline**
-  - Year 1: $142B direct benefit (pays for itself 220x over)
-  - Year 5: ~$1T as network effects kick in
-  - Year 10: ~$5T as health improvements compound
-  - Year 20: Full $16.5T annual value realized
-  - Every year we delay: $142B in immediate benefits lost forever
-
-### Your ROI
-*Health, Wealth, and Freedom*
-
-- **Economic Security**
-  - Subsidized treatment: Dynamic vouchers for dFDA trials
-  - Healthcare access: No more medical bankruptcy
-  - Investment opportunity: VICTORY bonds at 40%+ perpetual
-  - Job creation: Research and healthcare jobs
-  - Economic growth: From health innovation
-- **Health Returns**
-  - Your cancer: Prevented before it starts (or cured if you have it)
-  - Your depression: Actually fixed (not just numbed with SSRIs)
-  - Your aging: Reversed (choose your biological age)
-  - Your genetics: Debugged like software
-  - Your lifespan: +50-100 healthy years (death optional by 2040)
-  - Healthcare cost: $0 (covered by $WISH economy)
-  - Insurance premiums: $0 (insurance companies extinct)
-- **Freedom Returns**
-  - Direct vote on health spending priorities
-  - No more insurance paperwork
-  - No more job you hate (new opportunities)
-  - No more medical bankruptcy
-  - No more unnecessary death
-- **Power Returns**
-  - Direct funding power (your high-level proposals compete equally)
-  - No more "representatives" or gatekeepers controlling the treasury
-  - Equal to every other human (1 person = 1 allocation power)
-  - Co-creator of humanity's health budget priorities
-
 ### Demolishing Objections
 *Answering the Critics*
 
@@ -964,6 +963,42 @@
   - Our "war" is actually a peace treaty with biology
   - The War on Disease is really the Market for Health
 
+## Part IV: The Plan
+
+*The complete roadmap from idea to reality*
+
+### Legal Architecture
+*A Multi-Jurisdiction Strategy*
+- Swiss foundation: Neutral base of operations
+- Delaware C-corp: US operations
+- Singapore entity: Asian operations
+- Multiple legal structures: Risk distribution
+- Regulatory arbitrage: Always have options
+
+### Securities Law
+*Navigating the Regulations*
+- VICTORY bonds: Structured as debt, not equity
+- Qualified purchaser exemptions
+- No public offering until approved
+- Full SEC compliance from day one
+- Best lawyers money can buy (and it will)
+
+### Election Law
+*Ensuring Compliance*
+- Independent expenditures only (no coordination)
+- Separate entity for political action
+- Full FEC disclosure (radical transparency)
+- State-by-state compliance (50 different laws)
+- Citizens United: Corporations are people (use it)
+
+### Treaty Framework
+*Building the International Agreement*
+- International law expertise
+- Vienna Convention compliance
+- Bilateral agreements first (easier)
+- Build to multilateral (inevitable)
+- Enforcement mechanisms built in
+
 ### The Investment Vehicle
 *VICTORY Bonds*
 
@@ -1003,42 +1038,6 @@
   - $75M: Operations and contingency
   - $25M: Reserve for treaty implementation
   - Full transparency: Every dollar tracked publicly
-
-## Part IV: The Plan
-
-*The complete roadmap from idea to reality*
-
-### Legal Architecture
-*A Multi-Jurisdiction Strategy*
-- Swiss foundation: Neutral base of operations
-- Delaware C-corp: US operations
-- Singapore entity: Asian operations
-- Multiple legal structures: Risk distribution
-- Regulatory arbitrage: Always have options
-
-### Securities Law
-*Navigating the Regulations*
-- VICTORY bonds: Structured as debt, not equity
-- Qualified purchaser exemptions
-- No public offering until approved
-- Full SEC compliance from day one
-- Best lawyers money can buy (and it will)
-
-### Election Law
-*Ensuring Compliance*
-- Independent expenditures only (no coordination)
-- Separate entity for political action
-- Full FEC disclosure (radical transparency)
-- State-by-state compliance (50 different laws)
-- Citizens United: Corporations are people (use it)
-
-### Treaty Framework
-*Building the International Agreement*
-- International law expertise
-- Vienna Convention compliance
-- Bilateral agreements first (easier)
-- Build to multilateral (inevitable)
-- Enforcement mechanisms built in
 
 ### Legislation Package
 *The Bills to Pass*
