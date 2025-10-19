@@ -174,13 +174,13 @@ years_to_victory = float('inf')  # Never
 
 ### War on Disease (Current)
 ```python
-annual_spending = 68_000_000_000 # [1]
-annual_deaths = 55_000_000 # [2]
+annual_spending = 68_000_000_000 # [3]
+annual_deaths = 55_000_000 # [4]
 victory_condition = None  # No end state (pharma wants recurring revenue)
 years_to_victory = float('inf')  # Never
 ```
-[1]: ../references.qmd#global-gov-med-research-spending
-[2]: ../references.qmd#who-daily-deaths
+[3]: ../references.qmd#global-gov-med-research-spending
+[4]: ../references.qmd#who-daily-deaths
 
 ### War on Disease (Redesigned)
 ```python
