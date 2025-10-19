@@ -62,10 +62,10 @@ Where:
 
 - M<sub>spending</sub> = \$2,718B (verified via [SIPRI database](../references.qmd#sipri-2024-spending))
 - I<sub>damage</sub> = [\$1,875B](../references.qmd#reconstruction-costs-active-conflicts) (reconstruction cost estimates from 47 active conflicts)
-- H<sub>casualties</sub> = [\$1,000B](../references.qmd#acled-active-combat-deaths) ([100,000 deaths](../references.qmd#acled-active-combat-deaths) × \$10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation))
+- H<sub>casualties</sub> = [\$2,336B](../references.qmd#acled-active-combat-deaths) ([233,600 deaths](../references.qmd#acled-active-combat-deaths) × \$10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation))
 - T<sub>disruption</sub> = [\$616B](../references.qmd#world-bank-trade-disruption-conflict) ([World Bank trade flow analysis](https://openknowledge.worldbank.org/handle/10986/37015))
 
-**C<sub>direct</sub> = \$6,209 billion annually**
+**C<sub>direct</sub> = \$7,545 billion annually**
 
 This means every second of every day, humanity spends \$196,900 on the tools and consequences of killing each other.
 While you read this sentence, we spent about \$985.
@@ -81,15 +81,15 @@ Let's be conservative and use \$10 million.
 
 | Conflict Type | Deaths/Year | Cost per Death | Annual Cost | Source |
 |--------------|-------------|----------------|-------------|---------|
-| Active Combat | [89,000](../references.qmd#acled-active-combat-deaths) | $10,000,000 | $890B | [Armed Conflict Location & Event Data](https://acleddata.com/) |
+| Active Combat | [233,600](../references.qmd#acled-active-combat-deaths) | $10,000,000 | $2,336B | [Armed Conflict Location & Event Data](https://acleddata.com/) |
 | Terror Attacks | [8,300](../references.qmd#gtd-terror-attack-deaths) | $10,000,000 | $83B | [Global Terrorism Database](https://www.start.umd.edu/gtd/) |
 | State Violence | [2,700](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | $27B | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
 
-**Total Human Cost: [\$1,000 billion](../references.qmd#acled-active-combat-deaths) annually**
+**Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually**
 
-One hundred thousand people die in conflicts each year.
-That's 274 people every day.
-One every 5.3 minutes.
+244,600 people die in conflicts each year.
+That's 670 people every day.
+One every 2.2 minutes.
 Each worth \$10 million, apparently.
 
 ## Infrastructure Destruction: Breaking Things Costs Money
@@ -242,11 +242,11 @@ Let us sum our magnificent obsession with organized violence:
 ### Direct Costs Summary
 | Category | Amount (Billions) | Percentage | Daily Rate |
 |----------|------------------|------------|------------|
-| Military Expenditure | \$2,718.0 | 43.8% | \$7.45B |
-| Infrastructure Destruction | \$1,875.0 | 30.2% | \$5.14B |
-| Human Life Losses | \$1,000.0 | 16.1% | \$2.74B |
-| Trade Disruption | \$616.0 | 9.9% | \$1.69B |
-| **Direct Subtotal** | **\$6,209.0** | **100%** | **\$17.02B** |
+| Military Expenditure | \$2,718.0 | 36.0% | \$7.45B |
+| Human Life Losses | \$2,446.0 | 32.4% | \$6.70B |
+| Infrastructure Destruction | \$1,875.0 | 24.9% | \$5.14B |
+| Trade Disruption | \$616.0 | 8.2% | \$1.69B |
+| **Direct Subtotal** | **\$7,655.0** | **100%** | **\$20.97B** |
 
 ### Indirect Costs Summary
 | Category | Amount (Billions) | Percentage | Daily Rate |
@@ -261,20 +261,20 @@ Let us sum our magnificent obsession with organized violence:
 
 ### Ultimate Total
 
-**C<sub>total</sub> = C<sub>direct</sub> + C<sub>indirect</sub> = \$6,209.0B + \$3,700.1B = \$9,909.1 billion**
+**C<sub>total</sub> = C<sub>direct</sub> + C<sub>indirect</sub> = \$7,655.0B + \$3,700.1B = \$11,355.1 billion**
 
-That's \$9.7 trillion.
+That's \$11.4 trillion.
 Annually.
 Every year.
 
 ### Per Capita Mathematics: What War Costs You
 
 Current global population: [8.0 billion humans](../references.qmd#global-population-8-billion)
-Annual war cost per person: \$9,747.1B ÷ 8.0B = \$1,218.39
+Annual war cost per person: \$11,355.1B ÷ 8.0B = \$1,419.39
 
-Over an 80-year lifetime: \$1,218.39 × 80 = \$97,471.20
+Over an 80-year lifetime: \$1,419.39 × 80 = \$113,551.20
 
-So war costs each human approximately \$97,500 over their lifetime.
+So war costs each human approximately \$113,500 over their lifetime.
 That's a decent car.
 Or a year at a private university.
 Or the down payment on a house.
@@ -283,23 +283,23 @@ Instead, we spend it on getting very good at killing each other.
 
 ## Statistical Perspectives: Putting Numbers in Context
 
-To understand the scale of \$9.7 trillion annually:
+To understand the scale of \$11.4 trillion annually:
 
 - It is more than the entire GDP of Japan and Germany combined
-- It's 10.8% of global GDP ([\$89.5 trillion in 2023](../references.qmd#global-gdp-2023))
-- It's [144 times](../references.qmd#who-budget-comparison) the budget of the [World Health Organization](https://www.who.int/about/funding)
-- It could [eliminate extreme poverty globally 9.7 times over](../references.qmd#world-bank-poverty-eradication-cost)
-- It's enough to give every person on Earth \$1,218 per year
+- It's 12.7% of global GDP ([\$89.5 trillion in 2023](../references.qmd#global-gdp-2023))
+- It's [168 times](../references.qmd#who-budget-comparison) the budget of the [World Health Organization](https://www.who.int/about/funding)
+- It could [eliminate extreme poverty globally 11.4 times over](../references.qmd#world-bank-poverty-eradication-cost)
+- It's enough to give every person on Earth \$1,419 per year
 
-If we stacked \$9.7 trillion in \$100 bills, the stack would be [nearly the diameter of the Earth](../references.qmd#us-currency-thickness).
+If we stacked \$11.4 trillion in \$100 bills, the stack would be [larger than the diameter of the Earth](../references.qmd#us-currency-thickness).
 
 ## The Grotesque Mathematics of Misallocation
 
 The final equation is simple:
 
-**Efficiency<sub>war</sub> = Deaths<sub>produced</sub> ÷ Dollars<sub>spent</sub> = 100,000 ÷ \$9.7T = 0.000010 deaths per dollar**
+**Efficiency<sub>war</sub> = Deaths<sub>produced</sub> ÷ Dollars<sub>spent</sub> = 244,600 ÷ \$11.4T = 0.000021 deaths per dollar**
 
-Or, inverted: **\$97 million per death produced**
+Or, inverted: **\$46.4 million per death produced**
 
 We have created the most expensive way possible to end human lives.
 
@@ -308,7 +308,7 @@ Meanwhile:
 - Global medical research: [\$67.5 billion](../references.qmd#global-gov-med-research-spending) (saves an estimated [4.2 million lives annually](../references.qmd#medical-research-lives-saved-annually))
 - Cost per life saved: \$16,071
 
-We're spending 5,728 times more per death than we spend per life saved.
+We're spending 2,889 times more per death than we spend per life saved.
 
 The mathematics of human priorities would be fascinating if it weren't so perfectly, tragically absurd.
 
@@ -326,4 +326,4 @@ When you consider the secondary effects of war, the total costs explode:
 
 {{< include ../../figures/war-hidden-direct-curing-diseases-column-chart.qmd >}}
 
-**Total true cost of war: \$9.7 trillion every single year.**
+**Total true cost of war: \$11.4 trillion every single year.**
