@@ -87,7 +87,7 @@ Designed to prevent lawsuits, not save lives.
 
 The FDA's own economists calculated that delays in drug approval cost lives:
 
-- **Beta-blockers delay:** Gieringer (1985) estimated 10,000+ excess deaths per year during the decade-long delay
+- **Beta-blockers delay:** [Gieringer (1985) estimated 10,000+ excess deaths per year during the decade-long delay](../references.qmd#fda-drug-lag-deaths-estimate)
 - **Total beta-blocker deaths:** [~100,000 Americans](../references.qmd#beta-blocker-deaths)
 
 That's more Americans than died in Vietnam and Korea combined.
@@ -101,15 +101,15 @@ The historical data is damning, but this isn't a problem of the past. Here is a 
 
 #### Executive Summary
 
-Depression is the leading global cause of disability and the strongest behavioral predictor of suicide. Existing antidepressant drugs fail to achieve remission in about **two-thirds of patients**, and pharmacologic innovation has stagnated. Closed-loop neuromodulation—implantable or wearable systems that sense neural activity and adjust stimulation in real time—has shown **response rates of 60–80 %** in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
+[Depression is the leading global cause of disability](../references.qmd#depression-leading-cause-disability) and the strongest behavioral predictor of suicide. Existing antidepressant drugs [fail to achieve remission in about **two-thirds of patients**](../references.qmd#antidepressant-failure-rate-stard), and pharmacologic innovation has stagnated. Closed-loop neuromodulation—implantable or wearable systems that sense neural activity and adjust stimulation in real time—has shown [**response rates of 60–80 %**](../references.qmd#neuromodulation-trd-response-rates) in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
 Yet under current FDA and EMA processes, large-scale availability is unlikely before **2035**. A utilitarian cost-benefit model indicates that this delay will cost **≈5–10 million lives** and **≈100 million quality-adjusted life-years (QALYs)** globally.
 
 #### 1. Scale of the Problem
 
 | Metric                                                              | Value               | Source                        |
 | ------------------------------------------------------------------- | ------------------- | ----------------------------- |
-| Global major-depressive-disorder prevalence                         | ~280 million people | WHO 2023                      |
-| Annual suicides                                                     | ~700 000            | WHO 2023                      |
+| Global major-depressive-disorder prevalence                         | ~280 million people | [WHO 2023](../references.qmd#depression-prevalence-280m)                      |
+| Annual suicides                                                     | ~700 000            | [WHO 2023](../references.qmd#suicide-deaths-vs-war-deaths)                      |
 | Suicide attributable to untreated or treatment-resistant depression | 70 %                | CDC, WHO meta-analyses        |
 | Mean age of death                                                   | 40 y                | Global Burden of Disease      |
 | Average lost QALYs per suicide                                      | 35                  | conservative midlife estimate |
@@ -208,8 +208,8 @@ It's like testing car safety using only crash test dummies, then being surprised
 
 Here's a fun fact that should be criminal:
 
-- **Negative trial results published:** [37%](../references.qmd#publication-bias)
-- **Positive trial results published:** [94%](https://www.nejm.org/doi/full/10.1056/NEJMsa065779)
+- **Negative trial results published:** [37%](../references.qmd#publication-bias-clinical-trials)
+- **Positive trial results published:** [94%](../references.qmd#publication-bias-clinical-trials)
 - **Money wasted repeating failed experiments:** [~\$100 billion annually](../references.qmd#wasted-spending-on-failed-experiments)
 
 Companies are literally allowed to hide when drugs don't work.
@@ -291,7 +291,7 @@ And isn't that what really matters?
 
 ## A Brief History of Medical Bureaucracy (A Horror Story)
 
-In 1962, some pregnant women took a drug called thalidomide and their babies were born looking like adorable flippers. This was bad.
+In 1962, some pregnant women took a drug called [thalidomide](../references.qmd#thalidomide-birth-defects) and their babies were born looking like adorable flippers. This was bad.
 
 So Congress, in its infinite wisdom, decided the solution was to make ALL drugs take 17 years to approve and cost [$2.2 billion](../references.qmd#drug-development-costs).
 
@@ -383,7 +383,7 @@ Meanwhile, if you have Exploding Kidney Syndrome affecting 37 people worldwide, 
 
 ### 📊 Problem 5: We Hide Our Failures Like Soviet Russia
 
-**[Half of all clinical trials never publish their results](https://www.nejm.org/doi/full/10.1056/NEJMsa065779)**.
+**[Half of all clinical trials never publish their results](../references.qmd#publication-bias-clinical-trials)**.
 
 Company: "We tested this drug!"
 FDA: "Did it work?"
