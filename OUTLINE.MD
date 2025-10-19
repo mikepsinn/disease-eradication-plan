@@ -47,7 +47,6 @@
 - **The War on Humanity We're Losing**
   - $2.7T annual military spending globally
   - We spend 40X more on killing than curing
-  - Eisenhower warned us: "Every gun made, every warship launched, every rocket fired signifies theft from those who hunger"
   - Direct costs: $2.7T on weapons that rust in warehouses
   - We spend 162X more on military than brain research
   - The Pentagon: Lost $2.46T with no accountability
@@ -862,37 +861,10 @@
   - **Super-Wellbeing maximized:** Paradise is default, suffering is archaeology
   - **Super-Longevity infinite:** Death is a choice, not a sentence
   - **Super-Intelligence unbounded:** Consciousness can expand to cosmic scale
-  - All diseases: Curable or preventable
-  - Biological immortality achieved, backup consciousness available
   - We cure death, solve physics, talk to aliens
   - Next challenge: Which galaxy to colonize first
 
 
-### Two Futures
-*The Choice Before Us*
-
-**[VIDEO: Carl Sagan's "Pale Blue Dot" - The Stakes of Our Choice]**
-*"On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives."*
-
-- **Idiocracy 2050: The Three Subs (Subhuman Degradation)**
-  - **Sub-Intelligence:** IQ dropping, education collapsed, truth unknowable
-  - **Sub-Longevity:** Life expectancy 35 years, diseases resurging, medicine gone
-  - **Sub-Wellbeing:** 80% mentally ill, constant fear, suffering normalized
-  - Humanity degraded below baseline in every measure
-  - Evolution running backward at digital speed
-- **Wishonia 2050: The Three Supers (Transcendent Evolution)**
-  - **Super-Intelligence:** Cosmic consciousness, instant knowledge, hive mind optional
-  - **Super-Longevity:** Immortality standard, death optional, backup consciousness
-  - **Super-Wellbeing:** Bliss baseline, programmable emotions, suffering extinct
-  - Humanity transcended beyond biological limits
-  - Evolution accelerating at exponential speed
-- **The Delta: Infinite Divergence**
-  - Same species, same year, opposite outcomes
-  - Difference: One 1% budget reallocation in 2026
-  - Idiocracy kept funding the War on Humanity ($2.7T), got extinction
-  - Wishonia switched to the War on Disease ($2.7T), got transcendence
-  - The choice: Keep killing each other or start curing each other
-  - You're voting on which timeline becomes real
 
 ### Demolishing Objections
 *Answering the Critics*
