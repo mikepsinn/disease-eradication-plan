@@ -235,9 +235,9 @@
   - Create concentrated benefits for producing cures rather than perpetuating disease
 
 
-## Solutions
+## Part II: The Solution
 
-*Your Step-by-Step Solution*
+*The systems you will build*
 
 ### How to Create and Pass the 1% Treaty
 
@@ -520,7 +520,7 @@
   - Your kid's rare disease: Finally profitable to cure
   - Mental health: No longer the ugly stepchild of medicine
 
-## Proof
+## Part III: The Case
 
 *Your Evidence Arsenal (Use These Examples to Convince Others)*
 
@@ -579,10 +579,6 @@
   - Money: Subsidized healthcare creates participation incentive
   - Data: We can prove what works
   - Urgency: People are literally dying
-
-## The Future
-
-*Choose Your Own Adventure - Idiocracy or Wishonia*
 
 ### Path A - Idiocracy - The Dystopian Default (If We Do Nothing)
 
@@ -719,10 +715,6 @@
   - Wishonia switched to the War on Disease ($2.7T), got transcendence
   - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
-
-## Economics
-
-*How to Fund This and Make Humanity a Fortune*
 
 ### How to Make the Economic Case (The 463:1 ROI)
 
