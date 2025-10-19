@@ -14,9 +14,11 @@ async function main() {
   const allStaleFiles = await getStaleFiles('lastStructureCheckHash', 'brain/book');
 
   // Filter to only include main chapter files that are stale
-  const staleFilesToCheck = allStaleFiles.filter(file =>
-    mainChapterFiles.some(chapterPath => file.includes(chapterPath))
-  );
+  // Normalize paths to use forward slashes for comparison (cross-platform)
+  const staleFilesToCheck = allStaleFiles.filter(file => {
+    const normalizedFile = file.replace(/\\/g, '/');
+    return mainChapterFiles.some(chapterPath => normalizedFile.includes(chapterPath));
+  });
 
   console.log(`\nFound ${staleFilesToCheck.length} stale MAIN CHAPTER files to structure-check\n`);
 
