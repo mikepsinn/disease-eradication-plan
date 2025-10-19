@@ -17,80 +17,71 @@ book:
     - text: "🚀 Start Here"
       href: index.qmd
 
-    - part: "Problems" #: Everyone You Love Is Dying While We Build Skynet"
+    - part: "Part I: The Problem"
       chapters:
-        - brain/book/problem.qmd  # Overview
-        - brain/book/problem/the-daily-massacre.qmd  # 150,000 deaths/day
-        - brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd  # NIH failure
-        - brain/book/problem/fda-is-unsafe-and-ineffective.qmd  # 82X more expensive, 17 years
-        - brain/book/problem/cost-of-war.qmd  # $2.7T on killing
-        - brain/book/problem/cost-of-disease.qmd  # $109T burden
-        - brain/book/problem/the-119-trillion-death-toilet.qmd  # Total waste visualization
-        - brain/book/problem/unrepresentative-democracy.qmd  # Princeton study
-        - brain/book/problem/regulatory-capture.qmd  # Foxes guarding henhouses
-        - brain/book/problem/genetic-slavery.qmd  # Why we're wired for war
+        - brain/book/problem.qmd  # Part I Intro
+        - brain/book/problem/the-daily-massacre.qmd # Daily Holocaust
+        - brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd # The NIH
+        - brain/book/problem/fda-is-unsafe-and-ineffective.qmd # The FDA
+        - brain/book/problem/cost-of-war.qmd # Cost of War
+        - brain/book/problem/cost-of-disease.qmd # Cost of Disease
+        - brain/book/problem/the-119-trillion-death-toilet.qmd # Humanity's Budget
+        - brain/book/problem/unrepresentative-democracy.qmd # Democracy Is Theater
+        - brain/book/theory/public-choice.qmd # Public Choice Theory
+        - brain/book/problem/regulatory-capture.qmd # Regulatory Capture
+        - brain/book/theory/central-planning-kills.qmd # Central Planning Kills
+        - brain/book/problem/genetic-slavery.qmd # Not in OUTLINE.MD
 
-    - part: "Theory" # (Why Markets Work and Democracy Doesn't)"
+    - part: "Part II: The Solution"
       chapters:
-        - brain/book/theory.qmd
-        - brain/book/theory/central-planning-kills.qmd  # FDA's 82X inefficiency
-        - brain/book/theory/the-two-wars.qmd  # War on Humanity vs Disease
-        - brain/book/theory/public-choice.qmd  # Everyone's selfish, use it
+        - brain/book/solution.qmd # Part II Intro
+        - brain/book/solution/1-percent-treaty.qmd # The 1% Treaty
+        - brain/book/solution/dih.qmd # The DIH
+        - brain/book/solution/wishocracy.qmd # Wishocracy
+        - brain/book/solution/dfda.qmd # The Decentralized FDA
+        # - brain/book/solution/war-on-disease.qmd # The War on Disease (Missing)
+        # - brain/book/solution/aligning-incentives.qmd # Aligning Incentives (Missing)
+        - brain/book/theory.qmd # General Theory (Not in OUTLINE.MD Part II)
+        - brain/book/theory/the-two-wars.qmd # The Two Wars (Not in OUTLINE.MD Part II)
+        - brain/book/strategy/co-opting-defense-contractors.qmd # Part of "Aligning Incentives"
+        - brain/book/economics/coalition-that-wins.qmd # Part of "Aligning Incentives"
 
-    - part: "Solutions"
+    - part: "Part III: The Case"
       chapters:
-        - brain/book/solution.qmd
-        - brain/book/solution/1-percent-treaty.qmd  # The funding mechanism
-        - brain/book/solution/dih.qmd  # Treasury structure
-        - brain/book/solution/wishocracy.qmd  # Anti-capture governance
-        - brain/book/solution/dfda.qmd  # 82X efficiency engine
+        - brain/book/proof.qmd # Part III Intro
+        - brain/book/proof/historical-precedents.qmd # Historical Precedent
+        - brain/book/proof/body-as-repairable-machine.qmd # The Body as a Machine
+        - brain/book/economics.qmd # The Economic Case
+        - brain/book/economics/best-idea-in-the-world.qmd # Not in OUTLINE.MD
+        - brain/book/economics/economic-impact-summary.qmd # Not in OUTLINE.MD
+        - brain/book/economics/health-savings-sharing-model.qmd # Not in OUTLINE.MD
+        - brain/book/call-to-action/your-personal-benefits.qmd # Your ROI
+        - brain/book/futures.qmd # Intro to Paths
+        - brain/book/futures/dystopia-skynet-wins.qmd # Path A: Idiocracy
+        - brain/book/futures/utopia-health-and-happiness.qmd # Path B: Wishonia
+        - brain/book/call-to-action/every-objection-demolished.qmd # Demolishing Objections
 
-    - part: "Proof" # (This Already Works)"
+    - part: "Part IV: The Plan"
       chapters:
-        - brain/book/proof.qmd
-        - brain/book/proof/historical-precedents.qmd
-        - brain/book/proof/body-as-repairable-machine.qmd
-
-    - part: "The Future" # - Choose Your Own Adventure - Idiocracy or Wishonia"
-      chapters:
-        - brain/book/futures.qmd
-        - brain/book/futures/dystopia-skynet-wins.qmd  # The three subs
-        - brain/book/futures/utopia-health-and-happiness.qmd  # The three supers
-
-    - part: "The Money" # (How Everyone Gets Rich by Eradicating Disease)"
-      chapters:
-        - brain/book/economics.qmd # Executive Summary
-        - brain/book/economics/best-idea-in-the-world.qmd # The Best Idea in the World
-        - brain/book/economics/economic-impact-summary.qmd # Economic Impact Summary
-        - brain/book/economics/central-banks.qmd # How Central Banks Fund War
-        - brain/book/economics/victory-bonds.qmd  # Fund the revolution
-        - brain/book/economics/coalition-that-wins.qmd  # Everyone profits
-        - brain/book/economics/financial-plan.qmd # The Financial Plan (Overview)
-        - brain/book/economics/campaign-budget.qmd # Campaign Budget (Detailed)
-        - brain/book/economics/health-savings-sharing-model.qmd # 50/50 split incentives
-    
-    - part: "Legal: How to Stay Out of Prison"
-      chapters:
-        - brain/book/legal.qmd  # Overview
-        - brain/book/legal/legal-framework.qmd  # Multi-jurisdiction strategy
-
-    - part: "The Strategy" # (Building Paradise)"
-      chapters:
-        - brain/book/strategy.qmd  # High-level overview
-        - brain/book/strategy/bribe-sequence.qmd  # How we pay everyone off
-        - brain/book/strategy/five-step-execution.qmd  # Tactical execution plan
-        - brain/book/strategy/global-referendum.qmd  # Democratic path
-        - brain/book/strategy/viral-marketing.qmd  # Social media strategy
-        - brain/book/strategy/co-opting-defense-contractors.qmd # Co-Opting the Defense Lobby
-        - brain/book/strategy/grassroots-mobilization.qmd  # Movement building
-        - brain/book/strategy/diplomatic-approach.qmd  # Government relations
-
-    - part: "Join or Die" # (Literally)"
-      chapters:
-        - brain/book/call-to-action/your-personal-benefits.qmd  # What YOU get
-        - brain/book/call-to-action/three-actions.qmd  # Vote, Invest, Share
-        - brain/book/call-to-action/every-objection-demolished.qmd  # FAQ
-        - brain/book/call-to-action.qmd  # Final rallying cry
+        - brain/book/legal.qmd # Legal Architecture (Intro)
+        - brain/book/legal/legal-framework.qmd # Legal Architecture
+        # - brain/book/legal/securities-law.qmd # Securities Law (Missing)
+        # - brain/book/legal/election-law.qmd # Election Law (Missing)
+        # - brain/book/legal/treaty-framework.qmd # Treaty Framework (Missing)
+        - brain/book/economics/victory-bonds.qmd # The Investment Vehicle
+        # - brain/book/strategy/legislation-package.qmd # Legislation Package (Missing)
+        - brain/book/strategy/global-referendum.qmd # Global Referendum
+        - brain/book/call-to-action/three-actions.qmd # Getting Started
+        - brain/book/call-to-action.qmd # Getting Started
+        - brain/book/economics/central-banks.qmd # Not in OUTLINE.MD Part IV
+        - brain/book/economics/financial-plan.qmd # Not in OUTLINE.MD Part IV
+        - brain/book/economics/campaign-budget.qmd # Not in OUTLINE.MD Part IV
+        - brain/book/strategy.qmd # Strategy Intro (Not in OUTLINE.MD Part IV)
+        - brain/book/strategy/bribe-sequence.qmd # Not in OUTLINE.MD Part IV
+        - brain/book/strategy/five-step-execution.qmd # Not in OUTLINE.MD Part IV
+        - brain/book/strategy/viral-marketing.qmd # Not in OUTLINE.MD Part IV
+        - brain/book/strategy/grassroots-mobilization.qmd # Not in OUTLINE.MD Part IV
+        - brain/book/strategy/diplomatic-approach.qmd # Not in OUTLINE.MD Part IV
   appendices:
     # Governance & Organization
     - brain/book/appendix/vision.qmd

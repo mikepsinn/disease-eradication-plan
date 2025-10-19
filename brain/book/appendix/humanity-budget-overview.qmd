@@ -222,9 +222,11 @@ apply_modern_style(ax, remove_spines=['top', 'right'])
 # Clean, prominent value labels
 for bar in bars:
     height = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2.0, height, f'${height:,.1f}T', 
-            ha='center', va='bottom', fontsize=14, fontweight='600', color=colors['text'],
-            xytext=(0, 5), textcoords='offset points')
+    ax.annotate(f'${height:,.1f}T',
+                xy=(bar.get_x() + bar.get_width() / 2.0, height),
+                xytext=(0, 5),
+                textcoords='offset points',
+                ha='center', va='bottom', fontsize=14, fontweight='600', color=colors['text'])
 
 # Modern title and labels
 ax.set_title("Humanity's Budget: The True Scale of War & Disease", 
