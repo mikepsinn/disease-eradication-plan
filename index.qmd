@@ -58,7 +58,6 @@ Humanity spends [\$2.7 trillion on weapons, \$68 billion on medical research](br
 - **You:** Get paid to try experimental drugs + vote on which diseases to cure. Democracy, but it actually does something.
 
 **The Math:** Every \$1 invested creates [\$463 in benefits](brain/book/appendix/dfda-cost-benefit-analysis.qmd).
-<!-- TODO: Link broken. Was this file renamed or moved? -->
 (better than smallpox eradication's 280:1 ROI).
 
 **Keep reading:** How Oxford proved 82X cheaper trials work, why cutting military spending historically creates economic booms, how the legal structure avoids prison, and why defense contractors actually want this.
@@ -106,7 +105,7 @@ This shopping list includes:
 - Satellites that can see your bald spot from space.
 - Probably some kind of earthquake machine.
 
-Meanwhile, we spend [\$68 billion on medical research](brain/book/reference/global-government-medical-research-spending.qmd).
+Meanwhile, we spend [\$68 billion on medical research](brain/book/appendix/global-government-medical-research-spending.qmd).
 That's [**40 times less**](brain/book/problem/the-119-trillion-death-toilet.qmd) on curing all diseases combined than we spend on new ways to create corpses.
 
 {{< include brain/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
@@ -230,8 +229,8 @@ That's not a typo. Four hundred and sixty-three dollars. It's better returns tha
 
 Where the magic money comes from:
 
-- [**\$50B in annual R&D cost savings**](brain/book/appendix/dfda-cost-benefit-analysis.qmd): 82X reduction in clinical trial costs <!-- TODO: Link broken. Was this file renamed or moved? -->
-- [**840,000 Quality-Adjusted Life Years (QALYs) saved annually**](brain/book/appendix/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model): <!-- TODO: Link broken. Was this file renamed or moved? -->
+- [**\$50B in annual R&D cost savings**](brain/book/appendix/dfda-cost-benefit-analysis.qmd): 82X reduction in clinical trial costs
+- [**840,000 Quality-Adjusted Life Years (QALYs) saved annually**](brain/book/appendix/dfda-cost-benefit-analysis.qmd):
   - **Faster access to new treatments**: 200,000 QALYs from faster drug access ([2 years instead of 17 years](brain/book/appendix/recovery-trial.qmd) to market)
   - **Better prevention through real-world data**: 140,000 QALYs
   - **Enabling new therapies**: 500,000 QALYs from enabling new therapies for rare diseases and previously untreatable conditions
@@ -239,7 +238,6 @@ Where the magic money comes from:
 {{< include brain/figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
 This ROI is better than history's greatest public health achievements like [smallpox eradication (280:1) and childhood vaccinations (13:1)](brain/book/appendix/dfda-cost-benefit-analysis.qmd).
-<!-- TODO: Link broken. Was this file renamed or moved? -->
 
 ### The Part Where Math Breaks
 
@@ -265,7 +263,7 @@ $$\text{Total Benefit} = \underbrace{\text{\$97.1B}}_{\text{Peace Dividend}} + \
 - Health dividend: \$50B (from not wasting money on paperwork)
 - Total: More money than God spends on therapy
 
-([See peace dividend calculation](brain/book/appendix/peace-dividend-analysis.qmd) | [See dFDA health benefits breakdown](brain/book/appendix/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) | [See economic impact summary](brain/book/economics/economic-impact-summary.qmd)) <!-- TODO: Multiple broken links here. -->
+([See peace dividend calculation](brain/book/appendix/peace-dividend-analysis.qmd) | [See dFDA health benefits breakdown](brain/book/appendix/dfda-cost-benefit-analysis.qmd) | [See economic impact summary](brain/book/economics/economic-impact-summary.qmd))
 
 - **Zero net cost**: The \$27B comes from redirected military spending (money already budgeted)
 - **\$147.1B in annual benefits**: Peace dividend (\$97.1B) + Health dividend (\$50B)
