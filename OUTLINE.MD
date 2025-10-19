@@ -895,9 +895,9 @@
   - Research and administration jobs
   - Diseases get funded and studied
 
-## Legal
+## Part IV: The Plan
 
-*How to Set Up the Legal Architecture (And Stay Out of Prison)*
+*The complete roadmap from idea to reality*
 
 - **The Multi-Jurisdiction Strategy**
   - Swiss foundation: Neutral base of operations
