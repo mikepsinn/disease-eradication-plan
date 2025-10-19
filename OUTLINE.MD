@@ -3,7 +3,9 @@
 **[VIDEO: Charlie Chaplin's "The Great Dictator" Speech - The Choice Between Machinery and Humanity]**
 *"We think too much and feel too little. More than machinery, we need humanity. More than cleverness, we need kindness and gentleness."*
 
-## Part I: Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet
+## Problems
+
+*Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet*
 
 ### The Daily Holocaust
 
@@ -146,7 +148,9 @@
   - Not technology (we have the tools)
   - Just money going to bombs instead
 
-## Part II: Understanding Why Your Current Systems Fail (And How to Replace Them)
+## Theory
+
+*Understanding Why Your Current Systems Fail (And How to Replace Them)*
 
 ### Why Central Planning Kills People
 
@@ -235,7 +239,9 @@
   - Create concentrated benefits for producing cures rather than perpetuating disease
 
 
-## Part III: Your Step-by-Step Solution
+## Solutions
+
+*Your Step-by-Step Solution*
 
 ### How to Create and Pass the 1% Treaty
 
@@ -518,7 +524,9 @@
   - Your kid's rare disease: Finally profitable to cure
   - Mental health: No longer the ugly stepchild of medicine
 
-## Part IV: Your Evidence Arsenal (Use These Examples to Convince Others)
+## Proof
+
+*Your Evidence Arsenal (Use These Examples to Convince Others)*
 
 ### Political Movements That Changed Everything
 
@@ -576,7 +584,9 @@
   - Data: We can prove what works
   - Urgency: People are literally dying
 
-## Part V: The Future - Choose Your Own Adventure - Idiocracy or Wishonia
+## The Future
+
+*Choose Your Own Adventure - Idiocracy or Wishonia*
 
 ### Path A - Idiocracy - The Dystopian Default (If We Do Nothing)
 
@@ -714,7 +724,9 @@
   - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
 
-## Part VI: Economics: How to Fund This and Make Humanity a Fortune
+## Economics
+
+*How to Fund This and Make Humanity a Fortune*
 
 ### How to Make the Economic Case (The 463:1 ROI)
 
@@ -895,7 +907,9 @@
   - Research and administration jobs
   - Diseases get funded and studied
 
-## Part VII: How to Set Up the Legal Architecture (And Stay Out of Prison)
+## Legal
+
+*How to Set Up the Legal Architecture (And Stay Out of Prison)*
 
 - **The Multi-Jurisdiction Strategy**
   - Swiss foundation: Neutral base of operations
@@ -928,7 +942,9 @@
   - The Right to Try Expansion Act (patient choice beyond FDA)
   - The Budget Reallocation Act (moves the money)
 
-## Part VIII: Your Complete Action Plan (Do This Step by Step)
+## The Strategy
+
+*Your Complete Action Plan (Do This Step by Step)*
 
 ### How to Run Your Global Referendum (Democracy at Scale)
 
@@ -954,6 +970,10 @@
   - Key advantage: Economic incentive to participate
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
+
+## Join or Die
+
+*(Literally)*
 
 ### Your Returns on Investment (Health, Wealth, and Freedom)
 
