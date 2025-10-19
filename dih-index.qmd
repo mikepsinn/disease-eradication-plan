@@ -1,0 +1,267 @@
+---
+title: "Decentralized Institutes of Health"
+subtitle: "Replacing Bureaucrats with Code, Committees with Patient Choice"
+page-layout: full
+toc: false
+---
+
+:::{.hero-banner}
+## Cure Diseases 80X Faster at 1/82nd the Cost
+
+The NIH spent $1 trillion over 50 years and cured **zero diseases**. The DIH uses markets, not committees, to fund medical research that actually works.
+
+[Learn How It Works](#how-it-works){.btn .btn-primary .btn-lg}
+[Join a Trial](#get-involved){.btn .btn-outline-secondary .btn-lg}
+:::
+
+---
+
+## The Problem We're Solving {#the-problem}
+
+::::{.grid}
+
+:::{.g-col-12 .g-col-md-4}
+### 💀 55M Deaths/Year
+People die from treatable diseases while the NIH funds grant-writing contests.
+:::
+
+:::{.g-col-12 .g-col-md-4}
+### 💰 $41,000 per Patient
+FDA-regulated trials cost 82X more than necessary (Oxford RECOVERY trial proved it).
+:::
+
+:::{.g-col-12 .g-col-md-4}
+### 📉 0.06% Funding
+Medical research gets 0.06% of the money we spend treating disease.
+:::
+
+::::
+
+:::{.callout-warning icon=false}
+## The Core Issue: Central Planning Kills
+
+The NIH employs **two administrators for every scientist**—like having two managers for every McDonald's fry cook, except the fries cure cancer and the managers prevent them from being made.
+
+By the time a good idea gets funded, the lead scientist is dead or the disease has evolved thumbs.
+:::
+
+---
+
+## How the DIH Works {#how-it-works}
+
+::::{.panel-tabset}
+
+### Patient Choice
+
+**Make Patient Choice Sovereign**
+
+Stop letting committees guess what might work. Route funding through people who are actually sick.
+
+- The NIH: 200 bureaucrats predicting the future
+- **The DIH:** Millions of patients choosing treatments
+- Treasury gives subsidies directly to patients
+- Trials that attract patients get funded
+- Grant-writing contests → markets driven by patient need
+
+### Pay for Cures
+
+**Pay for Results, Not Paperwork**
+
+Eliminate grant applications entirely. Researchers get paid two ways:
+
+1. **By patients** who join their trials
+2. **By bounties** for solving defined problems (e.g., "$1B to reverse aging by 10 years")
+
+Align incentives with outcomes, not bureaucratic process.
+
+### Code > Committees
+
+**Run It With Code, Not Committees**
+
+Build on transparent, auditable smart contracts because code can't take bribes.
+
+- Delete the CEO position entirely
+- Every rule is code
+- Every dollar tracked on public ledger
+- No administrators to corrupt
+- Replace bureaucrats with software
+
+### Open Knowledge
+
+**Make All Knowledge Public**
+
+Every trial, every result (positive or negative), every dataset gets published.
+
+- Stops redundant research
+- Knowledge compounds globally
+- AI agents scan data to connect researchers
+- Find patterns automatically
+- Accelerate discovery for everyone
+
+::::
+
+---
+
+## The Results {#results}
+
+::::{.grid}
+
+:::{.g-col-12 .g-col-md-4 .card}
+### 80X More Efficient
+
+Test 54 million patient-treatments for the same cost the NIH uses to test 658,000.
+
+**Proven by Oxford RECOVERY trial**
+:::
+
+:::{.g-col-12 .g-col-md-4 .card}
+### 10X Faster
+
+Get treatments to patients in 2-3 years, not 17.
+
+**Real-world data, real-time results**
+:::
+
+:::{.g-col-12 .g-col-md-4 .card}
+### 100% Transparent
+
+Every success and failure becomes public knowledge.
+
+**No hidden data, no buried failures**
+:::
+
+::::
+
+---
+
+## The Three-Step Funding Flow {#funding}
+
+```{mermaid}
+%%| fig-width: 8
+graph TB
+    A[1% Treaty: $27B/year] --> B[DIH Treasury]
+    B --> C[Wishocracy: Global Voting]
+    C --> D[Patient Subsidies 70%]
+    C --> E[Research Prizes 20%]
+    C --> F[Infrastructure 10%]
+    D --> G[Patients Choose Trials]
+    E --> H[Researchers Solve Problems]
+    G --> I[Cures & Data]
+    H --> I
+    I --> J[Humanity Wins]
+
+    style A fill:#000,stroke:#000,color:#fff
+    style J fill:#000,stroke:#000,color:#fff
+```
+
+1. **Fill the Treasury:** The [1% Treaty](brain/book/solution/1-percent-treaty.qmd) redirects $27B from military spending
+2. **Let Humanity Decide:** [Wishocracy](brain/book/solution/wishocracy.qmd) allows global voting on budget allocation
+3. **Let Patients Fund Cures:** Subsidies flow to patients who choose the best trials
+
+---
+
+## The dFDA: Your Medical Amazon {#dfda}
+
+The Decentralized FDA gives you what the FDA doesn't:
+
+::::{.grid}
+
+:::{.g-col-12 .g-col-md-6}
+**For Patients:**
+
+- Find treatments ranked by real effectiveness
+- Join trials from home with one click
+- Get outcome labels for every food and drug
+- Personal AI doctor (FDAi Agent) matches you to optimal trials
+- Subsidized treatment costs
+:::
+
+:::{.g-col-12 .g-col-md-6}
+**For Researchers:**
+
+- Launch trials in minutes, not years
+- Set your own price per patient
+- Get paid when patients join
+- Real-time results to pivot fast
+- No grant applications
+:::
+
+::::
+
+[Learn More About the dFDA →](brain/book/solution/dfda.qmd){.btn .btn-primary}
+
+---
+
+## Governance: Nobody in Charge {#governance}
+
+The DIH has no CEO to corrupt. Instead:
+
+:::{.callout-note icon=false}
+### Wishocratic Governance
+
+- **Anyone** can propose how to spend funds
+- **Everyone** votes through pairwise comparisons
+- **AI agents** automate your preferences
+- **Smart contracts** execute automatically
+- **Public ledger** tracks every dollar
+:::
+
+This isn't about trusting people to be good (they won't be). It's about designing a system where being bad is mathematically impossible.
+
+[Read About Governance →](brain/book/appendix/governance.qmd){.btn .btn-outline-primary}
+
+---
+
+## Get Involved {#get-involved}
+
+::::{.grid}
+
+:::{.g-col-12 .g-col-md-4}
+### 🧪 Join a Trial
+
+Access subsidized treatments through the dFDA.
+
+[Browse Trials](brain/book/solution/dfda.qmd)
+:::
+
+:::{.g-col-12 .g-col-md-4}
+### 🗳️ Vote on Funding
+
+Help decide how the DIH treasury gets allocated.
+
+[Join Wishocracy](brain/book/solution/wishocracy.qmd)
+:::
+
+:::{.g-col-12 .g-col-md-4}
+### 📖 Read the Plan
+
+Understand the complete system.
+
+[Read the Book](https://WarOnDisease.org)
+:::
+
+::::
+
+---
+
+:::{.callout-important}
+## The Choice
+
+**Path A:** Keep doing what we're doing. 55 million people die annually from preventable diseases. The NIH funds grant writers, not cures.
+
+**Path B:** Build the DIH. Replace committees with patient choice. Replace paperwork with results. Replace bureaucrats with code.
+
+Bureaucracy is a disease. The DIH is the cure.
+:::
+
+---
+
+<div style="text-align: center; margin-top: 3rem; padding: 2rem; background-color: #f8f9fa;">
+
+### Questions?
+
+Read our [FAQ](brain/book/appendix/faq.qmd) or [contact us](mailto:contact@dih.earth)
+
+Built on [Quarto](https://quarto.org). Source code on [GitHub](https://github.com/mikepsinn/decentralized-institutes-of-health).
+
+</div>

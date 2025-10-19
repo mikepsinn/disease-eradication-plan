@@ -1,3 +1,204 @@
+/* ==========================================
+   DIH WEBSITE CUSTOM STYLES
+   ========================================== */
+
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 2rem;
+    margin: -2rem -2rem 3rem -2rem;
+    text-align: center;
+    border-bottom: 4px solid #000;
+}
+
+.hero-banner h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.hero-banner p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    margin: 0.5rem;
+    font-weight: bold;
+    border-width: 2px;
+}
+
+.btn-primary {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    border-color: #333;
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    border-color: #000;
+    color: #000;
+}
+
+.btn-outline-primary:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-outline-secondary {
+    background-color: transparent;
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+/* Cards */
+.card {
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 4px 4px 0 #000;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.5rem;
+}
+
+/* Grid System Enhancement */
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.g-col-12 {
+    grid-column: span 12;
+}
+
+@media (min-width: 768px) {
+    .g-col-md-4 {
+        grid-column: span 4;
+    }
+    .g-col-md-6 {
+        grid-column: span 6;
+    }
+}
+
+/* Callout Enhancement */
+.callout {
+    border-width: 2px;
+    border-left-width: 8px;
+    margin: 2rem 0;
+}
+
+.callout-warning {
+    border-left-color: #000;
+    background-color: #fff9e6;
+}
+
+.callout-note {
+    border-left-color: #000;
+    background-color: #f0f7ff;
+}
+
+.callout-important {
+    border-left-color: #000;
+    background-color: #fff0f0;
+}
+
+/* Section Dividers */
+hr {
+    border: none;
+    border-top: 3px solid #000;
+    margin: 3rem 0;
+}
+
+/* Typography Enhancement */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    border-bottom: 3px solid #000;
+    padding-bottom: 0.5rem;
+}
+
+/* Panel Tabset Enhancement */
+.panel-tabset .nav-tabs {
+    border-bottom: 3px solid #000;
+}
+
+.panel-tabset .nav-link {
+    border: 2px solid transparent;
+    font-weight: bold;
+}
+
+.panel-tabset .nav-link.active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.panel-tabset .nav-link:hover:not(.active) {
+    border-color: #000;
+    background-color: #f8f9fa;
+}
+
+/* Mermaid Diagram Enhancement for DIH */
+.mermaid {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* Stats/Numbers Highlighting */
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+    display: block;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #6c757d;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================
+   ORIGINAL STYLES (Responsive Images)
+   ========================================== */
+
 /* Responsive figure sizing - ensures matplotlib charts fit within page width */
 .figure-img {
     max-width: 100%;   /* Ensures image does not exceed container width */

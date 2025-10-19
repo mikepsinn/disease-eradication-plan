@@ -4,20 +4,55 @@ project:
   output-dir: _book/dih # Output to a specific subdirectory
 
 website:
-  title: "Decentralized Institutes of Health (DIH)"
+  title: "Decentralized Institutes of Health"
   site-url: https://dih.earth
-  favicon: favicon.ico # Path is relative to the project root
-  
+  favicon: favicon.ico
+
   navbar:
+    background: light
     left:
-      - href: brain/book/solution/dih.qmd
-        text: "About the DIH"
-      - href: brain/book/solution/dfda.qmd
-        text: "The dFDA"
+      - href: dih-index.qmd
+        text: "Home"
+      - text: "How It Works"
+        menu:
+          - href: brain/book/solution/dih.qmd
+            text: "About the DIH"
+          - href: brain/book/solution/dfda.qmd
+            text: "The dFDA"
+          - href: brain/book/solution/wishocracy.qmd
+            text: "Wishocracy Governance"
+          - href: brain/book/solution/1-percent-treaty.qmd
+            text: "The 1% Treaty"
       - href: brain/book/appendix/governance.qmd
         text: "Governance"
+      - text: "Resources"
+        menu:
+          - href: brain/book/appendix/faq.qmd
+            text: "FAQ"
+          - href: brain/book/references.qmd
+            text: "References"
+          - href: https://WarOnDisease.org
+            text: "Full Book"
+    right:
+      - text: "Get Involved"
+        href: "#get-involved"
+      - icon: github
+        href: https://github.com/mikepsinn/decentralized-institutes-of-health
+
+  page-footer:
+    left: "© 2025 Decentralized Institutes of Health"
+    right:
+      - text: "Privacy Policy"
+        href: "#"
+      - text: "Contact"
+        href: "mailto:contact@dih.earth"
 
 format:
   html:
     theme: lux
     css: styles.css
+    toc: true
+    toc-depth: 3
+    link-external-newwindow: true
+    mermaid:
+      theme: neutral

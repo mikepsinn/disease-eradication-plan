@@ -10,6 +10,8 @@ website:
 
   navbar:
     left:
+      - href: brain/book/solution/1-percent-treaty-landing.qmd
+        text: "Home"
       - href: brain/book/solution/1-percent-treaty.qmd
         text: "The Treaty"
       - href: brain/book/strategy/global-referendum.qmd
