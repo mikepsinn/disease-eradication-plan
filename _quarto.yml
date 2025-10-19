@@ -30,7 +30,9 @@ book:
         - brain/book/theory/public-choice.qmd # Public Choice Theory
         - brain/book/problem/regulatory-capture.qmd # Regulatory Capture
         - brain/book/theory/central-planning-kills.qmd # Central Planning Kills
-        - brain/book/problem/genetic-slavery.qmd # Not in OUTLINE.MD
+        - brain/book/theory.qmd # General Theory (moved from Part II)
+        - brain/book/theory/the-two-wars.qmd # The Two Wars (moved from Part II)
+        - brain/book/problem/genetic-slavery.qmd # Extra - consider removing
 
     - part: "Part II: The Solution"
       chapters:
@@ -40,11 +42,7 @@ book:
         - brain/book/solution/wishocracy.qmd # Wishocracy
         - brain/book/solution/dfda.qmd # The Decentralized FDA
         - brain/book/solution/war-on-disease.qmd # The War on Disease
-        - brain/book/solution/aligning-incentives.qmd # Aligning Incentives
-        - brain/book/theory.qmd # General Theory (Not in OUTLINE.MD Part II)
-        - brain/book/theory/the-two-wars.qmd # The Two Wars (Not in OUTLINE.MD Part II)
-        - brain/book/strategy/co-opting-defense-contractors.qmd # Part of "Aligning Incentives"
-        - brain/book/economics/coalition-that-wins.qmd # Part of "Aligning Incentives"
+        - brain/book/solution/aligning-incentives.qmd # Aligning Incentives (includes defense contractors & coalition)
 
     - part: "Part III: The Case"
       chapters:
@@ -72,16 +70,6 @@ book:
         - brain/book/strategy/legislation-package.qmd # Legislation Package
         - brain/book/strategy/global-referendum.qmd # Global Referendum
         - brain/book/call-to-action/three-actions.qmd # Getting Started
-        - brain/book/call-to-action.qmd # Getting Started
-        - brain/book/economics/central-banks.qmd # Not in OUTLINE.MD Part IV
-        - brain/book/economics/financial-plan.qmd # Not in OUTLINE.MD Part IV
-        - brain/book/economics/campaign-budget.qmd # Not in OUTLINE.MD Part IV
-        - brain/book/strategy.qmd # Strategy Intro (Not in OUTLINE.MD Part IV)
-        - brain/book/strategy/bribe-sequence.qmd # Not in OUTLINE.MD Part IV
-        - brain/book/strategy/five-step-execution.qmd # Not in OUTLINE.MD Part IV
-        - brain/book/strategy/viral-marketing.qmd # Not in OUTLINE.MD Part IV
-        - brain/book/strategy/grassroots-mobilization.qmd # Not in OUTLINE.MD Part IV
-        - brain/book/strategy/diplomatic-approach.qmd # Not in OUTLINE.MD Part IV
   appendices:
     # Governance & Organization
     - brain/book/appendix/vision.qmd
@@ -99,6 +87,17 @@ book:
     - brain/book/appendix/free-rider-solution.qmd
     - brain/book/appendix/fundraising-strategy.qmd
     - brain/book/appendix/operations-roadmap.qmd
+    - brain/book/strategy/co-opting-defense-contractors.qmd # Moved from Part II
+    - brain/book/economics/coalition-that-wins.qmd # Moved from Part II
+    - brain/book/strategy.qmd # Strategy overview
+    - brain/book/strategy/bribe-sequence.qmd
+    - brain/book/strategy/five-step-execution.qmd
+    - brain/book/strategy/viral-marketing.qmd
+    - brain/book/strategy/grassroots-mobilization.qmd
+    - brain/book/strategy/diplomatic-approach.qmd
+    - brain/book/economics/central-banks.qmd
+    - brain/book/economics/financial-plan.qmd
+    - brain/book/economics/campaign-budget.qmd
 
     # Economic Analysis
     - brain/book/appendix/total-economic-impact.qmd
