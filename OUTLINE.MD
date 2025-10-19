@@ -191,36 +191,6 @@
   - Software/Internet: No FDA = exponential innovation
   - Lasik/cosmetic surgery: Cash markets = 50% price drops
 
-### The War on Disease
-*Designing the First War to Win*
-
-- **The Two Wars**
-  - War on Humanity: $2.7T/year, 75+ years running, no victory possible
-  - War on Disease: $68B/year, barely fighting, victory achievable
-  - Humanity funds death 40X more than life
-  - Flip the budget: Make the War on Disease bigger than the War on Humanity
-- **Structure It Differently: Markets Not Ministries**
-  - Build no bureaucracy to preserve (use smart contracts)
-  - Pay for outcomes, not process
-  - Create competition between solutions, not monopoly
-  - Let researchers get paid for curing diseases, not by getting grants
-- **Align the Incentives: Everyone Wins by Winning**
-  - Patients: Get subsidized treatments, not exploited
-  - Researchers: Get rewarded for cures, not papers
-  - Investors: Earn returns from health, not death and disease
-  - Politicians: Get elected for results, not promises
-  - Minimize perverse incentives through market competition
-- **Spillover Victory: Solving Everything Else**
-  - War on Drugs: Addiction is a disease (actually cure it)
-  - War on Poverty: Healthy people aren't poor
-  - War on Terror: Mental health treatment prevents radicalization
-  - War on Crime: Cure antisocial personality disorder
-  - Every social problem has biological roots (fix the roots)
-- **The Meta-Victory: Proving Markets > Government**
-  - First successful "War on" anything ever
-  - Template for everything else (education, housing, etc.)
-  - The end of central planning's credibility
-  - The beginning of the market revolution
 
 ### Public Choice Theory
 *Everyone Responds to Incentives*
@@ -536,6 +506,83 @@
   - Your kid's rare disease: Finally profitable to cure
   - Mental health: No longer the ugly stepchild of medicine
 
+### The War on Disease
+*Designing the First War to Win*
+
+- **The Two Wars**
+  - War on Humanity: $2.7T/year, 75+ years running, no victory possible
+  - War on Disease: $68B/year, barely fighting, victory achievable
+  - Humanity funds death 40X more than life
+  - Flip the budget: Make the War on Disease bigger than the War on Humanity
+- **Structure It Differently: Markets Not Ministries**
+  - Build no bureaucracy to preserve (use smart contracts)
+  - Pay for outcomes, not process
+  - Create competition between solutions, not monopoly
+  - Let researchers get paid for curing diseases, not by getting grants
+- **Align the Incentives: Everyone Wins by Winning**
+  - Patients: Get subsidized treatments, not exploited
+  - Researchers: Get rewarded for cures, not papers
+  - Investors: Earn returns from health, not death and disease
+  - Politicians: Get elected for results, not promises
+  - Minimize perverse incentives through market competition
+- **Spillover Victory: Solving Everything Else**
+  - War on Drugs: Addiction is a disease (actually cure it)
+  - War on Poverty: Healthy people aren't poor
+  - War on Terror: Mental health treatment prevents radicalization
+  - War on Crime: Cure antisocial personality disorder
+  - Every social problem has biological roots (fix the roots)
+- **The Meta-Victory: Proving Markets > Government**
+  - First successful "War on" anything ever
+  - Template for everything else (education, housing, etc.)
+  - The end of central planning's credibility
+  - The beginning of the market revolution
+
+### Aligning Incentives
+*How to Align a Civilization*
+
+- **Defense Contractors: The Math Changes**
+  - VICTORY bonds offer 40%+ perpetual returns vs 8% defense margins
+  - They keep 99% of military budget AND can buy VICTORY bonds
+  - Lobbyists follow money (bonds pay better than bombs)
+  - Pension obligations get funded permanently
+  - ESG pressure creates reputational value
+- **Insurance Companies: Profit from Health**
+  - Healthy people = fewer claims = higher profits
+  - Each cure = billions in reduced payouts
+  - VICTORY bonds fit their investment portfolios
+  - First movers gain competitive advantage
+  - Math is simple: adapt or face bankruptcy from rising medical costs
+- **Pharmaceutical Companies: Revenue Model Inverts**
+  - Current model failing: Patent cliffs, exploding R&D costs
+  - **The Payment Reversal**:
+    - Old way: Pharma spends $48,000 per trial subject
+    - New way: Patients + DIH subsidies pay pharma for trials
+    - Transforms biggest expense into revenue stream
+  - DIH subsidies mean getting paid to run trials
+  - Parallel pathway provides faster results, positive cash flow
+  - Competition shifts to outcomes vs marketing
+  - Winners can make 10X current profits (losers still make 5X)
+- **Politicians: Corruption Redirected**
+  - Super PACs fund treaty supporters
+  - Opposition research available against opponents
+  - Research centers create district jobs
+  - VICTORY bonds available for blind trusts
+  - Public choice theory: money talks, health or weapons
+- **Billionaires: Returns Plus Reputation**
+  - Outperforms Giving Pledge (measurable results)
+  - 40%+ perpetual returns plus legacy
+  - Named institutes available: "The Gates Cancer Center"
+  - Tax benefits plus profits
+  - First movers get premium terms and credit
+  - Early stake in potential $100T company
+  - Legacy: Funded the end of human suffering
+- **Everyone Else: Direct Democracy Plus Healthcare**
+  - Direct voting on budget allocation (actual power)
+  - Subsidized healthcare via dFDA trials (dynamic vouchers)
+  - Participation grows voucher value for all
+  - Research and administration jobs
+  - Diseases get funded and studied
+
 ## Part III: The Case
 
 *Why this is possible, necessary, and profitable*
@@ -832,6 +879,91 @@
   - Year 20: Full $16.5T annual value realized
   - Every year we delay: $142B in immediate benefits lost forever
 
+### Your ROI
+*Health, Wealth, and Freedom*
+
+- **Economic Security**
+  - Subsidized treatment: Dynamic vouchers for dFDA trials
+  - Healthcare access: No more medical bankruptcy
+  - Investment opportunity: VICTORY bonds at 40%+ perpetual
+  - Job creation: Research and healthcare jobs
+  - Economic growth: From health innovation
+- **Health Returns**
+  - Your cancer: Prevented before it starts (or cured if you have it)
+  - Your depression: Actually fixed (not just numbed with SSRIs)
+  - Your aging: Reversed (choose your biological age)
+  - Your genetics: Debugged like software
+  - Your lifespan: +50-100 healthy years (death optional by 2040)
+  - Healthcare cost: $0 (covered by $WISH economy)
+  - Insurance premiums: $0 (insurance companies extinct)
+- **Freedom Returns**
+  - Direct vote on health spending priorities
+  - No more insurance paperwork
+  - No more job you hate (new opportunities)
+  - No more medical bankruptcy
+  - No more unnecessary death
+- **Power Returns**
+  - Direct funding power (your high-level proposals compete equally)
+  - No more "representatives" or gatekeepers controlling the treasury
+  - Equal to every other human (1 person = 1 allocation power)
+  - Co-creator of humanity's health budget priorities
+
+### Demolishing Objections
+*Answering the Critics*
+
+- **"Why not just fund medical research more?"**
+  - Because money isn't real, resources are (see Fixed Pie Reality in Part I)
+  - Earth has finite brains, and defense contractors monopolize them with printed money
+  - Medical research as % of GDP has DECLINED while nominal funding increased 10X
+  - Every brilliant engineer designing missiles is NOT designing medical devices
+  - The only solution: Redirect the ratio, not increase the total
+- **"This is too complicated"**
+  - Democracy is complicated. This just admits it and uses computers to help.
+  - You use Netflix's algorithm to pick movies, why not health spending?
+- **"Countries won't cooperate"**
+  - History shows incentives work: lobbyists follow money
+  - Switzerland proved neutrality creates wealth over 200 years
+- **"You can't cure aging"**
+  - We replace hearts, kidneys, blood, bones
+  - Aging is just harder engineering, not magic
+  - We went to the moon with slide rules, we can fix cells with AI
+- **"40% returns are impossible"**
+  - Medallion Fund does 39% with $10B cap. We do 40%+ with unlimited scaling as treaty grows.
+- **"Wishocracy is mob rule"**
+  - Better than oligarch rule. Plus AI advisors prevent poor decisions.
+- **"The powers that be won't allow this"**
+  - Existing power structures can buy VICTORY bonds
+  - Incentive alignment beats opposition
+- **"This violates securities law"**
+  - Structured as debt instruments with qualified purchaser exemptions
+  - Legal architecture detailed in Part VII
+- **"This is too expensive"**
+  - Global military spending: $2.7T annually on weapons
+  - The treaty redirects 1% ($27B) to medical research
+  - If humanity can afford weapons, it can afford cures
+- **"The technology doesn't exist"**
+  - RECOVERY trial proved it does. We're just scaling.
+- **"You can't avoid war in the real world"**
+  - Switzerland: 200+ years of avoiding major wars while surrounded by them
+  - Costa Rica: Abolished their army in 1948, still sovereign
+  - The Swiss prosperity correlates with centuries of peace
+  - Neutrality isn't weakness, it's profitable
+- **"This is unrealistic"**
+  - **[VIDEO: JFK's "We Choose to Go to the Moon" - Doing the Impossible]**
+  - So was: Flight, internet, democracy, antibiotics, Bitcoin, landing on moon
+  - "Unrealistic" is what people say before paradigm shifts
+  - Reality: 69 million people dying unnecessarily each year
+- **"What if it fails?"**
+  - Then we die of preventable diseases like we're doing now
+  - We're already in the worst timeline, can only improve
+  - Doing nothing guarantees Idiocracy, trying gives us a chance at paradise
+- **"But all Wars on X have failed"**
+  - Those were government wars using central planning
+  - They created bureaucracies that needed the problem to exist
+  - We're using markets that profit from solutions
+  - Our "war" is actually a peace treaty with biology
+  - The War on Disease is really the Market for Health
+
 ### The Investment Vehicle
 *VICTORY Bonds*
 
@@ -871,52 +1003,6 @@
   - $75M: Operations and contingency
   - $25M: Reserve for treaty implementation
   - Full transparency: Every dollar tracked publicly
-
-### Aligning Incentives
-*How to Align a Civilization*
-
-- **Defense Contractors: The Math Changes**
-  - VICTORY bonds offer 40%+ perpetual returns vs 8% defense margins
-  - They keep 99% of military budget AND can buy VICTORY bonds
-  - Lobbyists follow money (bonds pay better than bombs)
-  - Pension obligations get funded permanently
-  - ESG pressure creates reputational value
-- **Insurance Companies: Profit from Health**
-  - Healthy people = fewer claims = higher profits
-  - Each cure = billions in reduced payouts
-  - VICTORY bonds fit their investment portfolios
-  - First movers gain competitive advantage
-  - Math is simple: adapt or face bankruptcy from rising medical costs
-- **Pharmaceutical Companies: Revenue Model Inverts**
-  - Current model failing: Patent cliffs, exploding R&D costs
-  - **The Payment Reversal**:
-    - Old way: Pharma spends $48,000 per trial subject
-    - New way: Patients + DIH subsidies pay pharma for trials
-    - Transforms biggest expense into revenue stream
-  - DIH subsidies mean getting paid to run trials
-  - Parallel pathway provides faster results, positive cash flow
-  - Competition shifts to outcomes vs marketing
-  - Winners can make 10X current profits (losers still make 5X)
-- **Politicians: Corruption Redirected**
-  - Super PACs fund treaty supporters
-  - Opposition research available against opponents
-  - Research centers create district jobs
-  - VICTORY bonds available for blind trusts
-  - Public choice theory: money talks, health or weapons
-- **Billionaires: Returns Plus Reputation**
-  - Outperforms Giving Pledge (measurable results)
-  - 40%+ perpetual returns plus legacy
-  - Named institutes available: "The Gates Cancer Center"
-  - Tax benefits plus profits
-  - First movers get premium terms and credit
-  - Early stake in potential $100T company
-  - Legacy: Funded the end of human suffering
-- **Everyone Else: Direct Democracy Plus Healthcare**
-  - Direct voting on budget allocation (actual power)
-  - Subsidized healthcare via dFDA trials (dynamic vouchers)
-  - Participation grows voucher value for all
-  - Research and administration jobs
-  - Diseases get funded and studied
 
 ## Part IV: The Plan
 
@@ -990,34 +1076,6 @@
   - Tipping point: Day 280 critical mass achieved
 
 
-### Your ROI
-*Health, Wealth, and Freedom*
-
-- **Economic Security**
-  - Subsidized treatment: Dynamic vouchers for dFDA trials
-  - Healthcare access: No more medical bankruptcy
-  - Investment opportunity: VICTORY bonds at 40%+ perpetual
-  - Job creation: Research and healthcare jobs
-  - Economic growth: From health innovation
-- **Health Returns**
-  - Your cancer: Prevented before it starts (or cured if you have it)
-  - Your depression: Actually fixed (not just numbed with SSRIs)
-  - Your aging: Reversed (choose your biological age)
-  - Your genetics: Debugged like software
-  - Your lifespan: +50-100 healthy years (death optional by 2040)
-  - Healthcare cost: $0 (covered by $WISH economy)
-  - Insurance premiums: $0 (insurance companies extinct)
-- **Freedom Returns**
-  - Direct vote on health spending priorities
-  - No more insurance paperwork
-  - No more job you hate (new opportunities)
-  - No more medical bankruptcy
-  - No more unnecessary death
-- **Power Returns**
-  - Direct funding power (your high-level proposals compete equally)
-  - No more "representatives" or gatekeepers controlling the treasury
-  - Equal to every other human (1 person = 1 allocation power)
-  - Co-creator of humanity's health budget priorities
 
 ### Getting Started
 *Three Ways to Contribute*
@@ -1041,58 +1099,3 @@
   - Anyone: Share knowledge, build community
 
 
-### Demolishing Objections
-*Answering the Critics*
-
-- **"Why not just fund medical research more?"**
-  - Because money isn't real, resources are (see Fixed Pie Reality in Part I)
-  - Earth has finite brains, and defense contractors monopolize them with printed money
-  - Medical research as % of GDP has DECLINED while nominal funding increased 10X
-  - Every brilliant engineer designing missiles is NOT designing medical devices
-  - The only solution: Redirect the ratio, not increase the total
-- **"This is too complicated"**
-  - Democracy is complicated. This just admits it and uses computers to help.
-  - You use Netflix's algorithm to pick movies, why not health spending?
-- **"Countries won't cooperate"**
-  - History shows incentives work: lobbyists follow money
-  - Switzerland proved neutrality creates wealth over 200 years
-- **"You can't cure aging"**
-  - We replace hearts, kidneys, blood, bones
-  - Aging is just harder engineering, not magic
-  - We went to the moon with slide rules, we can fix cells with AI
-- **"40% returns are impossible"**
-  - Medallion Fund does 39% with $10B cap. We do 40%+ with unlimited scaling as treaty grows.
-- **"Wishocracy is mob rule"**
-  - Better than oligarch rule. Plus AI advisors prevent poor decisions.
-- **"The powers that be won't allow this"**
-  - Existing power structures can buy VICTORY bonds
-  - Incentive alignment beats opposition
-- **"This violates securities law"**
-  - Structured as debt instruments with qualified purchaser exemptions
-  - Legal architecture detailed in Part VII
-- **"This is too expensive"**
-  - Global military spending: $2.7T annually on weapons
-  - The treaty redirects 1% ($27B) to medical research
-  - If humanity can afford weapons, it can afford cures
-- **"The technology doesn't exist"**
-  - RECOVERY trial proved it does. We're just scaling.
-- **"You can't avoid war in the real world"**
-  - Switzerland: 200+ years of avoiding major wars while surrounded by them
-  - Costa Rica: Abolished their army in 1948, still sovereign
-  - The Swiss prosperity correlates with centuries of peace
-  - Neutrality isn't weakness, it's profitable
-- **"This is unrealistic"**
-  - **[VIDEO: JFK's "We Choose to Go to the Moon" - Doing the Impossible]**
-  - So was: Flight, internet, democracy, antibiotics, Bitcoin, landing on moon
-  - "Unrealistic" is what people say before paradigm shifts
-  - Reality: 69 million people dying unnecessarily each year
-- **"What if it fails?"**
-  - Then we die of preventable diseases like we're doing now
-  - We're already in the worst timeline, can only improve
-  - Doing nothing guarantees Idiocracy, trying gives us a chance at paradise
-- **"But all Wars on X have failed"**
-  - Those were government wars using central planning
-  - They created bureaucracies that needed the problem to exist
-  - We're using markets that profit from solutions
-  - Our "war" is actually a peace treaty with biology
-  - The War on Disease is really the Market for Health
