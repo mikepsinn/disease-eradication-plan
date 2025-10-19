@@ -30,9 +30,6 @@ book:
         - brain/book/theory/public-choice.qmd # Public Choice Theory
         - brain/book/problem/regulatory-capture.qmd # Regulatory Capture
         - brain/book/theory/central-planning-kills.qmd # Central Planning Kills
-        - brain/book/theory.qmd # General Theory (moved from Part II)
-        - brain/book/theory/the-two-wars.qmd # The Two Wars (moved from Part II)
-        - brain/book/problem/genetic-slavery.qmd # Extra - consider removing
 
     - part: "Part II: The Solution"
       chapters:
@@ -42,7 +39,7 @@ book:
         - brain/book/solution/wishocracy.qmd # Wishocracy
         - brain/book/solution/dfda.qmd # The Decentralized FDA
         - brain/book/solution/war-on-disease.qmd # The War on Disease
-        - brain/book/solution/aligning-incentives.qmd # Aligning Incentives (includes defense contractors & coalition)
+        - brain/book/solution/aligning-incentives.qmd # Aligning Incentives
 
     - part: "Part III: The Case"
       chapters:
@@ -50,9 +47,6 @@ book:
         - brain/book/proof/historical-precedents.qmd # Historical Precedent
         - brain/book/proof/body-as-repairable-machine.qmd # The Body as a Machine
         - brain/book/economics.qmd # The Economic Case
-        - brain/book/economics/best-idea-in-the-world.qmd # Not in OUTLINE.MD
-        - brain/book/economics/economic-impact-summary.qmd # Not in OUTLINE.MD
-        - brain/book/economics/health-savings-sharing-model.qmd # Not in OUTLINE.MD
         - brain/book/call-to-action/your-personal-benefits.qmd # Your ROI
         - brain/book/futures.qmd # Intro to Paths
         - brain/book/futures/dystopia-skynet-wins.qmd # Path A: Idiocracy
@@ -78,6 +72,11 @@ book:
     - brain/book/appendix/dih-integration-model.qmd
     - brain/book/appendix/open-ecosystem-and-bounty-model.qmd
 
+    # Theory & Concepts (moved from Part I)
+    - brain/book/theory.qmd
+    - brain/book/theory/the-two-wars.qmd
+    - brain/book/problem/genetic-slavery.qmd
+
     # Strategic Implementation
     - brain/book/appendix/1-percent-treaty.qmd
     - brain/book/appendix/highest-leverage-advocacy.qmd
@@ -87,9 +86,9 @@ book:
     - brain/book/appendix/free-rider-solution.qmd
     - brain/book/appendix/fundraising-strategy.qmd
     - brain/book/appendix/operations-roadmap.qmd
-    - brain/book/strategy/co-opting-defense-contractors.qmd # Moved from Part II
-    - brain/book/economics/coalition-that-wins.qmd # Moved from Part II
-    - brain/book/strategy.qmd # Strategy overview
+    - brain/book/strategy/co-opting-defense-contractors.qmd
+    - brain/book/economics/coalition-that-wins.qmd
+    - brain/book/strategy.qmd
     - brain/book/strategy/bribe-sequence.qmd
     - brain/book/strategy/five-step-execution.qmd
     - brain/book/strategy/viral-marketing.qmd
@@ -112,6 +111,9 @@ book:
     - brain/book/appendix/economic-value-of-accelerated-treatments.qmd
     - brain/book/appendix/icer-full-calculation.qmd
     - brain/book/appendix/intervention-comparison-table.qmd
+    - brain/book/economics/best-idea-in-the-world.qmd  # Moved from Part III
+    - brain/book/economics/economic-impact-summary.qmd  # Moved from Part III
+    - brain/book/economics/health-savings-sharing-model.qmd  # Moved from Part III
 
     # Evidence & Case Studies
     - brain/book/appendix/recovery-trial.qmd
