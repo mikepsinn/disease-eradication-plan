@@ -5,7 +5,7 @@
 
 ## Part I: Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet
 
-### Step 1: Calculate the Daily Massacre in Your Area
+### The Daily Holocaust
 
 - **How to Document the Numbers That Will Start Your Revolution**
   - 150,000 people die every day, mostly from preventable/curable diseases
@@ -115,6 +115,36 @@
   - Military spending = Defense contractor revenue streams
   - Chronic disease = Healthcare industry revenue ($4.5T industry incentivized for treatment over cures)
   - Every "failure" is someone's quarterly earnings success
+
+### Your Body Is Just a Machine
+
+- **The Engineering Reality of Biology**
+  - Heart: We replace it (artificial hearts work)
+  - Kidneys: We replace them (dialysis, transplants)
+  - Blood: We replace it (transfusions daily)
+  - Bones: We replace them (titanium upgrades)
+  - The pattern: Everything is replaceable
+- **DNA Is Just Code**
+  - 4 letters: ATCG (simpler than binary)
+  - Bugs: We can fix them (CRISPR)
+  - Updates: We can install them (gene therapy)
+  - Backup: We have stem cells
+- **Aging Is Just Damage**
+  - Telomeres shorten (we can lengthen)
+  - Cells senesce (we can clear them)
+  - Proteins misfold (we can refold)
+  - Mitochondria fail (we can replace)
+  - The conclusion: Aging is solvable
+- **We Fix Everything Else**
+  - 100-year-old cars: Still run with maintenance
+  - Ancient buildings: Standing after millennia
+  - Broken computers: We debug them
+  - Your body: Not special, just neglected
+- **The Only Barrier Is Resource Allocation**
+  - Not physics (biology obeys laws)
+  - Not knowledge (we know enough)
+  - Not technology (we have the tools)
+  - Just money going to bombs instead
 
 ## Part II: Understanding Why Your Current Systems Fail (And How to Replace Them)
 
@@ -545,36 +575,6 @@
   - Money: Subsidized healthcare creates participation incentive
   - Data: We can prove what works
   - Urgency: People are literally dying
-
-### Your Body Is Just a Machine
-
-- **The Engineering Reality of Biology**
-  - Heart: We replace it (artificial hearts work)
-  - Kidneys: We replace them (dialysis, transplants)
-  - Blood: We replace it (transfusions daily)
-  - Bones: We replace them (titanium upgrades)
-  - The pattern: Everything is replaceable
-- **DNA Is Just Code**
-  - 4 letters: ATCG (simpler than binary)
-  - Bugs: We can fix them (CRISPR)
-  - Updates: We can install them (gene therapy)
-  - Backup: We have stem cells
-- **Aging Is Just Damage**
-  - Telomeres shorten (we can lengthen)
-  - Cells senesce (we can clear them)
-  - Proteins misfold (we can refold)
-  - Mitochondria fail (we can replace)
-  - The conclusion: Aging is solvable
-- **We Fix Everything Else**
-  - 100-year-old cars: Still run with maintenance
-  - Ancient buildings: Standing after millennia
-  - Broken computers: We debug them
-  - Your body: Not special, just neglected
-- **The Only Barrier Is Resource Allocation**
-  - Not physics (biology obeys laws)
-  - Not knowledge (we know enough)
-  - Not technology (we have the tools)
-  - Just money going to bombs instead
 
 ## Part V: The Future - Choose Your Own Adventure - Idiocracy or Wishonia
 
