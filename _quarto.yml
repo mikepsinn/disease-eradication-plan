@@ -39,8 +39,8 @@ book:
         - brain/book/solution/dih.qmd # The DIH
         - brain/book/solution/wishocracy.qmd # Wishocracy
         - brain/book/solution/dfda.qmd # The Decentralized FDA
-        # - brain/book/solution/war-on-disease.qmd # The War on Disease (Missing)
-        # - brain/book/solution/aligning-incentives.qmd # Aligning Incentives (Missing)
+        - brain/book/solution/war-on-disease.qmd # The War on Disease
+        - brain/book/solution/aligning-incentives.qmd # Aligning Incentives
         - brain/book/theory.qmd # General Theory (Not in OUTLINE.MD Part II)
         - brain/book/theory/the-two-wars.qmd # The Two Wars (Not in OUTLINE.MD Part II)
         - brain/book/strategy/co-opting-defense-contractors.qmd # Part of "Aligning Incentives"
@@ -65,11 +65,11 @@ book:
       chapters:
         - brain/book/legal.qmd # Legal Architecture (Intro)
         - brain/book/legal/legal-framework.qmd # Legal Architecture
-        # - brain/book/legal/securities-law.qmd # Securities Law (Missing)
-        # - brain/book/legal/election-law.qmd # Election Law (Missing)
-        # - brain/book/legal/treaty-framework.qmd # Treaty Framework (Missing)
+        - brain/book/legal/securities-law.qmd # Securities Law
+        - brain/book/legal/election-law.qmd # Election Law
+        - brain/book/legal/treaty-framework.qmd # Treaty Framework
         - brain/book/economics/victory-bonds.qmd # The Investment Vehicle
-        # - brain/book/strategy/legislation-package.qmd # Legislation Package (Missing)
+        - brain/book/strategy/legislation-package.qmd # Legislation Package
         - brain/book/strategy/global-referendum.qmd # Global Referendum
         - brain/book/call-to-action/three-actions.qmd # Getting Started
         - brain/book/call-to-action.qmd # Getting Started
