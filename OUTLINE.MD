@@ -3,7 +3,7 @@
 **[VIDEO: Charlie Chaplin's "The Great Dictator" Speech - The Choice Between Machinery and Humanity]**
 *"We think too much and feel too little. More than machinery, we need humanity. More than cleverness, we need kindness and gentleness."*
 
-## Problems
+## Part I: The Problem
 
 *Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet*
 
@@ -147,10 +147,6 @@
   - Not knowledge (we know enough)
   - Not technology (we have the tools)
   - Just money going to bombs instead
-
-## Theory
-
-*Understanding Why Your Current Systems Fail (And How to Replace Them)*
 
 ### Why Central Planning Kills People
 
