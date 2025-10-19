@@ -2551,9 +2551,14 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
   > — NIH, [Common Fund Overview](https://commonfund.nih.gov/overview)
 
 <a id="nih-decision-makers-200-people"></a>
-- **Number of key NIH decision-makers**
-  > Currently: 200 people in Maryland.
-  > — <!-- TODO: Add source URL -->
+- **NIH centralized decision-making structure**
+  > NIH structure: 27 Institutes and Centers, each with own research agenda
+  > Office of the Director: Sets policy, plans/manages/coordinates all NIH components
+  > Location: 9000 Rockville Pike, Bethesda, Maryland
+  > Total NIH employees: ~20,000
+  > Leadership structure: Director + 27 Institute/Center directors + division chiefs + council members
+  > Specific count of "key decision-makers" varies by definition; centralized funding decisions flow through Office of Director and IC leadership
+  > — [NIH: Who We Are](https://www.nih.gov/about-nih/what-we-do/nih-almanac/who-we-are) | [NIH: Organizational Structure](https://www.nih.gov/about-nih/what-we-do/nih-almanac/organizational-structure)
 
 <a id="nih-eradicated-zero-diseases"></a>
 - **Number of diseases eradicated by the NIH**
@@ -3044,11 +3049,6 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
   > — [Wikipedia: Principal-Agent Problem](https://en.wikipedia.org/wiki/Principal–agent_problem) | [Inspired Economist: Agency Theory](https://inspiredeconomist.com/articles/agency-theory/) | [AEA: The Costs of Misaligned Incentives](https://www.aeaweb.org/articles?id=10.1257%2Fpol.20210208)
 
 
-<a id="projected-per-capita-benefit-1-2m"></a>
-- **Projected per capita benefit of ~\$1.2M over 80 years**
-  > "Projected per capita benefit: ~\$1.2M over 80 years from AI-driven health efficiencies"
-  > — <!-- TODO: Add source URL -->
-
 <a id="prostate-vs-breast-cancer-deaths"></a>
 - **Prostate vs. Breast Cancer Deaths**
   > "Prostate cancer now kills more people than breast cancer in some contexts, such as older men in the UK in 2018."
@@ -3316,14 +3316,21 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
   > — [SEC: Form D](https://www.sec.gov/files/formd.pdf) | [SEC: Form D Overview](https://www.sec.gov/about/forms/formd.pdf) | [Investopedia: SEC Form D](https://www.investopedia.com/terms/s/sec-form-d.asp)
 
 <a id="sec-innovation-guidance-2025"></a>
-- **SEC innovation-friendly guidance (August 2025)**
-  > the SEC's more innovation-friendly guidance as of August 2025
-  > — <!-- TODO: Add source URL -->
+- **SEC innovation-friendly guidance (2025)**
+  > Project Crypto launched July 31, 2025: Commission-wide initiative to modernize securities rules for blockchain/"on-chain" markets
+  > Innovation exemption rulebook: Chairman Atkins working toward new rules by end 2025/Q1 2026
+  > Token classification guidance: April 10, 2025 statement on crypto asset securities disclosure requirements
+  > Crypto Task Force: Led by Commissioner Hester Peirce; shift from "regulation-by-enforcement" to facilitation
+  > Interim relief: Staff instructed to use interpretive/exemptive relief while developing regulations
+  > — [Sidley: Project Crypto](https://www.sidley.com/en/insights/newsupdates/2025/08/sec-announces-launch-of-project-crypto) | [CoinDesk: Innovation Exemption](https://www.coindesk.com/policy/2025/09/23/sec-s-atkins-says-agency-pushing-toward-2025-rules-allowing-crypto-firm-innovation) | [SEC: Crypto Task Force](https://www.fintechanddigitalassets.com/2025/02/the-secs-crypto-task-force-charts-a-new-course/)
 
 <a id="sec-investor-limit-private-offering"></a>
 - **Investor Limits for Private Offerings**
-  > Maximum 99 investors per entity
-  > — <!-- TODO: Add source URL -->
+  > Rule 506(b): Unlimited accredited investors + up to 35 non-accredited investors (must be sophisticated)
+  > Rule 506(c): Unlimited accredited investors only (allows general solicitation)
+  > No "99 investor" maximum exists under Regulation D
+  > Both Rule 506(b) and 506(c): Unlimited capital can be raised
+  > — [SEC: Rule 506(b)](https://www.sec.gov/resources-small-businesses/exempt-offerings/private-placements-rule-506b) | [Cornell Law: Rule 506](https://www.law.cornell.edu/wex/rule_506) | [Investor.gov: Rule 506](https://www.investor.gov/introduction-investing/investing-basics/glossary/rule-506-regulation-d)
 
 <a id="sec-reg-a"></a>
 - **SEC Regulation A (Reg A) overview and cap (\$75M/yr)**
@@ -3337,13 +3344,20 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="sec-reg-cf-raise-limit"></a>
 - **SEC Regulation Crowdfunding (Reg CF) Raise Limit**
-  > $5M Reg CF
-  > — <!-- TODO: Add source URL -->
+  > Maximum: $5 million in 12-month period (as of March 15, 2021)
+  > Increased from $1.07 million (nearly 5X increase)
+  > Requirements: All transactions via SEC-registered intermediary (broker-dealer or funding portal); File Form C with SEC
+  > Securities generally cannot be resold for one year
+  > — [SEC: Regulation Crowdfunding](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding) | [Republic: SEC Raises Reg CF to $5M](https://republic.com/blog/investor-education/huge-news-sec-raises-regulation-crowdfunding-limit-from-1-07mm-to-5mm) | [Williams Mullen: SEC Finalizes New Limits](https://www.williamsmullen.com/insights/news/legal-news/sec-finalizes-new-limits-regulation-and-crowdfunding)
 
 <a id="sec-reg-d"></a>
 - **SEC Regulation D for accredited investors**
-  > Regulation D (for U.S. accredited investors)
-  > — <!-- TODO: Add source URL -->
+  > Private placement exemption allowing companies to raise unlimited capital from accredited investors
+  > Rule 506(b): Unlimited accredited + up to 35 non-accredited; no general solicitation
+  > Rule 506(c): Only accredited investors; allows general solicitation/advertising
+  > Form D filing required within 15 days of first sale
+  > Investors receive restricted securities (resale limitations)
+  > — [SEC: Private Placements Rule 506(b)](https://www.sec.gov/resources-small-businesses/exempt-offerings/private-placements-rule-506b) | [Investor.gov: Rule 506](https://www.investor.gov/introduction-investing/investing-basics/glossary/rule-506-regulation-d) | [Wikipedia: Regulation D](https://en.wikipedia.org/wiki/Regulation_D_(SEC))
 
 <a id="sec-reg-s"></a>
 - **SEC Regulation S for non-U.S. investors**
