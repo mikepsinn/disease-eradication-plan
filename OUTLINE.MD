@@ -1,4 +1,4 @@
-# Your Complete Idiot's Guide to Actually Ending War and Disease: The Step-by-Step Manual
+# The Complete Idiot's Guide to Actually Ending War and Disease
 
 **[VIDEO: Charlie Chaplin's "The Great Dictator" Speech - The Choice Between Machinery and Humanity]**
 *"We think too much and feel too little. More than machinery, we need humanity. More than cleverness, we need kindness and gentleness."*
@@ -10,8 +10,7 @@
 ### Daily Holocaust
 *How to Document the Numbers That Will Start Your Revolution*
 
-- **How to Document the Numbers That Will Start Your Revolution**
-  - 150,000 people die every day, mostly from preventable/curable diseases
+- 150,000 people die every day, mostly from preventable/curable diseases
   - That's fifty 9/11s. Every. Single. Day.
   - Your parent, child, or friend is statistically likely to be one of them
   - Biotechnology could prevent most of these deaths
@@ -95,8 +94,7 @@
 ### Democracy Is Theater
 *You Have Nearly Zero Political Power*
 
-- **The Princeton Bombshell: You Have Nearly Zero Political Power**
-  - Gilens & Page study: Virtually no correlation between public opinion and policy when elites disagree
+- Gilens & Page study: Virtually no correlation between public opinion and policy when elites disagree
   - Economic elites get what they want 78% of the time
   - Average citizens get preferred outcomes only when elites agree (which is rarely on their behalf)
   - An oligarchy with democratic characteristics
@@ -161,8 +159,6 @@
     - Timeline: 2-3 years → 17 years to market
     - Life expectancy gains slow by more than half
   - 2020: Oxford RECOVERY trial proves decentralization still works
-    - $500 per patient vs $41,000 FDA standard (82X cheaper)
-    - Included real sick patients who would be excluded from typical FDA trials
   - The demonstrated inefficiency: FDA trials are 82X more expensive than necessary
 - **The Pattern: Most Government "Wars" Create Perverse Incentives**
   - War on Drugs ($1T): Created powerful cartels, violence increased dramatically
@@ -477,11 +473,6 @@
 ### The War on Disease
 *Designing the First War to Win*
 
-- **The Two Wars**
-  - War on Humanity: $2.7T/year, 75+ years running, no victory possible
-  - War on Disease: $68B/year, barely fighting, victory achievable
-  - Humanity funds death 40X more than life
-  - Flip the budget: Make the War on Disease bigger than the War on Humanity
 - **Structure It Differently: Markets Not Ministries**
   - Build no bureaucracy to preserve (use smart contracts)
   - Pay for outcomes, not process
@@ -615,8 +606,7 @@
 ### The Body as a Machine
 *The Engineering Reality of Biology*
 
-- **The Engineering Reality of Biology**
-  - Heart: We replace it (artificial hearts work)
+- Heart: We replace it (artificial hearts work)
   - Kidneys: We replace them (dialysis, transplants)
   - Blood: We replace it (transfusions daily)
   - Bones: We replace them (titanium upgrades)
@@ -657,9 +647,6 @@
   - Comparison: Best hedge funds dream of 2:1 annual returns (we laugh at their poverty)
   - Real-world proof: Switzerland's $93K GDP per capita (what happens when you stop buying bombs for 200 years)
 - **Historical Peace Dividend Returns (Proven 3-4X GDP Multiplier)**
-  - Post-WW2 (1945-1950): Cut military 30% of GDP → 8% annual growth for a decade
-  - Post-Cold War (1990-2000): Cut military 3% of GDP → Created the internet economy
-  - Switzerland (1815-2025): Kept military <1% of GDP → Highest quality of life on Earth
   - The pattern: Every 1% reduction in military spending → 3-4% GDP growth
   - The 1% Treaty: Conservative compared to history's proven peace dividends
 - **[FIGURE: 463:1 ROI Comparison]**
@@ -1096,5 +1083,3 @@
   - Educators: Teach others
   - Researchers: Launch trials on dFDA
   - Anyone: Share knowledge, build community
-
-
