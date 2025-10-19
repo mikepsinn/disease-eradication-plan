@@ -3361,8 +3361,11 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="sec-reg-s"></a>
 - **SEC Regulation S for non-U.S. investors**
-  > Regulation S (for non-U.S. investors)
-  > — <!-- TODO: Add source URL -->
+  > Exemption from SEC registration for securities offerings made outside the United States
+  > Requirements: (1) Offshore transaction - offer not made to U.S. person, buyer outside U.S.; (2) No directed selling efforts in U.S.
+  > Allows companies to raise capital from non-U.S. investors without wealth/sophistication requirements
+  > Cannot be used to circumvent registration requirements; must be made in good faith
+  > — [Fourscore Law: Regulation S](https://www.fourscorelaw.com/resources/regulation-s-exemption-for-foreign-offerings) | [Brinen Law: Regulation S](https://brinenlaw.com/securities/what-is-regulation-s/) | [Deloitte DART: Regulation S](https://dart.deloitte.com/USDART/home/accounting/sec/rules-regulations/230-securities-act-1933-rules/230-regulation-s-rules-governing-offers)
 
 <a id="selfish-gene-dawkins"></a>
 - **The Selfish Gene Quote**
@@ -3371,8 +3374,11 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="short-term-trial-outcomes"></a>
 - **Typical duration of outcome tracking in clinical trials**
-  > Most trials only track short-term outcomes
-  > — <!-- TODO: Add source URL -->
+  > Median approach: Calculate endpoints when 50% of subjects reach endpoint (rather than waiting for all)
+  > Duration of Response (DOR): Common secondary endpoint in oncology; median times vary widely
+  > Examples: Survival median 5-8.2 months; DOR medians 16.4-19.4 months; CAR-T time to HSCT median 7.7 months (range 2-39 months)
+  > Short-term endpoints often used for faster results; long-term outcomes may not be tracked
+  > — [PMC: Duration of Response Endpoint](https://pmc.ncbi.nlm.nih.gov/articles/PMC11524686/) | [Wikipedia: Clinical Endpoint](https://en.wikipedia.org/wiki/Clinical_endpoint) | [arXiv: Duration of Response in Oncology](https://arxiv.org/pdf/2212.10911)
 
 <a id="sipri-2024-spending"></a>
 - **Global military spending (\$2.72T, 2024)**
