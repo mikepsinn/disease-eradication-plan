@@ -9,7 +9,7 @@ lastFactCheckHash: a8d308eee95d47af70ec00e69aec7828af31487062d52702c2a1db1e74e14
 ---
 ## Overview
 
-The [1% Treaty](1-percent-treaty.qmd) initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for [VICTORY bonds](../brain/book/economics/victory-bonds.qmd)**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
+The [1% Treaty](1-percent-treaty.qmd) initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for [VICTORY bonds](../economics/victory-bonds.qmd)**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
 
 ## Challenge 1: Foreign National Election Funding
 
@@ -83,7 +83,7 @@ This phase focuses on mass distribution of a non-security utility token.
 
 **Phase 2: VICTORY Token Conversion (Post-Treaty)**
 
-This phase occurs only _after_ the 1% Treaty is successfully ratified and the [DIH Treasury](../brain/book/solution/dih.qmd) is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
+This phase occurs only _after_ the 1% Treaty is successfully ratified and the [DIH Treasury](../solution/dih.qmd) is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
 - **Mechanism: Voluntary, Opt-In Conversion:** Holders of VOTE points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
 - **Legal Rationale & Safe Harbor:** This conversion event will be structured to [fall within the SEC's "safe harbor" provisions](../references.qmd#peirce-token-safe-harbor) for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY bond's function is now primarily for utility, governing the active, funded DIH treasury, which strengthens the case for a more favorable regulatory treatment.
@@ -308,7 +308,7 @@ graph TD
 
 ### HHS Policy Recommendations
 
-To maximize the effectiveness of the [dFDA Infrastructure](../brain/book/solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source, decentralized FDA platform enabling perpetual, patient-driven clinical trials.
+To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source, decentralized FDA platform enabling perpetual, patient-driven clinical trials.
 
 **Key Policy Objectives:**
 
