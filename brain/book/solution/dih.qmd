@@ -61,23 +61,22 @@ This is how you fund not just thousands of individual trials, but the entire eco
 You don't just need a plan; you need a vehicle. The DIH is a hybrid system designed to use the tools of capitalism to build a post-capitalist health economy. It unfolds in three phases.
 
 **Phase 0: The Seed**
-Before you can raise a billion-dollar war chest, you need gas money. You start by establishing a **U.S.-based 501(c)(3) non-profit**. This is the legal entity that can accept initial, tax-deductible seed grants from foundations and early believers. The goal of this seed funding isn't to boil the ocean; it's to fund the essentials required to get to the next stage:
-*   **Legal Architecture:** Paying the lawyers to set up the for-profit entity and the Swiss foundation.
-*   **The Investment Case:** Building the materials and financial models for the [VICTORY Bonds](../appendix/victory-bonds.qmd).
-*   **Core Team:** Assembling the initial operators to run the campaign.
+Before you can raise a billion dollars, you need gas money. You start by establishing a **U.S.-based 501(c)(3) non-profit**. This is the legal entity that can accept initial, tax-deductible seed grants from foundations. Its mission is purely charitable: education, research, and building the public technology platforms.
 
-And yes, using non-profit funds to create a for-profit entity is perfectly legal when it's the most effective tool to achieve the charitable mission. The 501(c)(3)'s mission is to end disease. Since it can't legally engage in the massive political lobbying required to pass the treaty, it funds the creation of a separate vehicle that *can*. It's not a conflict of interest; it's a strategic necessity. The for-profit is a weapon built by the non-profit to fight the war.
+This seed funding is used to pay for the legal and operational setup of two additional, separate entities:
+*   A **501(c)(4) Social Welfare Organization** to handle direct political lobbying for the [1% Treaty](../solution/1-percent-treaty.qmd).
+*   A **For-Profit Company** to raise the investment capital needed to fund the entire operation.
 
-This non-profit is the bootstrap loader for the entire system. It's the spark that lights the fuse.
+Using 501(c)(3) funds to establish these entities is a strategic necessity. The non-profit's mission is to end disease, and since it cannot legally perform the required political and financial functions itself, it funds the creation of specialized vehicles that can.
 
-**Phase 1: The For-Profit Engine**
-With the legal groundwork laid, you launch the for-profit vehicle to raise a **$1 billion war chest** from investors. This isn't a charity; it's a high-risk, high-return investment in political and social change. This capital is used for three things:
-*   **Fund the Campaign:** A global media and lobbying effort to get the [1% Treaty](../solution/1-percent-treaty.qmd) signed.
-*   **Build the Platform:** The software for the [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd).
-*   **Cover Operations:** The administrative and technical costs to get the system running.
+**Phase 1: The Three-Pronged Attack**
+With the legal groundwork laid, you launch a coordinated campaign across the three entities, each with a specific role:
+1.  **The 501(c)(3) Public Charity:** Focuses on education, building a coalition of non-profit partners, and developing the open-source dFDA and Wishocracy platforms as a public good. It is funded by tax-deductible grants.
+2.  **The 501(c)(4) Social Welfare Org:** Executes the aggressive lobbying and political campaign to pass the [1% Treaty](../solution/1-percent-treaty.qmd). It is funded by non-deductible donations from those who want to directly support the political fight.
+3.  **The For-Profit Company:** Raises the **$1 billion war chest** by selling [VICTORY Bonds](../appendix/victory-bonds.qmd) to investors. This capital is then used to grant funds to the (c)(3) and (c)(4) to scale their operations into a global movement.
 
 **Phase 2: The Non-Profit Treasury**
-Once the treaty is signed, the $27 billion in annual funding flows into a **Swiss foundation**. This non-profit structure ensures the funds are managed transparently and used solely for their intended purpose: funding research and patient subsidies. It's legally firewalled from the for-profit engine and its investors, allowing it to accept treaty funds and donations without compromising the political action needed to create it.
+Once the treaty is signed, the $27 billion in annual funding flows into a **Swiss foundation**. This non-profit treasury is legally firewalled from the initial entities. It manages the funds transparently, paying returns to the for-profit's investors and distributing the vast majority to patient subsidies and research bounties.
 
 **The Full Value Flow**
 Here's how the entire system is designed to be self-sustaining and capture-proof:
@@ -86,23 +85,32 @@ Here's how the entire system is designed to be self-sustaining and capture-proof
 graph TD
     subgraph "Phase 0: Seed Funding"
         A[Foundations & Donors] -- Seed Grants --> B{US 501(c)(3)};
-        B -- Funds --> C[Legal & For-Profit Setup];
+        B -- Funds --> C[Legal Setup for All Entities];
     end
 
-    subgraph "Phase 1: Capitalization"
-        C --> D{For-Profit Vehicle};
-        E[Investors] -- $1B War Chest --> D;
-        D -- Funds --> F[Lobbying & Referendum for 1% Treaty];
-        D -- Funds --> G[Platform Development (dFDA, Wishocracy)];
+    subgraph "Phase 1: Capitalization & Campaign"
+        C --> D{For-Profit Co.}
+        C --> E{501(c)(4) Lobbying}
+        C --> F{501(c)(3) Education/Tech}
+
+        G[Investors] -- $1B War Chest --> D;
+        H[Donors] -- Non-deductible --> E;
+        A -- Tax-deductible --> F;
+        
+        D -- Grants --> E;
+        D -- Grants --> F;
+
+        E -- Political Campaign --> I[1% Treaty];
+        F -- Public Education --> I;
     end
     
     subgraph "Phase 2: Ongoing Funding Cycle"
-        H[Governments] -- Sign --> I[1% Treaty];
-        I -- $27B/year --> J{Swiss Foundation (DIH Treasury)};
-        J -- 10% of inflows --> E;
-        J -- 90% of inflows --> K[Patient Subsidies & Research Bounties];
-        K --> L[Researchers & Clinical Trials];
-        L -- Cures & Data --> M[Humanity];
+        J[Governments] -- Sign --> I;
+        I -- $27B/year --> K{Swiss Foundation (DIH Treasury)};
+        K -- 10% of inflows --> G;
+        K -- 90% of inflows --> L[Patient Subsidies & Research Bounties];
+        L --> M[Researchers & Clinical Trials];
+        M -- Cures & Data --> N[Humanity];
     end
 ```
 
