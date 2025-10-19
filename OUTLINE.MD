@@ -714,9 +714,9 @@
   - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
 
-## Part VI: The Money: How to Make Everyone Rich While Ending Disease (Your Financial Playbook)
+## Part VI: Your Financial Manual: How to Fund This and Make a Fortune
 
-### The Economic Case - 463:1 Return on Killing Disease
+### How to Make the Economic Case (The 463:1 ROI)
 
 - **The ROI That Breaks Reality**
   - Investment: $40M annual platform cost (couch cushion money)
@@ -811,7 +811,7 @@
   - Year 20: Full $16.5T annual value realized
   - Every year we delay: $142B in immediate benefits lost forever
 
-### How to Structure VICTORY Bonds - Your Investment Vehicle
+### How to Structure the Investment Vehicle (VICTORY Bonds)
 
 - **The Instrument: High-Risk, High-Return Political Arbitrage**
   - Perpetual 10% of all DIH treaty inflows
@@ -850,7 +850,7 @@
   - $25M: Reserve for treaty implementation
   - Full transparency: Every dollar tracked publicly
 
-### How Incentives Align (Why Different Groups Support This)
+### How to Align a Civilization's Incentives
 
 - **Defense Contractors: The Math Changes**
   - VICTORY bonds offer 40%+ perpetual returns vs 8% defense margins
@@ -955,7 +955,7 @@
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
 
-### What This Means for You
+### Your Returns on Investment (Health, Wealth, and Freedom)
 
 - **Economic Security**
   - Subsidized treatment: Dynamic vouchers for dFDA trials
@@ -1003,7 +1003,8 @@
   - Researchers: Launch trials on dFDA
   - Anyone: Share knowledge, build community
 
-### Every Objection Demolished
+
+### How to Demolish Every Objection
 
 - **"Why not just fund medical research more?"**
   - Because money isn't real, resources are (see Fixed Pie Reality in Part I)

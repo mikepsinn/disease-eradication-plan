@@ -574,12 +574,14 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
   > Note: National Association of Realtors #2 at $52M; lobbying spending continues breaking records
 
 <a id="cost-of-political-influence"></a>
-- **Estimated cost of campaign contributions to influence politicians**
-  > $10,000 - $50,000 in campaign contributions
-  > $50,000 - $500,000
-  > $1 million+
-  > $20 million+
-  > — <!-- TODO: Add source URL -->
+- **How campaign contributions influence politicians**
+  > Research: Only 1 in 4 studies support notion that contributions directly "buy votes"
+  > Influence mechanism: Access, agenda-setting, keeping bills off floor, earmarks, key language in legislation (not direct votes)
+  > Average winner costs (2022): House $2.79M, Senate $26.53M; Competitive races much higher
+  > Internal party fundraising requirements: $100K-$30M annually; Committee positions cost $450K
+  > 95% of House races since 2004 won by highest spender
+  > Contribution limits: $3,300 per candidate per election (individuals); PACs gave $289.3M total (2021-2022)
+  > — [ScienceDirect: Campaign Contributions & Legislative Behavior](https://www.sciencedirect.com/science/article/pii/S0047272725000179) | [Slate: Cost to Buy a Vote](https://slate.com/news-and-politics/2010/10/how-much-does-it-cost-to-buy-a-vote.html) | [OpenSecrets: Cost of Election](https://www.opensecrets.org/elections-overview/cost-of-election) | [Issue One: Congressional Fundraising](https://issueone.org/articles/the-118th-congress-fundraising-treadmill/)
 
 <a id="cost-of-universal-healthcare"></a>
 - **Estimated cost of providing universal healthcare globally**
@@ -659,12 +661,16 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
   > Europe | 16,000 | 5,000
   > North America | 8,000 | 2,000
   > Latin America | 8,000 | 4,000
-  > — <!-- TODO: Add source URL -->
+  > — [PMC: Heart of the World - CVD Regional Burden](https://pmc.ncbi.nlm.nih.gov/articles/PMC10809869/) | [Lancet: CVD in Americas](https://www.thelancet.com/journals/lanam/article/PIIS2667-193X(24)00287-4/fulltext)
+  > Note: North America ~900K-1M CVD deaths/year; Latin America/Caribbean >1M deaths/year (2021)
 
 <a id="dao-multisig-vulnerabilities"></a>
 - **DAO multisig vulnerabilities to technical and social exploits**
-  > Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks.
-  > — <!-- TODO: Add source URL -->
+  > Technical exploits: The DAO hack (2016) stole 3.6M ETH ($60M) via reentrancy attack; vulnerabilities include DoS, gas limits, overflow/underflow, 51% attacks
+  > Social engineering: Multiple pseudonyms to control multisig wallets, impersonation, malware emails, fake job offers; exploit humans when code vulnerabilities diminish
+  > Multisig issues: Many DAOs use ⅔ multisig (too low, easily exploitable); attackers can hold multiple positions to meet quorum
+  > Governance risks: Brief voting windows, uncritical proposal review allow malicious proposals
+  > — [Quorum: Auditing Social Layer of DAO](https://mirror.xyz/quorumnewsletter.eth/U5lYFUe5oavRiwdRisH9DnejpvRJhteObB7tpV5Kw_E) | [BlockScience: DAO Vulnerabilities](https://medium.com/block-science/dao-vulnerabilities-509ff074a296) | [Consensys: State of DAO Security](https://consensys.io/blog/the-state-of-dao-security)
 
 <a id="death-causes-vs-fear"></a>
 - **Death Causes vs Fear (Heart Disease vs Terrorism)**
@@ -719,13 +725,15 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
   > More common among women than men
   > — [WHO: Depression Fact Sheet](https://www.who.int/news-room/fact-sheets/detail/depression) | [Our World in Data: Mental Health](https://ourworldindata.org/mental-health)
   > Note: 75%+ in low/middle-income countries receive no treatment. In 2021, 1.1B lived with mental disorder globally
-  > Depression affects 280 million
-  > — <!-- TODO: Add source URL -->
 
 <a id="dfda-roi-463-to-1"></a>
 - **dFDA ROI of 463:1 over 10 years**
-  > "Current dFDA ROI: 463:1 over 10 years"
-  > — <!-- TODO: Add source URL -->
+  > NPV analysis estimate: 463:1 ROI over 10 years (central estimate)
+  > Range: 66:1 to 2,577:1 depending on total ecosystem costs
+  > Based on: $37.5-46M upfront platform investment + operational costs vs $50B annual R&D savings
+  > Value proposition: 80X reduction in per-patient trial costs; $50B gross annual savings from pharma R&D
+  > Pharmaceutical industry spends ~$100B/year on R&D; 50% cost reduction yields enormous net savings
+  > — [dFDA: Cost Benefit Analysis](https://wiki.dfda.earth/en/economic-models/dfda-cost-benefit-analysis) | [dFDA Wiki](https://wiki.dfda.earth/)
 
 <a id="diabetes-deaths-2m-annually"></a>
 - **Annual deaths from diabetes**
@@ -734,14 +742,20 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="disease-advocacy-lobbying-roi"></a>
 - **Lobbying spending and returns for disease advocacy groups**
-  > Disease advocacy groups spend: $100 million on lobbying
-  > They get: $1.8 billion in increased funding
-  > — <!-- TODO: Add source URL -->
+  > Each $1,000 spent on lobbying correlated with $25,000 funding increase following year (53 diseases, 19 years)
+  > Rare disease advocates increased NIH rare-disease funding 3-15%/year (1998-2008) via millions in lobbying
+  > Specific examples: Alzheimer's Association secured $100M NIH increase (FY2024); ME/CFS Initiative helped secure >$1B for long-COVID
+  > General ratio: Disease advocacy lobbying yields significant ROI, though specific "$100M → $1.8B" not verified
+  > — [NYU Stern: Lobbying Influences NIH Funding](https://www.stern.nyu.edu/experience-stern/news-events/new-research-finds-special-interest-lobbying-does-influence-nih-research-funding) | [Nature: Lobbying Sways NIH Grants](https://www.nature.com/articles/515019a) | [Alzheimer's Association: $100M Increase](https://www.alz.org/news/2024/congress-bipartisan-funding-alzheimers-research)
 
 <a id="disease-burden-as-pct-of-gdp"></a>
 - **Global disease burden as a percentage of global GDP**
-  > % of Global GDP: 15%
-  > — <!-- TODO: Add source URL -->
+  > Poor health reduces global GDP by 15% annually (McKinsey Global Institute)
+  > Impact from: premature deaths + lost productive potential in working-age population
+  > ~2X the pandemic's negative impact in 2020
+  > 70% of economic benefits achievable via: cleaner/safer environments, healthier behaviors, vaccines/preventive medicine
+  > Additional burden: NCDs (CVD, respiratory, cancer, diabetes, mental health) = $47T cumulative output loss over 2 decades (75% of 2010 global GDP)
+  > — [McKinsey: Poor Health Reduces GDP 15%](https://www.mckinsey.com/mgi/overview/in-the-news/poor-health-reduces-global-gdp-by-15-percent-each-year) | [WEF: Global Economic Burden of NCDs](https://www3.weforum.org/docs/WEF_Harvard_HE_GlobalEconomicBurdenNonCommunicableDiseases_2011.pdf)
 
 <a id="disease-cost-alzheimers-1300b"></a>
 - **Annual global economic burden of Alzheimer's and other dementias**
@@ -2149,8 +2163,13 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="japans-regenerative-medicine-act"></a>
 - **Japan's Regenerative Medicine Act and conditional approval pathway**
-  > Japan's Regenerative Medicine Act
-  > — <!-- TODO: Add source URL -->
+  > Act on Safety of Regenerative Medicine (RM Act) + amended Pharmaceuticals and Medical Devices Act (PMD Act): passed Nov 2013, effective Nov 2014
+  > Conditional and time-limited approval pathway: Obtain approval after exploratory trials demonstrate probable benefit and proven safety
+  > 7-year conditional approval period to confirm clinical benefit (e.g., using surrogate endpoints)
+  > SAKIGAKE designation (April 2015): Expedited pathway for innovative products targeting serious/life-threatening diseases without effective treatment
+  > Benefits: Prioritized consultation, accelerated review, extended re-examination period, premium pricing
+  > Examples: Terumo's HeartSheet and Stemirac obtained conditional approval; Stemirac also SAKIGAKE-designated
+  > — [FDLI: Japan's Regen Med Pathways](https://www.fdli.org/2019/02/global-focus-japans-regenerative-medicine-regulatory-pathways-encouraging-innovation-and-patient-access/) | [Cell & Gene Therapy Insights: SAKIGAKE](https://www.insights.bio/cell-and-gene-therapy-insights/journal/article/310/Experiences-from-Japan-SAKIGAKE-Designation-System-for-Regenerative-Medical-Products) | [PMC: Flexible Regulatory Review Japan](https://pmc.ncbi.nlm.nih.gov/articles/PMC6696404/)
 
 <a id="jnj-2023-financials"></a>
 - **Johnson & Johnson 2023 Financials**
