@@ -16,55 +16,52 @@ Bureaucracy is a disease. The [DIH](../solution/dih.qmd) is the cure.
 
 ---
 
-### The Solution: A System That Actually Works
+### How to Build a Medical Research System That Works
 
-The Decentralized Institutes of Health (DIH) is what happens when you design a medical research system while sober. It is not a better version of the NIH; it is the opposite. It is built on four simple principles designed to deliver more cures, faster, for less money.
+You don't fix the NIH; you replace it. The Decentralized Institutes of Health (DIH) is what you build when you want to cure diseases instead of writing papers about them. You build it on four principles that invert the logic of bureaucracy.
 
-**1. Patient Choice is Sovereign.**
-The system is funded by one source: sick people paying for trials that might save their lives. The DIH treasury provides patients with subsidies. Patients, in consultation with their doctors, choose which trials to join. The trials that attract the most patients get the most funding. There are no committees, no grant applications, and no gatekeepers.
+**1. Make Patient Choice Sovereign.**
+You stop letting committees guess what might work and instead route funding through the people who are actually sick. The NIH has 200 bureaucrats in a room trying to predict the future; the DIH has millions of patients and their doctors making choices about their own lives. The treasury gives subsidies directly to patients, who fund trials with their feet. The trials that attract patients get money. The ones that don't, die. You have just replaced a grant-writing contest with a market driven by patient need.
 
-**2. Pay for Results, Not Promises.**
-The DIH has no grant applications. Researchers get paid in two ways:
-*   **By Patients:** For running trials that patients want to join.
-*   **By Bounties:** For solving clearly defined problems (e.g., "$1B to reverse aging by 10 years, provided it doesn't turn people into vampires").
-This aligns incentives completely. Researchers are rewarded for creating value and solving problems, not for writing paperwork.
+**2. Pay for Cures, Not Paperwork.**
+You eliminate grant applications entirely. Researchers get paid in two ways: by patients who join their trials, and by massive [bounties](../solution/bounties.qmd) for solving clearly defined problems (e.g., "$1B to reverse aging by 10 years, provided it doesn't turn people into vampires"). You align their incentives with patient outcomes, not bureaucratic process. They get rich by curing diseases, not by writing fiction.
 
-**3. Automate Everything, Trust No One.**
-The DIH is run by code, not people. All rules are enforced by transparent, auditable smart contracts. Every dollar is tracked on a public ledger. This minimizes corruption, eliminates administrative waste, and ensures the system operates exactly as designed. Software replaces bureaucrats; the primary incentive for any remaining administrator is to disappear.
+**3. Run It With Code, Not Committees.**
+You build the DIH on transparent, auditable smart contracts because code can't take bribes. You delete the CEO position because there's nothing to corrupt. Every rule is code. Every dollar is tracked on a public ledger. This isn't about trusting people to be good; it's about designing a system where they can't be bad. You replace bureaucrats with software, and the primary job of any remaining administrator is to automate themselves out of existence.
 
-**4. Radical Transparency.**
-[Every trial, every result (positive or negative), and every dataset is published](../references.qmd#publication-bias-clinical-trials) for the world to see. This stops redundant research, accelerates discovery, and allows knowledge to compound. AI agents monitor the public data to connect researchers, spot opportunities, and prevent waste.
+**4. Make All Knowledge Public.**
+You mandate that [every trial, every result (positive or negative), and every dataset is published](../references.qmd#publication-bias-clinical-trials) for the world to see. This stops scientists from wasting decades on redundant research and allows knowledge to compound. AI agents can then scan the global data stream to connect researchers, find patterns, and accelerate discovery for everyone.
 
 ---
 
-### How It Works: The 3-Step Flow of Funds
+### How You Fund It: The 3-Step Flow
 
-1.  **The Treasury is Filled.** [The 1% Treaty](../appendix/1-percent-treaty.qmd) redirects $27 billion in global military spending into the DIH treasury.
+1.  **You Fill the Treasury.** You use [The 1% Treaty](../solution/1-percent-treaty.qmd) to redirect a rounding error from global military spending—$27 billion—into the DIH treasury.
 
-2.  **Wishocracy Sets the Rules.** A global population of voters uses [Wishocracy](../solution/wishocracy.qmd) to set the high-level budget. They don't pick specific trials. They vote on rules like, "Allocate 70% of the treasury to Patient Subsidies" and "Allocate 5% to Research Prizes."
+2.  **You Let Humanity Set the Rules.** A global population of voters uses [Wishocracy](../solution/wishocracy.qmd) to set the high-level budget. They don't pick specific trials. They vote on rules like, "Allocate 70% of the treasury to Patient Subsidies" and "Allocate 5% to Research Prizes."
 
-3.  **Patients Fund Cures.** The vast majority of the treasury flows to patients as subsidies. This creates a vibrant, competitive marketplace where the best research attracts the most funding directly from the people who need it most.
+3.  **You Let Patients Fund Cures.** The treasury flows to patients as subsidies. This creates a vibrant, competitive marketplace where the best research attracts funding directly from the people who need it most.
 
 ---
 
-### The Essential Role of Institutes
+### How You Fund the Big Stuff: Emergent Institutes
 
-A marketplace of individual patients is powerful, but it can't fund the massive projects that benefit an entire disease community. No single patient will use their subsidy to fund a **$1 billion prize to reverse aging** or a **shared data platform for all cancer researchers.**
+A marketplace of individual patients is powerful, but it won't fund the massive projects that benefit everyone. No single patient will use their subsidy to fund a **$1 billion prize to reverse aging** or a **shared data platform for all cancer researchers.**
 
-These "public goods" are game-changers.
+These "public goods" are game-changers. This is where you introduce **emergent institutes.**
 
-This is the sole function of **emergent institutes**—like the Decentralized Cancer Institute ("For cells that forgot how to die") or the Decentralized Institute of Mental Health ("For brains that hate their owners"). They are not bureaucracies; they are tools for collective investment. When a community directs billions into trials, the DIH platform gives them tools to pool a tiny fraction of that flow. They can collectively post massive prizes and fund shared infrastructure—the kinds of breakthrough projects a pure marketplace would ignore.
+These aren't bureaucracies; they are tools for collective investment that arise from the community itself—like the Decentralized Cancer Institute ("For cells that forgot how to die") or the Decentralized Institute of Mental Health ("For brains that hate their owners"). When a community directs billions into trials, you give them tools to pool a tiny fraction of that flow. This allows them to collectively post massive prizes and fund shared infrastructure—the kinds of breakthrough projects a pure marketplace would ignore.
 
-The institutes are the feature that allows us to fund not just thousands of individual trials, but the entire ecosystem of innovation.
+This is how you fund not just thousands of individual trials, but the entire ecosystem of innovation.
 
 ---
 
 ### The Result: A Revolution in Medicine
 
-This model isn't a small improvement. It's a phase change.
+This model isn't an improvement. It's a phase change.
 
-*   **[80X More Efficient](../references.qmd#recovery-trial-82x-cost-reduction):** Test 54 million patient-treatments for the same cost [the NIH uses to test 658,000](../references.qmd#nih-patient-treatments-tested).
-*   **10X Faster:** Get treatments to patients in 2-3 years, not [17](../references.qmd#research-to-practice-gap).
-*   **100% Transparent:** Every success and failure is public knowledge, accelerating progress for all.
+*   **[80X More Efficient](../references.qmd#recovery-trial-82x-cost-reduction):** You test 54 million patient-treatments for the same cost [the NIH uses to test 658,000](../references.qmd#nih-patient-treatments-tested).
+*   **10X Faster:** You get treatments to patients in 2-3 years, not [17](../references.qmd#research-to-practice-gap).
+*   **100% Transparent:** Every success and failure becomes public knowledge, accelerating progress for all.
 
-The DIH replaces a system that values process with one that values results. It's what happens when you stop asking for permission and start curing diseases. Soon, humans will live to 150, and they'll probably complain about that, too.
+You replace a system that values process with one that values results. This is what happens when you stop asking for permission and start curing diseases. Soon, humans will live to 150, and they'll probably complain about that, too.
