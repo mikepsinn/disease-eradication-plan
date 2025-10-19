@@ -714,7 +714,7 @@
   - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
 
-## Part VI: Your Financial Manual: How to Fund This and Make a Fortune
+## Part VI: Economics: How to Fund This and Make Humanity a Fortune
 
 ### How to Make the Economic Case (The 463:1 ROI)
 
