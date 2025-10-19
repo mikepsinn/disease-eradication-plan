@@ -1,0 +1,133 @@
+---
+title: "Grant Application Playbook"
+description: "How to siphon money from rich people's tax shelters to fund a global revolution."
+published: false
+date: "2025-10-19T00:00:00.000Z"
+tags: [operations, fundraising, grants, strategy]
+dateCreated: "2025-10-19T00:00:00.000Z"
+---
+
+## How to Siphon Money from Rich People's Tax Shelters
+*(A Grant Application Playbook for Revolutionaries)*
+
+Here's how you navigate the absurd theater of grant applications to fund the War on Disease. The nonprofit world is a strange place where foundations (tax shelters for the wealthy) give money to charities (people who are good at filling out paperwork) to solve problems that never seem to go away.
+
+Your job is to become exceptionally good at the paperwork part. This playbook provides the strategy, templates, and tracking systems to do just that.
+
+## The Situation: You're Broke, They're Not
+
+- **You have:** A world-changing plan, zero cash, and a website that's lying about being able to take donations.
+- **They have:** Billions of dollars they are legally required to give away each year to maintain their tax-exempt status.
+
+Your mission is to bridge this gap.
+
+## The System: An Airtable Grant-Tracking Base
+
+First, you need to expand your `DIH Command & Control` Airtable base to manage this process. Add the following tables.
+
+### Table 1: `Grant Pipeline` (The Master Tracker)
+*Tracks every application from fantasy to reality (or rejection).*
+
+- `Grant ID` (Autonumber)
+- `Foundation` (Link to `Foundations & Funders`)
+- `Grant Name / Program` (Text) - e.g., "Innovation in Global Health Grant"
+- `Status` (Single Select):
+  - `Prospecting` (They look promising)
+  - `Drafting Application` (Writing beautiful lies)
+  - `Submitted` (In the mail)
+  - `Pending` (They're ignoring us)
+  - `Awarded` (They fell for it!)
+  - `Rejected` (They saw through it)
+  - `Reporting Due` (Now we have to prove we did something)
+- `Amount Requested` (Currency)
+- `Amount Awarded` (Currency)
+- `Submission Deadline` (Date)
+- `Decision Date` (Date)
+- `Primary Contact` (Link to `Personnel Roster`)
+- `Application Docs` (Attachments) - Your final submitted lies
+- `Notes` (Long Text)
+
+### Table 2: `Foundations & Funders` (The Rich List)
+*A directory of every organization you plan to hit up for money.*
+
+- `Foundation Name` (Text, Primary Key)
+- `Website` (URL)
+- `Primary Contact` (Link to `Personnel Roster`)
+- `Focus Areas` (Multiple Select) - e.g., Global Health, Tech for Good, Democracy
+- `Status` (Single Select): `Active Prospect`, `Past Funder`, `Do Not Approach`
+- `Typical Grant Size` (Currency)
+- `Application Process` (Long Text) - "Invite only," "Online portal," etc.
+- `Relationship History` (Link to `Engagements`)
+
+## The Battle Plan: A 4-Step Process
+
+### Step 1: Intelligence Gathering (Find Your Targets)
+
+Your first job is to build a list of foundations that might be crazy enough to fund you.
+
+**How to find them:**
+1.  **Google is your friend:** Search for "foundations funding global health," "grants for medical innovation," "funding for political advocacy."
+2.  **Spy on similar organizations:** Find a nonprofit you admire/hate and look up who funds them (they usually list this on their website to brag).
+3.  **Use the tools:** If you had money (which you don't), you'd use services like Foundation Directory Online or GrantStation. For now, stick to Google.
+
+**What to look for:**
+-   **Mission Alignment:** Do they use words like "transformative," "systemic change," or "high-risk, high-reward"?
+-   **History:** Have they ever funded something that wasn't incredibly safe and boring?
+-   **Size:** Is their typical grant size big enough to be worth your time?
+
+**Your Action:** Populate the `Foundations & Funders` table with at least 50 prospects.
+
+### Step 2: Define the "Ask" (What Are You Selling?)
+
+You are not asking for money to "end disease." That's too big and scary. You are asking for money to fund a very specific, measurable project:
+
+**The Project: The Global Referendum Campaign**
+
+This is the perfect "ask" for a grant because it's a discrete project with a clear goal.
+
+**Your Budget (The $1B War Chest Breakdown):**
+You're asking for a slice of this pie. Tailor your ask to the foundation's size.
+-   **For a small foundation ($50k ask):** "Fund our social media campaign in Southeast Asia for one year."
+-   **For a medium foundation ($500k ask):** "Fund the development of our referendum voting platform and its security audit."
+-   **For a large foundation ($5M ask):** "Fund our entire lobbying and media effort in the EU for two years."
+
+**Your Action:** Create a one-page project summary for the Global Referendum Campaign that you can customize for each application.
+
+### Step 3: The Paperwork (How to Write a Winning Proposal)
+
+Every grant application is basically the same five documents dressed in different clothes.
+
+1.  **Cover Letter:** A one-page summary. "Dear Rich Person, We're ending death. Your money will help. Here's our plan. Give us money. Sincerely, The Future."
+2.  **Executive Summary:** The same thing, but with more paragraphs.
+3.  **Statement of Need:** This is where you shine. Use the stats from **Part I of the OUTLINE.MD**.
+    -   "150,000 people die daily from preventable diseases."
+    -   "Humanity spends $2.7 trillion on war and just $68 billion on cures."
+    -   "The system is broken. Here are the charts to prove it."
+4.  **Project Description:** Explain the Global Referendum.
+    -   The 3.5% rule.
+    -   The viral growth strategy.
+    -   The Wishocracy app.
+5.  **Budget:** A detailed breakdown of how you'll waste their money. Be specific.
+    -   `$10,000` - Facebook Ads
+    -   `$25,000` - Lobbyist retainer
+    -   `$5,000` - Pizza for volunteer developers
+
+**Your Action:** Create a template for each of these documents in a shared drive.
+
+### Step 4: Submit and Track (The Waiting Game)
+
+1.  **Submit the application:** Follow their ridiculous instructions to the letter. If they want it in a 10.5-point font on beige paper, you do it.
+2.  **Update Airtable:** Move the card in your `Grant Pipeline` from `Drafting` to `Submitted`. Set a reminder for the `Decision Date`.
+3.  **Follow up:** Send a polite email a week after the deadline.
+4.  **Get Rejected:** 90% of the time, you will be rejected. Don't take it personally. They probably funded a study on the mating habits of squirrels instead. Update Airtable to `Rejected` and move on.
+5.  **Get Accepted:** On the rare occasion you succeed, celebrate for five minutes. Then, update Airtable to `Awarded` and immediately create tasks for all the reporting requirements you now have to fulfill.
+
+## Marching Orders
+
+1.  **Build the Airtable tables** as defined above.
+2.  **Start prospecting.** Find 50 foundations and add them to your base.
+3.  **Write the project summary** for the Global Referendum Campaign.
+4.  **Draft the template documents.**
+5.  **Pick your top 5 prospects and start writing.**
+
+This is your new reality. You are no longer a revolutionary. You are a professional beggar with a fancy title. But if you do it right, you'll beg your way to a fully funded war on death. Now get to work.
