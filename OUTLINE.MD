@@ -7,7 +7,8 @@
 
 *Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet*
 
-### The Daily Holocaust
+### Daily Holocaust
+*How to Document the Numbers That Will Start Your Revolution*
 
 - **How to Document the Numbers That Will Start Your Revolution**
   - 150,000 people die every day, mostly from preventable/curable diseases
@@ -16,7 +17,8 @@
   - Biotechnology could prevent most of these deaths
   - But humanity wastes $2.7 trillion on bombs, bullets, and nonsense like that instead
 
-### The NIH Has Spent $1 Trillion to Eradicate 0 Diseases
+### The NIH
+*Has Spent $1 Trillion to Eradicate 0 Diseases*
 
 - **The Translation Crisis: 166 Billion Treatments Untested**
   - Since 1970: $1+ trillion spent (inflation adjusted)
@@ -29,7 +31,8 @@
   - Correlation with patient needs: 0.07 (essentially random)
   - We understand disease mechanisms perfectly, cure nothing
 
-### The FDA Is Unsafe and Ineffective
+### The FDA
+*Is Unsafe and Ineffective*
 
 - **Making Medicine 82X More Expensive and 1000X Slower**
   - Oxford RECOVERY trial proved treatments can cost $500/patient
@@ -39,7 +42,8 @@
   - Risk-averse culture optimized for avoiding visible harm, not preventing invisible deaths
   - System designed to prevent lawsuits, not maximize lives saved
 
-### The Cost of War - $2.7 Trillion on Killing Each Other
+### Cost of War
+*$2.7 Trillion on Killing Each Other*
 
 - **The War on Humanity We're Losing**
   - $2.7T annual military spending globally
@@ -53,7 +57,8 @@
   - Every submarine represents approximately 1,000 cancer labs we didn't build
   - The nuclear extinction lottery: 13,000 warheads, no winners
 
-### The Cost of Disease - $109.1 Trillion in Annual Suffering
+### Cost of Disease
+*$109.1 Trillion in Annual Suffering*
 
 - **The Economic Burden That Dwarfs Everything Else**
   - Direct healthcare spending: $8.2T/year globally (treating symptoms)
@@ -64,7 +69,8 @@
   - Rare diseases: 95% have zero FDA-approved treatments
   - Hepatitis C cured (2014), but still 50+ years between major disease eradications
 
-### Humanity's Upside-Down Budget
+### Humanity's Budget
+*Upside-Down Priorities*
 
 - **[FIGURE: Humanity's Budget Pie Chart]**
   - Pie chart showing humanity's priorities: War on Humanity ($2,700) vs War on Disease ($68)
@@ -86,7 +92,8 @@
   - The only solution: Change the ratio, not the total
   - Switzerland proves it: 0.7% on defense → $93K GDP per capita
 
-### Your Democracy Is Theater
+### Democracy Is Theater
+*You Have Nearly Zero Political Power*
 
 - **The Princeton Bombshell: You Have Nearly Zero Political Power**
   - Gilens & Page study: Virtually no correlation between public opinion and policy when elites disagree
@@ -106,7 +113,8 @@
   - Special interest capture: Who writes the propositions?
   - Wishocracy solves this: Pairwise choices, not 50-item ballots
 
-### Regulatory Capture - The Foxes Own All Henhouses
+### Regulatory Capture
+*The Foxes Own All Henhouses*
 
 - **Regulators Often Come From (and Return To) Those They Regulate**
   - FDA frequently staffed by ex-pharma executives (like an internship program where interns make the rules)
@@ -118,7 +126,8 @@
   - Chronic disease = Healthcare industry revenue ($4.5T industry incentivized for treatment over cures)
   - Every "failure" is someone's quarterly earnings success
 
-### Your Body Is Just a Machine
+### The Body as a Machine
+*The Engineering Reality of Biology*
 
 - **The Engineering Reality of Biology**
   - Heart: We replace it (artificial hearts work)
@@ -148,7 +157,8 @@
   - Not technology (we have the tools)
   - Just money going to bombs instead
 
-### Why Central Planning Kills People
+### Central Planning Kills
+*Why Top-Down Control Fails*
 
 - **1962: When FDA Centralization Destroyed Medical Progress**
   - Pre-1962: 144,000 physicians ran real-world trials through JAMA
@@ -181,7 +191,8 @@
   - Software/Internet: No FDA = exponential innovation
   - Lasik/cosmetic surgery: Cash markets = 50% price drops
 
-### The War on Disease - Designing the First War to Win
+### The War on Disease
+*Designing the First War to Win*
 
 - **The Two Wars**
   - War on Humanity: $2.7T/year, 75+ years running, no victory possible
@@ -211,7 +222,8 @@
   - The end of central planning's credibility
   - The beginning of the market revolution
 
-### Public Choice Theory - (Everyone Responds to Incentives, Use It)
+### Public Choice Theory
+*Everyone Responds to Incentives*
 
 - **Politicians Optimize for Re-election, Not Long-term Outcomes**
   - Time horizons: 2-year election cycles vs 20-year cures
@@ -239,7 +251,8 @@
 
 *The systems you will build*
 
-### How to Create and Pass the 1% Treaty
+### The 1% Treaty
+*How to Create and Pass It*
 
 - **[FIGURE: The 1% Treaty Visualization]**
   - Visual showing $2.7T military budget with tiny 1% slice ($27B) being redirected
@@ -299,7 +312,8 @@
   - Year 10: Make military spending look insane
   - Year 20: Make war incomprehensible
 
-### How to Build the DIH - Government Without Politicians
+### The DIH
+*Government Without Politicians*
 
 - **Step 1: Set Up Parallel Systems (Competition Not Replacement)**
   - Run dFDA alongside FDA (alternative pathway, not abolishment)
@@ -355,7 +369,8 @@
     - Billions of votes determine the allocation percentages, not specific winners
 
 
-### How to Implement Wishocracy - Your Distributed Decision-Making System
+### Wishocracy
+*Your Distributed Decision-Making System*
 
 - **Setting Up Open Participation: Proposals and Voting**
   - Open proposal system: ANY human can submit budget allocation proposals
@@ -397,7 +412,8 @@
   - Leaderboards and achievements (social proof)
   - Democracy becomes addictive (dopamine hits for voting)
 
-### How to Build the Decentralized FDA - The Amazon and Consumer Reports of Not Dying
+### The Decentralized FDA
+*The Amazon and Consumer Reports of Not Dying*
 
 - **[FIGURE: dFDA vs FDA Comparison]**
   - Side-by-side comparison:
@@ -524,7 +540,8 @@
 
 *Why this is possible, necessary, and profitable*
 
-### Political Movements That Changed Everything
+### Historical Precedent
+*Political Movements That Changed Everything*
 
 - **The Post-WW2 Economic Miracle: History's Greatest Peace Dividend**
   - 1945: US military spending 37% of GDP (highest in history)
@@ -580,7 +597,8 @@
   - Data: We can prove what works
   - Urgency: People are literally dying
 
-### Path A - Idiocracy - The Dystopian Default (If We Do Nothing)
+### Path A: Idiocracy
+*The Dystopian Default (If We Do Nothing)*
 
 - **[FIGURE: The Two Timelines - Dystopian Path]**
   - Diverging timeline from 2026 showing descent into darkness
@@ -631,7 +649,8 @@
   - The universe doesn't notice or care
 - **The Three Subs:** Sub-intelligence (truth unknowable), Sub-longevity (life expectancy 35), Sub-wellbeing (80% mentally ill)
 
-### Path B - Wishonia - The Transcendent Path (Humanity Evolves Beyond Limits and Becomes the Equivalent of a Superintelligent Genie)
+### Path B: Wishonia
+*The Transcendent Path*
 
 - **[FIGURE: The Two Timelines - Wishonia Path]**
   - Diverging timeline from 2026 showing ascent into light
@@ -691,7 +710,8 @@
   - Next challenge: Which galaxy to colonize first
 
 
-### The Tale of Two Futures (Three Supers vs Three Subs)
+### Two Futures
+*The Choice Before Us*
 
 **[VIDEO: Carl Sagan's "Pale Blue Dot" - The Stakes of Our Choice]**
 *"On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives."*
@@ -716,7 +736,8 @@
   - The choice: Keep killing each other or start curing each other
   - You're voting on which timeline becomes real
 
-### How to Make the Economic Case (The 463:1 ROI)
+### The Economic Case
+*A 463:1 ROI*
 
 - **The ROI That Breaks Reality**
   - Investment: $40M annual platform cost (couch cushion money)
@@ -811,7 +832,8 @@
   - Year 20: Full $16.5T annual value realized
   - Every year we delay: $142B in immediate benefits lost forever
 
-### How to Structure the Investment Vehicle (VICTORY Bonds)
+### The Investment Vehicle
+*VICTORY Bonds*
 
 - **The Instrument: High-Risk, High-Return Political Arbitrage**
   - Perpetual 10% of all DIH treaty inflows
@@ -850,7 +872,8 @@
   - $25M: Reserve for treaty implementation
   - Full transparency: Every dollar tracked publicly
 
-### How to Align a Civilization's Incentives
+### Aligning Incentives
+*How to Align a Civilization*
 
 - **Defense Contractors: The Math Changes**
   - VICTORY bonds offer 40%+ perpetual returns vs 8% defense margins
@@ -899,42 +922,49 @@
 
 *The complete roadmap from idea to reality*
 
-- **The Multi-Jurisdiction Strategy**
-  - Swiss foundation: Neutral base of operations
-  - Delaware C-corp: US operations
-  - Singapore entity: Asian operations
-  - Multiple legal structures: Risk distribution
-  - Regulatory arbitrage: Always have options
-- **The Securities Law Navigation**
-  - VICTORY bonds: Structured as debt, not equity
-  - Qualified purchaser exemptions
-  - No public offering until approved
-  - Full SEC compliance from day one
-  - Best lawyers money can buy (and it will)
-- **Election Law Compliance**
-  - Independent expenditures only (no coordination)
-  - Separate entity for political action
-  - Full FEC disclosure (radical transparency)
-  - State-by-state compliance (50 different laws)
-  - Citizens United: Corporations are people (use it)
-- **The Treaty Framework**
-  - International law expertise
-  - Vienna Convention compliance
-  - Bilateral agreements first (easier)
-  - Build to multilateral (inevitable)
-  - Enforcement mechanisms built in
-- **The Legislation Package** (Already drafted)
-  - The Treaty Implementation Act (makes it binding)
-  - The DIH Authorization Act (creates the institutes)
-  - The dFDA Parallel Track Act (alternative pathway alongside FDA)
-  - The Right to Try Expansion Act (patient choice beyond FDA)
-  - The Budget Reallocation Act (moves the money)
+### Legal Architecture
+*A Multi-Jurisdiction Strategy*
+- Swiss foundation: Neutral base of operations
+- Delaware C-corp: US operations
+- Singapore entity: Asian operations
+- Multiple legal structures: Risk distribution
+- Regulatory arbitrage: Always have options
 
-## The Strategy
+### Securities Law
+*Navigating the Regulations*
+- VICTORY bonds: Structured as debt, not equity
+- Qualified purchaser exemptions
+- No public offering until approved
+- Full SEC compliance from day one
+- Best lawyers money can buy (and it will)
 
-*Your Complete Action Plan (Do This Step by Step)*
+### Election Law
+*Ensuring Compliance*
+- Independent expenditures only (no coordination)
+- Separate entity for political action
+- Full FEC disclosure (radical transparency)
+- State-by-state compliance (50 different laws)
+- Citizens United: Corporations are people (use it)
 
-### How to Run Your Global Referendum (Democracy at Scale)
+### Treaty Framework
+*Building the International Agreement*
+- International law expertise
+- Vienna Convention compliance
+- Bilateral agreements first (easier)
+- Build to multilateral (inevitable)
+- Enforcement mechanisms built in
+
+### Legislation Package
+*The Bills to Pass*
+- The Treaty Implementation Act (makes it binding)
+- The DIH Authorization Act (creates the institutes)
+- The dFDA Parallel Track Act (alternative pathway alongside FDA)
+- The Right to Try Expansion Act (patient choice beyond FDA)
+- The Budget Reallocation Act (moves the money)
+
+
+### Global Referendum
+*Democracy at Scale*
 
 - **The Platform: Wishocracy App**
   - 30-second onboarding
@@ -959,11 +989,9 @@
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
 
-## Join or Die
 
-*(Literally)*
-
-### Your Returns on Investment (Health, Wealth, and Freedom)
+### Your ROI
+*Health, Wealth, and Freedom*
 
 - **Economic Security**
   - Subsidized treatment: Dynamic vouchers for dFDA trials
@@ -991,7 +1019,8 @@
   - Equal to every other human (1 person = 1 allocation power)
   - Co-creator of humanity's health budget priorities
 
-### Three Ways to Get Started
+### Getting Started
+*Three Ways to Contribute*
 
 - **Sign the Referendum** (3 minutes)
   - WarOnDisease.org has the referendum
@@ -1012,7 +1041,8 @@
   - Anyone: Share knowledge, build community
 
 
-### How to Demolish Every Objection
+### Demolishing Objections
+*Answering the Critics*
 
 - **"Why not just fund medical research more?"**
   - Because money isn't real, resources are (see Fixed Pie Reality in Part I)
