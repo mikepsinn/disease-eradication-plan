@@ -1,4 +1,5 @@
-# The Complete Idiot's Guide to Actually Ending War and Disease
+# The Complete Idiot's Guide to Ending War and Disease
+*Or: How to Trick Humanity Into Not Killing Itself*
 
 **[VIDEO: Charlie Chaplin's "The Great Dictator" Speech - The Choice Between Machinery and Humanity]**
 *"We think too much and feel too little. More than machinery, we need humanity. More than cleverness, we need kindness and gentleness."*
@@ -7,28 +8,28 @@
 
 *Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet*
 
-### Daily Holocaust
-*How to Document the Numbers That Will Start Your Revolution*
+### The Daily Holocaust
+*Numbers That Will Start Your Revolution*
 
-- 150,000 people die every day, mostly from preventable/curable diseases
-  - That's fifty 9/11s. Every. Single. Day.
-  - Your parent, child, or friend is statistically likely to be one of them
-  - Biotechnology could prevent most of these deaths
-  - But humanity wastes $2.7 trillion on bombs, bullets, and nonsense like that instead
+- 150,000 people die every day from mostly preventable diseases
+  - That's fifty 9/11s. Every. Single. Day. (And nobody invades anyone about it)
+  - Your parent, child, or friend is statistically scheduled to be one of them
+  - The technology to prevent most of these deaths exists (it's just busy building missiles)
+  - Humanity's response: Spend $2.7 trillion annually perfecting new ways to create corpses
 
 ### The NIH
-*Has Spent $1 Trillion to Eradicate 0 Diseases*
+*How to Spend $1 Trillion and Cure Absolutely Nothing (A Masterclass)*
 
-- **The Translation Crisis: 166 Billion Treatments Untested**
-  - Since 1970: $1+ trillion spent (inflation adjusted)
-  - Diseases eradicated: ZERO (smallpox was WHO, not NIH)
-  - 166 billion drug combinations exist, NIH tests ~5,000/year
+- **The Translation Crisis: How to Ignore 166 Billion Treatments**
+  - Since 1970: $1+ trillion spent studying how diseases work (not how to stop them)
+  - Diseases eradicated: ZERO (smallpox was WHO)
+  - 166 billion drug combinations exist, NIH tests ~5,000/year (at this rate, done by year 33,200,000)
   - **[FIGURE: NIH Budget Allocation Pie Chart]**
-    - 55% on basic research (understanding mice)
-    - 5% on human trials (actually testing cures)
-    - Result: Mountains of papers, zero cures
-  - Correlation with patient needs: 0.07 (essentially random)
-  - We understand disease mechanisms perfectly, cure nothing
+    - 55% on basic research (torturing mice for science)
+    - 5% on human trials (actually helping humans)
+    - Result: Mountains of papers, zero diseases cured
+  - Correlation with patient needs: 0.07 (throwing darts at a board works better)
+  - Achievement unlocked: Understanding every disease mechanism while everyone dies anyway
 
 ### The FDA
 *Is Unsafe and Ineffective*
@@ -42,30 +43,29 @@
   - System designed to prevent lawsuits, not maximize lives saved
 
 ### Cost of War
-*$2.7 Trillion on Killing Each Other*
+*How Humanity Spends $2.7 Trillion Annually on Its Murder Hobby*
 
-- **The War on Humanity We're Losing**
-  - $2.7T annual military spending globally
-  - We spend 40X more on killing than curing
-  - Direct costs: $2.7T on weapons that rust in warehouses
-  - We spend 162X more on military than brain research
-  - The Pentagon: Lost $2.46T with no accountability
-  - US = 37% of global military spending with only 4.4% of world population
-  - War costs your family an estimated $74,259 over your lifetime
-  - Every submarine represents approximately 1,000 cancer labs we didn't build
-  - The nuclear extinction lottery: 13,000 warheads, no winners
+- **How to Calculate Your Share of the Global Death Budget**
+  - $2.7T annual military spending (that's $340 per human on Earth for death tools)
+  - Murder-to-medicine ratio: 40:1 (priorities!)
+  - Pentagon accounting: Lost $2.46T, shrugged, asked for more
+  - US contribution: 37% of global military spending with 4.4% of world population (overachievers!)
+  - Your lifetime murder tax: $74,259 (could've bought a really nice casket)
+  - Fun fact: One submarine = 1,000 cancer research labs (guess which one floats better)
+  - Nuclear warhead count: 13,000 (because 12,999 wouldn't destroy Earth thoroughly enough)
+  - Weapons in warehouses: Rusting peacefully, dreaming of the apocalypse they'll never see
 
 ### Cost of Disease
-*$109.1 Trillion in Annual Suffering*
+*How Disease Extracts $109.1 Trillion from Humanity (While Laughing)*
 
-- **The Economic Burden That Dwarfs Everything Else**
-  - Direct healthcare spending: $8.2T/year globally (treating symptoms)
-  - Economic losses from disease: $100.9T/year (lost productivity, early death)
-  - Cancer: 10M deaths/year while we argue about pronouns
-  - Chronic disease: 2 billion people suffering RIGHT NOW
-  - Mental illness: 1 billion suffering, $5T lost productivity
-  - Rare diseases: 95% have zero FDA-approved treatments
-  - Hepatitis C cured (2014), but still 50+ years between major disease eradications
+- **How to Calculate the Bill for Unnecessary Suffering**
+  - Direct healthcare spending: $8.2T/year treating symptoms (cures are bad for business)
+  - Economic losses from disease: $100.9T/year (dead people are notoriously unproductive)
+  - Cancer scorecard: 10M deaths/year (cancer: 10M, humanity: 0)
+  - Chronic disease census: 2 billion people suffering RIGHT NOW (but who's counting?)
+  - Mental illness tab: 1 billion depressed humans, $5T in lost "wanting to exist"
+  - Rare disease lottery: 95% have zero treatments (too rare to profit from, sorry)
+  - Victory lap: Hepatitis C cured in 2014! (Next cure scheduled for 2064, mark your calendars)
 
 ### Humanity's Budget
 *Upside-Down Priorities*
@@ -91,12 +91,13 @@
   - Switzerland proves it: 0.7% on defense → $93K GDP per capita
 
 ### Democracy Is Theater
-*You Have Nearly Zero Political Power*
+*How to Measure Your Actual Political Power (Spoiler: It's Zero)*
 
-- Gilens & Page study: Virtually no correlation between public opinion and policy when elites disagree
-  - Economic elites get what they want 78% of the time
-  - Average citizens get preferred outcomes only when elites agree (which is rarely on their behalf)
-  - An oligarchy with democratic characteristics
+- **The Gilens & Page Reality Check (Science Proves You Don't Matter)**
+  - Your opinion's correlation with policy: 0.03 (statistically indistinguishable from random noise)
+  - Economic elites' success rate: 78% (almost like the system is designed for them)
+  - Your success rate when elites disagree: 0% (you literally cannot win)
+  - Technical classification: "Oligarchy with democratic characteristics" (like "prison with yoga classes")
 - **[FIGURE: Your Democracy Score: 0%]**
   - Graph showing flat line - no correlation between public will and policy
   - One image destroys the democracy illusion
@@ -111,13 +112,13 @@
   - Wishocracy solves this: Pairwise choices, not 50-item ballots
 
 ### Public Choice Theory
-*Everyone Responds to Incentives*
+*How to Predict Exactly What Politicians Will Do (Hint: Whatever Keeps Them in Power)*
 
-- **Politicians Optimize for Re-election, Not Long-term Outcomes**
-  - Time horizons: 2-year election cycles vs 20-year cures
-  - Blame avoidance > credit claiming (safer to do nothing)
-  - Their healthcare is government-provided (misaligned incentives with constituents)
-  - Concentrated benefits, diffuse costs (special interests win)
+- **How Politicians Actually Make Decisions (Spoiler: Not for You)**
+  - Decision timeline: 2-year election cycles vs 20-year cures (guess which wins)
+  - Risk calculation: Doing nothing = safe, trying something = maybe fired
+  - Healthcare plan: Theirs is free and excellent (yours is neither)
+  - The math: 100 lobbyists paying $1M each > 100M citizens paying $1 each
 - **The Interest Group Auction House**
   - Defense contractors: $100M lobbying → $2T contracts
   - You: Pay $1,000/year, too small to notice
@@ -135,12 +136,13 @@
   - Create concentrated benefits for producing cures rather than perpetuating disease
 
 ### Regulatory Capture
-*The Foxes Own All Henhouses*
+*How to Let Industries Regulate Themselves (What Could Go Wrong?)*
 
-- **Regulators Often Come From (and Return To) Those They Regulate**
-  - FDA frequently staffed by ex-pharma executives (like an internship program where interns make the rules)
-  - DoD procurement staffed by future defense contractors
-  - The revolving door: 400% salary increase for playing ball
+- **The Revolving Door Tutorial**
+  - Step 1: Work at pharma company, learn their needs
+  - Step 2: Join FDA, make rules pharma likes
+  - Step 3: Return to pharma with 400% raise (congratulations!)
+  - DoD version: Same game, but with explosions
 - **Why the System Resists Reform (It's Optimized for Different Goals)**
   - FDA delays = Pharma profits (17 years of patent exclusivity protection)
   - Military spending = Defense contractor revenue streams
@@ -148,11 +150,11 @@
   - Every "failure" is someone's quarterly earnings success
 
 ### Central Planning Kills
-*Why Top-Down Control Fails*
+*How to Destroy Medical Progress in One Easy Step (The FDA Did It in 1962)*
 
-- **1962: When FDA Centralization Destroyed Medical Progress**
-  - Pre-1962: 144,000 physicians ran real-world trials through JAMA
-  - 1962: FDA centralizes efficacy trials, immediate disaster:
+- **The 1962 Catastrophe: How to Break Medicine**
+  - Pre-1962: 144,000 physicians testing treatments on actual patients (it worked)
+  - 1962: FDA says "We'll handle this" (narrator: they didn't)
     - New drug approvals drop 70% overnight
     - Drug costs: $74M → $2.6B today (35X more expensive)
     - Timeline: 2-3 years → 17 years to market
@@ -182,20 +184,20 @@
 
 ## Part II: The Solution
 
-*The systems you will build*
+*How to Build Systems That Don't Suck (A Step-by-Step Guide)*
 
 ### The 1% Treaty
-*How to Create and Pass It*
+*How to Steal 1% of the Murder Budget Without Anyone Noticing*
 
 - **[FIGURE: The 1% Treaty Visualization]**
   - Visual showing $2.7T military budget with tiny 1% slice ($27B) being redirected
   - Shows what $27B funds: 54,000 trials, 27M patients treated, 10-20 diseases cured
   - Impact: Shows the scale comparison
 - **Start Small: 1% of Military Budgets**
-  - $27B globally (Pentagon's rounding error)
-  - No country loses relative power (simultaneous equal cuts)
-  - Small enough to be politically viable, large enough for impact
-  - Create expansion path: If 1% works, push for 2% next
+  - Take 1% of military budgets: $27B (they lose it in the couch cushions anyway)
+  - Simultaneous cuts: Nobody loses their precious "relative power" (the thing that matters when you're dead)
+  - Political viability: 1% is a rounding error, not a revolution
+  - The ratchet strategy: 1% this year, 2% next year, eventually they'll wonder why they have bombs at all
 - **The Two-Tier Peace Dividend (History Shows This Works)**
   - Captured Dividend: $24.4B to DIH treasury (direct military cuts)
   - Societal Dividend: $92B to humanity (total economic benefit)
@@ -246,17 +248,18 @@
   - Year 20: Make war incomprehensible
 
 ### The DIH
-*Government Without Politicians*
+*How to Build a Government That Actually Works (No Politicians Required)*
 
-- **Step 1: Set Up Parallel Systems (Competition Not Replacement)**
-  - Run dFDA alongside FDA (alternative pathway, not abolishment)
-- **Structure for Distributed Control**
-  - Flow $27B/year through transparent smart contracts
-  - Eliminate CEO or board making unilateral decisions
-  - Keep financial transactions public, medical records private
-  - Design for progressive decentralization: System becomes fully autonomous
-  - Implement AI governance: Automated code review and security verification
-  - Lock core treaty terms, adjust allocations democratically
+- **How to Run Parallel Systems (Let Darwin Sort It Out)**
+  - Install dFDA alongside FDA (like running Firefox next to Internet Explorer)
+  - Watch which one people actually use (spoiler: the one that doesn't kill them with delays)
+- **How to Structure for Nobody Being in Charge**
+  - Route $27B/year through smart contracts (code can't take bribes)
+  - Delete the CEO position (nobody to corrupt)
+  - Make all financial transactions public (sunlight, meet disinfectant)
+  - Keep medical records private (your hemorrhoids are your business)
+  - Progressive decentralization: System becomes skynet but helpful
+  - AI governance: Let the robots audit the code (they don't sleep or take kickbacks)
 - **How Wishocracy Controls the Treasury**
   - Anyone submits proposals: Researchers, patients, garage scientists
   - 8 billion people see random proposal pairs
@@ -303,14 +306,14 @@
 
 
 ### Wishocracy
-*Your Distributed Decision-Making System*
+*How to Replace Congress With an App (And Improve Everything)*
 
-- **Setting Up Open Participation: Proposals and Voting**
-  - Open proposal system: ANY human can submit budget allocation proposals
-  - Minimal stake required: Small bond prevents spam
-  - Random pairwise comparisons: Each voter sees different budget allocation pairs
-  - Slide to allocate: "Patient Subsidies: 80% vs 2% Treaty Initiative: 20%"
-  - No centralized control: Nobody decides what budget proposals get voted on
+- **How to Let Everyone Propose Ideas (Yes, Even That Guy)**
+  - Open the proposal floodgates: Any human with a pulse can submit ideas
+  - Spam prevention: Small bond (lose it if your proposal is "give me all the money")
+  - Random pairwise battles: Your proposal fights others in gladiatorial swipe combat
+  - Slide to decide: "Fund Sarah's cancer cure" ← → "Fund MIT's immortality pill"
+  - No gatekeepers: Nobody filters proposals (democracy means hearing stupid ideas too)
 - **[FIGURE: How Wishocracy Works]**
   - Flow diagram: Anyone proposes → Random pairs shown to voters → Swipe to allocate → Aggregation → Funds flow automatically
   - Simple visual showing decentralized decision-making
@@ -346,7 +349,7 @@
   - Democracy becomes addictive (dopamine hits for voting)
 
 ### The Decentralized FDA
-*The Amazon and Consumer Reports of Not Dying*
+*How to Build the Amazon and Consumer Reports of Not Dying (With Reviews You Can Trust)*
 
 - **[FIGURE: dFDA vs FDA Comparison]**
   - Side-by-side comparison:
@@ -470,13 +473,13 @@
   - Mental health: No longer the ugly stepchild of medicine
 
 ### The War on Disease
-*Designing the First War to Win*
+*How to Design the First Government War That Actually Wins*
 
-- **Structure It Differently: Markets Not Ministries**
-  - Build no bureaucracy to preserve (use smart contracts)
-  - Pay for outcomes, not process
-  - Create competition between solutions, not monopoly
-  - Let researchers get paid for curing diseases, not by getting grants
+- **How to Structure a War Without Creating a Military-Industrial Complex**
+  - Build zero bureaucracy (smart contracts don't need pensions)
+  - Pay for corpses prevented, not papers published
+  - Create cure competition, not treatment monopoly
+  - Researchers get rich from results, not grant-writing fiction
 - **Align the Incentives: Everyone Wins by Winning**
   - Patients: Get subsidized treatments, not exploited
   - Researchers: Get rewarded for cures, not papers
@@ -496,14 +499,14 @@
   - The beginning of the market revolution
 
 ### Aligning Incentives
-*How to Align a Civilization*
+*How to Bribe Everyone Into Doing the Right Thing*
 
-- **Defense Contractors: The Math Changes**
-  - VICTORY bonds offer 40%+ perpetual returns vs 8% defense margins
-  - They keep 99% of military budget AND can buy VICTORY bonds
-  - Lobbyists follow money (bonds pay better than bombs)
-  - Pension obligations get funded permanently
-  - ESG pressure creates reputational value
+- **How to Convert Defense Contractors (Show Them the Money)**
+  - Wave 270% returns in their faces (vs their pathetic 8% margins)
+  - Let them keep 99% of military budget (we only need 1%, they can keep their toys)
+  - Their lobbyists are mercenaries (they'll work for whoever pays more)
+  - Pension funds love perpetual returns (retirees don't care if money comes from missiles or medicine)
+  - ESG compliance: "We cure cancer now!" looks better than "We make things that explode!"
 - **Insurance Companies: Profit from Health**
   - Healthy people = fewer claims = higher profits
   - Each cure = billions in reduced payouts
@@ -528,11 +531,10 @@
   - Public choice theory: money talks, health or weapons
 - **Billionaires: Returns Plus Reputation**
   - Outperforms Giving Pledge (measurable results)
-  - 40%+ perpetual returns plus legacy
+  - 270%+ perpetual returns plus legacy
   - Named institutes available: "The Gates Cancer Center"
   - Tax benefits plus profits
   - First movers get premium terms and credit
-  - Early stake in potential $100T company
   - Legacy: Funded the end of human suffering
 - **Everyone Else: Direct Democracy Plus Healthcare**
   - Direct voting on budget allocation (actual power)
@@ -543,10 +545,10 @@
 
 ## Part III: The Case
 
-*Why this is possible, necessary, and profitable*
+*How to Prove This Isn't Just Another Crazy Internet Scheme*
 
 ### Historical Precedent
-*Political Movements That Changed Everything*
+*How to Learn From History (The Parts Where Humanity Didn't Completely Fail)*
 
 - **The Post-WW2 Economic Miracle: History's Greatest Peace Dividend**
   - 1945: US military spending 37% of GDP (highest in history)
@@ -605,11 +607,12 @@
 ### The Body as a Machine
 *The Engineering Reality of Biology*
 
-- Heart: We replace it (artificial hearts work)
-  - Kidneys: We replace them (dialysis, transplants)
-  - Blood: We replace it (transfusions daily)
-  - Bones: We replace them (titanium upgrades)
-  - The pattern: Everything is replaceable
+- **Your Replaceable Parts**
+  - Heart: Already swappable (artificial hearts exist, they're just expensive)
+  - Kidneys: Replaceable (dialysis is just outsourcing kidney function)
+  - Blood: Totally replaceable (vampires had the right idea, wrong execution)
+  - Bones: Upgradeable to titanium (you can literally become Wolverine)
+  - The pattern: You're basically Mr. Potato Head with anxiety
 - **DNA Is Just Code**
   - 4 letters: ATCG (simpler than binary)
   - Bugs: We can fix them (CRISPR)
@@ -633,15 +636,15 @@
   - Just money going to bombs instead
 
 ### The Economic Case
-*A 463:1 ROI*
+*$463 in Benefits for Every Dollar Spent*
 
 - **The ROI That Breaks Reality**
   - Investment: $40M annual platform cost (couch cushion money)
   - Return: $50B annual savings from trial efficiency (real money)
   - Annual ROI: 1,250:1 year-over-year ($50B/$40M)
   - 10-year cumulative ROI: 463:1 accounting for build time
-  - **IMPORTANT DISTINCTION**: This is SOCIETAL return from dFDA efficiency, not your personal VICTORY bond returns (those are 40%)
-  - Translation: Every dollar spent makes society $463 richer (you personally get substantial returns at 40%)
+  - **IMPORTANT DISTINCTION**: This is SOCIETAL return from dFDA efficiency, not your personal VICTORY bond returns (those are 270%)
+  - Translation: Every dollar spent makes society $463 richer (you personally get substantial returns at 270%)
   - 10-year NPV: $249 billion in value creation (enough to buy several small countries or one medium-sized tech company)
   - Comparison: Best hedge funds dream of 2:1 annual returns (we laugh at their poverty)
   - Real-world proof: Switzerland's $93K GDP per capita (what happens when you stop buying bombs for 200 years)
@@ -649,20 +652,18 @@
   - Bar chart comparing returns: S&P 500 (10%), Hedge funds (20%), Medallion Fund (39%), DIH (463:1)
   - DIH bar literally goes off the chart
   - Impact: Makes the economic case undeniable
-- **DIH: The $100 Trillion Double-Dividend Company**
-  - Current titans: Apple ($3T), Microsoft ($3T), Saudi Aramco ($2T)
   - DIH captures TWO massive dividends in one elegant model:
     - **Peace Dividend**: $2.7T military budgets → DIH treaties (revenue stream)
     - **Health Dividend**: $109.1T disease burden → productivity gains (value creation)
-  - The genius: Peace dividend funds the infrastructure, health dividend justifies expansion
+  - Peace dividend funds the infrastructure, health dividend justifies expansion
   - Revenue model: Government treaties, not fees (defense contractor playbook)
   - Treaty progression: $27B → $270B → $2.7T as health outcomes prove the model
-  - Why $100T valuation? Capturing even 10% of health dividend = $10.9T annual value
+  - Capturing even 10% of health dividend = $10.9T annual value
   - The feedback loop: Better health outcomes → bigger treaties → more cures → repeat
   - We're defense contractors who cure instead of kill (same lobbying, opposite outcome)
   - Platform strategy: dFDA free for everyone (like GPS military → civilian)
   - Market failure reality: No individual can buy "world peace" or "disease eradication"
-  - First company to successfully monetize NOT killing people at global scale
+  - First initiative to successfully monetize NOT killing people at global scale
   - Why no one's done it: Couldn't coordinate 8 billion people (until Wishocracy)
 - **[FIGURE: The DIH Feedback Loop]**
   - Circular diagram: Peace dividend → Funds trials → Health outcomes → Justifies bigger treaties → More peace dividend
@@ -722,13 +723,13 @@
   - Year 20: Full $16.5T annual value realized
   - Every year we delay: $142B in immediate benefits lost forever
 
-### Your ROI
+### Your Personal ROI
 *Health, Wealth, and Freedom*
 
 - **Economic Security**
   - Subsidized treatment: Dynamic vouchers for dFDA trials
   - Healthcare access: No more medical bankruptcy
-  - Investment opportunity: VICTORY bonds at 40%+ perpetual
+  - Investment opportunity: VICTORY bonds at 270%+ perpetual
   - Job creation: Research and healthcare jobs
   - Economic growth: From health innovation
 - **Health Returns**
@@ -804,7 +805,7 @@
 - **The Three Subs:** Sub-intelligence (truth unknowable), Sub-longevity (life expectancy 35), Sub-wellbeing (80% mentally ill)
 
 ### Path B: Wishonia
-*The Transcendent Path*
+*How to Build Paradise (Or At Least Stop Building Hell)*
 
 - **[FIGURE: The Two Timelines - Wishonia Path]**
   - Diverging timeline from 2026 showing ascent into light
@@ -864,7 +865,7 @@
 
 
 ### Demolishing Objections
-*Answering the Critics*
+*How to Respond to People Who Think Killing Ourselves Is Fine, Actually*
 
 - **"Why not just fund medical research more?"**
   - Because money isn't real, resources are (see Fixed Pie Reality in Part I)
@@ -882,8 +883,8 @@
   - We replace hearts, kidneys, blood, bones
   - Aging is just harder engineering, not magic
   - We went to the moon with slide rules, we can fix cells with AI
-- **"40% returns are impossible"**
-  - Medallion Fund does 39% with $10B cap. We do 40%+ with unlimited scaling as treaty grows.
+- **"270% returns are impossible"**
+  - Medallion Fund does 39% with $10B cap. We do 270%+ with unlimited scaling as treaty grows.
 - **"Wishocracy is mob rule"**
   - Better than oligarch rule. Plus AI advisors prevent poor decisions.
 - **"The powers that be won't allow this"**
@@ -921,39 +922,47 @@
 
 ## Part IV: The Plan
 
-*The complete roadmap from idea to reality*
+*How to Actually Do This (Not Just Talk About It on Reddit)*
 
 ### Legal Architecture
-*A Multi-Jurisdiction Strategy*
-- Swiss foundation: Neutral base of operations
-- Delaware C-corp: US operations
-- Singapore entity: Asian operations
-- Multiple legal structures: Risk distribution
-- Regulatory arbitrage: Always have options
+*How to Structure This So Nobody Can Stop You*
+
+- **How to Play Legal Jurisdiction Jenga**
+  - Swiss foundation: Where money goes to avoid drama
+  - Delaware C-corp: Where US companies go to avoid taxes
+  - Singapore entity: Where Asian money feels comfortable
+  - Multiple structures: If one fails, others survive (like Hydra but helpful)
+  - Regulatory arbitrage: Always have a backup country (like rich people do)
 
 ### Securities Law
-*Navigating the Regulations*
-- VICTORY bonds: Structured as debt, not equity
-- Qualified purchaser exemptions
-- No public offering until approved
-- Full SEC compliance from day one
-- Best lawyers money can buy (and it will)
+*How to Sell Bonds Without Going to Prison*
+
+- **How to Structure Victory Bonds (Legally)**
+  - Call them debt, not equity (the SEC hates this one weird trick)
+  - Qualified purchasers only (rich people can lose money legally)
+  - No public offering (until the lawyers say it's safe)
+  - SEC compliance from day one (prison orange isn't flattering)
+  - Hire lawyers who charge $2,000/hour (they're worth it to avoid federal prison)
 
 ### Election Law
-*Ensuring Compliance*
-- Independent expenditures only (no coordination)
-- Separate entity for political action
-- Full FEC disclosure (radical transparency)
-- State-by-state compliance (50 different laws)
-- Citizens United: Corporations are people (use it)
+*How to Buy Politicians Legally (They Made It Easy)*
+
+- **How to Navigate Campaign Finance (Without Jail Time)**
+  - Independent expenditures only (wink wink, no coordination, wink)
+  - Separate entity for politics (compartmentalization is key)
+  - Full FEC disclosure (transparency theater but required)
+  - State compliance: 50 different ways to be wrong (hire local lawyers)
+  - Citizens United loophole: Corporations are people (stupid but useful)
 
 ### Treaty Framework
-*Building the International Agreement*
-- International law expertise
-- Vienna Convention compliance
-- Bilateral agreements first (easier)
-- Build to multilateral (inevitable)
-- Enforcement mechanisms built in
+*How to Get Countries to Sign Things (Bribery But Legal)*
+
+- **How to Build an International Agreement That Works**
+  - Hire people who understand Vienna Convention (it's like Pokemon but for treaties)
+  - Start bilateral: Get two countries first (peer pressure does the rest)
+  - Scale to multilateral: Once everyone's doing it, nobody can stop
+  - Build enforcement into the code (smart contracts don't accept excuses)
+  - Make defection more expensive than compliance (game theory 101)
 
 ### The Investment Vehicle
 *VICTORY Bonds*
@@ -996,16 +1005,18 @@
   - Full transparency: Every dollar tracked publicly
 
 ### Legislation Package
-*The Bills to Pass*
-- The Treaty Implementation Act (makes it binding)
-- The DIH Authorization Act (creates the institutes)
-- The dFDA Parallel Track Act (alternative pathway alongside FDA)
-- The Right to Try Expansion Act (patient choice beyond FDA)
-- The Budget Reallocation Act (moves the money)
+*How to Write Laws That Politicians Will Actually Pass*
+
+- **The Five Bills to Ram Through Congress**
+  - Treaty Implementation Act: Makes the treaty real (not just paper)
+  - DIH Authorization Act: Creates our parallel government (the one that works)
+  - dFDA Parallel Track Act: FDA alternative (for people who want to not die)
+  - Right to Try Expansion: Let dying people try things (revolutionary concept)
+  - Budget Reallocation Act: Move money from bombs to bodies (the important pivot)
 
 
 ### Global Referendum
-*Democracy at Scale*
+*How to Run a Planetary Vote (Harder Than It Sounds)*
 
 - **The Platform: Wishocracy App**
   - 30-second onboarding
@@ -1033,7 +1044,7 @@
 
 
 ### Getting Started
-*Three Ways to Contribute*
+*How to Stop Reading and Start Doing*
 
 - **Sign the Referendum** (3 minutes)
   - WarOnDisease.org has the referendum
