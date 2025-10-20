@@ -17,7 +17,7 @@ book:
     - text: "🚀 Start Here"
       href: index.qmd
 
-    - part: "Part I: The Problem"
+    - part: "🚨 The Problem"
       chapters:
         - brain/book/problem.qmd  # Part I Intro
         - brain/book/problem/the-daily-massacre.qmd # Daily Holocaust
@@ -31,7 +31,7 @@ book:
         - brain/book/problem/regulatory-capture.qmd # Regulatory Capture
         - brain/book/theory/central-planning-kills.qmd # Central Planning Kills
 
-    - part: "Part II: The Solution"
+    - part: "💡 The Solution"
       chapters:
         - brain/book/solution.qmd # Part II Intro
         - brain/book/solution/1-percent-treaty.qmd # The 1% Treaty
@@ -42,7 +42,7 @@ book:
         - brain/book/solution/global-draft.qmd # The Global Draft
         - brain/book/solution/aligning-incentives.qmd # Aligning Incentives
 
-    - part: "Part III: The Case"
+    - part: "✅ The Case"
       chapters:
         - brain/book/proof.qmd # Part III Intro
         - brain/book/proof/historical-precedents.qmd # Historical Precedent
@@ -54,7 +54,7 @@ book:
         - brain/book/futures/utopia-health-and-happiness.qmd # Path B: Wishonia
         - brain/book/call-to-action/every-objection-demolished.qmd # Demolishing Objections
 
-    - part: "Part IV: The Plan"
+    - part: "🗺️ The Plan"
       chapters:
         - brain/book/legal.qmd # Legal Architecture (Intro)
         - brain/book/legal/legal-framework.qmd # Legal Architecture
