@@ -66,72 +66,91 @@ book:
         - brain/book/strategy/global-referendum.qmd # Global Referendum
         - brain/book/call-to-action/three-actions.qmd # Getting Started
   appendices:
-    # Governance & Organization
-    - brain/book/appendix/vision.qmd
-    - brain/book/appendix/governance.qmd
-    - brain/book/appendix/organizational-structure.qmd
-    - brain/book/appendix/command-and-control-systems.qmd
-    - brain/book/appendix/dih-integration-model.qmd
-    - brain/book/appendix/open-ecosystem-and-bounty-model.qmd
-
-    # Theory & Concepts (moved from Part I)
-    - brain/book/theory.qmd
-    - brain/book/theory/the-two-wars.qmd
-    - brain/book/problem/genetic-slavery.qmd
+    # Essential Reading
+    - text: "📚 Essential References"
+      chapters:
+        - brain/book/appendix/faq.qmd
+        - brain/book/references.qmd
+        - brain/book/appendix/historical-precedents.qmd
+        - brain/book/appendix/recovery-trial.qmd
+        - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd
 
     # Strategic Implementation
-    - brain/book/appendix/1-percent-treaty.qmd
-    - brain/book/appendix/highest-leverage-advocacy.qmd
-    - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd
-    - brain/book/appendix/dfda-implementation-via-executive-action.qmd
-    - brain/book/appendix/co-opt-dont-compete.qmd
-    - brain/book/appendix/free-rider-solution.qmd
-    - brain/book/appendix/fundraising-strategy.qmd
-    - brain/book/appendix/operations-roadmap.qmd
-    - brain/book/strategy/co-opting-defense-contractors.qmd
-    - brain/book/economics/coalition-that-wins.qmd
-    - brain/book/strategy.qmd
-    - brain/book/strategy/bribe-sequence.qmd
-    - brain/book/strategy/five-step-execution.qmd
-    - brain/book/strategy/viral-marketing.qmd
-    - brain/book/strategy/grassroots-mobilization.qmd
-    - brain/book/strategy/diplomatic-approach.qmd
-    - brain/book/economics/central-banks.qmd
-    - brain/book/economics/financial-plan.qmd
-    - brain/book/economics/campaign-budget.qmd
+    - text: "🎯 Implementation Strategy"
+      chapters:
+        - brain/book/strategy.qmd
+        - brain/book/appendix/1-percent-treaty.qmd
+        - brain/book/appendix/highest-leverage-advocacy.qmd
+        - brain/book/strategy/five-step-execution.qmd
+        - brain/book/strategy/bribe-sequence.qmd
+        - brain/book/strategy/viral-marketing.qmd
+        - brain/book/strategy/grassroots-mobilization.qmd
+        - brain/book/strategy/diplomatic-approach.qmd
+        - brain/book/strategy/co-opting-defense-contractors.qmd
+        - brain/book/economics/coalition-that-wins.qmd
+        - brain/book/appendix/co-opt-dont-compete.qmd
+
+    - text: "⚖️ Policy & Regulatory"
+      chapters:
+        - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd
+        - brain/book/appendix/dfda-implementation-via-executive-action.qmd
+        - brain/book/appendix/impact-securities-reform.qmd
 
     # Economic Analysis
-    - brain/book/appendix/total-economic-impact.qmd
-    - brain/book/appendix/economic-summary.qmd
-    - brain/book/appendix/humanity-budget-overview.qmd
-    - brain/book/appendix/peace-dividend-analysis.qmd
-    - brain/book/appendix/1-percent-treaty-peace-dividend-analysis.qmd
-    - brain/book/appendix/dfda-cost-benefit-analysis.qmd
-    - brain/book/appendix/dfda-roi-breakdown.qmd
-    - brain/book/appendix/dih-market-returns.qmd
-    - brain/book/appendix/investor-risk-analysis.qmd
-    - brain/book/appendix/economic-value-of-accelerated-treatments.qmd
-    - brain/book/appendix/icer-full-calculation.qmd
-    - brain/book/appendix/intervention-comparison-table.qmd
-    - brain/book/economics/best-idea-in-the-world.qmd  # Moved from Part III
-    - brain/book/economics/economic-impact-summary.qmd  # Moved from Part III
-    - brain/book/economics/health-savings-sharing-model.qmd  # Moved from Part III
+    - text: "💰 Economic Analysis"
+      chapters:
+        - brain/book/appendix/total-economic-impact.qmd
+        - brain/book/appendix/economic-summary.qmd
+        - brain/book/economics/economic-impact-summary.qmd
+        - brain/book/economics/best-idea-in-the-world.qmd
+        - brain/book/appendix/humanity-budget-overview.qmd
+        - brain/book/appendix/global-government-medical-research-spending.qmd
 
-    # Evidence & Case Studies
-    - brain/book/appendix/recovery-trial.qmd
-    - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd
+    - text: "🧮 Detailed Calculations"
+      chapters:
+        - brain/book/appendix/peace-dividend-analysis.qmd
+        - brain/book/appendix/1-percent-treaty-peace-dividend-analysis.qmd
+        - brain/book/appendix/dfda-cost-benefit-analysis.qmd
+        - brain/book/appendix/dfda-roi-breakdown.qmd
+        - brain/book/appendix/economic-value-of-accelerated-treatments.qmd
+        - brain/book/appendix/icer-full-calculation.qmd
+        - brain/book/appendix/intervention-comparison-table.qmd
 
-    # Legal & Compliance
-    - brain/book/appendix/nonprofit-roadmap.qmd
-    - brain/book/appendix/dih-seed-grant-proposal-template.qmd
-    - brain/book/appendix/legal-compliance-framework.qmd
-    - brain/book/appendix/impact-securities-reform.qmd
-    - brain/book/appendix/recruitment-and-propaganda-plan.qmd
+    - text: "💵 Financial Planning"
+      chapters:
+        - brain/book/economics/financial-plan.qmd
+        - brain/book/economics/campaign-budget.qmd
+        - brain/book/economics/central-banks.qmd
+        - brain/book/appendix/dih-market-returns.qmd
+        - brain/book/appendix/investor-risk-analysis.qmd
+        - brain/book/economics/health-savings-sharing-model.qmd
+        - brain/book/appendix/fundraising-strategy.qmd
 
-    # Reference Materials
-    - brain/book/appendix/faq.qmd
-    - brain/book/references.qmd
-    - brain/book/appendix/global-government-medical-research-spending.qmd
+    # Organizational Resources
+    - text: "🏛️ Governance & Organization"
+      chapters:
+        - brain/book/appendix/vision.qmd
+        - brain/book/appendix/governance.qmd
+        - brain/book/appendix/organizational-structure.qmd
+        - brain/book/appendix/dih-integration-model.qmd
+        - brain/book/appendix/open-ecosystem-and-bounty-model.qmd
+        - brain/book/appendix/command-and-control-systems.qmd
+
+    - text: "⚙️ Operations & Legal"
+      chapters:
+        - brain/book/appendix/operations-roadmap.qmd
+        - brain/book/appendix/nonprofit-roadmap.qmd
+        - brain/book/appendix/legal-compliance-framework.qmd
+        - brain/book/appendix/dih-seed-grant-proposal-template.qmd
+        - brain/book/appendix/recruitment-and-propaganda-plan.qmd
+        - brain/book/appendix/free-rider-solution.qmd
+
+    # Background Theory
+    - text: "🧠 Theory & Concepts"
+      chapters:
+        - brain/book/theory.qmd
+        - brain/book/theory/the-two-wars.qmd
+        - brain/book/problem/genetic-slavery.qmd
 
 execute:
   # Relaunch kernel for each render
