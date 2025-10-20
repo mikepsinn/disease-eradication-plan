@@ -872,6 +872,17 @@
 ### Demolishing Objections
 *How to Respond to People Who Think Killing Ourselves Is Fine, Actually*
 
+- **If this is worth $24.6 trillion a year, why hasn't it been done?**
+
+1.  **The Math Might Be Wrong:** The benefits might "only" be $2-10 trillion if not all diseases are curable or if cost reductions don't scale perfectly. Even so, the ROI remains astronomical.
+2.  **The Politics Might Be Impossible:** Overcoming the collective action problem of 190 nations and the lobbying power of the defense industry (over $600B in annual revenue for the top 100 contractors) is a monumental challenge. You cannot win a spending war against them.
+3.  **The Right Combination Is Rare:** The project requires a unique blend of technical, economic, and political expertise, plus credibility, capital, and a tolerance for being seen as insane.
+4.  **Epistemic Learned Helplessness:** Smart people assume that if a $20 trillion opportunity existed, it would have been seized already. However, ideas that require global coordination against entrenched interests often lie dormant, despite their value (e.g., carbon pricing, land value tax).
+
+**The bottom line:** Even if the benefits are overestimated by 90% and the probability of success is only 5%, the expected value is still $123 billion, a 123:1 ROI.
+
+The reason it hasn't been done is not that it's impossible, but that it requires a unique individual willing to test the thesis cheaply, quickly, and publicly.
+
 - **"Why not just fund medical research more?"**
   - Because money isn't real, resources are (see Fixed Pie Reality in Part I)
   - Earth has finite brains, and defense contractors monopolize them with printed money
