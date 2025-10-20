@@ -1,0 +1,105 @@
+---
+title: "DIH Financial Plan: Budget vs. Actuals"
+format: html
+---
+
+```{python}
+#| echo: false
+#| message: false
+
+import os
+from dotenv import load_dotenv
+from pyairtable import Api
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import pandas as pd
+
+# --- Configuration ---
+load_dotenv()
+AIRTABLE_API_KEY = os.getenv("AIRTABLE_API_KEY")
+AIRTABLE_BASE_ID = os.getenv("AIRTABLE_BASE_ID")
+DELIVERABLES_TABLE_ID = os.getenv("DELIVERABLES_TABLE_ID")
+TRANSACTIONS_TABLE_ID = os.getenv("TRANSACTIONS_TABLE_ID")
+
+# --- Data Fetching ---
+api = Api(AIRTABLE_API_KEY)
+deliverables_table = api.table(AIRTABLE_BASE_ID, DELIVERABLES_TABLE_ID)
+transactions_table = api.table(AIRTABLE_BASE_ID, TRANSACTIONS_TABLE_ID)
+
+# Fetch Deliverables (The Plan)
+deliverable_data = [
+    {
+        "Task": record["fields"].get("Deliverable Name", "Unnamed Deliverable"),
+        "Start": record["fields"].get("Start Date"), # Assumes you add Start Date
+        "Finish": record["fields"].get("Due Date"),
+        "Budgeted Cost": record["fields"].get("Budgeted Cost", 0),
+        "Expected Income": record["fields"].get("Expected Income", 0),
+    }
+    for record in deliverables_table.all()
+]
+plan_df = pd.DataFrame(deliverable_data).dropna(subset=['Start', 'Finish'])
+plan_df['Start'] = pd.to_datetime(plan_df['Start'])
+plan_df['Finish'] = pd.to_datetime(plan_df['Finish'])
+
+# Fetch Transactions (The Reality)
+transaction_data = [
+    {
+        "Date": record["fields"].get("Date"),
+        "Amount": record["fields"].get("Amount", 0),
+        "Type": record["fields"].get("Type"),
+    }
+    for record in transactions_table.all()
+]
+actual_df = pd.DataFrame(transaction_data).dropna(subset=['Date'])
+actual_df['Date'] = pd.to_datetime(actual_df['Date'])
+actual_df = actual_df.sort_values(by="Date")
+actual_df['Signed Amount'] = actual_df.apply(lambda row: row['Amount'] if row['Type'] == 'Inflow' else -row['Amount'], axis=1)
+actual_df['Balance'] = actual_df['Signed Amount'].cumsum()
+
+
+# --- Budget vs. Actuals Calculation ---
+# This is a simplified model. A real version would be more complex.
+budget_events = []
+for index, row in plan_df.iterrows():
+    if row['Budgeted Cost'] > 0:
+        budget_events.append({'Date': row['Finish'], 'Amount': -row['Budgeted Cost'], 'Type': 'Budgeted Cost'})
+    if row['Expected Income'] > 0:
+        budget_events.append({'Date': row['Finish'], 'Amount': row['Expected Income'], 'Type': 'Expected Income'})
+
+budget_df = pd.DataFrame(budget_events).sort_values(by="Date")
+budget_df['Balance'] = budget_df['Amount'].cumsum()
+
+
+# --- Visualization ---
+fig = make_subplots(
+    rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.1,
+    subplot_titles=("Project Timeline (Gantt Chart)", "Financial Runway: Budget vs. Actuals")
+)
+
+# Gantt Chart
+for index, row in plan_df.iterrows():
+    fig.add_trace(go.Bar(x=[row['Finish'] - row['Start']], y=[row['Task']], base=[row['Start']], orientation='h', name=row['Task']), row=1, col=1)
+
+# Budget (Planned) Runway
+fig.add_trace(go.Scatter(x=budget_df['Date'], y=budget_df['Balance'], mode='lines', name='Planned Budget', line=dict(shape='spline', dash='dot')), row=2, col=1)
+
+# Actual (Real-Time) Runway
+fig.add_trace(go.Scatter(x=actual_df['Date'], y=actual_df['Balance'], mode='lines+markers', name='Actual Treasury'), row=2, col=1)
+
+
+# --- Layout & Formatting ---
+fig.update_layout(title_text="DIH Strategic Financial Plan", height=800, showlegend=True, yaxis_title="Deliverables", yaxis2_title="Treasury Balance ($)")
+fig.update_yaxes(autorange="reversed", row=1, col=1)
+
+
+# --- Output ---
+fig.show()
+fig.write_html("dih_budget_vs_actuals.html")
+print("Interactive 'Budget vs. Actuals' chart saved to dih_budget_vs_actuals.html")
+```
+
+### Instructions
+1.  **Update your `.env` file.**
+2.  **Add a "Start Date" to your `Deliverables` table.**
+3.  **Populate your data:** Fill in the `Budgeted Cost` and `Expected Income` for each deliverable. Log all real transactions in the `Transactions` table.
+4.  **Render the Chart:** Run `quarto render gantt_chart.qmd`.
