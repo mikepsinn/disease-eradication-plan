@@ -169,20 +169,26 @@ PATTERN_DOTS = '...'         # Dots/stippling
 
 ## Typography Guidelines
 
-For bold, impactful messaging inspired by atomic age propaganda posters:
+For authoritative, journalistic typography inspired by newspaper editorial pages and typewriter documents:
 
 **Recommended Font Hierarchy:**
 
-- **Display/Headlines:** Impact, Arial Black (strong, commanding)
-- **Body Text:** Helvetica, Arial (clean, readable)
-- **Fallbacks:** System sans-serif fonts
+- **Display/Headlines:** Georgia, 'Times New Roman', serif (authoritative, editorial)
+- **Body Text/Data:** 'Courier New', 'Courier', monospace (typewriter precision)
+- **Fallbacks:** System serif and monospace fonts
+
+**Design Inspiration:**
+- 1940s-60s newspaper front pages (serious, factual, authoritative)
+- Typewriter documents (direct, unvarnished truth)
+- Government reports and white papers (credible, institutional)
 
 **Python Implementation:**
 ```python
-plt.rcParams['font.family'] = 'sans-serif'
-plt.rcParams['font.sans-serif'] = ['Impact', 'Arial Black', 'Helvetica', 'Arial']
-plt.rcParams['font.size'] = 12
-plt.rcParams['font.weight'] = 'bold'
+plt.rcParams['font.family'] = 'serif'
+plt.rcParams['font.serif'] = ['Georgia', 'Times New Roman', 'Liberation Serif']
+plt.rcParams['font.monospace'] = ['Courier New', 'Courier', 'Liberation Mono']
+plt.rcParams['font.size'] = 11
+plt.rcParams['font.weight'] = 'normal'  # Let serif do the heavy lifting
 ```
 
 **Font Sizing - Adaptive to Chart Density:**
@@ -279,22 +285,22 @@ Mobile devices are held vertically - column charts use this natural orientation 
 **The Tufte Test:**
 Ask: "If I remove this element, does the chart lose essential information?" If no, remove it.
 
-## 1950s Atomic Age Aesthetic (for Images/Graphics)
+## Newspaper/Typewriter Aesthetic (for Images/Graphics)
 
 When creating or sourcing images:
 
-- **Bold, stark compositions** - High contrast, dramatic
-- **Limited color palette** - Red, white, blue, black only
-- **Strong typography** - Impact fonts, all caps for headlines
-- **Urgent messaging** - "Act Now", "The Future Is At Stake"
-- **Retro-futurism** - Atoms, rockets, bold geometric shapes
-- **Propaganda poster style** - Direct, commanding, no subtlety
+- **High-contrast compositions** - Stark black and white, newspaper clarity
+- **Limited color palette** - Black and white only (newspaper ink)
+- **Serif typography** - Georgia, Times New Roman for headlines
+- **Monospace for data** - Courier New for numbers and statistics
+- **Editorial authority** - Serious, factual, institutional credibility
+- **Typewriter precision** - Aligned, structured, document-like
 
-**Think:**
-- "Duck and Cover" civil defense posters
-- 1950s "Atoms for Peace" campaign
-- WWII "We Can Do It" propaganda
-- Cold War public information graphics
+**Design Inspiration:**
+- 1940s-60s newspaper front pages (The New York Times, Washington Post editorial style)
+- Typewriter documents and government memos
+- Pentagon Papers aesthetic (authoritative classified documents)
+- Congressional Budget Office reports (serious economic analysis)
 
 ## Implementation Example
 
