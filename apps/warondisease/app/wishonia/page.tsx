@@ -76,7 +76,7 @@ export default function WishoniaTimeline() {
         <p className="text-xl font-bold mb-3">Why This Works:</p>
         <ul className="space-y-2">
           <li>• It's not charity. Defense contractors pivot to biodefense.</li>
-          <li>• It's not democratic. It's wishocratic. You vote your disease.</li>
+          <li>• It's not democratic. It's wishocratic. You join trials, funding follows.</li>
           <li>• It's not revolutionary. Same corrupt system, backwards.</li>
           <li>• It's not idealistic. Everyone's motivated by greed.</li>
         </ul>
