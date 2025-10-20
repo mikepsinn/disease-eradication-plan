@@ -1,6 +1,7 @@
 # Environment variables
 .env
 .env*.local
+.dev.vars
 .DS_Store
 
 # Node modules
