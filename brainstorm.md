@@ -58,102 +58,102 @@ If you don't: The idea is dead.
 
 ### MAJOR REVISION: "The Economic Case" Section
 
-**Current claim in book:** 463:1 ROI, $147B annual benefit
-
-**Corrected claim:** 10,000-20,000:1 ROI, $10-24 trillion annual benefit
-
-**You were undercounting by 69-138X.**
+**New claim:** 1,220:1 ROI, $1.22 trillion annual benefit
 
 #### The Complete Benefits Calculation
 
-**Original calculation missed:**
-- Drug price reduction: $750B
-- Prevention becoming viable: $1.5T  
-- Mental health impact: $1T
-- Full productivity gains: $2.25T
-- Longevity extension properly valued: $12T
-- Earlier access properly calculated: $1.35T (not $30B)
+**Additional benefits to include:**
+- Earlier access (timeline acceleration): $400B
+- New diseases treatable: $400B
+- Drug price reduction: $100B
+- Prevention becoming viable: $100B
+- Mental health impact: $75B
 
-#### The 14-Year Acceleration (The Biggest Number)
+**Note:** Productivity gains, insurance savings, and longevity extension are outcomes of the above benefits, not separate line items to avoid double-counting.
 
-**The insight:** If all diseases eventually get cured (reasonable given exponential tech progress), accelerating the timeline by 14 years means:
+#### The 14-Year Acceleration
 
-**Every person currently suffering gets cured 14 years earlier.**
+**The insight:** The dFDA gives patients the right and ability to access treatments during Phase 2/3 trials instead of waiting 17 years for FDA approval (or forever if trials are never completed for their condition).
 
-**The numbers:**
+**How the acceleration works:**
+- Current system: Wait 17 years from Phase 1 to FDA approval
+- dFDA system: Access treatment during Phase 2/3 pragmatic trials
+- Effective acceleration: ~14 years earlier access on average
+
+**This isn't speculative future acceleration - it's immediate access to treatments that already exist but are stuck in the approval pipeline.**
+
+**Stock benefit (one-time):** Existing patients get immediate access
 - 2 billion people with chronic diseases globally
-- Each saves 14 years of suffering
-- Economic value: $8.4 trillion/year (productivity)
-- Intrinsic value: $210 trillion/year (using standard $150K/QALY valuation)
+- Each gains 14 years of treatment access they'd otherwise miss
+- Total: 28 billion person-years × $150K/QALY = $4.2T total value
+- **Amortized over 14-year acceleration period: $300B/year for years 1-14**
 
-**Stock benefit (one-time acceleration):**
-- 28 billion person-years of suffering eliminated
-- $1.68 quadrillion total economic value
-- Annualized over 14 years: $120 trillion/year
+**Flow benefit (ongoing):** New patients each year get early access
+- ~50M new chronic disease cases/year globally
+- Each saves 14 years × $150K/QALY = $2.1M in value
+- **Annual flow: $105B/year ongoing (starts immediately, continues forever)**
 
-**Flow benefit (ongoing):**
-- 50M new disease cases per year
-- Each cured 14 years earlier  
-- $4.2 trillion/year forever
-
-**First 14 years:** $124.2 trillion/year
-**After year 14:** $4.2 trillion/year steady state
+**Combined "earlier access" benefit:**
+- Years 1-14: $300B (amortized stock) + $105B (flow) = **$405B/year**
+- Years 15+: $105B/year (flow only)
+- **10-year average: ~$400B/year**
 
 #### The Complete Benefit Table
 
-| Category | Annual Benefit | Currently Counted? |
-|----------|----------------|-------------------|
-| Peace Dividend | $97B | ✓ Yes |
-| R&D Cost Savings | $50B | ✓ Yes |
-| New Diseases Treatable | $400B | ⚠️ Partial |
-| **Earlier Access (14 years)** | **$124,200B** | ❌ Massively undercounted |
-| Drug Price Reduction | $750B | ❌ No |
-| Prevention Medicine | $1,500B | ❌ No |
-| Mental Health Impact | $1,000B | ❌ No |
-| Insurance Savings | $900B | ⚠️ Maybe partial |
-| Productivity Gains | $8,400B | ❌ No (embedded in earlier access) |
-| Longevity Extension | $12,000B | ❌ No |
+| Category | Annual Benefit | Notes |
+|----------|----------------|-------|
+| Peace Dividend | $97B | Redirected military spending |
+| R&D Cost Savings | $50B | 82X trial cost reduction |
+| **Earlier Access (14 years)** | **$400B** | Timeline acceleration (stock + flow) |
+| New Diseases Treatable | $400B | Rare diseases, orphan drugs |
+| Drug Price Reduction | $100B | R&D savings passed to consumers |
+| Prevention Medicine | $100B | Economic viability of prevention |
+| Mental Health Impact | $75B | Treatment gap reduction |
 | | | |
-| **ECONOMIC TOTAL** | **$24.6 TRILLION/YEAR** | |
+| **ECONOMIC TOTAL** | **$1.22 TRILLION/YEAR** | |
 
-**Plus intrinsic wellbeing value:** $300 trillion/year (QALYs from suffering reduction)
+**Economic value (QALY-based):** Already included above using standard $150K/QALY valuation
 
-**The economic portion alone (excludable from GDP):** $24.6 trillion = 25% of global GDP
+**ROI:** 1,220:1
 
-**Revised ROI:** 24,600:1 (not 463:1)
+**Note:** Insurance savings, productivity gains, and longevity extension are outcomes of the above benefits and not counted separately to avoid double-counting.
 
 #### Why This Makes Sense
 
 The 1% Treaty doesn't just make trials cheaper. It:
 
-1. Restructures global resource allocation (peace dividend)
-2. Makes prevention economically viable (saves 10X vs treatment)
-3. Enables treatment of 95% of currently ignored diseases
-4. **Gives everyone 14 years earlier access to all new drugs**
-5. Reduces drug prices 50-80% (R&D cost savings)
-6. Finally addresses mental health at scale
-7. Extends productive life by 10-15 years (50M people/year)
-8. Creates compounding innovation effects
+1. Restructures global resource allocation (peace dividend: $97B)
+2. Slashes R&D costs 82X (saves $50B)
+3. **Accelerates cure timelines by 14 years** (saves $400B)
+4. Enables treatment of rare/orphan diseases (adds $400B)
+5. Reduces drug prices via R&D savings (saves $100B)
+6. Makes prevention economically viable (saves $100B)
+7. Addresses mental health treatment gap (adds $75B)
+8. Creates compounding innovation effects (not separately valued to avoid double-counting)
 
-Each of these alone is worth hundreds of billions. Together? Tens of trillions.
+Each of these alone is worth tens to hundreds of billions. Together? $1.22 trillion/year.
 
 #### The Sanity Check
 
-**Is $24.6 trillion/year reasonable?**
+**Is $1.22 trillion/year reasonable?**
 
 Global GDP: $100 trillion/year
 Global healthcare spending: $9 trillion/year
+Global military spending: $2.7 trillion/year
 
-If the 1% Treaty:
-- Cures major diseases (eliminates need for $9T in treatment over time)
-- Extends productive life (adds $12T in economic output)
-- Enables prevention (saves $1.5T in treatment costs)
+If the 1% Treaty generates $1.22T/year in benefits, that's:
+- 1.2% of global GDP
+- 13.6% of healthcare spending
+- 45% of military spending
 
-Then $24.6T/year is 25% of global GDP.
+**This passes the smell test.**
 
-**That's high, but health is literally life and death.**
+For comparison:
+- Eliminating all cancer: ~$1.1T/year economic value
+- Curing all infectious disease: ~$800B/year
+- Fixing mental health: ~$300B/year
 
-The value of curing your cancer 14 years earlier is probably worth more than 5 years of average income.
+The 1% Treaty doesn't cure everything, but it accelerates progress across ALL diseases by 14 years. $1.22T/year is reasonable for that scope.
 
 ---
 
@@ -173,43 +173,55 @@ The value of curing your cancer 14 years earlier is probably worth more than 5 y
 
 #### The 1% Treaty Numbers
 
-**Investment:** $1B
-**Annual lives saved:** 25,000/year minimum, growing to 180,000/year
-**Economic value:** $24.6T/year (conservative estimate)
+**Investment:** $1B (to bootstrap the campaign)
+**Annual lives saved:** 25,000/year minimum, growing to 180,000/year as system scales
+**Economic value:** $1.22T/year (corrected estimate)
 
 **Cost per life saved:**
 - Year 1: $1B ÷ 25,000 = $40,000 per life
-- 10-year average: $1B ÷ 250,000 = $4,000 per life
-- But society PROFITS $24.6T/year while saving lives
+- 10-year average: $1B ÷ 1,000,000 = $1,000 per life
+- But society PROFITS $1.22T/year while saving lives ($1.22M profit per life saved)
 
-**Success probability:** 5-15% (requires global treaty)
+**Success probability:** 5-15% (requires global treaty coordination)
 
 #### Expected Value Math
 
 **Malaria nets (The Sure Thing):**
 - Investment: $1B
-- Lives saved: 285,714 (certain)
-- Expected value: $1B
+- Lives saved: 285,714 (nearly certain)
+- Economic value: 285,714 lives × $150K/QALY × 35 years = $1.5T
+- Expected value: ~$1.5T (nearly certain)
 
 **1% Treaty (The Moonshot):**
 - Investment: $1B
-- If it succeeds (10% probability): $24.6T/year × 10 years = $246T
-- Expected value: 10% × $246T = **$24.6 trillion**
+- If it succeeds (10% probability): $1.22T/year × 10 years = $12.2T
+- Expected value: 10% × $12.2T = **$1.22 trillion**
 
-**Expected ROI: 24,600:1**
+**Expected value comparison:**
+- Malaria nets: $1.5T (100% probability) = $1.5T expected
+- 1% Treaty: $12.2T (10% probability) = $1.22T expected
+
+**At 10% success probability, they're roughly equivalent in expected value.**
+
+**But if you believe success probability is >12%, the treaty dominates.**
 
 #### The Break-Even Question
 
 **What success probability makes the treaty equal to malaria nets?**
 
-Malaria nets: $1B → 285,714 lives (certain)
-1% Treaty: $1B → 1,000,000 lives (if successful)
+Malaria nets: $1B → $1.5T value (certain)
+1% Treaty: $1B → $12.2T value (if successful)
 
-Break-even probability: 285,714 ÷ 1,000,000 = **28.6%**
+Break-even probability: $1.5T ÷ $12.2T = **12.3%**
 
-**Translation:** If you believe there's even a 28.6% chance the treaty succeeds, it's better than malaria nets on pure lives-saved metrics.
+**Translation:** If you believe there's even a 12.3% chance the treaty succeeds, it's better than malaria nets in expected value.
 
-Even at 10% success probability, the expected value is 24.6X better.
+**On lives saved alone:**
+- Malaria nets: 285,714 lives (certain)
+- 1% Treaty: 1,000,000 lives over 10 years (if successful)
+- Break-even: 28.6% success probability
+
+**Most optimistic interpretation:** If you think success probability is 15-30%, this dominates malaria nets.
 
 #### The Portfolio Theory Answer
 
@@ -235,11 +247,14 @@ Possible answers:
 4. Cultural bias (rewards measurable progress, not system-change bets)
 5. Maybe they calculated <1% success probability
 
-**But here's the thing:** If you really care about expected value maximization, and the 1% Treaty has even a 5% chance of redirecting $27B/year forever, creating 82X cheaper trials, generating $24.6T/year in benefits...
+**But here's the thing:** If you really care about expected value maximization, and the 1% Treaty has even a 10-15% chance of redirecting $27B/year forever, creating 82X cheaper trials, generating $1.22T/year in benefits...
 
 **By EA's own criteria, this should be funded.**
 
-The fact that it isn't suggests EA has methodological bias toward measurable certainty over uncertain but unbounded upside.
+The fact that it isn't suggests EA has methodological bias toward:
+1. Measurable certainty over uncertain but large upside
+2. Apolitical interventions over political ones
+3. Direct action over systemic change
 
 #### The Bottom Line
 
@@ -255,35 +270,37 @@ The fact that it isn't suggests EA has methodological bias toward measurable cer
 
 ### Why Has Nobody Done This? (The Most Important Question)
 
-If this is worth $24.6 trillion/year in economic value, why isn't every billionaire, government, and EA organization already doing it?
+If this is worth $1.22 trillion/year in economic value with 1,220:1 ROI, why isn't every billionaire, government, and EA organization already doing it?
 
-This is the core paradox. Let me think through this seriously.
+This is the core paradox. Let me work through the possibilities seriously.
 
 #### Hypothesis 1: The Math Is Wrong (30% probability)
 
 **Where the calculation might be off:**
 
-**The "All Diseases Eventually Cured" Assumption**
+**The "Diseases Might Be Fundamentally Harder" Assumption**
 
-We haven't cured a SINGLE disease in 50+ years (except Hep C in 2014). Smallpox was eradication, not cure.
+Some diseases might be limited by biology, not funding or trial efficiency:
 
-Cancer might be fundamentally incurable (it's cellular evolution). Aging might be thermodynamically impossible to reverse.
+- Cancer might be fundamentally incurable (it's cellular evolution against every drug)
+- Aging might be thermodynamically impossible to reverse
+- Some conditions might require scientific breakthroughs we can't accelerate with money
 
-**If only 30% of diseases are actually curable:**
-- $24.6T drops to $7.4T
-- Still enormous, but less "too good to be true"
+**If only 40% of diseases benefit from earlier access:**
+- $1.22T drops to $490B
+- Still 490:1 ROI, but less dramatic
 
 **The 82X Cost Reduction Might Not Scale**
 
-Oxford RECOVERY was:
+Oxford RECOVERY achieved 82X in ideal conditions:
 - Repurposing existing drug (no safety trials needed)
 - UK socialized healthcare (easy recruitment)
 - COVID emergency (reduced bureaucracy)
 - Simple endpoints (death in 28 days)
 
-**Realistic cost reduction for novel drugs:** Maybe 10-20X, not 82X.
+**For novel drugs with complex endpoints:** Realistic reduction might be 10-25X, not 82X.
 
-**Adjusted benefits:** Maybe $6-10T instead of $24.6T.
+**Conservative estimate:** Even if benefits are only $500B-800B instead of $1.22T, that's still 500-800:1 ROI.
 
 #### Hypothesis 2: The Politics Are Impossible (25% probability)
 
@@ -378,27 +395,33 @@ Maybe the 1% Treaty is in this category: Obviously good, probably possible, actu
 
 #### The Real Answer (Probability-Weighted)
 
-**30%** - Math is wrong (benefits are "only" $2-10T, not $24T)
-**25%** - Politics are impossible (can't beat defense lobby)
-**20%** - Too hard to coordinate (190 nations won't cooperate)  
-**15%** - Nobody with resources + credibility has tried yet
-**10%** - It's actually being worked on quietly
+**Probability-weighted assessment:**
+
+**30%** - Math is wrong (benefits might be $500B-800B instead of $1.22T)
+**25%** - Politics are impossible (can't beat defense lobby spending war)
+**20%** - Coordination failure (190 nations won't cooperate on 1% cut)
+**15%** - Nobody with right combination of skills + credibility + capital has tried yet
+**10%** - It's being worked on quietly and we don't know about it
+
+**Note:** These aren't mutually exclusive. Think of these as "primary blocker" assessments.
 
 #### But Here's The Thing...
 
-**Even if I'm 90% wrong about the benefits:**
+**Even if I'm 50% wrong about the benefits:**
 
-$24.6T × 10% = $2.46 trillion/year
+$1.22T × 50% = $610B/year
 
-**Still 2,460:1 ROI on $1B investment.**
+**Still 610:1 ROI on $1B investment.**
 
-**Even if probability of success is only 5%:**
+**Even if probability of success is only 10%:**
 
-5% × $2.46T = $123 billion expected value
+10% × $1.22T/year × 10 years = $1.22T expected value
 
-**That's 123:1 expected value ROI.**
+**That's 1.22:1 expected value ROI.**
 
-**Which is still better than anything else.**
+**At 15% success probability: 1.8:1 expected ROI.**
+
+**Which is still competitive with proven EA interventions, with potential for vastly larger scale.**
 
 #### The Falsification Test
 
@@ -431,9 +454,17 @@ If it works: Raise the $10M Series A
 
 #### My Actual Belief
 
-Expected value = 60% (benefits) × 10% (probability) × $24.6T = **$1.5 trillion**
+**Benefits estimate:** $1.22T/year (corrected calculation, 10-year horizon = $12.2T total)
 
-On a $1B investment: **1,500:1 expected ROI**
+**Success probability:** 10-15% (optimistic but not crazy)
+
+**Expected value:**
+- At 10%: $1.22T
+- At 15%: $1.83T
+
+**On a $1B investment:** 1.2-1.8:1 expected value ROI
+
+**This is competitive with GiveWell top charities** (which have ~1.5-2:1 expected ROI when accounting for execution risk), **but with 1000X larger potential scale.**
 
 **The reason nobody has done it:** Not because it's impossible, but because it requires someone who:
 - Understands the full scope
@@ -461,11 +492,12 @@ On a $1B investment: **1,500:1 expected ROI**
 
 **Figures to add:**
 - Financial roadmap timeline (bank balance over 36 months)
-- Complete benefits breakdown ($24.6T pie chart)
+- Complete benefits breakdown ($1.22T pie chart)
 - Expected value comparison (Treaty vs EA interventions)
 - Falsification test flowchart
 
 **Cross-references to update:**
-- Update all "$147B annual benefit" references to "$24.6T"
-- Update all "463:1 ROI" references to "24,600:1 ROI"  
-- Add note that earlier calculations were conservative
+- Update "$147B annual benefit" references to "$1.22T"
+- Update "463:1 ROI" references to "1,220:1 ROI"
+- Emphasize stock/flow accounting for timeline acceleration
+- Make clear which benefits are NOT counted separately to avoid double-counting
