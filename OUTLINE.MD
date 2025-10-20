@@ -1007,7 +1007,7 @@ You want to end war and disease. You need $1 billion. You have $0. Here's the 36
 **Phase 1: Proof of Concept (Months 1-3)**
 - **Month 1: Build Wishocracy Voting Widget ($15k):** A simple web app to prove people will engage with the core mechanic of voting on budget priorities. If you can't get engagement here, the idea is dead.
 - **Month 2: Raise $500K from Angels:** Pitch the financial bribery model: "$1B in bonds bribes governments to redirect $27B/year. Your $500K buys a share of all future inflows."
-- **Month 3: Launch Referendum Platform V1:** A simple site with one question: "Should nations redirect 1% of military spending to medical research?" Goal: 10,000 votes in 30 days.
+- **Month 3: Launch Referendum Platform V1:** A simple site with one question: "Humanity currently spends 40 times more on military than on medical research. Should nations redirect 1% of military spending to help cure disease?" Goal: 10,000 votes in 30 days.
 
 **Phase 2: Scale & Lobby (Months 4-18)**
 - **Raise $10M Series A:** Use initial traction to fund a larger team.
