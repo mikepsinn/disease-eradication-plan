@@ -13,10 +13,11 @@ This guide provides the essential IDs for interacting with the DIH Command & Con
 | **Core Operations**       |                     |                                                          |
 | Personnel Roster          | `tblt09VmRHiPjtN3b` | Individuals, contacts, voters, team members              |
 | Organizations             | `tblH1w2250cqzOrNZ` | Companies, foundations, partners                         |
-| Engagements               | `tblDP7wqvrkfGflCX` | High-level missions and operational activities           |
+| Campaigns                 | `tblvL5GUMCLf7cEhN` | The highest-level strategic push (e.g., "Fundraising")   |
+| Projects                  | `tblDP7wqvrkfGflCX` | A specific SOW or internal project (e.g., "SOW-01")      |
+| Deliverables              | `tblzfX8p5RJzDxLsr` | Tangible outputs of a project (e.g., "The Vision Website") |
+| Tasks                     | `tbl59Q8dLCwLR8RbR` | Granular steps required to create a deliverable          |
 | Divisions                 | `tbl7NnDSxqaEBwpOl` | Internal DIH teams and departments                       |
-| Campaigns                 | `tblvL5GUMCLf7cEhN` | Coordinated efforts to achieve a specific outcome        |
-| Projects & Tasks          | `tbl59Q8dLCwLR8RbR` | Granular work items                                      |
 | **Fundraising (Inbound)** |                     | *Workflow for getting grants for the DIH*                |
 | Outbound Grant Applications | `tbl0fFj3D1AElC9tE` | Applications we send *out* to foundations                |
 | Inbound Grants & Contracts| `tblWtV0jwbpEXLXlS` | Signed contracts for grants we *receive*                 |
