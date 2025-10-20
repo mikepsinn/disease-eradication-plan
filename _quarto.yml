@@ -41,7 +41,6 @@ book:
         - brain/book/solution/wishocracy.qmd # Wishocracy
         - brain/book/solution/dfda.qmd # The Decentralized FDA
         - brain/book/solution/war-on-disease.qmd # The War on Disease
-        - brain/book/solution/global-draft.qmd # The Global Draft
         - brain/book/solution/aligning-incentives.qmd # Aligning Incentives
 
     - part: "✅ The Case"
@@ -58,7 +57,7 @@ book:
 
     - part: "🗺️ The Plan"
       chapters:
-        - brain/book/legal.qmd # Legal Architecture (Intro)
+        - brain/book/strategy/financial-roadmap.qmd # ADDED
         - brain/book/legal/legal-framework.qmd # Legal Architecture
         - brain/book/legal/securities-law.qmd # Securities Law
         - brain/book/legal/election-law.qmd # Election Law
@@ -66,6 +65,8 @@ book:
         - brain/book/economics/victory-bonds.qmd # The Investment Vehicle
         - brain/book/strategy/legislation-package.qmd # Legislation Package
         - brain/book/strategy/global-referendum.qmd # Global Referendum
+        - brain/book/strategy/viral-marketing.qmd # PROMOTED
+        - brain/book/strategy/co-opting-defense-contractors.qmd # PROMOTED
         - brain/book/call-to-action/three-actions.qmd # Getting Started
   appendices:
     # Essential Reading
