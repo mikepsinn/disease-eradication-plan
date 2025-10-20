@@ -67,7 +67,7 @@ book:
         - brain/book/call-to-action/three-actions.qmd # Getting Started
   appendices:
     # Essential Reading
-    - text: "📚 Essential References"
+    - part: "📚 Essential References"
       chapters:
         - brain/book/appendix/faq.qmd
         - brain/book/references.qmd
@@ -76,7 +76,7 @@ book:
         - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd
 
     # Strategic Implementation
-    - text: "🎯 Implementation Strategy"
+    - part: "🎯 Implementation Strategy"
       chapters:
         - brain/book/strategy.qmd
         - brain/book/appendix/1-percent-treaty.qmd
@@ -90,14 +90,14 @@ book:
         - brain/book/economics/coalition-that-wins.qmd
         - brain/book/appendix/co-opt-dont-compete.qmd
 
-    - text: "⚖️ Policy & Regulatory"
+    - part: "⚖️ Policy & Regulatory"
       chapters:
         - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd
         - brain/book/appendix/dfda-implementation-via-executive-action.qmd
         - brain/book/appendix/impact-securities-reform.qmd
 
     # Economic Analysis
-    - text: "💰 Economic Analysis"
+    - part: "💰 Economic Analysis"
       chapters:
         - brain/book/appendix/total-economic-impact.qmd
         - brain/book/appendix/economic-summary.qmd
@@ -106,7 +106,7 @@ book:
         - brain/book/appendix/humanity-budget-overview.qmd
         - brain/book/appendix/global-government-medical-research-spending.qmd
 
-    - text: "🧮 Detailed Calculations"
+    - part: "🧮 Detailed Calculations"
       chapters:
         - brain/book/appendix/peace-dividend-analysis.qmd
         - brain/book/appendix/1-percent-treaty-peace-dividend-analysis.qmd
@@ -116,7 +116,7 @@ book:
         - brain/book/appendix/icer-full-calculation.qmd
         - brain/book/appendix/intervention-comparison-table.qmd
 
-    - text: "💵 Financial Planning"
+    - part: "💵 Financial Planning"
       chapters:
         - brain/book/economics/financial-plan.qmd
         - brain/book/economics/campaign-budget.qmd
@@ -127,7 +127,7 @@ book:
         - brain/book/appendix/fundraising-strategy.qmd
 
     # Organizational Resources
-    - text: "🏛️ Governance & Organization"
+    - part: "🏛️ Governance & Organization"
       chapters:
         - brain/book/appendix/vision.qmd
         - brain/book/appendix/governance.qmd
@@ -136,7 +136,7 @@ book:
         - brain/book/appendix/open-ecosystem-and-bounty-model.qmd
         - brain/book/appendix/command-and-control-systems.qmd
 
-    - text: "⚙️ Operations & Legal"
+    - part: "⚙️ Operations & Legal"
       chapters:
         - brain/book/appendix/operations-roadmap.qmd
         - brain/book/appendix/nonprofit-roadmap.qmd
@@ -146,7 +146,7 @@ book:
         - brain/book/appendix/free-rider-solution.qmd
 
     # Background Theory
-    - text: "🧠 Theory & Concepts"
+    - part: "🧠 Theory & Concepts"
       chapters:
         - brain/book/theory.qmd
         - brain/book/theory/the-two-wars.qmd
