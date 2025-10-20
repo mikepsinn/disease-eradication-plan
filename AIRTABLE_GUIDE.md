@@ -15,7 +15,7 @@ This guide provides the essential IDs for interacting with the DIH Command & Con
 | Organizations             | `tblH1w2250cqzOrNZ` | Companies, foundations, partners                         |
 | Campaigns                 | `tblvL5GUMCLf7cEhN` | The highest-level strategic push (e.g., "Fundraising")   |
 | Projects                  | `tblDP7wqvrkfGflCX` | A specific SOW or internal project (e.g., "SOW-01")      |
-| Deliverables              | `tblRJtVh6niUzK24G` | Tangible outputs of a project (e.g., "The Vision Website") |
+| Deliverables              | `tblPlJvmHbfV3vvMi` | Tangible outputs of a project (e.g., "The Vision Website") |
 | Tasks                     | `tbl59Q8dLCwLR8RbR` | Granular steps required to create a deliverable          |
 | Divisions                 | `tbl7NnDSxqaEBwpOl` | Internal DIH teams and departments                       |
 | **Fundraising (Inbound)** |                     | *Workflow for getting grants for the DIH*                |
@@ -26,7 +26,7 @@ This guide provides the essential IDs for interacting with the DIH Command & Con
 | Inbound Grant Applications| `tblamUNwMb3L7fNF2` | Applications we receive *in* from others                 |
 | Awarded Grants & Contracts| `tblCDlZFbhbXeRPeg` | Signed contracts for grants we *award*                   |
 | **Finance & Legal**       |                     |                                                          |
-| Treasury (Financials)     | `tblchPzDL6Xill4QL` | Financial transactions, budgets, P&L                     |
+| Transactions              | `tbltTEhhkv7WRxvJP` | The master ledger for all financial movements            |
 | VICTORY Bonds             | `tblmAy4qe5WGlPWQS` | Tracking and management of bondholders                   |
 | Treaty Status             | `tblYtd0tCXDTR2lIa` | Tracking progress with nations                           |
 | **Communications**        |                     |                                                          |
