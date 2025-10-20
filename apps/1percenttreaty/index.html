@@ -14,72 +14,54 @@
     <div class="container">
         <!-- ATOMIC AGE HERO -->
         <div class="hero">
-            <h1>HOW TO TRICK CONGRESS<br>INTO NOT KILLING YOU</h1>
-            <p class="subtitle">A DIY GUIDE TO STEALING 1% OF THE MURDER BUDGET<br>BEFORE YOUR ORGANS FAIL</p>
+            <h1>VOTE TO NOT DIE</h1>
+            <p class="subtitle">Redirect 1% of murder money to cure disease.<br>30 seconds. Zero cost. 270% returns.</p>
         </div>
 
-        <!-- STATS -->
+        <!-- QUICK STATS -->
         <div class="stats">
             <div class="stat">
                 <div class="stat-number">150,000</div>
-                <div class="stat-label">Humans Deleted Daily<br>(That's 54 9/11s)</div>
+                <div class="stat-label">Die Daily</div>
             </div>
             <div class="stat">
-                <div class="stat-number">$2.7T</div>
-                <div class="stat-label">Annual Murder Budget<br>(40X More Than Cures)</div>
+                <div class="stat-number">1%</div>
+                <div class="stat-label">All We Need</div>
             </div>
-        </div>
-
-        <!-- PROPAGANDA PROPOSITION -->
-        <div class="proposition">
-            <h2>THE STUPIDLY SIMPLE MATH</h2>
-            <p>Countries spend <strong>$2.7 trillion</strong> annually perfecting ways to make humans stop breathing.</p>
-            <p style="margin-top: 15px;">You're asking them to redirect <strong>1%</strong> ($27B) to make humans keep breathing.<br>They still have enough bombs to end civilization 19 times instead of 20.<br>It's like asking a serial killer to use 99 bullets instead of 100.</p>
-        </div>
-
-        <!-- BENEFITS -->
-        <div class="benefits">
-            <h3>HOW THIS ACTUALLY WORKS (NO REALLY):</h3>
-            <ul>
-                <li><strong>YOUR BODY:</strong> Currently dissolving. Cancer cells multiplying. Brain deleting memories. You're a meat robot with worn-out parts.</li>
-                <li><strong>THE PROBLEM:</strong> We spend 40X more on murder than medicine. The Pentagon lost $2.5 trillion. Not spent. Lost. Like change in a couch the size of Nebraska.</li>
-                <li><strong>THE HACK:</strong> Get 3.5% of humanity to vote (historically never fails). Politicians love their jobs more than bombs.</li>
-                <li><strong>THE RESULT:</strong> Oxford proved trials cost $500 instead of $41,000. That's 82X cheaper. Math doesn't lie, politicians do.</li>
-            </ul>
-        </div>
-
-        <!-- INSTRUCTION MANUAL -->
-        <div class="proposition" style="margin-top: 40px;">
-            <h2>YOUR STEP-BY-STEP GUIDE TO ENDING DEATH</h2>
-            <p><strong>STEP 1: REALIZE YOU'RE ALREADY DYING</strong><br>
-            Your telomeres are shortening. Your cells are mutating. You have about 700,000 hours left. Tick tock.</p>
-            
-            <p style="margin-top: 15px;"><strong>STEP 2: UNDERSTAND THE SCAM</strong><br>
-            After WW2, we cut military spending by 30% and accidentally created the greatest economic boom in history. You're only asking for 1%. Even Congress can do that math.</p>
-            
-            <p style="margin-top: 15px;"><strong>STEP 3: LEARN FROM HISTORY</strong><br>
-            Every movement that got 3.5% of the population involved succeeded. Every. Single. One. That's just math. Not ideology. Math.</p>
-            
-            <p style="margin-top: 15px;"><strong>STEP 4: DO THE BARE MINIMUM</strong><br>
-            Vote below. Share your pyramid code. Get 3 friends. When 280 million people do this, politicians will cave faster than a house of cards in a hurricane.</p>
-            
-            <p style="margin-top: 15px;"><strong>THE PAYOFF:</strong><br>
-            463:1 return on investment. That's better than smallpox eradication (280:1). It's better than cocaine trafficking (90:1). It's capitalism's redemption arc.</p>
-        </div>
-
-        <!-- WHY THIS ISN'T INSANE -->
-        <div class="benefits" style="margin-top: 40px;">
-            <h3>PROOF THIS ISN'T A FEVER DREAM:</h3>
-            <ul>
-                <li><strong>OXFORD DID IT:</strong> The RECOVERY trial cost $500 per patient instead of $41,000. Not in theory. With actual dying people who became not-dying people.</li>
-                <li><strong>SWITZERLAND EXISTS:</strong> They spend 0.7% on defense and have the highest quality of life on Earth. Proof you can be rich, healthy, AND boring.</li>
-                <li><strong>THE PENTAGON LOST $2.5 TRILLION:</strong> Not spent. Lost. If they can lose that much, they can redirect 1%.</li>
-                <li><strong>DEFENSE CONTRACTORS WANT THIS:</strong> 270% returns beat their pathetic lobbying ROI of 181,300%. Even warmongers like money.</li>
-            </ul>
         </div>
 
         <!-- CTA FORM -->
-                            <option value="">SELECT YOUR DEATH FACTORY</option>
+        <div class="cta-section">
+            <h2>STEP 1: VOTE</h2>
+            <p class="cta-subtitle">Join the 3.5% who'll force Congress to choose cures over corpses.</p>
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <div id="successMessage" class="success-message">
+                <h3>✅ CONGRATULATIONS ON BASIC SELF-PRESERVATION</h3>
+                <p style="font-size: 1.3em;">You're now part of the 3.5% with functioning survival instincts.</p>
+                <div class="ref-code-display">
+                    YOUR PYRAMID SCHEME CODE:<br><span id="displayRefCode"></span>
+                </div>
+                <p style="margin-top: 15px; font-size: 1.1em;">Each person you recruit = more fake internet points that become real money when Congress caves.</p>
+            </div>
+
+            <div class="form-container" id="voteForm">
+                <form id="referendumForm">
+                    <div class="form-group">
+                        <label for="fullName">Name *</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country *</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select Country</option>
                             <option value="United States">United States</option>
                             <option value="United Kingdom">United Kingdom</option>
                             <option value="Canada">Canada</option>
@@ -97,24 +79,42 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="referralCode">Referral Code (Who Convinced You Not to Die?)</label>
-                        <input type="text" id="referralCode" name="referralCode" placeholder="Enter their pyramid code">
+                        <label for="referralCode">Referral Code (Optional)</label>
+                        <input type="text" id="referralCode" name="referralCode" placeholder="ABC123">
                     </div>
 
-                    <button type="submit" class="submit-btn" id="submitBtn">JOIN THE NOT-DYING MOVEMENT</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">VOTE YES</button>
                 </form>
             </div>
         </div>
 
         <!-- VIRAL SHARING - HIDDEN UNTIL VOTE -->
         <div class="viral-section" id="viralSection" style="display: none;">
-            <h3>HOW TO PROFIT FROM OTHER PEOPLE'S SURVIVAL INSTINCTS</h3>
-            <p>Here's the beautiful scam: Every person you recruit gets you 270% returns when this passes.<br>It's a pyramid scheme where everyone wins except death itself.</p>
+            <h3>STEP 2: RECRUIT 3 HUMANS</h3>
+            <p>Share your code. They vote. You all get rich. Death loses.</p>
             <div class="share-buttons">
-                <a href="#" class="share-btn" id="shareTwitter">TWITTER (FOR INTELLECTUALS)</a>
-                <a href="#" class="share-btn" id="shareFacebook">FACEBOOK (FOR BOOMERS)</a>
-                <a href="#" class="share-btn" id="shareWhatsApp">WHATSAPP (FOR CONSPIRACY THEORISTS)</a>
+                <a href="#" class="share-btn" id="shareTwitter">TWITTER</a>
+                <a href="#" class="share-btn" id="shareFacebook">FACEBOOK</a>
+                <a href="#" class="share-btn" id="shareWhatsApp">WHATSAPP</a>
             </div>
+        </div>
+
+        <!-- THE DETAILS (BELOW THE FOLD) -->
+        <div class="proposition" style="margin-top: 60px;">
+            <h2>THE MATH</h2>
+            <p><strong>$2.7 trillion:</strong> Annual murder budget<br>
+            <strong>1% ($27B):</strong> Redirected to cures<br>
+            <strong>Result:</strong> 82X cheaper trials, 463:1 ROI</p>
+        </div>
+
+        <div class="benefits" style="margin-top: 40px;">
+            <h3>WHY THIS WORKS:</h3>
+            <ul>
+                <li>3.5% of population = Guaranteed success (historical fact)</li>
+                <li>Oxford proved: $500 trials instead of $41,000</li>
+                <li>Pentagon lost $2.5T (they won't miss 1%)</li>
+                <li>Defense contractors get 270% returns (greed wins)</li>
+            </ul>
         </div>
 
         <!-- FOOTER -->
