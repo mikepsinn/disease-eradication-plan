@@ -975,9 +975,13 @@ If the answer to these is yes, the idea is viable. If no, the idea is dead. The 
   - Neutrality isn't weakness, it's profitable
 - **"This is unrealistic"**
   - **[VIDEO: JFK's "We Choose to Go to the Moon" - Doing the Impossible]**
-  - So was: Flight, internet, democracy, antibiotics, Bitcoin, landing on moon
-  - "Unrealistic" is what people say before paradigm shifts
-  - Reality: 69 million people dying unnecessarily each year
+  - So was: Flight, the internet, democracy, antibiotics, and landing on the moon. "Unrealistic" is the label given to every paradigm shift right before it happens.
+  - **Humanity Has Overcome Harder Challenges:**
+    - **Abolishing Slavery:** Dismantled a global economic system that was the bedrock of colonial empires, requiring a century of moral, economic, and military force to overcome.
+    - **Eradicating Smallpox:** Required the direct cooperation of bitter Cold War rivals (USA and Soviet Union) to vaccinate every community on Earth, including in active war zones.
+    - **Building the Post-WWII Order:** In the rubble of the world's most destructive war, humanity built the UN, the Marshall Plan, and the Universal Declaration of Human Rights, creating a new global framework from scratch.
+  - The primary challenge of the 1% Treaty is unique—it asks us to redefine national strength—but the scale of coordination required is not unprecedented. The real question isn't whether it's possible, but whether we choose to do it.
+  - The current reality is 69 million people dying unnecessarily each year. That is the truly unrealistic path to continue on.
 - **"What if it fails?"**
   - Then we die of preventable diseases like we're doing now
   - We're already in the worst timeline, can only improve
