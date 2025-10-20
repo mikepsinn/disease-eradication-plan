@@ -250,7 +250,7 @@ Each major chapter follows the epic pattern:
 | `economics/`  | Financial models, ROI, investment thesis     | `investment-thesis.md`, `peace-dividend-value-capture.md` |
 | `solution/`   | Core components of the proposed solution     | `1-percent-treaty.md`, `dih.md`, `dfda.md`                |
 | `strategy/`   | Execution plans, political strategy, how-to  | `co-opting-defense-contractors.md`, `global-referendum.md` |
-| `legal/`      | Legal compliance, governance, regulations    | `multi-entity-strategy.md`, `right-to-trial-act.md`       |
+| `legal/`      | Legal compliance, governance, regulations    | `multi-entity-strategy.md`                                |
 | `operations/` | Team structure, hiring, internal processes   | `hiring-plan.md`, `crypto-intake-sop.md`                  |
 | `reference/`  | Data, studies, citations, reference material | `costs-of-war.md`, `recovery-trial.md`                    |
 

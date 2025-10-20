@@ -211,12 +211,12 @@ We'll keep you informed about the latest developments in decentralized clinical 
 
 ## Citations
 
-[1]: ./act.md#sec-103-findings
+[1]: ../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-103-findings
 [2]: https://www.fiercebiotech.com/biotech/drug-development-cost-pharma-22b-asset-2024-plus-how-glp-1s-impact-roi-deloitte
 [3]: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/1985/5/cj5n1-10.pdf
-[4]: ./act.md#sec-103-findings
-[5]: ./act.md#sec-103-findings
-[6]: ./act.md#sec-103-findings
+[4]: ../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-103-findings
+[5]: ../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-103-findings
+[6]: ../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-103-findings
 [7]: https://www.nature.com/articles/549445a
 [8]: https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)60692-4/abstract
 [9]: https://www.who.int/health-topics/smallpox
@@ -224,15 +224,15 @@ We'll keep you informed about the latest developments in decentralized clinical 
 [11]: https://www.dailymail.co.uk/health/article-8757191/Are-additives-food-making-ill.html
 [12]: https://medium.com/bonobo-investments/the-worlds-most-expensive-drug-1f853731de0c
 [13]: https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0
-[14]: ./act.md#sec-403-implementation-timeline
+[14]: ../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-403-implementation-timeline
 [15]: ./reference/recovery-trial.md
-[16]: ./act.md#sec-301-universal-eligibility-for-investigational-interventions
+[16]: ../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-301-universal-eligibility-for-investigational-interventions
 
 1.  **Claim:** ~\$43,000 cost per participant in traditional clinical trials.
 
     > "Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **\$43,000**"
     >
-    > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-103-findings)</cite>
+    > -- <cite>[Right to Trial & FDA Upgrade Act](../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-103-findings)</cite>
 
 2.  **Claim:** ~\$2.2 Billion cost to develop a new treatment falls on patients.
 
@@ -250,19 +250,19 @@ We'll keep you informed about the latest developments in decentralized clinical 
 
     > "Up to **85 percent of patients** are excluded from participating in pivotal trials, limiting the generalizability of findings to real-world patient populations."
     >
-    > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-103-findings)</cite>
+    > -- <cite>[Right to Trial & FDA Upgrade Act](../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-103-findings)</cite>
 
 5.  **Claim:** 95% of rare diseases have NO FDA-approved treatments.
 
     > "an estimated **95 percent of rare diseases lack a single FDA-approved treatment**"
     >
-    > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-103-findings)</cite>
+    > -- <cite>[Right to Trial & FDA Upgrade Act](../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-103-findings)</cite>
 
 6.  **Claim:** 17 years of suffering is endured from discovery of a new treatment until it reaches patients.
 
     > "New, effective treatments take an average of **17 years** to transition from scientific discovery to clinical practice"
     >
-    > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-103-findings)</cite>
+    > -- <cite>[Right to Trial & FDA Upgrade Act](../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-103-findings)</cite>
 
 7.  **Claim:** 166 billion potential treatments have not been tested.
 
@@ -310,7 +310,7 @@ We'll keep you informed about the latest developments in decentralized clinical 
 
     > "24 months: Universal enrolment guarantee active; subsidies flowing."
     >
-    > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-403-implementation-timeline)</cite>
+    > -- <cite>[Right to Trial & FDA Upgrade Act](../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-403-implementation-timeline)</cite>
 
 15. **Claim:** The dFDA Infrastructure can reduce trial costs to ~\$2M.
 
@@ -321,4 +321,4 @@ We'll keep you informed about the latest developments in decentralized clinical 
 16. **Claim:** The dFDA Infrastructure can enable 100% patient participation.
     > "any U.S. resident who requests an investigational intervention shall be guaranteed enrolment—remotely if necessary—in at least one pragmatic, decentralized trial arm evaluating that intervention"
     >
-    > -- <cite>[Right to Trial & FDA Upgrade Act](./act.md#sec-301-universal-eligibility-for-investigational-interventions)</cite>
+    > -- <cite>[Right to Trial & FDA Upgrade Act](../brain/book/appendix/right-to-trial-fda-upgrade-act.qmd#sec-301-universal-eligibility-for-investigational-interventions)</cite>

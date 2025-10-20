@@ -122,7 +122,7 @@ Following README.md's narrative flow for maximum readability:
 
 ```
 ├── multi-entity-strategy.md                 (501c3/501c4/for-profit structure)
-├── right-to-trial-act.md                   (FDA modernization legislation)
+                                            (FDA modernization legislation moved to appendix/right-to-trial-fda-upgrade-act.qmd)
 ├── impact-securities-reform.md             (Model law for compliant financing)
 ├── dex-listing-policy.md                   (Token listing governance)
 └── community-governance-framework.md        (DAO governance principles)

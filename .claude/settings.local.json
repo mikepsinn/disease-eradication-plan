@@ -41,7 +41,9 @@
       "Bash(npm install -g wrangler)",
       "Bash(quarto preview . --no-browser)",
       "Bash(timeout 5 echo \"Waiting for preview to start...\")",
-      "Bash(timeout 10 echo \"Waiting for preview...\")"
+      "Bash(timeout 10 echo \"Waiting for preview...\")",
+      "Bash(timeout 15 echo \"Waiting for preview to initialize...\")",
+      "Bash(ls \"c:\\code\\decentralized-institutes-of-health\\brain\\book\\appendix\"\" | grep -i \"right-to-trial \")"
     ],
     "deny": [],
     "ask": []
