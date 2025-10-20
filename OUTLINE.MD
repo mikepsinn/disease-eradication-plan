@@ -37,7 +37,7 @@
 - **Making Medicine 82X More Expensive and 1000X Slower**
   - Oxford RECOVERY trial proved treatments can cost $500/patient
   - FDA-regulated trials cost $41,000/patient (82X more expensive)
-  - 17 years from discovery to patient (while you die waiting)
+  - Up to 17 years from discovery to patient, with the clinical trial phase alone averaging over 9 years (while you die waiting)
   - 95% of diseases have ZERO approved treatments
   - Risk-averse culture optimized for avoiding visible harm, not preventing invisible deaths
   - System designed to prevent lawsuits, not maximize lives saved
@@ -144,7 +144,7 @@
   - Step 3: Return to pharma with 400% raise (congratulations!)
   - DoD version: Same game, but with explosions
 - **Why the System Resists Reform (It's Optimized for Different Goals)**
-  - FDA delays = Pharma profits (17 years of patent exclusivity protection)
+  - FDA delays = Pharma profits (long approval timelines protect existing patents from competition)
   - Military spending = Defense contractor revenue streams
   - Chronic disease = Healthcare industry revenue ($4.5T industry incentivized for treatment over cures)
   - Every "failure" is someone's quarterly earnings success
@@ -279,7 +279,7 @@
 
   - Core Treasury Allocations (dynamically adjusted by the crowd):
     - Patient treatment subsidies (the majority of funds, creating a market for trials)
-    - VICTORY bond returns (5% of all inflows guaranteed)
+    - VICTORY bond returns (10% of all inflows guaranteed)
     - Expansion campaigns (growing from 1% to 2% to 5%)
 
     - Community campaigns (e.g., bounties for specific platform features)
@@ -641,92 +641,116 @@
   - Just money going to bombs instead
 
 ### The Economic Case
-*$463 in Benefits for Every Dollar Spent*
+*$1.22 Trillion in Annual Benefits for a 1,222:1 ROI*
 
-- **The ROI That Breaks Reality**
-  - Investment: $40M annual platform cost (couch cushion money)
-  - Return: $50B annual savings from trial efficiency (real money)
-  - Annual ROI: 1,250:1 year-over-year ($50B/$40M)
-  - 10-year cumulative ROI: 463:1 accounting for build time
-  - **IMPORTANT DISTINCTION**: This is SOCIETAL return from dFDA efficiency, not your personal VICTORY bond returns (those are 270%)
-  - Translation: Every dollar spent makes society $463 richer (you personally get substantial returns at 270%)
-  - 10-year NPV: $249 billion in value creation (enough to buy several small countries or one medium-sized tech company)
-  - Comparison: Best hedge funds dream of 2:1 annual returns (we laugh at their poverty)
-  - Real-world proof: Switzerland's $93K GDP per capita (what happens when you stop buying bombs for 200 years)
-- **[FIGURE: 463:1 ROI Comparison]**
-  - Bar chart comparing returns: S&P 500 (10%), Hedge funds (20%), Medallion Fund (39%), DIH (463:1)
-  - DIH bar literally goes off the chart
-  - Impact: Makes the economic case undeniable
-  - DIH captures TWO massive dividends in one elegant model:
-    - **Peace Dividend**: $2.7T military budgets → DIH treaties (revenue stream)
-    - **Health Dividend**: $109.1T disease burden → productivity gains (value creation)
-  - Peace dividend funds the infrastructure, health dividend justifies expansion
-  - Revenue model: Government treaties, not fees (defense contractor playbook)
-  - Treaty progression: $27B → $270B → $2.7T as health outcomes prove the model
-  - Capturing even 10% of health dividend = $10.9T annual value
-  - The feedback loop: Better health outcomes → bigger treaties → more cures → repeat
-  - We're defense contractors who cure instead of kill (same lobbying, opposite outcome)
-  - Platform strategy: dFDA free for everyone (like GPS military → civilian)
-  - Market failure reality: No individual can buy "world peace" or "disease eradication"
-  - First initiative to successfully monetize NOT killing people at global scale
-  - Why no one's done it: Couldn't coordinate 8 billion people (until Wishocracy)
-- **[FIGURE: The DIH Feedback Loop]**
-  - Circular diagram: Peace dividend → Funds trials → Health outcomes → Justifies bigger treaties → More peace dividend
-  - Shows exponential growth potential through positive feedback
-  - Impact: Shows how success compounds itself
-- **The Daily Holocaust of Inaction**
-  - Every day we wait: $137 million burned in inefficiency
-  - Every day we wait: 2,301 Quality-Adjusted Life Years lost
-  - That's 840,000 QALYs lost annually (a mid-sized city dying)
-  - Each hour: $5.7 million wasted, 96 people's life-years gone
-  - While you read this sentence: $66,000 vanished, someone's year of life lost
-- **[FIGURE: Death Toll Counter]**
-  - Live counter showing deaths and economic loss WHILE YOU READ THIS PAGE
-  - Updates in real-time: "150,671 people died of preventable disease since you started reading"
-  - Impact: Makes inaction feel criminal
-- **The Dominant Intervention (Saves Money AND Lives)**
-  - ICER: -$59,501 per QALY (negative = you profit while saving lives)
-  - Normal interventions: Pay $50,000-150,000 per QALY
-  - This intervention: GET PAID $59,501 per life-year saved
-  - No trade-off between money and health (both improve)
-  - First time in history: Healing is more profitable than harming
-- **Prevention Economics: The 3X Multiplier**
-  - Current prevention spending: 5% of healthcare (pathetic)
-  - Prevention ROI: Every $1 spent saves $3 in treatment
-  - Double prevention spending: $615B annual savings
-  - Preventative approach potential: $360B in healthcare savings (proven by data)
-  - Early detection via dFDA: Catching cancer at Stage 1 vs 4 = 90% cost reduction
-  - Behavioral intervention: $100 app prevents $10,000 surgery
-- **The $100 Billion Market**
-  - Global clinical trial market: $100B annually
-  - 50% efficiency gain: $50B annual savings (conservative estimate)
-  - Best case (95% reduction like RECOVERY): $95B annual savings
-  - These aren't projections - Oxford already proved it works
-  - Market capture: Even 10% adoption = $5B value creation
-- **The Combined $142 Billion Annual Win**
-  - Peace Dividend: $92B from 1% less conflict
-  - dFDA Savings: $50B from trial efficiency
-  - Total Direct Benefit: $142B every year
-  - This is before any multiplier effects
-  - Equivalent to ending world hunger 14 times over annually
-- **The $16.5 Trillion Endgame (When Everything Compounds)**
-  - Direct savings: $155.5B/year (military + trials + allocation)
-  - Health value created: $126B/year (840,000 QALYs)
-  - Economic multiplier effects: $16.2T/year when mature
-    - Healthy people work more: +$8.4T productivity
-    - No refugee crises: +$1.5T saved
-    - Infrastructure preserved: +$1.9T not destroyed
-    - Global trade flows: +$2.4T commerce
-    - Innovation compounds: +$2.0T new industries
-  - Total Annual Value at maturity: $16.5 TRILLION
-  - That's more than China's entire GDP
-  - ROI: 25,781:1 (not a typo)
-- **The Compound Growth Timeline**
-  - Year 1: $142B direct benefit (pays for itself 220x over)
-  - Year 5: ~$1T as network effects kick in
-  - Year 10: ~$5T as health improvements compound
-  - Year 20: Full $16.5T annual value realized
-  - Every year we delay: $142B in immediate benefits lost forever
+#### The Complete Benefits Calculation
+The 1% Treaty doesn't just make trials cheaper. It:
+
+1. Restructures global resource allocation (peace dividend: $97B)
+2. Slashes R&D costs 82X (saves $50B)
+3. **Accelerates access by 7 years** (saves $300B via early trial access)
+4. **115X more research capacity** (adds $100B via 10-20X more breakthroughs)
+5. Enables treatment of rare/orphan diseases (adds $400B)
+6. Reduces drug prices via R&D savings (saves $100B)
+7. Makes prevention economically viable (saves $100B)
+8. Addresses mental health treatment gap (adds $75B)
+
+Each of these alone is worth tens to hundreds of billions. Together? $1.22 trillion/year.
+
+
+
+#### The 9-Year Acceleration
+**The insight:** The dFDA gives patients the right and ability to access treatments during Phase 2/3 trials instead of waiting 9.1 years for FDA approval (or forever if trials are never completed for their condition).
+
+**How the acceleration works:**
+- Current system: Wait 9.1 years average from Phase 1 to FDA approval
+- dFDA system: Access treatment during Phase 2/3 pragmatic trials
+- Effective acceleration: ~7 years earlier access on average (Phase 2 typically starts 1-2 years into development)
+
+**This isn't speculative future acceleration - it's immediate access to treatments that already exist but are stuck in the approval pipeline.**
+
+**Stock benefit (one-time):** Existing patients get immediate access
+- 2 billion people with chronic diseases globally
+- Each gains 7 years of treatment access they'd otherwise miss
+- Total: 14 billion person-years × $150K/QALY = $2.1T total value
+- **Amortized over 7-year acceleration period: $300B/year for years 1-7**
+
+**Flow benefit (ongoing):** New patients each year get early access
+- ~100M new chronic disease cases/year globally (based on 43M annual deaths × 2.3 prevalence/mortality ratio)
+- Each saves 7 years × $150K/QALY = $1.05M in value
+- **Annual flow: $105B/year ongoing (starts immediately, continues forever)**
+
+**Combined "earlier access" benefit:**
+- Years 1-7: $300B (amortized stock) + $105B (flow) = **$405B/year**
+- Years 8+: $105B/year (flow only)
+- **10-year average: ~$300B/year**
+
+#### The Research Acceleration Multiplier
+**The insight:** 82X cheaper trials + 40% more funding ($27B/year) = **115X more research capacity**.
+
+**What this means:**
+- Current: ~3,300 clinical trials/year globally, ~50 new drug approvals/year
+- New capacity: ~380,000 trials/year possible, ~1,000-2,000 approvals/year (20-40X increase)
+
+**This is NOT the same as "earlier access":**
+- **Earlier Access** = Accessing the SAME 50 drugs in pipeline 7 years sooner
+- **Research Acceleration** = Testing 115X MORE drug candidates, finding 10-20X MORE breakthroughs
+
+**Which diseases benefit:**
+- Chronic pain (1.5B people, very limited treatment options)
+- Mental health (1B people, huge treatment gaps)
+- Alzheimer's (55M people, almost nothing works)
+- Autoimmune diseases (500M people, limited options)
+- Long COVID (100M+, zero approved treatments)
+
+These are NOT rare diseases (already counted). These are common diseases that are UNDER-researched because trials are too expensive.
+
+**Conservative annual value: $100B/year**
+
+#### The Complete Benefit Table
+
+| Category | Annual Benefit | Notes |
+|----------|----------------|-------|
+| Peace Dividend | $97B | Redirected military spending |
+| R&D Cost Savings | $50B | 82X trial cost reduction |
+| **Earlier Access (7 years)** | **$300B** | Existing pipeline accessed sooner |
+| **Research Acceleration** | **$100B** | 115X more trials = 10-20X more breakthroughs |
+| New Diseases Treatable | $400B | Rare diseases, orphan drugs |
+| Drug Price Reduction | $100B | R&D savings passed to consumers |
+| Prevention Medicine | $100B | Economic viability of prevention |
+| Mental Health Impact | $75B | Treatment gap reduction |
+| | | |
+| **ECONOMIC TOTAL** | **$1.222 TRILLION/YEAR** | |
+
+**ROI:** 1,222:1
+
+**Note:** Insurance savings, productivity gains, and longevity extension are outcomes of the above benefits and not counted separately to avoid double-counting.
+
+#### The Sanity Check
+**Is $1.22 trillion/year reasonable?**
+
+Global GDP: $111 trillion/year
+Global healthcare spending: $9.8 trillion/year
+Global military spending: $2.7 trillion/year
+
+If the 1% Treaty generates $1.22T/year in benefits, that's:
+- 1.1% of global GDP
+- 12.4% of healthcare spending
+- 45% of military spending
+
+**This passes the smell test.**
+
+For comparison:
+- Eliminating all cancer: ~$1.1T/year economic value
+- Curing all infectious disease: ~$800B/year
+- Fixing mental health: ~$300B/year
+
+The 1% Treaty doesn't cure everything, but it:
+- Accelerates access by 7 years (earlier trial participation)
+- Increases research velocity 10-20X (more breakthroughs)
+- Enables trials for currently untreatable conditions
+
+$1.22T/year is reasonable for that scope.
 
 ### Your Personal ROI
 *Health, Wealth, and Freedom*
@@ -872,16 +896,45 @@
 ### Demolishing Objections
 *How to Respond to People Who Think Killing Ourselves Is Fine, Actually*
 
-- **If this is worth $24.6 trillion a year, why hasn't it been done?**
+- **If this is worth $1.22 trillion/year, why hasn't it been done?**
 
-1.  **The Math Might Be Wrong:** The benefits might "only" be $2-10 trillion if not all diseases are curable or if cost reductions don't scale perfectly. Even so, the ROI remains astronomical.
-2.  **The Politics Might Be Impossible:** Overcoming the collective action problem of 190 nations and the lobbying power of the defense industry (over $600B in annual revenue for the top 100 contractors) is a monumental challenge. You cannot win a spending war against them.
-3.  **The Right Combination Is Rare:** The project requires a unique blend of technical, economic, and political expertise, plus credibility, capital, and a tolerance for being seen as insane.
-4.  **Epistemic Learned Helplessness:** Smart people assume that if a $20 trillion opportunity existed, it would have been seized already. However, ideas that require global coordination against entrenched interests often lie dormant, despite their value (e.g., carbon pricing, land value tax).
+This is the core paradox. Here are the most likely reasons:
 
-**The bottom line:** Even if the benefits are overestimated by 90% and the probability of success is only 5%, the expected value is still $123 billion, a 123:1 ROI.
+1.  **Hypothesis 1: The Math Is Wrong (30% probability)**
+    - Some diseases might be fundamentally limited by biology, not funding.
+    - The 82X cost reduction from the RECOVERY trial might not scale perfectly to all trial types.
+    - **However:** Even if the benefits are overestimated by 50%, the ROI is still over 600:1.
 
-The reason it hasn't been done is not that it's impossible, but that it requires a unique individual willing to test the thesis cheaply, quickly, and publicly.
+2.  **Hypothesis 2: The Politics Are Impossible (25% probability)**
+    - **The Collective Action Problem:** Getting 190 nations to act simultaneously is historically difficult (e.g., Paris Climate Accords).
+    - **The Defense Lobby:** The top 100 defense contractors have over $600B in annual revenue. They can outspend any reform effort thousands to one. You cannot win a direct spending war against them.
+
+3.  **Hypothesis 3: The Right Combination of Skills Is Rare (15% probability)**
+    - The project requires a unique blend of technical, economic, and political expertise, plus billionaire access, credibility, and a tolerance for being seen as insane. Very few individuals or organizations possess all of these.
+
+4.  **Hypothesis 4: Epistemic Learned Helplessness (20% probability)**
+    - Smart people assume that if a multi-trillion-dollar opportunity existed, someone would have seized it already.
+    - **However:** History is filled with trillion-dollar bills left on the sidewalk when they require global coordination against entrenched interests (e.g., carbon pricing, land value tax, open borders).
+
+5.  **Hypothesis 5: It's Being Worked On Quietly (10% probability)**
+    - It's possible similar initiatives are underway, but they haven't been made public.
+
+**The Falsification Test:**
+The only way to know for sure is to test the thesis cheaply and publicly.
+1.  **Build Referendum App ($15k):** Can you get 10,000 votes in 30 days?
+2.  **Pitch Angels ($500k):** Can you convince smart money the financial model is sound?
+3.  **Go Viral (6 months):** Can the referendum reach 1 million people?
+
+If the answer to these is yes, the idea is viable. If no, the idea is dead. The cost to find out is less than $300k.
+
+**The bottom line:** The reason it hasn't been done is not that it's impossible, but because it requires a unique strategy to overcome the political barriers and a team with a rare combination of skills willing to test the thesis publicly.
+
+- **"Is This Quantifiably Better Than Saving Kids From Malaria?"**
+  - **Malaria nets (The Sure Thing):** Cost ~$5,000 per life saved with ~100% certainty. A $1B investment saves ~200,000 lives, creating ~$1T in economic value.
+  - **1% Treaty (The Moonshot):** Costs $1B to bootstrap a campaign that, if successful, redirects $270B over 10 years, generating $12.2T in benefits and saving ~1,000,000 lives.
+  - **Expected Value:** The treaty has a much lower probability of success (e.g., 10-15%). However, the potential leverage is 270:1.
+  - **Break-Even:** If you believe the probability of the treaty succeeding is greater than ~15%, its expected value is higher than malaria nets.
+  - **The Portfolio Answer:** Effective Altruism is currently ~100% allocated to direct, certain interventions and ~0% to high-leverage, systemic change moonshots. A rational portfolio would allocate something to both. The 1% Treaty is a prime candidate for the moonshot category.
 
 - **"Why not just fund medical research more?"**
   - Because money isn't real, resources are (see Fixed Pie Reality in Part I)
@@ -939,6 +992,28 @@ The reason it hasn't been done is not that it's impossible, but that it requires
 ## Part IV: The Plan
 
 *How to Actually Do This (Not Just Talk About It on Reddit)*
+
+### The Financial Roadmap
+*How to Bootstrap from $0 to $1 Billion Without Getting Arrested*
+
+You want to end war and disease. You need $1 billion. You have $0. Here's the 36-month roadmap.
+
+**Key Insight:** You're not building trial infrastructure. You're building the FUNDING and GOVERNANCE mechanism. Science37, TrialSpark, and others already run decentralized trials. Your job is to redirect $27 billion into a system that subsidizes patients, creating a massive new market that these platforms will compete to serve.
+
+**Phase 1: Proof of Concept (Months 1-3)**
+- **Month 1: Build Wishocracy Voting Widget ($15k):** A simple web app to prove people will engage with the core mechanic of voting on budget priorities. If you can't get engagement here, the idea is dead.
+- **Month 2: Raise $500K from Angels:** Pitch the financial bribery model: "$1B in bonds bribes governments to redirect $27B/year. Your $500K buys a share of all future inflows."
+- **Month 3: Launch Referendum Platform V1:** A simple site with one question: "Should nations redirect 1% of military spending to medical research?" Goal: 10,000 votes in 30 days.
+
+**Phase 2: Scale & Lobby (Months 4-18)**
+- **Raise $10M Series A:** Use initial traction to fund a larger team.
+- **Viral Growth:** Scale referendum to millions of users.
+- **Lobbying Machine:** Hire the best lobbyists to put the 1% Treaty on the political map.
+
+**Phase 3: Bond Offering & Treaty Push (Months 19-36)**
+- **Raise $1B via VICTORY Bonds:** The war chest to win the political fight.
+- **Global Media Blitz:** Make the 1% Treaty the #1 issue globally.
+- **Treaty Ratification:** Coordinated political push in key nations to get the treaty signed.
 
 ### Legal Architecture
 *How to Structure This So Nobody Can Stop You*
