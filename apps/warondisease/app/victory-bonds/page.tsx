@@ -167,11 +167,11 @@ export default function VictoryBonds() {
               </div>
               <p className="text-gray-300 mb-4">
                 $82B/year gets redirected. Goes to DIH (Decentralized Institutes of Health).
-                No committees. Just an app where people vote what to cure.
+                No committees. Just an app where patients join trials, funding follows demand.
               </p>
               <p className="text-gray-300">
-                Your mom has cancer? You vote cancer trials.
-                280 million people voting > 12 FDA bureaucrats.
+                Your mom has cancer? She joins cancer trials.
+                280 million patients choosing &gt; 12 FDA bureaucrats deciding.
               </p>
             </div>
 
