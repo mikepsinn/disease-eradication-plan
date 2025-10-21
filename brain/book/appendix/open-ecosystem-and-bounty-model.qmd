@@ -13,7 +13,7 @@ lastFactCheckHash: 1d7c211edbf14e1dca97b4305038e5dc0767b931247046e3ef99bd1ead60c
 ---
 ## 1. Executive Summary
 
-The [dFDA Infrastructure](../solution/dfda.qmd) will achieve its ambitious goals without the high cost of a centrally-funded development program by adopting a proven, sustainable strategy: fostering an **open, organic ecosystem**. Instead of directly funding a vast library of plugins and tools, the platform will provide a robust, open API and use a targeted **bounty and prize program**—as mandated in the ["Right to Trial and FDA Upgrade Act"](../act.qmd)—to strategically incentivize critical development.
+The [dFDA Infrastructure](../solution/dfda.qmd) will achieve its ambitious goals without the high cost of a centrally-funded development program by adopting a proven, sustainable strategy: fostering an **open, organic ecosystem**. Instead of directly funding a vast library of plugins and tools, the platform will provide a robust, open API and use a targeted **bounty and prize program**—as mandated in the ["Right to Trial and FDA Upgrade Act"](./right-to-trial-fda-upgrade-act.qmd)—to strategically incentivize critical development.
 
 This approach, modeled on highly successful platforms like WordPress and Linux, leverages the creativity and resources of the global community, maximizes return on public investment, and is made even more viable by the accelerating efficiency of AI-driven software development.
 
@@ -34,7 +34,7 @@ This model works because it aligns incentives. Commercial developers can build b
 
 ## 3. The Role of Bounties and Prizes (Act SEC. 204(i))
 
-While an open ecosystem is largely self-sustaining, a targeted incentive program is crucial for guiding growth and filling critical gaps. The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program** for this purpose. This is not a grants program to fund entire projects; it is a surgical tool to pay for specific, verifiable outcomes. This stands in contrast to the core team's compensation, which is handled by the [Dynamic Expected Value Incentive Policy](./team-incentives.qmd).
+While an open ecosystem is largely self-sustaining, a targeted incentive program is crucial for guiding growth and filling critical gaps. The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program** for this purpose. This is not a grants program to fund entire projects; it is a surgical tool to pay for specific, verifiable outcomes. This stands in contrast to the core team's compensation, which is handled by the [Dynamic Expected Value Incentive Policy](../economics/team-incentives.qmd).
 
 Bounties and prizes will be used for:
 
@@ -57,9 +57,9 @@ The cost estimates for this lean, bounty-driven approach are realistic for sever
 
 For this strategy to succeed, the following conditions must be met:
 
-- **Critical Mass:** The platform must attract a large enough base of users (patients, researchers, clinicians) and developers to create the network effects that fuel organic growth. The initial user growth will be driven by the [Referral Rewards System](./referral-rewards-system.qmd).
+- **Critical Mass:** The platform must attract a large enough base of users (patients, researchers, clinicians) and developers to create the network effects that fuel organic growth. The initial user growth will be driven by the [Referral Rewards System](../economics/referral-rewards-system.qmd).
 - **API Quality and Documentation:** The platform's APIs must be robust, reliable, and exceptionally well-documented. A world-class developer experience is non-negotiable.
 - **Transparent Governance:** The process for awarding bounties and managing community contributions must be transparent, fair, and responsive, as outlined in the governance model of the Act (SEC. 204(g)).
-- **Clear Core Roadmap:** The core platform team must maintain and communicate a clear vision and roadmap, as detailed in the [Canonical Roadmap](./roadmap.qmd), so the community knows where the "rails" are going and can build accordingly.
+- **Clear Core Roadmap:** The core platform team must maintain and communicate a clear vision and roadmap, as detailed in the [Canonical Roadmap](../strategy/roadmap.qmd), so the community knows where the "rails" are going and can build accordingly.
 
 By focusing on these success factors, the dFDA Infrastructure can foster a thriving global ecosystem that delivers unparalleled medical innovation at a fraction of the cost of a centralized, top-down approach.

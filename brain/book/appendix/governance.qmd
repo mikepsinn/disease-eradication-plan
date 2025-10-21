@@ -75,14 +75,14 @@ The DAO's treasury (in this case, the **DIH**) automatically executes the will o
 
 An independent verification layer provides the real-world data and validation necessary to confirm that outcomes have been achieved.
 
-For the DIH, this function is performed by the [Decentralized FDA (dFDA)](./dfda.qmd) protocol.
+For the DIH, this function is performed by the [Decentralized FDA (dFDA)](../solution/dfda.qmd) protocol.
 
 ---
 
 ## Dive Deeper into the Governance Model
 
-- **[Wishocracy (RAPPA) Governance Model](./governance/wishocracy.qmd):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
-- **[DIH On-Chain & AI Architecture](./governance/dih-onchain-architecture.qmd):** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power the DIH.
+- **[Wishocracy (RAPPA) Governance Model](../solution/wishocracy.qmd):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
+- **[DIH On-Chain & AI Architecture](./dih-onchain-architecture.qmd):** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power the DIH.
 
 ---
 
@@ -90,7 +90,7 @@ For the DIH, this function is performed by the [Decentralized FDA (dFDA)](./dfda
 
 **The Challenge:** A $27B treasury is a massive target for hackers, fraudsters, and corrupt actors.
 
-[Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks](references.qmd#dao-multisig-vulnerabilities).
+[Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks](../references.qmd#dao-multisig-vulnerabilities).
 
 **Our Multi-Layered Defense:**
 
@@ -103,7 +103,7 @@ For the DIH, this function is performed by the [Decentralized FDA (dFDA)](./dfda
     - Every VICTORY bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
     - No human signers = no kidnapping, corruption, or coercion targets
     - Smart contracts automatically execute community decisions after 24-72h timelocks
-    - [Battle-tested approach managing billions in existing DAOs](references.qmd#makerdao-scale)
+    - [Battle-tested approach managing billions in existing DAOs](../references.qmd#makerdao-scale)
 
 2.  **AI-Powered Fraud Detection**
 
