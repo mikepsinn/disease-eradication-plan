@@ -81,7 +81,7 @@ jobs:
             - Follow existing patterns and conventions in the codebase
             - Use TypeScript for new tools
             - No compiled .js files in the repo
-            - Run with ts-node or tsx
+            - Run with tsx
 
             Now, please help with the requested task while following these guidelines.
 

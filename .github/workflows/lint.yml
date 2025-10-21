@@ -25,7 +25,7 @@ jobs:
       run: npm run lint:md
 
     - name: Validate Frontmatter
-      run: npx ts-node scripts/validate-frontmatter.ts
+      run: npx tsx scripts/validate-frontmatter.ts
 
     - name: Validate Links
-      run: npx ts-node scripts/validate-links.ts
+      run: npx tsx scripts/validate-links.ts
