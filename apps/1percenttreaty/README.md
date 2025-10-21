@@ -395,4 +395,3 @@ Track these in your Airtable base:
 ---
 
 **Now deploy and start collecting votes. Death doesn't wait.**
-

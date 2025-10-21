@@ -376,4 +376,3 @@ jobs:
 **Full documentation:** See [apps/1percenttreaty/README.md](../../apps/1percenttreaty/README.md)
 
 **Now deploy and start saving lives.**
-
