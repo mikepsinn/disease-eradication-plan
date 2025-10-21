@@ -6,7 +6,10 @@
       "Bash(DEBUG=1 npm run format:spacing:*)",
       "Bash(npm run lint:md:*)",
       "Bash(npm run lint:*)",
-      "Bash(npm run lint:qmd:fix:*)"
+      "Bash(npm run lint:qmd:fix:*)",
+      "Bash(tasklist)",
+      "Bash(findstr node)",
+      "Bash(taskkill /F /IM node.exe)"
     ],
     "deny": [],
     "ask": []

@@ -551,9 +551,11 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
   console.log(`Analyzing archived file: ${filePath}`);
   const archivedContent = await fs.readFile(filePath, 'utf-8');
   const quartoYmlContent = await fs.readFile('_quarto.yml', 'utf-8');
+  const bookOutline = await fs.readFile('OUTLINE.MD', 'utf-8');
 
   let prompt = await fs.readFile('scripts/prompts/archive-analysis.md', 'utf-8');
   prompt = prompt.replace('{{quartoYmlContent}}', quartoYmlContent)
+                 .replace('{{bookOutline}}', bookOutline)
                  .replace('{{filePath}}', filePath)
                  .replace('{{archivedContent}}', archivedContent);
 
@@ -586,6 +588,17 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
       console.log(`TODO: Manually add ${newFilePath} to _quarto.yml`);
       await fs.unlink(filePath);
       console.log(`Successfully created ${newFilePath} and deleted archived file.`);
+      break;
+
+    case 'MOVE_TO_OPS':
+      if (!response.newFilePath || !response.newFileContent) {
+        throw new Error('Invalid MOVE_TO_OPS action: newFilePath and newFileContent are required.');
+      }
+      const opsFilePath = response.newFilePath;
+      console.log(`Decision: MOVE to ${opsFilePath}. Reason: ${response.reason}`);
+      await saveFile(opsFilePath, response.newFileContent);
+      await fs.unlink(filePath);
+      console.log(`Successfully moved file to ${opsFilePath} and deleted archived file.`);
       break;
 
     case 'DELETE':
