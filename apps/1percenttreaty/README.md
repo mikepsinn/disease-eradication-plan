@@ -9,6 +9,7 @@ This is the secure, production-ready referendum landing page for collecting vote
 ## 🎨 Design Philosophy
 
 Follows the DIH [DESIGN_GUIDE.md](../../DESIGN_GUIDE.md):
+
 - **Black and white only** - Maximum contrast, timeless authority
 - **1950s atomic age aesthetic** - Bold, urgent, propaganda poster style
 - **Impact/Arial Black typography** - Strong, commanding fonts
@@ -52,6 +53,7 @@ Airtable Base (DIH Command & Control)
 ### Option 1: Cloudflare Pages + Workers (Recommended)
 
 **Why Cloudflare:**
+
 - ✅ **Fastest global CDN** (edge network in 300+ cities)
 - ✅ **Most generous free tier** (100K requests/day free)
 - ✅ **Zero cold starts** (Workers are instant)
@@ -60,6 +62,7 @@ Airtable Base (DIH Command & Control)
 - ✅ **Simpler than Netlify/Vercel** (no build step needed)
 
 **Free Tier Limits:**
+
 - 100,000 requests per day
 - 10ms CPU time per request
 - 128MB memory
@@ -101,6 +104,7 @@ wrangler deploy
 ```
 
 **Output:**
+
 ```
 ✨ Success! Uploaded worker '1percent-treaty-referendum'
 🌎 https://1percent-treaty-referendum.YOUR_SUBDOMAIN.workers.dev
@@ -114,12 +118,13 @@ npx wrangler pages deploy . --project-name=1percent-treaty
 ```
 
 **Output:**
+
 ```
 ✨ Success! Your site is live at:
    https://1percent-treaty.pages.dev
 ```
 
-### Step 6: Test It!
+### Step 6: Test It
 
 Visit your Pages URL and submit a test vote. Check your Airtable base for the new record.
 
@@ -251,6 +256,7 @@ await env.KV.put(rateLimitKey, 'voted', { expirationTtl: 3600 });
 ```
 
 **Setup KV namespace:**
+
 ```bash
 wrangler kv:namespace create "KV"
 ```
@@ -259,20 +265,23 @@ wrangler kv:namespace create "KV"
 
 ## 💰 Cost Estimates
 
-### At 10,000 votes/month:
+### At 10,000 votes/month
+
 - **Cloudflare Workers:** FREE (well under 100K/day limit)
 - **Cloudflare Pages:** FREE
 - **Airtable:** $20/month (Plus plan for 50K records)
 - **Domain:** $12/year
 - **Total:** ~$21/month
 
-### At 100,000 votes/month:
+### At 100,000 votes/month
+
 - **Cloudflare Workers:** FREE (still under limit)
 - **Cloudflare Pages:** FREE
 - **Airtable:** $20/month (or migrate to PostgreSQL)
 - **Total:** ~$20/month
 
-### At 1,000,000 votes/month:
+### At 1,000,000 votes/month
+
 - **Cloudflare Workers:** $5/month (Workers Paid plan for extra CPU)
 - **Cloudflare Pages:** FREE
 - **Database:** Migrate to Supabase/PostgreSQL ($25-50/month)
@@ -287,6 +296,7 @@ wrangler kv:namespace create "KV"
 ### "Failed to submit vote" error
 
 **Check:**
+
 1. Are environment variables set? Run: `wrangler secret list`
 2. Is worker deployed? Run: `wrangler deployments list`
 3. Check worker logs: `wrangler tail`
@@ -298,6 +308,7 @@ wrangler kv:namespace create "KV"
 ### Airtable "Invalid request" error
 
 **Check:**
+
 1. Is base ID correct? (appRA45hnZpiTyRjB)
 2. Do table names match exactly? (case-sensitive)
 3. Do fields exist in Airtable?
@@ -329,22 +340,26 @@ npx wrangler pages deploy .
 ## 📈 Next Steps
 
 ### Week 1: MVP Test
+
 - Deploy to Cloudflare
 - Share with 50 friends/family
 - Goal: Validate voting works end-to-end
 
 ### Week 2: Public Beta
+
 - Add custom domain
 - Set up monitoring/analytics
 - Goal: 1,000 votes
 
 ### Month 2: Scale
+
 - Add email automation (SendGrid)
 - Build referral leaderboard
 - Optimize for virality
 - Goal: 10,000 votes
 
 ### Month 3: Global Push
+
 - Multi-language support
 - Regional targeting
 - Influencer partnerships
@@ -368,12 +383,14 @@ Track these in your Airtable base:
 ## 📞 Support
 
 **Technical Issues:**
-- Cloudflare Workers docs: https://developers.cloudflare.com/workers
-- Airtable API docs: https://airtable.com/developers/web/api
+
+- Cloudflare Workers docs: <https://developers.cloudflare.com/workers>
+- Airtable API docs: <https://airtable.com/developers/web/api>
 
 **Questions:**
+
 - Open an issue in the repo
-- Or email: tech@warondisease.com
+- Or email: <tech@warondisease.com>
 
 ---
 
