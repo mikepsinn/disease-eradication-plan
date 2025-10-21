@@ -27,12 +27,15 @@ These are the most critical - factually wrong or unfairly accusatory statements.
 
 ```
 BEFORE: "NIH demands $41,000/patient"
+
 AFTER: "The current system results in $41,000/patient costs"
 
 BEFORE: "FDA forces 17-year delays"
+
 AFTER: "FDA's approval process takes 17 years on average"
 
 BEFORE: "Politicians make us spend on weapons"
+
 AFTER: "Political incentives favor military spending"
 ```
 
@@ -49,12 +52,15 @@ AFTER: "Political incentives favor military spending"
 
 ```
 BEFORE: "200 idiotic bureaucrats"
+
 AFTER: "200-person committees"
 
 BEFORE: "Corrupt regulators"
+
 AFTER: "Regulators influenced by revolving door incentives"
 
 BEFORE: "Politicians are sociopaths"
+
 AFTER: "Politicians respond to electoral incentives"
 ```
 
@@ -70,9 +76,11 @@ AFTER: "Politicians respond to electoral incentives"
 
 ```
 BEFORE: "FDA deliberately delays cures"
+
 AFTER: "FDA's risk-averse culture results in delays"
 
 BEFORE: "Pharma intentionally keeps people sick"
+
 AFTER: "Pharma's business model profits from treatment over cures"
 ```
 
@@ -89,9 +97,11 @@ AFTER: "Pharma's business model profits from treatment over cures"
 
 ```
 BEFORE: "NIH's $41,000 trial costs"
+
 AFTER: "FDA-regulated trials cost $41,000"
 
 BEFORE: "NIH approval process"
+
 AFTER: "FDA approval process"
 ```
 
@@ -106,12 +116,15 @@ AFTER: "FDA approval process"
 
 ```
 BEFORE: "Every regulator is captured"
+
 AFTER: "Many regulators face capture risks"
 
 BEFORE: "Nobody reads these papers"
+
 AFTER: "Few people read most papers"
 
 BEFORE: "Zero diseases cured"
+
 AFTER: "No major diseases eradicated" (technically accurate)
 ```
 
