@@ -37,9 +37,45 @@ if (!process.env.ANTHROPIC_API_KEY) {
 
 // --- Helper Functions ---
 
+function programmaticFormat(content: string): string {
+  let result = content;
+
+  // Normalize line endings to LF for consistent processing
+  result = result.replace(/\r\n/g, '\n');
+
+  // Fixes spacing for unordered lists: "-   item" -> "- item"
+  result = result.replace(/^(-|\*)\s+/gm, '$1 ');
+
+  // Add a blank line after a bolded line, unless it's followed by another blank line, a list, a heading, or a code block
+  result = result.replace(
+    /^(\*\*[^*]+\*\*)\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```)/gm,
+    '$1\n\n'
+  );
+
+  // Add a blank line after "Speaker: "quote"" format
+  result = result.replace(
+    /^([A-Z][A-Za-z]*:\s+"[^"]+[.!"?]?")\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```)/gm,
+    '$1\n\n'
+  );
+
+  // Add a blank line after common key-value pairs
+  result = result.replace(
+    /^((?:Post|Bounty|Deadline|Amount|Price|Cost|Total|Budget):\s+[^\n]+)\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```)/gm,
+    '$1\n\n'
+  );
+
+  return result;
+}
+
 function getBodyHash(content: string): string {
   const { content: body } = matter(content);
   return crypto.createHash('sha256').update(body).digest('hex');
+}
+
+// Shared file-saving function that applies programmatic formatting.
+async function saveFile(filePath: string, content: string): Promise<void> {
+  const formattedContent = programmaticFormat(content);
+  await fs.writeFile(filePath, formattedContent, 'utf-8');
 }
 
 // Generic helper to update file with new body and hash
@@ -52,7 +88,7 @@ async function updateFileWithHash(
   const tempContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
   frontmatter[hashFieldName] = getBodyHash(tempContent);
   const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
-  await fs.writeFile(filePath, newContent, 'utf-8');
+  await saveFile(filePath, newContent);
 }
 
 // Parse _quarto.yml to get chapters and appendices
@@ -817,6 +853,7 @@ async function mergeContentWithLLM(archivedContent: string, targetFilePath: stri
 4.  **Eliminate All Redundancy:** The archived file and the chapter may cover similar ground. Aggressively condense and combine them. Keep the best jokes, the clearest data, and the most impactful statements from both.
 5.  **Maintain Narrative Flow:** The final chapter must be a cohesive story. Ensure smooth transitions between integrated sections. The reader should not be able to tell where the merge happened.
 6.  **Return Only the Final, Merged Content:** Your output must be the complete, final text of the merged chapter body. Do not include frontmatter, explanations, or any text outside the chapter content itself.
+7.  **Resolve Contradictions:** If the "Archived File" directly contradicts a statement in the "Existing Chapter," the information from the "Archived File" should be considered the most current and should replace the old information.
 
 ---
 **STYLE GUIDE:**
@@ -861,7 +898,7 @@ You need to decide what to do with an archived markdown file.
 Based on the book's structure from \`_quarto.yml\` and the content of the archived file, determine one of the following actions:
 
 1.  **MERGE**: The content is valuable and should be merged into an existing chapter.
-2.  **CREATE**: The content is valuable and unique enough to become a new chapter.
+2.  **CREATE**: The content is valuable and unique enough to become a new chapter or appendix file. Your decision should also consider creating new appendix files for content that is too detailed or technical for the main narrative.
 3.  **DELETE**: The content is redundant, irrelevant, or low-quality and should be deleted.
 
 **RESPONSE FORMAT:**
@@ -873,7 +910,7 @@ You MUST respond with a JSON object with the following structure:
   "action": "MERGE" | "CREATE" | "DELETE",
   "reason": "A brief explanation for your decision.",
   "targetFile": "path/to/target/chapter.qmd", // (Required for MERGE)
-  "newFileName": "new-chapter-name.qmd", // (Required for CREATE)
+  "newFilePath": "The full, root-relative path for the new file (e.g., 'brain/book/new-chapter.qmd' or 'brain/book/appendix/new-appendix.qmd').", // (Required for CREATE)
   "newFileContent": "The full content for the new chapter, including frontmatter." // (Required for CREATE)
 }
 \`\`\`
@@ -913,18 +950,18 @@ ${archivedContent}
       }
       console.log(`Decision: MERGE into ${response.targetFile}. Reason: ${response.reason}`);
       const finalContent = await mergeContentWithLLM(archivedContent, response.targetFile);
-      await fs.writeFile(response.targetFile, finalContent, 'utf-8');
+      await saveFile(response.targetFile, finalContent);
       await fs.unlink(filePath); // Delete the archived file
       console.log(`Successfully merged content into ${response.targetFile} and deleted archived file.`);
       break;
 
     case 'CREATE':
-      if (!response.newFileName || !response.newFileContent) {
-        throw new Error('Invalid CREATE action: newFileName and newFileContent are required.');
+      if (!response.newFilePath || !response.newFileContent) {
+        throw new Error('Invalid CREATE action: newFilePath and newFileContent are required.');
       }
-      const newFilePath = path.join('brain/book', response.newFileName);
+      const newFilePath = response.newFilePath;
       console.log(`Decision: CREATE new file ${newFilePath}. Reason: ${response.reason}`);
-      await fs.writeFile(newFilePath, response.newFileContent, 'utf-8');
+      await saveFile(newFilePath, response.newFileContent);
       // Here you would also need to update _quarto.yml to include the new chapter.
       // This is a complex operation and for now we will just create the file.
       console.log(`TODO: Manually add ${newFilePath} to _quarto.yml`);
