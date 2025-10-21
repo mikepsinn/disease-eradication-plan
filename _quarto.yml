@@ -57,7 +57,7 @@ book:
 
     - part: "🗺️ The Plan"
       chapters:
-        - brain/book/strategy/financial-roadmap.qmd # ADDED
+        - brain/book/strategy/roadmap.qmd
         - brain/book/legal/legal-framework.qmd # Legal Architecture
         - brain/book/legal/securities-law.qmd # Securities Law
         - brain/book/legal/election-law.qmd # Election Law
@@ -141,8 +141,6 @@ book:
 
     - part: "⚙️ Operations & Legal"
       chapters:
-        - brain/book/appendix/operations-roadmap.qmd
-        - brain/book/appendix/nonprofit-roadmap.qmd
         - brain/book/appendix/legal-compliance-framework.qmd
         - brain/book/appendix/dih-seed-grant-proposal-template.qmd
         - brain/book/appendix/recruitment-and-propaganda-plan.qmd
