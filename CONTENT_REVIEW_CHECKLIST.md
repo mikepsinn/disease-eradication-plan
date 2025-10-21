@@ -3,6 +3,7 @@
 This document tracks the systematic review status of every chapter in the book. The goal is to ensure each file meets the quality, tone, and technical standards defined in `CONTRIBUTING.md`.
 
 **Status Key:**
+
 - **📝 To Do:** The chapter has not yet been reviewed.
 - **🔍 In Progress:** The chapter is currently being reviewed.
 - **✅ Done:** The chapter has been fully audited and updated.
@@ -64,6 +65,3 @@ This document tracks the systematic review status of every chapter in the book. 
 | `brain/book/call-to-action.qmd` | 📝 To Do | |
 | `brain/book/references.qmd` | 📝 To Do | |
 | `brain/book/reference/global-government-medical-research-spending.qmd` | 📝 To Do | |
-
-
-

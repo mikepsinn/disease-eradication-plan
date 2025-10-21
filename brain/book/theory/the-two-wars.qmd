@@ -6,6 +6,7 @@ lastFactCheckHash: 960a8300d951896fcd6455c9a842ef3c52c39fdb47928afffc87db63eece0
 ## Humanity Fights Two Wars
 
 **War #1: Against Each Other** (War on Humanity)
+
 - Cost: [$2.7 trillion/year](../references.qmd#sipri-2024-spending)
 - Deaths: Direct war deaths plus ongoing conflicts
 - Duration: All of human history
@@ -13,6 +14,7 @@ lastFactCheckHash: 960a8300d951896fcd6455c9a842ef3c52c39fdb47928afffc87db63eece0
 - Designed to: Continue forever
 
 **War #2: Against Disease** (War on Disease)
+
 - Cost: [$68 billion/year](../references.qmd#global-gov-med-research-spending) (medical research)
 - Deaths: [55 million/year](../references.qmd#who-daily-deaths)
 - Duration: Also all of human history
@@ -39,6 +41,7 @@ But it isn't.
 ### The Result
 
 We have:
+
 - [13,000 nuclear weapons](../references.qmd#world-warheads) (can [destroy Earth 20 times](../../reference/nuclear-weapon-cost-and-casualties.md))
 - Hypersonic missiles that can't be stopped
 - Autonomous weapons (Skynet approaching)
@@ -62,6 +65,7 @@ But we still have wars.
 ### The Result
 
 We have:
+
 - 50 years of cancer research, no universal cure
 - [$48 billion NIH budget](../references.qmd#nih-budget-fy2025), zero diseases eradicated
 - [17 years to approve one drug](../references.qmd#research-to-practice-gap)
@@ -125,11 +129,13 @@ We have:
 Unlike previous "wars on" things, the War on Disease uses markets, not bureaucracies:
 
 **Traditional Government Wars**:
+
 - Create bureaucracy to manage (FDA, DEA, etc.)
 - Bureaucracy needs problem to exist (job security)
 - Result: Problem continues forever
 
 **War on Disease ([DIH](../solution/dih.qmd) Model)**:
+
 - Build no bureaucracy to preserve (use smart contracts)
 - Pay for outcomes, not process
 - Create competition between solutions, not monopoly
@@ -137,6 +143,7 @@ Unlike previous "wars on" things, the War on Disease uses markets, not bureaucra
 - Minimize perverse incentives through market competition
 
 **Align the Incentives**:
+
 - Patients: Get subsidized treatments, not exploited
 - Researchers: Get rewarded for cures, not papers
 - Investors: Earn returns from health, not death
@@ -163,26 +170,25 @@ The beginning of the market revolution.
 ## The Math of Victory
 
 ### War on Humanity (Current)
+
 ```python
 annual_spending = 2_700_000_000_000 # [1]
 annual_deaths = 14_000_000 # [2]
 victory_condition = None  # No end state
 years_to_victory = float('inf')  # Never
 ```
-[1]: ../references.qmd#sipri-2024-spending
-[2]: ../references.qmd#war-deaths-indirect-14m-annually
 
 ### War on Disease (Current)
+
 ```python
 annual_spending = 68_000_000_000 # [3]
 annual_deaths = 55_000_000 # [4]
 victory_condition = None  # No end state (pharma wants recurring revenue)
 years_to_victory = float('inf')  # Never
 ```
-[3]: ../references.qmd#global-gov-med-research-spending
-[4]: ../references.qmd#who-daily-deaths
 
 ### War on Disease (Redesigned)
+
 ```python
 annual_spending = 27_000_000_000  # 1% of military
 annual_deaths = 55_000_000  # Starting
@@ -196,6 +202,7 @@ deaths_prevented = 200_000_000  # Over 10 years
 ### Follow the Money
 
 **If cancer is cured**:
+
 - [Oncologists lose $200K/year jobs](../references.qmd#oncologist-median-salary-200k)
 - Pharma loses [$100B/year in chemo sales](../references.qmd#war-on-cancer-treatment-cost)
 - Hospitals lose entire oncology departments
@@ -207,6 +214,7 @@ deaths_prevented = 200_000_000  # Over 10 years
 ### The Same Pattern as War
 
 **If war ended**:
+
 - Defense contractors lose [$2.7T/year](../references.qmd#sipri-2024-spending)
 - Generals lose justification for budgets
 - Politicians lose campaign donations from defense lobby
@@ -248,11 +256,13 @@ We can win War on Disease. **We just have to design it to be won.**
 ## The Choice
 
 ### Option A: Continue Both Wars Forever
+
 - Keep spending $9.7T on War on Humanity (never win)
 - Keep spending [$68B on War on Disease](../references.qmd#global-gov-med-research-spending) (never win)
 - 69 million die annually, forever
 
 ### Option B: Win One War, Then the Other
+
 - Redirect 1% of military to War on Disease
 - Win War on Disease in 10 years (save 200M lives)
 - With diseases cured, redirect savings to end War on Humanity

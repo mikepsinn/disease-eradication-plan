@@ -7,6 +7,7 @@ This document outlines the plan to upgrade the content review scripts based on u
 All scripts that *report* issues without auto-fixing them will be modified to insert structured `<!-- TODO: ... -->` comments directly into the relevant file.
 
 **Affected Scripts:**
+
 - `link-check-file.ts` / `link-check-all-files.ts`
 - `figure-check-file.ts` / `figure-check-all-files.ts`
 - `fact-check-file.ts` / `fact-check-all-files.ts`
@@ -15,6 +16,7 @@ All scripts that *report* issues without auto-fixing them will be modified to in
 The comments will follow a consistent format: `<!-- TODO: [CHECK_TYPE] - [ISSUE_DESCRIPTION] -->`
 
 **Examples:**
+
 - A broken link would generate: `<!-- TODO: LINK_CHECK - Broken link: ./path/to/nonexistent-file.md -->`
 - A design violation would generate: `<!-- TODO: FIGURE_CHECK - Static image 'my-image.png' should be in the 'assets/' directory. -->`
 

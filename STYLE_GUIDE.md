@@ -10,6 +10,7 @@ tags: [style-guide, writing, tone, voice, contributing]
 This guide defines the writing tone, voice, and style for all prose content in the project.
 
 **See also:**
+
 - [DESIGN_GUIDE.md](DESIGN_GUIDE.md) - Visual design standards for charts and diagrams
 - [CONTRIBUTING.md](CONTRIBUTING.md) - Overall contribution workflow and standards
 
@@ -28,7 +29,7 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 
 ## The Writer's Toolkit: Dos and Don'ts
 
-### DO:
+### DO
 
 -   **Use dark humor about death and human stupidity.**
 -   **Make cynical but loving observations about humanity.** We're idiots, but we're OUR idiots.
@@ -39,7 +40,7 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 -   **Write instructional, actionable content.** Show the reader HOW to do this. Use phrases like "Here's how you..." "The way to do this is..." "You can start by..."
 -   **Frame everything as empowering the reader.** This is their guide to ending war and disease, not a proposal or pitch deck.
 
-### DON'T:
+### DON'T
 
 -   **Use corporate buzzwords or academic jargon.** Avoid "synergy," "paradigm shift," "stakeholder," "utilize," "facilitate."
 -   **Try to sound important.** Write like a human, not a textbook.

@@ -485,19 +485,22 @@ fig.show()
 
 ## Usage Instructions
 
-### To Update Global Numbers:
+### To Update Global Numbers
+
 Edit the constants at the top of this file. All calculations will automatically update.
 
-### To Use in Documents:
+### To Use in Documents
+
 To include this file in other documents, use the Quarto include directive with the proper relative path from your document location.
 
-### To Extract Specific Values:
+### To Extract Specific Values
+
 ```python
 from core_economic_formulas import calculate_dfda_roi
 roi = calculate_dfda_roi(cost_reduction=0.95)  # Test 95% reduction
 ```
 
-### Key Variables to Track:
+### Key Variables to Track
 
 - `GLOBAL_MILITARY_SPENDING` - Update annually from SIPRI
 - `GLOBAL_CLINICAL_TRIAL_MARKET` - Update from industry reports

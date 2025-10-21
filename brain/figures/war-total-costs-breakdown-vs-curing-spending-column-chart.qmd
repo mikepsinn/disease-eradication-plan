@@ -1,11 +1,13 @@
-#| label: stupidity-budget-true-war-costs
-#| fig-cap: "True War Costs Comparison"
+# | label: stupidity-budget-true-war-costs
+
+# | fig-cap: "True War Costs Comparison"
 
 import sys
 import os
 from pathlib import Path
 
 # Add project root to path (find it relative to current working directory)
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
@@ -21,15 +23,18 @@ from brain.figures._chart_style import (
 )
 
 # Setup styling
+
 setup_chart_style(style='light', dpi=150)
 FONT_SIZES = get_presentation_font_sizes()
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(12, 12))
 
 categories2 = ['War &\nMilitary\n(Total Cost)', 'Curing\nCancer', 'Curing\nDementia']
 
 # War costs breakdown (from cost-of-war.qmd)
+
 war_direct = 2720  # Direct military spending
 war_infrastructure = 1875  # Infrastructure destruction
 war_lives = 1000  # Human life losses
@@ -37,16 +42,20 @@ war_trade = 616  # Trade disruption
 war_indirect = 3538  # Lost growth, veterans, refugees, environment, etc.
 
 # Total war cost = $9,747B
+
 war_total = war_direct + war_infrastructure + war_lives + war_trade + war_indirect
 
 # Stacked values for war column
+
 war_stack = [war_direct, war_infrastructure, war_lives + war_trade, war_indirect]
 cure_values = [11, 5.5]  # Cancer and dementia research
 
 # Use single RED color for all war costs (problem)
+
 war_color = COLOR_BLACK
 
 # Plot stacked bar for war
+
 bottom = 0
 war_bars = []
 for i, value in enumerate(war_stack):
@@ -69,16 +78,19 @@ for i, value in enumerate(war_stack):
     bottom += value
 
 # Plot cure bars
+
 ax.bar(1, cure_values[0], color=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
 ax.bar(2, cure_values[1], color=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
 
 # Labels for cures
+
 ax.text(1, cure_values[0] + (war_total * 0.02), '$11B', ha='center', va='bottom',
         fontsize=40, weight='bold', color=COLOR_BLACK)
 ax.text(2, cure_values[1] + (war_total * 0.02), '$6B', ha='center', va='bottom',
         fontsize=40, weight='bold', color=COLOR_BLACK)
 
 # Total label on war stack - no decimal
+
 ax.text(0, war_total * 1.02, f'$10T TOTAL', ha='center', va='bottom',
         fontsize=48, weight='bold', color=COLOR_BLACK)
 

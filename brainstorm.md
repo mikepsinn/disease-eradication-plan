@@ -13,6 +13,7 @@ Here's the 36-month roadmap from basement to bond market.
 #### Phase 1: Proof of Concept (Months 1-3) - The Only Thing That Matters
 
 **Month 1: Build Wishocracy Voting Widget**
+
 - **Cost:** $15,000 (one good contractor, 2 weeks)
 - **What you're building:** Simple web app showing two spending options
 - User drags slider: "Cancer research 60% vs Heart disease 40%"
@@ -32,6 +33,7 @@ The pitch that actually works:
 "We're not building trial infrastructure - Oxford and dozens of companies already do that. We're building the FUNDING mechanism. $1B in bonds bribes governments to redirect $27B/year. Your $500K buys 0.05% of all future inflows. Existing trial platforms get flooded with subsidized patients. Everyone wins except Raytheon."
 
 **Month 3: Launch Referendum Platform V1**
+
 - 30-second signup
 - Single question: "Should nations redirect 1% of military spending to medical research?"
 - Referral tracking
@@ -43,6 +45,7 @@ If you don't: The idea is dead.
 #### Phase 2-6: [Use corrected roadmap from conversation]
 
 **Key Insight:** You're not building trial infrastructure. You're building:
+
 1. Wishocracy voting platform (governance)
 2. Referendum app (political pressure)
 3. VICTORY bond offering (financial bribery)
@@ -63,6 +66,7 @@ If you don't: The idea is dead.
 #### The Complete Benefits Calculation
 
 **Additional benefits to include:**
+
 - Earlier access (timeline acceleration): $300B (10-year average)
 - Research acceleration (115X more trials): $100B
 - New diseases treatable: $400B
@@ -77,6 +81,7 @@ If you don't: The idea is dead.
 **The insight:** The dFDA gives patients the right and ability to access treatments during Phase 2/3 trials instead of waiting 9.1 years for FDA approval (or forever if trials are never completed for their condition).
 
 **How the acceleration works:**
+
 - Current system: Wait 9.1 years average from Phase 1 to FDA approval
 - dFDA system: Access treatment during Phase 2/3 pragmatic trials
 - Effective acceleration: ~7 years earlier access on average (Phase 2 typically starts 1-2 years into development)
@@ -84,17 +89,20 @@ If you don't: The idea is dead.
 **This isn't speculative future acceleration - it's immediate access to treatments that already exist but are stuck in the approval pipeline.**
 
 **Stock benefit (one-time):** Existing patients get immediate access
+
 - 2 billion people with chronic diseases globally
 - Each gains 7 years of treatment access they'd otherwise miss
 - Total: 14 billion person-years × $150K/QALY = $2.1T total value
 - **Amortized over 7-year acceleration period: $300B/year for years 1-7**
 
 **Flow benefit (ongoing):** New patients each year get early access
+
 - ~100M new chronic disease cases/year globally (based on 43M annual deaths × 2.3 prevalence/mortality ratio)
 - Each saves 7 years × $150K/QALY = $1.05M in value
 - **Annual flow: $105B/year ongoing (starts immediately, continues forever)**
 
 **Combined "earlier access" benefit:**
+
 - Years 1-7: $300B (amortized stock) + $105B (flow) = **$405B/year**
 - Years 8+: $105B/year (flow only)
 - **10-year average: ~$300B/year**
@@ -104,14 +112,17 @@ If you don't: The idea is dead.
 **The insight:** 82X cheaper trials + 40% more funding ($27B/year) = **115X more research capacity**.
 
 **What this means:**
+
 - Current: ~3,300 clinical trials/year globally, ~50 new drug approvals/year
 - New capacity: ~380,000 trials/year possible, ~1,000-2,000 approvals/year (20-40X increase)
 
 **This is NOT the same as "earlier access":**
+
 - **Earlier Access** = Accessing the SAME 50 drugs in pipeline 7 years sooner
 - **Research Acceleration** = Testing 115X MORE drug candidates, finding 10-20X MORE breakthroughs
 
 **Which diseases benefit:**
+
 - Chronic pain (1.5B people, very limited treatment options)
 - Mental health (1B people, huge treatment gaps)
 - Alzheimer's (55M people, almost nothing works)
@@ -121,6 +132,7 @@ If you don't: The idea is dead.
 These are NOT rare diseases (already counted). These are common diseases that are UNDER-researched because trials are too expensive.
 
 **Conservative estimate:**
+
 - ~1 billion people in under-researched common conditions
 - Current treatment success rate: 10% find something that works
 - With 20X more research: 30% find effective treatment
@@ -129,6 +141,7 @@ These are NOT rare diseases (already counted). These are common diseases that ar
 - **Amortized over 10 years: $30B/year**
 
 **More realistic estimate (accounting for compounding knowledge):**
+
 - Medical breakthroughs build on each other
 - 115X more trials = 10-20X more actual discoveries (after accounting for failure rates)
 - **Conservative annual value: $100B/year**
@@ -178,6 +191,7 @@ Global healthcare spending: $9.8 trillion/year
 Global military spending: $2.7 trillion/year
 
 If the 1% Treaty generates $1.22T/year in benefits, that's:
+
 - 1.1% of global GDP
 - 12.4% of healthcare spending
 - 45% of military spending
@@ -185,11 +199,13 @@ If the 1% Treaty generates $1.22T/year in benefits, that's:
 **This passes the smell test.**
 
 For comparison:
+
 - Eliminating all cancer: ~$1.1T/year economic value
 - Curing all infectious disease: ~$800B/year
 - Fixing mental health: ~$300B/year
 
 The 1% Treaty doesn't cure everything, but it:
+
 - Accelerates access by 7 years (earlier trial participation)
 - Increases research velocity 10-20X (more breakthroughs)
 - Enables trials for currently untreatable conditions
@@ -220,6 +236,7 @@ $1.22T/year is reasonable for that scope.
 **Annual lives saved:** 25,000/year minimum, growing to 180,000/year as system scales
 
 **Cost per life saved:**
+
 - Year 1: $1B ÷ 25,000 = $40,000 per life
 - 10-year total: $1B ÷ 1,000,000 = $1,000 per life
 - Economic value per life: $12.2T ÷ 1M = $12.2M per life saved
@@ -231,17 +248,20 @@ $1.22T/year is reasonable for that scope.
 #### Expected Value Math
 
 **Malaria nets (The Sure Thing):**
+
 - Investment: $1B
 - Lives saved: 285,714 (nearly certain)
 - Economic value: 285,714 lives × $150K/QALY × 35 years = $1.5T
 - Expected value: ~$1.5T (nearly certain)
 
 **1% Treaty (The Moonshot):**
+
 - Bootstrap investment: $1B (one-time campaign cost)
 - If it succeeds (10% probability): $1.22T/year × 10 years = $12.2T
 - Expected value: 10% × $12.2T = **$1.22 trillion**
 
 **Expected value comparison:**
+
 - Malaria nets: $1.5T (100% probability) = $1.5T expected
 - 1% Treaty: $12.2T (10% probability) = $1.22T expected
 
@@ -254,12 +274,14 @@ $1.22T/year is reasonable for that scope.
 **This is the key differentiator:**
 
 **Malaria nets:**
+
 - $1B → $1B deployed
 - Leverage: 1:1
 - One-time impact
 - Requires ongoing donations to continue
 
 **1% Treaty:**
+
 - $1B → $270B deployed over 10 years
 - Leverage: 270:1
 - Self-sustaining (political commitment maintains it)
@@ -279,11 +301,13 @@ Before treaty: $2.72T military spending
 After treaty: $2.69T military + $27B health research
 
 **From taxpayer perspective:**
+
 - Tax burden: Unchanged
 - Government spending: Unchanged
 - Only difference: What government buys with existing money
 
 **This is fundamentally different from other EA interventions:**
+
 - Malaria nets: Require donations (voluntary private spending)
 - 1% Treaty: Requires political commitment (redirected public spending)
 
@@ -301,6 +325,7 @@ Break-even probability: $1.5T ÷ $12.2T = **12.3%**
 **Translation:** If you believe there's even a 12.3% chance the treaty succeeds, it's better than malaria nets in expected value.
 
 **On lives saved alone:**
+
 - Malaria nets: 285,714 lives (certain)
 - 1% Treaty: 1,000,000 lives over 10 years (if successful)
 - Break-even: 28.6% success probability
@@ -312,6 +337,7 @@ Break-even probability: $1.5T ÷ $12.2T = **12.3%**
 **If you're deploying $10B+ annually:**
 
 Allocate:
+
 - 80% to proven interventions (malaria nets, cash transfers)
 - 10% to promising scale-ups
 - 10% to moonshots (systemic change like 1% Treaty)
@@ -335,6 +361,7 @@ That seems like a mistake.
 **Why isn't EA funding this?**
 
 Possible answers:
+
 1. Too political (EA tries to stay "non-political")
 2. Too uncertain (they prefer RCTs)
 3. Too ambitious (seems unrealistic)
@@ -346,6 +373,7 @@ Possible answers:
 **By EA's own criteria, this should be funded.**
 
 The fact that it isn't suggests EA has methodological bias toward:
+
 1. Measurable certainty over uncertain but large upside
 2. Apolitical interventions over political ones
 3. Direct action over systemic change
@@ -355,12 +383,14 @@ The fact that it isn't suggests EA has methodological bias toward:
 **For normal donors ($10K-100K):** Give to GiveWell. Don't bet your charitable budget on moonshots.
 
 **For billionaires ($100M-1B):** Yes, probably. At this scale:
+
 - GiveWell room for funding is limited (~$500M/year absorption capacity)
 - Leverage becomes critical (270:1 vs 1:1)
 - Systemic change bets make sense in a portfolio approach
 - Zero new taxation makes it politically viable
 
 **For EA movement as a whole:** Should allocate 10% to systemic change moonshots. Currently allocates 0%. Probably a mistake given:
+
 - Competitive expected value at 10-15% success probability
 - 270X leverage multiplier
 - Unlimited room for funding (can deploy $270B if successful)
@@ -389,12 +419,14 @@ Some diseases might be limited by biology, not funding or trial efficiency:
 - Some conditions might require scientific breakthroughs we can't accelerate with money
 
 **If only 40% of diseases benefit from earlier access and research acceleration:**
+
 - $1.22T drops to $490B
 - Still 490:1 ROI, but less dramatic
 
 **The 82X Cost Reduction Might Not Scale**
 
 Oxford RECOVERY achieved 82X in ideal conditions:
+
 - Repurposing existing drug (no safety trials needed)
 - UK socialized healthcare (easy recruitment)
 - COVID emergency (reduced bureaucracy)
@@ -409,11 +441,13 @@ Oxford RECOVERY achieved 82X in ideal conditions:
 **Why 190 nations won't sign:**
 
 **The Collective Action Problem**
+
 - If I cut 1% and others don't: I'm weaker (lose/lose)
 - If others cut and I don't: I gain advantage (tempting!)
 - Free rider problem is massive
 
 **Historical precedent:**
+
 - Landmine treaty: 164 signed, but US/Russia/China didn't
 - Paris Climate: Everyone "committed," few cut emissions  
 - Nuclear non-proliferation: Constantly violated
@@ -425,10 +459,12 @@ This is their portion of the $2.7T in total global military spending. They will 
 Your strategy: Offer them VICTORY bonds with 270% returns
 
 Their counter: Fund politicians who oppose treaty
+
 - Cost to them: $10B
 - Cheaper than losing $2.7T
 
 **The spending war:**
+
 - You: $1B over 36 months
 - Them: $600B+ in annual revenue
 - They can outspend you 2,700:1
@@ -464,12 +500,14 @@ Billionaires: Money, think politics is beneath them
 **But there are exceptions:**
 
 Examples of "$X trillion bills lying on the ground":
+
 - **Carbon pricing:** Obviously correct, politically impossible
 - **Land value tax:** Proven in 1879, still not implemented
 - **Open borders:** $78T in gains, politically impossible
 - **Prediction markets:** Better than experts, mostly illegal
 
 **Pattern:** When an idea requires:
+
 - Global coordination AND
 - Overcoming entrenched interests AND
 - Long time horizons AND  
@@ -482,12 +520,14 @@ Examples of "$X trillion bills lying on the ground":
 Maybe this is like:
 
 **"Why don't we just solve hunger?"**
+
 - We have enough food
 - Distribution is the problem
 - Politics prevents solution
 - Nobody can actually do it
 
 **Or: "Why don't we colonize Mars?"**
+
 - Technology exists
 - Economics don't work
 - Coordination too hard
@@ -507,7 +547,7 @@ Maybe the 1% Treaty is in this category: Obviously good, probably possible, actu
 
 **Note:** These aren't mutually exclusive. Think of these as "primary blocker" assessments.
 
-#### But Here's The Thing...
+#### But Here's The Thing
 
 **Even if I'm 50% wrong about the benefits:**
 
@@ -530,21 +570,25 @@ $1.22T × 50% = $610B/year
 Here's how to test if this is real:
 
 **Step 1:** Build referendum app (2 weeks, $15K)
+
 - Test: Can you get 10,000 votes in 30 days?
 - If no: Idea is dead
 - If yes: Continue
 
 **Step 2:** Write full thesis (1 month, $50K)
+
 - Test: Do 50 smart people say "this could work"?
 - If no: Math is wrong
 - If yes: Continue
 
 **Step 3:** Pitch 20 angels for $500K (2 months)
+
 - Test: Can you get 4 to commit?
 - If no: Smart money thinks it won't work
 - If yes: Continue
 
 **Step 4:** Get to 1M votes (6 months, $200K)
+
 - Test: Does referendum go viral?
 - If no: Can't scale to 280M
 - If yes: You might actually have something
@@ -561,6 +605,7 @@ If it works: Raise the $10M Series A
 **Success probability:** 10-15% (optimistic but not crazy)
 
 **Expected value:**
+
 - At 10%: $1.22T
 - At 15%: $1.83T
 
@@ -569,6 +614,7 @@ If it works: Raise the $10M Series A
 **This is competitive with GiveWell top charities** (which have ~1.5-2:1 expected ROI when accounting for execution risk), **but with 1000X larger potential scale.**
 
 **The reason nobody has done it:** Not because it's impossible, but because it requires someone who:
+
 - Understands the full scope
 - Believes it's possible despite low odds
 - Has access to capital
@@ -586,6 +632,7 @@ If it works: Raise the $10M Series A
 ## Formatting Notes
 
 **Style consistency:**
+
 - Maintain dark humor throughout
 - Use "you" voice (instructional, not pitch)
 - Include specific numbers
@@ -593,6 +640,7 @@ If it works: Raise the $10M Series A
 - Keep sentences punchy
 
 **Figures to add:**
+
 - Financial roadmap timeline (bank balance over 36 months)
 - Complete benefits breakdown ($1.22T pie chart)
 - Expected value comparison (Treaty vs EA interventions)
@@ -600,6 +648,7 @@ If it works: Raise the $10M Series A
 - Research acceleration multiplier visualization (3,300 → 380,000 trials/year)
 
 **Cross-references to update:**
+
 - Update "$147B annual benefit" references to "$1.22T"
 - Update "463:1 ROI" references to "1,222:1 ROI"
 - Emphasize realistic 9-year FDA timeline (not 17 years)
@@ -617,9 +666,10 @@ If it works: Raise the $10M Series A
 > "Specific conditions affecting over a billion people: Dental caries affected 1.47 billion people, hearing loss affected 1.2 billion, migraine affected 959 million... 70% (40 million) of global deaths in 2015 were due to non-communicable diseases."
 >
 > Source: Global Burden of Disease Study 2015
-> https://www.sciencedaily.com/releases/2016/10/161006102549.htm
+> <https://www.sciencedaily.com/releases/2016/10/161006102549.htm>
 
 **Major chronic diseases prevalence:**
+
 - Diabetes: 589 million adults (2024)
 - Cardiovascular disease: 523 million (2020)
 - Chronic respiratory diseases: 545 million (2017)
@@ -627,9 +677,10 @@ If it works: Raise the $10M Series A
 - Mental health conditions: ~1 billion
 
 Sources:
-- IDF Diabetes Atlas: https://diabetesatlas.org/
-- ESC Cardiology: https://www.escardio.org/Education/Diabetes-and-CVD/Recommended-Reading/global-statistics-on-diabetes
-- The Lancet Respiratory Medicine: https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(20)30105-3/fulltext
+
+- IDF Diabetes Atlas: <https://diabetesatlas.org/>
+- ESC Cardiology: <https://www.escardio.org/Education/Diabetes-and-CVD/Recommended-Reading/global-statistics-on-diabetes>
+- The Lancet Respiratory Medicine: <https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(20)30105-3/fulltext>
 
 **Total conservative estimate: 2+ billion people living with one or more chronic conditions globally.**
 
@@ -637,7 +688,7 @@ Sources:
 > "Noncommunicable diseases (NCDs) killed at least 43 million people in 2021, equivalent to 75% of non-pandemic-related deaths globally. Cardiovascular diseases account for most NCD deaths, or at least 19 million deaths in 2021, followed by cancers (10 million), chronic respiratory diseases (4 million), and diabetes (over 2 million including kidney disease deaths caused by diabetes)."
 >
 > Source: WHO Fact Sheet on Noncommunicable Diseases
-> https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases
+> <https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases>
 
 ### FDA Drug Approval Timeline
 
@@ -645,8 +696,8 @@ Sources:
 > "The clinical development time of a typical innovative drug is 9.1 years (95% confidence interval = 8.2–10.0 years)... The full research, development and approval process can last from 12 to 15 years."
 >
 > Source: PMC - "Clinical development times for innovative drugs" (2010-2020 data)
-> https://pmc.ncbi.nlm.nih.gov/articles/PMC9869766/
-> https://pmc.ncbi.nlm.nih.gov/articles/PMC6113340/
+> <https://pmc.ncbi.nlm.nih.gov/articles/PMC9869766/>
+> <https://pmc.ncbi.nlm.nih.gov/articles/PMC6113340/>
 
 **Key finding:** 9.1 years is the average from Phase 1 start to FDA approval for innovative drugs.
 
@@ -656,10 +707,10 @@ Sources:
 > "Typical value benchmarks in the United States have historically ranged from approximately $50,000 to, more recently, as high as approximately $150,000 per QALY... In the US, a widely adopted threshold advocated by the ICER organization and others is to consider any technology under $150,000/QALY cost-effective."
 >
 > Source: ICER (Institute for Clinical and Economic Review)
-> https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/
+> <https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/>
 >
 > Source: New England Journal of Medicine - "Updating Cost-Effectiveness"
-> https://www.nejm.org/doi/full/10.1056/NEJMp1405158
+> <https://www.nejm.org/doi/full/10.1056/NEJMp1405158>
 
 ### Global Economic Data
 
@@ -667,21 +718,21 @@ Sources:
 > "World's GDP is $106,172,000,000,000 (nominal, 2023) according to World Bank data from December 2024... The Gross Domestic Product (GDP) in World was worth 111326.37 billion US dollars in 2024."
 >
 > Source: World Bank & StatisticsTimes.com
-> https://statisticstimes.com/economy/world-gdp.php
-> https://data.worldbank.org/indicator/NY.GDP.MKTP.CD
+> <https://statisticstimes.com/economy/world-gdp.php>
+> <https://data.worldbank.org/indicator/NY.GDP.MKTP.CD>
 
 **Global healthcare spending $9 trillion:**
 > "Global health spending reached US $9 trillion (approximately 11% of global GDP) in 2020, the first year dominated by the COVID-19 pandemic. In 2021, global spending on health reached a new high of US$ 9.8 trillion or 10.3% of global gross domestic product (GDP). Global spending on health in 2022 was US$ 9.8 trillion, or 9.9% of global GDP."
 >
 > Source: WHO Global Health Expenditure Database
-> https://www.who.int/publications-detail-redirect/9789240086746
-> https://apps.who.int/nha/database
+> <https://www.who.int/publications-detail-redirect/9789240086746>
+> <https://apps.who.int/nha/database>
 
 **Global military spending $2.7 trillion:**
 > "World military expenditure rose to $2718 billion in 2024, meaning that spending has increased every year for a full decade, going up by 37 per cent between 2015 and 2024. The 9.4 per cent increase in 2024 was the steepest year-on-year rise since at least 1988."
 >
 > Source: SIPRI (Stockholm International Peace Research Institute), "Trends in World Military Expenditure, 2024"
-> https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024
+> <https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024>
 
 ### Economic Costs of Disease
 
@@ -689,8 +740,8 @@ Sources:
 > "The worldwide annual economic cost of cancer in 2010 was estimated at $1.16 trillion (USD). Further estimates, which add the longer-term costs to patients and their families, bring the annual global cost of cancer to $2.5 trillion... The global economic cost of cancers from 2020 to 2050 was estimated to be $25.2 trillion (in international dollars at constant 2017 prices)."
 >
 > Source: JAMA Oncology, "Estimates and Projections of the Global Economic Cost of 29 Cancers in 204 Countries and Territories From 2020 to 2050"
-> https://jamanetwork.com/journals/jamaoncology/fullarticle/2801798
-> https://pmc.ncbi.nlm.nih.gov/articles/PMC9951101/
+> <https://jamanetwork.com/journals/jamaoncology/fullarticle/2801798>
+> <https://pmc.ncbi.nlm.nih.gov/articles/PMC9951101/>
 
 ### Effective Altruism Interventions
 
@@ -698,8 +749,8 @@ Sources:
 > "GiveWell estimates (as of December 2023) that it costs approximately $3,000 to $8,000 to avert a death in locations where they fund AMF campaigns. GiveWell estimated in 2023 that AMF's bed net program costs on average US$5,500 per life saved."
 >
 > Source: GiveWell, Against Malaria Foundation evaluation
-> https://www.givewell.org/charities/amf
-> https://www.givewell.org/charities/top-charities
+> <https://www.givewell.org/charities/amf>
+> <https://www.givewell.org/charities/top-charities>
 
 **Note:** The $3,500 figure cited in the document is at the lower end of current estimates. Most recent GiveWell data suggests $5,500 as the median.
 
@@ -709,15 +760,15 @@ Sources:
 > "The estimated cost per patient was roughly $500 (Manhattan Institute), compared to typical clinical trial costs... the median cost of a clinical trial for a new therapeutic is around $41,000 per patient. This represents approximately an 82-fold cost reduction ($41,000 ÷ $500 = 82)... The RECOVERY effort, Landray said, cost under $10 million, in contrast to pharmaceutical companies that spend hundreds of millions or even billions of dollars to conduct a single clinical trial."
 >
 > Source: University of Oxford, RECOVERY Trial publications
-> https://www.recoverytrial.net/
-> https://www.ox.ac.uk/news/features/recovery-trial-two-years
-> https://pmc.ncbi.nlm.nih.gov/articles/PMC8285150/
+> <https://www.recoverytrial.net/>
+> <https://www.ox.ac.uk/news/features/recovery-trial-two-years>
+> <https://pmc.ncbi.nlm.nih.gov/articles/PMC8285150/>
 
 **Impact:**
 > "Over 47,000 participants. Four effective COVID-19 treatments, with dexamethasone estimated to have saved a million lives in the first nine months following the announcement."
 >
 > Source: University of Oxford, "The RECOVERY Trial - two years on"
-> https://www.ox.ac.uk/news/features/recovery-trial-two-years
+> <https://www.ox.ac.uk/news/features/recovery-trial-two-years>
 
 ### Defense Industry
 
@@ -725,8 +776,8 @@ Sources:
 > "The 100 largest military contractors globally reported nearly $632 billion in combined arms sale revenue in 2023, about $25.3 billion more than in 2022. Each of these 100 companies sold more than $1 billion in arms and military services in 2023."
 >
 > Source: Defense News Top 100, SIPRI Arms Industry Database
-> https://www.defensenews.com/top-100/
-> https://dsm.forecastinternational.com/2024/03/01/top-100-defense-contractors-2023/
+> <https://www.defensenews.com/top-100/>
+> <https://dsm.forecastinternational.com/2024/03/01/top-100-defense-contractors-2023/>
 
 ### International Treaties
 
@@ -734,9 +785,9 @@ Sources:
 > "The Convention gained 122 country signatures when it opened for signing on 3 December 1997 in Ottawa, Canada. As of November 2024, 164 states are party to the treaty, representing more than 80 percent of the world's states... Some key current and past producers and users of landmines, including the United States, China, India, Pakistan, and Russia, have not signed the treaty."
 >
 > Source: Arms Control Association, Ottawa Treaty
-> https://www.armscontrol.org/factsheets/ottawa-convention-glance
-> https://www.armscontrol.org/factsheets/ottawa-convention-signatories-and-states-parties
-> https://en.wikipedia.org/wiki/Ottawa_Treaty
+> <https://www.armscontrol.org/factsheets/ottawa-convention-glance>
+> <https://www.armscontrol.org/factsheets/ottawa-convention-signatories-and-states-parties>
+> <https://en.wikipedia.org/wiki/Ottawa_Treaty>
 
 ### Open Borders Economic Analysis
 
@@ -744,9 +795,9 @@ Sources:
 > "Michael Clemens, an economist at the Center for Global Development, has argued that 'the tightly binding constraints on emigration from poor countries' may be 'the greatest single class of distortions in the global economy,' with gains from eliminating migration barriers amounting to 'large fractions of world GDP—one or two orders of magnitude larger than the gains from dropping all remaining restrictions on international flows of goods and capital.'... A literature summary by Clemens cited estimates that free global labor mobility would increase gross world product (GWP) by somewhere in the range of 67-147%."
 >
 > Source: Michael Clemens, "Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?" Journal of Economic Perspectives (2011)
-> https://pubs.aeaweb.org/doi/10.1257/jep.25.3.83
-> https://www.cgdev.org/blog/migration-and-trillion-dollar-bills-sidewalk-michael-clemens
-> https://openborders.info/double-world-gdp/
+> <https://pubs.aeaweb.org/doi/10.1257/jep.25.3.83>
+> <https://www.cgdev.org/blog/migration-and-trillion-dollar-bills-sidewalk-michael-clemens>
+> <https://openborders.info/double-world-gdp/>
 
 **The $78 trillion figure:** Derived from applying the 67-147% GDP gain estimates to global GDP of ~$100 trillion.
 

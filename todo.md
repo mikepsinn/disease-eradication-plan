@@ -13,7 +13,8 @@ This document outlines the plan to create a suite of scripts that automate the c
 
 We will adopt a granular frontmatter-based tracking system. The `lastReviewed` field will be deprecated in favor of specific, per-task timestamps.
 
-### New Frontmatter Fields:
+### New Frontmatter Fields
+
 - `lastModified`: To be updated automatically by a script using `git` history.
 - `lastFormatted`: Timestamp for when the formatting script was last run.
 - `lastStyleCheck`: Timestamp for the last automated style/tone review.
@@ -26,52 +27,59 @@ We will adopt a granular frontmatter-based tracking system. The `lastReviewed` f
 All scripts will be developed in TypeScript and located in the `scripts/review/` directory.
 
 ### 1. `get-stale-files.ts`
+
 - **Purpose:** Identify which files need review.
 - **Logic:**
-    - Use `simple-git` to get the last commit date for every `.qmd` file.
-    - Parse the frontmatter of each file to get the review timestamps.
-    - If `lastModified` is more recent than any of the `last...` check dates, the file is "stale" and needs review for that specific check.
+  - Use `simple-git` to get the last commit date for every `.qmd` file.
+  - Parse the frontmatter of each file to get the review timestamps.
+  - If `lastModified` is more recent than any of the `last...` check dates, the file is "stale" and needs review for that specific check.
 - **Output:** A JSON object mapping each check type to a list of files that need processing.
 
 ### 2. `format-file.ts` (Enhancement of `check-formatting.ts`)
+
 - **Purpose:** Automatically fix formatting issues.
 - **Logic:**
-    - Read a file.
-    - Add missing frontmatter fields.
-    - Split lines with multiple sentences.
-    - Overwrite the file with the corrected content.
-    - Update the `lastFormatted` timestamp in the frontmatter.
+  - Read a file.
+  - Add missing frontmatter fields.
+  - Split lines with multiple sentences.
+  - Overwrite the file with the corrected content.
+  - Update the `lastFormatted` timestamp in the frontmatter.
 
 ### 3. `check-style.ts`
+
 - **Purpose:** Review the file for tone, voice, and style guide adherence.
 - **Logic:**
-    - Use an LLM API to analyze the text against the rules in `CONTRIBUTING.md`.
-    - The prompt will instruct the LLM to identify violations of "dark humor," "Factual Mischaracterization," "Stylistic Redundancy," etc.
+  - Use an LLM API to analyze the text against the rules in `CONTRIBUTING.md`.
+  - The prompt will instruct the LLM to identify violations of "dark humor," "Factual Mischaracterization," "Stylistic Redundancy," etc.
 - **Output:** A list of suggested improvements. It will **not** auto-fix, as style is subjective.
 
 ### 4. `check-facts.ts`
+
 - **Purpose:** Verify claims against their sources.
 - **Logic:**
-    - Extract all claims with inline citations.
-    - For each claim, fetch the content of the cited source.
-    - Use an LLM API to determine if the source material supports the claim.
+  - Extract all claims with inline citations.
+  - For each claim, fetch the content of the cited source.
+  - Use an LLM API to determine if the source material supports the claim.
 - **Output:** A report of claims that may be misaligned with their sources.
 
 ### 5. `check-links.ts`
+
 - **Purpose:** Validate all internal and external links.
 - **Logic:**
-    - Extract all markdown links.
-    - For internal links, check if the target file exists.
-    - For external links, make a HEAD request to ensure a `200 OK` response.
+  - Extract all markdown links.
+  - For internal links, check if the target file exists.
+  - For external links, make a HEAD request to ensure a `200 OK` response.
 - **Output:** A list of broken links.
 
 ### 6. `check-figures.ts`
+
 - **Purpose:** Identify opportunities for new visualizations.
 - **Logic:**
-    - Use an LLM API to read a chapter and identify sections with dense data or complex concepts.
+  - Use an LLM API to read a chapter and identify sections with dense data or complex concepts.
 - **Output:** Suggestions for new charts or diagrams (e.g., "A bar chart comparing X and Y would be effective here.").
 
 ### 7. `review.ts` (Master Orchestrator Script)
+
 - **Purpose:** Run the entire review and fixing process.
 - **Logic:**
     1. Run `get-stale-files.ts` to get the list of files to process.
@@ -83,17 +91,17 @@ All scripts will be developed in TypeScript and located in the `scripts/review/`
 ## IV. Implementation Roadmap
 
 - [ ] **Phase 1: Foundational Scripts**
-    - [ ] Update `CONTRIBUTING.md` with the new frontmatter fields.
-    - [ ] Develop `get-stale-files.ts` to identify target files.
-    - [ ] Enhance `check-formatting.ts` into the auto-fixing `format-file.ts`.
+  - [ ] Update `CONTRIBUTING.md` with the new frontmatter fields.
+  - [ ] Develop `get-stale-files.ts` to identify target files.
+  - [ ] Enhance `check-formatting.ts` into the auto-fixing `format-file.ts`.
 - [ ] **Phase 2: LLM-Powered Checks**
-    - [ ] Develop `check-style.ts`.
-    - [ ] Develop `check-facts.ts`.
-    - [ ] Develop `check-figures.ts`.
+  - [ ] Develop `check-style.ts`.
+  - [ ] Develop `check-facts.ts`.
+  - [ ] Develop `check-figures.ts`.
 - [ ] **Phase 3: Finalization & Integration**
-    - [ ] Develop `check-links.ts`.
-    - [ ] Build the master `review.ts` orchestrator script.
-    - [ ] Add a `pnpm` script in `package.json` (e.g., `"review": "npx ts-node scripts/review/review.ts"`).
-    - [ ] (Optional) Integrate the `review` script into a pre-commit hook using `husky`.
+  - [ ] Develop `check-links.ts`.
+  - [ ] Build the master `review.ts` orchestrator script.
+  - [ ] Add a `pnpm` script in `package.json` (e.g., `"review": "npx ts-node scripts/review/review.ts"`).
+  - [ ] (Optional) Integrate the `review` script into a pre-commit hook using `husky`.
 
 This plan provides a clear, phased approach to building a powerful, cost-effective automated review system.

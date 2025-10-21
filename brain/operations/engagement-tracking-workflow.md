@@ -11,6 +11,7 @@
 Most movements fail not because the idea is bad, but because they lose track of people. Someone emails you interest in helping. You mean to respond. Life happens. Two weeks later, they've moved on.
 
 This system makes that impossible. Every person who touches your organization gets:
+
 1. A permanent record
 2. Automatic follow-up reminders
 3. A clear path from "curious stranger" to "active contributor"
@@ -26,21 +27,25 @@ Think of it as a conveyor belt for converting interest into impact.
 **Every engagement creates a record automatically:**
 
 #### Source: Website Form Submission
+
 - User submits referendum vote → Airtable record created in `Global Referendum`
 - Automation creates linked record in `Personnel Roster`
 - Automation creates record in `Engagements` with Type = "Enlistment"
 
-#### Source: Email to info@warondisease.com
+#### Source: Email to <info@warondisease.com>
+
 - Use Zapier/Make.com to parse incoming emails
 - Auto-create `Personnel` record if new email
 - Auto-create `Engagement` record with Type = "Email" and email body as Summary
 
 #### Source: Meeting/Call
+
 - Use Calendly webhook when meeting booked
 - Auto-create `Personnel` record if new
 - Auto-create `Engagement` record with Type = "Meeting" and Follow-up Date = 7 days later
 
 #### Source: Social Media DM
+
 - Harder to automate, but possible with APIs
 - Manual fallback: Daily 5-minute sweep to log DMs
 
@@ -66,6 +71,7 @@ Partnership Inquiry      →  Prospect (Partnership tag)
 ```
 
 **Implementation:** Airtable automation
+
 - Trigger: New record in `Engagements`
 - Condition: Check engagement type
 - Action: Update linked `Personnel` record Status field
@@ -85,12 +91,13 @@ Not all leads are equal. Route to the right person:
 | General Inquiry | Anyone available | 5 days |
 
 **Implementation:** Airtable automation
+
 - Trigger: New `Engagement` record created
 - Condition: If Type = "Investment Inquiry" AND Amount > $100,000
 - Action:
   - Assign to Founder in `Engagements` table
   - Send Slack notification to #high-value-leads
-  - Send email to founder@warondisease.com
+  - Send email to <founder@warondisease.com>
   - Create calendar reminder in 4 hours if not responded
 
 ---
@@ -104,6 +111,7 @@ People need multiple touches before they act. Build sequences:
 **Goal:** Convert passive voter into active promoter
 
 **Timeline:**
+
 - **Day 0:** Vote submitted
   - Send thank you email with referral link
   - Log engagement: Type = "Enlistment"
@@ -147,6 +155,7 @@ Action 7: Send re-engagement email
 **Goal:** Move from "interesting" to "wired the money"
 
 **Timeline:**
+
 - **Hour 0:** Interest form submitted
   - Send personal email from founder
   - Log engagement: Type = "Investment Inquiry"
@@ -171,6 +180,7 @@ Action 7: Send re-engagement email
   - "We're moving forward. Last chance to get in at this valuation."
 
 **Notes:**
+
 - High-touch, not automated blast
 - Each email should feel personal
 - Log EVERYTHING in Engagements table
@@ -182,6 +192,7 @@ Action 7: Send re-engagement email
 **Goal:** Organizations that can amplify the mission
 
 **Timeline:**
+
 - **Day 0:** Inquiry received
   - Send partnership deck
   - Schedule intro call (Calendly link)
@@ -229,6 +240,7 @@ Website Visit               100%             Google Analytics
 #### Formula Example: "Conversion to Recruiter"
 
 In `Personnel Roster` table, add formula field:
+
 ```
 IF(
   {Referendum Votes} > 0,
@@ -247,7 +259,7 @@ IF(
 
 Watch for patterns that need human intervention:
 
-#### Alert Triggers:
+#### Alert Triggers
 
 1. **High-Value Lead Going Cold**
    - Condition: Investment Inquiry > $50K + No follow-up engagement in 48 hours
@@ -274,14 +286,17 @@ Watch for patterns that need human intervention:
 For sophisticated email sequences, integrate with:
 
 ### Option A: Airtable Native Email (Basic)
+
 - Pros: Simple, built-in
 - Cons: Limited styling, no A/B testing, manual unsubscribe handling
 
 ### Option B: Airtable + MailerLite/Mailchimp (Better)
+
 - Pros: Professional emails, automation, unsubscribe management
 - Cons: Extra cost ($10-50/month), requires Zapier integration
 
 ### Option C: Airtable + Customer.io or Intercom (Best)
+
 - Pros: Sophisticated triggers, behavior-based sequences, analytics
 - Cons: Expensive ($100-500/month), more complex setup
 
@@ -291,7 +306,7 @@ For sophisticated email sequences, integrate with:
 
 ## The Daily Workflow for Team
 
-### Morning Routine (15 minutes):
+### Morning Routine (15 minutes)
 
 1. **Open "Today's Follow-Ups" view**
    - Filter: `Engagements` where `Follow-up Date` = Today
@@ -305,7 +320,7 @@ For sophisticated email sequences, integrate with:
    - Filter: `Global Referendum` where Verification Status = "Pending"
    - Verify emails, mark as Verified or flag as fraud
 
-### Weekly Routine (30 minutes):
+### Weekly Routine (30 minutes)
 
 1. **Metrics Review**
    - Total votes this week vs. last week
@@ -439,22 +454,27 @@ Actions:
 ## Common Pitfalls to Avoid
 
 ### 1. Over-Automation
+
 **Problem:** Sending too many emails, feeling spammy
 **Solution:** Cap at 1 email/week per person unless they engage
 
 ### 2. Under-Tracking
+
 **Problem:** Having conversations outside Airtable, losing follow-ups
 **Solution:** "If it's not logged, it didn't happen" rule
 
 ### 3. No Segmentation
+
 **Problem:** Sending same message to $10 donor and $100K investor
 **Solution:** Create segments based on engagement value/type
 
 ### 4. Ignoring Unsubscribes
+
 **Problem:** Legal violations, pissed-off people
 **Solution:** Honor unsubscribes immediately, it's the law
 
 ### 5. Manual Follow-Ups
+
 **Problem:** Relying on memory = guaranteed drops
 **Solution:** Set Follow-up Date on EVERY engagement
 

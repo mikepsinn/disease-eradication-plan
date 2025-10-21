@@ -4,9 +4,12 @@ import matter from 'gray-matter';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import * as yaml from 'js-yaml';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
-const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand'];
+const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
 
 async function findMarkdownFiles(dir: string): Promise<string[]> {
     let mdFiles: string[] = [];
@@ -71,7 +74,10 @@ async function validateFrontmatter(fix: boolean) {
                 if (needsRewrite) {
                     const newContent = matter.stringify(content, data, {
                         language: 'yaml',
-                        flowLevel: 1
+                        flowLevel: 1,
+                        styles: {
+                          '!!str': 'double'
+                        }
                     } as any);
                     await fs.promises.writeFile(filePath, newContent, 'utf-8');
                     console.log(`✅ [Fixed] ${reasons.join(', ')} in ${filePath}`);

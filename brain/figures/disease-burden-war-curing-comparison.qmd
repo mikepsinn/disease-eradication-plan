@@ -73,4 +73,3 @@ output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'disease-burden-war-curing-comparison.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```
-

@@ -7,6 +7,7 @@ The existing `format-` and `style-` scripts provide an excellent foundation for 
 ## 1. Fact-Checking Scripts
 
 **Files:**
+
 - `fact-check-all-files.ts`
 - `fact-check-file.ts`
 
@@ -14,6 +15,7 @@ The existing `format-` and `style-` scripts provide an excellent foundation for 
 To enforce the "Sourcing & Credibility" standard from `CONTRIBUTING.md` by ensuring every claim is cited.
 
 **Core Functionality:**
+
 1.  **Identify Stale Files:** Use the `getStaleFiles` utility to find all files that need a fact check (i.e., where the content has changed since the last `lastFactCheck` date).
 2.  **Claim Detection (LLM-Powered):** For each stale file, send the body content to an LLM (like Gemini or Claude) with a prompt asking it to identify any factual claims (e.g., sentences containing statistics, percentages, costs, or other quantifiable data) that are **not** immediately followed by a markdown citation linking to `references.qmd`.
 3.  **Reporting:** The script would log any uncited claims it finds, flagging them for manual review. For a more advanced implementation, it could insert a `<!-- TODO: Add citation for this claim. -->` comment directly into the file.
@@ -22,6 +24,7 @@ To enforce the "Sourcing & Credibility" standard from `CONTRIBUTING.md` by ensur
 ## 2. Link Integrity Scripts
 
 **Files:**
+
 - `link-check-all-files.ts`
 - `link-check-file.ts`
 
@@ -29,6 +32,7 @@ To enforce the "Sourcing & Credibility" standard from `CONTRIBUTING.md` by ensur
 To enforce the "Technical & Structural Integrity" and "Sourcing and Citation Standard" from `CONTRIBUTING.md` by ensuring all internal links are valid. While `scripts/validate-links.ts` likely performs a similar function, integrating it into the `review` workflow with the stale-file check is crucial.
 
 **Core Functionality:**
+
 1.  **Identify Stale Files:** Use `getStaleFiles` to find files needing a link check based on the `lastLinkCheck` date.
 2.  **Parse Links:** Extract all relative markdown links from the file content.
 3.  **Validate File Paths:** For each link, verify that the target file exists at the specified relative path.
@@ -39,6 +43,7 @@ To enforce the "Technical & Structural Integrity" and "Sourcing and Citation Sta
 ## 3. Figure & Design Scripts
 
 **Files:**
+
 - `figure-check-all-files.ts`
 - `figure-check-file.ts`
 
@@ -46,6 +51,7 @@ To enforce the "Technical & Structural Integrity" and "Sourcing and Citation Sta
 To enforce the visual standards defined in `DESIGN_GUIDE.md`.
 
 **Core Functionality:**
+
 1.  **Identify Stale Files:** Use `getStaleFiles` to find files needing a figure check based on the `lastFigureCheck` date.
 2.  **Chart Linter:**
     - Scan the content of any `.qmd` files in `brain/figures/` that are referenced in the stale file.

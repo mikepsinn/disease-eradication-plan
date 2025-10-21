@@ -40,4 +40,3 @@ Our mission is to end war and disease. This requires a specific culture. These a
 ## Enforcement
 
 Violation of any of these rules will result in immediate execution.
-

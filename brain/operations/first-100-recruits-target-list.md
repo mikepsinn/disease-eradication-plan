@@ -17,11 +17,13 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 5. **Contrarian** - Willing to support "crazy" ideas that might work
 
 **DO NOT** recruit:
+
 - People who just want to "feel good"
 - Passive observers with no ability to contribute
 - People who need excessive hand-holding
 
 **DO** recruit:
+
 - People who will tell 100 friends if they believe
 - People who can write checks >$10K
 - People who can open doors you can't
@@ -95,20 +97,22 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 ### Subcategory: Defense Industry Whistleblowers
 
 10-12. **Anonymous targets from:**
-   - Lockheed Martin
-   - Raytheon
-   - Northrop Grumman
-   - Who have expressed frustration with mission
-   - Recruit via Signal/encrypted channels
-   - Offer: "Be part of the solution without blowing up your career"
+
+- Lockheed Martin
+- Raytheon
+- Northrop Grumman
+- Who have expressed frustration with mission
+- Recruit via Signal/encrypted channels
+- Offer: "Be part of the solution without blowing up your career"
 
 ### Subcategory: Anti-War Veterans
 
 13. **Paul Rieckhoff** (Iraq War vet, founder IAVA)
 14. **Wes Moore** (Afghanistan vet, now politician)
 15-20. **Specific decorated veterans** with large social media followings
-   - Research: Veterans who post about "we should be building, not destroying"
-   - Offer: "Channel your post-service purpose here"
+
+- Research: Veterans who post about "we should be building, not destroying"
+- Offer: "Channel your post-service purpose here"
 
 ---
 
@@ -119,24 +123,28 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 ### Subcategory: Scientists Who've Criticized FDA/NIH Publicly
 
 21. **Scott Gottlieb** (former FDA Commissioner)
-   - Has written about FDA modernization
-   - Angle: "You tried to fix it from inside. Let's build the alternative."
+
+- Has written about FDA modernization
+- Angle: "You tried to fix it from inside. Let's build the alternative."
 
 22. **Francis Collins** (former NIH Director)
-   - Just retired, might be open to critiques now
-   - Angle: "You managed $40B/year and cured how many diseases?"
+
+- Just retired, might be open to critiques now
+- Angle: "You managed $40B/year and cured how many diseases?"
 
 23-30. **Researchers with failed grant applications**
-   - Mine NIH grant rejection data (public)
-   - Target those with novel approaches rejected for being "too risky"
-   - Offer: "dFDA funds what NIH won't"
+
+- Mine NIH grant rejection data (public)
+- Target those with novel approaches rejected for being "too risky"
+- Offer: "dFDA funds what NIH won't"
 
 ### Subcategory: Rare Disease Researchers
 
 31-40. **Leaders of rare disease foundations**
-   - They KNOW traditional pharma ignores them
-   - Offer: "dFDA makes orphan diseases profitable"
-   - Target: Specific diseases with <200K patients globally
+
+- They KNOW traditional pharma ignores them
+- Offer: "dFDA makes orphan diseases profitable"
+- Target: Specific diseases with <200K patients globally
 
 ---
 
@@ -147,24 +155,28 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 ### Tier A: EA Movement Leaders
 
 41. **Will MacAskill** (philosopher, EA founder)
-   - Wrote "What We Owe the Future"
-   - Angle: "This is the highest-EV intervention for long-term human welfare"
+
+- Wrote "What We Owe the Future"
+- Angle: "This is the highest-EV intervention for long-term human welfare"
 
 42. **Sam Bankman-Fried** (if available post-legal issues, otherwise skip)
-   - Or other EA-aligned crypto billionaires
-   - Angle: "Better ROI than malaria nets"
+
+- Or other EA-aligned crypto billionaires
+- Angle: "Better ROI than malaria nets"
 
 43. **Holden Karnofsky** (Open Philanthropy)
 44. **Elie Hassenfeld** (GiveWell)
-   - Both organizations evaluate cost-per-life-saved
-   - Angle: "Run the numbers on treaty's cost-per-QALY. We'll wait."
+
+- Both organizations evaluate cost-per-life-saved
+- Angle: "Run the numbers on treaty's cost-per-QALY. We'll wait."
 
 ### Tier B: EA Community Influencers
 
 45-55. **Top EA Forum contributors**
-   - Those who write about global health, cause prioritization
-   - Recruit via direct messages on EA Forum
-   - Offer: Co-authorship on cost-effectiveness analysis
+
+- Those who write about global health, cause prioritization
+- Recruit via direct messages on EA Forum
+- Offer: Co-authorship on cost-effectiveness analysis
 
 ---
 
@@ -175,42 +187,51 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 ### Subcategory: Health/Science Journalists
 
 56. **Derek Thompson** (The Atlantic)
-   - Writes about health policy, innovation
-   - Angle: "The story of how we convinced the world to choose life"
+
+- Writes about health policy, innovation
+- Angle: "The story of how we convinced the world to choose life"
 
 57. **Ezra Klein** (New York Times)
-   - Loves wonky, contrarian policy ideas
-   - Angle: "Interview pitch: Can we really redirect military spending?"
+
+- Loves wonky, contrarian policy ideas
+- Angle: "Interview pitch: Can we really redirect military spending?"
 
 58. **Matthew Yglesias** (Slow Boring)
-   - Pragmatic, open to heterodox ideas
-   - Angle: "This is the ultimate 'one weird trick' policy"
+
+- Pragmatic, open to heterodox ideas
+- Angle: "This is the ultimate 'one weird trick' policy"
 
 59. **Casey Newton** (Platformer)
-   - Tech + society intersection
-   - Angle: "How tech enables planetary democracy"
+
+- Tech + society intersection
+- Angle: "How tech enables planetary democracy"
 
 60. **Ed Yong** (The Atlantic)
-   - Pandemic coverage, science communication
-   - Angle: "What if we had dFDA before COVID?"
+
+- Pandemic coverage, science communication
+- Angle: "What if we had dFDA before COVID?"
 
 ### Subcategory: Podcast Hosts
 
 61. **Tim Ferriss**
-   - Audience: entrepreneurs, biohackers
-   - Angle: "Performance enhancement through systemic disease cure"
+
+- Audience: entrepreneurs, biohackers
+- Angle: "Performance enhancement through systemic disease cure"
 
 62. **Lex Fridman**
-   - Audience: tech, science, philosophy
-   - Angle: "The mathematics of ending death"
+
+- Audience: tech, science, philosophy
+- Angle: "The mathematics of ending death"
 
 63. **Joe Rogan**
-   - Audience: everyone
-   - Angle: "The biggest conspiracy is NOT curing disease"
+
+- Audience: everyone
+- Angle: "The biggest conspiracy is NOT curing disease"
 
 64. **Sam Harris**
-   - Audience: rationalists
-   - Angle: "The ethics of redirecting military spending"
+
+- Audience: rationalists
+- Angle: "The ethics of redirecting military spending"
 
 65. **Ezra Klein** (also does podcast)
 
@@ -223,39 +244,46 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 ### Subcategory: Populist Politicians (Left and Right)
 
 66. **Bernie Sanders**
-   - Anti-military spending, pro-healthcare
-   - Angle: "This is Medicare for the World"
+
+- Anti-military spending, pro-healthcare
+- Angle: "This is Medicare for the World"
 
 67. **Ro Khanna**
-   - Rep from Silicon Valley, tech-friendly
-   - Angle: "Lead the treaty push in Congress"
+
+- Rep from Silicon Valley, tech-friendly
+- Angle: "Lead the treaty push in Congress"
 
 68. **AOC** (Alexandria Ocasio-Cortez)
-   - Young, social media savvy
-   - Angle: "Your Green New Deal, but for health"
+
+- Young, social media savvy
+- Angle: "Your Green New Deal, but for health"
 
 69. **Rand Paul**
-   - Libertarian, anti-war
-   - Angle: "Smaller military, voluntary health funding"
+
+- Libertarian, anti-war
+- Angle: "Smaller military, voluntary health funding"
 
 70. **Andrew Yang**
-   - Data-driven, outside-the-box
-   - Angle: "This is UBI for health research"
+
+- Data-driven, outside-the-box
+- Angle: "This is UBI for health research"
 
 ### Subcategory: International Reformers
 
 71-75. **Specific politicians from:**
-   - Costa Rica (already no military)
-   - Iceland (small, progressive)
-   - New Zealand (Jacinda Ardern-era reformers)
-   - Uruguay (progressive, small)
-   - Bhutan (Gross National Happiness focus)
+
+- Costa Rica (already no military)
+- Iceland (small, progressive)
+- New Zealand (Jacinda Ardern-era reformers)
+- Uruguay (progressive, small)
+- Bhutan (Gross National Happiness focus)
 
 ### Subcategory: Former Politicians with Nothing to Lose
 
 76-80. **Retired leaders** who can speak freely:
-   - Jimmy Carter (if health permits)
-   - Other ex-presidents/PMs who've gone humanitarian
+
+- Jimmy Carter (if health permits)
+- Other ex-presidents/PMs who've gone humanitarian
 
 ---
 
@@ -264,26 +292,31 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 **Why them:** Believe in disrupting legacy systems. Have technical skills + capital.
 
 81. **Vitalik Buterin** (Ethereum)
-   - Interested in governance, public goods
-   - Angle: "Blockchain-verified referendum voting"
+
+- Interested in governance, public goods
+- Angle: "Blockchain-verified referendum voting"
 
 82. **Balaji Srinivasan** (former a16z)
-   - Wrote about "Network States"
-   - Angle: "This is your network state, but for health"
+
+- Wrote about "Network States"
+- Angle: "This is your network state, but for health"
 
 83. **Naval Ravikant** (AngelList)
-   - Philosopher-entrepreneur
-   - Angle: "The leverage point for human flourishing"
+
+- Philosopher-entrepreneur
+- Angle: "The leverage point for human flourishing"
 
 84. **Brian Armstrong** (Coinbase)
-   - Interested in science funding (NewLimit)
-   - Angle: "Crypto rails for global health funding"
+
+- Interested in science funding (NewLimit)
+- Angle: "Crypto rails for global health funding"
 
 85-90. **DAOs focused on:**
-   - VitaDAO (longevity)
-   - PsyDAO (psychedelics)
-   - LabDAO (scientific research)
-   - Recruit: Offer to build dFDA as DAO-compatible
+
+- VitaDAO (longevity)
+- PsyDAO (psychedelics)
+- LabDAO (scientific research)
+- Recruit: Offer to build dFDA as DAO-compatible
 
 ---
 
@@ -292,12 +325,13 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 **Why them:** Personal urgency. Grassroots networks. Authentic voices.
 
 91-100. **Leaders of disease advocacy groups:**
-   - **Cystic Fibrosis Foundation** - have seen breakthroughs, want more
-   - **Michael J. Fox Foundation** - Parkinson's research
-   - **ALS Association** - Ice Bucket Challenge organizers
-   - **Alzheimer's Association** - huge patient base
-   - **American Cancer Society** - but target reformers within
-   - **Rare disease foundations** (5-7 specific)
+
+- **Cystic Fibrosis Foundation** - have seen breakthroughs, want more
+- **Michael J. Fox Foundation** - Parkinson's research
+- **ALS Association** - Ice Bucket Challenge organizers
+- **Alzheimer's Association** - huge patient base
+- **American Cancer Society** - but target reformers within
+- **Rare disease foundations** (5-7 specific)
 
 **Angle:** "Your disease gets trials in dFDA that pharma ignores"
 
@@ -305,17 +339,20 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 
 ## Recruitment Strategy by Category
 
-### High-Touch (Personal Outreach):
+### High-Touch (Personal Outreach)
+
 - Billionaires (send personal letters, use warm intros)
 - Politicians (through staff/lobbyists)
 - Media (pitch as exclusive story angle)
 
-### Medium-Touch (Direct but Scalable):
+### Medium-Touch (Direct but Scalable)
+
 - Scientists (targeted emails based on rejected grants)
 - Veterans (through veteran networks)
 - Effective Altruists (EA Forum posts)
 
-### Low-Touch (Community Seeding):
+### Low-Touch (Community Seeding)
+
 - Patient advocates (attend conferences, present)
 - Crypto/tech (post in Discord/Telegram)
 - Podcast pitches (standard media kit)
@@ -452,6 +489,7 @@ Add these fields to your `Personnel Roster` in Airtable:
 - `Warm Intro From` (Link to another Personnel record)
 
 **Create a view:** "Top 100 Recruitment Pipeline"
+
 - Filter: `Recruit Priority` = "Top 100"
 - Group by: `Recruit Category`
 - Sort by: `Outreach Status`
@@ -460,23 +498,27 @@ Add these fields to your `Personnel Roster` in Airtable:
 
 ## Success Metrics
 
-### Week 1-2:
+### Week 1-2
+
 - [ ] Identify specific names for all 100 targets
 - [ ] Find warm intro paths for top 25
 - [ ] Craft customized outreach for top 10
 - [ ] Send first 10 messages
 
-### Week 3-4:
+### Week 3-4
+
 - [ ] 50% response rate from top 10 (5 responses)
 - [ ] 1 commitment to support (advisor, investor, or advocate)
 - [ ] That 1 person brings 3 more
 
-### Month 2:
+### Month 2
+
 - [ ] 20 of top 100 have responded
 - [ ] 5 have committed
 - [ ] Those 5 have brought 15 more
 
-### Month 3:
+### Month 3
+
 - [ ] 50 of top 100 engaged
 - [ ] 15 committed
 - [ ] Network effects kicking in (getting inbound from their networks)

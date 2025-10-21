@@ -17,10 +17,12 @@ They just have better PR.
 ## The Core Insight
 
 Traditional economics assumes:
+
 - Private sector: Selfish, profit-maximizing
 - Public sector: Benevolent, serving the public good
 
 Public Choice Theory says:
+
 - Private sector: Selfish, profit-maximizing
 - Public sector: **Also selfish, also profit-maximizing**
 
@@ -29,6 +31,7 @@ The only difference is what they're maximizing.
 ## What Government Workers Actually Maximize
 
 ### Bureaucrats Maximize
+
 - Budget size (bigger budget = more power)
 - Job security (no customer complaints = no accountability)
 - Avoiding responsibility (delays protect from blame)
@@ -37,6 +40,7 @@ The only difference is what they're maximizing.
 **Not**: Public welfare, efficiency, or results
 
 ### Politicians Maximize
+
 - Campaign donations (from whoever pays)
 - Re-election probability (not voter welfare)
 - Power and influence
@@ -45,6 +49,7 @@ The only difference is what they're maximizing.
 **Not**: What voters actually want
 
 ### Regulators Maximize
+
 - Future job prospects (revolving door to industry)
 - Not getting sued (delays are safe)
 - Expanding authority (more rules = more power)
@@ -59,6 +64,7 @@ The only difference is what they're maximizing.
 **What They Should Maximize**: Cures per dollar
 
 **What They Actually Maximize**:
+
 - Number of grants awarded (looks productive)
 - Papers published (looks scientific)
 - Budget growth (more power)
@@ -71,6 +77,7 @@ The only difference is what they're maximizing.
 **What They Should Maximize**: Lives saved per year
 
 **What They Actually Maximize**:
+
 - Avoiding blame if a drug harms someone (visible)
 - NOT avoiding blame if delay kills someone (invisible)
 - Personal career advancement (revolving door to pharma)
@@ -92,6 +99,7 @@ The only difference is what they're maximizing.
 ## The Beautiful Part: This Is Predictable
 
 Since everyone maximizes their own interest:
+
 - You can predict their behavior
 - You can design around it
 - You can align their interests with good outcomes
@@ -103,11 +111,13 @@ Since everyone maximizes their own interest:
 ### Current System (Misaligned)
 
 **FDA Regulator**:
+
 - Approves risky drug → Someone dies → Regulator blamed → Career ruined
 - Delays drug → Thousands die → Nobody notices → Regulator safe
 - **Incentive**: Delay everything
 
 **Pharma Company**:
+
 - Cures disease → Customer lost → No recurring revenue
 - Treats disease → Recurring revenue forever
 - **Incentive**: Treat, don't cure
@@ -115,12 +125,14 @@ Since everyone maximizes their own interest:
 ### Fixed System (Aligned)
 
 **[dFDA](../solution/dfda.qmd) Participant**:
+
 - Joins trial → Gets paid
 - Shares data → Contributes to cure
 - Cure found → Everyone benefits
 - **Incentive**: Participate and share data
 
 **Pharma Company (Under [DIH](../solution/dih.qmd))**:
+
 - Runs trial → Patients pay them (via subsidy)
 - Fast results → Run more trials
 - Cure found → Reputation boost + more trials
@@ -131,11 +143,13 @@ Since everyone maximizes their own interest:
 ### FDA Official Deciding on Drug Approval
 
 **Approve quickly**:
+
 - Upside: Drug might save 10,000 lives/year
 - Downside: If 10 people die from side effects, Congressional hearing, career over
 - **Expected value for bureaucrat**: -$2 million (lost career)
 
 **Delay**:
+
 - Upside: No risk to career, safe choice
 - Downside: 10,000 people die per year of delay (but nobody blames you)
 - **Expected value for bureaucrat**: $0 (career safe)
@@ -145,11 +159,13 @@ Since everyone maximizes their own interest:
 ### NIH Reviewer Deciding on Grant
 
 **Fund risky, innovative research**:
+
 - Upside: Might cure disease (but colleague gets credit)
 - Downside: Might fail (you approved it, look bad)
 - **Expected value for reviewer**: -1 (negative career impact)
 
 **Fund safe, incremental research**:
+
 - Upside: Unlikely to fail (safe choice)
 - Downside: Won't cure anything (but nobody notices)
 - **Expected value for reviewer**: 0 (career safe)
@@ -182,11 +198,13 @@ And humans respond to incentives.
 You can't make bureaucrats less selfish. But you can **remove their ability to be selfish**.
 
 ### Traditional System
+
 ```
 Patient → Doctor → FDA Reviewer → (Reviewer's selfish calculation) → Delay
 ```
 
 ### dFDA System
+
 ```
 Patient → Doctor → Trial → Data → Algorithm → Result
 ```
@@ -194,6 +212,7 @@ Patient → Doctor → Trial → Data → Algorithm → Result
 No humans in the approval chain = No human selfishness
 
 ### [Wishocracy](../solution/wishocracy.qmd)
+
 ```
 People → Budget Preferences → Smart Contract → Automatic Allocation
 ```
@@ -239,6 +258,7 @@ We **want** pharma to be selfish.
 ## Why This Is Liberating
 
 You don't need to:
+
 - Find virtuous leaders
 - Hope politicians care
 - Wait for bureaucrats to change
@@ -253,6 +273,7 @@ Everyone is selfish. That's not the problem.
 **The problem is systems that reward selfishness that kills people.**
 
 The solution is systems that reward selfishness that cures disease:
+
 - VICTORY Bonds: Greed funds the cure
 - Patient subsidies: Selfishness generates data
 - Pharma payments: Profit motive finds cures

@@ -1,7 +1,9 @@
 # Accuracy Audit Framework for "The Complete Idiot's Guide to Ending War and Disease"
 
 ## Purpose
+
 Systematically identify and correct statements that are:
+
 - Factually inaccurate
 - Unfairly accusatory
 - Misleadingly simplified
@@ -9,6 +11,7 @@ Systematically identify and correct statements that are:
 - Making claims without evidence
 
 While preserving:
+
 - Dark humor that targets systems, not people
 - Urgency about the problem
 - Clear critique of broken incentives
@@ -18,60 +21,70 @@ While preserving:
 ## Red Flag Patterns to Search For
 
 ### 1. False Attribution Patterns
+
 **Search terms**: "demands", "forces", "makes us", "requires", "insists"
 **Problem**: Implies intentional malice rather than systemic outcomes
 **Example**: "NIH demands $41,000/patient"
 **Fix**: "NIH-funded trials average $41,000/patient due to regulatory requirements"
 
 ### 2. Conspiracy Language
+
 **Search terms**: "deliberately", "intentionally", "purposely", "scheme", "plot", "conspiracy"
 **Problem**: Suggests coordinated malice rather than emergent dysfunction
 **Example**: "FDA deliberately blocks cures"
 **Fix**: "FDA's risk-averse approval process delays treatments by 17 years"
 
 ### 3. Absolute Statements
+
 **Search terms**: "all", "every", "never", "always", "zero", "100%", "nobody", "everyone"
 **Problem**: Rarely accurate, easily disproven
 **Example**: "Every regulator works for who they regulate"
 **Fix**: "Regulatory capture affects many agencies through the revolving door"
 
 ### 4. Character Attacks
+
 **Search terms**: "idiots", "morons", "evil", "corrupt", "stupid", "incompetent"
 **Problem**: Ad hominem attacks weaken arguments
 **Example**: "200 idiotic bureaucrats"
 **Fix**: "200-person committees making decisions about 10,000 diseases"
 
 ### 5. Oversimplification
+
 **Search terms**: "just", "simply", "only", "merely"
 **Problem**: Complex problems rarely have simple villains
 **Example**: "NIH just wants grant money"
 **Fix**: "NIH's grant system incentivizes publications over patient outcomes"
 
 ### 6. False Causation
+
 **Search terms**: "causes", "makes", "forces", "results in", "leads to"
 **Problem**: Correlation isn't causation
 **Example**: "FDA causes millions of deaths"
 **Fix**: "FDA delays contribute to preventable deaths through drug lag"
 
 ### 7. Unfair Comparisons
+
 **Search terms**: "while", "but", "instead of", "rather than"
 **Problem**: Comparing unrelated things or ignoring context
 **Example**: "NIH gets $48B while achieving nothing"
 **Fix**: "NIH's $48B hasn't translated to disease cures despite important basic research"
 
 ### 8. Misleading Statistics
+
 **Search terms**: Numbers without context, percentages, "times more"
 **Problem**: Stats can mislead without proper context
 **Example**: "Defense contractors get $2.7T"
 **Fix**: "Military spending totals $2.7T, with contractors receiving approximately $400B"
 
 ### 9. Emotional Manipulation
+
 **Search terms**: "murder", "kill", "genocide", "holocaust" (when not literally true)
 **Problem**: Hyperbole undermines credibility
 **Example**: "The FDA murders patients"
 **Fix**: "FDA delays cost lives"
 
 ### 10. Agency Confusion
+
 **Search terms**: "NIH", "FDA", "CDC", "WHO", "Congress"
 **Problem**: Attributing actions to wrong agency
 **Example**: "NIH's $41,000 trial costs"
@@ -80,6 +93,7 @@ While preserving:
 ## Systematic Audit Process
 
 ### Step 1: Automated Pattern Search
+
 Run grep searches for each red flag pattern across all .qmd files:
 
 ```bash
@@ -90,6 +104,7 @@ grep -r "\ball\b\|\bevery\b\|\bnever\b\|\balways\b" brain/book/*.qmd
 ```
 
 ### Step 2: Context Review Protocol
+
 For each flagged statement:
 
 1. **Check factual accuracy**
@@ -113,26 +128,33 @@ For each flagged statement:
 ### Step 3: Rewriting Guidelines
 
 #### BEFORE: Attack on people
+
 "NIH bureaucrats waste $48B on useless research"
 
 #### AFTER: Attack on system
+
 "The NIH's $48B gets trapped in a grant system that rewards publications over patient outcomes"
 
 #### BEFORE: Conspiracy theory
+
 "FDA deliberately keeps people sick to profit pharma"
 
 #### AFTER: Incentive analysis
+
 "FDA's risk-averse culture and pharma's profit model create delays that benefit companies at patient expense"
 
 #### BEFORE: Oversimplification
+
 "Just cut military spending and cure disease"
 
 #### AFTER: Nuanced but clear
+
 "Redirecting 1% of military spending could fund trials proven 82X more efficient by Oxford"
 
 ### Step 4: Fact Verification Checklist
 
 For every statistical claim, verify:
+
 - [ ] Source exists and is cited
 - [ ] Number is current (not outdated)
 - [ ] Context is provided
@@ -142,21 +164,25 @@ For every statistical claim, verify:
 ### Step 5: Tone Calibration
 
 #### KEEP: System critique with dark humor
+
 - "The system treats your cancer like a subscription service"
 - "We've turned dying into a profit center"
 - "Military contractors never met a problem they couldn't make explode"
 
 #### REMOVE: Personal attacks
+
 - "NIH scientists are failed researchers"
 - "FDA reviewers are pharma shills"
 - "Politicians are sociopaths"
 
 #### KEEP: Accurate urgency
+
 - "150,000 die daily from preventable causes"
 - "Every day of delay costs 410 lives"
 - "Your cancer cells are multiplying right now"
 
 #### REMOVE: False urgency
+
 - "FDA is murdering your family"
 - "NIH wants you dead"
 - "Big Pharma is committing genocide"
@@ -164,22 +190,26 @@ For every statistical claim, verify:
 ## Implementation Plan
 
 ### Phase 1: Pattern Detection (Week 1)
+
 1. Run all grep searches
 2. Create spreadsheet of flagged statements
 3. Categorize by severity (misleading vs wrong vs unfair)
 
 ### Phase 2: Fact Checking (Week 2)
+
 1. Verify every statistic
 2. Check all attributions
 3. Confirm causation claims
 4. Update references.qmd as needed
 
 ### Phase 3: Rewriting (Week 3)
+
 1. Fix high-priority issues first (factually wrong)
 2. Fix medium-priority (misleading/unfair)
 3. Fix low-priority (tone issues)
 
 ### Phase 4: Consistency Check (Week 4)
+
 1. Ensure revisions maintain consistent voice
 2. Verify dark humor remains intact
 3. Check that urgency isn't lost
@@ -188,6 +218,7 @@ For every statistical claim, verify:
 ## Quality Metrics
 
 Track improvements:
+
 - Factual errors corrected: ___
 - Unfair accusations removed: ___
 - Oversimplifications nuanced: ___
@@ -205,24 +236,28 @@ Track improvements:
 ## Common Corrections Needed
 
 ### NIH Corrections
+
 - NOT: "NIH demands $41,000"
 - YES: "The current system results in $41,000/patient costs"
 - NOT: "NIH wastes money"
 - YES: "NIH's grant system misallocates resources"
 
 ### FDA Corrections
+
 - NOT: "FDA kills people"
 - YES: "FDA delays contribute to preventable deaths"
 - NOT: "FDA blocks cures"
 - YES: "FDA's 17-year approval timeline delays access to treatments"
 
 ### Military Corrections
+
 - NOT: "Defense contractors steal $2.7T"
 - YES: "Military spending totals $2.7T annually"
 - NOT: "Generals want war"
 - YES: "Military-industrial incentives favor conflict"
 
 ### Pharma Corrections
+
 - NOT: "Pharma wants you sick"
 - YES: "Pharma profits from treatment, not cures"
 - NOT: "Drug companies are evil"
@@ -231,6 +266,7 @@ Track improvements:
 ## Final Review Checklist
 
 Before marking any section complete:
+
 - [ ] All numbers verified and cited
 - [ ] No personal attacks remain
 - [ ] Agencies correctly identified

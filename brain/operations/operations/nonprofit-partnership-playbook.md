@@ -1,10 +1,10 @@
 ---
-title: "Playbook: Non-Profit Partnership"
-description: "The strategic playbook for building a coalition of non-profit partners to help ratify The 1% Treaty."
+title: '"Playbook: Non-Profit Partnership"'
+description: The strategic playbook for building a coalition of non-profit partners to help ratify The 1% Treaty.
 published: true
-date: "2025-08-22T00:00:00.000Z"
+date: '2025-08-22T00:00:00.000Z'
 tags: [operations, playbook, nonprofits, coalition, strategy]
-dateCreated: "2025-08-22T00:00:00.000Z"
+dateCreated: '2025-08-22T00:00:00.000Z'
 ---
 
 # Playbook: Non-Profit Partnership
@@ -59,4 +59,3 @@ Treat the partnership as a formal project with clear ownership and accountabilit
 - **Maintain a Professional Frame:** Consistently reinforce that this is a professional collaboration between strategic partners, not an informal volunteer effort. This respects everyone's time and ensures a high-quality outcome.
 
 ---
-

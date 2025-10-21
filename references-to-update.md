@@ -2,7 +2,8 @@
 
 This file contains 400 references that need URLs added.
 
-## Instructions:
+## Instructions
+
 1. For each reference below, add the URL after "NEW URL:"
 2. If you can't find a URL, add a note explaining why
 3. Once complete, run the integration script to merge these back into references.qmd
@@ -275,7 +276,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 20. Market capitalization of Apple Inc.
+## 20. Market capitalization of Apple Inc
 
 **ID:** `apple-inc-market-cap`
 
@@ -317,7 +318,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 23. Poll on belief in astrology in the U.S.
+## 23. Poll on belief in astrology in the U.S
 
 **ID:** `astrology-belief-poll`
 
@@ -3117,7 +3118,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 223. Lobbyist statistics for Washington D.C.
+## 223. Lobbyist statistics for Washington D.C
 
 **ID:** `lobbyist-statistics-dc`
 
@@ -5287,7 +5288,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 378. Number of registered or eligible voters in the U.S.
+## 378. Number of registered or eligible voters in the U.S
 
 **ID:** `us-voter-population`
 
@@ -5608,4 +5609,3 @@ This file contains 400 references that need URLs added.
 **NEW URL:** 
 
 ---
-
