@@ -10,17 +10,16 @@ function fixMarkdownSpacing(content: string): string {
 
   // Rule 1: Ensure blank line after bold text at end of line
   // Matches: **Bold text**\n (not followed by blank line)
-  // Replaces with: **Bold text**\n\n
+  // Skip if followed by list, heading, code block
   result = result.replace(
-    /^(\*\*[^*\n]+\*\*)\n(?!\n)/gm,
+    /^(\*\*[^*]+\*\*)\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```)/gm,
     '$1\n\n'
   );
 
-  // Rule 2: Ensure blank line after quoted text at end of line
-  // Matches: "Quoted text"\n (not followed by blank line)
-  // Replaces with: "Quoted text"\n\n
+  // Rule 2: Ensure blank line after lines ending with colon
+  // Skip frontmatter and other special cases
   result = result.replace(
-    /^("[^"\n]+")\n(?!\n)/gm,
+    /^([^-\n][^:\n]*:)\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```|  )(?!---)/gm,
     '$1\n\n'
   );
 

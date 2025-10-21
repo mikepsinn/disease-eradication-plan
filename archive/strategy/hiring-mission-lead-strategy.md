@@ -61,6 +61,7 @@ This role requires a targeted, outbound search for proven executors.
 - **Incentive:** A commanding equity stake in the legal entity to be formed.
 
 **The Mandate: The 3.5% Offensive**
+
 Upon accepting, the Commander's sole focus is to build the systems required to achieve the following success conditions, unlocking the next phase of funding and hiring.
 
 - **Primary Objective: Build the "AI Recruitment Engine"**
