@@ -800,22 +800,29 @@ export async function figureCheckFile(filePath: string): Promise<void> {
 async function mergeContentWithLLM(archivedContent: string, targetFilePath: string): Promise<string> {
   console.log(`Intelligently merging content into ${targetFilePath}...`);
   const targetContent = await fs.readFile(targetFilePath, 'utf-8');
+  const styleGuide = await fs.readFile('STYLE_GUIDE.md', 'utf-8');
 
   const { content: archivedBody } = matter(archivedContent);
   const { data: targetFrontmatter, content: targetBody } = matter(targetContent);
 
-  const prompt = `You are an expert editor for "The Complete Idiot's Guide to Ending War and Disease." Your task is to surgically merge the "Archived File" content into the "Existing Chapter," adopting the chapter's distinct, cynical, and humorous tone.
+  const prompt = `You are an expert editor for "The Complete Idiot's Guide to Ending War and Disease." Your task is to surgically merge the "Archived File" content into the "Existing Chapter," adopting the chapter's distinct, cynical, and humorous tone, as defined by the provided Style Guide.
 
 **CORE OBJECTIVE: The final output should read as if a single, slightly unhinged author wrote it, not like two documents stapled together.**
 
 **MERGE INSTRUCTIONS:**
 
-1.  **Prioritize the Existing Chapter's Voice:** The tone of the "Existing Chapter" is paramount. It's dark, funny, and sarcastic. **Rewrite all content from the archived file to match this voice.** Do not just copy-paste.
-2.  **Integrate, Don't Append:** Weave the data, images, and core concepts from the archived file into the existing narrative. Find the most logical places for them. If the existing chapter has a section on a topic, enhance it with the archived info. Don't just add new, disconnected sections at the end.
-3.  **Eliminate All Redundancy:** The archived file and the chapter may cover similar ground. Aggressively condense and combine them. Keep the best jokes, the clearest data, and the most impactful statements from both.
-4.  **Maintain Narrative Flow:** The final chapter must be a cohesive story. Ensure smooth transitions between integrated sections. The reader should not be able to tell where the merge happened.
-5.  **Return Only the Final, Merged Content:** Your output must be the complete, final text of the merged chapter body. Do not include frontmatter, explanations, or any text outside the chapter content itself.
+1.  **Adhere to the Style Guide:** The provided Style Guide is the ultimate authority on tone, voice, and style.
+2.  **Prioritize the Existing Chapter's Voice:** The tone of the "Existing Chapter" is paramount. It's dark, funny, and sarcastic. **Rewrite all content from the archived file to match this voice.** Do not just copy-paste.
+3.  **Integrate, Don't Append:** Weave the data, images, and core concepts from the archived file into the existing narrative. Find the most logical places for them. If the existing chapter has a section on a topic, enhance it with the archived info. Don't just add new, disconnected sections at the end.
+4.  **Eliminate All Redundancy:** The archived file and the chapter may cover similar ground. Aggressively condense and combine them. Keep the best jokes, the clearest data, and the most impactful statements from both.
+5.  **Maintain Narrative Flow:** The final chapter must be a cohesive story. Ensure smooth transitions between integrated sections. The reader should not be able to tell where the merge happened.
+6.  **Return Only the Final, Merged Content:** Your output must be the complete, final text of the merged chapter body. Do not include frontmatter, explanations, or any text outside the chapter content itself.
 
+---
+**STYLE GUIDE:**
+\`\`\`markdown
+${styleGuide}
+\`\`\`
 ---
 **Existing Chapter Content (${targetFilePath}):**
 \`\`\`markdown
