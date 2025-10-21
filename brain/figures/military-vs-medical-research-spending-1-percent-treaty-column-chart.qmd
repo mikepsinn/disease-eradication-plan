@@ -73,8 +73,8 @@ ax.text(annotation_x, annotation_y,
 # Fat arrow pointing from "War on Humanity" bar to the annotation
 arrow1_start_x = x_positions[0] + bar_width / 2 + 0.00
 arrow1_start_y = military_99_visual + (visual_stack_height / 2)
-arrow1_end_x = annotation_x - 0.3  # Adjusted to point to the right
-arrow1_end_y = annotation_y + 200
+arrow1_end_x = annotation_x - 0.35  # Adjusted to point to the right (25% shorter)
+arrow1_end_y = annotation_y + 362.5
 
 ax.annotate('',
             xy=(arrow1_end_x, arrow1_end_y),
@@ -85,8 +85,8 @@ ax.annotate('',
 # Fat arrow pointing from annotation to "War on Disease" bar
 arrow2_start_x = annotation_x
 arrow2_start_y = annotation_y - 445  # Moved arrow up by 1/3 of its length
-arrow2_end_x = x_positions[1]
-arrow2_end_y = cure_spending + 834  # Moved arrow up by 1/3 of its length
+arrow2_end_x = x_positions[1] - 0.025  # 25% shorter
+arrow2_end_y = cure_spending + 947.25  # 25% shorter
 
 ax.annotate('',
             xy=(arrow2_end_x, arrow2_end_y),

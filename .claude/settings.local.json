@@ -9,7 +9,8 @@
       "Bash(npm run lint:qmd:fix:*)",
       "Bash(tasklist)",
       "Bash(findstr node)",
-      "Bash(taskkill /F /IM node.exe)"
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(quarto render brain/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd)"
     ],
     "deny": [],
     "ask": []
