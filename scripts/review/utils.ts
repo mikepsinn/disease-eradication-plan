@@ -797,6 +797,53 @@ export async function figureCheckFile(filePath: string): Promise<void> {
   console.log(`Successfully updated figure-check metadata for ${filePath}.`);
 }
 
+async function mergeContentWithLLM(archivedContent: string, targetFilePath: string): Promise<string> {
+  console.log(`Intelligently merging content into ${targetFilePath}...`);
+  const targetContent = await fs.readFile(targetFilePath, 'utf-8');
+
+  const { content: archivedBody } = matter(archivedContent);
+  const { data: targetFrontmatter, content: targetBody } = matter(targetContent);
+
+  const prompt = `You are an expert editor for "The Complete Idiot's Guide to Ending War and Disease." Your task is to surgically merge the "Archived File" content into the "Existing Chapter," adopting the chapter's distinct, cynical, and humorous tone.
+
+**CORE OBJECTIVE: The final output should read as if a single, slightly unhinged author wrote it, not like two documents stapled together.**
+
+**MERGE INSTRUCTIONS:**
+
+1.  **Prioritize the Existing Chapter's Voice:** The tone of the "Existing Chapter" is paramount. It's dark, funny, and sarcastic. **Rewrite all content from the archived file to match this voice.** Do not just copy-paste.
+2.  **Integrate, Don't Append:** Weave the data, images, and core concepts from the archived file into the existing narrative. Find the most logical places for them. If the existing chapter has a section on a topic, enhance it with the archived info. Don't just add new, disconnected sections at the end.
+3.  **Eliminate All Redundancy:** The archived file and the chapter may cover similar ground. Aggressively condense and combine them. Keep the best jokes, the clearest data, and the most impactful statements from both.
+4.  **Maintain Narrative Flow:** The final chapter must be a cohesive story. Ensure smooth transitions between integrated sections. The reader should not be able to tell where the merge happened.
+5.  **Return Only the Final, Merged Content:** Your output must be the complete, final text of the merged chapter body. Do not include frontmatter, explanations, or any text outside the chapter content itself.
+
+---
+**Existing Chapter Content (${targetFilePath}):**
+\`\`\`markdown
+${targetBody}
+\`\`\`
+---
+**Archived File Content to Merge:**
+\`\`\`markdown
+${archivedBody}
+\`\`\`
+---
+
+Return only the final, merged markdown content.
+`;
+
+  const result = await genAI.models.generateContent({
+    model: GEMINI_MODEL_ID,
+    contents: prompt,
+  });
+
+  const mergedBody = result.text || '';
+  
+  // Re-apply the original frontmatter of the target file
+  const finalContent = matter.stringify(mergedBody, targetFrontmatter);
+
+  return finalContent;
+}
+
 export async function analyzeArchivedFile(filePath: string): Promise<void> {
   console.log(`Analyzing archived file: ${filePath}`);
   const archivedContent = await fs.readFile(filePath, 'utf-8');
@@ -820,8 +867,7 @@ You MUST respond with a JSON object with the following structure:
   "reason": "A brief explanation for your decision.",
   "targetFile": "path/to/target/chapter.qmd", // (Required for MERGE)
   "newFileName": "new-chapter-name.qmd", // (Required for CREATE)
-  "newFileContent": "The full content for the new chapter, including frontmatter.", // (Required for CREATE)
-  "updatedContent": "The full updated content for the target chapter." // (Required for MERGE)
+  "newFileContent": "The full content for the new chapter, including frontmatter." // (Required for CREATE)
 }
 \`\`\`
 
@@ -855,11 +901,12 @@ ${archivedContent}
 
   switch (response.action) {
     case 'MERGE':
-      if (!response.targetFile || !response.updatedContent) {
-        throw new Error('Invalid MERGE action: targetFile and updatedContent are required.');
+      if (!response.targetFile) {
+        throw new Error('Invalid MERGE action: targetFile is required.');
       }
       console.log(`Decision: MERGE into ${response.targetFile}. Reason: ${response.reason}`);
-      await fs.writeFile(response.targetFile, response.updatedContent, 'utf-8');
+      const finalContent = await mergeContentWithLLM(archivedContent, response.targetFile);
+      await fs.writeFile(response.targetFile, finalContent, 'utf-8');
       await fs.unlink(filePath); // Delete the archived file
       console.log(`Successfully merged content into ${response.targetFile} and deleted archived file.`);
       break;
