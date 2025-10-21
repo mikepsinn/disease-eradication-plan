@@ -1,0 +1,82 @@
+---
+title: Content and Style Standards
+description: "Content standards for the DIH knowledge base, including information architecture, quality assurance, and formatting."
+tags: [standards, contributing, content, style]
+---
+
+# Content and Style Standards
+
+This document outlines the content and style standards for the DIH knowledge base.
+
+**See also:**
+
+- [CONTRIBUTING.md](../CONTRIBUTING.md) - Overall contribution workflow and standards
+
+---
+
+For detailed standards, please refer to the specialized guides linked at the top of this document. This section provides a high-level overview.
+
+## 1. Information Architecture: Chapters, Sections, and The Appendix
+
+This repo is structured like a book. Root files are "chapters." Subdirectories are "sections" with the details. `reference/` is the appendix.
+
+**IMPORTANT:** The [Book Outline in README.md](../README.md#book-outline) is the authoritative writing checklist. Before adding new topics or changing the book architecture, update the Book Outline first. This prevents topic creep and maintains narrative flow. Remember: the outline is comprehensive for writing purposes - the final book will consolidate many items into cohesive chapters.
+
+**Note:** Don't edit `brain/book/index.md` directly - it's auto-generated from frontmatter.
+
+## 2. Quality Assurance and Actionable TODOs
+
+To ensure all unfinished work is tracked and easily searchable, please add a `TODO` comment directly in the file at the location where work is needed. This allows any contributor to find actionable tasks by simply searching the entire project for "TODO".
+
+- **Where:** Put `TODO`s where the problem is. Document-wide TODOs go at the bottom of the file. Never at the top.
+- **Format:** Use comments so we can find them all later:
+  - `<!-- TODO: Add citation for this claim. -->`
+  - `<!-- TODO: Rewrite this section. -->`
+  - `<!-- TODO: Add a chart here. -->`
+  - `<!-- TODO: Expand this section. -->`
+
+**Internal Link Integrity:** Before submitting, you **MUST FIX** any broken links in your changed files. Scan for all internal relative links (e.g., `[text](./path/file.md)`). If a link points to a deleted file, either remove the link or repoint it to a relevant alternative. This is a critical pre-submission check, not a task to be marked with a `TODO`.
+
+## 3. Frontmatter Requirements
+
+Every markdown file needs this header. These fields are essential for our automated review and maintenance scripts.
+
+```yaml
+---
+title: "A Clear and Descriptive Title"
+description: "One sentence summary (max 140 chars)"
+published: true # false for drafts
+date: "YYYY-MM-DDTHH:MM:SS.sssZ" # Last modified date, managed by script
+tags: [keyword1, keyword2]
+lastFormatted: "YYYY-MM-DD"
+lastStyleCheck: "YYYY-MM-DD"
+lastFactCheck: "YYYY-MM-DD"
+lastLinkCheck: "YYYY-MM-DD"
+lastFigureCheck: "YYYY-MM-DD"
+---
+```
+
+## 4. Sourcing and Citation Standard (CRITICAL)
+
+**Every claim needs a source.** All source quotes go in `brain/book/references.qmd`.
+
+1. Check if your source is already there
+2. If yes, link to it: `[your claim](./references.qmd#anchor-id)`
+3. If no, add it using the format you see in that file
+
+Example in-text: `[The world spends 40x more on war](./references.qmd#sipri-2024) than on [curing disease](./references.qmd#med-research-funding).`
+
+## 5. Naming and Linking
+
+- **Filenames:** Use kebab-case and be descriptive (e.g., `dih-treasury-cash-flow-model.md`).
+- **Internal Links:** Use standard, relative Markdown links (`./`, `../`). Do not use backticks or bare paths for links.
+- **Code vs. Links:** Use backticks only for code, commands, or literals—not for navigational references.
+
+## 6. Chapter Independence and Reusability
+
+**IMPORTANT: QMD files must be reusable across different contexts.**
+
+- **No "Next Chapter" sections:** Don't add "Next Chapter", "Turn the page", or similar navigation at the end of chapters
+- **No hardcoded navigation:** Chapters should be self-contained without assuming a specific reading order
+- **No context-specific references:** Avoid "as we saw in the previous chapter" or similar cross-references
+- **Why:** These QMD files are reused in the website, presentations, and different book versions with different orderings
