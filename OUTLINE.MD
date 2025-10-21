@@ -3,6 +3,7 @@
 *Or: How to Trick Humanity Into Not Killing Itself*
 
 **[VIDEO: Charlie Chaplin's "The Great Dictator" Speech - The Choice Between Machinery and Humanity]**
+
 *"We think too much and feel too little. More than machinery, we need humanity. More than cleverness, we need kindness and gentleness."*
 
 ## Part I: The Problem
@@ -952,6 +953,7 @@ This is the core paradox. Here are the most likely reasons:
     - It's possible similar initiatives are underway, but they haven't been made public.
 
 **The Falsification Test:**
+
 The only way to know for sure is to test the thesis cheaply and publicly.
 
 1.  **Build Referendum App ($15k):** Can you get 10,000 votes in 30 days?

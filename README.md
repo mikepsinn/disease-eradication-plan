@@ -132,6 +132,7 @@ The book automatically deploys to GitHub Pages when you push to the `master` bra
 The site will be available at: `https://mikepsinn.github.io/decentralized-institutes-of-health/`
 
 **Manual deployment:**
+
 You can also trigger a deployment manually:
 
 1. Go to the "Actions" tab on GitHub

@@ -73,6 +73,7 @@ Include charts in any `.qmd` file using Quarto's include directive:
 
 ```python
 # This code MUST be at the end of every chart file:
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'same-name-as-qmd-file.png',
@@ -304,6 +305,7 @@ Mobile devices are held vertically - column charts use this natural orientation 
 - **Extra annotations, callouts, arrows** - Remove unless critical for understanding
 
 **The Tufte Test:**
+
 Ask: "If I remove this element, does the chart lose essential information?" If no, remove it.
 
 ## Newspaper/Typewriter Aesthetic (for Images/Graphics)

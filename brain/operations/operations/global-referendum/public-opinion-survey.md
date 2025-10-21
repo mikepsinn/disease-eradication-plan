@@ -47,9 +47,11 @@ This "FDA.gov v2" platform would work like this:
 This new model is made possible by dramatic cost reductions. Evidence from successful, large-scale studies like the UK's [RECOVERY trial](../../reference/recovery-trial-case-study.md) shows this approach can cut per-patient trial costs by over **95%** (from ~$43,000 down to ~$500), enabling more research for more people.
 
 **Q7: Support for the Principles**
+
 Based on these goals, to what extent do you support or oppose creating a new system based on these principles?
 
 **Q8: Personal Participation**
+
 If you or a loved one had a serious condition, and a decentralized trial for a promising new treatment was available through a platform like the one described, how likely would you be to participate?
 
 - Very Likely
@@ -97,6 +99,7 @@ Now, allocate $100 for each pair of major global challenges.
 - Protecting Biodiversity & Ecosystems
 
 **Q9: Support for A System That Aligned Public Spending With Your Values**
+
 Would you support the adoption of a system such as Wishocracy that allowed your values to influence the allocation of public resources in accordance with your priorities?
 
 - Strongly Support
@@ -124,9 +127,11 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 **Demographics**
 
 **What is your country of residence?**
+
 <input type="text" size="20">
 
 **What is your Postal / Zip Code?**
+
 <input type="text" size="10">
 
 **What is your age range?**

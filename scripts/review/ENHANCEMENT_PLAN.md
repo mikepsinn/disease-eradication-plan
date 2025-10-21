@@ -13,6 +13,7 @@ All scripts that *report* issues without auto-fixing them will be modified to in
 - `fact-check-file.ts` / `fact-check-all-files.ts`
 
 **TODO Comment Structure:**
+
 The comments will follow a consistent format: `<!-- TODO: [CHECK_TYPE] - [ISSUE_DESCRIPTION] -->`
 
 **Examples:**
@@ -43,6 +44,7 @@ Claim: "The proven inefficiency: FDA trials are 82X more expensive than necessar
 Suggested Source: https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs
 
 Suggested Snippet for references.qmd:
+
 <a id="unique-anchor-id-goes-here"></a>
 
 - **RECOVERY Trial vs. FDA Trial Costs**

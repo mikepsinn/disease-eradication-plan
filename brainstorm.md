@@ -663,6 +663,7 @@ If it works: Raise the $10M Series A
 ### Global Disease Burden
 
 **Global chronic disease burden (2+ billion people):**
+
 > "Specific conditions affecting over a billion people: Dental caries affected 1.47 billion people, hearing loss affected 1.2 billion, migraine affected 959 million... 70% (40 million) of global deaths in 2015 were due to non-communicable diseases."
 >
 > Source: Global Burden of Disease Study 2015
@@ -685,6 +686,7 @@ Sources:
 **Total conservative estimate: 2+ billion people living with one or more chronic conditions globally.**
 
 **Noncommunicable diseases (NCDs) deaths:**
+
 > "Noncommunicable diseases (NCDs) killed at least 43 million people in 2021, equivalent to 75% of non-pandemic-related deaths globally. Cardiovascular diseases account for most NCD deaths, or at least 19 million deaths in 2021, followed by cancers (10 million), chronic respiratory diseases (4 million), and diabetes (over 2 million including kidney disease deaths caused by diabetes)."
 >
 > Source: WHO Fact Sheet on Noncommunicable Diseases
@@ -693,6 +695,7 @@ Sources:
 ### FDA Drug Approval Timeline
 
 **Average timeline from Phase 1 to approval:**
+
 > "The clinical development time of a typical innovative drug is 9.1 years (95% confidence interval = 8.2–10.0 years)... The full research, development and approval process can last from 12 to 15 years."
 >
 > Source: PMC - "Clinical development times for innovative drugs" (2010-2020 data)
@@ -704,6 +707,7 @@ Sources:
 ### QALY Valuation Standards
 
 **$150,000 per QALY threshold:**
+
 > "Typical value benchmarks in the United States have historically ranged from approximately $50,000 to, more recently, as high as approximately $150,000 per QALY... In the US, a widely adopted threshold advocated by the ICER organization and others is to consider any technology under $150,000/QALY cost-effective."
 >
 > Source: ICER (Institute for Clinical and Economic Review)
@@ -715,6 +719,7 @@ Sources:
 ### Global Economic Data
 
 **Global GDP $100+ trillion:**
+
 > "World's GDP is $106,172,000,000,000 (nominal, 2023) according to World Bank data from December 2024... The Gross Domestic Product (GDP) in World was worth 111326.37 billion US dollars in 2024."
 >
 > Source: World Bank & StatisticsTimes.com
@@ -722,6 +727,7 @@ Sources:
 > <https://data.worldbank.org/indicator/NY.GDP.MKTP.CD>
 
 **Global healthcare spending $9 trillion:**
+
 > "Global health spending reached US $9 trillion (approximately 11% of global GDP) in 2020, the first year dominated by the COVID-19 pandemic. In 2021, global spending on health reached a new high of US$ 9.8 trillion or 10.3% of global gross domestic product (GDP). Global spending on health in 2022 was US$ 9.8 trillion, or 9.9% of global GDP."
 >
 > Source: WHO Global Health Expenditure Database
@@ -729,6 +735,7 @@ Sources:
 > <https://apps.who.int/nha/database>
 
 **Global military spending $2.7 trillion:**
+
 > "World military expenditure rose to $2718 billion in 2024, meaning that spending has increased every year for a full decade, going up by 37 per cent between 2015 and 2024. The 9.4 per cent increase in 2024 was the steepest year-on-year rise since at least 1988."
 >
 > Source: SIPRI (Stockholm International Peace Research Institute), "Trends in World Military Expenditure, 2024"
@@ -737,6 +744,7 @@ Sources:
 ### Economic Costs of Disease
 
 **Cancer economic burden ~$1 trillion annually:**
+
 > "The worldwide annual economic cost of cancer in 2010 was estimated at $1.16 trillion (USD). Further estimates, which add the longer-term costs to patients and their families, bring the annual global cost of cancer to $2.5 trillion... The global economic cost of cancers from 2020 to 2050 was estimated to be $25.2 trillion (in international dollars at constant 2017 prices)."
 >
 > Source: JAMA Oncology, "Estimates and Projections of the Global Economic Cost of 29 Cancers in 204 Countries and Territories From 2020 to 2050"
@@ -746,6 +754,7 @@ Sources:
 ### Effective Altruism Interventions
 
 **Malaria nets cost-effectiveness:**
+
 > "GiveWell estimates (as of December 2023) that it costs approximately $3,000 to $8,000 to avert a death in locations where they fund AMF campaigns. GiveWell estimated in 2023 that AMF's bed net program costs on average US$5,500 per life saved."
 >
 > Source: GiveWell, Against Malaria Foundation evaluation
@@ -757,6 +766,7 @@ Sources:
 ### Oxford RECOVERY Trial
 
 **82X cost reduction:**
+
 > "The estimated cost per patient was roughly $500 (Manhattan Institute), compared to typical clinical trial costs... the median cost of a clinical trial for a new therapeutic is around $41,000 per patient. This represents approximately an 82-fold cost reduction ($41,000 ÷ $500 = 82)... The RECOVERY effort, Landray said, cost under $10 million, in contrast to pharmaceutical companies that spend hundreds of millions or even billions of dollars to conduct a single clinical trial."
 >
 > Source: University of Oxford, RECOVERY Trial publications
@@ -765,6 +775,7 @@ Sources:
 > <https://pmc.ncbi.nlm.nih.gov/articles/PMC8285150/>
 
 **Impact:**
+
 > "Over 47,000 participants. Four effective COVID-19 treatments, with dexamethasone estimated to have saved a million lives in the first nine months following the announcement."
 >
 > Source: University of Oxford, "The RECOVERY Trial - two years on"
@@ -773,6 +784,7 @@ Sources:
 ### Defense Industry
 
 **Top 100 defense contractors revenue:**
+
 > "The 100 largest military contractors globally reported nearly $632 billion in combined arms sale revenue in 2023, about $25.3 billion more than in 2022. Each of these 100 companies sold more than $1 billion in arms and military services in 2023."
 >
 > Source: Defense News Top 100, SIPRI Arms Industry Database
@@ -782,6 +794,7 @@ Sources:
 ### International Treaties
 
 **Ottawa Landmine Treaty:**
+
 > "The Convention gained 122 country signatures when it opened for signing on 3 December 1997 in Ottawa, Canada. As of November 2024, 164 states are party to the treaty, representing more than 80 percent of the world's states... Some key current and past producers and users of landmines, including the United States, China, India, Pakistan, and Russia, have not signed the treaty."
 >
 > Source: Arms Control Association, Ottawa Treaty
@@ -792,6 +805,7 @@ Sources:
 ### Open Borders Economic Analysis
 
 **$78 trillion economic gains estimate:**
+
 > "Michael Clemens, an economist at the Center for Global Development, has argued that 'the tightly binding constraints on emigration from poor countries' may be 'the greatest single class of distortions in the global economy,' with gains from eliminating migration barriers amounting to 'large fractions of world GDP—one or two orders of magnitude larger than the gains from dropping all remaining restrictions on international flows of goods and capital.'... A literature summary by Clemens cited estimates that free global labor mobility would increase gross world product (GWP) by somewhere in the range of 67-147%."
 >
 > Source: Michael Clemens, "Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?" Journal of Economic Perspectives (2011)

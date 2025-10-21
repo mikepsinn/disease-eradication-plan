@@ -430,6 +430,7 @@ We're launching with $27B/year from a 1% military spending treaty.
 Your research on [TOPIC] is exactly what we'd fund.
 
 Interested in:
+
 1. Getting funded through dFDA?
 2. Advising on our trial protocols?
 3. Both?
@@ -463,6 +464,7 @@ I've built the financial model, the governance structure, and the
 global referendum platform to make it happen.
 
 Would you be interested in:
+
 1. Exclusive first coverage?
 2. Interview for [YOUR PUBLICATION]?
 3. Co-authoring the analysis?
@@ -565,3 +567,4 @@ One politician = 10,000 randos
 5. **Week 4:** Get first "yes"
 
 **The war doesn't wait. Start recruiting now.**
+

@@ -74,12 +74,14 @@ Before the project, we must measure the current performance of these KPIs to cre
 Here, we connect the KPIs to financial outcomes. The primary near-term value comes from securing funding, while the largest long-term value comes from trial efficiencies.
 
 **A. Value of Increased Funding & Public Support**
+
 A strong narrative directly impacts the ability to raise capital and demonstrate public backing to legislators.
 
 - **Funding:** If a $2M grant is secured, and the improved messaging framework was deemed responsible for strengthening the proposal (e.g., a 25% contribution), the attributable value is $500,000.
 - **Public Support as a De-risking Tool:** Demonstrating widespread public support via a referendum can be presented to funders as a significant de-risking of the project's political and regulatory future, potentially increasing the project's valuation or the likelihood of investment.
 
 **B. Value of Increased Trial Participation (Future Value)**
+
 This is the most significant long-term financial benefit, which our current efforts enable.
 
 - **Cost Savings:** The average Cost Per Acquisition (CPA) for a clinical trial participant can range from **$500 to over $7,500**. A modest 15-20% reduction in CPA through better messaging translates into substantial savings.

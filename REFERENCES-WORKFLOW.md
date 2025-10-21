@@ -48,9 +48,11 @@ Example:
 **ID:** `21st-century-cures-act-2016`
 
 **Quote:**
+
 > 21st Century Cures Act (2016)
 
 **Current Source:**
+
 > <!-- TODO: Add source URL -->
 
 **NEW URL:** https://www.congress.gov/bill/114th-congress/house-bill/34

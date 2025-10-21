@@ -12,6 +12,7 @@ The existing `format-` and `style-` scripts provide an excellent foundation for 
 - `fact-check-file.ts`
 
 **Purpose:**
+
 To enforce the "Sourcing & Credibility" standard from `CONTRIBUTING.md` by ensuring every claim is cited.
 
 **Core Functionality:**
@@ -29,6 +30,7 @@ To enforce the "Sourcing & Credibility" standard from `CONTRIBUTING.md` by ensur
 - `link-check-file.ts`
 
 **Purpose:**
+
 To enforce the "Technical & Structural Integrity" and "Sourcing and Citation Standard" from `CONTRIBUTING.md` by ensuring all internal links are valid. While `scripts/validate-links.ts` likely performs a similar function, integrating it into the `review` workflow with the stale-file check is crucial.
 
 **Core Functionality:**
@@ -48,6 +50,7 @@ To enforce the "Technical & Structural Integrity" and "Sourcing and Citation Sta
 - `figure-check-file.ts`
 
 **Purpose:**
+
 To enforce the visual standards defined in `DESIGN_GUIDE.md`.
 
 **Core Functionality:**

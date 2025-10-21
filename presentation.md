@@ -286,19 +286,25 @@ Thank you."
 ## Q&A Prep Notes
 
 **Q: "Isn't this just socialism?"**
+
 A: "No, it's capitalism pointed at not dying. Free markets, but for cures instead of corpses. The military-industrial complex model, just backwards."
 
 **Q: "How do we know this will work?"**
+
 A: "Oxford RECOVERY trial already proved it. $500 per patient, saved a million lives. FDA trials: $41,000 per patient, saved paperwork."
 
 **Q: "What if countries cheat on the treaty?"**
+
 A: "Blockchain receipts. Satellite verification. Plus everyone with power has VICTORY bonds - cheating crashes their wealth."
 
 **Q: "This seems too simple."**
+
 A: "'Wash your hands' seemed too simple. 'Don't dump sewage in drinking water' seemed too simple. 'Stop spending all our money on killing each other' - same level of obvious."
 
 **Q: "Are you calling us idiots?"**
+
 A: "I'm calling us the species that spends 40 times more on killing than healing. You can pick your own adjective for that."
 
 **Q: "Won't defense contractors fight this?"**
+
 A: "Why? We're offering them 40% returns forever. They're not ideological - they just like money. We're not taking their money away, we're making them richer through VICTORY bonds. It's hostile takeover via superior returns."

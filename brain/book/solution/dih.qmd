@@ -26,15 +26,19 @@ Bureaucracy is a disease. The [DIH](../solution/dih.qmd) is the cure.
 You don't fix the NIH; you replace it. The Decentralized Institutes of Health (DIH) is what you build when you want to cure diseases instead of writing papers about them. You build it on four principles that invert the logic of bureaucracy.
 
 **1. Make Patient Choice Sovereign.**
+
 You stop letting committees guess what might work and instead route funding through the people who are actually sick. The NIH has 200 bureaucrats in a room trying to predict the future; the DIH has millions of patients and their doctors making choices about their own lives. The treasury gives subsidies directly to patients, who fund trials with their feet. The trials that attract patients get money. The ones that don't, die. You have just replaced a grant-writing contest with a market driven by patient need.
 
 **2. Pay for Cures, Not Paperwork.**
+
 You eliminate grant applications entirely. Researchers get paid in two ways: by patients who join their trials, and by massive [bounties](../solution/bounties.qmd) for solving clearly defined problems (e.g., "$1B to reverse aging by 10 years, provided it doesn't turn people into vampires"). You align their incentives with patient outcomes, not bureaucratic process. They get rich by curing diseases, not by writing fiction.
 
 **3. Run It With Code, Not Committees.**
+
 You build the DIH on transparent, auditable smart contracts because code can't take bribes. You delete the CEO position entirely—nobody to corrupt means nobody gets corrupted. Every rule is code. Every dollar is tracked on a public ledger like a financial colonoscopy for the world to watch. This isn't about trusting people to be good (they won't be); it's about designing a system where being bad is mathematically impossible. You replace bureaucrats with software, and the primary job of any remaining administrator is to code themselves out of a job—like building your own executioner.
 
 **4. Make All Knowledge Public.**
+
 You mandate that [every trial, every result (positive or negative), and every dataset is published](../references.qmd#publication-bias-clinical-trials) for the world to see. This stops scientists from wasting decades on redundant research and allows knowledge to compound. AI agents can then scan the global data stream to connect researchers, find patterns, and accelerate discovery for everyone.
 
 ---
@@ -66,6 +70,7 @@ This is how you fund not just thousands of individual trials, but the entire eco
 You don't just need a plan; you need a vehicle. The DIH is a hybrid system designed to use the tools of capitalism to build a post-capitalist health economy. It unfolds in three phases.
 
 **Phase 0: The Seed**
+
 Before you can raise a billion dollars, you need gas money. You start by establishing a **U.S.-based 501(c)(3) non-profit**. This is the legal entity that can accept initial, tax-deductible seed grants from foundations. Its mission is purely charitable: education, research, and building the public technology platforms.
 
 This seed funding is used to pay for the legal and operational setup of two additional, separate entities:
@@ -76,6 +81,7 @@ This seed funding is used to pay for the legal and operational setup of two addi
 Using 501(c)(3) funds to create these entities is perfectly legal and completely necessary. The non-profit's mission is to end disease. Since it can't legally bribe politicians itself (that's what the 501(c)(4) is for), and can't sell bonds to defense contractors (that's the for-profit's job), it births these specialized vehicles like a spider laying eggs that will eat the healthcare system from within.
 
 **Phase 1: The Three-Pronged Attack**
+
 With the legal groundwork laid, you launch a coordinated campaign across the three entities, each with a specific role:
 
 1.  **The 501(c)(3) Public Charity:** Focuses on education, building a coalition of non-profit partners, and developing the open-source dFDA and Wishocracy platforms as a public good. It is funded by tax-deductible grants.
@@ -83,9 +89,11 @@ With the legal groundwork laid, you launch a coordinated campaign across the thr
 3.  **The For-Profit Company:** Raises the **$1 billion war chest** by selling [VICTORY Bonds](../appendix/victory-bonds.qmd) to investors. This capital is then used to grant funds to the (c)(3) and (c)(4) to scale their operations into a global movement.
 
 **Phase 2: The Swiss Bank Account (But Legal)**
+
 Once the treaty is signed, the $27 billion in annual funding flows into a **Swiss foundation**—because if you're going to store humanity's medical future somewhere, might as well use the country that stayed neutral through two world wars and makes excellent chocolate. This treasury is completely separated from the initial entities (lawyers call this a "firewall," normal people call it "keeping the money where the lobbyists can't touch it"). It pays the investors their blood money and dumps the rest into actually curing diseases.
 
 **The Full Value Flow**
+
 Here's how the entire system is designed to be self-sustaining and capture-proof:
 
 ```mermaid

@@ -8,6 +8,12 @@ import { globSync } from 'glob';
 function fixMarkdownSpacing(content: string): string {
   let result = content;
 
+  // Normalize line endings to \n for processing
+  const hasWindowsLineEndings = content.includes('\r\n');
+  if (hasWindowsLineEndings) {
+    result = result.replace(/\r\n/g, '\n');
+  }
+
   // Rule 1: Ensure blank line after bold text at end of line
   // Matches: **Bold text**\n (not followed by blank line)
   // Skip if followed by list, heading, code block
@@ -22,6 +28,11 @@ function fixMarkdownSpacing(content: string): string {
     /^([^-\n][^:\n]*:)\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```|  )(?!---)/gm,
     '$1\n\n'
   );
+
+  // Restore Windows line endings if original had them
+  if (hasWindowsLineEndings) {
+    result = result.replace(/\n/g, '\r\n');
+  }
 
   return result;
 }

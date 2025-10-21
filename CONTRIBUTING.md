@@ -224,6 +224,7 @@ This repo is structured like a book. Root files are "chapters." Subdirectories a
 **The Golden Rule:** If a topic is an "Epic" that needs more than one file, it gets a main summary file (`epic.md`) and a corresponding directory (`epic/`) for the details. This pattern applies at all levels.
 
 **Book Chapter Structure:**
+
 Each major chapter follows the epic pattern:
 
 - **Executive Summary File:** `brain/book/problem.qmd` - Overview that links to all sections
