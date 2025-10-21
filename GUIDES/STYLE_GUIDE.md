@@ -7,8 +7,6 @@ tags: [style-guide, writing, tone, voice, contributing]
 
 # Writing Style Guide
 
-This guide defines the writing tone, voice, and style for all prose content in the project.
-
 **See also:**
 
 - [DESIGN_GUIDE.md](DESIGN_GUIDE.md) - Visual design standards for charts and diagrams
