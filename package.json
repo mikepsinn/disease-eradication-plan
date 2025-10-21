@@ -5,9 +5,6 @@
   "main": "scripts/file-organizer.js",
   "type": "module",
   "private": true,
-  "workspaces": [
-    "apps/*"
-  ],
   "dependencies": {
     "@ai-sdk/google": "^2.0.12",
     "@anthropic-ai/sdk": "^0.67.0",
@@ -50,6 +47,8 @@
     "figure-check:all": "tsx scripts/review/figure-check-all-files.ts",
     "structure-check:file": "tsx scripts/review/structure-check-file.ts",
     "structure-check:all": "tsx scripts/review/structure-check-all-files.ts",
+    "archive:file": "tsx scripts/review/archive-process-file.ts",
+    "archive:all": "tsx scripts/review/archive-process-all.ts",
     "review": "tsx scripts/review/review.ts",
     "extract-references": "tsx scripts/extract-references-without-urls.ts",
     "integrate-references": "tsx scripts/integrate-references.ts",

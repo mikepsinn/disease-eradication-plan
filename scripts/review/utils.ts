@@ -797,3 +797,94 @@ export async function figureCheckFile(filePath: string): Promise<void> {
   console.log(`Successfully updated figure-check metadata for ${filePath}.`);
 }
 
+export async function analyzeArchivedFile(filePath: string): Promise<void> {
+  console.log(`Analyzing archived file: ${filePath}`);
+  const archivedContent = await fs.readFile(filePath, 'utf-8');
+  const quartoYmlContent = await fs.readFile('_quarto.yml', 'utf-8');
+
+  const prompt = `You are an expert editor tasked with organizing a book manuscript.
+You need to decide what to do with an archived markdown file.
+Based on the book's structure from \`_quarto.yml\` and the content of the archived file, determine one of the following actions:
+
+1.  **MERGE**: The content is valuable and should be merged into an existing chapter.
+2.  **CREATE**: The content is valuable and unique enough to become a new chapter.
+3.  **DELETE**: The content is redundant, irrelevant, or low-quality and should be deleted.
+
+**RESPONSE FORMAT:**
+
+You MUST respond with a JSON object with the following structure:
+
+\`\`\`json
+{
+  "action": "MERGE" | "CREATE" | "DELETE",
+  "reason": "A brief explanation for your decision.",
+  "targetFile": "path/to/target/chapter.qmd", // (Required for MERGE)
+  "newFileName": "new-chapter-name.qmd", // (Required for CREATE)
+  "newFileContent": "The full content for the new chapter, including frontmatter.", // (Required for CREATE)
+  "updatedContent": "The full updated content for the target chapter." // (Required for MERGE)
+}
+\`\`\`
+
+---
+**Book Structure (_quarto.yml):**
+\`\`\`yaml
+${quartoYmlContent}
+\`\`\`
+---
+**Archived File Content (${filePath}):**
+\`\`\`markdown
+${archivedContent}
+\`\`\`
+`;
+
+  const result = await genAI.models.generateContent({
+    model: GEMINI_MODEL_ID,
+    contents: prompt,
+  });
+
+  let responseText = (result.text || '').trim();
+  // Clean up potential markdown code fences
+  responseText = responseText.replace(/^```json\s*/i, '').replace(/\s*```$/i, '');
+
+  const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) {
+    throw new Error(`No JSON object found in LLM response. Response text: ${responseText}`);
+  }
+
+  const response = JSON.parse(jsonMatch[0]);
+
+  switch (response.action) {
+    case 'MERGE':
+      if (!response.targetFile || !response.updatedContent) {
+        throw new Error('Invalid MERGE action: targetFile and updatedContent are required.');
+      }
+      console.log(`Decision: MERGE into ${response.targetFile}. Reason: ${response.reason}`);
+      await fs.writeFile(response.targetFile, response.updatedContent, 'utf-8');
+      await fs.unlink(filePath); // Delete the archived file
+      console.log(`Successfully merged content into ${response.targetFile} and deleted archived file.`);
+      break;
+
+    case 'CREATE':
+      if (!response.newFileName || !response.newFileContent) {
+        throw new Error('Invalid CREATE action: newFileName and newFileContent are required.');
+      }
+      const newFilePath = path.join('brain/book', response.newFileName);
+      console.log(`Decision: CREATE new file ${newFilePath}. Reason: ${response.reason}`);
+      await fs.writeFile(newFilePath, response.newFileContent, 'utf-8');
+      // Here you would also need to update _quarto.yml to include the new chapter.
+      // This is a complex operation and for now we will just create the file.
+      console.log(`TODO: Manually add ${newFilePath} to _quarto.yml`);
+      await fs.unlink(filePath); // Delete the archived file
+      console.log(`Successfully created ${newFilePath} and deleted archived file.`);
+      break;
+
+    case 'DELETE':
+      console.log(`Decision: DELETE file. Reason: ${response.reason}`);
+      await fs.unlink(filePath);
+      console.log(`Successfully deleted archived file.`);
+      break;
+
+    default:
+      throw new Error(`Unknown action: ${response.action}`);
+  }
+}
