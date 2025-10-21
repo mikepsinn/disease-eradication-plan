@@ -7,19 +7,17 @@ tags: [contributing, guidelines, standards, book, knowledge-base]
 
 # How to Contribute to the DIH Knowledge Base
 
+This document provides a central overview of the contribution process. For detailed standards, please refer to our specialized guides:
+
+- **[Writing Style Guide](./GUIDES/STYLE_GUIDE.md)**: Tone, voice, and prose style.
+- **[Design Guide](./GUIDES/DESIGN_GUIDE.md)**: Visual standards for charts and diagrams.
+- **[Technical Guide](./GUIDES/TECHNICAL_GUIDE.md)**: Development setup and technical standards.
+
 **Table of Contents**
 
 - [Core Principles](#core-principles)
-- [Writing Style Guide](#writing-style-guide)
 - [Contributor Workflow](#contributor-workflow)
 - [Content and Style Standards](#content-and-style-standards)
-  - [1. Information Architecture: Chapters, Sections, and The Appendix](#1-information-architecture-chapters-sections-and-the-appendix)
-  - [2. Quality Assurance and Actionable TODOs](#2-quality-assurance-and-actionable-todos)
-  - [3. Frontmatter Requirements](#3-frontmatter-requirements)
-  - [4. Sourcing and Citation Standard (CRITICAL)](#4-sourcing-and-citation-standard-critical)
-  - [5. Technical Standards](#5-technical-standards)
-  - [6. Naming, Linking, and Formatting](#6-naming-linking-and-formatting)
-  - [7. Visualizations and Diagrams](#7-visualizations-and-diagrams)
 - [Automation and CI](#automation-and-ci)
 
 ## Core Principles
@@ -45,104 +43,15 @@ This repository documents "The Complete Idiot's Guide to Ending War and Disease,
   - `problem.md` should graphically and emotionally depict the human cost of war and disease. It must build urgency.
   - `solution.md` should paint a vivid, hopeful picture of the future we are building—a world without war and disease. It must inspire.
 
-## Writing Style Guide
-
-**The Tone: Dark Humor Meets Practical Hope**
-
-We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Kurt Vonnegut explaining economics to drunk people at a funeral.
-
-**The 4 Core Checks:**
-
-1. **Clarity:** Can I say this to my mom and have her understand?
-2. **Credibility:** Would I stake my reputation on this claim?
-3. **Concision:** Can I cut words without losing meaning?
-4. **Directness:** Does this sound like Kurt Vonnegut wrote it?
-
-**Essential Elements to Include:**
-
-- **Dark humor about death and human stupidity** - We're all dying anyway, might as well laugh
-- **Cynical but loving observations about humanity** - We're idiots, but we're OUR idiots
-- **Simple, conversational language** - No jargon, write like you're explaining to a smart drunk friend
-- **Absurd but accurate analogies** - "The FDA is like a lifeguard who checks if the life preserver is safe while you drown"
-- **A sense of cosmic irony** - The universe is laughing at us, we might as well join in
-- **Practical solutions presented as obvious common sense** - "What if sick people could just... try treatments?"
-
-**Automatic Red Flags (Rewrite Immediately):**
-
-- **Corporate Buzzwords:** "synergy," "activation," "paradigm shift," "stakeholder," "utilize," "facilitate" "world-class," "revolutionary," "unprecedented", "cutting-edge," "state-of-the-art," "best-in-class"
-- **Factual Mischaracterization:** Be precise when assigning blame. For example, instead of "The FDA demands \$41,000," write "The FDA-regulated system results in trial costs of \$41,000." Attribute outcomes to the system, not just the agency, unless a source directly supports it.
-- **Stylistic Redundancy:** Avoid using a string of synonyms or clichés for emphasis (e.g., "Zero. Zilch. Nada."). A single, powerful word is more effective. Let the facts be the punchline.
-- **Trying to sound important:** Write like you're explaining this to a smart friend who thinks you might be crazy
-- **Euphemisms for death:** Just say "die" or "death" - we're adults here
-- **Academic pomposity:** If you sound like a textbook, rewrite it
-
-**The Voice Test:** Would this make someone laugh AND think? If not, add more absurdity or more facts.
-
-**Additional Humor Guidelines:**
-
-- **Humor Should Enhance, Not Distract:** Jokes should make the argument more memorable, not weaker. If a joke doesn't add insight, cut it. Dark observations > cheap shots. Absurd but true > absurd but false.
-- **Emulate Style, Don't Quote:** Channel Vonnegut's dark humor and cosmic irony, but don't use his actual phrases ("so it goes", "listen:", etc.). Create original observations in that style instead of borrowing catchphrases.
-- **Don't Insult Unless It's Really Funny:** If you must make a joke about a group, it needs to be either: (a) So funny it's worth the risk, OR (b) About abstract "systems" not specific people/companies
-
-**Voice and Tone: Principled, Blunt, and Credible**
-
-**The Target and the Tone: Aim at the System, Speak to the "Us"**
-
-The style of this project must balance two core principles: genuine outrage and radical inclusivity.
-
-1.  **The Target of Outrage is the System, Not the People:** Our fight is with broken systems, not with the individuals trapped within them. The tone should be one of profound anger at the inefficiency, waste, and tragedy of our current institutions. It should not be a partisan or personal attack on any group. The goal is to critique a broken machine that _we_ can all work together to fix.
-
-2.  **We're All In This Together:** The writing should always assume the reader is a potential partner and a co-owner of the project. It should use terms like "we," "us," "our" to create a sense of a massive, collective movement that includes all of humanity. The goal is to make the reader feel like they are being invited to join a powerful rebellion, not being lectured or sold to. The reader is part of the "us" from the first sentence.
-
-- **Assume self-interest, not idealism.** Ground every argument in Public Choice Theory.
-  - **Good:** "Politicians support this because we fund their campaigns and their opponents if they don't."
-  - **Bad:** "World leaders will embrace this plan because it's the right thing to do."
-- **Use blunt language, not euphemisms.** Call things by their real names, but maintain technical precision where it adds clarity.
-  - **Good:** "How to stay out of prison," "We're bribing everyone."
-  - **Bad:** "Legal compliance," "Incentive alignment."
-  - **Good and Precise:** "Transparent, automated, outcome-driven institutions" is better than "computer systems" because it specifies _what kind_ of systems and _why_ they matter.
-
-**One-Second Test:** If you hesitate before reading a sentence aloud to a skeptical audience, rewrite it.
-
-## Development Environment Setup
-
-### Quick Start (Automated)
-
-1. **Run the setup script**: `.\setup.ps1`
-2. **Activate the environment**: `.\venv\Scripts\Activate.ps1`
-3. **Verify setup**: `.\verify-setup.ps1`
-4. **Preview the book**: `quarto preview index.qmd`
-
-### Prerequisites
-
-- Python 3.8+
-- Quarto
-- PowerShell (Windows)
-
-### Manual Setup
-
-If the automated setup doesn't work:
-
-1. Create virtual environment: `python -m venv .venv`
-2. Activate it: `.\venv\Scripts\Activate.ps1`
-3. Install dependencies: `pip install -r requirements.txt`
-4. Register Jupyter kernel: `python -m ipykernel install --user --name=dih-project-kernel --display-name "DIH Project Kernel"`
-
-### Troubleshooting
-
-- **"ModuleNotFoundError"**: Run `.\verify-setup.ps1` to check your environment
-- **"Kernel not found"**: Re-run the Jupyter kernel registration step
-- **Quarto errors**: Make sure your virtual environment is activated
-
 ## Contributor Workflow
 
 The plan _is_ the repository. We're building a book that's so clear anyone can read it.
 
-1.  **Set up your environment:** Follow the [Development Environment Setup](#development-environment-setup) above.
+1.  **Set up your environment:** Follow the [Development Environment Setup](./GUIDES/TECHNICAL_GUIDE.md#development-environment-setup) above.
 2.  **Find something to improve:** Look at the `todo.md` for priorities.
 3.  **If changing book structure:** Update the [Book Outline in README.md](./README.md#book-outline) first.
 4.  **Make your changes:** Fork the repo and create a branch, or just edit on GitHub if you're not technical.
-5.  **Follow the standards:** Use the rules in this document.
+5.  **Follow the standards:** Use the rules in this document and the specialized guides.
 6.  **Submit a pull request:** Explain how your change makes things better.
 
 ### Understanding the Book Outline
@@ -211,6 +120,8 @@ Use these five checks to audit every chapter file.
 
 ## Content and Style Standards
 
+For detailed standards, please refer to the specialized guides linked at the top of this document. This section provides a high-level overview.
+
 ### 1. Information Architecture: Chapters, Sections, and The Appendix
 
 This repo is structured like a book. Root files are "chapters." Subdirectories are "sections" with the details. `reference/` is the appendix.
@@ -218,59 +129,6 @@ This repo is structured like a book. Root files are "chapters." Subdirectories a
 **IMPORTANT:** The [Book Outline in README.md](./README.md#book-outline) is the authoritative writing checklist. Before adding new topics or changing the book architecture, update the Book Outline first. This prevents topic creep and maintains narrative flow. Remember: the outline is comprehensive for writing purposes - the final book will consolidate many items into cohesive chapters.
 
 **Note:** Don't edit `brain/book/index.md` directly - it's auto-generated from frontmatter.
-
-#### Epic Folders
-
-**The Golden Rule:** If a topic is an "Epic" that needs more than one file, it gets a main summary file (`epic.md`) and a corresponding directory (`epic/`) for the details. This pattern applies at all levels.
-
-**Book Chapter Structure:**
-
-Each major chapter follows the epic pattern:
-
-- **Executive Summary File:** `brain/book/problem.qmd` - Overview that links to all sections
-- **Section Files:** `brain/book/problem/*.qmd` - Detailed content for each section
-- **Example Structure:**
-
-  ```
-  brain/book/
-    problem.qmd          # Executive summary linking to all problem sections
-    problem/             # Folder with detailed sections
-      cost-of-war.md
-      cost-of-disease.md
-      nih-funding-is-broken.md
-    solution.qmd         # Executive summary linking to all solution sections
-    solution/            # Folder with detailed sections
-      dfda.md
-      dih.qmd
-      1-percent-treaty.md
-  ```
-
-**"The Book" vs. "Internal Stuff"**
-
-- **The Book (`brain/book/`):** Main book content organized by chapters with executive summaries
-- **Internal Playbook (`operations/`):** How we run things. For the core team.
-- **The Appendix (`reference/`):** Data and citations that back up our claims.
-
-| Section       | Content Type                                 | Examples                                                  |
-| ------------- | -------------------------------------------- | --------------------------------------------------------- |
-| `economics/`  | Financial models, ROI, investment thesis     | `investment-thesis.md`, `peace-dividend-value-capture.md` |
-| `solution/`   | Core components of the proposed solution     | `1-percent-treaty.md`, `dih.md`, `dfda.md`                |
-| `strategy/`   | Execution plans, political strategy, how-to  | `co-opting-defense-contractors.md`, `global-referendum.md` |
-| `legal/`      | Legal compliance, governance, regulations    | `multi-entity-strategy.md`                                |
-| `operations/` | Team structure, hiring, internal processes   | `hiring-plan.md`, `crypto-intake-sop.md`                  |
-| `reference/`  | Data, studies, citations, reference material | `costs-of-war.md`, `recovery-trial.md`                    |
-
-**Rules for Clean Structure:**
-
-1. **One file, one job.** Split files that try to do too much.
-
-2. **Unique filenames everywhere.** Add context only when needed:
-
-   - ❌ Bad: `economics/fundraising/strategy.md` (too generic)
-   - ✅ Good: `economics/fundraising/fundraising-strategy.md`
-   - ✅ Also Good: `solution/1-percent-treaty.md` (already unique)
-
-3. **Put things where they belong.** New content goes in the right section.
 
 ### 2. Quality Assurance and Actionable TODOs
 
@@ -314,44 +172,13 @@ lastFigureCheck: "YYYY-MM-DD"
 
 Example in-text: `[The world spends 40x more on war](./references.qmd#sipri-2024) than on [curing disease](./references.qmd#med-research-funding).`
 
-Format for new references in `references.qmd`:
-
-```markdown
-<a id="unique-anchor-id"></a>
-
-- **Brief descriptive title**
-
-  > "Direct quote with key stats..."
-  > — Source Name, Date, [Link Title](URL)
-```
-
-#### How to Keep This Organized
-
--   **One alphabetized list:** Sort references by title. No subsections. Group related stats (like multiple years of the same report) under one item.
-
-#### What NOT to Do
-
-- Don't create "Sources" sections in individual files
-- Don't duplicate references that already exist
-- Don't use generic link text like "(Source)" - link the actual claim
-- Don't create anchor links within individual files
-
-This keeps everything in one place and prevents broken links.
-
-### 5. Technical Standards
-
-- **Code:** Write new tools in TypeScript
-- **Dependencies:** Use `npm` and include a `package.json`
-- **Execution:** Run TypeScript directly with `ts-node` or `tsx`. No compiled `.js` files in the repo.
-- **Automated Formatting:** All `.qmd` files are subject to automated formatting checks based on the rules defined in [`FORMATTING_GUIDE.md`](./FORMATTING_GUIDE.md).
-
-### 6. Naming and Linking
+### 5. Naming and Linking
 
 - **Filenames:** Use kebab-case and be descriptive (e.g., `dih-treasury-cash-flow-model.md`).
 - **Internal Links:** Use standard, relative Markdown links (`./`, `../`). Do not use backticks or bare paths for links.
 - **Code vs. Links:** Use backticks only for code, commands, or literals—not for navigational references.
 
-### 7. Chapter Independence and Reusability
+### 6. Chapter Independence and Reusability
 
 **IMPORTANT: QMD files must be reusable across different contexts.**
 
@@ -359,45 +186,6 @@ This keeps everything in one place and prevents broken links.
 - **No hardcoded navigation:** Chapters should be self-contained without assuming a specific reading order
 - **No context-specific references:** Avoid "as we saw in the previous chapter" or similar cross-references
 - **Why:** These QMD files are reused in the website, presentations, and different book versions with different orderings
-
-### 8. Visualizations and Diagrams
-
-To make the content more engaging and easier to understand, we will use Python-generated charts and diagrams with a minimalistic and classy aesthetic. Quarto provides excellent tools for this.
-
-- **Diagrams:** For flowcharts, sequence diagrams, etc., please use Mermaid syntax. See the [Quarto Diagrams Guide](https://quarto.org/docs/authoring/diagrams.html) for implementation details.
-- **Python Charts:** For data visualizations, use Python libraries like Matplotlib or Plotly, executed within Quarto. For guidance, refer to the [Quarto Guide for Using Python](https://quarto.org/docs/computations/python.html).
-
-**For detailed chart creation guidelines, naming conventions, and technical standards, see [DESIGN_GUIDE.md](DESIGN_GUIDE.md).**
-
-### Where to Put Visuals: A Quick Guide
-
-To keep our project organized, here’s where different types of visual assets should go. The golden rule is: **if you can create it with code, do it.**
-
-1.  **Reproducible Charts (`brain/figures/`)**
-
-    -   **What:** All new data visualizations generated from code (Python, R, etc.). This is the default location for charts.
-    -   **Format:** `.qmd` files that can be included in any document.
-    -   **Why:** This approach allows us to easily reuse and maintain consistent styling across the book, website, and presentations. It’s the difference between a recipe and a photo of a cake—we want the recipe.
-
-2.  **Static Images (`assets/`)**
-
-    -   **What:** General images that are not data visualizations, such as photos, icons, or diagrams from external sources.
-    -   **Format:** `.png`, `.jpg`, `.gif`, etc.
-    -   **Why:** This is the general-purpose folder for all static visual assets that aren't charts.
-
-3.  **Static Charts (`brain/figures/`)**
-
-    -   **What:** Pre-existing, static charts that were not generated by code in this repository (e.g., from a scientific paper).
-    -   **Format:** `.png`, `.jpg`, `.svg` if possible, etc.
-    -   **Why:** This is a holding area for charts we can't generate ourselves. The long-term goal is to recreate them as reproducible charts in `brain/figures/` whenever possible.
-
-**Summary Table:**
-
-| If you have...                               | Put it in...         | As a...          |
-| -------------------------------------------- | -------------------- | ---------------- |
-| A new data chart you can create with code    | `brain/figures/`      | `.qmd` file      |
-| A photo, icon, or non-chart image            | `assets/`            | `.png`, `.jpg`   |
-| A static chart from an external source       | `assets/figures/`     | `.png`, `.jpg`   |
 
 ## Automation and CI
 
