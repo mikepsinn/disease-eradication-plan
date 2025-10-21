@@ -88,16 +88,3 @@ Foundations and nonprofits are critical partners in this coalition. The DIH offe
 *   **Timeline Risk:** Mitigated by a phased approach with clear gates and early wins in smaller countries.
 *   **Legal & Political Risk:** Mitigated by a multi-jurisdiction compliance strategy from Day 1 and the use of massive financial incentives to align political actors.
 *   **Capture/Corruption Risk:** Mitigated by transparent, algorithmic allocation of funds based on verifiable health outcomes.
-
----
-
-### Technical Development Roadmap
-
-Parallel to the political and financial strategy, a separate workstream will focus on developing the core technology prototypes. This effort is designed to be funded by traditional grants and will be executed in four phases.
-
-*   **Phase 1: The Blueprint & Strategic Analysis (4 Months):** Conduct foundational research to create the comprehensive technical, economic, and legal blueprint.
-*   **Phase 2: Core dFDA Infrastructure Prototype (7 Months):** Build the core privacy, security, and data integrity components, including the "Digital Twin Safe" and patient consent systems.
-*   **Phase 3: Intelligence & Governance Layer (7 Months):** Develop the AI-driven treatment matching algorithms and the Wishocracy voting platform.
-*   **Phase 4: Integration & Public Launchpad (2 Months):** Integrate the prototypes and prepare initial public materials for a pilot launch.
-
-*(The complete technical plan is maintained as an internal document in the `dih-ops` repository.)*
