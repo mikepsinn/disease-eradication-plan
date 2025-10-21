@@ -6,15 +6,11 @@ tags: [standards, contributing, content, style, review, process, quality-assuran
 
 # Content and Style Standards
 
-This document outlines the content and style standards for the DIH knowledge base.
-
 **See also:**
 
 - [CONTRIBUTING.md](../CONTRIBUTING.md) - Overall contribution workflow and standards
 
 ---
-
-For detailed standards, please refer to the specialized guides linked at the top of this document. This section provides a high-level overview.
 
 ## 1. Information Architecture: Chapters, Sections, and The Appendix
 

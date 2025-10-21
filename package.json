@@ -72,6 +72,7 @@
     "build:dih": "quarto render dih-index.qmd --to html",
     "build:dih:full": "quarto render --profile dih",
     "claude:opus": "claude --model claude-opus-4-1-20250805",
+    "copy-guides": "tsx scripts/copy-guides.ts",
     "prepare": "husky"
   },
   "devDependencies": {

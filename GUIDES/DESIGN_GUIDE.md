@@ -1,7 +1,5 @@
 # Design Guide
 
-This guide defines the visual design standards for all charts, diagrams, and visualizations in the Decentralized Institutes of Health project.
-
 ## Quick Reference
 
 - **Writing Style:** See [STYLE_GUIDE.md](STYLE_GUIDE.md) for tone, voice, and writing conventions
@@ -58,11 +56,9 @@ Include charts in any `.qmd` file using Quarto's include directive:
 
 ### PNG Generation is MANDATORY
 
-**Every QMD chart file MUST generate a corresponding PNG file.** No exceptions.
+**Every QMD chart file MUST generate a corresponding PNG file.** This is required for:
 
-**Why PNGs are required:**
-
-- Used in presentations and slide decks
+- Presentations and slide decks
 - Shared on social media (Twitter, LinkedIn, etc.)
 - Embedded in external reports and documents
 - Backup visualization if Quarto rendering fails
