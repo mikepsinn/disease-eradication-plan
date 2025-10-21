@@ -48,13 +48,13 @@ The 1% Treaty doesn't just redirect money. It creates the first systematic finan
 
 - **Ukraine war:** [Destroyed 20% of protected areas](https://www.unep.org/news-and-stories/story/ukraine-assessing-environmental-damage-war) in months
 - **Gulf War:** [Oil fires burned for 10 months](https://www.britannica.com/event/Persian-Gulf-War/Environmental-consequences), releasing more carbon than most countries' annual emissions
-- **Nuclear winter:** [150 Tg of soot](../references.qmdd#nuke-winter-150tg) from US-Russia exchange would trigger global climate collapse, making all climate work irrelevant
+- **Nuclear winter:** [150 Tg of soot](../references.qmd#nuke-winter-150tg) from US-Russia exchange would trigger global climate collapse, making all climate work irrelevant
 
 **Why the 1% Treaty is Better:**
 
 - **Protect Your Work:** Reduce conflict = protect decades of environmental progress from being destroyed in warfare
 - **Root Cause:** Most environmental destruction is caused by conflict—[deforestation from conflict minerals](https://www.globalwitness.org/en/campaigns/conflict-minerals/), [military as top global polluter](https://earth.org/military-pollution/)
-- **Scale:** [\$27B annually](../economic-models/peace-dividend-value-capture.qmd) could fund more climate action than most environmental organizations' combined budgets
+- **Scale:** [\$27B annually](peace-dividend-analysis.qmd) could fund more climate action than most environmental organizations' combined budgets
 - **Global Cooperation Template:** Successfully redirecting military budgets proves humanity can coordinate on planetary-scale problems
 
 **Bottom Line:** You can't save the planet while wars keep destroying it faster than you can fix it.
@@ -68,8 +68,8 @@ The 1% Treaty doesn't just redirect money. It creates the first systematic finan
 **Why the 1% Treaty is Better:**
 
 - **Root Cause:** [Nearly all starvation today is caused by violent conflict](../references.qmd#starvation-conflict)
-- **Health = Economic Development:** Healthy populations are productive populations. [Disease costs \$244 trillion annually](../reference/cost-of-disease.qmd)
-- **Peace Dividend Math:** Capturing even 0.1% of the [\$16.5 trillion annual cost of violence](../economic-models/peace-dividend-value-capture.qmd) provides more poverty reduction than traditional aid
+- **Health = Economic Development:** Healthy populations are productive populations. [Disease costs \$244 trillion annually](../problem/cost-of-disease.qmd)
+- **Peace Dividend Math:** Capturing even 0.1% of the [\$16.5 trillion annual cost of violence](peace-dividend-analysis.qmd) provides more poverty reduction than traditional aid
 - **Systemic Solution:** Address the war → poverty cycle instead of treating poverty symptoms
 
 **Bottom Line:** You can't end poverty while conflicts keep creating it faster than you can solve it.
@@ -98,9 +98,9 @@ The 1% Treaty doesn't just redirect money. It creates the first systematic finan
 **Why the 1% Treaty is Better:**
 
 - **Prevention > Documentation:** Address the root cause of displacement, torture, and human rights violations (conflict)
-- **Democratic Governance:** [\$27B treasury](./1-percent-treaty/victory-bonds-tokenomics.qmd) controlled by global citizens, not corrupt governments
-- **Health as Human Right:** [dFDA protocol](../features/dfda-roadmap.qmd) provides 80X more efficient access to treatments
-- **Economic Rights:** [VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.qmd) give every human financial stake in global peace dividend
+- **Democratic Governance:** [\$27B treasury](../economics/victory-bonds.qmd) controlled by global citizens, not corrupt governments
+- **Health as Human Right:** [dFDA protocol](../solution/dfda.qmd) provides 80X more efficient access to treatments
+- **Economic Rights:** [VICTORY bonds](../economics/victory-bonds.qmd) give every human financial stake in global peace dividend
 
 **Bottom Line:** Human rights violations happen during conflicts. End conflicts, reduce violations.
 
@@ -184,7 +184,7 @@ Show them the math. Donors want impact per dollar. This delivers more impact per
 **For Donors:**
 
 1. **Pause recurring donations** to single-issue organizations
-2. **Fund [VICTORY bonds](./1-percent-treaty/victory-bonds-tokenomics.qmd)** instead for higher ROI
+2. **Fund [VICTORY bonds](../economics/victory-bonds.qmd)** instead for higher ROI
 3. **Tell your favorite nonprofits** to read this document
 
 **For Staff at Advocacy Organizations:**
@@ -199,7 +199,7 @@ Show them the math. Donors want impact per dollar. This delivers more impact per
 
 **Q: "Isn't this incredibly arrogant to claim we have the best idea?"**
 
-A: It's not arrogance when you have the data. [463:1 ROI](dfda-cost-benefit-analysis.qmd), [80X efficiency improvement](recovery-trial.qmd), and [capturing 0.16% of \$16.5T annual waste](../economic-models/peace-dividend-value-capture.qmd) is just math.
+A: It's not arrogance when you have the data. [463:1 ROI](dfda-cost-benefit-analysis.qmd), [80X efficiency improvement](recovery-trial.qmd), and [capturing 0.16% of \$16.5T annual waste](peace-dividend-analysis.qmd) is just math.
 
 **Q: "What if the 1% Treaty fails?"**
 
@@ -221,7 +221,7 @@ A: Keep your mission. Change your method. Environmental groups can do environmen
 
 Every dollar raised for single-issue advocacy is a dollar that could have 10-100X more impact redirecting military budgets.
 
-Every year we delay is [63 million preventable deaths](../reference/costs-of-war.qmd#annual-excess-deaths), [\$16.5 trillion in waste](../economic-models/peace-dividend-value-capture.qmd), and the continued risk of [nuclear winter](../references.qmd#nuke-winter-150tg).
+Every year we delay is [63 million preventable deaths](../problem/cost-of-war.qmd#annual-excess-deaths), [\$16.5 trillion in waste](peace-dividend-analysis.qmd), and the continued risk of [nuclear winter](../references.qmd#nuke-winter-150tg).
 
 **This is the best idea in the world because it's the highest-leverage intervention for every cause you care about.**
 
@@ -232,8 +232,8 @@ The question isn't whether you should work on this. The question is whether you 
 ## Learn More
 
 - **[Full 1% Treaty Text](1-percent-treaty.qmd)** - The actual treaty language
-- **[Implementation Roadmap](./roadmap.qmd)** - How we get this done
-- **[VICTORY Bonds](./1-percent-treaty/victory-bonds-tokenomics.qmd)** - The financial mechanism
+- **[Implementation Roadmap](../strategy/roadmap.qmd)** - How we get this done
+- **[VICTORY Bonds](../economics/victory-bonds.qmd)** - The financial mechanism
 - **[Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)** - Why this is 463:1 ROI
 - **[Join the Coalition](../community/partners/)** - Work with us
 

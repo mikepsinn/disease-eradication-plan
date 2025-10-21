@@ -20,7 +20,7 @@ tags:
 
 **The Challenge:** Medical research and development is critically hampered by slow, expensive processes and limited patient access to trials. Current clinical trial paradigms often cost billions and take a decade per new therapy, hindering innovation and delaying access to life-saving treatments.
 
-**The dFDA Solution:** This analysis outlines the economic and health benefits of transforming the current regulatory framework into a global, decentralized, autonomous FDA (dFDA) platform. Leveraging real-world data and enabling massive, continuous, and highly efficient decentralized clinical trials, this vision is supported by foundational legislation like the ["Right to Trial and FDA Upgrade Act"](../act.qmd), which proposes an "FDA v2 Platform" as a key implementation step.
+**The dFDA Solution:** This analysis outlines the economic and health benefits of transforming the current regulatory framework into a global, decentralized, autonomous FDA (dFDA) platform. Leveraging real-world data and enabling massive, continuous, and highly efficient decentralized clinical trials, this vision is supported by foundational legislation like the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd), which proposes an "FDA v2 Platform" as a key implementation step.
 
 **Transformative Benefits:**
 
@@ -38,7 +38,7 @@ tags:
 
 ---
 
-Below is a conceptual, high-level analysis of the costs, benefits, and return on investment (ROI) for transforming the U.S. Food and Drug Administration's (FDA) current regulatory framework into a "global decentralized, autonomous FDA." This future-state platform would continuously rank treatments using the entirety of clinical and real-world data (RWD), and would enable anyone, potentially over a billion people worldwide, to participate in large-scale, continuous, decentralized clinical trials. This analysis supports the economic rationale for initiatives such as the ["Right to Trial and FDA Upgrade Act"](../act.qmd), which proposes a foundational "FDA v2 Platform" to begin actualizing this vision within the U.S. framework, potentially serving as a model for broader global collaboration.
+Below is a conceptual, high-level analysis of the costs, benefits, and return on investment (ROI) for transforming the U.S. Food and Drug Administration's (FDA) current regulatory framework into a "global decentralized, autonomous FDA." This future-state platform would continuously rank treatments using the entirety of clinical and real-world data (RWD), and would enable anyone, potentially over a billion people worldwide, to participate in large-scale, continuous, decentralized clinical trials. This analysis supports the economic rationale for initiatives such as the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd), which proposes a foundational "FDA v2 Platform" to begin actualizing this vision within the U.S. framework, potentially serving as a model for broader global collaboration.
 
 Because this analysis deals with an innovative and unprecedented transformation, many assumptions must be clearly stated, and the data points are best understood as estimates or ranges. Nonetheless, this exercise provides a structured way to think about potential costs, savings, and impacts on medical progress.
 
@@ -134,7 +134,7 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
 > **Total Estimated Upfront Cost (ROM): [\$37.5 - \$46 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
 
-_Note: This ROM estimate focuses **only on the Core Platform build effort and associated setup**. It represents the foundational first step. The full vision of the ["Right to Trial and FDA Upgrade Act"](../act.qmd) requires significant additional investment in broader initiatives to achieve its goals of global integration, legal harmonization, and massive scale. These crucial, follow-on costs are estimated separately in the [Scenario Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs) section below and include:_
+_Note: This ROM estimate focuses **only on the Core Platform build effort and associated setup**. It represents the foundational first step. The full vision of the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd) requires significant additional investment in broader initiatives to achieve its goals of global integration, legal harmonization, and massive scale. These crucial, follow-on costs are estimated separately in the [Scenario Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs) section below and include:_
 
 - _Global EHR/Data Source Integration Effort:_ Building/buying connectors for _thousands_ of systems worldwide.
 - _Large-Scale Plugin Development:_ Funding the ecosystem of data importers, analysis tools, and visualization plugins.
@@ -373,7 +373,7 @@ For this analysis, we use a conservative baseline estimate of **[\$100 billion p
 
    - Faster, cheaper trials allow more drug candidates, off-label uses, nutraceuticals, and personalized dosing strategies to be tested.
    - Shorter development cycles reduce carrying costs and risk, further increasing ROI for sponsors.
-   - Crowdsourced funding mechanisms, like those established by the [Decentralized Institutes of Health (DIH)](../strategy/1-percent-treaty/decentralized-institutes-of-health.qmd), can further reduce patient costs and direct resources to high-value research.
+   - Crowdsourced funding mechanisms, like those established by the [Decentralized Institutes of Health (DIH)](../solution/dih.qmd), can further reduce patient costs and direct resources to high-value research.
 
 3. **Regulatory Savings**
 
@@ -381,7 +381,7 @@ For this analysis, we use a conservative baseline estimate of **[\$100 billion p
 
 4. **Accelerated Adoption through Legislative Mandates**
 
-   - Provisions such as a "Right to Trial," as outlined in the ["Right to Trial and FDA Upgrade Act"](../act.qmd), would significantly accelerate the adoption and utilization of the dFDA Infrastructure. By guaranteeing patient access to trials via the platform, data generation, network effects, and the realization of cost savings would be expedited, further enhancing the overall benefits projected in this analysis.
+   - Provisions such as a "Right to Trial," as outlined in the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd), would significantly accelerate the adoption and utilization of the dFDA Infrastructure. By guaranteeing patient access to trials via the platform, data generation, network effects, and the realization of cost savings would be expedited, further enhancing the overall benefits projected in this analysis.
 
 5. **Increased Competition Among Sponsors Leading to Lower Submitted Trial Costs**
 
@@ -763,7 +763,7 @@ For a concrete (though simplified) scenario, assume:
      C_0 = 0.26975 \text{ billion USD}
    $$
 
-   _(This represents an estimated cost for initial core platform build (see [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)), foundational broader initiative setup, and early legal/regulatory framework alignment (see medium case upfront costs in [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)), consistent with multi-year funding such as in the ["Right to Trial and FDA Upgrade Act"](../act.qmd) for the FDA v2 platform. This combined figure is distinct from the core platform build ROM alone and serves as an illustrative figure for this NPV example that is lower than the previous $3B placeholder.)_
+   _(This represents an estimated cost for initial core platform build (see [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)), foundational broader initiative setup, and early legal/regulatory framework alignment (see medium case upfront costs in [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)), consistent with multi-year funding such as in the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd) for the FDA v2 platform. This combined figure is distinct from the core platform build ROM alone and serves as an illustrative figure for this NPV example that is lower than the previous $3B placeholder.)_
 
 2. **Annual Operating Costs** ($C_{\text{op}}(t)$):
 

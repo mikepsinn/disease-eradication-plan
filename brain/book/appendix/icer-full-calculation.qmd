@@ -127,7 +127,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 #### 3a. Campaign Costs ($200M/year, amortized)
 
-**Source**: [Campaign Budget](./campaign-budget.qmd)
+**Source**: [Campaign Budget](../economics/campaign-budget.qmd)
 
 **Total campaign budget**: $1B over 3-5 years
 
@@ -428,7 +428,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 ### Costs
 
-6. **Campaign Budget**: [Campaign Budget](./campaign-budget.qmd)
+6. **Campaign Budget**: [Campaign Budget](../economics/campaign-budget.qmd)
    - Total: $1B over 3-5 years
    - Amortized: $200-333M/year
 
@@ -532,6 +532,6 @@ The math shows it's worth trying. Even a 10% chance of success has positive expe
 
 - [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) - Deep dive on medical R&D savings
 - [Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd) - Economic value of reduced conflict
-- [Campaign Budget](./campaign-budget.qmd) - Detailed cost breakdown
+- [Campaign Budget](../economics/campaign-budget.qmd) - Detailed cost breakdown
 - [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd) - Compare to other health interventions
 - [Total Economic Impact](../appendix/total-economic-impact.qmd) - Full $16.5T analysis over 10 years
