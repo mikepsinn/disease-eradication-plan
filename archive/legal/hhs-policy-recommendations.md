@@ -138,7 +138,7 @@ Below is a comprehensive list of statutes, executive actions, and related preced
 
 ## **1. Why Previous Initiatives Failed**
 
-#### **a. Sentinel Initiative: Limited Transparency and Bureaucratic Constraints**
+### **a. Sentinel Initiative: Limited Transparency and Bureaucratic Constraints**
 
 - **Closed Data Silos:** Although Sentinel enabled active surveillance for post-market drug safety, it remained closed-source, restricting broader stakeholder engagement, innovation, and iterative improvement. Researchers and developers outside the FDA could not access core tools or data pipelines to enhance or repurpose them for broader clinical trial applications.
 - **Bureaucratic Oversight:** The complexity of working within federal regulatory frameworks slowed integration with emerging technologies and adaptive trial methodologies. Regulatory inertia prevented agile experimentation with decentralized trial models.
