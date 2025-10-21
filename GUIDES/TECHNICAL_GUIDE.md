@@ -6,8 +6,6 @@ tags: [technical-guide, contributing, development, setup, standards]
 
 # Technical Contribution Guide
 
-This guide covers the technical standards, development environment setup, and engineering best practices for the project.
-
 **See also:**
 
 - [CONTRIBUTING.md](../CONTRIBUTING.md) - Overall contribution workflow and standards
