@@ -29,7 +29,7 @@ So, roughly the process would be:
 
 Here is a list of GitHub issues with added labels, milestones, and estimated costs:
 
-### Pre-Launch Phase
+## Pre-Launch Phase
 
 1. **Legal Compliance Review**
 

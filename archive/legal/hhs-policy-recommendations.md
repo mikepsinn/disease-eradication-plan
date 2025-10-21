@@ -136,7 +136,7 @@ Below is a comprehensive list of statutes, executive actions, and related preced
 
 ---
 
-### **1. Why Previous Initiatives Failed**
+## **1. Why Previous Initiatives Failed**
 
 #### **a. Sentinel Initiative: Limited Transparency and Bureaucratic Constraints**
 

@@ -13,7 +13,7 @@ Lobbying in the military sector is a highly specialized and lucrative field wher
 
 Military contractors globally are estimated to spend between $200 million and $300 million annually on lobbying efforts. These investments are directed towards influencing military policy, securing contracts, and shaping military spending priorities.
 
-#### Government Contracts to Military Contractors
+## Government Contracts to Military Contractors
 
 The primary goal of lobbying is to secure a larger share of the massive government spending allocated to military procurement. Globally, this amounts to between **$800 billion and $1 trillion annually**.
 
