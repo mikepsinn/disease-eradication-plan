@@ -22,10 +22,20 @@ function fixMarkdownSpacing(content: string): string {
     '$1\n\n'
   );
 
-  // Rule 2: Ensure blank line after lines ending with colon
-  // Skip frontmatter and other special cases
+  // Rule 2: Disabled - was too aggressive
+  // (Was adding blank lines after table headers and other unintended places)
+
+  // Rule 3a: Ensure blank line after quoted dialog/label patterns
+  // Match patterns like "AI: "something"", "Humans: "something""
   result = result.replace(
-    /^([^-\n][^:\n]*:)\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```|  )(?!---)/gm,
+    /^([A-Z][A-Za-z]*:\s+"[^"]+[.!"?]?")\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```)/gm,
+    '$1\n\n'
+  );
+
+  // Rule 3b: Ensure blank line after specific field patterns
+  // Match patterns like "Post: something", "Bounty: $...", "Deadline: ..."
+  result = result.replace(
+    /^((?:Post|Bounty|Deadline|Amount|Price|Cost|Total|Budget):\s+[^\n]+)\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```)/gm,
     '$1\n\n'
   );
 
