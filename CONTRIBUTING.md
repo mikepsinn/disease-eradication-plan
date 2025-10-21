@@ -22,8 +22,6 @@ tags: [contributing, guidelines, standards, book, knowledge-base]
   - [7. Visualizations and Diagrams](#7-visualizations-and-diagrams)
 - [Automation and CI](#automation-and-ci)
 
-
-
 ## Core Principles
 
 This repository documents "The Complete Idiot's Guide to Ending War and Disease," a book about getting every nation to sign the **1% Treaty** to redirect 1% of military spending to cure diseases instead of cause them. The plan involves creating a **Wishocratically governed** (using randomized pairwise preference allocations where everyone divides budget allocations between random pairs of priorities) global **Decentralized Institutes of Health (DIH)** that subsidizes patient participation in **80X more efficient decentralized pragmatic clinical trials**. All data flows through the **Decentralized FDA (dFDA)** which provides **Outcome Labels** for every food and drug, plus personalized treatment effectiveness rankings for all diseases.
@@ -92,7 +90,7 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 
 The style of this project must balance two core principles: genuine outrage and radical inclusivity.
 
-1.  **The Target of Outrage is the System, Not the People:** Our fight is with broken systems, not with the individuals trapped within them. The tone should be one of profound anger at the inefficiency, waste, and tragedy of our current institutions. It should not be a partisan or personal attack on any group. The goal is to critique a broken machine that *we* can all work together to fix.
+1.  **The Target of Outrage is the System, Not the People:** Our fight is with broken systems, not with the individuals trapped within them. The tone should be one of profound anger at the inefficiency, waste, and tragedy of our current institutions. It should not be a partisan or personal attack on any group. The goal is to critique a broken machine that _we_ can all work together to fix.
 
 2.  **We're All In This Together:** The writing should always assume the reader is a potential partner and a co-owner of the project. It should use terms like "we," "us," "our" to create a sense of a massive, collective movement that includes all of humanity. The goal is to make the reader feel like they are being invited to join a powerful rebellion, not being lectured or sold to. The reader is part of the "us" from the first sentence.
 
@@ -102,7 +100,7 @@ The style of this project must balance two core principles: genuine outrage and 
 - **Use blunt language, not euphemisms.** Call things by their real names, but maintain technical precision where it adds clarity.
   - **Good:** "How to stay out of prison," "We're bribing everyone."
   - **Bad:** "Legal compliance," "Incentive alignment."
-  - **Good and Precise:** "Transparent, automated, outcome-driven institutions" is better than "computer systems" because it specifies *what kind* of systems and *why* they matter.
+  - **Good and Precise:** "Transparent, automated, outcome-driven institutions" is better than "computer systems" because it specifies _what kind_ of systems and _why_ they matter.
 
 **One-Second Test:** If you hesitate before reading a sentence aloud to a skeptical audience, rewrite it.
 
@@ -122,6 +120,7 @@ The style of this project must balance two core principles: genuine outrage and 
 - PowerShell (Windows)
 
 ### Manual Setup
+
 If the automated setup doesn't work:
 
 1. Create virtual environment: `python -m venv .venv`
@@ -183,24 +182,29 @@ To ensure every chapter meets the project's quality standards, we use a systemat
 Use these five checks to audit every chapter file.
 
 **1. Content & Narrative Flow:**
+
 - **Completeness:** Does the chapter deliver on its promise from the master `OUTLINE.MD`? Is any critical information missing?
 - **Conciseness:** Is there redundant content already covered elsewhere? Can anything be cut to make the argument stronger?
 - **Independence:** Does the chapter avoid phrases like "in the previous chapter," ensuring it can be reused in different contexts?
 
 **2. Tone & Voice (per `STYLE_GUIDE.md`):**
+
 - **Instructional Tone:** Does it read like a DIY manual ("Here's how you...") rather than a sales pitch ("Our solution will...")?
 - **Voice Consistency:** Does it maintain the "dark humor meets practical hope" tone?
 - **Word Choice:** Does it avoid corporate buzzwords, academic jargon, and euphemisms?
 
 **3. Sourcing & Credibility:**
+
 - **Universal Citation:** Is every claim, number, and statistic backed by an inline citation to `brain/book/references.qmd`?
 - **Source Verification:** Have you personally checked that the source exists, is valid, and actually supports the claim being made?
 
 **4. Visuals & Data (per `DESIGN_GUIDE.md`):**
+
 - **Opportunity:** Could the argument be made stronger with a chart, diagram, or illustration?
 - **Clarity:** Is data presented in the most effective, honest, and minimalist way possible?
 
 **5. Technical & Structural Integrity:**
+
 - **Frontmatter:** Does the file have a complete and accurate YAML frontmatter block?
 - **Link Integrity:** Are all internal links (`[link](./path/to/file.md)`) valid and pointing to existing files?
 - **Formatting:** Does each sentence start on a new line? 
@@ -220,11 +224,13 @@ This repo is structured like a book. Root files are "chapters." Subdirectories a
 **The Golden Rule:** If a topic is an "Epic" that needs more than one file, it gets a main summary file (`epic.md`) and a corresponding directory (`epic/`) for the details. This pattern applies at all levels.
 
 **Book Chapter Structure:**
+
 Each major chapter follows the epic pattern:
 
 - **Executive Summary File:** `brain/book/problem.qmd` - Overview that links to all sections
 - **Section Files:** `brain/book/problem/*.qmd` - Detailed content for each section
 - **Example Structure:**
+
   ```
   brain/book/
     problem.qmd          # Executive summary linking to all problem sections
@@ -302,7 +308,6 @@ lastFigureCheck: "YYYY-MM-DD"
 
 **Every claim needs a source.** All source quotes go in `brain/book/references.qmd`.
 
-
 1. Check if your source is already there
 2. If yes, link to it: `[your claim](./references.qmd#anchor-id)`
 3. If no, add it using the format you see in that file
@@ -310,6 +315,7 @@ lastFigureCheck: "YYYY-MM-DD"
 Example in-text: `[The world spends 40x more on war](./references.qmd#sipri-2024) than on [curing disease](./references.qmd#med-research-funding).`
 
 Format for new references in `references.qmd`:
+
 ```markdown
 <a id="unique-anchor-id"></a>
 
@@ -392,7 +398,6 @@ To keep our project organized, here’s where different types of visual assets s
 | A new data chart you can create with code    | `brain/figures/`      | `.qmd` file      |
 | A photo, icon, or non-chart image            | `assets/`            | `.png`, `.jpg`   |
 | A static chart from an external source       | `assets/figures/`     | `.png`, `.jpg`   |
-
 
 ## Automation and CI
 

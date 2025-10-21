@@ -10,6 +10,7 @@ tags:
 ---
 
 ## How to Siphon Money from Rich People's Tax Shelters
+
 *(A Grant Application Playbook for Revolutionaries)*
 
 Here's how you navigate the absurd theater of grant applications to fund the War on Disease. The nonprofit world is a strange place where foundations (tax shelters for the wealthy) give money to charities (people who are good at filling out paperwork) to solve problems that never seem to go away.
@@ -28,6 +29,7 @@ Your mission is to bridge this gap.
 First, you need to expand your `DIH Command & Control` Airtable base to manage this process. Add the following tables.
 
 ### Table 1: `Grant Pipeline` (The Master Tracker)
+
 *Tracks every application from fantasy to reality (or rejection).*
 
 - `Grant ID` (Autonumber)
@@ -50,6 +52,7 @@ First, you need to expand your `DIH Command & Control` Airtable base to manage t
 - `Notes` (Long Text)
 
 ### Table 2: `Foundations & Funders` (The Rich List)
+
 *A directory of every organization you plan to hit up for money.*
 
 - `Foundation Name` (Text, Primary Key)
@@ -68,11 +71,13 @@ First, you need to expand your `DIH Command & Control` Airtable base to manage t
 Your first job is to build a list of foundations that might be crazy enough to fund you.
 
 **How to find them:**
+
 1.  **Google is your friend:** Search for "foundations funding global health," "grants for medical innovation," "funding for political advocacy."
 2.  **Spy on similar organizations:** Find a nonprofit you admire/hate and look up who funds them (they usually list this on their website to brag).
 3.  **Use the tools:** If you had money (which you don't), you'd use services like Foundation Directory Online or GrantStation. For now, stick to Google.
 
 **What to look for:**
+
 -   **Mission Alignment:** Do they use words like "transformative," "systemic change," or "high-risk, high-reward"?
 -   **History:** Have they ever funded something that wasn't incredibly safe and boring?
 -   **Size:** Is their typical grant size big enough to be worth your time?
@@ -88,7 +93,9 @@ You are not asking for money to "end disease." That's too big and scary. You are
 This is the perfect "ask" for a grant because it's a discrete project with a clear goal.
 
 **Your Budget (The $1B War Chest Breakdown):**
+
 You're asking for a slice of this pie. Tailor your ask to the foundation's size.
+
 -   **For a small foundation ($50k ask):** "Fund our social media campaign in Southeast Asia for one year."
 -   **For a medium foundation ($500k ask):** "Fund the development of our referendum voting platform and its security audit."
 -   **For a large foundation ($5M ask):** "Fund our entire lobbying and media effort in the EU for two years."

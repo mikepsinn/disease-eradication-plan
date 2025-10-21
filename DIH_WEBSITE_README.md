@@ -75,6 +75,7 @@ The website uses a **pure neobrutalist design** following the project's DESIGN_G
 - **Interactive elements** - Buttons and cards with strong hover states
 
 **Design Philosophy:**
+
 - Black and white ONLY (per DESIGN_GUIDE.md)
 - Maximum contrast and readability
 - Bold, geometric, no rounded corners
@@ -93,6 +94,7 @@ The website uses a **pure neobrutalist design** following the project's DESIGN_G
 ### Modifying Styles
 
 Edit [styles.css](styles.css) to customize:
+
 - Colors and themes
 - Button styles
 - Card designs
@@ -102,6 +104,7 @@ Edit [styles.css](styles.css) to customize:
 ### Updating Navigation
 
 Edit the `navbar` section in [_dih.yml](_dih.yml) to:
+
 - Add/remove menu items
 - Organize dropdown menus
 - Change page order

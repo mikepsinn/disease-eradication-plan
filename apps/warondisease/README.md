@@ -27,21 +27,24 @@ Interactive web3 experience where users vote YES or NO on the 1% Treaty and see 
 ## Setup
 
 1. Install dependencies:
+
    ```bash
    npm install
    ```
 
 2. Create `.env.local`:
+
    ```bash
    cp .env.local.example .env.local
    ```
 
 3. Get a WalletConnect Project ID:
-   - Visit https://cloud.walletconnect.com/
+   - Visit <https://cloud.walletconnect.com/>
    - Create a project
    - Copy the Project ID to `.env.local`
 
 4. Run dev server:
+
    ```bash
    npm run dev
    ```
@@ -70,6 +73,7 @@ Interactive web3 experience where users vote YES or NO on the 1% Treaty and see 
 **Greed + Self-Preservation > Altruism**
 
 This isn't a charity site. We're offering:
+
 - 40% annual returns (VICTORY bonds)
 - Subsidized trials (save your own life)
 - Voting power (control medical research priorities)

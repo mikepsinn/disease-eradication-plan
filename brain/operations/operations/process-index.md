@@ -1,10 +1,10 @@
 ---
 title: Operations Process Index — How We Run the Plan
-description: One place for all repeatable processes needed to deliver the 1% Treaty → DIH → dFDA plan. Each process has an owner role, a WIG, and simple lead/lag checks.
+description: 'One place for all repeatable processes needed to deliver the 1% Treaty → DIH → dFDA plan. Each process has an owner role, a WIG, and simple lead/lag checks.'
 published: true
-date: 2025-08-22
-tags: operations, processes, sop, roadmap
-dateCreated: 2025-08-22
+date: 2025-08-22T00:00:00.000Z
+tags: [operations, processes, sop, roadmap]
+dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
 ## How to use this page
@@ -78,7 +78,6 @@ dateCreated: 2025-08-22
 - Lead (weekly): ship A/B tests; improve page speed; update proof links.
 - Lag (quarter): conversion rates; time on page; investor/partner leads.
 
-
 ## Legal & Policy (Owner: Legal/Policy Lead)
 
 - Phase(s): Phase 1 (reform & entities); Phase 2 (IE ops); Phase 3 (ongoing)
@@ -101,7 +100,6 @@ dateCreated: 2025-08-22
 - WIG: Major org endorsements and anchor partner deals.
 - Lead (weekly): outreach touches; follow‑ups; MOUs drafted.
 - Lag (quarter): endorsements signed; anchors live.
-
 
 ---
 

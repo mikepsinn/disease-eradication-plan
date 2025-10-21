@@ -128,6 +128,7 @@ Raise $1-2.5B in 6-12 months by targeting 100-200 high-net-worth individuals and
 **Subject:** Invitation to govern $27B health treasury (Bitcoin-level impact)
 
 **Body:**
+
 "Hi [Name],
 
 I'm reaching out because of your work building [Specific Protocol/Company]. The governance mechanisms you've pioneered in [Protocol] demonstrate exactly the kind of thinking needed for our next project.
@@ -146,6 +147,7 @@ P.S. Full technical architecture available at [link]"
 **Subject:** 2-5X your R&D budget (backed by government treaties)
 
 **Body:**
+
 "Hi [Name],
 
 Your work at [Company] demonstrates exactly why our current R&D system is broken. You're spending billions on trials that take 10+ years, while the Oxford RECOVERY trial showed we can do the same research at 80X lower cost.
@@ -165,6 +167,7 @@ First close is $250-400M. Are you available for a confidential briefing?
 **Subject:** 10X your health impact without additional donations
 
 **Body:**
+
 "Hi [Name],
 
 [Foundation] has invested $X billion in global health with incredible results. We have a proposal that could 10X that impact without requiring additional donations.

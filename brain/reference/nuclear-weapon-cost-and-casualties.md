@@ -59,11 +59,13 @@ This calculation highlights the grotesque inefficiency and overkill capacity of 
 ## V. Summary of Key Findings
 
 **Cost-Effectiveness of Nuclear Weapons:**
+
 - Cost per death: **$16.98** (less than a cup of coffee)
 - B61-12 unit cost: **$27.5 million** per bomb
 - Deaths per W87 warhead (Manhattan): **1,619,570 people**
 
 **Impact of 1% Treaty:**
+
 - Current military budget: **$2.72 trillion/year**
 - After 1% redirect: **$2.69 trillion remaining** (99%)
 - Potential deaths with remaining budget: **158.4 billion people**
@@ -79,29 +81,35 @@ For context, how does the cost per death compare across different weapon systems
 ### Small Arms (Rifles/Machine Guns)
 
 **Ammunition Expenditure:**
+
 - U.S. forces fired approximately **250,000 bullets for every insurgent killed** in Iraq and Afghanistan
 - Cost per 5.56mm NATO round: **~$0.40** (2024 military procurement price)
 
 **Cost per Death:**
+
 - 250,000 bullets × $0.40 = **$100,000 per death**
 
 ### Artillery (155mm Howitzer Shells)
 
 **Standard Round Expenditure:**
+
 - Assuming multiple rounds per target engagement (typical fire missions use 10-50 rounds)
 - Standard 155mm shell cost: **~$8,000-$14,000** per round (2024 prices)
 
 **Cost per Death (Estimated):**
+
 - Assuming 20 rounds per casualty: 20 × $10,000 = **$200,000 per death**
 
 ### Precision-Guided Munitions
 
 **Excalibur GPS-Guided Artillery:**
+
 - Cost per round: **$176,624** (FY-22)
 - Higher accuracy means fewer rounds needed
 - **Cost per Death: ~$177,000-$350,000** (1-2 rounds typically sufficient)
 
 **Air-Launched Missiles:**
+
 - AMRAAM missile: **~$1 million** per unit
 - AARGM-ER: **~$6.1 million** per unit
 - **Cost per Death: $1-6 million+** (depending on target type)
@@ -109,6 +117,7 @@ For context, how does the cost per death compare across different weapon systems
 ### Nuclear Weapons
 
 **Nuclear Warhead:**
+
 - B61-12 cost: **$27.5 million**
 - Deaths per detonation (urban center): **~1.6 million**
 - **Cost per Death: $16.98**

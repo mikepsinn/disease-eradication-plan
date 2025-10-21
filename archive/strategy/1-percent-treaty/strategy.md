@@ -19,6 +19,7 @@ doc_type: strategy
 For the end‑to‑end plan, see the [Canonical Roadmap — 1% Treaty → DIH → dFDA](../roadmap.md).
 
 So, roughly the process would be:
+
 👉 $1M to initially create the DAO
 👉 $40M from token crowdfunding
 👉 $20M Lobbying + $20M Marketing to Get Signatures from 1%
@@ -29,7 +30,7 @@ So, roughly the process would be:
 
 Here is a list of GitHub issues with added labels, milestones, and estimated costs:
 
-### Pre-Launch Phase
+## Pre-Launch Phase
 
 1. **Legal Compliance Review**
 

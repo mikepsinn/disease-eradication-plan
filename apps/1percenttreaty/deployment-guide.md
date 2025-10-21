@@ -10,9 +10,9 @@
 
 ### Prerequisites
 
-1. **Cloudflare account** (free): https://dash.cloudflare.com/sign-up
+1. **Cloudflare account** (free): <https://dash.cloudflare.com/sign-up>
 2. **Wrangler CLI** installed: `npm install -g wrangler`
-3. **Your Airtable API key** from https://airtable.com/account
+3. **Your Airtable API key** from <https://airtable.com/account>
 
 ### Step 1: Login to Cloudflare
 
@@ -41,6 +41,7 @@ wrangler deploy
 ```
 
 **Output:**
+
 ```
 ✨ Deployed worker to:
    https://1percent-treaty-referendum.YOUR_SUBDOMAIN.workers.dev
@@ -53,12 +54,13 @@ npx wrangler pages deploy . --project-name=1percent-treaty
 ```
 
 **Output:**
+
 ```
 ✨ Deployed to:
    https://1percent-treaty.pages.dev
 ```
 
-### Step 5: Test It!
+### Step 5: Test It
 
 1. Visit your Pages URL
 2. Fill out the form
@@ -142,6 +144,7 @@ AIRTABLE_BASE_ID=appRA45hnZpiTyRjB
 ```
 
 Add to `.gitignore`:
+
 ```
 .dev.vars
 ```
@@ -161,6 +164,7 @@ Shows every request hitting your worker live.
 ### Cloudflare Analytics
 
 Dashboard → Workers → Metrics shows:
+
 - Requests per second
 - Error rate
 - Success rate
@@ -173,6 +177,7 @@ If votes aren't appearing in Airtable:
 1. Check `wrangler tail` for errors
 2. Verify environment variables: `wrangler secret list`
 3. Test Airtable API key manually:
+
    ```bash
    curl https://api.airtable.com/v0/appRA45hnZpiTyRjB/Personnel%20Roster \
      -H "Authorization: Bearer YOUR_API_KEY"
@@ -211,6 +216,7 @@ await env.VOTES_KV.put(rateLimitKey, 'voted', { expirationTtl: 3600 });
 ```
 
 **Setup:**
+
 ```bash
 wrangler kv:namespace create "VOTES_KV"
 # Add namespace ID to wrangler.toml
@@ -231,10 +237,12 @@ wrangler kv:namespace create "VOTES_KV"
 ### When You Need to Pay
 
 **At 5M+ votes/month:**
+
 - Cloudflare Workers Paid: $5/month (removes limits)
 - Still cheaper than competitors
 
 **At 50K+ votes in Airtable:**
+
 - Airtable Plus: $20/month
 - OR migrate to PostgreSQL/Supabase: $25/month
 
@@ -254,6 +262,7 @@ wrangler kv:namespace create "VOTES_KV"
 | **Security** | Equal | Equal |
 
 **Recommendation:**
+
 - **Week 1 MVP:** Use Airtable Forms (fastest test)
 - **Week 2+ Public:** Deploy Cloudflare version (professional)
 
@@ -269,6 +278,7 @@ wrangler kv:namespace create "VOTES_KV"
 ### "Failed to submit vote"
 
 **Check:**
+
 1. Are secrets set? `wrangler secret list`
 2. Is worker deployed? `wrangler deployments list`
 3. Check logs: `wrangler tail`
@@ -278,12 +288,14 @@ wrangler kv:namespace create "VOTES_KV"
 
 **Cause:** Free tier has 10ms CPU limit per request
 **Fix:**
+
 - Airtable calls are network time (not CPU), should be fine
 - If still timing out, upgrade to Workers Paid ($5/mo)
 
 ### Votes not appearing in Airtable
 
 **Check:**
+
 1. Table names match exactly (case-sensitive)
 2. Field names match exactly
 3. Base ID is correct (appRA45hnZpiTyRjB)
@@ -326,6 +338,7 @@ jobs:
 ```
 
 **Setup:**
+
 1. Get Cloudflare API token from dashboard
 2. Add to GitHub repo secrets as `CLOUDFLARE_API_TOKEN`
 3. Push code → Automatic deployment
@@ -335,21 +348,25 @@ jobs:
 ## Next Steps
 
 ### Week 1: MVP Test
+
 - [x] Deploy to Cloudflare
 - [ ] Share with 50 friends
 - [ ] Goal: 100 test votes
 
 ### Week 2: Public Beta
+
 - [ ] Add custom domain
 - [ ] Set up Google Analytics
 - [ ] Goal: 1,000 votes
 
 ### Month 2: Scale
+
 - [ ] Add email automation
 - [ ] Build referral leaderboard
 - [ ] Goal: 10,000 votes
 
 ### Month 3: Global
+
 - [ ] Multi-language support
 - [ ] Regional targeting
 - [ ] Goal: 100,000 votes
@@ -359,3 +376,4 @@ jobs:
 **Full documentation:** See [apps/1percenttreaty/README.md](../../apps/1percenttreaty/README.md)
 
 **Now deploy and start saving lives.**
+

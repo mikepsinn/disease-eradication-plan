@@ -67,7 +67,6 @@ To complement the real-world data from past patients, the dFDA will integrate a 
 
 This isn't just polling experts; it's a marketplace where researchers, doctors, investors, and even the public can bet real money on a trial's future outcomes.
 
-
 For any given trial, you'll see real-time odds on questions like:
 
 -   **Effectiveness**: "What are the chances this treatment will reduce tumor size by >50% in the next 6 months?" **Market Price: 38%**
@@ -160,8 +159,6 @@ This eliminates $55 million of paperwork per trial. That's 55 million pieces of 
 
 Those papers killed more people than they saved.
 
-
-
 ---
 
 ## Real Examples of This Working (While the FDA Wasn't Looking)
@@ -195,6 +192,7 @@ Every treatment gets a page. Every outcome gets recorded. Every patient contribu
 Imagine looking up your disease and seeing:
 
 **"Exploding Kidney Syndrome"**
+
 *From Clinipedia, the encyclopedia of not dying*
 
 **Current Treatments Ranked by Not-Dying Score:**
@@ -260,12 +258,14 @@ Food has nutrition labels. Cigarettes have warning labels. Drugs have... incompr
 Based on thousands of real patients with real outcomes:
 
 **Cognitive Improvements:**
+
 - Memory Recall: +35%
 - Cognitive Function: +28%
 - Executive Function: +22%
 - Hippocampal Volume: +15%
 
 **Side Effects:**
+
 - Immune Response: +12%
 - Headache: +9%
 - Fatigue: +7%
@@ -273,6 +273,7 @@ Based on thousands of real patients with real outcomes:
 No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
 
 **Example: DEPRESSION CRUSHER 3000™**
+
 *Outcome Label*
 
 Based on 50,000 humans who tried this:
@@ -305,8 +306,6 @@ The fact that we need a law for this tells you everything about our species.
 
 Congress will debate this for 17 years, the same time it takes to approve one drug.
 
-
-
 ---
 
 ## The Future: Where Death Becomes Embarrassing
@@ -337,7 +336,7 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 
 ### How the dFDA Actually Works
 
-![](../../../assets/black-box-model-animation.gif)
+![Black box model animation showing how the dFDA works](../../../assets/black-box-model-animation.gif)
 
 The dFDA achieves [**82X More Efficiency**](../references.qmd#recovery-trial-82x-cost-reduction) through:
 

@@ -1,7 +1,9 @@
 # Systematic Accuracy Fix Plan
 
 ## Overview
+
 Based on the audit, we have 3,021 potential issues:
+
 - **205 HIGH severity** (factually wrong/unfair)
 - **2,770 MEDIUM severity** (potentially misleading)
 - **46 LOW severity** (could be improved)
@@ -9,118 +11,151 @@ Based on the audit, we have 3,021 potential issues:
 ## Priority Order
 
 ### Phase 1: Fix HIGH Severity Issues (205 total)
+
 These are the most critical - factually wrong or unfairly accusatory statements.
 
 #### 1.1 False Attribution of Intent (37 instances)
+
 **Pattern**: "demands", "forces", "makes us", "requires"
 **Files most affected**:
+
 - brain/book/problem/fda-is-unsafe-and-ineffective.qmd
 - brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
 - brain/book/theory/central-planning-kills.qmd
 
 **Fix Template**:
+
 ```
 BEFORE: "NIH demands $41,000/patient"
+
 AFTER: "The current system results in $41,000/patient costs"
 
 BEFORE: "FDA forces 17-year delays"
+
 AFTER: "FDA's approval process takes 17 years on average"
 
 BEFORE: "Politicians make us spend on weapons"
+
 AFTER: "Political incentives favor military spending"
 ```
 
 #### 1.2 Personal/Character Attacks (45 instances)
+
 **Pattern**: "idiots", "morons", "evil", "corrupt", "sociopaths"
 **Files most affected**:
+
 - brain/book/problem/regulatory-capture.qmd
 - brain/book/theory/public-choice.qmd
 - OUTLINE.md
 
 **Fix Template**:
+
 ```
 BEFORE: "200 idiotic bureaucrats"
+
 AFTER: "200-person committees"
 
 BEFORE: "Corrupt regulators"
+
 AFTER: "Regulators influenced by revolving door incentives"
 
 BEFORE: "Politicians are sociopaths"
+
 AFTER: "Politicians respond to electoral incentives"
 ```
 
 #### 1.3 Conspiracy Language (8 instances)
+
 **Pattern**: "deliberately", "intentionally", "purposely", "scheme"
 **Files most affected**:
+
 - brain/book/problem/regulatory-capture.qmd
 - brain/book/economics/coalition-that-wins.qmd
 
 **Fix Template**:
+
 ```
 BEFORE: "FDA deliberately delays cures"
+
 AFTER: "FDA's risk-averse culture results in delays"
 
 BEFORE: "Pharma intentionally keeps people sick"
+
 AFTER: "Pharma's business model profits from treatment over cures"
 ```
 
 #### 1.4 Misleading Agency Attribution (15 instances)
+
 **Pattern**: Wrong agency blamed for something
 **Common mistakes**:
+
 - Attributing FDA regulations to NIH
 - Blaming NIH for trial costs (FDA sets requirements)
 - Confusing WHO achievements with NIH
 
 **Fix Template**:
+
 ```
 BEFORE: "NIH's $41,000 trial costs"
+
 AFTER: "FDA-regulated trials cost $41,000"
 
 BEFORE: "NIH approval process"
+
 AFTER: "FDA approval process"
 ```
 
 ### Phase 2: Fix Pattern-Based MEDIUM Issues (2,770 total)
 
 #### 2.1 Absolute Statements (892 instances)
+
 **Pattern**: "all", "every", "never", "always", "zero", "nobody"
 **Automated fix**: Add qualifiers
 
 **Fix Template**:
+
 ```
 BEFORE: "Every regulator is captured"
+
 AFTER: "Many regulators face capture risks"
 
 BEFORE: "Nobody reads these papers"
+
 AFTER: "Few people read most papers"
 
 BEFORE: "Zero diseases cured"
+
 AFTER: "No major diseases eradicated" (technically accurate)
 ```
 
 #### 2.2 Unsourced Statistics (1,878 instances)
+
 **Pattern**: Numbers without citations
 **Automated fix**: Add references where available, mark [citation needed] otherwise
 
 ### Phase 3: Tone Calibration (46 LOW severity)
 
 #### 3.1 Oversimplifications
+
 **Pattern**: "just", "simply", "only"
 **Fix**: Add nuance without losing clarity
 
 ## Implementation Strategy
 
 ### Week 1: Manual HIGH Priority Fixes
+
 1. **Monday-Tuesday**: Fix false attribution (37 instances)
 2. **Wednesday-Thursday**: Remove character attacks (45 instances)
 3. **Friday**: Fix conspiracy language and agency confusion (23 instances)
 
 ### Week 2: Semi-Automated MEDIUM Fixes
+
 1. **Create replacement dictionary** for common patterns
 2. **Run batch replacements** with human review
 3. **Add citation links** to all statistics
 
 ### Week 3: Quality Control
+
 1. **Read-through for consistency**
 2. **Verify tone remains urgent but fair**
 3. **Check all citations work**
@@ -160,6 +195,7 @@ const replacements = {
 ## Success Metrics
 
 ### Accuracy Improvements
+
 - [ ] 0 false attributions of intent
 - [ ] 0 personal attacks
 - [ ] 0 conspiracy theories
@@ -168,6 +204,7 @@ const replacements = {
 - [ ] 100% statistics cited
 
 ### Tone Preservation
+
 - [ ] Dark humor intact
 - [ ] Urgency maintained
 - [ ] System critique sharp

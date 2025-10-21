@@ -104,9 +104,11 @@ _(Note: Be concise. The work should speak for itself.)_
 ## Section 4: Accomplishments (Optional)
 
 **6. List any hackathons you've participated in, especially those related to AI, data, or growth. Please include the event name, project, any awards won, and a link if available.**
+
 <textarea rows="5" cols="50"></textarea>
 
 **7. List up to two other technical accomplishments you are proud of that demonstrate your ability to build world-class systems.**
+
 <textarea rows="5" cols="50"></textarea>
 
 ## Section 5: Availability

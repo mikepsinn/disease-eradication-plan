@@ -100,18 +100,20 @@ graph TD;
 - **[Participate in the Referendum](mailto:hello@dih.earth)**: Signal your support and become part of the 3.5%.
 - **[Join the Coalition](mailto:hello@dih.earth)**: We partner with institutions, companies, and non-profits.
 
-
 ## Development & Deployment
 
 ### Local Preview
+
 ```bash
 npm run quarto:preview
 ```
 
 ### Pre-Push Validation
+
 A git pre-push hook automatically runs `quarto render` to catch errors before pushing. This prevents broken builds in CI/CD.
 
 **To skip validation** (for WIP commits):
+
 ```bash
 git push --no-verify
 ```
@@ -121,6 +123,7 @@ git push --no-verify
 The book automatically deploys to GitHub Pages when you push to the `master` branch.
 
 **First-time setup:**
+
 1. Go to your repository settings on GitHub
 2. Navigate to Settings → Pages
 3. Under "Build and deployment", select **"GitHub Actions"** as the source
@@ -129,7 +132,9 @@ The book automatically deploys to GitHub Pages when you push to the `master` bra
 The site will be available at: `https://mikepsinn.github.io/decentralized-institutes-of-health/`
 
 **Manual deployment:**
+
 You can also trigger a deployment manually:
+
 1. Go to the "Actions" tab on GitHub
 2. Select "Quarto Publish" workflow
 3. Click "Run workflow"

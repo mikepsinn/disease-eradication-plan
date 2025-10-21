@@ -1,6 +1,7 @@
 # The Complete Idiot's Guide to Ending War and Disease
 
 ## SLIDE: Title Slide
+
 **Visual**: Speaker standing next to a giant toilet made of money, flames coming out the top
 **Text**: "How to Trick Humanity Into Not Killing Itself"
 **Subtitle**: "A Love Story"
@@ -15,6 +16,7 @@ Don't worry, this has a happy ending. Well, one of the endings does. The other o
 ---
 
 ## SLIDE: The 40X Problem
+
 **Visual**: Bar chart - War on Humanity ($2.7T) towers over War on Disease ($68B)
 **Text**: "We spend 40X more on killing than curing"
 
@@ -32,6 +34,7 @@ The Pentagon alone has LOST $2.5 trillion. Not spent. Lost. Like change in a cou
 ---
 
 ## SLIDE: Earth's Household Budget
+
 **Visual**: Table showing spending priorities
 **Text**: "A deeply disturbed household"
 
@@ -55,6 +58,7 @@ It's like humanity is a teenager who spends all their money on fireworks while t
 ---
 
 ## SLIDE: The True Cost
+
 **Visual**: Death Toilet with $119T flowing in ($9.7T war + $109.1T disease burden)
 **Text**: "The real bill: $119 trillion every year"
 
@@ -72,6 +76,7 @@ So you might say: Let's have the government spend more and fix it!"
 ---
 
 ## SLIDE: Death Clock
+
 **Visual**: Live counter: "150,671 people have died from preventable disease since this talk started"
 **Text**: "Death Clock"
 
@@ -81,6 +86,7 @@ So you might say: Let's have the government spend more and fix it!"
 ---
 
 ## SLIDE: Why Government Can't Fix It - NIH
+
 **Visual**: NIH building as Soviet-style bureaucracy with "REJECTED" stamps raining down
 **Text**: "90% rejection rate | $48B wasted annually"
 
@@ -94,6 +100,7 @@ We gave them money. They gave us bureaucracy."
 ---
 
 ## SLIDE: Why Government Can't Fix It - FDA
+
 **Visual**: Graveyard with tombstones "Died waiting 17 years" + "$2.6B per drug" price tag
 **Text**: "Making cures 80X harder and more expensive"
 
@@ -107,6 +114,7 @@ They kill 21,000 to 120,000 people per decade through delays. Know what takes le
 ---
 
 ## SLIDE: Democracy Is Already Dead
+
 **Visual**: Princeton graph showing 0% correlation between public opinion and policy
 **Text**: "Your opinion matters: 0%"
 
@@ -122,6 +130,7 @@ We need systems that CAN'T be captured."
 ---
 
 ## SLIDE: The Solution Package
+
 **Visual**: Flow chart: 1% Treaty → Wishocracy → DIH → dFDA → Cures
 **Text**: "Uncapturable, decentralized, 80X more efficient"
 
@@ -135,6 +144,7 @@ Oxford already proved this works: $500 per patient vs FDA's $41,000."
 ---
 
 ## SLIDE: The Oxford Proof
+
 **Visual**: Side-by-side: Oxford RECOVERY trial vs US trials with costs and outcomes
 **Text**: "$500 vs $41,000 per patient | 1 million lives saved"
 
@@ -150,6 +160,7 @@ Oxford proved decentralized trials are 82X more efficient. We're just doing that
 ---
 
 ## SLIDE: What Is the dFDA Really?
+
 **Visual**: Amazon/Consumer Reports interface showing treatments ranked by actual outcomes
 **Text**: "Amazon for Clinical Trials + Consumer Reports for Drugs + Consumer Reports for every pill"
 
@@ -163,6 +174,7 @@ One-click join trials from your doctor's office. Results in 2 years, not 17."
 ---
 
 ## SLIDE: The Three-Part Heist
+
 **Visual**: Three icons: 💰 Bonds → 🗳️ Votes → 🏛️ Lobbyists
 **Text**: "How to hijack the system that hijacked democracy"
 
@@ -182,6 +194,7 @@ But what if there was a version of this strategy that actually reduced the amoun
 ---
 
 ## SLIDE: VICTORY Bonds - The Ultimate Bribe
+
 **Visual**: WWII-style poster "BUY VICTORY BONDS - 40% RETURNS - DEFEAT DEATH"
 **Text**: "Better returns than cocaine trafficking"
 
@@ -195,6 +208,7 @@ It's a Ponzi scheme where everyone wins and nobody goes to jail."
 ---
 
 ## SLIDE: The Global Referendum
+
 **Visual**: World map lighting up as votes spread virally
 **Text**: "280 million votes = Unstoppable mandate"
 
@@ -208,6 +222,7 @@ Step 3: Hire pharma and military lobbyists. They push whoever pays most. That's 
 ---
 
 ## SLIDE: Why This Can't Be Corrupted
+
 **Visual**: Wishocracy with 8 billion decision points vs traditional democracy's single capture point
 **Text**: "8 billion bosses > 535 politicians"
 
@@ -221,6 +236,7 @@ No committees. No gatekeepers. No capture points. Just math."
 ---
 
 ## SLIDE: The Feedback Loop
+
 **Visual**: Success spiral: 1% → Cures → Votes → 2% → More cures → 10% → Peace
 **Text**: "Success creates more success"
 
@@ -232,6 +248,7 @@ No committees. No gatekeepers. No capture points. Just math."
 ---
 
 ## SLIDE: Choose Your Own Adventure
+
 **Visual**: Split timeline - Idiocracy (darkness) vs Wishonia (light)
 **Text**: "Mad Max or Star Trek - You're voting right now"
 
@@ -247,6 +264,7 @@ We're literally choosing between Mad Max and Star Trek."
 ---
 
 ## SLIDE: The Call to Action
+
 **Visual**: "STOP BEING IDIOTS" button → WarOnDisease.org
 **Text**: "Vote. Buy bonds. Live forever."
 
@@ -265,22 +283,28 @@ Thank you."
 
 ---
 
-## Q&A Prep Notes:
+## Q&A Prep Notes
 
 **Q: "Isn't this just socialism?"**
+
 A: "No, it's capitalism pointed at not dying. Free markets, but for cures instead of corpses. The military-industrial complex model, just backwards."
 
 **Q: "How do we know this will work?"**
+
 A: "Oxford RECOVERY trial already proved it. $500 per patient, saved a million lives. FDA trials: $41,000 per patient, saved paperwork."
 
 **Q: "What if countries cheat on the treaty?"**
+
 A: "Blockchain receipts. Satellite verification. Plus everyone with power has VICTORY bonds - cheating crashes their wealth."
 
 **Q: "This seems too simple."**
+
 A: "'Wash your hands' seemed too simple. 'Don't dump sewage in drinking water' seemed too simple. 'Stop spending all our money on killing each other' - same level of obvious."
 
 **Q: "Are you calling us idiots?"**
+
 A: "I'm calling us the species that spends 40 times more on killing than healing. You can pick your own adjective for that."
 
 **Q: "Won't defense contractors fight this?"**
+
 A: "Why? We're offering them 40% returns forever. They're not ideological - they just like money. We're not taking their money away, we're making them richer through VICTORY bonds. It's hostile takeover via superior returns."

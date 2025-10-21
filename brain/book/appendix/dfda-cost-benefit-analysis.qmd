@@ -207,6 +207,7 @@ The **5M MAU** target is an illustrative milestone used for these initial ROM es
 _(Note: The underlying cloud infrastructure cost (\$5M-\$15M/year) is a top-down ROM estimate. A more granular, bottom-up analysis based on projected per-user storage, data transfer, and compute would provide further support for these figures and is a key area for future refinement of this model.)_
 
 \*Note on Participant Financial Contributions and NIH Cost Discounts (Alignment with "Right to Trial & FDA Upgrade Act"):
+
 This core platform operational cost estimate **focuses on the technology infrastructure and does not include the direct financial transactions related to individual trial participation.** The "Right to Trial & FDA Upgrade Act" (specifically SEC. 303 and SEC. 304) outlines a model where: 1. **Sponsor-Determined Participation Costs:** Sponsors itemize the direct costs of a patient's participation in a trial (SEC. 304(a)). 2. **NIH-Funded Direct Discount:** The NIH Trial Participation Cost Discount Fund directly covers a portion of these patient-borne costs. The specific percentage or amount of this discount is determined by an NIH-managed allocation algorithm aiming to maximize QALYs and other public health benefits (SEC. 303(b, c)). For initial operationalization, while the full algorithm is developed and sufficient data is accrued via the platform, a standardized default discount (e.g., the NIH Fund covering 50% of patient-borne costs) could be applied as a baseline policy. This would allow subsidies to flow quickly, with the mechanism evolving towards the dynamic, data-driven algorithm over time as envisioned in the Act. 3. **Patient Net Cost Contribution:** The patient is responsible for the remaining net cost after the NIH discount is applied (SEC. 304(b)). 4. **Platform Facilitation:** The dFDA Infrastructure's role, as costed in its operational ROM, includes modules (like the Trial Cost and Discount Module per SEC. 204(c)(3)) to transparently display the itemized costs, the NIH-funded discount, and the final net patient contribution. The platform facilitates the management of these financial components but does not itself disburse the NIH funds or determine the discount amounts.
 
 Large-scale figures sometimes discussed for "participant support" or "subsidies" would primarily reflect the total budget and impact of the NIH Trial Participation Cost Discount Fund, not operational outlays by the dFDA Infrastructure for direct compensation (which is not part of this model).
@@ -319,6 +320,7 @@ This table presents point estimates for each scenario, with the overall range of
 | **--- TOTAL ---**                            | **~$4.5M / ~$0**             | **~$213M / ~$18.3M**           | **~$1.98B+ / ~$221M+**        | Represents total initiative cost excluding core platform build/ops.                                        |
 
 **Interpretation:**
+
 Even when pursuing efficient strategies, the potential cost for the full dFDA initiative (beyond the core platform) varies dramatically based on real-world execution challenges. The Medium Case suggests upfront costs in the low hundreds of millions and annual costs in the low tens of millions, while the Worst Case pushes towards multi-billion dollar upfront figures and annual costs in the hundreds of millions, dominated by integration, plugin funding, and legal costs if automation and community efforts fall short.
 
 **Revised Summary:**
@@ -1040,7 +1042,7 @@ The analysis robustly demonstrates that the **dFDA Infrastructure is not merely 
 
 **Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~$19M-$40M per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM), leading to ICERs around -$59,476 per QALY. Even when considering broader illustrative total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields substantial net monetary savings (e.g., -$29.5B to -$94.5B annually in various scenarios) while simultaneously generating hundreds of thousands to millions of QALYs each year. The actual cost per QALY gained remains strongly negative across all these scopes, making it an exceptionally high-value proposition.**
 
-*(Optional: A note could be added here that specific programs *built upon* the dFDA Infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
+*(Optional: A note could be added here that specific programs _built upon_ the dFDA Infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
 
 ---
 
@@ -1171,7 +1173,6 @@ While the figures are presented as daily point estimates for clarity, they repre
 3. **Realization of QALY Gains:** The link between a more efficient research ecosystem and concrete health outcomes (QALYs) is complex. The estimates for QALYs gained are based on evidence from studies on the value of faster drug access and improved prevention, but the exact magnitude of the dFDA's impact remains a projection.
 
 **Conclusion:** Despite these uncertainties, the analysis consistently shows that the daily opportunity cost of inaction is substantial across all plausible scenarios. Every day that the current inefficient, slow, and expensive paradigm for clinical research is maintained, society forgoes hundreds of quality-adjusted life-years and tens to hundreds of millions of dollars in value. This provides a powerful, daily reminder of the urgency and immense potential of the dFDA initiative.
-
 
 ---
 
@@ -1350,7 +1351,3 @@ This table summarizes the component calculations and derives the total QALY rang
 - "Each year of delayed access to curative therapy for hepatitis C costs 0.2–1.1 QALYs per patient." ([Pho et al., 2015](https://europepmc.org/articles/pmc4515086?pdf=render))
 - "Syphilis causes substantial health losses in adults and children... The average number of discounted lifetime QALYs lost per infection as 0.09." ([Lee et al., 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9907519/))
 - "Statin treatment provides a gain of 0.20 QALYs in men aged 60 years." ([BMJ](https://www.ncbi.nlm.nih.gov/books/NBK426103/))
-
-
-
-

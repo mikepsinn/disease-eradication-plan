@@ -27,6 +27,7 @@ This Act may be cited as the **"Right‑to‑Trial and FDA Upgrade Act of 2025."
 ### SEC. 102. PURPOSE
 
 The purpose of this Act is to radically accelerate medical progress by:
+
 (1) Establishing a right for all patients to participate in decentralized clinical trials for any condition.
 (2) Creating a **zero-knowledge, decentralized global protocol** to function as a public utility that dramatically reduces the cost and time of medical research.
 (3) Enabling this protocol to **aggregate private, individual, time-series health data** and publish the results of **causal inference analyses** that show the change from baseline for any measured outcome after any intervention, tailored to the multiomic cohort most similar to an individual, while maintaining perfect participant anonymity.
@@ -103,6 +104,7 @@ In this Act—
 (4) **Blockchain Supply‑Chain Ledger\[9]** interoperable with DSCSA (§ 360eee‑3) to capture temperature, custody, delivery.
 (5) **Live Analytics Dashboards** for enrolment, compliance, blinded efficacy; regulators & IRBs get read‑only oversight.
 (d) **Core Protocol Services and Public Reference Portal.** The Protocol's primary function is to provide core backend services accessible via its open API. To ensure baseline access for all citizens and to serve as a model for third-party developers, the Secretary shall host the public-facing **FDA.gov Public Portal** as part of the reference implementation. This framework shall:
+
 (1) **Provide a Reference Health Analysis Tool.** The portal will allow users to connect their data to a secure reference agent that integrates and analyzes their comprehensive health information to generate a **ranked list of treatments & trials**, presented alongside standardized "Outcome Labels."
 (2) **Enable User-Initiated Data Contribution.** The Protocol shall provide standardized tools (including APIs and SDKs) that empower individuals to securely contribute their health data from diverse sources. All data sharing shall be explicitly initiated and authorized by the user.
 (3) Provide reference interfaces for single‑session e‑screening, Part 11 e‑consent, and instant randomisation for matched trials through the portal.
@@ -114,6 +116,7 @@ In this Act—
 (g) **AI-Augmented Governance & Pull‑Request Acceptance.**
 (1) **AI-Assisted Review.** All pull requests (PRs) submitted to the public repository shall undergo an automated, comprehensive review by one or more designated AI Governance and Security Review systems. These systems shall be open-source and trained to perform deep code analysis, identify potential vulnerabilities, assess compliance with architectural standards, and model the risk of economic exploits.
 (2) **Risk-Based Triage.** The AI Reviewer shall assign each PR a risk score (e.g., "Low," "Medium," "High," "Critical"). This score determines the review and merge process:
+
 (A) **Low-Risk PRs:** Shall be merged automatically within 72 hours if they pass all CI tests, unless a TSC member manually flags it for review.
 (B) **Medium-Risk PRs:** Shall be automatically paused and require an explicit simple majority approval vote from the TSC for merger.
 (C) **High-Risk or Critical-Risk PRs:** Shall be automatically rejected and may not be merged without a two-thirds supermajority vote from the TSC to override the AI's finding, accompanied by a published justification.
@@ -259,3 +262,4 @@ If any provision of this Act is held invalid, the remainder shall remain in effe
 \[11] 45 CFR § 164.512(i)(1) (HIPAA research waiver).
 
 **End of Act.**
+

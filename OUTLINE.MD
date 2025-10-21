@@ -1,7 +1,9 @@
 # The Complete Idiot's Guide to Ending War and Disease
+
 *Or: How to Trick Humanity Into Not Killing Itself*
 
 **[VIDEO: Charlie Chaplin's "The Great Dictator" Speech - The Choice Between Machinery and Humanity]**
+
 *"We think too much and feel too little. More than machinery, we need humanity. More than cleverness, we need kindness and gentleness."*
 
 ## Part I: The Problem
@@ -9,6 +11,7 @@
 *Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet*
 
 ### The Daily Holocaust
+
 *Numbers That Will Start Your Revolution*
 
 - 150,000 people die every day from mostly preventable diseases
@@ -18,6 +21,7 @@
   - Humanity's response: Spend $2.7 trillion annually perfecting new ways to create corpses
 
 ### The NIH
+
 *How to Spend $1 Trillion and Cure Absolutely Nothing (A Masterclass)*
 
 - **The Translation Crisis: How to Ignore 166 Billion Treatments**
@@ -32,6 +36,7 @@
   - Achievement unlocked: Understanding every disease mechanism while everyone dies anyway
 
 ### The FDA
+
 *Is Unsafe and Ineffective*
 
 - **Making Medicine 82X More Expensive and 1000X Slower**
@@ -43,6 +48,7 @@
   - System designed to prevent lawsuits, not maximize lives saved
 
 ### Cost of War
+
 *How Humanity Spends $2.7 Trillion Annually on Its Murder Hobby*
 
 - **How to Calculate Your Share of the Global Death Budget**
@@ -56,6 +62,7 @@
   - Weapons in warehouses: Rusting peacefully, dreaming of the apocalypse they'll never see
 
 ### Cost of Disease
+
 *How Disease Extracts $109.1 Trillion from Humanity (While Laughing)*
 
 - **How to Calculate the Bill for Unnecessary Suffering**
@@ -68,6 +75,7 @@
   - Victory lap: Hepatitis C cured in 2014! (Next cure scheduled for 2064, mark your calendars)
 
 ### Humanity's Budget
+
 *Upside-Down Priorities*
 
 - **[FIGURE: Humanity's Budget Pie Chart]**
@@ -91,6 +99,7 @@
   - Switzerland proves it: 0.7% on defense → $93K GDP per capita
 
 ### Democracy Is Theater
+
 *How to Measure Your Actual Political Power (Spoiler: It's Zero)*
 
 - **The Gilens & Page Reality Check (Science Proves You Don't Matter)**
@@ -112,6 +121,7 @@
   - Wishocracy solves this: Pairwise choices, not 50-item ballots
 
 ### Public Choice Theory
+
 *How to Predict Exactly What Politicians Will Do (Hint: Whatever Keeps Them in Power)*
 
 - **How Politicians Actually Make Decisions (Spoiler: Not for You)**
@@ -136,6 +146,7 @@
   - Create concentrated benefits for producing cures rather than perpetuating disease
 
 ### Regulatory Capture
+
 *How to Let Industries Regulate Themselves (What Could Go Wrong?)*
 
 - **The Revolving Door Tutorial**
@@ -150,6 +161,7 @@
   - Every "failure" is someone's quarterly earnings success
 
 ### Central Planning Kills
+
 *How to Destroy Medical Progress in One Easy Step (The FDA Did It in 1962)*
 
 - **The 1962 Catastrophe: How to Break Medicine**
@@ -181,12 +193,12 @@
   - Software/Internet: No FDA = exponential innovation
   - Lasik/cosmetic surgery: Cash markets = 50% price drops
 
-
 ## Part II: The Solution
 
 *How to Build Systems That Don't Suck (A Step-by-Step Guide)*
 
 ### The 1% Treaty
+
 *How to Steal 1% of the Murder Budget Without Anyone Noticing*
 
 - **[FIGURE: The 1% Treaty Visualization]**
@@ -248,6 +260,7 @@
   - Year 20: Make war incomprehensible
 
 ### The DIH
+
 *How to Build a Government That Actually Works (No Politicians Required)*
 
 - **How to Run Parallel Systems (Let Darwin Sort It Out)**
@@ -304,8 +317,8 @@
     - Gaming the high-level budget is economically impossible
     - Billions of votes determine the allocation percentages, not specific winners
 
-
 ### Wishocracy
+
 *How to Replace Congress With an App (And Improve Everything)*
 
 - **How to Let Everyone Propose Ideas (Yes, Even That Guy)**
@@ -349,6 +362,7 @@
   - Democracy becomes addictive (dopamine hits for voting)
 
 ### The Decentralized FDA
+
 *How to Build the Amazon and Consumer Reports of Not Dying (With Reviews You Can Trust)*
 
 - **[FIGURE: dFDA vs FDA Comparison]**
@@ -473,13 +487,14 @@
   - Mental health: No longer the ugly stepchild of medicine
 
 ### The War on Disease
+
 *How to Design the First Government War That Actually Wins*
 
 - **The Global Draft: Your Planet Needs You (Whether You Like It or Not)**
-    - Universal Service Mandate: Every human is conscripted.
-    - Two Ways to Serve: Fight (participate in trials) or Fund (buy VICTORY bonds).
-    - Draft Dodgers: The philosophical cowards of the 21st century who think dying of preventable disease is a "personal choice."
-    - The Referendum as Draft Registration: Voting "Yes" is enlisting.
+  - Universal Service Mandate: Every human is conscripted.
+  - Two Ways to Serve: Fight (participate in trials) or Fund (buy VICTORY bonds).
+  - Draft Dodgers: The philosophical cowards of the 21st century who think dying of preventable disease is a "personal choice."
+  - The Referendum as Draft Registration: Voting "Yes" is enlisting.
 - **How to Structure a War Without Creating a Military-Industrial Complex**
   - Build zero bureaucracy (smart contracts don't need pensions)
   - Pay for corpses prevented, not papers published
@@ -504,6 +519,7 @@
   - The beginning of the market revolution
 
 ### Aligning Incentives
+
 *How to Bribe Everyone Into Doing the Right Thing*
 
 - **How to Convert Defense Contractors (Show Them the Money)**
@@ -553,6 +569,7 @@
 *How to Prove This Isn't Just Another Crazy Internet Scheme*
 
 ### Historical Precedent
+
 *How to Learn From History (The Parts Where Humanity Didn't Completely Fail)*
 
 - **The Post-WW2 Economic Miracle: History's Greatest Peace Dividend**
@@ -610,6 +627,7 @@
   - Urgency: People are literally dying
 
 ### The Body as a Machine
+
 *The Engineering Reality of Biology*
 
 - **Your Replaceable Parts**
@@ -641,9 +659,11 @@
   - Just money going to bombs instead
 
 ### The Economic Case
+
 *$1.22 Trillion in Annual Benefits for a 1,222:1 ROI*
 
 #### The Complete Benefits Calculation
+
 The 1% Treaty doesn't just make trials cheaper. It:
 
 1. Restructures global resource allocation (peace dividend: $97B)
@@ -657,12 +677,12 @@ The 1% Treaty doesn't just make trials cheaper. It:
 
 Each of these alone is worth tens to hundreds of billions. Together? $1.22 trillion/year.
 
-
-
 #### The 9-Year Acceleration
+
 **The insight:** The dFDA gives patients the right and ability to access treatments during Phase 2/3 trials instead of waiting 9.1 years for FDA approval (or forever if trials are never completed for their condition).
 
 **How the acceleration works:**
+
 - Current system: Wait 9.1 years average from Phase 1 to FDA approval
 - dFDA system: Access treatment during Phase 2/3 pragmatic trials
 - Effective acceleration: ~7 years earlier access on average (Phase 2 typically starts 1-2 years into development)
@@ -670,33 +690,40 @@ Each of these alone is worth tens to hundreds of billions. Together? $1.22 trill
 **This isn't speculative future acceleration - it's immediate access to treatments that already exist but are stuck in the approval pipeline.**
 
 **Stock benefit (one-time):** Existing patients get immediate access
+
 - 2 billion people with chronic diseases globally
 - Each gains 7 years of treatment access they'd otherwise miss
 - Total: 14 billion person-years × $150K/QALY = $2.1T total value
 - **Amortized over 7-year acceleration period: $300B/year for years 1-7**
 
 **Flow benefit (ongoing):** New patients each year get early access
+
 - ~100M new chronic disease cases/year globally (based on 43M annual deaths × 2.3 prevalence/mortality ratio)
 - Each saves 7 years × $150K/QALY = $1.05M in value
 - **Annual flow: $105B/year ongoing (starts immediately, continues forever)**
 
 **Combined "earlier access" benefit:**
+
 - Years 1-7: $300B (amortized stock) + $105B (flow) = **$405B/year**
 - Years 8+: $105B/year (flow only)
 - **10-year average: ~$300B/year**
 
 #### The Research Acceleration Multiplier
+
 **The insight:** 82X cheaper trials + 40% more funding ($27B/year) = **115X more research capacity**.
 
 **What this means:**
+
 - Current: ~3,300 clinical trials/year globally, ~50 new drug approvals/year
 - New capacity: ~380,000 trials/year possible, ~1,000-2,000 approvals/year (20-40X increase)
 
 **This is NOT the same as "earlier access":**
+
 - **Earlier Access** = Accessing the SAME 50 drugs in pipeline 7 years sooner
 - **Research Acceleration** = Testing 115X MORE drug candidates, finding 10-20X MORE breakthroughs
 
 **Which diseases benefit:**
+
 - Chronic pain (1.5B people, very limited treatment options)
 - Mental health (1B people, huge treatment gaps)
 - Alzheimer's (55M people, almost nothing works)
@@ -727,6 +754,7 @@ These are NOT rare diseases (already counted). These are common diseases that ar
 **Note:** Insurance savings, productivity gains, and longevity extension are outcomes of the above benefits and not counted separately to avoid double-counting.
 
 #### The Sanity Check
+
 **Is $1.22 trillion/year reasonable?**
 
 Global GDP: $111 trillion/year
@@ -734,6 +762,7 @@ Global healthcare spending: $9.8 trillion/year
 Global military spending: $2.7 trillion/year
 
 If the 1% Treaty generates $1.22T/year in benefits, that's:
+
 - 1.1% of global GDP
 - 12.4% of healthcare spending
 - 45% of military spending
@@ -741,11 +770,13 @@ If the 1% Treaty generates $1.22T/year in benefits, that's:
 **This passes the smell test.**
 
 For comparison:
+
 - Eliminating all cancer: ~$1.1T/year economic value
 - Curing all infectious disease: ~$800B/year
 - Fixing mental health: ~$300B/year
 
 The 1% Treaty doesn't cure everything, but it:
+
 - Accelerates access by 7 years (earlier trial participation)
 - Increases research velocity 10-20X (more breakthroughs)
 - Enables trials for currently untreatable conditions
@@ -753,6 +784,7 @@ The 1% Treaty doesn't cure everything, but it:
 $1.22T/year is reasonable for that scope.
 
 ### Your Personal ROI
+
 *Health, Wealth, and Freedom*
 
 - **Economic Security**
@@ -782,6 +814,7 @@ $1.22T/year is reasonable for that scope.
   - Co-creator of humanity's health budget priorities
 
 ### Path A: Idiocracy
+
 *The Dystopian Default (If We Do Nothing)*
 
 - **[FIGURE: The Two Timelines - Dystopian Path]**
@@ -834,6 +867,7 @@ $1.22T/year is reasonable for that scope.
 - **The Three Subs:** Sub-intelligence (truth unknowable), Sub-longevity (life expectancy 35), Sub-wellbeing (80% mentally ill)
 
 ### Path B: Wishonia
+
 *How to Build Paradise (Or At Least Stop Building Hell)*
 
 - **[FIGURE: The Two Timelines - Wishonia Path]**
@@ -891,9 +925,8 @@ $1.22T/year is reasonable for that scope.
   - We cure death, solve physics, talk to aliens
   - Next challenge: Which galaxy to colonize first
 
-
-
 ### Demolishing Objections
+
 *How to Respond to People Who Think Killing Ourselves Is Fine, Actually*
 
 - **If this is worth $1.22 trillion/year, why hasn't it been done?**
@@ -920,7 +953,9 @@ This is the core paradox. Here are the most likely reasons:
     - It's possible similar initiatives are underway, but they haven't been made public.
 
 **The Falsification Test:**
+
 The only way to know for sure is to test the thesis cheaply and publicly.
+
 1.  **Build Referendum App ($15k):** Can you get 10,000 votes in 30 days?
 2.  **Pitch Angels ($500k):** Can you convince smart money the financial model is sound?
 3.  **Go Viral (6 months):** Can the referendum reach 1 million people?
@@ -998,6 +1033,7 @@ If the answer to these is yes, the idea is viable. If no, the idea is dead. The 
 *How to Actually Do This (Not Just Talk About It on Reddit)*
 
 ### The Financial Roadmap
+
 *How to Bootstrap from $0 to $1 Billion Without Getting Arrested*
 
 You want to end war and disease. You need $1 billion. You have $0. Here's the 36-month roadmap.
@@ -1005,21 +1041,25 @@ You want to end war and disease. You need $1 billion. You have $0. Here's the 36
 **Key Insight:** You're not building trial infrastructure. You're building the FUNDING and GOVERNANCE mechanism. Science37, TrialSpark, and others already run decentralized trials. Your job is to redirect $27 billion into a system that subsidizes patients, creating a massive new market that these platforms will compete to serve.
 
 **Phase 1: Proof of Concept (Months 1-3)**
+
 - **Month 1: Build Wishocracy Voting Widget ($15k):** A simple web app to prove people will engage with the core mechanic of voting on budget priorities. If you can't get engagement here, the idea is dead.
 - **Month 2: Raise $500K from Angels:** Pitch the financial bribery model: "$1B in bonds bribes governments to redirect $27B/year. Your $500K buys a share of all future inflows."
 - **Month 3: Launch Referendum Platform V1:** A simple site with one question: "Humanity currently spends 40 times more on military than on medical research. Should nations redirect 1% of military spending to help cure disease?" Goal: 10,000 votes in 30 days.
 
 **Phase 2: Scale & Lobby (Months 4-18)**
+
 - **Raise $10M Series A:** Use initial traction to fund a larger team.
 - **Viral Growth:** Scale referendum to millions of users.
 - **Lobbying Machine:** Hire the best lobbyists to put the 1% Treaty on the political map.
 
 **Phase 3: Bond Offering & Treaty Push (Months 19-36)**
+
 - **Raise $1B via VICTORY Bonds:** The war chest to win the political fight.
 - **Global Media Blitz:** Make the 1% Treaty the #1 issue globally.
 - **Treaty Ratification:** Coordinated political push in key nations to get the treaty signed.
 
 ### The Right Tools for the Job: A Hybrid Legal Architecture
+
 *How to Legally Accept Philanthropic Donations, Raise For-Profit Capital, and Bribe Politicians at the Same Time*
 
 To win this fight, you need to wage it on three fronts simultaneously: the moral front (public education), the political front (lobbying), and the financial front (investment). The problem is that, legally, no single organization can do all three.
@@ -1060,6 +1100,7 @@ Trying to use one tool for all three jobs is like trying to build a house with o
 This four-part "sibling" structure is the standard for sophisticated, large-scale social movements. It's how you legally and effectively accept charity from foundations, take checks from political donors, and raise billions from hedge funds, all at the same time.
 
 ### Treaty Framework
+
 *How to Get Countries to Sign Things (Bribery But Legal)*
 
 - **How to Build an International Agreement That Works**
@@ -1070,6 +1111,7 @@ This four-part "sibling" structure is the standard for sophisticated, large-scal
   - Make defection more expensive than compliance (game theory 101)
 
 ### The Investment Vehicle
+
 *VICTORY Bonds*
 
 - **The Instrument: High-Risk, High-Return Political Arbitrage**
@@ -1110,6 +1152,7 @@ This four-part "sibling" structure is the standard for sophisticated, large-scal
   - Full transparency: Every dollar tracked publicly
 
 ### Legislation Package
+
 *How to Write Laws That Politicians Will Actually Pass*
 
 - **The Five Bills to Ram Through Congress**
@@ -1119,8 +1162,8 @@ This four-part "sibling" structure is the standard for sophisticated, large-scal
   - Right to Try Expansion: Let dying people try things (revolutionary concept)
   - Budget Reallocation Act: Move money from bombs to bodies (the important pivot)
 
-
 ### Global Referendum
+
 *How to Run a Planetary Vote (Harder Than It Sounds)*
 
 - **The Platform: Wishocracy App**
@@ -1146,9 +1189,8 @@ This four-part "sibling" structure is the standard for sophisticated, large-scal
   - Current trajectory: 1M signups/day once viral
   - Tipping point: Day 280 critical mass achieved
 
-
-
 ### Getting Started
+
 *How to Stop Reading and Start Doing*
 
 - **Sign the Referendum** (3 minutes)

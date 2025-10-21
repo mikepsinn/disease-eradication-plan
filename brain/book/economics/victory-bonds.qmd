@@ -18,6 +18,7 @@ lastFactCheckHash: 225cfe7e95312e30188197611aa5a6c66fa3d89ec7ccb7a6f196cbc366881
 Create a funding mechanism that raises $1 billion to finance the [1% Treaty](../appendix/1-percent-treaty.qmd) campaign through perpetual revenue-sharing bonds.
 
 **The structure to build:**
+
 - Raise $1 billion from bond investors
 - Use funds to execute the treaty campaign
 - Once treaty passes, $27B annually flows from military budgets to [DIH](../solution/dih.qmd)
@@ -35,6 +36,7 @@ Create a funding mechanism that raises $1 billion to finance the [1% Treaty](../
 Set up the bond offering and raise capital from investors.
 
 **Target investors:**
+
 - Institutional investors ($10M+ each)
 - Family offices ($5M+ each)
 - High net worth individuals ($1M+ each)
@@ -45,6 +47,7 @@ Use the capital structure detailed below.
 ### Phase 2: Execute the Campaign
 
 Deploy the $1B raised:
+
 - Get 280M people to vote for the treaty ($0.20/vote = $56M)
 - Lobby 20 strategic countries ($250M, AI-targeted)
 - Build the [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms ($250M, AI-assisted)
@@ -55,6 +58,7 @@ See @sec-campaign-budget for detailed allocation.
 ### Phase 3: Implement Treaty Revenue Flow
 
 Once treaty passes, set up the revenue distribution system:
+
 - $27B annually flows from military budgets to DIH treasury
 - Automatic payment to bondholders: 10% of all inflows
 - Remaining 90% flows to medical research operations
@@ -62,6 +66,7 @@ Once treaty passes, set up the revenue distribution system:
 ### Phase 4: Manage Perpetual Distributions
 
 Set up automated annual payments:
+
 - **Year 1**: $2.7B distributed to bondholders
 - **Year 2**: $2.7B distributed to bondholders
 - **Year 3**: $2.7B distributed to bondholders
@@ -97,6 +102,7 @@ Design the treaty to start at 1% and expand as breakthroughs prove the model:
 | 10+  | 10%+     | $270B+         | $27B+             | 2,700%+      |
 
 **Explain the growth mechanism to investors:**
+
 - Early medical breakthroughs validate the model
 - Mid-stage results build political momentum
 - Long-term cures create unstoppable public demand
@@ -128,6 +134,7 @@ Show investors what full treaty adoption looks like:
 **Investor ROI**: 270% annually
 
 **What happens**:
+
 - Medical research accelerates dramatically
 - Disease burden declines measurably
 - Public support grows stronger
@@ -145,6 +152,7 @@ Show investors the downside case is still attractive:
 **Investor ROI**: 130% annually
 
 **What happens**:
+
 - 130% returns still crush traditional investments
 - Partial funding still produces major breakthroughs
 - Early-adopter success creates FOMO in other nations
@@ -184,18 +192,21 @@ Tell investors: Everyone wins when treaties grow—more cures = bigger treaties 
 Protect investors by releasing funds in tranches tied to achievements:
 
 **Phase 1 milestone ($200M release)**:
+
 - Launch platform MVP
 - Achieve 50M+ referendum votes
 - Complete successful pilots in 2 countries
 - Establish legal framework
 
 **Phase 2 milestone ($500M release)**:
+
 - Reach 280M+ total referendum votes
 - Get treaties pending in 20+ countries
 - Scale platform to 10M users
 - Secure defense industry partnerships
 
 **Phase 3 milestone ($300M release)**:
+
 - Get treaty signed by 50+ countries
 - Achieve $13B+ annual revenue flowing
 - Have dFDA processing trials
@@ -206,21 +217,25 @@ Protect investors by releasing funds in tranches tied to achievements:
 ### Address Each Risk Category
 
 **Mitigate political risk:**
+
 - Build multi-country strategy (don't depend on one nation)
 - Create bipartisan coalitions (avoid partisan framing)
 - Leverage [>70% public support](../references.qmd#public-support-for-peace-funding-70-pct) (politicians can't ignore)
 
 **Mitigate execution risk:**
+
 - Use milestone-gated funding (pay for performance)
 - Deploy AI for 80% cost reduction
 - Follow proven model (defense lobbying gets [1813:1 ROI](../references.qmd#lobbying-roi-calc))
 
 **Mitigate financial risk:**
+
 - Structure first-lien security (get paid before mission spending)
 - Build multiple revenue streams (treaty grows over time)
 - Show downside protection (even 50% success = 130% returns)
 
 **Mitigate legal risk**:
+
 - Ensure multi-jurisdiction compliance
 - Use AI-assisted legal work + expert review
 - Budget $100M for legal defense
@@ -272,6 +287,7 @@ flowchart TB
 ```
 
 **Explain the flywheel to investors:**
+
 1. Treaty passes → Bondholders get first distributions
 2. DIH funds trials → Breakthroughs start emerging
 3. Media covers wins → Public awareness explodes
@@ -320,6 +336,7 @@ Set these minimum investment amounts by investor type:
 The model follows proven economics: defense lobbying gets 1813:1 ROI. Apply the same mechanism to medical research.
 
 The 270% reflects:
+
 1. Access to $27B/year revenue (if treaty passes)
 2. Treaties are hard to repeal once implemented
 3. Political momentum builds from results
@@ -330,15 +347,18 @@ The 270% reflects:
 **Show them the protection:**
 
 "Milestone-gated funding protects you:
+
 - Funds held in escrow
 - Released only when verified achievements hit
 - Refund if targets missed
 
 Even partial success pays well:
+
 - 50% treaty adoption = 130% annual returns
 - Still beats every traditional investment
 
 Worst case scenario:
+
 - Total failure, get money back minus expenses
 - Lose 5-10% of capital"
 
@@ -347,6 +367,7 @@ Worst case scenario:
 **Explain enforcement:**
 
 "Multiple enforcement layers:
+
 - Blockchain tracking (automatic verification)
 - Satellite imagery (verify spending)
 - Smart contract penalties (non-compliance locks out benefits)
@@ -354,6 +375,7 @@ Worst case scenario:
 - Economic incentives (access to cures requires payment)
 
 Political reality:
+
 - Once passed, near-impossible to repeal (like Social Security)
 - Each cure makes it more popular
 - Politicians who oppose get replaced"
@@ -373,6 +395,7 @@ This isn't charity. It's a high-risk investment that happens to save lives."
 **Be honest:**
 
 "Four main risks:
+
 - **Liquidity**: Funds locked 12-36 months during campaign
 - **Political**: Must change laws across multiple countries
 - **Execution**: Campaign must hit milestones (gates mitigate this)
@@ -385,10 +408,10 @@ Not a Ponzi: Returns come from treaty revenue, not new investor money."
 **Direct them:**
 
 "Complete breakdowns available:
+
 - @sec-campaign-budget - Where every dollar goes
 - [Financial Plan](financial-plan.qmd) - System architecture
 - Full offering docs - Email for access"
-
 
 ## Your One-Page Summary for Investors
 
@@ -397,6 +420,7 @@ Create this summary sheet for quick investor review:
 **VICTORY Bonds: High-Risk, High-Return Treaty Campaign Funding**
 
 **What you're offering:**
+
 - Returns: 270% annually (if full treaty passes)
 - Duration: Perpetual revenue share (no maturity)
 - Impact: Funds medical research to save millions
@@ -404,6 +428,7 @@ Create this summary sheet for quick investor review:
 - Growth: Treaty designed to expand 1% → 2% → 5%+
 
 **What you're risking:**
+
 - Political: Treaty must pass across multiple nations
 - Execution: Campaign must hit milestones
 - Timeline: 18-36 month lockup before returns
@@ -414,6 +439,7 @@ Create this summary sheet for quick investor review:
 ## Related Implementation Guides
 
 **For detailed execution plans:**
+
 - @sec-campaign-budget - How to allocate the $1B
 - [Financial Plan](financial-plan.qmd) - Overall system architecture
 - [Coalition That Wins](coalition-that-wins.qmd) - How to align stakeholders

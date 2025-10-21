@@ -11,7 +11,7 @@ dateCreated: 2024-06-09T00:00:00.000Z
 
 Here's the potential range of cost per signature for various strategies to gather 80 million signatures for a global initiative like the [1% Treaty](1-percent-treaty.md). Then, we'll calculate the total estimated cost for achieving this goal through each method.
 
-### 1. Traditional Advertising
+## 1. Traditional Advertising
 
 - **Cost per Signature**: $1 to $5
 - **Total Cost for 80 Million Signatures**: $80 million to $400 million

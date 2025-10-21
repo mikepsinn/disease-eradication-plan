@@ -59,7 +59,7 @@ The 1962 regulations made these large real-world efficacy trials illegal. Ironic
 
 The new regulatory clampdown on approvals immediately reduced the production of new treatments by 70%.
 
-![](https://static.crowdsourcingcures.org/dfda/assets/new-treatments-per-year-2.png)
+![Graph showing new treatments per year decline after 1962](https://static.crowdsourcingcures.org/dfda/assets/new-treatments-per-year-2.png)
 
 **Explosion in Costs**
 

@@ -95,7 +95,7 @@ Your data helps improve treatment rankings and benefits future patients globally
 | 💰 Cost of Clinical Trials                   | [~\$57M][13]  | ➡️ [\$2M][15]    |
 | 👥 Percent of Patients Able to Join Trials   | [15%][4]      | ➡️ [100%][16]    |
 
-### 👀Look at those savings! 🤑
+## 👀Look at those savings! 🤑
 
 **By decentralizing and automating clinical research, we could reduce the cost of new treatments by 95%!**
 

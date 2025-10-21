@@ -12,11 +12,10 @@ tags:
   - democracy-but-working
 lastFactCheckHash: eab100eb63eb0c4bb66d0bf37e96c1318df0efe4ceb76d9fd2447bfa7870b92f
 ---
-Congratulations! You've passed the [1% Treaty](../appendix/1-percent-treaty.qmd) and now you've got $27B/year to allocate.  How [continue]
 
----
+Congratulations! You've passed the [1% Treaty](../appendix/1-percent-treaty.qmd) and now you've got $27B/year to allocate.  
 
-## Wishocracy: What If We Let Everyone Decide, But Cleverly
+How do you avoid parasitic special interests from stealing it or bureacracy from wasting it all?
 
 [Wishocracy](./wishocracy.qmd) is democracy designed by someone who actually understands math and psychology.
 
@@ -27,6 +26,7 @@ It's like building a cathedral where each person only has to place one brick, bu
 ### The Six-Step Process (Or: How to Herd 8 Billion Cats)
 
 **Step 1: Collect All the Problems**
+
 "What sucks about existence?"
 
 - Cancer (sucks a lot)
@@ -36,16 +36,21 @@ It's like building a cathedral where each person only has to place one brick, bu
 - Spotify ads (surprisingly high priority)
 
 **Step 2: Make People Choose (But Gently)**
+
 Don't ask "Rank these 10,000 problems."
 Ask: "Cancer or climate change?" 
 Just two things. Even Florida Man can handle two things.
 
 **Step 3: Let AI Find Solutions**
+
 Humans: "We want to cure cancer!"
-AI: "Here are 50,000 possible approaches, ranked by probable success."
-Humans: "...we'll take the top 10."
+
+AI: "Here are thousands of existing research papers and potential approaches, synthesized and ranked by relevance and probable success."
+
+Humans: "...we'll take the top 10 to investigate further."
 
 **Step 4: Break Everything Into Tiny Pieces**
+
 "Cure cancer" becomes:
 
 - Task 1: Sequence these genomes
@@ -60,6 +65,7 @@ Humans: "...we'll take the top 10."
 - Need coffee made? → Unpaid intern (tradition)
 
 **Step 6: Track What Actually Worked**
+
 Did cancer decrease? No? Stop funding that approach.
 Did it work? Fund it harder.
 It's science, but with receipts.
@@ -127,38 +133,6 @@ It's democracy without the stupidity. We still get the stupidity, but it's evenl
 
 ---
 
-## The AI Parliament: Your Digital Representative Who Actually Represents You
-
-Here's the beautiful part: You don't even have to vote.
-
-You get a **Digital Twin** - an AI that knows what you want and votes for you. It's like having a representative who:
-
-- Actually represents you
-- Never takes bribes
-- Never gets drunk at fundraisers  
-- Never tweets stupid things at 3 AM
-- Works 24/7 for free
-
-### How Your Digital Twin Works
-
-**Training Phase:**
-"Do you prefer funding cancer research or heart disease?"
-"Cancer."
-"How about cancer vs. mental health?"
-"Mental health."
-[20 questions later]
-"Got it. You care about mental health > cancer > heart disease > everything else."
-
-**Autonomous Phase:**
-Your twin votes on millions of micro-decisions while you sleep, eat, or watch Netflix. It knows your values better than your therapist.
-
-**The Collective Result:**
-8 billion digital twins negotiating constantly, finding optimal compromises, allocating resources based on what humans actually want rather than what politicians think we want.
-
-It's like the world's most boring multiplayer game, but it ends poverty.
-
----
-
 ## The Problem Marketplace: Capitalism for Good
 
 Once we know what problems to solve and have budgets, we need solutions. Enter the marketplace.
@@ -183,7 +157,9 @@ Once we know what problems to solve and have budgets, we need solutions. Enter t
 **How it works with Wishocracy:**
 
 Post: "WANTED: Cure for Alzheimer's"
+
 Bounty: $10 billion
+
 Deadline: ASAP
 
 Responses flood in:
@@ -232,191 +208,41 @@ And so on until every task is so simple a robot or intern can do it.
 
 The beauty: Multiple problems share tasks. Cancer research needs protein mapping. So does Alzheimer's. So does longevity. Fund once, solve multiple problems.
 
-It's efficiency, but without the usual corporate evil.
-
 ---
 
-## Real Example: How Wishocracy Would Handle COVID (If We'd Had It)
-
-### What Actually Happened (A Clusterfuck):
-
-**January 2020:** "It's just flu"
-**February 2020:** "It's still just flu"
-**March 2020:** "OH FUCK IT'S NOT FLU"
-**April 2020:** "Try everything randomly!"
-**2021:** "Vaccines work but half of people think they contain 5G"
-**2022:** "Whatever, we're tired"
-**2023-2025:** "COVID? What COVID?"
-
-**Death toll:** [7+ million](../references.qmd#pandemics-vs-wars)
-**Economic damage:** [$16 trillion](../references.qmd#covid-economic-damage-16t)
-**Trust in institutions:** Deceased
-
-### What Would Have Happened with Wishocracy:
-
-**Week 1: Problem Identified**
-
-- "New virus killing people"
-- Priority votes flood in
-- Budget: $500 billion (immediately)
-
-**Week 2: Solutions Proposed**
-
-- 10,000 research teams submit proposals
-- AI ranks by probability of success
-- Top 100 get immediate funding
-
-**Week 3: Tasks Distributed**
-
-- "Sequence viral genome" → Wuhan lab (they're closest)
-- "Test existing drugs" → Every hospital globally
-- "Design mRNA vaccine" → Moderna, BioNTech (parallel)
-- "Manufacture masks" → Every textile factory
-- "Create testing protocol" → South Korea (they're competent)
-
-**Month 2: First Results**
-
-- Genome sequenced, published
-- [Dexamethasone identified as treatment](../references.qmd#recovery-trial-dexamethasone-results)
-- Vaccine candidates in trials
-- Mask production at 1 billion/day
-
-**Month 6: Victory**
-
-- Multiple vaccines approved
-- Treatment protocols established
-- Testing everywhere
-- Death rate down 90%
-
-**Total deaths:** Maybe 500,000 instead of 7 million
-**Trust in institutions:** Slightly less dead
-
-The difference? No committees. No politics. No bureaucracy. Just problems, solutions, and execution.
-
----
-
-## The Opposition (And Why They're Terrified)
+## The Opposition
 
 **Politicians:** "But how do we get bribes if there's no one to bribe?"
+
 **Answer:** Get a real job.
 
 **Lobbyists:** "But how do we corrupt the system?"
-**Answer:** You can't bribe an algorithm.
+
+**Answer:** You can't easily bribe a transparent, open-source algorithm being watched by millions. The cost of capture becomes prohibitively high.
 
 **Bureaucrats:** "But who will form committees?"
+
 **Answer:** Nobody. That's the point.
 
 **Consultants:** "But who will make PowerPoints?"
+
 **Answer:** AI makes better ones in seconds.
 
 **Think Tanks:** "But who will write incomprehensible reports?"
+
 **Answer:** AI will write clearer ones, instantly.
 
 **Congress:** "But we're the representatives!"
-**Answer:** You [represent donors, not people](../references.qmd#unrepresentative-democracy). You're fired.
+
+**Answer:** You [represent donors, not people](../references.qmd#unrepresentative-democracy).
 
 **Skeptics:** "But people are too stupid to decide!"
+
 **Answer:** People are individually stupid but collectively smart. Politicians are the reverse.
 
 ---
 
-## Implementation Timeline: How to Boil Democracy Slowly
-
-### Phase 1: The Trojan Horse (Year 1)
-Launch as "supplementary advisory system"
-
-- Politicians can "consider" the recommendations
-- No threat to existing power
-- Everyone thinks it's cute
-- Meanwhile, it's learning
-
-### Phase 2: The Proof (Year 2)
-Small victories accumulate:
-
-- City uses Wishocracy for parks budget, satisfaction up 400%
-- Company uses it for R&D, innovation triples
-- WHO uses it for disease priorities, actually prioritizes correctly
-- Results impossible to ignore
-
-### Phase 3: The Pressure (Year 3)
-Public demands grow:
-
-- "Why doesn't Congress use this?"
-- "The AI represents me better than my representative"
-- "Wishocracy says fund schools, why are we funding submarines?"
-- Politicians sweat
-
-### Phase 4: The Capitulation (Year 4)
-First major government adopts it:
-
-- Probably Estonia (they're weird like that)
-- Or Singapore (they like efficiency)
-- Works spectacularly
-- Other countries panic
-
-### Phase 5: The Cascade (Year 5)
-Domino effect:
-
-- EU adopts for budget allocation
-- California tries it (of course)
-- China builds their own version
-- Even UK does it (after 5 committees approve)
-
-### Phase 6: The New Normal (Year 10)
-
-- Democracy 1.0 looks like bloodletting
-- Politicians become ceremonial (like British royalty)
-- Decisions based on data not donations
-- Problems actually get solved
-- History books mock the old system
-
----
-
-## What the World Looks Like with Wishocracy
-
-### Year 1: Chaos and Confusion
-
-- Media: "THE ROBOTS ARE DECIDING EVERYTHING!"
-- Reality: Humans are deciding, robots are just counting
-- First budgets are weird (turns out humanity really hates mosquitoes)
-- Traditional power structures panic
-
-### Year 5: The Efficiency Revolution
-
-- Government waste down 90%
-- Decision speed up 100X
-- Corruption becomes technically impossible
-- Former lobbyists selling insurance
-- Problems solved faster than created
-
-### Year 10: The Golden Age Begins
-
-- Poverty trending toward zero
-- Diseases cured monthly
-- Climate change reversing
-- Education free and excellent
-- Wars fought in video games only
-
-### Year 50: Looking Back in Horror
-
-- Museums dedicated to "The Time We Let Politicians Decide Things"
-- Children learn about lobbyists like we learn about witch trials
-- "Congress" becomes slang for "purposeless gathering"
-- Democracy 1.0 viewed like we view leeches as medicine
-
-### Year 100: Post-Scarcity
-
-- All basic problems solved
-- Humanity argues about which planets to colonize
-- Death optional
-- Work optional
-- Wishocracy decides what to explore next
-- Someone proposes bringing back politicians as a joke
-- Proposal receives 0 votes
-
----
-
-## The Beautiful Truth: We Already Do This, Just Badly
+## The Truth: We Already Do This, Just Badly
 
 Every time you:
 
@@ -448,7 +274,7 @@ Same collective intelligence. Better targets.
 
 ---
 
-## The Bottom Line: Democracy's Operating System Upgrade
+## Democracy's Operating System Upgrade
 
 Democracy 1.0 was designed for:
 
@@ -479,24 +305,16 @@ It's not replacing democracy. It's making it work.
 Current democracy is like running Windows 95 on a quantum computer. Wishocracy is finally installing the right OS.
 
 Will it be perfect? No.
+
 Will it make mistakes? Yes.
+
 Will it be better than letting cocaine-addled politicians decide based on bribes? Absolutely.
 
 After all, we're all going to die anyway.
 
 Might as well die in a system that actually tries to prevent it.
 
-
-
----
-
-*P.S. - Your congressman doesn't know what an API is but votes on internet regulation. Your digital twin would at least Google it first.*
-
-*P.P.S. - The Wishocracy protocol is open source. Unlike democracy 1.0, which apparently runs on corruption and prayer.*
-
-*P.P.P.S. - If you think letting AI help make decisions is scary, remember: we currently let people who can't convert PDF to Word decide nuclear policy.*
-
-#### Wishocracy: Preventing Capture
+### Wishocracy: Preventing Capture
 
 **Protecting the $24.3B From Special Interest Hamburglers**
 

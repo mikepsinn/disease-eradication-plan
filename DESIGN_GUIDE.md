@@ -32,6 +32,7 @@ All reusable charts are located in [brain/figures/](brain/figures/) as **Quarto 
 ## Chart File Format
 
 **IMPORTANT:** Charts must be created as `.qmd` files, NOT Python scripts. This ensures they can be:
+
 - Included directly in book chapters and presentations
 - Rendered independently for testing
 - Reused across multiple documents
@@ -60,6 +61,7 @@ Include charts in any `.qmd` file using Quarto's include directive:
 **Every QMD chart file MUST generate a corresponding PNG file.** No exceptions.
 
 **Why PNGs are required:**
+
 - Used in presentations and slide decks
 - Shared on social media (Twitter, LinkedIn, etc.)
 - Embedded in external reports and documents
@@ -68,8 +70,10 @@ Include charts in any `.qmd` file using Quarto's include directive:
 - Quick preview without running code
 
 **Implementation:**
+
 ```python
 # This code MUST be at the end of every chart file:
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'same-name-as-qmd-file.png',
@@ -82,6 +86,7 @@ plt.show()  # For Quarto display
 **Format:** `[topic]-[comparison/metric]-[type]-chart.qmd`
 
 **Rules:**
+
 - Always end with `[type]-chart` for charts (e.g., `column-chart`, `pie-chart`, `line-chart`)
 - **Prefer `column-chart` over `bar-chart`** for better mobile readability
 - Use `-diagram`, `-counter` etc. for non-charts
@@ -89,6 +94,7 @@ plt.show()  # For Quarto display
 - Use hyphens between all words
 
 **Examples:**
+
 - ✅ `military-spending-vs-medical-research-column-chart.qmd`
 - ✅ `disease-deaths-by-type-2024-pie-chart.qmd`
 - ✅ `victory-bonds-roi-projection-line-chart.qmd` (not `medical-victory-bonds...`)
@@ -109,6 +115,7 @@ plt.show()  # For Quarto display
 
 1. Import from [_chart_style.py](_chart_style.py): `setup_chart_style()`, color constants, helper functions
 2. **Save images using dynamic project root** (works regardless of where quarto runs from):
+
    ```python
    # At top of file - find project root dynamically
    project_root = Path.cwd()
@@ -121,11 +128,14 @@ plt.show()  # For Quarto display
    output_dir.mkdir(parents=True, exist_ok=True)
    plt.savefig(output_dir / 'chart-name.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
    ```
+
 3. **MANDATORY: Generate PNG output** - Every chart MUST save a PNG:
+
    ```python
    plt.savefig(output_dir / 'exact-same-name-as-qmd.png',
                dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
    ```
+
 4. Name output file to match source: `chart-name.qmd` → `chart-name.png`
 5. Use linear scales for disparity charts (avoid logarithmic scales - they hide the dramatic differences we're trying to highlight)
 6. Add line breaks to prevent text cutoff: `f'Label:\n${value}T'`
@@ -178,11 +188,13 @@ For authoritative, journalistic typography inspired by newspaper editorial pages
 - **Fallbacks:** System serif and monospace fonts
 
 **Design Inspiration:**
+
 - 1940s-60s newspaper front pages (serious, factual, authoritative)
 - Typewriter documents (direct, unvarnished truth)
 - Government reports and white papers (credible, institutional)
 
 **Python Implementation:**
+
 ```python
 plt.rcParams['font.family'] = 'serif'
 plt.rcParams['font.serif'] = ['Georgia', 'Times New Roman', 'Liberation Serif']
@@ -194,12 +206,14 @@ plt.rcParams['font.weight'] = 'normal'  # Let serif do the heavy lifting
 **Font Sizing - Adaptive to Chart Density:**
 
 Mobile-first (320-428px). Scale fonts based on element count:
+
 - **Sparse (≤5 elements):** Max sizes | **Dense (>10):** Min sizes to prevent overlap
 - **Hierarchy:** Data values (24-44pt) > Title (28-36pt) ≥ Axis labels (20-36pt) > Annotations (11-24pt) > Callouts (11-22pt) > Notes (9-16pt) > Watermark (11pt fixed)
 
 **Anti-overlap:** Start with full descriptive text at smaller sizes. Only shorten if essential. Stagger vertically when crowded (5pt min spacing). Better: 11pt readable text than 28pt overlapping mess.
 
 **Common Mistakes:**
+
 - ❌ 18pt title with 44pt data - title disappears
 - ❌ Fonts that look "fine" on desktop but illegible on mobile
 - ✅ 36pt+ for everything - instantly readable anywhere
@@ -227,10 +241,12 @@ These margins are automatically set by `setup_chart_style()` but can be adjusted
 **Prefer Column Charts (Vertical) Over Bar Charts (Horizontal):**
 
 Mobile devices are held vertically - column charts use this natural orientation better:
+
 - **Column charts:** Full width for data, natural scrolling if needed
 - **Horizontal bar charts:** Cramped, text gets squeezed, hard to read labels
 
 **When to Use Each:**
+
 - **Column charts (default):** Comparisons, rankings, time series - anything under 10 categories with comparable value ranges (within 100× of each other)
 - **Horizontal bars:** Use when you have 5+ categories
 - **Pie charts:** Only for showing parts of a whole (max 3-4 slices). **Default to white fill with black outline** for slices
@@ -238,6 +254,7 @@ Mobile devices are held vertically - column charts use this natural orientation 
 ## Minimalist Chart Design Rules
 
 **What to Include:**
+
 - **Chart title (MANDATORY)** - Clear, concise, properly sized (28-36pt bold). **Every chart MUST have a title for standalone readability**
 - Data bars/columns (white fill with black outline, use solid black for emphasis)
 - Y-axis with scale (ONLY when columns aren't all labeled with amounts)
@@ -245,6 +262,7 @@ Mobile devices are held vertically - column charts use this natural orientation 
 - Watermark (required)
 
 **Label Placement (Tufte-approved):**
+
 - Put labels directly ON the data (on bars, lines, points)
 - Format: `"$7T\nIndirect War Costs"` (value + description with line break)
 - **Large bars (white fill):** Label inside (black text on white bars) OR label above
@@ -255,6 +273,7 @@ Mobile devices are held vertically - column charts use this natural orientation 
 - This eliminates matching numbers to separate axis labels
 
 **White Background Boxes for Labels:**
+
 - **Use white boxes ONLY for labels placed ON bars/columns** - Makes text readable over patterns
 - **Do NOT use boxes for labels positioned above/outside bars** - They're already on white background
 - Add boxes using: `bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)`
@@ -262,11 +281,13 @@ Mobile devices are held vertically - column charts use this natural orientation 
 - Keep padding minimal (0.4) to avoid visual clutter
 
 **Typography Approach:**
+
 - **Make text as large as reasonably possible**
 - Numbers should dominate the visual hierarchy
 - If text feels too small, it probably is - go bigger
 
 **Text Width and Clipping:**
+
 - **Test your text fits** - Long text on bars gets clipped at edges
 - Use abbreviations when needed: "55M Deaths/Year" not "55 Million Deaths/Year"
 - Multi-line text is better than long single lines
@@ -274,6 +295,7 @@ Mobile devices are held vertically - column charts use this natural orientation 
 - Check the generated PNG - if text is cut off, shorten or reduce font size
 
 **What to Remove:**
+
 - **Gridlines** - Remove unless absolutely necessary for readability
 - **Y-axis entirely** - Remove on column charts when all columns show numeric labels
 - **X-axis labels** - Remove when labels are on the bars themselves
@@ -283,6 +305,7 @@ Mobile devices are held vertically - column charts use this natural orientation 
 - **Extra annotations, callouts, arrows** - Remove unless critical for understanding
 
 **The Tufte Test:**
+
 Ask: "If I remove this element, does the chart lose essential information?" If no, remove it.
 
 ## Newspaper/Typewriter Aesthetic (for Images/Graphics)
@@ -297,6 +320,7 @@ When creating or sourcing images:
 - **Typewriter precision** - Aligned, structured, document-like
 
 **Design Inspiration:**
+
 - 1940s-60s newspaper front pages (The New York Times, Washington Post editorial style)
 - Typewriter documents and government memos
 - Pentagon Papers aesthetic (authoritative classified documents)

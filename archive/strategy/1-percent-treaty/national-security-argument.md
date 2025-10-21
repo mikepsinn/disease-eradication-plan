@@ -11,7 +11,7 @@ dateCreated: 2024-07-18T17:30:00.000Z
 
 The proposal to redirect 1% of global military spending to medical research is not an act of charity; it is a direct and strategic upgrade to our model of national and global security. Here is the rationale.
 
-### 1. Directly Reducing Global Capacity for Self-Destruction
+## 1. Directly Reducing Global Capacity for Self-Destruction
 
 The most fundamental benefit is the most direct. A synchronized, global 1% reduction in military budgets means 1% fewer resources are dedicated to developing and maintaining the tools of war—be it tanks, bombs, or autonomous weapons systems. This act directly lowers the temperature of international relations and universally reduces humanity's collective capacity for armed conflict. It is a tangible step away from mutually assured destruction and towards mutual survival.
 

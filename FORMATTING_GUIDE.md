@@ -5,10 +5,12 @@
 **Formatting Rules to Enforce:**
 
 1.  **Sentence Structure:** Each sentence must start on a new line.
-3.  **List Spacing:** Ensure all markdown lists are preceded by a blank line.
-4.  **Math Formatting:** Enclose all inline mathematical formulas in single dollar signs (`$...$`) and block-level formulas in double dollar signs (`$$...$$`) for proper LaTeX rendering.
-5.  **Preserve Quarto Syntax:** All Quarto syntax must be preserved *exactly*. This includes:
+2.  **Blank Line After Bold Text:** Bold text (e.g., `**Bold text**`) at the end of a line MUST be followed by a blank line to ensure proper paragraph separation in rendered output.
+3.  **Blank Line After Quoted Text:** Quoted text (e.g., `"Quote"`) at the end of a line MUST be followed by a blank line to ensure proper rendering.
+4.  **List Spacing:** Ensure all markdown lists are preceded by a blank line.
+5.  **Math Formatting:** Enclose all inline mathematical formulas in single dollar signs (`$...$`) and block-level formulas in double dollar signs (`$$...$$`) for proper LaTeX rendering.
+6.  **Preserve Quarto Syntax:** All Quarto syntax must be preserved *exactly*. This includes:
     *   Code blocks with curly braces: ````{python}`
     *   Special comments: `#| label: my-label`
     *   Shortcodes: `{{< include ... >}}`
-6.  **Preserve Markdown:** All standard markdown (headers, tables, etc.) must be preserved.
+7.  **Preserve Markdown:** All standard markdown (headers, tables, etc.) must be preserved.

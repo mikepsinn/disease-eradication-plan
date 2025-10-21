@@ -25,6 +25,7 @@ npm run extract-references
 ```
 
 This creates two files:
+
 - `references-to-update.md` - Edit this file to add URLs
 - `references-to-update.json` - Metadata for the integration script (don't edit)
 
@@ -47,9 +48,11 @@ Example:
 **ID:** `21st-century-cures-act-2016`
 
 **Quote:**
+
 > 21st Century Cures Act (2016)
 
 **Current Source:**
+
 > <!-- TODO: Add source URL -->
 
 **NEW URL:** https://www.congress.gov/bill/114th-congress/house-bill/34
@@ -66,6 +69,7 @@ npm run integrate-references
 ```
 
 This script will:
+
 1. Create a backup of `references.qmd` at `brain/book/references.qmd.backup`
 2. Update all references with the new URLs
 3. Show a summary of updated references
@@ -107,12 +111,14 @@ The scripts use the anchor tags (`<a id="...">`) as delimiters to identify and u
 ### No references found
 
 If the extraction script finds 0 references, check:
+
 - Are there TODOs in [references.qmd](brain/book/references.qmd)?
 - Run: `grep -c "TODO: Add source URL" brain/book/references.qmd`
 
 ### Integration failed
 
 If integration fails:
+
 - Check that `references-to-update.json` exists
 - Verify you added URLs in `references-to-update.md`
 - Ensure URLs are on the line after `**NEW URL:**`
