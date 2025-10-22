@@ -19,17 +19,15 @@ async function main() {
   console.log(`Found ${markdownFiles.length} markdown files to process.`);
 
   for (const filePath of markdownFiles) {
-    try {
-      console.log(`\n--- Processing ${filePath} ---`);
-      await analyzeArchivedFile(filePath);
-      console.log(`--- Finished processing ${filePath} ---`);
-    } catch (error) {
-      console.error(`An error occurred while processing ${filePath}:`, error);
-      // Continue to the next file
-    }
+    console.log(`\n--- Processing ${filePath} ---`);
+    await analyzeArchivedFile(filePath);
+    console.log(`--- Finished processing ${filePath} ---`);
   }
 
   console.log('\nArchive processing complete.');
 }
 
-main();
+main().catch(error => {
+  console.error('An unexpected error occurred:', error);
+  process.exit(1);
+});

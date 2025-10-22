@@ -14,15 +14,14 @@ async function main() {
   console.log(`Found ${files.length} markdown files to process.`);
 
   for (const file of files) {
-    try {
-      console.log(`\n--- Processing ${file} ---`);
-      await analyzeArchivedFile(file);
-    } catch (error) {
-      console.error(`Failed to process ${file}:`, error);
-    }
+    console.log(`\n--- Processing ${file} ---`);
+    await analyzeArchivedFile(file);
   }
 
   console.log('\n--- All files processed. ---');
 }
 
-main();
+main().catch(error => {
+  console.error('An unexpected error occurred:', error);
+  process.exit(1);
+});

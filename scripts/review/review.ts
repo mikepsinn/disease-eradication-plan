@@ -35,11 +35,7 @@ async function main() {
 
     console.log(`Found ${bookFiles.length} files needing a ${check.name.toLowerCase()} review.`);
     for (const file of bookFiles) {
-      try {
-        await check.checkFunction(file);
-      } catch (error) {
-        console.error(`An error occurred during the ${check.name} check for ${file}:`, error);
-      }
+      await check.checkFunction(file);
     }
   }
 
