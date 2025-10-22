@@ -8,7 +8,7 @@ This is the secure, production-ready referendum landing page for collecting vote
 
 ## 🎨 Design Philosophy
 
-Follows the DIH [DESIGN_GUIDE.md](../../DESIGN_GUIDE.md):
+Follows the DIH [DESIGN_GUIDE.md](../../GUIDES/DESIGN_GUIDE.md):
 
 - **Black and white only** - Maximum contrast, timeless authority
 - **1950s atomic age aesthetic** - Bold, urgent, propaganda poster style
@@ -395,4 +395,3 @@ Track these in your Airtable base:
 ---
 
 **Now deploy and start collecting votes. Death doesn't wait.**
-

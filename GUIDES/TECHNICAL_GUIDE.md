@@ -49,4 +49,4 @@ If the automated setup doesn't work:
 - **Code:** Write new tools in TypeScript
 - **Dependencies:** Use `npm` and include a `package.json`
 - **Execution:** Run TypeScript directly with `tsx`. No compiled `.js` files in the repo.
-- **Automated Formatting:** All `.qmd` files are subject to automated formatting checks based on the rules defined in [`FORMATTING_GUIDE.md`](../FORMATTING_GUIDE.md).
+- **Automated Formatting:** All `.qmd` files are subject to automated formatting checks based on the rules defined in [`FORMATTING_GUIDE.md`](./FORMATTING_GUIDE.md).

@@ -51,14 +51,14 @@ To enforce the "Technical & Structural Integrity" and "Sourcing and Citation Sta
 
 **Purpose:**
 
-To enforce the visual standards defined in `DESIGN_GUIDE.md`.
+To enforce the visual standards defined in `GUIDES/DESIGN_GUIDE.md`.
 
 **Core Functionality:**
 
 1.  **Identify Stale Files:** Use `getStaleFiles` to find files needing a figure check based on the `lastFigureCheck` date.
 2.  **Chart Linter:**
     - Scan the content of any `.qmd` files in `brain/figures/` that are referenced in the stale file.
-    - Check for violations of the `DESIGN_GUIDE.md`, such as:
+    - Check for violations of the `GUIDES/DESIGN_GUIDE.md`, such as:
         - The presence of `plt.tight_layout()`.
         - The absence of a call to `setup_chart_style()` or `add_watermark()`.
         - Incorrect file naming conventions.

@@ -64,7 +64,7 @@ The DIH website includes:
 
 ### Styling
 
-The website uses a **pure neobrutalist design** following the project's DESIGN_GUIDE.md:
+The website uses a **pure neobrutalist design** following the project's GUIDES/DESIGN_GUIDE.md:
 
 - **Pure black (#000) and white (#fff)** - No grays, no gradients, no compromise
 - **Bold geometric shapes** - Thick borders (4-8px), offset drop shadows
@@ -76,7 +76,7 @@ The website uses a **pure neobrutalist design** following the project's DESIGN_G
 
 **Design Philosophy:**
 
-- Black and white ONLY (per DESIGN_GUIDE.md)
+- Black and white ONLY (per GUIDES/DESIGN_GUIDE.md)
 - Maximum contrast and readability
 - Bold, geometric, no rounded corners
 - Typography hierarchy through size and weight
@@ -147,7 +147,7 @@ The website pulls from existing book content in `brain/book/`:
 - Main book landing page: [index.qmd](index.qmd)
 - Project instructions: [CLAUDE.md](CLAUDE.md)
 - Contributing guidelines: [CONTRIBUTING.md](CONTRIBUTING.md)
-- Design guide: [DESIGN_GUIDE.md](DESIGN_GUIDE.md)
+- Design guide: [DESIGN_GUIDE.md](GUIDES/DESIGN_GUIDE.md)
 
 ## Questions or Issues?
 

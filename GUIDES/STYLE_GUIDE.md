@@ -10,7 +10,7 @@ tags: [style-guide, writing, tone, voice, contributing]
 **See also:**
 
 - [DESIGN_GUIDE.md](DESIGN_GUIDE.md) - Visual design standards for charts and diagrams
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Overall contribution workflow and standards
+- [CONTRIBUTING.md](../CONTRIBUTING.md) - Overall contribution workflow and standards
 
 ---
 
