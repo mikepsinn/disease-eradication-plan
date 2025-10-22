@@ -564,7 +564,10 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
   if (!jsonMatch) {
     throw new Error(`No JSON object found in LLM response. Response text: ${responseText}`);
   }
-  const response = JSON.parse(jsonMatch[0]);
+  // Sanitize the JSON string by removing newline and carriage return characters
+  // which can cause parsing errors if they are not properly escaped in the LLM response.
+  const sanitizedJsonString = jsonMatch[0].replace(/[\r\n]/g, "");
+  const response = JSON.parse(sanitizedJsonString);
 
   switch (response.action) {
     case 'MERGE':

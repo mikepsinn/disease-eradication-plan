@@ -19,22 +19,30 @@ export async function findBookFiles(): Promise<string[]> {
 }
 
 function formatFrontmatter(content: string): string {
+    const { data, content: body } = matter(content);
 
-        const { data, content: body } = matter(content);
+    // For descriptions that are multi-line, collapse them to a single line.
+    if (data.description && typeof data.description === 'string') {
+        data.description = data.description.replace(/\n/g, ' ').trim();
+    }
 
-        // For descriptions that are multi-line, collapse them to a single line.
-        if (data.description && typeof data.description === 'string') {
-            data.description = data.description.replace(/\n/g, ' ').trim();
+    // Remove date and dateCreated fields
+    delete data.date;
+    delete data.dateCreated;
+
+    // Convert any remaining Date objects to ISO strings to prevent YAML errors
+    for (const key in data) {
+        if (data[key] instanceof Date) {
+            data[key] = data[key].toISOString();
         }
+    }
 
-        // Use JSON_SCHEMA to enforce double quotes on all strings and keys.
-        const newFrontmatter = yaml.dump(data, {
-            schema: yaml.JSON_SCHEMA,
-            lineWidth: -1,
-        });
-        return `---\n${newFrontmatter.trim()}\n---\n${body}`;
-
-    return content;
+    // Use JSON_SCHEMA to enforce double quotes on all strings and keys.
+    const newFrontmatter = yaml.dump(data, {
+        schema: yaml.JSON_SCHEMA,
+        lineWidth: -1,
+    });
+    return `---\n${newFrontmatter.trim()}\n---\n${body}`;
 }
 
 export function programmaticFormat(content: string): string {
@@ -73,5 +81,7 @@ export function programmaticFormat(content: string): string {
 // Shared file-saving function that applies programmatic formatting.
 export async function saveFile(filePath: string, content: string): Promise<void> {
   const formattedContent = programmaticFormat(content);
+  const dir = path.dirname(filePath);
+  await fs.mkdir(dir, { recursive: true });
   await fs.writeFile(filePath, formattedContent, 'utf-8');
 }
