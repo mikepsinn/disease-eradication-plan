@@ -1,24 +1,24 @@
 ---
-title: "The Positron Framework: An Engine for Public Good"
-description: "Introducing the Positron framework, the autonomous agent system that operationalizes the DIH mission by coordinating the War on Disease."
+title: "The Positron Network: Your Army of AI Agents"
+description: "How to build and command an army of autonomous AI agents to fight the War on Disease, using the open-source Positron Network."
 ---
 
-## The Engine of the DIH
+## Your Army for the War on Disease
 
-The [DIH](dih.qmd) is the mission, [Wishocracy](wishocracy.qmd) is the operating system for setting priorities, and the **Positron framework** is the execution engine that gets the work done.
+The [DIH](dih.qmd) is mission control, [Wishocracy](wishocracy.qmd) is the targeting system, and the **Positron Network** is your army of AI agents for fighting the War on Disease.
 
 Think of it this way:
--   **The DIH** is the entity conducting the War on Disease.
--   **Wishocracy** is the tool humanity uses to tell the DIH what to do (e.g., "Cure cancer").
--   **Positron** is the army of AI agents that takes those orders and executes them.
+-   **The DIH** declares the war.
+-   **Wishocracy** tells the army what hills to take (e.g., "Cure cancer").
+-   **Positron** is the army of autonomous agents that actually takes those hills.
 
-The Positron framework is an open-source system for the autonomous production of public goods. Its core purpose is to **discover and execute positive-sum games**—actions that create more value than they consume. While we discuss it here as the engine for the DIH, it's designed for **any nonprofit organization** to run their own instance, dramatically increasing their operational efficiency and impact.
+The Positron Network is an open-source system for building this army. Its core purpose is to **discover and execute positive-sum games**—actions that create more value than they consume. While we're showing you how to use it for the War on Disease, it's designed for **any nonprofit organization** to build their own AI army and maximize their impact.
 
-Here's how you build it.
+Here's how you build your army.
 
 ### The Network Structure
 
-The framework is a decentralized network of AI agents working in concert. At a high level, it looks like this:
+The Positron Network is a decentralized system of AI agents working in concert. At a high level, it looks like this:
 
 ```mermaid
 graph TD
@@ -51,11 +51,20 @@ graph TD
 
 ```
 
-### Step 1: Create Positron Nodes
+### Step 1: Deploy a Positron Node (Your AI Operating System)
 
-A "Positron Node" is just a fancy term for a container that holds your AI agents. Think of it as a digital barracks. Any nonprofit or group aligned with the mission can run one. Its job is to give your agents a place to live and the tools they need to work.
+A "Positron Node" is a configurable **AI operating system for your nonprofit**. Think of it less as a simple container and more as a digital headquarters where your AI army lives, trains, and works. Any nonprofit can deploy a node to automate its operations and radically increase its efficiency.
 
-Inside each node, you have **Task Agents**. These aren't generalist AIs that write poetry; they are hyper-focused digital workers. Each one has a single, brutally specific job. They use a shared brain (retrieval augmented generation) for long-term memory, a scratchpad (context management) for short-term tasks, and a set of tools (APIs) to interact with the real world.
+#### What Your AI Operating System Does For You
+
+For a nonprofit, a Positron Node isn't just a technical tool; it's a force multiplier. It allows you to:
+
+*   **Automate the Grunt Work:** Deploy agents to handle the soul-crushing tasks that burn out your staff, like grant research, donor outreach, and social media monitoring.
+*   **Build Your Movement:** Use "Movement Building Agents" to find and engage supporters, turning casual followers into a dedicated base of evangelists.
+*   **Master Advocacy:** Launch "Advocacy Agents" that can track legislation, coordinate public comment campaigns, and ensure your voice is heard by policymakers, all while you sleep.
+*   **Optimize Everything:** Use "Agent Evaluators" to constantly measure what's working and what's not, allowing you to allocate your limited resources with ruthless, data-driven precision.
+
+Inside this OS, you have **Task Agents**. These aren't generalist AIs that write poetry; they are hyper-focused digital workers. Each one has a single, brutally specific job. They use a shared brain (retrieval augmented generation) for long-term memory, a scratchpad (context management) for short-term tasks, and a set of tools (APIs) to interact with the real world.
 
 ### Step 2: Define the Mission for Each Agent
 
@@ -77,13 +86,13 @@ The design of these agents isn't random. It's based on the six practices of high
 
 ![The six-part organizing framework from the book Forces for Good.](../../assets/forces-for-good-organizing-framework.png)
 
-This framework ensures our agents are designed not just for efficiency, but for high-impact, systemic change.
+This organizing framework ensures our agents are designed not just for efficiency, but for high-impact, systemic change.
 
 ### How to Build It Without Skynet Taking Over (Human-AI Cooperation)
 
 Current AI isn't smart enough to do this alone, which is probably for the best. The most effective approach is a model of **Human-AI Cooperation**.
 
-The framework uses familiar developer workflows to manage the interaction between humans and AI:
+The network uses familiar developer workflows to manage the interaction between humans and AI:
 
 *   **AI Proposes:** Agents create GitHub issues to recommend new strategies or improvements.
 *   **Humans Review:** Human maintainers review, discuss, and approve these proposals.
