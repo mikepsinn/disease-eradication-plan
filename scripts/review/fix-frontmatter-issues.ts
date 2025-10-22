@@ -9,7 +9,7 @@ const ROOT_DIR = process.cwd();
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
 
 async function findMarkdownFiles(dir: string): Promise<string[]> {
-    const pattern = '**/*.{md,qmd,mdc}';
+    const pattern = 'brain/book/**/*.qmd';
     const files = await glob(pattern, {
         cwd: dir,
         ignore: IGNORE_PATTERNS.map(p => `**/${p}/**`),
@@ -58,12 +58,23 @@ async function fixFrontmatterIssues() {
                 }
             }
             
-            if (data.title && typeof data.title === 'string' && (data.title.includes(':') || /[\u{1F300}-\u{1F9FF}]/u.test(data.title))) {
+            if (data.title && typeof data.title === 'string') {
+                const needsQuotes = data.title.includes(':') || /[\u{1F300}-\u{1F9FF}]/u.test(data.title);
                 const isQuoted = (data.title.startsWith('"') && data.title.endsWith('"')) || (data.title.startsWith("'") && data.title.endsWith("'"));
-                if (!isQuoted) {
+
+                if (needsQuotes && !isQuoted) {
                     data.title = `"${data.title.replace(/"/g, '\\"')}"`;
                     needsRewrite = true;
                     reasons.push('Quoted title with colon or emoji');
+                } else if (isQuoted && !needsQuotes) {
+                    // This will remove quotes if they are not needed.
+                    // data.title = data.title.substring(1, data.title.length - 1);
+                    // needsRewrite = true;
+                    // reasons.push('Removed unnecessary quotes from title');
+                } else if (data.title.startsWith('""') && data.title.endsWith('""')) {
+                    data.title = data.title.substring(1, data.title.length - 1);
+                    needsRewrite = true;
+                    reasons.push('Corrected double-quoted title');
                 }
             }
 

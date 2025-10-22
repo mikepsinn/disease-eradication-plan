@@ -14,19 +14,25 @@ You are an expert editor for "The Complete Idiot's Guide to Ending War and Disea
 
 ---
 **STYLE GUIDE:**
+
 ```markdown
 {{styleGuide}}
 ```
+
 ---
 **Existing Chapter Content ({{targetFilePath}}):**
+
 ```markdown
 {{targetBody}}
 ```
+
 ---
 **Archived File Content to Merge:**
+
 ```markdown
 {{archivedBody}}
 ```
+
 ---
 
 Return only the final, merged markdown content.
