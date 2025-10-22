@@ -1,10 +1,14 @@
 ---
 title: Verification and Fraud Prevention
-description: "Comprehensive framework for identity verification, sybil resistance, and fraud prevention in the global referendum and treasury operations."
+description: Comprehensive framework for identity verification, sybil resistance, and fraud prevention in the global referendum and treasury operations.
 published: true
-date: "2025-01-15T00:00:00.000Z"
-tags: [verification, fraud-prevention, sybil-resistance, identity, security, referendum]
-dateCreated: "2025-01-15T00:00:00.000Z"
+tags:
+  - verification
+  - fraud-prevention
+  - sybil-resistance
+  - identity
+  - security
+  - referendum
 ---
 
 # Verification and Fraud Prevention
@@ -27,13 +31,13 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 **Layer 2: Enhanced Verification**
 
 - **Government ID Integration:** Connect with national e-ID systems where available
-  - [Estonia e-Residency integration](../book/references.qmd#estonia-eresidency-stats)
+  - [Estonia e-Residency integration](../references.qmd#estonia-eresidency-stats)
   - Indian Aadhaar system (with privacy protections)
   - EU eIDAS network compatibility
   - US State ID verification via ID.me partnership
 - **Biometric Liveness Detection:** Camera-based liveness checks to prevent deepfakes
 - **Proof-of-Uniqueness Partners:** Integration with existing identity verification services
-  - [Worldcoin iris scanning](../book/references.qmd#worldcoin-scale) (where available)
+  - [Worldcoin iris scanning](../references.qmd#worldcoin-scale) (where available)
   - BrightID social verification network
   - Gitcoin Passport identity scoring
 
@@ -45,7 +49,7 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 
 ### **Cryptographic Verification Protocol**
 
-**End-to-End Verifiable Voting ([Helios Protocol](../book/references.qmd#helios-voting)):**
+**End-to-End Verifiable Voting ([Helios Protocol](../references.qmd#helios-voting)):**
 
 - **Individual Ballot Verification:** Each voter receives cryptographic receipt
 - **Public Bulletin Board:** All ballots published (anonymized) for public audit
@@ -182,7 +186,7 @@ The 1% Treaty initiative requires verifying 280 million real human participants 
 - **Lawful Basis:** Legitimate interest for fraud prevention, consent for optional features
 - **Data Subject Rights:** Full implementation of access, rectification, erasure rights
 - **Privacy by Design:** Technical and organizational measures for data protection
-- **Biometric Data:** Adherence to [strict requirements for processing biometric data under Article 9](../book/references.qmd#gdpr-biometric-data).
+- **Biometric Data:** Adherence to [strict requirements for processing biometric data under Article 9](../references.qmd#gdpr-biometric-data).
 - **Cross-Border Transfers:** Standard contractual clauses for data transfers outside EU
 
 **United States (State Laws):**
