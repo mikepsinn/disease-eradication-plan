@@ -1,0 +1,93 @@
+---
+title: "The Positron Framework: An Engine for Public Good"
+description: "Introducing the Positron framework, the autonomous agent system that operationalizes the DIH mission by coordinating the War on Disease."
+---
+
+## The Engine of the DIH
+
+The [DIH](dih.qmd) is the mission, [Wishocracy](wishocracy.qmd) is the operating system for setting priorities, and the **Positron framework** is the execution engine that gets the work done.
+
+Think of it this way:
+-   **The DIH** is the entity conducting the War on Disease.
+-   **Wishocracy** is the tool humanity uses to tell the DIH what to do (e.g., "Cure cancer").
+-   **Positron** is the army of AI agents that takes those orders and executes them.
+
+The Positron framework is an open-source system for the autonomous production of public goods. Its core purpose is to **discover and execute positive-sum games**—actions that create more value than they consume. While we discuss it here as the engine for the DIH, it's designed for **any nonprofit organization** to run their own instance, dramatically increasing their operational efficiency and impact.
+
+Here's how you build it.
+
+### The Network Structure
+
+The framework is a decentralized network of AI agents working in concert. At a high level, it looks like this:
+
+```mermaid
+graph TD
+    PN[Positron Global Network]
+    NAA[Network Architect Agent]
+    BA[Builder Agents]
+    MN[Mission Network]
+    CA[Coordinating Agent]
+    PN1[Positron Node A]
+    PN2[Positron Node B]
+    TA1[Task Agent 1]
+    PMA1[Performance Monitor]
+
+    subgraph Global Level
+        NAA -- Recommends --> BA
+        BA -- Implements --> PN
+    end
+
+    subgraph Mission Level
+        PN -- Contains --> MN
+        MN -- Contains --> CA
+    end
+    
+    subgraph Node Level
+        CA -- Coordinates --> PN1
+        CA -- Coordinates --> PN2
+        PN1 -- Contains --> TA1
+        PN1 -- Contains --> PMA1
+    end
+
+```
+
+### Step 1: Create Positron Nodes
+
+A "Positron Node" is just a fancy term for a container that holds your AI agents. Think of it as a digital barracks. Any nonprofit or group aligned with the mission can run one. Its job is to give your agents a place to live and the tools they need to work.
+
+Inside each node, you have **Task Agents**. These aren't generalist AIs that write poetry; they are hyper-focused digital workers. Each one has a single, brutally specific job. They use a shared brain (retrieval augmented generation) for long-term memory, a scratchpad (context management) for short-term tasks, and a set of tools (APIs) to interact with the real world.
+
+### Step 2: Define the Mission for Each Agent
+
+Every agent gets a crystal-clear mission definition. No vague corporate nonsense. You do this by giving it:
+
+1.  **A Wildly Important Goal (WIG):** One and only one. An agent designed to find potential cancer researchers does *only* that. It doesn't also try to organize their schedules. This prevents digital ADHD.
+2.  **A Lead Measure:** The thing the agent *does*. For our researcher-finding agent, this is simple: "Number of qualified researchers contacted per day." It's a dumb, countable action.
+3.  **A Lag Measure:** The *result* you want. For the same agent, this is the Key Performance Indicator (KPI): "Number of researchers who sign up for a dFDA trial." This tells you if the dumb action is actually working.
+
+This structure, borrowed from "The 4 Disciplines of Execution," turns vague goals into a machine that you can measure and improve.
+
+### Step 3: Let Them Compete
+
+Anyone can design and launch a new agent to compete with existing ones. If someone thinks they have a better way to find cancer researchers, they can build an agent for it. You run them side-by-side and see which one delivers better results for less cost. The network evolves through ruthless, Darwinian competition.
+
+### The Organizing Framework
+
+The design of these agents isn't random. It's based on the six practices of high-impact nonprofits, as outlined in the book *Forces for Good*. This gives us a proven model for structuring our AI army.
+
+![The six-part organizing framework from the book Forces for Good.](../../assets/forces-for-good-organizing-framework.png)
+
+This framework ensures our agents are designed not just for efficiency, but for high-impact, systemic change.
+
+### How to Build It Without Skynet Taking Over (Human-AI Cooperation)
+
+Current AI isn't smart enough to do this alone, which is probably for the best. The most effective approach is a model of **Human-AI Cooperation**.
+
+The framework uses familiar developer workflows to manage the interaction between humans and AI:
+
+*   **AI Proposes:** Agents create GitHub issues to recommend new strategies or improvements.
+*   **Humans Review:** Human maintainers review, discuss, and approve these proposals.
+*   **AI Implements:** Once approved, "Builder Agents" implement the changes, writing code and documentation and submitting them as pull requests.
+*   **Humans Approve:** Humans perform the final review and merge the changes.
+
+This model allows us to build the infrastructure for an autonomous future while pragmatically addressing the technology's current limitations, ensuring the humans are still in charge.
