@@ -33,7 +33,7 @@ Only one of these has an objective function aligned with humanity's best interes
 
 The Positron Network is a decentralized system of AI agents working in concert. At a high level, it looks like this:
 
-```mermaid
+```{mermaid}
 graph TD
     PN[Positron Global Network]
     NAA[Network Architect Agent]
