@@ -1,0 +1,26 @@
+---
+description: Content standards, quality assurance, and formatting requirements
+globs: *.md,*.qmd
+---
+
+# Content Standards
+
+**CRITICAL:** All content must follow these standards. See full details in: [CONTENT_STANDARDS.md](mdc:GUIDES/CONTENT_STANDARDS.md)
+
+## Key Requirements
+
+**Frontmatter:** Every markdown file needs complete YAML frontmatter with title, description, published status, date, and tags.
+
+**Sourcing:** Every claim needs a source. All source quotes go in `brain/book/references.qmd` with inline citations.
+
+**TODOs:** Add `TODO` comments directly in files where work is needed. Format: `<!-- TODO: Add citation for this claim. -->`
+
+**Link Integrity:** Fix any broken internal links before submitting. Scan for relative links like `[text](./path/file.md)`.
+
+**Chapter Independence:** QMD files must be reusable across contexts - no "Next Chapter" sections or hardcoded navigation.
+
+**File Naming:** Use kebab-case and be descriptive (e.g., `dih-treasury-cash-flow-model.md`).
+
+**Internal Links:** Use standard relative Markdown links (`./`, `../`). Use backticks only for code, not navigational references.
+
+For the complete 5-point audit checklist and systematic review process, see: [CONTENT_STANDARDS.md](mdc:GUIDES/CONTENT_STANDARDS.md)

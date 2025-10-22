@@ -1,0 +1,27 @@
+---
+description: Technical standards, development environment setup, and engineering best practices
+globs: *.ts,*.js,*.py,*.json,package.json,requirements.txt
+---
+
+# Technical Standards
+
+## Development Environment
+
+**Quick Start:** Run `.\setup.ps1`, activate with `.\venv\Scripts\Activate.ps1`, verify with `.\verify-setup.ps1`, preview with `quarto preview index.qmd`
+
+**Prerequisites:** Python 3.8+, Quarto, PowerShell (Windows)
+
+## Technical Standards
+
+**Code:** Write new tools in TypeScript
+**Dependencies:** Use `npm` and include a `package.json`
+**Execution:** Run TypeScript directly with `tsx`. No compiled `.js` files in the repo.
+**Automated Formatting:** All `.qmd` files are subject to automated formatting checks
+
+## Troubleshooting
+
+- **"ModuleNotFoundError"**: Run `.\verify-setup.ps1` to check your environment
+- **"Kernel not found"**: Re-run the Jupyter kernel registration step
+- **Quarto errors**: Make sure your virtual environment is activated
+
+For complete technical setup, standards, and troubleshooting, see: [TECHNICAL_GUIDE.md](mdc:GUIDES/TECHNICAL_GUIDE.md)

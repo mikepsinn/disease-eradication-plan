@@ -1,0 +1,30 @@
+---
+description: Visual design standards for charts, diagrams, and graphics
+globs: *.qmd,brain/figures/*,*.py
+---
+
+# Design Standards
+
+**Design Philosophy: Minimalism Above All**
+
+Charts should be as simple and powerful as possible. Every element must earn its place.
+
+## Key Requirements
+
+**Color Palette:** Black and white only for maximum authority, timelessness, and accessibility.
+
+**Chart Format:** Must be `.qmd` files with Python code blocks that generate PNG outputs.
+
+**File Naming:** `[topic]-[comparison/metric]-[type]-chart.qmd` (e.g., `military-spending-vs-medical-research-column-chart.qmd`)
+
+**PNG Generation:** Every QMD chart file MUST generate a corresponding PNG file for presentations, social media, and version control.
+
+**Typography:** Use serif fonts (Georgia, Times New Roman) for authority, monospace (Courier New) for data precision.
+
+**Mobile-First:** Prefer column charts over bar charts for better mobile readability.
+
+**What to Remove:** Gridlines, legends, backgrounds, borders, shadows, gradients, 3D effects, decorative elements.
+
+**What to Include:** Chart title (mandatory), data bars/columns, key data values, watermark.
+
+For complete design guidelines, color palette, typography specs, and implementation examples, see: [DESIGN_GUIDE.md](mdc:GUIDES/DESIGN_GUIDE.md)
