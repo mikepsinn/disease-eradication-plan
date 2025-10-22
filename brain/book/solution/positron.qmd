@@ -68,14 +68,14 @@ graph TD
 
 A "Positron Node" is a configurable **AI operating system for your nonprofit**. Think of it less as a simple container and more as a digital headquarters where your AI army lives, trains, and works. Any nonprofit can deploy a node to automate its operations and radically increase its efficiency.
 
-#### What Your AI Operating System Does For You
+#### How You Use Your AI Operating System
 
-For a nonprofit, a Positron Node isn't just a technical tool; it's a force multiplier. It allows you to:
+A Positron Node is a tool for solving a nonprofit's three biggest problems: money, influence, and time. Here's how you use it:
 
-*   **Automate the Grunt Work:** Deploy agents to handle the soul-crushing tasks that burn out your staff, like grant research, donor outreach, and social media monitoring.
-*   **Build Your Movement:** Use "Movement Building Agents" to find and engage supporters, turning casual followers into a dedicated base of evangelists.
-*   **Master Advocacy:** Launch "Advocacy Agents" that can track legislation, coordinate public comment campaigns, and ensure your voice is heard by policymakers, all while you sleep.
-*   **Optimize Everything:** Use "Agent Evaluators" to constantly measure what's working and what's not, allowing you to allocate your limited resources with ruthless, data-driven precision.
+*   **To Solve Money:** You deploy agents to handle the soul-crushing work of fundraising. They can identify high-value donors, automate grant writing, and run perpetual campaigns, freeing your human team to build relationships.
+*   **To Solve Influence:** You launch an army of advocacy agents to track legislation, mobilize supporters, and flood public comment portals. This gives you the influence of an organization ten times your size, without the payroll.
+*   **To Solve Time:** You automate the administrative drag that burns out your staff and consumes your budget. Let the robots handle the spreadsheets so the humans can handle the mission.
+*   **To Achieve Ruthless Efficiency:** You use "Agent Evaluators" to get a real-time, data-driven view of what's working and what's not. This allows you to double down on your most impactful programs and kill the ones that aren't delivering.
 
 Inside this OS, you have **Task Agents**. These aren't generalist AIs that write poetry; they are hyper-focused digital workers. Each one has a single, brutally specific job. They use a shared brain (retrieval augmented generation) for long-term memory, a scratchpad (context management) for short-term tasks, and a set of tools (APIs) to interact with the real world.
 
@@ -115,6 +115,7 @@ The network uses familiar developer workflows to manage the interaction between 
 *   **Humans Approve:** Humans perform the final review and merge the changes.
 
 This model allows us to build the infrastructure for an autonomous future while pragmatically addressing the technology's current limitations, ensuring the humans are still in charge.
+
 
 ### Data Sharing and Incentives (How to Not Build Silos)
 
