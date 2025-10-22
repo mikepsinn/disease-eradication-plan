@@ -1,8 +1,43 @@
 import fs from 'fs/promises';
 import matter from 'gray-matter';
+import yaml from 'js-yaml';
+
+function formatFrontmatter(content: string): string {
+    try {
+        const { data, content: body } = matter(content);
+        let needsRewrite = false;
+
+        // Enforce double quotes on all string values
+        for (const key in data) {
+            if (typeof data[key] === 'string') {
+                const value = data[key];
+                if (!value.startsWith('"') || !value.endsWith('"')) {
+                    data[key] = `${value.replace(/"/g, '\\"')}`;
+                    needsRewrite = true;
+                }
+            }
+        }
+
+        if (needsRewrite) {
+            const newFrontmatter = yaml.dump(data, {
+                styles: {
+                    '!!str': 'double'
+                },
+                quotingType: '"'
+            });
+            return `---\n${newFrontmatter}---\n${body}`;
+        }
+    } catch (e) {
+        // Ignore errors if frontmatter is invalid
+    }
+    return content;
+}
 
 export function programmaticFormat(content: string): string {
   let result = content;
+
+  // Format frontmatter first
+  result = formatFrontmatter(result);
 
   // Normalize line endings to LF for consistent processing
   result = result.replace(/\r\n/g, '\n');
