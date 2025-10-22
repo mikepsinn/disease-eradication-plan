@@ -107,7 +107,7 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
 
-  const formattingGuide = await fs.readFile('FORMATTING_GUIDE.md', 'utf-8');
+  const formattingGuide = await fs.readFile('GUIDES/FORMATTING_GUIDE.md', 'utf-8');
   let prompt = await fs.readFile('scripts/prompts/formatter.md', 'utf-8');
   prompt = prompt.replace('{{formattingGuide}}', formattingGuide).replace('{{body}}', body);
 
@@ -130,7 +130,7 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
 
-  const styleGuide = await fs.readFile('STYLE_GUIDE.md', 'utf-8');
+  const styleGuide = await fs.readFile('GUIDES/STYLE_GUIDE.md', 'utf-8');
   let prompt = await fs.readFile('scripts/prompts/style-guide-review.md', 'utf-8');
   prompt = prompt.replace('{{styleGuide}}', styleGuide).replace('{{body}}', body);
 
@@ -530,7 +530,7 @@ export async function figureCheckFile(filePath: string): Promise<void> {
 async function mergeContentWithLLM(archivedContent: string, targetFilePath: string): Promise<string> {
   console.log(`Intelligently merging content into ${targetFilePath}...`);
   const targetContent = await fs.readFile(targetFilePath, 'utf-8');
-  const styleGuide = await fs.readFile('STYLE_GUIDE.md', 'utf-8');
+  const styleGuide = await fs.readFile('GUIDES/STYLE_GUIDE.md', 'utf-8');
 
   const { content: archivedBody } = matter(archivedContent);
   const { data: targetFrontmatter, content: targetBody } = matter(targetContent);
