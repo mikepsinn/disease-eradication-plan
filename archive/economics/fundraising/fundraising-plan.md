@@ -1,5 +1,5 @@
 ---
-title: '"Fundraising Plan: The $2.5B Activation Energy"'
+title: "Fundraising Plan: The $2.5B Activation Energy"
 description: Overview of the multi-phase fundraising strategy to raise $1.2B-$2.5B for the 1% Treaty implementation.
 published: true
 date: '2025-09-09T00:00:00.000Z'

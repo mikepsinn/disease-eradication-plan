@@ -1,5 +1,5 @@
 ---
-title: '"Optimizing Costs: Strategies to Gather 80 Million Signatures for a Global Initiative"'
+title: "Optimizing Costs: Strategies to Gather 80 Million Signatures for a Global Initiative"
 description: Analyzing the potential cost range per signature and total estimated costs for different strategies to achieve a goal of 80 million signatures for the LOGICAL Treaty.
 published: true
 date: 2024-06-09T00:00:00.000Z

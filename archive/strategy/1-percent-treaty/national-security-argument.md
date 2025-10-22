@@ -1,5 +1,5 @@
 ---
-title: '"The 1% Treaty: A Strategic Investment in Global Security"'
+title: "The 1% Treaty: A Strategic Investment in Global Security"
 description: The rationale for how redirecting 1% of military spending to medical research fundamentally enhances national and global security.
 published: true
 date: 2024-07-18T17:30:00.000Z

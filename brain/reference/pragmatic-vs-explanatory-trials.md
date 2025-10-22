@@ -1,5 +1,5 @@
 ---
-title: '"Pragmatic vs Explanatory Trials: A Quantitative Analysis"'
+title: "Pragmatic vs Explanatory Trials: A Quantitative Analysis"
 description: "A comparison of pragmatic and explanatory trials focusing on cost, time, and real-world applicability."
 published: true
 date: "2025-02-27T07:36:34.941Z"

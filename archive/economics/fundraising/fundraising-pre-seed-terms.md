@@ -1,5 +1,5 @@
 ---
-title: '"Pre-Seed Round: SAFT Terms"'
+title: "Pre-Seed Round: SAFT Terms"
 description: Defines the proposed terms for the initial $250k-$750k pre-seed funding round using a Simple Agreement for Future Tokens (SAFT).
 published: false
 date: "2025-08-24T00:00:00.000Z"

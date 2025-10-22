@@ -1,5 +1,5 @@
 ---
-title: '"The Opportunity Cost of Military Spending: Redirecting $2 Trillion toward Global Health and Medical Research"'
+title: "The Opportunity Cost of Military Spending: Redirecting $2 Trillion toward Global Health and Medical Research"
 description: "This page analyzes the immense opportunity cost of global military expenditures, arguing that a 1% reallocation could dramatically accelerate medical progress and improve global well-being."
 published: true
 date: 2024-06-09T00:00:00.000Z
