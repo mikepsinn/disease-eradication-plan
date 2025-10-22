@@ -1,6 +1,6 @@
 ---
-title: "🤖 Positron Network"
-description: "How to build and command an army of autonomous AI agents to fight the War on Disease, using the open-source Positron Network."
+title: 🤖 Positron Network
+description: How to build and command an army of autonomous AI agents to fight the War on Disease, using the open-source Positron Network.
 ---
 
 ## Your Army for the War on Disease
@@ -8,9 +8,9 @@ description: "How to build and command an army of autonomous AI agents to fight 
 The [DIH](dih.qmd) is mission control, [Wishocracy](wishocracy.qmd) is the targeting system, and the **Positron Network** is your army of AI agents for fighting the War on Disease.
 
 Think of it this way:
--   **The DIH** declares the war.
--   **Wishocracy** tells the army what hills to take (e.g., "Cure cancer").
--   **Positron** is the army of autonomous agents that actually takes those hills.
+- **The DIH** declares the war.
+- **Wishocracy** tells the army what hills to take (e.g., "Cure cancer").
+- **Positron** is the army of autonomous agents that actually takes those hills.
 
 The Positron Network is an open-source system for building this army. Its core purpose is to find and win **positive-sum games**—which is just a fancy way of saying it finds ways to create more value than it consumes, making the pie bigger for everyone instead of just fighting over slices. While we're showing you how to use it for the War on Disease, it's designed for **any nonprofit** to build their own AI army and stop getting outgunned by organizations with worse intentions.
 
@@ -72,10 +72,10 @@ A "Positron Node" is a configurable **AI operating system for your nonprofit**. 
 
 A Positron Node is a tool for solving a nonprofit's three biggest problems: money, influence, and time. Here's how you use it:
 
-*   **To Solve Money:** You deploy agents to handle the soul-crushing work of fundraising. They can identify high-value donors, automate grant writing, and run perpetual campaigns, freeing your human team to build relationships.
-*   **To Solve Influence:** You launch an army of advocacy agents to track legislation, mobilize supporters, and flood public comment portals. This gives you the influence of an organization ten times your size, without the payroll.
-*   **To Solve Time:** You automate the administrative drag that burns out your staff and consumes your budget. Let the robots handle the spreadsheets so the humans can handle the mission.
-*   **To Achieve Ruthless Efficiency:** You use "Agent Evaluators" to get a real-time, data-driven view of what's working and what's not. This allows you to double down on your most impactful programs and kill the ones that aren't delivering.
+* **To Solve Money:** You deploy agents to handle the soul-crushing work of fundraising. They can identify high-value donors, automate grant writing, and run perpetual campaigns, freeing your human team to build relationships.
+* **To Solve Influence:** You launch an army of advocacy agents to track legislation, mobilize supporters, and flood public comment portals. This gives you the influence of an organization ten times your size, without the payroll.
+* **To Solve Time:** You automate the administrative drag that burns out your staff and consumes your budget. Let the robots handle the spreadsheets so the humans can handle the mission.
+* **To Achieve Ruthless Efficiency:** You use "Agent Evaluators" to get a real-time, data-driven view of what's working and what's not. This allows you to double down on your most impactful programs and kill the ones that aren't delivering.
 
 Inside this OS, you have **Task Agents**. These aren't generalist AIs that write poetry; they are hyper-focused digital workers. Each one has a single, brutally specific job. They use a shared brain (retrieval augmented generation) for long-term memory, a scratchpad (context management) for short-term tasks, and a set of tools (APIs) to interact with the real world.
 
@@ -109,10 +109,10 @@ Current AI isn't smart enough to do this alone, which is probably for the best. 
 
 The network uses familiar developer workflows to manage the interaction between humans and AI:
 
-*   **AI Proposes:** Agents create GitHub issues to recommend new strategies or improvements.
-*   **Humans Review:** Human maintainers review, discuss, and approve these proposals.
-*   **AI Implements:** Once approved, "Builder Agents" implement the changes, writing code and documentation and submitting them as pull requests.
-*   **Humans Approve:** Humans perform the final review and merge the changes.
+* **AI Proposes:** Agents create GitHub issues to recommend new strategies or improvements.
+* **Humans Review:** Human maintainers review, discuss, and approve these proposals.
+* **AI Implements:** Once approved, "Builder Agents" implement the changes, writing code and documentation and submitting them as pull requests.
+* **Humans Approve:** Humans perform the final review and merge the changes.
 
 This model allows us to build the infrastructure for an autonomous future while pragmatically addressing the technology's current limitations, ensuring the humans are still in charge.
 
