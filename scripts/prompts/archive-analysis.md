@@ -22,16 +22,24 @@ You MUST respond with a JSON object with the following structure:
 ```
 
 ---
+
 **Book Outline (OUTLINE.MD):**
+
 ```markdown
 {{bookOutline}}
 ```
+
 ---
+
 **Book Structure (_quarto.yml):**
+
 ```yaml
 {{quartoYmlContent}}
 ```
+
 ---
+
 **Archived File Content ({{filePath}}):**
+
 ```markdown
 {{archivedContent}}

@@ -40,6 +40,7 @@ You are an expert copy editor reviewing a chapter of "The Complete Idiot's Guide
 **PART B - ONLY ADD TODOs FOR THESE (things you literally cannot fix):**
 
 ONLY add TODO comments for:
+
 *   Missing personal anecdotes that need human experience
 *   Specific data/statistics that need research
 *   References to other chapters you're unsure about
@@ -48,6 +49,7 @@ ONLY add TODO comments for:
 TODO format: `<!-- TODO: NEEDS_HUMAN_INPUT - [Specific request] -->`
 
 **CRITICAL INSTRUCTIONS:**
+
 1.  FIX everything you can directly in the text
 2.  ONLY add TODOs for things requiring human input/research
 3.  If the content is already perfect, return "NO_CHANGES_NEEDED"

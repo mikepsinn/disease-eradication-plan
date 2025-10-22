@@ -27,11 +27,11 @@ cd apps/1percenttreaty
 
 # Set API key (paste when prompted)
 wrangler secret put AIRTABLE_API_KEY
-# Paste: patAQEwwKXChpQBnL.d9ca339d66431e6cfece5a3fe1c1d69c6c36848386804a3b1bc773dfedcde127
+# Paste your Airtable API key here (format: patXXXXXXXXXXXXXX...)
 
 # Set base ID
 wrangler secret put AIRTABLE_BASE_ID
-# Paste: appRA45hnZpiTyRjB
+# Paste your Airtable base ID here (format: appXXXXXXXXXXXXXX)
 ```
 
 ### Step 3: Deploy Worker (API Proxy)
@@ -376,4 +376,3 @@ jobs:
 **Full documentation:** See [apps/1percenttreaty/README.md](../../apps/1percenttreaty/README.md)
 
 **Now deploy and start saving lives.**
-

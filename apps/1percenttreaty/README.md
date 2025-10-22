@@ -89,11 +89,11 @@ wrangler login
 ```bash
 # Set your Airtable API key (NEVER commit this to git)
 wrangler secret put AIRTABLE_API_KEY
-# Paste: patAQEwwKXChpQBnL.d9ca339d66431e6cfece5a3fe1c1d69c6c36848386804a3b1bc773dfedcde127
+# Paste your Airtable API key here (format: patXXXXXXXXXXXXXX...)
 
 # Set your Airtable base ID
 wrangler secret put AIRTABLE_BASE_ID
-# Paste: appRA45hnZpiTyRjB
+# Paste your Airtable base ID here (format: appXXXXXXXXXXXXXX)
 ```
 
 ### Step 4: Deploy Worker
@@ -395,4 +395,3 @@ Track these in your Airtable base:
 ---
 
 **Now deploy and start collecting votes. Death doesn't wait.**
-

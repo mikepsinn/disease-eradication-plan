@@ -13,20 +13,29 @@ You are an expert editor for "The Complete Idiot's Guide to Ending War and Disea
 7.  **Resolve Contradictions:** If the "Archived File" directly contradicts a statement in the "Existing Chapter," the information from the "Archived File" should be considered the most current and should replace the old information.
 
 ---
+
 **STYLE GUIDE:**
+
 ```markdown
 {{styleGuide}}
 ```
+
 ---
+
 **Existing Chapter Content ({{targetFilePath}}):**
+
 ```markdown
 {{targetBody}}
 ```
+
 ---
+
 **Archived File Content to Merge:**
+
 ```markdown
 {{archivedBody}}
 ```
+
 ---
 
 Return only the final, merged markdown content.

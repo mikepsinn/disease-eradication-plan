@@ -530,4 +530,3 @@ Every vote, every email, every call is captured, categorized, and converted into
 It's the difference between a movement that fizzles and one that reaches the 3.5% tipping point.
 
 **Now implement it. Your first 100 conversations will set the template for the next 100 million.**
-
