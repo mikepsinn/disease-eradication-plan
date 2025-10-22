@@ -3,7 +3,7 @@
 ## Quick Reference
 
 - **Writing Style:** See [STYLE_GUIDE.md](STYLE_GUIDE.md) for tone, voice, and writing conventions
-- **Content Guidelines:** See [CONTRIBUTING.md](CONTRIBUTING.md) for overall contribution workflow
+- **Content Guidelines:** See [CONTRIBUTING.md](../CONTRIBUTING.md) for overall contribution workflow
 - **Technical Implementation:** See [brain/figures/_chart_style.py](brain/figures/_chart_style.py) for all code constants and functions
 
 ## Design Philosophy
