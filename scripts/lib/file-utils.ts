@@ -1,6 +1,22 @@
 import fs from 'fs/promises';
 import matter from 'gray-matter';
 import yaml from 'js-yaml';
+import { glob } from 'glob';
+import * as path from 'path';
+
+const ROOT_DIR = process.cwd();
+const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
+
+export async function findBookFiles(): Promise<string[]> {
+    const pattern = 'brain/book/**/*.qmd';
+    const files = await glob(pattern, {
+        cwd: ROOT_DIR,
+        ignore: IGNORE_PATTERNS.map(p => `**/${p}/**`),
+        nodir: true,
+        absolute: true,
+    });
+    return files;
+}
 
 function formatFrontmatter(content: string): string {
     try {
