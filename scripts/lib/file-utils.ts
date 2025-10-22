@@ -19,33 +19,21 @@ export async function findBookFiles(): Promise<string[]> {
 }
 
 function formatFrontmatter(content: string): string {
-    try {
+
         const { data, content: body } = matter(content);
-        let needsRewrite = false;
 
-        // Enforce double quotes on all string values
-        for (const key in data) {
-            if (typeof data[key] === 'string') {
-                const value = data[key];
-                if (!value.startsWith('"') || !value.endsWith('"')) {
-                    data[key] = `${value.replace(/"/g, '\\"')}`;
-                    needsRewrite = true;
-                }
-            }
+        // For descriptions that are multi-line, collapse them to a single line.
+        if (data.description && typeof data.description === 'string') {
+            data.description = data.description.replace(/\n/g, ' ').trim();
         }
 
-        if (needsRewrite) {
-            const newFrontmatter = yaml.dump(data, {
-                styles: {
-                    '!!str': 'double'
-                },
-                quotingType: '"'
-            });
-            return `---\n${newFrontmatter}---\n${body}`;
-        }
-    } catch (e) {
-        // Ignore errors if frontmatter is invalid
-    }
+        // Use JSON_SCHEMA to enforce double quotes on all strings and keys.
+        const newFrontmatter = yaml.dump(data, {
+            schema: yaml.JSON_SCHEMA,
+            lineWidth: -1,
+        });
+        return `---\n${newFrontmatter.trim()}\n---\n${body}`;
+
     return content;
 }
 
