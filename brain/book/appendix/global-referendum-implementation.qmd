@@ -1,20 +1,11 @@
 ---
-title: Global Referendum Implementation
-description: "Practical design for a secure, globally verifiable referendum to measure consent for the 1% Treaty and DIH funding."
-published: true
-date: 2025-08-12T00:00:00.000Z
-tags: [referendum, governance, identity, verifiability, privacy, security]
-dateCreated: 2025-08-12T00:00:00.000Z
-topic_id: referendum-implementation
-canonical: true
-status: active
-domains: [treaty]
-doc_type: spec
+title: 'Appendix: Global Referendum Implementation'
+description: Practical design for a secure, globally verifiable referendum to measure consent for the 1% Treaty and DIH funding.
 ---
 
 ## Objective
 
-Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../../solution/1-percent-treaty.md) and DIH. Outputs must be auditable and persuasive to policymakers.
+Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../solution/1-percent-treaty.qmd) and DIH. Outputs must be auditable and persuasive to policymakers.
 
 ## Principles
 
@@ -25,8 +16,8 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## System Architecture
 
-- **Voting protocol**: Use an end-to-end verifiable scheme ([Helios or similar](../references.qmd#helios-voting)) with individual ballot verification and public bulletin board.
-  - Reference: [Helios (Adida et al.)](../references.qmd#helios-voting)
+- **Voting protocol**: Use an end-to-end verifiable scheme (like Helios) with individual ballot verification and public bulletin board.
+    -   Reference: [Helios (Adida et al.)](../references.qmd#helios-voting)
 - **Identity / Sybil resistance**: Multi-factor: email/phone OTP; device/browser fingerprinting; optional liveness/biometrics; integration with national e-ID where available (e.g., models informed by [Estonia's experience](../references.qmd#estonia-internet-voting)); proof-of-uniqueness partners.
 - **Fraud controls**: Risk scoring, velocity limits, manual review queues; bounty program for reporting abuse.
 - **Internationalization**: 40+ locale support; accessibility-first UI.
@@ -39,7 +30,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## Incentives and Referrals
 
-- **Rewards**: Funded via VICTORY bonds with strict anti-fraud and per-cap caps; public ledger of reward disbursements.
+- **Rewards**: Funded via [VICTORY bonds](../economics/victory-bonds.qmd) with strict anti-fraud and per-cap caps; public ledger of reward disbursements.
 - **Education-first**: Reward structured learning paths before voting to reduce low-information participation.
 
 ## Legal Positioning
@@ -49,13 +40,9 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## Success Metrics
 
-- Verification rate, audit pass rate, unique-voter deduplication quality, and policymaker adoption of results.
+Verification rate, audit pass rate, unique-voter deduplication quality, and policymaker adoption of results.
 
 ## Cross-References
 
-- [Victory Bonds Incentive Mechanics](../1-percent-treaty/victory-bonds-tokenomics.md)
-- [DIH Treasury Architecture](../../features/treasury/dih-treasury-architecture.md)
-
----
-
----
+- [The DIH](../solution/dih.qmd)
+- [VICTORY Bonds](../economics/victory-bonds.qmd)
