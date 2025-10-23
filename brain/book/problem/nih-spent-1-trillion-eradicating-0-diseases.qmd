@@ -9,8 +9,9 @@ tags:
   - research-funding
   - bureaucracy
   - failure
-lastReviewed: 2025-10-16
+lastReviewed: 2025-10-16T00:00:00.000Z
 lastFactCheckHash: 1281da55496d842519310f962163999ff08e576ddeb6340ef1f44bdce524e008
+lastStructureCheckHash: 9ddc07b6c8220fb67059599140e6fb38a27e7d22ac239f841ba4848237295a56
 ---
 ## The Trillion Dollar Participation Trophy
 
@@ -33,17 +34,57 @@ Or ask the veterinarians, who've [eradicated multiple animal diseases](../refere
 
 ## The Translation Crisis: 166 Billion Untested Treatments
 
-Here's the real scandal no one talks about:
+Here's what the NIH won't tell you:
 
-**The Treatment Bottleneck:**
+**Your grandma has Alzheimer's in St. Louis.**
+
+- **Trial-ready treatments for Alzheimer's:** Hundreds sitting on shelves
+- **Clinical trials available in St. Louis:** Zero (for years)
+- **Trials on clinicaltrials.gov for your grandma:** Finally, one appeared!
+
+**That one trial:**
+- **Cost:** $600,000
+- **Purpose:** A Google form survey asking if people would be *interested* in participating in dementia trials
+- **Number of patients treated:** Zero
+- **Number of treatments tested:** Zero
+
+The NIH spent $600,000 researching *whether people want their loved ones to get treatment*.
+
+**Here's what $600,000 could have actually funded:**
+- 1,200 Alzheimer's patients in pragmatic trials (at $500/patient, UK RECOVERY model)
+- Testing 5-10 repurposed drugs we already know are safe
+- Actual data on whether treatments work
+- Maybe saving your grandma
+
+Instead: Meta-research. Studying whether we should do studies.
+
+### The Real Bottleneck: Geographic Gatekeeping
+
+This isn't a story about lack of treatments. It's about **deliberate choices** not to test them:
 
 - **Potential drug combinations:** 166 billion ([source](../references.qmd#untested-treatments))
+- **Trial-ready Alzheimer's treatments:** Hundreds waiting
 - **Combinations tested annually:** [~5,000](../references.qmd#annual-drug-combinations-tested)
 - **Years to test all at current rate:** 33 million
 - **Your disease gets tested:** When the sun burns out
 
 The NIH spends [**54% of its budget on basic research**](../references.qmd#nih-budget-allocation-breakdown) - understanding disease mechanisms in mice.
-They spend [**22% on clinical trials**](../references.qmd#nih-budget-allocation-breakdown), but for actual drug development that leads to new treatments, it's only [**3.3%**](../references.qmd#nih-budget-allocation-breakdown).
+
+They spend [**22% on clinical trials (all types)**](../references.qmd#nih-budget-allocation-breakdown), which sounds impressive until you ask: **Can your grandma in St. Louis join one?**
+
+Here's where that 22% actually goes:
+- **Phase 1 safety trials:** Testing if drugs are safe (your grandma can't join - wrong city, wrong age, wrong everything)
+- **Observational studies:** Watching disease progress without treatment (helpful for papers, not grandmas)
+- **Phase 2/3 efficacy trials:** Testing if treatments work (~5% of total budget)
+  - But only in elite coastal research hospitals
+  - Only for patients who meet 47 exclusion criteria
+  - Never in St. Louis
+
+**The trials your grandma could actually join that might help her:** ~3.3% of the NIH budget
+
+**The meta-research surveys about those trials:** Apparently $600k each
+
+**Let that sink in: 54% on mice, 3.3% on trials your grandma could join.**
 
 It's like spending your whole life studying recipes but never actually cooking anything.
 Then wondering why everyone's starving.
