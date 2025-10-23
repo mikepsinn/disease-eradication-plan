@@ -79,6 +79,10 @@ A Positron Node is a tool for solving a nonprofit's three biggest problems: mone
 
 Inside this OS, you have **Task Agents**. These aren't generalist AIs that write poetry; they are hyper-focused digital workers. Each one has a single, brutally specific job. They use a shared brain (retrieval augmented generation) for long-term memory, a scratchpad (context management) for short-term tasks, and a set of tools (APIs) to interact with the real world.
 
+![Autonomous research agents: the future of scientific discovery](../../../positron/images/autonomous-research-agent.png)
+
+![Robot scientists working 24/7 to cure disease](../../../positron/images/robot-scientists.png)
+
 ### Step 2: Define the Mission for Each Agent
 
 Every agent gets a crystal-clear mission definition. No vague corporate nonsense. You do this by giving it:
