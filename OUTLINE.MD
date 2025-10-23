@@ -10,7 +10,7 @@
 
 *Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet*
 
-**NOTE ON THEORY CHAPTERS:** Theory chapters (Public Choice Theory, Central Planning Kills) explain the conceptual framework for BOTH the problem AND the solution. They show how the same dynamics that create the problem can be harnessed to solve it. They preview solution concepts (aligned incentives, market coordination) without detailing implementation. Detailed how-to belongs in Part II solution chapters.
+**NOTE ON THEORY CHAPTERS:** Theory chapters explain the conceptual framework for BOTH the problem AND the solution. They show how the same dynamics that create the problem can be harnessed to solve it. They preview solution concepts (aligned incentives, market coordination) without detailing implementation. Detailed how-to belongs in Part II solution chapters.
 
 ### The Daily Holocaust
 
@@ -126,39 +126,6 @@
   - Military spending = Defense contractor revenue streams
   - Chronic disease = Healthcare industry revenue ($4.5T industry incentivized for treatment over cures)
   - Every "failure" is someone's quarterly earnings success
-
-### Central Planning Kills
-
-*How to Destroy Medical Progress in One Easy Step (The FDA Did It in 1962)*
-
-- **The 1962 Catastrophe: How to Break Medicine**
-  - Pre-1962: 144,000 physicians testing treatments on actual patients (it worked)
-  - 1962: FDA says "We'll handle this" (narrator: they didn't)
-    - New drug approvals drop 70% overnight
-    - Drug costs: $74M → $2.6B today (35X more expensive)
-    - Timeline: 2-3 years → 17 years to market
-    - Life expectancy gains slow by more than half
-  - 2020: Oxford RECOVERY trial proves decentralization still works
-  - The demonstrated inefficiency: FDA trials are 82X more expensive than necessary
-- **The Pattern: Most Government "Wars" Create Perverse Incentives**
-  - War on Drugs ($1T): Created powerful cartels, violence increased dramatically
-  - War on Poverty ($22T): Welfare cliffs create disincentives to work
-  - War on Cancer (Nixon 1971): $200B/year treating symptoms rather than pursuing cures
-  - War on Terror ($8T): Drone strikes often create blowback and new recruitment
-  - The systemic issue: Bureaucracies are incentivized to perpetuate the problems they're funded to solve
-- **The Knowledge Problem (Hayek Was Right)**
-  - 200 NIH bureaucrats can't possibly know 8 billion individual health needs
-  - Patients experience their conditions firsthand (committees review PowerPoints)
-  - Soviet agriculture: Smart central planners, tens of millions starved
-  - NIH medicine: Smart central planners, 55 million die annually from treatable/preventable causes
-  - The pretense of knowledge: Central planning consistently underperforms distributed decision-making
-- **Markets: The Distributed Computer That Works**
-  - **[VIDEO: Milton Friedman's "I, Pencil" - How Markets Coordinate Without Central Planning]**
-  - Prices are information packets (committees are noise)
-  - RECOVERY trial: $500 vs $41,000 per patient (82X efficiency)
-  - Pre-1962 medicine: Doctors prescribed, patients decided
-  - Software/Internet: No FDA = exponential innovation
-  - Lasik/cosmetic surgery: Cash markets = 50% price drops
 
 ## Part II: The Solution
 
