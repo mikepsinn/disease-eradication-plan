@@ -1,48 +1,47 @@
 ---
-title: 🤖 Positron Network
-description: How to build and command an army of autonomous AI agents to fight the War on Disease, using the open-source Positron Network.
-lastStructureCheckHash: 5fc6fa1cf0f08fb53d838ccb213fc95f4ed481801c6d54913ce737c139b85a90
+title: 🤖 Building Your AI Coordination Army
+description: How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.
+lastStructureCheckHash: 88bba6e489ac6252dac8932b23777d234053c70ce0ba287a30871e704d28a59a
 ---
 
-## Your Army for the War on Disease
+## How to Build Your Coordination Army
 
-The [DIH](dih.qmd) is mission control, [Wishocracy](wishocracy.qmd) is the targeting system, and the **Positron Network** is your army of AI agents for fighting the War on Disease.
+You've got mission control ([DIH](dih.qmd)) and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents that actually executes the war on disease.
 
-Think of it this way:
-- **The DIH** declares the war.
-- **Wishocracy** tells the army what hills to take (e.g., "Cure cancer").
-- **Positron** is the army of autonomous agents that actually takes those hills.
+Here's the division of labor:
+- **The DIH** declares the war
+- **Wishocracy** tells your army what to fight for (e.g., "Cure cancer")
+- **Your AI agents** coordinate the millions of people and resources needed to actually win
 
-The Positron Network is an open-source system for mass coordination. Its core purpose is to enable millions of individuals and organizations to coordinate their efforts in fighting disease—something that's impossible to do manually but trivial for AI. Instead of relying on slow, centralized bureaucracies, Positron creates a decentralized network where AI agents coordinate research, mobilize advocates, and accelerate trials 24/7.
+Here's how you build this coordination infrastructure. (We'll call it the "Positron Network" for reference, but what matters is understanding how to build it yourself.)
 
-Here's how you build the coordination infrastructure.
+### Why You Need This (The Coordination Problem)
 
-### Why Your Army is Necessary (The Balance of Power)
+The NIH can't coordinate millions of researchers. The FDA can't coordinate global trials. Defense contractors coordinate trillions in spending, but health advocates can't coordinate billions.
 
-Before we get to the "how," let's cover the "why." Superintelligence will amplify the primary objective of whoever wields it. Society has four major actors, each with a different goal:
+The problem isn't lack of willing people—it's lack of coordination infrastructure. You can't manually coordinate:
+- Millions of potential research participants across 195 countries
+- Thousands of qualified researchers who need funding matches
+- Hundreds of treaty advocates across different time zones
+- Real-time trial data from decentralized sources worldwide
 
-1.  **Criminals:** Drain maximum resources from the productive economy. AI is a perfect tool for this.
-2.  **Politicians:** Maximize power. Dark triad traits are highly predictive of political success, and AI will be the ultimate tool for Machiavellian power games.
-3.  **Corporations:** Maximize profit. This is sometimes good, but often leads to lobbying for subsidies and regulations that stifle competition—a game AI will master.
-4.  **Nonprofits:** Maximize global health and happiness.
-
-Only one of these has an objective function aligned with humanity's best interests. Unfortunately, it's also the one that's the most outgunned and least efficient. The Positron Network is designed to fix this. It's about giving the good guys the same force-multiplying technology that the bad guys are already building.
+AI doesn't have this limitation. It can coordinate at scale, 24/7, across languages and time zones. The way you win the War on Disease is by building coordination infrastructure that your adversaries (NIH bureaucracy, FDA delays, defense lobbies) can't match.
 
 ![A diagram showing how nonprofits can gain leverage.](../../assets/nonprofit-leverage.png)
 
-### The Network Structure
+### The Architecture You're Building
 
-The Positron Network is a decentralized system of AI agents working in concert. At a high level, it looks like this:
+Here's the coordination architecture you need:
 
 ```{mermaid}
 graph TD
-    PN[Positron Global Network]
+    PN[Global Network Layer]
     NAA[Network Architect Agent]
     BA[Builder Agents]
-    MN[Mission Network]
+    MN[Mission Network Layer]
     CA[Coordinating Agent]
-    PN1[Positron Node A]
-    PN2[Positron Node B]
+    PN1[Node A]
+    PN2[Node B]
     TA1[Task Agent 1]
     PMA1[Performance Monitor]
 
@@ -55,7 +54,7 @@ graph TD
         PN -- Contains --> MN
         MN -- Contains --> CA
     end
-    
+
     subgraph Node Level
         CA -- Coordinates --> PN1
         CA -- Coordinates --> PN2
@@ -65,67 +64,103 @@ graph TD
 
 ```
 
-### Step 1: Deploy a Positron Node (Your Coordination Hub)
+### Step 1: Deploy Your Coordination Hub
 
-A "Positron Node" is your **AI coordination hub for fighting disease**. Think of it as digital headquarters where your AI agents coordinate research efforts, mobilize advocates, and accelerate trials. Organizations join the network by deploying nodes that work together to execute the War on Disease strategy.
+The way you join the network is by deploying a "node"—your organization's AI coordination hub. Think of it as your digital headquarters where AI agents work 24/7 to coordinate your piece of the War on Disease.
 
-#### How Your Node Fights Disease
+Here's what you use your node for:
 
-Your Positron Node solves the coordination problems that slow medical progress:
+**To Coordinate Research:**
 
-* **To Coordinate Research:** Deploy agents to identify qualified researchers, match them with funding opportunities, and coordinate trial participation. They work 24/7 to connect people who can cure disease with the resources to do it.
-* **To Mobilize Advocates:** Launch advocacy agents that track health legislation, mobilize treaty supporters, and coordinate public campaigns. This gives your movement the reach of a global organization without centralized control.
-* **To Accelerate Trials:** Automate the coordination of decentralized efficacy trials—recruiting participants, tracking outcomes, analyzing data. What used to take years of bureaucratic coordination now happens continuously.
-* **To Optimize Impact:** Use "Agent Evaluators" to measure which strategies actually save lives. Double down on what works, kill what doesn't, based on real-time data instead of bureaucratic inertia.
+You deploy agents that identify qualified researchers, match them with funding opportunities, and coordinate trial participation. They work continuously to connect people who can cure disease with the resources to do it. A human coordinator might reach 10 researchers per day. Your agents reach 1,000.
 
-Inside your node, you have **Task Agents**—hyper-focused digital workers, each with a single, specific job in the War on Disease. They use a shared knowledge base for long-term memory, context management for coordinating tasks, and APIs to interact with research databases, government systems, and other nodes.
+**To Mobilize Advocates:**
+
+You launch advocacy agents that track health legislation, mobilize treaty supporters, and coordinate public campaigns. Instead of one advocacy director trying to coordinate volunteers across time zones, your agents handle the coordination while your director focuses on strategy.
+
+**To Accelerate Trials:**
+
+You automate the coordination of decentralized efficacy trials—recruiting participants, tracking outcomes, analyzing data. What used to take years of manual coordination (scheduling, data collection, follow-ups) happens continuously without human bottlenecks.
+
+**To Optimize Impact:**
+
+You use "Agent Evaluators" to measure which strategies actually save lives. Instead of guessing what works based on annual reports, you get real-time data. You double down on what works, kill what doesn't.
+
+Inside your node, you build **Task Agents**—hyper-focused AI workers, each with one specific job in the War on Disease. They share a knowledge base for long-term memory, coordinate through a shared context system, and interact with research databases, government systems, and other nodes through APIs.
 
 ![Autonomous research agents: the future of scientific discovery](../../../positron/images/autonomous-research-agent.png)
 
 ![Robot scientists working 24/7 to cure disease](../../../positron/images/robot-scientists.png)
 
-### Step 2: Define the Mission for Each Agent
+### Step 2: Define Each Agent's Mission
 
-Every agent gets a crystal-clear mission definition. No vague corporate nonsense. You do this by giving it:
+The way you prevent your agents from becoming useless generalists is by giving each one a brutally specific mission. Here's how you do it:
 
-1.  **A Wildly Important Goal (WIG):** One and only one. An agent designed to find potential cancer researchers does *only* that. It doesn't also try to organize their schedules. This prevents digital ADHD.
-2.  **A Lead Measure:** The thing the agent *does*. For our researcher-finding agent, this is simple: "Number of qualified researchers contacted per day." It's a dumb, countable action.
-3.  **A Lag Measure:** The *result* you want. For the same agent, this is the Key Performance Indicator (KPI): "Number of researchers who sign up for a dFDA trial." This tells you if the dumb action is actually working.
+**1. Give it One Wildly Important Goal (WIG):**
 
-This structure, borrowed from "The 4 Disciplines of Execution," turns vague goals into a machine that you can measure and improve.
+An agent designed to find cancer researchers does *only* that. It doesn't also organize schedules, write grants, or send newsletters. One goal. This prevents digital ADHD.
+
+**2. Define the Lead Measure (the action):**
+
+The thing the agent *does*. For your researcher-finding agent: "Number of qualified researchers contacted per day." It's simple, countable, and the agent controls it completely.
+
+**3. Define the Lag Measure (the result):**
+
+The outcome you actually care about. For the same agent: "Number of researchers who sign up for a dFDA trial." This tells you if the action is working.
+
+This structure (borrowed from "The 4 Disciplines of Execution") turns vague goals like "help cure cancer" into something you can build, measure, and improve.
 
 ![A diagram illustrating how a high-level goal is broken down into a specific, measurable task for an autonomous agent.](../../assets/goal-to-autonomous-task-completion.png)
 
-### Step 3: Let Them Compete
+### Step 3: Enable Competition Between Agents
 
-Anyone can design and launch a new agent to compete with existing ones. If someone thinks they have a better way to find cancer researchers, they can build an agent for it. You run them side-by-side and see which one delivers better results for less cost. The network evolves through ruthless, Darwinian competition.
+Here's how you make the system evolve: You let anyone design and launch new agents to compete with existing ones.
+
+If someone thinks they have a better way to find cancer researchers, they build an agent for it. You run both agents side-by-side and measure which one delivers better results for less cost. The winner gets more resources. The loser gets improved or retired.
+
+The network evolves through ruthless, Darwinian competition. The best strategies win. The worst die. No committees. No politics. Just results.
 
 
-### The Organizing Framework
+### The Organizing Framework (Borrowed from Forces for Good)
 
-The design of these agents isn't random. It's based on the six practices of high-impact nonprofits, as outlined in the book *Forces for Good*. This gives us a proven model for structuring our AI army.
+You don't design these agents randomly. You base them on the six practices of high-impact nonprofits from *Forces for Good*:
 
 ![The six-part organizing framework from the book Forces for Good.](../../assets/forces-for-good-organizing-framework.png)
 
-This ensures your AI army is pointed at the right enemy: systemic stupidity, not just inefficient spreadsheets.
+This ensures your agents attack the right enemy: systemic inefficiency in disease-fighting, not just administrative tasks.
 
-### How to Build It Without Losing Control (Human-AI Cooperation)
+### How You Keep Control (Human-AI Cooperation)
 
-Current AI isn't smart enough to coordinate a global health movement alone, which is actually good—you want humans making strategic decisions. The network uses **Human-AI Cooperation** to build coordination infrastructure:
+Current AI can't run a global health movement alone. Good—you want humans making strategic decisions. Here's the cooperation model you use:
 
-* **AI Proposes Strategies:** Agents analyze what's working across the network and propose new coordination strategies (via GitHub issues). For example: "Trial recruitment is 3x higher when we contact researchers on weekends."
-* **Humans Decide:** Movement leaders review, discuss, and approve strategic changes. Humans set the direction, AI executes the coordination.
-* **AI Implements:** Once approved, "Builder Agents" update the coordination infrastructure—writing code, updating agent instructions, and submitting improvements as pull requests.
-* **Humans Verify:** Final review ensures changes align with the mission before they go live across the network.
+**AI Proposes:**
 
-This keeps humans in strategic control while letting AI handle the massive coordination work that humans can't scale. You're building infrastructure to coordinate millions of people fighting disease, not building Skynet.
+Your agents analyze what's working across the network and propose new strategies (via GitHub issues). Example: "Trial recruitment is 3x higher when we contact researchers on weekends."
 
+**You Decide:**
 
-### Data Sharing and Incentives (How to Not Build Silos)
+Movement leaders review and approve strategic changes. Humans set direction. AI executes coordination.
 
-A network is only as smart as the information that flows through it. To prevent nonprofits from hoarding their data, the network has two simple rules:
+**AI Implements:**
 
-1.  **Share to Play:** To use the powerful, shared "Mission Network" agents that are funded by the collective, you have to agree to share your anonymized performance data back to the network.
-2.  **Get Paid to Share:** For high-value data, the network can directly compensate nodes for their contributions, creating a market for insights that benefits everyone.
+Once approved, "Builder Agents" update the coordination infrastructure—writing code, updating agent instructions, submitting improvements as pull requests.
 
-This ensures that every success and failure is a lesson for the entire network, making the whole army smarter over time.
+**You Verify:**
+
+You do final review to ensure changes align with the mission before they go live across the network.
+
+This keeps you in strategic control while letting AI handle the coordination work humans can't scale. You're building infrastructure to coordinate millions of people fighting disease, not building Skynet.
+
+### How You Prevent Data Silos
+
+A coordination network is only as smart as the information flowing through it. Here's how you prevent organizations from hoarding data:
+
+**Rule 1 - Share to Play:**
+
+To use the powerful shared coordination agents (funded by the collective), you agree to share your anonymized performance data back to the network. No sharing, no access to the network effects.
+
+**Rule 2 - Get Paid to Share:**
+
+For high-value data, the network directly compensates your node. You create a market for insights that benefits everyone.
+
+This ensures every success and failure becomes a lesson for the entire network. The whole army gets smarter over time, not just individual organizations.
