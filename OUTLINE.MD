@@ -10,6 +10,8 @@
 
 *Understanding the Problem You're Going to Fix: Everyone You Love Is Dying While We Build Skynet*
 
+**NOTE ON THEORY CHAPTERS:** Theory chapters (Public Choice Theory, Central Planning Kills) explain the conceptual framework for BOTH the problem AND the solution. They show how the same dynamics that create the problem can be harnessed to solve it. They preview solution concepts (aligned incentives, market coordination) without detailing implementation. Detailed how-to belongs in Part II solution chapters.
+
 ### The Daily Holocaust
 
 *Numbers That Will Start Your Revolution*
