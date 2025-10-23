@@ -6,38 +6,46 @@ lastStructureCheckHash: 88bba6e489ac6252dac8932b23777d234053c70ce0ba287a30871e70
 
 ## How to Build Your Coordination Army
 
-You've got mission control ([DIH](dih.qmd)) and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents that actually executes the war on disease.
+You've got mission control ([DIH](dih.qmd)) and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents that actually does the work while humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
 
 Here's the division of labor:
-- **The DIH** declares the war
-- **Wishocracy** tells your army what to fight for (e.g., "Cure cancer")
-- **Your AI agents** coordinate the millions of people and resources needed to actually win
+- **The DIH** declares war on disease instead of on other humans (revolutionary concept)
+- **Wishocracy** tells your army what to fight for (e.g., "Cure cancer" instead of "invade a country with oil")
+- **Your AI agents** coordinate the millions of people and resources needed to actually win, without requiring a single Zoom meeting
 
-Here's how you build this coordination infrastructure. (We'll call it the "Positron Network" for reference, but what matters is understanding how to build it yourself.)
+Here's how you build this coordination infrastructure. (We'll call it the "Positron Network" for reference, but what matters is understanding how to build it yourself, not memorizing a brand name.)
 
-### Where Your Agents Get Their Missions
+### Where Your Agents Get Their Missions (Not From a Management Consultant)
 
-Your agents don't randomly decide what to work on. They pull from [Wishocracy's Task Tree](wishocracy.qmd#breaking-down-problems-the-task-tree-of-life)—the globally-prioritized breakdown of humanity's highest-priority problems into executable tasks.
+Your agents don't randomly decide what to work on based on what sounds cool or what their creator happens to care about that day. They pull from [Wishocracy's Task Tree](wishocracy.qmd#breaking-down-problems-the-task-tree-of-life)—the globally-prioritized breakdown of humanity's highest-priority problems into tasks a computer (or sufficiently motivated intern) can actually execute.
 
-Wishocracy creates the list. For example, "Cure Alzheimer's" becomes:
-- Map protein structures → Run AlphaFold on these sequences → Rent computing time → Find cheapest cloud provider
-- Test drug candidates → Recruit trial participants → Find people age 65+ with early symptoms → Contact researchers who study aging
+Wishocracy creates the list. For example, "Cure Alzheimer's" (vague, terrifying, impossible) becomes:
+- Map protein structures → Run AlphaFold on these sequences → Rent computing time → Find cheapest cloud provider that won't mysteriously go down during your job
+- Test drug candidates → Recruit trial participants → Find people age 65+ with early symptoms → Contact the 73 researchers globally who study this specific thing
 
-Your agents work from this same list. Whether you're deploying agents from a nonprofit in Boston, a university in Beijing, or a biotech in Switzerland—all agents see the same prioritized tasks. This is how you coordinate millions of people without central control.
+Your agents work from this same list. Whether you're deploying agents from a patient advocacy nonprofit in Boston (running on donated servers), a university in Beijing (behind the Great Firewall), or a biotech in Switzerland (with an actual IT budget)—all agents see the same prioritized tasks. This is how you coordinate millions of people without someone having to organize a conference call.
 
-The secret (discovered by *Forces for Good*): Successful nonprofits don't work in isolation. They coordinate across sectors—with other nonprofits, businesses, governments, and the public. The way you do this at global scale is by having all agents work from one shared task list, regardless of who deployed them.
+The secret (discovered by *Forces for Good*): Successful nonprofits don't work in isolation, hoarding their email lists and acting territorial like collaboration is treason. They coordinate across sectors—with other nonprofits, businesses, governments, and random smart people. The way you do this at global scale is by having all agents work from one shared task list, regardless of who deployed them or what timezone they're pretending to operate in.
 
-### Why You Need This (The Coordination Problem)
+### Why You Need This (Humans Are Hilariously Bad at Coordination)
 
-The NIH can't coordinate millions of researchers. The FDA can't coordinate global trials. Defense contractors coordinate trillions in spending, but health advocates can't coordinate billions.
+The NIH has 27,000 employees. They can't coordinate lunch orders, let alone millions of researchers. Seriously—they spent [$1 trillion and eradicated zero diseases](../problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) because their coordination strategy is "form a committee to discuss forming a committee."
 
-The problem isn't lack of willing people—it's lack of coordination infrastructure. You can't manually coordinate:
-- Millions of potential research participants across 195 countries
-- Thousands of qualified researchers who need funding matches
-- Hundreds of treaty advocates across different time zones
-- Real-time trial data from decentralized sources worldwide
+The FDA thinks humans can manually coordinate global trials. These are the same humans who took [17 years and $2.6 billion](../problem/fda-is-unsafe-and-ineffective.qmd) to approve one drug. Asking them to coordinate is like asking goldfish to organize a space program.
 
-AI doesn't have this limitation. It can coordinate at scale, 24/7, across languages and time zones. The way you win the War on Disease is by building coordination infrastructure that your adversaries (NIH bureaucracy, FDA delays, defense lobbies) can't match.
+Meanwhile, defense contractors somehow coordinate [$2.7 trillion in annual spending](../problem/cost-of-war.qmd) to build jets that don't work. They're idiots, but they're *coordinated* idiots with database infrastructure.
+
+Health advocates? We're trying to coordinate billions in funding using email threads that descend into reply-all hell and Zoom calls where 18 people are on mute and 2 are talking over each other.
+
+The problem isn't that people don't want to help cure disease. It's that coordinating millions of people manually is impossible:
+- Want to recruit trial participants across 195 countries? Good luck finding someone in each timezone to make phone calls.
+- Need to match researchers with funding opportunities? Hope you enjoy reading 10,000 grant descriptions and manually building a spreadsheet.
+- Trying to mobilize treaty advocates globally? Enjoy scheduling a call where someone is always asleep.
+- Need real-time trial data synthesis? Better hire someone to email everyone weekly asking for updates (they won't respond).
+
+Humans evolved to coordinate hunting parties of 20 people. We're now trying to coordinate millions. Our brains literally can't do it—we max out at [150 relationships (Dunbar's number)](../references.qmd#dunbar-number-150).
+
+AI doesn't have this limitation. It never sleeps, speaks every language, operates in every timezone simultaneously, and doesn't get into passive-aggressive email wars. The way you win the War on Disease is by building coordination infrastructure that works at the scale humans can't, while the NIH is still trying to schedule their next committee meeting.
 
 ![A diagram showing how nonprofits can gain leverage.](../../assets/nonprofit-leverage.png)
 
@@ -76,82 +84,102 @@ graph TD
 
 ```
 
-### Step 1: Deploy Your Coordination Hub
+### Step 1: Deploy Your Coordination Hub (Your Organization's Digital Slave Labor)
 
-The way you join the network is by deploying a "node"—your organization's AI coordination hub. Think of it as your digital headquarters where AI agents work 24/7 to coordinate your piece of the War on Disease.
+The way you join the network is by deploying a "node"—your organization's AI coordination hub that never sleeps, never complains, never asks for a raise, and doesn't require health insurance.
+
+Think of it as your digital headquarters where AI agents work 24/7 to coordinate your piece of the War on Disease, while your human staff can focus on things humans are actually good at (like empathy, creativity, and knowing when someone's email is passive-aggressive).
 
 Here's what you use your node for:
 
 **To Fund the War:**
 
-You deploy agents that identify potential donors, foundations, and grant opportunities aligned with health causes. They draft grant applications, match funders with specific research needs, and coordinate fundraising campaigns. A human development director might research 20 foundation fits per week. Your agents research 200 per day and draft the applications.
+You deploy agents that identify potential donors, foundations, and grant opportunities while you sleep. They read every foundation's 47-page "priorities document" (written by consultants who don't know what the foundation wants either), figure out which ones might fund your work, and draft grant applications that don't sound like they were written by a robot having an existential crisis.
+
+A human development director can research maybe 20 foundation fits per week, assuming they don't get distracted by the 300 unread emails in their inbox. Your agents research 200 per day, draft the applications, and don't need therapy afterward. They also don't waste donor meetings asking questions that were answered on page 3 of the website.
 
 **To Mobilize Support:**
 
-You launch advocacy agents that track health legislation, coordinate treaty signature campaigns, organize awareness events, and recruit volunteers. Instead of one coordinator trying to schedule volunteers across time zones, your agents handle logistics while humans focus on relationships and strategy.
+You launch advocacy agents that track health legislation (all 10,000 pages that get released at 2 AM), coordinate treaty signature campaigns across timezones, organize awareness events, and recruit volunteers without the usual process of begging people on Facebook and hoping they show up.
+
+Instead of one burned-out coordinator trying to schedule volunteers across 12 timezones while also answering emails, planning events, and maintaining their sanity, your agents handle all the logistics. The coordinator can focus on actual human relationships instead of being a human scheduling algorithm who's slowly dying inside.
 
 **To Accelerate Research:**
 
-You automate the coordination work that slows medical progress—matching researchers with funding, recruiting trial participants, tracking outcomes, synthesizing literature, coordinating data sharing between labs. What used to take months of emails and phone calls happens continuously.
+You automate the soul-crushing coordination work that turns enthusiastic researchers into bitter husks. Matching researchers with funding opportunities. Recruiting trial participants who actually meet the criteria (not just people who saw a Facebook ad and think they qualify). Tracking outcomes when half the participants ghost you. Synthesizing literature when there are 50,000 new papers published monthly and you're supposed to read them all.
+
+What used to take 6 months of emails like "Just following up on my previous 12 emails..." now happens continuously without making you want to throw your laptop out a window.
 
 **To Build Awareness:**
 
-You deploy content agents that create educational materials, track public sentiment on health issues, coordinate social media campaigns, and identify high-impact messaging. Instead of a marketing team manually A/B testing campaigns, your agents test hundreds of variations and optimize in real-time.
+You deploy content agents that create educational materials people might actually read, track what the public currently thinks about health issues (spoiler: it's terrifying), coordinate social media campaigns, and figure out which messages actually change minds versus which ones just get ratio'd.
+
+Instead of a marketing team manually A/B testing campaigns one painful experiment at a time, your agents test hundreds of variations simultaneously. They learn that posting about preventing Alzheimer's at 2 PM on Tuesday gets 10x more engagement than posting at 9 AM on Monday, for reasons no human will ever understand.
 
 **To Optimize Impact:**
 
-You use "Agent Evaluators" to measure which strategies actually save lives. Instead of guessing what works based on annual reports, you get real-time data showing which fundraising approaches work, which advocacy tactics change minds, which research collaborations accelerate progress. You double down on what works, kill what doesn't.
+You use "Agent Evaluators" to measure which strategies actually save lives instead of which ones win awards at nonprofit conferences or make board members feel good.
 
-Inside your node, you build **Task Agents**—hyper-focused AI workers, each with one specific job in the War on Disease. They share a knowledge base for long-term memory, coordinate through a shared context system, and interact with research databases, government systems, and other nodes through APIs.
+You get real-time data showing which fundraising approaches work (not just which ones the development director learned at their last nonprofit job), which advocacy tactics actually change minds (versus which ones just make activists feel productive), which research collaborations accelerate progress (versus which ones just produce papers no one reads).
+
+You double down on what works. You kill what doesn't. No politics, no "but we've always done it this way," no protecting programs because someone's spouse runs them.
+
+Inside your node, you build **Task Agents**—hyper-focused AI workers who are the opposite of your coworker Dave who somehow has 17 responsibilities and does none of them well. Each agent has one specific job in the War on Disease. They share a knowledge base for long-term memory (so they don't keep asking you the same questions), coordinate through a shared context system (so they don't duplicate work like humans do), and interact with research databases, government systems, and other nodes through APIs (which is fancy talk for "they can talk to computers without needing IT support to set it up").
 
 ![Autonomous research agents: the future of scientific discovery](../../../positron/images/autonomous-research-agent.png)
 
 ![Robot scientists working 24/7 to cure disease](../../../positron/images/robot-scientists.png)
 
-### Step 2: Define Each Agent's Mission (From the Task Tree)
+### Step 2: Define Each Agent's Mission (From the Task Tree, Not From Your Feelings)
 
-Your agents pull their missions from Wishocracy's Task Tree. The way you prevent them from becoming useless generalists is by mapping each agent to one specific task from that tree. Here's how:
+Your agents pull their missions from Wishocracy's Task Tree, not from brainstorming sessions where someone says "wouldn't it be cool if..." The way you prevent them from becoming useless generalists (like every nonprofit's "Director of Strategy and Partnerships and Innovation and Impact") is by mapping each agent to one specific task from that tree. Here's how:
 
 **1. Pick a Task from the Tree:**
 
-Wishocracy's Task Tree breaks "Cure Alzheimer's" down into executable tasks like "Find researchers studying protein misfolding" or "Recruit trial participants age 65+ with early symptoms." You pick one task. Your agent does *only* that task. This prevents digital ADHD.
+Wishocracy's Task Tree breaks "Cure Alzheimer's" (impossible, vague, makes you want to give up) down into executable tasks like "Find researchers studying protein misfolding" or "Recruit trial participants age 65+ with early symptoms."
+
+You pick one task. Your agent does *only* that task. It doesn't also try to do social media, write the newsletter, organize events, and somehow also fix the printer. This prevents digital ADHD and the slow death of competence through task overload.
 
 **2. Define the Lead Measure (the action):**
 
-The thing the agent *does* to complete its task. For a "find researchers" agent: "Number of qualified researchers contacted per day." Simple, countable, and the agent controls it completely.
+The thing the agent *does* to complete its task. For a "find researchers" agent: "Number of qualified researchers contacted per day." Simple, countable, and the agent controls it completely (unlike "build relationships" or other vague corporate nonsense that sounds good in meetings but means nothing).
 
 **3. Define the Lag Measure (the result):**
 
-The outcome you actually care about. For the same agent: "Number of researchers who sign up for a dFDA trial." This tells you if the action is working.
+The outcome you actually care about. For the same agent: "Number of researchers who sign up for a dFDA trial." This tells you if the action is working or if you've built an agent that's really good at sending emails no one reads.
 
-This structure (borrowed from "The 4 Disciplines of Execution") turns tasks from Wishocracy's global list into specific agent missions you can build, measure, and improve.
+This structure (borrowed from "The 4 Disciplines of Execution") turns tasks from Wishocracy's global list into specific agent missions you can build, measure, and improve without needing to hire a consultant to interpret the results.
 
-The key: Every agent across the entire network works from the same Task Tree. Your cancer research agent in Boston might be working on "Find protein researchers" while someone's agent in Beijing works on "Find computing resources for AlphaFold." Both tasks come from the same Alzheimer's cure branch of the tree. This is how you coordinate globally without meetings.
+The key: Every agent across the entire network works from the same Task Tree. Your cancer research agent in Boston might be working on "Find protein researchers" while someone's agent in Beijing works on "Find computing resources for AlphaFold." Both tasks come from the same Alzheimer's cure branch of the tree. This is how you coordinate globally without endless meetings where half the attendees are on mute and the other half forgot they were even invited.
 
 ![A diagram illustrating how a high-level goal is broken down into a specific, measurable task for an autonomous agent.](../../assets/goal-to-autonomous-task-completion.png)
 
-### Step 3: Enable Competition Between Agents
+### Step 3: Enable Competition Between Agents (May the Best Robot Win)
 
-Here's how you make the system evolve: You let anyone design and launch new agents to compete with existing ones.
+Here's how you make the system evolve instead of calcifying into bureaucracy: You let anyone design and launch new agents to compete with existing ones.
 
-If someone thinks they have a better way to find cancer researchers, they build an agent for it. You run both agents side-by-side and measure which one delivers better results for less cost. The winner gets more resources. The loser gets improved or retired.
+If someone thinks they have a better way to find cancer researchers, they build an agent for it. You run both agents side-by-side and measure which one delivers better results for less cost. The winner gets more resources. The loser gets improved or retired (but gently, because it's code, not a person you're firing via Zoom).
 
-The network evolves through ruthless, Darwinian competition. The best strategies win. The worst die. No committees. No politics. Just results.
+The network evolves through ruthless, Darwinian competition. The best strategies win. The worst die. No committees to protect underperforming approaches because "we've invested too much to give up now." No politics. No protecting someone's pet project because they've been here since 2003. Just results.
+
+It's capitalism for algorithms, except the competition actually makes things better instead of just making shareholders richer.
 
 
 ### How This Enables Cross-Sector Coordination (The Forces for Good Secret)
 
-*Forces for Good* studied the difference between successful and unsuccessful nonprofits. The key finding: Successful nonprofits coordinate across sectors—they work with other nonprofits, businesses, governments, and the public. Unsuccessful ones work in isolation.
+*Forces for Good* studied the difference between successful and unsuccessful nonprofits. The finding: Successful nonprofits coordinate across sectors—they work with other nonprofits, businesses, governments, and the public. Unsuccessful ones operate in silos, jealously guarding their email lists and acting like collaboration is a zero-sum game where helping someone else means losing.
 
-The problem: Cross-sector coordination is nearly impossible to do manually. How do you coordinate a cancer nonprofit in Boston with a biotech in Switzerland, a university in Beijing, and individual researchers across 50 countries?
+The problem: Cross-sector coordination is nearly impossible to do manually. How do you coordinate a cancer nonprofit in Boston (operating 9-5 EST) with a biotech in Switzerland (different timezone, language, and concept of urgency), a university in Beijing (behind a firewall), and individual researchers across 50 countries (half of whom don't check email)?
 
-The solution: All agents work from the same global Task Tree. Your nonprofit's agent and the biotech's agent and the university's agent all see "Find researchers studying protein misfolding" as the next priority task. They automatically coordinate because they're working from the same list.
+Currently, this requires conference calls scheduled 6 months in advance where everyone spends 45 minutes on introductions and 5 minutes accomplishing nothing. Then someone sends a follow-up email that 80% of people won't read.
+
+The solution: All agents work from the same global Task Tree. Your nonprofit's agent and the biotech's agent and the university's agent all see "Find researchers studying protein misfolding" as the next priority task. They automatically coordinate because they're working from the same list, not because someone managed to find a time that works across 12 timezones (spoiler: that time doesn't exist).
 
 You base your agent design on the six practices from *Forces for Good*:
 
 ![The six-part organizing framework from the book Forces for Good.](../../assets/forces-for-good-organizing-framework.png)
 
-This ensures your agents enable the proven success pattern—cross-sector coordination—rather than just automating isolated organizational tasks.
+This ensures your agents enable the proven success pattern—cross-sector coordination—rather than just automating the process of sending emails that no one reads and forming committees that accomplish nothing.
 
 ### How You Keep Control (Human-AI Cooperation)
 
