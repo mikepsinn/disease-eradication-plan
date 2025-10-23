@@ -29,9 +29,7 @@ book:
         - brain/book/problem/cost-of-disease.qmd # Cost of Disease
         - brain/book/problem/the-119-trillion-death-toilet.qmd # Humanity's Budget
         - brain/book/problem/unrepresentative-democracy.qmd # Democracy Is Theater
-        - brain/book/theory/public-choice.qmd # Public Choice Theory
         - brain/book/problem/regulatory-capture.qmd # Regulatory Capture
-        - brain/book/theory/central-planning-kills.qmd # Central Planning Kills
 
     - part: "💡 The Solution"
       chapters:
@@ -86,10 +84,8 @@ book:
         - brain/book/appendix/highest-leverage-advocacy.qmd
         - brain/book/strategy/five-step-execution.qmd
         - brain/book/strategy/bribe-sequence.qmd
-        - brain/book/strategy/viral-marketing.qmd
         - brain/book/strategy/grassroots-mobilization.qmd
         - brain/book/strategy/diplomatic-approach.qmd
-        - brain/book/strategy/co-opting-defense-contractors.qmd
         - brain/book/economics/coalition-that-wins.qmd
         - brain/book/appendix/co-opt-dont-compete.qmd
 
@@ -104,7 +100,6 @@ book:
     - part: "💰 Economic Analysis"
       chapters:
         - brain/book/appendix/total-economic-impact.qmd
-        - brain/book/appendix/economic-summary.qmd
         - brain/book/economics/economic-impact-summary.qmd
         - brain/book/economics/best-idea-in-the-world.qmd
         - brain/book/appendix/humanity-budget-overview.qmd
