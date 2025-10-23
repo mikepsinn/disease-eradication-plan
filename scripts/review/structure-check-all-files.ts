@@ -13,14 +13,29 @@ async function main() {
   // Get stale files that need checking
   const allStaleFiles = await getStaleFiles('lastStructureCheckHash', 'brain/book');
 
+  // Files to exclude from structure checking:
+  // - references.qmd: Reference list, not a narrative chapter
+  // - Part intro files: These are meant to summarize their child chapters
+  const excludedFiles = [
+    'brain/book/references.qmd',
+    'brain/book/problem.qmd',     // Part I: The Problem intro
+    'brain/book/solution.qmd',    // Part II: The Solution intro
+    'brain/book/proof.qmd',       // Part III: The Case intro
+    'brain/book/economics.qmd',   // The Economic Case intro
+    'brain/book/futures.qmd',     // Intro to Paths
+    'brain/book/strategy.qmd',    // Strategy section intro
+  ];
+
   // Filter to only include main chapter files that are stale
   // Normalize paths to use forward slashes for comparison (cross-platform)
-  // Explicitly exclude references.qmd (it's a reference list, not a narrative chapter)
   const staleFilesToCheck = allStaleFiles.filter(file => {
     const normalizedFile = file.replace(/\\/g, '/');
-    if (normalizedFile.includes('brain/book/references.qmd')) {
+
+    // Check if file is in exclusion list
+    if (excludedFiles.some(excluded => normalizedFile.includes(excluded))) {
       return false;
     }
+
     return mainChapterFiles.some(chapterPath => normalizedFile.includes(chapterPath));
   });
 
