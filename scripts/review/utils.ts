@@ -42,20 +42,27 @@ export async function parseQuartoYml(): Promise<BookStructure> {
   let inChapters = false;
 
   for (const line of lines) {
-    if (line.includes('chapters:')) {
+    // Only recognize top-level (2-space indentation) chapters: and appendices:
+    // This prevents nested chapters: inside appendices from switching modes
+    const trimmedLine = line.trimStart();
+    const indentLevel = line.length - trimmedLine.length;
+
+    // Top-level book.chapters: has 2 spaces of indentation
+    if (trimmedLine === 'chapters:' && indentLevel === 2) {
       inChapters = true;
       inAppendices = false;
       continue;
     }
 
-    if (line.includes('appendices:')) {
+    // Top-level book.appendices: has 2 spaces of indentation
+    if (trimmedLine === 'appendices:' && indentLevel === 2) {
       inAppendices = true;
       inChapters = false;
       continue;
     }
 
-    if (!line.startsWith(' ') && !line.startsWith('\t') && line.includes(':') &&
-        !line.includes('chapters:') && !line.includes('appendices:')) {
+    // Reset when we hit a top-level key (no indentation)
+    if (!line.startsWith(' ') && !line.startsWith('\t') && line.includes(':')) {
       inChapters = false;
       inAppendices = false;
     }
@@ -401,7 +408,20 @@ export async function structureCheckFileWithLLM(filePath: string): Promise<void>
     console.log(`File ${filePath} is already structured correctly. Updating metadata.`);
     finalBody = body;
   } else {
-    finalBody = responseText.trim();
+    const trimmedResponse = responseText.trim();
+    const originalLength = body.length;
+    const responseLength = trimmedResponse.length;
+
+    // Safety check: reject if response is >50% shorter (likely LLM deleted content)
+    if (responseLength < originalLength * 0.5) {
+      console.error(`❌ ERROR: LLM response is ${Math.round((1 - responseLength/originalLength) * 100)}% shorter than original!`);
+      console.error(`   Original: ${originalLength} chars, Response: ${responseLength} chars`);
+      console.error(`   This suggests the LLM deleted content instead of adding TODO comments.`);
+      console.error(`   SKIPPING this file to prevent data loss.`);
+      return; // Don't update the file
+    }
+
+    finalBody = trimmedResponse;
   }
 
   await updateFileWithHash(filePath, finalBody, frontmatter, 'lastStructureCheckHash');

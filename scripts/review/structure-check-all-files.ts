@@ -15,8 +15,12 @@ async function main() {
 
   // Filter to only include main chapter files that are stale
   // Normalize paths to use forward slashes for comparison (cross-platform)
+  // Explicitly exclude references.qmd (it's a reference list, not a narrative chapter)
   const staleFilesToCheck = allStaleFiles.filter(file => {
     const normalizedFile = file.replace(/\\/g, '/');
+    if (normalizedFile.includes('brain/book/references.qmd')) {
+      return false;
+    }
     return mainChapterFiles.some(chapterPath => normalizedFile.includes(chapterPath));
   });
 
