@@ -82,21 +82,25 @@ The way you join the network is by deploying a "node"—your organization's AI c
 
 Here's what you use your node for:
 
-**To Coordinate Research:**
+**To Fund the War:**
 
-You deploy agents that identify qualified researchers, match them with funding opportunities, and coordinate trial participation. They work continuously to connect people who can cure disease with the resources to do it. A human coordinator might reach 10 researchers per day. Your agents reach 1,000.
+You deploy agents that identify potential donors, foundations, and grant opportunities aligned with health causes. They draft grant applications, match funders with specific research needs, and coordinate fundraising campaigns. A human development director might research 20 foundation fits per week. Your agents research 200 per day and draft the applications.
 
-**To Mobilize Advocates:**
+**To Mobilize Support:**
 
-You launch advocacy agents that track health legislation, mobilize treaty supporters, and coordinate public campaigns. Instead of one advocacy director trying to coordinate volunteers across time zones, your agents handle the coordination while your director focuses on strategy.
+You launch advocacy agents that track health legislation, coordinate treaty signature campaigns, organize awareness events, and recruit volunteers. Instead of one coordinator trying to schedule volunteers across time zones, your agents handle logistics while humans focus on relationships and strategy.
 
-**To Accelerate Trials:**
+**To Accelerate Research:**
 
-You automate the coordination of decentralized efficacy trials—recruiting participants, tracking outcomes, analyzing data. What used to take years of manual coordination (scheduling, data collection, follow-ups) happens continuously without human bottlenecks.
+You automate the coordination work that slows medical progress—matching researchers with funding, recruiting trial participants, tracking outcomes, synthesizing literature, coordinating data sharing between labs. What used to take months of emails and phone calls happens continuously.
+
+**To Build Awareness:**
+
+You deploy content agents that create educational materials, track public sentiment on health issues, coordinate social media campaigns, and identify high-impact messaging. Instead of a marketing team manually A/B testing campaigns, your agents test hundreds of variations and optimize in real-time.
 
 **To Optimize Impact:**
 
-You use "Agent Evaluators" to measure which strategies actually save lives. Instead of guessing what works based on annual reports, you get real-time data. You double down on what works, kill what doesn't.
+You use "Agent Evaluators" to measure which strategies actually save lives. Instead of guessing what works based on annual reports, you get real-time data showing which fundraising approaches work, which advocacy tactics change minds, which research collaborations accelerate progress. You double down on what works, kill what doesn't.
 
 Inside your node, you build **Task Agents**—hyper-focused AI workers, each with one specific job in the War on Disease. They share a knowledge base for long-term memory, coordinate through a shared context system, and interact with research databases, government systems, and other nodes through APIs.
 
