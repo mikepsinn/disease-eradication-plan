@@ -49,9 +49,9 @@ AI doesn't have this limitation. It never sleeps, speaks every language, operate
 
 ![A diagram showing how nonprofits can gain leverage.](../../assets/nonprofit-leverage.png)
 
-### The Architecture You're Building
+### The Architecture You're Building (It's Simpler Than It Looks)
 
-Here's the coordination architecture you need:
+Here's the coordination architecture you need. Don't let the diagram scare you—it's just showing that agents talk to other agents, which talk to more agents. Like a corporate org chart, except things actually happen:
 
 ```{mermaid}
 graph TD
@@ -181,38 +181,40 @@ You base your agent design on the six practices from *Forces for Good*:
 
 This ensures your agents enable the proven success pattern—cross-sector coordination—rather than just automating the process of sending emails that no one reads and forming committees that accomplish nothing.
 
-### How You Keep Control (Human-AI Cooperation)
+### How You Keep Control (Preventing the Robot Uprising)
 
-Current AI can't run a global health movement alone. Good—you want humans making strategic decisions. Here's the cooperation model you use:
+Current AI can't run a global health movement alone, which is honestly for the best. You want humans making strategic decisions, not algorithms optimizing for metrics that accidentally prioritize the wrong things (like every social media platform ever).
+
+Here's the cooperation model you use:
 
 **AI Proposes:**
 
-Your agents analyze what's working across the network and propose new strategies (via GitHub issues). Example: "Trial recruitment is 3x higher when we contact researchers on weekends."
+Your agents analyze what's working across the network and propose new strategies (via GitHub issues, because developers already live there). Example: "Trial recruitment is 3x higher when we contact researchers on weekends" or "Funding requests sent on Tuesday get 40% more responses than those sent on Friday."
 
 **You Decide:**
 
-Movement leaders review and approve strategic changes. Humans set direction. AI executes coordination.
+Actual humans review and approve strategic changes. You set direction based on values and context the AI doesn't understand (like "we don't spam people" or "that approach is technically effective but ethically questionable"). AI suggests. Humans decide. This is the opposite of most organizations where humans suggest and bureaucracy decides nothing will change.
 
 **AI Implements:**
 
-Once approved, "Builder Agents" update the coordination infrastructure—writing code, updating agent instructions, submitting improvements as pull requests.
+Once approved, "Builder Agents" update the coordination infrastructure—writing code, updating agent instructions, submitting improvements as pull requests. They do the grunt work of implementation so humans don't have to spend their weekends debugging Python.
 
 **You Verify:**
 
-You do final review to ensure changes align with the mission before they go live across the network.
+You do final review to ensure changes align with the mission before they go live across the network. Think of it as peer review, except the peer is a robot and it actually happens instead of sitting in someone's inbox for 6 months.
 
-This keeps you in strategic control while letting AI handle the coordination work humans can't scale. You're building infrastructure to coordinate millions of people fighting disease, not building Skynet.
+This keeps you in strategic control while letting AI handle the coordination work humans can't scale. You're building infrastructure to coordinate millions of people fighting disease, not building Skynet (though the "kill all humans" approach would technically solve the disease problem by eliminating the hosts, so we specifically programmed against that).
 
-### How You Prevent Data Silos
+### How You Prevent Data Silos (The Tragedy of the Nonprofit Commons)
 
-A coordination network is only as smart as the information flowing through it. Here's how you prevent organizations from hoarding data:
+A coordination network is only as smart as the information flowing through it. Here's how you prevent organizations from hoarding data like dragons sitting on gold they'll never use:
 
 **Rule 1 - Share to Play:**
 
-To use the powerful shared coordination agents (funded by the collective), you agree to share your anonymized performance data back to the network. No sharing, no access to the network effects.
+To use the powerful shared coordination agents (funded by the collective), you agree to share your anonymized performance data back to the network. No sharing, no access to the network effects. It's the opposite of most nonprofit collaborations where everyone wants the benefits but no one wants to contribute anything.
 
 **Rule 2 - Get Paid to Share:**
 
-For high-value data, the network directly compensates your node. You create a market for insights that benefits everyone.
+For high-value data, the network directly compensates your node. You create an actual market for insights that benefits everyone, instead of the current system where valuable data sits unused in someone's database because sharing it would require 6 months of legal review and 14 signatures.
 
-This ensures every success and failure becomes a lesson for the entire network. The whole army gets smarter over time, not just individual organizations.
+This ensures every success and failure becomes a lesson for the entire network. The whole army gets smarter over time, not just individual organizations repeating the same mistakes in isolation while pretending they're doing cutting-edge work.
