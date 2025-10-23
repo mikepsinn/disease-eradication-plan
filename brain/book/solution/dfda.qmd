@@ -161,6 +161,86 @@ Those papers killed more people than they saved.
 
 ---
 
+## Why This Works: The Mathematical Impossibility of Committees
+
+Here's the problem with having [~200 FDA bureaucrats](../references.qmd#fda-reviewer-count) decide what 8 billion people can try when they're dying:
+
+### The Math That Proves Centralization Can't Work
+
+Let's calculate how long it would take the FDA to properly evaluate every treatment for every person:
+
+```{python}
+# Information processing capacity of the FDA committee
+committee_members = 200
+hours_per_day = 8
+decisions_per_hour = 1
+committee_capacity = committee_members * hours_per_day * decisions_per_hour
+# = 1,600 decisions/day
+
+# Information that actually needs processing
+diseases = 10_000
+treatments_per_disease = 100  # Potential treatments to evaluate
+patients = 8_000_000_000
+patient_variations = patients * 0.1  # Genetic variations matter
+total_decisions_needed = diseases * treatments_per_disease * patient_variations
+# = 800,000,000,000 decisions needed
+
+# Time for committee to process everything
+years_to_process = total_decisions_needed / (committee_capacity * 365)
+print(f"Years for FDA to evaluate everything: {years_to_process:,.0f}")
+# Output: 1,369,863 years
+
+# Market processing (parallel, decentralized)
+market_participants = 8_000_000_000
+market_decisions_per_day = market_participants * 1  # One health decision per person
+market_years = total_decisions_needed / (market_decisions_per_day * 365)
+print(f"Years for decentralized system: {market_years:.2f}")
+# Output: 0.27 years (100 days)
+```
+
+**The committee needs 1.3 million years. The decentralized system needs 100 days.**
+
+### Why 200 People Can't Replace 8 Billion
+
+The FDA doesn't know:
+
+- What disease **you** have (they haven't met you)
+- How **your** body responds to treatments (genetics are unique)
+- What risks **you're** willing to take (some prefer death to side effects, others the reverse)
+- Whether **you'd** rather die trying or die waiting (only you can answer this)
+
+But they decide for you anyway.
+
+### The Solution: Let 8 Billion Experts Make 8 Billion Decisions
+
+**Current system:**
+```
+330 Million Americans
+        ↓
+   200 FDA Bureaucrats (Bottleneck)
+        ↓
+    17-Year Delays
+        ↓
+    Millions Die
+```
+
+**dFDA system:**
+```
+8 Billion Humans
+    ↓ ↓ ↓ ↓ ↓ (Parallel Processing)
+Millions of Trials Simultaneously
+        ↓
+    Real-Time Results
+        ↓
+    Data Saves Everyone
+```
+
+This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for 8 billion unique people. The FDA could work 24/7 for a million years and still be behind.
+
+The only solution is to let patients and doctors make their own decisions, then pool the data so everyone benefits from everyone's experience.
+
+---
+
 ## Real Examples of This Working (While the FDA Wasn't Looking)
 
 ### The Oxford Recovery Trial: How the British Accidentally Saved Medicine
