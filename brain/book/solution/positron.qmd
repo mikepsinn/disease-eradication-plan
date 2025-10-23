@@ -15,6 +15,18 @@ Here's the division of labor:
 
 Here's how you build this coordination infrastructure. (We'll call it the "Positron Network" for reference, but what matters is understanding how to build it yourself.)
 
+### Where Your Agents Get Their Missions
+
+Your agents don't randomly decide what to work on. They pull from [Wishocracy's Task Tree](wishocracy.qmd#breaking-down-problems-the-task-tree-of-life)—the globally-prioritized breakdown of humanity's highest-priority problems into executable tasks.
+
+Wishocracy creates the list. For example, "Cure Alzheimer's" becomes:
+- Map protein structures → Run AlphaFold on these sequences → Rent computing time → Find cheapest cloud provider
+- Test drug candidates → Recruit trial participants → Find people age 65+ with early symptoms → Contact researchers who study aging
+
+Your agents work from this same list. Whether you're deploying agents from a nonprofit in Boston, a university in Beijing, or a biotech in Switzerland—all agents see the same prioritized tasks. This is how you coordinate millions of people without central control.
+
+The secret (discovered by *Forces for Good*): Successful nonprofits don't work in isolation. They coordinate across sectors—with other nonprofits, businesses, governments, and the public. The way you do this at global scale is by having all agents work from one shared task list, regardless of who deployed them.
+
 ### Why You Need This (The Coordination Problem)
 
 The NIH can't coordinate millions of researchers. The FDA can't coordinate global trials. Defense contractors coordinate trillions in spending, but health advocates can't coordinate billions.
@@ -92,23 +104,25 @@ Inside your node, you build **Task Agents**—hyper-focused AI workers, each wit
 
 ![Robot scientists working 24/7 to cure disease](../../../positron/images/robot-scientists.png)
 
-### Step 2: Define Each Agent's Mission
+### Step 2: Define Each Agent's Mission (From the Task Tree)
 
-The way you prevent your agents from becoming useless generalists is by giving each one a brutally specific mission. Here's how you do it:
+Your agents pull their missions from Wishocracy's Task Tree. The way you prevent them from becoming useless generalists is by mapping each agent to one specific task from that tree. Here's how:
 
-**1. Give it One Wildly Important Goal (WIG):**
+**1. Pick a Task from the Tree:**
 
-An agent designed to find cancer researchers does *only* that. It doesn't also organize schedules, write grants, or send newsletters. One goal. This prevents digital ADHD.
+Wishocracy's Task Tree breaks "Cure Alzheimer's" down into executable tasks like "Find researchers studying protein misfolding" or "Recruit trial participants age 65+ with early symptoms." You pick one task. Your agent does *only* that task. This prevents digital ADHD.
 
 **2. Define the Lead Measure (the action):**
 
-The thing the agent *does*. For your researcher-finding agent: "Number of qualified researchers contacted per day." It's simple, countable, and the agent controls it completely.
+The thing the agent *does* to complete its task. For a "find researchers" agent: "Number of qualified researchers contacted per day." Simple, countable, and the agent controls it completely.
 
 **3. Define the Lag Measure (the result):**
 
 The outcome you actually care about. For the same agent: "Number of researchers who sign up for a dFDA trial." This tells you if the action is working.
 
-This structure (borrowed from "The 4 Disciplines of Execution") turns vague goals like "help cure cancer" into something you can build, measure, and improve.
+This structure (borrowed from "The 4 Disciplines of Execution") turns tasks from Wishocracy's global list into specific agent missions you can build, measure, and improve.
+
+The key: Every agent across the entire network works from the same Task Tree. Your cancer research agent in Boston might be working on "Find protein researchers" while someone's agent in Beijing works on "Find computing resources for AlphaFold." Both tasks come from the same Alzheimer's cure branch of the tree. This is how you coordinate globally without meetings.
 
 ![A diagram illustrating how a high-level goal is broken down into a specific, measurable task for an autonomous agent.](../../assets/goal-to-autonomous-task-completion.png)
 
