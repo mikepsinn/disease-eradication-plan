@@ -1,6 +1,7 @@
 ---
 title: 🤖 Positron Network
 description: How to build and command an army of autonomous AI agents to fight the War on Disease, using the open-source Positron Network.
+lastStructureCheckHash: 5fc6fa1cf0f08fb53d838ccb213fc95f4ed481801c6d54913ce737c139b85a90
 ---
 
 ## Your Army for the War on Disease
@@ -12,9 +13,9 @@ Think of it this way:
 - **Wishocracy** tells the army what hills to take (e.g., "Cure cancer").
 - **Positron** is the army of autonomous agents that actually takes those hills.
 
-The Positron Network is an open-source system for building this army. Its core purpose is to find and win **positive-sum games**—which is just a fancy way of saying it finds ways to create more value than it consumes, making the pie bigger for everyone instead of just fighting over slices. While we're showing you how to use it for the War on Disease, it's designed for **any nonprofit** to build their own AI army and stop getting outgunned by organizations with worse intentions.
+The Positron Network is an open-source system for mass coordination. Its core purpose is to enable millions of individuals and organizations to coordinate their efforts in fighting disease—something that's impossible to do manually but trivial for AI. Instead of relying on slow, centralized bureaucracies, Positron creates a decentralized network where AI agents coordinate research, mobilize advocates, and accelerate trials 24/7.
 
-Here's how you build your army.
+Here's how you build the coordination infrastructure.
 
 ### Why Your Army is Necessary (The Balance of Power)
 
@@ -64,20 +65,20 @@ graph TD
 
 ```
 
-### Step 1: Deploy a Positron Node (Your AI Operating System)
+### Step 1: Deploy a Positron Node (Your Coordination Hub)
 
-A "Positron Node" is a configurable **AI operating system for your nonprofit**. Think of it less as a simple container and more as a digital headquarters where your AI army lives, trains, and works. Any nonprofit can deploy a node to automate its operations and radically increase its efficiency.
+A "Positron Node" is your **AI coordination hub for fighting disease**. Think of it as digital headquarters where your AI agents coordinate research efforts, mobilize advocates, and accelerate trials. Organizations join the network by deploying nodes that work together to execute the War on Disease strategy.
 
-#### How You Use Your AI Operating System
+#### How Your Node Fights Disease
 
-A Positron Node is a tool for solving a nonprofit's three biggest problems: money, influence, and time. Here's how you use it:
+Your Positron Node solves the coordination problems that slow medical progress:
 
-* **To Solve Money:** You deploy agents to handle the soul-crushing work of fundraising. They can identify high-value donors, automate grant writing, and run perpetual campaigns, freeing your human team to build relationships.
-* **To Solve Influence:** You launch an army of advocacy agents to track legislation, mobilize supporters, and flood public comment portals. This gives you the influence of an organization ten times your size, without the payroll.
-* **To Solve Time:** You automate the administrative drag that burns out your staff and consumes your budget. Let the robots handle the spreadsheets so the humans can handle the mission.
-* **To Achieve Ruthless Efficiency:** You use "Agent Evaluators" to get a real-time, data-driven view of what's working and what's not. This allows you to double down on your most impactful programs and kill the ones that aren't delivering.
+* **To Coordinate Research:** Deploy agents to identify qualified researchers, match them with funding opportunities, and coordinate trial participation. They work 24/7 to connect people who can cure disease with the resources to do it.
+* **To Mobilize Advocates:** Launch advocacy agents that track health legislation, mobilize treaty supporters, and coordinate public campaigns. This gives your movement the reach of a global organization without centralized control.
+* **To Accelerate Trials:** Automate the coordination of decentralized efficacy trials—recruiting participants, tracking outcomes, analyzing data. What used to take years of bureaucratic coordination now happens continuously.
+* **To Optimize Impact:** Use "Agent Evaluators" to measure which strategies actually save lives. Double down on what works, kill what doesn't, based on real-time data instead of bureaucratic inertia.
 
-Inside this OS, you have **Task Agents**. These aren't generalist AIs that write poetry; they are hyper-focused digital workers. Each one has a single, brutally specific job. They use a shared brain (retrieval augmented generation) for long-term memory, a scratchpad (context management) for short-term tasks, and a set of tools (APIs) to interact with the real world.
+Inside your node, you have **Task Agents**—hyper-focused digital workers, each with a single, specific job in the War on Disease. They use a shared knowledge base for long-term memory, context management for coordinating tasks, and APIs to interact with research databases, government systems, and other nodes.
 
 ![Autonomous research agents: the future of scientific discovery](../../../positron/images/autonomous-research-agent.png)
 
@@ -99,6 +100,7 @@ This structure, borrowed from "The 4 Disciplines of Execution," turns vague goal
 
 Anyone can design and launch a new agent to compete with existing ones. If someone thinks they have a better way to find cancer researchers, they can build an agent for it. You run them side-by-side and see which one delivers better results for less cost. The network evolves through ruthless, Darwinian competition.
 
+
 ### The Organizing Framework
 
 The design of these agents isn't random. It's based on the six practices of high-impact nonprofits, as outlined in the book *Forces for Good*. This gives us a proven model for structuring our AI army.
@@ -107,18 +109,16 @@ The design of these agents isn't random. It's based on the six practices of high
 
 This ensures your AI army is pointed at the right enemy: systemic stupidity, not just inefficient spreadsheets.
 
-### How to Build It Without Skynet Taking Over (Human-AI Cooperation)
+### How to Build It Without Losing Control (Human-AI Cooperation)
 
-Current AI isn't smart enough to do this alone, which is probably for the best. The most effective approach is a model of **Human-AI Cooperation**.
+Current AI isn't smart enough to coordinate a global health movement alone, which is actually good—you want humans making strategic decisions. The network uses **Human-AI Cooperation** to build coordination infrastructure:
 
-The network uses familiar developer workflows to manage the interaction between humans and AI:
+* **AI Proposes Strategies:** Agents analyze what's working across the network and propose new coordination strategies (via GitHub issues). For example: "Trial recruitment is 3x higher when we contact researchers on weekends."
+* **Humans Decide:** Movement leaders review, discuss, and approve strategic changes. Humans set the direction, AI executes the coordination.
+* **AI Implements:** Once approved, "Builder Agents" update the coordination infrastructure—writing code, updating agent instructions, and submitting improvements as pull requests.
+* **Humans Verify:** Final review ensures changes align with the mission before they go live across the network.
 
-* **AI Proposes:** Agents create GitHub issues to recommend new strategies or improvements.
-* **Humans Review:** Human maintainers review, discuss, and approve these proposals.
-* **AI Implements:** Once approved, "Builder Agents" implement the changes, writing code and documentation and submitting them as pull requests.
-* **Humans Approve:** Humans perform the final review and merge the changes.
-
-This model allows us to build the infrastructure for an autonomous future while pragmatically addressing the technology's current limitations, ensuring the humans are still in charge.
+This keeps humans in strategic control while letting AI handle the massive coordination work that humans can't scale. You're building infrastructure to coordinate millions of people fighting disease, not building Skynet.
 
 
 ### Data Sharing and Incentives (How to Not Build Silos)
