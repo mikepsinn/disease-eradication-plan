@@ -11,6 +11,7 @@ lastStyleCheck: 2025-10-16T00:00:00.000Z
 lastFactCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
 lastLinkCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
 lastFigureCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
+lastStructureCheckHash: 3e5ffd0dc606bbe7126acab4c81eeef59e03288da147f5fdcc7f4845a776932e
 ---
 Humans have turned warfare into the most expensive hobby in the history of the species.
 We are very good at it.
@@ -66,10 +67,10 @@ Where:
 
 - M<sub>spending</sub> = \$2,718B (verified via [SIPRI database](../references.qmd#sipri-2024-spending))
 - I<sub>damage</sub> = [\$1,875B](../references.qmd#reconstruction-costs-active-conflicts) (reconstruction cost estimates from 47 active conflicts)
-- H<sub>casualties</sub> = [\$2,336B](../references.qmd#acled-active-combat-deaths) ([233,600 deaths](../references.qmd#acled-active-combat-deaths) × \$10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation))
+- H<sub>casualties</sub> = [\$2,446B](../references.qmd#acled-active-combat-deaths) (244,600 total conflict deaths × \$10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation) - includes combat deaths, terrorism, and state violence; see Death Accounting section below for breakdown)
 - T<sub>disruption</sub> = [\$616B](../references.qmd#world-bank-trade-disruption-conflict) ([World Bank trade flow analysis](https://openknowledge.worldbank.org/handle/10986/37015))
 
-**C<sub>direct</sub> = \$7,545 billion annually**
+**C<sub>direct</sub> = \$7,655 billion annually**
 
 This means every second of every day, humanity spends \$196,900 on the tools and consequences of killing each other.
 While you read this sentence, we spent about \$985.
