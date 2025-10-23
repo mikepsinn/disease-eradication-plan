@@ -360,6 +360,24 @@
   - Good allocations earn reputation (competence rewarded)
   - Leaderboards and achievements (social proof)
   - Democracy becomes addictive (dopamine hits for voting)
+- **Breaking Down Problems: The Global Todo List for Humanity**
+  - Big problems are impossible: "Cure cancer" (terrifying, vague, makes you want to give up)
+  - The Task Tree breaks them into executable actions:
+    - "Cure Alzheimer's" becomes:
+      - Understand protein misfolding ($2B) →
+        - Map protein structures ($500M) →
+          - Run AlphaFold on sequences ($10M) →
+            - Rent computing time ($1M) ← This you can actually do
+      - Test drug candidates ($3B) →
+        - Synthesize compounds ($500M) →
+          - Order chemicals ($50M) ← This is a Tuesday afternoon task
+  - Every impossible problem becomes possible when broken down enough
+  - The beauty: Multiple problems share tasks
+    - Cancer needs protein mapping. So does Alzheimer's. So does longevity.
+    - Fund once, solve multiple problems
+  - This creates the globally-prioritized todo list that Positron agents execute
+  - Anyone can add tasks, Wishocracy voting determines priority
+  - Tasks at the bottom are so simple a robot (or motivated intern) can do them
 
 ### The Decentralized FDA
 
@@ -485,6 +503,79 @@
   - Your grandma's Alzheimer's: Actually gets studied
   - Your kid's rare disease: Finally profitable to cure
   - Mental health: No longer the ugly stepchild of medicine
+
+### Positron Network (Building Your AI Coordination Army)
+
+*How to Coordinate Millions of People Without a Single Zoom Meeting*
+
+- **The Two-Phase Value Proposition**
+  - **Phase 1 (NOW - Before Treaty Passes):**
+    - Help nonprofits eliminate operational waste through coordination
+    - Selfish value: Cut your fundraising costs 50% by sharing AI infrastructure
+    - Fund the $100M global referendum campaign through coordinated donor outreach
+    - Coordinate to avoid duplication (500 cancer nonprofits currently duplicate grant applications)
+  - **Phase 2 (AFTER Treaty Passes):**
+    - Coordinate distribution of $27B treaty funds via Wishocracy
+    - Execute decentralized trials funded by patient subsidies on the dFDA platform
+    - Shift from "beg for grants" to "allocate treaty resources efficiently"
+
+- **How Positron Helps Nonprofits NOW (The Selfish Benefits)**
+  - **Shared Grant-Writing AI**: Instead of 500 cancer orgs each hiring grant writers, share Positron agents
+    - Agent reads all foundation priorities (47-page documents), drafts applications
+    - One org applies to Gates Foundation for X, another applies for Y (coordination prevents duplication)
+    - Cut grant-writing costs from $80/hour humans to $5/hour AI
+  - **Coordinated Donor Outreach**:
+    - Agents identify which donors fund which causes, prevent multiple orgs spamming same donors
+    - "Cancer org A already contacted donor X about Y. Org B, focus on donor Z instead."
+    - Track what messaging works, share insights across network
+  - **Shared Advocacy Infrastructure**:
+    - One set of agents tracks all health legislation globally
+    - 500 orgs benefit from shared intel, avoid duplicating lobbying efforts
+    - Coordinate testimony, public comments, media outreach
+  - **Research Coordination**:
+    - "Lab X is already testing compound Y on cancer type Z. Lab W, test different compound."
+    - Share literature reviews (one agent reads 50,000 papers, all orgs benefit)
+    - Coordinate trial recruitment (avoid competing for same participants)
+  - **Automating dFDA Trial Execution**:
+    - Agents recruit trial participants from Wishocracy's prioritized list
+    - Match participants to trials on the dFDA platform
+    - Track outcomes, analyze data, report results
+    - Coordinate between labs running different arms of same study
+  - **The Network Effect**:
+    - First nonprofit that joins saves 20% on ops costs
+    - 10th nonprofit saves 40% (more shared infrastructure)
+    - 100th nonprofit saves 60% (massive coordination efficiencies)
+
+- **How It Connects to Wishocracy's Task Tree**
+  - Agents don't randomly pick tasks (no "wouldn't it be cool if...")
+  - They pull from Wishocracy's globally-prioritized Task Tree
+  - "Cure Alzheimer's" breaks down into thousands of executable tasks
+  - Every agent across all orgs works from same prioritized list
+  - Boston nonprofit's agent works on "Find protein researchers"
+  - Beijing university's agent works on "Find computing for AlphaFold"
+  - Both tasks from same Alzheimer's cure branch = automatic global coordination
+
+- **The Organizing Framework (Forces for Good Discovery)**
+  - Study found: Successful nonprofits coordinate across sectors (nonprofits, business, government, public)
+  - Unsuccessful nonprofits hoard data, operate in silos, act territorial
+  - Manual cross-sector coordination is impossible (different timezones, languages, systems)
+  - Positron enables it: All agents work from same Task Tree regardless of who deployed them
+  - Cancer nonprofit in Boston + biotech in Switzerland + university in Beijing = coordinated via shared task list
+
+- **Funding the Global Referendum Campaign**
+  - Need $100M in donations to fund referendum on 1% Treaty
+  - Positron coordinates donor outreach across all aligned organizations
+  - Agents identify high-net-worth individuals aligned with health causes
+  - Draft personalized outreach, coordinate who contacts whom
+  - Track conversion rates, optimize messaging in real-time
+  - Prevent donor fatigue from multiple orgs making same ask
+
+- **What Gets Automated (By Organization Type)**
+  - **Patient Advocacy Groups**: Event coordination, volunteer recruitment, awareness campaigns, trial participant recruitment
+  - **Research Labs**: Literature synthesis, grant matching, trial coordination, data sharing between labs
+  - **Health Charities**: Donor matching, grant writing, impact measurement, duplicate elimination
+  - **Grassroots Movements**: Treaty advocate recruitment, legislation tracking, social media coordination, global event organizing
+  - **All Organizations**: Eliminate 50-80% of administrative overhead through shared AI infrastructure
 
 ### The War on Disease
 
