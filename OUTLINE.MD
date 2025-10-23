@@ -100,52 +100,17 @@
   - The only solution: Change the ratio, not the total
   - Switzerland proves it: 0.7% on defense → $93K GDP per capita
 
-### Democracy Is Theater
+### Unrepresentative Democracy
 
-*How to Measure Your Actual Political Power (Spoiler: It's Zero)*
+*Why Your Vote Doesn't Matter and Public Choice Theory*
 
-- **The Gilens & Page Reality Check (Science Proves You Don't Matter)**
-  - Your opinion's correlation with policy: 0.03 (statistically indistinguishable from random noise)
-  - Economic elites' success rate: 78% (almost like the system is designed for them)
-  - Your success rate when elites disagree: 0% (you literally cannot win)
-  - Technical classification: "Oligarchy with democratic characteristics" (like "prison with yoga classes")
-- **[FIGURE: Your Democracy Score: 0%]**
-  - Graph showing flat line - no correlation between public will and policy
-  - One image destroys the democracy illusion
-- **Why Representative Democracy Can't Fix This**
-  - Your "representative" has 750,000 constituents (you get 0.00013% of their attention)
-  - They spend 70% of time fundraising, not representing
-  - Omnibus bills: 2,000 pages passed at 2 AM (nobody reads them)
-  - The budget is 10,000 decisions you'll never influence
-- **Why Direct Democracy Also Fails (California Proved It)**
-  - Information overload: 50 propositions = random voting
-  - Special interest capture: Who writes the propositions?
-  - Wishocracy solves this: Pairwise choices, not 50-item ballots
-
-### Public Choice Theory
-
-*How to Predict Exactly What Politicians Will Do (Hint: Whatever Keeps Them in Power)*
-
-- **How Politicians Actually Make Decisions (Spoiler: Not for You)**
-  - Decision timeline: 2-year election cycles vs 20-year cures (guess which wins)
-  - Risk calculation: Doing nothing = safe, trying something = maybe fired
-  - Healthcare plan: Theirs is free and excellent (yours is neither)
-  - The math: 100 lobbyists paying $1M each > 100M citizens paying $1 each
-- **The Interest Group Auction House**
-  - Defense contractors: $100M lobbying → $2T contracts
-  - You: Pay $1,000/year, too small to notice
-  - They organize, you don't (and never will)
-  - The lobbyist ROI: 1,813% returns (best investment ever)
-- **Bureaucrats: The Permanent Government**
-  - Budget maximization: Larger budgets = more influence and job security
-  - Risk minimization: Easier to avoid new initiatives than risk failure
-  - Employment protection: Difficult to remove = low accountability
-  - The iron law: Bureaucracies tend toward self-preservation over mission
-- **The Solution: Align Incentives or Continue Current Trajectory**
-  - Make curing disease more profitable than treating symptoms indefinitely
-  - Use the same lobbying system, redirected toward health outcomes
-  - Harness self-interest for public good (reliable motivation)
-  - Create concentrated benefits for producing cures rather than perpetuating disease
+- Consolidated chapter covering Democracy Is Theater + Public Choice Theory
+- Princeton study: 0% correlation between public will and policy
+- Concentrated benefits vs diffuse costs
+- Lobbying ROI: 1,813%
+- Public Choice Theory: Everyone's selfish (including government workers)
+- The solution: Align selfish incentives with good outcomes
+- See full chapter: brain/book/problem/unrepresentative-democracy.qmd
 
 ### Regulatory Capture
 
