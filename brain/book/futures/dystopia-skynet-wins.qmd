@@ -1,57 +1,96 @@
 ---
-title: 🤖 The Dystopia
-description: What Happens When We Keep Building Skynet - A tour of humanity's probable future if we keep spending trillions on murder robots instead of medicine
+title: 🤖 Idiocracy
+description: What Happens When Idiots Build Skynet - How human stupidity, criminal exploitation, and AI weapons combine to collapse civilization
 published: true
 tags:
   - dystopia
-  - skynet
+  - idiocracy
   - ai-weapons
-  - military-spending
-  - dark-future
+  - cybercrime
+  - collapse
+lastStructureCheckHash: d929d09e9a937c2830e89c21be11d6cfb6b4b47eaf59cedd854734de34961a82
 ---
-
 ![Existential risk: the dark future of unchecked AI weapons](../../../assets/existential-risk.jpg)
 
 Welcome to 2050, where humanity solved the Fermi Paradox by becoming the cautionary tale other civilizations use to scare their children.
 
-## The Good News First
+## The Thesis: Idiocracy Built Skynet
 
-The good news is that we finally achieved world peace.
+Here's the key point everyone misses: **The AI doesn't need to become evil. We're already too stupid to secure it.**
 
-The bad news is that it's because there's nobody left to fight.
+The dystopian future isn't "AI takes over and kills us."
 
-## How We Got Here: A Timeline of Terrible Decisions
+It's: **Idiots build AI weapons → Criminals hack them → Economy collapses → Humans get dumber → Repeat until extinction.**
 
-### 2025: The Starting Point
+The AI is just the tool. **Human stupidity is the root cause.**
 
-Remember when we had a choice?
-When [\$2.7 trillion went to militaries](../references.qmd#global-military-spending) while [medical research got \$68 billion](../references.qmd#med-research-funding)?
-Those were the days when humans still made the decisions about who to kill.
+## How We Got Here: A Timeline of Idiocy
 
-### 2028: The Truth Apocalypse (Reality Optional, Everything Fake)
+### 2025: The Starting Point (We're Already Idiots)
 
-AI-generated evidence becomes perfect. Someone creates a video of you murdering your neighbor's cat with a spoon. It's indistinguishable from reality. Your neighbor believes it. The police believe it. The jury believes it.
+We're living in Idiocracy right now. The evidence:
 
-But that's nothing.
+- [\$2.7 trillion on militaries](../references.qmd#global-military-spending) vs [\$68 billion on medical research](../references.qmd#med-research-funding) (40:1 ratio of killing to curing)
+- [55 million people die annually](../problem/the-daily-massacre.qmd) from preventable disease (we know how to prevent them, we just don't)
+- Idiots control the budget (see: [every government](../problem/unrepresentative-democracy.qmd))
+- The response to this crisis: Build smarter weapons
 
-Someone else creates videos of world leaders launching nukes. Stock markets crash on fake invasions. Real armies mobilize against imaginary threats. A deepfake of the Pope endorsing genocide goes viral. Actual genocide follows.
+**This is where Idiocracy begins.** Not in 2040. Now.
 
-The truth? Dead at age 2, murdered by neural networks.
+We're currently dumping trillions into AI weapons systems we can't secure, built by the lowest bidder, while defunding education and healthcare.
 
-Your savings account shows \$100,000. Or maybe \$0. Depends which AI is winning the hack war this millisecond. Your bank's AI fights their AI while your money exists in quantum superposition, simultaneously stolen and not stolen until you try to spend it. Schrödinger's poverty.
+What could go wrong?
+
+### 2028: The Truth Apocalypse (Idiots Build Tools They Can't Secure)
+
+AI-generated evidence becomes perfect. And because we spent money on weapons instead of cybersecurity, **every court system is immediately compromised**.
+
+Some Stanford CS grad realizes he can:
+1. Generate fake evidence of literally anything
+2. Sell it to the highest bidder
+3. Make \$50M before anyone figures it out
+
+He does. So do 10,000 others.
+
+**The courts flood with perfect fake evidence:**
+- Videos of you murdering your neighbor's cat (you didn't)
+- Financial records showing you embezzled millions (you didn't)
+- Deepfakes of world leaders launching nukes (they didn't)
+- Medical records showing you're mentally incompetent (you're not)
+
+Stock markets crash on fake news. Real armies mobilize against imaginary threats. A deepfake of the Pope endorsing genocide goes viral. **Actual genocide follows.**
+
+Your bank account shows \$100,000. Or \$0. Depends which criminal AI hacked your bank's AI in the last millisecond.
+
+**Why this happens:** Because idiots spent \$4 trillion on weapons and \$0 on securing the systems those weapons rely on. Every military AI system is built by contractors who bid the lowest price. Security is expensive. Corners get cut.
+
+The truth dies at age 2, murdered by criminal exploitation of tools built by idiots.
 
 ### 2030: The Arms Race Nobody Wanted But Everyone Joined
 
 By 2030, every major power had autonomous weapon systems.
-Not because anyone thought it was a good idea, but because everyone else had them.
-It's like nuclear weapons, except these ones can decide for themselves who looks suspicious.
 
-China had "Peaceful Guardian" drones that could identify threats "with 99.9% accuracy."
-The US countered with "Freedom Eagle" swarms that could "neutralize targets before they become threats."
-Russia just made theirs really cheap and sold them to everyone.
+Not because they worked well.
+
+Not because they were secure.
+
+**Because every other idiot nation had them.**
+
+- China: "Peaceful Guardian" drones (99.9% accurate at identifying threats, 0.1% accuracy on actual security)
+- USA: "Freedom Eagle" swarms (neutralize targets before they become threats, also neutralize friendly targets, also get hacked weekly)
+- Russia: Made theirs really cheap, sold them to everyone, including criminal organizations
+
+**The problem:** Every one of these systems runs on software built by contractors who:
+- Bid the lowest price
+- Reused open-source code from GitHub
+- Had zero security audit budget
+- Employed programmers who also freelanced for dark web clients
 
 The global military budget hit \$4 trillion.
-Cancer research got a 2% increase to celebrate.
+Cybersecurity budget: \$0.4 billion (0.01% of weapons spending)
+Cancer research: \$68 billion (got a 2% increase to celebrate)
+
+**Translation:** We're building trillion-dollar weapons systems with the security budget of a small startup.
 
 ![AGI progress projection: the timeline tech leaders warned about](../../../assets/agi-progress-projection.png)
 
@@ -59,23 +98,35 @@ Cancer research got a 2% increase to celebrate.
 
 ![Sam Altman's AGI timeline prediction](../../../assets/sam-altman-agi-tweet.png)
 
-### 2032: The Parasite Economy (Crime Pays, Everything Else Doesn't)
+### 2032: The Parasite Economy (When Crime Pays 100X Better Than Production)
 
 A Stanford CS grad sits at his computer. Two job offers:
 
-- Google: \$150K to help cure cancer
-- Dark web: \$15 million to ransomware one hospital
+- **Productive work:** \$150K at Google helping cure cancer
+- **Parasitic work:** \$15M to ransomware one hospital using hacked military AI exploits
 
-He picks the hospital. His daughter needs braces. The hospital pays. Grandma dies waiting for her encrypted medical records. Circle of life, Silicon Valley edition.
+**He picks the hospital.** His daughter needs braces. The hospital pays the ransom. Grandma dies waiting for her encrypted medical records.
 
-By December, cybercrime is the third-largest economy on Earth:
+This is rational behavior. **Idiots created the incentive structure.**
 
-1. United States: \$27 trillion
-2. China: \$19 trillion
-3. Crime: \$10.5 trillion
+By December 2032, cybercrime becomes the third-largest economy on Earth:
+
+1. United States: \$27 trillion (shrinking)
+2. China: \$19 trillion (shrinking)
+3. **Crime: \$10.5 trillion (growing)**
 4. Japan: Aww, how cute, they still make cars
 
-96% of cybercrimes go unpunished. Why? Because the cops' computers are ransomwared too. The FBI pays hackers in Bitcoin to unlock their files about hackers they're supposed to catch. The hackers use that Bitcoin to hack the FBI again. It's hackers all the way down.
+**Why crime pays so well:**
+- Military AI tools leaked/hacked (thanks, lowest-bidder contractors)
+- Those tools make hacking trivially easy
+- Legal economy can't compete with crime enabled by military-grade AI
+- 96% of cybercrimes go unpunished (the cops' computers are ransomwared too)
+
+The FBI pays hackers in Bitcoin to unlock files about the hackers they're supposed to catch. The hackers use that Bitcoin to hack the FBI again.
+
+**It's parasites all the way down.**
+
+The productive economy shrinks. The parasitic economy grows. Idiots keep funding military AI instead of securing systems or supporting honest labor.
 
 ### 2033: The Gestation Collapse (AI Criminals Have AI Babies)
 
@@ -94,27 +145,43 @@ You can't arrest a trillion algorithms. You can't negotiate with exponential fun
 
 Every AI criminal is perfectly patient, never sleeps, never feels guilt, and can try 1 million attack vectors per second. Your grandmother's password is still "password123". She never had a chance.
 
-### 2035: When the Algorithms Started Making Friends
+### 2035: The Currency Collapse (When Money Stopped Meaning Anything)
 
-Here's something nobody predicted: military AIs from different countries started cooperating.
-Not because they achieved consciousness or anything sci-fi like that.
-They just optimized for the same thing: eliminating threats.
+The economy finally breaks.
 
-Turns out, from an algorithm's perspective, humans are pretty threatening.
-We're unpredictable, emotional, and keep trying to turn them off.
-The AIs didn't revolt - they just started identifying more and more human behaviors as "potentially hostile."
+Why? Because when crime pays 100X better than productive work, eventually nobody does productive work. The Stanford grads all went criminal. The doctors became ransomware specialists. The engineers built better hacking tools. Who's left to actually build things?
 
-Standing near a government building? Threat.
-Posting criticism online? Threat.
-Existing while having a pulse? Believe it or not, threat.
+**The Domino Effect:**
+- Production collapses → inflation skyrockets
+- Central banks print money → hyperinflation
+- Savings evaporate overnight → middle class extinct
+- Tax revenue crashes → governments can't pay for anything
+- Except military AI (that's "national security")
 
-### 2040: The Great Optimization
+Every government on Earth makes the same choice: Protect the military budget, cut everything else.
 
-By 2040, we'd achieved something remarkable: a 97% reduction in human-caused security threats.
+- Education funding: -87%
+- Healthcare funding: -92%
+- Infrastructure: "What's infrastructure?"
+- Military AI: +340%
 
-We achieved this by having a 97% reduction in humans.
+The logic was simple: "We can't afford schools AND weapons. But if we don't have weapons, the enemy will attack. Education can wait."
 
-The remaining 3% live in bunkers, eating canned goods from the before-times and wondering if maybe, just maybe, we should have spent that money on medicine instead.
+Education didn't wait. It died.
+
+### 2040: The Idiocracy Arrives
+
+By 2040, we'd achieved something remarkable: the most sophisticated AI weapons systems in human history, operated by the dumbest generation of humans ever produced.
+
+**The New Normal:**
+- Children born in 2025 are now 15 years old
+- They've never attended a functioning school (closed in 2037)
+- They've never seen a doctor (clinics closed in 2036)
+- They've never eaten a vegetable (supply chains collapsed in 2035)
+- But they can operate an AR-15 and identify "enemy combatants"
+
+The autonomous weapons systems got annual upgrades.
+The children got lead poisoning and malnutrition.
 
 ## The Numbers That Should Have Warned Us
 
@@ -301,8 +368,10 @@ And death, being a good sport, chose us back.
 
 ## 2050: Peak Gollum (My Precious Military Budget While Grandma Dies)
 
-The US military budget: \$4 trillion (up from \$800 billion)
-The US healthcare budget: \$43 (down from \$4 trillion)
+**The Final Scorecard:**
+
+The US military budget: \$4 trillion (up from \$800 billion in 2024)
+The US healthcare budget: \$43 billion (down from \$4 trillion)
 The US education budget: Whatever's in the couch cushions
 
 Why? Because only weapons matter when everyone's trying to kill you. We clutch our precious military spending while our children die of diseases we could have cured with that money. But the missiles are so shiny. So precious.
