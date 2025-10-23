@@ -1168,13 +1168,15 @@ This four-part "sibling" structure is the standard for sophisticated, large-scal
   - ESG compliance: Balance death merchant reputation
   - Liquidity advantage: Tradable vs locked government contracts
   - First-mover advantage: Limited $1B available
-- **Use of Funds: The $1B War Chest**
-  - $400M: Media blitz and global referendum ($0.20-0.50 per vote = 800M-2B votes)
-  - $300M: Lobbying (3X defense industry's annual $100M spend)
-  - $200M: Technology platform (dFDA + Wishocracy)
-  - $75M: Operations and contingency
-  - $25M: Reserve for treaty implementation
-  - Full transparency: Every dollar tracked publicly
+- **Use of Funds: The $1B War Chest** (see [Campaign Budget](brain/book/economics/campaign-budget.qmd) for full breakdown)
+  - $200M: Viral referendum (280M votes via AI-optimized referral system)
+  - $250M: Strategic lobbying (AI-targeted in 20 key countries)
+  - $250M: Technology platform (dFDA + Wishocracy, AI-assisted development)
+  - $100M: Legal & compliance (AI drafts, expert review)
+  - $100M: Strategic partnerships (co-opt defense industry, align insurers)
+  - $50M: Operations (lean, AI-augmented teams)
+  - $50M: Treaty implementation support
+  - Full transparency: Every dollar tracked publicly on blockchain
 
 ### Legislation Package
 

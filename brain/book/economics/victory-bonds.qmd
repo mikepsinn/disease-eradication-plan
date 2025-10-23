@@ -10,6 +10,7 @@ tags:
   - capital-raising
 title-id: sec-victory-bonds
 lastFactCheckHash: 225cfe7e95312e30188197611aa5a6c66fa3d89ec7ccb7a6f196cbc36688166c
+lastStructureCheckHash: f2e5cdea9e3e55e9216de18f1e1879026fd24f6cf899195d68a49be786e0a1b3
 ---
 *Disclaimer: This section is informational and illustrative, not an offer of securities. Any actual implementation would require formal legal review and regulatory compliance.*
 
@@ -46,14 +47,16 @@ Use the capital structure detailed below.
 
 ### Phase 2: Execute the Campaign
 
-Deploy the $1B raised:
+Deploy the $1B raised according to the [Campaign Budget](campaign-budget.qmd):
 
-- Get 280M people to vote for the treaty ($0.20/vote = $56M)
-- Lobby 20 strategic countries ($250M, AI-targeted)
-- Build the [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms ($250M, AI-assisted)
-- Handle all legal, compliance, and partnerships ($444M)
+- **Viral referendum campaign** (280M votes through AI-optimized referral system)
+- **Strategic lobbying** (AI-targeted campaigns in 20 key countries)
+- **Technology platform** ([dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) development)
+- **Legal and compliance** (AI-assisted with expert review)
+- **Strategic partnerships** (co-opt defense industry, align insurers)
+- **Operations and implementation** (lean, AI-augmented teams)
 
-See @sec-campaign-budget for detailed allocation.
+For the complete breakdown of how every dollar is spent, see the [Campaign Budget](campaign-budget.qmd) chapter.
 
 ### Phase 3: Implement Treaty Revenue Flow
 
@@ -344,23 +347,27 @@ The 270% reflects:
 
 ### When they ask: "What if the treaty doesn't pass?"
 
-**Show them the protection:**
+**Be honest about the risk:**
 
-"Milestone-gated funding protects you:
+"This is political arbitrage - high risk, high reward.
 
-- Funds held in escrow
-- Released only when verified achievements hit
-- Refund if targets missed
+If the treaty fails:
 
-Even partial success pays well:
+- Your investment is lost (spent on the campaign)
+- This is venture-level political risk
+- You're betting $1B can redirect $27B/year
+
+Even partial success still pays well:
 
 - 50% treaty adoption = 130% annual returns
+- US + EU alone = $13B/year
 - Still beats every traditional investment
 
-Worst case scenario:
+The upside justifies the risk:
 
-- Total failure, get money back minus expenses
-- Lose 5-10% of capital"
+- Full success: 270% perpetual returns
+- Partial success: 130%+ returns
+- Total failure: You lose, but at least you tried to fix the system"
 
 ### When they ask: "What if countries stop paying?"
 
