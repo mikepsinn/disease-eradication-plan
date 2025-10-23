@@ -1,7 +1,6 @@
 ---
 title: 🤖 Building Your AI Coordination Army
 description: How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.
-lastStructureCheckHash: 88bba6e489ac6252dac8932b23777d234053c70ce0ba287a30871e704d28a59a
 ---
 
 ## How to Build Your Coordination Army
@@ -25,7 +24,21 @@ Wishocracy creates the list. For example, "Cure Alzheimer's" (vague, terrifying,
 
 Your agents work from this same list. Whether you're deploying agents from a patient advocacy nonprofit in Boston (running on donated servers), a university in Beijing (behind the Great Firewall), or a biotech in Switzerland (with an actual IT budget)—all agents see the same prioritized tasks. This is how you coordinate millions of people without someone having to organize a conference call.
 
-The secret (discovered by *Forces for Good*): Successful nonprofits don't work in isolation, hoarding their email lists and acting territorial like collaboration is treason. They coordinate across sectors—with other nonprofits, businesses, governments, and random smart people. The way you do this at global scale is by having all agents work from one shared task list, regardless of who deployed them or what timezone they're pretending to operate in.
+### The Secret to Success: Cross-Sector Coordination (Forces for Good)
+
+*Forces for Good* studied the difference between successful and unsuccessful nonprofits. The finding: Successful nonprofits coordinate across sectors—they work with other nonprofits, businesses, governments, and the public. Unsuccessful ones operate in silos, jealously guarding their email lists and acting like collaboration is a zero-sum game where helping someone else means losing.
+
+The problem: Cross-sector coordination is nearly impossible to do manually. How do you coordinate a cancer nonprofit in Boston (operating 9-5 EST) with a biotech in Switzerland (different timezone, language, and concept of urgency), a university in Beijing (behind a firewall), and individual researchers across 50 countries (half of whom don't check email)?
+
+Currently, this requires conference calls scheduled 6 months in advance where everyone spends 45 minutes on introductions and 5 minutes accomplishing nothing. Then someone sends a follow-up email that 80% of people won't read.
+
+The solution: All agents work from the same global Task Tree. Your nonprofit's agent and the biotech's agent and the university's agent all see "Find researchers studying protein misfolding" as the next priority task. They automatically coordinate because they're working from the same list, not because someone managed to find a time that works across 12 timezones (spoiler: that time doesn't exist).
+
+You base your agent design on the six practices from *Forces for Good*:
+
+![The six-part organizing framework from the book Forces for Good.](../../assets/forces-for-good-organizing-framework.png)
+
+This ensures your agents enable the proven success pattern—cross-sector coordination—rather than just automating the process of sending emails that no one reads and forming committees that accomplish nothing.
 
 ### Why You Need This (Humans Are Hilariously Bad at Coordination)
 
@@ -169,23 +182,6 @@ If someone thinks they have a better way to find cancer researchers, they build 
 The network evolves through ruthless, Darwinian competition. The best strategies win. The worst die. No committees to protect underperforming approaches because "we've invested too much to give up now." No politics. No protecting someone's pet project because they've been here since 2003. Just results.
 
 It's capitalism for algorithms, except the competition actually makes things better instead of just making shareholders richer.
-
-
-### How This Enables Cross-Sector Coordination (The Forces for Good Secret)
-
-*Forces for Good* studied the difference between successful and unsuccessful nonprofits. The finding: Successful nonprofits coordinate across sectors—they work with other nonprofits, businesses, governments, and the public. Unsuccessful ones operate in silos, jealously guarding their email lists and acting like collaboration is a zero-sum game where helping someone else means losing.
-
-The problem: Cross-sector coordination is nearly impossible to do manually. How do you coordinate a cancer nonprofit in Boston (operating 9-5 EST) with a biotech in Switzerland (different timezone, language, and concept of urgency), a university in Beijing (behind a firewall), and individual researchers across 50 countries (half of whom don't check email)?
-
-Currently, this requires conference calls scheduled 6 months in advance where everyone spends 45 minutes on introductions and 5 minutes accomplishing nothing. Then someone sends a follow-up email that 80% of people won't read.
-
-The solution: All agents work from the same global Task Tree. Your nonprofit's agent and the biotech's agent and the university's agent all see "Find researchers studying protein misfolding" as the next priority task. They automatically coordinate because they're working from the same list, not because someone managed to find a time that works across 12 timezones (spoiler: that time doesn't exist).
-
-You base your agent design on the six practices from *Forces for Good*:
-
-![The six-part organizing framework from the book Forces for Good.](../../assets/forces-for-good-organizing-framework.png)
-
-This ensures your agents enable the proven success pattern—cross-sector coordination—rather than just automating the process of sending emails that no one reads and forming committees that accomplish nothing.
 
 ### How You Keep Control (Preventing the Robot Uprising)
 
