@@ -12,6 +12,7 @@ tags:
 lastReviewed: 2025-10-16T00:00:00.000Z
 lastFactCheckHash: 1281da55496d842519310f962163999ff08e576ddeb6340ef1f44bdce524e008
 lastStructureCheckHash: 705fabe805e906c41f6347e8911fc154dd05a5905c01665f79ff1bba62c78f53
+lastLatexCheckHash: e6fc53371d8f21551dc0deb3068b0f679435af9109cb49bfbd56eeaa8de3ae47
 ---
 ## The Trillion Dollar Participation Trophy
 
@@ -132,7 +133,7 @@ The NIH organizational chart looks like someone tried to draw the internet:
 
 - **[27 institutes and centers](../references.qmd#nih-organizational-complexity)**
 - **[220+ study sections](../references.qmd#nih-organizational-stats)** (review committees)
-- **[6,000+ employees](../references.qmd#nih-organizational-stats)** 
+- **[6,000+ employees](../references.qmd#nih-organizational-stats)**
 - **[80,000+ grant reviewers](../references.qmd#nih-organizational-stats)**
 
 Each institute has divisions.
@@ -307,7 +308,9 @@ The overall efficiency score:
 
 - **Input:** \$1.1 trillion over 50 years
 - **Output:** Zero diseases eradicated
-- **Efficiency:** \$1.1 trillion ÷ 0 = ∞ dollars per disease cured
+
+This results in an efficiency score (in dollars per disease cured) of:
+$$ \text{Efficiency} = \frac{\text{\$1.1 trillion}}{0} = \infty $$
 
 The NIH has achieved infinite inefficiency.
 That's actually mathematically impressive.

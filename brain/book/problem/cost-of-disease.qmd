@@ -10,6 +10,7 @@ tags:
   - human-stupidity
 lastFactCheckHash: d2cd4f9de351df428a068b52095669f0234af2bc81c084e3574ae002867df794
 lastStructureCheckHash: 1711b74c90f6f77c78d922bc4de0a2e4376819ca6f1945a4f429bea4fa8259cd
+lastLatexCheckHash: 5c1925af58ca600f4f977818251c86bf60333054aae778257afdc816c8d1773d
 ---
 ## The $109 Trillion Death Tax Nobody Talks About
 
@@ -63,7 +64,7 @@ The math:
 
 Now multiply the years of life lost by their value:
 
-**2,550,000,000 × $150,000 = $382.5 trillion**
+$$ 2,550,000,000 \times \$150,000 = \$382.5 \text{ trillion} $$
 
 That's three hundred eighty-two trillion dollars of human potential we flush down the toilet of disease every single year. For a detailed breakdown of this valuation, see [The Economic Case](../economics.qmd).
 
