@@ -5,7 +5,7 @@ format:
   html:
     toc: true
     toc-depth: 3
-lastStructureCheckHash: 59711a1df3e00ac5bbb9032710c6757bc8ff8823c9841aaf19863788d6efc290
+lastStructureCheckHash: 0079cd0b43eae711945fd8d540fcd7efda00c8e49d09d198f3d8d4085c1b6448
 lastLatexCheckHash: e3ac09e53ca13475a8994f55ff8da285a5bafec4652a11b1846cf608d864099c
 ---
 ## Introduction
@@ -109,6 +109,7 @@ The genius of markets is that they align self-interest with social good. Our sys
 ### Politicians: Get Elected for Results, Not Promises
 
 - Visible health improvements in their districts
+<!-- TODO: STRUCTURE (DUPLICATION) - The outline shows this entire 'Spillover Victory' section is also in the 'Aligning Incentives' chapter. This is gross duplication that looks like a copy-paste error. RECOMMEND: Keep the full section here, as it fits the high-level strategy. In 'Aligning Incentives', replace it with a brief summary and a cross-reference to this chapter. -->
 - Job creation from research centers
 - Campaign contributions from aligned interests
 - Media coverage of local cures
