@@ -38,6 +38,8 @@ These are documented outcomes from actual trials.
 
 ## Historical Evidence: How We Broke Medicine
 
+We’re only 2 lifetimes from the use of the modern scientific method in medicine. Thus, it's only been applied for 0.0001% of human history. The more clinical research studies we read, the more we realize we don’t know. Nearly every study ends with the phrase "more research is needed". We know basically nothing at this point compared to what will eventually be known about the human body.
+
 There is compelling historical evidence suggesting that large scale efficacy-trials based on real-world evidence have ultimately led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
 
 For over 99% of recorded human history, [the average human life expectancy has been around 30 years](../references.qmd#historical-life-expectancy-30-years).
@@ -286,6 +288,10 @@ The cost of this caution?
 
 That's more Americans than died in Vietnam and Korea combined. From one drug delay. And it wasn't a one-off tragedy. Here is a partial list of other drugs Americans died waiting for while they were already available in other civilized countries for a year or longer:
 
+We’re at the very beginning of thousands or millions of years of systematic discovery. So it’s unlikely that this decline in lifespan growth is the result of diminishing returns due to our running out of things to discover.
+
+However, to validate the theory that large-scale real-world evidence can produce better health outcomes requires further validation of this method of experimentation. That's the purpose of deFDA.
+
 * interleukin-2
 * Taxotere
 * vasoseal
@@ -427,6 +433,12 @@ Genius!
 
 It's like testing car safety using only crash test dummies, then being surprised when real humans with bones have different outcomes.
 
+### No Long-Term Outcome Data
+
+Even if there is a financial incentive to research a new drug, there is no data on the long-term outcomes of the drug. The data collection period for participants can be as short as several months. Under the current system, it's not financially feasible to collect data on a participant for years or decades. So we have no idea if the long-term effects of a drug are worse than the initial benefits.
+
+For instance, even after controlling for co-morbidities, the Journal of American Medicine recently found that long-term use of Benadryl and other anticholinergic medications is associated with an [increased](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745) risk for dementia and Alzheimer's disease.
+
 ## The FDA Requires Psychic Powers
 
 Before you can test a drug, you must tell the FDA EXACTLY what it will cure and EXACTLY how you'll measure that cure.
@@ -438,6 +450,16 @@ What if it doesn't cure depression but eliminates anxiety? Failed trial.
 What if it cures cancer instead? Failed trial, also please report to prison.
 
 It's like requiring Columbus to file a detailed map of America before letting him sail west.
+
+**In reality, this isn't hypothetical.** When running an efficacy trial, the FDA expects that the drug developer has the psychic ability to predict which conditions a treatment will be most effective for in advance of collecting the human trial data. If it was possible to magically determine this without any trials, it would render efficacy trials completely pointless.
+
+In 2007, manufacturer Dendreon submitted powerful evidence attesting to the safety and efficacy of its immunotherapy drug Provenge, which targets prostate cancer. They were able to show that the drug resulted in a significant decline in deaths among its study population, which even persuaded the FDA advisory committee to weigh in on the application. But ultimately, the FDA rejected its application.
+
+The FDA was unmoved by the evidence, simply because Dendreon didn’t properly specify beforehand what its study was trying to measure. Efficacy regulations state that finding a decline in deaths is not enough. The mountains of paperwork must be filled out just so and in the correct order. It took three more years and yet another large trial before the FDA finally approved the life-saving medication.
+
+Due to all the additional costs imposed by the efficacy trial burden, Dendreon ultimately [filed for chapter 11 bankruptcy](https://www.targetedonc.com/view/dendreon-files-for-bankruptcy-provenge-still-available).
+
+In addition to the direct costs to companies, the extreme costs and financial risks imposed by efficacy trials have a huge chilling effect on investment in new drugs. If you're an investment adviser trying to avoid losing your client's retirement savings, you're much better off investing in a more stable company like a bomb manufacturer building products to intentionally kill people than a drug developer trying to save lives. So it's impossible to know all the treatments that never even got to an efficacy trial stage due to the effects of decreased investment due to the regulatory risks.
 
 ## Conflicts of Interest
 
