@@ -7,7 +7,7 @@ tags: [careers, security, blockchain, audits, dao, risk]
 dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
-## Mission & Scope
+## Mission and Scope
 
 Protect the treasury and platform. Stop attacks. Respond fast. Prove safety in public.
 

@@ -1,6 +1,6 @@
 ---
 title: How to Contribute
-description: "The single source of truth for all contribution guidelines, style guides, and project standards for the Decentralized Institutes of Health (DIH) knowledge base."
+description: Central guide for contribution guidelines, style standards, and project practices for the DIH knowledge base.
 published: true
 tags: [contributing, guidelines, standards, book, knowledge-base]
 ---

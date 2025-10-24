@@ -1,3 +1,8 @@
+---
+title: References URL Update Workflow
+description: Systematic workflow for adding source URLs to 400+ references in the book using extraction and integration scripts.
+---
+
 # References URL Update Workflow
 
 This document explains the workflow for adding URLs to references in the book.

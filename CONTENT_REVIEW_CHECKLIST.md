@@ -1,3 +1,8 @@
+---
+title: Content Review Checklist
+description: Systematic review status tracker for every chapter ensuring quality, tone, and technical standards compliance.
+---
+
 # Content Review Checklist
 
 This document tracks the systematic review status of every chapter in the book. The goal is to ensure each file meets the quality, tone, and technical standards defined in `CONTRIBUTING.md`.

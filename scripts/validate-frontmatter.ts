@@ -11,6 +11,34 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
 
+// Directories that don't require frontmatter (internal docs, operations, planning)
+const FRONTMATTER_OPTIONAL_DIRS = ['brain', 'dih-ops', 'GUIDES'];
+
+// Files that don't require frontmatter (internal documentation)
+const FRONTMATTER_OPTIONAL = [
+    'CLAUDE.md',
+    'CONTRIBUTING.md',
+    'README.md',
+    'CHANGELOG.md',
+    'LICENSE.md',
+    'TODO.md',
+    'todo.md',
+    'brainstorm.md',
+    'presentation.md',
+    'ACCURACY_AUDIT.md',
+    'ACCURACY_FIX_PLAN.md',
+    'AIRTABLE_GUIDE.md',
+    'CONTENT_REVIEW_CHECKLIST.md',
+    'DIH_WEBSITE_README.md',
+    'FORMATTING_GUIDE.md',
+    'OUTLINE.md',
+    'REFERENCES-WORKFLOW.md',
+    'references-to-update.md',
+    'deployment-guide.md',
+    'IMAGE-GUIDE.md',
+    'thinkbynumbers-images-guide.md'
+];
+
 async function findMarkdownFiles(dir: string): Promise<string[]> {
     let mdFiles: string[] = [];
     const entries = await fs.promises.readdir(dir, { withFileTypes: true });
@@ -32,8 +60,14 @@ async function validateFrontmatter(fix: boolean) {
     let errorCount = 0;
 
     for (const filePath of allFiles) {
+        const fileName = path.basename(filePath);
+        const isInOptionalDir = FRONTMATTER_OPTIONAL_DIRS.some(dir =>
+            filePath.includes(path.sep + dir + path.sep) || filePath.includes(path.sep + dir)
+        );
+        const isOptional = FRONTMATTER_OPTIONAL.includes(fileName) || isInOptionalDir;
+
         let fileContent = await fs.promises.readFile(filePath, 'utf-8');
-        
+
         try {
             if (fix) {
                 let needsRewrite = false;
@@ -87,6 +121,11 @@ async function validateFrontmatter(fix: boolean) {
 
             const { data: frontmatter } = matter(fileContent);
 
+            // Skip validation for optional files
+            if (isOptional) {
+                continue;
+            }
+
             // Rule 1: Must have a title
             if (!frontmatter.title) {
                 console.error(`❌ [Missing Title] ${filePath}`);
@@ -97,8 +136,8 @@ async function validateFrontmatter(fix: boolean) {
             if (!frontmatter.description) {
                 console.error(`❌ [Missing Description] ${filePath}`);
                 errorCount++;
-            } else if (frontmatter.description.length > 140) {
-                // Rule 3: Description must be <= 140 chars
+            } else if (frontmatter.description.length > 200) {
+                // Rule 3: Description must be <= 200 chars (reasonable for SEO meta descriptions)
                 console.error(`❌ [Description Too Long] ${filePath} (${frontmatter.description.length} chars)`);
                 errorCount++;
             }

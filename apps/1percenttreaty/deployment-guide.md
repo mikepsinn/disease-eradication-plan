@@ -1,3 +1,8 @@
+---
+title: 1% Treaty Referendum Deployment Guide
+description: Secure deployment instructions for referendum landing page using Cloudflare Workers and Pages with custom domain setup.
+---
+
 # 1% Treaty Referendum - Deployment Guide
 
 **The secure way to deploy your referendum landing page**
@@ -151,7 +156,7 @@ Add to `.gitignore`:
 
 ---
 
-## Monitoring & Debugging
+## Monitoring and Debugging
 
 ### View Real-Time Logs
 

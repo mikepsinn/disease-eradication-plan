@@ -7,7 +7,7 @@ tags: [careers, elections, compliance, pac, legal, policy]
 dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
-## Mission & Scope
+## Mission and Scope
 
 Turn public votes into legal, high‑impact campaign support. Keep US and non‑US work fully separate. File perfect reports.
 

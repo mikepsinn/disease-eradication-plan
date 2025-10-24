@@ -1,3 +1,8 @@
+---
+title: FDA Spending vs Life-Expectancy Data
+description: Historical data (1901-2000) analyzing FDA spending, drug costs, and life expectancy trends with CSV files and visualizations.
+---
+
 # FDA Spending vs Life-Expectancy Data Extract
 
 Extracted from: `FDA Spending vs Life-Expectancy.xlsx`

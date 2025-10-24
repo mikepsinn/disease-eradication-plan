@@ -18,12 +18,12 @@ dateCreated: 2025-08-22T00:00:00.000Z
 ## Operational Plans
 
 - **[Wiki Restructuring Plan](./wiki-restructuring-plan.md):** The detailed project plan for the comprehensive refactoring and re-branding of the 1% Treaty Wiki.
-- **[Phase 0 - Bootstrap & Foundation](./phase-0-plan.md):** The detailed, task-level plan for the initial pre-seed and foundation phase.
-- **[Phase 1 - Foundation & Legal Framework](./phase-1-plan.md):** The detailed, task-level plan for building the project's foundational infrastructure.
+- **[Phase 0 - Bootstrap and Foundation](./phase-0-plan.md):** The detailed, task-level plan for the initial pre-seed and foundation phase.
+- **[Phase 1 - Foundation and Legal Framework](./phase-1-plan.md):** The detailed, task-level plan for building the project's foundational infrastructure.
 
 ---
 
-## Growth & Referrals (Owner: Growth & Referrals Lead)
+## Growth and Referrals (Owner: Growth and Referrals Lead)
 
 - Phase(s): Starts in Phase 1 (setup); runs in Phase 2 (scale) and Phase 3 (ongoing)
 - WIG: Hit verified vote targets in each country.
@@ -31,7 +31,7 @@ dateCreated: 2025-08-22T00:00:00.000Z
 - Lag (quarter): total verified votes; cost per verified vote; partner conversion.
 - Docs: [Referral Rewards](../strategy/referral-rewards-system.md), [Incentives Layer](../strategy/incentives-layer.md),
 
-## Elections & IE (Owner: Elections & IE Compliance Lead)
+## Elections and IE (Owner: Elections and IE Compliance Lead)
 
 - Phase(s): Phase 2 (primary); Phase 3 (ongoing)
 - WIG: Zero legal violations while winning key votes.
@@ -39,7 +39,7 @@ dateCreated: 2025-08-22T00:00:00.000Z
 - Lag (quarter): votes align with district will; win rates in target races.
 - Docs: [Legal Compliance Framework](../strategy/legal-compliance-framework.md)
 
-## Capital Markets & IR (Owner: Capital Markets & IR Lead)
+## Capital Markets and IR (Owner: Capital Markets and IR Lead)
 
 - Phase(s): Prep in Phase 1; raise in Phase 2; reporting/buybacks in Phase 3
 - WIG: Close \$1.2–\$2.5B legally and on time.
@@ -47,7 +47,7 @@ dateCreated: 2025-08-22T00:00:00.000Z
 - Lag (quarter): capital closed vs. target; cost of capital trend; buybacks executed.
 - Docs: [VICTORY Incentive Mechanics](../strategy/1-percent-treaty/victory-bonds-tokenomics.md), [Investment Thesis](../economic-models/victory-bond-investment-thesis.md), [Crypto Intake SOP](./crypto-intake-sop.md)
 
-## Treasury & On‑Chain (Owner: On‑Chain/Treasury Lead)
+## Treasury and On‑Chain (Owner: On‑Chain/Treasury Lead)
 
 - Phase(s): Stand up in Phase 1; full operations in Phase 3
 - WIG: Accurate, transparent treasury with on‑time payouts.
@@ -55,7 +55,7 @@ dateCreated: 2025-08-22T00:00:00.000Z
 - Lag (quarter): audit pass; zero late payouts; dashboard uptime.
 - Docs: [DIH Treasury Architecture](../features/treasury/dih-treasury-architecture.md)
 
-## Security & Audit (Owner: Security & Audit Lead)
+## Security and Audit (Owner: Security and Audit Lead)
 
 - Phase(s): Start in Phase 1; continuous through Phases 2–3
 - WIG: Zero loss of funds or control.
@@ -71,14 +71,14 @@ dateCreated: 2025-08-22T00:00:00.000Z
 - Lag (quarter): outside citations; investor use; methods pass audit.
 - Docs: [Peace Dividend Model](../economic-models/peace-dividend-value-capture.md)
 
-## Website & Landing (Owner: Design Lead + Engineering Lead)
+## Website and Landing (Owner: Design Lead + Engineering Lead)
 
 - Phase(s): Build in Phase 1; optimize in Phases 2–3
 - WIG: Site converts: votes in; investors booked; partners signed.
 - Lead (weekly): ship A/B tests; improve page speed; update proof links.
 - Lag (quarter): conversion rates; time on page; investor/partner leads.
 
-## Legal & Policy (Owner: Legal/Policy Lead)
+## Legal and Policy (Owner: Legal/Policy Lead)
 
 - Phase(s): Phase 1 (reform & entities); Phase 2 (IE ops); Phase 3 (ongoing)
 - WIG: Clean approvals for raises and campaigns; reform bill progress.
@@ -94,7 +94,7 @@ dateCreated: 2025-08-22T00:00:00.000Z
 - Lag (quarter): trials launched; participants enrolled; outcomes reported.
 - Docs: [Decentralized Institutes of Health](../strategy/1-percent-treaty/decentralized-institutes-of-health.md), [RECOVERY Trial](../reference/recovery-trial.md)
 
-## Community & Partnerships (Owner: Program Lead)
+## Community and Partnerships (Owner: Program Lead)
 
 - Phase(s): Start in Phase 1; continuous through Phases 2–3
 - WIG: Major org endorsements and anchor partner deals.

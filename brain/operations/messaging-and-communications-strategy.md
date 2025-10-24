@@ -19,11 +19,11 @@ This document provides a framework for estimating the value of a dedicated proje
 - **Strategic Value:** Non-monetary benefits like enhanced reputation, reduced risk, and stronger partnerships.
 - **Mission-Oriented Value:** Direct acceleration of our core goal to speed up medical progress.
 
-## 2. Project Goals & Outputs
+## 2. Project Goals and Outputs
 
 The project can be broken down into two phases, each with distinct outputs.
 
-### Phase 1: Sentiment & Narrative Analysis
+### Phase 1: Sentiment and Narrative Analysis
 
 This phase focuses on understanding the landscape.
 
@@ -36,7 +36,7 @@ This phase focuses on understanding the landscape.
   - A **Narrative Landscape Map** visualizing the key themes and their proponents.
   - An **Audience Persona Deck** to guide targeted communication.
 
-### Phase 2: Messaging Development & Deployment
+### Phase 2: Messaging Development and Deployment
 
 This phase turns insight into action.
 
@@ -55,7 +55,7 @@ This phase turns insight into action.
 
 We can estimate the project's value by tracking its impact on key performance indicators (KPIs) across our primary value drivers. The immediate focus is on fundraising and building public support, which are prerequisites for building the platform and eventually recruiting for trials.
 
-### Step 1: Identify Key Value Drivers & Metrics
+### Step 1: Identify Key Value Drivers and Metrics
 
 | Value Driver                                                | Key Performance Indicators (KPIs)                                                                                                                                                                                             |
 | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -117,7 +117,7 @@ Let's assume a hypothetical project cost and a conservative set of outcomes.
 - **Total Financial Value (Immediate + Projected):** $200,000 + $150,000 + $600,000 = **$950,000**
 - **Financial ROI:** `($950,000 - $75,000) / $75,000` = **11.67x or 1,167%**
 
-## 5. Conclusion & Recommendation
+## 5. Conclusion and Recommendation
 
 Analyzing sentiment and refining messaging is not a premature optimization; it is a strategic investment in the core prerequisites for the dFDA's success: funding and public support. The financial ROI, driven by securing capital and projecting future trial efficiencies, is likely to be substantial.
 

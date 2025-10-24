@@ -1,3 +1,8 @@
+---
+title: 1% Treaty Referendum Landing Page
+description: Atomic age propaganda-style secure voting platform using Cloudflare Workers and Airtable for global referendum.
+---
+
 # 1% Treaty Referendum Landing Page
 
 **Atomic Age Propaganda-Style Voting Platform**
@@ -187,7 +192,7 @@ AIRTABLE_BASE_ID=appRA45hnZpiTyRjB
 
 ---
 
-## 📊 Monitoring & Analytics
+## 📊 Monitoring and Analytics
 
 ### View Worker Logs
 
@@ -321,7 +326,7 @@ wrangler kv:namespace create "KV"
 
 ---
 
-## 🔄 Updates & Redeployment
+## 🔄 Updates and Redeployment
 
 After making changes:
 

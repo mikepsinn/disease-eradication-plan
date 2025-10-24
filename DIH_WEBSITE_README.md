@@ -1,3 +1,8 @@
+---
+title: DIH Website
+description: Source files and build instructions for the dih.earth website with neobrutalist design and Quarto configuration.
+---
+
 # DIH Website
 
 This directory contains the source files for the Decentralized Institutes of Health (DIH) website at [dih.earth](https://dih.earth).

@@ -186,7 +186,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 12. Alphabet R&D spending: $40 billion
+## 12. Alphabet R and D spending: $40 billion
 
 **ID:** `alphabet-rd-spending-40b`
 
@@ -218,7 +218,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 14. Amazon R&D spending: $85 billion
+## 14. Amazon R and D spending: $85 billion
 
 **ID:** `amazon-rd-spending-85b`
 
@@ -282,7 +282,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 18. Annual R&D savings potential of $50 billion
+## 18. Annual R and D savings potential of $50 billion
 
 **ID:** `annual-rd-savings-potential-50b`
 
@@ -330,7 +330,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 21. Apple R&D spending: $32 billion
+## 21. Apple R and D spending: $32 billion
 
 **ID:** `apple-rd-spending-32b`
 
@@ -714,7 +714,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 45. China's health/medical share of R&D: ~2.2%
+## 45. China's health/medical share of R and D: ~2.2%
 
 **ID:** `china-health-rd-share-2-2pct`
 
@@ -778,7 +778,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 49. China's total R&D spending: $668 billion
+## 49. China's total R and D spending: $668 billion
 
 **ID:** `china-total-rd-spending-668b`
 
@@ -1658,7 +1658,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 104. Decentralized Trials & Research Alliance (DTRA)
+## 104. Decentralized Trials and Research Alliance (DTRA)
 
 **ID:** `dtra-alliance`
 
@@ -2650,7 +2650,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 166. Global annual spending on infrastructure (roads & internet)
+## 166. Global annual spending on infrastructure (roads and internet)
 
 **ID:** `global-infrastructure-market-size`
 
@@ -2826,7 +2826,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 177. Global annual spending on transportation (cars & planes)
+## 177. Global annual spending on transportation (cars and planes)
 
 **ID:** `global-transportation-market-size`
 
@@ -3786,7 +3786,7 @@ This file contains 400 references that need URLs added.
 
 ---
 
-## 237. Meta R&D spending: $38 billion
+## 237. Meta R and D spending: $38 billion
 
 **ID:** `meta-rd-spending-38b`
 

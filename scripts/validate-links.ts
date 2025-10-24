@@ -3,6 +3,10 @@ import path from 'path';
 import matter from 'gray-matter';
 import markdownit from 'markdown-it';
 import anchor from 'markdown-it-anchor';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function fixAmpersands(filePath: string): Promise<void> {
   console.log(`Fixing ampersands in ${filePath}...`);
@@ -73,7 +77,12 @@ async function getHeadings(filePath: string): Promise<string[]> {
     level: [1, 2, 3, 4, 5, 6],
     slugify: (s) => s.trim().toLowerCase().replace(/[\s+]/g, '-').replace(/[.,()]/g, ''),
     callback: (token, { slug }) => {
-      headings.push(decodeURIComponent(slug));
+      try {
+        headings.push(decodeURIComponent(slug));
+      } catch (e) {
+        // If decoding fails, use the slug as-is
+        headings.push(slug);
+      }
     }
   });
 

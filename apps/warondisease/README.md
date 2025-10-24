@@ -1,3 +1,8 @@
+---
+title: War on Disease Web3 Interactive Site
+description: Choose-your-own-adventure referendum platform with wallet integration, VICTORY bonds calculator, and timeline futures.
+---
+
 # War on Disease - Choose-Your-Own-Adventure Website
 
 Interactive web3 experience where users vote YES or NO on the 1% Treaty and see humanity's trajectory down either path (Idiocracy vs Wishonia).

@@ -1,3 +1,8 @@
+---
+title: Automated Formatting Rules
+description: Objective formatting rules for sentence structure, spacing, math notation, and Quarto/Markdown syntax preservation.
+---
+
 # Automated Formatting Rules
 
 **CRITICAL INSTRUCTION: You are a formatting engine. Your ONLY task is to fix objective formatting errors. Do NOT alter the writing style, tone, or content in any way. The user's original phrasing and voice must be perfectly preserved.**

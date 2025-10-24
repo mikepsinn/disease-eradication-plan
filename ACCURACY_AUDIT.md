@@ -1,3 +1,8 @@
+---
+title: Accuracy Audit Framework
+description: Systematic guide to identify and correct factually inaccurate or unfairly accusatory statements while preserving dark humor and urgency.
+---
+
 # Accuracy Audit Framework for "The Complete Idiot's Guide to Ending War and Disease"
 
 ## Purpose

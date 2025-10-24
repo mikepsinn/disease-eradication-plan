@@ -1,3 +1,8 @@
+---
+title: Excel Data Extraction Summary
+description: Summary of extracted life expectancy, FDA spending, and drug development cost data with CSV files and Quarto visualizations.
+---
+
 # Excel Extraction Summary
 
 ## Source File

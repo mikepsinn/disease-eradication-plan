@@ -1,4 +1,4 @@
-# Project Plan: Automated Content Review & Fixing Engine
+# Project Plan: Automated Content Review and Fixing Engine
 
 This document outlines the plan to create a suite of scripts that automate the content review and fixing process for the DIH knowledge base.
 

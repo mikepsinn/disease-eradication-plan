@@ -7,7 +7,7 @@ tags: [careers, capital-markets, investor-relations, tokenomics, treasury]
 dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
-## Mission & Scope
+## Mission and Scope
 
 Help raise the money we need. Make products investors can trust. Report the numbers clearly.
 

@@ -1,10 +1,15 @@
+---
+title: ThinkByNumbers.org Images Guide
+description: Catalog of images from ThinkByNumbers.org with source URLs and chapter mappings for FDA, military spending, and health data.
+---
+
 # ThinkByNumbers.org Images - Usage Guide
 
 This document catalogs all images downloaded from thinkbynumbers.org and maps them to relevant chapters in "The Complete Idiot's Guide to Ending War and Disease."
 
-## FDA & Medical Research Images
+## FDA and Medical Research Images
 
-### Life Expectancy & Health Explosion
+### Life Expectancy and Health Explosion
 
 **life-span-explosion.png** (14 KB)
 
@@ -107,7 +112,7 @@ This document catalogs all images downloaded from thinkbynumbers.org and maps th
   - `brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd`
   - `brain/book/solution/dfda.qmd`
 
-## Risk Perception & Spending Priorities
+## Risk Perception and Spending Priorities
 
 **death-and-dollars-terrorism-comparison.jpg** (102 KB)
 
@@ -174,7 +179,7 @@ This document catalogs all images downloaded from thinkbynumbers.org and maps th
   - `brain/book/appendix/nuclear-weapon-cost-and-casualties.qmd` - PRIMARY USE
   - `brain/book/problem/cost-of-war.qmd`
 
-## Democracy & Governance Images
+## Democracy and Governance Images
 
 **voter-support-vs-law-passage.png** (211 KB)
 

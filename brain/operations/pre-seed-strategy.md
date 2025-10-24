@@ -14,7 +14,7 @@ doc_type: strategy
 
 # Pre-Seed Strategy: The First 90 Days
 
-This document outlines the foundational "Phase 0" required to launch the War on Disease initiative. The high-level plans detailed in the [Canonical Roadmap](./roadmap.md) and [Fundraising & Budget Plan](../economic-models/fundraising-and-budget-plan.md) depend on the successful execution of this initial, targeted pre-seed phase.
+This document outlines the foundational "Phase 0" required to launch the War on Disease initiative. The high-level plans detailed in the [Canonical Roadmap](./roadmap.md) and [Fundraising and Budget Plan](../economic-models/fundraising-and-budget-plan.md) depend on the successful execution of this initial, targeted pre-seed phase.
 
 The primary goal of this phase is to secure the necessary legal, financial, and human capital to build the infrastructure for the larger seed fundraising rounds and global referendum campaign.
 

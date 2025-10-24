@@ -100,7 +100,7 @@ graph TD;
 - **[Participate in the Referendum](mailto:hello@dih.earth)**: Signal your support and become part of the 3.5%.
 - **[Join the Coalition](mailto:hello@dih.earth)**: We partner with institutions, companies, and non-profits.
 
-## Development & Deployment
+## Development and Deployment
 
 ### Local Preview
 

@@ -1,4 +1,9 @@
-# Airtable Base Guide: DIH Command & Control
+---
+title: Airtable Base Guide
+description: Essential IDs and table structure for interacting with the DIH Command & Control Airtable base via API.
+---
+
+# Airtable Base Guide: DIH Command and Control
 
 This guide provides the essential IDs for interacting with the DIH Command & Control Airtable base via the API.
 

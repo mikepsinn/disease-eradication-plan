@@ -1,3 +1,8 @@
+---
+title: Assets Folder
+description: Image assets, charts, infographics, and branding materials for the book with automated AI-powered cataloging and metadata.
+---
+
 # Assets Folder
 
 This folder contains all image assets for the book "The Complete Idiot's Guide to Ending War and Disease."

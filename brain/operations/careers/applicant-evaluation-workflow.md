@@ -50,7 +50,7 @@ graph TD;
 - **Tool:** n8n Webhook Node.
 - **Action:** Receives POST request with application data.
 
-### 2. Validate & Parse Form Data
+### 2. Validate and Parse Form Data
 
 - **Tool:** n8n Code Node.
 - **Action:**
@@ -86,7 +86,7 @@ The core of the workflow, using an LLM to run multiple specialized evaluations.
   - **Input:** Text responses for the "AI philosophy" and "technical strategy" questions.
   - **Prompt:** "Analyze the candidate's strategic responses. Score `strategyScore` from 0-10 based on the creativity, feasibility, and detail of their proposed technical plan for the 3.5% mission. Return JSON with the score and justification."
 
-### 5. Aggregate & Calculate Final Score
+### 5. Aggregate and Calculate Final Score
 
 - **Tool:** n8n Set Node or Code Node.
 - **Action:**
@@ -100,7 +100,7 @@ The core of the workflow, using an LLM to run multiple specialized evaluations.
     - **Strategic Philosophy (10%):** `strategyScore * 1`
   - **Final Score = Weighted Sum (out of 100).**
 
-### 6. Output & Human Review
+### 6. Output and Human Review
 
 - **Tool:** Google Sheets/Airtable/Postgres Node, Email/Slack Node.
 - **Action:**

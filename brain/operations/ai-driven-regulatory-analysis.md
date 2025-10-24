@@ -13,7 +13,7 @@ dateCreated: 2024-06-09T00:00:00.000Z
 
 To fulfill the mandate for comprehensive health and economic impact analysis of all FDA regulatory instruments (as outlined in Section 405(e) of the "Right to Trial & FDA Upgrade Act") with maximum efficiency, transparency, and public engagement. This system leverages a lean, AI-centric approach based on the Pareto (80/20) principle, focusing on current and rapidly advancing AI reasoning and tool-use capabilities.
 
-## Core Components & Workflow
+## Core Components and Workflow
 
 1. **Data Science AI Agent:**
 

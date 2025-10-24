@@ -1,3 +1,8 @@
+---
+title: Design Guide
+description: Visual standards for charts and images using Tufte minimalism and black-and-white neobrutalist design principles.
+---
+
 # Design Guide
 
 ## Quick Reference

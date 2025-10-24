@@ -1,3 +1,8 @@
+---
+title: Systematic Accuracy Fix Plan
+description: Priority-ordered plan to fix 3,021 potential accuracy issues including false attribution, character attacks, and conspiracy language.
+---
+
 # Systematic Accuracy Fix Plan
 
 ## Overview

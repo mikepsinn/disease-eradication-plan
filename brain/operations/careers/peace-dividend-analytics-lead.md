@@ -7,7 +7,7 @@ tags: [careers, analytics, economics, public-dashboards]
 dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
-## Mission & Scope
+## Mission and Scope
 
 Prove the value. Run the numbers. Keep dashboards and methods easy to check.
 

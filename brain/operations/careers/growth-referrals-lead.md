@@ -7,7 +7,7 @@ tags: [careers, growth, referrals, marketing, analytics]
 dateCreated: 2025-08-22T00:00:00.000Z
 ---
 
-## Mission & Scope
+## Mission and Scope
 
 Get lots of people to vote. Use simple tools: invite links, leaderboards, and partner emails. Keep it honest and fair.
 

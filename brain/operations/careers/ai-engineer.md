@@ -31,7 +31,7 @@ Help accelerate medical progress by 80X through patient rights advocacy and civi
 - Referral reward systems for patient advocacy platform adoption
 - Target: Help 12 million Americans learn about their potential clinical trial rights
 
-### Donation & Partnership Automation
+### Donation and Partnership Automation
 
 - AI-powered donor research and personalized outreach
 - Automated partnership development with patient advocacy organizations
@@ -51,7 +51,7 @@ Help accelerate medical progress by 80X through patient rights advocacy and civi
 - **Startup mentality** - able to work independently and wear multiple hats
 - **AI automation expertise** - building systems that scale human efforts 10X
 
-## Compensation & Growth
+## Compensation and Growth
 
 - **Competitive salary** + equity + benefits (remote-friendly, higher compensation for local candidates)
 - **Growth potential:** Lead engineering team as platform scales

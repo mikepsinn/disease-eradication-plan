@@ -658,7 +658,7 @@ If it works: Raise the $10M Series A
 
 ---
 
-## References & Citations
+## References and Citations
 
 ### Global Disease Burden
 

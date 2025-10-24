@@ -7,7 +7,7 @@ tags: [hiring, careers, team, operations, scaling]
 dateCreated: "2025-08-22T00:00:00.000Z"
 ---
 
-# Hiring Plan & Team Roadmap
+# Hiring Plan and Team Roadmap
 
 ## The Philosophy: A Lean Activation Team
 
@@ -18,7 +18,7 @@ To achieve this, we distinguish between core strategic functions and tactical ex
 - **Core Functions (Internal Team):** Strategy, leadership, political maneuvering, legal architecture, and product vision are handled by the small, core team. This is the permanent brain trust.
 - **Tactical Execution (Outsourced):** Functions like software development, specialized quantitative analysis, and media production will be outsourced to world-class agencies and contractors. This provides flexibility and access to elite talent without building a large, permanent bureaucracy.
 
-This document provides a detailed breakdown of the team structure and hiring roadmap, justifying the headcount figures presented in the [Operational Budget & Financial Model](../economic-models/operational-budget-and-financial-model.md). Our structure is a hybrid model informed by a detailed analysis of successful precedents, including The Global Fund, the ICBL, and MakerDAO. For a full breakdown, see [**Organizational Precedents & Staffing Models**](../reference/organizational-precedents.md).
+This document provides a detailed breakdown of the team structure and hiring roadmap, justifying the headcount figures presented in the [Operational Budget and Financial Model](../economic-models/operational-budget-and-financial-model.md). Our structure is a hybrid model informed by a detailed analysis of successful precedents, including The Global Fund, the ICBL, and MakerDAO. For a full breakdown, see [**Organizational Precedents and Staffing Models**](../reference/organizational-precedents.md).
 
 Our strategy is to build a lean, world-class core team for direct execution and to aggressively leverage contractors, prize-based competitions, and partner organizations to scale our impact without a large, bureaucratic overhead.
 
@@ -50,7 +50,7 @@ This initial phase focuses on establishing the leadership, legal, and technical 
 
 - **Head of Political Strategy:** Executes the global campaign strategy, managing all independent expenditure and lobbying efforts.
 - **[Elections IE Compliance Lead](./elections-ie-compliance-lead.md):** Ensures all political spending and activities are fully compliant in every jurisdiction.
-- **[Growth & Referrals Lead](./growth-referrals-lead.md):** Designs and manages the incentive programs for the global referendum.
+- **[Growth and Referrals Lead](./growth-referrals-lead.md):** Designs and manages the incentive programs for the global referendum.
 - **Communications Director:** Manages messaging, media relations, and public narrative.
 
 **Platform & Technology (7 Roles)**
