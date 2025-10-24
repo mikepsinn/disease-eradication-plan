@@ -11,12 +11,14 @@ tags:
   - resource-allocation
   - democracy-but-working
 lastFactCheckHash: eab100eb63eb0c4bb66d0bf37e96c1318df0efe4ceb76d9fd2447bfa7870b92f
-lastStructureCheckHash: 876676aefff6d24c1bd5b8cb7843c5811dabc44021f70b9af0b47b7c6da0bcf0
+lastStructureCheckHash: 3afb6fb476201fb5efe5b87a196f4eeb886fc84f2d38565fb3f6bac1f9d70793
 lastLatexCheckHash: 52e1aa5e6793da0df277e08d3e28abc172cdc9a7e4902aa61c45383b5ab39fb2
 ---
 Congratulations! You've passed the [1% Treaty](../solution/1-percent-treaty.qmd) and now you've got $27B/year to allocate.
 
 How do you avoid parasitic special interests from stealing it or bureacracy from wasting it all?
+
+This chapter introduces **Wishocracy**, a system of direct, collective resource allocation designed to solve this exact problem. It ensures that large-scale funding serves the public will, rather than being captured by lobbyists, consultants, or political insiders. By replacing committees and representatives with a transparent, mathematically-grounded process, Wishocracy makes the DIH's treasury truly capture-proof.
 
 
 Instead of asking 8 billion people to understand everything (impossible), we ask them to make tiny decisions they can actually handle.
@@ -191,12 +193,12 @@ Every impossible problem becomes possible when you break it down enough.
 ### The Alzheimer's Example
 
 "Cure Alzheimer's" (impossible, scary, $10 billion)
-├── Understand protein misfolding ($2 billion)
+├── Understand protein misfolding ($6 billion)
 │   ├── Map all protein structures ($500 million)
 │   │   ├── Run AlphaFold on these sequences ($10 million)
 │   │   │   ├── Rent computing time ($1 million)
 │   │   │   ├── Pay grad students ($9 million worth of ramen)
-├── Test 10,000 drug candidates ($3 billion)
+├── Test 10,000 drug candidates ($4 billion)
 │   ├── Synthesize compounds ($500 million)
 │   │   ├── Order chemicals ($50 million)
 │   │   ├── Mix chemicals ($450 million)
@@ -313,24 +315,3 @@ Will it be better than letting cocaine-addled politicians decide based on bribes
 After all, we're all going to die anyway.
 
 Might as well die in a system that actually tries to prevent it.
-
-### Wishocracy: Preventing Capture
-
-**Protecting the $24.3B From Special Interest Hamburglers**
-
-**The Problem**: After we pay back the 10% to investors (the oligarchy that made this all possible), we still have $24.3 billion per year. Without safeguards, lobbyists and special interests will swarm like vultures. Within 5 years, the [DIH](dih.qmd) would become just another captured institution funneling money to whoever has the best K Street connections.
-
-**The Solution**: Wishocracy - where everyone votes on DIH budget allocation, preventing capture.
-
-![Wishocracy Public Budget Voting Example](../../../assets/wishocracy-slider.png)
-
-**How it protects the $24.3B from capture**:
-
-1. **Anyone can propose projects**: Patient subsidies, trial infrastructure, expanding to a 2% treaty - all competing for funding
-2. **Everyone votes through pairwise comparisons**: "Fund Alzheimer's trials" vs "Build trial infrastructure in Africa?" Simple choices, not 10,000-item ballots
-3. **Mathematical aggregation prevents gaming**: Can't buy 51% of votes when there are 8 billion voters
-4. **Real-time transparency**: Every allocation is public.
-
-**Why this matters**: Investors who funded this deserve their 10% returns. But the remaining 90% must serve humanity, not special interests.
-
-Without Wishocracy, the DIH becomes another captured institution and repeats the exact same failures all over again.

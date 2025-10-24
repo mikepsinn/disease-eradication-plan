@@ -13,8 +13,8 @@ If the chapter is good enough, return "NO_CHANGES_NEEDED".
 **When flagging:** Specify which chapter has the authoritative/correct version.
 
 **DON'T REPEAT YOURSELF (DRY PRINCIPLE):**
-Chapters should generally cross-reference, not duplicate big chunks of content. 
-Make sure if some block of text is better suited for another chapter make a comment to move and reference if necessary.
+Chapters should generally cross-reference, not completely duplicate big chunks of content. Summarizing a concept from another chapter is OK, but duplicating the entire detailed explanation is not.
+Make sure if some block of text is inappropriate for the current chapter and better suited for another chapter make a comment to move and reference if necessary.
 
 **FLAG:**
 
