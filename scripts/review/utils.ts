@@ -597,8 +597,8 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
       console.log(`Decision: MERGE into ${response.targetFile}. Reason: ${response.reason}`);
       const finalContent = await mergeContentWithLLM(archivedContent, response.targetFile);
       await saveFile(response.targetFile, finalContent);
-      await fs.unlink(filePath);
-      console.log(`Successfully merged content into ${response.targetFile} and deleted archived file.`);
+      // await fs.unlink(filePath);
+      console.log(`Successfully merged content into ${response.targetFile}.`);
       break;
 
     case 'CREATE':
@@ -609,8 +609,8 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
       console.log(`Decision: CREATE new file ${newFilePath}. Reason: ${response.reason}`);
       await saveFile(newFilePath, response.newFileContent);
       console.log(`TODO: Manually add ${newFilePath} to _quarto.yml`);
-      await fs.unlink(filePath);
-      console.log(`Successfully created ${newFilePath} and deleted archived file.`);
+      // await fs.unlink(filePath);
+      console.log(`Successfully created ${newFilePath}.`);
       break;
 
     case 'MOVE_TO_OPS':
@@ -620,14 +620,14 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
       const opsFilePath = response.newFilePath;
       console.log(`Decision: MOVE to ${opsFilePath}. Reason: ${response.reason}`);
       await saveFile(opsFilePath, response.newFileContent);
-      await fs.unlink(filePath);
-      console.log(`Successfully moved file to ${opsFilePath} and deleted archived file.`);
+      // await fs.unlink(filePath);
+      console.log(`Successfully moved file to ${opsFilePath}.`);
       break;
 
     case 'DELETE':
       console.log(`Decision: DELETE file. Reason: ${response.reason}`);
-      await fs.unlink(filePath);
-      console.log(`Successfully deleted archived file.`);
+      // await fs.unlink(filePath);
+      console.log(`File would be deleted (deletion disabled for safety).`);
       break;
 
     default:
