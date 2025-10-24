@@ -30,7 +30,7 @@ import { execSync } from 'child_process';
 dotenv.config();
 
 // Configuration
-const GEMINI_MODEL_ID = 'gemini-2.0-flash-exp';
+const GEMINI_MODEL_ID = 'gemini-2.5-flash';
 const ASSETS_DIR = path.join(process.cwd(), 'assets');
 const OUTPUT_GUIDE = path.join(ASSETS_DIR, 'IMAGE-GUIDE.md');
 const METADATA_MARKER = 'ai-analyzed';
@@ -71,17 +71,22 @@ interface ImageMetadata {
  * Get list of all image files in assets directory
  */
 async function getImageFiles(): Promise<string[]> {
-  const pattern = path.join(ASSETS_DIR, options.pattern);
-  const files = await glob(pattern, {
-    ignore: ['**/extracted-fda-data/**', '**/icons/**'],
-    nodir: true
-  });
+  // Get all files from assets directory
+  const extensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'];
+  const allFiles = fs.readdirSync(ASSETS_DIR);
+
+  const imageFiles = allFiles
+    .filter(file => {
+      const ext = path.extname(file).toLowerCase();
+      return extensions.includes(ext);
+    })
+    .map(file => path.join(ASSETS_DIR, file));
 
   if (options.limit) {
-    return files.slice(0, parseInt(options.limit));
+    return imageFiles.slice(0, parseInt(options.limit));
   }
 
-  return files;
+  return imageFiles;
 }
 
 /**
@@ -166,14 +171,25 @@ PRIMARY_USE: [chapter1.qmd]`;
     const chaptersMatch = responseText.match(/CHAPTERS:\s*(.+?)(?=\n[A-Z]+:|$)/s);
     const primaryMatch = responseText.match(/PRIMARY_USE:\s*(.+?)(?=\n[A-Z]+:|$)/s);
 
-    const keywords = keywordsMatch ?
-      keywordsMatch[1].split(',').map(k => k.trim()).filter(Boolean) : [];
+    // Clean up keywords - remove brackets and split
+    let keywords: string[] = [];
+    if (keywordsMatch) {
+      const keywordText = keywordsMatch[1].replace(/[\[\]]/g, '');
+      keywords = keywordText.split(',').map(k => k.trim()).filter(Boolean);
+    }
 
-    const chapters = chaptersMatch ?
-      chaptersMatch[1].split(',').map(c => c.trim()).filter(Boolean) : [];
+    // Clean up chapters - remove brackets and split
+    let chapters: string[] = [];
+    if (chaptersMatch) {
+      const chapterText = chaptersMatch[1].replace(/[\[\]]/g, '');
+      chapters = chapterText.split(',').map(c => c.trim()).filter(Boolean);
+    }
 
-    const primaryChapter = primaryMatch ?
-      primaryMatch[1].trim() : '';
+    // Clean up primary chapter - remove brackets
+    let primaryChapter = '';
+    if (primaryMatch) {
+      primaryChapter = primaryMatch[1].replace(/[\[\]]/g, '').trim();
+    }
 
     // Add star to primary chapter
     const suggestedChapters = chapters.map(c =>
