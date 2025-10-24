@@ -634,3 +634,25 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
       throw new Error(`Unknown action: ${response.action}`);
   }
 }
+
+export async function latexCheckFileWithLLM(filePath: string): Promise<void> {
+  console.log(`\nChecking for LaTeX usage in ${filePath} with Gemini...`);
+  const originalContent = await fs.readFile(filePath, 'utf-8');
+  let { data: frontmatter, content: body } = matter(originalContent);
+
+  let prompt = await fs.readFile('scripts/prompts/latex-check.md', 'utf-8');
+  prompt = prompt.replace('{{body}}', body);
+
+  const responseText = await generateGeminiContent(prompt);
+
+  let finalBody;
+  if (responseText.trim() === 'NO_CHANGES_NEEDED') {
+    console.log(`File ${filePath} already uses LaTeX correctly. Updating metadata.`);
+    finalBody = body;
+  } else {
+    finalBody = responseText.trim();
+  }
+
+  await updateFileWithHash(filePath, finalBody, frontmatter, 'lastLatexCheckHash');
+  console.log(`Successfully checked LaTeX usage for ${filePath}.`);
+}
