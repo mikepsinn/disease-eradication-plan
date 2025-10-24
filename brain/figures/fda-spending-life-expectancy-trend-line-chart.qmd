@@ -11,6 +11,7 @@ format:
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from pathlib import Path
 import sys
 
@@ -36,54 +37,82 @@ data_path = project_root / 'assets' / 'extracted-fda-data' / 'historical-life-ex
 df = pd.read_csv(data_path)
 
 # Extract year and life expectancy columns
-# Columns: Year, Life Expectancy Pre-FDA, Life Expectancy Post-FDA
+# Columns: Year, Life Expectancy Pre-FDA, Life Expectancy Post-FDA, FDA Budget (Inflation Adjusted to 2020 USD)
 years = df['Year'].values
 life_exp_pre = df['Life Expectancy Pre-FDA'].values
 life_exp_post = df['Life Expectancy Post-FDA'].values
 
-# Create figure
-fig, ax = plt.subplots(figsize=(10, 6))
+# Extract FDA budget - clean the data
+fda_budget_str = df['FDA Budget (Inflation Adjusted to 2020 USD)'].values
+fda_budget = []
+for val in fda_budget_str:
+    if pd.isna(val) or val == '$0' or val == '$ -':
+        fda_budget.append(0)
+    else:
+        # Remove $ and commas, convert to float, then to millions
+        clean_val = str(val).replace('$', '').replace(',', '').replace(' ', '')
+        try:
+            fda_budget.append(float(clean_val) / 1_000_000)  # Convert to millions
+        except:
+            fda_budget.append(0)
 
-# Plot Pre-FDA (1901-1937)
+fda_budget = np.array(fda_budget)
+
+# Create figure with two y-axes
+fig, ax1 = plt.subplots(figsize=(12, 7))
+ax2 = ax1.twinx()  # Create secondary y-axis
+
+# Plot Life Expectancy on left axis (ax1)
 pre_fda_mask = ~pd.isna(life_exp_pre)
-ax.plot(years[pre_fda_mask], life_exp_pre[pre_fda_mask],
-        color=COLOR_BLACK, linewidth=3, linestyle='--',
-        label='Before FDA (1901-1937)', marker='o', markersize=3, markevery=5)
+line1 = ax1.plot(years[pre_fda_mask], life_exp_pre[pre_fda_mask],
+                 color=COLOR_BLACK, linewidth=3, linestyle='--',
+                 label='Life Expectancy (Before FDA)', marker='o', markersize=3, markevery=5)
 
-# Plot Post-FDA (1938-2000)
 post_fda_mask = ~pd.isna(life_exp_post)
-ax.plot(years[post_fda_mask], life_exp_post[post_fda_mask],
-        color=COLOR_BLACK, linewidth=3, linestyle='-',
-        label='After FDA Created (1938-2000)', marker='s', markersize=3, markevery=5)
+line2 = ax1.plot(years[post_fda_mask], life_exp_post[post_fda_mask],
+                 color=COLOR_BLACK, linewidth=3, linestyle='-',
+                 label='Life Expectancy (After FDA)', marker='s', markersize=3, markevery=5)
 
-# Add vertical line at FDA creation (1938)
+# Plot FDA Budget on right axis (ax2) - only where we have data
+fda_budget_mask = fda_budget > 0
+line3 = ax2.plot(years[fda_budget_mask], fda_budget[fda_budget_mask],
+                 color='#666666', linewidth=4, linestyle='-',
+                 label='FDA Budget (Millions, 2020 USD)', marker='D', markersize=4, markevery=3)
+
+# Add vertical lines for regulatory milestones
 fda_year = 1938
-ax.axvline(x=fda_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
-ax.text(fda_year, 82, 'FDA Created\n1938', ha='center', va='top',
-        fontsize=11, fontweight='bold', color=COLOR_BLACK)
+ax1.axvline(x=fda_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
+ax1.text(fda_year, 82, 'FDA Created\n1938', ha='center', va='top',
+         fontsize=11, fontweight='bold', color=COLOR_BLACK)
 
-# Add vertical line at 1962 efficacy amendment
 efficacy_year = 1962
-ax.axvline(x=efficacy_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
-ax.text(efficacy_year, 82, 'Efficacy Requirement\nAdded (1962)', ha='center', va='top',
-        fontsize=11, fontweight='bold', color=COLOR_BLACK)
+ax1.axvline(x=efficacy_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
+ax1.text(efficacy_year, 82, 'Efficacy Requirement\nAdded (1962)', ha='center', va='top',
+         fontsize=11, fontweight='bold', color=COLOR_BLACK)
 
 # Title and labels
-ax.set_title('FDA Spending vs Life Expectancy: 1901-2000',
-             fontsize=32, fontweight='bold', pad=20)
-ax.set_xlabel('Year', fontsize=22, fontweight='bold')
-ax.set_ylabel('Life Expectancy (years)', fontsize=22, fontweight='bold')
+ax1.set_title('FDA Spending vs Life Expectancy: 1901-2000',
+              fontsize=32, fontweight='bold', pad=20)
+ax1.set_xlabel('Year', fontsize=22, fontweight='bold')
+ax1.set_ylabel('Life Expectancy (years)', fontsize=22, fontweight='bold', color=COLOR_BLACK)
+ax2.set_ylabel('FDA Budget (Millions, 2020 USD)', fontsize=22, fontweight='bold', color='#666666')
 
 # Set y-axis limits
-ax.set_ylim(40, 85)
+ax1.set_ylim(40, 85)
 
-# Add legend
-ax.legend(fontsize=14, loc='lower right', frameon=True, facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK)
+# Combine legends from both axes
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines1 + lines2, labels1 + labels2,
+           fontsize=12, loc='upper left', frameon=True,
+           facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK)
 
 # Style axes
-ax.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
-ax.tick_params(labelsize=14)
-clean_spines(ax)
+ax1.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
+ax1.tick_params(axis='both', labelsize=14, colors=COLOR_BLACK)
+ax2.tick_params(axis='y', labelsize=14, colors='#666666')
+clean_spines(ax1)
+clean_spines(ax2)
 
 # Add watermark
 add_watermark(fig)
@@ -96,10 +125,11 @@ plt.savefig(output_dir / 'fda-spending-life-expectancy-trend-line-chart.png',
 plt.show()
 ```
 
-This chart shows life expectancy trends from 1901-2000, split between pre-FDA (1901-1937) and post-FDA (1938-2000) periods. The vertical dashed line marks the creation of the FDA in 1938.
+This chart shows both life expectancy trends (left axis) and FDA budget spending in millions of 2020 USD (right axis) from 1901-2000. Two vertical lines mark major regulatory milestones: FDA creation in 1938 and the 1962 efficacy amendment.
 
 **Key Insights:**
 
-- Life expectancy increased steadily before FDA creation
-- Growth continued after FDA establishment
-- The chart enables comparison of trends before and after regulatory oversight
+- Life expectancy increased steadily throughout the century
+- FDA budget spending exploded exponentially, especially after 1962
+- Life expectancy growth rate slowed after 1962 while spending accelerated
+- Massive spending increases did not correlate with improved health outcomes
