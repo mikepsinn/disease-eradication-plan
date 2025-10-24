@@ -15,8 +15,8 @@ This analysis calculates the cost per death for a modern nuclear weapon and uses
 
 The cost of a single nuclear warhead is difficult to pinpoint, as it is often bundled into larger modernization and delivery system programs. However, we can use the **B61-12 Life Extension Program** as a credible benchmark.
 
-- **Unit Cost:** The B61-12 bomb has an estimated unit cost of [**$27.5 million**](../book/references.qmd#b61-12-cost).
-- **Program Cost:** The total program cost for 400-500 bombs is estimated at [**$11 billion**](../book/references.qmd#b61-12-cost).
+- **Unit Cost:** The B61-12 bomb has an estimated unit cost of [**$27.5 million**](../references.qmd#b61-12-cost).
+- **Program Cost:** The total program cost for 400-500 bombs is estimated at [**$11 billion**](../references.qmd#b61-12-cost).
 
 For this analysis, we will use the conservative unit cost of **$27.5 million** per bomb.
 
@@ -26,7 +26,7 @@ The number of deaths from a nuclear detonation depends on the weapon's yield, th
 
 A widely used tool for modeling these effects is NUKEMAP, created by historian of science Alex Wellerstein. A simulation of a single, modern 300-kiloton W87 warhead detonated over a dense urban center like Manhattan reveals a catastrophic scale of destruction.
 
-- **Estimated Fatalities:** A surface blast is projected to cause approximately [**1,619,570 fatalities**](../book/references.qmd#w87-casualties).
+- **Estimated Fatalities:** A surface blast is projected to cause approximately [**1,619,570 fatalities**](../references.qmd#w87-casualties).
 
 This figure includes immediate deaths from the blast, heat, and initial radiation, but does not account for long-term deaths from fallout, disease, or the collapse of medical infrastructure.
 
