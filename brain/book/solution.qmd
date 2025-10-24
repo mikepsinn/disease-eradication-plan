@@ -22,6 +22,28 @@ It just requires changing what pays.
 
 Here's the complete system that makes curing people more profitable than killing them:
 
+## The Goal: Personalized, Preventive, Precision Medicine
+
+Out of an existing pool of big health data, an insilico model of human biology can be developed to discover new interventions and their personalized dosages and combinations.
+
+One way to achieve this is to view the human body as a black box with inputs and outputs. We can apply predictive machine learning models to stratified groups of similar people based on the following aspects:
+
+*   [Genomic](https://en.wikipedia.org/wiki/Genomics)
+*   [Transcriptomic](https://en.wikipedia.org/wiki/Transcriptome)
+*   [Proteomic](https://en.wikipedia.org/wiki/Proteomics)
+*   [Metabolomic](https://en.wikipedia.org/wiki/Metabolomics)
+*   [Microbiomic](https://en.wikipedia.org/wiki/Microbiota)
+*   [Phenotype](https://en.wikipedia.org/wiki/Phenotype)
+*   [Diseasomic](http://ijream.org/papers/IJREAMV05I0250057.pdf)
+*   [Pharmacomicrobiomic](https://en.wikipedia.org/wiki/Pharmacomicrobiomics)
+*   [Pharmacogenomic](https://en.wikipedia.org/wiki/Pharmacogenomics)
+*   [Foodomic](https://en.wikipedia.org/wiki/Foodomics)
+*   [Exposome](https://en.wikipedia.org/wiki/Environmental_factor#Exposome)
+
+This will enable the discovery of the full personalized range of positive and negative relationships for all factors without a profit incentive for traditional trials.
+
+![The human body as a black box model for machine learning](../../assets/black-box-model-animation.gif)
+
 ## The 6-Step Process
 
 **From \$27 Billion to Curing Cancer**
