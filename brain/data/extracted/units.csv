@@ -1,0 +1,65 @@
+Column1.fillingType,Column1.abbreviatedName,Column1.advanced,Column1.unitCategoryId,Column1.categoryName,Column1.combinationOperation,Column1.conversionSteps,Column1.fillingValue,Column1.id,Column1.manualTracking,Column1.maximumValue,Column1.minimumValue,Column1.name,Column1.scale,Column1.suffix,Column1.synonyms,Column1.fontAwesome,Column1.image,Column1.maximumDailyValue
+zero,$,1,12,Currency,,[List],0.0,49,0,,,Dollars,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,/1,1,5,Rating,,[List],,20,0,1.0,0.0,0 to 1 Rating,ordinal,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,in,1,2,Distance,,[List],0.0,35,1,,0.0,Inches,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,oz,1,4,Volume,,[List],0.0,206,1,,0.0,Ounces,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,/6,1,5,Rating,,[List],,40,0,5.0,0.0,0 to 5 Rating,ordinal,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,L,1,4,Volume,,[List],0.0,205,1,,0.0,Liters,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,10.0
+none,lb,1,3,Weight,,[List],,8,1,1000.0,0.0,Pounds,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,mL,0,4,Volume,,[List],0.0,9,1,,0.0,Milliliters,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,1000000.0
+none,mph,1,6,Miscellany,MEAN,[List],,215,1,,0.0,Miles per Hour,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,%RDA,1,6,Miscellany,SUM,[List],-1.0,29,0,,0.0,% Recommended Daily Allowance,ratio,intake,[List],fas fa-utensil-spoon,https://static.quantimo.do/img/fitness/png/protein.png,10000.0
+none,/3,1,5,Rating,MEAN,[List],,216,1,3.0,1.0,1 to 3 Rating,ordinal,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,mi,1,2,Distance,,[List],,4,0,,0.0,Miles,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,kcal,1,7,Energy,SUM,[List],,22,0,,,Kilocalories,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,20000.0
+none,/10,0,5,Rating,,[List],,203,1,10.0,1.0,1 to 10 Rating,ordinal,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,kg,1,3,Weight,,[List],,5,1,,0.0,Kilograms,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,km,1,2,Distance,,[List],,16,0,,0.0,Kilometers,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,cal,1,7,Energy,,[List],,39,0,,,Calories,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,20000.0
+zero,capsules,1,13,Count,,[List],0.0,27,1,1000.0,0.0,Capsules,ratio,,[List],fas fa-medkit,https://static.quantimo.do/img/medical/png/pill.png,20.0
+zero,mg,0,3,Weight,,[List],0.0,7,1,,0.0,Milligrams,ratio,Intake,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,1000000.0
+zero,pieces,1,13,Count,,[List],0.0,28,1,,0.0,Pieces,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,100.0
+none,%,1,5,Rating,MEAN,[List],,21,1,,,Percent,interval,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,puffs,1,13,Count,,[List],0.0,13,1,100.0,0.0,Puffs,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,h,0,1,Duration,SUM,[List],0.0,34,1,,0.0,Hours,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,24.0
+none,torr,1,10,Pressure,,[List],,42,0,7600.0,76.0,Torr,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,tablets,1,13,Count,,[List],0.0,11,1,,0.0,Tablets,ratio,,[List],fas fa-medkit,https://static.quantimo.do/img/medical/png/pill.png,20.0
+none,mmHg,1,10,Pressure,,[List],,30,1,100000.0,1.0,Millimeters Merc,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,m,1,2,Distance,,[List],,3,0,,0.0,Meters,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,cm,1,2,Distance,,[List],,31,0,,0.0,Centimeters,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,min,0,1,Duration,SUM,[List],0.0,2,1,10080.0,0.0,Minutes,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,1440.0
+none,mm,1,2,Distance,SUM,[List],,48,0,,0.0,Millimeters,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,degrees east,1,6,Miscellany,,[List],,17,0,,,Degrees East,interval,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,applications,1,13,Count,,[List],0.0,14,1,,0.0,Applications,ratio,,[List],fas fa-medkit,https://static.quantimo.do/img/medical/png/pill.png,20.0
+zero,units,1,13,Count,,[List],,12,1,,0.0,Units,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,dose,1,13,Count,,[List],0.0,210,1,,0.0,Doses,ratio,,[List],fas fa-medkit,https://static.quantimo.do/img/medical/png/pill.png,
+none,mbar,1,10,Pressure,,[List],,213,0,10130.0,101.0,Millibar,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,/minute,1,9,Frequency,MEAN,[List],,202,0,,0.0,per Minute,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,mg/dL,1,6,Miscellany,,[List],,43,1,,0.0,Micrograms per decilitre,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,count,0,13,Count,SUM,[List],0.0,23,1,,0.0,Count,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,-4 to 4,1,5,Rating,,[List],,25,0,4.0,-4.0,-4 to 4 Rating,ordinal,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,ppm,1,6,Miscellany,MEAN,[List],,211,0,,0.0,Parts per Million,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,degrees north,1,6,Miscellany,,[List],,18,0,,,Degrees North,interval,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,dB,1,6,Miscellany,MEAN,[List],,212,0,,0.0,Decibels,ratio,,[List],fab fa-speaker-deck,https://static.quantimo.do/img/medical/png/ear.png,
+zero,ft,1,2,Distance,,[List],0.0,36,1,,0.0,Feet,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,yes/no,0,13,Count,SUM,[List],0.0,19,1,1.0,0.0,Yes/No,ordinal,,[List],far fa-check-circle,https://static.quantimo.do/img/fitness/png/check-list.png,
+zero,event,1,13,Count,SUM,[List],0.0,41,1,,0.0,Event,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,bpm,1,6,Miscellany,MEAN,[List],,26,0,300.0,20.0,Beats per Minute,ratio,,[List],far fa-heart,https://static.quantimo.do/img/medical/png/heart.png,
+zero,qt,1,4,Volume,,[List],0.0,209,1,,0.0,Quarts,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,sprays,1,13,Count,,[List],0.0,50,1,,0.0,Sprays,ratio,,[List],fas fa-medkit,https://static.quantimo.do/img/medical/png/pill.png,50.0
+none,m/s,1,9,Frequency,MEAN,[List],,208,0,,0.0,Meters per Second,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,index,1,6,Miscellany,MEAN,[List],,15,0,,0.0,Index,ordinal,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,C,1,11,Temperature,,[List],,46,1,101.0,-66.0,Degrees Celsius,interval,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,IU,1,6,Miscellany,,[List],0.0,207,1,,0.0,International Units,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,/5,0,5,Rating,,[List],,10,1,5.0,1.0,1 to 5 Rating,ordinal,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,pills,1,13,Count,,[List],0.0,24,1,20.0,0.0,Pills,ratio,,[List],fas fa-medkit,https://static.quantimo.do/img/medical/png/pill.png,100.0
+none,hPa,1,10,Pressure,,[List],,214,0,11132.5,101.32,Hectopascal,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,drops,1,13,Count,,[List],0.0,201,1,,0.0,Drops,ratio,,[List],fas fa-medkit,https://static.quantimo.do/img/medical/png/pill.png,100.0
+zero,ms,1,1,Duration,,[List],0.0,204,0,864000000.0,0.0,Milliseconds,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,86400000.0
+none,GBq,1,7,Energy,SUM,[List],,217,1,,,Gigabecquerel,interval,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,Pa,1,10,Pressure,,[List],,47,0,1113250.0,10132.0,Pascal,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+none,F,1,11,Temperature,MEAN,[List],,45,1,214.0,-87.0,Degrees Fahrenheit,interval,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,s,1,1,Duration,,[List],0.0,1,0,,0.0,Seconds,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,86400.0
+zero,serving,0,13,Count,,[List],0.0,44,1,,0.0,Serving,ratio,Consumption,[List],fas fa-utensil-spoon,https://static.quantimo.do/img/fitness/png/fast-food.png,40.0
+zero,g,0,3,Weight,,[List],0.0,6,1,,0.0,Grams,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,
+zero,mcg,1,3,Weight,,[List],0.0,32,1,,0.0,Micrograms,ratio,,[List],,https://static.quantimo.do/img/fitness/png/measuring-tape.png,10000.0

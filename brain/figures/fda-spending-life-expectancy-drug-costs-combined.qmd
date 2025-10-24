@@ -1,0 +1,137 @@
+---
+title: "FDA Spending, Life Expectancy, and Drug Development Costs"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+```{python}
+#| label: setup
+#| include: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# Set style
+plt.style.use('seaborn-v0_8-darkgrid')
+```
+
+## Combined Analysis: FDA Spending, Life Expectancy, and Drug Development Costs
+
+This chart shows the relationship between FDA budget, US life expectancy, and the cost to develop new drugs over time (1901-2020).
+
+```{python}
+#| label: load-data
+#| echo: false
+
+# Load the data
+data_path = Path("../data/extracted/drug-cost-and-lifespan.csv")
+df = pd.read_csv(data_path)
+
+# Clean the data
+df = df.dropna(subset=['Year'])
+df['Year'] = df['Year'].astype(int)
+
+print(f"Data loaded: {len(df)} rows from {df['Year'].min()} to {df['Year'].max()}")
+print(f"\nColumns: {df.columns.tolist()}")
+print(f"\nFirst few rows:")
+print(df.head())
+```
+
+```{python}
+#| label: fig-fda-spending-life-drug-costs
+#| fig-cap: "FDA Spending, US Life Expectancy, and Drug Development Costs (1901-2020)"
+#| fig-width: 14
+#| fig-height: 8
+
+# Create figure with multiple y-axes
+fig, ax1 = plt.subplots(figsize=(14, 8))
+
+# Plot 1: Life Expectancy (left y-axis)
+color1 = '#2E7D32'  # Green
+ax1.set_xlabel('Year', fontsize=12, fontweight='bold')
+ax1.set_ylabel('US Life Expectancy (years)', color=color1, fontsize=12, fontweight='bold')
+line1 = ax1.plot(df['Year'], df['US Life expectancy'], color=color1, linewidth=2.5, label='Life Expectancy')
+ax1.tick_params(axis='y', labelcolor=color1)
+ax1.grid(True, alpha=0.3)
+
+# Plot 2: FDA Budget (right y-axis 1)
+ax2 = ax1.twinx()
+color2 = '#C62828'  # Red
+ax2.set_ylabel('FDA Budget (Inflation Adjusted to 2020 USD)', color=color2, fontsize=12, fontweight='bold')
+
+# Filter data where FDA Budget exists
+df_fda = df[df['FDA Budget (Inflation Adjusted to 2020 USD)'] > 0]
+line2 = ax2.plot(df_fda['Year'], df_fda['FDA Budget (Inflation Adjusted to 2020 USD)'],
+                 color=color2, linewidth=2.5, linestyle='--', label='FDA Budget')
+ax2.tick_params(axis='y', labelcolor=color2)
+
+# Plot 3: Drug Development Cost (right y-axis 2)
+ax3 = ax1.twinx()
+# Offset the third y-axis
+ax3.spines['right'].set_position(('outward', 60))
+color3 = '#1565C0'  # Blue
+ax3.set_ylabel('Cost to Develop 1 New Drug (2020 USD)', color=color3, fontsize=12, fontweight='bold')
+
+# Filter data where Drug Cost exists
+df_drug = df[df['Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)'].notna()]
+line3 = ax3.plot(df_drug['Year'], df_drug['Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)'],
+                 color=color3, linewidth=2.5, linestyle=':', label='Drug Development Cost', marker='o', markersize=6)
+ax3.tick_params(axis='y', labelcolor=color3)
+
+# Format y-axis for billions
+ax3.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x/1e9:.1f}B'))
+ax2.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x/1e9:.1f}B'))
+
+# Add title
+plt.title('The Inverse Relationship: Rising FDA Spending & Drug Costs vs. Slowing Life Expectancy Growth',
+          fontsize=14, fontweight='bold', pad=20)
+
+# Add annotations for key events
+# 1962 Kefauver-Harris Amendment
+ax1.axvline(x=1962, color='gray', linestyle='--', alpha=0.5, linewidth=1.5)
+ax1.text(1962, ax1.get_ylim()[1] * 0.95, '1962: Kefauver-Harris\nAmendment',
+         rotation=90, verticalalignment='top', fontsize=10, color='gray')
+
+# Combine legends
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+lines3, labels3 = ax3.get_legend_handles_labels()
+ax1.legend(lines1 + lines2 + lines3, labels1 + labels2 + labels3,
+           loc='upper left', fontsize=11, framealpha=0.9)
+
+plt.tight_layout()
+plt.savefig('fda-spending-life-expectancy-drug-costs-combined.png', dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+### Key Observations
+
+1. **Life Expectancy Growth**: Steady increase from 1901 to ~1960, then growth rate slows significantly
+2. **FDA Budget**: Dramatic increase starting in 1960s, coinciding with new regulations
+3. **Drug Development Costs**: Exponential growth from ~$74M (1962) to over $2.6B (2020)
+
+### Statistical Summary
+
+```{python}
+#| label: statistics
+#| echo: false
+
+# Calculate growth rates
+pre_1962 = df[df['Year'] <= 1962]['US Life expectancy']
+post_1962 = df[df['Year'] > 1962]['US Life expectancy']
+
+print("Life Expectancy Growth Rates:")
+print(f"  Pre-1962: {(pre_1962.iloc[-1] - pre_1962.iloc[0]) / len(pre_1962):.3f} years/year")
+print(f"  Post-1962: {(post_1962.iloc[-1] - post_1962.iloc[0]) / len(post_1962):.3f} years/year")
+
+# Drug cost increase
+df_drug_cost = df[df['Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)'].notna()]
+if len(df_drug_cost) > 1:
+    cost_increase = df_drug_cost['Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)'].iloc[-1] / \
+                   df_drug_cost['Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)'].iloc[0]
+    print(f"\nDrug Development Cost Increase: {cost_increase:.1f}x")
+```

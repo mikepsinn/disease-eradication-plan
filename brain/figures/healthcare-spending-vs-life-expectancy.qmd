@@ -1,0 +1,163 @@
+---
+title: "US Healthcare Spending vs Life Expectancy"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+```{python}
+#| label: setup
+#| include: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# Set style
+plt.style.use('seaborn-v0_8-darkgrid')
+```
+
+## Healthcare Spending vs Life Expectancy (2000-2018)
+
+This chart shows the diminishing returns of healthcare spending on life expectancy in the modern era.
+
+```{python}
+#| label: load-data
+#| echo: false
+
+# Load the data
+data_path = Path("../data/extracted/spending-lifespan-transposed.csv")
+df = pd.read_csv(data_path)
+
+# Clean the data
+df = df.dropna(subset=['Year'])
+df['Year'] = df['Year'].astype(int)
+
+print(f"Data loaded: {len(df)} rows from {df['Year'].min()} to {df['Year'].max()}")
+print(df.head())
+```
+
+```{python}
+#| label: fig-healthcare-spending-life
+#| fig-cap: "US Healthcare Spending Per Person vs Life Expectancy (2000-2018)"
+#| fig-width: 12
+#| fig-height: 7
+
+# Create figure with dual y-axes
+fig, ax1 = plt.subplots(figsize=(12, 7))
+
+# Plot Life Expectancy (left y-axis)
+color1 = '#1976D2'  # Blue
+ax1.set_xlabel('Year', fontsize=13, fontweight='bold')
+ax1.set_ylabel('Life Expectancy (years)', color=color1, fontsize=13, fontweight='bold')
+line1 = ax1.plot(df['Year'], df['Life Expectancy'], color=color1, linewidth=3,
+                 marker='o', markersize=7, label='Life Expectancy')
+ax1.tick_params(axis='y', labelcolor=color1, labelsize=11)
+ax1.tick_params(axis='x', labelsize=11)
+ax1.grid(True, alpha=0.3)
+
+# Set y-axis range for life expectancy to show the detail
+ax1.set_ylim([76, 80])
+
+# Plot Healthcare Spending (right y-axis)
+ax2 = ax1.twinx()
+color2 = '#D32F2F'  # Red
+ax2.set_ylabel('Healthcare Spending Per Person (USD)', color=color2, fontsize=13, fontweight='bold')
+line2 = ax2.plot(df['Year'], df['US Healthcare Spending Per Person'], color=color2,
+                 linewidth=3, linestyle='--', marker='s', markersize=7, label='Healthcare Spending')
+ax2.tick_params(axis='y', labelcolor=color2, labelsize=11)
+
+# Format y-axis for dollars
+ax2.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x:,.0f}'))
+
+# Add title
+plt.title('Diminishing Returns: Massive Healthcare Spending Growth,\nMinimal Life Expectancy Gains',
+          fontsize=15, fontweight='bold', pad=20)
+
+# Combine legends
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left', fontsize=12, framealpha=0.95)
+
+# Add annotation box showing the stark contrast
+textstr = f'2000-2018:\n' \
+          f'Spending: +{(df["US Healthcare Spending Per Person"].iloc[-1] / df["US Healthcare Spending Per Person"].iloc[0] - 1)*100:.0f}% ↑\n' \
+          f'Life Expectancy: +{(df["Life Expectancy"].iloc[-1] - df["Life Expectancy"].iloc[0]):.1f} years'
+props = dict(boxstyle='round', facecolor='wheat', alpha=0.8)
+ax1.text(0.98, 0.05, textstr, transform=ax1.transAxes, fontsize=11,
+         verticalalignment='bottom', horizontalalignment='right', bbox=props, family='monospace')
+
+plt.tight_layout()
+plt.savefig('healthcare-spending-vs-life-expectancy.png', dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+## Scatter Plot: Spending vs Life Expectancy
+
+```{python}
+#| label: fig-scatter
+#| fig-cap: "Scatter Plot: Healthcare Spending vs Life Expectancy"
+#| fig-width: 10
+#| fig-height: 8
+
+fig, ax = plt.subplots(figsize=(10, 8))
+
+# Create scatter plot with year labels
+scatter = ax.scatter(df['US Healthcare Spending Per Person'], df['Life Expectancy'],
+                     c=df['Year'], cmap='viridis', s=150, alpha=0.7, edgecolors='black', linewidth=1.5)
+
+# Add year labels to points
+for idx, row in df.iterrows():
+    ax.annotate(str(int(row['Year'])),
+                (row['US Healthcare Spending Per Person'], row['Life Expectancy']),
+                fontsize=9, ha='center', va='center', color='white', weight='bold')
+
+# Add colorbar
+cbar = plt.colorbar(scatter, ax=ax)
+cbar.set_label('Year', fontsize=12, fontweight='bold')
+
+# Add trend line
+z = np.polyfit(df['US Healthcare Spending Per Person'], df['Life Expectancy'], 1)
+p = np.poly1d(z)
+ax.plot(df['US Healthcare Spending Per Person'],
+        p(df['US Healthcare Spending Per Person']),
+        "r--", alpha=0.8, linewidth=2, label=f'Trend line')
+
+# Labels and title
+ax.set_xlabel('Healthcare Spending Per Person (USD)', fontsize=13, fontweight='bold')
+ax.set_ylabel('Life Expectancy (years)', fontsize=13, fontweight='bold')
+ax.set_title('The Flattening Curve: More Money, Marginal Gains', fontsize=15, fontweight='bold', pad=15)
+
+# Format x-axis
+ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x:,.0f}'))
+
+ax.grid(True, alpha=0.3)
+ax.legend(fontsize=11)
+
+plt.tight_layout()
+plt.savefig('healthcare-spending-vs-life-expectancy-scatter.png', dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+### Analysis
+
+```{python}
+#| label: analysis
+#| echo: false
+
+# Calculate correlation
+correlation = df['US Healthcare Spending Per Person'].corr(df['Life Expectancy'])
+
+# Calculate spending per additional year of life
+spending_increase = df['US Healthcare Spending Per Person'].iloc[-1] - df['US Healthcare Spending Per Person'].iloc[0]
+life_increase = df['Life Expectancy'].iloc[-1] - df['Life Expectancy'].iloc[0]
+cost_per_year = spending_increase / life_increase if life_increase > 0 else float('inf')
+
+print(f"Correlation between spending and life expectancy: {correlation:.3f}")
+print(f"\nSpending increase: ${spending_increase:,.0f} per person")
+print(f"Life expectancy increase: {life_increase:.2f} years")
+print(f"Cost per additional year of life: ${cost_per_year:,.0f} per person")
+print(f"\nReturn on investment: {(life_increase / (spending_increase/1000)):.3f} years per $1000 spent")
+```

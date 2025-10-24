@@ -1,0 +1,220 @@
+{
+  "Drug Cost and Lifespan": [
+    {
+      "chart_number": 1,
+      "type": "ScatterChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": "'Drug Cost and Lifespan'!$A$2:$A$1000",
+          "y_values": null
+        }
+      ]
+    },
+    {
+      "chart_number": 2,
+      "type": "ScatterChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": "'Drug Cost and Lifespan'!$A$2:$A$1000",
+          "y_values": null
+        }
+      ]
+    }
+  ],
+  "Spending Lifespan Transposed": [
+    {
+      "chart_number": 1,
+      "type": "LineChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": null,
+          "y_values": "'Spending Lifespan Transposed'!$B$2:$B$20"
+        }
+      ]
+    }
+  ],
+  "Health Spending and Lifespan": [
+    {
+      "chart_number": 1,
+      "type": "LineChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": null,
+          "y_values": "'Health Spending and Lifespan'!$B$2:$B$20"
+        }
+      ]
+    },
+    {
+      "chart_number": 2,
+      "type": "LineChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": null,
+          "y_values": "'Health Spending and Lifespan'!$B$2:$B$20"
+        }
+      ]
+    }
+  ],
+  "UK": [
+    {
+      "chart_number": 1,
+      "type": "LineChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": null,
+          "y_values": "UK!$C$2:$C$19029"
+        },
+        {
+          "series_number": 2,
+          "x_values": null,
+          "y_values": "UK!$D$2:$D$19029"
+        }
+      ]
+    },
+    {
+      "chart_number": 2,
+      "type": "ScatterChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": "UK!$C$2:$C$19029",
+          "y_values": null
+        }
+      ]
+    },
+    {
+      "chart_number": 3,
+      "type": "ScatterChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": "UK!$C$2:$C$19029",
+          "y_values": null
+        }
+      ]
+    }
+  ],
+  "Lifespan and JAMA": [
+    {
+      "chart_number": 1,
+      "type": "ScatterChart",
+      "title": "US Average Life expectancy",
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": "'Lifespan and JAMA'!$A$2:$A$220",
+          "y_values": null
+        },
+        {
+          "series_number": 2,
+          "x_values": "'Lifespan and JAMA'!$A$2:$A$220",
+          "y_values": null
+        }
+      ]
+    },
+    {
+      "chart_number": 2,
+      "type": "ScatterChart",
+      "title": "US Average Life expectancy",
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": "'Lifespan and JAMA'!$A$2:$A$220",
+          "y_values": null
+        },
+        {
+          "series_number": 2,
+          "x_values": "'Lifespan and JAMA'!$A$2:$A$220",
+          "y_values": null
+        }
+      ]
+    }
+  ],
+  "drugs-diseases-studied": [
+    {
+      "chart_number": 1,
+      "type": "PieChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": null,
+          "y_values": "('drugs-diseases-studied'!$B$4,'drugs-diseases-studied'!$B$5)"
+        }
+      ]
+    }
+  ],
+  "holocaust": [
+    {
+      "chart_number": 1,
+      "type": "BarChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": null,
+          "y_values": "holocaust!$B$2:$B$3"
+        }
+      ]
+    }
+  ],
+  "Healthcare Spending": [
+    {
+      "chart_number": 1,
+      "type": "LineChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": null,
+          "y_values": "'Healthcare Spending'!$B$2:$B$20"
+        }
+      ]
+    }
+  ],
+  "life-expectancy": [
+    {
+      "chart_number": 1,
+      "type": "LineChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": null,
+          "y_values": "'life-expectancy'!$C$2:$C$19029"
+        },
+        {
+          "series_number": 2,
+          "x_values": null,
+          "y_values": "'life-expectancy'!$D$2:$D$19029"
+        }
+      ]
+    },
+    {
+      "chart_number": 2,
+      "type": "ScatterChart",
+      "title": null,
+      "series": [
+        {
+          "series_number": 1,
+          "x_values": "'life-expectancy'!$C$2:$C$19029",
+          "y_values": null
+        }
+      ]
+    }
+  ]
+}
