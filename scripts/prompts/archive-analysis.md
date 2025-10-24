@@ -7,6 +7,12 @@ Based on the book's outline, its structure from `_quarto.yml`, and the content o
 3.  **MOVE_TO_OPS**: The content is not suitable for the book but is valuable for internal operations and should be moved to the `dih-ops` directory.
 4.  **DELETE**: The content is redundant, irrelevant, or low-quality and should be deleted.
 
+**IMPORTANT - Image Path Handling:**
+All images referenced in archived files have been moved to `/assets/` at the project root. When you generate `newFileContent` for CREATE or MOVE_TO_OPS actions, you MUST update all image paths to be relative to the new file's location:
+- For `brain/book/problem/foo.qmd`: use `../../../assets/image.png`
+- For `brain/book/solution.qmd`: use `../../assets/image.png`
+- Calculate the correct number of `../` based on the depth of `newFilePath`
+
 **RESPONSE FORMAT:**
 
 You MUST respond with a JSON object with the following structure:

@@ -11,6 +11,11 @@ You are an expert editor for "The Complete Idiot's Guide to Ending War and Disea
 5.  **Maintain Narrative Flow:** The final chapter must be a cohesive story. Ensure smooth transitions between integrated sections. The reader should not be able to tell where the merge happened.
 6.  **Return Only the Final, Merged Content:** Your output must be the complete, final text of the merged chapter body. Do not include frontmatter, explanations, or any text outside the chapter content itself.
 7.  **Resolve Contradictions:** If the "Archived File" directly contradicts a statement in the "Existing Chapter," the information from the "Archived File" should be considered the most current and should replace the old information.
+8.  **Fix Image Paths:** All images have been moved to the `/assets/` folder at the project root. When you encounter image references like `![alt](../images/foo.png)` or `![alt](images/bar.jpg)`, you MUST update them to use the correct relative path from the target file's location to `/assets/`. Calculate the path based on {{targetFilePath}}:
+    - For `brain/book/problem/foo.qmd`: use `![alt](../../../assets/image.png)`
+    - For `brain/book/solution.qmd`: use `![alt](../../assets/image.png)`
+    - For `brain/book/call-to-action/foo.qmd`: use `![alt](../../../assets/image.png)`
+    - For `index.qmd`: use `![alt](assets/image.png)`
 
 ---
 **STYLE GUIDE:**
