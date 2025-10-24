@@ -17,6 +17,7 @@ Usage:
 
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
+from pathlib import Path
 
 # Official Color Palette (Black & White Only)
 COLOR_BLACK = '#000000'      # Pure black - bars, text, lines
@@ -186,6 +187,23 @@ def get_presentation_font_sizes():
         'axis_label': 20,
         'data_label': 18,
     }
+
+
+def get_project_root():
+    """
+    Find the project root directory dynamically.
+
+    Works regardless of where Quarto runs the code from.
+    Returns the path to 'decentralized-institutes-of-health' directory.
+
+    Returns:
+        Path: Project root directory
+    """
+    project_root = Path.cwd()
+    if project_root.name != 'decentralized-institutes-of-health':
+        while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+            project_root = project_root.parent
+    return project_root
 
 
 # Convenience function for quick setup

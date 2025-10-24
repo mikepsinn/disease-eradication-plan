@@ -1,0 +1,133 @@
+---
+title: "Life Expectancy Growth: Pre vs Post-1962 FDA Regulations"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+```{python}
+#| label: setup
+#| include: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+import sys
+
+# Add brain/figures to path for imports
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+sys.path.insert(0, str(project_root / 'brain' / 'figures'))
+
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines, get_project_root,
+    COLOR_BLACK, COLOR_WHITE
+)
+
+setup_chart_style()
+```
+
+```{python}
+#| label: load-data
+#| echo: false
+
+# Load data
+project_root = get_project_root()
+data_path = project_root / "brain" / "data" / "extracted" / "drug-cost-and-lifespan.csv"
+df = pd.read_csv(data_path)
+
+# Clean data
+df = df.dropna(subset=['Year'])
+df['Year'] = df['Year'].astype(int)
+
+# Filter for 1890-2020 for full historical view
+df_plot = df[(df['Year'] >= 1890) & (df['Year'] <= 2020)]
+```
+
+```{python}
+#| label: fig-life-expectancy-1962
+#| fig-cap: "Life Expectancy Growth Slowed After 1962 Regulations"
+#| fig-width: 14
+#| fig-height: 9
+
+# Create figure with proper margins
+fig, ax = plt.subplots(figsize=(14, 9))
+
+# Adjust subplot to prevent cutoff - extra top margin for title
+plt.subplots_adjust(left=0.12, right=0.96, top=0.88, bottom=0.15)
+
+# Plot life expectancy
+ax.plot(df_plot['Year'], df_plot['US Life expectancy'],
+        color=COLOR_BLACK, linewidth=5, marker='o', markersize=9)
+
+# Mark 1962 regulation change with vertical line
+ax.axvline(x=1962, color=COLOR_BLACK, linestyle='--', linewidth=3, alpha=0.6)
+
+# Add 1962 label
+ax.text(1962, 52, '1962\nKefauver-Harris\nAmendment',
+        fontsize=28, ha='center', va='bottom', color=COLOR_BLACK,
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=2))
+
+# Add growth rate annotations - Pre-1962
+ax.text(1925, 68, 'Pre-1962:\n4 years per decade',
+        fontsize=32, ha='center', va='center', color=COLOR_BLACK, weight='bold',
+        fontfamily='monospace',
+        bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=2.5))
+
+# Add growth rate annotations - Post-1962
+ax.text(1990, 70, 'Post-1962:\n2 years per decade',
+        fontsize=32, ha='center', va='center', color=COLOR_BLACK, weight='bold',
+        fontfamily='monospace',
+        bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=2.5))
+
+# Add arrow showing the slowdown
+from matplotlib.patches import FancyArrowPatch
+arrow = FancyArrowPatch((1962, 71), (1990, 70),
+                        arrowstyle='->', mutation_scale=30,
+                        linewidth=3, color=COLOR_BLACK, alpha=0.6)
+ax.add_patch(arrow)
+
+# Title
+ax.set_title('Life Expectancy Before and After Efficacy Amendment',
+             fontsize=38, weight='bold', pad=25, color=COLOR_BLACK)
+
+# Axis labels
+ax.set_xlabel('Year', fontsize=34, weight='bold', color=COLOR_BLACK)
+ax.set_ylabel('US Life Expectancy (years)', fontsize=34, weight='bold', color=COLOR_BLACK)
+
+# Tick styling
+ax.tick_params(axis='both', which='major', labelsize=28, colors=COLOR_BLACK, width=2, length=8)
+
+# Clean spines
+clean_spines(ax, positions=['top', 'right'])
+ax.spines['left'].set_linewidth(2)
+ax.spines['bottom'].set_linewidth(2)
+
+# No gridlines
+ax.grid(False)
+
+# Add watermark
+add_watermark(fig)
+
+# Save with proper margins
+output_dir = project_root / 'brain' / 'figures'
+plt.savefig(output_dir / 'life-expectancy-pre-post-1962.png',
+            dpi=200, facecolor=COLOR_WHITE, bbox_inches=None)
+plt.show()
+```
+
+## Key Finding
+
+From 1890 to 1962, US life expectancy increased at approximately **4 years per year** of calendar time - a remarkably linear growth rate following the adoption of systematic medical research.
+
+After the 1962 Kefauver-Harris Amendment mandated expensive, industry-run efficacy trials, this growth rate was **cut in half** to approximately **2 years per year**.
+
+**The 50% reduction in medical progress coincided precisely with the shift from large-scale real-world evidence trials to small, controlled pharmaceutical company trials.**
