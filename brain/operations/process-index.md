@@ -1,6 +1,6 @@
 ---
 title: Operations Process Index — How We Run the Plan
-description: 'One place for all repeatable processes needed to deliver the 1% Treaty → DIH → dFDA plan. Each process has an owner role, a WIG, and simple lead/lag checks.'
+description: All repeatable processes for 1% Treaty → DIH → dFDA plan with owners, WIGs, and lead/lag checks.
 published: true
 date: 2025-08-22T00:00:00.000Z
 tags: [operations, processes, sop, roadmap]

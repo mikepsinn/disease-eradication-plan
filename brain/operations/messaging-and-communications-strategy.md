@@ -1,6 +1,6 @@
 ---
 title: Framework for Estimating the Value of Longevity Sentiment Analysis and Messaging
-description: A framework to estimate the financial and strategic value of analyzing public sentiment and refining messaging to accelerate the dFDA's mission by improving fundraising and building public support.
+description: Framework for analyzing sentiment and refining messaging to accelerate dFDA mission through fundraising and public support.
 published: true
 date: 2025-06-08T02:00:00.000Z
 tags: [strategy, messaging, roi, sentiment analysis]

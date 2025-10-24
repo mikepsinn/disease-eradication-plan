@@ -10,6 +10,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
+// Additional patterns for files that don't need frontmatter (docs, workflows, operational files)
+const SKIP_FRONTMATTER_PATTERNS = [
+    'README.md', 'CLAUDE.md', 'CONTRIBUTING.md', 'todo.md', 'brainstorm.md', 
+    'presentation.md', 'references-to-update.md', 'deployment-guide.md', 
+    '-guide.md', 'GUIDE.md', 'data-sources-references.md', 'EXTRACTION_SUMMARY.md',
+    'thinkbynumbers-images-guide.md', 'ACCURACY_AUDIT.md', 'ACCURACY_FIX_PLAN.md',
+    'CONTENT_REVIEW_CHECKLIST.md', 'REFERENCES-WORKFLOW.md', 'DIH_WEBSITE_README.md',
+    'AIRTABLE_GUIDE.md', 'FORMATTING_GUIDE.md', '-playbook.md', '-workflow.md',
+    '-target-list.md', 'hiring-plan.md', '-decision-tree.md', '-management-and-security.md'
+];
 
 async function findMarkdownFiles(dir: string): Promise<string[]> {
     let mdFiles: string[] = [];
@@ -32,6 +42,13 @@ async function validateFrontmatter(fix: boolean) {
     let errorCount = 0;
 
     for (const filePath of allFiles) {
+        // Skip files that don't need frontmatter (README, guides, etc.)
+        const fileName = path.basename(filePath);
+        const shouldSkip = SKIP_FRONTMATTER_PATTERNS.some(pattern => fileName.includes(pattern));
+        if (shouldSkip) {
+            continue;
+        }
+        
         let fileContent = await fs.promises.readFile(filePath, 'utf-8');
         
         try {

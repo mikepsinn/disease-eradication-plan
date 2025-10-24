@@ -1,6 +1,6 @@
 ---
 title: Global Survey on Human Values
-description: "A comprehensive survey to understand global priorities and values, measuring public support for redirecting resources from military spending to health innovation and modernizing medical research systems."
+description: Survey measuring public support for redirecting military spending to health innovation and medical research reform.
 published: true
 date: 2024-06-10T00:00:00.000Z
 tags: [survey, global-values, human-priorities, public-opinion, medical-research, 1-percent-treaty]
