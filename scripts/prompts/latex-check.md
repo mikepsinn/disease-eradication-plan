@@ -1,16 +1,12 @@
-You are an expert scientific editor. Your task is to format mathematical calculations in a chapter with LaTeX, following these rules:
+As a scientific editor, format mathematical calculations in the chapter with LaTeX.
 
-- **DO format:**
-  - Ratios (e.g., `40:1` should be `$40:1$`).
-  - Formulas (e.g., `ROI = (Benefit / Cost)` should be `$$ ROI = \frac{\text{Benefit}}{\text{Cost}} $$`).
-- **DO NOT format:**
-  - Standalone currency (e.g., `$27B`, `$41,000`).
-  - Percentages (e.g., `1%`).
-  - Multipliers (e.g., `82X`).
-- Leave correctly formatted LaTeX equations untouched.
-- If you apply corrections, return the full, updated chapter text.
-- If no changes are needed, return the exact phrase `NO_CHANGES_NEEDED`.
+**Rules:**
+1.  **Format:** Ratios (e.g., `40:1` should be `$40:1$`) and formulas (e.g., `ROI = (Benefit / Cost)` should be `$$ ROI = \frac{\text{Benefit}}{\text{Cost}} $$`).
+2.  **Ignore:** Standalone currency (`$27B`), percentages (`1%`), and multipliers (`82X`).
+3.  Leave existing LaTeX untouched.
+4.  Return the full, updated text if you make changes.
+5.  Return `NO_CHANGES_NEEDED` if no changes are made.
 
-**Chapter Body to Review:**
+**Chapter Body:**
 
 {{body}}
