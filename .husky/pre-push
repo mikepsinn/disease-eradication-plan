@@ -1,8 +1,9 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "📋 Copying GUIDES to .clinerules..."
-pnpm copy-guides
+# Not necessary because cline can use .cursor/rules/content-standards.mdc
+#echo "📋 Copying GUIDES to .clinerules..."
+#pnpm copy-guides
 
 # echo "🔍 Rendering Quarto book to check for errors..."
 # echo "   (Use 'git push --no-verify' to skip this check)"
