@@ -16,7 +16,8 @@ temp-repo/
 # IDE specific files
 .vscode/
 .idea/
-.claude/
+.claude/settings.local.json  # Keep user-specific settings local
+# But commit .claude/commands/ to share slash commands with team
 
 # Node rules:
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
@@ -71,3 +72,4 @@ index.toc
 nul
 dih-index.html
 !apps/**/*.html
+.claude/settings.local.json

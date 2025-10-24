@@ -25,7 +25,8 @@
     "simple-git": "^3.28.0",
     "xlsx": "^0.18.5",
     "yargs": "^18.0.0",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "chokidar": "^4.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -53,6 +54,7 @@
     "archive:file": "tsx scripts/review/archive-process-file.ts",
     "archive:all": "tsx scripts/review/archive-process-all.ts",
     "review": "tsx scripts/review/review.ts",
+    "watch": "tsx scripts/watch-and-review.ts",
     "extract-references": "tsx scripts/extract-references-without-urls.ts",
     "integrate-references": "tsx scripts/integrate-references.ts",
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
