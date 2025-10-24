@@ -705,9 +705,14 @@ export async function generateFigureForChapter(filePath: string): Promise<{ acti
     console.log(`Found existing figure for ${filePath}: ${responseJson.existing_figure}`);
     return { action: 'include', filename: responseJson.existing_figure };
   }
-  if (responseJson.filename && responseJson.code) {
+  if (responseJson.filename && responseJson.code && responseJson.insertion_paragraph) {
     console.log(`Generated new figure for ${filePath}: ${responseJson.filename}`);
-    return { action: 'create', filename: responseJson.filename, code: responseJson.code };
+    return { 
+      action: 'create', 
+      filename: responseJson.filename, 
+      code: responseJson.code,
+      insertion_paragraph: responseJson.insertion_paragraph
+    };
   }
 
   return { action: 'none' };
