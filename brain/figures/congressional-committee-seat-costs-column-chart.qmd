@@ -1,0 +1,85 @@
+```{python}
+#| label: fig-congressional-committee-seat-costs
+#| fig-cap: "The Price of Power: How Congressional Committee Seats are Sold"
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# --- Find Project Root --- 
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# --- Imports from _chart_style.py --- 
+import sys
+sys.path.append(str(project_root / 'brain' / 'figures'))
+from _chart_style import setup_chart_style, add_watermark, clean_spines
+from _chart_style import COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
+
+# --- Setup Chart Style ---
+setup_chart_style()
+
+# --- Data ---
+# Source: Chapter text, based on referenced news articles
+committees = ['Speaker', 'Ways & Means', 'Appropriations', 'Energy &\nCommerce', 'Regular Seat']
+dem_prices = [31, 1.8, 1.8, 1.8, 0.75]  # Using midpoint for range $500K-1M -> $750K
+rep_prices = [20, 1.2, 1.2, 1.2, 0.875]
+
+# --- Create Plot ---
+fig, ax = plt.subplots(figsize=(12, 7))
+
+x = np.arange(len(committees))
+width = 0.35
+
+# --- Draw Bars ---
+rects1 = ax.bar(x - width/2, dem_prices, width, label='Democrats (DCCC)',
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=1.5)
+rects2 = ax.bar(x + width/2, rep_prices, width, label='Republicans (NRCC)',
+                color=COLOR_WHITE, edgecolor=COLOR_BLACK, hatch=PATTERN_DIAGONAL, linewidth=1.5)
+
+# --- Add Labels and Title ---
+ax.set_title('The Price of Power: Buying Congressional Committee Seats',
+             fontsize=26, weight='bold', color=COLOR_BLACK, pad=30)
+
+ax.set_xticks(x)
+ax.set_xticklabels(committees, fontsize=14, color=COLOR_BLACK)
+ax.tick_params(axis='x', length=0, pad=10)
+ax.tick_params(axis='y', length=0)
+
+# --- Remove Y-Axis (Tufte style) as values are labeled directly ---
+ax.get_yaxis().set_visible(False)
+
+# --- Add Data Labels on Bars ---
+def add_labels(rects, color):
+    for rect in rects:
+        height = rect.get_height()
+        ax.annotate(f'${height:g}M', # Use 'g' to remove trailing zeros
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 5),  # 5 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom', fontsize=16, weight='bold', color=color)
+
+add_labels(rects1, COLOR_BLACK)
+add_labels(rects2, COLOR_BLACK)
+
+# --- Set Y-Limit to create space for labels ---
+ax.set_ylim(0, max(dem_prices) * 1.15)
+
+# --- Add Legend ---
+ax.legend(frameon=False, fontsize=12, loc='upper right')
+
+# --- Clean Spines & Add Watermark ---
+clean_spines(ax, positions=['top', 'right', 'left'])
+ax.spines['bottom'].set_linewidth(1.5)
+add_watermark(fig)
+
+# --- Save and Show ---
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'congressional-committee-seat-costs-column-chart.png',
+            dpi=300, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.show()
+
+```
