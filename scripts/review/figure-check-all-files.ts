@@ -1,9 +1,69 @@
-import { getStaleFiles, figureCheckFile } from './utils';
+import { getStaleFiles, figureCheckFile, generateFigureForChapter } from './utils';
+import { getBookFiles } from '../lib/file-utils';
 import dotenv from 'dotenv';
+import fs from 'fs-extra';
+import path from 'path';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 dotenv.config();
 
 async function main() {
+  const argv = await yargs(hideBin(process.argv)).option('generate', {
+    alias: 'g',
+    type: 'boolean',
+    description: 'Generate new figures for chapters that would benefit from them.',
+    default: false,
+  }).argv;
+
+  if (argv.generate) {
+    await generateFigures();
+  } else {
+    await checkFigures();
+  }
+}
+
+async function generateFigures() {
+  console.log('Starting proactive figure generation for all book files...');
+  const bookFiles = await getBookFiles();
+
+  for (const file of bookFiles) {
+    console.log(`Analyzing chapter: ${file}`);
+    const result = await generateFigureForChapter(file); // Pass file path for context
+    let content = await fs.readFile(file, 'utf-8');
+    let contentModified = false;
+
+    if (result.action === 'create' && result.filename && result.code) {
+      const figurePath = path.join('brain/figures', result.filename);
+      await fs.writeFile(figurePath, result.code);
+      console.log(`✓ Created new figure: ${figurePath}`);
+      
+      const includeDirective = `\n\n{{< include ${path.relative(path.dirname(file), figurePath).replace(/\\/g, '/')} >}}\n`;
+      if (!content.includes(result.filename)) {
+        content += includeDirective;
+        contentModified = true;
+        console.log(`✓ Appended new figure include to ${file}.`);
+      }
+
+    } else if (result.action === 'include' && result.filename) {
+      const includeDirective = `\n\n{{< include ${path.relative(path.dirname(file), result.filename).replace(/\\/g, '/')} >}}\n`;
+      if (!content.includes(result.filename)) {
+        content += includeDirective;
+        contentModified = true;
+        console.log(`✓ Appended existing figure include to ${file}.`);
+      }
+    } else if (result.action === 'none') {
+      console.log(`- No action needed for ${file}.`);
+    }
+
+    if (contentModified) {
+      await fs.writeFile(file, content);
+    }
+  }
+  console.log('\nFigure generation process complete.');
+}
+
+async function checkFigures() {
   console.log('Checking brain/book files for stale figure-checks...');
 
   const staleFilesToCheck = await getStaleFiles('lastFigureCheckHash', 'brain/book');

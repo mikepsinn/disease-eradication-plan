@@ -656,3 +656,59 @@ export async function latexCheckFileWithLLM(filePath: string): Promise<void> {
   await updateFileWithHash(filePath, finalBody, frontmatter, 'lastLatexCheckHash');
   console.log(`Successfully checked LaTeX usage for ${filePath}.`);
 }
+
+export async function generateFigureForChapter(filePath: string): Promise<{ action: 'create' | 'include' | 'none', filename?: string, code?: string }> {
+  console.log(`\nAnalyzing chapter ${filePath} for potential figures...`);
+  const chapterContent = await fs.readFile(filePath, 'utf-8');
+  const { content: chapterBody } = matter(chapterContent);
+
+  // Get list of existing figures
+  const figureFiles = await glob('brain/figures/**/*.qmd');
+  const existingFigures = figureFiles.join('\n');
+
+  // Get Design Guide and Example File Content
+  const designGuide = await fs.readFile('GUIDES/DESIGN_GUIDE.md', 'utf-8');
+  
+  let prompt = await fs.readFile('scripts/prompts/figure-generator-prompt.md', 'utf-8');
+  
+  // Inject the design guide
+  prompt = prompt.replace('... [The full design guide content as provided previously] ...', designGuide);
+
+  // The prompt now has placeholders for multiple examples, so we don't need to load them here.
+  // The LLM will use the examples hardcoded in the prompt file.
+
+  prompt = prompt
+    .replace('{{existing_figures}}', existingFigures)
+    .replace('{{chapter_content}}', chapterBody);
+
+  const responseText = await generateGeminiContent(prompt);
+
+  if (responseText.trim() === 'NO_ACTION_NEEDED') {
+    console.log(`No new figure needed for ${filePath}.`);
+    return { action: 'none' };
+  }
+
+  // More robustly find the JSON object, even with leading text and markdown fences.
+  const jsonStart = responseText.indexOf('{');
+  const jsonEnd = responseText.lastIndexOf('}');
+
+  if (jsonStart === -1 || jsonEnd === -1 || jsonEnd < jsonStart) {
+    console.error(`No valid JSON object found in LLM response for ${filePath}.`);
+    console.error("Raw response:", responseText);
+    throw new Error(`No valid JSON object found in LLM response for ${filePath}.`);
+  }
+
+  const jsonString = responseText.substring(jsonStart, jsonEnd + 1);
+  const responseJson = JSON.parse(jsonString);
+
+  if (responseJson.existing_figure) {
+    console.log(`Found existing figure for ${filePath}: ${responseJson.existing_figure}`);
+    return { action: 'include', filename: responseJson.existing_figure };
+  }
+  if (responseJson.filename && responseJson.code) {
+    console.log(`Generated new figure for ${filePath}: ${responseJson.filename}`);
+    return { action: 'create', filename: responseJson.filename, code: responseJson.code };
+  }
+
+  return { action: 'none' };
+}
