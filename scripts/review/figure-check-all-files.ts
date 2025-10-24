@@ -33,24 +33,24 @@ async function generateFigures() {
     let content = await fs.readFile(file, 'utf-8');
     let contentModified = false;
 
-    if (result.action === 'create' && result.filename && result.code) {
+    if (result.action === 'create' && result.filename && result.code && result.insertion_paragraph) {
       const figurePath = path.join('brain/figures', result.filename);
       await fs.writeFile(figurePath, result.code);
       console.log(`✓ Created new figure: ${figurePath}`);
       
       const includeDirective = `\n\n{{< include ${path.relative(path.dirname(file), figurePath).replace(/\\/g, '/')} >}}\n`;
-      if (!content.includes(result.filename)) {
-        content += includeDirective;
+      if (content.includes(result.insertion_paragraph)) {
+        content = content.replace(result.insertion_paragraph, `${result.insertion_paragraph}\n${includeDirective}`);
         contentModified = true;
-        console.log(`✓ Appended new figure include to ${file}.`);
+        console.log(`✓ Inserted new figure after paragraph in ${file}.`);
       }
 
-    } else if (result.action === 'include' && result.filename) {
+    } else if (result.action === 'include' && result.filename && result.insertion_paragraph) {
       const includeDirective = `\n\n{{< include ${path.relative(path.dirname(file), result.filename).replace(/\\/g, '/')} >}}\n`;
-      if (!content.includes(result.filename)) {
-        content += includeDirective;
+      if (!content.includes(result.filename) && content.includes(result.insertion_paragraph)) {
+        content = content.replace(result.insertion_paragraph, `${result.insertion_paragraph}\n${includeDirective}`);
         contentModified = true;
-        console.log(`✓ Appended existing figure include to ${file}.`);
+        console.log(`✓ Inserted existing figure after paragraph in ${file}.`);
       }
     } else if (result.action === 'none') {
       console.log(`- No action needed for ${file}.`);

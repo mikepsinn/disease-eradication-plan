@@ -14,7 +14,7 @@ As a data visualization expert, your task is to analyze a book chapter and deter
 1.  **Select Best Chart Type:** Based on the data and the chapter's narrative, choose the most effective visualization (e.g., bar/column for comparison, pie for composition, line for trends over time).
 2.  **Filename:** Create a descriptive, kebab-case filename following the format `[topic]-[comparison/metric]-[type]-chart.qmd`.
 3.  **Code:** Generate the complete, executable Python code for the `.qmd` file. The code must strictly adhere to the provided Design Guide and Examples. It must be minimalist, use the black-and-white palette, and save a `.png` output.
-4.  **Output:** Return a single JSON object with `filename` and `code` keys.
+4.  **Output:** Return a single JSON object with `filename`, `code`, and `insertion_paragraph` keys. The `insertion_paragraph` should be the full text of the paragraph in the chapter that the figure should be placed immediately after.
 
 **CRITICAL CONTEXT & EXAMPLES:**
 
@@ -142,5 +142,6 @@ You will be given the chapter content and a list of existing figures.
     ```json
     {
       "filename": "your-generated-filename.qmd",
-      "code": "```{python}\n# Your full, executable Python code here\n```"
+      "code": "```{python}\n# Your full, executable Python code here\n```",
+      "insertion_paragraph": "The full text of the paragraph that the figure should follow."
     }

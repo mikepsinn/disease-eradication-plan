@@ -657,7 +657,7 @@ export async function latexCheckFileWithLLM(filePath: string): Promise<void> {
   console.log(`Successfully checked LaTeX usage for ${filePath}.`);
 }
 
-export async function generateFigureForChapter(filePath: string): Promise<{ action: 'create' | 'include' | 'none', filename?: string, code?: string }> {
+export async function generateFigureForChapter(filePath: string): Promise<{ action: 'create' | 'include' | 'none', filename?: string, code?: string, insertion_paragraph?: string }> {
   console.log(`\nAnalyzing chapter ${filePath} for potential figures...`);
   const chapterContent = await fs.readFile(filePath, 'utf-8');
   const { content: chapterBody } = matter(chapterContent);
