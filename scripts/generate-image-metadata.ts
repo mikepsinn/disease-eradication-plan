@@ -22,10 +22,9 @@
 import { GoogleGenAI } from '@google/genai';
 import fs from 'fs';
 import path from 'path';
-import { glob } from 'glob';
 import sharp from 'sharp';
 import dotenv from 'dotenv';
-import { execSync } from 'child_process';
+import { exiftool } from 'exiftool-vendored';
 
 dotenv.config();
 
@@ -94,26 +93,13 @@ async function getImageFiles(): Promise<string[]> {
  */
 async function isAnalyzed(filepath: string): Promise<boolean> {
   try {
-    const ext = path.extname(filepath).toLowerCase();
-
-    if (ext === '.png') {
-      // Check PNG text chunks
-      const metadata = await sharp(filepath).metadata();
-      return !!(metadata as any)?.exif?.UserComment?.includes(METADATA_MARKER);
-    } else if (['.jpg', '.jpeg'].includes(ext)) {
-      // Check EXIF data using exiftool
-      try {
-        const output = execSync(`exiftool -Comment "${filepath}"`, { encoding: 'utf-8' });
-        return output.includes(METADATA_MARKER);
-      } catch {
-        return false;
-      }
-    }
+    const tags = await exiftool.read(filepath);
+    const comment = tags.Comment || tags.UserComment || '';
+    return comment.toString().includes(METADATA_MARKER);
   } catch (error) {
-    console.error(`Error checking if ${filepath} is analyzed:`, error);
+    // File doesn't have metadata or exiftool can't read it
+    return false;
   }
-
-  return false;
 }
 
 /**
@@ -236,39 +222,26 @@ function getMimeType(filepath: string): string {
 async function updateImageMetadata(filepath: string, metadata: ImageMetadata): Promise<void> {
   if (options.skipMetadata) return;
 
-  const ext = path.extname(filepath).toLowerCase();
-
   try {
-    if (ext === '.png') {
-      // For PNG, use sharp to add text chunks
-      const metadataString = JSON.stringify({
-        description: metadata.description,
-        keywords: metadata.keywords,
-        chapters: metadata.suggestedChapters,
-        source: metadata.source || '',
-        [METADATA_MARKER]: true
-      });
+    const metadataString = JSON.stringify({
+      description: metadata.description,
+      keywords: metadata.keywords,
+      chapters: metadata.suggestedChapters,
+      source: metadata.source || '',
+      [METADATA_MARKER]: true
+    });
 
-      // Note: sharp doesn't support writing text chunks directly
-      // We'll use exiftool as fallback
-      execSync(`exiftool -overwrite_original -Comment="${metadataString}" "${filepath}"`, { encoding: 'utf-8' });
-
-    } else if (['.jpg', '.jpeg'].includes(ext)) {
-      // For JPEG, use exiftool
-      const metadataString = JSON.stringify({
-        description: metadata.description,
-        keywords: metadata.keywords,
-        chapters: metadata.suggestedChapters,
-        source: metadata.source || '',
-        [METADATA_MARKER]: true
-      });
-
-      execSync(`exiftool -overwrite_original -Comment="${metadataString}" -UserComment="${metadataString}" "${filepath}"`, { encoding: 'utf-8' });
-    }
+    // Use exiftool-vendored to write metadata
+    await exiftool.write(filepath, {
+      Comment: metadataString,
+      UserComment: metadataString,
+      Description: metadata.description,
+      Keywords: metadata.keywords
+    });
 
     console.log(`  ✓ Metadata updated`);
   } catch (error) {
-    console.log(`  ⚠ Could not update metadata (exiftool not installed?)`);
+    console.log(`  ⚠ Could not update metadata:`, error);
   }
 }
 
@@ -277,14 +250,13 @@ async function updateImageMetadata(filepath: string, metadata: ImageMetadata): P
  */
 async function readImageMetadata(filepath: string): Promise<Partial<ImageMetadata>> {
   try {
-    const output = execSync(`exiftool -j "${filepath}"`, { encoding: 'utf-8' });
-    const data = JSON.parse(output)[0];
+    const tags = await exiftool.read(filepath);
+    const comment = tags.Comment || tags.UserComment || '';
+    const commentStr = comment.toString();
 
-    // Try to parse stored metadata
-    const comment = data.Comment || data.UserComment || '';
-    if (comment.includes(METADATA_MARKER)) {
+    if (commentStr.includes(METADATA_MARKER)) {
       try {
-        const parsed = JSON.parse(comment);
+        const parsed = JSON.parse(commentStr);
         return {
           description: parsed.description,
           keywords: parsed.keywords || [],
@@ -297,7 +269,7 @@ async function readImageMetadata(filepath: string): Promise<Partial<ImageMetadat
       }
     }
   } catch {
-    // exiftool not available or other error
+    // exiftool can't read this file or other error
   }
 
   return { analyzed: false };
@@ -520,10 +492,14 @@ async function main() {
 
   console.log(`\n✓ Complete! Processed ${allMetadata.length} images`);
   console.log(`\n📖 View the guide at: ${OUTPUT_GUIDE}`);
+
+  // Clean up exiftool
+  await exiftool.end();
 }
 
 // Run
-main().catch(error => {
+main().catch(async error => {
   console.error('Fatal error:', error);
+  await exiftool.end();
   process.exit(1);
 });

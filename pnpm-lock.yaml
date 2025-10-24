@@ -93,6 +93,9 @@ importers:
       '@types/yargs':
         specifier: ^17.0.33
         version: 17.0.33
+      exiftool-vendored:
+        specifier: ^31.1.0
+        version: 31.1.0
       fs-extra:
         specifier: ^11.3.1
         version: 11.3.2
@@ -1362,6 +1365,9 @@ packages:
     resolution: {integrity: sha512-IHnV6A+zxU7XwmKFinmYjUcwlyK9+xkG3/s9KcQhI9BjQKycrJ1JRO+FbNYPwZiPKW3je/DR0k7w8/gLa5eaxQ==}
     deprecated: 'The package is now available as "qr": npm install qr'
 
+  '@photostructure/tz-lookup@11.2.1':
+    resolution: {integrity: sha512-ugPtvpdLwGQ8IWezSGFgUCYOpO/XXetfKLNv+UN2jjTYyfIDq9dA21GydGyzXuoQ06nN3VGBd3JxmEu+ZtXScg==}
+
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
@@ -1888,6 +1894,9 @@ packages:
 
   '@types/lodash@4.17.20':
     resolution: {integrity: sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA==}
+
+  '@types/luxon@3.7.1':
+    resolution: {integrity: sha512-H3iskjFIAn5SlJU7OuxUmTEpebK6TKB8rxZShDslBMZJ5u9S//KM1sbdAisiSrqwLQncVjnpi2OK2J51h+4lsg==}
 
   '@types/markdown-it-anchor@4.0.4':
     resolution: {integrity: sha512-3CFeYzh8q7DaQboo1g+nnyXjPIvvtzoM+iBQU25sfcWVnjXckAvZIwAmPSVwHxnIblcTVcGq1XjEJjiBZFKkRA==}
@@ -2501,6 +2510,10 @@ packages:
   baseline-browser-mapping@2.8.17:
     resolution: {integrity: sha512-j5zJcx6golJYTG6c05LUZ3Z8Gi+M62zRT/ycz4Xq4iCOdpcxwg7ngEYD4KA0eWZC7U17qh/Smq8bYbACJ0ipBA==}
     hasBin: true
+
+  batch-cluster@15.0.1:
+    resolution: {integrity: sha512-eUmh0ld1AUPKTEmdzwGF9QTSexXAyt9rA1F5zDfW1wUi3okA3Tal4NLdCeFI6aiKpBenQhR6NmK9bW9tBHTGPQ==}
+    engines: {node: '>=20'}
 
   big.js@6.2.2:
     resolution: {integrity: sha512-y/ie+Faknx7sZA5MfGA2xKlu0GDv8RWrXGsmlteyJQ2lvoKv9GBK/fpRMc2qlSoBAgNxrixICFCBefIq8WCQpQ==}
@@ -3286,6 +3299,19 @@ packages:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
 
+  exiftool-vendored.exe@13.38.0:
+    resolution: {integrity: sha512-oZx5enTAvSiIAXL+OEk7nNWrfUhEdKUpaGwDjCmz4VKwOa4HbisqyM808xPGPYj8X7XikcME/fq5hvevPeE3cw==}
+    os: [win32]
+
+  exiftool-vendored.pl@13.38.0:
+    resolution: {integrity: sha512-Q3xl1nnwswrsR5344z4NyqvI74fKwla+VJHY1N+32gcDgt8cs9KBsDUwcNzKHSOSa/MjEfniuCJVrQiqR05iag==}
+    os: ['!win32']
+    hasBin: true
+
+  exiftool-vendored@31.1.0:
+    resolution: {integrity: sha512-q8StxLawHLDvhqv/uoBYCfVbDskn49Cr5ouNCZhh4lgryGu1aymHwK9AvO6RcW2SbPm5MSnQDJOfGp2MW5Nnrw==}
+    engines: {node: '>=20.0.0'}
+
   exit@0.1.2:
     resolution: {integrity: sha512-Zk/eNKV2zbjpKzrsQ+n1G6poVbErQxJ0LBOJXaKZ1EViLzH+hrLu9cdXI4zw9dBQJslwBEpbQ2P1oS7nDxs6jQ==}
     engines: {node: '>= 0.8.0'}
@@ -3628,6 +3654,10 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  he@1.2.0:
+    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
+    hasBin: true
 
   hono@4.9.12:
     resolution: {integrity: sha512-SrTC0YxqPwnN7yKa8gg/giLyQ2pILCKoideIHbYbFQlWZjYt68D2A4Ae1hehO/aDQ6RmTcpqOV/O2yBtMzx/VQ==}
@@ -4324,6 +4354,10 @@ packages:
     resolution: {integrity: sha512-w3hD8/SQB7+lzU2r4VdFyzzOzKnUjTZIF/MQJGSSvni7Llewni4vuViRppfRAa2guOsY5k4jZyxw/i9DQHv+dw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  luxon@3.7.2:
+    resolution: {integrity: sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==}
+    engines: {node: '>=12'}
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -7533,6 +7567,8 @@ snapshots:
 
   '@paulmillr/qr@0.2.1': {}
 
+  '@photostructure/tz-lookup@11.2.1': {}
+
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
@@ -8364,6 +8400,8 @@ snapshots:
   '@types/linkify-it@5.0.0': {}
 
   '@types/lodash@4.17.20': {}
+
+  '@types/luxon@3.7.1': {}
 
   '@types/markdown-it-anchor@4.0.4':
     dependencies:
@@ -9674,6 +9712,8 @@ snapshots:
 
   baseline-browser-mapping@2.8.17: {}
 
+  batch-cluster@15.0.1: {}
+
   big.js@6.2.2: {}
 
   bignumber.js@9.3.1: {}
@@ -10622,6 +10662,23 @@ snapshots:
       signal-exit: 3.0.7
       strip-final-newline: 2.0.0
 
+  exiftool-vendored.exe@13.38.0:
+    optional: true
+
+  exiftool-vendored.pl@13.38.0:
+    optional: true
+
+  exiftool-vendored@31.1.0:
+    dependencies:
+      '@photostructure/tz-lookup': 11.2.1
+      '@types/luxon': 3.7.1
+      batch-cluster: 15.0.1
+      he: 1.2.0
+      luxon: 3.7.2
+    optionalDependencies:
+      exiftool-vendored.exe: 13.38.0
+      exiftool-vendored.pl: 13.38.0
+
   exit@0.1.2: {}
 
   expect@29.7.0:
@@ -11041,6 +11098,8 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  he@1.2.0: {}
 
   hono@4.9.12: {}
 
@@ -11902,6 +11961,8 @@ snapshots:
   lucide-react@0.542.0(react@19.1.0):
     dependencies:
       react: 19.1.0
+
+  luxon@3.7.2: {}
 
   magic-string@0.30.21:
     dependencies:
