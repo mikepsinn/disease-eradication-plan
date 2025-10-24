@@ -3,9 +3,31 @@ import matter from 'gray-matter';
 import yaml from 'js-yaml';
 import { glob } from 'glob';
 import * as path from 'path';
+import ignore from 'ignore';
 
 const ROOT_DIR = process.cwd();
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
+
+export async function getGitignorePatterns(): Promise<string[]> {
+    const gitignorePath = path.join(ROOT_DIR, '.gitignore');
+    try {
+        const gitignoreContent = await fs.readFile(gitignorePath, 'utf-8');
+        return gitignoreContent.split('\n').filter(line => line.trim() && !line.startsWith('#'));
+    } catch (error) {
+        console.error("Could not read .gitignore file:", error);
+        return [];
+    }
+}
+
+export async function findFiles(pattern: string): Promise<string[]> {
+    const gitignore = ignore().add(await getGitignorePatterns());
+    const files = await glob(pattern, {
+        cwd: ROOT_DIR,
+        nodir: true,
+        absolute: true,
+    });
+    return files.filter(file => !gitignore.ignores(path.relative(ROOT_DIR, file)));
+}
 
 export async function findBookFiles(): Promise<string[]> {
     const pattern = 'brain/book/**/*.qmd';

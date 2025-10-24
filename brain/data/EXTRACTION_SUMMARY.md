@@ -1,7 +1,7 @@
 # Excel Extraction Summary
 
 ## Source File
-`assets/life-expectancy-healthcare-spending-cost-of-drug-development.xlsx`
+`brain/data/life-expectancy-healthcare-spending-cost-of-drug-development.xlsx`
 
 ## Extraction Date
 October 24, 2025
@@ -151,7 +151,7 @@ python scripts/extract-excel-data.py
 ```
 
 ## Data Location
-- **Source:** `assets/life-expectancy-healthcare-spending-cost-of-drug-development.xlsx`
+- **Source:** `brain/data/life-expectancy-healthcare-spending-cost-of-drug-development.xlsx`
 - **Extracted CSV:** `brain/data/extracted/*.csv`
 - **Chart metadata:** `brain/data/extracted/chart_metadata.json`
 - **Generated charts:** `brain/figures/*.png`

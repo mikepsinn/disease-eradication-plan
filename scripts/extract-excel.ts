@@ -119,7 +119,7 @@ async function extractExcelFile(excelPath: string, outputDir: string): Promise<v
 }
 
 // Main execution
-const excelPath = process.argv[2] || 'assets/FDA Spending vs Life-Expectancy.xlsx';
+const excelPath = process.argv[2] || 'brain/data/FDA Spending vs Life-Expectancy.xlsx';
 const outputDir = process.argv[3] || 'assets/extracted-fda-data';
 
 extractExcelFile(path.resolve(excelPath), path.resolve(outputDir))
