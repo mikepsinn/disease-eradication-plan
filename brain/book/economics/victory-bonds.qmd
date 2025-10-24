@@ -11,6 +11,7 @@ tags:
 title-id: sec-victory-bonds
 lastFactCheckHash: 225cfe7e95312e30188197611aa5a6c66fa3d89ec7ccb7a6f196cbc36688166c
 lastStructureCheckHash: daea342506dda2b95ec81f43aeba6e9569587c373840b4b5478e41be351c3185
+lastLatexCheckHash: e4a7ca5f006a3c86efb22a93b2403cb8b236e47a08b09afdb44d6df277f08813
 ---
 *Disclaimer: This section is informational and illustrative, not an offer of securities. Any actual implementation would require formal legal review and regulatory compliance.*
 
@@ -85,11 +86,14 @@ Continue indefinitely—no maturity date means revenue never stops as long as tr
 
 **What the 1% Treaty redirects**: 1% = $27B/year to medical research
 
-**What bondholders get**: 10% of $27B = $2.7B/year
+**What bondholders get**: 
+$$ 10\% \times \$27\text{B} = \$2.7\text{B}/\text{year} $$
 
-**What funds research**: 90% of $27B = $24.3B/year
+**What funds research**: 
+$$ 90\% \times \$27\text{B} = \$24.3\text{B}/\text{year} $$
 
-**What countries keep**: 99% of military budgets = $2.67T
+**What countries keep**: 
+$$ 99\% \times \text{military budgets} = \$2.67\text{T} $$
 
 This shows investors they're not "taking" research money—90% goes to cures.
 
