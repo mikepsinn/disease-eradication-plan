@@ -2,7 +2,7 @@
 title: 📱 Viral Marketing Strategy
 subtitle: How to Make Curing Disease More Viral Than Cat Videos
 lastFactCheckHash: a1c41af377e010e8b38626e4f2f81ac78ede39f2e8de7315db96128bbf0c877a
-lastStructureCheckHash: 0be443ddcb619bf4156c34245265781a9f23c157f7337cb8448a19a37aad9d90
+lastStructureCheckHash: 46c65f6a11b584247e39c55657b65684006d00f8b89b215ea1cc7b11d84bc53b
 lastLatexCheckHash: f63ec3c3360890948a7dbbdbd38153bc482331d04f6b82c99f447e8418345a24
 ---
 ## The Goal: 280 Million Votes
@@ -23,6 +23,7 @@ Historical analysis shows: Every peaceful movement that gets **[3.5% active supp
 
 ### What Does Go Viral
 
+<!-- TODO: STRUCTURE (CONTRADICTION) - This uses the figure $337/year for per-person military spending. However, the 'Cost of War' chapter states this figure is $340 ('$340 per human on Earth'). Line 108 of this chapter also uses $340. Please update for consistency. -->
 - "Humanity has [13,000 nukes](../references.qmd#world-warheads) but no cure for your kid's cancer" (rage-inducing)
 - "You're spending $337/year on killing people, $8/year on curing them" (shocking)
 - "270% investment returns while saving humanity" (greed + altruism)
@@ -34,6 +35,7 @@ $$
 $$
 
 ### Emotional Triggers
+<!-- TODO: STRUCTURE (CONTRADICTION) - This uses the figure $337 for per-person military spending. The authoritative 'Cost of War' chapter and line 108 of this chapter both use $340. Please update for consistency. -->
 
 - **Anger**: "[FDA delays kill more than the drugs](../references.qmd#fda-drug-lag-deaths-estimate)"
 - **Fear**: "You'll die of disease, not war"
@@ -129,7 +131,7 @@ $$
 ### Economic Memes
 
 - "Raytheon CEO salary vs rare disease research funding"
-- "[Cost of one F-35](../references.qmd#f35-cost-vs-rare-disease-research) = 500 Oxford trials"
+- "[Cost of one F-35](../references.qmd#f35-cost-vs-rare-disease-research) = ~160 Oxford-style trials"
 - "We have money for 13,000 nukes but not your insulin"
 
 ### Emotional Memes
@@ -185,13 +187,13 @@ $$
 ### Daily Updates
 
 - "Today's death toll: [150,000](../references.qmd#who-daily-deaths)"
-- "Total spent on war today: $26 billion"
+- "Total spent on war today: ~$7.4 billion"
 - "Total spent on cures today: [$186 million](../references.qmd#global-gov-med-research-spending)"
 - "Ratio: Still insane"
 
 ### Personal Calculators
 
-- "Your tax contribution to war: $337"
+- "Your tax contribution to war: $340"
 - "Your tax contribution to cures: $8"
 - "If you redirected 1%: Lives saved: 0.003"
 
