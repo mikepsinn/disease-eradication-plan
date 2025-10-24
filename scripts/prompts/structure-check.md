@@ -30,10 +30,47 @@ When flagging duplicates, specify which chapter should be the SINGLE SOURCE OF T
 
 **OUTPUT:**
 
-- If no critical and embarassing issues, return "NO_CHANGES_NEEDED"
-- Otherwise: return ENTIRE chapter text with TODO comments added
-- If changes and needed, output must be LONGER than input (due to added TODOs)
-- Preserve all original text exactly (the links to .qmd files are correct, this is a quarto project so they're not supposed to end in .md)
+Return a JSON object with this structure:
+
+```json
+{
+  "status": "issues_found" | "no_changes_needed",
+  "comments": [
+    {
+      "afterLine": 42,
+      "type": "CONTRADICTION" | "DUPLICATION" | "MISSING_REFERENCE" | "OTHER",
+      "message": "This contradicts chapter X which says Y. Recommend updating to match.",
+      "context": "The economic impact was severe"
+    }
+  ]
+}
+```
+
+**Field Definitions:**
+- `status`: Either "issues_found" or "no_changes_needed"
+- `afterLine`: The line number AFTER which to insert the comment (use 0 to insert before first line)
+- `type`: Category of the issue found
+- `message`: The TODO comment text (do NOT include "<!-- TODO: STRUCTURE -" prefix, just the message)
+- `context`: A short snippet (5-15 words) from the line for validation. This ensures we insert at the right location.
+
+**Example:**
+If line 42 contains "The military budget is $800 billion" and contradicts another chapter, return:
+```json
+{
+  "status": "issues_found",
+  "comments": [{
+    "afterLine": 42,
+    "type": "CONTRADICTION",
+    "message": "Chapter 'Cost of War' says $886B. Use consistent figure.",
+    "context": "The military budget is $800 billion"
+  }]
+}
+```
+
+If no critical issues, return:
+```json
+{"status": "no_changes_needed", "comments": []}
+```
 
 ---
 

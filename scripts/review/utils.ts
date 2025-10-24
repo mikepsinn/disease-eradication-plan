@@ -380,6 +380,18 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
   console.log(`Successfully updated ${filePath}`);
 }
 
+interface StructureComment {
+  afterLine: number;
+  type: 'CONTRADICTION' | 'DUPLICATION' | 'MISSING_REFERENCE' | 'OTHER';
+  message: string;
+  context: string;
+}
+
+interface StructureCheckResponse {
+  status: 'issues_found' | 'no_changes_needed';
+  comments: StructureComment[];
+}
+
 export async function structureCheckFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nChecking structure of ${filePath} with Gemini...`);
   const originalContent = await fs.readFile(filePath, 'utf-8');
@@ -403,27 +415,67 @@ export async function structureCheckFileWithLLM(filePath: string): Promise<void>
 
   const responseText = await generateGeminiContent(prompt);
 
-  let finalBody;
-  if (responseText.trim() === 'NO_CHANGES_NEEDED') {
-    console.log(`File ${filePath} is already structured correctly. Updating metadata.`);
-    finalBody = body;
-  } else {
-    const trimmedResponse = responseText.trim();
-    const originalLength = body.length;
-    const responseLength = trimmedResponse.length;
-
-    // Safety check: reject if response is >50% shorter (likely LLM deleted content)
-    if (responseLength < originalLength * 0.5) {
-      console.error(`❌ ERROR: LLM response is ${Math.round((1 - responseLength/originalLength) * 100)}% shorter than original!`);
-      console.error(`   Original: ${originalLength} chars, Response: ${responseLength} chars`);
-      console.error(`   This suggests the LLM deleted content instead of adding TODO comments.`);
-      console.error(`   SKIPPING this file to prevent data loss.`);
-      return; // Don't update the file
+  // Parse JSON response
+  let response: StructureCheckResponse;
+  try {
+    // Extract JSON from response (handle markdown code blocks)
+    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.error(`❌ ERROR: No JSON found in LLM response for ${filePath}`);
+      console.error(`Response: ${responseText.substring(0, 500)}...`);
+      return;
     }
-
-    finalBody = trimmedResponse;
+    response = JSON.parse(jsonMatch[0]);
+  } catch (error) {
+    console.error(`❌ ERROR: Failed to parse JSON response for ${filePath}:`, error);
+    console.error(`Response: ${responseText.substring(0, 500)}...`);
+    return;
   }
 
+  // Check if changes are needed
+  if (response.status === 'no_changes_needed' || !response.comments || response.comments.length === 0) {
+    console.log(`File ${filePath} is already structured correctly. Updating metadata.`);
+    await updateFileWithHash(filePath, body, frontmatter, 'lastStructureCheckHash');
+    return;
+  }
+
+  // Insert comments into the body
+  const bodyLines = body.split('\n');
+  const insertedComments: string[] = [];
+
+  // Sort comments by line number (descending) to avoid line number shifts
+  const sortedComments = [...response.comments].sort((a, b) => b.afterLine - a.afterLine);
+
+  for (const comment of sortedComments) {
+    // Validate line number
+    if (comment.afterLine < 0 || comment.afterLine > bodyLines.length) {
+      console.warn(`⚠ Skipping comment at invalid line ${comment.afterLine} (file has ${bodyLines.length} lines)`);
+      continue;
+    }
+
+    // Optional: Validate context if provided
+    if (comment.context && comment.afterLine > 0) {
+      const lineContent = bodyLines[comment.afterLine - 1]; // afterLine is 1-indexed
+      if (!lineContent.includes(comment.context)) {
+        console.warn(`⚠ Context mismatch at line ${comment.afterLine}. Expected: "${comment.context}"`);
+        console.warn(`   Actual line: "${lineContent.substring(0, 100)}..."`);
+        // Continue anyway, but log the warning
+      }
+    }
+
+    // Format the TODO comment
+    const todoComment = `<!-- TODO: STRUCTURE (${comment.type}) - ${comment.message} -->`;
+
+    // Insert after the specified line
+    bodyLines.splice(comment.afterLine, 0, todoComment);
+    insertedComments.push(`Line ${comment.afterLine}: ${comment.type} - ${comment.message.substring(0, 60)}...`);
+  }
+
+  console.log(`✓ Inserted ${insertedComments.length} structure comments:`);
+  insertedComments.forEach(c => console.log(`  ${c}`));
+
+  // Update the file with modified body
+  const finalBody = bodyLines.join('\n');
   await updateFileWithHash(filePath, finalBody, frontmatter, 'lastStructureCheckHash');
   console.log(`Successfully checked structure for ${filePath}.`);
 }
