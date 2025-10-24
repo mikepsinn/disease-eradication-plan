@@ -5,6 +5,7 @@ format:
     code-fold: true
 lastFactCheckHash: 076b89041eecd2be5869ddd7057a25e88492602546535eb3610f7b8451d53240
 lastStructureCheckHash: 6f4a423fcb44a3fad956991df6b47186b89c7e52716634b1d41ad5ef42ad0274
+lastLatexCheckHash: f9d3f301a09104949857b4189f7ae286dc5dd6ad4e95743a2b430c062631dbc6
 ---
 ## Shock #1: We Spend 40X More on Killing Than Curing
 
@@ -131,7 +132,7 @@ We're on an exponential curve of idiocy. Disease costs rise 3-5% annually. Milit
 
 **We only need 1% of the death toilet to fix everything.**
 
-$120.5T × 1% = $1.21T for cures
+$$ \$120.5\text{T} \times 1\% = \$1.21\text{T} \text{ for cures} $$
 
 That would be:
 

@@ -12,6 +12,7 @@ lastFactCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d
 lastLinkCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
 lastFigureCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
 lastStructureCheckHash: eb56300af10192ddc11cd7bbc8fa695b1bb99f54ad74bb7c80360e7718781245
+lastLatexCheckHash: 9c78c80f884e3669a882cc6f79d1dc7bf797e487f1d13ced1faa3dc741ad7350
 ---
 Humans have turned warfare into the most expensive hobby in the history of the species.
 We are very good at it.
@@ -53,7 +54,9 @@ Everything has a price.
 
 Let us establish the fundamental formula for calculating direct war costs:
 
-**C<sub>direct</sub> = M<sub>spending</sub> + I<sub>damage</sub> + H<sub>casualties</sub> + T<sub>disruption</sub>**
+$$
+C_{\text{direct}} = M_{\text{spending}} + I_{\text{damage}} + H_{\text{casualties}} + T_{\text{disruption}}
+$$
 
 Where:
 
@@ -118,7 +121,9 @@ Expensive things.
 
 The mathematical relationship follows the formula:
 
-**R<sub>cost</sub> = D<sub>value</sub> × M<sub>replacement</sub> × C<sub>conflict</sub> × T<sub>time</sub>**
+$$
+R_{\text{cost}} = D_{\text{value}} \times M_{\text{replacement}} \times C_{\text{conflict}} \times T_{\text{time}}
+$$
 
 Where:
 
@@ -146,7 +151,9 @@ They interrupt the delicate dance of global commerce like a drunk person stumbli
 
 The economists have a formula for this too:
 
-**L<sub>trade</sub> = Σ(V<sub>i</sub> × D<sub>i</sub> × M<sub>i</sub> × T<sub>recovery</sub>)**
+$$
+L_{\text{trade}} = \sum (V_{i} \times D_{i} \times M_{i} \times T_{\text{recovery}})
+$$
 
 Where V is trade volume, D is disruption intensity, M is multiplier effect, and T is recovery time for each affected sector i.
 
@@ -181,9 +188,16 @@ For healthcare, it's [4.3](../references.qmd#healthcare-investment-economic-mult
 
 **Lost GDP Growth Calculation:**
 
-Alternative GDP Growth = (Military Spending × Alternative Multiplier) - (Military Spending × Military Multiplier)
+$$
+\begin{aligned}
+\text{Alternative GDP Growth} = {} & (\text{Military Spending} \times \text{Alternative Multiplier}) \\
+& - (\text{Military Spending} \times \text{Military Multiplier})
+\end{aligned}
+$$
 
-Alternative GDP Growth = (\$2,718B × 1.6) - (\$2,718B × 0.6) = \$2,718B
+$$
+\text{Alternative GDP Growth} = (\text{\$2,718B} \times 1.6) - (\text{\$2,718B} \times 0.6) = \text{\$2,718B}
+$$
 
 We're losing \$2.7 trillion in annual GDP growth.
 Every year.
@@ -205,7 +219,12 @@ They echo through generations like a malicious song stuck in humanity's head.
 
 The formula for lifetime veteran costs:
 
-**V<sub>lifetime</sub> = (N<sub>veterans</sub> × C<sub>annual</sub> × L<sub>lifespan</sub>) + (D<sub>disability</sub> × I<sub>inflation</sub>)**
+$$
+\begin{aligned}
+V_{\text{lifetime}} = {} & (N_{\text{veterans}} \times C_{\text{annual}} \times L_{\text{lifespan}}) \\
+& + (D_{\text{disability}} \times I_{\text{inflation}})
+\end{aligned}
+$$
 
 Where N is number of veterans, C is annual care cost, L is remaining lifespan, D is disability payments, and I is healthcare inflation (historically [3.5-4.6% annually](../references.qmd#historical-healthcare-inflation-rate)).
 
@@ -216,14 +235,18 @@ The average cost of supporting a refugee is [\$1,384 per year](../references.qmd
 
 **Annual Refugee Support Cost:**
 
-108.4M refugees × \$1,384 = \$150.0 billion
+$$
+108.4\text{M refugees} \times \text{\$1,384} = \text{\$150.0 billion}
+$$
 
 But refugees aren't just costs, they're lost economic potential.
 The average refugee has [\$23,400 in lost annual earning potential](../references.qmd#refugee-lost-earning-potential).
 
 **Lost Economic Productivity:**
 
-108.4M refugees × \$23,400 = \$2,536.6 billion in lost annual GDP
+$$
+108.4\text{M refugees} \times \text{\$23,400} = \text{\$2,536.6 billion in lost annual GDP}
+$$
 
 ## Environmental Degradation: Poisoning the Planet Costs Money Too
 
@@ -286,7 +309,9 @@ Let us sum our magnificent obsession with organized violence:
 
 ### Ultimate Total
 
-**C<sub>total</sub> = C<sub>direct</sub> + C<sub>indirect</sub> = \$7,655.0B + \$3,700.1B = \$11,355.1 billion**
+$$
+C_{\text{total}} = C_{\text{direct}} + C_{\text{indirect}} = \text{\$7,655.0B} + \text{\$3,700.1B} = \text{\$11,355.1 billion}
+$$
 
 That's \$11.4 trillion.
 Annually.
@@ -296,15 +321,21 @@ Every year.
 
 Current global population: [8.0 billion humans](../references.qmd#global-population-8-billion)
 
-**Direct military spending per person:** \$2,718B ÷ 8.0B = **\$340/year**
+$$
+\text{Direct military spending per person: } \text{\$2,718B} \div 8.0\text{B} = \text{\$340/year}
+$$
 
 This is what your government directly spends on military hardware and personnel.
 
-**Total societal cost per person:** \$11,355.1B ÷ 8.0B = **\$1,419/year**
+$$
+\text{Total societal cost per person: } \text{\$11,355.1B} \div 8.0\text{B} = \text{\$1,419/year}
+$$
 
 This is the true cost to you and global society when accounting for all the destruction, lost opportunity, environmental damage, and economic impacts of war.
 
-Over an 80-year lifetime: \$1,419.39 × 80 = \$113,551.20
+$$
+\text{Over an 80-year lifetime: } \text{\$1,419.39} \times 80 = \text{\$113,551.20}
+$$
 
 So war costs each human approximately \$113,500 over their lifetime.
 That's a decent car.
@@ -329,7 +360,13 @@ If we stacked \$11.4 trillion in \$100 bills, the stack would be [larger than th
 
 The final equation is simple:
 
-**Efficiency<sub>war</sub> = Deaths<sub>produced</sub> ÷ Dollars<sub>spent</sub> = 244,600 ÷ \$11.4T = 0.000021 deaths per dollar**
+$$
+\begin{aligned}
+\text{Efficiency}_{\text{war}} &= \text{Deaths}_{\text{produced}} \div \text{Dollars}_{\text{spent}} \\
+&= 244,600 \div \text{\$11.4T} \\
+&= 0.000021 \text{ deaths per dollar}
+\end{aligned}
+$$
 
 Or, inverted: **\$46.4 million per death produced**
 
@@ -357,4 +394,3 @@ When you consider the secondary effects of war, the total costs explode:
 - The unlucky ones live with half a face
 
 {{< include ../../figures/war-hidden-direct-curing-diseases-column-chart.qmd >}}
-

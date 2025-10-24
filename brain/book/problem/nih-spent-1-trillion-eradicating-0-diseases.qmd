@@ -12,7 +12,7 @@ tags:
 lastReviewed: 2025-10-16T00:00:00.000Z
 lastFactCheckHash: 1281da55496d842519310f962163999ff08e576ddeb6340ef1f44bdce524e008
 lastStructureCheckHash: 705fabe805e906c41f6347e8911fc154dd05a5905c01665f79ff1bba62c78f53
-lastLatexCheckHash: e6fc53371d8f21551dc0deb3068b0f679435af9109cb49bfbd56eeaa8de3ae47
+lastLatexCheckHash: ce03d7336048e392db7ef82d8b7de5355e0d45f48f515d972ff9f2965d3bf110
 ---
 ## The Trillion Dollar Participation Trophy
 
@@ -309,10 +309,17 @@ The overall efficiency score:
 - **Input:** \$1.1 trillion over 50 years
 - **Output:** Zero diseases eradicated
 
-This results in an efficiency score (in dollars per disease cured) of:
-$$ \text{Efficiency} = \frac{\text{\$1.1 trillion}}{0} = \infty $$
+This results in a cost per disease cured of:
+$$
+\text{Cost per cure} = \frac{\text{\$1.1 trillion}}{0} = \infty
+$$
 
-The NIH has achieved infinite inefficiency.
+Or, to put it another way:
+$$
+\text{Efficiency} = \frac{\text{Diseases cured}}{\text{\$1.1 trillion}} = \frac{0}{\text{\$1.1 trillion}} = 0
+$$
+
+The NIH has achieved zero efficiency at infinite cost.
 That's actually mathematically impressive.
 
 ## The Patient Disconnect: Zero Correlation with Health Outcomes
