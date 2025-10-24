@@ -14,7 +14,7 @@ lastFactCheck: 2025-10-17T00:00:00.000Z
 lastLinkCheck: 2025-10-17T00:00:00.000Z
 lastFigureCheck: 2025-10-17T00:00:00.000Z
 lastFactCheckHash: f2b0a7a7e41cf5c672aa17be7c37c7be259f4dfdf2f659287ff274d0d247dabd
-lastStructureCheckHash: b3e435ddb539aff56cb86afcf602d0256434950da0443799a2661cd1a132f2ea
+lastStructureCheckHash: e4fe42db2d551d50b3f0757db5732208a325f5da863deaf7e6a531077d1f8595
 lastLatexCheckHash: 98dc5fb3f3c936d35955ba7764a866607893967284125f62c577be816364042c
 ---
 ## The 82X Cost Multiplier: Two Systems, Two Outcomes
@@ -148,9 +148,10 @@ In the case of rare diseases, increasing the cost of treatment development to ov
 
 How high should the cost of drug development be on our list of human problems? Well, when something costs more, you get less of it. For people dying of cancer, the fact that we couldn't afford enough research to cure them is definitely at the top of their list of human problems.
 
+<!-- TODO: STRUCTURE (OTHER) - The math here is incorrect by a factor of 1,000. 50,000 lives/year over 10 years is 500,000 deaths, not 500. This is an embarrassing error that undermines the argument. -->
 **Delayed Life-Saving Treatments**
 
-One unanticipated consequence of the amendments was that the new burden of proof made the process of drug development both more expensive and much longer, leading to increasing drug prices and a “drug lag”. After that point, whenever they released some new cancer or heart medication that would save 50 thousand lives a year, it meant that over the previous ten years of trials, 500 people died because they didn't have access to the drug earlier.
+One unanticipated consequence of the amendments was that the new burden of proof made the process of drug development both more expensive and much longer, leading to increasing drug prices and a "drug lag". After that point, whenever they released some new cancer or heart medication that would save 50 thousand lives a year, it meant that over the previous ten years of trials, 500,000 people died because they didn't have access to the drug earlier.
 
 **Deaths Due to US Regulatory "Drug Lag"**
 
@@ -184,6 +185,7 @@ Following the 1962 increase in US regulations, one can see a divergence from Swi
 
 Perhaps it's a coincidence, but you can see an increase in drug approvals in the '80s. At the same time, the gap between Switzerland and the US gets smaller. Then US approvals go back down in the '90s, and the gap expands again.
 
+<!-- TODO: STRUCTURE (CONTRADICTION) - This repeats the 'per year' vs 'per decade' error. If the rate of '4 years per decade' was cut in half, the new rate is '2 years per decade,' not '2 years per year.' -->
 ![A chart showing the correlation between drug approvals and the life expectancy gap between the US and Switzerland.](../../../assets/us-swiss-life-expectancy-drug-approvals.png)
 
 **Increase in Patent Monopoly**
@@ -196,7 +198,7 @@ The placebo-controlled, randomized controlled trial helped researchers gauge the
 
 **Slowed Growth in Life Expectancy**
 
-From 1890 to 1960, there was a linear 4-year increase in human lifespan every year. This amazingly linear growth rate had followed millennia with a flat human lifespan of around 28 years. [Following this new 70% reduction in the pace of medical progress, the growth in human lifespan was immediately cut in half to an increase of 2 years per year](../references.qmd#post-1962-life-expectancy-slowdown).
+From 1890 to 1960, there was a linear 4-year increase in human lifespan every decade. This amazingly linear growth rate had followed millennia with a flat human lifespan of around 28 years. [Following this new 70% reduction in the pace of medical progress, the growth in human lifespan was immediately cut in half to an increase of 2 years per decade](../references.qmd#post-1962-life-expectancy-slowdown).
 
 ![A chart showing the slowdown in life expectancy growth after 1962.](../../../assets/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
 
