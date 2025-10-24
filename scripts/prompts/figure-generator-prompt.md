@@ -11,10 +11,15 @@ As a data visualization expert, your task is to analyze a book chapter and deter
 
 **Generation Rules (If Creating a New Figure):**
 
-1.  **Select Best Chart Type:** Based on the data and the chapter's narrative, choose the most effective visualization (e.g., bar/column for comparison, pie for composition, line for trends over time).
+1.  **Select Best Chart Type:** Your primary goal is to choose the most effective chart type. Do not default to a column chart if a line, pie, or diagram would better represent the information. Analyze the data's story: use line charts for trends, pie/donut charts for composition, and bar/column charts for direct comparisons.
 2.  **Filename:** Create a descriptive, kebab-case filename following the format `[topic]-[comparison/metric]-[type]-chart.qmd`.
-3.  **Code:** Generate the complete, executable Python code for the `.qmd` file. The code must strictly adhere to the provided Design Guide and Examples. It must be minimalist, use the black-and-white palette, and save a `.png` output.
-4.  **Output:** Return a single JSON object with `filename`, `code`, and `insertion_paragraph` keys. The `insertion_paragraph` should be the full text of the paragraph in the chapter that the figure should be placed immediately after.
+3.  **Code:** Generate complete, executable Python code for the `.qmd` file.
+4.  **Y-Axis Removal:** If a chart uses direct value labels on its bars or points, you MUST remove the y-axis, its labels, and its ticks to follow Tufte's principles of minimizing chart junk. Use `ax.get_yaxis().set_visible(False)`.
+5.  **Adherence:** The code must strictly adhere to the provided Design Guide and Examples. It must be minimalist, use the black-and-white palette, and save a `.png` output.
+6.  **Function Usage:**
+    *   For text labels that require an offset, you MUST use `ax.annotate` with `xytext` and `textcoords`. Do NOT use `ax.text` with those arguments.
+    *   The `clean_spines` function only accepts a `positions` list (e.g., `positions=['top', 'right']`). Do NOT use boolean arguments like `left=True`.
+7.  **Output:** Return a single JSON object with `filename`, `code`, and `insertion_paragraph` keys. The `insertion_paragraph` should be the full text of the paragraph in the chapter that the figure should be placed immediately after.
 
 **CRITICAL CONTEXT & EXAMPLES:**
 
