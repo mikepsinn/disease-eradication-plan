@@ -85,3 +85,43 @@ export async function saveFile(filePath: string, content: string): Promise<void>
   await fs.mkdir(dir, { recursive: true });
   await fs.writeFile(filePath, formattedContent, 'utf-8');
 }
+
+export async function getBookFiles(options: { includeAppendices?: boolean; exclude?: string[] } = {}): Promise<string[]> {
+    const { includeAppendices = true, exclude = [] } = options;
+    const quartoYmlContent = await fs.readFile('_quarto.yml', 'utf-8');
+    const doc: any = yaml.load(quartoYmlContent);
+
+    let files: string[] = [];
+
+    const extractFiles = (section: any[]): string[] => {
+        let fileList: string[] = [];
+        if (!section) return fileList;
+        for (const item of section) {
+            if (typeof item === 'string') {
+                fileList.push(item);
+            } else if (item && item.href) {
+                fileList.push(item.href);
+            } else if (item && item.chapters) {
+                fileList = fileList.concat(extractFiles(item.chapters));
+            }
+        }
+        return fileList;
+    };
+
+    if (doc.book && doc.book.chapters) {
+        files = files.concat(extractFiles(doc.book.chapters));
+    }
+
+    if (includeAppendices && doc.appendices) {
+        files = files.concat(extractFiles(doc.appendices));
+    }
+
+    const defaultExclusions = ['brain/book/references.qmd'];
+    const allExclusions = [...defaultExclusions, ...exclude];
+
+    return files.filter(file => {
+        if (!file) return false;
+        const normalizedFile = file.replace(/\\/g, '/');
+        return !allExclusions.some(excluded => normalizedFile.includes(excluded));
+    });
+}

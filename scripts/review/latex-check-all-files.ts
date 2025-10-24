@@ -1,21 +1,18 @@
-import { glob } from 'glob';
 import { latexCheckFileWithLLM } from './utils';
+import { getBookFiles } from '../lib/file-utils';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 async function main() {
-  console.log('Starting LaTeX check for all .qmd files...');
+  console.log('Starting LaTeX check for all book files...');
 
-  const allQmdFiles = await glob('brain/book/**/*.qmd');
-  const excludedFile = 'brain/book/references.qmd';
+  const filesToCheck = await getBookFiles({ includeAppendices: true });
 
-  const filesToCheck = allQmdFiles.filter(file => !file.includes(excludedFile));
-
-  console.log(`Found ${filesToCheck.length} .qmd files to check for LaTeX usage (after exclusions).`);
+  console.log(`Found ${filesToCheck.length} book files to check for LaTeX usage.`);
 
   if (filesToCheck.length === 0) {
-    console.log('No .qmd files found to check.');
+    console.log('No files found to check.');
     return;
   }
 
