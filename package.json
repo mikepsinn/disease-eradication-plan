@@ -59,7 +59,7 @@
     "validate:frontmatter": "tsx scripts/validate-frontmatter.ts",
     "fix:frontmatter": "tsx scripts/validate-frontmatter.ts --fix",
     "fix:frontmatter:issues": "tsx scripts/review/fix-frontmatter-issues.ts",
-    "build": "quarto render && quarto render _dih.yml && quarto render _1percenttreaty.yml",
+    "build": "quarto render",
     "build:html": "quarto render . --to html",
     "build:pdf": "quarto render . --to pdf",
     "build:pptx": "quarto render presentation.qmd --to pptx",

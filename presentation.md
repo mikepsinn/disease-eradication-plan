@@ -246,7 +246,7 @@ No committees. No gatekeepers. No capture points. Just math."
 **Text**: "Success creates more success"
 
 **SPEAKER**: 
-"Here's the beautiful part: Success compounds. Every disease we cure proves the model. Every cure creates voters for bigger treaties. 
+Success compounds. Every disease we cure proves the model. Every cure creates voters for bigger treaties. 
 
 1% becomes 2% becomes 10%. Eventually we're spending more on curing than killing. That's when we've won."
 
