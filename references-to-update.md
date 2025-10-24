@@ -1,3 +1,8 @@
+---
+title: References Without URLs - To Update
+description: Working file containing 400 references that need source URLs added before integration back into references.qmd.
+---
+
 # References Without URLs - To Update
 
 This file contains 400 references that need URLs added.

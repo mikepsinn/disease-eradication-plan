@@ -1,3 +1,8 @@
+---
+title: Project Plan - Automated Content Review Engine
+description: Plan for automating content review, formatting, style checks, and source verification with granular frontmatter tracking.
+---
+
 # Project Plan: Automated Content Review and Fixing Engine
 
 This document outlines the plan to create a suite of scripts that automate the content review and fixing process for the DIH knowledge base.

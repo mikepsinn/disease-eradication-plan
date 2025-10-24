@@ -1,3 +1,8 @@
+---
+title: Book Additions from Financial Roadmap
+description: Financial roadmap and proof-of-concept strategy for bootstrapping from zero to one billion dollars in 36 months.
+---
+
 # Book Additions from Financial Roadmap Conversation
 
 ## New Section for Part III: The Solution

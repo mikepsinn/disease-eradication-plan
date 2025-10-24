@@ -1,6 +1,6 @@
 ---
 title: "Dynamic Expected Value Incentive Policy"
-description: "Defines a sophisticated, real-time, risk-adjusted compensation model based on Expected Value (EV) calculations, using prediction markets to dynamically price risk."
+description: Real-time, risk-adjusted compensation model using Expected Value calculations and prediction markets to price risk.
 published: false
 date: "2025-08-24T00:00:00.000Z"
 tags: ["incentives", "tokenomics", "team", "algorithmic", "expected-value", "prediction-markets"]

@@ -30,7 +30,7 @@ const FRONTMATTER_OPTIONAL = [
     'AIRTABLE_GUIDE.md',
     'CONTENT_REVIEW_CHECKLIST.md',
     'DIH_WEBSITE_README.md',
-    'FORMATTING_GUIDE.md',
+    'GUIDES/FORMATTING_GUIDE.md',
     'OUTLINE.md',
     'REFERENCES-WORKFLOW.md',
     'references-to-update.md',

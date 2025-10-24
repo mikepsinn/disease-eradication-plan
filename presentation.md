@@ -1,3 +1,8 @@
+---
+title: Presentation Script
+description: Speaking notes and slide deck for presenting the 1% Treaty concept with dark humor and data-driven arguments.
+---
+
 # The Complete Idiot's Guide to Ending War and Disease
 
 ## SLIDE: Title Slide
