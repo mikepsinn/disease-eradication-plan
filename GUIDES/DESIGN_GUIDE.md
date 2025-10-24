@@ -72,10 +72,30 @@ Include charts in any `.qmd` file using Quarto's include directive:
 
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'same-name-as-qmd-file.png',
-            dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(
+    output_dir / 'same-name-as-qmd-file.png',
+    dpi=200,
+    bbox_inches=None,
+    facecolor=COLOR_WHITE,
+    metadata=get_chart_metadata(
+        title="Your Chart Title",
+        description="Brief description of what the chart shows"
+    )
+)
 plt.show()  # For Quarto display
 ```
+
+**PNG Metadata for Attribution:**
+
+All charts should include standardized metadata for proper attribution when shared:
+
+- **Author:** Mike P. Sinn
+- **Copyright:** CC BY 4.0 - WarOnDisease.org
+- **Source:** https://WarOnDisease.org
+- **Title:** Chart title (optional but recommended)
+- **Description:** Brief description (optional)
+
+Use `get_chart_metadata()` from `_chart_style.py` to ensure consistent, deterministic metadata across all charts. This metadata is embedded in the PNG file and visible when users check image properties.
 
 ### File Naming
 
@@ -125,11 +145,21 @@ plt.show()  # For Quarto display
    plt.savefig(output_dir / 'chart-name.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
    ```
 
-3. **MANDATORY: Generate PNG output** - Every chart MUST save a PNG:
+3. **MANDATORY: Generate PNG output with metadata** - Every chart MUST save a PNG with attribution:
 
    ```python
-   plt.savefig(output_dir / 'exact-same-name-as-qmd.png',
-               dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+   from brain.figures._chart_style import get_chart_metadata
+
+   plt.savefig(
+       output_dir / 'exact-same-name-as-qmd.png',
+       dpi=200,
+       bbox_inches=None,
+       facecolor=COLOR_WHITE,
+       metadata=get_chart_metadata(
+           title="Your Chart Title",
+           description="Brief description"
+       )
+   )
    ```
 
 4. Name output file to match source: `chart-name.qmd` → `chart-name.png`
