@@ -1,3 +1,8 @@
+---
+title: The First 100 Strategic Recruit Target List
+description: Priority list of 100 high-leverage individuals to recruit in the first 90 days with outreach templates and tracking strategy.
+---
+
 # The First 100: Strategic Recruit Target List
 
 **Purpose:** Identify and prioritize the 100 people most likely to accelerate the War on Disease from concept to movement

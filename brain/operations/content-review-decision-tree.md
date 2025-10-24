@@ -1,3 +1,8 @@
+---
+title: Content Review Decision Tree
+description: Top-down refactoring playbook for populating the book structure using content from the archive folder systematically.
+---
+
 # Content Review Decision Tree
 
 ## The Top-Down Refactoring Playbook
