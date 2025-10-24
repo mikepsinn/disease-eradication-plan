@@ -17,7 +17,7 @@ sys.path.insert(0, str(project_root))
 import matplotlib.pyplot as plt
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    get_chart_metadata, COLOR_BLACK, COLOR_WHITE
+    add_png_metadata, COLOR_BLACK, COLOR_WHITE
 )
 
 # Setup styling
@@ -81,15 +81,17 @@ add_watermark(fig)
 # Save in brain/figures directory
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(
-    output_dir / 'victory-bonds-roi-projection-bar-chart.png',
-    dpi=200,
-    bbox_inches=None,
-    facecolor=COLOR_WHITE,
-    metadata=get_chart_metadata(
-        title="Annual Returns from Various Investments",
-        description="Comparison of ROI: S&P 500, real estate, venture capital, hedge funds, and VICTORY Bonds"
-    )
+output_path = output_dir / 'victory-bonds-roi-projection-bar-chart.png'
+
+# Save the figure
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution (post-processing step)
+add_png_metadata(
+    output_path,
+    title="Annual Returns from Various Investments",
+    description="Comparison of ROI: S&P 500, real estate, venture capital, hedge funds, and VICTORY Bonds"
 )
+
 plt.show()
 ```

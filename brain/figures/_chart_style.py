@@ -218,14 +218,11 @@ def get_chart_metadata(title=None, description=None):
         description: Brief description of what the chart shows (optional)
 
     Returns:
-        dict: Metadata dictionary for use with plt.savefig(metadata=...)
+        dict: Metadata dictionary for use with add_png_metadata()
 
     Example:
-        metadata = get_chart_metadata(
-            title="Military vs Medical Research Spending",
-            description="Comparison of global military and medical research budgets"
-        )
-        plt.savefig('chart.png', metadata=metadata)
+        plt.savefig('chart.png', dpi=200)
+        add_png_metadata('chart.png', title="Chart Title", description="Description")
     """
     metadata = {
         'Author': 'Mike P. Sinn',
@@ -240,6 +237,52 @@ def get_chart_metadata(title=None, description=None):
         metadata['Description'] = description
 
     return metadata
+
+
+def add_png_metadata(filepath, title=None, description=None):
+    """
+    Add attribution metadata to a PNG file after it's been saved.
+
+    This is a post-processing step because matplotlib's metadata parameter
+    doesn't reliably write PNG tEXt chunks. Uses PIL to add metadata.
+
+    Args:
+        filepath: Path to the PNG file
+        title: Chart title (optional, recommended)
+        description: Brief description (optional)
+
+    Example:
+        plt.savefig('chart.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+        add_png_metadata('chart.png',
+                        title="Military vs Medical Research",
+                        description="Comparison of spending")
+    """
+    try:
+        from PIL import Image, PngImagePlugin
+
+        # Open the image
+        img = Image.open(filepath)
+
+        # Create metadata
+        meta = PngImagePlugin.PngInfo()
+
+        # Add standard attribution
+        meta.add_text('Author', 'Mike P. Sinn')
+        meta.add_text('Copyright', 'CC BY 4.0 - WarOnDisease.org')
+        meta.add_text('Source', 'https://WarOnDisease.org')
+
+        # Add optional fields
+        if title:
+            meta.add_text('Title', title)
+        if description:
+            meta.add_text('Description', description)
+
+        # Save with metadata
+        img.save(filepath, pnginfo=meta, optimize=False)
+
+    except ImportError:
+        # PIL not available, skip metadata
+        pass
 
 
 # Convenience function for quick setup

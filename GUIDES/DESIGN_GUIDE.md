@@ -72,22 +72,24 @@ Include charts in any `.qmd` file using Quarto's include directive:
 
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(
-    output_dir / 'same-name-as-qmd-file.png',
-    dpi=200,
-    bbox_inches=None,
-    facecolor=COLOR_WHITE,
-    metadata=get_chart_metadata(
-        title="Your Chart Title",
-        description="Brief description of what the chart shows"
-    )
+output_path = output_dir / 'same-name-as-qmd-file.png'
+
+# Save the figure
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution (post-processing step)
+add_png_metadata(
+    output_path,
+    title="Your Chart Title",
+    description="Brief description of what the chart shows"
 )
+
 plt.show()  # For Quarto display
 ```
 
 **PNG Metadata for Attribution:**
 
-All charts should include standardized metadata for proper attribution when shared:
+All charts should include standardized metadata for proper attribution when shared on social media:
 
 - **Author:** Mike P. Sinn
 - **Copyright:** CC BY 4.0 - WarOnDisease.org
@@ -95,7 +97,7 @@ All charts should include standardized metadata for proper attribution when shar
 - **Title:** Chart title (optional but recommended)
 - **Description:** Brief description (optional)
 
-Use `get_chart_metadata()` from `_chart_style.py` to ensure consistent, deterministic metadata across all charts. This metadata is embedded in the PNG file and visible when users check image properties.
+Use `add_png_metadata()` from `_chart_style.py` after saving to embed attribution in the PNG file. This metadata is visible when users check image properties and ensures proper credit when images are shared.
 
 ### File Naming
 
@@ -148,18 +150,11 @@ Use `get_chart_metadata()` from `_chart_style.py` to ensure consistent, determin
 3. **MANDATORY: Generate PNG output with metadata** - Every chart MUST save a PNG with attribution:
 
    ```python
-   from brain.figures._chart_style import get_chart_metadata
+   from brain.figures._chart_style import add_png_metadata
 
-   plt.savefig(
-       output_dir / 'exact-same-name-as-qmd.png',
-       dpi=200,
-       bbox_inches=None,
-       facecolor=COLOR_WHITE,
-       metadata=get_chart_metadata(
-           title="Your Chart Title",
-           description="Brief description"
-       )
-   )
+   output_path = output_dir / 'exact-same-name-as-qmd.png'
+   plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+   add_png_metadata(output_path, title="Your Chart Title", description="Brief description")
    ```
 
 4. Name output file to match source: `chart-name.qmd` → `chart-name.png`
