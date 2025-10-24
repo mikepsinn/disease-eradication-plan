@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL
-)
+    COLOR_BLACK, COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
+    add_png_metadata)
 
 # Setup styling
 setup_chart_style(style='light', dpi=150)
@@ -73,6 +73,12 @@ add_watermark(fig)
 import os
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'war-vs-curing-diseases-column-chart.png', dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+output_path = output_dir / 'war-vs-curing-diseases-column-chart.png'
+
+# Save the figure
+plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution
+add_png_metadata(output_path, title="War Vs Curing Diseases Column Chart")
 plt.show()
 ```

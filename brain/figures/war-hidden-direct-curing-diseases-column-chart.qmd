@@ -19,8 +19,8 @@ from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 from matplotlib import patheffects
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
-)
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL,
+    add_png_metadata)
 
 # Setup styling with higher DPI for crisper text
 setup_chart_style(style='light', dpi=200)
@@ -104,6 +104,12 @@ add_watermark(fig)
 # Save in brain/figures directory with higher quality
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'war-hidden-direct-curing-diseases-column-chart.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+output_path = output_dir / 'war-hidden-direct-curing-diseases-column-chart.png'
+
+# Save the figure
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution
+add_png_metadata(output_path, title="War Hidden Direct Curing Diseases Column Chart")
 plt.show()
 ```

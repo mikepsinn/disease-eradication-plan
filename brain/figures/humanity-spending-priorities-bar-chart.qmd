@@ -27,8 +27,8 @@ sys.path.insert(0, str(project_root))
 
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL
-)
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
+    add_png_metadata)
 
 # Setup styling
 setup_chart_style(style='light', dpi=150)

@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from brain.figures._chart_style import (
     setup_chart_style, add_watermark,
-    COLOR_BLACK, COLOR_WHITE
-)
+    COLOR_BLACK, COLOR_WHITE,
+    add_png_metadata)
 
 # Setup styling
 setup_chart_style(style='light', dpi=150)
@@ -89,6 +89,12 @@ add_watermark(fig)
 # Save in brain/figures directory
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'money-flow-diagram.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+output_path = output_dir / 'money-flow-diagram.png'
+
+# Save the figure
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution
+add_png_metadata(output_path, title="Money Flow Diagram")
 plt.show()
 ```
