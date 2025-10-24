@@ -17,7 +17,7 @@ sys.path.insert(0, str(project_root))
 
 # Import centralized style
 from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines
-from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE
+from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata
 
 setup_chart_style()
 
@@ -167,8 +167,13 @@ add_watermark(fig)
 # Save figure
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.png',
-            dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+output_path = output_dir / 'health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.png'
+
+# Save the figure
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution
+add_png_metadata(output_path, title="Health Programs Vs 1 Percent Treaty Societal Benefits")
 
 plt.show()
 ```
