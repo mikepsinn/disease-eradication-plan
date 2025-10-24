@@ -9,7 +9,7 @@ tags:
   - cost-of-illness
   - human-stupidity
 lastFactCheckHash: d2cd4f9de351df428a068b52095669f0234af2bc81c084e3574ae002867df794
-lastStructureCheckHash: 6c345a434953ab71575a32c8c42c52a561793a98148a8b7d350b4e171a4b3b98
+lastStructureCheckHash: 1711b74c90f6f77c78d922bc4de0a2e4376819ca6f1945a4f429bea4fa8259cd
 ---
 ## The $109 Trillion Death Tax Nobody Talks About
 
@@ -31,10 +31,10 @@ Here's what disease actually costs us, broken down for those of us who failed ec
 
 | What We're Losing | Translation for Normal People | Annual Cost |
 | :--- | :--- | :--- |
-| **Direct Medical Costs** | Money spent on doctors who Google your symptoms | [$9.9 Trillion](../references.qmd#global-health-spending-gdp) |
-| **Lost Productivity** | Sick people can't make spreadsheets | [$5 Trillion](../references.qmd#wef-harvard-ncd-cost) |
-| **Lost Human Life (DALYs)** | Dead people are remarkably unproductive | [$94.2 Trillion](../references.qmd#ihme-gbd-2019) |
-| **TOTAL APOCALYPSE** | **More than Earth's entire economy** | [**$109.1 Trillion**](../references.qmd#disease-economic-burden-109t) |
+| **Direct Medical Costs** | Money spent on doctors who Google your symptoms | [$8.2 Trillion](../references.qmd#global-health-spending-gdp) |
+| **Lost Productivity** | Sick people can't make spreadsheets | [$6.7 Trillion](../references.qmd#wef-harvard-ncd-cost) |
+| **Lost Human Life (DALYs)** | Dead people are remarkably unproductive | [$382.5 Trillion](../references.qmd#ihme-gbd-2019) |
+| **TOTAL APOCALYPSE** | **More than Earth's entire economy** | [**$397.4 Trillion**](../references.qmd#disease-economic-burden-109t) |
 
 Let me explain that last one, because it's the kicker.
 
@@ -58,15 +58,14 @@ Let's use 3x because we're optimists who think humans are worth at least as much
 
 The math:
 
-- Global GDP per capita: [$12,263](../references.qmd#global-gdp-per-capita)
-- WHO's "human life multiplier": 3x
-- Value of one healthy year: $36,789
+- Value of one healthy year (QALY): $150,000
+- Total DALYs lost annually: 2.55 billion
 
-Now multiply that by 2.55 billion lost years:
+Now multiply the years of life lost by their value:
 
-**2,550,000,000 × $36,789 = $94.2 trillion**
+**2,550,000,000 × $150,000 = $382.5 trillion**
 
-That's ninety-four trillion dollars of human potential we flush down the toilet of disease every single year.
+That's three hundred eighty-two trillion dollars of human potential we flush down the toilet of disease every single year. For a detailed breakdown of this valuation, see [The Economic Case](../economics.qmd).
 
 ## To Put This in Perspective
 
@@ -81,17 +80,9 @@ By the time you finish reading this chapter, disease will have cost humanity mor
 
 ## The Stupidest Part: We Know Where the Cures Are
 
-Here's the cosmic joke: We've identified [166 billion molecules](../references.qmd#166-billion-compounds) that could potentially cure diseases.
+As detailed in [the NIH chapter](nih-spent-1-trillion-eradicating-0-diseases.qmd), the core problem isn't a lack of options—scientists have identified [166 billion potential cures](../references.qmd#166-billion-compounds)—but a system that tests almost none of them.
 
-How many have we actually tested? 
-Basically none.
 We're like starving people sitting in a library made of cookbooks, eating the glue from the bindings.
-
-Think about this:
-
-- **166,000,000,000** potential cures sitting in databases
-- **[~5,000 FDA-approved drugs total](../references.qmd#fda-approved-drugs-total)** (including different doses of the same thing)
-- **Success rate:** 0.000003%
 
 We've tested 0.000003% of possible treatments.
 That's like checking three letters in the Encyclopedia Britannica and declaring we've learned everything there is to know.

@@ -11,13 +11,13 @@ lastStyleCheck: 2025-10-16T00:00:00.000Z
 lastFactCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
 lastLinkCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
 lastFigureCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
-lastStructureCheckHash: 3e5ffd0dc606bbe7126acab4c81eeef59e03288da147f5fdcc7f4845a776932e
+lastStructureCheckHash: eb56300af10192ddc11cd7bbc8fa695b1bb99f54ad74bb7c80360e7718781245
 ---
 Humans have turned warfare into the most expensive hobby in the history of the species.
 We are very good at it.
 We are also very good at counting what it costs us.
 
-Consider this: In 2024, our species spent [\$2,718 billion](../references.qmd#sipri-2024-spending) on military expenditure.
+Consider this: In 2024, our species spent [\$2,718 billion](../references.qmd#sipri-2024-spending) on military expenditure (rounded to $2.7T throughout this book for readability).
 That's \$2,718,000,000,000.
 Write it out.
 Feel the weight of all those zeros.
@@ -295,7 +295,14 @@ Every year.
 ### Per Capita Mathematics: What War Costs You
 
 Current global population: [8.0 billion humans](../references.qmd#global-population-8-billion)
-Annual war cost per person: \$11,355.1B ÷ 8.0B = \$1,419.39
+
+**Direct military spending per person:** \$2,718B ÷ 8.0B = **\$340/year**
+
+This is what your government directly spends on military hardware and personnel.
+
+**Total societal cost per person:** \$11,355.1B ÷ 8.0B = **\$1,419/year**
+
+This is the true cost to you and global society when accounting for all the destruction, lost opportunity, environmental damage, and economic impacts of war.
 
 Over an 80-year lifetime: \$1,419.39 × 80 = \$113,551.20
 
@@ -350,6 +357,4 @@ When you consider the secondary effects of war, the total costs explode:
 - The unlucky ones live with half a face
 
 {{< include ../../figures/war-hidden-direct-curing-diseases-column-chart.qmd >}}
-
-**Total true cost of war: \$11.4 trillion every single year.**
 

@@ -11,11 +11,11 @@ tags:
   - failure
 lastReviewed: 2025-10-16T00:00:00.000Z
 lastFactCheckHash: 1281da55496d842519310f962163999ff08e576ddeb6340ef1f44bdce524e008
-lastStructureCheckHash: 9ddc07b6c8220fb67059599140e6fb38a27e7d22ac239f841ba4848237295a56
+lastStructureCheckHash: 705fabe805e906c41f6347e8911fc154dd05a5905c01665f79ff1bba62c78f53
 ---
 ## The Trillion Dollar Participation Trophy
 
-Since 1970, the National Institutes of Health has spent approximately **\$1.1 trillion** (inflation-adjusted to 2023 dollars) ([source](../references.qmd#nih-cumulative-spending)).
+With an annual budget of approximately **$48 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted) ([source](../references.qmd#nih-cumulative-spending)).
 
 Number of diseases the NIH has eradicated: [**Zero**](../references.qmd#nih-eradicated-zero-diseases).
 
@@ -68,7 +68,7 @@ This isn't a story about lack of treatments. It's about **deliberate choices** n
 - **Years to test all at current rate:** 33 million
 - **Your disease gets tested:** When the sun burns out
 
-The NIH spends [**54% of its budget on basic research**](../references.qmd#nih-budget-allocation-breakdown) - understanding disease mechanisms in mice.
+The NIH spends [**55% of its budget on basic research**](../references.qmd#nih-budget-allocation-breakdown) - understanding disease mechanisms in mice.
 
 They spend [**22% on clinical trials (all types)**](../references.qmd#nih-budget-allocation-breakdown), which sounds impressive until you ask: **Can your grandma in St. Louis join one?**
 
@@ -290,14 +290,13 @@ Let's do the real math on what we could have done with that money:
 
 We're literally choosing to help 1 person badly instead of helping 82 people well.
 
-Oxford RECOVERY trial proved treatments can cost [\$500/patient](../references.qmd#recovery-cost-500).
-FDA-regulated trials average [\$41,000/patient](../references.qmd#trial-cost-41k) (82X more expensive).
+This 82X cost disparity is the core inefficiency we can solve. (See [The 82X Solution](../solution/dfda.qmd#the-82x-solution-decentralized-trials) for how.)
 
 **The \$2 Trillion Healthcare Burden:**
 
 Not only are we inefficient, we're drowning:
 
-- US healthcare costs: [\$2+ trillion annually](../references.qmd#us-annual-healthcare-costs)
+- US-only healthcare costs: [\$2+ trillion annually](../references.qmd#us-annual-healthcare-costs)
 - Potential savings with efficient trials: \$2 trillion
 - Net economic swing: \$4 trillion
 - Untested treatments sitting on shelf: 166 billion ([source](../references.qmd#untested-treatments))

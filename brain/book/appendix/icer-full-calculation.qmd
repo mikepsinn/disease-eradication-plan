@@ -12,29 +12,29 @@ lastFactCheckHash: a3b5ed5c444e0871923ad5b3a9df93db7519e177fffab7aba8c22eac35bea
 ---
 ## Executive Summary
 
-**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **$5.87 million per life saved** (ICER = -$167,771 per QALY).
+**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **$6.56 million per life saved** (ICER = -$187,543 per QALY).
 
-This means for every life saved, society becomes **$5.87 million richer** instead of paying the [$3,500-$5,500 cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
+This means for every life saved, society becomes **$6.56 million richer** instead of paying the [$3,500-$5,500 cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
 
-**How is this possible?** This initiative generates massive economic value ($147.1B annually) while also saving lives (875,000 QALYs annually), making it profitable for society to implement.
+**How is this possible?** This initiative generates massive economic value ($164B annually) while also saving lives (875,000 QALYs annually), making it profitable for society to implement.
 
 ## Complete Calculation Walkthrough
 
 ### Step 1: Annual Economic Benefits
 
-#### 1a. Peace Dividend ($97.1B/year)
+#### 1a. Peace Dividend ($114B/year)
 
 **Source**: [Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd)
 
 From [Cost of War Analysis](../problem/cost-of-war.qmd):
 
-- **Total annual cost of war**: [$9,719B](../references.qmd#total-military-and-war-costs-9-7t)
-  - Direct costs: $6,209B (military spending, infrastructure damage, human casualties, trade disruption)
-  - Indirect costs: $3,510B (lost growth, veteran care, refugees, environmental damage)
+- **Total annual cost of war**: [$11,355B](../references.qmd#total-military-and-war-costs-11-4t)
+  - Direct costs: $7,655B (military spending, infrastructure damage, human casualties, trade disruption)
+  - Indirect costs: $3,700B (lost growth, veteran care, refugees, environmental damage)
 
 **1% reduction in total war costs**:
 
-- Societal dividend: $9,719B × 0.01 = **$97.1B annually**
+- Societal dividend: $11,355B × 0.01 = **$114B annually**
 
 **What this represents**:
 
@@ -61,9 +61,9 @@ From dFDA analysis:
 
 #### Total Annual Economic Benefits
 
-**$97.1B + $50B = $147.1 billion/year**
+**$114B + $50B = $164 billion/year**
 
-**Sensitivity range**: $122.1B to $192.2B (conservative to optimistic scenarios)
+**Sensitivity range**: $139B to $209B (conservative to optimistic scenarios)
 
 ---
 
@@ -207,9 +207,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 **Framing 2: Opportunity Cost of Redirected Spending**
 
 - Cost: $27B/year (redirected military spending)
-- But this $27B is ALREADY COUNTED in the $97.1B peace dividend
+- But this $27B is ALREADY COUNTED in the $114B peace dividend
 - Net cost: $27B - $27B = $0
-- **ICER = -$168,114 per QALY**
+- **ICER = -$187,543 per QALY**
 
 **Framing 3: Military Waste Conversion**
 
@@ -240,21 +240,21 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Annual net benefit** = Benefits - Costs
 
-- Benefits: $147.1B
+- Benefits: $164B
 - Costs: $0.29B
-- **Net benefit: $146.8 billion/year**
+- **Net benefit: $163.7 billion/year**
 
-**Society saves $146.8 billion while gaining 875,000 QALYs**
+**Society saves $163.7 billion while gaining 875,000 QALYs**
 
 #### 4b. ICER per QALY
 
-**ICER** = ($290M - $147.1B) / 875,000 QALYs
+**ICER** = ($290M - $164B) / 875,000 QALYs
 
-**ICER** = -$146,810M / 875,000
+**ICER** = -$163,710M / 875,000
 
-**ICER = -$167,771 per QALY**
+**ICER = -$187,097 per QALY**
 
-**Interpretation**: For every QALY gained, society saves $167,771. This is a **dominant intervention** (saves money AND improves health).
+**Interpretation**: For every QALY gained, society saves $187,097. This is a **dominant intervention** (saves money AND improves health).
 
 #### 4c. Cost per Life Saved
 
@@ -314,9 +314,9 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Parameter | Conservative | Central | Optimistic |
 |-----------|-------------:|--------:|------------:|
-| **Peace dividend** | $50B | $97.1B | $200B |
+| **Peace dividend** | $50B | $114B | $200B |
 | **dFDA R&D savings** | $25B | $50B | $95B |
-| **Total benefits** | $75B | $147.1B | $295B |
+| **Total benefits** | $75B | $164B | $295B |
 | **Campaign costs/yr** | $333M | $250M | $200M |
 | **dFDA ops costs/yr** | $60M | $40M | $30M |
 | **Total costs/yr** | $393M | $290M | $230M |
@@ -329,7 +329,7 @@ This is a **dominant intervention** - it makes society richer while saving lives
 | Scenario | Net Benefit | QALYs | ICER/QALY | Cost/Life |
 |----------|------------:|------:|-----------:|----------:|
 | **Conservative** | $74.6B | 437,500 | **-$170,514** | **-$5.97M** |
-| **Central** | $146.8B | 875,000 | **-$167,771** | **-$5.87M** |
+| **Central** | $163.7B | 875,000 | **-$187,097** | **-$6.55M** |
 | **Optimistic** | $294.8B | 2,152,500 | **-$136,945** | **-$4.79M** |
 
 **Key finding**: In ALL scenarios, the intervention is dominant (saves money while saving lives).
@@ -338,10 +338,10 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Perspective | Annual Cost | Annual Benefit | QALYs | ICER/QALY | Cost/Life | Notes |
 |-------------|------------:|---------------:|------:|----------:|----------:|-------|
-| **Conservative (All Costs)** | $290M | $147.1B | 875k | **-$167,771** | **-$5.87M** | Counts all upfront costs |
-| **Investor-Funded** | $0 | $147.1B | 875k | **-$168,114** | **-$5.88M** | Campaign funded by VICTORY bonds |
-| **Opportunity Cost** | $27B | $147.1B | 875k | **-$137,257** | **-$4.80M** | Counts redirected military spending |
-| **Waste Conversion** | -$27B* | $147.1B | 875k | **Undefined** | **Undefined** | Military spending creates negative value |
+| **Conservative (All Costs)** | $290M | $164B | 875k | **-$187,097** | **-$6.55M** | Counts all upfront costs |
+| **Investor-Funded** | $0 | $164B | 875k | **-$187,429** | **-$6.56M** | Campaign funded by VICTORY bonds |
+| **Opportunity Cost** | $27B | $164B | 875k | **-$156,571** | **-$5.48M** | Counts redirected military spending |
+| **Waste Conversion** | -$27B* | $164B | 875k | **Undefined** | **Undefined** | Military spending creates negative value |
 
 *Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
 
@@ -380,7 +380,7 @@ This chart compares the gross annual economic benefits across major public healt
 
 - **Traditional interventions** (Water Fluoridation, Smoking Cessation, Childhood Vaccinations): Generate $0.8B to $15B in annual economic benefits. These are highly successful programs that have transformed public health.
 
-- **1% Treaty + DIH + dFDA**: Generates $147.1B in annual economic benefits ($97.1B peace dividend + $50B dFDA R&D savings). This is nearly 10× larger than childhood vaccinations, one of the most successful interventions in history.
+- **1% Treaty + DIH + dFDA**: Generates $164B in annual economic benefits ($114B peace dividend + $50B dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
 
 **Key distinction**: Only the 1% Treaty is self-funding—it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
 
@@ -405,8 +405,8 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 1. **Peace Dividend**: [Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd)
    - Based on [Cost of War Analysis](../problem/cost-of-war.qmd)
-   - Total war costs: $9.7T annually
-   - 1% reduction: $97.1B
+   - Total war costs: $11.4T annually
+   - 1% reduction: $114B
 
 2. **dFDA R&D Savings**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
    - Clinical trial market: ~$100B/year
@@ -448,12 +448,12 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 ### Q: How can this save money while saving lives?
 
-**A**: The 1% Treaty generates $147.1B in annual economic benefits:
+**A**: The 1% Treaty generates $164B in annual economic benefits:
 
-- $97.1B from reduced conflict costs (peace dividend)
+- $114B from reduced conflict costs (peace dividend)
 - $50B from more efficient medical R&D (dFDA)
 
-These benefits far exceed the $290M annual costs, creating a net profit of $146.8B/year for society.
+These benefits far exceed the $290M annual costs, creating a net profit of $163.7B/year for society.
 
 Meanwhile, the same initiative saves lives:
 
@@ -501,7 +501,7 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **From society's aggregate perspective**: The $1B campaign cost is real money that someone must provide initially. However, since investors get repaid with 270% returns from redirected military spending, the net cost to society approaches $0 after payback.
 
-**From taxpayers' perspective**: They give up $27B in military spending but receive $147.1B in economic benefits (peace dividend + R&D savings). Net gain: $120.1B.
+**From taxpayers' perspective**: They give up $27B in military spending but receive $164B in economic benefits (peace dividend + R&D savings). Net gain: $137B.
 
 **From investors' perspective**: They invest $1B and receive $2.7B/year perpetually. This is the best investment in history.
 

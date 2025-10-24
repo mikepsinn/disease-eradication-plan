@@ -8,6 +8,7 @@ tags:
   - bureaucratic-murder
   - death-by-clipboard
 lastFactCheckHash: 073b940c027763bbeebc324098db9f71b578a80886e58697562f208db2f17733
+lastStructureCheckHash: 3f21b6c352f436a8ad5826d778046868a39e2971f8164ca13ae3831aa2a127bb
 ---
 ## The Solution: Just Let People Try Stuff (Carefully)
 
@@ -20,6 +21,8 @@ And then we could... write down what happens?
 And then other sick people could... see what worked?
 
 I know, I know. Without [17 years](../references.qmd#research-to-practice-gap-17-years) of paperwork, how would we know if medicines are safe? We'd have to rely on primitive methods like "observing if people get better or die." It’s a bold strategy, considering our current one leaves [95% of rare diseases](../references.qmd#fda-untreated-diseases-95pct) with zero approved treatments and ensures [85% of patients are barred](../references.qmd#clinical-trial-exclusions) from the trials that might save them. We've managed to perfect a system where only the healthy and compliant are allowed to test cures for the sick and desperate. It’s genius, in a suicidal sort of way.
+
+A single new drug requires multiple expensive trials, leading to the staggering total cost of over $2.6 billion.
 
 ### Introducing FDA.gov 2.0: Now With 80% Less Death
 
@@ -128,7 +131,7 @@ Look at these beautiful savings! It's like Black Friday, but for survival!
 
 | What We're Fixing | Current Insanity | New Reality | Money Saved | Lives Saved |
 | :--- | :--- | :--- | :--- | :--- |
-| Years to get treatment | **[17 years](../references.qmd#research-to-practice-gap-17-years)** | **2 years** | 15 years of suffering | [~50,000/year](../references.qmd#beta-blocker-deaths) |
+| Clinical Phase Timeline | **[9.1 years (avg)](../references.qmd#clinical-trial-phase-duration)** | **2-3 years** | ~7 years of waiting eliminated | [~50,000/year](../references.qmd#beta-blocker-deaths) |
 | Cost per trial | [**$57 million**](../references.qmd#clinical-trial-cost-breakdown) | **$2 million** | $55 million | Infinite ROI |
 | Who can participate | **[15% of patients](../references.qmd#clinical-trial-exclusions)** | **100% of patients** | 85% inclusion rate | Everyone |
 | Rare diseases with treatments | **[5%](../references.qmd#fda-untreated-diseases-95pct)** | **Eventually 100%** | Priceless | Millions |
@@ -248,9 +251,8 @@ The only solution is to let patients and doctors make their own decisions, then 
 During COVID, while America was filling out forms, Oxford University did something crazy: they just tested drugs on dying people to see if they stopped dying.
 
 Cost per patient:
-
-- FDA trials: [$41,000](../references.qmd#trial-cost-41k)
-- Oxford trial: [$500](../references.qmd#recovery-cost-500)
+- Normal clinical trials: [$41,000](../references.qmd#trial-cost-41k)
+- Oxford pragmatic trials: [$500](../references.qmd#recovery-cost-500)
 
 That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan to save a human life.
 

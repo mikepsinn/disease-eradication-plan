@@ -10,7 +10,7 @@ tags:
   - finance
   - operations
   - nonprofit
-lastStructureCheckHash: c4a24475b212549db445604b6ea89c5b29bffe8d4d40495c27cf33e8cfc8c17e
+lastStructureCheckHash: 5f782ed6cf8b1e7d660ffc380b77433379cea880632b7e468644cb3569b56e5f
 ---
 ## The Unified Strategy: A 36-Month Plan from Concept to Global Impact
 
@@ -36,6 +36,7 @@ The core philosophy is to hire a few very smart people to build the system, then
 - Angel Investor Lead (unpaid, equity participation)
 
 **Tactical Execution:**
+
 1. **Week 1-2**: Incorporate Delaware C-Corp, open bank account, set up cap table
 2. **Week 3-6**: Build Wishocracy voting widget MVP (React frontend + Supabase backend, ~$15k contractor)
 3. **Week 7-8**: Launch beta with 100 friends/family, measure engagement (target: 70%+ completion rate)
@@ -69,14 +70,15 @@ The core philosophy is to hire a few very smart people to build the system, then
 - Board advisors: 1 former regulator, 1 defense contractor exec, 1 tech founder (unpaid)
 
 **Tactical Execution:**
-1. **Months 4-6**: Close $10M Series A (target 15-20 VCs, emphasize political arbitrage + 270% bond returns)
+
+1. **Months 4-6**: Close $35M Series A (target 15-20 VCs, emphasize political arbitrage + 270% bond returns)
 2. **Months 7-9**: Scale engineering team, build production platform v2 with full KYC/identity verification
 3. **Months 10-12**: Launch viral referral program with $0.20/vote incentives in 3 pilot countries (start with friendly nations: Switzerland, Singapore, Estonia)
 4. **Months 13-15**: Hire lobbying firms in 5 key countries (US, UK, Germany, Japan, South Korea), coordinate messaging
 5. **Months 16-18**: Run first political pressure campaigns, demonstrate that referendum numbers translate to politician behavior change
 
 **Key Performance Indicators:**
-- Fundraising: $10M Series A at $40-50M valuation (validates growth trajectory)
+- Fundraising: $35M Series A raised (validates growth trajectory)
 - Platform scaling: Handle 500K concurrent users, 99.9% uptime
 - User acquisition: Reach 50M verified votes (CAC target: $0.50 with referral mechanics)
 - Viral coefficient (k-factor): Achieve 1.3+ (exponential organic growth)
@@ -107,6 +109,7 @@ The core philosophy is to hire a few very smart people to build the system, then
 - Bond offering team: Investment bankers (contract), SEC lawyers (contract)
 
 **Tactical Execution:**
+
 1. **Months 19-21**: Launch VICTORY bond offering (Reg D 506b for accredited investors, target $500M first close)
 2. **Months 22-24**: Deploy $250M to lobbying campaigns in 20 key countries, hire top K-Street firms
 3. **Months 25-27**: Scale referendum to 280M votes via $200M viral marketing campaign

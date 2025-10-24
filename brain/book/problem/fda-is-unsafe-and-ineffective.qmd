@@ -14,7 +14,7 @@ lastFactCheck: 2025-10-17T00:00:00.000Z
 lastLinkCheck: 2025-10-17T00:00:00.000Z
 lastFigureCheck: 2025-10-17T00:00:00.000Z
 lastFactCheckHash: f2b0a7a7e41cf5c672aa17be7c37c7be259f4dfdf2f659287ff274d0d247dabd
-lastStructureCheckHash: 82fa74e18268433f4f8866002684bde86f02be643e3db78d7ea636f12fdce650
+lastStructureCheckHash: b3e435ddb539aff56cb86afcf602d0256434950da0443799a2661cd1a132f2ea
 ---
 ## The 82X Cost Multiplier: Two Systems, Two Outcomes
 
@@ -26,11 +26,11 @@ That's **82X more expensive**.
 
 The RECOVERY trial found dexamethasone saves lives.
 Time from start to result: [3 months](../references.qmd#recovery-trial-100-days-to-cure).
-FDA average time to approve a new drug: [12 years](../references.qmd#drug-development-timeline-17-years).
+FDA average time to approve a new drug: [9.1 years from Phase 1](../references.qmd#drug-development-timeline-9-years).
 
-That's **48X slower**.
+That's **36X slower** (9.1 years ≈ 109 months ÷ 3 months).
 
-Combined inefficiency: 82 × 48 = **3,936X less efficient overall**.
+Combined inefficiency: 82 × 36 = **2,952X less efficient overall**.
 
 These aren't estimates.
 These are documented outcomes from actual trials.
@@ -56,7 +56,7 @@ The results were immediate and catastrophic:
 
 - **[New drug approvals dropped 70%](../references.qmd#post-1962-drug-approval-drop)** overnight
 - **[Drug costs exploded: $74M to $2.6B today](../references.qmd#post-1962-drug-costs-explode)** (35X more expensive)
-- **Timeline: [2-3 years to 17 years](../references.qmd#drug-development-timeline-17-years)** to market
+- **Timeline: [2-3 years to 17 years](../references.qmd#drug-development-timeline-17-years)** total discovery-to-patient (with 9.1 years in FDA approval alone)
 - **[Life expectancy gains slowed by more than half](../references.qmd#post-1962-life-expectancy-slowdown)**
 
 ![FDA safety trials and life expectancy: the impact of regulation](../../../assets/fda-safety-trials-life-expectancy.png)
@@ -90,7 +90,7 @@ It's a beautiful system if you're a mortician or a bankruptcy lawyer.
 Here's what it actually costs to get FDA approval for a new drug:
 
 - **Average cost:** [$2.6 billion](../references.qmd#drug-development-costs)
-- **Average time:** [10-15 years](../references.qmd#drug-development-timeline-17-years)
+- **Average time:** [9.1 years from Phase 1](../references.qmd#drug-development-timeline-9-years) (17 years total discovery-to-patient)
 - **Success rate:** [12% make it through trials](../references.qmd#drug-trial-success-rate-12-pct)
 
 That's [$41,000 per person](../references.qmd#trial-cost-41k) just to TEST if a pill works. Not the pill. Just to test it.
@@ -377,7 +377,7 @@ The FDA doesn't make drugs safe.
 It makes them:
 
 - Expensive (\$2.6 billion)
-- Slow (12+ years)
+- Slow (9+ years approval phase, 17 years total)
 - Inaccessible (95% of rare diseases have zero treatments)
 - Ineffective (tested on wrong populations)
 
