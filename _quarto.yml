@@ -150,6 +150,16 @@ book:
         - brain/book/theory/the-two-wars.qmd
         - brain/book/problem/genetic-slavery.qmd
 
+    - part: "📚 Additional References"
+      chapters:
+        - brain/book/appendix/data-storage-costs.qmd
+        - brain/book/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd
+        - brain/book/appendix/lives-saved-by-drug-accessibility.qmd
+        - brain/book/appendix/nuclear-weapon-cost-and-casualties.qmd
+        - brain/book/appendix/organizational-precedents.qmd
+        - brain/book/appendix/pharmaceutical-industry-randd-analysis.qmd
+        - brain/book/appendix/pragmatic-vs-explanatory-trials.qmd
+
 execute:
   # Relaunch kernel for each render
   cache: false
