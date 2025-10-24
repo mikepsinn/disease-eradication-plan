@@ -75,14 +75,14 @@ ax.text(1962, 52, '1962\nKefauver-Harris\nAmendment',
                   edgecolor=COLOR_BLACK, linewidth=2))
 
 # Add growth rate annotations - Pre-1962
-ax.text(1925, 68, 'Pre-1962:\n4 years per decade',
+ax.text(1925, 73, 'Pre-1962:\n4 years per decade',
         fontsize=32, ha='center', va='center', color=COLOR_BLACK, weight='bold',
         fontfamily='monospace',
         bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE,
                   edgecolor=COLOR_BLACK, linewidth=2.5))
 
 # Add growth rate annotations - Post-1962
-ax.text(1990, 70, 'Post-1962:\n2 years per decade',
+ax.text(1990, 64, 'Post-1962:\n2 years per decade',
         fontsize=32, ha='center', va='center', color=COLOR_BLACK, weight='bold',
         fontfamily='monospace',
         bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE,
@@ -90,7 +90,7 @@ ax.text(1990, 70, 'Post-1962:\n2 years per decade',
 
 # Add arrow showing the slowdown
 from matplotlib.patches import FancyArrowPatch
-arrow = FancyArrowPatch((1962, 71), (1990, 70),
+arrow = FancyArrowPatch((1962, 71), (1990, 64),
                         arrowstyle='->', mutation_scale=30,
                         linewidth=3, color=COLOR_BLACK, alpha=0.6)
 ax.add_patch(arrow)
