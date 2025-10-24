@@ -6,7 +6,7 @@ Search all .qmd files in the project for TODO comments and address them systemat
 
 ## Instructions
 
-1. **Find all TODOs**: Search for `<!-- TODO` in all `.qmd` files in the `brain/book/` directory
+1. **Find all TODOs**: Search for `TODO` in all `.qmd` files in the `brain/book/` directory
 
 3. **Address each TODO**:
 
