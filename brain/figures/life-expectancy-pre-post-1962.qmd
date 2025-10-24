@@ -38,7 +38,7 @@ setup_chart_style()
 
 # Load data
 project_root = get_project_root()
-data_path = project_root / "brain" / "data" / "extracted" / "drug-cost-and-lifespan.csv"
+data_path = project_root / "brain" / "data" / "us-life-expectancy-fda-budget-drug-costs-1901-2019.csv"
 df = pd.read_csv(data_path)
 
 # Clean data

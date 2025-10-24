@@ -206,6 +206,42 @@ def get_project_root():
     return project_root
 
 
+def get_chart_metadata(title=None, description=None):
+    """
+    Generate standardized PNG metadata for charts.
+
+    This metadata ensures proper attribution when images are shared while
+    maintaining deterministic rendering (no timestamps or software versions).
+
+    Args:
+        title: Chart title (optional, recommended)
+        description: Brief description of what the chart shows (optional)
+
+    Returns:
+        dict: Metadata dictionary for use with plt.savefig(metadata=...)
+
+    Example:
+        metadata = get_chart_metadata(
+            title="Military vs Medical Research Spending",
+            description="Comparison of global military and medical research budgets"
+        )
+        plt.savefig('chart.png', metadata=metadata)
+    """
+    metadata = {
+        'Author': 'Mike P. Sinn',
+        'Copyright': 'CC BY 4.0 - WarOnDisease.org',
+        'Source': 'https://WarOnDisease.org',
+    }
+
+    if title:
+        metadata['Title'] = title
+
+    if description:
+        metadata['Description'] = description
+
+    return metadata
+
+
 # Convenience function for quick setup
 def quick_setup():
     """Quick setup with default light theme."""

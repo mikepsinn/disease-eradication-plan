@@ -40,7 +40,7 @@ setup_chart_style()
 
 # Load data
 project_root = get_project_root()
-data_path = project_root / "brain" / "data" / "extracted" / "spending-lifespan-transposed.csv"
+data_path = project_root / "brain" / "data" / "us-healthcare-spending-vs-life-expectancy-2000-2018.csv"
 df = pd.read_csv(data_path)
 
 # Clean data

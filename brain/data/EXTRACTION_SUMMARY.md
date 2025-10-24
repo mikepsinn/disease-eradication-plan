@@ -8,48 +8,52 @@ October 24, 2025
 
 ## Data Extracted
 
-### CSV Files (11 sheets)
+### CSV Files (9 sheets - 2 duplicates removed)
 
-1. **drug-cost-and-lifespan.csv** (119 rows, 4 columns)
+1. **us-life-expectancy-fda-budget-drug-costs-1901-2019.csv** (119 rows, 4 columns)
    - Year (1901-2020)
    - US Life expectancy
    - FDA Budget (Inflation Adjusted to 2020 USD)
    - Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)
 
-2. **spending-lifespan-transposed.csv** (20 rows, 3 columns)
+2. **us-healthcare-spending-vs-life-expectancy-2000-2018.csv** (20 rows, 3 columns)
    - Year (2000-2018)
    - US Healthcare Spending Per Person
    - Life Expectancy
 
-3. **health-spending-and-lifespan.csv** (20 rows, 3 columns)
-   - Year (2000-2018)
-   - US Healthcare Spending Per Person
-   - Life Expectancy
+3. **global-life-expectancy-by-country-1950-2019.csv** (19,028 rows, 4 columns)
+   - Entity (country name)
+   - Code (country code)
+   - Year (1950-2019)
+   - Life expectancy
+   - Global data for 195+ countries (not just UK)
 
-4. **uk.csv** (19,028 rows, 4 columns)
-   - Detailed UK historical data
+4. **us-life-expectancy-fda-budget-1543-2019.csv** (219 rows, 3 columns)
+   - Historical life expectancy data from 1543-2019
+   - FDA Budget (Inflation Adjusted to 2020 USD)
 
-5. **lifespan-and-jama.csv** (219 rows, 3 columns)
-   - Historical life expectancy data
-   - JAMA founding correlation (1893)
+5. **drug-compound-disease-combination-statistics.csv** (4 rows, 3 columns)
+   - Drug-like compounds (166 billion)
+   - Diseases (7,000)
+   - Percent of combinations studied
 
-6. **drugs-diseases-studied.csv** (4 rows, 3 columns)
-   - Distribution of drugs vs diseases studied
+6. **disease-deaths-vs-historical-tragedies-comparison.csv** (5 rows, 3 columns)
+   - Annual disease deaths (54.7M)
+   - September 11th attacks (3,000)
+   - Holocaust deaths (6M)
 
-7. **holocaust.csv** (5 rows, 3 columns)
-   - Comparative death statistics
+7. **military-vs-medical-spending-comparison.csv** (6 rows, 5 columns)
+   - US/Global chronic disease victims
+   - US/Global military spending
+   - Per-victim spending analysis
 
-8. **tokenomics.csv** (6 rows, 5 columns)
-   - Economic modeling data
+8. **quantimo-measurement-units-definitions.csv** (64 rows, 19 columns)
+   - Measurement unit definitions and conversions
+   - QuantiModo system units reference
 
-9. **healthcare-spending.csv** (20 rows, 3 columns)
-   - Healthcare spending trends
-
-10. **units.csv** (64 rows, 19 columns)
-    - Measurement units and conversions
-
-11. **life-expectancy.csv** (19,028 rows, 4 columns)
-    - Comprehensive life expectancy historical data
+9. **life-expectancy.csv** (19,028 rows, 4 columns)
+   - Comprehensive life expectancy historical data
+   - Global coverage by country
 
 ### Charts Identified
 
