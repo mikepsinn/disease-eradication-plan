@@ -77,6 +77,9 @@
     "build:dih:full": "quarto render --profile dih",
     "claude:opus": "claude --model claude-opus-4-1-20250805",
     "copy-guides": "tsx scripts/copy-guides.ts",
+    "images:analyze": "tsx scripts/generate-image-metadata.ts",
+    "images:analyze:all": "tsx scripts/generate-image-metadata.ts --all",
+    "images:guide": "tsx scripts/generate-image-metadata.ts --guide-only",
     "prepare": "husky"
   },
   "devDependencies": {

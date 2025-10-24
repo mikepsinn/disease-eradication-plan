@@ -8,6 +8,7 @@ Based on the book's outline, its structure from `_quarto.yml`, and the content o
 4.  **DELETE**: The content is redundant, irrelevant, or low-quality and should be deleted.
 
 **IMPORTANT - Content Preservation:**
+
 1. **Preserve ALL Images:** You MUST include EVERY image from the archived file in the `newFileContent`. Do not skip or omit any images, even if they seem similar or redundant. Each image provides valuable visual evidence.
 2. **Preserve ALL Reference Links:** You MUST keep ALL existing reference links in the format `[text](../references.qmd#anchor-id)` or similar citation links. Do NOT convert these to plain text or remove them. These citation links are critical for fact-checking and credibility.
 3. **Preserve ALL External Links:** Keep all links to external sources (URLs starting with http/https). These provide important citations and sources.

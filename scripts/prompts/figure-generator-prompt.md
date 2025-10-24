@@ -26,12 +26,14 @@ As a data visualization expert, your task is to analyze a book chapter and deter
 You MUST use the provided design guide and example files as your ground truth.
 
 **1. FULL DESIGN GUIDE (`GUIDES/DESIGN_GUIDE.md`):**
+
 ```markdown
 # Design Guide
 ... [The full design guide content as provided previously] ...
 ```
 
 **2. EXAMPLE 1: Column Chart (`brain/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd`):**
+
 ````qmd
 ```{python}
 #| label: military-vs-medical-research-spending-1-percent-treaty
@@ -73,6 +75,7 @@ plt.show()
 ````
 
 **3. EXAMPLE 2: Pie Chart (`brain/figures/humanitys-budget-pie-chart.qmd`):**
+
 ````qmd
 ```{python}
 #| label: humanitys-budget-pie-chart
@@ -96,6 +99,7 @@ plt.show()
 ````
 
 **4. EXAMPLE 3: Line Chart (`brain/figures/historical-life-expectancy-line-chart.qmd`):**
+
 ````qmd
 ```{python}
 #| label: historical-life-expectancy-line-chart
@@ -144,6 +148,7 @@ You will be given the chapter content and a list of existing figures.
 -   If no action is needed: `NO_ACTION_NEEDED`
 -   If an existing figure should be used: `{ "existing_figure": "path/to/figure.qmd" }`
 -   If a new figure should be created:
+
     ```json
     {
       "filename": "your-generated-filename.qmd",

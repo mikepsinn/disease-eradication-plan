@@ -93,7 +93,7 @@ All charts should include standardized metadata for proper attribution when shar
 
 - **Author:** Mike P. Sinn
 - **Copyright:** CC BY 4.0 - WarOnDisease.org
-- **Source:** https://WarOnDisease.org
+- **Source:** <https://WarOnDisease.org>
 - **Title:** Chart title (optional but recommended)
 - **Description:** Brief description (optional)
 

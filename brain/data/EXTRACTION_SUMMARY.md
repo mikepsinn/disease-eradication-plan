@@ -1,9 +1,11 @@
 # Excel Extraction Summary
 
 ## Source File
+
 `brain/data/life-expectancy-healthcare-spending-cost-of-drug-development.xlsx`
 
 ## Extraction Date
+
 October 24, 2025
 
 ## Data Extracted
@@ -67,12 +69,15 @@ October 24, 2025
 ## Quarto Files Created
 
 ### 1. FDA Spending, Life Expectancy, and Drug Costs Combined
+
 **File:** `brain/figures/fda-spending-life-expectancy-drug-costs-combined.qmd`
 
 **Generated Images:**
+
 - `fda-spending-life-expectancy-drug-costs-combined.png`
 
 **Features:**
+
 - Multi-axis chart showing:
   - US Life Expectancy (1901-2020)
   - FDA Budget (inflation-adjusted)
@@ -81,23 +86,28 @@ October 24, 2025
 - Statistical analysis of growth rates
 
 **Key Finding:**
+
 - Life expectancy growth slowed from 4 years/year (pre-1962) to 2 years/year (post-1962)
 - Drug development costs increased from $74M to $2.6B (inflation-adjusted)
 
 ### 2. Healthcare Spending vs Life Expectancy
+
 **File:** `brain/figures/healthcare-spending-vs-life-expectancy.qmd`
 
 **Generated Images:**
+
 - `healthcare-spending-vs-life-expectancy.png`
 - `healthcare-spending-vs-life-expectancy-scatter.png`
 
 **Features:**
+
 - Dual-axis time series (2000-2018)
 - Scatter plot with trend line
 - Cost-per-year-of-life analysis
 - Correlation statistics
 
 **Key Finding:**
+
 - Healthcare spending increased 129% (2000-2018)
 - Life expectancy increased only 2.04 years
 - Demonstrates diminishing returns on healthcare spending
@@ -105,29 +115,34 @@ October 24, 2025
 ## Data Quality Notes
 
 ### Cleaned Data
+
 - Removed empty columns
 - Dropped rows with no data
 - Handled NaN values appropriately
 - Standardized column names
 
 ### Data Ranges
+
 - **Historical data:** 1901-2020 (drug costs)
 - **Modern healthcare data:** 2000-2018
 - **UK data:** Very detailed (19,028 rows)
 
 ## Chart Metadata
+
 Full chart metadata including series references saved to:
 `brain/data/extracted/chart_metadata.json`
 
 ## Next Steps (Future Enhancements)
 
 ### Additional Charts to Create
+
 1. **Lifespan and JAMA founding** (scatter chart showing correlation)
 2. **Drugs vs Diseases studied** (pie chart)
 3. **Holocaust comparison** (bar chart)
 4. **UK vs US comparison** (line chart)
 
 ### Potential Improvements
+
 - Add more statistical analysis (regression, R-squared values)
 - Create interactive Plotly versions
 - Add confidence intervals where appropriate
@@ -135,6 +150,7 @@ Full chart metadata including series references saved to:
 - Add data sources and citations directly in charts
 
 ## Technical Stack
+
 - **Data extraction:** Python 3.10, openpyxl, pandas
 - **Visualization:** matplotlib, numpy
 - **Documentation:** Quarto with Python kernel
@@ -143,6 +159,7 @@ Full chart metadata including series references saved to:
 ## Usage
 
 To render all charts:
+
 ```bash
 cd brain/figures
 quarto render fda-spending-life-expectancy-drug-costs-combined.qmd
@@ -150,11 +167,13 @@ quarto render healthcare-spending-vs-life-expectancy.qmd
 ```
 
 To update data extraction:
+
 ```bash
 python scripts/extract-excel-data.py
 ```
 
 ## Data Location
+
 - **Source:** `brain/data/life-expectancy-healthcare-spending-cost-of-drug-development.xlsx`
 - **Extracted CSV:** `brain/data/extracted/*.csv`
 - **Chart metadata:** `brain/data/extracted/chart_metadata.json`
