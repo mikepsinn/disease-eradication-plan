@@ -1,3 +1,8 @@
+---
+title: Chart Visualizations
+description: Reusable chart visualizations in Quarto format following black-and-white minimalist design standards.
+---
+
 # Chart Visualizations
 
 All chart design guidelines, color palettes, typography specifications, and technical standards have been moved to the root-level **[DESIGN_GUIDE.md](../../GUIDES/DESIGN_GUIDE.md)**.

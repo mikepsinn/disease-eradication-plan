@@ -1,3 +1,8 @@
+---
+title: Data Sources References
+description: Reference URLs and sources for drug development costs, FDA budget data, and clinical trial cost analyses.
+---
+
 # Data Sources References
 
 **Sheet Information:**
