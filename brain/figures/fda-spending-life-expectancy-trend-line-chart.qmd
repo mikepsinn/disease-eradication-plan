@@ -1,0 +1,105 @@
+---
+title: "FDA Spending vs Life Expectancy Trends"
+format:
+  html:
+    code-fold: true
+---
+
+```{python}
+#| label: fda-spending-life-expectancy-trend
+#| fig-cap: "Life expectancy trends before and after FDA creation (1901-2000)"
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from pathlib import Path
+import sys
+
+# Find project root dynamically
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# Add brain/figures to path for imports
+sys.path.insert(0, str(project_root / 'brain' / 'figures'))
+
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE
+)
+
+# Setup styling
+setup_chart_style()
+
+# Load data
+data_path = project_root / 'assets' / 'extracted-fda-data' / 'historical-life-expectancy-fda-budget-drug-costs-1901-2000.csv'
+df = pd.read_csv(data_path)
+
+# Extract year and life expectancy columns
+# Columns: Year, Life Expectancy Pre-FDA, Life Expectancy Post-FDA
+years = df['Year'].values
+life_exp_pre = df['Life Expectancy Pre-FDA'].values
+life_exp_post = df['Life Expectancy Post-FDA'].values
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot Pre-FDA (1901-1937)
+pre_fda_mask = ~pd.isna(life_exp_pre)
+ax.plot(years[pre_fda_mask], life_exp_pre[pre_fda_mask],
+        color=COLOR_BLACK, linewidth=3, linestyle='--',
+        label='Before FDA (1901-1937)', marker='o', markersize=3, markevery=5)
+
+# Plot Post-FDA (1938-2000)
+post_fda_mask = ~pd.isna(life_exp_post)
+ax.plot(years[post_fda_mask], life_exp_post[post_fda_mask],
+        color=COLOR_BLACK, linewidth=3, linestyle='-',
+        label='After FDA Created (1938-2000)', marker='s', markersize=3, markevery=5)
+
+# Add vertical line at FDA creation (1938)
+fda_year = 1938
+ax.axvline(x=fda_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
+ax.text(fda_year, 82, 'FDA Created\n1938', ha='center', va='top',
+        fontsize=11, fontweight='bold', color=COLOR_BLACK)
+
+# Add vertical line at 1962 efficacy amendment
+efficacy_year = 1962
+ax.axvline(x=efficacy_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
+ax.text(efficacy_year, 82, 'Efficacy Requirement\nAdded (1962)', ha='center', va='top',
+        fontsize=11, fontweight='bold', color=COLOR_BLACK)
+
+# Title and labels
+ax.set_title('FDA Spending vs Life Expectancy: 1901-2000',
+             fontsize=32, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=22, fontweight='bold')
+ax.set_ylabel('Life Expectancy (years)', fontsize=22, fontweight='bold')
+
+# Set y-axis limits
+ax.set_ylim(40, 85)
+
+# Add legend
+ax.legend(fontsize=14, loc='lower right', frameon=True, facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK)
+
+# Style axes
+ax.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
+ax.tick_params(labelsize=14)
+clean_spines(ax)
+
+# Add watermark
+add_watermark(fig)
+
+# Save figure
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'fda-spending-life-expectancy-trend-line-chart.png',
+            dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.show()
+```
+
+This chart shows life expectancy trends from 1901-2000, split between pre-FDA (1901-1937) and post-FDA (1938-2000) periods. The vertical dashed line marks the creation of the FDA in 1938.
+
+**Key Insights:**
+
+- Life expectancy increased steadily before FDA creation
+- Growth continued after FDA establishment
+- The chart enables comparison of trends before and after regulatory oversight
