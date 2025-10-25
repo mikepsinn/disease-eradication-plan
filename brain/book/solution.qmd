@@ -16,6 +16,7 @@ lastFormattedHash: e4fdaea7394f4a721768b1d7b60e0b135d90f8ef93f2d1a12d8011dd60ad8
 lastFactCheckHash: ef5f31e5815dfcf4e7a9dc483be3e98c8dd1191b10a28dce0f36a8426b2a7b27
 lastLatexCheckHash: c07cd7c8d7c7b25048ac85529277e9a60504245cb9a5b25daf460914369779c2
 jupyter: dih-project-kernel
+lastStructureCheckHash: 1b1b5c07c132e912cf108d177b855a5edd8c65025766885bc6c797bfb477a87d
 ---
 
 ```{python}
@@ -43,17 +44,17 @@ Out of an existing pool of big health data, an insilico model of human biology c
 
 One way to achieve this is to view the human body as a black box with inputs and outputs. We can apply predictive machine learning models to stratified groups of similar people based on the following aspects:
 
-*   [Genomic](https://en.wikipedia.org/wiki/Genomics)
-*   [Transcriptomic](https://en.wikipedia.org/wiki/Transcriptome)
-*   [Proteomic](https://en.wikipedia.org/wiki/Proteomics)
-*   [Metabolomic](https://en.wikipedia.org/wiki/Metabolomics)
-*   [Microbiomic](https://en.wikipedia.org/wiki/Microbiota)
-*   [Phenotype](https://en.wikipedia.org/wiki/Phenotype)
-*   [Diseasomic](http://ijream.org/papers/IJREAMV05I0250057.pdf)
-*   [Pharmacomicrobiomic](https://en.wikipedia.org/wiki/Pharmacomicrobiomics)
-*   [Pharmacogenomic](https://en.wikipedia.org/wiki/Pharmacogenomics)
-*   [Foodomic](https://en.wikipedia.org/wiki/Foodomics)
-*   [Exposome](https://en.wikipedia.org/wiki/Environmental_factor#Exposome)
+* [Genomic](https://en.wikipedia.org/wiki/Genomics)
+* [Transcriptomic](https://en.wikipedia.org/wiki/Transcriptome)
+* [Proteomic](https://en.wikipedia.org/wiki/Proteomics)
+* [Metabolomic](https://en.wikipedia.org/wiki/Metabolomics)
+* [Microbiomic](https://en.wikipedia.org/wiki/Microbiota)
+* [Phenotype](https://en.wikipedia.org/wiki/Phenotype)
+* [Diseasomic](http://ijream.org/papers/IJREAMV05I0250057.pdf)
+* [Pharmacomicrobiomic](https://en.wikipedia.org/wiki/Pharmacomicrobiomics)
+* [Pharmacogenomic](https://en.wikipedia.org/wiki/Pharmacogenomics)
+* [Foodomic](https://en.wikipedia.org/wiki/Foodomics)
+* [Exposome](https://en.wikipedia.org/wiki/Environmental_factor#Exposome)
 
 This will enable the discovery of the full personalized range of positive and negative relationships for all factors without a profit incentive for traditional trials.
 
@@ -61,9 +62,11 @@ This will enable the discovery of the full personalized range of positive and ne
 
 ## The 6-Step Process
 
-**From \`{python} format_billions(CAPTURED_DIVIDEND)` to Curing Cancer**
+**From \`{python} format_billions(TREATY_ANNUAL_FUNDING)` to Curing Cancer**
 
-**1. Get the Money**: The **[1% Treaty](appendix/1-percent-treaty.qmd)** redirects \`{python} format_billions(CAPTURED_DIVIDEND)`/year from weapons to cures  
+<!-- TODO: STRUCTURE (CONTRADICTION) - The `TREATY_ANNUAL_FUNDING` variable (likely $24.4B, based on the '1% Treaty' chapter's 'Two-Tier Peace Dividend' section) contradicts the $27B figure used for the DIH budget in the 'DIH' and 'Investment Vehicle' chapters. Using different figures for the core funding amount is confusing and undermines credibility. Recommend using the simpler $27B figure consistently across all chapters. -->
+
+**1. Get the Money**: The **[1% Treaty](appendix/1-percent-treaty.qmd)** redirects \`{python} format_billions(TREATY_ANNUAL_FUNDING)`/year from weapons to cures  
 **2. Allocate Efficiently**: The **[DIH](./solution/dih.qmd)** uses democratic voting to fund what matters most  
 **3. Pay Patients**: Subsidies go directly to patients who join trials  
 **4. Run Cheap Trials**: Pragmatic trials cost [$500/patient](references.qmd#recovery-cost-500) instead of [$41,000](references.qmd#trial-cost-41k) (Oxford RECOVERY proved this works)  

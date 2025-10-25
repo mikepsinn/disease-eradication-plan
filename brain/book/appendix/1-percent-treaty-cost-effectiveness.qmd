@@ -39,11 +39,11 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 ### Step 1: Annual Economic Benefits
 
-#### 1a. Peace Dividend (`{python} format_billions(SOCIETAL_DIVIDEND)`/year)
+#### 1a. Peace Dividend (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`/year)
 
-**Quick summary**: The 1% Treaty reduces global conflict by 1%, saving society `{python} format_billions(SOCIETAL_DIVIDEND)` annually from reduced military spending, infrastructure destruction, healthcare costs, and economic disruption.
+**Quick summary**: The 1% Treaty reduces global conflict by 1%, saving society `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` annually from reduced military spending, infrastructure destruction, healthcare costs, and economic disruption.
 
-**Calculation**: `{python} format_billions(TOTAL_WAR_COST)` total war costs × `{python} format_percentage(TREATY_REDUCTION_PCT)` reduction = **`{python} format_billions(SOCIETAL_DIVIDEND)`**
+**Calculation**: `{python} format_billions(TOTAL_WAR_COST)` total war costs × `{python} format_percentage(TREATY_REDUCTION_PCT)` reduction = **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`**
 
 **For detailed breakdown and methodology**, see:
 - [Peace Dividend Calculations](peace-dividend-calculations.qmd) - Full Jupyter notebook with sensitivity analysis
@@ -65,7 +65,7 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 #### Total Annual Economic Benefits
 
-**`{python} format_billions(SOCIETAL_DIVIDEND)` + `{python} format_billions(DFDA_GROSS_SAVINGS)` = `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` per year**
+**`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` + `{python} format_billions(DFDA_GROSS_SAVINGS)` = `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` per year**
 
 **Sensitivity range**: $139B to $209B (conservative to optimistic scenarios)
 
@@ -210,9 +210,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Framing 2: Opportunity Cost of Redirected Spending**
 
-- Cost: `{python} format_billions(CAPTURED_DIVIDEND)`/year (redirected military spending)
-- But this `{python} format_billions(CAPTURED_DIVIDEND)` is ALREADY COUNTED in the `{python} format_billions(SOCIETAL_DIVIDEND)` peace dividend
-- Net cost: `{python} format_billions(CAPTURED_DIVIDEND)` - `{python} format_billions(CAPTURED_DIVIDEND)` = $0
+- Cost: `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year (redirected military spending)
+- But this `{python} format_billions(TREATY_ANNUAL_FUNDING)` is ALREADY COUNTED in the `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` peace dividend
+- Net cost: `{python} format_billions(TREATY_ANNUAL_FUNDING)` - `{python} format_billions(TREATY_ANNUAL_FUNDING)` = $0
 - **ICER = -$187,543 per QALY**
 
 **Framing 3: Military Waste Conversion**
@@ -384,7 +384,7 @@ This chart compares the gross annual economic benefits across major public healt
 
 - **Traditional interventions** (Water Fluoridation, Smoking Cessation, Childhood Vaccinations): Generate $0.8B to $15B in annual economic benefits. These are highly successful programs that have transformed public health.
 
-- **1% Treaty + DIH + dFDA**: Generates `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in annual economic benefits (`{python} format_billions(SOCIETAL_DIVIDEND)` peace dividend + `{python} format_billions(DFDA_GROSS_SAVINGS)` dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
+- **1% Treaty + DIH + dFDA**: Generates `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in annual economic benefits (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` peace dividend + `{python} format_billions(DFDA_GROSS_SAVINGS)` dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
 
 **Key distinction**: Only the 1% Treaty is self-funding—it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
 
@@ -410,7 +410,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 1. **Peace Dividend**: [Peace Dividend Calculations](peace-dividend-calculations.qmd)
    - Based on [Cost of War Analysis](../problem/cost-of-war.qmd)
    - Total war costs: `{python} format_billions(TOTAL_WAR_COST)` annually
-   - 1% reduction: `{python} format_billions(SOCIETAL_DIVIDEND)`
+   - 1% reduction: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`
 
 2. **Health Dividend (dFDA)**: [Health Dividend Calculations](health-dividend-calculations.qmd)
    - Clinical trial market: ~`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year
@@ -455,7 +455,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 **A**: The 1% Treaty generates `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in annual economic benefits:
 
-- `{python} format_billions(SOCIETAL_DIVIDEND)` from reduced conflict costs (peace dividend)
+- `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` from reduced conflict costs (peace dividend)
 - `{python} format_billions(DFDA_GROSS_SAVINGS)` from more efficient medical R&D (dFDA)
 
 These benefits far exceed the `{python} format_millions(TOTAL_ANNUAL_COSTS)` annual costs, creating a net profit of `{python} format_billions(NET_ANNUAL_BENEFIT)`/year for society.
@@ -506,7 +506,7 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **From society's aggregate perspective**: The `{python} format_billions(CAMPAIGN_TOTAL_COST)` campaign cost is real money that someone must provide initially. However, since investors get repaid with `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns from redirected military spending, the net cost to society approaches $0 after payback.
 
-**From taxpayers' perspective**: They give up `{python} format_billions(CAPTURED_DIVIDEND)` in military spending but receive `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in economic benefits (peace dividend + R&D savings). Net gain: $137B.
+**From taxpayers' perspective**: They give up `{python} format_billions(TREATY_ANNUAL_FUNDING)` in military spending but receive `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in economic benefits (peace dividend + R&D savings). Net gain: $137B.
 
 **From investors' perspective**: They invest $1B and receive $2.7B/year perpetually. This is the best investment in history.
 

@@ -140,7 +140,7 @@ Advantage: 70x more brain power
 **Conservative Estimate:**
 
 - 25% better allocation efficiency
-- `{python} format_billions(CAPTURED_DIVIDEND)` annual budget (1% of military)
+- `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual budget (1% of military)
 - = **$6.75B additional value created annually**
 
 **Realistic Estimate:**
@@ -151,7 +151,7 @@ Advantage: 70x more brain power
 **Optimistic but Possible:**
 
 - 2x better allocation (like Wikipedia vs Britannica)
-- = **`{python} format_billions(CAPTURED_DIVIDEND)` additional value created annually**
+- = **`{python} format_billions(TREATY_ANNUAL_FUNDING)` additional value created annually**
 
 ## Why Committee Members Hate This
 
@@ -179,7 +179,7 @@ The NIH stays equally dumb forever. Markets get exponentially smarter.
 ## Bottom Line
 
 NIH: 200 bureaucrats spending $48B based on politics and prestige.
-DIH: 280 million people allocating `{python} format_billions(CAPTURED_DIVIDEND)` based on results and skin in the game.
+DIH: 280 million people allocating `{python} format_billions(TREATY_ANNUAL_FUNDING)` based on results and skin in the game.
 
 One of these systems put humans on the moon and created the internet.
 The other created Soviet bread lines.

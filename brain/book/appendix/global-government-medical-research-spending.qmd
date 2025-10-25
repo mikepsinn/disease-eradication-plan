@@ -301,7 +301,7 @@ Ratio: Still 31:1 for death
 
 **[The 1% Solution](1-percent-treaty.qmd):**
 
-- 1% of military spending: `{python} format_billions(CAPTURED_DIVIDEND)`
+- 1% of military spending: `{python} format_billions(TREATY_ANNUAL_FUNDING)`
 - Added to current spending: $95 billion total
 - Increase: 40%
 - Lives saved: Millions

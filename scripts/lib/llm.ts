@@ -6,8 +6,9 @@ dotenv.config();
 
 // --- LLM Setup ---
 // DO NOT CHANGE THESE MODEL NUMBERS
-const GEMINI_MODEL_ID = 'gemini-2.5-pro';
-const CLAUDE_MODEL_ID = 'claude-opus-4-1-20250805';
+const GEMINI_PRO_MODEL_ID = 'gemini-2.5-pro';
+const GEMINI_FLASH_MODEL_ID = 'gemini-2.5-flash';
+const CLAUDE_MODEL_ID = 'claude-3-opus-20240229';
 
 const API_KEY = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
 if (!API_KEY) {
@@ -26,9 +27,17 @@ if (!process.env.ANTHROPIC_API_KEY) {
   throw new Error('ANTHROPIC_API_KEY is not set in the .env file.');
 }
 
-export async function generateGeminiContent(prompt: string): Promise<string> {
+export async function generateGeminiProContent(prompt: string): Promise<string> {
   const result = await genAI.models.generateContent({
-    model: GEMINI_MODEL_ID,
+    model: GEMINI_PRO_MODEL_ID,
+    contents: prompt,
+  });
+  return result.text || '';
+}
+
+export async function generateGeminiFlashContent(prompt: string): Promise<string> {
+  const result = await genAI.models.generateContent({
+    model: GEMINI_FLASH_MODEL_ID,
     contents: prompt,
   });
   return result.text || '';

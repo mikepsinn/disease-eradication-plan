@@ -37,7 +37,7 @@ This document provides a high-level overview of the entire financial architectur
 - **Structure:** Debt instrument, senior to all other claims
 - **Payout:** 10% of all DIH treaty inflows (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`/year)
 - **Protection:** Bondholders paid before mission spending
-- **Collateral:** `{python} format_billions(CAPTURED_DIVIDEND)`+ annual treaty revenue stream
+- **Collateral:** `{python} format_billions(TREATY_ANNUAL_FUNDING)`+ annual treaty revenue stream
 - **The Pitch:** "Invest $1B. Get $2.7B/year. Forever."
 
 **Why This Works:**
@@ -79,13 +79,13 @@ The one-time "activation energy" to pass the 1% Treaty, made affordable through 
 
 ---
 
-### 3. Treasury Management: How To Manage `{python} format_billions(CAPTURED_DIVIDEND)`+ Annually
+### 3. Treasury Management: How To Manage `{python} format_billions(TREATY_ANNUAL_FUNDING)`+ Annually
 
-Once the treaty passes, `{python} format_billions(CAPTURED_DIVIDEND)` flows annually from military budgets to the DIH treasury.
+Once the treaty passes, `{python} format_billions(TREATY_ANNUAL_FUNDING)` flows annually from military budgets to the DIH treasury.
 
 #### Revenue Sources
 
-**Primary:** 1% Treaty (`{python} format_billions(CAPTURED_DIVIDEND)` annually)
+**Primary:** 1% Treaty (`{python} format_billions(TREATY_ANNUAL_FUNDING)` annually)
 
 - 100+ nations contribute 1% of military budgets
 - Verified via satellite imagery and blockchain receipts
@@ -93,7 +93,7 @@ Once the treaty passes, `{python} format_billions(CAPTURED_DIVIDEND)` flows annu
 
 **Growth Path:**
 
-- Year 1-3: 1% Treaty (`{python} format_billions(CAPTURED_DIVIDEND)`)
+- Year 1-3: 1% Treaty (`{python} format_billions(TREATY_ANNUAL_FUNDING)`)
 - Year 4-7: 2% Treaty ($54B) - public demands expansion
 - Year 8-10: 5% Treaty ($135B) - exponential success
 - Year 10+: 10%+ ($270B+) - war becomes obsolete
@@ -169,7 +169,7 @@ As more patients join:
 
 **Revenue:**
 
-- 1% Treaty: `{python} format_billions(CAPTURED_DIVIDEND)`
+- 1% Treaty: `{python} format_billions(TREATY_ANNUAL_FUNDING)`
 
 **Expenses:**
 
@@ -218,7 +218,7 @@ As more patients join:
 
 **Expenses:**
 
-- VICTORY bond returns: `{python} format_billions(CAPTURED_DIVIDEND)`+ (10% forever)
+- VICTORY bond returns: `{python} format_billions(TREATY_ANNUAL_FUNDING)`+ (10% forever)
 - Death becomes optional
 - Suffering becomes archaeology
 - Humanity explores space
@@ -424,7 +424,7 @@ Each success makes the next success easier:
 
 **To Spend:** 20% viral referendum, 25% AI lobbying, 25% tech platform, 10% AI legal, 10% partnerships, 5% ops, 5% implementation
 
-**To Manage:** `{python} format_billions(CAPTURED_DIVIDEND)`+ annually via Wishocracy (8 billion voters)
+**To Manage:** `{python} format_billions(TREATY_ANNUAL_FUNDING)`+ annually via Wishocracy (8 billion voters)
 
 **To Deliver:** `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns to investors (perpetual), `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` societal returns, optional death by 2050
 

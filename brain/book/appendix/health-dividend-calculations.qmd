@@ -142,7 +142,7 @@ monetized_qaly_value = DFDA_QALYS_MONETIZED  # $126B
 
 # --- Connecting to the Peace Dividend ---
 # The captured dividend must cover the operational cost.
-captured_dividend = CAPTURED_DIVIDEND  # $27.18B from 1% military redirect
+captured_dividend = TREATY_ANNUAL_FUNDING  # $27.18B from 1% military redirect
 funding_coverage_ratio = captured_dividend / dfda_annual_operational_cost  # 679.5x coverage
 
 print(f"--- dFDA Cost-Benefit Analysis (Baseline) ---")
@@ -226,17 +226,17 @@ This model calculates:
 # Source: brain/book/appendix/economic_parameters.py
 
 # Costs (in billions USD) - from economic_parameters.py
-C0 = NPV_UPFRONT_COST_TOTAL  # $0.26975B (core platform + medium broader initiatives)
-Cop = NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiatives)
+C0 = DIH_NPV_UPFRONT_COST_TOTAL  # $0.26975B (core platform + medium broader initiatives)
+Cop = DIH_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiatives)
 
 # Savings (in billions USD) - from economic_parameters.py
-Rd = NPV_ANNUAL_RD_SPEND  # $100B annual global R&D spend on clinical trials
-alpha = NPV_COST_REDUCTION_FRACTION  # 0.50 (50% reduction)
+Rd = GLOBAL_TRIAL_MARKET  # $100B annual global R&D spend on clinical trials
+alpha = TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
 
 # Financial Parameters - from economic_parameters.py
 r = DISCOUNT_RATE  # 0.08 (8% annual discount rate)
 T = TIME_HORIZON_YEARS  # 10 years
-adoption_ramp_years = NPV_ADOPTION_RAMP_YEARS  # 5 years to full adoption
+adoption_ramp_years = DFDA_ADOPTION_RAMP_YEARS  # 5 years to full adoption
 
 # Adoption Curve p(t)
 # Linear ramp from 0% to 100% over adoption_ramp_years, then constant at 100%

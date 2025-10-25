@@ -144,7 +144,7 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 
 {{< include ../../figures/three-ingredients-system-diagram.qmd >}}
 
-1. **The 1% Treaty**: Redirect `{python} format_billions(CAPTURED_DIVIDEND)` from military budgets (they keep 99%)
+1. **The 1% Treaty**: Redirect `{python} format_billions(TREATY_ANNUAL_FUNDING)` from military budgets (they keep 99%)
 2. **DIH Treasury**: Wishocratic governance - 8 billion people allocate funds, not 200 bureaucrats
 3. **dFDA Marketplace**: `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials, proven by Oxford
 
@@ -178,7 +178,7 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 - You invest: $1,000
 - Annual return: $2,700 (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` forever)
 - Total available: $1 billion (first-come basis)
-- Backed by: `{python} format_billions(CAPTURED_DIVIDEND)` in treaty funds
+- Backed by: `{python} format_billions(TREATY_ANNUAL_FUNDING)` in treaty funds
 
 **Better Returns Than:**
 

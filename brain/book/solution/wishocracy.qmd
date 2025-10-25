@@ -29,7 +29,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-Congratulations! You've passed the [1% Treaty](../solution/1-percent-treaty.qmd) and now you've got `{python} format_billions(CAPTURED_DIVIDEND)`/year to allocate.
+Congratulations! You've passed the [1% Treaty](../solution/1-percent-treaty.qmd) and now you've got `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year to allocate.
 
 How do you avoid parasitic special interests from stealing it or bureacracy from wasting it all?
 

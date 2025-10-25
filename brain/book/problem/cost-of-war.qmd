@@ -108,7 +108,7 @@ Let's be conservative and use \$10 million.
 |--------------|-------------|----------------|-------------|---------|
 | Active Combat | [233,600](../references.qmd#acled-active-combat-deaths) | $10,000,000 | $2,336B | [Armed Conflict Location & Event Data](https://acleddata.com/) |
 | Terror Attacks | [8,300](../references.qmd#gtd-terror-attack-deaths) | $10,000,000 | $83B | [Global Terrorism Database](https://www.start.umd.edu/gtd/) |
-| State Violence | [2,700](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | `{python} format_billions(CAPTURED_DIVIDEND)` | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
+| State Violence | [2,700](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | `{python} format_billions(TREATY_ANNUAL_FUNDING)` | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
 
 **Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually**
 

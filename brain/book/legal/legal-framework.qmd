@@ -29,7 +29,7 @@ from economic_parameters import *
 
 # The Legal Architecture (Staying Out of Prison)
 
-The 1% Treaty redirects `{python} format_billions(CAPTURED_DIVIDEND)` from bombs to bandages. The people who profit from bombs have lawyers. Good lawyers. Expensive lawyers. Lawyers who've put people in prison for less.
+The 1% Treaty redirects `{python} format_billions(TREATY_ANNUAL_FUNDING)` from bombs to bandages. The people who profit from bombs have lawyers. Good lawyers. Expensive lawyers. Lawyers who've put people in prison for less.
 
 The solution: hire better lawyers.
 

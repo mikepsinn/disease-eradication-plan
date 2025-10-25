@@ -167,7 +167,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 **Key Performance Indicators:**
 - Fundraising: $1B VICTORY bond sale (first $500M within 90 days validates demand)
 - Bond Terms: Secure `{python} format_billions(CAMPAIGN_TOTAL_COST)` raise on terms of bondholders receiving 10% of all future treaty inflows in perpetuity.
-- Projected Yield: Successfully communicate the projected `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual yield to investors (based on a `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` payout from a `{python} format_billions(CAPTURED_DIVIDEND)` treaty).
+- Projected Yield: Successfully communicate the projected `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual yield to investors (based on a `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` payout from a `{python} format_billions(TREATY_ANNUAL_FUNDING)` treaty).
 - Referendum scale: 280M votes (3.5% global population = unstoppable political pressure)
 - Lobbying ROI: $250M spent → 100+ politicians publicly supporting (cost per politician: $2.5M)
 - Electoral demonstration: Win or swing 5+ elections with independent expenditures (proves electoral threat is real)

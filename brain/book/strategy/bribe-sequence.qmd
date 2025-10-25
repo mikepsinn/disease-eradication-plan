@@ -35,7 +35,7 @@ The strategy unfolds in a sequence of bribes, each one funding the next, creatin
 
 - **Who:** Wealthy individuals, funds, anchor investors, and the military-industrial complex itself.
 - **The Bribe:** The most profitable investment opportunity in human history, modeled on the proven success of [WWII War Bonds](../references.qmd#wwii-war-bonds) but with [venture-capital-level returns](../references.qmd#top-pe-hedge-funds).
-- **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` Annual Returns:** **[VICTORY Bonds](../economics/victory-bonds.qmd)** offer 10% of redirected military spending (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` from `{python} format_billions(CAPTURED_DIVIDEND)`), delivering returns that crush even the [world's best hedge funds](../references.qmd#top-pe-hedge-funds).
+- **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` Annual Returns:** **[VICTORY Bonds](../economics/victory-bonds.qmd)** offer 10% of redirected military spending (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` from `{python} format_billions(TREATY_ANNUAL_FUNDING)`), delivering returns that crush even the [world's best hedge funds](../references.qmd#top-pe-hedge-funds).
 - **Money-Back Guarantee:** Initial funds are protected by an **[Assurance Contract](../appendix/fundraising-strategy.qmd)**, guaranteeing a full refund if fundraising goals are not met.
 - **The Result:** Defense contractors and billionaires make more money supporting peace than supporting war. So they support peace.
 
@@ -52,9 +52,9 @@ The strategy unfolds in a sequence of bribes, each one funding the next, creatin
 
 - **Who:** Early backers, health advocates, institutions
 - **The Bribe:** VICTORY bonds representing earned ownership of real economic value created by the peace dividend
-- **Governance control over `{python} format_billions(CAPTURED_DIVIDEND)` annually** in captured value from military budget redirection
+- **Governance control over `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually** in captured value from military budget redirection
 - **Voting rights** on patient subsidies and research funding allocation
-- **Bond value backed by actual treasury growth** from when the treaty actually happens ($0 → `{python} format_billions(CAPTURED_DIVIDEND)`)
+- **Bond value backed by actual treasury growth** from when the treaty actually happens ($0 → `{python} format_billions(TREATY_ANNUAL_FUNDING)`)
 
 ## 3. The Bribe for Regular People
 
@@ -63,7 +63,7 @@ The strategy unfolds in a sequence of bribes, each one funding the next, creatin
 - **Who:** Global population (targeting [3.5%](../references.qmd#3-5-rule) = 280 million people)
 - **The Bribe:** A large grant of **VOTE points** for each referendum vote, your proof that you'll get paid real money. These represent your earned share of the [`{python} format_billions(TOTAL_ENDGAME_BENEFITS)` annual peace dividend](../references.qmd#global-violence-costs) unlocked by redirecting military spending, convertible to **VICTORY bonds** after the [1% Treaty](../appendix/1-percent-treaty.qmd) is ratified.
 - **VOTE Points:** Every person who votes in our **[Global Referendum](/brain/book/strategy/global-referendum.qmd)** gets points. These aren't fake internet points. They represent real money.
-- **You Get Paid:** After the treaty passes, those points become real ownership in the `{python} format_billions(CAPTURED_DIVIDEND)` annual health budget. You helped create it, you get a piece of it.
+- **You Get Paid:** After the treaty passes, those points become real ownership in the `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual health budget. You helped create it, you get a piece of it.
 - **The Result:** Instead of a traditional protest where people wave signs and go home, we create 280 million people who have skin in the game. When 3.5% of the world's population wants something and will get paid for it, politicians listen.
 
 ## 4. The Bribe for Politicians
@@ -96,6 +96,6 @@ Here's how to execute it:
 
 1.  **Months 0-3:** Set up the legal structure and hire smart people to run the campaign.
 2.  **Months 4-36:** Launch the global referendum to get 280 million people to vote, and raise **[`{python} format_billions(CAMPAIGN_TOTAL_COST)`](/brain/book/economics/campaign-budget.qmd)** from investors.
-3.  **Years 3-5:** Use the mandate and money to get major countries to sign the treaty, then start spending `{python} format_billions(CAPTURED_DIVIDEND)` per year on curing diseases.
+3.  **Years 3-5:** Use the mandate and money to get major countries to sign the treaty, then start spending `{python} format_billions(TREATY_ANNUAL_FUNDING)` per year on curing diseases.
 
 That's it.

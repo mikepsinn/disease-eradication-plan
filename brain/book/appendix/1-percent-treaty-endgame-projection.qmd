@@ -65,7 +65,7 @@ That's more than the [GDP of China](../references.qmd#gdp-of-china).
 ## Direct Annual Savings (Year 1-5)
 
 - **Military reduction savings**: $27.2B (captured dividend)
-- **Societal peace dividend**: `{python} format_billions(SOCIETAL_DIVIDEND)` (reduced conflict costs)
+- **Societal peace dividend**: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` (reduced conflict costs)
 - **Clinical trial efficiency**: `{python} format_billions(DFDA_GROSS_SAVINGS)` (`{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction)
 - **Prevention programs**: $15B (catching disease early)
 - **Total Direct**: ~$206B annually

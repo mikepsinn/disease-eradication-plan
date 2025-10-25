@@ -89,7 +89,7 @@ New patients each year get early access:
 
 ## The Research Acceleration Multiplier
 
-**The insight:** `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials + 40% more funding (`{python} format_billions(CAPTURED_DIVIDEND)`/year) = **115X more research capacity**.
+**The insight:** `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials + 40% more funding (`{python} format_billions(TREATY_ANNUAL_FUNDING)`/year) = **115X more research capacity**.
 
 **What this means:**
 - Current: ~3,300 clinical trials/year globally, ~50 new drug approvals/year

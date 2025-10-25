@@ -179,7 +179,7 @@ Even if your country already spends a lot on research, it's not enough. A virus 
 **The returns** are high because:
 
 - We're capturing value from a $109T disease burden. The economic benefits work out to over $7.5 million per person globally over a 50-year period (`{python} format_billions(TOTAL_COMPLETE_BENEFITS)` annual benefit ÷ 8B people = $152K/person/year)
-- 10% of `{python} format_billions(CAPTURED_DIVIDEND)` yearly inflows
+- 10% of `{python} format_billions(TREATY_ANNUAL_FUNDING)` yearly inflows
 - Divided among bondholders
 - Math checks out
 
@@ -238,7 +238,7 @@ Your body is a machine. Machines can be repaired. Aging is just harder engineeri
 
 ## "The Government Will Steal the Money"
 
-**Objection**: "You create a `{python} format_billions(CAPTURED_DIVIDEND)` fund, politicians will redirect it to their friends."
+**Objection**: "You create a `{python} format_billions(TREATY_ANNUAL_FUNDING)` fund, politicians will redirect it to their friends."
 
 **Response**: They can't. Smart contracts.
 

@@ -51,6 +51,8 @@
     "figure-check:all": "tsx scripts/review/figure-check-all-files.ts",
     "structure-check:file": "tsx scripts/review/structure-check-file.ts",
     "structure-check:all": "tsx scripts/review/structure-check-all-files.ts",
+    "param-check:file": "tsx scripts/review/parameter-check-file.ts",
+    "param-check:all": "tsx scripts/review/parameter-check-all.ts",
     "archive:file": "tsx scripts/review/archive-process-file.ts",
     "archive:all": "tsx scripts/review/archive-process-all.ts",
     "review": "tsx scripts/review/review.ts",

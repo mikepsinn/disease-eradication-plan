@@ -102,7 +102,21 @@ export function programmaticFormat(content: string): string {
 
 // Shared file-saving function that applies programmatic formatting.
 export async function saveFile(filePath: string, content: string): Promise<void> {
-  const formattedContent = programmaticFormat(content);
+  let formattedContent = programmaticFormat(content);
+  
+  // For .qmd files, ensure the Python boilerplate is present
+  if (path.extname(filePath) === '.qmd') {
+    const { data: frontmatter, content: body } = matter(formattedContent);
+    const pythonBoilerplate = "```{python}\n#| echo: false\nimport sys\nimport os\n\n# Quarto executes from project root (execute-dir: project in _quarto.yml)\nappendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')\nif appendix_path not in sys.path:\n    sys.path.insert(0, appendix_path)\n\nfrom economic_parameters import *\n```";
+
+    if (!body.includes('from economic_parameters import *')) {
+      // Reconstruct the file with the boilerplate immediately after the frontmatter
+      const frontmatterString = matter.stringify('', frontmatter).trim();
+      const newBody = `${pythonBoilerplate}\n\n${body.trim()}`;
+      formattedContent = `${frontmatterString}\n${newBody}`;
+    }
+  }
+
   const dir = path.dirname(filePath);
   await fs.mkdir(dir, { recursive: true });
   await fs.writeFile(filePath, formattedContent, 'utf-8');

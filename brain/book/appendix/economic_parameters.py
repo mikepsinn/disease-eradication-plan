@@ -11,7 +11,7 @@ Version: 1.0.0
 Usage:
     from economic_parameters import *
     print(f"Military spending: {format_billions(MILITARY_SPENDING)}")
-    print(f"Peace dividend: {format_billions(SOCIETAL_DIVIDEND)}")
+    print(f"Peace dividend: {format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
 """
 
 # ============================================================================
@@ -64,8 +64,8 @@ CONFLICT_DEATHS_STATE_VIOLENCE = 2700  # Uppsala Conflict Data Program
 
 # Treaty parameters
 TREATY_REDUCTION_PCT = 0.01  # 1% reduction in military spending/war costs
-CAPTURED_DIVIDEND = MILITARY_SPENDING * TREATY_REDUCTION_PCT  # $27.18B
-SOCIETAL_DIVIDEND = TOTAL_WAR_COST * TREATY_REDUCTION_PCT  # $113.55B, rounded to $114B
+TREATY_ANNUAL_FUNDING = MILITARY_SPENDING * TREATY_REDUCTION_PCT  # $27.18B
+PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = TOTAL_WAR_COST * TREATY_REDUCTION_PCT  # $113.55B, rounded to $114B
 
 # ============================================================================
 # HEALTH DIVIDEND PARAMETERS (dFDA)
@@ -152,7 +152,7 @@ TOTAL_ANNUAL_COSTS = CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX  # $290M 
 # ============================================================================
 
 # Total annual benefits
-TOTAL_ANNUAL_BENEFITS = SOCIETAL_DIVIDEND + DFDA_GROSS_SAVINGS  # $164B (rounded from $163.55B)
+TOTAL_ANNUAL_BENEFITS = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_GROSS_SAVINGS  # $164B (rounded from $163.55B)
 
 # Net benefit
 NET_ANNUAL_BENEFIT = TOTAL_ANNUAL_BENEFITS - TOTAL_ANNUAL_COSTS  # $163.71B
@@ -189,28 +189,28 @@ TIME_HORIZON_YEARS = 10  # Standard 10-year analysis window (T)
 
 # NPV Model - Upfront Costs (C0)
 # Combines core platform build + medium broader initiative setup costs
-NPV_UPFRONT_COST_CORE_PLATFORM = 0.040  # $40M core platform build
-NPV_UPFRONT_COST_BROADER_INITIATIVES = 0.22975  # $228M medium case broader initiatives
-NPV_UPFRONT_COST_TOTAL = NPV_UPFRONT_COST_CORE_PLATFORM + NPV_UPFRONT_COST_BROADER_INITIATIVES  # C0 = $0.26975B
+DFDA_NPV_UPFRONT_COST = 0.040  # $40M core platform build
+DIH_NPV_UPFRONT_COST_INITIATIVES = 0.22975  # $228M medium case broader initiatives
+DIH_NPV_UPFRONT_COST_TOTAL = DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIATIVES  # C0 = $0.26975B
 
 # NPV Model - Annual Operational Costs (Cop)
 # Combines core platform ops + medium broader initiative annual costs
-NPV_ANNUAL_OPEX_CORE_PLATFORM = 0.01895  # $19M core platform (midpoint of $11-26.5M)
-NPV_ANNUAL_OPEX_BROADER_INITIATIVES = 0.02110  # $21.1M medium case broader initiatives
-NPV_ANNUAL_OPEX_TOTAL = NPV_ANNUAL_OPEX_CORE_PLATFORM + NPV_ANNUAL_OPEX_BROADER_INITIATIVES  # Cop = $0.04005B
+DFDA_NPV_ANNUAL_OPEX = 0.01895  # $19M core platform (midpoint of $11-26.5M)
+DIH_NPV_ANNUAL_OPEX_INITIATIVES = 0.02110  # $21.1M medium case broader initiatives
+DIH_NPV_ANNUAL_OPEX_TOTAL = DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES  # Cop = $0.04005B
 
 # NPV Model - Savings Parameters
-NPV_ANNUAL_RD_SPEND = GLOBAL_TRIAL_MARKET  # Rd = $100B
-NPV_COST_REDUCTION_FRACTION = TRIAL_COST_REDUCTION_PCT  # alpha = 0.50 (50%)
+GLOBAL_TRIAL_MARKET = GLOBAL_TRIAL_MARKET  # Rd = $100B
+TRIAL_COST_REDUCTION_PCT = TRIAL_COST_REDUCTION_PCT  # alpha = 0.50 (50%)
 
 # NPV Model - Adoption Curve
 # Linear ramp from 0% to 100% over 5 years, then constant at 100%
-NPV_ADOPTION_RAMP_YEARS = 5  # Years to reach full adoption
+DFDA_ADOPTION_RAMP_YEARS = 5  # Years to reach full adoption
 
 # Calculated NPV values
-NPV_PV_ANNUAL_OPEX = NPV_ANNUAL_OPEX_TOTAL * (1 - (1 + DISCOUNT_RATE)**-TIME_HORIZON_YEARS) / DISCOUNT_RATE
-NPV_TOTAL_COST = NPV_UPFRONT_COST_TOTAL + NPV_PV_ANNUAL_OPEX  # ~$0.54B
-NPV_NET_BENEFIT_CONSERVATIVE = NPV_TOTAL_COST * ROI_TIER_1_CONSERVATIVE # ~$249B
+DIH_NPV_PV_ANNUAL_OPEX = DIH_NPV_ANNUAL_OPEX_TOTAL * (1 - (1 + DISCOUNT_RATE)**-TIME_HORIZON_YEARS) / DISCOUNT_RATE
+DIH_NPV_TOTAL_COST = DIH_NPV_UPFRONT_COST_TOTAL + DIH_NPV_PV_ANNUAL_OPEX  # ~$0.54B
+DFDA_NPV_NET_BENEFIT_CONSERVATIVE = DIH_NPV_TOTAL_COST * ROI_TIER_1_CONSERVATIVE # ~$249B
 
 # NOTE: The NPV-based ROI (463:1) accounts for time value of money and gradual adoption
 # The simple ROI (1,250:1) is gross savings / annual opex without discounting
@@ -219,15 +219,15 @@ NPV_NET_BENEFIT_CONSERVATIVE = NPV_TOTAL_COST * ROI_TIER_1_CONSERVATIVE # ~$249B
 # VICTORY bonds
 # Source: brain/book/economics/victory-bonds.qmd
 VICTORY_BOND_FUNDING_PCT = 0.10  # 10% of captured dividend funds bonds
-VICTORY_BOND_ANNUAL_PAYOUT = CAPTURED_DIVIDEND * VICTORY_BOND_FUNDING_PCT  # $2.718B
+VICTORY_BOND_ANNUAL_PAYOUT = TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT  # $2.718B
 VICTORY_BOND_UPFRONT_RAISE = CAMPAIGN_TOTAL_COST  # $1B
 VICTORY_BOND_ANNUAL_RETURN_PCT = VICTORY_BOND_ANNUAL_PAYOUT / VICTORY_BOND_UPFRONT_RAISE  # 271.8% (reported as 270%)
 VICTORY_BOND_PAYBACK_MONTHS = 12 / VICTORY_BOND_ANNUAL_RETURN_PCT  # 4.4 months
-DIVIDEND_COVERAGE_FACTOR = CAPTURED_DIVIDEND / DFDA_ANNUAL_OPEX # ~679x
+DIVIDEND_COVERAGE_FACTOR = TREATY_ANNUAL_FUNDING / DFDA_ANNUAL_OPEX # ~679x
 
 # DIH Treasury allocations (in billions)
 # Source: brain/book/appendix/icer-full-calculation.qmd
-DIH_TREASURY_MILITARY_REDIRECT = CAPTURED_DIVIDEND  # $27B/year redirected from military budgets
+DIH_TREASURY_MILITARY_REDIRECT = TREATY_ANNUAL_FUNDING  # $27B/year redirected from military budgets
 DIH_TREASURY_TO_VICTORY_BONDS = VICTORY_BOND_ANNUAL_PAYOUT  # $2.7B/year to bondholders (10%)
 DIH_TREASURY_TO_RESEARCH = DIH_TREASURY_MILITARY_REDIRECT - DIH_TREASURY_TO_VICTORY_BONDS  # $24.3B/year
 DIH_TREASURY_DFDA_OPERATIONS = DFDA_ANNUAL_OPEX  # $40M/year for dFDA operations
@@ -306,7 +306,7 @@ ENDGAME_AVOIDED_CRISES = 1500.0  # $1.5T from no refugee/war costs
 ENDGAME_INNOVATION = 2000.0  # $2.0T from research acceleration
 
 TOTAL_ENDGAME_BENEFITS = (
-    SOCIETAL_DIVIDEND  # Base peace dividend
+    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT  # Base peace dividend
     + DFDA_GROSS_SAVINGS  # Base health dividend
     + ENDGAME_PRODUCTIVITY_GAINS
     + ENDGAME_GLOBAL_TRADE
@@ -345,7 +345,7 @@ SENSITIVITY_ICER_CONSERVATIVE = -170514  # -$170,514 per QALY
 SENSITIVITY_COST_PER_LIFE_CONSERVATIVE = -5.97  # -$5.97M per life (in millions)
 
 # Central scenario (baseline)
-SENSITIVITY_PEACE_DIVIDEND_CENTRAL = SOCIETAL_DIVIDEND  # $114B
+SENSITIVITY_PEACE_DIVIDEND_CENTRAL = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT  # $114B
 SENSITIVITY_DFDA_SAVINGS_CENTRAL = DFDA_GROSS_SAVINGS  # $50B
 SENSITIVITY_TOTAL_BENEFITS_CENTRAL = TOTAL_ANNUAL_BENEFITS  # $164B
 SENSITIVITY_CAMPAIGN_COST_CENTRAL = CAMPAIGN_ANNUAL_COST_AMORTIZED  # $250M/year
@@ -529,8 +529,8 @@ def validate_parameters():
         errors.append(f"Conflict deaths breakdown mismatch: {conflict_deaths_sum} vs {ANNUAL_CONFLICT_DEATHS}")
 
     # Warnings for values that should be close but might differ slightly
-    if abs(SOCIETAL_DIVIDEND - 114.0) > 1.0:
-        warnings.append(f"Societal dividend is {SOCIETAL_DIVIDEND}, expected ~114B")
+    if abs(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT - 114.0) > 1.0:
+        warnings.append(f"Societal dividend is {PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT}, expected ~114B")
 
     if abs(DFDA_GROSS_SAVINGS - 50.0) > 1.0:
         warnings.append(f"dFDA savings is {DFDA_GROSS_SAVINGS}, expected ~50B")
@@ -560,8 +560,8 @@ def print_summary():
     print(f"  Total war costs: {format_billions(TOTAL_WAR_COST)}")
     print(f"  Military spending: {format_billions(MILITARY_SPENDING)}")
     print(f"  Treaty reduction: {format_percentage(TREATY_REDUCTION_PCT)}")
-    print(f"  Captured dividend: {format_billions(CAPTURED_DIVIDEND)}")
-    print(f"  Societal dividend: {format_billions(SOCIETAL_DIVIDEND)}")
+    print(f"  Captured dividend: {format_billions(TREATY_ANNUAL_FUNDING)}")
+    print(f"  Societal dividend: {format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
 
     print("\nHEALTH DIVIDEND (dFDA):")
     print(f"  Global trial market: {format_billions(GLOBAL_TRIAL_MARKET)}")

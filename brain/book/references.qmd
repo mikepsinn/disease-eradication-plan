@@ -3408,7 +3408,7 @@ from economic_parameters import *
   > 2019 survey: $402.3B spent on pharmaceutical marketing/advertising globally
   > 2023 U.S. spending: Top 10 companies spent $13.8B on advertising/promotion
   > Direct-to-consumer advertising: Record $7.6B (2022); TV ads $6.5B (2022); digital ads $3.1B (2023, +14% from 2022)
-  > Physician marketing (detailing): `{python} format_billions(CAPTURED_DIVIDEND)` globally (2022)
+  > Physician marketing (detailing): `{python} format_billions(TREATY_ANNUAL_FUNDING)` globally (2022)
   > Historical growth: $17.7B annually (1997) → $30B (2016), with $26.9B spent by drug companies in 2016
   > — [Statista: Pharma Marketing Spend](https://www.statista.com/statistics/1411882/pharma-marketing-spend-worldwide/) | [JHU: Consumer Advertising Spending](https://publichealth.jhu.edu/2023/spending-on-consumer-advertising-for-top-selling-prescription-drugs-in-us-favors-those-with-low-added-benefit) | [TechTarget: Big Pharma DTC Ad Spend](https://www.techtarget.com/pharmalifesciences/news/366621006/Big-Pharmas-138B-DTC-ad-spend-drives-drug-costs)
 
@@ -4466,7 +4466,7 @@ from economic_parameters import *
 <a id="value-captured-by-1pct-treaty"></a>
 
 - **Value captured by 1% Treaty of $27+ billion annually**
-  > "The 1% Treaty redirects 1% of global military spending (`{python} format_billions(MILITARY_SPENDING)` × 1% = `{python} format_billions(CAPTURED_DIVIDEND)`) to medical research, with 10% of this flow (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` annually) distributed to VICTORY bondholders as returns."
+  > "The 1% Treaty redirects 1% of global military spending (`{python} format_billions(MILITARY_SPENDING)` × 1% = `{python} format_billions(TREATY_ANNUAL_FUNDING)`) to medical research, with 10% of this flow (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` annually) distributed to VICTORY bondholders as returns."
   > — See [1% Treaty overview](appendix/1-percent-treaty.qmd) for full calculation details and [VICTORY Bonds](economics/victory-bonds.qmd) for bond structure
 
 <a id="veteran-healthcare-cost-projections"></a>
