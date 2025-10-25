@@ -14,6 +14,8 @@ This document provides a central overview of the contribution process. For detai
 - **[Design Guide](GUIDES/DESIGN_GUIDE.md)**: Visual standards for charts and diagrams.
 - **[Technical Guide](GUIDES/TECHNICAL_GUIDE.md)**: Development setup and technical standards.
 - **[Content and Style Standards](./GUIDES/CONTENT_STANDARDS.md)**: Standards for information architecture, quality assurance, and formatting.
+- **[Economic Parameters](brain/book/appendix/economic_parameters.py)**: Single source of truth for all economic values (military spending, clinical trial costs, ROI calculations, etc.). See the module docstring for usage.
+- **[Economics File Organization](GUIDES/ECONOMICS_HIERARCHY_FINAL.md)**: Structure and organization of economics-related files.
 
 **Table of Contents**
 
