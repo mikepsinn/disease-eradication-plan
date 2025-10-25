@@ -1,0 +1,131 @@
+---
+title: Peace Dividend Breakdown by Category
+description: Horizontal bar chart showing where peace dividend savings come from
+jupyter: python3
+---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Import parameters
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+
+# Import plotting libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Modern design system
+colors = {
+    'primary': '#0066CC',
+    'secondary': '#00B4D8',
+    'slate': '#778DA9',
+    'slate_light': '#A8B5C7',
+    'dark': '#1B263B',
+    'text': '#415A77',
+    'light': '#E0E1DD',
+}
+
+def apply_modern_style(ax, remove_spines=None, grid_axis='y'):
+    """Apply modern styling to matplotlib axes"""
+    if remove_spines is None:
+        remove_spines = ['top', 'right']
+
+    for spine in remove_spines:
+        ax.spines[spine].set_visible(False)
+
+    for spine in ax.spines.values():
+        if spine.get_visible():
+            spine.set_color(colors['light'])
+
+    ax.tick_params(colors=colors['text'], which='both')
+    ax.set_facecolor('white')
+    ax.grid(axis=grid_axis, color=colors['light'], linestyle='-', linewidth=0.7, alpha=0.3)
+
+def add_modern_watermark(fig):
+    """Add subtle watermark to figure"""
+    fig.text(0.99, 0.01, 'warondisease.org',
+             ha='right', va='bottom', fontsize=9,
+             color=colors['slate'], alpha=0.5, style='italic')
+```
+
+```{python}
+#| echo: false
+# Create a DataFrame for the breakdown of savings
+savings_data = {
+    'Category': [
+        'Military Expenditure', 'Lost Economic Growth', 'Infrastructure Destruction', 'Human Life Losses',
+        'Trade Disruption', 'Lost Human Capital', 'Veteran Healthcare',
+        'Refugee Support', 'Environmental Damage', 'Psychological Impact'
+    ],
+    'Savings ($B)': [
+        MILITARY_SPENDING * TREATY_REDUCTION_PCT,
+        LOST_ECONOMIC_GROWTH * TREATY_REDUCTION_PCT,
+        INFRASTRUCTURE_DESTRUCTION * TREATY_REDUCTION_PCT,
+        HUMAN_LIFE_LOSSES * TREATY_REDUCTION_PCT,
+        TRADE_DISRUPTION * TREATY_REDUCTION_PCT,
+        LOST_HUMAN_CAPITAL * TREATY_REDUCTION_PCT,
+        VETERAN_HEALTHCARE * TREATY_REDUCTION_PCT,
+        REFUGEE_SUPPORT * TREATY_REDUCTION_PCT,
+        ENVIRONMENTAL_DAMAGE * TREATY_REDUCTION_PCT,
+        PSYCHOLOGICAL_IMPACT * TREATY_REDUCTION_PCT
+    ]
+}
+savings_df = pd.DataFrame(savings_data).sort_values(by='Savings ($B)', ascending=True)
+
+# Create modern horizontal bar chart
+fig, ax = plt.subplots(figsize=(14, 10))
+fig.patch.set_facecolor('white')
+
+# Create a sophisticated color gradient from light to dark based on value
+max_val = max(savings_df['Savings ($B)'])
+bar_colors = []
+for val in savings_df['Savings ($B)']:
+    intensity = val / max_val
+    if intensity > 0.7:
+        bar_colors.append(colors['primary'])
+    elif intensity > 0.4:
+        bar_colors.append(colors['secondary'])
+    else:
+        bar_colors.append(colors['slate_light'])
+
+# Create horizontal bars
+bars = ax.barh(savings_df['Category'], savings_df['Savings ($B)'],
+               color=bar_colors, height=0.7, alpha=0.9)
+
+# Apply modern styling
+apply_modern_style(ax, remove_spines=['top', 'right', 'left'], grid_axis='x')
+
+# Clean value labels positioned outside bars
+for i, bar in enumerate(bars):
+    width = bar.get_width()
+    y = bar.get_y() + bar.get_height() / 2
+    ax.text(width + max_val * 0.01, y, f'${width:,.2f}B',
+            va='center', ha='left', fontsize=12, fontweight='600', color=colors['text'])
+
+# Modern title and labels
+ax.set_title('Peace Dividend Breakdown by Category', fontsize=22, fontweight='700',
+             color=colors['dark'], pad=35)
+ax.set_xlabel('Annual Savings (Billions USD)', fontsize=14, color=colors['text'], labelpad=20)
+ax.set_ylabel('')
+
+# Clean axis formatting
+ax.set_xlim(0, max_val * 1.12)
+
+# Style tick labels
+ax.tick_params(axis='y', labelsize=12, colors=colors['text'])
+
+# Modern layout
+plt.tight_layout()
+plt.subplots_adjust(left=0.25, right=0.9, top=0.9, bottom=0.1)
+
+# Add modern watermark
+add_modern_watermark(fig)
+
+plt.show()
+```

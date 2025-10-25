@@ -1,0 +1,140 @@
+---
+title: Peace Dividend Composition
+description: Donut chart showing relative contribution of different cost categories
+jupyter: python3
+---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Import parameters
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+
+# Import plotting libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Modern design system
+colors = {
+    'primary': '#0066CC',
+    'secondary': '#00B4D8',
+    'success': '#06D6A0',
+    'warning': '#FFD166',
+    'slate': '#778DA9',
+    'slate_light': '#A8B5C7',
+    'dark': '#1B263B',
+    'text': '#415A77',
+    'grid': '#E0E1DD',
+}
+
+def add_modern_watermark(fig):
+    """Add subtle watermark to figure"""
+    fig.text(0.99, 0.01, 'warondisease.org',
+             ha='right', va='bottom', fontsize=9,
+             color=colors['slate'], alpha=0.5, style='italic')
+```
+
+```{python}
+#| echo: false
+# Create savings data
+savings_data = {
+    'Category': [
+        'Military Expenditure', 'Lost Economic Growth', 'Infrastructure Destruction', 'Human Life Losses',
+        'Trade Disruption', 'Lost Human Capital', 'Veteran Healthcare',
+        'Refugee Support', 'Environmental Damage', 'Psychological Impact'
+    ],
+    'Savings ($B)': [
+        MILITARY_SPENDING * TREATY_REDUCTION_PCT,
+        LOST_ECONOMIC_GROWTH * TREATY_REDUCTION_PCT,
+        INFRASTRUCTURE_DESTRUCTION * TREATY_REDUCTION_PCT,
+        HUMAN_LIFE_LOSSES * TREATY_REDUCTION_PCT,
+        TRADE_DISRUPTION * TREATY_REDUCTION_PCT,
+        LOST_HUMAN_CAPITAL * TREATY_REDUCTION_PCT,
+        VETERAN_HEALTHCARE * TREATY_REDUCTION_PCT,
+        REFUGEE_SUPPORT * TREATY_REDUCTION_PCT,
+        ENVIRONMENTAL_DAMAGE * TREATY_REDUCTION_PCT,
+        PSYCHOLOGICAL_IMPACT * TREATY_REDUCTION_PCT
+    ]
+}
+savings_df = pd.DataFrame(savings_data)
+
+total_savings = savings_df['Savings ($B)'].sum()
+savings_df['Percentage'] = (savings_df['Savings ($B)'] / total_savings) * 100
+
+# Group small slices into 'Other'
+threshold = 3
+main_slices = savings_df[savings_df['Percentage'] >= threshold]
+other_slices_value = savings_df[savings_df['Percentage'] < threshold]['Savings ($B)'].sum()
+
+if other_slices_value > 0:
+    other_df = pd.DataFrame({
+        'Category': ['Other Categories'],
+        'Savings ($B)': [other_slices_value],
+        'Percentage': [(other_slices_value / total_savings) * 100]
+    })
+    plot_df = pd.concat([main_slices, other_df])
+else:
+    plot_df = main_slices
+
+plot_df = plot_df.sort_values(by='Savings ($B)', ascending=False)
+
+# Create modern donut chart
+fig, ax = plt.subplots(figsize=(12, 12))
+fig.patch.set_facecolor('white')
+
+# Modern color palette
+modern_colors = [colors['primary'], colors['secondary'], colors['success'],
+                colors['warning'], colors['slate'], colors['slate_light']]
+
+# Create donut chart
+wedges, texts, autotexts = ax.pie(plot_df['Savings ($B)'],
+                                  labels=plot_df['Category'],
+                                  autopct='%1.1f%%',
+                                  startangle=90,
+                                  pctdistance=0.85,
+                                  colors=modern_colors[:len(plot_df)],
+                                  wedgeprops=dict(width=0.5, edgecolor='white', linewidth=2))
+
+# Style the text elements
+for text in texts:
+    text.set_fontsize(13)
+    text.set_fontweight('600')
+    text.set_color(colors['text'])
+
+for autotext in autotexts:
+    autotext.set_fontsize(12)
+    autotext.set_fontweight('700')
+    autotext.set_color('white')
+
+# Add center circle for donut look
+centre_circle = plt.Circle((0,0), 0.6, fc='white', linewidth=2, edgecolor=colors['grid'])
+ax.add_artist(centre_circle)
+
+# Add center text
+ax.text(0, 0.1, 'Peace Dividend', ha='center', va='center',
+        fontsize=18, fontweight='700', color=colors['dark'])
+ax.text(0, -0.1, f'${total_savings:.1f}B Annual', ha='center', va='center',
+        fontsize=14, fontweight='600', color=colors['text'])
+
+# Modern title
+ax.set_title('Peace Dividend Composition', fontsize=22, fontweight='700',
+             color=colors['dark'], pad=40)
+
+# Ensure circular shape
+ax.axis('equal')
+
+# Modern layout
+plt.tight_layout()
+plt.subplots_adjust(left=0.05, right=0.95, top=0.9, bottom=0.05)
+
+# Add modern watermark
+add_modern_watermark(fig)
+
+plt.show()
+```

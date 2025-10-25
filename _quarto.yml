@@ -98,17 +98,18 @@ book:
     - part: "💰 Economic Analysis"
       chapters:
         - brain/book/economics/best-idea-in-the-world.qmd
+        - brain/book/economics/peace-dividend.qmd
+        - brain/book/economics/health-dividend.qmd
         - brain/book/appendix/humanity-budget-overview.qmd
         - brain/book/appendix/global-government-medical-research-spending.qmd
 
     - part: "🧮 Detailed Calculations"
       chapters:
-        - brain/book/appendix/peace-dividend-analysis.qmd
-        - brain/book/appendix/peace-dividend-breakdown.qmd
+        - brain/book/appendix/peace-dividend-calculations.qmd
+        - brain/book/appendix/health-dividend-calculations.qmd
+        - brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd
         - brain/book/appendix/dfda-cost-benefit-analysis.qmd
-        - brain/book/appendix/dfda-roi-breakdown.qmd
         - brain/book/appendix/economic-value-of-accelerated-treatments.qmd
-        - brain/book/appendix/icer-full-calculation.qmd
         - brain/book/appendix/intervention-comparison-table.qmd
 
     - part: "💵 Financial Planning"
