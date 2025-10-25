@@ -4,6 +4,7 @@ import yaml from 'js-yaml';
 import { glob } from 'glob';
 import * as path from 'path';
 import ignore from 'ignore';
+import crypto from 'crypto';
 
 const ROOT_DIR = process.cwd();
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
@@ -160,4 +161,38 @@ export async function getBookFiles(options: { includeAppendices?: boolean; exclu
         const normalizedFile = file.replace(/\\/g, '/');
         return !allExclusions.some(excluded => normalizedFile.includes(excluded));
     });
+}
+
+// --- Content Hash Utilities ---
+
+/**
+ * Calculate hash of the body content (excluding frontmatter)
+ */
+export function getBodyHash(content: string): string {
+  const { content: body } = matter(content);
+  return crypto.createHash('sha256').update(body).digest('hex');
+}
+
+/**
+ * Reads a file and parses its frontmatter and body
+ */
+export async function readFileWithMatter(filePath: string): Promise<{ frontmatter: any; body: string; originalContent: string }> {
+  const originalContent = await fs.readFile(filePath, 'utf-8');
+  const { data: frontmatter, content: body } = matter(originalContent);
+  return { frontmatter, body, originalContent };
+}
+
+/**
+ * Updates a file with new content and calculates/stores a hash
+ */
+export async function updateFileWithHash(
+  filePath: string,
+  body: string,
+  frontmatter: any,
+  hashFieldName: string
+): Promise<void> {
+  const tempContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
+  frontmatter[hashFieldName] = getBodyHash(tempContent);
+  const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
+  await saveFile(filePath, newContent);
 }

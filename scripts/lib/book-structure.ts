@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import matter from 'gray-matter';
 import { glob } from 'glob';
 import ignore from 'ignore';
-import { getBodyHash } from './content-hash';
+import { getBodyHash } from './file-utils';
 
 export interface BookStructure {
   chapters: string[];
