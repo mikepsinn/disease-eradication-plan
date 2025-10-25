@@ -4,8 +4,7 @@ import { simpleGit } from 'simple-git';
 import { glob } from 'glob';
 import path from 'path';
 import { generateGeminiProContent, generateClaudeOpus41Content, extractJsonFromResponse, loadPromptTemplate } from '../lib/llm';
-import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash } from '../lib/file-utils';
-import { parseQuartoYml } from '../lib/book-structure';
+import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash, parseQuartoYml } from '../lib/file-utils';
 import { parseReferences, formatReferencesFile, type Reference } from '../lib/references';
 
 const git = simpleGit();
