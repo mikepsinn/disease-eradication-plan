@@ -10,9 +10,42 @@ import { saveFile, programmaticFormat } from '../lib/file-utils';
 
 const git = simpleGit();
 
+// --- Helper Functions ---
+
 function getBodyHash(content: string): string {
   const { content: body } = matter(content);
   return crypto.createHash('sha256').update(body).digest('hex');
+}
+
+/**
+ * Extracts JSON object from LLM response text, handling markdown code blocks
+ */
+function extractJsonFromResponse(responseText: string, context: string = 'LLM response'): any {
+  const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) {
+    throw new Error(`No JSON object found in ${context}. Response: ${responseText.substring(0, 500)}...`);
+  }
+  return JSON.parse(jsonMatch[0]);
+}
+
+/**
+ * Reads a file and parses its frontmatter and body
+ */
+async function readFileWithMatter(filePath: string): Promise<{ frontmatter: any; body: string; originalContent: string }> {
+  const originalContent = await fs.readFile(filePath, 'utf-8');
+  const { data: frontmatter, content: body } = matter(originalContent);
+  return { frontmatter, body, originalContent };
+}
+
+/**
+ * Loads a prompt template and replaces placeholders
+ */
+async function loadPromptTemplate(templatePath: string, replacements: Record<string, string>): Promise<string> {
+  let prompt = await fs.readFile(templatePath, 'utf-8');
+  for (const [placeholder, value] of Object.entries(replacements)) {
+    prompt = prompt.replace(placeholder, value);
+  }
+  return prompt;
 }
 
 async function updateFileWithHash(
@@ -111,13 +144,14 @@ export async function getStaleFiles(hashFieldName: string, basePath?: string): P
 
 export async function formatFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nFormatting ${filePath} with Gemini...`);
-  const originalContent = await fs.readFile(filePath, 'utf-8');
-  const { data: frontmatter, content: body } = matter(originalContent);
+  const { frontmatter, body } = await readFileWithMatter(filePath);
 
   const contentAndFormattingGuide = await fs.readFile('GUIDES/CONTENT_STANDARDS.md', 'utf-8');
 
-  let prompt = await fs.readFile('scripts/prompts/formatter.md', 'utf-8');
-  prompt = prompt.replace('{{formattingGuide}}', contentAndFormattingGuide).replace('{{body}}', body);
+  const prompt = await loadPromptTemplate('scripts/prompts/formatter.md', {
+    '{{formattingGuide}}': contentAndFormattingGuide,
+    '{{body}}': body
+  });
 
   const responseText = await generateGeminiProContent(prompt);
 
@@ -135,12 +169,13 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
 
 export async function styleFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nImproving style and content quality for ${filePath} with Claude Opus...`);
-  const originalContent = await fs.readFile(filePath, 'utf-8');
-  const { data: frontmatter, content: body } = matter(originalContent);
+  const { frontmatter, body } = await readFileWithMatter(filePath);
 
   const styleGuide = await fs.readFile('GUIDES/STYLE_GUIDE.md', 'utf-8');
-  let prompt = await fs.readFile('scripts/prompts/style-guide-review.md', 'utf-8');
-  prompt = prompt.replace('{{styleGuide}}', styleGuide).replace('{{body}}', body);
+  const prompt = await loadPromptTemplate('scripts/prompts/style-guide-review.md', {
+    '{{styleGuide}}': styleGuide,
+    '{{body}}': body
+  });
 
   const responseText = await generateClaudeOpus41Content(prompt);
 
@@ -320,11 +355,7 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
 
   try {
     const responseText = await generateGeminiProContent(prompt);
-    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      throw new Error('No JSON object found in response');
-    }
-    const resultData = JSON.parse(jsonMatch[0]);
+    const resultData = extractJsonFromResponse(responseText, 'fact-check response');
 
     if (!resultData.updatedChapter) {
       throw new Error('LLM did not return updatedChapter');
@@ -395,8 +426,7 @@ interface StructureCheckResponse {
 
 export async function structureCheckFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nChecking structure of ${filePath} with Gemini...`);
-  const originalContent = await fs.readFile(filePath, 'utf-8');
-  let { data: frontmatter, content: body } = matter(originalContent);
+  let { frontmatter, body } = await readFileWithMatter(filePath);
 
   const outlineContent = await fs.readFile('OUTLINE.md', 'utf-8');
   const { chapters, appendices } = await parseQuartoYml();
@@ -408,28 +438,21 @@ export async function structureCheckFileWithLLM(filePath: string): Promise<void>
 
   const otherChapters = chapters.filter(ch => ch !== filePath);
 
-  let prompt = await fs.readFile('scripts/prompts/structure-check.md', 'utf-8');
-  prompt = prompt.replace('{{outlineContent}}', outlineContent)
-                 .replace('{{otherChapters}}', otherChapters.join('\n'))
-                 .replace('{{filePath}}', filePath)
-                 .replace('{{body}}', body);
+  const prompt = await loadPromptTemplate('scripts/prompts/structure-check.md', {
+    '{{outlineContent}}': outlineContent,
+    '{{otherChapters}}': otherChapters.join('\n'),
+    '{{filePath}}': filePath,
+    '{{body}}': body
+  });
 
   const responseText = await generateGeminiProContent(prompt);
 
   // Parse JSON response
   let response: StructureCheckResponse;
   try {
-    // Extract JSON from response (handle markdown code blocks)
-    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      console.error(`❌ ERROR: No JSON found in LLM response for ${filePath}`);
-      console.error(`Response: ${responseText.substring(0, 500)}...`);
-      return;
-    }
-    response = JSON.parse(jsonMatch[0]);
+    response = extractJsonFromResponse(responseText, `structure check response for ${filePath}`);
   } catch (error) {
-    console.error(`❌ ERROR: Failed to parse JSON response for ${filePath}:`, error);
-    console.error(`Response: ${responseText.substring(0, 500)}...`);
+    console.error(`❌ ERROR:`, error);
     return;
   }
 
@@ -483,8 +506,7 @@ export async function structureCheckFileWithLLM(filePath: string): Promise<void>
 
 export async function linkCheckFile(filePath: string): Promise<void> {
   console.log(`\nChecking links in ${filePath}...`);
-  let originalContent = await fs.readFile(filePath, 'utf-8');
-  let { data: frontmatter, content: body } = matter(originalContent);
+  let { frontmatter, body } = await readFileWithMatter(filePath);
 
   const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
   let newBody = body;
@@ -538,8 +560,7 @@ export async function linkCheckFile(filePath: string): Promise<void> {
 
 export async function figureCheckFile(filePath: string): Promise<void> {
   console.log(`\nChecking figures and design elements in ${filePath}...`);
-  let originalContent = await fs.readFile(filePath, 'utf-8');
-  let { data: frontmatter, content: body } = matter(originalContent);
+  let { frontmatter, body } = await readFileWithMatter(filePath);
   let newBody = body;
   let issuesFound = false;
 
@@ -690,11 +711,11 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
 
 export async function latexCheckFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nChecking for LaTeX usage in ${filePath} with Gemini...`);
-  const originalContent = await fs.readFile(filePath, 'utf-8');
-  let { data: frontmatter, content: body } = matter(originalContent);
+  let { frontmatter, body } = await readFileWithMatter(filePath);
 
-  let prompt = await fs.readFile('scripts/prompts/latex-check.md', 'utf-8');
-  prompt = prompt.replace('{{body}}', body);
+  const prompt = await loadPromptTemplate('scripts/prompts/latex-check.md', {
+    '{{body}}': body
+  });
 
   const responseText = await generateGeminiProContent(prompt);
 
@@ -773,26 +794,26 @@ export async function generateFigureForChapter(filePath: string): Promise<{ acti
 
 export async function parameterizeFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nChecking for hardcoded numbers in ${filePath} with Gemini...`);
-  const originalContent = await fs.readFile(filePath, 'utf-8');
-  let { data: frontmatter, content: body } = matter(originalContent);
+  let { frontmatter, body } = await readFileWithMatter(filePath);
 
   const parametersFile = await fs.readFile('brain/book/appendix/economic_parameters.py', 'utf-8');
   const exampleFile = await fs.readFile('index.qmd', 'utf-8');
 
-  let prompt = await fs.readFile('scripts/prompts/parameterizer.md', 'utf-8');
-  prompt = prompt.replace('{{parametersFile}}', parametersFile)
-                 .replace('{{exampleFile}}', exampleFile)
-                 .replace('{{body}}', body);
+  const prompt = await loadPromptTemplate('scripts/prompts/parameterizer.md', {
+    '{{parametersFile}}': parametersFile,
+    '{{exampleFile}}': exampleFile,
+    '{{body}}': body
+  });
 
   const responseText = await generateGeminiProContent(prompt);
-  const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) {
-    console.error(`❌ ERROR: No JSON found in LLM response for ${filePath}`);
-    console.error(`Response: ${responseText.substring(0, 500)}...`);
+
+  let result;
+  try {
+    result = extractJsonFromResponse(responseText, `parameterization response for ${filePath}`);
+  } catch (error) {
+    console.error(`❌ ERROR:`, error);
     return;
   }
-
-  const result = JSON.parse(jsonMatch[0]);
 
   if (result.status === 'NO_CHANGES_NEEDED') {
     console.log(`No parameterization needed for ${filePath}.`);
