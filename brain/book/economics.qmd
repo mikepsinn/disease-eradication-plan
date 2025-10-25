@@ -2,6 +2,7 @@
 title: 💰 Economics Overview
 description: How Everyone Gets Rich by Eradicating Disease - 463:1 ROI on killing disease. VICTORY Bonds at 270% returns. How to make curing people more profitable than killing them.
 published: true
+jupyter: dih-project-kernel
 tags:
   - economics
   - investment-thesis
@@ -12,6 +13,19 @@ tags:
 lastFormatted: 2025-10-16T00:00:00.000Z
 lastStyleCheck: 2025-10-16T00:00:00.000Z
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
 
 ## TL;DR: Three Ways to Calculate the Return
 
@@ -113,284 +127,31 @@ Unlike traditional interventions requiring ongoing charity, this generates $164 
 
 ## The Complete Case: 1,222:1 ROI (All Direct Benefits)
 
-The conservative 463:1 calculation ignores most of what the 1% Treaty actually does. When you count everything:
+The conservative 463:1 calculation only counts dFDA R&D savings. But the 1% Treaty does much more.
 
 ### $1.22 Trillion in Annual Benefits
 
-The 1% Treaty doesn't just make trials cheaper. It:
+When you count all eight primary benefit categories:
 
-1. **Restructures global resource allocation** (peace dividend: $97B)
-2. **Slashes R&D costs 82X** (saves $50B)
-3. **Accelerates access by 7 years** (saves $300B via early trial access)
-4. **115X more research capacity** (adds $100B via 10-20X more breakthroughs)
-5. **Enables treatment of rare/orphan diseases** (adds $400B)
-6. **Reduces drug prices via R&D savings** (saves $100B)
-7. **Makes prevention economically viable** (saves $100B)
-8. **Addresses mental health treatment gap** (adds $75B)
+1. **Peace dividend** ($97B) - Societal savings from 1% less conflict
+2. **R&D cost savings** ($50B) - 82X cheaper trials
+3. **7-year access acceleration** ($300B) - Earlier treatment access during trials
+4. **Research acceleration** ($100B) - 115X more research capacity (10-20X more breakthroughs)
+5. **Rare disease treatments** ($400B) - Economically viable orphan drug development
+6. **Drug price reductions** ($100B) - R&D savings passed to consumers
+7. **Prevention medicine** ($100B) - Economically viable prevention trials
+8. **Mental health** ($75B) - Closing the treatment gap
 
-Each of these alone is worth tens to hundreds of billions. Together? **$1.22 trillion/year.**
+**Total: $1.22 trillion/year in quantifiable benefits = 1,222:1 ROI**
 
-### The 7-Year Access Acceleration
+The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
 
-**The insight:** The dFDA gives patients the right and ability to access treatments during Phase 2/3 trials instead of waiting 9.1 years for FDA approval (or forever if trials are never completed for their condition).
+- **Earlier Access** = Patients access the SAME treatments 7 years sooner (during trials instead of post-approval)
+- **Research Acceleration** = System runs 115X MORE trials, finding 10-20X MORE breakthroughs
 
-**How it works:**
-- Current system: Wait 9.1 years average from Phase 1 to FDA approval
-- dFDA system: Access treatment during Phase 2/3 pragmatic trials
-- Effective acceleration: ~7 years earlier access on average
+Both are conservative estimates based on proven models (RECOVERY trial costs, disease prevalence data, standard QALY valuations).
 
-**This isn't speculative future acceleration - it's immediate access to treatments that already exist but are stuck in the approval pipeline.**
-
-**Stock benefit (one-time):** Existing patients get immediate access
-- 2 billion people with chronic diseases globally
-- Each gains 7 years of treatment access they'd otherwise miss
-- Total: 14 billion person-years × $150K/QALY = $2.1T total value
-- **Amortized over 7-year acceleration period: $300B/year for years 1-7**
-
-**Flow benefit (ongoing):** New patients each year get early access
-- ~100M new chronic disease cases/year globally
-- Each saves 7 years × $150K/QALY = $1.05M in value
-- **Annual flow: $105B/year ongoing (continues forever)**
-
-**Combined "earlier access" benefit:**
-- Years 1-7: $300B (amortized stock) + $105B (flow) = **$405B/year**
-- Years 8+: $105B/year (flow only)
-- **10-year average: ~$300B/year**
-
-### The Research Acceleration Multiplier
-
-**The insight:** 82X cheaper trials + 40% more funding ($27B/year) = **115X more research capacity**.
-
-**What this means:**
-- Current: ~3,300 clinical trials/year globally, ~50 new drug approvals/year
-- New capacity: ~380,000 trials/year possible, ~1,000-2,000 approvals/year (20-40X increase)
-
-**This is NOT the same as "earlier access":**
-- **Earlier Access** = Accessing the SAME 50 drugs in pipeline 7 years sooner
-- **Research Acceleration** = Testing 115X MORE drug candidates, finding 10-20X MORE breakthroughs
-
-**Which diseases benefit:**
-- Chronic pain (1.5B people, very limited treatment options)
-- Mental health (1B people, huge treatment gaps)
-- Alzheimer's (55M people, almost nothing works)
-- Autoimmune diseases (500M people, limited options)
-- Long COVID (100M+, zero approved treatments)
-
-These are NOT rare diseases (already counted). These are common diseases that are UNDER-researched because trials are too expensive.
-
-**Conservative annual value: $100B/year**
-
-### The Complete Benefit Breakdown
-
-| Category | Annual Benefit | Notes |
-|----------|----------------|-------|
-| Peace Dividend | $97B | Redirected military spending |
-| R&D Cost Savings | $50B | 82X trial cost reduction |
-| **Earlier Access (7 years)** | **$300B** | Existing pipeline accessed sooner |
-| **Research Acceleration** | **$100B** | 115X more trials = 10-20X more breakthroughs |
-| New Diseases Treatable | $400B | Rare diseases, orphan drugs |
-| Drug Price Reduction | $100B | R&D savings passed to consumers |
-| Prevention Medicine | $100B | Economic viability of prevention |
-| Mental Health Impact | $75B | Treatment gap reduction |
-| | | |
-| **ECONOMIC TOTAL** | **$1.222 TRILLION/YEAR** | |
-
-**ROI:** $1.222T / $1B investment = **1,222:1**
-
-**Note:** Insurance savings, productivity gains, and longevity extension are outcomes of the above benefits and not counted separately to avoid double-counting.
-
-### The Sanity Check
-
-**Is $1.22 trillion/year reasonable?**
-
-- Global GDP: $111 trillion/year
-- Global healthcare spending: $9.8 trillion/year
-- Global military spending: $2.7 trillion/year
-
-If the 1% Treaty generates $1.22T/year in benefits, that's:
-- 1.1% of global GDP
-- 12.4% of healthcare spending
-- 45% of military spending
-
-**This passes the smell test.**
-
-For comparison:
-- Eliminating all cancer: ~$1.1T/year economic value
-- Curing all infectious disease: ~$800B/year
-- Fixing mental health: ~$300B/year
-
-The 1% Treaty doesn't cure everything, but it:
-- Accelerates access by 7 years (earlier trial participation)
-- Increases research velocity 10-20X (more breakthroughs)
-- Enables trials for currently untreatable conditions
-
-$1.22T/year is reasonable for that scope.
-
----
-
-## The Endgame: 25,781:1 ROI (Year 20 Compounding)
-
-While the immediate annual benefit is $164-$1,222 billion, the true potential emerges as the system matures and compounds over 20 years.
-
-### The $16.5 Trillion Payoff
-
-When you add it all up at maturity:
-
-- **1% Treaty Peace Dividend:** $92B from less war
-- **dFDA Trial Efficiency:** $50B from cheaper research
-- **DIH Market Allocation:** $13.5B from smarter funding
-- **Health Improvements:** 840,000 QALYs = $126B value
-- **Knock-on Effects:** $16.2T from healthier, peaceful world
-
-**Total Annual Value at Year 20: $16.5 Trillion**
-
-That's more than the [GDP of China](references.qmd#gdp-of-china).
-
-### Direct Annual Savings (Year 1-5)
-
-- **Military reduction savings**: $27.2B (captured dividend)
-- **Societal peace dividend**: $114B (reduced conflict costs)
-- **Clinical trial efficiency**: $50B (82X cost reduction)
-- **Prevention programs**: $15B (catching disease early)
-- **Total Direct**: ~$206B annually
-
-### Economic Multiplier Effects (Years 5-20)
-
-As the system scales and compounds, massive secondary benefits emerge:
-
-#### Productivity Gains: +$8.4 Trillion
-- Healthy workers miss 90% fewer days
-- Career spans extend by 10-20 years
-- Cognitive enhancement from treating mental illness
-- $8.4T = 280M healthier workers × $30K annual productivity gain
-
-#### Global Trade Acceleration: +$2.4 Trillion
-- Reduced conflict enables free trade zones
-- Supply chains stabilize without war disruptions
-- Cross-border medical collaboration flourishes
-- Tourism and commerce expand in peaceful regions
-
-#### Infrastructure Preservation: +$1.9 Trillion
-- Bridges, hospitals, schools not bombed
-- Resources redirected from rebuilding to building
-- Smart cities enabled by peace dividend
-- Digital infrastructure investment compounds
-
-#### Avoided Crisis Costs: +$1.5 Trillion
-- No refugee crises ($500B saved)
-- No veteran care costs ($400B saved)
-- No conflict reconstruction ($350B saved)
-- No emergency humanitarian aid ($250B saved)
-
-#### Innovation Compounding: +$2.0 Trillion
-- 40 million weapons engineers → medical researchers
-- AI/biotech convergence accelerates
-- Network effects from global collaboration
-- Breakthrough treatments enable new industries
-
-### Total Annual Value at Maturity: $16.5 TRILLION
-
-This represents:
-- More value than China's entire GDP ($17.7T)
-- 65% of US GDP ($25.5T)
-- 17% of global GDP ($96T)
-- **ROI: 25,781:1** (not a typo)
-
-### The Compound Growth Timeline
-
-| Year | Annual Benefit | Cumulative Value | What's Happening |
-|------|---------------|------------------|------------------|
-| **Year 1** | $164B | $164B | Treaty signed, trials begin |
-| **Year 3** | $350B | $850B | First cures proven, momentum builds |
-| **Year 5** | $1T | $3.5T | Network effects kick in, pharma pivots |
-| **Year 10** | $5T | $27.5T | Major diseases falling, aging slowed |
-| **Year 15** | $10T | $85T | Healthcare costs collapse, productivity soars |
-| **Year 20** | $16.5T | $168T | Full potential realized, disease obsolete |
-
-### Cost-Benefit Ratio by Component
-
-| Component | Annual Cost | Annual Benefit | ROI |
-|-----------|------------|----------------|-----|
-| 1% Treaty Implementation | $500M | $92B | 184:1 |
-| dFDA Infrastructure | $40M | $50B | 1,250:1 |
-| DIH Operations | $100M | $13.5B | 135:1 |
-| **Combined System** | **$640M** | **$16.5T** | **25,781:1** |
-
-The whole is literally 100x greater than the sum of its parts.
-
-### What $16.5 Trillion Looks Like
-
-With that annual value, we could:
-
-- Give [every human on Earth](references.qmd#global-population-8-billion) $2,062 per year
-- End world hunger 165 times over
-- [Provide universal healthcare globally](references.qmd#cost-of-universal-healthcare)
-
-Instead, we spend it on:
-
-- Bombing hospitals
-- Letting people die of curable diseases
-- Paying [$41,000 per trial patient](references.qmd#trial-cost-41k)
-- Paying the FDA $7B/year to make curing disease economically impossible
-
-### Why These Numbers Are Conservative
-
-1. **AI acceleration not included**: These projections assume current technology
-2. **Aging reversal not counted**: Just treating age-related disease would double benefits
-3. **Mental health undervalued**: Depression alone costs $1T globally
-4. **Rare diseases ignored**: 7,000 conditions affecting 400M people
-5. **Quality of life unmeasured**: Being healthy is worth more than money
-
-If anything, we're undershooting.
-
-### Why These Numbers Are Credible
-
-**Historical Precedents:**
-
-- [Internet created $10T+ annual value from $1B DARPA investment](references.qmd#internet-darpa-investment-roi)
-- [Vaccines generate $44 return per $1 spent](references.qmd#vaccine-roi-44-to-1)
-- [Green Revolution prevented 1 billion deaths, created $3T value](references.qmd#green-revolution-impact)
-
-**Conservative Assumptions:**
-
-- Only 1% military reduction (could be much more)
-- Only 50% trial cost reduction (RECOVERY achieved [98%](references.qmd#recovery-trial-82x-cost-reduction))
-- Only 50% better allocation (markets usually 2-3x better)
-- [Standard QALY values](references.qmd#qaly-value) (many argue life is worth more)
-
-The math isn't optimistic—it's conservative.
-
-### The Path to $16.5T
-
-**Phase 1 (Months 1-12):** Build platforms, sign treaty
-
-- Cost: $100M setup
-- Benefit: $0 (building phase)
-
-**Phase 2 (Months 13-36):** Launch and scale
-
-- Cost: $640M/year operations
-- Benefit: $281B/year (direct savings only)
-
-**Phase 3 (Years 4-10):** Network effects kick in
-
-- Cost: Same $640M/year
-- Benefit: Grows from $500B to $5T/year
-
-**Phase 4 (Years 10+):** Full ecosystem value
-
-- Cost: Still just $640M/year
-- Benefit: $16.5T/year and growing
-
-### The Skeptic's Corner
-
-"These numbers are impossible!"
-
-The telephone was supposed to be a toy.
-The internet was for nerds.
-SpaceX couldn't possibly land rockets.
-
-Every transformative technology looks impossible until it's inevitable.
+**For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [1% Treaty ROI Tiers - Detailed Analysis](appendix/1-percent-treaty-roi-tiers.qmd).
 
 ---
 
