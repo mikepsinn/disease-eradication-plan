@@ -88,7 +88,7 @@ One percent.
 A rounding error.
 A Pentagon couch cushion's worth.
 
-That's \`{python} format_billions(CAPTURED_DIVIDEND)` a year.
+That's `{python} format_billions(CAPTURED_DIVIDEND)` a year.
 
 We'd still have \$2.69 trillion left for killing.
 [Enough to murder everyone on Earth 20 times](brain/book/appendix/nuclear-weapon-cost-and-casualties.qmd).
@@ -105,7 +105,7 @@ It's the best investment in the world, if you don't mind the screaming.
 
 The strategy does the exact same thing, but backwards.
 
-**Step 1:** Sell VICTORY Bonds to raise \`{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns).
+**Step 1:** Sell VICTORY Bonds to raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns).
 
 **Step 2:** Use the money to run a massive campaign to get 3.5% of humanity (280M people) to vote for the 1% Treaty.
 
@@ -254,7 +254,7 @@ graph TD
     style D fill:#000,color:#fff,stroke:#000,stroke-width:3px
 ```
 
-**Here's how:** Invest \$1 billion to redirect \`{python} format_billions(CAPTURED_DIVIDEND)` annually.
+**Here's how:** Invest \$1 billion to redirect `{python} format_billions(CAPTURED_DIVIDEND)` annually.
 That's a 27:1 ratio every year forever.
 :::
 
