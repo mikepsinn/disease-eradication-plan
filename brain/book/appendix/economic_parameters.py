@@ -207,6 +207,11 @@ NPV_COST_REDUCTION_FRACTION = TRIAL_COST_REDUCTION_PCT  # alpha = 0.50 (50%)
 # Linear ramp from 0% to 100% over 5 years, then constant at 100%
 NPV_ADOPTION_RAMP_YEARS = 5  # Years to reach full adoption
 
+# Calculated NPV values
+NPV_PV_ANNUAL_OPEX = NPV_ANNUAL_OPEX_TOTAL * (1 - (1 + DISCOUNT_RATE)**-TIME_HORIZON_YEARS) / DISCOUNT_RATE
+NPV_TOTAL_COST = NPV_UPFRONT_COST_TOTAL + NPV_PV_ANNUAL_OPEX  # ~$0.54B
+NPV_NET_BENEFIT_CONSERVATIVE = NPV_TOTAL_COST * ROI_TIER_1_CONSERVATIVE # ~$249B
+
 # NOTE: The NPV-based ROI (463:1) accounts for time value of money and gradual adoption
 # The simple ROI (1,250:1) is gross savings / annual opex without discounting
 # Use ROI_TIER_1_CONSERVATIVE (463:1) as the canonical figure for most purposes
@@ -218,6 +223,7 @@ VICTORY_BOND_ANNUAL_PAYOUT = CAPTURED_DIVIDEND * VICTORY_BOND_FUNDING_PCT  # $2.
 VICTORY_BOND_UPFRONT_RAISE = CAMPAIGN_TOTAL_COST  # $1B
 VICTORY_BOND_ANNUAL_RETURN_PCT = VICTORY_BOND_ANNUAL_PAYOUT / VICTORY_BOND_UPFRONT_RAISE  # 271.8% (reported as 270%)
 VICTORY_BOND_PAYBACK_MONTHS = 12 / VICTORY_BOND_ANNUAL_RETURN_PCT  # 4.4 months
+DIVIDEND_COVERAGE_FACTOR = CAPTURED_DIVIDEND / DFDA_ANNUAL_OPEX # ~679x
 
 # DIH Treasury allocations (in billions)
 # Source: brain/book/appendix/icer-full-calculation.qmd
@@ -236,9 +242,11 @@ DIH_TREASURY_TRIAL_SUBSIDIES_MAX = 20.0  # $20B/year clinical trial subsidies (m
 GLOBAL_GDP = 111000  # billions USD (2024)
 GLOBAL_HEALTHCARE_SPENDING = 9800  # billions USD
 GLOBAL_MED_RESEARCH_SPENDING = 67.5  # billions USD government spending
+TOTAL_GLOBAL_WASTE_SPEND = 118800 # billions USD, annual spend on military + disease
 
 # Population
 GLOBAL_POPULATION = 8.0  # billions of people
+DAILY_DEATHS_CURABLE_DISEASES = 150000 # Daily deaths from curable diseases
 
 # Per capita calculations
 MILITARY_SPENDING_PER_CAPITA = MILITARY_SPENDING / GLOBAL_POPULATION  # $340/person/year
@@ -309,6 +317,13 @@ TOTAL_ENDGAME_BENEFITS = (
 
 ENDGAME_ROI = TOTAL_ENDGAME_BENEFITS / (CAMPAIGN_TOTAL_COST * 0.64)  # 25,781:1 (using $640M annual opex)
 
+# COST OF DELAY PARAMETERS
+# Source: brain/book/economics.qmd
+# Note: These are derived for illustrative purposes in the text
+ENDGAME_BENEFIT_PER_DAY = TOTAL_ENDGAME_BENEFITS / 365 # ~$45.2B
+ENDGAME_BENEFIT_PER_HOUR = ENDGAME_BENEFIT_PER_DAY / 24 # ~$1.9B
+ENDGAME_BENEFIT_PER_SECOND = ENDGAME_BENEFIT_PER_HOUR / 3600 # ~$523K
+
 # ============================================================================
 # SENSITIVITY ANALYSIS SCENARIOS
 # ============================================================================
@@ -342,6 +357,7 @@ SENSITIVITY_TOTAL_QALYS_CENTRAL = TOTAL_QALYS_ANNUAL  # 875,000 QALYs
 SENSITIVITY_NET_BENEFIT_CENTRAL = NET_ANNUAL_BENEFIT  # $163.7B
 SENSITIVITY_ICER_CENTRAL = -187097  # -$187,097 per QALY
 SENSITIVITY_COST_PER_LIFE_CENTRAL = -6.55  # -$6.55M per life (in millions)
+SENSITIVITY_LIVES_SAVED_CENTRAL = SENSITIVITY_TOTAL_QALYS_CENTRAL / QALYS_PER_LIFE # 25,000
 
 # Optimistic scenario
 SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC = 200.0  # $200B
@@ -382,6 +398,8 @@ def format_billions(value):
     Returns:
         Formatted string like "$50.0B"
     """
+    if value >= 1000:
+        return f"${value/1000:,.1f}T"
     return f"${value:,.1f}B"
 
 def format_millions(value):
@@ -416,7 +434,7 @@ def format_currency(value):
         Formatted string with B, M, or K suffix
     """
     if abs(value) >= 1000:
-        return f"${value:,.1f}T"
+        return f"${value/1000:,.1f}T"
     elif abs(value) >= 1:
         return f"${value:,.1f}B"
     elif abs(value) >= 0.001:
@@ -481,8 +499,8 @@ def validate_parameters():
 
     # Check dFDA ROI calculation
     expected_roi = DFDA_GROSS_SAVINGS / DFDA_ANNUAL_OPEX
-    if abs(DFDA_ROI - expected_roi) > 1:
-        errors.append(f"dFDA ROI mismatch: {DFDA_ROI} vs {expected_roi}")
+    if abs(DFDA_ROI_SIMPLE - expected_roi) > 1:
+        errors.append(f"dFDA ROI mismatch: {DFDA_ROI_SIMPLE} vs {expected_roi}")
 
     # Check complete benefits sum
     calculated_complete = (BENEFIT_PEACE_DIVIDEND + BENEFIT_RD_SAVINGS + BENEFIT_EARLIER_ACCESS +
@@ -550,7 +568,7 @@ def print_summary():
     print(f"  Cost reduction: {format_percentage(TRIAL_COST_REDUCTION_PCT)} ({TRIAL_COST_REDUCTION_FACTOR}x)")
     print(f"  Annual opex: {format_currency(DFDA_ANNUAL_OPEX)}")
     print(f"  Annual savings: {format_billions(DFDA_GROSS_SAVINGS)}")
-    print(f"  ROI: {format_roi(DFDA_ROI)}")
+    print(f"  ROI: {format_roi(DFDA_ROI_SIMPLE)}")
 
     print("\nCOMBINED ECONOMICS:")
     print(f"  Total benefits: {format_billions(TOTAL_ANNUAL_BENEFITS)}")
