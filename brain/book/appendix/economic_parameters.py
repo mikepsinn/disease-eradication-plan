@@ -14,9 +14,9 @@ Usage:
     print(f"Peace dividend: {format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
 """
 
-# ============================================================================
+# ---
 # PEACE DIVIDEND PARAMETERS
-# ============================================================================
+# ---
 
 # Total cost of war (billions USD)
 # Source: brain/book/problem/cost-of-war.qmd
@@ -67,9 +67,9 @@ TREATY_REDUCTION_PCT = 0.01  # 1% reduction in military spending/war costs
 TREATY_ANNUAL_FUNDING = MILITARY_SPENDING * TREATY_REDUCTION_PCT  # $27.18B
 PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = TOTAL_WAR_COST * TREATY_REDUCTION_PCT  # $113.55B, rounded to $114B
 
-# ============================================================================
+# ---
 # HEALTH DIVIDEND PARAMETERS (dFDA)
-# ============================================================================
+# ---
 
 # Clinical trial market
 # Source: brain/book/appendix/dfda-roi-calculations.qmd
@@ -103,9 +103,9 @@ DFDA_ROI_SIMPLE = DFDA_GROSS_SAVINGS / DFDA_ANNUAL_OPEX  # 1,250:1
 # NOTE: For NPV-adjusted ROI (463:1), use ROI_TIER_1_CONSERVATIVE below
 # The NPV-based calculation accounts for time value of money and gradual adoption
 
-# ============================================================================
+# ---
 # HEALTH IMPACT PARAMETERS
-# ============================================================================
+# ---
 
 # QALY valuations
 # Source: brain/book/appendix/icer-full-calculation.qmd
@@ -125,9 +125,9 @@ PEACE_QALYS_ANNUAL = PEACE_LIVES_SAVED_ANNUAL * QALYS_PER_LIFE  # 85,610 QALYs
 TOTAL_QALYS_ANNUAL = DFDA_QALYS_ANNUAL + PEACE_QALYS_ANNUAL  # 925,610 QALYs
 TOTAL_LIVES_SAVED_ANNUAL = TOTAL_QALYS_ANNUAL / QALYS_PER_LIFE  # 26,446 lives
 
-# ============================================================================
+# ---
 # CAMPAIGN COSTS
-# ============================================================================
+# ---
 
 # Source: brain/book/economics/campaign-budget.qmd
 CAMPAIGN_TOTAL_COST = 1.0  # $1B total campaign cost
@@ -147,9 +147,9 @@ CAMPAIGN_BUDGET_RESERVE = 0.050  # $50M reserve
 # Total system costs
 TOTAL_ANNUAL_COSTS = CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX  # $290M ($0.29B)
 
-# ============================================================================
+# ---
 # COMBINED ECONOMICS
-# ============================================================================
+# ---
 
 # Total annual benefits
 TOTAL_ANNUAL_BENEFITS = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_GROSS_SAVINGS  # $164B (rounded from $163.55B)
@@ -162,9 +162,9 @@ NET_ANNUAL_BENEFIT = TOTAL_ANNUAL_BENEFITS - TOTAL_ANNUAL_COSTS  # $163.71B
 ICER_PER_QALY = (TOTAL_ANNUAL_COSTS - TOTAL_ANNUAL_BENEFITS) / TOTAL_QALYS_ANNUAL  # -$176,907 per QALY
 COST_PER_LIFE_SAVED = ICER_PER_QALY * QALYS_PER_LIFE  # -$6.19M per life
 
-# ============================================================================
+# ---
 # ROI TIERS
-# ============================================================================
+# ---
 
 # Tier 1: Conservative - dFDA R&D savings only (10-year NPV)
 # Source: brain/book/appendix/dfda-roi-calculations.qmd NPV analysis
@@ -178,9 +178,9 @@ ROI_TIER_2_COMPLETE = 1222  # 1,222:1 from all 8 benefit categories
 # Source: brain/book/economics.qmd endgame section
 ROI_TIER_3_ENDGAME = 25781  # 25,781:1 at maturity with multiplier effects
 
-# ============================================================================
+# ---
 # FINANCIAL PARAMETERS
-# ============================================================================
+# ---
 
 # NPV analysis parameters
 # Source: brain/book/appendix/dfda-calculation-framework.qmd
@@ -235,9 +235,9 @@ DIH_TREASURY_DFDA_OPERATIONS = DFDA_ANNUAL_OPEX  # $40M/year for dFDA operations
 DIH_TREASURY_TRIAL_SUBSIDIES_MIN = 10.0  # $10B/year clinical trial subsidies (minimum)
 DIH_TREASURY_TRIAL_SUBSIDIES_MAX = 20.0  # $20B/year clinical trial subsidies (maximum)
 
-# ============================================================================
+# ---
 # REFERENCE VALUES (for comparisons)
-# ============================================================================
+# ---
 
 # Global economic context
 GLOBAL_GDP = 111000  # billions USD (2024)
@@ -268,9 +268,9 @@ SMALLPOX_ERADICATION_ROI = 280  # 280:1
 CHILDHOOD_VACCINATION_ROI = 13  # 13:1
 WATER_FLUORIDATION_ROI = 23  # 23:1
 
-# ============================================================================
+# ---
 # COMPLETE BENEFITS BREAKDOWN (for 1,222:1 ROI calculation)
-# ============================================================================
+# ---
 
 # Source: brain/book/economics.qmd complete case section
 BENEFIT_PEACE_DIVIDEND = 97.0  # Restructured allocation (slightly different from societal dividend)
@@ -295,9 +295,9 @@ TOTAL_COMPLETE_BENEFITS = (
 
 COMPLETE_BENEFITS_ROI = TOTAL_COMPLETE_BENEFITS / CAMPAIGN_TOTAL_COST  # 1,222:1
 
-# ============================================================================
+# ---
 # ENDGAME BENEFITS (for 25,781:1 ROI calculation)
-# ============================================================================
+# ---
 
 # Source: brain/book/economics.qmd endgame section
 ENDGAME_PRODUCTIVITY_GAINS = 8400.0  # $8.4T from healthier workforce
@@ -325,9 +325,9 @@ ENDGAME_BENEFIT_PER_DAY = TOTAL_ENDGAME_BENEFITS / 365 # ~$45.2B
 ENDGAME_BENEFIT_PER_HOUR = ENDGAME_BENEFIT_PER_DAY / 24 # ~$1.9B
 ENDGAME_BENEFIT_PER_SECOND = ENDGAME_BENEFIT_PER_HOUR / 3600 # ~$523K
 
-# ============================================================================
+# ---
 # SCENARIO PARAMETERS
-# ============================================================================
+# ---
 
 MILITARY_SPENDING_REMAINING = MILITARY_SPENDING * (1 - TREATY_REDUCTION_PCT) # $2,690.82B
 
@@ -338,9 +338,9 @@ PARTIAL_SUCCESS_BONDHOLDER_PAYOUT = PARTIAL_SUCCESS_DIH_REVENUE * VICTORY_BOND_F
 PARTIAL_SUCCESS_RESEARCH_FUNDING = PARTIAL_SUCCESS_DIH_REVENUE * DIH_TREASURY_TO_RESEARCH_PCT # ~$12.2B
 PARTIAL_SUCCESS_INVESTOR_ROI = PARTIAL_SUCCESS_BONDHOLDER_PAYOUT / CAMPAIGN_TOTAL_COST # ~135.9%
 
-# ============================================================================
+# ---
 # SENSITIVITY ANALYSIS SCENARIOS
-# ============================================================================
+# ---
 
 # Source: brain/book/appendix/icer-full-calculation.qmd sensitivity tables
 
@@ -399,9 +399,9 @@ COST_PER_LIFE_INVESTOR_FUNDED = -6.56  # -$6.56M
 COST_PER_LIFE_OPPORTUNITY_COST = -5.48  # -$5.48M
 COST_PER_LIFE_WASTE_CONVERSION = None  # Undefined
 
-# ============================================================================
+# ---
 # HELPER FUNCTIONS
-# ============================================================================
+# ---
 
 def format_billions(value):
     """Format a number as billions with B suffix
@@ -478,9 +478,9 @@ def format_qalys(value):
     """
     return f"{value:,.0f}"
 
-# ============================================================================
+# ---
 # VALIDATION FUNCTIONS
-# ============================================================================
+# ---
 
 def validate_parameters():
     """Run validation checks on parameters
@@ -564,76 +564,17 @@ def validate_parameters():
         print("[PASS] All parameter validations passed")
         return True
 
-def print_summary():
-    """Print a summary of all key parameters"""
-    print("\n" + "="*70)
-    print("ECONOMIC PARAMETERS SUMMARY")
-    print("="*70)
-
-    print("\nPEACE DIVIDEND:")
-    print(f"  Total war costs: {format_billions(TOTAL_WAR_COST)}")
-    print(f"  Military spending: {format_billions(MILITARY_SPENDING)}")
-    print(f"  Treaty reduction: {format_percentage(TREATY_REDUCTION_PCT)}")
-    print(f"  Captured dividend: {format_billions(TREATY_ANNUAL_FUNDING)}")
-    print(f"  Societal dividend: {format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
-
-    print("\nHEALTH DIVIDEND (dFDA):")
-    print(f"  Global trial market: {format_billions(GLOBAL_TRIAL_MARKET)}")
-    print(f"  Cost reduction: {format_percentage(TRIAL_COST_REDUCTION_PCT)} ({TRIAL_COST_REDUCTION_FACTOR}x)")
-    print(f"  Annual opex: {format_currency(DFDA_ANNUAL_OPEX)}")
-    print(f"  Annual savings: {format_billions(DFDA_GROSS_SAVINGS)}")
-    print(f"  ROI: {format_roi(DFDA_ROI_SIMPLE)}")
-
-    print("\nCOMBINED ECONOMICS:")
-    print(f"  Total benefits: {format_billions(TOTAL_ANNUAL_BENEFITS)}")
-    print(f"  Total costs: {format_currency(TOTAL_ANNUAL_COSTS)}")
-    print(f"  Net benefit: {format_billions(NET_ANNUAL_BENEFIT)}")
-
-    print("\nHEALTH IMPACT:")
-    print(f"  Total QALYs/year: {format_qalys(TOTAL_QALYS_ANNUAL)}")
-    print(f"  Lives saved/year: {format_qalys(TOTAL_LIVES_SAVED_ANNUAL)}")
-    print(f"  ICER per QALY: ${ICER_PER_QALY*1_000_000_000:,.0f}")
-    print(f"  Cost per life: ${COST_PER_LIFE_SAVED*1_000_000_000/1_000_000:,.2f}M")
-
-    print("\nROI TIERS:")
-    print(f"  Conservative (dFDA only): {format_roi(ROI_TIER_1_CONSERVATIVE)}")
-    print(f"  Complete (all direct): {format_roi(ROI_TIER_2_COMPLETE)}")
-    print(f"  Endgame (year 20): {format_roi(ROI_TIER_3_ENDGAME)}")
-
-    print("\nVICTORY BONDS:")
-    print(f"  Upfront raise: {format_billions(VICTORY_BOND_UPFRONT_RAISE)}")
-    print(f"  Annual payout: {format_billions(VICTORY_BOND_ANNUAL_PAYOUT)}")
-    print(f"  Annual return: {format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)}")
-    print(f"  Payback period: {VICTORY_BOND_PAYBACK_MONTHS:.1f} months")
-
-    print("\nCOMPARISONS:")
-    print(f"  vs GiveWell charities: {MULTIPLIER_VS_GIVEWELL:,.0f}x more cost-effective")
-    print(f"  War cost per capita: ${TOTAL_WAR_COST_PER_CAPITA:,.0f}/year")
-    print(f"  Lifetime war cost: ${LIFETIME_WAR_COST_PER_CAPITA:,.0f}")
-
-    print("\n" + "="*70 + "\n")
-
-# ============================================================================
-# MODULE INITIALIZATION
-# ============================================================================
+# --- Module Initialization ---
 
 if __name__ == "__main__":
-    # Run validation and print summary when module is executed directly
-    print("Economic Parameters Module v1.0.0")
-    print("="*70)
-
-    is_valid = validate_parameters()
-
-    if is_valid:
-        print_summary()
-    else:
-        print("\n⚠️  Fix validation errors before using these parameters!")
+    # Run validation when module is executed directly
+    if not validate_parameters():
         exit(1)
 
 
-# ============================================================================
+# ---
 # COST OF WAR DETAILS (for cost-of-war.qmd)
-# ============================================================================
+# ---
 
 # Value of Statistical Life (VSL)
 VALUE_OF_STATISTICAL_LIFE = 10_000_000  # $10 million, conservative value used in calculations
@@ -661,3 +602,103 @@ MISALLOCATION_FACTOR_DEATH_VS_SAVING = (TOTAL_WAR_COST * 1_000_000_000 / ANNUAL_
 
 # Specific budget items from text
 NUCLEAR_WEAPONS_ANNUAL_BUDGET_INCREASE = 42.0 # billions USD
+
+# ---
+# COST OF WAR DETAILS (for cost-of-war.qmd) - Additional Parameters
+# ---
+
+# Military Spending Breakdown (billions USD)
+MILITARY_SPENDING_PERSONNEL = 681.5
+MILITARY_SPENDING_PROCUREMENT = 654.3
+MILITARY_SPENDING_OPERATIONS_MAINTENANCE = 579.8
+MILITARY_SPENDING_INFRASTRUCTURE = 520.4
+MILITARY_SPENDING_INTELLIGENCE = 282.0
+
+# Infrastructure Damage Breakdown (billions USD)
+INFRASTRUCTURE_DAMAGE_TRANSPORTATION = 487.3
+INFRASTRUCTURE_DAMAGE_ENERGY = 421.7
+INFRASTRUCTURE_DAMAGE_COMMUNICATIONS = 298.1
+INFRASTRUCTURE_DAMAGE_WATER = 267.8
+INFRASTRUCTURE_DAMAGE_EDUCATION = 234.5
+INFRASTRUCTURE_DAMAGE_HEALTHCARE = 165.6
+
+# Trade Disruption Breakdown (billions USD)
+TRADE_DISRUPTION_SHIPPING = 247.1
+TRADE_DISRUPTION_SUPPLY_CHAIN = 186.8
+TRADE_DISRUPTION_ENERGY_PRICE = 124.7
+TRADE_DISRUPTION_CURRENCY = 57.4
+
+# Opportunity Cost Parameters
+GLOBAL_EDUCATION_FOR_ALL_COST = 30.0  # billions USD
+POVERTY_ERADICATION_COST = 1000.0  # billions USD
+MULTIPLIER_MILITARY_SPENDING = 0.6
+MULTIPLIER_INFRASTRUCTURE = 1.6
+MULTIPLIER_EDUCATION = 2.1
+MULTIPLIER_HEALTHCARE = 4.3
+
+# Refugee Parameters
+REFUGEE_LOST_EARNING_POTENTIAL_PER_CAPITA_ANNUAL = 23400  # USD per year
+REFUGEE_LOST_PRODUCTIVITY_GLOBAL_TOTAL = (FORCIBLY_DISPLACED_PEOPLE * REFUGEE_LOST_EARNING_POTENTIAL_PER_CAPITA_ANNUAL) / 1_000_000_000  # $2,536.6B
+
+# Contextual / Comparison Parameters
+GLOBAL_GDP_2023 = 89500  # billions USD, for 2023 comparison
+TOTAL_WAR_COST_TO_WHO_BUDGET_RATIO = 168  # Total war cost is 168x WHO budget (or similar sized org)
+
+
+# ---
+# NEW PARAMETERS ADDED FROM CHAPTER ANALYSIS (2025-01-24)
+# ---
+
+# Alias for consistency with book text
+CAPTURED_DIVIDEND = TREATY_ANNUAL_FUNDING # Alias for TREATY_ANNUAL_FUNDING as used in some chapter contexts
+
+# Campaign & Strategy Specifics
+CAMPAIGN_BUDGET_MASS_BRIBERY = 0.140 # billions USD, for bribing the masses (voting bloc build)
+CAMPAIGN_VOTING_BLOC_SIZE_MILLIONS = 280 # millions of people, target voting bloc size
+CAMPAIGN_BUDGET_SUPER_PACS = 0.800 # billions USD, for Super PACs/politician bribery
+GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = 0.035 # 3.5% rule for social change, key tipping point
+CAMPAIGN_COST_PER_VOTE_MIN_USD = 0.20 # USD per vote, minimum for mass bribery campaign
+CAMPAIGN_COST_PER_VOTE_MAX_USD = 0.50 # USD per vote, maximum for mass bribery campaign
+
+# Clinical Trial Cost Examples & Comparisons
+TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K = 48000 # USD per trial patient, specific example from text for comparison
+TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K = 41000 # USD per patient, cited FDA cost example for comparison
+
+# Historical & Comparison Multipliers
+MILITARY_VS_MEDICAL_RESEARCH_RATIO = MILITARY_SPENDING / GLOBAL_MED_RESEARCH_SPENDING # Calculated ratio of military to medical research spending
+DEATH_SPENDING_MISALLOCATION_FACTOR = 1750 # Multiplier for spending on death vs prevention (specific citation in text)
+POST_WW2_MILITARY_CUT_PCT = 0.30 # Percentage military spending cut after WW2, historical precedent
+SWITZERLAND_DEFENSE_SPENDING_PCT = 0.007 # Switzerland's defense spending as percentage of GDP
+SWITZERLAND_GDP_PER_CAPITA_K = 93 # Thousands USD, Switzerland GDP per capita, for comparison
+LOBBYING_ROI_DEFENSE = 1813 # Dollars returned per dollar spent lobbying defense, cited statistic
+WW2_BOND_RETURN_PCT = 0.04 # WWII bond return percentage, historical comparison
+AVERAGE_MARKET_RETURN_PCT = 0.10 # Average market return percentage for portfolio comparisons
+
+# Victory Bonds derived payout (per unit of investment)
+VICTORY_BOND_INVESTMENT_UNIT_USD = 1000 # USD, per bond investment unit for retail investors
+VICTORY_BOND_PAYOUT_PER_UNIT_USD_ANNUAL = (VICTORY_BOND_ANNUAL_PAYOUT / VICTORY_BOND_UPFRONT_RAISE) * VICTORY_BOND_INVESTMENT_UNIT_USD # Derived from total payout and total raise
+
+# Lobbyist compensation & incentives
+LOBBYIST_BOND_INVESTMENT_MIN_MILLIONS = 5 # Millions USD, bond investment for lobbyists (min incentive)
+LOBBYIST_BOND_INVESTMENT_MAX_MILLIONS = 20 # Millions USD, bond investment for lobbyists (max incentive)
+LOBBYIST_SALARY_TYPICAL_K = 500 # Thousands USD, typical lobbyist salary, for comparison
+
+# QALYs Breakdown & Treatment Acceleration Details
+QALYS_FROM_FASTER_ACCESS = 200000 # QALYs gained annually from faster drug access
+QALYS_FROM_PREVENTION = 140000 # QALYs gained annually from better prevention through real-world data
+QALYS_FROM_NEW_THERAPIES = 500000 # QALYs gained annually from enabling new therapies for rare/untreatable diseases
+TREATMENT_ACCELERATION_YEARS_TARGET = 2 # Years to market with dFDA (target)
+TREATMENT_ACCELERATION_YEARS_CURRENT = 17 # Years to market with traditional FDA (current)
+
+# Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
+# This sum is distinct from TOTAL_ANNUAL_BENEFITS which uses different categories for broader calculation.
+COMBINED_PEACE_HEALTH_DIVIDENDS_FOR_ROI_CALC = BENEFIT_PEACE_DIVIDEND + BENEFIT_RD_SAVINGS
+
+# System effectiveness & ROI comparisons
+PROFIT_PER_LIFE_SAVED = 167771 # USD, profit per life saved from the system (specific calculation in text)
+SYSTEM_PROFIT_PER_LIFE_SAVED_MILLIONS = 5.87 # Millions USD, system profit per life saved (specific phrasing in text)
+SYSTEM_BENEFIT_VS_VACCINES_MULTIPLIER = 10 # Multiplier for system benefit vs childhood vaccines
+
+# Price of Procrastination Metrics
+DEATHS_DURING_READING_SECTION = 410 # Number of deaths from curable diseases during reading a section
+DAILY_COST_INEFFICIENCY = 0.327 # billions USD, daily cost of inefficiency

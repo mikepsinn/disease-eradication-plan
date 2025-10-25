@@ -286,3 +286,76 @@ export async function getStaleFiles(hashFieldName: string, basePath?: string): P
 
   return staleFiles;
 }
+
+// --- Find and Replace Utilities ---
+
+export interface ReplaceResult {
+  file: string;
+  changes: number;
+}
+
+export interface BulkReplaceResult {
+  totalFiles: number;
+  filesChanged: number;
+  totalChanges: number;
+  details: ReplaceResult[];
+}
+
+/**
+ * Perform bulk find-and-replace operations across all .qmd files
+ * @param replacements - Map of search strings/regexes to replacement strings
+ * @param options - Optional configuration
+ */
+export async function bulkReplaceInQmdFiles(
+  replacements: Map<string | RegExp, string>,
+  options: { basePath?: string; dryRun?: boolean } = {}
+): Promise<BulkReplaceResult> {
+  const { basePath = '', dryRun = false } = options;
+
+  // Find all .qmd files respecting .gitignore
+  const gitignoreContent = await fs.readFile('.gitignore', 'utf-8');
+  const ig = ignore().add(gitignoreContent);
+
+  const searchPattern = basePath ? `${basePath}/**/*.qmd` : '**/*.qmd';
+  const allQmdFiles = glob.sync(searchPattern, { ignore: 'node_modules/**' });
+  const qmdFiles = ig.filter(allQmdFiles);
+
+  const result: BulkReplaceResult = {
+    totalFiles: qmdFiles.length,
+    filesChanged: 0,
+    totalChanges: 0,
+    details: []
+  };
+
+  for (const file of qmdFiles) {
+    try {
+      let content = await fs.readFile(file, 'utf-8');
+      let fileChanges = 0;
+
+      for (const [search, replace] of replacements.entries()) {
+        const regex = typeof search === 'string'
+          ? new RegExp(search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')
+          : search;
+
+        const matches = content.match(regex);
+        if (matches) {
+          content = content.replace(regex, replace);
+          fileChanges += matches.length;
+        }
+      }
+
+      if (fileChanges > 0) {
+        if (!dryRun) {
+          await fs.writeFile(file, content, 'utf-8');
+        }
+        result.filesChanged++;
+        result.totalChanges += fileChanges;
+        result.details.push({ file, changes: fileChanges });
+      }
+    } catch (error) {
+      console.error(`Error processing file ${file}:`, error);
+    }
+  }
+
+  return result;
+}

@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import { simpleGit } from 'simple-git';
 import { glob } from 'glob';
 import path from 'path';
-import { generateGeminiProContent, generateClaudeOpus41Content, extractJsonFromResponse, loadPromptTemplate } from '../lib/llm';
+import { generateGeminiProContent, generateClaudeOpus41Content, extractJsonFromResponse, loadPromptTemplate, generateGeminiFlashContent } from '../lib/llm';
 import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash, parseQuartoYml } from '../lib/file-utils';
 import { parseReferences, formatReferencesFile, type Reference } from '../lib/references';
 
@@ -551,7 +551,7 @@ export async function parameterizeFileWithLLM(filePath: string): Promise<void> {
     '{{body}}': body
   });
 
-  const responseText = await generateGeminiProContent(prompt);
+  const responseText = await generateGeminiFlashContent(prompt);
 
   let result;
   try {
