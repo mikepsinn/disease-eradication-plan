@@ -58,11 +58,12 @@ The National Institutes of Health (NIH) is [a $47 billion machine](../references
 The NIH doesn't just fail to optimize for QALYs—it's accidentally optimized for the opposite. Every institutional feature creates perverse incentives:
 
 * **Principal-Agent Problem:** Bureaucrats maximize job security and budget growth, not health outcomes
+* **Wrong Payment Trigger:** The NIH pays researchers when grants are approved, not when patients are cured. This creates an industry of professional grant writers instead of disease curers.
 * **Information Asymmetry:** Funders can't observe research quality, so they fund observable signals (credentials, publications, grant-writing ability) instead of results
 * **Deadweight Loss:** [~50-67% of researcher time](../references.qmd#grant-writing-time-50pct) goes to overhead and grant writing—pure economic waste with zero QALY production
 * **Innovation Externalities:** Researchers capture approximately 0% of the social value they create, so effort is catastrophically misallocated
 
-**Economic Result:** The system produces QALYs at 10-100x higher cost than the theoretical optimum, while simultaneously maximizing DALYs through delay and bureaucratic friction.
+**Economic Result:** The system produces QALYs at 10-100x higher cost than the theoretical optimum, while simultaneously maximizing DALYs through delay and bureaucratic friction. The core problem: paying for promises instead of paying for results.
 
 Bureaucracy is a disease. The DIH is the cure.
 
@@ -241,6 +242,7 @@ The DIH isn't incrementally better than the NIH. Through pure mechanism design�
 
 | Metric | NIH (Current) | DIH (Projected) | Improvement |
 |--------|---------------|-----------------|-------------|
+| **Payment trigger** | Grant approved | Results achieved | **Incentive revolution** |
 | **Cost per QALY** | [$50,000-$150,000](../references.qmd#nih-cost-per-qaly) | $5,000-$15,000 | **10x reduction** |
 | **Overhead percentage** | [50-67%](../references.qmd#grant-writing-time-50pct) | <10% | **6x reduction in waste** |
 | **Time to treatment** | [10-17 years](../references.qmd#drug-development-timeline) | 2-4 years | **4x faster** |
@@ -268,9 +270,11 @@ The DIH + dFDA system, operating on the 1% Treaty budget of `{python} format_bil
 - Rare diseases no longer "too expensive" to cure
 - Personalized medicine available to everyone, not just billionaires
 
-This is what happens when you optimize for living instead of paperwork. When you align incentives with outcomes. When you replace committees with code and bureaucrats with math.
+**The fundamental difference:** The NIH pays researchers to explain why curing cancer is hard. The DIH pays them to actually cure it.
 
-You replace a system that values credentials with one that values breathing. This is what happens when you stop asking permission from people who profit from your sickness.
+This is what happens when you optimize for living instead of paperwork. When you pay for success instead of grant applications. When you replace committees with code and bureaucrats with math.
+
+You replace a system that values credentials with one that values breathing. This is what happens when you stop paying people to ask permission and start paying them to deliver results.
 
 ---
 
