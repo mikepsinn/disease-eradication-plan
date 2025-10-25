@@ -51,38 +51,21 @@ With the money saved every year, we could:
 
 ## Daily Opportunity Cost
 
-Every day we don't implement this:
+Every day we don't implement this represents a massive societal cost: **$137 million** in wasted trial inefficiency and **2,301 QALYs** lost to delayed treatments.
 
-- **$137 million** wasted on inefficient trials
-- **2,301 QALYs** lost to delayed treatments
-- **Countless patients** denied access to potentially life-saving trials
+**For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](../appendix/dfda-daily-opportunity-cost.qmd).
 
 ## The Platform Cost Breakdown
 
-**Annual Operating Costs: ~$40M**
+The dFDA costs approximately **$40M annually** to operate at scale, with a similar one-time build cost. This includes cloud infrastructure, a lean engineering team, compliance, and global integration.
 
-- Cloud infrastructure: $15M
-- Engineering team (20 FTEs): $4-6M
-- Compliance & security: $1M
-- Global integration: $10M
-- Ecosystem development: $10M
-
-**Upfront Build Cost: ~$40M** (one-time)
-
-- 2.5 years development
-- 75 engineers
-- Global infrastructure setup
+**For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Platform Costs](../appendix/dfda-platform-costs.qmd).
 
 ## ROI Scenarios
 
-| Scenario | Annual Cost | Annual Savings | ROI Ratio | 10-Year NPV |
-|----------|-------------|----------------|-----------|-------------|
-| Best Case | $11M | $95B | 2,577:1 | $495B |
-| Base Case | $40M | $50B | 463:1 | $249B |
-| Conservative | $60M | $30B | 250:1 | $190B |
-| Worst Case | $270M | $30B | 66:1 | $50B |
+The 463:1 ROI is our central estimate based on NPV analysis over 10 years. Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
 
-Even in the absolute worst case, we get 66x returns.
+**For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Health Dividend Calculations](../appendix/health-dividend-calculations.qmd).
 
 ## Why This Isn't Happening Already
 
@@ -110,6 +93,15 @@ Every day we wait costs $137 million and 2,301 lives.
 
 ---
 
-*For detailed economic analysis and interactive charts, see [dFDA ROI Analysis Charts](../../figures/dfda-roi-analysis.qmd)*
+## Further Reading
 
-*Sources: Original analysis from dfda-cost-benefit-analysis.md, RECOVERY trial data, Fortune Business Insights clinical trials market report 2024*
+**Detailed Analysis:**
+- [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
+- [Health Dividend Calculations](../appendix/health-dividend-calculations.qmd) - Interactive NPV/ROI calculator
+- [dFDA Platform Costs](../appendix/dfda-platform-costs.qmd) - ROM estimates and market comparables
+- [QALY Model](../appendix/dfda-qaly-model.qmd) - Source of truth for 840,000 annual QALYs
+
+**Key Sources:**
+- [RECOVERY Trial Cost Reduction](../references.qmd#recovery-trial-cost-reduction)
+- [Clinical Trial Market Size](../references.qmd#clinical-trial-market-size)
+- [DCT Cost Reductions Evidence](../references.qmd#dct-cost-reductions-evidence)

@@ -97,7 +97,11 @@ DFDA_OPEX_COMMUNITY = 0.002  # $2M - community support
 # Calculated benefits
 DFDA_GROSS_SAVINGS = GLOBAL_TRIAL_MARKET * TRIAL_COST_REDUCTION_PCT  # $50B
 DFDA_NET_SAVINGS = DFDA_GROSS_SAVINGS - DFDA_ANNUAL_OPEX  # $49.96B
-DFDA_ROI = DFDA_GROSS_SAVINGS / DFDA_ANNUAL_OPEX  # 1,250:1
+
+# Simple ROI (not NPV-adjusted)
+DFDA_ROI_SIMPLE = DFDA_GROSS_SAVINGS / DFDA_ANNUAL_OPEX  # 1,250:1
+# NOTE: For NPV-adjusted ROI (463:1), use ROI_TIER_1_CONSERVATIVE below
+# The NPV-based calculation accounts for time value of money and gradual adoption
 
 # ============================================================================
 # HEALTH IMPACT PARAMETERS
@@ -179,9 +183,33 @@ ROI_TIER_3_ENDGAME = 25781  # 25,781:1 at maturity with multiplier effects
 # ============================================================================
 
 # NPV analysis parameters
-# Source: brain/book/appendix/dfda-roi-calculations.qmd
-DISCOUNT_RATE = 0.08  # 8% annual discount rate
-TIME_HORIZON_YEARS = 10  # Standard 10-year analysis window
+# Source: brain/book/appendix/dfda-calculation-framework.qmd
+DISCOUNT_RATE = 0.08  # 8% annual discount rate (r)
+TIME_HORIZON_YEARS = 10  # Standard 10-year analysis window (T)
+
+# NPV Model - Upfront Costs (C0)
+# Combines core platform build + medium broader initiative setup costs
+NPV_UPFRONT_COST_CORE_PLATFORM = 0.040  # $40M core platform build
+NPV_UPFRONT_COST_BROADER_INITIATIVES = 0.22975  # $228M medium case broader initiatives
+NPV_UPFRONT_COST_TOTAL = NPV_UPFRONT_COST_CORE_PLATFORM + NPV_UPFRONT_COST_BROADER_INITIATIVES  # C0 = $0.26975B
+
+# NPV Model - Annual Operational Costs (Cop)
+# Combines core platform ops + medium broader initiative annual costs
+NPV_ANNUAL_OPEX_CORE_PLATFORM = 0.01895  # $19M core platform (midpoint of $11-26.5M)
+NPV_ANNUAL_OPEX_BROADER_INITIATIVES = 0.02110  # $21.1M medium case broader initiatives
+NPV_ANNUAL_OPEX_TOTAL = NPV_ANNUAL_OPEX_CORE_PLATFORM + NPV_ANNUAL_OPEX_BROADER_INITIATIVES  # Cop = $0.04005B
+
+# NPV Model - Savings Parameters
+NPV_ANNUAL_RD_SPEND = GLOBAL_TRIAL_MARKET  # Rd = $100B
+NPV_COST_REDUCTION_FRACTION = TRIAL_COST_REDUCTION_PCT  # alpha = 0.50 (50%)
+
+# NPV Model - Adoption Curve
+# Linear ramp from 0% to 100% over 5 years, then constant at 100%
+NPV_ADOPTION_RAMP_YEARS = 5  # Years to reach full adoption
+
+# NOTE: The NPV-based ROI (463:1) accounts for time value of money and gradual adoption
+# The simple ROI (1,250:1) is gross savings / annual opex without discounting
+# Use ROI_TIER_1_CONSERVATIVE (463:1) as the canonical figure for most purposes
 
 # VICTORY bonds
 # Source: brain/book/economics/victory-bonds.qmd

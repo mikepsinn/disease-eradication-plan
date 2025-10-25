@@ -9,16 +9,16 @@ This section quantifies the potential societal benefits of the dFDA Infrastructu
 
 ### Market Size and Impact
 
-The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials alone was estimated to be in the range of **[USD 60-80 billion in 2024, and projected to exceed USD 100 billion by the early 2030s](https://www.fortunebusinessinsights.com/clinical-trials-market-106930)** ([Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)). A significant portion of this expenditure is addressable by the efficiencies dFDA aims to introduce. If dFDA can capture even a fraction of this market by demonstrating superior efficiency and data quality, its economic impact will be substantial.
+The global pharmaceutical and medical device R&D market is vast. Annual global spending on [clinical trials alone was estimated to be in the range of **USD 60-80 billion in 2024, and projected to exceed USD 100 billion by the early 2030s**](../references.qmd#clinical-trial-market-size). A significant portion of this expenditure is addressable by the efficiencies dFDA aims to introduce. If dFDA can capture even a fraction of this market by demonstrating superior efficiency and data quality, its economic impact will be substantial.
 
-For this analysis, we use a conservative baseline estimate of **[\$100 billion per year in global clinical trial spending that is potentially addressable by dFDA](#example-parameterization)** through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
+For this analysis, we use a conservative baseline estimate of [**\$100 billion per year in global clinical trial spending**](../references.qmd#clinical-trial-spending) that is potentially addressable by dFDA through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
 
-- **Current Average Costs**: Various estimates suggest [\$1.0 - \$2.5 billion to bring a new drug from discovery through FDA approval, spread across ~10 years](#data-sources-and-methodological-notes).
+- **Current Average Costs**: Various estimates suggest [\$1.0 - \$2.5 billion to bring a new drug from discovery through FDA approval](../references.qmd#drug-development-cost), spread across ~10 years.
 - **Clinical Trial Phase Breakdown**:
   - Phase I: \$2 - \$5 million/trial (smaller scale).
   - Phase II: \$10 - \$50 million/trial (depending on disease area).
   - Phase III: \$100 - \$500 million/trial (large patient populations).
-- **Per-Patient Phase III Costs**: Often [\$40,000 - \$120,000+ per patient](#market-size-and-impact) (site fees, overhead, staff, monitoring, data management).
+- **Per-Patient Phase III Costs**: Often [\$40,000 - \$120,000+ per patient](../references.qmd#clinical-trial-cost-per-patient) (site fees, overhead, staff, monitoring, data management).
 
 ### Decentralized Trial Costs Modeled on Oxford RECOVERY
 
@@ -60,12 +60,9 @@ For this analysis, we use a conservative baseline estimate of **[\$100 billion p
 
 **U.S.-Specific**
 
-- U.S. prescription drug prices are [50–90% higher than in peer countries](../references.qmd#us-drug-prices).
+- [U.S. prescription drug prices are 50–90% higher than in peer countries](../references.qmd#us-drug-prices-vs-peer-countries).
 - Allowing importation and global competition could conservatively reduce U.S. drug spending by 20–50% for affected drugs.
-- **Example Calculation:** U.S. annual prescription drug spending is [~\$360B](../references.qmd#us-drug-spend). If 50% of the market is affected and prices drop by 25%, annual savings = \$360B × 0.5 × 0.25 = **\$45B**.
-- **References:**
-  - Sarnak, D. O., et al. (2017). [Paying for Prescription Drugs Around the World: Why Is the U.S. an Outlier?](https://www.commonwealthfund.org/publications/issue-briefs/2017/oct/paying-prescription-drugs-around-world-why-us-outlier)
-  - Kesselheim, A. S., et al. (2016). [The high cost of prescription drugs in the United States.](https://jamanetwork.com/journals/jama/article-abstract/2545691)
+- **Example Calculation:** [U.S. annual prescription drug spending](../references.qmd#us-drug-prices-vs-peer-countries) is ~\$360B. If 50% of the market is affected and prices drop by 25%, annual savings = \$360B × 0.5 × 0.25 = **\$45B**.
 
 Beyond direct importation effects, the fundamental efficiencies introduced by the dFDA Infrastructure, drastically reduced R&D costs and accelerated development timelines, are anticipated to further enhance overall market competition for medicines. By lowering the barriers to entry for bringing novel therapies, as well as generics and biosimilars, to market, the dFDA can foster a richer landscape of therapeutic alternatives. A greater number of competing products for similar indications is a well-established economic driver for lower final drug prices, benefiting payors and patients alike. While quantifying this specific effect on end-user drug prices is complex and multifactorial, the structural changes proposed by the dFDA strongly support a trend towards increased affordability through enhanced market competition.
 
@@ -73,49 +70,35 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 **U.S.-Specific**
 
-- Chronic diseases account for [~90% of U.S. healthcare spending](https://www.cdc.gov/chronic-disease/data-research/facts-stats/index.html) (~\$3.7T/year).
-- Preventive care is underfunded (~5% of spend); every [\$1 spent on prevention saves ~\$3](../references.qmd#prevention-savings).
+- [Chronic diseases account for ~90% of U.S. healthcare spending](../references.qmd#us-chronic-disease-spending) (~\$3.7T/year).
+- Preventive care is underfunded (~5% of spend); [every \$1 spent on prevention saves ~\$3](../references.qmd#prevention-cost-savings-ratio).
 - Doubling effective preventive spending could yield hundreds of billions in annual savings.
-- **Example Calculation:** If preventive spending increases by $205B and each [\$1 saves $3](../references.qmd#prevention-savings), additional savings = $205B × 3 = **\$615B/year**.
-- **References:**
-  - Trust for America's Health. (2013). [A Healthier America: Savings from Prevention.](https://www.tfah.org/report-details/a-healthier-america-2013/)
-  - CMS National Health Expenditure Data ([link](https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/nhe-fact-sheet))
+- **Example Calculation:** If preventive spending increases by $205B and each [\$1 saves $3](../references.qmd#prevention-cost-savings-ratio), additional savings = $205B × 3 = **\$615B/year**.
 
 ### Economic Value of Earlier Access to Treatments VSL QALY
 
 - Faster approvals and access to effective treatments can save lives and improve quality of life.
-- **Value of a Statistical Life (VSL):** U.S. agencies use [~$10M per life saved](../references.qmd#vsl).
-- **QALY Framework:** Standard willingness-to-pay is [**$100,000–$150,000 per QALY gained**](../references.qmd#qaly-value).
-- **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × [$150,000](../references.qmd#qaly-value) = **\$1.5B**. If 10,000 lives are saved, benefit = 10,000 × [$10M](../references.qmd#vsl) = **\$100B**.
+- **Value of a Statistical Life (VSL):** [U.S. agencies use ~$10M per life saved](../references.qmd#vsl-value-statistical-life).
+- **QALY Framework:** [Standard willingness-to-pay is **$100,000–$150,000 per QALY gained**](../references.qmd#qaly-value).
+- **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × [$150,000](../references.qmd#qaly-value) = **\$1.5B**. If 10,000 lives are saved, benefit = 10,000 × [$10M](../references.qmd#vsl-value-statistical-life) = **\$100B**.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
-- **References:**
-  - U.S. Department of Transportation. (2021). [Guidance on Treatment of the Economic Value of a Statistical Life.](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
-  - ICER. [Value Assessment Framework.](https://icer.org/our-approach/methods-process/value-assessment-framework/)
 
 #### Gross R and D Savings from dFDA Implementation
 
 - **Parameter**: Percentage reduction in addressable clinical trial costs due to dFDA.
 - **Source/Rationale**:
-  - Decentralized Clinical Trials (DCTs), a core component of dFDA, have demonstrated potential for significant cost reductions (20-50% or more) through reduced site management, travel, and streamlined data collection ([Rogers et al., 2022](https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf); [Nature, 2024](https://www.nature.com/articles/s41746-024-01214-5)).
-  - The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials (<!-- [RECOVERY trial](recovery-trial.qmd) -->, citing Manhattan Institute and NCBI).
-  - _Note on R&D Savings Estimates_: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), the average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. Rogers et al. (2022) in their systematic review noted that there is currently "insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost" on a generalized basis. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
+  - [Decentralized Clinical Trials (DCTs) have demonstrated potential for significant cost reductions](../references.qmd#dct-cost-reductions-evidence) (20-50% or more) through reduced site management, travel, and streamlined data collection.
+  - The [UK RECOVERY trial achieved cost reductions of ~80-98% per patient](../references.qmd#recovery-trial-cost-reduction) compared to traditional trials.
+  - _Note on R&D Savings Estimates_: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), the average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
 - **Range Used in Sensitivity Analysis**:
-  - Conservative: 30% (saving $30B annually from a [$100B addressable spend](#market-size-and-impact))
-  - Base Case: [**50% (saving $50B annually)**](#example-parameterization) from a [$100B addressable spend](#market-size-and-impact)
-  - Optimistic: 70% (saving $70B annually) from a [$100B addressable spend](#market-size-and-impact)
-  - Transformative (RECOVERY Trial-like): 95% (saving $95B annually) from a [$100B addressable spend](#market-size-and-impact)
+  - Conservative: 30% (saving $30B annually from a [$100B addressable spend](../references.qmd#clinical-trial-spending))
+  - Base Case: **50% (saving $50B annually)** from a [$100B addressable spend](../references.qmd#clinical-trial-spending)
+  - Optimistic: 70% (saving $70B annually) from a [$100B addressable spend](../references.qmd#clinical-trial-spending)
+  - Transformative (RECOVERY Trial-like): 95% (saving $95B annually) from a [$100B addressable spend](../references.qmd#clinical-trial-spending)
 
-1. **Rogers, A., De Paoli, G., Subbarayan, S., Copland, R., Harwood, K., Coyle, J., ... & Mackenzie, I. S. (2022).** _A systematic review of methods used to conduct decentralised clinical trials._ British Journal of Clinical Pharmacology, 88(6), 2843-2862. Available at: [https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf](https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf)
-
-   - _"DCTs are developing rapidly. However, there is insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost."_
-2. **Valachis, A., & Lindman, H. (2024).** _Lessons learned from an unsuccessful decentralized clinical trial in Oncology._ npj Digital Medicine, 7(1), 211. Available at: [https://www.nature.com/articles/s41746-024-01214-5](https://www.nature.com/articles/s41746-024-01214-5)
-
-   - _"DCTs are considered cost-saving by reducing the number of onsite patient visits and decreasing the costs related to time for study nurses and clinicians."_
-3. **Fortune Business Insights. (May 2024).** _Clinical Trials Market Size, Share & Industry Analysis._ Available at: [https://www.fortunebusinessinsights.com/clinical-trials-market-106930](https://www.fortunebusinessinsights.com/clinical-trials-market-106930)
-
-   - Provides market sizing, e.g., "The global clinical trials market size was valued at USD 60.94 billion in 2024. The market is projected to grow from USD 64.94 billion in 2025 to USD 104.41 billion by 2032..."
-4. **Global Market Insights. (Feb 2024).** _Clinical Trials Market – By Phase, By Study Design, By Therapeutic Area, By Service Type – Global Forecast 2024 – 2034._ Available at: [https://www.gminsights.com/industry-analysis/clinical-trials-market](https://www.gminsights.com/industry-analysis/clinical-trials-market)
-
-   - Provides market sizing, e.g., "The global clinical trials market accounted for USD 59 billion in 2024. The market is anticipated to grow from USD 62.4 billion in 2025 to USD 98.9 billion in 2034..."
+**For detailed source citations, see:**
+- [DCT Cost Reductions Evidence](../references.qmd#dct-cost-reductions-evidence)
+- [Clinical Trial Market Size](../references.qmd#clinical-trial-market-size)
+- [RECOVERY Trial Cost Reduction](../references.qmd#recovery-trial-cost-reduction)
 
 ---

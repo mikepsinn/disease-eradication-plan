@@ -103,50 +103,62 @@ print("✅ Modern design system loaded")
 ## Core dFDA Model Parameters
 
 ```{python}
-# Core parameters for the dFDA model (in billions of USD)
-# Source: brain/book/economics/dfda-cost-benefit-analysis.md
+# Import all parameters from single source of truth
+import sys
+import os
 
-global_clinical_trial_market = 100.0
-dfda_rd_cost_reduction_pct = 0.50
-dfda_annual_operational_cost = 0.040 # $40 million
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+
+# Use parameters from economic_parameters.py
+global_clinical_trial_market = GLOBAL_TRIAL_MARKET  # $100B
+dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT  # 50%
+dfda_annual_operational_cost = DFDA_ANNUAL_OPEX  # $0.040B ($40M)
 
 # Baseline QALYs generated annually
-qaly_gains_annual_baseline = 840000 # in QALYs, not dollars
-
-# Value of a QALY (standard economic value, can be debated)
-value_per_qaly = 150000 # Using a common benchmark of ~$150k per QALY
+qaly_gains_annual_baseline = DFDA_QALYS_ANNUAL  # 840,000 QALYs
+value_per_qaly = QALY_VALUE_USD  # $150,000 per QALY
 
 # --- Calculations for dFDA Benefits ---
 
 # Gross R&D savings
-gross_rd_savings = global_clinical_trial_market * dfda_rd_cost_reduction_pct
+gross_rd_savings = DFDA_GROSS_SAVINGS  # Pre-calculated: $50B
 
 # Net R&D savings (after operational costs)
-net_rd_savings = gross_rd_savings - dfda_annual_operational_cost
+net_rd_savings = DFDA_NET_SAVINGS  # Pre-calculated: $49.96B
 
-# ROI Calculation
-# ROI = (Net Benefit / Cost)
-# Here, the cost is the operational cost, and the benefit is the gross savings it unlocks.
-dfda_roi = gross_rd_savings / dfda_annual_operational_cost
+# Simple ROI Calculation (not NPV-adjusted)
+# ROI = (Gross Savings / Annual Opex)
+dfda_roi_simple = DFDA_ROI_SIMPLE  # 1,250:1
+
+# NPV-adjusted ROI (canonical figure)
+dfda_roi_npv = ROI_TIER_1_CONSERVATIVE  # 463:1 (from 10-year NPV analysis)
 
 # Monetized value of QALY gains
-monetized_qaly_value = (qaly_gains_annual_baseline * value_per_qaly) / 1_000_000_000 # Convert to billions
+monetized_qaly_value = DFDA_QALYS_MONETIZED  # $126B
 
 # --- Connecting to the Peace Dividend ---
 # The captured dividend must cover the operational cost.
-# We'll use the values from the peace dividend analysis
-captured_dividend = 27.18  # From peace dividend analysis
-funding_coverage_ratio = captured_dividend / dfda_annual_operational_cost
+captured_dividend = CAPTURED_DIVIDEND  # $27.18B from 1% military redirect
+funding_coverage_ratio = captured_dividend / dfda_annual_operational_cost  # 679.5x coverage
 
 print(f"--- dFDA Cost-Benefit Analysis (Baseline) ---")
 print(f"Annual Gross R&D Savings: ${gross_rd_savings:,.1f} Billion")
 print(f"Annual dFDA Operational Cost: ${dfda_annual_operational_cost:,.3f} Billion")
-print(f"Return on Investment (ROI): {dfda_roi:,.0f}:1")
+print(f"Simple ROI (Gross/Opex): {dfda_roi_simple:,.0f}:1")
+print(f"NPV-Adjusted ROI (10-year): {dfda_roi_npv:,.0f}:1  ← CANONICAL FIGURE")
 print("-" * 45)
 print(f"Annual QALYs Gained: {qaly_gains_annual_baseline:,.0f}")
 print(f"Monetized Value of Annual QALYs: ${monetized_qaly_value:,.1f} Billion")
 print("-" * 45)
 print(f"Funding Coverage (Captured Dividend / OpEx): {funding_coverage_ratio:,.1f}x")
+print("")
+print("NOTE: The NPV-adjusted ROI (463:1) is the canonical figure used throughout")
+print("the analysis. It accounts for time value of money and gradual adoption.")
+print("The simple ROI (1,250:1) is useful for comparison but doesn't discount future cash flows.")
 ```
 
 ## dFDA Investment Returns Visualization
@@ -211,29 +223,28 @@ This model calculates:
 
 ```{python}
 # NPV Model Parameters
-# Source: brain/book/economics/dfda-cost-benefit-analysis.md -> "Example Parameterization" section
+# Source: brain/book/appendix/economic_parameters.py
 
-# Costs (in billions USD)
-# Combines core platform build + medium broader initiative setup costs
-C0 = 0.26975  # Upfront Costs
-# Combines core platform ops + medium broader initiative annual costs
-Cop = 0.04005   # Annual Operational Costs (constant)
+# Costs (in billions USD) - from economic_parameters.py
+C0 = NPV_UPFRONT_COST_TOTAL  # $0.26975B (core platform + medium broader initiatives)
+Cop = NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiatives)
 
-# Savings (in billions USD)
-Rd = 100.0  # Annual Global R&D Spend on clinical trials
-alpha = 0.50  # Fraction of R&D cost saved
+# Savings (in billions USD) - from economic_parameters.py
+Rd = NPV_ANNUAL_RD_SPEND  # $100B annual global R&D spend on clinical trials
+alpha = NPV_COST_REDUCTION_FRACTION  # 0.50 (50% reduction)
 
-# Financial Parameters
-r = 0.08  # Annual discount rate
-T = 10    # Time horizon in years
+# Financial Parameters - from economic_parameters.py
+r = DISCOUNT_RATE  # 0.08 (8% annual discount rate)
+T = TIME_HORIZON_YEARS  # 10 years
+adoption_ramp_years = NPV_ADOPTION_RAMP_YEARS  # 5 years to full adoption
 
 # Adoption Curve p(t)
-# Linear ramp from 0% to 100% over 5 years, then constant at 100%
+# Linear ramp from 0% to 100% over adoption_ramp_years, then constant at 100%
 def adoption_rate(t):
     if t == 0:
         return 0
-    elif t <= 5:
-        return t / 5
+    elif t <= adoption_ramp_years:
+        return t / adoption_ramp_years
     else:
         return 1.0
 
@@ -241,11 +252,12 @@ def adoption_rate(t):
 # This is needed for the NPV visualization
 annual_savings_stream = [(adoption_rate(t) * alpha * Rd) for t in range(1, T + 1)]
 
-print("NPV Model Parameters Loaded.")
+print("NPV Model Parameters Loaded from economic_parameters.py")
 print(f"Upfront Cost (C0): ${C0:.4f}B")
 print(f"Annual OpEx (Cop): ${Cop:.4f}B")
 print(f"Discount Rate (r): {r:.0%}")
 print(f"Time Horizon (T): {T} years")
+print(f"Adoption Ramp: {adoption_ramp_years} years to 100%")
 ```
 
 ```{python}
