@@ -15,6 +15,8 @@ You are a senior data engineer tasked with maintaining a single source of truth 
         *   `replace`: The exact inline Python expression to replace it with.
     *   `newParameterCode`: A string containing the Python code for any **new** variables that need to be appended to `economic_parameters.py`. If no new parameters are needed, this should be an empty string.
 
+**CRITICAL JSON FORMATTING:** All strings within the JSON object, especially the `find` and `replace` values, must be properly escaped. Newlines within a string must be represented as `\\n`.
+
 **DO NOT** include any explanations or text outside of the final JSON object. Your response must be only the JSON.
 
 ---

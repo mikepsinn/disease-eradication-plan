@@ -5,7 +5,7 @@ import { glob } from 'glob';
 import crypto from 'crypto';
 import ignore from 'ignore';
 import path from 'path';
-import { generateGeminiProContent, generateClaudeContent } from '../lib/llm';
+import { generateGeminiProContent, generateClaudeOpus41Content } from '../lib/llm';
 import { saveFile, programmaticFormat } from '../lib/file-utils';
 
 const git = simpleGit();
@@ -142,7 +142,7 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
   let prompt = await fs.readFile('scripts/prompts/style-guide-review.md', 'utf-8');
   prompt = prompt.replace('{{styleGuide}}', styleGuide).replace('{{body}}', body);
 
-  const responseText = await generateClaudeContent(prompt);
+  const responseText = await generateClaudeOpus41Content(prompt);
 
   let finalBody;
   if (responseText.trim() === 'NO_CHANGES_NEEDED') {

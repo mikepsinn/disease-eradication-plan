@@ -629,3 +629,35 @@ if __name__ == "__main__":
     else:
         print("\n⚠️  Fix validation errors before using these parameters!")
         exit(1)
+
+
+# ============================================================================
+# COST OF WAR DETAILS (for cost-of-war.qmd)
+# ============================================================================
+
+# Value of Statistical Life (VSL)
+VALUE_OF_STATISTICAL_LIFE = 10_000_000  # $10 million, conservative value used in calculations
+VSL_DOT_MILLIONS = 13.6  # $13.6M, reference value from Dept. of Transportation
+VSL_EPA_MILLIONS = 9.6  # $9.6M, reference value from EPA
+
+# Breakdown of Human Life Loss Costs (billions USD)
+HUMAN_COST_ACTIVE_COMBAT = CONFLICT_DEATHS_ACTIVE_COMBAT * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000  # $2,336B
+HUMAN_COST_TERROR_ATTACKS = CONFLICT_DEATHS_TERROR_ATTACKS * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000 # $83B
+HUMAN_COST_STATE_VIOLENCE = CONFLICT_DEATHS_STATE_VIOLENCE * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000 # $27B
+
+# Derived time-based costs
+SECONDS_PER_YEAR = 365 * 24 * 60 * 60
+DIRECT_COST_PER_SECOND = TOTAL_DIRECT_COSTS * 1_000_000_000 / SECONDS_PER_YEAR # ~$242,749
+
+# Refugee parameters
+FORCIBLY_DISPLACED_PEOPLE = 108_400_000
+COST_PER_REFUGEE_PER_YEAR = 1384
+
+# Grotesque Mathematics calculations
+COST_PER_CONFLICT_DEATH_MILLIONS = TOTAL_WAR_COST * 1_000_000_000 / ANNUAL_CONFLICT_DEATHS / 1_000_000 # ~$46.4M
+LIVES_SAVED_BY_MED_RESEARCH = 4_200_000
+COST_PER_LIFE_SAVED_MED_RESEARCH = GLOBAL_MED_RESEARCH_SPENDING * 1_000_000_000 / LIVES_SAVED_BY_MED_RESEARCH # ~$16,071
+MISALLOCATION_FACTOR_DEATH_VS_SAVING = (TOTAL_WAR_COST * 1_000_000_000 / ANNUAL_CONFLICT_DEATHS) / COST_PER_LIFE_SAVED_MED_RESEARCH # ~2,889x
+
+# Specific budget items from text
+NUCLEAR_WEAPONS_ANNUAL_BUDGET_INCREASE = 42.0 # billions USD
