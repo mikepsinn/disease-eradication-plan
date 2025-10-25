@@ -50,8 +50,8 @@ C0 = NPV_UPFRONT_COST_TOTAL  # $0.26975B upfront
 Cop = NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops
 Rd = NPV_ANNUAL_RD_SPEND  # $100B annual R&D spend
 alpha = NPV_COST_REDUCTION_FRACTION  # 0.50 (50% reduction)
-r = DISCOUNT_RATE  # 0.08 (8% discount rate)
-T = TIME_HORIZON_YEARS  # 10 years
+r = NPV_DISCOUNT_RATE_STANDARD  # 0.08 (8% discount rate)
+T = NPV_TIME_HORIZON_YEARS  # 10 years
 adoption_ramp_years = NPV_ADOPTION_RAMP_YEARS  # 5 years to full adoption
 
 # Adoption curve function

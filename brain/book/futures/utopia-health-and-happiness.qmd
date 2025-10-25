@@ -201,7 +201,7 @@ Let's talk money, because even in utopia, economics matters. This wasn't based o
 - Productivity gains from longevity: $4.1 trillion
 - **Total Annual Peace Dividend: $11.75 trillion**
 
-This is the same economic logic from [the Economic Case chapter](../economics.qmd)—which showed `{python} format_billions(TOTAL_COMPLETE_BENEFITS)` annual benefits from the initial 1% treaty—but scaled up to a 50% redirection over 25 years. Same principles, bigger numbers.
+This is the same economic logic from [the Economic Case chapter](../economics.qmd)—which showed `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)` annual benefits from the initial 1% treaty—but scaled up to a 50% redirection over 25 years. Same principles, bigger numbers.
 
 That's $1,450 per human per year in pure value creation. Not redistribution - actual new wealth from not being sick or dead.
 

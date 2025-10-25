@@ -43,17 +43,17 @@ from economic_parameters import *
 
 **Your Mission: Mass (Legal) Bribery**
 
-Your job is to borrow a `{python} format_billions(CAMPAIGN_TOTAL_COST)` turn into a perpetual `{python} format_billions(CAPTURED_DIVIDEND)`/year river of cash, funded by redirecting a pathetic 1% of global military spending to curing diseases.
+Your job is to borrow a `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` turn into a perpetual `{python} format_billions(CAPTURED_DIVIDEND)`/year river of cash, funded by redirecting a pathetic 1% of global military spending to curing diseases.
 
-1.  **Get Your Initial Bribin' Money:** Invent "VICTORY Bonds," a financial tool that gives investors a `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return. This is more profitable than trafficking cocaine and significantly more legal. You sell `{python} format_billions(CAMPAIGN_TOTAL_COST)` of these bonds to rich people who would prefer to be significantly richer.
-2.  **Bribe the Public:** You spend `{python} format_currency(CAMPAIGN_BUDGET_MASS_BRIBERY)` to build a voting bloc of `{python} CAMPAIGN_VOTING_BLOC_SIZE_MILLIONS:,.0f} million people` demanding that their governments redirect 1% of military spending to cure disease. This creates a political threat.
+1.  **Get Your Initial Bribin' Money:** Invent "VICTORY Bonds," a financial tool that gives investors a `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return. This is more profitable than trafficking cocaine and significantly more legal. You sell `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` of these bonds to rich people who would prefer to be significantly richer.
+2.  **Bribe the Public:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY)` to build a voting bloc of `{python} TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f} million people` demanding that their governments redirect 1% of military spending to cure disease. This creates a political threat.
 3.  **Bribe the Bribers:** You give defense lobbyists millions in bonds. Their `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return (that only come if the 1% treaty is preserved) makes their old bribes look pathetic. They now work for you.
-4.  **Bribe Some Politicians:** You spend `{python} format_currency(CAMPAIGN_BUDGET_SUPER_PACS)` on Super PACs to ensure politicians face a choice: either take your money and support the treaty, or get voted out by `{python} CAMPAIGN_VOTING_BLOC_SIZE_MILLIONS:,.0f} million angry people` who want to live.
+4.  **Bribe Some Politicians:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS)` on Super PACs to ensure politicians face a choice: either take your money and support the treaty, or get voted out by `{python} TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f} million angry people` who want to live.
 5.  **Profit from Victory:** The treaty passes. The \`{python} format_billions(CAPTURED_DIVIDEND)`/year bribe machine is turned on forever. Everyone who helped gets 10% of that money forever (producing the `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return). Use the remaining `{python} format_percentage(DIH_TREASURY_TO_RESEARCH_PCT)` to `{python} TRIAL_COST_REDUCTION_FACTOR`x the rate of medical progress by subsidizing hyper efficient pragmatic decentralized clinical trials.
 
 **Why Everyone Gets Rich From Not Dying from Terrible Diseases:**
 
-- **Defense contractors:** Keep `{python} format_percentage(1 - TREATY_REDUCTION_PCT)}` of their murder budget (`{python} format_billions(MILITARY_SPENDING_REMAINING)}`) AND get `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns. They'll kill you with kindness instead.
+- **Defense contractors:** Keep `{python} format_percentage(1 - TREATY_REDUCTION_PCT)}` of their murder budget (`{python} format_billions(GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024)}`) AND get `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns. They'll kill you with kindness instead.
 - **Pharma companies:** Stop paying `{python} format_currency(TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K / 1_000_000_000)}` per trial patient. Patients PAY THEM instead. It's like Uber but for not dying.
 - **Politicians:** Get campaign money + avoid explaining to voters why they chose bombs over grandma's cancer treatment.
 - **Insurance companies:** Prefer you either dead or immortal. Anything but expensively lingering.
@@ -70,7 +70,7 @@ Your job is to borrow a `{python} format_billions(CAMPAIGN_TOTAL_COST)` turn int
 
 ### ☠️ The Daily Holocaust
 
-[`{python} DAILY_DEATHS_CURABLE_DISEASES:,.0f} people die daily`](brain/book/problem/the-daily-massacre.qmd) from curable diseases—one Holocaust every 40 days, or 50 September 11th attacks every single day.
+[`{python} GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f} people die daily`](brain/book/problem/the-daily-massacre.qmd) from curable diseases—one Holocaust every 40 days, or 50 September 11th attacks every single day.
 
 ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
 
@@ -149,7 +149,7 @@ It gets dumber.
 
 Every nation redirects just **`{python} format_percentage(TREATY_REDUCTION_PCT)`** of their current murder budget to fund hyper-efficient decentralized clinical trials that subsidize patient participation.
 
-We'd still have [`{python} format_billions(MILITARY_SPENDING_REMAINING)`](brain/book/problem/cost-of-war.qmd) left for war and bombs and stuff.
+We'd still have [`{python} format_billions(GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024)`](brain/book/problem/cost-of-war.qmd) left for war and bombs and stuff.
 [\$2.69 trillion is enough to murder everyone on Earth 20 times](brain/book/appendix/nuclear-weapon-cost-and-casualties.qmd).
 (Literally.)
 
@@ -253,7 +253,7 @@ You'll sell the same bonds, except:
 2.  `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns because inflation is a thing
 3.  Not dying is even trendier than patriotism
 
-This raises the \`{python} format_billions(CAMPAIGN_TOTAL_COST)` needed to fuel the rest of the bribery machine.
+This raises the \`{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` needed to fuel the rest of the bribery machine.
 
 **This is what venture capitalists call "asymmetric risk" - you either lose your money or make `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually until the heat death of the universe.**
 
@@ -328,7 +328,7 @@ Defense lobbyists currently get [\$1,813 back per dollar spent bribing Congress]
 
 **[Super PACs: Bribery With Extra Steps](brain/book/strategy/co-opting-defense-contractors.qmd)**
 
-Politicians love their jobs more than they love bombs. You funnel `{python} format_currency(CAMPAIGN_BUDGET_SUPER_PACS)` into Super PACs. When 280 million voters want cures, politicians suddenly discover they've always loved cures. It's a miracle. They are driven by one thing: re-election. Faced with an angry mob and a well-funded opponent, they will see the profound moral wisdom of curing disease.
+Politicians love their jobs more than they love bombs. You funnel `{python} format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS)` into Super PACs. When 280 million voters want cures, politicians suddenly discover they've always loved cures. It's a miracle. They are driven by one thing: re-election. Faced with an angry mob and a well-funded opponent, they will see the profound moral wisdom of curing disease.
 
 ### 💎 5: Enjoy
 
@@ -379,8 +379,8 @@ That's not a typo. Four hundred and sixty-three dollars. It's better returns tha
 
 Where the magic money comes from:
 
-- [**\`{python} format_billions(DFDA_GROSS_SAVINGS)` in annual R&D cost savings**](brain/book/appendix/dfda-cost-benefit-analysis.qmd): `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in clinical trial costs
-- [**`{python} format_qalys(DFDA_QALYS_ANNUAL)` Quality-Adjusted Life Years (QALYs) saved annually**](brain/book/appendix/dfda-cost-benefit-analysis.qmd):
+- [**\`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` in annual R&D cost savings**](brain/book/appendix/dfda-cost-benefit-analysis.qmd): `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in clinical trial costs
+- [**`{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` Quality-Adjusted Life Years (QALYs) saved annually**](brain/book/appendix/dfda-cost-benefit-analysis.qmd):
   - **Faster access to new treatments**: 200,000 QALYs from faster drug access ([`{python} TREATMENT_ACCELERATION_YEARS_TARGET}` years instead of `{python} TREATMENT_ACCELERATION_YEARS_CURRENT}` years](brain/book/appendix/recovery-trial.qmd) to market)
   - **Better prevention through real-world data**: 140,000 QALYs
   - **Enabling new therapies**: 500,000 QALYs from enabling new therapies for rare diseases and previously untreatable conditions
@@ -415,15 +415,15 @@ $$
 \text{Total Benefit} = \underbrace{\text{\$97.1B}}_{\text{Peace Dividend}} + \underbrace{\text{\$50B}}_{\text{Health Dividend}} = \text{\$147.1B}
 $$
 
-- Peace dividend: `${python} format_billions(BENEFIT_PEACE_DIVIDEND)}` (from not building things that explode)
-- Health dividend: `${python} format_billions(DFDA_GROSS_SAVINGS)}` (from not wasting money on paperwork)
+- Peace dividend: `${python} format_billions(BENEFIT_PEACE_DIVIDEND_ANNUAL)}` (from not building things that explode)
+- Health dividend: `${python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)}` (from not wasting money on paperwork)
 - Total: More money than God spends on therapy
 
 ([See peace dividend calculation](brain/book/economics/peace-dividend.qmd) | [See dFDA health benefits breakdown](brain/book/appendix/dfda-cost-benefit-analysis.qmd) | [See economic impact summary](brain/book/economics.qmd))
 
 - **Zero net cost**: The \`{python} format_billions(CAPTURED_DIVIDEND)` comes from redirected military spending (money already budgeted)
 - **\$147.1B in annual benefits**: Peace dividend (\$97.1B) + Health dividend (\$50B)
-- **Operating costs**: Only [\`{python} format_millions(TOTAL_ANNUAL_COSTS)`/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) (campaign + operations)
+- **Operating costs**: Only [\`{python} format_millions(TREATY_TOTAL_ANNUAL_COSTS)`/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) (campaign + operations)
 - **Lives saved**: [25,000/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) ($875,000 \text{ QALYs} \div 35 \text{ QALYs/life}$)
 - **Per life saved**: Society PROFITS [`${python} PROFIT_PER_LIFE_SAVED:,.0f}`](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) instead of spending
 
@@ -434,7 +434,7 @@ This is the only health trick that makes money instead of costing it.
 You literally profit from preventing death.
 It's capitalism's greatest achievement: making greed save lives.
 
-Unlike traditional interventions requiring ongoing charity, this generates `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_FOR_ROI_CALC)}` annually while saving `{python} SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}` lives.
+Unlike traditional interventions requiring ongoing charity, this generates `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)}` annually while saving `{python} SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}` lives.
 
 ### 🏆 Best Idea in the World
 
@@ -465,8 +465,8 @@ It's what Jesus would do if he understood compound interest.
 
 *Keep Doing What We're Doing*
 
-- `{python} DAILY_DEATHS_CURABLE_DISEASES:,.0f} people continue dying daily` (that's a 9/11 every 17 minutes)
-- `{python} format_billions(TOTAL_GLOBAL_WASTE_SPEND)}` keeps getting flushed down the death toilet
+- `{python} GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f} people continue dying daily` (that's a 9/11 every 17 minutes)
+- `{python} format_billions(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)}` keeps getting flushed down the death toilet
 - You die from something we could have cured
 - Military budgets grow until we're spending more on bombs than food
 - Healthcare bankrupts everyone who doesn't die fast enough
@@ -477,7 +477,7 @@ It's what Jesus would do if he understood compound interest.
 *Obviously Better*
 
 - `{python} SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f} fewer people die each year` (exponentially growing)
-- `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_FOR_ROI_CALC)}` generated annually (real money, not hypothetical)
+- `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)}` generated annually (real money, not hypothetical)
 - Major diseases cured within a decade
 - `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns for early investors
 - Free healthcare via trial participation
@@ -511,7 +511,7 @@ We're just trying to get people to click "yes I would prefer not die of horrible
 
 ---
 
-Humanity spends **`{python} format_billions(TOTAL_GLOBAL_WASTE_SPEND)` annually** on dying and/or killing.
+Humanity spends **`{python} format_billions(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)` annually** on dying and/or killing.
 
 You're asking to redirect **1% of just the killing budget** to the not-dying budget.
 

@@ -115,7 +115,7 @@ Now they're not just neutral—they're actively lobbying FOR the treaty:
 
 ## Budget Allocation
 
-A significant portion of the campaign's `{python} format_billions(CAMPAIGN_TOTAL_COST)` war chest is allocated for strategic partnerships to co-opt key industry players and defense lobbyists. For the full breakdown, see the [Campaign Budget](../economics/campaign-budget.qmd).
+A significant portion of the campaign's `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` war chest is allocated for strategic partnerships to co-opt key industry players and defense lobbyists. For the full breakdown, see the [Campaign Budget](../economics/campaign-budget.qmd).
 
 ## Why This Works
 

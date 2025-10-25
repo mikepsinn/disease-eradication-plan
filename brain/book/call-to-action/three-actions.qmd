@@ -100,7 +100,7 @@ Not 100 actions. Not a lifestyle change. Not a career pivot.
 
 ### The Returns
 
-**The math**: At `{python} format_billions(CAMPAIGN_TOTAL_COST)` raised and `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual treaty revenue, bondholders get **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns, perpetually**.
+**The math**: At `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` raised and `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual treaty revenue, bondholders get **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns, perpetually**.
 
 Your $1,000 bond → $2,700/year forever.
 
@@ -266,7 +266,7 @@ Let's make a game of it. Every person you tell is a point. Every person *they* t
 
 **Action 2** (Invest):
 
-- `{python} format_billions(CAMPAIGN_TOTAL_COST)` raised → Lobbying power → Treaty passes
+- `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` raised → Lobbying power → Treaty passes
 
 **Action 3** (Share):
 

@@ -119,16 +119,16 @@ dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT  # 50%
 dfda_annual_operational_cost = DFDA_ANNUAL_OPEX  # $0.040B ($40M)
 
 # Baseline QALYs generated annually
-qaly_gains_annual_baseline = DFDA_QALYS_ANNUAL  # 840,000 QALYs
-value_per_qaly = QALY_VALUE_USD  # $150,000 per QALY
+qaly_gains_annual_baseline = GLOBAL_DFDA_QALYS_GAINED_ANNUAL  # 840,000 QALYs
+value_per_qaly = STANDARD_ECONOMIC_QALY_VALUE_USD  # $150,000 per QALY
 
 # --- Calculations for dFDA Benefits ---
 
 # Gross R&D savings
-gross_rd_savings = DFDA_GROSS_SAVINGS  # Pre-calculated: $50B
+gross_rd_savings = DFDA_GROSS_SAVINGS_ANNUAL  # Pre-calculated: $50B
 
 # Net R&D savings (after operational costs)
-net_rd_savings = DFDA_NET_SAVINGS  # Pre-calculated: $49.96B
+net_rd_savings = DFDA_NET_SAVINGS_ANNUAL  # Pre-calculated: $49.96B
 
 # Simple ROI Calculation (not NPV-adjusted)
 # ROI = (Gross Savings / Annual Opex)
@@ -234,8 +234,8 @@ Rd = GLOBAL_TRIAL_MARKET  # $100B annual global R&D spend on clinical trials
 alpha = TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
 
 # Financial Parameters - from economic_parameters.py
-r = DISCOUNT_RATE  # 0.08 (8% annual discount rate)
-T = TIME_HORIZON_YEARS  # 10 years
+r = NPV_DISCOUNT_RATE_STANDARD  # 0.08 (8% annual discount rate)
+T = NPV_TIME_HORIZON_YEARS  # 10 years
 adoption_ramp_years = DFDA_ADOPTION_RAMP_YEARS  # 5 years to full adoption
 
 # Adoption Curve p(t)
@@ -297,8 +297,8 @@ This chart shows how the investment pays back over time, accounting for the time
 
 The dFDA cost-benefit analysis reveals:
 
-1. **Exceptional ROI**: The platform generates a `{python} format_roi(DFDA_ROI_SIMPLE)` return on investment (`{python} format_billions(DFDA_GROSS_SAVINGS)` savings from `{python} format_millions(DFDA_ANNUAL_OPEX)` cost)
-2. **Massive Health Benefits**: `{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs gained annually, worth $126 billion in monetized value
+1. **Exceptional ROI**: The platform generates a `{python} format_roi(DFDA_ROI_SIMPLE)` return on investment (`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` savings from `{python} format_millions(DFDA_ANNUAL_OPEX)` cost)
+2. **Massive Health Benefits**: `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs gained annually, worth $126 billion in monetized value
 3. **Robust Financial Model**: NPV analysis confirms strong returns even with conservative assumptions
 4. **Self-Funding**: The captured peace dividend ($27.2B) easily covers operational costs (`{python} format_millions(DFDA_ANNUAL_OPEX)`)
 5. **Sensitivity Resilience**: ROI remains strong even under conservative scenarios (30% cost reduction, higher operational costs)

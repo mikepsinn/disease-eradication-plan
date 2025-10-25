@@ -105,7 +105,7 @@ It's the best investment in the world, if you don't mind the screaming.
 
 The strategy does the exact same thing, but backwards.
 
-**Step 1:** Sell VICTORY Bonds to raise \`{python} format_billions(CAMPAIGN_TOTAL_COST)` (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns).
+**Step 1:** Sell VICTORY Bonds to raise \`{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns).
 
 **Step 2:** Use the money to run a massive campaign to get 3.5% of humanity (280M people) to vote for the 1% Treaty.
 

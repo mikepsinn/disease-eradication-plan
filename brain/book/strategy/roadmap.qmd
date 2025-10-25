@@ -144,7 +144,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 
 ### Phase 3: Bond Offering & Treaty Push (Months 19-36)
 
-**Goal:** Execute the `{python} format_billions(CAMPAIGN_TOTAL_COST)` bond raise, overwhelm political opposition with money and public pressure, and secure first G7 treaty ratification. This is the final battle.
+**Goal:** Execute the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` bond raise, overwhelm political opposition with money and public pressure, and secure first G7 treaty ratification. This is the final battle.
 
 **Team Composition (50-75 people):**
 - Executive team: Same 4 + CFO for bond offering (5)
@@ -166,7 +166,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 
 **Key Performance Indicators:**
 - Fundraising: $1B VICTORY bond sale (first $500M within 90 days validates demand)
-- Bond Terms: Secure `{python} format_billions(CAMPAIGN_TOTAL_COST)` raise on terms of bondholders receiving 10% of all future treaty inflows in perpetuity.
+- Bond Terms: Secure `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` raise on terms of bondholders receiving 10% of all future treaty inflows in perpetuity.
 - Projected Yield: Successfully communicate the projected `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual yield to investors (based on a `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` payout from a `{python} format_billions(TREATY_ANNUAL_FUNDING)` treaty).
 - Referendum scale: 280M votes (3.5% global population = unstoppable political pressure)
 - Lobbying ROI: $250M spent → 100+ politicians publicly supporting (cost per politician: $2.5M)
@@ -175,7 +175,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 - G7 ratification: At least 1 G7 nation (US, UK, Germany, France, Japan, Canada, Italy) ratifies treaty
 
 **Critical Risks & Mitigation:**
-- *Risk*: Bond offering fails (can't raise `{python} format_billions(CAMPAIGN_TOTAL_COST)`) → *Mitigation*: Do $500M first close to prove concept, then $500M second close; accept slower timeline if needed; offer better terms (12% instead of 10%)
+- *Risk*: Bond offering fails (can't raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`) → *Mitigation*: Do $500M first close to prove concept, then $500M second close; accept slower timeline if needed; offer better terms (12% instead of 10%)
 - *Risk*: SEC blocks bond offering → *Mitigation*: Full Reg D compliance from day 1, hire top securities lawyers, file months in advance, have backup offshore offering ready
 - *Risk*: Opposition outspends us ($300M defense lobby → $500M) → *Mitigation*: Don't match dollar-for-dollar; use smarter targeting (swing districts), co-opt their lobbyists with VICTORY bonds, make it more profitable to support us
 - *Risk*: First treaty vote fails publicly → *Mitigation*: Never bring treaty to vote unless you have the votes counted; start with friendly small countries (Iceland, Estonia, Singapore) to build momentum before tackling G7

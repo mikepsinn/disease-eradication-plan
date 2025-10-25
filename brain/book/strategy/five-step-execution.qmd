@@ -32,7 +32,7 @@ from economic_parameters import *
 
 ## Step 1: VICTORY Bonds
 
-**Raise `{python} format_billions(CAMPAIGN_TOTAL_COST)` From Investors**
+**Raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` From Investors**
 
 Remember World War II? America sold [war bonds](../references.qmd#wwii-war-bonds) to fund the fight against fascism. People bought them because:
 

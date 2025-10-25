@@ -29,7 +29,7 @@ This document provides a high-level overview of the entire financial architectur
 
 ## The Three Financial Pillars
 
-### 1. Fundraising: How To Raise `{python} format_billions(CAMPAIGN_TOTAL_COST)`
+### 1. Fundraising: How To Raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`
 
 **Instrument:** [VICTORY Bonds](./victory-bonds.qmd)
 
@@ -48,11 +48,11 @@ This document provides a high-level overview of the entire financial architectur
 - "Forever" beats any finite timeline
 - Better returns than any investment in history
 
-**Timeline:** 12-24 months to raise `{python} format_billions(CAMPAIGN_TOTAL_COST)` (simplified structure accelerates fundraising)
+**Timeline:** 12-24 months to raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` (simplified structure accelerates fundraising)
 
 ---
 
-### 2. Campaign Budget: How To Spend `{python} format_billions(CAMPAIGN_TOTAL_COST)`
+### 2. Campaign Budget: How To Spend `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`
 
 **Detailed Breakdown:** [Campaign Budget](./campaign-budget.qmd)
 
@@ -240,13 +240,13 @@ As more patients join:
 **Societal Returns (Everyone Else):**
 
 - $463 in value created per dollar spent
-- `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in trial costs (`{python} format_billions(DFDA_GROSS_SAVINGS)` annual savings)
+- `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in trial costs (`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` annual savings)
 - 10-year acceleration in drug development ($5.4T productivity)
 - 100X more diseases addressed (10M lives saved annually)
 - 3X ROI on prevention vs treatment ($600B saved)
 - Knowledge compounds through open data ($2.1T avoided waste)
 
-**Total 10-Year Value Creation: `{python} format_billions(TOTAL_ENDGAME_BENEFITS)`**
+**Total 10-Year Value Creation: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`**
 
 That's more than China's entire GDP.
 
@@ -409,7 +409,7 @@ Each success makes the next success easier:
 
 - **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI breakdown
 - **[Peace Dividend Analysis](../appendix/peace-dividend-calculations.qmd)** - Historical proof that military cuts → prosperity
-- **[Total Economic Impact](../appendix/total-economic-impact.qmd)** - The `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` endgame
+- **[Total Economic Impact](../appendix/total-economic-impact.qmd)** - The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` endgame
 
 ### For Treaty Supporters
 
@@ -420,7 +420,7 @@ Each success makes the next success easier:
 
 ## The Bottom Line
 
-**To Raise:** `{python} format_billions(CAMPAIGN_TOTAL_COST)` via VICTORY Bonds
+**To Raise:** `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` via VICTORY Bonds
 
 **To Spend:** 20% viral referendum, 25% AI lobbying, 25% tech platform, 10% AI legal, 10% partnerships, 5% ops, 5% implementation
 

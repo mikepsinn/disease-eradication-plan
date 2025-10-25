@@ -32,20 +32,20 @@ from economic_parameters import *
 Depending on what you count, the 1% Treaty generates between `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` and `{python} format_roi(ROI_TIER_3_ENDGAME)` ROI:
 
 **`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` = Conservative (dFDA R&D Savings Only)**
-- Only counts the `{python} format_billions(DFDA_GROSS_SAVINGS)` in annual R&D cost reductions from `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials
+- Only counts the `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` in annual R&D cost reductions from `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials
 - Ignores peace dividend, earlier access, and all secondary benefits
 - NPV-based, 10-year timeframe
 - This is the floor
 
 **`{python} format_roi(ROI_TIER_2_COMPLETE)` = Complete (All Direct Benefits)**
-- Counts all 8 primary benefit categories totaling `{python} format_billions(TOTAL_COMPLETE_BENEFITS)`/year
+- Counts all 8 primary benefit categories totaling `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`/year
 - Includes peace dividend, R&D savings, earlier access, research acceleration, rare diseases, drug prices, prevention, and mental health
 - 10-year average
 - This is the realistic case
 
 **`{python} format_roi(ROI_TIER_3_ENDGAME)` = Endgame (Year 20 Compounding)**
 - Adds all secondary multiplier effects: productivity gains, global trade, infrastructure preservation, avoided crises, innovation acceleration
-- Reaches `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` annual value at maturity
+- Reaches `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual value at maturity
 - This is where we're actually headed
 
 **Which one should you cite?**
@@ -76,14 +76,14 @@ All calculations in our [Economic Models Notebook](./economics/economic_models.i
 **The Return (Health & Wealth):**
 - **Economic Return (NPV)**: 10-year discounted net benefit = **`{python} format_billions(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)`** in R&D savings alone
 - **Robust ROI**: `{python} format_billions(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)` / `{python} format_currency(DIH_NPV_TOTAL_COST)` = **`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`**
-- **Health Return**: **`{python} format_qalys(DFDA_QALYS_ANNUAL)` Quality-Adjusted Life Years (QALYs)** annually
+- **Health Return**: **`{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` Quality-Adjusted Life Years (QALYs)** annually
 
 **Bottom Line**: The treaty takes 1% of what humanity spends on bombs and redirects it to cure diseases instead. This creates two massive, independent wins:
 
 1. **The Peace Dividend**: Society gets **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`** richer every year from slightly less conflict
-2. **The dFDA Bonus**: We use a fraction of that dividend to unlock **`{python} format_billions(DFDA_GROSS_SAVINGS)`** in R&D savings annually, plus `{python} format_qalys(DFDA_QALYS_ANNUAL)` years of healthy life
+2. **The dFDA Bonus**: We use a fraction of that dividend to unlock **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`** in R&D savings annually, plus `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` years of healthy life
 
-**Total Annual Benefit: ~`{python} format_billions(TOTAL_ANNUAL_BENEFITS)` per year.**
+**Total Annual Benefit: ~`{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` per year.**
 
 *Even in worst-case scenarios, the system achieves ROI between **`{python} format_roi(SENSITIVITY_ROI_WORST_CASE)` and `{python} format_roi(SENSITIVITY_ROI_BEST_CASE)`**.*
 
@@ -92,7 +92,7 @@ All calculations in our [Economic Models Notebook](./economics/economic_models.i
 The Decentralized FDA alone achieves **`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` return on investment**.
 
 This exceptional ROI comes from:
-- **`{python} format_billions(DFDA_GROSS_SAVINGS)` in annual R&D cost savings**: `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in clinical trial costs
+- **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` in annual R&D cost savings**: `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in clinical trial costs
 - **Faster access to new treatments**: 2 years instead of 17 years to market
 - **Better prevention through real-world data**: Continuous learning from millions of patients
 - **Enabling new therapies**: Making rare disease trials economically viable
@@ -113,15 +113,15 @@ When funded by the 1% Treaty's military redirection, the entire system becomes *
 **Why the ROI is literally infinite** ([see full calculation](appendix/1-percent-treaty-cost-effectiveness.qmd)):
 
 - **Zero net cost**: The `{python} format_billions(TREATY_ANNUAL_FUNDING)` comes from redirected military spending (money already budgeted)
-- **`{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in annual benefits**: Peace dividend (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`) + R&D savings (`{python} format_billions(DFDA_GROSS_SAVINGS)`)
-- **Operating costs**: Only `{python} format_millions(TOTAL_ANNUAL_COSTS)`/year (campaign + operations)
-- **Lives saved**: `{python} format_qalys(SENSITIVITY_LIVES_SAVED_CENTRAL)`/year (`{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CENTRAL)` QALYs ÷ `{python} QALYS_PER_LIFE` QALYs/life)
-- **The math**: `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` benefit ÷ $0 new spending = ∞ (infinite ROI)
+- **`{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` in annual benefits**: Peace dividend (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`) + R&D savings (`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`)
+- **Operating costs**: Only `{python} format_millions(TREATY_TOTAL_ANNUAL_COSTS)`/year (campaign + operations)
+- **Lives saved**: `{python} format_qalys(SENSITIVITY_LIVES_SAVED_CENTRAL)`/year (`{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CENTRAL)` QALYs ÷ `{python} STANDARD_QALYS_PER_LIFE_SAVED` QALYs/life)
+- **The math**: `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` benefit ÷ $0 new spending = ∞ (infinite ROI)
 - **Per life saved**: Society PROFITS `${python} f"{abs(COST_PER_LIFE_INVESTOR_FUNDED):.2f}"` million instead of spending
 
 This is a **dominant health intervention**: it simultaneously saves money AND saves lives.
 
-Unlike traditional interventions requiring ongoing charity, this generates `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` annually while saving `{python} format_qalys(SENSITIVITY_LIVES_SAVED_CENTRAL)` lives.
+Unlike traditional interventions requiring ongoing charity, this generates `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` annually while saving `{python} format_qalys(SENSITIVITY_LIVES_SAVED_CENTRAL)` lives.
 
 ---
 
@@ -129,20 +129,20 @@ Unlike traditional interventions requiring ongoing charity, this generates `{pyt
 
 The conservative `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` calculation only counts dFDA R&D savings. But the 1% Treaty does much more.
 
-### `{python} format_billions(TOTAL_COMPLETE_BENEFITS)` in Annual Benefits
+### `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)` in Annual Benefits
 
 When you count all eight primary benefit categories:
 
-1. **Peace dividend** (`{python} format_billions(BENEFIT_PEACE_DIVIDEND)`) - Societal savings from 1% less conflict
-2. **R&D cost savings** (`{python} format_billions(BENEFIT_RD_SAVINGS)`) - `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials
-3. **7-year access acceleration** (`{python} format_billions(BENEFIT_EARLIER_ACCESS)`) - Earlier treatment access during trials
-4. **Research acceleration** (`{python} format_billions(BENEFIT_RESEARCH_ACCELERATION)`) - 115X more research capacity (10-20X more breakthroughs)
-5. **Rare disease treatments** (`{python} format_billions(BENEFIT_RARE_DISEASES)`) - Economically viable orphan drug development
-6. **Drug price reductions** (`{python} format_billions(BENEFIT_DRUG_PRICE_REDUCTION)`) - R&D savings passed to consumers
-7. **Prevention medicine** (`{python} format_billions(BENEFIT_PREVENTION)`) - Economically viable prevention trials
-8. **Mental health** (`{python} format_billions(BENEFIT_MENTAL_HEALTH)`) - Closing the treatment gap
+1. **Peace dividend** (`{python} format_billions(BENEFIT_PEACE_DIVIDEND_ANNUAL)`) - Societal savings from 1% less conflict
+2. **R&D cost savings** (`{python} format_billions(BENEFIT_RD_SAVINGS_ANNUAL)`) - `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials
+3. **7-year access acceleration** (`{python} format_billions(BENEFIT_EARLIER_ACCESS_ANNUAL)`) - Earlier treatment access during trials
+4. **Research acceleration** (`{python} format_billions(BENEFIT_RESEARCH_ACCELERATION_ANNUAL)`) - 115X more research capacity (10-20X more breakthroughs)
+5. **Rare disease treatments** (`{python} format_billions(BENEFIT_RARE_DISEASES_ANNUAL)`) - Economically viable orphan drug development
+6. **Drug price reductions** (`{python} format_billions(BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL)`) - R&D savings passed to consumers
+7. **Prevention medicine** (`{python} format_billions(BENEFIT_PREVENTION_ANNUAL)`) - Economically viable prevention trials
+8. **Mental health** (`{python} format_billions(BENEFIT_MENTAL_HEALTH_ANNUAL)`) - Closing the treatment gap
 
-**Total: `{python} format_billions(TOTAL_COMPLETE_BENEFITS)`/year in quantifiable benefits = `{python} format_roi(ROI_TIER_2_COMPLETE)` ROI**
+**Total: `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`/year in quantifiable benefits = `{python} format_roi(ROI_TIER_2_COMPLETE)` ROI**
 
 The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
 
@@ -163,7 +163,7 @@ Let's compare to the most effective charities in the world (GiveWell top chariti
 
 | Intervention | Cost to Achieve Outcome | Our Initiative's Equivalent |
 | :--- | :--- | :--- |
-| **GiveWell Top Charities** (e.g., Against Malaria Foundation) | Spend **~`${python} f'${GIVEWELL_COST_PER_LIFE_MIN:,.0f} - ${GIVEWELL_COST_PER_LIFE_MAX:,.0f}'`** to save one life | Generate **`{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs** annually while creating **`{python} format_billions(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)`** in net economic value |
+| **GiveWell Top Charities** (e.g., Against Malaria Foundation) | Spend **~`${python} f'${GIVEWELL_COST_PER_LIFE_MIN:,.0f} - ${GIVEWELL_COST_PER_LIFE_MAX:,.0f}'`** to save one life | Generate **`{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs** annually while creating **`{python} format_billions(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)`** in net economic value |
 
 **The Difference**: GiveWell's charities are the best ways to spend money to save lives. They cost money but save lives very efficiently.
 
@@ -179,7 +179,7 @@ This plan doesn't cost money, it *makes* money while saving lives. Instead of as
 | **Smoking Cessation** | Prevents expensive chronic diseases (cancer, heart disease) through low-cost interventions | Billions to Tens of Billions |
 | **Water Fluoridation** | Avoids dental care costs for entire populations at negligible cost | Hundreds of Millions to Billions |
 | **1% Treaty (Peace Dividend)** | Reduces global conflict costs by 1%, creating massive economic benefit | **~`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`, Annually** |
-| **dFDA (R&D Efficiency)** | Makes clinical research ~`{python} TRIAL_COST_REDUCTION_FACTOR`}x more efficient, unlocking huge R&D savings | **~`{python} format_billions(DFDA_GROSS_SAVINGS)`, Annually** |
+| **dFDA (R&D Efficiency)** | Makes clinical research ~`{python} TRIAL_COST_REDUCTION_FACTOR`}x more efficient, unlocking huge R&D savings | **~`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`, Annually** |
 
 **Why This Is Different:**
 
@@ -196,7 +196,7 @@ Instead of solving one problem, this uses a global-scale win to fund a system-sc
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
-The `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` annual economic benefit (conservative case) makes this intervention nearly **`{python} f"{MULTIPLIER_VS_VACCINES:.0f}×"` larger than childhood vaccinations** (one of the most successful public health programs in history).
+The `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` annual economic benefit (conservative case) makes this intervention nearly **`{python} f"{MULTIPLIER_VS_VACCINES:.0f}×"` larger than childhood vaccinations** (one of the most successful public health programs in history).
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates the wealth needed to sustain itself through VICTORY bonds that pay investors `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns.
 
@@ -215,15 +215,15 @@ By the time you finish reading this sentence, we've lost roughly `{python} forma
 Every day we delay:
 
 - **`{python} format_billions(ENDGAME_BENEFIT_PER_DAY)`** in potential value evaporates
-- **`{python} format_qalys(DAILY_DEATHS_CURABLE_DISEASES)`** people die who could have been saved
-- **`{python} format_qalys(DAILY_DEATHS_CURABLE_DISEASES)`** suffer from curable diseases
+- **`{python} format_qalys(GLOBAL_DAILY_DEATHS_CURABLE_DISEASES)`** people die who could have been saved
+- **`{python} format_qalys(GLOBAL_DAILY_DEATHS_CURABLE_DISEASES)`** suffer from curable diseases
 - **Your personal risk** of preventable death increases
 
-Every year we wait is `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` lit on fire.
+Every year we wait is `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` lit on fire.
 Every day is `{python} format_billions(ENDGAME_BENEFIT_PER_DAY)` wasted.
 Every hour is `{python} format_currency(ENDGAME_BENEFIT_PER_HOUR)` gone.
 
-The `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` isn't a dream. It's the mathematical consequence of redirecting humanity's resources from destruction to construction, from killing to curing, from war to wellness.
+The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` isn't a dream. It's the mathematical consequence of redirecting humanity's resources from destruction to construction, from killing to curing, from war to wellness.
 
 ---
 
@@ -234,12 +234,12 @@ The details are in [VICTORY Bonds](economics/victory-bonds.qmd), but here's the 
 - **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns** (perpetual)
 - Funded by 10% of the `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual treaty revenue
 - Makes investors richer than any hedge fund in history
-- Generates the `{python} format_billions(CAMPAIGN_TOTAL_COST)` needed to win the global referendum
+- Generates the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` needed to win the global referendum
 
 See also:
 - **[Investment Thesis](economics/victory-bonds.qmd)** - Why this is the most profitable investment in history
 - **[Financial Plan Overview](economics/financial-plan.qmd)** - High-level view of fundraising, spending, and treasury management
-- **[Campaign Budget](economics/campaign-budget.qmd)** - Detailed breakdown of how to spend `{python} format_billions(CAMPAIGN_TOTAL_COST)` to win
+- **[Campaign Budget](economics/campaign-budget.qmd)** - Detailed breakdown of how to spend `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` to win
 
 ---
 
@@ -271,7 +271,7 @@ For the rigorous analysis:
 
 ## Bottom Line
 
-Humanity can keep spending `{python} format_currency(TOTAL_GLOBAL_WASTE_SPEND)` on war and disease.
-Or it can make between `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` and `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` per year ending both.
+Humanity can keep spending `{python} format_currency(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)` on war and disease.
+Or it can make between `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` and `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` per year ending both.
 
 The ROI ranges from `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` to `{python} format_roi(ROI_TIER_3_ENDGAME)`, depending on what you count.

@@ -28,7 +28,7 @@ from economic_parameters import *
 ## The `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` Return
 
 The dFDA Infrastructure costs **`{python} format_millions(DFDA_ANNUAL_OPEX)` per year** to run.
-It saves the world **`{python} format_billions(DFDA_GROSS_SAVINGS)` per year** in clinical trial costs.
+It saves the world **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` per year** in clinical trial costs.
 That's a **`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` return on investment**.
 
 Here's how.

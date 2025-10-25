@@ -46,17 +46,17 @@ This "Endgame" scenario is provided for those interested in the full long-term v
 
 While the immediate annual benefit is $164-$1,222 billion, the true potential emerges as the system matures and compounds over 20 years.
 
-### The `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` Payoff
+### The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` Payoff
 
 When you add it all up at maturity:
 
 - **1% Treaty Peace Dividend:** $92B from less war
-- **dFDA Trial Efficiency:** `{python} format_billions(DFDA_GROSS_SAVINGS)` from cheaper research
+- **dFDA Trial Efficiency:** `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` from cheaper research
 - **DIH Market Allocation:** $13.5B from smarter funding
-- **Health Improvements:** `{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs = $126B value
+- **Health Improvements:** `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs = $126B value
 - **Knock-on Effects:** $16.2T from healthier, peaceful world
 
-**Total Annual Value at Year 20: `{python} format_billions(TOTAL_ENDGAME_BENEFITS)`**
+**Total Annual Value at Year 20: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`**
 
 That's more than the [GDP of China](../references.qmd#gdp-of-china).
 
@@ -66,7 +66,7 @@ That's more than the [GDP of China](../references.qmd#gdp-of-china).
 
 - **Military reduction savings**: $27.2B (captured dividend)
 - **Societal peace dividend**: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` (reduced conflict costs)
-- **Clinical trial efficiency**: `{python} format_billions(DFDA_GROSS_SAVINGS)` (`{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction)
+- **Clinical trial efficiency**: `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` (`{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction)
 - **Prevention programs**: $15B (catching disease early)
 - **Total Direct**: ~$206B annually
 
@@ -113,7 +113,7 @@ As the system scales and compounds, massive secondary benefits emerge:
 
 ---
 
-## Total Annual Value at Maturity: `{python} format_billions(TOTAL_ENDGAME_BENEFITS)`
+## Total Annual Value at Maturity: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`
 
 This represents:
 - More value than China's entire GDP ($17.7T)
@@ -127,12 +127,12 @@ This represents:
 
 | Year | Annual Benefit | Cumulative Value | What's Happening |
 |------|---------------|------------------|------------------|
-| **Year 1** | `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` | `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` | Treaty signed, trials begin |
+| **Year 1** | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | Treaty signed, trials begin |
 | **Year 3** | $350B | $850B | First cures proven, momentum builds |
 | **Year 5** | $1T | $3.5T | Network effects kick in, pharma pivots |
 | **Year 10** | $5T | $27.5T | Major diseases falling, aging slowed |
 | **Year 15** | $10T | $85T | Healthcare costs collapse, productivity soars |
-| **Year 20** | `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` | $168T | Full potential realized, disease obsolete |
+| **Year 20** | `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` | $168T | Full potential realized, disease obsolete |
 
 ---
 
@@ -143,13 +143,13 @@ This represents:
 | 1% Treaty Implementation | $500M | $92B | 184:1 |
 | dFDA Infrastructure | `{python} format_millions(DFDA_ANNUAL_OPEX)` | $50B | `{python} format_roi(DFDA_ROI_SIMPLE)` |
 | DIH Operations | $100M | $13.5B | 135:1 |
-| **Combined System** | **$640M** | **`{python} format_billions(TOTAL_ENDGAME_BENEFITS)`** | **`{python} format_roi(ROI_TIER_3_ENDGAME)`** |
+| **Combined System** | **$640M** | **`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`** | **`{python} format_roi(ROI_TIER_3_ENDGAME)`** |
 
 The whole is literally 100x greater than the sum of its parts.
 
 ---
 
-## What `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` Looks Like
+## What `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` Looks Like
 
 With that annual value, we could:
 
@@ -197,7 +197,7 @@ The math isn't optimistic—it's conservative.
 
 ---
 
-## The Path to `{python} format_billions(TOTAL_ENDGAME_BENEFITS)`
+## The Path to `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`
 
 ### Phase 1 (Months 1-12): Build platforms, sign treaty
 
@@ -217,7 +217,7 @@ The math isn't optimistic—it's conservative.
 ### Phase 4 (Years 10+): Full ecosystem value
 
 - Cost: Still just $640M/year
-- Benefit: `{python} format_billions(TOTAL_ENDGAME_BENEFITS)`/year and growing
+- Benefit: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`/year and growing
 
 ---
 
@@ -312,7 +312,7 @@ Small changes in key assumptions dramatically affect outcomes:
 - `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` vs 90% trial cost reduction
 - 10-year vs 20-year timeline
 
-The `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` figure assumes moderate scenarios across all variables.
+The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` figure assumes moderate scenarios across all variables.
 
 ---
 

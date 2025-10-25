@@ -46,7 +46,7 @@ _Initial Note on Operational Costs in this ROI Scenario:_
 _The following ROI calculation primarily uses cost figures derived from the detailed ROM estimates in [Costs of Building and Operating the Global Decentralized FDA (ROM Estimate)](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate). This includes the core platform build and operational costs, as well as scenarios for broader initiative costs. This approach provides a more grounded basis for the ROI than previous high-level conceptual figures for a fully scaled global ecosystem._
 
 - **Industry R&D Spend** (Baseline): [`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year](#market-size-and-impact) globally (approx.).
-- **Potential Savings**: `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction implies [`{python} format_billions(DFDA_GROSS_SAVINGS)`/year saved](#gross-r-and-d-savings-from-dfda-implementation) if the entire industry migrated.
+- **Potential Savings**: `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction implies [`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`/year saved](#gross-r-and-d-savings-from-dfda-implementation) if the entire industry migrated.
 - **Platform Cost Scenarios (Derived from ROM Estimates):**
   - **Upfront Cost (Core Platform Build):** [~\`{python} format_millions(DFDA_ANNUAL_OPEX)`](#upfront-capital-expenditure-initial-build-illustrative-30-months) (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)).
   - **Annual Operational Cost Scenarios:**
@@ -56,7 +56,7 @@ _The following ROI calculation primarily uses cost figures derived from the deta
       - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
       - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~\`{python} format_millions(DFDA_ANNUAL_OPEX)`/year** (or $0.04 Billion/year). This aligns with the cost basis for the ROI cited in the Executive Summary.
     - _(Other scenarios, such as including "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), could be considered for sensitivity analysis but would significantly increase annual costs.)_
-- **Net Annual Savings** (assuming full adoption and [`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): `{python} format_billions(DFDA_GROSS_SAVINGS)`/year.
+- **Net Annual Savings** (assuming full adoption and [`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`/year.
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
 
@@ -78,7 +78,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
 
 **Assumptions for Full Range ROI Calculation:**
 
-- Net Annual Savings: [`{python} format_billions(DFDA_GROSS_SAVINGS)`/year](#gross-r-and-d-savings-from-dfda-implementation) (from `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` R&D cost reduction).
+- Net Annual Savings: [`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`/year](#gross-r-and-d-savings-from-dfda-implementation) (from `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` R&D cost reduction).
 - Amortization Period for Upfront Costs: 5 years.
 
 #### 1. Lowest Total Cost Scenario (Best Case Core Platform + Best Case Broader Initiatives)
@@ -93,7 +93,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
   - Broader Initiatives (Best Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$0 Million/year](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Lowest Annual Operational Cost:_ **\$11 Million/year**
 - **Total Lowest Annualized Cost:** [\$8.4M (amortized upfront)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) + [\$11M (annual ops)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) = **\$19.4 Million/year**
-- **ROI (Lowest Cost Scenario):** [\`{python} format_billions(DFDA_GROSS_SAVINGS)`](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.0194 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **2577:1**
+- **ROI (Lowest Cost Scenario):** [\`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.0194 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **2577:1**
 
 #### 2. Highest Total Cost Scenario (Worst Case Core Platform + Worst Case Broader Initiatives)
 
@@ -107,7 +107,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
   - Broader Initiatives (Worst Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$271 Million/year](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Highest Annual Operational Cost:_ $26.5M + $271M = **~\$297.5 Million/year**
 - **Total Highest Annualized Cost:** [\$455.4M (amortized upfront)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) + [\$297.5M (annual ops)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) = **~\$752.9 Million/year**
-- **ROI (Highest Cost Scenario):** [\`{python} format_billions(DFDA_GROSS_SAVINGS)`](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.7529 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **66:1**
+- **ROI (Highest Cost Scenario):** [\`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.7529 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **66:1**
 
 This full range sensitivity analysis demonstrates that the ROI for the dFDA initiative remains exceptionally positive. Even at the highest conceivable costs derived from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section, the financial return is substantial.
 

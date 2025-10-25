@@ -32,11 +32,11 @@ from economic_parameters import *
 
 ## What You're Building
 
-Create a funding mechanism that raises `{python} format_billions(CAMPAIGN_TOTAL_COST)` to finance the [1% Treaty](../appendix/1-percent-treaty.qmd) campaign through perpetual revenue-sharing bonds.
+Create a funding mechanism that raises `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` to finance the [1% Treaty](../appendix/1-percent-treaty.qmd) campaign through perpetual revenue-sharing bonds.
 
 **The structure to build:**
 
-- Raise `{python} format_billions(CAMPAIGN_TOTAL_COST)` from bond investors
+- Raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` from bond investors
 - Use funds to execute the treaty campaign
 - Once treaty passes, `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually flows from military budgets to [DIH](../solution/dih.qmd)
 - Pay bondholders 10% of treaty inflows perpetually
@@ -48,7 +48,7 @@ Create a funding mechanism that raises `{python} format_billions(CAMPAIGN_TOTAL_
 
 ## How to Execute the Four Phases
 
-### Phase 1: Raise the Initial `{python} format_billions(CAMPAIGN_TOTAL_COST)`
+### Phase 1: Raise the Initial `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`
 
 Set up the bond offering and raise capital from investors.
 
@@ -63,7 +63,7 @@ Use the capital structure detailed below.
 
 ### Phase 2: Execute the Campaign
 
-Deploy the `{python} format_billions(CAMPAIGN_TOTAL_COST)` raised according to the [Campaign Budget](campaign-budget.qmd):
+Deploy the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` raised according to the [Campaign Budget](campaign-budget.qmd):
 
 - **Viral referendum campaign** (280M votes through AI-optimized referral system)
 - **Strategic lobbying** (AI-targeted campaigns in 20 key countries)
@@ -396,7 +396,7 @@ Create this summary sheet for quick investor review:
 
 **For detailed execution plans:**
 
-- @sec-campaign-budget - How to allocate the `{python} format_billions(CAMPAIGN_TOTAL_COST)`
+- @sec-campaign-budget - How to allocate the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`
 - [Financial Plan](financial-plan.qmd) - Overall system architecture
 - [Coalition That Wins](coalition-that-wins.qmd) - How to align stakeholders
 
@@ -404,4 +404,4 @@ Create this summary sheet for quick investor review:
 
 {{< include ../../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-**Remember the core mechanism:** Raise `{python} format_billions(CAMPAIGN_TOTAL_COST)` → Treaty redirects `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually → Pay bondholders 10% (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`) → Fund research with 90% ($24.3B)
+**Remember the core mechanism:** Raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` → Treaty redirects `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually → Pay bondholders 10% (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`) → Fund research with 90% ($24.3B)

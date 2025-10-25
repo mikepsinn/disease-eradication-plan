@@ -154,11 +154,11 @@ from economic_parameters import *
 
 <a id="annual-rd-savings-potential-50b"></a>
 
-- **Annual R&D savings potential of `{python} format_billions(DFDA_GROSS_SAVINGS)`**
+- **Annual R&D savings potential of `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`**
   > Pharma R&D spending: $200B+ annually (2020s), up from $30B in 1990s
   > Development cost estimates: $81.4B/year (2018-2022) for first-in-class/advance-in-class drugs
   > Efficiency opportunities: Transformation could reduce costs "from billions to millions" per drug
-  > Specific "`{python} format_billions(DFDA_GROSS_SAVINGS)` savings" figure not verified but significant efficiency potential documented
+  > Specific "`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` savings" figure not verified but significant efficiency potential documented
   > — [CBO: Pharma R&D](https://www.cbo.gov/publication/57126) | [Accenture: Transforming Pharma R&D](https://www.accenture.com/us-en/insights/life-sciences/from-billions-to-millions-transformation) | [Clarivate: Pharma R&D Efficiency](https://clarivate.com/life-sciences-healthcare/blog/pharma-rd-productivity-dips-but-efficiency-gains-give-hope/)
 
 <a id="anti-aging-cream-market-50b"></a>
@@ -896,8 +896,8 @@ from economic_parameters import *
 - **dFDA ROI of `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` over 10 years**
   > NPV analysis estimate: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI over 10 years (central estimate)
   > Range: 66:1 to 2,577:1 depending on total ecosystem costs
-  > Based on: $37.5-46M upfront platform investment + operational costs vs `{python} format_billions(DFDA_GROSS_SAVINGS)` annual R&D savings
-  > Value proposition: 80X reduction in per-patient trial costs; `{python} format_billions(DFDA_GROSS_SAVINGS)` gross annual savings from pharma R&D
+  > Based on: $37.5-46M upfront platform investment + operational costs vs `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` annual R&D savings
+  > Value proposition: 80X reduction in per-patient trial costs; `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` gross annual savings from pharma R&D
   > Pharmaceutical industry spends ~`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year on R&D; `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction yields enormous net savings
   > — [dFDA: Cost Benefit Analysis](https://wiki.dfda.earth/en/economic-models/dfda-cost-benefit-analysis) | [dFDA Wiki](https://wiki.dfda.earth/)
 
@@ -1797,7 +1797,7 @@ from economic_parameters import *
   > NIH/NIA basic biology of aging (2019): $382 million (~1% of NIH budget)
   > NIA total budget (FY2020): $3.5 billion total, but ~$2.4B (60%) goes to Alzheimer's (Neuroscience)
   > Geroscience/aging biology specifically: $382-500M annually from NIH system
-  > Private sector: Hevolution Foundation pledged `{python} format_billions(CAMPAIGN_TOTAL_COST)` annually; 2021: >$2B raised by longevity biotech (40+ deals)
+  > Private sector: Hevolution Foundation pledged `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` annually; 2021: >$2B raised by longevity biotech (40+ deals)
   > Criticism: Aging research via NIA/NIH not properly funded relative to disease-specific research
   > — [PMC: Funding Channels of Geroscience](https://pmc.ncbi.nlm.nih.gov/articles/PMC9808549/) | [NIA: FY2022 Budget](https://www.nia.nih.gov/about/budget/fiscal-year-2022-budget) | [Spannr: Lack of Government Funding](https://spannr.com/articles/analyzing-one-of-agings-biggest-dilemmas-the-lack-of-government-funding)
   > Note: $500M figure accurate for public (NIH) geroscience/basic aging biology research. Majority of NIA's $3.5B budget goes to Alzheimer's, not fundamental aging research
@@ -2113,7 +2113,7 @@ from economic_parameters import *
 <a id="global-violence-costs"></a>
 
 - **Global Cost of Violence**
-  > "The economic impact of violence on the global economy in 2021 was \`{python} format_billions(TOTAL_ENDGAME_BENEFITS)`, equivalent to 10.9% of global GDP, or \$2,117 per person."
+  > "The economic impact of violence on the global economy in 2021 was \`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`, equivalent to 10.9% of global GDP, or \$2,117 per person."
   > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/maps/global-peace-index/)
 
 <a id="gm-ev-subsidy-lobbying"></a>
@@ -2189,9 +2189,9 @@ from economic_parameters import *
 
 <a id="health-outcomes-840000-qalys-gained"></a>
 
-- **`{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs gained annually**
+- **`{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs gained annually**
   > This is an INTERNAL PROJECTION from this book's economic model, NOT an external citation
-  > Projection: `{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs/year (base case) from dFDA implementation
+  > Projection: `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs/year (base case) from dFDA implementation
   > Range: Conservative: 190,000 QALYs/year | Base: 840,000 | Optimistic: 3,650,000
   > Components: Faster drug access (200k base), enhanced prevention via RWD (140k base), new therapies for rare/neglected diseases (500k base)
   > QALY definition: One year in perfect health = 1 QALY; scores range from 1 (perfect health) to 0 (dead)
@@ -3381,7 +3381,7 @@ from economic_parameters import *
 <a id="per-capita-lifetime"></a>
 
 - **Per Capita Lifetime Cost of Violence (Estimated ~\$170,000)**
-  > Feynman: Annual global cost \`{python} format_billions(TOTAL_ENDGAME_BENEFITS)` / 8B people = \$2,062/year * 80 years = ~\$165,000.
+  > Feynman: Annual global cost \`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` / 8B people = \$2,062/year * 80 years = ~\$165,000.
   > — Based on IEP Global Peace Index
 
 <a id="per-person-impact-74259-lifetime-savings"></a>
@@ -3389,7 +3389,7 @@ from economic_parameters import *
 - **$74,259 per person lifetime savings from conflict reduction**
   > Calculation based on economic case for peace: War costs $74,259 per person over lifetime
   > Derived from global conflict costs ($300B lost human capital annually + broader $14T/year global violence/conflict costs) / population over 80-year lifespan
-  > IEP Global Peace Index calculation: `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` annual global cost / 8B people = $2,062/year × 80 years = ~$165,000 lifetime cost
+  > IEP Global Peace Index calculation: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual global cost / 8B people = $2,062/year × 80 years = ~$165,000 lifetime cost
   > — [Think by Numbers: War Costs $74,259/Lifetime](https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/) | [WEF: War Violence Costs $5/Day](https://www.weforum.org/stories/2021/02/war-violence-costs-each-human-5-a-day/)
 
 <a id="pharma-lobbying-stats"></a>
