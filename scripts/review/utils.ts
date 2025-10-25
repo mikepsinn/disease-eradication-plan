@@ -538,6 +538,35 @@ export async function generateFigureForChapter(filePath: string): Promise<{ acti
   return { action: 'none' };
 }
 
+/**
+ * Validates inline Python code replacements for common syntax errors
+ */
+function validatePythonReplacement(replacement: string): { valid: boolean; errors: string[] } {
+  const errors: string[] = [];
+
+  // Check for escaped backticks
+  if (replacement.includes('\\`')) {
+    errors.push('Contains escaped backtick (\\`) - backticks should never be escaped');
+  }
+
+  // Check for extra closing brace after closing paren: )}` pattern
+  if (/\)}`/.test(replacement)) {
+    errors.push('Contains extra closing brace after paren: )}`  - should be )`');
+  }
+
+  // Check for double closing parens: ))` pattern
+  if (/\)\)`/.test(replacement)) {
+    errors.push('Contains double closing parens: ))`  - should be )`');
+  }
+
+  // Check for format specs without f-string: {python} VAR:,.0f} pattern
+  if (/`\{python\}\s+[A-Z_]+:[,.\d]+[fde].*?`/.test(replacement) && !replacement.includes('f"')) {
+    errors.push('Format specifier without f-string - use f"{VAR:,.0f}" not VAR:,.0f}');
+  }
+
+  return { valid: errors.length === 0, errors };
+}
+
 export async function parameterizeFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nChecking for hardcoded numbers in ${filePath} with Gemini...`);
   let { frontmatter, body } = await readFileWithMatter(filePath);
@@ -566,6 +595,25 @@ export async function parameterizeFileWithLLM(filePath: string): Promise<void> {
   } else {
     let updatedBody = body;
     if (result.chapterReplacements && result.chapterReplacements.length > 0) {
+      // Validate all replacements first
+      const validationErrors: string[] = [];
+      for (let i = 0; i < result.chapterReplacements.length; i++) {
+        const replacement = result.chapterReplacements[i];
+        const validation = validatePythonReplacement(replacement.replace);
+        if (!validation.valid) {
+          validationErrors.push(`\n  Replacement ${i + 1}: "${replacement.replace}"`);
+          validation.errors.forEach(err => validationErrors.push(`    - ${err}`));
+        }
+      }
+
+      if (validationErrors.length > 0) {
+        console.error(`❌ VALIDATION FAILED for ${filePath}:`);
+        console.error(validationErrors.join('\n'));
+        console.error(`\n⚠️  Skipping parameterization to prevent syntax errors.`);
+        return;
+      }
+
+      // All validations passed, apply replacements
       for (const replacement of result.chapterReplacements) {
         updatedBody = updatedBody.replace(replacement.find, replacement.replace);
       }

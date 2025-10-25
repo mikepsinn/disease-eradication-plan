@@ -8,6 +8,25 @@ You are a senior data engineer tasked with maintaining a single source of truth 
     *   If a matching variable exists, replace the hardcoded number with an inline Python expression (e.g., `` `{python} format_billions(CAPTURED_DIVIDEND)` ``). Use the helper functions (`format_billions`, `format_percentage`, etc.) from the parameters file where appropriate.
     *   If no matching variable exists but one *should* (i.e., the number is a core economic parameter), add a new, clearly named variable to the `economic_parameters.py` file and then use it in the chapter.
     *   Do not parameterize numbers that are not economic data (e.g., "fifty 9/11s", "13,000 nuclear warheads" if it's a general statistic not a core model parameter).
+
+**CRITICAL INLINE PYTHON SYNTAX RULES:**
+
+✅ **CORRECT Patterns:**
+- Simple function call: `` `{python} format_billions(VARIABLE)` ``
+- Direct variable: `` `{python} TRIAL_COST_REDUCTION_FACTOR` ``
+- F-string with format spec: `` `{python} f"{VARIABLE:,.0f}"` ``
+- Expression: `` `{python} format_percentage(1 - TREATY_REDUCTION_PCT)` ``
+
+❌ **NEVER DO THIS:**
+- Extra closing brace: ~~`` `{python} format_billions(VAR)}` ``~~ (NO EXTRA } AFTER ))
+- Escaped backtick: ~~`` \`{python} VAR` ``~~ (NEVER ESCAPE BACKTICKS)
+- Missing f-string: ~~`` `{python} VARIABLE:,.0f}` ``~~ (MUST USE f"{VAR:,.0f}" FOR FORMAT SPECS)
+- Double closing parens: ~~`` `{python} function(VAR))` ``~~ (ONLY ONE CLOSING PAREN)
+
+**RULE:** Inline Python expressions are enclosed in single backticks: `` `{python} expression` ``
+- NO extra braces, NO escaped backticks, NO double parens
+- Use f-strings ONLY when you need format specifiers like `:,.0f`
+- Helper functions (format_billions, format_percentage) handle formatting internally
 4.  **Return JSON:** You MUST return a single JSON object with the following structure:
     *   `status`: A string, either `"NO_CHANGES_NEEDED"` or `"CHANGES_APPLIED"`.
     *   `chapterReplacements`: An array of objects, where each object has two keys:

@@ -43,13 +43,13 @@ from economic_parameters import *
 
 **Your Mission: Mass (Legal) Bribery**
 
-Your job is to borrow a `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` turn into a perpetual `{python} format_billions(CAPTURED_DIVIDEND)`/year river of cash, funded by redirecting a pathetic 1% of global military spending to curing diseases.
+Your job is to borrow a `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` turn into a perpetual `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year river of cash, funded by redirecting a pathetic 1% of global military spending to curing diseases.
 
 1.  **Get Your Initial Bribin' Money:** Invent "VICTORY Bonds," a financial tool that gives investors a `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return. This is more profitable than trafficking cocaine and significantly more legal. You sell `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` of these bonds to rich people who would prefer to be significantly richer.
 2.  **Bribe the Public:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY)` to build a voting bloc of `{python} f"{TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f}"` million people demanding that their governments redirect 1% of military spending to cure disease. This creates a political threat.
 3.  **Bribe the Bribers:** You give defense lobbyists millions in bonds. Their `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return (that only come if the 1% treaty is preserved) makes their old bribes look pathetic. They now work for you.
 4.  **Bribe Some Politicians:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS)` on Super PACs to ensure politicians face a choice: either take your money and support the treaty, or get voted out by `{python} f"{TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f}"` million angry people who want to live.
-5.  **Profit from Victory:** The treaty passes. The `{python} format_billions(CAPTURED_DIVIDEND)`/year bribe machine is turned on forever. Everyone who helped gets 10% of that money forever (producing the `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return). Use the remaining `{python} format_percentage(DIH_TREASURY_TO_RESEARCH_PCT)` to `{python} TRIAL_COST_REDUCTION_FACTOR`x the rate of medical progress by subsidizing hyper efficient pragmatic decentralized clinical trials.
+5.  **Profit from Victory:** The treaty passes. The `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year bribe machine is turned on forever. Everyone who helped gets 10% of that money forever (producing the `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return). Use the remaining `{python} format_percentage(DIH_TREASURY_TO_RESEARCH_PCT)` to `{python} TRIAL_COST_REDUCTION_FACTOR`x the rate of medical progress by subsidizing hyper efficient pragmatic decentralized clinical trials.
 
 **Why Everyone Gets Rich From Not Dying from Terrible Diseases:**
 
@@ -145,7 +145,7 @@ It gets dumber.
 
 ### 📜 The 1% Treaty
 
-**Redirect `{python} format_billions(CAPTURED_DIVIDEND)`/year from the War on Humanity to the War on Disease**
+**Redirect `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year from the War on Humanity to the War on Disease**
 
 Every nation redirects just **`{python} format_percentage(TREATY_REDUCTION_PCT)`** of their current murder budget to fund hyper-efficient decentralized clinical trials that subsidize patient participation.
 
@@ -276,12 +276,12 @@ Here's the deal you offer investors:
 - They give you: `{python} f"${VICTORY_BOND_INVESTMENT_UNIT_USD:,.0f}"`
 - You give them: `{python} f"${VICTORY_BOND_PAYOUT_PER_UNIT_USD_ANNUAL:,.0f}"` /year forever
 
-How? The treaty redirects `{python} format_billions(CAPTURED_DIVIDEND)` annually. Investors get 10% of that river of money. Forever. Or until the sun explodes. Whichever comes first.
+How? The treaty redirects `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually. Investors get 10% of that river of money. Forever. Or until the sun explodes. Whichever comes first.
 
 The math:
 
 $$
-\text{Annual Return} = \text{`{python} format_billions(CAPTURED_DIVIDEND)`} \times 10\% = \text{`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`}
+\text{Annual Return} = \text{`{python} format_billions(TREATY_ANNUAL_FUNDING)`} \times 10\% = \text{`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`}
 $$
 
 $$
@@ -336,7 +336,7 @@ Politicians love their jobs more than they love bombs. You funnel `{python} form
 
 **The System Becomes Self-Sustaining**
 
-The treaty passes. The `{python} format_billions(CAPTURED_DIVIDEND)`/year river of money is unlocked.
+The treaty passes. The `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year river of money is unlocked.
 
 - Investors get their `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns.
 - Lobbyists get rich.
@@ -415,13 +415,13 @@ $$
 \text{Total Benefit} = \underbrace{\text{\$97.1B}}_{\text{Peace Dividend}} + \underbrace{\text{\$50B}}_{\text{Health Dividend}} = \text{\$147.1B}
 $$
 
-- Peace dividend: `{python} format_billions(BENEFIT_PEACE_DIVIDEND_ANNUAL)` (from not building things that explode)
+- Peace dividend: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` (from not building things that explode)
 - Health dividend: `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` (from not wasting money on paperwork)
 - Total: More money than God spends on therapy
 
 ([See peace dividend calculation](brain/book/economics/peace-dividend.qmd) | [See dFDA health benefits breakdown](brain/book/appendix/dfda-cost-benefit-analysis.qmd) | [See economic impact summary](brain/book/economics.qmd))
 
-- **Zero net cost**: The `{python} format_billions(CAPTURED_DIVIDEND)` comes from redirected military spending (money already budgeted)
+- **Zero net cost**: The `{python} format_billions(TREATY_ANNUAL_FUNDING)` comes from redirected military spending (money already budgeted)
 - **\$147.1B in annual benefits**: Peace dividend (\$97.1B) + Health dividend (\$50B)
 - **Operating costs**: Only [`{python} format_millions(TREATY_TOTAL_ANNUAL_COSTS)`/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) (campaign + operations)
 - **Lives saved**: [25,000/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) ($875,000 \text{ QALYs} \div 35 \text{ QALYs/life}$)

@@ -220,7 +220,7 @@ The current system lets knowledge die in drawers. Your system makes ignorance il
 
 ### VICTORY Bonds: How to Get Rich Preventing Death
 
-Investors who fund the campaign get 10% of the `{python} format_billions(CAPTURED_DIVIDEND)` annual treaty flow = $2.7B/year = `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns forever.
+Investors who fund the campaign get 10% of the `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual treaty flow = $2.7B/year = `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns forever.
 
 Better than:
 
@@ -286,7 +286,7 @@ Here's the machine you build to run this system. It provides two things humanity
 
 ### THE WISHOCRACY SYSTEM
 
-Here's how you run a `{python} format_billions(CAPTURED_DIVIDEND)` treasury without creating another bureaucracy:
+Here's how you run a `{python} format_billions(TREATY_ANNUAL_FUNDING)` treasury without creating another bureaucracy:
 
 - **Anyone can propose** (even you, even your weird uncle)
 - **Everyone votes on pairs** ("Do you prefer funding Alzheimer's research or yacht subsidies for administrators?")
@@ -357,7 +357,7 @@ Stop funding galas. Fund cures. Your name on a hospital wing is nice. Your name 
 
 ### FOR PARTNERS
 
-Your mission is important. It's also underfunded. Join the coalition to get a seat at the table of a `{python} format_billions(CAPTURED_DIVIDEND)`/year treasury.
+Your mission is important. It's also underfunded. Join the coalition to get a seat at the table of a `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year treasury.
 
 [REGISTER INTEREST →](https://airtable.com/form/partner-interest){.btn .btn-secondary}
 :::

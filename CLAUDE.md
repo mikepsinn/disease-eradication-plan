@@ -1,6 +1,6 @@
 ## Project Overview
 
-This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War and Disease" - a guide to getting nations to sign the 1% Treaty redirecting military spending to medical research. The project uses a hybrid Node.js/Python setup with TypeScript utility scripts for content management.
+This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War and Disease" - a guide to getting nations to sign the 1% Treaty, redirecting military spending to the Decentralized Institutes of Health and Decentralized FDA to automate ubiquitous clinical trials. 
 
 **Key Navigation:**
 
@@ -16,4 +16,4 @@ This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War a
 
 **See `CONTRIBUTING.md` for complete writing guidelines, style requirements, and content standards.**
 
-Please render and critically review output images of quarto files whenever you modify figure generating files. 
+Please render and critically review output images of quarto files whenever you modify figure-generating files. 
