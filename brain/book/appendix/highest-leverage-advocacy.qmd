@@ -69,7 +69,7 @@ The 1% Treaty doesn't just redirect money. It creates the first systematic finan
 
 - **Protect Your Work:** Reduce conflict = protect decades of environmental progress from being destroyed in warfare
 - **Root Cause:** Most environmental destruction is caused by conflict—[deforestation from conflict minerals](https://www.globalwitness.org/en/campaigns/conflict-minerals/), [military as top global polluter](https://earth.org/military-pollution/)
-- **Scale:** [\`{python} format_billions(CAPTURED_DIVIDEND)` annually](peace-dividend-analysis.qmd) could fund more climate action than most environmental organizations' combined budgets
+- **Scale:** [\`{python} format_billions(CAPTURED_DIVIDEND)` annually](peace-dividend-calculations.qmd) could fund more climate action than most environmental organizations' combined budgets
 - **Global Cooperation Template:** Successfully redirecting military budgets proves humanity can coordinate on planetary-scale problems
 
 **Bottom Line:** You can't save the planet while wars keep destroying it faster than you can fix it.
@@ -84,7 +84,7 @@ The 1% Treaty doesn't just redirect money. It creates the first systematic finan
 
 - **Root Cause:** [Nearly all starvation today is caused by violent conflict](../references.qmd#starvation-conflict)
 - **Health = Economic Development:** Healthy populations are productive populations. [Disease costs \$244 trillion annually](../problem/cost-of-disease.qmd)
-- **Peace Dividend Math:** Capturing even 0.1% of the [\`{python} format_billions(TOTAL_ENDGAME_BENEFITS)` annual cost of violence](peace-dividend-analysis.qmd) provides more poverty reduction than traditional aid
+- **Peace Dividend Math:** Capturing even 0.1% of the [\`{python} format_billions(TOTAL_ENDGAME_BENEFITS)` annual cost of violence](peace-dividend-calculations.qmd) provides more poverty reduction than traditional aid
 - **Systemic Solution:** Address the war → poverty cycle instead of treating poverty symptoms
 
 **Bottom Line:** You can't end poverty while conflicts keep creating it faster than you can solve it.
@@ -214,7 +214,7 @@ Show them the math. Donors want impact per dollar. This delivers more impact per
 
 **Q: "Isn't this incredibly arrogant to claim we have the best idea?"**
 
-A: It's not arrogance when you have the data. [`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI](dfda-cost-benefit-analysis.qmd), [80X efficiency improvement](recovery-trial.qmd), and [capturing 0.16% of \`{python} format_billions(TOTAL_ENDGAME_BENEFITS)` annual waste](peace-dividend-analysis.qmd) is just math.
+A: It's not arrogance when you have the data. [`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI](dfda-cost-benefit-analysis.qmd), [80X efficiency improvement](recovery-trial.qmd), and [capturing 0.16% of \`{python} format_billions(TOTAL_ENDGAME_BENEFITS)` annual waste](peace-dividend-calculations.qmd) is just math.
 
 **Q: "What if the 1% Treaty fails?"**
 
@@ -236,7 +236,7 @@ A: Keep your mission. Change your method. Environmental groups can do environmen
 
 Every dollar raised for single-issue advocacy is a dollar that could have 10-100X more impact redirecting military budgets.
 
-Every year we delay is [63 million preventable deaths](../problem/cost-of-war.qmd#annual-excess-deaths), [\`{python} format_billions(TOTAL_ENDGAME_BENEFITS)` in waste](peace-dividend-analysis.qmd), and the continued risk of [nuclear winter](../references.qmd#nuke-winter-150tg).
+Every year we delay is [63 million preventable deaths](../problem/cost-of-war.qmd#annual-excess-deaths), [\`{python} format_billions(TOTAL_ENDGAME_BENEFITS)` in waste](peace-dividend-calculations.qmd), and the continued risk of [nuclear winter](../references.qmd#nuke-winter-150tg).
 
 **This is the best idea in the world because it's the highest-leverage intervention for every cause you care about.**
 
