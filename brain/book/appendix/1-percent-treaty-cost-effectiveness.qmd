@@ -41,40 +41,27 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 #### 1a. Peace Dividend (`{python} format_billions(SOCIETAL_DIVIDEND)`/year)
 
-**Source**: [Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd)
+**Quick summary**: The 1% Treaty reduces global conflict by 1%, saving society `{python} format_billions(SOCIETAL_DIVIDEND)` annually from reduced military spending, infrastructure destruction, healthcare costs, and economic disruption.
 
-From [Cost of War Analysis](../problem/cost-of-war.qmd):
+**Calculation**: `{python} format_billions(TOTAL_WAR_COST)` total war costs × `{python} format_percentage(TREATY_REDUCTION_PCT)` reduction = **`{python} format_billions(SOCIETAL_DIVIDEND)`**
 
-- **Total annual cost of war**: [`{python} format_billions(TOTAL_WAR_COST)`](../references.qmd#total-military-and-war-costs-11-4t)
-  - Direct costs: `{python} format_billions(TOTAL_DIRECT_COSTS)` (military spending, infrastructure damage, human casualties, trade disruption)
-  - Indirect costs: `{python} format_billions(TOTAL_INDIRECT_COSTS)` (lost growth, veteran care, refugees, environmental damage)
+**For detailed breakdown and methodology**, see:
+- [Peace Dividend Calculations](peace-dividend-calculations.qmd) - Full Jupyter notebook with sensitivity analysis
+- [Peace Dividend Chapter](../../economics/peace-dividend.qmd) - Accessible overview with breakdown table
+- [Cost of War Analysis](../problem/cost-of-war.qmd) - Source data
 
-**`{python} format_percentage(TREATY_REDUCTION_PCT)` reduction in total war costs**:
+#### 1b. Health Dividend (`{python} format_billions(DFDA_GROSS_SAVINGS)`/year)
 
-- Societal dividend: `{python} format_billions(TOTAL_WAR_COST)` × `{python} TREATY_REDUCTION_PCT` = **`{python} format_billions(SOCIETAL_DIVIDEND)` annually**
+**Quick summary**: The dFDA (Decentralized FDA) makes clinical trials 82× cheaper by using the Oxford RECOVERY model, saving `{python} format_billions(DFDA_GROSS_SAVINGS)` annually from the `{python} format_billions(GLOBAL_TRIAL_MARKET)` global trial market.
 
-**What this represents**:
+**Calculation**: `{python} format_billions(GLOBAL_TRIAL_MARKET)` trial market × `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction = **`{python} format_billions(DFDA_GROSS_SAVINGS)`**
 
-- Less infrastructure destruction
-- Reduced military spending
-- Fewer economic disruptions
-- Lower healthcare costs for war injuries
-- Reduced refugee support costs
+**ROI**: 463:1 return on $40M annual operational cost
 
-#### 1b. dFDA R&D Savings (`{python} format_billions(DFDA_GROSS_SAVINGS)`/year)
-
-**Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
-
-From dFDA analysis:
-
-- **Global clinical trial market**: [`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year](../references.qmd#clinical-trial-spending)
-- **Baseline cost reduction**: `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` (conservative estimate)
-- **Mechanism**: Decentralized trials modeled on Oxford RECOVERY trial
-  - Traditional Phase III: $`{python} f"{TRADITIONAL_PHASE3_COST_PER_PATIENT/1000:,.0f}k"`-$120k per patient
-  - dFDA model: $`{python} f"{RECOVERY_TRIAL_COST_PER_PATIENT:,.0f}"`-$`{python} f"{DFDA_TARGET_COST_PER_PATIENT:,.0f}"` per patient (`{python} TRIAL_COST_REDUCTION_FACTOR`× reduction)
-- **Annual R&D savings**: `{python} format_billions(GLOBAL_TRIAL_MARKET)` × `{python} TRIAL_COST_REDUCTION_PCT` = **`{python} format_billions(DFDA_GROSS_SAVINGS)` annually**
-
-**Sensitivity range**: $25B (25% reduction) to $95B (95% reduction in optimal scenarios)
+**For detailed breakdown and methodology**, see:
+- [Health Dividend Calculations](health-dividend-calculations.qmd) - Full Jupyter notebook with NPV and ROI analysis
+- [Health Dividend Chapter](../../economics/health-dividend.qmd) - Accessible overview with cost breakdown
+- [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) - Detailed mechanism and QALY model
 
 #### Total Annual Economic Benefits
 
@@ -420,15 +407,16 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 ### Economic Benefits
 
-1. **Peace Dividend**: [Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd)
+1. **Peace Dividend**: [Peace Dividend Calculations](peace-dividend-calculations.qmd)
    - Based on [Cost of War Analysis](../problem/cost-of-war.qmd)
    - Total war costs: $11.4T annually
    - 1% reduction: $114B
 
-2. **dFDA R&D Savings**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
+2. **Health Dividend (dFDA)**: [Health Dividend Calculations](health-dividend-calculations.qmd)
    - Clinical trial market: ~$100B/year
    - 50% cost reduction (baseline)
    - Range: 25%-95%
+   - Also see: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
 
 ### Health Benefits
 
@@ -547,8 +535,15 @@ The math shows it's worth trying. Even a 10% chance of success has positive expe
 
 ## Related Analyses
 
-- [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) - Deep dive on medical R&D savings
-- [Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd) - Economic value of reduced conflict
-- [Campaign Budget](../economics/campaign-budget.qmd) - Detailed cost breakdown
-- [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd) - Compare to other health interventions
-- [Total Economic Impact](../appendix/total-economic-impact.qmd) - Full $16.5T analysis over 10 years
+**Detailed Calculations**:
+- [Peace Dividend Calculations](peace-dividend-calculations.qmd) - Full analysis of conflict reduction benefits
+- [Health Dividend Calculations](health-dividend-calculations.qmd) - Full analysis of dFDA R&D savings
+- [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) - Detailed QALY model and mechanism
+
+**Accessible Overviews**:
+- [Peace Dividend Chapter](../../economics/peace-dividend.qmd) - Accessible summary with breakdown table
+- [Health Dividend Chapter](../../economics/health-dividend.qmd) - Accessible summary with ROI story
+
+**Other References**:
+- [Campaign Budget](../../economics/campaign-budget.qmd) - Detailed cost breakdown
+- [Intervention Comparison Table](intervention-comparison-table.qmd) - Compare to other health interventions

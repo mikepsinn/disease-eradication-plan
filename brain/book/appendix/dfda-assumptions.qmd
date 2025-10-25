@@ -1,0 +1,31 @@
+---
+title: dFDA Analysis Assumptions
+description: Key assumptions underlying the dFDA cost-benefit analysis including the RECOVERY trial cost model
+---
+
+## Assumptions
+
+### Participation and Data Infrastructure
+
+- At least 1 billion people worldwide opt in to share health data in anonymized form.
+- Medical records and wearable data are interoperable and standardized sufficiently to be aggregated globally.
+- Robust data security and privacy technologies are in place to comply with international regulations (HIPAA, GDPR, etc.).
+
+### Cost Reductions
+
+#### Decentralized trial costs modeled on Oxford RECOVERY
+
+- Decentralized trial costs drop closer to the Oxford RECOVERY model: from an average of [\$40,000 - \$120,000 per patient](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/) in traditional Phase III trials ([source 2](https://www.withpower.com/guides/clinical-trial-cost-per-patient), [source 3](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287)) to roughly [**\$500 - \$1,000 per patient**](#decentralized-trial-costs-modeled-on-oxford-recovery) ([RECOVERY Trial](https://www.recoverytrial.net/)).
+- Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
+
+### Technical Feasibility
+
+- The necessary digital infrastructure (electronic health records, secure data exchange protocols, machine learning analytics, etc.) is assumed to be widely adopted.
+- Some advanced technologies (e.g., blockchain, federated learning) achieve maturity to ensure data integrity and patient privacy.
+
+### Funding and Governance
+
+- Start-up costs may be shared by governments, philanthropic organizations, and industry.
+- Ongoing operational costs are partially offset by reduced labor needs for conventional site-based trials and by subscription or service models from industry sponsors using the platform.
+
+These assumptions set a stage where the platform can indeed function at scale, but this remains a forward-looking scenario.
