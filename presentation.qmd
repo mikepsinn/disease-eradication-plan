@@ -24,6 +24,20 @@ lastFormatted: '2025-10-16'
 lastStyleCheck: '2025-10-16'
 lastFormattedHash: 3b91a69cea150ac6f59cfbf2b75217b32d2e8ef267dd698d94be809181011d5f
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ```{python}
 #| label: setup
 import sys
@@ -106,7 +120,7 @@ we spend <span style="color: #B22234; font-weight: bold;">\$40 on weapons</span>
 
 <div style="text-align: center; margin-top: 40px;">
 <p style="font-size: 64px; color: #000000; margin-bottom: 30px;">
-The \$2.7T military budget?
+The \`{python} format_billions(MILITARY_SPENDING)` military budget?
 <span style="color: #B22234; font-weight: bold;">That's just the tip.</span>
 </p>
 <p style="font-size: 48px; color: #3C3B6E; line-height: 1.6;">
@@ -167,7 +181,7 @@ We could fix this with a <span style="color: #B22234; font-weight: bold;">roundi
 </div>
 <div style="font-size: 100px; color: #3C3B6E;">=</div>
 <div style="text-align: center;">
-<p style="font-size: 100px; color: #3C3B6E; font-weight: bold; margin: 0;">\$27B</p>
+<p style="font-size: 100px; color: #3C3B6E; font-weight: bold; margin: 0;">\`{python} format_billions(CAPTURED_DIVIDEND)`</p>
 <p style="font-size: 48px; color: #000000;">per year</p>
 </div>
 </div>
@@ -206,7 +220,7 @@ It saves millions.
 <div style="font-size: 60px; color: #3C3B6E;">→</div>
 <div style="flex: 1; padding: 30px;">
 <p style="font-size: 100px; color: #B22234; font-weight: bold; margin: 0;">3</p>
-<p style="font-size: 44px; color: #000000; margin-top: 20px;">\$27B flows to<br>decentralized trials</p>
+<p style="font-size: 44px; color: #000000; margin-top: 20px;">\`{python} format_billions(CAPTURED_DIVIDEND)` flows to<br>decentralized trials</p>
 <p style="font-size: 32px; color: #666; margin-top: 15px; font-style: italic;">(Amazon for cures)</p>
 </div>
 </div>
@@ -255,7 +269,7 @@ Every disease gets trials
 </div>
 
 <p style="font-size: 64px; color: #B22234; margin-top: 40px; font-weight: bold;">
-82X cheaper.
+`{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper.
 8X faster.
 Actually works.
 </p>

@@ -53,7 +53,7 @@ When you add it all up at maturity:
 - **1% Treaty Peace Dividend:** $92B from less war
 - **dFDA Trial Efficiency:** `{python} format_billions(DFDA_GROSS_SAVINGS)` from cheaper research
 - **DIH Market Allocation:** $13.5B from smarter funding
-- **Health Improvements:** 840,000 QALYs = $126B value
+- **Health Improvements:** `{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs = $126B value
 - **Knock-on Effects:** $16.2T from healthier, peaceful world
 
 **Total Annual Value at Year 20: `{python} format_billions(TOTAL_ENDGAME_BENEFITS)`**
@@ -66,7 +66,7 @@ That's more than the [GDP of China](../references.qmd#gdp-of-china).
 
 - **Military reduction savings**: $27.2B (captured dividend)
 - **Societal peace dividend**: `{python} format_billions(SOCIETAL_DIVIDEND)` (reduced conflict costs)
-- **Clinical trial efficiency**: `{python} format_billions(DFDA_GROSS_SAVINGS)` (82X cost reduction)
+- **Clinical trial efficiency**: `{python} format_billions(DFDA_GROSS_SAVINGS)` (`{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction)
 - **Prevention programs**: $15B (catching disease early)
 - **Total Direct**: ~$206B annually
 
@@ -141,7 +141,7 @@ This represents:
 | Component | Annual Cost | Annual Benefit | ROI |
 |-----------|------------|----------------|-----|
 | 1% Treaty Implementation | $500M | $92B | 184:1 |
-| dFDA Infrastructure | `{python} format_millions(DFDA_ANNUAL_OPEX)` | $50B | 1,250:1 |
+| dFDA Infrastructure | `{python} format_millions(DFDA_ANNUAL_OPEX)` | $50B | `{python} format_roi(DFDA_ROI_SIMPLE)` |
 | DIH Operations | $100M | $13.5B | 135:1 |
 | **Combined System** | **$640M** | **`{python} format_billions(TOTAL_ENDGAME_BENEFITS)`** | **`{python} format_roi(ROI_TIER_3_ENDGAME)`** |
 
@@ -189,7 +189,7 @@ If anything, we're undershooting.
 ### Conservative Assumptions
 
 - Only 1% military reduction (could be much more)
-- Only 50% trial cost reduction (RECOVERY achieved [98%](../references.qmd#recovery-trial-82x-cost-reduction))
+- Only `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` trial cost reduction (RECOVERY achieved [98%](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction))
 - Only 50% better allocation (markets usually 2-3x better)
 - [Standard QALY values](../references.qmd#qaly-value) (many argue life is worth more)
 
@@ -309,7 +309,7 @@ These are real phenomena but hard to quantify precisely.
 Small changes in key assumptions dramatically affect outcomes:
 - 5% vs 10% global health improvement
 - 1% vs 2% military spending reduction
-- 50% vs 90% trial cost reduction
+- `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` vs 90% trial cost reduction
 - 10-year vs 20-year timeline
 
 The `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` figure assumes moderate scenarios across all variables.

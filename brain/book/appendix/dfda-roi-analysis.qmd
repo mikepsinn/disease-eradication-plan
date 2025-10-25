@@ -36,7 +36,7 @@ The return on investment for the dFDA Infrastructure is exceptionally high due t
    - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines core platform operational costs with the **Medium Case annual broader initiative costs (~\$21.3 Million / year)** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
      _(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global dFDA vision, which were significantly larger, are superseded by these more granular figures from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section for the purpose of this ROI calculation.)_
 
-   - **Cost Reduction**: Up to 80× in the biggest, most efficient scenarios; conservative average ~50%–80% reduction in trial costs.
+   - **Cost Reduction**: Up to 80× in the biggest, most efficient scenarios; conservative average ~`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)`–80% reduction in trial costs.
    - **Increased Throughput**: 2×–5× more trials and potentially many more candidates tested in parallel.
    - **Faster to Market**: Potentially 1–3 years shaved off a typical 7–10 year development cycle, yielding earlier revenue generation and extended effective patent life for sponsors.
 
@@ -46,7 +46,7 @@ _Initial Note on Operational Costs in this ROI Scenario:_
 _The following ROI calculation primarily uses cost figures derived from the detailed ROM estimates in [Costs of Building and Operating the Global Decentralized FDA (ROM Estimate)](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate). This includes the core platform build and operational costs, as well as scenarios for broader initiative costs. This approach provides a more grounded basis for the ROI than previous high-level conceptual figures for a fully scaled global ecosystem._
 
 - **Industry R&D Spend** (Baseline): [`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year](#market-size-and-impact) globally (approx.).
-- **Potential Savings**: 50% reduction implies [`{python} format_billions(DFDA_GROSS_SAVINGS)`/year saved](#gross-r-and-d-savings-from-dfda-implementation) if the entire industry migrated.
+- **Potential Savings**: `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction implies [`{python} format_billions(DFDA_GROSS_SAVINGS)`/year saved](#gross-r-and-d-savings-from-dfda-implementation) if the entire industry migrated.
 - **Platform Cost Scenarios (Derived from ROM Estimates):**
   - **Upfront Cost (Core Platform Build):** [~\`{python} format_millions(DFDA_ANNUAL_OPEX)`](#upfront-capital-expenditure-initial-build-illustrative-30-months) (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)).
   - **Annual Operational Cost Scenarios:**
@@ -56,7 +56,7 @@ _The following ROI calculation primarily uses cost figures derived from the deta
       - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
       - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~\`{python} format_millions(DFDA_ANNUAL_OPEX)`/year** (or $0.04 Billion/year). This aligns with the cost basis for the ROI cited in the Executive Summary.
     - _(Other scenarios, such as including "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), could be considered for sensitivity analysis but would significantly increase annual costs.)_
-- **Net Annual Savings** (assuming full adoption and [50% R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): `{python} format_billions(DFDA_GROSS_SAVINGS)`/year.
+- **Net Annual Savings** (assuming full adoption and [`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): `{python} format_billions(DFDA_GROSS_SAVINGS)`/year.
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
 
@@ -78,7 +78,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
 
 **Assumptions for Full Range ROI Calculation:**
 
-- Net Annual Savings: [`{python} format_billions(DFDA_GROSS_SAVINGS)`/year](#gross-r-and-d-savings-from-dfda-implementation) (from 50% R&D cost reduction).
+- Net Annual Savings: [`{python} format_billions(DFDA_GROSS_SAVINGS)`/year](#gross-r-and-d-savings-from-dfda-implementation) (from `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` R&D cost reduction).
 - Amortization Period for Upfront Costs: 5 years.
 
 #### 1. Lowest Total Cost Scenario (Best Case Core Platform + Best Case Broader Initiatives)

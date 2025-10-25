@@ -256,7 +256,7 @@ Unlike government programs that hide failure, we measure success transparently:
 - 1,000+ active trials launched
 - 100,000+ patients enrolled
 - 10+ diseases with breakthrough treatments
-- 50% reduction in trial costs demonstrated
+- `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction in trial costs demonstrated
 - $1B+ in researcher revenue generated
 
 ### Year 5 Targets

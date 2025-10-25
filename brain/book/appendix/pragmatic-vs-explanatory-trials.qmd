@@ -82,7 +82,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 - Average time from phase 1 to approval: [7.2 years](https://www.bio.org/sites/default/files/legacy/bioorg/docs/Clinical%20Development%20Success%20Rates%202006-2015%20-%20BIO,%20Biomedtracker,%20Amplion%202016.pdf)
 - [80% of trials fail to meet enrollment timelines](../references.qmd#clinical-trial-enrollment-timelines)
-- [Up to 50% of research sites enroll one or no patients](../references.qmd#clinical-trial-enrollment-timelines)
+- [Up to `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` of research sites enroll one or no patients](../references.qmd#clinical-trial-enrollment-timelines)
 
 ## Clinical Impact
 

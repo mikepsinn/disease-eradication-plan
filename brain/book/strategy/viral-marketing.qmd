@@ -82,7 +82,7 @@ $$
 
 ### Level 3: The Solution (3 minutes)
 
-**"The 1% Treaty: Redirect 1% of military spending to medical research. Fund trials that are [82X cheaper](../references.qmd#recovery-trial-82x-cost-reduction). Cure major diseases in 10 years. Everyone wins."**
+**"The 1% Treaty: Redirect 1% of military spending to medical research. Fund trials that are [`{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction). Cure major diseases in 10 years. Everyone wins."**
 
 ### Level 4: The Action (immediate)
 

@@ -8,6 +8,20 @@ jupyter: dih-project-kernel
 ---
 
 ```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+
+```{python}
 #| label: setup
 #| echo: false
 
@@ -430,7 +444,7 @@ This file contains reusable chart components for the dFDA economic analysis. To 
 
 ### Key Data Sources
 
-- **ROI Calculation**: 463:1 based on $40M annual cost generating $50B savings
+- **ROI Calculation**: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` based on `{python} format_millions(DFDA_ANNUAL_OPEX)` annual cost generating `{python} format_billions(DFDA_GROSS_SAVINGS)` savings
 - **QALY Impact**: 840,000 annual QALYs from multiple sources
 - **Cost Reductions**: 80-160x per-patient cost reduction vs traditional trials
 - **Daily Opportunity Cost**: $137M economic + 2,301 QALYs lost daily

@@ -240,7 +240,7 @@ As more patients join:
 **Societal Returns (Everyone Else):**
 
 - $463 in value created per dollar spent
-- 82X reduction in trial costs (`{python} format_billions(DFDA_GROSS_SAVINGS)` annual savings)
+- `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in trial costs (`{python} format_billions(DFDA_GROSS_SAVINGS)` annual savings)
 - 10-year acceleration in drug development ($5.4T productivity)
 - 100X more diseases addressed (10M lives saved annually)
 - 3X ROI on prevention vs treatment ($600B saved)
@@ -352,7 +352,7 @@ That's more than China's entire GDP.
 
 **Access:**
 
-- Global population with trial access (target: 50%+)
+- Global population with trial access (target: `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)`+)
 - Languages supported (target: 50+)
 - Income diversity of participants (ensuring equity)
 

@@ -164,7 +164,7 @@ The primary risk elimination mechanism:
 
 "The initiative builds the world's largest decentralized health treasury (`{python} format_billions(CAPTURED_DIVIDEND)` annually) using proven DAO models from MakerDAO/Uniswap. Early VICTORY bond holders will govern allocation of this treasury across global health research.
 
-This isn't just an investment - it's a chance to direct more capital than the NIH budget toward curing diseases through [80X more efficient](../references.qmd#recovery-trial-82x-cost-reduction) decentralized trials."
+This isn't just an investment - it's a chance to direct more capital than the NIH budget toward curing diseases through [80X more efficient](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction) decentralized trials."
 
 ### Template 2: Health Billionaires (Industry Advantage)
 
@@ -193,7 +193,7 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 | Category                          | Lower Bound | Upper Bound | Justification                                          |
 | :-------------------------------- | :---------- | :---------- | :----------------------------------------------------- |
 | **Operations (Core Team)**        | $10M        | $15M        | Lean founding team (15-20 people) with VICTORY tokens |
-| **Platform & Tech MVP**           | $50M        | $75M        | Engineering costs with 50% cash / 50% token split     |
+| **Platform & Tech MVP**           | $50M        | $75M        | Engineering costs with `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cash / `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` token split     |
 | **Legal & Framework (Pilots)**    | `{python} format_millions(DFDA_ANNUAL_OPEX)`        | $60M        | Top-tier law firms with success fees in VICTORY bonds |
 | **Pilot Independent Expenditure** | $100M       | $150M       | Competitive prize for best electoral results          |
 | **Referendum Points System**      | $5M         | $10M        | Infrastructure for non-financial incentives           |

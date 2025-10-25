@@ -35,7 +35,7 @@ Everything proposed has already worked.
 This isn't theory.
 It's copying proven models.
 
-## Oxford RECOVERY: The 82X Proof
+## Oxford RECOVERY: The `{python} TRIAL_COST_REDUCTION_FACTOR`x Proof
 
 2020: British doctors cured COVID with a drug from 1961.
 Cost: **[$500 per patient](references.qmd#recovery-cost-500)**.
@@ -46,7 +46,7 @@ Oxford saved a million lives in [100 days](references.qmd#recovery-trial-100-day
 Pharma saved zero lives in 10 years.
 
 That's not a 10% improvement.
-That's **[82 times better](references.qmd#recovery-trial-82x-cost-reduction)**.
+That's **[82 times better](references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction)**.
 The model exists.
 It's been proven.
 Now we scale it.
@@ -234,6 +234,6 @@ The failures of past movements are even more instructive than the successes, as 
 This is not a theoretical plan.
 It's a synthesis of proven models deliberately designed to avoid well-documented failure modes:
 
-- **[The RECOVERY Trial Case Study](appendix/recovery-trial.qmd):** Deep dive into Oxford trial proving 82X efficiency
+- **[The RECOVERY Trial Case Study](appendix/recovery-trial.qmd):** Deep dive into Oxford trial proving `{python} TRIAL_COST_REDUCTION_FACTOR`x efficiency
 - **[Organizational Precedents](proof/historical-precedents.qmd):** Historical analysis of Global Fund, ICBL, and other successful models
 - **[Historical Evidence for Decentralized Trials](appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd):** Pre-1962 medicine when doctors ran trials

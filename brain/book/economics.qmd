@@ -32,7 +32,7 @@ from economic_parameters import *
 Depending on what you count, the 1% Treaty generates between `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` and `{python} format_roi(ROI_TIER_3_ENDGAME)` ROI:
 
 **`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` = Conservative (dFDA R&D Savings Only)**
-- Only counts the `{python} format_billions(DFDA_GROSS_SAVINGS)` in annual R&D cost reductions from 82X cheaper trials
+- Only counts the `{python} format_billions(DFDA_GROSS_SAVINGS)` in annual R&D cost reductions from `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials
 - Ignores peace dividend, earlier access, and all secondary benefits
 - NPV-based, 10-year timeframe
 - This is the floor
@@ -59,7 +59,7 @@ All three are correct. They just count different things.
 
 ## The Conservative Case: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI (dFDA Only)
 
-If we ONLY count the cheapest, most conservative benefit—making clinical trials 82X cheaper—here's what we get:
+If we ONLY count the cheapest, most conservative benefit—making clinical trials `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper—here's what we get:
 
 ### The Numbers
 
@@ -92,7 +92,7 @@ All calculations in our [Economic Models Notebook](./economics/economic_models.i
 The Decentralized FDA alone achieves **`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` return on investment**.
 
 This exceptional ROI comes from:
-- **`{python} format_billions(DFDA_GROSS_SAVINGS)` in annual R&D cost savings**: 82X reduction in clinical trial costs
+- **`{python} format_billions(DFDA_GROSS_SAVINGS)` in annual R&D cost savings**: `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in clinical trial costs
 - **Faster access to new treatments**: 2 years instead of 17 years to market
 - **Better prevention through real-world data**: Continuous learning from millions of patients
 - **Enabling new therapies**: Making rare disease trials economically viable
@@ -134,7 +134,7 @@ The conservative `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` calculation only
 When you count all eight primary benefit categories:
 
 1. **Peace dividend** ($97B) - Societal savings from 1% less conflict
-2. **R&D cost savings** (`{python} format_billions(DFDA_GROSS_SAVINGS)`) - 82X cheaper trials
+2. **R&D cost savings** (`{python} format_billions(DFDA_GROSS_SAVINGS)`) - `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials
 3. **7-year access acceleration** ($300B) - Earlier treatment access during trials
 4. **Research acceleration** ($100B) - 115X more research capacity (10-20X more breakthroughs)
 5. **Rare disease treatments** ($400B) - Economically viable orphan drug development
@@ -163,7 +163,7 @@ Let's compare to the most effective charities in the world (GiveWell top chariti
 
 | Intervention | Cost to Achieve Outcome | Our Initiative's Equivalent |
 | :--- | :--- | :--- |
-| **GiveWell Top Charities** (e.g., Against Malaria Foundation) | Spend **~$3,000 - $5,000** to save one life | Generate **840,000 QALYs** annually while creating **$249 Billion** in net economic value |
+| **GiveWell Top Charities** (e.g., Against Malaria Foundation) | Spend **~$3,000 - $5,000** to save one life | Generate **`{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs** annually while creating **$249 Billion** in net economic value |
 
 **The Difference**: GiveWell's charities are the best ways to spend money to save lives. They cost money but save lives very efficiently.
 

@@ -7,11 +7,26 @@ format:
     theme: none
     css: dih-styles.css
     toc: false
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 :::{.hero-banner}
 
-# HOW TO CURE DISEASES<br>82X FASTER
+# HOW TO CURE DISEASES<br>`{python} TRIAL_COST_REDUCTION_FACTOR`x FASTER
 
 ## Replace bureaucrats with code.<br>Committees with patient choice.<br>Grant applications with actual medicine
 
@@ -144,7 +159,7 @@ The current system lets knowledge die in drawers. Your system makes ignorance il
 ::::{.grid}
 
 :::{.g-col-md-4 style="text-align: center;"}
-<span class="stat-number">82X</span>
+<span class="stat-number">`{python} TRIAL_COST_REDUCTION_FACTOR`x</span>
 <span class="stat-label">CHEAPER</span>
 <p class="content-block" style="margin-top: 1rem;">Oxford tested 11,000 patients for what the FDA spends on 134. That's not a typo. That's what happens when you stop paying lawyers to argue about fonts.</p>
 :::
@@ -170,14 +185,14 @@ The current system lets knowledge die in drawers. Your system makes ignorance il
 ::::{.grid}
 
 :::{.g-col-md-4 style="text-align: center;"}
-<span class="stat-number">82X</span>
+<span class="stat-number">`{python} TRIAL_COST_REDUCTION_FACTOR`x</span>
 <span class="stat-label">PROVEN COST REDUCTION</span>
 <p class="content-block" style="margin-top: 1rem;">The RECOVERY trial did it for $500/patient. The FDA spends $41,000. This isn't theory. It's math. And dead bodies.</p>
 <a href="brain/book/appendix/recovery-trial.qmd" class="btn btn-outline-secondary" style="transform: rotate(-1deg);">See The Proof</a>
 :::
 
 :::{.g-col-md-4 style="text-align: center;"}
-<span class="stat-number">463:1</span>
+<span class="stat-number">`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`</span>
 <span class="stat-label">RETURN ON INVESTMENT</span>
 <p class="content-block" style="margin-top: 1rem;">Better than smallpox eradication (280:1) or selling organs (illegal, only 50:1). You literally profit from not dying.</p>
 <a href="brain/book/appendix/dfda-cost-benefit-analysis.qmd" class="btn btn-outline-secondary" style="transform: rotate(1deg);">See The Math</a>
@@ -205,7 +220,7 @@ The current system lets knowledge die in drawers. Your system makes ignorance il
 
 ### VICTORY Bonds: How to Get Rich Preventing Death
 
-Investors who fund the campaign get 10% of the $27B annual treaty flow = $2.7B/year = 270% returns forever.
+Investors who fund the campaign get 10% of the `{python} format_billions(CAPTURED_DIVIDEND)` annual treaty flow = $2.7B/year = `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns forever.
 
 Better than:
 
@@ -271,7 +286,7 @@ Here's the machine you build to run this system. It provides two things humanity
 
 ### THE WISHOCRACY SYSTEM
 
-Here's how you run a $27 billion treasury without creating another bureaucracy:
+Here's how you run a `{python} format_billions(CAPTURED_DIVIDEND)` treasury without creating another bureaucracy:
 
 - **Anyone can propose** (even you, even your weird uncle)
 - **Everyone votes on pairs** ("Do you prefer funding Alzheimer's research or yacht subsidies for administrators?")
@@ -342,7 +357,7 @@ Stop funding galas. Fund cures. Your name on a hospital wing is nice. Your name 
 
 ### FOR PARTNERS
 
-Your mission is important. It's also underfunded. Join the coalition to get a seat at the table of a $27B/year treasury.
+Your mission is important. It's also underfunded. Join the coalition to get a seat at the table of a `{python} format_billions(CAPTURED_DIVIDEND)`/year treasury.
 
 [REGISTER INTEREST →](https://airtable.com/form/partner-interest){.btn .btn-secondary}
 :::
@@ -367,7 +382,7 @@ Your mission is important. It's also underfunded. Join the coalition to get a se
 - Give money directly to sick people
 - Pay scientists for cures, not paperwork  
 - Replace committees with code that can't be corrupted
-- Reduce trial costs by 82X (proven, not theoretical)
+- Reduce trial costs by `{python} TRIAL_COST_REDUCTION_FACTOR`x (proven, not theoretical)
 
 **This isn't a proposal. It's an instruction manual.**
 

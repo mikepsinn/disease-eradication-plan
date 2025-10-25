@@ -32,13 +32,13 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The 82X Cost Multiplier: Two Systems, Two Outcomes
+## The `{python} TRIAL_COST_REDUCTION_FACTOR`x Cost Multiplier: Two Systems, Two Outcomes
 
 The Oxford RECOVERY trial tested COVID treatments on 47,000 patients for **[$500 per patient](../references.qmd#recovery-cost-500)**.
 
 The FDA-regulated system averages **[$41,000 per patient](../references.qmd#trial-cost-41k)**.
 
-That's **82X more expensive**.
+That's **`{python} TRIAL_COST_REDUCTION_FACTOR`x more expensive**.
 
 The RECOVERY trial found dexamethasone saves lives.
 Time from start to result: [3 months](../references.qmd#recovery-trial-100-days-to-cure).

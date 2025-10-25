@@ -52,7 +52,7 @@ Immediate disaster:
 
 2020: Oxford RECOVERY trial proves decentralization still works.
 [**$500 per patient**](references.qmd#recovery-cost-500) vs FDA's [**$41,000 standard**](references.qmd#trial-cost-41k).
-That's **82X more efficient**.
+That's **`{python} TRIAL_COST_REDUCTION_FACTOR`x more efficient**.
 
 They turned medical research into Soviet agriculture.
 
@@ -83,7 +83,7 @@ The pretense of knowledge: Central planning always fails.
 Prices are information packets.
 Committees are noise.
 
-- RECOVERY trial: $500 vs $41,000 per patient (82X efficiency proven)
+- RECOVERY trial: $500 vs $41,000 per patient (`{python} TRIAL_COST_REDUCTION_FACTOR`x efficiency proven)
 - Pre-1962 medicine: Doctors prescribed, patients decided
 - Software/Internet: No FDA = exponential innovation
 - LASIK/cosmetic surgery: Cash markets = [~20% price drops](references.qmd#lasik-cosmetic-surgery-price-drops)

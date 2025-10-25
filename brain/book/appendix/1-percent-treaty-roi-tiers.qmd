@@ -40,7 +40,7 @@ The conservative `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` calculation igno
 The 1% Treaty doesn't just make trials cheaper. It:
 
 1. **Societal savings from 1% less conflict** (peace dividend: $97B)
-2. **Slashes R&D costs 82X** (saves `{python} format_billions(DFDA_GROSS_SAVINGS)`)
+2. **Slashes R&D costs `{python} TRIAL_COST_REDUCTION_FACTOR`x** (saves `{python} format_billions(DFDA_GROSS_SAVINGS)`)
 3. **Accelerates access by 7 years** (saves $300B via early trial access)
 4. **115X more research capacity** (adds $100B via 10-20X more breakthroughs)
 5. **Enables treatment of rare/orphan diseases** (adds $400B)
@@ -89,7 +89,7 @@ New patients each year get early access:
 
 ## The Research Acceleration Multiplier
 
-**The insight:** 82X cheaper trials + 40% more funding (`{python} format_billions(CAPTURED_DIVIDEND)`/year) = **115X more research capacity**.
+**The insight:** `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials + 40% more funding (`{python} format_billions(CAPTURED_DIVIDEND)`/year) = **115X more research capacity**.
 
 **What this means:**
 - Current: ~3,300 clinical trials/year globally, ~50 new drug approvals/year
@@ -122,7 +122,7 @@ These are NOT rare diseases (already counted). These are common diseases with li
 | Category | Annual Benefit | Notes |
 |----------|----------------|-------|
 | [Peace Dividend](../economics/peace-dividend.qmd) | $97B | Societal savings from 1% reduction in global conflict |
-| R&D Cost Savings | `{python} format_billions(DFDA_GROSS_SAVINGS)` | 82X trial cost reduction |
+| R&D Cost Savings | `{python} format_billions(DFDA_GROSS_SAVINGS)` | `{python} TRIAL_COST_REDUCTION_FACTOR`x trial cost reduction |
 | **Earlier Access (7 years)** | **$300B** | Existing pipeline accessed sooner |
 | **Research Acceleration** | **`{python} format_billions(GLOBAL_TRIAL_MARKET)`** | 115X more trials = 10-20X more breakthroughs |
 | New Diseases Treatable | $400B | Rare diseases, orphan drugs |
@@ -172,7 +172,7 @@ The 1% Treaty doesn't cure everything, but it:
 ### Sources and Methodology
 
 - **Trial cost reduction**: Based on [RECOVERY trial model](../references.qmd#recovery-trial-cost-reduction) achieving ~$500/patient vs traditional $40-120K/patient
-- **Research capacity multiplier**: 82X cost reduction × 1.4X funding increase = 115X capacity
+- **Research capacity multiplier**: `{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction × 1.4X funding increase = 115X capacity
 - **QALY valuations**: Standard [$100-150K per QALY](../references.qmd#qaly-value) methodology
 - **Disease prevalence**: WHO global burden of disease data
 - **Economic impact estimates**: See [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) for detailed calculations

@@ -99,7 +99,7 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 **Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
 
-**Baseline projection**: 840,000 QALYs/year from:
+**Baseline projection**: `{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs/year from:
 
 1. **Faster drug access** (50% of total): 420,000 QALYs
    - Average 2-3 year reduction in time to market
@@ -414,7 +414,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 2. **Health Dividend (dFDA)**: [Health Dividend Calculations](health-dividend-calculations.qmd)
    - Clinical trial market: ~`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year
-   - 50% cost reduction (baseline)
+   - `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction (baseline)
    - Range: 25%-95%
    - Also see: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
 
@@ -425,7 +425,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
    - Sources: ACLED, GTD, Uppsala
 
 4. **dFDA QALYs**: [dFDA QALY Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
-   - Baseline: 840,000 QALYs/year
+   - Baseline: `{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs/year
    - Range: 420,000-2,100,000
 
 5. **QALY Conversion**: WHO life tables
@@ -463,7 +463,7 @@ These benefits far exceed the `{python} format_millions(TOTAL_ANNUAL_COSTS)` ann
 Meanwhile, the same initiative saves lives:
 
 - 1,000 lives from 1% less conflict
-- 840,000 QALYs from faster/better medical treatments
+- `{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs from faster/better medical treatments
 
 You get **both** the economic benefit **and** the health benefit.
 

@@ -74,7 +74,7 @@ Spoiler: It's probably yours.
 They've turned medical research into a grant-writing competition where the prize is more grant-writing.
 It's like a pyramid scheme, except instead of essential oils, everyone's selling false hope and PowerPoint presentations.
 
-## The FDA: Making Medicine 82X More Expensive
+## The FDA: Making Medicine `{python} TRIAL_COST_REDUCTION_FACTOR`x More Expensive
 
 The Food and Drug Administration has achieved something remarkable: [They've made medicine 82 times more expensive and 1,000 times slower](./problem/fda-is-unsafe-and-ineffective.qmd), all while claiming it's for your safety.
 
@@ -259,7 +259,7 @@ We spend 1,772 times more money causing or mopping up death than preventing it. 
 
 - [The Daily Holocaust](./problem/the-daily-massacre.qmd) - 150,000 preventable deaths every day
 - [NIH's Trillion Dollar Failure](./problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) - How to spend \$1 trillion and cure nothing
-- [The FDA's 82X Inefficiency](./problem/fda-is-unsafe-and-ineffective.qmd) - Making medicine unaffordable since 1962
+- [The FDA's `{python} TRIAL_COST_REDUCTION_FACTOR`x Inefficiency](./problem/fda-is-unsafe-and-ineffective.qmd) - Making medicine unaffordable since 1962
 - [The \$2.7 Trillion Death Budget](./problem/cost-of-war.qmd) - What we spend on killing each other
 - [The \$109 Trillion Disease Bill](./problem/cost-of-disease.qmd) - The economy of suffering
 - [Humanity's Upside-Down Priorities](#the-1205t-death-toilet) - A visual guide to our insanity

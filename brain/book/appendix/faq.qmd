@@ -156,7 +156,7 @@ The goal is not to reshuffle a small pot of charitable giving, it is to tap into
 
 ### "How do you prevent waste and ensure the money actually helps patients?"
 
-**Reality:** The [decentralized FDA](../solution/dfda.qmd) uses decentralized pragmatic trials that cost [$500 per patient](../references.qmd#recovery-cost-500) vs. [$41,000 traditional trials](../references.qmd#trial-cost-41k) - an [80X efficiency improvement](../references.qmd#recovery-trial-82x-cost-reduction) proven by the [Oxford RECOVERY trial](../references.qmd#recovery-trial-efficiency).
+**Reality:** The [decentralized FDA](../solution/dfda.qmd) uses decentralized pragmatic trials that cost [$500 per patient](../references.qmd#recovery-cost-500) vs. [$41,000 traditional trials](../references.qmd#trial-cost-41k) - an [80X efficiency improvement](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction) proven by the [Oxford RECOVERY trial](../references.qmd#recovery-trial-efficiency).
 
 Compare this to the [NIH RECOVER initiative](../references.qmd#nih-recover-inefficiency): [$1.6B budget, $53,333 per patient, zero completed trials in 4 years](../references.qmd#nih-recover-inefficiency). With the same $1.6B budget, the dFDA could run 2,800 trials enrolling 2.8 million patients vs. NIH's zero completed trials. The evidence is overwhelming: decentralized pragmatic trials deliver 80X more patients treated per dollar spent.
 

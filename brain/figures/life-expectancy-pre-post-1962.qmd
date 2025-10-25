@@ -4,7 +4,22 @@ format:
   html:
     code-fold: true
 jupyter: python3
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 ```{python}
 #| label: setup
@@ -130,4 +145,4 @@ From 1890 to 1962, US life expectancy increased at approximately **4 years per y
 
 After the 1962 Kefauver-Harris Amendment mandated expensive, industry-run efficacy trials, this growth rate was **cut in half** to approximately **2 years per year**.
 
-**The 50% reduction in medical progress coincided precisely with the shift from large-scale real-world evidence trials to small, controlled pharmaceutical company trials.**
+**The `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction in medical progress coincided precisely with the shift from large-scale real-world evidence trials to small, controlled pharmaceutical company trials.**

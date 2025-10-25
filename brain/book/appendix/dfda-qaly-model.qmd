@@ -105,7 +105,7 @@ The calculations below are based on the central ("base case") estimates establis
     $$
 
 - **Daily Financial Value Lost:**
-  - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **[`{python} format_billions(DFDA_GROSS_SAVINGS)` per year](#gross-r-and-d-savings-from-dfda-implementation)** by reducing the costs of the [**`{python} format_billions(GLOBAL_TRIAL_MARKET)` global clinical trial market**](#market-size-and-impact) by [**50%**](#gross-r-and-d-savings-from-dfda-implementation). This represents value that is currently being spent inefficiently.
+  - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **[`{python} format_billions(DFDA_GROSS_SAVINGS)` per year](#gross-r-and-d-savings-from-dfda-implementation)** by reducing the costs of the [**`{python} format_billions(GLOBAL_TRIAL_MARKET)` global clinical trial market**](#market-size-and-impact) by [**`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)`**](#gross-r-and-d-savings-from-dfda-implementation). This represents value that is currently being spent inefficiently.
   - The daily financial loss from this inefficiency is:
     $$
     \frac{\$50,000,000,000}{365\ \text{days}} \approx \mathbf{\$137\ \text{million lost per day}}

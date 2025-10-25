@@ -8,6 +8,20 @@ jupyter: dih-project-kernel
 ---
 
 ```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+
+```{python}
 #| label: setup
 #| echo: false
 
@@ -323,9 +337,9 @@ fig.show()
 ### Primary Economic Models
 
 - **1% Treaty Analysis**: $92B annual peace dividend from 1% military spending reduction
-- **dFDA Cost-Benefit**: 463:1 ROI from $40M platform saving $50B in trial costs
+- **dFDA Cost-Benefit**: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI from `{python} format_millions(DFDA_ANNUAL_OPEX)` platform saving `{python} format_billions(DFDA_GROSS_SAVINGS)` in trial costs
 - **DIH Market Allocation**: $13.5B value from 50% better research allocation
-- **Health Impact**: 840,000 QALYs valued at $126B annually
+- **Health Impact**: `{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs valued at $126B annually
 
 ### Additional Economic Analyses
 
@@ -337,7 +351,7 @@ fig.show()
 ### Key Assumptions
 
 - QALY valued at $150,000 (standard US threshold)
-- Global clinical trials market: $100B annually
+- Global clinical trials market: `{python} format_billions(GLOBAL_TRIAL_MARKET)` annually
 - Military spending: $2.443T globally
 - Disease burden: $109.1T annually
 - Conservative network effect multipliers

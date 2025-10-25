@@ -566,7 +566,7 @@ from economic_parameters import *
 <a id="clinical-trial-enrollment-timelines"></a>
 
 - **Clinical trial enrollment timelines**
-  > "Today nearly 80% of clinical trials fail to meet their enrolment timelines and up to 50% of research sites enrol one or no patients.
+  > "Today nearly 80% of clinical trials fail to meet their enrolment timelines and up to `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` of research sites enrol one or no patients.
   > Not only does this translate into as much as \$8m in lost revenue for each day a drug is delayed, it also means that cutting-edge new medications are significantly delayed in their journey to the patients who need them most."
   > — Clinical Trials Arena, [Link](https://www.clinicaltrialsarena.com/marketdata/featureclinical-trial-patient-recruitment/)
 
@@ -803,7 +803,7 @@ from economic_parameters import *
 <a id="dct-cost-reductions-evidence"></a>
 
 - **Decentralized Clinical Trials (DCT) cost reduction evidence**
-  > "DCTs are developing rapidly. However, there is insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost." Despite this, DCTs have demonstrated potential for significant cost reductions (20-50% or more) through reduced site management, travel, and streamlined data collection.
+  > "DCTs are developing rapidly. However, there is insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost." Despite this, DCTs have demonstrated potential for significant cost reductions (20-`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` or more) through reduced site management, travel, and streamlined data collection.
   > "DCTs are considered cost-saving by reducing the number of onsite patient visits and decreasing the costs related to time for study nurses and clinicians."
   > — Rogers et al., 2022, [Systematic review of methods used to conduct decentralised clinical trials](https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf) | Valachis & Lindman, 2024, [Lessons learned from an unsuccessful DCT in Oncology](https://www.nature.com/articles/s41746-024-01214-5)
 
@@ -898,7 +898,7 @@ from economic_parameters import *
   > Range: 66:1 to 2,577:1 depending on total ecosystem costs
   > Based on: $37.5-46M upfront platform investment + operational costs vs `{python} format_billions(DFDA_GROSS_SAVINGS)` annual R&D savings
   > Value proposition: 80X reduction in per-patient trial costs; `{python} format_billions(DFDA_GROSS_SAVINGS)` gross annual savings from pharma R&D
-  > Pharmaceutical industry spends ~`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year on R&D; 50% cost reduction yields enormous net savings
+  > Pharmaceutical industry spends ~`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year on R&D; `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction yields enormous net savings
   > — [dFDA: Cost Benefit Analysis](https://wiki.dfda.earth/en/economic-models/dfda-cost-benefit-analysis) | [dFDA Wiki](https://wiki.dfda.earth/)
 
 <a id="diabetes-deaths-2m-annually"></a>
@@ -944,7 +944,7 @@ from economic_parameters import *
   > Recent estimate: ~$3 trillion/year (all costs included)
   > Top 5 cancers: lung (15.4%), colon/rectum (10.9%), breast (7.7%), liver (6.5%), leukemia (6.3%)
   > — [JAMA Oncology: Global Cost 2020-2050](https://jamanetwork.com/journals/jamaoncology/fullarticle/2801798) | [Nature: $25T Over 30 Years](https://www.nature.com/articles/d41586-023-00634-9)
-  > Note: China/US account for 45% of global burden; 75% of deaths in LMICs but only 50% of economic cost
+  > Note: China/US account for 45% of global burden; 75% of deaths in LMICs but only `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` of economic cost
 
 <a id="disease-cost-diabetes-1500b"></a>
 
@@ -1869,9 +1869,9 @@ from economic_parameters import *
 - **Global disease burden savings of ~\$9.76 trillion annually**
   > NCDs total lost output (2011-2030): $47 trillion over 20 years = ~$2.35T/year
   > NCDs cost (2011-2030): >$30T (48% of 2010 global GDP); mental health alone: +$16.1T
-  > 50% reduction potential savings example: TB 50% reduction = $900M cost, $6B saved, 16M deaths averted
+  > `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction potential savings example: TB `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction = $900M cost, $6B saved, 16M deaths averted
   > — [WEF: Global Economic Burden NCDs](https://www3.weforum.org/docs/WEF_Harvard_HE_GlobalEconomicBurdenNonCommunicableDiseases_2011.pdf) | [PMC: Health Benefits Accelerated Research](https://pmc.ncbi.nlm.nih.gov/articles/PMC524952/)
-  > Note: Specific "$9.76T annually from 50% reduction" not found in sources. NCD burden ~$2.35T/year average (2011-2030). 50% reduction would save roughly half, or ~$1.2T/year, not $9.76T
+  > Note: Specific "$9.76T annually from `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction" not found in sources. NCD burden ~$2.35T/year average (2011-2030). `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction would save roughly half, or ~$1.2T/year, not $9.76T
 
 <a id="global-education-market-size"></a>
 
@@ -2189,9 +2189,9 @@ from economic_parameters import *
 
 <a id="health-outcomes-840000-qalys-gained"></a>
 
-- **840,000 QALYs gained annually**
+- **`{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs gained annually**
   > This is an INTERNAL PROJECTION from this book's economic model, NOT an external citation
-  > Projection: 840,000 QALYs/year (base case) from dFDA implementation
+  > Projection: `{python} format_qalys(DFDA_QALYS_ANNUAL)` QALYs/year (base case) from dFDA implementation
   > Range: Conservative: 190,000 QALYs/year | Base: 840,000 | Optimistic: 3,650,000
   > Components: Faster drug access (200k base), enhanced prevention via RWD (140k base), new therapies for rare/neglected diseases (500k base)
   > QALY definition: One year in perfect health = 1 QALY; scores range from 1 (perfect health) to 0 (dead)
@@ -3481,7 +3481,7 @@ from economic_parameters import *
 
 - **Post-1962 slowdown in life expectancy gains**
   > Pre-1962: Lifespan growth increased by ~4 years per decade
-  > Post-1962: Lifespan growth declined to ~2 years per decade (50% reduction)
+  > Post-1962: Lifespan growth declined to ~2 years per decade (`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction)
   > Correlation: Slowdown directly coincided with 70% reduction in new drug approvals following 1962 Kefauver-Harris Amendment
   > Context: Regulatory clampdown on approvals immediately reduced production of new treatments by 70%
   > — [Think by Numbers: How Many Lives Does FDA Save?](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/)
@@ -3576,7 +3576,7 @@ from economic_parameters import *
 <a id="publication-bias-clinical-trials"></a>
 
 - **Publication rate of clinical trial results**
-  > ~50% of clinical trials never publish results (NHS-funded systematic review, 2010)
+  > ~`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` of clinical trials never publish results (NHS-funded systematic review, 2010)
   > Schmucker et al (2014): 53% of trials published (analyzing 39 studies, >20,000 trials)
   > Munch et al (2014): 46% of pain treatment trials published
   > Chang et al (2015): 49% of high-risk cardiac device trials published
@@ -3685,12 +3685,12 @@ from economic_parameters import *
   > Impact immediate: Adopted into standard care globally within hours of announcement
   > — [NHS England: 1 Million Lives Saved](https://www.england.nhs.uk/2021/03/covid-treatment-developed-in-the-nhs-saves-a-million-lives/) | [Pharmaceutical Journal: 1M Lives Saved](https://pharmaceutical-journal.com/article/news/steroid-has-saved-the-lives-of-one-million-covid-19-patients-worldwide-figures-show) | [RECOVERY Trial: Dexamethasone Result](https://www.recoverytrial.net/news/recovery-trial-celebrates-two-year-anniversary-of-life-saving-dexamethasone-result)
 
-<a id="recovery-trial-82x-cost-reduction"></a>
+<a id="recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction"></a>
 
-- **RECOVERY trial 82x cost reduction**
+- **RECOVERY trial `{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction**
   > RECOVERY trial: ~$500 per patient ($20M for 48,000 patients = $417/patient)
   > Typical clinical trial: ~$41,000 median per-patient cost
-  > Cost reduction: ~80-82X cheaper ($41,000 ÷ $500 ≈ 82X)
+  > Cost reduction: ~80-`{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper ($41,000 ÷ $500 ≈ `{python} TRIAL_COST_REDUCTION_FACTOR`x)
   > Efficiency: $50 per patient per answer (10 therapeutics tested, 4 effective)
   > Dexamethasone estimated to save >630,000 lives
   > — [Manhattan Institute: Slow Costly Trials](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs) | [PMC: Establishing RECOVERY at Scale](https://pmc.ncbi.nlm.nih.gov/articles/PMC9293394/)
@@ -4531,7 +4531,7 @@ from economic_parameters import *
 <a id="wasted-spending-on-failed-experiments"></a>
 
 - **Estimated annual cost of repeating failed experiments due to non-publication of results**
-  > "Up to 50% of published preclinical research is irreproducible, with an estimated annual cost of $28 billion in the U.S. alone. This is based on $56B annual spending on preclinical research × 50% irreproducibility rate. Main causes: reagents/materials (36%), study design (28%), data analysis (25%), protocols (11%)."
+  > "Up to `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` of published preclinical research is irreproducible, with an estimated annual cost of $28 billion in the U.S. alone. This is based on $56B annual spending on preclinical research × `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` irreproducibility rate. Main causes: reagents/materials (36%), study design (28%), data analysis (25%), protocols (11%)."
   > — Science/AAAS, [$28 billion/year spent on irreproducible research](https://www.science.org/content/article/study-claims-28-billion-year-spent-irreproducible-biomedical-research) | IDBS, [$28 billion wasted every year](https://www.idbs.com/2020/11/replicating-science-28-billion-is-wasted-every-year-in-the-us-alone/)
 
 <a id="weapons-vs-cures-workforce-ratio"></a>

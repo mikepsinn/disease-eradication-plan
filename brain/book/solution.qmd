@@ -79,7 +79,7 @@ Before you think this is theoretical, know that **Oxford already proved it works
 - **Cost**: [$500 per patient](references.qmd#recovery-cost-500) (vs FDA's [$41,000](references.qmd#trial-cost-41k))
 - **Speed**: [100 days to first cure](references.qmd#recovery-trial-100-days-to-cure) (vs FDA's [10 years](references.qmd#fda-approval-timeline-10-years))
 - **Lives saved**: [1 million+ globally](references.qmd#recovery-trial-summary-quote)
-- **Efficiency gain**: [82X cost reduction proven](references.qmd#recovery-trial-82x-cost-reduction)
+- **Efficiency gain**: [`{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction proven](references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction)
 
 The RECOVERY trial isn't a model - it's proof. We're just scaling what already succeeded. [See the full RECOVERY analysis →](appendix/recovery-trial.qmd)
 

@@ -520,7 +520,7 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 
 ![Black box model animation showing how the dFDA works](../../../assets/black-box-model-animation.gif)
 
-The dFDA achieves [**82X More Efficiency**](../references.qmd#recovery-trial-82x-cost-reduction) through:
+The dFDA achieves [**`{python} TRIAL_COST_REDUCTION_FACTOR`x More Efficiency**](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction) through:
 
 - **Cost per patient**: $500 vs the current $41,000
 - **Time to results**: 2 years vs the current 17 years

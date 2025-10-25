@@ -264,7 +264,7 @@ Below is a comprehensive list of statutes, executive actions, and related preced
 1. **Trial Efficiency**
 
 - 80% reduction in trial setup time
-- 50% reduction in per-patient costs
+- `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction in per-patient costs
 - 90% reduction in administrative overhead
 
 2. **Patient Impact**
