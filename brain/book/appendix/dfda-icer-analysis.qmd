@@ -7,7 +7,7 @@ description: Incremental cost-effectiveness ratio analysis showing -$59,501 per 
 
 #### Introduction Why QALY and ICER
 
-To meet the standards of government and health technology assessment (HTA) bodies such as ICER, we present a cost-utility analysis using the **incremental cost-effectiveness ratio (ICER)** and **quality-adjusted life years (QALYs)**. This approach is the US and global standard for evaluating the value of health interventions ([ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/)).
+To meet the standards of government and health technology assessment (HTA) bodies such as ICER, we present a cost-utility analysis using the **incremental cost-effectiveness ratio (ICER)** and **quality-adjusted life years (QALYs)**. This approach is the [US and global standard for evaluating the value of health interventions](../references.qmd#icer-qaly-methodology).
 
 - **QALY**: One year of life in perfect health. Gains are calculated as:
 
@@ -25,11 +25,11 @@ To meet the standards of government and health technology assessment (HTA) bodie
 
   If an intervention saves money (negative incremental cost) and improves health (positive QALY gain), the ICER will be negative, indicating a **dominant** (cost-saving) intervention.
 
-- **US Willingness-to-Pay Threshold**: Typically $100,000–$150,000 per QALY for interventions that _add_ costs ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)). Dominant interventions are favorable regardless of this threshold.
+- **US Willingness-to-Pay Threshold**: Typically [$100,000–$150,000 per QALY](../references.qmd#qaly-value) for interventions that _add_ costs. Dominant interventions are favorable regardless of this threshold.
 
 - **Sources for Context:**
-  - "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..." ([ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/))
-  - "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $150,000 per QALY..." ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf))
+  - [ICER QALY methodology and standards](../references.qmd#icer-qaly-methodology): "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..."
+  - [Value per QALY](../references.qmd#qaly-value): "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $150,000 per QALY..."
 
 #### Parameterization Overall dFDA Infrastructure Impact
 
