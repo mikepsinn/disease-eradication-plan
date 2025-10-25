@@ -59,32 +59,18 @@ This stream reflects the transformative potential of the dFDA to create viable r
 
 #### DCT Platform Funding (Analogous Cost Basis)
 
-- **\$521M raised by Medable**
+**For detailed information on decentralized clinical trial (DCT) platform funding**, see:
 
-  > "Decentralized Clinical Trials (DCT) leader Medable, today announced a \$304M Series D funding round today – the company's largest and fourth funding round in 18 months, bringing total capital raised to \$521M – and valuation to \$2B+."
-  > — [HIT Consultant, Oct 2021](https://hitconsultant.net/2021/10/26/medable-dct-series-d-funding/)
-
-- **\$50M raised by Thread**
-
-  > "Thread, which also specializes in decentralized clinical research technology, revealed last week that it had raised strategic capital commitments of up to \$50 million from investors Water Street Healthcare Partners and JLL Partners."
-  > — [MobiHealthNews, Aug 2020](https://www.mobihealthnews.com/news/exo-raises-40m-handheld-ultrasound-decentralized-trial-platforms-raise-nearly-100m-and-more)
-
-- **\$40M raised by Science 37**
-
-  > "Another \$40 million raise was announced yesterday by decentralized clinical trial startup Science 37."
-  > — [MobiHealthNews, Aug 2020](https://www.mobihealthnews.com/news/exo-raises-40m-handheld-ultrasound-decentralized-trial-platforms-raise-nearly-100m-and-more)
-
-- **\$25.5M raised by uMotif**
-  > "uMotif today announced a new investment of \$25.5m from a fund managed by Athyrium Capital Management, LP"
-  > — [Pharma Almanac, Apr 2022](https://www.pharmasalmanac.com/articles/umotif-the-patient-first-data-capture-and-decentralized-clinical-trials-platform-announces-25.5m-of-new-investment-from-a-fund-managed-by-athyrium-capital-management)
+- [Medable: $521M raised, $2.1B valuation](../references.qmd#dct-platform-funding-medable)
+- [Other DCT platforms: Science 37 (~$40M), Thread (up to $50M), uMotif (~$25.5M)](../references.qmd#dct-platform-funding-others)
 
 #### Sources
 
-- "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around the world for more than 30 years." ([ICER](https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/))
-- "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from \$100,000 to \$150,000 per QALY and per evLYG." ([ICER Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf))
-- "Each year of delayed access to curative therapy for hepatitis C costs 0.2–1.1 QALYs per patient." ([Pho et al., 2015](https://europepmc.org/articles/pmc4515086?pdf=render))
-- "Syphilis causes substantial health losses in adults and children... The average number of discounted lifetime QALYs lost per infection as 0.09." ([Lee et al., 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9907519/))
-- "Statin treatment provides a gain of 0.20 QALYs in men aged 60 years." ([BMJ](https://www.ncbi.nlm.nih.gov/books/NBK426103/))
+**For complete source documentation**, see:
+
+- [ICER QALY methodology](../references.qmd#icer-qaly-methodology): "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..."
+- [Value per QALY](../references.qmd#qaly-value): Standard willingness-to-pay threshold of $100,000–$150,000 per QALY
+- [QALY cost of delayed access to treatment](../references.qmd#qaly-delayed-access-cost): Delayed access costs for hepatitis C (0.2–1.1 QALYs/patient), syphilis (0.09 QALYs/infection), and statins (0.20 QALYs gain)
 
 ---
 
