@@ -97,44 +97,38 @@ print("✅ Modern design system loaded")
 ## Cost of War Data and Calculations
 
 ```{python}
-# Data from the "Cost of War" analysis (in billions of USD)
-# Source: brain/book/references.qmd#sipri-2024-spending
+# Import all parameters from centralized module
+from economic_parameters import *
 
-# Direct Costs
-direct_military_expenditure = 2718.0
-infrastructure_destruction = 1875.0
-human_life_losses = 1000.0
-trade_disruption = 616.0
-total_direct_costs = direct_military_expenditure + infrastructure_destruction + human_life_losses + trade_disruption
+# Use standardized parameters instead of hardcoded values
+# All values now come from economic_parameters.py
 
-# Indirect Costs
-lost_economic_growth = 2443.0 # Note: This is a calculated opportunity cost, not a direct expenditure.
-veteran_healthcare = 200.1
-refugee_support = 150.0
-environmental_damage = 100.0
-psychological_impact = 100.0
-lost_human_capital = 270.0
-total_indirect_costs = lost_economic_growth + veteran_healthcare + refugee_support + environmental_damage + psychological_impact + lost_human_capital
+# For compatibility with chart code below, create local variables
+direct_military_expenditure = MILITARY_SPENDING
+infrastructure_destruction = INFRASTRUCTURE_DESTRUCTION
+human_life_losses = HUMAN_LIFE_LOSSES
+trade_disruption = TRADE_DISRUPTION
+total_direct_costs = TOTAL_DIRECT_COSTS
 
-# Grand Total
-total_cost_of_war = total_direct_costs + total_indirect_costs
+lost_economic_growth = LOST_ECONOMIC_GROWTH
+veteran_healthcare = VETERAN_HEALTHCARE
+refugee_support = REFUGEE_SUPPORT
+environmental_damage = ENVIRONMENTAL_DAMAGE
+psychological_impact = PSYCHOLOGICAL_IMPACT
+lost_human_capital = LOST_HUMAN_CAPITAL
+total_indirect_costs = TOTAL_INDIRECT_COSTS
 
-# --- Calculations for 1% Reduction ---
+total_cost_of_war = TOTAL_WAR_COST
+reduction_percentage = TREATY_REDUCTION_PCT
+captured_dividend = CAPTURED_DIVIDEND
+societal_dividend = SOCIETAL_DIVIDEND
 
-reduction_percentage = 0.01
-
-# Captured Dividend (from direct military spending)
-captured_dividend = direct_military_expenditure * reduction_percentage
-
-# Societal Dividend (from total costs)
-societal_dividend = total_cost_of_war * reduction_percentage
-
-# Print the results
+# Print the results using standardized parameters
 print(f"--- 1% Peace Dividend Analysis ---")
-print(f"Total Annual Cost of War: ${total_cost_of_war:,.1f} Billion")
+print(f"Total Annual Cost of War: {format_billions(total_cost_of_war)}")
 print("-" * 35)
-print(f"Captured Dividend (1% of Military Spend): ${captured_dividend:,.2f} Billion")
-print(f"Societal Dividend (1% of Total Costs): ${societal_dividend:,.2f} Billion")
+print(f"Captured Dividend (1% of Military Spend): {format_billions(captured_dividend)}")
+print(f"Societal Dividend (1% of Total Costs): {format_billions(societal_dividend)}")
 ```
 
 ## Military vs. Disease Research Funding

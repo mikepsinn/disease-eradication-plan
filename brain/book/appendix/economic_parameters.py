@@ -55,6 +55,13 @@ TOTAL_INDIRECT_COSTS = (
 # Grand total war costs
 TOTAL_WAR_COST = TOTAL_DIRECT_COSTS + TOTAL_INDIRECT_COSTS  # $11,355.1B
 
+# Conflict death breakdown (for QALY calculations)
+# Source: brain/book/problem/cost-of-war.qmd#death-accounting
+CONFLICT_DEATHS_ACTIVE_COMBAT = 233600  # ACLED data
+CONFLICT_DEATHS_TERROR_ATTACKS = 8300  # Global Terrorism Database
+CONFLICT_DEATHS_STATE_VIOLENCE = 2700  # Uppsala Conflict Data Program
+# Note: Total should equal 244,600
+
 # Treaty parameters
 TREATY_REDUCTION_PCT = 0.01  # 1% reduction in military spending/war costs
 CAPTURED_DIVIDEND = MILITARY_SPENDING * TREATY_REDUCTION_PCT  # $27.18B
@@ -78,6 +85,14 @@ DFDA_TARGET_COST_PER_PATIENT = 1000  # Conservative target for dFDA
 # dFDA operational costs
 DFDA_ANNUAL_OPEX = 0.040  # $40M annually
 DFDA_UPFRONT_BUILD = 0.040  # $40M one-time build cost
+
+# dFDA operational cost breakdown (in billions)
+DFDA_OPEX_PLATFORM_MAINTENANCE = 0.015  # $15M
+DFDA_OPEX_STAFF = 0.010  # $10M - minimal, AI-assisted
+DFDA_OPEX_INFRASTRUCTURE = 0.008  # $8M - cloud, security
+DFDA_OPEX_REGULATORY = 0.005  # $5M - regulatory coordination
+DFDA_OPEX_COMMUNITY = 0.002  # $2M - community support
+# Total should equal DFDA_ANNUAL_OPEX ($40M)
 
 # Calculated benefits
 DFDA_GROSS_SAVINGS = GLOBAL_TRIAL_MARKET * TRIAL_COST_REDUCTION_PCT  # $50B
@@ -114,6 +129,16 @@ TOTAL_LIVES_SAVED_ANNUAL = TOTAL_QALYS_ANNUAL / QALYS_PER_LIFE  # 26,446 lives
 CAMPAIGN_TOTAL_COST = 1.0  # $1B total campaign cost
 CAMPAIGN_DURATION_YEARS = 4  # 3-5 year range, using midpoint
 CAMPAIGN_ANNUAL_COST_AMORTIZED = CAMPAIGN_TOTAL_COST / CAMPAIGN_DURATION_YEARS  # $250M
+
+# Campaign budget breakdown (in billions)
+CAMPAIGN_BUDGET_VIRAL_REFERENDUM = 0.200  # $200M viral referendum
+CAMPAIGN_BUDGET_AI_LOBBYING = 0.250  # $250M AI-assisted lobbying
+CAMPAIGN_BUDGET_TECHNOLOGY = 0.250  # $250M technology platform
+CAMPAIGN_BUDGET_LEGAL = 0.100  # $100M legal & compliance
+CAMPAIGN_BUDGET_PARTNERSHIPS = 0.100  # $100M partnerships
+CAMPAIGN_BUDGET_OPERATIONS = 0.050  # $50M operations
+CAMPAIGN_BUDGET_RESERVE = 0.050  # $50M reserve
+# Total should equal CAMPAIGN_TOTAL_COST ($1B)
 
 # Total system costs
 TOTAL_ANNUAL_COSTS = CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX  # $290M ($0.29B)
@@ -165,6 +190,15 @@ VICTORY_BOND_ANNUAL_PAYOUT = CAPTURED_DIVIDEND * VICTORY_BOND_FUNDING_PCT  # $2.
 VICTORY_BOND_UPFRONT_RAISE = CAMPAIGN_TOTAL_COST  # $1B
 VICTORY_BOND_ANNUAL_RETURN_PCT = VICTORY_BOND_ANNUAL_PAYOUT / VICTORY_BOND_UPFRONT_RAISE  # 271.8% (reported as 270%)
 VICTORY_BOND_PAYBACK_MONTHS = 12 / VICTORY_BOND_ANNUAL_RETURN_PCT  # 4.4 months
+
+# DIH Treasury allocations (in billions)
+# Source: brain/book/appendix/icer-full-calculation.qmd
+DIH_TREASURY_MILITARY_REDIRECT = CAPTURED_DIVIDEND  # $27B/year redirected from military budgets
+DIH_TREASURY_TO_VICTORY_BONDS = VICTORY_BOND_ANNUAL_PAYOUT  # $2.7B/year to bondholders (10%)
+DIH_TREASURY_TO_RESEARCH = DIH_TREASURY_MILITARY_REDIRECT - DIH_TREASURY_TO_VICTORY_BONDS  # $24.3B/year
+DIH_TREASURY_DFDA_OPERATIONS = DFDA_ANNUAL_OPEX  # $40M/year for dFDA operations
+DIH_TREASURY_TRIAL_SUBSIDIES_MIN = 10.0  # $10B/year clinical trial subsidies (minimum)
+DIH_TREASURY_TRIAL_SUBSIDIES_MAX = 20.0  # $20B/year clinical trial subsidies (maximum)
 
 # ============================================================================
 # REFERENCE VALUES (for comparisons)
@@ -246,6 +280,66 @@ TOTAL_ENDGAME_BENEFITS = (
 )  # $16,514B (~$16.5T)
 
 ENDGAME_ROI = TOTAL_ENDGAME_BENEFITS / (CAMPAIGN_TOTAL_COST * 0.64)  # 25,781:1 (using $640M annual opex)
+
+# ============================================================================
+# SENSITIVITY ANALYSIS SCENARIOS
+# ============================================================================
+
+# Source: brain/book/appendix/icer-full-calculation.qmd sensitivity tables
+
+# Conservative scenario
+SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE = 50.0  # $50B
+SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE = 25.0  # $25B
+SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE = 75.0  # $75B
+SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE = 0.333  # $333M/year (3-year amortization)
+SENSITIVITY_DFDA_OPEX_CONSERVATIVE = 0.060  # $60M/year
+SENSITIVITY_TOTAL_COSTS_CONSERVATIVE = 0.393  # $393M/year
+SENSITIVITY_PEACE_QALYS_CONSERVATIVE = 17500  # 500 lives × 35 QALYs/life
+SENSITIVITY_DFDA_QALYS_CONSERVATIVE = 420000  # Conservative health benefit
+SENSITIVITY_TOTAL_QALYS_CONSERVATIVE = 437500  # Total QALYs
+SENSITIVITY_NET_BENEFIT_CONSERVATIVE = 74.6  # $74.6B
+SENSITIVITY_ICER_CONSERVATIVE = -170514  # -$170,514 per QALY
+SENSITIVITY_COST_PER_LIFE_CONSERVATIVE = -5.97  # -$5.97M per life (in millions)
+
+# Central scenario (baseline)
+SENSITIVITY_PEACE_DIVIDEND_CENTRAL = SOCIETAL_DIVIDEND  # $114B
+SENSITIVITY_DFDA_SAVINGS_CENTRAL = DFDA_GROSS_SAVINGS  # $50B
+SENSITIVITY_TOTAL_BENEFITS_CENTRAL = TOTAL_ANNUAL_BENEFITS  # $164B
+SENSITIVITY_CAMPAIGN_COST_CENTRAL = CAMPAIGN_ANNUAL_COST_AMORTIZED  # $250M/year
+SENSITIVITY_DFDA_OPEX_CENTRAL = DFDA_ANNUAL_OPEX  # $40M/year
+SENSITIVITY_TOTAL_COSTS_CENTRAL = TOTAL_ANNUAL_COSTS  # $290M/year
+SENSITIVITY_PEACE_QALYS_CENTRAL = PEACE_QALYS_ANNUAL  # 35,000 QALYs
+SENSITIVITY_DFDA_QALYS_CENTRAL = DFDA_QALYS_ANNUAL  # 840,000 QALYs
+SENSITIVITY_TOTAL_QALYS_CENTRAL = TOTAL_QALYS_ANNUAL  # 875,000 QALYs
+SENSITIVITY_NET_BENEFIT_CENTRAL = NET_ANNUAL_BENEFIT  # $163.7B
+SENSITIVITY_ICER_CENTRAL = -187097  # -$187,097 per QALY
+SENSITIVITY_COST_PER_LIFE_CENTRAL = -6.55  # -$6.55M per life (in millions)
+
+# Optimistic scenario
+SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC = 200.0  # $200B
+SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC = 95.0  # $95B
+SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC = 295.0  # $295B
+SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC = 0.200  # $200M/year (5-year amortization)
+SENSITIVITY_DFDA_OPEX_OPTIMISTIC = 0.030  # $30M/year
+SENSITIVITY_TOTAL_COSTS_OPTIMISTIC = 0.230  # $230M/year
+SENSITIVITY_PEACE_QALYS_OPTIMISTIC = 52500  # 1,500 lives × 35 QALYs/life
+SENSITIVITY_DFDA_QALYS_OPTIMISTIC = 2100000  # Optimistic health benefit
+SENSITIVITY_TOTAL_QALYS_OPTIMISTIC = 2152500  # Total QALYs
+SENSITIVITY_NET_BENEFIT_OPTIMISTIC = 294.8  # $294.8B
+SENSITIVITY_ICER_OPTIMISTIC = -136945  # -$136,945 per QALY
+SENSITIVITY_COST_PER_LIFE_OPTIMISTIC = -4.79  # -$4.79M per life (in millions)
+
+# Alternative ICER calculations based on funding perspective
+# Source: icer-full-calculation.qmd alternative ICER table
+ICER_CONSERVATIVE_ALL_COSTS = SENSITIVITY_ICER_CONSERVATIVE  # -$187,097 (counts all costs)
+ICER_INVESTOR_FUNDED = -187429  # -$187,429 (campaign funded by VICTORY bonds, cost = $0)
+ICER_OPPORTUNITY_COST = -156571  # -$156,571 (counts $27B redirected military spending)
+ICER_WASTE_CONVERSION = None  # Undefined (military spending has negative ROI)
+
+COST_PER_LIFE_CONSERVATIVE_ALL_COSTS = SENSITIVITY_COST_PER_LIFE_CENTRAL  # -$6.55M
+COST_PER_LIFE_INVESTOR_FUNDED = -6.56  # -$6.56M
+COST_PER_LIFE_OPPORTUNITY_COST = -5.48  # -$5.48M
+COST_PER_LIFE_WASTE_CONVERSION = None  # Undefined
 
 # ============================================================================
 # HELPER FUNCTIONS
@@ -368,6 +462,25 @@ def validate_parameters():
                           BENEFIT_DRUG_PRICE_REDUCTION + BENEFIT_PREVENTION + BENEFIT_MENTAL_HEALTH)
     if abs(TOTAL_COMPLETE_BENEFITS - calculated_complete) > 0.1:
         errors.append(f"Complete benefits mismatch: {TOTAL_COMPLETE_BENEFITS} vs {calculated_complete}")
+
+    # Check campaign budget breakdown sums to total
+    campaign_budget_sum = (CAMPAIGN_BUDGET_VIRAL_REFERENDUM + CAMPAIGN_BUDGET_AI_LOBBYING +
+                          CAMPAIGN_BUDGET_TECHNOLOGY + CAMPAIGN_BUDGET_LEGAL +
+                          CAMPAIGN_BUDGET_PARTNERSHIPS + CAMPAIGN_BUDGET_OPERATIONS + CAMPAIGN_BUDGET_RESERVE)
+    if abs(campaign_budget_sum - CAMPAIGN_TOTAL_COST) > 0.001:
+        errors.append(f"Campaign budget breakdown mismatch: {campaign_budget_sum} vs {CAMPAIGN_TOTAL_COST}")
+
+    # Check dFDA opex breakdown sums to total
+    dfda_opex_sum = (DFDA_OPEX_PLATFORM_MAINTENANCE + DFDA_OPEX_STAFF + DFDA_OPEX_INFRASTRUCTURE +
+                    DFDA_OPEX_REGULATORY + DFDA_OPEX_COMMUNITY)
+    if abs(dfda_opex_sum - DFDA_ANNUAL_OPEX) > 0.001:
+        errors.append(f"dFDA opex breakdown mismatch: {dfda_opex_sum} vs {DFDA_ANNUAL_OPEX}")
+
+    # Check conflict deaths sum to total
+    conflict_deaths_sum = (CONFLICT_DEATHS_ACTIVE_COMBAT + CONFLICT_DEATHS_TERROR_ATTACKS +
+                          CONFLICT_DEATHS_STATE_VIOLENCE)
+    if abs(conflict_deaths_sum - ANNUAL_CONFLICT_DEATHS) > 1:
+        errors.append(f"Conflict deaths breakdown mismatch: {conflict_deaths_sum} vs {ANNUAL_CONFLICT_DEATHS}")
 
     # Warnings for values that should be close but might differ slightly
     if abs(SOCIETAL_DIVIDEND - 114.0) > 1.0:

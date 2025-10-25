@@ -132,7 +132,7 @@ const chapterEmojiMap: Record<string, string> = {
 
   // Appendix - Detailed Calculations
   'brain/book/appendix/peace-dividend-analysis.qmd': '☮️',
-  'brain/book/appendix/1-percent-treaty-peace-dividend-analysis.qmd': '📈',
+  'brain/book/appendix/peace-dividend-breakdown.qmd': '📈',
   'brain/book/appendix/dfda-cost-benefit-analysis.qmd': '⚖️',
   'brain/book/appendix/dfda-roi-breakdown.qmd': '📊',
   'brain/book/appendix/economic-value-of-accelerated-treatments.qmd': '💎',
