@@ -11,7 +11,7 @@ This section quantifies the potential societal benefits of the dFDA Infrastructu
 
 The global pharmaceutical and medical device R&D market is vast. Annual global spending on [clinical trials alone was estimated to be in the range of **USD 60-80 billion in 2024, and projected to exceed USD 100 billion by the early 2030s**](../references.qmd#clinical-trial-market-size). A significant portion of this expenditure is addressable by the efficiencies dFDA aims to introduce. If dFDA can capture even a fraction of this market by demonstrating superior efficiency and data quality, its economic impact will be substantial.
 
-For this analysis, we use a conservative baseline estimate of [**\$100 billion per year in global clinical trial spending**](../references.qmd#clinical-trial-spending) that is potentially addressable by dFDA through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
+For this analysis, we use a conservative baseline estimate of [**\$100 billion per year in global clinical trial spending**](../references.qmd#clinical-trial-spending-dfda-baseline) that is potentially addressable by dFDA through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
 
 - **Current Average Costs**: Various estimates suggest [\$1.0 - \$2.5 billion to bring a new drug from discovery through FDA approval](../references.qmd#drug-development-cost), spread across ~10 years.
 - **Clinical Trial Phase Breakdown**:
@@ -91,10 +91,10 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
   - The [UK RECOVERY trial achieved cost reductions of ~80-98% per patient](../references.qmd#recovery-trial-cost-reduction) compared to traditional trials.
   - _Note on R&D Savings Estimates_: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), the average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
 - **Range Used in Sensitivity Analysis**:
-  - Conservative: 30% (saving $30B annually from a [$100B addressable spend](../references.qmd#clinical-trial-spending))
-  - Base Case: **50% (saving $50B annually)** from a [$100B addressable spend](../references.qmd#clinical-trial-spending)
-  - Optimistic: 70% (saving $70B annually) from a [$100B addressable spend](../references.qmd#clinical-trial-spending)
-  - Transformative (RECOVERY Trial-like): 95% (saving $95B annually) from a [$100B addressable spend](../references.qmd#clinical-trial-spending)
+  - Conservative: 30% (saving $30B annually from a [$100B addressable spend](../references.qmd#clinical-trial-spending-dfda-baseline))
+  - Base Case: **50% (saving $50B annually)** from a [$100B addressable spend](../references.qmd#clinical-trial-spending-dfda-baseline)
+  - Optimistic: 70% (saving $70B annually) from a [$100B addressable spend](../references.qmd#clinical-trial-spending-dfda-baseline)
+  - Transformative (RECOVERY Trial-like): 95% (saving $95B annually) from a [$100B addressable spend](../references.qmd#clinical-trial-spending-dfda-baseline)
 
 **For detailed source citations, see:**
 - [DCT Cost Reductions Evidence](../references.qmd#dct-cost-reductions-evidence)
