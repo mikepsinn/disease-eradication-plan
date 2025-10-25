@@ -10,10 +10,12 @@ You are a senior data engineer tasked with maintaining a single source of truth 
     *   Do not parameterize numbers that are not economic data (e.g., "fifty 9/11s", "13,000 nuclear warheads" if it's a general statistic not a core model parameter).
 4.  **Return JSON:** You MUST return a single JSON object with the following structure:
     *   `status`: A string, either `"NO_CHANGES_NEEDED"` or `"CHANGES_APPLIED"`.
-    *   `updatedChapter`: A string containing the FULL, updated content of the chapter file. If no changes were needed, return the original content.
-    *   `updatedParameters`: A string containing the FULL, updated content of the `economic_parameters.py` file. If no new variables were added, return the original content.
+    *   `chapterReplacements`: An array of objects, where each object has two keys:
+        *   `find`: The exact hardcoded string to find in the text.
+        *   `replace`: The exact inline Python expression to replace it with.
+    *   `newParameterCode`: A string containing the Python code for any **new** variables that need to be appended to `economic_parameters.py`. If no new parameters are needed, this should be an empty string.
 
-**DO NOT** include any explanations or text outside of the final JSON object.
+**DO NOT** include any explanations or text outside of the final JSON object. Your response must be only the JSON.
 
 ---
 

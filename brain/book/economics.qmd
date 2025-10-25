@@ -12,7 +12,7 @@ tags:
   - coalition
 lastFormatted: 2025-10-16T00:00:00.000Z
 lastStyleCheck: 2025-10-16T00:00:00.000Z
-lastParamCheckHash: 20ef6ff2684c8232160115058760a0b048ce3268574e284f21b1972b11c0281d
+lastParamCheckHash: c6c1adaae3f668e0729df5aa12f73a0ddedccc987de87895bcc8ca8701b1864c
 ---
 ```{python}
 #| echo: false
@@ -85,7 +85,7 @@ All calculations in our [Economic Models Notebook](./economics/economic_models.i
 
 **Total Annual Benefit: ~`{python} format_billions(TOTAL_ANNUAL_BENEFITS)` per year.**
 
-*Even in worst-case scenarios, the system achieves ROI between **375:1 and 3,500:1**.*
+*Even in worst-case scenarios, the system achieves ROI between **`{python} format_roi(SENSITIVITY_ROI_WORST_CASE)` and `{python} format_roi(SENSITIVITY_ROI_BEST_CASE)`**.*
 
 ### Why This ROI Beats History
 
@@ -179,7 +179,7 @@ This plan doesn't cost money, it *makes* money while saving lives. Instead of as
 | **Smoking Cessation** | Prevents expensive chronic diseases (cancer, heart disease) through low-cost interventions | Billions to Tens of Billions |
 | **Water Fluoridation** | Avoids dental care costs for entire populations at negligible cost | Hundreds of Millions to Billions |
 | **1% Treaty (Peace Dividend)** | Reduces global conflict costs by 1%, creating massive economic benefit | **~`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`, Annually** |
-| **dFDA (R&D Efficiency)** | Makes clinical research ~80x more efficient, unlocking huge R&D savings | **~`{python} format_billions(DFDA_GROSS_SAVINGS)`, Annually** |
+| **dFDA (R&D Efficiency)** | Makes clinical research ~`{python} TRIAL_COST_REDUCTION_FACTOR`}x more efficient, unlocking huge R&D savings | **~`{python} format_billions(DFDA_GROSS_SAVINGS)`, Annually** |
 
 **Why This Is Different:**
 
@@ -196,7 +196,7 @@ Instead of solving one problem, this uses a global-scale win to fund a system-sc
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
-The `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` annual economic benefit (conservative case) makes this intervention nearly **11× larger than childhood vaccinations** (one of the most successful public health programs in history).
+The `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` annual economic benefit (conservative case) makes this intervention nearly **`{python} f"{MULTIPLIER_VS_VACCINES:.0f}×"` larger than childhood vaccinations** (one of the most successful public health programs in history).
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates the wealth needed to sustain itself through VICTORY bonds that pay investors `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns.
 
@@ -207,10 +207,10 @@ Unlike traditional interventions that require ongoing charitable funding, the 1%
 Every second we don't implement this system:
 
 - **`${python} f'${ENDGAME_BENEFIT_PER_SECOND:,.0f}'`** in value destroyed
-- **26.6 quality life-days** lost
-- **0.018 preventable deaths** occur
+- **`{python} f"{COST_OF_DELAY_QALY_DAYS_PER_SECOND:.1f}"` quality life-days** lost
+- **`{python} f"{COST_OF_DELAY_DEATHS_PER_SECOND:.3f}"` preventable deaths** occur
 
-By the time you finish reading this sentence, we've lost $2 million.
+By the time you finish reading this sentence, we've lost roughly `{python} format_currency(ENDGAME_BENEFIT_PER_SECOND * 4)`.
 
 Every day we delay:
 
@@ -221,7 +221,7 @@ Every day we delay:
 
 Every year we wait is `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` lit on fire.
 Every day is `{python} format_billions(ENDGAME_BENEFIT_PER_DAY)` wasted.
-Every hour is `{python} format_currency(ENDGAME_BENEFIT_PER_HOUR)}` gone.
+Every hour is `{python} format_currency(ENDGAME_BENEFIT_PER_HOUR)` gone.
 
 The `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` isn't a dream. It's the mathematical consequence of redirecting humanity's resources from destruction to construction, from killing to curing, from war to wellness.
 
@@ -234,7 +234,7 @@ The details are in [VICTORY Bonds](economics/victory-bonds.qmd), but here's the 
 - **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns** (perpetual)
 - Funded by 10% of the `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual treaty revenue
 - Makes investors richer than any hedge fund in history
-- Generates the $1B needed to win the global referendum
+- Generates the `{python} format_billions(CAMPAIGN_TOTAL_COST)` needed to win the global referendum
 
 See also:
 - **[Investment Thesis](economics/victory-bonds.qmd)** - Why this is the most profitable investment in history
@@ -248,7 +248,7 @@ See also:
 See [The Coalition That Ends War](economics/coalition-that-wins.qmd) for the complete breakdown of how to co-opt:
 
 - Defense contractors (pivot to medical R&D)
-- Pharma companies (10X more customers at 1/82nd the cost)
+- Pharma companies (10X more customers at 1/`{python} TRIAL_COST_REDUCTION_FACTOR`} of the cost)
 - Insurance companies (healthier customers = higher profits)
 - Politicians (visible results = re-election)
 - Investors (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns)
@@ -275,4 +275,3 @@ Humanity can keep spending `{python} format_currency(TOTAL_GLOBAL_WASTE_SPEND)` 
 Or it can make between `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` and `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` per year ending both.
 
 The ROI ranges from `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` to `{python} format_roi(ROI_TIER_3_ENDGAME)`, depending on what you count.
-

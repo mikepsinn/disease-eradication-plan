@@ -774,7 +774,7 @@ export async function generateFigureForChapter(filePath: string): Promise<{ acti
 export async function parameterizeFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nChecking for hardcoded numbers in ${filePath} with Gemini...`);
   const originalContent = await fs.readFile(filePath, 'utf-8');
-  const { data: frontmatter, content: body } = matter(originalContent);
+  let { data: frontmatter, content: body } = matter(originalContent);
 
   const parametersFile = await fs.readFile('brain/book/appendix/economic_parameters.py', 'utf-8');
   const exampleFile = await fs.readFile('index.qmd', 'utf-8');
@@ -797,17 +797,22 @@ export async function parameterizeFileWithLLM(filePath: string): Promise<void> {
   if (result.status === 'NO_CHANGES_NEEDED') {
     console.log(`No parameterization needed for ${filePath}.`);
   } else {
-    if (result.updatedChapter) {
-      const newContent = matter.stringify(result.updatedChapter, frontmatter);
+    let updatedBody = body;
+    if (result.chapterReplacements && result.chapterReplacements.length > 0) {
+      for (const replacement of result.chapterReplacements) {
+        updatedBody = updatedBody.replace(replacement.find, replacement.replace);
+      }
+      const newContent = matter.stringify(updatedBody, frontmatter);
       await saveFile(filePath, newContent);
       console.log(`✓ Successfully parameterized ${filePath}.`);
+      body = updatedBody; // Update body for hash calculation
     }
-    if (result.updatedParameters) {
-      await saveFile('brain/book/appendix/economic_parameters.py', result.updatedParameters);
+    if (result.newParameterCode) {
+      await fs.appendFile('brain/book/appendix/economic_parameters.py', '\n' + result.newParameterCode);
       console.log(`✓ Successfully updated economic_parameters.py.`);
     }
   }
 
   // Update hash to prevent re-running
-  await updateFileWithHash(filePath, result.updatedChapter || body, frontmatter, 'lastParamCheckHash');
+  await updateFileWithHash(filePath, body, frontmatter, 'lastParamCheckHash');
 }
