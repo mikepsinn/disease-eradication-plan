@@ -13,7 +13,6 @@ This document provides a central overview of the contribution process. For detai
 - **[Writing Style Guide](GUIDES/STYLE_GUIDE.md)**: Tone, voice, and prose style.
 - **[Design Guide](GUIDES/DESIGN_GUIDE.md)**: Visual standards for charts and diagrams.
 - **[Technical Guide](GUIDES/TECHNICAL_GUIDE.md)**: Development setup and technical standards.
-- **[Content Review Process](GUIDES/CONTENT_REVIEW_PROCESS.md)**: The systematic process for reviewing and ensuring content quality.
 - **[Content and Style Standards](./GUIDES/CONTENT_STANDARDS.md)**: Standards for information architecture, quality assurance, and formatting.
 
 **Table of Contents**
