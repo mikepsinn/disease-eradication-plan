@@ -54,7 +54,7 @@ The dFDA Infrastructure's primary economic impact comes from significantly reduc
 
 - Calculated as: `(Platform Operational Costs) - (Gross R and D Savings from dFDA)`
 - **Baseline Assumptions for R&D Savings (same as before):**
-  - Global Clinical Trial Spending Addressable by dFDA: **`{python} format_billions(GLOBAL_TRIAL_MARKET)` / year**.
+  - Global Clinical Trial Spending Addressable by dFDA: **`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` / year**.
   - R&D Trial Cost Reduction due to dFDA (Baseline): **`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)`**. (Leads to `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
 
 - **Aggregate Annual QALYs Gained (ΔQALYs_total):** The number of QALYs generated annually by the dFDA Infrastructure is a composite metric derived from a detailed model in the appendix. The model provides a range of estimates based on the successful realization of the platform's potential.
@@ -72,7 +72,7 @@ For a complete breakdown of the assumptions, data sources (including NBER workin
 
 #### Sensitivity Analysis Overall dFDA Infrastructure Cost-Effectiveness
 
-This table analyzes the ICER for the dFDA Infrastructure by varying key assumptions. Global Clinical Trial Spending Addressable by dFDA is assumed at `{python} format_billions(GLOBAL_TRIAL_MARKET)`/year (leading to `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` gross savings in the `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction scenario) unless otherwise specified.
+This table analyzes the ICER for the dFDA Infrastructure by varying key assumptions. Global Clinical Trial Spending Addressable by dFDA is assumed at `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)`/year (leading to `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` gross savings in the `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction scenario) unless otherwise specified.
 
 | Scenario                                             | R&D Trial Cost Reduction   | Platform Op. Cost (Annual) | Net Incremental Cost (Annual) | Aggregate QALYs Gained (Annual) | ICER (Cost per QALY Gained) | Classification                          | Source/Note                                                                                                                                                                                                                                                                           |
 | ---------------------------------------------------- | -------------------------- | -------------------------- | ----------------------------- | ------------------------------- | --------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

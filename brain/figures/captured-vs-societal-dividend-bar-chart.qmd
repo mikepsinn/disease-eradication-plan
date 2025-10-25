@@ -51,7 +51,7 @@ def add_modern_watermark(fig):
 #| echo: false
 dividends_data = {
     'Type': ['Captured\nDividend', 'Total Societal\nDividend'],
-    'Amount ($B)': [CAPTURED_DIVIDEND, SOCIETAL_DIVIDEND]
+    'Amount ($B)': [TREATY_ANNUAL_FUNDING, SOCIETAL_DIVIDEND]
 }
 dividends_df = pd.DataFrame(dividends_data)
 

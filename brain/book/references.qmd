@@ -598,7 +598,7 @@ from economic_parameters import *
 <a id="clinical-trial-spending-dfda-baseline"></a>
 
 - **Annual global clinical trial spending**
-  > Conservative baseline estimate of `{python} format_billions(GLOBAL_TRIAL_MARKET)` per year in global clinical trial spending potentially addressable by dFDA through decentralization, automation, and real-world data integration. Based on market projections exceeding `{python} format_billions(GLOBAL_TRIAL_MARKET)` by early 2030s.
+  > Conservative baseline estimate of `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` per year in global clinical trial spending potentially addressable by dFDA through decentralization, automation, and real-world data integration. Based on market projections exceeding `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` by early 2030s.
   > — Fortune Business Insights, [Clinical Trials Market](https://www.fortunebusinessinsights.com/clinical-trials-market-106930) | Global Market Insights, [Clinical Trials Market Forecast](https://www.gminsights.com/industry-analysis/clinical-trials-market)
 
 <a id="cmmi-overview"></a>
@@ -898,7 +898,7 @@ from economic_parameters import *
   > Range: 66:1 to 2,577:1 depending on total ecosystem costs
   > Based on: $37.5-46M upfront platform investment + operational costs vs `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` annual R&D savings
   > Value proposition: 80X reduction in per-patient trial costs; `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` gross annual savings from pharma R&D
-  > Pharmaceutical industry spends ~`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year on R&D; `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction yields enormous net savings
+  > Pharmaceutical industry spends ~`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)`/year on R&D; `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction yields enormous net savings
   > — [dFDA: Cost Benefit Analysis](https://wiki.dfda.earth/en/economic-models/dfda-cost-benefit-analysis) | [dFDA Wiki](https://wiki.dfda.earth/)
 
 <a id="diabetes-deaths-2m-annually"></a>

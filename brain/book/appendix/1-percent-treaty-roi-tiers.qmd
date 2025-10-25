@@ -44,7 +44,7 @@ The 1% Treaty doesn't just make trials cheaper. It:
 3. **Accelerates access by 7 years** (saves $300B via early trial access)
 4. **115X more research capacity** (adds $100B via 10-20X more breakthroughs)
 5. **Enables treatment of rare/orphan diseases** (adds $400B)
-6. **Reduces drug prices via R&D savings** (saves `{python} format_billions(GLOBAL_TRIAL_MARKET)`)
+6. **Reduces drug prices via R&D savings** (saves `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)`)
 7. **Makes prevention economically viable** (saves $100B)
 8. **Addresses mental health treatment gap** (adds $75B)
 
@@ -124,9 +124,9 @@ These are NOT rare diseases (already counted). These are common diseases with li
 | [Peace Dividend](../economics/peace-dividend.qmd) | $97B | Societal savings from 1% reduction in global conflict |
 | R&D Cost Savings | `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` | `{python} TRIAL_COST_REDUCTION_FACTOR`x trial cost reduction |
 | **Earlier Access (7 years)** | **$300B** | Existing pipeline accessed sooner |
-| **Research Acceleration** | **`{python} format_billions(GLOBAL_TRIAL_MARKET)`** | 115X more trials = 10-20X more breakthroughs |
+| **Research Acceleration** | **`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)`** | 115X more trials = 10-20X more breakthroughs |
 | New Diseases Treatable | $400B | Rare diseases, orphan drugs |
-| Drug Price Reduction | `{python} format_billions(GLOBAL_TRIAL_MARKET)` | R&D savings passed to consumers |
+| Drug Price Reduction | `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` | R&D savings passed to consumers |
 | Prevention Medicine | $100B | Economic viability of prevention |
 | Mental Health Impact | $75B | Treatment gap reduction |
 | | | |

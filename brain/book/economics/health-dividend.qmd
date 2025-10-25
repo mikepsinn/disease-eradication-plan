@@ -47,7 +47,7 @@ The dFDA takes this model global. **80-160x cost reduction**. Same quality data.
 
 ## Where the $50 Billion Comes From
 
-Global clinical trial spending: **`{python} format_billions(GLOBAL_TRIAL_MARKET)` per year** (and growing).
+Global clinical trial spending: **`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` per year** (and growing).
 
 Conservative estimate: dFDA captures 50% efficiency gains across the market.
 

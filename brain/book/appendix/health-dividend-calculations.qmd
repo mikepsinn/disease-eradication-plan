@@ -114,7 +114,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 
 # Use parameters from economic_parameters.py
-global_clinical_trial_market = GLOBAL_TRIAL_MARKET  # $100B
+global_clinical_trial_market = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL  # $100B
 dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT  # 50%
 dfda_annual_operational_cost = DFDA_ANNUAL_OPEX  # $0.040B ($40M)
 
@@ -230,7 +230,7 @@ C0 = DIH_NPV_UPFRONT_COST_TOTAL  # $0.26975B (core platform + medium broader ini
 Cop = DIH_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiatives)
 
 # Savings (in billions USD) - from economic_parameters.py
-Rd = GLOBAL_TRIAL_MARKET  # $100B annual global R&D spend on clinical trials
+Rd = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL  # $100B annual global R&D spend on clinical trials
 alpha = TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
 
 # Financial Parameters - from economic_parameters.py

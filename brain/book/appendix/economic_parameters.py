@@ -123,7 +123,7 @@ PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_R
 
 # Clinical trial market
 # Source: brain/book/appendix/dfda-roi-calculations.qmd
-GLOBAL_TRIAL_MARKET = 100.0  # billions USD annually
+GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL = 100.0  # billions USD annually
 TRIAL_COST_REDUCTION_PCT = 0.50  # 50% baseline reduction (conservative)
 TRIAL_COST_REDUCTION_FACTOR = 82  # 82x reduction proven by RECOVERY trial
 
@@ -145,7 +145,7 @@ DFDA_OPEX_COMMUNITY = 0.002  # $2M - community support
 # Total should equal DFDA_ANNUAL_OPEX ($40M)
 
 # Calculated benefits
-DFDA_GROSS_SAVINGS_ANNUAL = GLOBAL_TRIAL_MARKET * TRIAL_COST_REDUCTION_PCT  # $50B
+DFDA_GROSS_SAVINGS_ANNUAL = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL * TRIAL_COST_REDUCTION_PCT  # $50B
 DFDA_NET_SAVINGS_ANNUAL = DFDA_GROSS_SAVINGS_ANNUAL - DFDA_ANNUAL_OPEX  # $49.96B
 
 # Simple ROI (not NPV-adjusted)
@@ -318,7 +318,6 @@ WATER_FLUORIDATION_ROI = 23  # 23:1
 # ---
 
 # Source: brain/book/economics.qmd complete case section
-BENEFIT_PEACE_DIVIDEND_ANNUAL = 97.0  # Restructured allocation (slightly different from societal dividend)
 BENEFIT_RD_SAVINGS_ANNUAL = 50.0  # 82x cheaper trials
 BENEFIT_EARLIER_ACCESS_ANNUAL = 300.0  # 7-year acceleration
 BENEFIT_RESEARCH_ACCELERATION_ANNUAL = 100.0  # 115x more research capacity
@@ -328,7 +327,7 @@ BENEFIT_PREVENTION_ANNUAL = 100.0  # Economic viability of prevention
 BENEFIT_MENTAL_HEALTH_ANNUAL = 75.0  # Treatment gap reduction
 
 TOTAL_COMPLETE_BENEFITS_ANNUAL = (
-    BENEFIT_PEACE_DIVIDEND_ANNUAL
+    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT
     + BENEFIT_RD_SAVINGS_ANNUAL
     + BENEFIT_EARLIER_ACCESS_ANNUAL
     + BENEFIT_RESEARCH_ACCELERATION_ANNUAL
@@ -592,7 +591,6 @@ TOTAL_WAR_COST_TO_WHO_BUDGET_RATIO = 168  # Total war cost is 168x WHO budget (o
 # ---
 
 # Alias for consistency with book text
-CAPTURED_DIVIDEND = TREATY_ANNUAL_FUNDING # Alias for TREATY_ANNUAL_FUNDING as used in some chapter contexts
 
 # Campaign & Strategy Specifics
 TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY = 0.140 # billions USD, for bribing the masses (voting bloc build)
@@ -634,7 +632,7 @@ TREATMENT_ACCELERATION_YEARS_CURRENT = 17 # Years to market with traditional FDA
 
 # Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
 # This sum is distinct from TREATY_TOTAL_ANNUAL_BENEFITS which uses different categories for broader calculation.
-COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = BENEFIT_PEACE_DIVIDEND_ANNUAL + BENEFIT_RD_SAVINGS_ANNUAL
+COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + BENEFIT_RD_SAVINGS_ANNUAL
 
 # System effectiveness & ROI comparisons
 PROFIT_PER_LIFE_SAVED = 167771 # USD, profit per life saved from the system (specific calculation in text)

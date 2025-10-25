@@ -45,7 +45,7 @@ The return on investment for the dFDA Infrastructure is exceptionally high due t
 _Initial Note on Operational Costs in this ROI Scenario:_
 _The following ROI calculation primarily uses cost figures derived from the detailed ROM estimates in [Costs of Building and Operating the Global Decentralized FDA (ROM Estimate)](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate). This includes the core platform build and operational costs, as well as scenarios for broader initiative costs. This approach provides a more grounded basis for the ROI than previous high-level conceptual figures for a fully scaled global ecosystem._
 
-- **Industry R&D Spend** (Baseline): [`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year](#market-size-and-impact) globally (approx.).
+- **Industry R&D Spend** (Baseline): [`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)`/year](#market-size-and-impact) globally (approx.).
 - **Potential Savings**: `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction implies [`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`/year saved](#gross-r-and-d-savings-from-dfda-implementation) if the entire industry migrated.
 - **Platform Cost Scenarios (Derived from ROM Estimates):**
   - **Upfront Cost (Core Platform Build):** [~`{python} format_millions(DFDA_ANNUAL_OPEX)`](#upfront-capital-expenditure-initial-build-illustrative-30-months) (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)).

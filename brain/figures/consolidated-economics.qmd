@@ -351,7 +351,7 @@ fig.show()
 ### Key Assumptions
 
 - QALY valued at $150,000 (standard US threshold)
-- Global clinical trials market: `{python} format_billions(GLOBAL_TRIAL_MARKET)` annually
+- Global clinical trials market: `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` annually
 - Military spending: $2.443T globally
 - Disease burden: $109.1T annually
 - Conservative network effect multipliers

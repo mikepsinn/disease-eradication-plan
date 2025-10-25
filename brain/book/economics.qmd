@@ -133,7 +133,7 @@ The conservative `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` calculation only
 
 When you count all eight primary benefit categories:
 
-1. **Peace dividend** (`{python} format_billions(BENEFIT_PEACE_DIVIDEND_ANNUAL)`) - Societal savings from 1% less conflict
+1. **Peace dividend** (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`) - Societal savings from 1% less conflict
 2. **R&D cost savings** (`{python} format_billions(BENEFIT_RD_SAVINGS_ANNUAL)`) - `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials
 3. **7-year access acceleration** (`{python} format_billions(BENEFIT_EARLIER_ACCESS_ANNUAL)`) - Earlier treatment access during trials
 4. **Research acceleration** (`{python} format_billions(BENEFIT_RESEARCH_ACCELERATION_ANNUAL)`) - 115X more research capacity (10-20X more breakthroughs)

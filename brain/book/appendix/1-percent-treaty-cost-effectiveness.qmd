@@ -52,9 +52,9 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 #### 1b. Health Dividend (`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`/year)
 
-**Quick summary**: The dFDA (Decentralized FDA) makes clinical trials 82× cheaper by using the Oxford RECOVERY model, saving `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` annually from the `{python} format_billions(GLOBAL_TRIAL_MARKET)` global trial market.
+**Quick summary**: The dFDA (Decentralized FDA) makes clinical trials 82× cheaper by using the Oxford RECOVERY model, saving `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` annually from the `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` global trial market.
 
-**Calculation**: `{python} format_billions(GLOBAL_TRIAL_MARKET)` trial market × `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction = **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`**
+**Calculation**: `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` trial market × `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction = **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`**
 
 **ROI**: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` return on `{python} format_millions(DFDA_ANNUAL_OPEX)` annual operational cost
 
@@ -413,7 +413,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
    - 1% reduction: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`
 
 2. **Health Dividend (dFDA)**: [Health Dividend Calculations](health-dividend-calculations.qmd)
-   - Clinical trial market: ~`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year
+   - Clinical trial market: ~`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)`/year
    - `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction (baseline)
    - Range: 25%-95%
    - Also see: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
