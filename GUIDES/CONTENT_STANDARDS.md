@@ -1,10 +1,10 @@
 ---
-title: Content and Style Standards
-description: "Content standards for the DIH knowledge base, including information architecture, quality assurance, and formatting."
-tags: [standards, contributing, content, style, review, process, quality-assurance]
+title: Content and Formatting Standards
+description: "Unified content, structural, and formatting standards for the Complete Idiot's Guide to Ending War and Disease."
+tags: [standards, contributing, content, style, review, process, quality-assurance, formatting]
 ---
 
-# Content and Style Standards
+# Content and Formatting Standards
 
 **See also:**
 
@@ -77,7 +77,52 @@ Example in-text: `[The world spends 40x more on war](./references.qmd#sipri-2024
 - **No context-specific references:** Avoid "as we saw in the previous chapter" or similar cross-references
 - **Why:** These QMD files are reused in the website, presentations, and different book versions with different orderings
 
-## 7. Systematic Content Review Process
+## 7. Chapter Heading Standard
+
+**IMPORTANT: Chapters must not start with a redundant heading.**
+
+- **No "Introduction" Headings:** Do not start a chapter with `## Introduction` or similar variations. The chapter's content should begin immediately after the frontmatter.
+- **No Title Repetition:** Do not repeat the chapter's title (from the frontmatter `title:` field) as the first heading in the document. The title and description are automatically displayed by the publishing system.
+- **Why:** The title and description are displayed prominently above the chapter's content. Adding a heading that repeats this information is redundant and creates a poor reading experience.
+
+**Correct Example:**
+```markdown
+---
+title: "The Peace Dividend"
+description: "How redirecting military spending can generate a massive societal return."
+---
+
+The 1% Treaty proposes redirecting a small fraction of global military expenditure...
+```
+
+**Incorrect Example:**
+```markdown
+---
+title: "The Peace Dividend"
+description: "How redirecting military spending can generate a massive societal return."
+---
+
+## Introduction
+
+The 1% Treaty proposes redirecting a small fraction of global military expenditure...
+```
+
+## 8. Automated Formatting Standards
+
+The following objective formatting rules are enforced by an automated script. While you should strive to follow them, the script will automatically correct any deviations.
+
+1.  **Sentence Structure:** Each sentence must start on a new line.
+2.  **Blank Line After Bold Text:** Bold text (e.g., `**Bold text**`) at the end of a line MUST be followed by a blank line to ensure proper paragraph separation in rendered output.
+3.  **Blank Line After Quoted Text:** Quoted text (e.g., `"Quote"`) at the end of a line MUST be followed by a blank line to ensure proper rendering.
+4.  **List Spacing:** Ensure all markdown lists are preceded by a blank line.
+5.  **Math Formatting:** Enclose all inline mathematical formulas in single dollar signs (`$...$`) and block-level formulas in double dollar signs (`$$...$$`) for proper LaTeX rendering.
+6.  **Preserve Quarto Syntax:** All Quarto syntax must be preserved *exactly*. This includes:
+    *   Code blocks with curly braces: ````{python}`
+    *   Special comments: `#| label: my-label`
+    *   Shortcodes: `{{< include ... >}}`
+7.  **Preserve Markdown:** All standard markdown (headers, tables, etc.) must be preserved.
+
+## 9. Systematic Content Review Process
 
 To ensure every chapter meets the project's quality standards, we use a systematic audit process. Instead of a central checklist, the review status is tracked directly within each file's frontmatter using the `lastReviewed` property.
 
@@ -118,4 +163,5 @@ Use these five checks to audit every chapter file.
 
 - **Frontmatter:** Does the file have a complete and accurate YAML frontmatter block?
 - **Link Integrity:** Are all internal links (`[link](./path/to/file.md)`) valid and pointing to existing files?
-- **Formatting:** Does each sentence start on a new line?
+- **Formatting:** Does the file adhere to the automated formatting standards?
+- **Heading Standard:** Does the chapter avoid starting with a redundant "Introduction" or title-like heading?
