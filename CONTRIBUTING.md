@@ -1,11 +1,11 @@
 ---
 title: How to Contribute
-description: Central guide for contribution guidelines, style standards, and project practices for the DIH knowledge base.
+description: Central guide for contribution guidelines, style standards, and project practices for the Complete Idiot's Guide to Ending War and Disease.
 published: true
 tags: [contributing, guidelines, standards, book, knowledge-base]
 ---
 
-# How to Contribute to the DIH Knowledge Base
+# How to Contribute to the Complete Idiot's Guide to Ending War and Disease
 
 This document provides a central overview of the contribution process. For detailed standards, please refer to our specialized guides:
 

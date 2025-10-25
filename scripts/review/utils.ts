@@ -114,9 +114,10 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
 
-  const formattingGuide = await fs.readFile('GUIDES/FORMATTING_GUIDE.md', 'utf-8');
+  const contentAndFormattingGuide = await fs.readFile('GUIDES/CONTENT_STANDARDS.md', 'utf-8');
+
   let prompt = await fs.readFile('scripts/prompts/formatter.md', 'utf-8');
-  prompt = prompt.replace('{{formattingGuide}}', formattingGuide).replace('{{body}}', body);
+  prompt = prompt.replace('{{formattingGuide}}', contentAndFormattingGuide).replace('{{body}}', body);
 
   const responseText = await generateGeminiContent(prompt);
 
