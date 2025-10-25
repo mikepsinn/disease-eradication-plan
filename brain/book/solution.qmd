@@ -62,11 +62,11 @@ This will enable the discovery of the full personalized range of positive and ne
 
 ## The 6-Step Process
 
-**From \`{python} format_billions(TREATY_ANNUAL_FUNDING)` to Curing Cancer**
+**From `{python} format_billions(TREATY_ANNUAL_FUNDING)` to Curing Cancer**
 
 <!-- TODO: STRUCTURE (CONTRADICTION) - The `TREATY_ANNUAL_FUNDING` variable (likely $24.4B, based on the '1% Treaty' chapter's 'Two-Tier Peace Dividend' section) contradicts the $27B figure used for the DIH budget in the 'DIH' and 'Investment Vehicle' chapters. Using different figures for the core funding amount is confusing and undermines credibility. Recommend using the simpler $27B figure consistently across all chapters. -->
 
-**1. Get the Money**: The **[1% Treaty](appendix/1-percent-treaty.qmd)** redirects \`{python} format_billions(TREATY_ANNUAL_FUNDING)`/year from weapons to cures  
+**1. Get the Money**: The **[1% Treaty](appendix/1-percent-treaty.qmd)** redirects `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year from weapons to cures  
 **2. Allocate Efficiently**: The **[DIH](./solution/dih.qmd)** uses democratic voting to fund what matters most  
 **3. Pay Patients**: Subsidies go directly to patients who join trials  
 **4. Run Cheap Trials**: Pragmatic trials cost [$500/patient](references.qmd#recovery-cost-500) instead of [$41,000](references.qmd#trial-cost-41k) (Oxford RECOVERY proved this works)  

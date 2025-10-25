@@ -2113,7 +2113,7 @@ from economic_parameters import *
 <a id="global-violence-costs"></a>
 
 - **Global Cost of Violence**
-  > "The economic impact of violence on the global economy in 2021 was \`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`, equivalent to 10.9% of global GDP, or \$2,117 per person."
+  > "The economic impact of violence on the global economy in 2021 was `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`, equivalent to 10.9% of global GDP, or \$2,117 per person."
   > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/maps/global-peace-index/)
 
 <a id="gm-ev-subsidy-lobbying"></a>
@@ -3381,7 +3381,7 @@ from economic_parameters import *
 <a id="per-capita-lifetime"></a>
 
 - **Per Capita Lifetime Cost of Violence (Estimated ~\$170,000)**
-  > Feynman: Annual global cost \`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` / 8B people = \$2,062/year * 80 years = ~\$165,000.
+  > Feynman: Annual global cost `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` / 8B people = \$2,062/year * 80 years = ~\$165,000.
   > — Based on IEP Global Peace Index
 
 <a id="per-person-impact-74259-lifetime-savings"></a>

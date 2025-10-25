@@ -124,7 +124,7 @@ Consider the economic chains this system will break:
 
 - **Healthcare costs approach zero.**
   With aging reversed and all diseases cured, the multi-trillion dollar deadweight loss of the "sick care" industry is eliminated and repurposed for creation.
-- **The \`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual cost of conflict is repurposed.**
+- **The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual cost of conflict is repurposed.**
   This capital, once wasted on destruction, is now invested in clean energy infrastructure, space habitats, consciousness enhancement, and artistic expression.
 - **Human capital becomes infinite.**
   A world where every person can choose their biological age, control their mental state, and augment their intelligence is a world where human potential is truly limitless.
@@ -166,7 +166,7 @@ These transformations are not wishful thinking, they are the mathematically inev
 
 **The Peace Dividend Unlocked:**
 
-- **Total annual cost of violence:** [\`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`](peace-dividend-calculations.qmd) (10.9% of global GDP)
+- **Total annual cost of violence:** [`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`](peace-dividend-calculations.qmd) (10.9% of global GDP)
 - **Value captured by 1% Treaty:** [\$27+ billion annually](peace-dividend-calculations.qmd)
 - **Value returned to society:** [\$16.47 trillion annually](peace-dividend-calculations.qmd) (99.84% of total)
 - **Per person impact:** \$74,259 saved over lifetime vs. current costs of conflict
@@ -184,7 +184,7 @@ These transformations are not wishful thinking, they are the mathematically inev
 **Research and Development Acceleration:**
 
 - **Current dFDA ROI:** [`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` over 10 years](dfda-cost-benefit-analysis.qmd)
-- **Annual R&D savings potential:** [\`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`](dfda-cost-benefit-analysis.qmd) from efficiency gains
+- **Annual R&D savings potential:** [`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`](dfda-cost-benefit-analysis.qmd) from efficiency gains
 - **Health outcomes:** [840,000 Quality-Adjusted Life Years](dfda-cost-benefit-analysis.qmd) gained annually
 
 This is the endgame.

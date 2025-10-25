@@ -38,7 +38,7 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
    - _Basis:_ ~75 FTEs _2.5 years_ \$200k/FTE/year
    - _Activities:_ Detailed design, core platform development (API, storage, mapping/validation, auth), reference frontend, initial plugin interfaces, testing, documentation, initial deployment.
-   - **Estimated ROM:** [\$35 - \`{python} format_millions(DFDA_ANNUAL_OPEX)`](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+   - **Estimated ROM:** [\$35 - `{python} format_millions(DFDA_ANNUAL_OPEX)`](#upfront-capital-expenditure-initial-build-illustrative-30-months)
 
 2. **Infrastructure Setup & Initial Cloud Costs:**
 
@@ -73,7 +73,7 @@ The following sections provide ROM estimates for both the ongoing operational co
 To complement the bottom-up ROM, we can derive a top-down estimate by examining the total investment raised by leading commercial companies developing decentralized clinical trial (DCT) platforms. This market-based view provides a real-world benchmark for the capital required to build, scale, and operate a sophisticated, global-grade platform.
 
 - **Medable:** A leader in the DCT platform space, has [raised a total of **\$521 million** in capital, achieving a valuation of **\$2.1 billion**](../references.qmd#dct-platform-funding-medable) as of late 2021. This level of funding represents the capital required to develop a comprehensive SaaS platform, establish a global presence across 60+ countries, and achieve significant market penetration.
-- **Other DCT Platform Companies:** [Other companies in the space](../references.qmd#dct-platform-funding-others), such as **Science 37** (~\`{python} format_millions(DFDA_ANNUAL_OPEX)` raised), **Thread** (up to \$50M raised), and **uMotif** (~\$25.5M raised), show that significant traction and platform development can be achieved with investments in the tens of millions.
+- **Other DCT Platform Companies:** [Other companies in the space](../references.qmd#dct-platform-funding-others), such as **Science 37** (~`{python} format_millions(DFDA_ANNUAL_OPEX)` raised), **Thread** (up to \$50M raised), and **uMotif** (~\$25.5M raised), show that significant traction and platform development can be achieved with investments in the tens of millions.
 
 **Analogous ROM Conclusion:**
 

@@ -26,7 +26,7 @@ This section quantifies the potential societal benefits of the dFDA Infrastructu
 
 The global pharmaceutical and medical device R&D market is vast. Annual global spending on [clinical trials alone was estimated to be in the range of **USD 60-80 billion in 2024, and projected to exceed USD 100 billion by the early 2030s**](../references.qmd#clinical-trial-market-size). A significant portion of this expenditure is addressable by the efficiencies dFDA aims to introduce. If dFDA can capture even a fraction of this market by demonstrating superior efficiency and data quality, its economic impact will be substantial.
 
-For this analysis, we use a conservative baseline estimate of [**\`{python} format_billions(GLOBAL_TRIAL_MARKET)` per year in global clinical trial spending**](../references.qmd#clinical-trial-spending-dfda-baseline) that is potentially addressable by dFDA through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
+For this analysis, we use a conservative baseline estimate of [**`{python} format_billions(GLOBAL_TRIAL_MARKET)` per year in global clinical trial spending**](../references.qmd#clinical-trial-spending-dfda-baseline) that is potentially addressable by dFDA through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
 
 - **Current Average Costs**: Various estimates suggest [\$1.0 - \$2.5 billion to bring a new drug from discovery through FDA approval](../references.qmd#drug-development-cost), spread across ~10 years.
 - **Clinical Trial Phase Breakdown**:

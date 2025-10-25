@@ -39,7 +39,7 @@ It's to make everyone richer.
 **Step 1: MONEY (Get \$1 Billion)**
 
 Sell VICTORY Bonds to rich people who want to get richer.
-Promise `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns (we can deliver because bondholders get 10% of the \`{python} format_billions(TREATY_ANNUAL_FUNDING)`/year from military budgets).
+Promise `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns (we can deliver because bondholders get 10% of the `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year from military budgets).
 Use the money for legal bribes (lobbying), building the tech, and running the global referendum campaign.
 
 **Step 2: MANDATE (Get 280 Million Humans)**
@@ -64,7 +64,7 @@ Ever.
 Deploy the billion dollars in lobbying.
 When 280 million voters want something AND you're spending more than defense contractors, politicians suddenly discover they've always cared about curing cancer.
 
-Result: \`{python} format_billions(TREATY_ANNUAL_FUNDING)`/year automatically flows from military budgets to medical research.
+Result: `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year automatically flows from military budgets to medical research.
 Forever.
 
 ---

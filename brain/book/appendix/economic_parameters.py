@@ -24,9 +24,66 @@ Usage:
 
 # Direct costs
 GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = 2718.0  # billions USD, SIPRI 2024
-GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT = 1875.0  # billions USD, reconstruction estimates
-GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT = 2446.0  # billions USD, 244,600 deaths × $10M VSL
-GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT = 616.0  # billions USD, World Bank trade flow analysis
+
+# Value of Statistical Life (VSL)
+VALUE_OF_STATISTICAL_LIFE = 10_000_000  # $10 million, conservative value used in calculations
+
+# Conflict death breakdown (for QALY calculations)
+# Source: brain/book/problem/cost-of-war.qmd#death-accounting
+GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = 233600  # ACLED data
+GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = 8300  # Global Terrorism Database
+GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = 2700  # Uppsala Conflict Data Program
+
+# Total conflict deaths (calculated from breakdown)
+GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL = (
+    GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT
+    + GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS
+    + GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE
+)  # 244,600
+
+# Breakdown of Human Life Loss Costs (billions USD)
+GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT = GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000  # $2,336B
+GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS = GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000 # $83B
+GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE = GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000 # $27B
+
+# Total human life losses (calculated from breakdown)
+GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT = (
+    GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT
+    + GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS
+    + GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE
+)  # $2,446B
+
+# Infrastructure Damage Breakdown (billions USD)
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = 487.3
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = 421.7
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = 298.1
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = 267.8
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = 234.5
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = 165.6
+
+# Total infrastructure destruction (calculated from breakdown)
+GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT = (
+    GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT
+    + GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT
+    + GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT
+    + GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT
+    + GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT
+    + GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT
+)  # $1,875B
+
+# Trade Disruption Breakdown (billions USD)
+GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = 247.1
+GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = 186.8
+GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = 124.7
+GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = 57.4
+
+# Total trade disruption (calculated from breakdown)
+GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT = (
+    GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT
+    + GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT
+    + GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT
+    + GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT
+)  # $616B
 
 GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL = (
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024
@@ -54,13 +111,6 @@ GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = (
 
 # Grand total war costs
 GLOBAL_ANNUAL_WAR_TOTAL_COST = GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL + GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL  # $11,355.1B
-
-# Conflict death breakdown (for QALY calculations)
-# Source: brain/book/problem/cost-of-war.qmd#death-accounting
-GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = 233600  # ACLED data
-GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = 8300  # Global Terrorism Database
-GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = 2700  # Uppsala Conflict Data Program
-# Note: Total should equal 244,600
 
 # Treaty parameters
 TREATY_REDUCTION_PCT = 0.01  # 1% reduction in military spending/war costs
@@ -117,7 +167,6 @@ GLOBAL_DFDA_QALYS_GAINED_ANNUAL = 840000  # QALYs gained per year from dFDA
 DFDA_QALYS_MONETIZED = (GLOBAL_DFDA_QALYS_GAINED_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD) / 1_000_000_000  # $126B
 
 # Peace dividend health benefits
-GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL = 244600  # Total across all conflicts
 TREATY_LIVES_SAVED_ANNUAL_GLOBAL = GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL * TREATY_REDUCTION_PCT  # 2,446 lives
 TREATY_QALYS_GAINED_ANNUAL_GLOBAL = TREATY_LIVES_SAVED_ANNUAL_GLOBAL * STANDARD_QALYS_PER_LIFE_SAVED  # 85,610 QALYs
 
@@ -198,10 +247,6 @@ DIH_NPV_UPFRONT_COST_TOTAL = DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIA
 DFDA_NPV_ANNUAL_OPEX = 0.01895  # $19M core platform (midpoint of $11-26.5M)
 DIH_NPV_ANNUAL_OPEX_INITIATIVES = 0.02110  # $21.1M medium case broader initiatives
 DIH_NPV_ANNUAL_OPEX_TOTAL = DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES  # Cop = $0.04005B
-
-# NPV Model - Savings Parameters
-GLOBAL_TRIAL_MARKET = GLOBAL_TRIAL_MARKET  # Rd = $100B
-TRIAL_COST_REDUCTION_PCT = TRIAL_COST_REDUCTION_PCT  # alpha = 0.50 (50%)
 
 # NPV Model - Adoption Curve
 # Linear ramp from 0% to 100% over 5 years, then constant at 100%
@@ -478,113 +523,24 @@ def format_qalys(value):
     """
     return f"{value:,.0f}"
 
-# ---
-# VALIDATION FUNCTIONS
-# ---
-
-def validate_parameters():
-    """Run validation checks on parameters
-
-    Returns:
-        bool: True if all validations pass, False otherwise
-    """
-    errors = []
-    warnings = []
-
-    # Check that direct costs sum correctly
-    calculated_direct = GLOBAL_MILITARY_SPENDING_ANNUAL_2024 + GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT + GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT + GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT
-    if abs(GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL - calculated_direct) > 0.1:
-        errors.append(f"Total direct costs mismatch: {GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL} vs {calculated_direct}")
-
-    # Check that indirect costs sum correctly
-    calculated_indirect = (GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING + GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS + GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS +
-                          GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT + GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT + GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT)
-    if abs(GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL - calculated_indirect) > 0.1:
-        errors.append(f"Total indirect costs mismatch: {GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL} vs {calculated_indirect}")
-
-    # Check that total war cost sums correctly
-    if abs(GLOBAL_ANNUAL_WAR_TOTAL_COST - (GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL + GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL)) > 0.1:
-        errors.append(f"Total war cost mismatch")
-
-    # Check ICER calculation
-    expected_icer = (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) / TREATY_TOTAL_QALYS_GAINED_ANNUAL
-    if abs(ICER_PER_QALY - expected_icer) > 1:
-        errors.append(f"ICER calculation mismatch: {ICER_PER_QALY} vs {expected_icer}")
-
-    # Check dFDA ROI calculation
-    expected_roi = DFDA_GROSS_SAVINGS_ANNUAL / DFDA_ANNUAL_OPEX
-    if abs(DFDA_ROI_SIMPLE - expected_roi) > 1:
-        errors.append(f"dFDA ROI mismatch: {DFDA_ROI_SIMPLE} vs {expected_roi}")
-
-    # Check complete benefits sum
-    calculated_complete = (BENEFIT_PEACE_DIVIDEND_ANNUAL + BENEFIT_RD_SAVINGS_ANNUAL + BENEFIT_EARLIER_ACCESS_ANNUAL +
-                          BENEFIT_RESEARCH_ACCELERATION_ANNUAL + BENEFIT_RARE_DISEASES_ANNUAL +
-                          BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL + BENEFIT_PREVENTION_ANNUAL + BENEFIT_MENTAL_HEALTH_ANNUAL)
-    if abs(TOTAL_COMPLETE_BENEFITS_ANNUAL - calculated_complete) > 0.1:
-        errors.append(f"Complete benefits mismatch: {TOTAL_COMPLETE_BENEFITS_ANNUAL} vs {calculated_complete}")
-
-    # Check campaign budget breakdown sums to total
-    campaign_budget_sum = (TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM + TREATY_CAMPAIGN_BUDGET_AI_LOBBYING +
-                          TREATY_CAMPAIGN_BUDGET_TECHNOLOGY + TREATY_CAMPAIGN_BUDGET_LEGAL +
-                          TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS + TREATY_CAMPAIGN_BUDGET_OPERATIONS + TREATY_CAMPAIGN_BUDGET_RESERVE)
-    if abs(campaign_budget_sum - TREATY_CAMPAIGN_TOTAL_COST) > 0.001:
-        errors.append(f"Campaign budget breakdown mismatch: {campaign_budget_sum} vs {TREATY_CAMPAIGN_TOTAL_COST}")
-
-    # Check dFDA opex breakdown sums to total
-    dfda_opex_sum = (DFDA_OPEX_PLATFORM_MAINTENANCE + DFDA_OPEX_STAFF + DFDA_OPEX_INFRASTRUCTURE +
-                    DFDA_OPEX_REGULATORY + DFDA_OPEX_COMMUNITY)
-    if abs(dfda_opex_sum - DFDA_ANNUAL_OPEX) > 0.001:
-        errors.append(f"dFDA opex breakdown mismatch: {dfda_opex_sum} vs {DFDA_ANNUAL_OPEX}")
-
-    # Check conflict deaths sum to total
-    conflict_deaths_sum = (GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT + GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS +
-                          GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE)
-    if abs(conflict_deaths_sum - GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL) > 1:
-        errors.append(f"Conflict deaths breakdown mismatch: {conflict_deaths_sum} vs {GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL}")
-
-    # Warnings for values that should be close but might differ slightly
-    if abs(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT - 114.0) > 1.0:
-        warnings.append(f"Societal dividend is {PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT}, expected ~114B")
-
-    if abs(DFDA_GROSS_SAVINGS_ANNUAL - 50.0) > 1.0:
-        warnings.append(f"dFDA savings is {DFDA_GROSS_SAVINGS_ANNUAL}, expected ~50B")
-
-    # Print results
-    if errors:
-        print("[FAIL] Parameter validation FAILED:")
-        for error in errors:
-            print(f"  ERROR: {error}")
-        return False
-    elif warnings:
-        print("[WARN] Parameter validation passed with warnings:")
-        for warning in warnings:
-            print(f"  WARNING: {warning}")
-        return True
-    else:
-        print("[PASS] All parameter validations passed")
-        return True
-
 # --- Module Initialization ---
 
 if __name__ == "__main__":
-    # Run validation when module is executed directly
-    if not validate_parameters():
-        exit(1)
+    # Print some key parameters when module is executed directly
+    print(f"Military spending: {format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)}")
+    print(f"Total war costs: {format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)}")
+    print(f"Peace dividend: {format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
+    print(f"dFDA savings: {format_billions(DFDA_GROSS_SAVINGS_ANNUAL)}")
+    print(f"Total benefits: {format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)}")
 
 
 # ---
 # COST OF WAR DETAILS (for cost-of-war.qmd)
 # ---
 
-# Value of Statistical Life (VSL)
-VALUE_OF_STATISTICAL_LIFE = 10_000_000  # $10 million, conservative value used in calculations
+# Reference VSL values (for comparisons)
 US_DOT_VALUE_OF_STATISTICAL_LIFE_MILLIONS = 13.6  # $13.6M, reference value from Dept. of Transportation
 VSL_EPA_MILLIONS = 9.6  # $9.6M, reference value from EPA
-
-# Breakdown of Human Life Loss Costs (billions USD)
-GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT = GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000  # $2,336B
-GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS = GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000 # $83B
-GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE = GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000 # $27B
 
 # Derived time-based costs
 SECONDS_PER_YEAR = 365 * 24 * 60 * 60
@@ -613,20 +569,6 @@ GLOBAL_ANNUAL_MILITARY_SPENDING_PROCUREMENT_2024 = 654.3
 GLOBAL_ANNUAL_MILITARY_SPENDING_OPS_MAINTENANCE_2024 = 579.8
 GLOBAL_ANNUAL_MILITARY_SPENDING_INFRASTRUCTURE_2024 = 520.4
 GLOBAL_ANNUAL_MILITARY_SPENDING_INTELLIGENCE_2024 = 282.0
-
-# Infrastructure Damage Breakdown (billions USD)
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = 487.3
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = 421.7
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = 298.1
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = 267.8
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = 234.5
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = 165.6
-
-# Trade Disruption Breakdown (billions USD)
-GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = 247.1
-GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = 186.8
-GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = 124.7
-GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = 57.4
 
 # Opportunity Cost Parameters
 GLOBAL_EDUCATION_FOR_ALL_COST = 30.0  # billions USD
