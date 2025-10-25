@@ -11,7 +11,22 @@ tags:
   - happiness
 lastStructureCheckHash: b282e1b6d44c76e633f3c4cb16db0d49b272beb10697b7709a5f8a0fe0193e94
 lastLatexCheckHash: 77b726d98785562e091fa2958b9fe855e3acd3bc6af1246e4a3e370101c00c41
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 Welcome to 2050, where humanity finally realized that being alive and healthy is actually more enjoyable than being dead or diseased.
 I know, we're just as surprised as you are.
 
@@ -39,15 +54,15 @@ The [1% Treaty](../appendix/1-percent-treaty.qmd) becomes Wishonia's first inter
 The [global referendum](../strategy/global-referendum.qmd) hits 500 million signatures in six months.
 
 The defense contractors panicked until we showed them the [VICTORY Bonds](../economics/victory-bonds.qmd) returns.
-270% annual yield?
+`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual yield?
 Suddenly Lockheed Martin was very interested in making MRI machines instead of missiles.
-(My goldfish is smarter than Congress, but even Congress understands 270% returns.)
+(My goldfish is smarter than Congress, but even Congress understands `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns.)
 
 ### 2028: The 2% Revelation
 
 Here's the funny thing about not dying: it's addictive.
 
-Once people saw what $27 billion in redirected military spending could do - [15 new treatments in the first year](../references.qmd#recovery-trial) - they wanted more.
+Once people saw what `{python} format_billions(CAPTURED_DIVIDEND)` in redirected military spending could do - [15 new treatments in the first year](../references.qmd#recovery-trial) - they wanted more.
 The 2% Treaty passed even faster than the first one.
 
 By 2028, we were spending $54 billion annually on the [Decentralized Institutes of Health](../solution/dih.qmd).
@@ -176,7 +191,7 @@ Death still exists - we're not immortal. But now you die at 150 after a great li
 
 ## The Peace Dividend Economy
 
-Let's talk money, because even in utopia, economics matters. This wasn't based on utopian hope but a pragmatic understanding of incentives. As the DIH's budget grew from $27 billion to over a trillion, the world's economic gravity shifted. The best scientists and biggest investors saw far greater returns in curing Alzheimer's than in building a better fighter jet. Peace became, for the first time in history, ridiculously profitable.
+Let's talk money, because even in utopia, economics matters. This wasn't based on utopian hope but a pragmatic understanding of incentives. As the DIH's budget grew from `{python} format_billions(CAPTURED_DIVIDEND)` to over a trillion, the world's economic gravity shifted. The best scientists and biggest investors saw far greater returns in curing Alzheimer's than in building a better fighter jet. Peace became, for the first time in history, ridiculously profitable.
 
 **Annual Global Redirected Funds (2050):**
 
@@ -186,7 +201,7 @@ Let's talk money, because even in utopia, economics matters. This wasn't based o
 - Productivity gains from longevity: $4.1 trillion
 - **Total Annual Peace Dividend: $11.75 trillion**
 
-This is the same economic logic from [the Economic Case chapter](../economics/economic-impact-summary.qmd)—which showed $1.22T annual benefits from the initial 1% treaty—but scaled up to a 50% redirection over 25 years. Same principles, bigger numbers.
+This is the same economic logic from [the Economic Case chapter](../economics/economic-impact-summary.qmd)—which showed `{python} format_billions(TOTAL_COMPLETE_BENEFITS)` annual benefits from the initial 1% treaty—but scaled up to a 50% redirection over 25 years. Same principles, bigger numbers.
 
 That's $1,450 per human per year in pure value creation. Not redistribution - actual new wealth from not being sick or dead.
 

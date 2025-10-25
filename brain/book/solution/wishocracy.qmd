@@ -13,8 +13,23 @@ tags:
 lastFactCheckHash: eab100eb63eb0c4bb66d0bf37e96c1318df0efe4ceb76d9fd2447bfa7870b92f
 lastStructureCheckHash: 5f013d13b44cbda1716058bfcb23a5be15dcfa3f7ba4e2e528b151994a84fd66
 lastLatexCheckHash: 52e1aa5e6793da0df277e08d3e28abc172cdc9a7e4902aa61c45383b5ab39fb2
+jupyter: dih-project-kernel
 ---
-Congratulations! You've passed the [1% Treaty](../solution/1-percent-treaty.qmd) and now you've got $27B/year to allocate.
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+Congratulations! You've passed the [1% Treaty](../solution/1-percent-treaty.qmd) and now you've got `{python} format_billions(CAPTURED_DIVIDEND)`/year to allocate.
 
 How do you avoid parasitic special interests from stealing it or bureacracy from wasting it all?
 

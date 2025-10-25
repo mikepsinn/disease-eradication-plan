@@ -12,7 +12,22 @@ tags:
 lastFactCheckHash: 24332b62f096e2da8303f3e612d90c6682bd5871a6a8588f6e3275c6d71bb955
 lastStructureCheckHash: e51db52d29f434435c4abeb5ff626a97cbff6852fda9b4ad3019bcb27077fc37
 lastLatexCheckHash: 89fa06c173d6a3181fa3ec6b453bd3c702b8cd407eb719bc5b303e32aa16232f
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ![Decentralized Institutes of Health: A new model for medical research](../../../assets/decentralized-institutes-of-health.jpg)
 
 ### The Problem: The NIH is a Disease
@@ -52,7 +67,7 @@ You mandate that [every trial, every result (positive or negative), and every da
 
 ### How You Fund It: The 3-Step Flow
 
-1.  **You Fill the Treasury.** You use [The 1% Treaty](../solution/1-percent-treaty.qmd) to redirect a rounding error from global military spending—$27 billion—into the DIH treasury.
+1.  **You Fill the Treasury.** You use [The 1% Treaty](../solution/1-percent-treaty.qmd) to redirect a rounding error from global military spending—`{python} format_billions(CAPTURED_DIVIDEND)`—into the DIH treasury.
 
 2.  **You Let Humanity Set the Rules.** A global population of voters uses [Wishocracy](../solution/wishocracy.qmd) to set the high-level budget. They don't pick specific trials. They vote on core allocation rules that govern the entire system, such as:
     *   **Patient Subsidies (~70%):** The bulk of the funds create a market for cures by subsidizing patient participation in [dFDA trials](../solution/dfda.qmd).

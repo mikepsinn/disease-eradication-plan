@@ -2,7 +2,22 @@
 title: 📋 High-Impact Health Interventions
 description: Comparison table - dFDA Infrastructure vs other major health interventions by ROI, cost per QALY, and QALYs per dollar
 lastFactCheckHash: a2349918b8f09d67d2255fff29285772d14397702ac0541acfb775ff9353cd7d
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## Introduction
 
 This article compares the dFDA Infrastructure to other historically high-ROI and high-QALY-per-dollar health interventions. The table below summarizes the best available data for each intervention, including return on investment (ROI), cost per QALY gained (ICER), and estimated QALYs gained per $1 million spent. This provides context for the scale and efficiency of dFDA relative to foundational public health measures.
@@ -15,7 +30,7 @@ _Note: The bar represents the mid-point of the uncertainty range, and the error 
 
 | Intervention                                |                                                                              Estimated ROI (Return per $1)                                                                              |                                     Cost per QALY Gained (ICER)                                      |                                                         QALYs Gained per $1M                                                          | Notes & Sources                                                                                         |
 | ------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
-| **dFDA Infrastructure**                           |                                                           [66:1 to 2,577:1 (central: 463:1)](dfda-cost-benefit-analysis.qmd)                                                           |                    [**Dominant** (cost-saving)](dfda-cost-benefit-analysis.qmd)                     |                                           [5,000–90,000+](dfda-cost-benefit-analysis.qmd)                                            | Systemic, global, leverages all R&D; see [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) |
+| **dFDA Infrastructure**                           |                                                           [66:1 to 2,577:1 (central: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)`)](dfda-cost-benefit-analysis.qmd)                                                           |                    [**Dominant** (cost-saving)](dfda-cost-benefit-analysis.qmd)                     |                                           [5,000–90,000+](dfda-cost-benefit-analysis.qmd)                                            | Systemic, global, leverages all R&D; see [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) |
 | Smallpox Eradication                        |            [159:1](../references.qmd#smallpox-eradication-roi) to [400:1](../references.qmd#smallpox-eradication-roi)             |                                        [Dominant (cost-saving)](../references.qmd#smallpox-eradication-roi)                                        |                                   [10,000+](../references.qmd#smallpox-eradication-roi)                                    | [Smallpox eradication ROI](../references.qmd#smallpox-eradication-roi)                                 |
 | Childhood Vaccination (US)                  |                       [10:1](../references.qmd#childhood-vaccination-roi) to [16:1](../references.qmd#childhood-vaccination-roi)                        |                                        [Dominant (cost-saving)](../references.qmd#childhood-vaccination-roi)                                        |                                 [1,000–10,000](../references.qmd#childhood-vaccination-roi)                                  | [Childhood vaccination](../references.qmd#childhood-vaccination-roi)                                     |
 | Clean Water & Sanitation (LMICs)            |                  [4:1](../references.qmd#clean-water-sanitation-roi) to [21:1](../references.qmd#clean-water-sanitation-roi)                  |                                     [Dominant/very cost-effective](../references.qmd#clean-water-sanitation-roi)                                     |                                       [1,000–10,000](../references.qmd#clean-water-sanitation-roi)                                       | [Clean water & sanitation](../references.qmd#clean-water-sanitation-roi)                                 |

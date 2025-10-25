@@ -10,7 +10,22 @@ tags:
 lastFactCheckHash: 073b940c027763bbeebc324098db9f71b578a80886e58697562f208db2f17733
 lastStructureCheckHash: 501fc5b9af4d0f997a624169bc28598d62f73166bb625a1a5aa2b8182990ee02
 lastLatexCheckHash: 09e47d6115354bc8ebc91fa0691b31e281fdf404a204f2dcccc91162a656379b
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## The Solution: Just Let People Try Stuff (Carefully)
 
 Here's a thought that apparently never occurred to anyone in Washington:

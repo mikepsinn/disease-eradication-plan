@@ -11,7 +11,22 @@ tags:
   - human-nature
   - stupidity
 lastFactCheckHash: 0d2f04486d03215562834b52b4e8e0f1da3f361946aa54817b65383a5249f944
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 Your brain is 200,000 years old, living in a world that's 200 years old, making decisions that will kill you in 20 years.
 
 This is not a design flaw. It's a feature.

@@ -13,19 +13,34 @@ lastLinkCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d
 lastFigureCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
 lastStructureCheckHash: 7a5870e4682bb32a7d7955d6877bdc64f7a4d1f1003d5120e1f665425815b34d
 lastLatexCheckHash: 9c78c80f884e3669a882cc6f79d1dc7bf797e487f1d13ced1faa3dc741ad7350
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 Humans have turned warfare into the most expensive hobby in the history of the species.
 We are very good at it.
 We are also very good at counting what it costs us.
 
 ![Pie chart showing 2018 global military expenditures by country - the United States accounts for 37% of total global military spending while representing only 4.4% of world population](../../../assets/2018-military-expenditures-by-country.png)
 
-Consider this: In 2024, our species spent [\$2,718 billion](../references.qmd#sipri-2024-spending) on military expenditure (rounded to $2.7T throughout this book for readability).
+Consider this: In 2024, our species spent [\`{python} format_billions(MILITARY_SPENDING)`](../references.qmd#sipri-2024-spending) on military expenditure (rounded to `{python} format_billions(MILITARY_SPENDING)` throughout this book for readability).
 That's \$2,718,000,000,000.
 Write it out.
 Feel the weight of all those zeros.
 
-To put this in perspective, if you stacked \$2,718 billion in one-dollar bills, the stack would reach more than two-thirds of the way to the Moon.
+To put this in perspective, if you stacked \`{python} format_billions(MILITARY_SPENDING)` in one-dollar bills, the stack would reach more than two-thirds of the way to the Moon.
 We literally spend enough on weapons to build a bridge of money to space.
 
 And what does that money buy? Let's take just one item from this celestial price tag: our nuclear arsenal. We currently possess about 13,000 of these planet-killers. According to the sober people who calculate such things, that's enough to trigger anywhere from 13 to 130 separate "extinction-level events." We're not just capable of ending civilization; we've built in enough redundancy to reboot the apocalypse over a dozen times, just in case the first attempt doesn't stick. It's the kind of over-engineering you'd expect from a species that uses a sledgehammer to crack a nut, and we keep adding [\$42 billion](../references.qmd#sipri-2024-spending) to the budget for a bigger sledgehammer every year.
@@ -70,7 +85,7 @@ Where:
 
 **Current Annual Calculation:**
 
-- M<sub>spending</sub> = \$2,718B (verified via [SIPRI database](../references.qmd#sipri-2024-spending))
+- M<sub>spending</sub> = \`{python} format_billions(MILITARY_SPENDING)` (verified via [SIPRI database](../references.qmd#sipri-2024-spending))
 - I<sub>damage</sub> = [\$1,875B](../references.qmd#reconstruction-costs-active-conflicts) (reconstruction cost estimates from 47 active conflicts)
 - H<sub>casualties</sub> = [\$2,446B](../references.qmd#acled-active-combat-deaths) (244,600 total conflict deaths × \$10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation) - includes combat deaths, terrorism, and state violence; see Death Accounting section below for breakdown)
 - T<sub>disruption</sub> = [\$616B](../references.qmd#world-bank-trade-disruption-conflict) ([World Bank trade flow analysis](https://openknowledge.worldbank.org/handle/10986/37015))
@@ -93,7 +108,7 @@ Let's be conservative and use \$10 million.
 |--------------|-------------|----------------|-------------|---------|
 | Active Combat | [233,600](../references.qmd#acled-active-combat-deaths) | $10,000,000 | $2,336B | [Armed Conflict Location & Event Data](https://acleddata.com/) |
 | Terror Attacks | [8,300](../references.qmd#gtd-terror-attack-deaths) | $10,000,000 | $83B | [Global Terrorism Database](https://www.start.umd.edu/gtd/) |
-| State Violence | [2,700](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | $27B | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
+| State Violence | [2,700](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | `{python} format_billions(CAPTURED_DIVIDEND)` | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
 
 **Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually**
 
@@ -173,9 +188,9 @@ Here's a thought experiment: What if we spent our war money on something else?
 
 | Alternative Investment | Global War Spending Could Fund | Mathematical Conversion | Annual Benefit |
 |----------------------|-------------------------------|------------------------|----------------|
-| Medical Research | 40.3 years of current spending | [\$2,718B](../references.qmd#sipri-2024-spending) ÷ [\$67.5B](../references.qmd#global-gov-med-research-spending) = 40.3 | [WHO research expenditure](https://www.who.int/observatories/global-observatory-on-health-research-and-development) |
-| Global Education Access | 90.6 years of universal coverage | \$2,718B ÷ [\$30B](../references.qmd#unesco-education-for-all-cost) = 90.6 | [UNESCO Education for All](https://en.unesco.org/themes/education) |
-| Poverty Eradication | 2.7 complete eliminations | \$2,718B ÷ [\$1,000B](../references.qmd#world-bank-poverty-eradication-cost) = 2.7 | World Bank extreme poverty estimates |
+| Medical Research | 40.3 years of current spending | [\`{python} format_billions(MILITARY_SPENDING)`](../references.qmd#sipri-2024-spending) ÷ [\$67.5B](../references.qmd#global-gov-med-research-spending) = 40.3 | [WHO research expenditure](https://www.who.int/observatories/global-observatory-on-health-research-and-development) |
+| Global Education Access | 90.6 years of universal coverage | \`{python} format_billions(MILITARY_SPENDING)` ÷ [\$30B](../references.qmd#unesco-education-for-all-cost) = 90.6 | [UNESCO Education for All](https://en.unesco.org/themes/education) |
+| Poverty Eradication | 2.7 complete eliminations | \`{python} format_billions(MILITARY_SPENDING)` ÷ [\$1,000B](../references.qmd#world-bank-poverty-eradication-cost) = 2.7 | World Bank extreme poverty estimates |
 
 ![The stark disparity: money spent on war, neuroscience, and cancer research](../../../assets/Priorities-Money-Spent-on-War-Neuroscience-Cancer-Research-Graph.png)
 
@@ -198,7 +213,7 @@ $$
 $$
 
 $$
-\text{Alternative GDP Growth} = (\text{\$2,718B} \times 1.6) - (\text{\$2,718B} \times 0.6) = \text{\$2,718B}
+\text{Alternative GDP Growth} = (\text{\`{python} format_billions(MILITARY_SPENDING)`} \times 1.6) - (\text{\`{python} format_billions(MILITARY_SPENDING)`} \times 0.6) = \text{\`{python} format_billions(MILITARY_SPENDING)`}
 $$
 
 We're losing \$2.7 trillion in annual GDP growth.
@@ -324,7 +339,7 @@ Every year.
 Current global population: [8.0 billion humans](../references.qmd#global-population-8-billion)
 
 $$
-\text{Direct military spending per person: } \text{\$2,718B} \div 8.0\text{B} = \text{\$340/year}
+\text{Direct military spending per person: } \text{\`{python} format_billions(MILITARY_SPENDING)`} \div 8.0\text{B} = \text{\$340/year}
 $$
 
 This is what your government directly spends on military hardware and personnel.
@@ -365,7 +380,7 @@ The final equation is simple:
 $$
 \begin{aligned}
 \text{Efficiency}_{\text{war}} &= \text{Deaths}_{\text{produced}} \div \text{Dollars}_{\text{spent}} \\
-&= 244,600 \div \text{\$11.4T} \\
+&= 244,600 \div \text{\`{python} format_billions(TOTAL_WAR_COST)`} \\
 &= 0.000021 \text{ deaths per dollar}
 \end{aligned}
 $$

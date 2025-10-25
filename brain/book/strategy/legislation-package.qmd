@@ -7,7 +7,22 @@ format:
     toc-depth: 3
 lastStructureCheckHash: 0a57e31ab76d9543d900b9bb2b8eb1b84b99440839c87656457724b8279bf581
 lastLatexCheckHash: 8ebebbe27818bb1fbf8a2a18bb70f7461a8e0447121599904cbcb51f3ce656e8
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 Here's how democracy actually works: Lobbyists write bills, give them to politicians who can't read, and those politicians vote based on who donated most to their campaign. You're about to become the best lobbyist in history, except your bills actually help people instead of killing them.
 
@@ -15,7 +30,7 @@ This is your blueprint for five bills that transform healthcare forever. Each on
 
 ## The Treaty Implementation Act: Making It Real
 
-This is your cornerstone legislation. Without it, the treaty is just paper. With it, you redirect $27 billion annually from death to life.
+This is your cornerstone legislation. Without it, the treaty is just paper. With it, you redirect `{python} format_billions(CAPTURED_DIVIDEND)` annually from death to life.
 
 ### The Core Provisions
 

@@ -15,7 +15,22 @@ lastStyleCheck: 2025-10-16T00:00:00.000Z
 lastFormattedHash: e4fdaea7394f4a721768b1d7b60e0b135d90f8ef93f2d1a12d8011dd60ad8138
 lastFactCheckHash: ef5f31e5815dfcf4e7a9dc483be3e98c8dd1191b10a28dce0f36a8426b2a7b27
 lastLatexCheckHash: c07cd7c8d7c7b25048ac85529277e9a60504245cb9a5b25daf460914369779c2
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 The solution isn't complicated.
 It doesn't require changing human nature.
 It just requires changing what pays.
@@ -46,9 +61,9 @@ This will enable the discovery of the full personalized range of positive and ne
 
 ## The 6-Step Process
 
-**From \$27 Billion to Curing Cancer**
+**From \`{python} format_billions(CAPTURED_DIVIDEND)` to Curing Cancer**
 
-**1. Get the Money**: The **[1% Treaty](appendix/1-percent-treaty.qmd)** redirects \$27B/year from weapons to cures  
+**1. Get the Money**: The **[1% Treaty](appendix/1-percent-treaty.qmd)** redirects \`{python} format_billions(CAPTURED_DIVIDEND)`/year from weapons to cures  
 **2. Allocate Efficiently**: The **[DIH](./solution/dih.qmd)** uses democratic voting to fund what matters most  
 **3. Pay Patients**: Subsidies go directly to patients who join trials  
 **4. Run Cheap Trials**: Pragmatic trials cost [$500/patient](references.qmd#recovery-cost-500) instead of [$41,000](references.qmd#trial-cost-41k) (Oxford RECOVERY proved this works)  

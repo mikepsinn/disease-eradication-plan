@@ -6,7 +6,22 @@ tags: [pharmaceuticals, R&D, drug-development, industry-analysis]
 published: true
 date: "2025-02-12T20:29:04.546Z"
 dateCreated: "2025-02-12T20:29:04.546Z"
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 This report examines research and development (R&D) by the pharmaceutical industry.
 

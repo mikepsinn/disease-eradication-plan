@@ -15,7 +15,22 @@ lastStyleCheck: 2025-10-16T00:00:00.000Z
 lastFormattedHash: a0de38ab6c5dfb578088b343d345fac64fd81171c5138f40be45f7a0188620c4
 lastFactCheckHash: 021da257f4cb4b74b636cd5fbf93d3e40860465160f9df673e471a34f05fc82e
 lastLatexCheckHash: 2dbecae2144d939355c03d709cbe12072120251cf0f4623a39c61b632a3f0b5d
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 Everything proposed has already worked.
 This isn't theory.
 It's copying proven models.
@@ -182,7 +197,7 @@ The investment thesis for VICTORY Bonds, a high-risk, high-reward bet on a polit
 - **Michael Milken** proved that to attract capital for high-risk ventures, you must offer a correspondingly high, contractually obligated return.
 - **George Soros's** legendary bet against the British pound in 1992 is the ultimate example of privately financed political arbitrage, proving it's possible to deploy immense private capital to bet on a political outcome.
 
-**The Lesson:** The financial model, which offers a **[$>270% targeted return](economics/victory-bonds.qmd)**, is a direct application of these principles.
+**The Lesson:** The financial model, which offers a **[$>`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` targeted return](economics/victory-bonds.qmd)**, is a direct application of these principles.
 It correctly prices the political risk to attract the sophisticated capital needed to win.
 
 ---

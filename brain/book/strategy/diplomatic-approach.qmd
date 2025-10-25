@@ -3,7 +3,22 @@ title: 🤝 The Diplomatic Approach
 subtitle: How to Get 195 Countries to Sign the Same Treaty
 lastFactCheckHash: d99ef259d2db70c9128ac922d803974a86df211021dff72b57539528e91734aa
 lastLatexCheckHash: bbb294db59902ee820bb712a93f47bcbb6592b87291a65640c074225ebc25eff
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## The Prisoner's Dilemma
 
 **Traditional military reduction**:
@@ -249,7 +264,7 @@ Countries cannot:
 ### Year 4: Signing & Implementation
 
 - Simultaneous signing ceremony
-- First [$27B allocated](../references.qmd#value-captured-by-1pct-treaty)
+- First [`{python} format_billions(CAPTURED_DIVIDEND)` allocated](../references.qmd#value-captured-by-1pct-treaty)
 - [dFDA](../solution/dfda.qmd) launches
 - First trials begin
 

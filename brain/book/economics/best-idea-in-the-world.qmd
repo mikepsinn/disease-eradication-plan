@@ -11,7 +11,22 @@ tags:
   - incentives
   - victory-bonds
   - infinite-roi
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 > **The Only Investment in History with Infinite ROI That Also Prevents Your Death**
 
@@ -25,17 +40,17 @@ Not hyperbole. Not marketing. Just math.
 
 **No other idea in human history achieves infinite return on investment:**
 
-$$\text{ROI} = \frac{\$164B \text{ annual benefits}}{\$0 \text{ new spending}} = \infty$$
+$$\text{ROI} = \frac{\`{python} format_billions(TOTAL_ANNUAL_BENEFITS)` \text{ annual benefits}}{\$0 \text{ new spending}} = \infty$$
 
-**Why it's infinite:** The treaty redirects money that's already being spent on killing people to cure them instead. Zero new cost, $164 billion in annual benefits.
+**Why it's infinite:** The treaty redirects money that's already being spent on killing people to cure them instead. Zero new cost, `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in annual benefits.
 
-### 463:1 Societal ROI 
+### `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` Societal ROI 
 
 **Better than humanity's greatest achievements:**
 
 {{< include ../../figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
-- **1% Treaty/dFDA**: 463:1 ROI
+- **1% Treaty/dFDA**: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI
 - **Smallpox Eradication**: 280:1 ROI (previous record holder)
 - **Childhood Vaccines**: 13:1 ROI
 - **Average Pharma Drug**: 2:1 ROI
@@ -59,7 +74,7 @@ This is a **dominant intervention** - it simultaneously saves money AND saves li
 - **Cost**: $3 trillion annually
 - **ROI**: Negative (pure expense)
 - **Lives saved**: Zero
-- **1% Treaty/dFDA**: GENERATES $164B while saving 25,000 lives
+- **1% Treaty/dFDA**: GENERATES `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` while saving 25,000 lives
 
 ### Mars Colonization
 
@@ -129,7 +144,7 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 
 {{< include ../../figures/three-ingredients-system-diagram.qmd >}}
 
-1. **The 1% Treaty**: Redirect $27B from military budgets (they keep 99%)
+1. **The 1% Treaty**: Redirect `{python} format_billions(CAPTURED_DIVIDEND)` from military budgets (they keep 99%)
 2. **DIH Treasury**: Wishocratic governance - 8 billion people allocate funds, not 200 bureaucrats
 3. **dFDA Marketplace**: 82X cheaper trials, proven by Oxford
 
@@ -146,13 +161,13 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 **💰 The Math Is Unbeatable**:
 
 - Cost to implement: $0 (redirected funds)
-- Annual benefit: $164 billion
+- Annual benefit: `{python} format_billions(TOTAL_ANNUAL_BENEFITS)`
 - Lives saved: 25,000 annually
 - ROI: ∞ (infinite)
 
 ---
 
-## For Investors: 270% Annual Returns Forever
+## For Investors: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` Annual Returns Forever
 
 ### VICTORY Bonds: The Greatest Investment Ever Created
 
@@ -161,9 +176,9 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 **The Simple Math:**
 
 - You invest: $1,000
-- Annual return: $2,700 (270% forever)
+- Annual return: $2,700 (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` forever)
 - Total available: $1 billion (first-come basis)
-- Backed by: $27 billion in treaty funds
+- Backed by: `{python} format_billions(CAPTURED_DIVIDEND)` in treaty funds
 
 **Better Returns Than:**
 
@@ -172,7 +187,7 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 - Real Estate: 15%
 - S&P 500: 10%
 - Cocaine Trafficking: 90% (but illegal)
-- **VICTORY Bonds: 270% (and legal)**
+- **VICTORY Bonds: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` (and legal)**
 
 {{< include ../../figures/victory-bonds-money-flow-diagram.qmd >}}
 
@@ -206,7 +221,7 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 
 ## The Strategy: 5 Steps to Victory
 
-1. **Raise $1B**: VICTORY bonds at 270% returns
+1. **Raise `{python} format_billions(CAMPAIGN_TOTAL_COST)`**: VICTORY bonds at `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns
 2. **Global Referendum**: 280 million votes (just 3.5% of humanity)
 3. **Deploy Lobbying**: $1B gets $1.8T in influence (proven ROI)
 4. **Fund Politicians**: Super PACs for supporters, replace opponents
@@ -218,15 +233,15 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 
 ### Everyone Profits More From Cures Than Disease
 
-**Defense Contractors**: 270% returns > 8% margins. They keep 99% of military budget AND get rich.
+**Defense Contractors**: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns > 8% margins. They keep 99% of military budget AND get rich.
 
-**Politicians**: You have $1 billion in campaign funds. They like being elected.
+**Politicians**: You have `{python} format_billions(CAMPAIGN_TOTAL_COST)` in campaign funds. They like being elected.
 
 **Big Pharma**: Patients PAY THEM for trials instead of pharma paying. From expense to revenue.
 
 **Insurance**: Every cure = billions saved. They're literally betting on you not dying.
 
-**Billionaires**: 270% returns make their current wealth look like pocket change.
+**Billionaires**: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns make their current wealth look like pocket change.
 
 **You**: Don't die from preventable disease (revolutionary concept).
 
@@ -248,9 +263,9 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 **Option B: The 1% Treaty**
 
 - Save 25,000 lives annually (growing exponentially)
-- Generate $164 billion annually
+- Generate `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` annually
 - Cure major diseases within 10 years
-- 270% returns for investors
+- `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns for investors
 - Free healthcare through trials
 - Humanity transcends biological limits
 
@@ -268,7 +283,7 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 ### 2. Invest (If You Have Capital)
 
 - Minimum: $1,000
-- Return: 270% annually forever
+- Return: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually forever
 - Available: $1B total (first-come)
 - Risk: High, but if we fail you die anyway
 
@@ -286,8 +301,8 @@ And biotechnology can prevent most of these deaths. It just spends the money on 
 **It's not complicated:**
 
 1. The treaty redirects 1% of murder money to cure disease
-2. This saves $164 billion annually (proven by data)
-3. Investors get 270% returns forever
+2. This saves `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` annually (proven by data)
+3. Investors get `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns forever
 4. 25,000 lives saved per year
 5. Eventually all disease eliminated
 6. Humanity evolves beyond biological limits

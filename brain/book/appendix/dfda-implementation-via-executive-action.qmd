@@ -12,7 +12,22 @@ tags:
   - regulatory-strategy
   - executive-order
 lastFactCheckHash: cd8afbea8a48bba70e7fa0b26ee1439148560ed28af2f1938832d06910d06fc9
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## Introduction
 
 Achieving the ambitious goals of the [Decentralized FDA (dFDA)](../solution/dfda.qmd) initiative, drastically accelerating medical progress and reducing costs, may require innovative implementation strategies. While congressional legislation could provide the clearest authority and funding, recent precedents from the 2025 Trump administration, particularly the establishment and operation of the [Department of Government Efficiency (DOGE)](../references.qmd#wikipedia-doge), suggest a potential pathway leveraging executive action to initiate and drive the dFDA's creation without an initial congressional mandate.

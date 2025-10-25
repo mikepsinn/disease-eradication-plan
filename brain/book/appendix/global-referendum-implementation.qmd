@@ -1,7 +1,22 @@
 ---
 title: 'Appendix: Global Referendum Implementation'
 description: Practical design for a secure, globally verifiable referendum to measure consent for the 1% Treaty and DIH funding.
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 ## Objective
 

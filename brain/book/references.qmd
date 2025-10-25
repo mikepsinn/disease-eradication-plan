@@ -14,7 +14,22 @@ lastStyleCheck: 2025-10-16
 lastFormattedHash: a0528ec16479d2dbb2791ead5cfbd1b8df263ca66b4250acd31d8cf50ceaeea8
 lastFactCheckHash: f7928ca5bdd2795a997f19503832b2e8b1434e05c79a07bbea7eae0c05ce2b8f
 lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e982c9a2d
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 <a id="166-billion-compounds"></a>
 
@@ -139,11 +154,11 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="annual-rd-savings-potential-50b"></a>
 
-- **Annual R&D savings potential of $50 billion**
+- **Annual R&D savings potential of `{python} format_billions(DFDA_GROSS_SAVINGS)`**
   > Pharma R&D spending: $200B+ annually (2020s), up from $30B in 1990s
   > Development cost estimates: $81.4B/year (2018-2022) for first-in-class/advance-in-class drugs
   > Efficiency opportunities: Transformation could reduce costs "from billions to millions" per drug
-  > Specific "$50B savings" figure not verified but significant efficiency potential documented
+  > Specific "`{python} format_billions(DFDA_GROSS_SAVINGS)` savings" figure not verified but significant efficiency potential documented
   > — [CBO: Pharma R&D](https://www.cbo.gov/publication/57126) | [Accenture: Transforming Pharma R&D](https://www.accenture.com/us-en/insights/life-sciences/from-billions-to-millions-transformation) | [Clarivate: Pharma R&D Efficiency](https://clarivate.com/life-sciences-healthcare/blog/pharma-rd-productivity-dips-but-efficiency-gains-give-hope/)
 
 <a id="anti-aging-cream-market-50b"></a>
@@ -583,7 +598,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 <a id="clinical-trial-spending-dfda-baseline"></a>
 
 - **Annual global clinical trial spending**
-  > Conservative baseline estimate of $100 billion per year in global clinical trial spending potentially addressable by dFDA through decentralization, automation, and real-world data integration. Based on market projections exceeding $100 billion by early 2030s.
+  > Conservative baseline estimate of `{python} format_billions(GLOBAL_TRIAL_MARKET)` per year in global clinical trial spending potentially addressable by dFDA through decentralization, automation, and real-world data integration. Based on market projections exceeding `{python} format_billions(GLOBAL_TRIAL_MARKET)` by early 2030s.
   > — Fortune Business Insights, [Clinical Trials Market](https://www.fortunebusinessinsights.com/clinical-trials-market-106930) | Global Market Insights, [Clinical Trials Market Forecast](https://www.gminsights.com/industry-analysis/clinical-trials-market)
 
 <a id="cmmi-overview"></a>
@@ -801,7 +816,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 <a id="dct-platform-funding-others"></a>
 
 - **Other DCT platform company funding**
-  > Science 37: ~$40M raised
+  > Science 37: ~`{python} format_millions(DFDA_ANNUAL_OPEX)` raised
   > Thread: up to $50M raised
   > uMotif: ~$25.5M raised
   > These companies show that significant traction and platform development can be achieved with investments in the tens of millions.
@@ -878,12 +893,12 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 
 <a id="dfda-roi-463-to-1"></a>
 
-- **dFDA ROI of 463:1 over 10 years**
-  > NPV analysis estimate: 463:1 ROI over 10 years (central estimate)
+- **dFDA ROI of `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` over 10 years**
+  > NPV analysis estimate: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI over 10 years (central estimate)
   > Range: 66:1 to 2,577:1 depending on total ecosystem costs
-  > Based on: $37.5-46M upfront platform investment + operational costs vs $50B annual R&D savings
-  > Value proposition: 80X reduction in per-patient trial costs; $50B gross annual savings from pharma R&D
-  > Pharmaceutical industry spends ~$100B/year on R&D; 50% cost reduction yields enormous net savings
+  > Based on: $37.5-46M upfront platform investment + operational costs vs `{python} format_billions(DFDA_GROSS_SAVINGS)` annual R&D savings
+  > Value proposition: 80X reduction in per-patient trial costs; `{python} format_billions(DFDA_GROSS_SAVINGS)` gross annual savings from pharma R&D
+  > Pharmaceutical industry spends ~`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year on R&D; 50% cost reduction yields enormous net savings
   > — [dFDA: Cost Benefit Analysis](https://wiki.dfda.earth/en/economic-models/dfda-cost-benefit-analysis) | [dFDA Wiki](https://wiki.dfda.earth/)
 
 <a id="diabetes-deaths-2m-annually"></a>
@@ -1782,7 +1797,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
   > NIH/NIA basic biology of aging (2019): $382 million (~1% of NIH budget)
   > NIA total budget (FY2020): $3.5 billion total, but ~$2.4B (60%) goes to Alzheimer's (Neuroscience)
   > Geroscience/aging biology specifically: $382-500M annually from NIH system
-  > Private sector: Hevolution Foundation pledged $1B annually; 2021: >$2B raised by longevity biotech (40+ deals)
+  > Private sector: Hevolution Foundation pledged `{python} format_billions(CAMPAIGN_TOTAL_COST)` annually; 2021: >$2B raised by longevity biotech (40+ deals)
   > Criticism: Aging research via NIA/NIH not properly funded relative to disease-specific research
   > — [PMC: Funding Channels of Geroscience](https://pmc.ncbi.nlm.nih.gov/articles/PMC9808549/) | [NIA: FY2022 Budget](https://www.nia.nih.gov/about/budget/fiscal-year-2022-budget) | [Spannr: Lack of Government Funding](https://spannr.com/articles/analyzing-one-of-agings-biggest-dilemmas-the-lack-of-government-funding)
   > Note: $500M figure accurate for public (NIH) geroscience/basic aging biology research. Majority of NIA's $3.5B budget goes to Alzheimer's, not fundamental aging research
@@ -2098,7 +2113,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 <a id="global-violence-costs"></a>
 
 - **Global Cost of Violence**
-  > "The economic impact of violence on the global economy in 2021 was \$16.5 trillion, equivalent to 10.9% of global GDP, or \$2,117 per person."
+  > "The economic impact of violence on the global economy in 2021 was \`{python} format_billions(TOTAL_ENDGAME_BENEFITS)`, equivalent to 10.9% of global GDP, or \$2,117 per person."
   > — Institute for Economics & Peace, 2022, [Global Peace Index](https://www.visionofhumanity.org/maps/global-peace-index/)
 
 <a id="gm-ev-subsidy-lobbying"></a>
@@ -3366,7 +3381,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 <a id="per-capita-lifetime"></a>
 
 - **Per Capita Lifetime Cost of Violence (Estimated ~\$170,000)**
-  > Feynman: Annual global cost \$16.5T / 8B people = \$2,062/year * 80 years = ~\$165,000.
+  > Feynman: Annual global cost \`{python} format_billions(TOTAL_ENDGAME_BENEFITS)` / 8B people = \$2,062/year * 80 years = ~\$165,000.
   > — Based on IEP Global Peace Index
 
 <a id="per-person-impact-74259-lifetime-savings"></a>
@@ -3374,7 +3389,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 - **$74,259 per person lifetime savings from conflict reduction**
   > Calculation based on economic case for peace: War costs $74,259 per person over lifetime
   > Derived from global conflict costs ($300B lost human capital annually + broader $14T/year global violence/conflict costs) / population over 80-year lifespan
-  > IEP Global Peace Index calculation: $16.5T annual global cost / 8B people = $2,062/year × 80 years = ~$165,000 lifetime cost
+  > IEP Global Peace Index calculation: `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` annual global cost / 8B people = $2,062/year × 80 years = ~$165,000 lifetime cost
   > — [Think by Numbers: War Costs $74,259/Lifetime](https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/) | [WEF: War Violence Costs $5/Day](https://www.weforum.org/stories/2021/02/war-violence-costs-each-human-5-a-day/)
 
 <a id="pharma-lobbying-stats"></a>
@@ -3393,7 +3408,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
   > 2019 survey: $402.3B spent on pharmaceutical marketing/advertising globally
   > 2023 U.S. spending: Top 10 companies spent $13.8B on advertising/promotion
   > Direct-to-consumer advertising: Record $7.6B (2022); TV ads $6.5B (2022); digital ads $3.1B (2023, +14% from 2022)
-  > Physician marketing (detailing): $27B globally (2022)
+  > Physician marketing (detailing): `{python} format_billions(CAPTURED_DIVIDEND)` globally (2022)
   > Historical growth: $17.7B annually (1997) → $30B (2016), with $26.9B spent by drug companies in 2016
   > — [Statista: Pharma Marketing Spend](https://www.statista.com/statistics/1411882/pharma-marketing-spend-worldwide/) | [JHU: Consumer Advertising Spending](https://publichealth.jhu.edu/2023/spending-on-consumer-advertising-for-top-selling-prescription-drugs-in-us-favors-those-with-low-added-benefit) | [TechTarget: Big Pharma DTC Ad Spend](https://www.techtarget.com/pharmalifesciences/news/366621006/Big-Pharmas-138B-DTC-ad-spend-drives-drug-costs)
 
@@ -3804,7 +3819,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 <a id="russia-military-spending-share"></a>
 
 - **Russia's Share of Global Military Spending**
-  > 2024: $149B military spending (5.5% of global $2,718B), 3rd largest spender globally
+  > 2024: $149B military spending (5.5% of global `{python} format_billions(MILITARY_SPENDING)`), 3rd largest spender globally
   > 38% increase from 2023; doubled since 2015
   > 7.1% of Russia's GDP, 19% of all Russian government spending
   > Top 5 spenders (US, China, Russia, Germany, India): $1,635T combined (60% of global)
@@ -4157,7 +4172,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 <a id="total-military-and-war-costs-11-4t"></a>
 
 - **Total military and war costs: $11.4 trillion**
-  > Direct costs: $7,655B (Military $2,718B + Human casualties $2,446B + Infrastructure $1,875B + Trade disruption $616B)
+  > Direct costs: $7,655B (Military `{python} format_billions(MILITARY_SPENDING)` + Human casualties $2,446B + Infrastructure $1,875B + Trade disruption $616B)
   > Indirect costs: $3,700B (Refugees $1,680B + Diplomatic $800B + Environmental $420B + Opportunity costs $320B + PTSD $232B + Lost human capital $300B)
   > Total: $11,355.1 billion annually
   > Per capita: $1,419/year; $113,500 over 80-year lifetime
@@ -4445,13 +4460,13 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 <a id="vaccine-roi-44-to-1"></a>
 
 - **Return on investment for vaccines**
-  > "Every $1 spent on childhood immunizations results in approximately $11 in savings (700% ROI). For low/middle-income countries: $26.1-$51.0 ROI using cost-of-illness approach, $52.2 ROI using value-of-statistical-life approach. US childhood vaccines 1994-2023 saved $540B in direct costs, $2.7T in total societal savings."
+  > "Every $1 spent on childhood immunizations results in approximately $11 in savings (700% ROI). For low/middle-income countries: $26.1-$51.0 ROI using cost-of-illness approach, $52.2 ROI using value-of-statistical-life approach. US childhood vaccines 1994-2023 saved $540B in direct costs, `{python} format_billions(MILITARY_SPENDING)` in total societal savings."
   > — AAF, [Vaccine Economic Value](https://www.americanactionforum.org/research/vaccine-protection-and-productivity-the-economic-value-of-vaccines/) | Health Affairs, [ROI from Immunization 2011-30](https://www.healthaffairs.org/doi/10.1377/hlthaff.2020.00103) | VoICE, [Value of Vaccines](https://immunizationevidence.org/featured_issues/the-value-of-vaccines-investments-in-immunization-yield-high-returns/)
 
 <a id="value-captured-by-1pct-treaty"></a>
 
 - **Value captured by 1% Treaty of $27+ billion annually**
-  > "The 1% Treaty redirects 1% of global military spending ($2.7T × 1% = $27.18B) to medical research, with 10% of this flow ($2.718B annually) distributed to VICTORY bondholders as returns."
+  > "The 1% Treaty redirects 1% of global military spending (`{python} format_billions(MILITARY_SPENDING)` × 1% = `{python} format_billions(CAPTURED_DIVIDEND)`) to medical research, with 10% of this flow (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` annually) distributed to VICTORY bondholders as returns."
   > — See [1% Treaty overview](appendix/1-percent-treaty.qmd) for full calculation details and [VICTORY Bonds](economics/victory-bonds.qmd) for bond structure
 
 <a id="veteran-healthcare-cost-projections"></a>

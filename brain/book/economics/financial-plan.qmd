@@ -8,36 +8,51 @@ tags:
   - strategy
   - treasury-management
 title-id: sec-financial-plan
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 This document provides a high-level overview of the entire financial architecture required to pass the 1% Treaty and operate the Decentralized Institutes of Health (DIH). For detailed breakdowns, see the linked documents below.
 
 ## The Three Financial Pillars
 
-### 1. Fundraising: How To Raise $1B
+### 1. Fundraising: How To Raise `{python} format_billions(CAMPAIGN_TOTAL_COST)`
 
 **Instrument:** [VICTORY Bonds](./victory-bonds.qmd)
 
-- **Target Returns:** 270% annually, perpetually
+- **Target Returns:** `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually, perpetually
 - **Structure:** Debt instrument, senior to all other claims
-- **Payout:** 10% of all DIH treaty inflows ($2.7B/year)
+- **Payout:** 10% of all DIH treaty inflows (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`/year)
 - **Protection:** Bondholders paid before mission spending
-- **Collateral:** $27B+ annual treaty revenue stream
+- **Collateral:** `{python} format_billions(CAPTURED_DIVIDEND)`+ annual treaty revenue stream
 - **The Pitch:** "Invest $1B. Get $2.7B/year. Forever."
 
 **Why This Works:**
 
-- Simplest pitch in finance: 270% annual returns, perpetual
+- Simplest pitch in finance: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns, perpetual
 - Clean $1B target (vs confusing $1.2-2.5B range)
 - 10% payout is easy math (vs 5% complex calculations)
 - "Forever" beats any finite timeline
 - Better returns than any investment in history
 
-**Timeline:** 12-24 months to raise $1B (simplified structure accelerates fundraising)
+**Timeline:** 12-24 months to raise `{python} format_billions(CAMPAIGN_TOTAL_COST)` (simplified structure accelerates fundraising)
 
 ---
 
-### 2. Campaign Budget: How To Spend $1B
+### 2. Campaign Budget: How To Spend `{python} format_billions(CAMPAIGN_TOTAL_COST)`
 
 **Detailed Breakdown:** [Campaign Budget](./campaign-budget.qmd)
 
@@ -64,13 +79,13 @@ The one-time "activation energy" to pass the 1% Treaty, made affordable through 
 
 ---
 
-### 3. Treasury Management: How To Manage $27B+ Annually
+### 3. Treasury Management: How To Manage `{python} format_billions(CAPTURED_DIVIDEND)`+ Annually
 
-Once the treaty passes, $27 billion flows annually from military budgets to the DIH treasury.
+Once the treaty passes, `{python} format_billions(CAPTURED_DIVIDEND)` flows annually from military budgets to the DIH treasury.
 
 #### Revenue Sources
 
-**Primary:** 1% Treaty ($27B annually)
+**Primary:** 1% Treaty (`{python} format_billions(CAPTURED_DIVIDEND)` annually)
 
 - 100+ nations contribute 1% of military budgets
 - Verified via satellite imagery and blockchain receipts
@@ -78,7 +93,7 @@ Once the treaty passes, $27 billion flows annually from military budgets to the 
 
 **Growth Path:**
 
-- Year 1-3: 1% Treaty ($27B)
+- Year 1-3: 1% Treaty (`{python} format_billions(CAPTURED_DIVIDEND)`)
 - Year 4-7: 2% Treaty ($54B) - public demands expansion
 - Year 8-10: 5% Treaty ($135B) - exponential success
 - Year 10+: 10%+ ($270B+) - war becomes obsolete
@@ -87,10 +102,10 @@ Once the treaty passes, $27 billion flows annually from military budgets to the 
 
 **The Only Fixed Cost (10%):**
 
-- VICTORY bond returns: $2.7B annually (10% of treaty inflows)
+- VICTORY bond returns: `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` annually (10% of treaty inflows)
 - Sacred and untouchable (or investors walk)
 - Automatically distributed via smart contracts
-- 270% annual returns to bondholders
+- `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns to bondholders
 
 **Everything Else (90%): Decided by Wishocracy**
 
@@ -154,11 +169,11 @@ As more patients join:
 
 **Revenue:**
 
-- 1% Treaty: $27B
+- 1% Treaty: `{python} format_billions(CAPTURED_DIVIDEND)`
 
 **Expenses:**
 
-- VICTORY bond returns: $2.7B (10% of treaty inflows)
+- VICTORY bond returns: `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` (10% of treaty inflows)
 - Patient subsidies: ~$16B (decided by Wishocracy, ~66%)
 - Platform infrastructure: ~$3B (scaling to 10M patients)
 - Research prizes: ~$2.5B (first-cure bonuses)
@@ -203,7 +218,7 @@ As more patients join:
 
 **Expenses:**
 
-- VICTORY bond returns: $27B+ (10% forever)
+- VICTORY bond returns: `{python} format_billions(CAPTURED_DIVIDEND)`+ (10% forever)
 - Death becomes optional
 - Suffering becomes archaeology
 - Humanity explores space
@@ -213,11 +228,11 @@ As more patients join:
 
 ## Financial Performance Metrics
 
-### Return on Investment (The 463:1 Multiplier)
+### Return on Investment (The `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` Multiplier)
 
 **Direct Investment Returns (VICTORY Bonds):**
 
-- 270% annually to bondholders
+- `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually to bondholders
 - Perpetual returns (not 10-year finite)
 - $1B investment → $2.7B/year forever
 - Better than every investment in human history
@@ -225,13 +240,13 @@ As more patients join:
 **Societal Returns (Everyone Else):**
 
 - $463 in value created per dollar spent
-- 82X reduction in trial costs ($50B annual savings)
+- 82X reduction in trial costs (`{python} format_billions(DFDA_GROSS_SAVINGS)` annual savings)
 - 10-year acceleration in drug development ($5.4T productivity)
 - 100X more diseases addressed (10M lives saved annually)
 - 3X ROI on prevention vs treatment ($600B saved)
 - Knowledge compounds through open data ($2.1T avoided waste)
 
-**Total 10-Year Value Creation: $16.5 Trillion**
+**Total 10-Year Value Creation: `{python} format_billions(TOTAL_ENDGAME_BENEFITS)`**
 
 That's more than China's entire GDP.
 
@@ -344,8 +359,8 @@ That's more than China's entire GDP.
 **Financial:**
 
 - Treaty expansion rate (1% → 2% → 5%)
-- VICTORY bond returns delivered (target: 270% annually)
-- Multiplier effects (target: 463:1 societal value)
+- VICTORY bond returns delivered (target: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually)
+- Multiplier effects (target: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` societal value)
 
 ---
 
@@ -392,9 +407,9 @@ Each success makes the next success easier:
 
 ### For Health Economics Nerds
 
-- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The 463:1 ROI breakdown
+- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI breakdown
 - **[Peace Dividend Analysis](../appendix/peace-dividend-analysis.qmd)** - Historical proof that military cuts → prosperity
-- **[Total Economic Impact](../appendix/total-economic-impact.qmd)** - The $16.5T endgame
+- **[Total Economic Impact](../appendix/total-economic-impact.qmd)** - The `{python} format_billions(TOTAL_ENDGAME_BENEFITS)` endgame
 
 ### For Treaty Supporters
 
@@ -405,13 +420,13 @@ Each success makes the next success easier:
 
 ## The Bottom Line
 
-**To Raise:** $1B via VICTORY Bonds
+**To Raise:** `{python} format_billions(CAMPAIGN_TOTAL_COST)` via VICTORY Bonds
 
 **To Spend:** 20% viral referendum, 25% AI lobbying, 25% tech platform, 10% AI legal, 10% partnerships, 5% ops, 5% implementation
 
-**To Manage:** $27B+ annually via Wishocracy (8 billion voters)
+**To Manage:** `{python} format_billions(CAPTURED_DIVIDEND)`+ annually via Wishocracy (8 billion voters)
 
-**To Deliver:** 270% annual returns to investors (perpetual), 463:1 societal returns, optional death by 2050
+**To Deliver:** `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns to investors (perpetual), `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` societal returns, optional death by 2050
 
 **The Simple Math:** Invest $1B → Get $2.7B/year → Forever
 

@@ -1,9 +1,23 @@
 ---
 title: 🌍 Humanity's Budget
 description: The True Scale of War & Disease
-jupyter: python3
 lastFactCheckHash: dd789a075b7f994e23f7a9cd900a9bf36c23abe125ec84656bc0797b44b0993e
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 This analysis reveals the shocking reality of humanity's spending priorities by visualizing our global "family budget" with the **total economic burden** of war and disease, including all externalities.
 
 **Key Insight**: When you include all externalities, war and disease consume a massive portion of global GDP - far more than just direct spending.

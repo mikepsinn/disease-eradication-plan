@@ -1,7 +1,22 @@
 ---
 title: 'Non-Profit Partnership Incentives: A Mathematically Superior Model'
 description: A strategic framework for aligning non-profit partners with the 1% Treaty mission through performance-based grants and personal VOTE point incentives.
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 # Non-Profit Partnership Incentive Model
 
@@ -45,7 +60,7 @@ The short-term performance grants and personal VOTE points are merely the activa
 
 Our model is designed to empower our coalition partners to become the governors of the very funding bodies that will define their fields for decades to come.
 
-- **The Vision:** The **[Decentralized Institutes of Health (DIH)](../solution/dih.qmd)** is designed as a "coalition of coalitions." The main $27B+ treasury will allocate multi-billion dollar budgets to specialized sub-DAOs (e.g., Decentralized Institute of Mental Health, Decentralized Institute on Aging).
+- **The Vision:** The **[Decentralized Institutes of Health (DIH)](../solution/dih.qmd)** is designed as a "coalition of coalitions." The main `{python} format_billions(CAPTURED_DIVIDEND)`+ treasury will allocate multi-billion dollar budgets to specialized sub-DAOs (e.g., Decentralized Institute of Mental Health, Decentralized Institute on Aging).
 - **The Prize:** Governance of these powerful, well-funded sub-DAOs will be granted to the coalition of non-profit partners who made the 1% Treaty a reality.
 - **The Result:** By joining our coalition, you are not just helping to unlock a new pool of funding; you are earning a permanent and powerful governance stake in it. The choice is clear: continue competing for small, finite grants, or cooperate to collectively govern a multi-billion dollar annual treasury dedicated to your mission.
 

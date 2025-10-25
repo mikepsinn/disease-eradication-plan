@@ -3,7 +3,22 @@ title: 🎁 Your Personal Benefits
 subtitle: What You Actually Get From This
 lastStructureCheckHash: 9f15d1c237b453362bf8c473f6de8f798c4179dfb872ed94db6290507911a870
 lastLatexCheckHash: f99ed9317eca2422b890a85dde50f21cd93d5bde1d5d55e81acfcd002f861e8c
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## Forget Altruism - This Is Selfish
 
 You don't need to care about humanity.
@@ -59,7 +74,7 @@ Here's what you personally get:
 
 **VICTORY Bonds**:
 
-VICTORY Bonds offer a high-risk, high-reward political arbitrage opportunity targeting perpetual annual returns of 270% once the treaty is funded.
+VICTORY Bonds offer a high-risk, high-reward political arbitrage opportunity targeting perpetual annual returns of `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` once the treaty is funded.
 
 **Personal benefit**: If the treaty passes, your investment returns crush every other option.
 
@@ -243,7 +258,7 @@ This isn't charity. **This is the best deal anyone has ever offered you.**
 **Your options:**
 
 - **Vote YES**: 2 minutes, potential to save millions
-- **Invest in VICTORY Bonds**: High risk, 270% returns if it works ([see details](../economics/victory-bonds.qmd))
+- **Invest in VICTORY Bonds**: High risk, `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns if it works ([see details](../economics/victory-bonds.qmd))
 - **Share with 10 people**: 5 minutes, help reach critical mass
 - **Do nothing**: Keep dying of preventable disease
 

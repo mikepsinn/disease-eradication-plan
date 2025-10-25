@@ -19,7 +19,22 @@ lastFormattedHash: aba334bdf77a731a1cbe7d54266b199ef795ae75d4fc1b30c122d04862c9d
 lastStyleHash: 1c00299048de5cdcf60a487ac15742c4168ecb444f6ff47cfa4ef575c25580fa
 lastFactCheckHash: c6cd75d1ba2e77fae05a3e02582545da3dac6977086edd8fe9bd5cbd835fb569
 lastLatexCheckHash: 879bbe51bc29736ee7db77ae75fe2dd8502bd895e389638798d97ff1c1c9e251
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 Here's a fun fact: While you're reading this sentence, approximately 3 people just died from preventable diseases.
 By the time you finish this paragraph, that number will be 12.
 Don't worry though—we just spent enough money on a single fighter jet to have saved all of them for the next century.

@@ -4,7 +4,22 @@ subtitle: How to Make Curing Disease More Viral Than Cat Videos
 lastFactCheckHash: a1c41af377e010e8b38626e4f2f81ac78ede39f2e8de7315db96128bbf0c877a
 lastStructureCheckHash: 8d2e881c036063f3ace5ac987060505a6cd9f78d24c40a624bb249384e6a679b
 lastLatexCheckHash: f63ec3c3360890948a7dbbdbd38153bc482331d04f6b82c99f447e8418345a24
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## The Goal: 280 Million Votes
 
 Historical analysis shows: Every peaceful movement that gets **[3.5% active support](../references.qmd#3-5-rule)** succeeds.
@@ -25,7 +40,7 @@ Historical analysis shows: Every peaceful movement that gets **[3.5% active supp
 
 - "Humanity has [13,000 nukes](../references.qmd#world-warheads) but no cure for your kid's cancer" (rage-inducing)
 - "You're spending $340/year on killing people, $8/year on curing them" (shocking)
-- "270% investment returns while saving humanity" (greed + altruism)
+- "`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` investment returns while saving humanity" (greed + altruism)
 
 ## The Viral Formula
 
@@ -37,7 +52,7 @@ $$
 - **Anger**: "[FDA delays kill more than the drugs](../references.qmd#fda-drug-lag-deaths-estimate)"
 - **Fear**: "You'll die of disease, not war"
 - **Hope**: "You could cure this in 10 years"
-- **Greed**: "40-270% annual returns forever"
+- **Greed**: "40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns forever"
 
 ### Personal Stake
 
@@ -154,7 +169,7 @@ $$
 
 **Finance/Investment** (50M+ followers):
 
-- 40-270% returns is compelling content
+- 40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns is compelling content
 - Financial analysis is their specialty
 - Greed motivates sharing
 

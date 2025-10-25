@@ -14,7 +14,22 @@ lastFormatted: 2025-10-16
 lastStyleCheck: 2025-10-16
 lastFormattedHash: 2fc2e2fe5025bc28a4a1034c25fc99af953285031cf8ebda2c70d2c7d276631b
 lastFactCheckHash: 7837a0195cf148f5025eedbc78c6fe0bdab52026ebd09bce12e98fbe1ebebabd
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 The [Decentralized Institutes of Health (DIH)](../solution/dih.qmd) is a SuperDAO governed by **Wishocracy**, a protocol for managing large, decentralized organizations.
 
 Wishocracy is a model for creating a semi-autonomous "to-do list for humanity," where people collaborate with AI agents to prioritize, fund, and solve complex problems.
@@ -69,7 +84,7 @@ This system is:
 
 ### 4. The Treasury (The DAO)
 
-The DAO's treasury (in this case, the **DIH**) automatically executes the will of the voters, deploying its **$27B+ annual budget** to fund the "Contributors" (the researchers, scientists, and engineers) who are working to grant the top-ranked wishes.
+The DAO's treasury (in this case, the **DIH**) automatically executes the will of the voters, deploying its **`{python} format_billions(CAPTURED_DIVIDEND)`+ annual budget** to fund the "Contributors" (the researchers, scientists, and engineers) who are working to grant the top-ranked wishes.
 
 ### 5. The Verification Layer (e.g., The dFDA)
 
@@ -88,7 +103,7 @@ For the DIH, this function is performed by the [Decentralized FDA (dFDA)](../sol
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
 
-**The Challenge:** A $27B treasury is a massive target for hackers, fraudsters, and corrupt actors.
+**The Challenge:** A `{python} format_billions(CAPTURED_DIVIDEND)` treasury is a massive target for hackers, fraudsters, and corrupt actors.
 
 [Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks](../references.qmd#dao-multisig-vulnerabilities).
 
@@ -130,7 +145,7 @@ For the DIH, this function is performed by the [Decentralized FDA (dFDA)](../sol
 
 This isn't just about protecting research funding - it's an experiment in building the next generation of way better government that doesn't steal.
 
-Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that $27B can be managed with:
+Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), we demonstrate that `{python} format_billions(CAPTURED_DIVIDEND)` can be managed with:
 
 - **Zero human targets** for violence, kidnapping, or corruption
 - **True community control** through direct token holder governance
@@ -139,7 +154,7 @@ Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), 
 
 **What Else This Could Fix:**
 
-*Once we prove you can run a $27 billion treasury without any humans stealing from it, we could do the same thing for schools, roads, or anything else the government currently screws up.*
+*Once we prove you can run a `{python} format_billions(CAPTURED_DIVIDEND)` treasury without any humans stealing from it, we could do the same thing for schools, roads, or anything else the government currently screws up.*
 
 - **Education**: Pay teachers based on whether kids actually learn things
 - **Infrastructure**: Fund roads that don't immediately fall apart

@@ -17,7 +17,22 @@ domains:
   - dih
 doc_type: regulatory
 lastFactCheckHash: c64f34fb21462e75256f819ba3f9161360b0d2d7ea180b1e716edbc1a98a4d0a
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## Section 1. Purpose
 
 To accelerate financing for public‑good initiatives (e.g., the dFDA, DIH, and the 1% Treaty), this Act creates an "impact securities" category with simplified offering, expanded investor participation, and automated, on‑chain disclosures, preserving investor protections while lowering capital formation frictions.

@@ -8,7 +8,22 @@ tags:
   - incentives
   - victory-bonds
 lastFactCheckHash: b74623fc57662d2d8a878763744ec80386176c7d264f439e4954321de84482e5
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 You could spend decades fighting the military-industrial complex. You could march. You could vote. You could write angry letters.
 
 You'd lose.

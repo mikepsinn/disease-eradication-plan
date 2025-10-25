@@ -1,7 +1,22 @@
 ---
 title: dFDA QALY Model - 840,000 Annual QALYs
 description: SOURCE OF TRUTH - Detailed QALY calculation model showing how dFDA generates 840,000 Quality-Adjusted Life Years annually
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 ### Appendix: Detailed QALY Calculation Model {#appendix-detailed-qaly-calculation-model}
 
@@ -62,7 +77,7 @@ This stream reflects the transformative potential of the dFDA to create viable r
 **For detailed information on decentralized clinical trial (DCT) platform funding**, see:
 
 - [Medable: $521M raised, $2.1B valuation](../references.qmd#dct-platform-funding-medable)
-- [Other DCT platforms: Science 37 (~$40M), Thread (up to $50M), uMotif (~$25.5M)](../references.qmd#dct-platform-funding-others)
+- [Other DCT platforms: Science 37 (~`{python} format_millions(DFDA_ANNUAL_OPEX)`), Thread (up to $50M), uMotif (~$25.5M)](../references.qmd#dct-platform-funding-others)
 
 #### Sources
 
@@ -90,7 +105,7 @@ The calculations below are based on the central ("base case") estimates establis
     $$
 
 - **Daily Financial Value Lost:**
-  - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **[$50 billion per year](#gross-r-and-d-savings-from-dfda-implementation)** by reducing the costs of the [**$100 billion global clinical trial market**](#market-size-and-impact) by [**50%**](#gross-r-and-d-savings-from-dfda-implementation). This represents value that is currently being spent inefficiently.
+  - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **[`{python} format_billions(DFDA_GROSS_SAVINGS)` per year](#gross-r-and-d-savings-from-dfda-implementation)** by reducing the costs of the [**`{python} format_billions(GLOBAL_TRIAL_MARKET)` global clinical trial market**](#market-size-and-impact) by [**50%**](#gross-r-and-d-savings-from-dfda-implementation). This represents value that is currently being spent inefficiently.
   - The daily financial loss from this inefficiency is:
     $$
     \frac{\$50,000,000,000}{365\ \text{days}} \approx \mathbf{\$137\ \text{million lost per day}}
@@ -121,7 +136,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 ### Final ROI and Net Benefit
 
-- **Central ROI Estimate:** [463:1](#final-roi-and-net-benefit)
+- **Central ROI Estimate:** [`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`](#final-roi-and-net-benefit)
 - **Central Net Benefit (10-Year, Discounted):** [~\$249 Billion](#final-roi-and-net-benefit)
 - **Dominant Health Intervention:** The dFDA is cost-saving while simultaneously generating substantial health gains (QALYs), making it a dominant intervention from a health economics perspective.
 
@@ -179,11 +194,11 @@ The following table provides the data and sources that support the chart. The li
 
 ## Comparison to Other Major Public Investments
 
-To provide context for the dFDA's estimated costs, it is useful to compare them to other significant U.S. government investments in health and technology. The dFDA's projected "Lean Ecosystem" cost of approximately **[\$40 million per year](#simplified-roi-scenario)** (covering core platform operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
+To provide context for the dFDA's estimated costs, it is useful to compare them to other significant U.S. government investments in health and technology. The dFDA's projected "Lean Ecosystem" cost of approximately **[\`{python} format_millions(DFDA_ANNUAL_OPEX)` per year](#simplified-roi-scenario)** (covering core platform operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
 
 | Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to dFDA Annual Cost           | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :--------------------------------------- | :------------------------------------------------------------------------- |
-| **dFDA Infrastructure (Lean Ecosystem)**   | **~\$40 Million / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
+| **dFDA Infrastructure (Lean Ecosystem)**   | **~\`{python} format_millions(DFDA_ANNUAL_OPEX)` / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **~\$257 Million / year** ($1.8B over 7 years)          | **~6.4x**                                | See [NCI Budget](../references.qmd#nih-nci-budget-breakdown)          |
 | **NIH "All of Us" Research Program** | **~\$500 Million / year** (FY23 Approx. Budget) | **~12.5x**                               | See [NIH All of Us Program](../references.qmd#nih-all-of-us-program)              |
 | **HealthCare.gov (Initial Build)**   | **~\$1.7 - \$2.1 Billion** (Total Upfront Cost)        | **~42x - 52x** (of one year's dFDA cost) | See [GAO HealthCare.gov costs](../references.qmd#gao-healthcare-gov-costs) |

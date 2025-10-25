@@ -12,10 +12,25 @@ tags:
 lastFactCheckHash: b370004622b405e91556982ba836228da79160e39b8455e614bb00d74c420786
 lastStructureCheckHash: 3367d8b6db407d66af55c540258f2c88257dc5ae9c701d067ad4cb5370552c55
 lastLatexCheckHash: 195dc8bd4e6a0440f8435035e67cef83ea9b1b7c26fdb23e1fd4dfa52695f370
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## The Greatest Heist in Human History (But Legal)
 
-This is how we steal $27 billion a year from the military-industrial complex and give it to dying people.
+This is how we steal `{python} format_billions(CAPTURED_DIVIDEND)` a year from the military-industrial complex and give it to dying people.
 
 ![Global military spending by region showing the $2.7 trillion we spend annually on weapons instead of cures](../../../assets/global-military-spending-chart.png)
 
@@ -44,7 +59,7 @@ It's like if everyone in your neighborhood spent their life savings on attack do
 
 3.  **The Punchline:** Nobody loses! Everyone keeps the same relative scariness! It's like if everyone at a party agreed to take off their shoes - everyone gets shorter by the same amount, but nobody actually gets shorter relative to anyone else.
 
-4.  **The Prize:** That 1% - that $27 billion per year - goes into a global fund to cure the diseases that are actually killing people, unlike the bombs which are mostly just sitting around getting dusty and occasionally almost ending the world by accident.
+4.  **The Prize:** That 1% - that `{python} format_billions(CAPTURED_DIVIDEND)` per year - goes into a global fund to cure the diseases that are actually killing people, unlike the bombs which are mostly just sitting around getting dusty and occasionally almost ending the world by accident.
 
 This is so logical it hurts. Which is why it's never been tried. And here's the best part: 1% is just the entry fee. This is a subscription model for saving the world.
 
@@ -148,7 +163,7 @@ So we don't frame this as "reducing military spending." We frame it as:
 "Our nation will be stronger when our people aren't dying of preventable diseases. A healthy population is a powerful population."
 
 **For Economists**:
-"[The ROI is 1,222:1](../economics.qmd#the-complete-case-1-222-1-roi-all-direct-benefits). It's the single greatest economic opportunity in human history."
+"[The ROI is `{python} format_roi(ROI_TIER_2_COMPLETE)`](../economics.qmd#the-complete-case-1-222-1-roi-all-direct-benefits). It's the single greatest economic opportunity in human history."
 
 **For Conspiracy Theorists**:
 "Big Pharma hates this one weird trick that makes medicine basically free."
@@ -188,16 +203,16 @@ Every politician claims credit. Nobody remembers who opposed it. History books c
 
 ---
 
-## The Money Flow: Where $27 Billion Actually Goes
+## The Money Flow: Where `{python} format_billions(CAPTURED_DIVIDEND)` Actually Goes
 
 Once the treaty is signed and the money starts flowing, here's what happens:
 
 ### The Global Fund for Not Dying (Official Name TBD)
 
-**Input**: $27 billion annually from military budgets worldwide
+**Input**: `{python} format_billions(CAPTURED_DIVIDEND)` annually from military budgets worldwide
 
 **Distribution**:
-The $27 billion flows into the DIH Treasury, where it is allocated directly by the people of Earth via the Wishocracy platform. There are no committees or central planners. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
+The `{python} format_billions(CAPTURED_DIVIDEND)` flows into the DIH Treasury, where it is allocated directly by the people of Earth via the Wishocracy platform. There are no committees or central planners. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
 - **Patient Subsidies:** The largest portion, creating a market for clinical trials.
 - **VICTORY Bond Returns:** A fixed 10% of inflows, as promised to investors.
 - **Research & Development:** Funding for breakthrough platform technologies.
@@ -226,7 +241,7 @@ Why? Because they get to:
 1.  **Keep 99% of their budget** (still plenty for bombs)
 2.  **Pivot 1% to biotech** (higher profit margins)
 3.  **Look like heroes** (rare for arms dealers)
-4.  **Invest in the fund** (270% annual returns, remember?)
+4.  **Invest in the fund** (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns, remember?)
 5.  **Not die of cancer** (even arms dealers get cancer)
 
 Lockheed Martin Presents: The F-35 Cancer Killer™

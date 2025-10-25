@@ -10,7 +10,22 @@ tags:
   - platform-economics
   - ai-development
 lastFactCheckHash: 1d7c211edbf14e1dca97b4305038e5dc0767b931247046e3ef99bd1ead60ca05
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## 1. Executive Summary
 
 The [dFDA Infrastructure](../solution/dfda.qmd) will achieve its ambitious goals without the high cost of a centrally-funded development program by adopting a proven, sustainable strategy: fostering an **open, organic ecosystem**. Instead of directly funding a vast library of plugins and tools, the platform will provide a robust, open API and use a targeted **bounty and prize program**—as mandated in the ["Right to Trial and FDA Upgrade Act"](./right-to-trial-fda-upgrade-act.qmd)—to strategically incentivize critical development.

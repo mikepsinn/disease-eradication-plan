@@ -8,7 +8,22 @@ tags:
   - recruitment
   - strategy
   - propaganda
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 ## How to Trick People Into Saving Their Own Lives
 
@@ -54,7 +69,7 @@ You create three categories of future revolutionaries, because humans need label
 
 ### Division 1: Financial Infantry (The Money People)
 
-These are the capitalists who smell 270% returns and start salivating. They have money, they want more money, and they're willing to bet on humanity not going extinct to get it.
+These are the capitalists who smell `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns and start salivating. They have money, they want more money, and they're willing to bet on humanity not going extinct to get it.
 
 **How to identify them:**
 
@@ -198,7 +213,7 @@ All lies, but effective lies.
 Because science:
 
 - Test "End Death" vs "Cure Disease" (death wins)
-- Test "270% Returns" vs "Save Humanity" (money wins)
+- Test "`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` Returns" vs "Save Humanity" (money wins)
 - Test fear vs hope (fear wins, unfortunately)
 
 ## The Management Protocol

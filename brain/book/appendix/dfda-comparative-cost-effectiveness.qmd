@@ -1,7 +1,22 @@
 ---
 title: Comparative Cost-Effectiveness - dFDA vs Other Interventions
 description: Comparing dFDA cost-effectiveness to GiveWell interventions and other major public investments
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 ## Comparative Cost-Effectiveness: dFDA vs. Other Public Health Interventions
 
@@ -57,11 +72,11 @@ The following table provides the data and sources that support the chart. The li
 
 ## Comparison to Other Major Public Investments
 
-To provide context for the dFDA's estimated costs, it is useful to compare them to other significant U.S. government investments in health and technology. The dFDA's projected "Lean Ecosystem" cost of approximately **[\$40 million per year](#simplified-roi-scenario)** (covering core platform operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
+To provide context for the dFDA's estimated costs, it is useful to compare them to other significant U.S. government investments in health and technology. The dFDA's projected "Lean Ecosystem" cost of approximately **[\`{python} format_millions(DFDA_ANNUAL_OPEX)` per year](#simplified-roi-scenario)** (covering core platform operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
 
 | Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to dFDA Annual Cost           | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :--------------------------------------- | :------------------------------------------------------------------------- |
-| **dFDA Infrastructure (Lean Ecosystem)**   | **~\$40 Million / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
+| **dFDA Infrastructure (Lean Ecosystem)**   | **~\`{python} format_millions(DFDA_ANNUAL_OPEX)` / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                                | [21st Century Cures Act](https://www.cancer.gov/about-nci/budget)          |
 | **NIH "All of Us" Research Program** | \*\*[~\$500 Million / year](https://www.nih.gov/about-nih/what-we-do/budget) (FY23 Approx. Budget) | **~12.5x**                               | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
 | **HealthCare.gov (Initial Build)**   | **[~\$1.7 - \$2.1 Billion](https://www.gao.gov/assets/gao-07-49.pdf)** (Total Upfront Cost)        | **~42x - 52x** (of one year's dFDA cost) | [GAO Reports / Public Reporting](https://www.gao.gov/assets/gao-07-49.pdf) |

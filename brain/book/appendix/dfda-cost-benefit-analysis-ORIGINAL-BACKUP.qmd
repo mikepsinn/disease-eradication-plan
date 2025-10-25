@@ -6,12 +6,27 @@ tags:
   - dfda
   - roi
   - economics
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 ## TL;DR
 
-- **Saves ~[\$50 Billion Annually](#gross-r-d-savings-from-dfda-implementation)**: Reduces global clinical trial costs (~[\$100B/year market](../references.qmd#clinical-trial-spending-dfda-baseline)) by a baseline of **[50%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
-- **[463:1 Return on Investment](#final-roi-and-net-benefit)**: A modest annual operational cost of ~[\$40M](#simplified-roi-scenario) generates ~\$50B in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit).
+- **Saves ~[\`{python} format_billions(DFDA_GROSS_SAVINGS)` Annually](#gross-r-d-savings-from-dfda-implementation)**: Reduces global clinical trial costs (~[\`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year market](../references.qmd#clinical-trial-spending-dfda-baseline)) by a baseline of **[50%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
+- **[`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` Return on Investment](#final-roi-and-net-benefit)**: A modest annual operational cost of ~[\`{python} format_millions(DFDA_ANNUAL_OPEX)`](#simplified-roi-scenario) generates ~\`{python} format_billions(DFDA_GROSS_SAVINGS)` in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit).
 - **[Generates 840,000 Life-Years Annually](#appendix-detailed-qaly-calculation-model)**: The platform is projected to produce a baseline of [**840,000 Quality-Adjusted Life Years (QALYs)**](#appendix-detailed-qaly-calculation-model) each year through faster drug access, new therapies, and better prevention.
 - **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: With an ICER of **-[\$59,501 per QALY](../references.qmd#qaly-value)**, the dFDA is a dominant intervention, it both saves money and improves health.
 - **[\$137M+ Daily Cost of Inaction](#daily-opportunity-cost-of-inaction)**: Each day without the dFDA represents a societal opportunity cost of ~\$137M in economic waste and ~2,301 lost QALYs.
@@ -24,13 +39,13 @@ tags:
 
 **Transformative Benefits:**
 
-- **Dramatic Cost Reductions:** The dFDA model projects average R&D clinical trial cost savings of [**50%**](#gross-r-and-d-savings-from-dfda-implementation), with exceptionally efficient designs (akin to the UK's [RECOVERY trial](recovery-trial.qmd), which achieved up to [**80-100x+ cost reduction**](#decentralized-trial-costs-modeled-on-oxford-recovery)) potentially achieving up to [**95% reduction**](#gross-r-and-d-savings-from-dfda-implementation). This translates to **[tens of billions of dollars in annual savings](#roi-analysis)** from the estimated [**\$100 billion global annual clinical trial expenditure**](../references.qmd#clinical-trial-spending-dfda-baseline).
+- **Dramatic Cost Reductions:** The dFDA model projects average R&D clinical trial cost savings of [**50%**](#gross-r-and-d-savings-from-dfda-implementation), with exceptionally efficient designs (akin to the UK's [RECOVERY trial](recovery-trial.qmd), which achieved up to [**80-100x+ cost reduction**](#decentralized-trial-costs-modeled-on-oxford-recovery)) potentially achieving up to [**95% reduction**](#gross-r-and-d-savings-from-dfda-implementation). This translates to **[tens of billions of dollars in annual savings](#roi-analysis)** from the estimated [**\`{python} format_billions(GLOBAL_TRIAL_MARKET)` global annual clinical trial expenditure**](../references.qmd#clinical-trial-spending-dfda-baseline).
 - **Accelerated Innovation & Access:** Faster, cheaper trials allow for a vastly increased volume and diversity of tested therapies, including those for rare diseases and unpatentable treatments, significantly speeding up the delivery of new medicines to patients.
 - **Improved Health Outcomes:** The dFDA is projected to generate a baseline of **[840,000 Quality-Adjusted Life Years (QALYs) annually](#appendix-detailed-qaly-calculation-model)**. This figure, detailed in a full model in the appendix, is a composite of benefits from faster drug access, enhanced preventative care enabled by real-world data, and new therapies for rare and neglected diseases ([see Appendix](#appendix-detailed-qaly-calculation-model) for full model.
 
 **Exceptional Economic Value:**
 
-- **Return on Investment (ROI):** The dFDA Infrastructure demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**\$50 billion in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately [**463:1**](#final-roi-and-net-benefit) over 10 years. This high ratio reflects the platform's significant leverage: a relatively modest investment in a global software infrastructure that generates vast savings across the entire pharmaceutical R&D industry.
+- **Return on Investment (ROI):** The dFDA Infrastructure demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**\`{python} format_billions(DFDA_GROSS_SAVINGS)` in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately [**`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`**](#final-roi-and-net-benefit) over 10 years. This high ratio reflects the platform's significant leverage: a relatively modest investment in a global software infrastructure that generates vast savings across the entire pharmaceutical R&D industry.
 - **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves substantial costs and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$59,501 per QALY gained**](../references.qmd#qaly-value)), far exceeding standard government value thresholds.
 - **Daily Opportunity Cost of Inaction:** Each day the current paradigm is maintained represents a societal opportunity cost of approximately [**\$137 million** in forgone economic efficiencies and **2,301** in lost Quality-Adjusted Life Years (QALYs)](#daily-opportunity-cost-of-inaction).
 
@@ -114,7 +129,7 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
    - _Basis:_ ~75 FTEs _2.5 years_ \$200k/FTE/year
    - _Activities:_ Detailed design, core platform development (API, storage, mapping/validation, auth), reference frontend, initial plugin interfaces, testing, documentation, initial deployment.
-   - **Estimated ROM:** [\$35 - \$40 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+   - **Estimated ROM:** [\$35 - \`{python} format_millions(DFDA_ANNUAL_OPEX)`](#upfront-capital-expenditure-initial-build-illustrative-30-months)
 
 2. **Infrastructure Setup & Initial Cloud Costs:**
 
@@ -149,7 +164,7 @@ The following sections provide ROM estimates for both the ongoing operational co
 To complement the bottom-up ROM, we can derive a top-down estimate by examining the total investment raised by leading commercial companies developing decentralized clinical trial (DCT) platforms. This market-based view provides a real-world benchmark for the capital required to build, scale, and operate a sophisticated, global-grade platform.
 
 - **Medable:** A leader in the DCT platform space, has raised a total of **[\$521 million](https://hitconsultant.net/2021/10/26/medable-dct-series-d-funding/)** in capital, achieving a valuation of **[\$2.1 billion](https://informaconnect.com/decentralized-trial-tech-firm-medable-raises-another-300m/)** as of late 2021. This level of funding represents the capital required to develop a comprehensive SaaS platform, establish a global presence across 60+ countries, and achieve significant market penetration.
-- **Other DCT Platform Companies:** Other companies in the space, such as **[Science 37](https://www.mobihealthnews.com/news/exo-raises-40m-handheld-ultrasound-decentralized-trial-platforms-raise-nearly-100m-and-more)** (~\$40M raised), **[Thread](https://www.mobihealthnews.com/news/exo-raises-40m-handheld-ultrasound-decentralized-trial-platforms-raise-nearly-100m-and-more)** (up to \$50M raised), and **[uMotif](https://www.pharmasalmanac.com/articles/umotif-the-patient-first-data-capture-and-decentralized-clinical-trials-platform-announces-25.5m-of-new-investment-from-a-fund-managed-by-athyrium-capital-management)** (~\$25.5M raised), show that significant traction and platform development can be achieved with investments in the tens of millions.
+- **Other DCT Platform Companies:** Other companies in the space, such as **[Science 37](https://www.mobihealthnews.com/news/exo-raises-40m-handheld-ultrasound-decentralized-trial-platforms-raise-nearly-100m-and-more)** (~\`{python} format_millions(DFDA_ANNUAL_OPEX)` raised), **[Thread](https://www.mobihealthnews.com/news/exo-raises-40m-handheld-ultrasound-decentralized-trial-platforms-raise-nearly-100m-and-more)** (up to \$50M raised), and **[uMotif](https://www.pharmasalmanac.com/articles/umotif-the-patient-first-data-capture-and-decentralized-clinical-trials-platform-announces-25.5m-of-new-investment-from-a-fund-managed-by-athyrium-capital-management)** (~\$25.5M raised), show that significant traction and platform development can be achieved with investments in the tens of millions.
 
 **Analogous ROM Conclusion:**
 
@@ -342,7 +357,7 @@ This section quantifies the potential societal benefits of the dFDA Infrastructu
 
 The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials alone was estimated to be in the range of **[USD 60-80 billion in 2024, and projected to exceed USD 100 billion by the early 2030s](https://www.fortunebusinessinsights.com/clinical-trials-market-106930)** ([Fortune Business Insights, May 2024](https://www.fortunebusinessinsights.com/clinical-trials-market-106930), [Global Market Insights, Feb 2024](https://www.gminsights.com/industry-analysis/clinical-trials-market)). A significant portion of this expenditure is addressable by the efficiencies dFDA aims to introduce. If dFDA can capture even a fraction of this market by demonstrating superior efficiency and data quality, its economic impact will be substantial.
 
-For this analysis, we use a conservative baseline estimate of **[\$100 billion per year in global clinical trial spending that is potentially addressable by dFDA](#example-parameterization)** through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
+For this analysis, we use a conservative baseline estimate of **[\`{python} format_billions(GLOBAL_TRIAL_MARKET)` per year in global clinical trial spending that is potentially addressable by dFDA](#example-parameterization)** through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
 
 - **Current Average Costs**: Various estimates suggest [\$1.0 - \$2.5 billion to bring a new drug from discovery through FDA approval, spread across ~10 years](#data-sources-and-methodological-notes).
 - **Clinical Trial Phase Breakdown**:
@@ -431,10 +446,10 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
   - The UK RECOVERY trial, a prime example of efficient trial design akin to dFDA principles, achieved cost reductions of ~80-98% per patient compared to traditional trials (<!-- [RECOVERY trial](recovery-trial.qmd) -->, citing Manhattan Institute and NCBI).
   - _Note on R&D Savings Estimates_: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), the average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. Rogers et al. (2022) in their systematic review noted that there is currently "insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost" on a generalized basis. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
 - **Range Used in Sensitivity Analysis**:
-  - Conservative: 30% (saving $30B annually from a [$100B addressable spend](#market-size-and-impact))
-  - Base Case: [**50% (saving $50B annually)**](#example-parameterization) from a [$100B addressable spend](#market-size-and-impact)
-  - Optimistic: 70% (saving $70B annually) from a [$100B addressable spend](#market-size-and-impact)
-  - Transformative (RECOVERY Trial-like): 95% (saving $95B annually) from a [$100B addressable spend](#market-size-and-impact)
+  - Conservative: 30% (saving $30B annually from a [`{python} format_billions(GLOBAL_TRIAL_MARKET)` addressable spend](#market-size-and-impact))
+  - Base Case: [**50% (saving `{python} format_billions(DFDA_GROSS_SAVINGS)` annually)**](#example-parameterization) from a [`{python} format_billions(GLOBAL_TRIAL_MARKET)` addressable spend](#market-size-and-impact)
+  - Optimistic: 70% (saving $70B annually) from a [`{python} format_billions(GLOBAL_TRIAL_MARKET)` addressable spend](#market-size-and-impact)
+  - Transformative (RECOVERY Trial-like): 95% (saving $95B annually) from a [`{python} format_billions(GLOBAL_TRIAL_MARKET)` addressable spend](#market-size-and-impact)
 
 1. **Rogers, A., De Paoli, G., Subbarayan, S., Copland, R., Harwood, K., Coyle, J., ... & Mackenzie, I. S. (2022).** _A systematic review of methods used to conduct decentralised clinical trials._ British Journal of Clinical Pharmacology, 88(6), 2843-2862. Available at: [https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf](https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf)
 
@@ -464,7 +479,7 @@ The return on investment for the dFDA Infrastructure is exceptionally high due t
 
 2. **Model Inputs**
 
-   - **Upfront Cost (Core Platform Build):** Based on the ROM estimate of **~\$37.5 - \$46 Million** detailed in [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months). For ROI calculations, a representative figure (e.g., $40 Million) will be used.
+   - **Upfront Cost (Core Platform Build):** Based on the ROM estimate of **~\$37.5 - \$46 Million** detailed in [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months). For ROI calculations, a representative figure (e.g., `{python} format_millions(DFDA_ANNUAL_OPEX)`) will be used.
    - **Annual Operational Cost (Core Platform):** Based on the ROM estimate of **~\$11 - \$26.5 Million / year** detailed in [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month).
    - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines core platform operational costs with the **Medium Case annual broader initiative costs (~\$21.3 Million / year)** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
      _(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global dFDA vision, which were significantly larger, are superseded by these more granular figures from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section for the purpose of this ROI calculation.)_
@@ -478,18 +493,18 @@ The return on investment for the dFDA Infrastructure is exceptionally high due t
 _Initial Note on Operational Costs in this ROI Scenario:_
 _The following ROI calculation primarily uses cost figures derived from the detailed ROM estimates in [Costs of Building and Operating the Global Decentralized FDA (ROM Estimate)](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate). This includes the core platform build and operational costs, as well as scenarios for broader initiative costs. This approach provides a more grounded basis for the ROI than previous high-level conceptual figures for a fully scaled global ecosystem._
 
-- **Industry R&D Spend** (Baseline): [$100 billion/year](#market-size-and-impact) globally (approx.).
-- **Potential Savings**: 50% reduction implies [$50 billion/year saved](#gross-r-and-d-savings-from-dfda-implementation) if the entire industry migrated.
+- **Industry R&D Spend** (Baseline): [`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year](#market-size-and-impact) globally (approx.).
+- **Potential Savings**: 50% reduction implies [`{python} format_billions(DFDA_GROSS_SAVINGS)`/year saved](#gross-r-and-d-savings-from-dfda-implementation) if the entire industry migrated.
 - **Platform Cost Scenarios (Derived from ROM Estimates):**
-  - **Upfront Cost (Core Platform Build):** [~\$40 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months) (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)).
+  - **Upfront Cost (Core Platform Build):** [~\`{python} format_millions(DFDA_ANNUAL_OPEX)`](#upfront-capital-expenditure-initial-build-illustrative-30-months) (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)).
   - **Annual Operational Cost Scenarios:**
     - **Scenario 1: Core Platform Only:** ~$11 - $26.5 Million / year (from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)). Let's use a midpoint of ~$19 Million/year for calculation.
     - **Scenario 2: Lean Ecosystem (Core Platform + Medium Broader Initiatives):**
       - Core Platform Ops (midpoint from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)): ~$19 Million/year
       - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
-      - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~\$40 Million/year** (or $0.04 Billion/year). This aligns with the cost basis for the ROI cited in the Executive Summary.
+      - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~\`{python} format_millions(DFDA_ANNUAL_OPEX)`/year** (or $0.04 Billion/year). This aligns with the cost basis for the ROI cited in the Executive Summary.
     - _(Other scenarios, such as including "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), could be considered for sensitivity analysis but would significantly increase annual costs.)_
-- **Net Annual Savings** (assuming full adoption and [50% R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): $50 Billion/year.
+- **Net Annual Savings** (assuming full adoption and [50% R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): `{python} format_billions(DFDA_GROSS_SAVINGS)`/year.
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
 
@@ -499,11 +514,11 @@ $$
 
 Let's calculate ROI based on the **Lean Ecosystem** scenario:
 
-- Upfront Cost (Core Platform Build from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): $40 Million. Amortized over 5 years: $8 Million/year.
-- Annual Operational Cost (Lean Ecosystem - Core Platform Ops from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + Medium Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$40 Million/year.
-- Total Annualized Cost: $8M (amortized upfront) + [$40M (annual ops)](#simplified-roi-scenario) = **\$48 Million/year** (or $0.048 Billion/year).
+- Upfront Cost (Core Platform Build from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): `{python} format_millions(DFDA_ANNUAL_OPEX)`. Amortized over 5 years: $8 Million/year.
+- Annual Operational Cost (Lean Ecosystem - Core Platform Ops from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + Medium Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~`{python} format_millions(DFDA_ANNUAL_OPEX)`/year.
+- Total Annualized Cost: $8M (amortized upfront) + [`{python} format_millions(DFDA_ANNUAL_OPEX)` (annual ops)](#simplified-roi-scenario) = **\$48 Million/year** (or $0.048 Billion/year).
 
-_This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework). The NPV analysis provides the final estimated ROI of approximately [**463:1**](#final-roi-and-net-benefit), which is the figure cited throughout this document._
+_This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework). The NPV analysis provides the final estimated ROI of approximately [**`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`**](#final-roi-and-net-benefit), which is the figure cited throughout this document._
 
 ### Full Range ROI Sensitivity Analysis
 
@@ -511,7 +526,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
 
 **Assumptions for Full Range ROI Calculation:**
 
-- Net Annual Savings: [$50 Billion/year](#gross-r-and-d-savings-from-dfda-implementation) (from 50% R&D cost reduction).
+- Net Annual Savings: [`{python} format_billions(DFDA_GROSS_SAVINGS)`/year](#gross-r-and-d-savings-from-dfda-implementation) (from 50% R&D cost reduction).
 - Amortization Period for Upfront Costs: 5 years.
 
 #### 1. Lowest Total Cost Scenario (Best Case Core Platform + Best Case Broader Initiatives)
@@ -526,7 +541,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
   - Broader Initiatives (Best Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$0 Million/year](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Lowest Annual Operational Cost:_ **\$11 Million/year**
 - **Total Lowest Annualized Cost:** [\$8.4M (amortized upfront)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) + [\$11M (annual ops)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) = **\$19.4 Million/year**
-- **ROI (Lowest Cost Scenario):** [\$50 Billion](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.0194 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **2577:1**
+- **ROI (Lowest Cost Scenario):** [\`{python} format_billions(DFDA_GROSS_SAVINGS)`](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.0194 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **2577:1**
 
 #### 2. Highest Total Cost Scenario (Worst Case Core Platform + Worst Case Broader Initiatives)
 
@@ -540,7 +555,7 @@ To provide a comprehensive view, we can calculate the ROI across the full spectr
   - Broader Initiatives (Worst Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$271 Million/year](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Highest Annual Operational Cost:_ $26.5M + $271M = **~\$297.5 Million/year**
 - **Total Highest Annualized Cost:** [\$455.4M (amortized upfront)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) + [\$297.5M (annual ops)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) = **~\$752.9 Million/year**
-- **ROI (Highest Cost Scenario):** [\$50 Billion](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.7529 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **66:1**
+- **ROI (Highest Cost Scenario):** [\`{python} format_billions(DFDA_GROSS_SAVINGS)`](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.7529 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **66:1**
 
 This full range sensitivity analysis demonstrates that the ROI for the dFDA initiative remains exceptionally positive. Even at the highest conceivable costs derived from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section, the financial return is substantial.
 
@@ -607,7 +622,7 @@ This full range sensitivity analysis demonstrates that the ROI for the dFDA init
 
 ## Conclusion
 
-Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of [**~\$37.5 - \$46 Million**](#upfront-capital-expenditure-initial-build-illustrative-30-months), plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to \$500 million** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around [\$100 billion per year on R and D](#market-size-and-impact) and that a large share of those expenses go to clinical trials, even a [50% reduction in trial costs](#gross-r-and-d-savings-from-dfda-implementation)—combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi-and-net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)**) once adopted at scale.
+Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of [**~\$37.5 - \$46 Million**](#upfront-capital-expenditure-initial-build-illustrative-30-months), plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to \$500 million** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around [\`{python} format_billions(GLOBAL_TRIAL_MARKET)` per year on R and D](#market-size-and-impact) and that a large share of those expenses go to clinical trials, even a [50% reduction in trial costs](#gross-r-and-d-savings-from-dfda-implementation)—combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately [**`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`**](#final-roi-and-net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)**) once adopted at scale.
 
 Beyond the direct economic benefits, the secondary and tertiary effects on medical progress could be transformative. More drugs, nutraceuticals, and personalized therapies could be tested and refined rapidly; real-time data would continuously update treatment rankings; and off-label or unpatentable treatments, often neglected today, could receive the same rigorous evaluation as blockbuster drugs. If combined with robust privacy controls and global regulatory collaboration, such a platform could usher in a new era of evidence-based, personalized healthcare that benefits patients around the world, drives innovation, and lowers long-term healthcare costs.
 
@@ -912,7 +927,7 @@ $$
   \text{ROI}
   = \frac{249.53}{0.53845}
   \approx 463.4
-  \quad (\text{i.e., about 463:1})
+  \quad (\text{i.e., about `{python} format_roi(ROI_TIER_1_CONSERVATIVE)`})
 $$
 
 $$
@@ -1000,8 +1015,8 @@ The dFDA Infrastructure's primary economic impact comes from significantly reduc
 
 - Calculated as: `(Platform Operational Costs) - (Gross R and D Savings from dFDA)`
 - **Baseline Assumptions for R&D Savings (same as before):**
-  - Global Clinical Trial Spending Addressable by dFDA: **$100 Billion / year**.
-  - R&D Trial Cost Reduction due to dFDA (Baseline): **50%**. (Leads to $50B Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
+  - Global Clinical Trial Spending Addressable by dFDA: **`{python} format_billions(GLOBAL_TRIAL_MARKET)` / year**.
+  - R&D Trial Cost Reduction due to dFDA (Baseline): **50%**. (Leads to `{python} format_billions(DFDA_GROSS_SAVINGS)` Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
 
 - **Aggregate Annual QALYs Gained (ΔQALYs_total):** The number of QALYs generated annually by the dFDA Infrastructure is a composite metric derived from a detailed model in the appendix. The model provides a range of estimates based on the successful realization of the platform's potential.
 - **Conservative Scenario:** 190,000 QALYs/year
@@ -1012,20 +1027,20 @@ For a complete breakdown of the assumptions, data sources (including NBER workin
 
 - **Platform Operational Cost Scenarios:** The sensitivity analysis below considers various scopes for the platform's operational costs, derived from the [Costs of Building and Operating the Global Decentralized FDA ROM Estimate](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section.
 - **Core Platform Ops (Midpoint):** $0.01875B ($18.75M) / year
-- **Core Platform + Medium Broader Initiative:** $0.04B ($40M) / year
+- **Core Platform + Medium Broader Initiative:** $0.04B (`{python} format_millions(DFDA_ANNUAL_OPEX)`) / year
 - **Illustrative Total Ecosystem (Low-Medium):** $0.5B ($500M) / year
 - **Illustrative Total Ecosystem (High):** $5B / year
 
 #### Sensitivity Analysis Overall dFDA Infrastructure Cost-Effectiveness
 
-This table analyzes the ICER for the dFDA Infrastructure by varying key assumptions. Global Clinical Trial Spending Addressable by dFDA is assumed at $100B/year (leading to $50B gross savings in the 50% reduction scenario) unless otherwise specified.
+This table analyzes the ICER for the dFDA Infrastructure by varying key assumptions. Global Clinical Trial Spending Addressable by dFDA is assumed at `{python} format_billions(GLOBAL_TRIAL_MARKET)`/year (leading to `{python} format_billions(DFDA_GROSS_SAVINGS)` gross savings in the 50% reduction scenario) unless otherwise specified.
 
 | Scenario                                             | R&D Trial Cost Reduction   | Platform Op. Cost (Annual) | Net Incremental Cost (Annual) | Aggregate QALYs Gained (Annual) | ICER (Cost per QALY Gained) | Classification                          | Source/Note                                                                                                                                                                                                                                                                           |
 | ---------------------------------------------------- | -------------------------- | -------------------------- | ----------------------------- | ------------------------------- | --------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Base Case: Core Platform Ops Only**                | **50%** ($50B Savings)     | **$0.01875B ($18.75M)**    | **-$49.981B**                 | **840,000**                     | **-$59,501**                | **Dominant**                            | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. QALYs from [new base model](#appendix-detailed-qaly-calculation-model).                                                              |
-| Core Platform + Medium Broader Initiative            | 50% ($50B Savings)         | $0.04005B ($40.05M)        | -$49.96B                      | 840,000                         | -$59,476                    | Dominant                                | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
-| Total Ecosystem (Low-Medium Cost)                    | 50% ($50B Savings)         | $0.5B ($500M)              | -$49.5B                       | 840,000                         | -$58,929                    | Dominant                                | Illustrative total ecosystem cost.                                                                                                                                                                                                                                                    |
-| Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50% ($50B Savings)         | $5B                        | -$45B                         | 840,000                         | -$53,571                    | Dominant                                | Illustrative high total ecosystem cost (as prior base).                                                                                                                                                                                                                               |
+| **Base Case: Core Platform Ops Only**                | **50%** (`{python} format_billions(DFDA_GROSS_SAVINGS)` Savings)     | **$0.01875B ($18.75M)**    | **-$49.981B**                 | **840,000**                     | **-$59,501**                | **Dominant**                            | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. QALYs from [new base model](#appendix-detailed-qaly-calculation-model).                                                              |
+| Core Platform + Medium Broader Initiative            | 50% (`{python} format_billions(DFDA_GROSS_SAVINGS)` Savings)         | $0.04005B ($40.05M)        | -$49.96B                      | 840,000                         | -$59,476                    | Dominant                                | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
+| Total Ecosystem (Low-Medium Cost)                    | 50% (`{python} format_billions(DFDA_GROSS_SAVINGS)` Savings)         | $0.5B ($500M)              | -$49.5B                       | 840,000                         | -$58,929                    | Dominant                                | Illustrative total ecosystem cost.                                                                                                                                                                                                                                                    |
+| Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50% (`{python} format_billions(DFDA_GROSS_SAVINGS)` Savings)         | $5B                        | -$45B                         | 840,000                         | -$53,571                    | Dominant                                | Illustrative high total ecosystem cost (as prior base).                                                                                                                                                                                                                               |
 | Conservative R&D Savings & QALYs                     | 30% ($30B Savings)         | $0.5B ($500M)              | -$29.5B                       | 190,000                         | -$155,263                   | Dominant                                | Using Low-Med Ecosystem Cost & [Conservative QALY model](#summary-of-total-annual-qaly-gains).                                                                                                                                                                                        |
 | Optimistic R&D Savings & QALYs                       | 70% ($70B Savings)         | $0.5B ($500M)              | -$69.5B                       | 3,650,000                       | -$19,041                    | Dominant                                | Using Low-Med Ecosystem Cost & [Optimistic QALY model](#summary-of-total-annual-qaly-gains).                                                                                                                                                                                          |
 | **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ($95B Savings)     | **$0.5B ($500M)**          | **-$94.5B**                   | **3,650,000**                   | **-$25,890**                | **Dominant**                            | Using Low-Med Ecosystem Cost & [Optimistic QALY model](#summary-of-total-annual-qaly-gains).                                                                                                                                                                                          |
@@ -1037,10 +1052,10 @@ _Note: Negative ICER values indicate that the dFDA Infrastructure is cost-saving
 
 The analysis robustly demonstrates that the **dFDA Infrastructure is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the core platform's technical operational costs.**
 
-- **Massive Cost Savings & Extremely Favorable Core ICER**: The core dFDA Infrastructure (with operational costs of ~$19M-$40M/year as per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM) generates tens of billions in net annual R and D savings. This results in extremely negative ICERs (e.g., ~-$59,501 per QALY), indicating exceptional value.
+- **Massive Cost Savings & Extremely Favorable Core ICER**: The core dFDA Infrastructure (with operational costs of ~$19M-`{python} format_millions(DFDA_ANNUAL_OPEX)`/year as per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM) generates tens of billions in net annual R and D savings. This results in extremely negative ICERs (e.g., ~-$59,501 per QALY), indicating exceptional value.
 - **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), the dFDA initiative remains dominant and highly cost-saving, with strongly negative ICERs (e.g., -$19,041 to -$155,263 per QALY in various scenarios).
 
-**Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~$19M-$40M per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM), leading to ICERs around -$59,476 per QALY. Even when considering broader illustrative total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields substantial net monetary savings (e.g., -$29.5B to -$94.5B annually in various scenarios) while simultaneously generating hundreds of thousands to millions of QALYs each year. The actual cost per QALY gained remains strongly negative across all these scopes, making it an exceptionally high-value proposition.**
+**Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~$19M-`{python} format_millions(DFDA_ANNUAL_OPEX)` per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM), leading to ICERs around -$59,476 per QALY. Even when considering broader illustrative total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields substantial net monetary savings (e.g., -$29.5B to -$94.5B annually in various scenarios) while simultaneously generating hundreds of thousands to millions of QALYs each year. The actual cost per QALY gained remains strongly negative across all these scopes, making it an exceptionally high-value proposition.**
 
 *(Optional: A note could be added here that specific programs _built upon_ the dFDA Infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
 
@@ -1112,9 +1127,9 @@ This stream reflects the transformative potential of the dFDA to create viable r
   > "Thread, which also specializes in decentralized clinical research technology, revealed last week that it had raised strategic capital commitments of up to \$50 million from investors Water Street Healthcare Partners and JLL Partners."
   > — [MobiHealthNews, Aug 2020](https://www.mobihealthnews.com/news/exo-raises-40m-handheld-ultrasound-decentralized-trial-platforms-raise-nearly-100m-and-more)
 
-- **\$40M raised by Science 37**
+- **\`{python} format_millions(DFDA_ANNUAL_OPEX)` raised by Science 37**
 
-  > "Another \$40 million raise was announced yesterday by decentralized clinical trial startup Science 37."
+  > "Another \`{python} format_millions(DFDA_ANNUAL_OPEX)` raise was announced yesterday by decentralized clinical trial startup Science 37."
   > — [MobiHealthNews, Aug 2020](https://www.mobihealthnews.com/news/exo-raises-40m-handheld-ultrasound-decentralized-trial-platforms-raise-nearly-100m-and-more)
 
 - **\$25.5M raised by uMotif**
@@ -1147,7 +1162,7 @@ The calculations below are based on the central ("base case") estimates establis
     $$
 
 - **Daily Financial Value Lost:**
-  - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **[$50 billion per year](#gross-r-and-d-savings-from-dfda-implementation)** by reducing the costs of the [**$100 billion global clinical trial market**](#market-size-and-impact) by [**50%**](#gross-r-and-d-savings-from-dfda-implementation). This represents value that is currently being spent inefficiently.
+  - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **[`{python} format_billions(DFDA_GROSS_SAVINGS)` per year](#gross-r-and-d-savings-from-dfda-implementation)** by reducing the costs of the [**`{python} format_billions(GLOBAL_TRIAL_MARKET)` global clinical trial market**](#market-size-and-impact) by [**50%**](#gross-r-and-d-savings-from-dfda-implementation). This represents value that is currently being spent inefficiently.
   - The daily financial loss from this inefficiency is:
     $$
     \frac{\$50,000,000,000}{365\ \text{days}} \approx \mathbf{\$137\ \text{million lost per day}}
@@ -1178,7 +1193,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 ### Final ROI and Net Benefit
 
-- **Central ROI Estimate:** [463:1](#final-roi-and-net-benefit)
+- **Central ROI Estimate:** [`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`](#final-roi-and-net-benefit)
 - **Central Net Benefit (10-Year, Discounted):** [~\$249 Billion](#final-roi-and-net-benefit)
 - **Dominant Health Intervention:** The dFDA is cost-saving while simultaneously generating substantial health gains (QALYs), making it a dominant intervention from a health economics perspective.
 
@@ -1236,11 +1251,11 @@ The following table provides the data and sources that support the chart. The li
 
 ## Comparison to Other Major Public Investments
 
-To provide context for the dFDA's estimated costs, it is useful to compare them to other significant U.S. government investments in health and technology. The dFDA's projected "Lean Ecosystem" cost of approximately **[\$40 million per year](#simplified-roi-scenario)** (covering core platform operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
+To provide context for the dFDA's estimated costs, it is useful to compare them to other significant U.S. government investments in health and technology. The dFDA's projected "Lean Ecosystem" cost of approximately **[\`{python} format_millions(DFDA_ANNUAL_OPEX)` per year](#simplified-roi-scenario)** (covering core platform operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
 
 | Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to dFDA Annual Cost           | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :--------------------------------------- | :------------------------------------------------------------------------- |
-| **dFDA Infrastructure (Lean Ecosystem)**   | **~\$40 Million / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
+| **dFDA Infrastructure (Lean Ecosystem)**   | **~\`{python} format_millions(DFDA_ANNUAL_OPEX)` / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                                | [21st Century Cures Act](https://www.cancer.gov/about-nci/budget)          |
 | **NIH "All of Us" Research Program** | \*\*[~\$500 Million / year](https://www.nih.gov/about-nih/what-we-do/budget) (FY23 Approx. Budget) | **~12.5x**                               | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
 | **HealthCare.gov (Initial Build)**   | **[~\$1.7 - \$2.1 Billion](https://www.gao.gov/assets/gao-07-49.pdf)** (Total Upfront Cost)        | **~42x - 52x** (of one year's dFDA cost) | [GAO Reports / Public Reporting](https://www.gao.gov/assets/gao-07-49.pdf) |

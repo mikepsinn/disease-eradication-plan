@@ -8,7 +8,22 @@ tags:
   - global-referendum
   - victory-bonds
   - peace-dividend
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 ## The Plan, for People Who Have Shit to Do
 
@@ -18,8 +33,8 @@ tags:
 
 **The Result:**
 
-1.  **\$27 Billion/Year** flows into a treasury that funds hyper-efficient medical trials.
-2.  **You Get Rich:** Investors who fund the political campaign get a cut of that \$27 billion. Forever.
+1.  **\`{python} format_billions(CAPTURED_DIVIDEND)`/Year** flows into a treasury that funds hyper-efficient medical trials.
+2.  **You Get Rich:** Investors who fund the political campaign get a cut of that \`{python} format_billions(CAPTURED_DIVIDEND)`. Forever.
 3.  **You Don't Die:** The trials actually cure diseases.
 
 It's the most ridiculously simple, profitable, and life-altering plan ever conceived. It's what would happen if capitalists accidentally did something good for humanity.
@@ -31,7 +46,7 @@ It's the most ridiculously simple, profitable, and life-altering plan ever conce
 We're not asking for world peace overnight. We're asking for 1% less war. The [1% Treaty](../solution/1-percent-treaty.qmd) is a binding international agreement where every signatory nation agrees to trim a single penny from every dollar they spend on their military and redirect it.
 
 - **Why it works:** It's a simultaneous cut. No country loses its "strategic advantage" because everyone does it at the same time. In fact, everyone becomes *more* secure because their enemies also have 1% fewer things to kill them with.
-- **The Payoff:** This tiny fraction unleashes **\$27 billion** annually. That's enough to fund **54,000 clinical trials** and treat **27 million patients** every single year.
+- **The Payoff:** This tiny fraction unleashes **\`{python} format_billions(CAPTURED_DIVIDEND)`** annually. That's enough to fund **54,000 clinical trials** and treat **27 million patients** every single year.
 
 [**Learn more about the Treaty's mechanics &raquo;**](../solution/1-percent-treaty.qmd)
 
@@ -52,14 +67,14 @@ The [Global Referendum](../strategy/global-referendum.qmd) is a planetary vote o
 
 ### 3. VICTORY Bonds: Better Returns Than Cocaine Trafficking
 
-This isn't a charity. It's the most ludicrously profitable investment opportunity in human history. To fund the lobbying and global referendum campaign, we're raising a **\$1 billion war chest** by selling [VICTORY Bonds](../economics/victory-bonds.qmd).
+This isn't a charity. It's the most ludicrously profitable investment opportunity in human history. To fund the lobbying and global referendum campaign, we're raising a **\`{python} format_billions(CAMPAIGN_TOTAL_COST)` war chest** by selling [VICTORY Bonds](../economics/victory-bonds.qmd).
 
 Here's the deal we offer investors:
 
 - **You put in:** \$1,000 (minimum).
-- **You get back:** A perpetual 10% share of the \$27 billion treaty money. That's **\$2.7 billion** split among bondholders every year.
-- **The ROI:** A staggering **270% annual return**.
+- **You get back:** A perpetual 10% share of the \`{python} format_billions(CAPTURED_DIVIDEND)` treaty money. That's **\$2.7 billion** split among bondholders every year.
+- **The ROI:** A staggering **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return**.
 
-It's political arbitrage. You're betting \$1 billion that you can convince humanity to redirect \$27 billion. If it works, you get paid forever. If it fails, you lose your money... but you were going to die of a curable disease anyway. At least you went down swinging.
+It's political arbitrage. You're betting \$1 billion that you can convince humanity to redirect \`{python} format_billions(CAPTURED_DIVIDEND)`. If it works, you get paid forever. If it fails, you lose your money... but you were going to die of a curable disease anyway. At least you went down swinging.
 
 [**Explore the investment that makes greed good &raquo;**](../economics/victory-bonds.qmd)

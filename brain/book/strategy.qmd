@@ -14,7 +14,22 @@ lastStyleCheck: 2025-10-16T00:00:00.000Z
 lastFormattedHash: 95297fdf629134e2bacec1330b9b02cf78fcee9acf4bfcd46ee3a8ea32005d1f
 lastFactCheckHash: d87ba7559a342105d0be337a4182b1818513703d54fe7985323b70a9e41763c4
 lastLatexCheckHash: 74882f1a7d479d9002937f58e7cfa6076669ea101a12cdc51010f660f7a6517d
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 Our strategy isn't to convince anyone of anything.
 It's to make everyone richer.
 
@@ -23,7 +38,7 @@ It's to make everyone richer.
 **Step 1: MONEY (Get \$1 Billion)**
 
 Sell VICTORY Bonds to rich people who want to get richer.
-Promise 270% returns (we can deliver because bondholders get 10% of the \$27B/year from military budgets).
+Promise `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns (we can deliver because bondholders get 10% of the \`{python} format_billions(CAPTURED_DIVIDEND)`/year from military budgets).
 Use the money for legal bribes (lobbying), building the tech, and running the global referendum campaign.
 
 **Step 2: MANDATE (Get 280 Million Humans)**
@@ -48,7 +63,7 @@ Ever.
 Deploy the billion dollars in lobbying.
 When 280 million voters want something AND you're spending more than defense contractors, politicians suddenly discover they've always cared about curing cancer.
 
-Result: \$27B/year automatically flows from military budgets to medical research.
+Result: \`{python} format_billions(CAPTURED_DIVIDEND)`/year automatically flows from military budgets to medical research.
 Forever.
 
 ---

@@ -12,7 +12,22 @@ tags:
   - nonprofit
 lastStructureCheckHash: 530cdad18a1a5cf33761b15af048e1c59376e4c375e52f0ef891a020cf6d2116
 lastLatexCheckHash: 7df8db00a1cb4c7e7214a78d09bdbe9274a318196d88fb50be83e45047b817e8
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## The Unified Strategy: A 36-Month Plan from Concept to Global Impact
 
 This document is the strategic blueprint for executing the financial and political strategy outlined in the main overview. While the core mission is to achieve the 1% Treaty with minimal long-term effort from the core team, this roadmap details the necessary, front-loaded work required to build the political and financial leverage to make that possible.
@@ -85,7 +100,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 **Critical Risks & Mitigation:**
 - *Risk*: Nobody cares about signing a treaty → *Mitigation*: Test 3 different value propositions (save lives, make money, fix democracy) and double down on winner
 - *Risk*: Platform can't verify identities → *Mitigation*: Start with lightweight verification (email + phone), build toward biometric later
-- *Risk*: Investors see it as charity, not investment → *Mitigation*: Lead pitch with 270% returns and treaty adoption game theory, not emotional appeal
+- *Risk*: Investors see it as charity, not investment → *Mitigation*: Lead pitch with `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns and treaty adoption game theory, not emotional appeal
 
 ---
 
@@ -103,7 +118,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 
 **Tactical Execution:**
 
-1. **Months 4-6**: Close $35M Series A (target 15-20 VCs, emphasize political arbitrage + 270% bond returns)
+1. **Months 4-6**: Close $35M Series A (target 15-20 VCs, emphasize political arbitrage + `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` bond returns)
 2. **Months 7-9**: Scale engineering team, build production platform v2 with full KYC/identity verification
 3. **Months 10-12**: Launch viral referral program with $0.20/vote incentives in 3 pilot countries (start with friendly nations: Switzerland, Singapore, Estonia)
 4. **Months 13-15**: Hire lobbying firms in 5 key countries (US, UK, Germany, Japan, South Korea), coordinate messaging
@@ -129,7 +144,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 
 ### Phase 3: Bond Offering & Treaty Push (Months 19-36)
 
-**Goal:** Execute the $1B bond raise, overwhelm political opposition with money and public pressure, and secure first G7 treaty ratification. This is the final battle.
+**Goal:** Execute the `{python} format_billions(CAMPAIGN_TOTAL_COST)` bond raise, overwhelm political opposition with money and public pressure, and secure first G7 treaty ratification. This is the final battle.
 
 **Team Composition (50-75 people):**
 - Executive team: Same 4 + CFO for bond offering (5)
@@ -151,8 +166,8 @@ Unlike government programs that hide failure, we measure success transparently. 
 
 **Key Performance Indicators:**
 - Fundraising: $1B VICTORY bond sale (first $500M within 90 days validates demand)
-- Bond Terms: Secure $1B raise on terms of bondholders receiving 10% of all future treaty inflows in perpetuity.
-- Projected Yield: Successfully communicate the projected 270% annual yield to investors (based on a $2.7B payout from a $27B treaty).
+- Bond Terms: Secure `{python} format_billions(CAMPAIGN_TOTAL_COST)` raise on terms of bondholders receiving 10% of all future treaty inflows in perpetuity.
+- Projected Yield: Successfully communicate the projected `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual yield to investors (based on a `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` payout from a `{python} format_billions(CAPTURED_DIVIDEND)` treaty).
 - Referendum scale: 280M votes (3.5% global population = unstoppable political pressure)
 - Lobbying ROI: $250M spent → 100+ politicians publicly supporting (cost per politician: $2.5M)
 - Electoral demonstration: Win or swing 5+ elections with independent expenditures (proves electoral threat is real)
@@ -160,7 +175,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 - G7 ratification: At least 1 G7 nation (US, UK, Germany, France, Japan, Canada, Italy) ratifies treaty
 
 **Critical Risks & Mitigation:**
-- *Risk*: Bond offering fails (can't raise $1B) → *Mitigation*: Do $500M first close to prove concept, then $500M second close; accept slower timeline if needed; offer better terms (12% instead of 10%)
+- *Risk*: Bond offering fails (can't raise `{python} format_billions(CAMPAIGN_TOTAL_COST)`) → *Mitigation*: Do $500M first close to prove concept, then $500M second close; accept slower timeline if needed; offer better terms (12% instead of 10%)
 - *Risk*: SEC blocks bond offering → *Mitigation*: Full Reg D compliance from day 1, hire top securities lawyers, file months in advance, have backup offshore offering ready
 - *Risk*: Opposition outspends us ($300M defense lobby → $500M) → *Mitigation*: Don't match dollar-for-dollar; use smarter targeting (swing districts), co-opt their lobbyists with VICTORY bonds, make it more profitable to support us
 - *Risk*: First treaty vote fails publicly → *Mitigation*: Never bring treaty to vote unless you have the votes counted; start with friendly small countries (Iceland, Estonia, Singapore) to build momentum before tackling G7

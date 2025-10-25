@@ -3,7 +3,22 @@ title: ✊ The Three Actions
 subtitle: Vote, Invest, Share - That's It
 lastStructureCheckHash: a38aba1ee25863e97166427e9b3707b3cd9243797d3ee53347695844e5432f57
 lastLatexCheckHash: 72d619c2e79b1c6b8caac5e1b8d5a2b8b93bedfbf5a0a7805b8c03f172a406b5
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## That's All You Need To Do
 
 Not 100 actions. Not a lifestyle change. Not a career pivot.
@@ -85,7 +100,7 @@ Not 100 actions. Not a lifestyle change. Not a career pivot.
 
 ### The Returns
 
-**The math**: At $1B raised and $27B annual treaty revenue, bondholders get **270% annual returns, perpetually**.
+**The math**: At `{python} format_billions(CAMPAIGN_TOTAL_COST)` raised and `{python} format_billions(CAPTURED_DIVIDEND)` annual treaty revenue, bondholders get **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns, perpetually**.
 
 Your $1,000 bond → $2,700/year forever.
 
@@ -113,7 +128,7 @@ Your $1,000 bond → $2,700/year forever.
 
 **The truth**: This is high-risk political arbitrage. If the treaty fails, you lose your investment.
 
-**The upside**: 270% annual returns forever if it works.
+**The upside**: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns forever if it works.
 
 **The calculation**: Even with a small probability of success, the expected value is massively positive.
 
@@ -251,7 +266,7 @@ Let's make a game of it. Every person you tell is a point. Every person *they* t
 
 **Action 2** (Invest):
 
-- $1B raised → Lobbying power → Treaty passes
+- `{python} format_billions(CAMPAIGN_TOTAL_COST)` raised → Lobbying power → Treaty passes
 
 **Action 3** (Share):
 
@@ -287,7 +302,7 @@ That's over 1 million deaths in 7 days.
 **You don't invest**:
 - Less lobbying money
 - Slower movement growth
-- Miss 270% potential returns
+- Miss `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` potential returns
 
 **You don't share**:
 

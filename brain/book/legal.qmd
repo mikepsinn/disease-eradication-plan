@@ -13,7 +13,22 @@ lastStyleCheck: 2025-10-16T00:00:00.000Z
 lastFormattedHash: 4d980f40b1242a7a42bc04e36d488751a638d6710019ea1815a1c0ef5571488f
 lastFactCheckHash: 1cc362fe63afe97795f525369c01a769173317046042d555a5ecb9f7ca883377
 lastLatexCheckHash: 3333496e9f1c9bc68e042645966260e57603ea078564bb9ea81ef74969a7ebd5
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 The legal setup is just as important as the money.
 The structure must follow international law, securities regulations, and political rules without breaking anything.
 
@@ -28,7 +43,7 @@ Split it across multiple countries to follow each country's laws properly.
 
 - **🇨🇭 Swiss Foundation:** The main organization.
 Switzerland is neutral, crypto-friendly, and good at international law.
-This handles the main \$27 billion treasury.
+This handles the main \`{python} format_billions(CAPTURED_DIVIDEND)` treasury.
 - **🇺🇸 US Super PAC:** Completely separate entity that only Americans can fund, designed to influence US elections legally.
 Zero coordination with the international stuff.
 - **🇸🇬 Singapore Entity:** Handles crypto and treasury management in a place with clear crypto rules.

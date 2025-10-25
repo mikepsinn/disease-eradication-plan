@@ -7,7 +7,22 @@ format:
     toc-depth: 3
 lastStructureCheckHash: 0079cd0b43eae711945fd8d540fcd7efda00c8e49d09d198f3d8d4085c1b6448
 lastLatexCheckHash: e3ac09e53ca13475a8994f55ff8da285a5bafec4652a11b1846cf608d864099c
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## Introduction
 
 Unlike every other "War on [Problem]" that has failed spectacularly—creating bureaucracies that perpetuate the very problems they claim to solve—the War on Disease is structured to actually win. We're not building another government ministry that needs disease to exist for job security. We're creating a market that profits from cures.
@@ -100,7 +115,7 @@ The genius of markets is that they align self-interest with social good. 1% Trea
 
 ### Investors: Earn Returns from Health, Not Death and Disease
 
-- VICTORY bonds: 270%+ returns from curing, not treating
+- VICTORY bonds: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)`+ returns from curing, not treating
 - Returns scale with health outcomes achieved
 - Alignment with human wellbeing
 - ESG compliance built in

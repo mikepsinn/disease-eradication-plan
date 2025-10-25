@@ -9,7 +9,22 @@ tags:
   - historical-proof
   - oxford
 lastFactCheckHash: 56e63be7a83786d2a3ddb4dcf10ac9d0930fa22f12427bb753c58fe4b92aec5a
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent [$41,000 per patient](../references.qmd#trial-cost-41k) on traditional trials, Oxford spent [$500 per patient](../references.qmd#recovery-cost-500) and [saved over 1 million lives globally](../references.qmd#recovery-trial-1m-lives-saved). This 82X efficiency gain demonstrates that decentralized, pragmatic trials aren't just possible, they're already superior to centralized FDA approaches.
 
 **Speed to Launch:** [9 days from conception to first patient enrolled](../references.qmd#landray-recovery-trial-quote). FDA average: [6-12 months](../references.qmd#fda-trial-launch-timeline).

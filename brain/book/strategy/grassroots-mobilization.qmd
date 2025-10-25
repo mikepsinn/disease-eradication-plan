@@ -2,7 +2,22 @@
 title: 🌱 Grassroots Mobilization
 subtitle: Building the 280 Million Person Army
 lastFactCheckHash: bfb02274a5ce9e73c43aa99151fd470aaf9582852a3ebf4ffc266c50b95dbdc7
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## The 3.5% Rule
 
 [Research by Erica Chenoweth analyzed 323 violent and nonviolent campaigns from 1900-2006.
@@ -44,7 +59,7 @@ lastFactCheckHash: bfb02274a5ce9e73c43aa99151fd470aaf9582852a3ebf4ffc266c50b95db
 
 **Investment Community** [(Potential investors)](../references.qmd#investment-community-50m):
 
-- 40-270% returns is compelling
+- 40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns is compelling
 - Understand the economics
 - Have capital to deploy
 
@@ -190,7 +205,7 @@ Each **cell** is 5-50 people who:
 
 ### Talking Points
 
-- **Economic**: "40-270% returns"
+- **Economic**: "40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns"
 - **Moral**: "Save millions of lives"
 - **Political**: "Both parties benefit"
 - **Personal**: "Your diseases get funded"

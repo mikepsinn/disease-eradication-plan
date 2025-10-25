@@ -1,8 +1,8 @@
 ---
 title: ☮️ Peace Dividend Analysis
 description: The Economic Benefits of Reduced Conflict
-jupyter: python3
 lastFactCheckHash: 73c7013b8f78015bc74ee0dfe51c4d922f75300136c47e1554e597fbc57c2cd2
+jupyter: dih-project-kernel
 ---
 This analysis quantifies the economic benefits derived from a 1% reduction in global military spending and the broader costs of conflict. The calculations are based on the data compiled in our [Cost of War analysis](../problem/cost-of-war.qmd).
 
@@ -490,7 +490,7 @@ The peace dividend analysis reveals:
 2. **Two-Tier Benefits**:
 
    - **Captured Dividend**: $27.2B annually (direct military budget reallocation)
-   - **Societal Dividend**: $114B annually (total economic benefits)
+   - **Societal Dividend**: `{python} format_billions(SOCIETAL_DIVIDEND)` annually (total economic benefits)
 3. **Robust to Assumptions**: The sensitivity analysis shows the benefits remain substantial even under conservative scenarios
 4. **Clear Opportunity**: The contrast with disease research funding ([$67.5B total](../references.qmd#global-gov-med-research-spending)) shows the massive potential for reallocation
 

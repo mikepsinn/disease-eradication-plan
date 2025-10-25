@@ -10,7 +10,22 @@ tags:
   - assurance-contracts
   - metaculus
 lastFactCheckHash: fe44ba6ea342829ea77a2cd5c59c4b1854b6a687081ce16d6c36a2a4f07d8b84
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 A sophisticated investor must ask: "Is this venture riskier than a standard startup investment?" The answer is nuanced. The risk is not greater; it is fundamentally _different_. This document provides a full analysis of our unique risk profile and the specific mechanisms we have engineered to mitigate it.
 
 ## 1. The Core Thesis: Political Arbitrage vs. Venture Capital

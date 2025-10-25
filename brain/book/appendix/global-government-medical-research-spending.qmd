@@ -8,7 +8,22 @@ tags:
   - government-spending
   - global-statistics
 lastFactCheckHash: 3936eac1246dfd008cb2c0a2eea76b30ed0a5059110b30dd499ab4a1c23eaa51
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 # Global Government Medical Research Spending: The Pathetic Truth
 
 Here's the complete accounting of humanity's commitment to curing disease. Spoiler: It's embarrassing.
@@ -286,7 +301,7 @@ Ratio: Still 31:1 for death
 
 **[The 1% Solution](1-percent-treaty.qmd):**
 
-- 1% of military spending: $27 billion
+- 1% of military spending: `{python} format_billions(CAPTURED_DIVIDEND)`
 - Added to current spending: $95 billion total
 - Increase: 40%
 - Lives saved: Millions

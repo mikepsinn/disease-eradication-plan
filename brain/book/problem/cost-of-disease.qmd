@@ -11,7 +11,22 @@ tags:
 lastFactCheckHash: d2cd4f9de351df428a068b52095669f0234af2bc81c084e3574ae002867df794
 lastStructureCheckHash: 9af2bd4b985f19c1a7eda723aabf8942d5ba37fd9e788e2dfd421448ad48da6a
 lastLatexCheckHash: 5c1925af58ca600f4f977818251c86bf60333054aae778257afdc816c8d1773d
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## The $397 Trillion Death Tax Nobody Talks About
 
 ![Graph comparing cancer deaths (553,888/year) and spending vs terrorism deaths (~300/year) and spending, showing massive spending disparity despite cancer killing 1,800x more people](../../../assets/cancer-vs-terrorism-deaths-spending.jpg)

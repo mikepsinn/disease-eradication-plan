@@ -12,7 +12,22 @@ tags:
   - cost-benefit
   - treaty
 lastFactCheckHash: c68f423f077180b9a2a6fdb1d58e1979f268fd449674b46acdc8ed0b0c305699
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## Facts
 
 1. **[2 billion people suffer](../references.qmd#disease-prevalence-2-billion)** from chronic diseases including cancer, diabetes, heart disease, autoimmune disorders, and many others. This causes immense human anguish as well as crippling economic costs.

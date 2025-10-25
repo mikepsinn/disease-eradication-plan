@@ -8,7 +8,22 @@ tags:
   - insurance-model
   - healthcare-system
 lastFactCheckHash: 6ec42e4ca3e32422d558c8d0d0a0c2745aceddb1a774de089af5439d2f7ff3ec
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## The Core Insight: DIH as a Trial Insurance Provider
 
 The [DIH](../solution/dih.qmd) doesn't disrupt healthcare - it enhances it by functioning like an insurance company that covers clinical trial participation.

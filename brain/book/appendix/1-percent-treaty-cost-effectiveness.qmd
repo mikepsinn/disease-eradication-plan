@@ -2,7 +2,6 @@
 title: 🧮 1% Treaty Cost-Effectiveness
 description: 1% Treaty + DIH + dFDA - Step-by-step calculation showing why this saves society $6.56 million per life saved
 published: true
-jupyter: python3
 tags:
   - icer
   - cost-effectiveness
@@ -10,6 +9,7 @@ tags:
   - calculation
   - sensitivity-analysis
 lastFactCheckHash: a3b5ed5c444e0871923ad5b3a9df93db7519e177fffab7aba8c22eac35bea6b3
+jupyter: dih-project-kernel
 ---
 
 ```{python}
@@ -56,7 +56,7 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 **Calculation**: `{python} format_billions(GLOBAL_TRIAL_MARKET)` trial market × `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction = **`{python} format_billions(DFDA_GROSS_SAVINGS)`**
 
-**ROI**: 463:1 return on $40M annual operational cost
+**ROI**: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` return on `{python} format_millions(DFDA_ANNUAL_OPEX)` annual operational cost
 
 **For detailed breakdown and methodology**, see:
 - [Health Dividend Calculations](health-dividend-calculations.qmd) - Full Jupyter notebook with NPV and ROI analysis
@@ -194,8 +194,8 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **VICTORY Bond Financing**:
 
-- **Investors provide**: $1B upfront (funds the campaign)
-- **Investors receive**: $2.7B/year perpetually (270% annual return)
+- **Investors provide**: `{python} format_billions(CAMPAIGN_TOTAL_COST)` upfront (funds the campaign)
+- **Investors receive**: `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`/year perpetually (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return)
 - **Payback period**: 4.4 months
 - **Result**: Campaign is self-funding from investor perspective
 
@@ -210,9 +210,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Framing 2: Opportunity Cost of Redirected Spending**
 
-- Cost: $27B/year (redirected military spending)
-- But this $27B is ALREADY COUNTED in the $114B peace dividend
-- Net cost: $27B - $27B = $0
+- Cost: `{python} format_billions(CAPTURED_DIVIDEND)`/year (redirected military spending)
+- But this `{python} format_billions(CAPTURED_DIVIDEND)` is ALREADY COUNTED in the `{python} format_billions(SOCIETAL_DIVIDEND)` peace dividend
+- Net cost: `{python} format_billions(CAPTURED_DIVIDEND)` - `{python} format_billions(CAPTURED_DIVIDEND)` = $0
 - **ICER = -$187,543 per QALY**
 
 **Framing 3: Military Waste Conversion**
@@ -223,12 +223,12 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 - **True cost: Negative** (we're avoiding wasteful spending)
 - **ICER = Undefined** (negative cost, positive QALYs)
 
-#### Why We Use Conservative $290M/Year in Primary Analysis
+#### Why We Use Conservative `{python} format_millions(TOTAL_ANNUAL_COSTS)`/Year in Primary Analysis
 
 **For credibility and conservative estimation**:
 
 1. Health economics convention requires counting all costs
-2. Someone must pay the $1B campaign cost initially (even if repaid)
+2. Someone must pay the `{python} format_billions(CAMPAIGN_TOTAL_COST)` campaign cost initially (even if repaid)
 3. Conservative estimates are more defensible to skeptics
 4. This intervention is dominant even with costs included
 
@@ -384,7 +384,7 @@ This chart compares the gross annual economic benefits across major public healt
 
 - **Traditional interventions** (Water Fluoridation, Smoking Cessation, Childhood Vaccinations): Generate $0.8B to $15B in annual economic benefits. These are highly successful programs that have transformed public health.
 
-- **1% Treaty + DIH + dFDA**: Generates $164B in annual economic benefits ($114B peace dividend + $50B dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
+- **1% Treaty + DIH + dFDA**: Generates `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in annual economic benefits (`{python} format_billions(SOCIETAL_DIVIDEND)` peace dividend + `{python} format_billions(DFDA_GROSS_SAVINGS)` dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
 
 **Key distinction**: Only the 1% Treaty is self-funding—it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
 
@@ -409,11 +409,11 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 1. **Peace Dividend**: [Peace Dividend Calculations](peace-dividend-calculations.qmd)
    - Based on [Cost of War Analysis](../problem/cost-of-war.qmd)
-   - Total war costs: $11.4T annually
-   - 1% reduction: $114B
+   - Total war costs: `{python} format_billions(TOTAL_WAR_COST)` annually
+   - 1% reduction: `{python} format_billions(SOCIETAL_DIVIDEND)`
 
 2. **Health Dividend (dFDA)**: [Health Dividend Calculations](health-dividend-calculations.qmd)
-   - Clinical trial market: ~$100B/year
+   - Clinical trial market: ~`{python} format_billions(GLOBAL_TRIAL_MARKET)`/year
    - 50% cost reduction (baseline)
    - Range: 25%-95%
    - Also see: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
@@ -438,7 +438,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
    - Amortized: $200-333M/year
 
 7. **dFDA Operations**: [dFDA Cost Analysis](dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
-   - Annual: $40M/year
+   - Annual: `{python} format_millions(DFDA_ANNUAL_OPEX)`/year
    - Range: $30-60M
 
 ### Comparisons
@@ -453,12 +453,12 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 ### Q: How can this save money while saving lives?
 
-**A**: The 1% Treaty generates $164B in annual economic benefits:
+**A**: The 1% Treaty generates `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in annual economic benefits:
 
-- $114B from reduced conflict costs (peace dividend)
-- $50B from more efficient medical R&D (dFDA)
+- `{python} format_billions(SOCIETAL_DIVIDEND)` from reduced conflict costs (peace dividend)
+- `{python} format_billions(DFDA_GROSS_SAVINGS)` from more efficient medical R&D (dFDA)
 
-These benefits far exceed the $290M annual costs, creating a net profit of $163.7B/year for society.
+These benefits far exceed the `{python} format_millions(TOTAL_ANNUAL_COSTS)` annual costs, creating a net profit of `{python} format_billions(NET_ANNUAL_BENEFIT)`/year for society.
 
 Meanwhile, the same initiative saves lives:
 
@@ -482,7 +482,7 @@ The 1% Treaty solves this by creating aligned incentives.
 
 **A**: The main challenges are **political, not economic**:
 
-- Getting countries to sign the treaty (hence the $1B campaign)
+- Getting countries to sign the treaty (hence the `{python} format_billions(CAMPAIGN_TOTAL_COST)` campaign)
 - Overcoming defense industry opposition (hence VICTORY bonds to co-opt them)
 - Building the dFDA infrastructure (hence the $250M technology budget)
 
@@ -504,9 +504,9 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **A**: This depends on perspective:
 
-**From society's aggregate perspective**: The $1B campaign cost is real money that someone must provide initially. However, since investors get repaid with 270% returns from redirected military spending, the net cost to society approaches $0 after payback.
+**From society's aggregate perspective**: The `{python} format_billions(CAMPAIGN_TOTAL_COST)` campaign cost is real money that someone must provide initially. However, since investors get repaid with `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns from redirected military spending, the net cost to society approaches $0 after payback.
 
-**From taxpayers' perspective**: They give up $27B in military spending but receive $164B in economic benefits (peace dividend + R&D savings). Net gain: $137B.
+**From taxpayers' perspective**: They give up `{python} format_billions(CAPTURED_DIVIDEND)` in military spending but receive `{python} format_billions(TOTAL_ANNUAL_BENEFITS)` in economic benefits (peace dividend + R&D savings). Net gain: $137B.
 
 **From investors' perspective**: They invest $1B and receive $2.7B/year perpetually. This is the best investment in history.
 
@@ -514,7 +514,7 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 ### Q: Isn't redirecting military spending politically impossible?
 
-**A**: That's what the $1B campaign budget is for - making the politically impossible become inevitable through:
+**A**: That's what the `{python} format_billions(CAMPAIGN_TOTAL_COST)` campaign budget is for - making the politically impossible become inevitable through:
 
 - Viral referendum showing overwhelming public support (80%+ want less war, more cures)
 - VICTORY bonds that make supporting the treaty more profitable than opposing it

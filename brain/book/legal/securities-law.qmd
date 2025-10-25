@@ -7,7 +7,22 @@ format:
     toc-depth: 3
 lastStructureCheckHash: 68b7b592b762f20bfa2b6a1b5412f3bbecb61a3f170c82e6014960164275998d
 lastLatexCheckHash: a9d99a5f87238d6d3afe79d6b3ef0e5ce81bfcea0b162a6ba720a307cc607945
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## Introduction
 
 Here's the beautiful irony: The same laws that let defense contractors sell death certificates called "bonds" will let you sell life certificates called "VICTORY bonds." You just need to structure them correctly so the SEC doesn't send you to a country club prison.
@@ -114,7 +129,7 @@ The paradox: The scarier your warnings, the more protected you are legally.
 
 **Use of Funds:**
 
-A detailed breakdown of the $1B Use of Funds is available in the [Campaign Budget](../economics/campaign-budget.qmd) chapter. Be specific. Vague use of funds = SEC investigation.
+A detailed breakdown of the `{python} format_billions(CAMPAIGN_TOTAL_COST)` Use of Funds is available in the [Campaign Budget](../economics/campaign-budget.qmd) chapter. Be specific. Vague use of funds = SEC investigation.
 
 **Conflicts of Interest:**
 
@@ -267,7 +282,7 @@ You need systems to handle compliance automatically:
 
 ## The Endgame: Going Public
 
-Once the treaty passes and bonds are paying 270% returns:
+Once the treaty passes and bonds are paying `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns:
 
 ### The IPO Option
 
@@ -292,7 +307,7 @@ VICTORY bonds exist in the beautiful gray area between legal and revolutionary. 
 
 The SEC can't stop you because you're following their rules. Politicians can't stop you because you're buying them. The system can't stop you because you're using the system against itself.
 
-The best part: Once investors make 270% returns, they'll defend you more vigorously than any lawyer. Nothing protects you legally like making rich people richer while saving lives.
+The best part: Once investors make `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns, they'll defend you more vigorously than any lawyer. Nothing protects you legally like making rich people richer while saving lives.
 
 ---
 

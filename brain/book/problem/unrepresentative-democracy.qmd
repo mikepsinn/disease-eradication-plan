@@ -12,7 +12,22 @@ tags:
 lastFactCheckHash: 7610a3605f9c471c2b108b96542f619ce97f0d235bb0834c74a50f87e50a8956
 lastStructureCheckHash: c3dbb1039b02d7c807b238971966c0e994bf83bfc0634fbe0505966fd48ccd6e
 lastLatexCheckHash: cd24750b5545157544c68c8b8ca4edbaba33809e85230319d5335f2d473d8958
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## Your Vote Is Worth $0.0000003
 
 Here's some fun math to ruin your day:
@@ -92,7 +107,7 @@ Guess who wins?
 
 This pattern repeats everywhere:
 
-- Military contractors: [$999 billion concentrated benefit](../references.qmd#us-military-budget-999b) (37% of $2.7T global spending)
+- Military contractors: [$999 billion concentrated benefit](../references.qmd#us-military-budget-999b) (37% of `{python} format_billions(MILITARY_SPENDING)` global spending)
 - Taxpayers: $3,000 each in diffuse costs ($999B ÷ 333M Americans)
 - Winner: Guess
 
@@ -499,7 +514,7 @@ Here's how your government decides to spend trillions:
 **Step 1: Lobbyists Write Checks**
 
 - Defense contractors donate $50 million
-- Pharmaceutical companies donate $40 million
+- Pharmaceutical companies donate `{python} format_millions(DFDA_ANNUAL_OPEX)`
 - Teachers unions donate their lunch money
 - Poor people donate nothing (mistake)
 

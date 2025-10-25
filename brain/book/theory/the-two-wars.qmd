@@ -3,7 +3,22 @@ title: ⚔️ The Two Wars
 subtitle: War on Humanity vs War on Disease - Only One Is Designed to Win
 lastFactCheckHash: 960a8300d951896fcd6455c9a842ef3c52c39fdb47928afffc87db63eece0037
 lastLatexCheckHash: 79916d980bcb59927bcdcc28b797dc469372339946c6dbfa8cb3f18edd5c068f
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 ## Humanity Fights Two Wars
 
 **War #1: Against Each Other** (War on Humanity)
@@ -106,7 +121,7 @@ We have:
 ### The Oxford RECOVERY Model (But Bigger)
 
 **Duration**: 10 years to cure major diseases
-**Cost**: $27 billion/year (1% of military budget)
+**Cost**: `{python} format_billions(CAPTURED_DIVIDEND)`/year (1% of military budget)
 **Method**: Decentralized trials, anyone can participate
 **Victory condition**: Disease eradicated
 **Profit motive**: Removed (patients subsidized)
@@ -217,7 +232,7 @@ deaths_prevented = 200_000_000  # Over 10 years
 
 **If war ended**:
 
-- Defense contractors lose [$2.7T/year](../references.qmd#sipri-2024-spending)
+- Defense contractors lose [`{python} format_billions(MILITARY_SPENDING)`/year](../references.qmd#sipri-2024-spending)
 - Generals lose justification for budgets
 - Politicians lose campaign donations from defense lobby
 - Jobs disappear
@@ -259,7 +274,7 @@ We can win War on Disease. **We just have to design it to be won.**
 
 ### Option A: Continue Both Wars Forever
 
-- Keep spending $11.4T on War on Humanity (never win)
+- Keep spending `{python} format_billions(TOTAL_WAR_COST)` on War on Humanity (never win)
 - Keep spending [$68B on War on Disease](../references.qmd#global-gov-med-research-spending) (never win)
 - Nearly 30 million people die unnecessarily each year, forever
 

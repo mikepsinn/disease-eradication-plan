@@ -7,7 +7,22 @@ tags:
   - strategy
   - mobilization
   - draft
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 
 ## How to Draft Everyone Into Not Dying
 
@@ -47,7 +62,7 @@ Share the referendum and get everyone on Earth to vote YES on the 1% Treaty. You
 Purchase bonds that fund the entire operation. Your money becomes ammunition in the war against your inevitable demise. You're a venture capitalist investing in humanity not going extinct.
 
 - **What you do:** Invest $1,000+ in perpetual bonds
-- **What you get:** 270% annual returns forever (or until heat death of universe)
+- **What you get:** `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns forever (or until heat death of universe)
 - **Why it matters:** Money makes the trials go round
 - **Risk level:** If this fails, money won't matter anyway because you'll be dead
 

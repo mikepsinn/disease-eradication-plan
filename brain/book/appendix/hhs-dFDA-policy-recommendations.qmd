@@ -9,7 +9,22 @@ tags:
   - regulatory-compliance
   - cost-efficiency
 lastFactCheckHash: 93e194b274dcab5da56d340a67b0013bd080b93ee2fc8a416c8261e03214d43d
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 This proposal recommends that the Department of Health and Human Services (HHS) sponsor an **FDA-X Prize** to incentivize the creation of an **open-source, [decentralized FDA (dFDA)](../solution/dfda.qmd)** platform. This platform would enable **perpetual, patient-driven clinical trials** accessible to anyone globally, eliminating inefficiencies in the current phased trial system. The proposal outlines strategies for **redirecting NIH research funding**, **leveraging existing HHS authorities**, and **adopting outcome-based funding models** to maximize trial participation without requiring new legislation. Additionally, it proposes the **strategic reallocation of portions of Medicare and Medicaid funding** under existing statutory provisions to support broader access to decentralized trials.
 
 A critical component of this proposal is to **clarify the potential for drug companies to set a per-participant price** when creating trials on the dFDA Infrastructure. Under existing **FDA regulations ([21 CFR 312.8](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/section-312.8))**, companies may charge for investigational drugs to recover direct costs, including employee salaries. This means that **drug companies could legally charge the NIH a per-participant price** covering all operational expenses, such as manufacturing, distribution, and employee compensation—**without requiring pre-approval**, provided they do not exceed cost-recovery limits. This structure would enable companies to sustain clinical trial operations while maintaining compliance with regulatory standards, promoting a scalable and sustainable ecosystem for perpetual trials.

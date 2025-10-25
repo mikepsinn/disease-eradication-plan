@@ -10,14 +10,29 @@ tags:
   - lobbying
   - super-pacs
 lastFactCheckHash: 00dd719d4e67d08da1304c51f58f64b162dcf3892548dadf21beacf8a842d598
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 **How to Pass a Global Treaty in 5 Steps**
 
 {{< include ../../figures/five-step-strategy-flowchart.qmd >}}
 
 ## Step 1: VICTORY Bonds
 
-**Raise $1B From Investors**
+**Raise `{python} format_billions(CAMPAIGN_TOTAL_COST)` From Investors**
 
 Remember World War II? America sold [war bonds](../references.qmd#wwii-war-bonds) to fund the fight against fascism. People bought them because:
 
@@ -55,7 +70,7 @@ Create Super PACs in every country. Not to support candidates, to support math. 
 
 Gradually moving toward a world with less and less war and more and more cures:
 
-- **[1% Treaty](../appendix/1-percent-treaty.qmd)** ($27B) → First major cures → Media attention → More public support
+- **[1% Treaty](../appendix/1-percent-treaty.qmd)** (`{python} format_billions(CAPTURED_DIVIDEND)`) → First major cures → Media attention → More public support
 - **2% Treaty** ($54B) → Accelerated breakthroughs → Paradigm shift → Massive momentum
 - **5% Treaty** ($135B) → Disease eradication → Victory declared → Universal support
 - **50%+ Budget** → Humanity permanently prioritizes healing over killing

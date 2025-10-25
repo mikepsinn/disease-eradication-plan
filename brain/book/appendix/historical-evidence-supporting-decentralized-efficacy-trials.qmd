@@ -9,7 +9,22 @@ tags:
   - decentralized-trials
   - historical-evidence
 lastFactCheckHash: 289a128174d6a01bc98f20b94c29bd7206963d57810a4bce559c56426292de44
+jupyter: dih-project-kernel
 ---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
 Large scale efficacy-trials based on real-world evidence have ultimately led to better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
 
 For over 99% of recorded human history, [the average human life expectancy has been around 30 years](../references.qmd#historical-life-expectancy-30-years).
