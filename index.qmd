@@ -46,9 +46,9 @@ from economic_parameters import *
 Your job is to borrow a `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` turn into a perpetual `{python} format_billions(CAPTURED_DIVIDEND)`/year river of cash, funded by redirecting a pathetic 1% of global military spending to curing diseases.
 
 1.  **Get Your Initial Bribin' Money:** Invent "VICTORY Bonds," a financial tool that gives investors a `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return. This is more profitable than trafficking cocaine and significantly more legal. You sell `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` of these bonds to rich people who would prefer to be significantly richer.
-2.  **Bribe the Public:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY)` to build a voting bloc of `{python} TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f} million people` demanding that their governments redirect 1% of military spending to cure disease. This creates a political threat.
+2.  **Bribe the Public:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY)` to build a voting bloc of `{python} f"{TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f}"}`  million people` demanding that their governments redirect 1% of military spending to cure disease. This creates a political threat.
 3.  **Bribe the Bribers:** You give defense lobbyists millions in bonds. Their `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return (that only come if the 1% treaty is preserved) makes their old bribes look pathetic. They now work for you.
-4.  **Bribe Some Politicians:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS)` on Super PACs to ensure politicians face a choice: either take your money and support the treaty, or get voted out by `{python} TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f} million angry people` who want to live.
+4.  **Bribe Some Politicians:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS)` on Super PACs to ensure politicians face a choice: either take your money and support the treaty, or get voted out by `{python} f"{TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f}"}`  million angry people` who want to live.
 5.  **Profit from Victory:** The treaty passes. The \`{python} format_billions(CAPTURED_DIVIDEND)`/year bribe machine is turned on forever. Everyone who helped gets 10% of that money forever (producing the `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return). Use the remaining `{python} format_percentage(DIH_TREASURY_TO_RESEARCH_PCT)` to `{python} TRIAL_COST_REDUCTION_FACTOR`x the rate of medical progress by subsidizing hyper efficient pragmatic decentralized clinical trials.
 
 **Why Everyone Gets Rich From Not Dying from Terrible Diseases:**
@@ -70,7 +70,7 @@ Your job is to borrow a `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` t
 
 ### ☠️ The Daily Holocaust
 
-[`{python} GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f} people die daily`](brain/book/problem/the-daily-massacre.qmd) from curable diseases—one Holocaust every 40 days, or 50 September 11th attacks every single day.
+[`{python} f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}"}`  people die daily`](brain/book/problem/the-daily-massacre.qmd) from curable diseases—one Holocaust every 40 days, or 50 September 11th attacks every single day.
 
 ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
 
@@ -105,7 +105,7 @@ This shopping list includes:
 - Probably some kind of earthquake machine.
 
 Meanwhile, we spend [`{python} format_billions(GLOBAL_MED_RESEARCH_SPENDING)` on medical research](brain/book/appendix/global-government-medical-research-spending.qmd).
-That's [**`{python} MILITARY_VS_MEDICAL_RESEARCH_RATIO:,.0f}` times less**](brain/book/problem.qmd#the-1205t-death-toilet) on curing all diseases combined than we spend on new ways to create corpses.
+That's [**`{python} f"{MILITARY_VS_MEDICAL_RESEARCH_RATIO:,.0f}"}` ` times less**](brain/book/problem.qmd#the-1205t-death-toilet) on curing all diseases combined than we spend on new ways to create corpses.
 
 {{< include brain/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
 
@@ -121,7 +121,7 @@ Your chance of dying from disease: 100%.
 But wait.
 It gets dumber.
 
-**[We spend `{python} DEATH_SPENDING_MISALLOCATION_FACTOR:,.0f}` times more money](brain/book/problem.qmd#the-1205t-death-toilet) causing or mopping up death than preventing it.**
+**[We spend `{python} f"{DEATH_SPENDING_MISALLOCATION_FACTOR:,.0f}"}` ` times more money](brain/book/problem.qmd#the-1205t-death-toilet) causing or mopping up death than preventing it.**
 
 ---
 
@@ -434,7 +434,7 @@ This is the only health trick that makes money instead of costing it.
 You literally profit from preventing death.
 It's capitalism's greatest achievement: making greed save lives.
 
-Unlike traditional interventions requiring ongoing charity, this generates `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)}` annually while saving `{python} SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}` lives.
+Unlike traditional interventions requiring ongoing charity, this generates `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)}` annually while saving `{python} f"{SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}"}` ` lives.
 
 ### 🏆 Best Idea in the World
 
@@ -446,7 +446,7 @@ Unlike traditional interventions requiring ongoing charity, this generates `{pyt
 
 The \$147.1 billion annual benefit is like finding out your lottery ticket is also a cure for cancer and makes you better looking.
 
-It's `{python} SYSTEM_BENEFIT_VS_VACCINES_MULTIPLIER:,.0f}` times bigger than childhood vaccines, which are literally one of humanity's greatest achievements. That's like being 10 times better than pizza. Impossible, yet here we are.
+It's `{python} f"{SYSTEM_BENEFIT_VS_VACCINES_MULTIPLIER:,.0f}"}` ` times bigger than childhood vaccines, which are literally one of humanity's greatest achievements. That's like being 10 times better than pizza. Impossible, yet here we are.
 
 **The beautiful irony:**
 
@@ -465,7 +465,7 @@ It's what Jesus would do if he understood compound interest.
 
 *Keep Doing What We're Doing*
 
-- `{python} GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f} people continue dying daily` (that's a 9/11 every 17 minutes)
+- `{python} f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}"}`  people continue dying daily` (that's a 9/11 every 17 minutes)
 - `{python} format_billions(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)}` keeps getting flushed down the death toilet
 - You die from something we could have cured
 - Military budgets grow until we're spending more on bombs than food
@@ -476,7 +476,7 @@ It's what Jesus would do if he understood compound interest.
 
 *Obviously Better*
 
-- `{python} SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f} fewer people die each year` (exponentially growing)
+- `{python} f"{SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}"}`  fewer people die each year` (exponentially growing)
 - `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)}` generated annually (real money, not hypothetical)
 - Major diseases cured within a decade
 - `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns for early investors
@@ -489,7 +489,7 @@ It's what Jesus would do if he understood compound interest.
 
 **Today's Death Bill (While You Read This):**
 
-- `{python} DEATHS_DURING_READING_SECTION:,.0f} humans deleted permanently` (one every 3.5 minutes—faster than you can read this section)
+- `{python} f"{DEATHS_DURING_READING_SECTION:,.0f}"}`  humans deleted permanently` (one every 3.5 minutes—faster than you can read this section)
 - `{python} format_currency(DAILY_COST_INEFFICIENCY)` burned in inefficiency
 - Your telomeres got shorter
 - Someone played nuclear weapon roulette
