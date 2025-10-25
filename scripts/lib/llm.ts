@@ -71,3 +71,28 @@ export async function generateClaudeSonnet45Content(prompt: string): Promise<str
   }
   return responseBlock.text;
 }
+
+// --- LLM Utility Functions ---
+
+/**
+ * Extracts JSON object from LLM response text, handling markdown code blocks
+ */
+export function extractJsonFromResponse(responseText: string, context: string = 'LLM response'): any {
+  const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) {
+    throw new Error(`No JSON object found in ${context}. Response: ${responseText.substring(0, 500)}...`);
+  }
+  return JSON.parse(jsonMatch[0]);
+}
+
+/**
+ * Loads a prompt template and replaces placeholders
+ */
+export async function loadPromptTemplate(templatePath: string, replacements: Record<string, string>): Promise<string> {
+  const fs = await import('fs/promises');
+  let prompt = await fs.readFile(templatePath, 'utf-8');
+  for (const [placeholder, value] of Object.entries(replacements)) {
+    prompt = prompt.replace(placeholder, value);
+  }
+  return prompt;
+}
