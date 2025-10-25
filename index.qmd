@@ -93,7 +93,7 @@ But we have [13,000 nuclear warheads](brain/book/problem/cost-of-war.qmd), enoug
 
 ### 💸 The Cost of War
 
-We spend **[`{python} format_billions(MILITARY_SPENDING)`](./brain/book/references.qmd#sipri-2024-spending)** every year on stuff designed specifically to make humans stop being alive.
+We spend **[`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`](./brain/book/references.qmd#sipri-2024-spending)** every year on stuff designed specifically to make humans stop being alive.
 
 This shopping list includes:
 

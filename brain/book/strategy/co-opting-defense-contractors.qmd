@@ -73,7 +73,7 @@ Even a lobbyist can do that math.
 
 ### 2. **Treaty Doesn't Hurt Them Anyway**
 
-- Military budget only drops 1% (`{python} format_billions(TREATY_ANNUAL_FUNDING)` of [`{python} format_billions(MILITARY_SPENDING)`](../references.qmd#sipri-2024-spending))
+- Military budget only drops 1% (`{python} format_billions(TREATY_ANNUAL_FUNDING)` of [`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`](../references.qmd#sipri-2024-spending))
 - They still have 99% to lobby for
 - New contracts still get signed
 - Jobs don't disappear

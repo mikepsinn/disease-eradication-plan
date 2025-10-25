@@ -43,7 +43,7 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 **Quick summary**: The 1% Treaty reduces global conflict by 1%, saving society `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` annually from reduced military spending, infrastructure destruction, healthcare costs, and economic disruption.
 
-**Calculation**: `{python} format_billions(TOTAL_WAR_COST)` total war costs × `{python} format_percentage(TREATY_REDUCTION_PCT)` reduction = **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`**
+**Calculation**: `{python} format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)` total war costs × `{python} format_percentage(TREATY_REDUCTION_PCT)` reduction = **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`**
 
 **For detailed breakdown and methodology**, see:
 - [Peace Dividend Calculations](peace-dividend-calculations.qmd) - Full Jupyter notebook with sensitivity analysis
@@ -79,9 +79,9 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 **Annual conflict deaths**: `{python} format_qalys(ANNUAL_CONFLICT_DEATHS)` people/year
 
-- Active combat: `{python} f"{CONFLICT_DEATHS_ACTIVE_COMBAT:,}"` ([ACLED data](https://acleddata.com/))
-- Terror attacks: `{python} f"{CONFLICT_DEATHS_TERROR_ATTACKS:,}"` ([Global Terrorism Database](https://www.start.umd.edu/gtd/))
-- State violence: `{python} f"{CONFLICT_DEATHS_STATE_VIOLENCE:,}"` ([Uppsala Conflict Data Program](https://ucdp.uu.se/))
+- Active combat: `{python} f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT:,}"` ([ACLED data](https://acleddata.com/))
+- Terror attacks: `{python} f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS:,}"` ([Global Terrorism Database](https://www.start.umd.edu/gtd/))
+- State violence: `{python} f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE:,}"` ([Uppsala Conflict Data Program](https://ucdp.uu.se/))
 
 **`{python} format_percentage(TREATY_REDUCTION_PCT)` reduction in conflict**:
 
@@ -409,7 +409,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 1. **Peace Dividend**: [Peace Dividend Calculations](peace-dividend-calculations.qmd)
    - Based on [Cost of War Analysis](../problem/cost-of-war.qmd)
-   - Total war costs: `{python} format_billions(TOTAL_WAR_COST)` annually
+   - Total war costs: `{python} format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)` annually
    - 1% reduction: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`
 
 2. **Health Dividend (dFDA)**: [Health Dividend Calculations](health-dividend-calculations.qmd)

@@ -59,7 +59,7 @@ def add_modern_watermark(fig):
 disease_funding_data = {
     'Category': ['Military\nSpending', 'Cancer\nResearch', 'Heart Disease\nResearch', 'Alzheimer\'s\nResearch'],
     'Amount ($B)': [
-        MILITARY_SPENDING,
+        GLOBAL_MILITARY_SPENDING_ANNUAL_2024,
         7.3,  # NCI
         4.1,  # NHLBI
         3.5,  # NIA
@@ -99,7 +99,7 @@ ax.set_title('Military vs. Disease Research Funding', fontsize=22, fontweight='7
 ax.set_ylabel('Annual Funding (Billions USD)', fontsize=14, color=colors['text'], labelpad=15)
 ax.set_xlabel('')
 
-ax.set_ylim(1, MILITARY_SPENDING * 2)
+ax.set_ylim(1, GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * 2)
 
 # Rotate labels slightly for better fit
 plt.setp(ax.get_xticklabels(), rotation=0, ha='center')

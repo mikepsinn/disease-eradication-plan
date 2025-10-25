@@ -232,7 +232,7 @@ deaths_prevented = 200_000_000  # Over 10 years
 
 **If war ended**:
 
-- Defense contractors lose [`{python} format_billions(MILITARY_SPENDING)`/year](../references.qmd#sipri-2024-spending)
+- Defense contractors lose [`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`/year](../references.qmd#sipri-2024-spending)
 - Generals lose justification for budgets
 - Politicians lose campaign donations from defense lobby
 - Jobs disappear
@@ -274,7 +274,7 @@ We can win War on Disease. **We just have to design it to be won.**
 
 ### Option A: Continue Both Wars Forever
 
-- Keep spending `{python} format_billions(TOTAL_WAR_COST)` on War on Humanity (never win)
+- Keep spending `{python} format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)` on War on Humanity (never win)
 - Keep spending [$68B on War on Disease](../references.qmd#global-gov-med-research-spending) (never win)
 - Nearly 30 million people die unnecessarily each year, forever
 

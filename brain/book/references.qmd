@@ -3819,7 +3819,7 @@ from economic_parameters import *
 <a id="russia-military-spending-share"></a>
 
 - **Russia's Share of Global Military Spending**
-  > 2024: $149B military spending (5.5% of global `{python} format_billions(MILITARY_SPENDING)`), 3rd largest spender globally
+  > 2024: $149B military spending (5.5% of global `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`), 3rd largest spender globally
   > 38% increase from 2023; doubled since 2015
   > 7.1% of Russia's GDP, 19% of all Russian government spending
   > Top 5 spenders (US, China, Russia, Germany, India): $1,635T combined (60% of global)
@@ -4172,7 +4172,7 @@ from economic_parameters import *
 <a id="total-military-and-war-costs-11-4t"></a>
 
 - **Total military and war costs: $11.4 trillion**
-  > Direct costs: $7,655B (Military `{python} format_billions(MILITARY_SPENDING)` + Human casualties $2,446B + Infrastructure $1,875B + Trade disruption $616B)
+  > Direct costs: $7,655B (Military `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` + Human casualties $2,446B + Infrastructure $1,875B + Trade disruption $616B)
   > Indirect costs: $3,700B (Refugees $1,680B + Diplomatic $800B + Environmental $420B + Opportunity costs $320B + PTSD $232B + Lost human capital $300B)
   > Total: $11,355.1 billion annually
   > Per capita: $1,419/year; $113,500 over 80-year lifetime
@@ -4460,13 +4460,13 @@ from economic_parameters import *
 <a id="vaccine-roi-44-to-1"></a>
 
 - **Return on investment for vaccines**
-  > "Every $1 spent on childhood immunizations results in approximately $11 in savings (700% ROI). For low/middle-income countries: $26.1-$51.0 ROI using cost-of-illness approach, $52.2 ROI using value-of-statistical-life approach. US childhood vaccines 1994-2023 saved $540B in direct costs, `{python} format_billions(MILITARY_SPENDING)` in total societal savings."
+  > "Every $1 spent on childhood immunizations results in approximately $11 in savings (700% ROI). For low/middle-income countries: $26.1-$51.0 ROI using cost-of-illness approach, $52.2 ROI using value-of-statistical-life approach. US childhood vaccines 1994-2023 saved $540B in direct costs, `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` in total societal savings."
   > — AAF, [Vaccine Economic Value](https://www.americanactionforum.org/research/vaccine-protection-and-productivity-the-economic-value-of-vaccines/) | Health Affairs, [ROI from Immunization 2011-30](https://www.healthaffairs.org/doi/10.1377/hlthaff.2020.00103) | VoICE, [Value of Vaccines](https://immunizationevidence.org/featured_issues/the-value-of-vaccines-investments-in-immunization-yield-high-returns/)
 
 <a id="value-captured-by-1pct-treaty"></a>
 
 - **Value captured by 1% Treaty of $27+ billion annually**
-  > "The 1% Treaty redirects 1% of global military spending (`{python} format_billions(MILITARY_SPENDING)` × 1% = `{python} format_billions(TREATY_ANNUAL_FUNDING)`) to medical research, with 10% of this flow (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` annually) distributed to VICTORY bondholders as returns."
+  > "The 1% Treaty redirects 1% of global military spending (`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` × 1% = `{python} format_billions(TREATY_ANNUAL_FUNDING)`) to medical research, with 10% of this flow (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` annually) distributed to VICTORY bondholders as returns."
   > — See [1% Treaty overview](appendix/1-percent-treaty.qmd) for full calculation details and [VICTORY Bonds](economics/victory-bonds.qmd) for bond structure
 
 <a id="veteran-healthcare-cost-projections"></a>

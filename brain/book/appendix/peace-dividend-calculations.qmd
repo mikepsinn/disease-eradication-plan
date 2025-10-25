@@ -104,21 +104,21 @@ from economic_parameters import *
 # All values now come from economic_parameters.py
 
 # For compatibility with chart code below, create local variables
-direct_military_expenditure = MILITARY_SPENDING
-infrastructure_destruction = INFRASTRUCTURE_DESTRUCTION
-human_life_losses = HUMAN_LIFE_LOSSES
-trade_disruption = TRADE_DISRUPTION
-total_direct_costs = TOTAL_DIRECT_COSTS
+direct_military_expenditure = GLOBAL_MILITARY_SPENDING_ANNUAL_2024
+infrastructure_destruction = GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT
+human_life_losses = GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT
+trade_disruption = GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT
+total_direct_costs = GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL
 
-lost_economic_growth = LOST_ECONOMIC_GROWTH
-veteran_healthcare = VETERAN_HEALTHCARE
-refugee_support = REFUGEE_SUPPORT
-environmental_damage = ENVIRONMENTAL_DAMAGE
-psychological_impact = PSYCHOLOGICAL_IMPACT
-lost_human_capital = LOST_HUMAN_CAPITAL
-total_indirect_costs = TOTAL_INDIRECT_COSTS
+lost_economic_growth = GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING
+veteran_healthcare = GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS
+refugee_support = GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS
+environmental_damage = GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT
+psychological_impact = GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT
+lost_human_capital = GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT
+total_indirect_costs = GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL
 
-total_cost_of_war = TOTAL_WAR_COST
+total_cost_of_war = GLOBAL_ANNUAL_WAR_TOTAL_COST
 reduction_percentage = TREATY_REDUCTION_PCT
 captured_dividend = TREATY_ANNUAL_FUNDING
 societal_dividend = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT

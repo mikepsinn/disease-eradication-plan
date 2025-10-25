@@ -393,7 +393,7 @@ This is a classic collective action problem. A burning building where everyone w
 
 **What's actually unrealistic**:
 
-- Continuing to spend `{python} format_billions(MILITARY_SPENDING)` on weapons while sitting on 13,000 nuclear warheads, enough to cause an extinction-level event 130 times over.
+- Continuing to spend `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` on weapons while sitting on 13,000 nuclear warheads, enough to cause an extinction-level event 130 times over.
 - Expecting different results from the same broken system.
 - Thinking we can survive the AI revolution without fixing incentives.
 

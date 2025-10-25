@@ -107,7 +107,7 @@ Guess who wins?
 
 This pattern repeats everywhere:
 
-- Military contractors: [$999 billion concentrated benefit](../references.qmd#us-military-budget-999b) (37% of `{python} format_billions(MILITARY_SPENDING)` global spending)
+- Military contractors: [$999 billion concentrated benefit](../references.qmd#us-military-budget-999b) (37% of `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` global spending)
 - Taxpayers: $3,000 each in diffuse costs ($999B ÷ 333M Americans)
 - Winner: Guess
 
