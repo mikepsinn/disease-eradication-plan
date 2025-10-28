@@ -31,97 +31,20 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-Our strategy isn't to convince anyone of anything.
-It's to make everyone richer.
+This isn't a protest. It's a business plan for a hostile takeover of humanity's priorities. The product is a longer, healthier life. The target is the global death industry. The strategy is a simple, three-step algorithm to bankrupt the status quo.
 
-## The 3-Step Murder of the Status Quo
+## Step 1: Acquire Capital
 
-**Step 1: MONEY (Get \$1 Billion)**
+Raise **`{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`** by selling **[VICTORY Bonds](../economics/victory-bonds.qmd)**. The pitch is irresistible: a perpetual **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return**, funded by redirecting a tiny fraction of the global war machine's budget. It's the greatest trade in financial history.
 
-Sell VICTORY Bonds to rich people who want to get richer.
-Promise `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns (we can deliver because bondholders get 10% of the `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year from military budgets).
-Use the money for legal bribes (lobbying), building the tech, and running the global referendum campaign.
+## Step 2: Weaponize Public Opinion
 
-**Step 2: MANDATE (Get 280 Million Humans)**
+Use the capital to launch a **[global referendum](../strategy/global-referendum.qmd)** and bribe the public to participate. The goal: get **280 million people** (3.5% of the global population) to vote YES. This isn't a petition; it's a political kill list. History shows that no government on earth can withstand the focused pressure of 3.5% of its population.
 
-Use the bond money to run a massive campaign.
-Get 3.5% of humanity to click "yes" on not dying.
-That's 280 million people.
-Sounds impossible?
-Wrong.
-Civil rights did it.
-Women's suffrage did it.
-Gandhi did it.
-And they didn't have the internet or the ability to promise people free healthcare.
+## Step 3: Execute the Takeover
 
-**The 3.5% Rule:** Once 3.5% of any population actively supports something, politicians fold like wet paper.
-It's not a theory, it's historical fact.
-[No movement with 3.5% active support has ever failed](references.qmd#3-5-rule).
-Ever.
+Use the public mandate and the remaining capital to **[buy the political establishment](../legal/election-law.qmd)**. With an army of 280 million voters and a war chest that makes the defense lobby look poor, you make supporting the treaty the only rational choice for any politician who wants to remain employed.
 
-**Step 3: TREATY (Turn Votes Into Law)**
+The result is inevitable: the **[1% Treaty](../solution/1-percent-treaty.qmd)** is ratified. The `{python} format_billions(TREATY_ANNUAL_FUNDING)`-a-year river of cash is unlocked. Forever.
 
-Deploy the billion dollars in lobbying.
-When 280 million voters want something AND you're spending more than defense contractors, politicians suddenly discover they've always cared about curing cancer.
-
-Result: `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year automatically flows from military budgets to medical research.
-Forever.
-
----
-
-## The Tech That Makes It Work
-
-- **Blockchain:** So nobody can fake the votes or steal the money
-- **Smart Contracts:** Money flows automatically, no middlemen
-- **Zero-Knowledge Proofs:** Your medical data stays private while trials stay transparent
-- **AI Matching:** Finds the right trial for you in seconds, not months
-- **Open Source Everything:** No black boxes, no bullshit, no gatekeepers
-
-This isn't idealism.
-It's math.
-And the math says we win.
-
----
-
-## How Politics Actually Works
-
-Politicians don't do things because they're moral.
-They do things because they get paid.
-Here's what we know about how this works:
-
-- **People are greedy.** Politicians, corporate leaders, and voters choose whatever makes them richer or more powerful. Our strategy relies on this, not on people being good.
-
-- **Small groups beat big groups.** A small group getting a lot of money will always fight harder than a big group losing a little money. We give the small groups massive benefits for supporting the treaty.
-
-- **Politics is shopping.** Policy isn't decided by who has the best moral argument. It's decided by who offers the best deal. We're offering a better deal.
-
-- **Everyone wants a cut.** Lobbyists and corporations will always try to grab money through politics. Instead of fighting this, we redirect it. We've created a new, more profitable way for them to get rich: the Peace Dividend.
-
-Don't hope people change.
-Give them better incentives.
-
----
-
-## The Strategy Chapters
-
-This section breaks down exactly how we execute:
-
-- **[The Bribe Sequence](/brain/book/strategy/bribe-sequence.qmd)** - How we pay off rich people, VICTORY bond buyers, citizens, and politicians in a self-funding cascade of aligned incentives
-- **[The Five-Step Execution Plan](/brain/book/strategy/five-step-execution.qmd)** - From raising \$1B to ending war and disease through VICTORY Bonds, global referendum, lobbying, Super PACs, and the success spiral
-- **[The Global Referendum](/brain/book/strategy/global-referendum.qmd)** - Viral growth strategy, 3.5% magic number, identity verification, Wishocracy app
-- **[Viral Marketing](/brain/book/strategy/viral-marketing.qmd)** - How we spread the message
-- **[Co-Opting the Defense Lobby](/brain/book/strategy/co-opting-defense-contractors.qmd)** - How to turn adversaries into advocates
-- **[Grassroots Mobilization](/brain/book/strategy/grassroots-mobilization.qmd)** - Building the movement
-- **[Diplomatic Approach](/brain/book/strategy/diplomatic-approach.qmd)** - Government relations strategy
-
----
-
-## Additional Resources
-
-For detailed breakdowns of specific tactics and mechanics:
-
-- **[Solving the Free-Rider Problem](appendix/free-rider-solution.qmd)** - Game theory for ensuring national compliance
-- **[The Legal & Compliance Framework](appendix/legal-compliance-framework.qmd)** - Navigating global election and securities law
-- **[Organizational Precedents](/brain/book/proof/historical-precedents.qmd)** - Historical models that inform this strategy
-- **[Government Without Governments (DIH)](/brain/book/solution/dih.qmd)** - Distributed control, Wishocracy governance, 7-step problem-solving process
-- **[The Amazon of Not Dying (dFDA)](/brain/book/solution/dfda.qmd)** - Amazon-style marketplace for trials, `{python} TRIAL_COST_REDUCTION_FACTOR`x efficiency, universal patient access
+This isn't a revolution. It's an acquisition. And we will not be outbid.
