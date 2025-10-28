@@ -2,7 +2,7 @@
 title: 📱 Viral Marketing Strategy
 subtitle: How to Make Curing Disease More Viral Than Cat Videos
 lastFactCheckHash: a1c41af377e010e8b38626e4f2f81ac78ede39f2e8de7315db96128bbf0c877a
-lastStructureCheckHash: 8d2e881c036063f3ace5ac987060505a6cd9f78d24c40a624bb249384e6a679b
+lastStructureCheckHash: 89e557120b4ecdfb1783bf8d17cb1b5182cdf1d64bfb0fae14797ced31188286
 lastLatexCheckHash: f63ec3c3360890948a7dbbdbd38153bc482331d04f6b82c99f447e8418345a24
 jupyter: dih-project-kernel
 ---
@@ -41,6 +41,7 @@ Historical analysis shows: Every peaceful movement that gets **[3.5% active supp
 - "Humanity has [13,000 nukes](../references.qmd#world-warheads) but no cure for your kid's cancer" (rage-inducing)
 - "You're spending $340/year on killing people, $8/year on curing them" (shocking)
 - "`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` investment returns while saving humanity" (greed + altruism)
+<!-- TODO: STRUCTURE (OTHER) - The '40-' prefix here is confusing and weakens the core message. The 'Investment Vehicle' chapter authoritatively states the target yield is 270%. Recommend removing '40-' to match the powerful, consistent messaging used elsewhere (e.g., in the 'What Does Go Viral' section). -->
 
 ## The Viral Formula
 
@@ -120,6 +121,7 @@ $$
 
 ## The Referral System
 
+<!-- TODO: STRUCTURE (OTHER) - Same issue as above. Recommend removing the '40-' prefix to align with the authoritative 270% figure from the 'Investment Vehicle' chapter. This maintains a clear and powerful message for this key audience. -->
 ### Individual Incentives
 
 - Share with 10 people → Entered in bond lottery
