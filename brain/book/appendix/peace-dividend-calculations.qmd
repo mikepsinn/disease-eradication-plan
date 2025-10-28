@@ -97,6 +97,15 @@ print("✅ Modern design system loaded")
 ## Cost of War Data and Calculations
 
 ```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _quarto.yml)
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
 # Import all parameters from centralized module
 from economic_parameters import *
 
