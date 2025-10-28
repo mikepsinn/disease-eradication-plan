@@ -31,229 +31,28 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## Why Every Advocacy Organization Should Drop What They're Doing and Focus on This Instead
-
-You run an environmental organization. Or a poverty nonprofit. Or a peace group. Or human rights advocacy.
-
-Here's the uncomfortable truth: **[The 1% Treaty](1-percent-treaty.qmd) is probably more cost-effective at achieving your goals than whatever you're currently doing.**
+If you run a nonprofit, this chapter is for you. It's an uncomfortable truth, but a necessary one: **the 1% Treaty is a better, more cost-effective way to achieve your goals than whatever you're currently doing.**
 
 This isn't arrogance. It's math.
 
----
+## The Problem with Your Current Strategy
 
-## The Meta-Argument: Why This Beats Everything Else
+Most advocacy organizations are fighting the symptoms of a single, deeper problem: **resource misallocation on a planetary scale.** Humanity spends 40 times more money creating problems (war, pollution, instability) than it does solving them.
 
-**The Problem with Single-Issue Advocacy:**
+You're bailing water from a sinking ship. The 1% Treaty is a plan to patch the hole. It's a systems-level intervention that makes solving problems more profitable than creating them.
 
-Most organizations fight symptoms of a deeper problem. You're bailing water while the ship has a massive hole in it.
+-   **If you're an environmental group:** You can't save the planet while the world's militaries, the single largest polluters on Earth, continue to wage wars that destroy ecosystems in minutes. The 1% Treaty is the most effective climate policy ever proposed because it directly defunds the engine of destruction.
 
-**The 1% Treaty fixes the hole.**
+-   **If you're an anti-poverty group:** You can't end poverty while conflict and disease create more of it than you can possibly solve. The root cause of most modern famines is war. The root cause of most poverty is the crushing economic burden of disease. The 1% Treaty tackles both.
 
-The root cause of most global problems isn't lack of solutions, it's **resource misallocation on a planetary scale**. Humanity spends [40X more on creating problems (war, destruction) than solving them (disease, poverty, climate)](../references.qmd#disparity-ratio-weapons-vs-cures).
+-   **If you're a peace organization:** You've been making moral appeals for 70 years. It hasn't worked. It's time to try a different approach. The 1% Treaty makes peace more profitable than war. It's not a moral argument; it's a financial one. And in a world run by greed, that's the only argument that matters.
 
-The 1% Treaty doesn't just redirect money. It creates the first systematic financial incentive structure for global cooperation. It's a **systems intervention** that makes solving problems more profitable than creating them.
-
----
-
-## For Environmental Organizations
-
-**Your Current Fight:** Spend decades planting trees, building renewable energy, restoring ecosystems, while wars can erase all of it in hours.
-
-**The Brutal Reality:**
-
-- **Ukraine war:** [Destroyed 20% of protected areas](https://www.unep.org/news-and-stories/story/ukraine-assessing-environmental-damage-war) in months
-- **Gulf War:** [Oil fires burned for 10 months](https://www.britannica.com/event/Persian-Gulf-War/Environmental-consequences), releasing more carbon than most countries' annual emissions
-- **Nuclear winter:** [150 Tg of soot](../references.qmd#nuke-winter-150tg) from US-Russia exchange would trigger global climate collapse, making all climate work irrelevant
-
-**Why the 1% Treaty is Better:**
-
-- **Protect Your Work:** Reduce conflict = protect decades of environmental progress from being destroyed in warfare
-- **Root Cause:** Most environmental destruction is caused by conflict—[deforestation from conflict minerals](https://www.globalwitness.org/en/campaigns/conflict-minerals/), [military as top global polluter](https://earth.org/military-pollution/)
-- **Scale:** [`{python} format_billions(TREATY_ANNUAL_FUNDING)` annually](peace-dividend-calculations.qmd) could fund more climate action than most environmental organizations' combined budgets
-- **Global Cooperation Template:** Successfully redirecting military budgets proves humanity can coordinate on planetary-scale problems
-
-**Bottom Line:** You can't save the planet while wars keep destroying it faster than you can fix it.
-
----
-
-## For Anti-Poverty Organizations
-
-**Your Current Fight:** Provide aid while conflicts create more poverty than you can solve.
-
-**Why the 1% Treaty is Better:**
-
-- **Root Cause:** [Nearly all starvation today is caused by violent conflict](../references.qmd#starvation-conflict)
-- **Health = Economic Development:** Healthy populations are productive populations. [Disease costs \$244 trillion annually](../problem/cost-of-disease.qmd)
-- **Peace Dividend Math:** Capturing even 0.1% of the [`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual cost of violence](peace-dividend-calculations.qmd) provides more poverty reduction than traditional aid
-- **Systemic Solution:** Address the war → poverty cycle instead of treating poverty symptoms
-
-**Bottom Line:** You can't end poverty while conflicts keep creating it faster than you can solve it.
-
----
-
-## For Peace Organizations
-
-**Your Current Fight:** 70+ years of moral appeals to "choose peace." How's that working?
-
-**Why the 1% Treaty is Better:**
-
-- **Financial Incentives > Moral Appeals:** We make peace literally more profitable than war
-- **Systematic Approach:** Instead of appealing to consciences, we align financial interests with peaceful outcomes
-- **Proven Model:** [WWII war bonds](../references.qmd#wwii-war-bonds) raised \$185B from 85M Americans by making citizens stakeholders in victory
-- **Measurable Progress:** Concrete 1% reduction vs. abstract "peace building"
-
-**Bottom Line:** If moral arguments worked, we'd have peace by now. Time to make it profitable.
-
----
-
-## For Human Rights Organizations
-
-**Your Current Fight:** Document abuses and appeal to international bodies with no enforcement power.
-
-**Why the 1% Treaty is Better:**
-
-- **Prevention > Documentation:** Address the root cause of displacement, torture, and human rights violations (conflict)
-- **Democratic Governance:** [`{python} format_billions(TREATY_ANNUAL_FUNDING)` treasury](../economics/victory-bonds.qmd) controlled by global citizens, not corrupt governments
-- **Health as Human Right:** [dFDA protocol](../solution/dfda.qmd) provides 80X more efficient access to treatments
-- **Economic Rights:** [VICTORY bonds](../economics/victory-bonds.qmd) give every human financial stake in global peace dividend
-
-**Bottom Line:** Human rights violations happen during conflicts. End conflicts, reduce violations.
-
----
-
-## For Disease Advocacy Organizations
-
-**Your Current Fight:** Compete for limited NIH/research funding while [Pentagon loses $2.5T by accident](../references.qmd#pentagon-unaccounted-2-5t).
-
-**Why the 1% Treaty is Better:**
-
-- **80X Efficiency:** [Oxford RECOVERY trial](recovery-trial.qmd) cost \$500/patient vs \$41,000 traditional trials
-- **Scale:** `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually = 40% increase in [global health research funding](../references.qmd#global-gov-med-research-spending)
-- **No Competition:** Instead of fighting other disease groups for scraps, expand the entire pie
-- **Systemic Solution:** Fix the underlying resource allocation problem
-
-**The Math:**
-
-- **Current:** Fight for your 0.01% slice of [$67.5B medical research](../references.qmd#global-gov-med-research-spending)
-- **With 1% Treaty:** Get your slice of \$94.5B (40% larger pie)
-
-**Bottom Line:** Stop competing for crumbs. Redirect the whole bakery.
-
----
-
-## The Convergence Argument
-
-Every major global problem has the same root cause, resource misallocation that prioritizes destruction over creation.
-
-The 1% Treaty doesn't just solve one problem. It creates a **self-reinforcing flywheel:**
-
-1. **Reduces conflict** → Less environmental destruction, poverty, displacement
-2. **Increases health research** → Healthier populations, more productive economies
-3. **Creates global cooperation precedent** → Template for climate action, AI safety, etc.
-4. **Aligns financial incentives** → Makes solving problems more profitable than creating them
-
-**This is why it's the best idea in the world.** It's not just high-impact, it's **multiplicatively high-impact** across every cause area.
-
----
-
-## For Effective Altruism Organizations
-
-**You Already Get This.**
-
-The 1% Treaty has:
-
-- **`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI** ([dFDA cost-benefit analysis](dfda-cost-benefit-analysis.qmd))
-- **Global scope** (affects all [8 billion humans](../references.qmd#global-population-8-billion))
-- **Long-term impact** (creates permanent funding mechanism)
-- **Tractable approach** ([detailed implementation plan](../strategy/roadmap.qmd))
-- **Evidence-based** (80X efficiency proven by [Oxford RECOVERY](recovery-trial.qmd))
-
-If you're doing cause prioritization and this isn't #1 on your list, check your math.
-
----
+-   **If you're a disease advocacy group:** You are currently fighting every other disease group for a tiny sliver of the NIH's budget. You are competing for crumbs. The 1% Treaty doesn't just give you a bigger slice of the pie; it bakes a new, much larger pie. It increases the total global funding for medical research by 40% and makes the process `{python} TRIAL_COST_REDUCTION_FACTOR`x more efficient.
 
 ## The Uncomfortable Question
 
-**"But what about my organization's mission?"**
+This isn't a critique of your mission. It's a critique of your method. The question isn't whether your cause is just. The question is whether you can look at the math and still justify working on anything other than the highest-leverage intervention in human history.
 
-Your mission is to solve problems. This solves problems faster and more cost-effectively than your current approach.
+Every dollar you raise for your single-issue cause is a dollar that could have had a 100x greater impact if it were invested in passing the 1% Treaty.
 
-**"But we have expertise in our specific area."**
-
-Great! Use that expertise to implement solutions once we redirect the resources to fund them properly.
-
-**"But donors expect us to focus on our cause area."**
-
-Show them the math. Donors want impact per dollar. This delivers more impact per dollar for their cause than direct work.
-
----
-
-## The Call to Action
-
-**For Organization Leaders:**
-
-1. **Run the numbers.** Calculate your cost per life saved/problem solved vs. the 1% Treaty's impact
-2. **Redirect resources.** Reallocate advocacy spend toward 1% Treaty passage
-3. **Join the coalition.** Coordinate with other orgs who've done the same math
-
-**For Donors:**
-
-1. **Pause recurring donations** to single-issue organizations
-2. **Fund [VICTORY bonds](../economics/victory-bonds.qmd)** instead for higher ROI
-3. **Tell your favorite nonprofits** to read this document
-
-**For Staff at Advocacy Organizations:**
-
-1. **Forward this to leadership** with the subject "Higher ROI than our current work"
-2. **Run internal cost-effectiveness analysis** comparing your programs to 1% Treaty support
-3. **Consider switching organizations** if leadership won't pivot to higher-impact work
-
----
-
-## Frequently Asked Questions
-
-**Q: "Isn't this incredibly arrogant to claim we have the best idea?"**
-
-A: It's not arrogance when you have the data. [`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI](dfda-cost-benefit-analysis.qmd), [80X efficiency improvement](recovery-trial.qmd), and [capturing 0.16% of `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual waste](peace-dividend-calculations.qmd) is just math.
-
-**Q: "What if the 1% Treaty fails?"**
-
-A: What if your current approach fails? It's been failing for decades. At least this has a theory of systemic change.
-
-**Q: "Won't this put nonprofits out of business?"**
-
-A: No. It puts them in the business of solving problems with 40X more resources instead of fighting for scraps.
-
-**Q: "How do we maintain organizational identity?"**
-
-A: Keep your mission. Change your method. Environmental groups can do environmental work with `{python} format_billions(TREATY_ANNUAL_FUNDING)` in funding instead of \$27M.
-
----
-
-## The Bottom Line
-
-**Every minute you spend on anything other than the 1% Treaty is opportunity cost.**
-
-Every dollar raised for single-issue advocacy is a dollar that could have 10-100X more impact redirecting military budgets.
-
-Every year we delay is [63 million preventable deaths](../problem/cost-of-war.qmd#annual-excess-deaths), [`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` in waste](peace-dividend-calculations.qmd), and the continued risk of [nuclear winter](../references.qmd#nuke-winter-150tg).
-
-**This is the best idea in the world because it's the highest-leverage intervention for every cause you care about.**
-
-The question isn't whether you should work on this. The question is whether you can do the math and still justify working on anything else.
-
----
-
-## Learn More
-
-- **[Full 1% Treaty Text](1-percent-treaty.qmd)** - The actual treaty language
-- **[Implementation Roadmap](../strategy/roadmap.qmd)** - How we get this done
-- **[VICTORY Bonds](../economics/victory-bonds.qmd)** - The financial mechanism
-- **[Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)** - Why this is `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI
-- **[Join the Coalition](../community/partners/)** - Work with us
-
-**Contact:** [orgs@warondisease.org](mailto:orgs@warondisease.org) for organizational partnerships
-
----
-
-_"The best time to plant a tree was 20 years ago. The second best time is now. The best time to redirect humanity's resources from destruction to creation was when we invented nuclear weapons. The second best time is now."_
+The choice is yours. You can continue to bail water, or you can help us patch the hole.
