@@ -26,60 +26,20 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-**How to Pass a Global Treaty in 5 Steps**
+This is the simple, brutal logic of the revolution. It's not a complex, multi-year plan. It's a five-step cascade, a self-reinforcing flywheel that, once started, cannot be stopped.
 
 {{< include ../../figures/five-step-strategy-flowchart.qmd >}}
 
-## Step 1: VICTORY Bonds
+1.  **VICTORY Bonds:** You raise **`{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`** by selling [VICTORY Bonds](../economics/victory-bonds.qmd) to investors, promising them a `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return on the survival of the human race.
 
-**Raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` From Investors**
+2.  **Global Referendum:** You use the money to launch a **[global referendum](../strategy/global-referendum.qmd)**, a political weapon of mass persuasion designed to secure the votes of **280 million people**—the 3.5% of the population that history has shown is the tipping point for irreversible change.
 
-Remember World War II? America sold [war bonds](../references.qmd#wwii-war-bonds) to fund the fight against fascism. People bought them because:
+3.  **Legal Lobbying & Super PACs:** You deploy the rest of the war chest to **[buy the politicians](../legal/election-law.qmd)**. With 280 million voters at your back and a budget that dwarfs the defense lobby, you make supporting the treaty the only rational choice.
 
-1. They hated Nazis
-2. They loved money
-3. The government made it patriotic
+4.  **The Treaty Passes:** The **[1% Treaty](../appendix/1-percent-treaty.qmd)** is ratified. The `{python} format_billions(TREATY_ANNUAL_FUNDING)`-a-year river of cash begins to flow from military budgets to the DIH.
 
-The strategy applies the same principle to the War on Disease. [VICTORY bonds](../economics/victory-bonds.qmd) fund the fight against death - with much higher returns than WWII bonds ever offered.
-
-## Step 2: Global Referendum
-
-**Get 280 Million Votes**
-
-Use the bond money to run a massive campaign. 
-
-Get [3.5% of humanity](/brain/book/references.qmd#3-5-rule) to vote yes on "Do you want to not die?" on redirecting 1% of military spending to fund hyper-efficient decentralized clinical trials.
-
-## Step 3: Legal Lobbying
-
-**Deploy $1B (ROI: 1,813:1)**
-
-The military-industrial complex spends $1 on lobbying and gets [$1,813 back](/brain/book/references.qmd#lobbying-roi-calc) in contracts. It's the best investment in the world, if you don't mind the screaming.
-
-Use the same proven lobbying ROI to build a coalition where everyone profits more from cures than disease.
-
-## Step 4: Super PACs
-
-**Fund Treaty Supporters, Replace Opponents**
-
-Create Super PACs in every country. Not to support candidates, to support math. If your district votes 70% for the treaty and you vote against it, fund your opponent with spreadsheets and bar graphs.
-
-## Step 5: End War and Disease
+5.  **The Success Spiral:** The DIH funds cures. The cures generate massive public support. The public support creates political pressure to increase the treaty percentage from 1% to 2%, then 5%, then more. Each success feeds the next, creating a permanent, self-reinforcing flywheel that systematically defunds the global war machine and funds the future of human health.
 
 {{< include ../../figures/success-spiral-flowchart.qmd >}}
 
-Gradually moving toward a world with less and less war and more and more cures:
-
-- **[1% Treaty](../appendix/1-percent-treaty.qmd)** (`{python} format_billions(TREATY_ANNUAL_FUNDING)`) → First major cures → Media attention → More public support
-- **2% Treaty** ($54B) → Accelerated breakthroughs → Paradigm shift → Massive momentum
-- **5% Treaty** ($135B) → Disease eradication → Victory declared → Universal support
-- **50%+ Budget** → Humanity permanently prioritizes healing over killing
-
----
-
-## Appendix: Referendums vs. Independent Expenditures
-
-- **Referendums (where binding and timely):** Highest legitimacy; durable mandate; use when national or state mechanisms exist and timelines are practical.
-- **Advisory signals (where no referendum):** Run scientifically credible polling or representative citizen assemblies; publish verified tallies per district.
-- **Independent expenditures:** Fastest lever to translate district will into votes; pledge support for lawmakers who vote with their district's verified result (and oppose those who defy it), with strict no‑coordination.
-- **Hybrid playbook:** Use the global referendum for umbrella mandate; use country/district signals to direct lawful independent expenditures.
+This isn't a plan to ask for change. It's a plan to make change inevitable.
