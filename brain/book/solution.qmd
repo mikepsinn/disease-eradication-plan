@@ -32,36 +32,37 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-After reading the last section, you might be tempted to drink heavily. Don't. The solution is remarkably simple. It doesn't require virtuous politicians, brilliant leaders, or a fundamental change in human nature.
+After reading about the problem, you might be tempted to drink heavily. Don't. The solution is remarkably simple. It doesn't require virtuous politicians, brilliant leaders, or a fundamental change in human nature.
 
 It just requires changing what pays.
 
-We're going to hijack the machinery of greed and point it at the things that are trying to kill you. Here's how you build a system that makes curing people more profitable than killing them.
+Here’s the blueprint for hijacking the planet's budget and pointing it at the right enemy. This is how you build a system that makes curing people more profitable than killing them.
 
-## The 6-Step Plan to Hijack a Broken System
+## The System: A Step-by-Step Guide
 
-**1. Get the Money**: The **[1% Treaty](appendix/1-percent-treaty.qmd)** redirects `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year  
-**2. Allocate Efficiently**: The **[DIH](./solution/dih.qmd)** uses democratic voting to fund what matters most  
-**3. Pay Patients**: Subsidies go directly to patients who join trials  
-**4. Run Cheap Trials**: Pragmatic trials cost [$500/patient](references.qmd#recovery-cost-500) instead of [$41,000](references.qmd#trial-cost-41k) (Oxford RECOVERY proved this works)  
-**5. Publish Everything**: The **[dFDA](./solution/dfda.qmd)** shows real effectiveness data for every treatment  
-**6. Label Outcomes**: Every food and drug gets honest labels about what it actually does  
+The solution isn't one magic bullet; it's a machine with seven interconnected parts. Here's the logical order of operations for building a perpetual motion engine for human health.
 
-**Result**: We know what works, what doesn't, and people get paid to help figure it out.
+**Step 1: Get the Money (The [1% Treaty](solution/1-percent-treaty.qmd))**
+First, you need a budget. The treaty is a global referendum to redirect a rounding error—just 1% of military spending (`{python} format_billions(TREATY_ANNUAL_FUNDING)`/year)—from building bombs to fixing bodies. It starts small, proves the peace dividend works, and uses a ratchet mechanism to scale up.
 
-## The Proof: Oxford RECOVERY Trial Already Did This
+**Step 2: Hold the Money (The [DIH](solution/dih.qmd))**
+The money flows into the Decentralized Institutes of Health, a parallel research system run by smart contracts, not bureaucrats. With no CEO to bribe and no central authority to capture, it's just a transparent, auditable treasury waiting for instructions.
 
-Before you think this is theoretical, know that **Oxford already proved it works**:
+**Step 3: Govern the Money (The [Wishocracy](solution/wishocracy.qmd))**
+Who decides how to spend the money? Everyone. Wishocracy is the governance app that replaces grant committees with direct democracy. Anyone can propose research, and billions of pairwise votes determine which problems get funded. It's a global todo list for humanity's health, prioritized by humanity itself.
 
-- **Cost**: [$500 per patient](references.qmd#recovery-cost-500) (vs FDA's [$41,000](references.qmd#trial-cost-41k))
-- **Speed**: [100 days to first cure](references.qmd#recovery-trial-100-days-to-cure) (vs FDA's [10 years](references.qmd#fda-approval-timeline-10-years))
-- **Lives saved**: [1 million+ globally](references.qmd#recovery-trial-summary-quote)
-- **Efficiency gain**: [`{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction proven](references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction)
+**Step 4: Build the Platform (The [dFDA](solution/dfda.qmd))**
+This is where the work gets done. The dFDA is a parallel, open-source platform for running clinical trials. Instead of the FDA's bureaucratic nightmare, it enables pragmatic trials at a fraction of the cost. This isn't a theory; the **Oxford RECOVERY Trial** already proved this model works, running trials for **[$500 per patient](references.qmd#recovery-cost-500)** instead of the typical [$41,000](references.qmd#trial-cost-41k) and getting the first results in just [100 days](references.qmd#recovery-trial-100-days-to-cure).
 
-The RECOVERY trial isn't a model - it's proof. We're just scaling what already succeeded. [See the full RECOVERY analysis →](appendix/recovery-trial.qmd)
+**Step 5: Execute the Work (The [Positron Network](solution/ai-coordination-army.qmd))**
+With a budget, a plan, and a platform, the Positron Network coordinates an army of AI agents to execute the mission. It breaks impossibly large goals like "cure cancer" into millions of small, executable tasks, distributing them to researchers, labs, and citizen scientists around the world.
+
+**Step 6: Fuel the Engine ([Aligning Incentives](solution/aligning-incentives.qmd))**
+The machine runs on one thing: greed. The system is designed to align incentives. It shows defense contractors the ROI of curing customers instead of killing them, lets insurance companies profit from health gains, and allows pharma to earn more from cures than from treatments. It makes helping humanity the most profitable game in town.
+
+**Step 7: Name the Mission (The [War on Disease](solution/war-on-disease.qmd))**
+This entire machine is aimed at one goal: winning the first "war" that's actually designed to be won. It has clear victory conditions (eradicate specific diseases), automatic demobilization (funding shifts when a goal is met), and a clear enemy that can't bribe its way to a stalemate.
 
 ---
 
----
-
-Now, let's get into the details. Here's the blueprint for hijacking the planet's budget and pointing it at the right enemy.
+Now, let's get into the details.
