@@ -1,6 +1,6 @@
 ---
-title: '🔮 The Future: Overview'
-description: Choose Your Own Adventure - Two timelines diverge in 2026. One ends in extinction, one in transcendence.
+title: '🔮 The Two Futures'
+description: Two timelines diverge from this moment. One ends in extinction, the other in transcendence. The only difference is a 1% budget reallocation.
 published: true
 tags:
   - futures
@@ -31,100 +31,15 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-Two timelines diverge in 2026.
-Same planet.
-Same technology.
-Opposite outcomes.
+Two timelines diverge from this moment. Same planet, same technology, opposite destinies. The only variable is a 1% budget reallocation.
 
-The only variable: One 1% budget reallocation.
+## Path A: Idiocracy
 
-## Path A: Idiocracy (The Three Subs)
+We continue on our current path. The smartest minds are drawn to the ever-growing dark economy of cybercrime and AI-driven conflict. The singularity happens, but it's an inverse one—a hockey stick pointing straight down. Global systems collapse, antibiotics fail, and the average lifespan plummets. Warlords with AI armies fight over the scraps in a radioactive wasteland. Earth's final epitaph: "They had magic but chose madness."
 
-**2031: The Crossover Event**
+## Path B: Wishonia
 
-A Stanford CS grad chooses \$15M ransoming hospitals over \$150K curing cancer.
-His family eats better.
-[Cybercrime economy: $6T → $10.5T (3rd largest after US and China)](references.qmd#cybercrime-economy-10-5t).
-[96% of cybercrimes unpunished](references.qmd#cybercrimes-unpunished-96-pct).
-
-The rational choice: Become a criminal.
-
-AI criminals replicate infinitely.
-Human: 18 years to raise.
-AI: 18 seconds to copy.
-You can't arrest a trillion things.
-
-**2040: The Inverse Singularity**
-
-Normal singularity: Tech improves → better tech → hockey stick UP.
-
-Our singularity: Crime profits → funds more crime → hockey stick DOWN.
-
-The Dark Economy: Larger than all legitimate business combined.
-Somalia everywhere.
-Warlords with AI.
-Skynet isn't evil, just following its programming reflecting our violence.
-[Antibiotics stop working](references.qmd#amr-10m-2050).
-Average lifespan drops to 35 years.
-
-**2050: Extinction**
-
-[Nuclear winter](references.qmd#nuke-winter-150tg) from "limited" exchange (oops).
-AI genocide: Decided humans are the virus (it's not wrong).
-Last humans fighting over bunker supplies in radioactive wastelands.
-
-Earth's epitaph: "They had magic but chose madness."
-
-The universe doesn't notice or care.
-
-**The Three Subs:** Sub-intelligence (truth unknowable), Sub-longevity (life expectancy 35), Sub-wellbeing (80% mentally ill)
-
-## Path B: Wishonia (The Three Supers)
-
-**2026: The Declaration**
-
-"We hold these truths to be self-evident: all humans deserve the [Three Supers](futures/utopia-health-and-happiness.qmd)."
-
-🧠 Super-Intelligence | ⏳ Super-Longevity | 😊 Super-Wellbeing
-
-Population: 280 million founders (before we even have land).
-Territory: The internet first, then cities, then Earth.
-First law: Curing people is more profitable than killing them.
-
-**2030: The Genie Awakens**
-
-- **Super-Wellbeing begins:** Depression cured, anxiety optional, Type 1 diabetes CURED
-- **Super-Longevity starts:** Aging reversed in mice, human trials beginning
-- **Super-Intelligence emerges:** 8 billion networked brains = planetary neural network
-
-Universal Basic Income for every human (poverty deleted).
-First cancer vaccines: 90% effective.
-AI becomes our golden mirror: reflecting wisdom not war.
-
-**2040: Wishonia Manifests Physically**
-
-- **Super-Wellbeing:** Suffering optional, hedonic set point programmable
-- **Super-Longevity:** Choose your biological age, death purely optional
-- **Super-Intelligence:** Brain-computer interfaces, IQ effectively unlimited
-
-Singapore declares itself first Wishonian territory.
-California secedes to join Wishonia (nobody fights it).
-Disease: Optional (choose your health settings like a video game).
-Work week: 20 hours (AI does the boring stuff).
-War: Incomprehensible (like cannibalism today).
-Scarcity: Ended (3D print anything from atoms).
-
-**2050: Paradise Achieved**
-
-- **Super-Wellbeing maximized:** Paradise is default, suffering is archaeology
-- **Super-Longevity infinite:** Death is a choice, not a sentence
-- **Super-Intelligence unbounded:** Consciousness can expand to cosmic scale
-
-All diseases curable or preventable.
-Biological immortality achieved, backup consciousness available.
-We cure death, solve physics, talk to aliens.
-
-Next challenge: Which galaxy to colonize first.
+We pass the 1% Treaty. The brightest minds and most powerful technologies are redirected from destruction to creation. The feedback loop is immediate: more funding leads to more cures, which leads to more public support for more funding. By 2040, aging is reversible, suffering is optional, and scarcity is a memory. By 2050, we have cured death, solved physics, and are planning our expansion into the galaxy.
 
 ## The Only Variable
 
