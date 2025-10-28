@@ -32,37 +32,13 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-The solution isn't complicated.
-It doesn't require changing human nature.
+After reading the last section, you might be tempted to drink heavily. Don't. The solution is beautifully simple. It doesn't require virtuous politicians, brilliant leaders, or a fundamental change in human nature.
+
 It just requires changing what pays.
 
-Here's the complete system that makes curing people more profitable than killing them:
+We're going to hijack the machinery of greed and point it at the things that are trying to kill you. Here's how you build a system that makes curing people more profitable than killing them.
 
-## The Goal: Personalized, Preventive, Precision Medicine
-
-Out of an existing pool of big health data, an insilico model of human biology can be developed to discover new interventions and their personalized dosages and combinations.
-
-One way to achieve this is to view the human body as a black box with inputs and outputs. We can apply predictive machine learning models to stratified groups of similar people based on the following aspects:
-
-* [Genomic](https://en.wikipedia.org/wiki/Genomics)
-* [Transcriptomic](https://en.wikipedia.org/wiki/Transcriptome)
-* [Proteomic](https://en.wikipedia.org/wiki/Proteomics)
-* [Metabolomic](https://en.wikipedia.org/wiki/Metabolomics)
-* [Microbiomic](https://en.wikipedia.org/wiki/Microbiota)
-* [Phenotype](https://en.wikipedia.org/wiki/Phenotype)
-* [Diseasomic](http://ijream.org/papers/IJREAMV05I0250057.pdf)
-* [Pharmacomicrobiomic](https://en.wikipedia.org/wiki/Pharmacomicrobiomics)
-* [Pharmacogenomic](https://en.wikipedia.org/wiki/Pharmacogenomics)
-* [Foodomic](https://en.wikipedia.org/wiki/Foodomics)
-* [Exposome](https://en.wikipedia.org/wiki/Environmental_factor#Exposome)
-
-This will enable the discovery of the full personalized range of positive and negative relationships for all factors without a profit incentive for traditional trials.
-
-![The human body as a black box model for machine learning](../../assets/black-box-model-animation.gif)
-
-## The 6-Step Process
-
-**From `{python} format_billions(TREATY_ANNUAL_FUNDING)` to Curing Cancer**
+## The 6-Step Plan to Hijack a Broken System
 
 <!-- TODO: STRUCTURE (CONTRADICTION) - The `TREATY_ANNUAL_FUNDING` variable (likely $24.4B, based on the '1% Treaty' chapter's 'Two-Tier Peace Dividend' section) contradicts the $27B figure used for the DIH budget in the 'DIH' and 'Investment Vehicle' chapters. Using different figures for the core funding amount is confusing and undermines credibility. Recommend using the simpler $27B figure consistently across all chapters. -->
 
@@ -88,8 +64,6 @@ The RECOVERY trial isn't a model - it's proof. We're just scaling what already s
 
 ---
 
-## Dive Deeper
+---
 
-- **[Chapter 3: The 1% Treaty](appendix/1-percent-treaty.qmd)** - How we get the money.
-- **[Chapter 4: The DIH](./solution/dih.qmd)** - How we spend the money.
-- **[Chapter 5: The dFDA](./solution/dfda.qmd)** - How we prove what works.
+Now, let's get into the details. Here's the blueprint for hijacking the planet's budget and pointing it at the right enemy.
