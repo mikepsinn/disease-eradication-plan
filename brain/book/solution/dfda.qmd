@@ -46,79 +46,27 @@ On top of excluding everyone with a pulse, these "definitive" studies are run on
 
 We're basing the survival of our species on a sample size smaller than a kindergarten class. So, instead of studying these mythical, perfectly sick unicorns, what if we just collected data from everyone who's *actually* sick?
 
-### The Power of Real-World Evidence
+### The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)
 
-The dFDA is built on a simple but powerful idea: we can learn more, faster, by analyzing data from real patients in the real world. This is often called Real-World Evidence (RWE).
+The dFDA is built on a simple, powerful, and slightly creepy idea: we can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE), which is a fancy term for "watching what happens."
 
-#### The Potential of RWE-Based Studies
-
-* **Diagnostics** - Data mining and analysis to identify causes of illness
-* **Preventative medicine** - Predictive analytics and data analysis of genetic, lifestyle, and social circumstances to prevent disease
-* **Precision medicine** - Leveraging aggregate data to drive hyper-personalized care
-* **Medical research** - Data-driven medical and pharmacological research to cure disease and discover new treatments and medicines
-* **Reduction of adverse medication events** - Harnessing of big data to spot medication errors and flag potential adverse reactions
-* **Cost reduction** - Identification of value that drives better patient outcomes for long-term savings
-* **Population health** - Monitor big data to identify disease trends and health strategies based on demographics, geography, and socioeconomic
-
-#### Cost Savings in Drug Development
-
-Failed drug applications are expensive. A global database of treatments and outcomes could provide information that could avoid massive waste on failed trials.
-
-* A 10% improvement in predicting failure before clinical trials could save [$100 million](https://drugwonks.com/blog/the-dog-days-of-drug-approvals) in development costs.
-* Shifting 5% of clinical failures from Phase III to Phase I reduces out-of-pocket costs by [$15 to $20 million](https://drugwonks.com/blog/the-dog-days-of-drug-approvals).
-* Shifting failures from Phase II to Phase I would reduce out-of-pocket costs by [$12 to $21 million](https://drugwonks.com/blog/the-dog-days-of-drug-approvals).
-
-#### Cost Savings Through Decentralization
-
-* In phase II studies, the typical decentralized clinical trial (DCT) deployment produced a [400%](https://github.com/cure-dao/docs/blob/main/assets/financial-benefits-of-decentralized-trials.pdf) return on investment in terms of trial cost reductions.
-* In phase III studies, decentralization produced a [1300%](https://github.com/cure-dao/docs/blob/main/assets/financial-benefits-of-decentralized-trials.pdf) return on investment.
-
-#### But Isn't This Just "Observational Research"?
-
-When people hear "real-world evidence," they often think of flawed observational studies from the past.
-
-**Why It Seems Like Diet Advice Flip-Flops All the Time**
-
-In 1977, the USDA and Time Magazine warned Americans against the perils of dietary cholesterol. Yet, in 1999, TIME released a very different cover, suggesting that dietary cholesterol is fine.
+Skeptics will say, "But that's just observational research! Correlation isn't causation!" They'll point to flip-flopping diet advice about eggs and cholesterol as proof that this is all voodoo.
 
 ![TIME magazine covers about eggs and cholesterol](../../../assets/eggs-time-covers.png)
 
-The problem with these old studies is that correlation is not the same as causation.
+They're not wrong about the old way. Old observational studies were flawed because they couldn't easily separate correlation from causation. Did the people who ate eggs also smoke three packs a day? The studies couldn't always tell.
 
 ![A comic illustrating that correlation does not equal causation.](../../../assets/correlation-does-not-equal-causation-comic.png)
 
-A common source of error is the "healthy person bias." For instance, if an observational study finds "People Who Brush Teeth Less Frequently Are at Higher Risk for Heart Disease," it might be that people who brush their teeth are also more likely to exercise and eat well.
+But here's what's changed: we now have so much data and such powerful computers that we can overcome these problems. With modern data from wearables, apps, and electronic health records, a single person can become their own control group. We can track someone's arthritis pain for a month, have them take Turmeric for a month, then stop, then start again. By doing this, we can see if the Turmeric is actually doing something or if it's just a coincidence.
 
-However, the massive amount of automatically collected, high-frequency longitudinal data we have today makes it possible to overcome these flaws.
-
-#### Overcoming the "No Control Group" Problem
-
-The primary flaw with old observational research is the lack of a control group. With modern data, a single person can act as their own control group using an A/B experimental design.
-
-![A diagram showing how causal clues can be inferred from data.](../../../assets/causal-clues-1024x652.png)
-
-For instance, if someone with arthritis wants to test a Turmeric supplement, their experiment could look like this:
-
-1.  **Month 1:** Baseline (Control) - No Turmeric
-2.  **Month 2:** Treatment (Experimental) - 2000mg Turmeric/day
-3.  **Month 3:** Baseline (Control) - No Turmeric
-4.  **Month 4:** Treatment (Experimental) - 2000mg Turmeric/day
-
-By repeating this, we can gain statistical confidence. We can also use advanced statistical models (like diffusion-regression state-space models) to create a "synthetic control group," which predicts what would have happened without the intervention. This allows us to account for other variables like diet, exercise, and seasonality.
-
-We can then apply [Hill’s criteria for causation](http://www.drabruzzi.com/hills_criteria_of_causation.htm) to quantify the likelihood of a causal relationship.
-
-#### Meta-Analyses Support Real-World Evidence
-
-Modern statistical methods make a difference. A [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) found that:
-
-> when applying modern statistical methodologies to observational studies, the results are generally **not quantitatively or qualitatively different** from those obtained in randomized, controlled trials.
-
-Other meta-analyses confirm this, showing strong agreement between observational studies and RCTs for both mortality and various other outcomes.
+Modern statistical methods are so good that a [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) found that the results from high-quality observational studies are generally the same as those from expensive, slow randomized controlled trials.
 
 ![A chart comparing effect sizes from observational studies and randomized trials for mortality.](../../../assets/observational-vs-randomized-effect-sizes.png)
 
 ![A chart comparing effect sizes from observational studies and randomized trials for various outcomes.](../../../assets/observational-vs-randomized-trial-effect-sizes.png)
+
+We have the tools to get reliable answers from real-world data. We just have to actually use them.
 
 ### Introducing FDA.gov 2.0: Now With 80% Less Death
 
@@ -128,13 +76,13 @@ Here's the revolutionary process:
 
 ### Step 1: Type in What's Killing You
 
-<img src="https://static.crowdsourcingcures.org/enter-condition.png" alt="Enter condition" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/enter-condition.png" alt="Enter condition" style="max-width: 600px; width: 100%;" />
 
 Revolutionary feature: A search box. The FDA's current website doesn't have this because they assume you've already died.
 
 ### Step 2: See What Actually Works (Based on Reality, Not Theory)
 
-<img src="https://static.crowdsourcingcures.org/dfda/video/img/clinipedia-inflammatory-pain-small.gif" alt="View ranked treatments" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/clinipedia-inflammatory-pain-small.gif" alt="View ranked treatments" style="max-width: 600px; width: 100%;" />
 
 Instead of "This drug is approved for exactly this condition in exactly these patients on exactly Tuesdays," you get:
 
@@ -181,7 +129,7 @@ This gives patients an invaluable second layer of information: not just what *ha
 
 ### Step 3: Join a Trial from Your Couch (While Dying Comfortably)
 
-<img src="https://static.crowdsourcingcures.org/video/autonomous-study-search.gif" alt="Join trials" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/autonomous-study-search.gif" alt="Join trials" style="max-width: 600px; width: 100%;" />
 
 Current system: Drive 500 miles to a university hospital, wait 6 months, get rejected for having the wrong kind of dying.
 
@@ -191,7 +139,7 @@ Revolutionary!
 
 ### Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving)
 
-<img src="https://static.crowdsourcingcures.org/video/autonomous-cvs.gif" alt="Get treatment" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/autonomous-cvs.gif" alt="Get treatment" style="max-width: 600px; width: 100%;" />
 
 Amazon can deliver a banana costume in 2 hours but experimental medications take 6 months and require seven forms of ID?
 
@@ -199,7 +147,7 @@ The dFDA fixes that. Your pharmacy becomes a trial site. Your doctor becomes a r
 
 ### Step 5: Report Results Without a PhD in Paperwork
 
-<img src="https://static.crowdsourcingcures.org/video/reminder-inbox.gif" alt="Report outcomes" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/reminder-inbox.gif" alt="Report outcomes" style="max-width: 600px; width: 100%;" />
 
 Current system: 500-page case report forms that ask questions like "Rate your suffering on a scale of mauve to burnt sienna."
 
@@ -211,7 +159,7 @@ New system:
 
 ### Step 6: Everyone Benefits from Everyone's Suffering
 
-<img src="https://static.crowdsourcingcures.org/video/black-box-model-animation2.gif" alt="Improve rankings" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/black-box-model-animation2.gif" alt="Improve rankings" style="max-width: 600px; width: 100%;" />
 
 Your data helps the next person. Their data helps you. It's socialism, but for not dying.
 
@@ -412,7 +360,7 @@ It does this by connecting to all your data—from wearables, apps, and your med
 
 ## The Digital Twin Safe: Your Medical Data's Panic Room
 
-<img src="https://user-images.githubusercontent.com/2808553/180306571-ac9cc741-6f34-4059-a814-6f8a72ed8322.png" alt="Digital Twin Safe" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/human-file-system.png" alt="Digital Twin Safe" style="max-width: 600px; width: 100%;" />
 
 Right now, your medical data is scattered across:
 
@@ -475,7 +423,7 @@ Based on 50,000 humans who tried this:
 
 ## The Disease Eradication Act: Making It Legal to Not Die
 
-<img src="https://wiki.dfda.earth/right_to_trial_act_image.jpg" alt="Disease Eradication Act" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/right_to_trial_act_image.jpg" alt="Disease Eradication Act" style="max-width: 600px; width: 100%;" />
 
 We need a law that says: "Dying people can try things that might help them not die."
 
