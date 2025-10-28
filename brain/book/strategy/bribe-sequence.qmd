@@ -27,7 +27,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-The strategy unfolds in a sequence of bribes, each one funding the next, creating an unstoppable coalition of self-interest.
+This isn't about convincing people to be better. It's about making it more profitable for them to do the right thing. The strategy is a simple, brutal sequence of bribes, each one funding the next, creating an unstoppable coalition of pure, unadulterated self-interest.
 
 ## 1. The Bribe for Rich People
 
@@ -46,15 +46,14 @@ The strategy unfolds in a sequence of bribes, each one funding the next, creatin
 3. **They Protect Their Families:** Their families get diseases too. They'd be better off profiting from funding cures rather than bombs
 4. **Repurpose Their Lobbyists:** Instead of hiring new lobbyists, legally incentivize them with better returns to get their existing lobbying apparatus to push for the treaty
 
-## 2. The Bribe for VICTORY Bond Buyers
+## 2. The Bribe for the First Followers
 
-### Phase 2: VICTORY Bond Buyers ($100-200M Referendum Funding)
+### Phase 2: Campaign Funders ($100-200M for the Referendum)
 
-- **Who:** Early backers, health advocates, institutions
-- **The Bribe:** VICTORY bonds representing earned ownership of real economic value created by the peace dividend
-- **Governance control over `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually** in captured value from military budget redirection
-- **Voting rights** on patient subsidies and research funding allocation
-- **Bond value backed by actual treasury growth** from when the treaty actually happens ($0 → `{python} format_billions(TREATY_ANNUAL_FUNDING)`)
+- **Who:** The first wave of believers—early backers, health advocates, and institutions who want to do more than just invest.
+- **The Bribe:** A chance to turn a modest investment into a massive return *and* control the future of global health.
+- **What They Fund:** Their money doesn't go to salaries; it goes directly to funding the **[Global Referendum](/brain/book/strategy/global-referendum.qmd)**. This is the war chest we use to bribe the public.
+- **What They Get:** In return for funding the campaign, they receive a special class of **[VICTORY Bonds](../economics/victory-bonds.qmd)** that grant them significant governance rights over the `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual budget once the treaty is signed. They're not just investors; they're the new ruling class of a multi-billion-dollar global health fund.
 
 ## 3. The Bribe for Regular People
 
@@ -86,16 +85,16 @@ The strategy unfolds in a sequence of bribes, each one funding the next, creatin
 - **The Power to Reward Allies:** Signatory leaders gain the right to direct a portion of the DIH's multi-billion-dollar R&D budget to universities and companies **in their home districts**. This is a firehose of cash they can use to create jobs, reward their biggest financial backers, and stand at ribbon-cutting ceremonies for decades.
 - **Enriched Elites:** Offer privileged, early access to VICTORY Bonds to a nation's sovereign wealth funds and key financial institutions _contingent on their leader signing the treaty_. This creates a powerful domestic coalition of the nation's wealthiest and most influential players who will pressure their leader to sign the deal that makes them rich.
 
-**The Result:** The choice for a leader is simple: accept a political and financial package that guarantees their personal power and enriches their allies, or be swept away by the tide. Compliance becomes the only rational choice.
+**The Result:** The choice for any leader is simple: accept a political and financial package that guarantees their power and enriches their allies, or be swept away by a popular movement funded by their own donors. Compliance becomes the only rational choice.
 
 ---
 
-## The Timeline
+## The Timeline: From Idea to Revolution
 
-Here's how to execute it:
+This isn't a 20-year plan. This is a hostile takeover of global priorities, executed with the speed of a startup.
 
-1.  **Months 0-3:** Set up the legal structure and hire smart people to run the campaign.
-2.  **Months 4-36:** Launch the global referendum to get 280 million people to vote, and raise **[`{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`](/brain/book/economics/campaign-budget.qmd)** from investors.
-3.  **Years 3-5:** Use the mandate and money to get major countries to sign the treaty, then start spending `{python} format_billions(TREATY_ANNUAL_FUNDING)` per year on curing diseases.
+1.  **Phase 1 (Months 0-3): The Setup.** We incorporate, lawyer up, and hire a small team of killers.
+2.  **Phase 2 (Months 4-36): The Bribe.** We launch the referendum, raise **[`{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`](/brain/book/economics/campaign-budget.qmd)** from our new rich friends, and get 280 million people demanding to be paid.
+3.  **Phase 3 (Years 3-5): The Endgame.** We use the money and the mandate to force the treaty through. Then the fun begins: spending `{python} format_billions(TREATY_ANNUAL_FUNDING)` a year putting diseases out of business.
 
-That's it.
+That's it. Three steps. Five years. A new world.
