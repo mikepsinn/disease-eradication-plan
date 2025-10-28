@@ -247,7 +247,7 @@ Remember WWII? America sold bonds to fight Nazis. People bought them because:
 2.  `{python} format_percentage(WW2_BOND_RETURN_PCT)` returns were considered good back then
 3.  Patriotism was trendy
 
-You'll sell the same bonds, except:
+You sell the same bonds, except:
 
 1.  Cancer is bad for business
 2.  `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns because inflation is a thing
