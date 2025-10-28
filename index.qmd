@@ -151,7 +151,6 @@ Every nation redirects just **`{python} format_percentage(TREATY_REDUCTION_PCT)`
 
 We'd still have [`{python} format_billions(GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024)`](brain/book/problem/cost-of-war.qmd) left for war and bombs and stuff.
 [\$2.69 trillion is enough to murder everyone on Earth 20 times](brain/book/appendix/nuclear-weapon-cost-and-casualties.qmd).
-(Literally.)
 
 ### 🌐 Why Decentralization Works
 
@@ -447,8 +446,6 @@ Unlike traditional interventions requiring ongoing charity, this generates `{pyt
 The `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` annual benefit is like finding out your lottery ticket is also a cure for cancer and makes you better looking.
 
 It's `{python} f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:,.0f}"` times bigger than childhood vaccines, which are literally one of humanity's greatest achievements. That's like being 10 times better than pizza. Impossible, yet here we are.
-
-**The irony:**
 
 - Charities: Spend `{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}"` to save a life (heroic)
 - This system: MAKES `{python} f"${SYSTEM_PROFIT_PER_LIFE_SAVED_MILLIONS:,.2f} million"` per life saved (capitalism's redemption arc)
