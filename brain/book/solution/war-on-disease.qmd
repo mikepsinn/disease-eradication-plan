@@ -23,7 +23,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 Every government "War on X"—Drugs, Poverty, Terror—has been a spectacular failure. Why? Because they all made the same mistake: they built a permanent bureaucracy that needed the problem to exist to justify its own budget. The DEA needs drug dealers. The War on Terror needs terrorists.
 
 The War on Disease is different. It's not a bureaucracy; it's a market. It's designed to win, and then shut down. Here's the difference:
@@ -52,11 +51,13 @@ The War on Disease is a Trojan horse. The real goal isn't just to cure disease; 
 Every government "War on X" has been a disaster because it was built on central planning, perverse incentives, and a monopoly on solutions. The War on Disease will be the first to actually *win* because it's built on competition, aligned incentives, and a ruthless focus on results.
 
 **Year 1 Targets:**
+
 -   1,000+ active trials launched
 -   100,000+ patients enrolled
 -   A `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction in trial costs demonstrated
 
 **Year 10 Targets:**
+
 -   50+ diseases cured
 -   Aging reversed in human trials
 

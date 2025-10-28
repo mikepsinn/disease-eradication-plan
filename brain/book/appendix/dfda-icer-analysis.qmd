@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ### Cost Utility ICER QALY and Sensitivity Analysis
 
 #### Introduction Why QALY and ICER
@@ -99,4 +98,3 @@ The analysis robustly demonstrates that the **dFDA Infrastructure is not merely 
 *(Optional: A note could be added here that specific programs _built upon_ the dFDA Infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
 
 ---
-

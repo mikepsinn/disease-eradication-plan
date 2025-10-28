@@ -24,7 +24,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 Here’s an estimated table of the number of lives that could potentially be saved annually if these drugs were made more accessible, based on available data and studies:
 
 | **Drug**                             | **Purpose**                                          | **Estimated Lives Saved Annually**                                          | **Source of Deaths Prevented**                                 |

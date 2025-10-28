@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## Comparative Cost-Effectiveness: dFDA vs. Other Public Health Interventions
 
 To provide context for the dFDA Infrastructure's impact, the chart below visualizes its cost-effectiveness against other well-understood public health programs. The metric used is **Quality-Adjusted Life Years (QALYs) Gained per $1 Million of Spending**. A higher number signifies greater cost-effectiveness.
@@ -85,4 +84,3 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 **Key Takeaway:** The estimated annual cost of the dFDA initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from [dFDA annual cost](#simplified-roi-scenario) and [NCI budget](#comparison-to-other-major-public-investments)). This comparison underscores that the dFDA Infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
 
 ---
-

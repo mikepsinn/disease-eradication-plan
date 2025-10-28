@@ -245,10 +245,12 @@ Protect investors by releasing funds in tranches tied to achievements:
 The investment carries two primary types of risk: **Project Risks**, which are inherent to the success of the campaign, and **Investor-Specific Risks**, which relate to the nature of the financial instrument.
 
 **Project Risks:**
+
 - **Political Risk:** The treaty may fail to pass in key nations. This is mitigated by building broad, bipartisan public support and using a multi-country strategy to avoid single points of failure.
 - **Execution Risk:** The campaign may fail to achieve its milestones. This is mitigated by milestone-gated funding, a lean operational model, and hiring an elite, experienced team.
 
 **Investor-Specific Risks:**
+
 - **Liquidity Risk:** Funds are locked up for 18-36 months during the campaign phase before returns begin. This is mitigated by allowing secondary market trading after an initial lock-up period.
 - **Timeline Risk:** The political process could take longer than projected, delaying returns. The perpetual nature of the bond is designed to reward patience.
 
@@ -342,21 +344,26 @@ Set these minimum investment amounts by investor type:
 This section focuses on objections specific to the financial instrument. For broader philosophical, political, and feasibility objections, see the main [Demolishing Objections](../call-to-action/every-objection-demolished.qmd) chapter.
 
 ### "The returns seem unrealistic. How is this not a Ponzi scheme?"
+
 "The returns are high because the political risk is high. This is a venture-scale bet on political change. The returns are not generated from new investors, but from a share of a new, legally mandated `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual revenue stream created by the treaty. The model is based on the proven economics of political lobbying, redirected toward a humanitarian goal."
 
 ### "What happens to my investment if the treaty fails?"
+
 "If the treaty campaign fails to achieve at least partial success, the initial investment will be lost, as it will have been spent on the campaign. This is the primary risk. However, even a partial success scenario—such as adoption by the US and EU alone—is projected to yield over 130% annually, providing a significant return well above market averages. The risk is binary, but the upside is designed to compensate for it."
 
 ### "What are the primary risks to my investment?"
+
 "The risks are categorized into two groups:
+
 - **Project Risks:**
-    - **Political:** The treaty may not pass. This is mitigated by building broad, bipartisan public support and using a multi-country strategy to avoid single points of failure (see "Address Each Risk Category" section above for details).
-    - **Execution:** The campaign may not be run effectively. This is mitigated by milestone-based funding releases and an experienced team.
+  - **Political:** The treaty may not pass. This is mitigated by building broad, bipartisan public support and using a multi-country strategy to avoid single points of failure (see "Address Each Risk Category" section above for details).
+  - **Execution:** The campaign may not be run effectively. This is mitigated by milestone-based funding releases and an experienced team.
 - **Investor-Specific Risks:**
-    - **Liquidity:** Your capital is locked during the 18-36 month campaign.
-    - **Timeline:** Political processes can be slow, potentially delaying the start of returns."
+  - **Liquidity:** Your capital is locked during the 18-36 month campaign.
+  - **Timeline:** Political processes can be slow, potentially delaying the start of returns."
 
 ### "How is this different from a standard philanthropic donation?"
+
 "Philanthropy is a donation with an expected financial return of zero. VICTORY Bonds are a for-profit investment instrument, structured as debt, with a projected `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return. While the outcome is profoundly impactful, the vehicle is a financial one designed to attract capital, not donations."
 
 ### When they want detailed financials

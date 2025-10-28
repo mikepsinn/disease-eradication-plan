@@ -23,7 +23,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 # The Cost of a Nuclear Bomb vs. The Cost of a Human Life
 
 This analysis calculates the cost per death for a modern nuclear weapon and uses that figure to estimate the potential human cost of a $2.69 trillion military budget—the amount that would remain *after* redirecting 1% to health research as proposed by the 1% Treaty.

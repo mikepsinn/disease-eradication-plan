@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 > This is a work in progress. Contributions are welcome! Just click the edit button in the lower right corner. It's our goal to avoid any duplication of effort. So please include existing projects that would be interested in fulfilling any part of this global framework.
 > {.is-warning}
 

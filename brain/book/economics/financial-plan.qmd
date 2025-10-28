@@ -24,7 +24,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 This document provides a high-level overview of the entire financial architecture required to pass the 1% Treaty and operate the Decentralized Institutes of Health (DIH). For detailed breakdowns, see the linked documents below.
 
 ## The Three Financial Pillars

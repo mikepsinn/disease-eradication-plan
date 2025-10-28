@@ -94,9 +94,7 @@ Every signatory nation contributes exactly 1% of their military budget to the De
 - France: $563 million (military cheese allocation)
 - And so on...
 
-
 {{< include ../../figures/one-percent-treaty-top-country-contributions-column-chart.qmd >}}
-
 
 **Article 3: The Enforcement Mechanism**
 
@@ -213,6 +211,7 @@ Once the treaty is signed and the money starts flowing, here's what happens:
 
 **Distribution**:
 The `{python} format_billions(TREATY_ANNUAL_FUNDING)` flows into the DIH Treasury, where it is allocated directly by the people of Earth via the Wishocracy platform. There are no committees or central planners. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
+
 - **Patient Subsidies:** The largest portion, creating a market for clinical trials.
 - **VICTORY Bond Returns:** A fixed 10% of inflows, as promised to investors.
 - **Research & Development:** Funding for breakthrough platform technologies.
@@ -275,24 +274,28 @@ Nations will find that true power and global influence come not from their capac
 ### A Multi-Generational Timeline
 
 **Year 1: The Awkward Beginning**
+
 - Politicians argue about who thought of it first
 - Military contractors rebrand as "health defense" companies
 - First cures emerge, everyone pretends they're not surprised
 - Global military spending: Still $2.69 trillion (nobody notices the difference)
 
 **Year 5: The New Normal**
+
 - Cancer survival rates double
 - Alzheimer's has three new promising treatments
 - The "Redirect" is now at 3%. Military budgets naturally decline because healthy, happy people are less interested in starting wars.
 - Some country tries to quit, gets voted out of office by angry grandmothers.
 
 **Year 10: The History Books**
+
 - "The 1% Treaty: How Humanity Chose Life Over Death"
 - Military spending down to 90% of 2025 levels. The redirect is at 10%.
 - Former weapons manufacturers are now the world's leading producers of artificial organs and gene therapies.
 - Nobel Peace Prize goes to whoever takes credit (probably Switzerland).
 
 **Year 50: The View from Tomorrow**
+
 - Death is mostly optional. War is mostly a video game.
 - The redirect is at `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)`. The military-industrial complex now builds starships and planetary defense systems against asteroids.
 - Children learn about cancer the way we learn about polio.

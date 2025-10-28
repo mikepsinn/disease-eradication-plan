@@ -41,7 +41,6 @@ Historical analysis shows: Every peaceful movement that gets **[3.5% active supp
 - "Humanity has [13,000 nukes](../references.qmd#world-warheads) but no cure for your kid's cancer" (rage-inducing)
 - "You're spending $340/year on killing people, $8/year on curing them" (shocking)
 - "`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` investment returns while saving humanity" (greed + altruism)
-<!-- TODO: STRUCTURE (OTHER) - The '40-' prefix here is confusing and weakens the core message. The 'Investment Vehicle' chapter authoritatively states the target yield is 270%. Recommend removing '40-' to match the powerful, consistent messaging used elsewhere (e.g., in the 'What Does Go Viral' section). -->
 
 ## The Viral Formula
 
@@ -50,10 +49,11 @@ $$
 $$
 
 ### Emotional Triggers
+
 - **Anger**: "[FDA delays kill more than the drugs](../references.qmd#fda-drug-lag-deaths-estimate)"
 - **Fear**: "You'll die of disease, not war"
 - **Hope**: "You could cure this in 10 years"
-- **Greed**: "40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns forever"
+- **Greed**: "`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns forever"
 
 ### Personal Stake
 
@@ -121,7 +121,6 @@ $$
 
 ## The Referral System
 
-<!-- TODO: STRUCTURE (OTHER) - Same issue as above. Recommend removing the '40-' prefix to align with the authoritative 270% figure from the 'Investment Vehicle' chapter. This maintains a clear and powerful message for this key audience. -->
 ### Individual Incentives
 
 - Share with 10 people → Entered in bond lottery
@@ -171,7 +170,7 @@ $$
 
 **Finance/Investment** (50M+ followers):
 
-- 40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns is compelling content
+- "`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns is compelling content"
 - Financial analysis is their specialty
 - Greed motivates sharing
 

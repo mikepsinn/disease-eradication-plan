@@ -23,7 +23,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 # Pragmatic vs Explanatory Trials: A Quantitative Analysis
 
 ## What are Pragmatic Trials?

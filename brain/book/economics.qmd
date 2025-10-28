@@ -32,23 +32,27 @@ from economic_parameters import *
 Depending on what you count, the 1% Treaty generates between `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` and `{python} format_roi(ROI_WITH_MULTIPLIER_EFFECTS)` ROI:
 
 **`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` = Conservative (dFDA R&D Savings Only)**
+
 - Only counts the `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` in annual R&D cost reductions from `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials
 - Ignores peace dividend, earlier access, and all secondary benefits
 - NPV-based, 10-year timeframe
 - This is the floor
 
 **`{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` = Complete (All Direct Benefits)**
+
 - Counts all 8 primary benefit categories totaling `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`/year
 - Includes peace dividend, R&D savings, earlier access, research acceleration, rare diseases, drug prices, prevention, and mental health
 - 10-year average
 - This is the realistic case
 
 **`{python} format_roi(ROI_WITH_MULTIPLIER_EFFECTS)` = Endgame (Year 20 Compounding)**
+
 - Adds all secondary multiplier effects: productivity gains, global trade, infrastructure preservation, avoided crises, innovation acceleration
 - Reaches `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual value at maturity
 - This is where we're actually headed
 
 **Which one should you cite?**
+
 - Conservative audience: Use `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`
 - Complete pitch: Use `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)`
 - True believers: Use `{python} format_roi(ROI_WITH_MULTIPLIER_EFFECTS)`
@@ -66,14 +70,17 @@ If we ONLY count the cheapest, most conservative benefit—making clinical trial
 All calculations in our [Economic Models Notebook](./economics/economic_models.ipynb).
 
 **The Funding Source (Peace Dividend):**
+
 - **Captured Dividend**: 1% of global military spending = **`{python} format_billions(TREATY_ANNUAL_FUNDING)` annually** to fund the initiative
 - **Societal Dividend**: Same 1% reduction generates **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` in annual economic value** through decreased conflict costs
 
 **The Investment (dFDA Infrastructure):**
+
 - **Total Cost (NPV)**: 10-year discounted cost to build and operate = **`{python} format_currency(DIH_NPV_TOTAL_COST)`**
 - **Funding Sustainability**: Annual captured dividend (`{python} format_billions(TREATY_ANNUAL_FUNDING)`) covers annual operational cost (`{python} format_millions(DFDA_ANNUAL_OPEX)`) **`{python} f"{DIVIDEND_COVERAGE_FACTOR:,.0f}"` times over**
 
 **The Return (Health & Wealth):**
+
 - **Economic Return (NPV)**: 10-year discounted net benefit = **`{python} format_billions(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)`** in R&D savings alone
 - **Robust ROI**: `{python} format_billions(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)` / `{python} format_currency(DIH_NPV_TOTAL_COST)` = **`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`**
 - **Health Return**: **`{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` Quality-Adjusted Life Years (QALYs)** annually
@@ -92,6 +99,7 @@ All calculations in our [Economic Models Notebook](./economics/economic_models.i
 The Decentralized FDA alone achieves **`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` return on investment**.
 
 This exceptional ROI comes from:
+
 - **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` in annual R&D cost savings**: `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in clinical trial costs
 - **Faster access to new treatments**: 2 years instead of 17 years to market
 - **Better prevention through real-world data**: Continuous learning from millions of patients
@@ -100,6 +108,7 @@ This exceptional ROI comes from:
 {{< include ../figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
 This beats history's greatest public health achievements:
+
 - Smallpox eradication: `{python} format_roi(SMALLPOX_ERADICATION_ROI)`
 - Childhood vaccinations: `{python} format_roi(CHILDHOOD_VACCINATION_ROI)`
 - Water fluoridation: `{python} format_roi(WATER_FLUORIDATION_ROI)`
@@ -237,6 +246,7 @@ The details are in [VICTORY Bonds](economics/victory-bonds.qmd), but here's the 
 - Generates the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` needed to win the global referendum
 
 See also:
+
 - **[Investment Thesis](economics/victory-bonds.qmd)** - Why this is the most profitable investment in history
 - **[Financial Plan Overview](economics/financial-plan.qmd)** - High-level view of fundraising, spending, and treasury management
 - **[Campaign Budget](economics/campaign-budget.qmd)** - Detailed breakdown of how to spend `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` to win

@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ### Calculation Framework
 
 Below is an illustrative framework with more formal equations and a simplified but "rigorous" model to analyze the cost–benefit dynamics and ROI of upgrading the FDA (and analogous global regulators) into a decentralized, continuously learning platform. Many real-world complexities (e.g., drug-specific risk profiles, variable regulatory timelines across countries) would require further refinement, but these equations give a starting point for a more quantitative analysis.
@@ -358,4 +357,3 @@ In this rough example, even **partial adoption** in the early years delivers lar
 Even so, the core takeaway remains: **If the platform is widely adopted and per-patient trial costs drop substantially, the net benefits likely dwarf the initial investments.**
 
 ---
-

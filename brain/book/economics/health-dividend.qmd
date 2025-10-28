@@ -24,7 +24,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## The `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` Return
 
 The dFDA Infrastructure costs **`{python} format_millions(DFDA_ANNUAL_OPEX)` per year** to run.
@@ -104,19 +103,19 @@ This isn't a moonshot. The RECOVERY trial already proved it works. We just need 
 
 Every day we wait costs $137 million and 2,301 lives.
 
-
-
 ---
 
 ## Further Reading
 
 **Detailed Analysis:**
+
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
 - [Health Dividend Calculations](../appendix/health-dividend-calculations.qmd) - Interactive NPV/ROI calculator
 - [dFDA Platform Costs](../appendix/dfda-platform-costs.qmd) - ROM estimates and market comparables
 - [QALY Model](../appendix/dfda-qaly-model.qmd) - Source of truth for 840,000 annual QALYs
 
 **Key Sources:**
+
 - [RECOVERY Trial Cost Reduction](../references.qmd#recovery-trial-cost-reduction)
 - [Clinical Trial Market Size](../references.qmd#clinical-trial-market-size)
 - [DCT Cost Reductions Evidence](../references.qmd#dct-cost-reductions-evidence)

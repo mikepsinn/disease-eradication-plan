@@ -24,7 +24,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## The $48 Billion Committee Problem
 
 The NIH spends **$48 billion per year** on medical research.

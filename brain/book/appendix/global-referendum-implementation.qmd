@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## Objective
 
 Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../solution/1-percent-treaty.qmd) and DIH. Outputs must be auditable and persuasive to policymakers.
@@ -32,7 +31,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 ## System Architecture
 
 - **Voting protocol**: Use an end-to-end verifiable scheme (like Helios) with individual ballot verification and public bulletin board.
-    -   Reference: [Helios (Adida et al.)](../references.qmd#helios-voting)
+  -   Reference: [Helios (Adida et al.)](../references.qmd#helios-voting)
 - **Identity / Sybil resistance**: Multi-factor: email/phone OTP; device/browser fingerprinting; optional liveness/biometrics; integration with national e-ID where available (e.g., models informed by [Estonia's experience](../references.qmd#estonia-internet-voting)); proof-of-uniqueness partners.
 - **Fraud controls**: Risk scoring, velocity limits, manual review queues; bounty program for reporting abuse.
 - **Internationalization**: 40+ locale support; accessibility-first UI.

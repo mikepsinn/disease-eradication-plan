@@ -32,7 +32,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## Right Now, As You Read This
 
 {{< include ../../figures/death-counter-realtime.qmd >}}
@@ -61,8 +60,6 @@ Biotechnology could prevent most of these. Instead, humanity points its resource
 **You're 60?** About **8,000 days** remain. **1.2 billion** people will die before you do. **640 million** preventably.
 
 Want specifics on what's killing us? See [The Cost of Disease](cost-of-disease.qmd#whats-actually-killing-everyone).
-
-
 
 ## Your Personal Death Lottery
 

@@ -76,6 +76,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 **Goal:** Validate core assumptions before scaling. Can you actually get people to sign the treaty? Will investors fund political arbitrage? Can the tech work at scale?
 
 **Team Composition (3-5 people):**
+
 - Founder/CEO (full-time, equity)
 - Head of Growth (marketing/viral mechanics, contract-to-hire)
 - Full-Stack Engineer (build the MVP, contract)
@@ -91,6 +92,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 5. **Week 11-12**: Launch referendum platform V1 with referral mechanics
 
 **Key Performance Indicators:**
+
 - User engagement: 70%+ complete voting session (below 50% = redesign needed)
 - Referral rate: 15%+ users recruit at least 1 friend (network effects test)
 - Investor interest: 25%+ pitch-to-close ratio (validates arbitrage thesis)
@@ -98,6 +100,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 - Verified votes: 10,000 within 30 days (proves concept, calculates CAC)
 
 **Critical Risks & Mitigation:**
+
 - *Risk*: Nobody cares about signing a treaty → *Mitigation*: Test 3 different value propositions (save lives, make money, fix democracy) and double down on winner
 - *Risk*: Platform can't verify identities → *Mitigation*: Start with lightweight verification (email + phone), build toward biometric later
 - *Risk*: Investors see it as charity, not investment → *Mitigation*: Lead pitch with `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns and treaty adoption game theory, not emotional appeal
@@ -109,6 +112,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 **Goal:** Build viral referendum momentum and establish lobbying beachheads in 5 pilot countries. Prove the system can scale globally and move politicians.
 
 **Team Composition (18-22 people):**
+
 - Executive team: CEO, COO, CTO, Chief Legal Officer (4)
 - Engineering: 4 full-stack engineers, 1 DevOps, 1 Security (6)
 - Growth: Head of Growth, 2 growth marketers, 1 data analyst (4)
@@ -125,6 +129,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 5. **Months 16-18**: Run first political pressure campaigns, demonstrate that referendum numbers translate to politician behavior change
 
 **Key Performance Indicators:**
+
 - Fundraising: $35M Series A raised (validates growth trajectory)
 - Platform scaling: Handle 500K concurrent users, 99.9% uptime
 - User acquisition: Reach 50M verified votes (CAC target: $0.50 with referral mechanics)
@@ -134,6 +139,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 - Pilot country traction: 10%+ population in at least one small country (<5M population)
 
 **Critical Risks & Mitigation:**
+
 - *Risk*: Series A falls through → *Mitigation*: Close $2M bridge from angels, extend runway, demonstrate traction first
 - *Risk*: Platform can't scale technically → *Mitigation*: Use proven infrastructure (AWS/GCP), bring in fractional CTO with scaling experience
 - *Risk*: Referral fraud (fake votes) → *Mitigation*: Multi-factor identity verification (ID + biometric + phone), fraud detection algorithms, manual review of suspicious accounts
@@ -147,6 +153,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 **Goal:** Execute the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` bond raise, overwhelm political opposition with money and public pressure, and secure first G7 treaty ratification. This is the final battle.
 
 **Team Composition (50-75 people):**
+
 - Executive team: Same 4 + CFO for bond offering (5)
 - Engineering/Product: Scale to 10 engineers, 2 designers, 2 PMs (14)
 - Political operations: 20 lobbyists across 15 countries + 5 political strategists (25)
@@ -165,6 +172,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 6. **Months 34-36**: Secure first G7 ratification, trigger cascade effect with smaller nations following
 
 **Key Performance Indicators:**
+
 - Fundraising: $1B VICTORY bond sale (first $500M within 90 days validates demand)
 - Bond Terms: Secure `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` raise on terms of bondholders receiving 10% of all future treaty inflows in perpetuity.
 - Projected Yield: Successfully communicate the projected `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual yield to investors (based on a `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` payout from a `{python} format_billions(TREATY_ANNUAL_FUNDING)` treaty).
@@ -175,6 +183,7 @@ Unlike government programs that hide failure, we measure success transparently. 
 - G7 ratification: At least 1 G7 nation (US, UK, Germany, France, Japan, Canada, Italy) ratifies treaty
 
 **Critical Risks & Mitigation:**
+
 - *Risk*: Bond offering fails (can't raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`) → *Mitigation*: Do $500M first close to prove concept, then $500M second close; accept slower timeline if needed; offer better terms (12% instead of 10%)
 - *Risk*: SEC blocks bond offering → *Mitigation*: Full Reg D compliance from day 1, hire top securities lawyers, file months in advance, have backup offshore offering ready
 - *Risk*: Opposition outspends us ($300M defense lobby → $500M) → *Mitigation*: Don't match dollar-for-dollar; use smarter targeting (swing districts), co-opt their lobbyists with VICTORY bonds, make it more profitable to support us

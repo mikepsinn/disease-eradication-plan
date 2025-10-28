@@ -16,7 +16,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 # Campaign Budget: The `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` War Chest {#sec-campaign-budget}
 
 ## Overview

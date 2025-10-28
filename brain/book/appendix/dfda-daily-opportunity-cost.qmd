@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ### Daily Opportunity Cost of Inaction
 
 This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA Infrastructure. By translating the annualized benefits identified in this analysis into a daily metric, we can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.

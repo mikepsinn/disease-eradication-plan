@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## Costs of Building and Operating the Global Decentralized FDA ROM Estimate
 
 > **Section Summary**

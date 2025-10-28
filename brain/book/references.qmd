@@ -30,7 +30,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 <a id="166-billion-compounds"></a>
 
 - **166 billion potential treatments remain untested**
@@ -3390,7 +3389,7 @@ from economic_parameters import *
   > Calculation based on economic case for peace: War costs $74,259 per person over lifetime
   > Derived from global conflict costs ($300B lost human capital annually + broader $14T/year global violence/conflict costs) / population over 80-year lifespan
   > IEP Global Peace Index calculation: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual global cost / 8B people = $2,062/year × 80 years = ~$165,000 lifetime cost
-  > — [Think by Numbers: War Costs $74,259/Lifetime](https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/) | [WEF: War Violence Costs $5/Day](https://www.weforum.org/stories/2021/02/war-violence-costs-each-human-5-a-day/)
+  > — [Think by Numbers: War Costs $74,259/Lifetime](<https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/>) | [WEF: War Violence Costs $5/Day](https://www.weforum.org/stories/2021/02/war-violence-costs-each-human-5-a-day/)
 
 <a id="pharma-lobbying-stats"></a>
 
@@ -4502,13 +4501,13 @@ from economic_parameters import *
 
 - **War on Drugs cost and impact on violence**
   > "United States has spent over $1 trillion on the war on drugs since 1971, with annual federal spending reaching $39 billion. After 40 years and $1 trillion spent, drug use is rampant and violence even more brutal and widespread. The Global Commission on Drug Policy declared: 'The global war on drugs has failed, with devastating consequences.'"
-  > — CNBC, [America has spent over $1 trillion fighting war on drugs](https://www.cnbc.com/2021/06/17/the-us-has-spent-over-a-trillion-dollars-fighting-war-on-drugs.html) | Fox News, [After 40 years, $1 trillion, US War on Drugs has failed](https://www.foxnews.com/world/ap-impact-after-40-years-1-trillion-us-war-on-drugs-has-failed-to-meet-any-of-its-goals)
+  > — CNBC, [America has spent over $1 trillion fighting war on drugs](<https://www.cnbc.com/2021/06/17/the-us-has-spent-over-a-trillion-dollars-fighting-war-on-drugs.html>) | Fox News, [After 40 years, $1 trillion, US War on Drugs has failed](https://www.foxnews.com/world/ap-impact-after-40-years-1-trillion-us-war-on-drugs-has-failed-to-meet-any-of-its-goals)
 
 <a id="war-on-poverty-cost"></a>
 
 - **War on Poverty cost**
   > "Since the War on Poverty began in 1964, U.S. taxpayers have spent over $22 trillion on anti-poverty programs (in constant 2012 dollars), which is three times the cost of all military wars in U.S. history since the American Revolution."
-  > — Heritage Foundation, [The War on Poverty After 50 Years](https://www.heritage.org/poverty-and-inequality/report/the-war-poverty-after-50-years) | Daily Signal, [We've Spent $22 Trillion on War on Poverty](https://www.dailysignal.com/2014/09/28/weve-spent-22-trillion-on-war-on-poverty-what-have-we-achieved)
+  > — Heritage Foundation, [The War on Poverty After 50 Years](https://www.heritage.org/poverty-and-inequality/report/the-war-poverty-after-50-years) | Daily Signal, [We've Spent $22 Trillion on War on Poverty](<https://www.dailysignal.com/2014/09/28/weve-spent-22-trillion-on-war-on-poverty-what-have-we-achieved>)
 
 <a id="war-on-terror-cost-blowback"></a>
 

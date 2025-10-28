@@ -22,7 +22,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## TL;DR
 
 - **Saves ~[`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` Annually](#gross-r-d-savings-from-dfda-implementation)**: Reduces global clinical trial costs (~[`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)`/year market](../references.qmd#clinical-trial-spending-dfda-baseline)) by a baseline of **[`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)`](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
