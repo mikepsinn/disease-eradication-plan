@@ -35,7 +35,7 @@ book:
         - brain/book/solution/1-percent-treaty.qmd # The 1% Treaty
         - brain/book/solution/dih.qmd # The DIH
         - brain/book/solution/wishocracy.qmd # Wishocracy
-        - brain/book/solution/positron.qmd # Positron Framework
+        - brain/book/solution/ai-coordination-army.qmd # Positron Framework
         - brain/book/solution/dfda.qmd # The Decentralized FDA
         - brain/book/solution/war-on-disease.qmd # The War on Disease
         - brain/book/solution/aligning-incentives.qmd # Aligning Incentives
@@ -86,13 +86,17 @@ book:
         - brain/book/strategy/diplomatic-approach.qmd
         - brain/book/economics/coalition-that-wins.qmd
         - brain/book/appendix/co-opt-dont-compete.qmd
+        - brain/book/appendix/global-referendum-implementation.qmd
+        - brain/book/appendix/nonprofit-partnership-incentives.qmd
 
     - part: "⚖️ Policy & Regulatory"
       chapters:
+        - brain/book/legal.qmd
         - brain/book/appendix/right-to-trial-fda-upgrade-act.qmd
         - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd
         - brain/book/appendix/dfda-implementation-via-executive-action.qmd
         - brain/book/appendix/impact-securities-reform.qmd
+        - brain/book/appendix/regulatory-reform-plan.qmd
 
     # Economic Analysis
     - part: "💰 Economic Analysis"
@@ -113,6 +117,14 @@ book:
         - brain/book/appendix/dfda-cost-benefit-analysis.qmd
         - brain/book/appendix/economic-value-of-accelerated-treatments.qmd
         - brain/book/appendix/intervention-comparison-table.qmd
+        - brain/book/appendix/dfda-assumptions.qmd
+        - brain/book/appendix/dfda-benefit-analysis.qmd
+        - brain/book/appendix/dfda-calculation-framework.qmd
+        - brain/book/appendix/dfda-comparative-cost-effectiveness.qmd
+        - brain/book/appendix/dfda-daily-opportunity-cost.qmd
+        - brain/book/appendix/dfda-icer-analysis.qmd
+        - brain/book/appendix/dfda-platform-costs.qmd
+        - brain/book/appendix/dfda-qaly-model.qmd
 
     - part: "💵 Financial Planning"
       chapters:
@@ -134,6 +146,7 @@ book:
         - brain/book/appendix/dih-integration-model.qmd
         - brain/book/appendix/open-ecosystem-and-bounty-model.qmd
         - brain/book/appendix/command-and-control-systems.qmd
+        - brain/book/appendix/dfda-collaboration-framework.qmd
 
     - part: "⚙️ Operations & Legal"
       chapters:
@@ -141,6 +154,7 @@ book:
         - brain/book/appendix/dih-seed-grant-proposal-template.qmd
         - brain/book/appendix/recruitment-and-propaganda-plan.qmd
         - brain/book/appendix/free-rider-solution.qmd
+        - brain/book/appendix/verification-and-fraud-prevention.qmd
 
     # Background Theory
     - part: "🧠 Theory & Concepts"
@@ -158,6 +172,7 @@ book:
         - brain/book/appendix/organizational-precedents.qmd
         - brain/book/appendix/pharmaceutical-industry-randd-analysis.qmd
         - brain/book/appendix/pragmatic-vs-explanatory-trials.qmd
+        - brain/book/appendix/allied-organizations.qmd
 
 execute:
   # Relaunch kernel for each render
