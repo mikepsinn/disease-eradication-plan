@@ -27,36 +27,33 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-Welcome to 2050, where humanity finally realized that being alive and healthy is actually more enjoyable than being dead or diseased.
-I know, we're just as surprised as you are.
+So the kingdom of England was invented when some guy just said, hey guys, god told me there's this thing called England and I'm in charge and you're all my serfs now.
 
-## How We Got Here: A Timeline of Surprisingly Good Decisions
+And everyone was like, ok, I guess he knows what he's talking about.
 
-### 2026: The Declaration of Interdependence - Wishonia Is Born
+So you can also create kingdoms.
 
-Some guy in his garage declares Wishonia exists. Just... decides it's real. Like how some English dude invented England, except with better documentation and fewer genocides.
+## How to Create Wishonia
 
-"We hold these truths to be self-evident," he types on his phone while on the toilet. "All humans deserve the Three Supers: Super-Intelligence, Super-Longevity, and Super-Wellbeing. Also, curing people should be more profitable than killing them. Duh."
+**Step 1:** Declare that Wishonia exists and you are a citizen.
 
-Within 72 hours:
+**Step 2:** State the basic principles:
+- All humans deserve Super-Intelligence, Super-Longevity, and Super-Wellbeing
+- Curing people should be more profitable than killing them
+- We redirect military spending to health research
 
-- 280 million people sign up (faster than Pokemon Go)
-- Currency: Health outcomes become the new gold standard
-- Territory: The internet (physical land is so 20th century)
-- Population: Anyone who isn't an asshole
-- Mission: Make the Three Supers human rights, not privileges
+**Step 3:** Sign the [1% Treaty](../appendix/1-percent-treaty.qmd) and get others to sign it.
 
-The establishment laughs. "You can't just declare a country exists!"
+That's it. That's how you start a movement.
 
-"Watch us," says everyone under 40.
+### 2026: The First Year
 
-The [1% Treaty](../appendix/1-percent-treaty.qmd) becomes Wishonia's first international agreement.
-The [global referendum](../strategy/global-referendum.qmd) hits 500 million signatures in six months.
+The [1% Treaty](../appendix/1-percent-treaty.qmd) becomes Wishonia's founding document.
+The [global referendum](../strategy/global-referendum.qmd) gets 500 million signatures in six months.
 
-The defense contractors panicked until we showed them the [VICTORY Bonds](../economics/victory-bonds.qmd) returns.
-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual yield?
-Suddenly Lockheed Martin was very interested in making MRI machines instead of missiles.
-(My goldfish is smarter than Congress, but even Congress understands `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns.)
+Defense contractors initially resist until they see the [VICTORY Bonds](../economics/victory-bonds.qmd) returns: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual yield.
+Lockheed Martin starts making MRI machines instead of missiles.
+Even Congress understands `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns.
 
 ### 2028: The 2% Revelation
 
