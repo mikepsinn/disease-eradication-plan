@@ -86,6 +86,7 @@ Example in-text: `[The world spends 40x more on war](./references.qmd#sipri-2024
 - **Why:** The title and description are displayed prominently above the chapter's content. Adding a heading that repeats this information is redundant and creates a poor reading experience.
 
 **Correct Example:**
+
 ```markdown
 ---
 title: "The Peace Dividend"
@@ -96,6 +97,7 @@ The 1% Treaty proposes redirecting a small fraction of global military expenditu
 ```
 
 **Incorrect Example:**
+
 ```markdown
 ---
 title: "The Peace Dividend"

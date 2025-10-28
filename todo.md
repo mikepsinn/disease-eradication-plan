@@ -2,7 +2,7 @@
 
 **Goal:** Prepare "The Complete Idiot's Guide to Ending War and Disease" for public release
 
-## =¨ Critical Issues (Must Fix First)
+## Critical Issues (Must Fix First)
 
 - [ ] Resolve git merge conflicts in files with MM status
   - [ ] brain/book/appendix/1-percent-treaty-roi-tiers.qmd
@@ -11,7 +11,7 @@
   - [ ] scripts/review/fix-missing-pct-rename.ts
   - [ ] scripts/review/rename-ambiguous-variables-phase-4.ts
 
-## =' Automated Fixes
+## Automated Fixes
 
 - [ ] Run frontmatter fixes: `npm run fix:frontmatter:issues`
 - [ ] Run markdown linting fixes: `npm run lint:md:fix && npm run lint:qmd:fix`
@@ -29,7 +29,7 @@
 - [ ] Style guide compliance: `npm run style:all`
 - [ ] Fact-check claims: `npm run fact-check:all`
 
-## <× Build Testing
+## <ï¿½ Build Testing
 
 - [ ] Clean build environment: `npm run clean`
 - [ ] Test HTML build: `npm run build:html`
@@ -37,7 +37,7 @@
 - [ ] Test presentation build: `npm run build:presentation`
 - [ ] Preview book locally: `npm run preview:book`
 
-## =Ý Content Review
+## Content Review
 
 - [ ] Compare OUTLINE.md against actual files for missing sections
 - [ ] Find and replace TODO markers in content
@@ -46,7 +46,7 @@
 - [ ] Check references.qmd for completeness
 - [ ] Verify all citations resolve correctly
 
-## <¨ Visual Assets
+## Visual Assets
 
 - [ ] Test render all figure files in brain/figures/
 - [ ] Verify all PNG files are committed and accessible
@@ -54,7 +54,7 @@
 - [ ] Verify Mermaid diagrams render properly
 - [ ] Add alt text for accessibility
 
-## =Ë Style Guide Compliance
+## Style Guide Compliance
 
 - [ ] Remove corporate buzzwords (synergy, paradigm shift, stakeholder, utilize)
 - [ ] Remove selling language (we're going to, our solution will, join us)
@@ -62,21 +62,21 @@
 - [ ] Convert passive to active voice
 - [ ] Ensure instructional framing (Here's how you...)
 
-## – Legal & Disclaimers
+## ï¿½ Legal & Disclaimers
 
 - [ ] Add investment disclaimer for VICTORY Bonds section
 - [ ] Add medical disclaimer (not medical advice)
 - [ ] Add forward-looking statements disclaimer
 - [ ] Verify attribution for third-party data/images
 
-## = Metadata & SEO
+## Metadata & SEO
 
 - [ ] Check frontmatter in all key files
 - [ ] Verify titles, descriptions, tags
 - [ ] Set publication dates
 - [ ] Configure social media preview images
 
-## <¯ Final Pre-Publication
+## Final Pre-Publication
 
 - [ ] Manual proofread of introduction
 - [ ] Test call-to-action links
@@ -85,7 +85,7 @@
 - [ ] Have fresh eyes read key sections
 - [ ] Create git tag: `v1.0-prepublish`
 
-## =Ê Status
+## Status
 
 **Started:** TBD
 **Target Completion:** TBD

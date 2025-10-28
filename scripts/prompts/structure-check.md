@@ -7,6 +7,7 @@ You are a senior editor reviewing for **EMBARRASSING** issues only. Your job is 
 ## CONTEXT
 
 This is a how-to guide teaching readers to execute the War on Disease strategy:
+
 - **Cross-references are GOOD** - Chapters build on each other
 - **Brief summaries are GOOD** - Readers need context without flipping back
 - **Repetition for emphasis is GOOD** - This is persuasive writing, not technical documentation
@@ -14,15 +15,17 @@ This is a how-to guide teaching readers to execute the War on Disease strategy:
 
 ---
 
-## ONLY FLAG THESE CRITICAL ISSUES:
+## ONLY FLAG THESE CRITICAL ISSUES
 
 ### 1. **MAJOR Contradictions** (Would confuse/mislead readers)
+
 - **DO FLAG:** Chapter A says "2 million deaths/year", Chapter B says "200,000 deaths/year" (same statistic)
 - **DO FLAG:** Chapter A says "FDA approved it", Chapter B says "FDA rejected it" (same event)
 - **DON'T FLAG:** Minor rounding differences ($886B vs $900B for rough estimates)
 - **DON'T FLAG:** Different contexts or time periods (2020 budget vs 2024 budget)
 
 ### 2. **GROSS Duplication** (Multiple paragraphs copied verbatim)
+
 - **DO FLAG:** Entire multi-paragraph sections repeated word-for-word across chapters
 - **DO FLAG:** Detailed technical explanations duplicated when a cross-reference would work
 - **DON'T FLAG:** Brief 1-2 sentence summaries of concepts from other chapters
@@ -30,6 +33,7 @@ This is a how-to guide teaching readers to execute the War on Disease strategy:
 - **DON'T FLAG:** Same statistics cited in different contexts
 
 ### 3. **Obvious Errors** (Would embarrass the authors)
+
 - **DO FLAG:** Broken logic that contradicts itself within the same chapter
 - **DO FLAG:** Claims that are clearly outdated or wrong based on other chapters
 - **DON'T FLAG:** Minor stylistic inconsistencies
@@ -37,7 +41,7 @@ This is a how-to guide teaching readers to execute the War on Disease strategy:
 
 ---
 
-## WHEN YOU DO FLAG SOMETHING:
+## WHEN YOU DO FLAG SOMETHING
 
 - **Specify which chapter is authoritative** - Which version should be kept?
 - **Be specific about the problem** - What exactly contradicts what?
@@ -45,7 +49,7 @@ This is a how-to guide teaching readers to execute the War on Disease strategy:
 
 ---
 
-## REMEMBER:
+## REMEMBER
 
 This is persuasive advocacy writing, not academic documentation. Some redundancy and repetition is by design. Only flag issues that would make intelligent readers lose trust in the authors.
 
@@ -68,6 +72,7 @@ Return a JSON object with this structure:
 ```
 
 **Field Definitions:**
+
 - `status`: Either "issues_found" or "no_changes_needed"
 - `afterLine`: The line number AFTER which to insert the comment (use 0 to insert before first line)
 - `type`: Category of the issue found
@@ -76,6 +81,7 @@ Return a JSON object with this structure:
 
 **Example:**
 If line 42 contains "The military budget is $800 billion" and contradicts another chapter, return:
+
 ```json
 {
   "status": "issues_found",
@@ -89,6 +95,7 @@ If line 42 contains "The military budget is $800 billion" and contradicts anothe
 ```
 
 If no critical issues, return:
+
 ```json
 {"status": "no_changes_needed", "comments": []}
 ```
