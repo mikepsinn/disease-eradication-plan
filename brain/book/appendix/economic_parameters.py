@@ -643,7 +643,7 @@ COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = PEACE_DIVIDEND_ANNUAL_SOCI
 # System effectiveness & ROI comparisons
 PROFIT_PER_LIFE_SAVED = 167771 # USD, profit per life saved from the system (specific calculation in text)
 SYSTEM_PROFIT_PER_LIFE_SAVED_MILLIONS = 5.87 # Millions USD, system profit per life saved (specific phrasing in text)
-SYSTEM_BENEFIT_VS_VACCINES_MULTIPLIER = 10 # Multiplier for system benefit vs childhood vaccines
+TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = 10 # Multiplier: treaty system (1% Treaty + dFDA) benefit vs childhood vaccines program
 
 # Price of Procrastination Metrics
 DEATHS_DURING_READING_SECTION = 410 # Number of deaths from curable diseases during reading a section

@@ -50,7 +50,7 @@ book:
         - brain/book/futures.qmd # Intro to Paths
         - brain/book/futures/dystopia-skynet-wins.qmd # Path A: Idiocracy
         - brain/book/futures/utopia-health-and-happiness.qmd # Path B: Wishonia
-        - brain/book/call-to-action/every-objection-demolished.qmd # Demolishing Objections
+        - brain/book/appendix/faq.qmd # Demolishing Objections
 
     - part: "🗺️ The Plan"
       chapters:
@@ -205,15 +205,15 @@ format:
           <meta property="og:title" content="The Complete Idiot's Guide to Ending War and Disease">
           <meta property="og:description" content="How to redirect 1% of military spending to cure disease and create the most profitable investment in history">
           <meta property="og:type" content="book">
-  # pdf:
-  #   documentclass: scrreprt
-  #   echo: false
-  #   toc: true
-  #   toc-depth: 3
-  #   number-sections: true
-  #   colorlinks: true
-  #   geometry:
-  #     - top=1in
-  #     - bottom=1in
-  #     - left=1in
-  #     - right=1in
+  pdf:
+    documentclass: scrreprt
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in

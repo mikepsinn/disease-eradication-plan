@@ -205,7 +205,7 @@ Instead of solving one problem, this uses a global-scale win to fund a system-sc
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
-The `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` annual economic benefit (conservative case) makes this intervention nearly **`{python} f"{MULTIPLIER_VS_VACCINES:.0f}×"` larger than childhood vaccinations** (one of the most successful public health programs in history).
+The `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` annual economic benefit (conservative case) makes this intervention nearly **`{python} f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:.0f}×"` larger than childhood vaccinations** (one of the most successful public health programs in history).
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates the wealth needed to sustain itself through VICTORY bonds that pay investors `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns.
 
