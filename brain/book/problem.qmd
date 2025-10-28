@@ -35,16 +35,11 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-Here's a fun fact: While you're reading this sentence, approximately 3 people just died from preventable diseases.
-By the time you finish this paragraph, that number will be 12.
-Don't worry though—we just spent enough money on a single fighter jet to have saved all of them for the next century.
+Welcome to Earth, where we've mastered the art of doing everything backwards. While you read this paragraph, a dozen people will die from preventable diseases. Don't worry, though—we just spent enough on a single fighter jet to have saved all of them for the next century.
 
-Welcome to Earth, where we've mastered the art of doing everything backwards.
+## The Daily Holocaust
 
-## The Daily Holocaust Nobody Talks About
-
-[Every single day, 150,000 humans die](./problem/the-daily-massacre.qmd).
-That's fifty September 11th attacks.
+[Every single day, 150,000 humans die](./problem/the-daily-massacre.qmd). That's fifty September 11th attacks.
 Every.
 Single.
 Day.
