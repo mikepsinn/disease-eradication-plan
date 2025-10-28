@@ -32,26 +32,18 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The `{python} TRIAL_COST_REDUCTION_FACTOR`x Cost Multiplier: Two Systems, Two Outcomes
+The Food and Drug Administration is a masterpiece of institutional failure. It was created to ensure drugs are safe and effective. It has achieved the opposite, creating a system that is simultaneously unsafe, ineffective, and catastrophically expensive.
 
-The Oxford RECOVERY trial tested COVID treatments on 47,000 patients for **[$500 per patient](../references.qmd#recovery-cost-500)**.
+The FDA doesn't protect you from dangerous drugs. It protects you from *potentially life-saving drugs* by making them impossible to test and approve. It's a system designed to prevent lawsuits, not save lives. The result is a graveyard of preventable deaths and a mountain of wasted money.
 
-The FDA-regulated system averages **[$41,000 per patient](../references.qmd#trial-cost-41k)**.
+## The `{python} TRIAL_COST_REDUCTION_FACTOR`x Inefficiency Tax
 
-That's **`{python} TRIAL_COST_REDUCTION_FACTOR`x more expensive**.
+Let's compare two real-world systems for testing drugs:
 
-The RECOVERY trial found dexamethasone saves lives.
-Time from start to result: [3 months](../references.qmd#recovery-trial-100-days-to-cure).
-FDA average time to approve a new drug: [9.1 years from Phase 1](../references.qmd#drug-development-timeline-9-years).
+1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **[$500 per patient](../references.qmd#recovery-cost-500)**. Found a life-saving treatment in 3 months.
+2.  **The FDA System:** Averages **[$41,000 per patient](../references.qmd#trial-cost-41k)** for clinical trials. Takes an average of **[9.1 years](../references.qmd#drug-development-timeline-9-years)** to approve a new drug.
 
-That's **36X slower** (9.1 years ≈ 109 months ÷ 3 months).
-
-Combined inefficiency: 82 × 36 = **2,952X less efficient overall**.
-
-These aren't estimates.
-These are documented outcomes from actual trials.
-
-## Historical Evidence: How We Broke Medicine
+The FDA's system is **`{python} TRIAL_COST_REDUCTION_FACTOR`x more expensive** and **36x slower**. This isn't a small difference. It's the difference between a functional system and a system designed to fail.
 
 We’re only 2 lifetimes from the use of the modern scientific method in medicine. Thus, it's only been applied for 0.0001% of human history. The more clinical research studies we read, the more we realize we don’t know. Nearly every study ends with the phrase "more research is needed". We know basically nothing at this point compared to what will eventually be known about the human body.
 
@@ -313,15 +305,11 @@ Under the current system of research, it costs [$41k per subject](../references.
 
 ![how much we know](../../../assets/how-much-we-know.png)
 
-## The Actual Death Toll (With Real Math)
+## The Actual Death Toll of "Drug Lag"
 
-The FDA's own economists have calculated the body count from these delays. They call it "drug lag," which is a sterile, bureaucratic term for "people dying while we shuffle papers." The cost is staggering: delays in new treatments are estimated to cost anywhere from **[21,000 to 120,000 American lives per decade](../references.qmd#gieringer85)**.
+The FDA's economists have a term for people dying while waiting for a drug to be approved: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Delays are estimated to cost **[21,000 to 120,000 American lives per decade](../references.qmd#gieringer85)**.
 
-A landmark case is beta-blockers. While Europe was happily using them to prevent heart attacks, the FDA waited. And waited. Propranolol was available in Europe three years before the US, but even after finally letting it in the door in 1968, the agency dithered. It waited until 1978—a full decade—to approve it for its most essential use, hypertension. Then it waited until 1981—a full sixteen years after it was available elsewhere—to approve a second beta-blocker to prevent a second heart attack.
-
-The cost of this caution?
-- **Beta-blockers delay:** [Gieringer (1985) estimated 10,000+ excess deaths per year during the decade-long delay](../references.qmd#fda-drug-lag-deaths-estimate).
-- **Total beta-blocker deaths:** [~100,000 Americans](../references.qmd#beta-blocker-deaths).
+The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the FDA waited. And waited. The decade-long delay in approving them for their most common use is estimated to have killed **[over 100,000 Americans](../references.qmd#beta-blocker-deaths)**.
 
 That's more Americans than died in Vietnam and Korea combined. From one drug delay. And it wasn't a one-off tragedy. Here is a partial list of other drugs Americans died waiting for while they were already available in other civilized countries for a year or longer:
 

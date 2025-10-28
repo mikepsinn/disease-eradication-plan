@@ -1,6 +1,6 @@
 ---
 title: 🔥 NIH's $1 Trillion Failure
-description: 'The NIH Has Spent $1 Trillion to Eradicate 0 Diseases - Since 1970, over $1 trillion spent (inflation-adjusted). Number of diseases eradicated: Zero.'
+description: 'How the NIH spent over $1 trillion to eradicate exactly zero diseases.'
 published: true
 tags:
   - problem
@@ -74,42 +74,38 @@ The NIH spent $600,000 researching *whether people want their loved ones to get 
 
 Instead: Meta-research. Studying whether we should do studies.
 
-### The Real Bottleneck: Geographic Gatekeeping
-
-This isn't a story about lack of treatments. It's about **deliberate choices** not to test them:
-
-- **Potential drug combinations:** 166 billion ([source](../references.qmd#untested-treatments))
-- **Trial-ready Alzheimer's treatments:** Hundreds waiting
-- **Combinations tested annually:** [~5,000](../references.qmd#annual-drug-combinations-tested)
-- **Years to test all at current rate:** 33 million
-- **Your disease gets tested:** When the sun burns out
-
-The NIH spends [**55% of its budget on basic research**](../references.qmd#nih-budget-allocation-breakdown) - understanding disease mechanisms in mice.
-
-They spend [**22% on clinical trials (all types)**](../references.qmd#nih-budget-allocation-breakdown), which sounds impressive until you ask: **Can your grandma in St. Louis join one?**
-
-Here's where that 22% actually goes:
-- **Phase 1 safety trials:** Testing if drugs are safe (your grandma can't join - wrong city, wrong age, wrong everything)
-- **Observational studies:** Watching disease progress without treatment (helpful for papers, not grandmas)
-- **Phase 2/3 efficacy trials:** Testing if treatments work (~5% of total budget)
-  - But only in elite coastal research hospitals
-  - Only for patients who meet 47 exclusion criteria
-  - Never in St. Louis
-
-**The trials your grandma could actually join that might help her:** ~3.3% of the NIH budget
-
-**The meta-research surveys about those trials:** Apparently $600k each
-
-**55% on mice. 3.3% on trials your grandma could join.**
-
-It's like spending your whole life studying recipes but never actually cooking anything.
-Then wondering why everyone's starving.
+This isn't a story about a lack of treatments. It's about a system that chooses not to test them.
 
 ![Declining new treatments per year despite increased NIH spending](../../../assets/new-treatments-per-year-2.png)
 
 ![The rising cost of clinical trials](../../../assets/cost-of-clinical-trials.png)
 
 ![Cost to develop a new drug: the $2.6 billion barrier](../../../assets/cost-to-develop-a-new-drug.png)
+
+## The Basic Research Black Hole
+
+The NIH has a dirty secret about where your money actually goes. They spend the vast majority of it on "basic research"—understanding disease in mice—while a tiny fraction goes to testing treatments in actual humans.
+
+{{< include ../../figures/nih-budget-allocation-pie-chart.qmd >}}
+
+**The Allocation Disaster:**
+
+- **Basic research (mice and molecules):** [55% of budget](../references.qmd#nih-budget-allocation-breakdown)
+- **Clinical trials (all types):** [22% of budget](../references.qmd#nih-budget-allocation-breakdown)
+- **Trials your grandma could actually join:** [A pathetic 3.3% of the budget](../references.qmd#nih-budget-allocation-breakdown)
+
+That 22% for "clinical trials" is mostly for observational studies (watching you get sicker) or Phase 1 trials you can't join because you live in the wrong city, are the wrong age, or are already taking other medications.
+
+The result is a system that produces papers, not cures:
+- **Papers published:** [2.5 million annually](../references.qmd#nih-annual-papers-published)
+- **New treatments approved:** [~50 annually](../references.qmd#global-new-drug-approvals-50-annually)
+- **Conversion rate from paper to patient:** 0.002%
+
+We know everything about how cancer works in mice. We've mapped every pathway, gene, and protein. We have Nobel Prizes for understanding mechanisms.
+
+**What we don't have: Cures.**
+
+Because understanding disease and curing disease are completely different things. The NIH chose understanding. Patients needed cures.
 
 ## The Gerontocracy: Science by Social Security Recipients
 
@@ -123,7 +119,7 @@ We've created a system where you need to be old enough to have discovered someth
 Einstein published special relativity at 26.
 Under NIH rules, he'd still be a "promising young investigator" at 40.
 
-## The 85% Exclusion Zone
+## The System Is Designed to Exclude You
 
 Even when the NIH funds trials, they systematically exclude **85% of patients** ([source](../references.qmd#clinical-trial-exclusions)).
 
@@ -208,19 +204,6 @@ During the NIH's trillion-dollar spending spree, Americans got:
 It's like hiring a personal trainer and gaining 100 pounds.
 At some point you have to wonder if they're working for McDonald's.
 
-## The 95% Failure Rate Nobody Talks About
-
-Here's a fun fact the NIH doesn't advertise:
-
-**95% of diseases have ZERO FDA-approved treatments** ([source](../references.qmd#rare-disease-treatment-gap)).
-
-That's 9,500 out of 10,000 known diseases where your treatment options are:
-
-1. Suffer
-2. Die
-3. Both
-
-But don't worry - the NIH formed a committee to study why their committees aren't working.
 
 ## The Death Toll: 120,000 Per Decade From Delays
 
@@ -234,31 +217,6 @@ For context, that's four 9/11s worth of deaths annually from paperwork.
 The NIH response?
 Form a subcommittee to investigate whether they need a task force to study the problem.
 
-## The Basic Research Black Hole
-
-The NIH has a dirty secret about where your money actually goes:
-
-{{< include ../../figures/nih-budget-allocation-pie-chart.qmd >}}
-
-**The Allocation Disaster:**
-
-- **Basic research (mice and molecules):** [55% of budget](../references.qmd#nih-budget-allocation-breakdown)
-- **Clinical trials (all types):** [22% of budget](../references.qmd#nih-budget-allocation-breakdown)
-- **Drug development clinical trials:** [Only 3.3% of budget](../references.qmd#nih-budget-allocation-breakdown)
-- **Phase 3 trials (the expensive ones):** [Only 4% of industry costs](../references.qmd#nih-budget-allocation-breakdown)
-- **Papers published:** [2.5 million annually](../references.qmd#nih-annual-papers-published)
-- **New treatments approved:** [~50 annually](../references.qmd#global-new-drug-approvals-50-annually)
-- **Conversion rate:** 0.002%
-
-We know everything about how cancer works in mice.
-We've mapped every pathway, gene, and protein.
-We have Nobel Prizes for understanding mechanisms.
-
-**What we don't have: Cures.**
-
-Because understanding disease and curing disease are completely different things.
-The NIH chose understanding.
-Patients needed cures.
 
 ## Political Funding: The Disease Popularity Contest
 

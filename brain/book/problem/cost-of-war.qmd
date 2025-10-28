@@ -29,31 +29,21 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-Humans have turned warfare into the most expensive hobby in the history of the species.
-We are very good at it.
-We are also very good at counting what it costs us.
+In 2024, humanity spent [`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`](../references.qmd#sipri-2024-spending) on war. That's not a typo. It's the budget for our species' most expensive and enduring hobby: organized violence. If you stacked that money in one-dollar bills, you could build a bridge two-thirds of the way to the Moon.
+
+We are a species that spends enough on weapons to literally pave a road to space, yet we can't figure out how to stop dying from preventable diseases.
+
+This chapter is an audit of our collective insanity. It's the itemized receipt for our self-destruction.
 
 ![Pie chart showing 2018 global military expenditures by country - the United States accounts for 37% of total global military spending while representing only 4.4% of world population](../../../assets/2018-military-expenditures-by-country.png)
 
-Consider this: In 2024, our species spent [`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`](../references.qmd#sipri-2024-spending) on military expenditure (rounded to `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` throughout this book for readability).
-That's \$2,718,000,000,000.
-Write it out.
-Feel the weight of all those zeros.
-
-To put this in perspective, if you stacked `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` in one-dollar bills, the stack would reach more than two-thirds of the way to the Moon.
-We literally spend enough on weapons to build a bridge of money to space.
-
-And what does that money buy? Let's take just one item from this celestial price tag: our nuclear arsenal. We currently possess about 13,000 of these planet-killers. According to the sober people who calculate such things, that's enough to trigger anywhere from 13 to 130 separate "extinction-level events." We're not just capable of ending civilization; we've built in enough redundancy to reboot the apocalypse over a dozen times, just in case the first attempt doesn't stick. It's the kind of over-engineering you'd expect from a species that uses a sledgehammer to crack a nut, and we keep adding [\$42 billion](../references.qmd#sipri-2024-spending) to the budget for a bigger sledgehammer every year.
-
 <!-- {{< include ../../figures/military-spending-scenarios-chart.qmd >}} -->
 
-## Direct Costs: What We Can Actually Count
+## The Itemized Receipt for Armageddon
 
-The immediate costs of war are like a grocery receipt from Hell.
-Everything is itemized.
-Everything has a price.
+The immediate costs of war are like a grocery receipt from Hell. Everything is itemized. Everything has a price.
 
-### Primary Expenditure Matrix (2024 Global Data)
+### The Shopping List (2024 Global Data)
 
 | Cost Category | Amount (USD Billions) | Per Capita | Daily Cost | Mathematical Basis |
 |---------------|----------------------|------------|------------|-------------------|
@@ -94,9 +84,8 @@ Where:
 
 This means every second of every day, humanity spends \$196,900 on the tools and consequences of killing each other.
 While you read this sentence, we spent about \$985.
-There's something almost poetic about precision in destruction.
 
-### Death Accounting: The Statistical Value of a Human Life
+### The Price of a Ghost: Valuing Human Life
 
 The [U.S. Department of Transportation](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis) values a statistical life at [\$13.6 million](../references.qmd#dot-vsl-13-6m).
 The [EPA uses \$9.6 million](../references.qmd#epa-vsl-9-6m).
@@ -174,11 +163,9 @@ $$
 
 Where V is trade volume, D is disruption intensity, M is multiplier effect, and T is recovery time for each affected sector i.
 
-# The Hidden Mathematics: Indirect Costs
+# The Ghost in the Machine: Indirect Costs
 
-The real cost of war isn't what you see.
-It's what you don't see.
-It's the opportunity sitting empty-handed while we perfect our techniques for efficiently ending human lives.
+The real cost of war isn't on the receipt. It's in the opportunities we burn, the potential we smother, and the future we mortgage to pay for our present stupidity.
 
 ## Opportunity Cost Analysis: The Roads Not Taken
 
