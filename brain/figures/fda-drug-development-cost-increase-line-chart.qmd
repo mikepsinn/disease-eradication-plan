@@ -19,7 +19,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ```{python}
 #| label: fda-drug-development-cost-increase
 #| fig-cap: "Cost to develop one new drug has exploded under FDA regulations (1950-2000)"

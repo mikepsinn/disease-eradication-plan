@@ -10,4 +10,3 @@ if appendix_path not in sys.path:
 
 from economic_parameters import *
 ```
-

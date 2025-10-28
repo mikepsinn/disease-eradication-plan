@@ -24,6 +24,7 @@ from economic_parameters import *
 You've got mission control ([DIH](dih.qmd)) and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents that actually does the work while humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
 
 Here's the division of labor:
+
 - **The DIH** declares war on disease instead of on other humans (revolutionary concept)
 - **Wishocracy** tells your army what to fight for (e.g., "Cure cancer" instead of "invade a country with oil")
 - **Your AI agents** coordinate the millions of people and resources needed to actually win, without requiring a single Zoom meeting
@@ -35,6 +36,7 @@ Here's how you build this coordination infrastructure. (We'll call it the "Posit
 Your agents don't randomly decide what to work on based on what sounds cool or what their creator happens to care about that day. They pull from [Wishocracy's Task Tree](wishocracy.qmd#breaking-down-problems-the-task-tree-of-life)—the globally-prioritized breakdown of humanity's highest-priority problems into tasks a computer (or sufficiently motivated intern) can actually execute.
 
 Wishocracy creates the list. For example, "Cure Alzheimer's" (vague, terrifying, impossible) becomes:
+
 - Map protein structures → Run AlphaFold on these sequences → Rent computing time → Find cheapest cloud provider that won't mysteriously go down during your job
 - Test drug candidates → Recruit trial participants → Find people age 65+ with early symptoms → Contact the 73 researchers globally who study this specific thing
 
@@ -67,6 +69,7 @@ Meanwhile, defense contractors somehow coordinate [$2.7 trillion in annual spend
 Health advocates? We're trying to coordinate billions in funding using email threads that descend into reply-all hell and Zoom calls where 18 people are on mute and 2 are talking over each other.
 
 The problem isn't that people don't want to help cure disease. It's that coordinating millions of people manually is impossible:
+
 - Want to recruit trial participants across 195 countries? Good luck finding someone in each timezone to make phone calls.
 - Need to match researchers with funding opportunities? Hope you enjoy reading 10,000 grant descriptions and manually building a spreadsheet.
 - Trying to mobilize treaty advocates globally? Enjoy scheduling a call where someone is always asleep.

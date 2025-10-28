@@ -11,7 +11,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ```{python}
 #| label: victory-bonds-returns
 #| fig-cap: "VICTORY Bonds: 270% Perpetual Returns"

@@ -24,7 +24,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## The Plan, for People Who Have Shit to Do
 
 **The Problem:** Humanity spends [$2.7 trillion a year on weapons](../references.qmd#sipri-2024-spending) and about 40 times less on curing the diseases that will definitely kill you. This is stupid.

@@ -19,7 +19,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ```{python}
 #| label: fda-spending-life-expectancy-trend
 #| fig-cap: "Life expectancy trends before and after FDA creation (1901-2000)"

@@ -57,6 +57,7 @@ Each of these alone is worth tens to hundreds of billions. Together? **`{python}
 **The insight:** The dFDA gives patients the right and ability to access treatments during Phase 2/3 trials instead of waiting 9.1 years for FDA approval (or forever if trials are never completed for their condition).
 
 **How it works:**
+
 - Current system: Wait 9.1 years average from Phase 1 to FDA approval
 - dFDA system: Access treatment during Phase 2/3 pragmatic trials
 - Effective acceleration: ~7 years earlier access on average
@@ -66,6 +67,7 @@ Each of these alone is worth tens to hundreds of billions. Together? **`{python}
 ### Stock Benefit (One-Time)
 
 Existing patients get immediate access:
+
 - 2 billion people with chronic diseases globally
 - Each gains 7 years of treatment access they'd otherwise miss
 - Total: 14 billion person-years × $150K/QALY = $2.1T total value
@@ -74,6 +76,7 @@ Existing patients get immediate access:
 ### Flow Benefit (Ongoing)
 
 New patients each year get early access:
+
 - ~100M new chronic disease cases/year globally
 - Each saves 7 years × $150K/QALY = $1.05M in value
 - **Annual flow: $105B/year ongoing (continues forever)**
@@ -81,6 +84,7 @@ New patients each year get early access:
 ### Combined Benefit
 
 **Combined "earlier access" benefit:**
+
 - Years 1-7: $300B (amortized stock) + $105B (flow) = **$405B/year**
 - Years 8+: $105B/year (flow only)
 - **10-year average: ~$300B/year**
@@ -92,10 +96,12 @@ New patients each year get early access:
 **The insight:** `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials + 40% more funding (`{python} format_billions(TREATY_ANNUAL_FUNDING)`/year) = **115X more research capacity**.
 
 **What this means:**
+
 - Current: ~3,300 clinical trials/year globally, ~50 new drug approvals/year
 - New capacity: ~380,000 trials/year possible, ~1,000-2,000 approvals/year (20-40X increase)
 
 **This is NOT the same as "earlier access":**
+
 - **Earlier Access** = Accessing the SAME 50 drugs in pipeline 7 years sooner
 - **Research Acceleration** = Testing 115X MORE drug candidates, finding 10-20X MORE breakthroughs
 
@@ -147,6 +153,7 @@ These are NOT rare diseases (already counted). These are common diseases with li
 - Global military spending: $2.7 trillion/year
 
 If the 1% Treaty generates `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`/year in benefits, that's:
+
 - 1.1% of global GDP
 - 12.4% of healthcare spending
 - 45% of military spending
@@ -154,11 +161,13 @@ If the 1% Treaty generates `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANN
 **This passes the smell test.**
 
 For comparison:
+
 - Eliminating all cancer: ~$1.1T/year economic value
 - Curing all infectious disease: ~$800B/year
 - Fixing mental health: ~$300B/year
 
 The 1% Treaty doesn't cure everything, but it:
+
 - Accelerates access by 7 years (earlier trial participation)
 - Increases research velocity 10-20X (more breakthroughs)
 - Enables trials for currently untreatable conditions

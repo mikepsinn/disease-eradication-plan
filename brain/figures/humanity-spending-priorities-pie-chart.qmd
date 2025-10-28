@@ -19,7 +19,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ```{python}
 #| echo: false
 #| fig-cap: "Humanity's annual spending priorities, comparing wasted resources to investments in progress."

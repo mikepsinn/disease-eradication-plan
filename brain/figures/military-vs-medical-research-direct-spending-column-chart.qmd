@@ -82,8 +82,10 @@ output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'military-vs-medical-research-direct-spending-column-chart.png'
 
 # Save the figure
+
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
+
 add_png_metadata(output_path, title="Military Vs Medical Research Direct Spending Column Chart")
 plt.show()

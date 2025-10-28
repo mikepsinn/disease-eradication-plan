@@ -19,7 +19,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ```{python}
 #| label: life-expectancy-before-after-1962
 #| fig-cap: "Life expectancy growth slowed dramatically after the 1962 efficacy requirement"

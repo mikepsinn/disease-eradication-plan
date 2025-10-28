@@ -29,12 +29,14 @@ from economic_parameters import *
 **This document presents a long-term projection of compounding effects and economic multipliers as the 1% Treaty system matures over 20 years.**
 
 **Nature of this analysis:**
+
 - **Speculative** - Projects secondary and tertiary effects that are harder to quantify
 - **Long-term vision** - Assumes successful implementation and network effects
 - **Maximum potential** - Shows what's possible if everything works well
 - **Not the primary case** - Main pitch uses conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` or complete `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` ROI
 
 **For credible, near-term analysis, see:**
+
 - [Health Dividend](../economics/health-dividend.qmd) - Conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI (dFDA only)
 - [1% Treaty ROI Tiers](1-percent-treaty-roi-tiers.qmd) - Complete `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` ROI (all direct benefits)
 
@@ -116,6 +118,7 @@ As the system scales and compounds, massive secondary benefits emerge:
 ## Total Annual Value at Maturity: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`
 
 This represents:
+
 - More value than China's entire GDP ($17.7T)
 - 65% of US GDP ($25.5T)
 - 17% of global GDP ($96T)
@@ -240,11 +243,13 @@ Every transformative technology looks impossible until it's inevitable.
 **$8.4 Trillion from healthier workers**
 
 Current state:
+
 - 2.8 billion workers globally
 - Average 10 sick days/year due to preventable illness
 - Average worker produces ~$30K/year
 
 With 1% Treaty system at maturity:
+
 - 90% reduction in preventable illness burden
 - 10-20 year extension of productive working years
 - Cognitive enhancement from treating mental illness
@@ -255,12 +260,14 @@ With 1% Treaty system at maturity:
 **$2.4 Trillion from stable supply chains**
 
 Current state:
+
 - $32T global trade annually
 - 5-10% disruption from regional conflicts
 - Trade routes diverted around conflict zones
 - Insurance premiums reflect war risk
 
 With 1% Treaty system:
+
 - 1% less global conflict = 7-15% trade efficiency gain
 - $32T × 7.5% efficiency = $2.4T annual value
 - Lower insurance, faster shipping, new routes
@@ -270,12 +277,14 @@ With 1% Treaty system:
 **$1.9 Trillion from not rebuilding bombed cities**
 
 Current state:
+
 - $500B/year spent rebuilding war-damaged infrastructure
 - Resources diverted from new construction
 - Lost productivity during reconstruction
 - Compounding effect on development
 
 With 1% Treaty system:
+
 - 1% reduction = $5B/year not destroyed
 - But: resources shift to building not rebuilding
 - Multiplier effect on economic development
@@ -288,6 +297,7 @@ With 1% Treaty system:
 ### Discount Rates Not Applied
 
 Unlike the conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` and complete `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` calculations, this endgame projection does NOT apply:
+
 - Net Present Value (NPV) discounting
 - Risk adjustments for uncertainty
 - Probability weighting for scenarios
@@ -297,6 +307,7 @@ Unlike the conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` and complet
 ### Compounding Effects
 
 The 20-year timeline assumes:
+
 - Network effects strengthen over time
 - Breakthrough treatments enable new breakthroughs
 - Healthier population = more productive researchers
@@ -307,6 +318,7 @@ These are real phenomena but hard to quantify precisely.
 ### Sensitivity to Assumptions
 
 Small changes in key assumptions dramatically affect outcomes:
+
 - 5% vs 10% global health improvement
 - 1% vs 2% military spending reduction
 - `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` vs 90% trial cost reduction
@@ -319,12 +331,14 @@ The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` figure assumes mod
 ## When to Use This Analysis
 
 **Appropriate Contexts:**
+
 - Vision documents and long-term strategy
 - Conversations with visionary donors/investors
 - Academic discussions of transformative potential
 - Explaining maximum upside to true believers
 
 **Inappropriate Contexts:**
+
 - Initial pitch to skeptical audiences
 - Government policy briefings
 - Academic peer review submissions
@@ -348,6 +362,7 @@ The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` figure assumes mod
 **The `{python} format_roi(ROI_WITH_MULTIPLIER_EFFECTS)` endgame projection is speculative but plausible.**
 
 It represents the compounding effects of:
+
 - Healthier, more productive workers
 - More stable global trade
 - Preserved infrastructure
@@ -359,5 +374,3 @@ It represents the compounding effects of:
 The math works. The historical precedents exist. The potential is real.
 
 Whether humanity achieves this potential depends on whether we choose to implement the 1% Treaty.
-
-

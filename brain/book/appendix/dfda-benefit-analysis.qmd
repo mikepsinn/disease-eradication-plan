@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## Benefit Analysis Quantifying the Savings
 
 This section quantifies the potential societal benefits of the dFDA Infrastructure, focusing primarily on R&D cost savings and health outcome improvements.
@@ -112,6 +111,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
   - Transformative (RECOVERY Trial-like): 95% (saving $95B annually) from a [`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` addressable spend](../references.qmd#clinical-trial-spending-dfda-baseline)
 
 **For detailed source citations, see:**
+
 - [DCT Cost Reductions Evidence](../references.qmd#dct-cost-reductions-evidence)
 - [Clinical Trial Market Size](../references.qmd#clinical-trial-market-size)
 - [RECOVERY Trial Cost Reduction](../references.qmd#recovery-trial-cost-reduction)
