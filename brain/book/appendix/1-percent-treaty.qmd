@@ -28,52 +28,21 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## Facts
+The 1% Treaty is the engine of this revolution. It's a simple, legally-binding agreement with a single, powerful provision: every signatory nation agrees to redirect 1% of its annual military budget to the [Decentralized Institutes of Health (DIH)](../solution/dih.qmd).
 
-1. **[2 billion people suffer](../references.qmd#disease-prevalence-2-billion)** from chronic diseases including cancer, diabetes, heart disease, autoimmune disorders, and many others. This causes immense human anguish as well as crippling economic costs.
-2. **Medical research** to find cures for these diseases remains far **too slow** to meet the desperate needs of patients.
-3. **Advanced data analysis and automation** can radically accelerate the clinical research process by automating analysis of medical data, identifying promising drug targets, optimizing clinical trial designs, and more.
-4. A global collaborative effort to automate clinical research, coordinated and governed by patients, could produce revolutionary breakthroughs against chronic diseases and **alleviate the suffering of billions of people.**
+## The Simple, Brutal Math
 
-## Logical Proof
+1.  **The Problem:** The world spends [$2.7 trillion a year](../references.qmd#global-military-spending-2-44t) on military forces. This is done to maintain a delicate balance of power.
+2.  **The Hack:** If every nation reduces its military spending by 1% *at the same time*, the balance of power remains identical. No country becomes more vulnerable.
+3.  **The Prize:** That 1%—a **`{python} format_billions(TREATY_ANNUAL_FUNDING)`-a-year river of cash**—is redirected to fund the cure for all human diseases.
 
-Here is the logical proof that signing this accord is the most rational thing you can do with the next few moments of your life:
+## How It Works: A Self-Sustaining System
 
-1. Governments currently spend [over $2 trillion per year](../references.qmd#global-military-spending-2-44t) on their militaries. They don't do this because they like blowing up other people and their stuff. They do this to maintain the balance of power against other nations that might blow them up.
+1.  **Funding:** The treaty creates a `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year revenue stream for the DIH, funded by the 1% military reallocation.
+2.  **Execution:** The DIH uses this money to subsidize patient participation in the [dFDA](../solution/dfda.qmd), a system of hyper-efficient clinical trials that are **[80x cheaper](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction)** than the current model.
+3.  **Governance:** The DIH is not a bureaucracy. It's a [Decentralized Autonomous Organization (DAO)](../solution/dih.qmd) governed by smart contracts and the votes of the global population via [Wishocracy](../solution/wishocracy.qmd).
+4.  **Transparency:** All research, all data, and all spending are published on a public ledger for the world to see.
 
-2. However, if every nation agreed to reallocate just 1% of their annual military expenditures to a global medical research fund:
+## The Bottom Line: It's Not a Sacrifice, It's a Trade
 
-- The relative balance of power would remain unchanged. So, despite spending less on the military, they would be at no greater relative risk of being murdered by another country.
-- The entire world would benefit from the resulting health advances and cures for diseases.
-
-3. Therefore, it is clearly in your rational self-interest to sign this treaty requesting that all nations to cooperate in this endeavor. By contributing a infinitesimal portion of their military budgets, they can help unlock revolutionary health benefits for their own citizens and the world at large.
-
-## How it Works
-
-1. Every participating nation will pledge **1% of its annual military budget** to the [Decentralized Institutes of Health (DIH)](../solution/dih.qmd) treasury. This creates a sustainable revenue stream to repay bondholders who fund the war on disease and to continuously finance the dFDA ecosystem.
-2. The **DIH will use its treasury to subsidize patient participation** in [dFDA trials](../solution/dfda.qmd) that are **[80X more efficient](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction)** than traditional models, a benchmark already proven by the [Oxford RECOVERY trial](recovery-trial.qmd). The fund will also support infrastructure development and offer bounties for medical innovation, with allocation determined by an algorithm that prioritizes research with the highest expected value to society.
-3. The DIH treasury is initially funded by selling **[VICTORY Bonds](../economics/victory-bonds.qmd)** to the public, allowing research and subsidies to begin immediately. The contributions from nations via the 1% Treaty are then used to repay these bonds over time. See [VICTORY Bonds, Incentive Mechanics](../economics/victory-bonds.qmd).
-4. The governance of the treasury for functions like prize and bounty allocation is managed through a **Decentralized Autonomous Organization (DAO)**, ensuring community alignment and transparency.
-5. All research findings and data generated through the dFDA protocol, which is supported by the DIH, will be made openly available in real-time to the global scientific community, **accelerating progress** and enabling rapid translation of discoveries into new medicines and improved clinical practices worldwide.
-6. Participating nations and research institutions will collaborate continuously through a state-of-the-art online platform, sharing knowledge, best practices, and resources to **maximize the impact of every research dollar** and speed the deployment of new health solutions to patients everywhere.
-
-By combining innovative financial instruments like VICTORY Bonds and global cooperation, this system can transform the fight against chronic disease. The resulting breakthroughs will improve health, extend lives, boost economies, and benefit every nation on Earth.
-
-# The Economic Case
-
-For detailed analysis of costs and benefits, see:
-
-- **[The Cost of War](../problem/cost-of-war.qmd)** - Why we spend [$2.7 trillion annually](../problem/cost-of-war.qmd) killing each other
-- **[The Cost of Disease](../problem/cost-of-disease.qmd)** - How disease costs humanity [$109 trillion annually](../problem/cost-of-disease.qmd)
-- **[The 119 Trillion Death Toilet](../problem.qmd#the-1205t-death-toilet)** - The insane 40:1 spending ratio (war vs cures)
-- **[Economic Impact Analysis](../economics.qmd)** - Complete ROI breakdown
-
-**Bottom line**: The total per capita net benefit of the 1% Treaty would be **[$1,258,412](../appendix/economic-value-of-accelerated-treatments.qmd)** over 80 years.
-
-# $1,258,412 for 5 Hours of Your Time
-
-Historical examples show that movements with active support from over **[3.5% of the population](../references.qmd#3-5-rule)** have never failed to lead to systemic change.
-
-So all you have to do is convince a small fraction of your friends to sign this treaty and convince them to convince a small fraction of their friends to sign this treaty and so on.
-
-Given the [average number of friends (150)](../references.qmd#dunbar-number) and the estimated time per friend (2 minutes), an average person would need to invest approximately [5 hours](../strategy/viral-marketing.qmd) to individually reach out to all 150 of their friends via personal messages or emails about the treaty.
+The 1% Treaty is not about charity or altruism. It's a simple, rational trade: give up 1% of our ability to kill each other in exchange for a system that can save everyone. It's the best deal in human history.
