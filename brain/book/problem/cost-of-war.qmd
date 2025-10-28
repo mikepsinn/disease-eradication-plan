@@ -65,13 +65,13 @@ $$
 C_{\text{direct}} = M_{\text{spending}} + I_{\text{damage}} + H_{\text{casualties}} + T_{\text{disruption}}
 $$
 
-Where:
 
-- C<sub>direct</sub> = Total direct costs
-- M<sub>spending</sub> = Military expenditure
-- I<sub>damage</sub> = Infrastructure destruction
-- H<sub>casualties</sub> = Human life losses (calculated using Value of Statistical Life)
-- T<sub>disruption</sub> = Trade and economic interruption
+Here's the breakdown of what goes into the direct cost of war:
+
+- **Military Spending:** The obvious one. All the money for soldiers, bombs, and shiny jets.
+- **Infrastructure Damage:** The cost of rebuilding all the cities, bridges, and power plants we blow up.
+- **Human Casualties:** The value of the lives lost, because even economists agree dead people are a negative externality.
+- **Trade Disruption:** The global economic chaos caused by everyone being too busy fighting to make and sell things.
 
 **Current Annual Calculation:**
 
@@ -125,7 +125,7 @@ Expensive things.
 
 **Total Infrastructure Damage: [\$1,875 billion](../references.qmd#reconstruction-costs-active-conflicts)**
 
-The mathematical relationship follows the formula:
+It's not just about the original price tag. Replacing a bridge in a warzone costs more than building one in peacetime, for reasons that should be obvious.
 
 $$
 R_{\text{cost}} = D_{\text{value}} \times M_{\text{replacement}} \times C_{\text{conflict}} \times T_{\text{time}}
@@ -155,13 +155,14 @@ They interrupt the delicate dance of global commerce like a drunk person stumbli
 
 **Total Trade Disruption: [\$616 billion](../references.qmd#world-bank-trade-disruption-conflict) annually**
 
-The economists have a formula for this too:
+Basically, economists have a fancy formula to calculate how much money we lose when ships can't ship and trucks can't truck because they might get blown up.
 
 $$
 L_{\text{trade}} = \sum (V_{i} \times D_{i} \times M_{i} \times T_{\text{recovery}})
 $$
 
 Where V is trade volume, D is disruption intensity, M is multiplier effect, and T is recovery time for each affected sector i.
+
 
 # The Ghost in the Machine: Indirect Costs
 
@@ -192,6 +193,8 @@ For healthcare, it's [4.3](../references.qmd#healthcare-investment-economic-mult
 
 **Lost GDP Growth Calculation:**
 
+The math is simple: money spent on bombs grows the economy a little, but money spent on literally anything else grows it a lot more. By choosing bombs, we're actively choosing to be poorer.
+
 $$
 \begin{aligned}
 \text{Alternative GDP Growth} = {} & (\text{Military Spending} \times \text{Alternative Multiplier}) \\
@@ -202,6 +205,7 @@ $$
 $$
 \text{Alternative GDP Growth} = (\text{`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`} \times 1.6) - (\text{`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`} \times 0.6) = \text{`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`}
 $$
+
 
 We're losing \$2.7 trillion in annual GDP growth.
 Every year.
@@ -221,7 +225,7 @@ They echo through generations like a malicious song stuck in humanity's head.
 | Disability Compensation | [\$89.1B](../references.qmd#veteran-healthcare-cost-projections) | [\$1,782B](../references.qmd#veteran-healthcare-cost-projections) | Disability ratings × benefit schedules × actuarial projections |
 | Total Veteran Care | [\$200.1B](../references.qmd#veteran-healthcare-cost-projections) | [\$4,002B](../references.qmd#veteran-healthcare-cost-projections) | Composite of above factors |
 
-The formula for lifetime veteran costs:
+The formula for lifetime veteran costs is a depressing mix of the number of veterans, how much it costs to keep them alive each year, how long they're expected to live, their disability payments, and the fact that healthcare costs always go up.
 
 $$
 \begin{aligned}
@@ -231,6 +235,7 @@ V_{\text{lifetime}} = {} & (N_{\text{veterans}} \times C_{\text{annual}} \times 
 $$
 
 Where N is number of veterans, C is annual care cost, L is remaining lifespan, D is disability payments, and I is healthcare inflation (historically [3.5-4.6% annually](../references.qmd#historical-healthcare-inflation-rate)).
+
 
 ### Refugee Support: The Mathematics of Displacement
 
@@ -243,6 +248,8 @@ $$
 108.4\text{M refugees} \times \text{\$1,384} = \text{\$150.0 billion}
 $$
 
+That comes out to **\$150.0 billion** just to keep them in camps.
+
 But refugees aren't just costs, they're lost economic potential.
 The average refugee has [\$23,400 in lost annual earning potential](../references.qmd#refugee-lost-earning-potential).
 
@@ -251,6 +258,8 @@ The average refugee has [\$23,400 in lost annual earning potential](../reference
 $$
 108.4\text{M refugees} \times \text{\$23,400} = \text{\$2,536.6 billion in lost annual GDP}
 $$
+
+That's another **\$2.5 trillion in lost annual GDP**.
 
 ## Environmental Degradation: Poisoning the Planet Costs Money Too
 
@@ -317,29 +326,33 @@ $$
 C_{\text{total}} = C_{\text{direct}} + C_{\text{indirect}} = \text{\$7,655.0B} + \text{\$3,700.1B} = \text{\$11,355.1 billion}
 $$
 
+Adding the direct and indirect costs gives us our grand total.
+
 That's \$11.4 trillion.
 Annually.
 Every year.
 
 ### Per Capita Mathematics: What War Costs You
 
-Current global population: [8.0 billion humans](../references.qmd#global-population-8-billion)
+With 8 billion people on the planet, the math is simple and depressing.
 
 $$
 \text{Direct military spending per person: } \text{`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`} \div 8.0\text{B} = \text{\$340/year}
 $$
 
-This is what your government directly spends on military hardware and personnel.
+**Direct military spending per person is \$340/year.** This is what your government directly spends on military hardware and personnel on your behalf.
 
 $$
 \text{Total societal cost per person: } \text{\$11,355.1B} \div 8.0\text{B} = \text{\$1,419/year}
 $$
 
-This is the true cost to you and global society when accounting for all the destruction, lost opportunity, environmental damage, and economic impacts of war.
+**The total societal cost per person is \$1,419/year.** This is the true cost to you when you factor in all the destruction, lost opportunities, and other ripple effects.
 
 $$
 \text{Over an 80-year lifetime: } \text{\$1,419.39} \times 80 = \text{\$113,551.20}
 $$
+
+Over an 80-year lifetime, that's **\$113,551.20** per person.
 
 So war costs each human approximately \$113,500 over their lifetime.
 That's a decent car.
@@ -362,7 +375,7 @@ If we stacked \$11.4 trillion in \$100 bills, the stack would be [larger than th
 
 ## The Grotesque Mathematics of Misallocation
 
-The final equation is simple:
+The final equation is simple. When you divide the number of deaths by the amount of money spent, you get the efficiency of our war machine.
 
 $$
 \begin{aligned}
@@ -372,7 +385,7 @@ $$
 \end{aligned}
 $$
 
-Or, inverted: **\$46.4 million per death produced**
+It comes out to **\$46.4 million per death produced**.
 
 We have created the most expensive way possible to end human lives.
 
