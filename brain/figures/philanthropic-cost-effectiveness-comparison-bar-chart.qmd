@@ -62,8 +62,7 @@ costs = [
 
 # For the 1% Treaty bar, we'll stack it to show peace dividend vs dFDA savings
 # Total QALYs: 875,000/year (35k from peace, 840k from dFDA)
-# Peace dividend contribution: (35k/875k) × $147.1B = $5.89B savings → -$168k per QALY → -$5.88M per life
-# dFDA contribution: (840k/875k) × $147.1B = $141.2B savings → -$168k per QALY → similar per life
+# Peace dividend contribution and dFDA contribution sum to the total benefit
 # But we'll show them as proportional contributions to the total -$5.87M
 peace_dividend_per_life = -5870000 * (35000 / 875000)  # Proportional to QALYs
 dfda_savings_per_life = -5870000 * (840000 / 875000)   # Proportional to QALYs
@@ -193,26 +192,26 @@ fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
 # calc_text = '''Full Calculation (see brain/book/appendix/icer-full-calculation.qmd for complete methodology):
 #
 # Annual Economic Benefits:
-#   - Peace Dividend: 97.1B (1% reduction in 9.7T annual war costs)
-#   - dFDA R&D Savings: 50B (50% reduction in 100B clinical trial market)
-#   - Total Benefits: 147.1B/year
+#   - Peace Dividend: $113.55B (1% reduction in $11.355T annual war costs)
+#   - dFDA R&D Savings: $50B (50% reduction in $100B clinical trial market)
+#   - Total Benefits: $163.55B/year
 #
 # Annual Costs:
-#   - Campaign: 250M/year (1B over 4 years, amortized)
-#   - dFDA Operations: 40M/year
-#   - Total Costs: 290M/year
+#   - Campaign: $250M/year ($1B over 4 years, amortized)
+#   - dFDA Operations: $40M/year
+#   - Total Costs: $290M/year
 #
 # Annual Health Benefits:
-#   - Peace: 1,000 lives saved (1% of 100k conflict deaths/year) x 35 QALYs/life = 35,000 QALYs
+#   - Peace: 2,446 lives saved (1% of 244,600 conflict deaths/year) x 35 QALYs/life = 85,610 QALYs
 #   - dFDA: 840,000 QALYs (faster drugs + new therapies + prevention)
-#   - Total: 875,000 QALYs/year
+#   - Total: 925,610 QALYs/year
 #
 # ICER Calculation:
-#   Net Benefit = 290M - 147.1B = -146.8B/year (society saves money)
-#   ICER = -146.8B / 875k QALYs = -167,771 per QALY
-#   Per Life = -167,771 x 35 QALYs/life = -5.87M per life saved
+#   Net Benefit = $290M - $163.55B = -$163.26B/year (society saves money)
+#   ICER = -$163.26B / 925,610 QALYs = -$176,371 per QALY
+#   Per Life = -$176,371 x 35 QALYs/life = -$6.17M per life saved
 #
-# Sensitivity: Conservative: -5.97M/life | Central: -5.87M/life | Optimistic: -4.79M/life (all scenarios dominant)
+# Sensitivity: Conservative: -$5.97M/life | Central: -$6.55M/life | Optimistic: -$4.79M/life (all scenarios dominant)
 #
 # Sources: GiveWell 2024, dFDA Cost-Benefit Analysis, Peace Dividend Analysis, Cost of War Analysis. Error bars show uncertainty ranges.'''
 #

@@ -49,7 +49,7 @@ Your job is to borrow a `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` t
 2.  **Bribe the Public:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY)` to build a voting bloc of `{python} f"{TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f}"` million people demanding that their governments redirect 1% of military spending to cure disease. This creates a political threat.
 3.  **Bribe the Bribers:** You give defense lobbyists millions in bonds. Their `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return (that only come if the 1% treaty is preserved) makes their old bribes look pathetic. They now work for you.
 4.  **Bribe Some Politicians:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS)` on Super PACs to ensure politicians face a choice: either take your money and support the treaty, or get voted out by `{python} f"{TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f}"` million angry people who want to live.
-5.  **Profit from Victory:** The treaty passes. The `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year bribe machine is turned on forever. Everyone who helped gets 10% of that money forever (producing the `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return). Use the remaining `{python} format_percentage(DIH_TREASURY_TO_RESEARCH_PCT)` to `{python} TRIAL_COST_REDUCTION_FACTOR`x the rate of medical progress by subsidizing hyper efficient pragmatic decentralized clinical trials.
+5.  **Profit from Victory:** The treaty passes. The `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year bribe machine is turned on forever. Everyone who helped gets 10% of that money forever (producing the `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return). Use the remaining `{python} format_percentage(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_PCT)` to `{python} TRIAL_COST_REDUCTION_FACTOR`x the rate of medical progress by subsidizing hyper efficient pragmatic decentralized clinical trials.
 
 **Why Everyone Gets Rich From Not Dying from Terrible Diseases:**
 
@@ -59,7 +59,7 @@ Your job is to borrow a `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` t
 - **Insurance companies:** Prefer you either dead or immortal. Anything but expensively lingering.
 - **You:** Get access to subsidized, cutting-edge treatments + your trial participation determines what gets funded. Your choices, not committees.
 
-**The Math:** Every \$1 invested in an open global decentralized clinical trial marketplace creates [`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` in benefits](brain/book/appendix/dfda-cost-benefit-analysis.qmd).
+**The Math:** Every \$1 invested in an open global decentralized clinical trial marketplace creates [`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` in benefits](brain/book/appendix/dfda-cost-benefit-analysis.qmd).
 (better than smallpox eradication's `{python} format_roi(SMALLPOX_ERADICATION_ROI)` ROI).
 
 **Keep reading:** How Oxford proved `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials work, why cutting military spending historically creates prosperity, how the legal structure avoids prison, and why defense contractors actually want this.
@@ -360,14 +360,14 @@ The machine runs on pure self-interest, and as a side effect, it saves humanity.
 
 ## 💰 The Math
 
-**`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI (Better Than Selling Kidneys, Slightly More Ethical)**
+**`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI (Better Than Selling Kidneys, Slightly More Ethical)**
 
 Here's what happens when you stop filling out forms and start curing people:
 
-Every dollar spent returns `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` in benefits.
+Every dollar spent returns `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` in benefits.
 
 $$
-\text{ROI} = \frac{\text{\$463 in benefits}}{\text{\$1 invested}} = `{python} format_roi(ROI_TIER_1_CONSERVATIVE)`
+\text{ROI} = \frac{\text{\$463 in benefits}}{\text{\$1 invested}} = `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`
 $$
 
 That's not a typo. Four hundred and sixty-three dollars. It's better returns than:
@@ -404,15 +404,15 @@ When you redirect military money instead of asking for new money, the ROI become
 **The kindergarten math:**
 
 $$
-\text{ROI} = \frac{\text{\$147.1B annual benefits}}{\text{\$0 new spending}} = \infty
+\text{ROI} = \frac{\text{`{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` annual benefits}}{\text{\$0 new spending}} = \infty
 $$
 
 Even a congressman can understand this. Probably.
 
-**Where the $147.1 billion comes from:**
+**Where the `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` comes from:**
 
 $$
-\text{Total Benefit} = \underbrace{\text{\$97.1B}}_{\text{Peace Dividend}} + \underbrace{\text{\$50B}}_{\text{Health Dividend}} = \text{\$147.1B}
+\text{Total Benefit} = \underbrace{\text{`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`}}_{\text{Peace Dividend}} + \underbrace{\text{`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`}}_{\text{Health Dividend}} = \text{`{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)`}
 $$
 
 - Peace dividend: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` (from not building things that explode)
@@ -422,7 +422,7 @@ $$
 ([See peace dividend calculation](brain/book/economics/peace-dividend.qmd) | [See dFDA health benefits breakdown](brain/book/appendix/dfda-cost-benefit-analysis.qmd) | [See economic impact summary](brain/book/economics.qmd))
 
 - **Zero net cost**: The `{python} format_billions(TREATY_ANNUAL_FUNDING)` comes from redirected military spending (money already budgeted)
-- **\$147.1B in annual benefits**: Peace dividend (\$97.1B) + Health dividend (\$50B)
+- **`{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` in annual benefits**: Peace dividend (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`) + Health dividend (`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`)
 - **Operating costs**: Only [`{python} format_millions(TREATY_TOTAL_ANNUAL_COSTS)`/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) (campaign + operations)
 - **Lives saved**: [25,000/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) ($875,000 \text{ QALYs} \div 35 \text{ QALYs/life}$)
 - **Per life saved**: Society PROFITS [`{python} f"${PROFIT_PER_LIFE_SAVED:,.0f}"`](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) instead of spending
@@ -444,7 +444,7 @@ Unlike traditional interventions requiring ongoing charity, this generates `{pyt
 
 {{< include brain/figures/public-health-interventions-economic-benefit-comparison-column-chart.qmd >}}
 
-The \$147.1 billion annual benefit is like finding out your lottery ticket is also a cure for cancer and makes you better looking.
+The `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` annual benefit is like finding out your lottery ticket is also a cure for cancer and makes you better looking.
 
 It's `{python} f"{SYSTEM_BENEFIT_VS_VACCINES_MULTIPLIER:,.0f}"` times bigger than childhood vaccines, which are literally one of humanity's greatest achievements. That's like being 10 times better than pizza. Impossible, yet here we are.
 

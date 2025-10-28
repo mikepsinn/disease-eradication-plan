@@ -47,8 +47,8 @@ interventions_data = {
 
 # 1% Treaty + DIH + dFDA breakdown
 peace_dividend_components = {
-    'Peace Dividend': 97.1,
-    'dFDA R&D\nSavings': 50.0,
+    'Peace Dividend': PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
+    'dFDA R&D\nSavings': DFDA_GROSS_SAVINGS_ANNUAL,
     'Disease\nReduction': 10.9,
     'GDP\nGrowth': 27.2
 }
@@ -89,7 +89,7 @@ for idx, (name, value) in enumerate(peace_dividend_components.items()):
     # Add label inside ONLY the first (Peace Dividend) segment
     if idx == 0:
         ax.text(treaty_x_pos, bottom_offset + value/2,
-                f'$97.1B\nPeace\nDividend',
+                f'${PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT:.1f}B\nPeace\nDividend',
                 ha='center', va='center', fontsize=24,
                 color=COLOR_BLACK, weight='bold', linespacing=1.2)
 
@@ -99,7 +99,7 @@ for idx, (name, value) in enumerate(peace_dividend_components.items()):
 # Calculate positions for arrows - need to track where each segment is
 segment_positions = []
 current_y = 0
-for value in [97.1, 50.0, 10.9, 27.2]:
+for value in component_values:
     segment_middle = current_y + value/2
     segment_positions.append(segment_middle)
     current_y += value

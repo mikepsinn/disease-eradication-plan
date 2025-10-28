@@ -183,7 +183,7 @@ These transformations are not wishful thinking, they are the mathematically inev
 
 **Research and Development Acceleration:**
 
-- **Current dFDA ROI:** [`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` over 10 years](dfda-cost-benefit-analysis.qmd)
+- **Current dFDA ROI:** [`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` over 10 years](dfda-cost-benefit-analysis.qmd)
 - **Annual R&D savings potential:** [`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`](dfda-cost-benefit-analysis.qmd) from efficiency gains
 - **Health outcomes:** [840,000 Quality-Adjusted Life Years](dfda-cost-benefit-analysis.qmd) gained annually
 

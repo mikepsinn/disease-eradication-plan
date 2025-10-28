@@ -162,7 +162,7 @@ The 1% Treaty doesn't just solve one problem. It creates a **self-reinforcing fl
 
 The 1% Treaty has:
 
-- **`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI** ([dFDA cost-benefit analysis](dfda-cost-benefit-analysis.qmd))
+- **`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI** ([dFDA cost-benefit analysis](dfda-cost-benefit-analysis.qmd))
 - **Global scope** (affects all [8 billion humans](../references.qmd#global-population-8-billion))
 - **Long-term impact** (creates permanent funding mechanism)
 - **Tractable approach** ([detailed implementation plan](../strategy/roadmap.qmd))
@@ -214,7 +214,7 @@ Show them the math. Donors want impact per dollar. This delivers more impact per
 
 **Q: "Isn't this incredibly arrogant to claim we have the best idea?"**
 
-A: It's not arrogance when you have the data. [`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI](dfda-cost-benefit-analysis.qmd), [80X efficiency improvement](recovery-trial.qmd), and [capturing 0.16% of `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual waste](peace-dividend-calculations.qmd) is just math.
+A: It's not arrogance when you have the data. [`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI](dfda-cost-benefit-analysis.qmd), [80X efficiency improvement](recovery-trial.qmd), and [capturing 0.16% of `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` annual waste](peace-dividend-calculations.qmd) is just math.
 
 **Q: "What if the 1% Treaty fails?"**
 
@@ -249,7 +249,7 @@ The question isn't whether you should work on this. The question is whether you 
 - **[Full 1% Treaty Text](1-percent-treaty.qmd)** - The actual treaty language
 - **[Implementation Roadmap](../strategy/roadmap.qmd)** - How we get this done
 - **[VICTORY Bonds](../economics/victory-bonds.qmd)** - The financial mechanism
-- **[Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)** - Why this is `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI
+- **[Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)** - Why this is `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI
 - **[Join the Coalition](../community/partners/)** - Work with us
 
 **Contact:** [orgs@warondisease.org](mailto:orgs@warondisease.org) for organizational partnerships

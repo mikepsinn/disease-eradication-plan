@@ -307,7 +307,7 @@ $$
   \text{ROI}
   = \frac{249.53}{0.53845}
   \approx 463.4
-  \quad (\text{i.e., about `{python} format_roi(ROI_TIER_1_CONSERVATIVE)`})
+  \quad (\text{i.e., about `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`})
 $$
 
 $$

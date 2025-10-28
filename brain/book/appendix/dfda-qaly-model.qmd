@@ -136,7 +136,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 ### Final ROI and Net Benefit
 
-- **Central ROI Estimate:** [`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`](#final-roi-and-net-benefit)
+- **Central ROI Estimate:** [`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`](#final-roi-and-net-benefit)
 - **Central Net Benefit (10-Year, Discounted):** [~\$249 Billion](#final-roi-and-net-benefit)
 - **Dominant Health Intervention:** The dFDA is cost-saving while simultaneously generating substantial health gains (QALYs), making it a dominant intervention from a health economics perspective.
 

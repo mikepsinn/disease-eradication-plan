@@ -135,7 +135,7 @@ net_rd_savings = DFDA_NET_SAVINGS_ANNUAL  # Pre-calculated: $49.96B
 dfda_roi_simple = DFDA_ROI_SIMPLE  # 1,250:1
 
 # NPV-adjusted ROI (canonical figure)
-dfda_roi_npv = ROI_TIER_1_CONSERVATIVE  # 463:1 (from 10-year NPV analysis)
+dfda_roi_npv = ROI_DFDA_SAVINGS_ONLY  # 463:1 (from 10-year NPV analysis)
 
 # Monetized value of QALY gains
 monetized_qaly_value = DFDA_QALYS_MONETIZED  # $126B

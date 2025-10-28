@@ -25,11 +25,11 @@ from economic_parameters import *
 ```
 
 
-## The `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` Return
+## The `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` Return
 
 The dFDA Infrastructure costs **`{python} format_millions(DFDA_ANNUAL_OPEX)` per year** to run.
 It saves the world **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` per year** in clinical trial costs.
-That's a **`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` return on investment**.
+That's a **`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` return on investment**.
 
 Here's how.
 
@@ -78,7 +78,7 @@ The dFDA costs approximately **`{python} format_millions(DFDA_ANNUAL_OPEX)` annu
 
 ## ROI Scenarios
 
-The `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI is our central estimate based on NPV analysis over 10 years. Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
+The `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI is our central estimate based on NPV analysis over 10 years. Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
 
 **For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Health Dividend Calculations](../appendix/health-dividend-calculations.qmd).
 
@@ -96,7 +96,7 @@ Until now. The dFDA changes the game by aligning incentives: everyone profits fr
 ## The Bottom Line
 
 `{python} format_millions(DFDA_ANNUAL_OPEX)` to save $50 billion.
-`{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI.
+`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI.
 80x cost reduction per patient.
 10,000x more trials possible.
 

@@ -70,7 +70,7 @@ Let's calculate ROI based on the **Lean Ecosystem** scenario:
 - Annual Operational Cost (Lean Ecosystem - Core Platform Ops from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + Medium Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~`{python} format_millions(DFDA_ANNUAL_OPEX)`/year.
 - Total Annualized Cost: $8M (amortized upfront) + [`{python} format_millions(DFDA_ANNUAL_OPEX)` (annual ops)](#simplified-roi-scenario) = **\$48 Million/year** (or $0.048 Billion/year).
 
-_This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework). The NPV analysis provides the final estimated ROI of approximately [**`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`**](#final-roi-and-net-benefit), which is the figure cited throughout this document._
+_This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework). The NPV analysis provides the final estimated ROI of approximately [**`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`**](#final-roi-and-net-benefit), which is the figure cited throughout this document._
 
 ### Full Range ROI Sensitivity Analysis
 

@@ -893,8 +893,8 @@ from economic_parameters import *
 
 <a id="dfda-roi-463-to-1"></a>
 
-- **dFDA ROI of `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` over 10 years**
-  > NPV analysis estimate: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI over 10 years (central estimate)
+- **dFDA ROI of `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` over 10 years**
+  > NPV analysis estimate: `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI over 10 years (central estimate)
   > Range: 66:1 to 2,577:1 depending on total ecosystem costs
   > Based on: $37.5-46M upfront platform investment + operational costs vs `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` annual R&D savings
   > Value proposition: 80X reduction in per-patient trial costs; `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` gross annual savings from pharma R&D

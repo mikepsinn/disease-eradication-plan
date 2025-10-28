@@ -29,9 +29,9 @@ from economic_parameters import *
 
 ## Executive Summary
 
-**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **`{python} format_currency(abs(COST_PER_LIFE_SAVED * 1_000_000_000)`** per life saved (ICER = **`{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`** per QALY).
+**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **`{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)`** per life saved (ICER = **`{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`** per QALY).
 
-This means for every life saved, society becomes **`{python} format_currency(abs(COST_PER_LIFE_SAVED * 1_000_000_000)`** richer instead of paying the [`{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}-${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"` cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
+This means for every life saved, society becomes **`{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)`** richer instead of paying the [`{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}-${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"` cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
 
 **How is this possible?** This initiative generates massive economic value (`{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` annually) while also saving lives (`{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` QALYs annually), making it profitable for society to implement.
 
@@ -56,7 +56,7 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 **Calculation**: `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` trial market × `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction = **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`**
 
-**ROI**: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` return on `{python} format_millions(DFDA_ANNUAL_OPEX)` annual operational cost
+**ROI**: `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` return on `{python} format_millions(DFDA_ANNUAL_OPEX)` annual operational cost
 
 **For detailed breakdown and methodology**, see:
 - [Health Dividend Calculations](health-dividend-calculations.qmd) - Full Jupyter notebook with NPV and ROI analysis
@@ -186,8 +186,8 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 1. **Countries redirect `{python} format_billions(DIH_TREASURY_MILITARY_REDIRECT)`/year** from military budgets to the DIH treasury
 2. **The DIH treasury allocates**:
    - `{python} format_billions(DIH_TREASURY_TO_VICTORY_BONDS)`/year → VICTORY bondholders (`{python} format_percentage(VICTORY_BOND_FUNDING_PCT)` of redirected funds)
-   - `{python} format_billions(DIH_TREASURY_TO_RESEARCH)`/year → Medical research and operations
-   - This `{python} format_billions(DIH_TREASURY_TO_RESEARCH)` covers:
+   - `{python} format_billions(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)`/year → Medical research and operations
+   - This `{python} format_billions(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)` covers:
      - dFDA operations: `{python} format_currency(DIH_TREASURY_DFDA_OPERATIONS)`/year
      - Clinical trial subsidies: ~`{python} format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MIN)`-`{python} format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MAX)`/year
      - Other medical research: Remaining funds
@@ -266,9 +266,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Cost per life** = `{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`  × `{python} STANDARD_QALYS_PER_LIFE_SAVED` QALYs/life
 
-**Cost per life ≈ `{python} format_currency(abs(COST_PER_LIFE_SAVED * 1_000_000_000)` per life saved**
+**Cost per life ≈ `{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)` per life saved**
 
-**Interpretation**: For every life saved, society saves approximately `{python} format_currency(abs(COST_PER_LIFE_SAVED * 1_000_000_000)`.
+**Interpretation**: For every life saved, society saves approximately `{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)`.
 
 ---
 
@@ -290,7 +290,7 @@ These are **excellent** interventions - among the best uses of charitable dollar
 
 | Intervention | Cost per Life Saved | ICER |
 |-------------|--------------------:|------:|
-| **1% Treaty + DIH + dFDA** | **`{python} format_currency(COST_PER_LIFE_SAVED * 1_000_000_000)`** | **`{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`/QALY** |
+| **1% Treaty + DIH + dFDA** | **`{python} format_currency(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)`** | **`{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`/QALY** |
 
 This is a **dominant intervention** - it makes society richer while saving lives.
 
@@ -304,7 +304,7 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 **1% Treaty model**: Society profits from saving lives
 
-- Exceptional value (`{python} format_currency(COST_PER_LIFE_SAVED * 1_000_000_000)` per life = society saves money)
+- Exceptional value (`{python} format_currency(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)` per life = society saves money)
 - Self-funding from economic gains
 - Generates wealth while improving health
 

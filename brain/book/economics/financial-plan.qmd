@@ -228,7 +228,7 @@ As more patients join:
 
 ## Financial Performance Metrics
 
-### Return on Investment (The `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` Multiplier)
+### Return on Investment (The `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` Multiplier)
 
 **Direct Investment Returns (VICTORY Bonds):**
 
@@ -360,7 +360,7 @@ That's more than China's entire GDP.
 
 - Treaty expansion rate (1% → 2% → 5%)
 - VICTORY bond returns delivered (target: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually)
-- Multiplier effects (target: `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` societal value)
+- Multiplier effects (target: `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` societal value)
 
 ---
 
@@ -407,7 +407,7 @@ Each success makes the next success easier:
 
 ### For Health Economics Nerds
 
-- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` ROI breakdown
+- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI breakdown
 - **[Peace Dividend Analysis](../appendix/peace-dividend-calculations.qmd)** - Historical proof that military cuts → prosperity
 - **[Total Economic Impact](../appendix/total-economic-impact.qmd)** - The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` endgame
 
@@ -426,7 +426,7 @@ Each success makes the next success easier:
 
 **To Manage:** `{python} format_billions(TREATY_ANNUAL_FUNDING)`+ annually via Wishocracy (8 billion voters)
 
-**To Deliver:** `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns to investors (perpetual), `{python} format_roi(ROI_TIER_1_CONSERVATIVE)` societal returns, optional death by 2050
+**To Deliver:** `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns to investors (perpetual), `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` societal returns, optional death by 2050
 
 **The Simple Math:** Invest $1B → Get $2.7B/year → Forever
 

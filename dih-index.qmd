@@ -192,7 +192,7 @@ The current system lets knowledge die in drawers. Your system makes ignorance il
 :::
 
 :::{.g-col-md-4 style="text-align: center;"}
-<span class="stat-number">`{python} format_roi(ROI_TIER_1_CONSERVATIVE)`</span>
+<span class="stat-number">`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`</span>
 <span class="stat-label">RETURN ON INVESTMENT</span>
 <p class="content-block" style="margin-top: 1rem;">Better than smallpox eradication (280:1) or selling organs (illegal, only 50:1). You literally profit from not dying.</p>
 <a href="brain/book/appendix/dfda-cost-benefit-analysis.qmd" class="btn btn-outline-secondary" style="transform: rotate(1deg);">See The Math</a>
