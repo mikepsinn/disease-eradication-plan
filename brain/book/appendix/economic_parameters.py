@@ -371,6 +371,12 @@ ENDGAME_BENEFIT_PER_DAY = TOTAL_ENDGAME_BENEFITS_ANNUAL / 365 # ~$45.2B
 ENDGAME_BENEFIT_PER_HOUR = ENDGAME_BENEFIT_PER_DAY / 24 # ~$1.9B
 ENDGAME_BENEFIT_PER_SECOND = ENDGAME_BENEFIT_PER_HOUR / 3600 # ~$523K
 
+# QALY delay costs (quality-adjusted life days lost per second of inaction)
+COST_OF_DELAY_QALY_DAYS_PER_SECOND = (TREATY_TOTAL_QALYS_GAINED_ANNUAL / 365) / (365.25 * 24 * 60 * 60) # QALY days per second
+
+# Deaths delay costs (preventable deaths per second from curable diseases)
+COST_OF_DELAY_DEATHS_PER_SECOND = GLOBAL_DAILY_DEATHS_CURABLE_DISEASES / (24 * 60 * 60) # deaths per second
+
 # ---
 # SCENARIO PARAMETERS
 # ---
