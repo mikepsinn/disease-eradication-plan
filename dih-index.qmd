@@ -23,7 +23,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 :::{.hero-banner}
 
 # HOW TO CURE DISEASES<br>`{python} TRIAL_COST_REDUCTION_FACTOR`x FASTER
