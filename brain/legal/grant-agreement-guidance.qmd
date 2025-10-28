@@ -23,7 +23,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
 ## Why You Never, Ever Bring Your Own Contract to a Gun Fight
 
 *(A Guide to Grant Agreements)*

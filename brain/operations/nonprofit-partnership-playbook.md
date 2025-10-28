@@ -1,5 +1,5 @@
 ---
-title: "Playbook: Non-Profit Partnership"
+title: 'Playbook: Non-Profit Partnership'
 description: The strategic playbook for building a coalition of non-profit partners to help ratify The 1% Treaty.
 published: true
 date: '2025-08-22T00:00:00.000Z'
