@@ -30,110 +30,52 @@ from economic_parameters import *
 
 ![Decentralized Institutes of Health: A new model for medical research](../../../assets/decentralized-institutes-of-health.jpg)
 
-## The Optimization Problem
+The NIH is a $47 billion machine designed to prevent medical progress by rewarding grant-writing over research. It's a system where scientists spend half their time begging for permission to do their jobs.
 
-A superintelligent economist designing a medical research system would start with a simple objective function:
+You don't fix a system like that. You replace it.
 
-**Maximize:** Quality-Adjusted Life Years (QALYs) gained globally
-**Minimize:** Disability-Adjusted Life Years (DALYs) and cost per QALY
-**Subject to:** Incentive compatibility, strategy-proofness, and resistance to regulatory capture
+The Decentralized Institutes of Health (DIH) is what you build when you want to cure diseases instead of writing papers about them. It's not a better bureaucracy; it's an anti-bureaucracy, built on four simple rules.
 
-But the real breakthrough is simpler than optimization theory. It's this:
+## The Four Rules of a System That Actually Works
 
-**Pay researchers for success, not for asking permission.**
+### Rule 1: Let Patients Decide What Gets Funded
 
-**NIH model:** Pay for grant applications, publications, credentials
-**DIH model:** Pay for QALYs produced, patients helped, problems solved
+**The Problem:** The NIH has 200 bureaucrats in a room trying to predict which of thousands of diseases matters most. They are always wrong.
 
-The NIH currently produces QALYs at [an estimated cost of $50,000-$150,000 per QALY](../references.qmd#nih-cost-per-qaly)—far above the theoretical optimum. Through mechanism design alone, the DIH can achieve 10-100x efficiency gains. Not through better scientists or more funding, but through **pure institutional architecture**.
+**The DIH Solution:** Give the money directly to patients in the form of subsidies. Let them, in consultation with their doctors, decide which clinical trials to join. The trials that attract patients get funded. The ones that don't, die.
 
-This isn't utopian dreaming. It's applied game theory.
+This replaces a grant-writing contest with a distributed supercomputer of millions of patients and doctors, all with skin in the game. It's the collective intelligence of humanity voting with its feet.
 
-## The Problem: The NIH as an Accidentally Optimized DALY Maximization Machine
+### Rule 2: Pay for Cures, Not for Promises
 
-The National Institutes of Health (NIH) is [a $47 billion machine](../references.qmd#nih-budget-fy2025) designed to prevent medical progress. [It employs two administrators for every one scientist](../references.qmd#nih-admin-to-scientist-ratio)—like having two managers for every McDonald's fry cook, except the fries cure cancer and the managers prevent them from being made. It rewards grant writing, not research. It forces scientists to [spend months writing](../references.qmd#grant-writing-time-50pct) 100-page proposals that include their blood type, only to be rejected because the NIH's funding formula was apparently written by a drunk wizard in 1953.
+**The Problem:** The NIH pays scientists for writing grant applications. This is like paying a chef for writing a menu instead of cooking a meal.
 
-[By the time a good idea gets funded](../references.qmd#nih-first-r01-age-45), the lead scientist is dead or the disease has evolved thumbs.
+**The DIH Solution:** Pay for results. Researchers get paid in two ways:
+1.  **Per-patient funding:** The more patients who believe in your trial enough to join, the more funding you get.
+2.  **Outcome Bounties:** Massive, multi-billion dollar prizes for solving the big problems (e.g., "$1 billion to the first team to reverse aging by 10 years").
 
-The NIH doesn't just fail to optimize for QALYs—it's accidentally optimized for the opposite. Every institutional feature creates perverse incentives:
+In the NIH, you get rich by writing proposals. In the DIH, you get rich by curing diseases.
 
-* **Principal-Agent Problem:** Bureaucrats maximize job security and budget growth, not health outcomes
-* **Wrong Payment Trigger:** The NIH pays researchers when grants are approved, not when patients are cured. This creates an industry of professional grant writers instead of disease curers.
-* **Information Asymmetry:** Funders can't observe research quality, so they fund observable signals (credentials, publications, grant-writing ability) instead of results
-* **Deadweight Loss:** [~50-67% of researcher time](../references.qmd#grant-writing-time-50pct) goes to overhead and grant writing—pure economic waste with zero QALY production
-* **Innovation Externalities:** Researchers capture approximately 0% of the social value they create, so effort is catastrophically misallocated
+### Rule 3: Make Corruption Mathematically Impossible
 
-**Economic Result:** The system produces QALYs at 10-100x higher cost than the theoretical optimum, while simultaneously maximizing DALYs through delay and bureaucratic friction. The core problem: paying for promises instead of paying for results.
+**The Problem:** Any institution controlling billions of dollars becomes a target for lobbyists and grifters.
 
-Bureaucracy is a disease. The DIH is the cure.
+**The DIH Solution:** Build the system on transparent, open-source code.
+-   **Algorithmic Governance:** All funding rules are encoded in smart contracts. Code can't take bribes.
+-   **No CEO:** There's no one to corrupt. No central point of failure.
+-   **Public Ledger:** Every single dollar is tracked on a public blockchain. It's a live-streamed financial colonoscopy for the entire world to see.
 
----
+This isn't about trusting people to be good. It's about building a system where being bad is impossible.
 
-## How to Build a Medical Research System That Actually Maximizes QALYs
+### Rule 4: Publish Everything (Especially the Failures)
 
-You don't fix the NIH; you replace it. The Decentralized Institutes of Health (DIH) is what you build when you optimize for living instead of paperwork. It rests on four mechanism design principles that solve the core market failures in medical research.
+**The Problem:** Companies and researchers hide their failed experiments. This means scientists around the world waste billions of dollars and decades of time repeating the same mistakes.
 
-### 1. Solve Information Asymmetry Through Revealed Preference
+**The DIH Solution:** Make 100% open publication of all data—positive and negative—a condition of funding.
+-   Every trial, every result, every dataset is published for the world to see.
+-   AI models continuously scan this global data commons, finding patterns and connections humans would miss.
 
-**The Market Failure:** Centralized funders face an impossible information problem—they must predict which of thousands of research proposals will produce the most QALYs, but they can't observe research quality ex ante, only credentials and grant-writing ability.
-
-**The Economic Solution:** Route funding through patients who have skin in the game—their lives. This creates a revelation mechanism where preferences are aligned with expected QALY outcomes.
-
-**The Mechanism:**
-- Treasury gives subsidies directly to patients
-- Patients choose which trials to join (revealed preference)
-- Subsidies flow to trials that attract patients
-- Trials that don't attract patients die
-
-The NIH has 200 bureaucrats in a room eating stale donuts and trying to predict the future. The DIH has millions of patient-doctor pairs, each with distributed local information about what might work for their specific condition.
-
-**Result:** You've replaced a grant-writing contest with a distributed information aggregation mechanism. This is the [Hayek knowledge problem](../references.qmd#hayek-use-of-knowledge) solved for medicine—no central planner can know what millions of patients and doctors know collectively.
-
-### 2. Pay for Success, Not Grant Applications
-
-**The Market Failure:** Researchers are paid for inputs (grant proposals, publications, credentials) rather than outputs (QALYs generated). The NIH literally pays people to ask for money instead of paying them to cure diseases. This creates massive misallocation—effort flows to gaming metrics instead of producing health.
-
-**The Economic Solution:** Replace pay-for-paperwork with pay-for-success. Make researcher compensation a direct function of health outcomes. They get rich exactly when they maximize QALYs efficiently.
-
-**The Mechanism:**
-- **Per-patient funding:** Researchers earn (subsidy × patients enrolled). Patient enrollment is a market signal of expected efficacy.
-- **Outcome bounties:** Massive prizes for solving clearly defined problems (e.g., "$1B to reverse aging by 10 years, measured by methylation clocks, provided it doesn't turn people into vampires")
-- **Zero grant applications:** Eliminate the entire grant application process. 100% of researcher time goes to research, 0% to begging for permission.
-
-**Result:** Perfect incentive alignment. In the NIH, you get rich by writing grant proposals. In the DIH, you get rich by curing diseases. Researchers maximize their income by maximizing QALYs per dollar spent. Self-interest becomes identical to social welfare—Adam Smith's invisible hand, but for not dying.
-
-
-### 3. Prevent Regulatory Capture Through Algorithmic Governance
-
-**The Market Failure:** Any institution controlling $47+ billion creates enormous incentives for rent-seeking and regulatory capture. The NIH's centralized decision-making creates exploitable single points of failure.
-
-**The Economic Solution:** Remove the capturable agent. Make the system strategy-proof through algorithmic governance where corruption is mathematically impossible, not merely prohibited.
-
-**The Mechanism:**
-- **Smart contract governance:** All rules encoded in transparent, auditable code. Code can't take bribes or develop cocaine habits.
-- **No CEO to corrupt:** Delete the position entirely. Nobody to lobby, nobody to wine-and-dine, nobody to offer a board seat.
-- **Public ledger:** Every dollar tracked on a blockchain like a financial colonoscopy broadcast live to the world
-- **Open source everything:** Any capture attempt is immediately visible to millions of observers
-
-**Result:** The cost of corrupting the system exceeds any possible rent extraction. This isn't about trusting people to be good (they won't be). It's about designing a system where being bad is mathematically impossible. You replace bureaucrats with software, where the primary job of any remaining administrator is to code themselves out of existence—like hiring your own executioner.
-
-### 4. Eliminate Knowledge Externalities Through Mandatory Open Science
-
-**The Market Failure:** Medical knowledge is a public good (non-rival, non-excludable). Private markets systematically underproduce it. [Publication bias](../references.qmd#publication-bias-clinical-trials) means ~50% of trials never publish results, especially negative results. This creates massive duplication costs as researchers unknowingly repeat failed experiments.
-
-**The Economic Solution:** Mandate complete data publication as a condition of DIH funding. Internalize the positive externality of knowledge sharing.
-
-**The Mechanism:**
-- Every trial, every result (positive AND negative), every dataset published in open-access format
-- Researchers who hide data lose access to DIH funding permanently
-- All data feeds into a unified global research commons
-- AI agents continuously scan the data stream to identify patterns, connect researchers, and suggest promising combinations
-
-**Result:**
-- **Eliminates redundancy:** Researchers stop wasting decades rediscovering that mixing bleach and ammonia is bad
-- **Knowledge compounds:** Each trial builds on the complete dataset, not a filtered subset biased toward positive results
-- **AI acceleration:** Machine learning models train on comprehensive data, finding patterns humans miss
-- **Estimated impact:** Publication bias and duplication waste [30-50% of research value](../references.qmd#research-waste-estimate). This mechanism recovers that loss—a 1.5-2x multiplier on QALY production at zero additional cost.
+This simple rule instantly doubles the value of every dollar spent on research by eliminating redundant failures.
 
 ![How the Decentralized Institutes of Health works: technical details](../../../assets/decentralized-institutes-of-health-details.jpg)
 
@@ -160,77 +102,13 @@ The NIH pays for permission to do research. The DIH pays for research that works
 
 ---
 
-## The Market Design: Three Interconnected Markets That Optimize for QALYs
+## How the Money Flows
 
-The DIH doesn't create one market—it creates three nested markets, each solving a specific resource allocation problem:
+1.  **Fill the Treasury:** The [1% Treaty](../solution/1-percent-treaty.qmd) redirects **$27 billion** a year from global military budgets into the DIH treasury.
+2.  **Humanity Sets the Rules:** The global population uses a system called [Wishocracy](../solution/wishocracy.qmd) to vote on the high-level budget allocation. They don't pick specific trials; they set the rules for the whole system (e.g., "70% of all funds go directly to patient subsidies," "10% for moonshot prizes").
+3.  **Patients Fund Cures:** The money flows to patients as subsidies, creating a market where the best research attracts funding directly from the people who need it most.
 
-### Market 1: The Trial Participation Market
-
-**Allocation Problem:** Route patient subsidies to trials with highest expected QALY production
-
-**Mechanism:** Patients choose which trials to join based on their assessment of risk/benefit. Subsidies flow to chosen trials.
-
-**Why It Works:** Patient choice aggregates distributed information about treatment potential. Patients have the strongest possible incentive to evaluate correctly—their lives depend on it.
-
-**Efficiency Gain:** Distributed information processing beats central planning (Hayek). The market automatically allocates capital to the most promising research.
-
-### Market 2: The Researcher Talent Market
-
-**Allocation Problem:** Allocate scientist time/effort to highest-value research directions
-
-**Mechanism:** Researchers earn income from patient enrollment + outcome bounties. They shift effort toward research that attracts the most patients and solves the highest-value problems.
-
-**Why It Works:** Incentive compatibility. Researchers maximize their income by maximizing QALYs—self-interest aligns with social welfare.
-
-**Efficiency Gain:** Eliminates the misallocation where brilliant scientists spend careers studying obscure questions because that's what got them tenure.
-
-### Market 3: The Public Goods Funding Market
-
-**Allocation Problem:** Fund research with large positive externalities that individual patients won't finance (e.g., aging reversal, open databases, moonshot prizes)
-
-**Mechanism:** Communities use [Wishocracy](../solution/wishocracy.qmd) to pool funds and post bounties. Quadratic funding or conviction voting ensures preference revelation.
-
-**Why It Works:** Solves the public goods problem without recreating bureaucracy. Communities self-organize around shared interests, fund infrastructure collectively.
-
-**Efficiency Gain:** Gets the benefits of collective action without the costs of centralized administration.
-
----
-
-**Combined Effect:** The three markets route capital to maximize QALYs across all research types—individual treatments, moonshots, and infrastructure. No central planner required.
-
----
-
-## How You Fund It: The 3-Step Flow
-
-1.  **You Fill the Treasury.** You use [The 1% Treaty](../solution/1-percent-treaty.qmd) to redirect a rounding error from global military spending—`{python} format_billions(TREATY_ANNUAL_FUNDING)`—into the DIH treasury.
-
-2.  **You Let Humanity Set the Rules.** A global population of voters uses [Wishocracy](../solution/wishocracy.qmd) to set the high-level budget. They don't pick specific trials. They vote on core allocation rules that govern the entire system, such as:
-    *   **Patient Subsidies (~70%):** The bulk of the funds create a market for cures by subsidizing patient participation in [dFDA trials](../solution/dfda.qmd).
-    *   **VICTORY Bond Returns (10%):** A fixed portion of all inflows is automatically routed to repay the investors who funded the treaty's passage. This is the financial engine that makes the revolution possible. See [The Investment Vehicle](../economics/victory-bonds.qmd).
-    *   **Research Prizes & Bounties (~5-10%):** Funds moonshot projects and public goods that a pure patient-driven market might overlook.
-    *   **Operations & Expansion (~5-10%):** Funds the core infrastructure and campaigns to grow the treaty from 1% to 5% and beyond.
-
-This creates a transparent, dynamic, and capture-proof system for allocating humanity's health budget.
-
-3.  **You Let Patients Fund Cures.** The treasury flows to patients as subsidies. This creates a vibrant, competitive marketplace where the best research attracts funding directly from the people who need it most.
-
----
-
-### How You Fund the Big Stuff: Emergent Institutes
-
-A marketplace of individual patients is powerful, but it won't fund the massive projects that benefit everyone. No single patient will use their subsidy to fund a **$1 billion prize to reverse aging** or a **shared data platform for all cancer researchers.**
-
-These "public goods" are the difference between curing cancer and arguing about it on Twitter. This is where you introduce **emergent institutes.**
-
-These aren't bureaucracies; they are tools for collective investment that arise from the community itself—like the Decentralized Cancer Institute ("For cells that forgot how to die") or the Decentralized Institute of Mental Health ("For brains that hate their owners"). When a community directs billions into trials, you give them tools to pool a tiny fraction of that flow. This allows them to collectively post massive prizes and fund shared infrastructure—the kinds of breakthrough projects a pure marketplace would ignore.
-
-This is how you fund not just thousands of individual trials, but the entire ecosystem of innovation.
-
----
-
-### How You Build the Machine: The Legal and Financial Engine
-
-The DIH is a hybrid system designed to use the tools of capitalism to build a post-capitalist health economy. To do this legally and effectively requires a sophisticated legal architecture involving non-profits, lobbying arms, and a for-profit investment vehicle. For the full breakdown of this structure, see the chapter: [The Legal Architecture](../legal/legal-framework.qmd).
+This structure also allows for **Emergent Institutes**—patient communities for specific diseases (e.g., the Decentralized Cancer Institute) can pool a fraction of their resources to fund large-scale projects and prizes that a pure individual market might overlook.
 
 ---
 
@@ -278,47 +156,11 @@ You replace a system that values credentials with one that values breathing. Thi
 
 ---
 
-## Economic and Theoretical Foundations
+The DIH + dFDA system, operating on the 1% Treaty budget of **$27 billion** annually, could produce more positive health outcomes than the entire current global medical research output. By 2040, this could mean:
 
-The DIH synthesizes insights from multiple fields of economics and institutional design:
+- Cancer survival rates above 90% (currently ~68%)
+- Aging treated as a reversible condition
+- Rare diseases no longer "too expensive" to cure
+- Personalized medicine available to everyone, not just billionaires
 
-### Mechanism Design Theory
-- **Incentive compatibility:** Systems where truthful behavior is optimal (Hurwicz, Maskin, Myerson)
-- **Strategy-proofness:** Institutions resistant to gaming and manipulation
-- **Revelation mechanisms:** Designs that elicit true preferences under information asymmetry
-
-### Market Design
-- **Matching markets:** Efficient allocation without money as the sole medium (Roth, Shapley)
-- **Multi-sided platforms:** Coordinating researchers, patients, and funders simultaneously
-- **Quadratic funding:** Optimal public goods funding mechanisms (Buterin, Hitzig, Weyl)
-
-### Public Choice Economics
-- **Bureaucratic incentives:** How government institutions optimize for growth rather than outcomes (Buchanan, Tullock)
-- **Regulatory capture:** The inevitable corruption of centralized power (Stigler)
-- **Rent-seeking:** Unproductive competition for regulatory favors
-
-### Health Economics
-- **QALY/DALY optimization:** Standard frameworks for health resource allocation (Drummond, Weinstein)
-- **Cost-effectiveness analysis:** Maximizing health outcomes per dollar
-- **Health production functions:** How inputs convert to health outputs
-
-### Information Economics
-- **Asymmetric information:** Markets where one party knows more than another (Akerlof, Stiglitz)
-- **Signaling and screening:** Mechanisms to overcome information problems
-- **The knowledge problem:** Why distributed decision-making beats central planning (Hayek)
-
-### Algorithmic Governance & DAOs
-- **Smart contract governance:** Trustless coordination through code (Buterin)
-- **Cryptoeconomics:** Incentive design using cryptographic primitives
-- **Decentralized autonomous organizations:** Institutions that run without traditional management
-
-### Related Reading in This Book
-- [The dFDA](../solution/dfda.qmd) - The trial infrastructure that executes DIH-funded research
-- [Wishocracy](../solution/wishocracy.qmd) - The democratic mechanism for setting allocation rules
-- [The 1% Treaty](../solution/1-percent-treaty.qmd) - How to fund the DIH at massive scale
-- [VICTORY Bonds](../economics/victory-bonds.qmd) - The investment vehicle that makes it possible
-- [Legal Architecture](../legal/legal-framework.qmd) - How to build this legally
-
-<!-- TODO: NEEDS_HUMAN_INPUT - Add specific citations to academic papers on mechanism design applied to health funding -->
-<!-- TODO: NEEDS_FACT_CHECK - Verify the 800x multiplier calculation is defensible, may need to be more conservative -->
-<!-- TODO: NEEDS_REFERENCE - Add reference for NIH cost per QALY estimate, cancer survival rate statistics -->
+The fundamental difference is this: The NIH pays researchers to explain why curing cancer is hard. The DIH pays them to actually cure it.
