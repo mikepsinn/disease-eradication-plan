@@ -32,7 +32,7 @@ book:
     - part: "💡 The Solution"
       chapters:
         - brain/book/solution.qmd # ✅ Part II Intro
-        - brain/book/solution/1-percent-treaty.qmd # ✅ The 1% Treaty (NARRATIVE VERSION - see appendix for technical summary)
+        - brain/book/solution/1-percent-treaty.qmd # ✅ The 1% Treaty (includes TL;DR at top)
         - brain/book/solution/dih.qmd # ✅ The DIH
         - brain/book/solution/wishocracy.qmd # ✅ Wishocracy
         - brain/book/solution/ai-coordination-army.qmd # ✅ (EXCELLENT voice - "goldfish organizing a space program")
@@ -76,8 +76,7 @@ book:
     # Strategic Implementation
     - part: "🎯 Implementation Strategy"
       chapters:
-        - brain/book/strategy.qmd # ✅ (3-STEP OVERVIEW - see roadmap.qmd for detailed execution)
-        - brain/book/appendix/1-percent-treaty.qmd # ✅ (TECHNICAL SUMMARY - short reference version of solution chapter)
+        - brain/book/strategy-overview.qmd # ✅ (3-STEP OVERVIEW - see roadmap.qmd for detailed execution)
         - brain/book/appendix/highest-leverage-advocacy.qmd # ✅ (EXCELLENT voice - "bailing water from a sinking ship")
         - brain/book/strategy/five-step-execution.qmd # ✅
         - brain/book/strategy/bribe-sequence.qmd # ✅
@@ -90,7 +89,7 @@ book:
 
     - part: "⚖️ Policy & Regulatory"
       chapters:
-        - brain/book/legal.qmd # ✅ (IMPROVED - brief overview, see legal-framework.qmd for details)
+        - brain/book/legal-overview.qmd # ✅ (IMPROVED - brief overview, see legal-framework.qmd for details)
         - brain/book/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate)
         - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd # ✅ (policy doc, must remain formal)
         - brain/book/appendix/dfda-implementation-via-executive-action.qmd # ✅ (policy strategy, appropriate)

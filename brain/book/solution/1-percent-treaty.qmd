@@ -28,6 +28,27 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
+## TL;DR: The Simple, Brutal Math
+
+The 1% Treaty is a legally-binding global accord with a single provision: every signatory nation redirects 1% of its annual military budget to the [Decentralized Institutes of Health (DIH)](dih.qmd).
+
+**The Math:**
+
+1.  **The Problem:** The world spends [$2.7 trillion a year](../references.qmd#global-military-spending-2-44t) on military forces to maintain a delicate balance of power.
+2.  **The Hack:** If every nation reduces military spending by 1% *at the same time*, the balance of power remains identical. No country becomes more vulnerable.
+3.  **The Prize:** That 1%—a **`{python} format_billions(TREATY_ANNUAL_FUNDING)`-a-year river of cash**—is redirected to cure all human diseases.
+
+**How It Works:**
+
+1.  **Funding:** Creates `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year revenue stream for the DIH
+2.  **Execution:** DIH subsidizes patient participation in the [dFDA](dfda.qmd)—clinical trials that are **[80x cheaper](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction)** than current model
+3.  **Governance:** Decentralized Autonomous Organization (DAO) governed by smart contracts and global population via [Wishocracy](wishocracy.qmd)
+4.  **Transparency:** All research, data, and spending published on public ledger
+
+**It's not a sacrifice, it's a trade:** Give up 1% of our ability to kill each other in exchange for a system that can save everyone.
+
+---
+
 ## The Heist: How to Steal $27 Billion a Year (Legally)
 
 This is how we steal `{python} format_billions(TREATY_ANNUAL_FUNDING)` a year from the military-industrial complex and give it to dying people.
@@ -44,7 +65,7 @@ Here's a fun fact: Every nation on Earth is pointing guns at every other nation 
 
 It's like if everyone in your neighborhood spent their life savings on attack dogs, and then called it a "safe community" because all the dogs are equally vicious.
 
-[The 1% Treaty](../appendix/1-percent-treaty.qmd) is based on kindergarten logic so simple that world leaders might actually understand it:
+The 1% Treaty is based on kindergarten logic so simple that world leaders might actually understand it:
 
 ### The Proof That Even Generals Can Follow
 

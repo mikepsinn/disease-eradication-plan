@@ -4466,7 +4466,7 @@ from economic_parameters import *
 
 - **Value captured by 1% Treaty of $27+ billion annually**
   > "The 1% Treaty redirects 1% of global military spending (`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` × 1% = `{python} format_billions(TREATY_ANNUAL_FUNDING)`) to medical research, with 10% of this flow (`{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` annually) distributed to VICTORY bondholders as returns."
-  > — See [1% Treaty overview](appendix/1-percent-treaty.qmd) for full calculation details and [VICTORY Bonds](economics/victory-bonds.qmd) for bond structure
+  > — See [1% Treaty overview](solution/1-percent-treaty.qmd) for full calculation details and [VICTORY Bonds](economics/victory-bonds.qmd) for bond structure
 
 <a id="veteran-healthcare-cost-projections"></a>
 

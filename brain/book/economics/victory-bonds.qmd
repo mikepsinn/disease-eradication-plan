@@ -32,7 +32,7 @@ from economic_parameters import *
 
 ## What You're Building
 
-Create a funding mechanism that raises `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` to finance the [1% Treaty](../appendix/1-percent-treaty.qmd) campaign through perpetual revenue-sharing bonds.
+Create a funding mechanism that raises `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` to finance the [1% Treaty](../solution/1-percent-treaty.qmd) campaign through perpetual revenue-sharing bonds.
 
 **The structure to build:**
 
