@@ -1,6 +1,6 @@
 ---
-title: 'Non-Profit Partnership Incentives: A Mathematically Superior Model'
-description: A strategic framework for aligning non-profit partners with the 1% Treaty mission through performance-based grants and personal VOTE point incentives.
+title: 'How to Turn Grant Applicants Into Billionaires'
+description: On making nonprofits rich by aligning their incentives with not dying
 jupyter: dih-project-kernel
 ---
 
@@ -17,51 +17,120 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-# Non-Profit Partnership Incentive Model
+# On How to Bribe Nonprofits (The Legal Kind)
 
-This document outlines the strategic framework for aligning non-profit partners with the core mission of the 1% Treaty. It offers a solution to the limitations of traditional grantmaking, rooted in the project's core philosophy: **make contributing to the broader mission the most profitable and impactful activity for all stakeholders.**
+**The Problem With Traditional Grantmaking:**
 
-## A New Model for Partnership
+Nonprofits spend most of their time begging for money. Foundations spend most of their time deciding who to give money to. Everyone pretends this is efficient.
 
-Traditional grantmaking, while essential, can sometimes create a dynamic where non-profits are forced to compete for a finite pool of resources. This can inadvertently lead to a focus on short-term organizational survival rather than long-term, collective impact.
+It's not.
 
-We propose a new model that transforms the traditional grantor-grantee relationship into a true, performance-based partnership. Instead of competing for limited funds, our partners are given the tools to generate new value and are rewarded directly for their success in advancing a shared mission.
+Traditional grantmaking creates a system where nonprofits compete for finite resources. This means they optimize for:
+- Writing the best grant proposals
+- Staying alive as organizations
+- Not pissing off donors
 
-This model is designed to directly and transparently tie the financial success of our non-profit partners—both organizationally and personally—to their performance in achieving a collective goal.
+They do not optimize for:
+- Actually solving the problem
+- Long-term collective impact
+- Coordinating with other nonprofits
 
-## The Solution: A Mathematically Superior Partnership
+This is rational behavior. You can't change the world if you go bankrupt first.
 
-We offer a two-part incentive structure that transforms partners from passive grant recipients into active, motivated stakeholders.
+**The Solution:**
 
-### 1. Organizational Incentive: Performance-Based Grants (The Multiplier)
+Stop making them compete. Make cooperation more profitable than competition.
 
-This incentive aligns the organization's budget with our primary mobilization goal.
+We offer a model that transforms the traditional "please give us money" relationship into "here's how we all get rich together by solving the problem."
 
-- **The Model:** A baseline grant is provided to establish the partnership. This is coupled with a substantial, performance-based multiplier.
-- **The Offer (Example):**
-  > "Your organization will receive a **baseline partnership grant** to cover initial setup and integration costs. In addition, we will release a **substantial performance grant** for every **X verified referendum votes** (e.g., 10,000) driven through your unique organizational link. This bonus is uncapped."
+Core philosophy: **Make contributing to the broader mission the most profitable activity for everyone involved.**
 
-- **The Result:** The non-profit's most rational path to maximizing its budget is to become our most effective mobilization partner. Their team's efforts are now directly focused on a shared, measurable Key Performance Indicator (KPI): referendum votes.
+## On The Two-Part Bribe
 
-### 2. Individual Incentive: Personal Stakeholder Grants (VOTE Points)
+We offer two incentives that transform nonprofits from "please fund us" to "let's get rich together."
 
-This incentive aligns the personal financial interests of key leaders with the ultimate success of the mission. This is critical to overcoming the natural tendency to simply use grants to increase internal salaries.
+### Part 1: Make The Organization Rich (Performance-Based Grants)
 
-- **The Model:** We award a significant personal grant of **VOTE points** directly to the individual leaders (e.g., Executive Director, Head of Development) within the partner organization.
-- **The Offer (Example):**
-  > "For your leadership in this partnership, you will be personally granted a **significant allocation of VOTE points**. These points represent a future claim on the economic value of the **[VICTORY Bonds](../economics/victory-bonds.qmd)** and the DIH treasury you are helping to create."
+**The Old Way:**
+"Here's $100K. Hope it helps. Submit a 47-page report in 6 months about impacts and learnings."
 
-- **The Result:** The leader's personal wealth is now directly tied to the treaty's success. They are no longer just an employee of a partner organization; they are a personal stakeholder in the entire endeavor. This creates a powerful incentive to drive for the larger outcome, far beyond their organization's immediate budget.
+**The New Way:**
+"Here's $50K baseline to get started. Plus $10K for every 10,000 verified referendum votes you drive. No cap."
 
-## The Ultimate Incentive: From Grant Applicant to Grant Maker
+**The Offer:**
+> "Your organization receives a **baseline partnership grant** for setup costs. You also get a **substantial performance grant** for every **X verified referendum votes** (e.g., 10,000) driven through your unique link. This bonus is uncapped."
 
-The short-term performance grants and personal VOTE points are merely the activation energy. The true, long-term prize for our non-profit partners is a permanent transformation of their role in the global health ecosystem.
+**What This Does:**
 
-Our model is designed to empower our coalition partners to become the governors of the very funding bodies that will define their fields for decades to come.
+The nonprofit's most rational path to maximizing their budget is to become our most effective mobilization partner.
 
-- **The Vision:** The **[Decentralized Institutes of Health (DIH)](../solution/dih.qmd)** is designed as a "coalition of coalitions." The main `{python} format_billions(TREATY_ANNUAL_FUNDING)`+ treasury will allocate multi-billion dollar budgets to specialized sub-DAOs (e.g., Decentralized Institute of Mental Health, Decentralized Institute on Aging).
-- **The Prize:** Governance of these powerful, well-funded sub-DAOs will be granted to the coalition of non-profit partners who made the 1% Treaty a reality.
-- **The Result:** By joining our coalition, you are not just helping to unlock a new pool of funding; you are earning a permanent and powerful governance stake in it. The choice is clear: continue competing for small, finite grants, or cooperate to collectively govern a multi-billion dollar annual treasury dedicated to your mission.
+Not: Write better grant proposals
+Not: Compete with other nonprofits
+Not: Please the foundation
+
+Just: Drive referendum votes.
+
+One metric. No ambiguity. Get paid for results.
+
+### Part 2: Make The Leaders Personally Rich (VOTE Points)
+
+**The Problem Grants Don't Solve:**
+
+Even performance grants can get absorbed into general operations. "We hired three more grant writers!"
+
+This doesn't solve the problem. This creates more grant writers.
+
+**The Solution:**
+
+Give the leaders personal equity. Make them personally wealthy when the mission succeeds.
+
+**The Offer:**
+> "For your leadership in this partnership, you will be personally granted a **significant allocation of VOTE points**. These points represent a future claim on the **[VICTORY Bonds](../economics/victory-bonds.qmd)** and the DIH treasury you are helping to create."
+
+**What This Does:**
+
+The Executive Director's personal wealth is now tied to treaty success.
+
+They're not just an employee anymore. They're a stakeholder. Their Tesla depends on it.
+
+This creates an incentive to drive for the larger outcome, far beyond their organization's quarterly budget.
+
+## On The Real Prize (Or: How to Stop Begging Forever)
+
+The performance grants and VOTE points are just the appetizer.
+
+The real prize is never having to write a grant proposal again.
+
+**The Transformation:**
+
+Our model is designed to turn grant applicants into the people who give out grants.
+
+Stop begging. Start deciding.
+
+**How It Works:**
+
+The **[Decentralized Institutes of Health (DIH)](../solution/dih.qmd)** is a "coalition of coalitions" with a `{python} format_billions(TREATY_ANNUAL_FUNDING)` annual treasury.
+
+This treasury allocates multi-billion dollar budgets to specialized sub-DAOs:
+- Decentralized Institute of Mental Health
+- Decentralized Institute on Aging
+- Decentralized Institute of [Whatever Your Mission Is]
+
+**Who Controls These Billions?**
+
+The coalition of nonprofits who made the 1% Treaty happen.
+
+You helped create it. You govern it.
+
+**The Choice:**
+
+**Option A:** Keep competing for finite grants. Write proposals forever. Beg foundations. Hope your competitor doesn't write a better proposal.
+
+**Option B:** Join our coalition. Help pass the treaty. Collectively govern a multi-billion dollar annual treasury dedicated to your mission.
+
+One of these options involves begging. The other involves being the person everyone begs to.
+
+Choose wisely.
 
 ## Earning a Stake: Tracking Contributions for Treasury Allocation
 
