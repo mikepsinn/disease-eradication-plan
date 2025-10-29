@@ -74,3 +74,5 @@ dih-index.html
 !apps/**/*.html
 .claude/settings.local.json
 .jupyter_cache/
+*.tex
+*.aux
