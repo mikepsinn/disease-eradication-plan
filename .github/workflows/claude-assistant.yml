@@ -1,4 +1,4 @@
-name: Claude Code - DIH Project Assistant
+name: Claude Assistant & Code Review
 
 on:
   issue_comment:
@@ -13,7 +13,7 @@ on:
     types: [opened, edited, synchronize]
 
 jobs:
-  claude:
+  assistant:
     if: |
       (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
       (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
@@ -22,31 +22,27 @@ jobs:
       (github.event_name == 'pull_request' && contains(github.event.pull_request.body, '@claude'))
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Allow Claude to make commits if needed
-      pull-requests: write  # Allow Claude to update PR descriptions and comments
-      issues: write  # Allow Claude to update issues
+      contents: write
+      pull-requests: write
+      issues: write
       id-token: write
-      actions: read  # Required for Claude to read CI results on PRs
+      actions: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full history for better context
+          fetch-depth: 0
 
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-
-          # Permissions for Claude to interact with GitHub
           additional_permissions: |
             actions: read
             contents: write
             pull-requests: write
             issues: write
-
-          # Custom prompt for DIH project objectives
           prompt: |
             You are helping with the Decentralized Institutes of Health (DIH) project - "The Complete Idiot's Guide to Ending War and Disease."
 
@@ -84,10 +80,42 @@ jobs:
             - Run with tsx
 
             Now, please help with the requested task while following these guidelines.
-
-          # Configure Claude with optimal settings for this project
           claude_args: |
             --model claude-opus-4-1-20250805
             --max-tokens 4096
             --temperature 0.7
 
+  code-review:
+    if: github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'synchronize')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code Review
+        id: claude-review
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            Please review this pull request and provide feedback on:
+            - Code quality and best practices
+            - Potential bugs or issues
+            - Performance considerations
+            - Security concerns
+            - Test coverage
+            
+            Use the repository's CLAUDE.md for guidance on style and conventions. Be constructive and helpful in your feedback.
+
+            Use `gh pr comment` with your Bash tool to leave your review as a comment on the PR.
+          claude_args: '--allowed-tools "Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"'
