@@ -418,87 +418,96 @@ The machine runs on pure self-interest, and as a side effect, it saves humanity.
 
 ## 💰 The Math
 
-**`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI (Better Than Selling Kidneys, Slightly More Ethical)**
+**On the Returns**
 
-Here's what happens when you stop filling out forms and start curing people:
-
-Every dollar spent returns `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` in benefits.
+When you stop making people fill out paperwork and start letting them not die, something magical happens: you make `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` return on investment.
 
 $$
 \text{ROI} = \frac{\text{\$463 in benefits}}{\text{\$1 invested}} = `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`
 $$
 
-That's not a typo. Four hundred and sixty-three dollars. It's better returns than:
+That's four hundred and sixty-three dollars back for every dollar you spend. Not a typo. Not a fever dream. Actual math.
+
+This is better returns than:
 
 - Selling organs on the black market
 - Running a casino
 - Being a pharmaceutical company
 - All three combined
 
-Where the magic money comes from:
+**Where the Money Materializes From:**
+
+The secret is you stop paying people to make problems complicated and start paying them to make problems solved.
 
 - [**`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` in annual R&D cost savings**](brain/book/appendix/dfda-cost-benefit-analysis.qmd): `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction in clinical trial costs
-- [**`{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` Quality-Adjusted Life Years (QALYs) saved annually**](brain/book/appendix/dfda-cost-benefit-analysis.qmd):
-  - **Faster access to new treatments**: 200,000 QALYs from faster drug access ([`{python} TREATMENT_ACCELERATION_YEARS_TARGET` years instead of `{python} TREATMENT_ACCELERATION_YEARS_CURRENT` years](brain/book/appendix/recovery-trial.qmd) to market)
-  - **Better prevention through real-world data**: 140,000 QALYs
-  - **Enabling new therapies**: 500,000 QALYs from enabling new therapies for rare diseases and previously untreatable conditions
+- [**`{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` Quality-Adjusted Life Years**](brain/book/appendix/dfda-cost-benefit-analysis.qmd) (which is economist-speak for "humans who continue being alive and happy")
+  - 200,000 QALYs because drugs reach people in [`{python} TREATMENT_ACCELERATION_YEARS_TARGET` years instead of `{python} TREATMENT_ACCELERATION_YEARS_CURRENT`](brain/book/appendix/recovery-trial.qmd), which matters if you're currently dying
+  - 140,000 QALYs from actually knowing which treatments work instead of guessing
+  - 500,000 QALYs from curing things we previously ignored because "not profitable enough"
 
 {{< include brain/figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
-This ROI is better than history's greatest public health achievements like [smallpox eradication (`{python} format_roi(SMALLPOX_ERADICATION_ROI)`) and childhood vaccinations (`{python} format_roi(CHILDHOOD_VACCINATION_ROI)`)](brain/book/appendix/dfda-cost-benefit-analysis.qmd).
+This beats [smallpox eradication (`{python} format_roi(SMALLPOX_ERADICATION_ROI)`) and childhood vaccinations (`{python} format_roi(CHILDHOOD_VACCINATION_ROI)`)](brain/book/appendix/dfda-cost-benefit-analysis.qmd), which were humanity's previous greatest hits in the "not dying" genre.
 
 ### ♾️ Where Math Breaks
 
 *The Part Where Returns Go Infinite*
 
-**Infinite Returns (Yes, Actually Infinite)**
+**On What Happens When You Divide By Zero**
 
 {{< include brain/figures/self-funding-roi-comparison-column-chart.qmd >}}
 
-Here's where it gets stupid in a good way:
+Here's the part where economists start crying and it's beautiful:
 
-When you redirect military money instead of asking for new money, the ROI becomes infinite.
+When you steal money from the war budget instead of asking for new money, the return on investment becomes infinite. Not metaphorically infinite. Mathematically infinite. The kind of infinite that makes calculators display ERROR.
 
-**The kindergarten math:**
+**The Math That Broke Excel:**
 
 $$
 \text{ROI} = \frac{\text{Annual Benefits}}{\text{New Spending}} = \frac{\$`{python} format_billions_latex(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)`}{0} = \infty
 $$
 
-Even a congressman can understand this. Probably.
+Even a congressman could understand this, though we shouldn't assume.
 
-**Where the `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` comes from:**
+**Where the `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` Appears From:**
 
 $$
 \text{Total Benefit} = \underbrace{\$`{python} format_billions_latex(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`}_{\text{Peace Dividend}} + \underbrace{\$`{python} format_billions_latex(DFDA_GROSS_SAVINGS_ANNUAL)`}_{\text{Health Dividend}} = \$`{python} format_billions_latex(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)`
 $$
 
-- Peace dividend: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` (from not building things that explode)
-- Health dividend: `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` (from not wasting money on paperwork)
-- Total: More money than God spends on therapy
+Breaking it down for people who stopped paying attention in math class:
+
+- Peace dividend: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` (saved by not building things specifically designed to explode)
+- Health dividend: `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` (saved by not paying people to fill out forms)
+- Total: More money than exists in most small countries
 
 ([See peace dividend calculation](brain/book/economics/peace-dividend.qmd) | [See dFDA health benefits breakdown](brain/book/appendix/dfda-cost-benefit-analysis.qmd) | [See economic impact summary](brain/book/economics.qmd))
 
-- **Zero net cost**: The `{python} format_billions(TREATY_ANNUAL_FUNDING)` comes from redirected military spending (money already budgeted)
-- **`{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` in annual benefits**: Peace dividend (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`) + Health dividend (`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`)
-- **Operating costs**: Only [`{python} format_millions(TREATY_TOTAL_ANNUAL_COSTS)`/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) (campaign + operations)
+**The Part That Sounds Fake But Isn't:**
+
+- **You spend**: Zero new dollars (you just move existing dollars from the "making corpses" column to the "preventing corpses" column)
+- **You get back**: `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` annually
+- **Operating costs**: [`{python} format_millions(TREATY_TOTAL_ANNUAL_COSTS)`/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) (less than a single fighter jet)
 - **Lives saved**: [25,000/year](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) ($875,000 \text{ QALYs} \div 35 \text{ QALYs/life}$)
-- **Per life saved**: Society PROFITS [`{python} f"${PROFIT_PER_LIFE_SAVED:,.0f}"`](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) instead of spending
+- **Per life saved**: Society makes [`{python} f"${PROFIT_PER_LIFE_SAVED:,.0f}"`](brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd) profit
 
-The math says this is the best thing you could do with a billion dollars.
-Math is rarely wrong about money.
+Math says this is the best possible use of a billion dollars.
 
-This is the only health trick that makes money instead of costing it.
-You literally profit from preventing death.
-It's capitalism's greatest achievement: making greed save lives.
+Math is rarely wrong about money. People are frequently wrong about money. This is why math gets to make the rules.
 
-Unlike traditional interventions requiring ongoing charity, this generates `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` annually while saving `{python} f"{SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}"` lives.
+This is the only health intervention in history where you PROFIT from saving lives instead of spending to save lives.
+
+It's capitalism's redemption arc: weaponizing greed to cure disease instead of causing it.
+
+Unlike charity, which requires eternal begging, this prints `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` annually while saving `{python} f"{SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}"` lives, forever, or until heat death of universe, whichever comes first.
 
 ### 🏆 2nd Best Idea in the World
 
-The best idea in the world would be a 100% Treaty that ended war completely. 
+**On Why This Isn't Actually The Best Idea**
 
-However, as that idea contains logic in excess of the congressional daily allowance, we're left with the 2nd best idea in the world.
+The best idea would be a 100% Treaty that ended war completely and turned all the tanks into health clinics.
+
+Unfortunately, that idea requires logic levels that exceed the congressional daily recommended allowance. So we're settling for the 2nd best idea in recorded history.
 
 This can be mathematically proven!
 
@@ -506,76 +515,91 @@ This can be mathematically proven!
 
 The `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` annual benefit is like finding out your lottery ticket is also a cure for cancer and makes you better looking.
 
-It's `{python} f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:,.0f}"` times bigger than childhood vaccines, which are literally one of humanity's greatest achievements. That's like being 10 times better than pizza. Impossible, yet here we are.
+It's `{python} f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:,.0f}"` times bigger than childhood vaccines, which were previously humanity's greatest accomplishment in the "not dying young" category. 
+That's like being 10 times better than pizza. Impossible, yet here we are.
 
-- Charities: Spend `{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}"` to save a life (heroic)
-- This system: MAKES `{python} f"${SYSTEM_PROFIT_PER_LIFE_SAVED_MILLIONS:,.2f} million"` per life saved (capitalism's redemption arc)
+**The Comparison That Makes Charity Look Sad:**
 
-You don't donate to this. You invest in it. Then you get rich while saving humanity.
+- Traditional charities: Spend `{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}"` to save one human life (heroic but expensive)
+- This system: MAKES `{python} f"${SYSTEM_PROFIT_PER_LIFE_SAVED_MILLIONS:,.2f} million"` per life saved (capitalism accidentally discovers morality)
 
-It's what Jesus would do if he understood compound interest.
+You don't donate to this. Donations are for suckers with feelings.
+
+You invest in it. Then you get obscenely wealthy while accidentally saving humanity as a side effect.
+
+It's what Jesus would do if he'd taken an economics class.
 
 ---
 
 ## 🎲 Choose Your Own Adventure
 
-### 🚪 Door #1: Status Quo
+**On The Two Doors In Front Of You**
 
-*Keep Doing What We're Doing*
+You're standing in front of two doors. Behind one is the future we're currently heading toward. Behind the other is the future where humans stop being idiots.
 
-- `{python} f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}"` people continue dying daily (that's a 9/11 every 17 minutes)
-- `{python} format_billions(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)` keeps getting flushed down the death toilet
-- You die from something we could have cured
-- Military budgets grow until we're spending more on bombs than food
-- Healthcare bankrupts everyone who doesn't die fast enough
-- Your grandchildren ask why you didn't do anything
+### 🚪 Door #1: The Current Plan
 
-### ✨ Door #2: The Better Option
+*Keep Doing What We're Doing (The Default Setting)*
 
-*Obviously Better*
+- `{python} f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}"` people continue dying every single day from diseases we could fix (that's fifty 9/11s per day, but nobody's counting)
+- `{python} format_billions(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)` annually gets flushed down the death toilet
+- You die from something stupid that we could have cured, but didn't, because the money was busy becoming missiles
+- Military budgets grow until we're spending more on bombs than food, which is fine because everyone's dead anyway
+- Healthcare costs bankrupt everyone who doesn't die quickly enough
+- Your grandchildren ask what you were thinking, and you have to explain that at the time, ending civilization twenty times seemed more important than ending it zero times
 
-- `{python} f"{SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}"` fewer people die each year (exponentially growing)
-- `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` generated annually (real money, not hypothetical)
-- Major diseases cured within a decade
-- `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns for early investors
-- Free healthcare via trial participation
+### ✨ Door #2: The One Where We're Slightly Less Stupid
+
+*Novel Concept: Try Not Dying*
+
+- `{python} f"{SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}"` fewer people die each year (number grows exponentially as treatments improve)
+- `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` appears annually like magic, except it's just arithmetic
+- Major diseases get cured within a decade
+- Early investors make `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns (which beats everything except insider trading)
+- Healthcare becomes free through trial participation
 - Death becomes optional (terms and conditions apply)
 
 ---
 
 ## ⏰ Price of Procrastination
 
-**Today's Death Bill (While You Read This):**
+**On What Happened While You Were Reading This**
 
-- `{python} f"{DEATHS_DURING_READING_SECTION:,.0f}"` humans deleted permanently (one every 3.5 minutes—faster than you can read this section)
-- `{python} format_currency(DAILY_COST_INEFFICIENCY)` burned in inefficiency
-- Your telomeres got shorter
-- Someone played nuclear weapon roulette
+Every second you spend thinking about whether to do this, the universe helpfully reminds you why you should:
+
+- `{python} f"{DEATHS_DURING_READING_SECTION:,.0f}"` humans got permanently deleted (one every 3.5 minutes, which is faster than you read)
+- `{python} format_currency(DAILY_COST_INEFFICIENCY)` evaporated into bureaucratic nonsense
+- Your telomeres got shorter (that's the thing that decides when you stop existing)
+- Someone somewhere played nuclear weapon roulette with your life
 - A politician said something stupider than yesterday (probably about vaccines causing 5G)
 
 ![Join or Die snake illustration](assets/join-or-die-snake.jpg)
 
-<!-- {{< video https://www.youtube.com/watch?v=ouRbkBAOGEw title="JFK's Moon Speech - We Choose to Go to the Moon" >}} -->
+**On Historical Precedents for Doing Impossible Things**
 
-<!-- In 1962, America chose to do something "unrealistic" and "impossible." Eight years later, we walked on the Moon.
+The Soviet Union went from nothing to conquering half the world to completely collapsing in a [SINGLE HUMAN LIFETIME](brain/book/proof/historical-precedents.qmd).
 
-Today, we choose to cure disease. Not because it's easy, but because [150,000 people die every day](brain/book/problem/the-daily-massacre.qmd). -->
+And Communism was objectively a TERRIBLE IDEA that required murdering millions of people.
 
-The Soviet Union went from nothing to taking over half the world to completely collapsing in a [SINGLE HUMAN LIFETIME](brain/book/proof/historical-precedents.qmd).
+This is quantifiably the second-best idea in human history and requires radically less murder.
 
-And Communism was a TERRIBLE IDEA. This is quantifiably the best idea in the world and radically less difficult than murdering millions of people and taking over half the world.
+We're literally just trying to get people to click "yes I would prefer not to die of horrible diseases" on a website.
 
-We're just trying to get people to click "yes I would prefer not die of horrible diseases" on a damn website.
+If humans can coordinate to invent "lines" and not eating each other, this should be manageable.
 
 ---
 
-Humanity spends **`{python} format_billions(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)` annually** on dying and/or killing.
+**On The Final Numbers**
+
+Humanity currently spends **`{python} format_billions(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)` annually** on making people stop being alive or dealing with the consequences.
 
 You're asking to redirect **1% of just the killing budget** to the not-dying budget.
 
-Countries keep `{python} format_percentage(1 - TREATY_REDUCTION_PCT)` of their murder capacity - still enough to end civilization 19 times instead of 20.
+Countries get to keep `{python} format_percentage(1 - TREATY_REDUCTION_PCT)` of their murder capacity. Still enough to end civilization 19 times instead of 20, which seems sufficient.
 
-**The choice is binary:** Keep marching toward expensive death, or steal 1% from the military-industrial complex and live forever.
+**The choice is binary and simple:** Keep marching toward expensive preventable death, or steal 1% from the military-industrial complex and possibly live forever.
+
+Choose wisely, or more accurately, choose quickly, because the death clock is ticking and it's very loud.
 
 <a href="assets/chaplin-great-dictator-320.mp4" target="_blank">
 ![Charlie Chaplin - The Great Dictator Speech](assets/chaplin-great-dictator-thumbnail.png)
