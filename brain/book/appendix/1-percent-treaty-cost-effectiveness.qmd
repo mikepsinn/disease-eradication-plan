@@ -185,12 +185,12 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **The DIH Treasury Mechanism**:
 
-1. **Countries redirect `{python} format_billions(DIH_TREASURY_MILITARY_REDIRECT)`/year** from military budgets to the DIH treasury
+1. **Countries redirect `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year** from military budgets to the DIH treasury
 2. **The DIH treasury allocates**:
-   - `{python} format_billions(DIH_TREASURY_TO_VICTORY_BONDS)`/year → VICTORY bondholders (`{python} format_percentage(VICTORY_BOND_FUNDING_PCT)` of redirected funds)
+   - `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`/year → VICTORY bondholders (`{python} format_percentage(VICTORY_BOND_FUNDING_PCT)` of redirected funds)
    - `{python} format_billions(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)`/year → Medical research and operations
    - This `{python} format_billions(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)` covers:
-     - dFDA operations: `{python} format_currency(DIH_TREASURY_DFDA_OPERATIONS)`/year
+     - dFDA operations: `{python} format_currency(DFDA_ANNUAL_OPEX)`/year
      - Clinical trial subsidies: ~`{python} format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MIN)`-`{python} format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MAX)`/year
      - Other medical research: Remaining funds
 
@@ -346,8 +346,8 @@ This is a **dominant intervention** - it makes society richer while saving lives
 |-------------|------------:|---------------:|------:|----------:|----------:|-------|
 | **Conservative (All Costs)** | `{python} format_currency(SENSITIVITY_TOTAL_COSTS_CENTRAL)` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **`{python} f"${ICER_CONSERVATIVE_ALL_COSTS:,.0f}"`** | **`{python} f"${COST_PER_LIFE_CONSERVATIVE_ALL_COSTS:.2f}M"`** | Counts all upfront costs |
 | **Investor-Funded** | $0 | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **`{python} f"${ICER_INVESTOR_FUNDED:,.0f}"`** | **`{python} f"${COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"`** | Campaign funded by VICTORY bonds |
-| **Opportunity Cost** | `{python} format_billions(DIH_TREASURY_MILITARY_REDIRECT)` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **`{python} f"${ICER_OPPORTUNITY_COST:,.0f}"`** | **`{python} f"${COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"`** | Counts redirected military spending |
-| **Waste Conversion** | `{python} f"-{format_billions(DIH_TREASURY_MILITARY_REDIRECT)}*"` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **Undefined** | **Undefined** | Military spending creates negative value |
+| **Opportunity Cost** | `{python} format_billions(TREATY_ANNUAL_FUNDING)` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **`{python} f"${ICER_OPPORTUNITY_COST:,.0f}"`** | **`{python} f"${COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"`** | Counts redirected military spending |
+| **Waste Conversion** | `{python} f"-{format_billions(TREATY_ANNUAL_FUNDING)}*"` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **Undefined** | **Undefined** | Military spending creates negative value |
 
 *Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
 
