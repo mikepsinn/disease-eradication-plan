@@ -4,7 +4,6 @@ description: "Master economic impact table"
 format:
   html:
     code-fold: true
-jupyter: dih-project-kernel
 ---
 
 ```{python}

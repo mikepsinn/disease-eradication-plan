@@ -4,7 +4,6 @@ description: "All DIH economic models and calculations in one place"
 format:
   html:
     code-fold: true
-jupyter: dih-project-kernel
 ---
 
 ```{python}

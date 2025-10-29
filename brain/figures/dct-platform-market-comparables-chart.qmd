@@ -4,7 +4,6 @@ description: "DCT market analysis"
 format:
   html:
     code-fold: true
-jupyter: dih-project-kernel
 ---
 
 ```{python}

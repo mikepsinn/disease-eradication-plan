@@ -4,7 +4,6 @@ description: "Reusable visualizations for dFDA cost-benefit analysis and return 
 format:
   html:
     code-fold: true
-jupyter: dih-project-kernel
 ---
 
 ```{python}

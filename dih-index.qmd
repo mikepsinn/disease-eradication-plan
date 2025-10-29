@@ -7,7 +7,6 @@ format:
     theme: none
     css: dih-styles.css
     toc: false
-jupyter: dih-project-kernel
 ---
 
 ```{python}

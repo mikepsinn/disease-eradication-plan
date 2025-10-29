@@ -14,7 +14,6 @@ format:
     height: 1080
   pptx:
     incremental: false
-jupyter: dih-project-kernel
 execute:
   echo: false
   warning: false
