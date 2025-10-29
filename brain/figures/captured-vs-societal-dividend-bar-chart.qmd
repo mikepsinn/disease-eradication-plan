@@ -51,7 +51,7 @@ def add_modern_watermark(fig):
 #| echo: false
 dividends_data = {
     'Type': ['Captured\nDividend', 'Total Societal\nDividend'],
-    'Amount ($B)': [TREATY_ANNUAL_FUNDING, SOCIETAL_DIVIDEND]
+    'Amount ($B)': [TREATY_ANNUAL_FUNDING, PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT]
 }
 dividends_df = pd.DataFrame(dividends_data)
 
@@ -83,7 +83,7 @@ ax.set_ylabel('Annual Value (Billions USD)', fontsize=14, color=colors['text'], 
 ax.set_xlabel('')
 
 # Clean axis formatting
-ax.set_ylim(0, SOCIETAL_DIVIDEND * 1.12)
+ax.set_ylim(0, PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT * 1.12)
 
 # Modern layout
 plt.tight_layout()

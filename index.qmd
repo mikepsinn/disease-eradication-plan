@@ -212,7 +212,7 @@ Just clear data about what actually happens.
 *You're Not Delusional*
 
 - **🔬 Oxford Already Did It**: [The RECOVERY trial](brain/book/appendix/recovery-trial.qmd) tested 6 treatments on 40,000 patients across 176 hospitals for `{python} format_currency(RECOVERY_TRIAL_COST_PER_PATIENT / 1_000_000_000)`/patient (vs FDA's `{python} format_currency(TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K / 1_000_000_000)`)—proving `{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction at scale. Not in theory. In reality. With actual dying people who became not-dying people.
-- **📈 We've Done This Before**: [After WW2, we cut military spending by `{python} format_percentage(POST_WW2_MILITARY_CUT_PCT)`](brain/book/proof/historical-precedents.qmd) and accidentally created the greatest economic boom in history. You're only asking for `{python} format_percentage(TREATY_REDUCTION_PCT)`. Even drunk people can spare 1%. We trust the same people who lost $2.5 trillion to suddenly find it when it's for bombs.
+- **📈 We've Done This Before**: [After WW2, we cut military spending by `{python} format_percentage(POST_WW2_MILITARY_CUT_PCT)`](brain/book/proof/historical-precedents.qmd) and accidentally created the greatest economic boom in history. You're only asking for `{python} format_percentage(TREATY_REDUCTION_PCT)`. 
 
 {{< video <https://www.youtube.com/watch?v=Gg-jvHynP9Y> title="President Eisenhower's Farewell Address - Military-Industrial Complex Warning" >}}
 
@@ -295,7 +295,7 @@ It's like buying Manhattan for \$24 worth of beads, except legal and you're savi
 
 You need [`{python} format_percentage(GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT)` of humanity](./brain/book/references.qmd#3-5-rule) to vote yes on this question: "Humanity currently spends 40 times more on military than on medical research. Should nations redirect 1% of military spending to help cure disease?"
 
-Spoiler: They'll say yes. Even Florida will say yes.
+Spoiler: They'll say yes.
 
 **Why 3.5%?**
 
