@@ -1,6 +1,6 @@
 ---
 title: 🚀 Overview
-description: How to (Legally) Bribe Humanity to Redirect 1% of Military Spending to Radically Accelerate Medical Progress
+description: How to Bribe Humanity to Redirect 1% of Military Spending to Radically Accelerate Medical Progress
 published: true
 tags:
   - war-on-disease
@@ -31,38 +31,97 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-### ⚡ TL;DR
 
-*For People Who Can't Even*
+**On the Current Situation**
 
-**Your 60-Second Guide to Weaponizing Greed**
+Every single day, 150,000 humans stop being alive from diseases we could probably fix if we tried. That's like if everyone in a medium-sized city just exploded, except quieter and sadder and nobody invades anyone about it.
 
-**The Problem:** We're all going to die from something stupid and preventable. Humanity spends 40X more on bombs and stuff than trying to cure every disease combined. This is inefficient.
+Meanwhile, humanity spends 40 times more on bombs and wars and things than attempting to cure all diseases combined. 
 
-**The Solution:** Stop pretending people are good. Instead, use the universe's most abundant natural resource, human greed, to make helping sick people more profitable than murdering them.
+---
 
-**Your Mission: Mass (Legal) Bribery**
+**On How You Fix This**
 
-Your job is to borrow a `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` turn into a perpetual `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year river of cash, funded by redirecting a pathetic 1% of global military spending to curing diseases.
+Here's what you do:
 
-1.  **Get Your Initial Bribin' Money:** Invent "VICTORY Bonds," a financial tool that gives investors a `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return. This is more profitable than trafficking cocaine and significantly more legal. You sell `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` of these bonds to rich people who would prefer to be significantly richer.
-2.  **Bribe the Public:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY)` to build a voting bloc of `{python} f"{TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f}"` million people demanding that their governments redirect 1% of military spending to cure disease. This creates a political threat.
-3.  **Bribe the Bribers:** You give defense lobbyists millions in bonds. Their `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return (that only come if the 1% treaty is preserved) makes their old bribes look pathetic. They now work for you.
-4.  **Bribe Some Politicians:** You spend `{python} format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS)` on Super PACs to ensure politicians face a choice: either take your money and support the treaty, or get voted out by `{python} f"{TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS:,.0f}"` million angry people who want to live.
-5.  **Profit from Victory:** The treaty passes. The `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year river of cash is turned on forever. Everyone who helped gets 10% of that money forever (producing the `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` return). Use the remaining `{python} format_percentage(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_PCT)` to `{python} TRIAL_COST_REDUCTION_FACTOR`x the rate of medical progress by subsidizing hyper efficient pragmatic decentralized clinical trials.
+**Step 1:** You invent something called "VICTORY Bonds." These are like regular bonds, except instead of funding wars, they fund not-dying-from-horrible-diseases. This is called "disruption," or as some people call it, "having slightly better priorities than a concussed badger."
 
-**Why Everyone Gets Rich From Not Dying from Terrible Diseases:**
+You sell these bonds to rich people for $1 billion. In return, they get 270% annual returns—which is better than cocaine trafficking and significantly more legal. The rich people give you the billion dollars because they've done the math, and dying from preventable diseases is bad for their retirement plans.
 
-- **Defense contractors:** Keep `{python} format_percentage(1 - TREATY_REDUCTION_PCT)` of their murder budget (`{python} format_billions(GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024)`) AND get `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns. They'll kill you with kindness instead.
-- **Pharma companies:** Stop paying `{python} format_currency(TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K / 1_000_000_000)` per trial patient. Patients PAY THEM instead. It's like Uber but for not dying.
-- **Politicians:** Get campaign money + avoid explaining to voters why they chose bombs over grandma's cancer treatment.
-- **Insurance companies:** Prefer you either dead or immortal. Anything but expensively lingering.
-- **You:** Get access to subsidized, cutting-edge treatments + your trial participation determines what gets funded. Your choices, not committees.
+**Step 2:** You use $200 million of that billion to convince 280 million regular people to click "yes" on a website that asks: "Would you like nations to redirect 1% of military spending to cure diseases?" 
 
-**The Math:** Every \$1 invested in an open global decentralized clinical trial marketplace creates [`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` in benefits](brain/book/appendix/dfda-cost-benefit-analysis.qmd).
-(better than smallpox eradication's `{python} format_roi(SMALLPOX_ERADICATION_ROI)` ROI).
+This costs about 50 cents per person, which is cheaper than a candy bar and achieves more than most political movements that involve shouting at things.
 
-**Keep reading:** How Oxford proved `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials work, why cutting military spending historically creates prosperity, how the legal structure avoids prison, and why defense contractors actually want this.
+**Step 3:** You spend another $250 million bribing the lobbyists who currently bribe Congress. You give them VICTORY bonds that pay 270% returns. They look at their current 8% defense contractor returns, look at your 270% returns, do some thinking, and suddenly discover they've always loved curing diseases. It's a miracle.
+
+**Step 4:** You use $250 million on Super PACs to help politicians understand that 280 million angry voters want to live. Politicians, being fond of their jobs, experience a sudden moral awakening about the importance of healthcare.
+
+**Step 5:** The treaty passes. Every nation redirects 1% of military spending ($27 billion annually) to something called the "Decentralized Institute of Health." This funds clinical trials that cost 82 times less than normal, because it turns out you don't need seventeen years of paperwork to figure out if a medicine or not.
+
+The VICTORY bondholders get 10% of that $27 billion river of money. Forever. That's where the 270% returns come from. 
+
+They say money can't buy happiness. But apparently it can buy 270% annual returns and also the end of preventable diseases, which is pretty close.
+
+---
+
+**On Why This Works**
+
+The whole system runs on something called "aligned incentives," which is a fancy way of saying "everyone gets rich by not being dead."
+
+- Defense contractors keep 99% of their murder budget and get 270% returns on bonds
+- Pharmaceutical companies stop paying $48,000 per trial patient and start getting PAID by patients instead
+- Insurance companies realize healthy people file fewer claims than dead people
+- Politicians get re-elected by voters who prefer living
+- Regular people get access to treatments that might cure them
+- Rich people get 270% returns, which beats everything except time travel or knowing yesterday's lottery numbers
+
+An import part is that nobody has to stop being selfish. You just redirect everyone's selfishness toward curing diseases instead of making missiles.
+
+It's like if you trained a pack of wolves to herd sheep by convincing them the sheep were made of money. Except in this case, the sheep are diseases and the money is money.
+
+---
+
+**On the Alternative**
+
+If you don't do this, here's what happens:
+
+150,000 people continue dying every day from preventable diseases. That's fifty 9/11s. Daily. Nobody mentions it at breakfast.
+
+Your cancer goes uncured because the smart people who could have fixed it are busy designing missiles that cost more than hospitals.
+
+Eventually everyone dies from something stupid like aging, which is just cellular damage we're too cheap to fix because we spent the money on nuclear submarines instead.
+
+Your grandchildren ask why you didn't do anything, and you have to explain that at the time, having enough nuclear bombs to end civilization twenty times seemed more important than ending civilization zero times.
+
+---
+
+**On Taking Action**
+
+The way you start is simple:
+
+1. Go to DIH.earth
+2. Click the button that says "I prefer not dying from horrible diseases"
+3. Tell other humans about it
+4. Wait for the rich people to do their thing with the bonds
+5. Watch as diseases get cured because you made clicking a button slightly profitable
+
+History shows that when 3.5% of a population agrees on something, change happens. Right now you need 280 million people to click "yes." That's 3.5% of humanity.
+
+If humans can coordinate to invent things like "lines" and "not eating each other," you can probably get them to coordinate on "let's not die from preventable diseases."
+
+---
+
+They say the future is uncertain. But one thing is certain: you're going to die. The question is whether you die from something stupid that we could have fixed, or from something interesting like being attacked by a robot from the future, which at least makes for a better story.
+
+The choice is yours. Well, technically it's everyone's. But you can start by being the first idiot to sign up.
+
+After all, every revolution starts with someone doing something slightly less stupid than what everyone else is doing.
+
+And who knows? Maybe in a hundred years, people will look back and wonder why it took us so long to figure out that curing diseases is more fun than building bombs.
+
+Or maybe they won't, because they'll be too busy being immortal and wondering what "disease" even means.
+
+Either way, it beats the alternative.
 
 ---
 
