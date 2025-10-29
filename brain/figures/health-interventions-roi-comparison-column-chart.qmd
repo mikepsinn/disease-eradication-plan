@@ -17,6 +17,7 @@ from economic_parameters import *
 ```
 
 ```{python}
+#| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path

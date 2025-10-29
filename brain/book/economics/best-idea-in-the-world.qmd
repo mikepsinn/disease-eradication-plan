@@ -39,7 +39,7 @@ Not hyperbole. Not marketing. Just math.
 
 **No other idea in human history achieves infinite return on investment:**
 
-$$\text{ROI} = \frac{\text{Annual Benefits}}{\text{New Spending}} = \frac{`{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)`}{0} = \infty$$
+$$\text{ROI} = \frac{\text{Annual Benefits}}{\text{New Spending}} = \frac{\$`{python} format_billions_latex(TREATY_TOTAL_ANNUAL_BENEFITS)`}{0} = \infty$$
 
 **Why it's infinite:** The treaty redirects money that's already being spent on killing people to cure them instead. Zero new cost, `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` in annual benefits.
 

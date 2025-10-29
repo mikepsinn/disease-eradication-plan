@@ -280,7 +280,7 @@ How? The treaty redirects `{python} format_billions(TREATY_ANNUAL_FUNDING)` annu
 The math:
 
 $$
-\text{Annual Return} = `{python} format_billions(TREATY_ANNUAL_FUNDING)` \times 10\% = `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`
+\text{Annual Return} = \$`{python} format_billions_latex(TREATY_ANNUAL_FUNDING)` \times 10\% = \$`{python} format_billions_latex(VICTORY_BOND_ANNUAL_PAYOUT)`
 $$
 
 $$
@@ -403,7 +403,7 @@ When you redirect military money instead of asking for new money, the ROI become
 **The kindergarten math:**
 
 $$
-\text{ROI} = \frac{\text{Annual Benefits}}{\text{New Spending}} = \frac{`{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)`}{0} = \infty
+\text{ROI} = \frac{\text{Annual Benefits}}{\text{New Spending}} = \frac{\$`{python} format_billions_latex(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)`}{0} = \infty
 $$
 
 Even a congressman can understand this. Probably.
@@ -411,7 +411,7 @@ Even a congressman can understand this. Probably.
 **Where the `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` comes from:**
 
 $$
-\text{Total Benefit} = \underbrace{`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`}_{\text{Peace Dividend}} + \underbrace{`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`}_{\text{Health Dividend}} = `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)`
+\text{Total Benefit} = \underbrace{\$`{python} format_billions_latex(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`}_{\text{Peace Dividend}} + \underbrace{\$`{python} format_billions_latex(DFDA_GROSS_SAVINGS_ANNUAL)`}_{\text{Health Dividend}} = \$`{python} format_billions_latex(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)`
 $$
 
 - Peace dividend: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` (from not building things that explode)

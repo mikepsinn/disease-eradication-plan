@@ -203,7 +203,7 @@ $$
 $$
 
 $$
-\text{Alternative GDP Growth} = (`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` \times 1.6) - (`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` \times 0.6) = `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`
+\text{Alternative GDP Growth} = (\$`{python} format_billions_latex(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` \times 1.6) - (\$`{python} format_billions_latex(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` \times 0.6) = \$`{python} format_billions_latex(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`
 $$
 
 
@@ -337,7 +337,7 @@ Every year.
 With 8 billion people on the planet, the math is simple and depressing.
 
 $$
-\text{Direct military spending per person: } `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` \div 8.0\text{B} = \text{\$340/year}
+\text{Direct military spending per person: } \$`{python} format_billions_latex(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` \div 8.0\text{B} = \text{\$340/year}
 $$
 
 **Direct military spending per person is \$340/year.** This is what your government directly spends on military hardware and personnel on your behalf.
@@ -380,7 +380,7 @@ The final equation is simple. When you divide the number of deaths by the amount
 $$
 \begin{aligned}
 \text{Efficiency}_{\text{war}} &= \text{Deaths}_{\text{produced}} \div \text{Dollars}_{\text{spent}} \\
-&= 244,600 \div `{python} format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)` \\
+&= 244,600 \div \$`{python} format_billions_latex(GLOBAL_ANNUAL_WAR_TOTAL_COST)` \\
 &= 0.000021 \text{ deaths per dollar}
 \end{aligned}
 $$

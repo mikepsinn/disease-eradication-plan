@@ -16,7 +16,7 @@ tags: [style-guide, writing, tone, voice, contributing]
 
 **The Tone: Dark Humor Meets Practical Hope**
 
-We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Douglas Adams and Kurt Vonnegut explaining economics to drunk people at a funeral.
+We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Philomena Cunk, Jack Handey, Douglas Adams and Kurt Vonnegut explaining economics to drunk people at a funeral.
 
 ## Core Principles
 

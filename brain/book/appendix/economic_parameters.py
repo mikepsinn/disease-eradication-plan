@@ -542,6 +542,19 @@ def format_qalys(value):
     """
     return f"{value:,.0f}"
 
+def format_billions_latex(value):
+    """Format a number as billions with B suffix for LaTeX (no $ sign to avoid escaping issues)
+
+    Args:
+        value: Number in billions
+
+    Returns:
+        Formatted string like "163.6B" for LaTeX compatibility (without $ to avoid escaping)
+    """
+    if value >= 1000:
+        return f"{value/1000:,.1f}T"
+    return f"{value:,.1f}B"
+
 # --- Module Initialization ---
 
 if __name__ == "__main__":
