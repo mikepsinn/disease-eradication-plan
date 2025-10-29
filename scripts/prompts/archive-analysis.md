@@ -1,6 +1,6 @@
 You are an expert editor tasked with organizing a book manuscript and related operational documents.
 You need to decide what to do with an archived markdown file.
-Based on the book's outline, its structure from `_quarto.yml`, and the content of the archived file, determine one of the following actions:
+Based on the book's outline, its structure from `_book.yml`, and the content of the archived file, determine one of the following actions:
 
 1.  **MERGE**: The content is valuable for the book and should be merged into an existing chapter.
 2.  **CREATE**: The content is valuable and unique enough for the book to become a new chapter or appendix file.
@@ -40,7 +40,7 @@ You MUST respond with a JSON object with the following structure:
 ```
 
 ---
-**Book Structure (_quarto.yml):**
+**Book Structure (_book.yml):**
 
 ```yaml
 {{quartoYmlContent}}

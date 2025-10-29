@@ -8,9 +8,9 @@ interface FileMove {
   reason: string;
 }
 
-// Function to check if a file is in _quarto.yml
+// Function to check if a file is in _book.yml
 async function isInQuartoYml(filePath: string): Promise<boolean> {
-  const quartoContent = await fs.readFile('_quarto.yml', 'utf-8');
+  const quartoContent = await fs.readFile('_book.yml', 'utf-8');
   return quartoContent.includes(filePath);
 }
 
@@ -35,7 +35,7 @@ async function findOrphanedFiles(): Promise<FileMove[]> {
 
       // Determine the new name based on the original folder
       let newName = basename;
-      let reason = 'Orphaned file not in _quarto.yml';
+      let reason = 'Orphaned file not in _book.yml';
 
       // Special naming for certain folders
       if (folder === 'reference') {
@@ -58,9 +58,9 @@ async function findOrphanedFiles(): Promise<FileMove[]> {
     }
   }
 
-  // Also check for files that are in _quarto.yml but in wrong sections
+  // Also check for files that are in _book.yml but in wrong sections
   // (e.g., reference files listed in main chapters)
-  const quartoContent = await fs.readFile('_quarto.yml', 'utf-8');
+  const quartoContent = await fs.readFile('_book.yml', 'utf-8');
 
   // Find reference files that are in the chapters section (not appendices)
   const chapterSection = quartoContent.split('appendices:')[0];
@@ -156,9 +156,9 @@ async function updateReferences(oldPath: string, newPath: string): Promise<numbe
   return updatedCount;
 }
 
-// Function to update _quarto.yml
+// Function to update _book.yml
 async function updateQuartoYml(moves: FileMove[]) {
-  const quartoPath = '_quarto.yml';
+  const quartoPath = '_book.yml';
   let content = await fs.readFile(quartoPath, 'utf-8');
 
   // Track which files we're adding to appendices
@@ -203,17 +203,17 @@ async function updateQuartoYml(moves: FileMove[]) {
   }
 
   await fs.writeFile(quartoPath, content, 'utf-8');
-  console.log('\n✓ Updated _quarto.yml');
+  console.log('\n✓ Updated _book.yml');
 }
 
 async function main() {
-  console.log('🔍 Scanning for orphaned files not in _quarto.yml...\n');
+  console.log('🔍 Scanning for orphaned files not in _book.yml...\n');
 
   // Find all orphaned files
   const filesToMove = await findOrphanedFiles();
 
   if (filesToMove.length === 0) {
-    console.log('✅ No orphaned files found! All files are properly referenced in _quarto.yml');
+    console.log('✅ No orphaned files found! All files are properly referenced in _book.yml');
     return;
   }
 
@@ -282,9 +282,9 @@ async function main() {
     }
   }
 
-  // Update _quarto.yml
+  // Update _book.yml
   console.log('\n' + '='.repeat(60));
-  console.log('Updating _quarto.yml...');
+  console.log('Updating _book.yml...');
   await updateQuartoYml(filesToMove);
 
   // Summary
@@ -293,11 +293,11 @@ async function main() {
   console.log(`Summary:`);
   console.log(`  - Moved ${filesToMove.length} files to appendix`);
   console.log(`  - Updated ${totalRefsUpdated} file references`);
-  console.log(`  - Updated _quarto.yml\n`);
+  console.log(`  - Updated _book.yml\n`);
 
   console.log('Next steps:');
   console.log('1. Run "git status" to review all changes');
-  console.log('2. Review _quarto.yml and clean up commented entries');
+  console.log('2. Review _book.yml and clean up commented entries');
   console.log('3. Test that the book still builds correctly');
   console.log('4. Commit the changes');
 }

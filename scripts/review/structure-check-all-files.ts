@@ -4,9 +4,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function main() {
-  console.log('Getting main chapter files from _quarto.yml...');
+  console.log('Getting main chapter files from _book.yml...');
 
-  // Get only main chapter files from _quarto.yml using the reusable function
+  // Get only main chapter files from _book.yml using the reusable function
   const { chapters: mainChapterFiles } = await parseQuartoYml();
   console.log(`Found ${mainChapterFiles.length} main chapter files (excluding appendices)`);
 

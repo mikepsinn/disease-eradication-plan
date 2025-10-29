@@ -88,9 +88,9 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
 
   let bookStructure = '';
   try {
-    bookStructure = await fs.readFile('_quarto.yml', 'utf-8');
+    bookStructure = await fs.readFile('_book.yml', 'utf-8');
   } catch (error) {
-    console.warn('Could not load _quarto.yml');
+    console.warn('Could not load _book.yml');
   }
 
   let prompt = await fs.readFile('scripts/prompts/fact-checker.md', 'utf-8');
@@ -390,7 +390,7 @@ async function mergeContentWithLLM(archivedContent: string, targetFilePath: stri
 export async function analyzeArchivedFile(filePath: string): Promise<void> {
   console.log(`Analyzing archived file: ${filePath}`);
   const archivedContent = await fs.readFile(filePath, 'utf-8');
-  const quartoYmlContent = await fs.readFile('_quarto.yml', 'utf-8');
+  const quartoYmlContent = await fs.readFile('_book.yml', 'utf-8');
   const bookOutline = await fs.readFile('OUTLINE.MD', 'utf-8');
 
   let prompt = await fs.readFile('scripts/prompts/archive-analysis.md', 'utf-8');
@@ -428,7 +428,7 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
       const newFilePath = response.newFilePath;
       console.log(`Decision: CREATE new file ${newFilePath}. Reason: ${response.reason}`);
       await saveFile(newFilePath, response.newFileContent);
-      console.log(`TODO: Manually add ${newFilePath} to _quarto.yml`);
+      console.log(`TODO: Manually add ${newFilePath} to _book.yml`);
       // await fs.unlink(filePath);
       console.log(`Successfully created ${newFilePath}.`);
       break;

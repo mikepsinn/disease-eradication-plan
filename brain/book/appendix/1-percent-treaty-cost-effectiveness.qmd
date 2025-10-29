@@ -18,7 +18,7 @@ jupyter: dih-project-kernel
 import sys
 import os
 
-# Quarto executes from project root (execute-dir: project in _quarto.yml)
+# Quarto executes from project root (execute-dir: project in _book.yml)
 # So we need to add brain/book/appendix to the path
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:

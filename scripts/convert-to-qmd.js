@@ -111,12 +111,12 @@ function updateReadme() {
   }
 }
 
-// Step 5: Update _quarto.yml if needed
+// Step 5: Update _book.yml if needed
 function updateQuartoConfig() {
-  const quartoPath = '_quarto.yml';
+  const quartoPath = '_book.yml';
 
   if (!fs.existsSync(quartoPath)) {
-    log('_quarto.yml not found', 'yellow');
+    log('_book.yml not found', 'yellow');
     return;
   }
 
@@ -130,9 +130,9 @@ function updateQuartoConfig() {
   if (content !== originalContent) {
     fs.writeFileSync(quartoPath, content, 'utf8');
     const replacements = (content.match(/\.qmd/g) || []).length - (originalContent.match(/\.qmd/g) || []).length;
-    log(`Updated ${replacements} references in _quarto.yml`, 'green');
+    log(`Updated ${replacements} references in _book.yml`, 'green');
   } else {
-    log('No updates needed in _quarto.yml', 'yellow');
+    log('No updates needed in _book.yml', 'yellow');
   }
 }
 
@@ -159,7 +159,7 @@ function main() {
     log('\n--- Step 3: Updating README.md ---', 'blue');
     updateReadme();
 
-    log('\n--- Step 4: Updating _quarto.yml ---', 'blue');
+    log('\n--- Step 4: Updating _book.yml ---', 'blue');
     updateQuartoConfig();
   }
 

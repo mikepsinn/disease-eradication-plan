@@ -23,7 +23,7 @@ lastStructureCheckHash: 9b822df76cfb6100b8586cf74d9e7554e666c59c8bdafca36ddaa821
 import sys
 import os
 
-# Quarto executes from project root (execute-dir: project in _quarto.yml)
+# Quarto executes from project root (execute-dir: project in _book.yml)
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
