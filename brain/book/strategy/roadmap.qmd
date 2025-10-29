@@ -1,6 +1,7 @@
 ---
 title: 🗺️ The Roadmap to End War and Disease
-description: The unified, multi-phase strategy to achieve the 1% Treaty, from initial funding to global impact.
+subtitle: "How to Actually Do This (Not Just Talk About It on Reddit)"
+description: "The step-by-step guide to bootstrapping a global revolution, bribing the powerful, and hijacking humanity's budget for the forces of good."
 published: true
 tags:
   - roadmap
@@ -28,178 +29,46 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The Unified Strategy: A 36-Month Plan from Concept to Global Impact
+So, you've seen the problem and the solution. Now for the hard part: how to actually pull it off.
 
-This document is the strategic blueprint for executing the financial and political strategy outlined in the main overview. While the core mission is to achieve the 1% Treaty with minimal long-term effort from the core team, this roadmap details the necessary, front-loaded work required to build the political and financial leverage to make that possible.
+This isn't a vague call to "raise awareness." This is a detailed, 36-month roadmap to execute the most ambitious political and financial arbitrage in human history. You're not just asking for change; you're building the machine that makes change inevitable.
 
-It outlines the comprehensive, multi-phase plan that integrates the financial, operational, and philanthropic strategies.
+Here's the high-level strategy.
 
-### Operational Philosophy: Start Small, Then Disappear
+### The Financial Roadmap: From $0 to a Billion-Dollar War Chest
 
-The core philosophy is to hire a few very smart people to build the system, then get out of the way. Victory is achieved when the system works without central management.
+You want to end war and disease. You need a `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` war chest. You have $0. Here's how you get it.
 
-### High-Level Key Performance Indicators (KPIs)
+1.  **Phase 1: The Proof of Concept (Months 1-3).** First, you prove the core idea works on a small scale. You build a simple version of the **[Wishocracy](../solution/wishocracy.qmd)** and see if anyone actually uses it. You use that initial traction to raise a small seed round from angel investors who understand the brutal math of political arbitrage: bet a little to make a lot.
+2.  **Phase 2: Scale and Lobby (Months 4-18).** With proof that people will vote and investors will invest, you raise a larger venture round. This money scales the referendum to millions of users and hires the first professional lobbyists. The goal is to prove that your growing army of voters can be aimed at politicians to make them listen.
+3.  **Phase 3: The Bond Offering (Months 19-36).** This is the final boss. You launch the **[VICTORY Bonds](../economics/victory-bonds.qmd)**, a high-risk, high-return investment vehicle designed to raise the full `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`. This is the money you use to overwhelm the opposition, run a global media blitz, and get the **[1% Treaty](../solution/1-percent-treaty.qmd)** signed.
 
-Unlike government programs that hide failure, we measure success transparently. These are the long-term targets the entire roadmap is designed to achieve.
+### The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund at the Same Time
 
-#### Year 1 Targets
+To win, you need to fight on three fronts: moral (charity), political (lobbying), and financial (investment). The problem is, legally, no single organization can do all three.
 
-- 1,000+ active trials launched
-- 100,000+ patients enrolled
-- 10+ diseases with breakthrough treatments
-- `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction in trial costs demonstrated
-- $1B+ in researcher revenue generated
+So, you build a hybrid machine.
 
-#### Year 5 Targets
+-   **The Charity (501c3):** This is the "brains." It does the research and education, and it's where big foundations can make tax-deductible donations.
+-   **The Lobbying Group (501c4):** This is the "sword." It takes the research from the charity and uses it to wage unlimited political warfare.
+-   **The Corporation (C-Corp):** This is the "engine." It's a for-profit entity that issues the VICTORY Bonds and funds the whole operation.
+-   **The Swiss Foundation:** This is the "soul." It's the parent organization that owns the corporation, ensuring its profits can only ever be used for the mission.
 
-- 10,000+ active trials
-- 10M+ patients enrolled
-- 100+ diseases with new treatments
-- 90% reduction in trial costs
-- $10B+ researcher revenue
-- 5+ diseases completely cured
+This structure lets you legally accept money from everyone—foundations, political donors, and Wall Street—and aim it all at the same target.
 
-#### Year 10 Targets
+### The Political Strategy: Co-Opt, Don't Compete
 
-- 100,000+ active trials
-- 100M+ patients enrolled
-- 1,000+ diseases with treatments
-- 95% trial cost reduction
-- $100B+ researcher revenue
-- 50+ diseases cured
-- Aging reversed in humans
+You cannot outspend the military-industrial complex in a head-to-head fight. So you don't. You bribe them.
+
+The strategy is simple: make it more profitable for everyone—defense contractors, politicians, insurance companies—to support the treaty than to oppose it. You use the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` from the VICTORY Bonds to offer a better deal. Their lobbyists become your lobbyists. Their political action committees become your political action committees.
+
+You combine this financial jujitsu with the overwhelming public pressure from 280 million verified voters in the global referendum. The choice for a politician becomes simple: side with the public and get rich, or side with the status quo and get voted out.
 
 ---
 
-### Phase 1: Proof of Concept (Months 1-3)
+*Ready to get to work? Here's the detailed plan:*
 
-**Goal:** Validate core assumptions before scaling. Can you actually get people to sign the treaty? Will investors fund political arbitrage? Can the tech work at scale?
-
-**Team Composition (3-5 people):**
-
-- Founder/CEO (full-time, equity)
-- Head of Growth (marketing/viral mechanics, contract-to-hire)
-- Full-Stack Engineer (build the MVP, contract)
-- Legal/Compliance Advisor (part-time, $200/hr)
-- Angel Investor Lead (unpaid, equity participation)
-
-**Tactical Execution:**
-
-1. **Week 1-2**: Incorporate Delaware C-Corp, open bank account, set up cap table
-2. **Week 3-6**: Build Wishocracy voting widget MVP (React frontend + Supabase backend, ~$15k contractor)
-3. **Week 7-8**: Launch beta with 100 friends/family, measure engagement (target: 70%+ completion rate)
-4. **Week 9-10**: Pitch 20 angels, convert 5 at $100k each ($500k total)
-5. **Week 11-12**: Launch referendum platform V1 with referral mechanics
-
-**Key Performance Indicators:**
-
-- User engagement: 70%+ complete voting session (below 50% = redesign needed)
-- Referral rate: 15%+ users recruit at least 1 friend (network effects test)
-- Investor interest: 25%+ pitch-to-close ratio (validates arbitrage thesis)
-- Technical validation: Platform handles 10K concurrent users without crashing
-- Verified votes: 10,000 within 30 days (proves concept, calculates CAC)
-
-**Critical Risks & Mitigation:**
-
-- *Risk*: Nobody cares about signing a treaty → *Mitigation*: Test 3 different value propositions (save lives, make money, fix democracy) and double down on winner
-- *Risk*: Platform can't verify identities → *Mitigation*: Start with lightweight verification (email + phone), build toward biometric later
-- *Risk*: Investors see it as charity, not investment → *Mitigation*: Lead pitch with `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns and treaty adoption game theory, not emotional appeal
-
----
-
-### Phase 2: Scale & Lobby (Months 4-18)
-
-**Goal:** Build viral referendum momentum and establish lobbying beachheads in 5 pilot countries. Prove the system can scale globally and move politicians.
-
-**Team Composition (18-22 people):**
-
-- Executive team: CEO, COO, CTO, Chief Legal Officer (4)
-- Engineering: 4 full-stack engineers, 1 DevOps, 1 Security (6)
-- Growth: Head of Growth, 2 growth marketers, 1 data analyst (4)
-- Political ops: Head of Government Affairs, 3 regional lobbyists (4)
-- Operations: 1 Finance/Admin, 1 Compliance Manager, 1 People Ops (3)
-- Board advisors: 1 former regulator, 1 defense contractor exec, 1 tech founder (unpaid)
-
-**Tactical Execution:**
-
-1. **Months 4-6**: Close $35M Series A (target 15-20 VCs, emphasize political arbitrage + `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` bond returns)
-2. **Months 7-9**: Scale engineering team, build production platform v2 with full KYC/identity verification
-3. **Months 10-12**: Launch viral referral program with $0.20/vote incentives in 3 pilot countries (start with friendly nations: Switzerland, Singapore, Estonia)
-4. **Months 13-15**: Hire lobbying firms in 5 key countries (US, UK, Germany, Japan, South Korea), coordinate messaging
-5. **Months 16-18**: Run first political pressure campaigns, demonstrate that referendum numbers translate to politician behavior change
-
-**Key Performance Indicators:**
-
-- Fundraising: $35M Series A raised (validates growth trajectory)
-- Platform scaling: Handle 500K concurrent users, 99.9% uptime
-- User acquisition: Reach 50M verified votes (CAC target: $0.50 with referral mechanics)
-- Viral coefficient (k-factor): Achieve 1.3+ (exponential organic growth)
-- Lobbying effectiveness: Get 5 politicians to publicly support the treaty (proof of concept)
-- Media coverage: 100+ major media mentions (NYT, WSJ, BBC, etc.)
-- Pilot country traction: 10%+ population in at least one small country (<5M population)
-
-**Critical Risks & Mitigation:**
-
-- *Risk*: Series A falls through → *Mitigation*: Close $2M bridge from angels, extend runway, demonstrate traction first
-- *Risk*: Platform can't scale technically → *Mitigation*: Use proven infrastructure (AWS/GCP), bring in fractional CTO with scaling experience
-- *Risk*: Referral fraud (fake votes) → *Mitigation*: Multi-factor identity verification (ID + biometric + phone), fraud detection algorithms, manual review of suspicious accounts
-- *Risk*: Politicians ignore referendum numbers → *Mitigation*: Target vulnerable seats in swing districts, demonstrate we can swing elections with independent expenditures
-- *Risk*: Foreign election law violations → *Mitigation*: Hire local legal counsel in each country before spending dollar one, firewall US operations from international
-
----
-
-### Phase 3: Bond Offering & Treaty Push (Months 19-36)
-
-**Goal:** Execute the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` bond raise, overwhelm political opposition with money and public pressure, and secure first G7 treaty ratification. This is the final battle.
-
-**Team Composition (50-75 people):**
-
-- Executive team: Same 4 + CFO for bond offering (5)
-- Engineering/Product: Scale to 10 engineers, 2 designers, 2 PMs (14)
-- Political operations: 20 lobbyists across 15 countries + 5 political strategists (25)
-- Growth/Marketing: Scale to 8-person growth team + 5 content creators (13)
-- Legal/Compliance: 4 full-time lawyers + outside counsel (4)
-- Operations/Finance: CFO, 3 finance analysts, 2 HR, 2 IT/ops (8)
-- Bond offering team: Investment bankers (contract), SEC lawyers (contract)
-
-**Tactical Execution:**
-
-1. **Months 19-21**: Launch VICTORY bond offering (Reg D 506b for accredited investors, target $500M first close)
-2. **Months 22-24**: Deploy $250M to lobbying campaigns in 20 key countries, hire top K-Street firms.
-3. **Months 25-27**: Scale referendum to 280M votes via $200M viral marketing campaign.
-4. **Months 28-30**: As part of the lobbying effort, execute targeted independent expenditure campaigns, deploying $50M in 10 swing districts to demonstrate electoral power.
-5. **Months 31-33**: Coordinate simultaneous treaty introduction in 5 G7 nations (use carrot: development aid, stick: electoral defeat)
-6. **Months 34-36**: Secure first G7 ratification, trigger cascade effect with smaller nations following
-
-**Key Performance Indicators:**
-
-- Fundraising: $1B VICTORY bond sale (first $500M within 90 days validates demand)
-- Bond Terms: Secure `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` raise on terms of bondholders receiving 10% of all future treaty inflows in perpetuity.
-- Projected Yield: Successfully communicate the projected `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual yield to investors (based on a `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)` payout from a `{python} format_billions(TREATY_ANNUAL_FUNDING)` treaty).
-- Referendum scale: 280M votes (3.5% global population = unstoppable political pressure)
-- Lobbying ROI: $250M spent → 100+ politicians publicly supporting (cost per politician: $2.5M)
-- Electoral demonstration: Win or swing 5+ elections with independent expenditures (proves electoral threat is real)
-- Treaty traction: 20+ nations with pending legislation, 5+ with serious committee consideration
-- G7 ratification: At least 1 G7 nation (US, UK, Germany, France, Japan, Canada, Italy) ratifies treaty
-
-**Critical Risks & Mitigation:**
-
-- *Risk*: Bond offering fails (can't raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)`) → *Mitigation*: Do $500M first close to prove concept, then $500M second close; accept slower timeline if needed; offer better terms (12% instead of 10%)
-- *Risk*: SEC blocks bond offering → *Mitigation*: Full Reg D compliance from day 1, hire top securities lawyers, file months in advance, have backup offshore offering ready
-- *Risk*: Opposition outspends us ($300M defense lobby → $500M) → *Mitigation*: Don't match dollar-for-dollar; use smarter targeting (swing districts), co-opt their lobbyists with VICTORY bonds, make it more profitable to support us
-- *Risk*: First treaty vote fails publicly → *Mitigation*: Never bring treaty to vote unless you have the votes counted; start with friendly small countries (Iceland, Estonia, Singapore) to build momentum before tackling G7
-- *Risk*: Media backlash ("foreign money buying elections") → *Mitigation*: US political operations 100% US-funded and firewalled, emphasize grassroots referendum support (280M people), make opponents look like they're opposing public will
-- *Risk*: Team burnout/attrition in high-pressure campaign → *Mitigation*: Competitive pay (top 10% for role), clear equity/bonus tied to treaty success, strong culture of mission-driven work, hire for resilience
-
----
-
-**Note**: Executing this roadmap requires a hybrid legal structure (501c3, 501c4, C-Corp, Swiss Foundation) to handle the different types of funding and operations. The complete legal architecture is detailed in [The Right Tools for the Job: A Hybrid Legal Architecture](../legal/legal-framework.qmd).
-
----
-
-### Risk Management & Mitigation
-
-* **Execution Risk:** Mitigated by hiring a small, elite team and leveraging an advisory board of experts.
-* **Timeline Risk:** Mitigated by a phased approach with clear gates and early wins in smaller countries.
-* **Legal & Political Risk:** Mitigated by a multi-jurisdiction compliance strategy from Day 1 and the use of massive financial incentives to align political actors.
-* **Capture/Corruption Risk:** Mitigated by transparent, algorithmic allocation of funds based on verifiable health outcomes.
+- **[The Legal Framework](../legal/legal-framework.qmd):** How to build the four-part legal machine.
+- **[VICTORY Bonds](../economics/victory-bonds.qmd):** The investment vehicle that funds the revolution.
+- **[The Global Referendum](../strategy/global-referendum.qmd):** How to run a planetary vote.
+- **[Getting Started](../call-to-action/three-actions.qmd):** What you can do in the next three minutes.
