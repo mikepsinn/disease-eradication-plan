@@ -320,22 +320,22 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Parameter | Conservative | Central | Optimistic |
 |-----------|-------------:|--------:|------------:|
-| **Peace dividend** | `{python} format_billions(SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE)` | `{python} format_billions(SENSITIVITY_PEACE_DIVIDEND_CENTRAL)` | `{python} format_billions(SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC)` |
-| **dFDA R&D savings** | `{python} format_billions(SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE)` | `{python} format_billions(SENSITIVITY_DFDA_SAVINGS_CENTRAL)` | `{python} format_billions(SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC)` |
-| **Total benefits** | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE)` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC)` |
-| **Campaign costs/yr** | `{python} format_currency(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE)` | `{python} format_currency(SENSITIVITY_CAMPAIGN_COST_CENTRAL)` | `{python} format_currency(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC)` |
-| **dFDA ops costs/yr** | `{python} format_currency(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)` | `{python} format_currency(SENSITIVITY_DFDA_OPEX_CENTRAL)` | `{python} format_currency(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)` |
-| **Total costs/yr** | `{python} format_currency(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)` | `{python} format_currency(SENSITIVITY_TOTAL_COSTS_CENTRAL)` | `{python} format_currency(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC)` |
-| **Peace QALYs** | `{python} format_qalys(SENSITIVITY_PEACE_QALYS_CONSERVATIVE)` | `{python} format_qalys(SENSITIVITY_PEACE_QALYS_CENTRAL)` | `{python} format_qalys(SENSITIVITY_PEACE_QALYS_OPTIMISTIC)` |
-| **dFDA QALYs** | `{python} format_qalys(SENSITIVITY_DFDA_QALYS_CONSERVATIVE)` | `{python} format_qalys(SENSITIVITY_DFDA_QALYS_CENTRAL)` | `{python} format_qalys(SENSITIVITY_DFDA_QALYS_OPTIMISTIC)` |
-| **Total QALYs** | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE)` | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CENTRAL)` | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC)` |
+| **Peace dividend** | `{python} format_billions(SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE)` | `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` | `{python} format_billions(SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC)` |
+| **dFDA R&D savings** | `{python} format_billions(SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE)` | `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` | `{python} format_billions(SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC)` |
+| **Total benefits** | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE)` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC)` |
+| **Campaign costs/yr** | `{python} format_currency(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE)` | `{python} format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)` | `{python} format_currency(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC)` |
+| **dFDA ops costs/yr** | `{python} format_currency(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)` | `{python} format_currency(DFDA_ANNUAL_OPEX)` | `{python} format_currency(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)` |
+| **Total costs/yr** | `{python} format_currency(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)` | `{python} format_currency(TREATY_TOTAL_ANNUAL_COSTS)` | `{python} format_currency(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC)` |
+| **Peace QALYs** | `{python} format_qalys(SENSITIVITY_PEACE_QALYS_CONSERVATIVE)` | `{python} format_qalys(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)` | `{python} format_qalys(SENSITIVITY_PEACE_QALYS_OPTIMISTIC)` |
+| **dFDA QALYs** | `{python} format_qalys(QALYS_TOTAL_CONSERVATIVE)` | `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` | `{python} format_qalys(QALYS_TOTAL_OPTIMISTIC)` |
+| **Total QALYs** | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE)` | `{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC)` |
 
 ### ICER Across Scenarios
 
 | Scenario | Net Benefit | QALYs | ICER/QALY | Cost/Life |
 |----------|------------:|------:|-----------:|----------:|
 | **Conservative** | `{python} format_billions(SENSITIVITY_NET_BENEFIT_CONSERVATIVE)` | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE)` | **`{python} f"${SENSITIVITY_ICER_CONSERVATIVE:,.0f}"`** | **`{python} f"${SENSITIVITY_COST_PER_LIFE_CONSERVATIVE:.2f}M"`** |
-| **Central** | `{python} format_billions(SENSITIVITY_NET_BENEFIT_CENTRAL)` | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CENTRAL)` | **`{python} f"${SENSITIVITY_ICER_CENTRAL:,.0f}"`** | **`{python} f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"`** |
+| **Central** | `{python} format_billions(TREATY_NET_ANNUAL_BENEFIT)` | `{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` | **`{python} f"${SENSITIVITY_ICER_CENTRAL:,.0f}"`** | **`{python} f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"`** |
 | **Optimistic** | `{python} format_billions(SENSITIVITY_NET_BENEFIT_OPTIMISTIC)` | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC)` | **`{python} f"${SENSITIVITY_ICER_OPTIMISTIC:,.0f}"`** | **`{python} f"${SENSITIVITY_COST_PER_LIFE_OPTIMISTIC:.2f}M"`** |
 
 **Key finding**: In ALL scenarios, the intervention is dominant (saves money while saving lives).
@@ -344,10 +344,10 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Perspective | Annual Cost | Annual Benefit | QALYs | ICER/QALY | Cost/Life | Notes |
 |-------------|------------:|---------------:|------:|----------:|----------:|-------|
-| **Conservative (All Costs)** | `{python} format_currency(SENSITIVITY_TOTAL_COSTS_CENTRAL)` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **`{python} f"${ICER_CONSERVATIVE_ALL_COSTS:,.0f}"`** | **`{python} f"${COST_PER_LIFE_CONSERVATIVE_ALL_COSTS:.2f}M"`** | Counts all upfront costs |
-| **Investor-Funded** | $0 | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **`{python} f"${ICER_INVESTOR_FUNDED:,.0f}"`** | **`{python} f"${COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"`** | Campaign funded by VICTORY bonds |
-| **Opportunity Cost** | `{python} format_billions(TREATY_ANNUAL_FUNDING)` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **`{python} f"${ICER_OPPORTUNITY_COST:,.0f}"`** | **`{python} f"${COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"`** | Counts redirected military spending |
-| **Waste Conversion** | `{python} f"-{format_billions(TREATY_ANNUAL_FUNDING)}*"` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CENTRAL)` | `{python} f"{int(SENSITIVITY_TOTAL_QALYS_CENTRAL/1000)}k"` | **Undefined** | **Undefined** | Military spending creates negative value |
+| **Conservative (All Costs)** | `{python} format_currency(TREATY_TOTAL_ANNUAL_COSTS)` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} f"{int(TREATY_TOTAL_QALYS_GAINED_ANNUAL/1000)}k"` | **`{python} f"${SENSITIVITY_ICER_CENTRAL:,.0f}"`** | **`{python} f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"`** | Counts all upfront costs |
+| **Investor-Funded** | $0 | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} f"{int(TREATY_TOTAL_QALYS_GAINED_ANNUAL/1000)}k"` | **`{python} f"${ICER_INVESTOR_FUNDED:,.0f}"`** | **`{python} f"${COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"`** | Campaign funded by VICTORY bonds |
+| **Opportunity Cost** | `{python} format_billions(TREATY_ANNUAL_FUNDING)` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} f"{int(TREATY_TOTAL_QALYS_GAINED_ANNUAL/1000)}k"` | **`{python} f"${ICER_OPPORTUNITY_COST:,.0f}"`** | **`{python} f"${COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"`** | Counts redirected military spending |
+| **Waste Conversion** | `{python} f"-{format_billions(TREATY_ANNUAL_FUNDING)}*"` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} f"{int(TREATY_TOTAL_QALYS_GAINED_ANNUAL/1000)}k"` | **Undefined** | **Undefined** | Military spending creates negative value |
 
 *Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
 

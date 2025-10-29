@@ -124,7 +124,7 @@ When funded by the 1% Treaty's military redirection, the entire system becomes *
 - **Zero net cost**: The `{python} format_billions(TREATY_ANNUAL_FUNDING)` comes from redirected military spending (money already budgeted)
 - **`{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` in annual benefits**: Peace dividend (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`) + R&D savings (`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`)
 - **Operating costs**: Only `{python} format_millions(TREATY_TOTAL_ANNUAL_COSTS)`/year (campaign + operations)
-- **Lives saved**: `{python} format_qalys(SENSITIVITY_LIVES_SAVED_CENTRAL)`/year (`{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CENTRAL)` QALYs ÷ `{python} STANDARD_QALYS_PER_LIFE_SAVED` QALYs/life)
+- **Lives saved**: `{python} format_qalys(SENSITIVITY_LIVES_SAVED_CENTRAL)`/year (`{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` QALYs ÷ `{python} STANDARD_QALYS_PER_LIFE_SAVED` QALYs/life)
 - **The math**: `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` benefit ÷ $0 new spending = ∞ (infinite ROI)
 - **Per life saved**: Society PROFITS `${python} f"{abs(COST_PER_LIFE_INVESTOR_FUNDED):.2f}"` million instead of spending
 
