@@ -29,9 +29,9 @@ from economic_parameters import *
 
 ## Executive Summary
 
-**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **`{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)`** per life saved (ICER = **`{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`** per QALY).
+**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **`{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000))`** per life saved (ICER = **`{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`** per QALY).
 
-This means for every life saved, society becomes **`{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)`** richer instead of paying the [`{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}-${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"` cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
+This means for every life saved, society becomes **`{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000))`** richer instead of paying the [`{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}-${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"` cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
 
 **How is this possible?** This initiative generates massive economic value (`{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` annually) while also saving lives (`{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` QALYs annually), making it profitable for society to implement.
 
