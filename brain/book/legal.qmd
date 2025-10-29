@@ -29,17 +29,23 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-The legal setup is just as important as the money.
-The structure must follow international law, securities regulations, and political rules without breaking anything.
+## On How to Legally Bribe Governments (The Technical Version)
 
-The design is **bulletproof and legal.**
+The legal setup is more important than the money, which is saying something when there's `{python} format_billions(TREATY_ANNUAL_FUNDING)` involved.
+
+You're essentially bribing governments to redirect military spending. Except instead of paying politicians under the table (illegal, messy, tends to end in prison), you're paying voters to vote for politicians who support the treaty (legal, transparent, ends in democratic mandate).
+
+This requires following international law, securities regulations, and election laws across 195 countries without violating a single rule in any of them.
+
+The design is **bulletproof and legal.** Which is fortunate, because the alternative is "brilliant and illegal," which is just another way of saying "stupid."
 
 ---
 
-## 1. How to Split Up the Legal Stuff
+## On Why You Need Multiple Companies in Multiple Countries
 
-Don't put everything in one company.
-Split it across multiple countries to follow each country's laws properly.
+Don't put everything in one company. That's how you accidentally violate 47 different laws at once.
+
+Split it across multiple countries to optimize for each country's specific rules while keeping the core mission legally protected:
 
 - **🇨🇭 Swiss Foundation:** The main organization.
 Switzerland is neutral, crypto-friendly, and good at international law.
@@ -54,18 +60,33 @@ This splits up the legal risk and lets us optimize for each country's rules whil
 
 ---
 
-## 2. How to Follow Securities Laws
+## On How to Sell Investment Products Without Going to Prison
 
-**[VICTORY Bonds](./economics.qmd)** and tokens need to follow securities laws everywhere.
-The design is compliant from day one.
+**[VICTORY Bonds](./economics.qmd)** are securities. Tokens might be securities. The SEC has opinions about both.
 
-- **Rich People First:** Start by raising money from accredited investors using standard private placement rules.
-This provides a solid financial base.
-- **Tokens for Everyone Else:** Regular people earn utility tokens for actions like voting.
-These start as utility points, not investments.
-They only become valuable after the treaty passes and the system works, which [avoids securities law problems](./references.qmd#howey-test-securities).
-- **No Bullshit Marketing:** Focus on what the project actually does, not get-rich-quick promises.
-Be clear about risks.
+The strategy: be so obviously compliant that regulators get bored trying to find violations.
+
+### The Three-Tier Legal Strategy
+
+**Tier 1: Rich People (Accredited Investors)**
+
+Start by raising money from people who are legally allowed to make terrible investment decisions because they're rich enough to survive them.
+
+Use standard private placement rules (Reg D 506(c) in the US, equivalents elsewhere). This provides a solid financial base while following every securities law on the books.
+
+**Tier 2: Regular People (Utility Tokens)**
+
+Regular people earn utility tokens for actions like voting, participating in trials, or contributing to the platform. These start as utility points, not investments.
+
+They only become valuable AFTER the treaty passes and the system generates revenue. This timing [avoids the Howey Test securities law problems](./references.qmd#howey-test-securities) because there's no "expectation of profit from the efforts of others" at the time of distribution.
+
+**Tier 3: Marketing (No Bullshit Allowed)**
+
+Focus on what the project actually does, not get-rich-quick promises. Be painfully clear about risks.
+
+The marketing pitch is: "Help us redirect military spending to cure disease. If it works, you might make money. If it doesn't, you definitely won't. Invest accordingly."
+
+Regulators love honesty. Mostly because they see so little of it.
 
 ---
 
