@@ -177,21 +177,23 @@ This is where AI comes in. Not the "I'm going to become sentient and kill you" k
 - **Social Media Verification**: Real accounts have years of posts about breakfast and cats. Fake accounts have three tweets, all from yesterday.
 - **Device Intelligence**: Fancy fingerprinting that tracks browser quirks, screen resolution, installed fonts. Shockingly effective.
 
-### Privacy-Preserving Architecture
+### On Privacy (Or: How Not to Build a Surveillance State)
 
-**Data Protection:**
+**Data Protection (The "We're Not Creepy" Rules):**
 
-- **Selective Disclosure**: Share only necessary identity attributes
-- **Data Minimization**: Collect minimal personal information required
-- **Local Processing**: Biometric data processed on-device, not stored centrally
-- **Encryption at Rest**: All personal data encrypted with user-controlled keys
+- **Selective Disclosure**: We only ask for what we absolutely need. Your shoe size is irrelevant.
+- **Data Minimization**: Collect the minimum. No "tell us your life story" forms.
+- **Local Processing**: Biometric data (face scans, etc.) processed on YOUR device. We never see it. Ever.
+- **Encryption at Rest**: Everything encrypted with keys you control. We can't read it even if we wanted to.
 
-**Regional Compliance:**
+**Regional Compliance (Or: Not Getting Sued by Europeans):**
 
-- **[GDPR Compliance](../references.qmd#gdpr-biometric-data)**: Full implementation of EU data protection requirements
-- **[CCPA/CPRA Compliance](../references.qmd#ccpa-cpra-compliance)**: California privacy rights implementation
-- **Biometric Privacy Laws**: [Illinois BIPA](../references.qmd#illinois-bipa) and similar state law compliance
-- **Children's Privacy**: [COPPA compliance](../references.qmd#coppa-compliance) for participants under 13
+Different regions have different privacy laws, all of which carry massive fines if you screw up. We don't screw up.
+
+- **[GDPR Compliance](../references.qmd#gdpr-biometric-data)**: Full EU data protection compliance (the strictest privacy law on Earth)
+- **[CCPA/CPRA Compliance](../references.qmd#ccpa-cpra-compliance)**: California privacy rights (because California regulates everything)
+- **Biometric Privacy Laws**: [Illinois BIPA](../references.qmd#illinois-bipa) compliance (they take biometric privacy seriously)
+- **Children's Privacy**: [COPPA compliance](../references.qmd#coppa-compliance) for under-13s (don't collect kids' data, this should be obvious)
 
 ---
 
@@ -389,25 +391,54 @@ This is where AI comes in. Not the "I'm going to become sentient and kill you" k
 
 ---
 
-## Summary
+## On Putting It All Together
 
-**The global referendum strategy combines cutting-edge verification technology with viral marketing to achieve the 3.5% tipping point.** By layering multiple verification methods, implementing AI-powered fraud detection, and using cost-effective viral tactics, it builds the largest political mandate in human history.
+**What We're Building:**
 
-**Key Innovation**: This isn't just conducting a referendum—it's creating a new standard for global digital democracy that demonstrates the power of cryptographically-secured mass participation.
+A global referendum that combines cutting-edge verification technology with viral marketing to achieve the 3.5% tipping point.
 
-**Investment Required**: $200M for the viral referendum campaign, as allocated in the [VICTORY Bonds Use of Funds](../economics/victory-bonds.qmd). This budget targets a cost per acquisition of less than $0.75 per verified participant to achieve the 280M+ goal.
+Translation: We're getting 280 million humans to cryptographically prove they support the treaty, which creates political pressure so intense that ignoring it becomes career suicide for politicians.
 
-**Expected Outcome**: 280M+ verified global participants creating an undeniable political mandate for the 1% Treaty.
+**The Innovation Part:**
 
-### The 3.5% Magic Number: Historical Proof of Concept
+This isn't just a referendum. It's creating a new standard for global digital democracy that proves you can secure mass participation without building a surveillance state or trusting any central authority.
 
-The 280 million participant target is not an arbitrary number. It is based on the "3.5% Rule," a well-documented historical pattern showing that sustained, nonviolent movements achieve their goals once they reach active participation from 3.5% of the population.
+It's democracy, but with math instead of hope.
 
-- **Civil Rights in the US:** Achieved its primary goals with the active participation of roughly 3.5% of the population.
-- **Indian Independence:** The movement that overthrew British rule was driven by a core of 3.5% of the Indian population.
-- **Women's Suffrage:** The movement that won women the right to vote succeeded by mobilizing a critical mass of 3.5%.
+**The Money Part:**
 
-Our strategy leverages this historical precedent. By using the powerful incentive of subsidized healthcare to drive participation in the global referendum, we can realistically reach the 280 million (3.5% of 8 billion) participant threshold required to create an unstoppable political mandate.
+$200M for the campaign, as allocated in the [VICTORY Bonds Use of Funds](../economics/victory-bonds.qmd).
+
+Target cost: <$0.75 per verified participant to hit the 280M+ goal.
+
+That's cheaper than acquiring a customer for literally any consumer product, and the product is "not dying from preventable diseases."
+
+**What Success Looks Like:**
+
+280M+ verified global participants creating a political mandate so large that politicians literally cannot ignore it without losing elections.
+
+### On Why 3.5% Is The Magic Number
+
+The 280 million target isn't pulled from thin air. It's based on the "3.5% Rule," a historical pattern that's held true across cultures and centuries:
+
+**When 3.5% of a population actively participates in sustained, nonviolent action, the movement becomes unstoppable.**
+
+The evidence:
+
+- **Civil Rights (US):** 3.5% participation ended segregation
+- **Indian Independence:** 3.5% of Indians kicked out the British Empire
+- **Women's Suffrage:** 3.5% of women won the vote
+
+The pattern repeats because once you hit 3.5%, you've demonstrated that:
+1. This isn't a fringe movement
+2. The support is distributed (not just one region or demographic)
+3. Opposition becomes politically toxic
+
+Our strategy leverages this precedent with a clever twist: subsidized healthcare as the incentive to participate.
+
+People show up for the healthcare. Politicians see 280 million verified supporters. The treaty becomes inevitable.
+
+It's not manipulation. It's just understanding what motivates humans (not dying) and what motivates politicians (not losing elections).
 
 ---
 
