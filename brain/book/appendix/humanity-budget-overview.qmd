@@ -60,9 +60,10 @@ colors = {
 }
 
 # Set modern typography globally
+# Use DejaVu Sans (ships with matplotlib) with system font fallbacks
 plt.rcParams.update({
     'font.family': 'sans-serif',
-    'font.sans-serif': ['Inter', 'Helvetica Neue', 'Segoe UI', 'Arial', 'sans-serif'],
+    'font.sans-serif': ['DejaVu Sans', 'Arial', 'Helvetica', 'Liberation Sans', 'Bitstream Vera Sans', 'sans-serif'],
     'font.size': 12,
     'axes.titlesize': 20,
     'axes.labelsize': 14,

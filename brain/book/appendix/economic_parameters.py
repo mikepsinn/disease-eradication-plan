@@ -238,26 +238,27 @@ ROI_WITH_MULTIPLIER_EFFECTS = 25781  # 25,781:1 at maturity with multiplier effe
 NPV_DISCOUNT_RATE_STANDARD = 0.08  # 8% annual discount rate (r)
 NPV_TIME_HORIZON_YEARS = 10  # Standard 10-year analysis window (T)
 
-# NPV Model - Upfront Costs (C0)
-# Combines core platform build + medium broader initiative setup costs
+# NPV Model - Component Costs
+# Core platform and broader initiative costs (for detailed breakdowns)
 DFDA_NPV_UPFRONT_COST = 0.040  # $40M core platform build
 DIH_NPV_UPFRONT_COST_INITIATIVES = 0.22975  # $228M medium case broader initiatives
-DIH_NPV_UPFRONT_COST_TOTAL = DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIATIVES  # C0 = $0.26975B
-
-# NPV Model - Annual Operational Costs (Cop)
-# Combines core platform ops + medium broader initiative annual costs
 DFDA_NPV_ANNUAL_OPEX = 0.01895  # $19M core platform (midpoint of $11-26.5M)
 DIH_NPV_ANNUAL_OPEX_INITIATIVES = 0.02110  # $21.1M medium case broader initiatives
-DIH_NPV_ANNUAL_OPEX_TOTAL = DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES  # Cop = $0.04005B
 
-# NPV Model - Adoption Curve
-# Linear ramp from 0% to 100% over 5 years, then constant at 100%
-DFDA_ADOPTION_RAMP_YEARS = 5  # Years to reach full adoption
+# NPV Model - Primary Parameters (dFDA-specific)
+# Total upfront costs (C0): combines core dFDA platform + broader DIH initiative setup
+DFDA_NPV_UPFRONT_COST_TOTAL = DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIATIVES  # C0 = $0.26975B
 
-# Calculated NPV values
-DIH_NPV_PV_ANNUAL_OPEX = DIH_NPV_ANNUAL_OPEX_TOTAL * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD)**-NPV_TIME_HORIZON_YEARS) / NPV_DISCOUNT_RATE_STANDARD
-DIH_NPV_TOTAL_COST = DIH_NPV_UPFRONT_COST_TOTAL + DIH_NPV_PV_ANNUAL_OPEX  # ~$0.54B
-DFDA_NPV_NET_BENEFIT_CONSERVATIVE = DIH_NPV_TOTAL_COST * ROI_DFDA_SAVINGS_ONLY # ~$249B
+# Total annual operational costs (Cop): combines core dFDA platform + broader DIH initiative annual costs
+DFDA_NPV_ANNUAL_OPEX_TOTAL = DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES  # Cop = $0.04005B
+
+# dFDA adoption curve: linear ramp from 0% to 100% over 5 years, then constant at 100%
+DFDA_NPV_ADOPTION_RAMP_YEARS = 5  # Years to reach full adoption
+
+# Calculated NPV values for dFDA
+DFDA_NPV_PV_ANNUAL_OPEX = DFDA_NPV_ANNUAL_OPEX_TOTAL * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD)**-NPV_TIME_HORIZON_YEARS) / NPV_DISCOUNT_RATE_STANDARD
+DFDA_NPV_TOTAL_COST = DFDA_NPV_UPFRONT_COST_TOTAL + DFDA_NPV_PV_ANNUAL_OPEX  # ~$0.54B
+DFDA_NPV_NET_BENEFIT_CONSERVATIVE = DFDA_NPV_TOTAL_COST * ROI_DFDA_SAVINGS_ONLY # ~$249B
 
 # NOTE: The NPV-based ROI (463:1) accounts for time value of money and gradual adoption
 # The simple ROI (1,250:1) is gross savings / annual opex without discounting

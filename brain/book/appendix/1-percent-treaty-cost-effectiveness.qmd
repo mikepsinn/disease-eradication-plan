@@ -268,9 +268,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Cost per life** = `{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`  × `{python} STANDARD_QALYS_PER_LIFE_SAVED` QALYs/life
 
-**Cost per life ≈ `{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)` per life saved**
+**Cost per life ≈ `{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000))` per life saved**
 
-**Interpretation**: For every life saved, society saves approximately `{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)`.
+**Interpretation**: For every life saved, society saves approximately `{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000))`.
 
 ---
 

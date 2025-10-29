@@ -55,9 +55,10 @@ colors = {
 }
 
 # Set modern typography globally
+# Use DejaVu Sans (ships with matplotlib) with system font fallbacks
 plt.rcParams.update({
     'font.family': 'sans-serif',
-    'font.sans-serif': ['Inter', 'Helvetica Neue', 'Segoe UI', 'Arial', 'sans-serif'],
+    'font.sans-serif': ['DejaVu Sans', 'Arial', 'Helvetica', 'Liberation Sans', 'Bitstream Vera Sans', 'sans-serif'],
     'font.size': 12,
     'axes.titlesize': 20,
     'axes.labelsize': 14,
@@ -226,8 +227,8 @@ This model calculates:
 # Source: brain/book/appendix/economic_parameters.py
 
 # Costs (in billions USD) - from economic_parameters.py
-C0 = DIH_NPV_UPFRONT_COST_TOTAL  # $0.26975B (core platform + medium broader initiatives)
-Cop = DIH_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiatives)
+C0 = DFDA_NPV_UPFRONT_COST_TOTAL  # $0.26975B (core platform + medium broader initiatives)
+Cop = DFDA_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiatives)
 
 # Savings (in billions USD) - from economic_parameters.py
 Rd = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL  # $100B annual global R&D spend on clinical trials
@@ -236,7 +237,7 @@ alpha = TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
 # Financial Parameters - from economic_parameters.py
 r = NPV_DISCOUNT_RATE_STANDARD  # 0.08 (8% annual discount rate)
 T = NPV_TIME_HORIZON_YEARS  # 10 years
-adoption_ramp_years = DFDA_ADOPTION_RAMP_YEARS  # 5 years to full adoption
+adoption_ramp_years = DFDA_NPV_ADOPTION_RAMP_YEARS  # 5 years to full adoption
 
 # Adoption Curve p(t)
 # Linear ramp from 0% to 100% over adoption_ramp_years, then constant at 100%
