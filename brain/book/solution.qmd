@@ -1,6 +1,6 @@
 ---
-title: 💡 Solution  Overview
-description: The 1% Treaty → DIH → dFDA - A simple global accord redirecting a tiny fraction of military spending to make curing people more profitable than killing them.
+title: 💡 Solution Overview
+description: How to Build Systems That Don't Suck
 published: true
 tags:
   - solution
@@ -32,37 +32,286 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-After reading about the problem, you might be tempted to drink heavily. Don't. The solution is remarkably simple. It doesn't require virtuous politicians, brilliant leaders, or a fundamental change in human nature.
 
-It just requires changing what pays.
+Now that you understand the problem—which is that everyone is dying while we build missiles—it's time to learn how to fix it.
 
-Here’s the blueprint for hijacking the planet's budget and pointing it at the right enemy. This is how you build a system that makes curing people more profitable than killing them.
+The solution has three parts:
 
-## The System: A Step-by-Step Guide
+1. The 1% Treaty (stealing money from the murder budget)
+2. The Decentralized Institute of Health (spending it wisely)
+3. The Decentralized FDA (making medicine 82 times cheaper)
 
-The solution isn't one magic bullet; it's a machine with seven interconnected parts. Here's the logical order of operations for building a perpetual motion engine for human health.
-
-**Step 1: Get the Money (The [1% Treaty](solution/1-percent-treaty.qmd))**
-First, you need a budget. The treaty is a global referendum to redirect a rounding error—just 1% of military spending (`{python} format_billions(TREATY_ANNUAL_FUNDING)`/year)—from building bombs to fixing bodies. It starts small, proves the peace dividend works, and uses a ratchet mechanism to scale up.
-
-**Step 2: Hold the Money (The [DIH](solution/dih.qmd))**
-The money flows into the Decentralized Institutes of Health, a parallel research system run by smart contracts, not bureaucrats. With no CEO to bribe and no central authority to capture, it's just a transparent, auditable treasury waiting for instructions.
-
-**Step 3: Govern the Money (The [Wishocracy](solution/wishocracy.qmd))**
-Who decides how to spend the money? Everyone. Wishocracy is the governance app that replaces grant committees with direct democracy. Anyone can propose research, and billions of pairwise votes determine which problems get funded. It's a global todo list for humanity's health, prioritized by humanity itself.
-
-**Step 4: Build the Platform (The [dFDA](solution/dfda.qmd))**
-This is where the work gets done. The dFDA is a parallel, open-source platform for running clinical trials. Instead of the FDA's bureaucratic nightmare, it enables pragmatic trials at a fraction of the cost. This isn't a theory; the **Oxford RECOVERY Trial** already proved this model works, running trials for **[$500 per patient](references.qmd#recovery-cost-500)** instead of the typical [$41,000](references.qmd#trial-cost-41k) and getting the first results in just [100 days](references.qmd#recovery-trial-100-days-to-cure).
-
-**Step 5: Execute the Work (The [Positron Network](solution/ai-coordination-army.qmd))**
-With a budget, a plan, and a platform, the Positron Network coordinates an army of AI agents to execute the mission. It breaks impossibly large goals like "cure cancer" into millions of small, executable tasks, distributing them to researchers, labs, and citizen scientists around the world.
-
-**Step 6: Fuel the Engine ([Aligning Incentives](solution/aligning-incentives.qmd))**
-The machine runs on one thing: greed. The system is designed to align incentives. It shows defense contractors the ROI of curing customers instead of killing them, lets insurance companies profit from health gains, and allows pharma to earn more from cures than from treatments. It makes helping humanity the most profitable game in town.
-
-**Step 7: Name the Mission (The [War on Disease](solution/war-on-disease.qmd))**
-This entire machine is aimed at one goal: winning the first "war" that's actually designed to be won. It has clear victory conditions (eradicate specific diseases), automatic demobilization (funding shifts when a goal is met), and a clear enemy that can't bribe its way to a stalemate.
+If you think about it, it's quite simple. Take money from death, give it to life. The tricky part is convincing humans, who historically prefer the death option.
 
 ---
 
-Now, let's get into the details.
+**On the 1% Treaty**
+
+Here's how you redirect $27 billion per year from bombs to medicine:
+
+You ask every nation on Earth to cut military spending by 1%. Just 1%. They keep the other 99% for wars and parades and whatever else militaries do when they're not accidentally losing trillions.
+
+One percent is a rounding error. It's what the Pentagon loses between couch cushions on a slow Tuesday. It's less than they spend on staplers (probably).
+
+The genius is that everyone cuts simultaneously. Nobody loses "relative power," which is the thing military people care about when they're not busy caring about flags and saluting.
+
+I asked a general if losing 1% of weapons would weaken national security. He said yes. I asked if having 1% fewer weapons pointed at you by every enemy would make you safer. He stopped talking to me.
+
+The math is simple: If everyone has 1% fewer weapons, the balance stays exactly the same, except now there are 1% fewer weapons total. This is technically called "addition by subtraction," or as some people call it, "being slightly less insane."
+
+---
+
+**On What You Buy With 1% Less War**
+
+Twenty-seven billion dollars funds:
+
+- 54,000 clinical trials at $500,000 each (the cheap way)
+- Or 27 million patients in trials at $1,000 each
+- Or 540 new drug approvals (current rate: 50 per year)
+- Or curing 10-20 rare diseases completely in Year 1
+- Or preventing 180,000 deaths annually
+
+For comparison, $27 billion is:
+
+- Less than the Pentagon's annual "we lost it" budget
+- About what Americans spend on Valentine's Day
+- Roughly what we spend on pet food every three months
+- Apparently too much to ask for curing diseases
+
+They say you can't put a price on human life. But apparently the price is somewhere south of pet food, which seems like it should be revised upward.
+
+---
+
+**On the Decentralized Institute of Health**
+
+Once you've stolen $27 billion from the military, you need somewhere to put it. This is where the DIH comes in.
+
+The DIH is like the NIH, except it works. Here's how:
+
+**What the NIH does:**
+- 200 people in a building decide what to fund
+- They guess what might work
+- They give grants to their friends
+- Nothing gets cured
+- Everyone gets tenure
+
+**What the DIH does:**
+- Put the money in a treasury controlled by smart contracts
+- Let 8 billion humans vote on budget allocation rules
+- Subsidize patients in a marketplace of trials
+- Patients choose which trials to join
+- Trials that work get more patients and more funding
+- Things actually get cured
+
+The difference is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach knows things bureaucrats don't.
+
+---
+
+**On Wishocracy**
+
+Wishocracy is how you let 8 billion people control a budget without everyone killing each other in meetings.
+
+Here's how it works:
+
+1. Anyone can propose how to spend the money (yes, even you)
+2. The app shows you random pairs of proposals
+3. You swipe left or right to allocate between them
+4. "Sarah's cancer trial" versus "MIT's immortality pill"
+5. Everyone's swipes get aggregated using math
+6. The math reveals what humanity actually wants
+7. Money flows automatically to top priorities
+
+This is called "Aggregated Pairwise Preference Allocation," or APPA, which sounds complicated but is actually just "Tinder for budget priorities."
+
+The important part is there's no committee. No gatekeepers. No humans with the power to say no. Just billions of micro-decisions that add up to what humanity actually wants, not what 200 people in suits think humanity wants.
+
+---
+
+
+**On the Decentralized FDA**
+
+The FDA currently makes drugs 82 times more expensive than necessary. You're going to build a better one.
+
+The Decentralized FDA (dFDA) does three things:
+
+1. **Lets anyone run clinical trials** (no permission needed)
+2. **Tracks what actually works** (real-world data, not guesses)
+3. **Publishes outcome labels** (truth about every treatment)
+
+Instead of waiting seventeen years for FDA approval while you die, you join a trial on the dFDA platform. The trial costs $500 per patient instead of $41,000 because it turns out you don't need seventeen layers of paperwork to figure out if aspirin works.
+
+You report outcomes through your phone. The AI analyzes millions of data points. The platform publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
+
+It's like Amazon reviews except for not dying, and Consumer Reports except the reports come from millions of actual sick people instead of three people in a lab coat.
+
+---
+
+**On Outcome Labels**
+
+Right now, nutrition labels tell you what's in food. Warning labels tell you cigarettes kill you. Drug labels tell you to "ask your doctor," which is code for "we have no idea and neither do they."
+
+Outcome labels tell you what actually happens:
+
+**"This drug for your condition:"**
+- Improves memory 35%
+- Reduces symptoms 60%
+- Causes headaches 9% of the time
+- Costs $50/month
+- Based on 50,000 real patients like you
+
+It's just facts. No marketing. No lies. No 40-page legal documents written by lawyers having seizures.
+
+Every food, every drug, every supplement: Outcome label. "Increases diabetes risk 12%." "Does nothing." "Actually works, surprisingly."
+
+Finally, the truth about everything, generated by millions of humans testing things on themselves and reporting what happened.
+
+---
+
+**On How Patients Pay Researchers**
+
+Here's where it gets weird in a good way:
+
+Currently: Pharma companies pay $48,000 per trial patient  
+New system: Patients pay researchers, subsidized by the DIH
+
+The subsidy works like this: Available treaty funds divided by number of participating patients equals subsidy per person. More patients means lower subsidy per person, which prevents frivolous treatment seeking.
+
+Researchers set their own price. Patients choose which trials to join. Money flows automatically. Successful trials attract more patients and more funding. Unsuccessful trials fade away.
+
+This is called "market discovery," or as economists call it, "letting reality decide instead of committees."
+
+The beautiful part: Sick people, guided by their doctors and data, choose what gets funded. Not bureaucrats. Not grant writers. Actual humans who need actual cures.
+
+It's democracy for medical research, except instead of voting every four years for people who lie to you, you vote every day with your trial participation for treatments that might save your life.
+
+---
+
+**On Why Defense Contractors Should Care**
+
+You'd think defense contractors would hate this. But here's what you tell them:
+
+"You can keep 99% of your murder budget. But also, here are some bonds that pay 270% returns. Your pension fund would like those returns. Your shareholders would like those returns. You would personally like those returns because you also have a body that's falling apart.
+
+Plus, killing people is getting bad PR. Curing cancer is excellent PR. Your ESG score goes up. Your stock price goes up. You still make weapons with the other 99%, you just also cure diseases with 1%.
+
+It's called diversification. Ask your financial advisor."
+
+Defense contractors are not evil. They're rational actors optimizing for profit within existing incentive structures. You're just offering them a better incentive structure that happens to save humanity as a side effect.
+
+---
+
+**On Insurance Companies**
+
+Insurance companies have a simple preference: They want you either dead or immortal. Anything but expensively lingering.
+
+Dead people file zero claims. Immortal healthy people file zero claims. Currently sick people cost billions.
+
+The dFDA moves people from "currently sick" to either "dead" (whoops) or "cured" (success). Either way, the insurance company pays less.
+
+This is called "aligned incentives," or as insurance executives call it, "that thing we've been trying to achieve for fifty years but couldn't because the FDA makes cures impossible."
+
+Show them the math: Every cure prevents decades of treatment costs. Every prevention program avoids future claims. Every patient in a trial is a patient not in an emergency room.
+
+They'll buy VICTORY bonds because healthy people are profitable people, and profitable people make insurance executives happy, and happy insurance executives buy bonds that make them richer.
+
+It's a virtuous cycle, which is Latin for "everyone wins by not dying."
+
+---
+
+**On the War on Disease**
+
+You're declaring war on disease. But unlike previous wars on abstract concepts (drugs, terror, poverty, Christmas), this one will actually work.
+
+Why? Because you're using markets instead of bureaucracy.
+
+**Previous Wars on Things:**
+- Declare war
+- Build bureaucracy to fight war
+- Bureaucracy needs the problem to exist to justify its existence
+- Problem gets worse
+- Bureaucracy gets bigger
+- Everyone loses except the bureaucracy
+
+**This War:**
+- Declare war
+- Create market that profits from solving problem
+- Problem gets solved
+- Market grows by solving more problems
+- Everyone wins including the market
+
+The difference is like asking a firefighter to prevent fires versus asking a fire extinguisher company to prevent fires. The firefighter needs fires to keep his job. The company needs fire prevention to sell extinguishers. Incentives matter.
+
+---
+
+**On Aligning Everyone's Greed**
+
+The solution only works if everyone wins by winning. Here's who gets what:
+
+**Defense contractors:** Keep 99% of budget + 270% returns on bonds  
+**Pharmaceutical companies:** Patients pay them instead of vice versa  
+**Politicians:** Campaign donations + not losing elections  
+**Insurance companies:** Fewer claims = more profit  
+**Billionaires:** 270% returns + legacy + naming rights  
+**Regular people:** Subsidized treatment + direct democracy + not dying
+
+Notice that everyone's selfish reason for participating happens to save humanity. This is called "mechanism design," or as normal people call it, "tricking people into doing good by making good profitable."
+
+The system doesn't require anyone to stop being selfish. It just redirects selfishness toward curing diseases instead of building bombs. It's like installing a fire alarm that also makes coffee—you're going to use it even if you don't care about fire safety.
+
+---
+
+**On Why This Isn't Crazy**
+
+I know what you're thinking: "This sounds too good to be true. Where's the catch?"
+
+History shows this works:
+- Post-WWII: Cut military 30%, greatest boom ever
+- Post-Cold War: Cut military 3%, 1990s prosperity
+- Switzerland: 0.7% defense budget, richest country in Europe
+
+We're only asking for 1%. Even drunk people can do 1%.
+
+---
+
+**On the Meta-Solution**
+
+Here's the thing about this solution: It's not just about ending disease. It's about proving markets work better than bureaucracy for literally everything.
+
+If you can cure diseases by redirecting 1% of military spending through market mechanisms, you can solve:
+- Education (same structure, different market)
+- Housing (same structure, different market)  
+- Climate change (same structure, different market)
+- Literally any public goods problem (same structure, different market)
+
+This is the template for replacing government with systems that actually work. Not anarcho-capitalism or libertarian fantasy. Just pragmatic recognition that markets coordinate better than committees when you design them right.
+
+The War on Disease is proof of concept. Victory here means you can fix everything else using the same playbook.
+
+They say if something seems too good to be true, it probably is. But sometimes things are exactly as good as they seem, and the only reason nobody did them before is because nobody thought to try.
+
+Or as some philosophers call it: "Humans are idiots until someone shows them a better way, then they're slightly less idiotic."
+
+---
+
+**On What Comes Next**
+
+The rest of Part II explains each component in detail:
+
+- How to structure the 1% Treaty so countries actually sign it
+- How to build the DIH so it can't be corrupted
+- How Wishocracy prevents lobbyist from stealing all the money
+- How the dFDA achieves 82X cost reduction
+- How to align every stakeholder's incentives
+- How to make selfishness save humanity
+
+Each chapter is a instruction manual. 
+
+Because you're not waiting for someone else to fix the world. You're fixing it yourself. Right now. Starting with clicking a button on a website.
+
+If that seems anticlimactic, remember: Every revolution starts with someone doing something slightly less stupid than what everyone else is doing.
+
+In this case, the slightly less stupid thing is redirecting 1% of the murder budget to the not-dying budget.
+
+History will judge whether this was genius or obvious. But either way, you'll be alive to see it, which is more than you can say for the alternative.
+
+
