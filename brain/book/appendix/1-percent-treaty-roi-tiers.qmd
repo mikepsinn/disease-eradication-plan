@@ -39,7 +39,7 @@ The conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` calculation ignore
 
 The 1% Treaty doesn't just make trials cheaper. It:
 
-1. **Societal savings from 1% less conflict** (peace dividend: `{python} format_billions(BENEFIT_PEACE_DIVIDEND_ANNUAL)`)
+1. **Societal savings from 1% less conflict** (peace dividend: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`)
 2. **Slashes R&D costs `{python} TRIAL_COST_REDUCTION_FACTOR`x** (saves `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`)
 3. **Accelerates access by 7 years** (saves $300B via early trial access)
 4. **115X more research capacity** (adds $100B via 10-20X more breakthroughs)
@@ -127,7 +127,7 @@ These are NOT rare diseases (already counted). These are common diseases with li
 
 | Category | Annual Benefit | Notes |
 |----------|----------------|-------|
-| [Peace Dividend](../economics/peace-dividend.qmd) | `{python} format_billions(BENEFIT_PEACE_DIVIDEND_ANNUAL)` | Societal savings from 1% reduction in global conflict |
+| [Peace Dividend](../economics/peace-dividend.qmd) | `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` | Societal savings from 1% reduction in global conflict |
 | R&D Cost Savings | `{python} format_billions(BENEFIT_RESEARCH_AND_DEVELOPMENT_SAVINGS_ANNUAL)` | `{python} TRIAL_COST_REDUCTION_FACTOR`x trial cost reduction |
 | **Earlier Access (7 years)** | **`{python} format_billions(BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL)`** | Existing pipeline accessed sooner |
 | **Research Acceleration** | **`{python} format_billions(BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL)`** | 115X more trials = 10-20X more breakthroughs |
