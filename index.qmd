@@ -403,7 +403,7 @@ When you redirect military money instead of asking for new money, the ROI become
 **The kindergarten math:**
 
 $$
-\text{ROI} = \frac{\text{`{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` annual benefits}}{\text{\$0 new spending}} = \infty
+\text{ROI} = \frac{\text{Annual Benefits}}{\text{New Spending}} = \frac{`{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)`}{0} = \infty
 $$
 
 Even a congressman can understand this. Probably.
@@ -435,11 +435,13 @@ It's capitalism's greatest achievement: making greed save lives.
 
 Unlike traditional interventions requiring ongoing charity, this generates `{python} format_billions(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)` annually while saving `{python} f"{SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}"` lives.
 
-### 🏆 Best Idea in the World
+### 🏆 2nd Best Idea in the World
 
-*Beats Everything Else Humans Have Tried*
+The best idea in the world would be a 100% Treaty that ended war completely. 
 
-**10X Better Than Vaccines (And Vaccines Are Amazing)**
+However, as that idea contains logic in excess of the congressional daily allowance, we're left with the 2nd best idea in the world.
+
+This can be mathematically proven!
 
 {{< include brain/figures/public-health-interventions-economic-benefit-comparison-column-chart.qmd >}}
 
