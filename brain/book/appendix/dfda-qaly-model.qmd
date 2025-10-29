@@ -31,9 +31,9 @@ This stream quantifies the health gains from bringing effective treatments to pa
 - **Base:** A 2-year average acceleration across a broader range of therapies, including but not limited to oncology.
 - **Optimistic:** A more profound acceleration (3+ years) combined with an increased number of successful drugs due to lower trial costs.
 - **Annual QALY Estimates:**
-- **Conservative:** 100,000 QALYs
+- **Conservative:** `{python} f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"` QALYs
 - **Base:** `{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"` QALYs
-- **Optimistic:** 400,000 QALYs
+- **Optimistic:** `{python} f"{QALYS_FROM_FASTER_ACCESS_OPTIMISTIC:,.0f}"` QALYs
 
 #### B. Improving Preventative Care via Real-World Evidence
 
@@ -45,9 +45,9 @@ This stream captures the value of using the dFDA's vast data to optimize prevent
 - **Base:** The platform drives significant uptake and better targeting of established preventative care across multiple chronic diseases.
 - **Optimistic:** The platform uncovers new, highly effective preventative strategies and enables their rapid, widespread adoption.
 - **Annual QALY Estimates:**
-- **Conservative:** 50,000 QALYs
+- **Conservative:** `{python} f"{QALYS_FROM_PREVENTION_CONSERVATIVE:,.0f}"` QALYs
 - **Base:** `{python} f"{QALYS_FROM_PREVENTION:,.0f}"` QALYs
-- **Optimistic:** 250,000 QALYs
+- **Optimistic:** `{python} f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"` QALYs
 
 #### C. Enabling Research for Previously Untreatable/Neglected Diseases
 
@@ -59,17 +59,17 @@ This stream reflects the transformative potential of the dFDA to create viable r
 - **Base:** The platform facilitates several new treatments annually or one major breakthrough for a more common rare disease.
 - **Optimistic:** The low-cost model spurs a wave of innovation, leading to dozens of new therapies for rare diseases and other neglected research areas.
 - **Annual QALY Estimates:**
-- **Conservative:** 40,000 QALYs
+- **Conservative:** `{python} f"{QALYS_FROM_NEW_THERAPIES_CONSERVATIVE:,.0f}"` QALYs
 - **Base:** `{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"` QALYs
-- **Optimistic:** 3,000,000 QALYs
+- **Optimistic:** `{python} f"{QALYS_FROM_NEW_THERAPIES_OPTIMISTIC:,.0f}"` QALYs
 
 #### Summary Table: Total Annual QALY Gains {#qaly-summary-table}
 
 | Scenario         | (A) Accelerated Development | (B) Improved Prevention | (C) New Research | **Total Annual QALYs** |
 | :--------------- | --------------------------: | ----------------------: | ---------------: | ---------------------: |
-| **Conservative** |                     100,000 |                  50,000 |           40,000 |            **190,000** |
-| **Base Case**    |      `{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"` |  `{python} f"{QALYS_FROM_PREVENTION:,.0f}"` | `{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"` | **`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`** |
-| **Optimistic**   |                     400,000 |                 250,000 |        3,000,000 |          **3,650,000** |
+| **Conservative** | `{python} f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"` | `{python} f"{QALYS_FROM_PREVENTION_CONSERVATIVE:,.0f}"` | `{python} f"{QALYS_FROM_NEW_THERAPIES_CONSERVATIVE:,.0f}"` | **`{python} f"{QALYS_TOTAL_CONSERVATIVE:,.0f}"`** |
+| **Base Case**    | `{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"` | `{python} f"{QALYS_FROM_PREVENTION:,.0f}"` | `{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"` | **`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`** |
+| **Optimistic**   | `{python} f"{QALYS_FROM_FASTER_ACCESS_OPTIMISTIC:,.0f}"` | `{python} f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"` | `{python} f"{QALYS_FROM_NEW_THERAPIES_OPTIMISTIC:,.0f}"` | **`{python} f"{QALYS_TOTAL_OPTIMISTIC:,.0f}"`** |
 
 #### DCT Platform Funding (Analogous Cost Basis)
 
@@ -116,10 +116,10 @@ The daily costs of inaction are highly sensitive to the underlying assumptions a
 
 | Scenario                                 | R&D Trial Cost Reduction | Annual Gross Savings | Annual QALYs Gained | Daily Money Lost (Approx.) | Daily QALYs Lost (Approx.) | Note                                                                                                                                              |
 | :--------------------------------------- | :----------------------: | :------------------: | :-----------------: | :------------------------: | :------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Conservative**                         |           30%            |     \$30 Billion     |       190,000       |      **\$82 Million**      |          **521**           | Assumes lower efficiency gains and moderate health impact, using [conservative QALY model](#summary-of-total-annual-qaly-gains).                  |
-| **Base Case**                            |         **50%**          |   **\$50 Billion**   |     **`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`**     |     **\$137 Million**      |         **`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL / 365:,.0f}"`**          | **The central estimate used in this analysis, based on the [median QALY model](#summary-of-total-annual-qaly-gains).**                            |
-| **Optimistic**                           |           70%            |     \$70 Billion     |      3,650,000      |     **\$192 Million**      |         **10,000**         | Assumes high efficiency and significant improvements in health outcomes, using [optimistic QALY model](#summary-of-total-annual-qaly-gains).      |
-| **Transformative (RECOVERY Trial-like)** |         **95%**          |   **\$95 Billion**   |    **3,650,000**    |     **\$260 Million**      |         **10,000**         | Reflects exceptional, RECOVERY-like efficiency and broad health benefits, using [new optimistic QALY model](#summary-of-total-annual-qaly-gains). |
+| **Conservative**                         |           30%            |     \$30 Billion     | **`{python} f"{QALYS_TOTAL_CONSERVATIVE:,.0f}"`** | **\$82 Million** | **`{python} f"{QALYS_TOTAL_CONSERVATIVE / 365:,.0f}"`** | Assumes lower efficiency gains and moderate health impact, using [conservative QALY model](#summary-of-total-annual-qaly-gains). |
+| **Base Case**                            |         **50%**          |   **\$50 Billion**   | **`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`** | **\$137 Million** | **`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL / 365:,.0f}"`** | **The central estimate used in this analysis, based on the [median QALY model](#summary-of-total-annual-qaly-gains).** |
+| **Optimistic**                           |           70%            |     \$70 Billion     | **`{python} f"{QALYS_TOTAL_OPTIMISTIC:,.0f}"`** | **\$192 Million** | **`{python} f"{QALYS_TOTAL_OPTIMISTIC / 365:,.0f}"`** | Assumes high efficiency and significant improvements in health outcomes, using [optimistic QALY model](#summary-of-total-annual-qaly-gains). |
+| **Transformative (RECOVERY Trial-like)** |         **95%**          |   **\$95 Billion**   | **`{python} f"{QALYS_TOTAL_OPTIMISTIC:,.0f}"`** | **\$260 Million** | **`{python} f"{QALYS_TOTAL_OPTIMISTIC / 365:,.0f}"`** | Reflects exceptional, RECOVERY-like efficiency and broad health benefits, using [new optimistic QALY model](#summary-of-total-annual-qaly-gains). |
 
 #### Discussion of Uncertainty and Key Variables
 
@@ -233,9 +233,9 @@ This stream models the benefit of accelerating the approval of new drugs that wo
   $$
 
 - **Scenario Values:**
-  - **Conservative:** 15 drugs/year $\times$ 1 year acceleration $\times$ 6,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**90,000 QALYs**</a>
+  - **Conservative:** 15 drugs/year $\times$ 1 year acceleration $\times$ 6,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"` QALYs**</a>
   - **Base:** 20 drugs/year $\times$ 1.5 years acceleration $\times$ 6,667 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"` QALYs**</a>
-  - **Optimistic:** 25 drugs/year $\times$ 2 years acceleration $\times$ 10,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**500,000 QALYs**</a>
+  - **Optimistic:** 25 drugs/year $\times$ 2 years acceleration $\times$ 10,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_FASTER_ACCESS_OPTIMISTIC:,.0f}"` QALYs**</a>
 
 #### B. QALYs from Improved Prevention and Real-World Evidence (RWE)
 
@@ -254,9 +254,9 @@ This stream models the benefit of using the dFDA's vast data to optimize prevent
   $$
 
 - **Scenario Values:**
-  - **Conservative:** 5 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**50,000 QALYs**</a>
+  - **Conservative:** 5 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_PREVENTION_CONSERVATIVE:,.0f}"` QALYs**</a>
   - **Base:** 14 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_PREVENTION:,.0f}"` QALYs**</a>
-  - **Optimistic:** 15 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**150,000 QALYs**</a>
+  - **Optimistic:** 15 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"` QALYs**</a>
 
 #### C. QALYs from Expanded Scope (New Therapies)
 
@@ -278,9 +278,9 @@ This stream models the benefit of enabling trials for therapies that are current
   $$
 
 - **Scenario Values:**
-  - **Conservative:** 5 new therapies/year $\times$ 2,000 patients/therapy $\times$ 5 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**50,000 QALYs**</a>
+  - **Conservative:** 5 new therapies/year $\times$ 2,000 patients/therapy $\times$ 5 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_NEW_THERAPIES_CONSERVATIVE:,.0f}"` QALYs**</a>
   - **Base:** 10 new therapies/year $\times$ 5,000 patients/therapy $\times$ 10 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"` QALYs**</a>
-  - **Optimistic:** 20 new therapies/year $\times$ 10,000 patients/therapy $\times$ 15 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**3,000,000 QALYs**</a>
+  - **Optimistic:** 20 new therapies/year $\times$ 10,000 patients/therapy $\times$ 15 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_NEW_THERAPIES_OPTIMISTIC:,.0f}"` QALYs**</a>
 
 #### Summary of Total Annual QALY Gains {#summary-of-total-annual-qaly-gains}
 
@@ -288,9 +288,9 @@ This table summarizes the component calculations and derives the total QALY rang
 
 | QALY Benefit Stream                                                                         |                          Conservative Scenario                           |                              Base Scenario                               |                            Optimistic Scenario                             |
 | :------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :------------------------------------------------------------------------: |
-| A. [Faster Drug Access](#a-qalys-from-faster-drug-access)                                   |                [90,000](#a-qalys-from-faster-drug-access)                |               [`{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"`](#a-qalys-from-faster-drug-access)                |                [500,000](#a-qalys-from-faster-drug-access)                 |
-| B. [Improved Prevention/RWE](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [50,000](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe)  | [`{python} f"{QALYS_FROM_PREVENTION:,.0f}"`](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) |  [150,000](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe)  |
-| C. [Expanded Scope](#c-qalys-from-expanded-scope-new-therapies)                             |           [50,000](#c-qalys-from-expanded-scope-new-therapies)           |          [`{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"`](#c-qalys-from-expanded-scope-new-therapies)           |          [3,000,000](#c-qalys-from-expanded-scope-new-therapies)           |
-| **Total Annual QALYs**                                                                      | <a href="#parameterization-overall-dfda-platform-impact">**190,000**</a> | <a href="#parameterization-overall-dfda-platform-impact">**`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`**</a> | <a href="#parameterization-overall-dfda-platform-impact">**3,650,000**</a> |
+| A. [Faster Drug Access](#a-qalys-from-faster-drug-access)                                   | [`{python} f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"`](#a-qalys-from-faster-drug-access) | [`{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"`](#a-qalys-from-faster-drug-access) | [`{python} f"{QALYS_FROM_FASTER_ACCESS_OPTIMISTIC:,.0f}"`](#a-qalys-from-faster-drug-access) |
+| B. [Improved Prevention/RWE](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [`{python} f"{QALYS_FROM_PREVENTION_CONSERVATIVE:,.0f}"`](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [`{python} f"{QALYS_FROM_PREVENTION:,.0f}"`](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [`{python} f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"`](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) |
+| C. [Expanded Scope](#c-qalys-from-expanded-scope-new-therapies)                             | [`{python} f"{QALYS_FROM_NEW_THERAPIES_CONSERVATIVE:,.0f}"`](#c-qalys-from-expanded-scope-new-therapies) | [`{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"`](#c-qalys-from-expanded-scope-new-therapies) | [`{python} f"{QALYS_FROM_NEW_THERAPIES_OPTIMISTIC:,.0f}"`](#c-qalys-from-expanded-scope-new-therapies) |
+| **Total Annual QALYs**                                                                      | <a href="#parameterization-overall-dfda-platform-impact">**`{python} f"{QALYS_TOTAL_CONSERVATIVE:,.0f}"`**</a> | <a href="#parameterization-overall-dfda-platform-impact">**`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`**</a> | <a href="#parameterization-overall-dfda-platform-impact">**`{python} f"{QALYS_TOTAL_OPTIMISTIC:,.0f}"`**</a> |
 
 #### Sources

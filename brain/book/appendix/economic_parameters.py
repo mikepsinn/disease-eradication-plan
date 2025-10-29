@@ -392,6 +392,30 @@ PARTIAL_SUCCESS_RESEARCH_FUNDING = PARTIAL_SUCCESS_DIH_REVENUE * DIH_TREASURY_TO
 PARTIAL_SUCCESS_INVESTOR_ROI = PARTIAL_SUCCESS_BONDHOLDER_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST # ~135.9%
 
 # ---
+# QALYs Breakdown & Treatment Acceleration Details
+# ---
+
+# Base Case (Central Scenario) - Used as primary estimates throughout analysis
+QALYS_FROM_FASTER_ACCESS = 200000 # QALYs gained annually from faster drug access (Base case)
+QALYS_FROM_PREVENTION = 140000 # QALYs gained annually from better prevention through real-world data (Base case)
+QALYS_FROM_NEW_THERAPIES = 500000 # QALYs gained annually from enabling new therapies for rare/untreatable diseases (Base case)
+
+# Conservative Scenario - Lower bound estimates for QALY gains
+QALYS_FROM_FASTER_ACCESS_CONSERVATIVE = 90000 # QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/drug)
+QALYS_FROM_PREVENTION_CONSERVATIVE = 50000 # QALYs from prevention (5M patients × 0.01 QALYs/patient)
+QALYS_FROM_NEW_THERAPIES_CONSERVATIVE = 50000 # QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/patient)
+QALYS_TOTAL_CONSERVATIVE = 190000 # Total conservative QALYs (90k + 50k + 50k)
+
+# Optimistic Scenario - Upper bound estimates for QALY gains
+QALYS_FROM_FASTER_ACCESS_OPTIMISTIC = 500000 # QALYs from faster access (25 drugs/yr × 2 yr accel × 10k QALYs/drug)
+QALYS_FROM_PREVENTION_OPTIMISTIC = 150000 # QALYs from prevention (15M patients × 0.01 QALYs/patient)
+QALYS_FROM_NEW_THERAPIES_OPTIMISTIC = 3000000 # QALYs from new therapies (20 therapies/yr × 10k patients × 15 QALYs/patient)
+QALYS_TOTAL_OPTIMISTIC = 3650000 # Total optimistic QALYs (500k + 150k + 3M)
+
+TREATMENT_ACCELERATION_YEARS_TARGET = 2 # Years to market with dFDA (target)
+TREATMENT_ACCELERATION_YEARS_CURRENT = 17 # Years to market with traditional FDA (current)
+
+# ---
 # SENSITIVITY ANALYSIS SCENARIOS
 # ---
 
@@ -405,8 +429,8 @@ SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE = 0.333  # $333M/year (3-year amortizatio
 SENSITIVITY_DFDA_OPEX_CONSERVATIVE = 0.060  # $60M/year
 SENSITIVITY_TOTAL_COSTS_CONSERVATIVE = 0.393  # $393M/year
 SENSITIVITY_PEACE_QALYS_CONSERVATIVE = 17500  # 500 lives × 35 QALYs/life
-SENSITIVITY_DFDA_QALYS_CONSERVATIVE = 420000  # Conservative health benefit
-SENSITIVITY_TOTAL_QALYS_CONSERVATIVE = 437500  # Total QALYs
+SENSITIVITY_DFDA_QALYS_CONSERVATIVE = QALYS_TOTAL_CONSERVATIVE  # Conservative health benefit (190k QALYs)
+SENSITIVITY_TOTAL_QALYS_CONSERVATIVE = SENSITIVITY_PEACE_QALYS_CONSERVATIVE + SENSITIVITY_DFDA_QALYS_CONSERVATIVE  # Total QALYs
 SENSITIVITY_NET_BENEFIT_CONSERVATIVE = 74.6  # $74.6B
 SENSITIVITY_ICER_CONSERVATIVE = -170514  # -$170,514 per QALY
 SENSITIVITY_COST_PER_LIFE_CONSERVATIVE = -5.97  # -$5.97M per life (in millions)
@@ -434,8 +458,8 @@ SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC = 0.200  # $200M/year (5-year amortization)
 SENSITIVITY_DFDA_OPEX_OPTIMISTIC = 0.030  # $30M/year
 SENSITIVITY_TOTAL_COSTS_OPTIMISTIC = 0.230  # $230M/year
 SENSITIVITY_PEACE_QALYS_OPTIMISTIC = 52500  # 1,500 lives × 35 QALYs/life
-SENSITIVITY_DFDA_QALYS_OPTIMISTIC = 2100000  # Optimistic health benefit
-SENSITIVITY_TOTAL_QALYS_OPTIMISTIC = 2152500  # Total QALYs
+SENSITIVITY_DFDA_QALYS_OPTIMISTIC = QALYS_TOTAL_OPTIMISTIC  # Optimistic health benefit (3.65M QALYs)
+SENSITIVITY_TOTAL_QALYS_OPTIMISTIC = SENSITIVITY_PEACE_QALYS_OPTIMISTIC + SENSITIVITY_DFDA_QALYS_OPTIMISTIC  # Total QALYs
 SENSITIVITY_NET_BENEFIT_OPTIMISTIC = 294.8  # $294.8B
 SENSITIVITY_ICER_OPTIMISTIC = -136945  # -$136,945 per QALY
 SENSITIVITY_COST_PER_LIFE_OPTIMISTIC = -4.79  # -$4.79M per life (in millions)
@@ -635,13 +659,6 @@ VICTORY_BOND_PAYOUT_PER_UNIT_USD_ANNUAL = (VICTORY_BOND_ANNUAL_PAYOUT / VICTORY_
 LOBBYIST_BOND_INVESTMENT_MIN_MILLIONS = 5 # Millions USD, bond investment for lobbyists (min incentive)
 LOBBYIST_BOND_INVESTMENT_MAX_MILLIONS = 20 # Millions USD, bond investment for lobbyists (max incentive)
 LOBBYIST_SALARY_TYPICAL_K = 500 # Thousands USD, typical lobbyist salary, for comparison
-
-# QALYs Breakdown & Treatment Acceleration Details
-QALYS_FROM_FASTER_ACCESS = 200000 # QALYs gained annually from faster drug access
-QALYS_FROM_PREVENTION = 140000 # QALYs gained annually from better prevention through real-world data
-QALYS_FROM_NEW_THERAPIES = 500000 # QALYs gained annually from enabling new therapies for rare/untreatable diseases
-TREATMENT_ACCELERATION_YEARS_TARGET = 2 # Years to market with dFDA (target)
-TREATMENT_ACCELERATION_YEARS_CURRENT = 17 # Years to market with traditional FDA (current)
 
 # Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
 # This sum is distinct from TREATY_TOTAL_ANNUAL_BENEFITS which uses different categories for broader calculation.

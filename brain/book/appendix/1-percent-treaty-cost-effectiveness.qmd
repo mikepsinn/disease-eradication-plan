@@ -103,21 +103,21 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 **Baseline projection**: `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs/year from:
 
-1. **Faster drug access** (50% of total): 420,000 QALYs
+1. **Faster drug access** (`{python} f"{QALYS_FROM_FASTER_ACCESS / GLOBAL_DFDA_QALYS_GAINED_ANNUAL * 100:.0f}%"` of total): `{python} format_qalys(QALYS_FROM_FASTER_ACCESS)` QALYs
    - Average 2-3 year reduction in time to market
    - Applied to ~50 new drugs/year reaching market faster
 
-2. **New therapies enabled** (30% of total): 252,000 QALYs
+2. **New therapies enabled** (`{python} f"{QALYS_FROM_NEW_THERAPIES / GLOBAL_DFDA_QALYS_GAINED_ANNUAL * 100:.0f}%"` of total): `{python} format_qalys(QALYS_FROM_NEW_THERAPIES)` QALYs
    - Rare diseases now economically viable
    - Unpatentable treatments tested
    - Repurposed drugs
 
-3. **Prevention via real-world data** (20% of total): 168,000 QALYs
+3. **Prevention via real-world data** (`{python} f"{QALYS_FROM_PREVENTION / GLOBAL_DFDA_QALYS_GAINED_ANNUAL * 100:.0f}%"` of total): `{python} format_qalys(QALYS_FROM_PREVENTION)` QALYs
    - Early detection of drug interactions
    - Personalized medicine insights
    - Population health monitoring
 
-**Sensitivity range**: 420,000 (conservative) to 2,100,000 (optimistic) QALYs
+**Sensitivity range**: `{python} format_qalys(QALYS_TOTAL_CONSERVATIVE)` (conservative) to `{python} format_qalys(QALYS_TOTAL_OPTIMISTIC)` (optimistic) QALYs
 
 See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) for complete methodology.
 
@@ -428,7 +428,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 4. **dFDA QALYs**: [dFDA QALY Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
    - Baseline: `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs/year
-   - Range: 420,000-2,100,000
+   - Range: `{python} format_qalys(QALYS_TOTAL_CONSERVATIVE)`-`{python} format_qalys(QALYS_TOTAL_OPTIMISTIC)`
 
 5. **QALY Conversion**: WHO life tables
    - 1 life saved ≈ 35 QALYs (standard assumption)
