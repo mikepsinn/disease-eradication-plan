@@ -103,7 +103,7 @@ All calculations in our [Economic Models Notebook](./economics/economic_models.i
 
 *Even in worst-case scenarios, the system achieves ROI between **`{python} format_roi(CONSERVATIVE_SCENARIO_ROI)` and `{python} format_roi(OPTIMISTIC_SCENARIO_ROI)`**.*
 
-### Why This ROI Beats History
+### This ROI in Historical Context
 
 The Decentralized FDA alone achieves **`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` return on investment**.
 
@@ -116,7 +116,7 @@ This exceptional ROI comes from:
 
 {{< include ../figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
-This beats history's greatest public health achievements:
+Comparison to historical public health achievements:
 
 - Smallpox eradication: `{python} format_roi(SMALLPOX_ERADICATION_ROI)`
 - Childhood vaccinations: `{python} format_roi(CHILDHOOD_VACCINATION_ROI)`
