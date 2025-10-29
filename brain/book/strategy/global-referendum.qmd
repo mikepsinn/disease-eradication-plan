@@ -30,23 +30,42 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy"; it is the largest, most powerful political mandate in human history. Here's how to build it.
+## On How to Get 280 Million Humans to Agree on Something
+
+A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy" or a "metaphor" or a "nice idea."
+
+It is the largest, most powerful political mandate in human history.
+
+Politicians can ignore protests. They can ignore polls. They can ignore reality for surprisingly long periods.
+
+They cannot ignore 280 million cryptographically-verified humans saying "do this thing or we vote you out."
+
+Here's how to build that list.
 
 ---
 
-## Objective & Principles
+## On What We're Actually Trying to Do (The Boring But Necessary Part)
 
-### Primary Objective
+**The Goal:**
 
-Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../appendix/1-percent-treaty.qmd) and [DIH](../solution/dih.qmd). Outputs must be auditable and persuasive to policymakers while achieving the **[3.5% global participation threshold](../references.qmd#3-5-rule)** (280M+ verified votes).
+Build a privacy-preserving, globally verifiable referendum that shows public support for the [1% Treaty](../appendix/1-percent-treaty.qmd) and [DIH](../solution/dih.qmd).
 
-### Core Principles
+Requirements:
+- Must be auditable (so politicians can't claim it's fake)
+- Must be persuasive (so policymakers actually care)
+- Must hit **[3.5% global participation](../references.qmd#3-5-rule)** (280M+ verified votes)
 
-- **Verifiability**: End-to-end cryptographic proofs of inclusion and tally correctness
-- **Privacy**: Ballot secrecy with minimal personal data collection
-- **Equity**: Strong Sybil resistance without excluding the unbanked or undocumented
-- **Transparency**: Open-source code, public audits, post-election publish of artifacts
-- **Viral Growth**: Cost-effective acquisition targeting <$0.50 per verified pledge
+That last number isn't arbitrary. It's based on historical data showing that once 3.5% of a population actively supports something, it becomes unstoppable. More on that later.
+
+**The Principles (Or: How Not to Build a Fraudulent Voting System):**
+
+- **Verifiability**: Cryptographic proofs that votes are real (can't fake the math)
+- **Privacy**: Nobody knows who you voted for (including us)
+- **Equity**: Works for everyone, including people without bank accounts or government IDs
+- **Transparency**: Open-source code so anyone can audit it
+- **Viral Growth**: Needs to spread organically, targeting <$0.50 per verified participant
+
+The trick is doing all of these simultaneously, which is harder than it sounds.
 
 ---
 
@@ -87,51 +106,76 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ---
 
-## Verification & Fraud Prevention
+## On Stopping People from Cheating (The Hard Part)
 
-### Multi-Factor Sybil Resistance
+### On Why We Need Multiple Layers of "Prove You're Human"
 
-**Layer 1: Basic Authentication**
+The internet is full of bots, fraudsters, and people who think it's funny to vote 1,000 times. This is a problem.
 
-- **Email/Phone OTP**: Verification via SMS and email codes
-- **Device Fingerprinting**: Browser and device uniqueness tracking
-- **IP Geolocation**: Geographic distribution analysis to detect bot farms
-- **Velocity Limits**: Rate limiting to prevent automated registration
+We need to verify that each vote comes from a real, unique human without:
+- Requiring government ID (excludes billions of people)
+- Violating privacy (creepy and illegal in many places)
+- Making it impossible for normal people to participate (defeats the purpose)
 
-**Layer 2: Enhanced Verification**
+This is harder than it sounds. Here's how we do it:
 
-- **Government ID Integration**: Connect with national e-ID systems where available
-  - [Estonia e-Residency](../references.qmd#estonia-eresidency-stats) integration
-  - [Indian Aadhaar system](../references.qmd#indian-aadhaar-system) integration
-  - [EU eIDAS network](../references.qmd#eu-eidas-network) compatibility
-  - US State ID verification via [ID.me partnership](../references.qmd#id-me-verification)
-- **Biometric Liveness Detection**: Camera-based liveness checks to prevent deepfakes
-- **Proof-of-Uniqueness Partners**: Integration with existing identity verification services
-  - [Worldcoin iris scanning](../references.qmd#worldcoin-scale) (where available)
-  - [BrightID social verification network](../references.qmd#brightid-social-verification-network)
-  - [Gitcoin Passport identity scoring](../references.qmd#gitcoin-passport)
+**Layer 1: Basic "Are You Even Trying?" Checks**
 
-**Layer 3: Social Verification**
+The easy stuff that stops the lazy fraudsters:
 
-- **Social Media Cross-Reference**: Verify against established social media accounts (opt-in)
-- **Reputation Systems**: Integration with existing web3 reputation platforms
-- **Community Attestation**: Local community leaders can vouch for participants
+- **Email/Phone OTP**: Send a code, make them type it back. Costs money, slows bots.
+- **Device Fingerprinting**: Your browser/phone has a unique signature. We track it.
+- **IP Geolocation**: If 10,000 votes come from one basement in Belarus, we notice.
+- **Velocity Limits**: Try to vote 500 times in one minute, get blocked.
 
-### AI-Powered Fraud Detection
+This stops maybe 90% of fraud. The other 10% requires getting creative.
 
-**Anomaly Detection Engine:**
+**Layer 2: Enhanced "Now We're Getting Serious" Verification**
 
-- **Registration Patterns**: Detect unusual signup patterns or timing
-- **Behavioral Analysis**: Identify non-human interaction patterns
-- **Network Analysis**: Map suspicious connections between accounts
-- **Geographic Clustering**: Flag unusual concentrations of participants
+For people who want higher verification (and higher rewards):
 
-**Real-Time Monitoring:**
+- **Government ID Integration**: Connect with existing national e-ID systems:
+  - [Estonia e-Residency](../references.qmd#estonia-eresidency-stats) (they have digital citizenship, it's actually cool)
+  - [Indian Aadhaar system](../references.qmd#indian-aadhaar-system) (1.3 billion people already enrolled)
+  - [EU eIDAS network](../references.qmd#eu-eidas-network) (European digital ID)
+  - US State ID verification via [ID.me](../references.qmd#id-me-verification) (same system military uses)
 
-- **Duplicate Detection**: Cross-reference across multiple identity factors
-- **Bot Behavior Analysis**: Machine learning models trained on known bot patterns
-- **Social Media Verification**: Cross-check against social media account authenticity
-- **Device Intelligence**: Advanced device fingerprinting and risk scoring
+- **Biometric Liveness Detection**: Wave at your camera. Blink. Prove you're not a video. Deepfakes hate this one weird trick.
+
+- **Proof-of-Uniqueness Partners**: Work with existing identity services:
+  - [Worldcoin iris scanning](../references.qmd#worldcoin-scale) (yes, the eyeball scanner)
+  - [BrightID social verification](../references.qmd#brightid-social-verification-network) (your friends vouch for you)
+  - [Gitcoin Passport](../references.qmd#gitcoin-passport) (reputation scoring for crypto people)
+
+**Layer 3: Social "Your Community Says You're Real" Verification**
+
+Sometimes the best verification is humans verifying humans:
+
+- **Social Media Cross-Reference**: Link your Twitter/Facebook (opt-in, not required)
+- **Reputation Systems**: Web3 reputation platforms (for people who have that)
+- **Community Attestation**: Local leaders vouch for people without digital IDs
+
+The more layers you pass, the more trustworthy your vote. But even Layer 1 gets you counted.
+
+### On Using AI to Catch the Smart Cheaters
+
+Some people are creative. They pass Layer 1 and 2. They have fake IDs, VPNs, and too much free time.
+
+This is where AI comes in. Not the "I'm going to become sentient and kill you" kind. The boring, useful kind that notices patterns.
+
+**The Anomaly Detection Engine (Or: The "That's Weird" Detector):**
+
+- **Registration Patterns**: If 5,000 people sign up at exactly 3:47 AM, that's suspicious
+- **Behavioral Analysis**: Humans click around randomly. Bots click in perfect patterns. Easy to spot.
+- **Network Analysis**: Map connections between accounts. Real people have friends. Bot farms are all friends with each other. Awkward.
+- **Geographic Clustering**: Real participation spreads naturally. Bot farms cluster in cheap data centers in Romania.
+
+**Real-Time "You Shall Not Pass" Monitoring:**
+
+- **Duplicate Detection**: Cross-check everything. Same email pattern, same phone prefix, same typos? Probably same person.
+- **Bot Behavior**: Machine learning trained on known bot patterns. Bots are predictable. Humans are chaotic. This helps.
+- **Social Media Verification**: Real accounts have years of posts about breakfast and cats. Fake accounts have three tweets, all from yesterday.
+- **Device Intelligence**: Fancy fingerprinting that tracks browser quirks, screen resolution, installed fonts. Shockingly effective.
 
 ### Privacy-Preserving Architecture
 
