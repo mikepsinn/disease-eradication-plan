@@ -85,6 +85,7 @@ book:
         - brain/book/economics/coalition-that-wins.qmd # ✅
         - brain/book/appendix/co-opt-dont-compete.qmd # ✅ (EXCELLENT voice - "You'd lose")
         - brain/book/appendix/global-referendum-implementation.qmd # ✅ (technical spec, appropriate)
+        - brain/book/appendix/referendum-question-testing-strategy.qmd # ✅ A/B testing framework for the question
         - brain/book/appendix/nonprofit-partnership-incentives.qmd # ✅ (IMPROVED)
 
     - part: "⚖️ Policy & Regulatory"

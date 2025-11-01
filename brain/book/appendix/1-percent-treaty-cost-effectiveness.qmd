@@ -47,7 +47,7 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 **For detailed breakdown and methodology**, see:
 
 - [Peace Dividend Calculations](peace-dividend-calculations.qmd) - Full Jupyter notebook with sensitivity analysis
-- [Peace Dividend Chapter](../../economics/peace-dividend.qmd) - Accessible overview with breakdown table
+- [Peace Dividend Chapter](../economics/peace-dividend.qmd) - Accessible overview with breakdown table
 - [Cost of War Analysis](../problem/cost-of-war.qmd) - Source data
 
 #### 1b. Health Dividend (`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`/year)
@@ -61,7 +61,7 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 **For detailed breakdown and methodology**, see:
 
 - [Health Dividend Calculations](health-dividend-calculations.qmd) - Full Jupyter notebook with NPV and ROI analysis
-- [Health Dividend Chapter](../../economics/health-dividend.qmd) - Accessible overview with cost breakdown
+- [Health Dividend Chapter](../economics/health-dividend.qmd) - Accessible overview with cost breakdown
 - [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) - Detailed mechanism and QALY model
 
 #### Total Annual Economic Benefits
@@ -544,10 +544,10 @@ The math shows it's worth trying. Even a 10% chance of success has positive expe
 
 **Accessible Overviews**:
 
-- [Peace Dividend Chapter](../../economics/peace-dividend.qmd) - Accessible summary with breakdown table
-- [Health Dividend Chapter](../../economics/health-dividend.qmd) - Accessible summary with ROI story
+- [Peace Dividend Chapter](../economics/peace-dividend.qmd) - Accessible summary with breakdown table
+- [Health Dividend Chapter](../economics/health-dividend.qmd) - Accessible summary with ROI story
 
 **Other References**:
 
-- [Campaign Budget](../../economics/campaign-budget.qmd) - Detailed cost breakdown
+- [Campaign Budget](../economics/campaign-budget.qmd) - Detailed cost breakdown
 - [Intervention Comparison Table](intervention-comparison-table.qmd) - Compare to other health interventions
