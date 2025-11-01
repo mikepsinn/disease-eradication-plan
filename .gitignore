@@ -4,6 +4,9 @@
 .dev.vars
 .DS_Store
 
+# External repositories
+dih-ops/
+
 # Node modules
 node_modules/
 
