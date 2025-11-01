@@ -1,0 +1,86 @@
+[build]
+  # Build command - installs Quarto and builds the book
+  command = """
+    if [ ! -f "/opt/buildhome/.local/bin/quarto" ]; then
+      echo "Installing Quarto..."
+      wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
+      tar -xzf quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
+      mkdir -p /opt/buildhome/.local/bin
+      cp -r quarto-${QUARTO_VERSION}/bin/* /opt/buildhome/.local/bin/
+      export PATH="/opt/buildhome/.local/bin:$PATH"
+    fi
+    quarto --version
+    pip install -r requirements.txt
+    pnpm install
+    pnpm run build
+  """
+
+  # Directory to publish - matches output-dir in _quarto.yml
+  publish = "_book/warondisease"
+
+  # Ignore builds if there are no relevant changes
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
+
+[build.environment]
+  # Specify Node.js version for builds
+  NODE_VERSION = "20"
+
+  # Required for Quarto - update version as needed
+  QUARTO_VERSION = "1.5.57"
+
+  # Python version for Jupyter kernel
+  PYTHON_VERSION = "3.11"
+
+  # Enable pnpm
+  NPM_FLAGS = "--prefix=/dev/null"
+  ENABLE_PNPM = "true"
+
+# Install Quarto CLI during build
+[build.processing]
+  skip_processing = false
+
+# Headers for security and caching
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirects for clean URLs
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# 404 page
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Enable Pretty URLs (remove .html extension)
+[build.processing.html]
+  pretty_urls = true

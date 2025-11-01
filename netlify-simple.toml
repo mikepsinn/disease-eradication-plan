@@ -1,0 +1,46 @@
+# Simpler Netlify configuration using plugins
+# Rename this to netlify.toml if you prefer this approach
+
+[build]
+  command = "pnpm install && pnpm run build"
+  publish = "_book/warondisease"
+
+[build.environment]
+  NODE_VERSION = "20"
+  PYTHON_VERSION = "3.11"
+  NPM_FLAGS = "--prefix=/dev/null"
+
+# Use Netlify's Quarto plugin for automatic installation
+[[plugins]]
+  package = "netlify-plugin-quarto"
+
+# Headers for security and caching
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Pretty URLs
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

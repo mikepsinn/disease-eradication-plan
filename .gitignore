@@ -76,3 +76,7 @@ dih-index.html
 .jupyter_cache/
 *.tex
 *.aux
+
+# Netlify
+.netlify/
+netlify/
