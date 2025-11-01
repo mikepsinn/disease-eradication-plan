@@ -80,7 +80,7 @@ jobs:
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
       - name: Render Quarto Project
-        run: quarto render
+        run: quarto render --to html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
