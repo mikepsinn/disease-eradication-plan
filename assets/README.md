@@ -375,7 +375,6 @@ This document catalogs all images downloaded from thinkbynumbers.org and maps th
 - **Use in chapters:**
   - `brain/book/problem/cost-of-war.qmd` - PRIMARY USE
   - `brain/book/solution/1-percent-treaty.qmd`
-  - `brain/book/appendix/1-percent-treaty.qmd`
   - `brain/book/appendix/peace-dividend-analysis.qmd`
 
 **world-without-war.png** (1.7 MB)
