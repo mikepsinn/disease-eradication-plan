@@ -176,7 +176,7 @@ book:
 execute:
   # Relaunch kernel for each render
   cache: false
-  freeze: false
+  freeze: auto
   # Send all generated figures to a central directory
   fig-path: "brain/figures/"
 
