@@ -1,0 +1,73 @@
+# Optional: GitHub Actions workflow for automated Netlify deployment
+# This provides an alternative to Netlify's built-in Git integration
+# Useful if you want more control over the deployment process
+#
+# SETUP REQUIRED:
+# 1. Get your Netlify Site ID from: https://app.netlify.com/sites/YOUR-SITE/settings/general
+# 2. Create a Personal Access Token: https://app.netlify.com/user/applications/personal
+# 3. Add secrets to GitHub: Settings → Secrets and variables → Actions
+#    - NETLIFY_AUTH_TOKEN: Your personal access token
+#    - NETLIFY_SITE_ID: Your site ID
+#
+# Note: You can use either this workflow OR Netlify's built-in Git integration, not both
+
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.5.57
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Node dependencies
+        run: pnpm install
+
+      - name: Build Quarto book
+        run: pnpm run build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './_book/warondisease'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 15
