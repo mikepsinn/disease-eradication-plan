@@ -38,6 +38,9 @@ importers:
       ai:
         specifier: ^5.0.34
         version: 5.0.72(zod@3.25.76)
+      chokidar:
+        specifier: ^4.0.3
+        version: 4.0.3
       dotenv:
         specifier: ^16.4.7
         version: 16.6.1
@@ -12356,10 +12359,10 @@ snapshots:
   ox@0.6.7(typescript@5.9.3)(zod@4.1.12):
     dependencies:
       '@adraffy/ens-normalize': 1.11.1
-      '@noble/curves': 1.8.1
-      '@noble/hashes': 1.7.1
-      '@scure/bip32': 1.6.2
-      '@scure/bip39': 1.5.4
+      '@noble/curves': 1.9.7
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      '@scure/bip39': 1.6.0
       abitype: 1.0.8(typescript@5.9.3)(zod@4.1.12)
       eventemitter3: 5.0.1
     optionalDependencies:
