@@ -30,9 +30,9 @@ This stream quantifies the health gains from bringing effective treatments to pa
 - **Base:** A 2-year average acceleration across a broader range of therapies, including but not limited to oncology.
 - **Optimistic:** A more profound acceleration (3+ years) combined with an increased number of successful drugs due to lower trial costs.
 - **Annual QALY Estimates:**
-- **Conservative:** `{python} f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"` QALYs
-- **Base:** `{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"` QALYs
-- **Optimistic:** `{python} f"{QALYS_FROM_FASTER_ACCESS_OPTIMISTIC:,.0f}"` QALYs
+- **Conservative:** 90,000 QALYs
+- **Base:** 24% QALYs
+- **Optimistic:** 500,000 QALYs
 
 #### B. Improving Preventative Care via Real-World Evidence
 
@@ -44,9 +44,9 @@ This stream captures the value of using the dFDA's vast data to optimize prevent
 - **Base:** The platform drives significant uptake and better targeting of established preventative care across multiple chronic diseases.
 - **Optimistic:** The platform uncovers new, highly effective preventative strategies and enables their rapid, widespread adoption.
 - **Annual QALY Estimates:**
-- **Conservative:** `{python} f"{QALYS_FROM_PREVENTION_CONSERVATIVE:,.0f}"` QALYs
-- **Base:** `{python} f"{QALYS_FROM_PREVENTION:,.0f}"` QALYs
-- **Optimistic:** `{python} f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"` QALYs
+- **Conservative:** 50,000 QALYs
+- **Base:** 17% QALYs
+- **Optimistic:** 150,000 QALYs
 
 #### C. Enabling Research for Previously Untreatable/Neglected Diseases
 
@@ -58,24 +58,24 @@ This stream reflects the transformative potential of the dFDA to create viable r
 - **Base:** The platform facilitates several new treatments annually or one major breakthrough for a more common rare disease.
 - **Optimistic:** The low-cost model spurs a wave of innovation, leading to dozens of new therapies for rare diseases and other neglected research areas.
 - **Annual QALY Estimates:**
-- **Conservative:** `{python} f"{QALYS_FROM_NEW_THERAPIES_CONSERVATIVE:,.0f}"` QALYs
-- **Base:** `{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"` QALYs
-- **Optimistic:** `{python} f"{QALYS_FROM_NEW_THERAPIES_OPTIMISTIC:,.0f}"` QALYs
+- **Conservative:** 50,000 QALYs
+- **Base:** 60% QALYs
+- **Optimistic:** 3,000,000 QALYs
 
 #### Summary Table: Total Annual QALY Gains {#qaly-summary-table}
 
 | Scenario         | (A) Accelerated Development | (B) Improved Prevention | (C) New Research | **Total Annual QALYs** |
 | :--------------- | --------------------------: | ----------------------: | ---------------: | ---------------------: |
-| **Conservative** | `{python} f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"` | `{python} f"{QALYS_FROM_PREVENTION_CONSERVATIVE:,.0f}"` | `{python} f"{QALYS_FROM_NEW_THERAPIES_CONSERVATIVE:,.0f}"` | **`{python} f"{QALYS_TOTAL_CONSERVATIVE:,.0f}"`** |
-| **Base Case**    | `{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"` | `{python} f"{QALYS_FROM_PREVENTION:,.0f}"` | `{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"` | **`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`** |
-| **Optimistic**   | `{python} f"{QALYS_FROM_FASTER_ACCESS_OPTIMISTIC:,.0f}"` | `{python} f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"` | `{python} f"{QALYS_FROM_NEW_THERAPIES_OPTIMISTIC:,.0f}"` | **`{python} f"{QALYS_TOTAL_OPTIMISTIC:,.0f}"`** |
+| **Conservative** | 90,000 | 50,000 | 50,000 | **190,000** |
+| **Base Case**    | 24% | 17% | 60% | **840,000** |
+| **Optimistic**   | 500,000 | 150,000 | 3,000,000 | **3,650,000** |
 
 #### DCT Platform Funding (Analogous Cost Basis)
 
 **For detailed information on decentralized clinical trial (DCT) platform funding**, see:
 
 - [Medable: $521M raised, $2.1B valuation](../references.qmd#dct-platform-funding-medable)
-- [Other DCT platforms: Science 37 (~`{python} format_millions(DFDA_ANNUAL_OPEX)`), Thread (up to $50M), uMotif (~$25.5M)](../references.qmd#dct-platform-funding-others)
+- [Other DCT platforms: Science 37 (~$40M), Thread (up to $50M), uMotif (~$25.5M)](../references.qmd#dct-platform-funding-others)
 
 #### Sources
 
@@ -96,14 +96,14 @@ This section quantifies the daily societal cost of maintaining the status quo, f
 The calculations below are based on the central ("base case") estimates established in the preceding sections of this analysis.
 
 - **Daily QALYs Lost:**
-  - The analysis ([Appendix: Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)) projects a baseline of **[`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"` Quality-Adjusted Life Years (QALYs) gained per year](#summary-of-total-annual-qaly-gains)** from the dFDA's impact.
+  - The analysis ([Appendix: Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)) projects a baseline of **[840,000 Quality-Adjusted Life Years (QALYs) gained per year](#summary-of-total-annual-qaly-gains)** from the dFDA's impact.
   - The daily opportunity cost in lost health is therefore:
     $$
-    \frac{`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL / 365:,.0f}"`\ \text{QALYs lost per day}}
+    \frac{840,000\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{840,000\ \text{QALYs lost per day}}
     $$
 
 - **Daily Financial Value Lost:**
-  - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **[`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` per year](#gross-r-and-d-savings-from-dfda-implementation)** by reducing the costs of the [**`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` global clinical trial market**](#market-size-and-impact) by [**`{python} format_percentage(TRIAL_COST_REDUCTION_PCT)`**](#gross-r-and-d-savings-from-dfda-implementation). This represents value that is currently being spent inefficiently.
+  - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **[$50.0B per year](#gross-r-and-d-savings-from-dfda-implementation)** by reducing the costs of the [**$100.0B global clinical trial market**](#market-size-and-impact) by [**50.0%**](#gross-r-and-d-savings-from-dfda-implementation). This represents value that is currently being spent inefficiently.
   - The daily financial loss from this inefficiency is:
     $$
     \frac{\$50,000,000,000}{365\ \text{days}} \approx \mathbf{\$137\ \text{million lost per day}}
@@ -115,10 +115,10 @@ The daily costs of inaction are highly sensitive to the underlying assumptions a
 
 | Scenario                                 | R&D Trial Cost Reduction | Annual Gross Savings | Annual QALYs Gained | Daily Money Lost (Approx.) | Daily QALYs Lost (Approx.) | Note                                                                                                                                              |
 | :--------------------------------------- | :----------------------: | :------------------: | :-----------------: | :------------------------: | :------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Conservative**                         |           30%            |     \$30 Billion     | **`{python} f"{QALYS_TOTAL_CONSERVATIVE:,.0f}"`** | **\$82 Million** | **`{python} f"{QALYS_TOTAL_CONSERVATIVE / 365:,.0f}"`** | Assumes lower efficiency gains and moderate health impact, using [conservative QALY model](#summary-of-total-annual-qaly-gains). |
-| **Base Case**                            |         **50%**          |   **\$50 Billion**   | **`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`** | **\$137 Million** | **`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL / 365:,.0f}"`** | **The central estimate used in this analysis, based on the [median QALY model](#summary-of-total-annual-qaly-gains).** |
-| **Optimistic**                           |           70%            |     \$70 Billion     | **`{python} f"{QALYS_TOTAL_OPTIMISTIC:,.0f}"`** | **\$192 Million** | **`{python} f"{QALYS_TOTAL_OPTIMISTIC / 365:,.0f}"`** | Assumes high efficiency and significant improvements in health outcomes, using [optimistic QALY model](#summary-of-total-annual-qaly-gains). |
-| **Transformative (RECOVERY Trial-like)** |         **95%**          |   **\$95 Billion**   | **`{python} f"{QALYS_TOTAL_OPTIMISTIC:,.0f}"`** | **\$260 Million** | **`{python} f"{QALYS_TOTAL_OPTIMISTIC / 365:,.0f}"`** | Reflects exceptional, RECOVERY-like efficiency and broad health benefits, using [new optimistic QALY model](#summary-of-total-annual-qaly-gains). |
+| **Conservative**                         |           30%            |     \$30 Billion     | **190,000** | **\$82 Million** | **190,000** | Assumes lower efficiency gains and moderate health impact, using [conservative QALY model](#summary-of-total-annual-qaly-gains). |
+| **Base Case**                            |         **50%**          |   **\$50 Billion**   | **840,000** | **\$137 Million** | **840,000** | **The central estimate used in this analysis, based on the [median QALY model](#summary-of-total-annual-qaly-gains).** |
+| **Optimistic**                           |           70%            |     \$70 Billion     | **3,650,000** | **\$192 Million** | **3,650,000** | Assumes high efficiency and significant improvements in health outcomes, using [optimistic QALY model](#summary-of-total-annual-qaly-gains). |
+| **Transformative (RECOVERY Trial-like)** |         **95%**          |   **\$95 Billion**   | **3,650,000** | **\$260 Million** | **3,650,000** | Reflects exceptional, RECOVERY-like efficiency and broad health benefits, using [new optimistic QALY model](#summary-of-total-annual-qaly-gains). |
 
 #### Discussion of Uncertainty and Key Variables
 
@@ -134,7 +134,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 ### Final ROI and Net Benefit
 
-- **Central ROI Estimate:** [`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`](#final-roi-and-net-benefit)
+- **Central ROI Estimate:** [463:1](#final-roi-and-net-benefit)
 - **Central Net Benefit (10-Year, Discounted):** [~\$249 Billion](#final-roi-and-net-benefit)
 - **Dominant Health Intervention:** The dFDA is cost-saving while simultaneously generating substantial health gains (QALYs), making it a dominant intervention from a health economics perspective.
 
@@ -152,7 +152,7 @@ The following table provides the data and sources that support the chart. The li
 
 | Intervention                  | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :---------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **dFDA Infrastructure**             |                     **4,744 - 194,667**                      | **-$260,000 to -$19,000**<a href="#ref_dfda_icer">²</a> | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating `{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`-3.65M QALYs annually.                                                                              |
+| **dFDA Infrastructure**             |                     **4,744 - 194,667**                      | **-$260,000 to -$19,000**<a href="#ref_dfda_icer">²</a> | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating 840,000-3.65M QALYs annually.                                                                              |
 | **Smallpox Eradication**      |      **10,000 - 100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its unprecedented scale. ([WHO, 2010](../references.qmd#who-smallpox-eradication-commemoration)) |
 | **Childhood Vaccinations**    |        **22 - 10,000+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. ([CDC, 2023](../references.qmd#childhood-vaccinations-prevent-deaths))                                 |
 | **Clean Water Programs**      |                       **100 - 1,000**                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $20-$500/DALY averted. Community water supply improvements cost $200-$2,000/DALY. ([WHO, 2004](../references.qmd#who-clean-water-daly-costs))                                              |
@@ -192,11 +192,11 @@ The following table provides the data and sources that support the chart. The li
 
 ## Comparison to Other Major Public Investments
 
-To provide context for the dFDA's estimated costs, it is useful to compare them to other significant U.S. government investments in health and technology. The dFDA's projected "Lean Ecosystem" cost of approximately **[`{python} format_millions(DFDA_ANNUAL_OPEX)` per year](#simplified-roi-scenario)** (covering core platform operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
+To provide context for the dFDA's estimated costs, it is useful to compare them to other significant U.S. government investments in health and technology. The dFDA's projected "Lean Ecosystem" cost of approximately **[$40M per year](#simplified-roi-scenario)** (covering core platform operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
 
 | Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to dFDA Annual Cost           | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :--------------------------------------- | :------------------------------------------------------------------------- |
-| **dFDA Infrastructure (Lean Ecosystem)**   | **~`{python} format_millions(DFDA_ANNUAL_OPEX)` / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
+| **dFDA Infrastructure (Lean Ecosystem)**   | **~$40M / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **~\$257 Million / year** ($1.8B over 7 years)          | **~6.4x**                                | See [NCI Budget](../references.qmd#nih-nci-budget-breakdown)          |
 | **NIH "All of Us" Research Program** | **~\$500 Million / year** (FY23 Approx. Budget) | **~12.5x**                               | See [NIH All of Us Program](../references.qmd#nih-all-of-us-program)              |
 | **HealthCare.gov (Initial Build)**   | **~\$1.7 - \$2.1 Billion** (Total Upfront Cost)        | **~42x - 52x** (of one year's dFDA cost) | See [GAO HealthCare.gov costs](../references.qmd#gao-healthcare-gov-costs) |
@@ -232,9 +232,9 @@ This stream models the benefit of accelerating the approval of new drugs that wo
   $$
 
 - **Scenario Values:**
-  - **Conservative:** 15 drugs/year $\times$ 1 year acceleration $\times$ 6,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"` QALYs**</a>
-  - **Base:** 20 drugs/year $\times$ 1.5 years acceleration $\times$ 6,667 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"` QALYs**</a>
-  - **Optimistic:** 25 drugs/year $\times$ 2 years acceleration $\times$ 10,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_FASTER_ACCESS_OPTIMISTIC:,.0f}"` QALYs**</a>
+  - **Conservative:** 15 drugs/year $\times$ 1 year acceleration $\times$ 6,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**90,000 QALYs**</a>
+  - **Base:** 20 drugs/year $\times$ 1.5 years acceleration $\times$ 6,667 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**24% QALYs**</a>
+  - **Optimistic:** 25 drugs/year $\times$ 2 years acceleration $\times$ 10,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**500,000 QALYs**</a>
 
 #### B. QALYs from Improved Prevention and Real-World Evidence (RWE)
 
@@ -253,9 +253,9 @@ This stream models the benefit of using the dFDA's vast data to optimize prevent
   $$
 
 - **Scenario Values:**
-  - **Conservative:** 5 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_PREVENTION_CONSERVATIVE:,.0f}"` QALYs**</a>
-  - **Base:** 14 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_PREVENTION:,.0f}"` QALYs**</a>
-  - **Optimistic:** 15 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"` QALYs**</a>
+  - **Conservative:** 5 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**50,000 QALYs**</a>
+  - **Base:** 14 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**17% QALYs**</a>
+  - **Optimistic:** 15 million patients $\times$ 0.01 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**150,000 QALYs**</a>
 
 #### C. QALYs from Expanded Scope (New Therapies)
 
@@ -277,9 +277,9 @@ This stream models the benefit of enabling trials for therapies that are current
   $$
 
 - **Scenario Values:**
-  - **Conservative:** 5 new therapies/year $\times$ 2,000 patients/therapy $\times$ 5 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_NEW_THERAPIES_CONSERVATIVE:,.0f}"` QALYs**</a>
-  - **Base:** 10 new therapies/year $\times$ 5,000 patients/therapy $\times$ 10 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"` QALYs**</a>
-  - **Optimistic:** 20 new therapies/year $\times$ 10,000 patients/therapy $\times$ 15 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**`{python} f"{QALYS_FROM_NEW_THERAPIES_OPTIMISTIC:,.0f}"` QALYs**</a>
+  - **Conservative:** 5 new therapies/year $\times$ 2,000 patients/therapy $\times$ 5 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**50,000 QALYs**</a>
+  - **Base:** 10 new therapies/year $\times$ 5,000 patients/therapy $\times$ 10 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**60% QALYs**</a>
+  - **Optimistic:** 20 new therapies/year $\times$ 10,000 patients/therapy $\times$ 15 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**3,000,000 QALYs**</a>
 
 #### Summary of Total Annual QALY Gains {#summary-of-total-annual-qaly-gains}
 
@@ -287,9 +287,9 @@ This table summarizes the component calculations and derives the total QALY rang
 
 | QALY Benefit Stream                                                                         |                          Conservative Scenario                           |                              Base Scenario                               |                            Optimistic Scenario                             |
 | :------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :------------------------------------------------------------------------: |
-| A. [Faster Drug Access](#a-qalys-from-faster-drug-access)                                   | [`{python} f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"`](#a-qalys-from-faster-drug-access) | [`{python} f"{QALYS_FROM_FASTER_ACCESS:,.0f}"`](#a-qalys-from-faster-drug-access) | [`{python} f"{QALYS_FROM_FASTER_ACCESS_OPTIMISTIC:,.0f}"`](#a-qalys-from-faster-drug-access) |
-| B. [Improved Prevention/RWE](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [`{python} f"{QALYS_FROM_PREVENTION_CONSERVATIVE:,.0f}"`](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [`{python} f"{QALYS_FROM_PREVENTION:,.0f}"`](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [`{python} f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"`](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) |
-| C. [Expanded Scope](#c-qalys-from-expanded-scope-new-therapies)                             | [`{python} f"{QALYS_FROM_NEW_THERAPIES_CONSERVATIVE:,.0f}"`](#c-qalys-from-expanded-scope-new-therapies) | [`{python} f"{QALYS_FROM_NEW_THERAPIES:,.0f}"`](#c-qalys-from-expanded-scope-new-therapies) | [`{python} f"{QALYS_FROM_NEW_THERAPIES_OPTIMISTIC:,.0f}"`](#c-qalys-from-expanded-scope-new-therapies) |
-| **Total Annual QALYs**                                                                      | <a href="#parameterization-overall-dfda-platform-impact">**`{python} f"{QALYS_TOTAL_CONSERVATIVE:,.0f}"`**</a> | <a href="#parameterization-overall-dfda-platform-impact">**`{python} f"{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,.0f}"`**</a> | <a href="#parameterization-overall-dfda-platform-impact">**`{python} f"{QALYS_TOTAL_OPTIMISTIC:,.0f}"`**</a> |
+| A. [Faster Drug Access](#a-qalys-from-faster-drug-access)                                   | [90,000](#a-qalys-from-faster-drug-access) | [24%](#a-qalys-from-faster-drug-access) | [500,000](#a-qalys-from-faster-drug-access) |
+| B. [Improved Prevention/RWE](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [50,000](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [17%](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) | [150,000](#b-qalys-from-improved-prevention-and-real-world-evidence-rwe) |
+| C. [Expanded Scope](#c-qalys-from-expanded-scope-new-therapies)                             | [50,000](#c-qalys-from-expanded-scope-new-therapies) | [60%](#c-qalys-from-expanded-scope-new-therapies) | [3,000,000](#c-qalys-from-expanded-scope-new-therapies) |
+| **Total Annual QALYs**                                                                      | <a href="#parameterization-overall-dfda-platform-impact">**190,000**</a> | <a href="#parameterization-overall-dfda-platform-impact">**840,000**</a> | <a href="#parameterization-overall-dfda-platform-impact">**3,650,000**</a> |
 
 #### Sources

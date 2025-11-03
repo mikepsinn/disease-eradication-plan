@@ -2,6 +2,8 @@ project:
   type: book
   output-dir: _book/warondisease
   execute-dir: project
+  post-render:
+    - python scripts/validate_render.py
 
 book:
   title: "The Complete Idiot's Guide to Ending War and Disease"

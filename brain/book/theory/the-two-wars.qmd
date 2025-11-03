@@ -120,7 +120,7 @@ We have:
 ### The Oxford RECOVERY Model (But Bigger)
 
 **Duration**: 10 years to cure major diseases
-**Cost**: `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year (1% of military budget)
+**Cost**: $27.2B/year (1% of military budget)
 **Method**: Decentralized trials, anyone can participate
 **Victory condition**: Disease eradicated
 **Profit motive**: Removed (patients subsidized)
@@ -231,7 +231,7 @@ deaths_prevented = 200_000_000  # Over 10 years
 
 **If war ended**:
 
-- Defense contractors lose [`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`/year](../references.qmd#sipri-2024-spending)
+- Defense contractors lose [$2.7T/year](../references.qmd#sipri-2024-spending)
 - Generals lose justification for budgets
 - Politicians lose campaign donations from defense lobby
 - Jobs disappear
@@ -273,7 +273,7 @@ We can win War on Disease. **We just have to design it to be won.**
 
 ### Option A: Continue Both Wars Forever
 
-- Keep spending `{python} format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)` on War on Humanity (never win)
+- Keep spending $11.4T on War on Humanity (never win)
 - Keep spending [$68B on War on Disease](../references.qmd#global-gov-med-research-spending) (never win)
 - Nearly 30 million people die unnecessarily each year, forever
 

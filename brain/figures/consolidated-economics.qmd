@@ -335,9 +335,9 @@ fig.show()
 ### Primary Economic Models
 
 - **1% Treaty Analysis**: $92B annual peace dividend from 1% military spending reduction
-- **dFDA Cost-Benefit**: `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI from `{python} format_millions(DFDA_ANNUAL_OPEX)` platform saving `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` in trial costs
+- **dFDA Cost-Benefit**: `{python} roi_dfda_savings_only_formatted` ROI from `{python} dfda_annual_opex_formatted` platform saving `{python} dfda_gross_savings_annual_formatted` in trial costs
 - **DIH Market Allocation**: $13.5B value from 50% better research allocation
-- **Health Impact**: `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs valued at $126B annually
+- **Health Impact**: `{python} global_dfda_qalys_gained_annual_formatted` QALYs valued at $126B annually
 
 ### Additional Economic Analyses
 
@@ -349,7 +349,7 @@ fig.show()
 ### Key Assumptions
 
 - QALY valued at $150,000 (standard US threshold)
-- Global clinical trials market: `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` annually
+- Global clinical trials market: `{python} global_clinical_trial_market_annual_formatted` annually
 - Military spending: $2.443T globally
 - Disease burden: $109.1T annually
 - Conservative network effect multipliers

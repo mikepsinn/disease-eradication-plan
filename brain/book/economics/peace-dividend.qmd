@@ -24,8 +24,8 @@ from economic_parameters import *
 
 ## TL;DR
 
-- **What The Treaty Captures:** Cut global military spending by 1% and the DIH receives **`{python} format_billions(TREATY_ANNUAL_FUNDING)` annually** to fund the Decentralized Institutes of Health.
-- **What The World Saves:** Cut the total costs of conflict by 1% and society saves **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` every year**. That's less money spent rebuilding bombed hospitals, treating war casualties, and dealing with refugees.
+- **What The Treaty Captures:** Cut global military spending by 1% and the DIH receives **$27.2B annually** to fund the Decentralized Institutes of Health.
+- **What The World Saves:** Cut the total costs of conflict by 1% and society saves **$113.6B every year**. That's less money spent rebuilding bombed hospitals, treating war casualties, and dealing with refugees.
 - **Source:** All numbers come from our [Cost of War analysis](../problem/cost-of-war.qmd).
 
 ## The Economics of a 1% Reduction in Violence
@@ -34,17 +34,17 @@ The [dFDA cost-benefit analysis](../appendix/dfda-cost-benefit-analysis.qmd) sho
 
 The benefits break into two parts: the cash the treaty redirects, and the broader savings from less war.
 
-### 1. The Cash The Treaty Redirects: `{python} format_billions(TREATY_ANNUAL_FUNDING)` for Cures
+### 1. The Cash The Treaty Redirects: $27.2B for Cures
 
-Governments spend **`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`** on militaries every year. The treaty redirects `{python} format_percentage(TREATY_REDUCTION_PCT)` of that. Simple math:
+Governments spend **$2.7T** on militaries every year. The treaty redirects 1.0% of that. Simple math:
 
-**`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` × `{python} TREATY_REDUCTION_PCT` = `{python} format_billions(TREATY_ANNUAL_FUNDING)`**
+**$2.7T × 0.01 = $27.2B**
 
-That **`{python} format_billions(TREATY_ANNUAL_FUNDING)`** funds everything: the research, the VICTORY bond returns, the whole system.
+That **$27.2B** funds everything: the research, the VICTORY bond returns, the whole system.
 
-### 2. What Society Saves: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` Every Year
+### 2. What Society Saves: 113.6B Every Year
 
-But that's just the money the treaty redirects. War costs the world [`{python} format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)` annually](../problem/cost-of-war.qmd). Cut conflict by `{python} format_percentage(TREATY_REDUCTION_PCT)` and society saves **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`** on top of what gets redirected.
+But that's just the money the treaty redirects. War costs the world [$11.4T annually](../problem/cost-of-war.qmd). Cut conflict by 1.0% and society saves **113.6B** on top of what gets redirected.
 
 That's money the world doesn't spend on:
 
@@ -61,20 +61,20 @@ This breaks down the annual global savings based on our [Cost of War analysis](.
 
 | Cost Category | Total Annual Cost (Billions) | 1% Annual Savings (Billions) |
 | :--- | :--- | :--- |
-| **Direct Costs** | **`{python} format_billions(GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL)`** | **`{python} format_billions(GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL * TREATY_REDUCTION_PCT)`** |
-| Military Expenditure | `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` | `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * TREATY_REDUCTION_PCT)` |
-| Infrastructure Destruction | `{python} format_billions(GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT)` | `{python} format_billions(GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT * TREATY_REDUCTION_PCT)` |
-| Human Life Losses | `{python} format_billions(GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT)` | `{python} format_billions(GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT * TREATY_REDUCTION_PCT)` |
-| Trade Disruption | `{python} format_billions(GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT)` | `{python} format_billions(GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT * TREATY_REDUCTION_PCT)` |
-| **Indirect Costs** | **`{python} format_billions(GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL)`** | **`{python} format_billions(GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL * TREATY_REDUCTION_PCT)`** |
-| Lost Economic Growth | `{python} format_billions(GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING)` | `{python} format_billions(GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING * TREATY_REDUCTION_PCT)` |
-| Veteran Healthcare | `{python} format_billions(GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS)` | `{python} format_billions(GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS * TREATY_REDUCTION_PCT)` |
-| Refugee Support | `{python} format_billions(GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS)` | `{python} format_billions(GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS * TREATY_REDUCTION_PCT)` |
-| Environmental Damage | `{python} format_billions(GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT)` | `{python} format_billions(GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT * TREATY_REDUCTION_PCT)` |
-| Psychological Impact | `{python} format_billions(GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT)` | `{python} format_billions(GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT * TREATY_REDUCTION_PCT)` |
-| Lost Human Capital | `{python} format_billions(GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT)` | `{python} format_billions(GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT * TREATY_REDUCTION_PCT)` |
-| **Grand Total** | **`{python} format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)`** | **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`** |
+| **Direct Costs** | **$7.7T** | **$7.7T** |
+| Military Expenditure | $2.7T | $2.7T |
+| Infrastructure Destruction | $1.9T | $1.9T |
+| Human Life Losses | $2.4T | $2.4T |
+| Trade Disruption | $616.0B | $616.0B |
+| **Indirect Costs** | **$3.7T** | **$3.7T** |
+| Lost Economic Growth | $2.7T | $2.7T |
+| Veteran Healthcare | $200.1B | $200.1B |
+| Refugee Support | $150.0B | $150.0B |
+| Environmental Damage | $100.0B | $100.0B |
+| Psychological Impact | $232.0B | $232.0B |
+| Lost Human Capital | $300.0B | $300.0B |
+| **Grand Total** | **$11.4T** | **113.6B** |
 
-The treaty takes **`{python} format_billions(TREATY_ANNUAL_FUNDING)`** from military budgets and saves the world **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`** every year. That's `{python} f"${PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT/TREATY_ANNUAL_FUNDING:.2f}"` saved for every $1 redirected. 
+The treaty takes **$27.2B** from military budgets and saves the world **113.6B** every year. That's 113.6B saved for every $1 redirected. 
 
 Plus humanity gets cures for cancer.

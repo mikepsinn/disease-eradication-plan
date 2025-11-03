@@ -28,7 +28,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-In 2024, humanity spent [`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`](../references.qmd#sipri-2024-spending) on war. That's not a typo. It's the budget for our species' most expensive and enduring hobby: organized violence. If you stacked that money in one-dollar bills, you could build a bridge two-thirds of the way to the Moon.
+In 2024, humanity spent [$2.7T](../references.qmd#sipri-2024-spending) on war. That's not a typo. It's the budget for our species' most expensive and enduring hobby: organized violence. If you stacked that money in one-dollar bills, you could build a bridge two-thirds of the way to the Moon.
 
 We are a species that spends enough on weapons to literally pave a road to space, yet we can't figure out how to stop dying from preventable diseases.
 
@@ -74,7 +74,7 @@ Here's the breakdown of what goes into the direct cost of war:
 
 **Current Annual Calculation:**
 
-- M<sub>spending</sub> = `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` (verified via [SIPRI database](../references.qmd#sipri-2024-spending))
+- M<sub>spending</sub> = $2.7T (verified via [SIPRI database](../references.qmd#sipri-2024-spending))
 - I<sub>damage</sub> = [\$1,875B](../references.qmd#reconstruction-costs-active-conflicts) (reconstruction cost estimates from 47 active conflicts)
 - H<sub>casualties</sub> = [\$2,446B](../references.qmd#acled-active-combat-deaths) (244,600 total conflict deaths × \$10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation) - includes combat deaths, terrorism, and state violence; see Death Accounting section below for breakdown)
 - T<sub>disruption</sub> = [\$616B](../references.qmd#world-bank-trade-disruption-conflict) ([World Bank trade flow analysis](https://openknowledge.worldbank.org/handle/10986/37015))
@@ -96,7 +96,7 @@ Let's be conservative and use \$10 million.
 |--------------|-------------|----------------|-------------|---------|
 | Active Combat | [233,600](../references.qmd#acled-active-combat-deaths) | $10,000,000 | $2,336B | [Armed Conflict Location & Event Data](https://acleddata.com/) |
 | Terror Attacks | [8,300](../references.qmd#gtd-terror-attack-deaths) | $10,000,000 | $83B | [Global Terrorism Database](https://www.start.umd.edu/gtd/) |
-| State Violence | [2,700](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | `{python} format_billions(TREATY_ANNUAL_FUNDING)` | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
+| State Violence | [2,700](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | $27.2B | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
 
 **Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually**
 
@@ -175,9 +175,9 @@ Here's a thought experiment: What if we spent our war money on something else?
 
 | Alternative Investment | Global War Spending Could Fund | Mathematical Conversion | Annual Benefit |
 |----------------------|-------------------------------|------------------------|----------------|
-| Medical Research | 40.3 years of current spending | [`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`](../references.qmd#sipri-2024-spending) ÷ [\$67.5B](../references.qmd#global-gov-med-research-spending) = 40.3 | [WHO research expenditure](https://www.who.int/observatories/global-observatory-on-health-research-and-development) |
-| Global Education Access | 90.6 years of universal coverage | `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` ÷ [\$30B](../references.qmd#unesco-education-for-all-cost) = 90.6 | [UNESCO Education for All](https://en.unesco.org/themes/education) |
-| Poverty Eradication | 2.7 complete eliminations | `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` ÷ [\$1,000B](../references.qmd#world-bank-poverty-eradication-cost) = 2.7 | World Bank extreme poverty estimates |
+| Medical Research | 40.3 years of current spending | [$2.7T](../references.qmd#sipri-2024-spending) ÷ [\$67.5B](../references.qmd#global-gov-med-research-spending) = 40.3 | [WHO research expenditure](https://www.who.int/observatories/global-observatory-on-health-research-and-development) |
+| Global Education Access | 90.6 years of universal coverage | $2.7T ÷ [\$30B](../references.qmd#unesco-education-for-all-cost) = 90.6 | [UNESCO Education for All](https://en.unesco.org/themes/education) |
+| Poverty Eradication | 2.7 complete eliminations | $2.7T ÷ [\$1,000B](../references.qmd#world-bank-poverty-eradication-cost) = 2.7 | World Bank extreme poverty estimates |
 
 ![The stark disparity: money spent on war, neuroscience, and cancer research](../../../assets/Priorities-Money-Spent-on-War-Neuroscience-Cancer-Research-Graph.png)
 
@@ -202,7 +202,7 @@ $$
 $$
 
 $$
-\text{Alternative GDP Growth} = (\$`{python} format_billions_latex(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` \times 1.6) - (\$`{python} format_billions_latex(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` \times 0.6) = \$`{python} format_billions_latex(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`
+\text{Alternative GDP Growth} = (\$$2.7T \times 1.6) - (\$$2.7T \times 0.6) = \$$2.7T
 $$
 
 
@@ -336,7 +336,7 @@ Every year.
 With 8 billion people on the planet, the math is simple and depressing.
 
 $$
-\text{Direct military spending per person: } \$`{python} format_billions_latex(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` \div 8.0\text{B} = \text{\$340/year}
+\text{Direct military spending per person: } \$$2.7T \div 8.0\text{B} = \text{\$340/year}
 $$
 
 **Direct military spending per person is \$340/year.** This is what your government directly spends on military hardware and personnel on your behalf.
@@ -379,7 +379,7 @@ The final equation is simple. When you divide the number of deaths by the amount
 $$
 \begin{aligned}
 \text{Efficiency}_{\text{war}} &= \text{Deaths}_{\text{produced}} \div \text{Dollars}_{\text{spent}} \\
-&= 244,600 \div \$`{python} format_billions_latex(GLOBAL_ANNUAL_WAR_TOTAL_COST)` \\
+&= 244,600 \div \$$11.4T \\
 &= 0.000021 \text{ deaths per dollar}
 \end{aligned}
 $$

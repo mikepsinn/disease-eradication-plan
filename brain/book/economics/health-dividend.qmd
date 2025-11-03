@@ -23,11 +23,11 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` Return
+## The 463:1 Return
 
-The dFDA Infrastructure costs **`{python} format_millions(DFDA_ANNUAL_OPEX)` per year** to run.
-It saves the world **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` per year** in clinical trial costs.
-That's a **`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` return on investment**.
+The dFDA Infrastructure costs **$40M per year** to run.
+It saves the world **$50.0B per year** in clinical trial costs.
+That's a **463:1 return on investment**.
 
 Here's how.
 
@@ -45,7 +45,7 @@ The dFDA takes this model global. **80-160x cost reduction**. Same quality data.
 
 ## Where the $50 Billion Comes From
 
-Global clinical trial spending: **`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` per year** (and growing).
+Global clinical trial spending: **$100.0B per year** (and growing).
 
 Conservative estimate: dFDA captures 50% efficiency gains across the market.
 
@@ -70,13 +70,13 @@ Every day we don't implement this represents a massive societal cost: **$137 mil
 
 ## The Platform Cost Breakdown
 
-The dFDA costs approximately **`{python} format_millions(DFDA_ANNUAL_OPEX)` annually** to operate at scale, with a similar one-time build cost. This includes cloud infrastructure, a lean engineering team, compliance, and global integration.
+The dFDA costs approximately **$40M annually** to operate at scale, with a similar one-time build cost. This includes cloud infrastructure, a lean engineering team, compliance, and global integration.
 
 **For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Platform Costs](../appendix/dfda-platform-costs.qmd).
 
 ## ROI Scenarios
 
-The `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI is our central estimate based on NPV analysis over 10 years. Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
+The 463:1 ROI is our central estimate based on NPV analysis over 10 years. Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
 
 **For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Health Dividend Calculations](../appendix/health-dividend-calculations.qmd).
 
@@ -93,8 +93,8 @@ Until now. The dFDA changes the game by aligning incentives: everyone profits fr
 
 ## The ROI
 
-`{python} format_millions(DFDA_ANNUAL_OPEX)` to save $50 billion.
-`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI.
+$40M to save $50 billion.
+463:1 ROI.
 80x cost reduction per patient.
 10,000x more trials possible.
 

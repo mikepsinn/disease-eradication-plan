@@ -30,7 +30,7 @@ from economic_parameters import *
 
 ## On How to Legally Bribe Governments (The Technical Version)
 
-The legal setup is more important than the money, which is saying something when there's `{python} format_billions(TREATY_ANNUAL_FUNDING)` involved.
+The legal setup is more important than the money, which is saying something when there's $27.2B involved.
 
 You're essentially bribing governments to redirect military spending. Except instead of paying politicians under the table (illegal, messy, tends to end in prison), you're paying voters to vote for politicians who support the treaty (legal, transparent, ends in democratic mandate).
 
@@ -48,7 +48,7 @@ Split it across multiple countries to optimize for each country's specific rules
 
 - **🇨🇭 Swiss Foundation:** The main organization.
 Switzerland is neutral, crypto-friendly, and good at international law.
-This handles the main `{python} format_billions(TREATY_ANNUAL_FUNDING)` treasury.
+This handles the main $27.2B treasury.
 - **🇺🇸 US Super PAC:** Completely separate entity that only Americans can fund, designed to influence US elections legally.
 Zero coordination with the international stuff.
 - **🇸🇬 Singapore Entity:** Handles crypto and treasury management in a place with clear crypto rules.

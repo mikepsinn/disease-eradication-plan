@@ -24,30 +24,30 @@ from economic_parameters import *
 
 ## Overview
 
-The [conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI estimate](../economics/health-dividend.qmd) captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
+The [conservative 463:1 ROI estimate](../economics/health-dividend.qmd) captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
 
 This analysis focuses on provable, quantifiable benefits with conservative assumptions. For the underlying calculations and NPV methodology, see [Health Dividend Calculations](health-dividend-calculations.qmd).
 
 ---
 
-## The Complete Case: `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` ROI (All Direct Benefits)
+## The Complete Case: 1,239:1 ROI (All Direct Benefits)
 
-The conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` calculation ignores most of what the 1% Treaty actually does. When you count everything:
+The conservative 463:1 calculation ignores most of what the 1% Treaty actually does. When you count everything:
 
-### `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)` in Annual Benefits
+### $1.2T in Annual Benefits
 
 The 1% Treaty doesn't just make trials cheaper. It:
 
-1. **Societal savings from 1% less conflict** (peace dividend: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`)
-2. **Slashes R&D costs `{python} TRIAL_COST_REDUCTION_FACTOR`x** (saves `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`)
+1. **Societal savings from 1% less conflict** (peace dividend: 113.6B)
+2. **Slashes R&D costs 82x** (saves $50.0B)
 3. **Accelerates access by 7 years** (saves $300B via early trial access)
 4. **115X more research capacity** (adds $100B via 10-20X more breakthroughs)
 5. **Enables treatment of rare/orphan diseases** (adds $400B)
-6. **Reduces drug prices via R&D savings** (saves `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)`)
+6. **Reduces drug prices via R&D savings** (saves $100.0B)
 7. **Makes prevention economically viable** (saves $100B)
 8. **Addresses mental health treatment gap** (adds $75B)
 
-Each of these alone is worth tens to hundreds of billions. Together? **`{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`/year.**
+Each of these alone is worth tens to hundreds of billions. Together? **$1.2T/year.**
 
 ---
 
@@ -92,7 +92,7 @@ New patients each year get early access:
 
 ## The Research Acceleration Multiplier
 
-**The insight:** `{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper trials + 40% more funding (`{python} format_billions(TREATY_ANNUAL_FUNDING)`/year) = **115X more research capacity**.
+**The insight:** 82x cheaper trials + 40% more funding ($27.2B/year) = **115X more research capacity**.
 
 **What this means:**
 
@@ -126,18 +126,18 @@ These are NOT rare diseases (already counted). These are common diseases with li
 
 | Category | Annual Benefit | Notes |
 |----------|----------------|-------|
-| [Peace Dividend](../economics/peace-dividend.qmd) | `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` | Societal savings from 1% reduction in global conflict |
-| R&D Cost Savings | `{python} format_billions(BENEFIT_RESEARCH_AND_DEVELOPMENT_SAVINGS_ANNUAL)` | `{python} TRIAL_COST_REDUCTION_FACTOR`x trial cost reduction |
-| **Earlier Access (7 years)** | **`{python} format_billions(BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL)`** | Existing pipeline accessed sooner |
-| **Research Acceleration** | **`{python} format_billions(BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL)`** | 115X more trials = 10-20X more breakthroughs |
-| New Diseases Treatable | `{python} format_billions(BENEFIT_RARE_DISEASES_ANNUAL)` | Rare diseases, orphan drugs |
-| Drug Price Reduction | `{python} format_billions(BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL)` | R&D savings passed to consumers |
-| Prevention Medicine | `{python} format_billions(BENEFIT_PREVENTION_ANNUAL)` | Economic viability of prevention |
-| Mental Health Impact | `{python} format_billions(BENEFIT_MENTAL_HEALTH_ANNUAL)` | Treatment gap reduction |
+| [Peace Dividend](../economics/peace-dividend.qmd) | 113.6B | Societal savings from 1% reduction in global conflict |
+| R&D Cost Savings | $50.0B | 82x trial cost reduction |
+| **Earlier Access (7 years)** | **$300.0B** | Existing pipeline accessed sooner |
+| **Research Acceleration** | **$100.0B** | 115X more trials = 10-20X more breakthroughs |
+| New Diseases Treatable | $400.0B | Rare diseases, orphan drugs |
+| Drug Price Reduction | $100.0B | R&D savings passed to consumers |
+| Prevention Medicine | $100.0B | Economic viability of prevention |
+| Mental Health Impact | $75.0B | Treatment gap reduction |
 | | | |
-| **ECONOMIC TOTAL** | **`{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`** | |
+| **ECONOMIC TOTAL** | **$1.2T** | |
 
-**ROI:** `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)` / `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` investment = **`{python} format_roi(ROI_ALL_DIRECT_BENEFITS)`**
+**ROI:** $1.2T / $1.0B investment = **1,239:1**
 
 **Note:** Insurance savings, productivity gains, and longevity extension are outcomes of the above benefits and not counted separately to avoid double-counting.
 
@@ -145,13 +145,13 @@ These are NOT rare diseases (already counted). These are common diseases with li
 
 ## The Sanity Check
 
-**Is `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`/year reasonable?**
+**Is $1.2T/year reasonable?**
 
 - Global GDP: $111 trillion/year
 - Global healthcare spending: $9.8 trillion/year
 - Global military spending: $2.7 trillion/year
 
-If the 1% Treaty generates `{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`/year in benefits, that's:
+If the 1% Treaty generates $1.2T/year in benefits, that's:
 
 - 1.1% of global GDP
 - 12.4% of healthcare spending
@@ -171,7 +171,7 @@ The 1% Treaty doesn't cure everything, but it:
 - Increases research velocity 10-20X (more breakthroughs)
 - Enables trials for currently untreatable conditions
 
-`{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`/year is reasonable for that scope.
+$1.2T/year is reasonable for that scope.
 
 ---
 
@@ -180,7 +180,7 @@ The 1% Treaty doesn't cure everything, but it:
 ### Sources and Methodology
 
 - **Trial cost reduction**: Based on [RECOVERY trial model](../references.qmd#recovery-trial-cost-reduction) achieving ~$500/patient vs traditional $40-120K/patient
-- **Research capacity multiplier**: `{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction × 1.4X funding increase = 115X capacity
+- **Research capacity multiplier**: 82x cost reduction × 1.4X funding increase = 115X capacity
 - **QALY valuations**: Standard [$100-150K per QALY](../references.qmd#qaly-value) methodology
 - **Disease prevalence**: WHO global burden of disease data
 - **Economic impact estimates**: See [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) for detailed calculations
@@ -201,7 +201,7 @@ Including these would push the ROI substantially higher, but they're harder to q
 
 ## Related Analysis
 
-- **Conservative Case (`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`)**: See [Health Dividend](../economics/health-dividend.qmd) for the baseline NPV-adjusted ROI
+- **Conservative Case (463:1)**: See [Health Dividend](../economics/health-dividend.qmd) for the baseline NPV-adjusted ROI
 - **NPV Methodology**: See [Health Dividend Calculations](health-dividend-calculations.qmd) for 10-year NPV analysis with discount rates
 - **Cost-Effectiveness**: See [1% Treaty Cost-Effectiveness](1-percent-treaty-cost-effectiveness.qmd) for ICER and cost-per-QALY analysis
 - **Daily Opportunity Cost**: See [Daily Opportunity Cost](dfda-daily-opportunity-cost.qmd) for the cost of delay
@@ -212,8 +212,8 @@ Including these would push the ROI substantially higher, but they're harder to q
 
 The **Complete Case** shows that when you count all direct, quantifiable benefits from the 1% Treaty:
 
-- **`{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)`/year in societal value**
-- **`{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` return on investment**
+- **$1.2T/year in societal value**
+- **1,239:1 return on investment**
 - **Benefits span immediate access acceleration, research capacity expansion, and systemic healthcare improvements**
 
-This is the comprehensive picture of what the 1% Treaty delivers. For decision-making and public communication, we recommend the more conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` figure to maintain credibility, but the full scope of benefits is substantially larger.
+This is the comprehensive picture of what the 1% Treaty delivers. For decision-making and public communication, we recommend the more conservative 463:1 figure to maintain credibility, but the full scope of benefits is substantially larger.

@@ -28,7 +28,7 @@ from economic_parameters import *
 
 # The Legal Architecture (Staying Out of Prison)
 
-The 1% Treaty redirects `{python} format_billions(TREATY_ANNUAL_FUNDING)` from bombs to bandages. The people who profit from bombs have lawyers. Good lawyers. Expensive lawyers. Lawyers who've put people in prison for less.
+The 1% Treaty redirects $27.2B from bombs to bandages. The people who profit from bombs have lawyers. Good lawyers. Expensive lawyers. Lawyers who've put people in prison for less.
 
 The solution: hire better lawyers.
 
@@ -68,8 +68,8 @@ Trying to use one tool for all three jobs is like trying to build a house with o
 
 - **What It Is**: A standard, for-profit corporation designed to attract Wall Street.
 - **What It Does**: The financial engine for high-risk, high-return investors:
-  - Issues VICTORY Bonds: Sells bonds with `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` target returns to investors
-  - Funds the War Chest: Uses the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` raised to fund expensive lobbying and media campaigns
+  - Issues VICTORY Bonds: Sells bonds with 271.8% target returns to investors
+  - Funds the War Chest: Uses the $1.0B raised to fund expensive lobbying and media campaigns
   - Delivers Returns: Manages treaty inflows to pay bondholders
 - **Why Delaware**: Established corporate law, [more corporations than humans live there](../references.qmd#delaware-corporate-population), and Citizens United means corporations have political speech rights.
 
@@ -129,7 +129,7 @@ The SEC has entered the chat. They're not happy. They think everything is a secu
 
 1. Investment of money ✓ (yep, that's us)
 2. In a common enterprise ✓ (saving humanity, very common)
-3. With expectation of profits ✓ (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually)
+3. With expectation of profits ✓ (271.8% annually)
 4. From efforts of others ✓ (we do the work)
 
 Conclusion: VICTORY Bonds are super definitely a security. Time to comply!

@@ -442,7 +442,7 @@ This file contains reusable chart components for the dFDA economic analysis. To 
 
 ### Key Data Sources
 
-- **ROI Calculation**: `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` based on `{python} format_millions(DFDA_ANNUAL_OPEX)` annual cost generating `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` savings
+- **ROI Calculation**: `{python} roi_dfda_savings_only_formatted` based on `{python} dfda_annual_opex_formatted` annual cost generating `{python} dfda_gross_savings_annual_formatted` savings
 - **QALY Impact**: 840,000 annual QALYs from multiple sources
 - **Cost Reductions**: 80-160x per-patient cost reduction vs traditional trials
 - **Daily Opportunity Cost**: $137M economic + 2,301 QALYs lost daily

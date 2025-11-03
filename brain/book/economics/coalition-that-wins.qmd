@@ -151,7 +151,7 @@ print(f"New Pharma ROI: {roi_new:.1%}")  # 1,100% (MASSIVE PROFIT!)
 **What Defense Contractors Get:**
 
 - Keep 99% of military budget ($2.67T)
-- VICTORY bonds: 40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns (better than weapons)
+- VICTORY bonds: 40-271.8% returns (better than weapons)
 - New market: Medical equipment using defense tech
 - Raytheon MRI machines, Lockheed lab robots
 - ESG compliance scores improve
@@ -202,7 +202,7 @@ print(f"Total profit increase: {total_new_profit/weapons_profit:.0%}")  # 24% in
 |------------|--------------|---------------|
 | Hedge Fund | 20% | "Rich asshole" |
 | Venture Capital | 30% | "Tech bro" |
-| VICTORY Bonds | 40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` | "Saved humanity" |
+| VICTORY Bonds | 40-271.8% | "Saved humanity" |
 
 **The Billionaire's Calculation:**
 
@@ -321,7 +321,7 @@ graph TD
 
 |  | Others Invest | Others Don't |
 |--|--------------|--------------|
-| You Invest | 40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns | 40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns |
+| You Invest | 40-271.8% returns | 40-271.8% returns |
 | You Don't | You miss profits | You miss profits |
 
 **Result**: Everyone invests, nobody dies
@@ -366,7 +366,7 @@ Once you hit critical mass, peer pressure does the rest.
 
 - Buy VICTORY bonds
 - Fund the initial campaign
-- Get 40-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns forever
+- Get 40-271.8% returns forever
 - Die remembered as humanity's savior
 
 ### If You're Middle Class

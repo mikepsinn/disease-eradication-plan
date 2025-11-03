@@ -119,7 +119,7 @@ we spend <span style="color: #B22234; font-weight: bold;">\$40 on weapons</span>
 
 <div style="text-align: center; margin-top: 40px;">
 <p style="font-size: 64px; color: #000000; margin-bottom: 30px;">
-The `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` military budget?
+The $2.7T military budget?
 <span style="color: #B22234; font-weight: bold;">That's just the tip.</span>
 </p>
 <p style="font-size: 48px; color: #3C3B6E; line-height: 1.6;">
@@ -180,7 +180,7 @@ We could fix this with a <span style="color: #B22234; font-weight: bold;">roundi
 </div>
 <div style="font-size: 100px; color: #3C3B6E;">=</div>
 <div style="text-align: center;">
-<p style="font-size: 100px; color: #3C3B6E; font-weight: bold; margin: 0;">`{python} format_billions(TREATY_ANNUAL_FUNDING)`</p>
+<p style="font-size: 100px; color: #3C3B6E; font-weight: bold; margin: 0;">$27.2B</p>
 <p style="font-size: 48px; color: #000000;">per year</p>
 </div>
 </div>
@@ -219,7 +219,7 @@ It saves millions.
 <div style="font-size: 60px; color: #3C3B6E;">→</div>
 <div style="flex: 1; padding: 30px;">
 <p style="font-size: 100px; color: #B22234; font-weight: bold; margin: 0;">3</p>
-<p style="font-size: 44px; color: #000000; margin-top: 20px;">`{python} format_billions(TREATY_ANNUAL_FUNDING)` flows to<br>decentralized trials</p>
+<p style="font-size: 44px; color: #000000; margin-top: 20px;">$27.2B flows to<br>decentralized trials</p>
 <p style="font-size: 32px; color: #666; margin-top: 15px; font-style: italic;">(Amazon for cures)</p>
 </div>
 </div>
@@ -268,7 +268,7 @@ Every disease gets trials
 </div>
 
 <p style="font-size: 64px; color: #B22234; margin-top: 40px; font-weight: bold;">
-`{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper.
+82x cheaper.
 8X faster.
 Actually works.
 </p>

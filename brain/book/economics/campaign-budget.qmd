@@ -15,7 +15,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-# Campaign Budget: The `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` War Chest {#sec-campaign-budget}
+# Campaign Budget: The $1.0B War Chest {#sec-campaign-budget}
 
 ## On How to Buy a Planet for $1B
 
@@ -98,7 +98,7 @@ This $1B will:
 
 - AI analysis identifies key decision-makers and leverage points
 - Professional lobbyists in 20 high-impact countries (not 50)
-- Focus on: US (`{python} format_millions(DFDA_ANNUAL_OPEX)`), EU ($50M), G20 nations ($60M)
+- Focus on: US ($40M), EU ($50M), G20 nations ($60M)
 - Legislative drafting (AI-assisted, lawyer-reviewed)
 - Political relationship building
 
@@ -142,7 +142,7 @@ This $1B will:
 - Translation & accessibility
 - **Strategy**: Build on existing open source tools, AI code generation
 
-**Cloud Infrastructure**: `{python} format_millions(DFDA_ANNUAL_OPEX)`
+**Cloud Infrastructure**: $40M
 
 - 5-year hosting estimate for global scale
 - CDN for low-latency worldwide
@@ -183,10 +183,10 @@ This $1B will:
 
 ### 5. Strategic Partnerships & Co-option: $100M (10%)
 
-**Defense Industry Co-option**: `{python} format_millions(DFDA_ANNUAL_OPEX)`
+**Defense Industry Co-option**: $40M
 
 - Additional VICTORY bonds for key players
-- Pension fund outreach (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns vs 10% market)
+- Pension fund outreach (271.8% returns vs 10% market)
 - Board member "strategic advisor" positions
 - Turn opposition into allies through better returns
 
@@ -281,7 +281,7 @@ This $1B will:
 
 **Game Theory Alignment**:
 
-- Defense lobbyists get `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns (vs their current salary)
+- Defense lobbyists get 271.8% returns (vs their current salary)
 - Insurers save billions on prevented claims
 - Pharma earns revenue during trials (not expense)
 - Politicians get campaign support from Super PACs
@@ -300,7 +300,7 @@ When everyone profits from cooperation, resistance crumbles.
 **For bondholders specifically**:
 
 - Invest $1B → Receive $2.7B/year forever
-- **`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns, perpetually**
+- **271.8% annual returns, perpetually**
 
 ## Transparency & Accountability
 
@@ -337,13 +337,13 @@ Budget scales based on funding and results. Quarterly reviews reallocate to what
 
 ## Summary
 
-**$1 billion to redirect `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually.**
+**$1 billion to redirect $27.2B annually.**
 
 That's a **27:1 annual return** just in redirected military spending.
 
 But the real return is:
 
-- Bondholders get `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`/year forever (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns)
+- Bondholders get 2.7B/year forever (271.8% annual returns)
 - Society gets $463 in value per dollar (accelerated cures, reduced suffering)
 - Humanity gets optional death by 2050
 

@@ -28,21 +28,21 @@ from economic_parameters import *
 
 ## Executive Summary
 
-**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **`{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000))`** per life saved (ICER = **`{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`** per QALY).
+**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **$6,173.4T** per life saved (ICER = **$-176,382** per QALY).
 
-This means for every life saved, society becomes **`{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000))`** richer instead of paying the [`{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}-${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"` cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
+This means for every life saved, society becomes **$6,173.4T** richer instead of paying the [$3,500 cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
 
-**How is this possible?** This initiative generates massive economic value (`{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` annually) while also saving lives (`{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` QALYs annually), making it profitable for society to implement.
+**How is this possible?** This initiative generates massive economic value ($163.6B annually) while also saving lives (925,610 QALYs annually), making it profitable for society to implement.
 
 ## Complete Calculation Walkthrough
 
 ### Step 1: Annual Economic Benefits
 
-#### 1a. Peace Dividend (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`/year)
+#### 1a. Peace Dividend (113.6B/year)
 
-**Quick summary**: The 1% Treaty reduces global conflict by 1%, saving society `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` annually from reduced military spending, infrastructure destruction, healthcare costs, and economic disruption.
+**Quick summary**: The 1% Treaty reduces global conflict by 1%, saving society 113.6B annually from reduced military spending, infrastructure destruction, healthcare costs, and economic disruption.
 
-**Calculation**: `{python} format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)` total war costs × `{python} format_percentage(TREATY_REDUCTION_PCT)` reduction = **`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`**
+**Calculation**: $11.4T total war costs × 1.0% reduction = **113.6B**
 
 **For detailed breakdown and methodology**, see:
 
@@ -50,13 +50,13 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 - [Peace Dividend Chapter](../economics/peace-dividend.qmd) - Accessible overview with breakdown table
 - [Cost of War Analysis](../problem/cost-of-war.qmd) - Source data
 
-#### 1b. Health Dividend (`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`/year)
+#### 1b. Health Dividend ($50.0B/year)
 
-**Quick summary**: The dFDA (Decentralized FDA) makes clinical trials 82× cheaper by using the Oxford RECOVERY model, saving `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` annually from the `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` global trial market.
+**Quick summary**: The dFDA (Decentralized FDA) makes clinical trials 82× cheaper by using the Oxford RECOVERY model, saving $50.0B annually from the $100.0B global trial market.
 
-**Calculation**: `{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)` trial market × `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction = **`{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)`**
+**Calculation**: $100.0B trial market × 50.0% cost reduction = **$50.0B**
 
-**ROI**: `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` return on `{python} format_millions(DFDA_ANNUAL_OPEX)` annual operational cost
+**ROI**: 463:1 return on $40M annual operational cost
 
 **For detailed breakdown and methodology**, see:
 
@@ -66,7 +66,7 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 #### Total Annual Economic Benefits
 
-**`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` + `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` = `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` per year**
+**113.6B + $50.0B = $163.6B per year**
 
 **Sensitivity range**: $139B to $209B (conservative to optimistic scenarios)
 
@@ -74,55 +74,55 @@ This means for every life saved, society becomes **`{python} format_currency(abs
 
 ### Step 2: Annual Health Benefits (QALYs)
 
-#### 2a. Peace Dividend Health Benefits (`{python} format_qalys(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)` QALYs/year)
+#### 2a. Peace Dividend Health Benefits (85,610 QALYs/year)
 
 **Source**: [Cost of War Analysis](../problem/cost-of-war.qmd#death-accounting)
 
-**Annual conflict deaths**: `{python} format_qalys(GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL)` people/year
+**Annual conflict deaths**: 244,600 people/year
 
-- Active combat: `{python} f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT:,}"` ([ACLED data](https://acleddata.com/))
-- Terror attacks: `{python} f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS:,}"` ([Global Terrorism Database](https://www.start.umd.edu/gtd/))
-- State violence: `{python} f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE:,}"` ([Uppsala Conflict Data Program](https://ucdp.uu.se/))
+- Active combat: 233,600 ([ACLED data](https://acleddata.com/))
+- Terror attacks: 8,300 ([Global Terrorism Database](https://www.start.umd.edu/gtd/))
+- State violence: 2,700 ([Uppsala Conflict Data Program](https://ucdp.uu.se/))
 
-**`{python} format_percentage(TREATY_REDUCTION_PCT)` reduction in conflict**:
+**1.0% reduction in conflict**:
 
-- Lives saved: `{python} format_qalys(GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL)` × `{python} TREATY_REDUCTION_PCT` = **`{python} format_qalys(TREATY_LIVES_SAVED_ANNUAL_GLOBAL)` lives/year**
+- Lives saved: 244,600 × 0.01 = **2,446 lives/year**
 
 **Converting to QALYs**:
 
-- Standard assumption: 1 life saved = `{python} STANDARD_QALYS_PER_LIFE_SAVED` QALYs ([WHO life tables](https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy))
+- Standard assumption: 1 life saved = 35 QALYs ([WHO life tables](https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy))
 - Rationale: Average age of conflict death ~30 years, life expectancy ~65 years = 35 years of life
-- QALYs from peace dividend: `{python} format_qalys(TREATY_LIVES_SAVED_ANNUAL_GLOBAL)` × `{python} STANDARD_QALYS_PER_LIFE_SAVED` = **`{python} format_qalys(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)` QALYs/year**
+- QALYs from peace dividend: 2,446 × 35 = **85,610 QALYs/year**
 
 **Sensitivity range**: 500-1,500 lives saved = 17,500-52,500 QALYs
 
-#### 2b. dFDA Health Benefits (`{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs/year)
+#### 2b. dFDA Health Benefits (840,000 QALYs/year)
 
 **Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
 
-**Baseline projection**: `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs/year from:
+**Baseline projection**: 840,000 QALYs/year from:
 
-1. **Faster drug access** (`{python} f"{QALYS_FROM_FASTER_ACCESS / GLOBAL_DFDA_QALYS_GAINED_ANNUAL * 100:.0f}%"` of total): `{python} format_qalys(QALYS_FROM_FASTER_ACCESS)` QALYs
+1. **Faster drug access** (24% of total): 24% QALYs
    - Average 2-3 year reduction in time to market
    - Applied to ~50 new drugs/year reaching market faster
 
-2. **New therapies enabled** (`{python} f"{QALYS_FROM_NEW_THERAPIES / GLOBAL_DFDA_QALYS_GAINED_ANNUAL * 100:.0f}%"` of total): `{python} format_qalys(QALYS_FROM_NEW_THERAPIES)` QALYs
+2. **New therapies enabled** (60% of total): 60% QALYs
    - Rare diseases now economically viable
    - Unpatentable treatments tested
    - Repurposed drugs
 
-3. **Prevention via real-world data** (`{python} f"{QALYS_FROM_PREVENTION / GLOBAL_DFDA_QALYS_GAINED_ANNUAL * 100:.0f}%"` of total): `{python} format_qalys(QALYS_FROM_PREVENTION)` QALYs
+3. **Prevention via real-world data** (17% of total): 17% QALYs
    - Early detection of drug interactions
    - Personalized medicine insights
    - Population health monitoring
 
-**Sensitivity range**: `{python} format_qalys(QALYS_TOTAL_CONSERVATIVE)` (conservative) to `{python} format_qalys(QALYS_TOTAL_OPTIMISTIC)` (optimistic) QALYs
+**Sensitivity range**: 190,000 (conservative) to 3,650,000 (optimistic) QALYs
 
 See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) for complete methodology.
 
 #### Total Annual Health Benefits
 
-**`{python} format_qalys(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)` + `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` = `{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` QALYs/year**
+**85,610 + 840,000 = 925,610 QALYs/year**
 
 **Sensitivity range**: 437,500 (low) to 2,152,500 (high) QALYs
 
@@ -130,47 +130,47 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 ### Step 3: Annual Costs
 
-#### 3a. Campaign Costs (`{python} format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)`/year, amortized)
+#### 3a. Campaign Costs ($250M/year, amortized)
 
 **Source**: [Campaign Budget](../economics/campaign-budget.qmd)
 
-**Total campaign budget**: `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` over `{python} TREATY_CAMPAIGN_DURATION_YEARS`-5 years
+**Total campaign budget**: $1.0B over 4-5 years
 
-- Viral referendum: `{python} format_currency(TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM)`
-- AI-assisted lobbying: `{python} format_currency(TREATY_CAMPAIGN_BUDGET_AI_LOBBYING)`
-- Technology platform: `{python} format_currency(TREATY_CAMPAIGN_BUDGET_TECHNOLOGY)`
-- Legal & compliance: `{python} format_currency(TREATY_CAMPAIGN_BUDGET_LEGAL)`
-- Partnerships: `{python} format_currency(TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS)`
-- Operations: `{python} format_currency(TREATY_CAMPAIGN_BUDGET_OPERATIONS)`
-- Reserve: `{python} format_currency(TREATY_CAMPAIGN_BUDGET_RESERVE)`
+- Viral referendum: $200M
+- AI-assisted lobbying: $250M
+- Technology platform: $250M
+- Legal & compliance: $100M
+- Partnerships: $100M
+- Operations: $50M
+- Reserve: $50M
 
 **Amortized annual cost**:
 
-- Conservative (3 years): `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` ÷ 3 = $333M/year
-- Central (`{python} TREATY_CAMPAIGN_DURATION_YEARS` years): `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` ÷ `{python} TREATY_CAMPAIGN_DURATION_YEARS` = **`{python} format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)`/year**
-- Optimistic (5 years): `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` ÷ 5 = $200M/year
+- Conservative (3 years): $1.0B ÷ 3 = $333M/year
+- Central (4 years): $1.0B ÷ 4 = **$250M/year**
+- Optimistic (5 years): $1.0B ÷ 5 = $200M/year
 
-**Using central estimate**: **`{python} format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)`/year**
+**Using central estimate**: **$250M/year**
 
 **Note**: After initial 3-5 year campaign, these costs drop to near zero. We use amortized costs for a 10-year NPV analysis.
 
-#### 3b. dFDA Operational Costs (`{python} format_currency(DFDA_ANNUAL_OPEX)`/year)
+#### 3b. dFDA Operational Costs ($40M/year)
 
 **Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
 
-**Annual operational costs**: `{python} format_currency(DFDA_ANNUAL_OPEX)`/year
+**Annual operational costs**: $40M/year
 
-- Platform maintenance: `{python} format_currency(DFDA_OPEX_PLATFORM_MAINTENANCE)`
-- Staff (minimal, AI-assisted): `{python} format_currency(DFDA_OPEX_STAFF)`
-- Infrastructure (cloud, security): `{python} format_currency(DFDA_OPEX_INFRASTRUCTURE)`
-- Regulatory coordination: `{python} format_currency(DFDA_OPEX_REGULATORY)`
-- Community support: `{python} format_currency(DFDA_OPEX_COMMUNITY)`
+- Platform maintenance: $15M
+- Staff (minimal, AI-assisted): $10M
+- Infrastructure (cloud, security): $8M
+- Regulatory coordination: $5M
+- Community support: $2M
 
 **Sensitivity range**: $30M (efficient) to $60M (expanded operations)
 
 #### Total Annual Costs
 
-**`{python} format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)` + `{python} format_currency(DFDA_ANNUAL_OPEX)` = `{python} format_currency(TREATY_TOTAL_ANNUAL_COSTS)`/year**
+**$250M + $40M = $290M/year**
 
 **Sensitivity range**: $230M to $393M
 
@@ -184,19 +184,19 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **The DIH Treasury Mechanism**:
 
-1. **Countries redirect `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year** from military budgets to the DIH treasury
+1. **Countries redirect $27.2B/year** from military budgets to the DIH treasury
 2. **The DIH treasury allocates**:
-   - `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`/year → VICTORY bondholders (`{python} format_percentage(VICTORY_BOND_FUNDING_PCT)` of redirected funds)
-   - `{python} format_billions(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)`/year → Medical research and operations
-   - This `{python} format_billions(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)` covers:
-     - dFDA operations: `{python} format_currency(DFDA_ANNUAL_OPEX)`/year
-     - Clinical trial subsidies: ~`{python} format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MIN)`-`{python} format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MAX)`/year
+   - 2.7B/year → VICTORY bondholders (10.0% of redirected funds)
+   - $24.5B/year → Medical research and operations
+   - This $24.5B covers:
+     - dFDA operations: $40M/year
+     - Clinical trial subsidies: ~$10.0B-$20.0B/year
      - Other medical research: Remaining funds
 
 **VICTORY Bond Financing**:
 
-- **Investors provide**: `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` upfront (funds the campaign)
-- **Investors receive**: `{python} format_billions(VICTORY_BOND_ANNUAL_PAYOUT)`/year perpetually (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual return)
+- **Investors provide**: $1.0B upfront (funds the campaign)
+- **Investors receive**: 2.7B/year perpetually (271.8% annual return)
 - **Payback period**: 4.4 months
 - **Result**: Campaign is self-funding from investor perspective
 
@@ -211,9 +211,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Framing 2: Opportunity Cost of Redirected Spending**
 
-- Cost: `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year (redirected military spending)
-- But this `{python} format_billions(TREATY_ANNUAL_FUNDING)` is ALREADY COUNTED in the `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` peace dividend
-- Net cost: `{python} format_billions(TREATY_ANNUAL_FUNDING)` - `{python} format_billions(TREATY_ANNUAL_FUNDING)` = $0
+- Cost: $27.2B/year (redirected military spending)
+- But this $27.2B is ALREADY COUNTED in the $113.6B peace dividend
+- Net cost: $27.2B - $27.2B = $0
 - **ICER = -$187,543 per QALY**
 
 **Framing 3: Military Waste Conversion**
@@ -224,12 +224,12 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 - **True cost: Negative** (we're avoiding wasteful spending)
 - **ICER = Undefined** (negative cost, positive QALYs)
 
-#### Why We Use Conservative `{python} format_millions(TREATY_TOTAL_ANNUAL_COSTS)`/Year in Primary Analysis
+#### Why We Use Conservative $290M/Year in Primary Analysis
 
 **For credibility and conservative estimation**:
 
 1. Health economics convention requires counting all costs
-2. Someone must pay the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` campaign cost initially (even if repaid)
+2. Someone must pay the $1.0B campaign cost initially (even if repaid)
 3. Conservative estimates are more defensible to skeptics
 4. This intervention is dominant even with costs included
 
@@ -245,31 +245,31 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Annual net benefit** = Benefits - Costs
 
-- Benefits: `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)`
-- Costs: `{python} format_currency(TREATY_TOTAL_ANNUAL_COSTS)`
-- **Net benefit: `{python} format_billions(TREATY_NET_ANNUAL_BENEFIT)` per year**
+- Benefits: $163.6B
+- Costs: $290M
+- **Net benefit: $163.3B per year**
 
-**Society saves `{python} format_billions(TREATY_NET_ANNUAL_BENEFIT)` while gaining `{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` QALYs**
+**Society saves $163.3B while gaining 925,610 QALYs**
 
 #### 4b. ICER per QALY
 
-**ICER** = (`{python} format_currency(TREATY_TOTAL_ANNUAL_COSTS)` - `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)`) / `{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` QALYs
+**ICER** = ($290M - $163.6B) / 925,610 QALYs
 
-**ICER** = `{python} f"${(TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS)*1000:,.1f}M"` / `{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)`
+**ICER** = $290M / 925,610
 
-**ICER = `{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"` per QALY**
+**ICER = $-176,382 per QALY**
 
-**Interpretation**: For every QALY gained, society saves `{python} f"${abs(ICER_PER_QALY * 1_000_000_000):,.0f}"`. This is a **dominant intervention** (saves money AND improves health).
+**Interpretation**: For every QALY gained, society saves $-176,382. This is a **dominant intervention** (saves money AND improves health).
 
 #### 4c. Cost per Life Saved
 
 **Cost per life** = ICER × QALYs per life
 
-**Cost per life** = `{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`  × `{python} STANDARD_QALYS_PER_LIFE_SAVED` QALYs/life
+**Cost per life** = $-176,382  × 35 QALYs/life
 
-**Cost per life ≈ `{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000))` per life saved**
+**Cost per life ≈ $6,173.4T per life saved**
 
-**Interpretation**: For every life saved, society saves approximately `{python} format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000))`.
+**Interpretation**: For every life saved, society saves approximately $6,173.4T.
 
 ---
 
@@ -279,9 +279,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 | Intervention | Cost per Life Saved | ICER (approx) |
 |-------------|--------------------:|---------------:|
-| **Helen Keller International** (Vitamin A) | `{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}"` | $100/QALY |
-| **New Incentives** (Vaccination incentives) | `{python} f"${GIVEWELL_COST_PER_LIFE_AVG:,.0f}"` | $129/QALY |
-| **Against Malaria Foundation** (bed nets) | `{python} f"${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"` | $157/QALY |
+| **Helen Keller International** (Vitamin A) | $3,500 | $100/QALY |
+| **New Incentives** (Vaccination incentives) | $4,500 | $129/QALY |
+| **Against Malaria Foundation** (bed nets) | $5,500 | $157/QALY |
 
 **Source**: [GiveWell 2024 Top Charities](https://www.givewell.org/how-much-does-it-cost-to-save-a-life/february-2024-version)
 
@@ -291,7 +291,7 @@ These are **excellent** interventions - among the best uses of charitable dollar
 
 | Intervention | Cost per Life Saved | ICER |
 |-------------|--------------------:|------:|
-| **1% Treaty + DIH + dFDA** | **`{python} format_currency(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)`** | **`{python} f"${ICER_PER_QALY * 1_000_000_000:,.0f}"`/QALY** |
+| **1% Treaty + DIH + dFDA** | **$6,173.4T** | **$-176,382/QALY** |
 
 This is a **dominant intervention** - it makes society richer while saving lives.
 
@@ -299,17 +299,17 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 **Traditional charity model**: Society pays to save lives
 
-- Excellent value (`{python} f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}-${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"` per life)
+- Excellent value ($3,500 per life)
 - Requires ongoing donations
 - Costs money to implement
 
 **1% Treaty model**: Society profits from saving lives
 
-- Exceptional value (`{python} format_currency(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000)` per life = society saves money)
+- Exceptional value ($6,173.4T per life = society saves money)
 - Self-funding from economic gains
 - Generates wealth while improving health
 
-**The multiplier**: The 1% Treaty is **`{python} f"{MULTIPLIER_VS_GIVEWELL:,.0f}x"` more cost-effective** than the best charities in the world.
+**The multiplier**: The 1% Treaty is **1,372x more cost-effective** than the best charities in the world.
 
 ---
 
@@ -319,23 +319,23 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Parameter | Conservative | Central | Optimistic |
 |-----------|-------------:|--------:|------------:|
-| **Peace dividend** | `{python} format_billions(SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE)` | `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` | `{python} format_billions(SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC)` |
-| **dFDA R&D savings** | `{python} format_billions(SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE)` | `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` | `{python} format_billions(SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC)` |
-| **Total benefits** | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE)` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} format_billions(SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC)` |
-| **Campaign costs/yr** | `{python} format_currency(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE)` | `{python} format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)` | `{python} format_currency(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC)` |
-| **dFDA ops costs/yr** | `{python} format_currency(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)` | `{python} format_currency(DFDA_ANNUAL_OPEX)` | `{python} format_currency(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)` |
-| **Total costs/yr** | `{python} format_currency(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)` | `{python} format_currency(TREATY_TOTAL_ANNUAL_COSTS)` | `{python} format_currency(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC)` |
-| **Peace QALYs** | `{python} format_qalys(SENSITIVITY_PEACE_QALYS_CONSERVATIVE)` | `{python} format_qalys(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)` | `{python} format_qalys(SENSITIVITY_PEACE_QALYS_OPTIMISTIC)` |
-| **dFDA QALYs** | `{python} format_qalys(QALYS_TOTAL_CONSERVATIVE)` | `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` | `{python} format_qalys(QALYS_TOTAL_OPTIMISTIC)` |
-| **Total QALYs** | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE)` | `{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC)` |
+| **Peace dividend** | $50.0B | 113.6B | $200.0B |
+| **dFDA R&D savings** | $25.0B | $50.0B | $95.0B |
+| **Total benefits** | $75.0B | $163.6B | $295.0B |
+| **Campaign costs/yr** | $333M | $250M | $200M |
+| **dFDA ops costs/yr** | $60M | $40M | $30M |
+| **Total costs/yr** | $393M | $290M | $230M |
+| **Peace QALYs** | 17,500 | 85,610 | 52,500 |
+| **dFDA QALYs** | 190,000 | 840,000 | 3,650,000 |
+| **Total QALYs** | 207,500 | 925,610 | 3,702,500 |
 
 ### ICER Across Scenarios
 
 | Scenario | Net Benefit | QALYs | ICER/QALY | Cost/Life |
 |----------|------------:|------:|-----------:|----------:|
-| **Conservative** | `{python} format_billions(SENSITIVITY_NET_BENEFIT_CONSERVATIVE)` | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE)` | **`{python} f"${SENSITIVITY_ICER_CONSERVATIVE:,.0f}"`** | **`{python} f"${SENSITIVITY_COST_PER_LIFE_CONSERVATIVE:.2f}M"`** |
-| **Central** | `{python} format_billions(TREATY_NET_ANNUAL_BENEFIT)` | `{python} format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)` | **`{python} f"${SENSITIVITY_ICER_CENTRAL:,.0f}"`** | **`{python} f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"`** |
-| **Optimistic** | `{python} format_billions(SENSITIVITY_NET_BENEFIT_OPTIMISTIC)` | `{python} format_qalys(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC)` | **`{python} f"${SENSITIVITY_ICER_OPTIMISTIC:,.0f}"`** | **`{python} f"${SENSITIVITY_COST_PER_LIFE_OPTIMISTIC:.2f}M"`** |
+| **Conservative** | $74.6B | 207,500 | **$-170,514** | **$-5.97M** |
+| **Central** | $163.3B | 925,610 | **$-187,097** | **$-6.55M** |
+| **Optimistic** | $294.8B | 3,702,500 | **$-136,945** | **$-4.79M** |
 
 **Key finding**: In ALL scenarios, the intervention is dominant (saves money while saving lives).
 
@@ -343,10 +343,10 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Perspective | Annual Cost | Annual Benefit | QALYs | ICER/QALY | Cost/Life | Notes |
 |-------------|------------:|---------------:|------:|----------:|----------:|-------|
-| **Conservative (All Costs)** | `{python} format_currency(TREATY_TOTAL_ANNUAL_COSTS)` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} f"{int(TREATY_TOTAL_QALYS_GAINED_ANNUAL/1000)}k"` | **`{python} f"${SENSITIVITY_ICER_CENTRAL:,.0f}"`** | **`{python} f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"`** | Counts all upfront costs |
-| **Investor-Funded** | $0 | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} f"{int(TREATY_TOTAL_QALYS_GAINED_ANNUAL/1000)}k"` | **`{python} f"${ICER_INVESTOR_FUNDED:,.0f}"`** | **`{python} f"${COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"`** | Campaign funded by VICTORY bonds |
-| **Opportunity Cost** | `{python} format_billions(TREATY_ANNUAL_FUNDING)` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} f"{int(TREATY_TOTAL_QALYS_GAINED_ANNUAL/1000)}k"` | **`{python} f"${ICER_OPPORTUNITY_COST:,.0f}"`** | **`{python} f"${COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"`** | Counts redirected military spending |
-| **Waste Conversion** | `{python} f"-{format_billions(TREATY_ANNUAL_FUNDING)}*"` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} f"{int(TREATY_TOTAL_QALYS_GAINED_ANNUAL/1000)}k"` | **Undefined** | **Undefined** | Military spending creates negative value |
+| **Conservative (All Costs)** | $290M | $163.6B | 925,610 | **$-187,097** | **$-6.55M** | Counts all upfront costs |
+| **Investor-Funded** | $0 | $163.6B | 925,610 | **$-187,429** | **$-6.56M** | Campaign funded by VICTORY bonds |
+| **Opportunity Cost** | $27.2B | $163.6B | 925,610 | **$-156,571** | **$-5.48M** | Counts redirected military spending |
+| **Waste Conversion** | $27.2B | $163.6B | 925,610 | **Undefined** | **Undefined** | Military spending creates negative value |
 
 *Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
 
@@ -385,7 +385,7 @@ This chart compares the gross annual economic benefits across major public healt
 
 - **Traditional interventions** (Water Fluoridation, Smoking Cessation, Childhood Vaccinations): Generate $0.8B to $15B in annual economic benefits. These are highly successful programs that have transformed public health.
 
-- **1% Treaty + DIH + dFDA**: Generates `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` in annual economic benefits (`{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` peace dividend + `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
+- **1% Treaty + DIH + dFDA**: Generates $163.6B in annual economic benefits ($113.6B peace dividend + $50.0B dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
 
 **Key distinction**: Only the 1% Treaty is self-funding—it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
 
@@ -410,12 +410,12 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 1. **Peace Dividend**: [Peace Dividend Calculations](peace-dividend-calculations.qmd)
    - Based on [Cost of War Analysis](../problem/cost-of-war.qmd)
-   - Total war costs: `{python} format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)` annually
-   - 1% reduction: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)`
+   - Total war costs: $11.4T annually
+   - 1% reduction: $113.6B
 
 2. **Health Dividend (dFDA)**: [Health Dividend Calculations](health-dividend-calculations.qmd)
-   - Clinical trial market: ~`{python} format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)`/year
-   - `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` cost reduction (baseline)
+   - Clinical trial market: ~$100.0B/year
+   - 50.0% cost reduction (baseline)
    - Range: 25%-95%
    - Also see: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd)
 
@@ -426,8 +426,8 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
    - Sources: ACLED, GTD, Uppsala
 
 4. **dFDA QALYs**: [dFDA QALY Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
-   - Baseline: `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs/year
-   - Range: `{python} format_qalys(QALYS_TOTAL_CONSERVATIVE)`-`{python} format_qalys(QALYS_TOTAL_OPTIMISTIC)`
+   - Baseline: 840,000 QALYs/year
+   - Range: 190,000-3,650,000
 
 5. **QALY Conversion**: WHO life tables
    - 1 life saved ≈ 35 QALYs (standard assumption)
@@ -439,7 +439,7 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
    - Amortized: $200-333M/year
 
 7. **dFDA Operations**: [dFDA Cost Analysis](dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
-   - Annual: `{python} format_millions(DFDA_ANNUAL_OPEX)`/year
+   - Annual: $40M/year
    - Range: $30-60M
 
 ### Comparisons
@@ -454,17 +454,17 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 
 ### Q: How can this save money while saving lives?
 
-**A**: The 1% Treaty generates `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` in annual economic benefits:
+**A**: The 1% Treaty generates $163.6B in annual economic benefits:
 
-- `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` from reduced conflict costs (peace dividend)
-- `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` from more efficient medical R&D (dFDA)
+- $113.6B from reduced conflict costs (peace dividend)
+- $50.0B from more efficient medical R&D (dFDA)
 
-These benefits far exceed the `{python} format_millions(TREATY_TOTAL_ANNUAL_COSTS)` annual costs, creating a net profit of `{python} format_billions(TREATY_NET_ANNUAL_BENEFIT)`/year for society.
+These benefits far exceed the $290M annual costs, creating a net profit of $163.3B/year for society.
 
 Meanwhile, the same initiative saves lives:
 
 - 1,000 lives from 1% less conflict
-- `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs from faster/better medical treatments
+- 840,000 QALYs from faster/better medical treatments
 
 You get **both** the economic benefit **and** the health benefit.
 
@@ -483,7 +483,7 @@ The 1% Treaty solves this by creating aligned incentives.
 
 **A**: The main challenges are **political, not economic**:
 
-- Getting countries to sign the treaty (hence the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` campaign)
+- Getting countries to sign the treaty (hence the $1.0B campaign)
 - Overcoming defense industry opposition (hence VICTORY bonds to co-opt them)
 - Building the dFDA infrastructure (hence the $250M technology budget)
 
@@ -505,9 +505,9 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **A**: This depends on perspective:
 
-**From society's aggregate perspective**: The `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` campaign cost is real money that someone must provide initially. However, since investors get repaid with `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns from redirected military spending, the net cost to society approaches $0 after payback.
+**From society's aggregate perspective**: The $1.0B campaign cost is real money that someone must provide initially. However, since investors get repaid with 271.8% returns from redirected military spending, the net cost to society approaches $0 after payback.
 
-**From taxpayers' perspective**: They give up `{python} format_billions(TREATY_ANNUAL_FUNDING)` in military spending but receive `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` in economic benefits (peace dividend + R&D savings). Net gain: $137B.
+**From taxpayers' perspective**: They give up $27.2B in military spending but receive $163.6B in economic benefits (peace dividend + R&D savings). Net gain: $137B.
 
 **From investors' perspective**: They invest $1B and receive $2.7B/year perpetually. This is the best investment in history.
 
@@ -515,7 +515,7 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 ### Q: Isn't redirecting military spending politically impossible?
 
-**A**: That's what the `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` campaign budget is for - making the politically impossible become inevitable through:
+**A**: That's what the $1.0B campaign budget is for - making the politically impossible become inevitable through:
 
 - Viral referendum showing overwhelming public support (80%+ want less war, more cures)
 - VICTORY bonds that make supporting the treaty more profitable than opposing it

@@ -106,7 +106,7 @@ Guess who wins?
 
 This pattern repeats everywhere:
 
-- Military contractors: [$999 billion concentrated benefit](../references.qmd#us-military-budget-999b) (37% of `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` global spending)
+- Military contractors: [$999 billion concentrated benefit](../references.qmd#us-military-budget-999b) (37% of $2.7T global spending)
 - Taxpayers: $3,000 each in diffuse costs ($999B ÷ 333M Americans)
 - Winner: Guess
 
@@ -513,7 +513,7 @@ Here's how your government decides to spend trillions:
 **Step 1: Lobbyists Write Checks**
 
 - Defense contractors donate $50 million
-- Pharmaceutical companies donate `{python} format_millions(DFDA_ANNUAL_OPEX)`
+- Pharmaceutical companies donate $40M
 - Teachers unions donate their lunch money
 - Poor people donate nothing (mistake)
 

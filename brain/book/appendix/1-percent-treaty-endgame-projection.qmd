@@ -32,32 +32,32 @@ from economic_parameters import *
 - **Speculative** - Projects secondary and tertiary effects that are harder to quantify
 - **Long-term vision** - Assumes successful implementation and network effects
 - **Maximum potential** - Shows what's possible if everything works well
-- **Not the primary case** - Main pitch uses conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` or complete `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` ROI
+- **Not the primary case** - Main pitch uses conservative 463:1 or complete 1,239:1 ROI
 
 **For credible, near-term analysis, see:**
 
-- [Health Dividend](../economics/health-dividend.qmd) - Conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` ROI (dFDA only)
-- [1% Treaty ROI Tiers](1-percent-treaty-roi-tiers.qmd) - Complete `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` ROI (all direct benefits)
+- [Health Dividend](../economics/health-dividend.qmd) - Conservative 463:1 ROI (dFDA only)
+- [1% Treaty ROI Tiers](1-percent-treaty-roi-tiers.qmd) - Complete 1,239:1 ROI (all direct benefits)
 
 This "Endgame" scenario is provided for those interested in the full long-term vision and compounding potential.
 
 ---
 
-## The Endgame: `{python} format_roi(ROI_WITH_MULTIPLIER_EFFECTS)` ROI (Year 20 Compounding)
+## The Endgame: 25,781:1 ROI (Year 20 Compounding)
 
 While the immediate annual benefit is $164-$1,222 billion, the true potential emerges as the system matures and compounds over 20 years.
 
-### The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` Payoff
+### The $16.4T Payoff
 
 When you add it all up at maturity:
 
 - **1% Treaty Peace Dividend:** $92B from less war
-- **dFDA Trial Efficiency:** `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` from cheaper research
+- **dFDA Trial Efficiency:** $50.0B from cheaper research
 - **DIH Market Allocation:** $13.5B from smarter funding
-- **Health Improvements:** `{python} format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)` QALYs = $126B value
+- **Health Improvements:** 840,000 QALYs = $126B value
 - **Knock-on Effects:** $16.2T from healthier, peaceful world
 
-**Total Annual Value at Year 20: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`**
+**Total Annual Value at Year 20: $16.4T**
 
 That's more than the [GDP of China](../references.qmd#gdp-of-china).
 
@@ -66,8 +66,8 @@ That's more than the [GDP of China](../references.qmd#gdp-of-china).
 ## Direct Annual Savings (Year 1-5)
 
 - **Military reduction savings**: $27.2B (captured dividend)
-- **Societal peace dividend**: `{python} format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)` (reduced conflict costs)
-- **Clinical trial efficiency**: `{python} format_billions(DFDA_GROSS_SAVINGS_ANNUAL)` (`{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction)
+- **Societal peace dividend**: $113.6B (reduced conflict costs)
+- **Clinical trial efficiency**: $50.0B (82x cost reduction)
 - **Prevention programs**: $15B (catching disease early)
 - **Total Direct**: ~$206B annually
 
@@ -114,14 +114,14 @@ As the system scales and compounds, massive secondary benefits emerge:
 
 ---
 
-## Total Annual Value at Maturity: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`
+## Total Annual Value at Maturity: $16.4T
 
 This represents:
 
 - More value than China's entire GDP ($17.7T)
 - 65% of US GDP ($25.5T)
 - 17% of global GDP ($96T)
-- **ROI: `{python} format_roi(ROI_WITH_MULTIPLIER_EFFECTS)`** (not a typo)
+- **ROI: 25,781:1** (not a typo)
 
 ---
 
@@ -129,12 +129,12 @@ This represents:
 
 | Year | Annual Benefit | Cumulative Value | What's Happening |
 |------|---------------|------------------|------------------|
-| **Year 1** | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | `{python} format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)` | Treaty signed, trials begin |
+| **Year 1** | $163.6B | $163.6B | Treaty signed, trials begin |
 | **Year 3** | $350B | $850B | First cures proven, momentum builds |
 | **Year 5** | $1T | $3.5T | Network effects kick in, pharma pivots |
 | **Year 10** | $5T | $27.5T | Major diseases falling, aging slowed |
 | **Year 15** | $10T | $85T | Healthcare costs collapse, productivity soars |
-| **Year 20** | `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` | $168T | Full potential realized, disease obsolete |
+| **Year 20** | $16.4T | $168T | Full potential realized, disease obsolete |
 
 ---
 
@@ -143,15 +143,15 @@ This represents:
 | Component | Annual Cost | Annual Benefit | ROI |
 |-----------|------------|----------------|-----|
 | 1% Treaty Implementation | $500M | $92B | 184:1 |
-| dFDA Infrastructure | `{python} format_millions(DFDA_ANNUAL_OPEX)` | $50B | `{python} format_roi(DFDA_ROI_SIMPLE)` |
+| dFDA Infrastructure | $40M | $50B | 1,250:1 |
 | DIH Operations | $100M | $13.5B | 135:1 |
-| **Combined System** | **$640M** | **`{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`** | **`{python} format_roi(ROI_WITH_MULTIPLIER_EFFECTS)`** |
+| **Combined System** | **$640M** | **$16.4T** | **25,781:1** |
 
 The whole is literally 100x greater than the sum of its parts.
 
 ---
 
-## What `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` Looks Like
+## What $16.4T Looks Like
 
 With that annual value, we could:
 
@@ -191,7 +191,7 @@ If anything, we're undershooting.
 ### Conservative Assumptions
 
 - Only 1% military reduction (could be much more)
-- Only `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` trial cost reduction (RECOVERY achieved [98%](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction))
+- Only 50.0% trial cost reduction (RECOVERY achieved [98%](../references.qmd#recovery-trial-82x-cost-reduction))
 - Only 50% better allocation (markets usually 2-3x better)
 - [Standard QALY values](../references.qmd#qaly-value) (many argue life is worth more)
 
@@ -199,7 +199,7 @@ The math isn't optimistic—it's conservative.
 
 ---
 
-## The Path to `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`
+## The Path to $16.4T
 
 ### Phase 1 (Months 1-12): Build platforms, sign treaty
 
@@ -219,7 +219,7 @@ The math isn't optimistic—it's conservative.
 ### Phase 4 (Years 10+): Full ecosystem value
 
 - Cost: Still just $640M/year
-- Benefit: `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)`/year and growing
+- Benefit: $16.4T/year and growing
 
 ---
 
@@ -295,7 +295,7 @@ With 1% Treaty system:
 
 ### Discount Rates Not Applied
 
-Unlike the conservative `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` and complete `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` calculations, this endgame projection does NOT apply:
+Unlike the conservative 463:1 and complete 1,239:1 calculations, this endgame projection does NOT apply:
 
 - Net Present Value (NPV) discounting
 - Risk adjustments for uncertainty
@@ -320,10 +320,10 @@ Small changes in key assumptions dramatically affect outcomes:
 
 - 5% vs 10% global health improvement
 - 1% vs 2% military spending reduction
-- `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` vs 90% trial cost reduction
+- 50.0% vs 90% trial cost reduction
 - 10-year vs 20-year timeline
 
-The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` figure assumes moderate scenarios across all variables.
+The $16.4T figure assumes moderate scenarios across all variables.
 
 ---
 
@@ -343,14 +343,14 @@ The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` figure assumes mod
 - Academic peer review submissions
 - Media interviews with mainstream outlets
 
-**Default Recommendation:** Lead with `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` (conservative) or `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)` (complete). Use `{python} format_roi(ROI_WITH_MULTIPLIER_EFFECTS)` only with audiences ready for the full vision.
+**Default Recommendation:** Lead with 463:1 (conservative) or 1,239:1 (complete). Use 25,781:1 only with audiences ready for the full vision.
 
 ---
 
 ## Related Analysis
 
-- **Conservative Case (`{python} format_roi(ROI_DFDA_SAVINGS_ONLY)`)**: [Health Dividend](../economics/health-dividend.qmd) - dFDA R&D savings only
-- **Complete Case (`{python} format_roi(ROI_ALL_DIRECT_BENEFITS)`)**: [1% Treaty ROI Tiers](1-percent-treaty-roi-tiers.qmd) - All direct benefits
+- **Conservative Case (463:1)**: [Health Dividend](../economics/health-dividend.qmd) - dFDA R&D savings only
+- **Complete Case (1,239:1)**: [1% Treaty ROI Tiers](1-percent-treaty-roi-tiers.qmd) - All direct benefits
 - **NPV Methodology**: [Health Dividend Calculations](health-dividend-calculations.qmd) - 10-year NPV with discount rates
 - **Cost-Effectiveness**: [1% Treaty Cost-Effectiveness](1-percent-treaty-cost-effectiveness.qmd) - ICER and cost-per-QALY
 
@@ -358,7 +358,7 @@ The `{python} format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)` figure assumes mod
 
 ## Conclusion
 
-**The `{python} format_roi(ROI_WITH_MULTIPLIER_EFFECTS)` endgame projection is speculative but plausible.**
+**The 25,781:1 endgame projection is speculative but plausible.**
 
 It represents the compounding effects of:
 
@@ -368,7 +368,7 @@ It represents the compounding effects of:
 - Accelerated innovation
 - Network effects from global collaboration
 
-**This is the vision.** But start conversations with the provable `{python} format_roi(ROI_DFDA_SAVINGS_ONLY)` case and build from there.
+**This is the vision.** But start conversations with the provable 463:1 case and build from there.
 
 The math works. The historical precedents exist. The potential is real.
 

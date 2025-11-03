@@ -35,12 +35,12 @@ The 1% Treaty is a legally-binding global accord with a single provision: every 
 
 1.  **The Problem:** The world spends [$2.7 trillion a year](../references.qmd#global-military-spending-2-44t) on military forces to maintain a delicate balance of power.
 2.  **The Hack:** If every nation reduces military spending by 1% *at the same time*, the balance of power remains identical. No country becomes more vulnerable.
-3.  **The Prize:** That 1%—a **`{python} format_billions(TREATY_ANNUAL_FUNDING)`-a-year river of cash**—is redirected to cure all human diseases.
+3.  **The Prize:** That 1%—a **$27.2B-a-year river of cash**—is redirected to cure all human diseases.
 
 **How It Works:**
 
-1.  **Funding:** Creates `{python} format_billions(TREATY_ANNUAL_FUNDING)`/year revenue stream for the DIH
-2.  **Execution:** DIH subsidizes patient participation in the [dFDA](dfda.qmd)—clinical trials that are **[80x cheaper](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction)** than current model
+1.  **Funding:** Creates $27.2B/year revenue stream for the DIH
+2.  **Execution:** DIH subsidizes patient participation in the [dFDA](dfda.qmd)—clinical trials that are **[80x cheaper](../references.qmd#recovery-trial-82x-cost-reduction)** than current model
 3.  **Governance:** Decentralized Autonomous Organization (DAO) governed by smart contracts and global population via [Wishocracy](wishocracy.qmd)
 4.  **Transparency:** All research, data, and spending published on public ledger
 
@@ -50,7 +50,7 @@ The 1% Treaty is a legally-binding global accord with a single provision: every 
 
 ## The Heist: How to Steal $27 Billion a Year (Legally)
 
-This is how we steal `{python} format_billions(TREATY_ANNUAL_FUNDING)` a year from the military-industrial complex and give it to dying people.
+This is how we steal $27.2B a year from the military-industrial complex and give it to dying people.
 
 ![Global military spending by region showing the $2.7 trillion we spend annually on weapons instead of cures](../../../assets/global-military-spending-chart.png)
 
@@ -79,7 +79,7 @@ The 1% Treaty is based on kindergarten logic so simple that world leaders might 
 
 3.  **The Punchline:** Nobody loses! Everyone keeps the same relative scariness! It's like if everyone at a party agreed to take off their shoes - everyone gets shorter by the same amount, but nobody actually gets shorter relative to anyone else.
 
-4.  **The Prize:** That 1% - that `{python} format_billions(TREATY_ANNUAL_FUNDING)` per year - goes into a global fund to cure the diseases that are actually killing people, unlike the bombs which are mostly just sitting around getting dusty and occasionally almost ending the world by accident.
+4.  **The Prize:** That 1% - that $27.2B per year - goes into a global fund to cure the diseases that are actually killing people, unlike the bombs which are mostly just sitting around getting dusty and occasionally almost ending the world by accident.
 
 This is so logical it hurts. Which is why it's never been tried. And here's the best part: 1% is just the entry fee. This is a subscription model for saving the world.
 
@@ -181,7 +181,7 @@ So we don't frame this as "reducing military spending." We frame it as:
 "Our nation will be stronger when our people aren't dying of preventable diseases. A healthy population is a powerful population."
 
 **For Economists**:
-"[The ROI is `{python} format_roi(ROI_ALL_DIRECT_BENEFITS)`](../economics.qmd#the-complete-case-1-222-1-roi-all-direct-benefits). This beats every other public health intervention on record."
+"[The ROI is 1,239:1](../economics.qmd#the-complete-case-1-222-1-roi-all-direct-benefits). This beats every other public health intervention on record."
 
 **For Conspiracy Theorists**:
 "Big Pharma hates this one weird trick that makes medicine basically free."
@@ -221,16 +221,16 @@ Every politician claims credit. Nobody remembers who opposed it. History books c
 
 ---
 
-## The Money Flow: Where `{python} format_billions(TREATY_ANNUAL_FUNDING)` Actually Goes
+## The Money Flow: Where $27.2B Actually Goes
 
 Once the treaty is signed and the money starts flowing, here's what happens:
 
 ### The Decentralized Institute of Health Treasury
 
-**Input**: `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually from military budgets worldwide
+**Input**: $27.2B annually from military budgets worldwide
 
 **Distribution**:
-The `{python} format_billions(TREATY_ANNUAL_FUNDING)` flows into the DIH Treasury, where it is allocated directly by the people of Earth via the Wishocracy platform. There are no committees or central planners. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
+The $27.2B flows into the DIH Treasury, where it is allocated directly by the people of Earth via the Wishocracy platform. There are no committees or central planners. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
 
 - **Patient Subsidies:** The largest portion, creating a market for clinical trials.
 - **VICTORY Bond Returns:** A fixed 10% of inflows, as promised to investors.
@@ -260,7 +260,7 @@ Why? Because they get to:
 1.  **Keep 99% of their budget** (still plenty for bombs)
 2.  **Pivot 1% to biotech** (higher profit margins)
 3.  **Look like heroes** (rare for arms dealers)
-4.  **Invest in the fund** (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns, remember?)
+4.  **Invest in the fund** (271.8% annual returns, remember?)
 5.  **Not die of cancer** (even arms dealers get cancer)
 
 Lockheed Martin Presents: The F-35 Cancer Killer™
@@ -317,7 +317,7 @@ Nations will find that true power and global influence come not from their capac
 **Year 50: The View from Tomorrow**
 
 - Death is mostly optional. War is mostly a video game.
-- The redirect is at `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)`. The military-industrial complex now builds starships and planetary defense systems against asteroids.
+- The redirect is at 50.0%. The military-industrial complex now builds starships and planetary defense systems against asteroids.
 - Children learn about cancer the way we learn about polio.
 - Someone writes a book called, "Remember When Humans Used to Kill Each Other? What Idiots."
 

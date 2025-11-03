@@ -11,12 +11,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
----
-
-jupyter: python3
-echo: false
----
-
 ```{python}
 import matplotlib.pyplot as plt
 import pandas as pd

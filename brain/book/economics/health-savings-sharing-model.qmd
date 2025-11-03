@@ -51,7 +51,7 @@ This is why we've cured exactly zero chronic diseases since Hepatitis C in 2014.
 
 ## The Solution: Split the Savings
 
-Here's the simple fix: When a company cures a disease, they get `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` of the healthcare costs that would have been spent treating it.
+Here's the simple fix: When a company cures a disease, they get 50.0% of the healthcare costs that would have been spent treating it.
 
 **The New Math:**
 

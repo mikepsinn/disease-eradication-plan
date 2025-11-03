@@ -142,4 +142,4 @@ From 1890 to 1962, US life expectancy increased at approximately **4 years per y
 
 After the 1962 Kefauver-Harris Amendment mandated expensive, industry-run efficacy trials, this growth rate was **cut in half** to approximately **2 years per year**.
 
-**The `{python} format_percentage(TRIAL_COST_REDUCTION_PCT)` reduction in medical progress coincided precisely with the shift from large-scale real-world evidence trials to small, controlled pharmaceutical company trials.**
+**The `{python} trial_cost_reduction_pct_formatted` reduction in medical progress coincided precisely with the shift from large-scale real-world evidence trials to small, controlled pharmaceutical company trials.**

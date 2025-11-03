@@ -24,7 +24,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent [$41,000 per patient](../references.qmd#trial-cost-41k) on traditional trials, Oxford spent [$500 per patient](../references.qmd#recovery-cost-500) and [saved over 1 million lives globally](../references.qmd#recovery-trial-1m-lives-saved). This `{python} TRIAL_COST_REDUCTION_FACTOR`x efficiency gain demonstrates that decentralized, pragmatic trials aren't just possible, they're already superior to centralized FDA approaches.
+The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent [$41,000 per patient](../references.qmd#trial-cost-41k) on traditional trials, Oxford spent [$500 per patient](../references.qmd#recovery-cost-500) and [saved over 1 million lives globally](../references.qmd#recovery-trial-1m-lives-saved). This 82x efficiency gain demonstrates that decentralized, pragmatic trials aren't just possible, they're already superior to centralized FDA approaches.
 
 **Speed to Launch:** [9 days from conception to first patient enrolled](../references.qmd#landray-recovery-trial-quote). FDA average: [6-12 months](../references.qmd#fda-trial-launch-timeline).
 **Speed to Results:** First life-saving treatment (dexamethasone) [identified in 100 days](../references.qmd#recovery-trial-100-days-to-cure). FDA average: [6-10 years](../references.qmd#fda-approval-timeline-10-years).
@@ -101,7 +101,7 @@ The RECOVERY trial didn't just save lives, it proved several critical points abo
 1. **Decentralization Works:** 186 hospitals operating independently produced better results than centralized control
 2. **Real Patients Matter:** Including sick patients ([who FDA trials exclude](../references.qmd#fda-trial-patient-exclusion-criteria)) provides real-world evidence
 3. **Speed Saves Lives:** First results in 100 days vs years for traditional trials
-4. **Cost Is A Choice:** The `{python} TRIAL_COST_REDUCTION_FACTOR`x cost difference isn't about capability, it's about bureaucracy
+4. **Cost Is A Choice:** The 82x cost difference isn't about capability, it's about bureaucracy
 5. **Scale Is Achievable:** 49,000 patients enrolled [faster than most FDA trials enroll 1,000](../references.qmd#clinical-trial-enrollment-timelines)
 6. **Simplicity Wins:** [Three 1-page forms (consent, case report, follow-up) vs FDA's complex multi-form protocols](../references.qmd#fda-vs-oxford-paperwork). Less paperwork, more cures.
 
@@ -111,7 +111,7 @@ The RECOVERY trial didn't just save lives, it proved several critical points abo
 - FDA: $41,000 per patient, often testing just one treatment
 - **That's an 820X efficiency gain when measuring cost per medical answer**
 
-The lesson is clear: We already know how to run trials `{python} TRIAL_COST_REDUCTION_FACTOR`x more efficiently. The Oxford RECOVERY trial proved it works. The only question is whether we'll choose to implement this model globally or continue wasting $41,000 per patient while people die waiting for cures.
+The lesson is clear: We already know how to run trials 82x more efficiently. The Oxford RECOVERY trial proved it works. The only question is whether we'll choose to implement this model globally or continue wasting $41,000 per patient while people die waiting for cures.
 
 **Sources and Key Quotes**
 
@@ -141,7 +141,7 @@ The lesson is clear: We already know how to run trials `{python} TRIAL_COST_REDU
 
 Excellent question. Let me show you the proof.
 
-**Oxford Already Achieved `{python} TRIAL_COST_REDUCTION_FACTOR`x Cost Reduction**
+**Oxford Already Achieved 82x Cost Reduction**
 
 ### The Oxford RECOVERY Trial
 
@@ -155,6 +155,6 @@ America spent $41,000 per patient on paperwork.
 
 - Current cost to develop a drug: [$2.2 billion](../references.qmd#post-1962-drug-costs-explode)
 - New cost with decentralized pragmatic trials: ~$27 million
-- Efficiency gain: ~`{python} TRIAL_COST_REDUCTION_FACTOR`x (Oxford showed `{python} TRIAL_COST_REDUCTION_FACTOR`x reduction possible)
+- Efficiency gain: ~82x (Oxford showed 82x reduction possible)
 - Lives saved: Millions annually
 - Legal lobbying budget: $1 billion

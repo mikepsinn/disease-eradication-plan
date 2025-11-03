@@ -116,7 +116,7 @@ But we can't trust them to click YES on "should we cure disease"? Besides, polls
 2.  Military spending is already "socialized" (government spending).
 3.  We're just moving 1% from one government program to another.
 4.  The dFDA is decentralized markets, not central planning.
-5.  VICTORY Bonds are pure capitalism (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns).
+5.  VICTORY Bonds are pure capitalism (271.8% returns).
 
 **This is the most capitalist medical system ever proposed.**
 
@@ -171,14 +171,14 @@ Even if your country already spends a lot on research, it's not enough. A virus 
 
 ## "This Is Too Good to Be True"
 
-**Objection**: "`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns? Curing disease? This sounds like a scam."
+**Objection**: "271.8% returns? Curing disease? This sounds like a scam."
 
 **Response**:
 
 **The returns** are high because:
 
-- We're capturing value from a $109T disease burden. The economic benefits work out to over $7.5 million per person globally over a 50-year period (`{python} format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)` annual benefit ÷ 8B people = $152K/person/year)
-- 10% of `{python} format_billions(TREATY_ANNUAL_FUNDING)` yearly inflows
+- We're capturing value from a $109T disease burden. The economic benefits work out to over $7.5 million per person globally over a 50-year period ($1.2T annual benefit ÷ 8B people = $152K/person/year)
+- 10% of $27.2B yearly inflows
 - Divided among bondholders
 - Math checks out
 
@@ -186,7 +186,7 @@ Even if your country already spends a lot on research, it's not enough. A virus 
 
 - Oxford proved the model works
 - We're removing the FDA bottleneck
-- `{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction
+- 82x cost reduction
 - Timeline matches historical eradication efforts
 
 **It sounds too good because we've been failing for so long, we forgot what success looks like.**
@@ -237,7 +237,7 @@ Your body is a machine. Machines can be repaired. Aging is just harder engineeri
 
 ## "The Government Will Steal the Money"
 
-**Objection**: "You create a `{python} format_billions(TREATY_ANNUAL_FUNDING)` fund, politicians will redirect it to their friends."
+**Objection**: "You create a $27.2B fund, politicians will redirect it to their friends."
 
 **Response**: They can't. Smart contracts.
 
@@ -284,7 +284,7 @@ Defense contractors spend about $300 million a year on lobbying and get back nea
 
 The military-industrial complex stays in power by spending about $300 million a year on lobbyists to keep their trillion-dollar budgets safe. You can't beat them with moral arguments. You have to beat them at their own game.
 
-Here's how you do it: you raise a [`{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` war chest through VICTORY Bonds](../economics/victory-bonds.qmd), then allocate [$250 million specifically for lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25) - enough to completely overwhelm the defense industry's $300 million annual spend. Then, you go to the same K-Street lobbying firms the defense contractors use, and you outbid them for their top talent.
+Here's how you do it: you raise a [$1.0B war chest through VICTORY Bonds](../economics/victory-bonds.qmd), then allocate [$250 million specifically for lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25) - enough to completely overwhelm the defense industry's $300 million annual spend. Then, you go to the same K-Street lobbying firms the defense contractors use, and you outbid them for their top talent.
 
 You hire their best mercenaries to work for you.
 
@@ -325,7 +325,7 @@ This isn't a fantasy. It's a hostile takeover of the political influence market.
 - NIH: Fund safe research that discovers nothing
 - FDA: Block trials entirely
 
-**Science works through experimentation.** The dFDA lets us experiment `{python} TRIAL_COST_REDUCTION_FACTOR`x faster and cheaper.
+**Science works through experimentation.** The dFDA lets us experiment 82x faster and cheaper.
 
 **Even if 90% of trials fail, we still get 10X more cures than today.**
 
@@ -338,7 +338,7 @@ This isn't a fantasy. It's a hostile takeover of the political influence market.
 **Problem**: It can't work without you.
 
 - Need 280M votes to pass treaty
-- Need `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` bonds to fund campaign
+- Need $1.0B bonds to fund campaign
 - Need sharing to reach critical mass
 
 **If everyone waits for everyone else, nothing happens.**
@@ -392,7 +392,7 @@ This is a classic collective action problem. A burning building where everyone w
 
 **What's actually unrealistic**:
 
-- Continuing to spend `{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)` on weapons while sitting on 13,000 nuclear warheads, enough to cause an extinction-level event 130 times over.
+- Continuing to spend $2.7T on weapons while sitting on 13,000 nuclear warheads, enough to cause an extinction-level event 130 times over.
 - Expecting different results from the same broken system.
 - Thinking we can survive the AI revolution without fixing incentives.
 
@@ -524,7 +524,7 @@ These technologies already verify hundreds of millions of users globally for ban
 
 **Objection**: "How do you ensure the money actually helps patients instead of funding more bureaucracy?"
 
-**Response**: The [decentralized FDA](../solution/dfda.qmd) model is **[80 times more efficient](../references.qmd#recovery-trial-`{python} TRIAL_COST_REDUCTION_FACTOR`x-cost-reduction)**. It uses pragmatic trials costing [$500 per patient](../references.qmd#recovery-cost-500) versus [$41,000 in traditional trials](../references.qmd#trial-cost-41k). The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. With that same budget, our model could run 2,800 trials for 2.8 million patients. The evidence is overwhelming.
+**Response**: The [decentralized FDA](../solution/dfda.qmd) model is **[80 times more efficient](../references.qmd#recovery-trial-82x-cost-reduction)**. It uses pragmatic trials costing [$500 per patient](../references.qmd#recovery-cost-500) versus [$41,000 in traditional trials](../references.qmd#trial-cost-41k). The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. With that same budget, our model could run 2,800 trials for 2.8 million patients. The evidence is overwhelming.
 
 ## "Why Not Just Increase Health Funding Directly?"
 

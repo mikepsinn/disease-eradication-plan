@@ -42,9 +42,9 @@ They will **absolutely** kill any treaty that threatens their revenue. Not becau
 
 Allocate strategic partnerships funding from [VICTORY bonds](../economics/victory-bonds.qmd) to:
 
-1. **Lobbyists directly**: "Here are bonds paying `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually. Lobby FOR the treaty."
+1. **Lobbyists directly**: "Here are bonds paying 271.8% annually. Lobby FOR the treaty."
 2. **Defense contractor executives**: "Here are bonds worth more than your salary. Stop blocking the treaty."
-3. **Private investors/family offices**: "Here are bonds paying `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` vs current [10% market return](../references.qmd#investment-return-comparison)."
+3. **Private investors/family offices**: "Here are bonds paying 271.8% vs current [10% market return](../references.qmd#investment-return-comparison)."
 4. **Key board members**: Early access to bonds as "strategic advisors"
 
 ## The Math They See
@@ -58,7 +58,7 @@ Allocate strategic partnerships funding from [VICTORY bonds](../economics/victor
 **Our deal (lobbying for treaty)**:
 
 - Pay: $5-20M in VICTORY bonds
-- Returns: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually, perpetual
+- Returns: 271.8% annually, perpetual
 - Job security: Still have 99% of military budget to protect
 - Upside: Generational wealth
 
@@ -68,18 +68,18 @@ Even a lobbyist can do that math.
 
 ### 1. **It's More Money**
 
-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns > whatever they're currently making.
+271.8% returns > whatever they're currently making.
 
 ### 2. **Treaty Doesn't Hurt Them Anyway**
 
-- Military budget only drops 1% (`{python} format_billions(TREATY_ANNUAL_FUNDING)` of [`{python} format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)`](../references.qmd#sipri-2024-spending))
+- Military budget only drops 1% ($27.2B of [$2.7T](../references.qmd#sipri-2024-spending))
 - They still have 99% to lobby for
 - New contracts still get signed
 - Jobs don't disappear
 
 ### 3. **Better Returns**
 
-Private investors and family offices seek high returns. VICTORY bonds paying `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` vs stock market's 10% represent a compelling opportunity for those willing to take calculated risks on policy-driven investments.
+Private investors and family offices seek high returns. VICTORY bonds paying 271.8% vs stock market's 10% represent a compelling opportunity for those willing to take calculated risks on policy-driven investments.
 
 ### 4. **Political Cover**
 
@@ -98,7 +98,7 @@ Private investors and family offices seek high returns. VICTORY bonds paying `{p
 
 Private meetings. Simple pitch:
 
-> "The 1% treaty is happening. You can fight it and lose, or support it and get rich. Here are VICTORY bonds. They pay `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annually. Forever. Your clients keep 99% of their budgets. Everyone wins. What's your price?"
+> "The 1% treaty is happening. You can fight it and lose, or support it and get rich. Here are VICTORY bonds. They pay 271.8% annually. Forever. Your clients keep 99% of their budgets. Everyone wins. What's your price?"
 
 ### Phase 3: The Flip
 
@@ -114,7 +114,7 @@ Now they're not just neutral—they're actively lobbying FOR the treaty:
 
 ## Budget Allocation
 
-A significant portion of the campaign's `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` war chest is allocated for strategic partnerships to co-opt key industry players and defense lobbyists. For the full breakdown, see the [Campaign Budget](../economics/campaign-budget.qmd).
+A significant portion of the campaign's $1.0B war chest is allocated for strategic partnerships to co-opt key industry players and defense lobbyists. For the full breakdown, see the [Campaign Budget](../economics/campaign-budget.qmd).
 
 ## Why This Works
 
@@ -157,9 +157,9 @@ The same greed that created the military-industrial complex can be redirected to
 
 ## What They Tell Their Boards
 
-**Defense Contractor CEO**: "We invested in these bonds paying `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns. Treaty passes, we make billions. Treaty fails, our diversification protects us. Either way, we keep 99% of our contracts."
+**Defense Contractor CEO**: "We invested in these bonds paying 271.8% returns. Treaty passes, we make billions. Treaty fails, our diversification protects us. Either way, we keep 99% of our contracts."
 
-**Private Investor**: "These bonds offer `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns vs market's 10%. If the treaty passes, we make billions. Worth the calculated risk."
+**Private Investor**: "These bonds offer 271.8% returns vs market's 10%. If the treaty passes, we make billions. Worth the calculated risk."
 
 **Lobbyist**: "My client diversified into medical research investment. Supporting the treaty aligns with their new portfolio. Also, it's passing anyway, so why die on this hill?"
 

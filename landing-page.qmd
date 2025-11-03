@@ -87,7 +87,7 @@ One percent.
 A rounding error.
 A Pentagon couch cushion's worth.
 
-That's `{python} format_billions(TREATY_ANNUAL_FUNDING)` a year.
+That's $27.2B a year.
 
 We'd still have \$2.69 trillion left for killing.
 [Enough to murder everyone on Earth 20 times](brain/book/appendix/nuclear-weapon-cost-and-casualties.qmd).
@@ -104,7 +104,7 @@ It's the best investment in the world, if you don't mind the screaming.
 
 The strategy does the exact same thing, but backwards.
 
-**Step 1:** Sell VICTORY Bonds to raise `{python} format_billions(TREATY_CAMPAIGN_TOTAL_COST)` (`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns).
+**Step 1:** Sell VICTORY Bonds to raise $1.0B (271.8% returns).
 
 **Step 2:** Use the money to run a massive campaign to get 3.5% of humanity (280M people) to vote for the 1% Treaty.
 
@@ -132,7 +132,7 @@ The strategy does the exact same thing, but backwards.
 
 ### The New System (Works)
 
-- ~\$27 million per treatment (`{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper)
+- ~\$27 million per treatment (82x cheaper)
 - 2-3 years from idea to medicine
 - Every disease gets attention
 - Amazon-style marketplace
@@ -158,7 +158,7 @@ graph LR
     style C fill:#f5f5f5,stroke:#000,stroke-width:3px
 ```
 
-**That's an `{python} TRIAL_COST_REDUCTION_FACTOR`x cost reduction through simple efficiency.**
+**That's an 82x cost reduction through simple efficiency.**
 
 :::
 
@@ -228,7 +228,7 @@ Pay for results, not proposals.
 
 ::: {.card}
 
-### VICTORY Bonds offer `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` annual returns
+### VICTORY Bonds offer 271.8% annual returns
 
 That's not a typo.
 Two hundred seventy percent.
@@ -253,7 +253,7 @@ graph TD
     style D fill:#000,color:#fff,stroke:#000,stroke-width:3px
 ```
 
-**Here's how:** Invest \$1 billion to redirect `{python} format_billions(TREATY_ANNUAL_FUNDING)` annually.
+**Here's how:** Invest \$1 billion to redirect $27.2B annually.
 That's a 27:1 ratio every year forever.
 :::
 
@@ -261,7 +261,7 @@ That's a 27:1 ratio every year forever.
 
 ### The Coalition of the Willing (To Get Rich While Saving Humanity)
 
-**Defense Contractors**: "Wait, we can make `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns instead of 8% margins?
+**Defense Contractors**: "Wait, we can make 271.8% returns instead of 8% margins?
 And keep 99% of our military budget?
 Where do we sign?"
 
@@ -274,7 +274,7 @@ From biggest expense to revenue stream.
 **Politicians**: Create Super PACs.
 Vote for the treaty or face opponents funded with bar graphs showing you hate grandmas with cancer.
 
-**Billionaires**: `{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` returns AND ending human suffering.
+**Billionaires**: 271.8% returns AND ending human suffering.
 
 It's capitalism, but pointed at not dying.
 :::
@@ -383,7 +383,7 @@ It takes 30 seconds.
 
 Buy VICTORY Bonds.
 \$1,000 minimum.
-`{python} format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)` target returns.
+271.8% target returns.
 [Invest →](https://warondisease.org/invest){.btn}
 :::
 :::
