@@ -1,0 +1,94 @@
+```{python}
+#| label: clinical-trial-spending-by-phase-pie-chart
+#| echo: false
+import matplotlib.pyplot as plt
+from pathlib import Path
+import sys
+
+# --- Find project root dynamically to import shared modules ---
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
+
+# --- Import centralized style and constants ---
+from brain.figures._chart_style import (
+    setup_chart_style, add_watermark,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata,
+    PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS
+)
+
+# --- Setup Chart Style ---
+setup_chart_style()
+fig, ax = plt.subplots(figsize=(8, 8))
+
+# --- Data ---
+# Source: Global clinical trial spending by phase 2024
+labels = ['Phase 3\n$29-45B (45%)', 'Phase 2\n$15-25B (24%)', 'Phase 4\n$15-20B (21%)', 'Phase 1\n$8-15B (14%)']
+sizes = [37, 20, 17.5, 11.5]  # Midpoint estimates
+percentages = [45, 24, 21, 14]  # Approximate percentages
+
+# --- Create Pie Chart ---
+# Solid black for Phase 3 (largest), white with patterns for others
+colors = [COLOR_BLACK, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE]
+hatches = [None, PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS]
+
+wedges, texts = ax.pie(
+    sizes,
+    labels=None,  # We'll add custom labels
+    colors=colors,
+    wedgeprops=dict(edgecolor=COLOR_BLACK, linewidth=2),
+    startangle=90,
+    counterclock=False
+)
+
+# Apply hatching patterns to wedges
+for wedge, hatch in zip(wedges, hatches):
+    wedge.set_hatch(hatch)
+
+# --- Add Title ---
+ax.set_title(
+    "Global Clinical Trial Spending by Phase (2024)",
+    fontsize=28, weight='bold', color=COLOR_BLACK, pad=30
+)
+
+# --- Add Direct Labels on Slices ---
+for i, (wedge, label, size) in enumerate(zip(wedges, labels, sizes)):
+    # Get the angle at the center of the wedge
+    angle = (wedge.theta2 + wedge.theta1) / 2
+    x = 0.65 * wedge.r * plt.np.cos(plt.np.deg2rad(angle))
+    y = 0.65 * wedge.r * plt.np.sin(plt.np.deg2rad(angle))
+
+    # For solid black slice (Phase 3), use white text
+    if i == 0:
+        ax.text(x, y, label, ha='center', va='center',
+                fontsize=20, weight='bold', color=COLOR_WHITE,
+                fontname='Courier New', linespacing=1.4)
+    # For patterned slices, use white box for readability
+    else:
+        ax.text(x, y, label, ha='center', va='center',
+                fontsize=17, weight='bold', color=COLOR_BLACK,
+                fontname='Courier New', linespacing=1.4,
+                bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                         edgecolor=COLOR_BLACK, linewidth=1))
+
+# --- Add Watermark ---
+add_watermark(fig)
+
+# --- Save and Show Plot ---
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+filename = Path(__file__).stem if '__file__' in locals() else 'clinical-trial-spending-by-phase-pie-chart'
+output_path = output_dir / f'{filename}.png'
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title="Global Clinical Trial Spending by Phase (2024)",
+    description="Phase 3 trials dominate at $29-45B annually (45%), representing nearly half of the $83B global clinical trials market."
+)
+
+plt.show()
+```

@@ -1,0 +1,101 @@
+```{python}
+#| label: clinical-trial-funding-sources-pie-chart
+#| echo: false
+import matplotlib.pyplot as plt
+from pathlib import Path
+import sys
+
+# --- Find project root dynamically to import shared modules ---
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
+
+# --- Import centralized style and constants ---
+from brain.figures._chart_style import (
+    setup_chart_style, add_watermark,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata,
+    PATTERN_DIAGONAL, PATTERN_HORIZONTAL
+)
+
+# --- Setup Chart Style ---
+setup_chart_style()
+fig, ax = plt.subplots(figsize=(8, 8))
+
+# --- Data ---
+# Source: Global clinical trial funding by source 2024
+labels = ['Private Industry\n$82.5B (90%)', 'Government\n$22B (10%)', 'Nonprofits\n$3.5B (3%)']
+sizes = [82.5, 22, 3.5]
+
+# --- Create Pie Chart ---
+# Solid black for Industry (dominates), white with patterns for others
+colors = [COLOR_BLACK, COLOR_WHITE, COLOR_WHITE]
+hatches = [None, PATTERN_DIAGONAL, PATTERN_HORIZONTAL]
+
+wedges, texts = ax.pie(
+    sizes,
+    labels=None,  # We'll add custom labels
+    colors=colors,
+    wedgeprops=dict(edgecolor=COLOR_BLACK, linewidth=2),
+    startangle=90,
+    counterclock=False
+)
+
+# Apply hatching patterns to wedges
+for wedge, hatch in zip(wedges, hatches):
+    wedge.set_hatch(hatch)
+
+# --- Add Title ---
+ax.set_title(
+    "Who Pays for Clinical Trials? (2024)",
+    fontsize=28, weight='bold', color=COLOR_BLACK, pad=30
+)
+
+# --- Add Direct Labels on Slices ---
+for i, (wedge, label, size) in enumerate(zip(wedges, labels, sizes)):
+    # Get the angle at the center of the wedge
+    angle = (wedge.theta2 + wedge.theta1) / 2
+    x = 0.7 * wedge.r * plt.np.cos(plt.np.deg2rad(angle))
+    y = 0.7 * wedge.r * plt.np.sin(plt.np.deg2rad(angle))
+
+    # Apply manual position adjustments
+    if i == 0:  # Private Industry - move left
+        x -= 0.15
+    elif i == 1:  # Government - move down slightly
+        y -= 0.1
+    elif i == 2:  # Nonprofits - move right slightly
+        x += 0.1
+
+    # For solid black slice (Industry), use white text
+    if i == 0:
+        ax.text(x, y, label, ha='center', va='center',
+                fontsize=20, weight='bold', color=COLOR_WHITE,
+                fontname='Courier New', linespacing=1.4)
+    # For patterned slices, use white box for readability
+    else:
+        ax.text(x, y, label, ha='center', va='center',
+                fontsize=18, weight='bold', color=COLOR_BLACK,
+                fontname='Courier New', linespacing=1.4,
+                bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                         edgecolor=COLOR_BLACK, linewidth=1))
+
+# --- Add Watermark ---
+add_watermark(fig)
+
+# --- Save and Show Plot ---
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+filename = Path(__file__).stem if '__file__' in locals() else 'clinical-trial-funding-sources-pie-chart'
+output_path = output_dir / f'{filename}.png'
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title="Who Pays for Clinical Trials? (2024)",
+    description="Private industry spends $82.5B (90%) on clinical trials, dwarfing government ($22B, 10%) and nonprofit ($3.5B, 3%) contributions."
+)
+
+plt.show()
+```

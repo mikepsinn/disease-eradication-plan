@@ -51,46 +51,18 @@ ax.set_xticklabels(regions, fontsize=18, color=COLOR_BLACK, linespacing=1.5)
 
 # --- Add Direct Data Labels ---
 for i, (bar, val, pct) in enumerate(zip(bars, spending, percentages)):
-    # For US (solid black), use white text inside
-    if i == 0:
-        ax.annotate(
-            f'${val}B\n{pct}',
-            xy=(bar.get_x() + bar.get_width() / 2, val / 2),
-            xytext=(0, 0),
-            textcoords="offset points",
-            ha='center', va='center',
-            fontsize=36, weight='bold',
-            color=COLOR_WHITE,
-            fontname='Courier New',
-            linespacing=1.3
-        )
-    # For China (patterned bar), use white box for readability
-    elif i == 2:
-        ax.annotate(
-            f'${val}B\n{pct}',
-            xy=(bar.get_x() + bar.get_width() / 2, val),
-            xytext=(0, 10),
-            textcoords="offset points",
-            ha='center', va='bottom',
-            fontsize=30, weight='bold',
-            color=COLOR_BLACK,
-            fontname='Courier New',
-            linespacing=1.3,
-            bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
-        )
-    # For other white bars, place black text above
-    else:
-        ax.annotate(
-            f'${val}B\n{pct}',
-            xy=(bar.get_x() + bar.get_width() / 2, val),
-            xytext=(0, 10),
-            textcoords="offset points",
-            ha='center', va='bottom',
-            fontsize=30, weight='bold',
-            color=COLOR_BLACK,
-            fontname='Courier New',
-            linespacing=1.3
-        )
+    # For all bars, place black text above (cleaner look)
+    ax.annotate(
+        f'${val}B\n{pct}',
+        xy=(bar.get_x() + bar.get_width() / 2, val),
+        xytext=(0, 10),
+        textcoords="offset points",
+        ha='center', va='bottom',
+        fontsize=30, weight='bold',
+        color=COLOR_BLACK,
+        fontname='Courier New',
+        linespacing=1.3
+    )
 
 # --- Adjust plot limits for visual balance ---
 ax.set_ylim(0, max(spending) * 1.3)

@@ -51,30 +51,17 @@ ax.set_xticklabels(phases, fontsize=20, color=COLOR_BLACK)
 
 # --- Add Direct Data Labels ---
 for i, (bar, label) in enumerate(zip(bars, cost_labels)):
-    # For Phase 3 (solid black), use white text inside
-    if i == 2:
-        ax.annotate(
-            label,
-            xy=(bar.get_x() + bar.get_width() / 2, cost_avg[i] / 2),
-            xytext=(0, 0),
-            textcoords="offset points",
-            ha='center', va='center',
-            fontsize=40, weight='bold',
-            color=COLOR_WHITE,
-            fontname='Courier New'
-        )
-    # For white bars, place black text above
-    else:
-        ax.annotate(
-            label,
-            xy=(bar.get_x() + bar.get_width() / 2, cost_avg[i]),
-            xytext=(0, 10),
-            textcoords="offset points",
-            ha='center', va='bottom',
-            fontsize=36, weight='bold',
-            color=COLOR_BLACK,
-            fontname='Courier New'
-        )
+    # For all bars, place black text above (consistent placement)
+    ax.annotate(
+        label,
+        xy=(bar.get_x() + bar.get_width() / 2, cost_avg[i]),
+        xytext=(0, 10),
+        textcoords="offset points",
+        ha='center', va='bottom',
+        fontsize=36, weight='bold',
+        color=COLOR_BLACK,
+        fontname='Courier New'
+    )
 
 # --- Adjust plot limits for visual balance ---
 ax.set_ylim(0, max(cost_avg) * 1.25)
