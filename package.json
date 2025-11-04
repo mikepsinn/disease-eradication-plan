@@ -59,6 +59,7 @@
     "watch": "tsx scripts/watch-and-review.ts",
     "extract-references": "tsx scripts/extract-references-without-urls.ts",
     "integrate-references": "tsx scripts/integrate-references.ts",
+    "generate:references-json": "tsx scripts/generate-references-json.ts",
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
     "validate:frontmatter": "tsx scripts/validate-frontmatter.ts",
     "validate:render": "python scripts/validate_render.py",
