@@ -265,7 +265,6 @@ $$
   \text{NPV}(\text{Savings})
   = \sum_{t=1}^{10} \frac{S(t)}{(1.08)^t}
   = \sum_{t=1}^{5} \frac{10t}{(1.08)^t}
-
     + \sum_{t=6}^{10} \frac{50}{(1.08)^t}
 $$
 

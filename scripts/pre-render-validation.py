@@ -106,6 +106,15 @@ def check_math_delimiters(content: str, filename: str):
                 context=context
             ))
 
+        # Check for blank lines inside math block (causes LaTeX errors)
+        if in_math_block and line.strip() == '' and '$$' not in line:
+            errors.append(ValidationError(
+                file=filename,
+                line=line_index + 1,
+                message='Blank line inside math block ($$...$$) - remove blank line or close math block first',
+                context='(blank line)'
+            ))
+
 def check_image_paths(content: str, filepath: str):
     """Check for missing image files"""
     lines = content.split('\n')
