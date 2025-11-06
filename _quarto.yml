@@ -21,162 +21,162 @@ book:
     collapse-level: 1
   chapters:
     - text: "🚀 Start Here"
-      href: index.qmd
+      href: index.qmd  # ~19p
 
     - part: "🚨 The Problem"
       chapters:
-        - brain/book/problem.qmd  # ✅ Part I Intro
-        - brain/book/problem/the-daily-massacre.qmd # ✅ Daily Holocaust
-        - brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd # ✅ The NIH
-        - brain/book/problem/fda-is-unsafe-and-ineffective.qmd # ✅ The FDA
-        - brain/book/problem/cost-of-war.qmd # ✅ Cost of War
-        - brain/book/problem/cost-of-disease.qmd # ✅ Cost of Disease
-        - brain/book/problem/unrepresentative-democracy.qmd # ✅ Democracy Is Theater & Regulatory Capture
+        - brain/book/problem.qmd  # ✅ Part I Intro ~8p
+        - brain/book/problem/the-daily-massacre.qmd # ✅ Daily Holocaust ~3p
+        - brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd # ✅ The NIH ~9p
+        - brain/book/problem/fda-is-unsafe-and-ineffective.qmd # ✅ The FDA ~25p
+        - brain/book/problem/cost-of-war.qmd # ✅ Cost of War ~32p
+        - brain/book/problem/cost-of-disease.qmd # ✅ Cost of Disease ~9p
+        - brain/book/problem/unrepresentative-democracy.qmd # ✅ Democracy Is Theater & Regulatory Capture ~19p
 
     - part: "💡 The Solution"
       chapters:
-        - brain/book/solution.qmd # ✅ Part II Intro
-        - brain/book/solution/1-percent-treaty.qmd # ✅ The 1% Treaty (includes TL;DR at top)
-        - brain/book/solution/dih.qmd # ✅ The DIH
-        - brain/book/solution/wishocracy.qmd # ✅ Wishocracy
-        - brain/book/solution/ai-coordination-army.qmd # ✅ (EXCELLENT voice - "goldfish organizing a space program")
-        - brain/book/solution/dfda.qmd # ✅ The Decentralized FDA
-        - brain/book/solution/war-on-disease.qmd # ✅ The War on Disease
-        - brain/book/solution/aligning-incentives.qmd # ✅ Aligning Incentives
+        - brain/book/solution.qmd # ✅ Part II Intro ~8p
+        - brain/book/solution/1-percent-treaty.qmd # ✅ The 1% Treaty (includes TL;DR at top) ~12p
+        - brain/book/solution/dih.qmd # ✅ The DIH ~7p
+        - brain/book/solution/wishocracy.qmd # ✅ Wishocracy ~4p
+        - brain/book/solution/ai-coordination-army.qmd # ✅ (EXCELLENT voice - "goldfish organizing a space program") ~12p
+        - brain/book/solution/dfda.qmd # ✅ The Decentralized FDA ~20p
+        - brain/book/solution/war-on-disease.qmd # ✅ The War on Disease ~5p
+        - brain/book/solution/aligning-incentives.qmd # ✅ Aligning Incentives ~7p
 
     - part: "✅ The Case"
       chapters:
-        - brain/book/proof.qmd # ✅ Part III Intro
-        - brain/book/proof/historical-precedents.qmd # ✅ Historical Precedent
-        - brain/book/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine
-        - brain/book/economics.qmd # ✅ (IMPROVED opening - "The math isn't aspirational. It's arithmetic.")
-        - brain/book/call-to-action/your-personal-benefits.qmd # ✅ Your ROI
-        - brain/book/futures.qmd # ✅ Intro to Paths
-        - brain/book/futures/dystopia-skynet-wins.qmd # ✅ Path A: Idiocracy
-        - brain/book/futures/utopia-health-and-happiness.qmd # ✅ Path B: Wishonia
-        - brain/book/appendix/faq.qmd # ✅ Demolishing Objections
+        - brain/book/proof.qmd # ✅ Part III Intro ~6p
+        - brain/book/proof/historical-precedents.qmd # ✅ Historical Precedent ~8p
+        - brain/book/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
+        - brain/book/economics.qmd # ✅ (IMPROVED opening - "The math isn't aspirational. It's arithmetic.") ~10p
+        - brain/book/call-to-action/your-personal-benefits.qmd # ✅ Your ROI ~2p
+        - brain/book/futures.qmd # ✅ Intro to Paths ~1p
+        - brain/book/futures/dystopia-skynet-wins.qmd # ✅ Path A: Idiocracy ~10p
+        - brain/book/futures/utopia-health-and-happiness.qmd # ✅ Path B: Wishonia ~13p
+        - brain/book/appendix/faq.qmd # ✅ Demolishing Objections ~15p
 
     - part: "🗺️ The Plan"
       chapters:
-        - brain/book/strategy/roadmap.qmd # ✅ (DETAILED 36-MONTH EXECUTION PLAN)
-        - brain/book/legal/legal-framework.qmd # ✅ (DETAILED 4-PART LEGAL ARCHITECTURE)
-        - brain/book/legal/securities-law.qmd # ✅ Securities Law
-        - brain/book/legal/election-law.qmd # ✅ Election Law
-        - brain/book/legal/treaty-framework.qmd # ✅ Treaty Framework
-        - brain/book/economics/victory-bonds.qmd # ✅ The Investment Vehicle (formal by design)
-        - brain/book/strategy/legislation-package.qmd # ✅ Legislation Package
-        - brain/book/strategy/global-referendum.qmd # ✅ Global Referendum (IMPROVED)
-        - brain/book/strategy/viral-marketing.qmd # ✅ PROMOTED
-        - brain/book/strategy/co-opting-defense-contractors.qmd # ✅ PROMOTED
-        - brain/book/call-to-action/three-actions.qmd # ✅ Getting Started
+        - brain/book/strategy/roadmap.qmd # ✅ (DETAILED 36-MONTH EXECUTION PLAN) ~3p
+        - brain/book/legal/legal-framework.qmd # ✅ (DETAILED 4-PART LEGAL ARCHITECTURE) ~9p
+        - brain/book/legal/securities-law.qmd # ✅ Securities Law ~6p
+        - brain/book/legal/election-law.qmd # ✅ Election Law ~6p
+        - brain/book/legal/treaty-framework.qmd # ✅ Treaty Framework ~5p
+        - brain/book/economics/victory-bonds.qmd # ✅ The Investment Vehicle (formal by design) ~14p
+        - brain/book/strategy/legislation-package.qmd # ✅ Legislation Package ~7p
+        - brain/book/strategy/global-referendum.qmd # ✅ Global Referendum (IMPROVED) ~10p
+        - brain/book/strategy/viral-marketing.qmd # ✅ PROMOTED ~5p
+        - brain/book/strategy/co-opting-defense-contractors.qmd # ✅ PROMOTED ~4p
+        - brain/book/call-to-action/three-actions.qmd # ✅ Getting Started ~2p
   appendices:
     # Essential Reading
     - part: "📚 Essential References"
       chapters:
-        - brain/book/references.qmd # ✅ (reference material, appropriately formal)
-        - brain/book/appendix/recovery-trial.qmd # ✅ (IMPROVED)
-        - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd # ✅ (IMPROVED)
+        - brain/book/references.qmd # ✅ (reference material, appropriately formal) ~250p
+        - brain/book/appendix/recovery-trial.qmd # ✅ (IMPROVED) ~9p
+        - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd # ✅ (IMPROVED) ~5p
 
     # Strategic Implementation
     - part: "🎯 Implementation Strategy"
       chapters:
-        - brain/book/strategy-overview.qmd # ✅ (3-STEP OVERVIEW - see roadmap.qmd for detailed execution)
-        - brain/book/appendix/highest-leverage-advocacy.qmd # ✅ (EXCELLENT voice - "bailing water from a sinking ship")
-        - brain/book/strategy/five-step-execution.qmd # ✅
-        - brain/book/strategy/bribe-sequence.qmd # ✅
-        - brain/book/strategy/grassroots-mobilization.qmd # ✅ (mixed but acceptable)
-        - brain/book/strategy/diplomatic-approach.qmd # ✅ (mixed but acceptable)
-        - brain/book/economics/coalition-that-wins.qmd # ✅
-        - brain/book/appendix/co-opt-dont-compete.qmd # ✅ (EXCELLENT voice - "You'd lose")
-        - brain/book/appendix/global-referendum-implementation.qmd # ✅ (technical spec, appropriate)
-        - brain/book/appendix/referendum-question-testing-strategy.qmd # ✅ A/B testing framework for the question
-        - brain/book/appendix/nonprofit-partnership-incentives.qmd # ✅ (IMPROVED)
+        - brain/book/strategy-overview.qmd # ✅ (3-STEP OVERVIEW - see roadmap.qmd for detailed execution) ~1p
+        - brain/book/appendix/highest-leverage-advocacy.qmd # ✅ (EXCELLENT voice - "bailing water from a sinking ship") ~2p
+        - brain/book/strategy/five-step-execution.qmd # ✅ ~1p
+        - brain/book/strategy/bribe-sequence.qmd # ✅ ~4p
+        - brain/book/strategy/grassroots-mobilization.qmd # ✅ (mixed but acceptable) ~4p
+        - brain/book/strategy/diplomatic-approach.qmd # ✅ (mixed but acceptable) ~4p
+        - brain/book/economics/coalition-that-wins.qmd # ✅ ~12p
+        - brain/book/appendix/co-opt-dont-compete.qmd # ✅ (EXCELLENT voice - "You'd lose") ~3p
+        - brain/book/appendix/global-referendum-implementation.qmd # ✅ (technical spec, appropriate) ~1p
+        - brain/book/appendix/referendum-question-testing-strategy.qmd # ✅ A/B testing framework for the question ~8p
+        - brain/book/appendix/nonprofit-partnership-incentives.qmd # ✅ (IMPROVED) ~4p
 
     - part: "⚖️ Policy & Regulatory"
       chapters:
-        - brain/book/legal-overview.qmd # ✅ (IMPROVED - brief overview, see legal-framework.qmd for details)
-        - brain/book/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate)
-        - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd # ✅ (policy doc, must remain formal)
-        - brain/book/appendix/dfda-implementation-via-executive-action.qmd # ✅ (policy strategy, appropriate)
-        - brain/book/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate)
-        - brain/book/appendix/regulatory-reform-plan.qmd # ✅ (regulatory checklist, appropriate)
+        - brain/book/legal-overview.qmd # ✅ (IMPROVED - brief overview, see legal-framework.qmd for details) ~4p
+        - brain/book/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
+        - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd # ✅ (policy doc, must remain formal) ~10p
+        - brain/book/appendix/dfda-implementation-via-executive-action.qmd # ✅ (policy strategy, appropriate) ~25p
+        - brain/book/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
+        - brain/book/appendix/regulatory-reform-plan.qmd # ✅ (regulatory checklist, appropriate) ~8p
 
     # Economic Analysis
     - part: "💰 Economic Analysis"
       chapters:
-        - brain/book/economics/best-idea-in-the-world.qmd # ✅ (EXCELLENT voice)
-        - brain/book/economics/peace-dividend.qmd # ✅ (data presentation, appropriate)
-        - brain/book/economics/health-dividend.qmd # ✅ (good voice)
-        - brain/book/appendix/humanity-budget-overview.qmd # ✅ (IMPROVED)
-        - brain/book/appendix/global-government-medical-research-spending.qmd # ✅ (EXCELLENT voice)
-        - brain/book/appendix/global-clinical-trial-spending-by-phase.qmd # ✅ Comprehensive spending analysis
-        - brain/book/appendix/clinical-trial-participants.qmd # ✅ The 0.06% problem
+        - brain/book/economics/best-idea-in-the-world.qmd # ✅ (EXCELLENT voice) ~6p
+        - brain/book/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
+        - brain/book/economics/health-dividend.qmd # ✅ (good voice) ~3p
+        - brain/book/appendix/humanity-budget-overview.qmd # ✅ (IMPROVED) ~2p
+        - brain/book/appendix/global-government-medical-research-spending.qmd # ✅ (EXCELLENT voice) ~8p
+        - brain/book/appendix/global-clinical-trial-spending-by-phase.qmd # ✅ Comprehensive spending analysis ~17p
+        - brain/book/appendix/clinical-trial-participants.qmd # ✅ The 0.06% problem ~7p
 
     - part: "🧮 Detailed Calculations"
       chapters:
-        - brain/book/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/health-dividend-calculations.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/1-percent-treaty-roi-tiers.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/1-percent-treaty-endgame-projection.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/dfda-cost-benefit-analysis.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate)
-        - brain/book/appendix/dfda-assumptions.qmd # ✅ (technical assumptions, appropriate)
-        - brain/book/appendix/dfda-benefit-analysis.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/dfda-calculation-framework.qmd # ✅ (technical framework, appropriate)
-        - brain/book/appendix/dfda-comparative-cost-effectiveness.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/dfda-daily-opportunity-cost.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/dfda-icer-analysis.qmd # ✅ (technical analysis, appropriate)
-        - brain/book/appendix/dfda-platform-costs.qmd # ✅ (calculations, appropriate)
-        - brain/book/appendix/dfda-qaly-model.qmd # ✅ (technical model, appropriate)
+        - brain/book/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate) ~4p
+        - brain/book/appendix/health-dividend-calculations.qmd # ✅ (calculations, appropriate) ~7p
+        - brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~21p
+        - brain/book/appendix/1-percent-treaty-roi-tiers.qmd # ✅ (calculations, appropriate) ~8p
+        - brain/book/appendix/1-percent-treaty-endgame-projection.qmd # ✅ (calculations, appropriate) ~11p
+        - brain/book/appendix/dfda-cost-benefit-analysis.qmd # ✅ (calculations, appropriate) ~7p
+        - brain/book/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
+        - brain/book/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
+        - brain/book/appendix/dfda-assumptions.qmd # ✅ (technical assumptions, appropriate) ~1p
+        - brain/book/appendix/dfda-benefit-analysis.qmd # ✅ (calculations, appropriate) ~6p
+        - brain/book/appendix/dfda-calculation-framework.qmd # ✅ (technical framework, appropriate) ~26p
+        - brain/book/appendix/dfda-comparative-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~8p
+        - brain/book/appendix/dfda-daily-opportunity-cost.qmd # ✅ (calculations, appropriate) ~5p
+        - brain/book/appendix/dfda-icer-analysis.qmd # ✅ (technical analysis, appropriate) ~10p
+        - brain/book/appendix/dfda-platform-costs.qmd # ✅ (calculations, appropriate) ~15p
+        - brain/book/appendix/dfda-qaly-model.qmd # ✅ (technical model, appropriate) ~25p
 
     - part: "💵 Financial Planning"
       chapters:
-        - brain/book/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening)
-        - brain/book/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B")
-        - brain/book/economics/central-banks.qmd # ✅ (EXCELLENT voice - "death certificate with a president's face")
-        - brain/book/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate)
-        - brain/book/economics/health-savings-sharing-model.qmd # ✅ (EXCELLENT voice - "diseased cash cow")
-        - brain/book/appendix/fundraising-strategy.qmd # ✅ (IMPROVED - "$2.5B vending machine" analogy)
+        - brain/book/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
+        - brain/book/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
+        - brain/book/economics/central-banks.qmd # ✅ (EXCELLENT voice - "death certificate with a president's face") ~9p
+        - brain/book/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p
+        - brain/book/economics/health-savings-sharing-model.qmd # ✅ (EXCELLENT voice - "diseased cash cow") ~7p
+        - brain/book/appendix/fundraising-strategy.qmd # ✅ (IMPROVED - "$2.5B vending machine" analogy) ~13p
 
     # Organizational Resources
     - part: "🏛️ Governance & Organization"
       chapters:
-        - brain/book/appendix/vision.qmd # ✅ (EXCELLENT voice)
-        - brain/book/appendix/governance.qmd # ✅ (good voice)
-        - brain/book/appendix/organizational-structure.qmd # ✅ (org chart, appropriate)
-        - brain/book/appendix/multi-entity-legal-strategy.qmd # ✅ (IMPROVED)
-        - brain/book/appendix/dih-integration-model.qmd # ✅ (has personality)
-        - brain/book/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED)
-        - brain/book/appendix/command-and-control-systems.qmd # ✅ (EXCELLENT voice)
-        - brain/book/appendix/dfda-collaboration-framework.qmd # ✅ (technical spec, appropriate)
+        - brain/book/appendix/vision.qmd # ✅ (EXCELLENT voice) ~5p
+        - brain/book/appendix/governance.qmd # ✅ (good voice) ~4p
+        - brain/book/appendix/organizational-structure.qmd # ✅ (org chart, appropriate) ~2p
+        - brain/book/appendix/multi-entity-legal-strategy.qmd # ✅ (IMPROVED) ~5p
+        - brain/book/appendix/dih-integration-model.qmd # ✅ (has personality) ~4p
+        - brain/book/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
+        - brain/book/appendix/command-and-control-systems.qmd # ✅ (EXCELLENT voice) ~8p
+        - brain/book/appendix/dfda-collaboration-framework.qmd # ✅ (technical spec, appropriate) ~4p
 
     - part: "⚙️ Operations & Legal"
       chapters:
-        - brain/book/appendix/legal-compliance-framework.qmd # ✅ (technical legal, appropriate)
-        - brain/book/appendix/dih-seed-grant-proposal-template.qmd # ✅ (template, appropriate)
-        - brain/book/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice)
-        - brain/book/appendix/free-rider-solution.qmd # ✅ (IMPROVED)
-        - brain/book/appendix/verification-and-fraud-prevention.qmd # ✅ (technical spec, appropriate)
+        - brain/book/appendix/legal-compliance-framework.qmd # ✅ (technical legal, appropriate) ~9p
+        - brain/book/appendix/dih-seed-grant-proposal-template.qmd # ✅ (template, appropriate) ~9p
+        - brain/book/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
+        - brain/book/appendix/free-rider-solution.qmd # ✅ (IMPROVED) ~3p
+        - brain/book/appendix/verification-and-fraud-prevention.qmd # ✅ (technical spec, appropriate) ~5p
 
     # Background Theory
     - part: "🧠 Theory & Concepts"
       chapters:
-        - brain/book/theory.qmd # ✅ (EXCELLENT voice)
-        - brain/book/theory/the-two-wars.qmd # ✅ (EXCELLENT voice)
-        - brain/book/problem/genetic-slavery.qmd # ✅ (EXCELLENT voice)
+        - brain/book/theory.qmd # ✅ (EXCELLENT voice) ~3p
+        - brain/book/theory/the-two-wars.qmd # ✅ (EXCELLENT voice) ~7p
+        - brain/book/problem/genetic-slavery.qmd # ✅ (EXCELLENT voice) ~9p
 
     - part: "📚 Additional References"
       chapters:
-        - brain/book/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate)
-        - brain/book/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd # ✅ (data presentation, appropriate)
-        - brain/book/appendix/lives-saved-by-drug-accessibility.qmd # ✅ (reference tables, appropriate)
-        - brain/book/appendix/nuclear-weapon-cost-and-casualties.qmd # ✅ (IMPROVED)
-        - brain/book/appendix/organizational-precedents.qmd # ✅ (technical analysis, appropriate)
-        - brain/book/appendix/pharmaceutical-industry-randd-analysis.qmd # ✅ (CBO report, appropriate)
-        - brain/book/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate)
-        - brain/book/appendix/allied-organizations.qmd # ✅ (reference list, appropriate)
+        - brain/book/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
+        - brain/book/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd # ✅ (data presentation, appropriate) ~1p
+        - brain/book/appendix/lives-saved-by-drug-accessibility.qmd # ✅ (reference tables, appropriate) ~6p
+        - brain/book/appendix/nuclear-weapon-cost-and-casualties.qmd # ✅ (IMPROVED) ~6p
+        - brain/book/appendix/organizational-precedents.qmd # ✅ (technical analysis, appropriate) ~3p
+        - brain/book/appendix/pharmaceutical-industry-randd-analysis.qmd # ✅ (CBO report, appropriate) ~63p
+        - brain/book/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate) ~4p
+        - brain/book/appendix/allied-organizations.qmd # ✅ (reference list, appropriate) ~4p
 
 execute:
   # Relaunch kernel for each render
