@@ -16,6 +16,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -42,7 +43,7 @@ For context:
 
 ### United States: The Alleged Leader
 
-**NIH Budget (2024): [$47.1 billion](../references.qmd#nih-budget-fy2025)**
+#### NIH Budget (2024): [$47.1 billion](../references.qmd#nih-budget-fy2025)
 
 Breakdown:
 
@@ -50,13 +51,13 @@ Breakdown:
 - National Institute on Aging: [$4.41 billion](../references.qmd#nia-budget-4-41b) (we spend more on botox)
 - All other institutes: $35.47 billion (combined)
 
-**But wait, there's less!**
+##### But wait, there's less!
 
 - [31% goes to "administrative costs"](../references.qmd#nih-administrative-costs-31pct) (bureaucrats need yachts)
 - Universities steal [40-60% as "indirect costs"](../references.qmd#university-indirect-costs-40-60pct) (new football stadiums)
 - Actual research: Maybe $20 billion if we're generous
 
-**Per American:**
+#### Per American
 
 - Military spending: [$3,000/year](../references.qmd#us-per-capita-military-spending-3000)
 - Medical research: $142/year
@@ -72,7 +73,7 @@ The math:
 - Health/medical share: [~2.2%](../references.qmd#china-health-rd-share-2-2pct)
 - Most goes to: Making Americans nervous, not curing cancer
 
-**The Irony:**
+#### The Irony
 
 - Builds hospitals shaped like aircraft carriers
 - Still can't cure the diseases inside them
@@ -87,7 +88,7 @@ The math:
 - A cup of coffee: $3.50
 - Your life: Not worth a latte
 
-**By Country:**
+#### By Country
 
 - Germany: [~$6 billion/year](../references.qmd#germany-medical-research-spending-6b) (excellent at following rules, terrible at funding cures)
 - France: [~$4 billion/year](../references.qmd#france-medical-research-spending-4b) (wine budget: probably higher)
@@ -96,7 +97,7 @@ The math:
 
 ### Japan: Aging into Oblivion
 
-**Medical Research: [~$5 billion/year](../references.qmd#japan-medical-research-spending-5b)**
+#### Medical Research: [~$5 billion/year](../references.qmd#japan-medical-research-spending-5b)
 
 The tragedy:
 
@@ -211,7 +212,7 @@ We're literally investing LESS in not dying as we get richer. It's like evolutio
 
 ## What $68 Billion Actually Buys
 
-**Current Reality:**
+### Current Reality
 
 - [50 new drugs approved annually](../references.qmd#global-new-drug-approvals-50-annually) (most are me-too drugs)
 - [0 diseases cured since Hepatitis C (2014)](../references.qmd#diseases-cured-since-2014)
@@ -283,7 +284,7 @@ Ratio: Still 31:1 for death
 
 ## A Species-Wide Failure
 
-**Humanity's Priorities (2024):**
+### Humanity's Priorities (2024)
 
 1. Killing each other: $2.7 trillion
 2. Pet food: $150 billion
@@ -291,7 +292,7 @@ Ratio: Still 31:1 for death
 4. Video games: [$178-299 billion](../references.qmd#global-video-game-market-85b)
 5. Saving human lives: $68 billion
 
-**What This Means:**
+#### What This Means
 
 - Your government values your dog's dinner more than your cancer treatment
 - Military bands get more funding than rare disease research
@@ -309,7 +310,7 @@ Ratio: Still 31:1 for death
 
 ## The Final Insult: It's Getting Worse
 
-**Projected 2030 Spending (Current Trajectory):**
+### Projected 2030 Spending (Current Trajectory)
 
 - Military: $3.5 trillion (↑30%)
 - Medical research: $72 billion (↑6%)

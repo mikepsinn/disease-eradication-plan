@@ -18,6 +18,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -133,10 +134,10 @@ For any given trial, you'll see real-time odds on questions like:
 - **Adverse Events**: "What is the probability of patients experiencing severe nausea?" **Market Price: 22%**
 - **Completion**: "What are the odds this trial will be fully enrolled by its target date?" **Market Price: 71%**
 
-**Why Trust This?**
+#### Why Trust This?
 
 1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong, creating a powerful incentive for accuracy.
-2.  **The Ultimate Fact-Checker**: [The DIH](../solution/dih.qmd) automatically resolves these bets using the actual, aggregated, and anonymized patient data collected by the dFDA. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts—or bettors go broke.
+2.  **The Ultimate Fact-Checker**: [The DIH](../solution/dih.qmd) automatically resolves these bets using the actual, aggregated, and anonymized patient data collected by the dFDA. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
 
 This gives patients an invaluable second layer of information: not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
 
@@ -188,8 +189,6 @@ Every pill becomes a tiny experiment. Every patient becomes a scientist. Every o
 
 It's what we should have been doing since we invented writing.
 
----
-
 ## The Money Shot: How We Save 95% on Not Killing People
 
 Look at these incredible savings! It's like Black Friday, but for survival!
@@ -227,8 +226,6 @@ This eliminates $55 million of paperwork per trial. That's 55 million pieces of 
 
 Those papers killed more people than they saved.
 
----
-
 ## Why This Works: The Mathematical Impossibility of Committees
 
 Here's the problem with having [~200 FDA bureaucrats](../references.qmd#fda-reviewer-count) decide what 8 billion people can try when they're dying:
@@ -239,6 +236,7 @@ Let's calculate how long it would take the FDA to properly evaluate every treatm
 
 ```{python}
 # Information processing capacity of the FDA committee
+
 committee_members = 200
 hours_per_day = 8
 decisions_per_hour = 1
@@ -246,6 +244,7 @@ committee_capacity = committee_members * hours_per_day * decisions_per_hour
 # = 1,600 decisions/day
 
 # Information that actually needs processing
+
 diseases = 10_000
 treatments_per_disease = 100  # Potential treatments to evaluate
 patients = 8_000_000_000
@@ -254,11 +253,13 @@ total_decisions_needed = diseases * treatments_per_disease * patient_variations
 # = 800,000,000,000 decisions needed
 
 # Time for committee to process everything
+
 years_to_process = total_decisions_needed / (committee_capacity * 365)
 print(f"Years for FDA to evaluate everything: {years_to_process:,.0f}")
 # Output: 1,369,863 years
 
 # Market processing (parallel, decentralized)
+
 market_participants = 8_000_000_000
 market_decisions_per_day = market_participants * 1  # One health decision per person
 market_years = total_decisions_needed / (market_decisions_per_day * 365)
@@ -281,7 +282,7 @@ But they decide for you anyway.
 
 ### The Solution: Let 8 Billion Experts Make 8 Billion Decisions
 
-**Current system:**
+#### Current system
 
 ```
 330 Million Americans
@@ -308,8 +309,6 @@ Millions of Trials Simultaneously
 This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for 8 billion unique people. The FDA could work 24/7 for a million years and still be behind.
 
 The only solution is to let patients and doctors make their own decisions, then pool the data so everyone benefits from everyone's experience.
-
----
 
 ## Real Examples of This Working (While the FDA Wasn't Looking)
 
@@ -345,7 +344,7 @@ Imagine looking up your disease and seeing:
 
 *From Clinipedia, the encyclopedia of not dying*
 
-**Current Treatments Ranked by Not-Dying Score:**
+#### Current Treatments Ranked by Not-Dying Score
 
 1. Prayer (3% effective, 0% side effects)
 2. Experimental Drug XJ-47 (67% effective, 30% chance of jazz hands)
@@ -358,8 +357,6 @@ Imagine looking up your disease and seeing:
 ### Become a Scientist from Your Couch
 
 The system also lets you create your own studies. Got a theory that wearing socks inside-out cures baldness? Create a study. Get a link. Invite your balding friends to join. The system handles the rest. Your data gets published. Who knows, maybe you'll win a Nobel Prize. Or maybe you'll just prove that socks are socks. Either way, humanity learns something without spending two billion dollars.
-
----
 
 ## Your Personal Death-Prevention Assistant: The FDAi
 
@@ -375,9 +372,7 @@ The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead o
 - 10% success: Hopping lessons + Prayer
 - 0% success: Essential oils (but your remaining foot will smell lavender-fresh)"
 
-It does this by connecting to all your data—from wearables, apps, and your medical records—and looking for patterns. It's automated root cause analysis for your own body, finding what's wrong while your doctor is still trying to remember your name. It's like having every doctor who ever lived in your pocket, except they actually agree on something.
-
----
+It does this by connecting to all your data, from wearables, apps, and your medical records, and looking for patterns. It's automated root cause analysis for your own body, finding what's wrong while your doctor is still trying to remember your name. It's like having every doctor who ever lived in your pocket, except they actually agree on something.
 
 ## The Digital Twin Safe: Your Medical Data's Panic Room
 
@@ -399,8 +394,6 @@ You control who sees what:
 - Researchers: Anonymized data
 - Facebook: Absolutely nothing, Mark
 
----
-
 ## Outcome Labels: Nutrition Facts for Drugs
 
 Food has nutrition labels. Cigarettes have warning labels. Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
@@ -411,14 +404,14 @@ Food has nutrition labels. Cigarettes have warning labels. Drugs have... incompr
 
 Based on thousands of real patients with real outcomes:
 
-**Cognitive Improvements:**
+### Cognitive Improvements
 
 - Memory Recall: +35%
 - Cognitive Function: +28%
 - Executive Function: +22%
 - Hippocampal Volume: +15%
 
-**Side Effects:**
+#### Side Effects
 
 - Immune Response: +12%
 - Headache: +9%
@@ -426,7 +419,7 @@ Based on thousands of real patients with real outcomes:
 
 No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
 
-**Example: DEPRESSION CRUSHER 3000™**
+##### Example: DEPRESSION CRUSHER 3000™
 
 *Outcome Label*
 
@@ -439,8 +432,6 @@ Based on 50,000 humans who tried this:
 - 💀 Death: 0.01% (better than depression!)
 
 *This label based on actual humans, not laboratory rats who've never paid rent*
-
----
 
 ## The Disease Eradication Act: Making It Legal to Not Die
 
@@ -459,8 +450,6 @@ The fact that we need a law for this tells you everything about our species.
 **Section 5**: Seriously, how was this not already the law?
 
 Congress will debate this for 17 years, the same time it takes to approve one drug.
-
----
 
 ## The Future: Where Death Becomes Embarrassing
 
@@ -485,8 +474,6 @@ History books will call us "The Paperwork Age" and children will laugh at our st
 Diseases are mostly solved. Death becomes a choice, like smoking or voting Republican. The FDA's job becomes preventing people from becoming immortal too quickly (traffic is bad enough).
 
 The last FDA form is filled out. It's immediately lost. Nobody notices.
-
----
 
 ### How the dFDA Actually Works
 

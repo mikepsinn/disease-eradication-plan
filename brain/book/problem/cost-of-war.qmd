@@ -6,8 +6,8 @@ tags:
   - costs-of-war
   - military-spending
   - economic-analysis
-lastFormatted: 2025-10-16T00:00:00.000Z
-lastStyleCheck: 2025-10-16T00:00:00.000Z
+lastFormatted: '2025-10-16T00:00:00.000Z'
+lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastFactCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
 lastLinkCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
 lastFigureCheckHash: e0d296a51d4af178726b9d6bf284d82225d70d2229b5c04c26f8f24512d3d8a5
@@ -21,6 +21,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -52,7 +53,7 @@ The immediate costs of war are like a grocery receipt from Hell. Everything is i
 | Military Infrastructure | $520.4 | $66.72 | $1.43B | Base construction/maintenance × [4,435 major facilities](../references.qmd#global-major-military-facilities) |
 | Intelligence Operations | $282.0 | $36.15 | $0.77B | [Estimated 10.4% of total military budgets](../references.qmd#intelligence-spending-military-budgets) |
 
-**Total Direct Military Spending: \$2,718.0 billion**
+#### Total Direct Military Spending: \$2,718.0 billion
 
 ![Global military spending by region and country](../../../assets/global-military-spending-chart.png)
 
@@ -72,14 +73,14 @@ Here's the breakdown of what goes into the direct cost of war:
 - **Human Casualties:** The value of the lives lost, because even economists agree dead people are a negative externality.
 - **Trade Disruption:** The global economic chaos caused by everyone being too busy fighting to make and sell things.
 
-**Current Annual Calculation:**
+#### Current Annual Calculation
 
 - M<sub>spending</sub> = $2.7T (verified via [SIPRI database](../references.qmd#sipri-2024-spending))
 - I<sub>damage</sub> = [\$1,875B](../references.qmd#reconstruction-costs-active-conflicts) (reconstruction cost estimates from 47 active conflicts)
 - H<sub>casualties</sub> = [\$2,446B](../references.qmd#acled-active-combat-deaths) (244,600 total conflict deaths × \$10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation) - includes combat deaths, terrorism, and state violence; see Death Accounting section below for breakdown)
 - T<sub>disruption</sub> = [\$616B](../references.qmd#world-bank-trade-disruption-conflict) ([World Bank trade flow analysis](https://openknowledge.worldbank.org/handle/10986/37015))
 
-**C<sub>direct</sub> = \$7,655 billion annually**
+##### C<sub>direct</sub> = \$7,655 billion annually
 
 This means every second of every day, humanity spends \$196,900 on the tools and consequences of killing each other.
 While you read this sentence, we spent about \$985.
@@ -90,7 +91,7 @@ The [U.S. Department of Transportation](https://www.transportation.gov/office-po
 The [EPA uses \$9.6 million](../references.qmd#epa-vsl-9-6m).
 Let's be conservative and use \$10 million.
 
-**Annual Mortality Cost Calculation:**
+#### Annual Mortality Cost Calculation
 
 | Conflict Type | Deaths/Year | Cost per Death | Annual Cost | Source |
 |--------------|-------------|----------------|-------------|---------|
@@ -98,7 +99,7 @@ Let's be conservative and use \$10 million.
 | Terror Attacks | [8,300](../references.qmd#gtd-terror-attack-deaths) | $10,000,000 | $83B | [Global Terrorism Database](https://www.start.umd.edu/gtd/) |
 | State Violence | [2,700](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | $27.2B | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
 
-**Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually**
+##### Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually
 
 244,600 people die in conflicts each year.
 That's 670 people every day.
@@ -122,7 +123,7 @@ Expensive things.
 | Educational Facilities | [\$234.5](../references.qmd#reconstruction-costs-active-conflicts) | 1.3× original cost | Student capacity × modern construction standards |
 | Healthcare Systems | [\$165.6](../references.qmd#reconstruction-costs-active-conflicts) | 1.9× original cost | Bed capacity × medical equipment replacement |
 
-**Total Infrastructure Damage: [\$1,875 billion](../references.qmd#reconstruction-costs-active-conflicts)**
+#### Total Infrastructure Damage: [\$1,875 billion](../references.qmd#reconstruction-costs-active-conflicts)
 
 It's not just about the original price tag. Replacing a bridge in a warzone costs more than building one in peacetime, for reasons that should be obvious.
 
@@ -152,7 +153,7 @@ They interrupt the delicate dance of global commerce like a drunk person stumbli
 | Energy Price Volatility | [\$124.7](../references.qmd#world-bank-trade-disruption-conflict) | Consumption × price differential × demand elasticity | 1.9 years avg |
 | Currency Instability | [\$57.4](../references.qmd#world-bank-trade-disruption-conflict) | Trade volume × exchange rate volatility × hedging costs | 4.1 years avg |
 
-**Total Trade Disruption: [\$616 billion](../references.qmd#world-bank-trade-disruption-conflict) annually**
+#### Total Trade Disruption: [\$616 billion](../references.qmd#world-bank-trade-disruption-conflict) annually
 
 Basically, economists have a fancy formula to calculate how much money we lose when ships can't ship and trucks can't truck because they might get blown up.
 
@@ -190,7 +191,7 @@ The multiplier for infrastructure investment is [1.6](../references.qmd#infrastr
 For education, it's [2.1](../references.qmd#education-investment-economic-multiplier).
 For healthcare, it's [4.3](../references.qmd#healthcare-investment-economic-multiplier).
 
-**Lost GDP Growth Calculation:**
+#### Lost GDP Growth Calculation
 
 The math is simple: money spent on bombs grows the economy a little, but money spent on literally anything else grows it a lot more. By choosing bombs, we're actively choosing to be poorer.
 
@@ -241,7 +242,7 @@ Where N is number of veterans, C is annual care cost, L is remaining lifespan, D
 As of 2023, there are [108.4 million forcibly displaced people](../references.qmd#unhcr-forcibly-displaced-2023) globally.
 The average cost of supporting a refugee is [\$1,384 per year](../references.qmd#unhcr-refugee-support-cost).
 
-**Annual Refugee Support Cost:**
+#### Annual Refugee Support Cost
 
 $$
 108.4\text{M refugees} \times \text{\$1,384} = \text{\$150.0 billion}
@@ -252,7 +253,7 @@ That comes out to **\$150.0 billion** just to keep them in camps.
 But refugees aren't just costs, they're lost economic potential.
 The average refugee has [\$23,400 in lost annual earning potential](../references.qmd#refugee-lost-earning-potential).
 
-**Lost Economic Productivity:**
+#### Lost Economic Productivity
 
 $$
 108.4\text{M refugees} \times \text{\$23,400} = \text{\$2,536.6 billion in lost annual GDP}
@@ -274,7 +275,7 @@ This should not be surprising, but humans often act surprised by obvious things.
 | Air Quality Degradation | [\$21.9B](../references.qmd#environmental-cost-of-war) | [\$43.8B](../references.qmd#environmental-cost-of-war) | 2-8 years |
 | Biodiversity Loss | [\$15.1B](../references.qmd#environmental-cost-of-war) | Irreplaceable | Forever |
 
-**Total Environmental Damage: [\$100 billion](../references.qmd#environmental-cost-of-war) annually**
+#### Total Environmental Damage: [\$100 billion](../references.qmd#environmental-cost-of-war) annually
 
 The biodiversity loss is listed as "irreplaceable" because once a species is extinct, no amount of money brings it back.
 We haven't figured out the mathematics of resurrection yet.

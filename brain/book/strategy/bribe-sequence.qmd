@@ -19,6 +19,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -49,7 +50,7 @@ This isn't about convincing people to be better. It's about making it more profi
 
 ### Phase 2: Campaign Funders ($100-200M for the Referendum)
 
-- **Who:** The first wave of believers—early backers, health advocates, and institutions who want to do more than just invest.
+- **Who:** The first wave of believers, early backers, health advocates, and institutions who want to do more than just invest.
 - **The Bribe:** A chance to turn a modest investment into a massive return *and* control the future of global health.
 - **What They Fund:** Their money doesn't go to salaries; it goes directly to funding the **[Global Referendum](/brain/book/strategy/global-referendum.qmd)**. This is the war chest we use to bribe the public.
 - **What They Get:** In return for funding the campaign, they receive a special class of **[VICTORY Bonds](../economics/victory-bonds.qmd)** that grant them significant governance rights over the $27.2B annual budget once the treaty is signed. They're not just investors; they're the new ruling class of a multi-billion-dollar global health fund.
@@ -85,8 +86,6 @@ This isn't about convincing people to be better. It's about making it more profi
 - **Enriched Elites:** Offer privileged, early access to VICTORY Bonds to a nation's sovereign wealth funds and key financial institutions *contingent on their leader signing the treaty*. This creates a powerful domestic coalition of the nation's wealthiest and most influential players who will pressure their leader to sign the deal that makes them rich.
 
 **The Result:** The choice for any leader is simple: accept a political and financial package that guarantees their power and enriches their allies, or be swept away by a popular movement funded by their own donors. Compliance becomes the only rational choice.
-
----
 
 ## The Timeline: From Idea to Revolution
 

@@ -10,8 +10,8 @@ tags:
   - ai
   - collective-intelligence
   - protocol
-lastFormatted: 2025-10-16T00:00:00.000Z
-lastStyleCheck: 2025-10-16T00:00:00.000Z
+lastFormatted: '2025-10-16T00:00:00.000Z'
+lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastFormattedHash: 2fc2e2fe5025bc28a4a1034c25fc99af953285031cf8ebda2c70d2c7d276631b
 lastFactCheckHash: 7837a0195cf148f5025eedbc78c6fe0bdab52026ebd09bce12e98fbe1ebebabd
 ---
@@ -22,6 +22,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -36,8 +37,6 @@ Wishocracy is a model for creating a semi-autonomous "to-do list for humanity," 
 It is designed to be a general-purpose governance framework that any decentralized organization can adopt.
 
 The DIH is the first and largest implementation of this protocol.
-
----
 
 ## The Core Components of the Wishocracy Protocol
 
@@ -91,14 +90,10 @@ An independent verification layer provides the real-world data and validation ne
 
 For the DIH, this function is performed by the [Decentralized FDA (dFDA)](../solution/dfda.qmd) protocol.
 
----
-
 ## Dive Deeper into the Governance Model
 
 - **[Wishocracy (RAPPA) Governance Model](../solution/wishocracy.qmd):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
 - **DIH On-Chain & AI Architecture:** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power the DIH. *(Coming Soon)*
-
----
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
 
@@ -106,7 +101,7 @@ For the DIH, this function is performed by the [Decentralized FDA (dFDA)](../sol
 
 [Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks](../references.qmd#dao-multisig-vulnerabilities).
 
-**Our Multi-Layered Defense:**
+### Our Multi-Layered Defense
 
 1.  **Nobody's in Charge (And That's the Point)**
 
@@ -151,7 +146,7 @@ Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), 
 - **Complete transparency** with all decisions and executions on-chain
 - **Automated efficiency** eliminating bureaucratic waste and political favoritism
 
-**What Else This Could Fix:**
+#### What Else This Could Fix
 
 *Once we prove you can run a $27.2B treasury without any humans stealing from it, we could do the same thing for schools, roads, or anything else the government currently screws up.*
 

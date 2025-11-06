@@ -10,6 +10,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -46,7 +47,7 @@ Here's humanity's annual budget when you include all the real costs:
 
 {{< include ../../../brain/figures/humanity-spending-priorities-bar-chart.qmd >}}
 
-**The Part That Shouldn't Be Possible:**
+### The Part That Shouldn't Be Possible
 
 War and disease cost us more than the entire planet's economic output.
 
@@ -68,13 +69,13 @@ That's like your house being on fire and deciding to address it with a water pis
 
 ## On Why This Is Insane
 
-**The Math:**
+### The Math
 
 War and disease: **$119 trillion** annually (that's 113% of global GDP)
 
 Medical research to fix disease: [**$67.5 billion**](../references.qmd#global-gov-med-research-spending)
 
-**Translation:**
+#### Translation
 
 For every dollar we spend trying to cure disease, we spend $1,763 dealing with the consequences of not curing it.
 

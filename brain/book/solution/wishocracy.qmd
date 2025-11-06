@@ -21,6 +21,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -33,8 +34,6 @@ Congratulations! You've passed the [1% Treaty](../solution/1-percent-treaty.qmd)
 How do you avoid parasitic special interests from stealing it or bureacracy from wasting it all?
 
 **Wishocracy** is a system of resource allocation that replaces committees with code and representatives with mathematics. It's how you let 8 billion people collectively decide how to spend $27 billion without it turning into a bureaucratic nightmare.
-
----
 
 ## The Magic: The Pairwise Smackdown
 
@@ -69,8 +68,6 @@ Example with real numbers:
 
 It's democracy without the stupidity. We still get the stupidity, but it's evenly distributed and thus cancels out.
 
----
-
 ## From Priorities to Projects
 
 Once the Pairwise Smackdown tells us that "Curing Alzheimer's" is a top priority, Wishocracy translates that priority into action.
@@ -81,9 +78,7 @@ Once the Pairwise Smackdown tells us that "Curing Alzheimer's" is a top priority
     -   **WANTED:** A cure for Alzheimer's. **BOUNTY:** $10 billion.
     -   **WANTED:** A map of all protein misfolding patterns. **BOUNTY:** $500 million.
 
-3.  **The World Competes:** The best teams from around the world—from MIT to some kid in a garage—bid on these tasks. Multiple approaches are funded in parallel. The ones that show promise get more funding. The ones that fail are defunded instantly. It's venture capital, but for not dying.
-
----
+3.  **The World Competes:** The best teams from around the world, from MIT to some kid in a garage, bid on these tasks. Multiple approaches are funded in parallel. The ones that show promise get more funding. The ones that fail are defunded instantly. It's venture capital, but for not dying.
 
 ## The Opposition
 
@@ -115,8 +110,6 @@ Once the Pairwise Smackdown tells us that "Curing Alzheimer's" is a top priority
 
 **Answer:** People are individually stupid but collectively smart. Politicians are the reverse.
 
----
-
 ## The Truth: We Already Do This, Just Badly
 
 Every time you:
@@ -146,8 +139,6 @@ We could use it to:
 - Make existence not suck
 
 Same collective intelligence. Better targets.
-
----
 
 ## Democracy's Operating System Upgrade
 

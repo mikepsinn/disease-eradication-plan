@@ -15,6 +15,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -32,15 +33,13 @@ The DIH is a hybrid organization that combines the functions of all three:
 2.  **The ICBL:** A nimble, decentralized global political advocacy campaign.
 3.  **MakerDAO:** A decentralized, on-chain financial protocol.
 
----
-
 ## 1. Precedent: The Global Fund (The Financial Institution)
 
 **Model:** The Global Fund is a financial institution disguised as a public health organization. It does not implement programs directly. Instead, its core function is to raise and deploy capital at massive scale (~$5B/year). Its organizational structure reflects this focus on finance, risk management, and grant administration.
 
 **Approximate Staff Size:** ~700-800 people in its central Secretariat in Geneva.
 
-**Illustrative Org Chart & Key Roles:**
+### Illustrative Org Chart & Key Roles
 
 - **Executive Office:** Executive Director, Chief of Staff.
 - **Grant Management Division (Largest team):**
@@ -66,15 +65,13 @@ The DIH is a hybrid organization that combines the functions of all three:
 
 **Relevance to DIH:** The Global Fund's structure provides a proven blueprint for the team required to manage the **DIH Treasury (Phase 3)**. Our CFO, CCO, Treasury Operations, and Program Officer roles are directly analogous to the core functions of The Global Fund's Secretariat.
 
----
-
 ## 2. Precedent: The ICBL (The Political Campaign)
 
 **Model:** The ICBL was not a large, centralized organization. It was a lean, decentralized network of NGOs that coordinated a global political campaign. Its power came from its moral authority and its ability to mobilize a vast network, not a large internal headcount.
 
 **Approximate Staff Size:** A very small core team (likely < 20 people) responsible for coordination, with the bulk of the work done by partner organizations.
 
-**Illustrative Org Chart & Key Roles:**
+### Illustrative Org Chart & Key Roles
 
 - **Coordination Team / Secretariat:**
 - Campaign Director / Coordinator
@@ -86,15 +83,13 @@ The DIH is a hybrid organization that combines the functions of all three:
 
 **Relevance to DIH:** The ICBL's lean, decentralized structure is the model for the **DIH's political campaign (Phases 1 & 2)**. Our Head of Political Strategy, Elections Compliance Lead, and Regional Campaign Directors are the modern, more heavily capitalized version of the ICBL's core coordination team. We are, in effect, running a professionalized, well-funded ICBL.
 
----
-
 ## 3. Precedent: MakerDAO (The Decentralized Protocol)
 
 **Model:** MakerDAO is a software protocol, not a traditional company. It has no CEO, no central office, and no formal employees in the traditional sense. It is governed by a global community of token holders and powered by a network of independent, self-organized "Core Units" that receive funding from the DAO.
 
 **Approximate Staff Size:** ~100-150 full-time contributors across all Core Units.
 
-**Illustrative "Org Chart" (Core Units):**
+### Illustrative "Org Chart" (Core Units)
 
 - **Engineering Core Unit:** Smart contract development and maintenance.
 - **Risk Core Unit:** Financial risk analysis and parameter adjustments.

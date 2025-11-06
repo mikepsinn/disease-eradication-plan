@@ -17,6 +17,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -30,7 +31,7 @@ The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent
 **Speed to Results:** First life-saving treatment (dexamethasone) [identified in 100 days](../references.qmd#recovery-trial-100-days-to-cure). FDA average: [6-10 years](../references.qmd#fda-approval-timeline-10-years).
 **Lives Saved Per Dollar:** $2,700 per life saved ($2.7M total cost ÷ 1M lives). FDA trials: Often never save any lives.
 
-**Key RECOVERY Trial Statistics**
+## Key RECOVERY Trial Statistics
 
 | Metric                             | Value                                                                                                                             | Source                                                                                                                                                                                  |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -52,11 +53,11 @@ The RECOVERY trial enrolled 49,000 patients across 186 hospitals, tested 12 trea
 
 How did they do it? By doing the obvious things the FDA refuses to do:
 
-**They Used Regular Hospitals**
+### They Used Regular Hospitals
 
 Instead of requiring specialized research centers with dedicated staff and gold-plated equipment, RECOVERY just... used regular hospitals. The ones that already exist. With regular doctors. Treating regular patients.
 
-**They Collected Only Useful Data**
+#### They Collected Only Useful Data
 
 The trial focused on core outcomes: "Did the patient live or die? Did they get better or worse?"
 
@@ -64,25 +65,25 @@ No seventeen-page questionnaires about quality of life. No daily blood draws for
 
 They used existing hospital data. One standardized form. Done.
 
-**They Integrated With Normal Care**
+##### They Integrated With Normal Care
 
 Patients got the experimental treatment as part of their regular care. No separate research facility. No white-coated researchers hovering with clipboards. Just normal doctors providing normal care, except some patients got the experimental drug.
 
 Turns out this works fine. Who knew.
 
-**They Were Flexible**
+###### They Were Flexible
 
 When a treatment didn't work, they stopped testing it. When a new promising treatment emerged, they added it.
 
 The FDA would require a completely new trial for each change. RECOVERY just... changed. Like adults making decisions.
 
-**They Prioritized Speed Over Bureaucracy**
+###### They Prioritized Speed Over Bureaucracy
 
 RECOVERY answered important clinical questions quickly using existing infrastructure.
 
 The FDA prioritizes paperwork over questions, bureaucracy over speed, and process over results.
 
-**The Result:**
+#### The Result
 
 $500 per patient ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)) vs FDA's $41,000 per patient ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)).
 
@@ -92,7 +93,7 @@ Also, they saved a million lives ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PM
 
 The FDA would still be in Phase II, asking for more funding.
 
-**The Implications: What RECOVERY Proved**
+##### The Implications: What RECOVERY Proved
 
 The RECOVERY trial didn't just save lives, it proved several critical points about clinical research:
 
@@ -103,7 +104,7 @@ The RECOVERY trial didn't just save lives, it proved several critical points abo
 5. **Scale Is Achievable:** 49,000 patients enrolled [faster than most FDA trials enroll 1,000](../references.qmd#clinical-trial-enrollment-timelines)
 6. **Simplicity Wins:** [Three 1-page forms (consent, case report, follow-up) vs FDA's complex multi-form protocols](../references.qmd#fda-vs-oxford-paperwork). Less paperwork, more cures.
 
-**The Bottom Line Math:**
+#### The Bottom Line Math
 
 - RECOVERY: $50 per patient per answer (testing 10 treatments across 49,000 patients)
 - FDA: $41,000 per patient, often testing just one treatment
@@ -111,7 +112,7 @@ The RECOVERY trial didn't just save lives, it proved several critical points abo
 
 The lesson is clear: We already know how to run trials 82x more efficiently. The Oxford RECOVERY trial proved it works. The only question is whether we'll choose to implement this model globally or continue wasting $41,000 per patient while people die waiting for cures.
 
-**Sources and Key Quotes**
+##### Sources and Key Quotes
 
 1. **Funding and Cost**
 
@@ -139,7 +140,7 @@ The lesson is clear: We already know how to run trials 82x more efficiently. The
 
 Excellent question. Let me show you the proof.
 
-**Oxford Already Achieved 82x Cost Reduction**
+### Oxford Already Achieved 82x Cost Reduction
 
 ### The Oxford RECOVERY Trial
 

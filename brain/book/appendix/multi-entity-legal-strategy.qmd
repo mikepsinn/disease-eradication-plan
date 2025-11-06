@@ -9,6 +9,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -63,11 +64,9 @@ graph TD
     F -.->|"Creates Mandate For"| A
 ```
 
----
-
 ### Entity #1: The 501(c)(3) Public Charity ("The Educator and Mobilizer")
 
-**What It Does:**
+#### What It Does
 
 Runs the global referendum/survey on War and Disease to demonstrate that 3.5% of the world (280 million people) support the 1% Treaty.
 
@@ -75,13 +74,14 @@ This is an unofficial, non-binding survey that asks: "Do you support redirecting
 
 It's educational, non-partisan, and creates the foundation for everything else.
 
-**Why We Need It:**
+#### Why We Need It
 
 Because donors want tax deductions. If you donate to a 501(c)(3), you can write it off. If you donate to anything else, the IRS says "that's nice, you still owe us."
 
 Also, running a global public opinion survey is clearly educational and within 501(c)(3) bounds.
 
-**What It's Allowed To Do:**
+#### What It's Allowed To Do
+
 - Run the global referendum/survey to demonstrate the 3.5% threshold
 - Publish the research, data, and economic models (like this book)
 - Build and maintain the website and referendum platform
@@ -90,7 +90,7 @@ Also, running a global public opinion survey is clearly educational and within 5
 - Host forums, webinars, and workshops
 - Hire staff to execute the referendum campaign
 
-**What It's NOT Allowed To Do:**
+#### What It's NOT Allowed To Do
 
 Lobby politicians. Endorse candidates. Say "vote for this person or that person."
 
@@ -98,14 +98,14 @@ The referendum must be non-binding and educational. It demonstrates public will 
 
 If it crosses this line, it loses tax-exempt status and everyone who donated loses their deduction. The IRS is very serious about this.
 
-**How It Gets Money:**
+#### How It Gets Money
 
 Tax-deductible donations from individuals and foundations who want to support:
 1. The global referendum campaign
 2. Education about redirecting military spending to health research
 3. Public awareness about the 1% Treaty
 
-**Role in The Plan:**
+#### Role in The Plan
 
 This is the foundation. It runs the referendum, demonstrates 3.5% support (280 million verified participants), and proves there's a massive global mandate.
 
@@ -115,72 +115,74 @@ The 501(c)(4) then uses that demonstrated support for lobbying. The for-profit u
 
 ### Entity #2: The 501(c)(4) Social Welfare Organization ("The Advocate")
 
-**What It Does:**
+#### What It Does
 
 Everything the 501(c)(3) can't do. Specifically: lobby politicians and tell people who to vote for.
 
-**Why We Need It:**
+#### Why We Need It
 
 Because educating people is nice, but at some point you need to actually pass the treaty. That requires lobbying. The 501(c)(3) can't do that. This one can.
 
-**What It's Allowed To Do:**
+#### What It's Allowed To Do
+
 - **Unlimited lobbying** with legislators and policymakers
 - Run independent expenditure campaigns (ads saying "vote for this candidate" or "vote against that one")
 - Mobilize voters and organize calls to action
 - Say the quiet part out loud
 
-**What It's NOT Allowed To Do:**
+#### What It's NOT Allowed To Do
 
 Coordinate with candidates. That's illegal. You can support them. You can't work with them.
 
-**How It Gets Money:**
+#### How It Gets Money
 
 Donations that are **NOT tax-deductible**. People donate to this because they want political change more than they want a tax deduction.
 
-**The Trade-Off:**
+#### The Trade-Off
 
 Donors don't get tax deductions. But the organization gets to lobby. That's the deal.
 
-**Role in The Plan:**
+#### Role in The Plan
 
 This becomes critical in the political mobilization phase. Once public support is built, this organization translates that into actual votes and legislative action.
 
 ### Entity #3: The For-Profit Entity / Foundation ("The Engine")
 
-**What It Does:**
+#### What It Does
 
 Makes money. Manages investor returns. Builds the actual infrastructure that cures disease.
 
-**Why We Need It:**
+#### Why We Need It
 
 Because the first two entities can't make money for investors. Only a for-profit can issue securities, raise capital, and pay returns.
 
-**What It's Allowed To Do:**
+#### What It's Allowed To Do
+
 - Issue VICTORY Bonds and manage investor relations
 - Fund the technology development and scaling of the dFDA
 - Manage the DIH treasury
 - Execute investor payouts
 - Operate like an actual business
 
-**How It Gets Money:**
+#### How It Gets Money
 
 **Investment capital** from individuals and institutions seeking financial returns.
 
 Not donations. Not charity. Investments. With expected returns.
 
-**Legal Structure:**
+#### Legal Structure
 
 Likely a C-Corporation in Delaware or a foundation in the Cayman Islands, optimized for global investment and crypto-asset management.
 
 Why Cayman Islands? Because that's where you incorporate if you want to manage global capital and crypto assets without insane regulatory overhead.
 
-**Role in The Plan:**
+#### Role in The Plan
 
 This is the engine. It raises the capital, executes the mission, and manages investor returns. Without this entity, nothing gets built and nobody gets paid.
 
 ## On How These Three Entities Work Together (Without Breaking The Law)
 
-**Strict Separation (The Legal Requirement):**
+### Strict Separation (The Legal Requirement)
 
 The three entities must be legally separate. This means:
 - Different boards of directors
@@ -191,7 +193,7 @@ The three entities must be legally separate. This means:
 
 The IRS and FEC are very good at finding violations. Don't give them a reason.
 
-**Cooperative Mission (The Reality):**
+#### Cooperative Mission (The Reality)
 
 While legally separate, the entities work toward the same goal:
 
@@ -201,8 +203,6 @@ While legally separate, the entities work toward the same goal:
 4. The **for-profit entity** uses those funds to build the dFDA and repay investors
 
 They're separate organizations. They have the same mission. It's like divorced parents raising a child. Legally separate, cooperating for a common goal.
-
----
 
 ## On The Disclaimer You Should Actually Read
 

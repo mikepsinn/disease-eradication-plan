@@ -1,5 +1,5 @@
 ---
-title: 'How to Turn Grant Applicants Into Billionaires'
+title: How to Turn Grant Applicants Into Billionaires
 description: On making nonprofits rich by aligning their incentives with not dying
 ---
 
@@ -9,6 +9,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -18,7 +19,7 @@ from economic_parameters import *
 
 # On How to Bribe Nonprofits (The Legal Kind)
 
-**The Problem With Traditional Grantmaking:**
+## The Problem With Traditional Grantmaking
 
 Nonprofits spend most of their time begging for money. Foundations spend most of their time deciding who to give money to. Everyone pretends this is efficient.
 
@@ -36,7 +37,7 @@ They do not optimize for:
 
 This is rational behavior. You can't change the world if you go bankrupt first.
 
-**The Solution:**
+### The Solution
 
 Stop making them compete. Make cooperation more profitable than competition.
 
@@ -50,16 +51,19 @@ We offer two incentives that transform nonprofits from "please fund us" to "let'
 
 ### Part 1: Make The Organization Rich (Performance-Based Grants)
 
-**The Old Way:**
+#### The Old Way
+
 "Here's $100K. Hope it helps. Submit a 47-page report in 6 months about impacts and learnings."
 
-**The New Way:**
+#### The New Way
+
 "Here's $50K baseline to get started. Plus $10K for every 10,000 verified referendum votes you drive. No cap."
 
-**The Offer:**
+#### The Offer
+
 > "Your organization receives a **baseline partnership grant** for setup costs. You also get a **substantial performance grant** for every **X verified referendum votes** (e.g., 10,000) driven through your unique link. This bonus is uncapped."
 
-**What This Does:**
+#### What This Does
 
 The nonprofit's most rational path to maximizing their budget is to become our most effective mobilization partner.
 
@@ -73,20 +77,21 @@ One metric. No ambiguity. Get paid for results.
 
 ### Part 2: Make The Leaders Personally Rich (VOTE Points)
 
-**The Problem Grants Don't Solve:**
+#### The Problem Grants Don't Solve
 
 Even performance grants can get absorbed into general operations. "We hired three more grant writers!"
 
 This doesn't solve the problem. This creates more grant writers.
 
-**The Solution:**
+#### The Solution
 
 Give the leaders personal equity. Make them personally wealthy when the mission succeeds.
 
-**The Offer:**
+#### The Offer
+
 > "For your leadership in this partnership, you will be personally granted a **significant allocation of VOTE points**. These points represent a future claim on the **[VICTORY Bonds](../economics/victory-bonds.qmd)** and the DIH treasury you are helping to create."
 
-**What This Does:**
+#### What This Does
 
 The Executive Director's personal wealth is now tied to treaty success.
 
@@ -100,13 +105,13 @@ The performance grants and VOTE points are just the appetizer.
 
 The real prize is never having to write a grant proposal again.
 
-**The Transformation:**
+### The Transformation
 
 Our model is designed to turn grant applicants into the people who give out grants.
 
 Stop begging. Start deciding.
 
-**How It Works:**
+#### How It Works
 
 The **[Decentralized Institutes of Health (DIH)](../solution/dih.qmd)** is a "coalition of coalitions" with a $27.2B annual treasury.
 
@@ -115,13 +120,13 @@ This treasury allocates multi-billion dollar budgets to specialized sub-DAOs:
 - Decentralized Institute on Aging
 - Decentralized Institute of [Whatever Your Mission Is]
 
-**Who Controls These Billions?**
+##### Who Controls These Billions?
 
 The coalition of nonprofits who made the 1% Treaty happen.
 
 You helped create it. You govern it.
 
-**The Choice:**
+#### The Choice
 
 **Option A:** Keep competing for finite grants. Write proposals forever. Beg foundations. Hope your competitor doesn't write a better proposal.
 

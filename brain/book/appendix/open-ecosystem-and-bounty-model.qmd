@@ -18,6 +18,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -27,7 +28,7 @@ from economic_parameters import *
 
 ## On How to Build Everything Without Building Everything
 
-**The Strategy:**
+### The Strategy
 
 The [dFDA Infrastructure](../solution/dfda.qmd) will achieve its goals without spending billions on development. How? By not building most of it.
 
@@ -40,20 +41,18 @@ This isn't theory. This is how WordPress, Linux, and every successful open platf
 
 This approach uses the creativity and resources of the global community, maximizes return on public investment, and benefits from AI-driven software development making coding faster and cheaper than ever.
 
----
-
 ## On The Core Strategy (Or: How WordPress Beat Expensive Software)
 
 The most successful software platforms in the world don't build every feature themselves. That would be expensive and slow.
 
 Instead, they provide core infrastructure and let the community build on top.
 
-**The Model:**
+### The Model
 
-- **Build the Rails, Not Every Destination:** The dFDA Infrastructure provides the foundation—secure APIs, data standards, core services.
+- **Build the Rails, Not Every Destination:** The dFDA Infrastructure provides the foundation, secure APIs, data standards, core services.
 - **Let Others Build the Destinations:** Developers (commercial, academic, nonprofit, individual) build specialized plugins, tools, and integrations.
 
-**Why This Works (Proof):**
+#### Why This Works (Proof)
 
 - **WordPress:** Core software is free and open-source. A [multi-billion dollar economy](../references.qmd#wordpress-multi-billion-dollar-economy) of themes and plugins has been built on top by third parties. WordPress powers 43% of all websites. They didn't build 43% of the internet. They built the foundation. Others built everything else.
 
@@ -61,7 +60,7 @@ Instead, they provide core infrastructure and let the community build on top.
 
 - **Browser Extensions:** Chrome and Firefox provide APIs. The community creates extensions. Chrome has 188,000+ extensions. Google didn't build them. Developers did. Because the platform made it profitable.
 
-**Why This Model Works:**
+#### Why This Model Works
 
 It aligns incentives perfectly:
 - Commercial developers build businesses
@@ -78,7 +77,7 @@ The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize prog
 
 You don't get paid for proposals. You get paid for code that works.
 
-**What Bounties Pay For:**
+### What Bounties Pay For
 
 1. **Critical-Path Features:** Essential tools that nobody's building yet. Pay someone to build it. Problem solved.
 
@@ -88,9 +87,10 @@ You don't get paid for proposals. You get paid for code that works.
 
 4. **Major Milestone Prizes:** Big prizes for big achievements. Want someone to build a critical component? Offer $1 million to whoever builds it best. Competition drives innovation.
 
-**The Difference:**
+#### The Difference
 
 Grants: "Here's money. Build something. Let us know how it goes."
+
 Bounties: "Build this specific thing. If it works, you get paid. If it doesn't, you don't."
 
 One of these models wastes less money. Guess which one.
@@ -103,7 +103,7 @@ This isn't wishful thinking. This model is proven and cheap for three reasons:
 
 Open-source and platform-as-a-service models are not theoretical. They're a proven, [multi-trillion-dollar economic reality](../references.qmd#open-source-platform-multi-trillion-dollar-reality).
 
-WordPress, Linux, Android, Chrome—all built this way. Combined value: trillions. Combined cost to build the core: billions. The math works.
+WordPress, Linux, Android, Chrome, all built this way. Combined value: trillions. Combined cost to build the core: billions. The math works.
 
 **2. AI Makes Building Software Radically Cheaper**
 
@@ -163,7 +163,7 @@ The core team must maintain and communicate a clear vision (detailed in the [Can
 
 Developers need to know where the "rails" are going so they can build accordingly. Ambiguity kills momentum.
 
-**The Result:**
+### The Result
 
 If these four conditions are met, the dFDA Infrastructure can foster a thriving global ecosystem that delivers medical innovation at a fraction of the cost of centralized, top-down development.
 

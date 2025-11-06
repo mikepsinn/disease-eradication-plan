@@ -16,6 +16,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -69,7 +70,7 @@ You create three categories of future revolutionaries, because humans need label
 
 These are the capitalists who smell 271.8% returns and start salivating. They have money, they want more money, and they're willing to bet on humanity not going extinct to get it.
 
-**How to identify them:**
+#### How to identify them
 
 - They ask about ROI before asking about the mission
 - Their LinkedIn has more than 500+ connections
@@ -80,7 +81,7 @@ These are the capitalists who smell 271.8% returns and start salivating. They ha
 
 These are the bleeding hearts who cry at pharmaceutical commercials. They have feelings, they want to help, and they'll donate $20 they can't afford because a child has cancer somewhere.
 
-**How to identify them:**
+#### How to identify them
 
 - They share every charity post on Facebook
 - They have strong opinions about healthcare despite knowing nothing about it  
@@ -91,7 +92,7 @@ These are the bleeding hearts who cry at pharmaceutical commercials. They have f
 
 These are the organizations pretending to solve problems while perpetuating them. They have infrastructure, they want good PR, and they'll partner with anyone who makes them look innovative.
 
-**How to identify them:**
+#### How to identify them
 
 - They have "impact" or "innovation" in their name
 - Their website has stock photos of diverse people looking at tablets

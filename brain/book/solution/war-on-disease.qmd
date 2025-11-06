@@ -15,6 +15,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -24,7 +25,7 @@ from economic_parameters import *
 
 ## On Why All Previous Wars on Abstract Concepts Failed
 
-Every government "War on X"—Drugs, Poverty, Terror, Christmas—has been a spectacular failure.
+Every government "War on X"—Drugs, Poverty, Terror, Christmas, has been a spectacular failure.
 
 This is not a coincidence. It's economics.
 
@@ -52,7 +53,7 @@ The DIH pays them when sick people stop being sick.
 
 If a researcher's cure works, they get rich. If it fails, they get nothing. This is how every other functional industry works, except government and academia, which explains a lot.
 
-**On Competition Versus Monopoly:**
+### On Competition Versus Monopoly
 
 The FDA creates a single, 17-year-long pipeline to approval where only the richest companies can play.
 
@@ -70,7 +71,7 @@ The War on Disease isn't just about curing cancer. It's about systematically dis
 
 Turns out, a lot of "unsolvable" social problems are just biology problems nobody bothered to solve because missiles were more exciting.
 
-**On the War on Drugs:**
+### On the War on Drugs
 
 Addiction is a neurological disorder. Your brain's reward system got hijacked. It's not a moral failing, it's chemistry.
 
@@ -78,7 +79,7 @@ Cure the brain chemistry, and the drug trade collapses. Cartels can't sell heroi
 
 We spent $1 trillion fighting drug dealers with guns. We could have spent $1 billion fixing brains with medicine. But that would have made too much sense.
 
-**On the War on Poverty:**
+#### On the War on Poverty
 
 A huge portion of poverty is driven by catastrophic medical costs and lost productivity from chronic illness.
 
@@ -86,13 +87,13 @@ Healthy people can work. Sick people can't. Dead people definitely can't. This s
 
 Fix the diseases, slash the medical bills, and suddenly people can afford food and rent.
 
-**On the War on Terror:**
+#### On the War on Terror
 
 Radicalization is often a cocktail of mental illness, trauma, social isolation, and untreated PTSD.
 
 It's a public health problem, not a military one. You can't bomb someone into being mentally stable. Trust me, we tried. It didn't work. Cost $8 trillion though.
 
-**On the War on Crime:**
+#### On the War on Crime
 
 A vast amount of crime is linked to addiction, personality disorders, impulse control issues, and even environmental factors like lead poisoning.
 
@@ -114,7 +115,7 @@ The obvious goal is curing disease. That's what it says on the label.
 
 The real goal is proving that there's a better way to solve large-scale human problems than building a government bureaucracy, giving it a budget, and waiting for it to fail spectacularly over several decades.
 
-**On Why Every Previous War Failed:**
+### On Why Every Previous War Failed
 
 Every government "War on X" has been a disaster because it was built on:
 
@@ -124,7 +125,7 @@ Every government "War on X" has been a disaster because it was built on:
 
 This creates a system where success threatens everyone's job, so failure becomes the mission.
 
-**On Why This War Will Win:**
+#### On Why This War Will Win
 
 The War on Disease will be the first government "War on X" to actually win because it's built on:
 
@@ -134,15 +135,15 @@ The War on Disease will be the first government "War on X" to actually win becau
 
 Success makes everyone richer, so success becomes the mission.
 
-**On What Winning Looks Like:**
+#### On What Winning Looks Like
 
-**Year 1 Targets:**
+#### Year 1 Targets
 
 - 1,000+ active trials launched (versus current 50/year)
 - 100,000+ patients enrolled (versus current 5,000)
 - A 50.0% reduction in trial costs demonstrated (from $41,000 to $500 per patient)
 
-**Year 10 Targets:**
+#### Year 10 Targets
 
 - 50+ diseases cured (versus current 0)
 - Aging reversed in human trials (death becomes optional, subject to terms and conditions)
@@ -150,7 +151,7 @@ Success makes everyone richer, so success becomes the mission.
 
 **On The Part Where Everything Else Gets Fixed:**
 
-When this model succeeds—and it will, because math—the credibility of central planning will be shattered.
+When this model succeeds, and it will, because math, the credibility of central planning will be shattered.
 
 The public will look at the War on Disease and say "wait, why don't we do this for education? And energy? And literally everything?"
 

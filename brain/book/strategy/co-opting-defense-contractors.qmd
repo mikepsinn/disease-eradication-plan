@@ -19,6 +19,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -106,7 +107,7 @@ Once 10-20 key people flip, the rest follow. Nobody wants to be the last holdout
 
 ### Phase 4: Active Support
 
-Now they're not just neutral—they're actively lobbying FOR the treaty:
+Now they're not just neutral, they're actively lobbying FOR the treaty:
 
 - Testifying to Congress: "This strengthens national security through health"
 - Op-eds: "Military readiness requires healthy population"

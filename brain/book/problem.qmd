@@ -12,9 +12,9 @@ tags:
   - healthcare
   - democracy
   - regulatory-capture
-lastReviewed: 2025-10-16T00:00:00.000Z
-lastFormatted: 2025-10-16T00:00:00.000Z
-lastStyleCheck: 2025-10-16T00:00:00.000Z
+lastReviewed: '2025-10-16T00:00:00.000Z'
+lastFormatted: '2025-10-16T00:00:00.000Z'
+lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastFormattedHash: aba334bdf77a731a1cbe7d54266b199ef795ae75d4fc1b30c122d04862c9dfe7
 lastStyleHash: 1c00299048de5cdcf60a487ac15742c4168ecb444f6ff47cfa4ef575c25580fa
 lastFactCheckHash: c6cd75d1ba2e77fae05a3e02582545da3dac6977086edd8fe9bd5cbd835fb569
@@ -27,6 +27,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -35,9 +36,8 @@ from economic_parameters import *
 ```
 
 # Part I: The Problem
-*Understanding the Problem You're Going to Fix*
 
----
+*Understanding the Problem You're Going to Fix*
 
 ## Overview: A Guided Tour of How Humanity Chose Death
 
@@ -45,7 +45,7 @@ from economic_parameters import *
 
 ---
 
-**On First Principles**
+### First Principles
 
 Before you can fix something, you need to understand what's broken. In this case, what's broken is approximately everything.
 
@@ -53,7 +53,7 @@ They say knowledge is power. But in this case, knowledge is mostly just depressi
 
 ---
 
-**On the Daily Numbers**
+#### Daily Numbers
 
 Every single day, 150,000 humans stop existing because of diseases we could probably cure if anyone was paying attention. 
 
@@ -69,7 +69,7 @@ If aliens were studying us, they'd probably conclude we can't count past 3,000.
 
 ---
 
-**On Where the Money Goes**
+##### Where the Money Goes
 
 Here's how humanity allocates its resources:
 
@@ -82,7 +82,7 @@ For comparison, imagine if you spent $2,700 on guns and $68 on food. Your neighb
 
 ---
 
-**On the Pentagon's Accounting**
+###### On the Pentagon's Accounting
 
 The Pentagon has lost $2.5 trillion. Not spent. Lost. Like car keys, except the car keys could cure cancer several hundred times.
 
@@ -94,7 +94,7 @@ They say a trillion is just a number. But it's the number of dollars we lost tha
 
 ---
 
-**On Medical Research**
+###### On Medical Research
 
 Since 1970, the National Institutes of Health has spent over $1 trillion studying diseases.
 
@@ -109,7 +109,7 @@ The NIH tests about 5,000 treatment combinations per year. There are 166 billion
 
 ---
 
-**On the FDA**
+###### On the FDA
 
 The FDA is America's way of making sure drugs are safe. They do this by making the approval process so expensive and slow that most drugs never get approved at all.
 
@@ -123,7 +123,7 @@ They say the road to hell is paved with good intentions. The FDA's road is paved
 
 ---
 
-**On What War Costs**
+###### On What War Costs
 
 Humanity spends $2.7 trillion every year on war. That works out to $340 per human on Earth for death tools.
 
@@ -142,7 +142,7 @@ The interesting thing about having 13,000 nuclear warheads is that after the fir
 
 ---
 
-**On What Disease Costs**
+###### On What Disease Costs
 
 Disease extracts $109.1 trillion from humanity annually. That's trillion with a T, which stands for "that's an unconscionably large number."
 
@@ -167,7 +167,7 @@ If disease were a country, it would be the richest country on Earth by a factor 
 
 ---
 
-**On Democracy**
+###### On Democracy
 
 Democracy is when everyone votes and the government does what everyone wants. At least that's what the brochure says.
 
@@ -181,7 +181,7 @@ Lobbying is basically legal bribery, except we call it "free speech" so it sound
 
 ---
 
-**On Regulatory Capture**
+###### On Regulatory Capture
 
 Regulatory capture is when the people who are supposed to regulate an industry used to work for that industry and will work for that industry again after they're done "regulating" it.
 
@@ -198,7 +198,7 @@ This is why the FDA's rules mysteriously benefit large pharmaceutical companies 
 
 ---
 
-**On the Fixed Pie**
+###### On the Fixed Pie
 
 Here's something they don't teach in economics class: Money isn't real, but resources are.
 
@@ -214,7 +214,7 @@ The solution isn't to print more money for medical research. The solution is to 
 
 ---
 
-**On Your Personal Situation**
+###### On Your Personal Situation
 
 While you've been reading this, approximately 8 people have died from preventable diseases. By the end of this chapter, it'll be 15.
 
@@ -231,7 +231,7 @@ The technology to fix most of this exists. It's just busy building fighter jets 
 
 ---
 
-**On What This Means**
+###### What This Means
 
 To summarize:
 
@@ -256,9 +256,9 @@ They say every problem is an opportunity in disguise. In this case, the opportun
 
 ---
 
-**What's Next**
+###### What's Next
 
-Now that you understand the problem—which is to say, now that you're appropriately horrified—here's how to fix it.
+Now that you understand the problem, which is to say, now that you're appropriately horrified, here's how to fix it.
 
 The following chapters will explain:
 - Why the NIH spent $1 trillion curing nothing

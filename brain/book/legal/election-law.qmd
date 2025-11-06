@@ -15,6 +15,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -36,7 +37,7 @@ This chapter teaches you how to legally deploy $250 million to make politicians 
 
 In 2010, the Supreme Court gave you a gift: unlimited political spending. As detailed in [the Legal Framework chapter](legal-framework.qmd), you'll deploy multiple legal entities for different purposes. Here's how to use them tactically:
 
-**Super PACs (Independent Expenditure Committees):**
+#### Super PACs (Independent Expenditure Committees)
 
 - Raise unlimited money from anyone
 - Spend unlimited amounts on elections
@@ -62,7 +63,7 @@ You'll use all three. The DIH Action Fund (the 501c4) will be the primary politi
 
 ### Setting Up "Cure Not Kill PAC"
 
-**Formation (One Day):**
+#### Formation (One Day)
 
 1. File FEC Form 1 (Statement of Organization)
 2. Get an EIN from IRS
@@ -70,7 +71,7 @@ You'll use all three. The DIH Action Fund (the 501c4) will be the primary politi
 4. Start taking unlimited money
 5. Begin destroying political careers
 
-**The Legal Requirements:**
+#### The Legal Requirements
 
 - File reports with FEC (monthly in election years)
 - Include disclaimer on all ads ("Paid for by Cure Not Kill PAC")
@@ -78,7 +79,7 @@ You'll use all three. The DIH Action Fund (the 501c4) will be the primary politi
 - Keep records of all donors over $200
 - Report independent expenditures within 48 hours
 
-**What You Can Do:**
+#### What You Can Do
 
 - Run attack ads against treaty opponents
 - Support ads for treaty supporters
@@ -94,14 +95,14 @@ You'll use all three. The DIH Action Fund (the 501c4) will be the primary politi
 
 This is your 501(c)(4) dark money vehicle. Unlike Super PACs, you don't have to disclose donors.
 
-**The 51/49 Rule:**
+#### The 51/49 Rule
 
 - 51% must be "social welfare" activity
 - 49% can be pure political destruction
 - "Education" about treaty benefits = social welfare
 - "Senator X is a murderer" ads = political
 
-**How to Stay Legal:**
+#### How to Stay Legal
 
 1. Write educational materials about the treaty benefits
 2. Educate the public on voting records
@@ -113,7 +114,7 @@ This is your 501(c)(4) dark money vehicle. Unlike Super PACs, you don't have to 
 
 ### Making Opposition Expensive
 
-**The Primary Threat:**
+#### The Primary Threat
 
 - Find primary challengers for treaty opponents
 - Fund them with $5-10M each
@@ -121,7 +122,7 @@ This is your 501(c)(4) dark money vehicle. Unlike Super PACs, you don't have to 
 - Even if they win, they're weakened and poor
 - Next election, they support you to avoid this
 
-**The Bidding War:**
+#### The Bidding War
 
 - Publicly announce $10M against treaty opponents
 - Wait for defense contractors to counter
@@ -130,7 +131,7 @@ This is your 501(c)(4) dark money vehicle. Unlike Super PACs, you don't have to 
 - Keep escalating until they break
 - You have $250M, they have stockholders to answer to
 
-**The Overwhelming Force Doctrine:**
+#### The Overwhelming Force Doctrine
 
 - Pick one opponent to destroy completely
 - Spend $50M in their small state
@@ -167,21 +168,21 @@ Every state has different rules. Here's how to handle them:
 
 ### Surgical Strikes
 
-**Early and Often:**
+#### Early and Often
 
 - Define opponents before they define themselves
 - First impression sticks
 - Run attacks during non-political shows
 - Capture low-information voters
 
-**The Saturation Approach:**
+#### The Saturation Approach
 
 - Buy every ad slot in small markets
 - Make opposition invisible
 - Cost: $500K/week in Wyoming
 - Impact: Total narrative control
 
-**Digital Micro-Targeting:**
+#### Digital Micro-Targeting
 
 - Facebook: $0.50 per voter reached
 - Google: Target searches for "Senator [Name]"

@@ -11,8 +11,8 @@ tags:
   - superlongevity
   - superhappiness
   - superintelligence
-lastFormatted: 2025-10-16T00:00:00.000Z
-lastStyleCheck: 2025-10-16T00:00:00.000Z
+lastFormatted: '2025-10-16T00:00:00.000Z'
+lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastFormattedHash: 357fb477da7c32015b5f9bc8c9178795e8d30f561f4fae1658857579b9ec89dd
 ---
 
@@ -22,6 +22,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -35,8 +36,6 @@ It is the future that opens up the moment humanity decides that investing in hum
 The 1% Treaty is not the endgame.
 It is the **spark** for a new human trajectory.
 It is the first turn of a great ratchet that will systematically shift our civilization from a zero-sum game of conflict to a positive-sum game of creation.
-
----
 
 ## Long-Term End State: A World Without War and Disease
 
@@ -56,8 +55,6 @@ Your great-grandkids will read about people dying of cancer the way you read abo
 It will seem primitive and tragic and completely unnecessary.
 
 That's what happens when we stop wasting money on bombs and start spending it on not dying.
-
----
 
 ## What Happens Next: From 1% to Everything
 
@@ -111,8 +108,6 @@ This is the **Great Ratchet**.
 Each turn of the wheel locks in the gains and makes the next turn easier.
 The strategy systematically and voluntarily phases out the global war economy, not through protest, but by offering a demonstrably superior investment vehicle for solving every major challenge facing humanity.
 
----
-
 ## A Civilization Reborn: The Economics of Abundance
 
 What happens to a world that no longer bears the twin burdens of disease and war?
@@ -157,20 +152,20 @@ It's about a species finally free to explore its unlimited potential without the
 
 These transformations are not wishful thinking, they are the mathematically inevitable result of redirecting humanity's resources toward creation rather than destruction.
 
-**The Current Misallocation:**
+### The Current Misallocation
 
 - **Global military spending:** [\$2.72 trillion annually](../references.qmd#global-military-spending-2-44t) (2024)
 - **Global medical research:** [\$67.5 billion annually](../problem/cost-of-war.qmd)
 - **Disparity ratio:** 40:1 in favor of weapons over cures
 
-**The Peace Dividend Unlocked:**
+#### The Peace Dividend Unlocked
 
 - **Total annual cost of violence:** [$16.4T](peace-dividend-calculations.qmd) (10.9% of global GDP)
 - **Value captured by 1% Treaty:** [\$27+ billion annually](peace-dividend-calculations.qmd)
 - **Value returned to society:** [\$16.47 trillion annually](peace-dividend-calculations.qmd) (99.84% of total)
 - **Per person impact:** \$74,259 saved over lifetime vs. current costs of conflict
 
-**Individual Wealth Transformation:**
+#### Individual Wealth Transformation
 
 - **Current median household wealth:** ~\$100,000
 - **2055 projected median wealth:** Millions (from eliminated healthcare costs, conflict reduction, and productivity gains)
@@ -180,7 +175,7 @@ These transformations are not wishful thinking, they are the mathematically inev
 - **Energy costs:** Approaching zero through fusion and space-based solar
 - **Manufacturing costs:** Approaching zero through automation and asteroid mining
 
-**Research and Development Acceleration:**
+#### Research and Development Acceleration
 
 - **Current dFDA ROI:** [463:1 over 10 years](dfda-cost-benefit-analysis.qmd)
 - **Annual R&D savings potential:** [$50.0B](dfda-cost-benefit-analysis.qmd) from efficiency gains

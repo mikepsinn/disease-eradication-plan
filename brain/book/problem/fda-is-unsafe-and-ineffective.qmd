@@ -9,10 +9,10 @@ tags:
   - drug-approval
   - bureaucracy
   - regulatory-capture
-lastReviewed: 2025-10-16T00:00:00.000Z
-lastFactCheck: 2025-10-17T00:00:00.000Z
-lastLinkCheck: 2025-10-17T00:00:00.000Z
-lastFigureCheck: 2025-10-17T00:00:00.000Z
+lastReviewed: '2025-10-16T00:00:00.000Z'
+lastFactCheck: '2025-10-17T00:00:00.000Z'
+lastLinkCheck: '2025-10-17T00:00:00.000Z'
+lastFigureCheck: '2025-10-17T00:00:00.000Z'
 lastFactCheckHash: f2b0a7a7e41cf5c672aa17be7c37c7be259f4dfdf2f659287ff274d0d247dabd
 lastStructureCheckHash: e4fe42db2d551d50b3f0757db5732208a325f5da863deaf7e6a531077d1f8595
 lastLatexCheckHash: 98dc5fb3f3c936d35955ba7764a866607893967284125f62c577be816364042c
@@ -24,6 +24,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -86,7 +87,7 @@ Fortunately, the existing FDA safety regulations prevented any birth defects in 
 
 As effective **safety** regulations were already in place, the government instead responded to the Thalidomide disaster by regulating **efficacy** testing via the [1962 Kefauver Harris Amendment](../references.qmd#kefauver-harris-amendment-1962). Before the 1962 regulations, it cost a drug manufacturer an average of $74 million (2020 inflation-adjusted) to develop and test a new drug for safety before bringing it to market. Once the FDA had approved it as safe, efficacy testing was performed by the third-party American Medical Association. Following the regulation, trials were instead to be conducted in small, highly-controlled trials by the pharmaceutical industry.
 
-**Reduction in Efficacy Data**
+#### Reduction in Efficacy Data
 
 The 1962 regulations made these large real-world efficacy trials illegal. Ironically, even though the new regulations were primarily focused on ensuring that drugs were effective through controlled FDA efficacy trials, they massively reduced the quantity and quality of the efficacy data that was collected for several reasons:
 
@@ -94,25 +95,25 @@ The 1962 regulations made these large real-world efficacy trials illegal. Ironic
 * Participants Were Less Representative of Actual Patients
 * They Were Run by Drug Companies with Conflicts of Interest Instead of the 3rd Party AMA
 
-**Reduction in New Treatments**
+##### Reduction in New Treatments
 
 The new regulatory clampdown on approvals immediately [reduced the production of new treatments by 70%](../references.qmd#post-1962-drug-approval-drop).
 
 ![A graph showing the decline in new treatments per year after 1962.](../../../assets/new-treatments-per-year-2.png)
 
-**Reduction in Life Expectancy Gains**
+###### Reduction in Life Expectancy Gains
 
 The impact on human life expectancy was immediate and devastating. Before 1962, life expectancy increased by 4 years every decade. After 1962, that rate was cut in half to just 2 years per decade.
 
 ![Contrasts lifespan increases before 1962 (4 years per decade) vs after 1962 (2 years per decade)](../../../assets/lifespan-increase-before-after-1962.png)
 
-**Explosion in Costs**
+###### Explosion in Costs
 
 Since the abandonment of the former efficacy trial model, costs have exploded. [Since 1962, the cost of bringing a new treatment to market has gone from $74 million to over $1 billion](../references.qmd#post-1962-drug-costs-explode) US dollars (2020 inflation-adjusted).
 
 ![A chart showing the explosion in drug development costs](../../../assets/cost-to-develop-a-new-drug.png)
 
-**The Correlation: Rising Costs, Stagnating Lifespans**
+###### The Correlation: Rising Costs, Stagnating Lifespans
 
 As development costs skyrocketed, life expectancy gains flatlined. The correlation is undeniable:
 
@@ -154,7 +155,7 @@ In the case of rare diseases, increasing the cost of treatment development to ov
 
 How high should the cost of drug development be on our list of human problems? Well, when something costs more, you get less of it. For people dying of cancer, the fact that we couldn't afford enough research to cure them is definitely at the top of their list of human problems.
 
-**Delayed Life-Saving Treatments**
+#### Delayed Life-Saving Treatments
 
 One unanticipated consequence of the amendments was that the new burden of proof made the process of drug development both more expensive and much longer, leading to increasing drug prices and a "drug lag". After that point, whenever they released some new cancer or heart medication that would save 50 thousand lives a year, it meant that over the previous ten years of trials, 500,000 people died because they didn't have access to the drug earlier.
 
@@ -192,15 +193,15 @@ Perhaps it's a coincidence, but you can see an increase in drug approvals in the
 
 ![A chart showing the correlation between drug approvals and the life expectancy gap between the US and Switzerland.](../../../assets/us-swiss-life-expectancy-drug-approvals.png)
 
-**Increase in Patent Monopoly**
+##### Increase in Patent Monopoly
 
 Industry agitation surrounding the “drug lag” finally led to the modification of the drug patenting system in the Drug Price Competition and Patent Term Restoration Act of 1984. This further extended the life of drug patents. Thus Kefauver's amendments ultimately made drugs more expensive by granting longer monopolies.
 
-**Decreased Ability to Determine Comparative Efficacy**
+###### Decreased Ability to Determine Comparative Efficacy
 
 The placebo-controlled, randomized controlled trial helped researchers gauge the efficacy of an individual drug. However, it makes the determination of comparative effectiveness much more difficult.
 
-**Slowed Growth in Life Expectancy**
+###### Slowed Growth in Life Expectancy
 
 From 1890 to 1960, there was a linear 4-year increase in human lifespan every decade. This amazingly linear growth rate had followed millennia with a flat human lifespan of around 28 years. [Following this new 70% reduction in the pace of medical progress, the growth in human lifespan was immediately cut in half to an increase of 2 years per decade](../references.qmd#post-1962-life-expectancy-slowdown).
 
@@ -337,15 +338,13 @@ However, to validate the theory that large-scale real-world evidence can produce
 
 Each name on that list represents a graveyard of preventable deaths.
 
----
-
 ### Case Study: The Human Cost of Regulatory Delay in Closed-Loop Neuromodulation
 
 The historical data is damning, but this isn't a problem of the past. Here is a modern example of the ongoing human cost of regulatory delay, focusing on a breakthrough technology for treatment-resistant depression.
 
 #### Executive Summary
 
-[Depression is the leading global cause of disability](../references.qmd#depression-leading-cause-disability) and the strongest behavioral predictor of suicide. Existing antidepressant drugs [fail to achieve remission in about **two-thirds of patients**](../references.qmd#antidepressant-failure-rate-stard), and pharmacologic innovation has stagnated. Closed-loop neuromodulation—implantable or wearable systems that sense neural activity and adjust stimulation in real time—has shown [**response rates of 60–80 %**](../references.qmd#neuromodulation-trd-response-rates) in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
+[Depression is the leading global cause of disability](../references.qmd#depression-leading-cause-disability) and the strongest behavioral predictor of suicide. Existing antidepressant drugs [fail to achieve remission in about **two-thirds of patients**](../references.qmd#antidepressant-failure-rate-stard), and pharmacologic innovation has stagnated. Closed-loop neuromodulation, implantable or wearable systems that sense neural activity and adjust stimulation in real time, has shown [**response rates of 60–80 %**](../references.qmd#neuromodulation-trd-response-rates) in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
 Yet under current FDA and EMA processes, large-scale availability is unlikely before **2035**. A utilitarian cost-benefit model indicates that this delay will cost **≈5–10 million lives** and **≈100 million quality-adjusted life-years (QALYs)** globally.
 
 #### 1. Scale of the Problem
@@ -358,7 +357,7 @@ Yet under current FDA and EMA processes, large-scale availability is unlikely be
 | Mean age of death                                                   | 40 y                | Global Burden of Disease      |
 | Average lost QALYs per suicide                                      | 35                  | conservative midlife estimate |
 
-**Annual QALY loss:**
+#### Annual QALY loss
 
 700 000 × 35 = **24.5 million QALYs** directly, plus ~2× from comorbid mortality ⇒ **≈75 million QALYs/year**.
 
@@ -412,22 +411,20 @@ With modern data infrastructure, these systems are already technically viable.
 
 A decade of regulatory delay in closed-loop neuromodulation equates to roughly **one genocide-scale loss of life** and trillions of dollars in foregone human utility.
 From a utilitarian calculus, any risk threshold that delays access longer than **2–3 years** imposes a harm orders of magnitude greater than potential device side-effects.
-A rational health-policy framework would authorize conditional deployment once *expected* QALYs gained exceed *expected* QALYs lost—a threshold crossed today.
-
----
+A rational health-policy framework would authorize conditional deployment once *expected* QALYs gained exceed *expected* QALYs lost, a threshold crossed today.
 
 ## The Incentive Structure: A Masterpiece of Misalignment
 
-**FDA Regulator Decision Tree:**
+### FDA Regulator Decision Tree
 
-**Approve drug that later shows problems:**
+#### Approve drug that later shows problems
 
 - Congressional hearing (televised)
 - "FDA APPROVED KILLER DRUG" headlines
 - Career ends
 - Pension threatened
 
-**Delay drug that could save lives:**
+#### Delay drug that could save lives
 
 - Nothing happens
 - Dead people don't complain

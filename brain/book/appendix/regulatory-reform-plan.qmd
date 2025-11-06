@@ -9,6 +9,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -19,8 +20,6 @@ from economic_parameters import *
 This appendix identifies specific U.S. regulations, rules, and guidance documents that could be modified or rescinded to significantly reduce the cost and time required to bring new medical interventions to patients, particularly through the use of a large-scale, automated, decentralized clinical trial platform (the dFDA). The goal is not elimination but streamlining and adapting requirements to be more efficient, technology-enabled, and patient-centric while maintaining high standards for safety and efficacy.
 
 *This document serves as the detailed policy roadmap supporting the proposals in Part II: The Solution and Part IV: The Plan.*
-
----
 
 ### Key Regulatory Areas for Reform
 

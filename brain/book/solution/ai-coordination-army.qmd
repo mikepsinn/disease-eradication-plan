@@ -11,6 +11,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -43,7 +44,7 @@ Your agents work from this same list. Whether you're deploying agents from a pat
 
 ### The Secret to Success: Cross-Sector Coordination (Forces for Good)
 
-*Forces for Good* studied the difference between successful and unsuccessful nonprofits. The finding: Successful nonprofits coordinate across sectors—they work with other nonprofits, businesses, governments, and the public. Unsuccessful ones operate in silos, jealously guarding their email lists and acting like collaboration is a zero-sum game where helping someone else means losing.
+*Forces for Good* studied the difference between successful and unsuccessful nonprofits. The finding: Successful nonprofits coordinate across sectors, they work with other nonprofits, businesses, governments, and the public. Unsuccessful ones operate in silos, jealously guarding their email lists and acting like collaboration is a zero-sum game where helping someone else means losing.
 
 The problem: Cross-sector coordination is nearly impossible to do manually. How do you coordinate a cancer nonprofit in Boston (operating 9-5 EST) with a biotech in Switzerland (different timezone, language, and concept of urgency), a university in Beijing (behind a firewall), and individual researchers across 50 countries (half of whom don't check email)?
 
@@ -55,11 +56,11 @@ You base your agent design on the six practices from *Forces for Good*:
 
 ![The six-part organizing framework from the book Forces for Good.](../../../assets/forces-for-good-organizing-framework.png)
 
-This ensures your agents enable the proven success pattern—cross-sector coordination—rather than just automating the process of sending emails that no one reads and forming committees that accomplish nothing.
+This ensures your agents enable the proven success pattern, cross-sector coordination, rather than just automating the process of sending emails that no one reads and forming committees that accomplish nothing.
 
 ### Why You Need This (Humans Are Hilariously Bad at Coordination)
 
-The NIH has 27,000 employees. They can't coordinate lunch orders, let alone millions of researchers. Seriously—they spent [$1 trillion and eradicated zero diseases](../problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) because their coordination strategy is "form a committee to discuss forming a committee."
+The NIH has 27,000 employees. They can't coordinate lunch orders, let alone millions of researchers. Seriously, they spent [$1 trillion and eradicated zero diseases](../problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) because their coordination strategy is "form a committee to discuss forming a committee."
 
 The FDA thinks humans can manually coordinate global trials. These are the same humans who took [17 years and $2.6 billion](../problem/fda-is-unsafe-and-ineffective.qmd) to approve one drug. Asking them to coordinate is like asking goldfish to organize a space program.
 
@@ -74,7 +75,7 @@ The problem isn't that people don't want to help cure disease. It's that coordin
 - Trying to mobilize treaty advocates globally? Enjoy scheduling a call where someone is always asleep.
 - Need real-time trial data synthesis? Better hire someone to email everyone weekly asking for updates (they won't respond).
 
-Humans evolved to coordinate hunting parties of 20 people. We're now trying to coordinate millions. Our brains literally can't do it—we max out at [150 relationships (Dunbar's number)](../references.qmd#dunbar-number-150).
+Humans evolved to coordinate hunting parties of 20 people. We're now trying to coordinate millions. Our brains literally can't do it, we max out at [150 relationships (Dunbar's number)](../references.qmd#dunbar-number-150).
 
 AI doesn't have this limitation. It never sleeps, speaks every language, operates in every timezone simultaneously, and doesn't get into passive-aggressive email wars. The way you win the War on Disease is by building coordination infrastructure that works at the scale humans can't, while the NIH is still trying to schedule their next committee meeting.
 
@@ -82,7 +83,7 @@ AI doesn't have this limitation. It never sleeps, speaks every language, operate
 
 ### The Architecture You're Building (It's Simpler Than It Looks)
 
-Here's the coordination architecture you need. Don't let the diagram scare you—it's just showing that agents talk to other agents, which talk to more agents. Like a corporate org chart, except things actually happen:
+Here's the coordination architecture you need. Don't let the diagram scare you, it's just showing that agents talk to other agents, which talk to more agents. Like a corporate org chart, except things actually happen:
 
 ```{mermaid}
 graph TD
@@ -135,25 +136,25 @@ The key: Coordination prevents waste. Instead of 500 cancer nonprofits all apply
 
 Once the treaty passes? Your agents shift to allocating the $27.2B from Wishocracy instead of begging foundations. But until then, we still live in the old world where money doesn't magically appear.
 
-**To Mobilize Support:**
+#### To Mobilize Support
 
 You launch advocacy agents that track health legislation (all 10,000 pages that get released at 2 AM), coordinate treaty signature campaigns across timezones, organize awareness events, and recruit volunteers without the usual process of begging people on Facebook and hoping they show up.
 
 Instead of one burned-out coordinator trying to schedule volunteers across 12 timezones while also answering emails, planning events, and maintaining their sanity, your agents handle all the logistics. The coordinator can focus on actual human relationships instead of being a human scheduling algorithm who's slowly dying inside.
 
-**To Accelerate Research:**
+#### To Accelerate Research
 
 You automate the soul-crushing coordination work that turns enthusiastic researchers into bitter husks. Matching researchers with funding opportunities (before treaty: foundation grants; after treaty: Wishocracy allocations). Recruiting trial participants who actually meet the criteria (not just people who saw a Facebook ad and think they qualify). Tracking outcomes when half the participants ghost you. Synthesizing literature when there are 50,000 new papers published monthly and you're supposed to read them all.
 
 What used to take 6 months of emails like "Just following up on my previous 12 emails..." now happens continuously without making you want to throw your laptop out a window. Phase 1: coordinate who applies for which grants. Phase 2: coordinate who executes which tasks from Wishocracy's list using patient subsidies from the treaty.
 
-**To Build Awareness:**
+#### To Build Awareness
 
 You deploy content agents that create educational materials people might actually read, track what the public currently thinks about health issues, coordinate social media campaigns, and figure out which messages actually change minds versus which ones just get ratio'd.
 
 Instead of a marketing team manually A/B testing campaigns one painful experiment at a time, your agents test hundreds of variations simultaneously. They learn that posting about preventing Alzheimer's at 2 PM on Tuesday gets 10x more engagement than posting at 9 AM on Monday, for reasons no human will ever understand.
 
-**To Optimize Impact:**
+#### To Optimize Impact
 
 You use "Agent Evaluators" to measure which strategies actually save lives instead of which ones win awards at nonprofit conferences or make board members feel good.
 
@@ -203,19 +204,19 @@ Current AI can't run a global health movement alone, which is honestly for the b
 
 Here's the cooperation model you use:
 
-**AI Proposes:**
+#### AI Proposes
 
 Your agents analyze what's working across the network and propose new strategies (via GitHub issues, because developers already live there). Example: "Trial recruitment is 3x higher when we contact researchers on weekends" or "Funding requests sent on Tuesday get 40% more responses than those sent on Friday."
 
-**You Decide:**
+#### You Decide
 
 Actual humans review and approve strategic changes. You set direction based on values and context the AI doesn't understand (like "we don't spam people" or "that approach is technically effective but ethically questionable"). AI suggests. Humans decide. This is the opposite of most organizations where humans suggest and bureaucracy decides nothing will change.
 
-**AI Implements:**
+#### AI Implements
 
-Once approved, "Builder Agents" update the coordination infrastructure—writing code, updating agent instructions, submitting improvements as pull requests. They do the grunt work of implementation so humans don't have to spend their weekends debugging Python.
+Once approved, "Builder Agents" update the coordination infrastructure, writing code, updating agent instructions, submitting improvements as pull requests. They do the grunt work of implementation so humans don't have to spend their weekends debugging Python.
 
-**You Verify:**
+#### You Verify
 
 You do final review to ensure changes align with the mission before they go live across the network. Think of it as peer review, except the peer is a robot and it actually happens instead of sitting in someone's inbox for 6 months.
 
@@ -225,7 +226,7 @@ This keeps you in strategic control while letting AI handle the coordination wor
 
 A coordination network is only as smart as the information flowing through it. Here's how you prevent organizations from hoarding data like dragons sitting on gold they'll never use:
 
-**Rule 1 - Share to Play:**
+#### Rule 1 - Share to Play
 
 To use the powerful shared coordination agents (funded by the collective), you agree to share your anonymized performance data back to the network. No sharing, no access to the network effects. It's the opposite of most nonprofit collaborations where everyone wants the benefits but no one wants to contribute anything.
 

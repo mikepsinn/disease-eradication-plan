@@ -1,5 +1,5 @@
 ---
-title: '🔮 The Two Futures'
+title: 🔮 The Two Futures
 description: Two timelines diverge from this moment. One ends in extinction, the other in transcendence. The only difference is a 1% budget reallocation.
 published: true
 tags:
@@ -10,8 +10,8 @@ tags:
   - wishonia
   - three-supers
   - three-subs
-lastFormatted: 2025-10-16T00:00:00.000Z
-lastStyleCheck: 2025-10-16T00:00:00.000Z
+lastFormatted: '2025-10-16T00:00:00.000Z'
+lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastFormattedHash: 7212cf691223b2776ed91f2bca1f3bb7aa3bdcf9ee1d7c32d219ee6c897dcacf
 lastFactCheckHash: 84e3a37847d7b96aa8156e764b243c316a02120736ae8e3638c4355656e62586
 lastLatexCheckHash: c37e28b976722c8d3fc615af54f50c7ce2912a0a60cc804d56ec1d24cb801afe
@@ -23,6 +23,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -34,7 +35,7 @@ Two timelines diverge from this moment. Same planet, same technology, opposite d
 
 ## Path A: Idiocracy
 
-We continue on our current path. The smartest minds are drawn to the ever-growing dark economy of cybercrime and AI-driven conflict. The singularity happens, but it's an inverse one—a hockey stick pointing straight down. Global systems collapse, antibiotics fail, and the average lifespan plummets. Warlords with AI armies fight over the scraps in a radioactive wasteland. Earth's final epitaph: "They had magic but chose madness."
+We continue on our current path. The smartest minds are drawn to the ever-growing dark economy of cybercrime and AI-driven conflict. The singularity happens, but it's an inverse one, a hockey stick pointing straight down. Global systems collapse, antibiotics fail, and the average lifespan plummets. Warlords with AI armies fight over the scraps in a radioactive wasteland. Earth's final epitaph: "They had magic but chose madness."
 
 ## Path B: Wishonia
 

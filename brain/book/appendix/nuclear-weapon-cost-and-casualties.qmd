@@ -15,6 +15,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -58,7 +59,7 @@ This depends on:
 
 Modern strategic warheads are many times more powerful than the bombs used on Hiroshima and Nagasaki. We've gotten very good at this.
 
-**The Simulation:**
+### The Simulation
 
 NUKEMAP (created by historian Alex Wellerstein) simulates nuclear detonations. If you detonate a single, modern 300-kiloton W87 warhead over Manhattan:
 
@@ -76,7 +77,7 @@ Now we can calculate the cost to kill one person with a nuclear weapon:
 - **Deaths per Bomb:** 1,619,570
 - **Cost per Death:** $27,500,000 ÷ 1,619,570 = **$16.98 per person**
 
-**Translation:**
+### Translation
 
 For the price of a Starbucks latte, our military can kill one human being.
 
@@ -90,27 +91,27 @@ This leaves $2.69 trillion for killing people.
 
 Let's calculate how much killing that buys:
 
-**Step 1: How many bombs?**
+### Step 1: How many bombs?
 
 $2,690,000,000,000 ÷ $27,500,000 per bomb = **97,818 bombs**
 
-**Step 2: How many deaths?**
+#### Step 2: How many deaths?
 
 97,818 bombs × 1,619,570 deaths per bomb = **158,421,000,000 people**
 
-**Translation:**
+#### Translation
 
 After giving 1% to medical research, the remaining 99% of military spending could still buy enough nuclear weapons to kill **158.4 billion people**.
 
 Earth's population: **8 billion**
 
-**Overkill capacity: 20× Earth's population**
+##### Overkill capacity: 20× Earth's population
 
 We could kill everyone on Earth twenty times.
 
 Not "once, but thoroughly." Not "twice, to be safe."
 
-**Twenty times.**
+###### Twenty times.
 
 This is what we mean when we say the 1% Treaty is a modest proposal. We're asking militaries to keep enough firepower to end civilization 19 times instead of 20.
 
@@ -118,13 +119,13 @@ Nobody needs to end civilization 20 times. That's just showing off.
 
 ## On The Summary (In Case You Skipped The Math)
 
-**What Nuclear Weapons Cost:**
+### What Nuclear Weapons Cost
 
 - Cost per death: **$16.98** (less than coffee)
 - B61-12 unit cost: **$27.5 million** per bomb
 - Deaths per W87 warhead (Manhattan): **1,619,570 people**
 
-**What The 1% Treaty Changes:**
+#### What The 1% Treaty Changes
 
 - Current military budget: **$2.72 trillion/year**
 - After 1% redirect: **$2.69 trillion remaining** (99%)
@@ -159,12 +160,14 @@ In Iraq and Afghanistan, U.S. forces fired approximately **250,000 bullets for e
 
 ### Precision-Guided Munitions
 
-**Excalibur GPS-Guided Artillery:**
+#### Excalibur GPS-Guided Artillery
+
 - Cost per round: **$176,624**
 - Higher accuracy, fewer rounds needed (1-2 rounds)
 - **Cost per death: $177,000-$350,000**
 
-**Air-Launched Missiles:**
+#### Air-Launched Missiles
+
 - AMRAAM: **~$1 million**
 - AARGM-ER: **~$6.1 million**
 - **Cost per death: $1-6 million+**
@@ -185,7 +188,7 @@ In Iraq and Afghanistan, U.S. forces fired approximately **250,000 bullets for e
 | Precision artillery | **$177,000-$350,000** | "Precision" is expensive |
 | Missiles | **$1-6 million+** | Very expensive, very deadly |
 
-**The Math That Proves We're Insane:**
+#### The Math That Proves We're Insane
 
 Nuclear weapons are **5,900× more "cost-effective"** at killing than small arms.
 
@@ -193,7 +196,7 @@ They're **10,000-350,000× more "cost-effective"** than precision missiles.
 
 This explains why $2.69 trillion in military spending has such enormous destructive capacity: We've optimized for maximum death per dollar.
 
-**The Point:**
+#### The Point
 
 This grotesque "efficiency" calculation exists to illustrate one thing: We've industrialized human destruction to a degree that would make assembly line manufacturers jealous.
 

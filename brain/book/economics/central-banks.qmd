@@ -16,6 +16,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -33,7 +34,7 @@ I know that sounds dramatic. But let me show you something interesting about the
 
 Here's a fun historical pattern that definitely won't repeat itself (it will):
 
-**Ancient Rome (3rd Century):**
+### Ancient Rome (3rd Century)
 
 - Started war with Persia
 - Ran out of gold
@@ -41,7 +42,7 @@ Here's a fun historical pattern that definitely won't repeat itself (it will):
 - Inflation destroyed the empire
 - Everyone died badly
 
-**Revolutionary France (1790s):**
+#### Revolutionary France (1790s)
 
 - Started wars with everyone
 - Ran out of money
@@ -49,7 +50,7 @@ Here's a fun historical pattern that definitely won't repeat itself (it will):
 - Hyperinflation: 13,000% in 5 years
 - Napoleon happened (not great)
 
-**Weimar Germany (1920s):**
+#### Weimar Germany (1920s)
 
 - Lost World War I
 - Printed money to pay reparations
@@ -57,7 +58,7 @@ Here's a fun historical pattern that definitely won't repeat itself (it will):
 - People burned money for heat
 - Hitler happened (really not great)
 
-**United States (1917-present):**
+#### United States (1917-present)
 
 - Created Federal Reserve (1913)
 - Immediately funded World War I (1917)
@@ -73,21 +74,21 @@ August 15, 1971. A day that will live in monetary infamy.
 
 Nixon went on TV and said, "Hey, remember how dollars could be exchanged for gold? Yeah, we're not doing that anymore. Also, wage and price controls. Also, import taxes. Also, screw you."
 
-**Why He Really Did It:**
+### Why He Really Did It
 
 - Vietnam War was bleeding money
 - France wanted their gold back (party poopers)
 - Couldn't raise taxes (people riot)
 - Solution: Print money forever!
 
-**What Actually Happened:**
+#### What Actually Happened
 
 - Gold standard: Dead
 - Dollar backing: "Trust us bro"
 - Inflation: To the moon
 - Your savings: Slowly murdered
 
-**The Theft That Followed:**
+#### The Theft That Followed
 
 Since 1972:
 
@@ -105,25 +106,25 @@ Where'd the money go? Three guesses:
 
 Here's how the scam works:
 
-**Step 1: Fed Prints Money**
+### Step 1: Fed Prints Money
 
 - Creates dollars from nothing
 - Gives to big banks at 0% interest
 - You don't get any (sad trombone)
 
-**Step 2: Banks Get Rich**
+#### Step 2: Banks Get Rich
 
 - Banks get new money first
 - Buy assets while prices still low
 - Your rent goes up immediately
 
-**Step 3: Government Spends**
+##### Step 3: Government Spends
 
 - Borrows freshly printed money
 - Buys missiles and bombs
 - Defense contractors get paid
 
-**Step 4: You Get Screwed**
+###### Step 4: You Get Screwed
 
 - Inflation hits your groceries
 - Your savings lose value
@@ -144,7 +145,7 @@ It's actually:
 - Never been fully audited
 - More powerful than Congress
 
-**What They Actually Do:**
+### What They Actually Do
 
 1. **Print Money for Wars**
    - Iraq/Afghanistan: [$8 trillion printed](../references.qmd#war-costs-watson)
@@ -172,31 +173,31 @@ It's actually:
 
 Let's do the math on how much your money has funded murder:
 
-**Vietnam War Extension (1972-1975):**
+### Vietnam War Extension (1972-1975)
 
 - Cost: $168 billion (inflation adjusted)
 - Funded by: Money printing
 - Your loss: 30% purchasing power
 
-**Gulf War (1991):**
+#### Gulf War (1991)
 
 - Cost: $102 billion
 - Funded by: Money printing
 - Your loss: Gas prices doubled
 
-**Iraq War (2003-2011):**
+#### Iraq War (2003-2011)
 
 - Cost: $2 trillion
 - Funded by: Money printing
 - Your loss: House prices went insane
 
-**Afghanistan (2001-2021):**
+#### Afghanistan (2001-2021)
 
 - Cost: $2.3 trillion
 - Funded by: Money printing
 - Your loss: Can't afford anything
 
-**The Running Total:**
+#### The Running Total
 
 - Wars funded by printing: $8+ trillion
 - Medical research in same period: $680 billion
@@ -207,7 +208,7 @@ Let's do the math on how much your money has funded murder:
 
 Here's a fun game: The Fed pays banks interest on reserves.
 
-**The Scam:**
+### The Scam
 
 - Banks park money at Fed
 - Fed pays them 5.5% interest
@@ -215,7 +216,7 @@ Here's a fun game: The Fed pays banks interest on reserves.
 - From taxpayers to banks
 - For doing literally nothing
 
-**What $300 Billion Could Buy Instead:**
+#### What $300 Billion Could Buy Instead
 
 - Cure cancer (probably)
 - End homelessness (definitely)
@@ -225,7 +226,7 @@ Here's a fun game: The Fed pays banks interest on reserves.
 
 ## Why We Can't Reform the Fed (It's Terminal)
 
-**The Problem with Reform:**
+### The Problem with Reform
 
 1. **Regulatory Capture**
    - Fed officials → Wall Street jobs
@@ -251,7 +252,7 @@ Here's a fun game: The Fed pays banks interest on reserves.
    - Contractors need contracts
    - Everyone important wins (you're not important)
 
-**The Only Solution: Bypass It Entirely**
+#### The Only Solution: Bypass It Entirely
 
 We can't fix the Fed. It's like trying to reform cancer. You don't reform cancer. You cut it out or route around it.
 
@@ -272,7 +273,7 @@ Earth has:
 
 When a brilliant engineer designs missiles, they're NOT designing medical devices. When a factory builds tanks, it's NOT building MRI machines. When a PhD researches weapons, they're NOT researching cures.
 
-**The Resource Reality:**
+#### The Resource Reality
 
 - Top 10% of human talent: ~800 million people
 - Currently building weapons: ~40 million
@@ -285,13 +286,13 @@ You can print infinite dollars. You can't print more geniuses.
 
 Watch this magic trick:
 
-**Year 1:** 
+#### Year 1
 
 - NIH budget: $40 billion
 - Military budget: $800 billion
 - Ratio: 20:1 for death
 
-**Year 5 (after "increasing medical research"):**
+#### Year 5 (after "increasing medical research")
 
 - NIH budget: $60 billion (50% increase! Victory!)
 - Military budget: $1.2 trillion (also 50% increase)
@@ -303,7 +304,7 @@ You got a 50.0% raise! Too bad everything costs 50.0% more. The pie didn't grow.
 
 ### The Proof: 50 Years of Going Nowhere
 
-**Medical Research as % of GDP:**
+#### Medical Research as % of GDP
 
 - 1975: 0.08%
 - 1985: 0.07%
@@ -314,7 +315,7 @@ You got a 50.0% raise! Too bad everything costs 50.0% more. The pie didn't grow.
 
 Absolute dollars increased 10X. Percentage of resources: Actually decreased. This is not an accident.
 
-**What Actually Grew:**
+#### What Actually Grew
 
 - Financial sector: 3% → 8% of GDP
 - Military-industrial: 4% → 6% of GDP  
@@ -335,7 +336,7 @@ Here's the trick they don't want you to understand:
 4. Medical researchers can't compete
 5. The best minds go where the money is
 
-**The Brain Drain Math:**
+#### The Brain Drain Math
 
 - MIT graduate with $200k debt
 - Option A: NIH postdoc at $55k/year
@@ -351,7 +352,7 @@ This is why printing more money for medicine doesn't work. The Fed will just pri
 
 Here's the jujitsu move: They're already printing trillions for war. The treaty asks them to point 1% of it at healing instead.
 
-**The Current Money Flow:**
+### The Current Money Flow
 
 - Fed prints $8 trillion
 - Goes to defense contractors
@@ -360,7 +361,7 @@ Here's the jujitsu move: They're already printing trillions for war. The treaty 
 - Your savings devalued
 - Repeat forever
 
-**The 1% Treaty Redirect:**
+#### The 1% Treaty Redirect
 
 - Fed still prints money (they can't help themselves)
 - 1% goes to DIH instead of bombs
@@ -369,7 +370,7 @@ Here's the jujitsu move: They're already printing trillions for war. The treaty 
 - Your savings still devalued (but at least people get cured)
 - Civilization advances
 
-**Why This Works:**
+#### Why This Works
 
 1. **The Treaty Doesn't Ask for New Money**
    - They're already printing it
@@ -397,7 +398,7 @@ Here's the jujitsu move: They're already printing trillions for war. The treaty 
 
 ## The Historical Precedent: When Markets Funded Victory
 
-**World War II War Bonds:**
+### World War II War Bonds
 
 - Raised $185 billion (1940s dollars)
 - Voluntary purchases
@@ -405,7 +406,7 @@ Here's the jujitsu move: They're already printing trillions for war. The treaty 
 - No hyperinflation
 - Democracy saved
 
-**The Difference:**
+#### The Difference
 
 - They funded necessary defense
 - VICTORY Bonds fund necessary cures
@@ -416,7 +417,7 @@ Both use markets instead of money printing. Both align incentives with outcomes.
 
 ## The Choice: Keep Printing Death or Start Printing Life
 
-**Option A: Keep the Current System**
+### Option A: Keep the Current System
 
 - Fed prints $8 trillion for war
 - Your money becomes worthless
@@ -424,7 +425,7 @@ Both use markets instead of money printing. Both align incentives with outcomes.
 - Defense contractors get richer
 - Repeat until extinction
 
-**Option B: The 1% Redirect**
+#### Option B: The 1% Redirect
 
 - Fed still prints $8 trillion (they're addicted)
 - 1% ($80 billion) goes to curing disease
@@ -434,7 +435,7 @@ Both use markets instead of money printing. Both align incentives with outcomes.
 
 It's not complicated. They're going to print money anyway. We're just asking them to print 1% for life instead of 100% for death.
 
-**How Tiny 1% Really Is:**
+#### How Tiny 1% Really Is
 
 - Fed printed $4 trillion in 2020 alone (for COVID)
 - 1% of that = $40 billion = curing multiple diseases
@@ -442,7 +443,7 @@ It's not complicated. They're going to print money anyway. We're just asking the
 - The treaty asks for 1/7th of one year's new fake money
 - It's a rounding error in their death budget
 
-**Why This Can Actually Happen:**
+#### Why This Can Actually Happen
 
 - Defense contractors keep 99% (they stop complaining)
 - Politicians get credit for "supporting healthcare" 

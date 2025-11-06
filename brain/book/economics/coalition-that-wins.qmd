@@ -14,6 +14,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -31,7 +32,7 @@ Not through charity. Not through guilt. Through **pure profit**.
 
 ### 🏥 Patients: You Stop Dying
 
-**What You Get:**
+#### What You Get
 
 - Treatment in 2 years instead of 17 (while you're still alive)
 - Pay $20-50 copay instead of $100,000 medical bankruptcy
@@ -40,14 +41,14 @@ Not through charity. Not through guilt. Through **pure profit**.
 - Get paid $100-500 for participating (instead of paying)
 - No more "Sorry, nothing we can do"
 
-**Your Current Reality:**
+#### Your Current Reality
 
 - 95% of diseases: No treatment exists
 - Average time to new drug: 17 years (you'll be dead)
 - Cost if uninsured: Bankruptcy
 - Chance of getting into trial: <1%
 
-**Your New Reality (DIH/dFDA):**
+#### Your New Reality (DIH/dFDA)
 
 - Every disease gets trials
 - Results in 6 months
@@ -57,7 +58,7 @@ Not through charity. Not through guilt. Through **pure profit**.
 
 ### 👨‍⚕️ Doctors: Finally Practice Medicine Instead of Paperwork
 
-**What Doctors Get:**
+#### What Doctors Get
 
 - $50,000-200,000/year additional revenue running trials
 - One-click patient enrollment (not 1,572 pages)
@@ -66,7 +67,7 @@ Not through charity. Not through guilt. Through **pure profit**.
 - Real-time data on what actually works
 - Respected again (not pharma's servants)
 
-**Current Doctor Reality:**
+#### Current Doctor Reality
 
 ```python
 doctor_time_breakdown = {
@@ -78,7 +79,7 @@ doctor_time_breakdown = {
 print("Doctors spend 76% of time NOT practicing medicine")
 ```
 
-**New Reality:**
+#### New Reality
 
 - Run trials with existing patients
 - Platform handles all paperwork
@@ -90,7 +91,7 @@ print("Doctors spend 76% of time NOT practicing medicine")
 
 This is the masterstroke. Instead of fighting pharma, the system makes them rich.
 
-**What Pharma Gets:**
+#### What Pharma Gets
 
 | Current System | DIH/dFDA System |
 |---------------|-----------------|
@@ -100,10 +101,11 @@ This is the masterstroke. Instead of fighting pharma, the system makes them rich
 | Only blockbusters viable | Rare diseases = gold mines |
 | Massive risk | Guaranteed revenue |
 
-**The Economics:**
+#### The Economics
 
 ```python
 # Current Pharma Economics
+
 development_cost = 2_600_000_000  # $2.6 billion
 success_rate = 0.10  # 10% make it to market
 average_revenue = 1_000_000_000  # $1B lifetime revenue
@@ -111,6 +113,7 @@ roi = (average_revenue - development_cost) / development_cost
 print(f"Current Pharma ROI: {roi:.1%}")  # -61.5% (LOSS!)
 
 # New DIH System
+
 development_cost_new = -50_000_000  # They GET PAID $50M
 success_rate_new = 0.60  # 60% succeed (lower bar)
 average_revenue_new = 500_000_000  # $500M (smaller markets OK)
@@ -118,7 +121,7 @@ roi_new = (average_revenue_new - development_cost_new) / 50_000_000
 print(f"New Pharma ROI: {roi_new:.1%}")  # 1,100% (MASSIVE PROFIT!)
 ```
 
-**Pharma's New Business Model:**
+## Pharma's New Business Model
 
 - Test their 10,000 shelved compounds
 - Every rare disease becomes profitable
@@ -128,7 +131,7 @@ print(f"New Pharma ROI: {roi_new:.1%}")  # 1,100% (MASSIVE PROFIT!)
 
 ### 🏦 Insurance Companies: Profit From Health, Not Sickness
 
-**What Insurance Companies Get:**
+#### What Insurance Companies Get
 
 | Disease | Current Annual Cost | Cost After Cure | Savings |
 |---------|-------------------|-----------------|---------|
@@ -138,7 +141,7 @@ print(f"New Pharma ROI: {roi_new:.1%}")  # 1,100% (MASSIVE PROFIT!)
 | Cancer | $208B | $0 | $208B/year forever |
 | **TOTAL** | **$1.25T** | **$0** | **$1.25T/year** |
 
-**The Obvious Math:**
+#### The Obvious Math
 
 - Every cure = billions they never pay out
 - Healthy customers = pure profit
@@ -148,7 +151,7 @@ print(f"New Pharma ROI: {roi_new:.1%}")  # 1,100% (MASSIVE PROFIT!)
 
 ### 🚀 Defense Contractors: Keep Getting Rich, Look Less Evil
 
-**What Defense Contractors Get:**
+#### What Defense Contractors Get
 
 - Keep 99% of military budget ($2.67T)
 - VICTORY bonds: 40-271.8% returns (better than weapons)
@@ -158,15 +161,17 @@ print(f"New Pharma ROI: {roi_new:.1%}")  # 1,100% (MASSIVE PROFIT!)
 - Employees actually get healthcare
 - Public loves them instead of hating them
 
-**The Profit Comparison:**
+#### The Profit Comparison
 
 ```python
 # Current Defense Contractor
+
 weapons_revenue = 100_000_000_000  # $100B
 weapons_margin = 0.08  # 8% profit margin
 weapons_profit = weapons_revenue * weapons_margin  # $8B
 
 # With VICTORY Bonds + Medical Tech
+
 bonds_investment = 1_000_000_000  # $1B investment
 bonds_return = 0.40  # 40% annual return (conservative)
 medical_tech_revenue = 10_000_000_000  # $10B new market
@@ -178,7 +183,7 @@ print(f"Total profit increase: {total_new_profit/weapons_profit:.0%}")  # 24% in
 
 ### 🏛️ Politicians: Easiest Re-election Ever
 
-**What Politicians Get:**
+#### What Politicians Get
 
 - "I cured cancer" campaign slogan (unbeatable)
 - Defense contractors still happy (99% of budget intact)
@@ -188,7 +193,7 @@ print(f"Total profit increase: {total_new_profit/weapons_profit:.0%}")  # 24% in
 - History books: Hero not villain
 - VICTORY bond holders fund campaigns
 
-**Campaign Ad Writing Itself:**
+#### Campaign Ad Writing Itself
 
 > "Senator Smith voted to cure cancer, Alzheimer's, and diabetes.
 > His opponent voted against it.
@@ -196,7 +201,7 @@ print(f"Total profit increase: {total_new_profit/weapons_profit:.0%}")  # 24% in
 
 ### 💰 Billionaires: Legacy Plus Profit
 
-**What Billionaires Get:**
+#### What Billionaires Get
 
 | Investment | Annual Return | Social Status |
 |------------|--------------|---------------|
@@ -204,7 +209,7 @@ print(f"Total profit increase: {total_new_profit/weapons_profit:.0%}")  # 24% in
 | Venture Capital | 30% | "Tech bro" |
 | VICTORY Bonds | 40-271.8% | "Saved humanity" |
 
-**The Billionaire's Calculation:**
+#### The Billionaire's Calculation
 
 ```python
 billionaire_investment = 100_000_000  # $100M investment
@@ -212,6 +217,7 @@ annual_return_rate = 0.40  # 40% (conservative)
 years = 20
 
 # Compound returns
+
 final_value = billionaire_investment * (1 + annual_return_rate) ** years
 total_return = final_value - billionaire_investment
 
@@ -225,7 +231,7 @@ print(f"Total profit: ${total_return/1e9:.1f}B")
 
 ### 🏭 Employers: Healthy Workers Work
 
-**What Employers Get:**
+#### What Employers Get
 
 - Healthcare costs drop 50-70%
 - Sick days decrease 60%
@@ -234,7 +240,7 @@ print(f"Total profit: ${total_return/1e9:.1f}B")
 - Recruiting advantage
 - Happy workers = better output
 
-**ROI for Average Fortune 500:**
+#### ROI for Average Fortune 500
 
 ```python
 employees = 50_000
@@ -396,6 +402,6 @@ Every revolution needs a coalition. Ours includes:
 - Pharma (guaranteed profits)
 - Insurance (reduced payouts)
 
-**The only enemy is death itself.**
+### The only enemy is death itself.
 
 And death doesn't vote.

@@ -8,8 +8,8 @@ tags:
   - multi-entity
   - securities-law
   - corporate-structure
-lastFormatted: 2025-10-16T00:00:00.000Z
-lastStyleCheck: 2025-10-16T00:00:00.000Z
+lastFormatted: '2025-10-16T00:00:00.000Z'
+lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastFormattedHash: 4d980f40b1242a7a42bc04e36d488751a638d6710019ea1815a1c0ef5571488f
 lastFactCheckHash: 1cc362fe63afe97795f525369c01a769173317046042d555a5ecb9f7ca883377
 lastLatexCheckHash: 3333496e9f1c9bc68e042645966260e57603ea078564bb9ea81ef74969a7ebd5
@@ -21,6 +21,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -37,8 +38,6 @@ You're essentially bribing governments to redirect military spending. Except ins
 This requires following international law, securities regulations, and election laws across 195 countries without violating a single rule in any of them. Simultaneously. While defense contractors use their lawyers to find any microscopic violation they can exploit.
 
 The design is **bulletproof and legal.** Which is fortunate, because the alternative is "brilliant and illegal," which is just another way of saying "stupid with extra steps toward federal prison."
-
----
 
 ## On Why You Need Multiple Companies in Multiple Countries
 
@@ -57,8 +56,6 @@ Estonia is [best in the world at digital governance](./references.qmd#estonia-er
 
 This splits up the legal risk and lets us optimize for each country's rules while keeping the core mission protected.
 
----
-
 ## On How to Sell Investment Products Without Going to Prison
 
 **[VICTORY Bonds](./economics.qmd)** are securities. Tokens might be securities. The SEC has opinions about both.
@@ -67,27 +64,25 @@ The strategy: be so obviously compliant that regulators get bored trying to find
 
 ### The Three-Tier Legal Strategy
 
-**Tier 1: Rich People (Accredited Investors)**
+#### Tier 1: Rich People (Accredited Investors)
 
 Start by raising money from people who are legally allowed to make terrible investment decisions because they're rich enough to survive them. The SEC's logic: if you have $1 million net worth, you're smart enough to lose it. If you have $999,999, you need government protection from yourself.
 
 Use standard private placement rules (Reg D 506(c) in the US, equivalents elsewhere). This provides a solid financial base while following every securities law on the books. Rich people understand risk better than regulators give them credit for, mostly because they've already taken bigger risks to get rich in the first place.
 
-**Tier 2: Regular People (Utility Tokens)**
+##### Tier 2: Regular People (Utility Tokens)
 
 Regular people earn utility tokens for actions like voting, participating in trials, or contributing to the platform. These start as utility points, not investments.
 
 They only become valuable AFTER the treaty passes and the system generates revenue. This timing [avoids the Howey Test securities law problems](./references.qmd#howey-test-securities) because there's no "expectation of profit from the efforts of others" at the time of distribution.
 
-**Tier 3: Marketing (No Bullshit Allowed)**
+###### Tier 3: Marketing (No Bullshit Allowed)
 
 Focus on what the project actually does, not get-rich-quick promises. Be painfully clear about risks. No hype. No "guaranteed returns." No techbro manifestos about disrupting death itself.
 
 The marketing pitch is: "Help us redirect military spending to cure disease. If it works, you might make money. If it doesn't, you definitely won't. Invest accordingly."
 
 Regulators love honesty. Mostly because they see so little of it that they don't know how to prosecute it. When the SEC investigates and finds that your prospectus literally says "you might lose everything," they have to move on to actual fraud cases. There are plenty of those.
-
----
 
 ## Dive Deeper into the Legal Framework
 
@@ -98,15 +93,13 @@ For a detailed breakdown of the specific legal structures and compliance strateg
 - **[Legal Compliance Framework](appendix/legal-compliance-framework.qmd):** The comprehensive strategy for navigating foreign election funding restrictions and securities law.
 - **[HHS Policy Recommendations](./appendix/hhs-dFDA-policy-recommendations.qmd):** Specific, actionable policy recommendations for U.S. government agencies to support decentralized research.
 
----
-
 ## Appendix: Legal Compliance Details (Jurisdiction-Specific)
 
 Every country has different rules about political spending. Every country thinks their rules are the most important. Every country is watching to make sure you follow THEIR rules while also following everyone else's contradictory rules.
 
 Here's how you navigate this legal minefield:
 
-- **United States:** Use independent-expenditure committees (Super PACs). Zero coordination with campaigns (wink wink). Comply with FEC reporting (every dollar tracked). Respect the foreign-national ban—this one actually matters because violating it means federal prison, not fines. Only US persons fund US election activities. Period. [FEC guidance](./references.qmd#fec-foreign-nationals) is surprisingly clear on this because they really, really don't want foreigners buying American democracy (that's Congress's job).
+- **United States:** Use independent-expenditure committees (Super PACs). Zero coordination with campaigns (wink wink). Comply with FEC reporting (every dollar tracked). Respect the foreign-national ban, this one actually matters because violating it means federal prison, not fines. Only US persons fund US election activities. Period. [FEC guidance](./references.qmd#fec-foreign-nationals) is surprisingly clear on this because they really, really don't want foreigners buying American democracy (that's Congress's job).
 
 - **EU/UK/Canada/Japan and others:** Use lawful local equivalents (third-party campaigners, [non-party campaigners](./references.qmd#uk-electoral-spending-limits), PACs). Each country gets its own entity with local staff, local lawyers, local bank accounts, and local compliance officers who understand local nuances. The UK limits spending to £20,000 nationally because they're adorably optimistic that this stops influence. Canada requires real-time reporting above $500 because they're aggressively transparent. The EU has 27 different systems because unity is hard.
 

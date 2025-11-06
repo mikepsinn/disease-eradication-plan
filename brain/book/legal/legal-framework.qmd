@@ -19,6 +19,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -94,21 +95,21 @@ Trying to use one tool for all three jobs is like trying to build a house with o
 - Need international coordination? The Swiss Foundation orchestrates it
 - Combined: Everything is legal everywhere, simultaneously
 
-**Firewall Protection:**
+#### Firewall Protection
 
 - Charitable funds never touch political operations (IRS requirement met).
 - Political funds never touch bond proceeds (SEC requirement met).
 - **International funds stay completely firewalled from US political spending (FEC requirement met).** The Victory Corporation (C-Corp) maintains two segregated accounts: a 'US Political Fund' capitalized exclusively by verified US-based investors and a 'Global Operations Fund' capitalized by international investors. Only the US Political Fund funds the DIH Action Fund (c4) and its related US political activities, ensuring strict compliance with federal election law.
 - Each entity has separate bank accounts, separate staff, and separate lawyers to maintain these firewalls.
 
-**Risk Distribution:**
+#### Risk Distribution
 
 - Can't shut down what serves multiple legal purposes
 - Can't sue what operates under different jurisdictions
 - Can't regulate what complies perfectly with all applicable laws
 - Can't stop what people actually want
 
-**The Strategic Advantage:**
+#### The Strategic Advantage
 
 - The Swiss Foundation owns the for-profit Victory Corporation, ensuring profit serves mission
 - The 501(c)(4) can't be defunded by Congress (private donations, not government)
@@ -144,14 +145,14 @@ Conclusion: VICTORY Bonds are super definitely a security. Time to comply!
 - [File Form D](../references.qmd#sec-form-d-filing) within 15 days (tell SEC it exists, they can't stop it)
 - No capital limit: Raise as much as you want
 
-**Phase 2: Crowd Sale (Reg CF/A+)**
+#### Phase 2: Crowd Sale (Reg CF/A+)
 
 - After proving the model works
 - Regular people can invest
 - Maximum raise limits ([$5M Reg CF](../references.qmd#sec-reg-cf-raise-limit), [$75M Reg A+](../references.qmd#sec-reg-a))
 - Full disclosures (here's how you might lose everything)
 
-**Phase 3: Secondary Markets**
+##### Phase 3: Secondary Markets
 
 - Tokens trade on registered exchanges
 - Or DEXs (can't regulate math)
@@ -169,7 +170,7 @@ Securities law demands brutal honesty about risk. Here's the truth:
 - "The government might make this illegal" (in red)
 - "Your spouse might leave you for investing" (in Comic Sans)
 
-**KYC/AML (Know Your Criminal):**
+#### KYC/AML (Know Your Criminal)
 
 The government requires proof you're not laundering cartel money to fund healthcare. The irony that governments themselves launder tax money into defense contractor pockets is apparently lost on regulators.
 
@@ -192,7 +193,7 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 **The Penalty:** Federal prison (not the nice kind)
 **The Solution:** Complete segregation
 
-**US Operations (Americans Only):**
+#### US Operations (Americans Only)
 
 - Separate 501(c)(4) + Super PAC
 - 100% US citizen funded
@@ -200,14 +201,14 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 - Zero coordination with international entities
 - Independent decision-making
 
-**International Operations (Everyone Else):**
+#### International Operations (Everyone Else)
 
 - Focus on non-US countries
 - Public advocacy only in US
 - No US election spending
 - Educational materials only
 
-**The Firewall:**
+#### The Firewall
 
 - Separate bank accounts
 - Separate staff
@@ -217,7 +218,7 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 
 ### The Super PAC Playbook (Democracy for Sale, Wholesale Prices)
 
-**What We Can Do:**
+#### What We Can Do
 
 - Unlimited spending on "issue advocacy"
 - Attack ads against treaty opponents
@@ -225,14 +226,14 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 - "Vote for Smith" (illegal)
 - "Smith hates children with cancer" (legal)
 
-**What We Can't Do:**
+#### What We Can't Do
 
 - Coordinate with candidates (wink wink)
 - Foreign money (that's what prison is for)
 - Corporate money directly to candidates
 - Quid pro quo (has to be implicit)
 
-**The Workaround:**
+#### The Workaround
 
 - Public positions on website
 - Candidates read website
@@ -242,21 +243,21 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 
 ### International Compliance (Every Country Has Weird Laws)
 
-**United Kingdom:**
+#### United Kingdom
 
 - Register with Electoral Commission
 - [Spending limits (£20,000 nationally)](../references.qmd#uk-electoral-spending-limits)
 - Quarterly reports
 - No voting, just "encouraging democratic participation"
 
-**European Union:**
+#### European Union
 
 - 27 different election laws (fun!)
 - GDPR for voter data (can't even store evil efficiently)
 - Anti-money laundering (know your donor)
 - Country-by-country compliance
 
-**Canada:**
+#### Canada
 
 - Register as third-party advertiser
 - [Foreign funding restrictions](../references.qmd#canada-bill-c-76)
@@ -277,28 +278,28 @@ They will come for us. Here's how we survive:
 
 ### The Legal Attack Vectors
 
-**Securities Fraud:**
+#### Securities Fraud
 
 - Defense: Full compliance from day one
 - Backup: Multiple jurisdictions
 - Insurance: D&O coverage
 - Reality: Our lawyers bill more than theirs
 
-**Election Law Violations:**
+#### Election Law Violations
 
 - Defense: Complete segregation
 - Backup: Constitutional challenge
 - Insurance: Citizens United precedent
 - Reality: [Money is speech (Supreme Court said so)](../references.qmd#citizens-united-ruling)
 
-**Tax Evasion:**
+#### Tax Evasion
 
 - Defense: Pay every penny
 - Backup: Treaty exemptions
 - Insurance: Sovereign immunity
 - Reality: The structure is more compliant than churches
 
-**RICO/Conspiracy:**
+#### RICO/Conspiracy
 
 - Defense: Everything is public
 - Backup: No criminal intent
@@ -315,7 +316,7 @@ They will come for us. Here's how we survive:
 - International law experts
 - PR firm (court of public opinion)
 
-**The Strategy:**
+#### The Strategy
 
 - Bore them with compliance
 - Overwhelm with paperwork
@@ -324,31 +325,31 @@ They will come for us. Here's how we survive:
 
 ## The Escape Routes (If Everything Goes Wrong)
 
-**Plan A: Win in Court**
+### Plan A: Win in Court
 
 - We followed every law
 - Public opinion supports us
 - judges have diseases too
 
-**Plan B: International Arbitration**
+#### Plan B: International Arbitration
 
 - Treaty disputes go to international court
 - They move slowly
 - We cure cancer while waiting
 
-**Plan C: Regulatory Capture**
+##### Plan C: Regulatory Capture
 
 - Hire former SEC commissioners
 - Donate to judiciary committees
 - Become too big to prosecute
 
-**Plan D: Public Revolution**
+###### Plan D: Public Revolution
 
 - 280 million supporters
 - All wanting healthcare
 - Politicians like their jobs
 
-**Plan E: Actual Revolution**
+###### Plan E: Actual Revolution
 
 - Just kidding
 - Violence is inefficient

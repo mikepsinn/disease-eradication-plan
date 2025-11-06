@@ -19,6 +19,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -157,8 +158,8 @@ Every single day we delay costs us another **$1.09 trillion**. That's not theore
 
 Our priorities are written in our budgets:
 
--   **The Military:** Gets [$7.4 billion per day](../references.qmd#sipri-2024-spending) to practice killing people.
--   **Medical Research:** Gets [$185 million per day](../references.qmd#global-gov-med-research-spending) to practice saving them.
+- **The Military:** Gets [$7.4 billion per day](../references.qmd#sipri-2024-spending) to practice killing people.
+- **Medical Research:** Gets [$185 million per day](../references.qmd#global-gov-med-research-spending) to practice saving them.
 
 That's a 40:1 ratio in favor of death. If aliens saw our accounting, they'd assume we're a death cult.
 

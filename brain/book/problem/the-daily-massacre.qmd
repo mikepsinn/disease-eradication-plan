@@ -8,7 +8,7 @@ tags:
   - statistics
   - military-spending
   - healthcare-crisis
-lastReviewed: 2025-10-16T00:00:00.000Z
+lastReviewed: '2025-10-16T00:00:00.000Z'
 format:
   html:
     code-fold: true
@@ -24,6 +24,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -37,7 +38,7 @@ from economic_parameters import *
 
 ## On The Numbers That Happen Every Day
 
-**What's Happening Right Now:**
+### What's Happening Right Now
 
 Every single day, like clockwork:
 
@@ -54,7 +55,7 @@ When one thing kills 3,000 people, it's a tragedy and we declare war. When disea
 
 If aliens were studying us, they'd conclude we can count to 3,000 but not 150,000. This would explain a lot about our civilization.
 
-**The Math Of Death:**
+#### The Math Of Death
 
 Every hour: **6,250 deaths**. Every minute: **104 deaths**. Every second: **1.7 deaths**.
 
@@ -62,13 +63,13 @@ The technology to prevent most of this exists. It's currently busy building miss
 
 ## On Making This About You Personally
 
-**Your Remaining Time (If You're 40):**
+### Your Remaining Time (If You're 40)
 
 You've got roughly **15,000 days** left, give or take a car accident. During your remaining lifetime, **2.3 billion** people will die. **1.2 billion** of those deaths? Preventable. That's **80,000** preventable deaths for each day you have left.
 
 Which is a lot of preventable deaths. Enough to make you wonder what "preventable" means if we're not preventing them.
 
-**Your Remaining Time (If You're 60):**
+#### Your Remaining Time (If You're 60)
 
 About **8,000 days** remain, assuming you don't eat nothing but bacon. **1.2 billion** people will die before you do. **640 million** of them preventably.
 
@@ -97,7 +98,7 @@ These are better odds than the lottery, which is nice. They're worse odds than R
 - **60-80**: Heart disease dominates, stroke crashes in (your body is a machine that's breaking down)
 - **Over 80**: Everything at once (your organs have a meeting and decide to quit simultaneously)
 
-**What Happens While You Sleep Tonight:**
+### What Happens While You Sleep Tonight
 
 By midnight tonight, **130,000 more people will be dead from disease**. Tomorrow, another **130,000**. The day after, another **130,000**. This continues forever, or until you stop it, whichever comes first.
 

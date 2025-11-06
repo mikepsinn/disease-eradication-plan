@@ -20,6 +20,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -33,7 +34,7 @@ from economic_parameters import *
 
 Create a funding mechanism that raises $1.0B to finance the [1% Treaty](../solution/1-percent-treaty.qmd) campaign through perpetual revenue-sharing bonds.
 
-**The structure to build:**
+### The structure to build
 
 - Raise $1.0B from bond investors
 - Use funds to execute the treaty campaign
@@ -51,7 +52,7 @@ Create a funding mechanism that raises $1.0B to finance the [1% Treaty](../solut
 
 Set up the bond offering and raise capital from investors.
 
-**Target investors:**
+#### Target investors
 
 - Institutional investors ($10M+ each)
 - Family offices ($5M+ each)
@@ -90,7 +91,7 @@ Set up automated annual payments:
 - **Year 3**: 2.7B distributed to bondholders
 - **Year 4+**: Scale up as treaty expands (2% = $5.4B, 5% = $13.5B, etc.)
 
-Continue indefinitely—no maturity date means revenue never stops as long as treaty remains in force.
+Continue indefinitely, no maturity date means revenue never stops as long as treaty remains in force.
 
 ## Calculate Your Numbers for Investors
 
@@ -122,7 +123,7 @@ Design the treaty to start at 1% and expand as breakthroughs prove the model:
 | 8-10 | 5%       | $135B          | $13.5B            | 1,350%       |
 | 10+  | 10%+     | $270B+         | $27.2B+             | 2,700%+      |
 
-**Explain the growth mechanism to investors:**
+#### Explain the growth mechanism to investors
 
 - Early medical breakthroughs validate the model
 - Mid-stage results build political momentum
@@ -190,7 +191,7 @@ Structure the allocation to balance three goals:
 2. **Fund the mission**: 90% ($24.3B) gives researchers substantial capital
 3. **Align incentives**: Bondholders profit from treaty expansion, so they become advocates
 
-Tell investors: Everyone wins when treaties grow—more cures = bigger treaties = higher returns.
+Tell investors: Everyone wins when treaties grow, more cures = bigger treaties = higher returns.
 
 ## Set Up the Legal Structure
 
@@ -243,12 +244,12 @@ Protect investors by releasing funds in tranches tied to achievements:
 
 The investment carries two primary types of risk: **Project Risks**, which are inherent to the success of the campaign, and **Investor-Specific Risks**, which relate to the nature of the financial instrument.
 
-**Project Risks:**
+#### Project Risks
 
 - **Political Risk:** The treaty may fail to pass in key nations. This is mitigated by building broad, bipartisan public support and using a multi-country strategy to avoid single points of failure.
 - **Execution Risk:** The campaign may fail to achieve its milestones. This is mitigated by milestone-gated funding, a lean operational model, and hiring an elite, experienced team.
 
-**Investor-Specific Risks:**
+#### Investor-Specific Risks
 
 - **Liquidity Risk:** Funds are locked up for 18-36 months during the campaign phase before returns begin. This is mitigated by allowing secondary market trading after an initial lock-up period.
 - **Timeline Risk:** The political process could take longer than projected, delaying returns. The perpetual nature of the bond is designed to reward patience.
@@ -299,7 +300,7 @@ flowchart TB
     Treaty2 --> Mission1
 ```
 
-**Explain the flywheel to investors:**
+### Explain the flywheel to investors
 
 1. Treaty passes → Bondholders get first distributions
 2. DIH funds trials → Breakthroughs start emerging
@@ -309,7 +310,7 @@ flowchart TB
 6. More cures emerge → Cycle reinforces itself
 7. Long-term result: Compounding returns + saved lives
 
-**Frame it as**: Success creates more success—self-reinforcing growth mechanism.
+**Frame it as**: Success creates more success, self-reinforcing growth mechanism.
 
 ## Set Minimum Investment Thresholds
 
@@ -328,7 +329,7 @@ Set these minimum investment amounts by investor type:
 
 ### Draft Your Term Sheet
 
-*(Have lawyers review—this is illustrative only)*
+*(Have lawyers review, this is illustrative only)*
 
 - **Interest rate**: 0% (all returns via revenue share model)
 - **Revenue share**: 10% of all treaty inflows
@@ -348,7 +349,7 @@ This section focuses on objections specific to the financial instrument. For bro
 
 ### "What happens to my investment if the treaty fails?"
 
-"If the treaty campaign fails to achieve at least partial success, the initial investment will be lost, as it will have been spent on the campaign. This is the primary risk. However, even a partial success scenario—such as adoption by the US and EU alone—is projected to yield over 130% annually, providing a significant return well above market averages. The risk is binary, but the upside is designed to compensate for it."
+"If the treaty campaign fails to achieve at least partial success, the initial investment will be lost, as it will have been spent on the campaign. This is the primary risk. However, even a partial success scenario, such as adoption by the US and EU alone, is projected to yield over 130% annually, providing a significant return well above market averages. The risk is binary, but the upside is designed to compensate for it."
 
 ### "What are the primary risks to my investment?"
 
@@ -367,7 +368,7 @@ This section focuses on objections specific to the financial instrument. For bro
 
 ### When they want detailed financials
 
-**Direct them:**
+#### Direct them
 
 "Complete breakdowns available:
 
@@ -381,7 +382,7 @@ Create this summary sheet for quick investor review:
 
 **VICTORY Bonds: High-Risk, High-Return Treaty Campaign Funding**
 
-**What you're offering:**
+### What you're offering
 
 - Returns: 271.8% annually (if full treaty passes)
 - Duration: Perpetual revenue share (no maturity)
@@ -389,18 +390,16 @@ Create this summary sheet for quick investor review:
 - Security: First-lien on treaty revenue
 - Growth: Treaty designed to expand 1% → 2% → 5%+
 
-**What you're risking:**
+#### What you're risking
 
 - Political: Treaty must pass across multiple nations
 - Execution: Campaign must hit milestones
 - Timeline: 18-36 month lockup before returns
 - Liquidity: Limited during campaign phase
 
----
-
 ## Related Implementation Guides
 
-**For detailed execution plans:**
+### For detailed execution plans
 
 - [Financial Plan](financial-plan.qmd) - Overall system architecture
 

@@ -20,6 +20,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -124,7 +125,7 @@ This pattern repeats everywhere:
 
 ## How Money Buys Power
 
-[Research shows](../references.qmd#cost-of-political-influence) campaign contributions don't directly buy how politicians vote on legislation—only 1 in 4 studies support that notion.
+[Research shows](../references.qmd#cost-of-political-influence) campaign contributions don't directly buy how politicians vote on legislation, only 1 in 4 studies support that notion.
 
 But they do something far more effective: **They buy which politicians get elected in the first place.**
 
@@ -257,7 +258,7 @@ The price correlates with power. Ways and Means writes tax code affecting trilli
 
 Don't pay? Your bills die. Your amendments get ignored. There's even a ["giant wall of shame" displaying who hasn't paid their dues](../references.qmd#congressional-committee-price-list).
 
-This is why congressmen spend 4 hours a day fundraising. They're not campaigning—they're paying rent on their committee seats. The people writing your healthcare laws literally bought their positions from the same industries.
+This is why congressmen spend 4 hours a day fundraising. They're not campaigning, they're paying rent on their committee seats. The people writing your healthcare laws literally bought their positions from the same industries.
 
 ## The 4-Year Attention Span: Democracy Has ADHD
 
@@ -445,8 +446,6 @@ And since everyone's selfish, those systems will actually work.
 
 Let's use what works.
 
----
-
 ## A Brief History of Human Decision-Making (Spoiler: It's Bad)
 
 [Democracy is the worst form of government, except for all the others](../references.qmd#churchill-democracy-quote).
@@ -464,8 +463,6 @@ Here's how humanity currently makes decisions:
 4. **Modern Democracy**: Millions vote for representatives who ignore them. Representatives vote based on bribes. Lobbyists write the actual laws. Everyone pretends this makes sense.
 
 5. **Current System**: All of the above, plus Twitter.
-
----
 
 ## Why Your Brain Can't Handle Democracy
 
@@ -502,29 +499,27 @@ No wonder democracy produces results like:
 
 We're asking chimp brains to do quantum physics. Then we're surprised when the chimps elect other chimps who throw feces at each other on C-SPAN.
 
----
-
 ## How Government Actually Allocates Money (A Horror Story)
 
 ### The Current Budget Process: Democracy Theater
 
 Here's how your government decides to spend trillions:
 
-**Step 1: Lobbyists Write Checks**
+#### Step 1: Lobbyists Write Checks
 
 - Defense contractors donate $50 million
 - Pharmaceutical companies donate $40M
 - Teachers unions donate their lunch money
 - Poor people donate nothing (mistake)
 
-**Step 2: Politicians Pretend to Think**
+##### Step 2: Politicians Pretend to Think
 
 - Hold hearings nobody watches
 - Read reports nobody wrote
 - Make speeches nobody believes
 - Vote based on who paid them
 
-**Step 3: The Budget Emerges**
+###### Step 3: The Budget Emerges
 
 Like a demon from a committee meeting:
 
@@ -533,7 +528,7 @@ Like a demon from a committee meeting:
 - Education: [$80 billion](../references.qmd#us-federal-education-spending) (explaining why we can't afford education)
 - Arts: [$200 million](../references.qmd#us-federal-arts-spending) (Congress's cocaine budget is higher)
 
-**Step 4: Everyone Gets Mad**
+###### Step 4: Everyone Gets Mad
 
 - Conservatives: "Too much welfare!"
 - Liberals: "Too much warfare!"
@@ -550,8 +545,6 @@ This system has produced:
 ---
 
 *P.S. - If you still believe in democracy, ask yourself: Would you let 150 million random Americans perform your heart surgery by voting on each incision? No? Then why let them vote on healthcare policy? At least with surgery, you'd die quickly.*
-
----
 
 ## Regulatory Capture: How Industries Write Their Own Rules
 

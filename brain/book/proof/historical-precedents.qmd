@@ -20,6 +20,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -28,8 +29,6 @@ from economic_parameters import *
 ```
 
 The strategy outlined in this book is not a fantasy. It is a synthesis of proven historical models that have successfully mobilized millions of people, raised billions of dollars, and changed international law. We are not inventing new human behaviors; we are simply applying them to a new problem.
-
----
 
 ## 1. Successful Precedents: Proof of Core Concepts
 
@@ -77,7 +76,7 @@ These examples demonstrate that the core mechanics of our strategy are achievabl
   - $93,000 GDP per capita (vs US $76,000)
   - Healthcare: Universal, excellent, 12% of GDP (vs US 18%)
   - Life expectancy: 84 years (vs US 79)
-- **The Lesson:** Peace dividends compound over centuries. Switzerland's prosperity didn't come from resources or conquest—it came from redirecting what others wasted on war into productive investments. This is the multi-generational proof of concept.
+- **The Lesson:** Peace dividends compound over centuries. Switzerland's prosperity didn't come from resources or conquest, it came from redirecting what others wasted on war into productive investments. This is the multi-generational proof of concept.
 
 ### The 3.5% Rule: Historical Proof of Movement Success
 
@@ -85,9 +84,7 @@ These examples demonstrate that the core mechanics of our strategy are achievabl
   - Civil rights: 3.5% participation ended segregation
   - Indian independence: 3.5% beat the British Empire
   - Women's suffrage: 3.5% got the vote
-- **The Lesson:** Our [global referendum strategy](../strategy/global-referendum.qmd) doesn't need billions of people—just 3.5% of engaged participants. That's 280 million people globally. If we can mobilize even half that number through [subsidized healthcare incentives](../solution/dfda.qmd), we reach critical mass.
-
----
+- **The Lesson:** Our [global referendum strategy](../strategy/global-referendum.qmd) doesn't need billions of people, just 3.5% of engaged participants. That's 280 million people globally. If we can mobilize even half that number through [subsidized healthcare incentives](../solution/dfda.qmd), we reach critical mass.
 
 ## 2. Unsuccessful Efforts: The Cautionary Tales We Heeded
 
@@ -95,12 +92,12 @@ The failures of past movements are even more instructive than the successes, as 
 
 ### Eisenhower's Warning (1961): He Saw This Coming
 
-Before we examine the failures, we must understand the system they failed against. President Dwight D. Eisenhower—a former 5-star general and Supreme Allied Commander—used his farewell address to warn America about what he'd seen from the inside:
+Before we examine the failures, we must understand the system they failed against. President Dwight D. Eisenhower, a former 5-star general and Supreme Allied Commander, used his farewell address to warn America about what he'd seen from the inside:
 
 - **The Warning:** ["We must guard against acquisition of unwarranted influence by the military-industrial complex"](../references.qmd#eisenhower-farewell-address)
 - **The Reality Check:** "Every gun made, every warship launched, every rocket fired signifies theft from those who hunger"
 - **The Prophecy:** He predicted the permanent war economy we now live in, where military spending becomes self-perpetuating regardless of actual threats.
-- **The Lesson:** Eisenhower's solution then = The solution now: **Redirect the resources.** He understood you can't simply dismantle the system—you must give it something more profitable to build instead.
+- **The Lesson:** Eisenhower's solution then = The solution now: **Redirect the resources.** He understood you can't simply dismantle the system, you must give it something more profitable to build instead.
 
 This warning sets the stage for understanding why good intentions alone have failed to stop the war machine.
 
@@ -116,15 +113,13 @@ This warning sets the stage for understanding why good intentions alone have fai
 - **The Failure:** While it successfully changed the public conversation, it produced no significant, lasting policy change. Its core weakness was the **lack of a single, specific, actionable demand.** The movement's energy was diffuse and its goals were too broad.
 - **The Lesson:** Our project avoids this trap by focusing all of its energy and capital on a single, clear, and achievable goal: **ratification of the ["1% Treaty."](../solution/1-percent-treaty.qmd)** That is the only ask. The DIH, the [dFDA](../solution/dfda.qmd), and the funding for cures are all downstream consequences of achieving that one specific objective.
 
----
-
 ## On How Rich People Made Money Doing Crazy Things (And Why That Matters)
 
 To make this work, we need investment terms that don't sound insane to people with money. Fortunately, history is full of rich people doing riskier things for lower returns.
 
 ### On The Time Junk Bonds Saved Capitalism
 
-**Michael Milken & High-Yield ("Junk") Bonds**
+#### Michael Milken & High-Yield ("Junk") Bonds
 
 In the 1980s, a guy named Michael Milken figured out something revolutionary: [if you offer people high enough returns, they'll invest in almost anything](../references.qmd#milken-high-yield-bonds).
 
@@ -138,7 +133,7 @@ If people invested in literal junk, they'll invest in not dying. We just need to
 
 ### On The Time George Soros Broke England
 
-**George Soros & The Quantum Fund**
+#### George Soros & The Quantum Fund
 
 In 1992, [George Soros risked $10 billion betting that the UK would have to leave the European Exchange Rate Mechanism](../references.qmd#soros-bet-against-the-pound).
 
@@ -189,8 +184,6 @@ No hype. No maybes. No "we're going to be really rich someday." Just math tied t
 
 If we're going to lose your money, at least it won't be because we promised you a monopoly on South American trade without checking if South America exists.
 
----
-
 ## 4. The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
 
 Even if one is skeptical of the above precedents, the core proposal has a powerful, built-in failsafe.
@@ -199,7 +192,7 @@ Let's imagine the Decentralized Institutes of Health is a complete and total fai
 
 The world would *still* be better off.
 
-**Why?**
+### Why?
 
 Because we would still have achieved a **1% reduction in the global capacity for organized violence and destruction.**
 

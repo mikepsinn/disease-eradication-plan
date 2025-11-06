@@ -16,6 +16,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -46,7 +47,7 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 - **Collateral:** $27.2B+ annual treaty revenue stream
 - **The Pitch:** "Invest $1B. Get $2.7B/year. Forever."
 
-**Why This Works:**
+#### Why This Works
 
 - Simplest pitch in finance: 271.8% annual returns, perpetual
 - Clean $1B target (vs confusing $1.2-2.5B range)
@@ -55,8 +56,6 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 - Better returns than any investment in history
 
 **Timeline:** 12-24 months to raise $1.0B (simplified structure accelerates fundraising)
-
----
 
 ### 2. Campaign Budget: How To Spend $1.0B
 
@@ -74,7 +73,7 @@ The one-time "activation energy" to pass the 1% Treaty, made affordable through 
 | **Operations** | $50M (5%) | Lean, remote-first, AI-augmented teams |
 | **Implementation Support** | $50M (5%) | Post-passage transition |
 
-**Key Innovations:**
+#### Key Innovations
 
 - **AI does most of the work**: 60-80% cost reduction vs traditional campaigns
 - **Viral mechanics**: $0.20/vote vs $5-15 traditional cost per voter
@@ -82,8 +81,6 @@ The one-time "activation energy" to pass the 1% Treaty, made affordable through 
 - **Result**: $1B achieves what would cost $2-5B traditionally
 
 **Timeline:** 36-60 months from first funding to treaty passage
-
----
 
 ### 3. Treasury Management: How To Manage $27.2B+ Annually
 
@@ -97,7 +94,7 @@ Once the treaty passes, $27.2B flows annually from military budgets to the DIH t
 - Verified via satellite imagery and blockchain receipts
 - Penalties for non-compliance enforced via smart contracts
 
-**Growth Path:**
+#### Growth Path
 
 - Year 1-3: 1% Treaty ($27.2B)
 - Year 4-7: 2% Treaty ($54B) - public demands expansion
@@ -106,14 +103,14 @@ Once the treaty passes, $27.2B flows annually from military budgets to the DIH t
 
 #### Expenditure Allocation
 
-**The Only Fixed Cost (10%):**
+#### The Only Fixed Cost (10%)
 
 - VICTORY bond returns: 2.7B annually (10% of treaty inflows)
 - Sacred and untouchable (or investors walk)
 - Automatically distributed via smart contracts
 - 271.8% annual returns to bondholders
 
-**Everything Else (90%): Decided by Wishocracy**
+##### Everything Else (90%): Decided by Wishocracy
 
 Instead of committees, 8 billion humans vote via pairwise comparisons:
 
@@ -129,7 +126,7 @@ Billions of micro-decisions aggregate into humanity's true priorities.
 - **Research Incentives (10-15%):** Prizes for first-to-cure, breakthrough bonuses
 - **Expansion Campaigns (variable):** Growing treasury through bigger treaties
 
-**Anti-Corruption Built In:**
+#### Anti-Corruption Built In
 
 - Can't bribe 8 billion people
 - Can't capture a system with no center
@@ -140,7 +137,7 @@ Billions of micro-decisions aggregate into humanity's true priorities.
 
 **The Revolutionary Part:** The DIH doesn't pay researchers. It subsidizes patients.
 
-**How It Works:**
+#### How It Works
 
 ```
 Base Subsidy = Total Treasury ÷ Active Trial Participants
@@ -155,29 +152,27 @@ As more patients join:
 10M participants = $2,700 per patient
 ```
 
-**Why This Creates Perfect Incentives:**
+#### Why This Creates Perfect Incentives
 
 - Patients organize to grow treasury (2% treaty = double subsidies)
 - Researchers compete to attract patients (better trials win)
 - Insurance companies save money (trials cheaper than chronic care)
 - Everyone wants more people in trials (network effects)
 
-**Compare to Grant System:**
+#### Compare to Grant System
 
 - NIH grants: 6 months of proposal writing, committees decide, universities take 40% overhead
 - DIH subsidies: Patient wants treatment, joins trial, funds follow automatically, zero overhead
-
----
 
 ## The Cash Flow Machine
 
 ### Year 1: Treaty Launch
 
-**Revenue:**
+#### Revenue
 
 - 1% Treaty: $27.2B
 
-**Expenses:**
+#### Expenses
 
 - VICTORY bond returns: 2.7B (10% of treaty inflows)
 - Patient subsidies: ~$16B (decided by Wishocracy, ~66%)
@@ -188,11 +183,11 @@ As more patients join:
 
 ### Year 4: 2% Treaty Expansion
 
-**Revenue:**
+#### Revenue
 
 - 2% Treaty: $54B (doubled)
 
-**Expenses:**
+#### Expenses
 
 - VICTORY bond returns: $5.4B (10% of treaty inflows)
 - Patient subsidies: ~$33B (more patients, more trials)
@@ -203,11 +198,11 @@ As more patients join:
 
 ### Year 8: 5% Treaty Domination
 
-**Revenue:**
+#### Revenue
 
 - 5% Treaty: $135B (exponential)
 
-**Expenses:**
+#### Expenses
 
 - VICTORY bond returns: $13.5B (10% of treaty inflows)
 - Patient subsidies: ~$85B (universal access)
@@ -218,11 +213,11 @@ As more patients join:
 
 ### Year 10+: Endgame
 
-**Revenue:**
+#### Revenue
 
 - 10%+ Treaty: $270B+ (war is obsolete)
 
-**Expenses:**
+#### Expenses
 
 - VICTORY bond returns: $27.2B+ (10% forever)
 - Death becomes optional
@@ -230,20 +225,18 @@ As more patients join:
 - Humanity explores space
 - Earth achieves paradise
 
----
-
 ## Financial Performance Metrics
 
 ### Return on Investment (The 463:1 Multiplier)
 
-**Direct Investment Returns (VICTORY Bonds):**
+#### Direct Investment Returns (VICTORY Bonds)
 
 - 271.8% annually to bondholders
 - Perpetual returns (not 10-year finite)
 - $1B investment → $2.7B/year forever
 - Better than every investment in human history
 
-**Societal Returns (Everyone Else):**
+#### Societal Returns (Everyone Else)
 
 - $463 in value created per dollar spent
 - 82x reduction in trial costs ($50.0B annual savings)
@@ -252,23 +245,21 @@ As more patients join:
 - 3X ROI on prevention vs treatment ($600B saved)
 - Knowledge compounds through open data ($2.1T avoided waste)
 
-**Total 10-Year Value Creation: $16.4T**
+##### Total 10-Year Value Creation: $16.4T
 
 That's more than China's entire GDP.
-
----
 
 ## Risk Management
 
 ### Investor Protection
 
-**Assurance Contracts:**
+#### Assurance Contracts
 
 - Funds escrowed until milestones hit
 - Automatic refund if targets missed
 - No "trust us" required
 
-**Milestone-Based Release:**
+#### Milestone-Based Release
 
 - Phase 1 (50%): Platform live, legal entities established
 - Phase 1 (50%): 50M participants OR electoral victory
@@ -277,7 +268,7 @@ That's more than China's entire GDP.
 - Phase 3 (30%): 300M users, 20+ countries
 - Phase 3 (70%): Treaty signed by 3+ G7 nations
 
-**Downside Protection:**
+#### Downside Protection
 
 - Even with partial treaty adoption ($13B), bonds return 130% annually
 - Tradable on secondary markets if exit needed
@@ -286,7 +277,7 @@ That's more than China's entire GDP.
 
 ### Operational Protection
 
-**Smart Contract Security:**
+#### Smart Contract Security
 
 - 5+ independent audits before launch
 - Multi-sig wallets (7 of 12 required)
@@ -294,7 +285,7 @@ That's more than China's entire GDP.
 - Circuit breakers (auto-pause on anomalies)
 - Insurance for smart contract bugs
 
-**Financial Controls:**
+#### Financial Controls
 
 - Public transparency dashboard (real-time)
 - Quarterly independent audits
@@ -302,15 +293,13 @@ That's more than China's entire GDP.
 - Fraud detection via AI
 - Whistleblower bounties ($10M for catching theft)
 
----
-
 ## Transparency & Accountability
 
 ### Public Dashboard (Real-Time)
 
 **URL:** WarOnDisease.org/transparency
 
-**What You See:**
+#### What You See
 
 - Total raised vs budget
 - Spending by category (live)
@@ -336,39 +325,35 @@ That's more than China's entire GDP.
 - Performance reviews against KPIs
 - Published with zero redactions
 
----
-
 ## Key Performance Indicators
 
 ### Mission KPIs (What Actually Matters)
 
-**Primary:**
+#### Primary
 
 - QALYs (Quality-Adjusted Life Years) generated
 - Cost per life saved (target: <$1,000)
 - Time from discovery to patient (target: <3 years)
 - Percentage of diseases with active trials (target: 100%)
 
-**Efficiency:**
+#### Efficiency
 
 - Cost per patient in trials (target: $500, proven by Oxford RECOVERY)
 - Administrative overhead (target: <15%, reality will be 10-20% decided by voters)
 - Treatments tested per billion allocated
 - Negative results published (target: 100%)
 
-**Access:**
+#### Access
 
 - Global population with trial access (target: 50.0%+)
 - Languages supported (target: 50+)
 - Income diversity of participants (ensuring equity)
 
-**Financial:**
+#### Financial
 
 - Treaty expansion rate (1% → 2% → 5%)
 - VICTORY bond returns delivered (target: 271.8% annually)
 - Multiplier effects (target: 463:1 societal value)
-
----
 
 ## The Compound Flywheel
 
@@ -396,8 +381,6 @@ Each success makes the next success easier:
 - Stronger economy → Bigger treaties
 - Repeat until paradise
 
----
-
 ## Related Documents
 
 ### For Investors
@@ -421,8 +404,6 @@ Each success makes the next success easier:
 
 - **[1% Treaty Peace Dividend](../appendix/peace-dividend-calculations.qmd)** - The two-tier dividend model
 - **[Economic Summary](../economics.qmd)** - TL;DR version for busy people
-
----
 
 ## Summary
 

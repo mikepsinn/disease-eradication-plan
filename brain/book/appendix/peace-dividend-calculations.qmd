@@ -19,17 +19,20 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
 
 # Import all parameters from centralized module
+
 from economic_parameters import *
 
 # Use standardized parameters instead of hardcoded values
 # All values now come from economic_parameters.py
 
 # For compatibility with chart code below, create local variables
+
 direct_military_expenditure = GLOBAL_MILITARY_SPENDING_ANNUAL_2024
 infrastructure_destruction = GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT
 human_life_losses = GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT
@@ -50,6 +53,7 @@ captured_dividend = TREATY_ANNUAL_FUNDING
 societal_dividend = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT
 
 # Print the results using standardized parameters
+
 print(f"--- 1% Peace Dividend Analysis ---")
 print(f"Total Annual Cost of War: {format_billions(total_cost_of_war)}")
 print("-" * 35)
@@ -92,13 +96,16 @@ In this analysis, we will vary two key parameters simultaneously:
 
 ```{python}
 # Define the ranges for the sensitivity analysis
+
 reduction_percentages = [0.005, 0.01, 0.015, 0.02]
 indirect_cost_multipliers = [0.75, 1.0, 1.25] # Represents -25%, baseline, +25%
 
 # Create an empty list to store results
+
 results = []
 
 # Loop through each combination of parameters
+
 for redux in reduction_percentages:
     for mult in indirect_cost_multipliers:
         
@@ -117,9 +124,11 @@ for redux in reduction_percentages:
         })
 
 # Create a pandas DataFrame for better display
+
 df = pd.DataFrame(results)
 
 # Pivot the table for a matrix-like view
+
 pivot_df = df.pivot(index="Indirect Cost Scenario", columns="Reduction %", values="Societal Dividend ($B)")
 
 print("--- Sensitivity Analysis: Societal Dividend ($ Billions) ---")

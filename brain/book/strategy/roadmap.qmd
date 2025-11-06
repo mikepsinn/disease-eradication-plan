@@ -1,7 +1,7 @@
 ---
 title: 🗺️ The Roadmap to End War and Disease
-subtitle: "How to Actually Do This (Not Just Talk About It on Reddit)"
-description: "The step-by-step guide to bootstrapping a global revolution, bribing the powerful, and hijacking humanity's budget for the forces of good."
+subtitle: How to Actually Do This (Not Just Talk About It on Reddit)
+description: The step-by-step guide to bootstrapping a global revolution, bribing the powerful, and hijacking humanity's budget for the forces of good.
 published: true
 tags:
   - roadmap
@@ -21,6 +21,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -48,18 +49,18 @@ To win, you need to fight on three fronts: moral (charity), political (lobbying)
 
 So, you build a hybrid machine.
 
--   **The Charity (501c3):** This is the "brains." It does the research and education, and it's where big foundations can make tax-deductible donations.
--   **The Lobbying Group (501c4):** This is the "sword." It takes the research from the charity and uses it to wage unlimited political warfare.
--   **The Corporation (C-Corp):** This is the "engine." It's a for-profit entity that issues the VICTORY Bonds and funds the whole operation.
--   **The Swiss Foundation:** This is the "soul." It's the parent organization that owns the corporation, ensuring its profits can only ever be used for the mission.
+- **The Charity (501c3):** This is the "brains." It does the research and education, and it's where big foundations can make tax-deductible donations.
+- **The Lobbying Group (501c4):** This is the "sword." It takes the research from the charity and uses it to wage unlimited political warfare.
+- **The Corporation (C-Corp):** This is the "engine." It's a for-profit entity that issues the VICTORY Bonds and funds the whole operation.
+- **The Swiss Foundation:** This is the "soul." It's the parent organization that owns the corporation, ensuring its profits can only ever be used for the mission.
 
-This structure lets you legally accept money from everyone—foundations, political donors, and Wall Street—and aim it all at the same target.
+This structure lets you legally accept money from everyone, foundations, political donors, and Wall Street, and aim it all at the same target.
 
 ### The Political Strategy: Co-Opt, Don't Compete
 
 You cannot outspend the military-industrial complex in a head-to-head fight. So you don't. You bribe them.
 
-The strategy is simple: make it more profitable for everyone—defense contractors, politicians, insurance companies—to support the treaty than to oppose it. You use the $1.0B from the VICTORY Bonds to offer a better deal. Their lobbyists become your lobbyists. Their political action committees become your political action committees.
+The strategy is simple: make it more profitable for everyone, defense contractors, politicians, insurance companies, to support the treaty than to oppose it. You use the $1.0B from the VICTORY Bonds to offer a better deal. Their lobbyists become your lobbyists. Their political action committees become your political action committees.
 
 You combine this financial jujitsu with the overwhelming public pressure from 280 million verified voters in the global referendum. The choice for a politician becomes simple: side with the public and get rich, or side with the status quo and get voted out.
 

@@ -23,6 +23,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -40,13 +41,13 @@ Most advocacy organizations are fighting the symptoms of a single, deeper proble
 
 You're bailing water from a sinking ship. The 1% Treaty is a plan to patch the hole. It's a systems-level intervention that makes solving problems more profitable than creating them.
 
--   **If you're an environmental group:** You can't save the planet while the world's militaries, the single largest polluters on Earth, continue to wage wars that destroy ecosystems in minutes. The 1% Treaty is the most effective climate policy ever proposed because it directly defunds the engine of destruction.
+- **If you're an environmental group:** You can't save the planet while the world's militaries, the single largest polluters on Earth, continue to wage wars that destroy ecosystems in minutes. The 1% Treaty is the most effective climate policy ever proposed because it directly defunds the engine of destruction.
 
--   **If you're an anti-poverty group:** You can't end poverty while conflict and disease create more of it than you can possibly solve. The root cause of most modern famines is war. The root cause of most poverty is the crushing economic burden of disease. The 1% Treaty tackles both.
+- **If you're an anti-poverty group:** You can't end poverty while conflict and disease create more of it than you can possibly solve. The root cause of most modern famines is war. The root cause of most poverty is the crushing economic burden of disease. The 1% Treaty tackles both.
 
--   **If you're a peace organization:** You've been making moral appeals for 70 years. It hasn't worked. Try something else. The 1% Treaty makes peace more profitable than war. It's not a moral argument; it's a financial one. And in a world run by greed, that's the only argument that matters.
+- **If you're a peace organization:** You've been making moral appeals for 70 years. It hasn't worked. Try something else. The 1% Treaty makes peace more profitable than war. It's not a moral argument; it's a financial one. And in a world run by greed, that's the only argument that matters.
 
--   **If you're a disease advocacy group:** You are currently fighting every other disease group for a tiny sliver of the NIH's budget. You are competing for crumbs. The 1% Treaty doesn't just give you a bigger slice of the pie; it bakes a new, much larger pie. It increases the total global funding for medical research by 40% and makes the process 82x more efficient.
+- **If you're a disease advocacy group:** You are currently fighting every other disease group for a tiny sliver of the NIH's budget. You are competing for crumbs. The 1% Treaty doesn't just give you a bigger slice of the pie; it bakes a new, much larger pie. It increases the total global funding for medical research by 40% and makes the process 82x more efficient.
 
 ## The Uncomfortable Question
 

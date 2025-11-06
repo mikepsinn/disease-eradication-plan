@@ -17,6 +17,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -38,7 +39,7 @@ The [1% Treaty](../solution/1-percent-treaty.qmd) initiative faces three critica
 
 ### **Compliance Solution: Domestic-Only Structure**
 
-**US Operations (Completely Segregated):**
+#### US Operations (Completely Segregated)
 
 - **Entity:** 501(c)(4) social welfare organization + affiliated Super PAC
 - **Funding:** 100% US persons only (citizens and permanent residents)
@@ -46,14 +47,14 @@ The [1% Treaty](../solution/1-percent-treaty.qmd) initiative faces three critica
 - **Banking:** Separate US-only bank accounts
 - **Compliance Officer:** Former FEC official overseeing all US operations
 
-**International Coordination (No Direct Connection):**
+#### International Coordination (No Direct Connection)
 
 - **Strategy Alignment:** Public commitment to support districts that favor 1% Treaty
 - **No Coordination:** Zero communication between US and international entities about specific campaigns
 - **Independent Research:** Both organizations independently identify priority districts
 - **Parallel Development:** Similar but separately developed messaging and strategy
 
-**Information Firewall:**
+#### Information Firewall
 
 - **Separate Legal Counsel:** Different law firms for US and international operations
 - **No Shared Staff:** Zero overlapping personnel between entities
@@ -62,14 +63,14 @@ The [1% Treaty](../solution/1-percent-treaty.qmd) initiative faces three critica
 
 ### **Enforcement of Non-Coordination**
 
-**Technical Safeguards:**
+#### Technical Safeguards
 
 - **Separate Communication Systems:** No shared Slack, email, or messaging platforms
 - **Geographic Separation:** US operations based in Washington DC, international in neutral jurisdiction
 - **Legal Monitoring:** Monthly compliance audits by independent election law firm
 - **Public Transparency:** All US funding sources and expenditures disclosed per FEC requirements
 
-**Legal Documentation:**
+#### Legal Documentation
 
 - **Operating Agreements:** Explicit non-coordination clauses in all entity documents
 - **Employment Contracts:** Staff prohibited from communicating across entities
@@ -88,7 +89,7 @@ The [1% Treaty](../solution/1-percent-treaty.qmd) initiative faces three critica
 
 Our compliance strategy is designed to achieve our goal of mass participation while navigating global securities laws, leveraging [the SEC's more innovation-friendly guidance as of August 2025](../references.qmd#sec-innovation-guidance-2025). It separates the initial, non-financial airdrop from the subsequent distribution of valuable governance tokens.
 
-**Phase 1: VOTE Points Airdrop (Pre-Treaty)**
+#### Phase 1: VOTE Points Airdrop (Pre-Treaty)
 
 This phase focuses on mass distribution of a non-security utility token.
 
@@ -98,7 +99,7 @@ This phase focuses on mass distribution of a non-security utility token.
 - **No "Investment of Money":** Points are earned through an action (voting), not purchased.
 - **Legal Rationale:** This structure is designed to fail the Howey Test. As a non-tradable token with no promised expectation of profit, it has a very strong argument for not being a security, aligning with the SEC's more favorable stance on non-financial, utility-focused airdrops.
 
-**Phase 2: VICTORY Token Conversion (Post-Treaty)**
+##### Phase 2: VICTORY Token Conversion (Post-Treaty)
 
 This phase occurs only _after_ the 1% Treaty is successfully ratified and the [DIH Treasury](../solution/dih.qmd) is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
@@ -109,7 +110,7 @@ This phase occurs only _after_ the 1% Treaty is successfully ratified and the [D
 
 The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for VICTORY bonds and tokens, conducted in full compliance with [Regulation D](../references.qmd#sec-reg-d) (for U.S. accredited investors) and [Regulation S](../references.qmd#sec-reg-s) (for non-U.S. investors). This ensures our core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
 
-**Legal Structure:**
+#### Legal Structure
 
 - **Offshore Foundation:** Singapore or Swiss foundation issuing tokens
 - **US Operations:** Separate US entity purchasing tokens on secondary market for operations
@@ -118,14 +119,14 @@ The initial "activation energy" from sophisticated investors (VCs, funds, etc.) 
 
 ### **Token Economics Compliance**
 
-**Avoid Investment Contract Characteristics:**
+#### Avoid Investment Contract Characteristics
 
 - **No Promises:** Disclaimers that tokens may lose value
 - **Utility Focus:** Primary purpose is governance and network participation
 - **Decentralized Control:** No single entity controls treasury or token value
 - **Market Independence:** Token value determined by market forces, not entity efforts
 
-**Marketing Compliance:**
+#### Marketing Compliance
 
 - **No Investment Language:** Avoid terms like "investment," "returns," "profits"
 - **Utility Emphasis:** Marketing focuses on governance and platform access
@@ -136,14 +137,14 @@ The initial "activation energy" from sophisticated investors (VCs, funds, etc.) 
 
 ### **Multi-Jurisdiction Strategy**
 
-**Jurisdiction Selection:**
+#### Jurisdiction Selection
 
 - **Treaty Operations:** Switzerland (neutral, crypto-friendly, international law expertise)
 - **Technology Development:** Estonia (e-governance expertise, EU compliance)
 - **Token Issuance:** Singapore (clear crypto regulations, international recognition)
 - **US Operations:** Delaware (established corporate law, FEC expertise available)
 
-**Legal Entity Structure:**
+#### Legal Entity Structure
 
 ```
 Swiss Foundation (Treaty Coordination)
@@ -156,21 +157,21 @@ Swiss Foundation (Treaty Coordination)
 
 ### **International Election Law Compliance**
 
-**United Kingdom:**
+#### United Kingdom
 
 - **Electoral Commission Registration:** Register as non-party campaigner
 - **Spending Limits:** Comply with controlled expenditure limits ([UK Electoral Commission Spending Limits](../references.qmd#uk-electoral-spending-limits)) [(\$500K+ requires registration)](../references.qmd#uk-electoral-registration-threshold-500k)
 - **Foreign Funding:** Permissible donations from overseas electors and UK entities
 - **Transparency:** Quarterly donation and spending reports
 
-**European Union:**
+#### European Union
 
 - **Country-Specific:** Comply with individual member state election laws
 - **GDPR Compliance:** Data protection for voter information and targeting
 - **Anti-Money Laundering:** KYC requirements for large donations
 - **Cross-Border:** Coordinate with European election monitoring bodies
 
-**Canada:**
+#### Canada
 
 - **Elections Canada:** Registration as third-party advertiser
 - **Foreign Interference:** Comply with [Bill C-76 foreign influence restrictions](../references.qmd#canada-bill-c-76)
@@ -179,14 +180,14 @@ Swiss Foundation (Treaty Coordination)
 
 ### **Coordination Without Violation**
 
-**Permissible Activities:**
+#### Permissible Activities
 
 - **Public Information Sharing:** Publishing research and position papers
 - **Strategy Conferences:** Academic conferences on global health policy
 - **Independent Development:** Each jurisdiction develops own strategy
 - **Public Commitments:** Transparent statements of support for 1% Treaty
 
-**Prohibited Activities:**
+#### Prohibited Activities
 
 - **Direct Coordination:** No communication about specific campaigns or expenditures
 - **Shared Decision-Making:** No joint control over political activities
@@ -283,7 +284,7 @@ graph TD
 
 **Primary Purpose:** Run the global referendum/survey to demonstrate 3.5% support (280M+ verified participants) and build broad public understanding through non-partisan research and education.
 
-**Permitted Activities:**
+#### Permitted Activities
 
 - Running the non-binding global referendum/survey on War and Disease
 - Publishing white papers, economic models, and strategic documents (like this book)
@@ -300,7 +301,7 @@ graph TD
 
 **Primary Purpose:** Advocate directly for 1% Treaty adoption and related policies.
 
-**Permitted Activities:**
+#### Permitted Activities
 
 - Unlimited lobbying with legislators and policymakers
 - Independent expenditure campaigns supporting aligned candidates
@@ -314,7 +315,7 @@ graph TD
 
 **Primary Purpose:** Manage VICTORY Bond sales, fund dFDA development, provide investor returns.
 
-**Permitted Activities:**
+#### Permitted Activities
 
 - Issuing securities and managing investor relations
 - Funding technology development and operational scaling
@@ -328,7 +329,7 @@ graph TD
 
 To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source, decentralized FDA platform enabling perpetual, patient-driven clinical trials.
 
-**Key Policy Objectives:**
+#### Key Policy Objectives
 
 1. **Enable Perpetual Trials:** Real-time global patient participation with automated matching and dynamic protocol adjustments
 2. **Clarify Pricing Mechanisms:** [Allow drug companies to set per-participant prices under FDA regulations (21 CFR 312.8)](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)
@@ -336,7 +337,7 @@ To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd)
 4. **Leverage Medicare/Medicaid:** Utilize existing provisions for clinical trial participation
 5. **Incentivize Innovation:** Launch \$500M X Prize for platform development
 
-**Projected Impact:**
+#### Projected Impact
 
 - Support 61+ million participants annually (\$30.6B ÷ \$500 per participant)
 - Potential for 160+ million participants with Medicare/Medicaid integration
@@ -345,7 +346,7 @@ To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd)
 
 ### Priority Regulations for Modification
 
-**High-Priority Streamlining Targets:**
+#### High-Priority Streamlining Targets
 
 1. **21 CFR Part 312 (IND Applications):** Streamlined CMC requirements, flexible preclinical data, accelerated reviews for certified platforms
 
@@ -357,7 +358,7 @@ To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd)
 
 5. **21 CFR Parts 50 & 45 CFR Part 46 (Informed Consent):** Electronic consent validation, dynamic consent for adaptive trials, simplified waivers
 
-**Revolutionary Exemptions for Certified Platforms:**
+#### Revolutionary Exemptions for Certified Platforms
 
 - **Radical Device Simplification:** Class I/II devices require only registration if evaluated via certified dFDA
 - **Platform-Based Post-Market Surveillance:** Replace traditional REMS programs with real-time platform monitoring

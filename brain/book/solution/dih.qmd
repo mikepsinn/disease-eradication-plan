@@ -20,6 +20,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -62,9 +63,9 @@ In the NIH, you get rich by writing proposals. In the DIH, you get rich by curin
 
 **The DIH Solution:** Build the system on transparent, open-source code.
 
--   **Algorithmic Governance:** All funding rules are encoded in smart contracts. Code can't take bribes.
--   **No CEO:** There's no one to corrupt. No central point of failure.
--   **Public Ledger:** Every single dollar is tracked on a public blockchain. It's a live-streamed financial colonoscopy for the entire world to see.
+- **Algorithmic Governance:** All funding rules are encoded in smart contracts. Code can't take bribes.
+- **No CEO:** There's no one to corrupt. No central point of failure.
+- **Public Ledger:** Every single dollar is tracked on a public blockchain. It's a live-streamed financial colonoscopy for the entire world to see.
 
 This isn't about trusting people to be good. It's about building a system where being bad is impossible.
 
@@ -72,10 +73,10 @@ This isn't about trusting people to be good. It's about building a system where 
 
 **The Problem:** Companies and researchers hide their failed experiments. This means scientists around the world waste billions of dollars and decades of time repeating the same mistakes.
 
-**The DIH Solution:** Make 100% open publication of all data—positive and negative—a condition of funding.
+**The DIH Solution:** Make 100% open publication of all data, positive and negative, a condition of funding.
 
--   Every trial, every result, every dataset is published for the world to see.
--   AI models continuously scan this global data commons, finding patterns and connections humans would miss.
+- Every trial, every result, every dataset is published for the world to see.
+- AI models continuously scan this global data commons, finding patterns and connections humans would miss.
 
 This simple rule instantly doubles the value of every dollar spent on research by eliminating redundant failures.
 
@@ -100,10 +101,8 @@ This isn't radical. It's how every other industry works. You pay contractors whe
 
 The NIH pays for permission to do research. The DIH pays for research that works.
 
-**Single-sentence summary:** The DIH is what you get when you pay scientists like you pay plumbers—for fixing the problem, not for explaining why it's hard.
+**Single-sentence summary:** The DIH is what you get when you pay scientists like you pay plumbers, for fixing the problem, not for explaining why it's hard.
 :::
-
----
 
 ## How the Money Flows
 
@@ -113,11 +112,9 @@ The NIH pays for permission to do research. The DIH pays for research that works
 
 This structure also allows for **Emergent Institutes**—patient communities for specific diseases (e.g., the Decentralized Cancer Institute) can pool a fraction of their resources to fund large-scale projects and prizes that a pure individual market might overlook.
 
----
-
 ## The Result: A 10-100x Improvement in QALY Production Efficiency
 
-The DIH isn't incrementally better than the NIH. Through pure mechanism design—no new technology, no better scientists—it achieves a **phase change in economic efficiency.**
+The DIH isn't incrementally better than the NIH. Through pure mechanism design, no new technology, no better scientists, it achieves a **phase change in economic efficiency.**
 
 ### Projected Performance Metrics
 
@@ -133,7 +130,7 @@ The DIH isn't incrementally better than the NIH. Through pure mechanism design�
 
 ### How the Efficiency Gains Compound
 
-These aren't independent improvements—they multiply:
+These aren't independent improvements, they multiply:
 
 1. **10x cost reduction** per QALY through elimination of overhead
 2. **2x knowledge multiplier** from mandatory publication of all results
@@ -142,7 +139,7 @@ These aren't independent improvements—they multiply:
 
 **Combined conservative estimate:** 10 × 2 × 4 × 10 = **800x improvement** in QALY production rate
 
-**What This Means in Practice:**
+#### What This Means in Practice
 
 The DIH + dFDA system, operating on the 1% Treaty budget of $27.2B annually, could produce more QALYs than the entire current global medical research output. By 2040, this could mean:
 

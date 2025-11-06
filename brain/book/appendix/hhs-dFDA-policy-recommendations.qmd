@@ -17,6 +17,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -29,8 +30,6 @@ This proposal recommends that the Department of Health and Human Services (HHS) 
 A critical component of this proposal is to **clarify the potential for drug companies to set a per-participant price** when creating trials on the dFDA Infrastructure. Under existing **FDA regulations ([21 CFR 312.8](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/section-312.8))**, companies may charge for investigational drugs to recover direct costs, including employee salaries. This means that **drug companies could legally charge the NIH a per-participant price** covering all operational expenses, such as manufacturing, distribution, and employee compensation—**without requiring pre-approval**, provided they do not exceed cost-recovery limits. This structure would enable companies to sustain clinical trial operations while maintaining compliance with regulatory standards, promoting a scalable and sustainable ecosystem for perpetual trials.
 
 Moreover, **[existing Medicare and Medicaid policies](../references.qmd#medicare-medicaid-clinical-trial-reimbursement)** already permit reimbursement for routine patient costs in qualifying clinical trials. By aligning the dFDA Infrastructure's operational structure with these statutory frameworks, **drug companies could expand access to experimental treatments**, leveraging government funding mechanisms to cover essential costs. This approach ensures that trial sponsors can sustainably conduct large-scale studies while maintaining affordability and regulatory compliance.
-
----
 
 # Key Objectives
 
@@ -55,8 +54,6 @@ Moreover, **[existing Medicare and Medicaid policies](../references.qmd#medicare
 7. **Expand Adaptive and Pragmatic Trials:** Use NIH funding and Medicare/Medicaid reimbursements to sponsor adaptive trials that can grow and generate real-world data cheaply.
 8. **Government Co-Funding and Outcome-Based Payment Models:** Use milestone-based payments and alternative payment models through CMMI to get private companies involved.
 
----
-
 # HHS Budget Context and Reallocation Potential
 
 - **Total HHS Budget (FY 2025):** $1.843 trillion ([HHS Budget Overview](https://www.hhs.gov/sites/default/files/fy-2025-budget-in-brief.pdf)).
@@ -65,20 +62,16 @@ Moreover, **[existing Medicare and Medicaid policies](../references.qmd#medicare
 
 Given the size of the Medicare and Medicaid budgets and existing statutory permissions, **redirecting even a fraction of these funds to dFDA trials could enable participation for tens of millions of patients** without legislative changes. Furthermore, **NIH reimbursements to drug companies for cost-recovery-based per-participant pricing** would align with **FDA regulations**, ensuring compliance and operational sustainability.
 
----
-
 # Potential Participant Capacity with Proposed Funding
 
 Given the **$30.6 billion** annual allocation for perpetual and adaptive trial execution and referencing the **Oxford RECOVERY Trial's per-patient cost of \~$500** ([RECOVERY Trial Cost](https://sph.nus.edu.sg/wp-content/uploads/2022/09/Meeting-Summary-RECOVERY-Trial.pdf)), the proposed funding could support:
 
 - **Over 61 million participants annually** (**$30.6B ÷ $500 per participant**).
 
-**Medicare/Medicaid Integration Potential:**
+## Medicare/Medicaid Integration Potential
 
 - Existing policies allow for Medicare and Medicaid funds to cover routine patient costs in clinical trials. **Expanding this coverage to dFDA trials could support an additional 100+ million participants annually**, given the combined scale of these programs.
 - **Per-participant pricing by trial sponsors**, structured for cost recovery and compliant with [**21 CFR 312.8**](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/subpart-A/section-312.8), could further enhance trial scalability without the need for pre-approval.
-
----
 
 # FDA-X Prize Design
 
@@ -95,8 +88,6 @@ Given the **$30.6 billion** annual allocation for perpetual and adaptive trial e
   - Automated insurance integration and risk-sharing models.
   - Real-time safety and efficacy monitoring using AI.
   - Compatibility with global regulatory standards.
-
----
 
 # Projected Impact
 
@@ -151,8 +142,6 @@ Here's a list of laws, executive actions, and precedents showing long-standing s
 
     - _Precedent:_ the Department of Government Efficiency highlights an executive focus on streamlining operations, reducing waste, and embracing digital transformation in regulatory agencies such as the FDA.
 
----
-
 ## **1. Why Previous Initiatives Failed**
 
 ### **a. [Sentinel Initiative](../references.qmd#fda-sentinel-initiative): Limited Transparency and Bureaucratic Constraints**
@@ -173,8 +162,6 @@ Here's a list of laws, executive actions, and precedents showing long-standing s
 - **No Robust Reward Mechanisms:** Without mechanisms like token-based rewards or direct research funding incentives, participation remained minimal.
 - **Non-Scalable Architecture:** Its limited interoperability with decentralized health data networks reduced its capacity to scale alongside personalized and precision medicine initiatives.
 
----
-
 ### **2. How an Open-Source, X Prize Model Can Succeed Where Others Failed**
 
 #### **a. Open-Source Infrastructure: Transparency, Flexibility, and Global Collaboration**
@@ -193,8 +180,6 @@ Here's a list of laws, executive actions, and precedents showing long-standing s
 
 - **AI for Adaptive Trials:** Machine learning models can personalize patient pathways, optimize trial endpoints, and monitor safety in real-time, radically shortening timelines from discovery to deployment.
 - **Blockchain for Trust and Transparency:** Immutable records of trial data, drug provenance, and patient consent build trust and eliminate fraud risks, ensuring regulatory compliance without manual oversight.
-
----
 
 # Sources
 

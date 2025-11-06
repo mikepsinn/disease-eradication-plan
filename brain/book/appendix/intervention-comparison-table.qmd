@@ -10,6 +10,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -39,7 +40,7 @@ _Note: The bar represents the mid-point of the uncertainty range, and the error 
 | Polypill for Primary Prevention (High-Risk) |                                                                                  [Varies / Cost-Saving](../references.qmd#polypill-prevention-qaly)                                                                                   |                 [up to £18,811 per QALY](../references.qmd#polypill-prevention-qaly)                  |                           [50-200](../references.qmd#polypill-prevention-qaly)                           | [Polypill](../references.qmd#polypill-prevention-qaly)                                                   |
 | Generic Drug Substitution                   |                                                                                   [Highly Cost-Saving](../references.qmd#generic-drug-substitution-savings)                                                                                    |                                        [Dominant (cost-saving)](../references.qmd#generic-drug-substitution-savings)                                        |                                 [100–1,000](../references.qmd#generic-drug-substitution-savings)                                 | [Generic drugs](../references.qmd#generic-drug-substitution-savings)                                     |
 
-**Key:**
+### Key
 
 - **ROI**: Return on investment; dollars saved or value created per $1 spent.
 - **Cost per QALY Gained (ICER)**: Lower is better; "Dominant" means saves money and improves health. Values may be in USD ($) or GBP (£).

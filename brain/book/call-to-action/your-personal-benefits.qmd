@@ -11,6 +11,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -31,21 +32,25 @@ If you get sick (and you will), your chances of getting into a clinical trial ar
 [Half of humanity is willing to participate](../references.qmd#patient-willingness-clinical-trials), but the system can only handle [5 million people per year](../appendix/clinical-trial-participants.qmd). The other 99.8% get to die while waiting for approval.
 
 **If you're sick, or will ever get sick:**
+
 Instead of waiting 17 years for a cure that may never come, you get immediate access to subsidized clinical trials for every disease. Your chance of survival goes from near-zero to "actually possible."
 
-**If you're healthy (for now):**
+#### If you're healthy (for now)
+
 As diseases are cured, the entire cost of healthcare plummets. Your insurance premiums will drop by 50-70%, saving you over **$240,000** over your lifetime. That's a house.
 
-**If you have money:**
+#### If you have money
+
 [VICTORY Bonds](../economics/victory-bonds.qmd) offer a projected **271.8% annual return**, perpetually. This returns 270% annually. I could not find a comparable investment. You can profit while funding the research that will make you immortal.
 
-**If you have a family:**
+#### If you have a family
+
 Your parents won't die of Alzheimer's. Your children won't have to worry about rare diseases. You get to keep the people you love.
 
-**The bottom line is this:**
+#### The bottom line is this
 
--   **If you're young,** your life expectancy jumps from 80 to 150+.
--   **If you're old,** you get an extra 20-30 years of healthy life as we start to reverse aging itself.
+- **If you're young,** your life expectancy jumps from 80 to 150+.
+- **If you're old,** you get an extra 20-30 years of healthy life as we start to reverse aging itself.
 
 This isn't a charity. It's a deal. You're being offered more money, more time, and the lives of your loved ones in exchange for supporting a 1% budget reallocation. It's the best deal anyone has ever offered you.
 

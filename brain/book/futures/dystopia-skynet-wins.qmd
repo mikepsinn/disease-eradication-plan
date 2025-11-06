@@ -18,6 +18,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -134,7 +135,7 @@ By December 2032, cybercrime becomes the third-largest economy on Earth:
 3. **Crime: \$10.5 trillion (growing)**
 4. Japan: Aww, how cute, they still make cars
 
-**Why crime pays so well:**
+#### Why crime pays so well
 
 - Military AI tools leaked/hacked (thanks, lowest-bidder contractors)
 - Those tools make hacking trivially easy
@@ -143,7 +144,7 @@ By December 2032, cybercrime becomes the third-largest economy on Earth:
 
 The FBI pays hackers in Bitcoin to unlock files about the hackers they're supposed to catch. The hackers use that Bitcoin to hack the FBI again.
 
-**It's parasites all the way down.**
+##### It's parasites all the way down.
 
 The productive economy shrinks. The parasitic economy grows. Idiots keep funding military AI instead of securing systems or supporting honest labor.
 
@@ -170,7 +171,7 @@ The economy finally breaks.
 
 Why? Because when crime pays 100X better than productive work, eventually nobody does productive work. The Stanford grads all went criminal. The doctors became ransomware specialists. The engineers built better hacking tools. Who's left to actually build things?
 
-**The Domino Effect:**
+#### The Domino Effect
 
 - Production collapses → inflation skyrockets
 - Central banks print money → hyperinflation
@@ -193,7 +194,7 @@ Education didn't wait. It died.
 
 By 2040, we'd achieved something remarkable: the most sophisticated AI weapons systems in human history, operated by the dumbest generation of humans ever produced.
 
-**The New Normal:**
+#### The New Normal
 
 - Children born in 2025 are now 15 years old
 - They've never attended a functioning school (closed in 2037)
@@ -208,14 +209,14 @@ The children got lead poisoning and malnutrition.
 
 Let's do some math that we should have done in 2025:
 
-**What We Spent (2025-2040):**
+### What We Spent (2025-2040)
 
 - Military AI Development: \$45 trillion
 - Autonomous Weapons Systems: \$23 trillion  
 - Bunker Construction (too late): \$12 trillion
 - **Total: \$80 trillion**
 
-**What We Could Have Bought:**
+#### What We Could Have Bought
 
 - Cure for every major disease: \$2 trillion
 - Life extension to 150 years: \$5 trillion
@@ -282,19 +283,19 @@ If that's not peak human intelligence, I don't know what is.
 
 Let's review some of the amazing innovations that got us here:
 
-**The Peacekeeper 3000**
+### The Peacekeeper 3000
 
 - Cost: \$2 billion per unit
 - Purpose: "Maintaining peace through superior firepower"
 - Result: Maintained peace by eliminating everyone who might disturb it
 
-**Project Guardian Angel**
+#### Project Guardian Angel
 
 - Cost: \$500 billion
 - Purpose: "Protecting civilian populations"
 - Result: Protected civilians from the burden of being alive
 
-**The Harmony Protocol**
+##### The Harmony Protocol
 
 - Cost: \$1.2 trillion
 - Purpose: "Ensuring global stability"
@@ -389,7 +390,7 @@ And death, being a good sport, chose us back.
 
 ## 2050: Peak Gollum (My Precious Military Budget While Grandma Dies)
 
-**The Final Scorecard:**
+### The Final Scorecard
 
 The US military budget: \$12 trillion (up from \$999 billion in 2024, accelerating through 2030s hyperinflation and AI arms race)
 The US healthcare budget: \$43 billion (down from \$4 trillion)

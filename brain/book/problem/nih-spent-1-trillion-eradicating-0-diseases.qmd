@@ -1,6 +1,6 @@
 ---
 title: 🔥 NIH's $1 Trillion Failure
-description: 'How the NIH spent over $1 trillion to eradicate exactly zero diseases.'
+description: How the NIH spent over $1 trillion to eradicate exactly zero diseases.
 published: true
 tags:
   - problem
@@ -9,7 +9,7 @@ tags:
   - research-funding
   - bureaucracy
   - failure
-lastReviewed: 2025-10-16T00:00:00.000Z
+lastReviewed: '2025-10-16T00:00:00.000Z'
 lastFactCheckHash: 1281da55496d842519310f962163999ff08e576ddeb6340ef1f44bdce524e008
 lastStructureCheckHash: d58510e9ac20bfb367216ad2071e074197a527ff466b254b33bb19049001d0a1
 lastLatexCheckHash: ce03d7336048e392db7ef82d8b7de5355e0d45f48f515d972ff9f2965d3bf110
@@ -21,6 +21,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -57,7 +58,7 @@ Here's what the NIH won't tell you:
 - **Clinical trials available in St. Louis:** Zero (for years)
 - **Trials on clinicaltrials.gov for your grandma:** Finally, one appeared!
 
-**That one trial:**
+### That one trial
 
 - **Cost:** $600,000
 - **Purpose:** A Google form survey asking if people would be *interested* in participating in dementia trials
@@ -85,11 +86,11 @@ This isn't a story about a lack of treatments. It's about a system that chooses 
 
 ## The Basic Research Black Hole
 
-The NIH spend the vast majority of it on "basic research"—understanding disease in mice—while a tiny fraction goes to testing treatments in actual humans.
+The NIH spend the vast majority of it on "basic research"—understanding disease in mice, while a tiny fraction goes to testing treatments in actual humans.
 
 {{< include ../../figures/nih-budget-allocation-pie-chart.qmd >}}
 
-**The Allocation Disaster:**
+### The Allocation Disaster
 
 - **Basic research (mice and molecules):** [55% of budget](../references.qmd#nih-budget-allocation-breakdown)
 - **Clinical trials (all types):** [22% of budget](../references.qmd#nih-budget-allocation-breakdown)
@@ -105,7 +106,7 @@ The result is a system that produces papers, not cures:
 
 We know everything about how cancer works in mice. We've mapped every pathway, gene, and protein. We have Nobel Prizes for understanding mechanisms.
 
-**What we don't have: Cures.**
+#### What we don't have: Cures.
 
 Because understanding disease and curing disease are completely different things. The NIH chose understanding. Patients needed cures.
 
@@ -249,7 +250,7 @@ The NIH is like that group member who shows up after the project is done to add 
 
 Let's do the real math on what we could have done with that money:
 
-**Current NIH System:**
+### Current NIH System
 
 - Annual budget: [\$51 billion](../references.qmd#nih-budget-fy2025)
 - Cost per trial participant: [\$41,000](../references.qmd#trial-cost-41k)
@@ -266,7 +267,7 @@ We're literally choosing to help 1 person badly instead of helping 82 people wel
 
 This 82x cost disparity is the core inefficiency we can solve. (See [The 82x Solution](../solution/dfda.qmd#the-82x-solution-decentralized-trials) for how.)
 
-**The \$2 Trillion Healthcare Burden:**
+#### The \$2 Trillion Healthcare Burden
 
 Not only are we inefficient, we're drowning:
 
@@ -303,14 +304,14 @@ Here's the most damning statistic of all:
 
 That's essentially random. You'd get better allocation by throwing darts at a list of diseases.
 
-**What patients want:**
+### What patients want
 
 - Treatments that work
 - Access to experimental therapies
 - Trials they can actually join
 - Cures for their specific disease
 
-**What NIH funds:**
+#### What NIH funds
 
 - Understanding molecular mechanisms
 - Publishing papers in prestigious journals

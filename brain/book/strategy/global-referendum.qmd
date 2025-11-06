@@ -22,6 +22,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -41,11 +42,9 @@ They cannot ignore 280 million cryptographically-verified humans saying "do this
 
 Here's how to build that list.
 
----
-
 ## On What We're Actually Trying to Do (The Boring But Necessary Part)
 
-**The Goal:**
+### The Goal
 
 Build a privacy-preserving, globally verifiable referendum that shows public support for the [1% Treaty](../solution/1-percent-treaty.qmd) and [DIH](../solution/dih.qmd).
 
@@ -66,13 +65,11 @@ That last number isn't arbitrary. It's based on historical data showing that onc
 
 The trick is doing all of these simultaneously, which is harder than it sounds.
 
----
-
 ## System Architecture & Implementation
 
 ### Voting Protocol
 
-**End-to-End Verifiable System:**
+#### End-to-End Verifiable System
 
 - Use an end-to-end verifiable scheme ([Helios](../references.qmd#helios-voting) or similar) with individual ballot verification and public bulletin board
 - **Individual Ballot Verification**: Each voter receives cryptographic receipt
@@ -82,28 +79,26 @@ The trick is doing all of these simultaneously, which is harder than it sounds.
 
 ### Technical Infrastructure
 
-**Frontend (User Interface):**
+#### Frontend (User Interface)
 
 - **Progressive Enhancement**: Basic verification → enhanced verification → social verification
 - **Multi-Language Support**: 40+ languages with cultural adaptation
 - **Accessibility Compliance**: WCAG 2.1 AA compliance for disability access
 - **Mobile-First Design**: Optimized for smartphone access globally
 
-**Backend (Processing):**
+#### Backend (Processing)
 
 - **Microservices Architecture**: Separate services for each verification layer
 - **API Rate Limiting**: Prevent automated abuse of verification endpoints
 - **Load Balancing**: Global distribution for 280M+ participant capacity
 - **Redundancy Systems**: Multi-region deployment with failover capabilities
 
-**Data Storage:**
+#### Data Storage
 
 - **Encrypted Databases**: AES-256 encryption for all personal data
 - **Geographic Distribution**: Data residency compliance with local regulations
 - **Retention Policies**: Automatic deletion of unnecessary personal data
 - **Backup Systems**: Secure, encrypted backups with geographic distribution
-
----
 
 ## On Stopping People from Cheating (The Hard Part)
 
@@ -169,7 +164,7 @@ This is where AI comes in. Not the "I'm going to become sentient and kill you" k
 - **Network Analysis**: Map connections between accounts. Real people have friends. Bot farms are all friends with each other. Awkward.
 - **Geographic Clustering**: Real participation spreads naturally. Bot farms cluster in cheap data centers in Romania.
 
-**Real-Time "You Shall Not Pass" Monitoring:**
+#### Real-Time "You Shall Not Pass" Monitoring
 
 - **Duplicate Detection**: Cross-check everything. Same email pattern, same phone prefix, same typos? Probably same person.
 - **Bot Behavior**: Machine learning trained on known bot patterns. Bots are predictable. Humans are chaotic. This helps.
@@ -194,13 +189,11 @@ Different regions have different privacy laws, all of which carry massive fines 
 - **Biometric Privacy Laws**: [Illinois BIPA](../references.qmd#illinois-bipa) compliance (they take biometric privacy seriously)
 - **Children's Privacy**: [COPPA compliance](../references.qmd#coppa-compliance) for under-13s (don't collect kids' data, this should be obvious)
 
----
-
 ## Viral Marketing & Growth Strategy
 
 ### Wearable Marketing
 
-**QR Code T-Shirts:**
+#### QR Code T-Shirts
 
 - Custom printing with unique QR codes for each referrer
 - Bulk orders to reduce per-unit costs ($15-25 per shirt)
@@ -208,7 +201,7 @@ Different regions have different privacy laws, all of which carry massive fines 
 - Catchy slogans: "I'm Making Medical History" or "Ask Me About the Cure"
 - **ROI**: 10-50+ referrals per shirt in high-traffic areas
 
-**Other Wearable Items:**
+#### Other Wearable Items
 
 - **Stickers**: High-visibility, low-cost option for laptops, water bottles
 - **Hats/Caps**: Branded headwear with referral links
@@ -216,21 +209,21 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ### Digital Marketing
 
-**Social Media Challenges:**
+#### Social Media Challenges
 
 - "Cure Challenge": Share your health story + referral link
 - "Referral Race": Compete for weekly leaderboard positions
 - "Impact Chain": Show how your referrals create a chain reaction
 - **Implementation**: Hashtag campaigns, influencer participation, prize incentives
 
-**Meme Campaigns:**
+#### Meme Campaigns
 
 - Create shareable content that spreads organically
 - **Approach**: Humor + health + referral incentives
 - **Distribution**: Reddit, Twitter, TikTok, Instagram
 - **Tracking**: Meme spread analytics, referral attribution
 
-**Influencer Partnerships:**
+#### Influencer Partnerships
 
 - **Micro-influencers**: Health advocates, patient influencers, medical professionals
 - **Compensation**: Revenue sharing from their referral earnings
@@ -238,19 +231,19 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ### Community Building
 
-**Local Meetups:**
+#### Local Meetups
 
 - In-person gatherings to build community and drive referrals
 - **Format**: Health talks, networking, referral training
 - **Incentives**: Free food, merchandise, networking opportunities
 
-**University Campus Programs:**
+#### University Campus Programs
 
 - **Target**: Students, faculty, health science departments
 - **Approach**: Educational presentations, research partnerships, referral competitions
 - **Implementation**: Student ambassadors, campus events, academic partnerships
 
-**Disease-Specific Forums:**
+#### Disease-Specific Forums
 
 - Engage existing communities where people discuss health
 - **Platforms**: Reddit, Facebook groups, specialized health forums
@@ -258,7 +251,7 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ### Cost Analysis & Optimization
 
-**Per-Tactic Cost Breakdown:**
+#### Per-Tactic Cost Breakdown
 
 | Tactic                  | Initial Cost    | Per-Referral Cost | Viral Coefficient | Notes                                   |
 | ----------------------- | --------------- | ----------------- | ----------------- | --------------------------------------- |
@@ -267,32 +260,30 @@ Different regions have different privacy laws, all of which carry massive fines 
 | Local Meetups           | $200-1000/event | $0.50-1.00        | 0.5-1.0           | Community building, lower viral spread  |
 | Influencer Partnerships | $100-1000       | $0.20-0.60        | 1.0-2.0           | Leverages existing audiences            |
 
-**ROI Optimization:**
+#### ROI Optimization
 
 1. **A/B Testing**: Test different messaging, designs, and incentives
 2. **Geographic Targeting**: Focus on areas with high engagement potential
 3. **Seasonal Campaigns**: Align with health awareness months, flu season
 4. **Cross-Promotion**: Combine multiple tactics so they reinforce each other
 
----
-
 ## Integration & Auditing Framework
 
 ### Integrity and Auditing
 
-**Cryptographic Receipts:**
+#### Cryptographic Receipts
 
 - Each voter receives a tracking code to verify inclusion
 - Public audit capabilities for all submitted ballots
 - Zero-knowledge proofs for privacy-preserving verification
 
-**Public Audit System:**
+#### Public Audit System
 
 - Publish anonymized ballots, ZK proofs or mixnet transcripts
 - Open-source code with commit hashes for transparency
 - Independent observer program with NGO and academic participation
 
-**Observer Program:**
+#### Observer Program
 
 - NGO and academic observers with read-only monitors
 - Real-time fraud detection alerts and reporting
@@ -300,13 +291,13 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ### Incentives and Referrals
 
-**Reward Structure:**
+#### Reward Structure
 
 - Funded via [VICTORY bonds](../economics/victory-bonds.qmd) with strict anti-fraud caps
 - Per-capita limits to prevent gaming
 - Public ledger of reward disbursements for transparency
 
-**Education-First Approach:**
+#### Education-First Approach
 
 - Reward structured learning paths before voting
 - Reduce low-information participation through education requirements
@@ -314,19 +305,17 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ### Legal Positioning
 
-**Consultation Framing:**
+#### Consultation Framing
 
 - Non-binding global consultation to demonstrate consent
 - Country-specific bridges to official mechanisms where feasible
 - Constitutional law scholar review for legitimacy
 
-**Data Protection Compliance:**
+#### Data Protection Compliance
 
 - GDPR/CCPA alignment with minimal data retention
 - Published Data Protection Impact Assessments (DPIAs)
 - Cross-border transfer compliance with international standards
-
----
 
 ## Implementation Roadmap
 
@@ -357,8 +346,6 @@ Different regions have different privacy laws, all of which carry massive fines 
 - Scale successful strategies globally
 - Prepare for treaty negotiation phase
 
----
-
 ## Success Metrics & Monitoring
 
 ### Primary Metrics
@@ -388,23 +375,21 @@ Different regions have different privacy laws, all of which carry massive fines 
 - **Community Engagement**: Active participants, content creation
 - **Policymaker Recognition**: Adoption of results by government officials
 
----
-
 ## On Putting It All Together
 
-**What We're Building:**
+### What We're Building
 
 A global referendum that combines cutting-edge verification technology with viral marketing to achieve the 3.5% tipping point.
 
 Translation: We're getting 280 million humans to cryptographically prove they support the treaty, which creates political pressure so intense that ignoring it becomes career suicide for politicians.
 
-**The Innovation Part:**
+#### The Innovation Part
 
 This isn't just a referendum. It's creating a new standard for global digital democracy that proves you can secure mass participation without building a surveillance state or trusting any central authority.
 
 It's democracy, but with math instead of hope.
 
-**The Money Part:**
+#### The Money Part
 
 $200M for the campaign, as allocated in the [VICTORY Bonds Use of Funds](../economics/victory-bonds.qmd).
 
@@ -412,7 +397,7 @@ Target cost: <$0.75 per verified participant to hit the 280M+ goal.
 
 That's cheaper than acquiring a customer for literally any consumer product, and the product is "not dying from preventable diseases."
 
-**What Success Looks Like:**
+#### What Success Looks Like
 
 280M+ verified global participants creating a political mandate so large that politicians literally cannot ignore it without losing elections.
 

@@ -19,6 +19,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -180,7 +181,7 @@ Death still exists - we're not immortal. But now you die at 150 after a great li
 
 Let's talk money, because even in utopia, economics matters. This wasn't based on utopian hope but a pragmatic understanding of incentives. As the DIH's budget grew from $27.2B to over a trillion, the world's economic gravity shifted. The best scientists and biggest investors saw far greater returns in curing Alzheimer's than in building a better fighter jet. Peace became, for the first time in history, ridiculously profitable.
 
-**Annual Global Redirected Funds (2050):**
+### Annual Global Redirected Funds (2050)
 
 - From military budgets: $1.35 trillion
 - Economic growth from healthy population: $3.5 trillion
@@ -188,7 +189,7 @@ Let's talk money, because even in utopia, economics matters. This wasn't based o
 - Productivity gains from longevity: $4.1 trillion
 - **Total Annual Peace Dividend: $11.75 trillion**
 
-This is the same economic logic from [the Economic Case chapter](../economics.qmd)—which showed $1.2T annual benefits from the initial 1% treaty—but scaled up to a 50% redirection over 25 years. Same principles, bigger numbers.
+This is the same economic logic from [the Economic Case chapter](../economics.qmd)—which showed $1.2T annual benefits from the initial 1% treaty, but scaled up to a 50% redirection over 25 years. Same principles, bigger numbers.
 
 That's $1,450 per human per year in pure value creation. Not redistribution - actual new wealth from not being sick or dead.
 
@@ -234,7 +235,7 @@ These are what philosophers call "luxury problems." We'll take them over cancer 
 
 The genius of the plan was its simple, incremental nature, as detailed in [the 1% Treaty chapter](../solution/1-percent-treaty.qmd#the-ratchet-strategy). Every few years, another global referendum nudged the redirection percentage up. Each successful increase funded more cures, created more value for bondholders, and built a bigger coalition demanding the next increase.
 
-The ratchet clicked forward steadily: 1% in 2026, then 2%, 3%, 5%, 10%, 25%, until by 2050 we'd reached a 50% covenant—redirecting $1.35 trillion annually from weapons to cures.
+The ratchet clicked forward steadily: 1% in 2026, then 2%, 3%, 5%, 10%, 25%, until by 2050 we'd reached a 50% covenant, redirecting $1.35 trillion annually from weapons to cures.
 
 Military spending is now mostly space defense against asteroids and alien invasion preparedness. (We figure if aliens show up, we should look healthy and prosperous, not armed and paranoid.)
 

@@ -20,6 +20,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -31,13 +32,13 @@ from economic_parameters import *
 
 The 1% Treaty is a legally-binding global accord with a single provision: every signatory nation redirects 1% of its annual military budget to the [Decentralized Institutes of Health (DIH)](dih.qmd).
 
-**The Math:**
+### The Math
 
 1.  **The Problem:** The world spends [$2.7 trillion a year](../references.qmd#global-military-spending-2-44t) on military forces to maintain a delicate balance of power.
 2.  **The Hack:** If every nation reduces military spending by 1% *at the same time*, the balance of power remains identical. No country becomes more vulnerable.
 3.  **The Prize:** That 1%—a **$27.2B-a-year river of cash**—is redirected to cure all human diseases.
 
-**How It Works:**
+#### How It Works
 
 1.  **Funding:** Creates $27.2B/year revenue stream for the DIH
 2.  **Execution:** DIH subsidizes patient participation in the [dFDA](dfda.qmd)—clinical trials that are **[80x cheaper](../references.qmd#recovery-trial-82x-cost-reduction)** than current model
@@ -46,8 +47,6 @@ The 1% Treaty is a legally-binding global accord with a single provision: every 
 
 **It's not a sacrifice, it's a trade:** Give up 1% of our ability to kill each other in exchange for a system that can save everyone.
 
----
-
 ## The Heist: How to Steal $27 Billion a Year (Legally)
 
 This is how we steal $27.2B a year from the military-industrial complex and give it to dying people.
@@ -55,8 +54,6 @@ This is how we steal $27.2B a year from the military-industrial complex and give
 ![Global military spending by region showing the $2.7 trillion we spend annually on weapons instead of cures](../../../assets/global-military-spending-chart.png)
 
 Nobody will even notice.
-
----
 
 ## The Beautiful Mathematics of Mutual Stupidity Reduction
 
@@ -87,8 +84,6 @@ This is so logical it hurts. Which is why it's never been tried. And here's the 
 
 ![Savings from 1% less war: what we gain](../../../assets/savings-from-1-percent-less-war-illustration.jpg)
 
----
-
 ## The Blueprint for a Saner World
 
 Treaties are magic pieces of paper that countries sign when they want to pretend they'll behave.
@@ -97,11 +92,11 @@ Sometimes they work (we haven't had World War III yet). Sometimes they don't (we
 
 ### The 1% Treaty: Technical Specifications for Global Survival
 
-**Article 1: The Promise**
+#### Article 1: The Promise
 
 "We, the undersigned nations, being of sound mind and tired of dying, hereby agree to redirect 1% of our annual military expenditure to not dying instead."
 
-**Article 2: The Money Part**
+##### Article 2: The Money Part
 
 Every signatory nation contributes exactly 1% of their military budget to the Decentralized Institutes of Health Treasury (working title).
 
@@ -116,19 +111,17 @@ Every signatory nation contributes exactly 1% of their military budget to the De
 
 {{< include ../../figures/one-percent-treaty-top-country-contributions-column-chart.qmd >}}
 
-**Article 3: The Enforcement Mechanism**
+###### Article 3: The Enforcement Mechanism
 
 If you don't pay, everyone else gets to call you names at the UN. Also, your citizens find out you chose bombs over their grandmother's cancer treatment. Good luck with that election.
 
-**Article 4: The Escape Clause**
+###### Article 4: The Escape Clause
 
 Any nation can leave with 1 year notice. During that year, they have to explain to their citizens why they're choosing death over life. Also, all other nations get to reduce their contributions proportionally, maintaining the balance of terror.
 
 **Article 5: The "What If Someone Cheats" Clause**
 
 Real-time satellite monitoring of military spending. We can see your secret underground bunkers from space, Kevin. We know about the submarines. Pay up.
-
----
 
 ## Why This Is Actually About National Security (No, Really)
 
@@ -155,8 +148,6 @@ Here's what actually threatens nations in 2025:
 The 1% Treaty addresses the real threats while maintaining our ability to deal with the imaginary ones.
 
 It's security theater, but with an actual purpose.
-
----
 
 ## The Rebranding Campaign: From "Weakness" to "Strategic Genius"
 
@@ -189,8 +180,6 @@ So we don't frame this as "reducing military spending." We frame it as:
 **For Everyone**:
 "Your mom has cancer. This might cure it. Sign here."
 
----
-
 ## The Implementation Timeline (Or: How to Boil Humanity Slowly)
 
 ### Phase 1: The Whisper Campaign (Months 1-6)
@@ -219,8 +208,6 @@ Countries that sign early get "Founding Member" status, which means nothing but 
 
 Every politician claims credit. Nobody remembers who opposed it. History books call it "inevitable." We all pretend we're not surprised it worked.
 
----
-
 ## The Money Flow: Where $27.2B Actually Goes
 
 Once the treaty is signed and the money starts flowing, here's what happens:
@@ -247,26 +234,27 @@ Governance is handled by Wishocracy, a system of direct digital democracy detail
 
 Right now, [only 5 million people participate in trials annually](../appendix/clinical-trial-participants.qmd) out of 2.4 billion with chronic disease. The 1% Treaty changes this:
 
-**Current System:**
+#### Current System
+
 - [Pivotal trials: $41,000 per patient](../references.qmd#trial-cost-41k)
 - Only 5M participants per year globally
 - 99.8% of willing participants turned away
 - 17 years to approve one drug
 
-**With 1% Treaty + Decentralized FDA:**
+#### With 1% Treaty + Decentralized FDA
+
 - $110B total funding ($83B existing + $27B from treaty)
 - [Pragmatic trials: $500 per patient](../references.qmd#recovery-cost-500) ([82x cheaper](../references.qmd#recovery-trial-82x-cost-reduction))
 - 220M participants per year (44x acceleration)
 - Still only using 18% of available willing participants
 
-**Year One Outcomes:**
+#### Year One Outcomes
+
 - 50,000 new treatments tested
 - 1 million patients enrolled in trials
 - 100+ diseases with new treatment options
 - 0 new nuclear weapons built with that money
 - ∞ political careers saved by claiming credit
-
----
 
 ## The Incentive Structure
 
@@ -284,9 +272,7 @@ Lockheed Martin Presents: The F-35 Cancer Killer™
 Boeing Proud Sponsor of: Not Dying of Alzheimer's
 Raytheon Technologies: Now With 1% Less Death
 
-They keep their contracts. They keep their profits. They just point 1% of their death machines at actual death. This isn't just about saving lives; it's about creating a substantial growth industry—the business of not-dying—and letting everyone get rich in the process.
-
----
+They keep their contracts. They keep their profits. They just point 1% of their death machines at actual death. This isn't just about saving lives; it's about creating a substantial growth industry, the business of not-dying, and letting everyone get rich in the process.
 
 ## What Happens If This Actually Works
 
@@ -310,35 +296,33 @@ Nations will find that true power and global influence come not from their capac
 
 ### A Multi-Generational Timeline
 
-**Year 1: The Awkward Beginning**
+#### Year 1: The Awkward Beginning
 
 - Politicians argue about who thought of it first
 - Military contractors rebrand as "health defense" companies
 - First cures emerge, everyone pretends they're not surprised
 - Global military spending: Still $2.69 trillion (nobody notices the difference)
 
-**Year 5: The New Normal**
+##### Year 5: The New Normal
 
 - Cancer survival rates double
 - Alzheimer's has three new promising treatments
 - The "Redirect" is now at 3%. Military budgets naturally decline because healthy, happy people are less interested in starting wars.
 - Some country tries to quit, gets voted out of office by angry grandmothers.
 
-**Year 10: The History Books**
+###### Year 10: The History Books
 
 - "The 1% Treaty: How Humanity Chose Life Over Death"
 - Military spending down to 90% of 2025 levels. The redirect is at 10%.
 - Former weapons manufacturers are now the world's leading producers of artificial organs and gene therapies.
 - Nobel Peace Prize goes to whoever takes credit (probably Switzerland).
 
-**Year 50: The View from Tomorrow**
+###### Year 50: The View from Tomorrow
 
 - Death is mostly optional. War is mostly a video game.
 - The redirect is at 50.0%. The military-industrial complex now builds starships and planetary defense systems against asteroids.
 - Children learn about cancer the way we learn about polio.
 - Someone writes a book called, "Remember When Humans Used to Kill Each Other? What Idiots."
-
----
 
 ## The Counter-Arguments (And Why They're Stupid)
 
@@ -366,8 +350,6 @@ We put humans on the moon with slide rules. We can figure out how to move money 
 
 There's always a war. We'll still have 99% of our capacity to wage it. Plus, healthy populations fight better. Ask the Spartans. (Actually don't, they're all dead. But you get the point.)
 
----
-
 ## Summary
 
 The 1% Treaty is a piece of paper that says "Let's spend 1% less on killing and 1% more on not dying."
@@ -379,8 +361,6 @@ It doesn't end war. It doesn't destroy the military. It doesn't create world pea
 It just moves the *first* 1% of our murder budget to our survival budget.
 
 If we can't agree on that - if we can't agree that spending 1 penny less on death and 1 penny more on life is a good idea - then we deserve whatever's coming.
-
----
 
 ## Addendum: The Actual Treaty Text (First Draft)
 

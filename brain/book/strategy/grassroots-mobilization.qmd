@@ -10,6 +10,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -236,7 +237,7 @@ Each **cell** is 5-50 people who:
 **Government**: Want happy voters
 **Investors**: Want returns
 
-**Everyone wins = Everyone supports**
+#### Everyone wins = Everyone supports
 
 ## The Resistance Points (and Responses)
 
@@ -352,7 +353,7 @@ Each **cell** is 5-50 people who:
 We don't need everyone.
 We don't even need most people.
 
-**We need 3.5% to actively participate.**
+### We need 3.5% to actively participate.
 
 That's 280 million people who:
 
@@ -360,4 +361,5 @@ That's 280 million people who:
 - Buy bonds
 - Share the message
 
-**That's achievable. That's happening. That's victory.**
+#### That's achievable. That's happening. That's victory.
+

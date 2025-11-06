@@ -15,6 +15,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -32,7 +33,7 @@ This is your cornerstone legislation. Without it, the treaty is just paper. With
 
 ### The Core Provisions
 
-**Section 1: Authorization**
+#### Section 1: Authorization
 
 - "The United States shall implement the 1% Treaty upon ratification by 3+ nations"
 - "1% of the United States defense budget (currently ~$10 billion) shall be automatically redirected to the DIH treasury as the nation's contribution to the treaty fund."
@@ -40,7 +41,7 @@ This is your cornerstone legislation. Without it, the treaty is just paper. With
 - "Funds transfer via smart contract on first day of fiscal year"
 - No annual appropriation needed (politicians can't kill it later)
 
-**Section 2: Protection Mechanisms**
+##### Section 2: Protection Mechanisms
 
 - **Supersedes Budget Fights:** Treaty obligations are treated as mandatory spending and supersede annual budget appropriations.
 - **Locked In:** Withdrawal from the treaty requires a nearly impossible 2/3 Senate vote.
@@ -48,7 +49,7 @@ This is your cornerstone legislation. Without it, the treaty is just paper. With
 - **Ratchet Clause:** The 1% funding can only increase, never decrease. It automatically scales if other nations increase their commitment and can be expanded by public referendum.
 - **Emergency Use Only:** Suspension of payments is only possible during a formally declared war, not a vaguely defined "conflict."
 
-**Section 3: The Candy for Congress**
+###### Section 3: The Candy for Congress
 
 - Each state gets proportional research funding
 - Naming rights for politicians: "The Senator Smith Cancer Center"
@@ -57,21 +58,21 @@ This is your cornerstone legislation. Without it, the treaty is just paper. With
 
 ### Why Politicians Will Vote Yes
 
-**For Republicans:**
+#### For Republicans
 
 - "Cuts government waste!" (redirects, not adds)
 - "Free market solution!" (competition, not bureaucracy)
 - "Supports our troops!" (cures their PTSD and cancer)
 - "America first!" (we lead the world in cures)
 
-**For Democrats:**
+#### For Democrats
 
 - "Universal healthcare access!" (subsidized trials for all)
 - "Reduces inequality!" (poor get same treatments as rich)
 - "Anti-war vote!" (less money for bombs)
 - "Historic healthcare expansion!" (biggest since Medicare)
 
-**For Everyone:**
+#### For Everyone
 
 - Campaign contributions from VICTORY bondholders
 - Constitutes can actually get treated
@@ -90,21 +91,21 @@ This creates the Decentralized Institutes of Health - the organization that will
 
 ### The Structure That Can't Be Captured
 
-**Section 1: Establishment**
+#### Section 1: Establishment
 
 - "DIH created as independent agency" (not under HHS control)
 - "Governed by smart contracts" (no political appointees)
 - "Funded by treaty obligations" (no appropriations needed)
 - "Exempt from government hiring rules" (can actually pay competitive salaries)
 
-**Section 2: Powers**
+##### Section 2: Powers
 
 - Can fund any medical research globally
 - Can partner with any organization
 - Can operate parallel to FDA (not under it)
 - Can accept private funding (VICTORY bonds)
 
-**Section 3: Governance**
+###### Section 3: Governance
 
 - No board of directors (can't be captured)
 - Decisions via Wishocracy voting (8 billion participants)
@@ -139,7 +140,7 @@ This creates a legal pathway for treatments outside FDA's 17-year death march. P
 
 ### The Legal Architecture
 
-**Section 1: The Parallel Pathway**
+#### Section 1: The Parallel Pathway
 
 - "Patients may access treatments in active trials with informed consent"
 - "Researchers may conduct trials without FDA pre-approval"
@@ -153,7 +154,7 @@ This creates a legal pathway for treatments outside FDA's 17-year death march. P
 - Mandatory liability insurance for researchers
 - Extra protections for vulnerable populations
 
-**Section 3: The Data Revolution**
+##### Section 3: The Data Revolution
 
 - All trial data becomes public (after privacy protection)
 - Real-world evidence counts toward approval
@@ -164,21 +165,21 @@ This creates a legal pathway for treatments outside FDA's 17-year death march. P
 
 Politicians are terrified of being blamed for the next thalidomide. Here's how you address their fear:
 
-**The Safety Argument:**
+#### The Safety Argument
 
 - "More data makes things safer, not less"
 - "Real-world monitoring beats controlled trials"
 - "Patients are dying NOW under current system"
 - "Other countries already do this successfully"
 
-**The Freedom Argument:**
+#### The Freedom Argument
 
 - "Patient choice is a fundamental right"
 - "Government shouldn't stand between patients and cures"
 - "Free market for treatments, not Soviet medicine"
 - "Right to try, expanded and improved"
 
-**The Innovation Argument:**
+#### The Innovation Argument
 
 - "America leads by innovating, not regulating"
 - "Unleash our researchers to compete globally"
@@ -195,21 +196,21 @@ Current Right to Try laws are useless. They require FDA permission (defeats the 
 
 ### The Provisions That Matter
 
-**Section 1: Absolute Right**
+#### Section 1: Absolute Right
 
 - "Any patient may access any treatment in trials"
 - "Manufacturers must provide at cost + 15%" (reasonable profit)
 - "Insurance must cover if cheaper than standard care"
 - "No FDA approval needed for dying patients"
 
-**Section 2: The Subsidy System**
+##### Section 2: The Subsidy System
 
 - DIH subsidies make treatments affordable
 - Sliding scale based on income
 - Full coverage for those below 200% poverty line
 - Catastrophic protection for everyone else
 
-**Section 3: The Data Exchange**
+###### Section 3: The Data Exchange
 
 - Patients provide outcome data in exchange for access
 - Data improves treatments for everyone
@@ -222,7 +223,7 @@ This is where you deploy dying children strategically. Have them testify before 
 
 Create a "Death Clock" website showing people dying while waiting for treatments available elsewhere. Update it live during hearings. Make opposition morally impossible.
 
-**The Talking Points:**
+#### The Talking Points
 
 - "Every parent would want this for their child"
 - "Bureaucrats shouldn't decide who lives and dies"
@@ -246,21 +247,21 @@ This is the technical bill that actually moves the money. Boring but critical. W
 
 ### The Money Flow Mechanics
 
-**Section 1: Automatic Transfer**
+#### Section 1: Automatic Transfer
 
 - 1% of DoD budget transferred on October 1st annually
 - Via Federal Reserve direct transfer (no middlemen)
 - To DIH Treasury smart contract (transparent, immutable)
 - Cannot be rescinded or redirected without treaty withdrawal
 
-**Section 2: The Protection Clauses**
+##### Section 2: The Protection Clauses
 
 - Funds exempt from sequestration
 - Exempt from government shutdown
 - Exempt from debt ceiling fights
 - Treated as treaty obligation, not appropriation
 
-**Section 3: The Growth Mechanism**
+###### Section 3: The Growth Mechanism
 
 - Automatic increase if other nations increase
 - Percentage can only go up, never down
@@ -269,21 +270,21 @@ This is the technical bill that actually moves the money. Boring but critical. W
 
 ### Making It Bulletproof
 
-**The Constitutional Approach:**
+#### The Constitutional Approach
 
 - Treaty obligations supersede regular law
 - Supremacy clause makes it unchangeable
 - International law prevents backtracking
 - Multiple legal theories for protection
 
-**The Political Protection:**
+#### The Political Protection
 
 - Touching it means you're "against the troops" (their healthcare)
 - And "against children" (pediatric trials)
 - And "against jobs" (research employment)
 - And "against America" (we're winning the cure race)
 
-**The Technical Protection:**
+#### The Technical Protection
 
 - Smart contracts execute automatically
 - Multiple backup execution methods

@@ -10,8 +10,8 @@ tags:
   - peace-dividend
   - 3-5-rule
   - war-bonds
-lastFormatted: 2025-10-16T00:00:00.000Z
-lastStyleCheck: 2025-10-16T00:00:00.000Z
+lastFormatted: '2025-10-16T00:00:00.000Z'
+lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastFormattedHash: a0de38ab6c5dfb578088b343d345fac64fd81171c5138f40be45f7a0188620c4
 lastFactCheckHash: 021da257f4cb4b74b636cd5fbf93d3e40860465160f9df673e471a34f05fc82e
 lastLatexCheckHash: 2dbecae2144d939355c03d709cbe12072120251cf0f4623a39c61b632a3f0b5d
@@ -23,6 +23,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -56,7 +57,7 @@ Two world wars.
 Everyone else fought.
 Switzerland made chocolate.
 
-**Result:**
+### Result
 
 - [25% richer than Americans ($93K vs $76K GDP per capita)](references.qmd#swiss-vs-us-gdp-per-capita)
 - Live [5 years longer (84 vs 79 years)](references.qmd#swiss-vs-us-life-expectancy)
@@ -92,7 +93,7 @@ No UN committee.
 Just pissed-off citizens with fax machines.
 
 They beat the entire military-industrial complex in 5 years.
-**With fax machines.**
+### With fax machines.
 
 We have the internet.
 
@@ -101,7 +102,7 @@ We have the internet.
 Harvard analyzed every major movement in history.
 
 **Finding:** Once [3.5% of any population actively supports something, it wins](references.qmd#3-5-rule).
-**Always.**
+### Always.
 
 - Civil rights: Won at 3.5%
 - Women's suffrage: Won at 3.5%
@@ -133,8 +134,6 @@ Math says it wins.
 - **Data:** We can prove what works in real-time
 - **Urgency:** [150,000 people die daily](references.qmd#who-daily-deaths) (motivation is high)
 
----
-
 ## 2. The Political Precedents: How to Win
 
 ### A. Creating Binding International Law
@@ -161,13 +160,11 @@ It is based on rigorous academic research into the history of social movements.
 **The Lesson:** The strategy is engineered to achieve this specific, data-driven threshold.
 By focusing efforts on reaching this proven tipping point, it's not just hoping for change; it's executing a clear, evidence-based plan to make it inevitable.
 
----
-
 ## 3. The Financial Precedents: How to Fund It
 
 ### A. Mobilizing Mass Public Capital
 
-**The Precedent: WWII War Bonds**
+#### The Precedent: WWII War Bonds
 
 The plan to raise billions of dollars from the public to fund a global cause is based on one of the most successful financial mobilizations in history.
 
@@ -199,8 +196,6 @@ The investment thesis for VICTORY Bonds, a high-risk, high-reward bet on a polit
 **The Lesson:** The financial model, which offers a **[$>271.8% targeted return](economics/victory-bonds.qmd)**, is a direct application of these principles.
 It correctly prices the political risk to attract the sophisticated capital needed to win.
 
----
-
 ## 4. The Cautionary Tales: How Not to Fail
 
 The failures of past movements are even more instructive than the successes, as they reveal the exact failure modes our strategy is engineered to avoid.
@@ -214,19 +209,15 @@ The failures of past movements are even more instructive than the successes, as 
 
 ### B. Don't Have a Diffuse, Unactionable Goal
 
-**The Precedent: Occupy Wall Street**
+#### The Precedent: Occupy Wall Street
 
 - **The Failure:** While it successfully changed the public conversation in 2011, the movement produced no lasting policy change because it lacked a single, specific, actionable demand.
 - **The Lesson:** The project avoids this trap by focusing all energy and capital on a single, clear, and achievable goal: **ratification of the "[1% Treaty](solution/1-percent-treaty.qmd)."** That is the only ask.
-
----
 
 ## In This Section
 
 - [Chapter 19: Political Movements That Changed Everything](proof/historical-precedents.qmd) - Switzerland's 200-year peace dividend, war bonds, landmine treaty, 3.5% rule advantages
 - [Chapter 20: Your Body Is Just a Machine](proof/body-as-repairable-machine.qmd) - Hearts, kidneys, blood, DNA, we replace everything else, aging is just neglected maintenance
-
----
 
 ## Additional Evidence
 
