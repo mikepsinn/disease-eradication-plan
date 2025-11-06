@@ -145,7 +145,7 @@ def check_image_paths(content: str, filepath: str):
 
 def check_em_dashes(content: str, filepath: str):
     """
-    Check for em-dashes (—) which should be replaced with double hyphens (--)
+    Check for em-dashes (—) which should be replaced with comma and space
     Em-dashes can cause rendering issues and are inconsistent with the style guide
     """
     lines = content.split('\n')
@@ -162,7 +162,7 @@ def check_em_dashes(content: str, filepath: str):
                 file=filepath,
                 line=line_index + 1,
                 column=column,
-                message=f'Em-dash (—) found ({em_dash_count} occurrence{"s" if em_dash_count > 1 else ""}). Replace with double hyphen (--)',
+                message=f'Em-dash (—) found ({em_dash_count} occurrence{"s" if em_dash_count > 1 else ""}). Replace with comma and space (", ")',
                 context=line.strip()[:80]
             ))
 

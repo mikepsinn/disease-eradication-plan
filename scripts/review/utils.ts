@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import { glob } from 'glob';
 import path from 'path';
 import { generateGeminiProContent, generateClaudeOpus41Content, extractJsonFromResponse, loadPromptTemplate, generateGeminiFlashContent } from '../lib/llm';
-import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash, parseQuartoYml, getStaleFiles } from '../lib/file-utils';
+import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash, parseQuartoYml, getStaleFiles, stringifyWithFrontmatter } from '../lib/file-utils';
 import { parseReferences, formatReferencesFile, type Reference } from '../lib/references';
 
 // Re-export functions from file-utils for convenience
@@ -133,7 +133,7 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
     console.log('Skipping fact-check for this file');
   }
 
-  frontmatter.lastFactCheckHash = getBodyHash(matter.stringify(body, frontmatter));
+  frontmatter.lastFactCheckHash = getBodyHash(stringifyWithFrontmatter(body, frontmatter));
 
   let newContent: string;
   if (originalFrontmatterText) {
@@ -382,8 +382,8 @@ async function mergeContentWithLLM(archivedContent: string, targetFilePath: stri
                  .replace('{{archivedBody}}', archivedBody);
 
   const mergedBody = await generateGeminiProContent(prompt);
-  
-  const finalContent = matter.stringify(mergedBody, targetFrontmatter);
+
+  const finalContent = stringifyWithFrontmatter(mergedBody, targetFrontmatter);
   return finalContent;
 }
 

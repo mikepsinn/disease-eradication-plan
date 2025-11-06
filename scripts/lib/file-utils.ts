@@ -41,31 +41,70 @@ export async function findBookFiles(): Promise<string[]> {
     return files;
 }
 
-function formatFrontmatter(content: string): string {
-    const { data, content: body } = matter(content);
+/**
+ * Replace em-dashes with comma-space in any value (recursive for objects/arrays)
+ */
+export function replaceEmDashesInValue(value: any): any {
+    if (typeof value === 'string') {
+        return value.replace(/—/g, ', ');
+    } else if (Array.isArray(value)) {
+        return value.map(replaceEmDashesInValue);
+    } else if (value && typeof value === 'object') {
+        const newObj: any = {};
+        for (const key in value) {
+            newObj[key] = replaceEmDashesInValue(value[key]);
+        }
+        return newObj;
+    }
+    return value;
+}
+
+/**
+ * Clean and standardize frontmatter data
+ * - Collapse multi-line descriptions to single line
+ * - Remove date/dateCreated fields
+ * - Convert Date objects to ISO strings
+ * Note: Em-dash replacement is only done in content, not frontmatter
+ */
+export function cleanFrontmatterData(data: any): any {
+    const cleaned = { ...data };
 
     // For descriptions that are multi-line, collapse them to a single line.
-    if (data.description && typeof data.description === 'string') {
-        data.description = data.description.replace(/\n/g, ' ').trim();
+    if (cleaned.description && typeof cleaned.description === 'string') {
+        cleaned.description = cleaned.description.replace(/\n/g, ' ').trim();
     }
 
     // Remove date and dateCreated fields
-    delete data.date;
-    delete data.dateCreated;
+    delete cleaned.date;
+    delete cleaned.dateCreated;
 
     // Convert any remaining Date objects to ISO strings to prevent YAML errors
-    for (const key in data) {
-        if (data[key] instanceof Date) {
-            data[key] = data[key].toISOString();
+    for (const key in cleaned) {
+        if (cleaned[key] instanceof Date) {
+            cleaned[key] = cleaned[key].toISOString();
         }
     }
 
-    // Use JSON_SCHEMA to enforce double quotes on all strings and keys.
-    const newFrontmatter = yaml.dump(data, {
-        schema: yaml.JSON_SCHEMA,
-        lineWidth: -1,
-    });
-    return `---\n${newFrontmatter.trim()}\n---\n${body}`;
+    return cleaned;
+}
+
+/**
+ * Stringify content with frontmatter using consistent settings that preserve emojis
+ * This should be used by all scripts when saving .qmd/.md files
+ */
+export function stringifyWithFrontmatter(body: string, frontmatter: any): string {
+    const cleanedFrontmatter = cleanFrontmatterData(frontmatter);
+    // Use matter.stringify with lineWidth: -1 to prevent wrapping and preserve emojis
+    return matter.stringify(body, cleanedFrontmatter, { lineWidth: -1 } as any);
+}
+
+/**
+ * Format content with frontmatter (parse, clean, and re-stringify)
+ * This is the internal function used by programmaticFormat
+ */
+function formatFrontmatter(content: string): string {
+    const { data, content: body } = matter(content);
+    return stringifyWithFrontmatter(body, data);
 }
 
 export function programmaticFormat(content: string): string {
@@ -135,8 +174,11 @@ export function programmaticFormat(content: string): string {
             appropriateLevel = Math.min(appropriateLevel, 4); // Cap at #### for subsection headers
           }
 
+          // Remove trailing colon from heading text
+          const headingText = boldText.endsWith(':') ? boldText.slice(0, -1) : boldText;
+
           const headingPrefix = '#'.repeat(appropriateLevel);
-          modifiedLines[i] = `${headingPrefix} ${boldText}`;
+          modifiedLines[i] = `${headingPrefix} ${headingText}`;
 
           // Add this as a heading for subsequent context
           headingLevels.push({ line: i, level: appropriateLevel });
@@ -148,8 +190,8 @@ export function programmaticFormat(content: string): string {
 
   processedBody = modifiedLines.join('\n');
 
-  // Reconstruct with processed body
-  result = matter.stringify(processedBody, frontmatter);
+  // Reconstruct with processed body using our consistent formatting
+  result = stringifyWithFrontmatter(processedBody, frontmatter);
 
   // Fixes spacing for unordered lists: "-   item" -> "- item"
   result = result.replace(/^(-|\*)\s+/gm, '$1 ');
@@ -191,10 +233,9 @@ export async function saveFile(filePath: string, content: string): Promise<void>
     const pythonBoilerplate = "```{python}\n#| echo: false\nimport sys\nimport os\n\n# Quarto executes from project root (execute-dir: project in _book.yml)\nappendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')\nif appendix_path not in sys.path:\n    sys.path.insert(0, appendix_path)\n\nfrom economic_parameters import *\n```";
 
     if (!body.includes('from economic_parameters import *')) {
-      // Reconstruct the file with the boilerplate immediately after the frontmatter
-      const frontmatterString = matter.stringify('', frontmatter).trim();
+      // Add boilerplate to body and use our consistent formatting
       const newBody = `${pythonBoilerplate}\n\n${body.trim()}`;
-      formattedContent = `${frontmatterString}\n${newBody}`;
+      formattedContent = stringifyWithFrontmatter(newBody, frontmatter);
     }
   }
 
@@ -271,9 +312,9 @@ export async function updateFileWithHash(
   frontmatter: any,
   hashFieldName: string
 ): Promise<void> {
-  const tempContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
+  const tempContent = stringifyWithFrontmatter(body, frontmatter);
   frontmatter[hashFieldName] = getBodyHash(tempContent);
-  const newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
+  const newContent = stringifyWithFrontmatter(body, frontmatter);
   await saveFile(filePath, newContent);
 }
 
