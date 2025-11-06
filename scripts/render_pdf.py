@@ -42,13 +42,23 @@ def main():
 
     args = parser.parse_args()
 
+    # Force output flush to ensure GitHub Actions sees output immediately
+    sys.stdout.reconfigure(line_buffering=True)
+    sys.stderr.reconfigure(line_buffering=True)
+    
+    # Log script start immediately
+    from datetime import datetime
+    print("=" * 80, flush=True)
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Starting PDF render script", flush=True)
+    print("=" * 80, flush=True)
+
     # Kill existing Quarto processes if requested
     if args.kill_existing:
-        print("=" * 80)
-        print("KILLING EXISTING QUARTO/LaTeX PROCESSES")
-        print("=" * 80)
+        print("=" * 80, flush=True)
+        print("KILLING EXISTING QUARTO/LaTeX PROCESSES", flush=True)
+        print("=" * 80, flush=True)
         kill_existing_quarto_processes(include_latex=True)
-        print("=" * 80)
+        print("=" * 80, flush=True)
 
     # Run pre-validation unless skipped
     if not args.skip_validation:

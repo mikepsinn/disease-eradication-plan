@@ -55,7 +55,7 @@ class BuildMonitor:
         timestamp = self.get_timestamp()
         formatted_message = f"[{timestamp}] {message}"
         output = sys.stderr if to_stderr else sys.stdout
-        print(formatted_message, file=output)
+        print(formatted_message, file=output, flush=True)
         self.log_handle.write(formatted_message + '\n')
         self.log_handle.flush()
 
@@ -313,7 +313,7 @@ def log_with_timestamp(message: str, to_stderr: bool = False):
     timestamp = get_timestamp()
     formatted_message = f"[{timestamp}] {message}"
     output = sys.stderr if to_stderr else sys.stdout
-    print(formatted_message, file=output)
+    print(formatted_message, file=output, flush=True)
 
 def run_pre_validation() -> int:
     """
