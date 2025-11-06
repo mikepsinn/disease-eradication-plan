@@ -45,15 +45,15 @@ from economic_parameters import *
 
 - **Return on Investment (ROI):** The dFDA Infrastructure demonstrates an exceptionally high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**$50.0B in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50.0% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately [**463:1**](#final-roi-and-net-benefit) over 10 years. This high ratio reflects the platform's significant leverage: a relatively modest investment in a global software infrastructure that generates vast savings across the entire pharmaceutical R&D industry.
 - **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves substantial costs and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$59,501 per QALY gained**](../references.qmd#qaly-value)), far exceeding standard government value thresholds.
-- **Daily Opportunity Cost of Inaction:** Each day the current paradigm is maintained represents a societal opportunity cost of approximately [**\$137 million** in forgone economic efficiencies and **2,301** in lost Quality-Adjusted Life Years (QALYs)](#daily-opportunity-cost-of-inaction).
+- **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately [**\$137 million** and **2,301** Quality-Adjusted Life Years](#daily-opportunity-cost-of-inaction).
 
-**Conclusion:** The dFDA initiative represents a paradigm shift with the potential for profound societal and economic benefits. Its ability to drastically lower costs, accelerate medical innovation, and improve public health makes a compelling case for its implementation, supported by legislative frameworks such as the "Right to Trial & FDA Upgrade Act."
+**Conclusion:** The dFDA changes everything. It slashes costs, speeds up medical innovation, and saves lives. The math supports building it, as shown by legislative frameworks like the "Right to Trial & FDA Upgrade Act."
 
 ---
 
 Below is a conceptual, high-level analysis of the costs, benefits, and return on investment (ROI) for transforming the U.S. Food and Drug Administration's (FDA) current regulatory framework into a "global decentralized, autonomous FDA." This future-state platform would continuously rank treatments using the entirety of clinical and real-world data (RWD), and would enable anyone, potentially over a billion people worldwide, to participate in large-scale, continuous, decentralized clinical trials. This analysis supports the economic rationale for initiatives such as the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd), which proposes a foundational "FDA v2 Platform" to begin actualizing this vision within the U.S. framework, potentially serving as a model for broader global collaboration.
 
-Because this analysis deals with an innovative and unprecedented transformation, many assumptions must be clearly stated, and the data points are best understood as estimates or ranges. Nonetheless, this exercise provides a structured way to think about potential costs, savings, and impacts on medical progress.
+Because this analysis deals with a massive transformation nobody's tried before, the numbers are estimates and ranges. But they give you a way to think about costs, savings, and what happens to medical progress.
 
 {{< include dfda-overview.qmd >}}
 
@@ -94,8 +94,8 @@ Because this analysis deals with an innovative and unprecedented transformation,
 
 6. **Healthcare Equity**
 
-   - Decentralized trials allow broader participation across geographies and socioeconomic groups, improving diversity of data and reducing bias.
-   - Potentially democratizes access to experimental or cutting-edge treatments.
+   - Decentralized trials let anyone participate, anywhere. More diverse data, less bias.
+   - Opens up access to experimental treatments for everyone, not just the rich.
 
 ---
 
@@ -132,7 +132,7 @@ Because this analysis deals with an innovative and unprecedented transformation,
 
 Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of [**~\$37.5 - \$46 Million**](#upfront-capital-expenditure-initial-build-illustrative-30-months), plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to \$500 million** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around [$100.0B per year on R and D](#market-size-and-impact) and that a large share of those expenses go to clinical trials, even a [50.0% reduction in trial costs](#gross-r-and-d-savings-from-dfda-implementation)—combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi-and-net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)**) once adopted at scale.
 
-Beyond the direct economic benefits, the secondary and tertiary effects on medical progress could be transformative. More drugs, nutraceuticals, and personalized therapies could be tested and refined rapidly; real-time data would continuously update treatment rankings; and off-label or unpatentable treatments, often neglected today, could receive the same rigorous evaluation as blockbuster drugs. If combined with robust privacy controls and global regulatory collaboration, such a platform could usher in a new era of evidence-based, personalized healthcare that benefits patients around the world, drives innovation, and lowers long-term healthcare costs.
+Beyond direct savings, the effects on medical progress are massive. Test more drugs, faster. Update treatment rankings in real time. Evaluate cheap, off-patent treatments nobody bothers testing today. With strong privacy protections and international cooperation, this platform creates personalized healthcare that actually works, globally.
 
 ---
 
