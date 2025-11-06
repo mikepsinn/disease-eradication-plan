@@ -223,6 +223,57 @@ figure {
     height: auto;
 }
 
+/* ==========================================
+   RESPONSIVE TABLES
+   ========================================== */
+
+/* On mobile, make tables horizontally scrollable */
+@media (max-width: 767px) {
+    /* Create scrollable wrapper around tables */
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 1rem 0;
+    }
+    
+    /* Maintain table structure */
+    table thead {
+        display: table-header-group;
+    }
+    
+    table tbody {
+        display: table-row-group;
+    }
+    
+    table tr {
+        display: table-row;
+    }
+    
+    /* Prevent text wrapping in cells on mobile */
+    table td,
+    table th {
+        white-space: nowrap;
+        min-width: 100px;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Desktop: normal table display */
+@media (min-width: 768px) {
+    table {
+        width: 100%;
+        table-layout: auto;
+        display: table;
+    }
+    
+    table td,
+    table th {
+        white-space: normal;
+    }
+}
+
 /* Mermaid diagram customization - Black and white color scheme */
 :root {
     /* Background colors */
