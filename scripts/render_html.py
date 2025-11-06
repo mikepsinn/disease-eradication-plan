@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Unified PDF render script for Quarto PDF generation
+Unified HTML render script for Quarto HTML generation
 - Runs pre-validation automatically
 - Logs to both console and file
 - Detects warnings and errors in real-time
@@ -17,7 +17,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 lib_dir = os.path.join(script_dir, 'lib')
 sys.path.insert(0, lib_dir)
 
-from render_utils import BuildMonitor, kill_existing_quarto_processes, run_pre_validation, create_latex_parser
+from render_utils import BuildMonitor, kill_existing_quarto_processes, run_pre_validation
 
 
 def main():
@@ -25,29 +25,29 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description='Unified PDF render script with validation, logging, and monitoring'
+        description='Unified HTML render script with validation, logging, and monitoring'
     )
-    parser.add_argument('--timeout', type=int, default=180,
-                        help='Seconds with no output before killing build (default: 180)')
+    parser.add_argument('--timeout', type=int, default=300,
+                        help='Seconds with no output before killing build (default: 300)')
     parser.add_argument('--no-fail-on-warnings', action='store_true',
                         help='Do not fail build on warnings (warnings fail by default)')
     parser.add_argument('--skip-validation', action='store_true',
                         help='Skip pre-render validation')
-    parser.add_argument('--log-file', type=str, default='build-pdf.log',
-                        help='Log file path (default: build-pdf.log)')
-    parser.add_argument('--command', type=str, default='quarto render . --to pdf',
-                        help='Build command to run (default: quarto render . --to pdf)')
+    parser.add_argument('--log-file', type=str, default='build-html.log',
+                        help='Log file path (default: build-html.log)')
+    parser.add_argument('--command', type=str, default='quarto render . --to html',
+                        help='Build command to run (default: quarto render . --to html)')
     parser.add_argument('--kill-existing', action='store_true',
-                        help='Kill all existing Quarto/LaTeX processes before starting build')
+                        help='Kill all existing Quarto processes before starting build')
 
     args = parser.parse_args()
 
     # Kill existing Quarto processes if requested
     if args.kill_existing:
         print("=" * 80)
-        print("KILLING EXISTING QUARTO/LaTeX PROCESSES")
+        print("KILLING EXISTING QUARTO PROCESSES")
         print("=" * 80)
-        kill_existing_quarto_processes(include_latex=True)
+        kill_existing_quarto_processes(include_latex=False)
         print("=" * 80)
 
     # Run pre-validation unless skipped
@@ -59,9 +59,6 @@ def main():
     # Parse command into list
     command = args.command.split()
 
-    # Create LaTeX parser for PDF builds
-    latex_parser = create_latex_parser()
-
     # Create monitor and run build
     monitor = BuildMonitor(
         timeout_seconds=args.timeout,
@@ -69,7 +66,7 @@ def main():
         log_file=args.log_file
     )
 
-    exit_code = monitor.run_build(command, build_type="PDF render", custom_parsers=[latex_parser])
+    exit_code = monitor.run_build(command, build_type="HTML render")
     sys.exit(exit_code)
 
 if __name__ == '__main__':

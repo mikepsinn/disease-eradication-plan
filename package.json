@@ -68,7 +68,7 @@
     "fix:inline-python:dry-run": "python scripts/fix_inline_python.py --dry-run",
     "build": "quarto render",
     "build:validated": "npm run clean && quarto render && npm run validate:render",
-    "build:html": "quarto render . --to html",
+    "build:html": "python scripts/render_html.py",
     "build:pdf": "python scripts/render_pdf.py",
     "build:pptx": "quarto render presentation.qmd --to pptx",
     "build:presentation": "quarto render presentation.qmd",

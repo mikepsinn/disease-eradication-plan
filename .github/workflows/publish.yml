@@ -82,8 +82,8 @@ jobs:
       - name: Install LaTeX
         run: quarto install tinytex
 
-      - name: Render Quarto Project (HTML)
-        run: quarto render --to html
+      - name: Render Quarto Project (HTML) with validation and monitoring
+        run: python scripts/render_html.py
         timeout-minutes: 15
 
       - name: Render Quarto Project (PDF) with validation and monitoring
