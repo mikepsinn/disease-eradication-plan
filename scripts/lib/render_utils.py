@@ -304,6 +304,17 @@ def kill_existing_quarto_processes(include_latex: bool = False) -> int:
         return 0
 
 
+def get_timestamp() -> str:
+    """Get formatted timestamp for log messages"""
+    return datetime.now().strftime('%H:%M:%S')
+
+def log_with_timestamp(message: str, to_stderr: bool = False):
+    """Log message with timestamp"""
+    timestamp = get_timestamp()
+    formatted_message = f"[{timestamp}] {message}"
+    output = sys.stderr if to_stderr else sys.stdout
+    print(formatted_message, file=output)
+
 def run_pre_validation() -> int:
     """
     Run pre-validation script before building
@@ -311,28 +322,43 @@ def run_pre_validation() -> int:
     Returns:
         Exit code (0 for success, non-zero for failure)
     """
-    print("=" * 80)
-    print("RUNNING PRE-VALIDATION")
-    print("=" * 80)
+    log_with_timestamp("=" * 80)
+    log_with_timestamp("RUNNING PRE-VALIDATION")
+    log_with_timestamp("=" * 80)
 
     script_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'pre-render-validation.py')
 
     try:
+        # Capture output so we can timestamp it
         result = subprocess.run(
             [sys.executable, script_path],
             check=False,
-            capture_output=False
+            capture_output=True,
+            text=True,
+            encoding='utf-8',
+            errors='replace'
         )
 
+        # Log captured output with timestamps
+        if result.stdout:
+            for line in result.stdout.strip().split('\n'):
+                if line.strip():
+                    log_with_timestamp(line)
+        
+        if result.stderr:
+            for line in result.stderr.strip().split('\n'):
+                if line.strip():
+                    log_with_timestamp(line, to_stderr=True)
+
         if result.returncode != 0:
-            print(f"\nPre-validation failed with exit code {result.returncode}", file=sys.stderr)
+            log_with_timestamp(f"\nPre-validation failed with exit code {result.returncode}", to_stderr=True)
             return result.returncode
 
-        print("\nPre-validation passed!")
-        print("=" * 80)
+        log_with_timestamp("\nPre-validation passed!")
+        log_with_timestamp("=" * 80)
         return 0
     except Exception as e:
-        print(f"\nError running pre-validation: {e}", file=sys.stderr)
+        log_with_timestamp(f"\nError running pre-validation: {e}", to_stderr=True)
         return 1
 
 
