@@ -73,10 +73,11 @@ export async function findBookFiles(): Promise<string[]> {
 
 /**
  * Replace em-dashes with comma-space in any value (recursive for objects/arrays)
+ * Only replaces em-dashes surrounded by letters
  */
 export function replaceEmDashesInValue(value: any): any {
     if (typeof value === 'string') {
-        return value.replace(/—/g, ', ');
+        return value.replace(/([a-zA-Z])—([a-zA-Z])/g, '$1, $2');
     } else if (Array.isArray(value)) {
         return value.map(replaceEmDashesInValue);
     } else if (value && typeof value === 'object') {
@@ -156,8 +157,10 @@ export function programmaticFormat(content: string): string {
   // Normalize line endings to LF for consistent processing
   processedBody = processedBody.replace(/\r\n/g, '\n');
 
-  // 1. Replace em-dashes with comma and space
-  processedBody = processedBody.replace(/—/g, ', ');
+  // 1. Replace em-dashes with comma and space (only when surrounded by letters)
+  // Example: "word—word" becomes "word, word"
+  // But: "word—" or "—word" or "word—\"" are left unchanged
+  processedBody = processedBody.replace(/([a-zA-Z])—([a-zA-Z])/g, '$1, $2');
 
   // 2. Remove --- dividers that appear directly before headings
   processedBody = processedBody.replace(/^---\s*\n+(?=#{1,6}\s)/gm, '');
