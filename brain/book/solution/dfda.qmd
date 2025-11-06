@@ -27,7 +27,7 @@ from economic_parameters import *
 
 ## The Problem: 240x Unused Capacity
 
-![](../../../figures/trial-access-disparity-chart.png){fig-alt="Column chart showing 5M enrolled, 1.2B willing, 2.4B with disease - massive unused capacity"}
+![](../../figures/trial-access-disparity-chart.png){fig-alt="Column chart showing 5M enrolled, 1.2B willing, 2.4B with disease - massive unused capacity"}
 
 Out of 2.4 billion people with chronic disease, [only 5 million participate in trials annually](../appendix/clinical-trial-participants.qmd). That's **0.2%**.
 
