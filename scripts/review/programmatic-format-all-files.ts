@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { glob } from 'glob';
-import { programmaticFormat, findBookFiles } from '../lib/file-utils';
+import { programmaticFormat, findBookFiles, saveFile } from '../lib/file-utils';
 
 const ROOT_DIR = process.cwd();
 
@@ -32,7 +32,7 @@ async function formatAllFiles(allQmdFiles: boolean = false) {
             const formattedContent = programmaticFormat(fileContent);
 
             if (fileContent !== formattedContent) {
-                fs.writeFileSync(filePath, formattedContent, 'utf-8');
+                await saveFile(filePath, fileContent); // saveFile will apply formatting internally
                 console.log(`✅ [Fixed] Formatted ${path.relative(ROOT_DIR, filePath)}`);
                 fixedFileCount++;
             }
