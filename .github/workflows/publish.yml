@@ -79,29 +79,17 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 10
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-
-      - name: Install Node dependencies
-        run: pnpm install --frozen-lockfile
-
       - name: Install LaTeX
-        run: |
-          quarto install tinytex
+        run: quarto install tinytex
 
       - name: Render Quarto Project (HTML)
         run: quarto render --to html
 
+      - name: Validate LaTeX
+        run: python scripts/pre-render-validation.py
+
       - name: Render Quarto Project (PDF)
-        run: pnpm run build:pdf
+        run: quarto render . --to pdf 2>&1 | tee build-pdf.log
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
