@@ -124,8 +124,14 @@ export function cleanFrontmatterData(data: any): any {
  */
 export function stringifyWithFrontmatter(body: string, frontmatter: any): string {
     const cleanedFrontmatter = cleanFrontmatterData(frontmatter);
-    // Use matter.stringify with lineWidth: -1 to prevent wrapping and preserve emojis
-    return matter.stringify(body, cleanedFrontmatter, { lineWidth: -1 } as any);
+    // Use js-yaml.dump directly with options that preserve emojis and Unicode characters
+    // lineWidth: -1 prevents wrapping, which helps preserve emojis
+    const yamlFrontmatter = yaml.dump(cleanedFrontmatter, {
+        lineWidth: -1,
+        noRefs: true,
+        sortKeys: false,
+    });
+    return `---\n${yamlFrontmatter}---\n${body}`;
 }
 
 /**

@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { programmaticFormat, saveFile } from '../lib/file-utils';
+import { saveFile } from '../lib/file-utils';
 
 async function formatFile() {
     const filePath = process.argv[2];
@@ -18,10 +18,15 @@ async function formatFile() {
     let fileContent = fs.readFileSync(fullPath, 'utf-8');
     
     try {
-        const formattedContent = programmaticFormat(fileContent);
+        // Save original content for comparison
+        const originalContent = fileContent;
 
-        if (fileContent !== formattedContent) {
-            await saveFile(fullPath, fileContent); // saveFile will apply formatting internally
+        // saveFile will apply formatting internally, so just call it
+        await saveFile(fullPath, fileContent);
+
+        // Read back to check if it changed
+        const newContent = fs.readFileSync(fullPath, 'utf-8');
+        if (originalContent !== newContent) {
             console.log(`✅ [Fixed] Formatted ${filePath}`);
         } else {
             console.log('No changes needed for the file.');

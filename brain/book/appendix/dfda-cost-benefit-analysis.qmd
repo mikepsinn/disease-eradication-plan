@@ -14,6 +14,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -35,13 +36,13 @@ from economic_parameters import *
 
 **The dFDA Solution:** This analysis outlines the economic and health benefits of transforming the current regulatory framework into a global, decentralized, autonomous FDA (dFDA) platform. Leveraging real-world data and enabling massive, continuous, and highly efficient decentralized clinical trials, this vision is supported by foundational legislation like the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd), which proposes an "FDA v2 Platform" as a key implementation step.
 
-**Transformative Benefits:**
+### Transformative Benefits
 
 - **Cost Reductions:** The dFDA model projects average R&D clinical trial cost savings of [**50.0%**](#gross-r-and-d-savings-from-dfda-implementation), with exceptionally efficient designs (akin to the UK's [RECOVERY trial](recovery-trial.qmd), which achieved up to [**80-100x+ cost reduction**](#decentralized-trial-costs-modeled-on-oxford-recovery)) potentially achieving up to [**95% reduction**](#gross-r-and-d-savings-from-dfda-implementation). This translates to **[tens of billions of dollars in annual savings](#roi-analysis)** from the estimated [**$100.0B global annual clinical trial expenditure**](../references.qmd#clinical-trial-spending-dfda-baseline).
 - **Accelerated Innovation & Access:** Faster, cheaper trials allow testing far more therapies, including rare diseases and unpatentable treatments, speeding up delivery of new medicines to patients.
 - **Improved Health Outcomes:** The dFDA is projected to generate a baseline of **[840,000 Quality-Adjusted Life Years (QALYs) annually](#appendix-detailed-qaly-calculation-model)**. This figure, detailed in a full model in the appendix, is a composite of benefits from faster drug access, enhanced preventative care enabled by real-world data, and new therapies for rare and neglected diseases ([see Appendix](#appendix-detailed-qaly-calculation-model) for full model).
 
-**Exceptional Economic Value:**
+#### Exceptional Economic Value
 
 - **Return on Investment (ROI):** The dFDA Infrastructure has an extremely high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**$50.0B in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50.0% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately [**463:1**](#final-roi-and-net-benefit) over 10 years. A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
 - **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$59,501 per QALY gained**](../references.qmd#qaly-value)), far exceeding standard government value thresholds.
@@ -97,8 +98,6 @@ Because this analysis deals with a massive transformation nobody's tried before,
    - Decentralized trials let anyone participate, anywhere. More diverse data, less bias.
    - Opens up access to experimental treatments for everyone, not just the rich.
 
----
-
 ## Data Sources and Methodological Notes
 
 1. **Cost of Current Drug Development**:
@@ -126,21 +125,15 @@ Because this analysis deals with a massive transformation nobody's tried before,
 
 {{< include dfda-daily-opportunity-cost.qmd >}}
 
----
-
 ## Conclusion
 
-Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of [**~\$37.5 - \$46 Million**](#upfront-capital-expenditure-initial-build-illustrative-30-months), plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to \$500 million** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around [$100.0B per year on R and D](#market-size-and-impact) and that a large share of those expenses go to clinical trials, even a [50.0% reduction in trial costs](#gross-r-and-d-savings-from-dfda-implementation)—combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi-and-net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)**) once adopted at scale.
+Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of [**~\$37.5 - \$46 Million**](#upfront-capital-expenditure-initial-build-illustrative-30-months), plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to \$500 million** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around [$100.0B per year on R and D](#market-size-and-impact) and that a large share of those expenses go to clinical trials, even a [50.0% reduction in trial costs](#gross-r-and-d-savings-from-dfda-implementation), combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi-and-net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)**) once adopted at scale.
 
 Beyond direct savings, the effects on medical progress are massive. Test more drugs, faster. Update treatment rankings in real time. Evaluate cheap, off-patent treatments nobody bothers testing today. With strong privacy protections and international cooperation, this platform creates personalized healthcare that actually works, globally.
-
----
 
 ### Disclaimer
 
 All figures in this document are estimates based on publicly available information, industry benchmarks, and simplifying assumptions. Real-world costs, savings, and ROI will vary greatly depending on the scope of implementation, the speed of adoption, regulatory cooperation, and numerous other factors. Nonetheless, this high-level exercise illustrates the substantial potential gains from a global, decentralized, continuously learning clinical trial and regulatory ecosystem.
-
----
 
 ## Appendix Calculation Frameworks and Detailed Analysis
 
