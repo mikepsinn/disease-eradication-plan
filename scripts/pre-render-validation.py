@@ -121,27 +121,39 @@ def check_image_paths(content: str, filepath: str):
     file_dir = os.path.dirname(filepath)
 
     # Match markdown image syntax: ![alt text](path)
-    image_pattern = re.compile(r'!\[([^\]]*)\]\(([^)]+)\)')
+    markdown_image_pattern = re.compile(r'!\[([^\]]*)\]\(([^)]+)\)')
+    # Match HTML img tags: <img src="path" /> or <img src='path' />
+    html_image_pattern = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
 
     for line_index, line in enumerate(lines):
-        matches = image_pattern.finditer(line)
-        for match in matches:
+        # Check markdown image syntax
+        markdown_matches = markdown_image_pattern.finditer(line)
+        for match in markdown_matches:
             image_path = match.group(2)
+            _check_single_image_path(image_path, filepath, file_dir, line_index + 1, line)
 
-            # Skip URLs (http://, https://, etc.)
-            if image_path.startswith('http://') or image_path.startswith('https://'):
-                continue
+        # Check HTML img tags
+        html_matches = html_image_pattern.finditer(line)
+        for match in html_matches:
+            image_path = match.group(1)
+            _check_single_image_path(image_path, filepath, file_dir, line_index + 1, line)
 
-            # Resolve the image path relative to the .qmd file
-            resolved_path = os.path.normpath(os.path.join(file_dir, image_path))
+def _check_single_image_path(image_path: str, filepath: str, file_dir: str, line_number: int, line: str):
+    """Helper function to check a single image path"""
+    # Skip URLs (http://, https://, etc.)
+    if image_path.startswith('http://') or image_path.startswith('https://'):
+        return
 
-            if not os.path.exists(resolved_path):
-                errors.append(ValidationError(
-                    file=filepath,
-                    line=line_index + 1,
-                    message=f'Image file not found: {image_path}',
-                    context=line.strip()[:80]
-                ))
+    # Resolve the image path relative to the .qmd file
+    resolved_path = os.path.normpath(os.path.join(file_dir, image_path))
+
+    if not os.path.exists(resolved_path):
+        errors.append(ValidationError(
+            file=filepath,
+            line=line_number,
+            message=f'Image file not found: {image_path}',
+            context=line.strip()[:80]
+        ))
 
 def check_em_dashes(content: str, filepath: str):
     """
