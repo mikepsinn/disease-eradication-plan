@@ -19,12 +19,12 @@ from datetime import datetime
 from typing import Optional
 
 class BuildMonitor:
-    def __init__(self, timeout_seconds: int = 60, fail_on_warnings: bool = True, log_file: str = "build-pdf.log"):
+    def __init__(self, timeout_seconds: int = 180, fail_on_warnings: bool = True, log_file: str = "build-pdf.log"):
         """
         Initialize the build monitor
 
         Args:
-            timeout_seconds: Max seconds with no output before killing build (default 60)
+            timeout_seconds: Max seconds with no output before killing build (default 180)
             fail_on_warnings: Whether to fail build on warnings (default True)
             log_file: Path to log file (default "build-pdf.log")
         """
@@ -252,8 +252,8 @@ def main():
     parser = argparse.ArgumentParser(
         description='Unified PDF render script with validation, logging, and monitoring'
     )
-    parser.add_argument('--timeout', type=int, default=60,
-                        help='Seconds with no output before killing build (default: 60)')
+    parser.add_argument('--timeout', type=int, default=180,
+                        help='Seconds with no output before killing build (default: 180)')
     parser.add_argument('--no-fail-on-warnings', action='store_true',
                         help='Do not fail build on warnings (warnings fail by default)')
     parser.add_argument('--skip-validation', action='store_true',

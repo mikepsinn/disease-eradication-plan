@@ -74,13 +74,87 @@ export function programmaticFormat(content: string): string {
   // Format frontmatter first
   result = formatFrontmatter(result);
 
+  // Parse frontmatter and body separately for more complex processing
+  const { data: frontmatter, content: body } = matter(result);
+  let processedBody = body;
+
   // Normalize line endings to LF for consistent processing
-  result = result.replace(/\r\n/g, '\n');
+  processedBody = processedBody.replace(/\r\n/g, '\n');
+
+  // 1. Replace em-dashes with comma and space
+  processedBody = processedBody.replace(/—/g, ', ');
+
+  // 2. Remove --- dividers that appear directly before headings
+  processedBody = processedBody.replace(/^---\s*\n+(?=#{1,6}\s)/gm, '');
+
+  // 3. Convert bold text sections to proper headings with smart level detection
+  // Only convert if 6 words or less
+  const lines = processedBody.split('\n');
+  let modifiedLines = [...lines];
+
+  // First pass: identify heading structure
+  const headingLevels: { line: number; level: number }[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    const match = lines[i].match(/^(#{1,6})\s/);
+    if (match) {
+      headingLevels.push({ line: i, level: match[1].length });
+    }
+  }
+
+  // Second pass: convert bold headers with appropriate levels
+  const boldHeaderPattern = /^\*\*([^*\n]+)\*\*\s*$/;
+  const headerKeywords = ['On ', 'What ', 'How ', 'Why ', 'The ', 'About ', 'For ', 'In ', 'Your '];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const match = line.match(boldHeaderPattern);
+
+    if (match) {
+      const boldText = match[1].trim();
+      const wordCount = boldText.split(/\s+/).length;
+
+      // Only convert if 6 words or less
+      if (wordCount <= 6) {
+        const isLikelyHeader = headerKeywords.some(kw => boldText.startsWith(kw)) ||
+                              /^[A-Z]/.test(boldText);
+
+        if (isLikelyHeader) {
+          // Find the most recent heading before this line
+          let appropriateLevel = 3; // Default to ### if no context
+
+          for (let j = headingLevels.length - 1; j >= 0; j--) {
+            if (headingLevels[j].line < i) {
+              // Use one level deeper than the previous heading, max level 6
+              appropriateLevel = Math.min(headingLevels[j].level + 1, 6);
+              break;
+            }
+          }
+
+          // Special case: if this looks like a subsection header pattern (e.g., "What X does:")
+          if (boldText.endsWith(':')) {
+            appropriateLevel = Math.min(appropriateLevel, 4); // Cap at #### for subsection headers
+          }
+
+          const headingPrefix = '#'.repeat(appropriateLevel);
+          modifiedLines[i] = `${headingPrefix} ${boldText}`;
+
+          // Add this as a heading for subsequent context
+          headingLevels.push({ line: i, level: appropriateLevel });
+          headingLevels.sort((a, b) => a.line - b.line);
+        }
+      }
+    }
+  }
+
+  processedBody = modifiedLines.join('\n');
+
+  // Reconstruct with processed body
+  result = matter.stringify(processedBody, frontmatter);
 
   // Fixes spacing for unordered lists: "-   item" -> "- item"
   result = result.replace(/^(-|\*)\s+/gm, '$1 ');
 
-  // Add a blank line after a bolded line, unless it's followed by another blank line, a list, a heading, or a code block
+  // Add a blank line after a bolded line (for remaining bold text not converted to headers)
   result = result.replace(
     /^(\*\*[^*]+\*\*)\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```)/gm,
     '$1\n\n'
@@ -95,6 +169,12 @@ export function programmaticFormat(content: string): string {
   // Add a blank line after common key-value pairs
   result = result.replace(
     /^((?:Post|Bounty|Deadline|Amount|Price|Cost|Total|Budget):\s+[^\n]+)\n(?!\n)(?![-*+]\s)(?!#{1,6}\s)(?!```)/gm,
+    '$1\n\n'
+  );
+
+  // Ensure blank lines after headings (unless followed by another heading or code block)
+  result = result.replace(
+    /^(#{1,6}\s+[^\n]+)\n(?!\n|#{1,6}\s|```)/gm,
     '$1\n\n'
   );
 

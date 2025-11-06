@@ -266,6 +266,9 @@ def validate_file(filepath: str):
     # Check image paths
     check_image_paths(content, filepath)
 
+    # Check em-dashes
+    check_em_dashes(content, filepath)
+
     # Check GIF references
     check_gif_references(content, filepath)
 
