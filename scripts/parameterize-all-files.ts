@@ -18,10 +18,10 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { fileURLToPath } from 'url';
+import { getProjectRoot } from './lib/file-utils';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Get project root reliably, regardless of where the script is run from
+const ROOT_DIR = getProjectRoot();
 
 // Parameter mapping: pattern -> { param: string, format?: string }
 // format can be: 'billions', 'millions', 'roi', 'percentage', 'qalys', 'currency', 'number'
@@ -272,7 +272,7 @@ async function main() {
   console.log('Parameterize ALL QMD Files in Project');
   console.log('========================================\n');
 
-  const projectRoot = path.join(__dirname, '..');
+  const projectRoot = ROOT_DIR;
 
   // Process ALL .qmd files in the entire project
   const filesToProcess = findQmdFiles(projectRoot);

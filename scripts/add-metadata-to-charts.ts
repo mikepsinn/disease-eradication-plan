@@ -8,6 +8,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { saveFile } from './lib/file-utils';
 
 const chartFiles = [
   'brain/figures/healthcare-spending-vs-life-expectancy.qmd',
@@ -46,7 +47,7 @@ const chartFiles = [
   'brain/figures/dfda-investment-returns-bar-chart.qmd',
 ];
 
-function updateChartFile(filePath: string): void {
+async function updateChartFile(filePath: string): Promise<void> {
   const fullPath = path.join(process.cwd(), filePath);
   let content = fs.readFileSync(fullPath, 'utf-8');
 
@@ -136,7 +137,7 @@ function updateChartFile(filePath: string): void {
   }
 
   if (modified) {
-    fs.writeFileSync(fullPath, content, 'utf-8');
+    await saveFile(fullPath, content);
     console.log(`✓ ${filePath} - updated`);
   } else {
     console.log(`⊘ ${filePath} - no changes needed`);
@@ -144,12 +145,16 @@ function updateChartFile(filePath: string): void {
 }
 
 // Process all files
-console.log('Updating chart files with metadata...\n');
-for (const file of chartFiles) {
-  try {
-    updateChartFile(file);
-  } catch (error) {
-    console.error(`✗ ${file} - error: ${error}`);
+async function main() {
+  console.log('Updating chart files with metadata...\n');
+  for (const file of chartFiles) {
+    try {
+      await updateChartFile(file);
+    } catch (error) {
+      console.error(`✗ ${file} - error: ${error}`);
+    }
   }
+  console.log('\nDone!');
 }
-console.log('\nDone!');
+
+main().catch(console.error);

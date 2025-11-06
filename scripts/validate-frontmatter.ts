@@ -3,10 +3,10 @@ import * as path from 'path';
 import matter from 'gray-matter';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { stringifyWithFrontmatter } from './lib/file-utils';
+import { stringifyWithFrontmatter, saveFile, getProjectRoot } from './lib/file-utils';
 
-// Use process.cwd() since tsx runs from the project root
-const ROOT_DIR = process.cwd();
+// Get project root reliably, regardless of where the script is run from
+const ROOT_DIR = getProjectRoot();
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
 
 // Directories that don't require frontmatter (internal docs, operations, planning)
@@ -105,7 +105,7 @@ async function validateFrontmatter(fix: boolean) {
 
                 if (needsRewrite) {
                     const newContent = stringifyWithFrontmatter(content, data);
-                    await fs.promises.writeFile(filePath, newContent, 'utf-8');
+                    await saveFile(filePath, newContent);
                     console.log(`✅ [Fixed] ${reasons.join(', ')} in ${filePath}`);
                     fileContent = newContent; // Use updated content for validation
                 }

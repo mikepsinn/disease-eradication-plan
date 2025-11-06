@@ -1,6 +1,7 @@
 import XLSX from 'xlsx';
 import * as fs from 'fs';
 import * as path from 'path';
+import { saveFile } from './lib/file-utils';
 
 interface SheetInfo {
   name: string;
@@ -86,7 +87,7 @@ async function extractExcelFile(excelPath: string, outputDir: string): Promise<v
       }
     }
 
-    fs.writeFileSync(mdPath, mdContent);
+    await saveFile(mdPath, mdContent);
     console.log(`  Saved Markdown: ${mdFileName}`);
   }
 
@@ -113,7 +114,7 @@ async function extractExcelFile(excelPath: string, outputDir: string): Promise<v
   summary += `The CSV files can be imported into any data analysis tool, spreadsheet application, or database.\n`;
   summary += `The markdown files provide human-readable previews of the data.\n`;
 
-  fs.writeFileSync(summaryPath, summary);
+  await saveFile(summaryPath, summary);
   console.log(`\n✓ Summary saved: README.md`);
   console.log(`\n✓ Extraction complete! Files saved to: ${outputDir}`);
 }

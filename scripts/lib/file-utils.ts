@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import * as fsSync from 'fs';
 import matter from 'gray-matter';
 import yaml from 'js-yaml';
 import { glob } from 'glob';
@@ -6,7 +7,36 @@ import * as path from 'path';
 import ignore from 'ignore';
 import crypto from 'crypto';
 
-const ROOT_DIR = process.cwd();
+/**
+ * Find the project root by looking for package.json
+ * Starts from the current file's directory and walks up
+ * This ensures scripts work regardless of where they're run from
+ */
+export function getProjectRoot(): string {
+  // Start from the current working directory
+  let currentPath = process.cwd();
+
+  // Keep going up until we find package.json or reach the root
+  while (currentPath !== path.parse(currentPath).root) {
+    const packageJsonPath = path.join(currentPath, 'package.json');
+
+    if (fsSync.existsSync(packageJsonPath)) {
+      return currentPath;
+    }
+
+    // Move up one directory
+    currentPath = path.dirname(currentPath);
+  }
+
+  // If we couldn't find it by going up, check if we're already in the right place
+  if (fsSync.existsSync(path.join(process.cwd(), 'package.json'))) {
+    return process.cwd();
+  }
+
+  throw new Error('Could not find project root (no package.json found)');
+}
+
+const ROOT_DIR = getProjectRoot();
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
 
 export async function getGitignorePatterns(): Promise<string[]> {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import * as fs from 'fs';
-import * as path from 'path';
 import * as glob from 'glob';
+import { saveFile } from './lib/file-utils';
 
 interface FlaggedStatement {
   file: string;
@@ -175,7 +175,7 @@ function generateReport(results: FlaggedStatement[]): string {
   return report;
 }
 
-function main() {
+async function main() {
   console.log('Starting accuracy audit...\n');
 
   // Get all .qmd files
@@ -203,7 +203,7 @@ function main() {
   // Generate and save report
   const report = generateReport(allResults);
   const reportPath = 'ACCURACY_AUDIT_REPORT.md';
-  fs.writeFileSync(reportPath, report);
+  await saveFile(reportPath, report);
 
   console.log(`\n✅ Audit complete!`);
   console.log(`📊 Total issues found: ${allResults.length}`);
@@ -222,4 +222,4 @@ function main() {
   console.log(`📊 CSV saved to: ${csvPath}`);
 }
 
-main();
+main().catch(console.error);
