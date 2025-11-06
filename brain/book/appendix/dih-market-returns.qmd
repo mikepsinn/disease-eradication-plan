@@ -16,6 +16,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -34,13 +35,13 @@ This is what happens when you let committees play god with money.
 
 ## Markets vs Committees: The Track Record
 
-**Soviet Union (Central Planning):**
+### Soviet Union (Central Planning)
 
 - 5-year plans
 - Bread lines
 - Economic collapse
 
-**United States (Markets):**
+#### United States (Markets)
 
 - Innovation explosion
 - Abundance
@@ -75,21 +76,21 @@ Instead of 200 reviewers picking winners, we use:
 
 ## The Math: Why Markets Win
 
-**NIH Model:**
+### NIH Model
 
 - 200 brains making decisions
 - No skin in the game
 - Political influence matters
 - 10% success rate on grants
 
-**DIH Model:**
+#### DIH Model
 
 - 280 million brains contributing information
 - Everyone has skin in the game
 - Only results matter
 - Natural selection ensures high success rate
 
-**Information Processing Advantage:**
+#### Information Processing Advantage
 
 ```
 NIH: 200 reviewers × 40 hours/week × 50 weeks = 400,000 decision-hours/year
@@ -119,14 +120,14 @@ Advantage: 70x more brain power
 
 ## What DIH Markets Fund vs NIH Committees
 
-**NIH Funds:**
+### NIH Funds
 
 - Safe, incremental research
 - Whatever's politically popular
 - Big institutions with lobbyists
 - 2% of rare diseases
 
-**DIH Markets Fund:**
+#### DIH Markets Fund
 
 - High-risk, high-reward moonshots
 - Whatever might actually work
@@ -135,18 +136,18 @@ Advantage: 70x more brain power
 
 ## Expected Returns
 
-**Conservative Estimate:**
+### Conservative Estimate
 
 - 25% better allocation efficiency
 - $27.2B annual budget (1% of military)
 - = **$6.75B additional value created annually**
 
-**Realistic Estimate:**
+#### Realistic Estimate
 
 - 50% better allocation (markets typically beat committees by this much)
 - = **$13.5B additional value created annually**
 
-**Optimistic but Possible:**
+#### Optimistic but Possible
 
 - 2x better allocation (like Wikipedia vs Britannica)
 - = **$27.2B additional value created annually**

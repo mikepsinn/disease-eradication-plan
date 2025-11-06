@@ -15,6 +15,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -24,8 +25,6 @@ from economic_parameters import *
 
 **Estimating the Economic Value of Accelerating Medical Progress Through New Therapies**
 
----
-
 ### **Introduction**
 
 Understanding the economic value of new therapies is essential for evaluating the impact of accelerating medical progress. This article explores:
@@ -34,8 +33,6 @@ Understanding the economic value of new therapies is essential for evaluating th
 - The **total annual value** based on the average number of new therapies approved each year.
 - An estimation of the potential value created by **accelerating medical progress by 80X**.
 
----
-
 ### **Average Economic Value of a New Therapy**
 
 The value of a new therapy can be assessed through market performance and societal benefits:
@@ -43,14 +40,10 @@ The value of a new therapy can be assessed through market performance and societ
 - **Market Valuation:** Research estimates the average value of a successful new drug at **[$1.62 billion](https://arxiv.org/abs/2212.07384)**.
 - **Development Costs:** Drug development costs range from **[$314 million to $4.46 billion](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562)** depending on therapeutic area and clinical complexity.
 
----
-
 ### **Annual Value Based on Average Approvals**
 
 - **FDA Approvals:** The **[FDA](https://www.nature.com/articles/d41573-025-00001-5)** approves around **50 new drugs annually**.
 - **Total Annual Value:** Multiplying **50 approvals** by **$1.62 billion** yields an estimated **$81 billion** in economic value per year.
-
----
 
 ### **Impact of Accelerating Medical Progress by 80X**
 
@@ -64,8 +57,6 @@ What would happen if medical progress accelerated by 80-fold?
 - **Market Saturation:** Rapid introduction of therapies could lead to **price competition** and reduced per-drug economic value.
 - **Healthcare System Capacity:** The healthcare infrastructure would need **substantial scaling** to manage increased development and distribution.
 - **Societal Benefits:** Beyond direct economic value, accelerated medical progress could lead to **improved health outcomes**, **increased productivity**, and **reduced long-term healthcare costs**.
-
----
 
 ### **Conclusion**
 

@@ -17,6 +17,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -32,7 +33,7 @@ from economic_parameters import *
 
 ## On How to Raise $2.5B to Unlock $27B+/Year Forever
 
-The capital required for the [1% Treaty](../solution/1-percent-treaty.qmd) is not for ongoing operations. It's "activation energy"—the one-time push to overcome political inertia and unlock **[$27+ billion annually](../references.qmd#value-captured-by-1pct-treaty)** for global health.
+The capital required for the [1% Treaty](../solution/1-percent-treaty.qmd) is not for ongoing operations. It's "activation energy", the one-time push to overcome political inertia and unlock **[$27+ billion annually](../references.qmd#value-captured-by-1pct-treaty)** for global health.
 
 Think of it as a $2.5B vending machine that dispenses $27B per year. Forever.
 
@@ -106,13 +107,13 @@ The primary risk elimination mechanism:
 
 ### Why Target Whales
 
-**Speed vs. Scale Trade-off:**
+#### Speed vs. Scale Trade-off
 
 - 1 meeting → $50M check vs. 50,000 meetings → $50M in small checks
 - 6-12 months vs. 18+ months timeline
 - Lower legal complexity with fewer investors
 
-**Unit Economics Advantage:**
+#### Unit Economics Advantage
 
 - Higher success probability with mission-aligned billionaires
 - Larger check sizes ($10-100M vs. $1-10K)
@@ -121,13 +122,13 @@ The primary risk elimination mechanism:
 
 ### Category 1: Crypto Whales & Protocol Treasuries ($500M-1B potential)
 
-**Individual Crypto Billionaires:**
+#### Individual Crypto Billionaires
 
 - Vitalik Buterin (Ethereum) - Mission-aligned, understands governance
 - Brian Armstrong (Coinbase) - [Health tech investor](../references.qmd#brian-armstrong-health-tech-investor)
 - Changpeng Zhao (Binance) - Global reach, massive liquidity
 
-**Protocol Treasuries (DAO-to-DAO):**
+#### Protocol Treasuries (DAO-to-DAO)
 
 - Uniswap Labs ([$4B+ treasury](../references.qmd#uniswap-labs-treasury-size)) - Understands DAO governance
 - MakerDAO ([$8B+ treasury](../references.qmd#makerdao-scale)) - Health-aligned investing
@@ -135,26 +136,26 @@ The primary risk elimination mechanism:
 
 ### Category 2: Health & Pharma Billionaires ($750M-1.5B potential)
 
-**Pharma Executives:**
+#### Pharma Executives
 
 - Albert Bourla (Pfizer CEO) - Would get 2-5X more R&D funding
 - Pascal Soriot (AstraZeneca CEO) - Global operations
 - Emma Walmsley (GSK) - Vaccine/global health focus
 
-**Health Tech Billionaires:**
+#### Health Tech Billionaires
 
 - Patrick Soon-Shiong (NantHealth, $7B) - [Cancer research focus](../references.qmd#patrick-soon-shiong-cancer-research-focus)
 - Anne Wojcicki (23andMe) - Genomics, patient data
 
 ### Category 3: Mission-Aligned Mega-Foundations ($500M-1B potential)
 
-**Health-Focused Foundations:**
+#### Health-Focused Foundations
 
 - Gates Foundation ([$70B endowment](../references.qmd#gates-foundation-endowment-size)) - Global health mandate
 - Chan Zuckerberg Initiative ([$45B](../references.qmd#chan-zuckerberg-initiative-funding)) - Science/health focus
 - Wellcome Trust ([$38B](../references.qmd#wellcome-trust-endowment-size)) - Medical research
 
-**Effective Altruism & Longevity:**
+#### Effective Altruism & Longevity
 
 - Open Philanthropy (Dustin Moskovitz) - EA cause prioritization
 - Schmidt Futures (Eric Schmidt) - Technology + health

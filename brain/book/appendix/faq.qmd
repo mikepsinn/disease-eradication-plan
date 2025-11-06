@@ -11,6 +11,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -46,7 +47,7 @@ We're just scaling what already succeeded.
 
 This isn't about vulnerability; it's about math. Since every nation reduces its military spending by the same percentage under the treaty, the relative balance of power remains unchanged. No one gains a strategic advantage. In fact, your national security *increases* because all your enemies have 1% fewer bombs, bio-weapons, and fancy jets to point at you.
 
-Think of it as upgrading your security system. You're trading one rusty bayonet for a planetary-scale immune system. The greatest threats today aren't tanks rolling over a border; they're microbes rolling through an airport, or the Skynet knockoff your defense department is building with your tax dollars. A pandemic, natural or engineered, can kill more people than our entire nuclear arsenal—all 13,000 warheads of it—and crash the global economy without firing a shot. Which is a better investment for survival: another bomber, or a system that can stop the next Black Death in its tracks?
+Think of it as upgrading your security system. You're trading one rusty bayonet for a planetary-scale immune system. The greatest threats today aren't tanks rolling over a border; they're microbes rolling through an airport, or the Skynet knockoff your defense department is building with your tax dollars. A pandemic, natural or engineered, can kill more people than our entire nuclear arsenal, all 13,000 warheads of it, and crash the global economy without firing a shot. Which is a better investment for survival: another bomber, or a system that can stop the next Black Death in its tracks?
 
 Besides, strong nations don't get invaded. And what makes a nation strong? Not just bombs. It’s healthy, productive people. A country drowning in cancer and Alzheimer's is weak, brittle, and broke. Broke, miserable countries get cranky and start wars. Curing disease is preventative defense. It strengthens your country from the inside out, making it too prosperous and stable to bother fighting.
 
@@ -270,7 +271,7 @@ The code doesn't just guard the money; it spends it smarter than any human could
 - New regulations? Tried. Slower approvals.
 - Reform bills? Tried. Lobbyists kill them.
 
-**The system can't be fixed because the system IS working—for the people in power.**
+**The system can't be fixed because the system IS working, for the people in power.**
 
 Defense contractors spend about $300 million a year on lobbying and get back nearly a trillion dollars in government contracts. That's not a broken system; that's the best return on investment on Earth. They aren't going to give that up because you asked nicely.
 
@@ -466,9 +467,7 @@ The current system kills 55 million people a year from treatable and preventable
 
 **Either participate or admit you prefer the death system.**
 
-**Choose.**
-
----
+### Choose.
 
 ## "This Sounds Like an Illegal Bribe"
 

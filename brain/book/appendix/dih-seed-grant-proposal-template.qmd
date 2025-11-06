@@ -9,6 +9,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -28,8 +29,6 @@ from economic_parameters import *
 
 **Project Duration:** 12 Months
 
----
-
 ### Important Note for Private 501(c)(3) Foundation Funders
 
 This grant proposal template outlines the *entirety* of the activities required to launch the DIH initiative, which involves three separate legal entities: a 501(c)(3) public charity, a 501(c)(4) social welfare organization, and a for-profit company.
@@ -45,17 +44,15 @@ Therefore, a grant from your foundation must be made **specifically to the DIH 5
 
 The deliverables in this proposal have been annotated to clarify which activities are permissible for a 501(c)(3) grant.
 
----
-
 ### 1. Executive Summary
 
 The Decentralized Institutes of Health (DIH) initiative rebuilds the global medical research system from scratch. The current system is slow, expensive, and fails to address 95% of human diseases. By redirecting just 1% of global military spending, we create a self-sustaining, decentralized, and radically efficient system for curing disease.
 
-This proposal requests a \$900,000 seed grant to fund the 501(c)(3) charitable activities within "Phase 0" of the DIH roadmap. The primary 501(c)(3) activity is running a global, non-binding educational referendum/survey to demonstrate that 3.5% of the world's population (280M+ people) support redirecting 1% of military spending to cure disease. This phase establishes the educational and research infrastructure, recruits a core team for the nonprofit, and builds the referendum platform and public technology systems. This grant does not fund lobbying or for-profit activities—it creates the charitable engine that runs the DIH mission. The key deliverable is a fully operational, legally compliant 501(c)(3) organization with 1M+ verified referendum participants, ready for exponential growth and self-sustaining fundraising within 12-18 months.
+This proposal requests a \$900,000 seed grant to fund the 501(c)(3) charitable activities within "Phase 0" of the DIH roadmap. The primary 501(c)(3) activity is running a global, non-binding educational referendum/survey to demonstrate that 3.5% of the world's population (280M+ people) support redirecting 1% of military spending to cure disease. This phase establishes the educational and research infrastructure, recruits a core team for the nonprofit, and builds the referendum platform and public technology systems. This grant does not fund lobbying or for-profit activities, it creates the charitable engine that runs the DIH mission. The key deliverable is a fully operational, legally compliant 501(c)(3) organization with 1M+ verified referendum participants, ready for exponential growth and self-sustaining fundraising within 12-18 months.
 
 ### 2. Problem Statement
 
-Humanity spends \$2.7 trillion annually on military defense and only \$68 billion on medical research—a 40:1 ratio of funding destruction over creation. The existing medical research system, managed by centralized bodies like the NIH, is plagued by inefficiency:
+Humanity spends \$2.7 trillion annually on military defense and only \$68 billion on medical research, a 40:1 ratio of funding destruction over creation. The existing medical research system, managed by centralized bodies like the NIH, is plagued by inefficiency:
 
 * **Bureaucratic Bottlenecks:** Researchers spend up to 50% of their time writing grant proposals, with a 90% rejection rate.
 * **Misaligned Incentives:** The system rewards publications and grant renewals, not patient outcomes or cures.

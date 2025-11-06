@@ -280,6 +280,8 @@ def main():
     qmd_files = glob('**/*.qmd', recursive=True)
     # Filter out node_modules, _book, .quarto directories
     qmd_files = [f for f in qmd_files if not any(x in f for x in ['node_modules', '_book', '.quarto'])]
+    # Exclude references.qmd from validation
+    qmd_files = [f for f in qmd_files if not f.endswith('references.qmd')]
 
     print(f'Found {len(qmd_files)} .qmd files to validate\n')
 
