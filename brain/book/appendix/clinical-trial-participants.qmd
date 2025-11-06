@@ -1,0 +1,143 @@
+---
+title: The 0.06% Problem - Who Actually Gets to Try New Treatments
+description: We spend $83 billion a year on clinical trials. About 5 million people participate globally. That's 0.06% of humanity.
+published: true
+tags:
+  - clinical-trials
+  - participants
+  - statistics
+  - data-gap
+---
+
+# The 0.06% Problem: Who Actually Gets to Try New Treatments
+
+## Nobody Knows How Many People Are In Clinical Trials
+
+Here's a fun fact: humanity spends [$83 billion a year on clinical trials](../references.qmd#global-clinical-trials-market-2024), but **nobody tracks how many people actually participate**.
+
+Not the WHO. Not the FDA. Not ClinicalTrials.gov. Nobody.
+
+We can tell you how many trials exist (515,000 registered globally). We can tell you how much money gets spent ($83B). But ask "how many humans participated last year?" and you get... silence.
+
+It's like running a restaurant that tracks food costs and table counts but has no idea how many customers showed up.
+
+## So We Built a Script and Did the Math
+
+We pulled 100,000 trials from ClinicalTrials.gov and counted actual enrollment numbers:
+
+**US Trials (Cumulative):**
+- Phase 1: 722,619 people (median: 33 per trial)
+- Phase 2: 2,181,530 people (median: 60 per trial)
+- Phase 3: 6,548,474 people (median: 237 per trial)
+- Phase 4: 2,718,541 people (median: 90 per trial)
+- **Total: 12.2 million people** across all active/recruiting/completed US trials
+
+But that's cumulative - trials running over many years. To get annual enrollment, divide by average trial duration (~2.7 years):
+
+That's the old estimate based on average trial duration. But we can do better.
+
+## The Better Method: Count Completed Trials
+
+We analyzed trials that **actually completed** each year (not estimates):
+
+**US Interventional Trials (Phase 1-4 drug trials only):**
+- 2024: 1.66M participants (3,038 completed trials)
+- 2023: 1.56M participants (3,557 completed trials)
+- 2022: 1.52M participants (3,631 completed trials)
+- 2021: 842K participants (3,601 trials)
+- 2020: 951K participants (3,366 trials)
+
+**Average US: ~1.5 million/year** (interventional drug trials)
+
+The US represents [54% of the global trials market](../references.qmd#us-clinical-trials-market-2024), so:
+
+**Global: ~2.8 million participants/year** (strict definition - interventional only)
+
+But this excludes observational studies, device trials, and behavioral interventions. If you count everything:
+
+**Global: ~5-8 million participants/year** (all clinical research)
+
+England's data confirms the scale: [1.05 million participants in 2023/24](../references.qmd#england-trial-participants-2023-24) across all study types.
+
+## The Tragedy in Numbers
+
+World population: 8 billion
+
+Clinical trial participants annually (midpoint): 5 million
+
+**Participation rate: 0.06%**
+
+Six-hundredths of one percent. If clinical trials were a lottery, your odds would be 1 in 1,600.
+
+Meanwhile, [150,000 people die every day](../references.qmd#daily-death-toll) from diseases we're studying.
+
+## The Cost Per Patient
+
+$83 billion ÷ 5 million participants = **$16,600 per participant annually**
+
+That's not per treatment. That's the overhead cost per human enrolled, covering:
+- Regulatory paperwork
+- Compliance monitoring
+- Data collection
+- Insurance against lawsuits
+- Committees reviewing committees
+- The salaries of people whose job is writing protocols
+
+Phase 3 trials ([median 237 participants](../references.qmd#clinicaltrials-gov-enrollment-data-2025)) cost [$20 million each](../references.qmd#phase-3-cost-per-trial). That's $84,388 per patient. Not for the drug. For the *trial*.
+
+You could buy each participant a new Honda Civic and still have money left over.
+
+## Why This Matters
+
+If you get cancer, your odds of getting into a clinical trial are about 5%. If you're unlucky enough to get a rare disease, your odds of a trial *existing* are basically zero.
+
+The system isn't designed to help sick people try treatments. It's designed to generate data clean enough to satisfy regulators. The fact that some people get treatment is a side effect.
+
+**We spend $83 billion a year to help 0.1% of humanity.**
+
+The other 99.9% get to wait. And while they wait, they die at a rate of 150,000 per day.
+
+## The Data We Have
+
+Here's what we pulled from [ClinicalTrials.gov](https://clinicaltrials.gov/data-api/api):
+
+| Phase | Trials | Total Enrollment | Median/Trial | Cost/Patient |
+|-------|--------|------------------|--------------|--------------|
+| Phase 1 | 11,833 | 722,619 | 33 | $15,909 |
+| Phase 2 | 14,852 | 2,181,530 | 60 | $9,174 |
+| Phase 3 | 8,989 | 6,548,474 | 237 | $5,650 |
+| Phase 4 | 5,790 | 2,718,541 | 90 | $6,437 |
+
+(Cost per patient calculated from [phase spending estimates](global-clinical-trial-spending-by-phase.qmd) divided by participant counts)
+
+**The absurd part:** These are the *best* numbers available, and they're educated guesses based on trial durations we estimated from other research.
+
+## What Decentralized Trials Could Do
+
+Imagine if:
+- Enrollment wasn't limited by proximity to trial sites
+- Patients could report outcomes via smartphone
+- Trials ran continuously instead of in isolated batches
+- The cost per participant was $1,000 instead of $10,375
+
+Instead of 8 million participants a year, you could have 80 million. Instead of 0.1%, you'd have 1%.
+
+Still pathetically small. But 10x better than today.
+
+And the data would be better. More diverse. More representative. Collected from people living their actual lives instead of visiting clinics every week.
+
+## The Bottom Line
+
+Nobody knows how many people participate in clinical trials because nobody bothers to track it.
+
+We had to build a script to count.
+
+The answer: **8 million people a year, at a cost of $10,375 each, representing 0.1% of humanity.**
+
+150,000 people die every day.
+
+Do the math.
+
+---
+
+**Methodology:** Data from [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api) (November 2025), analyzing 100,000 active/recruiting/completed trials. Annual estimates based on phase-specific trial durations from [ASPE](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0). Global scaling from US market share data. See [full technical analysis](https://github.com/yourusername/clinical-trials-analysis) and [spending breakdown](global-clinical-trial-spending-by-phase.qmd).

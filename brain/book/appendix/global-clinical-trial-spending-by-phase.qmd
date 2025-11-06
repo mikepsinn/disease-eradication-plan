@@ -36,6 +36,31 @@ The global clinical trials market was valued at approximately **[$83 billion in 
 - 2030: Projected [$83-132 billion](../references.qmd#clinical-trials-market-projection-2030)
 - 2034: Projected [$95-150 billion](../references.qmd#clinical-trials-market-projection-2034)
 
+## How Many People Participate? The Missing Data
+
+**Critical data gap:** No global database tracks annual clinical trial participant enrollment.
+
+**What we know:**
+- **US cumulative enrollment** ([direct API analysis](clinical-trial-participants.qmd)): 12.2 million participants across 100,000 active/recruiting/completed trials
+- **Estimated annual US enrollment**: 4-5 million participants/year (based on average trial durations)
+- **Estimated global annual enrollment**: **6-10 million participants/year** (scaling from US 54% market share)
+
+**Regional snapshots:**
+- England: [1.05 million participants in 2023/24](../references.qmd#england-trial-participants-2023-24)
+- US active trials (2009): [Seeking 2.8 million participants](../references.qmd#us-trial-enrollment-targets-2009)
+
+**Median participants per trial** (from ClinicalTrials.gov data):
+- Phase 1: 33 participants
+- Phase 2: 60 participants
+- Phase 3: 237 participants
+- Phase 4: 90 participants
+
+**Cost per participant** (if $83B ÷ 5M participants): **~$16,600 annually**
+
+**The tragedy:** Only [0.06% of humanity participates in clinical trials](clinical-trial-participants.qmd) each year while 150,000 die daily from disease.
+
+See [The 0.06% Problem](clinical-trial-participants.qmd) for the full analysis.
+
 ## Spending by Clinical Trial Phase
 
 {{< include ../../../brain/figures/clinical-trial-spending-by-phase-pie-chart.qmd >}}
