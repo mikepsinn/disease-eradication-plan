@@ -18,7 +18,6 @@ from economic_parameters import *
 ```
 
 
-#### Introduction Why QALY and ICER
 
 To meet the standards of government and health technology assessment (HTA) bodies such as ICER, we present a cost-utility analysis using the **incremental cost-effectiveness ratio (ICER)** and **quality-adjusted life years (QALYs)**. This approach is the [US and global standard for evaluating the value of health interventions](../references.qmd#icer-qaly-methodology).
 

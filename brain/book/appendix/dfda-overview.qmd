@@ -17,8 +17,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
-### Vision
+Goals:
 
 - A global, autonomous regulatory network (not confined to a single government entity) that continuously collects data from real-world use and decentralized clinical trials.
 - An open data architecture that aggregates anonymized health data from billions of people, covering foods, drugs, devices, supplements, and other interventions.
