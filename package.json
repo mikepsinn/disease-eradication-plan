@@ -71,7 +71,7 @@
     "build:html": "quarto render . --to html",
     "build:pdf": "npm run validate:latex && quarto render . --to pdf 2>&1 | tee build-pdf.log",
     "build:pdf:quiet": "npm run validate:latex && quarto render . --to pdf > build-pdf.log 2>&1",
-    "build:pdf:monitored": "python scripts/monitored-build.py --timeout 120",
+    "build:pdf:monitored": "python scripts/monitored-build.py --timeout 120 --fail-on-warnings",
     "build:pptx": "quarto render presentation.qmd --to pptx",
     "build:presentation": "quarto render presentation.qmd",
     "preview:presentation": "quarto preview presentation.qmd",

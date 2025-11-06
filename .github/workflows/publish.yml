@@ -90,7 +90,7 @@ jobs:
         run: python scripts/pre-render-validation.py
 
       - name: Render Quarto Project (PDF) with monitoring
-        run: python scripts/monitored-build.py --timeout 180 --command "npm run build:pdf"
+        run: python scripts/monitored-build.py --timeout 180 --fail-on-warnings --command "npm run build:pdf"
         timeout-minutes: 10
 
       - name: Setup Pages
