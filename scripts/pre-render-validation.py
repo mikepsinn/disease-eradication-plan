@@ -143,6 +143,29 @@ def check_image_paths(content: str, filepath: str):
                     context=line.strip()[:80]
                 ))
 
+def check_em_dashes(content: str, filepath: str):
+    """
+    Check for em-dashes (—) which should be replaced with double hyphens (--)
+    Em-dashes can cause rendering issues and are inconsistent with the style guide
+    """
+    lines = content.split('\n')
+
+    for line_index, line in enumerate(lines):
+        # Check for em-dashes (—)
+        if '—' in line:
+            # Count occurrences in this line
+            em_dash_count = line.count('—')
+            # Find the column position of the first occurrence
+            column = line.index('—') + 1
+
+            errors.append(ValidationError(
+                file=filepath,
+                line=line_index + 1,
+                column=column,
+                message=f'Em-dash (—) found ({em_dash_count} occurrence{"s" if em_dash_count > 1 else ""}). Replace with double hyphen (--)',
+                context=line.strip()[:80]
+            ))
+
 def check_gif_references(content: str, filepath: str):
     """
     Check for GIF files that aren't wrapped in HTML-only blocks

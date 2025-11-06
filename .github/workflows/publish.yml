@@ -86,12 +86,9 @@ jobs:
         run: quarto render --to html
         timeout-minutes: 10
 
-      - name: Validate LaTeX
-        run: python scripts/pre-render-validation.py
-
-      - name: Render Quarto Project (PDF) with monitoring
-        run: python scripts/monitored-build.py --timeout 180 --fail-on-warnings --command "npm run build:pdf"
-        timeout-minutes: 10
+      - name: Render Quarto Project (PDF) with validation and monitoring
+        run: python scripts/render_pdf.py
+        timeout-minutes: 15
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
