@@ -315,7 +315,7 @@ def run_pre_validation() -> int:
     print("RUNNING PRE-VALIDATION")
     print("=" * 80)
 
-    script_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'pre-render-validation.py')
+    script_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'pre-render-validation.py')
 
     try:
         result = subprocess.run(
