@@ -2,8 +2,10 @@ project:
   type: book
   output-dir: _book/warondisease
   execute-dir: project
+  pre-render:
+    - npx tsx scripts/validate-latex.ts
   post-render:
-    - python scripts/validate_render.py
+    - python scripts/post-render-validation.py
 
 book:
   title: "The Complete Idiot's Guide to Ending War and Disease"
