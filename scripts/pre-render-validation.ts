@@ -1,12 +1,17 @@
 #!/usr/bin/env node
 /**
- * Pre-build LaTeX validation script
- * Catches common LaTeX errors in .qmd files before attempting to build the PDF
+ * Pre-render validation script
+ * Validates .qmd files before Quarto rendering to catch errors early:
+ * - LaTeX syntax errors (escaped dollar signs, malformed equations, etc.)
+ * - Missing image files
+ * - Invalid image paths
+ *
+ * Runs automatically via _quarto.yml pre-render hook
  */
 
 import { readFileSync, existsSync } from 'fs';
 import { globSync } from 'glob';
-import { join } from 'path';
+import { join, dirname, resolve } from 'path';
 
 interface ValidationError {
   file: string;
@@ -96,6 +101,41 @@ function checkMathDelimiters(content: string, filename: string) {
 }
 
 /**
+ * Check for missing image files
+ */
+function checkImagePaths(content: string, filepath: string) {
+  const lines = content.split('\n');
+  const fileDir = dirname(filepath);
+
+  // Match markdown image syntax: ![alt text](path)
+  const imagePattern = /!\[([^\]]*)\]\(([^)]+)\)/g;
+
+  lines.forEach((line, lineIndex) => {
+    const matches = line.matchAll(imagePattern);
+    for (const match of matches) {
+      const imagePath = match[2];
+
+      // Skip URLs (http://, https://, etc.)
+      if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+        continue;
+      }
+
+      // Resolve the image path relative to the .qmd file
+      const resolvedPath = resolve(fileDir, imagePath);
+
+      if (!existsSync(resolvedPath)) {
+        errors.push({
+          file: filepath,
+          line: lineIndex + 1,
+          message: `Image file not found: ${imagePath}`,
+          context: line.trim().substring(0, 80),
+        });
+      }
+    }
+  });
+}
+
+/**
  * Validate a single file
  */
 function validateFile(filepath: string) {
@@ -132,6 +172,9 @@ function validateFile(filepath: string) {
 
   // Check math delimiters
   checkMathDelimiters(content, filepath);
+
+  // Check image paths
+  checkImagePaths(content, filepath);
 }
 
 /**

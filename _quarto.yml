@@ -3,7 +3,7 @@ project:
   output-dir: _book/warondisease
   execute-dir: project
   pre-render:
-    - npx tsx scripts/validate-latex.ts
+    - npx tsx scripts/pre-render-validation.ts
   post-render:
     - python scripts/post-render-validation.py
 
