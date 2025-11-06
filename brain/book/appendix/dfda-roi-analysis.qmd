@@ -29,7 +29,7 @@ The return on investment for the dFDA Infrastructure is exceptionally high due t
 
 2. **Model Inputs**
 
-   - **Upfront Cost (Core Platform Build):** Based on the ROM estimate of **~\$37.5 - \$46 Million** detailed in [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months). For ROI calculations, a representative figure (e.g., $40M) will be used.
+   - **Upfront Cost (Core Platform Build):** Based on the ROM estimate of **~\$37.5 - \$46 Million** detailed in [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months). ROI calculations use a representative figure (e.g., $40M).
    - **Annual Operational Cost (Core Platform):** Based on the ROM estimate of **~\$11 - \$26.5 Million / year** detailed in [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month).
    - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines core platform operational costs with the **Medium Case annual broader initiative costs (~\$21.3 Million / year)** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
      _(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global dFDA vision, which were significantly larger, are superseded by these more granular figures from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section for the purpose of this ROI calculation.)_
@@ -53,7 +53,7 @@ _The following ROI calculation primarily uses cost figures derived from the deta
       - Core Platform Ops (midpoint from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)): ~$19 Million/year
       - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
       - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~$40M/year** (or $0.04 Billion/year). This aligns with the cost basis for the ROI cited in the Executive Summary.
-    - _(Other scenarios, such as including "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), could be considered for sensitivity analysis but would significantly increase annual costs.)_
+    - _(Sensitivity analysis could include "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), but this would significantly increase annual costs.)_
 - **Net Annual Savings** (assuming full adoption and [50.0% R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): $50.0B/year.
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
