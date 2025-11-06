@@ -617,7 +617,7 @@ export async function parameterizeFileWithLLM(filePath: string): Promise<void> {
       for (const replacement of result.chapterReplacements) {
         updatedBody = updatedBody.replace(replacement.find, replacement.replace);
       }
-      const newContent = matter.stringify(updatedBody, frontmatter);
+      const newContent = stringifyWithFrontmatter(updatedBody, frontmatter);
       await saveFile(filePath, newContent);
       console.log(`✓ Successfully parameterized ${filePath}.`);
       body = updatedBody; // Update body for hash calculation
