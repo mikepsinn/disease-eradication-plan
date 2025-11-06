@@ -201,8 +201,7 @@ For a concrete (though simplified) scenario, assume:
 $$
   \text{NPV}(\text{Costs})
   = C_0
-
-  * \sum_{t=1}^{10} \frac{C_{\text{op}}(t)}{(1 + r)^t}
+  + \sum_{t=1}^{10} \frac{C_{\text{op}}(t)}{(1 + r)^t}
 $$
 
 - Upfront: $C_0 = 0.26975$.
@@ -213,8 +212,7 @@ Hence,
 $$
   \text{NPV}(\text{Costs})
   = 0.26975
-
-  * \sum_{t=1}^{10} \frac{0.04005}{(1 + 0.08)^t}
+  + \sum_{t=1}^{10} \frac{0.04005}{(1 + 0.08)^t}
 $$
 
 A standard annuity formula:
