@@ -16,6 +16,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -34,8 +35,6 @@ They have shareholders. They have quarterly earnings. They have a legal obligati
 Fine. Give them bigger profits.
 
 **War Contractors become Peace Contractors.** Not because they grew a conscience. Because the math changed.
-
----
 
 ## 1. Co-Opting Defense Contractors: Why It's Superior to Adversarial Strategies
 
@@ -67,8 +66,6 @@ Long-term success requires sustainable systemic change. Co-opting creates enduri
 - **Black Swans**: Geopolitical crises. **Mitigation**: Have adversarial fallback.
 
 This approach reinforces the "defeat bad money with better money" thesis, potentially cutting costs by 30-50.0% while speeding timelines.
-
----
 
 ## 2. The Ultimate Incentive for Nonprofits: Stop Begging, Start Owning
 

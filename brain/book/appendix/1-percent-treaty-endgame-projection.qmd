@@ -16,6 +16,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -27,21 +28,19 @@ from economic_parameters import *
 
 **This document presents a long-term projection of compounding effects and economic multipliers as the 1% Treaty system matures over 20 years.**
 
-**Nature of this analysis:**
+### Nature of this analysis
 
 - **Speculative** - Projects secondary and tertiary effects that are harder to quantify
 - **Long-term vision** - Assumes successful implementation and network effects
 - **Maximum potential** - Shows what's possible if everything works well
 - **Not the primary case** - Main pitch uses conservative 463:1 or complete 1,239:1 ROI
 
-**For credible, near-term analysis, see:**
+#### For credible, near-term analysis, see
 
 - [Health Dividend](../economics/health-dividend.qmd) - Conservative 463:1 ROI (dFDA only)
 - [1% Treaty ROI Tiers](1-percent-treaty-roi-tiers.qmd) - Complete 1,239:1 ROI (all direct benefits)
 
 This "Endgame" scenario is provided for those interested in the full long-term vision and compounding potential.
-
----
 
 ## The Endgame: 25,781:1 ROI (Year 20 Compounding)
 
@@ -61,8 +60,6 @@ When you add it all up at maturity:
 
 That's more than the [GDP of China](../references.qmd#gdp-of-china).
 
----
-
 ## Direct Annual Savings (Year 1-5)
 
 - **Military reduction savings**: $27.2B (captured dividend)
@@ -70,8 +67,6 @@ That's more than the [GDP of China](../references.qmd#gdp-of-china).
 - **Clinical trial efficiency**: $50.0B (82x cost reduction)
 - **Prevention programs**: $15B (catching disease early)
 - **Total Direct**: ~$206B annually
-
----
 
 ## Economic Multiplier Effects (Years 5-20)
 
@@ -112,8 +107,6 @@ As the system scales and compounds, massive secondary benefits emerge:
 - Network effects from global collaboration
 - Breakthrough treatments enable new industries
 
----
-
 ## Total Annual Value at Maturity: $16.4T
 
 This represents:
@@ -122,8 +115,6 @@ This represents:
 - 65% of US GDP ($25.5T)
 - 17% of global GDP ($96T)
 - **ROI: 25,781:1** (not a typo)
-
----
 
 ## The Compound Growth Timeline
 
@@ -136,8 +127,6 @@ This represents:
 | **Year 15** | $10T | $85T | Healthcare costs collapse, productivity soars |
 | **Year 20** | $16.4T | $168T | Full potential realized, disease obsolete |
 
----
-
 ## Cost-Benefit Ratio by Component
 
 | Component | Annual Cost | Annual Benefit | ROI |
@@ -148,8 +137,6 @@ This represents:
 | **Combined System** | **$640M** | **$16.4T** | **25,781:1** |
 
 The whole is literally 100x greater than the sum of its parts.
-
----
 
 ## What $16.4T Looks Like
 
@@ -166,8 +153,6 @@ Instead, we spend it on:
 - Paying [$41,000 per trial patient](../references.qmd#trial-cost-41k)
 - Paying the FDA $7B/year to make curing disease economically impossible
 
----
-
 ## Why These Numbers Are Conservative
 
 1. **AI acceleration not included**: These projections assume current technology
@@ -177,8 +162,6 @@ Instead, we spend it on:
 5. **Quality of life unmeasured**: Being healthy is worth more than money
 
 If anything, we're undershooting.
-
----
 
 ## Why These Numbers Are Credible
 
@@ -195,9 +178,7 @@ If anything, we're undershooting.
 - Only 50% better allocation (markets usually 2-3x better)
 - [Standard QALY values](../references.qmd#qaly-value) (many argue life is worth more)
 
-The math isn't optimistic—it's conservative.
-
----
+The math isn't optimistic, it's conservative.
 
 ## The Path to $16.4T
 
@@ -221,8 +202,6 @@ The math isn't optimistic—it's conservative.
 - Cost: Still just $640M/year
 - Benefit: $16.4T/year and growing
 
----
-
 ## The Skeptic's Corner
 
 "These numbers are impossible!"
@@ -232,8 +211,6 @@ The internet was for nerds.
 SpaceX couldn't possibly land rockets.
 
 Every transformative technology looks impossible until it's inevitable.
-
----
 
 ## Understanding the Multipliers
 
@@ -289,8 +266,6 @@ With 1% Treaty system:
 - Multiplier effect on economic development
 - Estimated total value: $1.9T/year
 
----
-
 ## Technical Notes on Projections
 
 ### Discount Rates Not Applied
@@ -325,18 +300,16 @@ Small changes in key assumptions dramatically affect outcomes:
 
 The $16.4T figure assumes moderate scenarios across all variables.
 
----
-
 ## When to Use This Analysis
 
-**Appropriate Contexts:**
+### Appropriate Contexts
 
 - Vision documents and long-term strategy
 - Conversations with visionary donors/investors
 - Academic discussions of transformative potential
 - Explaining maximum upside to true believers
 
-**Inappropriate Contexts:**
+#### Inappropriate Contexts
 
 - Initial pitch to skeptical audiences
 - Government policy briefings
@@ -345,16 +318,12 @@ The $16.4T figure assumes moderate scenarios across all variables.
 
 **Default Recommendation:** Lead with 463:1 (conservative) or 1,239:1 (complete). Use 25,781:1 only with audiences ready for the full vision.
 
----
-
 ## Related Analysis
 
 - **Conservative Case (463:1)**: [Health Dividend](../economics/health-dividend.qmd) - dFDA R&D savings only
 - **Complete Case (1,239:1)**: [1% Treaty ROI Tiers](1-percent-treaty-roi-tiers.qmd) - All direct benefits
 - **NPV Methodology**: [Health Dividend Calculations](health-dividend-calculations.qmd) - 10-year NPV with discount rates
 - **Cost-Effectiveness**: [1% Treaty Cost-Effectiveness](1-percent-treaty-cost-effectiveness.qmd) - ICER and cost-per-QALY
-
----
 
 ## Conclusion
 

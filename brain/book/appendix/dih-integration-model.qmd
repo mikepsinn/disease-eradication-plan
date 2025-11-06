@@ -16,6 +16,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -31,14 +32,14 @@ The [DIH](../solution/dih.qmd) doesn't disrupt healthcare - it enhances it by fu
 
 ### 1. The Patient Journey
 
-**Traditional Path:**
+#### Traditional Path
 
 1. Patient sees doctor
 2. Doctor prescribes FDA-approved treatment
 3. Insurance covers it (maybe)
 4. Patient pays copay
 
-**DIH-Enhanced Path:**
+#### DIH-Enhanced Path
 
 1. Patient sees doctor
 2. Doctor can ALSO recommend relevant trials (like pre-1962)
@@ -48,7 +49,7 @@ The [DIH](../solution/dih.qmd) doesn't disrupt healthcare - it enhances it by fu
 
 ### 2. The DIH Insurance Model
 
-**What DIH Covers (Like Insurance):**
+#### What DIH Covers (Like Insurance)
 
 - Trial medication costs
 - Required testing and monitoring
@@ -56,7 +57,7 @@ The [DIH](../solution/dih.qmd) doesn't disrupt healthcare - it enhances it by fu
 - Lost wage compensation
 - Complication coverage
 
-**Patient Responsibilities:**
+#### Patient Responsibilities
 
 - Small copay ($20-50 per month)
 - Report outcomes via app
@@ -65,21 +66,21 @@ The [DIH](../solution/dih.qmd) doesn't disrupt healthcare - it enhances it by fu
 
 ### 3. Integration Points with Existing System
 
-**At the Doctor's Office:**
+#### At the Doctor's Office
 
 - DIH portal integrated into EMR systems
 - Doctors see trial options alongside standard treatments
 - One-click enrollment (like e-prescribing)
 - Automatic eligibility checking
 
-**At the Pharmacy:**
+#### At the Pharmacy
 
 - Trial medications dispensed like regular prescriptions
 - Pharmacy becomes trial distribution site
 - Standard pickup/delivery options
 - Automatic refill reminders
 
-**With Existing Insurance:**
+#### With Existing Insurance
 
 - DIH supplements, doesn't replace
 - Covers what traditional insurance won't (experimental treatments)
@@ -103,21 +104,21 @@ graph TD
 
 ### 5. Why This Works Better Than Direct Payments
 
-**Avoids Perverse Incentives:**
+#### Avoids Perverse Incentives
 
 - No "professional patients" gaming the system
 - No coercion of desperate people
 - Maintains doctor-patient relationship
 - Preserves medical ethics
 
-**Reduces Friction:**
+#### Reduces Friction
 
 - Works within existing workflows
 - Uses familiar insurance model
 - No new systems to learn
 - Doctors remain gatekeepers
 
-**Ensures Quality:**
+#### Ensures Quality
 
 - Medical oversight maintained
 - Safety monitoring preserved
@@ -126,16 +127,16 @@ graph TD
 
 ## Real-World Example
 
-**Sarah has Type 2 Diabetes:**
+### Sarah has Type 2 Diabetes
 
-**Old System:**
+#### Old System
 
 - Metformin not working well
 - No other options covered
 - Pays $500/month for branded drug
 - Still has poor control
 
-**With DIH Integration:**
+#### With DIH Integration
 
 1. Doctor checks DIH portal during visit
 2. Sees 5 relevant trials for new diabetes drugs
@@ -181,7 +182,7 @@ Before the 1962 Kefauver-Harris Amendment:
 - Innovation happened at bedside
 - [FDA only regulated safety, not efficacy](../references.qmd#fda-pre-1962-mandate)
 
-**We're bringing this back, but with:**
+### We're bringing this back, but with
 
 - Modern safety monitoring
 - Real-time data collection
@@ -191,7 +192,7 @@ Before the 1962 Kefauver-Harris Amendment:
 
 ## Cost Structure (Realistic Numbers)
 
-**Per Patient Per Trial:**
+### Per Patient Per Trial
 
 - Medication costs: $200-2000/month (covered by DIH)
 - Monitoring costs: $100-500/month (covered by DIH)
@@ -202,7 +203,7 @@ Before the 1962 Kefauver-Harris Amendment:
 **Total DIH cost per patient:** $360-2,710/month
 **Traditional trial cost per patient:** [$6,800-13,600/month](../references.qmd#trial-costs-fda-study)
 
-**Efficiency gain: 75-80% cost reduction**
+#### Efficiency gain: 75-80% cost reduction
 
 ## Why Doctors Will Love This
 
@@ -223,21 +224,21 @@ Before the 1962 Kefauver-Harris Amendment:
 
 ## The Transition Plan
 
-**Phase 1: Pilot Programs (Year 1)**
+### Phase 1: Pilot Programs (Year 1)
 
 - 10 health systems
 - 5 disease areas
 - 10,000 patients
 - Prove the model works
 
-**Phase 2: Regional Rollout (Year 2)**
+#### Phase 2: Regional Rollout (Year 2)
 
 - 100 health systems
 - 20 disease areas
 - 100,000 patients
 - Refine operations
 
-**Phase 3: National Scale (Year 3+)**
+##### Phase 3: National Scale (Year 3+)
 
 - All willing providers
 - All diseases

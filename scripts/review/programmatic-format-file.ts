@@ -15,6 +15,12 @@ async function formatFile() {
         process.exit(1);
     }
 
+    // Exclude references.qmd from formatting
+    if (path.basename(fullPath) === 'references.qmd') {
+        console.log('Skipping references.qmd (excluded from formatting)');
+        process.exit(0);
+    }
+
     let fileContent = fs.readFileSync(fullPath, 'utf-8');
     
     try {

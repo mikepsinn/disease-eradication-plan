@@ -9,6 +9,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -19,8 +20,6 @@ from economic_parameters import *
 ### Calculation Framework
 
 Below is an illustrative framework with more formal equations and a simplified but "rigorous" model to analyze the cost–benefit dynamics and ROI of upgrading the FDA (and analogous global regulators) into a decentralized, continuously learning platform. Many real-world complexities (e.g., drug-specific risk profiles, variable regulatory timelines across countries) would require further refinement, but these equations give a starting point for a more quantitative analysis.
-
----
 
 #### Definitions and Parameters
 
@@ -89,8 +88,6 @@ We define the following parameters to capture costs, savings, timelines, and sca
    - Let $r$ be the **annual discount rate** (e.g., 5–10% for cost-of-capital or social discounting).
    - A future cost (or saving) in year $t$ is discounted by $\frac{1}{(1 + r)^t}$.
 
----
-
 #### NPV of Costs
 
 We sum the upfront cost $C_{0}$ and the net present value (NPV) of ongoing operational costs $C_{\text{op}}(t)$ from $t = 1$ to $t = T$:
@@ -100,8 +97,6 @@ $$
   = C_{0}
     + \sum_{t=1}^{T} \frac{C_{\text{op}}(t)}{(1 + r)^t}
 $$
-
----
 
 #### NPV of Savings
 
@@ -120,8 +115,6 @@ $$
 $$
 
 where $k$ is the steepness of adoption and $t_{0}$ is the midpoint.
-
----
 
 #### ROI
 
@@ -142,8 +135,6 @@ $$
 $$
 
 If $\text{Net Benefit} > 0$, the program yields a positive return in present-value terms.
-
----
 
 #### Example Parameterization
 
@@ -311,8 +302,6 @@ $$
 $$
 
 In this rough example, even **partial adoption** in the early years delivers large returns. If $\alpha$ or $p(t)$ were higher, or if the discount rate $r$ were lower, the ROI would increase further. _This ROI is based on a cost model that is now explicitly derived from the detailed component estimates in the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section, providing a more transparent and verifiable result._
-
----
 
 #### Other Extensions and Considerations
 

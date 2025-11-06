@@ -16,6 +16,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -27,19 +28,17 @@ from economic_parameters import *
 
 *The DIH Command & Control Airtable Base (Or: How to Track 8 Billion People Without Being Creepy)*
 
-Here's how you construct the central nervous system for the War on Disease using Airtable—because apparently Excel wasn't dystopian enough. This is your complete blueprint for a database that manages every human, dollar, and decision in humanity's pivot from killing to healing.
+Here's how you construct the central nervous system for the War on Disease using Airtable, because apparently Excel wasn't dystopian enough. This is your complete blueprint for a database that manages every human, dollar, and decision in humanity's pivot from killing to healing.
 
-Think of it as Facebook's database if Facebook actually wanted to help people instead of selling their data to whoever's buying. Every person, every dollar, every vote—all tracked in one place that can't be corrupted because it's too transparent to hide anything.
+Think of it as Facebook's database if Facebook actually wanted to help people instead of selling their data to whoever's buying. Every person, every dollar, every vote, all tracked in one place that can't be corrupted because it's too transparent to hide anything.
 
 ## The Architecture: Military Organization Without the Military
 
 *The G-Staff Model (Borrowed from People Who Know How to Organize Mass Death)*
 
-You steal the military's organizational structure—the G-Staff model—because they've spent centuries perfecting large-scale coordination. The irony of using military command structure to end military spending is not lost on us. It's actually kind of beautiful.
+You steal the military's organizational structure, the G-Staff model, because they've spent centuries perfecting large-scale coordination. The irony of using military command structure to end military spending is not lost on us. It's actually kind of beautiful.
 
-The entire system revolves around people, not processes. The `Personnel Roster` is your hub—every other table connects back to actual humans doing actual things. No abstract "stakeholders" or "human resources." Just people trying not to die.
-
----
+The entire system revolves around people, not processes. The `Personnel Roster` is your hub, every other table connects back to actual humans doing actual things. No abstract "stakeholders" or "human resources." Just people trying not to die.
 
 ## SECTION 1: G-1 (Personnel Command)
 
@@ -49,7 +48,7 @@ The entire system revolves around people, not processes. The `Personnel Roster` 
 
 This is your central hub. Every living human who touches the system gets an entry. Think of it as LinkedIn but useful.
 
-**Fields that matter:**
+#### Fields that matter
 
 - `Personnel ID` (Autonumber) - Their unique number in the revolution
 - `Full Name` (Text) - What their mom calls them when angry
@@ -72,7 +71,7 @@ This is your central hub. Every living human who touches the system gets an entr
 
 Every interaction, every touchpoint, every time someone did anything. Like your browser history but for saving humanity.
 
-**What you track:**
+#### What you track
 
 - `Engagement ID` (Autonumber) - Because even conversations need ID numbers now
 - `Personnel` (Link to `Personnel Roster`) - Who did the thing
@@ -94,7 +93,7 @@ Every interaction, every touchpoint, every time someone did anything. Like your 
 
 Managing the humans who run the machine that saves the humans.
 
-**The hiring pipeline:**
+#### The hiring pipeline
 
 - `Position ID` (Autonumber) - Job number whatever
 - `Position Title` (Text) - Fancy name for "does stuff"
@@ -108,8 +107,6 @@ Managing the humans who run the machine that saves the humans.
 - `Job Description` (Long Text) - Lies about how fun this job is
 - `Onboarding Docs` (Attachments) - PDFs nobody reads
 
----
-
 ## SECTION 2: G-2 & G-3 (Operations & Intelligence)
 
 *How to Track What Everyone's Doing and Who They're Doing It With*
@@ -118,7 +115,7 @@ Managing the humans who run the machine that saves the humans.
 
 Every fund, company, nonprofit, and three-letter agency you deal with.
 
-**The institutional roster:**
+#### The institutional roster
 
 - `Organization Name` (Text) - What they call themselves
 - `Type` (Single Select) - What they actually are:
@@ -140,7 +137,7 @@ Every fund, company, nonprofit, and three-letter agency you deal with.
 
 The organizational structure that makes this chaos manageable.
 
-**Your command structure:**
+#### Your command structure
 
 - `Division Name` (Text) - G-1 Personnel, G-4 Treasury, etc.
 - `Mandate` (Long Text) - What they're supposed to accomplish
@@ -152,7 +149,7 @@ The organizational structure that makes this chaos manageable.
 
 Where you track who's doing what and why they're behind schedule.
 
-**Project management for revolutionaries:**
+#### Project management for revolutionaries
 
 - `Task ID` (Autonumber) - Task #4,847,293
 - `Task Name` (Text) - What needs doing
@@ -174,8 +171,6 @@ Where you track who's doing what and why they're behind schedule.
 - `Description` (Long Text) - War and Peace about a simple task
 - `Attachments` (Attachments) - Files nobody will open
 
----
-
 ## SECTION 3: G-4 & G-5 (Strategy & Logistics)
 
 *How to Track Money Without Becoming the IRS*
@@ -184,7 +179,7 @@ Where you track who's doing what and why they're behind schedule.
 
 Every penny tracked, because transparency is the only antidote to corruption.
 
-**The money trail:**
+#### The money trail
 
 - `Transaction ID` (Autonumber) - Receipt #999,999
 - `Date` (Date) - When money moved
@@ -207,7 +202,7 @@ Every penny tracked, because transparency is the only antidote to corruption.
 
 Your major initiatives, the big battles in the war.
 
-**Strategic initiative tracking:**
+#### Strategic initiative tracking
 
 - `Campaign Name` (Text) - Like "Global Referendum - Phase 1" or "Operation: Make Pharma Cry"
 - `Status` (Single Select) - How it's going:
@@ -221,8 +216,6 @@ Your major initiatives, the big battles in the war.
 - `Related Projects` (Link to `Projects & Tasks`) - The actual work
 - `Budget` (Currency) - How much we're burning
 
----
-
 ## SECTION 4: G-6 (Signal & Communications)
 
 *How to Run Propaganda Without Becoming Goebbels*
@@ -231,7 +224,7 @@ Your major initiatives, the big battles in the war.
 
 Every message you blast at the world.
 
-**Message management:**
+#### Message management
 
 - `Message ID` (Autonumber) - Propaganda piece #420,069
 - `Title` (Text) - Clickbait headline
@@ -253,7 +246,7 @@ Every message you blast at the world.
 
 Your collection of images, videos, and documents that make people feel things.
 
-**Creative arsenal:**
+#### Creative arsenal
 
 - `Asset ID` (Autonumber) - Meme #80,085
 - `Asset Name` (Text) - "Crying_Child_With_Cancer.jpg"
@@ -266,8 +259,6 @@ Your collection of images, videos, and documents that make people feel things.
 - `Related Campaign` (Link to `Campaigns`) - Which battle needs this
 - `Usage Notes` (Long Text) - "Makes people cry, use sparingly"
 
----
-
 ## SECTION 5: MISSION COMMAND (The Money Makers)
 
 *How to Track the Core Components of Victory*
@@ -276,7 +267,7 @@ Your collection of images, videos, and documents that make people feel things.
 
 Tracking every bond sold to fund this whole operation.
 
-**Investment tracking:**
+#### Investment tracking
 
 - `Bond ID` (Autonumber) - Bond #007
 - `Investor` (Links) - The optimist with money
@@ -294,7 +285,7 @@ Tracking every bond sold to fund this whole operation.
 
 Managing the global petition to hit that magic 3.5% tipping point.
 
-**Democracy theater:**
+#### Democracy theater
 
 - `Vote ID` (Autonumber) - Vote #8,000,000,001
 - `Voter` (Link to `Personnel Roster`) - The optimist
@@ -312,7 +303,7 @@ Managing the global petition to hit that magic 3.5% tipping point.
 
 Tracking which countries have signed on to stop being idiots.
 
-**Diplomatic scorecard:**
+#### Diplomatic scorecard
 
 - `Country` (Text) - Nation-state name
 - `Status` (Single Select) - Where they're at:
@@ -329,8 +320,6 @@ Tracking which countries have signed on to stop being idiots.
 - `Next Action Date` (Date) - When to apply more pressure
 - `Notes` (Long Text) - "Senator owns defense contractor stock"
 - `Related Campaign` (Link) - Which strategy we're using
-
----
 
 ## How to Actually Build This Thing
 
@@ -360,7 +349,7 @@ Tracking which countries have signed on to stop being idiots.
 
 ## The Result
 
-You've built a command center that would make the Pentagon jealous, except instead of coordinating death, you're coordinating life. Every person, every dollar, every decision—all transparent, all tracked, all aimed at the singular goal of making death optional.
+You've built a command center that would make the Pentagon jealous, except instead of coordinating death, you're coordinating life. Every person, every dollar, every decision, all transparent, all tracked, all aimed at the singular goal of making death optional.
 
 This is how you run a revolution in the age of spreadsheets. Not with generals and bunkers, but with Airtable and radical transparency. The military-industrial complex has one major weakness: they never expected their own organizational tools to be used against them.
 

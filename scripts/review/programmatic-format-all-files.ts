@@ -26,6 +26,11 @@ async function formatAllFiles(allQmdFiles: boolean = false) {
     let fixedFileCount = 0;
 
     for (const filePath of allFiles) {
+        // Exclude references.qmd from formatting
+        if (path.basename(filePath) === 'references.qmd') {
+            continue;
+        }
+
         let fileContent = fs.readFileSync(filePath, 'utf-8');
 
         try {

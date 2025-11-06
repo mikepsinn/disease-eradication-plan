@@ -9,6 +9,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -71,7 +72,7 @@ For this analysis, we use a conservative baseline estimate of [**$100.0B per yea
 
 ### Drug Price Reductions from Global Competition and Importation
 
-**U.S.-Specific**
+#### U.S.-Specific
 
 - [U.S. prescription drug prices are 50–90% higher than in peer countries](../references.qmd#us-drug-prices-vs-peer-countries).
 - Allowing importation and global competition could conservatively reduce U.S. drug spending by 20–50% for affected drugs.
@@ -81,7 +82,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 ### Prevention Savings from Increased Preventive Care
 
-**U.S.-Specific**
+#### U.S.-Specific
 
 - [Chronic diseases account for ~90% of U.S. healthcare spending](../references.qmd#us-chronic-disease-spending) (~\$3.7T/year).
 - Preventive care is underfunded (~5% of spend); [every \$1 spent on prevention saves ~\$3](../references.qmd#prevention-cost-savings-ratio).
@@ -109,7 +110,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
   - Optimistic: 70% (saving $70B annually) from a [$100.0B addressable spend](../references.qmd#clinical-trial-spending-dfda-baseline)
   - Transformative (RECOVERY Trial-like): 95% (saving $95B annually) from a [$100.0B addressable spend](../references.qmd#clinical-trial-spending-dfda-baseline)
 
-**For detailed source citations, see:**
+#### For detailed source citations, see
 
 - [DCT Cost Reductions Evidence](../references.qmd#dct-cost-reductions-evidence)
 - [Clinical Trial Market Size](../references.qmd#clinical-trial-market-size)

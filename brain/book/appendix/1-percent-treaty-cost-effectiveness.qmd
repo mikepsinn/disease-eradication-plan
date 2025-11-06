@@ -14,11 +14,13 @@ lastFactCheckHash: a3b5ed5c444e0871923ad5b3a9df93db7519e177fffab7aba8c22eac35bea
 ```{python}
 #| echo: false
 # Import all economic parameters from centralized module
+
 import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 # So we need to add brain/book/appendix to the path
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -69,8 +71,6 @@ This means for every life saved, society becomes **$6,173.4T** richer instead of
 **113.6B + $50.0B = $163.6B per year**
 
 **Sensitivity range**: $139B to $209B (conservative to optimistic scenarios)
-
----
 
 ### Step 2: Annual Health Benefits (QALYs)
 
@@ -126,8 +126,6 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Sensitivity range**: 437,500 (low) to 2,152,500 (high) QALYs
 
----
-
 ### Step 3: Annual Costs
 
 #### 3a. Campaign Costs ($250M/year, amortized)
@@ -174,8 +172,6 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Sensitivity range**: $230M to $393M
 
----
-
 ### Step 3b: Alternative Cost Perspective - The Funding Mechanism
 
 **Important Note**: The above calculation uses traditional health economics methodology, counting all upfront costs. However, the actual funding mechanism makes the true cost perspective more nuanced.
@@ -202,7 +198,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 #### Alternative Cost Framings
 
-**Framing 1: Zero Upfront Cost (Investor-Funded)**
+##### Framing 1: Zero Upfront Cost (Investor-Funded)
 
 - Campaign cost: $0 (funded by VICTORY bond investors who get repaid)
 - dFDA operations: $0 (funded by DIH treasury from redirected military spending)
@@ -216,7 +212,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 - Net cost: $27.2B - $27.2B = $0
 - **ICER = -$187,543 per QALY**
 
-**Framing 3: Military Waste Conversion**
+###### Framing 3: Military Waste Conversion
 
 - Military spending has negative ROI (destroys value)
 - Medical spending has positive ROI (creates value)
@@ -234,8 +230,6 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 4. This intervention is dominant even with costs included
 
 **Key insight**: Even counting ALL costs conservatively, the ICER is -$167,771/QALY. Under more realistic framings where the campaign is self-funding, the true societal cost approaches $0, making the intervention infinitely cost-effective.
-
----
 
 ### Step 4: ICER Calculation
 
@@ -257,7 +251,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **ICER** = $290M / 925,610
 
-**ICER = $-176,382 per QALY**
+##### ICER = $-176,382 per QALY
 
 **Interpretation**: For every QALY gained, society saves $-176,382. This is a **dominant intervention** (saves money AND improves health).
 
@@ -270,8 +264,6 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 **Cost per life ≈ $6,173.4T per life saved**
 
 **Interpretation**: For every life saved, society saves approximately $6,173.4T.
-
----
 
 ## Comparison to Other Interventions
 
@@ -310,8 +302,6 @@ This is a **dominant intervention** - it makes society richer while saving lives
 - Generates wealth while improving health
 
 **The multiplier**: The 1% Treaty is **1,372x more cost-effective** than the best charities in the world.
-
----
 
 ## Sensitivity Analysis
 
@@ -361,8 +351,6 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 **Best case** (optimistic): Society saves $4.79M per life saved (lower because we're saving many more lives, so the economic benefit is spread across more QALYs)
 
----
-
 ## Visual Comparisons
 
 ### Cost-Effectiveness: How Much Does Society Pay to Save a Life?
@@ -371,7 +359,7 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 This chart demonstrates the fundamental difference between traditional philanthropy and the 1% Treaty approach:
 
-- **GiveWell Top Charities** (Helen Keller International, New Incentives, Against Malaria Foundation): Society pays $3,500-$5,500 per life saved. These are excellent interventions—among the most cost-effective charitable uses of money in the world.
+- **GiveWell Top Charities** (Helen Keller International, New Incentives, Against Malaria Foundation): Society pays $3,500-$5,500 per life saved. These are excellent interventions, among the most cost-effective charitable uses of money in the world.
 
 - **1% Treaty + DIH + dFDA**: Society SAVES $6.56 million per life saved. This is a dominant intervention that generates wealth while saving lives. The stacked bar shows contributions from both the peace dividend (1% less conflict) and dFDA R&D savings.
 
@@ -387,9 +375,7 @@ This chart compares the gross annual economic benefits across major public healt
 
 - **1% Treaty + DIH + dFDA**: Generates $163.6B in annual economic benefits ($113.6B peace dividend + $50.0B dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
 
-**Key distinction**: Only the 1% Treaty is self-funding—it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
-
----
+**Key distinction**: Only the 1% Treaty is self-funding, it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
 
 ### Monte Carlo Simulation (Recommended)
 
@@ -401,8 +387,6 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 - 95% confidence intervals
 
 **Preliminary Monte Carlo results** (if available): [Link to sensitivity analysis notebook]
-
----
 
 ## Sources and References
 
@@ -447,8 +431,6 @@ For publication-quality analysis, we recommend running a Monte Carlo simulation 
 8. **GiveWell Top Charities**: [GiveWell 2024](https://www.givewell.org/how-much-does-it-cost-to-save-a-life)
    - Cost per life: $3,000-$5,500
    - Data as of February 2024
-
----
 
 ## Frequently Asked Questions
 
@@ -523,8 +505,6 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 - Creating unstoppable momentum in pilot countries first
 
 The math shows it's worth trying. Even a 10% chance of success has positive expected value given the enormous returns.
-
----
 
 ## Related Analyses
 

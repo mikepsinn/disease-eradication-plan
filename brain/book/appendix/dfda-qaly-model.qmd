@@ -9,6 +9,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -85,8 +86,6 @@ This stream reflects the transformative potential of the dFDA to create viable r
 - [Value per QALY](../references.qmd#qaly-value): Standard willingness-to-pay threshold of $100,000–$150,000 per QALY
 - [QALY cost of delayed access to treatment](../references.qmd#qaly-delayed-access-cost): Delayed access costs for hepatitis C (0.2–1.1 QALYs/patient), syphilis (0.09 QALYs/infection), and statins (0.20 QALYs gain)
 
----
-
 ### Daily Opportunity Cost of Inaction
 
 This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA Infrastructure. By translating the annualized benefits identified in this analysis into a daily metric, we can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.
@@ -129,8 +128,6 @@ While the figures are presented as daily point estimates for clarity, they repre
 3. **Realization of QALY Gains:** The link between a more efficient research ecosystem and concrete health outcomes (QALYs) is complex. The estimates for QALYs gained are based on evidence from studies on the value of faster drug access and improved prevention, but the exact magnitude of the dFDA's impact remains a projection.
 
 **Conclusion:** Despite these uncertainties, the analysis consistently shows that the daily opportunity cost of inaction is substantial across all plausible scenarios. Every day the current inefficient, slow, and expensive paradigm for clinical research continues, society forgoes hundreds of quality-adjusted life-years and tens to hundreds of millions of dollars in value. Every single day.
-
----
 
 ### Final ROI and Net Benefit
 
@@ -188,8 +185,6 @@ The following table provides the data and sources that support the chart. The li
 
 **Conclusion:** The dFDA initiative is not just a financially sound investment with a high ROI; it is one of the most impactful public health interventions conceivable. Its "dominant" cost-effectiveness profile is comparable to gold-standard programs like childhood vaccination and smoking cessation, but its scale of economic and health benefits is potentially orders of magnitude larger.
 
----
-
 ## Comparison to Other Major Public Investments
 
 To provide context for the dFDA's estimated costs, it is useful to compare them to other significant U.S. government investments in health and technology. The dFDA's projected "Lean Ecosystem" cost of approximately **[$40M per year](#simplified-roi-scenario)** (covering core platform operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
@@ -203,8 +198,6 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 | **National Cancer Institute (NCI)**  | **~\$7.2 Billion / year** (FY25 Budget)                 | **~180x**                                | See [NCI Budget](../references.qmd#nih-nci-budget-breakdown)                 |
 
 **Key Takeaway:** The estimated annual cost of the dFDA initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from [dFDA annual cost](#simplified-roi-scenario) and [NCI budget](#comparison-to-other-major-public-investments)). This comparison underscores that the dFDA Infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
-
----
 
 ### Appendix: Detailed QALY Calculation Model {#appendix-detailed-qaly-calculation-model}
 
@@ -221,7 +214,7 @@ This stream models the benefit of accelerating the approval of new drugs that wo
   - $T_{\text{accel}}$: Average years of acceleration per drug.
     - **Rationale:** The dFDA model, inspired by hyper-efficient trials like the [RECOVERY trial](recovery-trial.qmd), can drastically cut development timelines from years to months.
     - **Source:** The [RECOVERY trial](recovery-trial.qmd) demonstrated unprecedented speed in generating clinical results.
-    - **Quote:** "Days to First Major Result: <100" — [The Conversation, via dFDA Wiki](recovery-trial.qmd)
+    - **Quote:** "Days to First Major Result: <100" ,  [The Conversation, via dFDA Wiki](recovery-trial.qmd)
   - $\text{QALYs}_{\text{drug}}$: Average QALYs gained per drug, per year of earlier access.
     - **Rationale:** Accelerating access to effective drugs has a direct and significant impact on life-years and quality of life.
 
@@ -293,3 +286,4 @@ This table summarizes the component calculations and derives the total QALY rang
 | **Total Annual QALYs**                                                                      | <a href="#parameterization-overall-dfda-platform-impact">**190,000**</a> | <a href="#parameterization-overall-dfda-platform-impact">**840,000**</a> | <a href="#parameterization-overall-dfda-platform-impact">**3,650,000**</a> |
 
 #### Sources
+

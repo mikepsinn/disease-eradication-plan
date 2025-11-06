@@ -8,6 +8,19 @@ tags:
   - statistics
   - data-gap
 ---
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
 
 # The 0.06% Problem: Who Actually Gets to Try New Treatments
 
@@ -25,7 +38,8 @@ It's like running a restaurant that tracks food costs and table counts but has n
 
 We pulled 100,000 trials from ClinicalTrials.gov and counted actual enrollment numbers:
 
-**US Trials (Cumulative):**
+### US Trials (Cumulative)
+
 - Phase 1: 722,619 people (median: 33 per trial)
 - Phase 2: 2,181,530 people (median: 60 per trial)
 - Phase 3: 6,548,474 people (median: 237 per trial)
@@ -65,7 +79,7 @@ World population: 8 billion
 
 Clinical trial participants annually (midpoint): 5 million
 
-**Participation rate: 0.06%**
+### Participation rate: 0.06%
 
 Six-hundredths of one percent. If clinical trials were a lottery, your odds would be 1 in 1,600.
 
@@ -148,22 +162,26 @@ Here's what we pulled from [ClinicalTrials.gov](https://clinicaltrials.gov/data-
 
 The math is straightforward:
 
-**Today's Capacity:**
+### Today's Capacity
+
 - [Global military spending: $2.7 trillion](../references.qmd#global-military-spending)
 - Clinical trials spending: $83 billion
 - Participants: 5 million/year at $16,600 each
 
-**With 1% of Military Spending Redirected:**
+#### With 1% of Military Spending Redirected
+
 - 1% of $2.7T = **$27 billion additional**
 - New total: **$110 billion** (32% increase in funding)
 
-**With Decentralized FDA:**
+#### With Decentralized FDA
+
 - Enrollment isn't limited by proximity to trial sites
 - Patients report outcomes via smartphone
 - Trials run continuously instead of in isolated batches
 - Cost per participant drops to **~$1,000** (from $16,600)
 
-**The Result:**
+#### The Result
+
 - $110B ÷ $1,000 = **110 million participants/year**
 - Current: 5 million/year
 - **Medical progress accelerates 22x**
@@ -184,7 +202,7 @@ The answer: **5 million people a year, at a cost of $16,600 each.**
 
 **2.4 billion people are living with chronic disease.**
 
-**The ratio: 1 in 480.**
+### The ratio: 1 in 480.
 
 The 99.8% who don't get access? They suffer. And 150,000 die every day.
 

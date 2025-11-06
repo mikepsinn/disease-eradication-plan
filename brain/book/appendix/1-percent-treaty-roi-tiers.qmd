@@ -15,6 +15,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -27,8 +28,6 @@ from economic_parameters import *
 The [conservative 463:1 ROI estimate](../economics/health-dividend.qmd) captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
 
 This analysis focuses on provable, quantifiable benefits with conservative assumptions. For the underlying calculations and NPV methodology, see [Health Dividend Calculations](health-dividend-calculations.qmd).
-
----
 
 ## The Complete Case: 1,239:1 ROI (All Direct Benefits)
 
@@ -49,13 +48,11 @@ The 1% Treaty doesn't just make trials cheaper. It:
 
 Each of these alone is worth tens to hundreds of billions. Together? **$1.2T/year.**
 
----
-
 ## The 7-Year Access Acceleration
 
 **The insight:** The dFDA gives patients the right and ability to access treatments during Phase 2/3 trials instead of waiting 9.1 years for FDA approval (or forever if trials are never completed for their condition).
 
-**How it works:**
+### How it works
 
 - Current system: Wait 9.1 years average from Phase 1 to FDA approval
 - dFDA system: Access treatment during Phase 2/3 pragmatic trials
@@ -82,19 +79,17 @@ New patients each year get early access:
 
 ### Combined Benefit
 
-**Combined "earlier access" benefit:**
+#### Combined "earlier access" benefit
 
 - Years 1-7: $300B (amortized stock) + $105B (flow) = **$405B/year**
 - Years 8+: $105B/year (flow only)
 - **10-year average: ~$300B/year**
 
----
-
 ## The Research Acceleration Multiplier
 
 **The insight:** 82x cheaper trials + 40% more funding ($27.2B/year) = **115X more research capacity**.
 
-**What this means:**
+### What this means
 
 - Current: ~3,300 clinical trials/year globally, ~50 new drug approvals/year
 - New capacity: ~380,000 trials/year possible, ~1,000-2,000 approvals/year (20-40X increase)
@@ -116,11 +111,9 @@ These are common diseases that are UNDER-researched because trials are too expen
 
 These are NOT rare diseases (already counted). These are common diseases with limited treatment options due to insufficient research investment.
 
-**Conservative annual value: $100B/year**
+#### Conservative annual value: $100B/year
 
 *Note: This is a conservative estimate based on health outcomes. For market valuation approaches suggesting substantially higher values ($6.48T/year with 80X acceleration), see [Economic Value of Accelerated Treatments](economic-value-of-accelerated-treatments.qmd).*
-
----
 
 ## The Complete Benefit Breakdown
 
@@ -141,11 +134,9 @@ These are NOT rare diseases (already counted). These are common diseases with li
 
 **Note:** Insurance savings, productivity gains, and longevity extension are outcomes of the above benefits and not counted separately to avoid double-counting.
 
----
-
 ## The Sanity Check
 
-**Is $1.2T/year reasonable?**
+### Is $1.2T/year reasonable?
 
 - Global GDP: $111 trillion/year
 - Global healthcare spending: $9.8 trillion/year
@@ -157,7 +148,7 @@ If the 1% Treaty generates $1.2T/year in benefits, that's:
 - 12.4% of healthcare spending
 - 45% of military spending
 
-**This passes the smell test.**
+#### This passes the smell test.
 
 For comparison:
 
@@ -172,8 +163,6 @@ The 1% Treaty doesn't cure everything, but it:
 - Enables trials for currently untreatable conditions
 
 $1.2T/year is reasonable for that scope.
-
----
 
 ## Technical Notes
 
@@ -197,16 +186,12 @@ To maintain conservative estimates, this analysis excludes:
 
 Including these would push the ROI substantially higher, but they're harder to quantify with precision.
 
----
-
 ## Related Analysis
 
 - **Conservative Case (463:1)**: See [Health Dividend](../economics/health-dividend.qmd) for the baseline NPV-adjusted ROI
 - **NPV Methodology**: See [Health Dividend Calculations](health-dividend-calculations.qmd) for 10-year NPV analysis with discount rates
 - **Cost-Effectiveness**: See [1% Treaty Cost-Effectiveness](1-percent-treaty-cost-effectiveness.qmd) for ICER and cost-per-QALY analysis
 - **Daily Opportunity Cost**: See [Daily Opportunity Cost](dfda-daily-opportunity-cost.qmd) for the cost of delay
-
----
 
 ## Summary
 
