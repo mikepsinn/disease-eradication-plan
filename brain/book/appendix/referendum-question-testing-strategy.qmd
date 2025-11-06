@@ -25,7 +25,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## On Getting The Question Perfect
 
 You're asking 280 million humans to answer one question. The difference between 65% yes and 75% yes is **280 million people** - larger than the population of Australia.
 

@@ -23,7 +23,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## Overview
 
 The [conservative 463:1 ROI estimate](../economics/health-dividend.qmd) captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
 

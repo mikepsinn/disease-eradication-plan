@@ -35,7 +35,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-# Part I: The Problem
 
 *Understanding the Problem You're Going to Fix*
 

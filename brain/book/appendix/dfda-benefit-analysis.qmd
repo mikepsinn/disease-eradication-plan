@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## Benefit Analysis Quantifying the Savings
 
 This section quantifies the potential societal benefits of the dFDA Infrastructure, focusing primarily on R&D cost savings and health outcome improvements.
 

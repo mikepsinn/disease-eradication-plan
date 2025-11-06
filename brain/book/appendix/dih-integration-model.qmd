@@ -24,7 +24,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The Core Insight: DIH as a Trial Insurance Provider
 
 The [DIH](../solution/dih.qmd) doesn't disrupt healthcare - it enhances it by functioning like an insurance company that covers clinical trial participation.
 

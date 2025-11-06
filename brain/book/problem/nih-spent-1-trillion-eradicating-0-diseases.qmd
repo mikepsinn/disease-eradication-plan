@@ -29,7 +29,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The Trillion Dollar Participation Trophy
 
 With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted) ([source](../references.qmd#nih-cumulative-spending)).
 

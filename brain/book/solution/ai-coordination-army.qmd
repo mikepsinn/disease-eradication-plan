@@ -19,7 +19,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## How to Build Your Coordination Army
 
 You've got mission control ([DIH](dih.qmd)) and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents that actually does the work while humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
 

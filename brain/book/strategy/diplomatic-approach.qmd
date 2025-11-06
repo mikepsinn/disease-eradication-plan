@@ -19,7 +19,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The Prisoner's Dilemma
 
 **Traditional military reduction**:
 

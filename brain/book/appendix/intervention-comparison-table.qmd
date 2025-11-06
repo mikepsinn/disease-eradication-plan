@@ -18,7 +18,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## Introduction
 
 This article compares the dFDA Infrastructure to other historically high-ROI and high-QALY-per-dollar health interventions. The table below summarizes the best available data for each intervention, including return on investment (ROI), cost per QALY gained (ICER), and estimated QALYs gained per $1 million spent. This provides context for the scale and efficiency of dFDA relative to foundational public health measures.
 

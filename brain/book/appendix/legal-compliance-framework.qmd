@@ -25,7 +25,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## Overview
 
 The [1% Treaty](../solution/1-percent-treaty.qmd) initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for [VICTORY bonds](../economics/victory-bonds.qmd)**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
 

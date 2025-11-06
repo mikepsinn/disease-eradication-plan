@@ -26,7 +26,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The Problem: 240x Unused Capacity
 
 ![](../../figures/trial-access-disparity-chart.png){fig-alt="Column chart showing 5M enrolled, 1.2B willing, 2.4B with disease - massive unused capacity"}
 

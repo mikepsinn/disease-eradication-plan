@@ -32,7 +32,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## Right Now, As You Read This
 
 {{< include ../../figures/death-counter-realtime.qmd >}}
 

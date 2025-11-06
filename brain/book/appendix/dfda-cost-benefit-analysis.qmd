@@ -22,7 +22,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## TL;DR
 
 - **Saves ~[$50.0B Annually](#gross-r-d-savings-from-dfda-implementation)**: Reduces global clinical trial costs (~[$100.0B/year market](../references.qmd#clinical-trial-spending-dfda-baseline)) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
 - **[463:1 Return on Investment](#final-roi-and-net-benefit)**: A modest annual operational cost of ~[$40M](#simplified-roi-scenario) generates ~$50.0B in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit).

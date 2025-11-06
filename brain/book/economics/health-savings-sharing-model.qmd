@@ -24,7 +24,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-# The 50/50 Health Savings Split: Making Cures More Profitable Than Treatments
 
 Pharmaceutical companies aren't evil. They're just following incentives. Right now, the incentives say: "Keep people sick forever, bill monthly."
 

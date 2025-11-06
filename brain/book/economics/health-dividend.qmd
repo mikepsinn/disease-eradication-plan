@@ -24,7 +24,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The 463:1 Return
 
 The dFDA Infrastructure costs **$40M per year** to run.
 It saves the world **$50.0B per year** in clinical trial costs.

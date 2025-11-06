@@ -19,7 +19,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## "This Will Never Work"
 
 **Objection**: "Nice idea, but it's too ambitious. It'll never actually happen."
 

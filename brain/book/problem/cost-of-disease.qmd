@@ -27,7 +27,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The $397 Trillion Death Tax
 
 ![Graph comparing cancer deaths (553,888/year) and spending vs terrorism deaths (~300/year) and spending, showing massive spending disparity despite cancer killing 1,800x more people](../../../assets/cancer-vs-terrorism-deaths-spending.jpg)
 

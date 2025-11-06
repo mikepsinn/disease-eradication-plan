@@ -20,7 +20,6 @@ import pandas as pd
 import numpy_financial as npf
 ```
 
-## Core dFDA Model Parameters
 
 ```{python}
 # Import all parameters from single source of truth

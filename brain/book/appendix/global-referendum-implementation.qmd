@@ -17,7 +17,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## Objective
 
 Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../solution/1-percent-treaty.qmd) and DIH. Outputs must be auditable and persuasive to policymakers.
 

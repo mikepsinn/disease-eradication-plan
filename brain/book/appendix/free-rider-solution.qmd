@@ -26,7 +26,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## On Why Traditional Enforcement Doesn't Work
 
 The classic "free-rider" objection to any global treaty is valid: "Why should we comply if our rivals won't?"
 

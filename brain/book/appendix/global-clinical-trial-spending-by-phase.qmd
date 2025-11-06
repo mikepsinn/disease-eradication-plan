@@ -24,7 +24,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-# Global Clinical Trial Spending by Phase: The Complete Picture
 
 Here's where every dollar goes in the global clinical trials industry, broken down by who's paying and which phase they're funding.
 

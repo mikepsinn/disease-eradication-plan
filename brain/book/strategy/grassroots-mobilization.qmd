@@ -18,7 +18,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The 3.5% Rule
 
 [Research by Erica Chenoweth analyzed 323 violent and nonviolent campaigns from 1900-2006.
 

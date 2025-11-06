@@ -61,7 +61,6 @@ print(f"Captured Dividend (1% of Military Spend): {format_billions(captured_divi
 print(f"Societal Dividend (1% of Total Costs): {format_billions(societal_dividend)}")
 ```
 
-## Military vs. Disease Research Funding
 
 This chart shows the stark contrast between military spending and disease-specific research funding, highlighting the massive opportunity for reallocation.
 

@@ -20,7 +20,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## The Goal: 280 Million Votes
 
 Historical analysis shows: Every peaceful movement that gets **[3.5% active support](../references.qmd#3-5-rule)** succeeds.
 

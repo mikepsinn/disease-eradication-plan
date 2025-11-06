@@ -28,7 +28,6 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-## Introduction
 
 Achieving the ambitious goals of the [Decentralized FDA (dFDA)](../solution/dfda.qmd) initiative, drastically accelerating medical progress and reducing costs, may require innovative implementation strategies. While congressional legislation could provide the clearest authority and funding, recent precedents from the 2025 Trump administration, particularly the establishment and operation of the [Department of Government Efficiency (DOGE)](../references.qmd#wikipedia-doge), suggest a potential pathway leveraging executive action to initiate and drive the dFDA's creation without an initial congressional mandate.
 
