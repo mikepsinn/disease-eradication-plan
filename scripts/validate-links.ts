@@ -3,14 +3,11 @@ import path from 'path';
 import matter from 'gray-matter';
 import markdownit from 'markdown-it';
 import anchor from 'markdown-it-anchor';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { getProjectRoot } from './lib/file-utils';
 
 async function fixAmpersands(filePath: string): Promise<void> {
   console.log(`Fixing ampersands in ${filePath}...`);
-  const workspaceRoot = path.resolve(__dirname, '..');
+  const workspaceRoot = getProjectRoot();
   const fullPath = path.join(workspaceRoot, filePath);
 
   if (!fs.existsSync(fullPath)) {
@@ -92,7 +89,7 @@ async function getHeadings(filePath: string): Promise<string[]> {
 }
 
 async function validateLink(link: string, sourceFile: string, allHeadings: Set<string>): Promise<string | null> {
-  const workspaceRoot = path.resolve(__dirname, '..');
+  const workspaceRoot = getProjectRoot();
   try {
     if (link.startsWith('http://') || link.startsWith('https://')) {
       // External URL
@@ -154,7 +151,7 @@ async function validateLink(link: string, sourceFile: string, allHeadings: Set<s
 
 async function validateMarkdownFile(filePath: string) {
   console.log(`Validating links in ${filePath}...`);
-  const workspaceRoot = path.resolve(__dirname, '..');
+  const workspaceRoot = getProjectRoot();
   const fullPath = path.join(workspaceRoot, filePath);
 
   if (!fs.existsSync(fullPath)) {
@@ -200,7 +197,7 @@ async function validateMarkdownFile(filePath: string) {
   return errors;
 }
 
-const ROOT_DIR = path.resolve(__dirname, '..');
+const ROOT_DIR = getProjectRoot();
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand'];
 
 async function findMarkdownFiles(dir: string): Promise<string[]> {

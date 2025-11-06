@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { glob } from 'glob';
 import ignore from 'ignore';
+import { saveFile } from './lib/file-utils';
 
 const workspaceRoot = process.cwd();
 const outputFilePath = path.join(workspaceRoot, 'index.md');
@@ -77,7 +78,7 @@ async function generateInventory() {
     }
   });
 
-  await fs.writeFile(outputFilePath, markdownContent);
+  await saveFile(outputFilePath, markdownContent);
   console.log(`Inventory successfully generated at: ${outputFilePath}`);
 }
 
