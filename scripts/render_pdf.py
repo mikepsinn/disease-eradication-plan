@@ -15,6 +15,7 @@ import re
 import time
 import os
 import threading
+import platform
 from datetime import datetime
 from typing import Optional
 
@@ -143,10 +144,12 @@ class BuildMonitor:
                 self.log_handle.write(line)
                 self.log_handle.flush()
 
-                # Parse and display relevant information
+                # Print all output to console as well
+                print(line, end='')
+
+                # Parse and extract relevant information for summary
                 parsed = self.parse_line(line)
-                if parsed:
-                    print(parsed)
+                # Note: parsed info is already printed above, this is just for tracking
 
                 # Check if watchdog killed the process
                 if self.timed_out:
@@ -214,6 +217,62 @@ class BuildMonitor:
                 self.process.kill()
             return 1
 
+def kill_existing_quarto_processes() -> int:
+    """
+    Kill all existing Quarto and related LaTeX processes before starting a new build
+    
+    Returns:
+        Number of processes killed
+    """
+    killed_count = 0
+    
+    try:
+        system = platform.system()
+        
+        if system == 'Windows':
+            # Windows: Use taskkill to kill quarto.exe and related processes
+            processes_to_kill = ['quarto.exe', 'lualatex.exe', 'pdflatex.exe', 'xelatex.exe']
+            for proc_name in processes_to_kill:
+                try:
+                    result = subprocess.run(
+                        ['taskkill', '/F', '/IM', proc_name, '/T'],
+                        capture_output=True,
+                        text=True,
+                        timeout=5
+                    )
+                    # Count processes killed (taskkill returns 0 if processes were found and killed)
+                    if result.returncode == 0:
+                        # Parse output to count killed processes
+                        output_lines = result.stdout.split('\n')
+                        for line in output_lines:
+                            if 'terminated' in line.lower() or 'killed' in line.lower():
+                                killed_count += 1
+                except (subprocess.TimeoutExpired, FileNotFoundError):
+                    pass
+        else:
+            # Unix-like: Use pkill or killall
+            processes_to_kill = ['quarto', 'lualatex', 'pdflatex', 'xelatex']
+            for proc_name in processes_to_kill:
+                try:
+                    # Try pkill first
+                    subprocess.run(['pkill', '-9', proc_name], 
+                                 capture_output=True, timeout=5)
+                    # Try killall as backup
+                    subprocess.run(['killall', '-9', proc_name], 
+                                 capture_output=True, timeout=5)
+                    killed_count += 1
+                except (subprocess.TimeoutExpired, FileNotFoundError):
+                    pass
+        
+        if killed_count > 0:
+            print(f"Killed {killed_count} existing Quarto/LaTeX process(es)")
+            time.sleep(1)  # Give processes time to fully terminate
+        
+        return killed_count
+    except Exception as e:
+        print(f"Warning: Could not kill existing processes: {e}", file=sys.stderr)
+        return 0
+
 def run_pre_validation() -> int:
     """
     Run pre-validation script before building
@@ -262,8 +321,18 @@ def main():
                         help='Log file path (default: build-pdf.log)')
     parser.add_argument('--command', type=str, default='quarto render . --to pdf',
                         help='Build command to run (default: quarto render . --to pdf)')
+    parser.add_argument('--kill-existing', action='store_true',
+                        help='Kill all existing Quarto/LaTeX processes before starting build')
 
     args = parser.parse_args()
+
+    # Kill existing Quarto processes if requested
+    if args.kill_existing:
+        print("=" * 80)
+        print("KILLING EXISTING QUARTO/LaTeX PROCESSES")
+        print("=" * 80)
+        kill_existing_quarto_processes()
+        print("=" * 80)
 
     # Run pre-validation unless skipped
     if not args.skip_validation:
