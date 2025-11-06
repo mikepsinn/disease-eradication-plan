@@ -86,8 +86,8 @@ class BuildMonitor:
         if line.startswith('Output created:'):
             return line.strip()
 
-        # Detect warnings
-        if line.startswith('WARN:') or 'Warning:' in line:
+        # Detect warnings (WARN: can appear anywhere in line, often with timestamps)
+        if 'WARN:' in line or 'Warning:' in line:
             self.warnings.append(line.strip())
             return f"WARNING: {line.strip()}"
 
