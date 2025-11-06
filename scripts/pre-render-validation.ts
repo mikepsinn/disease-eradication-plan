@@ -5,6 +5,7 @@
  * - LaTeX syntax errors (escaped dollar signs, malformed equations, etc.)
  * - Missing image files
  * - Invalid image paths
+ * - GIF files not wrapped in HTML-only blocks (prevents PDF build failures)
  *
  * Runs automatically via _quarto.yml pre-render hook
  */
@@ -136,6 +137,74 @@ function checkImagePaths(content: string, filepath: string) {
 }
 
 /**
+ * Check for GIF files that aren't wrapped in HTML-only blocks
+ * GIF files cannot be included in PDF output and must be wrapped in:
+ * ::: {.content-visible when-format="html"}
+ * <img src="path/to/file.gif" />
+ * :::
+ */
+function checkGifReferences(content: string, filepath: string) {
+  const lines = content.split('\n');
+  let inHtmlOnlyBlock = false;
+  let blockDepth = 0;
+
+  lines.forEach((line, lineIndex) => {
+    // Track HTML-only conditional blocks
+    if (line.includes('{.content-visible when-format="html"}')) {
+      inHtmlOnlyBlock = true;
+      blockDepth = 0;
+    } else if (inHtmlOnlyBlock && line.trim().startsWith(':::')) {
+      if (blockDepth === 0) {
+        inHtmlOnlyBlock = false;
+      } else {
+        blockDepth--;
+      }
+    } else if (inHtmlOnlyBlock && line.includes(':::')) {
+      blockDepth++;
+    }
+
+    // Check for GIF references (markdown or HTML)
+    const markdownGifPattern = /!\[([^\]]*)\]\(([^)]*\.gif[^)]*)\)/gi;
+    const htmlGifPattern = /<img[^>]+src=["']([^"']*\.gif[^"']*)["']/gi;
+
+    const markdownMatches = line.matchAll(markdownGifPattern);
+    const htmlMatches = line.matchAll(htmlGifPattern);
+
+    // Check markdown GIF references
+    for (const match of markdownMatches) {
+      if (!inHtmlOnlyBlock) {
+        errors.push({
+          file: filepath,
+          line: lineIndex + 1,
+          message: 'GIF file not wrapped in HTML-only block - will fail in PDF output. Use HTML <img> tag inside ::: {.content-visible when-format="html"}',
+          context: line.trim().substring(0, 80),
+        });
+      } else {
+        // Even inside HTML-only block, markdown syntax might not work - warn to use HTML
+        errors.push({
+          file: filepath,
+          line: lineIndex + 1,
+          message: 'GIF uses markdown syntax - use HTML <img> tag instead for better compatibility',
+          context: line.trim().substring(0, 80),
+        });
+      }
+    }
+
+    // Check HTML GIF references
+    for (const match of htmlMatches) {
+      if (!inHtmlOnlyBlock) {
+        errors.push({
+          file: filepath,
+          line: lineIndex + 1,
+          message: 'GIF file not wrapped in HTML-only block - will fail in PDF output. Wrap in ::: {.content-visible when-format="html"}',
+          context: line.trim().substring(0, 80),
+        });
+      }
+    }
+  });
+}
+
+/**
  * Validate a single file
  */
 function validateFile(filepath: string) {
@@ -175,6 +244,9 @@ function validateFile(filepath: string) {
 
   // Check image paths
   checkImagePaths(content, filepath);
+
+  // Check GIF references
+  checkGifReferences(content, filepath);
 }
 
 /**

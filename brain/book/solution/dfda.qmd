@@ -93,7 +93,9 @@ Revolutionary feature: A search box. The FDA's current website doesn't have this
 
 ### Step 2: See What Actually Works (Based on Reality, Not Theory)
 
+::: {.content-visible when-format="html"}
 <img src="../../assets/clinipedia-inflammatory-pain-small.gif" alt="View ranked treatments" style="max-width: 600px; width: 100%;" />
+:::
 
 Instead of "This drug is approved for exactly this condition in exactly these patients on exactly Tuesdays," you get:
 
@@ -140,7 +142,9 @@ This gives patients an invaluable second layer of information: not just what *ha
 
 ### Step 3: Join a Trial from Your Couch (While Dying Comfortably)
 
+::: {.content-visible when-format="html"}
 <img src="../../assets/autonomous-study-search.gif" alt="Join trials" style="max-width: 600px; width: 100%;" />
+:::
 
 Current system: Drive 500 miles to a university hospital, wait 6 months, get rejected for having the wrong kind of dying.
 
@@ -150,7 +154,9 @@ Revolutionary!
 
 ### Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving)
 
+::: {.content-visible when-format="html"}
 <img src="../../assets/autonomous-cvs.gif" alt="Get treatment" style="max-width: 600px; width: 100%;" />
+:::
 
 Amazon can deliver a banana costume in 2 hours but experimental medications take 6 months and require seven forms of ID?
 
@@ -158,7 +164,9 @@ The dFDA fixes that. Your pharmacy becomes a trial site. Your doctor becomes a r
 
 ### Step 5: Report Results Without a PhD in Paperwork
 
+::: {.content-visible when-format="html"}
 <img src="../../assets/reminder-inbox.gif" alt="Report outcomes" style="max-width: 600px; width: 100%;" />
+:::
 
 Current system: 500-page case report forms that ask questions like "Rate your suffering on a scale of mauve to burnt sienna."
 
@@ -170,7 +178,9 @@ New system:
 
 ### Step 6: Everyone Benefits from Everyone's Suffering
 
+::: {.content-visible when-format="html"}
 <img src="../../assets/black-box-model-animation2.gif" alt="Improve rankings" style="max-width: 600px; width: 100%;" />
+:::
 
 Your data helps the next person. Their data helps you. It's socialism, but for not dying.
 
@@ -480,7 +490,9 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 
 ### How the dFDA Actually Works
 
-![Black box model animation showing how the dFDA works](../../../assets/black-box-model-animation.gif)
+::: {.content-visible when-format="html"}
+<img src="../../../assets/black-box-model-animation.gif" alt="Black box model animation showing how the dFDA works" style="max-width: 600px; width: 100%;" />
+:::
 
 The dFDA achieves [**82x More Efficiency**](../references.qmd#recovery-trial-82x-cost-reduction) through:
 
