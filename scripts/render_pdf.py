@@ -51,11 +51,17 @@ class BuildMonitor:
         if hasattr(self, 'log_handle'):
             self.log_handle.close()
 
+    def get_timestamp(self) -> str:
+        """Get formatted timestamp for log messages"""
+        return datetime.now().strftime('%H:%M:%S')
+    
     def log(self, message: str, to_stderr: bool = False):
-        """Log message to both console and file"""
+        """Log message to both console and file with timestamp"""
+        timestamp = self.get_timestamp()
+        formatted_message = f"[{timestamp}] {message}"
         output = sys.stderr if to_stderr else sys.stdout
-        print(message, file=output)
-        self.log_handle.write(message + '\n')
+        print(formatted_message, file=output)
+        self.log_handle.write(formatted_message + '\n')
         self.log_handle.flush()
 
     def parse_line(self, line: str) -> Optional[str]:
@@ -129,6 +135,8 @@ class BuildMonitor:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
+                encoding='utf-8',
+                errors='replace',  # Replace invalid UTF-8 bytes instead of failing
                 bufsize=1
             )
 
@@ -140,12 +148,16 @@ class BuildMonitor:
                 # Update last output time (ANY output resets the timeout)
                 self.last_output_time = time.time()
 
-                # Write raw line to log file
-                self.log_handle.write(line)
+                # Get timestamp for this line
+                timestamp = self.get_timestamp()
+                
+                # Write timestamped line to log file
+                timestamped_line = f"[{timestamp}] {line}"
+                self.log_handle.write(timestamped_line)
                 self.log_handle.flush()
 
-                # Print all output to console as well
-                print(line, end='')
+                # Print timestamped output to console as well
+                print(timestamped_line, end='')
 
                 # Parse and extract relevant information for summary
                 parsed = self.parse_line(line)
@@ -238,6 +250,8 @@ def kill_existing_quarto_processes() -> int:
                         ['taskkill', '/F', '/IM', proc_name, '/T'],
                         capture_output=True,
                         text=True,
+                        encoding='utf-8',
+                        errors='replace',
                         timeout=5
                     )
                     # Count processes killed (taskkill returns 0 if processes were found and killed)
