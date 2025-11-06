@@ -20,6 +20,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -120,7 +121,7 @@ While the dFDA Infrastructure requires dedicated funding for its creation and op
 
 _Note: Table excludes ICs primarily focused on basic science (like NIGMS, NHGRI) or infrastructure (NLM, NIBIB), and the remaining smaller ICs/activities, though they may have some clinical components. Budgets are approximate FY24 enacted levels. Sources: [NIH Almanac](https://www.nih.gov/about-nih/what-we-do/nih-almanac/appropriations), [FASEB NIH Budget Data](https://www.faseb.org/resources/facts-figures/nih-funding-trends)_
 
-**Discussion:**
+#### Discussion
 
 The table highlights that a substantial portion of NIH's budget (~\$39.6 Billion across these selected ICs) is allocated to Institutes whose mandates inherently involve funding or supporting clinical trials to find treatments for specific diseases or conditions.
 
@@ -147,15 +148,11 @@ This executive action pathway faces significant hurdles:
 
 While requiring congressional action for full funding and unambiguous legal authority seems probable in the long term, the DOGE precedent illustrates a potential strategy for _initiating_ the dFDA using executive orders. By repurposing existing structures, mandating technological development and regulatory adaptation, and centralizing coordination, an administration could significantly accelerate the dFDA's foundational stages without waiting for specific enabling legislation. This approach shifts the focus from _asking_ Congress for permission to _demonstrating_ feasibility and value, potentially building momentum for future legislative support. However, the inherent funding limitations and significant legal risks must be carefully considered.
 
----
-
 ## Appendix: Draft Executive Order Text
 
 **TRANSFORMING THE FDA INTO A DECENTRALIZED, PATIENT-CENTRIC PLATFORM TO ACCELERATE MEDICAL INNOVATION AND EXPAND ACCESS TO SAFE, EFFECTIVE TREATMENTS**
 
 _It is hereby ordered as follows:_
-
----
 
 ### **Section 1. Purpose**
 
@@ -165,8 +162,6 @@ The [Food and Drug Administration (FDA)](https://www.fda.gov/) must transition f
 - **Reduce costs** by automating clinical research, leveraging [decentralized trials](https://www.fda.gov/drugs/cder-conversations/evolving-role-decentralized-clinical-trials-and-digital-health-technologies), and aggregating global real-world data.
 - **Empower patients** with personalized, quantitative assessments of all available interventions.
 - **Accelerate medical progress by 80X** through automation and decentralization of clinical trials.
-
----
 
 ### **Section 1A. The Problem**
 
@@ -189,15 +184,11 @@ Additional critical issues include:
 - **Lack of Long-Term Data**: [Most trials only track short-term outcomes](../references.qmd#short-term-trial-outcomes)
 - **Unrepresentative Studies**: Up to [85% of patients](https://www.ncbi.nlm.nih.gov/pubmed/14628985) are excluded from traditional trials
 
----
-
 ### **Section 2. Definitions**
 
 (a) **"Decentralized Autonomous FDA (dFDA)"**: A blockchain-secured, AI-driven platform that continuously analyzes anonymized [real-world data (RWD)](https://www.fda.gov/science-research/science-and-research-special-topics/real-world-evidence) from global clinical trials, electronic health records, and patient-reported outcomes to rank treatments by safety and efficacy.
 (b) **"Decentralized Clinical Trials (DCTs)"**: [Trials conducted via telemedicine, wearable sensors, and direct-to-patient supply chains, with no physical trial sites.](https://www.fda.gov/drugs/cder-conversations/evolving-role-decentralized-clinical-trials-and-digital-health-technologies)
 (c) **"N-of-1 analysis"**: [A personalized assessment of an individual's response to a treatment, calculated by comparing their baseline health data to post-intervention outcomes.](https://en.wikipedia.org/wiki/N_of_1_trial)
-
----
 
 ### **Section 3. Policy**
 
@@ -249,7 +240,7 @@ Cost Reduction Targets:
 
 - **Direct Intervention Delivery**: Upon a new participant joining a trial, the primary responsibility of the study creator will be the prompt and efficient delivery of the intervention directly to the participant, their pharmacy, or healthcare provider.
   (c) **Crowdfunding and Direct Payments**: Patients may crowdfund or directly pay for experimental treatments without triggering FDA "marketing" restrictions ([21 CFR § 312.7](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312)).
-  (d) **Cost-Effective Trial Model**: Based on the [Oxford RECOVERY trial](https://www.recoverytrial.net/) which tested **18 treatments for just \$3M**—about **\$500 per subject, 80x cheaper than traditional trials**—by integrating into **EHRs** and using **simple online data entry**. With adequate funding, this model could test **hundreds of thousands of treatments**, dramatically accelerating drug discovery.
+  (d) **Cost-Effective Trial Model**: Based on the [Oxford RECOVERY trial](https://www.recoverytrial.net/) which tested **18 treatments for just \$3M**, about **\$500 per subject, 80x cheaper than traditional trials**, by integrating into **EHRs** and using **simple online data entry**. With adequate funding, this model could test **hundreds of thousands of treatments**, dramatically accelerating drug discovery.
 
 #### **3.3 Elimination of Economic Barriers**
 
@@ -264,7 +255,7 @@ Cost Reduction Targets:
 
 - Data contributors retain ownership and may revoke access at any time ([GDPR](../references.qmd#gdpr-biometric-data) compliance required).
 - The dFDA shall analyze this data in real time to update treatment rankings.
-- **Global, real-time data sharing** gives everyone—patients, researchers, governments—access to what actually works.
+- **Global, real-time data sharing** gives everyone, patients, researchers, governments, access to what actually works.
   (b) **N-of-1 Analysis**: For every patient, the dFDA shall automatically generate:
 
 - A personalized dashboard showing their response to interventions (e.g., "Drug X reduced your migraine frequency by 42%").
@@ -282,8 +273,6 @@ Cost Reduction Targets:
 - "Positive effects: 23% reduction in mortality (95% CI: 19–27%).
 - Negative effects: 8% risk of severe nausea (95% CI: 6–10%).
 - Probability of success for your profile: 72%."
-
----
 
 ### **Section 4. Implementation**
 
@@ -327,8 +316,6 @@ Expected Improvements:
 | Trial Cost        | $57M     | $2M     |
 | Patient Access    | 15%      | 100%    |
 
----
-
 ### **Section 5. General Provisions**
 
 (a) This order does not impair existing patient rights under the [Right to Try Act](https://www.fda.gov/patients/learn-about-expanded-access-and-other-treatment-options/right-try) ([Pub. L. 115-176](https://www.congress.gov/115/plaws/publ176/PLAW-115publ176.pdf)).
@@ -337,7 +324,7 @@ Expected Improvements:
 
 ---
 
-**Rationale & Legal Authority**
+#### Rationale & Legal Authority
 
 - [**21 U.S.C. § 393(b)(2)(B)**](../references.qmd#fda-public-health-advancement-mandate): Directs the FDA to "advance public health by accelerating innovation."
 - [**21st Century Cures Act § 3022**](../references.qmd#21st-century-cures-act-2016): Mandates use of RWD and patient-reported outcomes in regulatory decisions.
