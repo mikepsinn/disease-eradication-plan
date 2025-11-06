@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { saveFile } from './lib/file-utils';
 
 interface FileRenameMapping {
   oldName: string;
@@ -85,7 +86,7 @@ async function renameFiles(extractDir: string): Promise<void> {
       mdContent = mdContent.replace(`# ${oldTitle}`, `# ${newTitle}`);
 
       // Write to new file
-      fs.writeFileSync(mdNewPath, mdContent);
+      await saveFile(mdNewPath, mdContent);
 
       // Delete old file
       fs.unlinkSync(mdOldPath);
@@ -169,7 +170,7 @@ async function renameFiles(extractDir: string): Promise<void> {
   readme += `- Historical life expectancy data\n`;
 
   const readmePath = path.join(extractDir, 'README.md');
-  fs.writeFileSync(readmePath, readme);
+  await saveFile(readmePath, readme);
   console.log('✓ Updated README.md with descriptive filenames and detailed documentation\n');
 
   console.log('═══════════════════════════════════════════════════════');
