@@ -79,16 +79,44 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Render Quarto Project
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install LaTeX
+        run: |
+          quarto install tinytex
+
+      - name: Render Quarto Project (HTML)
         run: quarto render --to html
+
+      - name: Render Quarto Project (PDF)
+        run: pnpm run build:pdf
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+      - name: Upload HTML artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '_book/warondisease'
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pdf
+          path: '_book/warondisease/*.pdf'
+          if-no-files-found: error
 
   deploy:
     environment:
