@@ -84,7 +84,7 @@ jobs:
 
       - name: Render Quarto Project (HTML)
         run: quarto render --to html
-        timeout-minutes: 10
+        timeout-minutes: 15
 
       - name: Render Quarto Project (PDF) with validation and monitoring
         run: python scripts/render_pdf.py
