@@ -6,6 +6,13 @@ import { glob } from 'glob';
 import * as path from 'path';
 import ignore from 'ignore';
 import crypto from 'crypto';
+import {
+  HASH_FIELDS,
+  CONTENT_DIRS,
+  IGNORE_PATTERNS as CONST_IGNORE_PATTERNS,
+  SPECIAL_FILES,
+  type HashFieldName
+} from './constants';
 
 /**
  * Find the project root by looking for package.json
@@ -464,6 +471,7 @@ export async function getBookFilesForProcessing(): Promise<string[]> {
 
 /**
  * Find all .qmd files where the content hash doesn't match the stored hash
+ * @deprecated Use getStaleFilesWithConstants instead
  */
 export async function getStaleFiles(hashFieldName: string, basePath?: string): Promise<string[]> {
   const gitignoreContent = await fs.readFile('.gitignore', 'utf-8');
@@ -492,6 +500,105 @@ export async function getStaleFiles(hashFieldName: string, basePath?: string): P
   }
 
   return staleFiles;
+}
+
+/**
+ * Find all .qmd files where the content hash doesn't match the stored hash
+ * Uses centralized constants for consistency
+ */
+export async function getStaleFilesWithConstants(
+  hashFieldName: HashFieldName,
+  basePath: string = CONTENT_DIRS.BOOK,
+  options?: {
+    includeAppendix?: boolean;
+    includeReferences?: boolean;
+    includePartIntros?: boolean;
+  }
+): Promise<string[]> {
+  const searchPattern = `${basePath}/**/*.qmd`;
+  const allFiles = await glob(searchPattern, {
+    ignore: [...CONST_IGNORE_PATTERNS]
+  });
+
+  // Filter out special files based on options
+  const filteredFiles = allFiles.filter(file => {
+    const relPath = path.relative(basePath, file).replace(/\\/g, '/');
+
+    // Skip references unless explicitly included
+    if (!options?.includeReferences && relPath.includes(SPECIAL_FILES.REFERENCES)) {
+      return false;
+    }
+
+    // Skip appendix unless explicitly included
+    if (!options?.includeAppendix && relPath.startsWith('appendix/')) {
+      return false;
+    }
+
+    // Skip part intros unless explicitly included
+    if (!options?.includePartIntros) {
+      const fullPath = path.resolve(file);
+      if (SPECIAL_FILES.PART_INTROS.some(intro => fullPath.includes(intro))) {
+        return false;
+      }
+    }
+
+    return true;
+  });
+
+  const staleFiles: string[] = [];
+
+  for (const file of filteredFiles) {
+    try {
+      const { frontmatter, body } = await readFileWithMatter(file);
+      const currentBodyHash = getBodyHash(body);
+
+      if (currentBodyHash !== frontmatter[hashFieldName]) {
+        staleFiles.push(file);
+      }
+    } catch (error) {
+      console.error(`Error processing file ${file}:`, error);
+    }
+  }
+
+  return staleFiles;
+}
+
+/**
+ * Get all book content files (excluding appendix and references by default)
+ */
+export async function getBookContentFiles(options?: {
+  includeAppendix?: boolean;
+  includeReferences?: boolean;
+  includePartIntros?: boolean;
+}): Promise<string[]> {
+  const searchPattern = `${CONTENT_DIRS.BOOK}/**/*.qmd`;
+  const allFiles = await glob(searchPattern, {
+    ignore: [...CONST_IGNORE_PATTERNS]
+  });
+
+  return allFiles.filter(file => {
+    const relPath = path.relative(CONTENT_DIRS.BOOK, file).replace(/\\/g, '/');
+
+    // Skip references unless explicitly included
+    if (!options?.includeReferences && relPath.includes(SPECIAL_FILES.REFERENCES)) {
+      return false;
+    }
+
+    // Skip appendix unless explicitly included
+    if (!options?.includeAppendix && relPath.startsWith('appendix/')) {
+      return false;
+    }
+
+    // Skip part intros unless explicitly included
+    if (!options?.includePartIntros) {
+      const fullPath = path.resolve(file);
+      if (SPECIAL_FILES.PART_INTROS.some(intro => fullPath.includes(intro))) {
+        return false;
+      }
+    }
+
+    return true;
+  });
 }
 
 // --- Find and Replace Utilities ---

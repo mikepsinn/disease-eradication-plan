@@ -13,6 +13,7 @@ lastReviewed: '2025-10-16T00:00:00.000Z'
 lastFactCheckHash: 1281da55496d842519310f962163999ff08e576ddeb6340ef1f44bdce524e008
 lastStructureCheckHash: d58510e9ac20bfb367216ad2071e074197a527ff466b254b33bb19049001d0a1
 lastLatexCheckHash: ce03d7336048e392db7ef82d8b7de5355e0d45f48f515d972ff9f2965d3bf110
+lastInstructionalVoiceHash: 2afc99fe00a5e6b3b9a1fdaff4f170e78b6c12740196daa15b0d297e3b79fb79
 ---
 
 ```{python}
@@ -264,7 +265,7 @@ Let's do the real math on what we could have done with that money:
 
 We're literally choosing to help 1 person badly instead of helping 82 people well.
 
-This 82x cost disparity is the core inefficiency we can solve. (See [The 82x Solution](../solution/dfda.qmd#the-82x-solution-decentralized-trials) for how.)
+This 82x cost disparity is the core inefficiency you can solve. (See [The 82x Solution](../solution/dfda.qmd#the-82x-solution-decentralized-trials) for how.)
 
 #### The \$2 Trillion Healthcare Burden
 
@@ -333,7 +334,7 @@ But that would require admitting the current system doesn't work.
 And after \$1.1 trillion, that's an expensive admission.
 
 **Fun fact:** The legal framework already exists for cost recovery in trials ([21 CFR 312.8](../references.qmd#cost-recovery-regulation)).
-We could implement efficient trials tomorrow.
+You could implement efficient trials tomorrow.
 But that would upset the grant-writing industrial complex.
 
 ## Conclusion

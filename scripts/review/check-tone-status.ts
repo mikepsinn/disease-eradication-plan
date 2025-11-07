@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 
-import { glob } from 'glob';
-import { readFileWithMatter, getBodyHash } from '../lib/file-utils';
+import {
+  readFileWithMatter,
+  getBodyHash,
+  getBookContentFiles
+} from '../lib/file-utils';
 import path from 'path';
+import { HASH_FIELDS, CONTENT_DIRS } from '../lib/constants';
 
 interface FileStatus {
   path: string;
@@ -16,13 +20,11 @@ async function checkToneStatus(): Promise<void> {
   console.log('\n🎭 TONE ELEVATION STATUS REPORT');
   console.log('━'.repeat(60) + '\n');
 
-  // Get all .qmd files
-  const allFiles = await glob('brain/book/**/*.qmd', {
-    ignore: [
-      '**/node_modules/**',
-      '**/_book/**',
-      '**/.quarto/**'
-    ]
+  // Get all .qmd files (including appendix and references for status report)
+  const allFiles = await getBookContentFiles({
+    includeAppendix: true,
+    includeReferences: true,
+    includePartIntros: true
   });
 
   const fileStatuses: FileStatus[] = [];
@@ -36,7 +38,7 @@ async function checkToneStatus(): Promise<void> {
 
   // Check each file
   for (const file of allFiles) {
-    const relPath = path.relative('brain/book', file).replace(/\\/g, '/');
+    const relPath = path.relative(CONTENT_DIRS.BOOK, file).replace(/\\/g, '/');
 
     // Categorize special files
     if (relPath.includes('references.qmd')) {
@@ -53,10 +55,10 @@ async function checkToneStatus(): Promise<void> {
 
     const status: FileStatus = {
       path: relPath,
-      hasOldToneCheck: !!frontmatter.lastToneElevationHash,
-      hasHumorPreservedCheck: frontmatter.lastToneElevationWithHumorHash === currentHash,
-      needsProcessing: frontmatter.lastToneElevationWithHumorHash !== currentHash,
-      lastModified: frontmatter.lastInstructionalVoiceHash ? '✓' : undefined
+      hasOldToneCheck: !!frontmatter[HASH_FIELDS.TONE_ELEVATION],
+      hasHumorPreservedCheck: frontmatter[HASH_FIELDS.TONE_ELEVATION_WITH_HUMOR] === currentHash,
+      needsProcessing: frontmatter[HASH_FIELDS.TONE_ELEVATION_WITH_HUMOR] !== currentHash,
+      lastModified: frontmatter[HASH_FIELDS.INSTRUCTIONAL_VOICE] ? '✓' : undefined
     };
 
     fileStatuses.push(status);
