@@ -8,6 +8,7 @@ tags:
   - clinical-trials
   - cost-reduction
   - economics
+lastInstructionalVoiceHash: dd5ecd23df99d0246c138ed8e0fa5cc57d3166c4b078d7888aa01c0050e73f9e
 ---
 
 ```{python}
@@ -76,7 +77,7 @@ The dFDA costs approximately **$40M annually** to operate at scale, with a simil
 
 ## ROI Scenarios
 
-The 463:1 ROI is our central estimate based on NPV analysis over 10 years. Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
+The 463:1 ROI is the central estimate based on NPV analysis over 10 years. Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
 
 **For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Health Dividend Calculations](../appendix/health-dividend-calculations.qmd).
 
@@ -98,7 +99,7 @@ $40M to save $50 billion.
 80x cost reduction per patient.
 10,000x more trials possible.
 
-This isn't a moonshot. The RECOVERY trial already proved it works. We just need to scale it globally.
+This isn't a moonshot. The RECOVERY trial already proved it works. The only thing left to do is scale it globally.
 
 Every day we wait costs $137 million and 2,301 lives.
 

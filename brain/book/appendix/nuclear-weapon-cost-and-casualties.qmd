@@ -7,6 +7,7 @@ tags:
   - cost-analysis
   - military-spending
   - casualties
+lastInstructionalVoiceHash: 54645d08e85b740e5fb561c71087d1771bc5854bfc44325351839bae5697b1df
 ---
 
 ```{python}
@@ -65,11 +66,11 @@ NUKEMAP (created by historian Alex Wellerstein) simulates nuclear detonations. I
 
 That's immediate deaths from the blast, heat, and initial radiation.
 
-It doesn't include long-term deaths from fallout, disease, starvation, or the collapse of medical infrastructure. Those numbers are much higher. But we're being conservative.
+It doesn't include long-term deaths from fallout, disease, starvation, or the collapse of medical infrastructure. Those numbers are much higher. But this is a conservative estimate.
 
 ## On The Math That Makes You Uncomfortable
 
-Now we can calculate the cost to kill one person with a nuclear weapon:
+Now you can calculate the cost to kill one person with a nuclear weapon:
 
 - **Cost per Bomb:** $27,500,000
 - **Deaths per Bomb:** 1,619,570
@@ -111,7 +112,7 @@ Not "once, but thoroughly." Not "twice, to be safe."
 
 ###### Twenty times.
 
-This is what we mean when we say the 1% Treaty is a modest proposal. We're asking militaries to keep enough firepower to end civilization 19 times instead of 20.
+This illustrates why the 1% Treaty is a modest proposal. The treaty asks militaries to keep enough firepower to end civilization 19 times instead of 20.
 
 Nobody needs to end civilization 20 times. That's just showing off.
 
@@ -137,7 +138,7 @@ The 1% Treaty doesn't disarm anyone. It just reduces overkill from "absurd" to "
 
 ## On Comparing Different Ways to Kill People (The Efficiency Rankings)
 
-Now that we've established nuclear weapons cost $16.98 per death, let's compare them to other weapons.
+Now that you know nuclear weapons cost $16.98 per death, you can compare them to other weapons.
 
 This is the darkest optimization problem in human history. But here we are.
 

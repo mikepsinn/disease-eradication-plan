@@ -10,6 +10,7 @@ tags:
   - assurance-contracts
   - metaculus
 lastFactCheckHash: fe44ba6ea342829ea77a2cd5c59c4b1854b6a687081ce16d6c36a2a4f07d8b84
+lastInstructionalVoiceHash: 5b33848f7ee45a6258e90666f69e6c1ab3cfd6ff46126e76bc14d85550e22e85
 ---
 
 ```{python}
@@ -26,7 +27,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-A sophisticated investor must ask: "Is this venture riskier than a standard startup investment?" The answer is nuanced. The risk is not greater; it is fundamentally _different_. This document provides a full analysis of our unique risk profile and the specific mechanisms we have engineered to mitigate it.
+A sophisticated investor must ask: "Is this venture riskier than a standard startup investment?" The answer is nuanced. The risk is not greater; it is fundamentally _different_. This document provides a full analysis of this initiative's unique risk profile and the specific mechanisms engineered to mitigate it.
 
 ## 1. The Core Thesis: Political Arbitrage vs. Venture Capital
 
@@ -42,7 +43,7 @@ The most critical distinction is the source of risk.
 
 This table provides a direct comparison of the risk profiles.
 
-| Risk Factor          | Standard VC Investment                                        | Our Project (VICTORY Bonds)                                           |
+| Risk Factor          | Standard VC Investment                                        | The Initiative (VICTORY Bonds)                                        |
 | :------------------- | :------------------------------------------------------------ | :-------------------------------------------------------------------- |
 | **Market Risk**      | **VERY HIGH** (Primary reason for failure)                    | **VERY LOW** (The $2.72T "market" already exists)                     |
 | **Competition Risk** | **HIGH** (Must out-compete incumbents and other startups)     | **LOW** (Strategy is to co-opt competitors, not fight them)           |
@@ -69,7 +70,7 @@ Because this risk is so specific, the system has been engineered with specific f
 #### C. Front-Loaded Payouts (Mitigates **Timeline Risk**)
 
 - **The Problem:** Political processes can be slow, and investors' capital could be tied up for years before a return is seen.
-- **The Solution:** As detailed in our [Cash Flow Model](../economics/financial-plan.qmd), payouts are aggressively front-loaded. In the first year of treaty inflows, the model is designed to pay out a multiple of the initial investment (e.g., 2.6x in the partial success scenario). This dramatically shortens the time an investor's capital is exposed to risk, from a decade down to just a few years.
+- **The Solution:** As detailed in the [Cash Flow Model](../economics/financial-plan.qmd), payouts are aggressively front-loaded. In the first year of treaty inflows, the model is designed to pay out a multiple of the initial investment (e.g., 2.6x in the partial success scenario). This dramatically shortens the time an investor's capital is exposed to risk, from a decade down to just a few years.
 
 #### D. First-Loss Capital (Mitigates **Financial Risk**)
 

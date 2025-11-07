@@ -15,6 +15,7 @@ domains:
   - cross
 doc_type: ops
 lastFactCheckHash: 1badee18f3601070af1235d2e3842333b409e29aaaba0973fe7cc88e992c8cc2
+lastInstructionalVoiceHash: 81a99cabd41adb74e8fe0a2f600f45b0add84dabd2f4ee5aa75b65da09d8d17f
 ---
 
 ```{python}
@@ -67,7 +68,7 @@ graph TD;
 
 Within the SPV, day-to-day operations for the War on Disease are managed by a General Staff, or "G-Staff," modeled after military command structures. This ensures clear lines of responsibility for every aspect of the campaign.
 
-- **G-1 (Personnel & Recruitment):** Manages the `Personnel Roster`—our master list of every individual involved. This is the core of our recruitment effort.
+- **G-1 (Personnel & Recruitment):** Manages the `Personnel Roster`—your master list of every individual involved. This is the core of your recruitment effort.
 - **G-2 (Intelligence):** Manages intelligence on the enemy (diseases) and the operational landscape. This includes tracking research, trials, and outcomes.
 - **G-3 (Operations):** The warfighters. This department plans and executes the clinical trials via the dFDA.
 - **G-4 (Logistics & Treasury):** Manages the supply lines, primarily the flow of funds from VICTORY Bonds and other sources.

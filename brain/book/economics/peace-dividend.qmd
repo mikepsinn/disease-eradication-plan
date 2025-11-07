@@ -7,6 +7,7 @@ tags:
   - 1-percent-treaty
   - economic-analysis
   - cost-of-war
+lastInstructionalVoiceHash: 05dfa4a7561692f4cef2ecb9ee04c6e0eefa4e586e51e00a14ee7698a54105d3
 ---
 
 ```{python}
@@ -26,7 +27,7 @@ from economic_parameters import *
 
 - **What The Treaty Captures:** Cut global military spending by 1% and the DIH receives **$27.2B annually** to fund the Decentralized Institutes of Health.
 - **What The World Saves:** Cut the total costs of conflict by 1% and society saves **$113.6B every year**. That's less money spent rebuilding bombed hospitals, treating war casualties, and dealing with refugees.
-- **Source:** All numbers come from our [Cost of War analysis](../problem/cost-of-war.qmd).
+- **Source:** All numbers come from the [Cost of War analysis](../problem/cost-of-war.qmd).
 
 ## The Economics of a 1% Reduction in Violence
 
@@ -57,7 +58,7 @@ Here's exactly where those savings come from:
 
 ### The Numbers: Where Every Dollar Gets Saved
 
-This breaks down the annual global savings based on our [Cost of War analysis](../problem/cost-of-war.qmd).
+This breaks down the annual global savings based on the [Cost of War analysis](../problem/cost-of-war.qmd).
 
 | Cost Category | Total Annual Cost (Billions) | 1% Annual Savings (Billions) |
 | :--- | :--- | :--- |

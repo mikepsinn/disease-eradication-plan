@@ -9,6 +9,7 @@ tags:
   - international-law
   - regulatory
 lastFactCheckHash: a8d308eee95d47af70ec00e69aec7828af31487062d52702c2a1db1e74e14551
+lastInstructionalVoiceHash: e2f8bab0e359e02b7b227c4d587e793633ce3ac8684ff8542a8e9cc6ce8571f1
 ---
 
 ```{python}
@@ -86,7 +87,7 @@ The [1% Treaty](../solution/1-percent-treaty.qmd) initiative faces three critica
 
 ### **Compliance Solution: A Two-Phase "Points-then-Conversion" Model**
 
-Our compliance strategy is designed to achieve our goal of mass participation while navigating global securities laws, leveraging [the SEC's more innovation-friendly guidance as of August 2025](../references.qmd#sec-innovation-guidance-2025). It separates the initial, non-financial airdrop from the subsequent distribution of valuable governance tokens.
+The compliance strategy is designed to achieve the goal of mass participation while navigating global securities laws, leveraging [the SEC's more innovation-friendly guidance as of August 2025](../references.qmd#sec-innovation-guidance-2025). It separates the initial, non-financial airdrop from the subsequent distribution of valuable governance tokens.
 
 #### Phase 1: VOTE Points Airdrop (Pre-Treaty)
 
@@ -107,7 +108,7 @@ This phase occurs only _after_ the 1% Treaty is successfully ratified and the [D
 
 **Fundraising from Accredited Investors (Reg D / Reg S)**
 
-The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for VICTORY bonds and tokens, conducted in full compliance with [Regulation D](../references.qmd#sec-reg-d) (for U.S. accredited investors) and [Regulation S](../references.qmd#sec-reg-s) (for non-U.S. investors). This ensures our core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
+The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for VICTORY bonds and tokens, conducted in full compliance with [Regulation D](../references.qmd#sec-reg-d) (for U.S. accredited investors) and [Regulation S](../references.qmd#sec-reg-s) (for non-U.S. investors). This ensures the core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
 
 #### Legal Structure
 
@@ -252,7 +253,7 @@ Swiss Foundation (Treaty Coordination)
 
 ### Recommended Three-Entity Framework
 
-Building on the compliance requirements outlined above, we recommend a sophisticated multi-entity structure that separates charitable, political, and investment activities while maintaining strategic coherence.
+Building on the compliance requirements outlined above, this framework uses a sophisticated multi-entity structure that separates charitable, political, and investment activities while maintaining strategic coherence.
 
 ```{mermaid}
 graph TD

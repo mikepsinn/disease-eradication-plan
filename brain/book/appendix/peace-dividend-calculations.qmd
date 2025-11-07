@@ -2,10 +2,11 @@
 title: ☮️ Peace Dividend Analysis
 description: The Economic Benefits of Reduced Conflict
 lastFactCheckHash: 73c7013b8f78015bc74ee0dfe51c4d922f75300136c47e1554e597fbc57c2cd2
+lastInstructionalVoiceHash: 7c8fa05248a4ec29cb54b00e6002b69acce4a07c1b4ce9cbea6781d7a6ef599f
 ---
-This analysis quantifies the economic benefits derived from a 1% reduction in global military spending and the broader costs of conflict. The calculations are based on the data compiled in our [Cost of War analysis](../problem/cost-of-war.qmd).
+This analysis quantifies the economic benefits derived from a 1% reduction in global military spending and the broader costs of conflict. The calculations are based on the data compiled in the [Cost of War analysis](../problem/cost-of-war.qmd).
 
-We model two types of benefits:
+This analysis models two types of benefits:
 
 1. **The Captured Dividend**: The direct funds redirected from military budgets to the DIH treasury.
 2. **The Societal Dividend**: The total economic value retained by society due to a 1% reduction in all conflict-related costs.
@@ -86,12 +87,12 @@ This chart distinguishes between the two types of peace dividend benefits.
 
 ## Sensitivity Analysis
 
-A key principle of rigorous economic modeling is to test the assumptions to understand how they impact the final conclusions. A sensitivity analysis allows us to see how the "Societal Dividend" changes when we vary our key inputs.
+A key principle of rigorous economic modeling is to test the assumptions to understand how they impact the final conclusions. A sensitivity analysis allows you to see how the "Societal Dividend" changes when you vary the key inputs.
 
-In this analysis, we will vary two key parameters simultaneously:
+In this analysis, you vary two key parameters simultaneously:
 
-1. **Reduction Percentage**: We will model a range of reductions from 0.5% to 2.0% to see the impact of partial or greater-than-expected success.
-2. **Accuracy of Indirect Cost Estimates**: The indirect costs of war (like lost economic growth) are harder to quantify than direct spending. We will model a scenario where these costs might be overestimated or underestimated by 25%.
+1. **Reduction Percentage**: You model a range of reductions from 0.5% to 2.0% to see the impact of partial or greater-than-expected success.
+2. **Accuracy of Indirect Cost Estimates**: The indirect costs of war (like lost economic growth) are harder to quantify than direct spending. You model a scenario where these costs might be overestimated or underestimated by 25%.
 
 ```{python}
 # Define the ranges for the sensitivity analysis

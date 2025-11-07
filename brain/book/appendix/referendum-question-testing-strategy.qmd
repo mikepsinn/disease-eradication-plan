@@ -11,6 +11,7 @@ tags:
 lastFactCheckHash: pending
 lastStructureCheckHash: pending
 lastLatexCheckHash: pending
+lastInstructionalVoiceHash: 335317ad10411fc93e828bdd85832f05c796d8053b17f5d4f3252d83c575ba96
 ---
 ```{python}
 #| echo: false
@@ -18,6 +19,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -374,7 +376,7 @@ Direct benefit messaging. "Join now or miss out on trial access."
 
 This isn't "pick one and done." The question that gets the first 10 million supporters might not be the question that gets the last 70 million.
 
-As social proof builds, the question should shift from "Should we?" to "Will you join us?"
+As social proof builds, your question should shift from "Should this be done?" to "Will you join the millions who already agree?"
 
 The testing never stops. Every 10 million participants, re-evaluate. What worked at 100M might not work at 200M.
 
