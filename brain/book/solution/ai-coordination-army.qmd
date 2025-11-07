@@ -3,7 +3,7 @@ title: 🤖 Building Your AI Coordination Army
 description: How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.
 lastStructureCheckHash: 475decf53d128e51862dd8aa69bb0950143f5debaeb02174157bb433a19acf15
 lastLatexCheckHash: ac9b8f3eba1198d59e53bfb93f90cd7631d9bc37d0872d4c11aeec792d4edb14
-lastInstructionalVoiceHash: 567fd9c30254581222017bd7882e1c9f93d9d327bf2556e907f3d06868c346a5
+lastInstructionalVoiceHash: b3b823098bb2ad74dff99692ae611aafb617aba7cd8a6aa930bce4e858e0798a
 ---
 
 ```{python}
@@ -206,7 +206,7 @@ Here's the cooperation model you use:
 
 #### AI Proposes
 
-Your agents analyze what's working across the network and propose new strategies (via GitHub issues, because developers already live there). Example: "Trial recruitment is 3x higher when we contact researchers on weekends" or "Funding requests sent on Tuesday get 40% more responses than those sent on Friday."
+Your agents analyze what's working across the network and propose new strategies (via GitHub issues, because developers already live there). Example: "Trial recruitment is 3x higher when you contact researchers on weekends" or "Funding requests sent on Tuesday get 40% more responses than those sent on Friday."
 
 #### You Decide
 
