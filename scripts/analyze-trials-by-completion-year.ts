@@ -56,7 +56,7 @@ async function fetchCompletedTrials(year: number, pageToken?: string): Promise<A
     throw new Error(`API failed: ${response.status}`);
   }
 
-  return await response.json();
+  return await response.json() as ApiResponse;
 }
 
 function getCompletionYear(study: Study): number | null {
@@ -181,3 +181,5 @@ async function main() {
 }
 
 main().catch(console.error);
+
+export {}; // Make this a module to satisfy TypeScript isolatedModules

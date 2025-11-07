@@ -431,25 +431,33 @@ export async function parseQuartoYml(): Promise<BookStructure> {
  * This is the standard list of files to process for most review/edit operations
  */
 export async function getBookFilesForProcessing(): Promise<string[]> {
+  console.log('  → Loading glob module...');
   const { glob } = await import('glob');
 
   // Find all .qmd files in brain/book
+  console.log('  → Searching for .qmd files in brain/book/**/*.qmd...');
   const bookFiles = await glob('brain/book/**/*.qmd');
+  console.log(`  → Found ${bookFiles.length} files in brain/book`);
 
   // Also include index.qmd from root
+  console.log('  → Searching for .qmd files in root...');
   const rootFiles = await glob('*.qmd');
   const indexFile = rootFiles.filter(f => f === 'index.qmd');
+  console.log(`  → Found ${indexFile.length} index file(s)`);
 
   // Combine all files
   let allFiles = [...indexFile, ...bookFiles];
+  console.log(`  → Combined total: ${allFiles.length} files`);
 
   // Filter out references.qmd and any files in _freeze or _book directories
+  console.log('  → Filtering out references.qmd and _freeze/_book directories...');
   allFiles = allFiles.filter(file => {
     const normalizedPath = file.replace(/\\/g, '/');
     return !normalizedPath.includes('references.qmd') &&
            !normalizedPath.includes('_freeze/') &&
            !normalizedPath.includes('_book/');
   });
+  console.log(`  → Final count after filtering: ${allFiles.length} files`);
 
   return allFiles;
 }

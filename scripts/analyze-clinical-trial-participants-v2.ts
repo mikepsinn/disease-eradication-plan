@@ -40,7 +40,7 @@ interface PhaseStats {
   totalEnrollment: number;
   actualEnrollment: number;
   estimatedEnrollment: number;
-  trialsWith EnrollmentData: number;
+  trialsWithEnrollmentData: number;
   median: number;
   p25: number;
   p75: number;
@@ -65,7 +65,7 @@ async function fetchPage(pageToken?: string): Promise<ApiResponse> {
     throw new Error(`API failed: ${response.status}`);
   }
 
-  return await response.json();
+  return await response.json() as ApiResponse;
 }
 
 function calculateMedian(arr: number[]): number {
@@ -191,3 +191,5 @@ async function main() {
 }
 
 main().catch(console.error);
+
+export {}; // Make this a module to satisfy TypeScript isolatedModules

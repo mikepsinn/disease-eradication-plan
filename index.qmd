@@ -10,11 +10,12 @@ tags:
   - decentralized-trials
   - incentives
   - victory-bonds
-lastReviewed: 2025-10-16T00:00:00.000Z
-lastFormatted: 2025-10-16T00:00:00.000Z
-lastStyleCheck: 2025-10-16T00:00:00.000Z
+lastReviewed: '2025-10-16T00:00:00.000Z'
+lastFormatted: '2025-10-16T00:00:00.000Z'
+lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastLatexCheckHash: 091f237bfcff6691661f97e826fef2a418d1fbaecc0120184917e14b3c85c66f
 lastParamCheckHash: 95df1958311b18ccf4a69c90c52d4937e70b808da6e18a3dde6d1a88c7f2ae23
+lastInstructionalVoiceHash: d289baa98ae0b5d29b58340d7bf2bb7741e8802e02485aa692dd15f31b49b303
 ---
 
 ```{python}
@@ -23,6 +24,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -189,7 +191,7 @@ Instead of a committee of 200 bureaucrats picking winners, [the DIH treasury](br
 [The dFDA](brain/book/solution/dfda.qmd) achieves [**82x cost reduction**](brain/book/appendix/recovery-trial.qmd) through decentralized pragmatic trials.
 Patients can search treatments ranked by real-world effectiveness and join trials with one click.
 
-**Treatment Rankings: Consumer Reports for Drugs**
+#### Treatment Rankings: Consumer Reports for Drugs
 
 Current system: Your doctor guesses which treatment might work based on one pharma lunch presentation from 2003.
 
@@ -197,7 +199,7 @@ Current system: Your doctor guesses which treatment might work based on one phar
 
 ![Treatment Rankings Example](assets/dfda-comparative-effectiveness-ranking-search.png)
 
-**Outcome Labels: Nutrition Facts for Drugs**
+##### Outcome Labels: Nutrition Facts for Drugs
 
 Food has nutrition labels.
 Cigarettes have warning labels.
@@ -271,7 +273,7 @@ You either lose your money or make 271.8% annually until the heat death of the u
 Treaty fails? You lose your money.
 But on the bright side, you won't need that money because you'll also inevitably die from a preventable disease anyway.
 
-**Better Returns Than:**
+#### Better Returns Than
 
 - Medallion Fund: 39% (previous record)
 - Warren Buffett: 20%
@@ -309,7 +311,7 @@ You need [3.5% of humanity](./brain/book/references.qmd#3-5-rule) to vote yes on
 
 Spoiler: They'll say yes.
 
-**Why 3.5%?**
+#### Why 3.5%?
 
 Historical research shows movements that engage [3.5% of a population](brain/book/strategy/global-referendum.qmd) have **never failed** to achieve systemic change.
 That's the tipping point.
@@ -382,7 +384,7 @@ This is better returns than:
 - Being a pharmaceutical company
 - All three combined
 
-**Where the Money Materializes From:**
+### Where the Money Materializes From
 
 You stop paying people to make problems complicated and start paying them to make problems solved.
 
@@ -405,7 +407,7 @@ Returns Go Infinite When You Divide By Zero
 
 When you steal money from the war budget instead of asking for new money, the return on investment becomes infinite. Not metaphorically infinite. Mathematically infinite. The kind of infinite that makes calculators display ERROR.
 
-**The Math That Broke Excel:**
+#### The Math That Broke Excel
 
 $$
 \text{ROI} = \frac{\text{Annual Benefits}}{\text{New Spending}} = \frac{\$163.6B}{0} = \infty
@@ -413,7 +415,7 @@ $$
 
 Even a congressman could understand this, though we shouldn't assume.
 
-**Where the 163.6B Appears From:**
+#### Where the 163.6B Appears From
 
 $$
 \text{Total Benefit} = \underbrace{\$113.6\text{B}}_{\text{Peace Dividend}} + \underbrace{\$50.0\text{B}}_{\text{Health Dividend}} = \$163.6\text{B}
@@ -449,7 +451,7 @@ Unlike charity, which requires eternal begging, this prints 163.6B annually whil
 
 The best idea would be a 100% Treaty that ended war completely and turned all the tanks into health clinics.
 
-Unfortunately, that idea requires logic levels that exceed the congressional daily recommended allowance. So we're settling for the 2nd best idea in recorded history.
+Unfortunately, that idea requires logic levels that exceed the congressional daily recommended allowance. So you settle for the 2nd best idea in recorded history.
 
 {{< include brain/figures/public-health-interventions-economic-benefit-comparison-column-chart.qmd >}}
 
@@ -511,11 +513,11 @@ And Communism was objectively a TERRIBLE IDEA that required murdering millions o
 
 This is quantifiably the second-best idea in human history and requires radically less murder.
 
-We're literally just trying to get people to click "yes I would prefer not to die of horrible diseases" on a website.
+You're literally just trying to get people to click "yes I would prefer not to die of horrible diseases" on a website.
 
 If humans can coordinate to invent "lines" and not eating each other, this should be manageable.
 
-**Final Numbers**
+### Final Numbers
 
 Humanity currently spends **$118.8T annually** on making people stop being alive or dealing with the consequences.
 

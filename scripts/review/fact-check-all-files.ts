@@ -51,8 +51,18 @@ async function main() {
   console.log('Fact-checking the following files:');
   staleFilesToCheck.forEach(file => console.log(`  - ${file}`));
 
+  let processedCount = 0;
   for (const file of staleFilesToCheck) {
-    await factCheckFileWithLLM(file);
+    processedCount++;
+    try {
+      console.log(`\n[${processedCount}/${staleFilesToCheck.length}] Fact-checking: ${file}...`);
+      await factCheckFileWithLLM(file);
+    } catch (error) {
+      console.error(`\n❌ FATAL ERROR fact-checking ${file}:`, error);
+      console.error('\nStopping script due to error.');
+      console.error(`Progress: ${processedCount}/${staleFilesToCheck.length} files processed`);
+      process.exit(1);
+    }
   }
 
   console.log('\nFact-checking process complete.');

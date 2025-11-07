@@ -40,7 +40,7 @@ export async function elevateToneWithLLM(filePath: string): Promise<void> {
   // Parse JSON response
   let response: ToneResponse;
   try {
-    response = extractJsonFromResponse<ToneResponse>(responseText);
+    response = extractJsonFromResponse(responseText) as ToneResponse;
   } catch (error) {
     console.error(`❌ Failed to parse LLM response as JSON:`, error);
     console.error('Response was:', responseText);
