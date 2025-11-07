@@ -14,7 +14,7 @@ tags:
 lastFactCheckHash: 85e2ca4e3d5d050061ca231a9583d59903295b3bfdbe991a5727cf1fb277dc2b
 lastStructureCheckHash: add3d57b485d4b3d763cc49315be7d7273634f3b3eef5f28f9ea56c19c52cc95
 lastLatexCheckHash: 75b7440d20f28c83141de4688ffeeeff7626d0c69a93a5ba766c982310d05476
-lastInstructionalVoiceHash: f3a5c375a33c7871cab9d0da942010e75248401844e86b7fe08377c20aebb0b9
+lastInstructionalVoiceHash: 0faec94c14313e5c61f445c230ae74fe75c77e7edc05f97f0b9e3be178ebd9d1
 ---
 
 ```{python}
@@ -118,7 +118,7 @@ This is harder than it sounds. Here's how you do it:
 The easy stuff that stops the lazy fraudsters:
 
 - **Email/Phone OTP**: Send a code, make them type it back. Costs money, slows bots.
-- **Device Fingerprinting**: Your browser/phone has a unique signature. We track it.
+- **Device Fingerprinting**: Your browser/phone has a unique signature. You track it.
 - **IP Geolocation**: If 10,000 votes come from one basement in Belarus, you notice.
 - **Velocity Limits**: Try to vote 500 times in one minute, get blocked.
 
@@ -175,7 +175,7 @@ This is where AI comes in. Not the "I'm going to become sentient and kill you" k
 
 **Data Protection (The "You're Not Creepy" Rules):**
 
-- **Selective Disclosure**: We only ask for what we absolutely need. Your shoe size is irrelevant.
+- **Selective Disclosure**: You only ask for what you absolutely need. Your shoe size is irrelevant.
 - **Data Minimization**: Collect the minimum. No "tell us your life story" forms.
 - **Local Processing**: Biometric data (face scans, etc.) processed on YOUR device. You never see it. Ever.
 - **Encryption at Rest**: Everything encrypted with keys you control. You can't read it even if you wanted to.
