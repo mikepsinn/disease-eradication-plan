@@ -1,6 +1,8 @@
 ---
 title: dFDA QALY Model - 840,000 Annual QALYs
 description: SOURCE OF TRUTH - Detailed QALY calculation model showing how dFDA generates 840,000 Quality-Adjusted Life Years annually
+lastToneElevationWithHumorHash: f7ee8280c935c326bd7468b5b012723861ee03ff1da16f5155abaf956b1a3010
+lastInstructionalVoiceHash: ae50c9f649997a1f00c963c1403dd0a69b3a7ede13a4196afdf4dcf070112750
 ---
 
 ```{python}
@@ -87,7 +89,7 @@ This stream reflects the transformative potential of the dFDA to create viable r
 
 ### Daily Opportunity Cost of Inaction
 
-This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA Infrastructure. By translating the annualized benefits identified in this analysis into a daily metric, we can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.
+This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA Infrastructure. By translating the annualized benefits identified in this analysis into a daily metric, you can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.
 
 #### Base Case: Daily Lost QALYs and Financial Savings
 
@@ -149,7 +151,7 @@ The following table provides the data and sources that support the chart. The li
 | Intervention                  | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :---------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **dFDA Infrastructure**             |                     **4,744 - 194,667**                      | **-$260,000 to -$19,000**<a href="#ref_dfda_icer">²</a> | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating 840,000-3.65M QALYs annually.                                                                              |
-| **Smallpox Eradication**      |      **10,000 - 100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its unprecedented scale. ([WHO, 2010](../references.qmd#who-smallpox-eradication-commemoration)) |
+| **Smallpox Eradication**      |      **10,000 - 100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. ([WHO, 2010](../references.qmd#who-smallpox-eradication-commemoration)) |
 | **Childhood Vaccinations**    |        **22 - 10,000+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. ([CDC, 2023](../references.qmd#childhood-vaccinations-prevent-deaths))                                 |
 | **Clean Water Programs**      |                       **100 - 1,000**                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $20-$500/DALY averted. Community water supply improvements cost $200-$2,000/DALY. ([WHO, 2004](../references.qmd#who-clean-water-daly-costs))                                              |
 | **Hypertension Screening**    |                         **30 - 50**                          | **~$20,000 - $33,000**                                  | Highly Cost-Effective            | Recent US studies show pharmacist-led hypertension management has ICERs under $50,000/QALY, with most interventions falling in the $20,000-$33,000 range. ([JAMA Netw Open, 2023](../references.qmd#jama-hypertension-pharmacist-led))            |
@@ -200,7 +202,7 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 
 ### Appendix: Detailed QALY Calculation Model {#appendix-detailed-qaly-calculation-model}
 
-This appendix provides a transparent, component-based model for the aggregate QALY figures used in this analysis. The total QALY gain is the sum of three distinct benefit streams. For each stream, we define parameters for a **Conservative**, **Base**, and **Optimistic** scenario, with sources and rationale provided for each parameter.
+This appendix provides a transparent, component-based model for the aggregate QALY figures used in this analysis. The total QALY gain is the sum of three distinct benefit streams. For each stream, you define parameters for a **Conservative**, **Base**, and **Optimistic** scenario, with sources and rationale provided for each parameter.
 
 #### A. QALYs from Faster Drug Access
 
@@ -212,7 +214,7 @@ This stream models the benefit of accelerating the approval of new drugs that wo
     - **Source:** The FDA consistently approves a substantial number of novel therapies. For example, [in 2023, the Center for Drug Evaluation and Research (CDER) approved 55 novel drugs](../references.qmd#friends-cancer-research-fda-approvals).
   - $T_{\text{accel}}$: Average years of acceleration per drug.
     - **Rationale:** The dFDA model, inspired by hyper-efficient trials like the [RECOVERY trial](recovery-trial.qmd), can drastically cut development timelines from years to months.
-    - **Source:** The [RECOVERY trial](recovery-trial.qmd) demonstrated unprecedented speed in generating clinical results.
+    - **Source:** The [RECOVERY trial](recovery-trial.qmd) demonstrated uncommon speed in generating clinical results.
     - **Quote:** "Days to First Major Result: <100" ,  [The Conversation, via dFDA Wiki](recovery-trial.qmd)
   - $\text{QALYs}_{\text{drug}}$: Average QALYs gained per drug, per year of earlier access.
     - **Rationale:** Accelerating access to effective drugs has a direct and significant impact on life-years and quality of life.

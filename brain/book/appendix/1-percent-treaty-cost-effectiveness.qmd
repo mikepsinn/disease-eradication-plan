@@ -9,6 +9,8 @@ tags:
   - calculation
   - sensitivity-analysis
 lastFactCheckHash: a3b5ed5c444e0871923ad5b3a9df93db7519e177fffab7aba8c22eac35bea6b3
+lastToneElevationWithHumorHash: 0e44c351b354fd422e5fee70e8eb3e067d40c1de305bfb7fc38fa54e55a6d94b
+lastInstructionalVoiceHash: 26066a540dc4479cbac40dd86da7dfb66a0ee0b0c38de35f13a6b1c40d036976
 ---
 
 ```{python}
@@ -149,7 +151,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Using central estimate**: **$250M/year**
 
-**Note**: After initial 3-5 year campaign, these costs drop to near zero. We use amortized costs for a 10-year NPV analysis.
+**Note**: After initial 3-5 year campaign, these costs drop to near zero. You use amortized costs for a 10-year NPV analysis.
 
 #### 3b. dFDA Operational Costs ($40M/year)
 
@@ -215,8 +217,8 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 - Military spending has negative ROI (destroys value)
 - Medical spending has positive ROI (creates value)
-- We're converting waste into productive investment
-- **True cost: Negative** (we're avoiding wasteful spending)
+- You're converting waste into productive investment
+- **True cost: Negative** (you're avoiding wasteful spending)
 - **ICER = Undefined** (negative cost, positive QALYs)
 
 #### Why We Use Conservative $290M/Year in Primary Analysis
@@ -348,7 +350,7 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 **Worst case** (conservative): Society still saves $5.97M per life saved
 
-**Best case** (optimistic): Society saves $4.79M per life saved (lower because we're saving many more lives, so the economic benefit is spread across more QALYs)
+**Best case** (optimistic): Society saves $4.79M per life saved (lower because you're saving many more lives, so the economic benefit is spread across more QALYs)
 
 ## Visual Comparisons
 
@@ -378,7 +380,7 @@ This chart compares the gross annual economic benefits across major public healt
 
 ### Monte Carlo Simulation (Recommended)
 
-For publication-quality analysis, we recommend running a Monte Carlo simulation with:
+For publication-quality analysis, run a Monte Carlo simulation with:
 
 - 10,000 iterations
 - Probability distributions for each parameter
@@ -492,7 +494,7 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **From investors' perspective**: They invest $1B and receive $2.7B/year perpetually. This is the best investment in history.
 
-**The key insight**: Traditional ICER assumes spending society's resources on health interventions. Here, we're redirecting resources from **destructive uses** (war) to **productive uses** (medical research). The "cost" is really just stopping waste.
+**The key insight**: Traditional ICER assumes spending society's resources on health interventions. Here, you're redirecting resources from **destructive uses** (war) to **productive uses** (medical research). The "cost" is really just stopping waste.
 
 ### Q: Isn't redirecting military spending politically impossible?
 

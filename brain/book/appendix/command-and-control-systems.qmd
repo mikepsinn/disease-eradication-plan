@@ -8,6 +8,8 @@ tags:
   - database
   - airtable
   - strategy
+lastToneElevationWithHumorHash: b34a4811eb79d4a341f55c1d9ba6344065856fd956eff9489fa4a8f0edf5f895
+lastInstructionalVoiceHash: 4dcdeb18fe098ef89f72d2a2df573a76d16178119ba61340d56d1e49719453b2
 ---
 
 ```{python}
@@ -64,7 +66,7 @@ This is your central hub. Every living human who touches the system gets an entr
 - `Date Joined` (Date) - When they stopped being part of the problem
 - `LinkedIn Profile` (URL) - For stalking their credentials
 - `Notes` (Long Text) - Where you write "difficult but brilliant" or "useless"
-- `Opt-in for Updates` (Checkbox) - Can we spam them with hope?
+- `Opt-in for Updates` (Checkbox) - Can you spam them with hope?
 
 ### Table 2: `Engagements` (The Stalker's Dream Log)
 
@@ -98,7 +100,7 @@ Managing the humans who run the machine that saves the humans.
 - `Position Title` (Text) - Fancy name for "does stuff"
 - `Status` (Single Select) - Where in the process:
   - Open (please god someone apply)
-  - Interviewing (pretending we have options)
+  - Interviewing (pretending you have options)
   - Filled (found someone desperate enough)
   - On Hold (ran out of money)
 - `Division` (Link to `Divisions`) - Which department gets the fresh meat
@@ -125,11 +127,11 @@ Every fund, company, nonprofit, and three-letter agency you deal with.
   - Government (the competition)
   - For-Profit (at least they're honest)
 - `Status` (Single Select) - Friend or foe:
-  - Ally (on our side, for now)
+  - Ally (on your side, for now)
   - Neutral (sitting on the fence)
   - Adversary (actively making things worse)
 - `Website` (URL) - Their propaganda page
-- `Contacts` (Link to `Personnel Roster`) - Humans we can manipulate there
+- `Contacts` (Link to `Personnel Roster`) - Humans you can manipulate there
 - `Mission Statement` (Long Text) - What they pretend to care about
 
 ### Table 5: `Divisions` (Your Internal Departments)
@@ -185,7 +187,7 @@ Every penny tracked, because transparency is the only antidote to corruption.
 - `Type` (Single Select) - Which direction:
   - Inflow (money coming in, rare)
   - Outflow (money leaving, constant)
-- `Category` (Single Select) - What excuse we used:
+- `Category` (Single Select) - What excuse you used:
   - VICTORY Bond (investment from optimists)
   - Donation (charity from pessimists)
   - Grant (government cheese)
@@ -213,7 +215,7 @@ Your major initiatives, the big battles in the war.
 - `Lead` (Link to `Personnel Roster`) - The general of this battle
 - `Key Personnel` (Link to `Personnel Roster`) - The soldiers
 - `Related Projects` (Link to `Projects & Tasks`) - The actual work
-- `Budget` (Currency) - How much we're burning
+- `Budget` (Currency) - How much you're burning
 
 ## SECTION 4: G-6 (Signal & Communications)
 
@@ -227,17 +229,17 @@ Every message you blast at the world.
 
 - `Message ID` (Autonumber) - Propaganda piece #420,069
 - `Title` (Text) - Clickbait headline
-- `Channel` (Single Select) - How we're bothering people:
+- `Channel` (Single Select) - How you're bothering people:
   - Email (inbox assault)
   - Social Media (algorithm manipulation)
   - Press Release (journalistic fiction)
   - Blog Post (long-form delusion)
 - `Status` (Single Select) - Deployment status:
-  - Draft (still lying to ourselves)
+  - Draft (still lying to yourself)
   - Scheduled (the lie has a date)
   - Sent (the lie is live)
-- `Send Date` (Date) - When we pulled the trigger
-- `Target Audience` (Links) - Who we're manipulating
+- `Send Date` (Date) - When you pulled the trigger
+- `Target Audience` (Links) - Who you're manipulating
 - `Content` (Long Text) - The actual propaganda
 - `Related Asset` (Link to `Media Assets`) - Pretty pictures attached
 
@@ -277,7 +279,7 @@ Tracking every bond sold to fund this whole operation.
   - Active (money's working)
   - Matured (lol, these are perpetual)
 - `Certificate` (Attachments) - Fancy PDF they can frame
-- `Related Engagement` (Link) - How we convinced them
+- `Related Engagement` (Link) - How you convinced them
 - `Notes` (Long Text) - "Bought while drunk at charity gala"
 
 ### Table 12: `Global Referendum` (The Democratic Facade)
@@ -312,13 +314,13 @@ Tracking which countries have signed on to stop being idiots.
   - Signed (agreed in principle)
   - Ratified (actually did it)
   - Rejected (chose death)
-- `Lead Lobbyist` (Link) - Our inside person
+- `Lead Lobbyist` (Link) - Your inside person
 - `Key Contacts` (Link) - People with power
-- `Lobbying Firm` (Link) - Professional bribers we hired
+- `Lobbying Firm` (Link) - Professional bribers you hired
 - `Lobbying Budget` (Currency) - Cost of democracy
 - `Next Action Date` (Date) - When to apply more pressure
 - `Notes` (Long Text) - "Senator owns defense contractor stock"
-- `Related Campaign` (Link) - Which strategy we're using
+- `Related Campaign` (Link) - Which strategy you're using
 
 ## How to Actually Build This Thing
 
@@ -344,7 +346,7 @@ Tracking which countries have signed on to stop being idiots.
 - Financial data: Visible enough to prevent corruption, hidden enough to prevent theft
 - Personal data: GDPR compliant (whatever that means this week)
 - Voting data: Anonymous but verifiable (blockchain magic)
-- The rule: Track actions, not thoughts (we're not Facebook... yet)
+- The rule: Track actions, not thoughts (you're not Facebook... yet)
 
 ## The Result
 

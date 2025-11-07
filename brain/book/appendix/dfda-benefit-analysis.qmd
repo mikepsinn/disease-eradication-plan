@@ -1,6 +1,8 @@
 ---
 title: dFDA Benefit Analysis - Quantifying the Savings
 description: Analysis of societal benefits from the dFDA including R&D cost savings and health outcome improvements
+lastToneElevationWithHumorHash: 8fdedd8f76d63e41e81c5893dc74aef9235c14f7faedcda76dc740050e085b03
+lastInstructionalVoiceHash: 09fbd4923f5407e5b7d7c11779b69c47ec829501a87b6f131cf80b6416e8ecef
 ---
 
 ```{python}
@@ -24,7 +26,7 @@ This section quantifies the potential societal benefits of the dFDA Infrastructu
 
 The global pharmaceutical and medical device R&D market is vast. Annual global spending on [clinical trials alone was estimated to be in the range of **USD 60-80 billion in 2024, and projected to exceed USD 100 billion by the early 2030s**](../references.qmd#clinical-trial-market-size). Most of this can be done cheaper with dFDA. If dFDA captures even a fraction of this market by being faster and cheaper, its economic impact will be huge.
 
-For this analysis, we use a conservative baseline estimate of [**$100.0B per year in global clinical trial spending**](../references.qmd#clinical-trial-spending-dfda-baseline) that is potentially addressable by dFDA through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
+This analysis uses a conservative baseline estimate of [**$100.0B per year in global clinical trial spending**](../references.qmd#clinical-trial-spending-dfda-baseline) that is potentially addressable by dFDA through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from dFDA methodologies.
 
 - **Current Average Costs**: Various estimates suggest [\$1.0 - \$2.5 billion to bring a new drug from discovery through FDA approval](../references.qmd#drug-development-cost), spread across ~10 years.
 - **Clinical Trial Phase Breakdown**:

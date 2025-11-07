@@ -8,6 +8,8 @@ tags:
   - insurance-model
   - healthcare-system
 lastFactCheckHash: 6ec42e4ca3e32422d558c8d0d0a0c2745aceddb1a774de089af5439d2f7ff3ec
+lastToneElevationWithHumorHash: 4f84d5675544d0a10046c9b18a10c69431a3b6c0ab035201a3da5be751eaee29
+lastInstructionalVoiceHash: 6a6746bea53b9c07f8802904c70eac99c5a25f1bdd0ce2b8fab6633a5924f9e2
 ---
 
 ```{python}
@@ -172,7 +174,7 @@ graph TD
 - **Hospitals:** Infrastructure payments
 - **Insurers:** Reduced long-term costs from better treatments
 
-## The Pre-1962 Model (What We're Returning To)
+## The Pre-1962 Model (The Model You're Reinstating)
 
 Before the 1962 Kefauver-Harris Amendment:
 
@@ -181,7 +183,7 @@ Before the 1962 Kefauver-Harris Amendment:
 - Innovation happened at bedside
 - [FDA only regulated safety, not efficacy](../references.qmd#fda-pre-1962-mandate)
 
-### We're bringing this back, but with
+### You bring this model back, but with
 
 - Modern safety monitoring
 - Real-time data collection

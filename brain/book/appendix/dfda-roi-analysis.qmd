@@ -1,6 +1,8 @@
 ---
 title: dFDA ROI Analysis
 description: Return on investment analysis showing 463:1 central estimate with sensitivity scenarios
+lastToneElevationWithHumorHash: c4096c52b382751b71e4357f4c027236db916f416c14977be1588d6351937e0b
+lastInstructionalVoiceHash: 4bb21eb85b6a8b9b817f8fe30a964b208a91e92817590ef202121efb48a9356c
 ---
 
 ```{python}
@@ -62,7 +64,7 @@ $$
 \text{ROI} = \frac{\text{Net Annual Savings}}{\text{Annualized Platform Cost}}
 $$
 
-Let's calculate ROI based on the **Lean Ecosystem** scenario:
+Here's how you calculate the ROI based on the **Lean Ecosystem** scenario:
 
 - Upfront Cost (Core Platform Build from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): $40M. Amortized over 5 years: $8 Million/year.
 - Annual Operational Cost (Lean Ecosystem - Core Platform Ops from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + Medium Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$40M/year.
@@ -72,7 +74,7 @@ _This simplified calculation, based on a basic amortization of upfront costs, yi
 
 ### Full Range ROI Sensitivity Analysis
 
-To provide a comprehensive view, we can calculate the ROI across the full spectrum of cost possibilities by combining the Core Platform costs with the Broader Initiative scenarios from [Costs of Building and Operating the Global Decentralized FDA](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
+To provide a comprehensive view, you can calculate the ROI across the full spectrum of cost possibilities by combining the Core Platform costs with the Broader Initiative scenarios from [Costs of Building and Operating the Global Decentralized FDA](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
 
 #### Assumptions for Full Range ROI Calculation
 

@@ -12,6 +12,8 @@ tags:
   - regulatory-strategy
   - executive-order
 lastFactCheckHash: cd8afbea8a48bba70e7fa0b26ee1439148560ed28af2f1938832d06910d06fc9
+lastToneElevationWithHumorHash: 1cbb6011d9d0b1d89300252f896d61f2ca5a942a8ab52ea0e7a387fb2f8bc017
+lastInstructionalVoiceHash: 534fe8bf798fedc6b0a77c2e143163fd8452854b30427a140571bafba795ee8d
 ---
 
 ```{python}
@@ -124,7 +126,7 @@ _Note: Table excludes ICs primarily focused on basic science (like NIGMS, NHGRI)
 
 The table highlights that a substantial portion of NIH's budget (~\$39.6 Billion across these selected ICs) is allocated to Institutes whose mandates inherently involve funding or supporting clinical trials to find treatments for specific diseases or conditions.
 
-- **The dFDA offers a Method, Not a New Goal:** The dFDA Infrastructure represents a potentially revolutionary _method_ for achieving the existing, congressionally mandated goals of these Institutes – finding effective treatments – but doing so faster, cheaper, and at a larger scale.
+- **The dFDA offers a Method, Not a New Goal:** The dFDA Infrastructure represents a potentially notable _method_ for achieving the existing, congressionally mandated goals of these Institutes – finding effective treatments – but doing so faster, cheaper, and at a larger scale.
 - **Efficiency Argument:** Instead of funding numerous traditional, site-based clinical trials costing [tens of thousands per patient](../references.qmd#trial-cost-41k), these ICs could potentially achieve their clinical evaluation objectives more efficiently by funding trials run _on_ the dFDA Infrastructure at a fraction of the cost ([~\$500-\$1000 per patient](../references.qmd#recovery-cost-500)).
 - **Targetable Spending:** While not all ~\$39.6B is spent _solely_ on clinical trials (basic science is also funded), a significant fraction (conservatively estimated earlier at \$10-15B+ annually across NIH) _is_ directed towards clinical evaluation. It is _this_ portion of spending whose purpose could be directly and more efficiently fulfilled by leveraging the dFDA.
 - **The Deal:** Each Institute keeps focusing on its disease (cancer, heart disease, aging) but they all use the same cheap, fast platform for running trials. Same money, better results.

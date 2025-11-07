@@ -1,6 +1,8 @@
 ---
 title: dFDA Collaboration Framework
 description: How researchers, patients, and organizations work together on the dFDA to find cures faster.
+lastToneElevationWithHumorHash: 041f5da0e444d44ab8c5f504e9e11c379ae762226797c7400c51094f050f5799
+lastInstructionalVoiceHash: 0843941ab429de6168408f79a7b2a9cd8ce6fe134d58ea27c84704d1af1368b9
 ---
 
 ```{python}
@@ -17,7 +19,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-> This is a work in progress. Contributions are welcome! Just click the edit button in the lower right corner. It's our goal to avoid any duplication of effort. So please include existing projects that would be interested in fulfilling any part of this global framework.
+> This is a work in progress. Contributions are welcome! Just click the edit button in the lower right corner. The goal is to avoid any duplication of effort. So please include existing projects that would be interested in fulfilling any part of this global framework.
 > {.is-warning}
 
 This coordination framework connects researchers, patients, drug companies, and whoever else wants to run trials. It gives them shared tools to find cures faster.

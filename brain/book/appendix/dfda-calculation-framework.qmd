@@ -1,6 +1,8 @@
 ---
 title: dFDA Calculation Framework - NPV Methodology
 description: Detailed calculation framework for NPV analysis including costs, savings, and ROI methodology
+lastToneElevationWithHumorHash: 6a8a0ba36fb56b9eb85d5fe126ee3b02d6a37708dc2e02198caa95f20400866d
+lastInstructionalVoiceHash: add6ecffe2d6d2464c5cdc0ef6f7d8c99a3b4ad15b644c11b99e2bca8efc2cd1
 ---
 
 ```{python}
@@ -22,7 +24,7 @@ Below is an illustrative framework with more formal equations and a simplified b
 
 #### Definitions and Parameters
 
-We define the following parameters to capture costs, savings, timelines, and scaling/adoption:
+You define the following parameters to capture costs, savings, timelines, and scaling/adoption:
 
 1. **Initial (Upfront) Costs**
 
@@ -89,7 +91,7 @@ We define the following parameters to capture costs, savings, timelines, and sca
 
 #### NPV of Costs
 
-We sum the upfront cost $C_{0}$ and the net present value (NPV) of ongoing operational costs $C_{\text{op}}(t)$ from $t = 1$ to $t = T$:
+You sum the upfront cost $C_{0}$ and the net present value (NPV) of ongoing operational costs $C_{\text{op}}(t)$ from $t = 1$ to $t = T$:
 
 $$
   \text{NPV}(\text{Costs})
@@ -99,7 +101,7 @@ $$
 
 #### NPV of Savings
 
-Using our adoption model $p(t)$ and fraction of R&D spend $\alpha$ that is saved, the annual savings is $S(t) = p(t)\alpha R_{d}$. Over $T$ years, the total NPV of these savings is:
+Using your adoption model $p(t)$ and fraction of R&D spend $\alpha$ that is saved, the annual savings is $S(t) = p(t)\alpha R_{d}$. Over $T$ years, the total NPV of these savings is:
 
 $$
   \text{NPV}(\text{Savings})
@@ -117,7 +119,7 @@ where $k$ is the steepness of adoption and $t_{0}$ is the midpoint.
 
 #### ROI
 
-We define ROI as the ratio of the **NPV of total savings** to the **NPV of total costs**:
+You define ROI as the ratio of the **NPV of total savings** to the **NPV of total costs**:
 
 $$
   \text{ROI}

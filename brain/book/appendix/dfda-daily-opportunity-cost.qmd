@@ -1,6 +1,8 @@
 ---
 title: Daily Opportunity Cost of Inaction
 description: Quantifying the daily societal cost of not implementing the dFDA - $137M and 2,301 QALYs lost per day
+lastToneElevationWithHumorHash: a351208a23c3381680762a2e1a353bc73388e6adbfd1c0f42d2e3cea2a66bba4
+lastInstructionalVoiceHash: eab438f8ea84764b075538ca8d0bdda28aeef71f84c9a4caa8014e1f94f925a8
 ---
 
 ```{python}
@@ -18,7 +20,7 @@ from economic_parameters import *
 ```
 
 
-This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA Infrastructure. By translating the annualized benefits identified in this analysis into a daily metric, we can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.
+This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA Infrastructure. By translating the annualized benefits identified in this analysis into a daily metric, you can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.
 
 #### Base Case: Daily Lost QALYs and Financial Savings
 

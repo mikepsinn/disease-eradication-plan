@@ -1,6 +1,8 @@
 ---
 title: dFDA Platform Costs - ROM Estimates
 description: Detailed rough order of magnitude (ROM) cost estimates for building and operating the dFDA platform
+lastToneElevationWithHumorHash: 3d510cec8f72cf33b6fdb50a0d93970eb036538a29aedee8ddd922260691fc71
+lastInstructionalVoiceHash: f3b9200520641401c0b634f554606366149975d32da4df312fd54fc7002d1f13
 ---
 
 ```{python}
@@ -68,7 +70,7 @@ The following sections provide ROM estimates for both the ongoing operational co
 
 ### Top-Down Analogous Cost Estimation (Market Comparables)
 
-To complement the bottom-up ROM, we can derive a top-down estimate by examining the total investment raised by leading commercial companies developing decentralized clinical trial (DCT) platforms. This market-based view provides a real-world benchmark for the capital required to build, scale, and operate a sophisticated, global-grade platform.
+To complement the bottom-up ROM, you can derive a top-down estimate by examining the total investment raised by leading commercial companies developing decentralized clinical trial (DCT) platforms. This market-based view provides a real-world benchmark for the capital required to build, scale, and operate a sophisticated, global-grade platform.
 
 - **Medable:** A leader in the DCT platform space, has [raised a total of **\$521 million** in capital, achieving a valuation of **\$2.1 billion**](../references.qmd#dct-platform-funding-medable) as of late 2021. This level of funding represents the capital required to develop a comprehensive SaaS platform, establish a global presence across 60+ countries, and achieve significant market penetration.
 - **Other DCT Platform Companies:** [Other companies in the space](../references.qmd#dct-platform-funding-others), such as **Science 37** (~$40M raised), **Thread** (up to \$50M raised), and **uMotif** (~\$25.5M raised), show that you can achieve significant traction and platform development with investments in the tens of millions.
@@ -115,7 +117,7 @@ This top-down estimate corroborates the findings of the bottom-up analysis. Whil
 
 #### Marginal Cost Analysis per User
 
-The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the platform, which is to support hundreds of millions or billions of users. At this initial scale, we can analyze the cost on a per-user basis.
+The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the platform, which is to support hundreds of millions or billions of users. At this initial scale, you can analyze the cost on a per-user basis.
 
 - **Average Cost Range Per User (at 5M MAU):**
   - Based on the total annual operational cost range of **[\$11M - \$26.5M](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)**, the average cost per user is:
