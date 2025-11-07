@@ -9,6 +9,7 @@ tags:
   - victory-bonds
   - whale-targeting
 lastFactCheckHash: d6373fb696fe36095eca499312e8d9e84b608d4953cccaa0909855fbaaebf539
+lastInstructionalVoiceHash: e515a43ac5085a474fb925065a672411352ee43e78283356599c210d9a14ac89
 ---
 
 ```{python}
@@ -65,7 +66,7 @@ The economics are stupidly obvious. The challenge is convincing people the vendi
 
 All major costs are structured so people only get paid if they succeed:
 
-- **Legal fees:** Lawyers get [VICTORY bonds](../economics/victory-bonds.qmd) if we win, nothing if we lose
+- **Legal fees:** Lawyers get [VICTORY bonds](../economics/victory-bonds.qmd) if you win, nothing if you lose
 - **Political campaigns:** First country to ratify gets the biggest prize
 - **Tech development:** Bonuses for working code, not PowerPoints
 - **Team compensation:** Mostly equity because cash is for closers
