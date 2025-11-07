@@ -3,11 +3,11 @@ import matter from 'gray-matter';
 import { glob } from 'glob';
 import path from 'path';
 import { generateGeminiProContent, generateClaudeOpus41Content, extractJsonFromResponse, loadPromptTemplate, generateGeminiFlashContent } from '../lib/llm';
-import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash, parseQuartoYml, getStaleFiles, stringifyWithFrontmatter } from '../lib/file-utils';
+import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash, parseQuartoYml, getStaleFiles, stringifyWithFrontmatter, getBookFilesForProcessing } from '../lib/file-utils';
 import { parseReferences, formatReferencesFile, type Reference } from '../lib/references';
 
 // Re-export functions from file-utils for convenience
-export { getStaleFiles, parseQuartoYml };
+export { getStaleFiles, parseQuartoYml, getBookFilesForProcessing };
 
 export async function formatFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nFormatting ${filePath} with Gemini...`);

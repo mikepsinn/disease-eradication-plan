@@ -3,6 +3,7 @@ title: 🤖 Building Your AI Coordination Army
 description: How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.
 lastStructureCheckHash: 475decf53d128e51862dd8aa69bb0950143f5debaeb02174157bb433a19acf15
 lastLatexCheckHash: ac9b8f3eba1198d59e53bfb93f90cd7631d9bc37d0872d4c11aeec792d4edb14
+lastInstructionalVoiceHash: 567fd9c30254581222017bd7882e1c9f93d9d327bf2556e907f3d06868c346a5
 ---
 
 ```{python}
@@ -28,7 +29,7 @@ Here's the division of labor:
 - **Wishocracy** tells your army what to fight for (e.g., "Cure cancer" instead of "invade a country with oil")
 - **Your AI agents** coordinate the millions of people and resources needed to actually win, without requiring a single Zoom meeting
 
-Here's how you build this coordination infrastructure. (We'll call it the "Positron Network" for reference, but what matters is understanding how to build it yourself, not memorizing a brand name.)
+Here's how you build this coordination infrastructure. 
 
 ### Where Your Agents Get Their Missions (Not From a Management Consultant)
 
@@ -219,7 +220,7 @@ Once approved, "Builder Agents" update the coordination infrastructure, writing 
 
 You do final review to ensure changes align with the mission before they go live across the network. Think of it as peer review, except the peer is a robot and it actually happens instead of sitting in someone's inbox for 6 months.
 
-This keeps you in strategic control while letting AI handle the coordination work humans can't scale. You're building infrastructure to coordinate millions of people fighting disease, not building Skynet (though the "kill all humans" approach would technically solve the disease problem by eliminating the hosts, so we specifically programmed against that).
+This keeps you in strategic control while letting AI handle the coordination work humans can't scale. You're building infrastructure to coordinate millions of people fighting disease, not building Skynet (though the "kill all humans" approach would technically solve the disease problem by eliminating the hosts, so you specifically program against that).
 
 ### How You Prevent Data Silos (The Tragedy of the Nonprofit Commons)
 

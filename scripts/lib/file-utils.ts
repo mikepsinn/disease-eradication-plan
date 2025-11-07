@@ -368,7 +368,7 @@ export interface BookStructure {
  * Parses _book.yml to extract chapter and appendix file paths
  */
 export async function parseQuartoYml(): Promise<BookStructure> {
-  const quartoYmlContent = await fs.readFile('_book.yml', 'utf-8');
+  const quartoYmlContent = await fs.readFile('_quarto.yml', 'utf-8');
   const chapters: string[] = [];
   const appendices: string[] = [];
 
@@ -402,17 +402,56 @@ export async function parseQuartoYml(): Promise<BookStructure> {
       inAppendices = false;
     }
 
-    const match = line.match(/^\s*-\s+(brain\/[^\s]+\.qmd)/);
-    if (match) {
+    // Match files directly listed (e.g., "- brain/book/file.qmd")
+    const directMatch = line.match(/^\s*-\s+([^\s]+\.qmd)/);
+    if (directMatch) {
       if (inAppendices) {
-        appendices.push(match[1]);
+        appendices.push(directMatch[1]);
       } else if (inChapters) {
-        chapters.push(match[1]);
+        chapters.push(directMatch[1]);
+      }
+    }
+
+    // Also match files with href: structure (e.g., "href: index.qmd")
+    const hrefMatch = line.match(/^\s*href:\s*([^\s]+\.qmd)/);
+    if (hrefMatch) {
+      if (inAppendices) {
+        appendices.push(hrefMatch[1]);
+      } else if (inChapters) {
+        chapters.push(hrefMatch[1]);
       }
     }
   }
 
   return { chapters, appendices };
+}
+
+/**
+ * Gets all book chapter and appendix files, excluding references.qmd
+ * This is the standard list of files to process for most review/edit operations
+ */
+export async function getBookFilesForProcessing(): Promise<string[]> {
+  const { glob } = await import('glob');
+
+  // Find all .qmd files in brain/book
+  const bookFiles = await glob('brain/book/**/*.qmd');
+
+  // Also include index.qmd from root
+  const rootFiles = await glob('*.qmd');
+  const indexFile = rootFiles.filter(f => f === 'index.qmd');
+
+  // Combine all files
+  let allFiles = [...indexFile, ...bookFiles];
+
+  // Filter out references.qmd and any files in _freeze or _book directories
+  allFiles = allFiles.filter(file => {
+    const normalizedPath = file.replace(/\\/g, '/');
+    return !normalizedPath.includes('references.qmd') &&
+           !normalizedPath.includes('_freeze/') &&
+           !normalizedPath.includes('_book/');
+  });
+
+  return allFiles;
 }
 
 /**

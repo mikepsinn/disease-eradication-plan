@@ -14,6 +14,7 @@ tags:
 lastFactCheckHash: 85e2ca4e3d5d050061ca231a9583d59903295b3bfdbe991a5727cf1fb277dc2b
 lastStructureCheckHash: add3d57b485d4b3d763cc49315be7d7273634f3b3eef5f28f9ea56c19c52cc95
 lastLatexCheckHash: 75b7440d20f28c83141de4688ffeeeff7626d0c69a93a5ba766c982310d05476
+lastInstructionalVoiceHash: f3a5c375a33c7871cab9d0da942010e75248401844e86b7fe08377c20aebb0b9
 ---
 
 ```{python}
@@ -41,7 +42,7 @@ They cannot ignore 280 million cryptographically-verified humans saying "do this
 
 Here's how to build that list.
 
-## On What We're Actually Trying to Do (The Boring But Necessary Part)
+## On What You're Actually Trying to Do (The Boring But Necessary Part)
 
 ### The Goal
 
@@ -101,16 +102,16 @@ The trick is doing all of these simultaneously, which is harder than it sounds.
 
 ## On Stopping People from Cheating (The Hard Part)
 
-### On Why We Need Multiple Layers of "Prove You're Human"
+### On Why You Need Multiple Layers of "Prove You're Human"
 
 The internet is full of bots, fraudsters, and people who think it's funny to vote 1,000 times. This is a problem.
 
-We need to verify that each vote comes from a real, unique human without:
+You need to verify that each vote comes from a real, unique human without:
 - Requiring government ID (excludes billions of people)
 - Violating privacy (creepy and illegal in many places)
 - Making it impossible for normal people to participate (defeats the purpose)
 
-This is harder than it sounds. Here's how we do it:
+This is harder than it sounds. Here's how you do it:
 
 **Layer 1: Basic "Are You Even Trying?" Checks**
 
@@ -118,12 +119,12 @@ The easy stuff that stops the lazy fraudsters:
 
 - **Email/Phone OTP**: Send a code, make them type it back. Costs money, slows bots.
 - **Device Fingerprinting**: Your browser/phone has a unique signature. We track it.
-- **IP Geolocation**: If 10,000 votes come from one basement in Belarus, we notice.
+- **IP Geolocation**: If 10,000 votes come from one basement in Belarus, you notice.
 - **Velocity Limits**: Try to vote 500 times in one minute, get blocked.
 
 This stops maybe 90% of fraud. The other 10% requires getting creative.
 
-**Layer 2: Enhanced "Now We're Getting Serious" Verification**
+**Layer 2: Enhanced "Now You're Getting Serious" Verification**
 
 For people who want higher verification (and higher rewards):
 
@@ -172,16 +173,16 @@ This is where AI comes in. Not the "I'm going to become sentient and kill you" k
 
 ### On Privacy (Or: How Not to Build a Surveillance State)
 
-**Data Protection (The "We're Not Creepy" Rules):**
+**Data Protection (The "You're Not Creepy" Rules):**
 
 - **Selective Disclosure**: We only ask for what we absolutely need. Your shoe size is irrelevant.
 - **Data Minimization**: Collect the minimum. No "tell us your life story" forms.
-- **Local Processing**: Biometric data (face scans, etc.) processed on YOUR device. We never see it. Ever.
-- **Encryption at Rest**: Everything encrypted with keys you control. We can't read it even if we wanted to.
+- **Local Processing**: Biometric data (face scans, etc.) processed on YOUR device. You never see it. Ever.
+- **Encryption at Rest**: Everything encrypted with keys you control. You can't read it even if you wanted to.
 
 **Regional Compliance (Or: Not Getting Sued by Europeans):**
 
-Different regions have different privacy laws, all of which carry massive fines if you screw up. We don't screw up.
+Different regions have different privacy laws, all of which carry massive fines if you screw up. You don't screw up.
 
 - **[GDPR Compliance](../references.qmd#gdpr-biometric-data)**: Full EU data protection compliance (the strictest privacy law on Earth)
 - **[CCPA/CPRA Compliance](../references.qmd#ccpa-cpra-compliance)**: California privacy rights (because California regulates everything)
@@ -376,11 +377,11 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ## On Putting It All Together
 
-### What We're Building
+### What You're Building
 
 A global referendum that combines cutting-edge verification technology with viral marketing to achieve the 3.5% tipping point.
 
-Translation: We're getting 280 million humans to cryptographically prove they support the treaty, which creates political pressure so intense that ignoring it becomes career suicide for politicians.
+Translation: You're getting 280 million humans to cryptographically prove they support the treaty, which creates political pressure so intense that ignoring it becomes career suicide for politicians.
 
 #### The Innovation Part
 
@@ -417,7 +418,7 @@ The pattern repeats because once you hit 3.5%, you've demonstrated that:
 2. The support is distributed (not just one region or demographic)
 3. Opposition becomes politically toxic
 
-Our strategy leverages this precedent with a clever twist: subsidized healthcare as the incentive to participate.
+The strategy leverages this precedent with a clever twist: subsidized healthcare as the incentive to participate.
 
 People show up for the healthcare. Politicians see 280 million verified supporters. The treaty becomes inevitable.
 

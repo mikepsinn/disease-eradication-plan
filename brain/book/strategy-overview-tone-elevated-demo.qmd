@@ -1,0 +1,32 @@
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+This is not a protest. It's more like when someone realizes they've been paying for the wrong subscription service for years and decides to switch providers. The product is a longer, healthier life. The target is the curious human tradition of spending more money on ways to die than ways to live, which future historians will find adorable. The strategy involves three steps, much like a waltz, except instead of dancing we're suggesting humanity try not dying quite so much.
+
+## Step 1: Acquire Capital
+
+Raise **$1.0B** by selling **[VICTORY Bonds](economics/victory-bonds.qmd)**. The pitch: a perpetual **271.8% annual return**, funded by redirecting a tiny fraction of the global war machine's budget. The returns substantially exceed comparable investments.
+
+## Step 2: Weaponize Public Opinion
+
+Use the capital to launch a **[global referendum](strategy/global-referendum.qmd)** and bribe the public to participate. The goal: get **280 million people** (3.5% of the global population) to vote YES. This isn't a petition so much as a gentle reminder to politicians that voters exist and occasionally have opinions about not dying. History shows that no government on earth can withstand the focused pressure of 3.5% of its population.
+
+## Step 3: Execute the Takeover
+
+Use the public mandate and the remaining capital to **[buy the political establishment](legal/election-law.qmd)**. With an army of 280 million voters and a war chest that makes the defense lobby look poor, you make supporting the treaty the only rational choice for any politician who wants to remain employed.
+
+The result is inevitable: the **[1% Treaty](solution/1-percent-treaty.qmd)** is ratified. The $27.2B-a-year river of cash is unlocked. Forever.
+
+So it goes. Humanity might simply purchase a better future, the way one might buy a sensible coat after years of freezing in a fashionable but impractical jacket.

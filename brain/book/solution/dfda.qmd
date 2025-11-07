@@ -10,6 +10,7 @@ tags:
 lastFactCheckHash: 073b940c027763bbeebc324098db9f71b578a80886e58697562f208db2f17733
 lastStructureCheckHash: 501fc5b9af4d0f997a624169bc28598d62f73166bb625a1a5aa2b8182990ee02
 lastLatexCheckHash: 09e47d6115354bc8ebc91fa0691b31e281fdf404a204f2dcccc91162a656379b
+lastInstructionalVoiceHash: 8c26cc3a99c3c2b0c01d0c763966648f53ddea625a5fb6a33c1b6e84dcfe7272
 ---
 
 ```{python}
@@ -192,16 +193,16 @@ It's what we should have been doing since we invented writing.
 
 Look at these incredible savings! It's like Black Friday, but for survival!
 
-| What We're Fixing | Current Insanity | New Reality | Money Saved | Lives Saved |
+| Problem to Fix | Current Insanity | New Reality | Money Saved | Lives Saved |
 | :--- | :--- | :--- | :--- | :--- |
 | Clinical Phase Timeline | **[9.1 years (avg)](../references.qmd#clinical-trial-phase-duration)** | **2-3 years** | ~7 years of waiting eliminated | [~50,000/year](../references.qmd#beta-blocker-deaths) |
 | Cost per trial | [**$57 million**](../references.qmd#clinical-trial-cost-breakdown) | **$2 million** | $55 million | Infinite ROI |
 | Who can participate | **[15% of patients](../references.qmd#clinical-trial-exclusions)** | **100% of patients** | 85% inclusion rate | Everyone |
 | Rare diseases with treatments | **[5%](../references.qmd#fda-untreated-diseases-95pct)** | **Eventually 100%** | Priceless | Millions |
 
-### The Itemized Receipt of Stupidity We're Eliminating
+### The Itemized Receipt of Eliminated Stupidity
 
-| Stupid Expense | What FDA Pays | What We'll Pay | Savings | What It Actually Is |
+| Stupid Expense | What FDA Pays | dFDA Cost | Savings | What It Actually Is |
 | :--- | :--- | :--- | :--- | :--- |
 | 💾 Data Management | $198,014 | $10,000 | 94.9% | Excel spreadsheets with fear |
 | ✅ IRB Approval | $324,081 | $5,000 | 98.5% | Permission slips for adults |
@@ -436,15 +437,15 @@ Based on 50,000 humans who tried this:
 
 <img src="../../../assets/right_to_trial_act_image.jpg" alt="Disease Eradication Act" style="max-width: 600px; width: 100%;" />
 
-We need a law that says: "Dying people can try things that might help them not die."
+This solution requires a law that says: "Dying people can try things that might help them not die."
 
 The fact that we need a law for this tells you everything about our species.
 
 **The Right to Trial Act** (working title: "The Stop Being Stupid About Medicine Act"):
 
 **Section 1**: If you're dying, you can try experimental treatments.
-**Section 2**: We'll write down what happens.
-**Section 3**: Other dying people can read what we wrote.
+**Section 2**: What happens is written down.
+**Section 3**: Other dying people can read what is written.
 **Section 4**: Repeat until nobody's dying.
 **Section 5**: Seriously, how was this not already the law?
 

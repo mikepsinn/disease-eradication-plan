@@ -13,6 +13,7 @@ tags:
 lastFactCheckHash: eab100eb63eb0c4bb66d0bf37e96c1318df0efe4ceb76d9fd2447bfa7870b92f
 lastStructureCheckHash: 5f013d13b44cbda1716058bfcb23a5be15dcfa3f7ba4e2e528b151994a84fd66
 lastLatexCheckHash: 52e1aa5e6793da0df277e08d3e28abc172cdc9a7e4902aa61c45383b5ab39fb2
+lastInstructionalVoiceHash: 3185dc9b14f2f0135ecf15762e7208207051bcd1bdda6032010c06f2bcbf8e67
 ---
 
 ```{python}
@@ -37,11 +38,11 @@ How do you avoid parasitic special interests from stealing it or bureacracy from
 
 ## The Magic: The Pairwise Smackdown
 
-The core of Wishocracy is a voting method so simple, even a congressman could do it. It's called Aggregated Pairwise Preference Allocation, but we'll call it the **Pairwise Smackdown**.
+The core of Wishocracy is a voting method so simple, even a congressman could do it. It's called Aggregated Pairwise Preference Allocation, or simply, the **Pairwise Smackdown**.
 
 Your brain can't rank a list of 20 priorities. It gives up around [item number seven](../references.qmd#cognitive-limit-seven-items). But it's fantastic at comparing two things.
 
-Instead of asking, "Rank these 10,000 problems," we ask:
+Instead of asking, "Rank these 10,000 problems," the system asks:
 
 **"What's more important right now: Curing cancer or fixing climate change?"**
 
@@ -130,7 +131,7 @@ Instead of our collective intelligence being used to:
 - Make billionaires richer
 - Argue about pronouns
 
-We could use it to:
+This system directs it to:
 
 - Cure diseases
 - End poverty

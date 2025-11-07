@@ -1,4 +1,4 @@
-import { getStaleFiles, factCheckFileWithLLM } from './utils';
+import { getStaleFiles, getBookFilesForProcessing, factCheckFileWithLLM } from './utils';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -6,9 +6,11 @@ dotenv.config();
 async function main() {
   console.log('Checking brain/book files for stale fact-checks...');
 
-  // Exclude files that shouldn't be fact-checked
+  // Get all book files (already excludes references.qmd)
+  const allBookFiles = await getBookFilesForProcessing();
+
+  // Additional exclusions for fact-checking
   const excludedFiles = [
-    'brain\\book\\references.qmd',  // References file itself
     'brain\\book\\vision.qmd',       // Aspirational/hypothetical future scenarios
   ];
 
@@ -17,11 +19,15 @@ async function main() {
     /brain[\\\/]book[\\\/]futures[\\\/]/
   ];
 
-  // Get all files in brain/book that are stale (need fact-checking)
+  // Get stale files that need fact-checking
   const allStaleBookFiles = await getStaleFiles('lastFactCheckHash', 'brain/book');
 
-  // Filter out explicitly excluded files and pattern-based exclusions
+  // Filter to only book files that are stale and not excluded
   const staleFilesToCheck = allStaleBookFiles.filter(file => {
+    // Must be in our book files list
+    const normalizedFile = file.replace(/\\/g, '/');
+    if (!allBookFiles.some(bookFile => bookFile.replace(/\\/g, '/') === normalizedFile)) return false;
+
     // Check exact file matches
     if (excludedFiles.includes(file)) return false;
 

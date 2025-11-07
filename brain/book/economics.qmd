@@ -12,6 +12,7 @@ tags:
 lastFormatted: '2025-10-16T00:00:00.000Z'
 lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastParamCheckHash: c6c1adaae3f668e0729df5aa12f73a0ddedccc987de87895bcc8ca8701b1864c
+lastInstructionalVoiceHash: ed67faf9439e27e4c481ea8e9341589dc5c35b767319f82de54038d531f46f00
 ---
 ```{python}
 #| echo: false
@@ -69,11 +70,11 @@ All three are correct. They just count different things.
 
 ## The Conservative Case: 463:1 ROI (dFDA Only)
 
-If we ONLY count the cheapest, most conservative benefit, making clinical trials 82x cheaper, here's what we get:
+If you ONLY count the cheapest, most conservative benefit, making clinical trials 82x cheaper, here's what you get:
 
 ### The Numbers
 
-All calculations in our [Economic Models Notebook](./economics/economic_models.ipynb).
+All calculations are in the [Economic Models Notebook](./economics/economic_models.ipynb).
 
 #### The Funding Source (Peace Dividend)
 
@@ -94,7 +95,7 @@ All calculations in our [Economic Models Notebook](./economics/economic_models.i
 **Bottom Line**: The treaty takes 1% of what humanity spends on bombs and redirects it to cure diseases instead. This creates two massive, independent wins:
 
 1. **The Peace Dividend**: Society gets **113.6B** richer every year from slightly less conflict
-2. **The dFDA Bonus**: We use a fraction of that dividend to unlock **$50.0B** in R&D savings annually, plus 840,000 years of healthy life
+2. **The dFDA Bonus**: You use a fraction of that dividend to unlock **$50.0B** in R&D savings annually, plus 840,000 years of healthy life
 
 ##### Total Annual Benefit: ~$163.6B per year.
 
@@ -170,9 +171,9 @@ Both are conservative estimates based on proven models (RECOVERY trial costs, di
 
 ### Better Than the Best Charities
 
-Let's compare to the most effective charities in the world (GiveWell top charities):
+Here's how it compares to the most effective charities in the world (GiveWell top charities):
 
-| Intervention | Cost to Achieve Outcome | Our Initiative's Equivalent |
+| Intervention | Cost to Achieve Outcome | This Initiative's Equivalent |
 | :--- | :--- | :--- |
 | **GiveWell Top Charities** (e.g., Against Malaria Foundation) | Spend **~`${python} f'${GIVEWELL_COST_PER_LIFE_MIN:,.0f} - ${GIVEWELL_COST_PER_LIFE_MAX:,.0f}'`** to save one life | Generate **840,000 QALYs** annually while creating **$249.3B** in net economic value |
 
