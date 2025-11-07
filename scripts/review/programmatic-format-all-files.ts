@@ -25,15 +25,20 @@ async function formatAllFiles(allQmdFiles: boolean = false) {
     console.log(`Found ${allFiles.length} files to process\n`);
     let fixedFileCount = 0;
 
+    let processedCount = 0;
     for (const filePath of allFiles) {
         // Exclude references.qmd from formatting
         if (path.basename(filePath) === 'references.qmd') {
             continue;
         }
 
-        let fileContent = fs.readFileSync(filePath, 'utf-8');
+        processedCount++;
+        const percent = Math.round((processedCount / allFiles.length) * 100);
 
         try {
+            console.log(`[${processedCount}/${allFiles.length}] (${percent}%) Processing: ${filePath}`);
+            let fileContent = fs.readFileSync(filePath, 'utf-8');
+
             // Save original content for comparison
             const originalContent = fileContent;
 
@@ -47,7 +52,10 @@ async function formatAllFiles(allQmdFiles: boolean = false) {
                 fixedFileCount++;
             }
         } catch (e: any) {
-            console.error(`❌ [Error] Could not process ${path.relative(ROOT_DIR, filePath)}: ${e.message}`);
+            console.error(`\n❌ FATAL ERROR processing ${path.relative(ROOT_DIR, filePath)}: ${e.message}`);
+            console.error('\nStopping script due to error.');
+            console.error(`Progress: ${processedCount}/${allFiles.length} files processed`);
+            process.exit(1);
         }
     }
 

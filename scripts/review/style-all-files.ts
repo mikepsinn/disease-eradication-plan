@@ -18,8 +18,20 @@ async function main() {
   console.log('Style-checking the following files:');
   staleFilesToCheck.forEach(file => console.log(`  - ${file}`));
 
+  let processedCount = 0;
   for (const file of staleFilesToCheck) {
-    await styleFileWithLLM(file);
+    processedCount++;
+    const percent = Math.round((processedCount / staleFilesToCheck.length) * 100);
+
+    try {
+      console.log(`\n[${processedCount}/${staleFilesToCheck.length}] (${percent}%) Style checking: ${file}...`);
+      await styleFileWithLLM(file);
+    } catch (error) {
+      console.error(`\n❌ FATAL ERROR style checking ${file}:`, error);
+      console.error('\nStopping script due to error.');
+      console.error(`Progress: ${processedCount}/${staleFilesToCheck.length} files processed`);
+      process.exit(1);
+    }
   }
   console.log('\nStyle review complete for all stale files.');
 }

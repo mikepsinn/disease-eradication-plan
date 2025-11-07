@@ -19,8 +19,20 @@ async function main() {
   console.log('Checking the following files for proper LaTeX usage:');
   filesToCheck.forEach(file => console.log(`  - ${file}`));
 
+  let processedCount = 0;
   for (const file of filesToCheck) {
-    await latexCheckFileWithLLM(file);
+    processedCount++;
+    const percent = Math.round((processedCount / filesToCheck.length) * 100);
+
+    try {
+      console.log(`\n[${processedCount}/${filesToCheck.length}] (${percent}%) LaTeX checking: ${file}...`);
+      await latexCheckFileWithLLM(file);
+    } catch (error) {
+      console.error(`\n❌ FATAL ERROR LaTeX checking ${file}:`, error);
+      console.error('\nStopping script due to error.');
+      console.error(`Progress: ${processedCount}/${filesToCheck.length} files processed`);
+      process.exit(1);
+    }
   }
 
   console.log('\nLaTeX checking process complete.');

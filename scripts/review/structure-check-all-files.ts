@@ -49,8 +49,20 @@ async function main() {
   console.log('Structure-checking the following files:');
   staleFilesToCheck.forEach(file => console.log(`  - ${file}`));
 
+  let processedCount = 0;
   for (const file of staleFilesToCheck) {
-    await structureCheckFileWithLLM(file);
+    processedCount++;
+    const percent = Math.round((processedCount / staleFilesToCheck.length) * 100);
+
+    try {
+      console.log(`\n[${processedCount}/${staleFilesToCheck.length}] (${percent}%) Structure checking: ${file}...`);
+      await structureCheckFileWithLLM(file);
+    } catch (error) {
+      console.error(`\n❌ FATAL ERROR structure checking ${file}:`, error);
+      console.error('\nStopping script due to error.');
+      console.error(`Progress: ${processedCount}/${staleFilesToCheck.length} files processed`);
+      process.exit(1);
+    }
   }
 
   console.log('\nStructure-checking process complete.');

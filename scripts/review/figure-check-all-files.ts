@@ -27,11 +27,16 @@ async function generateFigures() {
   console.log('Starting proactive figure generation for all book files...');
   const bookFiles = await getBookFiles();
 
+  let processedCount = 0;
   for (const file of bookFiles) {
-    console.log(`Analyzing chapter: ${file}`);
-    const result = await generateFigureForChapter(file); // Pass file path for context
-    let content = await fs.readFile(file, 'utf-8');
-    let contentModified = false;
+    processedCount++;
+    const percent = Math.round((processedCount / bookFiles.length) * 100);
+
+    try {
+      console.log(`\n[${processedCount}/${bookFiles.length}] (${percent}%) Analyzing chapter: ${file}`);
+      const result = await generateFigureForChapter(file); // Pass file path for context
+      let content = await fs.readFile(file, 'utf-8');
+      let contentModified = false;
 
     if (result.action === 'create' && result.filename && result.code && result.insertion_paragraph) {
       const figurePath = path.join('brain/figures', result.filename);
@@ -59,6 +64,12 @@ async function generateFigures() {
     if (contentModified) {
       await fs.writeFile(file, content);
     }
+    } catch (error) {
+      console.error(`\n❌ FATAL ERROR analyzing ${file}:`, error);
+      console.error('\nStopping script due to error.');
+      console.error(`Progress: ${processedCount}/${bookFiles.length} files processed`);
+      process.exit(1);
+    }
   }
   console.log('\nFigure generation process complete.');
 }
@@ -78,8 +89,20 @@ async function checkFigures() {
   console.log('Figure-checking the following files:');
   staleFilesToCheck.forEach(file => console.log(`  - ${file}`));
 
+  let processedCount = 0;
   for (const file of staleFilesToCheck) {
-    await figureCheckFile(file);
+    processedCount++;
+    const percent = Math.round((processedCount / staleFilesToCheck.length) * 100);
+
+    try {
+      console.log(`\n[${processedCount}/${staleFilesToCheck.length}] (${percent}%) Figure checking: ${file}...`);
+      await figureCheckFile(file);
+    } catch (error) {
+      console.error(`\n❌ FATAL ERROR figure checking ${file}:`, error);
+      console.error('\nStopping script due to error.');
+      console.error(`Progress: ${processedCount}/${staleFilesToCheck.length} files processed`);
+      process.exit(1);
+    }
   }
 
   console.log('\nFigure-checking process complete.');

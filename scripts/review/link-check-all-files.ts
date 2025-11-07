@@ -18,8 +18,20 @@ async function main() {
   console.log('Link-checking the following files:');
   staleFilesToCheck.forEach(file => console.log(`  - ${file}`));
 
+  let processedCount = 0;
   for (const file of staleFilesToCheck) {
-    await linkCheckFile(file);
+    processedCount++;
+    const percent = Math.round((processedCount / staleFilesToCheck.length) * 100);
+
+    try {
+      console.log(`\n[${processedCount}/${staleFilesToCheck.length}] (${percent}%) Link checking: ${file}...`);
+      await linkCheckFile(file);
+    } catch (error) {
+      console.error(`\n❌ FATAL ERROR link checking ${file}:`, error);
+      console.error('\nStopping script due to error.');
+      console.error(`Progress: ${processedCount}/${staleFilesToCheck.length} files processed`);
+      process.exit(1);
+    }
   }
 
   console.log('\nLink-checking process complete.');
