@@ -13,7 +13,7 @@ interface FileStatus {
 }
 
 async function checkToneStatus(): Promise<void> {
-  console.log(chalk.bold.blue('\n🎭 TONE ELEVATION STATUS REPORT'));
+  console.log('\n🎭 TONE ELEVATION STATUS REPORT');
   console.log('━'.repeat(60) + '\n');
 
   // Get all .qmd files
@@ -72,34 +72,34 @@ async function checkToneStatus(): Promise<void> {
   }
 
   // Display results
-  console.log(chalk.green.bold(`✅ FULLY PROCESSED (with humor preservation): ${categorized.fullyProcessed.length} files`));
+  console.log(`✅ FULLY PROCESSED (with humor preservation): ${categorized.fullyProcessed.length} files`);
   if (categorized.fullyProcessed.length > 0) {
-    categorized.fullyProcessed.forEach(f => console.log(chalk.green(`   • ${f}`)));
+    categorized.fullyProcessed.forEach(f => console.log(`   • ${f}`));
   }
 
   if (categorized.oldMethodOnly.length > 0) {
-    console.log(chalk.yellow.bold(`\n⚠️  PROCESSED (old method, no humor check): ${categorized.oldMethodOnly.length} files`));
-    categorized.oldMethodOnly.forEach(f => console.log(chalk.yellow(`   • ${f}`)));
+    console.log(`\n⚠️  PROCESSED (old method, no humor check): ${categorized.oldMethodOnly.length} files`);
+    categorized.oldMethodOnly.forEach(f => console.log(`   • ${f}`));
   }
 
   if (categorized.unprocessed.length > 0) {
-    console.log(chalk.red.bold(`\n❌ UNPROCESSED: ${categorized.unprocessed.length} files`));
-    categorized.unprocessed.forEach(f => console.log(chalk.red(`   • ${f}`)));
+    console.log(`\n❌ UNPROCESSED: ${categorized.unprocessed.length} files`);
+    categorized.unprocessed.forEach(f => console.log(`   • ${f}`));
   }
 
   // Show special categories
   if (categorized.appendix.length > 0) {
-    console.log(chalk.gray.bold(`\n📎 APPENDIX FILES (skipped): ${categorized.appendix.length} files`));
-    console.log(chalk.gray(`   These technical files typically don't need tone adjustment`));
+    console.log(`\n📎 APPENDIX FILES (skipped): ${categorized.appendix.length} files`);
+    console.log(`   These technical files typically don't need tone adjustment`);
   }
 
   if (categorized.references.length > 0) {
-    console.log(chalk.gray.bold(`\n📚 REFERENCES (skipped): ${categorized.references.length} files`));
+    console.log(`\n📚 REFERENCES (skipped): ${categorized.references.length} files`);
   }
 
   // Summary statistics
   console.log('\n' + '━'.repeat(60));
-  console.log(chalk.bold('📊 SUMMARY'));
+  console.log('📊 SUMMARY');
   console.log('━'.repeat(60));
 
   const total = categorized.fullyProcessed.length + categorized.oldMethodOnly.length + categorized.unprocessed.length;
@@ -110,12 +110,12 @@ async function checkToneStatus(): Promise<void> {
   console.log(`Needs humor-preserved processing: ${categorized.oldMethodOnly.length + categorized.unprocessed.length}`);
 
   // Recommendation
-  console.log('\n' + chalk.cyan.bold('💡 RECOMMENDATION:'));
+  console.log('\n💡 RECOMMENDATION:');
   if (categorized.unprocessed.length > 0 || categorized.oldMethodOnly.length > 0) {
-    console.log(chalk.cyan('Run: npx tsx scripts/review/elevate-tone-with-tracking.ts'));
-    console.log(chalk.cyan('This will process remaining files while preserving existing humor.'));
+    console.log('Run: npx tsx scripts/review/elevate-tone-with-tracking.ts');
+    console.log('This will process remaining files while preserving existing humor.');
   } else {
-    console.log(chalk.cyan('All files have been processed with humor preservation! 🎉'));
+    console.log('All files have been processed with humor preservation! 🎉');
   }
 }
 
