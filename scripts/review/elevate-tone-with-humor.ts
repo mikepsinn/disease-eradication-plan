@@ -41,16 +41,13 @@ TRANSFORMATION EXAMPLES:
 - "weaponize" → "align incentives"
 - "political kill list" → "gentle reminder to politicians that voters exist"
 - "bankrupt the status quo" → "suggesting the current arrangement might not be optimal"
-- "war machine" → "military-industrial apparatus"
-- "steal" → "redirect" or "reallocate"
-- Crude language → elevated terminology
+- Crude language → elevated terminology unless it's really funny
 - Superlatives → understatement
 
 STYLE GUIDE:
 - Write as if explaining humanity to bemused aliens
 - Replace aggression with gentle irony
 - Use mundane analogies for dramatic concepts
-- Embrace "so it goes" fatalism
 - Find the quietly ridiculous in serious matters
 
 Return ONLY the transformed body content (no frontmatter). Do not add explanations or comments.`;
