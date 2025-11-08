@@ -74,50 +74,15 @@ export const SPECIAL_FILES = {
 } as const;
 
 /**
- * Priority files for tone elevation (most aggressive language)
+ * Files that may need special attention for tone
+ * Note: We no longer do programmatic transformations - each file needs intelligent review
  */
-export const TONE_PRIORITY_FILES = [
+export const TONE_REVIEW_PRIORITY = [
+  'brain/book/economics/best-idea-in-the-world.qmd', // Has "Best Idea Ever Conceived" type language
   'brain/book/strategy-overview.qmd',
   'brain/book/solution/war-on-disease.qmd',
   'brain/book/solution/1-percent-treaty.qmd',
-  'brain/book/problem/fda-is-unsafe-and-ineffective.qmd',
-  'brain/book/economics.qmd',
-  'brain/book/theory.qmd',
-  'brain/book/solution/aligning-incentives.qmd',
 ] as const;
-
-/**
- * Common aggressive terms to transform during tone elevation
- */
-export const TONE_TRANSFORMATIONS = {
-  // Military/war metaphors
-  'hostile takeover': 'marketplace transaction',
-  'war machine': 'military apparatus',
-  'weaponize': 'align incentives',
-  'political kill list': 'gentle reminder to politicians that voters exist',
-  'bankrupt the status quo': 'suggesting the current arrangement might not be optimal',
-
-  // Criminal/theft framing
-  'steal': 'redirect',
-  'stealing': 'redirecting',
-  'heist': 'reallocation',
-
-  // Crude language
-  'assholes': 'difficult people',
-  'dick-measuring': 'competition',
-
-  // Aggressive actions
-  'execute the takeover': 'execute the transition',
-  'crush': 'outcompete',
-  'destroy': 'replace',
-  'attack': 'address',
-  'fight': 'work toward',
-
-  // Superlatives
-  'revolutionary': 'notable',
-  'unprecedented': 'uncommon',
-  'game-changing': 'significant',
-} as const;
 
 /**
  * Helper function to get all hash field values as an array
