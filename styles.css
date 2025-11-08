@@ -394,9 +394,68 @@ figcaption {
     text-align: center;
 }
 
+/* Quarto cell output images */
 .cell-output-display img {
     max-width: 100%;
     height: auto;
+}
+
+/* Ensure all Quarto-generated content respects max-width */
+.cell-output-display,
+.cell-output-display > *,
+.quarto-figure,
+.quarto-figure > figure,
+.column-page,
+.column-body {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Mobile-specific image constraints */
+@media (max-width: 767px) {
+    img,
+    figure,
+    .figure-img,
+    .cell-output-display img,
+    .quarto-figure img {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Ensure containers don't force horizontal scroll */
+    .cell-output-display,
+    .quarto-figure,
+    figure {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    /* Reduce margins on mobile for better space usage */
+    figure {
+        margin: 1.5rem 0;
+    }
+
+    main {
+        padding: 0 1rem;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Ensure parent containers don't cause overflow */
+    .quarto-container,
+    .quarto-container > * {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Prevent horizontal scroll on body/html */
+    body,
+    html {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
 }
 
 /* ==========================================

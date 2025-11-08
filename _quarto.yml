@@ -77,7 +77,7 @@ book:
       chapters:
         - brain/book/references.qmd # ✅ (reference material, appropriately formal) ~250p
         - brain/book/appendix/recovery-trial.qmd # ✅ (IMPROVED) ~9p
-        - brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd # ✅ (IMPROVED) ~5p
+        # historical-evidence-supporting-decentralized-efficacy-trials.qmd content merged into fda-is-unsafe-and-ineffective.qmd
 
     # Strategic Implementation
     - part: "🎯 Implementation Strategy"
