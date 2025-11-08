@@ -23,22 +23,16 @@ jobs:
             quarto-freeze-
 
       # Manual Quarto installation (works with act, doesn't require gh CLI)
+      # Uses official installer script which handles all the complexity
       - name: Install Quarto manually
         run: |
-          QUARTO_VERSION="1.8.24"
-          echo "Installing Quarto version: $QUARTO_VERSION"
           sudo apt-get update -qq
           sudo apt-get install -y wget
-          QUARTO_URL="https://github.com/quarto-dev/quarto/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb"
-          echo "Downloading from: $QUARTO_URL"
-          wget -q "$QUARTO_URL" -O quarto.deb || {
-            echo "Failed with v prefix, trying without..."
-            QUARTO_URL="https://github.com/quarto-dev/quarto/releases/download/${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb"
-            wget -q "$QUARTO_URL" -O quarto.deb
-          }
-          if [ -f quarto.deb ]; then
-            sudo dpkg -i quarto.deb || sudo apt-get install -f -y
-            rm -f quarto.deb
+          # Use the official installer script - downloads and installs automatically
+          curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb
+          if [ -f quarto-linux-amd64.deb ]; then
+            sudo dpkg -i quarto-linux-amd64.deb || sudo apt-get install -f -y
+            rm -f quarto-linux-amd64.deb
             quarto --version
           else
             echo "ERROR: Failed to download Quarto"
