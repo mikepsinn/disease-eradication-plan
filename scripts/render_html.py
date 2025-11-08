@@ -17,7 +17,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 lib_dir = os.path.join(script_dir, 'lib')
 sys.path.insert(0, lib_dir)
 
-from render_utils import BuildMonitor, kill_existing_quarto_processes, run_pre_validation
+from render_utils import BuildMonitor, kill_existing_quarto_processes, run_pre_validation, run_post_validation
 
 
 def main():
@@ -33,6 +33,10 @@ def main():
                         help='Do not fail build on warnings (warnings fail by default)')
     parser.add_argument('--skip-validation', action='store_true',
                         help='Skip pre-render validation')
+    parser.add_argument('--skip-post-validation', action='store_true',
+                        help='Skip post-render validation')
+    parser.add_argument('--output-dir', type=str, default='_book/warondisease',
+                        help='Output directory for post-validation (default: _book/warondisease)')
     parser.add_argument('--log-file', type=str, default='build-html.log',
                         help='Log file path (default: build-html.log)')
     parser.add_argument('--command', type=str, default='quarto render . --to html',
@@ -77,6 +81,13 @@ def main():
     )
 
     exit_code = monitor.run_build(command, build_type="HTML render")
+    
+    # Run post-validation if build succeeded and not skipped
+    if exit_code == 0 and not args.skip_post_validation:
+        validation_exit_code = run_post_validation(output_dir=args.output_dir)
+        if validation_exit_code != 0:
+            sys.exit(validation_exit_code)
+    
     sys.exit(exit_code)
 
 if __name__ == '__main__':

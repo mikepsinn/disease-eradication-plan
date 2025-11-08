@@ -2,10 +2,10 @@ project:
   type: book
   output-dir: _book/warondisease
   execute-dir: project
-  pre-render:
-    - python scripts/pre-render-validation.py
-  post-render:
-    - python scripts/post-render-validation.py
+  # pre-render:
+  #   - python scripts/pre-render-validation.py
+  # post-render:
+  #   - python scripts/post-render-validation.py
 
 book:
   title: "The Complete Idiot's Guide to Ending War and Disease"

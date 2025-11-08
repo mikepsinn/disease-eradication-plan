@@ -362,6 +362,56 @@ def run_pre_validation() -> int:
         return 1
 
 
+def run_post_validation(output_dir: str = '_book/warondisease') -> int:
+    """
+    Run post-validation script after building HTML
+
+    Args:
+        output_dir: Directory containing rendered HTML files
+
+    Returns:
+        Exit code (0 for success, non-zero for failure)
+    """
+    log_with_timestamp("=" * 80)
+    log_with_timestamp("RUNNING POST-VALIDATION")
+    log_with_timestamp("=" * 80)
+
+    script_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'post-render-validation.py')
+
+    try:
+        # Capture output so we can timestamp it
+        result = subprocess.run(
+            [sys.executable, script_path, '--output-dir', output_dir],
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding='utf-8',
+            errors='replace'
+        )
+
+        # Log captured output with timestamps
+        if result.stdout:
+            for line in result.stdout.strip().split('\n'):
+                if line.strip():
+                    log_with_timestamp(line)
+        
+        if result.stderr:
+            for line in result.stderr.strip().split('\n'):
+                if line.strip():
+                    log_with_timestamp(line, to_stderr=True)
+
+        if result.returncode != 0:
+            log_with_timestamp(f"\nPost-validation failed with exit code {result.returncode}", to_stderr=True)
+            return result.returncode
+
+        log_with_timestamp("\nPost-validation passed!")
+        log_with_timestamp("=" * 80)
+        return 0
+    except Exception as e:
+        log_with_timestamp(f"\nError running post-validation: {e}", to_stderr=True)
+        return 1
+
+
 def create_latex_parser():
     """Create a parser function for LaTeX compilation phases"""
     def parse_latex(line: str) -> Optional[str]:

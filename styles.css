@@ -23,8 +23,9 @@ body {
 
 /* Optimal reading measure (line length) */
 main {
-    max-width: 720px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 /* Hero Banner - Elegant and Understated */
@@ -437,7 +438,7 @@ figcaption {
     }
 
     main {
-        padding: 0 1rem;
+        padding: 0 0.75rem;
         max-width: 100%;
         width: 100%;
         box-sizing: border-box;
@@ -485,8 +486,12 @@ figcaption {
 
     table td,
     table th {
-        white-space: nowrap;
-        min-width: 120px;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        min-width: 0;
+        max-width: 100%;
         padding: 0.5rem 0.75rem;
     }
 }
@@ -501,6 +506,31 @@ figcaption {
     table td,
     table th {
         white-space: normal;
+    }
+}
+
+/* ==========================================
+   BREADCRUMB NAVIGATION
+   ========================================== */
+
+/* Add space above breadcrumb navigation */
+nav.quarto-page-breadcrumbs {
+    margin-top: 10px;
+}
+
+/* Truncate breadcrumb items with ellipses */
+nav.quarto-page-breadcrumbs ol.breadcrumb li a {
+    display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 767px) {
+    nav.quarto-page-breadcrumbs ol.breadcrumb li a {
+        max-width: 150px;
     }
 }
 
