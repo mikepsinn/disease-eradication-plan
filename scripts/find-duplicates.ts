@@ -23,11 +23,35 @@ interface PhraseEntry {
   instances: DuplicateInstance[];
 }
 
+interface FileSimilarity {
+  file1: string;
+  file2: string;
+  jaccardSimilarity: number;
+  cosineSimilarity: number;
+  sharedSentences: number;
+  totalSentences: number;
+}
+
 // Configuration
+const FILE_SIMILARITY_THRESHOLD = 0.30; // 30% similarity for file pairs
 const SIMILARITY_THRESHOLD = 0.90; // 90% similar for near-duplicates
 const MIN_PHRASE_LENGTH = 4; // Minimum words in a phrase (reduced from 3 for performance)
 const MAX_PHRASE_LENGTH = 7; // Maximum words in a phrase (reduced from 10 for performance)
 const MIN_PHRASE_OCCURRENCES = 3; // Minimum times a phrase should appear (increased to reduce noise)
+
+// Strip code blocks and frontmatter from content
+function stripCodeBlocksAndFrontmatter(text: string): string {
+  // Remove YAML frontmatter (--- ... ---)
+  text = text.replace(/^---\n[\s\S]*?\n---\n/m, '');
+
+  // Remove code blocks (```{python} ... ```, ```{r} ... ```, etc.)
+  text = text.replace(/```\{[^}]+\}[\s\S]*?```/g, '');
+
+  // Remove generic code blocks (``` ... ```)
+  text = text.replace(/```[\s\S]*?```/g, '');
+
+  return text;
+}
 
 // Normalize text for comparison
 function normalizeText(text: string): string {
@@ -91,7 +115,10 @@ function findQmdFiles(dir: string): string[] {
       const fullPath = path.join(currentDir, entry.name);
 
       if (entry.isDirectory() && !entry.name.startsWith('.') && entry.name !== 'node_modules') {
-        traverse(fullPath);
+        // Skip brain/figures folder
+        if (!fullPath.includes(path.join('brain', 'figures'))) {
+          traverse(fullPath);
+        }
       } else if (entry.isFile() && entry.name.endsWith('.qmd')) {
         // Skip references.qmd
         if (!fullPath.includes('references.qmd')) {
@@ -169,12 +196,98 @@ function findNearDuplicates(sentences: Map<string, DuplicateInstance[]>): Duplic
   return nearDuplicates.sort((a, b) => b.count - a.count);
 }
 
+// Calculate Jaccard similarity between two sets
+function jaccardSimilarity(set1: Set<string>, set2: Set<string>): number {
+  const intersection = new Set([...set1].filter(x => set2.has(x)));
+  const union = new Set([...set1, ...set2]);
+  return union.size === 0 ? 0 : intersection.size / union.size;
+}
+
+// Calculate cosine similarity using TF-IDF
+function cosineSimilarity(words1: string[], words2: string[]): number {
+  // Build word frequency maps
+  const freq1 = new Map<string, number>();
+  const freq2 = new Map<string, number>();
+
+  words1.forEach(w => freq1.set(w, (freq1.get(w) || 0) + 1));
+  words2.forEach(w => freq2.set(w, (freq2.get(w) || 0) + 1));
+
+  // Get all unique words
+  const allWords = new Set([...words1, ...words2]);
+
+  // Calculate dot product and magnitudes
+  let dotProduct = 0;
+  let mag1 = 0;
+  let mag2 = 0;
+
+  for (const word of allWords) {
+    const v1 = freq1.get(word) || 0;
+    const v2 = freq2.get(word) || 0;
+    dotProduct += v1 * v2;
+    mag1 += v1 * v1;
+    mag2 += v2 * v2;
+  }
+
+  if (mag1 === 0 || mag2 === 0) return 0;
+  return dotProduct / (Math.sqrt(mag1) * Math.sqrt(mag2));
+}
+
+// Compare all files for similarity
+function compareFiles(fileContents: Map<string, string>): FileSimilarity[] {
+  const similarities: FileSimilarity[] = [];
+  const fileList = Array.from(fileContents.keys());
+
+  console.log(`\n🔗 Comparing ${fileList.length} files for similarity...`);
+
+  for (let i = 0; i < fileList.length; i++) {
+    if (i % 20 === 0 && i > 0) {
+      console.log(`   Compared ${i}/${fileList.length} files (${Math.round(i / fileList.length * 100)}%)`);
+    }
+
+    for (let j = i + 1; j < fileList.length; j++) {
+      const file1 = fileList[i];
+      const file2 = fileList[j];
+      const content1 = fileContents.get(file1)!;
+      const content2 = fileContents.get(file2)!;
+
+      // Get words and sentences for comparison
+      const words1 = normalizeText(content1).split(/\s+/).filter(w => w.length > 3);
+      const words2 = normalizeText(content2).split(/\s+/).filter(w => w.length > 3);
+      const wordSet1 = new Set(words1);
+      const wordSet2 = new Set(words2);
+
+      const sentences1 = new Set(extractSentences(content1).map(s => normalizeText(s)));
+      const sentences2 = new Set(extractSentences(content2).map(s => normalizeText(s)));
+      const sharedSentences = new Set([...sentences1].filter(s => sentences2.has(s))).size;
+
+      // Calculate similarities
+      const jaccard = jaccardSimilarity(wordSet1, wordSet2);
+      const cosine = cosineSimilarity(words1, words2);
+
+      // Only store if above threshold
+      if (jaccard >= FILE_SIMILARITY_THRESHOLD || cosine >= FILE_SIMILARITY_THRESHOLD) {
+        similarities.push({
+          file1,
+          file2,
+          jaccardSimilarity: jaccard,
+          cosineSimilarity: cosine,
+          sharedSentences,
+          totalSentences: sentences1.size + sentences2.size
+        });
+      }
+    }
+  }
+
+  return similarities.sort((a, b) => b.cosineSimilarity - a.cosineSimilarity);
+}
+
 // Generate HTML report
 function generateHTMLReport(
   exactSentences: DuplicateEntry[],
   nearSentences: DuplicateEntry[],
   exactParagraphs: DuplicateEntry[],
   phrases: PhraseEntry[],
+  fileSimilarities: FileSimilarity[],
   outputPath: string
 ): void {
   const html = `<!DOCTYPE html>
@@ -309,6 +422,7 @@ function generateHTMLReport(
   <h1>📚 Book Duplication Analysis</h1>
 
   <div class="summary">
+    <div class="stat">Similar Files: ${fileSimilarities.length}</div>
     <div class="stat">Exact Duplicate Sentences: ${exactSentences.length}</div>
     <div class="stat">Near-Duplicate Sentences: ${nearSentences.length}</div>
     <div class="stat">Duplicate Paragraphs: ${exactParagraphs.length}</div>
@@ -316,13 +430,25 @@ function generateHTMLReport(
   </div>
 
   <div class="tabs">
-    <div class="tab active" onclick="showTab('exact')">Exact Duplicates (${exactSentences.length})</div>
+    <div class="tab active" onclick="showTab('files')">Similar Files (${fileSimilarities.length})</div>
+    <div class="tab" onclick="showTab('exact')">Exact Duplicates (${exactSentences.length})</div>
     <div class="tab" onclick="showTab('near')">Near Duplicates (${nearSentences.length})</div>
     <div class="tab" onclick="showTab('paragraphs')">Duplicate Paragraphs (${exactParagraphs.length})</div>
     <div class="tab" onclick="showTab('phrases')">Repeated Phrases (${phrases.length})</div>
   </div>
 
-  <div id="exact" class="tab-content active">
+  <div id="files" class="tab-content active">
+    <h2>Similar Files (${(FILE_SIMILARITY_THRESHOLD * 100).toFixed(0)}%+ similarity)</h2>
+    <p style="color: #666; margin: 10px 0;">Files are compared using Jaccard and Cosine similarity metrics. High similarity may indicate opportunities for consolidation or use of includes.</p>
+    <div class="filter">
+      <input type="text" id="filesFilter" placeholder="Filter files..." onkeyup="filterItems('files')">
+    </div>
+    <div id="filesContent">
+      ${generateFileSimilarityHTML(fileSimilarities)}
+    </div>
+  </div>
+
+  <div id="exact" class="tab-content">
     <h2>Exact Duplicate Sentences</h2>
     <div class="filter">
       <input type="text" id="exactFilter" placeholder="Filter duplicates..." onkeyup="filterItems('exact')">
@@ -423,6 +549,36 @@ function generatePhrasesHTML(phrases: PhraseEntry[]): string {
   `).join('');
 }
 
+function generateFileSimilarityHTML(similarities: FileSimilarity[]): string {
+  if (similarities.length === 0) {
+    return '<p style="padding: 20px; color: #666;">No similar files found above the threshold.</p>';
+  }
+
+  return similarities.map(sim => `
+    <div class="duplicate-item" style="border-left-color: #28a745;">
+      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+        <div style="flex: 1;">
+          <div class="file-path" style="font-size: 1.1em; margin-bottom: 5px;">${escapeHtml(sim.file1)}</div>
+          <div style="color: #999; margin: 5px 0;">↔️ similar to ↔️</div>
+          <div class="file-path" style="font-size: 1.1em;">${escapeHtml(sim.file2)}</div>
+        </div>
+        <div style="text-align: right;">
+          <div><span class="similarity" style="background: #28a745;">Cosine: ${(sim.cosineSimilarity * 100).toFixed(1)}%</span></div>
+          <div style="margin-top: 5px;"><span class="similarity" style="background: #17a2b8;">Jaccard: ${(sim.jaccardSimilarity * 100).toFixed(1)}%</span></div>
+        </div>
+      </div>
+      <div style="color: #666; font-size: 0.9em;">
+        <span style="background: #e9ecef; padding: 4px 8px; border-radius: 4px; margin-right: 10px;">
+          ${sim.sharedSentences} shared sentences
+        </span>
+        <span style="background: #e9ecef; padding: 4px 8px; border-radius: 4px;">
+          ${sim.totalSentences} total sentences
+        </span>
+      </div>
+    </div>
+  `).join('');
+}
+
 function escapeHtml(text: string): string {
   return text
     .replace(/&/g, '&amp;')
@@ -444,19 +600,24 @@ async function main() {
   const sentences = new Map<string, DuplicateInstance[]>();
   const paragraphs = new Map<string, DuplicateInstance[]>();
   const phrases = new Map<string, DuplicateInstance[]>();
+  const fileContents = new Map<string, string>();
 
   // Process each file
   console.log('\n📖 Processing files...\n');
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
-    const content = fs.readFileSync(file, 'utf-8');
-    const lines = content.split('\n');
+    const rawContent = fs.readFileSync(file, 'utf-8');
+    const lines = rawContent.split('\n');
     const relativePath = path.relative(rootDir, file);
+
+    // Strip code blocks and frontmatter for comparison
+    const content = stripCodeBlocksAndFrontmatter(rawContent);
+    fileContents.set(relativePath, content);
 
     // Show progress for every file
     console.log(`   [${i + 1}/${files.length}] ${relativePath}`);
 
-    // Extract and store sentences
+    // Extract and store sentences (from cleaned content)
     const fileSentences = extractSentences(content);
     fileSentences.forEach((sentence, idx) => {
       const normalized = normalizeText(sentence);
@@ -540,12 +701,17 @@ async function main() {
 
   console.log(`   ✓ Found ${repeatedPhrases.length} repeated phrases\n`);
 
+  // Compare files for similarity
+  const fileSimilarities = compareFiles(fileContents);
+  console.log(`   ✓ Found ${fileSimilarities.length} similar file pairs\n`);
+
   // Generate report
   const outputPath = path.join(rootDir, 'duplication-report.html');
-  generateHTMLReport(exactSentences, nearSentences, exactParagraphs, repeatedPhrases, outputPath);
+  generateHTMLReport(exactSentences, nearSentences, exactParagraphs, repeatedPhrases, fileSimilarities, outputPath);
 
   console.log(`✅ Report generated: ${outputPath}`);
   console.log('\n📈 Summary:');
+  console.log(`   • Similar file pairs: ${fileSimilarities.length}`);
   console.log(`   • Exact duplicate sentences: ${exactSentences.length}`);
   console.log(`   • Near-duplicate sentences: ${nearSentences.length}`);
   console.log(`   • Duplicate paragraphs: ${exactParagraphs.length}`);
