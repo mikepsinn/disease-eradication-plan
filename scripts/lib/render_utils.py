@@ -13,6 +13,13 @@ import platform
 from datetime import datetime
 from typing import Optional, List, Callable
 
+# Try to import psutil for LaTeX process detection (optional)
+try:
+    import psutil
+    PSUTIL_AVAILABLE = True
+except ImportError:
+    PSUTIL_AVAILABLE = False
+
 
 class BuildMonitor:
     def __init__(self, timeout_seconds: int = 180, fail_on_warnings: bool = True, log_file: str = "build.log"):
@@ -99,19 +106,66 @@ class BuildMonitor:
         return None
 
     def check_timeout(self) -> bool:
-        """Check if build has timed out (no output for timeout_seconds)"""
+        """Check if build has timed out (no output for timeout_seconds)
+        
+        Exception: If LaTeX processes are actively running, extend timeout
+        since LaTeX compilation can be silent for long periods.
+        """
         elapsed = time.time() - self.last_output_time
+        
+        # If LaTeX processes are running, allow longer timeout (LaTeX can be silent)
+        if self._is_latex_running():
+            # Allow up to 2x timeout when LaTeX is running
+            if elapsed > (self.timeout_seconds * 2):
+                return True
+            return False
+        
+        # Normal timeout check
         if elapsed > self.timeout_seconds:
             return True
+        return False
+    
+    def _is_latex_running(self) -> bool:
+        """Check if any LaTeX processes are currently running"""
+        if not PSUTIL_AVAILABLE:
+            return False  # Can't detect without psutil
+        
+        try:
+            latex_processes = ['lualatex', 'pdflatex', 'xelatex']
+            for proc in psutil.process_iter(['name']):
+                try:
+                    proc_name = proc.info['name'] or ''
+                    proc_name_lower = proc_name.lower()
+                    # Check for LaTeX processes (handle .exe extension on Windows)
+                    for latex_name in latex_processes:
+                        if latex_name in proc_name_lower or f"{latex_name}.exe" in proc_name_lower:
+                            return True
+                except (psutil.NoSuchProcess, psutil.AccessDenied):
+                    continue
+        except Exception:
+            # If psutil fails, fall back to normal timeout behavior
+            pass
         return False
 
     def timeout_watchdog(self):
         """Background thread that monitors for timeout even when no output is produced"""
+        last_log_time = time.time()
         while not self.stop_timeout_check.wait(1.0):  # Check every second
+            elapsed_since_output = time.time() - self.last_output_time
+            elapsed_since_log = time.time() - last_log_time
+            
+            # Log progress every 30 seconds when silent (helps debug GitHub Actions hangs)
+            if elapsed_since_output > 30 and elapsed_since_log > 30:
+                latex_status = " (LaTeX running)" if self._is_latex_running() else ""
+                self.log(f"Still processing... {int(elapsed_since_output)}s since last output{latex_status}", to_stderr=True)
+                last_log_time = time.time()
+            
             if self.check_timeout():
                 self.timed_out = True
                 if self.process and self.process.poll() is None:
-                    self.log(f"\nERROR: Build timed out after {self.timeout_seconds}s with no output", to_stderr=True)
+                    elapsed = int(time.time() - self.last_output_time)
+                    latex_status = " (LaTeX was running)" if self._is_latex_running() else ""
+                    self.log(f"\nERROR: Build timed out after {elapsed}s with no output{latex_status}", to_stderr=True)
                     if self.current_file:
                         self.log(f"Last file being processed: {self.current_file}", to_stderr=True)
                     self.process.kill()
@@ -415,8 +469,15 @@ def run_post_validation(output_dir: str = '_book/warondisease') -> int:
 def create_latex_parser():
     """Create a parser function for LaTeX compilation phases"""
     def parse_latex(line: str) -> Optional[str]:
-        if re.match(r'running lualatex - \d+', line):
+        # Match various LaTeX compilation patterns
+        if re.search(r'running (lualatex|pdflatex|xelatex)', line, re.IGNORECASE):
             return f"LaTeX compilation: {line.strip()}"
+        # Match LaTeX output patterns (even if Quarto doesn't explicitly say "running")
+        if re.search(r'(lualatex|pdflatex|xelatex).*\.tex', line, re.IGNORECASE):
+            return f"LaTeX processing: {line.strip()}"
+        # Match LaTeX log patterns
+        if re.search(r'\.(aux|log|out|toc|bbl|blg)', line, re.IGNORECASE):
+            return f"LaTeX file: {line.strip()}"
         return None
     return parse_latex
 

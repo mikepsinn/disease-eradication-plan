@@ -1,0 +1,78 @@
+on:
+  workflow_dispatch:
+
+name: Build PDF Only (for local testing with act)
+
+permissions:
+  contents: read
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-
+
+      # Manual Quarto installation (works with act, doesn't require gh CLI)
+      - name: Install Quarto manually
+        run: |
+          QUARTO_VERSION="1.8.24"
+          echo "Installing Quarto version: $QUARTO_VERSION"
+          sudo apt-get update -qq
+          sudo apt-get install -y wget
+          QUARTO_URL="https://github.com/quarto-dev/quarto/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb"
+          echo "Downloading from: $QUARTO_URL"
+          wget -q "$QUARTO_URL" -O quarto.deb || {
+            echo "Failed with v prefix, trying without..."
+            QUARTO_URL="https://github.com/quarto-dev/quarto/releases/download/${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb"
+            wget -q "$QUARTO_URL" -O quarto.deb
+          }
+          if [ -f quarto.deb ]; then
+            sudo dpkg -i quarto.deb || sudo apt-get install -f -y
+            rm -f quarto.deb
+            quarto --version
+          else
+            echo "ERROR: Failed to download Quarto"
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+        run: quarto install tinytex
+
+      - name: Render Quarto Project (PDF) with validation and monitoring
+        run: python scripts/render_pdf.py --timeout 900
+        timeout-minutes: 20
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pdf
+          path: '_book/warondisease/*.pdf'
+          if-no-files-found: warn
+

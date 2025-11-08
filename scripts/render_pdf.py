@@ -27,8 +27,8 @@ def main():
     parser = argparse.ArgumentParser(
         description='Unified PDF render script with validation, logging, and monitoring'
     )
-    parser.add_argument('--timeout', type=int, default=180,
-                        help='Seconds with no output before killing build (default: 180)')
+    parser.add_argument('--timeout', type=int, default=900,
+                        help='Seconds with no output before killing build (default: 900 = 15min for PDF builds)')
     parser.add_argument('--no-fail-on-warnings', action='store_true',
                         help='Do not fail build on warnings (warnings fail by default)')
     parser.add_argument('--skip-validation', action='store_true',

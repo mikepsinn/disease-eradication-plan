@@ -18,7 +18,10 @@ appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
 
+# Import economic parameters (produces output to prevent timeout)
+print("Loading economic parameters...", flush=True)
 from economic_parameters import *
+print("Economic parameters loaded.", flush=True)
 ```
 
 
