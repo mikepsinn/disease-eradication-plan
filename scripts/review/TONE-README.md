@@ -1,19 +1,22 @@
 # Tone Review System
 
-## Philosophy: Helpful Alien Advisor (Philomena Cunk from Space)
+## Philosophy: Technical Manual from Wishonia
 
-We transform earnest declarations into patient explanations from an alien civilization that solved these problems centuries ago. They're genuinely confused why humans find this so complicated, like watching a species that invented smartphones but can't figure out "don't spend all your money on killing each other."
+The book is presented as an implementation guide from Wishonia, where they successfully deployed Wishocracy centuries ago. This is a LIGHT TOUCH approach - we're not radically changing the book, just fixing pompous/earnest bits.
 
-## The Voice
-Imagine Philomena Cunk is an alien anthropologist from a civilization that ended war and disease around the time humans discovered agriculture. She's here to help, but she's taking notes for her "Galaxy's Slowest Species" presentation back home.
+## The Approach
+- Keep 95% of the book as-is
+- Only fix genuinely pompous declarations ("BEST IDEA EVER!")
+- Transform earnest evangelism → matter-of-fact instructions
+- Add occasional "Implementation Notes from Wishonia" where natural
 
-## What We Transform
+## What We Transform (SELECTIVE)
 
 ### ❌ Earnest/Pompous
 "This Is Quantifiably The Best Idea Ever Conceived!"
 
-### ✅ Confused Alien Helper
-"On my planet, we call this 'Basic Resource Allocation.' We learned it shortly after discovering fire. You seem to have done these in the opposite order."
+### ✅ Technical Documentation
+"Implementation Guide: 1% Resource Reallocation Protocol (Wishonia Standard 2847-B)"
 
 ## What We Keep
 - Dark humor that already works ("Dead people file zero claims")
@@ -46,21 +49,21 @@ Marks a file as reviewed after manual tone adjustment.
 1. **Read the tone guide**: `scripts/prompts/tone-guide.md`
 2. **Identify files**: Run `elevate-tone-intelligent.ts`
 3. **Review priority files** in `TONE_REVIEW_PRIORITY` (see constants.ts)
-4. **Transform earnest language** to bemused observations
+4. **Transform earnest language** to technical documentation
 5. **Preserve ALL humor** that already works
 6. **Mark complete**: Update hash when done
 
 ## The Test
 
 Before: "This will SAVE HUMANITY!"
-After: "This is how every other species handles healthcare. We assumed you'd figured it out by now, given that you have smartphones."
+After: "Implementation timeline: 95% reduction in preventable deaths within 10 years (based on 47 planetary deployments)."
 
-The goal: Make readers laugh at humanity's obvious mistakes while gently showing them the solution, like teaching a very slow child to tie their shoes.
+The goal: Transform breathless evangelism into matter-of-fact technical documentation.
 
 ## Remember
 
-**Good tone:** "You're the only species that spends more on dying than living. We checked. Even the Zorgons think that's weird, and they eat their young."
+**Good tone:** "Standard ROI for healthcare reallocation: 463:1 (see Appendix for methodology)"
 
-**Bad tone:** "We MUST redirect military spending to SAVE LIVES NOW!"
+**Bad tone:** "UNPRECEDENTED returns that will REVOLUTIONIZE everything!"
 
-The facts stay the same. The delivery changes from evangelical preacher to confused alien kindergarten teacher.
+Keep the facts, fix the tone. Think IKEA manual for universal healthcare, not TED talk.

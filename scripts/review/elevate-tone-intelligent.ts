@@ -59,10 +59,10 @@ async function getFilesNeedingToneElevation(): Promise<string[]> {
  * Main function to coordinate intelligent tone elevation
  */
 async function main() {
-  console.log('🎭 TONE REVIEW: ANTHROPOLOGIST FROM MARS');
+  console.log('📖 TONE REVIEW: TECHNICAL MANUAL FROM WISHONIA');
   console.log('━'.repeat(60));
-  console.log('Transform earnest declarations into bemused observations.');
-  console.log('Voice: Vonnegut meets Handey meets Cunk.\n');
+  console.log('Light touch: Fix pompous declarations, keep instructional content.');
+  console.log('Frame as implementation guide from successful planet.\n');
 
   // Get files needing processing
   console.log('🔍 Scanning for files to process...');
@@ -100,13 +100,13 @@ async function main() {
 
   console.log('\n' + '━'.repeat(60));
   console.log('📋 PROCESSING APPROACH\n');
-  console.log('Transform earnest/pompous declarations by:');
-  console.log('1. Adding philosophical distance (Vonnegut\'s "So it goes")');
-  console.log('2. Using absurdist comparisons (Handey\'s mundane metaphors)');
-  console.log('3. Expressing deadpan confusion (Cunk\'s puzzlement)');
-  console.log('4. Preserving ALL existing humor and wordplay');
-  console.log('5. Keeping factual information unchanged');
-  console.log('6. Making readers discover absurdity themselves');
+  console.log('SELECTIVE changes only:');
+  console.log('1. Fix pompous claims → Technical documentation');
+  console.log('2. Fix earnest pleading → Implementation notes');
+  console.log('3. Fix superlatives → Historical data from Wishonia');
+  console.log('4. Keep ALL technical/instructional content');
+  console.log('5. Keep ALL humor that already works');
+  console.log('6. Keep 95% of book unchanged - light touch only');
 
   console.log('\n' + '━'.repeat(60));
   console.log('🚀 FILES READY FOR AGENT PROCESSING\n');
@@ -122,8 +122,8 @@ async function main() {
   console.log(`   The agent should process these ${filesToProcess.length} files.`);
 
   console.log('\n💡 Next step: Launch agent with scripts/prompts/tone-guide.md');
-  console.log('   Transform earnest claims → bemused observations');
-  console.log('   Keep all humor, change only pompous/earnest language\n');
+  console.log('   Transform: Pompous claims → Technical documentation');
+  console.log('   Keep: 95% of book unchanged (light touch only)\n');
 
   return filesToProcess;
 }
