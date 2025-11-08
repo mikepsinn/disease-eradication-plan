@@ -266,6 +266,12 @@ export function programmaticFormat(content: string): string {
     '$1\n\n'
   );
 
+  // Ensure blank lines before bullet lists (unless preceded by another list item, heading, or already has blank line)
+  result = result.replace(
+    /^(?![-*+]\s)(?!#{1,6}\s)(?!```|\n)([^\n]+)\n(?!\n)([-*+]\s)/gm,
+    '$1\n\n$2'
+  );
+
   return result;
 }
 

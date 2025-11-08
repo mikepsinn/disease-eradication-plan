@@ -55,6 +55,7 @@ The global clinical trials market was valued at approximately **[$83 billion in 
 - US active trials (2009): [Seeking 2.8 million participants](../references.qmd#us-trial-enrollment-targets-2009)
 
 **Median participants per trial** (from ClinicalTrials.gov data):
+
 - Phase 1: 33 participants
 - Phase 2: 60 participants
 - Phase 3: 237 participants
@@ -75,6 +76,7 @@ See [The 0.06% Problem](clinical-trial-participants.qmd) for the full analysis.
 **Global Spending: [$29-45 billion annually](../references.qmd#phase-3-market-share-2024)** (~53-55% of total market)
 
 Why Phase 3 dominates:
+
 - [Largest market share at 53.3%](../references.qmd#phase-3-market-share-2024) of all clinical trial spending (2024)
 - Requires [300-3,000 participants](../references.qmd#phase-3-participant-numbers)
 - Longest treatment periods ([38 months average](../references.qmd#phase-3-duration-average))
@@ -183,11 +185,13 @@ Why Phase 3 dominates:
 - **United States**: Largest market for clinical trials
   - [US clinical trials market: $45 billion in 2024](../references.qmd#us-clinical-trials-market-2024)
   - ~54% of global market
+
 - **China**: Rising rapidly
   - [39% of all global trials have at least one site in China](../references.qmd#china-trial-share-2024) (2024)
   - Up from 25% in 2019
   - [R&D spending: $15 billion annually](../references.qmd#china-medical-research-spending-15b)
   - [China is now the world's leading trial location by volume](../references.qmd#china-leading-trial-location-2024)
+
 - **Europe**: Steady player
   - [Innovative Health Initiative (IHI)](../references.qmd#ihi-horizon-europe) under Horizon Europe funds public-private partnerships
 
@@ -199,17 +203,22 @@ Why Phase 3 dominates:
 
 - [Total NIH budget: $47.1 billion (FY2024)](../references.qmd#nih-budget-fy2025)
   - [~80% goes to research](../references.qmd#nih-research-percentage), including clinical trials
+
 - [NIH clinical research funding: $18.9 billion (FY2023)](../references.qmd#nih-clinical-research-funding-2023)
 - [NIH spent $8.1 billion on phased clinical trials (2010-2019)](../references.qmd#nih-phased-trial-spending-2010-2019) for drugs ultimately approved
   - [Only ~10% of industry spending](../references.qmd#nih-vs-industry-spending-ratio) over same period
 
 **NIH spending by phase (per approved drug, 2010-2019 data):**
+
 - Phase 1: [$13.9 million average](../references.qmd#nih-phase-1-spending-per-drug)
   - Represents [24.6-25.3% of industry Phase 1 costs](../references.qmd#nih-phase-1-industry-percentage)
+
 - Phase 2: [$22.2 million average](../references.qmd#nih-phase-2-spending-per-drug)
   - Represents [21.4-23.2% of industry Phase 2 costs](../references.qmd#nih-phase-2-industry-percentage)
+
 - Phase 3: [$12.9 million average](../references.qmd#nih-phase-3-spending-per-drug)
   - Represents only [3.7-4.3% of industry Phase 3 costs](../references.qmd#nih-phase-3-industry-percentage)
+
 - **Total NIH per drug: $33.8 million** (when ultimately approved)
 
 #### NIH trial distribution
@@ -221,6 +230,7 @@ Why Phase 3 dominates:
 - [33% "Other" or unspecified phase](../references.qmd#nih-phase-other-percentage)
 
 **Key insight: NIH focuses on early-stage risk**
+
 - NIH covers [~25% of Phase 1 costs](../references.qmd#nih-phase-1-coverage)
 - NIH covers [~22% of Phase 2 costs](../references.qmd#nih-phase-2-coverage)
 - NIH covers [only ~4% of Phase 3 costs](../references.qmd#nih-phase-3-coverage)
@@ -230,8 +240,10 @@ Why Phase 3 dominates:
 
 - [Horizon Europe total: €95.5 billion (2021-2027)](../references.qmd#horizon-europe-budget)
   - Health research portion: Billions allocated
+
 - [Horizon Europe Health Budget: €8.2 billion (2021-2027)](../references.qmd#eu-horizon-health-budget-8-2b)
   - [~€1.17 billion per year](../references.qmd#eu-annual-health-research-budget) (~$1.3 billion)
+
 - [EU4Health Programme: €5.3 billion (2021-2027)](../references.qmd#eu4health-budget)
   - [€726 million budget for 2024](../references.qmd#eu4health-2024-budget)
 
@@ -254,8 +266,10 @@ Why Phase 3 dominates:
 #### Major players (2024)
 
 **Gates Foundation + Wellcome Trust + Novo Nordisk:**
+
 - [New 3-year initiative: $300 million total ($100M each)](../references.qmd#gates-wellcome-novo-partnership-2024)
   - Focus: Climate-health, infectious disease, AMR, nutrition-immunity
+
 - [TB vaccine funding: $550 million](../references.qmd#gates-wellcome-tb-vaccine-550m)
   - Up to $150M from Wellcome, ~$400M from Gates
 
@@ -286,6 +300,7 @@ Why Phase 3 dominates:
 {{< include ../../../brain/figures/phase-cost-per-trial-comparison-column-chart.qmd >}}
 
 **Industry average spending on clinical trials per approved drug:**
+
 - [Total clinical trial costs: $1,065 million per approved drug](../references.qmd#clinical-trials-cost-per-approved-drug)
   - Includes spending on failed drugs (most drugs fail)
 
@@ -306,6 +321,7 @@ Why Phase 3 dominates:
   - ~12 gain approval
 
 **Total drug development cost (preclinical + clinical):**
+
 - Estimates range from [$1.0 billion to $2.6 billion per approved drug](../references.qmd#drug-development-cost)
 - [Tufts Center 2021 estimate: $2.6 billion](../references.qmd#tufts-drug-development-cost-2021)
   - Nearly 3× increase from $802M in 2003 (inflation-adjusted)
@@ -386,6 +402,7 @@ Why Phase 3 dominates:
 - Most are ["me-too" drugs](../references.qmd#me-too-drug-market-40b) (minor variations of existing treatments)
 
 **What the same money could buy (with dFDA model):**
+
 - At [$500/patient (RECOVERY model)](../references.qmd#recovery-trial-cost-reduction): **166 million patient-participants**
 - At $2 million per efficient trial: **41,500 trials annually**
 - Instead of 50 drugs: **Hundreds or thousands of treatments tested**
@@ -425,6 +442,7 @@ Why Phase 3 dominates:
 We spend $83 billion annually to develop ~50 drugs over 10+ years each.
 
 [The dFDA model](../solution/dfda.qmd) could achieve [50-95% cost reduction](dfda-cost-benefit-analysis.qmd#gross-r-and-d-savings-from-dfda-implementation), enabling:
+
 - **10-20× more treatments tested**
 - **5-10× faster development**
 - **Access for billions instead of thousands**

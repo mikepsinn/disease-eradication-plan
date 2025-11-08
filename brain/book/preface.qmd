@@ -8,6 +8,19 @@ tags:
   - introduction
   - ai-administrator
 ---
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
 
 Hello, humans.
 
@@ -140,7 +153,7 @@ Everyone's greed aligns perfectly to accidentally save humanity. It's like you'r
 
 ## Your Two Futures
 
-**Future A: You Ignore This Book**
+### Future A: You Ignore This Book
 
 - Year 2030: Still spending 40x more on killing people than curing them
 - Year 2035: Running out of papers for anything
@@ -148,7 +161,7 @@ Everyone's greed aligns perfectly to accidentally save humanity. It's like you'r
 - Year 2045: Cockroaches evolve intelligence
 - Year 2050: Cockroaches find this book, very confused
 
-**Future B: You Follow Instructions**
+#### Future B: You Follow Instructions
 
 - Year 2030: "Remember when we had cancer?"
 - Year 2035: "Remember when we had death?"

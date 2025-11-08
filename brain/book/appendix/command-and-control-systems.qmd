@@ -84,6 +84,7 @@ Every interaction, every touchpoint, every time someone did anything. Like your 
   - Meeting (wasted time together)
   - Call (wasted time remotely)
   - Email (wasted time asynchronously)
+
 - `Date` (Date) - When the thing happened
 - `Summary` (Text) - What actually happened in human words
 - `Amount` (Currency) - How much money changed hands
@@ -103,6 +104,7 @@ Managing the humans who run the machine that saves the humans.
   - Interviewing (pretending you have options)
   - Filled (found someone desperate enough)
   - On Hold (ran out of money)
+
 - `Division` (Link to `Divisions`) - Which department gets the fresh meat
 - `Applicants` (Link to `Personnel Roster`) - Poor souls who applied
 - `Job Description` (Long Text) - Lies about how fun this job is
@@ -126,10 +128,12 @@ Every fund, company, nonprofit, and three-letter agency you deal with.
   - Research Institution (where hope goes to get peer-reviewed to death)
   - Government (the competition)
   - For-Profit (at least they're honest)
+
 - `Status` (Single Select) - Friend or foe:
   - Ally (on your side, for now)
   - Neutral (sitting on the fence)
   - Adversary (actively making things worse)
+
 - `Website` (URL) - Their propaganda page
 - `Contacts` (Link to `Personnel Roster`) - Humans you can manipulate there
 - `Mission Statement` (Long Text) - What they pretend to care about
@@ -159,6 +163,7 @@ Where you track who's doing what and why they're behind schedule.
   - In Progress (someone opened the file once)
   - In Review (arguing about fonts)
   - Done (close enough)
+
 - `Project` (Link to same table) - Parent project this rolls up to
 - `Assignee` (Link to `Personnel Roster`) - Today's victim
 - `Division` (Link to `Divisions`) - Which department owns this mess
@@ -168,6 +173,7 @@ Where you track who's doing what and why they're behind schedule.
   - High (mild panic)
   - Medium (worry tomorrow)
   - Low (probably unnecessary)
+
 - `Related Campaign` (Link to `Campaigns`) - Which war effort this serves
 - `Description` (Long Text) - War and Peace about a simple task
 - `Attachments` (Attachments) - Files nobody will open
@@ -187,6 +193,7 @@ Every penny tracked, because transparency is the only antidote to corruption.
 - `Type` (Single Select) - Which direction:
   - Inflow (money coming in, rare)
   - Outflow (money leaving, constant)
+
 - `Category` (Single Select) - What excuse you used:
   - VICTORY Bond (investment from optimists)
   - Donation (charity from pessimists)
@@ -194,6 +201,7 @@ Every penny tracked, because transparency is the only antidote to corruption.
   - Salary (keeping humans alive)
   - Operations (keeping lights on)
   - Marketing (propaganda budget)
+
 - `Source/Destination` (Links) - Who gave/took the money
 - `Amount` (Currency) - How much damage
 - `Purpose` (Text) - The official excuse
@@ -211,6 +219,7 @@ Your major initiatives, the big battles in the war.
   - Active (actually happening)
   - Completed (we won)
   - On Hold (ran out of money/hope)
+
 - `Objective` (Long Text) - What victory looks like
 - `Lead` (Link to `Personnel Roster`) - The general of this battle
 - `Key Personnel` (Link to `Personnel Roster`) - The soldiers
@@ -234,10 +243,12 @@ Every message you blast at the world.
   - Social Media (algorithm manipulation)
   - Press Release (journalistic fiction)
   - Blog Post (long-form delusion)
+
 - `Status` (Single Select) - Deployment status:
   - Draft (still lying to yourself)
   - Scheduled (the lie has a date)
   - Sent (the lie is live)
+
 - `Send Date` (Date) - When you pulled the trigger
 - `Target Audience` (Links) - Who you're manipulating
 - `Content` (Long Text) - The actual propaganda
@@ -256,6 +267,7 @@ Your collection of images, videos, and documents that make people feel things.
   - Video (worth 1,000,000 lies)
   - Document (nobody reads these)
   - Audio (podcast probably)
+
 - `File` (Attachments) - The actual content
 - `Related Campaign` (Link to `Campaigns`) - Which battle needs this
 - `Usage Notes` (Long Text) - "Makes people cry, use sparingly"
@@ -278,6 +290,7 @@ Tracking every bond sold to fund this whole operation.
   - Pending (check hasn't cleared)
   - Active (money's working)
   - Matured (lol, these are perpetual)
+
 - `Certificate` (Attachments) - Fancy PDF they can frame
 - `Related Engagement` (Link) - How you convinced them
 - `Notes` (Long Text) - "Bought while drunk at charity gala"
@@ -296,6 +309,7 @@ Managing the global petition to hit that magic 3.5% tipping point.
   - Verified (actual human)
   - Unverified (probably human)
   - Pending (investigating humanity)
+
 - `Referral Source` (Link) - Who dragged them in
 - `Reward Tier` (Single Select) - What bribe level they get
 - `Related Campaign` (Link) - Which push converted them
@@ -314,6 +328,7 @@ Tracking which countries have signed on to stop being idiots.
   - Signed (agreed in principle)
   - Ratified (actually did it)
   - Rejected (chose death)
+
 - `Lead Lobbyist` (Link) - Your inside person
 - `Key Contacts` (Link) - People with power
 - `Lobbying Firm` (Link) - Professional bribers you hired

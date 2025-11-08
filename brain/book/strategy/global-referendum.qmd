@@ -49,6 +49,7 @@ Here's how to build that list.
 Build a privacy-preserving, globally verifiable referendum that shows public support for the [1% Treaty](../solution/1-percent-treaty.qmd) and [DIH](../solution/dih.qmd).
 
 Requirements:
+
 - Must be auditable (so politicians can't claim it's fake)
 - Must be persuasive (so policymakers actually care)
 - Must hit **[3.5% global participation](../references.qmd#3-5-rule)** (280M+ verified votes)
@@ -107,6 +108,7 @@ The trick is doing all of these simultaneously, which is harder than it sounds.
 The internet is full of bots, fraudsters, and people who think it's funny to vote 1,000 times. This is a problem.
 
 You need to verify that each vote comes from a real, unique human without:
+
 - Requiring government ID (excludes billions of people)
 - Violating privacy (creepy and illegal in many places)
 - Making it impossible for normal people to participate (defeats the purpose)

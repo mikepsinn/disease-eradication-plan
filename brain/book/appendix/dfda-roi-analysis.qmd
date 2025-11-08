@@ -56,6 +56,7 @@ _The following ROI calculation primarily uses cost figures derived from the deta
       - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
       - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~$40M/year** (or $0.04 Billion/year). This aligns with the cost basis for the ROI cited in the Executive Summary.
     - _(Sensitivity analysis could include "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), but this would significantly increase annual costs.)_
+
 - **Net Annual Savings** (assuming full adoption and [50.0% R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): $50.0B/year.
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
@@ -88,10 +89,12 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
   - Broader Initiatives (Best Case Upfront from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$4.5 Million](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Lowest Upfront Cost:_ $37.5M + $4.5M = **\$42 Million**
   - _Amortized over 5 years:_ [\$42M](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) / 5 = **\$8.4 Million/year**
+
 - **Annual Operational Costs:**
   - Core Platform Operations (Low end from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)): [~\$11 Million/year](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)
   - Broader Initiatives (Best Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$0 Million/year](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Lowest Annual Operational Cost:_ **\$11 Million/year**
+
 - **Total Lowest Annualized Cost:** [\$8.4M (amortized upfront)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) + [\$11M (annual ops)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) = **\$19.4 Million/year**
 - **ROI (Lowest Cost Scenario):** [$50.0B](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.0194 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **2577:1**
 
@@ -102,10 +105,12 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
   - Broader Initiatives (Worst Case Upfront from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$2.231 Billion](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Highest Upfront Cost:_ $46M + $2.231B = **~\$2.277 Billion**
   - _Amortized over 5 years:_ [\$2.277B](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) / 5 = **~\$455.4 Million/year**
+
 - **Annual Operational Costs:**
   - Core Platform Operations (High end from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)): [~\$26.5 Million/year](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)
   - Broader Initiatives (Worst Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$271 Million/year](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Highest Annual Operational Cost:_ $26.5M + $271M = **~\$297.5 Million/year**
+
 - **Total Highest Annualized Cost:** [\$455.4M (amortized upfront)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) + [\$297.5M (annual ops)](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) = **~\$752.9 Million/year**
 - **ROI (Highest Cost Scenario):** [$50.0B](#gross-r-and-d-savings-from-dfda-implementation) / [\$0.7529 Billion](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) ≈ **66:1**
 
