@@ -8,7 +8,7 @@
   - Why This Works
   - The Alternative
   - 💀 The Problem
-    - ☠️ The Daily Holocaust
+    - ☠️ The Bi-Monthly Holocaust
     - 💸 The Cost of War
   - 💊 The Solution
     - 📜 The 1% Treaty
@@ -1709,7 +1709,7 @@
     - Universal Healthcare
   - The Problem This Solves
     - The $119 Trillion Death Machine
-    - The Daily Holocaust No One Talks About
+    - The Bi-Monthly Holocaust No One Talks About
   - The Solution That Pays For Itself
     - The 3-Part System
     - Why This Actually Works

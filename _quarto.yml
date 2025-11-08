@@ -20,10 +20,10 @@ book:
   sidebar:
     collapse-level: 1
   chapters:
-    - text: "🚀 Start Here"
+    - text: "Start Here"
       href: index.qmd  # ~19p
 
-    - part: "🚨 The Problem"
+    - part: "The Problem"
       chapters:
         - brain/book/problem.qmd  # ✅ Part I Intro ~8p
         - brain/book/problem/the-daily-massacre.qmd # ✅ Daily Holocaust ~3p
@@ -33,7 +33,7 @@ book:
         - brain/book/problem/cost-of-disease.qmd # ✅ Cost of Disease ~9p
         - brain/book/problem/unrepresentative-democracy.qmd # ✅ Democracy Is Theater & Regulatory Capture ~19p
 
-    - part: "💡 The Solution"
+    - part: "The Solution"
       chapters:
         - brain/book/solution.qmd # ✅ Part II Intro ~8p
         - brain/book/solution/1-percent-treaty.qmd # ✅ The 1% Treaty (includes TL;DR at top) ~12p
@@ -44,7 +44,7 @@ book:
         - brain/book/solution/war-on-disease.qmd # ✅ The War on Disease ~5p
         - brain/book/solution/aligning-incentives.qmd # ✅ Aligning Incentives ~7p
 
-    - part: "✅ The Case"
+    - part: "The Evidence"
       chapters:
         - brain/book/proof.qmd # ✅ Part III Intro ~6p
         - brain/book/proof/historical-precedents.qmd # ✅ Historical Precedent ~8p
@@ -56,7 +56,7 @@ book:
         - brain/book/futures/utopia-health-and-happiness.qmd # ✅ Path B: Wishonia ~13p
         - brain/book/appendix/faq.qmd # ✅ Demolishing Objections ~15p
 
-    - part: "🗺️ The Plan"
+    - part: "The Plan"
       chapters:
         - brain/book/strategy/roadmap.qmd # ✅ (DETAILED 36-MONTH EXECUTION PLAN) ~3p
         - brain/book/legal/legal-framework.qmd # ✅ (DETAILED 4-PART LEGAL ARCHITECTURE) ~9p
@@ -71,14 +71,14 @@ book:
         - brain/book/call-to-action/three-actions.qmd # ✅ Getting Started ~2p
   appendices:
     # Essential Reading
-    - part: "📚 Essential References"
+    - part: "Essential References"
       chapters:
         - brain/book/references.qmd # ✅ (reference material, appropriately formal) ~250p
         - brain/book/appendix/recovery-trial.qmd # ✅ (IMPROVED) ~9p
         # historical-evidence-supporting-decentralized-efficacy-trials.qmd content merged into fda-is-unsafe-and-ineffective.qmd
 
     # Strategic Implementation
-    - part: "🎯 Implementation Strategy"
+    - part: "Implementation Strategy"
       chapters:
         - brain/book/strategy-overview.qmd # ✅ (3-STEP OVERVIEW - see roadmap.qmd for detailed execution) ~1p
         - brain/book/appendix/highest-leverage-advocacy.qmd # ✅ (EXCELLENT voice - "bailing water from a sinking ship") ~2p
@@ -92,7 +92,7 @@ book:
         - brain/book/appendix/referendum-question-testing-strategy.qmd # ✅ A/B testing framework for the question ~8p
         - brain/book/appendix/nonprofit-partnership-incentives.qmd # ✅ (IMPROVED) ~4p
 
-    - part: "⚖️ Policy & Regulatory"
+    - part: "Policy & Regulatory"
       chapters:
         - brain/book/legal-overview.qmd # ✅ (IMPROVED - brief overview, see legal-framework.qmd for details) ~4p
         - brain/book/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
@@ -102,7 +102,7 @@ book:
         - brain/book/appendix/regulatory-reform-plan.qmd # ✅ (regulatory checklist, appropriate) ~8p
 
     # Economic Analysis
-    - part: "💰 Economic Analysis"
+    - part: "Economic Analysis"
       chapters:
         - brain/book/economics/best-idea-in-the-world.qmd # ✅ (EXCELLENT voice) ~6p
         - brain/book/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
@@ -112,7 +112,7 @@ book:
         - brain/book/appendix/global-clinical-trial-spending-by-phase.qmd # ✅ Comprehensive spending analysis ~17p
         - brain/book/appendix/clinical-trial-participants.qmd # ✅ The 0.06% problem ~7p
 
-    - part: "🧮 Detailed Calculations"
+    - part: "Detailed Calculations"
       chapters:
         - brain/book/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate) ~4p
         - brain/book/appendix/health-dividend-calculations.qmd # ✅ (calculations, appropriate) ~7p
@@ -129,7 +129,7 @@ book:
         - brain/book/appendix/dfda-platform-costs.qmd # ✅ (calculations, appropriate) ~15p
         - brain/book/appendix/dfda-qaly-model.qmd # ✅ (comprehensive QALY model - includes dfda-comparative-cost-effectiveness & dfda-daily-opportunity-cost) ~38p
 
-    - part: "💵 Financial Planning"
+    - part: "Financial Planning"
       chapters:
         - brain/book/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
         - brain/book/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
@@ -139,7 +139,7 @@ book:
         - brain/book/appendix/fundraising-strategy.qmd # ✅ (IMPROVED - "$2.5B vending machine" analogy) ~13p
 
     # Organizational Resources
-    - part: "🏛️ Governance & Organization"
+    - part: "Governance & Organization"
       chapters:
         - brain/book/appendix/vision.qmd # ✅ (EXCELLENT voice) ~5p
         - brain/book/appendix/governance.qmd # ✅ (good voice) ~4p
@@ -150,7 +150,7 @@ book:
         - brain/book/appendix/command-and-control-systems.qmd # ✅ (EXCELLENT voice) ~8p
         - brain/book/appendix/dfda-collaboration-framework.qmd # ✅ (technical spec, appropriate) ~4p
 
-    - part: "⚙️ Operations & Legal"
+    - part: "Operations & Legal"
       chapters:
         - brain/book/appendix/legal-compliance-framework.qmd # ✅ (technical legal, appropriate) ~9p
         - brain/book/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
@@ -158,13 +158,13 @@ book:
         - brain/book/appendix/verification-and-fraud-prevention.qmd # ✅ (technical spec, appropriate) ~5p
 
     # Background Theory
-    - part: "🧠 Theory & Concepts"
+    - part: "Theory & Concepts"
       chapters:
         - brain/book/theory.qmd # ✅ (EXCELLENT voice) ~3p
         - brain/book/theory/the-two-wars.qmd # ✅ (EXCELLENT voice) ~7p
         - brain/book/problem/genetic-slavery.qmd # ✅ (EXCELLENT voice) ~9p
 
-    - part: "📚 Additional References"
+    - part: "Additional References"
       chapters:
         - brain/book/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
         - brain/book/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd # ✅ (data presentation, appropriate) ~1p
