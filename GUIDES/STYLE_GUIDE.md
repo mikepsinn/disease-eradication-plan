@@ -35,7 +35,7 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 -   **Use dark humor about death and human stupidity.**
 -   **Make cynical but loving observations about humanity.** We're idiots, but we're OUR idiots.
 -   **Use simple, conversational language.** No jargon. Write like you're explaining something to a smart friend who might think you're crazy.
--   **Create absurd but accurate analogies.** "The FDA is like a lifeguard who checks if the life preserver is safe while you drown."
+-   **Create absurd but accurate analogies.** "The FDA is like a lifeguard who checks if the life preserver is safe while you drown." "It's like using a calculator to hammer nails." "Like buying 40 umbrellas while your house is on fire."
 -   **Embrace cosmic irony.**
 -   **Present solutions as obvious common sense.** "What if sick people could just... try treatments?"
 -   **Add occasional bemused observations.** "The math requires third-grade arithmetic. You have third grade, so the confusion is notable."
@@ -55,12 +55,54 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 -   **Make promises or proposals.** Don't say "we will end disease" - say "here's how you end disease."
 -   **Use passive or future-oriented language.** Not "this will be implemented" but "here's how to implement this."
 
+## Comedy Techniques Toolbox (Use Sparingly)
+
+These are optional techniques to add humor when appropriate. Don't force them - use only when they naturally fit:
+
+### Philomena Cunk-Style Confused Literalism
+- Take things literally that shouldn't be: "The Pentagon has five sides. You named your war building after its shape. Like calling a hospital 'Rectangle.'"
+- Misunderstand cause and effect in logical ways: "You invented nuclear weapons to warm the planet very quickly."
+
+### The "Money as Papers" Framework
+When highlighting economic absurdity:
+- Refer to money as "small pieces of paper with dead presidents"
+- Point out the circular insanity: "Food grows for free but you need papers to eat it"
+- "You trade papers for instructions on getting infinite papers"
+
+### Circular Logic That's Actually Correct
+Describe broken systems as absurd loops:
+- "Weapons makers give money to politicians → politicians buy weapons → weapons makers get more money. It's like a dog chasing its tail, if the tail was made of money and the dog was democracy."
+
+### Progressive Revelation of Stupidity
+Build from reasonable to insane:
+- "You have a Department of Defense" (good!)
+- "That only attacks" (wait...)
+- "You have a Department of Health" (nice!)
+- "That manages disease, not health" (oh no)
+
+### Simple Math as Profound Discovery
+- "$2.7 trillion is bigger than $68 billion. I checked."
+- "271.8% is more than 100%, which shouldn't be possible but is"
+- "After the first few hundred nuclear warheads, you're just showing off"
+
 ## The Final Check
 
+-   **Concision:** Can I cut words without losing meaning or significant humor?
 -   **Clarity:** Can my mom understand this?
 -   **Credibility:** Would I stake my reputation on this claim?
--   **Concision:** Can I cut words without losing meaning?
 -   **Directness:** Does this sound like Kurt Vonnegut or Douglas Adams wrote it?
 -   **Impact:** Does it make someone laugh AND think?
--   **Exasperation Check:** Does it sound like a weary parent explaining why we don't make bombs in the basement to a child who keeps trying anyway?
--   **Confidence:** Do I hesitate before reading it aloud to a skeptic?
+-   **Exasperation:** Does it have weary parent energy without being preachy?
+
+## Remember: Conciseness Above All
+
+**The #1 Goal: Make the book SHORTER, FUNNIER, and MORE USEFUL.**
+
+When in doubt:
+- Cut words rather than add them
+- Use comedy techniques only if they make things significantlyfunnier
+- Never add filler for the sake of being clever
+- If a joke requires setup, it's probably not worth it
+- Every edit should reduce word count
+
+Think: Philomena Cunk explaining economics to drunk people at a funeral, but keeping it brief because the bar is closing.
