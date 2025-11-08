@@ -16,7 +16,9 @@
     "@voltagent/core": "^0.1.86",
     "@voltagent/vercel-ai": "^1.0.0",
     "ai": "^5.0.34",
+    "chokidar": "^4.0.3",
     "dotenv": "^16.4.7",
+    "fastest-levenshtein": "^1.0.16",
     "glob": "^10.4.5",
     "gray-matter": "^4.0.3",
     "ignore": "^7.0.5",
@@ -25,8 +27,7 @@
     "simple-git": "^3.28.0",
     "xlsx": "^0.18.5",
     "yargs": "^18.0.0",
-    "zod": "^3.25.76",
-    "chokidar": "^4.0.3"
+    "zod": "^3.25.76"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -85,6 +86,7 @@
     "images:analyze": "tsx scripts/generate-image-metadata.ts",
     "images:analyze:all": "tsx scripts/generate-image-metadata.ts --all",
     "images:guide": "tsx scripts/generate-image-metadata.ts --guide-only",
+    "find-duplicates": "tsx scripts/find-duplicates.ts",
     "prepare": "husky"
   },
   "devDependencies": {
