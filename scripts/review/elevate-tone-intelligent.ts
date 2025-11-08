@@ -99,14 +99,14 @@ async function main() {
   }
 
   console.log('\n' + '━'.repeat(60));
-  console.log('📋 PROCESSING INSTRUCTIONS\n');
-  console.log('The Task agent will process these files by:');
-  console.log('1. Reading and understanding the full context');
-  console.log('2. Identifying existing humor to preserve');
-  console.log('3. Recognizing aggressive/pompous language');
-  console.log('4. Intelligently rewriting with Vonnegut/Handey/Cunk style');
-  console.log('5. Maintaining factual accuracy and technical details');
-  console.log('6. Updating tracking hashes when complete');
+  console.log('📋 PROCESSING APPROACH\n');
+  console.log('Transform earnest/pompous declarations by:');
+  console.log('1. Adding philosophical distance (Vonnegut\'s "So it goes")');
+  console.log('2. Using absurdist comparisons (Handey\'s mundane metaphors)');
+  console.log('3. Expressing deadpan confusion (Cunk\'s puzzlement)');
+  console.log('4. Preserving ALL existing humor and wordplay');
+  console.log('5. Keeping factual information unchanged');
+  console.log('6. Making readers discover absurdity themselves');
 
   console.log('\n' + '━'.repeat(60));
   console.log('🚀 FILES READY FOR AGENT PROCESSING\n');
@@ -121,9 +121,9 @@ async function main() {
   console.log(`✅ File list written to: ${fileListPath}`);
   console.log(`   The agent should process these ${filesToProcess.length} files.`);
 
-  console.log('\n💡 Next step: Launch Task agent to process these files intelligently.');
-  console.log('   The agent will read, understand, and rewrite each file.');
-  console.log('   No blind find-replace - just intelligent context-aware editing.\n');
+  console.log('\n💡 Next step: Launch agent with scripts/prompts/tone-guide.md');
+  console.log('   Transform earnest claims → bemused observations');
+  console.log('   Keep all humor, change only pompous/earnest language\n');
 
   return filesToProcess;
 }
