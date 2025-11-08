@@ -25,9 +25,9 @@ interface PhraseEntry {
 
 // Configuration
 const SIMILARITY_THRESHOLD = 0.90; // 90% similar for near-duplicates
-const MIN_PHRASE_LENGTH = 3; // Minimum words in a phrase
-const MAX_PHRASE_LENGTH = 10; // Maximum words in a phrase
-const MIN_PHRASE_OCCURRENCES = 2; // Minimum times a phrase should appear
+const MIN_PHRASE_LENGTH = 4; // Minimum words in a phrase (reduced from 3 for performance)
+const MAX_PHRASE_LENGTH = 7; // Maximum words in a phrase (reduced from 10 for performance)
+const MIN_PHRASE_OCCURRENCES = 3; // Minimum times a phrase should appear (increased to reduce noise)
 
 // Normalize text for comparison
 function normalizeText(text: string): string {
@@ -93,7 +93,10 @@ function findQmdFiles(dir: string): string[] {
       if (entry.isDirectory() && !entry.name.startsWith('.') && entry.name !== 'node_modules') {
         traverse(fullPath);
       } else if (entry.isFile() && entry.name.endsWith('.qmd')) {
-        files.push(fullPath);
+        // Skip references.qmd
+        if (!fullPath.includes('references.qmd')) {
+          files.push(fullPath);
+        }
       }
     }
   }
@@ -126,6 +129,11 @@ function findNearDuplicates(sentences: Map<string, DuplicateInstance[]>): Duplic
   const processed = new Set<string>();
 
   for (let i = 0; i < allSentences.length; i++) {
+    // Show progress every 100 sentences
+    if (i % 100 === 0 && i > 0) {
+      console.log(`      Comparing sentence ${i}/${allSentences.length} (${Math.round(i / allSentences.length * 100)}%)`);
+    }
+
     if (processed.has(allSentences[i])) continue;
 
     const similar: { text: string; similarity: number }[] = [];
@@ -407,7 +415,7 @@ function generatePhrasesHTML(phrases: PhraseEntry[]): string {
       </div>
       ${phrase.instances.slice(0, 10).map(inst => `
         <div class="instance">
-          <div class="file-path">${escapeHtml(inst.file)}:${inst.line}</div>
+          <div class="file-path">${escapeHtml(inst.file)}</div>
         </div>
       `).join('')}
       ${phrase.instances.length > 10 ? `<div class="instance">... and ${phrase.instances.length - 10} more</div>` : ''}
@@ -438,10 +446,15 @@ async function main() {
   const phrases = new Map<string, DuplicateInstance[]>();
 
   // Process each file
-  for (const file of files) {
+  console.log('\n📖 Processing files...\n');
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
     const content = fs.readFileSync(file, 'utf-8');
     const lines = content.split('\n');
     const relativePath = path.relative(rootDir, file);
+
+    // Show progress for every file
+    console.log(`   [${i + 1}/${files.length}] ${relativePath}`);
 
     // Extract and store sentences
     const fileSentences = extractSentences(content);
@@ -476,6 +489,7 @@ async function main() {
     });
 
     // Extract and store phrases (n-grams)
+    // Note: We skip line number lookups for phrases for performance
     for (let n = MIN_PHRASE_LENGTH; n <= MAX_PHRASE_LENGTH; n++) {
       const ngrams = extractNGrams(content, n);
       ngrams.forEach((ngram) => {
@@ -483,15 +497,19 @@ async function main() {
           phrases.set(ngram, []);
         }
 
-        const lineNum = findLineNumber(lines, ngram);
         phrases.get(ngram)!.push({
           file: relativePath,
-          line: lineNum,
+          line: 0, // Line number skipped for performance
           context: ngram
         });
       });
     }
   }
+
+  console.log(`\n✅ Processed ${files.length} files`);
+  console.log(`   • Collected ${sentences.size} unique sentences`);
+  console.log(`   • Collected ${paragraphs.size} unique paragraphs`);
+  console.log(`   • Collected ${phrases.size} unique phrases\n`);
 
   console.log('📊 Processing duplicates...');
 
@@ -509,6 +527,7 @@ async function main() {
   console.log(`   ✓ Found ${exactParagraphs.length} duplicate paragraphs`);
 
   // Find repeated phrases
+  console.log(`\n   📝 Analyzing ${phrases.size} unique phrases...`);
   const repeatedPhrases = Array.from(phrases.entries())
     .filter(([_, instances]) => instances.length >= MIN_PHRASE_OCCURRENCES)
     .map(([phrase, instances]) => ({
