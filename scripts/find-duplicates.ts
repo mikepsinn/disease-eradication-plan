@@ -619,6 +619,9 @@ async function main() {
 
     // Extract and store sentences (from cleaned content)
     const fileSentences = extractSentences(content);
+    // Use a Set to track unique sentence+file+line combinations to avoid duplicates
+    const processedInFile = new Set<string>();
+
     fileSentences.forEach((sentence, idx) => {
       const normalized = normalizeText(sentence);
       if (!sentences.has(normalized)) {
@@ -626,15 +629,23 @@ async function main() {
       }
 
       const lineNum = findLineNumber(lines, sentence);
-      sentences.get(normalized)!.push({
-        file: relativePath,
-        line: lineNum,
-        context: sentence
-      });
+      const uniqueKey = `${relativePath}:${lineNum}:${normalized}`;
+
+      // Only add if we haven't seen this exact file:line:sentence combo before
+      if (!processedInFile.has(uniqueKey)) {
+        processedInFile.add(uniqueKey);
+        sentences.get(normalized)!.push({
+          file: relativePath,
+          line: lineNum,
+          context: sentence
+        });
+      }
     });
 
     // Extract and store paragraphs
     const fileParagraphs = extractParagraphs(content);
+    const processedParagraphsInFile = new Set<string>();
+
     fileParagraphs.forEach((paragraph) => {
       const normalized = normalizeText(paragraph);
       if (!paragraphs.has(normalized)) {
@@ -642,15 +653,23 @@ async function main() {
       }
 
       const lineNum = findLineNumber(lines, paragraph.substring(0, 50));
-      paragraphs.get(normalized)!.push({
-        file: relativePath,
-        line: lineNum,
-        context: paragraph
-      });
+      const uniqueKey = `${relativePath}:${lineNum}:${normalized}`;
+
+      // Only add if we haven't seen this exact file:line:paragraph combo before
+      if (!processedParagraphsInFile.has(uniqueKey)) {
+        processedParagraphsInFile.add(uniqueKey);
+        paragraphs.get(normalized)!.push({
+          file: relativePath,
+          line: lineNum,
+          context: paragraph
+        });
+      }
     });
 
     // Extract and store phrases (n-grams)
     // Note: We skip line number lookups for phrases for performance
+    const processedPhrasesInFile = new Set<string>();
+
     for (let n = MIN_PHRASE_LENGTH; n <= MAX_PHRASE_LENGTH; n++) {
       const ngrams = extractNGrams(content, n);
       ngrams.forEach((ngram) => {
@@ -658,11 +677,16 @@ async function main() {
           phrases.set(ngram, []);
         }
 
-        phrases.get(ngram)!.push({
-          file: relativePath,
-          line: 0, // Line number skipped for performance
-          context: ngram
-        });
+        // Only add one instance per phrase per file (avoid counting duplicates within same file)
+        const uniqueKey = `${relativePath}:${ngram}`;
+        if (!processedPhrasesInFile.has(uniqueKey)) {
+          processedPhrasesInFile.add(uniqueKey);
+          phrases.get(ngram)!.push({
+            file: relativePath,
+            line: 0, // Line number skipped for performance
+            context: ngram
+          });
+        }
       });
     }
   }

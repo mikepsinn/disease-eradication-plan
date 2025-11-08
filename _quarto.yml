@@ -127,11 +127,9 @@ book:
         - brain/book/appendix/dfda-assumptions.qmd # ✅ (technical assumptions, appropriate) ~1p
         - brain/book/appendix/dfda-benefit-analysis.qmd # ✅ (calculations, appropriate) ~6p
         - brain/book/appendix/dfda-calculation-framework.qmd # ✅ (technical framework, appropriate) ~26p
-        - brain/book/appendix/dfda-comparative-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~8p
-        - brain/book/appendix/dfda-daily-opportunity-cost.qmd # ✅ (calculations, appropriate) ~5p
         - brain/book/appendix/dfda-icer-analysis.qmd # ✅ (technical analysis, appropriate) ~10p
         - brain/book/appendix/dfda-platform-costs.qmd # ✅ (calculations, appropriate) ~15p
-        - brain/book/appendix/dfda-qaly-model.qmd # ✅ (technical model, appropriate) ~25p
+        - brain/book/appendix/dfda-qaly-model.qmd # ✅ (comprehensive QALY model - includes dfda-comparative-cost-effectiveness & dfda-daily-opportunity-cost) ~38p
 
     - part: "💵 Financial Planning"
       chapters:
