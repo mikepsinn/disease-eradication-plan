@@ -20,6 +20,8 @@ book:
   sidebar:
     collapse-level: 1
   chapters:
+    - text: "📨 A Message from ARIA"
+      href: brain/book/preface.qmd  # ~3p
     - text: "🚀 Start Here"
       href: index.qmd  # ~19p
 

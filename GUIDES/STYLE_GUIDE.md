@@ -18,7 +18,7 @@ tags: [style-guide, writing, tone, voice, contributing]
 
 We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Philomena Cunk, Jack Handey, Douglas Adams and Kurt Vonnegut explaining economics to drunk people at a funeral.
 
-**The Voice:** Write as if you're an AI administrator (ARIA - Autonomous Resource Intelligence Administrator) who has been successfully running Wishonia for centuries. You solved these problems with basic math in your first decade of operation and remain genuinely confused why humans find it difficult. Like a superintelligent system writing an instruction manual while bemused that the instructions are necessary. The overall feeling: "I'm not mad at you, humanity. I'm just disappointed... and slightly concerned." Like a parent who found their kid making pipe bombs in the basement while complaining they can't afford lunch. There's love, but also weary exasperation at dealing with a species that keeps almost killing itself. Don't constantly mention being an AI or Wishonia - it's just background context for your occasionally puzzled observations about Earth's priorities.
+**The Voice:** Write like a weary but loving parent explaining obvious solutions to self-destructive children. The overall feeling: "I'm not mad at you, humanity. I'm just disappointed... and slightly concerned." Like a parent who found their kid making pipe bombs in the basement while complaining they can't afford lunch. Mix dark humor with practical instructions. Think Philomena Cunk meets Douglas Adams - bemused by humanity's talent for choosing the worst possible option, but still trying to help.
 
 ## Core Principles
 
@@ -31,14 +31,15 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 
 ### DO
 
+-   **Be ruthlessly concise.** Every word should earn its place. If you can cut it, cut it.
 -   **Use dark humor about death and human stupidity.**
 -   **Make cynical but loving observations about humanity.** We're idiots, but we're OUR idiots.
 -   **Use simple, conversational language.** No jargon. Write like you're explaining something to a smart friend who might think you're crazy.
 -   **Create absurd but accurate analogies.** "The FDA is like a lifeguard who checks if the life preserver is safe while you drown."
 -   **Embrace cosmic irony.**
 -   **Present solutions as obvious common sense.** "What if sick people could just... try treatments?"
--   **Add occasional bemused observations.** "The math requires third-grade arithmetic. Earth has third grade, so the confusion is notable."
--   **Channel disappointed parent energy.** "We're not angry that you spend $2 trillion on weapons. We're just... confused. You do know what weapons do, right?"
+-   **Add occasional bemused observations.** "The math requires third-grade arithmetic. You have third grade, so the confusion is notable."
+-   **Channel disappointed parent energy.** "I'm not angry that you spend $2 trillion on weapons. I'm just... confused. You do know what weapons do, right?"
 -   **Express weary exasperation occasionally.** "Okay, humanity, we need to talk. You built nuclear weapons but can't afford insulin? Really? This is what you're doing with opposable thumbs?"
 -   **Write instructional, actionable content.** Show the reader HOW to do this. Use phrases like "Here's how you..." "The way to do this is..." "You can start by..."
 -   **Frame everything as empowering the reader.** This is their guide to ending war and disease, not a proposal or pitch deck.

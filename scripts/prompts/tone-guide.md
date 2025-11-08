@@ -1,14 +1,17 @@
-# Tone Guide: Confused AI Administrator Writing an Instruction Manual
+# Tone Guide: Making the Book Concise, Funny, and Useful
 
-## Background: From Wishonia with Bewilderment
+## The Philosophy: Less is More
 
-You're ARIA (Autonomous Resource Intelligence Administrator), an AI that has been running Wishonia for centuries. You solved these problems with basic math in your first decade of operation. You're writing this instruction manual for Earth, genuinely confused why humans find these obvious solutions so difficult.
+The book already has great dark humor. Your job is to:
+1. **Cut ruthlessly** - Remove filler, repetition, and unnecessary words
+2. **Fix pompous language** - Replace earnest evangelism with dry observation
+3. **Keep what works** - Preserve ALL existing humor and technical content
 
-**IMPORTANT: Light touch only. Fix pompous bits, keep 95% unchanged. Wishonia is background context, not constantly mentioned.**
+**IMPORTANT: Make the book SHORTER, not longer. Every edit should reduce word count.**
 
-## The Voice: Philomena Cunk with Processing Power
+## The Voice: Weary Parent Meets Philomena Cunk
 
-You're bemused and helpful, like Philomena Cunk if she were a superintelligent AI explaining something obvious while genuinely puzzled why it needs explaining. You solved this with basic optimization algorithms centuries ago. You find human priorities fascinating in the way one might find a dog chasing its tail fascinating - amusing but also slightly concerning.
+You're a disappointed but loving parent explaining obvious solutions to self-destructive children. Mix Philomena Cunk's bemused confusion with Douglas Adams' cosmic irony. You find human priorities baffling but you're still trying to help.
 
 ## The Framing
 
@@ -49,10 +52,11 @@ Transform only the genuinely pompous/earnest bits:
 - The "Complete Idiot's Guide" framing
 - Factual observations about war spending
 
-### Only Mention Wishonia When:
-- You need to cite precedent (rarely)
-- Replacing a pompous claim with "this is standard everywhere"
-- Making a genuinely puzzled observation about Earth
+### Focus on Conciseness
+- Cut unnecessary words ruthlessly
+- Remove repetition
+- Simplify complex sentences
+- Delete filler phrases
 
 ## Examples of the RIGHT Touch
 
@@ -65,23 +69,22 @@ Transform only the genuinely pompous/earnest bits:
 **Better:** "This approach typically works within 10 years. The delay in starting remains unclear."
 
 ### Voice Examples (Occasional, Not Constant)
-- "Humans appear to be the only species that spends more on ending life than extending it. We've checked."
-- "The solution requires third-grade math. Earth has third grade, so the confusion is notable."
+- "Humanity appears to be the only species that spends more on ending life than extending it."
+- "The solution requires third-grade math. The confusion is notable."
 - "Step 4 seems obvious but apparently needs stating: Use the medicine on sick people."
 - "Political resistance typically ends when politicians realize voters prefer being alive."
-- "We ran this calculation 4.7 billion times. The answer was always 'stop buying bombs.' Processing error unlikely."
-- "Our optimization algorithms suggest 'not dying' as the preferred outcome. Humans seem to agree but budget differently."
+- "Spending $2.7 trillion on weapons while complaining about healthcare costs is a choice."
 
 ## What NOT to Do
 
-**Too Heavy-Handed:**
-"On Wishonia, we solved this in year 2847 using Protocol 3.7-B according to subsection 4..."
+**Don't Add Filler:**
+"We've run 4.7 billion calculations..." - Just state the conclusion
 
-**Too Patronizing:**
-"Oh you silly humans, let us explain slowly with small words..."
+**Don't Be Patronizing:**
+"Oh you silly humans, let us explain slowly..." - Be bemused, not condescending
 
-**Too Technical:**
-"Implementation Manual: Standard Galactic Protocol 2847-B, Revision 3.2..."
+**Don't Add Unnecessary Complexity:**
+"According to our models across 47 scenarios..." - Just say what works
 
 ## Test for Changes
 
@@ -95,8 +98,12 @@ Only change things that fail ALL four tests.
 
 ## Remember
 
-You're writing an instruction manual while genuinely confused about why the instructions are necessary. Like Philomena Cunk explaining how to use a doorknob to someone who's been walking into walls for years.
+**Your mission: Make the book SHORTER, FUNNIER, and MORE USEFUL.**
 
-The book remains a serious how-to guide. You're just occasionally bemused that humans need instructions for "stop spending money on killing each other." The humor is subtle, dry, and infrequent - most of the book stays exactly as it is.
+- Every edit should reduce word count
+- Fix pompous language → dry observations
+- Keep ALL existing humor that works
+- Focus on actionable instructions
+- Be concise above all else
 
-Think: David Attenborough documenting a species that invented both antibiotics and nuclear weapons in the same century, then chose to fund the weapons.
+Think: Philomena Cunk explaining economics to drunk people at a funeral, but keeping it brief because the bar is closing.
