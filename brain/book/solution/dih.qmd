@@ -13,6 +13,7 @@ lastFactCheckHash: 24332b62f096e2da8303f3e612d90c6682bd5871a6a8588f6e3275c6d71bb
 lastStructureCheckHash: e51db52d29f434435c4abeb5ff626a97cbff6852fda9b4ad3019bcb27077fc37
 lastLatexCheckHash: 89fa06c173d6a3181fa3ec6b453bd3c702b8cd407eb719bc5b303e32aa16232f
 lastInstructionalVoiceHash: 11b7407112ec19f24d8fb0ff17fcf4c23887d9cc9a8d9ba4ad91fe7f5a1545c6
+lastToneElevationWithHumorHash: 02443ea329f5a07e41e7bb95528be1e5a90dc762f8c690a7b2c6755413d3cdde
 ---
 
 ```{python}
@@ -35,7 +36,7 @@ The NIH is a $47 billion machine designed to prevent medical progress by rewardi
 
 You don't fix a system like that. You replace it.
 
-The Decentralized Institutes of Health (DIH) is what you build when you want to cure diseases instead of writing papers about them. It's not a better bureaucracy; it's an anti-bureaucracy, built on four simple rules.
+The Decentralized Institutes of Health (DIH) cures diseases instead of writing papers about them. It's an anti-bureaucracy built on four rules.
 
 ## The Four Rules of a System That Actually Works
 
@@ -79,7 +80,7 @@ This isn't about trusting people to be good. It's about building a system where 
 - Every trial, every result, every dataset is published for the world to see.
 - AI models continuously scan this global data commons, finding patterns and connections humans would miss.
 
-This simple rule instantly doubles the value of every dollar spent on research by eliminating redundant failures.
+This doubles the value of every research dollar by eliminating redundant failures.
 
 ![How the Decentralized Institutes of Health works: technical details](../../../assets/decentralized-institutes-of-health-details.jpg)
 
