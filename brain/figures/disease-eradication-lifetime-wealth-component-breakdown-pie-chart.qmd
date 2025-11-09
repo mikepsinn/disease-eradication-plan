@@ -2,6 +2,19 @@
 title: Personal Lifetime Wealth Component Breakdown - Disease Eradication Model
 description: Shows component breakdown using Disease Eradication Model (20-year scenario, 72yr life extension)
 ---
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
 
 ```{python}
 #| echo: false
@@ -11,12 +24,14 @@ from pathlib import Path
 import sys
 
 # Find project root dynamically
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
         project_root = project_root.parent
 
 # Add paths
+
 sys.path.insert(0, str(project_root / 'brain' / 'book' / 'appendix'))
 sys.path.insert(0, str(project_root / 'brain' / 'figures'))
 
@@ -30,6 +45,7 @@ from _chart_style import (
 setup_chart_style()
 
 # Calculate for base case using Disease Eradication Model: Age 30, $50K income, 1% Treaty, 20-year scenario
+
 calc = calculate_personal_lifetime_wealth_disease_eradication(
     treaty_pct=0.01,
     current_age=30,
@@ -39,6 +55,7 @@ calc = calculate_personal_lifetime_wealth_disease_eradication(
 )
 
 # Extract components
+
 total = calc['total_lifetime_benefit']
 components = [
     (f"Extended\nEarnings\n${calc['npv_breakdown']['extended_earnings']/1000000:.1f}M ({calc['npv_breakdown']['extended_earnings']/total*100:.0f}%)",
@@ -57,18 +74,22 @@ labels = [c[0] for c in components]
 sizes = [c[1] for c in components]
 
 # Use patterns for distinction
+
 patterns = [PATTERN_DIAGONAL, None, PATTERN_HORIZONTAL, PATTERN_CROSS, PATTERN_DOTS]
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(10, 8))
 
 # Create pie chart with white fills and patterns
+
 wedges, texts = ax.pie(sizes, labels=labels, startangle=90,
                         counterclock=False,
                         wedgeprops={'edgecolor': COLOR_BLACK, 'linewidth': 2},
                         textprops={'fontsize': 11, 'weight': 'bold'})
 
 # Apply patterns to wedges (white fill with black outline)
+
 for i, wedge in enumerate(wedges):
     wedge.set_facecolor(COLOR_WHITE)
     wedge.set_hatch(patterns[i])
@@ -76,16 +97,20 @@ for i, wedge in enumerate(wedges):
         wedge.set_hatch(patterns[i] * 3)  # Denser pattern
 
 # Add title
+
 ax.set_title('Where Does the $4.3M Come From?\nDisease Eradication Model Component Breakdown\n(Age 30, $50K Income, 1% Treaty, 20yr scenario)',
              fontsize=32, weight='bold', pad=20)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Equal aspect ratio ensures circle
+
 ax.axis('equal')
 
 # Save figure
+
 output_dir = get_project_root() / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'disease-eradication-lifetime-wealth-component-breakdown-pie-chart.png'
@@ -93,6 +118,7 @@ output_path = output_dir / 'disease-eradication-lifetime-wealth-component-breakd
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata
+
 add_png_metadata(
     output_path,
     title="Personal Lifetime Wealth Component Breakdown (Disease Eradication Model)",
@@ -104,12 +130,14 @@ plt.show()
 
 **Key Finding:** With 72 years of life extension, **Extended Earnings dominates** (~30-40% of total) - working and retirement years from age 80 to 152 create massive compound wealth.
 
-**Component Mix vs Conservative Model:**
+## Component Mix vs Conservative Model
+
 - **Extended Earnings**: Jumps from 18% ($104K) to ~30% ($1.3M) - **12x increase**
 - **Economic Multiplier (Mil→Res)**: Remains large (~58%, $2.5M) - this is the productivity gain from redirecting military spending to research (historical evidence: post-WW2 30% military cut → 8% GDP growth). Compounds over 122 years instead of 55
 - **Healthcare/Productivity/Caregiver**: Combined ~12% - smaller percentage but still $500K+ absolute
 
 **This shows the dramatic shift** when you properly account for aging reversal:
+
 - Conservative (5yr): Healthcare savings dominates (49%)
 - Realistic (72yr): **Extended productive years dominates** - living to 152 with continued earnings transforms everything
 

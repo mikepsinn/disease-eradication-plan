@@ -4,6 +4,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -22,6 +23,7 @@ import os
 from pathlib import Path
 
 # Add project root to path
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
@@ -36,25 +38,31 @@ from brain.figures._chart_style import (
     add_png_metadata)
 
 # Setup neobrutalist styling
+
 setup_chart_style(style='light', dpi=150)
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Data
+
 categories = ['Death Toilet\n(War + Disease)', 'Curing Diseases']
 values = [119000, 68]  # In billions for proper scale
 colors = [COLOR_BLACK, COLOR_WHITE]
 hatches = [None, PATTERN_DIAGONAL]
 
 # Use LINEAR scale to show TRUE disparity - no hiding the insanity!
+
 bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_BLACK, linewidth=4, width=0.6)
 
 # Add hatching patterns
+
 for bar, hatch in zip(bars, hatches):
     bar.set_hatch(hatch)
 
 # Add value labels
+
 for i, (bar, value) in enumerate(zip(bars, values)):
     height = bar.get_height()
     if value > 1000:
@@ -77,6 +85,7 @@ for i, (bar, value) in enumerate(zip(bars, values)):
                    arrowprops=dict(arrowstyle='->', lw=3, color=COLOR_BLACK))
 
 # Style the axes - LINEAR SCALE SHOWS THE TRUTH
+
 ax.set_ylim(0, 130000)
 ax.set_yticks([])  # Remove y-axis - values are on the bars
 ax.tick_params(colors=COLOR_BLACK, labelsize=20)
@@ -86,21 +95,26 @@ ax.spines['bottom'].set_color(COLOR_BLACK)
 ax.spines['bottom'].set_linewidth(4)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save in brain/figures directory
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'military-vs-medical-spending-ratio-bar-chart.png'
 
 # Save the figure
+
 plt.savefig(output_path, dpi=300, bbox_inches=None, facecolor='white')
 
 # Add metadata for attribution
+
 add_png_metadata(output_path, title="Military Vs Medical Spending Ratio Bar Chart")
 plt.show()
 
 # Print the brutal truth
+
 print("\n📊 THE INSANE RATIO:")
 print(f"• Death Toilet (war + disease): $119 TRILLION")
 print(f"• Curing Diseases: $68 billion")

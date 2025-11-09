@@ -1,5 +1,5 @@
 ---
-title: "Life Expectancy: Before and After 1962 Efficacy Amendment"
+title: 'Life Expectancy: Before and After 1962 Efficacy Amendment'
 format:
   html:
     code-fold: true
@@ -11,6 +11,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -29,12 +30,14 @@ from pathlib import Path
 import sys
 
 # Find project root dynamically
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
         project_root = project_root.parent
 
 # Add brain/figures to path for imports
+
 sys.path.insert(0, str(project_root / 'brain' / 'figures'))
 
 from _chart_style import (
@@ -43,37 +46,45 @@ from _chart_style import (
 )
 
 # Setup styling
+
 setup_chart_style()
 
 # Load data
+
 data_path = project_root / 'assets' / 'extracted-fda-data' / 'historical-life-expectancy-fda-budget-drug-costs-1901-2000.csv'
 df = pd.read_csv(data_path)
 
 # Extract year and life expectancy columns - combine pre and post FDA
+
 years = df['Year'].values
 df['Life_Expectancy'] = df['Life Expectancy Post-FDA'].fillna(df['Life Expectancy Pre-FDA'])
 life_exp = df['Life_Expectancy'].values
 
 # Split at 1962 efficacy amendment
+
 efficacy_year = 1962
 mask_before_1962 = (df['Year'] < efficacy_year) & df['Life_Expectancy'].notna()
 mask_after_1962 = (df['Year'] >= efficacy_year) & df['Life_Expectancy'].notna()
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(12, 7))
 
 # Plot Before 1962 (1901-1961)
+
 ax.plot(years[mask_before_1962], life_exp[mask_before_1962],
         color=COLOR_BLACK, linewidth=3, linestyle='--',
         label='Before Efficacy Requirement (1901-1961)', marker='o', markersize=3, markevery=10)
 
 # Plot After 1962 (1962-2000)
+
 ax.plot(years[mask_after_1962], life_exp[mask_after_1962],
         color=COLOR_BLACK, linewidth=3, linestyle='-',
         label='After Efficacy Requirement (1962-2000)', marker='s', markersize=3, markevery=5)
 
 # Calculate and plot trendlines
 # Before 1962 trendline
+
 years_before = years[mask_before_1962]
 life_exp_before = life_exp[mask_before_1962]
 if len(years_before) > 1:
@@ -85,6 +96,7 @@ if len(years_before) > 1:
             label=f'Trend Before 1962: +{z_before[0]:.2f} years/year')
 
 # After 1962 trendline
+
 years_after = years[mask_after_1962]
 life_exp_after = life_exp[mask_after_1962]
 if len(years_after) > 1:
@@ -96,6 +108,7 @@ if len(years_after) > 1:
             label=f'Trend After 1962: +{z_after[0]:.2f} years/year')
 
 # Add vertical line at 1962 efficacy amendment (main focus)
+
 ax.axvline(x=efficacy_year, color=COLOR_BLACK, linestyle=':', linewidth=3, alpha=0.7)
 ax.text(efficacy_year, 82, 'Efficacy Requirement\nAdded (1962)', ha='center', va='top',
         fontsize=14, fontweight='bold', color=COLOR_BLACK,
@@ -103,6 +116,7 @@ ax.text(efficacy_year, 82, 'Efficacy Requirement\nAdded (1962)', ha='center', va
                  edgecolor=COLOR_BLACK, linewidth=2))
 
 # Add vertical line at FDA creation (1938) - lighter for context
+
 fda_year = 1938
 ax.axvline(x=fda_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.3)
 ax.text(fda_year, 45, 'FDA Created\n(1938)', ha='center', va='bottom',
@@ -110,27 +124,33 @@ ax.text(fda_year, 45, 'FDA Created\n(1938)', ha='center', va='bottom',
         alpha=0.7)
 
 # Title and labels
+
 ax.set_title('Life Expectancy Gains Slowed\nAfter 1962 Efficacy Requirement',
              fontsize=32, fontweight='bold', pad=20)
 ax.set_xlabel('Year', fontsize=22, fontweight='bold')
 ax.set_ylabel('Life Expectancy (years)', fontsize=22, fontweight='bold')
 
 # Set y-axis limits
+
 ax.set_ylim(40, 85)
 
 # Add legend (moved to upper left to accommodate trendlines)
+
 ax.legend(fontsize=12, loc='upper left', frameon=True,
           facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, framealpha=0.95)
 
 # Style axes
+
 ax.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
 ax.tick_params(labelsize=16)
 clean_spines(ax)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save figure
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'life-expectancy-before-after-fda-line-chart.png',
@@ -140,7 +160,7 @@ plt.show()
 
 This chart shows life expectancy trends from 1901-2000, split at the critical 1962 efficacy amendment. The data is divided into two periods: before the efficacy requirement (1901-1961, dashed line) and after (1962-2000, solid line). Subtle gray trendlines show the linear regression for each period, making the slope difference clear.
 
-**Key Insights:**
+## Key Insights
 
 - **Trendlines reveal the slowdown:** The before-1962 trendline has a steeper slope, showing faster annual gains
 - **1962 marks the turning point:** Life expectancy gains slowed dramatically after the efficacy requirement was added

@@ -2,6 +2,19 @@
 title: Disease Eradication Model - Lifetime Wealth Sensitivity Analysis - Tornado Chart
 description: Tornado chart showing which parameters have the largest impact on personal lifetime wealth from the 1% Treaty under Disease Eradication Model (72yr life extension)
 ---
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
 
 ```{python}
 #| echo: false
@@ -11,12 +24,14 @@ from pathlib import Path
 import sys
 
 # Find project root dynamically
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
         project_root = project_root.parent
 
 # Add paths
+
 sys.path.insert(0, str(project_root / 'brain' / 'book' / 'appendix'))
 sys.path.insert(0, str(project_root / 'brain' / 'figures'))
 
@@ -29,6 +44,7 @@ from _chart_style import (
 setup_chart_style()
 
 # Base case using Disease Eradication Model: Age 30, 1% Treaty, 20-year scenario (72yr life extension)
+
 base_case = calculate_personal_lifetime_wealth_disease_eradication(
     treaty_pct=0.01,
     current_age=30,
@@ -44,41 +60,49 @@ base_value = base_case['total_lifetime_benefit']
 sensitivity_results = []
 
 # 1. Treaty Percentage (0.5% to 5%)
+
 low = calculate_personal_lifetime_wealth_disease_eradication(treaty_pct=0.005, current_age=30, annual_income=50000, years_elapsed=20, discount_rate=0.03)
 high = calculate_personal_lifetime_wealth_disease_eradication(treaty_pct=0.05, current_age=30, annual_income=50000, years_elapsed=20, discount_rate=0.03)
 sensitivity_results.append(('Treaty %', low['total_lifetime_benefit'], high['total_lifetime_benefit'], '0.5% to 5%'))
 
 # 2. Annual Income ($30K to $100K)
+
 low = calculate_personal_lifetime_wealth_disease_eradication(treaty_pct=0.01, current_age=30, annual_income=30000, years_elapsed=20, discount_rate=0.03)
 high = calculate_personal_lifetime_wealth_disease_eradication(treaty_pct=0.01, current_age=30, annual_income=100000, years_elapsed=20, discount_rate=0.03)
 sensitivity_results.append(('Annual Income', low['total_lifetime_benefit'], high['total_lifetime_benefit'], '$30K to $100K'))
 
 # 3. Discount Rate (2% to 5%)
+
 low = calculate_personal_lifetime_wealth_disease_eradication(treaty_pct=0.01, current_age=30, annual_income=50000, years_elapsed=20, discount_rate=0.02)
 high = calculate_personal_lifetime_wealth_disease_eradication(treaty_pct=0.01, current_age=30, annual_income=50000, years_elapsed=20, discount_rate=0.05)
 sensitivity_results.append(('Discount Rate', low['total_lifetime_benefit'], high['total_lifetime_benefit'], '2% to 5%'))
 
 # 4. Current Age (20 to 60)
+
 low = calculate_personal_lifetime_wealth_disease_eradication(treaty_pct=0.01, current_age=60, annual_income=50000, years_elapsed=20, discount_rate=0.03)
 high = calculate_personal_lifetime_wealth_disease_eradication(treaty_pct=0.01, current_age=20, annual_income=50000, years_elapsed=20, discount_rate=0.03)
 sensitivity_results.append(('Current Age', low['total_lifetime_benefit'], high['total_lifetime_benefit'], '60 to 20'))
 
 # Calculate the range for each parameter and store actual values
+
 tornado_data = []
 for name, low_val, high_val, range_desc in sensitivity_results:
     total_range = abs(high_val - low_val)
     tornado_data.append((name, low_val, high_val, total_range, range_desc))
 
 # Sort by total range (largest impact first)
+
 tornado_data.sort(key=lambda x: x[3], reverse=True)
 
 # Extract data for plotting
+
 parameter_names = [x[0] for x in tornado_data]
 low_values = [x[1] for x in tornado_data]
 high_values = [x[2] for x in tornado_data]
 range_descriptions = [x[4] for x in tornado_data]
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(14, 10))
 
 y_positions = np.arange(len(parameter_names))
@@ -87,6 +111,7 @@ bar_height = 0.7
 # Plot bars from base_value to low/high values
 # Left bars: from low_value to base_value (hatched)
 # Right bars: from base_value to high_value (solid)
+
 for i, (low_val, high_val) in enumerate(zip(low_values, high_values)):
     # Left bar (low case) - from low_val to base_value
     width_left = base_value - low_val
@@ -100,6 +125,7 @@ for i, (low_val, high_val) in enumerate(zip(low_values, high_values)):
             color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
 
 # Add value labels on the bars
+
 for i, (low, high, param, range_desc) in enumerate(zip(low_values, high_values, parameter_names, range_descriptions)):
     # Low value label (left side)
     ax.text(low - 200000, i, f'${low/1000000:.1f}M',
@@ -114,12 +140,14 @@ for i, (low, high, param, range_desc) in enumerate(zip(low_values, high_values, 
             ha='center', va='top', fontsize=14, color=COLOR_BLACK, style='italic')
 
 # Vertical line at base case with label
+
 ax.axvline(x=base_value, color=COLOR_BLACK, linewidth=2, linestyle='-', zorder=0)
 ax.text(base_value, len(parameter_names) - 0.5, f'  Base Case\n  ${base_value/1000000:.1f}M',
         ha='left', va='bottom', fontsize=16, weight='bold',
         bbox=dict(boxstyle='round,pad=0.4', facecolor='yellow', edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Labels and title
+
 ax.set_yticks(y_positions)
 ax.set_yticklabels(parameter_names, fontsize=24, weight='bold')
 ax.set_xlabel(f'Total Lifetime Wealth (Base Case: ${base_value/1000000:.1f}M)', fontsize=22, weight='bold')
@@ -127,18 +155,23 @@ ax.set_title('Disease Eradication Model - Personal Lifetime Wealth Sensitivity A
              fontsize=32, weight='bold', pad=20)
 
 # Format x-axis to show dollars in millions
+
 ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x/1000000:.1f}M'))
 
 # Clean up spines
+
 clean_spines(ax, positions=['top', 'right'])
 
 # Add grid
+
 ax.grid(True, axis='x', alpha=0.3, linestyle='--', linewidth=0.5)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save figure
+
 output_dir = get_project_root() / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'disease-eradication-lifetime-wealth-sensitivity-tornado-chart.png'
@@ -146,6 +179,7 @@ output_path = output_dir / 'disease-eradication-lifetime-wealth-sensitivity-torn
 plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 # Add metadata
+
 add_png_metadata(
     output_path,
     title="Disease Eradication Model - Personal Lifetime Wealth Sensitivity - Tornado Chart",
@@ -155,18 +189,18 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Findings:**
+## Key Findings
 
 The tornado chart shows which parameters have the largest impact on your personal lifetime wealth under the **Disease Eradication Model** (72-year life extension). The black vertical line marks the base case ($4.3M).
 
-**Reading the Chart:**
+### Reading the Chart
 
 - **Left bars (diagonal pattern):** Lifetime wealth when parameter is at LOW end of range
 - **Right bars (white):** Lifetime wealth when parameter is at HIGH end of range
 - **Width of total bar:** Indicates parameter's sensitivity (wider = more important)
 - **Black vertical line:** Base case (Age 30, $50K income, 1% treaty, 3% discount)
 
-**What the Numbers Mean:**
+#### What the Numbers Mean
 
 1. **Treaty Percentage has ENORMOUS impact** - Range from $3.6M (0.5% treaty) to $16M (5% treaty). The treaty percentage negotiated determines whether you get "just" millions or generational wealth.
 
@@ -176,7 +210,7 @@ The tornado chart shows which parameters have the largest impact on your persona
 
 4. **Current Age** - Range from $2.2M (age 60) to $5.7M (age 20). Being young means decades more compounding and life extension benefits.
 
-**How This Differs from Conservative Baseline:**
+#### How This Differs from Conservative Baseline
 
 - **Conservative**: Treaty % ranges $247K to $1M (width: $753K)
 - **Disease Eradication**: Treaty % ranges $3.6M to $16M (width: $12.4M) - **16x larger impact**

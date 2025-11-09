@@ -9,6 +9,7 @@ import sys
 import os
 
 # Import parameters
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -16,10 +17,12 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 
 # Import plotting libraries
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
 # Modern design system
+
 colors = {
     'primary': '#0066CC',
     'secondary': '#00B4D8',
@@ -56,6 +59,7 @@ def add_modern_watermark(fig):
 ```{python}
 #| echo: false
 # Create a DataFrame for the breakdown of savings
+
 savings_data = {
     'Category': [
         'Military Expenditure', 'Lost Economic Growth', 'Infrastructure Destruction', 'Human Life Losses',
@@ -78,10 +82,12 @@ savings_data = {
 savings_df = pd.DataFrame(savings_data).sort_values(by='Savings ($B)', ascending=True)
 
 # Create modern horizontal bar chart
+
 fig, ax = plt.subplots(figsize=(14, 10))
 fig.patch.set_facecolor('white')
 
 # Create a sophisticated color gradient from light to dark based on value
+
 max_val = max(savings_df['Savings ($B)'])
 bar_colors = []
 for val in savings_df['Savings ($B)']:
@@ -94,13 +100,16 @@ for val in savings_df['Savings ($B)']:
         bar_colors.append(colors['slate_light'])
 
 # Create horizontal bars
+
 bars = ax.barh(savings_df['Category'], savings_df['Savings ($B)'],
                color=bar_colors, height=0.7, alpha=0.9)
 
 # Apply modern styling
+
 apply_modern_style(ax, remove_spines=['top', 'right', 'left'], grid_axis='x')
 
 # Clean value labels positioned outside bars
+
 for i, bar in enumerate(bars):
     width = bar.get_width()
     y = bar.get_y() + bar.get_height() / 2
@@ -108,22 +117,27 @@ for i, bar in enumerate(bars):
             va='center', ha='left', fontsize=12, fontweight='600', color=colors['text'])
 
 # Modern title and labels
+
 ax.set_title('Peace Dividend Breakdown by Category', fontsize=22, fontweight='700',
              color=colors['dark'], pad=35)
 ax.set_xlabel('Annual Savings (Billions USD)', fontsize=14, color=colors['text'], labelpad=20)
 ax.set_ylabel('')
 
 # Clean axis formatting
+
 ax.set_xlim(0, max_val * 1.12)
 
 # Style tick labels
+
 ax.tick_params(axis='y', labelsize=12, colors=colors['text'])
 
 # Modern layout
+
 plt.tight_layout()
 plt.subplots_adjust(left=0.25, right=0.9, top=0.9, bottom=0.1)
 
 # Add modern watermark
+
 add_modern_watermark(fig)
 
 plt.show()

@@ -1,6 +1,6 @@
 ---
-title: "Core Economic Formulas"
-description: "Single source of truth for all DIH economic calculations"
+title: Core Economic Formulas
+description: Single source of truth for all DIH economic calculations
 format:
   html:
     code-fold: true
@@ -12,6 +12,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -29,6 +30,7 @@ from typing import Dict, Tuple
 import plotly.graph_objects as go
 
 # Global constants - UPDATE THESE TO CHANGE ALL CALCULATIONS
+
 GLOBAL_MILITARY_SPENDING = 2_443_000_000_000  # $2.443T
 GLOBAL_WAR_COST = 9_197_000_000_000  # $9.197T annually
 GLOBAL_DISEASE_COST = 109_100_000_000_000  # $109.1T annually
@@ -38,17 +40,20 @@ QALY_VALUE = 150_000  # Standard US threshold
 VSL_VALUE = 10_000_000  # Value of Statistical Life
 
 # Platform costs
+
 DFDA_ANNUAL_COST = 40_000_000  # $40M
 DIH_ANNUAL_COST = 100_000_000  # $100M
 TREATY_IMPLEMENTATION_COST = 500_000_000  # $500M
 
 # Efficiency factors
+
 TRIAL_COST_REDUCTION_CONSERVATIVE = 0.30  # 30% reduction
 TRIAL_COST_REDUCTION_BASE = 0.50  # 50% reduction
 TRIAL_COST_REDUCTION_OPTIMISTIC = 0.70  # 70% reduction
 TRIAL_COST_REDUCTION_TRANSFORMATIVE = 0.95  # 95% reduction (RECOVERY-like)
 
 # Per-patient costs
+
 TRADITIONAL_TRIAL_COST_PER_PATIENT = 80_000  # $80K average
 RECOVERY_TRIAL_COST_PER_PATIENT = 500  # $500
 DFDA_TARGET_COST_PER_PATIENT = 1_000  # $1K
@@ -93,6 +98,7 @@ def calculate_peace_dividend(reduction_percent: float = 0.01) -> Dict[str, float
     }
 
 # Calculate 1% reduction
+
 peace_dividend = calculate_peace_dividend(0.01)
 print(f"1% Peace Dividend: ${peace_dividend['total_peace_dividend']/1e9:.1f}B annually")
 print(f"Military budget available for DIH: ${peace_dividend['military_budget_redirect']/1e9:.1f}B")
@@ -142,6 +148,7 @@ def calculate_dfda_roi(
     }
 
 # Calculate base case ROI
+
 dfda_roi = calculate_dfda_roi()
 print(f"dFDA ROI: {dfda_roi['roi_ratio']:.0f}:1")
 print(f"Annual savings: ${dfda_roi['annual_savings']/1e9:.1f}B")
@@ -431,6 +438,7 @@ print(f"Development time: 17 years → 3 years")
 #| echo: false
 
 # Create summary table of all key formulas
+
 formulas_df = pd.DataFrame({
     'Formula': [
         'Peace Dividend',
@@ -471,6 +479,7 @@ formulas_df = pd.DataFrame({
 })
 
 # Display as table
+
 fig = go.Figure(data=[go.Table(
     header=dict(
         values=['<b>Economic Model</b>', '<b>Core Formula</b>', '<b>Annual Value</b>', '<b>ROI/Impact</b>'],

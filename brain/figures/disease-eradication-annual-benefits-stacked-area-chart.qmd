@@ -2,6 +2,19 @@
 title: Disease Eradication Model - Cumulative Wealth Over Lifetime (Stacked Area Chart)
 description: Shows how personal wealth accumulates over a 122-year lifetime under Disease Eradication Model (72yr life extension)
 ---
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
 
 ```{python}
 #| echo: false
@@ -11,12 +24,14 @@ from pathlib import Path
 import sys
 
 # Find project root dynamically
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
         project_root = project_root.parent
 
 # Add paths
+
 sys.path.insert(0, str(project_root / 'brain' / 'book' / 'appendix'))
 sys.path.insert(0, str(project_root / 'brain' / 'figures'))
 
@@ -32,9 +47,11 @@ from _chart_style import (
 setup_chart_style()
 
 # Constants
+
 BASELINE_LIFE_EXPECTANCY = 80  # US life expectancy without treaty
 
 # Base parameters
+
 treaty_pct = 0.01
 current_age = 30
 annual_income = 50000
@@ -42,6 +59,7 @@ discount_rate = 0.03
 years_elapsed = 20  # 20-year scenario (DEFAULT)
 
 # Get full calculation for reference
+
 full_calc = calculate_personal_lifetime_wealth_disease_eradication(
     treaty_pct=treaty_pct,
     current_age=current_age,
@@ -54,6 +72,7 @@ life_extension_years = full_calc['life_extension_years']
 total_lifespan = BASELINE_LIFE_EXPECTANCY + life_extension_years  # 80 + 72 = 152
 
 # Get component totals from NPV breakdown
+
 npv = full_calc['npv_breakdown']
 peace_dividend_total = npv['peace_dividend_total']
 healthcare_savings_total = npv['healthcare_savings_total']
@@ -64,6 +83,7 @@ extended_earnings = npv['extended_earnings']
 
 # Create smooth accumulation over lifespan
 # Model cumulative benefits as growing over lifetime
+
 years = np.linspace(current_age, total_lifespan, 500)
 progress = (years - current_age) / (total_lifespan - current_age)
 
@@ -81,6 +101,7 @@ def smooth_accumulation(progress, total_amount, accel_factor=1.0):
     return total_amount * (progress ** accel_factor)
 
 # Calculate cumulative arrays for each component
+
 cumulative_peace = smooth_accumulation(progress, peace_dividend_total, accel_factor=1.0)
 cumulative_healthcare = cumulative_peace + smooth_accumulation(progress, healthcare_savings_total, accel_factor=1.0)
 cumulative_productivity = cumulative_healthcare + smooth_accumulation(progress, productivity_gains_total, accel_factor=1.0)
@@ -88,6 +109,7 @@ cumulative_caregiver = cumulative_productivity + smooth_accumulation(progress, c
 cumulative_gdp = cumulative_caregiver + smooth_accumulation(progress, gdp_boost_benefit, accel_factor=1.5)
 
 # Extended earnings only accumulate after baseline death age (80)
+
 extended_progress = np.where(
     years > BASELINE_LIFE_EXPECTANCY,
     (years - BASELINE_LIFE_EXPECTANCY) / (total_lifespan - BASELINE_LIFE_EXPECTANCY),
@@ -96,9 +118,11 @@ extended_progress = np.where(
 cumulative_extended = cumulative_gdp + smooth_accumulation(extended_progress, extended_earnings, accel_factor=1.2)
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(18, 12))
 
 # Plot stacked areas
+
 ax.fill_between(years, 0, cumulative_peace/1000000,
                 label='Peace Dividend', color=COLOR_WHITE,
                 edgecolor=COLOR_BLACK, linewidth=1, hatch=PATTERN_HORIZONTAL*2)
@@ -124,6 +148,7 @@ ax.fill_between(years, cumulative_gdp/1000000, cumulative_extended/1000000,
                 edgecolor=COLOR_BLACK, linewidth=1.5, alpha=0.8)
 
 # Add milestone markers
+
 ax.axvline(x=80, color='red', linewidth=2, linestyle='--', alpha=0.7, zorder=10)
 ax.text(80, ax.get_ylim()[1] * 0.95, 'Baseline Death Age\n(Without Treaty)',
         ha='center', va='top', fontsize=16, weight='bold', color='red',
@@ -139,6 +164,7 @@ ax.text(120, ax.get_ylim()[1] * 0.75, 'Age 120',
         ha='center', va='top', fontsize=14, style='italic')
 
 # Add final value annotation
+
 final_value = cumulative_extended[-1]
 ax.annotate(f'Total: ${final_value/1000000:.1f}M',
             xy=(years[-1], final_value/1000000),
@@ -149,31 +175,39 @@ ax.annotate(f'Total: ${final_value/1000000:.1f}M',
             arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=2))
 
 # Labels and title
+
 ax.set_xlabel('Age (Years)', fontsize=24, weight='bold')
 ax.set_ylabel('Cumulative Lifetime Wealth (NPV, Millions)', fontsize=24, weight='bold')
 ax.set_title('Disease Eradication Model - Cumulative Wealth Over Lifetime\n(Age 30, $50K Income, 1% Treaty, 72 Years Life Extension)',
              fontsize=32, weight='bold', pad=20)
 
 # Format y-axis
+
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: f'${y:.1f}M'))
 
 # Set x-axis limits
+
 ax.set_xlim(30, total_lifespan)
 
 # Add legend
+
 ax.legend(loc='upper left', fontsize=14, frameon=True, edgecolor=COLOR_BLACK,
           facecolor=COLOR_WHITE, framealpha=0.95, ncol=2)
 
 # Clean up spines
+
 clean_spines(ax, positions=['top', 'right'])
 
 # Add grid
+
 ax.grid(True, alpha=0.2, linestyle='--', linewidth=0.5)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save figure
+
 output_dir = get_project_root() / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'disease-eradication-annual-benefits-stacked-area-chart.png'
@@ -181,6 +215,7 @@ output_path = output_dir / 'disease-eradication-annual-benefits-stacked-area-cha
 plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 # Add metadata
+
 add_png_metadata(
     output_path,
     title="Disease Eradication Model - Cumulative Wealth Over Lifetime",
@@ -190,13 +225,13 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Findings:**
+## Key Findings
 
-**The Power of Extended Life:**
+### The Power of Extended Life
 
 This chart shows how wealth accumulates over a **122-year lifetime** (age 30→152) compared to the baseline 50 years (age 30→80).
 
-**Understanding the Components:**
+#### Understanding the Components
 
 - **Peace Dividend** (horizontal lines): Direct per-capita savings from reduced war costs ($11.4 trillion × 1% ÷ 8 billion people = $14/year). Small individually but adds up over lifetime.
 - **Healthcare Savings** (diagonal lines): Reduced medical expenses as diseases are cured
@@ -205,7 +240,7 @@ This chart shows how wealth accumulates over a **122-year lifetime** (age 30→1
 - **Economic Multiplier (Military→Research)** (backslashes): Productivity gains from redirecting weapons spending to research (post-WW2: 30% military cut → 8% GDP growth). This is the LARGEST component.
 - **Extended Earnings** (black): Earnings and benefits from living 72 extra years (age 80→152)
 
-**Critical Observations:**
+#### Critical Observations
 
 1. **Extended Earnings (Black) Appears After Age 80**: The black area represents wealth you would NOT have earned if you died at age 80. This is the most direct benefit of life extension - **you're alive to continue earning and benefiting**.
 
@@ -215,7 +250,7 @@ This chart shows how wealth accumulates over a **122-year lifetime** (age 30→1
 
 4. **Healthcare & Productivity Build Steadily**: As diseases are cured over the 20-year research period, your healthcare costs drop and productivity rises. These benefits then compound over your entire remaining 100+ year lifespan.
 
-**How This Differs from Conservative Baseline:**
+#### How This Differs from Conservative Baseline
 
 - **Conservative model** (5yr extension): Chart ends at age 85, total ~$580K
 - **Disease Eradication model** (72yr extension): Chart extends to age 152, total **$4.3M**

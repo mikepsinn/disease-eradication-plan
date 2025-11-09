@@ -4,6 +4,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -23,6 +24,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Add project root to path
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
@@ -35,9 +37,11 @@ from brain.figures._chart_style import (
     add_png_metadata)
 
 # Setup styling
+
 setup_chart_style(style='light', dpi=150)
 
 # Data from the 'Humanity's Family Budget' table
+
 data = {
     'Category': [
         'Disease (Total Cost)',
@@ -64,16 +68,20 @@ data = {
 df = pd.DataFrame(data)
 
 # Sort by spending for visual impact (smallest to largest for horizontal bars)
+
 df = df.sort_values('Spending', ascending=True)
 
 # Create figure - horizontal bars work better for extreme ranges
+
 fig, ax = plt.subplots(figsize=(14, 10))
 
 # Y positions for bars
+
 y_pos = np.arange(len(df))
 bar_height = 0.75
 
 # Create bars with different patterns for different types
+
 colors = []
 patterns = []
 for t in df['Type']:
@@ -91,11 +99,13 @@ bars = ax.barh(y_pos, df['Spending'].values, bar_height,
                color=colors, edgecolor=COLOR_BLACK, linewidth=3)
 
 # Apply patterns
+
 for bar, pattern in zip(bars, patterns):
     if pattern:
         bar.set_hatch(pattern)
 
 # Add value labels (36-44pt for mobile)
+
 for i, (idx, row) in enumerate(df.iterrows()):
     value = row['Spending']
     if value >= 1:
@@ -109,24 +119,29 @@ for i, (idx, row) in enumerate(df.iterrows()):
             color=COLOR_BLACK, weight='bold')
 
 # Set y-axis labels (24pt for mobile)
+
 ax.set_yticks(y_pos)
 ax.set_yticklabels(df['Category'].values, fontsize=24, weight='bold')
 
 # Use linear scale - NO LOG SCALES per design guide
 # The extreme disparity IS the point
+
 ax.set_xlim(0, 120)
 
 # Remove x-axis labels and ticks
+
 ax.set_xticks([])
 ax.set_xlabel('')
 
 # Title (32pt per DESIGN_GUIDE)
+
 ax.set_title("Humanity's Annual Spending Priorities",
             fontsize=32, weight='bold', pad=20, color=COLOR_BLACK)
 
 # Annotation removed per user request
 
 # Add legend
+
 from matplotlib.patches import Patch
 legend_elements = [
     Patch(facecolor=COLOR_BLACK, edgecolor=COLOR_BLACK, label='Problems We Create'),
@@ -136,12 +151,15 @@ legend_elements = [
 ax.legend(handles=legend_elements, loc='lower right', fontsize=20)
 
 # Remove spines for clean look
+
 clean_spines(ax, ['top', 'right'])
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save figure
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'humanity-spending-priorities-bar-chart.png',

@@ -1,6 +1,6 @@
 ---
-title: "dFDA ROI Analysis Charts"
-description: "Reusable visualizations for dFDA cost-benefit analysis and return on investment"
+title: dFDA ROI Analysis Charts
+description: Reusable visualizations for dFDA cost-benefit analysis and return on investment
 format:
   html:
     code-fold: true
@@ -12,6 +12,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -31,6 +32,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 # Set style
+
 plt.style.use('seaborn-v0_8-darkgrid')
 sns.set_palette("husl")
 ```
@@ -44,6 +46,7 @@ sns.set_palette("husl")
 #| echo: false
 
 # Core economic metrics from analysis
+
 metrics = {
     'ROI Ratio': 463,
     'Annual R&D Savings (Billions)': 50,
@@ -55,13 +58,16 @@ metrics = {
 }
 
 # Create interactive key metrics display
+
 fig = go.Figure()
 
 # Add metric cards
+
 metric_names = list(metrics.keys())
 metric_values = list(metrics.values())
 
 # Format values for display
+
 formatted_values = []
 for name, value in metrics.items():
     if 'Billions' in name:
@@ -80,6 +86,7 @@ for name, value in metrics.items():
         formatted_values.append(str(value))
 
 # Create subplot with metric cards
+
 fig = go.Figure()
 
 for i, (name, value) in enumerate(zip(metric_names, formatted_values)):
@@ -111,6 +118,7 @@ fig.show()
 #| echo: false
 
 # Cost reduction scenarios from the analysis
+
 scenarios = pd.DataFrame({
     'Scenario': ['Conservative', 'Base Case', 'Optimistic', 'Transformative'],
     'Cost Reduction %': [30, 50, 70, 95],
@@ -118,6 +126,7 @@ scenarios = pd.DataFrame({
 })
 
 # Create waterfall chart showing progression of savings
+
 fig = go.Figure(go.Waterfall(
     name = "Cost Savings",
     orientation = "v",
@@ -150,6 +159,7 @@ fig.show()
 #| echo: false
 
 # ROI ranges based on different ecosystem costs
+
 roi_data = pd.DataFrame({
     'Cost Scenario': ['Best Case', 'Lean Ecosystem', 'Medium Case', 'Worst Case'],
     'Annual Platform Cost (Millions)': [11, 40, 60, 270],
@@ -158,9 +168,11 @@ roi_data = pd.DataFrame({
 })
 
 # Create dual-axis chart
+
 fig = go.Figure()
 
 # Add ROI bars
+
 fig.add_trace(go.Bar(
     name='ROI Ratio',
     x=roi_data['Cost Scenario'],
@@ -172,6 +184,7 @@ fig.add_trace(go.Bar(
 ))
 
 # Add NPV line
+
 fig.add_trace(go.Scatter(
     name='10-Year NPV',
     x=roi_data['Cost Scenario'],
@@ -215,6 +228,7 @@ fig.show()
 #| echo: false
 
 # QALY sources breakdown
+
 qaly_sources = pd.DataFrame({
     'Source': ['Faster Drug Access', 'New Rare Disease Treatments',
                'Enhanced Prevention', 'Reduced Trial Participation Burden',
@@ -224,6 +238,7 @@ qaly_sources = pd.DataFrame({
 })
 
 # Create donut chart
+
 fig = go.Figure(data=[go.Pie(
     labels=qaly_sources['Source'],
     values=qaly_sources['Annual QALYs'],
@@ -257,6 +272,7 @@ fig.show()
 #| echo: false
 
 # Per-patient trial costs comparison
+
 cost_comparison = pd.DataFrame({
     'Trial Type': ['Traditional Phase III', 'Current DCT Average',
                    'dFDA Infrastructure', 'RECOVERY Trial Model'],
@@ -265,6 +281,7 @@ cost_comparison = pd.DataFrame({
 })
 
 # Create bar chart with cost reduction factors
+
 fig = go.Figure()
 
 colors = ['red', 'orange', 'lightgreen', 'darkgreen']
@@ -297,6 +314,7 @@ fig.show()
 #| echo: false
 
 # Daily opportunity cost breakdown
+
 daily_costs = pd.DataFrame({
     'Category': ['Economic Waste', 'Lost QALYs Value', 'Delayed Innovation',
                  'Preventable Deaths Cost'],
@@ -305,6 +323,7 @@ daily_costs = pd.DataFrame({
 })
 
 # Create stacked area chart showing cumulative daily cost
+
 days = np.arange(1, 366)
 cumulative_costs = pd.DataFrame({
     'Day': days,
@@ -339,6 +358,7 @@ fig.update_layout(
 )
 
 # Add annotation for total annual cost
+
 fig.add_annotation(
     x=365, y=sum(cumulative_costs.iloc[-1][1:]),
     text=f"Total Annual Cost: ${sum(daily_costs['Annual Cost (Billions)'])}B",
@@ -359,6 +379,7 @@ fig.show()
 #| echo: false
 
 # 10-year investment vs returns projection
+
 years = np.arange(0, 11)
 platform_costs = np.array([40] + [40]*10)  # Initial + annual costs
 cumulative_costs = np.cumsum(platform_costs)
@@ -374,6 +395,7 @@ timeline_data = pd.DataFrame({
 })
 
 # Create line chart
+
 fig = go.Figure()
 
 fig.add_trace(go.Scatter(
@@ -404,6 +426,7 @@ fig.add_trace(go.Scatter(
 ))
 
 # Add break-even point
+
 break_even_year = 1  # Platform pays for itself after year 1
 fig.add_vline(x=break_even_year, line_dash="dot", line_color="gray",
               annotation_text="Break-even", annotation_position="top")
@@ -419,6 +442,7 @@ fig.update_layout(
 )
 
 # Add ROI annotation at year 10
+
 fig.add_annotation(
     x=10, y=net_benefit[10],
     text=f"10-Year ROI: 463:1<br>NPV: ${net_benefit[10]/1000:.1f}B",

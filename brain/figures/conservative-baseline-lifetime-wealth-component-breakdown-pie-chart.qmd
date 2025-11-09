@@ -2,6 +2,19 @@
 title: Conservative Baseline - Personal Lifetime Wealth Component Breakdown - Pie Chart
 description: Shows the relative contribution of each benefit component to total $402K lifetime wealth
 ---
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
 
 ```{python}
 #| echo: false
@@ -11,12 +24,14 @@ from pathlib import Path
 import sys
 
 # Find project root dynamically
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
         project_root = project_root.parent
 
 # Add paths
+
 sys.path.insert(0, str(project_root / 'brain' / 'book' / 'appendix'))
 sys.path.insert(0, str(project_root / 'brain' / 'figures'))
 
@@ -32,6 +47,7 @@ setup_chart_style()
 # Calculate for base case using Evidence-Based Conservative model: Age 30, $50K income, 1% Treaty
 # NOTE: This is the CONSERVATIVE baseline (antibiotic precedent, 5yr life extension)
 # For realistic estimates, see Disease Eradication Model ($2.4M-$5.8M, 34-106yr)
+
 calc = calculate_personal_lifetime_wealth_conservative_baseline(
     treaty_pct=0.01,
     current_age=30,
@@ -41,6 +57,7 @@ calc = calculate_personal_lifetime_wealth_conservative_baseline(
 )
 
 # Extract components
+
 total = calc['total_lifetime_benefit']
 components = [
     (f"Economic\nMultiplier\n(Mil→Res)\n${calc['npv_breakdown']['gdp_boost_benefit']/1000:.0f}K ({calc['npv_breakdown']['gdp_boost_benefit']/total*100:.0f}%)",
@@ -59,18 +76,22 @@ labels = [c[0] for c in components]
 sizes = [c[1] for c in components]
 
 # Use patterns for distinction
+
 patterns = [None, PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS, PATTERN_DOTS]
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(10, 8))
 
 # Create pie chart with white fills and patterns
+
 wedges, texts = ax.pie(sizes, labels=labels, startangle=90,
                         counterclock=False,
                         wedgeprops={'edgecolor': COLOR_BLACK, 'linewidth': 2},
                         textprops={'fontsize': 12, 'weight': 'bold'})
 
 # Apply patterns to wedges (white fill with black outline)
+
 for i, wedge in enumerate(wedges):
     wedge.set_facecolor(COLOR_WHITE)
     wedge.set_hatch(patterns[i])
@@ -78,16 +99,20 @@ for i, wedge in enumerate(wedges):
         wedge.set_hatch(patterns[i] * 3)  # Denser pattern
 
 # Add title
+
 ax.set_title('Where Does the $402K Come From?\nLifetime Wealth Component Breakdown (Age 30, $50K Income, 1% Treaty)',
              fontsize=32, weight='bold', pad=20)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Equal aspect ratio ensures circle
+
 ax.axis('equal')
 
 # Save figure
+
 output_dir = get_project_root() / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'conservative-baseline-lifetime-wealth-component-breakdown-pie-chart.png'
@@ -95,6 +120,7 @@ output_path = output_dir / 'conservative-baseline-lifetime-wealth-component-brea
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata
+
 add_png_metadata(
     output_path,
     title="Personal Lifetime Wealth Component Breakdown",

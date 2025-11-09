@@ -4,6 +4,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -22,6 +23,7 @@ import os
 from pathlib import Path
 
 # Add project root to path
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
@@ -36,9 +38,11 @@ from brain.figures._chart_style import (
     add_png_metadata)
 
 # Setup neobrutalist styling
+
 setup_chart_style(style='light', dpi=150)
 
 # All cost categories - what they admit vs all the hidden costs
+
 categories = [
     'Admitted\nMilitary\n$2.7T',
     'Infrastructure\nDestroyed\n$2.4T',
@@ -50,12 +54,15 @@ categories = [
 values = [2700, 2400, 500, 800, 1500, 2000]
 
 # WHITE slices with black borders
+
 colors_pie = [COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_WHITE]
 
 # Create minimalist pie chart
+
 fig, ax = plt.subplots(figsize=(14, 14))
 
 # Create pie with autopct to show labels inside wedges
+
 wedges, texts, autotexts = ax.pie(values, labels=categories, colors=colors_pie,
                                     startangle=90, counterclock=False,
                                     autopct='%1.0f%%',
@@ -65,18 +72,21 @@ wedges, texts, autotexts = ax.pie(values, labels=categories, colors=colors_pie,
                                     wedgeprops={'edgecolor': COLOR_BLACK, 'linewidth': 4})
 
 # Make percentage text black and bold (visible on white slices)
+
 for autotext in autotexts:
     autotext.set_color(COLOR_BLACK)
     autotext.set_fontsize(36)
     autotext.set_fontweight('bold')
 
 # Make label text black (outside the pie)
+
 for text in texts:
     text.set_color(COLOR_BLACK)
     text.set_fontsize(28)  # Even larger font for maximum readability
     text.set_fontweight('bold')
 
 # Add total in center
+
 total = sum(values)
 ax.text(0, 0, f'${total/1000:.1f}T\nTOTAL',
         ha='center', va='center', fontsize=64,
@@ -85,20 +95,25 @@ ax.text(0, 0, f'${total/1000:.1f}T\nTOTAL',
                   edgecolor=COLOR_BLACK, linewidth=6))
 
 # Equal aspect ratio ensures pie is circular
+
 ax.axis('equal')
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save in brain/figures directory
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'war-real-hidden-costs-breakdown.png'
 
 # Save the figure
+
 plt.savefig(output_path, dpi=300, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
+
 add_png_metadata(output_path, title="War Real Hidden Costs Breakdown")
 plt.show()
 ```

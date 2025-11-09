@@ -1,6 +1,6 @@
 ---
-title: "Risk Mitigation Mechanisms"
-description: "Risk mitigation mechanisms"
+title: Risk Mitigation Mechanisms
+description: Risk mitigation mechanisms
 format:
   html:
     code-fold: true
@@ -12,6 +12,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -28,6 +29,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 # Risk mitigation strategies from investor-risk-analysis.md
+
 risk_data = pd.DataFrame({
     'Risk Type': [
         'Fundraising Risk',
@@ -48,16 +50,19 @@ risk_data = pd.DataFrame({
 })
 
 # Create radar chart comparing risks
+
 categories = risk_data['Risk Type'].tolist()
 categories.append(categories[0])  # Close the polygon
 
 fig = go.Figure()
 
 # Traditional VC risks
+
 traditional = risk_data['Traditional VC Risk Level'].tolist()
 traditional.append(traditional[0])
 
 # Mitigated risks
+
 mitigated = risk_data['dFDA Mitigated Risk'].tolist()
 mitigated.append(mitigated[0])
 
@@ -97,6 +102,7 @@ fig.update_layout(
 fig.show()
 
 # Display mitigation strategies
+
 print("\n=== Key Risk Mitigation Innovations ===")
 for _, row in risk_data.iterrows():
     print(f"\n{row['Risk Type']}: {row['Mitigation Strategy']}")

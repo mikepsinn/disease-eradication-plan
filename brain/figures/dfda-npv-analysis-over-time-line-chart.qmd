@@ -16,6 +16,7 @@ from pathlib import Path
 
 # Import centralized chart style
 # Find project root and add to path
+
 cwd = Path.cwd()
 project_root = cwd
 if project_root.name != 'decentralized-institutes-of-health':
@@ -30,9 +31,11 @@ from brain.figures._chart_style import (
 )
 
 # Apply design guide styling
+
 setup_chart_style()
 
 # Import parameters from economic_parameters.py
+
 cwd = os.getcwd()
 if os.path.basename(cwd) == 'figures' and os.path.basename(os.path.dirname(cwd)) == 'brain':
     appendix_path = os.path.join(os.path.dirname(cwd), 'book', 'appendix')
@@ -45,6 +48,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 
 # NPV Model Parameters (from economic_parameters.py)
+
 C0 = DFDA_NPV_UPFRONT_COST_TOTAL  # $0.26975B upfront
 Cop = DFDA_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops
 Rd = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL  # $100B annual R&D spend
@@ -54,6 +58,7 @@ T = NPV_TIME_HORIZON_YEARS  # 10 years
 adoption_ramp_years = DFDA_NPV_ADOPTION_RAMP_YEARS  # 5 years to full adoption
 
 # Adoption curve function
+
 def adoption_rate(t):
     """Linear ramp from 0% to 100% over adoption_ramp_years, then constant"""
     if t == 0:
@@ -64,17 +69,20 @@ def adoption_rate(t):
         return 1.0
 
 # Calculate cumulative NPV over time
+
 years = np.arange(0, T + 1)
 cumulative_costs_npv = np.zeros(T + 1)
 cumulative_savings_npv = np.zeros(T + 1)
 cumulative_net_benefit_npv = np.zeros(T + 1)
 
 # Year 0: upfront cost only
+
 cumulative_costs_npv[0] = C0
 cumulative_savings_npv[0] = 0
 cumulative_net_benefit_npv[0] = -C0
 
 # Years 1-10: accumulate discounted costs and savings
+
 for t in range(1, T + 1):
     # Operational cost for this year (discounted to present value)
     discounted_opex = Cop / ((1 + r) ** t)
@@ -89,41 +97,50 @@ for t in range(1, T + 1):
     cumulative_net_benefit_npv[t] = cumulative_savings_npv[t] - cumulative_costs_npv[t]
 
 # Create the visualization - Mobile-friendly portrait orientation
+
 fig, ax = plt.subplots(figsize=(9, 11))
 
 # Plot three lines with different styles (black & white only)
 # Solid line for savings (primary metric)
+
 ax.plot(years, cumulative_savings_npv, marker='o', linewidth=4,
         label='Cumulative Savings (NPV)', color=COLOR_BLACK,
         markersize=9, linestyle='-')
 
 # Dashed line for costs
+
 ax.plot(years, cumulative_costs_npv, marker='s', linewidth=3.5,
         label='Cumulative Costs (NPV)', color=COLOR_BLACK,
         markersize=8, linestyle='--')
 
 # Dotted line for net benefit
+
 ax.plot(years, cumulative_net_benefit_npv, marker='^', linewidth=4,
         label='Net Benefit (NPV)', color=COLOR_BLACK,
         markersize=9, linestyle=':')
 
 # Styling - Mobile-first with larger fonts
+
 ax.set_xlabel('Year', fontsize=24, fontweight='bold', color=COLOR_BLACK)
 ax.set_ylabel('Net Present Value ($B)', fontsize=24, fontweight='bold', color=COLOR_BLACK)
 ax.set_title('dFDA Net Present Value Analysis\n8% Discount, 5-Yr Adoption Ramp',
              fontsize=28, fontweight='bold', pad=25, color=COLOR_BLACK)
 
 # Larger tick labels for mobile readability
+
 ax.tick_params(axis='both', labelsize=20)
 
 # Legend positioned to avoid chart elements
+
 ax.legend(loc='upper left', fontsize=18, framealpha=1,
          edgecolor=COLOR_BLACK, facecolor=COLOR_WHITE, borderpad=1)
 
 # Horizontal line at zero
+
 ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.7)
 
 # Add annotation for final net benefit (positioned LOWER to avoid title)
+
 final_net_benefit = cumulative_net_benefit_npv[-1]
 ax.annotate(f'10-Year\nNet Benefit:\n${final_net_benefit:.1f}B',
             xy=(T, final_net_benefit),
@@ -135,6 +152,7 @@ ax.annotate(f'10-Year\nNet Benefit:\n${final_net_benefit:.1f}B',
                           color=COLOR_BLACK, linewidth=2.5))
 
 # Add annotation for payback point (where net benefit crosses zero)
+
 payback_idx = np.where(cumulative_net_benefit_npv > 0)[0]
 if len(payback_idx) > 0:
     payback_year = years[payback_idx[0]]
@@ -148,21 +166,26 @@ if len(payback_idx) > 0:
                 arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, linewidth=2))
 
 # Clean up spines (remove top and right)
+
 clean_spines(ax)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG with metadata (Design Guide requirement)
+
 project_root = get_project_root()
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'dfda-npv-analysis-over-time-line-chart.png'
 
 # Save with proper settings (no tight_layout, bbox_inches=None)
+
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
+
 add_png_metadata(
     output_path,
     title="dFDA Net Present Value Analysis Over Time",
@@ -172,6 +195,7 @@ add_png_metadata(
 plt.show()
 
 # Print key metrics
+
 print(f"\nNPV Analysis Summary:")
 print(f"  Total Costs (NPV):   ${cumulative_costs_npv[-1]:,.2f}B")
 print(f"  Total Savings (NPV): ${cumulative_savings_npv[-1]:,.2f}B")

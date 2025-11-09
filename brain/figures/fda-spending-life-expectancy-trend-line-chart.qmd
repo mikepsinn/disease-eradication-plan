@@ -1,5 +1,5 @@
 ---
-title: "FDA Spending vs Life Expectancy Trends"
+title: FDA Spending vs Life Expectancy Trends
 format:
   html:
     code-fold: true
@@ -11,6 +11,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -29,12 +30,14 @@ from pathlib import Path
 import sys
 
 # Find project root dynamically
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
         project_root = project_root.parent
 
 # Add brain/figures to path for imports
+
 sys.path.insert(0, str(project_root / 'brain' / 'figures'))
 
 from _chart_style import (
@@ -43,19 +46,23 @@ from _chart_style import (
 )
 
 # Setup styling
+
 setup_chart_style()
 
 # Load data
+
 data_path = project_root / 'assets' / 'extracted-fda-data' / 'historical-life-expectancy-fda-budget-drug-costs-1901-2000.csv'
 df = pd.read_csv(data_path)
 
 # Extract year and life expectancy columns
 # Columns: Year, Life Expectancy Pre-FDA, Life Expectancy Post-FDA, FDA Budget (Inflation Adjusted to 2020 USD)
+
 years = df['Year'].values
 life_exp_pre = df['Life Expectancy Pre-FDA'].values
 life_exp_post = df['Life Expectancy Post-FDA'].values
 
 # Extract FDA budget - clean the data
+
 fda_budget_str = df['FDA Budget (Inflation Adjusted to 2020 USD)'].values
 fda_budget = []
 for val in fda_budget_str:
@@ -72,10 +79,12 @@ for val in fda_budget_str:
 fda_budget = np.array(fda_budget)
 
 # Create figure with two y-axes
+
 fig, ax1 = plt.subplots(figsize=(12, 7))
 ax2 = ax1.twinx()  # Create secondary y-axis
 
 # Plot Life Expectancy on left axis (ax1)
+
 pre_fda_mask = ~pd.isna(life_exp_pre)
 line1 = ax1.plot(years[pre_fda_mask], life_exp_pre[pre_fda_mask],
                  color=COLOR_BLACK, linewidth=3, linestyle='--',
@@ -87,12 +96,14 @@ line2 = ax1.plot(years[post_fda_mask], life_exp_post[post_fda_mask],
                  label='Life Expectancy (After FDA)', marker='s', markersize=3, markevery=5)
 
 # Plot FDA Budget on right axis (ax2) - only where we have data
+
 fda_budget_mask = fda_budget > 0
 line3 = ax2.plot(years[fda_budget_mask], fda_budget[fda_budget_mask],
                  color='#666666', linewidth=4, linestyle='-',
                  label='FDA Budget (Millions, 2020 USD)', marker='D', markersize=4, markevery=3)
 
 # Add vertical lines for regulatory milestones
+
 fda_year = 1938
 ax1.axvline(x=fda_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
 ax1.text(fda_year, 82, 'FDA Created\n1938', ha='center', va='top',
@@ -104,6 +115,7 @@ ax1.text(efficacy_year, 82, 'Efficacy Requirement\nAdded (1962)', ha='center', v
          fontsize=11, fontweight='bold', color=COLOR_BLACK)
 
 # Title and labels
+
 ax1.set_title('FDA Spending vs Life Expectancy: 1901-2000',
               fontsize=32, fontweight='bold', pad=20)
 ax1.set_xlabel('Year', fontsize=22, fontweight='bold')
@@ -111,9 +123,11 @@ ax1.set_ylabel('Life Expectancy (years)', fontsize=22, fontweight='bold', color=
 ax2.set_ylabel('FDA Budget (Millions, 2020 USD)', fontsize=22, fontweight='bold', color='#666666')
 
 # Set y-axis limits
+
 ax1.set_ylim(40, 85)
 
 # Combine legends from both axes
+
 lines1, labels1 = ax1.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
 ax1.legend(lines1 + lines2, labels1 + labels2,
@@ -121,6 +135,7 @@ ax1.legend(lines1 + lines2, labels1 + labels2,
            facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK)
 
 # Style axes
+
 ax1.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
 ax1.tick_params(axis='both', labelsize=14, colors=COLOR_BLACK)
 ax2.tick_params(axis='y', labelsize=14, colors='#666666')
@@ -128,9 +143,11 @@ clean_spines(ax1)
 clean_spines(ax2)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save figure
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_dir / 'fda-spending-life-expectancy-trend-line-chart.png',
@@ -140,7 +157,7 @@ plt.show()
 
 This chart shows both life expectancy trends (left axis) and FDA budget spending in millions of 2020 USD (right axis) from 1901-2000. Two vertical lines mark major regulatory milestones: FDA creation in 1938 and the 1962 efficacy amendment.
 
-**Key Insights:**
+## Key Insights
 
 - Life expectancy increased steadily throughout the century
 - FDA budget spending exploded exponentially, especially after 1962

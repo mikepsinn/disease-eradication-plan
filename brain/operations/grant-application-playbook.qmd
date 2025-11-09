@@ -15,6 +15,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -56,6 +57,7 @@ First, you need to expand your `DIH Command & Control` Airtable base to manage t
   - `Awarded` (They fell for it!)
   - `Rejected` (They saw through it)
   - `Reporting Due` (Now we have to prove we did something)
+
 - `Amount Requested` (Currency)
 - `Amount Awarded` (Currency)
 - `Submission Deadline` (Date)
@@ -83,17 +85,17 @@ First, you need to expand your `DIH Command & Control` Airtable base to manage t
 
 Your first job is to build a list of foundations that might be crazy enough to fund you.
 
-**How to find them:**
+#### How to find them
 
 1.  **Google is your friend:** Search for "foundations funding global health," "grants for medical innovation," "funding for political advocacy."
 2.  **Spy on similar organizations:** Find a nonprofit you admire/hate and look up who funds them (they usually list this on their website to brag).
 3.  **Use the tools:** If you had money (which you don't), you'd use services like Foundation Directory Online or GrantStation. For now, stick to Google.
 
-**What to look for:**
+#### What to look for
 
--   **Mission Alignment:** Do they use words like "transformative," "systemic change," or "high-risk, high-reward"?
--   **History:** Have they ever funded something that wasn't incredibly safe and boring?
--   **Size:** Is their typical grant size big enough to be worth your time?
+- **Mission Alignment:** Do they use words like "transformative," "systemic change," or "high-risk, high-reward"?
+- **History:** Have they ever funded something that wasn't incredibly safe and boring?
+- **Size:** Is their typical grant size big enough to be worth your time?
 
 **Your Action:** Populate the `Foundations & Funders` table with at least 50 prospects.
 
@@ -101,7 +103,7 @@ Your first job is to build a list of foundations that might be crazy enough to f
 
 You are not asking for money to "end disease." That's too big and scary. You are asking for money to fund a very specific, measurable project:
 
-**The Project: The Global Referendum Campaign**
+#### The Project: The Global Referendum Campaign
 
 This is the perfect "ask" for a grant because it's a discrete project with a clear goal.
 
@@ -109,9 +111,9 @@ This is the perfect "ask" for a grant because it's a discrete project with a cle
 
 You're asking for a slice of this pie. Tailor your ask to the foundation's size.
 
--   **For a small foundation ($50k ask):** "Fund our social media campaign in Southeast Asia for one year."
--   **For a medium foundation ($500k ask):** "Fund the development of our referendum voting platform and its security audit."
--   **For a large foundation ($5M ask):** "Fund our entire lobbying and media effort in the EU for two years."
+- **For a small foundation ($50k ask):** "Fund our social media campaign in Southeast Asia for one year."
+- **For a medium foundation ($500k ask):** "Fund the development of our referendum voting platform and its security audit."
+- **For a large foundation ($5M ask):** "Fund our entire lobbying and media effort in the EU for two years."
 
 **Your Action:** Create a one-page project summary for the Global Referendum Campaign that you can customize for each application.
 

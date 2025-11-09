@@ -1,6 +1,6 @@
 ---
-title: "DCT Platform Market Comparables"
-description: "DCT market analysis"
+title: DCT Platform Market Comparables
+description: DCT market analysis
 format:
   html:
     code-fold: true
@@ -12,6 +12,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -28,6 +29,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 # Data from dfda-cost-benefit-analysis.md
+
 dct_companies = pd.DataFrame({
     'Company': ['Medable', 'Science 37', 'Thread', 'uMotif', 'dFDA (Target)'],
     'Total Raised (Millions)': [521, 40, 50, 25.5, 40],
@@ -37,6 +39,7 @@ dct_companies = pd.DataFrame({
 })
 
 # Create bar chart of funding
+
 fig = go.Figure()
 
 colors = ['darkgreen' if x == 'Medable' else 'lightgreen' if x == 'dFDA (Target)' else 'gray'

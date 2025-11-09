@@ -4,6 +4,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -20,6 +21,7 @@ import os
 from pathlib import Path
 
 # Add project root to path (find it relative to current working directory)
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
@@ -33,19 +35,23 @@ from brain.figures._chart_style import (
 )
 
 # Setup styling
+
 setup_chart_style(style='light', dpi=150)
 
 # Data
 # Sources: S&P 500 (historical avg), Real Estate (avg appreciation),
 # Venture Capital (industry avg), Medallion Fund (brain/book/references.qmd),
 # Cocaine (UN estimates), VICTORY Bonds (brain/book/economics/victory-bonds.qmd)
+
 investments = ['S&P 500', 'Real Estate', 'Venture\nCapital', 'Medallion\nFund', 'Cocaine\nTrafficking', 'VICTORY\nBonds']
 returns = [10, 15, 25, 39, 90, 270]
 
 # Create chart
+
 fig, ax = plt.subplots(figsize=(14, 10))
 
 # White bars with black outline for comparison items, solid black for VICTORY Bonds (emphasis)
+
 bars = []
 for i, ret in enumerate(returns):
     if i == len(returns) - 1:  # Last item (VICTORY Bonds) - solid black for emphasis
@@ -55,6 +61,7 @@ for i, ret in enumerate(returns):
     bars.append(bar)
 
 # Add value labels
+
 for i, (bar, ret) in enumerate(zip(bars, returns)):
     width = bar[0].get_width()
     # White text on black bar (VICTORY Bonds), black text on white bars (others)
@@ -69,13 +76,16 @@ for i, (bar, ret) in enumerate(zip(bars, returns)):
 
 # Add title (36pt for presentation/large format - must be larger than axis labels but smaller than data values)
 # Use figure.suptitle instead of ax.set_title to center over entire figure including y-axis labels
+
 fig.suptitle('Annual Returns from Various Investments', fontsize=36, weight='bold', color=COLOR_BLACK, y=0.98)
 
 # Set y-axis labels
+
 ax.set_yticks(range(len(investments)))
 ax.set_yticklabels(investments)
 
 # Remove x-axis (labels are on the bars per design guide)
+
 ax.set_xlim(0, 300)
 ax.tick_params(axis='y', labelsize=36, colors=COLOR_BLACK)
 ax.tick_params(axis='x', length=0, labelsize=0)  # Hide x-axis ticks and labels
@@ -86,19 +96,23 @@ clean_spines(ax)
 # ax.grid(axis='x', alpha=0.3, linestyle='--', color=COLOR_BLACK)
 
 # Add branding
+
 add_watermark(fig)
 
 #plt.tight_layout()  # Disabled - using rcParams margins instead
 
 # Save in brain/figures directory
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'victory-bonds-roi-projection-bar-chart.png'
 
 # Save the figure
+
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution (post-processing step)
+
 add_png_metadata(
     output_path,
     title="Annual Returns from Various Investments",

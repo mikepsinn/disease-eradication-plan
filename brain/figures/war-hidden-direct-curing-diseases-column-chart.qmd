@@ -4,6 +4,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -20,6 +21,7 @@ import os
 from pathlib import Path
 
 # Add project root to path (find it relative to current working directory)
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
@@ -36,39 +38,48 @@ from brain.figures._chart_style import (
     add_png_metadata)
 
 # Setup styling with higher DPI for crisper text
+
 setup_chart_style(style='light', dpi=200)
 
 # War costs breakdown (from cost-of-war.qmd)
+
 war_direct = 2720  # Direct military spending
 
 # Indirect/externality costs
+
 war_infrastructure = 1875  # Infrastructure destruction
 war_lives_trade = 1616  # Human life losses + trade disruption ($1000B + $616B)
 war_longterm = 3538  # Lost growth, veterans, refugees, environment
 war_indirect_total = war_infrastructure + war_lives_trade + war_longterm
 
 # Total war cost
+
 total_war = war_indirect_total + war_direct
 
 # Cure research
+
 cure_research = 68  # Global government medical research spending
 
 categories = ['War\'s Hidden\nCosts', 'War Direct\nSpending', 'Curing\nDiseases']
 
 # Create figure with more vertical space
+
 fig, ax = plt.subplots(figsize=(30, 16))
 
 # Plot single solid bar for indirect war costs (white bar with black text)
+
 bar1 = ax.bar(0, war_indirect_total, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
                linewidth=4, width=0.75)
 
 # Add large total at top - no decimal
+
 ax.text(0, war_indirect_total * 0.92, f'${war_indirect_total/1000:.0f}T', ha='center', va='center',
         fontsize=72, weight='bold', color=COLOR_BLACK)
 ax.text(0, war_indirect_total * 0.82, 'Indirect War Costs', ha='center', va='center',
         fontsize=40, weight='bold', color=COLOR_BLACK)
 
 # Add breakdown text with better formatting - rounded numbers
+
 breakdown_text = (
     '3 MILLION DEAD CIVILIANS\n'
     '$2 TRILLION IN RUBBLE\n'
@@ -83,6 +94,7 @@ ax.text(0, war_indirect_total * 0.4, breakdown_text, ha='center', va='center',
         fontfamily='monospace')
 
 # Plot direct military spending bar (diagonal pattern)
+
 bar2 = ax.bar(1, war_direct, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
                linewidth=4, width=0.75, hatch='///')
 ax.text(1, war_direct * 0.6, f'${war_direct/1000:.1f}T', ha='center', va='center',
@@ -91,38 +103,47 @@ ax.text(1, war_direct * 0.4, 'Direct Military', ha='center', va='center',
         fontsize=40, weight='bold', color=COLOR_BLACK)
 
 # Plot cure research bar (solid black)
+
 bar3 = ax.bar(2, cure_research, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
                linewidth=4, width=0.75)
 
 # Label for cure research
+
 ax.text(2, cure_research + (war_indirect_total * 0.02), '$68B\nCuring Diseases', ha='center', va='bottom',
         fontsize=44, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 
 
 # Remove all axis labels and ticks (all columns are labeled with amounts)
+
 ax.set_xticks([])
 ax.set_xticklabels([])
 ax.set_yticks([])
 ax.set_yticklabels([])
 
 # Remove all spines for ultra-clean look
+
 clean_spines(ax, ['top', 'right', 'left', 'bottom'])
 
 # Set y-axis limits to show the full scale
+
 ax.set_ylim(0, war_indirect_total * 1.15)
 
 # Add branding
+
 add_watermark(fig)
 
 # Save in brain/figures directory with higher quality
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'war-hidden-direct-curing-diseases-column-chart.png'
 
 # Save the figure
+
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
+
 add_png_metadata(output_path, title="War Hidden Direct Curing Diseases Column Chart")
 plt.show()
 ```

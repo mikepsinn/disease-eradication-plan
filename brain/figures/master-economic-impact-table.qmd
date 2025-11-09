@@ -1,6 +1,6 @@
 ---
-title: "Master Economic Impact Table"
-description: "Master economic impact table"
+title: Master Economic Impact Table
+description: Master economic impact table
 format:
   html:
     code-fold: true
@@ -12,6 +12,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -29,9 +30,11 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 # Set up formatting
+
 pd.options.display.float_format = '{:,.0f}'.format
 
 # Comprehensive economic impact data from all analyses
+
 economic_impacts = pd.DataFrame({
     'Source': [
         '1% Treaty Peace Dividend',
@@ -88,6 +91,7 @@ economic_impacts = pd.DataFrame({
 })
 
 # Calculate ROI where missing
+
 mask = economic_impacts['ROI Ratio'].isna()
 economic_impacts.loc[mask, 'ROI Ratio'] = (
     economic_impacts.loc[mask, 'Annual Value (Billions)'] * 1000 /
@@ -95,6 +99,7 @@ economic_impacts.loc[mask, 'ROI Ratio'] = (
 ).round(0)
 
 # Create interactive table
+
 fig = go.Figure(data=[go.Table(
     header=dict(
         values=['<b>Economic Impact Source</b>',

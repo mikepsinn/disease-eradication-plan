@@ -4,6 +4,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -20,6 +21,7 @@ import os
 from pathlib import Path
 
 # Add project root to path (find it relative to current working directory)
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
@@ -34,19 +36,23 @@ from brain.figures._chart_style import (
     add_png_metadata)
 
 # Setup styling
+
 setup_chart_style(style='light', dpi=150)
 
 # Create flow diagram
+
 fig, ax = plt.subplots(figsize=(22, 12))
 ax.set_xlim(0, 10)
 ax.set_ylim(0, 10)
 ax.axis('off')
 
 # Add title - MANDATORY per DESIGN_GUIDE
+
 fig.text(0.5, 0.95, 'Money Flow: From Treaty to Impact', fontsize=36,
          ha='center', va='top', weight='bold', color=COLOR_BLACK)
 
 # Define positions and boxes - use BLACK for all
+
 boxes = [
     {'pos': (1, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\n$27B/year', 'color': COLOR_BLACK},
     {'pos': (3.5, 5), 'size': (1.5, 1.2), 'text': 'DIH\nTreasury', 'color': COLOR_BLACK},
@@ -59,6 +65,7 @@ boxes = [
 ]
 
 # Draw boxes
+
 for box in boxes:
     rect = Rectangle(box['pos'], box['size'][0], box['size'][1],
                      facecolor=box['color'], edgecolor=COLOR_BLACK, linewidth=3)
@@ -67,6 +74,7 @@ for box in boxes:
             box['text'], ha='center', va='center', fontsize=28, weight='bold', color=COLOR_WHITE)
 
 # Draw arrows - black for clarity
+
 arrows = [
     ((2.5, 5.6), (3.5, 5.6)),  # Treaty -> Treasury
     ((5, 6.5), (6, 8.1)),      # Treasury -> Patient Subsidies
@@ -82,6 +90,7 @@ for arrow in arrows:
                 arrowprops=dict(arrowstyle='->', lw=6, color=COLOR_BLACK, alpha=0.6))
 
 # Add flow amounts
+
 flow_labels = [
     ((3, 5.9), '$27B'),
     ((5.3, 7), '$10B'),
@@ -94,19 +103,23 @@ for pos, label in flow_labels:
             bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2))
 
 # Add branding
+
 add_watermark(fig)
 
 # Don't use tight_layout - it overrides margins
 
 # Save in brain/figures directory
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'money-flow-diagram.png'
 
 # Save the figure
+
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
+
 add_png_metadata(output_path, title="Money Flow Diagram")
 plt.show()
 ```

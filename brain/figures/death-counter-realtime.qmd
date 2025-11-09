@@ -4,6 +4,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -19,6 +20,7 @@ from economic_parameters import *
 from IPython.display import HTML, display
 
 # Global death statistics (per second)
+
 DEATHS_PER_SECOND = 1.8  # Total global deaths
 DISEASE_DEATHS_PER_SECOND = 1.5  # Deaths from disease
 PREVENTABLE_DEATHS_PER_SECOND = 0.9  # Preventable deaths
@@ -57,18 +59,22 @@ def create_death_counter():
     return HTML(html)
 
 # Display the counter
+
 display(create_death_counter())
 
 # Also display static statistics for non-interactive viewing
+
 from IPython.display import Markdown
 display(Markdown(f"""
 ### 📊 DEATH STATISTICS (Per Second):
+
 - Total deaths: **{DEATHS_PER_SECOND}**
 - Disease deaths: **{DISEASE_DEATHS_PER_SECOND}**
 - Preventable deaths: **{PREVENTABLE_DEATHS_PER_SECOND}**
 - Children under 5: **{CHILD_DEATHS_PER_SECOND}**
 
 ### 💀 DAILY TOTALS:
+
 - **150,000** total deaths
 - **130,000** from disease
 - **80,000** preventable

@@ -132,6 +132,15 @@ export function cleanFrontmatterData(data: any): any {
  */
 export function stringifyWithFrontmatter(body: string, frontmatter: any): string {
     const cleanedFrontmatter = cleanFrontmatterData(frontmatter);
+    
+    // Check if frontmatter is empty (no keys or all values are empty/null/undefined)
+    const hasContent = cleanedFrontmatter && Object.keys(cleanedFrontmatter).length > 0;
+    
+    if (!hasContent) {
+        // No frontmatter - return body as-is
+        return body;
+    }
+    
     // Use js-yaml.dump directly with options that preserve emojis and Unicode characters
     // lineWidth: -1 prevents wrapping, which helps preserve emojis
     const yamlFrontmatter = yaml.dump(cleanedFrontmatter, {
@@ -266,9 +275,10 @@ export function programmaticFormat(content: string): string {
     '$1\n\n'
   );
 
-  // Ensure blank lines before bullet lists (unless preceded by another list item, heading, or already has blank line)
+  // Ensure blank lines before bullet lists (unless preceded by another list item, heading, code block, or already has blank line)
+  // Match: non-empty line that's not a list item, heading, or code block, followed by newline, then a list item (without blank line)
   result = result.replace(
-    /^(?![-*+]\s)(?!#{1,6}\s)(?!```|\n)([^\n]+)\n(?!\n)([-*+]\s)/gm,
+    /^(?![-*+]\s)(?!#{1,6}\s)(?!```)([^\n]+)\n(?!\n)([-*+]\s)/gm,
     '$1\n\n$2'
   );
 

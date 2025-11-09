@@ -2,6 +2,19 @@
 title: Personal Lifetime Wealth - Disease Eradication Model
 description: Disease Eradication Model showing realistic scenarios vs conservative baselines
 ---
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
 
 ```{python}
 #| echo: false
@@ -11,12 +24,14 @@ from pathlib import Path
 import sys
 
 # Find project root dynamically
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
         project_root = project_root.parent
 
 # Add paths
+
 sys.path.insert(0, str(project_root / 'brain' / 'book' / 'appendix'))
 sys.path.insert(0, str(project_root / 'brain' / 'figures'))
 
@@ -41,6 +56,7 @@ from _chart_style import (
 setup_chart_style()
 
 # Model names and totals
+
 models = [
     'Evidence-Based\nConservative\n(5yr)',
     'Evidence-Based\nModerate\n(10yr)',
@@ -69,14 +85,17 @@ life_exts = [
 ]
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(16, 8))
 
 # Create bars
+
 x_positions = np.arange(len(models))
 bars = ax.bar(x_positions, totals, width=0.7)
 
 # Style bars with patterns
 # Evidence-based models (conservative baselines)
+
 bars[0].set_facecolor(COLOR_WHITE)
 bars[0].set_edgecolor(COLOR_BLACK)
 bars[0].set_linewidth(2)
@@ -88,6 +107,7 @@ bars[1].set_linewidth(2)
 bars[1].set_hatch(PATTERN_HORIZONTAL*2)  # Horizontal = conservative
 
 # Disease eradication models (realistic)
+
 bars[2].set_facecolor(COLOR_WHITE)
 bars[2].set_edgecolor(COLOR_BLACK)
 bars[2].set_linewidth(2)
@@ -109,12 +129,14 @@ bars[5].set_linewidth(2)
 bars[5].set_hatch(PATTERN_CROSS*2)  # Cross = long-term
 
 # Add value labels on top
+
 for i, (x, total) in enumerate(zip(x_positions, totals)):
     text_color = COLOR_WHITE if i == 4 else COLOR_BLACK
     ax.text(x, total + 150000, f'${total/1000:.1f}M',
             ha='center', va='bottom', fontsize=24, weight='bold', color=COLOR_BLACK)
 
 # Add life extension annotations inside bars
+
 for i, (x, total, life_ext) in enumerate(zip(x_positions, totals, life_exts)):
     text_color = COLOR_WHITE if i == 4 else COLOR_BLACK
     y_pos = total * 0.5 if total > 1000000 else total * 0.7
@@ -123,6 +145,7 @@ for i, (x, total, life_ext) in enumerate(zip(x_positions, totals, life_exts)):
             color=text_color)
 
 # Add section labels
+
 ax.text(0.5, totals[1] * 1.3, 'Conservative Baselines\n(Antibiotic Precedent)',
         ha='center', va='bottom', fontsize=16, style='italic',
         bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
@@ -132,6 +155,7 @@ ax.text(4, totals[4] * 1.15, 'Disease Eradication Model\n(115x Cumulative Resear
         bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2))
 
 # Set labels and title
+
 ax.set_xticks(x_positions)
 ax.set_xticklabels(models, fontsize=32, weight='bold')
 ax.set_ylabel('Total Lifetime Wealth (NPV)', fontsize=32, weight='bold')
@@ -139,18 +163,23 @@ ax.set_title('Personal Lifetime Wealth: Disease Eradication Model vs Conservativ
              fontsize=32, weight='bold', pad=25)
 
 # Format y-axis
+
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: f'${y/1000000:.1f}M'))
 
 # Clean up spines
+
 clean_spines(ax, positions=['top', 'right'])
 
 # Add grid
+
 ax.grid(True, axis='y', alpha=0.3, linestyle='--', linewidth=0.5)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save figure
+
 output_dir = get_project_root() / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'disease-eradication-model-comparison.png'
@@ -158,6 +187,7 @@ output_path = output_dir / 'disease-eradication-model-comparison.png'
 plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 # Add metadata
+
 add_png_metadata(
     output_path,
     title="Disease Eradication Model vs Conservative Baselines",
@@ -192,6 +222,7 @@ These use antibiotic precedent (fundamentally understates impact):
 This is **18.5x the entire modern medical revolution (1900-2024)** which gave us +32 years life expectancy.
 
 With convergence of:
+
 - Gene therapy fixing genetic diseases
 - Epigenetics reversing cellular aging
 - Stem cells regenerating organs

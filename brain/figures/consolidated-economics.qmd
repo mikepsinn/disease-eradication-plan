@@ -1,6 +1,6 @@
 ---
-title: "Consolidated Economic Analysis"
-description: "All DIH economic models and calculations in one place"
+title: Consolidated Economic Analysis
+description: All DIH economic models and calculations in one place
 format:
   html:
     code-fold: true
@@ -12,6 +12,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -29,6 +30,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 # Set up formatting
+
 pd.options.display.float_format = '{:,.0f}'.format
 ```
 
@@ -39,6 +41,7 @@ pd.options.display.float_format = '{:,.0f}'.format
 #| echo: false
 
 # Comprehensive economic impact data from all analyses
+
 economic_impacts = pd.DataFrame({
     'Source': [
         '1% Treaty Peace Dividend',
@@ -95,6 +98,7 @@ economic_impacts = pd.DataFrame({
 })
 
 # Calculate ROI where missing
+
 mask = economic_impacts['ROI Ratio'].isna()
 economic_impacts.loc[mask, 'ROI Ratio'] = (
     economic_impacts.loc[mask, 'Annual Value (Billions)'] * 1000 /
@@ -102,6 +106,7 @@ economic_impacts.loc[mask, 'ROI Ratio'] = (
 ).round(0)
 
 # Create interactive table
+
 fig = go.Figure(data=[go.Table(
     header=dict(
         values=['<b>Economic Impact Source</b>',
@@ -143,9 +148,11 @@ fig.show()
 #| echo: false
 
 # Filter for items with ROI ratios
+
 roi_data = economic_impacts[economic_impacts['ROI Ratio'].notna()].sort_values('ROI Ratio')
 
 # Create logarithmic bar chart
+
 fig = go.Figure()
 
 colors = px.colors.sequential.Viridis_r
@@ -182,6 +189,7 @@ fig.show()
 #| echo: false
 
 # Create waterfall showing how value builds up
+
 waterfall_data = [
     ('Start', 0, 'absolute'),
     ('Treaty Peace Dividend', 92, 'relative'),
@@ -228,11 +236,13 @@ fig.show()
 #| echo: false
 
 # Create scatter plot of cost vs impact
+
 scatter_data = economic_impacts[economic_impacts['ROI Ratio'].notna()].copy()
 
 fig = go.Figure()
 
 # Add scatter points
+
 fig.add_trace(go.Scatter(
     x=scatter_data['Implementation Cost (Millions)'],
     y=scatter_data['Annual Value (Billions)'],
@@ -251,6 +261,7 @@ fig.add_trace(go.Scatter(
 ))
 
 # Add efficiency frontier line
+
 fig.add_trace(go.Scatter(
     x=[40, 640],
     y=[50, 16500],
@@ -280,6 +291,7 @@ fig.show()
 #| echo: false
 
 # Summary statistics
+
 total_value = economic_impacts['Annual Value (Billions)'].max()
 best_roi = economic_impacts['ROI Ratio'].max()
 min_cost = economic_impacts['Implementation Cost (Millions)'].min()

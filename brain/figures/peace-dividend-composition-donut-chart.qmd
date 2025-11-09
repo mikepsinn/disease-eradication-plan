@@ -9,6 +9,7 @@ import sys
 import os
 
 # Import parameters
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -16,10 +17,12 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 
 # Import plotting libraries
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
 # Modern design system
+
 colors = {
     'primary': '#0066CC',
     'secondary': '#00B4D8',
@@ -42,6 +45,7 @@ def add_modern_watermark(fig):
 ```{python}
 #| echo: false
 # Create savings data
+
 savings_data = {
     'Category': [
         'Military Expenditure', 'Lost Economic Growth', 'Infrastructure Destruction', 'Human Life Losses',
@@ -67,6 +71,7 @@ total_savings = savings_df['Savings ($B)'].sum()
 savings_df['Percentage'] = (savings_df['Savings ($B)'] / total_savings) * 100
 
 # Group small slices into 'Other'
+
 threshold = 3
 main_slices = savings_df[savings_df['Percentage'] >= threshold]
 other_slices_value = savings_df[savings_df['Percentage'] < threshold]['Savings ($B)'].sum()
@@ -84,14 +89,17 @@ else:
 plot_df = plot_df.sort_values(by='Savings ($B)', ascending=False)
 
 # Create modern donut chart
+
 fig, ax = plt.subplots(figsize=(12, 12))
 fig.patch.set_facecolor('white')
 
 # Modern color palette
+
 modern_colors = [colors['primary'], colors['secondary'], colors['success'],
                 colors['warning'], colors['slate'], colors['slate_light']]
 
 # Create donut chart
+
 wedges, texts, autotexts = ax.pie(plot_df['Savings ($B)'],
                                   labels=plot_df['Category'],
                                   autopct='%1.1f%%',
@@ -101,6 +109,7 @@ wedges, texts, autotexts = ax.pie(plot_df['Savings ($B)'],
                                   wedgeprops=dict(width=0.5, edgecolor='white', linewidth=2))
 
 # Style the text elements
+
 for text in texts:
     text.set_fontsize(13)
     text.set_fontweight('600')
@@ -112,27 +121,33 @@ for autotext in autotexts:
     autotext.set_color('white')
 
 # Add center circle for donut look
+
 centre_circle = plt.Circle((0,0), 0.6, fc='white', linewidth=2, edgecolor=colors['grid'])
 ax.add_artist(centre_circle)
 
 # Add center text
+
 ax.text(0, 0.1, 'Peace Dividend', ha='center', va='center',
         fontsize=18, fontweight='700', color=colors['dark'])
 ax.text(0, -0.1, f'${total_savings:.1f}B Annual', ha='center', va='center',
         fontsize=14, fontweight='600', color=colors['text'])
 
 # Modern title
+
 ax.set_title('Peace Dividend Composition', fontsize=22, fontweight='700',
              color=colors['dark'], pad=40)
 
 # Ensure circular shape
+
 ax.axis('equal')
 
 # Modern layout
+
 plt.tight_layout()
 plt.subplots_adjust(left=0.05, right=0.95, top=0.9, bottom=0.05)
 
 # Add modern watermark
+
 add_modern_watermark(fig)
 
 plt.show()

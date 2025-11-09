@@ -2,6 +2,19 @@
 title: Disease Eradication Model - Personal Lifetime Wealth by Treaty Percentage
 description: Line chart showing how personal lifetime wealth scales with different treaty percentages under Disease Eradication Model (72yr life extension)
 ---
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
 
 ```{python}
 #| echo: false
@@ -11,12 +24,14 @@ from pathlib import Path
 import sys
 
 # Find project root dynamically
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
         project_root = project_root.parent
 
 # Add paths
+
 sys.path.insert(0, str(project_root / 'brain' / 'book' / 'appendix'))
 sys.path.insert(0, str(project_root / 'brain' / 'figures'))
 
@@ -29,11 +44,13 @@ from _chart_style import (
 setup_chart_style()
 
 # Treaty percentages to analyze
+
 treaty_percentages = np.array([0.001, 0.0025, 0.005, 0.0075, 0.01, 0.015, 0.02, 0.03, 0.04, 0.05])
 treaty_labels = ['0.1%', '0.25%', '0.5%', '0.75%', '1%', '1.5%', '2%', '3%', '4%', '5%']
 
 # Calculate for three representative people
 # Young professional (25, $60K)
+
 young_professional = []
 for pct in treaty_percentages:
     calc = calculate_personal_lifetime_wealth_disease_eradication(
@@ -46,6 +63,7 @@ for pct in treaty_percentages:
     young_professional.append(calc['total_lifetime_benefit'])
 
 # Mid-career (40, $80K)
+
 mid_career = []
 for pct in treaty_percentages:
     calc = calculate_personal_lifetime_wealth_disease_eradication(
@@ -58,6 +76,7 @@ for pct in treaty_percentages:
     mid_career.append(calc['total_lifetime_benefit'])
 
 # Near retirement (55, $90K)
+
 near_retirement = []
 for pct in treaty_percentages:
     calc = calculate_personal_lifetime_wealth_disease_eradication(
@@ -70,9 +89,11 @@ for pct in treaty_percentages:
     near_retirement.append(calc['total_lifetime_benefit'])
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(16, 11))
 
 # Plot lines
+
 ax.plot(treaty_percentages * 100, np.array(young_professional)/1000000,
         marker='o', linewidth=3, markersize=8, color=COLOR_BLACK,
         label='Young Professional (Age 25, $60K income)')
@@ -86,6 +107,7 @@ ax.plot(treaty_percentages * 100, np.array(near_retirement)/1000000,
         linestyle=':', label='Near Retirement (Age 55, $90K income)')
 
 # Highlight 1% Treaty (the DEFAULT proposal)
+
 treaty_1pct_idx = 4  # Index of 1%
 ax.axvline(x=1.0, color='gray', linewidth=2, linestyle='--', alpha=0.5, zorder=0)
 ax.text(1.0, ax.get_ylim()[1] * 0.95, '1% Treaty\n(DEFAULT)',
@@ -94,6 +116,7 @@ ax.text(1.0, ax.get_ylim()[1] * 0.95, '1% Treaty\n(DEFAULT)',
                  edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Add value annotations at 1% point
+
 for i, (values, marker_y_offset) in enumerate([
     (young_professional, 0.3),
     (mid_career, 0.0),
@@ -109,33 +132,41 @@ for i, (values, marker_y_offset) in enumerate([
                 arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1.5))
 
 # Labels and title
+
 ax.set_xlabel('Treaty Percentage (% of Military Budget)', fontsize=24, weight='bold')
 ax.set_ylabel('Total Lifetime Wealth (NPV, Millions)', fontsize=24, weight='bold')
 ax.set_title('Disease Eradication Model - Personal Lifetime Wealth by Treaty Percentage\n(20-Year Scenario: 72 Years Life Extension)',
              fontsize=32, weight='bold', pad=20)
 
 # Format y-axis
+
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: f'${y:.1f}M'))
 
 # Format x-axis
+
 ax.set_xlim(0, 5.5)
 ax.set_xticks([0.1, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0])
 ax.set_xticklabels(treaty_labels)
 
 # Add legend
+
 ax.legend(loc='upper left', fontsize=14, frameon=True, edgecolor=COLOR_BLACK,
           facecolor=COLOR_WHITE, framealpha=1.0)
 
 # Clean up spines
+
 clean_spines(ax, positions=['top', 'right'])
 
 # Add grid
+
 ax.grid(True, alpha=0.3, linestyle='--', linewidth=0.5)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save figure
+
 output_dir = get_project_root() / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.png'
@@ -143,6 +174,7 @@ output_path = output_dir / 'disease-eradication-lifetime-wealth-by-treaty-percen
 plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 # Add metadata
+
 add_png_metadata(
     output_path,
     title="Disease Eradication Model - Personal Lifetime Wealth by Treaty Percentage",
@@ -152,9 +184,9 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Findings:**
+## Key Findings
 
-**Exponential Returns from Higher Treaty Percentages:**
+### Exponential Returns from Higher Treaty Percentages
 
 Under the Disease Eradication Model (72-year life extension), treaty percentage has MASSIVE impact:
 
@@ -162,7 +194,7 @@ Under the Disease Eradication Model (72-year life extension), treaty percentage 
 - **1% Treaty (DEFAULT)**: $4M-$6M lifetime benefit
 - **5% Treaty**: $18M-$30M lifetime benefit
 
-**Why This Differs from Conservative Baseline:**
+#### Why This Differs from Conservative Baseline
 
 1. **Logarithmic amplification**: With 72 extra years of life, even small increases in treaty percentage compound enormously through extended earnings, productivity gains, and GDP growth over the extra decades.
 
@@ -170,7 +202,7 @@ Under the Disease Eradication Model (72-year life extension), treaty percentage 
 
 3. **Young people benefit MASSIVELY more**: A 25-year-old with 5% treaty could gain $30M+ in lifetime wealth because they live 106 years (vs 80), working until age 85+ while healthy.
 
-**Political Implications:**
+#### Political Implications
 
 - Even 0.25% treaty (¼ of 1%) generates $1.5M-$2.5M per person
 - Moving from 1% to 2% nearly doubles lifetime wealth

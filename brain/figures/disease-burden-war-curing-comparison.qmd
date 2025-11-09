@@ -4,6 +4,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -20,6 +21,7 @@ import os
 from pathlib import Path
 
 # Add project root to path (find it relative to current working directory)
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':    
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
@@ -33,22 +35,27 @@ from brain.figures._chart_style import (
     add_png_metadata)
 
 # Setup styling
+
 setup_chart_style(style='light', dpi=150)
 
 # Data
+
 categories = ['Disease\nBurden', 'War &\nConflict', 'Finding\nCures']
 amounts = [109.1, 9.7, 0.068]
 colors_budget = [COLOR_BLACK, COLOR_BLACK, COLOR_WHITE]  # Use solid black and white
 
 # Create chart
+
 fig, ax = plt.subplots(figsize=(18, 10))
 bars = ax.bar(categories, amounts, color=colors_budget, width=0.6,
               edgecolor=COLOR_BLACK, linewidth=2)
 
 # Apply pattern to the third bar (Finding Cures)
+
 bars[2].set_hatch(PATTERN_DIAGONAL)
 
 # Add labels directly on/above bars with descriptions
+
 labels_with_desc = [
     ('$109T', 'Disease\nBurden'),
     ('$10T', 'War &\nConflict'),
@@ -65,6 +72,7 @@ for i, (bar, (amount_label, desc)) in enumerate(zip(bars, labels_with_desc)):
                 ha='center', va='bottom', fontsize=48, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 
 # Remove all axis labels and ticks (all columns are labeled with amounts)
+
 ax.set_xticks([])
 ax.set_xticklabels([])
 ax.set_yticks([])
@@ -73,22 +81,27 @@ ax.set_yticklabels([])
 ax.set_ylim(0, 120)
 
 # Remove all spines for ultra-clean look
+
 clean_spines(ax, ['top', 'right', 'left', 'bottom'])
 
 # Add branding
+
 add_watermark(fig)
 
 #plt.tight_layout()  # Disabled - using rcParams margins instead 
 
 # Save in brain/figures directory
+
 output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'disease-burden-war-curing-comparison.png'
 
 # Save the figure
+
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
+
 add_png_metadata(output_path, title="Disease Burden War Curing Comparison")
 plt.show()
 ```
