@@ -210,8 +210,6 @@ format:
           <meta property="og:type" content="book">
   pdf:
     documentclass: scrreprt
-    title: "The Complete Idiot's Guide to Ending War and Disease"
-    subtitle: "A Practical Guide for Humanity"
     echo: false
     toc: true
     toc-depth: 3
@@ -222,6 +220,9 @@ format:
       - bottom=1in
       - left=1in
       - right=1in
+    variables:
+      title: "The Complete Idiot's Guide to Ending War and Disease"
+      subtitle: "A Practical Guide for Humanity"
     include-in-header:
       text: |
         % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
