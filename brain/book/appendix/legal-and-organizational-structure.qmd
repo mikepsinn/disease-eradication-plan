@@ -34,23 +34,23 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-Here's the problem: This initiative needs to do three things that the law says can't be done by the same organization:
+Here's the problem: Your laws say you can't do three things with one organization:
 
-1. Accept tax-deductible donations (requires a charity)
+1. Accept tax-deductible donations (requires charity status)
 2. Lobby politicians (charities can't do this)
 3. Make money for investors (nonprofits can't do this)
 
-The solution? Don't use one organization. Use three.
+Your laws created this contradiction, not us. We're just working around it.
 
-This is not a loophole. This is how every major organization that wants to change policy works. Churches do this. Political parties do this. The NRA does this.
+The solution: Use three separate organizations.
 
-You're just doing it for curing disease instead of protecting gun rights.
+This isn't a loophole. This is how your democracy actually works. Churches do this. Political parties do this. The NRA does this. You're just doing it for curing diseases instead of protecting gun rights, which seems like an improvement but apparently requires the same legal structure.
 
 ## The Three-Entity Structure (The Legal Shell Game)
 
-The most robust approach for an initiative of this scale is to establish three separate but cooperating legal entities, each with a distinct purpose and legal permissions.
+You need three separate legal entities, each doing one thing your laws allow.
 
-They're legally separate. They work together. It's like a band where everyone has solo careers but still tours together.
+They're legally separate (to avoid prison). They cooperate toward same goal (to actually work). It's like divorced parents raising a child - separate households, common objective, lots of lawyers involved.
 
 ```{python}
 #| echo: false
