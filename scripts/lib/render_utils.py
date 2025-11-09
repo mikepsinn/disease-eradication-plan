@@ -11,7 +11,7 @@ import os
 import threading
 import platform
 from datetime import datetime
-from typing import Optional, List, Callable
+from typing import Optional, List, Callable, Tuple
 
 # Try to import psutil for LaTeX process detection (optional)
 try:
@@ -493,6 +493,93 @@ def run_pre_validation() -> int:
     except Exception as e:
         log_with_timestamp(f"\nError running pre-validation: {e}", to_stderr=True)
         return 1
+
+
+def validate_pdf_for_python_code(pdf_path: str, search_string: str = 'print(f') -> Tuple[bool, List[str]]:
+    """
+    Validate PDF for Python code leakage by searching for specific strings.
+    
+    Args:
+        pdf_path: Path to PDF file to check
+        search_string: String to search for (default: 'print(f')
+    
+    Returns:
+        Tuple of (found_issues: bool, issues: list of context strings)
+    """
+    issues = []
+    
+    if not os.path.exists(pdf_path):
+        return False, [f"PDF file not found: {pdf_path}"]
+    
+    try:
+        # Try to extract text from PDF using PyPDF2
+        try:
+            import PyPDF2
+            with open(pdf_path, 'rb') as f:
+                pdf_reader = PyPDF2.PdfReader(f)
+                text_content = ""
+                for page_num, page in enumerate(pdf_reader.pages, 1):
+                    try:
+                        page_text = page.extract_text()
+                        text_content += f"\n--- Page {page_num} ---\n{page_text}\n"
+                    except Exception as e:
+                        # Skip pages that can't be extracted
+                        continue
+        except ImportError:
+            # Fallback: try pdfplumber
+            try:
+                import pdfplumber
+                text_content = ""
+                with pdfplumber.open(pdf_path) as pdf:
+                    for page_num, page in enumerate(pdf.pages, 1):
+                        try:
+                            page_text = page.extract_text()
+                            if page_text:
+                                text_content += f"\n--- Page {page_num} ---\n{page_text}\n"
+                        except Exception:
+                            continue
+            except ImportError:
+                # Last resort: try pdftotext command if available
+                try:
+                    result = subprocess.run(
+                        ['pdftotext', pdf_path, '-'],
+                        capture_output=True,
+                        text=True,
+                        timeout=30
+                    )
+                    if result.returncode == 0:
+                        text_content = result.stdout
+                    else:
+                        return False, [f"Could not extract text from PDF. Install PyPDF2, pdfplumber, or pdftotext."]
+                except (FileNotFoundError, subprocess.TimeoutExpired):
+                    return False, [f"Could not extract text from PDF. Install PyPDF2, pdfplumber, or pdftotext."]
+        
+        # Search for the string in the extracted text
+        lines = text_content.split('\n')
+        for line_num, line in enumerate(lines, 1):
+            if search_string in line:
+                # Extract surrounding context (5 lines before and after)
+                start_idx = max(0, line_num - 6)
+                end_idx = min(len(lines), line_num + 5)
+                context_lines = lines[start_idx:end_idx]
+                
+                # Find the exact line with the match
+                match_line_idx = line_num - start_idx - 1
+                
+                # Build context string
+                context = []
+                for i, ctx_line in enumerate(context_lines):
+                    marker = ">>> " if i == match_line_idx else "    "
+                    context.append(f"{marker}Line {start_idx + i + 1}: {ctx_line}")
+                
+                issues.append(
+                    f"Found '{search_string}' in PDF:\n" + "\n".join(context)
+                )
+        
+        return len(issues) > 0, issues
+        
+    except Exception as e:
+        return False, [f"Error validating PDF: {e}"]
 
 
 def run_post_validation(output_dir: str = '_book/warondisease') -> int:

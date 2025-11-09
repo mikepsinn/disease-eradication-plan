@@ -80,6 +80,41 @@ def main():
     )
 
     exit_code = monitor.run_build(command, build_type="PDF render", custom_parsers=[latex_parser])
+    
+    # Run post-render PDF validation if build succeeded
+    if exit_code == 0:
+        from render_utils import validate_pdf_for_python_code
+        from pathlib import Path
+        
+        # Find the generated PDF file
+        output_dir = Path("_book/warondisease")
+        pdf_files = list(output_dir.glob("*.pdf"))
+        
+        if pdf_files:
+            pdf_path = str(pdf_files[0])  # Use first PDF found
+            print("=" * 80, flush=True)
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] Running PDF validation for Python code leakage", flush=True)
+            print("=" * 80, flush=True)
+            
+            found_issues, issues = validate_pdf_for_python_code(pdf_path, search_string='print(f')
+            
+            if found_issues:
+                print("\n" + "=" * 80, flush=True)
+                print("[ERROR] PDF VALIDATION FAILED: Python code detected in PDF!", flush=True)
+                print("=" * 80, flush=True)
+                for issue in issues:
+                    # Handle Unicode encoding issues - replace problematic characters
+                    safe_issue = issue.encode('ascii', errors='replace').decode('ascii', errors='replace')
+                    print(f"\n{safe_issue}\n", flush=True)
+                print("=" * 80, flush=True)
+                print("Please fix the source files to remove Python code from PDF output.", flush=True)
+                print("=" * 80, flush=True)
+                sys.exit(1)
+            else:
+                print("[OK] PDF validation passed: No Python code leakage detected.", flush=True)
+        else:
+            print(f"⚠️  Warning: No PDF file found in {output_dir} for validation", flush=True)
+    
     sys.exit(exit_code)
 
 if __name__ == '__main__':

@@ -103,7 +103,8 @@ This is the masterstroke. Instead of fighting pharma, the system makes them rich
 
 #### The Economics
 
-```python
+```{python}
+#| echo: false
 # Current Pharma Economics
 
 development_cost = 2_600_000_000  # $2.6 billion
@@ -163,7 +164,8 @@ print(f"New Pharma ROI: {roi_new:.1%}")  # 1,100% (MASSIVE PROFIT!)
 
 #### The Profit Comparison
 
-```python
+```{python}
+#| echo: false
 # Current Defense Contractor
 
 weapons_revenue = 100_000_000_000  # $100B
@@ -211,7 +213,8 @@ print(f"Total profit increase: {total_new_profit/weapons_profit:.0%}")  # 24% in
 
 #### The Billionaire's Calculation
 
-```python
+```{python}
+#| echo: false
 billionaire_investment = 100_000_000  # $100M investment
 annual_return_rate = 0.40  # 40% (conservative)
 years = 20
@@ -242,7 +245,8 @@ print(f"Total profit: ${total_return/1e9:.1f}B")
 
 #### ROI for Average Fortune 500
 
-```python
+```{python}
+#| echo: false
 employees = 50_000
 healthcare_cost_per_employee = 15_000  # Current
 reduced_cost = 15_000 * 0.4  # 60% reduction
