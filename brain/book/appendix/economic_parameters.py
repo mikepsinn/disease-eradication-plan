@@ -2307,6 +2307,7 @@ PERSONAL_WEALTH_ERADICATION_20YR_AGE_30_1PCT = calculate_personal_lifetime_wealt
     treaty_pct=0.01, current_age=30, annual_income=50000, years_elapsed=20, conservative=False
 )
 PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT = PERSONAL_WEALTH_ERADICATION_20YR_AGE_30_1PCT['total_lifetime_benefit']
+personal_lifetime_benefit_eradication_20yr_age_30_1pct_millions_formatted = f"{PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT / 1_000_000:.1f}"
 
 # 40-year scenario (approaching biological limits)
 PERSONAL_WEALTH_ERADICATION_40YR_AGE_30_1PCT = calculate_personal_lifetime_wealth_disease_eradication(
