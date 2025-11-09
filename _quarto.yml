@@ -158,12 +158,6 @@ book:
         - brain/book/appendix/free-rider-solution.qmd # ✅ (IMPROVED) ~3p
         - brain/book/appendix/verification-and-fraud-prevention.qmd # ✅ (technical spec, appropriate) ~5p
 
-    # Background Theory
-    - part: "Theory & Concepts"
-      chapters:
-        - brain/book/theory.qmd # ✅ (EXCELLENT voice) ~3p
-        - brain/book/theory/the-two-wars.qmd # ✅ (EXCELLENT voice) ~7p
-
     - part: "Additional References"
       chapters:
         - brain/book/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p

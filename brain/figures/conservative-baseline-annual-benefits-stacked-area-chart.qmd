@@ -23,7 +23,7 @@ sys.path.insert(0, str(project_root / 'brain' / 'figures'))
 from economic_parameters import (
     calculate_personal_lifetime_wealth_conservative_baseline,
     calculate_gdp_growth_boost,
-    GLOBAL_POPULATION_2024,
+    GLOBAL_POPULATION_2024_BILLIONS,
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT
 )
 from _chart_style import (
@@ -58,6 +58,8 @@ ages = np.arange(current_age, current_age + years_remaining)
 years = np.arange(years_remaining)
 
 # Annual benefits (undiscounted for clarity)
+# Convert billions to actual population
+GLOBAL_POPULATION_2024 = GLOBAL_POPULATION_2024_BILLIONS * 1_000_000_000
 peace_dividend_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024
 healthcare_annual = calc['annual_breakdown']['healthcare_savings']
 productivity_annual = calc['annual_breakdown']['productivity_gains']

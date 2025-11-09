@@ -124,8 +124,7 @@ You define ROI as the ratio of the **NPV of total savings** to the **NPV of tota
 $$
   \text{ROI}
   = \frac{\text{NPV}(\text{Savings})}{\text{NPV}(\text{Costs})}
-  = \frac{\sum_{t=1}^{T} \frac{p(t)\alpha R_{d}}{(1 + r)^t}}
-         {C_{0} + \sum_{t=1}^{T} \frac{C_{\text{op}}(t)}{(1 + r)^t}}
+  = \frac{\sum_{t=1}^{T} \frac{p(t)\alpha R_{d}}{(1 + r)^t}}{C_{0} + \sum_{t=1}^{T} \frac{C_{\text{op}}(t)}{(1 + r)^t}}
 $$
 
 Alternatively, one might define a _net_ ROI (or net benefit) as:

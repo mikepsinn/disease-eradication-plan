@@ -63,7 +63,13 @@ ax1.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: f'${y/1000:.0f}K'))
 # Add key data points
 key_points = [0.01, 0.02, 0.05, 0.10]
 for pct in key_points:
-    calc = calculate_personal_lifetime_wealth(treaty_pct=pct, current_age=30, annual_income=50000, discount_rate=0.03)
+    calc = calculate_personal_lifetime_wealth_conservative_baseline(
+        treaty_pct=pct,
+        current_age=30,
+        annual_income=50000,
+        discount_rate=0.03,
+        conservative=True  # Use conservative 5-year life extension
+    )
     wealth = calc['total_lifetime_benefit']
     ax1.plot(pct * 100, wealth, 'o', color=COLOR_BLACK, markersize=8, zorder=5)
     ax1.text(pct * 100, wealth + 50000, f'{pct*100:.0f}%\n${wealth/1000:.0f}K',

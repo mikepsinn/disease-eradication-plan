@@ -127,10 +127,63 @@ GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL = 100.0  # billions USD annually
 TRIAL_COST_REDUCTION_PCT = 0.50  # 50% baseline reduction (conservative)
 TRIAL_COST_REDUCTION_FACTOR = 82  # 82x reduction proven by RECOVERY trial
 
-# Per-patient costs
+# ---
+# RESEARCH ACCELERATION MECHANISM PARAMETERS
+# Source: brain/book/appendix/research-acceleration-model.qmd
+# ---
+
+# Current System Baseline
+CURRENT_TRIALS_PER_YEAR = 3300  # Global clinical trials per year
+CURRENT_DRUG_APPROVALS_PER_YEAR = 50  # New drug approvals per year
+CURRENT_ACTIVE_TRIALS = 10000  # Active trials at any given time (3-5 year duration)
+CURRENT_TRIAL_DURATION_YEARS_RANGE = (3, 5)  # Years for large trials
+CURRENT_SMALL_TRIAL_RECRUITMENT_MONTHS_RANGE = (6, 18)  # Months to recruit 100 patients
+CURRENT_TRIAL_ABANDONMENT_RATE = 0.40  # 40% of trials never complete
+CURRENT_TRIAL_COMPLETION_RATE = 0.60  # 60% completion rate
+CURRENT_PATIENT_ELIGIBILITY_RATE = 0.002  # 0.2% of disease patients can participate
+CURRENT_TRIAL_SLOTS_AVAILABLE = 5_000_000  # Total trial slots for 2.4B sick people
+CURRENT_DISEASE_PATIENTS_GLOBAL = 2_400_000_000  # 2.4 billion people with chronic diseases
+
+# Traditional Trial Economics
+TRADITIONAL_PHASE2_COST_PER_PATIENT_LOW = 40000  # $40K per patient (low end)
+TRADITIONAL_PHASE2_COST_PER_PATIENT_HIGH = 120000  # $120K per patient (high end)
 TRADITIONAL_PHASE3_COST_PER_PATIENT = 80000  # $40k-$120k range, using midpoint
-RECOVERY_TRIAL_COST_PER_PATIENT = 500  # Proven cost from Oxford RECOVERY
+TRADITIONAL_SMALL_TRIAL_SIZE = 100  # Typical Phase 2 trial size
+TRADITIONAL_LARGE_TRIAL_SIZE = 1000  # Typical Phase 3 trial size
+
+# dFDA System Targets
+DFDA_TRIALS_PER_YEAR_CAPACITY = 380000  # Maximum trials/year possible with 115x acceleration
+DFDA_DRUG_APPROVALS_PER_YEAR_LOW = 1000  # Conservative approvals estimate (20x current)
+DFDA_DRUG_APPROVALS_PER_YEAR_HIGH = 2000  # Optimistic approvals estimate (40x current)
+DFDA_ACTIVE_TRIALS = 200000  # Active trials at any given time (3-12 month duration)
+DFDA_TRIAL_DURATION_MONTHS_RANGE = (3, 12)  # Months for typical trial completion
+DFDA_SMALL_TRIAL_RECRUITMENT_WEEKS = 3  # Weeks to recruit 1,000 patients
+DFDA_LARGE_TRIAL_RECRUITMENT_MONTHS = 3  # Months to recruit 10,000+ patients
+DFDA_TRIAL_ABANDONMENT_RATE = 0.05  # Near-zero abandonment (5%)
+DFDA_TRIAL_COMPLETION_RATE = 0.95  # 95% completion rate
+DFDA_PATIENT_ELIGIBILITY_RATE = 0.50  # 50% of disease patients can participate
+DFDA_ELIGIBLE_PATIENTS_GLOBAL = 1_200_000_000  # 1.2B eligible with minimal exclusions
+
+# dFDA Trial Economics
+RECOVERY_TRIAL_COST_PER_PATIENT = 500  # Proven cost from Oxford RECOVERY trial
 DFDA_TARGET_COST_PER_PATIENT = 1000  # Conservative target for dFDA
+DFDA_SMALL_TRIAL_SIZE = 1000  # Typical dFDA trial size
+DFDA_LARGE_TRIAL_SIZE = 10000  # Large dFDA pragmatic trial size
+
+# Research Acceleration Multipliers (Derived)
+RESEARCH_ACCELERATION_MULTIPLIER = 115  # 115x more research capacity (82x cost × 1.4x funding)
+RECRUITMENT_SPEED_MULTIPLIER = 25  # 25x faster recruitment (from 2% → 50% eligibility)
+TRIAL_COMPLETION_SPEED_MULTIPLIER = 10  # 10x faster completion (flipped incentives)
+SIMULTANEOUS_TRIALS_MULTIPLIER = 20  # 20x more trials running simultaneously
+COMPLETION_RATE_IMPROVEMENT_MULTIPLIER = 1.6  # 1.6x improvement (60% → 95%)
+COMPLETED_TRIALS_MULTIPLIER_ACTUAL = 180  # 180x more completed trials/year (theoretical)
+COMPLETED_TRIALS_MULTIPLIER_CONSERVATIVE = 115  # Conservative rating accounting for scale-up
+
+# Calculated Research Capacity
+# Traditional: 3,300 trials/year × 60% completion = ~2,000 completed/year
+CURRENT_COMPLETED_TRIALS_PER_YEAR = int(CURRENT_TRIALS_PER_YEAR * CURRENT_TRIAL_COMPLETION_RATE)  # 1,980
+# dFDA: 380,000 trials/year × 95% completion = ~360,000 completed/year
+DFDA_COMPLETED_TRIALS_PER_YEAR = int(DFDA_TRIALS_PER_YEAR_CAPACITY * DFDA_TRIAL_COMPLETION_RATE)  # 361,000
 
 # dFDA operational costs
 DFDA_ANNUAL_OPEX = 0.040  # $40M annually
@@ -883,9 +936,10 @@ def calculate_medical_progress_multiplier(treaty_pct):
     - Multiplier: 1.40 × 82 = 115x
 
     This means:
-    - Existing $67.5B becomes 82x more efficient → 270,600 trials
-    - New $27.2B at $500/patient → 54,400 trials
-    - Total: 325,000 trials vs current 3,300 = ~98-115x capacity
+    - 115x × 3,300 baseline trials = 379,500 ≈ 380,000 trials/year possible
+    - Current: ~3,300 trials/year, ~50 drug approvals/year
+    - Future: ~380,000 trials/year, ~1,000-2,000 drug approvals/year
+    - This represents 115x more research capacity
 
     Args:
         treaty_pct: Fraction of military spending redirected
