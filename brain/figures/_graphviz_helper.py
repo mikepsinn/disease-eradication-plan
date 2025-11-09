@@ -9,8 +9,22 @@ Design Guide Requirements:
 - PNG generation mandatory
 """
 
+import os
+import sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
+
+# Add Graphviz to PATH if not already there (Windows)
+if sys.platform == 'win32':
+    graphviz_paths = [
+        r'C:\Program Files\Graphviz\bin',
+        r'C:\Program Files (x86)\Graphviz\bin',
+    ]
+    current_path = os.environ.get('PATH', '')
+    for graphviz_path in graphviz_paths:
+        if os.path.exists(graphviz_path) and graphviz_path not in current_path:
+            os.environ['PATH'] = f"{graphviz_path};{current_path}"
+            break
 
 
 def get_project_root():

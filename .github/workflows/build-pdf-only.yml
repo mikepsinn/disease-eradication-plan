@@ -49,6 +49,11 @@ jobs:
         with:
           enable-cache: true
 
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
 
