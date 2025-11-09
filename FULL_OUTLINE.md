@@ -2025,7 +2025,7 @@
 
 ---
 
-## File: `brain/book/appendix/1-percent-treaty-roi-tiers.qmd`
+## File: `brain/book/appendix/research-acceleration-model.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
   - The Complete Case: 1,239:1 ROI (All Direct Benefits)

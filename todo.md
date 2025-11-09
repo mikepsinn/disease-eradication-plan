@@ -112,7 +112,7 @@ Replaced with specific, meaningful headers:
 - [x] theory.qmd
 
 ### ✅ Appendix Files (50+ files)
-- [x] appendix/1-percent-treaty-roi-tiers.qmd - "Bottom Line" → "Summary"
+- [x] appendix/research-acceleration-model.qmd - "Bottom Line" → "Summary"
 - [x] appendix/1-percent-treaty-endgame-projection.qmd - "Bottom Line" → "Conclusion"
 - [x] appendix/1-percent-treaty.qmd - "The Bottom Line: It's Not a Sacrifice" → "It's Not a Sacrifice, It's a Trade"
 - [x] appendix/1-percent-treaty-cost-effectiveness.qmd

@@ -31,7 +31,7 @@ Located in `brain/book/appendix/`:
 1. **[peace-dividend-calculations.qmd](../brain/book/appendix/peace-dividend-calculations.qmd)** - Full Jupyter notebook with math
 2. **[health-dividend-calculations.qmd](../brain/book/appendix/health-dividend-calculations.qmd)** - Full Jupyter notebook with NPV/ROI
 3. **[1-percent-treaty-cost-effectiveness.qmd](../brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd)** - Combined proof (peace + health)
-4. **[1-percent-treaty-roi-tiers.qmd](../brain/book/appendix/1-percent-treaty-roi-tiers.qmd)** - Complete Case (1,222:1 ROI) detailed analysis
+4. **[research-acceleration-model.qmd](../brain/book/appendix/research-acceleration-model.qmd)** - Complete Case (1,222:1 ROI) detailed analysis
 5. **[1-percent-treaty-endgame-projection.qmd](../brain/book/appendix/1-percent-treaty-endgame-projection.qmd)** - Endgame (25,781:1 ROI) long-term projection
 
 ### 📊 Charts
@@ -205,7 +205,7 @@ Changing one parameter updates everywhere automatically ✅
 - Combines peace dividend ($114B) + health dividend ($50B)
 **Why separate**: This is the master proof combining both dividend streams, using academic cost-effectiveness methodology
 
-### 1-percent-treaty-roi-tiers.qmd (Appendix)
+### research-acceleration-model.qmd (Appendix)
 
 **Purpose**: Detailed analysis of Complete Case (1,222:1 ROI) counting all direct benefits
 **Content**:
@@ -276,5 +276,5 @@ Changing one parameter updates everywhere automatically ✅
 - "Prove the peace math" → appendix/peace-dividend-calculations.qmd
 - "Prove the health math" → appendix/health-dividend-calculations.qmd
 - "Prove the cost-effectiveness" → appendix/1-percent-treaty-cost-effectiveness.qmd
-- "Show me Complete Case (1,222:1)" → appendix/1-percent-treaty-roi-tiers.qmd
+- "Show me Complete Case (1,222:1)" → appendix/research-acceleration-model.qmd
 - "Show me the long-term vision" → appendix/1-percent-treaty-endgame-projection.qmd
