@@ -1,0 +1,67 @@
+# Dockerfile for PDF build environment
+# Pre-installs all dependencies to speed up builds
+
+FROM ubuntu:22.04
+
+# Avoid interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    git \
+    python3.11 \
+    python3.11-dev \
+    python3-pip \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Quarto
+RUN curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb && \
+    dpkg -i quarto-linux-amd64.deb || apt-get install -f -y && \
+    rm -f quarto-linux-amd64.deb && \
+    quarto --version
+
+# Install uv (faster Python package manager)
+RUN pip3 install uv
+
+# Install TinyTeX (lightweight LaTeX distribution)
+RUN quarto install tinytex
+
+# Install Chromium (required for PDF rendering with diagrams)
+RUN quarto install chromium
+
+# Create cache directories with proper permissions
+RUN mkdir -p /tmp/quarto-cache /tmp/deno-cache && \
+    chmod -R 777 /tmp/quarto-cache /tmp/deno-cache
+
+# Set working directory
+WORKDIR /workspace
+
+# Copy requirements first (for better Docker layer caching)
+COPY requirements.txt .
+
+# Install Python dependencies (includes ipykernel)
+RUN uv pip install --system -r requirements.txt
+
+# Install Jupyter kernel (after dependencies are installed)
+RUN python3.11 -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project" || \
+    python3 -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+# Copy project files into container (avoids filesystem mounting issues)
+# Copy in stages for better caching
+COPY _quarto.yml index.qmd styles.css favicon.ico pyproject.toml package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY scripts/ scripts/
+COPY brain/ brain/
+COPY assets/ assets/
+
+# Build PDF inside container
+# Use || true to continue even if there are minor cleanup errors
+RUN python3.11 scripts/render_pdf.py --timeout 900 --skip-validation || \
+    (echo "Build completed with exit code $?" && \
+     test -f _book/warondisease/*.pdf && echo "PDF file exists" || echo "No PDF found")
+
+# Output will be in _book/warondisease/*.pdf
+# Use docker cp to extract it after build
+

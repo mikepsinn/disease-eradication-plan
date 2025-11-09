@@ -50,8 +50,11 @@ class BuildMonitor:
 
     def __del__(self):
         """Close log file on cleanup"""
-        if hasattr(self, 'log_handle'):
-            self.log_handle.close()
+        try:
+            if hasattr(self, 'log_handle') and self.log_handle:
+                self.log_handle.close()
+        except Exception:
+            pass  # Ignore cleanup errors
 
     def get_timestamp(self) -> str:
         """Get formatted timestamp for log messages"""
@@ -151,6 +154,11 @@ class BuildMonitor:
         """Background thread that monitors for timeout even when no output is produced"""
         last_log_time = time.time()
         while not self.stop_timeout_check.wait(1.0):  # Check every second
+            # Check if process has already finished
+            if self.process and self.process.poll() is not None:
+                # Process finished, exit watchdog
+                break
+                
             elapsed_since_output = time.time() - self.last_output_time
             elapsed_since_log = time.time() - last_log_time
             
@@ -162,13 +170,18 @@ class BuildMonitor:
             
             if self.check_timeout():
                 self.timed_out = True
+                # Double-check process is still running before killing
                 if self.process and self.process.poll() is None:
                     elapsed = int(time.time() - self.last_output_time)
                     latex_status = " (LaTeX was running)" if self._is_latex_running() else ""
                     self.log(f"\nERROR: Build timed out after {elapsed}s with no output{latex_status}", to_stderr=True)
                     if self.current_file:
                         self.log(f"Last file being processed: {self.current_file}", to_stderr=True)
-                    self.process.kill()
+                    try:
+                        self.process.kill()
+                    except ProcessLookupError:
+                        # Process already terminated, ignore
+                        pass
                 break
 
     def run_build(self, command: List[str], build_type: str = "render", custom_parsers: Optional[List[Callable[[str], Optional[str]]]] = None) -> int:
@@ -230,10 +243,19 @@ class BuildMonitor:
             # Wait for process to complete
             return_code = self.process.wait()
 
-            # Stop the timeout watchdog
+            # Stop the timeout watchdog BEFORE any cleanup
             self.stop_timeout_check.set()
-            if self.timeout_thread:
+            if self.timeout_thread and self.timeout_thread.is_alive():
                 self.timeout_thread.join(timeout=2.0)
+            
+            # Explicitly close process handles to avoid cleanup errors
+            try:
+                if self.process.stdout:
+                    self.process.stdout.close()
+                if self.process.stderr and self.process.stderr != self.process.stdout:
+                    self.process.stderr.close()
+            except Exception:
+                pass  # Ignore cleanup errors
 
             # Check if we timed out
             if self.timed_out:
@@ -280,14 +302,30 @@ class BuildMonitor:
             self.log("\nBuild interrupted by user", to_stderr=True)
             self.stop_timeout_check.set()
             if self.process and self.process.poll() is None:
-                self.process.kill()
+                try:
+                    self.process.kill()
+                except (ProcessLookupError, AssertionError):
+                    pass  # Process already terminated
             return 130
         except Exception as e:
             self.log(f"\nUnexpected error: {e}", to_stderr=True)
+            import traceback
+            self.log(f"Traceback: {traceback.format_exc()}", to_stderr=True)
             self.stop_timeout_check.set()
             if self.process and self.process.poll() is None:
-                self.process.kill()
+                try:
+                    self.process.kill()
+                except (ProcessLookupError, AssertionError, TypeError):
+                    pass  # Process already terminated or cleanup error
             return 1
+        finally:
+            # Ensure cleanup happens gracefully
+            self.stop_timeout_check.set()
+            if self.timeout_thread:
+                try:
+                    self.timeout_thread.join(timeout=2.0)
+                except Exception:
+                    pass  # Ignore cleanup errors
 
 
 def kill_existing_quarto_processes(include_latex: bool = False) -> int:

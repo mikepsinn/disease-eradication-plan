@@ -1,0 +1,9 @@
+services:
+  pdf-build:
+    build:
+      context: .
+      dockerfile: Dockerfile.pdf-build
+    # No volumes needed - everything is copied into container during build
+    # This avoids filesystem mounting issues with Deno KV
+    # Output PDF will be in the image at /workspace/_book/warondisease/*.pdf
+
