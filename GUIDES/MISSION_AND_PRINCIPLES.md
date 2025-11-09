@@ -21,7 +21,7 @@ All data flows through the **Decentralized FDA (dFDA)** which provides **Outcome
 ## Core Principles
 
 - **Primary Focus:** The unnecessary suffering and death from war (14M deaths/year) and disease (55M deaths/year). Every year we lose 69 million lives that could be saved.
-- **The Problem:** We spend $119 trillion annually on war and disease while investing just 0.06% of that on finding cures. Children die of rare diseases while we build nuclear submarines.
+- **The Problem:** Humans spend $119 trillion annually on war and disease while investing just 0.06% of that on finding cures. Children die of rare diseases while we build nuclear submarines.
 - **The Solution:** Redirect just 1% of military spending to medical research through systems that are 80X more efficient than current approaches.
 - **The Mission:** Save millions of lives by making curing people more profitable than killing them
 - **Core Benefits to Emphasize:** The DIH delivers **80X more efficient medical research** (proven by Oxford RECOVERY trial: $500/patient vs $41,000), tests **1,000X more treatments** with the same budget, uses **economic analysis to minimize DALYs/maximize QALYs**, provides **complete data transparency** (no hidden failures), and enables **100% patient participation** (vs 15% in traditional trials). Focus on OUTCOMES (more cures, faster, cheaper), not mechanisms (patient control, DAOs).

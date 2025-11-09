@@ -40,7 +40,7 @@ with dot.subgraph(name='cluster_death') as death:
     death.edge('Disease', 'DeathToilet')
 
 with dot.subgraph(name='cluster_solutions') as solutions:
-    solutions.attr(label='What We Spend on Solutions', style='dashed')
+    solutions.attr(label='What Humans spend on Solutions', style='dashed')
     solutions.node('Research', 'Medical Research\n$68B/year\n(0.06% of\ndeath costs)')
 
 dot.edge('DeathToilet', 'Research', label='1,750x more', style='dashed')

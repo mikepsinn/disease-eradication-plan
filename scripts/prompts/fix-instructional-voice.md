@@ -28,7 +28,7 @@ Ask yourself: Is this text...
    - "We target..." → "You target..."
 
 2. **DON'T CHANGE** factual statements about humanity/nations:
-   - "We spend $2 trillion on war" (fact about current spending) - KEEP
+   - "Humans spend $2 trillion on war" (fact about current spending) - KEEP
    - "We lose 17,000 people daily" (fact about deaths) - KEEP
    - "We evolved to fear loss" (evolutionary fact) - KEEP
    - "We'll still have 99% capacity" (fact about remaining military) - KEEP
