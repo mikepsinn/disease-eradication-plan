@@ -142,7 +142,6 @@ book:
     # Organizational Resources
     - part: "Governance & Organization"
       chapters:
-        - brain/book/appendix/vision.qmd # ✅ (EXCELLENT voice) ~5p
         - brain/book/appendix/governance.qmd # ✅ (good voice) ~4p
         - brain/book/appendix/organizational-structure.qmd # ✅ (org chart, appropriate) ~2p
         - brain/book/appendix/multi-entity-legal-strategy.qmd # ✅ (IMPROVED) ~5p
