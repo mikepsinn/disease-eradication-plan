@@ -42,8 +42,6 @@ The Decentralized Institutes of Health (DIH) cures diseases instead of writing p
 
 ### Rule 1: Let Patients Decide What Gets Funded
 
-**The Problem:** The NIH has 200 bureaucrats in a room trying to predict which of thousands of diseases matters most. They are always wrong.
-
 **The DIH Solution:** Give the money directly to patients in the form of subsidies. Let them, in consultation with their doctors, decide which clinical trials to join. The trials that attract patients get funded. The ones that don't, die.
 
 This replaces a grant-writing contest with a distributed supercomputer of millions of patients and doctors, all with skin in the game. It's the collective intelligence of humanity voting with its feet.
@@ -61,15 +59,15 @@ In the NIH, you get rich by writing proposals. In the DIH, you get rich by curin
 
 ### Rule 3: Make Corruption Mathematically Impossible
 
-**The Problem:** Any institution controlling billions of dollars becomes a target for lobbyists and grifters.
+**The Problem:** Give billions of dollars to humans and they will find creative ways to steal it. This is not cynicism, this is pattern recognition.
 
-**The DIH Solution:** Build the system on transparent, open-source code.
+**The DIH Solution:** Replace humans with code. Code is very bad at embezzlement.
 
-- **Algorithmic Governance:** All funding rules are encoded in smart contracts. Code can't take bribes.
-- **No CEO:** There's no one to corrupt. No central point of failure.
-- **Public Ledger:** Every single dollar is tracked on a public blockchain. It's a live-streamed financial colonoscopy for the entire world to see.
+- **Algorithmic Governance:** All funding rules live in smart contracts. You can bribe a committee. You cannot bribe an if-statement.
+- **No CEO:** There's no one to corrupt because there's no one. It's like trying to bribe a vending machine.
+- **Public Ledger:** Every dollar is tracked on a blockchain anyone can read. It's a financial colonoscopy broadcast live to the entire planet.
 
-This isn't about trusting people to be good. It's about building a system where being bad is impossible.
+You're not trusting people to be good. You're making it mathematically impossible for them to be bad. 
 
 ### Rule 4: Publish Everything (Especially the Failures)
 
@@ -80,7 +78,7 @@ This isn't about trusting people to be good. It's about building a system where 
 - Every trial, every result, every dataset is published for the world to see.
 - AI models continuously scan this global data commons, finding patterns and connections humans would miss.
 
-This doubles the value of every research dollar by eliminating redundant failures.
+This doubles research efficiency by preventing the same failure twice. It's like a group chat where everyone shares what didn't work, except the group is humanity and the topic is death prevention.
 
 ![How the Decentralized Institutes of Health works: technical details](../../../assets/decentralized-institutes-of-health-details.jpg)
 

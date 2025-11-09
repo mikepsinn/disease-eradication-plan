@@ -7,6 +7,13 @@ Unified PDF render script for Quarto PDF generation
 - Times out if stuck on a step too long
 - Fails fast on critical errors
 - Provides progress updates
+
+Usage:
+    python scripts/render_pdf.py                    # Run with all defaults
+    python scripts/render_pdf.py --skip-validation  # Skip pre-validation
+    python scripts/render_pdf.py --timeout 1800     # Custom timeout
+
+All parameters are optional - script works with defaults if none provided.
 """
 
 import sys
