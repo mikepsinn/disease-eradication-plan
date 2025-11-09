@@ -77,7 +77,7 @@ def add_watermark_to_png(png_path, text='WarOnDisease.org'):
         
         # Position: bottom-right with 3% padding (design guide spec)
         text_x = int(width * 0.97)
-        text_y = int(height * 0.03)
+        text_y = int(height * 0.97)
         
         # Draw watermark (black, bold, 11pt)
         if font:
