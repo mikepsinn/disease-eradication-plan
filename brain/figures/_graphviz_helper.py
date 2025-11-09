@@ -112,6 +112,7 @@ def setup_graphviz_style(dot):
     - Black and white colors (#000000, #FFFFFF)
     - Serif fonts (Georgia, serif)
     - White background
+    - Margins to prevent watermark overlap (3% padding on all sides)
     """
     dot.attr('node', 
              shape='box', 
@@ -126,7 +127,9 @@ def setup_graphviz_style(dot):
     dot.attr('graph',
              bgcolor='#FFFFFF',
              fontcolor='#000000',
-             fontname='Georgia,serif')
+             fontname='Georgia,serif',
+             margin='0.3',  # 3% margin on all sides (0.3 inches) to prevent watermark overlap
+             pad='0.3')     # Additional padding for better spacing
 
 
 def render_graphviz_with_watermark(dot, filename, output_dir=None):
