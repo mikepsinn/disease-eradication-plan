@@ -113,7 +113,7 @@ output_dir = get_project_root() / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'conservative-baseline-lifetime-wealth-by-scenario-column-chart.png'
 
-plt.savefig(output_path, dpi=200, bbox_inches='tight', pad_inches=0.3, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata
 

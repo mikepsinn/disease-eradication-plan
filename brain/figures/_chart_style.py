@@ -91,11 +91,10 @@ def setup_chart_style(style='light', dpi=150):
     rcParams['axes.labelpad'] = 10
     rcParams['xtick.major.pad'] = 7
     rcParams['ytick.major.pad'] = 7
-    # Increased bottom margin to ensure watermark has space (15% = 0.15)
-    rcParams['figure.subplot.bottom'] = 0.15  # Bottom margin for watermark and x-axis labels
+    rcParams['figure.subplot.bottom'] = 0.15  # Bottom margin for watermark
     rcParams['figure.subplot.top'] = 0.92     # Top margin
     rcParams['figure.subplot.left'] = 0.12    # Left margin
-    rcParams['figure.subplot.right'] = 0.95   # Right margin (5% for watermark)
+    rcParams['figure.subplot.right'] = 0.95   # Right margin
 
     # Line and marker styling
     rcParams['lines.linewidth'] = 2.5
@@ -105,11 +104,9 @@ def setup_chart_style(style='light', dpi=150):
     # Figure settings
     rcParams['figure.dpi'] = dpi
     rcParams['savefig.dpi'] = dpi
-    # Note: bbox_inches=None preserves subplot margins but ignores pad_inches
-    # Charts should use bbox_inches='tight' with pad_inches for proper padding
-    rcParams['savefig.bbox'] = None  # Default to None (can be overridden per chart)
+    rcParams['savefig.bbox'] = 'tight'  # This will be overridden - use pad_inches instead
     rcParams['savefig.facecolor'] = bg_color
-    rcParams['savefig.pad_inches'] = 0.3  # Only applies when bbox_inches='tight'
+    rcParams['savefig.pad_inches'] = 0.3  # Add padding around saved figures
 
     # Remove chart junk by default
     rcParams['axes.spines.top'] = False
@@ -126,8 +123,7 @@ def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
     """
     Add consistent branding watermark to a figure.
 
-    The watermark is positioned at the bottom-right of the figure margins,
-    ensuring it doesn't overlap with chart content.
+    The watermark is positioned with padding from edges to avoid overlap with chart elements.
     Uses black color and bold weight for better visibility.
 
     Args:
@@ -135,15 +131,10 @@ def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
         text: Watermark text (default: 'WarOnDisease.org')
         alpha: Transparency (default: 1.0 - fully opaque black)
     """
-    # Position: bottom-right within the figure margins
-    # Using figure coordinates (0-1), positioned in the bottom margin area
-    # Bottom margin is 15% (0.15), so position watermark at ~2% from bottom (0.02)
-    # Right margin is 5% (0.95), so position at ~97% from left (0.97)
-    # This ensures watermark is in the margin area, not overlapping axes
-    fig.text(0.97, 0.02, text,
+    # Position: bottom-right with 3% padding (design guide spec)
+    fig.text(0.97, 0.03, text,
              fontsize=11, color=COLOR_BLACK,
-             ha='right', va='bottom', alpha=alpha, weight='bold',
-             transform=fig.transFigure)  # Explicitly use figure coordinates
+             ha='right', va='bottom', alpha=alpha, weight='bold')
 
 
 def clean_spines(ax, positions=['top', 'right']):
