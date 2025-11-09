@@ -79,7 +79,7 @@ export const SPECIAL_FILES = {
  */
 export const TONE_REVIEW_PRIORITY = [
   'brain/book/economics/best-idea-in-the-world.qmd', // Has "Best Idea Ever Conceived" type language
-  'brain/book/strategy-overview.qmd',
+  'brain/book/strategy/strategy-execution-overview.qmd',
   'brain/book/solution/war-on-disease.qmd',
   'brain/book/solution/1-percent-treaty.qmd',
 ] as const;

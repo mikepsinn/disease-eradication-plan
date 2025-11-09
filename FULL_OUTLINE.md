@@ -3,55 +3,75 @@
 ## File: `index.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-  - TL;DR (For People Who Can't Even)
-  - How You Fix This
-  - Why This Works
-  - The Alternative
+  - Preface
+    - The Part Where I Discover Paper Makes You Do Things
+    - Your Gradual Stupidity Reduction Program
+    - The Sacred Order of Paper Distribution
+    - Why Your Leaders Pretend Not to Understand
+    - The Beautiful Stupidity of Your Economy
+    - Your Species' Adorable Death Wish
+    - How This Manual Fixes Everything
+    - The Part Where You Have No Choice
+    - Your Two Futures
+      - Future A: You Ignore This Book
+      - Future B: You Follow Instructions
+    - In Conclusion
+  - ⚡ TL;DR
+    - 🛠️ How You Fix This
+    - ✅ Why This Works
+    - ☠️ The Alternative
   - 💀 The Problem
-    - ☠️ The Bi-Monthly Holocaust
+    - ☠️ The Daily Deletion Event
     - 💸 The Cost of War
+    - 🎪 Your Hilarious Security Priorities
   - 💊 The Solution
     - 📜 The 1% Treaty
     - 🌐 Why Decentralization Works
     - 🏦 The DIH Treasury
     - 🏥 The Decentralized FDA
+      - Treatment Rankings
+        - Outcome Labels
   - 🔬 Why This Actually Works
     - ✅ The Proof
-  - 🎯 5-Step Plan
-    - 💵 1: Sell Bonds
-    - 👥 2: Bribe the Masses
-    - 💼 3: Bribe the Bribers
-    - 🏛️ 4: Buy Politicians
-    - 💎 5: Enjoy
-    - 🎁 Everyone's Bribe Package
+  - 🎯 The 5-Step Plan
+    - 💵 Step 1: Collect Papers
+      - Returns That Make Ponzi Schemes Look Conservative
+    - 👥 Step 2: The Great Clicking
+      - The Magic 3.5% Number
+    - 💼 Step 3: Bribe the Bribers
+    - 🏛️ Step 4: Purchase Democracy
+    - 💎 Step 5: Enjoy
+    - 🎁 Personalized Bribery Packages
   - 💰 The Math
+    - ⛲ The Money Fountain
     - ♾️ Where Math Breaks
+      - The Reality-Breaking Equation
+      - Where $163.6B Appears From
     - 🏆 2nd Best Idea in the World
   - 🎲 Choose Your Own Adventure
     - 🚪 Door #1: The Current Plan
-    - ✨ Door #2: The One Where We're Slightly Less Stupid
+    - ✨ Door #2: Try Not Dying
   - ⏰ Price of Procrastination
+    - 🧮 The Final Math
 
 ---
 
 ## File: `brain/book/problem.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-  - Overview: A Guided Tour of How Humanity Chose Death
-    - First Principles
-      - Daily Numbers
-        - Where the Money Goes
-          - On the Pentagon's Accounting
-          - On Medical Research
-          - On the FDA
-          - On What War Costs
-          - On What Disease Costs
-          - On Democracy
-          - On Regulatory Capture
-          - On the Fixed Pie
-          - On Your Personal Situation
-          - What This Means
-          - What's Next
+    - Daily Numbers
+    - Where the Money Goes
+    - On the Pentagon's Accounting
+    - On Medical Research
+    - On the FDA
+    - On What War Costs
+    - On What Disease Costs
+    - On Democracy
+    - On Regulatory Capture
+    - On the Fixed Pie
+    - On Your Personal Situation
+    - What This Means
+    - What's Next
 
 ---
 
@@ -66,85 +86,6 @@
       - Your Remaining Time (If You're 60)
   - On The Lottery You're Already Playing
     - What Happens While You Sleep Tonight
-
----
-
-## File: `brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - The Translation Crisis: 166 Billion Untested Treatments
-    - That one trial
-  - The Basic Research Black Hole
-    - The Allocation Disaster
-      - What we don't have: Cures.
-  - The Gerontocracy: Science by Social Security Recipients
-  - The System Is Designed to Exclude You
-  - The Committee Industrial Complex
-  - Case Study: The \$1.6 Billion Long COVID Masterclass
-  - Americans Got Sicker While NIH Got Richer
-  - The Death Toll: 120,000 Per Decade From Delays
-  - Political Funding: The Disease Popularity Contest
-  - Innovation Despite the NIH, Not Because of It
-  - The Efficiency Rating: An 82x Opportunity Cost
-    - Current NIH System
-      - The \$2 Trillion Healthcare Burden
-  - The Patient Disconnect: Zero Correlation with Health Outcomes
-    - What patients want
-      - What NIH funds
-  - What Would Actually Work
-  - Conclusion
-
----
-
-## File: `brain/book/problem/fda-is-unsafe-and-ineffective.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - The 82x Inefficiency Tax
-    - 1893 - The Advent of Safety and Efficacy Trials
-    - 1938 - The FDA Requires Phase 1 Safety Trials
-    - 1950's - Thalidomide Causes Thousands of Birth Defects Outside US
-    - 1962 - New Efficacy Regulations Reduce the Amount and Quality of Efficacy Data Collected
-      - Reduction in Efficacy Data
-        - Reduction in New Treatments
-          - Reduction in Life Expectancy Gains
-          - Explosion in Costs
-          - The Correlation: Rising Costs, Stagnating Lifespans
-    - Lack of Incentive to Discover New Applications for Off-Patent Treatments
-      - Delayed Life-Saving Treatments
-        - Increase in Patent Monopoly
-          - Decreased Ability to Determine Comparative Efficacy
-          - Slowed Growth in Life Expectancy
-    - Addressing Common Objections
-      - Diminishing Returns?
-      - Correlation is Not Causation
-      - Impact of Innovative Medicines on Life Expectancy
-  - The \$2.6 Billion Price Tag for Aspirin
-    - The 166 Billion Treatments We're Ignoring
-    - No Data on Unpatentable Molecules
-  - The Actual Death Toll of "Drug Lag"
-    - Case Study: The Human Cost of Regulatory Delay in Closed-Loop Neuromodulation
-      - Executive Summary
-      - 1. Scale of the Problem
-      - Annual QALY loss
-      - 2. Expected Benefit of Closed-Loop Neuromodulation
-      - 3. Economic and Utility Calculation
-      - 4. Comparative Timelines
-      - 5. Feasibility of Accelerated Path
-      - 6. Conclusion
-  - The Incentive Structure: A Masterpiece of Misalignment
-    - FDA Regulator Decision Tree
-      - Approve drug that later shows problems
-      - Delay drug that could save lives
-  - Clinical Trial Theater: Excluding 85% of Reality
-    - The Unused Capacity Crisis
-    - No Long-Term Outcome Data
-  - The FDA Requires Psychic Powers
-  - Conflicts of Interest
-  - The Negative Results Black Hole
-  - Countries That Don't Have Our "Safety"
-  - The COVID Test Fiasco: A Case Study in Excellence
-  - Solutions That Would Work (But Never Will)
-  - Safety Theater
 
 ---
 
@@ -195,14 +136,94 @@
 ## File: `brain/book/problem/cost-of-disease.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-  - The Real Bill: How to Calculate Human Misery
-  - How Economists Measure Misery (It's Called a DALY)
-    - The Price Tag on a Human Life (Yes, There's an Actual Number)
-  - To Put This in Perspective
-  - Meanwhile, in the Real World
-    - What's Actually Killing Everyone
-  - The Truth Hidden in This Horror Show
-  - The Punchline Isn't Funny
+  - The Actual Bill (Economist-Approved Misery Accounting)
+  - How to Measure Suffering Without Feeling Feelings (The DALY)
+    - What the WHO Thinks You're Worth (Spoiler: Not Much)
+  - Let's Break Down This Apocalypse By Time Unit
+  - What's Actually Deleting Everyone (The Greatest Hits)
+  - Your Body Is Not Magic, It's Just Broken
+  - What This Actually Costs
+    - Our Priorities, Written in Our Budgets
+    - The Future We're Paying For
+
+---
+
+## File: `brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd`
+
+- Quarto executes from project root (execute-dir: project in _book.yml)
+  - The Translation Crisis: 166 Billion Untested Treatments
+    - That one trial
+  - The Basic Research Black Hole
+    - The Allocation Disaster
+      - What we don't have: Cures.
+  - The Gerontocracy: Science by Social Security Recipients
+  - The Committee Industrial Complex
+  - Case Study: The \$1.6 Billion Long COVID Masterclass
+  - Americans Got Sicker While NIH Got Richer
+  - Political Funding: The Disease Popularity Contest
+  - Innovation Despite the NIH, Not Because of It
+  - The Efficiency Rating: An 82x Opportunity Cost
+    - Current NIH System
+      - The \$2 Trillion Healthcare Burden
+  - The Patient Disconnect: Zero Correlation with Health Outcomes
+    - What patients want
+      - What NIH funds
+  - What Would Actually Work
+  - Conclusion
+
+---
+
+## File: `brain/book/problem/fda-is-unsafe-and-ineffective.qmd`
+
+- Quarto executes from project root (execute-dir: project in _book.yml)
+  - 🧞Be Careful What You Wish For
+  - The 82x Inefficiency Tax
+  - Historical Evidence: Why Real-World Evidence Works Better
+    - The Result
+      - **1950**'s – Thalidomide **Causes Thousands of Birth Defects Outside US**
+      - **1962 – The Year We Decided to Make Everything Worse**
+      - What Changed
+      - What Happened to Efficacy Data
+      - What Happened to New Treatments
+      - What Happened to Costs
+      - What Happened to Drug Patents
+        - Decreased Ability to Determine Comparative Efficacy
+          - Immediately.
+          - The "Diminishing Returns" Excuse
+          - The "Correlation Is Not Causation" Excuse
+      - Impact of Innovative Medicines on Life Expectancy
+      - The Summary
+    - The Modern Consequences
+    - Lack of Incentive to Discover New Applications for Off-Patent Treatments
+    - Delayed Life-Saving Treatments: The "Drug Lag"
+  - The \$2.6 Billion Price Tag for Aspirin
+    - The 166 Billion Treatments We're Ignoring
+    - No Data on Unpatentable Molecules
+  - The Actual Death Toll of "Drug Lag"
+    - Case Study: The Human Cost of Regulatory Delay in Closed-Loop Neuromodulation
+      - Executive Summary
+      - 1. Scale of the Problem
+      - Annual QALY loss
+      - 2. Expected Benefit of Closed-Loop Neuromodulation
+      - 3. Economic and Utility Calculation
+      - 4. Comparative Timelines
+      - 5. Feasibility of Accelerated Path
+      - 6. Conclusion
+  - The Incentive Structure: A Masterpiece of Misalignment
+    - FDA Regulator Decision Tree
+      - Approve drug that later shows problems
+      - Delay drug that could save lives
+    - Overcoming Cognitive Bias Against Acts of Commission
+  - Clinical Trial Theater: Excluding 85% of Reality
+    - The Unused Capacity Crisis
+    - No Long-Term Outcome Data
+  - The FDA Requires Psychic Powers
+  - Conflicts of Interest
+  - The Negative Results Black Hole
+  - Countries That Don't Have Our "Safety"
+  - The COVID Test Fiasco: A Case Study in Excellence
+  - Solutions That Would Work (But Never Will)
+  - Safety Theater
 
 ---
 
@@ -255,6 +276,32 @@
 
 ---
 
+## File: `brain/book/problem/genetic-slavery.qmd`
+
+- Quarto executes from project root (execute-dir: project in _book.yml)
+  - The Selfish Gene Made You an Idiot (It Was a Good Idea at the Time)
+  - Part 1: Your Brain Was Optimized for a World That Doesn't Exist
+    - The Scarcity Brain (Or: Why You Can't Stop Eating)
+    - The Violence Module (Or: Why We Love Bombs More Than Band-Aids)
+    - The Tribal Brain: Why Democracy is Broken
+  - Part 2: Genetic Slavery is Literally Killing Us
+    - We're Dying from Winning
+    - Living in the Stupidest Possible Timeline
+  - Part 3: Why We Can't Just "Be Better"
+    - Your Brain is Not Your Friend
+    - The Pentagon's Lizard Brain
+  - Part 4: The Prison We Built Ourselves
+    - We Vote for Monkeys in Suits
+    - The Military-Industrial Cortex
+  - Part 5: Breaking the Chains
+  - Part 6: Breaking Free from Our Programming
+    - The First Step: Admitting We're Badly Designed
+    - The Solution: Trick the Monkey Brain
+    - The Meta-Slavery
+  - The Problem With Your Brain
+
+---
+
 ## File: `brain/book/solution.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
@@ -283,7 +330,7 @@
 - Quarto executes from project root (execute-dir: project in _book.yml)
     - The Math
       - How It Works
-  - The Heist: How to Steal $27 Billion a Year (Legally)
+  - The Reallocation: How to Redirect $27 Billion a Year (Legally)
   - The Beautiful Mathematics of Mutual Stupidity Reduction
     - The Proof That Even Generals Can Follow
   - The Blueprint for a Saner World
@@ -313,7 +360,7 @@
       - Year One Outcomes
   - The Incentive Structure
   - What Happens If This Actually Works
-    - The Endgame: A Hostile Takeover of the War Industry
+    - The Endgame: Reorienting Global Priorities
     - The Ratchet Effect: How to Boil a Frog (The Frog is the War Machine)
     - The Economic Gold Rush
     - A Multi-Generational Timeline
@@ -359,10 +406,17 @@
 ## File: `brain/book/solution/ai-coordination-army.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
+- Import economic parameters (produces output to prevent timeout)
     - Where Your Agents Get Their Missions (Not From a Management Consultant)
     - The Secret to Success: Cross-Sector Coordination (Forces for Good)
     - Why You Need This (Humans Are Hilariously Bad at Coordination)
     - The Architecture You're Building (It's Simpler Than It Looks)
+- Add brain/figures to path for helper import
+- Create directed graph
+- Global Level
+- Mission Level
+- Node Level
+- Render with watermark (design guide compliant)
     - Step 1: Deploy Your Coordination Hub (Your Organization's Digital Slave Labor)
       - To Mobilize Support
       - To Accelerate Research
@@ -394,8 +448,8 @@
     - Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving)
     - Step 5: Report Results Without a PhD in Paperwork
     - Step 6: Everyone Benefits from Everyone's Suffering
-  - The Money Shot: How We Save 95% on Not Killing People
-    - The Itemized Receipt of Stupidity We're Eliminating
+  - The Money Shot: How to Save 95% on Not Killing People
+    - The Itemized Receipt of Eliminated Stupidity
   - Why This Works: The Mathematical Impossibility of Committees
     - The Math That Proves Centralization Can't Work
 - Information processing capacity of the FDA committee
@@ -440,7 +494,7 @@
       - On the War on Poverty
       - On the War on Terror
       - On the War on Crime
-  - On The Real Victory (Hint: It's Not Just the Curing Diseases Part)
+  - On The Real Victory
     - On Why Every Previous War Failed
       - On Why This War Will Win
       - On What Winning Looks Like
@@ -503,16 +557,15 @@
     - Result
   - War Bonds: How Capitalism Beat Fascism
   - The Landmine Treaty: Citizens Beat Armies
-    - With fax machines.
   - The 3.5% Rule: It Never Loses
     - Always.
   - The Post-WW2 Economic Miracle: History's Greatest Peace Dividend
-  - We Have Advantages They Didn't
-  - 2. The Political Precedents: How to Win
-    - A. Creating Binding International Law
-    - B. Achieving a Political Tipping Point
-  - 3. The Financial Precedents: How to Fund It
-    - A. Mobilizing Mass Public Capital
+  - You Have Advantages They Didn't
+  - The Political Precedents: How to Win
+    - Creating Binding International Law
+    - Achieving a Political Tipping Point
+  - The Financial Precedents: How to Fund It
+    - Mobilizing Mass Public Capital
       - The Precedent: WWII War Bonds
     - B. Building a New Global Health Institution
     - C. Pricing the Political Risk
@@ -612,10 +665,11 @@
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
     - Your Actual Odds Right Now
-      - If you're healthy (for now)
-      - If you have money
-      - If you have a family
-      - The bottom line is this
+    - What You Actually Get
+- Calculate for typical 30-year-old making $50K
+    - The Math
+    - Your Wealth Depends on Treaty Terms
+    - The Bottom Line
 
 ---
 
@@ -766,8 +820,8 @@
       - International Operations (Everyone Else)
       - The Firewall
     - The Super PAC Playbook (Democracy for Sale, Wholesale Prices)
-      - What We Can Do
-      - What We Can't Do
+      - What You Can Do
+      - What You Can't Do
       - The Workaround
     - International Compliance (Every Country Has Weird Laws)
       - United Kingdom
@@ -775,7 +829,7 @@
       - Canada
   - The Treaty Framework (International Law for Dummies)
   - The Legislation Package (Laws Already Written, Just Add Politicians)
-  - Risk Mitigation (When They Come For Us)
+  - Risk Mitigation (When They Come For You)
     - The Legal Attack Vectors
       - Securities Fraud
       - Election Law Violations
@@ -962,18 +1016,19 @@
 ## File: `brain/book/economics/victory-bonds.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-  - What You're Building
-    - The structure to build
-  - How to Execute the Four Phases
-    - Phase 1: Raise the Initial $1.0B
-      - Target investors
-    - Phase 2: Execute the Campaign
-    - Phase 3: Implement Treaty Revenue Flow
-    - Phase 4: Manage Perpetual Distributions
+  - How to Bribe Humanity Into Not Dying
+    - What You're Actually Building
+  - The Four Phases of Making Everyone Rich While Saving Humanity
+    - Phase 1: Collect Papers From People With Too Many Papers
+      - Who has that many papers
+    - Phase 2: Spend the Papers Correctly
+    - Phase 3: Turn On the Money Faucet
+    - Phase 4: Watch Money Multiply Like Rabbits
   - Calculate Your Numbers for Investors
-    - Show Them the Revenue Math
-    - Project Growth Scenarios for Your Pitch
-      - Explain the growth mechanism to investors
+    - Show Them Where the Papers Come From
+    - When Math Becomes Obscene
+    - How Returns Scale From "Obscene" to "Is This Even Legal?"
+      - Why this actually happens
     - Structure the Security Package
   - Present Two Scenarios to Investors
     - Scenario A: Full Success ($27.2B/year)
@@ -985,23 +1040,24 @@
     - Address Each Risk Category
       - Project Risks
       - Investor-Specific Risks
-  - Show Investors the Comparison
-    - Create This Comparison Table for Your Pitch
+  - What This Beats (Spoiler: Everything)
+    - Show Investors This Table
   - The Expansion Flywheel
+- Add brain/figures to path for helper import
     - Explain the flywheel to investors
   - Set Minimum Investment Thresholds
     - Structure Your Minimums
     - Draft Your Term Sheet
-  - Handle Common Investor Objections
-    - "The returns seem unrealistic. How is this not a Ponzi scheme?"
-    - "What happens to my investment if the treaty fails?"
-    - "What are the primary risks to my investment?"
-    - "How is this different from a standard philanthropic donation?"
+  - When Rich People Ask Difficult Questions
+    - "This sounds like a Ponzi scheme run by someone who failed math."
+    - "What happens when this fails and I lose my billion dollars?"
+    - "What could possibly go wrong?"
+    - "How is this different from just donating to charity?"
     - When they want detailed financials
       - Direct them
-  - Your One-Page Summary for Investors
-    - What you're offering
-      - What you're risking
+  - The One-Page Summary That Makes Calculators Weep
+    - What you get
+    - What could go wrong
   - Related Implementation Guides
     - For detailed execution plans
 
@@ -1066,7 +1122,7 @@
 ## File: `brain/book/strategy/global-referendum.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-  - On What We're Actually Trying to Do (The Boring But Necessary Part)
+  - On What You're Actually Trying to Do (The Boring But Necessary Part)
     - The Goal
   - System Architecture & Implementation
     - Voting Protocol
@@ -1076,7 +1132,7 @@
       - Backend (Processing)
       - Data Storage
   - On Stopping People from Cheating (The Hard Part)
-    - On Why We Need Multiple Layers of "Prove You're Human"
+    - On Why You Need Multiple Layers of "Prove You're Human"
     - On Using AI to Catch the Smart Cheaters
       - Real-Time "You Shall Not Pass" Monitoring
     - On Privacy (Or: How Not to Build a Surveillance State)
@@ -1117,7 +1173,7 @@
     - Fraud Prevention Effectiveness
     - Secondary Metrics
   - On Putting It All Together
-    - What We're Building
+    - What You're Building
       - The Innovation Part
       - The Money Part
       - What Success Looks Like
@@ -1196,7 +1252,7 @@
     - It's Literally Their Playbook
     - It's Legal
     - It's Inevitable
-  - What We're NOT Doing
+  - What You're NOT Doing
   - Irony
   - What They Tell Their Boards
   - Expected Results
@@ -1214,12 +1270,6 @@
   - Action 2: INVEST (10 Minutes)
   - Action 3: RECRUIT (15 minutes)
   - That's It.
-
----
-
-## File: `brain/book/references.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
 
 ---
 
@@ -1243,31 +1293,26 @@
 
 ---
 
-## File: `brain/book/appendix/historical-evidence-supporting-decentralized-efficacy-trials.qmd`
+## File: `brain/book/strategy/strategy-execution-overview.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-    - The Result
-      - **1950**'s – Thalidomide **Causes Thousands of Birth Defects Outside US**
-      - **1962 – The Year We Decided to Make Everything Worse**
-      - What Changed
-      - What Happened to Efficacy Data
-      - What Happened to New Treatments
-      - What Happened to Costs
-      - What Happened to Drug Patents
-        - Decreased Ability to Determine Comparative Efficacy
-          - Immediately.
-          - The "Diminishing Returns" Excuse
-          - The "Correlation Is Not Causation" Excuse
-      - The Summary
-
----
-
-## File: `brain/book/strategy-overview.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - Step 1: Acquire Capital
-  - Step 2: Weaponize Public Opinion
-  - Step 3: Execute the Takeover
+    - Step 1: Acquire Capital
+    - Step 2: Align Incentives
+    - Step 3: Execute the Transition
+  - Detailed Execution: The Five-Step Cascade
+  - Tactical Implementation: The Bribe Sequence
+    - 1. The Bribe for Rich People
+      - Phase 1: Seed Investors ($250-400M Initial Investment)
+      - The Superior Offer to Military Contractors
+    - 2. The Bribe for the First Followers
+      - Phase 2: Campaign Funders ($100-200M for the Referendum)
+    - 3. The Bribe for Regular People
+      - Phase 3: Citizens (Global Population)
+    - 4. The Bribe for Politicians
+      - Phase 4: Politicians ($800M-1.5B Independent Expenditures)
+      - The Superior Offer to Politicians
+      - What They Get
+  - The Timeline: From Idea to Revolution
 
 ---
 
@@ -1279,86 +1324,33 @@
 
 ---
 
-## File: `brain/book/strategy/five-step-execution.qmd`
+## File: `brain/book/strategy/treaty-adoption-strategy.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-
----
-
-## File: `brain/book/strategy/bribe-sequence.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - 1. The Bribe for Rich People
-    - Phase 1: Seed Investors ($250-400M Initial Investment)
-    - The Superior Offer to Military Contractors
-  - 2. The Bribe for the First Followers
-    - Phase 2: Campaign Funders ($100-200M for the Referendum)
-  - 3. The Bribe for Regular People
-    - Phase 3: Citizens (Global Population)
-  - 4. The Bribe for Politicians
-    - Phase 4: Politicians ($800M-1.5B Independent Expenditures)
-    - The Superior Offer to Politicians
-    - What They Get
-  - The Timeline: From Idea to Revolution
-
----
-
-## File: `brain/book/strategy/grassroots-mobilization.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - Who Joins First
-    - The Natural Constituencies
-    - Combined: 560M potential early adopters
-  - The Organizational Structure
-    - No Traditional Hierarchy
-    - The Cell Model
-  - The Recruitment Funnel
-    - Stage 1: Awareness (1 billion people)
-    - Stage 2: Interest (500 million)
-    - Stage 3: Commitment (280 million)
-    - Conversion Rate
-  - The Local Strategies
-    - City-Level Organizing
-    - University Campus Strategy
-    - Workplace Strategy
-    - Religious Community Strategy
-  - The Toolkit for Activists
-    - Digital Tools
-    - Physical Tools
-    - Talking Points
-  - The Coalition Building
-    - Strange Bedfellows Strategy
-    - Who Wants What
-      - Everyone wins = Everyone supports
-  - The Resistance Points (and Responses)
-    - "This is too radical"
-    - "It will never pass"
-    - "I don't trust it"
-    - "What if it fails?"
-  - The Success Metrics
-    - Early Phase (Month 1-3)
-    - Growth Phase (Month 4-6)
-    - Critical Mass (Month 7-9)
-    - Victory (Month 10-12)
-  - The Amplification Strategy
-    - Every Voice Multiplies
-  - The Momentum Builders
-    - Public Events
-    - Media Events
-    - Symbolic Actions
-  - The International Coordination
-    - Regional Strategies
-    - Language Adaptation
-  - The Strategy
-    - We need 3.5% to actively participate.
-      - That's achievable. That's happening. That's victory.
-
----
-
-## File: `brain/book/strategy/diplomatic-approach.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - The Diplomatic Strategy
+  - The Dual-Track Model
+    - Why You Need Both Tracks
+  - Track 1: Grassroots Mobilization (Bottom-Up Pressure)
+    - Who Joins First
+      - The Natural Constituencies
+      - Combined: 560M potential early adopters
+    - The Organizational Structure
+      - No Traditional Hierarchy
+      - The Cell Model
+    - The Recruitment Funnel
+      - Stage 1: Awareness (1 billion people)
+      - Stage 2: Interest (500 million)
+      - Stage 3: Commitment (280 million)
+      - Conversion Rate
+    - The Local Strategies
+      - City-Level Organizing
+      - University Campus Strategy
+      - Workplace Strategy
+      - Religious Community Strategy
+    - The Toolkit for Activists
+      - Digital Tools
+      - Physical Tools
+      - Talking Points
+  - Track 2: Diplomatic Approach (Top-Down Negotiations)
     - Phase 1: Pilot Countries
     - Phase 2: Major Powers
       - United States
@@ -1366,19 +1358,26 @@
       - European Union
       - Russia
     - Phase 3: Everyone Else
-  - The Negotiation Tactics
-    - The Simultaneous Signing
-    - The Minimal Ask
-    - The Maximum Benefit
-  - The Backdoor Channels
-    - The Billionaire Diplomats
-    - The Corporate Pressure
-    - The Medical Community
-  - The Treaty Structure
-    - The Core Terms
-    - The Flexibility
-    - The Enforcement
-  - The Sequencing
+    - The Negotiation Tactics
+      - The Simultaneous Signing
+      - The Minimal Ask
+      - The Maximum Benefit
+    - The Backdoor Channels
+      - The Billionaire Diplomats
+      - The Corporate Pressure
+      - The Medical Community
+    - The Treaty Structure
+      - The Core Terms
+      - The Flexibility
+      - The Enforcement
+  - How the Two Tracks Reinforce Each Other
+    - Grassroots Enables Diplomacy
+    - Diplomacy Channels Grassroots Energy
+    - The Feedback Loop
+    - The Coalition Building
+      - Strange Bedfellows Strategy
+      - Who Wants What
+  - The Integrated Timeline
     - Year 1: Build Coalition
     - Year 2: Major Powers Negotiate
     - Year 3: Global Referendum
@@ -1388,13 +1387,20 @@
     - "This is sovereignty violation"
     - "What if other countries cheat?"
     - "Our country has different priorities"
-  - The Timeline Accelerators
-    - What Speeds This Up
+  - The Resistance Points (and Responses)
+    - "This is too radical"
+    - "It will never pass"
+    - "I don't trust it"
+    - "What if it fails?"
+  - The Success Metrics
+    - Early Phase (Month 1-3)
+    - Growth Phase (Month 4-6)
+    - Critical Mass (Month 7-9)
+    - Victory (Month 10-36)
   - The Realistic Assessment
     - Optimistic Scenario (3 years)
     - Realistic Scenario (5-7 years)
     - Pessimistic Scenario (10+ years)
-      - Even pessimistic scenario = Victory
   - The Secret Weapon: Inevitability
 
 ---
@@ -1443,6 +1449,10 @@
     - 📋 Bureaucrats at NIH/FDA
     - 🧪 Failed Research Institutions
   - The Cascade Effect
+- Add brain/figures to path for helper import
+- Insurance cascade
+- Pharma cascade
+- Country cascade
   - The Political Reality Check
     - Traditional Healthcare Reform
     - DIH/dFDA System
@@ -1567,7 +1577,7 @@
         - Who Controls These Billions?
       - The Choice
   - Earning a Stake: Tracking Contributions for Treasury Allocation
-  - Conclusion: From Partners to Stakeholders
+  - Conclusion: From Partners to Owners
 
 ---
 
@@ -1695,7 +1705,7 @@
 ## File: `brain/book/economics/best-idea-in-the-world.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-- This Is Quantifiably The Best Idea Ever Conceived
+- How to Achieve Infinite Returns (While Also Not Dying)
   - The Numbers
     - ∞ ROI (Literally Infinite)
     - 463:1 Societal ROI
@@ -1709,7 +1719,7 @@
     - Universal Healthcare
   - The Problem This Solves
     - The $119 Trillion Death Machine
-    - The Bi-Monthly Holocaust No One Talks About
+    - The Daily Mathematics
   - The Solution That Pays For Itself
     - The 3-Part System
     - Why This Actually Works
@@ -1729,7 +1739,7 @@
     - Two Futures, You Pick
       - Option A: Status Quo
         - Option B: The 1% Treaty
-  - Three Actions to Save Humanity (And Yourself)
+  - Three Actions
     - 1. Vote (3 minutes)
     - 2. Invest (If You Have Capital)
     - 3. Build (If You Have Skills)
@@ -2040,6 +2050,16 @@
     - What this means
     - Which Diseases Benefit
       - Conservative annual value: $100B/year
+  - How 115x Research Acceleration Actually Works
+    - The Complete Mechanism Chain
+    - Mechanism 1: Economic Feasibility Transformation
+    - Mechanism 2: Flipped Incentive Structure
+    - Mechanism 3: Universal Access + Minimal Exclusions
+    - Mechanism 4: Trial Size and Completion Speed
+    - Mechanism 5: Transparent Platform Competition
+    - Mechanism 6: Aggregate Capacity Multiplication
+    - The Behavioral Economics Summary
+    - Why This Matters for 72-Year Life Extension
   - The Complete Benefit Breakdown
   - The Sanity Check
     - Is $1.2T/year reasonable?
@@ -2093,6 +2113,65 @@
       - Inappropriate Contexts
   - Related Analysis
   - Conclusion
+
+---
+
+## File: `brain/book/appendix/personal-lifetime-wealth-calculations.qmd`
+
+- Disease Eradication Model - The Realistic Personal Lifetime Wealth Model
+  - TL;DR
+  - Why This Model is Correct
+    - The Problem with Antibiotic Precedent
+    - The Math
+    - Aging Reversal = Accident-Limited Lifespan
+  - The Model Components
+    - 1. Disease-by-Disease Eradication (CDC Burden Data)
+    - 2. Aging Reversal Bonus
+    - 3. Healthcare Savings
+    - 4. Productivity Gains
+    - 5. GDP Boost
+    - 6. Extended Earnings
+  - Results: Age 30, $50K Income, 1% Treaty
+    - 5-Year Scenario
+    - 10-Year Scenario
+    - 20-Year Scenario (RECOMMENDED DEFAULT)
+    - 40-Year Scenario
+  - Conservative Baselines (For Skeptics)
+    - Evidence-Based Conservative (5yr extension)
+    - Evidence-Based Moderate (10yr extension)
+    - Conservative Baseline Visualizations
+  - When to Use Each Model
+    - Default Recommendation
+    - For Skeptical/Academic Audiences
+    - For Investor Pitches
+    - For Vision Documents
+  - How to Use in Code
+    - Disease Eradication Model (Recommended)
+- 20-year scenario (DEFAULT)
+- Result: $4.3M, 72 years life extension
+    - Conservative Baseline (For Skeptics)
+- Result: $584K, 5 years life extension
+  - Files Reference
+    - Core Implementation
+    - Documentation
+    - Visualizations
+  - Mathematical Framework
+    - Net Present Value Calculation
+    - Component Formulas
+      - 1. Peace Dividend
+      - 2. Economic Multiplier (Military→Research)
+      - 3. Healthcare Savings
+      - 4. Extended Earnings
+      - 5. Life Extension Formula
+  - Sensitivity Analysis
+  - Demographic Variations
+  - Component Breakdown
+  - Wealth Accumulation Over Lifetime
+  - Treaty Percentage Impact
+  - Model Comparison
+  - Testing
+  - Key Citations
+  - Bottom Line
 
 ---
 
@@ -2173,24 +2252,6 @@
 
 ---
 
-## File: `brain/book/appendix/dfda-comparative-cost-effectiveness.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-    - Methodology Notes
-    - Data Limitations
-  - Comparison to Other Major Public Investments
-
----
-
-## File: `brain/book/appendix/dfda-daily-opportunity-cost.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-      - Base Case: Daily Lost QALYs and Financial Savings
-      - Sensitivity Analysis of Daily Opportunity Costs
-      - Discussion of Uncertainty and Key Variables
-
----
-
 ## File: `brain/book/appendix/dfda-icer-analysis.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
@@ -2222,6 +2283,23 @@
 
 ---
 
+## File: `brain/book/appendix/data-storage-costs.qmd`
+
+- Quarto executes from project root (execute-dir: project in _book.yml)
+  - Storage Requirements Per Patient
+    - Basic Data Components
+  - Cost Analysis
+    - Infrastructure Costs (Per Patient/Month)
+    - Cost Comparisons
+    - Why Costs Are Lower Than Traditional Platforms
+  - Additional Considerations
+    - Fixed Costs
+    - Cost Optimization Strategies
+    - Scaling Benefits
+  - Conclusion
+
+---
+
 ## File: `brain/book/appendix/dfda-qaly-model.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
@@ -2231,15 +2309,7 @@
       - Summary Table: Total Annual QALY Gains {#qaly-summary-table}
       - DCT Platform Funding (Analogous Cost Basis)
       - Sources
-    - Daily Opportunity Cost of Inaction
-      - Base Case: Daily Lost QALYs and Financial Savings
-      - Sensitivity Analysis of Daily Opportunity Costs
-      - Discussion of Uncertainty and Key Variables
     - Final ROI and Net Benefit
-  - Comparative Cost-Effectiveness: dFDA vs. Other Public Health Interventions
-    - Methodology Notes
-    - Data Limitations
-  - Comparison to Other Major Public Investments
     - Appendix: Detailed QALY Calculation Model {#appendix-detailed-qaly-calculation-model}
       - A. QALYs from Faster Drug Access
       - B. QALYs from Improved Prevention and Real-World Evidence (RWE)
@@ -2306,6 +2376,7 @@
       - Access
       - Financial
   - The Compound Flywheel
+- Add brain/figures to path for helper import
   - Related Documents
     - For Investors
     - For Budget Wonks
@@ -2454,7 +2525,7 @@
     - Phase 1: Seed Round ($250M - $400M)
     - Phase 2: Series A ($500M - $1B)
     - Phase 3: Growth Round ($500M - $1.1B)
-  - Key Innovation: Pay-for-Success Model
+  - Key Innovation: Nobody Gets Paid Unless It Works
   - Hybrid Communication Strategy: Simple Targets, Sophisticated Mechanics
     - The Marketing Message (The "Hook")
     - The Backend Engine (Market-Driven Pricing)
@@ -2506,31 +2577,11 @@
 
 ---
 
-## File: `brain/book/appendix/vision.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - Long-Term End State: A World Without War and Disease
-  - What Happens Next: From 1% to Everything
-    - 2030: The 1% Treaty
-    - 2035: The 2% Treaty
-    - 2045: The 5% Treaty
-    - 2055: The 20% Treaty
-    - 2065: The 50% Treaty
-    - 2075: The 100% Treaty
-  - A Civilization Reborn: The Economics of Abundance
-  - The Economics of Transcendence: By the Numbers
-    - The Current Misallocation
-      - The Peace Dividend Unlocked
-      - Individual Wealth Transformation
-      - Research and Development Acceleration
-  - Dive Deeper
-
----
-
 ## File: `brain/book/appendix/governance.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
   - The Core Components of the Wishocracy Protocol
+- Add brain/figures to path for helper import
     - 1. The To-Do List ("Wishes")
     - 2. The AI Civil Service
     - 3. The Voting System (RAPPA)
@@ -2538,51 +2589,60 @@
     - 5. The Verification Layer (e.g., The dFDA)
   - Dive Deeper into the Governance Model
   - Security & Anti-Corruption: Building Uncorruptible Institutions
-    - Our Multi-Layered Defense
+    - The Multi-Layered Defense
     - Beyond Medical Research: A Template for Uncorruptible Governance
       - What Else This Could Fix
 
 ---
 
-## File: `brain/book/appendix/organizational-structure.qmd`
+## File: `brain/book/appendix/legal-and-organizational-structure.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-  - 1. For-Profit Management Company (SPV)
+  - The Three-Entity Structure (The Legal Shell Game)
+- Add brain/figures to path for helper import
+  - Entity #1: The 501(c)(3) Public Charity ("The Educator and Mobilizer")
+    - What It Does
+    - Why We Need It
+    - What It's Allowed To Do
+    - What It's NOT Allowed To Do
+    - How It Gets Money
+    - Role in The Plan
+  - Entity #2: The 501(c)(4) Social Welfare Organization ("The Advocate")
+    - What It Does
+    - Why We Need It
+    - What It's Allowed To Do
+    - What It's NOT Allowed To Do
+    - How It Gets Money
+    - The Trade-Off
+    - Role in The Plan
+  - Entity #3: The For-Profit Entity / Management Company ("The Engine")
+    - What It Does
+    - Why We Need It
+    - What It's Allowed To Do
+    - How It Gets Money
+    - Legal Structure
+    - Role in The Plan
+  - For-Profit Management Company (SPV) - Organizational Structure
+- Add brain/figures to path for helper import
     - Operational Command: The General Staff (G-Staff)
-  - 2. Non-Profit Foundation
+  - Non-Profit Foundation - Governance Structure
+- Add brain/figures to path for helper import
+  - How These Three Entities Work Together (Without Breaking The Law)
+    - Strict Separation (The Legal Requirement)
+    - Cooperative Mission (The Reality)
+  - The Disclaimer You Should Actually Read
 
 ---
 
-## File: `brain/book/appendix/multi-entity-legal-strategy.qmd`
+## File: `brain/book/appendix/organizational-precedents.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-  - On The Three-Entity Structure (The Legal Shell Game)
-    - Entity #1: The 501(c)(3) Public Charity ("The Educator and Mobilizer")
-      - What It Does
-      - Why We Need It
-      - What It's Allowed To Do
-      - What It's NOT Allowed To Do
-      - How It Gets Money
-      - Role in The Plan
-    - Entity #2: The 501(c)(4) Social Welfare Organization ("The Advocate")
-      - What It Does
-      - Why We Need It
-      - What It's Allowed To Do
-      - What It's NOT Allowed To Do
-      - How It Gets Money
-      - The Trade-Off
-      - Role in The Plan
-    - Entity #3: The For-Profit Entity / Foundation ("The Engine")
-      - What It Does
-      - Why We Need It
-      - What It's Allowed To Do
-      - How It Gets Money
-      - Legal Structure
-      - Role in The Plan
-  - On How These Three Entities Work Together (Without Breaking The Law)
-    - Strict Separation (The Legal Requirement)
-      - Cooperative Mission (The Reality)
-  - On The Disclaimer You Should Actually Read
+  - 1. Precedent: The Global Fund (The Financial Institution)
+    - Illustrative Org Chart & Key Roles
+  - 2. Precedent: The ICBL (The Political Campaign)
+    - Illustrative Org Chart & Key Roles
+  - 3. Precedent: MakerDAO (The Decentralized Protocol)
+    - Illustrative "Org Chart" (Core Units)
 
 ---
 
@@ -2601,6 +2661,7 @@
       - At the Pharmacy
       - With Existing Insurance
     - 4. The Money Flow (Realistic Version)
+- Add brain/figures to path for helper import
     - 5. Why This Works Better Than Direct Payments
       - Avoids Perverse Incentives
       - Reduces Friction
@@ -2612,9 +2673,9 @@
   - Implementation Requirements
     - Technical Infrastructure
     - Regulatory Framework
-    - Stakeholder Buy-In
-  - The Pre-1962 Model (What We're Returning To)
-    - We're bringing this back, but with
+    - Who Gets What
+  - The Pre-1962 Model (The Model You're Reinstating)
+    - You bring this model back, but with
   - Cost Structure (Realistic Numbers)
     - Per Patient Per Trial
       - Efficiency gain: 75-80% cost reduction
@@ -2737,6 +2798,7 @@
     - **Operational Effectiveness**
   - Multi-Entity Legal Structure
     - Recommended Three-Entity Framework
+- Add brain/figures to path for helper import
       - 1. The 501(c)(3) Public Charity: "The Educator and Mobilizer"
       - Permitted Activities
       - 2. The 501(c)(4) Social Welfare Organization: "The Advocate"
@@ -2790,7 +2852,7 @@
 ## File: `brain/book/appendix/free-rider-solution.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-    - Our Strategy
+    - The Strategy
   - On Making Compliance the Most Profitable Personal Decision
     - 1. The Bribe for Political Leaders (The Executive & Legislature)
     - 2. The Bribe for the Military-Industrial Complex (The Generals & CEOs)
@@ -2851,98 +2913,6 @@
 
 ---
 
-## File: `brain/book/theory.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - 1962: When the Kefauver-Harris Amendment Destroyed Medical Progress
-  - Every Government "War" Creates More of What It Fights
-  - The Knowledge Problem (Hayek Was Right)
-  - Markets: The Distributed Computer That Works
-  - Public Choice Theory: Everyone's Selfish, Use It
-  - In This Section
-
----
-
-## File: `brain/book/theory/the-two-wars.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - The Key Difference
-  - Why War on Humanity Never Ends
-    - The Incentives
-    - The Result
-  - Why War on Disease Never Ends (Currently)
-    - The Same Broken Incentives
-    - The Result
-  - What a War Designed to Win Looks Like
-    - World War II
-    - Why It Worked
-    - Manhattan Project (Part of WWII)
-  - What War on Disease Designed to Win Would Look Like
-    - The Oxford RECOVERY Model (But Bigger)
-    - The Outcome
-  - Structure It Differently: Markets Not Ministries
-  - Spillover Victory: Solving Everything Else
-  - The Math of Victory
-    - War on Humanity (Current)
-    - War on Disease (Current)
-    - War on Disease (Redesigned)
-  - Why Nobody Fights War on Disease to Win
-    - Follow the Money
-    - The Same Pattern as War
-  - The First War Designed to Be Won
-    - How It's Different
-    - Why It Will Work
-  - The Historical Precedent
-  - The Choice
-    - Option A: Continue Both Wars Forever
-    - Option B: Win One War, Then the Other
-  - Design Matters
-
----
-
-## File: `brain/book/problem/genetic-slavery.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - The Selfish Gene Made You an Idiot (And That Used to Be Smart)
-  - Part 1: Your Brain Was Designed for a World That No Longer Exists
-    - The Scarcity Brain: Why You Can't Stop Eating
-    - The Violence Module: Why We Love Bombs More Than Bandages
-    - The Tribal Brain: Why Democracy is Broken
-  - Part 2: Genetic Slavery is Literally Killing Us
-    - We're Dying from Success
-    - The Stupidest Timeline
-  - Part 3: Why We Can't Just "Be Better"
-    - Your Brain is Not Your Friend
-    - The Pentagon's Lizard Brain
-  - Part 4: The Prison We Built Ourselves
-    - We Vote for Monkeys in Suits
-    - The Military-Industrial Cortex
-  - Part 5: Breaking the Chains
-  - Part 6: Breaking Free from Our Programming
-    - The First Step: Admitting We're Badly Designed
-    - The Solution: Trick the Monkey Brain
-    - The Meta-Slavery
-  - The Punchline
-
----
-
-## File: `brain/book/appendix/data-storage-costs.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - Storage Requirements Per Patient
-    - Basic Data Components
-  - Cost Analysis
-    - Infrastructure Costs (Per Patient/Month)
-    - Cost Comparisons
-    - Why Costs Are Lower Than Traditional Platforms
-  - Additional Considerations
-    - Fixed Costs
-    - Cost Optimization Strategies
-    - Scaling Benefits
-  - Conclusion
-
----
-
 ## File: `brain/book/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
@@ -2987,18 +2957,6 @@
 
 ---
 
-## File: `brain/book/appendix/organizational-precedents.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - 1. Precedent: The Global Fund (The Financial Institution)
-    - Illustrative Org Chart & Key Roles
-  - 2. Precedent: The ICBL (The Political Campaign)
-    - Illustrative Org Chart & Key Roles
-  - 3. Precedent: MakerDAO (The Decentralized Protocol)
-    - Illustrative "Org Chart" (Core Units)
-
----
-
 ## File: `brain/book/appendix/pragmatic-vs-explanatory-trials.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
@@ -3017,6 +2975,12 @@
 ---
 
 ## File: `brain/book/appendix/allied-organizations.qmd`
+
+- Quarto executes from project root (execute-dir: project in _book.yml)
+
+---
+
+## File: `brain/book/references.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
 

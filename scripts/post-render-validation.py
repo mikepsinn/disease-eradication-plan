@@ -137,10 +137,10 @@ def main():
 
     output_dir = Path(args.output_dir)
     if not output_dir.exists():
-        print(f"❌ Error: Output directory not found: {output_dir}")
+        print(f"[ERROR] Output directory not found: {output_dir}")
         return 1
 
-    print(f"🔍 Validating rendered HTML in {output_dir}...")
+    print(f"[VALIDATION] Validating rendered HTML in {output_dir}...")
 
     html_files = find_html_files(output_dir)
     print(f"   Found {len(html_files)} HTML files to check")
@@ -157,10 +157,10 @@ def main():
 
     # Print results
     if not all_errors:
-        print("✅ All validation checks passed!")
+        print("[OK] All validation checks passed!")
         return 0
 
-    print(f"\n❌ Found {len(all_errors)} validation error(s):\n")
+    print(f"\n[ERROR] Found {len(all_errors)} validation error(s):\n")
 
     # Group errors by type for better readability
     for error_type, errors in sorted(errors_by_type.items()):
@@ -172,7 +172,7 @@ def main():
         print()
 
     # Provide suggestions
-    print("💡 Suggestions:")
+    print("[SUGGESTIONS]")
     if 'UNRENDERED_PYTHON' in errors_by_type:
         print("   - Unrendered inline Python: This happens when Quarto uses cached")
         print("     computations. Clear freeze directories: rm -rf _freeze .quarto/_freeze")

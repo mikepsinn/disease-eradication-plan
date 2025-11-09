@@ -80,12 +80,9 @@ book:
     # Strategic Implementation
     - part: "Implementation Strategy"
       chapters:
-        - brain/book/strategy-overview.qmd # ✅ (3-STEP OVERVIEW - see roadmap.qmd for detailed execution) ~1p
+        - brain/book/strategy/strategy-execution-overview.qmd # ✅ Complete execution strategy (merged 3-step, 5-step, bribe sequence) ~6p
         - brain/book/appendix/highest-leverage-advocacy.qmd # ✅ (EXCELLENT voice - "bailing water from a sinking ship") ~2p
-        - brain/book/strategy/five-step-execution.qmd # ✅ ~1p
-        - brain/book/strategy/bribe-sequence.qmd # ✅ ~4p
-        - brain/book/strategy/grassroots-mobilization.qmd # ✅ (mixed but acceptable) ~4p
-        - brain/book/strategy/diplomatic-approach.qmd # ✅ (mixed but acceptable) ~4p
+        - brain/book/strategy/treaty-adoption-strategy.qmd # ✅ Dual-track approach (merged grassroots + diplomatic) ~8p
         - brain/book/economics/coalition-that-wins.qmd # ✅ ~12p
         - brain/book/appendix/co-opt-dont-compete.qmd # ✅ (EXCELLENT voice - "You'd lose") ~3p
         - brain/book/appendix/global-referendum-implementation.qmd # ✅ (technical spec, appropriate) ~1p
@@ -128,6 +125,7 @@ book:
         - brain/book/appendix/dfda-calculation-framework.qmd # ✅ (technical framework, appropriate) ~26p
         - brain/book/appendix/dfda-icer-analysis.qmd # ✅ (technical analysis, appropriate) ~10p
         - brain/book/appendix/dfda-platform-costs.qmd # ✅ (calculations, appropriate) ~15p
+        - brain/book/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
         - brain/book/appendix/dfda-qaly-model.qmd # ✅ (comprehensive QALY model - includes dfda-comparative-cost-effectiveness & dfda-daily-opportunity-cost) ~38p
 
     - part: "Financial Planning"
@@ -143,8 +141,8 @@ book:
     - part: "Governance & Organization"
       chapters:
         - brain/book/appendix/governance.qmd # ✅ (good voice) ~4p
-        - brain/book/appendix/organizational-structure.qmd # ✅ (org chart, appropriate) ~2p
-        - brain/book/appendix/multi-entity-legal-strategy.qmd # ✅ (IMPROVED) ~5p
+        - brain/book/appendix/legal-and-organizational-structure.qmd # ✅ Complete legal/org structure (merged multi-entity + org charts) ~7p
+        - brain/book/appendix/organizational-precedents.qmd # ✅ (technical analysis, appropriate) ~3p
         - brain/book/appendix/dih-integration-model.qmd # ✅ (has personality) ~4p
         - brain/book/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
         - brain/book/appendix/command-and-control-systems.qmd # ✅ (EXCELLENT voice) ~8p
@@ -159,11 +157,9 @@ book:
 
     - part: "Additional References"
       chapters:
-        - brain/book/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
         - brain/book/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd # ✅ (data presentation, appropriate) ~1p
         - brain/book/appendix/lives-saved-by-drug-accessibility.qmd # ✅ (reference tables, appropriate) ~6p
         - brain/book/appendix/nuclear-weapon-cost-and-casualties.qmd # ✅ (IMPROVED) ~6p
-        - brain/book/appendix/organizational-precedents.qmd # ✅ (technical analysis, appropriate) ~3p
         - brain/book/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate) ~4p
         - brain/book/appendix/allied-organizations.qmd # ✅ (reference list, appropriate) ~4p
         - brain/book/references.qmd # ✅ (reference material, appropriately formal) ~250p
