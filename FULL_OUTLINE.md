@@ -18,6 +18,11 @@
     - In Conclusion
   - ⚡ TL;DR
     - 🛠️ How You Fix This
+      - Step 1: The Paper Collection Phase
+        - Step 2: The Internet Clicking Ceremony
+          - Step 3: The Professional Briber Redistribution
+          - Step 4: The Political Awakening Ritual
+          - Step 5: The Money River Redirection
     - ✅ Why This Works
     - ☠️ The Alternative
   - 💀 The Problem
@@ -35,10 +40,14 @@
     - ✅ The Proof
   - 🎯 The 5-Step Plan
     - 💵 Step 1: Collect Papers
+      - What Grandma Got
+      - What You're Offering
       - Returns That Make Ponzi Schemes Look Conservative
     - 👥 Step 2: The Great Clicking
       - The Magic 3.5% Number
     - 💼 Step 3: Bribe the Bribers
+      - Current Job
+      - Your Offer
     - 🏛️ Step 4: Purchase Democracy
     - 💎 Step 5: Enjoy
     - 🎁 Personalized Bribery Packages
@@ -53,6 +62,7 @@
     - ✨ Door #2: Try Not Dying
   - ⏰ Price of Procrastination
     - 🧮 The Final Math
+      - Your Binary Choice Matrix
 
 ---
 
@@ -287,6 +297,7 @@
   - Part 2: Genetic Slavery is Literally Killing Us
     - We're Dying from Winning
     - Living in the Stupidest Possible Timeline
+      - Problems we solved
   - Part 3: Why We Can't Just "Be Better"
     - Your Brain is Not Your Friend
     - The Pentagon's Lizard Brain
@@ -667,7 +678,11 @@
     - Your Actual Odds Right Now
     - What You Actually Get
 - Calculate for typical 30-year-old making $50K
+  - If you're healthy (for now)
+    - If you have money
+      - If you have a family
     - The Math
+      - Total lifetime benefit: $`{python} f"{total_benefit/1000000:.1f}"`M
     - Your Wealth Depends on Treaty Terms
     - The Bottom Line
 
@@ -806,10 +821,21 @@
   - The Four-Entity Architecture (Each Tool Does One Job)
 - Add brain/figures to path for helper import
     - Entity #1: The 501(c)(3) Public Charity ("The Brain")
+      - What It Does
     - Entity #2: The 501(c)(4) Social Welfare Org ("The Sword")
     - Entity #3: The Victory Corporation ("The Engine")
+      - What It Does
     - Entity #4: The DIH Foundation ("The Soul")
+      - What It Does
     - Why This Four-Part Structure Works
+      - Legal Specialization
+      - Firewall Protection
+      - Risk Distribution
+  - Multi-Jurisdiction Operations (Where Things Actually Happen)
+    - 🇨🇭 Swiss Foundation (The Parent)
+    - 🇺🇸 US Entities (The Political Engine)
+    - 🇸🇬 Singapore Entity (The Treasury Manager)
+    - 🇪🇪 Estonian Entity (The Tech Builder)
   - Organizational Structure: The For-Profit Management Company
 - Add brain/figures to path for helper import
     - The General Staff (G-Staff)
@@ -817,17 +843,35 @@
 - Add brain/figures to path for helper import
   - Securities Law (How to Sell Hope Without Prison)
     - VICTORY Bonds: Definitely a Security
+      - The Howey Test
     - How to Structure It
+      - Phase 2: Crowd Sale (Reg CF/A+)
+        - Phase 3: Secondary Markets
     - Required Disclosures (The Truth)
     - KYC/AML (Know Your Criminal)
   - Election Law (Bribing Politicians, Legally)
     - The Foreign National Problem (And Solution)
+      - US Operations (Americans Only)
+      - International Operations (Everyone Else)
+      - The Firewall
     - The Super PAC Playbook
+      - What You Can Do
+      - What You Can't Do
+      - The Workaround
     - International Compliance (Every Country Has Weird Laws)
+      - United Kingdom
+      - European Union
+      - Canada
   - Treaty Framework
   - Risk Mitigation (When They Come For You)
     - The Legal Attack Vectors
+      - Securities Fraud
+      - Election Law Violations
+      - Tax Evasion
+      - RICO/Conspiracy
     - The Legal War Chest
+      - Budget: $100M for lawyers
+      - The Strategy
   - The Escape Routes (If Everything Goes Wrong)
 
 ---
@@ -1013,6 +1057,8 @@
   - Calculate Your Numbers for Investors
     - Show Them Where the Papers Come From
     - When Math Becomes Obscene
+      - Even if you're extremely pessimistic
+      - This isn't complicated math
     - How Returns Scale From "Obscene" to "Is This Even Legal?"
       - Why this actually happens
     - Structure the Security Package
@@ -1038,6 +1084,8 @@
     - "This sounds like a Ponzi scheme run by someone who failed math."
     - "What happens when this fails and I lose my billion dollars?"
     - "What could possibly go wrong?"
+      - Project Risks
+      - Investor Risks
     - "How is this different from just donating to charity?"
     - When they want detailed financials
       - Direct them
@@ -1046,6 +1094,7 @@
     - What could go wrong
   - Related Implementation Guides
     - For detailed execution plans
+      - The core mechanism is stupid simple
 
 ---
 
@@ -1287,13 +1336,20 @@
     - Step 2: Pay Humans to Click YES
     - Step 3: Apply Papers to Politicians Until Treaty Happens
   - Detailed Execution: The Five-Step Cascade
+    - Step 2: The Great Internet Clicking
+      - Step 4: Treaty Achieves Existence
   - Tactical Implementation: The Sacred Bribery Sequence
     - Bribe Category #1: Rich People (The Paper Collectors)
       - The Specific Offer to Bomb Makers
+      - Option A (Current Job)
+      - Option B (Your Offer)
     - Bribe Category #2: The True Believers (Early Adopters Who Want Control)
     - Bribe Category #3: Regular People (Everyone Else)
     - Bribe Category #4: Politicians (The Elected Paper Recipients)
+      - The Package
+      - The choice you give them
   - The Timeline: How Long This Takes
+    - Phase 1 (Months 0-3): The Setup
 
 ---
 
@@ -1314,15 +1370,25 @@
     - Who Joins First (The People Who Actually Care)
     - The Cell Model (How Movements Actually Spread)
     - The Recruitment Funnel (Turning Awareness Into Action)
+      - Stage 2 - Interest (500 million)
+      - Stage 3 - Commitment (280 million)
     - The Toolkit
+      - Digital
+      - Physical
+      - Talking points
   - Track 2: Diplomatic (Give Governments The Paperwork)
     - The Simultaneous Signing Strategy
+      - Traditional treaty (fails)
+      - Your treaty (works)
     - Phase 1: Pilot Countries (Prove It Works)
     - Phase 2: Major Powers (Make It Real)
     - Phase 3: Everyone Else (Peer Pressure)
     - The Minimal Ask (So Small It's Hard to Refuse)
     - The Enforcement (Smart Contracts)
   - How The Tracks Reinforce Each Other
+    - Grassroots enables diplomacy
+      - Diplomacy channels grassroots
+      - The feedback loop
   - The Coalition (Strange Bedfellows United By Greed)
   - The Timeline (How Long Until Treaty)
   - Objection Handlers (What To Say When Humans Are Stupid)
@@ -1504,20 +1570,6 @@
       - The Choice
   - Earning a Stake: Tracking Contributions for Treasury Allocation
   - Conclusion: From Partners to Owners
-
----
-
-## File: `brain/book/legal-overview.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - On Why You Need Multiple Companies in Multiple Countries
-  - On How to Sell Investment Products Without Going to Prison
-    - The Three-Tier Legal Strategy
-      - Tier 1: Rich People (Accredited Investors)
-        - Tier 2: Regular People (Utility Tokens)
-          - Tier 3: Marketing (No Bullshit Allowed)
-  - Dive Deeper into the Legal Framework
-  - Appendix: Legal Compliance Details (Jurisdiction-Specific)
 
 ---
 
@@ -1983,6 +2035,8 @@
     - Mechanism 3: Universal Access + Minimal Exclusions
     - Mechanism 4: Trial Size and Completion Speed
     - Mechanism 5: Transparent Platform Competition
+      - Competitive Pressure
+      - From [dFDA Benefit Analysis](dfda-benefit-analysis.qmd)
     - Mechanism 6: Aggregate Capacity Multiplication
     - The Behavioral Economics Summary
     - Why This Matters for 72-Year Life Extension
@@ -2044,14 +2098,17 @@
 
 ## File: `brain/book/appendix/personal-lifetime-wealth-calculations.qmd`
 
+- Quarto executes from project root (execute-dir: project in _book.yml)
 - Disease Eradication Model - The Realistic Personal Lifetime Wealth Model
   - TL;DR
   - Why This Model is Correct
     - The Problem with Antibiotic Precedent
     - The Math
+      - For comparison
     - Aging Reversal = Accident-Limited Lifespan
   - The Model Components
     - 1. Disease-by-Disease Eradication (CDC Burden Data)
+      - Why these max potentials?
     - 2. Aging Reversal Bonus
     - 3. Healthcare Savings
     - 4. Productivity Gains
@@ -2066,6 +2123,7 @@
     - Evidence-Based Conservative (5yr extension)
     - Evidence-Based Moderate (10yr extension)
     - Conservative Baseline Visualizations
+      - Why These Are Underestimates
   - When to Use Each Model
     - Default Recommendation
     - For Skeptical/Academic Audiences
@@ -2858,12 +2916,6 @@
     - RECOVERY Trial
     - Traditional Trials
   - Advantages of Pragmatic Trials
-
----
-
-## File: `brain/book/appendix/allied-organizations.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
 
 ---
 

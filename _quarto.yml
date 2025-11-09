@@ -91,7 +91,6 @@ book:
 
     - part: "Policy & Regulatory"
       chapters:
-        - brain/book/legal-overview.qmd # ✅ (IMPROVED - brief overview, see legal-framework.qmd for details) ~4p
         - brain/book/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
         - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd # ✅ (policy doc, must remain formal) ~10p
         - brain/book/appendix/dfda-implementation-via-executive-action.qmd # ✅ (policy strategy, appropriate) ~25p
