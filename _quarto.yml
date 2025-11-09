@@ -27,11 +27,12 @@ book:
       chapters:
         - brain/book/problem.qmd  # ✅ Part I Intro ~8p
         - brain/book/problem/the-daily-massacre.qmd # ✅ Daily Holocaust ~3p
-        - brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd # ✅ The NIH ~9p
-        - brain/book/problem/fda-is-unsafe-and-ineffective.qmd # ✅ The FDA ~25p
         - brain/book/problem/cost-of-war.qmd # ✅ Cost of War ~32p
         - brain/book/problem/cost-of-disease.qmd # ✅ Cost of Disease ~9p
+        - brain/book/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd # ✅ The NIH ~9p
+        - brain/book/problem/fda-is-unsafe-and-ineffective.qmd # ✅ The FDA ~25p
         - brain/book/problem/unrepresentative-democracy.qmd # ✅ Democracy Is Theater & Regulatory Capture ~19p
+        - brain/book/problem/genetic-slavery.qmd # ✅ (EXCELLENT voice) ~9p
 
     - part: "The Solution"
       chapters:
@@ -162,7 +163,6 @@ book:
       chapters:
         - brain/book/theory.qmd # ✅ (EXCELLENT voice) ~3p
         - brain/book/theory/the-two-wars.qmd # ✅ (EXCELLENT voice) ~7p
-        - brain/book/problem/genetic-slavery.qmd # ✅ (EXCELLENT voice) ~9p
 
     - part: "Additional References"
       chapters:
