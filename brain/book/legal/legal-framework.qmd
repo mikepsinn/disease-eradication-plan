@@ -64,6 +64,7 @@ from pathlib import Path
 from IPython.display import Image as IPImage, display
 
 # Add brain/figures to path for helper import
+
 figures_path = Path.cwd()
 if figures_path.name != 'decentralized-institutes-of-health':
     while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
@@ -105,7 +106,8 @@ display(IPImage(str(png_path)))
 
 **What It Is:** The traditional non-profit. Major foundations like Gates Foundation can give large, tax-deductible grants here.
 
-**What It Does:**
+#### What It Does
+
 - **Global Referendum:** Runs non-binding educational survey demonstrating 280M+ support
 - **Research:** Funds academic studies proving system is broken
 - **Education:** Public awareness campaigns (like this book)
@@ -120,6 +122,7 @@ display(IPImage(str(png_path)))
 **What It Is:** Political advocacy arm. Donations NOT tax-deductible.
 
 **What It Does:** Takes referendum results from (c)(3) and weaponizes them:
+
 - **Lobbying:** Unlimited direct lobbying using proven public mandate
 - **Voter Mobilization:** Mobilizes 280M+ referendum participants
 - **Political Action:** Ads, campaigns, overwhelming political pressure
@@ -130,7 +133,8 @@ display(IPImage(str(png_path)))
 
 **What It Is:** Standard for-profit corporation. Designed to attract Wall Street.
 
-**What It Does:**
+#### What It Does
+
 - **Issues VICTORY Bonds:** Sells bonds with 271.8% target returns
 - **Funds War Chest:** Uses $1.0B raised to fund lobbying and campaigns
 - **Delivers Returns:** Manages treaty inflows to pay bondholders
@@ -143,7 +147,8 @@ display(IPImage(str(png_path)))
 
 **Why Switzerland:** They've [avoided war for 200 years](../references.qmd#switzerland-last-war-death-1847) by holding everyone's money. Even Hitler couldn't make them pick a side.
 
-**What It Does:**
+#### What It Does
+
 - **Owns the Engine:** 100% shareholder of Victory Corporation, ensuring profit serves mission
 - **Receives Global Capital:** Accepts grants from international foundations
 - **Guarantees Mission:** Legal charter permanently locked to ending war and disease
@@ -153,20 +158,23 @@ display(IPImage(str(png_path)))
 
 ### Why This Four-Part Structure Works
 
-**Legal Specialization:**
+#### Legal Specialization
+
 - Need foundation grants? The 501(c)(3) handles it
 - Need unlimited lobbying? The 501(c)(4) delivers it
 - Need investor capital? The C-Corp raises it
 - Need international coordination? The Swiss Foundation orchestrates it
 - **Combined:** Everything is legal everywhere, simultaneously
 
-**Firewall Protection:**
+#### Firewall Protection
+
 - Charitable funds never touch political operations (IRS requirement met)
 - Political funds never touch bond proceeds (SEC requirement met)
 - **International funds stay completely firewalled from US political spending (FEC requirement met)**
 - Separate bank accounts, separate staff, separate lawyers for each entity
 
-**Risk Distribution:**
+#### Risk Distribution
+
 - Can't shut down what serves multiple legal purposes
 - Can't sue what operates under different jurisdictions
 - Can't regulate what complies perfectly with all applicable laws
@@ -189,6 +197,7 @@ from pathlib import Path
 from IPython.display import Image as IPImage, display
 
 # Add brain/figures to path for helper import
+
 figures_path = Path.cwd()
 if figures_path.name != 'decentralized-institutes-of-health':
     while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
@@ -248,6 +257,7 @@ from pathlib import Path
 from IPython.display import Image as IPImage, display
 
 # Add brain/figures to path for helper import
+
 figures_path = Path.cwd()
 if figures_path.name != 'decentralized-institutes-of-health':
     while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
@@ -284,7 +294,8 @@ The SEC thinks everything is a security. Your grandmother's cookies? Probably a 
 
 ### VICTORY Bonds: Definitely a Security
 
-**The Howey Test:**
+#### The Howey Test
+
 1. Investment of money ✓
 2. In common enterprise ✓ (saving humanity)
 3. With expectation of profits ✓ (271.8% annually)
@@ -295,19 +306,22 @@ Conclusion: VICTORY Bonds are super definitely a security. Time to comply!
 ### How to Structure It
 
 **Phase 1: Rich People Only (Reg D)**
+
 - [Unlimited accredited investors ($1M net worth or $200K income)](../references.qmd#sec-accredited-investor-definition)
 - [Plus up to 35 sophisticated non-accredited](../references.qmd#sec-investor-limit-private-offering)
 - No public advertising under 506(b) (except this book, which is "education")
 - [File Form D](../references.qmd#sec-form-d-filing) within 15 days
 - No capital limit: Raise as much as you want
 
-**Phase 2: Crowd Sale (Reg CF/A+)**
+#### Phase 2: Crowd Sale (Reg CF/A+)
+
 - After proving model works
 - Regular people can invest
 - Maximum raise limits ([$5M Reg CF](../references.qmd#sec-reg-cf-raise-limit), [$75M Reg A+](../references.qmd#sec-reg-a))
 - Full disclosures (here's how you might lose everything)
 
-**Phase 3: Secondary Markets**
+##### Phase 3: Secondary Markets
+
 - Tokens trade on registered exchanges
 - Or DEXs (can't regulate math)
 - Liquidity for early investors
@@ -346,18 +360,21 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 
 **The Solution:** Complete segregation
 
-**US Operations (Americans Only):**
+#### US Operations (Americans Only)
+
 - Separate 501(c)(4) + Super PAC
 - 100% US citizen funded
 - 100% US citizen controlled
 - Zero coordination with international entities
 
-**International Operations (Everyone Else):**
+#### International Operations (Everyone Else)
+
 - Focus on non-US countries
 - Public advocacy only in US
 - No US election spending
 
-**The Firewall:**
+#### The Firewall
+
 - Separate bank accounts
 - Separate staff
 - Separate offices
@@ -366,18 +383,21 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 
 ### The Super PAC Playbook
 
-**What You Can Do:**
+#### What You Can Do
+
 - Unlimited spending on "issue advocacy"
 - Attack ads against treaty opponents
 - "Smith hates children with cancer" (legal)
 
-**What You Can't Do:**
+#### What You Can't Do
+
 - "Vote for Smith" (illegal)
 - Coordinate with candidates (wink wink)
 - Foreign money (that's what prison is for)
 - Quid pro quo (has to be implicit)
 
-**The Workaround:**
+#### The Workaround
+
 - Public positions on website
 - Candidates read website
 - Candidates "independently" support treaty
@@ -386,17 +406,20 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 
 ### International Compliance (Every Country Has Weird Laws)
 
-**United Kingdom:**
+#### United Kingdom
+
 - Register with Electoral Commission
 - [Spending limits (£20,000 nationally)](../references.qmd#uk-electoral-spending-limits)
 - Quarterly reports
 
-**European Union:**
+#### European Union
+
 - 27 different election laws (fun!)
 - GDPR for voter data
 - Anti-money laundering
 
-**Canada:**
+#### Canada
+
 - Register as third-party advertiser
 - [Foreign funding restrictions](../references.qmd#canada-bill-c-76)
 - [Real-time expense reporting](../references.qmd#canada-expenditure-reporting-500)
@@ -412,27 +435,31 @@ They will come for you. Here's how you survive:
 
 ### The Legal Attack Vectors
 
-**Securities Fraud:**
+#### Securities Fraud
+
 - Defense: Full compliance from day one
 - Backup: Multiple jurisdictions
 - Reality: Your lawyers bill more than theirs
 
-**Election Law Violations:**
+#### Election Law Violations
+
 - Defense: Complete segregation
 - Backup: Constitutional challenge
 - Reality: [Money is speech (Supreme Court said so)](../references.qmd#citizens-united-ruling)
 
-**Tax Evasion:**
+#### Tax Evasion
+
 - Defense: Pay every penny
 - Reality: Structure is more compliant than churches
 
-**RICO/Conspiracy:**
+#### RICO/Conspiracy
+
 - Defense: Everything is public
 - Reality: Hard to prosecute humanitarians
 
 ### The Legal War Chest
 
-**Budget: $100M for lawyers**
+#### Budget: $100M for lawyers
 
 - Top firms in every jurisdiction
 - Former regulators on retainer
@@ -440,7 +467,8 @@ They will come for you. Here's how you survive:
 - International law experts
 - PR firm (court of public opinion)
 
-**The Strategy:**
+#### The Strategy
+
 - Bore them with compliance
 - Overwhelm with paperwork
 - Perfect technical adherence

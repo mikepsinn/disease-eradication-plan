@@ -37,6 +37,7 @@ If you get sick (and you will), your chances of getting into a clinical trial ar
 #| echo: false
 
 # Calculate for typical 30-year-old making $50K
+
 calc = calculate_personal_lifetime_wealth_disease_eradication(
     treaty_pct=0.01,
     current_age=30,
@@ -53,15 +54,15 @@ life_extension = calc['life_extension_years']
 
 Instead of waiting 17 years for a cure that may never come, you get immediate access to subsidized clinical trials for every disease. Your chance of survival goes from near-zero to "actually possible."
 
-**If you're healthy (for now):**
+## If you're healthy (for now)
 
 As diseases are cured, healthcare costs plummet. The 1% Treaty accelerates research by 115x (2,300 research-years in 20 years). That means cancer, heart disease, Alzheimer's - all tackled simultaneously by gene therapy, AI drug discovery, stem cells, and epigenetics.
 
-**If you have money:**
+### If you have money
 
 [VICTORY Bonds](../economics/victory-bonds.qmd) offer a projected **271.8% annual return**, perpetually. I could not find a comparable investment. You can profit while funding the research that will make you immortal.
 
-**If you have a family:**
+#### If you have a family
 
 Your parents won't die of Alzheimer's. Your children won't have to worry about rare diseases. You get to keep the people you love.
 
@@ -71,7 +72,7 @@ Here's what a typical 30-year-old making $50,000/year actually gets:
 
 {{< include ../../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
-**Total lifetime benefit: $`{python} f"{total_benefit/1000000:.1f}"`M**
+#### Total lifetime benefit: $`{python} f"{total_benefit/1000000:.1f}"`M
 
 Where does this come from?
 

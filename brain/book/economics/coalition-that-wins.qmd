@@ -298,6 +298,7 @@ from pathlib import Path
 from IPython.display import Image as IPImage, display
 
 # Add brain/figures to path for helper import
+
 figures_path = Path.cwd()
 if figures_path.name != 'decentralized-institutes-of-health':
     while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
@@ -311,18 +312,21 @@ dot.attr(rankdir='TD', size='12,12')
 setup_graphviz_style(dot)
 
 # Insurance cascade
+
 dot.node('A', 'First Insurance Company Invests')
 dot.node('B', 'Lower Premiums')
 dot.node('C', 'Competitors Must Match')
 dot.node('D', 'All Insurers Join')
 
 # Pharma cascade
+
 dot.node('E', 'First Pharma Invests')
 dot.node('F', 'Faster Drug Development')
 dot.node('G', 'Competitors Fall Behind')
 dot.node('H', 'All Pharma Joins')
 
 # Country cascade
+
 dot.node('I', 'First Country Signs')
 dot.node('J', 'Citizens Live Longer')
 dot.node('K', 'Other Countries Look Bad')
