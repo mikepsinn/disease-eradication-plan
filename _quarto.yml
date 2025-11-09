@@ -141,7 +141,6 @@ book:
     - part: "Governance & Organization"
       chapters:
         - brain/book/appendix/governance.qmd # ✅ (good voice) ~4p
-        - brain/book/appendix/legal-and-organizational-structure.qmd # ✅ Complete legal/org structure (merged multi-entity + org charts) ~7p
         - brain/book/appendix/organizational-precedents.qmd # ✅ (technical analysis, appropriate) ~3p
         - brain/book/appendix/dih-integration-model.qmd # ✅ (has personality) ~4p
         - brain/book/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p

@@ -802,47 +802,33 @@
 ## File: `brain/book/legal/legal-framework.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-  - The Hybrid Legal Architecture (Four Tools for One Mission)
-    - The Four-Part Structure
+  - The Problem Your Laws Created
+  - The Four-Entity Architecture (Each Tool Does One Job)
+- Add brain/figures to path for helper import
+    - Entity #1: The 501(c)(3) Public Charity ("The Brain")
+    - Entity #2: The 501(c)(4) Social Welfare Org ("The Sword")
+    - Entity #3: The Victory Corporation ("The Engine")
+    - Entity #4: The DIH Foundation ("The Soul")
     - Why This Four-Part Structure Works
-      - Firewall Protection
-      - Risk Distribution
-      - The Strategic Advantage
-  - Securities Law Navigation (How to Sell Hope Without Going to Jail)
-    - VICTORY Bonds: Debt, Not Equity (The Crucial Distinction)
-      - Phase 2: Crowd Sale (Reg CF/A+)
-        - Phase 3: Secondary Markets
-    - The Compliance Stack (Lawyers All the Way Down)
-      - KYC/AML (Know Your Criminal)
-  - Election Law Compliance (Bribing Politicians, Legally)
+  - Organizational Structure: The For-Profit Management Company
+- Add brain/figures to path for helper import
+    - The General Staff (G-Staff)
+  - Nonprofit Foundation Governance
+- Add brain/figures to path for helper import
+  - Securities Law (How to Sell Hope Without Prison)
+    - VICTORY Bonds: Definitely a Security
+    - How to Structure It
+    - Required Disclosures (The Truth)
+    - KYC/AML (Know Your Criminal)
+  - Election Law (Bribing Politicians, Legally)
     - The Foreign National Problem (And Solution)
-      - US Operations (Americans Only)
-      - International Operations (Everyone Else)
-      - The Firewall
-    - The Super PAC Playbook (Democracy for Sale, Wholesale Prices)
-      - What You Can Do
-      - What You Can't Do
-      - The Workaround
+    - The Super PAC Playbook
     - International Compliance (Every Country Has Weird Laws)
-      - United Kingdom
-      - European Union
-      - Canada
-  - The Treaty Framework (International Law for Dummies)
-  - The Legislation Package (Laws Already Written, Just Add Politicians)
+  - Treaty Framework
   - Risk Mitigation (When They Come For You)
     - The Legal Attack Vectors
-      - Securities Fraud
-      - Election Law Violations
-      - Tax Evasion
-      - RICO/Conspiracy
     - The Legal War Chest
-      - The Strategy
   - The Escape Routes (If Everything Goes Wrong)
-    - Plan A: Win in Court
-      - Plan B: International Arbitration
-        - Plan C: Regulatory Capture
-          - Plan D: Public Revolution
-          - Plan E: Actual Revolution
 
 ---
 
@@ -1296,23 +1282,18 @@
 ## File: `brain/book/strategy/strategy-execution-overview.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-    - Step 1: Acquire Capital
-    - Step 2: Align Incentives
-    - Step 3: Execute the Transition
+  - High-Level Strategy: The Three-Step Recipe for Not Dying
+    - Step 1: Collect Papers from Rich People
+    - Step 2: Pay Humans to Click YES
+    - Step 3: Apply Papers to Politicians Until Treaty Happens
   - Detailed Execution: The Five-Step Cascade
-  - Tactical Implementation: The Bribe Sequence
-    - 1. The Bribe for Rich People
-      - Phase 1: Seed Investors ($250-400M Initial Investment)
-      - The Superior Offer to Military Contractors
-    - 2. The Bribe for the First Followers
-      - Phase 2: Campaign Funders ($100-200M for the Referendum)
-    - 3. The Bribe for Regular People
-      - Phase 3: Citizens (Global Population)
-    - 4. The Bribe for Politicians
-      - Phase 4: Politicians ($800M-1.5B Independent Expenditures)
-      - The Superior Offer to Politicians
-      - What They Get
-  - The Timeline: From Idea to Revolution
+  - Tactical Implementation: The Sacred Bribery Sequence
+    - Bribe Category #1: Rich People (The Paper Collectors)
+      - The Specific Offer to Bomb Makers
+    - Bribe Category #2: The True Believers (Early Adopters Who Want Control)
+    - Bribe Category #3: Regular People (Everyone Else)
+    - Bribe Category #4: Politicians (The Elected Paper Recipients)
+  - The Timeline: How Long This Takes
 
 ---
 
@@ -1327,80 +1308,25 @@
 ## File: `brain/book/strategy/treaty-adoption-strategy.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
-  - The Dual-Track Model
-    - Why You Need Both Tracks
-  - Track 1: Grassroots Mobilization (Bottom-Up Pressure)
-    - Who Joins First
-      - The Natural Constituencies
-      - Combined: 560M potential early adopters
-    - The Organizational Structure
-      - No Traditional Hierarchy
-      - The Cell Model
-    - The Recruitment Funnel
-      - Stage 1: Awareness (1 billion people)
-      - Stage 2: Interest (500 million)
-      - Stage 3: Commitment (280 million)
-      - Conversion Rate
-    - The Local Strategies
-      - City-Level Organizing
-      - University Campus Strategy
-      - Workplace Strategy
-      - Religious Community Strategy
-    - The Toolkit for Activists
-      - Digital Tools
-      - Physical Tools
-      - Talking Points
-  - Track 2: Diplomatic Approach (Top-Down Negotiations)
-    - Phase 1: Pilot Countries
-    - Phase 2: Major Powers
-      - United States
-      - China
-      - European Union
-      - Russia
-    - Phase 3: Everyone Else
-    - The Negotiation Tactics
-      - The Simultaneous Signing
-      - The Minimal Ask
-      - The Maximum Benefit
-    - The Backdoor Channels
-      - The Billionaire Diplomats
-      - The Corporate Pressure
-      - The Medical Community
-    - The Treaty Structure
-      - The Core Terms
-      - The Flexibility
-      - The Enforcement
-  - How the Two Tracks Reinforce Each Other
-    - Grassroots Enables Diplomacy
-    - Diplomacy Channels Grassroots Energy
-    - The Feedback Loop
-    - The Coalition Building
-      - Strange Bedfellows Strategy
-      - Who Wants What
-  - The Integrated Timeline
-    - Year 1: Build Coalition
-    - Year 2: Major Powers Negotiate
-    - Year 3: Global Referendum
-    - Year 4: Signing & Implementation
-  - The Objection Handlers
-    - "We need our full military budget for security"
-    - "This is sovereignty violation"
-    - "What if other countries cheat?"
-    - "Our country has different priorities"
-  - The Resistance Points (and Responses)
-    - "This is too radical"
-    - "It will never pass"
-    - "I don't trust it"
-    - "What if it fails?"
-  - The Success Metrics
-    - Early Phase (Month 1-3)
-    - Growth Phase (Month 4-6)
-    - Critical Mass (Month 7-9)
-    - Victory (Month 10-36)
-  - The Realistic Assessment
-    - Optimistic Scenario (3 years)
-    - Realistic Scenario (5-7 years)
-    - Pessimistic Scenario (10+ years)
+  - The Two-Track System (Bottom-Up Fear + Top-Down Paperwork)
+  - Track 1: Grassroots (Make Politicians Afraid)
+    - The Magic Number: 3.5%
+    - Who Joins First (The People Who Actually Care)
+    - The Cell Model (How Movements Actually Spread)
+    - The Recruitment Funnel (Turning Awareness Into Action)
+    - The Toolkit
+  - Track 2: Diplomatic (Give Governments The Paperwork)
+    - The Simultaneous Signing Strategy
+    - Phase 1: Pilot Countries (Prove It Works)
+    - Phase 2: Major Powers (Make It Real)
+    - Phase 3: Everyone Else (Peer Pressure)
+    - The Minimal Ask (So Small It's Hard to Refuse)
+    - The Enforcement (Smart Contracts)
+  - How The Tracks Reinforce Each Other
+  - The Coalition (Strange Bedfellows United By Greed)
+  - The Timeline (How Long Until Treaty)
+  - Objection Handlers (What To Say When Humans Are Stupid)
+  - The Assessment (How Long This Actually Takes)
   - The Secret Weapon: Inevitability
 
 ---
@@ -2592,45 +2518,6 @@
     - The Multi-Layered Defense
     - Beyond Medical Research: A Template for Uncorruptible Governance
       - What Else This Could Fix
-
----
-
-## File: `brain/book/appendix/legal-and-organizational-structure.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - The Three-Entity Structure (The Legal Shell Game)
-- Add brain/figures to path for helper import
-  - Entity #1: The 501(c)(3) Public Charity ("The Educator and Mobilizer")
-    - What It Does
-    - Why We Need It
-    - What It's Allowed To Do
-    - What It's NOT Allowed To Do
-    - How It Gets Money
-    - Role in The Plan
-  - Entity #2: The 501(c)(4) Social Welfare Organization ("The Advocate")
-    - What It Does
-    - Why We Need It
-    - What It's Allowed To Do
-    - What It's NOT Allowed To Do
-    - How It Gets Money
-    - The Trade-Off
-    - Role in The Plan
-  - Entity #3: The For-Profit Entity / Management Company ("The Engine")
-    - What It Does
-    - Why We Need It
-    - What It's Allowed To Do
-    - How It Gets Money
-    - Legal Structure
-    - Role in The Plan
-  - For-Profit Management Company (SPV) - Organizational Structure
-- Add brain/figures to path for helper import
-    - Operational Command: The General Staff (G-Staff)
-  - Non-Profit Foundation - Governance Structure
-- Add brain/figures to path for helper import
-  - How These Three Entities Work Together (Without Breaking The Law)
-    - Strict Separation (The Legal Requirement)
-    - Cooperative Mission (The Reality)
-  - The Disclaimer You Should Actually Read
 
 ---
 

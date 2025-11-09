@@ -1,6 +1,6 @@
 ---
 title: Legal Architecture
-description: How to Stay Out of Prison
+description: How to Stay Out of Prison While Revolutionizing Global Healthcare
 published: true
 tags:
   - legal-framework
@@ -8,9 +8,8 @@ tags:
   - securities-law
   - election-law
   - multi-jurisdiction
+  - organizational-structure
 lastFactCheckHash: 593c318d0783088132712c3ac6699b0f6f2f354cca941ccdd49abafbc2de650c
-lastStructureCheckHash: 650db8981ddbfb68eb5985fddd531dd05eb677245970df10b8d8b4424df4d877
-lastLatexCheckHash: 9f86bb3b54c94ab49181b8fc67ab8573fb57331f7348ae80d31702d32b37a724
 lastInstructionalVoiceHash: 7ef639e46e63ff3d3ba9c54b6beabfd20f265c50287b0796d5c02daa3b85f710
 ---
 
@@ -28,217 +27,357 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
-The 1% Treaty redirects $27.2B from bombs to bandages. The people who profit from bombs have lawyers. Good lawyers. Expensive lawyers. Lawyers who've put people in prison for less.
+The 1% Treaty redirects $27.2B from bombs to bandages. The people who profit from bombs have lawyers. Good lawyers. Expensive lawyers. Lawyers who've successfully defended war crimes at The Hague.
 
 The solution: hire better lawyers.
 
 This chapter explains how to revolutionize global healthcare without violating a single law. It's like a heist movie, except completely legal and the only thing stolen is death's monopoly on humanity.
 
-## The Hybrid Legal Architecture (Four Tools for One Mission)
+## The Problem Your Laws Created
 
-To win this fight, you need to wage it on three fronts simultaneously: the moral front (public education), the political front (lobbying), and the financial front (investment). The problem is that legally, no single organization can do all three.
+Your laws say you can't do three things with one organization:
 
-A charity (501c3) can't lobby. A lobbying group (501c4) can't offer tax-deductions to big foundations. And neither can sell bonds to hedge funds.
+1. Accept tax-deductible donations (requires charity status)
+2. Lobby politicians (charities can't do this)
+3. Make money for investors (nonprofits can't do this)
 
-Trying to use one tool for all three jobs is like trying to build a house with only a hammer. The solution isn't to pick one; it's to build a complete toolkit.
+These contradictory rules weren't designed to stop good ideas. They were designed by lobbyists to make change expensive enough that only billionaires can afford democracy.
 
-### The Four-Part Structure
+The solution: Don't use one organization. Use four.
 
-**1. The Decentralized Institutes of Health US (The "Brain" - US 501(c)(3) Public Charity)**
+This isn't a loophole. This is how your democracy actually works. Churches do this. Political parties do this. The NRA does this. You're just doing it for curing diseases instead of protecting gun rights.
 
-- **What It Is**: The traditional non-profit that everyone thinks of. Major US foundations like the Gates Foundation can give large, tax-deductible grants here.
-- **What It Does (Legally)**:
-  - The Global Referendum: Runs the non-binding, educational global survey on War and Disease to demonstrate 3.5% support (280M+ verified participants)
-  - Research: Funds academic and economic studies proving the system is broken
-  - Education: Runs public awareness campaigns and publishes findings (like this book)
-  - Software Development: Funds open-source creation of [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms as public goods
+## The Four-Entity Architecture (Each Tool Does One Job)
 
-- **What It CANNOT Do**: Cannot engage in substantial political lobbying. It can educate and demonstrate public will, but cannot tell politicians what to do or who to vote for.
-- **Why This Jurisdiction**: US 501(c)(3) status unlocks foundation grants and provides tax benefits to donors. Running a non-binding public opinion survey is clearly educational and within bounds.
+To win this fight, you wage it on three fronts simultaneously: moral (public education), political (lobbying), and financial (investment). Your laws require separate entities for each.
 
-**2. The DIH Action Fund (The "Sword" - US 501(c)(4) Social Welfare Org)**
+Trying to use one tool for all three jobs is like trying to build a house with only a hammer. The solution: build a complete toolkit.
 
-- **What It Is**: The political advocacy arm. Donations are NOT tax-deductible. This is the vehicle for politically-motivated giving.
-- **What It Does**: Takes the referendum results from the (c)(3) and weaponizes them:
-  - Lobbying: Conducts unlimited, direct lobbying of politicians using the proven public mandate to pass the 1% Treaty
-  - Voter Mobilization: Mobilizes the 280M+ referendum participants to contact their representatives
-  - Political Action: Buys ads, organizes campaigns, creates overwhelming political pressure
+```{python}
+#| echo: false
+#| fig-cap: "Four-Entity Legal Architecture - Complete organizational structure"
+#| fig-alt: "Four entities coordinating: Swiss Foundation (parent, owns Victory Corp), Victory Corporation (for-profit, issues bonds), 501(c)(3) Public Charity (education, referendum), 501(c)(4) Social Welfare (lobbying). Each with distinct roles and funding sources."
 
-- **Why This Jurisdiction**: US 501(c)(4) allows unlimited lobbying while maintaining non-profit status.
+import graphviz
+import sys
+from pathlib import Path
+from IPython.display import Image as IPImage, display
 
-**3. The Victory Corporation (The "Engine" - Delaware C-Corp)**
+# Add brain/figures to path for helper import
+figures_path = Path.cwd()
+if figures_path.name != 'decentralized-institutes-of-health':
+    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
+        figures_path = figures_path.parent
+sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
 
-- **What It Is**: A standard, for-profit corporation designed to attract Wall Street.
-- **What It Does**: The financial engine for high-risk, high-return investors:
-  - Issues VICTORY Bonds: Sells bonds with 271.8% target returns to investors
-  - Funds the War Chest: Uses the $1.0B raised to fund expensive lobbying and media campaigns
-  - Delivers Returns: Manages treaty inflows to pay bondholders
+from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
-- **Why Delaware**: Established corporate law, [more corporations than humans live there](../references.qmd#delaware-corporate-population), and Citizens United means corporations have political speech rights.
+dot = graphviz.Digraph(comment='Four-Entity Legal Architecture', format='png')
+dot.attr(rankdir='TD', size='14,16')
+setup_graphviz_style(dot)
 
-**4. The DIH Foundation (The "Soul" - Swiss Foundation)**
+with dot.subgraph(name='cluster_parent') as parent:
+    parent.attr(label='Parent Organization', style='dashed')
+    parent.node('Swiss', 'DIH Foundation\n(Swiss Foundation)\n"The Soul"\n- Owns Victory Corp\n- Neutral jurisdiction\n- Mission permanence')
 
-- **What It Is**: The parent organization that holds everything together, based in neutral Switzerland.
-- **Why Switzerland**: They've [avoided war for 200 years](../references.qmd#switzerland-last-war-death-1847) by holding everyone's money. Even Hitler couldn't make them pick a side.
-- **What It Does**: Its legal charter is permanently locked to the mission of ending war and disease:
-  - Owns the Engine: 100% shareholder of Victory Corporation, ensuring profit serves the humanitarian mission
-  - Receives Global Capital: Accepts grants from international foundations and individuals
-  - Guarantees the Mission: Ultimate failsafe ensuring the structure can never be sold or corrupted
-  - Coordinates Treaty Implementation: Neutral jurisdiction for international agreement
+with dot.subgraph(name='cluster_entities') as entities:
+    entities.attr(label='Operating Entities', style='dashed')
+    entities.node('C3', '501(c)(3) Public Charity\n"The Brain"\n- Tax-deductible donations\n- Education & research\n- Global referendum')
+    entities.node('C4', '501(c)(4) Social Welfare\n"The Sword"\n- Political advocacy\n- Unlimited lobbying\n- Voter mobilization')
+    entities.node('Corp', 'Victory Corporation\n"The Engine"\n- For-profit\n- Issues VICTORY Bonds\n- Investor returns')
 
-- **Legal Benefits**: Neutral jurisdiction, crypto-friendly, allergic to conflict, perfect for international coordination.
+dot.node('Foundations', 'Foundations\n(Tax-deductible)')
+dot.node('Donors', 'Political Donors\n(Not deductible)')
+dot.node('Investors', 'Investors\n(Seeking returns)')
+
+dot.edge('Swiss', 'Corp', label='100% Ownership')
+dot.edge('Foundations', 'C3')
+dot.edge('Donors', 'C4')
+dot.edge('Investors', 'Corp')
+dot.edge('C3', 'C4', label='Educates', style='dashed')
+dot.edge('C4', 'Corp', label='Creates Mandate', style='dashed')
+
+png_path = render_graphviz_with_watermark(dot, 'four-entity-legal-architecture')
+display(IPImage(str(png_path)))
+```
+
+### Entity #1: The 501(c)(3) Public Charity ("The Brain")
+
+**What It Is:** The traditional non-profit. Major foundations like Gates Foundation can give large, tax-deductible grants here.
+
+**What It Does:**
+- **Global Referendum:** Runs non-binding educational survey demonstrating 280M+ support
+- **Research:** Funds academic studies proving system is broken
+- **Education:** Public awareness campaigns (like this book)
+- **Software:** Funds open-source [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms
+
+**What It CANNOT Do:** Lobby politicians. Can educate, can demonstrate public will, cannot tell politicians what to do.
+
+**Why US 501(c)(3):** Unlocks foundation grants. Running non-binding public opinion survey is clearly educational.
+
+### Entity #2: The 501(c)(4) Social Welfare Org ("The Sword")
+
+**What It Is:** Political advocacy arm. Donations NOT tax-deductible.
+
+**What It Does:** Takes referendum results from (c)(3) and weaponizes them:
+- **Lobbying:** Unlimited direct lobbying using proven public mandate
+- **Voter Mobilization:** Mobilizes 280M+ referendum participants
+- **Political Action:** Ads, campaigns, overwhelming political pressure
+
+**Why US 501(c)(4):** Allows unlimited lobbying while maintaining nonprofit status.
+
+### Entity #3: The Victory Corporation ("The Engine")
+
+**What It Is:** Standard for-profit corporation. Designed to attract Wall Street.
+
+**What It Does:**
+- **Issues VICTORY Bonds:** Sells bonds with 271.8% target returns
+- **Funds War Chest:** Uses $1.0B raised to fund lobbying and campaigns
+- **Delivers Returns:** Manages treaty inflows to pay bondholders
+
+**Why Delaware:** Established corporate law. [More corporations than humans live there](../references.qmd#delaware-corporate-population). Citizens United means corporations have political speech rights.
+
+### Entity #4: The DIH Foundation ("The Soul")
+
+**What It Is:** Parent organization holding everything together. Based in neutral Switzerland.
+
+**Why Switzerland:** They've [avoided war for 200 years](../references.qmd#switzerland-last-war-death-1847) by holding everyone's money. Even Hitler couldn't make them pick a side.
+
+**What It Does:**
+- **Owns the Engine:** 100% shareholder of Victory Corporation, ensuring profit serves mission
+- **Receives Global Capital:** Accepts grants from international foundations
+- **Guarantees Mission:** Legal charter permanently locked to ending war and disease
+- **Coordinates Treaty:** Neutral jurisdiction for international agreement
+
+**Legal Benefits:** Neutral jurisdiction, crypto-friendly, allergic to conflict, perfect for international coordination.
 
 ### Why This Four-Part Structure Works
 
-**Legal Specialization (Each Tool Does What It's Built For):**
-
+**Legal Specialization:**
 - Need foundation grants? The 501(c)(3) handles it
 - Need unlimited lobbying? The 501(c)(4) delivers it
 - Need investor capital? The C-Corp raises it
 - Need international coordination? The Swiss Foundation orchestrates it
-- Combined: Everything is legal everywhere, simultaneously
+- **Combined:** Everything is legal everywhere, simultaneously
 
-#### Firewall Protection
+**Firewall Protection:**
+- Charitable funds never touch political operations (IRS requirement met)
+- Political funds never touch bond proceeds (SEC requirement met)
+- **International funds stay completely firewalled from US political spending (FEC requirement met)**
+- Separate bank accounts, separate staff, separate lawyers for each entity
 
-- Charitable funds never touch political operations (IRS requirement met).
-- Political funds never touch bond proceeds (SEC requirement met).
-- **International funds stay completely firewalled from US political spending (FEC requirement met).** The Victory Corporation (C-Corp) maintains two segregated accounts: a 'US Political Fund' capitalized exclusively by verified US-based investors and a 'Global Operations Fund' capitalized by international investors. Only the US Political Fund funds the DIH Action Fund (c4) and its related US political activities, ensuring strict compliance with federal election law.
-- Each entity has separate bank accounts, separate staff, and separate lawyers to maintain these firewalls.
-
-#### Risk Distribution
-
+**Risk Distribution:**
 - Can't shut down what serves multiple legal purposes
 - Can't sue what operates under different jurisdictions
 - Can't regulate what complies perfectly with all applicable laws
 - Can't stop what people actually want
 
-#### The Strategic Advantage
+**The Beauty:** Same structure used by most sophisticated social movements (ACLU, NRA, Planned Parenthood). Each entity only does what's perfectly legal in its jurisdiction. Combined, they do what's impossible with single structure.
 
-- The Swiss Foundation owns the for-profit Victory Corporation, ensuring profit serves mission
-- The 501(c)(4) can't be defunded by Congress (private donations, not government)
-- The 501(c)(3) maintains legitimacy for academic partnerships
-- The C-Corp provides liquidity for investors who need exit options
+## Organizational Structure: The For-Profit Management Company
 
-**The Beauty:** This is the same structure used by the most sophisticated social movements (ACLU, NRA, Planned Parenthood). Each entity only does what's perfectly legal in its jurisdiction. Combined, they do what's impossible with a single structure.
+The Victory Corporation (for-profit) is the operational engine. Employs core team, raises capital, executes strategy.
 
-## Securities Law Navigation (How to Sell Hope Without Going to Jail)
+```{python}
+#| echo: false
+#| fig-cap: "For-Profit Management Company (SPV) Organizational Structure"
+#| fig-alt: "Organizational chart showing Board of Directors at top, Managing Director below, with three leads reporting: Capital Markets, Elections & IE Compliance, and Growth & Referrals. Future hires shown with dashed line."
 
-For a complete breakdown of the financial mechanics, expected returns, and use of funds for VICTORY Bonds, see the [Investment Vehicle](../economics/victory-bonds.qmd) chapter. This section covers the legal framework for ensuring their compliance with securities law.
+import graphviz
+import sys
+from pathlib import Path
+from IPython.display import Image as IPImage, display
 
-The SEC has entered the chat. They're not happy. They think everything is a security. Your grandmother's cookies? Probably a security. That feeling of satisfaction after a good sneeze? Definitely a security.
+# Add brain/figures to path for helper import
+figures_path = Path.cwd()
+if figures_path.name != 'decentralized-institutes-of-health':
+    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
+        figures_path = figures_path.parent
+sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
 
-### VICTORY Bonds: Debt, Not Equity (The Crucial Distinction)
+from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
-**What Makes Something a Security (The Howey Test):**
+dot = graphviz.Digraph(comment='For-Profit SPV Structure', format='png')
+dot.attr(rankdir='TD', size='8,10')
+setup_graphviz_style(dot)
 
-1. Investment of money ✓ (yep, that's you)
-2. In a common enterprise ✓ (saving humanity, very common)
+with dot.subgraph(name='cluster_spv') as spv:
+    spv.attr(label='For-Profit Management Co. (SPV)', style='dashed')
+    spv.node('A', 'Board of Directors\n(Investors & Founder)')
+    spv.node('B', 'Managing Director')
+    spv.node('C', 'Capital Markets Lead')
+    spv.node('D', 'Elections & IE Compliance Lead')
+    spv.node('E', 'Growth & Referrals Lead')
+    spv.node('F', 'Future Hires\n(Post-Seed Round)\nEngineering Lead, Design Lead, etc.')
+
+    spv.edge('A', 'B')
+    spv.edge('B', 'C')
+    spv.edge('B', 'D')
+    spv.edge('B', 'E')
+    spv.edge('B', 'F', style='dashed')
+
+png_path = render_graphviz_with_watermark(dot, 'spv-organizational-structure')
+display(IPImage(str(png_path)))
+```
+
+### The General Staff (G-Staff)
+
+Day-to-day operations managed by General Staff, modeled after military command structures. Clear lines of responsibility:
+
+- **G-1 (Personnel & Recruitment):** Manages Personnel Roster - master list of everyone involved
+- **G-2 (Intelligence):** Intelligence on diseases and operational landscape
+- **G-3 (Operations):** Plans and executes clinical trials via dFDA
+- **G-4 (Logistics & Treasury):** Manages flow of funds from VICTORY Bonds
+- **G-5 (Plans & Strategy):** Develops long-term strategy, treaty expansions
+- **G-6 (Signal & Communications):** Manages propaganda, communications, technology platforms
+
+See [Command & Control Systems](../appendix/command-and-control-systems.qmd) for technical implementation.
+
+## Nonprofit Foundation Governance
+
+The DIH Foundation (Swiss parent) is guardian of the mission. Provides legal and ethical oversight.
+
+```{python}
+#| echo: false
+#| fig-cap: "Non-Profit Foundation and SPV Relationship"
+#| fig-alt: "Two boxes: Non-Profit Foundation with Board of Trustees overseeing Executive Director, and For-Profit SPV with Founder & Managing Director. Connection shows mission oversight relationship."
+
+import graphviz
+import sys
+from pathlib import Path
+from IPython.display import Image as IPImage, display
+
+# Add brain/figures to path for helper import
+figures_path = Path.cwd()
+if figures_path.name != 'decentralized-institutes-of-health':
+    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
+        figures_path = figures_path.parent
+sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
+
+from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment='Foundation and SPV Relationship', format='png')
+dot.attr(rankdir='TD', size='8,10')
+setup_graphviz_style(dot)
+
+with dot.subgraph(name='cluster_foundation') as foundation:
+    foundation.attr(label='DIH Foundation (Swiss)', style='dashed')
+    foundation.node('A', 'Board of Trustees\n(Independent, Mission-Aligned)')
+    foundation.node('B', '(Future) Executive Director')
+    foundation.edge('A', 'B')
+
+with dot.subgraph(name='cluster_spv') as spv:
+    spv.attr(label='Victory Corporation (For-Profit)', style='dashed')
+    spv.node('C', 'Founder & Managing Director')
+
+dot.edge('A', 'C', label='Provides Mission\nOversight To', style='dashed')
+
+png_path = render_graphviz_with_watermark(dot, 'foundation-spv-relationship')
+display(IPImage(str(png_path)))
+```
+
+## Securities Law (How to Sell Hope Without Prison)
+
+For complete breakdown of financial mechanics and returns, see [Investment Vehicle](../economics/victory-bonds.qmd) chapter. This section covers legal compliance.
+
+The SEC thinks everything is a security. Your grandmother's cookies? Probably a security. That feeling after a good sneeze? Definitely a security.
+
+### VICTORY Bonds: Definitely a Security
+
+**The Howey Test:**
+1. Investment of money ✓
+2. In common enterprise ✓ (saving humanity)
 3. With expectation of profits ✓ (271.8% annually)
-4. From efforts of others ✓ (you do the work)
+4. From efforts of others ✓
 
 Conclusion: VICTORY Bonds are super definitely a security. Time to comply!
 
-**How to Structure It (The Boring But Important Part):**
+### How to Structure It
 
 **Phase 1: Rich People Only (Reg D)**
-
 - [Unlimited accredited investors ($1M net worth or $200K income)](../references.qmd#sec-accredited-investor-definition)
-- [Plus up to 35 sophisticated non-accredited investors (Rule 506b)](../references.qmd#sec-investor-limit-private-offering)
+- [Plus up to 35 sophisticated non-accredited](../references.qmd#sec-investor-limit-private-offering)
 - No public advertising under 506(b) (except this book, which is "education")
-- [File Form D](../references.qmd#sec-form-d-filing) within 15 days (tell SEC it exists, they can't stop it)
+- [File Form D](../references.qmd#sec-form-d-filing) within 15 days
 - No capital limit: Raise as much as you want
 
-#### Phase 2: Crowd Sale (Reg CF/A+)
-
-- After proving the model works
+**Phase 2: Crowd Sale (Reg CF/A+)**
+- After proving model works
 - Regular people can invest
 - Maximum raise limits ([$5M Reg CF](../references.qmd#sec-reg-cf-raise-limit), [$75M Reg A+](../references.qmd#sec-reg-a))
 - Full disclosures (here's how you might lose everything)
 
-##### Phase 3: Secondary Markets
-
+**Phase 3: Secondary Markets**
 - Tokens trade on registered exchanges
 - Or DEXs (can't regulate math)
 - Liquidity for early investors
-- Price discovery by markets
 
-### The Compliance Stack (Lawyers All the Way Down)
+### Required Disclosures (The Truth)
 
-**Required Disclosures (Things That Could Go Wrong):**
-
-Securities law demands brutal honesty about risk. Here's the truth:
+Securities law demands brutal honesty about risk:
 
 - "You might lose everything" (in bold)
-- "Defense contractors might assassinate you" (in italics)
-- "The government might make this illegal" (in red)
+- "Defense contractors might sue you" (in italics)
+- "Government might make this illegal" (in red)
 - "Your spouse might leave you for investing" (in Comic Sans)
 
-#### KYC/AML (Know Your Criminal)
+### KYC/AML (Know Your Criminal)
 
-The government requires proof you're not laundering cartel money to fund healthcare. The irony that governments themselves launder tax money into defense contractor pockets is apparently lost on regulators.
+Government requires proof you're not laundering cartel money to fund healthcare. The irony that governments themselves launder tax money into defense contractor pockets is apparently lost on regulators.
 
-- Government ID required (so they know who to blame later)
-- Source of funds verification (prove it's not drug money, gambling winnings, or other fun sources)
-- Ongoing monitoring (because you might spontaneously become a terrorist)
-- Suspicious activity reports (depositing $9,999 instead of $10,000 makes you a criminal mastermind)
+- Government ID required
+- Source of funds verification
+- Ongoing monitoring
+- Suspicious activity reports
 
 The entire system assumes everyone is guilty until proven wealthy enough to hire lawyers who make guilt disappear.
 
 **The Key:** The structure is more compliant than a Fortune 500 IPO. When they investigate, the paperwork will be perfect.
 
-## Election Law Compliance (Bribing Politicians, Legally)
+## Election Law (Bribing Politicians, Legally)
 
 Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contributions." Then it's protected speech.
 
 ### The Foreign National Problem (And Solution)
 
-**The Law:** [Foreign nationals can't spend money on US elections](../references.qmd#fec-foreign-nationals).
+**The Law:** [Foreign nationals can't spend money on US elections](../references.qmd#fec-foreign-nationals)
+
 **The Penalty:** Federal prison (not the nice kind)
+
 **The Solution:** Complete segregation
 
-#### US Operations (Americans Only)
-
+**US Operations (Americans Only):**
 - Separate 501(c)(4) + Super PAC
 - 100% US citizen funded
 - 100% US citizen controlled
 - Zero coordination with international entities
-- Independent decision-making
 
-#### International Operations (Everyone Else)
-
+**International Operations (Everyone Else):**
 - Focus on non-US countries
 - Public advocacy only in US
 - No US election spending
-- Educational materials only
 
-#### The Firewall
-
+**The Firewall:**
 - Separate bank accounts
 - Separate staff
 - Separate offices
 - Separate lawyers
 - Same goal (but you don't talk about it)
 
-### The Super PAC Playbook (Democracy for Sale, Wholesale Prices)
+### The Super PAC Playbook
 
-#### What You Can Do
-
+**What You Can Do:**
 - Unlimited spending on "issue advocacy"
 - Attack ads against treaty opponents
-- Support ads for treaty supporters
-- "Vote for Smith" (illegal)
 - "Smith hates children with cancer" (legal)
 
-#### What You Can't Do
-
+**What You Can't Do:**
+- "Vote for Smith" (illegal)
 - Coordinate with candidates (wink wink)
 - Foreign money (that's what prison is for)
-- Corporate money directly to candidates
 - Quid pro quo (has to be implicit)
 
-#### The Workaround
-
+**The Workaround:**
 - Public positions on website
 - Candidates read website
 - Candidates "independently" support treaty
@@ -247,34 +386,25 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 
 ### International Compliance (Every Country Has Weird Laws)
 
-#### United Kingdom
-
+**United Kingdom:**
 - Register with Electoral Commission
 - [Spending limits (£20,000 nationally)](../references.qmd#uk-electoral-spending-limits)
 - Quarterly reports
-- No voting, just "encouraging democratic participation"
 
-#### European Union
-
+**European Union:**
 - 27 different election laws (fun!)
-- GDPR for voter data (can't even store evil efficiently)
-- Anti-money laundering (know your donor)
-- Country-by-country compliance
+- GDPR for voter data
+- Anti-money laundering
 
-#### Canada
-
+**Canada:**
 - Register as third-party advertiser
 - [Foreign funding restrictions](../references.qmd#canada-bill-c-76)
 - [Real-time expense reporting](../references.qmd#canada-expenditure-reporting-500)
 - Sorry for trying to influence your democracy
 
-## The Treaty Framework (International Law for Dummies)
+## Treaty Framework
 
-The 1% Treaty is structured as a formal international agreement under the Vienna Convention on the Law of Treaties. This ensures it has a recognized legal basis, even if international law is notoriously difficult to enforce. For the complete details on the treaty's structure, components, ratification process, and enforcement mechanisms, see the authoritative [Treaty Framework](./treaty-framework.qmd) chapter.
-
-## The Legislation Package (Laws Already Written, Just Add Politicians)
-
-Passing the treaty requires a coordinated legislative push in key nations. The core package consists of five pre-drafted bills, including the Treaty Implementation Act and the dFDA Parallel Track Act. For the full text and detailed breakdown of each bill, see the [Legislation Package](../strategy/legislation-package.qmd) chapter.
+The 1% Treaty is structured as formal international agreement under Vienna Convention on Law of Treaties. For complete details on structure, components, ratification, and enforcement, see [Treaty Framework](./treaty-framework.qmd) chapter.
 
 ## Risk Mitigation (When They Come For You)
 
@@ -282,37 +412,27 @@ They will come for you. Here's how you survive:
 
 ### The Legal Attack Vectors
 
-#### Securities Fraud
-
+**Securities Fraud:**
 - Defense: Full compliance from day one
 - Backup: Multiple jurisdictions
-- Insurance: D&O coverage
 - Reality: Your lawyers bill more than theirs
 
-#### Election Law Violations
-
+**Election Law Violations:**
 - Defense: Complete segregation
 - Backup: Constitutional challenge
-- Insurance: Citizens United precedent
 - Reality: [Money is speech (Supreme Court said so)](../references.qmd#citizens-united-ruling)
 
-#### Tax Evasion
-
+**Tax Evasion:**
 - Defense: Pay every penny
-- Backup: Treaty exemptions
-- Insurance: Sovereign immunity
-- Reality: The structure is more compliant than churches
+- Reality: Structure is more compliant than churches
 
-#### RICO/Conspiracy
-
+**RICO/Conspiracy:**
 - Defense: Everything is public
-- Backup: No criminal intent
-- Insurance: Saving lives isn't racketeering
 - Reality: Hard to prosecute humanitarians
 
 ### The Legal War Chest
 
-**Budget for Lawyers: A one-time allocation of $100M**
+**Budget: $100M for lawyers**
 
 - Top firms in every jurisdiction
 - Former regulators on retainer
@@ -320,8 +440,7 @@ They will come for you. Here's how you survive:
 - International law experts
 - PR firm (court of public opinion)
 
-#### The Strategy
-
+**The Strategy:**
 - Bore them with compliance
 - Overwhelm with paperwork
 - Perfect technical adherence
@@ -329,44 +448,19 @@ They will come for you. Here's how you survive:
 
 ## The Escape Routes (If Everything Goes Wrong)
 
-### Plan A: Win in Court
+**Plan A:** Win in court (you followed every law)
 
-- You followed every law
-- Public opinion supports you
-- judges have diseases too
+**Plan B:** International arbitration (they move slowly, you cure cancer while waiting)
 
-#### Plan B: International Arbitration
+**Plan C:** Regulatory capture (hire former SEC commissioners)
 
-- Treaty disputes go to international court
-- They move slowly
-- You cure cancer while waiting
+**Plan D:** Public revolution (280 million supporters wanting healthcare)
 
-##### Plan C: Regulatory Capture
+**Plan E:** Actual revolution (just kidding, violence is inefficient, this is done legally)
 
-- Hire former SEC commissioners
-- Donate to judiciary committees
-- Become too big to prosecute
+---
 
-###### Plan D: Public Revolution
-
-- 280 million supporters
-- All wanting healthcare
-- Politicians like their jobs
-
-###### Plan E: Actual Revolution
-
-- Just kidding
-- Violence is inefficient
-- This is done legally
-
-The strategy uses the exact same legal structures that enable:
-
-- Tax avoidance (but pays taxes)
-- Dark money (but maintains transparency)
-- Regulatory capture (but frees markets)
-- Corporate welfare (but funds cures)
-
-You take the system designed to protect the powerful and use it to empower the powerless.
+The strategy uses the exact same legal structures that enable tax avoidance, dark money, regulatory capture, and corporate welfare. You take the system designed to protect the powerful and use it to empower the powerless.
 
 The laws written by lobbyists will be turned against their authors.
 
