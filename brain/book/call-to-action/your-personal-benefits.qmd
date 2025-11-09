@@ -48,6 +48,9 @@ calc = calculate_personal_lifetime_wealth_disease_eradication(
 
 total_benefit = calc['total_lifetime_benefit']
 life_extension = calc['life_extension_years']
+
+# Pre-format for inline display (Quarto inline expressions should reference simple variables)
+total_benefit_millions = f"{total_benefit/1000000:.1f}"
 ```
 
 **If you're sick, or will ever get sick:**
@@ -72,7 +75,7 @@ Here's what a typical 30-year-old making $50,000/year actually gets:
 
 {{< include ../../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
-#### Total lifetime benefit: $`{python} f"{total_benefit/1000000:.1f}"`M
+#### Total lifetime benefit: $`{python} total_benefit_millions`M
 
 Where does this come from?
 
