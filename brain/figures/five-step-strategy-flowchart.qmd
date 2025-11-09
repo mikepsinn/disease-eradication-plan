@@ -11,22 +11,38 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-```{mermaid}
-%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff', 'primaryTextColor':'#000', 'primaryBorderColor':'#000', 'lineColor':'#000', 'secondaryColor':'#fff', 'tertiaryColor':'#fff', 'clusterBkg':'#fff', 'clusterBorder':'#000', 'edgeLabelBackground':'#fff', 'fontFamily':'Courier New, monospace'}}}%%
-flowchart TD
-    Step1["💰 Step 1:<br/>VICTORY Bonds<br/>Raise $1B<br/>270% returns"]
+```{python}
+#| echo: false
+import graphviz
+import sys
+from pathlib import Path
+from IPython.display import Image as IPImage, display
 
-    Step2["📊 Step 2:<br/>Global Referendum<br/>Get 280M votes<br/>(3.5% of humanity)"]
+# Add brain/figures to path for helper import
+figures_path = Path.cwd()
+if figures_path.name != 'decentralized-institutes-of-health':
+    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
+        figures_path = figures_path.parent
+sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
 
-    Step3["🏛️ Step 3:<br/>Legal Lobbying<br/>Deploy $1B<br/>(ROI: 1,813:1)"]
+from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
-    Step4["🗳️ Step 4:<br/>Super PACs<br/>Fund supporters<br/>Replace opponents"]
+dot = graphviz.Digraph(comment='Five Step Strategy', format='png')
+dot.attr(rankdir='TD', size='10,12')
+setup_graphviz_style(dot)
 
-    Step5["🎯 Step 5:<br/>Treaties Pass<br/>1% → 2% → 5%<br/>Victory"]
+dot.node('Step1', 'Step 1:\nVICTORY Bonds\nRaise $1B\n270% returns')
+dot.node('Step2', 'Step 2:\nGlobal Referendum\nGet 280M votes\n(3.5% of humanity)')
+dot.node('Step3', 'Step 3:\nLegal Lobbying\nDeploy $1B\n(ROI: 1,813:1)')
+dot.node('Step4', 'Step 4:\nSuper PACs\nFund supporters\nReplace opponents')
+dot.node('Step5', 'Step 5:\nTreaties Pass\n1% → 2% → 5%\nVictory')
 
-    Step1 --> Step2
-    Step2 --> Step3
-    Step3 --> Step4
-    Step4 --> Step5
-    Step5 -.->|"Success Spiral"| Step1
+dot.edge('Step1', 'Step2')
+dot.edge('Step2', 'Step3')
+dot.edge('Step3', 'Step4')
+dot.edge('Step4', 'Step5')
+dot.edge('Step5', 'Step1', label='Success Spiral', style='dashed')
+
+png_path = render_graphviz_with_watermark(dot, 'five-step-strategy-flowchart')
+display(IPImage(str(png_path)))
 ```

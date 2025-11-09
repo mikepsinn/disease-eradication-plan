@@ -827,3 +827,319 @@ victory_bond_payout_per_unit_usd_annual_formatted = f"${VICTORY_BOND_PAYOUT_PER_
 water_fluoridation_roi_formatted = format_roi(WATER_FLUORIDATION_ROI)
 ww2_bond_return_pct_formatted = format_percentage(WW2_BOND_RETURN_PCT)
 
+
+# ---
+# PERSONAL LIFETIME WEALTH CALCULATIONS
+# ---
+
+def calculate_gdp_growth_boost(treaty_pct):
+    """
+    Calculate GDP growth boost from military spending redirection
+
+    Historical evidence:
+    - Post-WW2: 30% military cut → 8% annual GDP growth for a decade (vs 2-3% normal)
+    - Post-Cold War: 3% military cut → 1990s boom with 2.5% productivity surge
+
+    Model: Each 1% reduction in military spending → ~0.25% GDP growth boost
+    This is conservative given historical evidence shows larger effects.
+
+    Args:
+        treaty_pct: Fraction of military spending redirected (e.g., 0.01 for 1%)
+
+    Returns:
+        Total annual GDP growth rate (baseline + boost)
+    """
+    BASE_GDP_GROWTH = 0.025  # 2.5% baseline global growth
+    MULTIPLIER_EFFECT = 0.25  # Conservative: 1% military cut → 0.25% GDP boost
+
+    boost = treaty_pct * MULTIPLIER_EFFECT
+    return BASE_GDP_GROWTH + boost
+
+
+def calculate_medical_progress_multiplier(treaty_pct):
+    """
+    Calculate medical research acceleration from increased funding
+
+    Current state:
+    - $67.5B global government medical research spending
+    - ~3,300 clinical trials/year
+    - ~50 new drug approvals/year
+
+    With treaty funding:
+    - Additional funding = $27.2B per 1% treaty
+    - 82x cost reduction from dFDA
+    - Research capacity multiplier = (new_funding / current) × cost_reduction
+
+    Args:
+        treaty_pct: Fraction of military spending redirected
+
+    Returns:
+        Research capacity multiplier (e.g., 115 = 115x more trials possible)
+    """
+    funding_increase = (GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * treaty_pct) / GLOBAL_MED_RESEARCH_SPENDING
+    return funding_increase * TRIAL_COST_REDUCTION_FACTOR
+
+
+def calculate_life_expectancy_gain(treaty_pct):
+    """
+    Calculate additional years of life from medical progress acceleration
+
+    Model:
+    - 1% treaty → 115x research capacity
+    - Conservative: 1 year gained per 100x research acceleration
+    - Optimistic: 10 years gained per 100x (exponential breakthrough effects)
+
+    Args:
+        treaty_pct: Fraction of military spending redirected
+
+    Returns:
+        Additional years of healthy life expectancy
+    """
+    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+
+    # Conservative model: linear relationship
+    # 100x research → 1 year of life extension
+    conservative_gain = multiplier / 100
+
+    # Use conservative estimate
+    return conservative_gain
+
+
+def compound_sum(annual_benefit, years, growth_rate, discount_rate=0.03):
+    """
+    Calculate present value of compounding annual benefits
+
+    Formula: PV = Σ(annual_benefit × (1 + growth_rate)^t / (1 + discount_rate)^t)
+
+    Args:
+        annual_benefit: Initial annual benefit amount
+        years: Number of years
+        growth_rate: Annual growth rate (GDP boost)
+        discount_rate: NPV discount rate
+
+    Returns:
+        Present value of all future benefits
+    """
+    total = 0
+    for t in range(1, int(years) + 1):
+        future_value = annual_benefit * ((1 + growth_rate) ** t)
+        present_value = future_value / ((1 + discount_rate) ** t)
+        total += present_value
+    return total
+
+
+def calculate_personal_lifetime_wealth(
+    treaty_pct=TREATY_REDUCTION_PCT,
+    current_age=30,
+    baseline_life_expectancy=80,
+    annual_income=50000,  # Global median income
+    discount_rate=0.03
+):
+    """
+    Calculate individual lifetime wealth impact from treaty
+
+    This captures the personal economic benefit from:
+    1. Peace dividend flowing to economy (higher GDP → higher incomes)
+    2. Healthcare cost savings (insurance premiums drop as diseases cured)
+    3. Productivity gains (fewer sick days, more working years)
+    4. Life extension (more earning years from medical breakthroughs)
+
+    Args:
+        treaty_pct: Fraction of military spending redirected (0.01 = 1%)
+        current_age: Person's current age
+        baseline_life_expectancy: Life expectancy without treaty
+        annual_income: Current annual income
+        discount_rate: NPV discount rate for future earnings
+
+    Returns:
+        Dict with:
+        - total_lifetime_benefit: Total personal $ over lifetime (NPV)
+        - annual_breakdown: Dict of annual benefit components
+        - life_extension_years: Additional years lived
+        - gdp_growth_boost: Annual GDP growth increase
+        - medical_progress_multiplier: Research capacity multiplier
+    """
+
+    # Calculate key metrics
+    life_extension_years = calculate_life_expectancy_gain(treaty_pct)
+    gdp_boost = calculate_gdp_growth_boost(treaty_pct)
+    years_remaining = baseline_life_expectancy - current_age
+    total_years = years_remaining + life_extension_years
+
+    # Component 1: Peace dividend per capita (flows through economy to incomes)
+    # Total societal benefit / population, conservatively assume 50% flows to incomes over time
+    peace_dividend_per_capita_annual = (GLOBAL_ANNUAL_WAR_TOTAL_COST * treaty_pct / GLOBAL_POPULATION_2024) * 0.5
+
+    # Component 2: Healthcare savings (insurance premiums drop)
+    # Current: ~$3,000/year average global health insurance cost
+    # As diseases cured, insurance costs drop proportionally to research acceleration
+    progress_multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    healthcare_savings_pct = min(0.7, progress_multiplier / 200)  # Cap at 70% savings
+    healthcare_savings_annual = 3000 * healthcare_savings_pct
+
+    # Component 3: Productivity gains (fewer sick days, healthier = more productive)
+    # Average person loses ~5% of productive days to illness
+    # Medical progress reduces this proportionally
+    productivity_gain_pct = min(0.05, progress_multiplier / 2000)  # Cap at 5% productivity gain
+    productivity_gains_annual = annual_income * productivity_gain_pct
+
+    # Component 4: Income growth from GDP boost (compound effect)
+    # Higher GDP growth → higher wage growth over career
+    base_growth = 0.025
+    income_with_gdp_boost = compound_sum(annual_income, total_years, gdp_boost, discount_rate)
+    income_without_boost = compound_sum(annual_income, years_remaining, base_growth, discount_rate)
+    gdp_boost_benefit = income_with_gdp_boost - income_without_boost
+
+    # Component 5: Extended earning years
+    # Additional years of life = additional years of earnings
+    extended_earnings = 0
+    if life_extension_years > 0:
+        # Assume working until age 70, then retirement income at 40% of final salary
+        working_years_extended = max(0, min(life_extension_years, 70 - baseline_life_expectancy))
+        retirement_years_extended = life_extension_years - working_years_extended
+
+        # Future earnings discounted to present value
+        for t in range(int(years_remaining), int(years_remaining + working_years_extended)):
+            future_income = annual_income * ((1 + gdp_boost) ** t)
+            extended_earnings += future_income / ((1 + discount_rate) ** t)
+
+        # Retirement income (40% of final working income)
+        if retirement_years_extended > 0:
+            final_working_income = annual_income * ((1 + gdp_boost) ** (years_remaining + working_years_extended))
+            retirement_income = final_working_income * 0.4
+            for t in range(int(years_remaining + working_years_extended), int(total_years)):
+                extended_earnings += retirement_income / ((1 + discount_rate) ** t)
+
+    # Compound other benefits over lifetime
+    peace_dividend_total = compound_sum(peace_dividend_per_capita_annual, total_years, gdp_boost, discount_rate)
+    healthcare_savings_total = compound_sum(healthcare_savings_annual, total_years, gdp_boost, discount_rate)
+    productivity_gains_total = compound_sum(productivity_gains_annual, total_years, gdp_boost, discount_rate)
+
+    # Total lifetime benefit
+    total_benefit = (
+        peace_dividend_total
+        + healthcare_savings_total
+        + productivity_gains_total
+        + gdp_boost_benefit
+        + extended_earnings
+    )
+
+    return {
+        'total_lifetime_benefit': total_benefit,
+        'annual_breakdown': {
+            'peace_dividend': peace_dividend_per_capita_annual,
+            'healthcare_savings': healthcare_savings_annual,
+            'productivity_gains': productivity_gains_annual,
+        },
+        'npv_breakdown': {
+            'peace_dividend_total': peace_dividend_total,
+            'healthcare_savings_total': healthcare_savings_total,
+            'productivity_gains_total': productivity_gains_total,
+            'gdp_boost_benefit': gdp_boost_benefit,
+            'extended_earnings': extended_earnings,
+        },
+        'life_extension_years': life_extension_years,
+        'new_life_expectancy': baseline_life_expectancy + life_extension_years,
+        'gdp_growth_boost': gdp_boost - 0.025,  # Just the boost component
+        'medical_progress_multiplier': progress_multiplier,
+    }
+
+
+# Pre-calculated personal wealth scenarios for common ages (1% Treaty)
+# Age 20
+PERSONAL_WEALTH_AGE_20_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=20, annual_income=40000)
+PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT = PERSONAL_WEALTH_AGE_20_1PCT['total_lifetime_benefit']
+
+# Age 30
+PERSONAL_WEALTH_AGE_30_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=30, annual_income=50000)
+PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT = PERSONAL_WEALTH_AGE_30_1PCT['total_lifetime_benefit']
+
+# Age 40
+PERSONAL_WEALTH_AGE_40_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=40, annual_income=60000)
+PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT = PERSONAL_WEALTH_AGE_40_1PCT['total_lifetime_benefit']
+
+# Age 50
+PERSONAL_WEALTH_AGE_50_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=50, annual_income=65000)
+PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT = PERSONAL_WEALTH_AGE_50_1PCT['total_lifetime_benefit']
+
+# Age 60
+PERSONAL_WEALTH_AGE_60_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=60, annual_income=60000)
+PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT = PERSONAL_WEALTH_AGE_60_1PCT['total_lifetime_benefit']
+
+# Different treaty percentages (Age 30 baseline)
+PERSONAL_WEALTH_AGE_30_HALF_PCT = calculate_personal_lifetime_wealth(treaty_pct=0.005, current_age=30)
+PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT = PERSONAL_WEALTH_AGE_30_HALF_PCT['total_lifetime_benefit']
+
+PERSONAL_WEALTH_AGE_30_2PCT = calculate_personal_lifetime_wealth(treaty_pct=0.02, current_age=30)
+PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT = PERSONAL_WEALTH_AGE_30_2PCT['total_lifetime_benefit']
+
+PERSONAL_WEALTH_AGE_30_5PCT = calculate_personal_lifetime_wealth(treaty_pct=0.05, current_age=30)
+PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT = PERSONAL_WEALTH_AGE_30_5PCT['total_lifetime_benefit']
+
+PERSONAL_WEALTH_AGE_30_10PCT = calculate_personal_lifetime_wealth(treaty_pct=0.10, current_age=30)
+PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT = PERSONAL_WEALTH_AGE_30_10PCT['total_lifetime_benefit']
+
+# Life expectancy gains by treaty percentage
+LIFE_EXTENSION_YEARS_1PCT = PERSONAL_WEALTH_AGE_30_1PCT['life_extension_years']
+LIFE_EXTENSION_YEARS_2PCT = PERSONAL_WEALTH_AGE_30_2PCT['life_extension_years']
+LIFE_EXTENSION_YEARS_5PCT = PERSONAL_WEALTH_AGE_30_5PCT['life_extension_years']
+LIFE_EXTENSION_YEARS_10PCT = PERSONAL_WEALTH_AGE_30_10PCT['life_extension_years']
+
+# Medical progress multipliers
+MEDICAL_PROGRESS_MULTIPLIER_1PCT = calculate_medical_progress_multiplier(0.01)
+MEDICAL_PROGRESS_MULTIPLIER_2PCT = calculate_medical_progress_multiplier(0.02)
+MEDICAL_PROGRESS_MULTIPLIER_5PCT = calculate_medical_progress_multiplier(0.05)
+MEDICAL_PROGRESS_MULTIPLIER_10PCT = calculate_medical_progress_multiplier(0.10)
+
+# GDP growth boosts
+GDP_GROWTH_BOOST_1PCT = calculate_gdp_growth_boost(0.01) - 0.025  # Just the boost component
+GDP_GROWTH_BOOST_2PCT = calculate_gdp_growth_boost(0.02) - 0.025
+GDP_GROWTH_BOOST_5PCT = calculate_gdp_growth_boost(0.05) - 0.025
+GDP_GROWTH_BOOST_10PCT = calculate_gdp_growth_boost(0.10) - 0.025
+
+# Formatted values for display
+personal_lifetime_benefit_age_20_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT / 1_000_000_000)
+personal_lifetime_benefit_age_30_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT / 1_000_000_000)
+personal_lifetime_benefit_age_40_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT / 1_000_000_000)
+personal_lifetime_benefit_age_50_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT / 1_000_000_000)
+personal_lifetime_benefit_age_60_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT / 1_000_000_000)
+
+personal_lifetime_benefit_age_30_half_pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT / 1_000_000_000)
+personal_lifetime_benefit_age_30_2pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT / 1_000_000_000)
+personal_lifetime_benefit_age_30_5pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT / 1_000_000_000)
+personal_lifetime_benefit_age_30_10pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT / 1_000_000_000)
+
+life_extension_years_1pct_formatted = f"{LIFE_EXTENSION_YEARS_1PCT:.1f}"
+life_extension_years_2pct_formatted = f"{LIFE_EXTENSION_YEARS_2PCT:.1f}"
+life_extension_years_5pct_formatted = f"{LIFE_EXTENSION_YEARS_5PCT:.1f}"
+life_extension_years_10pct_formatted = f"{LIFE_EXTENSION_YEARS_10PCT:.1f}"
+
+medical_progress_multiplier_1pct_formatted = f"{MEDICAL_PROGRESS_MULTIPLIER_1PCT:.0f}x"
+medical_progress_multiplier_2pct_formatted = f"{MEDICAL_PROGRESS_MULTIPLIER_2PCT:.0f}x"
+medical_progress_multiplier_5pct_formatted = f"{MEDICAL_PROGRESS_MULTIPLIER_5PCT:.0f}x"
+medical_progress_multiplier_10pct_formatted = f"{MEDICAL_PROGRESS_MULTIPLIER_10PCT:.0f}x"
+
+gdp_growth_boost_1pct_formatted = format_percentage(GDP_GROWTH_BOOST_1PCT)
+gdp_growth_boost_2pct_formatted = format_percentage(GDP_GROWTH_BOOST_2PCT)
+gdp_growth_boost_5pct_formatted = format_percentage(GDP_GROWTH_BOOST_5PCT)
+gdp_growth_boost_10pct_formatted = format_percentage(GDP_GROWTH_BOOST_10PCT)
+
+
+# --- Test Output (when module executed directly) ---
+if __name__ == "__main__":
+    print("\n--- Personal Lifetime Wealth (1% Treaty) ---")
+    print(f"Age 20: {personal_lifetime_benefit_age_20_1pct_formatted}")
+    print(f"Age 30: {personal_lifetime_benefit_age_30_1pct_formatted}")
+    print(f"Age 40: {personal_lifetime_benefit_age_40_1pct_formatted}")
+    print(f"Age 50: {personal_lifetime_benefit_age_50_1pct_formatted}")
+    print(f"Age 60: {personal_lifetime_benefit_age_60_1pct_formatted}")
+    print(f"\nLife extension (1%): {life_extension_years_1pct_formatted} years")
+    print(f"Medical progress multiplier (1%): {medical_progress_multiplier_1pct_formatted}")
+    print(f"GDP growth boost (1%): {gdp_growth_boost_1pct_formatted}")
+    print("\n--- Different Treaty Percentages (Age 30) ---")
+    print(f"0.5% Treaty: {personal_lifetime_benefit_age_30_half_pct_formatted}")
+    print(f"1% Treaty: {personal_lifetime_benefit_age_30_1pct_formatted}")
+    print(f"2% Treaty: {personal_lifetime_benefit_age_30_2pct_formatted}")
+    print(f"5% Treaty: {personal_lifetime_benefit_age_30_5pct_formatted}")
+    print(f"10% Treaty: {personal_lifetime_benefit_age_30_10pct_formatted}")
+

@@ -276,29 +276,53 @@ The investment carries two primary types of risk: **Project Risks**, which are i
 
 ## The Expansion Flywheel
 
-```{mermaid}
-flowchart TB
-    Invest["💰 Investors Give $1B"]
-    Treaty1["📜 1% Treaty Passes<br/>$27B/year"]
-    Payout1["💸 Bondholders Get $2.7B/year<br/>(270% returns)"]
-    Mission1["🔬 DIH Spends $24.3B<br/>on cures"]
-    Cures["💊 Diseases Start Falling"]
-    Media["📺 Media Frenzy:<br/>'It's working!'"]
-    Public["🗳️ Public Demands More"]
-    Treaty2["📜 2% Treaty Passes<br/>$54B/year"]
-    Payout2["💸 Bondholders Get $5.4B/year<br/>(540% returns)"]
-    More["♾️ Cycle Continues"]
+```{python}
+#| echo: false
+#| fig-cap: "The Expansion Flywheel - How initial investment leads to treaty expansion and perpetual returns"
+#| fig-alt: "Flowchart showing: Investors Give $1B → 1% Treaty Passes → Bondholders Get Returns + DIH Spends on Cures → Diseases Fall → Media Frenzy → Public Demands More → 2% Treaty → Higher Returns → Cycle Continues"
 
-    Invest --> Treaty1
-    Treaty1 --> Payout1
-    Treaty1 --> Mission1
-    Mission1 --> Cures
-    Cures --> Media
-    Media --> Public
-    Public --> Treaty2
-    Treaty2 --> Payout2
-    Payout2 --> More
-    Treaty2 --> Mission1
+import graphviz
+import sys
+from pathlib import Path
+from IPython.display import Image as IPImage, display
+
+# Add brain/figures to path for helper import
+figures_path = Path.cwd()
+if figures_path.name != 'decentralized-institutes-of-health':
+    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
+        figures_path = figures_path.parent
+sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
+
+from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment='Expansion Flywheel', format='png')
+dot.attr(rankdir='TB', size='10,12')
+setup_graphviz_style(dot)
+
+dot.node('Invest', 'Investors Give $1B')
+dot.node('Treaty1', '1% Treaty Passes\n$27B/year')
+dot.node('Payout1', 'Bondholders Get $2.7B/year\n(270% returns)')
+dot.node('Mission1', 'DIH Spends $24.3B\non cures')
+dot.node('Cures', 'Diseases Start Falling')
+dot.node('Media', 'Media Frenzy:\n"It\'s working!"')
+dot.node('Public', 'Public Demands More')
+dot.node('Treaty2', '2% Treaty Passes\n$54B/year')
+dot.node('Payout2', 'Bondholders Get $5.4B/year\n(540% returns)')
+dot.node('More', 'Cycle Continues')
+
+dot.edge('Invest', 'Treaty1')
+dot.edge('Treaty1', 'Payout1')
+dot.edge('Treaty1', 'Mission1')
+dot.edge('Mission1', 'Cures')
+dot.edge('Cures', 'Media')
+dot.edge('Media', 'Public')
+dot.edge('Public', 'Treaty2')
+dot.edge('Treaty2', 'Payout2')
+dot.edge('Payout2', 'More')
+dot.edge('Treaty2', 'Mission1', style='dashed')
+
+png_path = render_graphviz_with_watermark(dot, 'expansion-flywheel')
+display(IPImage(str(png_path)))
 ```
 
 ### Explain the flywheel to investors

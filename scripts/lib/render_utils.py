@@ -241,25 +241,43 @@ class BuildMonitor:
                     return 124  # Timeout exit code
 
             # Wait for process to complete
-            return_code = self.process.wait()
+            try:
+                return_code = self.process.wait()
+            except Exception as e:
+                # If wait() fails, try to get return code from poll()
+                return_code = self.process.poll()
+                if return_code is None:
+                    # Process still running, this is unexpected
+                    self.log(f"Warning: Process.wait() failed but process still running: {e}", to_stderr=True)
+                    return_code = 1
+                else:
+                    self.log(f"Warning: Process.wait() failed, using poll() result: {return_code}", to_stderr=True)
 
             # Stop the timeout watchdog BEFORE any cleanup
             self.stop_timeout_check.set()
             if self.timeout_thread and self.timeout_thread.is_alive():
-                self.timeout_thread.join(timeout=2.0)
+                try:
+                    self.timeout_thread.join(timeout=2.0)
+                except Exception:
+                    pass  # Ignore thread join errors
             
             # Explicitly close process handles to avoid cleanup errors
             try:
-                if self.process.stdout:
+                if self.process and hasattr(self.process, 'stdout') and self.process.stdout:
                     self.process.stdout.close()
-                if self.process.stderr and self.process.stderr != self.process.stdout:
+                if self.process and hasattr(self.process, 'stderr') and self.process.stderr and self.process.stderr != self.process.stdout:
                     self.process.stderr.close()
-            except Exception:
-                pass  # Ignore cleanup errors
+            except (AttributeError, ValueError, OSError, AssertionError, TypeError):
+                pass  # Ignore all cleanup errors - process may already be closed
 
             # Check if we timed out
             if self.timed_out:
                 return 124
+            
+            # If return_code is None, process hasn't finished (shouldn't happen after wait())
+            if return_code is None:
+                self.log("Warning: Process return code is None after wait()", to_stderr=True)
+                return_code = 1
 
             # Print summary
             self.log("\n" + "=" * 80)
@@ -308,16 +326,39 @@ class BuildMonitor:
                     pass  # Process already terminated
             return 130
         except Exception as e:
-            self.log(f"\nUnexpected error: {e}", to_stderr=True)
-            import traceback
-            self.log(f"Traceback: {traceback.format_exc()}", to_stderr=True)
-            self.stop_timeout_check.set()
-            if self.process and self.process.poll() is None:
+            # Check if process actually completed successfully before failing
+            process_finished = False
+            process_exit_code = None
+            if self.process:
                 try:
-                    self.process.kill()
-                except (ProcessLookupError, AssertionError, TypeError):
-                    pass  # Process already terminated or cleanup error
-            return 1
+                    process_exit_code = self.process.poll()
+                    process_finished = (process_exit_code is not None)
+                except Exception:
+                    pass
+            
+            error_msg = str(e)
+            is_cleanup_error = any(keyword in error_msg.lower() for keyword in [
+                'cleanup', 'child process', 'already terminated', 'assertion'
+            ])
+            
+            if is_cleanup_error and process_finished:
+                # Cleanup error but process finished - log warning but don't fail
+                self.log(f"\nWarning: Cleanup error (process completed successfully): {e}", to_stderr=True)
+                self.stop_timeout_check.set()
+                # Use the process exit code instead of failing
+                return process_exit_code if process_exit_code is not None else 0
+            else:
+                # Real error - fail the build
+                self.log(f"\nUnexpected error: {e}", to_stderr=True)
+                import traceback
+                self.log(f"Traceback: {traceback.format_exc()}", to_stderr=True)
+                self.stop_timeout_check.set()
+                if self.process and self.process.poll() is None:
+                    try:
+                        self.process.kill()
+                    except (ProcessLookupError, AssertionError, TypeError):
+                        pass  # Process already terminated or cleanup error
+                return 1
         finally:
             # Ensure cleanup happens gracefully
             self.stop_timeout_check.set()

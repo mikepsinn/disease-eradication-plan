@@ -44,17 +44,50 @@ The DIH is the first and largest implementation of this protocol.
 
 Wishocracy combines collective human intelligence with the efficiency of AI to create a new form of governance.
 
-```{mermaid}
-graph TD
-    subgraph "The Wishocracy Protocol"
-        A(Stakeholders) -- propose --> B(Wishes: The To-Do List);
-        B -- are analyzed by --> C(AI Agents);
-        C -- generate --> D(Ranked & Verifiable Solutions);
-        A -- vote on solutions using --> E{RAPPA Voting};
-        E -- allocates funds from --> F[DAO Treasury (e.g., The DIH)];
-        F -- funds --> G(Contributors: Researchers & Builders);
-        G -- complete tasks, creating --> H(Outcomes: Cures & Breakthroughs);
-    end
+```{python}
+#| echo: false
+#| fig-cap: "The Wishocracy Protocol - Governance flow from stakeholders to outcomes"
+#| fig-alt: "Flow diagram showing: Stakeholders propose Wishes → AI Agents analyze → Generate Ranked Solutions → Stakeholders vote via RAPPA → DAO Treasury allocates funds → Contributors complete tasks → Outcomes achieved"
+
+import graphviz
+import sys
+from pathlib import Path
+from IPython.display import Image as IPImage, display
+
+# Add brain/figures to path for helper import
+figures_path = Path.cwd()
+if figures_path.name != 'decentralized-institutes-of-health':
+    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
+        figures_path = figures_path.parent
+sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
+
+from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment='Wishocracy Protocol', format='png')
+dot.attr(rankdir='TD', size='10,12')
+setup_graphviz_style(dot)
+
+with dot.subgraph(name='cluster_wishocracy') as protocol:
+    protocol.attr(label='The Wishocracy Protocol', style='dashed')
+    protocol.node('A', 'Stakeholders', shape='ellipse')
+    protocol.node('B', 'Wishes: The To-Do List', shape='box')
+    protocol.node('C', 'AI Agents', shape='box')
+    protocol.node('D', 'Ranked & Verifiable Solutions', shape='box')
+    protocol.node('E', 'RAPPA Voting', shape='diamond')
+    protocol.node('F', 'DAO Treasury\n(e.g., The DIH)', shape='box')
+    protocol.node('G', 'Contributors:\nResearchers & Builders', shape='ellipse')
+    protocol.node('H', 'Outcomes:\nCures & Breakthroughs', shape='box')
+    
+    protocol.edge('A', 'B', label='propose')
+    protocol.edge('B', 'C', label='are analyzed by')
+    protocol.edge('C', 'D', label='generate')
+    protocol.edge('A', 'E', label='vote on solutions using')
+    protocol.edge('E', 'F', label='allocates funds from')
+    protocol.edge('F', 'G', label='funds')
+    protocol.edge('G', 'H', label='complete tasks, creating')
+
+png_path = render_graphviz_with_watermark(dot, 'wishocracy-protocol')
+display(IPImage(str(png_path)))
 ```
 
 ### 1. The To-Do List ("Wishes")

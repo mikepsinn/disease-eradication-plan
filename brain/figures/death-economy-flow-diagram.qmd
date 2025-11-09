@@ -11,20 +11,40 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-```{mermaid}
-%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff', 'primaryTextColor':'#000', 'primaryBorderColor':'#000', 'lineColor':'#000', 'secondaryColor':'#fff', 'tertiaryColor':'#fff', 'clusterBkg':'#fff', 'clusterBorder':'#000', 'edgeLabelBackground':'#fff', 'fontFamily':'Courier New, monospace'}}}%%
-flowchart TD
-    subgraph "The $119T Death Toilet"
-        War["🔫 War: $9.7T/year<br/>(Direct + hidden +<br/>lost Pentagon money)"]
-        Disease["💀 Disease: $109.1T/year<br/>(Healthcare + lost<br/>productivity + suffering)"]
+```{python}
+#| echo: false
+import graphviz
+import sys
+from pathlib import Path
+from IPython.display import Image as IPImage, display
 
-        War --> DeathToilet["🚽 The Death Toilet<br/>$118.8T/year<br/>(More than<br/>Earth's GDP)"]
-        Disease --> DeathToilet
-    end
+# Add brain/figures to path for helper import
+figures_path = Path.cwd()
+if figures_path.name != 'decentralized-institutes-of-health':
+    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
+        figures_path = figures_path.parent
+sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
 
-    subgraph "What We Spend<br/>on Solutions"
-        Research["🔬 Medical Research<br/>$68B/year<br/>(0.06% of<br/>death costs)"]
-    end
+from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
-    DeathToilet -.->|"1,750x more"| Research
+dot = graphviz.Digraph(comment='Death Economy Flow', format='png')
+dot.attr(rankdir='TD', size='10,10')
+setup_graphviz_style(dot)
+
+with dot.subgraph(name='cluster_death') as death:
+    death.attr(label='The $119T Death Toilet', style='dashed')
+    death.node('War', 'War: $9.7T/year\n(Direct + hidden +\nlost Pentagon money)')
+    death.node('Disease', 'Disease: $109.1T/year\n(Healthcare + lost\nproductivity + suffering)')
+    death.node('DeathToilet', 'The Death Toilet\n$118.8T/year\n(More than\nEarth\'s GDP)')
+    death.edge('War', 'DeathToilet')
+    death.edge('Disease', 'DeathToilet')
+
+with dot.subgraph(name='cluster_solutions') as solutions:
+    solutions.attr(label='What We Spend on Solutions', style='dashed')
+    solutions.node('Research', 'Medical Research\n$68B/year\n(0.06% of\ndeath costs)')
+
+dot.edge('DeathToilet', 'Research', label='1,750x more', style='dashed')
+
+png_path = render_graphviz_with_watermark(dot, 'death-economy-flow-diagram')
+display(IPImage(str(png_path)))
 ```

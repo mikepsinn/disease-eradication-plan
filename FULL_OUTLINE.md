@@ -180,7 +180,7 @@
     - Environmental Cost Calculation Matrix
       - Total Environmental Damage: [\$100 billion](../references.qmd#environmental-cost-of-war) annually
   - The Existential Overdraft: The AI Arms Race
-- The Grand Total: Adding Up Human Folly
+- The Total Cost of Organized Violence
   - Comprehensive Cost Analysis (2024)
     - Direct Costs Summary
     - Indirect Costs Summary
