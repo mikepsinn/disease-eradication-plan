@@ -189,6 +189,31 @@ If you need ultra-conservative numbers for skeptical audiences, use the Evidence
 
 **Note**: These models use the **antibiotic precedent** which fundamentally understates the 1% Treaty's impact. They're provided for credibility building, not because they're accurate.
 
+### Conservative Baseline Visualizations
+
+For skeptical audiences who need ultra-conservative estimates based on antibiotic precedent:
+
+{{< include ../../figures/conservative-baseline-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
+
+{{< include ../../figures/conservative-baseline-annual-benefits-stacked-area-chart.qmd >}}
+
+{{< include ../../figures/conservative-baseline-lifetime-wealth-sensitivity-tornado-chart.qmd >}}
+
+{{< include ../../figures/conservative-baseline-lifetime-wealth-by-scenario-column-chart.qmd >}}
+
+{{< include ../../figures/conservative-baseline-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
+
+**Why These Are Underestimates:**
+
+The conservative baseline models assume the 1% Treaty has the same impact as antibiotics - ONE technology solving ONE disease category over 20 years. This comparison is fundamentally wrong because the 1% Treaty creates:
+
+- **115 years of research PER YEAR** (not 1 year per year like antibiotics)
+- **Multiple breakthrough technologies simultaneously** (gene therapy, epigenetics, stem cells, AI)
+- **ALL disease categories tackled in parallel** (not just infectious diseases)
+- **Near-zero trial costs** removing pharma's biggest barrier
+
+Use these conservative numbers to establish credibility with skeptics, then build up to the realistic Disease Eradication Model ($4.3M, 72yr) which properly accounts for 115x cumulative research acceleration.
+
 ## When to Use Each Model
 
 ### Default Recommendation

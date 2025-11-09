@@ -31,27 +31,83 @@ If you get sick (and you will), your chances of getting into a clinical trial ar
 
 [Half of humanity is willing to participate](../references.qmd#patient-willingness-clinical-trials), but the system can only handle [5 million people per year](../appendix/clinical-trial-participants.qmd). The other 99.8% get to die while waiting for approval.
 
+### What You Actually Get
+
+```{python}
+#| echo: false
+
+# Calculate for typical 30-year-old making $50K
+calc = calculate_personal_lifetime_wealth_disease_eradication(
+    treaty_pct=0.01,
+    current_age=30,
+    annual_income=50000,
+    years_elapsed=20,  # 20-year scenario
+    discount_rate=0.03
+)
+
+total_benefit = calc['total_lifetime_benefit']
+life_extension = calc['life_extension_years']
+```
+
 **If you're sick, or will ever get sick:**
 
 Instead of waiting 17 years for a cure that may never come, you get immediate access to subsidized clinical trials for every disease. Your chance of survival goes from near-zero to "actually possible."
 
-#### If you're healthy (for now)
+**If you're healthy (for now):**
 
-As diseases are cured, the entire cost of healthcare plummets. Your insurance premiums will drop by 50-70%, saving you over **$240,000** over your lifetime. That's a house.
+As diseases are cured, healthcare costs plummet. The 1% Treaty accelerates research by 115x (2,300 research-years in 20 years). That means cancer, heart disease, Alzheimer's - all tackled simultaneously by gene therapy, AI drug discovery, stem cells, and epigenetics.
 
-#### If you have money
+**If you have money:**
 
-[VICTORY Bonds](../economics/victory-bonds.qmd) offer a projected **271.8% annual return**, perpetually. This returns 270% annually. I could not find a comparable investment. You can profit while funding the research that will make you immortal.
+[VICTORY Bonds](../economics/victory-bonds.qmd) offer a projected **271.8% annual return**, perpetually. I could not find a comparable investment. You can profit while funding the research that will make you immortal.
 
-#### If you have a family
+**If you have a family:**
 
 Your parents won't die of Alzheimer's. Your children won't have to worry about rare diseases. You get to keep the people you love.
 
-#### The bottom line is this
+### The Math
 
-- **If you're young,** your life expectancy jumps from 80 to 150+.
-- **If you're old,** you get an extra 20-30 years of healthy life as aging itself starts to reverse.
+Here's what a typical 30-year-old making $50,000/year actually gets:
 
-This isn't a charity. It's a deal. You're being offered more money, more time, and the lives of your loved ones in exchange for supporting a 1% budget reallocation. It's the best deal anyone has ever offered you.
+{{< include ../../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
-Your choice. But choose fast. While you were reading this, another person just died.
+**Total lifetime benefit: $`{python} f"{total_benefit/1000000:.1f}"`M**
+
+Where does this come from?
+
+- **Extended Earnings** (30%): You live 72 extra years (age 80→152). That's 72 more years of earning, investing, and compounding.
+- **Economic Multiplier** (58%): Redirecting military spending to research creates GDP growth (post-WW2: 30% military cut → 8% GDP growth). This compounds over your 122-year lifetime.
+- **Healthcare Savings** (4%): Diseases get cured, your insurance premiums drop by ~$1,650/year.
+- **Productivity Gains** (8%): You're healthier, you work better, you earn more.
+
+{{< include ../../figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
+
+**The red line at age 80 is everything.** Without the treaty, you're dead. With the treaty, you live another 72 years. Everything to the right of that line - roughly **60-70% of your total lifetime wealth** - only exists if this succeeds.
+
+### Your Wealth Depends on Treaty Terms
+
+{{< include ../../figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
+
+The treaty percentage negotiated determines whether you get millions or generational wealth:
+
+- **0.5% Treaty**: $3.6M lifetime benefit
+- **1% Treaty** (DEFAULT): $4.3M lifetime benefit
+- **5% Treaty**: $16M lifetime benefit
+
+This is why the treaty terms matter. The difference between 1% and 5% is measured in tens of millions per person.
+
+### The Bottom Line
+
+- **If you're 30:** Life expectancy jumps from 80 to 152 (+72 years), $4.3M total benefit
+- **If you're 25:** Life expectancy to 157 (+77 years), $5.0M total benefit
+- **If you're 55:** Life expectancy to 147 (+67 years), $2.8M total benefit
+
+This isn't a charity. It's a deal. You're being offered millions in lifetime wealth, 70+ extra years of life, and the survival of your loved ones in exchange for supporting a 1% budget reallocation.
+
+It's the best deal anyone has ever offered you.
+
+**Your choice. But choose fast.** While you were reading this, another person just died.
+
+---
+
+*For detailed calculations, mathematical framework, and sensitivity analysis, see the [Disease Eradication Model](../appendix/disease-eradication-model.qmd). For conservative estimates suitable for skeptical audiences, see the Conservative Baselines section.*
