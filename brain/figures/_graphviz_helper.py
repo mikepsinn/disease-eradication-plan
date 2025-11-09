@@ -89,11 +89,36 @@ def add_watermark_to_png(png_path, text='WarOnDisease.org'):
         # Get image dimensions
         width, height = img.size
         
+        # Calculate text bounding box to ensure it fits within image
+        if font:
+            # Get text bounding box (left, top, right, bottom)
+            bbox = draw.textbbox((0, 0), text, font=font)
+            text_width = bbox[2] - bbox[0]
+            text_height = bbox[3] - bbox[1]
+        else:
+            # Estimate for default font (rough approximation)
+            text_width = len(text) * 6  # Rough estimate: ~6 pixels per character
+            text_height = 11  # Font size
+        
         # Position: bottom-right with 3% padding (design guide spec)
-        text_x = int(width * 0.97)
-        text_y = int(height * 0.97)
+        # Calculate padding in pixels (3% of image dimensions)
+        padding_x = int(width * 0.03)
+        padding_y = int(height * 0.03)
+        
+        # Position so right-bottom corner of text is at (width - padding_x, height - padding_y)
+        # Using anchor='rb' means the anchor point is the right-bottom of the text
+        text_x = width - padding_x
+        text_y = height - padding_y
+        
+        # Ensure text doesn't go off the left or top edges
+        # If text would extend beyond boundaries, adjust position
+        if text_x - text_width < 0:
+            text_x = text_width + padding_x  # Move right to fit
+        if text_y - text_height < 0:
+            text_y = text_height + padding_y  # Move down to fit
         
         # Draw watermark (black, bold, 11pt)
+        # anchor='rb' means the (x, y) position is the right-bottom corner of the text
         if font:
             draw.text((text_x, text_y), text, fill='#000000', font=font, anchor='rb')
         else:
