@@ -95,7 +95,6 @@ Replaced with specific, meaningful headers:
 - [x] legal/election-law.qmd
 - [x] legal/treaty-framework.qmd
 - [x] economics/victory-bonds.qmd
-- [x] economics/coalition-that-wins.qmd - "The Game Changer" → "The Economics", "Bottom Line" → "Building the Coalition"
 - [x] economics/health-savings-sharing-model.qmd - "Bottom Line" → "The Solution"
 - [x] economics/central-banks.qmd - Removed "The Irony:" header
 - [x] economics/campaign-budget.qmd - "Bottom Line" → "Summary"

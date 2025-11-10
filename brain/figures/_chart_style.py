@@ -123,19 +123,60 @@ def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
     """
     Add consistent branding watermark to a figure.
 
-    The watermark is positioned with padding from edges to avoid overlap with chart elements.
-    Uses light gray color and regular weight for subtle branding.
+    The watermark is positioned at the absolute bottom-right corner with fixed padding
+    (in inches) regardless of figure size. This ensures consistent placement across
+    different chart sizes.
+
+    Uses font metrics to calculate text dimensions accurately without requiring
+    the figure to be rendered first.
 
     Args:
         fig: matplotlib Figure object
         text: Watermark text (default: 'WarOnDisease.org')
         alpha: Transparency (default: 1.0 - fully opaque)
     """
-    # Position: bottom-right with 2% padding (slightly lower than 3% for better positioning)
+    from matplotlib.font_manager import FontProperties
+    
+    # Fixed padding in inches (not percentage) for consistent placement
+    padding_right_inches = 0.1   # 0.1 inches from right edge
+    padding_bottom_inches = 0.05  # 0.05 inches from bottom edge
+    
+    # Get figure size in inches
+    fig_width_inches, fig_height_inches = fig.get_size_inches()
+    
+    # Measure text dimensions using font properties
+    fontsize = 9
     watermark_color = '#666666'  # Light gray instead of black
-    fig.text(0.97, 0.02, text,
-             fontsize=9, color=watermark_color,
-             ha='right', va='bottom', alpha=alpha, weight='normal')
+    
+    # Get font properties to measure text
+    font_prop = FontProperties(size=fontsize, weight='normal')
+    
+    # Estimate text width: average character width * number of characters
+    # For sans-serif fonts at 9pt, average char width is approximately 0.6 * fontsize
+    # Convert points to inches: 1 point = 1/72 inches
+    fontsize_inches = fontsize / 72.0
+    # Average character width in inches (conservative estimate for 'WarOnDisease.org')
+    avg_char_width_inches = fontsize_inches * 0.55
+    text_width_inches = len(text) * avg_char_width_inches
+    
+    # Text height: font size + descenders (approximately 1.2x font size)
+    text_height_inches = fontsize_inches * 1.2
+    
+    # Calculate position in figure coordinates (0-1)
+    # Right edge: 1.0 - (padding + text_width) / fig_width
+    # Bottom edge: (padding + text_height) / fig_height
+    x_position = 1.0 - (padding_right_inches + text_width_inches) / fig_width_inches
+    y_position = (padding_bottom_inches + text_height_inches) / fig_height_inches
+    
+    # Clamp to valid range [0, 1] to prevent out-of-bounds
+    x_position = max(0.0, min(1.0, x_position))
+    y_position = max(0.0, min(1.0, y_position))
+    
+    # Position: bottom-right corner with fixed padding
+    fig.text(x_position, y_position, text,
+             fontsize=fontsize, color=watermark_color,
+             ha='right', va='bottom', alpha=alpha, weight='normal',
+             transform=fig.transFigure)
 
 
 def clean_spines(ax, positions=['top', 'right']):
