@@ -548,3 +548,42 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
     --mermaid-alt-bg-color: #f9f8f3;
     --mermaid-cluster-bg-color: #f5f4ef;
 }
+
+/* ==========================================
+   AUTHOR LABEL CUSTOMIZATION
+   ========================================== */
+
+/* Hide the "Author" label in Quarto book title blocks */
+.quarto-title-block .quarto-title-meta-heading:first-of-type {
+    display: none;
+}
+
+/* Add "By" before the author name */
+.quarto-title-block .quarto-title-meta-contents:first-of-type::before {
+    content: "By ";
+}
+
+/* Alternative targeting for different Quarto book structures */
+.quarto-title-block .quarto-title-meta .quarto-title-meta-heading:first-child {
+    display: none;
+}
+
+.quarto-title-block .quarto-title-meta .quarto-title-meta-contents:first-child::before {
+    content: "By ";
+}
+
+/* Target author-specific classes if they exist */
+.quarto-title-block .quarto-title-meta-author::before {
+    content: "By ";
+}
+
+/* Hide author label in Bootstrap-based title blocks */
+.title-block .meta-author-label,
+.title-block .author-label {
+    display: none;
+}
+
+.title-block .meta-author::before,
+.title-block .author::before {
+    content: "By ";
+}
