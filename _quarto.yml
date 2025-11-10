@@ -85,16 +85,12 @@ book:
         - brain/book/strategy/treaty-adoption-strategy.qmd # ✅ Dual-track approach (merged grassroots + diplomatic) ~8p
         - brain/book/appendix/co-opt-dont-compete.qmd # ✅ (EXCELLENT voice - "You'd lose") ~3p
         - brain/book/appendix/global-referendum-implementation.qmd # ✅ (technical spec, appropriate) ~1p
-        - brain/book/appendix/referendum-question-testing-strategy.qmd # ✅ A/B testing framework for the question ~8p
         - brain/book/appendix/nonprofit-partnership-incentives.qmd # ✅ (IMPROVED) ~4p
 
     - part: "Policy & Regulatory"
       chapters:
         - brain/book/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
-        - brain/book/appendix/hhs-dFDA-policy-recommendations.qmd # ✅ (policy doc, must remain formal) ~10p
-        - brain/book/appendix/dfda-implementation-via-executive-action.qmd # ✅ (policy strategy, appropriate) ~25p
         - brain/book/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
-        - brain/book/appendix/regulatory-reform-plan.qmd # ✅ (regulatory checklist, appropriate) ~8p
 
     # Economic Analysis
     - part: "Economic Analysis"
@@ -143,14 +139,12 @@ book:
         - brain/book/appendix/dih-integration-model.qmd # ✅ (has personality) ~4p
         - brain/book/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
         - brain/book/appendix/command-and-control-systems.qmd # ✅ (EXCELLENT voice) ~8p
-        - brain/book/appendix/dfda-collaboration-framework.qmd # ✅ (technical spec, appropriate) ~4p
 
     - part: "Operations & Legal"
       chapters:
         - brain/book/appendix/legal-compliance-framework.qmd # ✅ (technical legal, appropriate) ~9p
         - brain/book/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
         - brain/book/appendix/free-rider-solution.qmd # ✅ (IMPROVED) ~3p
-        - brain/book/appendix/verification-and-fraud-prevention.qmd # ✅ (technical spec, appropriate) ~5p
 
     - part: "Additional References"
       chapters:

@@ -1422,66 +1422,6 @@
 
 ---
 
-## File: `brain/book/appendix/referendum-question-testing-strategy.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - Question Variations to Test
-    - Variation 1: Simple Disparity Frame (Current Baseline)
-      - Strengths
-      - Weaknesses
-    - Variation 2: Security + Benefit Frame
-      - Strengths
-      - Weaknesses
-    - Variation 3: Efficiency Frame
-      - Strengths
-      - Weaknesses
-    - Variation 4: Personal Benefit Frame
-      - Strengths
-      - Weaknesses
-    - Variation 5: Ultra-Simple Control
-      - Strengths
-      - Weaknesses
-    - Variation 6: Combined Security + Efficiency (Comprehensive)
-      - Strengths
-      - Weaknesses
-  - Testing Framework
-    - Phase 1: Pilot Testing (Months 1-2)
-      - Metrics to Track
-      - Testing Method
-    - Phase 2: Refinement Testing (Months 3-4)
-      - Method
-      - Advanced Testing
-    - Phase 3: Scale Testing (Months 5-6)
-      - Method
-  - Geographic and Cultural Variations
-    - For Defense-Skeptical Regions (Europe, Scandinavia)
-    - For Security-Conscious Regions (US, Middle East, Eastern Europe)
-    - For Developing Nations (Africa, South Asia, Latin America)
-  - Success Metrics
-    - Primary Metrics
-    - Secondary Metrics
-  - Educational Flow Before The Question
-    - Recommended Educational Sequence (5-10 minutes)
-      - Module 1: The Crisis (2 minutes)
-        - Module 4: Your Benefits (1 minute)
-          - Module 5: The Question (Decision moment)
-    - Why This Sequence Works
-    - A/B Test: Education Length
-  - Implementation Recommendations
-    - Best Practices for Testing
-    - Red Flags to Watch For
-  - Recommended Question for Launch
-    - Rationale
-  - Testing Budget
-  - Question Evolution Over Time
-    - Early Adopters (First 10M)
-      - Early Majority (Next 100M)
-      - Late Majority (Next 100M)
-      - Laggards (Final 70M)
-  - Final Note: The Question Will Evolve
-
----
-
 ## File: `brain/book/appendix/nonprofit-partnership-incentives.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
@@ -1538,59 +1478,6 @@
 
 ---
 
-## File: `brain/book/appendix/hhs-dFDA-policy-recommendations.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-- Key Objectives
-- HHS Budget Context and Reallocation Potential
-- Potential Participant Capacity with Proposed Funding
-  - Medicare/Medicaid Integration Potential
-- FDA-X Prize Design
-- Projected Impact
-- Evidence of Congressional and Executive Branch Support
-  - **1. Why Previous Initiatives Failed**
-    - **a. [Sentinel Initiative](../references.qmd#fda-sentinel-initiative): Limited Transparency and Bureaucratic Constraints**
-      - **b. All of Us Program: Centralized Control, Fragmented Incentives**
-      - **c. [Cure-ID](../references.qmd#fda-cure-id): Insufficient Incentives and Network Effects**
-    - **2. How an Open-Source, X Prize Model Can Succeed Where Others Failed**
-      - **a. Open-Source Infrastructure: Transparency, Flexibility, and Global Collaboration**
-      - **b. X Prize Model: Incentivizing Breakthrough Innovation**
-      - **c. Technological Advancements: AI, Blockchain, and Edge Computing**
-- Sources
-- Implementation Timeline
-  - Phase 1 (Months 0-6)
-  - Phase 2 (Months 6-18)
-  - Phase 3 (Months 18-36)
-- Risk Mitigation
-- Success Metrics
-
----
-
-## File: `brain/book/appendix/dfda-implementation-via-executive-action.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - Core Precedent: The DOGE Model
-  - Applying the Model to dFDA Implementation
-    - NIH Funding Fulfilling Goals Addressable by dFDA
-      - Discussion
-  - Anticipated Challenges
-  - Conclusion
-  - Appendix: Draft Executive Order Text
-    - **Section 1. Purpose**
-    - **Section 1A. The Problem**
-    - **Section 2. Definitions**
-    - **Section 3. Policy**
-      - **3.1 Establishment of the Decentralized Autonomous FDA**
-      - **3.2 Patient Access to Decentralized Clinical Trials**
-      - **3.3 Elimination of Economic Barriers**
-      - **3.4 Real-World Data Sharing Mandate**
-      - **3.5 Quantitative Treatment Rankings**
-    - **Section 4. Implementation**
-    - **Section 5. General Provisions**
-      - Rationale & Legal Authority
-
----
-
 ## File: `brain/book/appendix/impact-securities-reform.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
@@ -1603,14 +1490,6 @@
   - Section 9. Implementation
   - Section 10. Enforcement and Remedies
   - Commentary: Relation to dFDA/DIH and VICTORY Bonds
-
----
-
-## File: `brain/book/appendix/regulatory-reform-plan.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-    - Key Regulatory Areas for Reform
-    - Specific Modifications/Repeals for dFDA Enablement
 
 ---
 
@@ -2625,14 +2504,6 @@
 
 ---
 
-## File: `brain/book/appendix/dfda-collaboration-framework.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-- Potential Implemenation Approach
-- Overcoming the Winner-Take-All Nature of Humans and Organizations
-
----
-
 ## File: `brain/book/appendix/legal-compliance-framework.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
@@ -2695,39 +2566,6 @@
 
 ---
 
-## File: `brain/book/appendix/recruitment-and-propaganda-plan.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - The Current Clusterfuck
-  - The Weapon: Airtable
-  - The Three-Division Army Structure
-    - Division 1: Financial Infantry (The Money People)
-      - How to identify them
-    - Division 2: Home Front Supporters (The Feels People)
-      - How to identify them
-    - Division 3: Allied Command (The Institution People)
-      - How to identify them
-  - The Enlistment Forms
-    - Financial Infantry Enlistment Form
-    - Home Front Supporter Enlistment Form
-    - Allied Command Partnership Form
-  - The Deployment Strategy
-    - Step 1: Delete the Impossible Buttons
-    - Step 2: Install the New Propaganda
-    - Step 3: Create Artificial Urgency
-    - Step 4: A/B Test Everything
-  - The Management Protocol
-    - Weekly Reviews (Monday Morning Triage)
-    - Tagging System (How to Remember Who Matters)
-    - Follow-Up Sequences (Automated Harassment)
-  - The Communication Strategy
-  - The Privacy Theater
-  - The Metrics That Matter
-  - The Endgame
-  - Your Marching Orders
-
----
-
 ## File: `brain/book/appendix/free-rider-solution.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
@@ -2737,58 +2575,6 @@
     - 2. The Bribe for the Military-Industrial Complex (The Generals & CEOs)
     - 3. The Bribe for the Financial Elite (The Bankers & Fund Managers)
   - The "Punishment": Targeted, Personal, and Financial
-
----
-
-## File: `brain/book/appendix/verification-and-fraud-prevention.qmd`
-
-- Quarto executes from project root (execute-dir: project in _book.yml)
-  - Global Referendum Identity Verification
-    - **Multi-Factor Sybil Resistance**
-      - Layer 1: Basic Authentication
-        - Layer 2: Enhanced Verification
-          - Layer 3: Social Verification
-    - **Cryptographic Verification Protocol**
-      - End-to-End Verifiable Voting ([Helios Protocol](../references.qmd#helios-voting))
-      - Privacy-Preserving Verification
-    - **Fraud Detection AI Systems**
-      - Anomaly Detection Engine
-      - Real-Time Monitoring
-  - Treasury Fraud Prevention
-    - **AI-Powered Security Agents**
-      - Fraud Agent Capabilities
-      - Safety Oracle Functions
-      - Identity Oracle Verification
-    - **Blockchain-Based Transparency**
-      - Immutable Audit Trail
-      - Smart Contract Security
-    - **Human Oversight and Response**
-      - Manual Review Queue
-      - Whistleblower Program
-  - Implementation Architecture
-    - **Verification System Stack**
-      - Frontend (User Interface)
-      - Backend (Processing)
-      - Data Storage
-    - **Integration Standards**
-      - Identity Systems
-      - Health Data
-  - Regional Compliance Strategy
-    - **Regulatory Adaptation**
-      - European Union (GDPR)
-      - United States (State Laws)
-      - Authoritarian Regimes
-    - **Technical Sovereignty**
-      - Data Localization
-      - Open Source Transparency
-  - Success Metrics and Monitoring
-    - **Verification Effectiveness**
-      - Quality Metrics
-      - Scale Metrics
-    - **Fraud Prevention Effectiveness**
-      - Detection Metrics
-      - Response Metrics
-  - System Overview
 
 ---
 
