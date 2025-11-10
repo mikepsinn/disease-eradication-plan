@@ -69,6 +69,58 @@ def check_unrendered_inline_python(content, file_path):
     return errors
 
 
+def check_dollar_python_pattern(content, file_path):
+    """Check for literal `${python} ...` patterns in HTML output"""
+    errors = []
+
+    # Pattern: ${python} something - this is the inline Python syntax that should be rendered
+    # If it appears literally in the HTML, it means Quarto didn't evaluate it
+    # Look for ${python} followed by content (variable name or expression)
+    # Pattern matches: ${python} followed by word characters, dots, spaces, or simple expressions
+    pattern = r'\$\{python\}\s*[^\s<}]+'
+
+    lines = content.split('\n')
+    for i, line in enumerate(lines, 1):
+        # Skip HTML comments, script tags, and code blocks (might be intentional documentation)
+        # Check if the line contains these tags before the ${python} pattern
+        if '<!--' in line:
+            continue
+        if '<script' in line.lower():
+            continue
+        
+        # Check if ${python} appears in a code block - if so, skip (it's documentation)
+        # Pattern: <code>...${python}...</code> or <pre>...${python}...</pre>
+        if '<code' in line.lower() or '<pre' in line.lower():
+            # Check if ${python} is inside the code/pre tag
+            code_start = line.lower().find('<code')
+            pre_start = line.lower().find('<pre')
+            code_end = line.lower().find('</code>')
+            pre_end = line.lower().find('</pre>')
+            
+            python_pos = line.find('${python}')
+            if python_pos != -1:
+                # Check if it's inside a code or pre block
+                in_code = (code_start != -1 and code_end != -1 and 
+                          code_start < python_pos < code_end)
+                in_pre = (pre_start != -1 and pre_end != -1 and 
+                         pre_start < python_pos < pre_end)
+                if in_code or in_pre:
+                    continue  # It's in a code block, skip it
+        
+        matches = re.finditer(pattern, line)
+        for match in matches:
+            matched_text = match.group(0)
+            # Extract context (first 100 chars)
+            context_text = matched_text[:100].strip()
+            # Get surrounding context (50 chars before and after)
+            start = max(0, match.start() - 50)
+            end = min(len(line), match.end() + 50)
+            context = f"Unrendered ${python} pattern: `{context_text}` (context: ...{line[start:end]}...)"
+            errors.append(ValidationError(file_path, i, "UNRENDERED_DOLLAR_PYTHON", context))
+
+    return errors
+
+
 def check_echo_false_in_output(content, file_path):
     """Check for 'echo: false' appearing in rendered output"""
     errors = []
@@ -121,6 +173,7 @@ def validate_file(file_path):
 
     errors = []
     errors.extend(check_unrendered_inline_python(content, file_path))
+    errors.extend(check_dollar_python_pattern(content, file_path))
     errors.extend(check_echo_false_in_output(content, file_path))
     errors.extend(check_python_errors(content, file_path))
 
@@ -178,6 +231,12 @@ def main():
         print("     computations. Clear freeze directories: rm -rf _freeze .quarto/_freeze")
         print("   - Or render with: quarto render --execute-daemon restart")
         print("   - Check that variables are defined before use")
+    if 'UNRENDERED_DOLLAR_PYTHON' in errors_by_type:
+        print("   - Unrendered ${python} pattern: Inline Python expressions didn't evaluate")
+        print("     Clear freeze directories: rm -rf _freeze .quarto/_freeze")
+        print("   - Or render with: quarto render --execute-daemon restart")
+        print("   - Ensure Python code blocks execute before inline expressions")
+        print("   - Check that variables referenced in ${python} are defined")
     if 'ECHO_FALSE_LEAK' in errors_by_type:
         print("   - 'echo: false' in output: Use cell option format: #| echo: false")
         print("     (with #| prefix, not as YAML)")
