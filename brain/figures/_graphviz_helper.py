@@ -41,35 +41,35 @@ def add_watermark_to_png(png_path, text='WarOnDisease.org'):
     Add watermark to PNG following design guide specs.
     
     Design Guide Specs:
-    - Font size: 11pt (bold)
-    - Color: Black (#000000)
-    - Position: Bottom-right with 3% padding from edges
+    - Font size: 9pt (regular, not bold)
+    - Color: Light gray (#666666)
+    - Position: Bottom-right with 2% padding from edges
     - Opacity: 100% (fully opaque)
     """
     try:
         img = Image.open(png_path)
         draw = ImageDraw.Draw(img)
         
-        # Try to use serif font (Georgia/Times), fallback to default
-        font_size = 11
+        # Try to use serif font (Georgia/Times), regular weight (not bold)
+        font_size = 9  # Slightly smaller
         font = None
         
-        # Try Linux fonts first
+        # Try Linux fonts first (regular, not bold)
         linux_fonts = [
-            '/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf',
-            '/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf',
+            '/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf',
+            '/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf',
         ]
         
-        # Try Windows fonts
+        # Try Windows fonts (regular, not bold)
         windows_fonts = [
-            'C:/Windows/Fonts/georgiab.ttf',
-            'C:/Windows/Fonts/timesbd.ttf',
+            'C:/Windows/Fonts/georgia.ttf',
+            'C:/Windows/Fonts/times.ttf',
         ]
         
-        # Try macOS fonts
+        # Try macOS fonts (regular, not bold)
         mac_fonts = [
-            '/Library/Fonts/Georgia Bold.ttf',
-            '/System/Library/Fonts/Supplemental/Georgia Bold.ttf',
+            '/Library/Fonts/Georgia.ttf',
+            '/System/Library/Fonts/Supplemental/Georgia.ttf',
         ]
         
         for font_path in linux_fonts + windows_fonts + mac_fonts:
@@ -92,37 +92,54 @@ def add_watermark_to_png(png_path, text='WarOnDisease.org'):
         # Calculate text bounding box to ensure it fits within image
         if font:
             # Get text bounding box (left, top, right, bottom)
-            bbox = draw.textbbox((0, 0), text, font=font)
-            text_width = bbox[2] - bbox[0]
-            text_height = bbox[3] - bbox[1]
+            # This should include full height including descenders
+            test_bbox = draw.textbbox((0, 0), text, font=font)
+            text_width = test_bbox[2] - test_bbox[0]
+            text_height = test_bbox[3] - test_bbox[1]  # Full height including descenders
+            
+            # Also get font metrics for more accurate descent measurement
+            try:
+                ascent, descent = font.getmetrics()
+                # Use the larger of text_height or (ascent + descent) to ensure we account for all descenders
+                # Sometimes textbbox doesn't fully capture descenders, so use font metrics as backup
+                text_height_with_metrics = ascent + descent
+                # Use the maximum to ensure we don't clip anything
+                text_height = max(text_height, text_height_with_metrics)
+            except:
+                pass
         else:
             # Estimate for default font (rough approximation)
-            text_width = len(text) * 6  # Rough estimate: ~6 pixels per character
-            text_height = 11  # Font size
+            text_width = len(text) * 5  # Rough estimate: ~5 pixels per character (smaller font)
+            text_height = 12  # Include descenders for default font (smaller font size)
         
         # Position: bottom-right with 3% padding (design guide spec)
         # Calculate padding in pixels (3% of image dimensions)
         padding_x = int(width * 0.03)
         padding_y = int(height * 0.03)
         
-        # Position so right-bottom corner of text is at (width - padding_x, height - padding_y)
-        # Using anchor='rb' means the anchor point is the right-bottom of the text
+        # Position using 'rt' (right-top) anchor for most reliable positioning
+        # Calculate from top, then position so bottom of text is slightly lower than padding_y
+        # Reduce padding slightly to move watermark closer to bottom edge
         text_x = width - padding_x
-        text_y = height - padding_y
+        # Position top of text so that bottom (including descenders) is slightly lower
+        # Using 2% padding instead of 3% to move it slightly lower
+        adjusted_padding_y = int(height * 0.02)  # 2% instead of 3% for slightly lower position
+        text_y = height - adjusted_padding_y - text_height
         
         # Ensure text doesn't go off the left or top edges
         # If text would extend beyond boundaries, adjust position
         if text_x - text_width < 0:
             text_x = text_width + padding_x  # Move right to fit
-        if text_y - text_height < 0:
-            text_y = text_height + padding_y  # Move down to fit
+        if text_y < 0:
+            text_y = padding_y  # Move down to fit, but ensure bottom is still visible
         
-        # Draw watermark (black, bold, 11pt)
-        # anchor='rb' means the (x, y) position is the right-bottom corner of the text
+        # Draw watermark (light gray, regular weight, 9pt)
+        # Using 'rt' (right-top) anchor - position is the top-right corner of the text
+        watermark_color = '#666666'  # Light gray instead of black
         if font:
-            draw.text((text_x, text_y), text, fill='#000000', font=font, anchor='rb')
+            draw.text((text_x, text_y), text, fill=watermark_color, font=font, anchor='rt')
         else:
-            draw.text((text_x, text_y), text, fill='#000000', anchor='rb')
+            draw.text((text_x, text_y), text, fill=watermark_color, anchor='rt')
         
         img.save(png_path)
     except Exception as e:
@@ -153,8 +170,8 @@ def setup_graphviz_style(dot):
              bgcolor='#FFFFFF',
              fontcolor='#000000',
              fontname='Georgia,serif',
-             margin='0.3',  # 3% margin on all sides (0.3 inches) to prevent watermark overlap
-             pad='0.3')     # Additional padding for better spacing
+             margin='0',    # Set margin to 0, we'll add padding via 'pad' attribute
+             pad='0.5')    # Padding around entire diagram (0.5 inches) - this adds space around content
 
 
 def render_graphviz_with_watermark(dot, filename, output_dir=None):
@@ -178,12 +195,31 @@ def render_graphviz_with_watermark(dot, filename, output_dir=None):
     output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / filename
     
+    # Ensure proper padding is set (override any previous settings)
+    # 'pad' adds padding in inches around the entire diagram content
+    # Using single value applies to all sides
+    dot.attr('graph', pad='0.5')  # 0.5 inch padding on all sides for proper margins
+    
     # Render to PNG
     dot.render(str(output_path), cleanup=True)
     
     # Add watermark
     png_path = f'{output_path}.png'
-    add_watermark_to_png(png_path)
+    
+    # Add padding to image if Graphviz didn't add enough
+    # Load image and check if we need to add more padding
+    try:
+        from PIL import Image
+        img = Image.open(png_path)
+        width, height = img.size
+        
+        # Check if image has minimal padding (less than 20 pixels on any side)
+        # If so, add padding using PIL
+        # For now, just add watermark - Graphviz pad should handle margins
+        add_watermark_to_png(png_path)
+    except Exception as e:
+        # If PIL operations fail, still try to add watermark
+        add_watermark_to_png(png_path)
     
     return Path(png_path)
 

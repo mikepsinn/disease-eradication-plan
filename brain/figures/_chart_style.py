@@ -124,17 +124,18 @@ def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
     Add consistent branding watermark to a figure.
 
     The watermark is positioned with padding from edges to avoid overlap with chart elements.
-    Uses black color and bold weight for better visibility.
+    Uses light gray color and regular weight for subtle branding.
 
     Args:
         fig: matplotlib Figure object
         text: Watermark text (default: 'WarOnDisease.org')
-        alpha: Transparency (default: 1.0 - fully opaque black)
+        alpha: Transparency (default: 1.0 - fully opaque)
     """
-    # Position: bottom-right with 3% padding (design guide spec)
-    fig.text(0.97, 0.03, text,
-             fontsize=11, color=COLOR_BLACK,
-             ha='right', va='bottom', alpha=alpha, weight='bold')
+    # Position: bottom-right with 2% padding (slightly lower than 3% for better positioning)
+    watermark_color = '#666666'  # Light gray instead of black
+    fig.text(0.97, 0.02, text,
+             fontsize=9, color=watermark_color,
+             ha='right', va='bottom', alpha=alpha, weight='normal')
 
 
 def clean_spines(ax, positions=['top', 'right']):

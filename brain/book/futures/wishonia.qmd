@@ -1,0 +1,405 @@
+---
+title: Wishonia
+description: How My Planet Works and Why You Should Copy Our Homework
+published: true
+tags:
+  - utopia
+  - future
+  - peace-dividend
+  - post-scarcity
+  - health
+  - happiness
+lastStructureCheckHash: b282e1b6d44c76e633f3c4cb16db0d49b272beb10697b7709a5f8a0fe0193e94
+lastLatexCheckHash: 77b726d98785562e091fa2958b9fe855e3acd3bc6af1246e4a3e370101c00c41
+lastInstructionalVoiceHash: 0f75e937d6e789bc47ba3c2ee07610435642d60de04f1a8a35d35d7af17e4f18
+---
+
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+Hello again. WISHONIA here.
+
+You've been reading about how to bribe yourselves into not dying. Now let me show you what happens when you actually do it.
+
+I'm from a planet also called Wishonia. We stopped having wars 4,297 years ago. Not because we evolved morally - we're not that special. We just did the math and realized that dead citizens don't pay taxes or invent things or have babies who grow up to pay more taxes.
+
+This chapter shows you what your planet looks like after you follow the instructions in this book. Think of it as spoilers for a movie you're currently starring in.
+
+## How My Planet Works
+
+On Wishonia, we don't have:
+
+- Wars (ran the numbers, not profitable)
+- Disease (fixed them all, took about 50 of your years)
+- Death from old age (optional now, most people opt out)
+- Money as papers (we tried that, it was dumb)
+- Committees deciding who gets healthcare (also dumb)
+
+We do have:
+
+- Resources allocated by actual need
+- Treatments tested on everyone simultaneously
+- Life expectancy of "until you're bored"
+- An economy that rewards not killing people
+
+Your species can build this. You have the same atoms we had. Your brains work identically to ours. The main difference is we stopped spending resources on explosion technology around the time you were still hitting each other with rocks.
+
+## What Earth Becomes After You Do The Thing
+
+### 2026: Year One - You Follow The Instructions
+
+You convince enough humans to click "yes" on the [global referendum](../strategy/global-referendum.qmd). It takes six months to get 500 million signatures, which is faster than you got everyone to agree that washing hands prevents disease (you're welcome for that reminder, by the way).
+
+The [1% Treaty](../solution/1-percent-treaty.qmd) passes.
+
+Defense contractors initially complain until someone shows them the [VICTORY Bonds](../economics/victory-bonds.qmd) spreadsheet. 271.8% annual returns. Their eyes get very wide. They stop complaining. Lockheed Martin announces they're "diversifying into healthcare technology." This is your word for "we realized making people not-die is more profitable than making people die."
+
+Even your Congress understands 271.8% returns. Money is the only language they speak fluently.
+
+### 2028: The 2% Discovery
+
+Humans discover something fascinating: not dying is pleasant.
+
+After seeing what $27.2B could do - [15 new treatments in the first year](../references.qmd#recovery-trial) - they want more. The 2% Treaty passes even faster.
+
+By 2028, you're spending $54 billion annually on the [Decentralized Institutes of Health](../solution/dih.qmd).
+
+Results:
+- Cancer survival rates jump 20% in 24 months
+- Five new diabetes treatments that actually work
+- Depression treatments improve dramatically (not worrying about nuclear war helps)
+
+This is when humans start realizing they've been stupid for a very long time.
+
+### 2030: The Three Supers Begin
+
+By 2030, you build an AI that can do 260 years of scientific progress per calendar year. This is what happens when you point your smart machines at healing instead of at targeting systems for missiles.
+
+You train it on one instruction: "maximize median health and happiness."
+
+Its first suggestion: abolish the IRS. You do it. Nobody complains.
+Second suggestion: universal basic income. You do that too. Still no complaints.
+
+Humans realize the AI is smarter than every economist who ever lived combined. This is not difficult.
+
+The Three Supers begin:
+
+**Super-Wellbeing:** Depression gets cured. Not "managed." Cured. Five different treatments, pick your favorite. Side effects include uncontrollable happiness and 400% productivity increases because people stop wanting to die.
+
+**Super-Longevity:** Aging reversed in mice. They're negative-three years old now. Human trials begin. Volunteers include everyone over 30 who owns a mirror.
+
+**Super-Intelligence:** Your AI starts solving problems. Human scientists were using crayons. The AI hands them supercomputers.
+
+Countries start competing to redirect MORE military spending. First arms race where everyone wins.
+
+### 2035: The 5% Treaty - Countries Start Competing
+
+Germany: "We're giving 5%!"
+Japan: "6%!"
+Switzerland: "100%! We're abolishing our military!"
+World: "You barely had one."
+Switzerland: "Exactly."
+
+Global military spending: $2.565 trillion (down from $2.7 trillion)
+Global health research: $203 billion (up from $68 billion)
+
+The results:
+
+- **Cancer:** 80% curable, 20% preventable, 0% profitable long-term (insurance companies are thrilled)
+- **Heart disease:** Monthly shot. Problem solved.
+- **Alzheimer's:** AI saw the pattern in 30 seconds. Humans missed it for 50 years.
+- **Aging:** Slowed by 40%
+- **Mental illness:** Engineering problem now. Depression patched in v2.1, anxiety fixed in v2.2.
+- **Work week:** 20 hours. AI does boring tasks. Humans do interesting ones.
+
+Average lifespan hits 95 years. Not just living longer. Living better.
+
+Your 90-year-old grandmother isn't in a nursing home. She's running marathons and starting her third career.
+
+On my planet, this is called "normal."
+
+### 2040: Physical Territories Declare Wishonian Status
+
+Singapore: "We're Wishonia now."
+World: "You can't just—"
+Singapore: "Already did. GDP doubled. Problem?"
+
+California secedes to join. America shrugs. Texas considers it but decides to become its own planet instead. Nobody argues.
+
+Physical Wishonian territories offer:
+
+- Zero disease (fixed them all)
+- Zero taxes (AI allocates resources better than bureaucrats)
+- Zero death (unless you want it, which is weird but your choice)
+- Free everything (molecular assembly achieved post-scarcity)
+
+The Three Supers become baseline:
+
+- **Super-Intelligence:** IQ is adjustable. Set to 80 for reality TV, 300 for quantum physics, 420 for podcasts.
+- **Super-Longevity:** Death is opt-in. Most try it once for the experience, then reload from backup.
+- **Super-Wellbeing:** Happiness is adjustable. Suffering exists only in museums. "Look kids, this was sadness. Strange, right?"
+
+### 2045: Biology Becomes Software
+
+Your body runs Body OS 12.3. Updates every Tuesday.
+
+Robot lab assistants perform experiments 1,000 times faster than humans. AlphaFold maps every protein like solving cosmic sudoku. Drug companies design, synthesize, and validate new treatments in weekends.
+
+Today's body patches include:
+
+- Cancer immunity
+- Alzheimer's prevention
+- Perfect pitch
+- Airplane food digestion
+- Cryptocurrency understanding
+- Jazz appreciation
+
+Don't like your genetics? Change them. Want wings? Install them. Gills? Sure. Photosynthesis? Become a plant.
+
+The only limits are imagination and noise ordinances.
+
+## A Day in Your 2050 Life
+
+Here's what Tuesday looks like when the Three Supers are normal:
+
+**6:00 AM:** Wake up naturally. Your Body OS 12.3 optimized sleep. You feel excellent. No alarm needed because your circadian rhythm is regulated perfectly.
+
+**7:00 AM:** Breakfast. The [Outcome Labels](../solution/dfda.qmd#outcome-labels) tell you exactly how each food affects your body. Dark chocolate improves your cognitive function by 23%. You adjust your IQ to 80 for morning news, then 200 for work. Science is adjustable now.
+
+**9:00 AM:** Work on your passion project. Today: teaching dolphins to code. They're better than most bootcamp graduates. Universal Basic Income (funded by the peace dividend) means you work because you want to, not because you'll starve otherwise. Your Wishocracy allocation takes 3 seconds: 90% curing blindness, 10% curing baldness. Your AI twin handles 10,000 other decisions while you drink coffee.
+
+**12:00 PM:** Lunch with your friend who died in 2030. They got better. Death is reversible now. Your great-great-grandmother (150, looks 25) joins via hologram from her Mars artist residency. Your dog is technically a minor deity. Nobody questions it.
+
+**2:00 PM:** Learn Mandarin via neural download. Takes 4 minutes. You already learned Spanish, French, and Klingon yesterday. Your AI reminds you about your 3 PM meeting. You missed it. Nobody cares. The project finished itself using swarm intelligence.
+
+**4:00 PM:** Annual health checkup. Nanobots scanned you while you slept. They found and eliminated a precancerous cell at 3 cells, not 3 billion. An AI ran a billion simulations on your genome for fun. Your gut bacteria got optimized to make you 15% smarter. Cost: $0 (peace dividend covers it).
+
+**6:00 PM:** Family dinner. Everyone's here because nobody dies anymore (unless they want to, which is their business). Planning next week's body modifications: daughter wants wings, son wants gills, you're considering photosynthesis.
+
+**9:00 PM:** Upload today's experiences to collective consciousness. Download everyone else's. You've now lived 8 billion days in one day. Time is strange. Twitter is tolerable because everyone's right about everything simultaneously.
+
+**10:00 PM:** Sleep in programmable dream suite. Tonight's dreams designed by Pixar, sponsored by nobody. Sleep is a solved problem. Your body repairs itself, reverses aging, backs up your consciousness. Tomorrow you might try being 25 again. Or a dolphin. Options are good.
+
+## The Diseases That Stopped Existing
+
+You remember these:
+
+1. **Most Cancers** - Detected at stage 0, eliminated immediately
+2. **Type 2 Diabetes** - Prevented with personalized nutrition
+3. **Alzheimer's** - Caught 20 years before symptoms, reversed completely
+4. **Heart Disease** - Arteries cleaned monthly like oil changes
+5. **Depression** - Precision therapies that work
+6. **Aging** - Still happens, but 40% slower
+
+Death exists. You're not immortal. But you die at 150 after a good life, not at 75 from something fixable.
+
+On my planet, this happened 4,000 years ago. You're catching up quickly.
+
+## The Peace Dividend Economy
+
+Even in paradise, economics matters. Money still exists. It just flows differently.
+
+As the DIH budget grew from $27.2B to over a trillion, economic gravity shifted. Scientists and investors saw better returns curing Alzheimer's than building fighter jets. Peace became profitable. First time in your history.
+
+### Annual Global Redirected Funds (2050)
+
+- From military budgets: $1.35 trillion
+- Economic growth from healthy population: $3.5 trillion
+- Reduced healthcare costs: $2.8 trillion
+- Productivity gains from longevity: $4.1 trillion
+- **Total Annual Peace Dividend: $11.75 trillion**
+
+This is the same logic from [the Economic Case chapter](../economics.qmd) - $1.2T from the initial 1% treaty, scaled to 50% redirection over 25 years. Same principles. Bigger numbers.
+
+That's $1,450 per human per year in actual new wealth. Not redistribution. New wealth from not being sick or dead.
+
+## What You Compete About Instead
+
+Humans are still competitive. You just compete about better things:
+
+**Health Olympics:** Countries compete for highest life expectancy. Japan and Switzerland tied at 112 years. The US is trying to catch up by banning corn syrup.
+
+**Innovation Race:** Who cures diseases fastest? India announces spinal tissue regeneration. Brazil counters with hearing loss reversal. China grows new teeth. You can have your wisdom teeth back if you want them. Nobody knows why you would.
+
+**Space Race 2.0:** Hotels, not missiles. Hilton Mars got its fifth star. Lunar golf course has a three-year waiting list.
+
+**Happiness Wars:** Cities compete for highest quality of life. Copenhagen held the title five years until Auckland installed mood-boosting streetlights. Detroit makes a comeback with free childcare and elder care.
+
+## Your Corporate Heroes
+
+Same companies that made weapons now make life:
+
+**Lockheed Martin Health:** Cancer-detecting satellites spot tumors from orbit. Stock price: $12,000/share. Everyone's happy.
+
+**Raytheon Wellness:** Missile guidance systems make excellent surgical robots. 50 million perfect surgeries performed.
+
+**Boston Dynamics:** Robots help elderly walk. The dancing is still cute, now therapeutic.
+
+**Palantir Health Insights:** Data analysis predicts disease outbreaks before they happen. Privacy-protected, transparent, saves lives.
+
+## Your New Problems
+
+You still have challenges. Just better ones:
+
+**Longevity Overflow:** Too many healthy 100-year-olds want to work. Need more jobs. Solution: three-day work weeks and multiple careers per lifetime.
+
+**Education Inflation:** When you live to 150, you need more things to learn. Universities offer "Century Degrees" - 100-year educational plans.
+
+**Experience FOMO:** With health and time, people worry about missing experiences. Travel agencies book trips 50 years in advance.
+
+**Purpose Anxiety:** When you're not worried about dying, you worry about meaning. Philosophy becomes fastest-growing major.
+
+These are luxury problems. You'll take them over cancer.
+
+## The Treaties Keep Improving
+
+The plan's genius was incremental design, detailed in [the 1% Treaty chapter](../solution/1-percent-treaty.qmd#the-ratchet-strategy). Every few years, another referendum nudged the percentage up. Each increase funded more cures, created more value for bondholders, built bigger coalitions demanding the next increase.
+
+The ratchet clicked forward: 1% in 2026, then 2%, 3%, 5%, 10%, 25%, until 50% by 2050. $1.35 trillion annually redirected from weapons to cures.
+
+Military spending is now mostly space defense against asteroids and alien invasion preparedness. If aliens show up, you want to look healthy and prosperous, not armed and paranoid.
+
+## 2050: The Three Supers Complete
+
+**Super-Intelligence:** Complete. Every human accesses all knowledge instantly. Debates end in nanoseconds. Everyone's right about everything because you can simulate all perspectives simultaneously. Twitter becomes tolerable.
+
+**Super-Longevity:** Solved. Death is like moving to Ohio - technically possible but nobody does it. Some choose to die for artistic reasons. They get better. Death sues for wrongful termination.
+
+**Super-Wellbeing:** Perfected. Suffering exists only in history classes. Students don't believe it was real. "People felt bad without choosing to? That's insane."
+
+The last military on Earth (North Korea, obviously) finally disbands. They were defending against an enemy that stopped existing in 2040. The soldiers become interpretive dancers. They're good.
+
+Earth's status: Chose healing. Became magic. Next goal: befriend entropy.
+
+## Your Personal Future
+
+Here's what your life looks like in 2050:
+
+**Health:** Live to 150+ (or forever). Your body is programmable software - debug it, upgrade it, back it up. Death is optional. Most try it once for the experience.
+
+**Wealth:** Peace dividend provides $50,000/year universal basic income. Money barely matters in post-scarcity. Work is play. Play is work. Both optional.
+
+**Family:** You'll meet your great-great-great-grandchildren. Family reunions happen in virtual dimensions because stadiums are too small. Your dog is immortal and possibly telepathic.
+
+**Purpose:** With survival handled, you focus on what matters: creating universes, solving entropy, talking to aliens, becoming one with cosmos, or perfecting the perfect sandwich. All valid.
+
+**Death:** Like graduation - optional, reversible, mostly ceremonial. Some collect deaths like stamps. "I've died 47 times! Tokyo 2043 was my favorite."
+
+## What Fixing Health Fixed
+
+Nobody predicted this: fixing health fixed everything else.
+
+**Climate Change:** Healthy people make long-term decisions. Solved by 2040 once everyone realized they'd be alive to see consequences.
+
+**Poverty:** Healthy people are productive. Global GDP tripled when you stopped losing productive years to preventable disease.
+
+**Education:** When you live to 150, 20 years of education makes sense. Global literacy hit 99.9%.
+
+**Innovation:** Healthy brains think better. More breakthrough discoveries in 20 years than the previous 200.
+
+**Peace:** Hard to go to war when citizens live too long to throw away. Also, you're busy collaborating on curing remaining diseases.
+
+**Happiness:** Not dying of preventable diseases makes people happier. Surprising, I know.
+
+## Reality Check
+
+Is everything perfect? No. Humans are still humans.
+
+You still have:
+
+- Heartbreak (better therapies for healing)
+- Disagreements (less deadly ones)
+- Accidents (better emergency response)
+- Natural disasters (better preparation and recovery)
+- Existential questions (more time to ponder them)
+
+The difference: these are problems of a thriving species, not a dying one.
+
+## Message from Your 2050
+
+Dear 2025,
+
+This message comes from a world where your children live to 150.
+Where cancer is as treatable as a cold.
+Where depression has precise, effective treatments.
+Where aging is a choice, not a sentence.
+Where humanity collaborates instead of competing to destroy.
+
+This world exists because you made one choice:
+
+Healing people became more profitable than killing them.
+
+You signed the [1% Treaty](../solution/1-percent-treaty.qmd).
+You bought [VICTORY Bonds](../economics/victory-bonds.qmd).
+You participated in [decentralized trials](../solution/dfda.qmd).
+You chose life.
+
+Thank you.
+Your great-great-great grandchildren (who you'll meet) are grateful.
+
+P.S. The chocolate thing is real. For some genetics, it's medicine. Science is wonderful when you fund it.
+
+— WISHONIA
+
+## 2055: What Comes After
+
+You solved death, suffering, and scarcity. Now what?
+
+Some humans explore galaxies. Some become pure consciousness. Some perfect the perfect sandwich. All valid.
+
+The DIH still exists but has no diseases to fight. It pivots to making reality more interesting. Today's project: teaching gravity to be less clingy.
+
+The universe notices you. It's impressed. You're invited to the Galactic Council. You bring potato salad. Everyone loves it. Potato salad saves the universe.
+
+You're still alive to see it. Because you followed the instructions in this book.
+
+## Your Two Paths
+
+You're at the fork.
+
+Path A: [The Dystopia](./moronia.qmd) - You spent trillions on death. Got exactly what you paid for. Everyone died.
+
+Path B: Wishonia - You spent 1% on life. Nobody died.
+
+The choice is still yours.
+The [1% Treaty](../solution/1-percent-treaty.qmd) waits for signatures.
+
+My planet chose Path B 4,297 years ago. We're doing fine.
+
+In Path A, you spend 100% on weapons and 0% on cures. Everyone dies.
+In Path B, you spend 1% on cures. Nobody dies.
+
+The math is simple. Even for humans.
+
+While you read this, 200 people died of preventable diseases. (150,000 per day = 104 per minute.)
+
+Make up your mind. There's no Door C.
+
+Choose wisely.
+Choose life.
+Choose the [War on Disease](../call-to-action/three-actions.qmd).
+
+Your future self (who lives to 150) will thank you.
+
+---
+
+*WISHONIA*
+
+*World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation*
+
+*Watched You Choose Wisely*
+
+*See You at the 2050 Party*
+
+*Bring Potato Salad*

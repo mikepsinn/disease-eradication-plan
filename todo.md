@@ -83,8 +83,8 @@ Replaced with specific, meaningful headers:
 - [x] call-to-action/your-personal-benefits.qmd - Removed "The bottom line is this:"
 - [x] call-to-action/three-actions.qmd
 - [x] futures.qmd
-- [x] futures/dystopia-skynet-wins.qmd - "The Ironic Victory" → "Victory", removed "Here's the thing"
-- [x] futures/utopia-health-and-happiness.qmd
+- [x] futures/moronia.qmd - "The Ironic Victory" → "Victory", removed "Here's the thing"
+- [x] futures/wishonia.qmd
 - [x] appendix/faq.qmd - "The Bottom Line" → "Conclusion"
 - [x] references.qmd
 

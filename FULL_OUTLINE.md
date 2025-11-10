@@ -698,7 +698,7 @@
 
 ---
 
-## File: `brain/book/futures/dystopia-skynet-wins.qmd`
+## File: `brain/book/futures/moronia.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
   - The Thesis: Idiocracy Built Skynet
@@ -735,7 +735,7 @@
 
 ---
 
-## File: `brain/book/futures/utopia-health-and-happiness.qmd`
+## File: `brain/book/futures/wishonia.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
   - How to Create Wishonia
