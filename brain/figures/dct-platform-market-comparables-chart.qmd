@@ -1,11 +1,3 @@
----
-title: DCT Platform Market Comparables
-description: DCT market analysis
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| echo: false
 import sys

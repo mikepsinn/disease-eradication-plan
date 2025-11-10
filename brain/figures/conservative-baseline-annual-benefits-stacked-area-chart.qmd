@@ -1,7 +1,3 @@
----
-title: Conservative Baseline - Personal Annual Benefits Over Lifetime - Stacked Area Chart
-description: Shows how benefits accumulate year by year for a 30-year-old with 1% Treaty
----
 ```{python}
 #| echo: false
 import sys

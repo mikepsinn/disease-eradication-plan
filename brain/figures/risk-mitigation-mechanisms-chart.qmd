@@ -1,11 +1,3 @@
----
-title: Risk Mitigation Mechanisms
-description: Risk mitigation mechanisms
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| echo: false
 import sys

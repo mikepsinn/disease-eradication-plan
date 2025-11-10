@@ -1,7 +1,3 @@
----
-title: Disease Eradication Model - Cumulative Wealth Over Lifetime (Stacked Area Chart)
-description: Shows how personal wealth accumulates over a 122-year lifetime under Disease Eradication Model (72yr life extension)
----
 ```{python}
 #| echo: false
 import sys

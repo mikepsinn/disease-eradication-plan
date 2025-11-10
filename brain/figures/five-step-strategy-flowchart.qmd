@@ -1,19 +1,5 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
-from economic_parameters import *
-```
-
-```{python}
-#| echo: false
 import graphviz
 import sys
 from pathlib import Path
@@ -30,7 +16,7 @@ sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
 from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 dot = graphviz.Digraph(comment='Five Step Strategy', format='png')
-dot.attr(rankdir='TD', size='10,12')
+dot.attr(rankdir='TD')  # Remove size constraint to allow padding to work
 setup_graphviz_style(dot)
 
 dot.node('Step1', 'Step 1:\nVICTORY Bonds\nRaise $1B\n270% returns')

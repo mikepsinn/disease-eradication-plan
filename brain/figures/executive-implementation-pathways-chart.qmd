@@ -1,11 +1,3 @@
----
-title: Executive Implementation Pathways
-description: Executive implementation paths
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| echo: false
 import sys

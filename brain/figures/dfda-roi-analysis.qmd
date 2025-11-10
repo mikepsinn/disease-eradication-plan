@@ -1,11 +1,3 @@
----
-title: dFDA ROI Analysis Charts
-description: Reusable visualizations for dFDA cost-benefit analysis and return on investment
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| echo: false
 import sys

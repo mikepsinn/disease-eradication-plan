@@ -1,11 +1,3 @@
----
-title: ROI Comparison
-description: ROI comparison across all models
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| echo: false
 import sys

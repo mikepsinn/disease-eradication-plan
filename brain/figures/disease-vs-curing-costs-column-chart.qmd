@@ -55,9 +55,9 @@ categories = [
     'Curing\nDiseases'
 ]
 
-# Create figure, adjust size for two columns
+# Create figure - wider to accommodate text labels without squishing
 
-fig, ax = plt.subplots(figsize=(14, 128))
+fig, ax = plt.subplots(figsize=(20, 12))
 
 # Column 1: Disease Burden (white bar with black text)
 
@@ -92,6 +92,11 @@ ax.set_xticklabels([])
 ax.set_yticks([])
 ax.set_yticklabels([])
 
+# Set axis limits to ensure proper spacing around bars and text
+# X-axis: add padding on both sides to prevent text clipping
+
+ax.set_xlim(-0.8, 1.8)
+
 # Set Y-axis limit to remove extra whitespace at the top
 
 ax.set_ylim(0, disease_total * 1.01)
@@ -111,9 +116,11 @@ output_dir = project_root / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'disease-vs-curing-costs-column-chart.png'
 
-# Save the figure
+# Save the figure with tight bounding box to remove empty space
+# pad_inches adds padding around the content (including watermark)
+# Using larger pad_inches to ensure text isn't clipped
 
-plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=150, bbox_inches='tight', pad_inches=0.5, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
 

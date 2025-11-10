@@ -1,7 +1,3 @@
----
-title: Conservative Baseline - Personal Lifetime Wealth by Treaty Percentage - Line Chart
-description: Shows how personal lifetime wealth increases with higher treaty percentages
----
 ```{python}
 #| echo: false
 import sys

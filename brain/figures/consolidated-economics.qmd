@@ -1,11 +1,3 @@
----
-title: Consolidated Economic Analysis
-description: All DIH economic models and calculations in one place
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| echo: false
 import sys

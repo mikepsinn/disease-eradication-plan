@@ -1,7 +1,3 @@
----
-title: Conservative Baseline - Personal Lifetime Wealth Sensitivity Analysis - Tornado Chart
-description: Tornado chart showing which parameters have the largest impact on personal lifetime wealth from the 1% Treaty
----
 ```{python}
 #| echo: false
 import sys

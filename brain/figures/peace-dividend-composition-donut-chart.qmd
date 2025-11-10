@@ -1,8 +1,3 @@
----
-title: Peace Dividend Composition
-description: Donut chart showing relative contribution of different cost categories
----
-
 ```{python}
 #| echo: false
 import sys

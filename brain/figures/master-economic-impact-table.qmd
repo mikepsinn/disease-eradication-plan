@@ -1,11 +1,3 @@
----
-title: Master Economic Impact Table
-description: Master economic impact table
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| echo: false
 import sys
