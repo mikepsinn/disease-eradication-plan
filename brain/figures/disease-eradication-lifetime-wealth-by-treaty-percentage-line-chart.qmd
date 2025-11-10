@@ -1,7 +1,3 @@
----
-title: Disease Eradication Model - Personal Lifetime Wealth by Treaty Percentage
-description: Line chart showing how personal lifetime wealth scales with different treaty percentages under Disease Eradication Model (72yr life extension)
----
 ```{python}
 #| echo: false
 import sys
@@ -184,28 +180,3 @@ add_png_metadata(
 plt.show()
 ```
 
-## Key Findings
-
-### Exponential Returns from Higher Treaty Percentages
-
-Under the Disease Eradication Model (72-year life extension), treaty percentage has MASSIVE impact:
-
-- **0.1% Treaty**: $900K-$1.5M lifetime benefit
-- **1% Treaty (DEFAULT)**: $4M-$6M lifetime benefit
-- **5% Treaty**: $18M-$30M lifetime benefit
-
-#### Why This Differs from Conservative Baseline
-
-1. **Logarithmic amplification**: With 72 extra years of life, even small increases in treaty percentage compound enormously through extended earnings, productivity gains, and GDP growth over the extra decades.
-
-2. **Non-linear aging reversal**: Higher treaty % → more research acceleration → approaching accident-limited lifespan faster. The aging reversal bonus grows logarithmically, not linearly.
-
-3. **Young people benefit MASSIVELY more**: A 25-year-old with 5% treaty could gain $30M+ in lifetime wealth because they live 106 years (vs 80), working until age 85+ while healthy.
-
-#### Political Implications
-
-- Even 0.25% treaty (¼ of 1%) generates $1.5M-$2.5M per person
-- Moving from 1% to 2% nearly doubles lifetime wealth
-- 5% treaty creates generational wealth for average workers
-
-**Bottom Line:** Under realistic disease eradication accounting, the treaty percentage negotiated is the single most important economic decision of the 21st century. The difference between 1% and 5% is measured in tens of millions per person.
