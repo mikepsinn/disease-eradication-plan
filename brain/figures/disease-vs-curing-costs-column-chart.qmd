@@ -55,9 +55,9 @@ categories = [
     'Curing\nDiseases'
 ]
 
-# Create figure - wider to accommodate text labels without squishing
+# Create figure - tall to accommodate stacked text without overlapping
 
-fig, ax = plt.subplots(figsize=(20, 12))
+fig, ax = plt.subplots(figsize=(14, 128))
 
 # Column 1: Disease Burden (white bar with black text)
 
