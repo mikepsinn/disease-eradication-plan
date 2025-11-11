@@ -440,19 +440,112 @@ $$
 
 {{< include ../../figures/disease-eradication-lifetime-wealth-sensitivity-tornado-chart.qmd >}}
 
-The tornado chart reveals that **treaty percentage** has the most dramatic impact on personal outcomes - ranging from $3.6M (0.5% treaty) to $16M (5% treaty). This means the specific treaty terms negotiated will determine whether you get millions or generational wealth.
+The tornado chart shows which parameters have the largest impact on your personal lifetime wealth under the **Disease Eradication Model** (72-year life extension). The black vertical line marks the base case ($4.3M).
+
+### Reading the Chart
+
+- **Left bars (diagonal pattern):** Lifetime wealth when parameter is at LOW end of range
+- **Right bars (white):** Lifetime wealth when parameter is at HIGH end of range
+- **Width of total bar:** Indicates parameter's sensitivity (wider = more important)
+- **Black vertical line:** Base case (Age 30, $50K income, 1% treaty, 3% discount)
+
+### What the Numbers Mean
+
+1. **Treaty Percentage has ENORMOUS impact** - Range from $3.6M (0.5% treaty) to $16M (5% treaty). The treaty percentage negotiated determines whether you get "just" millions or generational wealth.
+
+2. **Discount Rate** - Range from $1M (5% discount) to $7.6M (2% discount). How you value future benefits matters enormously over a 122-year lifespan.
+
+3. **Annual Income** - Range from $2.7M ($30K income) to $6.3M ($100K income). Higher earners benefit more, but even low earners get millions.
+
+4. **Current Age** - Range from $2.2M (age 60) to $5.7M (age 20). Being young means decades more compounding and life extension benefits.
+
+### How This Differs from Conservative Baseline
+
+- **Conservative**: Treaty % ranges $247K to $1M (width: $753K)
+- **Disease Eradication**: Treaty % ranges $3.6M to $16M (width: $12.4M) - **16x larger impact**
+
+**Bottom Line:** Under the Disease Eradication Model, parameter choices determine differences measured in **tens of millions**, not thousands. The treaty percentage negotiated is the single most important economic policy decision of the 21st century.
 
 ## Demographic Variations
 
 {{< include ../../figures/disease-eradication-lifetime-wealth-by-scenario-column-chart.qmd >}}
 
+This chart uses the **Disease Eradication Model** (115x cumulative research, 2,300 research-years) showing **realistic expected benefits**:
+
+### Key Insights
+
+1. **Young professionals benefit MASSIVELY** (~$5.5M) - 72 years of compounding over long lifetime
+2. **Mid-career professionals** still gain enormously (~$3.8M) - substantial life extension benefit
+3. **Near-retirement individuals** gain significantly (~$2.1M) - even with less time, 72 years is transformative
+4. **Age multiplier effect**: Young (25) vs older (60) = **2.6x difference** (vs 1.9x in conservative model)
+5. **Income scaling**: High earners (~$10M) vs low earners (~$2.8M) = **3.6x** but low earners get **9,300%** of annual income!
+
+### Key Differences vs Conservative Baseline
+
+- **Absolute numbers**: 5-10x higher ($5.5M vs $650K for young professional)
+- **Age sensitivity**: Much more dramatic (72yr life extension favors young people more)
+- **Life extension component**: Dominates the calculation with 72 extra productive/retirement years
+
+**This is the REALISTIC model** - properly accounting for:
+
+- 2,300 cumulative research-years (18.5x entire 1900-2024 medical progress)
+- Gene therapy + epigenetics + stem cells + AI converging
+- Systematic disease-by-disease eradication approaching accident-limited lifespan
+
 ## Component Breakdown
 
 {{< include ../../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
+**Key Finding:** With 72 years of life extension, **Extended Earnings dominates** (~30-40% of total) - working and retirement years from age 80 to 152 create massive compound wealth.
+
+### Component Mix vs Conservative Model
+
+- **Extended Earnings**: Jumps from 18% ($104K) to ~30% ($1.3M) - **12x increase**
+- **Economic Multiplier (Mil→Res)**: Remains large (~58%, $2.5M) - this is the productivity gain from redirecting military spending to research (historical evidence: post-WW2 30% military cut → 8% GDP growth). Compounds over 122 years instead of 55
+- **Healthcare/Productivity/Caregiver**: Combined ~12% - smaller percentage but still $500K+ absolute
+
+**This shows the dramatic shift** when you properly account for aging reversal:
+
+- Conservative (5yr): Healthcare savings dominates (49%)
+- Realistic (72yr): **Extended productive years dominates** - living to 152 with continued earnings transforms everything
+
+The biggest wealth creation comes from simply **being alive and productive for 72 extra years**.
+
 ## Wealth Accumulation Over Lifetime
 
 {{< include ../../figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
+
+### The Power of Extended Life
+
+This chart shows how wealth accumulates over a **122-year lifetime** (age 30→152) compared to the baseline 50 years (age 30→80).
+
+#### Understanding the Components
+
+- **Peace Dividend** (horizontal lines): Direct per-capita savings from reduced war costs ($11.4 trillion × 1% ÷ 8 billion people = $14/year). Small individually but adds up over lifetime.
+- **Healthcare Savings** (diagonal lines): Reduced medical expenses as diseases are cured
+- **Productivity Gains** (cross-hatch): Increased work output from being healthier
+- **Caregiver Savings** (diagonal slashes): Reduced burden caring for sick relatives
+- **Economic Multiplier (Military→Research)** (backslashes): Productivity gains from redirecting weapons spending to research (post-WW2: 30% military cut → 8% GDP growth). This is the LARGEST component.
+- **Extended Earnings** (black): Earnings and benefits from living 72 extra years (age 80→152)
+
+#### Critical Observations
+
+1. **Extended Earnings (Black) Appears After Age 80**: The black area represents wealth you would NOT have earned if you died at age 80. This is the most direct benefit of life extension - **you're alive to continue earning and benefiting**.
+
+2. **Economic Multiplier Dominates**: The largest component is the productivity multiplier from military→research reallocation. Historically proven (post-WW2, post-Cold War). Compounds over 122 years creating massive wealth.
+
+3. **The Red Line is Everything**: Everything to the RIGHT of the red "Baseline Death Age" line at 80 is wealth you ONLY get if the treaty succeeds and extends your life. That's roughly **60-70% of your total lifetime wealth**.
+
+4. **Healthcare & Productivity Build Steadily**: As diseases are cured over the 20-year research period, your healthcare costs drop and productivity rises. These benefits then compound over your entire remaining 100+ year lifespan.
+
+### How This Differs from Conservative Baseline
+
+- **Conservative model** (5yr extension): Chart ends at age 85, total ~$580K
+- **Disease Eradication model** (72yr extension): Chart extends to age 152, total **$4.3M**
+
+The conservative model completely misses that being alive from age 80→152 is where most of the value comes from. It's not just about curing diseases - it's about living long enough to benefit from decades of compound economic growth, productivity improvements, and continued earnings.
+
+**Bottom Line:** The 1% Treaty's value is primarily in the **YEARS OF LIFE** gained, not just immediate healthcare savings. Living to 152 instead of 80 means 72 extra years of earning, compounding GDP growth, and accumulating wealth. This is why the Disease Eradication Model shows 7x more lifetime benefit than the conservative antibiotic precedent model.
 
 ## Treaty Percentage Impact
 

@@ -109,7 +109,7 @@ book:
         - brain/book/appendix/health-dividend-calculations.qmd # ✅ (calculations, appropriate) ~7p
         - brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~21p
         - brain/book/appendix/research-acceleration-model.qmd # ✅ Research acceleration mechanism (115x) ~8p
-        - brain/book/appendix/personal-lifetime-wealth-calculations.qmd # ✅ Personal lifetime wealth model (recommended) ~14p
+        - brain/book/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✅ Personal lifetime wealth model (recommended) ~14p
         - brain/book/appendix/dfda-cost-benefit-analysis.qmd # ✅ (calculations, appropriate) ~7p
         - brain/book/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
         - brain/book/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
@@ -198,11 +198,7 @@ metadata:
     - blockchain-governance
     - impact-investing
   
-  # Dates
-  date: "2025-01-01"
-  date-modified: "2025-01-01"
-  publication-date: "2025-01-01"
-  last-modified: "2025-01-01"
+
   
   # Version and edition
   version: "1.0.0"

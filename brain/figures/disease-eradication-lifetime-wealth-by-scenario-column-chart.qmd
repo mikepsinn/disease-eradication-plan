@@ -129,24 +129,4 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Insights (Disease Eradication Model - 20-year scenario):**
-
-This chart uses the **Disease Eradication Model** (115x cumulative research, 2,300 research-years) showing **realistic expected benefits**:
-
-1. **Young professionals benefit MASSIVELY** (~$5.5M) - 72 years of compounding over long lifetime
-2. **Mid-career professionals** still gain enormously (~$3.8M) - substantial life extension benefit
-3. **Near-retirement individuals** gain significantly (~$2.1M) - even with less time, 72 years is transformative
-4. **Age multiplier effect**: Young (25) vs older (60) = **2.6x difference** (vs 1.9x in conservative model)
-5. **Income scaling**: High earners (~$10M) vs low earners (~$2.8M) = **3.6x** but low earners get **9,300%** of annual income!
-
-## Key Differences vs Conservative Baseline
-
-- **Absolute numbers**: 5-10x higher ($5.5M vs $650K for young professional)
-- **Age sensitivity**: Much more dramatic (72yr life extension favors young people more)
-- **Life extension component**: Dominates the calculation with 72 extra productive/retirement years
-
-**This is the REALISTIC model** - properly accounting for:
-
-- 2,300 cumulative research-years (18.5x entire 1900-2024 medical progress)
-- Gene therapy + epigenetics + stem cells + AI converging
-- Systematic disease-by-disease eradication approaching accident-limited lifespan
+*Uses Disease Eradication Model (20-year scenario, 72yr life extension, 1% treaty). Numbers on bars show total lifetime benefit; numbers inside bars show life extension years. See [Disease Eradication Model](../book/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#demographic-variations) for detailed insights.*

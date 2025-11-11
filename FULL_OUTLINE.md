@@ -1865,7 +1865,7 @@
 
 ---
 
-## File: `brain/book/appendix/personal-lifetime-wealth-calculations.qmd`
+## File: `brain/book/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
 - Disease Eradication Model - The Realistic Personal Lifetime Wealth Model
