@@ -110,14 +110,9 @@ book:
         - brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~21p
         - brain/book/appendix/research-acceleration-model.qmd # ✅ Research acceleration mechanism (115x) ~8p
         - brain/book/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✅ Personal lifetime wealth model (recommended) ~14p
-        - brain/book/appendix/dfda-cost-benefit-analysis.qmd # ✅ (calculations, appropriate) ~7p
+        - brain/book/appendix/dfda-cost-benefit-analysis.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
         - brain/book/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
         - brain/book/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
-        - brain/book/appendix/dfda-assumptions.qmd # ✅ (technical assumptions, appropriate) ~1p
-        - brain/book/appendix/dfda-benefit-analysis.qmd # ✅ (calculations, appropriate) ~6p
-        - brain/book/appendix/dfda-calculation-framework.qmd # ✅ (technical framework, appropriate) ~26p
-        - brain/book/appendix/dfda-icer-analysis.qmd # ✅ (technical analysis, appropriate) ~10p
-        - brain/book/appendix/dfda-platform-costs.qmd # ✅ (calculations, appropriate) ~15p
         - brain/book/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
         - brain/book/appendix/dfda-qaly-model.qmd # ✅ (comprehensive QALY model - includes dfda-comparative-cost-effectiveness & dfda-daily-opportunity-cost) ~38p
 
