@@ -1,6 +1,6 @@
 ---
-title: Economic Analysis of the 1% Treaty
-description: Comprehensive cost-benefit analysis demonstrating 463:1 to 1,239:1 return on investment through military budget redirection to medical research. Peer-reviewed methodology with sensitivity analysis.
+title: Economic Analysis
+description: Comprehensive cost-benefit analysis demonstrating 463:1 to 1,239:1 return on investment through military budget redirection to medical research.
 published: true
 tags:
   - economics
@@ -297,7 +297,7 @@ The 115x research acceleration multiplier is derived from specific, measurable i
 - 3,300 clinical trials initiated per year
 - 60% completion rate = **1,980 completed trials/year**
 - 10,000 active trials at any time (3-5 year duration)
-- [0.2% patient eligibility](appendix/clinical-trial-participants.qmd) (5M trial slots for 2.4B people with chronic disease)
+- [0.2% patient eligibility](appendix/clinical-trial-participants.qmd) (5M trial slots for [2.4B people with chronic disease](references.qmd#disease-prevalence-2-billion))
 - 40% abandonment rate (studies never complete)
 - 6-18 months to recruit 100 patients
 
@@ -314,10 +314,10 @@ The 115x research acceleration multiplier is derived from specific, measurable i
 
 | Factor | Current | dFDA | Multiplier |
 |:---|---:|---:|---:|
-| **Recruitment Speed** | 6-18 months for 100 patients | 3 weeks for 1,000 patients | **25x** |
-| **Trial Completion Speed** | 3-5 years (perverse incentives) | 3-12 months (aligned incentives) | **10x** |
-| **Simultaneous Trials** | 10,000 active trials | 200,000 active trials | **20x** |
-| **Completion Rate** | 60% finish | 95% finish | **1.6x** |
+| **[Recruitment Speed](appendix/research-acceleration-model.qmd)** | 6-18 months for 100 patients | 3 weeks for 1,000 patients | **[25x](appendix/research-acceleration-model.qmd)** |
+| **[Trial Completion Speed](appendix/research-acceleration-model.qmd)** | 3-5 years (perverse incentives) | 3-12 months (aligned incentives) | **[10x](appendix/research-acceleration-model.qmd)** |
+| **[Simultaneous Trials](appendix/research-acceleration-model.qmd)** | 10,000 active trials | 200,000 active trials | **[20x](appendix/research-acceleration-model.qmd)** |
+| **[Completion Rate](appendix/research-acceleration-model.qmd)** | 60% finish | 95% finish | **[1.6x](appendix/research-acceleration-model.qmd)** |
 | **Funding Increase** | [$67.5B medical research](appendix/global-government-medical-research-spending.qmd) | $94.7B ($67.5B + $27.2B) | **1.4x** |
 
 **Theoretical Maximum**: 25 × 10 × 1.6 × 1.4 = **560x** more completed trials per year
@@ -340,7 +340,7 @@ This represents:
 
 Global spending on health-related challenges demonstrates significant misalignment between resource allocation and burden of disease (see [Humanity's Budget](appendix/humanity-budget-overview.qmd) for complete breakdown):
 
-- **Military spending**: [$2.7 trillion annually](references.qmd#sipri-2024-spending) (40X medical research funding)
+- **Military spending**: [$2.7 trillion annually](references.qmd#sipri-2024-spending) (40X [medical research funding](appendix/global-government-medical-research-spending.qmd))
 - **Symptomatic disease treatment**: [$8.2 trillion annually](references.qmd#disease-economic-burden-109t) (primarily managing chronic conditions rather than curative interventions)
 - **Economic burden of disease**: [$109 trillion annually](references.qmd#disease-economic-burden-109t) in lost productivity, premature mortality, and disability-adjusted life years
 - **Total annual cost**: $119.8 trillion
@@ -469,14 +469,14 @@ The $1.0B campaign cost (used as denominator in complete case 1,239:1 ROI) alloc
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
-| **Viral Referendum** | $200M | Global direct democracy campaign, social media amplification, petition platforms |
-| **AI-Assisted Lobbying** | $250M | Automated legislative outreach, personalized constituent messaging, political mapping |
-| **Technology Platform** | $250M | Voting infrastructure, transparency systems, wishocracy implementation |
-| **Legal & Compliance** | $100M | International treaty law, regulatory compliance, jurisdictional coordination |
-| **Partnerships** | $100M | Coalition building with NGOs, medical organizations, patient advocacy groups |
-| **Operations** | $50M | Campaign management, communications, logistics, staffing |
-| **Reserve** | $50M | Contingency for unforeseen challenges and opportunities |
-| **Total Campaign Cost** | **$1,000M** | 4-year implementation timeline (amortized: $250M/year) |
+| **[Viral Referendum](economics/campaign-budget.qmd)** | [$200M](economics/campaign-budget.qmd) | Global direct democracy campaign, social media amplification, petition platforms |
+| **[AI-Assisted Lobbying](economics/campaign-budget.qmd)** | [$250M](economics/campaign-budget.qmd) | Automated legislative outreach, personalized constituent messaging, political mapping |
+| **[Technology Platform](economics/campaign-budget.qmd)** | [$250M](economics/campaign-budget.qmd) | Voting infrastructure, transparency systems, wishocracy implementation |
+| **[Legal & Compliance](economics/campaign-budget.qmd)** | [$100M](economics/campaign-budget.qmd) | International treaty law, regulatory compliance, jurisdictional coordination |
+| **[Partnerships](economics/campaign-budget.qmd)** | [$100M](economics/campaign-budget.qmd) | Coalition building with NGOs, medical organizations, patient advocacy groups |
+| **[Operations](economics/campaign-budget.qmd)** | [$50M](economics/campaign-budget.qmd) | Campaign management, communications, logistics, staffing |
+| **[Reserve](economics/campaign-budget.qmd)** | [$50M](economics/campaign-budget.qmd) | Contingency for unforeseen challenges and opportunities |
+| **Total Campaign Cost** | **[$1,000M](economics/campaign-budget.qmd)** | 4-year implementation timeline (amortized: $250M/year) |
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ($163.6B). The campaign cost is a one-time investment with perpetual returns, as the system becomes self-sustaining through the captured peace dividend.
 
@@ -555,6 +555,6 @@ This economic analysis demonstrates that redirecting 1% of global military spend
 
 **Comparative Context**: This intervention rivals or exceeds the cost-effectiveness of history's most successful public health achievements (see [Intervention Comparison Table](appendix/intervention-comparison-table.qmd) for detailed ROI comparisons including smallpox eradication and childhood vaccinations) while requiring no ongoing charitable funding.
 
-**Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over 36 months (see [Roadmap](strategy/roadmap.qmd) for complete implementation timeline).
+**Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over [36 months](strategy/roadmap.qmd) (see [Roadmap](strategy/roadmap.qmd) for complete implementation timeline).
 
 The economic case is grounded in conservative assumptions, validated against peer-reviewed evidence (particularly the [Oxford RECOVERY trial](appendix/recovery-trial.qmd)), and subjected to comprehensive [sensitivity analysis](appendix/1-percent-treaty-cost-effectiveness.qmd). The methodology employs standard health economics frameworks (NPV, QALYs, ICER) to enable comparison with existing interventions and facilitate foundation grant evaluation processes.
