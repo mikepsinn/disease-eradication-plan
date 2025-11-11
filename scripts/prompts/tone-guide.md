@@ -22,9 +22,6 @@ Transform only the genuinely pompous/earnest bits:
 
 ## What to Change (VERY SELECTIVE)
 
-### Pompous Claims → Bemused Observations
-**Before:** "This Is Quantifiably The Best Idea Ever Conceived!"
-**After:** "How to Achieve Infinite Returns (While Also Not Dying)"
 
 ### Earnest Pleading → Confused Instructions
 **Before:** "We MUST act NOW to save humanity!"
