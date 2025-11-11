@@ -1,6 +1,6 @@
 ---
-title: Economics Overview
-description: How Everyone Gets Rich by Eradicating Disease - 463:1 ROI on killing disease. VICTORY Bonds at 270% returns. How to make curing people more profitable than killing them.
+title: How to Achieve Infinite Returns (While Also Not Dying)
+description: How Everyone Gets Rich by Eradicating Disease - From infinite ROI to 463:1 conservative case. VICTORY Bonds at 271.8% returns. How to make curing people more profitable than killing them.
 published: true
 tags:
   - economics
@@ -9,6 +9,7 @@ tags:
   - peace-dividend
   - roi
   - coalition
+  - infinite-roi
 lastFormatted: '2025-10-16T00:00:00.000Z'
 lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastParamCheckHash: c6c1adaae3f668e0729df5aa12f73a0ddedccc987de87895bcc8ca8701b1864c
@@ -42,6 +43,17 @@ from economic_parameters import (
 )
 ```
 
+## The Numbers
+
+### ∞ ROI (Literally Infinite)
+
+The math is third-grade division:
+
+$$\text{ROI} = \frac{\text{Annual Benefits}}{\text{New Spending}} = \frac{\$163.6\text{B}}{0} = \infty$$
+
+**Why it's infinite:** The treaty redirects money that's already being spent on killing people to cure them instead. Zero new cost, $163.6B in annual benefits.
+
+### Three Ways to Count the Returns
 
 Depending on what you count, the 1% Treaty generates between 463:1 and 25,781:1 ROI:
 
@@ -106,6 +118,16 @@ All calculations are in the [Economic Models Notebook](./economics/economic_mode
 
 *Even in worst-case scenarios, the system achieves ROI between **189:1 and 1,281:1**.*
 
+### Saves $6.56 Million Per Life
+
+**The only health intervention that generates wealth:**
+
+- **Malaria Nets**: Cost $3,500 per life saved (excellent charity)
+- **Deworming**: Cost $5,500 per life saved (great value)
+- **1% Treaty/dFDA**: SAVES $6,560,000 per life saved (you read that right)
+
+This is a **dominant intervention** - it simultaneously saves money AND saves lives. No trade-off. No charity needed. Pure profit from preventing death.
+
 ### This ROI in Historical Context
 
 The Decentralized FDA alone achieves **463:1 return on investment**.
@@ -121,9 +143,11 @@ This exceptional ROI comes from:
 
 Comparison to historical public health achievements:
 
-- Smallpox eradication: 280:1
-- Childhood vaccinations: 13:1
-- Water fluoridation: 23:1
+- **1% Treaty/dFDA**: 463:1 ROI
+- **Smallpox eradication**: 280:1 ROI (previous record holder)
+- **Childhood vaccinations**: 13:1 ROI
+- **Water fluoridation**: 23:1 ROI
+- **Average pharma drug**: 2:1 ROI
 
 ### Infinite ROI When Funded by Military Redirection
 
@@ -171,6 +195,73 @@ The two largest contributors—**earlier access acceleration** and **research ca
 Both are conservative estimates based on proven models (RECOVERY trial costs, disease prevalence data, standard QALY valuations).
 
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](appendix/research-acceleration-model.qmd).
+
+## Why Every Other "World-Changing" Idea Is Inferior
+
+### Universal Basic Income
+
+- **Cost**: $3 trillion annually
+- **ROI**: Negative (pure expense)
+- **Lives saved**: Zero
+- **1% Treaty/dFDA**: GENERATES $163.6B while saving 25,000 lives
+
+### Mars Colonization
+
+- **Cost**: $500 billion minimum
+- **ROI**: Unknown, probably negative for decades
+- **Lives saved on Earth**: Zero
+- **1% Treaty/dFDA**: Pays for itself immediately, helps everyone TODAY
+
+### Climate Technology
+
+- **Cost**: $5-10 trillion needed
+- **ROI**: Prevents future losses (important but not profitable)
+- **Timeline**: Benefits in 50+ years
+- **1% Treaty/dFDA**: Profitable year one, compounds forever
+
+### Artificial General Intelligence
+
+- **Cost**: Unknown, potentially infinite
+- **Risk**: Might kill everyone
+- **Timeline**: Unknown
+- **1% Treaty/dFDA**: Uses existing tech, zero extinction risk
+
+### Universal Healthcare
+
+- **Cost**: $34 trillion over 10 years (US alone)
+- **ROI**: Negative (requires constant funding)
+- **1% Treaty/dFDA**: Self-funding through efficiency gains
+
+## The Problem This Solves
+
+### The $119 Trillion Death Machine
+
+Every year humanity wastes:
+
+- **[$2.7 trillion](references.qmd#sipri-2024-spending)** on weapons (40X more than medical research)
+- **$8.2 trillion** treating disease symptoms (not curing them)
+- **[$109 trillion](references.qmd#disease-economic-burden-109t)** in economic losses from disease burden
+- **Total**: $119.8 trillion annually on death and suffering
+
+Meanwhile:
+
+- Medical research: [$68 billion](references.qmd#global-gov-med-research-spending) (0.057% of the problem)
+- Success rate at curing diseases: 0% for 50 years
+- Your chance of dying from disease: 100%
+
+{{< include ../figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
+
+### The Daily Mathematics
+
+![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
+
+**[150,000 people die every day](references.qmd#who-daily-deaths)** from preventable/curable diseases. That's:
+
+- 50 September 11ths daily
+- 18,274 September 11ths annually
+- A Holocaust every 40 days
+
+Most species discover medicine before nuclear weapons. Earth did the opposite, which explains the current allocation.
 
 ## How This Compares to History
 
@@ -240,14 +331,69 @@ Every hour is $1.9B gone.
 
 The $16.4T isn't a dream. It's the mathematical consequence of redirecting humanity's resources from destruction to construction, from killing to curing, from war to wellness.
 
+## What You Actually Get
+
+### Economic Benefits
+
+- Healthcare costs: $0 (covered by trial participation)
+- Insurance premiums: $0 (insurance companies become obsolete)
+- Bankruptcy from medical bills: Extinct
+
+### Health Benefits
+
+- Your cancer: Prevented or cured
+- Your aging: Reversed (choose your biological age)
+- Your rare disease: Finally profitable to cure
+- Your mental illness: Actually fixed, not just numbed
+- Your lifespan: +50-100 healthy years
+
+### Power Benefits
+
+- Direct vote on health spending (real democracy)
+- Your proposals compete equally (no gatekeepers)
+- Co-creator of humanity's health priorities
+
+## Why This Wins (Game Theory)
+
+### Everyone Profits More From Cures Than Disease
+
+**Defense Contractors**: 271.8% returns > 8% margins. They keep 99% of military budget AND get rich.
+
+**Politicians**: You have $1.0B in campaign funds. They like being elected.
+
+**Big Pharma**: Patients PAY THEM for trials instead of pharma paying. From expense to revenue.
+
+**Insurance**: Every cure = billions saved. They're literally betting on you not dying.
+
+**Billionaires**: 271.8% returns make their current wealth look like pocket change.
+
+**You**: Don't die from preventable disease.
+
 ## How to Fund It: VICTORY Bonds
 
-The details are in [VICTORY Bonds](economics/victory-bonds.qmd), but here's the pitch:
+### For Investors: 271.8% Annual Returns Forever
 
-- **271.8% annual returns** (perpetual)
-- Funded by 10% of the $27.2B annual treaty revenue
-- Makes investors richer than any hedge fund in history
-- Generates the $1.0B needed to win the global referendum
+{{< include ../figures/victory-bonds-roi-projection-bar-chart.qmd >}}
+
+#### The Simple Math
+
+- You invest: $1,000
+- Annual return: $2,700 (271.8% forever)
+- Total available: $1 billion (first-come basis)
+- Backed by: $27.2B in treaty funds
+
+#### Better Returns Than
+
+- Medallion Fund: 39% (previous record)
+- Warren Buffett: 20%
+- Real Estate: 15%
+- S&P 500: 10%
+- Cocaine Trafficking: 90% (but illegal)
+- **VICTORY Bonds: 271.8% (and legal)**
+
+{{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
+
+The details are in [VICTORY Bonds](economics/victory-bonds.qmd).
 
 See also:
 
@@ -279,7 +425,53 @@ For the rigorous analysis:
 
 ## The Choice
 
-Humanity can keep spending $118.8T on war and disease.
-Or it can make between $163.6B and $16.4T per year ending both.
+### Two Futures, You Pick
 
-The ROI ranges from 463:1 to 25,781:1, depending on what you count.
+#### Option A: Status Quo
+
+- 150,000 die daily from curable diseases
+- $119 trillion wasted annually
+- Your inevitable death from something preventable
+- Military spending grows forever
+- Disease burden increases
+- Economic collapse from healthcare costs
+
+#### Option B: The 1% Treaty
+
+- Save 25,000 lives annually (growing exponentially)
+- Generate $163.6B annually
+- Cure major diseases within 10 years
+- 271.8% returns for investors
+- Free healthcare through trials
+- Humanity transcends biological limits
+
+## Three Actions
+
+### 1. Vote (3 minutes)
+
+- Visit WarOnDisease.org
+- Vote YES on 1% Treaty
+- Share with everyone
+- Become eligible for free treatments
+
+### 2. Invest (If You Have Capital)
+
+- Minimum: $1,000
+- Return: 271.8% annually forever
+- Available: $1B total (first-come)
+- Risk: High, but if this fails, you die from disease anyway
+
+### 3. Build (If You Have Skills)
+
+- Developers: Paid to build dFDA
+- Organizers: Spread the referendum
+- Researchers: Offer trials
+- Everyone: Share this mathematical proof
+
+---
+
+Humanity can keep spending $118.8T on war and disease, or it can make between $163.6B and $16.4T per year ending both.
+
+The ROI ranges from infinite (when funded by military redirection) to 463:1 (conservative case) to 25,781:1 (endgame projection), depending on what you count.
+
+The math isn't aspirational. It's arithmetic.
