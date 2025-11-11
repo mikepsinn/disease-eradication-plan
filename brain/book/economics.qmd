@@ -133,7 +133,7 @@ When funded by the 1% Treaty's military redirection, the entire system becomes *
 - **Operating costs**: Only $290M/year (campaign + operations)
 - **Lives saved**: 26,446/year (925,610 QALYs ÷ 35 QALYs/life)
 - **The math**: $163.6B benefit ÷ $0 new spending = ∞ (infinite ROI)
-- **Per life saved**: Society PROFITS `${python} f"{abs(COST_PER_LIFE_INVESTOR_FUNDED):.2f}"` million instead of spending
+- **Per life saved**: Society PROFITS `${python} cost_per_life_investor_funded_formatted` instead of spending
 
 This is a **dominant health intervention**: it simultaneously saves money AND saves lives.
 
@@ -175,13 +175,13 @@ Here's how it compares to the most effective charities in the world (GiveWell to
 
 | Intervention | Cost to Achieve Outcome | This Initiative's Equivalent |
 | :--- | :--- | :--- |
-| **GiveWell Top Charities** (e.g., Against Malaria Foundation) | Spend **~`${python} f'${GIVEWELL_COST_PER_LIFE_MIN:,.0f} - ${GIVEWELL_COST_PER_LIFE_MAX:,.0f}'`** to save one life | Generate **840,000 QALYs** annually while creating **$249.3B** in net economic value |
+| **GiveWell Top Charities** (e.g., Against Malaria Foundation) | Spend **~`${python} givewell_cost_per_life_min_formatted` - `${python} givewell_cost_per_life_max_formatted`** to save one life | Generate **840,000 QALYs** annually while creating **$249.3B** in net economic value |
 
 **The Difference**: GiveWell's charities are the best ways to spend money to save lives. They cost money but save lives very efficiently.
 
 This plan doesn't cost money, it *makes* money while saving lives. Instead of asking people to donate, it makes everyone richer while curing diseases.
 
-**Bottom line**: While the world's best charities spend `${python} f'${GIVEWELL_COST_PER_LIFE_MIN:,.0f}-${GIVEWELL_COST_PER_LIFE_MAX:,.0f}'` to save a life (which is excellent), the 1% Treaty + DIH + dFDA actually **SAVES society `${python} f'${abs(COST_PER_LIFE_INVESTOR_FUNDED):.2f}'` million per life saved**.
+**Bottom line**: While the world's best charities spend `${python} givewell_cost_per_life_min_formatted`-`${python} givewell_cost_per_life_max_formatted` to save a life (which is excellent), the 1% Treaty + DIH + dFDA actually **SAVES society `${python} cost_per_life_investor_funded_formatted` per life saved**.
 
 ### Better Than History's Best Public Health Wins
 
@@ -216,7 +216,7 @@ Unlike traditional interventions that require ongoing charitable funding, the 1%
 
 Every second we don't implement this system:
 
-- **`${python} f'${ENDGAME_BENEFIT_PER_SECOND:,.0f}'`** in value destroyed
+- **`${python} endgame_benefit_per_second_formatted`** in value destroyed
 - **0.0 quality life-days** lost
 - **1.736 preventable deaths** occur
 

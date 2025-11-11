@@ -81,32 +81,23 @@ def check_dollar_python_pattern(content, file_path):
 
     lines = content.split('\n')
     for i, line in enumerate(lines, 1):
-        # Skip HTML comments, script tags, and code blocks (might be intentional documentation)
-        # Check if the line contains these tags before the ${python} pattern
+        # Skip HTML comments and script tags
         if '<!--' in line:
             continue
         if '<script' in line.lower():
             continue
-        
-        # Check if ${python} appears in a code block - if so, skip (it's documentation)
-        # Pattern: <code>...${python}...</code> or <pre>...${python}...</pre>
-        if '<code' in line.lower() or '<pre' in line.lower():
-            # Check if ${python} is inside the code/pre tag
-            code_start = line.lower().find('<code')
-            pre_start = line.lower().find('<pre')
-            code_end = line.lower().find('</code>')
-            pre_end = line.lower().find('</pre>')
-            
+
+        # Only skip if it's in a <pre><code> documentation block (multi-line code examples)
+        # Don't skip standalone <code> tags - those are where unrendered inline Python appears!
+        if '<pre' in line.lower() and '<code' in line.lower():
+            # This is likely a code example showing syntax - skip it
             python_pos = line.find('${python}')
             if python_pos != -1:
-                # Check if it's inside a code or pre block
-                in_code = (code_start != -1 and code_end != -1 and 
-                          code_start < python_pos < code_end)
-                in_pre = (pre_start != -1 and pre_end != -1 and 
-                         pre_start < python_pos < pre_end)
-                if in_code or in_pre:
-                    continue  # It's in a code block, skip it
-        
+                pre_start = line.lower().find('<pre')
+                pre_end = line.lower().find('</pre>')
+                if pre_start != -1 and pre_end != -1 and pre_start < python_pos < pre_end:
+                    continue  # It's in a documentation code block, skip it
+
         matches = re.finditer(pattern, line)
         for match in matches:
             matched_text = match.group(0)
@@ -115,7 +106,7 @@ def check_dollar_python_pattern(content, file_path):
             # Get surrounding context (50 chars before and after)
             start = max(0, match.start() - 50)
             end = min(len(line), match.end() + 50)
-            context = f"Unrendered ${python} pattern: `{context_text}` (context: ...{line[start:end]}...)"
+            context = f"Unrendered ${{python}} pattern: `{context_text}` (context: ...{line[start:end]}...)"
             errors.append(ValidationError(file_path, i, "UNRENDERED_DOLLAR_PYTHON", context))
 
     return errors
