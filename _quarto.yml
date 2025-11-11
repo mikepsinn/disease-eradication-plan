@@ -152,6 +152,108 @@ book:
         - brain/book/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate) ~4p
         - brain/book/references.qmd # ✅ (reference material, appropriately formal) ~250p
 
+# Project-level metadata (applies to all documents)
+metadata:
+  # Author identification
+  creator: "Mike P. Sinn"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  
+  # Author contact information
+  author-email: "hello@dih.earth"
+  author-url: "https://WarOnDisease.org"
+  author-website: "https://WarOnDisease.org"
+  contact: "hello@dih.earth"
+  
+  # Bibliographic metadata
+  title: "How to End War and Disease"
+  subtitle: "Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers"
+  description: "How to redirect 1% of military spending to cure disease and create the most profitable investment in history"
+  abstract: "A comprehensive guide to redirecting 1% of global military spending ($27.2B annually) to medical research through the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Demonstrates 463:1 to 1,239:1 return on investment through cost-benefit analysis, peace dividend calculations, and health economics frameworks."
+  language: "en-US"
+  subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
+  category: "Non-fiction, Public Policy, Health Economics, Peace Studies"
+  
+  # Keywords and tags
+  keywords:
+    - war-on-disease
+    - 1-percent-treaty
+    - medical-research
+    - public-health
+    - peace-dividend
+    - decentralized-trials
+    - dfda
+    - dih
+    - victory-bonds
+    - health-economics
+    - cost-benefit-analysis
+    - clinical-trials
+    - drug-development
+    - regulatory-reform
+    - military-spending
+    - peace-economics
+    - decentralized-governance
+    - wishocracy
+    - blockchain-governance
+    - impact-investing
+  
+  # Dates
+  date: "2025-01-01"
+  date-modified: "2025-01-01"
+  publication-date: "2025-01-01"
+  last-modified: "2025-01-01"
+  
+  # Version and edition
+  version: "1.0.0"
+  edition: "First Edition"
+  
+  # Copyright and licensing
+  copyright: "© 2025 Mike P. Sinn & W.I.SH.O.N.I.A."
+  copyright-year: "2025"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
+  
+  # Publication information
+  publisher: "WarOnDisease.org"
+  publisher-url: "https://WarOnDisease.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "hello@dih.earth"
+  
+  # Repository information
+  repo-url: "https://github.com/mikepsinn"
+  issue-url: "https://github.com/mikepsinn"
+  source-url: "https://github.com/mikepsinn"
+  
+  # Identifiers (add when available)
+  # isbn: "978-0-000000-00-0"
+  # doi: "10.0000/example"
+  # urn: "urn:example:book:12345"
+  
+  # Geographic and organizational
+  geographic-coverage: "Global"
+  audience: "General Public, Policy Makers, Investors, Healthcare Professionals, Researchers"
+  
+  # Additional metadata
+  format: "Book"
+  type: "Non-fiction"
+  genre: "Public Policy, Health Economics, Peace Studies"
+  medium: "Digital, Print"
+  
+  # Social media and web
+  twitter-site: "@thinkbynumbers"
+  twitter-creator: "@thinkbynumbers"
+  og-site-name: "WarOnDisease.org"
+  
+  # Technical metadata
+  encoding: "UTF-8"
+  character-set: "UTF-8"
+  
+  # Related resources
+  # bibliography: "references.bib"
+  # csl: "style.csl"
+
 execute:
   # Relaunch kernel for each render
   cache: false

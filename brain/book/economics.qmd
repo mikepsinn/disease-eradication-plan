@@ -125,11 +125,11 @@ The $113.6B annual peace dividend derives from 1% reduction in total global war 
 |:---|---:|:---|
 | **Direct Military Spending** | [$2,718B](references.qmd#sipri-2024-spending) | SIPRI 2024 global military budgets |
 | **Infrastructure Destruction** | $1,875B | Transportation, energy, communications, water, education, healthcare facilities |
-| **Human Life Losses** | $2,446B | 244,600 conflict deaths × $10M value of statistical life |
+| **Human Life Losses** | $2,446B | [244,600 conflict deaths](references.qmd#acled-active-combat-deaths) × [$10M value of statistical life](references.qmd#dot-vsl-13-6m) (conservative vs. DOT $13.7M) |
 | **Trade Disruption** | $616B | Shipping, supply chains, energy prices, currency volatility |
 | **Lost Economic Growth** | $2,718B | Opportunity cost of military spending vs. productive investment |
 | **Veteran Healthcare** | $200B | Long-term medical care for conflict-related injuries |
-| **Refugee Support** | $150B | 108.4M displaced persons × $1,384/year |
+| **Refugee Support** | $150B | [108.4M displaced persons](references.qmd#unhcr-forcibly-displaced-2023) × $1,384/year |
 | **Environmental Damage** | $100B | Ecosystem destruction, toxic contamination, restoration costs |
 | **Psychological Impact** | $232B | PTSD treatment, mental health services, productivity loss |
 | **Lost Human Capital** | $300B | Productive capacity lost from casualties and displacement |
@@ -194,12 +194,12 @@ $$
 \text{ICER} = \frac{-\$249.3\text{B}}{840,000 \text{ QALYs}} = -\$296,786 \text{ per QALY}
 $$
 
-The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard willingness-to-pay thresholds are $50,000-150,000 per QALY; interventions that save costs while gaining QALYs are unconditionally recommended. For comprehensive ICER analysis including alternative funding perspectives, see [dFDA ICER Analysis](appendix/dfda-icer-analysis.qmd).
+The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard [willingness-to-pay thresholds are $50,000-150,000 per QALY](references.qmd#icer-qaly-methodology); interventions that save costs while gaining QALYs are unconditionally recommended. For comprehensive ICER analysis including alternative funding perspectives, see [dFDA ICER Analysis](appendix/dfda-icer-analysis.qmd).
 
 #### Comparative Cost per Life Saved
 
-- **Against Malaria Foundation**: $3,500 cost per life saved (GiveWell top charity)
-- **Deworm the World Initiative**: $5,500 cost per life saved (highly cost-effective intervention)
+- **[Against Malaria Foundation](references.qmd#givewell-cost-per-life-saved)**: $3,500 cost per life saved (GiveWell top charity)
+- **[Deworm the World Initiative](references.qmd#givewell-cost-per-life-saved)**: $5,500 cost per life saved (highly cost-effective intervention)
 - **1% Treaty/dFDA System**: $6,560,000 net societal benefit per life saved (dominant intervention)
 
 The negative cost (net benefit) per life saved distinguishes this as a dominant intervention in health economics terminology, an intervention that both reduces costs and improves outcomes, with no trade-off between efficiency and effectiveness.
@@ -222,12 +222,12 @@ Comparison to historical public health achievements (ROI ratios):
 | Intervention | ROI | Source |
 |:---|---:|:---|
 | **1% Treaty/dFDA** | **463:1** | This analysis |
-| Smallpox eradication | 280:1 | Previous record holder (Fenner et al., 1988) |
-| Water fluoridation | 23:1 | CDC Community Preventive Services |
-| Childhood vaccinations | 13:1 | CDC immunization economic analyses |
+| [Smallpox eradication](references.qmd#smallpox-eradication-roi) | 159-400:1 | WHO intensive campaign (1967-1980) |
+| [Clean water & sanitation](references.qmd#clean-water-sanitation-roi) | 4-21:1 | WHO/WaterAid (LMICs) |
+| [Childhood vaccinations](references.qmd#childhood-vaccination-roi) | 10-16:1 | CDC immunization economic analyses |
 | Average pharma drug | 2:1 | Industry standard (Tufts CSDD) |
 
-The 1% Treaty/dFDA system **exceeds the ROI of smallpox eradication**, previously considered the gold standard of public health interventions, by a factor of 1.65X. For detailed comparisons across all major health interventions, see [Intervention Comparison Table](appendix/intervention-comparison-table.qmd).
+The 1% Treaty/dFDA system **rivals or exceeds the ROI of smallpox eradication**, previously considered the gold standard of public health interventions. For detailed comparisons across all major health interventions, see [Intervention Comparison Table](appendix/intervention-comparison-table.qmd).
 
 ### Self-Funding Mechanism Through Military Budget Redirection
 
@@ -341,14 +341,14 @@ This represents:
 Global spending on health-related challenges demonstrates significant misalignment between resource allocation and burden of disease (see [Humanity's Budget](appendix/humanity-budget-overview.qmd) for complete breakdown):
 
 - **Military spending**: [$2.7 trillion annually](references.qmd#sipri-2024-spending) (40X medical research funding)
-- **Symptomatic disease treatment**: $8.2 trillion annually (primarily managing chronic conditions rather than curative interventions)
+- **Symptomatic disease treatment**: [$8.2 trillion annually](references.qmd#disease-economic-burden-109t) (primarily managing chronic conditions rather than curative interventions)
 - **Economic burden of disease**: [$109 trillion annually](references.qmd#disease-economic-burden-109t) in lost productivity, premature mortality, and disability-adjusted life years
 - **Total annual cost**: $119.8 trillion
 
 **Current investment in curative research**:
 
 - Global government medical research: [$68 billion annually](appendix/global-government-medical-research-spending.qmd) (0.057% of total disease burden)
-- Disease eradication achievements: Zero in past 50 years (since smallpox, 1980)
+- Disease eradication achievements: Zero in past 50 years (since [smallpox, 1980](references.qmd#smallpox-eradicated))
 - Resource allocation ratio: 1:40 (medical research : military spending)
 
 {{< include ../figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
@@ -359,8 +359,8 @@ Global spending on health-related challenges demonstrates significant misalignme
 
 The World Health Organization reports [150,000 daily deaths](references.qmd#who-daily-deaths) from preventable or potentially curable diseases (54.75 million annually). This mortality burden exceeds:
 
-- Annual terrorism deaths by a factor of 18,274:1
-- Annual war deaths by a factor of 137:1
+- [Annual terrorism deaths](references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of 18,274:1
+- [Annual war deaths](references.qmd#acled-active-combat-deaths) by a factor of 137:1 (based on ~400,000 conflict deaths annually)
 - Annual homicide deaths by a factor of 137:1
 
 Despite this disparity in mortality burden, resource allocation heavily favors security spending over medical research and curative interventions.
@@ -369,11 +369,11 @@ Despite this disparity in mortality burden, resource allocation heavily favors s
 
 ### Better Than the Best Charities
 
-Here's how it compares to the most effective charities in the world (GiveWell top charities):
+Here's how it compares to the most effective charities in the world ([GiveWell top charities](references.qmd#givewell-cost-per-life-saved)):
 
 | Intervention | Cost to Achieve Outcome | This Initiative's Equivalent |
 | :--- | :--- | :--- |
-| **GiveWell Top Charities** (e.g., Against Malaria Foundation) | Spend **~`{python} givewell_cost_per_life_min_formatted` - `{python} givewell_cost_per_life_max_formatted`** to save one life | Generate **840,000 QALYs** annually while creating **$249.3B** in net economic value |
+| **[GiveWell Top Charities](references.qmd#givewell-cost-per-life-saved)** (e.g., Against Malaria Foundation) | Spend **~`{python} givewell_cost_per_life_min_formatted` - `{python} givewell_cost_per_life_max_formatted`** to save one life | Generate **840,000 QALYs** annually while creating **$249.3B** in net economic value |
 
 **The Difference**: GiveWell's charities are the best ways to spend money to save lives. They cost money but save lives very efficiently.
 
@@ -385,11 +385,11 @@ This plan doesn't cost money, it *makes* money while saving lives. Instead of as
 
 | Intervention | How it Creates Value | Scale of Annual Net Benefit |
 | :--- | :--- | :--- |
-| **Childhood Vaccinations** | Prevents immense long-term treatment costs for diseases like measles and polio | Billions to Tens of Billions |
+| **[Childhood Vaccinations](references.qmd#childhood-vaccination-roi)** | Prevents immense long-term treatment costs for diseases like measles and polio | Billions to Tens of Billions |
 | **Smoking Cessation** | Prevents expensive chronic diseases (cancer, heart disease) through low-cost interventions | Billions to Tens of Billions |
-| **Water Fluoridation** | Avoids dental care costs for entire populations at negligible cost | Hundreds of Millions to Billions |
-| **1% Treaty (Peace Dividend)** | Reduces global conflict costs by 1%, creating massive economic benefit | **~113.6B, Annually** |
-| **dFDA (R&D Efficiency)** | Makes clinical research ~82}x more efficient, unlocking huge R&D savings | **~$50.0B, Annually** |
+| **[Water & Sanitation](references.qmd#clean-water-sanitation-roi)** | Avoids disease costs for entire populations at low cost | Hundreds of Millions to Billions |
+| **[1% Treaty (Peace Dividend)](appendix/peace-dividend-calculations.qmd)** | Reduces global conflict costs by 1%, creating massive economic benefit | **~113.6B, Annually** |
+| **[dFDA (R&D Efficiency)](appendix/dfda-cost-benefit-analysis.qmd)** | Makes clinical research ~82x more efficient, unlocking huge R&D savings | **~$50.0B, Annually** |
 
 #### Why This Is Different
 
@@ -406,7 +406,7 @@ Instead of solving one problem, this uses a global-scale win to fund a system-sc
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
-The conservative case annual economic benefit of $163.6B significantly exceeds the most successful public health programs in history. Comparing to childhood vaccination programs (estimated $10-20B annual global benefit from preventing measles, polio, etc.):
+The conservative case annual economic benefit of $163.6B significantly exceeds the most successful public health programs in history. Comparing to [childhood vaccination programs](references.qmd#childhood-vaccination-roi) (estimated $10-20B annual global benefit from preventing measles, polio, etc.):
 
 $$
 \text{Relative Scale} = \frac{\$163.6\text{B (1\% Treaty conservative)}}{\sim\$15\text{B (childhood vaccinations)}} \approx 11:1
@@ -514,7 +514,7 @@ For the rigorous analysis:
 **Financial Risk**: Insufficient funding to achieve referendum threshold and political mobilization
 
 - *Mitigation*: Multi-stage fundraising with milestone-based releases; diversified funding sources; assurance contracts
-- *Conservative threshold*: 280M votes (3.5% of global population) through viral referendum mechanics
+- *Conservative threshold*: 280M votes ([3.5% of global population](references.qmd#3-5-rule)) through viral referendum mechanics
 
 See [Investor Risk Analysis](appendix/investor-risk-analysis.qmd) for complete risk assessment and sensitivity analysis.
 
@@ -553,7 +553,7 @@ This economic analysis demonstrates that redirecting 1% of global military spend
 - **Lives saved**: 26,446 annually at net societal benefit of $6.56M per life
 - **Political feasibility**: Positive economic incentives across all major stakeholder groups
 
-**Comparative Context**: This intervention exceeds the cost-effectiveness of history's most successful public health achievements ([smallpox eradication: 280:1; childhood vaccinations: 13:1](appendix/intervention-comparison-table.qmd)) while requiring no ongoing charitable funding.
+**Comparative Context**: This intervention rivals or exceeds the cost-effectiveness of history's most successful public health achievements (see [Intervention Comparison Table](appendix/intervention-comparison-table.qmd) for detailed ROI comparisons including smallpox eradication and childhood vaccinations) while requiring no ongoing charitable funding.
 
 **Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over 36 months (see [Roadmap](strategy/roadmap.qmd) for complete implementation timeline).
 
