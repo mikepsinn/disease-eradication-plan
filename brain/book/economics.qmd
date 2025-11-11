@@ -21,6 +21,7 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
+
 appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
 if appendix_path not in sys.path:
     sys.path.insert(0, appendix_path)
@@ -250,6 +251,7 @@ The 1% Treaty financing structure creates a self-funding system requiring zero n
 $$
 925{,}610 \text{ QALYs} \div 35 \text{ QALYs/life} = 26{,}446 \text{ lives}
 $$
+
 - **Cost per Life Saved**: Net societal benefit of `{python} cost_per_life_investor_funded_formatted` per life ([negative cost](appendix/1-percent-treaty-cost-effectiveness.qmd) indicates net profit)
 
 This financing structure classifies the 1% Treaty as a **dominant health intervention** using standard health economics terminology, an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
@@ -348,6 +350,16 @@ This represents:
 
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](appendix/research-acceleration-model.qmd).
 
+## Personal Economic Impact: From Societal to Individual
+
+The aggregate societal benefits ($163.6B-$1.2T annually) result from individual economic gains multiplied across billions of people. Understanding individual impact helps explain both the scale and the equity of the Disease Eradication Model.
+
+{{< include ../figures/disease-eradication-lifetime-wealth-by-scenario-column-chart.qmd >}}
+
+{{< include ../figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
+
+For detailed analysis of personal wealth calculations, see [Disease Eradication Model: Personal Lifetime Wealth](appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd).
+
 ## Problem Statement and Opportunity Cost
 
 ### Current Resource Allocation
@@ -366,6 +378,7 @@ Global spending on health-related challenges demonstrates significant misalignme
 $$
 \frac{\$68\text{B}}{\$119.8\text{T}} = 0.057\% \text{ of total disease burden}
 $$
+
 - Disease eradication achievements: Zero in past 50 years (since [smallpox, 1980](references.qmd#smallpox-eradicated))
 - Resource allocation ratio: 1:40 (medical research : military spending)
 
@@ -467,6 +480,7 @@ $$
 $$
 \$1.2\text{T} \div 365 \text{ days} = \$3.3\text{B/day}
 $$
+
 - **150,000** preventable deaths
 - **150,000** individuals experiencing curable disease burden
 - **1.736 deaths per second** from addressable conditions
@@ -596,6 +610,7 @@ $$
 $$
 
 (see [dFDA Cost-Benefit Analysis](appendix/dfda-cost-benefit-analysis.qmd))
+
 - **Complete ROI**: 1,239:1 including all eight quantifiable benefit categories ([$1.2T annual benefit](appendix/dfda-cost-benefit-analysis.qmd))
 - **Lives saved**: [26,446 annually](appendix/1-percent-treaty-cost-effectiveness.qmd) at net societal benefit of [$6.56M per life](appendix/1-percent-treaty-cost-effectiveness.qmd)
 - **Political feasibility**: Positive economic incentives across all major stakeholder groups
