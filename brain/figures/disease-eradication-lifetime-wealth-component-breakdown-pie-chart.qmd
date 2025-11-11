@@ -56,7 +56,7 @@ total = calc['total_lifetime_benefit']
 components = [
     (f"Extended\nEarnings\n${calc['npv_breakdown']['extended_earnings']/1000000:.1f}M ({calc['npv_breakdown']['extended_earnings']/total*100:.0f}%)",
      calc['npv_breakdown']['extended_earnings']),
-    (f"Economic\nMultiplier\n(Mil→Res)\n${calc['npv_breakdown']['gdp_boost_benefit']/1000000:.1f}M ({calc['npv_breakdown']['gdp_boost_benefit']/total*100:.0f}%)",
+    (f"Economic\nGrowth\n(Mil→Res)\n${calc['npv_breakdown']['gdp_boost_benefit']/1000000:.1f}M ({calc['npv_breakdown']['gdp_boost_benefit']/total*100:.0f}%)",
      calc['npv_breakdown']['gdp_boost_benefit']),
     (f"Productivity\nGains\n${calc['npv_breakdown']['productivity_gains_total']/1000:.0f}K ({calc['npv_breakdown']['productivity_gains_total']/total*100:.0f}%)",
      calc['npv_breakdown']['productivity_gains_total']),

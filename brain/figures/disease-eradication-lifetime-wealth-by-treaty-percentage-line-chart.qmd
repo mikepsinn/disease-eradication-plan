@@ -130,8 +130,8 @@ for i, (values, marker_y_offset) in enumerate([
 # Labels and title
 
 ax.set_xlabel('Treaty Percentage (% of Military Budget)', fontsize=24, weight='bold')
-ax.set_ylabel('Total Lifetime Wealth (NPV, Millions)', fontsize=24, weight='bold')
-ax.set_title('Disease Eradication Model - Personal Lifetime Wealth by Treaty Percentage\n(20-Year Scenario: 72 Years Life Extension)',
+ax.set_ylabel('Total Wealth Gained (Millions)', fontsize=24, weight='bold')
+ax.set_title('How the Treaty Percentage Affects Your Lifetime Wealth\n(From 0.1% to 5% of Military Budget Redirected to Medical Research)',
              fontsize=32, weight='bold', pad=20)
 
 # Format y-axis

@@ -136,7 +136,7 @@ ax.fill_between(years, cumulative_productivity/1000000, cumulative_caregiver/100
                 edgecolor=COLOR_BLACK, linewidth=1, hatch='////')
 
 ax.fill_between(years, cumulative_caregiver/1000000, cumulative_gdp/1000000,
-                label='Economic Multiplier (Military→Research)', color=COLOR_WHITE,
+                label='Economic Growth (Military→Research)', color=COLOR_WHITE,
                 edgecolor=COLOR_BLACK, linewidth=1, hatch='\\\\\\\\')
 
 ax.fill_between(years, cumulative_gdp/1000000, cumulative_extended/1000000,
@@ -146,7 +146,7 @@ ax.fill_between(years, cumulative_gdp/1000000, cumulative_extended/1000000,
 # Add milestone markers
 
 ax.axvline(x=80, color='red', linewidth=2, linestyle='--', alpha=0.7, zorder=10)
-ax.text(80, ax.get_ylim()[1] * 0.95, 'Baseline Death Age\n(Without Treaty)',
+ax.text(80, ax.get_ylim()[1] * 0.95, 'You Would Die Here\n(Without Treaty)',
         ha='center', va='top', fontsize=16, weight='bold', color='red',
         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
                  edgecolor='red', linewidth=2))
@@ -173,8 +173,8 @@ ax.annotate(f'Total: ${final_value/1000000:.1f}M',
 # Labels and title
 
 ax.set_xlabel('Age (Years)', fontsize=24, weight='bold')
-ax.set_ylabel('Cumulative Lifetime Wealth (NPV, Millions)', fontsize=24, weight='bold')
-ax.set_title('Disease Eradication Model - Cumulative Wealth Over Lifetime\n(Age 30, $50K Income, 1% Treaty, 72 Years Life Extension)',
+ax.set_ylabel('Total Wealth Gained (Millions)', fontsize=24, weight='bold')
+ax.set_title('How Your Wealth Grows from Age 30 to 152\n(Living 72 Years Longer with the 1% Treaty)',
              fontsize=32, weight='bold', pad=20)
 
 # Format y-axis

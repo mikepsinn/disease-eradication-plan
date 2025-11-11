@@ -80,85 +80,83 @@ healthcare_annual = calc['annual_breakdown']['healthcare_savings']
 productivity_annual = calc['annual_breakdown']['productivity_gains']
 gdp_boost_rate = calculate_gdp_growth_boost(treaty_pct)
 
-# Calculate cumulative growth effects
+# Calculate annual benefits with growth, then cumulate them
 
-peace_div_values = []
-healthcare_values = []
-productivity_values = []
-gdp_boost_values = []
+peace_div_annual_list = []
+healthcare_annual_list = []
+productivity_annual_list = []
+gdp_boost_annual_list = []
 
 for year in years:
     # Compound at GDP boost rate
     growth_factor = (1 + (gdp_boost_rate - 0.025)) ** year
 
-    peace_div_values.append(peace_dividend_annual * growth_factor)
-    healthcare_values.append(healthcare_annual * growth_factor)
-    productivity_values.append(productivity_annual * growth_factor)
+    peace_div_annual_list.append(peace_dividend_annual * growth_factor)
+    healthcare_annual_list.append(healthcare_annual * growth_factor)
+    productivity_annual_list.append(productivity_annual * growth_factor)
 
     # GDP boost effect on income
     base_income_growth = annual_income * ((1 + 0.025) ** year)
     boosted_income = annual_income * ((1 + gdp_boost_rate) ** year)
-    gdp_boost_values.append(boosted_income - base_income_growth)
+    gdp_boost_annual_list.append(boosted_income - base_income_growth)
 
-# Stack the values
+# Convert to arrays
+peace_div_annual_arr = np.array(peace_div_annual_list)
+healthcare_annual_arr = np.array(healthcare_annual_list)
+productivity_annual_arr = np.array(productivity_annual_list)
+gdp_boost_annual_arr = np.array(gdp_boost_annual_list)
 
-peace_div_values = np.array(peace_div_values)
-healthcare_values = np.array(healthcare_values)
-productivity_values = np.array(productivity_values)
-gdp_boost_values = np.array(gdp_boost_values)
+# Calculate CUMULATIVE values (running total)
+peace_div_values = np.cumsum(peace_div_annual_arr)
+healthcare_values = np.cumsum(healthcare_annual_arr)
+productivity_values = np.cumsum(productivity_annual_arr)
+gdp_boost_values = np.cumsum(gdp_boost_annual_arr)
 
 # Create figure
 
 fig, ax = plt.subplots(figsize=(14, 10))
 
-# Create stacked area chart with patterns
+# Create stacked area chart with patterns (cumulative stacking)
 
 ax.fill_between(ages, 0, peace_div_values,
                 color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1,
                 hatch=PATTERN_DOTS*2, label='Peace Dividend')
 
-ax.fill_between(ages, peace_div_values,
-                peace_div_values + healthcare_values,
+cumulative_healthcare = peace_div_values + healthcare_values
+ax.fill_between(ages, peace_div_values, cumulative_healthcare,
                 color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1,
                 hatch=PATTERN_HORIZONTAL*2, label='Healthcare Savings')
 
-ax.fill_between(ages, peace_div_values + healthcare_values,
-                peace_div_values + healthcare_values + productivity_values,
+cumulative_productivity = cumulative_healthcare + productivity_values
+ax.fill_between(ages, cumulative_healthcare, cumulative_productivity,
                 color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1,
                 hatch=PATTERN_DIAGONAL*2, label='Productivity Gains')
 
-ax.fill_between(ages, peace_div_values + healthcare_values + productivity_values,
-                peace_div_values + healthcare_values + productivity_values + gdp_boost_values,
+cumulative_total = cumulative_productivity + gdp_boost_values
+ax.fill_between(ages, cumulative_productivity, cumulative_total,
                 color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1,
                 hatch=PATTERN_CROSS*2, label='Economic Multiplier (Military→Research)')
-
-# Add total line on top
-
-total_values = peace_div_values + healthcare_values + productivity_values + gdp_boost_values
-ax.plot(ages, total_values, color=COLOR_BLACK, linewidth=3, label='Total Annual Benefit')
 
 # Labels and title
 
 ax.set_xlabel('Age', fontsize=24, weight='bold')
-ax.set_ylabel('Annual Benefit (Undiscounted)', fontsize=24, weight='bold')
-ax.set_title('How Benefits Accumulate Over Your Lifetime (Conservative Estimate)\n(Age 30, $50K Income, 1% Treaty)',
+ax.set_ylabel('Cumulative Lifetime Wealth (Undiscounted)', fontsize=24, weight='bold')
+ax.set_title('Cumulative Lifetime Wealth Over Lifetime (Conservative Estimate)\n(Age 30, $50K Income, 1% Treaty, 5yr Life Extension)',
              fontsize=32, weight='bold', pad=20)
 
 # Format y-axis
 
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: f'${y/1000:.0f}K'))
 
-# Add key annotations
-# Peak benefit year
+# Add final value annotation
 
-peak_idx = np.argmax(total_values)
-peak_age = ages[peak_idx]
-peak_value = total_values[peak_idx]
-ax.annotate(f'Peak: ${peak_value/1000:.0f}K/year\nat age {peak_age:.0f}',
-            xy=(peak_age, peak_value),
-            xytext=(peak_age - 10, peak_value + 2000),
-            fontsize=32, weight='bold',
-            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2),
+final_value = cumulative_total[-1]
+ax.annotate(f'Total: ${final_value/1000:.0f}K',
+            xy=(ages[-1], final_value),
+            xytext=(ages[-1] - 10, final_value * 1.05),
+            fontsize=22, weight='bold',
+            bbox=dict(boxstyle='round,pad=0.5', facecolor='yellow',
+                     edgecolor=COLOR_BLACK, linewidth=2),
             arrowprops=dict(arrowstyle='->', lw=2, color=COLOR_BLACK))
 
 # Clean up spines
@@ -189,34 +187,11 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
-    title="Personal Annual Benefits Over Lifetime",
-    description="Stacked area chart showing how benefits accumulate year by year"
+    title="Cumulative Lifetime Wealth Over Lifetime (Conservative Estimate)",
+    description="Stacked area chart showing cumulative wealth accumulation over lifetime using conservative baseline model (5yr life extension)"
 )
 
 plt.show()
 ```
 
-**Key Insights (Conservative Baseline - Evidence-Based Model):**
-
-This chart uses the **Evidence-Based Conservative model** (antibiotic precedent, 5yr life extension):
-
-1. **Benefits compound over time**: Annual benefits grow as medical progress accelerates
-2. **GDP boost dominates later years**: As income grows with compounded GDP boost, this becomes the largest component
-3. **Healthcare savings are immediate**: You start saving on healthcare costs right away
-4. **Extended earnings**: The extra 5 years of life extension extends productive years
-
-**Total undiscounted benefits**: Substantial accumulation over extended lifetime
-
-## Why the growth?
-
-- GDP boost compounds: 0.25% extra growth per year = substantial wealth increase
-- Healthcare savings grow with medical progress
-- Productivity gains compound with income growth
-
-**IMPORTANT:** This is a **CONSERVATIVE estimate** using the antibiotic precedent.
-
-**Realistic estimates** using the Disease Eradication Model (115x cumulative research):
-
-- **$2.4M - $5.8M** lifetime benefit
-- **34 - 106 years** life extension
-- See [Disease Eradication Model](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd)
+*Uses Evidence-Based Conservative model (antibiotic precedent, 5yr life extension). Base case: Age 30, $50K income, 1% treaty. Shows cumulative additional wealth beyond normal income from treaty benefits: peace dividend (per-capita share of reduced war costs), healthcare savings (reduced medical expenses), productivity gains (increased earnings from better health), and economic multiplier (GDP growth from military→research reallocation).*

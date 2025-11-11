@@ -146,8 +146,8 @@ ax.text(base_value, len(parameter_names) - 0.5, f'  Base Case\n  ${base_value/10
 
 ax.set_yticks(y_positions)
 ax.set_yticklabels(parameter_names, fontsize=24, weight='bold')
-ax.set_xlabel(f'Total Lifetime Wealth (Base Case: ${base_value/1000000:.1f}M)', fontsize=22, weight='bold')
-ax.set_title('Disease Eradication Model - Personal Lifetime Wealth Sensitivity Analysis\n1% Treaty Impact on 30-Year-Old ($50K Income, 72yr Life Extension)',
+ax.set_xlabel(f'Your Lifetime Wealth (Base Case: ${base_value/1000000:.1f}M)', fontsize=22, weight='bold')
+ax.set_title('What Matters Most for Your Lifetime Wealth?\nHow Different Factors Change Your $4.3M Gain from the 1% Treaty',
              fontsize=32, weight='bold', pad=20)
 
 # Format x-axis to show dollars in millions

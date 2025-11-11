@@ -94,8 +94,8 @@ for i, (x, benefit, life_ext) in enumerate(zip(x_positions, benefits, life_exten
 
 ax.set_xticks(x_positions)
 ax.set_xticklabels(scenario_names, fontsize=32, weight='normal')
-ax.set_ylabel('Total Lifetime Benefit (Disease Eradication Model)', fontsize=22, weight='bold')
-ax.set_title('Personal Lifetime Wealth Benefits from 1% Treaty\nBy Demographic Scenario (Disease Eradication Model - 20yr)',
+ax.set_ylabel('Total Wealth Gained (Beyond Normal Income)', fontsize=22, weight='bold')
+ax.set_title('How Much Different People Gain from the 1% Treaty\n(Young vs Old, Low vs High Income)',
              fontsize=32, weight='bold', pad=20)
 
 # Format y-axis to show millions
