@@ -178,7 +178,7 @@ add_watermark(fig)
 
 output_dir = get_project_root() / 'brain' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
-output_path = output_dir / 'disease-eradication-model-comparison.png'
+output_path = output_dir / 'individual-benefits-from-disease-eradication-model.png'
 
 plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
 
@@ -186,8 +186,8 @@ plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
-    title="Disease Eradication Model vs Conservative Baselines",
-    description="Comparison showing Disease Eradication scenarios ($2.4M-$5.8M) vs antibiotic precedent baselines ($584K-$902K)"
+    title="Individual Benefits from Disease Eradication Model vs Conservative Baselines",
+    description="Individual lifetime wealth comparison showing Disease Eradication scenarios ($2.4M-$5.8M) vs antibiotic precedent baselines ($584K-$902K) for 30-year-old with $50K income"
 )
 
 plt.show()

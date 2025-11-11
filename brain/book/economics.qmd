@@ -1,6 +1,6 @@
 ---
 title: Economic Analysis of the 1% Treaty
-description: Comprehensive cost-benefit analysis demonstrating 463:1 to 25,781:1 return on investment through military budget redirection to medical research. Peer-reviewed methodology with sensitivity analysis.
+description: Comprehensive cost-benefit analysis demonstrating 463:1 to 1,239:1 return on investment through military budget redirection to medical research. Peer-reviewed methodology with sensitivity analysis.
 published: true
 tags:
   - economics
@@ -38,14 +38,13 @@ for appendix_path in possible_paths:
 from economic_parameters import (
     cost_per_life_investor_funded_formatted,
     givewell_cost_per_life_min_formatted,
-    givewell_cost_per_life_max_formatted,
-    endgame_benefit_per_second_formatted
+    givewell_cost_per_life_max_formatted
 )
 ```
 
 ## Executive Summary
 
-This analysis evaluates the economic impact of redirecting 1% of global military spending ($27.2B annually) to fund the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Using net present value analysis and conservative assumptions derived from peer-reviewed research, we demonstrate return on investment ranging from 463:1 to 25,781:1, depending on the scope of benefits included.
+This analysis evaluates the economic impact of redirecting 1% of global military spending ($27.2B annually) to fund the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Using net present value analysis and conservative assumptions derived from peer-reviewed research, we demonstrate return on investment ranging from 463:1 to 1,239:1, depending on the scope of benefits included.
 
 The intervention is self-funding—requiring zero net new spending—as funds are redirected from existing military budgets. The economic benefits arise from two independent mechanisms: (1) a peace dividend of $113.6B annually from reduced conflict costs, and (2) $50.0B+ in annual healthcare R&D efficiency gains from decentralized clinical trials proven 82x more cost-effective than traditional approaches.
 
@@ -53,7 +52,6 @@ The intervention is self-funding—requiring zero net new spending—as funds ar
 
 - **Conservative ROI**: 463:1 (dFDA R&D savings only, 10-year NPV)
 - **Complete ROI**: 1,239:1 (all eight primary benefit categories, 10-year average)
-- **Endgame ROI**: 25,781:1 (including compounding multiplier effects, 20-year projection)
 - **Cost per life saved**: Net societal benefit of $6.56M per life (compared to $3,500-5,500 cost for top GiveWell charities)
 - **Annual lives saved**: 26,446 (conservative estimate)
 
@@ -68,11 +66,11 @@ This analysis employs standard health economics frameworks including:
 - **Incremental Cost-Effectiveness Ratios (ICER)** for comparative analysis
 - **Sensitivity analysis** examining parameter variations (see [1% Treaty Cost-Effectiveness](appendix/1-percent-treaty-cost-effectiveness.qmd))
 
-All calculations use conservative assumptions and are validated against peer-reviewed literature, particularly the Oxford RECOVERY trial demonstrating 82x cost reduction in pragmatic clinical trials.
+All calculations use conservative assumptions and are validated against peer-reviewed literature, particularly the Oxford [RECOVERY trial](appendix/recovery-trial.qmd) demonstrating 82x cost reduction in pragmatic clinical trials.
 
-### Three-Tier ROI Framework
+### Two-Tier ROI Framework
 
-The 1% Treaty generates measurable returns across three analytical frameworks:
+The 1% Treaty generates measurable returns across two analytical frameworks:
 
 **463:1 = Conservative (dFDA R&D Savings Only)**
 
@@ -88,21 +86,14 @@ The 1% Treaty generates measurable returns across three analytical frameworks:
 - 10-year average
 - This is the realistic case
 
-**25,781:1 = Endgame (Year 20 Compounding)**
-
-- Adds all secondary multiplier effects: productivity gains, global trade, infrastructure preservation, avoided crises, innovation acceleration
-- Reaches $16.4T annual value at maturity
-- Based on compounding effects and system maturation
-
 ### Analytical Framework Selection
 
 Each ROI tier serves a distinct analytical purpose:
 
 - **Conservative (463:1)**: Minimum expected return based solely on R&D efficiency gains; suitable for risk-averse stakeholders and regulatory approval processes
 - **Complete (1,239:1)**: Comprehensive assessment including all eight quantifiable benefit categories; recommended for policy evaluation and foundation grant proposals
-- **Endgame (25,781:1)**: Long-term projection incorporating multiplier effects; useful for strategic planning and vision-setting
 
-All three calculations employ the same rigorous methodology and differ only in scope. The conservative estimate provides the floor for expected returns, while the complete and endgame projections capture the full societal impact.
+Both calculations employ the same rigorous methodology and differ only in scope. The conservative estimate provides the floor for expected returns, while the complete projection captures the full quantifiable societal impact.
 
 ## The Conservative Case: 463:1 ROI (dFDA Only)
 
@@ -115,16 +106,16 @@ All calculations are in the [Economic Models Notebook](./economics/economic_mode
 #### The Funding Source (Peace Dividend)
 
 - **Captured Dividend**: 1% of global military spending = **$27.2B annually** to fund the initiative
-- **Societal Dividend**: Same 1% reduction generates **$113.6B in annual economic value** through decreased conflict costs
+- **Societal Dividend**: Same 1% reduction generates **[$113.6B in annual economic value](appendix/peace-dividend-calculations.qmd)** through decreased conflict costs
 
 #### The Investment (dFDA Infrastructure)
 
-- **Total Cost (NPV)**: 10-year discounted cost to build and operate = **$538M**
+- **Total Cost (NPV)**: 10-year discounted cost to build and operate = **[$538M](appendix/dfda-cost-benefit-analysis.qmd)**
 - **Funding Sustainability**: Annual captured dividend ($27.2B) covers annual operational cost ($40M) **680 times over**
 
 #### The Return (Health & Wealth)
 
-- **Economic Return (NPV)**: 10-year discounted net benefit = **$249.3B** in R&D savings alone
+- **Economic Return (NPV)**: 10-year discounted net benefit = **[$249.3B](appendix/health-dividend-calculations.qmd)** in R&D savings alone
 - **Robust ROI**: $249.3B / $538M = **463:1**
 - **Health Return**: **840,000 Quality-Adjusted Life Years (QALYs)** annually
 
@@ -155,7 +146,7 @@ The Decentralized FDA alone achieves **463:1 return on investment**.
 
 This exceptional ROI comes from:
 
-- **$50.0B in annual R&D cost savings**: 82x reduction in clinical trial costs
+- **$50.0B in annual R&D cost savings**: [82x reduction](appendix/recovery-trial.qmd) in clinical trial costs
 - **Faster access to new treatments**: 2 years instead of 17 years to market
 - **Better prevention through real-world data**: Continuous learning from millions of patients
 - **Enabling new therapies**: Making rare disease trials economically viable
@@ -197,10 +188,10 @@ The conservative 463:1 calculation deliberately excludes most system benefits to
 
 The complete benefit framework encompasses eight measurable categories:
 
-1. **Peace dividend** (113.6B) - Societal savings from 1% less conflict
-2. **R&D cost savings** ($50.0B) - 82x cheaper trials
-3. **7-year access acceleration** ($300.0B) - Earlier treatment access during trials
-4. **Research acceleration** ($100.0B) - 115X more research capacity (10-20X more breakthroughs)
+1. **Peace dividend** ([$113.6B](appendix/peace-dividend-calculations.qmd)) - Societal savings from 1% less conflict
+2. **R&D cost savings** ([$50.0B](appendix/dfda-cost-benefit-analysis.qmd)) - 82x cheaper trials
+3. **7-year access acceleration** ([$300.0B](appendix/economic-value-of-accelerated-treatments.qmd)) - Earlier treatment access during trials
+4. **Research acceleration** ([$100.0B](appendix/research-acceleration-model.qmd)) - 115X more research capacity (10-20X more breakthroughs)
 5. **Rare disease treatments** ($400.0B) - Economically viable orphan drug development
 6. **Drug price reductions** ($100.0B) - R&D savings passed to consumers
 7. **Prevention medicine** ($100.0B) - Economically viable prevention trials
@@ -297,21 +288,20 @@ Unlike traditional interventions that require ongoing charitable funding, the 1%
 
 Every second we don't implement this system:
 
-- **`{python} endgame_benefit_per_second_formatted`** in foregone economic value
-- **0.0 quality life-days** lost
+- **$38,051** in foregone economic value (based on $1.2T annual complete case benefit)
 - **1.736 preventable deaths** occur
 
 **Daily Opportunity Cost**:
 
-- **$44.8B** in foregone economic value
+- **$3.3B** in foregone economic value ($1.2T ÷ 365 days)
 - **150,000** preventable deaths
 - **150,000** individuals experiencing curable disease burden
 - **1.736 deaths per second** from addressable conditions
 
 **Annual Opportunity Cost**:
-- $16.4T in foregone economic value
-- $44.8B daily opportunity cost
-- 150,000 preventable deaths
+- **$1.2T** in foregone economic value (complete case benefit)
+- **54.75 million** preventable deaths
+- **$109T** in disease burden continues
 
 These figures represent the mathematical consequence of maintaining current resource allocation patterns versus implementing the 1% Treaty system.
 
@@ -362,12 +352,12 @@ For the rigorous analysis:
 **Technical Risk**: dFDA platform development and scaling challenges
 
 - *Mitigation*: Phased rollout beginning with proven platforms (similar to RECOVERY trial model); open-source architecture enabling distributed development
-- *Validation*: Oxford RECOVERY trial demonstrated 82x cost reduction at scale (11,000+ participants, 6 treatment arms, $5M total cost)
+- *Validation*: Oxford [RECOVERY trial](appendix/recovery-trial.qmd) demonstrated 82x cost reduction at scale (11,000+ participants, 6 treatment arms, $5M total cost)
 
 **Adoption Risk**: Insufficient patient enrollment in decentralized trials
 
 - *Mitigation*: Economic incentives (free treatment + compensation); improved trial accessibility; democratized research priorities
-- *Evidence*: Current clinical trial participation (0.06% of population) limited by access barriers, not willingness
+- *Evidence*: Current clinical trial participation ([0.06% of population](appendix/clinical-trial-participants.qmd)) limited by access barriers, not willingness
 
 **Financial Risk**: Insufficient campaign funding to achieve referendum threshold
 
@@ -400,7 +390,7 @@ See [Governance Framework](appendix/governance.qmd) and [Legal Compliance Framew
 
 ## Conclusion
 
-This economic analysis demonstrates that redirecting 1% of global military spending to medical research through the Decentralized Institutes of Health and Decentralized FDA system generates return on investment ranging from 463:1 (conservative estimate) to 25,781:1 (endgame projection), depending on analytical scope.
+This economic analysis demonstrates that redirecting 1% of global military spending to medical research through the Decentralized Institutes of Health and Decentralized FDA system generates return on investment ranging from 463:1 (conservative estimate) to 1,239:1 (complete estimate), depending on analytical scope.
 
 **Key Findings**:
 
