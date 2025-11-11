@@ -199,7 +199,7 @@ $$
 \text{ICER} = \frac{-\$249.3\text{B}}{840,000 \text{ QALYs}} = -\$296,786 \text{ per QALY}
 $$
 
-where [-$249.3B](appendix/dfda-cost-benefit-analysis.qmd) represents net cost savings and [840,000 QALYs](appendix/1-percent-treaty-cost-effectiveness.qmd) represents annual quality-adjusted life years gained. The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard [willingness-to-pay thresholds are $50,000-150,000 per QALY](references.qmd#icer-qaly-methodology); interventions that save costs while gaining QALYs are unconditionally recommended. For comprehensive ICER analysis including alternative funding perspectives, see [dFDA ICER Analysis](appendix/dfda-icer-analysis.qmd).
+where [-$249.3B](appendix/dfda-cost-benefit-analysis.qmd) represents net cost savings and [840,000 QALYs](appendix/1-percent-treaty-cost-effectiveness.qmd) represents annual quality-adjusted life years gained. The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard [willingness-to-pay thresholds are $50,000-150,000 per QALY](references.qmd#icer-qaly-methodology); interventions that save costs while gaining QALYs are unconditionally recommended. For comprehensive ICER analysis including alternative funding perspectives, see [dFDA Cost-Benefit Analysis](appendix/dfda-cost-benefit-analysis.qmd).
 
 #### Comparative Cost per Life Saved
 
@@ -216,7 +216,7 @@ The Decentralized FDA alone achieves **463:1 return on investment**.
 This exceptional ROI comes from:
 
 - **$50.0B in annual R&D cost savings**: [82x reduction](appendix/recovery-trial.qmd) in clinical trial costs
-- **Faster access to new treatments**: [2 years instead of 17 years](appendix/dfda-assumptions.qmd) to market
+- **Faster access to new treatments**: [2 years instead of 17 years](appendix/dfda-cost-benefit-analysis.qmd) to market
 - **Better prevention through real-world data**: Continuous learning from millions of patients
 - **Enabling new therapies**: Making [rare disease trials](references.qmd#rare-disease-patients-300m-globally) economically viable
 

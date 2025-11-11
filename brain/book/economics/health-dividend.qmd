@@ -67,13 +67,13 @@ With the money saved every year, we could:
 
 Every day we don't implement this represents a massive societal cost: **$137 million** in wasted trial inefficiency and **2,301 QALYs** lost to delayed treatments.
 
-**For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](../appendix/dfda-daily-opportunity-cost.qmd).
+**For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction).
 
 ## The Platform Cost Breakdown
 
 The dFDA costs approximately **$40M annually** to operate at scale, with a similar one-time build cost. This includes cloud infrastructure, a lean engineering team, compliance, and global integration.
 
-**For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Platform Costs](../appendix/dfda-platform-costs.qmd).
+**For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd).
 
 ## ROI Scenarios
 
@@ -109,7 +109,7 @@ Every day we wait costs $137 million and 2,301 lives.
 
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
 - [Health Dividend Calculations](../appendix/health-dividend-calculations.qmd) - Interactive NPV/ROI calculator
-- [dFDA Platform Costs](../appendix/dfda-platform-costs.qmd) - ROM estimates and market comparables
+- [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - ROM estimates, costs, and ROI
 - [QALY Model](../appendix/dfda-qaly-model.qmd) - Source of truth for 840,000 annual QALYs
 
 #### Key Sources
