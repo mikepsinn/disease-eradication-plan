@@ -40,7 +40,7 @@ The intervention is self-funding, requiring zero net new spending, as funds are 
 
 - **Conservative ROI**: 463:1 (dFDA R&D savings only, 10-year NPV)
 - **Complete ROI**: 1,239:1 (all eight primary benefit categories, 10-year average)
-- **Cost per life saved**: Net societal benefit of $6.56M per life (compared to $3,500-5,500 cost for top GiveWell charities)
+- **Cost per life saved**: Net societal benefit of $6.56M per life (compared to [$3,500-5,500 cost for top GiveWell charities](references.qmd#givewell-cost-per-life-saved))
 - **Annual lives saved**: 26,446 (conservative estimate)
 
 ## Introduction
@@ -124,15 +124,15 @@ The $113.6B annual peace dividend derives from 1% reduction in total global war 
 | Cost Category | Annual Amount | Components |
 |:---|---:|:---|
 | **Direct Military Spending** | [$2,718B](references.qmd#sipri-2024-spending) | SIPRI 2024 global military budgets |
-| **Infrastructure Destruction** | $1,875B | Transportation, energy, communications, water, education, healthcare facilities |
+| **[Infrastructure Destruction](appendix/peace-dividend-calculations.qmd)** | [$1,875B](appendix/peace-dividend-calculations.qmd) | Transportation, energy, communications, water, education, healthcare facilities |
 | **Human Life Losses** | $2,446B | [244,600 conflict deaths](references.qmd#acled-active-combat-deaths) × [$10M value of statistical life](references.qmd#dot-vsl-13-6m) (conservative vs. DOT $13.7M) |
-| **Trade Disruption** | $616B | Shipping, supply chains, energy prices, currency volatility |
-| **Lost Economic Growth** | $2,718B | Opportunity cost of military spending vs. productive investment |
-| **Veteran Healthcare** | $200B | Long-term medical care for conflict-related injuries |
+| **[Trade Disruption](appendix/peace-dividend-calculations.qmd)** | [$616B](appendix/peace-dividend-calculations.qmd) | Shipping, supply chains, energy prices, currency volatility |
+| **[Lost Economic Growth](appendix/peace-dividend-calculations.qmd)** | [$2,718B](appendix/peace-dividend-calculations.qmd) | Opportunity cost of military spending vs. productive investment |
+| **[Veteran Healthcare](appendix/peace-dividend-calculations.qmd)** | [$200B](appendix/peace-dividend-calculations.qmd) | Long-term medical care for conflict-related injuries |
 | **Refugee Support** | $150B | [108.4M displaced persons](references.qmd#unhcr-forcibly-displaced-2023) × $1,384/year |
-| **Environmental Damage** | $100B | Ecosystem destruction, toxic contamination, restoration costs |
-| **Psychological Impact** | $232B | PTSD treatment, mental health services, productivity loss |
-| **Lost Human Capital** | $300B | Productive capacity lost from casualties and displacement |
+| **[Environmental Damage](appendix/peace-dividend-calculations.qmd)** | [$100B](appendix/peace-dividend-calculations.qmd) | Ecosystem destruction, toxic contamination, restoration costs |
+| **[Psychological Impact](appendix/peace-dividend-calculations.qmd)** | [$232B](appendix/peace-dividend-calculations.qmd) | PTSD treatment, mental health services, productivity loss |
+| **[Lost Human Capital](appendix/peace-dividend-calculations.qmd)** | [$300B](appendix/peace-dividend-calculations.qmd) | Productive capacity lost from casualties and displacement |
 | **Total War Costs** | **$11,355B** | Combined direct and indirect annual costs |
 | **1% Reduction** | **$113.6B** | Peace dividend from 1% treaty implementation |
 
@@ -148,12 +148,12 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 | Cost Component | Amount | Details |
 |:---|---:|:---|
 | **Upfront Costs** | | |
-| Core dFDA Platform Build | $40M | Platform development, testing, regulatory approval |
-| DIH Initiatives Setup | $230M | Wishocracy system, governance infrastructure, legal framework |
+| [Core dFDA Platform Build](appendix/dfda-cost-benefit-analysis.qmd) | $40M | Platform development, testing, regulatory approval |
+| [DIH Initiatives Setup](appendix/dfda-cost-benefit-analysis.qmd) | $230M | Wishocracy system, governance infrastructure, legal framework |
 | **Total Upfront** | **$270M** | One-time implementation costs (Year 0) |
 | **Annual Operating Costs** | | |
-| dFDA Platform Operations | $19M/year | Maintenance, infrastructure, regulatory coordination (mid-range estimate) |
-| DIH Annual Operations | $21M/year | Governance, community support, treasury management |
+| [dFDA Platform Operations](appendix/dfda-cost-benefit-analysis.qmd) | $19M/year | Maintenance, infrastructure, regulatory coordination (mid-range estimate) |
+| [DIH Annual Operations](appendix/dfda-cost-benefit-analysis.qmd) | $21M/year | Governance, community support, treasury management |
 | **Total Annual Opex** | **$40M/year** | Ongoing operational costs |
 | **NPV Calculations** | | |
 | Present Value of Opex | $268M | 10-year opex discounted at 5%, assumes 5-year linear adoption ramp |
@@ -266,7 +266,7 @@ where each benefit category is:
 2. **R&D cost savings** ([$50.0B](appendix/dfda-cost-benefit-analysis.qmd)) - 82x cheaper trials
 3. **7-year access acceleration** ([$300.0B](appendix/economic-value-of-accelerated-treatments.qmd)) - Earlier treatment access during trials
 4. **Research acceleration** ([$100.0B](appendix/research-acceleration-model.qmd)) - 115X more research capacity (10-20X more breakthroughs)
-5. **Rare disease treatments** ($400.0B) - Economically viable orphan drug development for [300M patients](references.qmd#rare-disease-patients-300m-globally) with diseases lacking treatments (95% of 7,000+ rare diseases have no FDA-approved therapy)
+5. **Rare disease treatments** ($400.0B) - Economically viable orphan drug development for [300M patients](references.qmd#rare-disease-patients-300m-globally) with diseases lacking treatments ([95% of 7,000+ rare diseases](references.qmd#95-pct-diseases-no-treatment) have no FDA-approved therapy)
 6. **Drug price reductions** ($100.0B) - Conservative estimate based on [U.S. drug prices 2.78x higher](references.qmd#us-drug-prices-vs-peer-countries) than peer countries ($360B annual U.S. spending; 20-50% reduction potential = $72-180B from U.S. alone)
 7. **Prevention medicine** ($100.0B) - Based on [global clinical trial market](appendix/global-clinical-trial-spending-by-phase.qmd) projections exceeding $100B annually, enabling economically viable prevention studies
 8. **Mental health** ($75.0B) - Conservative partial closure of [$200B funding gap](references.qmd#mental-health-nonprofit-grants) identified for global mental health care needs
@@ -329,8 +329,8 @@ The 115x research acceleration multiplier is derived from specific, measurable i
 This represents:
 
 - From 1,980 completed trials/year → 227,700 completed trials/year (115x)
-- From 50 drug approvals/year → 1,000-2,000 approvals/year (20-40x)
-- From $41,000 cost per patient → $500-1,000 cost per patient ([82x cost reduction](appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
+- From [50 drug approvals/year](references.qmd#global-new-drug-approvals-50-annually) → 1,000-2,000 approvals/year (20-40x)
+- From [$41,000 cost per patient](appendix/recovery-trial.qmd) → $500-1,000 cost per patient ([82x cost reduction](appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](appendix/research-acceleration-model.qmd).
 

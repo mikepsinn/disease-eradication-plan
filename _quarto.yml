@@ -284,9 +284,9 @@ format:
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
           <meta name="twitter:card" content="summary_large_image">
           <meta name="twitter:title" content="The Complete Idiot's Guide to Ending War and Disease">
-          <meta name="twitter:description" content="How to redirect 1% of military spending to cure disease and create the most profitable investment in history">
+          <meta name="twitter:description" content="Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers">
           <meta property="og:title" content="The Complete Idiot's Guide to Ending War and Disease">
-          <meta property="og:description" content="How to redirect 1% of military spending to cure disease and create the most profitable investment in history">
+          <meta property="og:description" content="Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers">
           <meta property="og:type" content="book">
   pdf:
     documentclass: scrreprt
@@ -302,7 +302,7 @@ format:
       - right=1in
     variables:
       title: "The Complete Idiot's Guide to Ending War and Disease"
-      subtitle: "A Practical Guide for Humanity"
+      subtitle: "Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers"
     include-in-header:
       text: |
         % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
