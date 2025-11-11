@@ -619,18 +619,3 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
 .quarto-title-block .quarto-title-block-contents .description {
     display: none !important;
 }
-
-/* Hide YAML frontmatter blocks that might appear from included files
-   This prevents frontmatter from included files from being displayed
-   Note: Quarto's {{< include >}} should automatically strip frontmatter,
-   but this CSS provides a backup to hide any that might slip through */
-pre:has(code.language-yaml),
-pre code.language-yaml,
-div.sourceCode:has(code.language-yaml),
-code.language-yaml,
-/* Target YAML code blocks specifically */
-.sourceCode.language-yaml,
-pre.sourceCode.language-yaml,
-code.sourceCode.language-yaml {
-    display: none !important;
-}

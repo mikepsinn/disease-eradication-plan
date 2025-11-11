@@ -154,6 +154,40 @@ def check_python_errors(content, file_path):
     return errors
 
 
+def check_frontmatter_leakage(content, file_path):
+    """Check for frontmatter metadata fields leaking into rendered HTML output"""
+    errors = []
+    
+    # Check for frontmatter hash fields that should not appear in rendered output
+    frontmatter_patterns = [
+        r'lastToneElevationWithHumorHash',
+        r'lastInstructionalVoiceHash',
+        r'lastFormattedHash',
+        r'lastFactCheckHash',
+        r'lastStyleCheckHash',
+        r'lastStructureCheckHash',
+        r'lastLatexCheckHash',
+        r'lastParamCheckHash',
+    ]
+    
+    lines = content.split('\n')
+    for i, line in enumerate(lines, 1):
+        # Skip HTML comments and script tags
+        if '<!--' in line or '<script' in line.lower():
+            continue
+        
+        for pattern in frontmatter_patterns:
+            if pattern in line:
+                # Get surrounding context (50 chars before and after)
+                start = max(0, line.find(pattern) - 50)
+                end = min(len(line), line.find(pattern) + len(pattern) + 50)
+                context = f"Frontmatter metadata leaked into output: `{pattern}` (context: ...{line[start:end]}...)"
+                errors.append(ValidationError(file_path, i, "FRONTMATTER_LEAK", context))
+                break  # Only report once per line
+    
+    return errors
+
+
 def validate_file(file_path):
     """Run all validation checks on a single HTML file"""
     try:
@@ -167,6 +201,7 @@ def validate_file(file_path):
     errors.extend(check_dollar_python_pattern(content, file_path))
     errors.extend(check_echo_false_in_output(content, file_path))
     errors.extend(check_python_errors(content, file_path))
+    errors.extend(check_frontmatter_leakage(content, file_path))
 
     return errors
 
@@ -233,6 +268,11 @@ def main():
         print("     (with #| prefix, not as YAML)")
     if 'PYTHON_ERROR' in errors_by_type:
         print("   - Python errors: Check Python code cells for exceptions")
+    if 'FRONTMATTER_LEAK' in errors_by_type:
+        print("   - Frontmatter leakage: YAML frontmatter from included files is appearing in output")
+        print("     This usually means {{< include >}} is not properly stripping frontmatter")
+        print("     Check that included files have properly formatted YAML (--- at start and end)")
+        print("     Or remove frontmatter from files that are only meant to be included")
 
     return 1
 
