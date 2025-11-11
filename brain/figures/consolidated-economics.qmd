@@ -37,55 +37,51 @@ pd.options.display.float_format = '{:,.0f}'.format
 economic_impacts = pd.DataFrame({
     'Source': [
         '1% Treaty Peace Dividend',
-        'dFDA Trial Efficiency (50% reduction)',
-        'dFDA Trial Efficiency (95% reduction)',
-        'DIH Market Allocation (50% better)',
-        'Health Value (840K QALYs)',
-        'Accelerated Treatments (80x)',
-        'Health Savings Sharing Model',
-        'Prevention ROI',
-        'Drug Price Competition',
-        'Combined Ecosystem (Conservative)',
-        'Combined Ecosystem (Optimistic)'
+        'dFDA R&D Savings (82x cost reduction)',
+        'Earlier Drug Access (7-year acceleration)',
+        'Medical Research Acceleration (115x capacity)',
+        'Rare Disease Treatments',
+        'Drug Price Reduction',
+        'Prevention Economic Viability',
+        'Mental Health Treatment Gap',
+        'Combined Conservative (Peace + dFDA)',
+        'Combined Complete (All 8 Categories)'
     ],
     'Annual Value (Billions)': [
-        92,
+        113.6,
         50,
-        95,
-        13.5,
-        126,
-        6480,
-        388.5,
-        615,
-        45,
-        281,
-        16500
+        300,
+        100,
+        400,
+        100,
+        100,
+        75,
+        163.6,
+        1238.6
     ],
     'ROI Ratio': [
-        184,
-        1250,
-        2375,
-        135,
         np.nan,
         np.nan,
-        18.4,
-        3,
         np.nan,
-        439,
-        25781
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        463,
+        1239
     ],
     'Implementation Cost (Millions)': [
         500,
         40,
-        40,
         100,
-        40,
         100,
-        10000,
-        205000,
         100,
-        640,
-        640
+        100,
+        100,
+        100,
+        538,
+        1000
     ]
 })
 
@@ -184,16 +180,16 @@ fig.show()
 
 waterfall_data = [
     ('Start', 0, 'absolute'),
-    ('Treaty Peace Dividend', 92, 'relative'),
-    ('dFDA Trial Efficiency', 50, 'relative'),
-    ('DIH Better Allocation', 13.5, 'relative'),
-    ('Health Value Created', 126, 'relative'),
-    ('Direct Benefits Subtotal', 281.5, 'total'),
-    ('80x Treatment Acceleration', 6480, 'relative'),
-    ('Prevention Savings', 615, 'relative'),
-    ('Drug Price Competition', 45, 'relative'),
-    ('Network Effects', 9078.5, 'relative'),
-    ('Total Annual Value', 16500, 'total')
+    ('Peace Dividend', 113.6, 'relative'),
+    ('R&D Savings', 50, 'relative'),
+    ('Conservative Subtotal', 163.6, 'total'),
+    ('Earlier Drug Access', 300, 'relative'),
+    ('Research Acceleration', 100, 'relative'),
+    ('Rare Diseases', 400, 'relative'),
+    ('Drug Prices', 100, 'relative'),
+    ('Prevention', 100, 'relative'),
+    ('Mental Health', 75, 'relative'),
+    ('Complete Total', 1238.6, 'total')
 ]
 
 fig = go.Figure(go.Waterfall(
@@ -210,7 +206,7 @@ fig = go.Figure(go.Waterfall(
 ))
 
 fig.update_layout(
-    title="How We Get to $16.5 Trillion Annual Value",
+    title="How We Get to $1.2 Trillion Annual Value (Complete Case)",
     xaxis_title="Value Component",
     yaxis_title="Annual Value ($ Billions)",
     showlegend=False,
@@ -255,8 +251,8 @@ fig.add_trace(go.Scatter(
 # Add efficiency frontier line
 
 fig.add_trace(go.Scatter(
-    x=[40, 640],
-    y=[50, 16500],
+    x=[538, 1000],
+    y=[163.6, 1238.6],
     mode='lines',
     line=dict(dash='dash', color='red'),
     name='Efficiency Frontier',
@@ -338,24 +334,30 @@ fig.show()
 
 ### Primary Economic Models
 
-- **1% Treaty Analysis**: $92B annual peace dividend from 1% military spending reduction
+- **1% Treaty Analysis**: $113.6B annual peace dividend from 1% military spending reduction ($11.36T total war costs × 1%)
 - **dFDA Cost-Benefit**: `{python} roi_dfda_savings_only_formatted` ROI from `{python} dfda_annual_opex_formatted` platform saving `{python} dfda_gross_savings_annual_formatted` in trial costs
-- **DIH Market Allocation**: $13.5B value from 50% better research allocation
-- **Health Impact**: `{python} global_dfda_qalys_gained_annual_formatted` QALYs valued at $126B annually
+- **Conservative Case**: Peace dividend + dFDA R&D savings = $163.6B annually, 463:1 ROI
+- **Complete Case**: All 8 benefit categories = $1,238.6B annually, 1,239:1 ROI
 
-### Additional Economic Analyses
+### Eight Benefit Categories (Complete Case)
 
-- **80x Acceleration**: $6.48T from accelerating medical progress
-- **Health Savings Sharing**: $388.5B from 50/50 profit sharing on cures
-- **Prevention ROI**: $615B from $1→$3 prevention investment returns
-- **Drug Competition**: $45B from international price competition
+1. **Peace Dividend**: $113.6B from 1% military spending reduction
+2. **R&D Savings**: $50B from 82x cheaper clinical trials
+3. **Earlier Drug Access**: $300B from 7-year acceleration to market
+4. **Research Acceleration**: $100B from 115x research capacity
+5. **Rare Diseases**: $400B from orphan drug economic viability
+6. **Drug Price Reduction**: $100B from R&D savings passed to consumers
+7. **Prevention**: $100B from economic viability of preventive treatments
+8. **Mental Health**: $75B from treatment gap reduction
 
 ### Key Assumptions
 
 - QALY valued at $150,000 (standard US threshold)
 - Global clinical trials market: `{python} global_clinical_trial_market_annual_formatted` annually
-- Military spending: $2.443T globally
+- Global military spending: $2.72T annually (2024)
+- Total war costs: $11.36T annually (direct + opportunity costs)
 - Disease burden: $109.1T annually
-- Conservative network effect multipliers
+- 5% discount rate for NPV calculations
+- 10-year time horizon for ROI analysis
 
-All calculations based on peer-reviewed sources and industry reports as of 2024-2025.
+All calculations based on peer-reviewed sources and industry reports as of 2024-2025. See [Economics](../book/economics.qmd) for detailed methodology.

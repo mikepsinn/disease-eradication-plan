@@ -278,10 +278,6 @@ ROI_DFDA_SAVINGS_ONLY = 463  # 463:1 from NPV analysis
 # Updated from 1,222:1 when war costs were revised from $9.7T to $11.355T
 ROI_ALL_DIRECT_BENEFITS = 1239  # 1,239:1 from all 8 benefit categories
 
-# Tier 3: Endgame - Year 20 with compounding effects
-# Source: brain/book/economics.qmd endgame section
-ROI_WITH_MULTIPLIER_EFFECTS = 25781  # 25,781:1 at maturity with multiplier effects
-
 # ---
 # FINANCIAL PARAMETERS
 # ---
@@ -394,34 +390,10 @@ TOTAL_COMPLETE_BENEFITS_ANNUAL = (
 
 
 # ---
-# ENDGAME BENEFITS (for 25,781:1 ROI calculation)
+# COST OF DELAY PARAMETERS
 # ---
 
-# Source: brain/book/economics.qmd endgame section
-ENDGAME_PRODUCTIVITY_GAINS_ANNUAL = 8400.0  # $8.4T from healthier workforce
-ENDGAME_GLOBAL_TRADE_BENEFIT_ANNUAL = 2400.0  # $2.4T from reduced conflict
-ENDGAME_INFRASTRUCTURE_SAVINGS_ANNUAL = 1900.0  # $1.9T from preserved infrastructure
-ENDGAME_AVOIDED_CRISES_ANNUAL = 1500.0  # $1.5T from no refugee/war costs
-ENDGAME_INNOVATION_BENEFIT_ANNUAL = 2000.0  # $2.0T from research acceleration
-
-TOTAL_ENDGAME_BENEFITS_ANNUAL = (
-    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT  # Base peace dividend
-    + DFDA_GROSS_SAVINGS_ANNUAL  # Base health dividend
-    + ENDGAME_PRODUCTIVITY_GAINS_ANNUAL
-    + ENDGAME_GLOBAL_TRADE_BENEFIT_ANNUAL
-    + ENDGAME_INFRASTRUCTURE_SAVINGS_ANNUAL
-    + ENDGAME_AVOIDED_CRISES_ANNUAL
-    + ENDGAME_INNOVATION_BENEFIT_ANNUAL
-)  # $16,514B (~$16.5T)
-
-
-# COST OF DELAY PARAMETERS
 # Source: brain/book/economics.qmd
-# Note: These are derived for illustrative purposes in the text
-ENDGAME_BENEFIT_PER_DAY = TOTAL_ENDGAME_BENEFITS_ANNUAL / 365 # ~$45.2B
-ENDGAME_BENEFIT_PER_HOUR = ENDGAME_BENEFIT_PER_DAY / 24 # ~$1.9B
-ENDGAME_BENEFIT_PER_SECOND = ENDGAME_BENEFIT_PER_HOUR / 3600 # ~$523K
-
 # QALY delay costs (quality-adjusted life days lost per second of inaction)
 COST_OF_DELAY_QALY_DAYS_PER_SECOND = (TREATY_TOTAL_QALYS_GAINED_ANNUAL / 365) / (365.25 * 24 * 60 * 60) # QALY days per second
 
@@ -762,9 +734,6 @@ dih_treasury_to_medical_research_annual_formatted = format_billions(DIH_TREASURY
 dih_treasury_trial_subsidies_max_formatted = format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MAX)
 dih_treasury_trial_subsidies_min_formatted = format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MIN)
 dividend_coverage_factor_formatted = f"{DIVIDEND_COVERAGE_FACTOR:,.0f}"
-endgame_benefit_per_day_formatted = format_billions(ENDGAME_BENEFIT_PER_DAY)
-endgame_benefit_per_hour_formatted = format_currency(ENDGAME_BENEFIT_PER_HOUR)
-endgame_benefit_per_second_formatted = format_currency(ENDGAME_BENEFIT_PER_SECOND * 4)
 givewell_cost_per_life_avg_formatted = f"${GIVEWELL_COST_PER_LIFE_AVG:,.0f}"
 givewell_cost_per_life_max_formatted = f"${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"
 givewell_cost_per_life_min_formatted = f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}"
@@ -818,7 +787,6 @@ qalys_total_optimistic_formatted = format_qalys(QALYS_TOTAL_OPTIMISTIC)
 recovery_trial_cost_per_patient_formatted = format_currency(RECOVERY_TRIAL_COST_PER_PATIENT / 1_000_000_000)
 roi_all_direct_benefits_formatted = format_roi(ROI_ALL_DIRECT_BENEFITS)
 roi_dfda_savings_only_formatted = format_roi(ROI_DFDA_SAVINGS_ONLY)
-roi_with_multiplier_effects_formatted = format_roi(ROI_WITH_MULTIPLIER_EFFECTS)
 sensitivity_campaign_cost_conservative_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE)
 sensitivity_campaign_cost_optimistic_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC)
 sensitivity_cost_per_life_central_formatted = f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"
@@ -849,7 +817,6 @@ switzerland_defense_spending_pct_formatted = format_percentage(SWITZERLAND_DEFEN
 switzerland_gdp_per_capita_k_formatted = format_currency(SWITZERLAND_GDP_PER_CAPITA_K / 1_000_000)
 system_profit_per_life_saved_millions_formatted = f"${SYSTEM_PROFIT_PER_LIFE_SAVED_MILLIONS:,.2f} million"
 total_complete_benefits_annual_formatted = format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)
-total_endgame_benefits_annual_formatted = format_billions(TOTAL_ENDGAME_BENEFITS_ANNUAL)
 total_global_waste_spend_annual_formatted = format_billions(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)
 traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_currency(TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K / 1_000_000_000)
 treaty_annual_funding_formatted = format_billions(TREATY_ANNUAL_FUNDING)

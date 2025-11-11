@@ -46,7 +46,7 @@ from economic_parameters import (
 
 This analysis evaluates the economic impact of redirecting 1% of global military spending ($27.2B annually) to fund the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Using net present value analysis and conservative assumptions derived from peer-reviewed research, we demonstrate return on investment ranging from 463:1 to 1,239:1, depending on the scope of benefits included.
 
-The intervention is self-funding—requiring zero net new spending—as funds are redirected from existing military budgets. The economic benefits arise from two independent mechanisms: (1) a peace dividend of $113.6B annually from reduced conflict costs, and (2) $50.0B+ in annual healthcare R&D efficiency gains from decentralized clinical trials proven 82x more cost-effective than traditional approaches.
+The intervention is self-funding, requiring zero net new spending, as funds are redirected from existing military budgets. The economic benefits arise from two independent mechanisms: (1) a peace dividend of $113.6B annually from reduced conflict costs, and (2) $50.0B+ in annual healthcare R&D efficiency gains from decentralized clinical trials proven 82x more cost-effective than traditional approaches.
 
 **Key Findings:**
 
@@ -150,7 +150,7 @@ All detailed calculations are in the [Economic Models Notebook](./economics/econ
 
 ### Cost-Effectiveness: Dominant Health Intervention
 
-Unlike traditional public health interventions that require ongoing funding, the 1% Treaty represents a **dominant intervention**—simultaneously reducing costs while improving health outcomes. This places it in a unique category alongside smallpox eradication and other transformative health achievements.
+Unlike traditional public health interventions that require ongoing funding, the 1% Treaty represents a **dominant intervention**, simultaneously reducing costs while improving health outcomes. This places it in a unique category alongside smallpox eradication and other transformative health achievements.
 
 #### Incremental Cost-Effectiveness Ratio (ICER)
 
@@ -166,7 +166,7 @@ $$
 \text{ICER} = \frac{-\$249.3\text{B}}{840,000 \text{ QALYs}} = -\$296,786 \text{ per QALY}
 $$
 
-The negative ICER indicates **cost savings while improving health**—a dominant intervention by health economics standards. Standard willingness-to-pay thresholds are $50,000-150,000 per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
+The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard willingness-to-pay thresholds are $50,000-150,000 per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
 
 **Comparative Cost per Life Saved:**
 
@@ -174,7 +174,7 @@ The negative ICER indicates **cost savings while improving health**—a dominant
 - **Deworm the World Initiative**: $5,500 cost per life saved (highly cost-effective intervention)
 - **1% Treaty/dFDA System**: $6,560,000 net societal benefit per life saved (dominant intervention)
 
-The negative cost (net benefit) per life saved distinguishes this as a dominant intervention in health economics terminology—an intervention that both reduces costs and improves outcomes, with no trade-off between efficiency and effectiveness.
+The negative cost (net benefit) per life saved distinguishes this as a dominant intervention in health economics terminology, an intervention that both reduces costs and improves outcomes, with no trade-off between efficiency and effectiveness.
 
 ### This ROI in Historical Context
 
@@ -216,7 +216,7 @@ The 1% Treaty financing structure creates a self-funding system requiring zero n
 - **Lives Saved**: 26,446 annually (925,610 QALYs ÷ 35 QALYs/life)
 - **Cost per Life Saved**: Net societal benefit of `{python} cost_per_life_investor_funded_formatted` per life (negative cost indicates net profit)
 
-This financing structure classifies the 1% Treaty as a **dominant health intervention** using standard health economics terminology—an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
+This financing structure classifies the 1% Treaty as a **dominant health intervention** using standard health economics terminology, an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
 
 The self-funding nature eliminates traditional barriers to scale, as the intervention generates sufficient economic surplus to sustain and expand operations without ongoing charitable contributions.
 
@@ -340,9 +340,9 @@ $$
 \text{Relative Scale} = \frac{\$163.6\text{B (1\% Treaty conservative)}}{\sim\$15\text{B (childhood vaccinations)}} \approx 11:1
 $$
 
-This makes the 1% Treaty/dFDA system approximately **10X larger in economic impact** than childhood vaccinations—one of the most successful public health interventions ever implemented.
+This makes the 1% Treaty/dFDA system **11X larger in economic impact** than childhood vaccinations—one of the most successful public health interventions ever implemented.
 
-Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates the wealth needed to sustain itself through VICTORY bonds that pay investors 271.8% annual returns.
+Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates $163.6B in annual economic surplus (conservative case) to sustain operations and expansion without requiring ongoing charitable contributions.
 
 ## The Opportunity Cost Clock
 
@@ -380,15 +380,16 @@ The 1% Treaty creates positive economic incentives across all major stakeholder 
 
 See [Aligning Incentives](solution/aligning-incentives.qmd) for detailed stakeholder analysis and implementation strategy.
 
-## Funding Strategy for Global Referendum Campaign
+## Implementation Strategy
 
-Implementation requires funding a global referendum campaign to achieve treaty adoption. The campaign financing model uses a small portion of anticipated treaty revenue to fund initial political mobilization:
+The economic benefits outlined above demonstrate the value proposition of the 1% Treaty system. Implementation requires political mobilization to achieve treaty adoption:
 
-**Campaign Budget**: $1.0B over 36 months (see [Campaign Budget](economics/campaign-budget.qmd) for detailed breakdown)
+**For comprehensive implementation details**, see:
+- **[Campaign Budget](economics/campaign-budget.qmd)** - Detailed breakdown of political mobilization costs
+- **[VICTORY Bonds](economics/victory-bonds.qmd)** - Financing mechanism for lobbying efforts
+- **[Financial Plan Overview](economics/financial-plan.qmd)** - Complete fundraising, spending, and treasury management framework
 
-**Funding Mechanism**: VICTORY bonds offering fixed returns from future treaty revenue (see [VICTORY Bonds](economics/victory-bonds.qmd) for complete financial structure)
-
-**Political Mobilization Strategy**: See [Financial Plan Overview](economics/financial-plan.qmd) for comprehensive fundraising, spending, and treasury management framework
+This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates 463:1 to 1,239:1 returns regardless of the specific path to adoption.
 
 ## Detailed Technical References
 
@@ -419,10 +420,10 @@ For the rigorous analysis:
 - *Mitigation*: Economic incentives (free treatment + compensation); improved trial accessibility; democratized research priorities
 - *Evidence*: Current clinical trial participation ([0.06% of population](appendix/clinical-trial-participants.qmd)) limited by access barriers, not willingness
 
-**Financial Risk**: Insufficient campaign funding to achieve referendum threshold
+**Financial Risk**: Insufficient funding to achieve referendum threshold and political mobilization
 
 - *Mitigation*: Multi-stage fundraising with milestone-based releases; diversified funding sources; assurance contracts
-- *Conservative threshold*: 280M votes (3.5% of global population) achievable with $1.0B campaign budget
+- *Conservative threshold*: 280M votes (3.5% of global population) through viral referendum mechanics
 
 See [Investor Risk Analysis](appendix/investor-risk-analysis.qmd) for complete risk assessment and sensitivity analysis.
 
@@ -463,6 +464,6 @@ This economic analysis demonstrates that redirecting 1% of global military spend
 
 **Comparative Context**: This intervention exceeds the cost-effectiveness of history's most successful public health achievements (smallpox eradication: 280:1; childhood vaccinations: 13:1) while requiring no ongoing charitable funding.
 
-**Implementation Pathway**: Phased approach beginning with $1.0B global referendum campaign, proceeding through treaty adoption, DIH establishment, and dFDA deployment over 36 months (see [Roadmap](strategy/roadmap.qmd)).
+**Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over 36 months (see [Roadmap](strategy/roadmap.qmd) for complete implementation timeline).
 
 The economic case is grounded in conservative assumptions, validated against peer-reviewed evidence (particularly the Oxford RECOVERY trial), and subjected to comprehensive sensitivity analysis. The methodology employs standard health economics frameworks (NPV, QALYs, ICER) to enable comparison with existing interventions and facilitate foundation grant evaluation processes.

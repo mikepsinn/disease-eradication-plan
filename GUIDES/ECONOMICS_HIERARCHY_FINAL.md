@@ -1,16 +1,22 @@
 ---
 title: Economics File Hierarchy - FINAL STRUCTURE
-description: Implemented structure with peace + health dividend symmetry
+description: Two-tier ROI framework (463:1 conservative, 1,239:1 complete)
 tags: [economics, organization, roi, structure]
 status: IMPLEMENTED
-date: 2025-01-24
+date: 2025-01-11
 ---
 
 # Economics File Hierarchy - FINAL STRUCTURE
 
 ## ✅ Implemented Structure
 
-This document reflects the **ACTUAL IMPLEMENTED STRUCTURE** as of 2025-01-24.
+This document reflects the **ACTUAL IMPLEMENTED STRUCTURE** as of 2025-01-11.
+
+**Current ROI Framework**: Two-tier analysis
+- **Conservative (463:1)**: dFDA R&D savings only
+- **Complete (1,239:1)**: All 8 benefit categories
+
+Previous "endgame" (25,781:1) analysis removed to focus on demonstrable benefits.
 
 ---
 
@@ -31,8 +37,7 @@ Located in `brain/book/appendix/`:
 1. **[peace-dividend-calculations.qmd](../brain/book/appendix/peace-dividend-calculations.qmd)** - Full Jupyter notebook with math
 2. **[health-dividend-calculations.qmd](../brain/book/appendix/health-dividend-calculations.qmd)** - Full Jupyter notebook with NPV/ROI
 3. **[1-percent-treaty-cost-effectiveness.qmd](../brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd)** - Combined proof (peace + health)
-4. **[research-acceleration-model.qmd](../brain/book/appendix/research-acceleration-model.qmd)** - Complete Case (1,222:1 ROI) detailed analysis
-5. **[1-percent-treaty-endgame-projection.qmd](../brain/book/appendix/1-percent-treaty-endgame-projection.qmd)** - Endgame (25,781:1 ROI) long-term projection
+4. **[research-acceleration-model.qmd](../brain/book/appendix/research-acceleration-model.qmd)** - Complete Case (1,239:1 ROI) detailed analysis
 
 ### 📊 Charts
 

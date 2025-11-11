@@ -30,55 +30,51 @@ pd.options.display.float_format = '{:,.0f}'.format
 economic_impacts = pd.DataFrame({
     'Source': [
         '1% Treaty Peace Dividend',
-        'dFDA Trial Efficiency (50% reduction)',
-        'dFDA Trial Efficiency (95% reduction)',
-        'DIH Market Allocation (50% better)',
-        'Health Value (840K QALYs)',
-        'Accelerated Treatments (80x)',
-        'Health Savings Sharing Model',
-        'Prevention ROI',
-        'Drug Price Competition',
-        'Combined Ecosystem (Conservative)',
-        'Combined Ecosystem (Optimistic)'
+        'dFDA R&D Savings (82x cost reduction)',
+        'Earlier Drug Access (7-year acceleration)',
+        'Medical Research Acceleration (115x capacity)',
+        'Rare Disease Treatments',
+        'Drug Price Reduction',
+        'Prevention Economic Viability',
+        'Mental Health Treatment Gap',
+        'Combined Conservative (Peace + dFDA)',
+        'Combined Complete (All 8 Categories)'
     ],
     'Annual Value (Billions)': [
-        92,
+        113.6,
         50,
-        95,
-        13.5,
-        126,
-        6480,
-        388.5,
-        615,
-        45,
-        281,
-        16500
+        300,
+        100,
+        400,
+        100,
+        100,
+        75,
+        163.6,
+        1238.6
     ],
     'ROI Ratio': [
-        184,
-        1250,
-        2375,
-        135,
         np.nan,
         np.nan,
-        18.4,
-        3,
         np.nan,
-        439,
-        25781
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        463,
+        1239
     ],
     'Implementation Cost (Millions)': [
         500,
         40,
-        40,
         100,
-        40,
         100,
-        10000,
-        205000,
         100,
-        640,
-        640
+        100,
+        100,
+        100,
+        538,
+        1000
     ]
 })
 
