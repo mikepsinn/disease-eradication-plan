@@ -21,25 +21,13 @@ import sys
 import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
-# For individual file renders, try multiple paths
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
 
-cwd = os.getcwd()
-possible_paths = [
-    os.path.join(cwd, 'brain', 'book', 'appendix'),  # from project root
-    os.path.join(cwd, 'appendix'),  # from brain/book
-    os.path.join(cwd, '..', '..', 'brain', 'book', 'appendix'),  # relative
-]
+from economic_parameters import *
 
-for appendix_path in possible_paths:
-    if os.path.exists(appendix_path) and appendix_path not in sys.path:
-        sys.path.insert(0, appendix_path)
-        break
 
-from economic_parameters import (
-    cost_per_life_investor_funded_formatted,
-    givewell_cost_per_life_min_formatted,
-    givewell_cost_per_life_max_formatted
-)
 ```
 
 ## Executive Summary
@@ -48,7 +36,7 @@ This analysis evaluates the economic impact of redirecting 1% of global military
 
 The intervention is self-funding, requiring zero net new spending, as funds are redirected from existing military budgets. The economic benefits arise from two independent mechanisms: (1) a peace dividend of $113.6B annually from reduced conflict costs, and (2) $50.0B+ in annual healthcare R&D efficiency gains from decentralized clinical trials proven 82x more cost-effective than traditional approaches.
 
-**Key Findings:**
+### Key Findings
 
 - **Conservative ROI**: 463:1 (dFDA R&D savings only, 10-year NPV)
 - **Complete ROI**: 1,239:1 (all eight primary benefit categories, 10-year average)
@@ -110,6 +98,7 @@ $$
 $$
 
 where:
+
 - $B_t$ = Annual benefits in year $t$
 - $C_t$ = Annual costs in year $t$
 - $r$ = 5% discount rate
@@ -134,7 +123,7 @@ The $113.6B annual peace dividend derives from 1% reduction in total global war 
 
 | Cost Category | Annual Amount | Components |
 |:---|---:|:---|
-| **Direct Military Spending** | $2,718B | SIPRI 2024 global military budgets |
+| **Direct Military Spending** | [$2,718B](references.qmd#sipri-2024-spending) | SIPRI 2024 global military budgets |
 | **Infrastructure Destruction** | $1,875B | Transportation, energy, communications, water, education, healthcare facilities |
 | **Human Life Losses** | $2,446B | 244,600 conflict deaths × $10M value of statistical life |
 | **Trade Disruption** | $616B | Shipping, supply chains, energy prices, currency volatility |
@@ -207,7 +196,7 @@ $$
 
 The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard willingness-to-pay thresholds are $50,000-150,000 per QALY; interventions that save costs while gaining QALYs are unconditionally recommended. For comprehensive ICER analysis including alternative funding perspectives, see [dFDA ICER Analysis](appendix/dfda-icer-analysis.qmd).
 
-**Comparative Cost per Life Saved:**
+#### Comparative Cost per Life Saved
 
 - **Against Malaria Foundation**: $3,500 cost per life saved (GiveWell top charity)
 - **Deworm the World Initiative**: $5,500 cost per life saved (highly cost-effective intervention)
@@ -286,7 +275,7 @@ $$
 B_{\text{total}} = 113.6 + 50.0 + 300.0 + 100.0 + 400.0 + 100.0 + 100.0 + 75.0 = \$1,238.6\text{B} \approx \$1.2\text{T}
 $$
 
-**Complete Case ROI:**
+#### Complete Case ROI
 
 $$
 \text{ROI}_{\text{complete}} = \frac{\$1,238.6\text{B annual} \times 10\text{ years (NPV adjusted)}}{\$27.2\text{B annual funding}} = 1,239:1
@@ -304,6 +293,7 @@ Both are conservative estimates based on proven models ([RECOVERY trial](appendi
 The 115x research acceleration multiplier is derived from specific, measurable improvements across four dimensions:
 
 **Current System Baseline**:
+
 - 3,300 clinical trials initiated per year
 - 60% completion rate = **1,980 completed trials/year**
 - 10,000 active trials at any time (3-5 year duration)
@@ -312,6 +302,7 @@ The 115x research acceleration multiplier is derived from specific, measurable i
 - 6-18 months to recruit 100 patients
 
 **dFDA System Performance**:
+
 - 380,000 trials/year capacity
 - 95% completion rate = **361,000 completed trials/year**
 - 200,000 active trials at any time (3-12 month duration)
@@ -336,6 +327,7 @@ The 115x research acceleration multiplier is derived from specific, measurable i
 **Used in Analysis**: **115x** (further conservative adjustment for foundation grant proposal credibility)
 
 This represents:
+
 - From 1,980 completed trials/year → 227,700 completed trials/year (115x)
 - From 50 drug approvals/year → 1,000-2,000 approvals/year (20-40x)
 - From $41,000 cost per patient → $500-1,000 cost per patient ([82x cost reduction](appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
@@ -439,6 +431,7 @@ Every second we don't implement this system:
 - **1.736 deaths per second** from addressable conditions
 
 **Annual Opportunity Cost**:
+
 - **$1.2T** in foregone economic value (complete case benefit)
 - **54.75 million** preventable deaths
 - **$109T** in disease burden continues
@@ -465,6 +458,7 @@ See [Aligning Incentives](solution/aligning-incentives.qmd) for detailed stakeho
 The economic benefits outlined above demonstrate the value proposition of the 1% Treaty system. Implementation requires political mobilization to achieve treaty adoption:
 
 **For comprehensive implementation details**, see:
+
 - **[Campaign Budget](economics/campaign-budget.qmd)** - Detailed breakdown of political mobilization costs
 - **[VICTORY Bonds](economics/victory-bonds.qmd)** - Financing mechanism for lobbying efforts
 - **[Financial Plan Overview](economics/financial-plan.qmd)** - Complete fundraising, spending, and treasury management framework
