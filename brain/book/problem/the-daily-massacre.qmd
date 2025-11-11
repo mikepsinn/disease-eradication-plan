@@ -33,14 +33,7 @@ if appendix_path not in sys.path:
 from economic_parameters import *
 ```
 
-
-{{< include ../../figures/death-counter-realtime.qmd >}}
-
-## On The Numbers That Happen Every Day
-
-### What's Happening Right Now
-
-Every single day, like clockwork:
+Every single day:
 
 - **[150,000 people stop existing](../references.qmd#who-daily-deaths)**
 - **130,000 from disease** (diseases are very effective at their job)
@@ -99,8 +92,4 @@ These are better odds than the lottery, which is nice. They're worse odds than R
 
 ### What Happens While You Sleep Tonight
 
-By midnight tonight, **130,000 more people will be dead from disease**. Tomorrow, another **130,000**. The day after, another **130,000**. This continues forever, or until you stop it, whichever comes first.
-
-If aliens were studying humanity, they'd observe that **150,000 humans die daily** from predictable, preventable causes while we do nothing. They'd conclude we're either a death cult that chose extinction, or we're really bad at math.
-
-They'd be right about both. By this time tomorrow, **150,000 more will be dead**, and you'll be one day closer to joining them, which statistically speaking is inevitable unless something changes.
+By this time tomorrow, **150,000 more will be dead**, and you'll be one day closer to joining them, which statistically speaking is inevitable unless something changes.

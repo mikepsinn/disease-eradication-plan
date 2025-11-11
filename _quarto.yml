@@ -169,7 +169,7 @@ metadata:
   # Bibliographic metadata
   title: "How to End War and Disease"
   subtitle: "Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers"
-  description: "How to redirect 1% of military spending to cure disease and create the most profitable investment in history"
+  description: "Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers"
   abstract: "A comprehensive guide to redirecting 1% of global military spending ($27.2B annually) to medical research through the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Demonstrates 463:1 to 1,239:1 return on investment through cost-benefit analysis, peace dividend calculations, and health economics frameworks."
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
@@ -273,6 +273,20 @@ format:
     toc: true
     toc-depth: 3
     css: styles.css
+    # Footer with copyright and license information
+    page-footer:
+      left: "© 2025 Mike P. Sinn & W.I.SH.O.N.I.A."
+      center: "[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+      right: "[WarOnDisease.org](https://WarOnDisease.org)"
+    include-in-footer:
+      - text: |
+          <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
+            <p style="margin: 0.5rem 0;">
+              © 2025 Mike P. Sinn & W.I.SH.O.N.I.A. | 
+              <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #8b7355;">CC BY 4.0</a> | 
+              <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
+            </p>
+          </div>
     include-in-header:
       - text: |
           <link rel="preconnect" href="https://fonts.googleapis.com">
