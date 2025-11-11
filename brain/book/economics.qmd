@@ -185,7 +185,7 @@ This conservative estimate assumes gradual adoption (0% to 100% over 5 years) an
 
 **Total Annual Benefit**: $163.6B per year (conservative estimate)
 
-**Sensitivity Analysis**: Even under worst-case parameter assumptions (50% lower benefits, 100% higher costs), the system maintains ROI between 189:1 and 1,281:1. See [1% Treaty Cost-Effectiveness](appendix/1-percent-treaty-cost-effectiveness.qmd) for complete sensitivity analysis.
+**[Sensitivity Analysis](appendix/1-percent-treaty-cost-effectiveness.qmd)**: Even under worst-case parameter assumptions (50% lower benefits, 100% higher costs), the system maintains ROI between [189:1 and 1,281:1](appendix/1-percent-treaty-cost-effectiveness.qmd). See [1% Treaty Cost-Effectiveness](appendix/1-percent-treaty-cost-effectiveness.qmd) for complete sensitivity analysis.
 
 ### Cost-Effectiveness: Dominant Health Intervention
 
@@ -222,9 +222,9 @@ The Decentralized FDA alone achieves **463:1 return on investment**.
 This exceptional ROI comes from:
 
 - **$50.0B in annual R&D cost savings**: [82x reduction](appendix/recovery-trial.qmd) in clinical trial costs
-- **Faster access to new treatments**: 2 years instead of 17 years to market
+- **Faster access to new treatments**: [2 years instead of 17 years](appendix/dfda-assumptions.qmd) to market
 - **Better prevention through real-world data**: Continuous learning from millions of patients
-- **Enabling new therapies**: Making rare disease trials economically viable
+- **Enabling new therapies**: Making [rare disease trials](references.qmd#rare-disease-patients-300m-globally) economically viable
 
 {{< include ../figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
@@ -252,8 +252,8 @@ The 1% Treaty financing structure creates a self-funding system requiring zero n
 - **Annual Benefits**: $163.6B (Peace dividend: $113.6B + R&D savings: $50.0B)
 - **Operating Costs**: $290M annually (campaign operations and dFDA infrastructure)
 - **Net Position**: $163.3B annual surplus after all costs
-- **Lives Saved**: 26,446 annually (925,610 QALYs ÷ 35 QALYs/life)
-- **Cost per Life Saved**: Net societal benefit of `{python} cost_per_life_investor_funded_formatted` per life (negative cost indicates net profit)
+- **Lives Saved**: [26,446 annually](appendix/1-percent-treaty-cost-effectiveness.qmd) (925,610 QALYs ÷ 35 QALYs/life)
+- **Cost per Life Saved**: Net societal benefit of `{python} cost_per_life_investor_funded_formatted` per life ([negative cost](appendix/1-percent-treaty-cost-effectiveness.qmd) indicates net profit)
 
 This financing structure classifies the 1% Treaty as a **dominant health intervention** using standard health economics terminology, an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
 
@@ -420,7 +420,7 @@ $$
 \text{Relative Scale} = \frac{\$163.6\text{B (1\% Treaty conservative)}}{\sim\$15\text{B (childhood vaccinations)}} \approx 11:1
 $$
 
-This makes the 1% Treaty/dFDA system **11X larger in economic impact** than childhood vaccinations, one of the most successful public health interventions ever implemented.
+This makes the 1% Treaty/dFDA system **[11X larger in economic impact](appendix/intervention-comparison-table.qmd)** than childhood vaccinations, one of the most successful public health interventions ever implemented.
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates $163.6B in annual economic surplus (conservative case) to sustain operations and expansion without requiring ongoing charitable contributions.
 
@@ -449,13 +449,13 @@ These figures represent the mathematical consequence of maintaining current reso
 
 The 1% Treaty creates positive economic incentives across all major stakeholder groups, eliminating traditional opposition to healthcare system reform. This alignment of economic incentives is critical for political feasibility and sustainable implementation.
 
-**Key Stakeholder Benefits**:
+**Key Stakeholder Benefits** (see [Aligning Incentives](solution/aligning-incentives.qmd) for detailed analysis):
 
 - **Defense sector**: Retains 99% of current budget while gaining access to medical R&D contracts from 1% redirection
-- **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); research capacity increases 115X
-- **Insurance providers**: Net savings from reduced disease burden ($109T current economic cost)
-- **Healthcare providers**: Increased treatment options; earlier access to effective therapies
-- **Patients**: Access to clinical trials as healthcare delivery mechanism; democratized research priority-setting through wishocratic governance
+- **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity increases 115X](appendix/research-acceleration-model.qmd)
+- **Insurance providers**: Net savings from [reduced disease burden](references.qmd#disease-economic-burden-109t) ($109T current economic cost)
+- **Healthcare providers**: Increased treatment options; [earlier access to effective therapies](appendix/economic-value-of-accelerated-treatments.qmd)
+- **Patients**: Access to clinical trials as healthcare delivery mechanism; democratized research priority-setting through [wishocratic governance](solution/wishocracy.qmd)
 - **Taxpayers**: Net reduction in healthcare costs through improved R&D efficiency
 
 See [Aligning Incentives](solution/aligning-incentives.qmd) for detailed stakeholder analysis and implementation strategy.
@@ -526,7 +526,7 @@ See [Investor Risk Analysis](appendix/investor-risk-analysis.qmd) for complete r
 
 ### Governance and Accountability
 
-**DIH Treasury Governance**: Wishocratic system enabling democratic allocation of research funding
+**DIH Treasury Governance**: [Wishocratic system](solution/wishocracy.qmd) enabling democratic allocation of research funding
 
 - 8 billion potential participants (any human) vs. current centralized decision-making (200 NIH staff)
 - Quadratic voting mechanism prevents plutocratic capture
@@ -559,7 +559,7 @@ This economic analysis demonstrates that redirecting 1% of global military spend
 - **Lives saved**: 26,446 annually at net societal benefit of $6.56M per life
 - **Political feasibility**: Positive economic incentives across all major stakeholder groups
 
-**Comparative Context**: This intervention exceeds the cost-effectiveness of history's most successful public health achievements (smallpox eradication: 280:1; childhood vaccinations: 13:1) while requiring no ongoing charitable funding.
+**Comparative Context**: This intervention exceeds the cost-effectiveness of history's most successful public health achievements ([smallpox eradication: 280:1; childhood vaccinations: 13:1](appendix/intervention-comparison-table.qmd)) while requiring no ongoing charitable funding.
 
 **Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over 36 months (see [Roadmap](strategy/roadmap.qmd) for complete implementation timeline).
 
