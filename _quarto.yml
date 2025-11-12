@@ -9,9 +9,9 @@ project:
 
 book:
   title: "How to End War and Disease"
-  subtitle: "Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers"
+  subtitle: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
   author: "W.I.SH.O.N.I.A. & Mike P. Sinn"
-  # description: "How Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Get Filthy Rich"
+  # description: "How Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich"
   # cover-image: cover.jpg
   favicon: favicon.ico
   site-url: https://WarOnDisease.org
@@ -163,8 +163,8 @@ metadata:
   
   # Bibliographic metadata
   title: "How to End War and Disease"
-  subtitle: "Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers"
-  description: "Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers"
+  subtitle: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
+  description: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
   abstract: "A comprehensive guide to redirecting 1% of global military spending ($27.2B annually) to medical research through the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Demonstrates 463:1 to 1,239:1 return on investment through cost-benefit analysis, peace dividend calculations, and health economics frameworks."
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
@@ -289,9 +289,9 @@ format:
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
           <meta name="twitter:card" content="summary_large_image">
           <meta name="twitter:title" content="The Complete Idiot's Guide to Ending War and Disease">
-          <meta name="twitter:description" content="Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers">
+          <meta name="twitter:description" content="Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers">
           <meta property="og:title" content="The Complete Idiot's Guide to Ending War and Disease">
-          <meta property="og:description" content="Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers">
+          <meta property="og:description" content="Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers">
           <meta property="og:type" content="book">
   pdf:
     documentclass: scrreprt
@@ -307,7 +307,7 @@ format:
       - right=1in
     variables:
       title: "The Complete Idiot's Guide to Ending War and Disease"
-      subtitle: "Make 2000 Years of Medical Progress in 20, Get Filthy Rich, and Prevent the Apocalypse by Giving Papers"
+      subtitle: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
     include-in-header:
       text: |
         % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
