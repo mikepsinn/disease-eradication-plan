@@ -29,7 +29,7 @@ from economic_parameters import *
 
 The [conservative 463:1 ROI estimate](../economics/health-dividend.qmd) captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
 
-This analysis focuses on provable, quantifiable benefits with conservative assumptions. For the underlying calculations and NPV methodology, see [Health Dividend Calculations](health-dividend-calculations.qmd).
+This analysis focuses on provable, quantifiable benefits with conservative assumptions. For the underlying calculations and NPV methodology, see [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis).
 
 ## The Complete Case: 1,239:1 ROI (All Direct Benefits)
 
@@ -410,7 +410,7 @@ Including these would push the ROI substantially higher, but they're harder to q
 ## Related Analysis
 
 - **Conservative Case (463:1)**: See [Health Dividend](../economics/health-dividend.qmd) for the baseline NPV-adjusted ROI
-- **NPV Methodology**: See [Health Dividend Calculations](health-dividend-calculations.qmd) for 10-year NPV analysis with discount rates
+- **NPV Methodology**: See [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) for 10-year NPV analysis with discount rates
 - **Cost-Effectiveness**: See [1% Treaty Cost-Effectiveness](1-percent-treaty-cost-effectiveness.qmd) for ICER and cost-per-QALY analysis
 - **Daily Opportunity Cost**: See [Daily Opportunity Cost](dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction) for the cost of delay
 

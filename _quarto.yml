@@ -106,7 +106,6 @@ book:
     - part: "Detailed Calculations"
       chapters:
         - brain/book/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate) ~4p
-        - brain/book/appendix/health-dividend-calculations.qmd # ✅ (calculations, appropriate) ~7p
         - brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~21p
         - brain/book/appendix/research-acceleration-model.qmd # ✅ Research acceleration mechanism (115x) ~8p
         - brain/book/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✅ Personal lifetime wealth model (recommended) ~14p

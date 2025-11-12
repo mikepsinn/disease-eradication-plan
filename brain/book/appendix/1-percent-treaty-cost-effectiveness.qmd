@@ -63,7 +63,7 @@ This means for every life saved, society becomes **$6,173.4T** richer instead of
 
 **For detailed breakdown and methodology**, see:
 
-- [Health Dividend Calculations](health-dividend-calculations.qmd) - Full Jupyter notebook with NPV and ROI analysis
+- [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) - Full Jupyter notebook with NPV and ROI analysis
 - [Health Dividend Chapter](../economics/health-dividend.qmd) - Accessible overview with cost breakdown
 - [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) - Detailed mechanism and QALY model
 
@@ -398,7 +398,7 @@ For publication-quality analysis, run a Monte Carlo simulation with:
    - Total war costs: $11.4T annually
    - 1% reduction: $113.6B
 
-2. **Health Dividend (dFDA)**: [Health Dividend Calculations](health-dividend-calculations.qmd)
+2. **Health Dividend (dFDA)**: [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis)
    - Clinical trial market: ~$100.0B/year
    - 50.0% cost reduction (baseline)
    - Range: 25%-95%
@@ -512,7 +512,7 @@ The math shows it's worth trying. Even a 10% chance of success has positive expe
 **Detailed Calculations**:
 
 - [Peace Dividend Calculations](peace-dividend-calculations.qmd) - Full analysis of conflict reduction benefits
-- [Health Dividend Calculations](health-dividend-calculations.qmd) - Full analysis of dFDA R&D savings
+- [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) - Full analysis of dFDA R&D savings
 - [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) - Detailed QALY model and mechanism
 
 **Accessible Overviews**:
