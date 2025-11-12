@@ -92,26 +92,21 @@ This conservative analysis examines the minimum expected return by counting only
 
 #### ROI Calculation Methodology
 
-The return on investment (ROI) is calculated using net present value (NPV) analysis with a 5% discount rate over 10 years:
+The return on investment (ROI) is calculated using net present value (NPV) analysis with discounting over a 10-year horizon:
 
 $$
-\text{ROI} = \frac{\text{NPV of Benefits}}{\text{NPV of Costs}} = \frac{\sum_{t=1}^{10} \frac{B_t}{(1+r)^t}}{\sum_{t=0}^{10} \frac{C_t}{(1+r)^t}}
+\text{ROI} = \frac{\text{NPV of Benefits}}{\text{NPV of Costs}}
 $$
 
-where:
-
-- $B_t$ = Annual benefits in year $t$
-- $C_t$ = Annual costs in year $t$
-- $r$ = 5% discount rate
-- $t$ = Year (0 = initial investment, 1-10 = operational years)
-
-For the conservative case (463:1), we calculate:
+For the conservative case (463:1):
 
 $$
 \text{ROI}_{\text{conservative}} = \frac{\$249.3\text{B}}{\$538\text{M}} = 463:1
 $$
 
-where [$249.3B](appendix/dfda-cost-benefit-analysis.qmd) is the NPV of benefits and [$538M](appendix/dfda-cost-benefit-analysis.qmd) is the NPV of costs. All detailed calculations are in the [Economic Models Notebook](./economics/economic_models.ipynb).
+where [$249.3B](appendix/dfda-cost-benefit-analysis.qmd) is the NPV of benefits and [$538M](appendix/dfda-cost-benefit-analysis.qmd) is the NPV of costs over 10 years.
+
+**For complete NPV methodology including discount rates, adoption curves, detailed cost breakdowns, and sensitivity analysis**, see [dFDA Cost-Benefit Analysis](appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology) and [Interactive Financial Modeling & Computational Analysis](appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis).
 
 #### The Funding Source (Peace Dividend)
 
@@ -146,25 +141,11 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 #### The Investment (dFDA Infrastructure)
 
 - **Total Cost (NPV)**: 10-year discounted cost to build and operate = **[$538M](appendix/dfda-cost-benefit-analysis.qmd)**
+  - Upfront costs: **[$270M](appendix/dfda-cost-benefit-analysis.qmd)** (Core dFDA Platform: [$40M](appendix/dfda-cost-benefit-analysis.qmd) + DIH Initiatives: [$230M](appendix/dfda-cost-benefit-analysis.qmd))
+  - Annual operational costs: **[$40M/year](appendix/dfda-cost-benefit-analysis.qmd)** (discounted to [$268M NPV](appendix/dfda-cost-benefit-analysis.qmd) over 10 years)
 - **Funding Sustainability**: Annual captured dividend ([$27.2B](appendix/peace-dividend-calculations.qmd)) covers annual operational cost ([$40M](appendix/dfda-cost-benefit-analysis.qmd)) **680 times over**
 
-**NPV Cost Breakdown** (10-year discounted at 5%, conservative estimate):
-
-| Cost Component | Amount | Details |
-|:---|---:|:---|
-| **Upfront Costs** | | |
-| [Core dFDA Platform Build](appendix/dfda-cost-benefit-analysis.qmd) | [$40M](appendix/dfda-cost-benefit-analysis.qmd) | Platform development, testing, regulatory approval |
-| [DIH Initiatives Setup](appendix/dfda-cost-benefit-analysis.qmd) | [$230M](appendix/dfda-cost-benefit-analysis.qmd) | Wishocracy system, governance infrastructure, legal framework |
-| **Total Upfront** | **[$270M](appendix/dfda-cost-benefit-analysis.qmd)** | One-time implementation costs (Year 0) |
-| **Annual Operating Costs** | | |
-| [dFDA Platform Operations](appendix/dfda-cost-benefit-analysis.qmd) | [$19M/year](appendix/dfda-cost-benefit-analysis.qmd) | Maintenance, infrastructure, regulatory coordination (mid-range estimate) |
-| [DIH Annual Operations](appendix/dfda-cost-benefit-analysis.qmd) | [$21M/year](appendix/dfda-cost-benefit-analysis.qmd) | Governance, community support, treasury management |
-| **Total Annual Opex** | **[$40M/year](appendix/dfda-cost-benefit-analysis.qmd)** | Ongoing operational costs |
-| **NPV Calculations** | | |
-| Present Value of Opex | [$268M](appendix/dfda-cost-benefit-analysis.qmd) | 10-year opex discounted at 5%, assumes 5-year linear adoption ramp |
-| **Total NPV Cost** | **[$538M](appendix/dfda-cost-benefit-analysis.qmd)** | Upfront ($270M) + PV of opex ($268M) |
-
-This conservative estimate assumes gradual adoption (0% to 100% over 5 years) and mid-range operational costs. For detailed NPV methodology including sensitivity to discount rates and adoption curves, see [dFDA Cost-Benefit Analysis](appendix/dfda-cost-benefit-analysis.qmd).
+This conservative estimate assumes gradual adoption (0% to 100% over 5 years) and mid-range operational costs. **For detailed cost breakdowns, ROM estimates, and sensitivity analysis**, see [dFDA Cost-Benefit Analysis](appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
 
 #### The Return (Health & Wealth)
 
@@ -193,13 +174,17 @@ $$
 \text{ICER} = \frac{\Delta \text{Cost}}{\Delta \text{QALYs}} = \frac{C_{\text{intervention}} - C_{\text{baseline}}}{Q_{\text{intervention}} - Q_{\text{baseline}}}
 $$
 
-For the 1% Treaty/dFDA system:
+For the dFDA Infrastructure (using annual figures):
 
 $$
-\text{ICER} = \frac{-\$249.3\text{B}}{840,000 \text{ QALYs}} = -\$296,786 \text{ per QALY}
+\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840,000 \text{ QALYs}} = -\$59,476 \text{ per QALY}
 $$
 
-where [-$249.3B](appendix/dfda-cost-benefit-analysis.qmd) represents net cost savings and [840,000 QALYs](appendix/1-percent-treaty-cost-effectiveness.qmd) represents annual quality-adjusted life years gained. The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard [willingness-to-pay thresholds are $50,000-150,000 per QALY](references.qmd#icer-qaly-methodology); interventions that save costs while gaining QALYs are unconditionally recommended. For comprehensive ICER analysis including alternative funding perspectives, see [dFDA Cost-Benefit Analysis](appendix/dfda-cost-benefit-analysis.qmd).
+where the net incremental cost is calculated as platform operational costs ([$40M/year](appendix/dfda-cost-benefit-analysis.qmd)) minus R&D savings ([$50.0B/year](appendix/dfda-cost-benefit-analysis.qmd)) = -$49.96B annually, and [840,000 QALYs](appendix/1-percent-treaty-cost-effectiveness.qmd) represents annual quality-adjusted life years gained.
+
+The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard [willingness-to-pay thresholds are $50,000-150,000 per QALY](references.qmd#icer-qaly-methodology); interventions that save costs while gaining QALYs are unconditionally recommended.
+
+**For comprehensive ICER analysis including sensitivity analysis across multiple scenarios, alternative funding perspectives, and detailed methodology**, see [dFDA ICER Analysis](appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis---cost-utility-framework).
 
 #### Comparative Cost per Life Saved
 
