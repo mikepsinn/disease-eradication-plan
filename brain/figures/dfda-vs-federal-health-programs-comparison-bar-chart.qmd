@@ -1,0 +1,127 @@
+```{python}
+#| echo: false
+#| warning: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# --- Find project root dynamically ---
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# --- Import centralized style ---
+import sys
+sys.path.insert(0, str(project_root / 'brain' / 'figures'))
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
+)
+
+setup_chart_style()
+
+# --- Data (annual costs in millions) ---
+programs = [
+    'dFDA Infrastructure\n(Lean Ecosystem)',
+    'Cancer Moonshot\nInitiative',
+    'NIH "All of Us"\nResearch Program',
+    'National Cancer\nInstitute (NCI)'
+]
+costs = [40, 257, 500, 7200]  # in millions
+multipliers = ['1x', '6.4x', '12.5x', '180x']
+
+# --- Create figure ---
+fig, ax = plt.subplots(figsize=(12, 8))
+
+y_pos = np.arange(len(programs))
+
+# Create horizontal bars
+bars = ax.barh(
+    y_pos,
+    costs,
+    color=COLOR_WHITE,
+    edgecolor=COLOR_BLACK,
+    linewidth=2.5,
+    height=0.7
+)
+
+# Highlight dFDA with solid fill
+bars[0].set_facecolor(COLOR_BLACK)
+bars[0].set_hatch(None)
+
+# Add pattern to others
+for bar in bars[1:]:
+    bar.set_hatch(PATTERN_DIAGONAL)
+
+# --- Add value labels ---
+for i, (cost, mult) in enumerate(zip(costs, multipliers)):
+    # Cost label
+    if cost < 2000:  # Small/medium bars: label outside (to the right)
+        ax.text(
+            cost + 200, i,
+            f'${cost}M/year\n({mult})',
+            ha='left', va='center',
+            fontsize=24, fontweight='bold',
+            color=COLOR_BLACK
+        )
+    else:  # Very large bars (NCI): label inside (white on pattern)
+        ax.text(
+            cost / 2, i,
+            f'${cost:,}M/year\n({mult})',
+            ha='center', va='center',
+            fontsize=24, fontweight='bold',
+            color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                      edgecolor=COLOR_BLACK, linewidth=2)
+        )
+
+# --- Styling ---
+ax.set_title(
+    'dFDA Cost vs Other Federal Health Programs\nAnnual Operating Budget Comparison',
+    fontsize=34, fontweight='bold',
+    color=COLOR_BLACK, pad=25
+)
+
+ax.set_xlabel(
+    'Annual Budget ($ Millions)',
+    fontsize=28, fontweight='bold',
+    color=COLOR_BLACK, labelpad=15
+)
+
+ax.set_yticks(y_pos)
+ax.set_yticklabels(programs, fontsize=22, fontweight='bold')
+
+# Remove x-axis (data is labeled)
+ax.set_xticks([])
+ax.spines['bottom'].set_visible(False)
+
+# Clean up chart
+clean_spines(ax)
+ax.spines['left'].set_linewidth(2.5)
+ax.tick_params(axis='y', length=0)
+
+# Invert y-axis so dFDA is at top
+ax.invert_yaxis()
+
+# Add watermark
+add_watermark(fig)
+
+# --- Save figure ---
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'dfda-vs-federal-health-programs-comparison-bar-chart.png'
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata
+from _chart_style import add_png_metadata
+add_png_metadata(
+    output_path,
+    title="dFDA Cost vs Other Federal Health Programs",
+    description="dFDA at $40M/year is 180x less than NCI, 12.5x less than All of Us program"
+)
+
+plt.show()
+```

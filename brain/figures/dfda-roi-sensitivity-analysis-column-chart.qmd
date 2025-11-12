@@ -1,0 +1,126 @@
+```{python}
+#| echo: false
+#| warning: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# --- Find project root dynamically ---
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# --- Import centralized style ---
+import sys
+sys.path.insert(0, str(project_root / 'brain' / 'figures'))
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL
+)
+
+setup_chart_style()
+
+# --- Data ---
+scenarios = ['Best Case\n(Lowest Costs)', 'Base Case\n(Lean Ecosystem)', 'Worst Case\n(Highest Costs)']
+roi_values = [2577, 463, 66]
+costs = ['$19.4M/year', '$48M/year', '$753M/year']
+
+# --- Create figure ---
+fig, ax = plt.subplots(figsize=(10, 7))
+
+# Create bars with patterns to distinguish
+bars = ax.bar(
+    range(len(scenarios)),
+    roi_values,
+    color=COLOR_WHITE,
+    edgecolor=COLOR_BLACK,
+    linewidth=2.5,
+    width=0.7
+)
+
+# Different patterns for each bar
+bars[0].set_hatch(None)  # White fill for best case
+bars[1].set_hatch(PATTERN_DIAGONAL)  # Diagonal for base case (emphasis)
+bars[2].set_hatch(PATTERN_HORIZONTAL)  # Horizontal for worst case
+
+# --- Add value labels above bars ---
+for i, (roi, cost) in enumerate(zip(roi_values, costs)):
+    # ROI value above bar
+    ax.text(
+        i, roi + 130,
+        f'{roi}:1',
+        ha='center', va='bottom',
+        fontsize=42, fontweight='bold',
+        color=COLOR_BLACK
+    )
+
+    # Annual cost - place ABOVE short bars, INSIDE tall bars
+    if roi < 200:  # Short bar - place label above
+        ax.text(
+            i, roi + 10,
+            cost,
+            ha='center', va='bottom',
+            fontsize=20, fontweight='bold',
+            color=COLOR_BLACK
+        )
+    else:  # Tall bar - place label inside
+        ax.text(
+            i, roi/2,
+            cost,
+            ha='center', va='center',
+            fontsize=22, fontweight='bold',
+            color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                      edgecolor=COLOR_BLACK, linewidth=2)
+        )
+
+# --- Styling ---
+ax.set_title(
+    'dFDA Return on Investment\nAcross Cost Scenarios',
+    fontsize=36, fontweight='bold',
+    color=COLOR_BLACK, pad=25
+)
+
+ax.set_ylabel(
+    'Return on Investment\n($ Saved per $ Spent)',
+    fontsize=28, fontweight='bold',
+    color=COLOR_BLACK, labelpad=15
+)
+
+ax.set_xticks(range(len(scenarios)))
+ax.set_xticklabels(scenarios, fontsize=24, fontweight='bold')
+
+# Set y-axis limits to give space for labels above
+ax.set_ylim(0, max(roi_values) * 1.15)
+
+# Remove y-axis (data is labeled)
+ax.set_yticks([])
+ax.spines['left'].set_visible(False)
+
+# Clean up chart
+clean_spines(ax)
+ax.spines['bottom'].set_linewidth(2.5)
+ax.tick_params(axis='x', length=0)  # Remove x-axis ticks
+
+# Add watermark
+add_watermark(fig)
+
+# --- Save figure ---
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'dfda-roi-sensitivity-analysis-column-chart.png'
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata
+from _chart_style import add_png_metadata
+add_png_metadata(
+    output_path,
+    title="dFDA Return on Investment Across Cost Scenarios",
+    description="ROI ranges from 66:1 (worst case) to 2,577:1 (best case), with base case at 463:1"
+)
+
+plt.show()
+```

@@ -1,0 +1,159 @@
+```{python}
+#| echo: false
+#| warning: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# --- Find project root dynamically ---
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# --- Import centralized style ---
+import sys
+sys.path.insert(0, str(project_root / 'brain' / 'figures'))
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_DOTS
+)
+
+setup_chart_style()
+
+# --- Data (upfront costs in millions) ---
+components = [
+    'Global Data\nIntegration',
+    'Bounty &\nPrize Program',
+    'Legal/Regulatory\nHarmonization',
+    'Global Rollout\n& Adoption',
+    'DAO Governance\nOperations'
+]
+
+# Upfront costs in millions
+best_case = [2, 1, 1.5, 0, 0]
+medium_case = [125, 15, 60, 12, 1]
+worst_case = [1500, 50, 300, 125, 6]
+
+# --- Create figure ---
+fig, ax = plt.subplots(figsize=(14, 8))
+
+x = np.arange(len(components))
+width = 0.25
+
+# Create grouped bars
+bars1 = ax.bar(x - width, best_case, width, label='Best Case',
+               color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, hatch=None)
+bars2 = ax.bar(x, medium_case, width, label='Medium Case',
+               color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, hatch=PATTERN_DIAGONAL)
+bars3 = ax.bar(x + width, worst_case, width, label='Worst Case',
+               color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, hatch=PATTERN_HORIZONTAL)
+
+# --- Add value labels on bars ---
+def add_labels(bars, values):
+    for bar, val in zip(bars, values):
+        if val == 0:
+            continue
+        height = bar.get_height()
+
+        # Format value
+        if val >= 1000:
+            label = f'${val/1000:.1f}B'
+            fontsize = 16
+        elif val >= 100:
+            label = f'${val:.0f}M'
+            fontsize = 16
+        else:
+            label = f'${val:.0f}M'
+            fontsize = 15
+
+        # For tall bars (>100M), place label inside at top; for short bars, above
+        if val > 100:
+            y_pos = height * 0.85  # Inside, near top
+            va = 'center'
+        else:
+            y_pos = height + 15  # Above
+            va = 'bottom'
+
+        ax.text(
+            bar.get_x() + bar.get_width()/2., y_pos,
+            label,
+            ha='center', va=va,
+            fontsize=fontsize, fontweight='bold',
+            color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                      edgecolor=COLOR_BLACK, linewidth=1.5)
+        )
+
+add_labels(bars1, best_case)
+add_labels(bars2, medium_case)
+add_labels(bars3, worst_case)
+
+# --- Styling ---
+ax.set_title(
+    'dFDA Broader Initiative Costs\nUpfront Investment by Scenario',
+    fontsize=34, fontweight='bold',
+    color=COLOR_BLACK, pad=25
+)
+
+ax.set_ylabel(
+    'Upfront Cost\n($ Millions)',
+    fontsize=26, fontweight='bold',
+    color=COLOR_BLACK, labelpad=15
+)
+
+ax.set_xticks(x)
+ax.set_xticklabels(components, fontsize=20, fontweight='bold')
+
+# Set y-axis with log scale for better visualization
+ax.set_yscale('log')
+ax.set_ylim(0.5, 3000)
+
+# Customize y-axis
+y_ticks = [1, 10, 100, 1000]
+ax.set_yticks(y_ticks)
+ax.set_yticklabels([f'${y}M' if y < 1000 else f'${y/1000:.1f}B' for y in y_ticks], fontsize=18)
+ax.spines['left'].set_linewidth(2.5)
+
+# Add legend
+legend = ax.legend(loc='upper right', fontsize=20, frameon=True, edgecolor=COLOR_BLACK, facecolor=COLOR_WHITE)
+legend.get_frame().set_linewidth(2)
+
+# Clean up chart
+clean_spines(ax)
+ax.spines['bottom'].set_linewidth(2.5)
+ax.tick_params(axis='x', length=0)
+ax.tick_params(axis='y', length=6, width=2)
+
+# Add grid for readability
+ax.grid(axis='y', alpha=0.3, linestyle='--', linewidth=1, color=COLOR_BLACK)
+ax.set_axisbelow(True)
+
+# Add watermark
+add_watermark(fig)
+
+# Add note about total costs
+fig.text(
+    0.5, 0.02,
+    'Total Initiative Cost (excluding core platform): Best Case $4.5M | Medium Case $213M | Worst Case $1.98B',
+    ha='center', fontsize=16, style='italic', color=COLOR_BLACK
+)
+
+# --- Save figure ---
+output_dir = project_root / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'dfda-broader-initiative-costs-scenario-comparison-column-chart.png'
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata
+from _chart_style import add_png_metadata
+add_png_metadata(
+    output_path,
+    title="dFDA Broader Initiative Costs by Scenario",
+    description="Upfront costs range from $4.5M (best) to $1.98B (worst) across 5 major components"
+)
+
+plt.show()
+```
