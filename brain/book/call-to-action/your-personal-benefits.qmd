@@ -110,6 +110,23 @@ This isn't a charity. It's a deal. You're being offered millions in lifetime wea
 
 It's the best deal anyone has ever offered you.
 
+### What You're Actually Making Per Hour
+
+You're not being asked to donate your time. You're being offered the highest-paying job in human history.
+
+**Time Investment:**
+- Reading this book: `{python} book_reading_time_hours_formatted` hours (`{python} f"{TOTAL_BOOK_WORDS:,}"` words at `{python} BOOK_READING_SPEED_WPM` words/minute)
+- Taking actions: `{python} action_time_total_hours_formatted` hours ([Vote `{python} ACTION_TIME_VOTE_MINUTES` min + Invest `{python} ACTION_TIME_INVEST_MINUTES` min + Recruit `{python} ACTION_TIME_RECRUIT_MINUTES` min](../call-to-action/three-actions.qmd))
+- **Total: `{python} total_time_investment_hours_formatted` hours**
+
+**Effective Hourly Rate: `{python} effective_hourly_rate_thousands_formatted`/hour**
+
+This is:
+- **`{python} effective_hourly_rate_vs_wage_multiplier_formatted`x** the average US wage (~$`{python} AVERAGE_US_HOURLY_WAGE`/hour)
+- **`{python} effective_hourly_rate_vs_ceo_multiplier_formatted`x** a CEO's hourly rate (~$`{python} f"{TYPICAL_CEO_HOURLY_RATE:,}"`/hour)
+
+The catch? You only get paid if the plan works. But if it does, you just made `{python} effective_hourly_rate_thousands_formatted`/hour for `{python} total_time_investment_hours_formatted` hours of work.
+
 **Your choice. But choose fast.** While you were reading this, another person just died.
 
 ---

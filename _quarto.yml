@@ -17,6 +17,10 @@ book:
   site-url: https://WarOnDisease.org
   #repo-url: https://github.com/mikepsinn/decentralized-institutes-of-health
   #issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
+  navbar:
+    right:
+      - text: "DIH.earth"
+        href: https://DIH.earth
   sidebar:
     collapse-level: 1
   chapters:

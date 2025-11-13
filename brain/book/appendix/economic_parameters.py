@@ -866,6 +866,47 @@ ww2_bond_return_pct_formatted = format_percentage(WW2_BOND_RETURN_PCT)
 
 
 # ---
+# BOOK READING TIME & HOURLY RATE CALCULATIONS
+# ---
+
+# Book reading time parameters
+# Source: word_count.ps1 output
+TOTAL_BOOK_WORDS = 171121  # Total words in the book
+BOOK_READING_SPEED_WPM = 200  # Words per minute (conservative for non-fiction)
+BOOK_READING_TIME_HOURS = (TOTAL_BOOK_WORDS / BOOK_READING_SPEED_WPM) / 60  # ~14.3 hours
+
+# Action time parameters
+# Source: brain/book/call-to-action/three-actions.qmd
+ACTION_TIME_VOTE_MINUTES = 2
+ACTION_TIME_INVEST_MINUTES = 10
+ACTION_TIME_RECRUIT_MINUTES = 15
+ACTION_TIME_TOTAL_MINUTES = ACTION_TIME_VOTE_MINUTES + ACTION_TIME_INVEST_MINUTES + ACTION_TIME_RECRUIT_MINUTES  # 30 minutes
+ACTION_TIME_TOTAL_HOURS = ACTION_TIME_TOTAL_MINUTES / 60  # 0.5 hours
+
+# Total time investment
+TOTAL_TIME_INVESTMENT_HOURS = BOOK_READING_TIME_HOURS + ACTION_TIME_TOTAL_HOURS  # ~14.8 hours
+
+# Effective hourly rate calculation (20-year scenario, age 30, $50K income, 1% Treaty)
+# Using the lifetime benefit value from your-personal-benefits.qmd
+EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT_MILLIONS = 4.3  # $4.3M lifetime benefit
+EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT_MILLIONS * 1_000_000
+EFFECTIVE_HOURLY_RATE = EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT / TOTAL_TIME_INVESTMENT_HOURS  # ~$291K/hour
+
+# Comparison benchmarks
+AVERAGE_US_HOURLY_WAGE = 30  # ~$30/hour average US wage
+TYPICAL_CEO_HOURLY_RATE = 10000  # ~$10,000/hour typical CEO rate
+EFFECTIVE_HOURLY_RATE_VS_WAGE_MULTIPLIER = EFFECTIVE_HOURLY_RATE / AVERAGE_US_HOURLY_WAGE  # ~9,711x
+EFFECTIVE_HOURLY_RATE_VS_CEO_MULTIPLIER = EFFECTIVE_HOURLY_RATE / TYPICAL_CEO_HOURLY_RATE  # ~29x
+
+# Formatted values for display
+effective_hourly_rate_thousands_formatted = f"${EFFECTIVE_HOURLY_RATE / 1000:.0f}K"
+total_time_investment_hours_formatted = f"{TOTAL_TIME_INVESTMENT_HOURS:.1f}"
+book_reading_time_hours_formatted = f"{BOOK_READING_TIME_HOURS:.1f}"
+action_time_total_hours_formatted = f"{ACTION_TIME_TOTAL_HOURS:.1f}"
+effective_hourly_rate_vs_wage_multiplier_formatted = f"{EFFECTIVE_HOURLY_RATE_VS_WAGE_MULTIPLIER:.0f}"
+effective_hourly_rate_vs_ceo_multiplier_formatted = f"{EFFECTIVE_HOURLY_RATE_VS_CEO_MULTIPLIER:.0f}"
+
+# ---
 # PERSONAL LIFETIME WEALTH CALCULATIONS
 # ---
 

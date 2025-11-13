@@ -237,6 +237,20 @@ a:hover {
     border-bottom-color: var(--book-accent);
 }
 
+/* Navigation menu links - no underline on hover */
+nav a,
+nav a:hover,
+.sidebar nav a,
+.sidebar nav a:hover,
+.quarto-sidebar nav a,
+.quarto-sidebar nav a:hover,
+.navbar-nav a,
+.navbar-nav a:hover,
+.nav-link,
+.nav-link:hover {
+    border-bottom: none !important;
+}
+
 /* Panel Tabset Enhancement - Minimal */
 .panel-tabset .nav-tabs {
     border-bottom: 1px solid var(--book-border);
