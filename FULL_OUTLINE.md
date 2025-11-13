@@ -1447,7 +1447,7 @@
 
 ---
 
-## File: `brain/book/appendix/right-to-trial-fda-upgrade-act.qmd`
+## File: `dih-economic-models/appendix/right-to-trial-fda-upgrade-act.qmd`
 
 - Quarto executes from project root (execute-dir: project in _book.yml)
   - TITLE I — SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
@@ -1747,7 +1747,7 @@
 - Create and pivot the DataFrame
   - Rigorous Financial Model: Net Present Value (NPV) Analysis
 - NPV Model Parameters
-- Source: brain/book/appendix/economic_parameters.py
+- Source: dih-economic-models/economic_parameters.py
 - Costs (in billions USD) - from economic_parameters.py
 - Savings (in billions USD) - from economic_parameters.py
 - Financial Parameters - from economic_parameters.py

@@ -54,7 +54,7 @@ book:
         - brain/book/proof.qmd # ✅ Part III Intro ~6p
         - brain/book/proof/historical-precedents.qmd # ✅ Historical Precedent ~8p
         - brain/book/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
-        - brain/book/economics.qmd # ✅ Rigorous economic analysis for foundations: 463:1-1,239:1 ROI, NPV methodology, risk analysis, governance framework, peer-reviewed evidence ~16p
+        - dih-economic-models/economics/economics.qmd # ✅ Rigorous economic analysis for foundations: 463:1-1,239:1 ROI, NPV methodology, risk analysis, governance framework, peer-reviewed evidence ~16p
         - brain/book/call-to-action/your-personal-benefits.qmd # ✅ Your ROI ~2p
         - brain/book/futures.qmd # ✅ Intro to Paths ~1p
         - brain/book/futures/moronia.qmd # ✅ Path A: Moronia ~10p
@@ -68,7 +68,7 @@ book:
         - brain/book/legal/securities-law.qmd # ✅ Securities Law ~6p
         - brain/book/legal/election-law.qmd # ✅ Election Law ~6p
         - brain/book/legal/treaty-framework.qmd # ✅ Treaty Framework ~5p
-        - brain/book/economics/victory-bonds.qmd # ✅ The Investment Vehicle (formal by design) ~14p
+        - dih-economic-models/economics/victory-bonds.qmd # ✅ The Investment Vehicle (formal by design) ~14p
         - brain/book/strategy/legislation-package.qmd # ✅ Legislation Package ~7p
         - brain/book/strategy/global-referendum.qmd # ✅ Global Referendum (IMPROVED) ~10p
         - brain/book/strategy/viral-marketing.qmd # ✅ PROMOTED ~5p
@@ -93,37 +93,37 @@ book:
 
     - part: "Policy & Regulatory"
       chapters:
-        - brain/book/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
+        - dih-economic-models/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
         - brain/book/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
 
     # Economic Analysis
     - part: "Economic Analysis"
       chapters:
-        - brain/book/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
-        - brain/book/economics/health-dividend.qmd # ✅ (good voice) ~3p
-        - brain/book/appendix/humanity-budget-overview.qmd # ✅ (IMPROVED) ~2p
-        - brain/book/appendix/global-government-medical-research-spending.qmd # ✅ (EXCELLENT voice) ~8p
-        - brain/book/appendix/global-clinical-trial-spending-by-phase.qmd # ✅ Comprehensive spending analysis ~17p
-        - brain/book/appendix/clinical-trial-participants.qmd # ✅ The 0.06% problem ~7p
+        - dih-economic-models/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
+        - dih-economic-models/economics/health-dividend.qmd # ✅ (good voice) ~3p
+        - dih-economic-models/appendix/humanity-budget-overview.qmd # ✅ (IMPROVED) ~2p
+        - dih-economic-models/appendix/global-government-medical-research-spending.qmd # ✅ (EXCELLENT voice) ~8p
+        - dih-economic-models/appendix/global-clinical-trial-spending-by-phase.qmd # ✅ Comprehensive spending analysis ~17p
+        - dih-economic-models/appendix/clinical-trial-participants.qmd # ✅ The 0.06% problem ~7p
 
     - part: "Detailed Calculations"
       chapters:
-        - brain/book/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate) ~4p
-        - brain/book/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~21p
-        - brain/book/appendix/research-acceleration-model.qmd # ✅ Research acceleration mechanism (115x) ~8p
-        - brain/book/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✅ Personal lifetime wealth model (recommended) ~14p
-        - brain/book/appendix/dfda-cost-benefit-analysis.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
-        - brain/book/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
-        - brain/book/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
-        - brain/book/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
-        - brain/book/appendix/dfda-qaly-model.qmd # ✅ (comprehensive QALY model - includes dfda-comparative-cost-effectiveness & dfda-daily-opportunity-cost) ~38p
+        - dih-economic-models/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate) ~4p
+        - dih-economic-models/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~21p
+        - dih-economic-models/appendix/research-acceleration-model.qmd # ✅ Research acceleration mechanism (115x) ~8p
+        - dih-economic-models/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✅ Personal lifetime wealth model (recommended) ~14p
+        - dih-economic-models/appendix/dfda-cost-benefit-analysis.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
+        - dih-economic-models/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
+        - dih-economic-models/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
+        - dih-economic-models/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
+        - dih-economic-models/appendix/dfda-qaly-model.qmd # ✅ (comprehensive QALY model - includes dfda-comparative-cost-effectiveness & dfda-daily-opportunity-cost) ~38p
 
     - part: "Financial Planning"
       chapters:
-        - brain/book/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
-        - brain/book/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
-        - brain/book/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p
-        - brain/book/economics/health-savings-sharing-model.qmd # ✅ (EXCELLENT voice - "diseased cash cow") ~7p
+        - dih-economic-models/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
+        - dih-economic-models/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
+        - dih-economic-models/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p
+        - dih-economic-models/economics/health-savings-sharing-model.qmd # ✅ (EXCELLENT voice - "diseased cash cow") ~7p
         - brain/book/appendix/fundraising-strategy.qmd # ✅ (IMPROVED - "$2.5B vending machine" analogy) ~13p
 
     # Organizational Resources
@@ -251,7 +251,7 @@ execute:
   cache: false
   freeze: auto
   # Send all generated figures to a central directory
-  fig-path: "brain/figures/"
+  fig-path: "dih-economic-models/figures/"
 
 # Tell Quarto to use the project's virtual environment
 jupyter: dih-project-kernel

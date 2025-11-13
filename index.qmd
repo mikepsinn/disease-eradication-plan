@@ -24,9 +24,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -340,7 +340,7 @@ This shopping list includes:
 Meanwhile, humans spend [$67.5B on medical research](brain/book/appendix/global-government-medical-research-spending.qmd).
 That's [**40 times less**](brain/book/problem.qmd#the-1205t-death-toilet) on curing all diseases combined than humans spend on new ways to create corpses.
 
-{{< include brain/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
+{{< include dih-economic-models/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
 
 The Pentagon alone has [**lost** \$2.5 trillion](brain/book/problem/cost-of-war.qmd).
 Not spent.
@@ -379,7 +379,7 @@ It gets dumber.
 2.  **[The Decentralized Institute of Health (DIH) Treasury](brain/book/solution/dih.qmd)** = Holds the money and uses a new system of collective budgeting called [Wishocracy](brain/book/solution/wishocracy.qmd) where everyone votes on budget allocation rules (e.g., "70% to patient subsidies"), then patients determine specific funding by choosing which trials to join.
 3.  **[The Decentralized FDA (dFDA)](brain/book/solution/dfda.qmd)** = A new and improved FDA that ranks treatments by real-world effectiveness and enables patients to effortlessly participate in global decentralized clinical trials.
 
-<!-- {{< include brain/figures/three-ingredients-system-diagram.qmd >}} -->
+<!-- {{< include dih-economic-models/figures/three-ingredients-system-diagram.qmd >}} -->
 
 ### The 1% Treaty
 
@@ -511,7 +511,7 @@ If the treaty fails, investors lose their money. But they'll be too dead from pr
 - Cocaine Trafficking: 90% (but risky)
 - **[VICTORY Bonds: 271.8%](brain/book/economics/victory-bonds.qmd) (and legal)**
 
-{{< include brain/figures/victory-bonds-roi-projection-bar-chart.qmd >}}
+{{< include dih-economic-models/figures/victory-bonds-roi-projection-bar-chart.qmd >}}
 
 Here's the deal you offer investors:
 
@@ -656,7 +656,7 @@ You stop paying smart humans to pretend problems are complicated. You start payi
   - 140,000 QALYs from actually knowing which treatments work instead of guessing (your current method)
   - 500,000 QALYs from curing things you previously ignored because "not profitable enough" (like there's a profit threshold for not dying - "Sorry, your orphan disease only affects 50,000 people, we need at least 100,000 to justify the paperwork")
 
-{{< include brain/figures/health-interventions-roi-comparison-column-chart.qmd >}}
+{{< include dih-economic-models/figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
 This beats [smallpox eradication (280:1) and childhood vaccinations (13:1)](brain/book/appendix/dfda-cost-benefit-analysis.qmd), which were humanity's previous greatest hits in the "not dying" genre.
 
@@ -664,7 +664,7 @@ This beats [smallpox eradication (280:1) and childhood vaccinations (13:1)](brai
 
 *When You Divide By Zero, Capitalism Achieves Enlightenment*
 
-{{< include brain/figures/self-funding-roi-comparison-column-chart.qmd >}}
+{{< include dih-economic-models/figures/self-funding-roi-comparison-column-chart.qmd >}}
 
 When you steal money from the explosion budget instead of other good stuff people want, something beautiful happens: the return on investment becomes ∞.
 
@@ -718,7 +718,7 @@ The best idea would be converting 100% of military spending to medical research,
 
 Unfortunately, that requires humans to stop being humans. So you settle for the 2nd best idea: tricking humans into accidentally saving themselves while trying to get rich.
 
-{{< include brain/figures/public-health-interventions-economic-benefit-comparison-column-chart.qmd >}}
+{{< include dih-economic-models/figures/public-health-interventions-economic-benefit-comparison-column-chart.qmd >}}
 
 The $163.6B annual benefit is like finding out your lottery ticket is also a cure for cancer and makes you better looking.
 
@@ -761,7 +761,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 - [**You personally get $4.3M in lifetime wealth and 72 extra years of life**](brain/book/call-to-action/your-personal-benefits.qmd) (yes, you specifically)
 - Death becomes optional (terms and conditions apply)
 
-{{< include brain/figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
+{{< include dih-economic-models/figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
 
 The treaty percentage negotiated determines whether you get millions or generational wealth. The difference between 1% and 5% is $12M per person. This is the most important economic policy decision of the 21st century.
 
