@@ -1,0 +1,90 @@
+/.quarto/
+**/*.quarto_ipynb
+# Environment variables
+.env
+.env*.local
+.dev.vars
+.DS_Store
+
+# External repositories
+dih-ops/
+
+# Node modules
+node_modules/
+
+# Temporary files
+temp-repo/
+
+# Logs
+*.log
+
+# IDE specific files
+.vscode/
+.idea/
+.claude/settings.local.json  # Keep user-specific settings local
+# But commit .claude/commands/ to share slash commands with team
+
+# Node rules:
+## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+## Dependency directory
+## Commenting this out is preferred by some people, see
+## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
+node_modules
+
+# Book build output
+_book
+
+# eBook build output
+*.epub
+*.mobi
+*.pdf
+/.idea
+/venv/
+__pycache__
+backups/
+tmp/response.md
+.article-cache.json
+.voltagent
+lint-errors.txt
+
+# Quarto build artifacts
+/_site/
+/_book/
+.quarto/
+/.quarto/
+**/*.quarto_ipynb
+site_libs/
+index.html
+brain/figures/**/*.html
+
+# Ignore stray HTML and _files directories from `quarto preview`
+# but DON'T ignore them if they are in the _book directory
+*_files/
+brain/book/**/*.html
+_book/
+libs/
+index.tex
+_freeze/
+.venv
+presentation.html
+presentation.pptx
+~$presentation.pptx
+landing-page.html
+index.aux
+index.toc
+nul
+dih-index.html
+!apps/**/*.html
+.claude/settings.local.json
+.jupyter_cache/
+*.tex
+*.aux
+
+# Netlify
+.netlify/
+netlify/build-pdf.log
+quarto-linux-amd64.deb
+.deno-kv/
+_site/
