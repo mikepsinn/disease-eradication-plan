@@ -606,30 +606,25 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
    HIDE METADATA FROM DISPLAY (but keep for SEO)
    ========================================== */
 
-/* Hide dates, abstract, keywords, and description from visual display
+/* Hide dates, abstract, and keywords from visual display
    Note: Search engines will still index these via HTML meta tags
-   and the YAML metadata, so SEO is not affected */
+   and the YAML metadata, so SEO is not affected
+   Descriptions are now displayed on the page */
 .quarto-title-block .quarto-title-meta-date,
 .quarto-title-block .quarto-title-meta-contents:has(.date),
 .quarto-title-block .date,
 .quarto-title-block .abstract,
 .quarto-title-block .quarto-title-meta-abstract,
-.quarto-title-block .description,
-.quarto-title-block .quarto-title-meta-description,
 .quarto-title-block .keywords,
 .quarto-title-block .quarto-title-meta-keywords,
 .quarto-title-meta .date,
 .quarto-title-meta .abstract,
-.quarto-title-meta .description,
 .quarto-title-meta .keywords,
 .title-block .date,
 .title-block .abstract,
-.title-block .description,
 .title-block .keywords,
 .quarto-title-meta-author + .quarto-title-meta-date,
 .quarto-title-meta-date + .quarto-title-meta-abstract,
-.quarto-title-meta-abstract + .quarto-title-meta-keywords,
-.quarto-title-block .subtitle + .description,
-.quarto-title-block .quarto-title-block-contents .description {
+.quarto-title-meta-abstract + .quarto-title-meta-keywords {
     display: none !important;
 }
