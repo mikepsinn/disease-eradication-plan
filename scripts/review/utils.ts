@@ -34,15 +34,23 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   console.log(`Successfully formatted ${filePath}.`);
 }
 
-export async function styleFileWithLLM(filePath: string): Promise<void> {
+export async function styleFileWithLLM(filePath: string, options?: { extraInstructions?: string }): Promise<void> {
   console.log(`\nImproving style and content quality for ${filePath} with Claude Opus...`);
   const { frontmatter, body } = await readFileWithMatter(filePath);
 
   const styleGuide = await fs.readFile('GUIDES/STYLE_GUIDE.md', 'utf-8');
-  const prompt = await loadPromptTemplate('scripts/prompts/style-guide-review.md', {
+
+  let promptTemplateVars: Record<string, string> = {
     '{{styleGuide}}': styleGuide,
     '{{body}}': body
-  });
+  };
+
+  // Add extra instructions if provided
+  if (options?.extraInstructions) {
+    promptTemplateVars['{{extraInstructions}}'] = options.extraInstructions;
+  }
+
+  const prompt = await loadPromptTemplate('scripts/prompts/style-guide-review.md', promptTemplateVars);
 
   const responseText = await generateClaudeOpus41Content(prompt);
 
@@ -56,6 +64,156 @@ export async function styleFileWithLLM(filePath: string): Promise<void> {
 
   await updateFileWithHash(filePath, finalBody, frontmatter, 'lastStyleHash');
   console.log(`Successfully improved style for ${filePath}.`);
+}
+
+export async function nonprofitComplianceCheckFileWithLLM(filePath: string): Promise<void> {
+  console.log(`\nChecking nonprofit compliance for ${filePath} with Claude Opus...`);
+  const { frontmatter, body } = await readFileWithMatter(filePath);
+
+  // Note: We intentionally DO NOT load the general book style guide here.
+  // The economic models need professional/academic tone, not the book's dark humor/cynical style.
+  const styleGuide = `
+TONE AND STYLE FOR FOUNDATION AUDIENCES:
+- Professional and academic at all times
+- Conservative estimates with sensitivity analysis
+- Evidence-based reasoning with citations
+- Technical/diplomatic language for policy discussions
+- Clear, precise, and defensible claims
+`;
+
+  const extraInstructions = `
+CRITICAL: This content will be reviewed by economists at major philanthropic foundations
+(Gates Foundation, Wellcome Trust, Open Philanthropy, etc.) to decide funding for a global
+health referendum. Foundation grants cannot fund lobbying or political activities under U.S.
+501(c)(3) restrictions and similar international regulations.
+
+PHASE SEPARATION REQUIREMENTS:
+----------------------------------
+This document MUST clearly separate two distinct phases:
+
+**Phase 1: Foundation-Funded Referendum (WHAT WE'RE ASKING FOUNDATIONS TO FUND)**
+- Global survey/polling to gauge public support
+- Educational campaigns about disease burden and research funding
+- Economic analysis and feasibility studies
+- Research and data collection
+- Public health education (permissible nonprofit activity)
+
+**Phase 2: Post-Referendum Implementation (SELF-FUNDED, NOT REQUESTING FOUNDATION MONEY)**
+- Treaty adoption efforts (after referendum shows public support)
+- Government engagement and policy work
+- VICTORY Impact Bonds (issued by governments, not the nonprofit)
+- Implementation of health systems (funded by treaty mechanisms, not foundations)
+
+VICTORY BONDS FRAMING:
+-----------------------
+VICTORY bonds CAN be discussed IF properly framed:
+
+✓ ACCEPTABLE:
+- "Phase 2: After referendum, governments could issue VICTORY Impact Bonds to fund implementation"
+- "Post-referendum self-funding mechanism through sovereign debt instruments"
+- "Government-issued bonds backed by health savings (not part of referendum campaign)"
+- "Long-term financing structure for treaty implementation (separate from initial nonprofit work)"
+
+✗ AVOID:
+- Presenting VICTORY bonds as part of what foundations would fund
+- Mixing referendum funding with implementation funding
+- Suggesting the nonprofit would issue or manage the bonds
+- Making it seem like one continuous funding request
+
+LOBBYING/ADVOCACY TERMINOLOGY:
+-------------------------------
+Foundations are EXTREMELY sensitive to lobbying language. Replace problematic terms:
+
+✗ FORBIDDEN PHRASES:
+- "lobbying governments"
+- "lobbying ROI"
+- "advocacy campaigns"
+- "political pressure"
+- "forcing governments"
+
+✓ SAFE ALTERNATIVES:
+- "Treaty Adoption Strategy" → describes post-referendum government engagement
+- "Government Engagement Framework" → neutral description of diplomatic process
+- "International Health Coordination" → emphasizes cooperation not pressure
+- "Policy Implementation Pathway" → technical framing
+- "Diplomatic Outreach" → appropriate for international agreements
+- "Evidence-Based Government Consultation" → emphasizes data not politics
+
+EXAMPLE REFRAMING:
+Original: "With $50M in lobbying, we can achieve 10:1 ROI in government commitments"
+Fixed: "Phase 2 Treaty Adoption: Following a successful referendum demonstrating public
+support, an estimated $50M investment in diplomatic outreach and government consultation
+could facilitate treaty adoption, with governments committing funds through their own
+budget processes."
+
+CRITICAL COMPLIANCE CHECKS:
+---------------------------
+1. CREDIBILITY: All claims backed by peer-reviewed sources or authoritative data
+2. PROFESSIONAL TONE: No hyperbole, speculation, or unsubstantiated claims
+3. CONSERVATIVE ESTIMATES: All numbers defensible and conservative
+4. ACADEMIC RIGOR: Economic analysis using standard methodologies (NPV, ROI, QALY, ICER)
+5. PHASE SEPARATION: Crystal clear what foundations fund (referendum) vs what comes after
+6. LOBBYING LANGUAGE: Zero use of "lobbying" or "advocacy" - use diplomatic/technical terms
+7. NONPROFIT RESTRICTIONS: Nothing that suggests using foundation funds for political activities
+8. SELF-FUNDING CLARITY: Make it obvious that VICTORY bonds and implementation are NOT
+   part of the foundation grant request
+
+RED FLAGS TO REMOVE:
+--------------------
+- Overly optimistic projections without sensitivity analysis
+- Claims without specific citations
+- Conspiracy theories or political rhetoric
+- Unverified statistics
+- Emotional appeals instead of data-driven arguments
+- Mixed messaging about what foundations fund vs what's self-funded later
+- Any suggestion the nonprofit would engage in lobbying
+- Presenting VICTORY bonds as part of the initial funding ask
+
+STRUCTURE RECOMMENDATION:
+-------------------------
+If discussing implementation funding:
+
+1. **Referendum Phase (Foundation-Funded)**
+   - Educational campaigns
+   - Survey research
+   - Economic modeling
+   - Public health education
+
+2. **Transition: Clear Separation**
+   - "Following a successful referendum demonstrating public support..."
+   - "In the post-referendum phase, separate from nonprofit operations..."
+
+3. **Implementation Phase (Self-Funded/Government-Funded)**
+   - Treaty adoption through diplomatic channels
+   - Government-issued VICTORY Impact Bonds
+   - Health system implementation
+   - Ongoing coordination
+
+The goal is maximum credibility and professional presentation. This is NOT activist content -
+it's an economic analysis for serious decision-makers with PhDs in economics and public health.
+Foundations need absolute clarity that they're funding research and education, NOT politics.
+`;
+
+  let promptTemplateVars: Record<string, string> = {
+    '{{styleGuide}}': styleGuide,
+    '{{body}}': body,
+    '{{extraInstructions}}': extraInstructions
+  };
+
+  const prompt = await loadPromptTemplate('scripts/prompts/style-guide-review.md', promptTemplateVars);
+
+  const responseText = await generateClaudeOpus41Content(prompt);
+
+  let finalBody;
+  if (responseText.trim() === 'NO_CHANGES_NEEDED') {
+    console.log(`File ${filePath} already meets nonprofit compliance requirements. Updating metadata.`);
+    finalBody = body;
+  } else {
+    finalBody = responseText.trim();
+  }
+
+  await updateFileWithHash(filePath, finalBody, frontmatter, 'lastNonprofitComplianceHash');
+  console.log(`Successfully checked nonprofit compliance for ${filePath}.`);
 }
 
 export async function factCheckFileWithLLM(filePath: string): Promise<void> {
