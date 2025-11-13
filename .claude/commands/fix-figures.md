@@ -6,7 +6,7 @@ Review and fix all figures in the current chapter to comply with the design guid
 
 ## Check For
 
-1. **Python chart files** in `brain/figures/`:
+1. **Python chart files** in `dih-economic-models/figures/`:
    - Must call `setup_chart_style()` from `scripts/lib/chart_style.py`
    - Must call `add_watermark()`
    - Must NOT use `plt.tight_layout()` (discouraged)
@@ -16,7 +16,7 @@ Review and fix all figures in the current chapter to comply with the design guid
    - If not, move them and update references
 
 3. **Figure includes**:
-   - Use `{{< include brain/figures/filename.qmd >}}` syntax
+   - Use `{{< include dih-economic-models/figures/filename.qmd >}}` syntax
    - Verify included file exists
 
 ## Design Guide Location

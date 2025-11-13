@@ -41,7 +41,7 @@ Located in `brain/book/appendix/`:
 
 ### 📊 Charts
 
-Located in `brain/figures/`:
+Located in `dih-economic-models/figures/`:
 
 Peace Dividend Charts:
 
@@ -129,7 +129,7 @@ Changing one parameter updates everywhere automatically ✅
 
 - **Chapters** (brain/book/economics/): `[topic].qmd` - Clean, accessible, no visible code
 - **Calculations** (brain/book/appendix/): `[topic]-calculations.qmd` - Jupyter notebooks with math
-- **Charts** (brain/figures/): `[description]-[chart-type]-chart.qmd` - Standalone visualizations
+- **Charts** (dih-economic-models/figures/): `[description]-[chart-type]-chart.qmd` - Standalone visualizations
 
 **Examples**:
 
@@ -183,7 +183,7 @@ Changing one parameter updates everywhere automatically ✅
 - Full Jupyter notebook (Python visible)
 - Sensitivity analysis (0.5% to 2% scenarios)
 - Data validation
-- Charts (via includes from brain/figures/)
+- Charts (via includes from dih-economic-models/figures/)
 **Source**: cost-of-war.qmd
 
 ### health-dividend-calculations.qmd (Appendix)
@@ -239,7 +239,7 @@ Changing one parameter updates everywhere automatically ✅
 
 **Charts Extracted**:
 
-- 4 peace dividend charts moved from calculations file to `brain/figures/`
+- 4 peace dividend charts moved from calculations file to `dih-economic-models/figures/`
 - Charts now use `{{< include >}}` directives (when fully migrated)
 
 **All Files Now Use**:
@@ -252,7 +252,7 @@ Changing one parameter updates everywhere automatically ✅
 
 ## Next Steps (Optional Improvements)
 
-1. **Extract remaining charts** from health-dividend-calculations.qmd to brain/figures/
+1. **Extract remaining charts** from health-dividend-calculations.qmd to dih-economic-models/figures/
 2. **Replace embedded charts** in calculation files with `{{< include >}}` directives
 3. **Add NPV analysis** to peace-dividend-calculations.qmd (mirror health dividend rigor)
 4. **Cross-reference audit**: Ensure all links point to new file paths

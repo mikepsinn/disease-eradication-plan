@@ -9,7 +9,7 @@ description: Visual standards for charts and images using Tufte minimalism and b
 
 - **Writing Style:** See [STYLE_GUIDE.md](STYLE_GUIDE.md) for tone, voice, and writing conventions
 - **Content Guidelines:** See [CONTRIBUTING.md](../CONTRIBUTING.md) for overall contribution workflow
-- **Technical Implementation:** See [brain/figures/_chart_style.py](brain/figures/_chart_style.py) for all code constants and functions
+- **Technical Implementation:** See [dih-economic-models/figures/_chart_style.py](dih-economic-models/figures/_chart_style.py) for all code constants and functions
 
 ## Design Philosophy
 
@@ -30,7 +30,7 @@ Charts should be as simple and powerful as possible. Every element must earn its
 
 ## Chart Library
 
-All reusable charts are located in [brain/figures/](brain/figures/) as **Quarto Markdown (.qmd) files**. These files contain executable Python code that generates visualizations. See that directory for the complete list of available visualizations.
+All reusable charts are located in [dih-economic-models/figures/](dih-economic-models/figures/) as **Quarto Markdown (.qmd) files**. These files contain executable Python code that generates visualizations. See that directory for the complete list of available visualizations.
 
 ## Chart File Format
 
@@ -46,7 +46,7 @@ All reusable charts are located in [brain/figures/](brain/figures/) as **Quarto 
 Include charts in any `.qmd` file using Quarto's include directive:
 
 ```markdown
-{{< include brain/figures/disease-vs-war-annual-deaths-pie-chart.qmd >}}
+{{< include dih-economic-models/figures/disease-vs-war-annual-deaths-pie-chart.qmd >}}
 ```
 
 ## Chart Creation Guidelines
@@ -56,7 +56,7 @@ Include charts in any `.qmd` file using Quarto's include directive:
 1. **Must be `.qmd` files** with Python code blocks
 2. **Use descriptive filenames** following the naming convention below
 3. **MUST generate PNG files** - Every chart must save a PNG output
-4. **Save generated images** in the same `brain/figures/` directory
+4. **Save generated images** in the same `dih-economic-models/figures/` directory
 5. **Include proper labels** for cross-referencing
 
 ### PNG Generation is MANDATORY
@@ -75,7 +75,7 @@ Include charts in any `.qmd` file using Quarto's include directive:
 ```python
 # This code MUST be at the end of every chart file:
 
-output_dir = project_root / 'brain' / 'figures'
+output_dir = project_root / 'dih-economic-models' / 'figures'
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / 'same-name-as-qmd-file.png'
 
@@ -146,8 +146,8 @@ Use `add_png_metadata()` from `_chart_style.py` after saving to embed attributio
        while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
            project_root = project_root.parent
 
-   # At bottom - save to brain/figures/ using dynamic path
-   output_dir = project_root / 'brain' / 'figures'
+   # At bottom - save to dih-economic-models/figures/ using dynamic path
+   output_dir = project_root / 'dih-economic-models' / 'figures'
    output_dir.mkdir(parents=True, exist_ok=True)
    plt.savefig(output_dir / 'chart-name.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
    ```
