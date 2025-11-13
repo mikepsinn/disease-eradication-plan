@@ -43,6 +43,8 @@
     "standards:apply:all": "tsx scripts/review/apply-auto-standards-all.ts",
     "style:file": "tsx scripts/review/style-file.ts",
     "style:all": "tsx scripts/review/style-all-files.ts",
+    "nonprofit-compliance:file": "tsx scripts/review/nonprofit-compliance-check-file.ts",
+    "nonprofit-compliance:all": "tsx scripts/review/nonprofit-compliance-check.ts",
     "fact-check:file": "tsx scripts/review/fact-check-file.ts",
     "fact-check:all": "tsx scripts/review/fact-check-all-files.ts",
     "link-check:file": "tsx scripts/review/link-check-file.ts",
