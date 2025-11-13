@@ -82,7 +82,7 @@ def update_chart_file(filepath: Path) -> bool:
             updated_imports = imports.rstrip() + ',\n    add_png_metadata'
             content = re.sub(
                 import_pattern,
-                f'from brain.figures._chart_style import ({updated_imports})',
+                f'from dih_economic_models.figures._chart_style import ({updated_imports})',
                 content
             )
 

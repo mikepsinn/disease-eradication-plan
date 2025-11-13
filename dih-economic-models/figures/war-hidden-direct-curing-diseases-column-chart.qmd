@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 from matplotlib import patheffects
-from brain.figures._chart_style import (
+from dih_economic_models.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL,
     add_png_metadata)

@@ -31,22 +31,22 @@ from economic_parameters import *
 ```
 
 
-With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted) ([source](../dih-economic-models/references.qmd#nih-cumulative-spending)).
+With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted) ([source](../../../dih-economic-models/references.qmd#nih-cumulative-spending)).
 
-Number of diseases the NIH has eradicated: [**Zero**](../dih-economic-models/references.qmd#nih-eradicated-zero-diseases).
+Number of diseases the NIH has eradicated: [**Zero**](../../../dih-economic-models/references.qmd#nih-eradicated-zero-diseases).
 
 Success rate: 0.00% for complete disease elimination.
 
-[A medical politburo in Maryland](../dih-economic-models/references.qmd#nih-decision-makers-200-people) deciding which of [10,000 diseases](../dih-economic-models/references.qmd#number-of-known-diseases) matter. Yours doesn't.
+[A medical politburo in Maryland](../../../dih-economic-models/references.qmd#nih-decision-makers-200-people) deciding which of [10,000 diseases](../../../dih-economic-models/references.qmd#number-of-known-diseases) matter. Yours doesn't.
 
 They fund what gets published, not what saves lives.
 
-Result: [55 million die annually](../dih-economic-models/references.qmd#who-daily-deaths) while papers get published.
+Result: [55 million die annually](../../../dih-economic-models/references.qmd#who-daily-deaths) while papers get published.
 
 To be fair, eradicating disease is hard.
-Just ask the WHO, who [eradicated smallpox for \$300 million](../dih-economic-models/references.qmd#smallpox-eradication-roi) (smallpox was WHO, not NIH).
+Just ask the WHO, who [eradicated smallpox for \$300 million](../../../dih-economic-models/references.qmd#smallpox-eradication-roi) (smallpox was WHO, not NIH).
 Or ask Jonas Salk, who developed the polio vaccine in a university lab.
-Or ask the veterinarians, who've [eradicated multiple animal diseases](../dih-economic-models/references.qmd#animal-diseases-eradicated-by-vets) while the NIH was forming subcommittees.
+Or ask the veterinarians, who've [eradicated multiple animal diseases](../../../dih-economic-models/references.qmd#animal-diseases-eradicated-by-vets) while the NIH was forming subcommittees.
 
 ## The Translation Crisis: 166 Billion Untested Treatments
 
@@ -87,16 +87,16 @@ The NIH spend the vast majority of it on "basic research"—understanding diseas
 
 ### The Allocation Disaster
 
-- **Basic research (mice and molecules):** [55% of budget](../dih-economic-models/references.qmd#nih-budget-allocation-breakdown)
-- **Clinical trials (all types):** [22% of budget](../dih-economic-models/references.qmd#nih-budget-allocation-breakdown)
-- **Trials your grandma could actually join:** [A pathetic 3.3% of the budget](../dih-economic-models/references.qmd#nih-budget-allocation-breakdown)
+- **Basic research (mice and molecules):** [55% of budget](../../../dih-economic-models/references.qmd#nih-budget-allocation-breakdown)
+- **Clinical trials (all types):** [22% of budget](../../../dih-economic-models/references.qmd#nih-budget-allocation-breakdown)
+- **Trials your grandma could actually join:** [A pathetic 3.3% of the budget](../../../dih-economic-models/references.qmd#nih-budget-allocation-breakdown)
 
 That 22% for "clinical trials" is mostly for observational studies (watching you get sicker) or Phase 1 trials you can't join because you live in the wrong city, are the wrong age, or are already taking other medications.
 
 The result is a system that produces papers, not cures:
 
-- **Papers published:** [2.5 million annually](../dih-economic-models/references.qmd#nih-annual-papers-published)
-- **New treatments approved:** [~50 annually](../dih-economic-models/references.qmd#global-new-drug-approvals-50-annually)
+- **Papers published:** [2.5 million annually](../../../dih-economic-models/references.qmd#nih-annual-papers-published)
+- **New treatments approved:** [~50 annually](../../../dih-economic-models/references.qmd#global-new-drug-approvals-50-annually)
 - **Conversion rate from paper to patient:** 0.002%
 
 We know everything about how cancer works in mice. We've mapped every pathway, gene, and protein. We have Nobel Prizes for understanding mechanisms.
@@ -107,8 +107,8 @@ Because understanding disease and curing disease are completely different things
 
 ## The Gerontocracy: Science by Social Security Recipients
 
-- **Average age for first R01 grant:** 45 years old ([source](../dih-economic-models/references.qmd#nih-first-r01-age-45))
-- **Peak scientific creativity:** 25-35 years old ([multiple studies](../dih-economic-models/references.qmd#peak-creativity-age))
+- **Average age for first R01 grant:** 45 years old ([source](../../../dih-economic-models/references.qmd#nih-first-r01-age-45))
+- **Peak scientific creativity:** 25-35 years old ([multiple studies](../../../dih-economic-models/references.qmd#peak-creativity-age))
 - **Years of peak creativity wasted:** 10-20
 
 By the time scientists get real funding, they're closer to retirement than to their best ideas.
@@ -122,10 +122,10 @@ Under NIH rules, he'd still be a "promising young investigator" at 40.
 
 The NIH organizational chart looks like someone tried to draw the internet:
 
-- **[27 institutes and centers](../dih-economic-models/references.qmd#nih-organizational-complexity)**
-- **[220+ study sections](../dih-economic-models/references.qmd#nih-organizational-stats)** (review committees)
-- **[6,000+ employees](../dih-economic-models/references.qmd#nih-organizational-stats)**
-- **[80,000+ grant reviewers](../dih-economic-models/references.qmd#nih-organizational-stats)**
+- **[27 institutes and centers](../../../dih-economic-models/references.qmd#nih-organizational-complexity)**
+- **[220+ study sections](../../../dih-economic-models/references.qmd#nih-organizational-stats)** (review committees)
+- **[6,000+ employees](../../../dih-economic-models/references.qmd#nih-organizational-stats)**
+- **[80,000+ grant reviewers](../../../dih-economic-models/references.qmd#nih-organizational-stats)**
 
 Each institute has divisions.
 Each division has branches.
@@ -133,25 +133,25 @@ Each branch has sections.
 Each section has units.
 It's bureaucratic nesting dolls all the way down.
 
-Fun fact: [There are more NIH administrators than there are researchers working on some rare diseases](../dih-economic-models/references.qmd#nih-admin-to-scientist-ratio).
+Fun fact: [There are more NIH administrators than there are researchers working on some rare diseases](../../../dih-economic-models/references.qmd#nih-admin-to-scientist-ratio).
 
 ## Case Study: The \$1.6 Billion Long COVID Masterclass
 
 The RECOVER Initiative - a masterpiece of inefficiency:
 
-**Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) ([source](../dih-economic-models/references.qmd#recover-budget))
-**Timeline:** [4 years and counting](../dih-economic-models/references.qmd#nih-recover-inefficiency)
-**Patients enrolled:** [~30,000](../dih-economic-models/references.qmd#recover-initiative-patient-enrollment)
-**Trials completed:** [Zero](../dih-economic-models/references.qmd#nih-recover-inefficiency)
+**Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) ([source](../../../dih-economic-models/references.qmd#recover-budget))
+**Timeline:** [4 years and counting](../../../dih-economic-models/references.qmd#nih-recover-inefficiency)
+**Patients enrolled:** [~30,000](../../../dih-economic-models/references.qmd#recover-initiative-patient-enrollment)
+**Trials completed:** [Zero](../../../dih-economic-models/references.qmd#nih-recover-inefficiency)
 **Cost per patient:** \$55,500
 
 Meanwhile, the UK RECOVERY trial:
 
-**Budget:** [\$20 million](../dih-economic-models/references.qmd#recovery-trial-82x-cost-reduction)
-**Timeline:** [6 months](../dih-economic-models/references.qmd#landray-recovery-trial-quote)
-**Patients enrolled:** [48,000](../dih-economic-models/references.qmd#recovery-trial-82x-cost-reduction)
-**Treatments found:** [Multiple, including dexamethasone](../dih-economic-models/references.qmd#recovery-trial-summary-quote)
-**Cost per patient:** [\$417](../dih-economic-models/references.qmd#recovery-cost-500)
+**Budget:** [\$20 million](../../../dih-economic-models/references.qmd#recovery-trial-82x-cost-reduction)
+**Timeline:** [6 months](../../../dih-economic-models/references.qmd#landray-recovery-trial-quote)
+**Patients enrolled:** [48,000](../../../dih-economic-models/references.qmd#recovery-trial-82x-cost-reduction)
+**Treatments found:** [Multiple, including dexamethasone](../../../dih-economic-models/references.qmd#recovery-trial-summary-quote)
+**Cost per patient:** [\$417](../../../dih-economic-models/references.qmd#recovery-cost-500)
 
 The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed).
 
@@ -163,15 +163,15 @@ Let's check the scoreboard since NIH's founding in 1887 (and massive expansion p
 
 **1970:**
 
-- Obesity rate: [13%](../dih-economic-models/references.qmd#us-health-stats-1970)
-- Diabetes rate: [3.4%](../dih-economic-models/references.qmd#us-health-stats-1970)
-- Life expectancy: [70.8 years](../dih-economic-models/references.qmd#us-health-stats-1970)
+- Obesity rate: [13%](../../../dih-economic-models/references.qmd#us-health-stats-1970)
+- Diabetes rate: [3.4%](../../../dih-economic-models/references.qmd#us-health-stats-1970)
+- Life expectancy: [70.8 years](../../../dih-economic-models/references.qmd#us-health-stats-1970)
 
 **2024:**
 
-- Obesity rate: [42%](../dih-economic-models/references.qmd#obesity-epidemic-stats) (3X worse)
-- Diabetes rate: [11.6%](../dih-economic-models/references.qmd#us-health-stats-2024) (3.4X worse)
-- Life expectancy: [76.4 years](../dih-economic-models/references.qmd#us-health-stats-2024) (only +5.6 years, [mostly from fewer people smoking](../dih-economic-models/references.qmd#life-expectancy-gains-smoking-reduction))
+- Obesity rate: [42%](../../../dih-economic-models/references.qmd#obesity-epidemic-stats) (3X worse)
+- Diabetes rate: [11.6%](../../../dih-economic-models/references.qmd#us-health-stats-2024) (3.4X worse)
+- Life expectancy: [76.4 years](../../../dih-economic-models/references.qmd#us-health-stats-2024) (only +5.6 years, [mostly from fewer people smoking](../../../dih-economic-models/references.qmd#life-expectancy-gains-smoking-reduction))
 
 During the NIH's trillion-dollar spending spree, Americans got:
 
@@ -190,10 +190,10 @@ At some point you have to wonder if they're working for McDonald's.
 Which diseases get funded?
 Not the deadliest ones:
 
-- **Breast cancer funding:** [\$700M/year](../dih-economic-models/references.qmd#nih-funding-deaths-comparison)
-- **Breast cancer deaths:** [42,000/year](../dih-economic-models/references.qmd#nih-funding-deaths-comparison)
-- **Heart disease funding:** [\$500M/year](../dih-economic-models/references.qmd#nih-funding-deaths-comparison)
-- **Heart disease deaths:** [700,000/year](../dih-economic-models/references.qmd#nih-funding-deaths-comparison)
+- **Breast cancer funding:** [\$700M/year](../../../dih-economic-models/references.qmd#nih-funding-deaths-comparison)
+- **Breast cancer deaths:** [42,000/year](../../../dih-economic-models/references.qmd#nih-funding-deaths-comparison)
+- **Heart disease funding:** [\$500M/year](../../../dih-economic-models/references.qmd#nih-funding-deaths-comparison)
+- **Heart disease deaths:** [700,000/year](../../../dih-economic-models/references.qmd#nih-funding-deaths-comparison)
 
 Heart disease kills **16X more people** but gets less funding.
 Why?
@@ -205,9 +205,9 @@ The NIH budget is set by Congress, which means diseases compete in a popularity 
 
 Major breakthroughs while NIH was busy:
 
-- **mRNA vaccines:** [Developed by companies, not NIH](../dih-economic-models/references.qmd#mrna-vaccine-development-history)
-- **CRISPR:** [Discovered in yogurt bacteria research](../dih-economic-models/references.qmd#crispr-discovery-yogurt-bacteria)
-- **Immunotherapy:** [Pioneered despite medical establishment opposition](../dih-economic-models/references.qmd#immunotherapy-pioneers-nih-rejection)
+- **mRNA vaccines:** [Developed by companies, not NIH](../../../dih-economic-models/references.qmd#mrna-vaccine-development-history)
+- **CRISPR:** [Discovered in yogurt bacteria research](../../../dih-economic-models/references.qmd#crispr-discovery-yogurt-bacteria)
+- **Immunotherapy:** [Pioneered despite medical establishment opposition](../../../dih-economic-models/references.qmd#immunotherapy-pioneers-nih-rejection)
 - **COVID vaccines:** Industry sprint while NIH planned meetings
 
 The NIH is like that group member who shows up after the project is done to add their name.
@@ -218,14 +218,14 @@ Let's do the real math on what we could have done with that money:
 
 ### Current NIH System
 
-- Annual budget: [\$51 billion](../dih-economic-models/references.qmd#nih-budget-fy2025)
-- Cost per trial participant: [\$41,000](../dih-economic-models/references.qmd#trial-cost-41k)
+- Annual budget: [\$51 billion](../../../dih-economic-models/references.qmd#nih-budget-fy2025)
+- Cost per trial participant: [\$41,000](../../../dih-economic-models/references.qmd#trial-cost-41k)
 - Annual participants: ~1.2 million
 - Diseases cured: Zero
 
 **What \$51 billion could buy using UK RECOVERY methods:**
 
-- Cost per trial participant: [\$500](../dih-economic-models/references.qmd#recovery-cost-500)
+- Cost per trial participant: [\$500](../../../dih-economic-models/references.qmd#recovery-cost-500)
 - Annual participants: 102 million (82x more)
 - Potential treatments found: Hundreds
 
@@ -237,10 +237,10 @@ This 82x cost disparity is the core inefficiency you can solve. (See [The 82x So
 
 Not only are we inefficient, we're drowning:
 
-- US-only healthcare costs: [\$2+ trillion annually](../dih-economic-models/references.qmd#us-annual-healthcare-costs)
+- US-only healthcare costs: [\$2+ trillion annually](../../../dih-economic-models/references.qmd#us-annual-healthcare-costs)
 - Potential savings with efficient trials: \$2 trillion
 - Net economic swing: \$4 trillion
-- Untested treatments sitting on shelf: 166 billion ([source](../dih-economic-models/references.qmd#untested-treatments))
+- Untested treatments sitting on shelf: 166 billion ([source](../../../dih-economic-models/references.qmd#untested-treatments))
 
 We have more untested treatments than stars in our galaxy, but we're too busy writing grants to test them.
 
@@ -266,7 +266,7 @@ That's actually mathematically impressive.
 
 Here's the most damning statistic of all:
 
-**Correlation between NIH funding priorities and actual disease burden: [0.07](../dih-economic-models/references.qmd#nih-funding-vs-disease-burden-correlation)**
+**Correlation between NIH funding priorities and actual disease burden: [0.07](../../../dih-economic-models/references.qmd#nih-funding-vs-disease-burden-correlation)**
 
 That's essentially random. You'd get better allocation by throwing darts at a list of diseases.
 
@@ -299,7 +299,7 @@ Committees do.
 But that would require admitting the current system doesn't work.
 And after \$1.1 trillion, that's an expensive admission.
 
-**Fun fact:** The legal framework already exists for cost recovery in trials ([21 CFR 312.8](../dih-economic-models/references.qmd#cost-recovery-regulation)).
+**Fun fact:** The legal framework already exists for cost recovery in trials ([21 CFR 312.8](../../../dih-economic-models/references.qmd#cost-recovery-regulation)).
 You could implement efficient trials tomorrow.
 But that would upset the grant-writing industrial complex.
 

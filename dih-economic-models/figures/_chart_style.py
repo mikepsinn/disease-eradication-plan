@@ -5,8 +5,8 @@ This module provides consistent B&W styling with patterns for categorical data.
 Import this module and call setup_chart_style() at the beginning of any visualization code.
 
 Usage:
-    from brain.figures._chart_style import setup_chart_style, COLOR_BLACK, COLOR_WHITE
-    from brain.figures._chart_style import PATTERN_DIAGONAL, PATTERN_HORIZONTAL
+    from dih_economic_models.figures._chart_style import setup_chart_style, COLOR_BLACK, COLOR_WHITE
+    from dih_economic_models.figures._chart_style import PATTERN_DIAGONAL, PATTERN_HORIZONTAL
 
     setup_chart_style()
 

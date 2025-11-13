@@ -30,7 +30,7 @@ sys.path.insert(0, str(project_root))
 
 import matplotlib.pyplot as plt
 import numpy as np
-from brain.figures._chart_style import (
+from dih_economic_models.figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
     add_png_metadata)

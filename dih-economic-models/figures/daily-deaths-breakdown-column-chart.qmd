@@ -31,8 +31,8 @@ if project_root.name != 'decentralized-institutes-of-health':
 
 import sys
 sys.path.append(str(project_root))
-from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines, add_png_metadata
-from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE
+from dih_economic_models.figures._chart_style import setup_chart_style, add_watermark, clean_spines, add_png_metadata
+from dih_economic_models.figures._chart_style import COLOR_BLACK, COLOR_WHITE
 
 # Apply chart styles
 

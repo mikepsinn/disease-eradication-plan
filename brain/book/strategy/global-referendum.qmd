@@ -52,7 +52,7 @@ Requirements:
 
 - Must be auditable (so politicians can't claim it's fake)
 - Must be persuasive (so policymakers actually care)
-- Must hit **[3.5% global participation](../dih-economic-models/references.qmd#3-5-rule)** (280M+ verified votes)
+- Must hit **[3.5% global participation](../../../dih-economic-models/references.qmd#3-5-rule)** (280M+ verified votes)
 
 That last number isn't arbitrary. It's based on historical data showing that once 3.5% of a population actively supports something, it becomes unstoppable. More on that later.
 
@@ -72,7 +72,7 @@ The trick is doing all of these simultaneously, which is harder than it sounds.
 
 #### End-to-End Verifiable System
 
-- Use an end-to-end verifiable scheme ([Helios](../dih-economic-models/references.qmd#helios-voting) or similar) with individual ballot verification and public bulletin board
+- Use an end-to-end verifiable scheme ([Helios](../../../dih-economic-models/references.qmd#helios-voting) or similar) with individual ballot verification and public bulletin board
 - **Individual Ballot Verification**: Each voter receives cryptographic receipt
 - **Public Bulletin Board**: All ballots published (anonymized) for public audit
 - **Zero-Knowledge Proofs**: Prove vote validity without revealing vote content
@@ -131,17 +131,17 @@ This stops maybe 90% of fraud. The other 10% requires getting creative.
 For people who want higher verification (and higher rewards):
 
 - **Government ID Integration**: Connect with existing national e-ID systems:
-  - [Estonia e-Residency](../dih-economic-models/references.qmd#estonia-eresidency-stats) (they have digital citizenship, it's actually cool)
-  - [Indian Aadhaar system](../dih-economic-models/references.qmd#indian-aadhaar-system) (1.3 billion people already enrolled)
-  - [EU eIDAS network](../dih-economic-models/references.qmd#eu-eidas-network) (European digital ID)
-  - US State ID verification via [ID.me](../dih-economic-models/references.qmd#id-me-verification) (same system military uses)
+  - [Estonia e-Residency](../../../dih-economic-models/references.qmd#estonia-eresidency-stats) (they have digital citizenship, it's actually cool)
+  - [Indian Aadhaar system](../../../dih-economic-models/references.qmd#indian-aadhaar-system) (1.3 billion people already enrolled)
+  - [EU eIDAS network](../../../dih-economic-models/references.qmd#eu-eidas-network) (European digital ID)
+  - US State ID verification via [ID.me](../../../dih-economic-models/references.qmd#id-me-verification) (same system military uses)
 
 - **Biometric Liveness Detection**: Wave at your camera. Blink. Prove you're not a video. Deepfakes hate this one weird trick.
 
 - **Proof-of-Uniqueness Partners**: Work with existing identity services:
-  - [Worldcoin iris scanning](../dih-economic-models/references.qmd#worldcoin-scale) (yes, the eyeball scanner)
-  - [BrightID social verification](../dih-economic-models/references.qmd#brightid-social-verification-network) (your friends vouch for you)
-  - [Gitcoin Passport](../dih-economic-models/references.qmd#gitcoin-passport) (reputation scoring for crypto people)
+  - [Worldcoin iris scanning](../../../dih-economic-models/references.qmd#worldcoin-scale) (yes, the eyeball scanner)
+  - [BrightID social verification](../../../dih-economic-models/references.qmd#brightid-social-verification-network) (your friends vouch for you)
+  - [Gitcoin Passport](../../../dih-economic-models/references.qmd#gitcoin-passport) (reputation scoring for crypto people)
 
 **Layer 3: Social "Your Community Says You're Real" Verification**
 
@@ -186,10 +186,10 @@ This is where AI comes in. Not the "I'm going to become sentient and kill you" k
 
 Different regions have different privacy laws, all of which carry massive fines if you screw up. You don't screw up.
 
-- **[GDPR Compliance](../dih-economic-models/references.qmd#gdpr-biometric-data)**: Full EU data protection compliance (the strictest privacy law on Earth)
-- **[CCPA/CPRA Compliance](../dih-economic-models/references.qmd#ccpa-cpra-compliance)**: California privacy rights (because California regulates everything)
-- **Biometric Privacy Laws**: [Illinois BIPA](../dih-economic-models/references.qmd#illinois-bipa) compliance (they take biometric privacy seriously)
-- **Children's Privacy**: [COPPA compliance](../dih-economic-models/references.qmd#coppa-compliance) for under-13s (don't collect kids' data, this should be obvious)
+- **[GDPR Compliance](../../../dih-economic-models/references.qmd#gdpr-biometric-data)**: Full EU data protection compliance (the strictest privacy law on Earth)
+- **[CCPA/CPRA Compliance](../../../dih-economic-models/references.qmd#ccpa-cpra-compliance)**: California privacy rights (because California regulates everything)
+- **Biometric Privacy Laws**: [Illinois BIPA](../../../dih-economic-models/references.qmd#illinois-bipa) compliance (they take biometric privacy seriously)
+- **Children's Privacy**: [COPPA compliance](../../../dih-economic-models/references.qmd#coppa-compliance) for under-13s (don't collect kids' data, this should be obvious)
 
 ## Viral Marketing & Growth Strategy
 

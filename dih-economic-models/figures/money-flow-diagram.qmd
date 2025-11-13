@@ -30,7 +30,7 @@ sys.path.insert(0, str(project_root))
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
-from brain.figures._chart_style import (
+from dih_economic_models.figures._chart_style import (
     setup_chart_style, add_watermark,
     COLOR_BLACK, COLOR_WHITE,
     add_png_metadata)

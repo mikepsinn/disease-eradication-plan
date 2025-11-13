@@ -33,9 +33,9 @@ from economic_parameters import *
 
 Out of 2.4 billion people with chronic disease, [only 5 million participate in trials annually](../../../dih-economic-models/appendix/clinical-trial-participants.qmd). That's **0.2%**.
 
-[Half of humanity would volunteer](../dih-economic-models/references.qmd#patient-willingness-clinical-trials) if they could. We have **240 times more willing participants** than we're using.
+[Half of humanity would volunteer](../../../dih-economic-models/references.qmd#patient-willingness-clinical-trials) if they could. We have **240 times more willing participants** than we're using.
 
-This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost [$41,000 per patient](../dih-economic-models/references.qmd#trial-cost-41k), require traveling to major medical centers, and have exclusion criteria that reject [85% of actual patients](../dih-economic-models/references.qmd#clinical-trial-exclusions).
+This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost [$41,000 per patient](../../../dih-economic-models/references.qmd#trial-cost-41k), require traveling to major medical centers, and have exclusion criteria that reject [85% of actual patients](../../../dih-economic-models/references.qmd#clinical-trial-exclusions).
 
 **We're not facing a recruitment problem. We're facing a capacity problem.**
 
@@ -49,7 +49,7 @@ And then we could... write down what happens?
 
 And then other sick people could... see what worked?
 
-I know, I know. Without [17 years](../dih-economic-models/references.qmd#research-to-practice-gap-17-years) of paperwork, how would we know if medicines are safe? We'd have to rely on primitive methods like "observing if people get better or die." It's a bold strategy, considering our current one leaves [95% of rare diseases](../dih-economic-models/references.qmd#fda-untreated-diseases-95pct) with zero approved treatments and ensures [85% of patients are barred](../dih-economic-models/references.qmd#clinical-trial-exclusions) from the trials that might save them. We've managed to perfect a system where only the healthy and compliant are allowed to test cures for the sick and desperate. It's genius, in a suicidal sort of way.
+I know, I know. Without [17 years](../../../dih-economic-models/references.qmd#research-to-practice-gap-17-years) of paperwork, how would we know if medicines are safe? We'd have to rely on primitive methods like "observing if people get better or die." It's a bold strategy, considering our current one leaves [95% of rare diseases](../../../dih-economic-models/references.qmd#fda-untreated-diseases-95pct) with zero approved treatments and ensures [85% of patients are barred](../../../dih-economic-models/references.qmd#clinical-trial-exclusions) from the trials that might save them. We've managed to perfect a system where only the healthy and compliant are allowed to test cures for the sick and desperate. It's genius, in a suicidal sort of way.
 
 This is because trials are designed to test drugs on people who don't actually exist. To get into a study for an antidepressant, for example, you can't have any other pesky problems like anxiety or PTSD. You can't have a history of drug or alcohol use. You can't be on other medications. You have to be the *perfect* kind of sick. The result? One investigation found that only [14.5%](https://www.ncbi.nlm.nih.gov/pubmed/14628985) of real-world patients with depression would actually qualify. The rest of us are too messy for their pristine, clean data.
 
@@ -196,10 +196,10 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 
 | Problem to Fix | Current Insanity | New Reality | Money Saved | Lives Saved |
 | :--- | :--- | :--- | :--- | :--- |
-| Clinical Phase Timeline | **[9.1 years (avg)](../dih-economic-models/references.qmd#clinical-trial-phase-duration)** | **2-3 years** | ~7 years of waiting eliminated | [~50,000/year](../dih-economic-models/references.qmd#beta-blocker-deaths) |
-| Cost per trial | [**$57 million**](../dih-economic-models/references.qmd#clinical-trial-cost-breakdown) | **$2 million** | $55 million | Infinite ROI |
-| Who can participate | **[15% of patients](../dih-economic-models/references.qmd#clinical-trial-exclusions)** | **100% of patients** | 85% inclusion rate | Everyone |
-| Rare diseases with treatments | **[5%](../dih-economic-models/references.qmd#fda-untreated-diseases-95pct)** | **Eventually 100%** | Priceless | Millions |
+| Clinical Phase Timeline | **[9.1 years (avg)](../../../dih-economic-models/references.qmd#clinical-trial-phase-duration)** | **2-3 years** | ~7 years of waiting eliminated | [~50,000/year](../../../dih-economic-models/references.qmd#beta-blocker-deaths) |
+| Cost per trial | [**$57 million**](../../../dih-economic-models/references.qmd#clinical-trial-cost-breakdown) | **$2 million** | $55 million | Infinite ROI |
+| Who can participate | **[15% of patients](../../../dih-economic-models/references.qmd#clinical-trial-exclusions)** | **100% of patients** | 85% inclusion rate | Everyone |
+| Rare diseases with treatments | **[5%](../../../dih-economic-models/references.qmd#fda-untreated-diseases-95pct)** | **Eventually 100%** | Priceless | Millions |
 
 ### The Itemized Receipt of Eliminated Stupidity
 
@@ -221,7 +221,7 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 | 📊 Site Monitoring | $4,456,717 | $0 | 100% | People who watch the people who watch you |
 | 🏢 Site Overhead | $7,386,816 | $0 | 100% | Electricity for the filing cabinets |
 | 📎 All Other | $17,096,703 | $100,000 | 99.4% | Nobody knows but it's expensive |
-| **TOTAL STUPIDITY** | [**$56,988,007**](../dih-economic-models/references.qmd#clinical-trial-cost-breakdown) | **$2,025,000** | **95.7%** | **The price of bureaucracy** |
+| **TOTAL STUPIDITY** | [**$56,988,007**](../../../dih-economic-models/references.qmd#clinical-trial-cost-breakdown) | **$2,025,000** | **95.7%** | **The price of bureaucracy** |
 
 This eliminates $55 million of paperwork per trial. That's 55 million pieces of paper nobody reads, filed in cabinets nobody opens, in buildings nobody visits.
 
@@ -229,7 +229,7 @@ Those papers killed more people than they saved.
 
 ## Why This Works: The Mathematical Impossibility of Committees
 
-Here's the problem with having [~200 FDA bureaucrats](../dih-economic-models/references.qmd#fda-reviewer-count) decide what 8 billion people can try when they're dying:
+Here's the problem with having [~200 FDA bureaucrats](../../../dih-economic-models/references.qmd#fda-reviewer-count) decide what 8 billion people can try when they're dying:
 
 ### The Math That Proves Centralization Can't Work
 
@@ -319,16 +319,16 @@ During COVID, while America was filling out forms, Oxford University did somethi
 
 Cost per patient:
 
-- Normal clinical trials: [$41,000](../dih-economic-models/references.qmd#trial-cost-41k)
-- Oxford pragmatic trials: [$500](../dih-economic-models/references.qmd#recovery-cost-500)
+- Normal clinical trials: [$41,000](../../../dih-economic-models/references.qmd#trial-cost-41k)
+- Oxford pragmatic trials: [$500](../../../dih-economic-models/references.qmd#recovery-cost-500)
 
 That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan to save a human life.
 
 Results:
 
-- Found that [steroids cut COVID deaths by 30%](../dih-economic-models/references.qmd#recovery-trial-dexamethasone-results)
-- [Saved over 1 million lives globally](../dih-economic-models/references.qmd#recovery-trial-summary-quote)
-- [Took 3 months](../dih-economic-models/references.qmd#recovery-trial-100-days-to-cure) instead of 3 years
+- Found that [steroids cut COVID deaths by 30%](../../../dih-economic-models/references.qmd#recovery-trial-dexamethasone-results)
+- [Saved over 1 million lives globally](../../../dih-economic-models/references.qmd#recovery-trial-summary-quote)
+- [Took 3 months](../../../dih-economic-models/references.qmd#recovery-trial-100-days-to-cure) instead of 3 years
 - Cost less than one Super Bowl commercial
 
 The FDA's response: "But did they file the correct paperwork?"
@@ -482,10 +482,10 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 <img src="../../../assets/black-box-model-animation.gif" alt="Black box model animation showing how the dFDA works" style="max-width: 600px; width: 100%;" />
 :::
 
-The dFDA achieves [**82x More Efficiency**](../dih-economic-models/references.qmd#recovery-trial-82x-cost-reduction) through:
+The dFDA achieves [**82x More Efficiency**](../../../dih-economic-models/references.qmd#recovery-trial-82x-cost-reduction) through:
 
 - **Cost per patient**: $500 vs the current $41,000
 - **Time to results**: 2 years vs the current 17 years
-- **Patient access**: Universal access vs [85% excluded](../dih-economic-models/references.qmd#clinical-trial-patient-participation-rate) currently
+- **Patient access**: Universal access vs [85% excluded](../../../dih-economic-models/references.qmd#clinical-trial-patient-participation-rate) currently
 
 {{< include ../../dih-economic-models/figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}

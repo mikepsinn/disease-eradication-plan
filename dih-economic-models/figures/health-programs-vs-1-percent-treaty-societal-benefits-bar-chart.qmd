@@ -27,8 +27,8 @@ sys.path.insert(0, str(project_root))
 
 # Import centralized style
 
-from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines
-from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata
+from dih_economic_models.figures._chart_style import setup_chart_style, add_watermark, clean_spines
+from dih_economic_models.figures._chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata
 
 setup_chart_style()
 
