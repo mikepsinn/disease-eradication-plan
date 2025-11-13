@@ -294,6 +294,8 @@ format:
             gtag('js', new Date());
             gtag('config', 'G-8PZYCKQBTY');
           </script>
+          <!-- Hypothesis for inline comments and annotations -->
+          <script src="https://hypothes.is/embed.js" async></script>
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
