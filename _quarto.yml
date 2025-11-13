@@ -165,7 +165,6 @@ metadata:
   
   # Bibliographic metadata
   title: "How to End War and Disease"
-  subtitle: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
   description: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
   abstract: "A comprehensive guide to redirecting 1% of global military spending ($27.2B annually) to medical research through the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Demonstrates 463:1 to 1,239:1 return on investment through cost-benefit analysis, peace dividend calculations, and health economics frameworks."
   language: "en-US"
@@ -319,7 +318,7 @@ format:
       - right=1in
     variables:
       title: "The Complete Idiot's Guide to Ending War and Disease"
-      subtitle: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
+      description: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
     include-in-header:
       text: |
         % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
