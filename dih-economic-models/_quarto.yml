@@ -1,0 +1,87 @@
+project:
+  type: website
+  output-dir: _site
+  execute-dir: project
+
+website:
+  title: "DIH Economic Models"
+  description: "Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA) initiative"
+  site-url: https://models.dih.earth
+  navbar:
+    right:
+      - text: "DIH.earth"
+        href: https://DIH.earth
+  sidebar:
+    collapse-level: 1
+    style: "floating"
+    search: true
+    contents:
+      - href: index.qmd
+        text: "Overview"
+      - section: "Economic Analysis"
+        contents:
+          - href: economics/economics.qmd
+            text: "Executive Summary"
+          - href: economics/peace-dividend.qmd
+            text: "Peace Dividend"
+          - href: economics/health-dividend.qmd
+            text: "Health Dividend"
+      - section: "Supporting Data"
+        contents:
+          - href: appendix/humanity-budget-overview.qmd
+            text: "Humanity Budget Overview"
+          - href: appendix/global-government-medical-research-spending.qmd
+            text: "Government Medical Research Spending"
+          - href: appendix/global-clinical-trial-spending-by-phase.qmd
+            text: "Clinical Trial Spending by Phase"
+          - href: appendix/clinical-trial-participants.qmd
+            text: "Clinical Trial Participants"
+      - section: "Detailed Calculations"
+        contents:
+          - href: appendix/peace-dividend-calculations.qmd
+            text: "Peace Dividend Calculations"
+          - href: appendix/1-percent-treaty-cost-effectiveness.qmd
+            text: "1% Treaty Cost-Effectiveness"
+          - href: appendix/research-acceleration-model.qmd
+            text: "Research Acceleration Model"
+          - href: appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
+            text: "Disease Eradication Lifetime Wealth"
+          - href: appendix/dfda-cost-benefit-analysis.qmd
+            text: "dFDA Cost-Benefit Analysis"
+          - href: appendix/economic-value-of-accelerated-treatments.qmd
+            text: "Economic Value of Accelerated Treatments"
+          - href: appendix/intervention-comparison-table.qmd
+            text: "Intervention Comparison Table"
+          - href: appendix/data-storage-costs.qmd
+            text: "Data Storage Costs"
+          - href: appendix/dfda-qaly-model.qmd
+            text: "dFDA QALY Model"
+      - section: "Financial Planning"
+        contents:
+          - href: economics/financial-plan.qmd
+            text: "Financial Plan"
+          - href: economics/campaign-budget.qmd
+            text: "Campaign Budget"
+          - href: appendix/investor-risk-analysis.qmd
+            text: "Investor Risk Analysis"
+          - href: economics/health-savings-sharing-model.qmd
+            text: "Health Savings Sharing Model"
+          - href: economics/victory-bonds.qmd
+            text: "VICTORY Bonds"
+
+execute:
+  fig-path: "figures/"
+  cache: false
+  freeze: auto
+
+format:
+  html:
+    theme:
+      - default
+      - custom.scss
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+
