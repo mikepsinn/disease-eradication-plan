@@ -23,9 +23,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -44,13 +44,13 @@ Death is a mechanical failure. Your body is a machine that breaks down over time
 
 ## You Are a Self-Repairing Meat Robot
 
-Your DNA is [3 billion letters of code](../references.qmd#human-genome-and-genetic-editing). Not "like" code. It *is* code. We've learned to read it (the Human Genome Project) and we're learning to edit it (CRISPR). We are mechanics who have finally gotten our hands on the service manual.
+Your DNA is [3 billion letters of code](../dih-economic-models/references.qmd#human-genome-and-genetic-editing). Not "like" code. It *is* code. We've learned to read it (the Human Genome Project) and we're learning to edit it (CRISPR). We are mechanics who have finally gotten our hands on the service manual.
 
 Every day, your body proves it's a machine by running a maintenance routine that would make a German car engineer weep:
 
-- You replace [330 billion cells daily](../references.qmd#cellular-turnover-rates).
-- You repair [10,000 DNA damage events in every cell, every day](../references.qmd#cellular-turnover-rates).
-- You rebuild your entire [skeleton every 10 years](../references.qmd#cellular-turnover-rates).
+- You replace [330 billion cells daily](../dih-economic-models/references.qmd#cellular-turnover-rates).
+- You repair [10,000 DNA damage events in every cell, every day](../dih-economic-models/references.qmd#cellular-turnover-rates).
+- You rebuild your entire [skeleton every 10 years](../dih-economic-models/references.qmd#cellular-turnover-rates).
 
 You are not a static object. You are a pattern that persists while matter flows through you. You are a machine that is constantly rebuilding itself. Aging and disease are just signs that the rebuilding process is starting to fail.
 
@@ -60,15 +60,15 @@ You are not a static object. You are a pattern that persists while matter flows 
 
 Remember when losing a finger meant losing it forever? Not anymore:
 
-- **Lab-grown organs**: We've grown [bladders, windpipes, and blood vessels in labs](../references.qmd#regenerative-medicine-milestones) and installed them in humans. They work.
-- **3D-printed body parts**: We print custom [titanium skulls, jaws, and ribs](../references.qmd#regenerative-medicine-milestones). A kid in Michigan has a [3D-printed windpipe](../references.qmd#regenerative-medicine-milestones) keeping him alive.
-- **Regenerative medicine**: We can [regrow skin for burn victims, cartilage for damaged joints](../references.qmd#regenerative-medicine-milestones), and we're working on teeth.
+- **Lab-grown organs**: We've grown [bladders, windpipes, and blood vessels in labs](../dih-economic-models/references.qmd#regenerative-medicine-milestones) and installed them in humans. They work.
+- **3D-printed body parts**: We print custom [titanium skulls, jaws, and ribs](../dih-economic-models/references.qmd#regenerative-medicine-milestones). A kid in Michigan has a [3D-printed windpipe](../dih-economic-models/references.qmd#regenerative-medicine-milestones) keeping him alive.
+- **Regenerative medicine**: We can [regrow skin for burn victims, cartilage for damaged joints](../dih-economic-models/references.qmd#regenerative-medicine-milestones), and we're working on teeth.
 
 We're literally manufacturing replacement parts for humans. How is this not proof you're a machine?
 
 ### Exhibit B: We Can Reprogram Your Cells
 
-In 2006, [Shinya Yamanaka figured out how to turn adult cells back into stem cells](../references.qmd#yamanaka-factors-cellular-reprogramming). Any cell. From anywhere in your body. Back to factory settings.
+In 2006, [Shinya Yamanaka figured out how to turn adult cells back into stem cells](../dih-economic-models/references.qmd#yamanaka-factors-cellular-reprogramming). Any cell. From anywhere in your body. Back to factory settings.
 
 This means:
 
@@ -78,15 +78,15 @@ This means:
 
 It's like discovering every part of your car can transform into any other part. Need a new transmission? Just reprogram your air freshener.
 
-We [won a Nobel Prize](../references.qmd#yamanaka-factors-cellular-reprogramming) for figuring this out. We're just getting started using it.
+We [won a Nobel Prize](../dih-economic-models/references.qmd#yamanaka-factors-cellular-reprogramming) for figuring this out. We're just getting started using it.
 
 ### Exhibit C: We're Debugging Your Code
 
 Gene therapy is literally debugging human software:
 
-- **[Luxturna](../references.qmd#landmark-gene-therapies)** (2017): Fixes blindness caused by mutated RPE65 gene. One injection. Sight restored.
-- **[Zolgensma](../references.qmd#landmark-gene-therapies)** (2019): Fixes spinal muscular atrophy. Babies who would die before age 2 now walk.
-- **[CAR-T therapy](../references.qmd#landmark-gene-therapies)** (2017): Reprograms your immune system to hunt cancer. Complete remission in "incurable" cases.
+- **[Luxturna](../dih-economic-models/references.qmd#landmark-gene-therapies)** (2017): Fixes blindness caused by mutated RPE65 gene. One injection. Sight restored.
+- **[Zolgensma](../dih-economic-models/references.qmd#landmark-gene-therapies)** (2019): Fixes spinal muscular atrophy. Babies who would die before age 2 now walk.
+- **[CAR-T therapy](../dih-economic-models/references.qmd#landmark-gene-therapies)** (2017): Reprograms your immune system to hunt cancer. Complete remission in "incurable" cases.
 
 We're not treating symptoms anymore. We're fixing the actual code. Like updating your car's ECU firmware to fix an engine problem.
 
@@ -126,17 +126,17 @@ The only difference: We always know how to fix the car.
 
 Some animals don't age. They just... don't:
 
-- **Hydra**: Freshwater polyps that are [biologically immortal](../references.qmd#biological-immortality-in-nature).
-- **Planarian worms**: Cut one in half, get two worms. [Both younger than the original](../references.qmd#biological-immortality-in-nature).
-- **Axolotls**: [Regrow entire limbs, parts of their brain, heart tissue](../references.qmd#biological-immortality-in-nature). No scarring.
-- **Naked mole rats**: [Live 10x longer than similar-sized mammals. Don't get cancer](../references.qmd#biological-immortality-in-nature).
-- **Bowhead whales**: [Live 200+ years](../references.qmd#biological-immortality-in-nature) with no signs of age-related disease.
+- **Hydra**: Freshwater polyps that are [biologically immortal](../dih-economic-models/references.qmd#biological-immortality-in-nature).
+- **Planarian worms**: Cut one in half, get two worms. [Both younger than the original](../dih-economic-models/references.qmd#biological-immortality-in-nature).
+- **Axolotls**: [Regrow entire limbs, parts of their brain, heart tissue](../dih-economic-models/references.qmd#biological-immortality-in-nature). No scarring.
+- **Naked mole rats**: [Live 10x longer than similar-sized mammals. Don't get cancer](../dih-economic-models/references.qmd#biological-immortality-in-nature).
+- **Bowhead whales**: [Live 200+ years](../dih-economic-models/references.qmd#biological-immortality-in-nature) with no signs of age-related disease.
 
 If aging was mandatory, these creatures couldn't exist. But they do. Nature solved aging. You just need to steal the solution.
 
 ### We've Already Reversed Aging (In Mice)
 
-[David Sinclair's lab at Harvard made old mice young again](../references.qmd#reversal-of-aging-in-mice-sinclair):
+[David Sinclair's lab at Harvard made old mice young again](../dih-economic-models/references.qmd#reversal-of-aging-in-mice-sinclair):
 
 - Restored vision in blind mice
 - Reversed muscle aging
@@ -149,7 +149,7 @@ Humans are just big mice with mortgages. If it works in mice, it'll work in us. 
 
 ### The Hallmarks of Aging (All Fixable)
 
-Scientists identified [nine "hallmarks of aging."](../references.qmd#hallmarks-of-aging) Every one is a mechanical problem with a mechanical solution:
+Scientists identified [nine "hallmarks of aging."](../dih-economic-models/references.qmd#hallmarks-of-aging) Every one is a mechanical problem with a mechanical solution:
 
 1. **Genomic instability** → Gene editing (CRISPR)
 2. **Telomere shortening** → Telomerase activation
@@ -167,9 +167,9 @@ You're not waiting for magic. You're systematically fixing each broken subsystem
 
 ### The Manhattan Project for Not Dying
 
-The [Manhattan Project cost $28 billion (adjusted for inflation)](../references.qmd#manhattan-project-cost-30b) and took 3 years. Result: Nuclear weapons.
+The [Manhattan Project cost $28 billion (adjusted for inflation)](../dih-economic-models/references.qmd#manhattan-project-cost-30b) and took 3 years. Result: Nuclear weapons.
 
-Humans spend [$68 billion per year globally](../references.qmd#global-gov-med-research-spending) on all medical research combined. For everything. Cancer, Alzheimer's, heart disease, aging, rare diseases - everything.
+Humans spend [$68 billion per year globally](../dih-economic-models/references.qmd#global-gov-med-research-spending) on all medical research combined. For everything. Cancer, Alzheimer's, heart disease, aging, rare diseases - everything.
 
 If we spent Manhattan Project money on any single disease, we'd cure it in 5 years. Guaranteed.
 

@@ -641,7 +641,7 @@ export async function generateFigureForChapter(filePath: string): Promise<{ acti
   const { content: chapterBody } = matter(chapterContent);
 
   // Get list of existing figures
-  const figureFiles = await glob('brain/figures/**/*.qmd');
+  const figureFiles = await glob('dih-economic-models/figures/**/*.qmd');
   const existingFigures = figureFiles.join('\n');
 
   // Get Design Guide and Example File Content
@@ -729,7 +729,7 @@ export async function parameterizeFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nChecking for hardcoded numbers in ${filePath} with Gemini...`);
   let { frontmatter, body } = await readFileWithMatter(filePath);
 
-  const parametersFile = await fs.readFile('brain/book/appendix/economic_parameters.py', 'utf-8');
+  const parametersFile = await fs.readFile('dih-economic-models/economic_parameters.py', 'utf-8');
   const exampleFile = await fs.readFile('index.qmd', 'utf-8');
 
   const prompt = await loadPromptTemplate('scripts/prompts/parameterizer.md', {
@@ -781,7 +781,7 @@ export async function parameterizeFileWithLLM(filePath: string): Promise<void> {
       body = updatedBody; // Update body for hash calculation
     }
     if (result.newParameterCode) {
-      await fs.appendFile('brain/book/appendix/economic_parameters.py', '\n' + result.newParameterCode);
+      await fs.appendFile('dih-economic-models/economic_parameters.py', '\n' + result.newParameterCode);
       console.log(`✓ Successfully updated economic_parameters.py.`);
     }
   }

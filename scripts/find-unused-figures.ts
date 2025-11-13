@@ -3,7 +3,7 @@ import path from 'path';
 import { glob } from 'glob';
 
 const projectRoot = process.cwd();
-const figuresDir = path.join(projectRoot, 'brain', 'figures');
+const figuresDir = path.join(projectRoot, 'dih-economic-models', 'figures');
 
 async function findUnusedFigures() {
     console.log('Starting analysis of unused figures...');

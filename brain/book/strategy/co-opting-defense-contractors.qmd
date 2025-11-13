@@ -21,16 +21,16 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
 
 
 
-Defense lobbyists spend [~$100M/year](../references.qmd#lobbying-100m) and generate $181B in government contracts. That's a [1,810:1 ROI](../references.qmd#lobbying-roi-calc).
+Defense lobbyists spend [~$100M/year](../dih-economic-models/references.qmd#lobbying-100m) and generate $181B in government contracts. That's a [1,810:1 ROI](../dih-economic-models/references.qmd#lobbying-roi-calc).
 
 They will **absolutely** kill any treaty that threatens their revenue. Not because they're evil. Because that's their job.
 
@@ -40,11 +40,11 @@ They will **absolutely** kill any treaty that threatens their revenue. Not becau
 
 ## The Offer
 
-Allocate strategic partnerships funding from [VICTORY bonds](../economics/victory-bonds.qmd) to:
+Allocate strategic partnerships funding from [VICTORY bonds](../../../dih-economic-models/economics/victory-bonds.qmd) to:
 
 1. **Lobbyists directly**: "Here are bonds paying 271.8% annually. Lobby FOR the treaty."
 2. **Defense contractor executives**: "Here are bonds worth more than your salary. Stop blocking the treaty."
-3. **Private investors/family offices**: "Here are bonds paying 271.8% vs current [10% market return](../references.qmd#investment-return-comparison)."
+3. **Private investors/family offices**: "Here are bonds paying 271.8% vs current [10% market return](../dih-economic-models/references.qmd#investment-return-comparison)."
 4. **Key board members**: Early access to bonds as "strategic advisors"
 
 ## The Math They See
@@ -72,7 +72,7 @@ Even a lobbyist can do that math.
 
 ### 2. **Treaty Doesn't Hurt Them Anyway**
 
-- Military budget only drops 1% ($27.2B of [$2.7T](../references.qmd#sipri-2024-spending))
+- Military budget only drops 1% ($27.2B of [$2.7T](../dih-economic-models/references.qmd#sipri-2024-spending))
 - They still have 99% to lobby for
 - New contracts still get signed
 - Jobs don't disappear
@@ -114,7 +114,7 @@ Now they're not just neutral, they're actively lobbying FOR the treaty:
 
 ## Budget Allocation
 
-A significant portion of the campaign's $1.0B war chest is allocated for strategic partnerships to co-opt key industry players and defense lobbyists. For the full breakdown, see the [Campaign Budget](../economics/campaign-budget.qmd).
+A significant portion of the campaign's $1.0B war chest is allocated for strategic partnerships to co-opt key industry players and defense lobbyists. For the full breakdown, see the [Campaign Budget](../../../dih-economic-models/economics/campaign-budget.qmd).
 
 ## Why This Works
 
@@ -189,7 +189,7 @@ You can't fight the military-industrial complex.
 
 But you can hire it.
 
-**Cost**: A strategic allocation from the campaign's primary war chest (see [Campaign Budget](../economics/campaign-budget.qmd))
+**Cost**: A strategic allocation from the campaign's primary war chest (see [Campaign Budget](../../../dih-economic-models/economics/campaign-budget.qmd))
 
 **Result**: The most powerful lobbying machine in history working FOR the treaty instead of against it
 

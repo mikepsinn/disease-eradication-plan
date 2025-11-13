@@ -34,7 +34,7 @@ from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadat
 setup_chart_style()
 
 # Core parameters for the dFDA model (in billions of USD)
-# WORST CASE SCENARIO (Conservative) from brain/book/appendix/dfda-cost-benefit-analysis.qmd
+# WORST CASE SCENARIO (Conservative) from ../appendix/dfda-cost-benefit-analysis.qmd
 
 global_clinical_trial_market = 100.0
 dfda_rd_cost_reduction_pct = 0.50

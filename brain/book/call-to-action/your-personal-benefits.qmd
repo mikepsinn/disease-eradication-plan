@@ -13,9 +13,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -27,7 +27,7 @@ Forget saving humanity. Let's talk about what you, personally, get out of this. 
 
 If you get sick (and you will), your chances of getting into a clinical trial are **0.2%** - that's 1 in 480 people with chronic disease.
 
-[Half of humanity is willing to participate](../references.qmd#patient-willingness-clinical-trials), but the system can only handle [5 million people per year](../appendix/clinical-trial-participants.qmd). The other 99.8% get to die while waiting for approval.
+[Half of humanity is willing to participate](../dih-economic-models/references.qmd#patient-willingness-clinical-trials), but the system can only handle [5 million people per year](../../../dih-economic-models/appendix/clinical-trial-participants.qmd). The other 99.8% get to die while waiting for approval.
 
 ### What You Actually Get
 
@@ -59,7 +59,7 @@ As diseases are cured, healthcare costs plummet. The 1% Treaty accelerates resea
 
 ### If you have money
 
-[VICTORY Bonds](../economics/victory-bonds.qmd) offer a projected **271.8% annual return**, perpetually. I could not find a comparable investment. You can profit while funding the research that will make you immortal.
+[VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd) offer a projected **271.8% annual return**, perpetually. I could not find a comparable investment. You can profit while funding the research that will make you immortal.
 
 #### If you have a family
 
@@ -69,7 +69,7 @@ Your parents won't die of Alzheimer's. Your children won't have to worry about r
 
 Here's what a typical 30-year-old making $50,000/year actually gets:
 
-{{< include ../../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
+{{< include ../../dih-economic-models/figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
 ```{python}
 #| echo: false
@@ -84,13 +84,13 @@ Where does this come from?
 - **Healthcare Savings** (4%): Diseases get cured, your insurance premiums drop by ~$1,650/year.
 - **Productivity Gains** (8%): You're healthier, you work better, you earn more.
 
-{{< include ../../figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
+{{< include ../../dih-economic-models/figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
 
 **The red line at age 80 is everything.** Without the treaty, you're dead. With the treaty, you live another 72 years. Everything to the right of that line - roughly **60-70% of your total lifetime wealth** - only exists if this succeeds.
 
 ### Your Wealth Depends on Treaty Terms
 
-{{< include ../../figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
+{{< include ../../dih-economic-models/figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
 
 The treaty percentage negotiated determines whether you get millions or generational wealth:
 
@@ -131,4 +131,4 @@ The catch? You only get paid if the plan works. But if it does, you just made `{
 
 ---
 
-*For detailed calculations, mathematical framework, and sensitivity analysis, see the [Disease Eradication Model](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd). For conservative estimates suitable for skeptical audiences, see the Conservative Baselines section.*
+*For detailed calculations, mathematical framework, and sensitivity analysis, see the [Disease Eradication Model](../../../dih-economic-models/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd). For conservative estimates suitable for skeptical audiences, see the Conservative Baselines section.*

@@ -116,7 +116,7 @@ function findQmdFiles(dir: string): string[] {
 
       if (entry.isDirectory() && !entry.name.startsWith('.') && entry.name !== 'node_modules') {
         // Skip brain/figures folder
-        if (!fullPath.includes(path.join('brain', 'figures'))) {
+        if (!fullPath.includes(path.join('dih-economic-models', 'figures'))) {
           traverse(fullPath);
         }
       } else if (entry.isFile() && entry.name.endsWith('.qmd')) {

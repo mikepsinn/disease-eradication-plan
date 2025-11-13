@@ -12,9 +12,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -32,9 +32,9 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 ## System Architecture
 
 - **Voting protocol**: Use an end-to-end verifiable scheme (like Helios) with individual ballot verification and public bulletin board.
-  -   Reference: [Helios (Adida et al.)](../references.qmd#helios-voting)
+  -   Reference: [Helios (Adida et al.)](../dih-economic-models/references.qmd#helios-voting)
 
-- **Identity / Sybil resistance**: Multi-factor: email/phone OTP; device/browser fingerprinting; optional liveness/biometrics; integration with national e-ID where available (e.g., models informed by [Estonia's experience](../references.qmd#estonia-internet-voting)); proof-of-uniqueness partners.
+- **Identity / Sybil resistance**: Multi-factor: email/phone OTP; device/browser fingerprinting; optional liveness/biometrics; integration with national e-ID where available (e.g., models informed by [Estonia's experience](../dih-economic-models/references.qmd#estonia-internet-voting)); proof-of-uniqueness partners.
 - **Fraud controls**: Risk scoring, velocity limits, manual review queues; bounty program for reporting abuse.
 - **Internationalization**: 40+ locale support; accessibility-first UI.
 
@@ -46,7 +46,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## Incentives and Referrals
 
-- **Rewards**: Funded via [VICTORY bonds](../economics/victory-bonds.qmd) with strict anti-fraud and per-cap caps; public ledger of reward disbursements.
+- **Rewards**: Funded via [VICTORY bonds](../../../dih-economic-models/economics/victory-bonds.qmd) with strict anti-fraud and per-cap caps; public ledger of reward disbursements.
 - **Education-first**: Reward structured learning paths before voting to reduce low-information participation.
 
 ## Legal Positioning
@@ -61,4 +61,4 @@ Verification rate, audit pass rate, unique-voter deduplication quality, and poli
 ## Cross-References
 
 - [The DIH](../solution/dih.qmd)
-- [VICTORY Bonds](../economics/victory-bonds.qmd)
+- [VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd)

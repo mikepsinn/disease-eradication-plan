@@ -20,9 +20,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -139,13 +139,13 @@ display(IPImage(str(png_path)))
 - **Funds War Chest:** Uses $1.0B raised to fund lobbying and campaigns
 - **Delivers Returns:** Manages treaty inflows to pay bondholders
 
-**Why Delaware:** Established corporate law. [More corporations than humans live there](../references.qmd#delaware-corporate-population). Citizens United means corporations have political speech rights.
+**Why Delaware:** Established corporate law. [More corporations than humans live there](../dih-economic-models/references.qmd#delaware-corporate-population). Citizens United means corporations have political speech rights.
 
 ### Entity #4: The DIH Foundation ("The Soul")
 
 **What It Is:** Parent organization holding everything together. Based in neutral Switzerland.
 
-**Why Switzerland:** They've [avoided war for 200 years](../references.qmd#switzerland-last-war-death-1847) by holding everyone's money. Even Hitler couldn't make them pick a side.
+**Why Switzerland:** They've [avoided war for 200 years](../dih-economic-models/references.qmd#switzerland-last-war-death-1847) by holding everyone's money. Even Hitler couldn't make them pick a side.
 
 #### What It Does
 
@@ -190,11 +190,11 @@ Split operations across multiple jurisdictions based on what each country does b
 
 **Neutral Parent Jurisdiction:** Foundation domiciled somewhere neutral with strong international law tradition (Switzerland, Luxembourg, Liechtenstein). Handles the big treasury, provides mission lock.
 
-**US Political Operations:** Completely separate entities for US election activities. Only Americans fund, only Americans control. This isn't optional - [foreign nationals cannot fund US elections](../references.qmd#fec-foreign-nationals), and violating this means federal prison, not fines.
+**US Political Operations:** Completely separate entities for US election activities. Only Americans fund, only Americans control. This isn't optional - [foreign nationals cannot fund US elections](../dih-economic-models/references.qmd#fec-foreign-nationals), and violating this means federal prison, not fines.
 
 **Crypto-Friendly Treasury:** Operations domiciled where regulators understand that cryptocurrency isn't a terrorist plot (Singapore, Switzerland, UAE, etc.). Clear rules beat hostile regulation.
 
-**Tech-Forward Development:** Platform built where digital governance actually works (Estonia with [e-Residency](../references.qmd#estonia-eresidency-stats), Singapore, etc.). Pick jurisdictions where government understands the internet exists.
+**Tech-Forward Development:** Platform built where digital governance actually works (Estonia with [e-Residency](../dih-economic-models/references.qmd#estonia-eresidency-stats), Singapore, etc.). Pick jurisdictions where government understands the internet exists.
 
 When one regulator attacks, others provide safe harbor. When one government restricts, others enable. It's regulatory arbitrage for good instead of evil. Don't marry specific jurisdictions - regulatory environments change. Marry the strategy of geographic diversification.
 
@@ -304,7 +304,7 @@ display(IPImage(str(png_path)))
 
 ## Securities Law (How to Sell Hope Without Prison)
 
-For complete breakdown of financial mechanics and returns, see [Investment Vehicle](../economics/victory-bonds.qmd) chapter. This section covers legal compliance.
+For complete breakdown of financial mechanics and returns, see [Investment Vehicle](../../../dih-economic-models/economics/victory-bonds.qmd) chapter. This section covers legal compliance.
 
 The SEC thinks everything is a security. Your grandmother's cookies? Probably a security. That feeling after a good sneeze? Definitely a security.
 
@@ -323,17 +323,17 @@ Conclusion: VICTORY Bonds are super definitely a security. Time to comply!
 
 **Phase 1: Rich People Only (Reg D)**
 
-- [Unlimited accredited investors ($1M net worth or $200K income)](../references.qmd#sec-accredited-investor-definition)
-- [Plus up to 35 sophisticated non-accredited](../references.qmd#sec-investor-limit-private-offering)
+- [Unlimited accredited investors ($1M net worth or $200K income)](../dih-economic-models/references.qmd#sec-accredited-investor-definition)
+- [Plus up to 35 sophisticated non-accredited](../dih-economic-models/references.qmd#sec-investor-limit-private-offering)
 - No public advertising under 506(b) (except this book, which is "education")
-- [File Form D](../references.qmd#sec-form-d-filing) within 15 days
+- [File Form D](../dih-economic-models/references.qmd#sec-form-d-filing) within 15 days
 - No capital limit: Raise as much as you want
 
 #### Phase 2: Crowd Sale (Reg CF/A+)
 
 - After proving model works
 - Regular people can invest
-- Maximum raise limits ([$5M Reg CF](../references.qmd#sec-reg-cf-raise-limit), [$75M Reg A+](../references.qmd#sec-reg-a))
+- Maximum raise limits ([$5M Reg CF](../dih-economic-models/references.qmd#sec-reg-cf-raise-limit), [$75M Reg A+](../dih-economic-models/references.qmd#sec-reg-a))
 - Full disclosures (here's how you might lose everything)
 
 ##### Phase 3: Secondary Markets
@@ -370,7 +370,7 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 
 ### The Foreign National Problem (And Solution)
 
-**The Law:** [Foreign nationals can't spend money on US elections](../references.qmd#fec-foreign-nationals)
+**The Law:** [Foreign nationals can't spend money on US elections](../dih-economic-models/references.qmd#fec-foreign-nationals)
 
 **The Penalty:** Federal prison (not the nice kind)
 
@@ -425,7 +425,7 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 #### United Kingdom
 
 - Register with Electoral Commission
-- [Spending limits (£20,000 nationally)](../references.qmd#uk-electoral-spending-limits)
+- [Spending limits (£20,000 nationally)](../dih-economic-models/references.qmd#uk-electoral-spending-limits)
 - Quarterly reports
 
 #### European Union
@@ -437,8 +437,8 @@ Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contr
 #### Canada
 
 - Register as third-party advertiser
-- [Foreign funding restrictions](../references.qmd#canada-bill-c-76)
-- [Real-time expense reporting](../references.qmd#canada-expenditure-reporting-500)
+- [Foreign funding restrictions](../dih-economic-models/references.qmd#canada-bill-c-76)
+- [Real-time expense reporting](../dih-economic-models/references.qmd#canada-expenditure-reporting-500)
 - Sorry for trying to influence your democracy
 
 ## Treaty Framework
@@ -461,7 +461,7 @@ They will come for you. Here's how you survive:
 
 - Defense: Complete segregation
 - Backup: Constitutional challenge
-- Reality: [Money is speech (Supreme Court said so)](../references.qmd#citizens-united-ruling)
+- Reality: [Money is speech (Supreme Court said so)](../dih-economic-models/references.qmd#citizens-united-ruling)
 
 #### Tax Evasion
 

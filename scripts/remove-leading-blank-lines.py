@@ -24,7 +24,7 @@ def remove_leading_blank_lines(content):
     return '\n'.join(lines[first_non_blank:])
 
 def main():
-    files = glob.glob('brain/figures/*.qmd')
+    files = glob.glob('dih-economic-models/figures/*.qmd')
     modified = []
     
     for filepath in files:

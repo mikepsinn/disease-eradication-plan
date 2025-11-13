@@ -26,9 +26,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -55,8 +55,8 @@ The FDA doesn't protect you from dangerous drugs. It protects you from *potentia
 
 Let's compare two real-world systems for testing drugs:
 
-1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **[$500 per patient](../references.qmd#recovery-cost-500)**. Found a life-saving treatment in 3 months.
-2.  **The FDA System:** Averages **[$41,000 per patient](../references.qmd#trial-cost-41k)** for clinical trials. Takes an average of **[9.1 years](../references.qmd#drug-development-timeline-9-years)** to approve a new drug.
+1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **[$500 per patient](../dih-economic-models/references.qmd#recovery-cost-500)**. Found a life-saving treatment in 3 months.
+2.  **The FDA System:** Averages **[$41,000 per patient](../dih-economic-models/references.qmd#trial-cost-41k)** for clinical trials. Takes an average of **[9.1 years](../dih-economic-models/references.qmd#drug-development-timeline-9-years)** to approve a new drug.
 
 The FDA's system is **82x more expensive** and **36x slower**. This isn't a small difference. It's the difference between a functional system and a system designed to fail.
 
@@ -68,7 +68,7 @@ Large-scale efficacy trials based on real-world evidence produce better health o
 
 **The Setup: 10,000 Years of Not Improving**
 
-For over 99% of recorded human history, [the average human life expectancy was around 30 years](../references.qmd#historical-life-expectancy-30-years).
+For over 99% of recorded human history, [the average human life expectancy was around 30 years](../dih-economic-models/references.qmd#historical-life-expectancy-30-years).
 
 This was true whether you lived in Ancient Rome, Medieval Europe, or the Renaissance. Kings and peasants, philosophers and farmers, all died at roughly the same embarrassingly young age.
 
@@ -80,11 +80,11 @@ For 10,000 years, you made exactly zero progress.
 
 Then something changed.
 
-In 1883, [some doctors founded the Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) and did something revolutionary: they shared information. Apparently after 10,000 years someone finally thought "what if we told each other what works?"
+In 1883, [some doctors founded the Journal of the American Medical Association (JAMA)](../dih-economic-models/references.qmd#jama-founded-1893) and did something revolutionary: they shared information. Apparently after 10,000 years someone finally thought "what if we told each other what works?"
 
 Here's how it worked:
 
-[144,000 physicians](../references.qmd#pre-1962-physician-trials) across America tried treatments on real patients. They wrote down what happened. "This drug helped." "This drug killed the patient." "This drug did nothing but make them smell funny."
+[144,000 physicians](../dih-economic-models/references.qmd#pre-1962-physician-trials) across America tried treatments on real patients. They wrote down what happened. "This drug helped." "This drug killed the patient." "This drug did nothing but make them smell funny."
 
 Leading experts reviewed all these case reports, compiled them into studies, and published the results. If a medicine worked and didn't kill people, JAMA gave it a seal of approval.
 
@@ -114,9 +114,9 @@ This suggests that the regulations did not have a large-scale positive or negati
 
 #### **1950**'s – Thalidomide **Causes Thousands of Birth Defects Outside US**
 
-Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki/Thalidomide) for morning sickness. While it was initially thought to be safe in pregnancy, [it resulted in thousands of horrific congenital disabilities](../references.qmd#thalidomide-birth-defects).
+Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki/Thalidomide) for morning sickness. While it was initially thought to be safe in pregnancy, [it resulted in thousands of horrific congenital disabilities](../dih-economic-models/references.qmd#thalidomide-birth-defects).
 
-Fortunately, [the existing FDA safety regulations prevented any birth defects in the US](../references.qmd#thalidomide-no-us-birth-defects). Despite the effectiveness of the existing US regulatory framework in protecting Americans, newspaper stories such as the one below created a strong public outcry for increased regulation.
+Fortunately, [the existing FDA safety regulations prevented any birth defects in the US](../dih-economic-models/references.qmd#thalidomide-no-us-birth-defects). Despite the effectiveness of the existing US regulatory framework in protecting Americans, newspaper stories such as the one below created a strong public outcry for increased regulation.
 
 ![Thalidomide](../../../assets/thalidomide.jpg)
 
@@ -124,20 +124,20 @@ Fortunately, [the existing FDA safety regulations prevented any birth defects in
 
 Effective **safety** regulations were already in place. They worked. America had zero Thalidomide deaths while Europe had thousands.
 
-So naturally, the government responded to this success by regulating **efficacy** testing instead via the [1962 Kefauver Harris Amendment](../references.qmd#kefauver-harris-amendment-1962). This is like seeing your smoke detector work perfectly and deciding to replace it with a smoke detector that's 82 times more expensive and takes 36 times longer to detect smoke (and also doesn't work as well).
+So naturally, the government responded to this success by regulating **efficacy** testing instead via the [1962 Kefauver Harris Amendment](../dih-economic-models/references.qmd#kefauver-harris-amendment-1962). This is like seeing your smoke detector work perfectly and deciding to replace it with a smoke detector that's 82 times more expensive and takes 36 times longer to detect smoke (and also doesn't work as well).
 
 #### What Changed
 
 Before 1962:
 
-- Drug companies spent [$74 million](../references.qmd#pre-1962-drug-costs-timeline) (inflation-adjusted) to prove safety
-- Once approved as safe, [144,000 independent doctors tested efficacy](../references.qmd#pre-1962-physician-trials) on real patients
+- Drug companies spent [$74 million](../dih-economic-models/references.qmd#pre-1962-drug-costs-timeline) (inflation-adjusted) to prove safety
+- Once approved as safe, [144,000 independent doctors tested efficacy](../dih-economic-models/references.qmd#pre-1962-physician-trials) on real patients
 - The third-party AMA compiled results and published findings
 
 After 1962:
 
 - FDA took over efficacy testing
-- [Made the old system illegal](../references.qmd#kefauver-harris-amendment-1962)
+- [Made the old system illegal](../dih-economic-models/references.qmd#kefauver-harris-amendment-1962)
 - Required small, controlled trials run by... the drug companies themselves
 
 Let's pause on that irony: The new regulations were meant to ensure drugs work. They did this by:
@@ -157,7 +157,7 @@ The 1962 regulations, which were explicitly about ensuring efficacy, massively r
 
 #### What Happened to New Treatments
 
-The new regulations immediately [reduced new drug approvals by 70%](../references.qmd#post-1962-drug-approval-drop).
+The new regulations immediately [reduced new drug approvals by 70%](../dih-economic-models/references.qmd#post-1962-drug-approval-drop).
 
 Not gradually. Immediately.
 
@@ -175,7 +175,7 @@ That's a 13x increase. For worse results.
 
 The new regulations created such a massive delay that the pharmaceutical industry complained about a "drug lag."
 
-So Congress "fixed" this by [extending drug patent monopolies](../references.qmd#drug-price-competition-act-1984) in 1984.
+So Congress "fixed" this by [extending drug patent monopolies](../dih-economic-models/references.qmd#drug-price-competition-act-1984) in 1984.
 
 Kefauver's amendments, which were meant to make drugs safer and cheaper, instead made them:
 
@@ -352,11 +352,11 @@ Perhaps it's a coincidence, but you can see an increase in drug approvals in the
 
 Here's what it actually costs to get FDA approval for a new drug:
 
-- **Average cost:** [$2.6 billion](../references.qmd#drug-development-costs)
-- **Average time:** [9.1 years from Phase 1](../references.qmd#drug-development-timeline-9-years) (17 years total discovery-to-patient)
-- **Success rate:** [12% make it through trials](../references.qmd#drug-trial-success-rate-12-pct)
+- **Average cost:** [$2.6 billion](../dih-economic-models/references.qmd#drug-development-costs)
+- **Average time:** [9.1 years from Phase 1](../dih-economic-models/references.qmd#drug-development-timeline-9-years) (17 years total discovery-to-patient)
+- **Success rate:** [12% make it through trials](../dih-economic-models/references.qmd#drug-trial-success-rate-12-pct)
 
-That's [$41,000 per person](../references.qmd#trial-cost-41k) just to TEST if a pill works. Not the pill. Just to test it.
+That's [$41,000 per person](../dih-economic-models/references.qmd#trial-cost-41k) just to TEST if a pill works. Not the pill. Just to test it.
 
 For that money, you could:
 
@@ -364,14 +364,14 @@ For that money, you could:
 - Hire a shaman for a year
 - Fly to Switzerland for assisted dying (much faster)
 
-The total cost? **[$2.6 billion](../references.qmd#drug-development-costs)** per new drug.
+The total cost? **[$2.6 billion](../dih-economic-models/references.qmd#drug-development-costs)** per new drug.
 
-That's [more than the GDP of Greenland](../references.qmd#gdp-of-greenland). We could literally buy Greenland and turn it into a giant laboratory for less than it costs to approve one arthritis medication.
+That's [more than the GDP of Greenland](../dih-economic-models/references.qmd#gdp-of-greenland). We could literally buy Greenland and turn it into a giant laboratory for less than it costs to approve one arthritis medication.
 
 Fun fact: If we had today's FDA in 1897, aspirin would still be in Phase II trials.
 "We need to test if it works on headaches in left-handed people born on Tuesdays."
 
-**[17 years from discovery to patient](../references.qmd#drug-development-timeline-17-years)** (while you die waiting).
+**[17 years from discovery to patient](../dih-economic-models/references.qmd#drug-development-timeline-17-years)** (while you die waiting).
 
 That's:
 
@@ -382,7 +382,7 @@ That's:
 
 But at least the paperwork is thorough!
 
-[95% of diseases have ZERO approved treatments](../references.qmd#fda-untreated-diseases-95pct).
+[95% of diseases have ZERO approved treatments](../dih-economic-models/references.qmd#fda-untreated-diseases-95pct).
 
 Your rare disease child has better odds with lottery tickets.
 
@@ -399,9 +399,9 @@ Meanwhile, if you have Exploding Kidney Syndrome affecting 37 people worldwide, 
 
 ### The 166 Billion Treatments We're Ignoring
 
-There are **[166 billion potential drug compounds](../references.qmd#166-billion-compounds)** we could test.
+There are **[166 billion potential drug compounds](../dih-economic-models/references.qmd#166-billion-compounds)** we could test.
 
-Number we've actually tested thoroughly: [About 2,000](../references.qmd#number-of-drugs-tested-thoroughly).
+Number we've actually tested thoroughly: [About 2,000](../dih-economic-models/references.qmd#number-of-drugs-tested-thoroughly).
 
 That's like having a library with 166 billion books but only reading the ones with pictures. We have more untested treatments than stars in our galaxy, but the system is too busy protecting itself to test them.
 
@@ -413,13 +413,13 @@ Designed to prevent lawsuits, not save lives.
 
 ### No Data on Unpatentable Molecules
 
-Under the current system of research, it costs [$41k per subject](../references.qmd#trial-cost-41k) in Phase III clinical trials. As a result, there is not a sufficient profit incentive for anyone to research the effects of any factor besides a molecule that can be patented.
+Under the current system of research, it costs [$41k per subject](../dih-economic-models/references.qmd#trial-cost-41k) in Phase III clinical trials. As a result, there is not a sufficient profit incentive for anyone to research the effects of any factor besides a molecule that can be patented.
 
 ![how much we know](../../../assets/how-much-we-know.png)
 
 ## The Actual Death Toll of "Drug Lag"
 
-The FDA's economists have a term for people dying while waiting for a drug to be approved: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Delays are estimated to cost **[21,000 to 120,000 American lives per decade](../references.qmd#gieringer85)**.
+The FDA's economists have a term for people dying while waiting for a drug to be approved: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Delays are estimated to cost **[21,000 to 120,000 American lives per decade](../dih-economic-models/references.qmd#gieringer85)**.
 
 Here's a news story from the Non-Existent Times by No One Ever without a picture of all the people that die from lack of access to life-saving treatments that might have been.
 
@@ -434,7 +434,7 @@ This means that it's only logical for regulators to reject drug applications by 
 | FDA Allows the Drug         | Correct Decision                                         | Victims are identifiable and might appear on Oprah.< |
 | FDA Does Not Allow the Drug | Victims are not identifiable or acknowledged. | Correct Decision                                               |
 
-The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the FDA waited. And waited. The decade-long delay in approving them for their most common use is estimated to have killed **[over 100,000 Americans](../references.qmd#beta-blocker-deaths)**.
+The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the FDA waited. And waited. The decade-long delay in approving them for their most common use is estimated to have killed **[over 100,000 Americans](../dih-economic-models/references.qmd#beta-blocker-deaths)**.
 
 That's more Americans than died in Vietnam and Korea combined. From one drug delay. And it wasn't a one-off tragedy. Here is a partial list of other drugs Americans died waiting for while they were already available in other civilized countries for a year or longer:
 
@@ -466,15 +466,15 @@ The historical data is damning, but this isn't a problem of the past. Here is a 
 
 #### Executive Summary
 
-[Depression is the leading global cause of disability](../references.qmd#depression-leading-cause-disability) and the strongest behavioral predictor of suicide. Existing antidepressant drugs [fail to achieve remission in about **two-thirds of patients**](../references.qmd#antidepressant-failure-rate-stard), and pharmacologic innovation has stagnated. Closed-loop neuromodulation, implantable or wearable systems that sense neural activity and adjust stimulation in real time, has shown [**response rates of 60–80 %**](../references.qmd#neuromodulation-trd-response-rates) in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
+[Depression is the leading global cause of disability](../dih-economic-models/references.qmd#depression-leading-cause-disability) and the strongest behavioral predictor of suicide. Existing antidepressant drugs [fail to achieve remission in about **two-thirds of patients**](../dih-economic-models/references.qmd#antidepressant-failure-rate-stard), and pharmacologic innovation has stagnated. Closed-loop neuromodulation, implantable or wearable systems that sense neural activity and adjust stimulation in real time, has shown [**response rates of 60–80 %**](../dih-economic-models/references.qmd#neuromodulation-trd-response-rates) in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
 Yet under current FDA and EMA processes, large-scale availability is unlikely before **2035**. A utilitarian cost-benefit model indicates that this delay will cost **≈5–10 million lives** and **≈100 million quality-adjusted life-years (QALYs)** globally.
 
 #### 1. Scale of the Problem
 
 | Metric                                                              | Value               | Source                        |
 | ------------------------------------------------------------------- | ------------------- | ----------------------------- |
-| Global major-depressive-disorder prevalence                         | ~280 million people | [WHO 2023](../references.qmd#depression-prevalence-280m)                      |
-| Annual suicides                                                     | ~700 000            | [WHO 2023](../references.qmd#suicide-deaths-vs-war-deaths)                      |
+| Global major-depressive-disorder prevalence                         | ~280 million people | [WHO 2023](../dih-economic-models/references.qmd#depression-prevalence-280m)                      |
+| Annual suicides                                                     | ~700 000            | [WHO 2023](../dih-economic-models/references.qmd#suicide-deaths-vs-war-deaths)                      |
 | Suicide attributable to untreated or treatment-resistant depression | 70 %                | CDC, WHO meta-analyses        |
 | Mean age of death                                                   | 40 y                | Global Burden of Disease      |
 | Average lost QALYs per suicide                                      | 35                  | conservative midlife estimate |
@@ -551,7 +551,7 @@ A rational health-policy framework would authorize conditional deployment once *
 - Nothing happens
 - Dead people don't complain
 - Promotion on schedule
-- [Retire to pharma job](../references.qmd#fda-regulatory-capture-evidence)
+- [Retire to pharma job](../dih-economic-models/references.qmd#fda-regulatory-capture-evidence)
 
 This isn't conspiracy.
 It's economics.
@@ -565,7 +565,7 @@ Medical researcher Dr. Henry I. Miller, MS, MD described his experience working 
 
 ## Clinical Trial Theater: Excluding 85% of Reality
 
-FDA trials systematically [exclude](../references.qmd#clinical-trial-exclusions):
+FDA trials systematically [exclude](../dih-economic-models/references.qmd#clinical-trial-exclusions):
 
 - Patients over 65 (most people who need drugs)
 - Patients under 18 (all children)
@@ -626,9 +626,9 @@ The economic survival of the pharmaceutical company is dependent on the positive
 
 Here's a fun fact that should be criminal:
 
-- **Negative trial results published:** [37%](../references.qmd#publication-bias-clinical-trials)
-- **Positive trial results published:** [94%](../references.qmd#publication-bias-clinical-trials)
-- **Money wasted repeating failed experiments:** [~\$100 billion annually](../references.qmd#wasted-spending-on-failed-experiments)
+- **Negative trial results published:** [37%](../dih-economic-models/references.qmd#publication-bias-clinical-trials)
+- **Positive trial results published:** [94%](../dih-economic-models/references.qmd#publication-bias-clinical-trials)
+- **Money wasted repeating failed experiments:** [~\$100 billion annually](../dih-economic-models/references.qmd#wasted-spending-on-failed-experiments)
 
 Companies are literally allowed to hide when drugs don't work.
 
@@ -648,25 +648,25 @@ It's like casinos only having to report when people win.
 
 ## Countries That Don't Have Our "Safety"
 
-**[Japan's Regenerative Medicine Act](../references.qmd#japans-regenerative-medicine-act):**
+**[Japan's Regenerative Medicine Act](../dih-economic-models/references.qmd#japans-regenerative-medicine-act):**
 
 - Conditional approval after Phase II
 - Real-world data collection required
 - Time to patient: 2-3 years
 - Americans fly there for treatment
 
-**[EU Compassionate Use](../references.qmd#eu-compassionate-use-program):**
+**[EU Compassionate Use](../dih-economic-models/references.qmd#eu-compassionate-use-program):**
 
 - Terminal patients can access experimental drugs
 - Doctor's discretion, not bureaucrat's
 - Thousands of lives extended
 - FDA: "But what if they die?" (They're already dying)
 
-**[Right to Try (US)](../references.qmd#right-to-try-act-2018):**
+**[Right to Try (US)](../dih-economic-models/references.qmd#right-to-try-act-2018):**
 
 - Passed despite FDA opposition
 - FDA response: Made it effectively impossible to use
-- [Patients helped: <200 total](../references.qmd#right-to-try-act-outcomes)
+- [Patients helped: <200 total](../dih-economic-models/references.qmd#right-to-try-act-outcomes)
 - Patients who wanted help: Tens of thousands
 
 ## The COVID Test Fiasco: A Case Study in Excellence
@@ -674,11 +674,11 @@ It's like casinos only having to report when people win.
 Timeline of FDA's COVID response:
 
 - **January 2020:** WHO develops test, world starts using it
-- **February 2020:** [FDA blocks all non-CDC tests](../references.qmd#fda-covid-test-delay)
-- **Late February:** [CDC tests contaminated, don't work](../references.qmd#cdc-covid-test-contamination-2020)
+- **February 2020:** [FDA blocks all non-CDC tests](../dih-economic-models/references.qmd#fda-covid-test-delay)
+- **Late February:** [CDC tests contaminated, don't work](../dih-economic-models/references.qmd#cdc-covid-test-contamination-2020)
 - **March:** Private labs begging to test, FDA says no
 - **Late March:** FDA finally allows other tests
-- **Cost:** Unknown thousands of [preventable deaths](../references.qmd#excess-deaths-fda-covid-response)
+- **Cost:** Unknown thousands of [preventable deaths](../dih-economic-models/references.qmd#excess-deaths-fda-covid-response)
 
 The FDA's defense: "We were ensuring quality."
 The CDC's tests literally didn't work.

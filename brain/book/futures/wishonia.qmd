@@ -21,9 +21,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -63,7 +63,7 @@ You convince enough humans to indicate agreement on the [global referendum](../s
 
 The [1% Treaty](../solution/1-percent-treaty.qmd) passes.
 
-Defense contractors initially complain until someone shows them the [VICTORY Bonds](../economics/victory-bonds.qmd) spreadsheet. 271.8% annual returns. Their eyes get very wide. They stop complaining. Lockheed Martin announces they're "diversifying into healthcare technology." This is your word for "we realized making people not-die is more profitable than making people die."
+Defense contractors initially complain until someone shows them the [VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd) spreadsheet. 271.8% annual returns. Their eyes get very wide. They stop complaining. Lockheed Martin announces they're "diversifying into healthcare technology." This is your word for "we realized making people not-die is more profitable than making people die."
 
 Even your Congress understands 271.8% returns. Money is the only language they speak fluently.
 
@@ -71,7 +71,7 @@ Even your Congress understands 271.8% returns. Money is the only language they s
 
 Humans discover something fascinating: not dying is pleasant.
 
-After seeing what $27.2B could do - [15 new treatments in the first year](../references.qmd#recovery-trial) - they want more. The 2% Treaty passes even faster.
+After seeing what $27.2B could do - [15 new treatments in the first year](../dih-economic-models/references.qmd#recovery-trial) - they want more. The 2% Treaty passes even faster.
 
 By 2028, you're spending $54 billion annually on the [Decentralized Institutes of Health](../solution/dih.qmd).
 
@@ -227,7 +227,7 @@ As the DIH budget grew from $27.2B to over a trillion, economic gravity shifted.
 - Productivity gains from longevity: $4.1 trillion
 - **Total Annual Peace Dividend: $11.75 trillion**
 
-This is the same logic from [the Economic Case chapter](../economics.qmd) - $1.2T from the initial 1% treaty, scaled to 50% redirection over 25 years. Same principles. Bigger numbers.
+This is the same logic from [the Economic Case chapter](../../../dih-economic-models/economics/economics.qmd) - $1.2T from the initial 1% treaty, scaled to 50% redirection over 25 years. Same principles. Bigger numbers.
 
 That's $1,450 per human per year in actual new wealth. Not redistribution. New wealth from not being sick or dead.
 
@@ -348,7 +348,7 @@ This world exists because you made one choice:
 Healing people became more profitable than killing them.
 
 You signed the [1% Treaty](../solution/1-percent-treaty.qmd).
-You bought [VICTORY Bonds](../economics/victory-bonds.qmd).
+You bought [VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd).
 You participated in [decentralized trials](../solution/dfda.qmd).
 You chose life.
 

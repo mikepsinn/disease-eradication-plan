@@ -13,9 +13,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -30,7 +30,7 @@ This is the price of admission. The bare minimum. Go to the referendum site, pro
 
 ## Action 2: INVEST (10 Minutes)
 
-If you have the means, this is where you go from being a supporter to being an owner. An investment in **[VICTORY Bonds](../economics/victory-bonds.qmd)** is not a donation. It's a high-risk, high-reward bet on the future of the human race with a projected 271.8% annual return. This is the fuel. This is what buys the lobbyists, the ads, and the politicians. This is what wins the war.
+If you have the means, this is where you go from being a supporter to being an owner. An investment in **[VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd)** is not a donation. It's a high-risk, high-reward bet on the future of the human race with a projected 271.8% annual return. This is the fuel. This is what buys the lobbyists, the ads, and the politicians. This is what wins the war.
 
 ## Action 3: RECRUIT (15 minutes)
 

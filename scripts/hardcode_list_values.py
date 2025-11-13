@@ -13,7 +13,12 @@ import sys
 from pathlib import Path
 
 # Add economic_parameters to path
-sys.path.insert(0, 'brain/book/appendix')
+# Find project root
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
 from economic_parameters import *
 
 # Build VALUE_MAP dynamically from economic_parameters module

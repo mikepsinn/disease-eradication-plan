@@ -21,9 +21,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 # Import all parameters from centralized module
 
@@ -65,25 +65,25 @@ print(f"Societal Dividend (1% of Total Costs): {format_billions(societal_dividen
 
 This chart shows the stark contrast between military spending and disease-specific research funding, highlighting the massive opportunity for reallocation.
 
-{{< include ../../../brain/figures/military-vs-disease-research-funding-bar-chart.qmd >}}
+{{< include ../figures/military-vs-disease-research-funding-bar-chart.qmd >}}
 
 ## Peace Dividend Breakdown by Category
 
 This detailed breakdown shows where the economic benefits come from when we reduce conflict by just 1%.
 
-{{< include ../../../brain/figures/peace-dividend-breakdown-bar-chart.qmd >}}
+{{< include ../figures/peace-dividend-breakdown-bar-chart.qmd >}}
 
 ## Peace Dividend Composition
 
 This donut chart shows the relative contribution of different cost categories to the total peace dividend.
 
-{{< include ../../../brain/figures/peace-dividend-composition-donut-chart.qmd >}}
+{{< include ../figures/peace-dividend-composition-donut-chart.qmd >}}
 
 ## Captured vs. Societal Dividend
 
 This chart distinguishes between the two types of peace dividend benefits.
 
-{{< include ../../../brain/figures/captured-vs-societal-dividend-bar-chart.qmd >}}
+{{< include ../figures/captured-vs-societal-dividend-bar-chart.qmd >}}
 
 ## Sensitivity Analysis
 

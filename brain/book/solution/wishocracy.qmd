@@ -24,9 +24,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -41,7 +41,7 @@ How do you avoid parasitic special interests from stealing it or bureacracy from
 
 The core of Wishocracy is a voting method so simple, even a congressman could do it. It's called Aggregated Pairwise Preference Allocation, or simply, the **Pairwise Smackdown**.
 
-Your brain can't rank a list of 20 priorities. It gives up around [item number seven](../references.qmd#cognitive-limit-seven-items). But it's fantastic at comparing two things.
+Your brain can't rank a list of 20 priorities. It gives up around [item number seven](../dih-economic-models/references.qmd#cognitive-limit-seven-items). But it's fantastic at comparing two things.
 
 Instead of asking, "Rank these 10,000 problems," the system asks:
 
@@ -56,7 +56,7 @@ It's the wisdom of crowds, but without the crowds having to talk to each other.
 When millions of people make pairwise choices:
 
 - Random pairs prevent gaming
-- [Statistical models (Bradley-Terry, PageRank)](../references.qmd#bradley-terry-pagerank-models) extract global preferences
+- [Statistical models (Bradley-Terry, PageRank)](../dih-economic-models/references.qmd#bradley-terry-pagerank-models) extract global preferences
 - Outliers cancel out
 - Wisdom of crowds emerges
 

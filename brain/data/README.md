@@ -73,7 +73,7 @@ Human-readable preview files with:
 
 ## Visualizations
 
-The following Quarto chart files have been created from this data (located in [brain/figures/](../../brain/figures/)):
+The following Quarto chart files have been created from this data (located in [dih-economic-models/figures/](../../dih-economic-models/figures/)):
 
 ### 1. FDA Spending vs Life Expectancy Trends
 

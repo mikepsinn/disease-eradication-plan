@@ -19,9 +19,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -69,7 +69,7 @@ See [The 0.06% Problem](clinical-trial-participants.qmd) for the full analysis.
 
 ## Spending by Clinical Trial Phase
 
-{{< include ../../../brain/figures/clinical-trial-spending-by-phase-pie-chart.qmd >}}
+{{< include ../figures/clinical-trial-spending-by-phase-pie-chart.qmd >}}
 
 ### Phase 3: The Money Pit
 
@@ -162,7 +162,7 @@ Why Phase 3 dominates:
 
 ## Who's Paying: Funding Source Breakdown
 
-{{< include ../../../brain/figures/clinical-trial-funding-sources-pie-chart.qmd >}}
+{{< include ../figures/clinical-trial-funding-sources-pie-chart.qmd >}}
 
 ### Private Industry: The Heavy Hitter
 
@@ -297,7 +297,7 @@ Why Phase 3 dominates:
 
 ## The Brutal Economics: Cost Per Approved Drug
 
-{{< include ../../../brain/figures/phase-cost-per-trial-comparison-column-chart.qmd >}}
+{{< include ../figures/phase-cost-per-trial-comparison-column-chart.qmd >}}
 
 **Industry average spending on clinical trials per approved drug:**
 
@@ -328,7 +328,7 @@ Why Phase 3 dominates:
 
 ## Regional Market Distribution
 
-{{< include ../../../brain/figures/clinical-trial-regional-spending-column-chart.qmd >}}
+{{< include ../figures/clinical-trial-regional-spending-column-chart.qmd >}}
 
 ### North America: The Dominant Player
 

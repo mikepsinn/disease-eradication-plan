@@ -75,7 +75,7 @@ October 24, 2025
 
 ### 1. FDA Spending, Life Expectancy, and Drug Costs Combined
 
-**File:** `brain/figures/fda-spending-life-expectancy-drug-costs-combined.qmd`
+**File:** `dih-economic-models/figures/fda-spending-life-expectancy-drug-costs-combined.qmd`
 
 **Generated Images:**
 
@@ -97,7 +97,7 @@ October 24, 2025
 
 ### 2. Healthcare Spending vs Life Expectancy
 
-**File:** `brain/figures/healthcare-spending-vs-life-expectancy.qmd`
+**File:** `dih-economic-models/figures/healthcare-spending-vs-life-expectancy.qmd`
 
 **Generated Images:**
 
@@ -182,5 +182,5 @@ python scripts/extract-excel-data.py
 - **Source:** `brain/data/life-expectancy-healthcare-spending-cost-of-drug-development.xlsx`
 - **Extracted CSV:** `brain/data/extracted/*.csv`
 - **Chart metadata:** `brain/data/extracted/chart_metadata.json`
-- **Generated charts:** `brain/figures/*.png`
-- **Quarto source:** `brain/figures/*.qmd`
+- **Generated charts:** `dih-economic-models/figures/*.png`
+- **Quarto source:** `dih-economic-models/figures/*.qmd`

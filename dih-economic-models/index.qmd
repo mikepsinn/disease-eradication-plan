@@ -1,0 +1,90 @@
+---
+title: "DIH Economic Models"
+description: "Comprehensive economic analysis for the 1% Treaty and Decentralized FDA initiative"
+---
+
+## Overview
+
+This site contains the complete economic analysis for the **1% Treaty** and **Decentralized FDA (dFDA)** initiative, designed for foundation economists and funding decision-makers.
+
+## Key Economic Findings
+
+### Return on Investment
+
+- **Conservative ROI**: [463:1](appendix/dfda-cost-benefit-analysis.qmd) (dFDA R&D savings only, 10-year NPV)
+- **Complete ROI**: [1,239:1](economics/economics.qmd) (all eight primary benefit categories, 10-year average)
+
+### Cost-Effectiveness
+
+- **Cost per life saved**: Net societal benefit of [$6.56M per life](appendix/1-percent-treaty-cost-effectiveness.qmd)
+- **Annual lives saved**: [26,446](appendix/1-percent-treaty-cost-effectiveness.qmd) (conservative estimate)
+- **QALYs generated**: [840,000 annually](appendix/dfda-qaly-model.qmd)
+
+### Financial Structure
+
+- **Annual funding**: $27.2B (1% of global military spending)
+- **Peace dividend**: [$113.6B annually](appendix/peace-dividend-calculations.qmd) from reduced conflict costs
+- **Health savings**: [$50.0B+ annually](appendix/dfda-cost-benefit-analysis.qmd) from 82x cost reduction in clinical trials
+- **VICTORY Bonds returns**: [271.8% annually](economics/victory-bonds.qmd), perpetually
+
+## Methodology
+
+All economic models use:
+
+- **Net Present Value (NPV)** analysis with conservative assumptions
+- **Peer-reviewed research** as data sources
+- **Sensitivity analysis** for key parameters
+- **Quality-Adjusted Life Years (QALY)** for health outcomes
+- **Incremental Cost-Effectiveness Ratio (ICER)** for intervention comparison
+
+## Document Structure
+
+### Economic Analysis
+
+- [Executive Summary](economics/economics.qmd) - Complete economic analysis with ROI calculations
+- [Peace Dividend](economics/peace-dividend.qmd) - Economic benefits from reduced military spending
+- [Health Dividend](economics/health-dividend.qmd) - Economic benefits from improved healthcare efficiency
+
+### Supporting Data
+
+- [Humanity Budget Overview](appendix/humanity-budget-overview.qmd) - Global spending priorities
+- [Government Medical Research Spending](appendix/global-government-medical-research-spending.qmd) - Country-by-country analysis
+- [Clinical Trial Spending by Phase](appendix/global-clinical-trial-spending-by-phase.qmd) - Phase 1-4 breakdown
+- [Clinical Trial Participants](appendix/clinical-trial-participants.qmd) - Access and participation analysis
+
+### Detailed Calculations
+
+- [Peace Dividend Calculations](appendix/peace-dividend-calculations.qmd) - Full calculations with sensitivity analysis
+- [1% Treaty Cost-Effectiveness](appendix/1-percent-treaty-cost-effectiveness.qmd) - ICER and cost per life saved
+- [Research Acceleration Model](appendix/research-acceleration-model.qmd) - 115x capacity multiplication mechanism
+- [Disease Eradication Lifetime Wealth](appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd) - Personal economic impact
+- [dFDA Cost-Benefit Analysis](appendix/dfda-cost-benefit-analysis.qmd) - Comprehensive ROI analysis
+- [Economic Value of Accelerated Treatments](appendix/economic-value-of-accelerated-treatments.qmd) - 7-year acceleration benefits
+- [Intervention Comparison Table](appendix/intervention-comparison-table.qmd) - Comparison to other high-ROI interventions
+- [Data Storage Costs](appendix/data-storage-costs.qmd) - Per-patient storage cost analysis
+- [dFDA QALY Model](appendix/dfda-qaly-model.qmd) - Source of truth for 840,000 annual QALYs
+
+### Financial Planning
+
+- [Financial Plan](economics/financial-plan.qmd) - Treasury management and cash flow
+- [Campaign Budget](economics/campaign-budget.qmd) - $1B budget breakdown
+- [Investor Risk Analysis](appendix/investor-risk-analysis.qmd) - Comprehensive risk assessment
+- [Health Savings Sharing Model](economics/health-savings-sharing-model.qmd) - 50/50 savings split incentive structure
+- [VICTORY Bonds](economics/victory-bonds.qmd) - Financial instrument structure
+
+## For Foundation Economists
+
+This analysis is designed to support funding decisions by providing:
+
+1. **Transparent calculations** with all assumptions documented
+2. **Conservative estimates** using peer-reviewed data sources
+3. **Sensitivity analysis** for key parameters
+4. **Comparison benchmarks** against other high-ROI interventions
+5. **Risk assessment** with mitigation strategies
+
+All models are reproducible and use centralized parameters from [`economic_parameters.py`](economic_parameters.py).
+
+## References
+
+All source quotes and citations are available in [references.qmd](references.qmd).
+

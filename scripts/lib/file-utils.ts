@@ -292,7 +292,7 @@ export async function saveFile(filePath: string, content: string): Promise<void>
   // For .qmd files, ensure the Python boilerplate is present
   if (path.extname(filePath) === '.qmd') {
     const { data: frontmatter, content: body } = matter(formattedContent);
-    const pythonBoilerplate = "```{python}\n#| echo: false\nimport sys\nimport os\n\n# Quarto executes from project root (execute-dir: project in _book.yml)\nappendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')\nif appendix_path not in sys.path:\n    sys.path.insert(0, appendix_path)\n\nfrom economic_parameters import *\n```";
+    const pythonBoilerplate = "```{python}\n#| echo: false\nimport sys\nimport os\n\n# Quarto executes from project root (execute-dir: project in _book.yml)\n\nproject_root = os.getcwd()\nif project_root not in sys.path:\n    sys.path.insert(0, project_root)\n\nfrom economic_parameters import *\n```";
 
     if (!body.includes('from economic_parameters import *')) {
       // Add boilerplate to body and use our consistent formatting

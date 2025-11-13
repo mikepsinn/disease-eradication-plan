@@ -17,9 +17,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -40,8 +40,8 @@ This is harder to calculate than you'd think, because the military bundles warhe
 
 But we have the **B61-12 Life Extension Program** as a benchmark:
 
-- **Unit Cost:** [**$27.5 million**](../references.qmd#b61-12-cost) per bomb
-- **Program Cost:** [**$11 billion**](../references.qmd#b61-12-cost) for 400-500 bombs
+- **Unit Cost:** [**$27.5 million**](../dih-economic-models/references.qmd#b61-12-cost) per bomb
+- **Program Cost:** [**$11 billion**](../dih-economic-models/references.qmd#b61-12-cost) for 400-500 bombs
 
 So: **$27.5 million** per city-destroying weapon.
 
@@ -63,7 +63,7 @@ Modern strategic warheads are many times more powerful than the bombs used on Hi
 
 NUKEMAP (created by historian Alex Wellerstein) simulates nuclear detonations. If you detonate a single, modern 300-kiloton W87 warhead over Manhattan:
 
-- **Estimated Fatalities:** [**1,619,570 people**](../references.qmd#w87-casualties)
+- **Estimated Fatalities:** [**1,619,570 people**](../dih-economic-models/references.qmd#w87-casualties)
 
 That's immediate deaths from the blast, heat, and initial radiation.
 

@@ -49,7 +49,7 @@ def main():
     # Force output flush to ensure GitHub Actions sees output immediately
     sys.stdout.reconfigure(line_buffering=True)
     sys.stderr.reconfigure(line_buffering=True)
-    
+
     # Log script start immediately
     from datetime import datetime
     print("=" * 80, flush=True)
@@ -81,13 +81,13 @@ def main():
     )
 
     exit_code = monitor.run_build(command, build_type="HTML render")
-    
+
     # Run post-validation if build succeeded and not skipped
     if exit_code == 0 and not args.skip_post_validation:
         validation_exit_code = run_post_validation(output_dir=args.output_dir)
         if validation_exit_code != 0:
             sys.exit(validation_exit_code)
-    
+
     sys.exit(exit_code)
 
 if __name__ == '__main__':

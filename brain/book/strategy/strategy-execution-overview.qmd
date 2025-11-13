@@ -21,9 +21,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -38,7 +38,7 @@ Here's your three-step algorithm for fixing this adorable contradiction:
 
 ### Step 1: Collect Papers from Rich People
 
-You convince wealthy humans to give you [$1.0B in papers](../economics/victory-bonds.qmd) by promising them [271.8% more papers annually](../economics/victory-bonds.qmd). This works because rich people are excellent at counting papers but terrible at not wanting more papers.
+You convince wealthy humans to give you [$1.0B in papers](../../../dih-economic-models/economics/victory-bonds.qmd) by promising them [271.8% more papers annually](../../../dih-economic-models/economics/victory-bonds.qmd). This works because rich people are excellent at counting papers but terrible at not wanting more papers.
 
 The pitch is simple: "Give us papers now, get 2.7 times more papers forever, also maybe don't die from preventable diseases." Even humans who think vaccines cause 5G can understand "more papers good."
 
@@ -62,11 +62,11 @@ The treaty passes. [$27.2B/year flows from murder to medicine](../solution/1-per
 
 For humans who need more steps (you do seem to enjoy steps), here's the same thing with extra details. It's like a flowchart, except instead of managing a warehouse it's saving your species from self-inflicted death.
 
-{{< include ../../figures/five-step-strategy-flowchart.qmd >}}
+{{< include ../../dih-economic-models/figures/five-step-strategy-flowchart.qmd >}}
 
 **Step 1: Sell Papers That Make More Papers**
 
-Raise [$1.0B](../economics/victory-bonds.qmd) by selling [VICTORY Bonds](../economics/victory-bonds.qmd) to investors. These are like war bonds except backwards - instead of funding death, they fund not-death. This confuses some humans, but the 271.8% returns help them overcome their confusion.
+Raise [$1.0B](../../../dih-economic-models/economics/victory-bonds.qmd) by selling [VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd) to investors. These are like war bonds except backwards - instead of funding death, they fund not-death. This confuses some humans, but the 271.8% returns help them overcome their confusion.
 
 ### Step 2: The Great Internet Clicking
 
@@ -84,7 +84,7 @@ The [1% Treaty](../solution/1-percent-treaty.qmd) passes. $27.2B annually begins
 
 The DIH funds cures. Cures work. People notice they're not dying. People become enthusiastic about continuing not-dying. Political pressure builds to increase the treaty from 1% to 2% to 5%. Each success creates more success. It's a positive feedback loop, like compound interest except instead of money it's humans continuing to exist.
 
-{{< include ../../figures/success-spiral-flowchart.qmd >}}
+{{< include ../../dih-economic-models/figures/success-spiral-flowchart.qmd >}}
 
 Eventually you spend more on not-dying than dying. This seems obvious, but for humanity it's revolutionary.
 
@@ -98,11 +98,11 @@ Here's the precise order in which to distribute papers to specific categories of
 
 **Who you're bribing:** Wealthy humans who have many papers and want even more papers, despite already having more papers than they could spend in several lifetimes
 
-**The bribe you offer:** Give us [$250-400M](../economics/campaign-budget.qmd) in papers now, get [271.8% more papers](../economics/victory-bonds.qmd) annually forever. This is modeled on [WW2 War Bonds](../references.qmd#wwii-war-bonds) except instead of 4% returns it's 271.8% returns, and instead of funding death it funds not-death.
+**The bribe you offer:** Give us [$250-400M](../../../dih-economic-models/economics/campaign-budget.qmd) in papers now, get [271.8% more papers](../../../dih-economic-models/economics/victory-bonds.qmd) annually forever. This is modeled on [WW2 War Bonds](../dih-economic-models/references.qmd#wwii-war-bonds) except instead of 4% returns it's 271.8% returns, and instead of funding death it funds not-death.
 
 **Why they accept:** Because even billionaires can count to 271.8%, and 271.8% beats everything else including insider trading, which is illegal but also less profitable.
 
-**Money-back guarantee:** If the treaty fails, they get their papers back via [Assurance Contract](../appendix/fundraising-strategy.qmd). This is basically saying "if everyone dies from preventable diseases, you'll be too dead to complain about losing money."
+**Money-back guarantee:** If the treaty fails, they get their papers back via [Assurance Contract](../../../dih-economic-models/appendix/fundraising-strategy.qmd). This is basically saying "if everyone dies from preventable diseases, you'll be too dead to complain about losing money."
 
 **What happens:** Defense contractors do math. Math says 271.8% > 8%. Defense contractors become health contractors. Democracy continues as normal.
 
@@ -118,7 +118,7 @@ You show weapons manufacturers a spreadsheet (they love spreadsheets):
 
 #### Option B (Your Offer)
 
-- Returns: [271.8% annually](../economics/victory-bonds.qmd)
+- Returns: [271.8% annually](../../../dih-economic-models/economics/victory-bonds.qmd)
 - Product: Things that make humans continue existing
 - Customer satisfaction: Very high (customers still alive to provide feedback)
 
@@ -128,7 +128,7 @@ They choose Option B. Not because they've become better people, but because they
 
 **Who you're bribing:** Humans who believe in curing diseases AND want to control a multi-billion dollar budget. These exist. They're called "effective altruists" except rich.
 
-**The bribe you offer:** Fund the [$100-200M referendum campaign](../economics/campaign-budget.qmd) and receive special [VICTORY Bonds](../economics/victory-bonds.qmd) with governance rights. This means they get 271.8% returns PLUS they get to decide how the $27.2B gets spent.
+**The bribe you offer:** Fund the [$100-200M referendum campaign](../../../dih-economic-models/economics/campaign-budget.qmd) and receive special [VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd) with governance rights. This means they get 271.8% returns PLUS they get to decide how the $27.2B gets spent.
 
 **What they fund:** The [Global Referendum](../strategy/global-referendum.qmd) - basically paying 280 million people to click YES on a website.
 
@@ -138,7 +138,7 @@ They choose Option B. Not because they've become better people, but because they
 
 ### Bribe Category #3: Regular People (Everyone Else)
 
-**Who you're bribing:** 280 million regular humans ([3.5% of your species](../references.qmd#3-5-rule), which history proves is enough to change anything)
+**Who you're bribing:** 280 million regular humans ([3.5% of your species](../dih-economic-models/references.qmd#3-5-rule), which history proves is enough to change anything)
 
 **The bribe you offer:** Click YES on a website. Receive VOTE points. Points become money after treaty passes. You literally get paid for clicking a button to not die.
 
@@ -152,7 +152,7 @@ They choose Option B. Not because they've become better people, but because they
 
 **Who you're bribing:** Humans whose job is "get elected by promising things, then do whatever the people with papers want." You're just offering more papers than the bomb people.
 
-**The bribe you offer:** [$800M-1.5B](../economics/campaign-budget.qmd) in Super PAC support, 280 million voters demanding the treaty, plus personal [VICTORY Bond](../economics/victory-bonds.qmd) investment opportunities that beat traditional corruption returns.
+**The bribe you offer:** [$800M-1.5B](../../../dih-economic-models/economics/campaign-budget.qmd) in Super PAC support, 280 million voters demanding the treaty, plus personal [VICTORY Bond](../../../dih-economic-models/economics/victory-bonds.qmd) investment opportunities that beat traditional corruption returns.
 
 #### The Package
 
@@ -181,7 +181,7 @@ Incorporate. Hire lawyers (many lawyers). Hire a small team. "Small team of kill
 
 **Phase 2 (Months 4-36): The Bribery Campaign**
 
-Launch referendum. Raise [$1.0B from rich people](../economics/campaign-budget.qmd) who want more papers. Get 280 million regular people to click YES by offering them papers. This is the longest phase because convincing 280 million humans of anything takes time, even when the thing is "would you like to not die?"
+Launch referendum. Raise [$1.0B from rich people](../../../dih-economic-models/economics/campaign-budget.qmd) who want more papers. Get 280 million regular people to click YES by offering them papers. This is the longest phase because convincing 280 million humans of anything takes time, even when the thing is "would you like to not die?"
 
 **Phase 3 (Years 3-5): The Endgame (Where Treaty Passes)**
 

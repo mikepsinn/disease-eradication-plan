@@ -57,14 +57,14 @@ To enforce the visual standards defined in `GUIDES/DESIGN_GUIDE.md`.
 
 1.  **Identify Stale Files:** Use `getStaleFiles` to find files needing a figure check based on the `lastFigureCheck` date.
 2.  **Chart Linter:**
-    - Scan the content of any `.qmd` files in `brain/figures/` that are referenced in the stale file.
+    - Scan the content of any `.qmd` files in `dih-economic-models/figures/` that are referenced in the stale file.
     - Check for violations of the `GUIDES/DESIGN_GUIDE.md`, such as:
         - The presence of `plt.tight_layout()`.
         - The absence of a call to `setup_chart_style()` or `add_watermark()`.
         - Incorrect file naming conventions.
 3.  **Static Image Check:**
     - Scan the stale file for static image links (e.g., `.png`, `.jpg`).
-    - Flag any images that are not located in the `assets/` directory, as these may be candidates for conversion into reproducible `.qmd` charts in `brain/figures/`.
+    - Flag any images that are not located in the `assets/` directory, as these may be candidates for conversion into reproducible `.qmd` charts in `dih-economic-models/figures/`.
 4.  **Reporting:** Log any design guide violations.
 5.  **Update Frontmatter:** Update the `lastFigureCheck` date in the frontmatter.
 

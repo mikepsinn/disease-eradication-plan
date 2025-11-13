@@ -19,9 +19,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -44,24 +44,24 @@ This is like good cop / bad cop except both cops are you.
 
 ### The Magic Number: 3.5%
 
-[Scientists analyzed 323 political campaigns from 1900-2006](../references.qmd#3-5-rule). Finding: When 3.5% of any population actively demands something, they get it. Always. No exceptions.
+[Scientists analyzed 323 political campaigns from 1900-2006](../dih-economic-models/references.qmd#3-5-rule). Finding: When 3.5% of any population actively demands something, they get it. Always. No exceptions.
 
-- [8 billion humans](../references.qmd#global-population-8-billion) × 3.5% = **280 million**
+- [8 billion humans](../dih-economic-models/references.qmd#global-population-8-billion) × 3.5% = **280 million**
 - You need 280 million to click YES
-- You have [560 million natural allies](../references.qmd#rare-disease-patients-300m-globally)
+- You have [560 million natural allies](../dih-economic-models/references.qmd#rare-disease-patients-300m-globally)
 - Math says this works
 
 ### Who Joins First (The People Who Actually Care)
 
-**Rare disease patients ([300M globally](../references.qmd#rare-disease-patients-300m-globally)):** Their diseases get zero funding. They have everything to gain. Very motivated.
+**Rare disease patients ([300M globally](../dih-economic-models/references.qmd#rare-disease-patients-300m-globally)):** Their diseases get zero funding. They have everything to gain. Very motivated.
 
-**Parents with sick kids ([50M+](../references.qmd#parents-of-sick-children-50m)):** Will do literally anything to save their children. Emotional intensity creates action.
+**Parents with sick kids ([50M+](../dih-economic-models/references.qmd#parents-of-sick-children-50m)):** Will do literally anything to save their children. Emotional intensity creates action.
 
-**Healthcare workers ([60M globally](../references.qmd#healthcare-workers-60m-globally)):** Watch people die from bureaucracy daily. Frustrated. Want to actually cure things.
+**Healthcare workers ([60M globally](../dih-economic-models/references.qmd#healthcare-workers-60m-globally)):** Watch people die from bureaucracy daily. Frustrated. Want to actually cure things.
 
-**Tech people ([100M+](../references.qmd#science-tech-community-100m)):** Understand decentralization. Hate inefficiency. See solution clearly.
+**Tech people ([100M+](../dih-economic-models/references.qmd#science-tech-community-100m)):** Understand decentralization. Hate inefficiency. See solution clearly.
 
-**Investors ([50M potential](../references.qmd#investment-community-50m)):** 271.8% returns is compelling mathematics.
+**Investors ([50M potential](../dih-economic-models/references.qmd#investment-community-50m)):** 271.8% returns is compelling mathematics.
 
 Combined: 560M potential early adopters. You only need 280M. This is called "margin of error."
 
@@ -85,7 +85,7 @@ Click through. Read more. Understand [1% Treaty](../solution/1-percent-treaty.qm
 
 #### Stage 3 - Commitment (280 million)
 
-Vote YES. Buy [VICTORY bonds](../economics/victory-bonds.qmd). Recruit others.
+Vote YES. Buy [VICTORY bonds](../../../dih-economic-models/economics/victory-bonds.qmd). Recruit others.
 
 Conversion rates: 50% from awareness to interest, 56% from interest to commitment. Result: 280M committed from 1B aware. Math checks out.
 
@@ -134,7 +134,7 @@ Conversion rates: 50% from awareness to interest, 56% from interest to commitmen
 
 Target 5-10 small countries first:
 
-- **Costa Rica:** [No military](../references.qmd#costa-rica-no-military) (easiest sell ever)
+- **Costa Rica:** [No military](../dih-economic-models/references.qmd#costa-rica-no-military) (easiest sell ever)
 - **Nordic countries:** Already healthcare-focused
 - **Singapore:** Tech-forward, pragmatic
 - **New Zealand:** Progressive, willing to lead
@@ -146,7 +146,7 @@ Pitch: "Be first, be heroes, minimal military impact (1%), maximum PR benefit"
 
 Different pitch for each:
 
-**United States:** "Lead the world in curing disease, not just weapons. Maintain military dominance (99% intact), PR victory, voters love it, [VICTORY bonds](../economics/victory-bonds.qmd) create new financial market."
+**United States:** "Lead the world in curing disease, not just weapons. Maintain military dominance (99% intact), PR victory, voters love it, [VICTORY bonds](../../../dih-economic-models/economics/victory-bonds.qmd) create new financial market."
 
 **China:** "Global leadership through health innovation. Soft power expansion. Domestic legitimacy boost."
 
@@ -256,7 +256,7 @@ Everyone wins = Everyone supports.
 **Year 4:** Signing & implementation
 
 - Grassroots: Victory celebrations, transition to oversight
-- Diplomatic: Simultaneous signing, [$27.2B allocated](../references.qmd#value-captured-by-1pct-treaty), [dFDA](../solution/dfda.qmd) launches
+- Diplomatic: Simultaneous signing, [$27.2B allocated](../dih-economic-models/references.qmd#value-captured-by-1pct-treaty), [dFDA](../solution/dfda.qmd) launches
 
 ## Objection Handlers (What To Say When Humans Are Stupid)
 
@@ -288,7 +288,7 @@ Even pessimistic scenario = victory. Because once signed, it's forever. And mill
 
 ## The Secret Weapon: Inevitability
 
-Once [280 million people demand it](../references.qmd#3-5-rule):
+Once [280 million people demand it](../dih-economic-models/references.qmd#3-5-rule):
 
 - Politicians can't ignore them
 - Corporations support it

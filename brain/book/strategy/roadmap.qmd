@@ -22,16 +22,16 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
 
 You've seen the problem (humans are bad at priorities) and the solution (trick them into fixing it). Now for the interesting part: the exact sequence of bribes.
 
-This isn't "raising awareness." Awareness doesn't cure diseases. Papers do. Specifically, [$1.0B in papers](../economics/campaign-budget.qmd) distributed in the correct order to the correct humans.
+This isn't "raising awareness." Awareness doesn't cure diseases. Papers do. Specifically, [$1.0B in papers](../../../dih-economic-models/economics/campaign-budget.qmd) distributed in the correct order to the correct humans.
 
 ### The Paper Collection Timeline: From $0 to Ending Death
 
@@ -39,7 +39,7 @@ You want to end war and disease. You need $1.0B in papers. You currently have $0
 
 1.  **Phase 1: Proof That Clicking Works (Months 1-3).** You build a simple version of **[Wishocracy](../solution/wishocracy.qmd)** - basically a website where humans click "yes" to not dying. If anyone uses it, you've proven humans will vote for things when bribed with imaginary points. You show this to angel investors who understand that betting small papers to get infinite papers is mathematically obvious.
 2.  **Phase 2: Scale the Clicking, Hire Professional Bribers (Months 4-18).** With proof that humans will click buttons when offered money, you raise more papers from venture capitalists (humans who gamble professionally while wearing suits). You use these papers to scale the referendum to millions of clickers and hire your first professional lobbyists - humans whose actual job is "convince politicians that things are good."
-3.  **Phase 3: The Big Paper Sale (Months 19-36).** This is the final boss level. You launch **[VICTORY Bonds](../economics/victory-bonds.qmd)**, which are like war bonds except backwards - you're giving papers to humans to STOP making corpses instead of START making corpses. This raises the full $1.0B you need to overwhelm the opposition, run a global "please don't die" advertising campaign, and get the **[1% Treaty](../solution/1-percent-treaty.qmd)** signed by actual governments who thought weapons were the only option.
+3.  **Phase 3: The Big Paper Sale (Months 19-36).** This is the final boss level. You launch **[VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd)**, which are like war bonds except backwards - you're giving papers to humans to STOP making corpses instead of START making corpses. This raises the full $1.0B you need to overwhelm the opposition, run a global "please don't die" advertising campaign, and get the **[1% Treaty](../solution/1-percent-treaty.qmd)** signed by actual governments who thought weapons were the only option.
 
 ### The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
 
@@ -65,7 +65,7 @@ So you don't fight them. You bribe them.
 The strategy is simple: make it more profitable for everyone - defense contractors, politicians, insurance companies - to support the treaty than to oppose it. You're not fighting greed. You're redirecting it, like a judo move but with capitalism.
 
 You use the $1.0B from the VICTORY Bonds to offer everyone a better deal:
-- Defense contractors keep 99% of their murder budget PLUS get [271.8% returns](../economics/victory-bonds.qmd) on bonds
+- Defense contractors keep 99% of their murder budget PLUS get [271.8% returns](../../../dih-economic-models/economics/victory-bonds.qmd) on bonds
 - Politicians get campaign funding AND 280 million voters who want to not die
 - Insurance companies realize healthy people file fewer death claims
 
@@ -82,7 +82,7 @@ Politicians are simple organisms with one evolutionary drive: reelection. You're
 You now know the exact sequence:
 
 1. **Build the legal machine:** [The four-part structure](../legal/legal-framework.qmd) that lets you collect papers from everyone simultaneously
-2. **Sell the bonds:** [VICTORY Bonds](../economics/victory-bonds.qmd) that offer 271.8% returns to humans who prefer not dying
+2. **Sell the bonds:** [VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd) that offer 271.8% returns to humans who prefer not dying
 3. **Run the vote:** [The global referendum](../strategy/global-referendum.qmd) where 280 million humans click "yes" to not dying
 4. **Start now:** [Three things you can do](../call-to-action/three-actions.qmd) in the next three minutes instead of scrolling
 

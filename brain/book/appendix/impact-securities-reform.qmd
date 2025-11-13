@@ -27,9 +27,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -72,7 +72,7 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
   - Public on‑chain disclosures of treasury, token supply, and admin keys.
   - No contractual right to profits; no promises of appreciation; reasonable decentralization criteria.
 
-- Transitional Path: [A 3‑year safe harbor for network decentralization and disclosures](../references.qmd#peirce-token-safe-harbor), after which tokens can qualify as non‑securities if criteria are met.
+- Transitional Path: [A 3‑year safe harbor for network decentralization and disclosures](../dih-economic-models/references.qmd#peirce-token-safe-harbor), after which tokens can qualify as non‑securities if criteria are met.
 
 ## Section 6. Outcome‑Linked Incentives (Impact‑Based Value Capture)
 
@@ -88,12 +88,12 @@ No pre‑filing or pre‑clearance is required under this safe harbor. If the li
 
 ## Commentary: Relation to dFDA/DIH and VICTORY Bonds
 
-- This Act enables compliant financing for [VICTORY instruments](../economics/victory-bonds.qmd) and the [DIH Treasury](../solution/dih.qmd) by:
+- This Act enables compliant financing for [VICTORY instruments](../../../dih-economic-models/economics/victory-bonds.qmd) and the [DIH Treasury](../solution/dih.qmd) by:
   - Lowering offering frictions for impact-linked bonds/tokens.
   - Automating disclosures on‑chain to improve transparency and lower costs.
   - Broadening investor access with knowledge‑based eligibility.
   - Providing a clear token safe harbor for governance‑first designs.
 
-- It complements the risk, return, and repayment framing in the [Victory Bond Investment Thesis](../economics/victory-bonds.qmd).
+- It complements the risk, return, and repayment framing in the [Victory Bond Investment Thesis](../../../dih-economic-models/economics/victory-bonds.qmd).
 
 ---

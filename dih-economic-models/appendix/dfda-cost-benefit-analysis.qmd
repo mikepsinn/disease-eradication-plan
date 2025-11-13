@@ -17,9 +17,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -374,7 +374,7 @@ This table presents point estimates for each scenario, with the overall range of
 | **--- TOTAL ---**                            | **~$4.5M / ~$0**             | **~$213M / ~$18.3M**           | **~$1.98B+ / ~$221M+**        | Represents total initiative cost excluding core platform build/ops.                                        |
 
 
-{{< include ../../figures/dfda-broader-initiative-costs-scenario-comparison-column-chart.qmd >}}
+{{< include ../figures/dfda-broader-initiative-costs-scenario-comparison-column-chart.qmd >}}
 
 #### Interpretation
 
@@ -728,7 +728,7 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
 This full range sensitivity analysis demonstrates that the ROI for the dFDA initiative remains exceptionally positive. Even at the highest conceivable costs derived from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section, the financial return is substantial.
 
 
-{{< include ../../figures/dfda-roi-sensitivity-analysis-column-chart.qmd >}}
+{{< include ../figures/dfda-roi-sensitivity-analysis-column-chart.qmd >}}
 
 ## Broader Impacts on Medical Progress
 
@@ -823,7 +823,7 @@ The daily costs of inaction are highly sensitive to the underlying assumptions a
 While the figures are presented as daily point estimates for clarity, they represent the steady-state potential loss once the dFDA Infrastructure is fully adopted. The actual daily loss on any given day depends on several key variables that introduce uncertainty:
 
 
-{{< include ../../figures/dfda-daily-opportunity-cost-column-chart.qmd >}}
+{{< include ../figures/dfda-daily-opportunity-cost-column-chart.qmd >}}
 
 1. **Adoption Rate ($p(t)$):** The calculations above implicitly assume full adoption ($p(t)=1$). As modeled in the NPV analysis in the [ROI Analysis section](#roi-analysis), adoption will be gradual. Therefore, the daily opportunity cost will ramp up over time, starting smaller and growing as the platform's use becomes standard. The figures represent the daily cost once that potential is reached.
 
@@ -1192,9 +1192,9 @@ import numpy_financial as npf
 import sys
 import os
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 
@@ -1258,7 +1258,7 @@ print("The simple ROI (1,250:1) is useful for comparison but doesn't discount fu
 
 This chart shows the dramatic return on investment for the dFDA Infrastructure, comparing the small operational cost to the massive benefits it generates.
 
-{{< include ../../figures/dfda-investment-returns-bar-chart.qmd >}}
+{{< include ../figures/dfda-investment-returns-bar-chart.qmd >}}
 
 #### Sensitivity Analysis
 
@@ -1402,7 +1402,7 @@ print(f"Robust ROI (NPV Savings / NPV Costs): {robust_roi:,.0f}:1")
 
 This chart shows how the investment pays back over time, accounting for the time value of money and the gradual adoption of the platform.
 
-{{< include ../../figures/dfda-npv-analysis-over-time-line-chart.qmd >}}
+{{< include ../figures/dfda-npv-analysis-over-time-line-chart.qmd >}}
 
 #### Computational Model Key Findings
 
@@ -1511,7 +1511,7 @@ For standard interventions, this value is calculated as `$1,000,000 / ICER`, whe
 
 All data used in the chart is derived from the table and sources below.
 
-![Cost-Effectiveness of Health Interventions (QALYs Gained per $1M)](../../../assets/qaly-comparison-chart.png)
+![Cost-Effectiveness of Health Interventions (QALYs Gained per $1M)](../../assets/qaly-comparison-chart.png)
 
 The following table provides the data and sources that support the chart. The list is ordered to match the chart's presentation.
 
@@ -1570,7 +1570,7 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 | **National Cancer Institute (NCI)**  | **[~\$7.2 Billion / year](../references.qmd#nih-institute-budgets-fy24)** (FY25 Budget)                 | **~180x**                                | [NCI Budget Data](../references.qmd#nih-institute-budgets-fy24)                 |
 
 
-{{< include ../../figures/dfda-vs-federal-health-programs-comparison-bar-chart.qmd >}}
+{{< include ../figures/dfda-vs-federal-health-programs-comparison-bar-chart.qmd >}}
 
 **Key Takeaway:** The estimated annual cost of the dFDA initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from [dFDA annual cost](#simplified-roi-scenario) and [NCI budget](../references.qmd#nih-institute-budgets-fy24)). This comparison underscores that the dFDA Infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
 

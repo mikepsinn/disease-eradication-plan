@@ -26,19 +26,19 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
 
 Every single day:
 
-- **[150,000 people stop existing](../references.qmd#who-daily-deaths)**
+- **[150,000 people stop existing](../dih-economic-models/references.qmd#who-daily-deaths)**
 - **130,000 from disease** (diseases are very effective at their job)
-- **[80,000 were preventable](../references.qmd#53-percent-preventable-deaths)** (we had the technology, we just chose not to use it)
-- **[13,700 are children](../references.qmd#5-million-annual-child-deaths)** (which matters if you believe children should continue existing)
+- **[80,000 were preventable](../dih-economic-models/references.qmd#53-percent-preventable-deaths)** (we had the technology, we just chose not to use it)
+- **[13,700 are children](../dih-economic-models/references.qmd#5-million-annual-child-deaths)** (which matters if you believe children should continue existing)
 
 That's fifty 9/11s. Every. Single. Day.
 

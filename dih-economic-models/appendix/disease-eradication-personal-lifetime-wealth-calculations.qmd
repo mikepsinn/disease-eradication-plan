@@ -20,9 +20,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -224,15 +224,15 @@ If you need ultra-conservative numbers for skeptical audiences, use the Evidence
 
 For skeptical audiences who need ultra-conservative estimates based on antibiotic precedent:
 
-{{< include ../../figures/conservative-baseline-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
+{{< include ../figures/conservative-baseline-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
-{{< include ../../figures/conservative-baseline-annual-benefits-stacked-area-chart.qmd >}}
+{{< include ../figures/conservative-baseline-annual-benefits-stacked-area-chart.qmd >}}
 
-{{< include ../../figures/conservative-baseline-lifetime-wealth-sensitivity-tornado-chart.qmd >}}
+{{< include ../figures/conservative-baseline-lifetime-wealth-sensitivity-tornado-chart.qmd >}}
 
-{{< include ../../figures/conservative-baseline-lifetime-wealth-by-scenario-column-chart.qmd >}}
+{{< include ../figures/conservative-baseline-lifetime-wealth-by-scenario-column-chart.qmd >}}
 
-{{< include ../../figures/conservative-baseline-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
+{{< include ../figures/conservative-baseline-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
 
 #### Why These Are Underestimates
 
@@ -438,7 +438,7 @@ $$
 
 ## Sensitivity Analysis
 
-{{< include ../../figures/disease-eradication-lifetime-wealth-sensitivity-tornado-chart.qmd >}}
+{{< include ../figures/disease-eradication-lifetime-wealth-sensitivity-tornado-chart.qmd >}}
 
 The tornado chart shows which parameters have the largest impact on your personal lifetime wealth under the **Disease Eradication Model** (72-year life extension). The black vertical line marks the base case ($4.3M).
 
@@ -468,7 +468,7 @@ The tornado chart shows which parameters have the largest impact on your persona
 
 ## Demographic Variations
 
-{{< include ../../figures/disease-eradication-lifetime-wealth-by-scenario-column-chart.qmd >}}
+{{< include ../figures/disease-eradication-lifetime-wealth-by-scenario-column-chart.qmd >}}
 
 This chart uses the **Disease Eradication Model** (115x cumulative research, 2,300 research-years) showing **realistic expected benefits**:
 
@@ -494,7 +494,7 @@ This chart uses the **Disease Eradication Model** (115x cumulative research, 2,3
 
 ## Component Breakdown
 
-{{< include ../../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
+{{< include ../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
 **Key Finding:** With 72 years of life extension, **Extended Earnings dominates** (~30-40% of total) - working and retirement years from age 80 to 152 create massive compound wealth.
 
@@ -513,7 +513,7 @@ The biggest wealth creation comes from simply **being alive and productive for 7
 
 ## Wealth Accumulation Over Lifetime
 
-{{< include ../../figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
+{{< include ../figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
 
 ### The Power of Extended Life
 
@@ -549,7 +549,7 @@ The conservative model completely misses that being alive from age 80→152 is w
 
 ## Treaty Percentage Impact
 
-{{< include ../../figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
+{{< include ../figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
 
 ## Key Findings
 
@@ -579,7 +579,7 @@ Under the Disease Eradication Model (72-year life extension), treaty percentage 
 
 ## Model Comparison
 
-{{< include ../../figures/individual-benefits-from-disease-eradication-model.qmd >}}
+{{< include ../figures/individual-benefits-from-disease-eradication-model.qmd >}}
 
 ## Testing
 

@@ -14,15 +14,15 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
 
 
-Historical analysis shows: Every peaceful movement that gets **[3.5% active support](../references.qmd#3-5-rule)** succeeds.
+Historical analysis shows: Every peaceful movement that gets **[3.5% active support](../dih-economic-models/references.qmd#3-5-rule)** succeeds.
 
 - $8 \text{ billion humans} \times 3.5\% = 280 \text{ million}$
 - The strategy requires 280 million people to vote YES on the [1% Treaty](../solution/1-percent-treaty.qmd)
@@ -38,7 +38,7 @@ Historical analysis shows: Every peaceful movement that gets **[3.5% active supp
 
 ### What Does Go Viral
 
-- "Humanity has [13,000 nukes](../references.qmd#world-warheads) but no cure for your kid's cancer" (rage-inducing)
+- "Humanity has [13,000 nukes](../dih-economic-models/references.qmd#world-warheads) but no cure for your kid's cancer" (rage-inducing)
 - "You're spending $340/year on killing people, $8/year on curing them" (shocking)
 - "271.8% investment returns while saving humanity" (greed + altruism)
 
@@ -50,7 +50,7 @@ $$
 
 ### Emotional Triggers
 
-- **Anger**: "[FDA delays kill more than the drugs](../references.qmd#fda-drug-lag-deaths-estimate)"
+- **Anger**: "[FDA delays kill more than the drugs](../dih-economic-models/references.qmd#fda-drug-lag-deaths-estimate)"
 - **Fear**: "You'll die of disease, not war"
 - **Hope**: "You could cure this in 10 years"
 - **Greed**: "271.8% annual returns forever"
@@ -83,7 +83,7 @@ $$
 
 ### Level 3: The Solution (3 minutes)
 
-**"The 1% Treaty: Redirect 1% of military spending to medical research. Fund trials that are [82x cheaper](../references.qmd#recovery-trial-82x-cost-reduction). Cure major diseases in 10 years. Everyone wins."**
+**"The 1% Treaty: Redirect 1% of military spending to medical research. Fund trials that are [82x cheaper](../dih-economic-models/references.qmd#recovery-trial-82x-cost-reduction). Cure major diseases in 10 years. Everyone wins."**
 
 ### Level 4: The Action (immediate)
 
@@ -144,7 +144,7 @@ $$
 ### Economic Memes
 
 - "Raytheon CEO salary vs rare disease research funding"
-- "[Cost of one F-35](../references.qmd#f35-cost-vs-rare-disease-research) = ~160 Oxford-style trials"
+- "[Cost of one F-35](../dih-economic-models/references.qmd#f35-cost-vs-rare-disease-research) = ~160 Oxford-style trials"
 - "We have money for 13,000 nukes but not your insulin"
 
 ### Emotional Memes
@@ -156,7 +156,7 @@ $$
 ### Comparison Memes
 
 - "Military budget breaks your screen / Medical research barely visible"
-- "Days to approve weapons: 1 / Days to approve cancer cure: [6,205](../references.qmd#research-to-practice-gap)"
+- "Days to approve weapons: 1 / Days to approve cancer cure: [6,205](../dih-economic-models/references.qmd#research-to-practice-gap)"
 
 ## The Influencer Strategy
 
@@ -199,9 +199,9 @@ $$
 
 ### Daily Updates
 
-- "Today's death toll: [150,000](../references.qmd#who-daily-deaths)"
+- "Today's death toll: [150,000](../dih-economic-models/references.qmd#who-daily-deaths)"
 - "Total spent on war today: ~$7.4 billion"
-- "Total spent on cures today: [$186 million](../references.qmd#global-gov-med-research-spending)"
+- "Total spent on cures today: [$186 million](../dih-economic-models/references.qmd#global-gov-med-research-spending)"
 - "Ratio: Still insane"
 
 ### Personal Calculators
@@ -219,9 +219,9 @@ $$
 
 ### Hot Takes That Generate Engagement
 
-- "[FDA has killed more Americans than terrorists](../references.qmd#fda-drug-lag-deaths-estimate)"
-- "NIH is a [$48B](../references.qmd#nih-budget-fy2025) jobs program, not a cure program"
-- "Your vote doesn't matter ([Princeton proved it](../references.qmd#unrepresentative-democracy))"
+- "[FDA has killed more Americans than terrorists](../dih-economic-models/references.qmd#fda-drug-lag-deaths-estimate)"
+- "NIH is a [$48B](../dih-economic-models/references.qmd#nih-budget-fy2025) jobs program, not a cure program"
+- "Your vote doesn't matter ([Princeton proved it](../dih-economic-models/references.qmd#unrepresentative-democracy))"
 - "We're building Skynet while your mom dies"
 
 ### Expected Pushback (and Responses)
@@ -232,7 +232,7 @@ $$
 
 **"This will never work!"**
 
-→ "[Oxford RECOVERY trial](../references.qmd#recovery-trial-summary-quote) already proved it works."
+→ "[Oxford RECOVERY trial](../dih-economic-models/references.qmd#recovery-trial-summary-quote) already proved it works."
 
 **"The military needs its budget!"**
 

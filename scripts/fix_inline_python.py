@@ -143,7 +143,7 @@ def scan_all_expressions():
 
 def update_economic_parameters(expressions_by_var, dry_run=False):
     """Add formatted variables to economic_parameters.py"""
-    params_file = 'brain/book/appendix/economic_parameters.py'
+    params_file = 'dih-economic-models/economic_parameters.py'
 
     with open(params_file, 'r', encoding='utf-8') as f:
         content = f.read()

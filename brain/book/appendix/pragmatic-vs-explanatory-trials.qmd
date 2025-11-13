@@ -17,9 +17,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -58,11 +58,11 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 - Per-patient costs vary by therapeutic area:
   - Blood disorders: $200,000-422,000
-  - [Average across areas: $41,117](../references.qmd#trial-costs-fda-study)
+  - [Average across areas: $41,117](../dih-economic-models/references.qmd#trial-costs-fda-study)
 
 ### Pragmatic Trials (RECOVERY Example)
 
-- [Cost savings of 68-78% compared to traditional trials](../references.qmd#pmc-trial-economics)
+- [Cost savings of 68-78% compared to traditional trials](../dih-economic-models/references.qmd#pmc-trial-economics)
 - Utilized existing healthcare infrastructure
 - Minimal additional staff costs
 - Reduced monitoring costs
@@ -72,27 +72,27 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 ### RECOVERY Trial Metrics
 
-- [9 days: Concept to first patient enrollment](../references.qmd#recovery-trial-dexamethasone-results)
-- [10 weeks: First life-saving treatment identified](../references.qmd#landray-recovery-trial-quote)
-- [3 hours: Results to policy implementation](../references.qmd#landray-recovery-trial-quote)
-- [47,000+ participants across 6 countries](../references.qmd#recovery-trial-summary-quote)
-- [200+ hospital sites](../references.qmd#recovery-trial-summary-quote)
-- [10 major results obtained](../references.qmd#recovery-trial-summary-quote)
-- [4 effective COVID-19 treatments identified](../references.qmd#recovery-trial-summary-quote)
+- [9 days: Concept to first patient enrollment](../dih-economic-models/references.qmd#recovery-trial-dexamethasone-results)
+- [10 weeks: First life-saving treatment identified](../dih-economic-models/references.qmd#landray-recovery-trial-quote)
+- [3 hours: Results to policy implementation](../dih-economic-models/references.qmd#landray-recovery-trial-quote)
+- [47,000+ participants across 6 countries](../dih-economic-models/references.qmd#recovery-trial-summary-quote)
+- [200+ hospital sites](../dih-economic-models/references.qmd#recovery-trial-summary-quote)
+- [10 major results obtained](../dih-economic-models/references.qmd#recovery-trial-summary-quote)
+- [4 effective COVID-19 treatments identified](../dih-economic-models/references.qmd#recovery-trial-summary-quote)
 
 ### Traditional Trial Metrics
 
 - Average time from phase 1 to approval: [7.2 years](https://www.bio.org/sites/default/files/legacy/bioorg/docs/Clinical%20Development%20Success%20Rates%202006-2015%20-%20BIO,%20Biomedtracker,%20Amplion%202016.pdf)
-- [80% of trials fail to meet enrollment timelines](../references.qmd#clinical-trial-enrollment-timelines)
-- [Up to 50.0% of research sites enroll one or no patients](../references.qmd#clinical-trial-enrollment-timelines)
+- [80% of trials fail to meet enrollment timelines](../dih-economic-models/references.qmd#clinical-trial-enrollment-timelines)
+- [Up to 50.0% of research sites enroll one or no patients](../dih-economic-models/references.qmd#clinical-trial-enrollment-timelines)
 
 ## Clinical Impact
 
 ### RECOVERY Trial
 
-- [Dexamethasone findings](../references.qmd#recovery-trial-dexamethasone-results):
+- [Dexamethasone findings](../dih-economic-models/references.qmd#recovery-trial-dexamethasone-results):
   - 35% reduction in mortality for ventilated patients
-  - [Estimated 1 million lives saved globally](../references.qmd#recovery-trial-summary-quote)
+  - [Estimated 1 million lives saved globally](../dih-economic-models/references.qmd#recovery-trial-summary-quote)
 
 - Implementation within hours of results
 - Real-world effectiveness immediately apparent

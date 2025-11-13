@@ -40,8 +40,8 @@ setup_chart_style(style='light', dpi=150)
 
 # Data
 # Sources: S&P 500 (historical avg), Real Estate (avg appreciation),
-# Venture Capital (industry avg), Medallion Fund (brain/book/references.qmd),
-# Cocaine (UN estimates), VICTORY Bonds (brain/book/economics/victory-bonds.qmd)
+# Venture Capital (industry avg), Medallion Fund (../references.qmd),
+# Cocaine (UN estimates), VICTORY Bonds (../economics/victory-bonds.qmd)
 
 investments = ['S&P 500', 'Real Estate', 'Venture\nCapital', 'Medallion\nFund', 'Cocaine\nTrafficking', 'VICTORY\nBonds']
 returns = [10, 15, 25, 39, 90, 270]

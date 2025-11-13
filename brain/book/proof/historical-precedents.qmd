@@ -22,9 +22,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -39,31 +39,31 @@ Here's proof you've done every single part of this plan already. You just haven'
 
 ### That Time Humans Banned Landmines (Yes, Really)
 
-**What happened:** A bunch of NGOs decided landmines were bad actually. They convinced [160 nations to sign a treaty banning them](../references.qmd#icbl-ottawa-treaty) in 1997. Major military powers initially opposed it. The NGOs won anyway.
+**What happened:** A bunch of NGOs decided landmines were bad actually. They convinced [160 nations to sign a treaty banning them](../dih-economic-models/references.qmd#icbl-ottawa-treaty) in 1997. Major military powers initially opposed it. The NGOs won anyway.
 
 **Why this matters for you:** This proves citizen movements can create binding international law even when governments don't want to. If humans can globally ban a weapon because "it's mean," you can definitely get them to redirect 1% of the murder budget to the not-murder budget.
 
 ### War Bonds: That Time Grandma Funded WW2
 
-**What happened:** Governments needed money to fight Nazis. They sold "war bonds" - basically IOUs that paid interest - directly to regular people. The U.S. raised [$185 billion](../references.qmd#wwii-war-bonds) (trillions in today's papers).
+**What happened:** Governments needed money to fight Nazis. They sold "war bonds" - basically IOUs that paid interest - directly to regular people. The U.S. raised [$185 billion](../dih-economic-models/references.qmd#wwii-war-bonds) (trillions in today's papers).
 
-**Why this matters for you:** Your grandparents gave the government money to stop Hitler and got 4% returns. You're offering 271.8% returns to stop cancer. [VICTORY Bonds](../economics/victory-bonds.qmd) are the same thing except with better ROI and fewer Nazis (hopefully zero Nazis).
+**Why this matters for you:** Your grandparents gave the government money to stop Hitler and got 4% returns. You're offering 271.8% returns to stop cancer. [VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd) are the same thing except with better ROI and fewer Nazis (hopefully zero Nazis).
 
 The formula worked: mix moral incentives (patriotism) with financial self-interest (interest payments). You're just applying it to a different war - the one against your own mortality.
 
 ### The Global Fund (Proof That New Health Institutions Can Exist)
 
-**What happened:** In 2002, the world created a [new organization](../references.qmd#global-fund) to pool billions for fighting AIDS, TB, and malaria. It bypassed traditional bureaucracies and just... worked.
+**What happened:** In 2002, the world created a [new organization](../dih-economic-models/references.qmd#global-fund) to pool billions for fighting AIDS, TB, and malaria. It bypassed traditional bureaucracies and just... worked.
 
 **Why this matters for you:** The [DIH](../solution/dih.qmd) isn't fantasy. It's the Global Fund but bigger and for all diseases. If humans can create new health institutions for three diseases, you can create one for all of them. It's just multiplication.
 
 ### Post-WW2: That Time America Accidentally Discovered Peace Is Profitable
 
-**What happened:** 1945: US military spending was [37% of GDP](../references.qmd#us-post-wwii-military-spending-cut) (we were very serious about the war thing). 1948: Cut to 7%. That's a 30 percentage point drop - not 1%, THIRTY.
+**What happened:** 1945: US military spending was [37% of GDP](../dih-economic-models/references.qmd#us-post-wwii-military-spending-cut) (we were very serious about the war thing). 1948: Cut to 7%. That's a 30 percentage point drop - not 1%, THIRTY.
 
 **The results:** The greatest economic boom in human history:
-  - GDP growth: [8% yearly for a decade](../references.qmd#us-gdp-growth-rate-post-wwii) (vs normal 2-3%)
-  - [Home ownership doubled](../references.qmd#us-post-wwii-home-ownership-doubled) (middle class explosion)
+  - GDP growth: [8% yearly for a decade](../dih-economic-models/references.qmd#us-gdp-growth-rate-post-wwii) (vs normal 2-3%)
+  - [Home ownership doubled](../dih-economic-models/references.qmd#us-post-wwii-home-ownership-doubled) (middle class explosion)
   - GI Bill created modern knowledge economy
   - Built the interstate highway system
 
@@ -97,7 +97,7 @@ The formula worked: mix moral incentives (patriotism) with financial self-intere
 
 ### The 3.5% Rule: The Cheat Code for Democracy
 
-**What scientists discovered:** When just [3.5% of a population](../references.qmd#3-5-rule) actively participates in sustained resistance, success becomes nearly inevitable. Not 51%. Not majority. Just 3.5%.
+**What scientists discovered:** When just [3.5% of a population](../dih-economic-models/references.qmd#3-5-rule) actively participates in sustained resistance, success becomes nearly inevitable. Not 51%. Not majority. Just 3.5%.
 
 **Historical proof:**
   - Civil rights: 3.5% ended segregation
@@ -113,7 +113,7 @@ Failures teach more than successes. Here's every mistake past movements made, so
 
 ### Eisenhower's Warning: A 5-Star General Tried to Tell You
 
-In 1961, President Dwight D. Eisenhower - former 5-star general, Supreme Allied Commander, the guy who beat the Nazis - used his [farewell address](../references.qmd#eisenhower-farewell-address) to warn you about something terrifying:
+In 1961, President Dwight D. Eisenhower - former 5-star general, Supreme Allied Commander, the guy who beat the Nazis - used his [farewell address](../dih-economic-models/references.qmd#eisenhower-farewell-address) to warn you about something terrifying:
 
 **The warning:** "We must guard against the military-industrial complex."
 
@@ -125,7 +125,7 @@ In 1961, President Dwight D. Eisenhower - former 5-star general, Supreme Allied 
 
 ### The Nuclear Freeze Movement: Millions of People, Zero Results
 
-**What happened:** In the 1980s, a [massive global movement](../references.qmd#nuclear-disarmament-movement-freeze) tried to freeze nuclear weapons production. Millions of protesters. Enormous popular support. Good vibes everywhere.
+**What happened:** In the 1980s, a [massive global movement](../dih-economic-models/references.qmd#nuclear-disarmament-movement-freeze) tried to freeze nuclear weapons production. Millions of protesters. Enormous popular support. Good vibes everywhere.
 
 **The result:** Failed completely. Nuclear arsenals kept growing.
 
@@ -135,7 +135,7 @@ In 1961, President Dwight D. Eisenhower - former 5-star general, Supreme Allied 
 
 ### Occupy Wall Street: When "We're Angry" Isn't a Strategy
 
-**What happened:** In 2011, thousands [occupied parks](../references.qmd#occupy-wall-street) to protest economic inequality. They changed the conversation! They raised awareness! They accomplished nothing permanent!
+**What happened:** In 2011, thousands [occupied parks](../dih-economic-models/references.qmd#occupy-wall-street) to protest economic inequality. They changed the conversation! They raised awareness! They accomplished nothing permanent!
 
 **Why it failed:** No specific demand. Just diffuse anger at "the system." The energy dissipated because nobody knew what success looked like.
 
@@ -151,7 +151,7 @@ To make this work, you need investment terms that don't sound insane to people w
 
 #### Michael Milken & High-Yield ("Junk") Bonds
 
-In the 1980s, a guy named Michael Milken figured out something revolutionary: [if you offer people high enough returns, they'll invest in almost anything](../references.qmd#milken-high-yield-bonds).
+In the 1980s, a guy named Michael Milken figured out something revolutionary: [if you offer people high enough returns, they'll invest in almost anything](../dih-economic-models/references.qmd#milken-high-yield-bonds).
 
 Wall Street called these "junk bonds" because they were trash. Milken called them "high-yield bonds" because marketing. He financed leveraged buyouts that the establishment said were impossible, raising billions.
 
@@ -165,7 +165,7 @@ If people invested in literal junk, they'll invest in not dying. You just need t
 
 #### George Soros & The Quantum Fund
 
-In 1992, [George Soros risked $10 billion betting that the UK would have to leave the European Exchange Rate Mechanism](../references.qmd#soros-bet-against-the-pound).
+In 1992, [George Soros risked $10 billion betting that the UK would have to leave the European Exchange Rate Mechanism](../dih-economic-models/references.qmd#soros-bet-against-the-pound).
 
 This was a binary political bet: Either the UK government capitulates, or Soros loses everything.
 
@@ -179,7 +179,7 @@ History suggests governments usually do the stupid thing. But occasionally they 
 
 **Long-Term Capital Management (LTCM): When Nobel Laureates Get Humbled**
 
-In 1998, [a hedge fund run by actual Nobel Prize winners collapsed and required a $3.6 billion bailout](../references.qmd#long-term-capital-management-collapse).
+In 1998, [a hedge fund run by actual Nobel Prize winners collapsed and required a $3.6 billion bailout](../dih-economic-models/references.qmd#long-term-capital-management-collapse).
 
 Their crime? Building sophisticated mathematical models that accounted for everything except the part where Russia just... defaults. Whoops.
 
@@ -198,7 +198,7 @@ It's risk mitigation for people who understand that Nobel laureates can still be
 
 **The South Sea Bubble (1720): When Everyone Went Insane**
 
-In 1720, [people in England went collectively mad and invested in a company that promised a monopoly on trade with South America](../references.qmd#south-sea-bubble-1720).
+In 1720, [people in England went collectively mad and invested in a company that promised a monopoly on trade with South America](../dih-economic-models/references.qmd#south-sea-bubble-1720).
 
 Neat! Except the company had almost no actual trade. And no profits. And no business plan beyond "tell people we're going to be really rich."
 

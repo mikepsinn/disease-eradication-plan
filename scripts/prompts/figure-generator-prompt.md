@@ -6,7 +6,7 @@ As a data visualization expert, your task is to analyze a book chapter and deter
 2.  **Check Existing Figures:** Review the provided list of existing figure filenames. Does a figure that already visualizes the core concept of this chapter exist? Look for semantic matches (e.g., if the chapter is about the cost of war, a file named `war-total-costs-breakdown-vs-curing-spending-column-chart.qmd` is a strong match).
 3.  **Decide Action:**
     *   If no new figure is needed or the chapter is too short/simple, return `NO_ACTION_NEEDED`.
-    *   If a suitable **existing figure** is found in the list, return a JSON object with the key `"existing_figure"` and the full path to the file. Example: `{ "existing_figure": "brain/figures/humanity-spending-priorities-bar-chart.qmd" }`.
+    *   If a suitable **existing figure** is found in the list, return a JSON object with the key `"existing_figure"` and the full path to the file. Example: `{ "existing_figure": "dih-economic-models/figures/humanity-spending-priorities-bar-chart.qmd" }`.
     *   If and only if a **new, valuable figure** is needed and **does not already exist**, proceed to generate it.
 
 **Generation Rules (If Creating a New Figure):**
@@ -32,7 +32,7 @@ You MUST use the provided design guide and example files as your ground truth.
 ... [The full design guide content as provided previously] ...
 ```
 
-**2. EXAMPLE 1: Column Chart (`brain/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd`):**
+**2. EXAMPLE 1: Column Chart (`dih-economic-models/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd`):**
 
 ````qmd
 ```{python}
@@ -69,12 +69,12 @@ for bar in bars:
 ax.set_ylim(0, 3000)
 
 plt.tight_layout()
-plt.savefig('brain/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.png', dpi=300)
+plt.savefig('dih-economic-models/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.png', dpi=300)
 plt.show()
 ```
 ````
 
-**3. EXAMPLE 2: Pie Chart (`brain/figures/humanitys-budget-pie-chart.qmd`):**
+**3. EXAMPLE 2: Pie Chart (`dih-economic-models/figures/humanitys-budget-pie-chart.qmd`):**
 
 ````qmd
 ```{python}
@@ -93,12 +93,12 @@ ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 plt.title("Humanity's Budget: A Visual Joke", fontsize=16, pad=20)
-plt.savefig('brain/figures/humanitys-budget-pie-chart.png', dpi=300)
+plt.savefig('dih-economic-models/figures/humanitys-budget-pie-chart.png', dpi=300)
 plt.show()
 ```
 ````
 
-**4. EXAMPLE 3: Line Chart (`brain/figures/historical-life-expectancy-line-chart.qmd`):**
+**4. EXAMPLE 3: Line Chart (`dih-economic-models/figures/historical-life-expectancy-line-chart.qmd`):**
 
 ````qmd
 ```{python}
@@ -128,7 +128,7 @@ ax.spines['right'].set_visible(False)
 ax.set_ylim(0, 90)
 
 plt.tight_layout()
-plt.savefig('brain/figures/historical-life-expectancy-line-chart.png', dpi=300)
+plt.savefig('dih-economic-models/figures/historical-life-expectancy-line-chart.png', dpi=300)
 plt.show()
 ```
 ````

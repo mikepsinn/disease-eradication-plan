@@ -14,9 +14,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 # Import economic parameters (produces output to prevent timeout)
 
@@ -80,7 +80,7 @@ The problem isn't that people don't want to help cure disease. It's that coordin
 - Trying to mobilize treaty advocates globally? Enjoy scheduling a call where someone is always asleep.
 - Need real-time trial data synthesis? Better hire someone to email everyone weekly asking for updates (they won't respond).
 
-Humans evolved to coordinate hunting parties of 20 people. We're now trying to coordinate millions. Our brains literally can't do it, we max out at [150 relationships (Dunbar's number)](../references.qmd#dunbar-number-150).
+Humans evolved to coordinate hunting parties of 20 people. We're now trying to coordinate millions. Our brains literally can't do it, we max out at [150 relationships (Dunbar's number)](../dih-economic-models/references.qmd#dunbar-number-150).
 
 AI doesn't have this limitation. It never sleeps, speaks every language, operates in every timezone simultaneously, and doesn't get into passive-aggressive email wars. The way you win the War on Disease is by building coordination infrastructure that works at the scale humans can't, while the NIH is still trying to schedule their next committee meeting.
 

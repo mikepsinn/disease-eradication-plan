@@ -18,9 +18,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -441,7 +441,7 @@ Each success makes the next success easier:
 ### For Treaty Supporters
 
 - **[1% Treaty Peace Dividend](../appendix/peace-dividend-calculations.qmd)** - The two-tier dividend model
-- **[Economic Summary](../economics.qmd)** - TL;DR version for busy people
+- **[Economic Summary](economics.qmd)** - TL;DR version for busy people
 
 ## Summary
 

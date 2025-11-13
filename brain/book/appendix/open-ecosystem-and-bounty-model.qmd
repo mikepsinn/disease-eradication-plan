@@ -20,9 +20,9 @@ import os
 
 # Quarto executes from project root (execute-dir: project in _book.yml)
 
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
+project_root = os.getcwd()
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -53,7 +53,7 @@ Instead, they provide core infrastructure and let the community build on top.
 
 #### Why This Works (Proof)
 
-- **WordPress:** Core software is free and open-source. A [multi-billion dollar economy](../references.qmd#wordpress-multi-billion-dollar-economy) of themes and plugins has been built on top by third parties. WordPress powers 43% of all websites. They didn't build 43% of the internet. They built the foundation. Others built everything else.
+- **WordPress:** Core software is free and open-source. A [multi-billion dollar economy](../dih-economic-models/references.qmd#wordpress-multi-billion-dollar-economy) of themes and plugins has been built on top by third parties. WordPress powers 43% of all websites. They didn't build 43% of the internet. They built the foundation. Others built everything else.
 
 - **Linux:** The kernel is the foundation. Thousands of companies and individuals build the distributions and applications. Result: Linux runs most of the internet, all Android phones, and the world's fastest supercomputers. The core team is small. The ecosystem is massive.
 
@@ -101,7 +101,7 @@ This isn't wishful thinking. This model is proven and cheap for three reasons:
 
 **1. It's a Multi-Trillion-Dollar Reality**
 
-Open-source and platform-as-a-service models are not theoretical. They're a proven, [multi-trillion-dollar economic reality](../references.qmd#open-source-platform-multi-trillion-dollar-reality).
+Open-source and platform-as-a-service models are not theoretical. They're a proven, [multi-trillion-dollar economic reality](../dih-economic-models/references.qmd#open-source-platform-multi-trillion-dollar-reality).
 
 WordPress, Linux, Android, Chrome, all built this way. Combined value: trillions. Combined cost to build the core: billions. The math works.
 
@@ -117,7 +117,7 @@ AI doesn't replace developers. It makes them 10x more productive.
 
 **3. Governments Already Do This (And It Works)**
 
-Public bodies, including the U.S. government, have a [strong track record of using bounties and prizes](../references.qmd#us-government-prize-and-bounty-programs) to solve complex problems more efficiently than traditional procurement:
+Public bodies, including the U.S. government, have a [strong track record of using bounties and prizes](../dih-economic-models/references.qmd#us-government-prize-and-bounty-programs) to solve complex problems more efficiently than traditional procurement:
 
 - XPRIZE (private-sector space travel)
 - NASA Centennial Challenges (lunar lander, space robotics)
