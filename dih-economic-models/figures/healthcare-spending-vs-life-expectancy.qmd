@@ -1,0 +1,178 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| label: setup
+#| include: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+import sys
+
+# Add brain/figures to path for imports
+
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
+
+# Import centralized styling
+
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines, get_project_root,
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
+)
+
+# Setup mobile-first B&W styling
+
+setup_chart_style()
+```
+
+```{python}
+#| label: load-data
+#| echo: false
+
+# Load data
+
+project_root = get_project_root()
+data_path = project_root / "brain" / "data" / "us-healthcare-spending-vs-life-expectancy-2000-2018.csv"
+df = pd.read_csv(data_path)
+
+# Clean data
+
+df = df.dropna(subset=['Year'])
+df['Year'] = df['Year'].astype(int)
+```
+
+```{python}
+#| label: fig-healthcare-spending
+#| fig-cap: "Healthcare Spending Skyrockets While Life Expectancy Flatlines"
+
+# Create figure with extra space for title
+
+fig, ax1 = plt.subplots(figsize=(14, 9))
+fig.subplots_adjust(top=0.90, bottom=0.10, left=0.12, right=0.88)
+
+# Plot life expectancy as line chart on primary axis
+
+line_color = COLOR_BLACK
+ax1.plot(df['Year'], df['Life Expectancy'],
+         color=line_color, linewidth=4, marker='o', markersize=10, zorder=3)
+
+# Primary axis (life expectancy) styling
+
+ax1.set_xlabel('Year', fontsize=32, weight='bold', color=COLOR_BLACK)
+ax1.set_ylabel('Life Expectancy (years)', fontsize=32, weight='bold', color=COLOR_BLACK)
+ax1.set_ylim([75, 80])
+ax1.tick_params(axis='both', which='major', labelsize=24, colors=COLOR_BLACK)
+
+# Create secondary axis for spending
+
+ax2 = ax1.twinx()
+bar_width = 0.8
+bars = ax2.bar(df['Year'], df['US Healthcare Spending Per Person'],
+               width=bar_width,
+               color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2,
+               hatch=PATTERN_DIAGONAL, alpha=0.7, zorder=1)
+
+# Secondary axis (spending) styling
+
+ax2.set_ylabel('Healthcare Spending ($/person)', fontsize=32, weight='bold', color=COLOR_BLACK)
+ax2.set_ylim([0, 12000])
+ax2.tick_params(axis='y', which='major', labelsize=24, colors=COLOR_BLACK)
+
+# Add direct labels on key data points for life expectancy
+
+ax1.text(df['Year'].iloc[0], df['Life Expectancy'].iloc[0] - 0.3,
+         f"{df['Life Expectancy'].iloc[0]:.1f} years",
+         fontsize=24, ha='center', va='top', color=COLOR_BLACK, weight='bold',
+         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                   edgecolor=COLOR_BLACK, linewidth=1.5), zorder=4)
+
+ax1.text(df['Year'].iloc[-1], df['Life Expectancy'].iloc[-1] + 0.3,
+         f"{df['Life Expectancy'].iloc[-1]:.1f} years",
+         fontsize=24, ha='center', va='bottom', color=COLOR_BLACK, weight='bold',
+         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                   edgecolor=COLOR_BLACK, linewidth=1.5), zorder=4)
+
+# Add spending labels
+
+ax2.text(df['Year'].iloc[0], df['US Healthcare Spending Per Person'].iloc[0] + 400,
+         f"${df['US Healthcare Spending Per Person'].iloc[0]:,.0f}",
+         fontsize=24, ha='center', va='bottom', color=COLOR_BLACK, weight='bold',
+         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                   edgecolor=COLOR_BLACK, linewidth=1.5), zorder=4)
+
+ax2.text(df['Year'].iloc[-1], df['US Healthcare Spending Per Person'].iloc[-1] + 400,
+         f"${df['US Healthcare Spending Per Person'].iloc[-1]:,.0f}",
+         fontsize=24, ha='center', va='bottom', color=COLOR_BLACK, weight='bold',
+         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                   edgecolor=COLOR_BLACK, linewidth=1.5), zorder=4)
+
+# Add dramatic annotation showing the disconnect
+
+spending_pct = ((df['US Healthcare Spending Per Person'].iloc[-1] -
+                 df['US Healthcare Spending Per Person'].iloc[0]) /
+                df['US Healthcare Spending Per Person'].iloc[0] * 100)
+life_exp_change = df['Life Expectancy'].iloc[-1] - df['Life Expectancy'].iloc[0]
+
+textstr = (f"2000-2018:\n"
+           f"Spending +{spending_pct:.0f}%\n"
+           f"Life Expectancy +{life_exp_change:.1f} years")
+ax1.text(0.05, 0.95, textstr,
+         transform=ax1.transAxes, fontsize=28,
+         verticalalignment='top', fontfamily='monospace',
+         color=COLOR_BLACK, weight='bold',
+         bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE,
+                   edgecolor=COLOR_BLACK, linewidth=2), zorder=5)
+
+# Title
+
+fig.suptitle('Healthcare Spending vs Life Expectancy',
+             fontsize=38, weight='bold', color=COLOR_BLACK, y=0.98)
+
+# Clean spines
+
+clean_spines(ax1, positions=['top'])
+clean_spines(ax2, positions=['top'])
+
+# Remove gridlines for clean look
+
+ax1.grid(False)
+ax2.grid(False)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG with matching filename
+
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'healthcare-spending-vs-life-expectancy.png',
+            dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE, pad_inches=0.3)
+plt.show()
+```
+
+## Key Finding
+
+From 2000 to 2018, US healthcare spending per person increased by **129%** (from $3,932 to $8,988), while life expectancy increased by only **2.0 years** (from 76.8 to 78.9 years).
+
+**Cost per additional year of life:** Approximately **$2,500 per person** in increased spending for each additional year of life expectancy.
+
+This demonstrates the **law of diminishing returns** in action - as humans spend exponentially more on healthcare, the gains in life expectancy become smaller and smaller.

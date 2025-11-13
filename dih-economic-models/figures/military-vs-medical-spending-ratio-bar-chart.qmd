@@ -1,0 +1,131 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| label: investment-ratio-1750-to-1
+#| fig-cap: "The 1,750:1 Ratio: Death Spending vs Cure Investment"
+#| fig-width: 10
+#| fig-height: 6
+
+import sys
+import os
+from pathlib import Path
+
+# Add project root to path
+
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+import matplotlib.pyplot as plt
+import numpy as np
+from brain.figures._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
+    add_png_metadata)
+
+# Setup neobrutalist styling
+
+setup_chart_style(style='light', dpi=150)
+
+# Create figure
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Data
+
+categories = ['Death Toilet\n(War + Disease)', 'Curing Diseases']
+values = [119000, 68]  # In billions for proper scale
+colors = [COLOR_BLACK, COLOR_WHITE]
+hatches = [None, PATTERN_DIAGONAL]
+
+# Use LINEAR scale to show TRUE disparity - no hiding the insanity!
+
+bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_BLACK, linewidth=4, width=0.6)
+
+# Add hatching patterns
+
+for bar, hatch in zip(bars, hatches):
+    bar.set_hatch(hatch)
+
+# Add value labels
+
+for i, (bar, value) in enumerate(zip(bars, values)):
+    height = bar.get_height()
+    if value > 1000:
+        label = f'${value/1000:.0f}T'
+    else:
+        label = f'${value}B'
+
+    # Position labels based on bar size
+    if i == 0:  # Large bar - label inside
+        ax.text(bar.get_x() + bar.get_width()/2., height * 0.5,
+                label, ha='center', va='center',
+                color=COLOR_WHITE, fontsize=48, fontweight='bold')
+    else:  # Tiny bar - label above (it's so small it's almost invisible!)
+        ax.text(bar.get_x() + bar.get_width()/2., height + 2000,
+                label, ha='center', va='bottom',
+                color=COLOR_BLACK, fontsize=24, fontweight='bold')
+        # Add arrow pointing to tiny bar
+        ax.annotate('', xy=(bar.get_x() + bar.get_width()/2., height),
+                   xytext=(bar.get_x() + bar.get_width()/2., height + 1500),
+                   arrowprops=dict(arrowstyle='->', lw=3, color=COLOR_BLACK))
+
+# Style the axes - LINEAR SCALE SHOWS THE TRUTH
+
+ax.set_ylim(0, 130000)
+ax.set_yticks([])  # Remove y-axis - values are on the bars
+ax.tick_params(colors=COLOR_BLACK, labelsize=20)
+for spine in ['top', 'right', 'left']:
+    ax.spines[spine].set_visible(False)
+ax.spines['bottom'].set_color(COLOR_BLACK)
+ax.spines['bottom'].set_linewidth(4)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save in brain/figures directory
+
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'military-vs-medical-spending-ratio-bar-chart.png'
+
+# Save the figure
+
+plt.savefig(output_path, dpi=300, bbox_inches=None, facecolor='white')
+
+# Add metadata for attribution
+
+add_png_metadata(output_path, title="Military Vs Medical Spending Ratio Bar Chart")
+plt.show()
+
+# Print the brutal truth
+
+print("\n📊 THE INSANE RATIO:")
+print(f"• Death Toilet (war + disease): $119 TRILLION")
+print(f"• Curing Diseases: $68 billion")
+print(f"• Ratio: {119_000/68:,.0f}:1")
+print("\n🎯 TRANSLATION:")
+print(f"• For every $1 trying to cure disease...")
+print(f"• Humans spend ${119_000/68:,.0f} dealing with death")
+print(f"• That's 0.06% on solutions")
+print(f"• That's 99.94% on suffering")
+print("\n💡 THE SOLUTION:")
+print(f"• Just 1% of death spending = $1.19T for cures")
+print(f"• That would be a 17X increase in cure funding")
+print(f"• Still leaves 99% for the death industry")
+```

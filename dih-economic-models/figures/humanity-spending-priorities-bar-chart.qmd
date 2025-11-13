@@ -1,0 +1,169 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| echo: false
+#| label: humanity-spending-priorities-bar
+
+import sys
+import os
+from pathlib import Path
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Add project root to path
+
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+from brain.figures._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
+    add_png_metadata)
+
+# Setup styling
+
+setup_chart_style(style='light', dpi=150)
+
+# Data from the 'Humanity's Family Budget' table
+
+data = {
+    'Category': [
+        'Disease (Total Cost)',
+        'War (Total Cost)',
+        'Housing',
+        'Transport',
+        'Food',
+        'Education',
+        'Infrastructure',
+        'Medical Research'
+    ],
+    'Spending': [109.1, 9.7, 23.0, 12.0, 9.0, 6.0, 4.0, 0.068],
+    'Type': [
+        'Problems',
+        'Problems',
+        'Productive',
+        'Productive',
+        'Productive',
+        'Productive',
+        'Productive',
+        'Solution'
+    ]
+}
+df = pd.DataFrame(data)
+
+# Sort by spending for visual impact (smallest to largest for horizontal bars)
+
+df = df.sort_values('Spending', ascending=True)
+
+# Create figure - horizontal bars work better for extreme ranges
+
+fig, ax = plt.subplots(figsize=(14, 10))
+
+# Y positions for bars
+
+y_pos = np.arange(len(df))
+bar_height = 0.75
+
+# Create bars with different patterns for different types
+
+colors = []
+patterns = []
+for t in df['Type']:
+    if t == 'Problems':
+        colors.append(COLOR_BLACK)  # Solid black for problems
+        patterns.append(None)
+    elif t == 'Solution':
+        colors.append(COLOR_WHITE)  # White with pattern for solution
+        patterns.append(PATTERN_DIAGONAL)
+    else:
+        colors.append(COLOR_WHITE)  # White for productive spending
+        patterns.append(None)
+
+bars = ax.barh(y_pos, df['Spending'].values, bar_height,
+               color=colors, edgecolor=COLOR_BLACK, linewidth=3)
+
+# Apply patterns
+
+for bar, pattern in zip(bars, patterns):
+    if pattern:
+        bar.set_hatch(pattern)
+
+# Add value labels (36-44pt for mobile)
+
+for i, (idx, row) in enumerate(df.iterrows()):
+    value = row['Spending']
+    if value >= 1:
+        label = f'${value:.0f}T'
+    else:
+        label = f'${value*1000:.0f}B'
+
+    # Position label to the right of bars
+    ax.text(value + 1, i, label,
+            ha='left', va='center', fontsize=40,
+            color=COLOR_BLACK, weight='bold')
+
+# Set y-axis labels (24pt for mobile)
+
+ax.set_yticks(y_pos)
+ax.set_yticklabels(df['Category'].values, fontsize=24, weight='bold')
+
+# Use linear scale - NO LOG SCALES per design guide
+# The extreme disparity IS the point
+
+ax.set_xlim(0, 120)
+
+# Remove x-axis labels and ticks
+
+ax.set_xticks([])
+ax.set_xlabel('')
+
+# Title (32pt per DESIGN_GUIDE)
+
+ax.set_title("Humanity's Annual Spending Priorities",
+            fontsize=32, weight='bold', pad=20, color=COLOR_BLACK)
+
+# Annotation removed per user request
+
+# Add legend
+
+from matplotlib.patches import Patch
+legend_elements = [
+    Patch(facecolor=COLOR_BLACK, edgecolor=COLOR_BLACK, label='Problems We Create'),
+    Patch(facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, label='Productive Spending'),
+    Patch(facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, hatch=PATTERN_DIAGONAL, label='Solutions')
+]
+ax.legend(handles=legend_elements, loc='lower right', fontsize=20)
+
+# Remove spines for clean look
+
+clean_spines(ax, ['top', 'right'])
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save figure
+
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'humanity-spending-priorities-bar-chart.png',
+            dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+plt.show()
+```

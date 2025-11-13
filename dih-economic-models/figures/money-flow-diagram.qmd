@@ -1,0 +1,125 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| label: money-flow-diagram
+#| fig-cap: "Money Flow: From Treaty to Impact"
+
+import sys
+import os
+from pathlib import Path
+
+# Add project root to path (find it relative to current working directory)
+
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+from brain.figures._chart_style import (
+    setup_chart_style, add_watermark,
+    COLOR_BLACK, COLOR_WHITE,
+    add_png_metadata)
+
+# Setup styling
+
+setup_chart_style(style='light', dpi=150)
+
+# Create flow diagram
+
+fig, ax = plt.subplots(figsize=(22, 12))
+ax.set_xlim(0, 10)
+ax.set_ylim(0, 10)
+ax.axis('off')
+
+# Add title - MANDATORY per DESIGN_GUIDE
+
+fig.text(0.5, 0.95, 'Money Flow: From Treaty to Impact', fontsize=36,
+         ha='center', va='top', weight='bold', color=COLOR_BLACK)
+
+# Define positions and boxes - use BLACK for all
+
+boxes = [
+    {'pos': (1, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\n$27B/year', 'color': COLOR_BLACK},
+    {'pos': (3.5, 5), 'size': (1.5, 1.2), 'text': 'DIH\nTreasury', 'color': COLOR_BLACK},
+    {'pos': (6, 7.5), 'size': (1.5, 1.2), 'text': 'Patient\nSubsidies', 'color': COLOR_BLACK},
+    {'pos': (6, 5), 'size': (1.5, 1.2), 'text': 'VICTORY\nBonds 5%', 'color': COLOR_BLACK},
+    {'pos': (6, 2.5), 'size': (1.5, 1.2), 'text': 'Research\nFunding', 'color': COLOR_BLACK},
+    {'pos': (8.5, 7.5), 'size': (1.5, 1.2), 'text': 'Free\nTreatment', 'color': COLOR_BLACK},
+    {'pos': (8.5, 5), 'size': (1.5, 1.2), 'text': '270%\nReturns', 'color': COLOR_BLACK},
+    {'pos': (8.5, 2.5), 'size': (1.5, 1.2), 'text': 'Cures\nFound', 'color': COLOR_BLACK},
+]
+
+# Draw boxes
+
+for box in boxes:
+    rect = Rectangle(box['pos'], box['size'][0], box['size'][1],
+                     facecolor=box['color'], edgecolor=COLOR_BLACK, linewidth=3)
+    ax.add_patch(rect)
+    ax.text(box['pos'][0] + box['size'][0]/2, box['pos'][1] + box['size'][1]/2,
+            box['text'], ha='center', va='center', fontsize=28, weight='bold', color=COLOR_WHITE)
+
+# Draw arrows - black for clarity
+
+arrows = [
+    ((2.5, 5.6), (3.5, 5.6)),  # Treaty -> Treasury
+    ((5, 6.5), (6, 8.1)),      # Treasury -> Patient Subsidies
+    ((5, 5.6), (6, 5.6)),      # Treasury -> VICTORY Bonds
+    ((5, 4.5), (6, 3.1)),      # Treasury -> Research
+    ((7.5, 8.1), (8.5, 8.1)),  # Subsidies -> Treatment
+    ((7.5, 5.6), (8.5, 5.6)),  # Bonds -> Returns
+    ((7.5, 3.1), (8.5, 3.1)),  # Research -> Cures
+]
+
+for arrow in arrows:
+    ax.annotate('', xy=arrow[1], xytext=arrow[0],
+                arrowprops=dict(arrowstyle='->', lw=6, color=COLOR_BLACK, alpha=0.6))
+
+# Add flow amounts
+
+flow_labels = [
+    ((3, 5.9), '$27B'),
+    ((5.3, 7), '$10B'),
+    ((5.3, 5.9), '$1B'),
+    ((5.3, 3.7), '$16B'),
+]
+
+for pos, label in flow_labels:
+    ax.text(pos[0], pos[1], label, fontsize=24, weight='bold', color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2))
+
+# Add branding
+
+add_watermark(fig)
+
+# Don't use tight_layout - it overrides margins
+
+# Save in brain/figures directory
+
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'money-flow-diagram.png'
+
+# Save the figure
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution
+
+add_png_metadata(output_path, title="Money Flow Diagram")
+plt.show()
+```

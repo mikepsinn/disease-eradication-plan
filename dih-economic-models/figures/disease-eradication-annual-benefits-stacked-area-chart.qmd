@@ -1,0 +1,224 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+import sys
+
+# Find project root dynamically
+
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# Add paths
+
+sys.path.insert(0, str(project_root / 'brain' / 'book' / 'appendix'))
+sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
+
+from economic_parameters import (
+    calculate_personal_lifetime_wealth_disease_eradication
+)
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines, add_png_metadata,
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
+    PATTERN_CROSS, get_project_root
+)
+
+setup_chart_style()
+
+# Constants
+
+BASELINE_LIFE_EXPECTANCY = 80  # US life expectancy without treaty
+
+# Base parameters
+
+treaty_pct = 0.01
+current_age = 30
+annual_income = 50000
+discount_rate = 0.03
+years_elapsed = 20  # 20-year scenario (DEFAULT)
+
+# Get full calculation for reference
+
+full_calc = calculate_personal_lifetime_wealth_disease_eradication(
+    treaty_pct=treaty_pct,
+    current_age=current_age,
+    annual_income=annual_income,
+    years_elapsed=years_elapsed,
+    discount_rate=discount_rate
+)
+
+life_extension_years = full_calc['life_extension_years']
+total_lifespan = BASELINE_LIFE_EXPECTANCY + life_extension_years  # 80 + 72 = 152
+
+# Get component totals from NPV breakdown
+
+npv = full_calc['npv_breakdown']
+peace_dividend_total = npv['peace_dividend_total']
+healthcare_savings_total = npv['healthcare_savings_total']
+productivity_gains_total = npv['productivity_gains_total']
+caregiver_savings_total = npv['caregiver_savings_total']
+gdp_boost_benefit = npv['gdp_boost_benefit']
+extended_earnings = npv['extended_earnings']
+
+# Create smooth accumulation over lifespan
+# Model cumulative benefits as growing over lifetime
+
+years = np.linspace(current_age, total_lifespan, 500)
+progress = (years - current_age) / (total_lifespan - current_age)
+
+# Different components accumulate at different rates
+# Peace dividend, healthcare, productivity, caregiver: Linear accumulation
+# GDP boost: Accelerating (compounding)
+# Extended earnings: Only after age 80 (baseline death age)
+
+def smooth_accumulation(progress, total_amount, accel_factor=1.0):
+    """
+    Calculate smooth accumulation with optional acceleration
+    accel_factor = 1.0: linear
+    accel_factor > 1.0: accelerating
+    """
+    return total_amount * (progress ** accel_factor)
+
+# Calculate cumulative arrays for each component
+
+cumulative_peace = smooth_accumulation(progress, peace_dividend_total, accel_factor=1.0)
+cumulative_healthcare = cumulative_peace + smooth_accumulation(progress, healthcare_savings_total, accel_factor=1.0)
+cumulative_productivity = cumulative_healthcare + smooth_accumulation(progress, productivity_gains_total, accel_factor=1.0)
+cumulative_caregiver = cumulative_productivity + smooth_accumulation(progress, caregiver_savings_total, accel_factor=1.0)
+cumulative_gdp = cumulative_caregiver + smooth_accumulation(progress, gdp_boost_benefit, accel_factor=1.5)
+
+# Extended earnings only accumulate after baseline death age (80)
+
+extended_progress = np.where(
+    years > BASELINE_LIFE_EXPECTANCY,
+    (years - BASELINE_LIFE_EXPECTANCY) / (total_lifespan - BASELINE_LIFE_EXPECTANCY),
+    0
+)
+cumulative_extended = cumulative_gdp + smooth_accumulation(extended_progress, extended_earnings, accel_factor=1.2)
+
+# Create figure
+
+fig, ax = plt.subplots(figsize=(18, 12))
+
+# Plot stacked areas
+
+ax.fill_between(years, 0, cumulative_peace/1000000,
+                label='Peace Dividend', color=COLOR_WHITE,
+                edgecolor=COLOR_BLACK, linewidth=1, hatch=PATTERN_HORIZONTAL*2)
+
+ax.fill_between(years, cumulative_peace/1000000, cumulative_healthcare/1000000,
+                label='Healthcare Savings', color=COLOR_WHITE,
+                edgecolor=COLOR_BLACK, linewidth=1, hatch=PATTERN_DIAGONAL*2)
+
+ax.fill_between(years, cumulative_healthcare/1000000, cumulative_productivity/1000000,
+                label='Productivity Gains', color=COLOR_WHITE,
+                edgecolor=COLOR_BLACK, linewidth=1, hatch=PATTERN_CROSS*1)
+
+ax.fill_between(years, cumulative_productivity/1000000, cumulative_caregiver/1000000,
+                label='Caregiver Savings', color=COLOR_WHITE,
+                edgecolor=COLOR_BLACK, linewidth=1, hatch='////')
+
+ax.fill_between(years, cumulative_caregiver/1000000, cumulative_gdp/1000000,
+                label='Economic Growth (Military→Research)', color=COLOR_WHITE,
+                edgecolor=COLOR_BLACK, linewidth=1, hatch='\\\\\\\\')
+
+ax.fill_between(years, cumulative_gdp/1000000, cumulative_extended/1000000,
+                label='Extended Earnings (72 Extra Years)', color=COLOR_BLACK,
+                edgecolor=COLOR_BLACK, linewidth=1.5, alpha=0.8)
+
+# Add milestone markers
+
+ax.axvline(x=80, color='red', linewidth=2, linestyle='--', alpha=0.7, zorder=10)
+ax.text(80, ax.get_ylim()[1] * 0.95, 'You Would Die Here\n(Without Treaty)',
+        ha='center', va='top', fontsize=16, weight='bold', color='red',
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                 edgecolor='red', linewidth=2))
+
+ax.axvline(x=100, color='gray', linewidth=1.5, linestyle=':', alpha=0.5)
+ax.text(100, ax.get_ylim()[1] * 0.85, 'Age 100',
+        ha='center', va='top', fontsize=14, style='italic')
+
+ax.axvline(x=120, color='gray', linewidth=1.5, linestyle=':', alpha=0.5)
+ax.text(120, ax.get_ylim()[1] * 0.75, 'Age 120',
+        ha='center', va='top', fontsize=14, style='italic')
+
+# Add final value annotation
+
+final_value = cumulative_extended[-1]
+ax.annotate(f'Total: ${final_value/1000000:.1f}M',
+            xy=(years[-1], final_value/1000000),
+            xytext=(years[-1] - 15, final_value/1000000 + 0.5),
+            fontsize=22, weight='bold',
+            bbox=dict(boxstyle='round,pad=0.5', facecolor='yellow',
+                     edgecolor=COLOR_BLACK, linewidth=2),
+            arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=2))
+
+# Labels and title
+
+ax.set_xlabel('Age (Years)', fontsize=24, weight='bold')
+ax.set_ylabel('Total Wealth Gained (Millions)', fontsize=24, weight='bold')
+ax.set_title('How Your Wealth Grows from Age 30 to 152\n(Living 72 Years Longer with the 1% Treaty)',
+             fontsize=32, weight='bold', pad=20)
+
+# Format y-axis
+
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: f'${y:.1f}M'))
+
+# Set x-axis limits
+
+ax.set_xlim(30, total_lifespan)
+
+# Add legend
+
+ax.legend(loc='upper left', fontsize=14, frameon=True, edgecolor=COLOR_BLACK,
+          facecolor=COLOR_WHITE, framealpha=0.95, ncol=2)
+
+# Clean up spines
+
+clean_spines(ax, positions=['top', 'right'])
+
+# Add grid
+
+ax.grid(True, alpha=0.2, linestyle='--', linewidth=0.5)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save figure
+
+output_dir = get_project_root() / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'disease-eradication-annual-benefits-stacked-area-chart.png'
+
+plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+# Add metadata
+
+add_png_metadata(
+    output_path,
+    title="Disease Eradication Model - Cumulative Wealth Over Lifetime",
+    description="Shows how personal wealth accumulates over 122-year lifetime under Disease Eradication Model (72yr life extension)"
+)
+
+plt.show()
+```
+
+*Uses Disease Eradication Model (20-year scenario, 72yr life extension). Base case: Age 30, $50K income, 1% treaty. Red line at age 80 marks baseline death age; Extended Earnings (black area) represents wealth gained from 72 extra years of life.*

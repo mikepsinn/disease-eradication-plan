@@ -1,0 +1,113 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| label: phase-cost-per-trial-comparison-column-chart
+#| echo: false
+import matplotlib.pyplot as plt
+from pathlib import Path
+import sys
+
+# --- Find project root dynamically to import shared modules ---
+
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
+
+# --- Import centralized style and constants ---
+
+from brain.figures._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+)
+
+# --- Setup Chart Style ---
+
+setup_chart_style()
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# --- Data ---
+# Source: Average cost per trial by phase
+
+phases = ['Phase 1', 'Phase 2', 'Phase 3']
+cost_avg = [16, 39, 151]  # Average cost in millions
+cost_labels = ['$4-28M', '$13-65M', '$20-282M']  # Range labels
+
+# --- Create Column Chart ---
+# Use white fill for Phase 1 & 2, solid black for Phase 3 (highest, most expensive)
+
+colors = [COLOR_WHITE, COLOR_WHITE, COLOR_BLACK]
+edgecolor = COLOR_BLACK
+bars = ax.bar(phases, cost_avg, color=colors, edgecolor=edgecolor, linewidth=2, width=0.6)
+
+# --- Add Title ---
+
+ax.set_title(
+    "The Cost Explosion:\nClinical Trial Spending Per Phase",
+    fontsize=28, weight='bold', color=COLOR_BLACK, pad=30, loc='center',
+    linespacing=1.3
+)
+
+# --- Remove Y-Axis (Tufte principle - data labels make it redundant) ---
+
+ax.get_yaxis().set_visible(False)
+clean_spines(ax, positions=['top', 'right', 'left'])
+
+# --- Customize X-Axis ---
+
+ax.tick_params(axis='x', which='major', length=0)  # No ticks
+ax.set_xticklabels(phases, fontsize=20, color=COLOR_BLACK)
+
+# --- Add Direct Data Labels ---
+
+for i, (bar, label) in enumerate(zip(bars, cost_labels)):
+    # For all bars, place black text above (consistent placement)
+    ax.annotate(
+        label,
+        xy=(bar.get_x() + bar.get_width() / 2, cost_avg[i]),
+        xytext=(0, 10),
+        textcoords="offset points",
+        ha='center', va='bottom',
+        fontsize=36, weight='bold',
+        color=COLOR_BLACK,
+        fontname='Courier New'
+    )
+
+# --- Adjust plot limits for visual balance ---
+
+ax.set_ylim(0, max(cost_avg) * 1.25)
+
+# --- Add Watermark ---
+
+add_watermark(fig)
+
+# --- Save and Show Plot ---
+
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+filename = Path(__file__).stem if '__file__' in locals() else 'phase-cost-per-trial-comparison-column-chart'
+output_path = output_dir / f'{filename}.png'
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title="The Cost Explosion: Clinical Trial Spending Per Phase",
+    description="Phase 3 trials average $151M each (range $20-282M), dwarfing Phase 2 ($13-65M) and Phase 1 ($4-28M) costs."
+)
+
+plt.show()
+```

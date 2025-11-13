@@ -1,0 +1,122 @@
+```{python}
+#| echo: false
+#| warning: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# --- Find project root dynamically ---
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# --- Import centralized style ---
+import sys
+sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
+)
+
+setup_chart_style()
+
+# --- Data ---
+scenarios = ['Conservative', 'Base Case', 'Optimistic', 'Transformative\n(RECOVERY-like)']
+money_lost = [82, 137, 192, 260]  # Millions per day
+qalys_lost = [521, 2301, 10000, 10000]  # QALYs per day
+
+# --- Create figure ---
+fig, ax = plt.subplots(figsize=(12, 8))
+
+x = np.arange(len(scenarios))
+width = 0.7
+
+# Create bars
+bars = ax.bar(
+    x,
+    money_lost,
+    width,
+    color=COLOR_WHITE,
+    edgecolor=COLOR_BLACK,
+    linewidth=2.5,
+    hatch=PATTERN_DIAGONAL
+)
+
+# Highlight base case with solid fill
+bars[1].set_facecolor(COLOR_BLACK)
+bars[1].set_hatch(None)
+
+# --- Add value labels ---
+for i, (money, qaly) in enumerate(zip(money_lost, qalys_lost)):
+    # Money label - ALL bars get white box for readability over patterns
+    text_color = COLOR_WHITE if i == 1 else COLOR_BLACK
+
+    ax.text(
+        i, money/2,
+        f'${money}M/day',
+        ha='center', va='center',
+        fontsize=28, fontweight='bold',
+        color=text_color,
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE if i != 1 else COLOR_BLACK,
+                  edgecolor=COLOR_BLACK, linewidth=2)
+    )
+
+    # QALY label ABOVE bar to avoid overlap with x-axis labels
+    ax.text(
+        i, money + 12,
+        f'{qaly:,}\nQALYs/day',
+        ha='center', va='bottom',
+        fontsize=20, fontweight='bold',
+        color=COLOR_BLACK
+    )
+
+# --- Styling ---
+ax.set_title(
+    'Daily Cost of Delaying the dFDA\nEvery Day We Wait',
+    fontsize=36, fontweight='bold',
+    color=COLOR_BLACK, pad=25
+)
+
+ax.set_ylabel(
+    'Economic Waste Per Day\n($ Millions)',
+    fontsize=28, fontweight='bold',
+    color=COLOR_BLACK, labelpad=15
+)
+
+ax.set_xticks(x)
+ax.set_xticklabels(scenarios, fontsize=22, fontweight='bold')
+
+# Set y-axis limits - extra space at top for QALY labels
+ax.set_ylim(0, max(money_lost) * 1.35)
+
+# Remove y-axis (data is labeled)
+ax.set_yticks([])
+ax.spines['left'].set_visible(False)
+
+# Clean up chart
+clean_spines(ax)
+ax.spines['bottom'].set_linewidth(2.5)
+ax.tick_params(axis='x', length=0)
+
+# Add watermark
+add_watermark(fig)
+
+# --- Save figure ---
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'dfda-daily-opportunity-cost-column-chart.png'
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata
+from _chart_style import add_png_metadata
+add_png_metadata(
+    output_path,
+    title="Daily Cost of Delaying the dFDA",
+    description="Base case: $137M and 2,301 QALYs lost per day. Ranges from $82M (conservative) to $260M (transformative)"
+)
+
+plt.show()
+```

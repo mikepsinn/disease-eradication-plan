@@ -1,0 +1,114 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| label: war-vs-curing-diseases-column-chart
+#| fig-cap: "War vs Curing Diseases: Direct Spending Comparison"
+
+import sys
+import os
+from pathlib import Path
+
+# Add project root to path (find it relative to this file's location)
+
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    # If we're in a subdirectory, go up until we find the project root
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+import matplotlib.pyplot as plt
+import numpy as np
+from brain.figures._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
+    add_png_metadata)
+
+# Setup styling
+
+setup_chart_style(style='light', dpi=150)
+
+# Data - values in billions (all global figures for consistency)
+
+categories = [
+    'War &\nMilitary',
+    'Curing\nDiseases'
+]
+
+# Values in billions - LINEAR scale to show TRUE disparity
+
+values = [
+    2720,    # Global military spending: $2.72T = $2,720B (SIPRI 2024)
+    68       # Global government medical research: $67.5B (global-government-medical-research-spending.md)
+]
+
+# Colors - black for war, white with pattern for cures
+
+colors = [COLOR_BLACK, COLOR_WHITE]
+
+# Create chart with LINEAR scale - show the REAL disparity
+
+fig, ax = plt.subplots(figsize=(24, 12))
+
+# LINEAR scale - let people see how absurdly tiny the solution bars are
+
+bars = ax.bar(categories, values, color=colors, edgecolor=COLOR_BLACK, linewidth=3)
+
+# Apply pattern to the second bar (Curing)
+
+bars[1].set_hatch(PATTERN_DIAGONAL)
+
+# Add labels directly on bars with descriptions
+# Bar 1: War (inside bar, white text)
+
+ax.text(0, values[0] * 0.5, '$2.7T\nWar & Military', ha='center', va='center',
+        fontsize=72, weight='bold', color=COLOR_WHITE, linespacing=1.2)
+
+# Bar 2: Curing (above bar, black text)
+
+ax.text(1, values[1] + (max(values) * 0.02), '$68B\nCuring Diseases', ha='center', va='bottom',
+        fontsize=44, weight='bold', color=COLOR_BLACK, linespacing=1.2)
+
+# Remove all axis labels and ticks (all columns are labeled with amounts)
+
+ax.set_xticks([])
+ax.set_xticklabels([])
+ax.set_yticks([])
+ax.set_yticklabels([])
+
+# Remove all spines for ultra-clean look
+
+clean_spines(ax, ['top', 'right', 'left', 'bottom'])
+
+# Add branding
+
+add_watermark(fig)
+
+# Save in brain/figures directory
+
+import os
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'war-vs-curing-diseases-column-chart.png'
+
+# Save the figure
+
+plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution
+
+add_png_metadata(output_path, title="War Vs Curing Diseases Column Chart")
+plt.show()
+```

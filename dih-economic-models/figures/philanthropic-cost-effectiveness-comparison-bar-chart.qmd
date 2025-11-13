@@ -1,0 +1,266 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import numpy as np
+from pathlib import Path
+import sys
+
+# Find project root dynamically
+
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+# Import centralized style
+
+from brain.figures._chart_style import setup_chart_style, add_watermark, clean_spines, add_png_metadata
+from brain.figures._chart_style import COLOR_BLACK, COLOR_WHITE
+
+setup_chart_style()
+
+# CRITICAL: Disable matplotlib's automatic math text parsing for dollar signs
+# This prevents "$" from being interpreted as LaTeX math delimiters
+
+mpl.rcParams['text.usetex'] = False
+mpl.rcParams['mathtext.default'] = 'regular'  # Use regular font, not math font
+
+# Data: Cost per life saved (NEGATIVE = society saves money, POSITIVE = society pays)
+# GiveWell top charities (2024 data) and historical benchmarks
+
+charities = [
+    'Helen Keller Int\'l\n(Vitamin A)',
+    'New Incentives\n(Vaccination)',
+    'Against Malaria\nFoundation',
+    'Smallpox\nEradication\n(Historical)',
+    '1% Treaty +\ndFDA Infrastructure'
+]
+
+# Central estimates (positive = cost to society, negative = net savings to society)
+
+costs = [
+    3500,   # Helen Keller
+    4500,   # New Incentives
+    5500,   # AMF
+    -25000, # Smallpox - dominant intervention with ROI 159:1 to 400:1
+    -5870000  # 1% Treaty/dFDA - DOMINANT intervention (full ICER = -$167,771/QALY × 35 QALY/life)
+]
+
+# For the 1% Treaty bar, we'll stack it to show peace dividend vs dFDA savings
+# Total QALYs: 875,000/year (35k from peace, 840k from dFDA)
+# Peace dividend contribution and dFDA contribution sum to the total benefit
+# But we'll show them as proportional contributions to the total -$5.87M
+
+peace_dividend_per_life = -5870000 * (35000 / 875000)  # Proportional to QALYs
+dfda_savings_per_life = -5870000 * (840000 / 875000)   # Proportional to QALYs
+
+# Error bars (uncertainty ranges from GiveWell and dFDA analysis)
+# GiveWell range: $3,000-5,500, Smallpox range, 1% Treaty range based on sensitivity
+
+errors_lower = [500, 1000, 500, 5000, 870000]   # Distance below central
+errors_upper = [2000, 1000, 2000, 10000, 1130000]  # Distance above central
+
+# Create figure with more height for annotations
+
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Position bars
+
+x_pos = np.arange(len(charities))
+
+# Create bars with white fill and black edges
+# For first 4 bars (regular bars - includes smallpox)
+
+for i in range(4):
+    ax.bar(x_pos[i], costs[i], width=0.6,
+           color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2,
+           yerr=[[errors_lower[i]], [errors_upper[i]]], capsize=8,
+           error_kw={'linewidth': 2, 'ecolor': COLOR_BLACK})
+
+# For the 5th bar (1% Treaty), create stacked bar showing peace + dFDA
+# Bottom segment: Peace dividend contribution
+
+bar_peace = ax.bar(x_pos[4], peace_dividend_per_life, width=0.6,
+                   color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2,
+                   label='Peace Dividend (1% less conflict)')
+
+# Top segment: dFDA contribution (stacked on peace)
+
+bar_dfda = ax.bar(x_pos[4], dfda_savings_per_life, width=0.6, bottom=peace_dividend_per_life,
+                  color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2,
+                  hatch='///', label='dFDA R&D Savings')
+
+# Add error bars to the stacked bar (total)
+
+ax.errorbar(x_pos[4], costs[4], yerr=[[errors_lower[4]], [errors_upper[4]]],
+            fmt='none', capsize=8, ecolor=COLOR_BLACK, linewidth=2)
+
+# Add value labels on/near bars
+
+for i in range(4):
+    cost = costs[i]
+    if cost > 0:
+        # Positive costs - label above bar
+        ax.text(x_pos[i], cost + errors_upper[i] + 500,
+                f'${cost:,.0f}',
+                ha='center', va='bottom', fontsize=14, color=COLOR_BLACK, weight='bold')
+    elif i == 3:  # Smallpox (small negative value)
+        ax.text(x_pos[i], cost - errors_lower[i] - 2000,
+                f'-${abs(cost):,.0f}',
+                ha='center', va='top', fontsize=14, color=COLOR_BLACK, weight='bold')
+
+# Label for stacked 1% Treaty bar (total value below)
+
+ax.text(x_pos[4], costs[4] - errors_lower[4] - 400000,
+        f'-${abs(costs[4])/1000000:,.1f}M',
+        ha='center', va='top', fontsize=16, color=COLOR_BLACK, weight='bold')
+
+# Label segments within the stacked bar
+
+ax.text(x_pos[4] - 0.35, peace_dividend_per_life/2,
+        'Peace\nDividend\n(1% less war)',
+        ha='right', va='center', fontsize=9, color=COLOR_BLACK, style='italic')
+ax.text(x_pos[4] - 0.35, peace_dividend_per_life + dfda_savings_per_life/2,
+        'dFDA\nR&D\nSavings',
+        ha='right', va='center', fontsize=9, color=COLOR_BLACK, style='italic')
+
+# Add zero line for reference
+
+ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=2, alpha=0.5)
+
+# Add explanatory annotations - moved away from bars with arrows
+# Annotation for top charities (upper right, away from bars)
+
+ax.annotate('GiveWell Top Charities:\nSociety PAYS $3,500-$5,500\nto save one life\n(excellent, but costs money)',
+            xy=(1.5, 6500), xytext=(0.5, -2000000),
+            ha='center', fontsize=10, color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
+            arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
+
+# Annotation for Smallpox (historical benchmark)
+
+ax.annotate('Smallpox Eradication:\nHistoric dominant intervention\n(saved money while saving lives)',
+            xy=(x_pos[3], -15000), xytext=(x_pos[3], -1500000),
+            ha='center', fontsize=9, color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1),
+            arrowprops=dict(arrowstyle='->', lw=1, color=COLOR_BLACK))
+
+# Annotation for 1% Treaty (lower left, away from bar)
+
+ax.annotate('1% Treaty + DIH + dFDA:\nSociety SAVES $5.87M\nper life saved\n(dominant intervention)',
+            xy=(x_pos[4], -3000000), xytext=(2, -6500000),
+            ha='center', fontsize=10, color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
+            arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
+
+# Axis formatting with millions formatter
+
+from matplotlib.ticker import FuncFormatter
+
+def millions_formatter(x, pos):
+    """Format y-axis labels in millions"""
+    if x == 0:
+        return '$0'
+    elif abs(x) >= 1000000:
+        return f'-${abs(x)/1000000:.0f}M' if x < 0 else f'${x/1000000:.0f}M'
+    else:
+        return f'${x/1000:,.0f}k' if x >= 0 else f'-${abs(x)/1000:,.0f}k'
+
+ax.yaxis.set_major_formatter(FuncFormatter(millions_formatter))
+
+ax.set_ylabel('Cost to Society per Life Saved\n(Saves Money < $0 > Costs Money)',
+              fontsize=13, color=COLOR_BLACK, weight='bold', labelpad=10)
+ax.set_xlabel('')
+ax.set_xticks(x_pos)
+ax.set_xticklabels(charities, fontsize=11)
+
+# Set y-axis limits with padding for the new scale
+
+ax.set_ylim(-8000000, 10000)
+
+# Add grid for readability
+
+ax.grid(True, axis='y', alpha=0.2, linestyle='--', linewidth=0.5)
+ax.set_axisbelow(True)
+
+# Clean spines
+
+clean_spines(ax, ['top', 'right'])
+
+# Add title/context at top
+
+fig.text(0.5, 0.96, 'Philanthropic Cost-Effectiveness Comparison',
+         ha='center', fontsize=18, color=COLOR_BLACK, weight='bold')
+fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
+         ha='center', fontsize=12, color=COLOR_BLACK)
+
+# Calculation details removed - see brain/book/appendix/icer-full-calculation.qmd for complete methodology
+# calc_text = '''Full Calculation (see brain/book/appendix/icer-full-calculation.qmd for complete methodology):
+#
+# Annual Economic Benefits:
+#   - Peace Dividend: $113.55B (1% reduction in $11.355T annual war costs)
+#   - dFDA R&D Savings: $50B (50% reduction in $100B clinical trial market)
+#   - Total Benefits: $163.55B/year
+#
+# Annual Costs:
+#   - Campaign: $250M/year ($1B over 4 years, amortized)
+#   - dFDA Operations: $40M/year
+#   - Total Costs: $290M/year
+#
+# Annual Health Benefits:
+#   - Peace: 2,446 lives saved (1% of 244,600 conflict deaths/year) x 35 QALYs/life = 85,610 QALYs
+#   - dFDA: 840,000 QALYs (faster drugs + new therapies + prevention)
+#   - Total: 925,610 QALYs/year
+#
+# ICER Calculation:
+#   Net Benefit = $290M - $163.55B = -$163.26B/year (society saves money)
+#   ICER = -$163.26B / 925,610 QALYs = -$176,371 per QALY
+#   Per Life = -$176,371 x 35 QALYs/life = -$6.17M per life saved
+#
+# Sensitivity: Conservative: -$5.97M/life | Central: -$6.55M/life | Optimistic: -$4.79M/life (all scenarios dominant)
+#
+# Sources: GiveWell 2024, dFDA Cost-Benefit Analysis, Peace Dividend Analysis, Cost of War Analysis. Error bars show uncertainty ranges.'''
+#
+# fig.text(0.5, -0.03, calc_text,
+#          ha='center', va='top', fontsize=6.5, color=COLOR_BLACK, family='monospace',
+#          bbox=dict(boxstyle='round,pad=0.8', facecolor='#f5f5f5', edgecolor=COLOR_BLACK, linewidth=1.5))
+
+# Add watermark
+
+add_watermark(fig)
+
+# Adjust layout to accommodate top titles (no bottom text box)
+
+plt.tight_layout(rect=[0, 0, 1, 0.91])
+
+# Save figure
+
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'philanthropic-cost-effectiveness-comparison-bar-chart.png'
+
+# Save the figure
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution
+
+add_png_metadata(output_path, title="Philanthropic Cost Effectiveness Comparison Bar Chart")
+
+plt.show()
+```

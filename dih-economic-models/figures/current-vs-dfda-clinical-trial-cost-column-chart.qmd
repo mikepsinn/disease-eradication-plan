@@ -1,0 +1,118 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| label: current-vs-dfda-clinical-trial-cost-column-chart
+#| echo: false
+import matplotlib.pyplot as plt
+from pathlib import Path
+import sys
+
+# --- Find project root dynamically to import shared modules ---
+
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
+
+# --- Import centralized style and constants ---
+
+from brain.figures._chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE,
+    add_png_metadata)
+
+# --- Setup Chart Style ---
+
+setup_chart_style()
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# --- Data ---
+# Source: Chapter table "The Itemized Receipt of Stupidity We're Eliminating"
+
+categories = ['Current System\n(Average Trial)', 'Proposed dFDA\n(Decentralized Trial)']
+values = [57, 2]  # In millions of USD
+
+# --- Create Bar Chart ---
+# Use solid black for the high-cost problem, white for the clean solution
+
+colors = [COLOR_BLACK, COLOR_WHITE]
+edgecolor = COLOR_BLACK
+bars = ax.bar(categories, values, color=colors, edgecolor=edgecolor, linewidth=2, width=0.6)
+
+# --- Add Title ---
+
+ax.set_title(
+    "The $55 Million Difference: Clinical Trial Costs",
+    fontsize=28, weight='bold', color=COLOR_BLACK, pad=30, loc='center'
+)
+
+# --- Remove Y-Axis and its Spines (Tufte principle) ---
+
+ax.get_yaxis().set_visible(False)
+clean_spines(ax, positions=['top', 'right', 'left'])
+
+# --- Customize X-Axis ---
+
+ax.tick_params(axis='x', which='major', length=0)  # No ticks
+ax.set_xticklabels(categories, fontsize=18, color=COLOR_BLACK, linespacing=1.5)
+
+# --- Add Direct Data Labels ---
+# For the large black bar, place a contrasting white label inside
+
+bar_current = bars[0]
+y_current = bar_current.get_height()
+ax.annotate(
+    f'${y_current}M',
+    xy=(bar_current.get_x() + bar_current.get_width() / 2, y_current / 2),
+    xytext=(0, 0),
+    textcoords="offset points",
+    ha='center', va='center',
+    fontsize=44, weight='bold',
+    color=COLOR_WHITE,
+    fontname='Courier New'
+)
+
+# For the small white bar, place a black label above it
+
+bar_dfda = bars[1]
+y_dfda = bar_dfda.get_height()
+ax.annotate(
+    f'${y_dfda}M',
+    xy=(bar_dfda.get_x() + bar_dfda.get_width() / 2, y_dfda),
+    xytext=(0, 10),
+    textcoords="offset points",
+    ha='center', va='bottom',
+    fontsize=44, weight='bold',
+    color=COLOR_BLACK,
+    fontname='Courier New'
+)
+
+# --- Adjust plot limits for visual balance ---
+
+ax.set_ylim(0, max(values) * 1.25)
+
+# --- Add Watermark ---
+
+add_watermark(fig)
+
+# --- Save and Show Plot ---
+
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+filename = Path(__file__).stem if '__file__' in locals() else 'current-vs-dfda-clinical-trial-cost-column-chart'
+plt.savefig(output_dir / f'{filename}.png', dpi=200, facecolor=COLOR_WHITE)
+plt.show()
+```

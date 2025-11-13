@@ -1,0 +1,144 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| label: fda-drug-development-cost-increase
+#| fig-cap: "Cost to develop one new drug has exploded under FDA regulations (1950-2000)"
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+import sys
+
+# Find project root dynamically
+
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# Add brain/figures to path for imports
+
+sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
+
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE
+)
+
+# Setup styling
+
+setup_chart_style()
+
+# Load data
+
+data_path = project_root / 'assets' / 'extracted-fda-data' / 'historical-life-expectancy-fda-budget-drug-costs-1901-2000.csv'
+df = pd.read_csv(data_path)
+
+# Extract year and cost columns (filter where cost data exists)
+# Column: Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)
+
+df_costs = df[['Year', 'Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)']].copy()
+df_costs = df_costs[df_costs['Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)'].notna()]
+
+# Clean the cost column - remove $ and convert to numeric
+
+df_costs['Cost'] = df_costs['Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)'].replace('[\$,]', '', regex=True)
+df_costs['Cost'] = pd.to_numeric(df_costs['Cost'], errors='coerce')
+df_costs = df_costs[df_costs['Cost'].notna()]
+
+# Convert to millions for readability
+
+df_costs['Cost_Millions'] = df_costs['Cost'] / 1_000_000
+
+# Create figure
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot cost trend
+
+ax.plot(df_costs['Year'], df_costs['Cost_Millions'],
+        color=COLOR_BLACK, linewidth=4, marker='o', markersize=8)
+
+# Add vertical line at 1962 efficacy amendment
+
+efficacy_year = 1962
+ax.axvline(x=efficacy_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
+ax.text(efficacy_year, ax.get_ylim()[1] * 0.95, 'Efficacy Requirement\nAdded (1962)',
+        ha='center', va='top',
+        fontsize=13, fontweight='bold', color=COLOR_BLACK,
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                 edgecolor=COLOR_BLACK, linewidth=1.5))
+
+# Add key data labels at strategic points
+
+if len(df_costs) > 0:
+    # First point
+    first_row = df_costs.iloc[0]
+    ax.annotate(f'${first_row["Cost_Millions"]:.0f}M\n({int(first_row["Year"])})',
+                xy=(first_row['Year'], first_row['Cost_Millions']),
+                xytext=(first_row['Year']-5, first_row['Cost_Millions'] + 200),
+                fontsize=16, fontweight='bold',
+                ha='center',
+                bbox=dict(boxstyle='round,pad=0.5',
+                         facecolor=COLOR_WHITE,
+                         edgecolor=COLOR_BLACK,
+                         linewidth=2))
+
+    # Last point
+    last_row = df_costs.iloc[-1]
+    ax.annotate(f'${last_row["Cost_Millions"]:.0f}M\n({int(last_row["Year"])})',
+                xy=(last_row['Year'], last_row['Cost_Millions']),
+                xytext=(last_row['Year']+5, last_row['Cost_Millions'] + 200),
+                fontsize=16, fontweight='bold',
+                ha='center',
+                bbox=dict(boxstyle='round,pad=0.5',
+                         facecolor=COLOR_WHITE,
+                         edgecolor=COLOR_BLACK,
+                         linewidth=2))
+
+# Title and labels
+
+ax.set_title('Drug Development Costs Exploded\nAfter 1962 Efficacy Requirement',
+             fontsize=32, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=22, fontweight='bold')
+ax.set_ylabel('Cost (Millions, 2020 USD)', fontsize=22, fontweight='bold')
+
+# Style
+
+ax.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
+ax.tick_params(labelsize=16)
+clean_spines(ax)
+
+# Format y-axis to show millions with $ sign
+
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x:,.0f}M'))
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save figure
+
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / 'fda-drug-development-cost-increase-line-chart.png',
+            dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.show()
+```
+
+This chart shows the exponential increase in the cost to develop a single new drug from 1960-2019, adjusted for inflation to 2020 dollars. The vertical line marks the 1962 efficacy amendment (Kefauver-Harris Amendment).
+
+**Key Insight:** Drug development costs were relatively stable before 1962, then exploded exponentially after the efficacy requirement was added. Costs increased 52x from $74M (1960) to $3,861M (2019), making innovation increasingly expensive and inaccessible.

@@ -1,0 +1,124 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| label: one-percent-treaty-top-country-contributions-column-chart
+#| fig-cap: "Projected annual contributions to the Decentralized Institutes of Health Treasury from top military spenders, based on a 1% reallocation of their defense budgets."
+
+# --- Imports ---
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# --- Dynamic Project Root ---
+# Find the project root dynamically to save the image in the correct directory
+
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+
+# --- Style Imports ---
+# This assumes _chart_style.py is in dih-economic-models/figures/
+
+import sys
+sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE
+)
+
+# --- Chart Setup ---
+
+setup_chart_style()
+
+# --- Data ---
+# Data from the chapter, representing 1% of each nation's military budget.
+
+countries = ['USA', 'China', 'Russia', 'India', 'Saudi Arabia', 'UK', 'France']
+contributions = [8.86, 2.96, 1.09, 0.835, 0.754, 0.686, 0.563] # in Billions USD
+
+# --- Plotting ---
+
+fig, ax = plt.subplots(figsize=(12, 7))
+
+# Create bars (white fill with black outline)
+
+bars = ax.bar(countries, contributions, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5, width=0.7)
+
+# --- Title ---
+
+ax.set_title(
+    "Top Annual Contributions to the 1% Treaty Fund",
+    fontsize=26, weight='bold', pad=30
+)
+
+# --- Remove Y-Axis and Ticks ---
+# As per Tufte's principles, if values are labeled directly, the axis is redundant.
+
+ax.get_yaxis().set_visible(False)
+ax.tick_params(axis='x', which='both', bottom=False, top=False, labelbottom=False) # Hide x-axis ticks and labels
+
+# --- Clean Spines ---
+# Remove all spines except the bottom one, which serves as a baseline.
+
+clean_spines(ax, positions=['top', 'right', 'left'])
+ax.spines['bottom'].set_linewidth(1.5)
+
+# --- Direct Data Labels ---
+# Use annotate for precise label placement.
+
+for i, bar in enumerate(bars):
+    height = bar.get_height()
+    country_name = countries[i]
+
+    # Format value in billions or millions for readability
+    if height >= 1:
+        value_text = f'${height:.2f}B'
+    else:
+        value_text = f'${int(height * 1000)}M'
+
+    label_text = f"{country_name}\n{value_text}"
+
+    ax.annotate(
+        label_text,
+        xy=(bar.get_x() + bar.get_width() / 2, height),
+        xytext=(0, 6),  # 6 points vertical offset from the top of the bar
+        textcoords="offset points",
+        ha='center', va='bottom',
+        fontsize=14,
+        fontfamily='monospace',
+        weight='bold',
+        linespacing=1.4
+    )
+
+# --- Final Touches ---
+# Adjust y-axis limit to create space for labels above the tallest bar.
+
+ax.set_ylim(0, max(contributions) * 1.3)
+
+# Add watermark
+
+add_watermark(fig)
+
+# --- Save Figure ---
+# Save the chart to the /brain/figures directory
+
+output_dir = project_root / 'dih-economic-models' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+filename = 'one-percent-treaty-top-country-contributions-column-chart'
+plt.savefig(output_dir / f'{filename}.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+plt.show()
+```

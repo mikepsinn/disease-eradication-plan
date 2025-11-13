@@ -1,0 +1,156 @@
+```{python}
+#| echo: false
+import sys
+import os
+
+# Quarto executes from project root (execute-dir: project in _book.yml)
+
+appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
+if appendix_path not in sys.path:
+    sys.path.insert(0, appendix_path)
+
+from economic_parameters import *
+```
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+import sys
+
+# Find project root dynamically
+
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+
+# Add paths
+
+sys.path.insert(0, str(project_root / 'brain' / 'book' / 'appendix'))
+sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
+
+from economic_parameters import calculate_personal_lifetime_wealth_conservative_baseline, calculate_medical_progress_multiplier
+from _chart_style import (
+    setup_chart_style, add_watermark, clean_spines, add_png_metadata,
+    COLOR_BLACK, COLOR_WHITE, get_project_root
+)
+
+setup_chart_style()
+
+# Calculate for range of treaty percentages using Evidence-Based Conservative model
+# NOTE: This is the CONSERVATIVE baseline (antibiotic precedent, 5yr life extension)
+# For realistic estimates, see Disease Eradication Model ($2.4M-$5.8M, 34-106yr)
+
+treaty_pcts = np.linspace(0.001, 0.10, 50)  # 0.1% to 10%
+wealth_values = []
+multipliers = []
+
+for pct in treaty_pcts:
+    calc = calculate_personal_lifetime_wealth_conservative_baseline(
+        treaty_pct=pct,
+        current_age=30,
+        annual_income=50000,
+        discount_rate=0.03,
+        conservative=True  # Use conservative 5-year life extension
+    )
+    wealth_values.append(calc['total_lifetime_benefit'])
+    multipliers.append(calculate_medical_progress_multiplier(pct))
+
+# Create figure with two y-axes
+
+fig, ax1 = plt.subplots(figsize=(14, 10))
+
+# Plot wealth on primary axis
+
+color = COLOR_BLACK
+ax1.set_xlabel('Treaty Percentage (%)', fontsize=24, weight='bold')
+ax1.set_ylabel('Personal Lifetime Wealth', fontsize=24, weight='bold', color=color)
+line1 = ax1.plot(treaty_pcts * 100, wealth_values, color=color, linewidth=3,
+                 label='Lifetime Wealth')
+ax1.tick_params(axis='y', labelcolor=color)
+
+# Format y-axis
+
+ax1.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: f'${y/1000:.0f}K'))
+
+# Add key data points
+
+key_points = [0.01, 0.02, 0.05, 0.10]
+for pct in key_points:
+    calc = calculate_personal_lifetime_wealth_conservative_baseline(
+        treaty_pct=pct,
+        current_age=30,
+        annual_income=50000,
+        discount_rate=0.03,
+        conservative=True  # Use conservative 5-year life extension
+    )
+    wealth = calc['total_lifetime_benefit']
+    ax1.plot(pct * 100, wealth, 'o', color=COLOR_BLACK, markersize=8, zorder=5)
+    ax1.text(pct * 100, wealth + 50000, f'{pct*100:.0f}%\n${wealth/1000:.0f}K',
+             ha='center', va='bottom', fontsize=16, weight='bold', color=COLOR_BLACK)
+
+# Add shaded region for "viable treaty range"
+
+ax1.axvspan(1, 5, alpha=0.1, color=COLOR_BLACK, label='Viable Treaty Range')
+
+# Add vertical line at 1% (base case)
+
+ax1.axvline(x=1, color=COLOR_BLACK, linestyle='--', linewidth=2, alpha=0.5, label='1% Treaty (Base Case)')
+
+# Title
+
+ax1.set_title('How Treaty Percentage Affects Your Personal Lifetime Wealth\n(Age 30, $50K Income)',
+              fontsize=32, weight='bold', pad=20)
+
+# Grid for readability
+
+ax1.grid(True, axis='y', alpha=0.3, linestyle='--', linewidth=0.5)
+
+# Clean up spines
+
+clean_spines(ax1, positions=['top', 'right'])
+
+# Legend
+
+ax1.legend(loc='upper left', fontsize=14)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save figure
+
+output_dir = get_project_root() / 'brain' / 'figures'
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / 'conservative-baseline-lifetime-wealth-by-treaty-percentage-line-chart.png'
+
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+# Add metadata
+
+add_png_metadata(
+    output_path,
+    title="Personal Lifetime Wealth by Treaty Percentage",
+    description="Line chart showing how lifetime wealth increases with higher treaty percentages"
+)
+
+plt.show()
+```
+
+## Key Insights
+
+1. **Non-linear growth**: Benefits accelerate as treaty percentage increases (not a straight line)
+2. **1% Treaty baseline**: $402K - the minimum viable threshold
+3. **2% Treaty**: $592K (+47%) - modest increase doubles gains
+4. **5% Treaty**: $1.3M (+223%) - transformative outcome
+5. **10% Treaty**: $3M (+646%) - generational wealth
+
+**Why non-linear?** The medical progress multiplier compounds:
+
+- 1% Treaty: 115x research capacity
+- 5% Treaty: 410x research capacity
+- 10% Treaty: 739x research capacity
+
+More research → more breakthroughs → more life extension → more earning years → compounding benefits.
