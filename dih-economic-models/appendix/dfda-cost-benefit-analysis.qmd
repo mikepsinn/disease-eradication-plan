@@ -1345,6 +1345,8 @@ print(f"Adoption Ramp: {adoption_ramp_years} years to 100%")
 
 ```{python}
 #| echo: false
+import numpy_financial as npf
+
 # --- NPV of Costs ---
 # Create a stream of operational costs over the time horizon
 
