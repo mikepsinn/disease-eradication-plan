@@ -233,11 +233,11 @@ def check_python_imports(content: str, filepath: str):
     """
     # Common module patterns to check
     # Format: (usage_pattern, import_patterns, module_name)
+    # NOTE: We only check for imports that MUST be in each block that uses them.
+    # Standard library imports (pd, np, plt) are available from first block in Quarto,
+    # so we don't check those (would create false positives).
     MODULE_CHECKS = [
         (r'\bnpf\.', [r'import\s+numpy_financial\s+as\s+npf', r'from\s+numpy_financial\s+import'], 'numpy_financial (npf)'),
-        (r'\bnp\.', [r'import\s+numpy\s+as\s+np', r'from\s+numpy\s+import'], 'numpy (np)'),
-        (r'\bplt\.', [r'import\s+matplotlib\.pyplot\s+as\s+plt', r'from\s+matplotlib\.pyplot\s+import'], 'matplotlib.pyplot (plt)'),
-        (r'\bpd\.', [r'import\s+pandas\s+as\s+pd', r'from\s+pandas\s+import'], 'pandas (pd)'),
         (r'\bget_figure_output_path\s*\(', [r'from\s+figures\._chart_style\s+import.*get_figure_output_path', r'from\s+_chart_style\s+import.*get_figure_output_path'], 'get_figure_output_path (from _chart_style)'),
         (r'\bget_project_root\s*\(', [r'from\s+figures\._chart_style\s+import.*get_project_root', r'from\s+_chart_style\s+import.*get_project_root'], 'get_project_root (from _chart_style)'),
     ]
@@ -259,8 +259,8 @@ def check_python_imports(content: str, filepath: str):
             for usage_pattern, import_patterns, module_name in MODULE_CHECKS:
                 # Check if module is used
                 if re.search(usage_pattern, block_content):
-                    # Check if module is imported in this block
-                    has_import = any(re.search(pattern, block_content) for pattern in import_patterns)
+                    # Check if module is imported in this block (use re.DOTALL to match multi-line imports)
+                    has_import = any(re.search(pattern, block_content, re.DOTALL) for pattern in import_patterns)
 
                     if not has_import:
                         # Find first usage line in the block
@@ -277,6 +277,45 @@ def check_python_imports(content: str, filepath: str):
             in_python_block = False
         elif in_python_block:
             current_block.append(line)
+
+
+def check_figure_file_imports(content: str, filepath: str):
+    """
+    For files in dih-economic-models/figures/, check that required imports are present
+    ANYWHERE in the file (not per-block, since Quarto shares imports across blocks).
+
+    This is a simpler check than check_python_imports() and avoids false positives
+    from imports in one block being used in another block.
+    """
+    # Only check figure files
+    if 'dih-economic-models' not in filepath.replace('\\', '/') or 'figures' not in filepath.replace('\\', '/'):
+        return
+
+    # Check if get_figure_output_path is used anywhere
+    uses_get_figure_output_path = 'get_figure_output_path(' in content
+    # Check if it's imported anywhere (in any block)
+    imports_get_figure_output_path = bool(re.search(r'from\s+(?:figures\.)?_chart_style\s+import.*get_figure_output_path', content, re.DOTALL))
+
+    if uses_get_figure_output_path and not imports_get_figure_output_path:
+        errors.append(ValidationError(
+            file=filepath,
+            line=1,
+            message='Figure file uses get_figure_output_path() but does not import it from _chart_style',
+            context='(Check all Python blocks for missing import)'
+        ))
+
+    # Check if get_project_root is used anywhere
+    uses_get_project_root = 'get_project_root(' in content
+    # Check if it's imported anywhere
+    imports_get_project_root = bool(re.search(r'from\s+(?:figures\.)?_chart_style\s+import.*get_project_root', content, re.DOTALL))
+
+    if uses_get_project_root and not imports_get_project_root:
+        errors.append(ValidationError(
+            file=filepath,
+            line=1,
+            message='Figure file uses get_project_root() but does not import it from _chart_style',
+            context='(Check all Python blocks for missing import)'
+        ))
 
 
 def check_hardcoded_figure_paths(content: str, filepath: str):
@@ -412,7 +451,11 @@ def validate_file(filepath: str):
     check_cross_reference_links(content, filepath)
 
     # Check Python imports
-    check_python_imports(content, filepath)
+    # For figure files, use simpler whole-file check to avoid false positives
+    if 'dih-economic-models' in filepath.replace('\\', '/') and 'figures' in filepath.replace('\\', '/'):
+        check_figure_file_imports(content, filepath)
+    else:
+        check_python_imports(content, filepath)
 
     # Check em-dashes
     check_em_dashes(content, filepath)
