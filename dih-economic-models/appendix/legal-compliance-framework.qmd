@@ -10,8 +10,8 @@ tags:
   - regulatory
 lastFactCheckHash: a8d308eee95d47af70ec00e69aec7828af31487062d52702c2a1db1e74e14551
 lastInstructionalVoiceHash: e2f8bab0e359e02b7b227c4d587e793633ce3ac8684ff8542a8e9cc6ce8571f1
+lastNonprofitComplianceHash: 493cf46f25ce535f7e1ea4dd1daa7d17575412a5e2ea03d4e60901f4a286caf8
 ---
-
 ```{python}
 #| echo: false
 from economic_parameters import *
@@ -72,8 +72,8 @@ The [1% Treaty](../../brain/book/solution/1-percent-treaty.qmd) initiative faces
 ### **The Legal Problem**
 
 - **Howey Test:** Investment of money + common enterprise + expectation of profits + from efforts of others = security ([Howey Test Securities Definition](../references.qmd#howey-test-securities))
-- \*\*VICTORY Tokens: Risk of being classified as unregistered securities if they promise returns
-- \*\*SEC Enforcement: Heavy penalties for unregistered securities offerings
+- **VICTORY Tokens:** Risk of being classified as unregistered securities if they promise returns
+- **SEC Enforcement:** Heavy penalties for unregistered securities offerings
 
 ### **Compliance Solution: A Two-Phase "Points-then-Conversion" Model**
 
@@ -289,20 +289,20 @@ display(IPImage(str(png_path)))
 
 #### 1. The 501(c)(3) Public Charity: "The Educator and Mobilizer"
 
-**Primary Purpose:** Run the global referendum/survey to demonstrate 3.5% support (280M+ verified participants) and build broad public understanding through non-partisan research and education.
+**Primary Purpose:** Conduct a non-binding global public opinion survey/engagement initiative to demonstrate 3.5% support (280M+ verified participants) and build broad public understanding through non-partisan research and education.
 
 #### Permitted Activities
 
-- Running the non-binding global referendum/survey on War and Disease
+- Conducting a non-binding global public opinion survey on War and Disease
 - Publishing white papers, economic models, and strategic documents (like this book)
-- Developing and maintaining public-facing website, referendum platform, and educational materials
+- Developing and maintaining public-facing website, engagement platform, and educational materials
 - Hosting forums, webinars, and workshops
 - Conducting non-partisan analysis and research
-- Hiring staff for research, communications, educational programs, and referendum operations
+- Hiring staff for research, communications, educational programs, and engagement operations
 
 **Funding:** Tax-deductible donations from individuals and foundations.
 
-**Limitations:** Strictly prohibited from substantial lobbying or partisan political activity. The referendum must be non-binding and educational, demonstrating public will without telling politicians what to do.
+**Limitations:** Strictly prohibited from substantial lobbying or partisan political activity. The survey must be non-binding and educational, demonstrating public will without telling politicians what to do.
 
 #### 2. The 501(c)(4) Social Welfare Organization: "The Advocate"
 
@@ -320,13 +320,13 @@ display(IPImage(str(png_path)))
 
 #### 3. The For-Profit / Foundation: "The Engine"
 
-**Primary Purpose:** Manage VICTORY Bond sales, fund dFDA development, provide investor returns.
+**Primary Purpose:** Issue and manage private investment instruments (e.g., 'Project VICTORY Tokens/Bonds') to fund initial dFDA development and strategic operations, providing investor returns. This entity's work is distinct from, but aims to enable, the future issuance of **government-issued VICTORY bonds** which will ultimately fund the DIH Treasury following the 1% Treaty's ratification.
 
 #### Permitted Activities
 
-- Issuing securities and managing investor relations
-- Funding technology development and operational scaling
-- Managing DIH treasury and executing investor payouts
+- Issuing private investment securities and managing investor relations to fund pre-treaty initiative development.
+- Funding technology development and operational scaling for the dFDA.
+- Upon ratification of the 1% Treaty, this entity may transition to managing operational infrastructure for the DIH Treasury and facilitating the mechanisms for investor payouts related to the government-issued VICTORY bonds.
 
 **Legal Structure:** Delaware C-Corporation or Cayman Islands foundation optimized for global investment and crypto-asset management.
 
@@ -338,11 +338,11 @@ To maximize the effectiveness of the [dFDA Infrastructure](../../brain/book/solu
 
 #### Key Policy Objectives
 
-1. **Enable Perpetual Trials:** Real-time global patient participation with automated matching and dynamic protocol adjustments
-2. **Clarify Pricing Mechanisms:** [Allow drug companies to set per-participant prices under FDA regulations (21 CFR 312.8)](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)
-3. **Redirect NIH Funding:** Transition research toward dFDA-leveraging projects
-4. **Leverage Medicare/Medicaid:** Utilize existing provisions for clinical trial participation
-5. **Incentivize Innovation:** Launch \$500M X Prize for platform development
+1.  **Enable Perpetual Trials:** Real-time global patient participation with automated matching and dynamic protocol adjustments
+2.  **Clarify Pricing Mechanisms:** [Allow drug companies to set per-participant prices under FDA regulations (21 CFR 312.8)](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)
+3.  **Redirect NIH Funding:** Transition research toward dFDA-leveraging projects
+4.  **Leverage Medicare/Medicaid:** Utilize existing provisions for clinical trial participation
+5.  **Incentivize Innovation:** Launch \$500M X Prize for platform development
 
 #### Projected Impact
 
@@ -355,15 +355,15 @@ To maximize the effectiveness of the [dFDA Infrastructure](../../brain/book/solu
 
 #### High-Priority Streamlining Targets
 
-1. **21 CFR Part 312 (IND Applications):** Streamlined CMC requirements, flexible preclinical data, accelerated reviews for certified platforms
+1.  **21 CFR Part 312 (IND Applications):** Streamlined CMC requirements, flexible preclinical data, accelerated reviews for certified platforms
 
-2. **21 CFR Parts 56 & 45 CFR Part 46 (IRBs):** Enforce single IRB mandate, standardize requirements, enable AI-assisted review
+2.  **21 CFR Parts 56 & 45 CFR Part 46 (IRBs):** Enforce single IRB mandate, standardize requirements, enable AI-assisted review
 
-3. **ICH E6(R2) GCP Guidelines:** Risk-based quality management, reduced documentation for automated platforms, remote monitoring standards
+3.  **ICH E6(R2) GCP Guidelines:** Risk-based quality management, reduced documentation for automated platforms, remote monitoring standards
 
-4. **21 CFR 312.32 (IND Safety Reporting):** Automated safety reporting from platforms, AI-based signal detection, aggregate reporting for known events
+4.  **21 CFR 312.32 (IND Safety Reporting):** Automated safety reporting from platforms, AI-based signal detection, aggregate reporting for known events
 
-5. **21 CFR Parts 50 & 45 CFR Part 46 (Informed Consent):** Electronic consent validation, dynamic consent for adaptive trials, simplified waivers
+5.  **21 CFR Parts 50 & 45 CFR Part 46 (Informed Consent):** Electronic consent validation, dynamic consent for adaptive trials, simplified waivers
 
 #### Revolutionary Exemptions for Certified Platforms
 
