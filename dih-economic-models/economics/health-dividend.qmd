@@ -13,18 +13,8 @@ lastInstructionalVoiceHash: dd5ecd23df99d0246c138ed8e0fa5cc57d3166c4b078d7888aa0
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 The dFDA Infrastructure costs **$40M per year** to run.
 It saves the world **$50.0B per year** in clinical trial costs.

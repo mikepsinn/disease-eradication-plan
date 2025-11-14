@@ -17,15 +17,6 @@ lastInstructionalVoiceHash: d686650d9aa05d003ea5212b5991c9fc66de3f7256457c23a317
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
 
@@ -43,7 +34,7 @@ A financial instrument that makes obscene amounts of money appear from nowhere w
 
 - Collect $1.0B in papers from rich humans who like more papers
 - Use those papers to convince politicians that not dying is popular
-- Once treaty passes, $27.2B in papers annually stops going to bombs and starts going to [DIH](../solution/dih.qmd)
+- Once treaty passes, $27.2B in papers annually stops going to bombs and starts going to [DIH](../../brain/book/solution/dih.qmd)
 - Give the rich humans 10% of that ($2.7B) every year, forever
 - Use the remaining 90% ($24.3B) to cure the diseases actually killing people
 
@@ -74,7 +65,7 @@ Use the $1.0B according to the [Campaign Budget](campaign-budget.qmd) to convinc
 
 - **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ($200M)
 - **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ($250M)
-- **Build the actual tech** - [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms ($180M)
+- **Build the actual tech** - [dFDA](../../brain/book/solution/dfda.qmd) and [Wishocracy](../../brain/book/solution/wishocracy.qmd) platforms ($180M)
 - **Hire lawyers** - Make bribery legal by calling it other things ($50M)
 - **Co-opt death merchants** - Convince defense contractors that 271.8% beats 8% ($150M)
 - **Run the thing** - Pay humans to coordinate the paper distribution ($170M)
@@ -247,7 +238,7 @@ Tell investors: Everyone wins when treaties grow, more cures = bigger treaties =
 
 The VICTORY Bonds are issued by **The Victory Corporation**, a for-profit Delaware C-Corp. This entity serves as the financial "Engine" of the entire operation, designed to attract for-profit capital to fund the political and social mission.
 
-This structure legally separates the investment activities from the philanthropic and lobbying arms of the organization. For a complete breakdown of the four-part hybrid legal model, see the [Legal Architecture](../legal/legal-framework.qmd) chapter.
+This structure legally separates the investment activities from the philanthropic and lobbying arms of the organization. For a complete breakdown of the four-part hybrid legal model, see the [Legal Architecture](../../brain/book/legal/legal-framework.qmd) chapter.
 
 ### Structure the Bond Instrument
 
@@ -326,24 +317,12 @@ The investment carries two primary types of risk: **Project Risks**, which are i
 ## The Expansion Flywheel
 
 ```{python}
-#| echo: false
-#| fig-cap: "The Expansion Flywheel - How initial investment leads to treaty expansion and perpetual returns"
 #| fig-alt: "Flowchart showing: Investors Give $1B → 1% Treaty Passes → Bondholders Get Returns + DIH Spends on Cures → Diseases Fall → Media Frenzy → Public Demands More → 2% Treaty → Higher Returns → Cycle Continues"
-
 import graphviz
-import sys
 from pathlib import Path
 from IPython.display import Image as IPImage, display
 
-# Add brain/figures to path for helper import
-
-figures_path = Path.cwd()
-if figures_path.name != 'decentralized-institutes-of-health':
-    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
-        figures_path = figures_path.parent
-sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
-
-from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+from figures._graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 dot = graphviz.Digraph(comment='Expansion Flywheel', format='png')
 dot.attr(rankdir='TB', size='10,12')
@@ -416,7 +395,7 @@ Set these minimum investment amounts by investor type:
 
 ## When Rich People Ask Difficult Questions
 
-For broader objections about whether humanity is capable of not being stupid, see [Demolishing Objections](../appendix/faq.qmd). This section handles money-specific concerns.
+For broader objections about whether humanity is capable of not being stupid, see [Demolishing Objections](../../brain/book/appendix/faq.qmd). This section handles money-specific concerns.
 
 ### "This sounds like a Ponzi scheme run by someone who failed math."
 

@@ -17,17 +17,7 @@ lastInstructionalVoiceHash: b9c8c2b1470bfa6c6b8afc9d3f84774ad579f4f2d4a0111bc3b2
 ---
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
-
 
 ```
 
@@ -35,7 +25,7 @@ from economic_parameters import *
 
 This analysis evaluates the economic impact of redirecting 1% of global military spending ([$27.2B annually](../appendix/peace-dividend-calculations.qmd)) to fund the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Using net present value analysis and conservative assumptions derived from peer-reviewed research, we demonstrate return on investment ranging from 463:1 to 1,239:1, depending on the scope of benefits included.
 
-The intervention is self-funding, requiring zero net new spending, as funds are redirected from existing military budgets. The economic benefits arise from two independent mechanisms: (1) a peace dividend of [$113.6B annually](../appendix/peace-dividend-calculations.qmd) from reduced conflict costs, and (2) [$50.0B+ in annual healthcare R&D efficiency gains](../appendix/dfda-cost-benefit-analysis.qmd) from decentralized clinical trials proven [82x more cost-effective](../../dih-economic-models/appendix/recovery-trial.qmd) than traditional approaches.
+The intervention is self-funding, requiring zero net new spending, as funds are redirected from existing military budgets. The economic benefits arise from two independent mechanisms: (1) a peace dividend of [$113.6B annually](../appendix/peace-dividend-calculations.qmd) from reduced conflict costs, and (2) [$50.0B+ in annual healthcare R&D efficiency gains](../appendix/dfda-cost-benefit-analysis.qmd) from decentralized clinical trials proven [82x more cost-effective](../appendix/recovery-trial.qmd) than traditional approaches.
 
 ### Key Findings
 
@@ -55,7 +45,7 @@ This analysis employs standard health economics frameworks including:
 - **Incremental Cost-Effectiveness Ratios (ICER)** for comparative analysis
 - **Sensitivity analysis** examining parameter variations (see [1% Treaty Cost-Effectiveness](../appendix/1-percent-treaty-cost-effectiveness.qmd))
 
-All calculations use conservative assumptions and are validated against peer-reviewed literature, particularly the [Oxford RECOVERY trial](../../dih-economic-models/appendix/recovery-trial.qmd) demonstrating 82x cost reduction in pragmatic clinical trials.
+All calculations use conservative assumptions and are validated against peer-reviewed literature, particularly the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd) demonstrating 82x cost reduction in pragmatic clinical trials.
 
 ### Two-Tier ROI Framework
 
@@ -200,7 +190,7 @@ The Decentralized FDA alone achieves **463:1 return on investment**.
 
 This exceptional ROI comes from:
 
-- **$50.0B in annual R&D cost savings**: [82x reduction](../../dih-economic-models/appendix/recovery-trial.qmd) in clinical trial costs
+- **$50.0B in annual R&D cost savings**: [82x reduction](../appendix/recovery-trial.qmd) in clinical trial costs
 - **Faster access to new treatments**: [2 years instead of 17 years](../appendix/dfda-cost-benefit-analysis.qmd) to market
 - **Better prevention through real-world data**: Continuous learning from millions of patients
 - **Enabling new therapies**: Making [rare disease trials](../references.qmd#rare-disease-patients-300m-globally) economically viable
@@ -281,7 +271,7 @@ where [$1,238.6B](../appendix/dfda-cost-benefit-analysis.qmd) is the total annua
 - **Earlier Access** = Patients access the SAME treatments 7 years sooner (during trials instead of post-approval)
 - **Research Acceleration** = System runs 115X MORE trials, finding 10-20X MORE breakthroughs
 
-Both are conservative estimates based on proven models ([RECOVERY trial](../../dih-economic-models/appendix/recovery-trial.qmd) costs, disease prevalence data, standard QALY valuations).
+Both are conservative estimates based on proven models ([RECOVERY trial](../appendix/recovery-trial.qmd) costs, disease prevalence data, standard QALY valuations).
 
 ### Research Acceleration Mechanism: How We Get 115X
 
@@ -331,7 +321,7 @@ This represents:
 
 - From [1,980 completed trials/year](../appendix/research-acceleration-model.qmd) → [227,700 completed trials/year](../appendix/research-acceleration-model.qmd) (115x)
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → [1,000-2,000 approvals/year](../appendix/research-acceleration-model.qmd) (20-40x)
-- From [$41,000 cost per patient](../../dih-economic-models/appendix/recovery-trial.qmd) → [$500-1,000 cost per patient](../appendix/research-acceleration-model.qmd) ([82x cost reduction](../../dih-economic-models/appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
+- From [$41,000 cost per patient](../appendix/recovery-trial.qmd) → [$500-1,000 cost per patient](../appendix/research-acceleration-model.qmd) ([82x cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](../appendix/research-acceleration-model.qmd).
 
@@ -480,16 +470,16 @@ These figures represent the mathematical consequence of maintaining current reso
 
 The 1% Treaty creates positive economic incentives across all major stakeholder groups, eliminating traditional opposition to healthcare system reform. This alignment of economic incentives is critical for political feasibility and sustainable implementation.
 
-**Key Stakeholder Benefits** (see [Aligning Incentives](solution/aligning-incentives.qmd) for detailed analysis):
+**Key Stakeholder Benefits** (see [Aligning Incentives](../../brain/book/solution/aligning-incentives.qmd) for detailed analysis):
 
 - **Defense sector**: Retains [99% of current budget](../appendix/peace-dividend-calculations.qmd) while gaining access to medical R&D contracts from 1% redirection
 - **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity increases 115X](../appendix/research-acceleration-model.qmd)
 - **Insurance providers**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ([$109T current economic cost](../references.qmd#disease-economic-burden-109t))
 - **Healthcare providers**: Increased treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
-- **Patients**: Access to clinical trials as healthcare delivery mechanism; democratized research priority-setting through [wishocratic governance](solution/wishocracy.qmd)
+- **Patients**: Access to clinical trials as healthcare delivery mechanism; democratized research priority-setting through [wishocratic governance](../../brain/book/solution/wishocracy.qmd)
 - **Taxpayers**: Net reduction in healthcare costs through improved R&D efficiency
 
-See [Aligning Incentives](solution/aligning-incentives.qmd) for detailed stakeholder analysis and implementation strategy.
+See [Aligning Incentives](../../brain/book/solution/aligning-incentives.qmd) for detailed stakeholder analysis and implementation strategy.
 
 ## Implementation Strategy
 
@@ -536,13 +526,13 @@ For the rigorous analysis:
 
 **Political Risk**: Treaty adoption requires coordination across multiple national governments
 
-- *Mitigation*: Dual-track approach combining grassroots referendum with diplomatic engagement (see [Treaty Adoption Strategy](strategy/treaty-adoption-strategy.qmd))
+- *Mitigation*: Dual-track approach combining grassroots referendum with diplomatic engagement (see [Treaty Adoption Strategy](../../brain/book/strategy/treaty-adoption-strategy.qmd))
 - *Precedent*: Historical military spending reductions have occurred during periods of public mobilization (post-WW2, post-Cold War)
 
 **Technical Risk**: dFDA platform development and scaling challenges
 
 - *Mitigation*: Phased rollout beginning with proven platforms (similar to RECOVERY trial model); open-source architecture enabling distributed development
-- *Validation*: Oxford [RECOVERY trial](../../dih-economic-models/appendix/recovery-trial.qmd) demonstrated 82x cost reduction at scale (11,000+ participants, 6 treatment arms, $5M total cost)
+- *Validation*: Oxford [RECOVERY trial](../appendix/recovery-trial.qmd) demonstrated 82x cost reduction at scale (11,000+ participants, 6 treatment arms, $5M total cost)
 
 **Adoption Risk**: Insufficient patient enrollment in decentralized trials
 
@@ -558,9 +548,9 @@ See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for complet
 
 ### Governance and Accountability
 
-**DIH Treasury Governance**: [Wishocratic system](solution/wishocracy.qmd) enabling democratic allocation of research funding
+**DIH Treasury Governance**: [Wishocratic system](../../brain/book/solution/wishocracy.qmd) enabling democratic allocation of research funding
 
-- [8 billion potential participants](solution/wishocracy.qmd) (any human) vs. current centralized decision-making ([200 NIH staff](../references.qmd#nih-decision-makers-200-people))
+- [8 billion potential participants](../../brain/book/solution/wishocracy.qmd) (any human) vs. current centralized decision-making ([200 NIH staff](../references.qmd#nih-decision-makers-200-people))
 - Quadratic voting mechanism prevents plutocratic capture
 - Transparent, auditable allocation via blockchain-based system
 
@@ -600,6 +590,6 @@ $$
 
 **Comparative Context**: This intervention rivals or exceeds the cost-effectiveness of history's most successful public health achievements (see [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd) for detailed ROI comparisons including smallpox eradication and childhood vaccinations) while requiring no ongoing charitable funding.
 
-**Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over [36 months](strategy/roadmap.qmd) (see [Roadmap](strategy/roadmap.qmd) for complete implementation timeline).
+**Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over [36 months](../../brain/book/strategy/roadmap.qmd) (see [Roadmap](../../brain/book/strategy/roadmap.qmd) for complete implementation timeline).
 
-The economic case is grounded in conservative assumptions, validated against peer-reviewed evidence (particularly the [Oxford RECOVERY trial](../../dih-economic-models/appendix/recovery-trial.qmd)), and subjected to comprehensive [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd). The methodology employs standard health economics frameworks (NPV, QALYs, ICER) to enable comparison with existing interventions and facilitate foundation grant evaluation processes.
+The economic case is grounded in conservative assumptions, validated against peer-reviewed evidence (particularly the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd)), and subjected to comprehensive [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd). The methodology employs standard health economics frameworks (NPV, QALYs, ICER) to enable comparison with existing interventions and facilitate foundation grant evaluation processes.

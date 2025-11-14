@@ -5,28 +5,16 @@ lastInstructionalVoiceHash: bf9ad4c6f36a42e187106dfa0f34f1489e82c06e15c609716e6f
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
 
-
 ## On How to Buy a Planet for $1B
-
 
 **Total Budget**: $1B over 3-5 years
 
 **What Traditional Campaigns Do**: Throw money at problems until the problems go away or the money runs out. Usually the money runs out first.
 
 **What You're Doing**: Using AI, game theory, and viral mechanics to achieve what would normally cost $2-5B.
-
 
 This $1B will:
 

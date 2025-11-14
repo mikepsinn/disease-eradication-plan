@@ -12,22 +12,12 @@ lastInstructionalVoiceHash: 05dfa4a7561692f4cef2ecb9ee04c6e0eefa4e586e51e00a14ee
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
 
-
 - **What The Treaty Captures:** Cut global military spending by 1% and the DIH receives **$27.2B annually** to fund the Decentralized Institutes of Health.
 - **What The World Saves:** Cut the total costs of conflict by 1% and society saves **$113.6B every year**. That's less money spent rebuilding bombed hospitals, treating war casualties, and dealing with refugees.
-- **Source:** All numbers come from the [Cost of War analysis](../problem/cost-of-war.qmd).
+- **Source:** All numbers come from the [Cost of War analysis](../../brain/book/problem/cost-of-war.qmd).
 
 ## The Economics of a 1% Reduction in Violence
 
@@ -45,7 +35,7 @@ That **$27.2B** funds everything: the research, the VICTORY bond returns, the wh
 
 ### 2. What Society Saves: 113.6B Every Year
 
-But that's just the money the treaty redirects. War costs the world [$11.4T annually](../problem/cost-of-war.qmd). Cut conflict by 1.0% and society saves **113.6B** on top of what gets redirected.
+But that's just the money the treaty redirects. War costs the world [$11.4T annually](../../brain/book/problem/cost-of-war.qmd). Cut conflict by 1.0% and society saves **113.6B** on top of what gets redirected.
 
 That's money the world doesn't spend on:
 
@@ -58,7 +48,7 @@ Here's exactly where those savings come from:
 
 ### The Numbers: Where Every Dollar Gets Saved
 
-This breaks down the annual global savings based on the [Cost of War analysis](../problem/cost-of-war.qmd).
+This breaks down the annual global savings based on the [Cost of War analysis](../../brain/book/problem/cost-of-war.qmd).
 
 | Cost Category | Total Annual Cost (Billions) | 1% Annual Savings (Billions) |
 | :--- | :--- | :--- |

@@ -13,18 +13,8 @@ lastInstructionalVoiceHash: 349db60016dd01c0f8bc9e3cf79a09af40366725a5d25bb27764
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 Pharmaceutical companies aren't evil. They're just following incentives. Right now, the incentives say: "Keep people sick forever, bill monthly."
 
