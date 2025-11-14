@@ -226,6 +226,57 @@ def check_cross_reference_links(content: str, filepath: str):
                 ))
 
 
+def check_python_imports(content: str, filepath: str):
+    """
+    Check for missing imports in Python code blocks.
+    Detects cases where a module is used but not imported in that specific block.
+    """
+    # Common module patterns to check
+    # Format: (usage_pattern, import_patterns, module_name)
+    MODULE_CHECKS = [
+        (r'\bnpf\.', [r'import\s+numpy_financial\s+as\s+npf', r'from\s+numpy_financial\s+import'], 'numpy_financial (npf)'),
+        (r'\bnp\.', [r'import\s+numpy\s+as\s+np', r'from\s+numpy\s+import'], 'numpy (np)'),
+        (r'\bplt\.', [r'import\s+matplotlib\.pyplot\s+as\s+plt', r'from\s+matplotlib\.pyplot\s+import'], 'matplotlib.pyplot (plt)'),
+        (r'\bpd\.', [r'import\s+pandas\s+as\s+pd', r'from\s+pandas\s+import'], 'pandas (pd)'),
+    ]
+
+    lines = content.split('\n')
+    in_python_block = False
+    current_block = []
+    block_start_line = 0
+
+    for i, line in enumerate(lines):
+        if re.match(r'^```\{python\}', line):
+            in_python_block = True
+            block_start_line = i + 1
+            current_block = []
+        elif in_python_block and line.strip() == '```':
+            # End of Python block - check imports
+            block_content = '\n'.join(current_block)
+
+            for usage_pattern, import_patterns, module_name in MODULE_CHECKS:
+                # Check if module is used
+                if re.search(usage_pattern, block_content):
+                    # Check if module is imported in this block
+                    has_import = any(re.search(pattern, block_content) for pattern in import_patterns)
+
+                    if not has_import:
+                        # Find first usage line in the block
+                        for line_num, block_line in enumerate(current_block, block_start_line):
+                            if re.search(usage_pattern, block_line):
+                                errors.append(ValidationError(
+                                    file=filepath,
+                                    line=line_num,
+                                    message=f'Missing import in Python block: {module_name}',
+                                    context=block_line.strip()[:80]
+                                ))
+                                break  # Only report once per module per block
+
+            in_python_block = False
+        elif in_python_block:
+            current_block.append(line)
+
+
 def check_gif_references(content: str, filepath: str):
     """
     Check for GIF files that aren't wrapped in HTML-only blocks
@@ -328,6 +379,9 @@ def validate_file(filepath: str):
 
     # Check cross-reference links
     check_cross_reference_links(content, filepath)
+
+    # Check Python imports
+    check_python_imports(content, filepath)
 
     # Check em-dashes
     check_em_dashes(content, filepath)
