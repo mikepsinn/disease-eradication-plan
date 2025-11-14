@@ -16,6 +16,7 @@ lastFormattedHash: 2fc2e2fe5025bc28a4a1034c25fc99af953285031cf8ebda2c70d2c7d2766
 lastFactCheckHash: 7837a0195cf148f5025eedbc78c6fe0bdab52026ebd09bce12e98fbe1ebebabd
 lastInstructionalVoiceHash: cbd16c6025251136903fcac9297812bf292bc2dbbef98002e49a0cf512b5d130
 lastToneElevationWithHumorHash: 7e07c8b557fba4c628d7016f43a152b9c3b6a73a16074112808ada6deecf7178
+lastNonprofitComplianceHash: 364cbfb0bcdddbd130b5c679304aa223413c69bbf5a9e8e7eb4d5e72555b3f8b
 ---
 
 ```{python}
@@ -88,7 +89,7 @@ They:
 
 ### 3. The Voting System (RAPPA)
 
-People with [VICTORY instruments](../economics/victory-bonds.qmd) in the DIH use **Random Aggregated Pairwise Preference Allocation (RAPPA)** to vote on which solutions to fund.
+Holders of VICTORY instruments, envisioned as government-issued financial mechanisms designed to align public interest with scientific progress, participate in the DIH's governance by using **Random Aggregated Pairwise Preference Allocation (RAPPA)** to vote on which solutions to fund.
 
 This system is:
 
@@ -97,7 +98,7 @@ This system is:
 
 ### 4. The Treasury (The DAO)
 
-The DAO's treasury (in this case, the **DIH**) automatically executes the will of the voters, deploying its **$27.2B+ annual budget** to fund the "Contributors" (the researchers, scientists, and engineers) who are working to grant the top-ranked wishes.
+The DAO's treasury (in this case, the envisioned **DIH**), once fully established and funded by public or government sources, would automatically execute the will of the voters, deploying its **target $27.2B+ annual budget** to fund the "Contributors" (the researchers, scientists, and engineers) who are working to grant the top-ranked wishes.
 
 ### 5. The Verification Layer (e.g., The dFDA)
 
@@ -152,7 +153,7 @@ For the DIH, this function is performed by the [Decentralized FDA (dFDA)](../../
 
 ### Beyond Medical Research: A Template for Uncorruptible Governance
 
-This isn't just about protecting research funding - it's an experiment in building the next generation of way better government that doesn't steal.
+This isn't just about protecting research funding – it's an experiment in demonstrating a new model for uncorruptible, transparent governance of public goods.
 
 Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), you demonstrate that $27.2B can be managed with:
 

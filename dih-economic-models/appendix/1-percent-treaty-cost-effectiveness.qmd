@@ -11,8 +11,8 @@ tags:
 lastFactCheckHash: a3b5ed5c444e0871923ad5b3a9df93db7519e177fffab7aba8c22eac35bea6b3
 lastToneElevationWithHumorHash: 0e44c351b354fd422e5fee70e8eb3e067d40c1de305bfb7fc38fa54e55a6d94b
 lastInstructionalVoiceHash: 26066a540dc4479cbac40dd86da7dfb66a0ee0b0c38de35f13a6b1c40d036976
+lastNonprofitComplianceHash: bb16ab026532b75cd0014a2d64cf107c74b1466d123f8a346aea2420450a5f65
 ---
-
 ```{python}
 #| echo: false
 # Import all economic parameters from centralized module
@@ -126,8 +126,8 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Total campaign budget**: $1.0B over 4-5 years
 
-- Viral referendum: $200M
-- AI-assisted lobbying: $250M
+- Public awareness and engagement: $200M
+- AI-assisted policy outreach and government consultation: $250M
 - Technology platform: $250M
 - Legal & compliance: $100M
 - Partnerships: $100M
@@ -491,9 +491,9 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **A**: That's what the $1.0B campaign budget is for - making the politically impossible become inevitable through:
 
-- Viral referendum showing overwhelming public support (80%+ want less war, more cures)
+- Broad public engagement showing overwhelming public support (80%+ want less war, more cures)
 - VICTORY bonds that make supporting the treaty more profitable than opposing it
-- AI-assisted lobbying that's 60-80% more cost-effective than traditional campaigns
+- AI-assisted policy outreach and government consultation that's 60-80% more cost-effective than traditional campaigns
 - Creating unstoppable momentum in pilot countries first
 
 The math shows it's worth trying. Even a 10% chance of success has positive expected value given the enormous returns.
