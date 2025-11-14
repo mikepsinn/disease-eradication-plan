@@ -67,7 +67,7 @@ export async function styleFileWithLLM(filePath: string, options?: { extraInstru
 }
 
 export async function nonprofitComplianceCheckFileWithLLM(filePath: string): Promise<void> {
-  console.log(`\nChecking nonprofit compliance for ${filePath} with Claude Opus...`);
+  console.log(`\nChecking nonprofit compliance for ${filePath} with Gemini Flash...`);
   const { frontmatter, body } = await readFileWithMatter(filePath);
 
   // Note: We intentionally DO NOT load the general book style guide here.
@@ -202,7 +202,7 @@ Foundations need absolute clarity that they're funding research and education, N
 
   const prompt = await loadPromptTemplate('scripts/prompts/style-guide-review.md', promptTemplateVars);
 
-  const responseText = await generateClaudeOpus41Content(prompt);
+  const responseText = await generateGeminiFlashContent(prompt);
 
   let finalBody;
   if (responseText.trim() === 'NO_CHANGES_NEEDED') {

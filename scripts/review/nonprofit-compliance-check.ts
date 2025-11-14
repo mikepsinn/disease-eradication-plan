@@ -6,7 +6,10 @@ dotenv.config();
 async function main() {
   console.log('Checking dih-economic-models files for nonprofit foundation compliance...');
 
-  const staleFilesToCheck = await getStaleFiles('lastNonprofitComplianceHash', 'dih-economic-models');
+  let staleFilesToCheck = await getStaleFiles('lastNonprofitComplianceHash', 'dih-economic-models');
+
+  // Skip references.qmd file
+  staleFilesToCheck = staleFilesToCheck.filter(file => !file.endsWith('references.qmd'));
 
   console.log(`\nFound ${staleFilesToCheck.length} stale files in dih-economic-models to review\n`);
 
