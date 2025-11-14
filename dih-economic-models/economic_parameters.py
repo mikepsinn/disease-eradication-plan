@@ -330,7 +330,7 @@ DFDA_NPV_NET_BENEFIT_CONSERVATIVE = DFDA_NPV_TOTAL_COST * ROI_DFDA_SAVINGS_ONLY 
 # The simple ROI (1,250:1) is gross savings / annual opex without discounting
 # Use ROI_DFDA_SAVINGS_ONLY (463:1) as the canonical figure for most purposes
 
-# VICTORY bonds
+# VICTORY Social Impact Bonds
 # Source: brain/book/economics/victory-bonds.qmd
 VICTORY_BOND_FUNDING_PCT = 0.10  # 10% of captured dividend funds bonds
 VICTORY_BOND_ANNUAL_PAYOUT = TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT  # $2.718B
@@ -497,7 +497,7 @@ OPTIMISTIC_SCENARIO_ROI = int(SENSITIVITY_NET_BENEFIT_OPTIMISTIC / SENSITIVITY_T
 
 # Alternative ICER calculations based on funding perspective
 # Source: icer-full-calculation.qmd alternative ICER table
-ICER_INVESTOR_FUNDED = -187429  # -$187,429 (campaign funded by VICTORY bonds, cost = $0)
+ICER_INVESTOR_FUNDED = -187429  # -$187,429 (campaign funded by VICTORY Social Impact Bonds, cost = $0)
 ICER_OPPORTUNITY_COST = -156571  # -$156,571 (counts $27B redirected military spending)
 ICER_WASTE_CONVERSION = None  # Undefined (military spending has negative ROI)
 
@@ -689,7 +689,7 @@ LOBBYING_ROI_DEFENSE = 1813 # Dollars returned per dollar spent lobbying defense
 WW2_BOND_RETURN_PCT = 0.04 # WWII bond return percentage, historical comparison
 AVERAGE_MARKET_RETURN_PCT = 0.10 # Average market return percentage for portfolio comparisons
 
-# Victory Bonds derived payout (per unit of investment)
+# VICTORY Social Impact Bonds derived payout (per unit of investment)
 VICTORY_BOND_INVESTMENT_UNIT_USD = 1000 # USD, per bond investment unit for retail investors
 VICTORY_BOND_PAYOUT_PER_UNIT_USD_ANNUAL = (VICTORY_BOND_ANNUAL_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST) * VICTORY_BOND_INVESTMENT_UNIT_USD # Derived from total payout and total raise
 

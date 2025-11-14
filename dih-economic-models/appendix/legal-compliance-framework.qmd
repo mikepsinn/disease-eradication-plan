@@ -17,7 +17,7 @@ lastNonprofitComplianceHash: 493cf46f25ce535f7e1ea4dd1daa7d17575412a5e2ea03d4e60
 from economic_parameters import *
 ```
 
-The [1% Treaty](../../brain/book/solution/1-percent-treaty.qmd) initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for [VICTORY bonds](../economics/victory-bonds.qmd)**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
+The [1% Treaty](../../brain/book/solution/1-percent-treaty.qmd) initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for [VICTORY Social Impact Bonds](../economics/victory-bonds.qmd)**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
 
 ## Challenge 1: Foreign National Election Funding
 
@@ -98,7 +98,7 @@ This phase occurs only _after_ the 1% Treaty is successfully ratified and the [D
 
 **Fundraising from Accredited Investors (Reg D / Reg S)**
 
-The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for VICTORY bonds and tokens, conducted in full compliance with [Regulation D](../references.qmd#sec-reg-d) (for U.S. accredited investors) and [Regulation S](../references.qmd#sec-reg-s) (for non-U.S. investors). This ensures the core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
+The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for VICTORY Social Impact Bonds and tokens, conducted in full compliance with [Regulation D](../references.qmd#sec-reg-d) (for U.S. accredited investors) and [Regulation S](../references.qmd#sec-reg-s) (for non-U.S. investors). This ensures the core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
 
 #### Legal Structure
 
@@ -228,7 +228,7 @@ Swiss Foundation (Treaty Coordination)
 ### **Compliance Indicators**
 
 - Zero election law violations or regulatory enforcement actions
-- Successful securities law exemption for VICTORY bonds
+- Successful securities law exemption for VICTORY Social Impact Bonds
 - Full regulatory approval in all target jurisdictions
 - Independent legal audit confirms ongoing compliance
 
@@ -273,7 +273,7 @@ with dot.subgraph(name='cluster_funding') as funding:
     funding.node('Donors_c3', 'Donors\n(Tax-Deductible)')
     funding.node('Donors_c4', 'Donors\n(Not Deductible)')
 
-dot.edge('A', 'Investors', label='Sells VICTORY Bonds')
+dot.edge('A', 'Investors', label='Sells VICTORY Social Impact Bonds')
 dot.edge('A', 'D', label='Funds')
 dot.edge('B', 'E', label='Focuses on')
 dot.edge('C', 'F', label='Focuses on')
@@ -320,13 +320,13 @@ display(IPImage(str(png_path)))
 
 #### 3. The For-Profit / Foundation: "The Engine"
 
-**Primary Purpose:** Issue and manage private investment instruments (e.g., 'Project VICTORY Tokens/Bonds') to fund initial dFDA development and strategic operations, providing investor returns. This entity's work is distinct from, but aims to enable, the future issuance of **government-issued VICTORY bonds** which will ultimately fund the DIH Treasury following the 1% Treaty's ratification.
+**Primary Purpose:** Issue and manage private investment instruments (e.g., 'Project VICTORY Tokens/Bonds') to fund initial dFDA development and strategic operations, providing investor returns. This entity's work is distinct from, but aims to enable, the future issuance of **government-issued VICTORY Social Impact Bonds** which will ultimately fund the DIH Treasury following the 1% Treaty's ratification.
 
 #### Permitted Activities
 
 - Issuing private investment securities and managing investor relations to fund pre-treaty initiative development.
 - Funding technology development and operational scaling for the dFDA.
-- Upon ratification of the 1% Treaty, this entity may transition to managing operational infrastructure for the DIH Treasury and facilitating the mechanisms for investor payouts related to the government-issued VICTORY bonds.
+- Upon ratification of the 1% Treaty, this entity may transition to managing operational infrastructure for the DIH Treasury and facilitating the mechanisms for investor payouts related to the government-issued VICTORY Social Impact Bonds.
 
 **Legal Structure:** Delaware C-Corporation or Cayman Islands foundation optimized for global investment and crypto-asset management.
 
