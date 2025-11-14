@@ -70,35 +70,9 @@ export async function nonprofitComplianceCheckFileWithLLM(filePath: string): Pro
   console.log(`\nChecking nonprofit compliance for ${filePath} with Gemini Flash...`);
   const { frontmatter, body } = await readFileWithMatter(filePath);
 
-  // Note: We intentionally DO NOT load the general book style guide here.
-  // The economic models need professional/academic tone, not the book's dark humor/cynical style.
-  const styleGuide = `
-TONE AND STYLE FOR FOUNDATION AUDIENCES:
-- Professional and academic at all times
-- Conservative estimates with sensitivity analysis
-- Evidence-based reasoning with citations
-- Technical/diplomatic language for policy discussions
-- Clear, precise, and defensible claims
-`;
-
-  const extraInstructions = `
-CRITICAL: This content will be reviewed by economists at major philanthropic foundations
-(Gates Foundation, Wellcome Trust, Open Philanthropy, etc.) to decide funding for a global
-health referendum. Foundation grants cannot fund lobbying or political activities under U.S.
-501(c)(3) restrictions and similar international regulations.
-
-The goal is maximum credibility and professional presentation. This is NOT activist content -
-it's an economic analysis for serious decision-makers with PhDs in economics and public health.
-Foundations need absolute clarity that they're funding research and education, NOT politics.
-`;
-
-  let promptTemplateVars: Record<string, string> = {
-    '{{styleGuide}}': styleGuide,
+  const prompt = await loadPromptTemplate('scripts/prompts/nonprofit-compliance-check.md', {
     '{{body}}': body,
-    '{{extraInstructions}}': extraInstructions
-  };
-
-  const prompt = await loadPromptTemplate('scripts/prompts/style-guide-review.md', promptTemplateVars);
+  });
 
   const responseText = await generateGeminiFlashContent(prompt);
 
@@ -107,7 +81,13 @@ Foundations need absolute clarity that they're funding research and education, N
     console.log(`File ${filePath} already meets nonprofit compliance requirements. Updating metadata.`);
     finalBody = body;
   } else {
-    finalBody = responseText.trim();
+    // Strip markdown code blocks (triple backticks) if present
+    let cleaned = responseText.trim();
+    // Remove leading ```markdown or ```qmd or ``` or any language identifier
+    cleaned = cleaned.replace(/^```[a-z]*\n?/i, '');
+    // Remove trailing ``` or ```\n
+    cleaned = cleaned.replace(/\n?```\s*$/i, '');
+    finalBody = cleaned.trim();
   }
 
   await updateFileWithHash(filePath, finalBody, frontmatter, 'lastNonprofitComplianceHash');
