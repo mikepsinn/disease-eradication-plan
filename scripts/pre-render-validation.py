@@ -238,6 +238,8 @@ def check_python_imports(content: str, filepath: str):
         (r'\bnp\.', [r'import\s+numpy\s+as\s+np', r'from\s+numpy\s+import'], 'numpy (np)'),
         (r'\bplt\.', [r'import\s+matplotlib\.pyplot\s+as\s+plt', r'from\s+matplotlib\.pyplot\s+import'], 'matplotlib.pyplot (plt)'),
         (r'\bpd\.', [r'import\s+pandas\s+as\s+pd', r'from\s+pandas\s+import'], 'pandas (pd)'),
+        (r'\bget_figure_output_path\s*\(', [r'from\s+figures\._chart_style\s+import.*get_figure_output_path', r'from\s+_chart_style\s+import.*get_figure_output_path'], 'get_figure_output_path (from _chart_style)'),
+        (r'\bget_project_root\s*\(', [r'from\s+figures\._chart_style\s+import.*get_project_root', r'from\s+_chart_style\s+import.*get_project_root'], 'get_project_root (from _chart_style)'),
     ]
 
     lines = content.split('\n')
