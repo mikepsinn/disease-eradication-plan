@@ -83,6 +83,9 @@ jobs:
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
 
+      - name: Install dih-economic-models package
+        run: uv pip install --system -e dih-economic-models/
+
       - name: Install Jupyter kernel
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
