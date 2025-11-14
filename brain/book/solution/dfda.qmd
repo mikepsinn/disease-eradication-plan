@@ -29,7 +29,7 @@ from economic_parameters import *
 ```
 
 
-{{< include ../../dih-economic-models/figures/trial-access-disparity-chart.qmd >}}
+{{< include ../../../dih-economic-models/figures/trial-access-disparity-chart.qmd >}}
 
 Out of 2.4 billion people with chronic disease, [only 5 million participate in trials annually](../../../dih-economic-models/appendix/clinical-trial-participants.qmd). That's **0.2%**.
 
@@ -488,4 +488,4 @@ The dFDA achieves [**82x More Efficiency**](../../../dih-economic-models/referen
 - **Time to results**: 2 years vs the current 17 years
 - **Patient access**: Universal access vs [85% excluded](../../../dih-economic-models/references.qmd#clinical-trial-patient-participation-rate) currently
 
-{{< include ../../dih-economic-models/figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}
+{{< include ../../../dih-economic-models/figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}

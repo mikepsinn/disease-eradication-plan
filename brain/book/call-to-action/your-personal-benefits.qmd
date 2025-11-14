@@ -69,7 +69,7 @@ Your parents won't die of Alzheimer's. Your children won't have to worry about r
 
 Here's what a typical 30-year-old making $50,000/year actually gets:
 
-{{< include ../../dih-economic-models/figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
+{{< include ../../../dih-economic-models/figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
 ```{python}
 #| echo: false
@@ -84,13 +84,13 @@ Where does this come from?
 - **Healthcare Savings** (4%): Diseases get cured, your insurance premiums drop by ~$1,650/year.
 - **Productivity Gains** (8%): You're healthier, you work better, you earn more.
 
-{{< include ../../dih-economic-models/figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
+{{< include ../../../dih-economic-models/figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
 
 **The red line at age 80 is everything.** Without the treaty, you're dead. With the treaty, you live another 72 years. Everything to the right of that line - roughly **60-70% of your total lifetime wealth** - only exists if this succeeds.
 
 ### Your Wealth Depends on Treaty Terms
 
-{{< include ../../dih-economic-models/figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
+{{< include ../../../dih-economic-models/figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
 
 The treaty percentage negotiated determines whether you get millions or generational wealth:
 

@@ -51,7 +51,7 @@ This means for every life saved, society becomes **$6,173.4T** richer instead of
 
 - [Peace Dividend Calculations](peace-dividend-calculations.qmd) - Full Jupyter notebook with sensitivity analysis
 - [Peace Dividend Chapter](../economics/peace-dividend.qmd) - Accessible overview with breakdown table
-- [Cost of War Analysis](../problem/cost-of-war.qmd) - Source data
+- [Cost of War Analysis](../../brain/book/problem/cost-of-war.qmd) - Source data
 
 #### 1b. Health Dividend ($50.0B/year)
 
@@ -77,7 +77,7 @@ This means for every life saved, society becomes **$6,173.4T** richer instead of
 
 #### 2a. Peace Dividend Health Benefits (85,610 QALYs/year)
 
-**Source**: [Cost of War Analysis](../problem/cost-of-war.qmd#death-accounting)
+**Source**: [Cost of War Analysis](../../brain/book/problem/cost-of-war.qmd#death-accounting)
 
 **Annual conflict deaths**: 244,600 people/year
 
@@ -394,7 +394,7 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 ### Economic Benefits
 
 1. **Peace Dividend**: [Peace Dividend Calculations](peace-dividend-calculations.qmd)
-   - Based on [Cost of War Analysis](../problem/cost-of-war.qmd)
+   - Based on [Cost of War Analysis](../../brain/book/problem/cost-of-war.qmd)
    - Total war costs: $11.4T annually
    - 1% reduction: $113.6B
 
@@ -406,7 +406,7 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 
 ### Health Benefits
 
-3. **Conflict Deaths**: [Cost of War Analysis](../problem/cost-of-war.qmd#death-accounting)
+3. **Conflict Deaths**: [Cost of War Analysis](../../brain/book/problem/cost-of-war.qmd#death-accounting)
    - 100,000 deaths/year
    - Sources: ACLED, GTD, Uppsala
 

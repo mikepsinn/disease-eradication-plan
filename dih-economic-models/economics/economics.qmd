@@ -35,7 +35,7 @@ from economic_parameters import *
 
 This analysis evaluates the economic impact of redirecting 1% of global military spending ([$27.2B annually](../appendix/peace-dividend-calculations.qmd)) to fund the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Using net present value analysis and conservative assumptions derived from peer-reviewed research, we demonstrate return on investment ranging from 463:1 to 1,239:1, depending on the scope of benefits included.
 
-The intervention is self-funding, requiring zero net new spending, as funds are redirected from existing military budgets. The economic benefits arise from two independent mechanisms: (1) a peace dividend of [$113.6B annually](../appendix/peace-dividend-calculations.qmd) from reduced conflict costs, and (2) [$50.0B+ in annual healthcare R&D efficiency gains](../appendix/dfda-cost-benefit-analysis.qmd) from decentralized clinical trials proven [82x more cost-effective](../appendix/recovery-trial.qmd) than traditional approaches.
+The intervention is self-funding, requiring zero net new spending, as funds are redirected from existing military budgets. The economic benefits arise from two independent mechanisms: (1) a peace dividend of [$113.6B annually](../appendix/peace-dividend-calculations.qmd) from reduced conflict costs, and (2) [$50.0B+ in annual healthcare R&D efficiency gains](../appendix/dfda-cost-benefit-analysis.qmd) from decentralized clinical trials proven [82x more cost-effective](../../dih-economic-models/appendix/recovery-trial.qmd) than traditional approaches.
 
 ### Key Findings
 
@@ -55,7 +55,7 @@ This analysis employs standard health economics frameworks including:
 - **Incremental Cost-Effectiveness Ratios (ICER)** for comparative analysis
 - **Sensitivity analysis** examining parameter variations (see [1% Treaty Cost-Effectiveness](../appendix/1-percent-treaty-cost-effectiveness.qmd))
 
-All calculations use conservative assumptions and are validated against peer-reviewed literature, particularly the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd) demonstrating 82x cost reduction in pragmatic clinical trials.
+All calculations use conservative assumptions and are validated against peer-reviewed literature, particularly the [Oxford RECOVERY trial](../../dih-economic-models/appendix/recovery-trial.qmd) demonstrating 82x cost reduction in pragmatic clinical trials.
 
 ### Two-Tier ROI Framework
 
@@ -200,7 +200,7 @@ The Decentralized FDA alone achieves **463:1 return on investment**.
 
 This exceptional ROI comes from:
 
-- **$50.0B in annual R&D cost savings**: [82x reduction](../appendix/recovery-trial.qmd) in clinical trial costs
+- **$50.0B in annual R&D cost savings**: [82x reduction](../../dih-economic-models/appendix/recovery-trial.qmd) in clinical trial costs
 - **Faster access to new treatments**: [2 years instead of 17 years](../appendix/dfda-cost-benefit-analysis.qmd) to market
 - **Better prevention through real-world data**: Continuous learning from millions of patients
 - **Enabling new therapies**: Making [rare disease trials](../references.qmd#rare-disease-patients-300m-globally) economically viable
@@ -281,7 +281,7 @@ where [$1,238.6B](../appendix/dfda-cost-benefit-analysis.qmd) is the total annua
 - **Earlier Access** = Patients access the SAME treatments 7 years sooner (during trials instead of post-approval)
 - **Research Acceleration** = System runs 115X MORE trials, finding 10-20X MORE breakthroughs
 
-Both are conservative estimates based on proven models ([RECOVERY trial](../appendix/recovery-trial.qmd) costs, disease prevalence data, standard QALY valuations).
+Both are conservative estimates based on proven models ([RECOVERY trial](../../dih-economic-models/appendix/recovery-trial.qmd) costs, disease prevalence data, standard QALY valuations).
 
 ### Research Acceleration Mechanism: How We Get 115X
 
@@ -331,7 +331,7 @@ This represents:
 
 - From [1,980 completed trials/year](../appendix/research-acceleration-model.qmd) → [227,700 completed trials/year](../appendix/research-acceleration-model.qmd) (115x)
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → [1,000-2,000 approvals/year](../appendix/research-acceleration-model.qmd) (20-40x)
-- From [$41,000 cost per patient](../appendix/recovery-trial.qmd) → [$500-1,000 cost per patient](../appendix/research-acceleration-model.qmd) ([82x cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
+- From [$41,000 cost per patient](../../dih-economic-models/appendix/recovery-trial.qmd) → [$500-1,000 cost per patient](../appendix/research-acceleration-model.qmd) ([82x cost reduction](../../dih-economic-models/appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](../appendix/research-acceleration-model.qmd).
 
@@ -542,7 +542,7 @@ For the rigorous analysis:
 **Technical Risk**: dFDA platform development and scaling challenges
 
 - *Mitigation*: Phased rollout beginning with proven platforms (similar to RECOVERY trial model); open-source architecture enabling distributed development
-- *Validation*: Oxford [RECOVERY trial](../appendix/recovery-trial.qmd) demonstrated 82x cost reduction at scale (11,000+ participants, 6 treatment arms, $5M total cost)
+- *Validation*: Oxford [RECOVERY trial](../../dih-economic-models/appendix/recovery-trial.qmd) demonstrated 82x cost reduction at scale (11,000+ participants, 6 treatment arms, $5M total cost)
 
 **Adoption Risk**: Insufficient patient enrollment in decentralized trials
 
@@ -602,4 +602,4 @@ $$
 
 **Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over [36 months](strategy/roadmap.qmd) (see [Roadmap](strategy/roadmap.qmd) for complete implementation timeline).
 
-The economic case is grounded in conservative assumptions, validated against peer-reviewed evidence (particularly the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd)), and subjected to comprehensive [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd). The methodology employs standard health economics frameworks (NPV, QALYs, ICER) to enable comparison with existing interventions and facilitate foundation grant evaluation processes.
+The economic case is grounded in conservative assumptions, validated against peer-reviewed evidence (particularly the [Oxford RECOVERY trial](../../dih-economic-models/appendix/recovery-trial.qmd)), and subjected to comprehensive [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd). The methodology employs standard health economics frameworks (NPV, QALYs, ICER) to enable comparison with existing interventions and facilitate foundation grant evaluation processes.

@@ -1078,7 +1078,7 @@ from economic_parameters import *
 
 - **\$109 trillion annual global disease burden**
   > "The global economic burden of disease, including direct healthcare costs (\$8.2 trillion) and lost productivity (\$100.9 trillion from 2.55 billion DALYs × \$39,570 per DALY), totals approximately \$109.1 trillion annually."
-  > — Calculated from IHME Global Burden of Disease (2.55B DALYs) and global GDP per capita valuation | See detailed calculation: [Cost of Disease Analysis](./problem/cost-of-disease.qmd)
+  > — Calculated from IHME Global Burden of Disease (2.55B DALYs) and global GDP per capita valuation | See detailed calculation: [Cost of Disease Analysis](../brain/book/problem/cost-of-disease.qmd)
 
 <a id="disease-prevalence-2-billion"></a>
 
@@ -4999,7 +4999,7 @@ from economic_parameters import *
 
 - **Value captured by 1% Treaty of $27+ billion annually**
   > "The 1% Treaty redirects 1% of global military spending ($2.7T × 1% = $27.2B) to medical research, with 10% of this flow (2.7B annually) distributed to VICTORY bondholders as returns."
-  > — See [1% Treaty overview](solution/1-percent-treaty.qmd) for full calculation details and [VICTORY Bonds](economics/victory-bonds.qmd) for bond structure
+  > — See [1% Treaty overview](../brain/book/solution/1-percent-treaty.qmd) for full calculation details and [VICTORY Bonds](economics/victory-bonds.qmd) for bond structure
 
 <a id="veteran-healthcare-cost-projections"></a>
 
