@@ -277,6 +277,35 @@ def check_python_imports(content: str, filepath: str):
             current_block.append(line)
 
 
+def check_hardcoded_figure_paths(content: str, filepath: str):
+    """
+    Check for hardcoded figure output paths instead of using get_figure_output_path().
+    Figure files should use get_figure_output_path() for consistent output location.
+    """
+    lines = content.split('\n')
+
+    # Pattern: output_dir = ... / 'brain' / 'figures' or similar manual path construction
+    hardcoded_path_pattern = re.compile(r"output_dir\s*=.*['\"]brain['\"].*['\"]figures['\"]")
+    # Pattern: output_path = output_dir / 'filename.png'
+    manual_path_pattern = re.compile(r"output_path\s*=\s*output_dir\s*/")
+
+    for line_index, line in enumerate(lines):
+        if hardcoded_path_pattern.search(line):
+            errors.append(ValidationError(
+                file=filepath,
+                line=line_index + 1,
+                message="Hardcoded figure path - use get_figure_output_path('filename.png') instead",
+                context=line.strip()[:80]
+            ))
+        elif manual_path_pattern.search(line):
+            errors.append(ValidationError(
+                file=filepath,
+                line=line_index + 1,
+                message="Manual path construction - use get_figure_output_path('filename.png') instead",
+                context=line.strip()[:80]
+            ))
+
+
 def check_gif_references(content: str, filepath: str):
     """
     Check for GIF files that aren't wrapped in HTML-only blocks
@@ -385,6 +414,9 @@ def validate_file(filepath: str):
 
     # Check em-dashes
     check_em_dashes(content, filepath)
+
+    # Check for hardcoded figure paths
+    check_hardcoded_figure_paths(content, filepath)
 
     # Check GIF references
     check_gif_references(content, filepath)

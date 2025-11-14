@@ -90,9 +90,7 @@ ax.axis('equal')
 
 # Save figure
 
-output_dir = get_project_root() / 'brain' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-output_path = output_dir / 'conservative-baseline-lifetime-wealth-component-breakdown-pie-chart.png'
+output_path = get_figure_output_path('conservative-baseline-lifetime-wealth-component-breakdown-pie-chart.png')
 
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
