@@ -15,7 +15,7 @@ lastInstructionalVoiceHash: 3e74a10b297b841a395233d2891cf5d20bc1815ded16d8d2dfa6
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 The [dFDA Infrastructure](../solution/dfda.qmd) will achieve its goals without spending billions on development. How? By not building most of it.

@@ -21,7 +21,7 @@ lastInstructionalVoiceHash: 2667d32b217b63a53f9a2691ee81b1141f2da92b8a2b119ccc8e
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Every single day:

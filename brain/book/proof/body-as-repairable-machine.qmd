@@ -18,7 +18,7 @@ lastInstructionalVoiceHash: aea1187aab8e2c97a878ecfdbf63cdad65f2ff6dd06aafec8a81
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Your body is a machine. A ridiculously complex, self-repairing, 4-billion-year-old biological machine, but a machine nonetheless. It was built from a blueprint (DNA), it has parts that wear out (organs), and it requires regular maintenance (medicine).

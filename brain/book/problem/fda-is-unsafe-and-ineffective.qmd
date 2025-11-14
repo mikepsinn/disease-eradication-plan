@@ -23,7 +23,7 @@ lastInstructionalVoiceHash: 51810bb6fff3168c1d156198cf01d2b156b8a610ecad9d0f260c
 #| echo: false
 import os
 
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ## 🧞Be Careful What You Wish For

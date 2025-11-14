@@ -21,7 +21,7 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 import sys
 import os
 
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 <a id="166-billion-compounds"></a>

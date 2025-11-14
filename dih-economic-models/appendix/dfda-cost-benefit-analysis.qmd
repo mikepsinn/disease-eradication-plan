@@ -17,7 +17,7 @@ import os
 import numpy_financial as npf
 
 project_root = os.getcwd()
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 - **Saves ~[$50.0B Annually](#gross-r-d-savings-from-dfda-implementation)**: Reduces global clinical trial costs (~[$100.0B/year market](../references.qmd#clinical-trial-spending-dfda-baseline)) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
@@ -1176,7 +1176,7 @@ This section provides executable Python code that implements the financial model
 import os
 
 project_root = os.getcwd()
-from economic_parameters import *
+from dih_models.parameters import *
 
 # Use parameters from economic_parameters.py
 

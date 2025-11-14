@@ -15,7 +15,7 @@ lastNonprofitComplianceHash: 06a66c9afff4a8caa5912843a3b69b65071187a2e678e07bdcb
 ---
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 <!-- This file contains content consolidated from orphaned fundraising files -->

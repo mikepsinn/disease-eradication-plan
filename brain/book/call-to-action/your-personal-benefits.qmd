@@ -8,7 +8,7 @@ lastInstructionalVoiceHash: d65f93e1134b0a34f51fd5b4fac7ad88f890f7339acf2d54e54d
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Forget saving humanity. Let's talk about what you, personally, get out of this. You don't need to be a good person to support this plan. You just need to be selfish.

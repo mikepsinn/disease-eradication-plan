@@ -15,7 +15,7 @@ lastNonprofitComplianceHash: 10a8528867ff97290815aebf8c71e8594837b428eda50c4f1eb
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 The [conservative 463:1 ROI estimate](../economics/health-dividend.qmd) captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.

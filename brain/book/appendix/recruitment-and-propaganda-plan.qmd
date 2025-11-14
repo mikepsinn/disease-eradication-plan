@@ -15,7 +15,7 @@ lastInstructionalVoiceHash: 687b3e1a129861d1339deacdc28fb47127d3017930918663ccbc
 #| echo: false
 import os
 
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 *Phase 0: Building Your Revolutionary Database Before You Have Anything to Revolution With*

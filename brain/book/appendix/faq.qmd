@@ -8,7 +8,7 @@ lastInstructionalVoiceHash: af87622ed32a3246b94346077fe229677db19ab5d073581dad3e
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 **Objection**: "Nice idea, but it's too ambitious. It'll never actually happen."

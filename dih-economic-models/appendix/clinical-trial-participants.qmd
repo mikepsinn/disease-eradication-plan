@@ -13,7 +13,7 @@ lastNonprofitComplianceHash: 31b9311085c660cd829adbec7f61ea709a0eef060b054d6bccf
 ---
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Here's a fun fact: humanity spends [$83 billion a year on clinical trials](../references.qmd#global-clinical-trials-market-2024), but **nobody tracks how many people actually participate**.

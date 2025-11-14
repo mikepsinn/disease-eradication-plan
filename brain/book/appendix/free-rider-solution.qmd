@@ -16,7 +16,7 @@ lastToneElevationWithHumorHash: f7165c6c088239b042c2b9a7be48e633b5f53e5902fa43d5
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 The classic "free-rider" objection to any global treaty is valid: "Why should we comply if our rivals won't?"

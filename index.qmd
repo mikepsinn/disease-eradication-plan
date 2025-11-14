@@ -33,7 +33,7 @@ dih_models_path = os.path.join(project_root, 'dih-economic-models')
 if dih_models_path not in sys.path:
     sys.path.insert(0, dih_models_path)
 
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ## Preface

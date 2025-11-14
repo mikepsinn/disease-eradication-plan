@@ -18,7 +18,7 @@ lastNonprofitComplianceHash: 28b1c95a062d8cc9cb91bd8d9fd16e4403f12c0be28dca11ed9
 #| echo: false
 import os
 
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 # Disease Eradication Model - The Realistic Personal Lifetime Wealth Model
@@ -280,7 +280,7 @@ Use Disease Eradication 40-year ($5.8M, 106 years):
 ### Disease Eradication Model (Recommended)
 
 ```python
-from economic_parameters import calculate_personal_lifetime_wealth_disease_eradication
+from dih_models.parameters import calculate_personal_lifetime_wealth_disease_eradication
 
 # 20-year scenario (DEFAULT)
 
@@ -297,7 +297,7 @@ result = calculate_personal_lifetime_wealth_disease_eradication(
 ### Conservative Baseline (For Skeptics)
 
 ```python
-from economic_parameters import calculate_personal_lifetime_wealth_evidence_based
+from dih_models.parameters import calculate_personal_lifetime_wealth_evidence_based
 
 result = calculate_personal_lifetime_wealth_evidence_based(
     treaty_pct=0.01,

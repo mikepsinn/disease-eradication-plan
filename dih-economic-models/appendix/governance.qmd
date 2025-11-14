@@ -21,7 +21,7 @@ lastNonprofitComplianceHash: 364cbfb0bcdddbd130b5c679304aa223413c69bbf5a9e8e7eb4
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 The [Decentralized Institutes of Health (DIH)](../../brain/book/solution/dih.qmd) is a SuperDAO governed by **Wishocracy**, a protocol for managing large, decentralized organizations.
@@ -42,7 +42,7 @@ import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
 
-from figures._graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 dot = graphviz.Digraph(comment='Wishocracy Protocol', format='png')
 dot.attr(rankdir='TD', size='10,12')

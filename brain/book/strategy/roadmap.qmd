@@ -17,7 +17,7 @@ lastInstructionalVoiceHash: b349d46b8578b7caafe374835deb39895d54bb06aaa3a7da28d9
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 You've seen the problem (humans are bad at priorities) and the solution (trick them into fixing it). Now for the interesting part: the exact sequence of bribes.

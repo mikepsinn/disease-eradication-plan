@@ -12,7 +12,7 @@ lastInstructionalVoiceHash: b58fcfe99a82b2a8ef1075662dcac5b4d0e2df01f235c203f573
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Here's how democracy actually works: Lobbyists write bills, give them to politicians who can't read, and those politicians vote based on who donated most to their campaign. You're about to become the best lobbyist in history, except your bills actually help people instead of killing them.

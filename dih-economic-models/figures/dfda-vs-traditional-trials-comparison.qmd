@@ -1,4 +1,4 @@
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```

@@ -14,7 +14,7 @@ lastInstructionalVoiceHash: 4dcdeb18fe098ef89f72d2a2df573a76d16178119ba61340d56d
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 *The DIH Command & Control Airtable Base (Or: How to Track 8 Billion People Without Being Creepy)*

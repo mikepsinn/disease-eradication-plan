@@ -13,7 +13,7 @@ lastInstructionalVoiceHash: c8da422ee067ed10b9653b02797d78f52d2b697d1ca1f317f5c2
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Here’s an estimated table of the number of lives that could potentially be saved annually if these drugs were made more accessible, based on available data and studies:

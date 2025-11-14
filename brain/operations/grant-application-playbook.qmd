@@ -20,7 +20,7 @@ project_root = os.getcwd()
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ## How to Siphon Money from Rich People's Tax Shelters

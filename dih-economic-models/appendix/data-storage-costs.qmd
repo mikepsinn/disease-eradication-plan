@@ -9,7 +9,7 @@ lastNonprofitComplianceHash: 59f1a88f9d0cd4f05cbd14fca6a198ebde598e89e7ef7b18d83
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ## Storage Requirements Per Patient

@@ -8,7 +8,7 @@ from pathlib import Path
 
 # Import centralized chart style
 
-from figures._chart_style import (
+from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines, add_png_metadata,
     get_project_root, COLOR_BLACK, COLOR_WHITE, get_figure_output_path
 )
@@ -19,7 +19,7 @@ setup_chart_style()
 
 # Import parameters from economic_parameters.py
 
-from economic_parameters import *
+from dih_models.parameters import *
 
 # NPV Model Parameters (from economic_parameters.py)
 

@@ -2,7 +2,7 @@
 #| echo: false
 # Import parameters
 
-from economic_parameters import *
+from dih_models.parameters import *
 
 # Import plotting libraries
 

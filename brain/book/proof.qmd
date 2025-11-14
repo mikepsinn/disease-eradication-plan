@@ -20,7 +20,7 @@ lastInstructionalVoiceHash: d4b0576668039696eda87d2aaab79ab410abbec320c8690d8698
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 This isn't a theoretical plan. It's a greatest hits album of things that already worked. Like mixing chocolate and peanut butter, except the chocolate is "not dying" and the peanut butter is "getting rich."

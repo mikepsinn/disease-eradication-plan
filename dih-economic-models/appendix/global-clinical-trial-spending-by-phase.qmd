@@ -15,7 +15,7 @@ lastNonprofitComplianceHash: 243b2dedc225e0c7d1eb9266bdb0af5ef579c1685a3bd2dc779
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Here's where every dollar goes in the global clinical trials industry, broken down by who's paying and which phase they're funding.

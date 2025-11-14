@@ -18,7 +18,7 @@ lastNonprofitComplianceHash: da79987eac35f4baec46ece60d55c94895a1a320cecb7d70e85
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 **Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,**

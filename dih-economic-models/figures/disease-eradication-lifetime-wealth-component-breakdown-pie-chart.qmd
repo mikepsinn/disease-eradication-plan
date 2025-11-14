@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ```{python}
@@ -13,8 +13,8 @@ from pathlib import Path
 
 # Add paths
 
-from economic_parameters import calculate_personal_lifetime_wealth_disease_eradication
-from figures._chart_style import (
+from dih_models.parameters import calculate_personal_lifetime_wealth_disease_eradication
+from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines, add_png_metadata,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
     PATTERN_CROSS, PATTERN_DOTS, get_project_root, get_figure_output_path)

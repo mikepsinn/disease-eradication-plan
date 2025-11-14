@@ -20,7 +20,7 @@ lastInstructionalVoiceHash: f3ae1ce08bbd6ca4ab52cb88f79bb52f408c7d89a9d6b7e55056
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Two timelines diverge from this moment. Same planet, same technology, opposite destinies. The only variable is a 1% budget reallocation.

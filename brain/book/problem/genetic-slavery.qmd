@@ -16,7 +16,7 @@ lastInstructionalVoiceHash: f8390ac362debd16b0dbe2a0fbbaa6cbae81517610996dce828b
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Your brain is 200,000 years old, living in a world that's 200 years old, making decisions that will kill you in 20 years.

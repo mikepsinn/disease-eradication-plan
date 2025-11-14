@@ -12,7 +12,7 @@ lastNonprofitComplianceHash: bfdeac9eed032f97ab40f371fbe64719e0dbac674b274649d76
 ---
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 - **What The Treaty Captures:** Cut global military spending by 1% and the DIH receives **$27.2B annually** to fund the Decentralized Institutes of Health.

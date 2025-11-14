@@ -23,7 +23,7 @@ lastInstructionalVoiceHash: bc4c0388e296fed559494977ed4b3762f328d75de0a9233aeb0f
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Before you can fix something, you need to understand what's broken. In this case, what's broken is approximately everything.

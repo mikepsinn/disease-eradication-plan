@@ -14,7 +14,7 @@ lastInstructionalVoiceHash: 56ee08c5783dc93f91a6d3407d9222e545049ab5400cd8cdf684
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Treaties don't pass because diplomats are persuasive. They pass because governments have no choice. You're creating that lack of choice.

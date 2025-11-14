@@ -16,7 +16,7 @@ lastInstructionalVoiceHash: b8c5a9907b08b871877f164155dfb715d5cf2a399b45922e3aee
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 While you read this sentence, disease just deleted $12.6 million of human potential from existence.

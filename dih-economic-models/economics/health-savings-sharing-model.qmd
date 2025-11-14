@@ -13,7 +13,7 @@ lastInstructionalVoiceHash: 349db60016dd01c0f8bc9e3cf79a09af40366725a5d25bb27764
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Pharmaceutical companies aren't evil. They're just following incentives. Right now, the incentives say: "Keep people sick forever, bill monthly."

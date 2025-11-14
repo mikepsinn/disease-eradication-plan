@@ -13,7 +13,7 @@ lastInstructionalVoiceHash: 9d9424597f91d0821a4f1e0f8ddbe2ccfd6df99dc9b6425b0008
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Every dollar in your wallet is a death certificate with a president's face on it.

@@ -19,7 +19,7 @@ lastInstructionalVoiceHash: 0faec94c14313e5c61f445c230ae74fe75c77e7edc05f97f0b9e
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy" or a "metaphor" or a "nice idea."

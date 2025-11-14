@@ -8,7 +8,7 @@ lastInstructionalVoiceHash: f1a577898f9c9ebeee7e6d69117be947204cf3e400b4a90871c3
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Forget marches. Forget petitions. Forget changing your profile picture. This doesn't demand your life. It demands 30 minutes.

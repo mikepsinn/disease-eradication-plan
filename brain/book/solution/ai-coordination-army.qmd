@@ -12,7 +12,7 @@ lastToneElevationWithHumorHash: ff9cfbf2efc231406c0fddda6ff7c3bbffebf33a1adf4f5d
 # Import economic parameters (produces output to prevent timeout)
 
 print("Loading economic parameters...", flush=True)
-from economic_parameters import *
+from dih_models.parameters import *
 print("Economic parameters loaded.", flush=True)
 ```
 
@@ -86,7 +86,7 @@ import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
 
-from figures._graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 # Create directed graph
 

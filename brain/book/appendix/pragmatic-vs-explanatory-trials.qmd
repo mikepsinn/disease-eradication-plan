@@ -12,7 +12,7 @@ lastInstructionalVoiceHash: f97d3c85f05efaa1e1637967597d6d0099fe136c6a2f8ca2ba57
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 What are Pragmatic Trials?

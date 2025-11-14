@@ -20,7 +20,7 @@ lastInstructionalVoiceHash: a6c07f9eb9315bdec5d6352c386200e1c16ed628a1d97c5daa86
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 If you run a nonprofit, this chapter is for you. It's an uncomfortable truth, but a necessary one: **the 1% Treaty is a better, more cost-effective way to achieve your goals than whatever you're currently doing.**

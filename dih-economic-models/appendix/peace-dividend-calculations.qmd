@@ -18,7 +18,7 @@ This analysis models two types of benefits:
 #| echo: false
 # Import all parameters from centralized module
 
-from economic_parameters import *
+from dih_models.parameters import *
 
 # Use standardized parameters instead of hardcoded values
 # All values now come from economic_parameters.py

@@ -9,7 +9,7 @@ lastInstructionalVoiceHash: d1c24ef7a7b12bc836b63a73b31f983a6b3a14fab117149fb7b9
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Historical analysis shows: Every peaceful movement that gets **[3.5% active support](../../../dih-economic-models/references.qmd#3-5-rule)** succeeds.

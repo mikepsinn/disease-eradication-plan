@@ -13,7 +13,7 @@ lastInstructionalVoiceHash: 8a3fc3f74e414ded126d09ea7a1b8d83d0d8751ea24f6064001b
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Most financial plans are complicated because the people writing them are either confused or lying. This one is complicated because moving $27 billion annually from military budgets to disease eradication while generating perpetual returns for investors actually IS complicated.
@@ -353,7 +353,7 @@ import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
 
-from figures._graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 dot = graphviz.Digraph(comment='Compound Flywheel', format='png')
 dot.attr(rankdir='TD', size='10,14')

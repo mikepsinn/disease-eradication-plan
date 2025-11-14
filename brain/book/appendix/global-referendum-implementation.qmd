@@ -7,7 +7,7 @@ lastToneElevationWithHumorHash: d385b9b9052d4119181723b1552864da3faeb36700e2a2f8
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../solution/1-percent-treaty.qmd) and DIH. Outputs must be auditable and persuasive to policymakers.

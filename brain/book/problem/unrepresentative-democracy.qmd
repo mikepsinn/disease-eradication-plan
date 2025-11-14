@@ -17,7 +17,7 @@ lastInstructionalVoiceHash: 9ec39af2e54deec56e9cf5f084caf41c6e41d5bf016937707a6c
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Here's some fun math to ruin your day:

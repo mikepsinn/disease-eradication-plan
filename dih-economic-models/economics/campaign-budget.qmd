@@ -5,7 +5,7 @@ lastInstructionalVoiceHash: bf9ad4c6f36a42e187106dfa0f34f1489e82c06e15c609716e6f
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ## On How to Buy a Planet for $1B

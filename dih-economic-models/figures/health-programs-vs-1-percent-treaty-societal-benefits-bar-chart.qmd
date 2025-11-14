@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ```{python}
@@ -11,8 +11,8 @@ from pathlib import Path
 
 # Import centralized style
 
-from figures._chart_style import setup_chart_style, add_watermark, clean_spines
-from figures._chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+from dih_models.plotting.chart_style import setup_chart_style, add_watermark, clean_spines
+from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 
 setup_chart_style()
 

@@ -17,7 +17,7 @@ lastInstructionalVoiceHash: d686650d9aa05d003ea5212b5991c9fc66de3f7256457c23a317
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 *Disclaimer: This section is informational and illustrative, not an offer of securities. Any actual implementation would require formal legal review and regulatory compliance.*
@@ -322,7 +322,7 @@ import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
 
-from figures._graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 dot = graphviz.Digraph(comment='Expansion Flywheel', format='png')
 dot.attr(rankdir='TB', size='10,12')

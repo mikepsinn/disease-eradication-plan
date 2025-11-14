@@ -22,7 +22,7 @@ lastToneElevationWithHumorHash: 22e916ab368d234be59350f413d8153be8078eab0cd5db11
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Now that you understand the problem, which is that everyone is dying while you build missiles, it's time to learn how to fix it.

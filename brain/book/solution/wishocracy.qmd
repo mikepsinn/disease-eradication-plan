@@ -19,7 +19,7 @@ lastToneElevationWithHumorHash: 9e90d47ce9ca4901b44a174515301db01db85e8353ce8281
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Congratulations! You've passed the [1% Treaty](../solution/1-percent-treaty.qmd) and now you've got $27.2B/year to allocate.

@@ -84,7 +84,7 @@ jobs:
         run: uv pip install --system -r requirements.txt
 
       - name: Install dih-economic-models package
-        run: uv pip install --system -e dih-economic-models/
+        run: uv pip install --system -e .
 
       - name: Install Jupyter kernel
         run: |

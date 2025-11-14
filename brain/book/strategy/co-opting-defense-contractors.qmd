@@ -16,7 +16,7 @@ lastInstructionalVoiceHash: 17194e591f285a0dfe6cd12ee72a2fe72f079b7001e87827d5d9
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Defense lobbyists spend [~$100M/year](../../../dih-economic-models/references.qmd#lobbying-100m) and generate $181B in government contracts. That's a [1,810:1 ROI](../../../dih-economic-models/references.qmd#lobbying-roi-calc).

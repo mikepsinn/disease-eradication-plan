@@ -13,7 +13,7 @@ lastToneElevationWithHumorHash: e86e1169320cc1ab8829e3d65c2c6fc1e5aace0b7804bebd
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 This book is not about convincing people to be better. It's about building a system where doing well and doing good are the same thing. The current system pays for death and disease. The new system pays for life and health.

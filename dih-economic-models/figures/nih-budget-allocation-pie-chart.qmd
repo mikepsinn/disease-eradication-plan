@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ```{python}
@@ -10,8 +10,8 @@ from pathlib import Path
 
 # Import centralized style
 
-from figures._chart_style import setup_chart_style, add_watermark, COLOR_BLACK, COLOR_WHITE
-from figures._chart_style import PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS, PATTERN_DOTS
+from dih_models.plotting.chart_style import setup_chart_style, add_watermark, COLOR_BLACK, COLOR_WHITE
+from dih_models.plotting.chart_style import PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS, PATTERN_DOTS
 
 setup_chart_style()
 

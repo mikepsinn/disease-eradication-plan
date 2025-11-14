@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ```{python}
@@ -9,7 +9,7 @@ import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
 
-from figures._graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 dot = graphviz.Digraph(comment='Death Economy Flow', format='png')
 dot.attr(rankdir='TD', size='10,10')

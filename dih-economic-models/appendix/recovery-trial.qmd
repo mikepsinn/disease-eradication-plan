@@ -15,7 +15,7 @@ lastNonprofitComplianceHash: b9983ed6413180d084f32647186fc2a0b05f89ed58b504a41d7
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent [$41,000 per patient](../references.qmd#trial-cost-41k) on traditional trials, Oxford spent [$500 per patient](../references.qmd#recovery-cost-500) and [saved over 1 million lives globally](../references.qmd#recovery-trial-1m-lives-saved). This 82x efficiency gain demonstrates that decentralized, pragmatic trials aren't just possible, they're already superior to centralized FDA approaches.

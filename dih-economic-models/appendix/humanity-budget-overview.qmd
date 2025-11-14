@@ -8,7 +8,7 @@ lastNonprofitComplianceHash: 588d121b623de4bb7865a7b71352bb99eba9ce6769c9b2bd029
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 If you think of Earth as a household with a budget, here's what our species decided to spend money on:

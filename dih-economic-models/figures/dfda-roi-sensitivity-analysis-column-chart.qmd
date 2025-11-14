@@ -5,7 +5,7 @@ import numpy as np
 from pathlib import Path
 
 # --- Import centralized style ---
-from figures._chart_style import (
+from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL, get_figure_output_path)
 
@@ -102,7 +102,7 @@ output_path = get_figure_output_path('dfda-roi-sensitivity-analysis-column-chart
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata
-from figures._chart_style import add_png_metadata, get_figure_output_path
+from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_path
 add_png_metadata(
     output_path,
     title="dFDA Return on Investment Across Cost Scenarios",

@@ -16,7 +16,7 @@ lastToneElevationWithHumorHash: 43cc71d4f03e4c66b35a4b4c73f7b7a5e10ff37fd1915b07
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 This isn't a protest. It's a recipe. Like making bread, except instead of bread it's immortality, and instead of yeast it's bribes.

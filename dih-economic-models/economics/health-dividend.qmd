@@ -14,7 +14,7 @@ lastNonprofitComplianceHash: b209671fea7d7c8aacbc349fad1b24654b7c462166014b5d071
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 The dFDA Infrastructure costs **$40M per year** to run.

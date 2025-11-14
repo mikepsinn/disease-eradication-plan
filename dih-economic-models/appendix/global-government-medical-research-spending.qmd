@@ -15,7 +15,7 @@ lastNonprofitComplianceHash: be7594a80d6819b5d333a65b690dff448952edd78dd36ded652
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Here's the complete accounting of humanity's commitment to curing disease. Spoiler: It's embarrassing.

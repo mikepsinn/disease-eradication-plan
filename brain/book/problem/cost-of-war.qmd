@@ -18,7 +18,7 @@ lastInstructionalVoiceHash: 860e7eabbc3700ded40396cbc6b4c219866f761e350d0cb03b0e
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 In 2024, humanity spent [$2.7T](../../../dih-economic-models/references.qmd#sipri-2024-spending) on war. That's not a typo. It's the budget for your species' most expensive and enduring hobby: organized violence. If you stacked that money in one-dollar bills, you could build a bridge two-thirds of the way to the Moon.

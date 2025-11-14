@@ -6,7 +6,7 @@ lastInstructionalVoiceHash: 332af023d6c8f4d5493bb1144bcfa104877038cf055b2b00dc18
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Nonprofits spend most of their time begging for money. Foundations spend most of their time deciding who to give money to. Everyone pretends this is efficient.

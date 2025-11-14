@@ -12,7 +12,7 @@ lastInstructionalVoiceHash: f3440c4782953f8982497dbd79ddbf2bc0a79a1c8271a033d450
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 It's perfectly legal to buy politicians. You just have to use the right forms. The Supreme Court decided that money equals speech (Citizens United, 2010), which means billionaires speak louder than you. 

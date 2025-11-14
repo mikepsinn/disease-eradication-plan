@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 ```{python}
@@ -9,7 +9,7 @@ from economic_parameters import *
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-from figures._chart_style import (
+from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark,
     COLOR_BLACK, COLOR_WHITE, add_png_metadata,
     PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS, get_figure_output_path)

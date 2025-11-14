@@ -19,7 +19,7 @@ lastNonprofitComplianceHash: bb16ab026532b75cd0014a2d64cf107c74b1466d123f8a346ae
 
 # So we need to add brain/book/appendix to the path
 
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 **Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **$6,173.4T** per life saved (ICER = **$-176,382** per QALY).

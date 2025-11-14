@@ -12,7 +12,7 @@ lastInstructionalVoiceHash: 592b6d0464ce3d16be55e463509136de0afaf08759948afb02f3
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 International treaties supersede national sovereignty. The Vienna Convention on the Law of Treaties (1969) makes them binding forever. 

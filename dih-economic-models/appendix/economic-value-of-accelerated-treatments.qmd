@@ -14,7 +14,7 @@ lastNonprofitComplianceHash: 64554299fc5552a7d797de608e6fce7668ed4c93bf4654c4630
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 **Estimating the Economic Value of Accelerating Medical Progress Through New Therapies**

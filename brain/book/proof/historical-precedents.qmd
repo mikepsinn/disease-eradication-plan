@@ -17,7 +17,7 @@ lastInstructionalVoiceHash: 03790b0c7c176e6ffdd40d453e03320a5f5fa4708b2f23c91fd3
 
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 Before you say "this is impossible," let me remind you: humans have accidentally done smart things before.
