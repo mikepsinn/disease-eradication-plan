@@ -1,21 +1,10 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: setup
 #| include: false
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -31,9 +20,7 @@ plt.style.use('seaborn-v0_8-darkgrid')
 This chart shows the relationship between FDA budget, US life expectancy, and the cost to develop new drugs over time (1901-2020).
 
 ```{python}
-#| label: load-data
 #| echo: false
-
 # Load the data
 
 data_path = Path("../data/us-life-expectancy-fda-budget-drug-costs-1901-2019.csv")
@@ -51,11 +38,7 @@ print(df.head())
 ```
 
 ```{python}
-#| label: fig-fda-spending-life-drug-costs
-#| fig-cap: "FDA Spending, US Life Expectancy, and Drug Development Costs (1901-2020)"
-#| fig-width: 14
 #| fig-height: 8
-
 # Create figure with multiple y-axes
 
 fig, ax1 = plt.subplots(figsize=(14, 8))
@@ -137,9 +120,7 @@ plt.show()
 ### Statistical Summary
 
 ```{python}
-#| label: statistics
 #| echo: false
-
 # Calculate growth rates
 
 pre_1962 = df[df['Year'] <= 1962]['US Life expectancy']

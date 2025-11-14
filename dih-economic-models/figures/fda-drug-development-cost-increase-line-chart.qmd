@@ -1,42 +1,20 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: fda-drug-development-cost-increase
 #| fig-cap: "Cost to develop one new drug has exploded under FDA regulations (1950-2000)"
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
-import sys
 
 # Find project root dynamically
 
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-
-# Add brain/figures to path for imports
-
-sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
-
-from _chart_style import (
+from figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE
-)
+    COLOR_BLACK, COLOR_WHITE, get_figure_output_path, get_figure_output_path)
 
 # Setup styling
 
@@ -132,9 +110,8 @@ add_watermark(fig)
 
 # Save figure
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'fda-drug-development-cost-increase-line-chart.png',
+output_path = get_figure_output_path('fda-drug-development-cost-increase-line-chart.png')
+plt.savefig(output_path,
             dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 ```

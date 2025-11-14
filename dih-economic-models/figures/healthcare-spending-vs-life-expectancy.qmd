@@ -1,42 +1,20 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: setup
 #| include: false
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
-import sys
-
-# Add brain/figures to path for imports
-
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-
-sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
 
 # Import centralized styling
 
-from _chart_style import (
+from figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines, get_project_root,
-    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
-)
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, get_figure_output_path)
 
 # Setup mobile-first B&W styling
 
@@ -44,9 +22,7 @@ setup_chart_style()
 ```
 
 ```{python}
-#| label: load-data
 #| echo: false
-
 # Load data
 
 project_root = get_project_root()
@@ -60,9 +36,7 @@ df['Year'] = df['Year'].astype(int)
 ```
 
 ```{python}
-#| label: fig-healthcare-spending
 #| fig-cap: "Healthcare Spending Skyrockets While Life Expectancy Flatlines"
-
 # Create figure with extra space for title
 
 fig, ax1 = plt.subplots(figsize=(14, 9))
@@ -162,9 +136,8 @@ add_watermark(fig)
 
 # Save PNG with matching filename
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'healthcare-spending-vs-life-expectancy.png',
+output_path = get_figure_output_path('healthcare-spending-vs-life-expectancy.png')
+plt.savefig(output_path,
             dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE, pad_inches=0.3)
 plt.show()
 ```

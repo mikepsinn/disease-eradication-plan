@@ -1,48 +1,24 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: setup
 #| include: false
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
-import sys
 
-# Add brain/figures to path for imports
-
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-
-sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
-
-from _chart_style import (
+from figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines, get_project_root,
-    COLOR_BLACK, COLOR_WHITE
-)
+    COLOR_BLACK, COLOR_WHITE, get_figure_output_path, get_figure_output_path)
 
 setup_chart_style()
 ```
 
 ```{python}
-#| label: load-data
 #| echo: false
-
 # Load data
 
 project_root = get_project_root()
@@ -60,11 +36,7 @@ df_plot = df[(df['Year'] >= 1890) & (df['Year'] <= 2020)]
 ```
 
 ```{python}
-#| label: fig-life-expectancy-1962
-#| fig-cap: "Life Expectancy Growth Slowed After 1962 Regulations"
-#| fig-width: 14
 #| fig-height: 9
-
 # Create figure with proper margins
 
 fig, ax = plt.subplots(figsize=(14, 9))
@@ -143,9 +115,8 @@ add_watermark(fig)
 
 # Save with proper margins
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-plt.savefig(output_dir / 'life-expectancy-pre-post-1962.png',
-            dpi=200, facecolor=COLOR_WHITE, bbox_inches=None)
+output_path = get_figure_output_path('life-expectancy-pre-post-1962.png')
+plt.savefig(output_path, dpi=200, facecolor=COLOR_WHITE, bbox_inches=None)
 plt.show()
 ```
 

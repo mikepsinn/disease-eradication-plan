@@ -1,21 +1,10 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: one-percent-treaty-top-country-contributions-column-chart
 #| fig-cap: "Projected annual contributions to the Decentralized Institutes of Health Treasury from top military spenders, based on a 1% reallocation of their defense budgets."
-
 # --- Imports ---
 
 import matplotlib.pyplot as plt
@@ -25,19 +14,12 @@ from pathlib import Path
 # --- Dynamic Project Root ---
 # Find the project root dynamically to save the image in the correct directory
 
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-
 # --- Style Imports ---
 # This assumes _chart_style.py is in dih-economic-models/figures/
 
-import sys
-sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
-from _chart_style import (
+from figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE
-)
+    COLOR_BLACK, COLOR_WHITE, get_figure_output_path, get_figure_output_path)
 
 # --- Chart Setup ---
 
@@ -115,10 +97,8 @@ add_watermark(fig)
 # --- Save Figure ---
 # Save the chart to the /brain/figures directory
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-filename = 'one-percent-treaty-top-country-contributions-column-chart'
-plt.savefig(output_dir / f'{filename}.png', dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+output_path = get_figure_output_path('one-percent-treaty-top-country-contributions-column-chart.png')
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 plt.show()
 ```

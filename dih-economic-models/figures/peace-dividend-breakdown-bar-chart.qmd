@@ -1,13 +1,6 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
 # Import parameters
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
 
 from economic_parameters import *
 
